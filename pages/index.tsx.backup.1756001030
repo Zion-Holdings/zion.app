@@ -1,3 +1,92 @@
+<<<<<<< HEAD
+import React from 'react';
+import Head from 'next/head';
+import Hero from '../components/sections/Hero';
+import Features from '../components/sections/Features';
+import MicroSaasServices from '../components/sections/MicroSaasServices';
+import Card from '../components/ui/Card';
+import Button from '../components/ui/Button';
+import { Cloud, Bot, RefreshCw, Zap, Shield, BarChart3, ArrowRight, Brain, Monitor, Search } from 'lucide-react';
+
+export default function HomePage() {
+  const heroStats = [
+    { value: '6+', label: 'Micro SaaS Services', color: 'text-cyan-400' },
+    { value: '14-Day', label: 'Free Trial', color: 'text-fuchsia-400' },
+    { value: 'AI-Powered', label: 'Solutions', color: 'text-blue-400' },
+    { value: 'Competitive', label: 'Pricing', color: 'text-green-400' },
+  ];
+
+  const heroStats = marketStats;
+
+  const contactInfo = {
+    mobile: '+1 302 464 0950',
+    email: 'kleber@ziontechgroup.com',
+    address: '364 E Main St STE 1008 Middletown DE 19709',
+    website: 'https://ziontechgroup.com'
+  };
+
+  // Enhanced service advertising content with real market data and competitive advantages
+  const serviceHighlights = [
+    {
+      icon: <TrendingUp className="w-8 h-8 text-white" />,
+      title: 'Market-Driven Solutions',
+      description: 'Real micro SaaS services with competitive pricing, market analysis, and proven business models.',
+      color: 'bg-gradient-to-br from-cyan-500 to-blue-600',
+      gradient: 'from-cyan-400 to-blue-500',
+      price: 'Starting at $49/month',
+      marketSize: '$45B+ global market',
+      competitors: 'Salesforce, HubSpot, Adobe'
+    },
+    {
+      icon: <Bot className="w-8 h-8 text-white" />,
+      title: 'AI-Powered Automation',
+      description: 'Intelligent automation for social media, SEO, email marketing, and business intelligence.',
+      color: 'bg-gradient-to-br from-fuchsia-500 to-purple-600',
+      gradient: 'from-fuchsia-400 to-purple-500',
+      price: 'Starting at $199/month',
+      marketSize: '$200B+ global market',
+      competitors: 'OpenAI, Google AI, Microsoft AI'
+    },
+    {
+      icon: <DollarSign className="w-8 h-8 text-white" />,
+      title: 'Transparent Pricing',
+      description: 'Clear pricing tiers with competitive rates, feature comparisons, and market positioning.',
+      color: 'bg-gradient-to-br from-green-500 to-emerald-600',
+      gradient: 'from-green-400 to-emerald-500',
+      price: 'Starting at $299/month',
+      marketSize: '$100B+ global market',
+      competitors: 'AWS, Azure, Google Cloud'
+    },
+    {
+      icon: <Users className="w-8 h-8 text-white" />,
+      title: 'Targeted Use Cases',
+      description: 'Specific solutions for marketing agencies, e-commerce, SaaS companies, and content creators.',
+      color: 'bg-gradient-to-br from-orange-500 to-red-600',
+      gradient: 'from-orange-400 to-red-500',
+      price: 'Starting at $99/month',
+      marketSize: '$25B+ global market',
+      competitors: 'Shopify, Wix, Squarespace'
+    },
+    {
+      icon: <Shield className="w-8 h-8 text-white" />,
+      title: 'Enterprise Features',
+      description: 'Advanced security, compliance, white-label solutions, and SLA guarantees for large organizations.',
+      color: 'bg-gradient-to-br from-indigo-500 to-purple-600',
+      gradient: 'from-indigo-400 to-purple-500',
+      price: 'Starting at $399/month',
+      marketSize: '$150B+ global market',
+      competitors: 'CrowdStrike, Palo Alto, Fortinet'
+    },
+    {
+      icon: <BarChart3 className="w-8 h-8 text-white" />,
+      title: 'Market Intelligence',
+      description: 'Comprehensive market analysis, competitive positioning, and growth opportunity insights.',
+      color: 'bg-gradient-to-br from-teal-500 to-cyan-600',
+      gradient: 'from-teal-400 to-cyan-500',
+      price: 'Starting at $49/month',
+      marketSize: '$50B+ global market',
+      competitors: 'Stripe, PayPal, Square'
+=======
       icon: <Code className="w-8 h-8 text-white" />,
       title: 'Code Review Assistant',
       description: 'AI-powered code analysis with security, performance, and maintainability insights. Support for JavaScript, Python, and TypeScript.',
@@ -182,8 +271,51 @@ import Layout from '../components/Layout';
 import HeroSection from '../components/sections/HeroSection';
 import ServicesSection from '../components/sections/ServicesSection';
 import ContactForm from '../components/forms/ContactForm';
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-b8f6
 
   return (
+<<<<<<< HEAD
+    <>
+      <Head>
+        <title>Zion Tech Group — AI-Powered Micro SaaS Services with Competitive Pricing</title>
+        <meta name="description" content="Discover real micro SaaS services: AI-powered social media analytics, SEO optimization, email marketing automation, and more. Competitive pricing with 14-day free trials." />
+        <meta property="og:title" content="Zion Tech Group — AI-Powered Micro SaaS Services with Competitive Pricing" />
+        <meta property="og:description" content="Real micro SaaS solutions with competitive pricing. AI-powered tools for social media, SEO, email marketing, and business intelligence." />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="keywords" content="AI, quantum computing, cybersecurity, digital transformation, autonomous systems, technology solutions" />
+        <link rel="canonical" href="https://ziontechgroup.com" />
+      
+        <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","headline":"Zion Tech Group — Leading-Edge Technology Solutions & Autonomous Innovation Platform","url":"https://ziontechgroup.com/","isPartOf":{"@type":"WebSite","name":"Zion Tech Group","url":"https://ziontechgroup.com"}}</script></Head>
+
+      {/* Hero Section */}
+      <Hero
+        title="Zion Tech Group"
+        subtitle="Real micro SaaS services with AI-powered automation, competitive pricing, and proven business models. Start your 14-day free trial today."
+        primaryAction={{
+          text: "View Services",
+          href: "/services"
+        }}
+        secondaryAction={{
+          text: "See Pricing",
+          href: "/pricing"
+        }}
+        stats={heroStats}
+      />
+
+      {/* Stats Section */}
+      <section className="py-20 bg-gray-800/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {stats.map((stat) => (
+              <div key={stat.label} className="text-center">
+                <div className="text-4xl md:text-5xl font-bold text-white mb-2">{stat.number}</div>
+                <div className="text-gray-400">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+=======
     <Layout>
       <HeroSection />
       <ServicesSection />
@@ -191,6 +323,7 @@ import ContactForm from '../components/forms/ContactForm';
     </Layout>
   );
 };
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-b8f6
 
       {/* Platform Capabilities */}
       <Features
