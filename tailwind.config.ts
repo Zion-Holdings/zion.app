@@ -76,14 +76,6 @@ const config: Config = {
           light: "#451582",
           dark: "#000000",
         },
-        "zion-neon": {
-          cyan: "#22ddd2",
-          purple: "#8c15e9",
-          blue: "#2e73ea",
-          pink: "#ff0080",
-          green: "#00ff88",
-          yellow: "#ffff00",
-        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -102,35 +94,81 @@ const config: Config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        "fade-in-up": {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(30px)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0)",
+          },
+        },
+        "fade-in-down": {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(-30px)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0)",
+          },
+        },
+        "fade-in-left": {
+          "0%": {
+            opacity: "0",
+            transform: "translateX(-30px)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateX(0)",
+          },
+        },
+        "fade-in-right": {
+          "0%": {
+            opacity: "0",
+            transform: "translateX(30px)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateX(0)",
+          },
+        },
         "float": {
-          "0%, 100%": { transform: "translateY(0px)" },
-          "50%": { transform: "translateY(-20px)" },
+          "0%, 100%": {
+            transform: "translateY(0px)",
+          },
+          "50%": {
+            transform: "translateY(-20px)",
+          },
         },
         "glow": {
-          "0%, 100%": { boxShadow: "0 0 20px rgba(34, 221, 210, 0.3)" },
-          "50%": { boxShadow: "0 0 40px rgba(34, 221, 210, 0.6)" },
-        },
-        "neon-pulse": {
-          "0%, 100%": { 
-            textShadow: "0 0 5px rgba(34, 221, 210, 0.5), 0 0 10px rgba(34, 221, 210, 0.3)" 
+          "0%, 100%": {
+            boxShadow: "0 0 20px rgba(34, 221, 210, 0.5)",
           },
-          "50%": { 
-            textShadow: "0 0 20px rgba(34, 221, 210, 0.8), 0 0 30px rgba(34, 221, 210, 0.5)" 
+          "50%": {
+            boxShadow: "0 0 40px rgba(34, 221, 210, 0.8)",
           },
         },
-        "gradient-shift": {
-          "0%": { backgroundPosition: "0% 50%" },
-          "50%": { backgroundPosition: "100% 50%" },
-          "100%": { backgroundPosition: "0% 50%" },
+        "shimmer": {
+          "0%": {
+            backgroundPosition: "-200% 0",
+          },
+          "100%": {
+            backgroundPosition: "200% 0",
+          },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "fade-in-up": "fade-in-up 0.6s ease-out",
+        "fade-in-down": "fade-in-down 0.6s ease-out",
+        "fade-in-left": "fade-in-left 0.6s ease-out",
+        "fade-in-right": "fade-in-right 0.6s ease-out",
         "float": "float 6s ease-in-out infinite",
-        "glow": "glow 2s ease-in-out infinite alternate",
-        "neon-pulse": "neon-pulse 2s ease-in-out infinite",
-        "gradient-shift": "gradient-shift 3s ease infinite",
+        "glow": "glow 2s ease-in-out infinite",
+        "shimmer": "shimmer 2s linear infinite",
       },
     },
   },

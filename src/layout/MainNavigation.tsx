@@ -24,9 +24,9 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
       matches: (path: string) => path === '/'
     },
     {
-      key: 'micro-saas',
+      key: 'services',
       href: '/micro-saas-services',
-      matches: (path: string) => path.startsWith('/micro-saas-services')
+      matches: (path: string) => path.startsWith('/micro-saas-services') || path.startsWith('/services') || path.startsWith('/it-onsite-services')
     },
     {
       key: 'marketplace',
@@ -34,9 +34,9 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
       matches: (path: string) => path.startsWith('/marketplace')
     },
     {
-      key: 'services',
-      href: '/services',
-      matches: (path: string) => path.startsWith('/services')
+      key: 'categories',
+      href: '/categories',
+      matches: (path: string) => path.startsWith('/categories')
     },
     {
       key: 'talent',
