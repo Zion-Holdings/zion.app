@@ -26,7 +26,18 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
       </head>
       <body className="min-h-screen bg-[var(--bg)] text-[var(--fg)] antialiased">
-        <Navigation />
+        <nav className="border-b border-white/10 sticky top-0 z-50 bg-zinc-900/50 backdrop-blur">
+          <div className="max-w-6xl mx-auto px-4 py-3 flex items-center gap-4">
+            <a href="/" className="font-semibold">Zion OS</a>
+            <a href="/services" className="text-sm opacity-80 hover:opacity-100">Services</a>
+            <a href="/solutions" className="text-sm opacity-80 hover:opacity-100">Solutions</a>
+            <a href="/about" className="text-sm opacity-80 hover:opacity-100">About</a>
+            <a href="/contact" className="text-sm opacity-80 hover:opacity-100">Contact</a>
+            <a href="/multiverse/launch" className="text-sm opacity-80 hover:opacity-100">Launch</a>
+            <a href="/admin/os-deploy" className="text-sm opacity-80 hover:opacity-100">Admin Deploy</a>
+            <a href="/admin/instances" className="text-sm opacity-80 hover:opacity-100">Instances</a>
+          </div>
+        </nav>
         <main className="pt-20">
           {children}
         </main>

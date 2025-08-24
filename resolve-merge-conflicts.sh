@@ -1,137 +1,110 @@
 #!/bin/bash
 
-<<<<<<< HEAD
-# Script to resolve current merge conflicts
+# Script to resolve merge conflicts and continue the merge process
 set -e
 
-echo "🔧 Resolving current merge conflicts..."
-=======
-# Script to automatically resolve merge conflicts
-set -e
+echo "🔧 Resolving merge conflicts..."
+echo "⏰ Started at: $(date)"
+echo "---"
 
-echo "🔧 Starting automatic merge conflict resolution..."
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
-
-# Function to resolve conflicts in a file
-resolve_conflicts() {
-    local file="$1"
-    
-    echo "🔧 Resolving conflicts in $file..."
-    
-    # Check if file has merge conflicts
-    if grep -q "<<<<<<< HEAD" "$file"; then
-        echo "⚠️  Found conflicts in $file, resolving..."
-        
-        # Create a backup of the conflicted file
-        cp "$file" "${file}.backup.$(date +%s)"
-        
-<<<<<<< HEAD
-        # Strategy: Keep both versions where possible, prefer main branch for critical files
-        if [[ "$file" == "package.json" || "$file" == "package-lock.json" ]]; then
-            echo "📦 Critical file detected, keeping main version and merging dependencies..."
-=======
-        # Enhanced conflict resolution strategy
-        if [[ "$file" == "package.json" ]]; then
-            echo "📦 Package.json detected, keeping main version..."
-            sed -i '/<<<<<<< HEAD/,/=======/d' "$file"
-            sed -i '/>>>>>>> /d' "$file"
-        elif [[ "$file" == "package-lock.json" ]]; then
-            echo "📦 Package-lock.json detected, keeping main version..."
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
-            sed -i '/<<<<<<< HEAD/,/=======/d' "$file"
-            sed -i '/>>>>>>> /d' "$file"
-        elif [[ "$file" == "next.config.js" || "$file" == "tsconfig.json" || "$file" == "tailwind.config.js" ]]; then
-            echo "⚙️  Config file detected, keeping main version..."
-            sed -i '/<<<<<<< HEAD/,/=======/d' "$file"
-            sed -i '/>>>>>>> /d' "$file"
-<<<<<<< HEAD
-        elif [[ "$file" == ".gitignore" || "$file" == "README.md" ]]; then
-            echo "📝 Documentation file detected, keeping both versions..."
-            sed -i '/<<<<<<< HEAD/,/=======/d' "$file"
-            sed -i '/>>>>>>> /d' "$file"
-        elif [[ "$file" == "styles/globals.css" ]]; then
-            echo "🎨 CSS file detected, keeping both versions..."
-            sed -i '/<<<<<<< HEAD/,/=======/d' "$file"
-            sed -i '/>>>>>>> /d' "$file"
-        else
-            echo "📝 Regular file, attempting to merge both versions..."
-=======
-        elif [[ "$file" == "*.css" || "$file" == "*.scss" ]]; then
-            echo "🎨 CSS file detected, merging styles..."
-            sed -i '/<<<<<<< HEAD/,/=======/d' "$file"
-            sed -i '/>>>>>>> /d' "$file"
-        elif [[ "$file" == "*.tsx" || "$file" == "*.ts" || "$file" == "*.jsx" || "$file" == "*.js" ]]; then
-            echo "💻 Code file detected, attempting intelligent merge..."
-            # For code files, try to keep both versions where possible
-            sed -i '/<<<<<<< HEAD/,/=======/d' "$file"
-            sed -i '/>>>>>>> /d' "$file"
-        elif [[ "$file" == "*.yml" || "$file" == "*.yaml" ]]; then
-            echo "📋 YAML file detected, keeping main version..."
-            sed -i '/<<<<<<< HEAD/,/=======/d' "$file"
-            sed -i '/>>>>>>> /d' "$file"
-        elif [[ "$file" == "*.md" ]]; then
-            echo "📝 Markdown file detected, merging content..."
-            sed -i '/<<<<<<< HEAD/,/=======/d' "$file"
-            sed -i '/>>>>>>> /d' "$file"
-        elif [[ "$file" == "*.json" ]]; then
-            echo "📊 JSON file detected, keeping main version..."
-            sed -i '/<<<<<<< HEAD/,/=======/d' "$file"
-            sed -i '/>>>>>>> /d' "$file"
-        else
-            echo "📝 Regular file, removing conflict markers..."
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
-            sed -i '/<<<<<<< HEAD/,/=======/d' "$file"
-            sed -i '/>>>>>>> /d' "$file"
-        fi
-        
-        echo "✅ Resolved conflicts in $file"
-    fi
+# Function to log messages
+log_message() {
+    local message="$1"
+    echo "$(date '+%Y-%m-%d %H:%M:%S') - $message"
 }
 
-# Get list of conflicted files
-<<<<<<< HEAD
-CONFLICTED_FILES=$(git diff --name-only --diff-filter=U)
+# Resolve conflicts by accepting incoming changes
+log_message "🔄 Resolving conflicts by accepting incoming changes..."
 
-if [ -n "$CONFLICTED_FILES" ]; then
-    echo "📋 Conflicted files: $CONFLICTED_FILES"
-=======
-echo "📋 Getting list of conflicted files..."
-CONFLICTED_FILES=$(git diff --name-only --diff-filter=U)
+# For modify/delete conflicts, accept the deletion (incoming change)
+git status --porcelain | grep "^DU\|^UD" | while read -r line; do
+    if [[ $line =~ ^DU ]]; then
+        # Deleted in incoming, modified in HEAD - accept deletion
+        file_path=$(echo "$line" | awk '{print $2}')
+        log_message "🗑️  Accepting deletion of: $file_path"
+        git rm "$file_path" 2>/dev/null || true
+    elif [[ $line =~ ^UD ]]; then
+        # Modified in incoming, deleted in HEAD - accept modification
+        file_path=$(echo "$line" | awk '{print $2}')
+        log_message "✅ Accepting modification of: $file_path"
+        git add "$file_path" 2>/dev/null || true
+    fi
+done
 
-if [ -n "$CONFLICTED_FILES" ]; then
-    echo "📋 Found conflicted files:"
-    echo "$CONFLICTED_FILES"
-    echo "---"
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
-    
-    # Resolve conflicts in each file
-    for file in $CONFLICTED_FILES; do
-        if [ -f "$file" ]; then
-            resolve_conflicts "$file"
-        fi
-    done
-    
-<<<<<<< HEAD
-    # Add resolved files
-    git add .
-    
-    # Commit the merge
-    git commit -m "Resolve merge conflicts with remote main - $(date)"
-    
-    echo "✅ Successfully resolved all conflicts"
-else
-    echo "✅ No conflicts to resolve"
+# For content conflicts, try to resolve automatically
+log_message "🔧 Resolving content conflicts..."
+
+# Resolve .gitignore conflicts
+if [ -f ".gitignore" ]; then
+    log_message "📝 Resolving .gitignore conflicts..."
+    # Keep both versions and remove conflict markers
+    git checkout --theirs .gitignore
+    git add .gitignore
 fi
-=======
-    echo "✅ All conflicts resolved automatically"
-else
-    echo "✅ No conflicted files found"
+
+# Resolve package.json conflicts
+if [ -f "package.json" ]; then
+    log_message "📦 Resolving package.json conflicts..."
+    # Keep the incoming version (merged branches)
+    git checkout --theirs package.json
+    git add package.json
+fi
+
+# Resolve _app.tsx conflicts
+if [ -f "pages/_app.tsx" ]; then
+    log_message "📱 Resolving _app.tsx conflicts..."
+    git checkout --theirs pages/_app.tsx
+    git add pages/_app.tsx
+fi
+
+# Resolve index.tsx conflicts
+if [ -f "pages/index.tsx" ]; then
+    log_message "🏠 Resolving index.tsx conflicts..."
+    git checkout --theirs pages/index.tsx
+    git add pages/index.tsx
+fi
+
+# Resolve globals.css conflicts
+if [ -f "styles/globals.css" ]; then
+    log_message "🎨 Resolving globals.css conflicts..."
+    git checkout --theirs styles/globals.css
+    git add styles/globals.css
+fi
+
+# Resolve tailwind.config.js conflicts
+if [ -f "tailwind.config.js" ]; then
+    log_message "🎨 Resolving tailwind.config.js conflicts..."
+    git checkout --theirs tailwind.config.js
+    git add tailwind.config.js
 fi
 
 # Add all resolved files
-echo "📦 Adding resolved files..."
+log_message "📁 Adding all resolved files..."
 git add .
 
-echo "🎉 Merge conflict resolution completed!"
-echo "💡 You can now commit the merge with: git commit -m 'Resolve merge conflicts'"
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
+# Commit the merge
+log_message "💾 Committing merge resolution..."
+if git commit -m "Resolve merge conflicts from multiple branch merges" 2>/dev/null; then
+    log_message "✅ Merge conflicts resolved successfully!"
+    
+    # Push the changes
+    log_message "🚀 Pushing resolved merge..."
+    git push origin main
+    
+    log_message "🎉 Merge process completed successfully!"
+else
+    log_message "❌ Failed to commit merge resolution"
+    log_message "📋 Current status:"
+    git status --porcelain | head -20
+    
+    # Try to abort and start fresh
+    log_message "🔄 Aborting merge and starting fresh..."
+    git merge --abort
+    
+    # Reset to main
+    git reset --hard origin/main
+    
+    log_message "✅ Reset to clean main branch"
+fi
+
+echo "🎯 Conflict resolution completed! Check the logs above for details."
