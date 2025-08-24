@@ -1,5 +1,0 @@
-<<<<<<< HEAD
-export default function Page(){return <div className="p-6">Data Analytics Implementation</div>;}
-=======
-export default function Page() { return <div className="py-10">Data Analytics Implementation</div>; }
->>>>>>> origin/cursor/build-investor-matchmaking-tool-37fa

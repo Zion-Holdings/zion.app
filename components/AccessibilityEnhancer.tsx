@@ -1,9 +1,25 @@
+<<<<<<< HEAD
 import React, { useEffect, useState } from 'react';
+=======
+import React, { useEffect, useRef } from 'react';
+>>>>>>> cursor/install-dependencies-with-lockfile-mismatch-a802
 
 interface AccessibilityEnhancerProps {
   children: React.ReactNode;
+  role?: string;
+  'aria-label'?: string;
+  'aria-describedby'?: string;
+  'aria-expanded'?: boolean;
+  'aria-controls'?: string;
+  'aria-haspopup'?: boolean;
+  tabIndex?: number;
+  onKeyDown?: (event: React.KeyboardEvent) => void;
+  className?: string;
+  focusable?: boolean;
+  skipToContent?: boolean;
 }
 
+<<<<<<< HEAD
 export default function AccessibilityEnhancer({ children }: AccessibilityEnhancerProps) {
   const [isHighContrast, setIsHighContrast] = useState(false);
   const [isReducedMotion, setIsReducedMotion] = useState(false);
@@ -56,8 +72,31 @@ export default function AccessibilityEnhancer({ children }: AccessibilityEnhance
       root.style.removeProperty('--text-color');
       root.style.removeProperty('--bg-color');
       root.style.removeProperty('--accent-color');
-    }
+=======
+const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({
+  children,
+  role,
+  'aria-label': ariaLabel,
+  'aria-describedby': ariaDescribedby,
+  'aria-expanded': ariaExpanded,
+  'aria-controls': ariaControls,
+  'aria-haspopup': ariaHaspopup,
+  tabIndex,
+  onKeyDown,
+  className = '',
+  focusable = true,
+  skipToContent = false
+}) => {
+  const ref = useRef<HTMLDivElement>(null);
 
+  useEffect(() => {
+    if (skipToContent && ref.current) {
+      ref.current.focus();
+>>>>>>> cursor/install-dependencies-with-lockfile-mismatch-a802
+    }
+  }, [skipToContent]);
+
+<<<<<<< HEAD
     // Apply reduced motion
     if (isReducedMotion) {
       root.style.setProperty('--transition-duration', '0.01ms');
@@ -228,3 +267,59 @@ export default function AccessibilityEnhancer({ children }: AccessibilityEnhance
     </>
   );
 }
+=======
+  const handleKeyDown = (event: React.KeyboardEvent) => {
+    // Handle common keyboard interactions
+    switch (event.key) {
+      case 'Enter':
+      case ' ':
+        if (role === 'button' || role === 'link') {
+          event.preventDefault();
+          // Trigger click event
+          const clickEvent = new MouseEvent('click', {
+            bubbles: true,
+            cancelable: true,
+            view: window
+          });
+          event.currentTarget.dispatchEvent(clickEvent);
+        }
+        break;
+      case 'Escape':
+        if (ariaExpanded !== undefined) {
+          // Close dropdown or modal
+          event.preventDefault();
+          // You can add custom close logic here
+        }
+        break;
+      default:
+        break;
+    }
+
+    // Call custom onKeyDown handler
+    if (onKeyDown) {
+      onKeyDown(event);
+    }
+  };
+
+  const accessibilityProps = {
+    role,
+    'aria-label': ariaLabel,
+    'aria-describedby': ariaDescribedby,
+    'aria-expanded': ariaExpanded,
+    'aria-controls': ariaControls,
+    'aria-haspopup': ariaHaspopup,
+    tabIndex: focusable ? tabIndex : -1,
+    onKeyDown: handleKeyDown,
+    className: `${className} ${focusable ? 'focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2' : ''}`,
+    ref
+  };
+
+  return (
+    <div {...accessibilityProps}>
+      {children}
+    </div>
+  );
+};
+
+export default AccessibilityEnhancer;
+>>>>>>> cursor/install-dependencies-with-lockfile-mismatch-a802

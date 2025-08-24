@@ -1,5 +1,0 @@
-<<<<<<< HEAD
-export default function InnovationInEnterpriseTechnology() { return null }
-=======
-export default function Article8() { return <div className="p-6">Article</div>; }
->>>>>>> origin/cursor/build-developer-api-and-webhook-integration-62ab

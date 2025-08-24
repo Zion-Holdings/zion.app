@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 {
   "version": 1,
   "hasExportPathMap": false,
   "exportTrailingSlash": false,
   "isNextImageImported": false
 }
+=======
+{"version":1,"hasExportPathMap":false,"exportTrailingSlash":true,"isNextImageImported":false}
+>>>>>>> cursor/install-dependencies-with-lockfile-mismatch-a802

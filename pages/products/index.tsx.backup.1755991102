@@ -1,5 +1,0 @@
-<<<<<<< HEAD
-export default function ProductsIndex() { return null }
-=======
-export default function Products() { return <div className="p-6">Products</div>; }
->>>>>>> origin/cursor/build-developer-api-and-webhook-integration-62ab

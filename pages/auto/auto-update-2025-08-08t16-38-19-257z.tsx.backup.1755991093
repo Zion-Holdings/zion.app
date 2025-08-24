@@ -1,7 +1,0 @@
-<<<<<<< HEAD
-export default function AutoUpdatePage_163819257z() {
-  return <div className="py-10">Auto update snapshot page.</div>;
-}
-=======
-export default function AutoUpdate_163819() { return <div className="p-6">Auto Update</div>; }
->>>>>>> origin/cursor/build-community-forum-for-zion-ai-marketplace-7967

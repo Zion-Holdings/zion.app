@@ -133,7 +133,17 @@ export function updateNation(slug: string, update: Partial<Nation>): Nation | un
   const nations = loadAllNations();
   const index = nations.findIndex(n => n.slug === slug);
   if (index === -1) return undefined;
-  const updated: Nation = { ...nations[index], ...update, updatedAt: new Date().toISOString() };
+  const existingNation = nations[index];
+  if (!existingNation) return undefined;
+  const updated: Nation = { 
+    ...existingNation,
+    ...update,
+    // Preserve immutable fields
+    id: existingNation.id,
+    slug: existingNation.slug,
+    createdAt: existingNation.createdAt,
+    updatedAt: new Date().toISOString() 
+  };
   nations[index] = updated;
   saveAllNations(nations);
   return updated;

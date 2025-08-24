@@ -28,7 +28,7 @@ function isSupabaseConfigured() {
 
 export function useRealtimeMetrics() {
   const [data, setData] = useState<MetricsPayload | null>(null);
-  const intervalRef = useRef<NodeJS.Timer | null>(null);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     let isMounted = true;

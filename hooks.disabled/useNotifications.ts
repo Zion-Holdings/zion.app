@@ -140,7 +140,7 @@ export function useNotifications() {
         await supabase.from('notifications').update({ status: 'Viewed' }).eq('id', id);
       }
       setNotifications((prev) => {
-        const next = prev.map((n) => (n.id === id ? { ...n, status: 'Viewed' } : n));
+        const next = prev.map((n) => (n.id === id ? { ...n, status: 'Viewed' as NotificationStatus } : n));
         saveLocalNotifications(next);
         return next;
       });
@@ -153,7 +153,7 @@ export function useNotifications() {
         await supabase.from('notifications').update({ status: 'Viewed' }).neq('status', 'Viewed');
       }
       setNotifications((prev) => {
-        const next = prev.map((n) => ({ ...n, status: 'Viewed' }));
+        const next = prev.map((n) => ({ ...n, status: 'Viewed' as NotificationStatus }));
         saveLocalNotifications(next);
         return next;
       });

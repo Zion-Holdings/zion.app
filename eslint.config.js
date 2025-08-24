@@ -1,6 +1,7 @@
 import js from '@eslint/js';
-import typescript from '@typescript-eslint/eslint-plugin';
-import typescriptParser from '@typescript-eslint/parser';
+import react from 'eslint-plugin-react';
+import reactHooks from 'eslint-plugin-react-hooks';
+import reactRefresh from 'eslint-plugin-react-refresh';
 
 export default [
   js.configs.recommended,
@@ -9,16 +10,9 @@ export default [
     languageOptions: {
       ecmaVersion: 2020,
       sourceType: 'module',
-      parser: typescriptParser,
-      parserOptions: {
-        ecmaVersion: 2020,
-        sourceType: 'module',
-        ecmaFeatures: {
-          jsx: true
-        }
-      },
       globals: {
-        // Node.js globals
+        ...globals.browser,
+        ...globals.node,
         process: 'readonly',
         console: 'readonly',
         module: 'readonly',
@@ -28,90 +22,24 @@ export default [
         setTimeout: 'readonly',
         setInterval: 'readonly',
         clearTimeout: 'readonly',
-        clearInterval: 'readonly',
-        NodeJS: 'readonly',
-        // Browser globals
-        window: 'readonly',
-        document: 'readonly',
-        navigator: 'readonly',
-        fetch: 'readonly',
-        URL: 'readonly',
-        URLSearchParams: 'readonly',
-        File: 'readonly',
-        localStorage: 'readonly',
-        sessionStorage: 'readonly',
-        // Performance APIs
-        performance: 'readonly',
-        PerformanceObserver: 'readonly',
-        PerformanceEntry: 'readonly',
-        PerformanceNavigationTiming: 'readonly',
-        PerformanceEventTiming: 'readonly',
-        // Intersection Observer API
-        IntersectionObserver: 'readonly',
-        IntersectionObserverEntry: 'readonly',
-        IntersectionObserverCallback: 'readonly',
-        IntersectionObserverInit: 'readonly',
-        // DOM types
-        HTMLElement: 'readonly',
-        HTMLFormElement: 'readonly',
-        HTMLButtonElement: 'readonly',
-        HTMLInputElement: 'readonly',
-        HTMLTextAreaElement: 'readonly',
-        HTMLSelectElement: 'readonly',
-        HTMLDivElement: 'readonly',
-        HTMLAnchorElement: 'readonly',
-        HTMLCanvasElement: 'readonly',
-        HTMLImageElement: 'readonly',
-        // Event types
-        Event: 'readonly',
-        EventTarget: 'readonly',
-        MouseEvent: 'readonly',
-        KeyboardEvent: 'readonly',
-        MediaQueryListEvent: 'readonly',
-        TouchEvent: 'readonly',
-        // DOM types
-        Node: 'readonly',
-        NodeList: 'readonly',
-        Element: 'readonly',
-        EventTarget: 'readonly',
-        DOMRectReadOnly: 'readonly',
-        DOMRect: 'readonly',
-        DOMStringMap: 'readonly',
-        DOMTokenList: 'readonly',
-        // Intersection Observer
-        IntersectionObserver: 'readonly',
-        IntersectionObserverEntry: 'readonly',
-        // Touch types
-        Touch: 'readonly',
-        TouchList: 'readonly',
-        // Form types
-        FormData: 'readonly',
-        // Canvas and animation globals
-        CanvasRenderingContext2D: 'readonly',
-        requestAnimationFrame: 'readonly',
-        cancelAnimationFrame: 'readonly'
+        clearInterval: 'readonly'
+      },
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true
+        }
       }
     },
     plugins: {
-      '@typescript-eslint': typescript
+      react,
+      'react-hooks': reactHooks,
+      'react-refresh': reactRefresh
     },
     rules: {
-      // React rules
-      "react/react-in-jsx-scope": "off",
-      "react/prop-types": "off", // We use TypeScript
-      "react/display-name": "warn",
-      // Enable react-hooks rules for React 19 compatibility
-      "react-hooks/rules-of-hooks": "error",
-      "react-hooks/exhaustive-deps": "warn",
-      
-      // Basic accessibility rules
-      "jsx-a11y/alt-text": "error",
-      "jsx-a11y/aria-props": "error",
-    },
-    settings: {
-      react: {
-        version: "detect"
-      }
+      'no-unused-vars': 'warn',
+      'no-console': 'warn',
+      'react/jsx-uses-react': 'off',
+      'react/react-in-jsx-scope': 'off'
     }
   },
   {

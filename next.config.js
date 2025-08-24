@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+<<<<<<< HEAD
   
   // Performance optimizations
   experimental: {
@@ -10,6 +11,11 @@ const nextConfig = {
   },
 
   // Image optimization
+=======
+  swcMinify: true,
+  output: 'export',
+  trailingSlash: true,
+>>>>>>> cursor/install-dependencies-with-lockfile-mismatch-a802
   images: {
     domains: ['ziontechgroup.com'],
     formats: ['image/webp', 'image/avif'],
@@ -17,6 +23,7 @@ const nextConfig = {
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     minimumCacheTTL: 60 * 60 * 24 * 30, // 30 days
   },
+<<<<<<< HEAD
 
   // Headers for performance and security
   async headers() {
@@ -117,6 +124,11 @@ const nextConfig = {
   
   // Powered by header removal
   poweredByHeader: false,
+=======
+  compiler: {
+    removeConsole: process.env.NODE_ENV === "production",
+  },
+>>>>>>> cursor/install-dependencies-with-lockfile-mismatch-a802
 };
 
 module.exports = nextConfig;

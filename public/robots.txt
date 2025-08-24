@@ -1,11 +1,13 @@
 User-agent: *
 Allow: /
 
-# Sitemap
-Sitemap: https://ziontechgroup.com/sitemap.xml
+# Sitemaps
+Sitemap: https://zion.app/sitemap.xml
+Sitemap: https://zion.app/sitemap.txt
 
 # Crawl-delay
 Crawl-delay: 1
+<<<<<<< HEAD
 
 # Disallow admin and private areas
 Disallow: /admin/
@@ -20,3 +22,5 @@ Allow: /contact
 Allow: /services
 Allow: /technologies
 
+=======
+>>>>>>> cursor/install-dependencies-with-lockfile-mismatch-a802

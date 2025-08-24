@@ -75,7 +75,12 @@
     ],
     "jsx": "preserve",
     "noEmit": true,
+<<<<<<< HEAD
     "isolatedModules": true
+=======
+    "isolatedModules": true,
+    "forceConsistentCasingInFileNames": true
+>>>>>>> cursor/install-dependencies-with-lockfile-mismatch-a802
   },
   "include": [
     "next-env.d.ts",
@@ -85,9 +90,17 @@
   "exclude": [
     "node_modules",
     "zion.app/recovered-content/**",
+<<<<<<< HEAD
     "**/*.disabled/**",
     "__tests__.disabled/**",
     "plugins.disabled/**",
     "test.disabled/**"
+=======
+    "services.disabled.temp/**",
+    "data.temp/**",
+    "src_backup/**",
+    "**/*.disabled",
+    "**/*.disabled/**"
+>>>>>>> cursor/install-dependencies-with-lockfile-mismatch-a802
   ]
 }

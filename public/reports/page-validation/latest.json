@@ -1,5 +1,6 @@
 {
   "summary": {
+<<<<<<< HEAD
     "totalFiles": 36,
     "filesWithIssues": 36,
     "totalIssues": 31,
@@ -10,51 +11,88 @@
   "results": [
     {
       "file": "pages/_app.js",
+=======
+    "totalFiles": 4,
+    "filesWithIssues": 4,
+    "totalIssues": 0,
+    "totalWarnings": 4,
+    "buildBreakingFiles": 0,
+    "canBuild": true
+  },
+  "results": [
+    {
+      "file": "pages/api/email-validator.ts",
+>>>>>>> cursor/install-dependencies-with-lockfile-mismatch-a802
       "issues": [],
       "warnings": [
         {
           "type": "WARNING",
           "code": "INCOMPLETE_HTML",
           "message": "Incomplete HTML tags detected",
+<<<<<<< HEAD
           "line": 0,
+=======
+          "line": 81,
+>>>>>>> cursor/install-dependencies-with-lockfile-mismatch-a802
           "severity": "warning"
         }
       ]
     },
     {
+<<<<<<< HEAD
       "file": "pages/admin/kpi.tsx",
+=======
+      "file": "pages/api/password-strength.ts",
+>>>>>>> cursor/install-dependencies-with-lockfile-mismatch-a802
       "issues": [],
       "warnings": [
         {
           "type": "WARNING",
           "code": "INCOMPLETE_HTML",
           "message": "Incomplete HTML tags detected",
+<<<<<<< HEAD
           "line": 0,
+=======
+          "line": 68,
+>>>>>>> cursor/install-dependencies-with-lockfile-mismatch-a802
           "severity": "warning"
         }
       ]
     },
     {
+<<<<<<< HEAD
       "file": "pages/ai-consciousness-evolution-2025.tsx",
+=======
+      "file": "pages/api/text-analyzer.ts",
+>>>>>>> cursor/install-dependencies-with-lockfile-mismatch-a802
       "issues": [],
       "warnings": [
         {
           "type": "WARNING",
           "code": "INCOMPLETE_HTML",
           "message": "Incomplete HTML tags detected",
+<<<<<<< HEAD
           "line": 6,
+=======
+          "line": 71,
+>>>>>>> cursor/install-dependencies-with-lockfile-mismatch-a802
           "severity": "warning"
         }
       ]
     },
     {
+<<<<<<< HEAD
       "file": "pages/ai-customer-service-platform.tsx",
+=======
+      "file": "pages/api/url-shortener.ts",
+>>>>>>> cursor/install-dependencies-with-lockfile-mismatch-a802
       "issues": [],
       "warnings": [
         {
           "type": "WARNING",
           "code": "INCOMPLETE_HTML",
           "message": "Incomplete HTML tags detected",
+<<<<<<< HEAD
           "line": 6,
           "severity": "warning"
         }
@@ -700,11 +738,15 @@
           "code": "PAGE_TOO_SHORT",
           "message": "Page content seems too short, may be incomplete",
           "line": 0,
+=======
+          "line": 31,
+>>>>>>> cursor/install-dependencies-with-lockfile-mismatch-a802
           "severity": "warning"
         }
       ]
     }
   ],
+<<<<<<< HEAD
   "buildBreakingFiles": [
     "pages/features/ai-content-generation.tsx",
     "pages/franchise-portal/index.tsx",
@@ -719,4 +761,11 @@
     "pages/zion/ipfs.tsx"
   ],
   "generatedAt": "2025-08-24T03:18:48.442Z"
+=======
+  "results": [],
+  "buildBreakingFiles": [],
+  "generatedAt": "2025-08-20T19:21:03.555Z"
+=======
+  "generatedAt": "2025-08-20T20:44:48.331Z"
+>>>>>>> cursor/install-dependencies-with-lockfile-mismatch-a802
 }

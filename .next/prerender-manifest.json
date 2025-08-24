@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "version": 4,
   "routes": {},
@@ -9,3 +10,6 @@
   },
   "notFoundRoutes": []
 }
+=======
+{"version":4,"routes":{},"dynamicRoutes":{},"preview":{"previewModeId":"629887b26a07b2509a27061aeecd8ff6","previewModeSigningKey":"8aad68a4735be6b8c6a1760a238601540bffd5e19cc3c0c9700fac0ec205d37d","previewModeEncryptionKey":"5d2a205733798e77041e3ee7dd173eaed66e43b7eba192836c36f4ae52d08344"},"notFoundRoutes":[]}
+>>>>>>> cursor/install-dependencies-with-lockfile-mismatch-a802

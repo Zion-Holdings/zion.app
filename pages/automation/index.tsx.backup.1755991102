@@ -1,5 +1,0 @@
-<<<<<<< HEAD
-export default function AutomationIndex() { return null }
-=======
-export default function AutomationIndex() { return <div className="p-6">Automation</div>; }
->>>>>>> origin/cursor/build-developer-api-and-webhook-integration-62ab
