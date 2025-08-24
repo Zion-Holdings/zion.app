@@ -1,0 +1,28 @@
+export default function Callback(){
+import type { NextPage } from 'next';
+import Head from 'next/head';
+
+const Callback: NextPage = () => {
+  return (
+    <div>
+      <Head>
+        <title>Callback - Zion Tech Solutions</title>
+        <meta name="description" content="Callback page" />
+      </Head>
+      
+      <main>
+        <h1>Callback</h1>
+        <p>This page is under construction.</p>
+      </main>
+    </div>
+  );
+};
+
+export default function Callback() { return <div>Callback</div>; }
+=======
+export default Callback;
+=======
+  return <div className="max-w-3xl mx-auto p-6">Callback</div>;
+}
+=======
+export default function AuthCallbackPage() { return null }

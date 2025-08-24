@@ -1,0 +1,41 @@
+---
+name: agent-agent-1755381089846-4-testing-advanced
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: '0 */2 * * *'
+permissions:
+  contents: write
+  actions: read
+<<<<<<< HEAD:.github/workflows/backup-20250818-113801/agent-agent-1755381089846-4-testing-advanced.yml
+  pull-requests: write
+=======
+concurrency:
+  group: "agent-agent-1755381089846-4-testing-advanced-${{ github.ref }}"
+  cancel-in-progress: true
+
+>>>>>>> origin/cursor/check-and-fix-github-actions-workflows-efb2:.github/workflows/broken_workflows_backup_1755470975/agent-agent-1755381089846-4-testing-advanced.yml
+jobs:
+  main:
+    name: Main Job
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Run workflow
+        run: 'echo "Workflow Workflow completed successfully"
+
+        '
+concurrency:
+  group: agent-agent-1755381089846-4-testing-advanced.yml-${{ github.ref }}
+  cancel-in-progress: true

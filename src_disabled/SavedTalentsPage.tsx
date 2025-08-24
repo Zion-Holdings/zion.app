@@ -1,27 +1,36 @@
-
 import { useState, useEffect } from "react";
-import { AppHeader } from "@/components/layout/AppHeader";
-import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { TalentCard } from "@/components/talent/TalentCard";
 import { useAuth } from "@/hooks/useAuth";
 import { supabase } from "@/integrations/supabase/client";
 import { TalentProfile } from "@/types/talent";
 import { toast } from "@/components/ui/use-toast";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from 'next/router';
+import { logErrorToProduction } from '@/utils/productionLogger';
+import { EmptyState } from "@/components/ui/empty-state";
+import { Heart } from 'lucide-react'
+import { logInfo, logWarn } from '@/utils/productionLogger';
 
 export default function SavedTalentsPage() {
+
   const { user } = useAuth();
-  const [savedTalents, setSavedTalents] = useState([] as TalentProfile[]);
+  const [savedTalents, setSavedTalents] = useState<TalentProfile[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  const navigate = useNavigate();
+  const router = useRouter();
+  // Using router.asPath instead of useLocation
+
+  useEffect(() => {
+    if (!user) {
+      router.push(`/auth/login?returnTo=${encodeURIComponent(router.asPath)}`);
+    }
+  }, [user, router]);
 
   useEffect(() => {
     const fetchSavedTalents = async () => {
       setIsLoading(true);
       try {
         if (!user) {
-          console.warn("User not authenticated.");
+          logWarn("User not authenticated.");
           return;
         }
 
@@ -55,12 +64,12 @@ export default function SavedTalentsPage() {
         if (data) {
           // Extract talent profiles and convert to TalentProfile type
           const talentProfiles = data.map(
-            item => item.talent_profile as unknown as TalentProfile
+            (item: any) => item.talent_profile as unknown as TalentProfile
           );
           setSavedTalents(talentProfiles);
         }
       } catch (error) {
-        console.error("Error fetching saved talents:", error);
+        logErrorToProduction(error instanceof Error ? error.message : String(error), error instanceof Error ? error : undefined, { message: 'Error fetching saved talents' });
         toast({
           title: "Error",
           description: "Failed to load saved talents. Please try again later.",
@@ -75,11 +84,11 @@ export default function SavedTalentsPage() {
   }, [user]);
 
   const handleViewProfile = (talentId: string) => {
-    navigate(`/talent/${talentId}`);
+    router.push(`/talent/${talentId}`);
   };
 
   const handleRequestHire = (talent: TalentProfile) => {
-    console.log("Request to hire:", talent);
+    logInfo('Request to hire:', { data: talent });
     toast({
       title: "Hire Request Sent",
       description: `A hire request has been sent to ${talent.full_name}.`,
@@ -89,7 +98,7 @@ export default function SavedTalentsPage() {
   const handleToggleSave = async (talentId: string, isCurrentlySaved: boolean) => {
     try {
       if (!user) {
-        console.warn("User not authenticated.");
+        logWarn("User not authenticated.");
         return;
       }
   
@@ -130,7 +139,7 @@ export default function SavedTalentsPage() {
           .single();
   
         if (talentError) {
-          console.error("Error fetching talent profile:", talentError);
+          logErrorToProduction(talentError instanceof Error ? talentError.message : String(talentError), talentError instanceof Error ? talentError : undefined, { message: 'Error fetching talent profile' });
           toast({
             title: "Error",
             description: "Failed to update saved talents. Please try again later.",
@@ -148,7 +157,7 @@ export default function SavedTalentsPage() {
         }
       }
     } catch (error) {
-      console.error("Error toggling saved talent:", error);
+      logErrorToProduction(error instanceof Error ? error.message : String(error), error instanceof Error ? error : undefined, { message: 'Error toggling saved talent' });
       toast({
         title: "Error",
         description: "Failed to update saved talents. Please try again later.",
@@ -163,7 +172,6 @@ export default function SavedTalentsPage() {
         title="Saved Talents | Zion AI Marketplace"
         description="View and manage your saved talents in the Zion AI Marketplace"
       />
-      <AppHeader />
       <div className="container mx-auto px-4 py-8">
         <h1 className="text-3xl font-bold mb-4">Saved Talents</h1>
         <p className="text-muted-foreground">
@@ -173,7 +181,15 @@ export default function SavedTalentsPage() {
         {isLoading ? (
           <div className="text-center py-8">Loading saved talents...</div>
         ) : savedTalents.length === 0 ? (
-          <div className="text-center py-8">No talents saved yet.</div>
+          <div className="py-8">
+            <EmptyState
+              icon={<Heart className="h-8 w-8" />}
+              title="No Saved Talents"
+              description="You haven't saved any talents yet."
+              action={{ text: 'Browse Talent', href: '/talent' }}
+              className="border-none bg-transparent text-center"
+            />
+          </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
             {savedTalents.map((talent) => (
@@ -182,15 +198,12 @@ export default function SavedTalentsPage() {
                 talent={talent}
                 onViewProfile={handleViewProfile}
                 onRequestHire={handleRequestHire}
-                isSaved={true}
-                onToggleSave={handleToggleSave}
                 isAuthenticated={!!user}
               />
             ))}
           </div>
         )}
       </div>
-      <Footer />
     </>
   );
 }

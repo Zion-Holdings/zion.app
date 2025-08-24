@@ -4,11 +4,9 @@ export class TestingSystem {
       case 'click':
         element.click();
         break;
-      case 'type':
-        // Implement typing behavior in tests as needed
+      case 'type': // Handle typing
         break;
-      case 'hover':
-        // Implement hover behavior in tests as needed
+      case 'hover': // Handle hover
         break;
     }
   }

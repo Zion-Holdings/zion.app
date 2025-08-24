@@ -1,0 +1,722 @@
+<<<<<<< HEAD
+import Link from 'next/link';
+
+export default function QuantumNeuralNetworkPlatformPage() {
+  const platformFeatures = [
+    {
+      title: 'Quantum-Classical Hybrid Architecture',
+      description: 'Seamlessly integrates quantum processing with classical computing for optimal performance',
+      benefits: [
+        'Enhanced computational power',
+        'Faster training times',
+        'Improved accuracy',
+        'Scalable architecture'
+      ]
+    },
+    {
+      title: 'Advanced Quantum Algorithms',
+      description: 'State-of-the-art quantum algorithms optimized for neural network operations',
+      benefits: [
+        'Quantum advantage',
+        'Efficient optimization',
+        'Novel computational approaches',
+        'Research-driven innovation'
+      ]
+    },
+    {
+      title: 'Real-time Processing',
+      description: 'Ultra-fast processing capabilities for real-time AI applications',
+      benefits: [
+        'Instant decision making',
+        'Live data processing',
+        'Minimal latency',
+        'High throughput'
+      ]
+    },
+    {
+      title: 'Scalable Infrastructure',
+      description: 'Cloud-based quantum computing infrastructure that scales with your needs',
+      benefits: [
+        'Pay-per-use pricing',
+        'Global accessibility',
+        'Enterprise security',
+        'Automatic scaling'
+      ]
+    }
+  ];
+
+  const applications = [
+    {
+      category: 'Financial Services',
+      useCases: [
+        'Portfolio Optimization',
+        'Risk Assessment',
+        'Algorithmic Trading',
+        'Fraud Detection',
+        'Credit Scoring'
+      ]
+    },
+    {
+      category: 'Healthcare & Life Sciences',
+      useCases: [
+        'Drug Discovery',
+        'Protein Folding',
+        'Medical Imaging',
+        'Genomic Analysis',
+        'Clinical Trials'
+      ]
+    },
+    {
+      category: 'Logistics & Supply Chain',
+      useCases: [
+        'Route Optimization',
+        'Inventory Management',
+        'Demand Forecasting',
+        'Warehouse Optimization',
+        'Transportation Planning'
+      ]
+    },
+    {
+      category: 'Energy & Utilities',
+      useCases: [
+        'Grid Optimization',
+        'Renewable Energy',
+        'Load Balancing',
+        'Predictive Maintenance',
+        'Energy Trading'
+      ]
+    }
+  ];
+
+  const technologySpecs = [
+    {
+      category: 'Quantum Processing',
+      specs: [
+        'Quantum Bits (Qubits): 50-1000+',
+        'Quantum Volume: 1000+',
+        'Coherence Time: 100+ microseconds',
+        'Gate Fidelity: 99.9%+',
+        'Error Correction: Surface code'
+      ]
+    },
+    {
+      category: 'Classical Integration',
+      specs: [
+        'CPU: Multi-core processors',
+        'GPU: CUDA-enabled graphics cards',
+        'Memory: 128GB+ RAM',
+        'Storage: NVMe SSDs',
+        'Network: 100Gbps+ connectivity'
+      ]
+    },
+    {
+      category: 'Software Stack',
+      specs: [
+        'Quantum SDK: Qiskit, Cirq',
+        'ML Frameworks: TensorFlow, PyTorch',
+        'Optimization: Qiskit Optimization',
+        'Simulation: Qiskit Aer',
+        'Development: Python, Julia'
+      ]
+    },
+    {
+      category: 'Security & Compliance',
+      specs: [
+        'Encryption: AES-256',
+        'Authentication: Multi-factor',
+        'Compliance: SOC 2, ISO 27001',
+        'Audit: Full audit trail',
+        'Privacy: GDPR compliant'
+      ]
+    }
+  ];
+
+  const performanceMetrics = [
+    {
+      metric: '10x-100x',
+      label: 'Speed Improvement',
+      description: 'Compared to classical neural networks'
+    },
+    {
+      metric: '99.9%',
+      label: 'Accuracy',
+      description: 'In complex optimization problems'
+    },
+    {
+      metric: '<1ms',
+      label: 'Latency',
+      description: 'For real-time applications'
+    },
+    {
+      metric: '24/7',
+      label: 'Uptime',
+      description: 'Continuous quantum processing'
+    }
+  ];
+
+  return (
+    <div className="min-h-screen py-20 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        {/* Hero Section */}
+        <div className="text-center mb-20">
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+            <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">Quantum Neural Network</span> Platform
+          </h1>
+          <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+            Experience the future of computing with our revolutionary quantum neural network platform. 
+            Harness the power of quantum mechanics to solve complex problems that were previously impossible.
+          </p>
+        </div>
+
+        {/* What is Quantum Neural Networks */}
+        <div className="bg-black/20 p-8 rounded-2xl border border-white/10 mb-20">
+          <h2 className="text-4xl font-bold text-white mb-6">What are Quantum Neural Networks?</h2>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div>
+              <p className="text-gray-300 leading-relaxed mb-6">
+                Quantum Neural Networks (QNNs) represent the convergence of quantum computing and artificial intelligence. 
+                By leveraging quantum mechanical phenomena like superposition and entanglement, QNNs can process information 
+                in ways that classical computers cannot.
+              </p>
+              <p className="text-gray-300 leading-relaxed">
+                Our platform combines the best of both worlds: quantum processing for complex computations and classical 
+                computing for practical applications, creating a hybrid system that delivers unprecedented performance.
+              </p>
+            </div>
+            <div className="bg-gradient-to-r from-purple-900/20 to-blue-900/20 p-6 rounded-xl border border-white/10">
+              <h3 className="text-xl font-semibold text-white mb-4">Quantum Advantages</h3>
+              <ul className="space-y-2">
+                <li className="text-gray-300 flex items-center">
+                  <span className="text-purple-400 mr-2">⚛️</span>
+                  Quantum superposition
+                </li>
+                <li className="text-gray-300 flex items-center">
+                  <span className="text-purple-400 mr-2">🔗</span>
+                  Quantum entanglement
+                </li>
+                <li className="text-gray-300 flex items-center">
+                  <span className="text-purple-400 mr-2">📊</span>
+                  Parallel processing
+                </li>
+                <li className="text-gray-300 flex items-center">
+                  <span className="text-purple-400 mr-2">🚀</span>
+                  Exponential speedup
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* Platform Features */}
+        <div className="mb-20">
+          <h2 className="text-4xl font-bold text-white text-center mb-12">Platform Features</h2>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {platformFeatures.map((feature, index) => (
+              <div key={index} className="bg-black/20 p-8 rounded-2xl border border-white/10 hover:border-white/20 transition-all duration-200">
+                <h3 className="text-2xl font-semibold text-white mb-4">{feature.title}</h3>
+                <p className="text-gray-300 mb-6 leading-relaxed">{feature.description}</p>
+                
+                <div className="mb-4">
+                  <h4 className="text-purple-400 font-medium mb-3">Key Benefits:</h4>
+                  <ul className="space-y-2">
+                    {feature.benefits.map((benefit, benefitIndex) => (
+                      <li key={benefitIndex} className="text-gray-300 text-sm flex items-center">
+                        <span className="text-purple-400 mr-2">•</span>
+                        {benefit}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Applications */}
+        <div className="mb-20">
+          <h2 className="text-4xl font-bold text-white text-center mb-12">Industry Applications</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {applications.map((application, index) => (
+              <div key={index} className="bg-gradient-to-r from-purple-900/20 to-blue-900/20 p-6 rounded-xl border border-white/10">
+                <h3 className="text-xl font-semibold text-white mb-4">{application.category}</h3>
+                <ul className="space-y-2">
+                  {application.useCases.map((useCase, useCaseIndex) => (
+                    <li key={useCaseIndex} className="text-gray-300 text-sm flex items-center">
+                      <span className="text-purple-400 mr-2">•</span>
+                      {useCase}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Performance Metrics */}
+        <div className="mb-20">
+          <h2 className="text-4xl font-bold text-white text-center mb-12">Performance Metrics</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {performanceMetrics.map((metric, index) => (
+              <div key={index} className="bg-black/20 p-6 rounded-xl border border-white/10 text-center">
+                <div className="text-4xl font-bold text-purple-400 mb-2">{metric.metric}</div>
+                <div className="text-white font-semibold mb-2">{metric.label}</div>
+                <div className="text-gray-300 text-sm">{metric.description}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Technology Specifications */}
+        <div className="mb-20">
+          <h2 className="text-4xl font-bold text-white text-center mb-12">Technology Specifications</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {technologySpecs.map((tech, index) => (
+              <div key={index} className="bg-black/20 p-6 rounded-xl border border-white/10">
+                <h3 className="text-xl font-semibold text-white mb-4">{tech.category}</h3>
+                <ul className="space-y-2">
+                  {tech.specs.map((spec, specIndex) => (
+                    <li key={specIndex} className="text-gray-300 text-sm flex items-center">
+                      <span className="text-blue-400 mr-2">•</span>
+                      {spec}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Implementation Process */}
+        <div className="bg-gradient-to-r from-purple-900/20 to-blue-900/20 p-8 rounded-2xl border border-white/10 mb-20">
+          <h2 className="text-4xl font-bold text-white text-center mb-12">Implementation Process</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-white font-bold text-xl">1</span>
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-2">Assessment</h3>
+              <p className="text-gray-300 text-sm">Evaluate quantum computing needs and use cases</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-white font-bold text-xl">2</span>
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-2">Design</h3>
+              <p className="text-gray-300 text-sm">Design quantum-classical hybrid architecture</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-white font-bold text-xl">3</span>
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-2">Development</h3>
+              <p className="text-gray-300 text-sm">Develop and optimize quantum algorithms</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-white font-bold text-xl">4</span>
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-2">Deployment</h3>
+              <p className="text-gray-300 text-sm">Deploy on quantum cloud infrastructure</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Pricing Tiers */}
+        <div className="mb-20">
+          <h2 className="text-4xl font-bold text-white text-center mb-12">Pricing Tiers</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-black/20 p-8 rounded-2xl border border-white/10 text-center">
+              <h3 className="text-2xl font-semibold text-white mb-4">Starter</h3>
+              <div className="text-4xl font-bold text-purple-400 mb-6">$999<span className="text-lg text-gray-400">/month</span></div>
+              <ul className="space-y-3 mb-8 text-left">
+                <li className="text-gray-300 flex items-center">
+                  <span className="text-purple-400 mr-2">✓</span>
+                  100 quantum operations/month
+                </li>
+                <li className="text-gray-300 flex items-center">
+                  <span className="text-purple-400 mr-2">✓</span>
+                  Basic quantum algorithms
+                </li>
+                <li className="text-gray-300 flex items-center">
+                  <span className="text-purple-400 mr-2">✓</span>
+                  Email support
+                </li>
+                <li className="text-gray-300 flex items-center">
+                  <span className="text-purple-400 mr-2">✓</span>
+                  API access
+                </li>
+              </ul>
+              <Link
+                href="/contact"
+                className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 transform hover:scale-105"
+              >
+                Get Started
+              </Link>
+            </div>
+
+            <div className="bg-gradient-to-r from-purple-900/20 to-blue-900/20 p-8 rounded-2xl border border-purple-500/30 text-center relative">
+              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-purple-500 to-blue-500 text-white px-4 py-2 rounded-full text-sm font-medium">
+                Most Popular
+              </div>
+              <h3 className="text-2xl font-semibold text-white mb-4">Professional</h3>
+              <div className="text-4xl font-bold text-purple-400 mb-6">$2,999<span className="text-lg text-gray-400">/month</span></div>
+              <ul className="space-y-3 mb-8 text-left">
+                <li className="text-gray-300 flex items-center">
+                  <span className="text-purple-400 mr-2">✓</span>
+                  1,000 quantum operations/month
+                </li>
+                <li className="text-gray-300 flex items-center">
+                  <span className="text-purple-400 mr-2">✓</span>
+                  Advanced quantum algorithms
+                </li>
+                <li className="text-gray-300 flex items-center">
+                  <span className="text-purple-400 mr-2">✓</span>
+                  Priority support
+                </li>
+                <li className="text-gray-300 flex items-center">
+                  <span className="text-purple-400 mr-2">✓</span>
+                  Custom integrations
+                </li>
+                <li className="text-gray-300 flex items-center">
+                  <span className="text-purple-400 mr-2">✓</span>
+                  Training & consultation
+                </li>
+              </ul>
+              <Link
+                href="/contact"
+                className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 transform hover:scale-105"
+              >
+                Get Started
+              </Link>
+            </div>
+
+            <div className="bg-black/20 p-8 rounded-2xl border border-white/10 text-center">
+              <h3 className="text-2xl font-semibold text-white mb-4">Enterprise</h3>
+              <div className="text-4xl font-bold text-purple-400 mb-6">Custom</div>
+              <ul className="space-y-3 mb-8 text-left">
+                <li className="text-gray-300 flex items-center">
+                  <span className="text-purple-400 mr-2">✓</span>
+                  Unlimited quantum operations
+                </li>
+                <li className="text-gray-300 flex items-center">
+                  <span className="text-purple-400 mr-2">✓</span>
+                  Custom quantum algorithms
+                </li>
+                <li className="text-gray-300 flex items-center">
+                  <span className="text-purple-400 mr-2">✓</span>
+                  24/7 dedicated support
+                </li>
+                <li className="text-gray-300 flex items-center">
+                  <span className="text-purple-400 mr-2">✓</span>
+                  On-premise deployment
+                </li>
+                <li className="text-gray-300 flex items-center">
+                  <span className="text-purple-400 mr-2">✓</span>
+                  SLA guarantees
+                </li>
+              </ul>
+              <Link
+                href="/contact"
+                className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 transform hover:scale-105"
+              >
+                Contact Sales
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* CTA */}
+        <div className="text-center">
+          <h2 className="text-3xl font-bold text-white mb-6">Ready for Quantum Computing?</h2>
+          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+            Experience the future of computing with our quantum neural network platform. 
+            Transform your business with unprecedented computational power.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/contact"
+              className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 transform hover:scale-105"
+            >
+              Schedule a Demo
+            </Link>
+            <Link
+              href="/quantum-computing"
+              className="border border-white/20 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white/10 transition-all duration-200"
+            >
+              Learn More
+            </Link>
+          </div>
+        </div>
+      </div>
+=======
+import Link from "next/link";
+
+export const metadata = {
+  title: "Quantum Neural Network Platform - Zion Tech Group",
+  description: "Harness the power of quantum computing with our advanced neural network platform. Solve complex problems with quantum-enhanced AI that outperforms classical computing.",
+  keywords: "quantum neural networks, quantum computing, quantum AI, quantum machine learning, Zion Tech Group",
+};
+
+export default function QuantumNeuralNetworkPlatformPage() {
+  return (
+    <div className="min-h-screen py-20">
+      {/* Hero Section */}
+      <section className="px-4 sm:px-6 lg:px-8 mb-20">
+        <div className="max-w-7xl mx-auto text-center">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            <span className="gradient-text">Quantum Neural Network Platform</span>
+          </h1>
+          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
+            Revolutionize AI with quantum-enhanced neural networks that solve previously intractable problems and unlock new computational frontiers.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/contact" className="btn-primary text-lg px-8 py-4">
+              Get Access
+            </Link>
+              <Link href="/quantum-services" className="btn-secondary text-lg px-8 py-4">
+                Explore Quantum Services
+              </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Platform Overview */}
+      <section className="px-4 sm:px-6 lg:px-8 mb-20">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Quantum-Powered AI Platform
+            </h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              Our quantum neural network platform combines the best of quantum computing and artificial intelligence to deliver unprecedented computational power
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Quantum Processing Units */}
+            <div className="card group">
+              <div className="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-500/30 transition-colors">
+                <svg className="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Quantum Processing Units</h3>
+              <p className="text-gray-400">
+                Advanced QPUs that leverage quantum superposition and entanglement for exponential computational speedup.
+              </p>
+            </div>
+
+            {/* Hybrid Quantum-Classical */}
+            <div className="card group">
+              <div className="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-500/30 transition-colors">
+                <svg className="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Hybrid Architecture</h3>
+              <p className="text-gray-400">
+                Seamless integration between quantum and classical computing resources for optimal performance.
+              </p>
+            </div>
+
+            {/* Quantum Error Correction */}
+            <div className="card group">
+              <div className="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-green-500/30 transition-colors">
+                <svg className="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Error Correction</h3>
+              <p className="text-gray-400">
+                Advanced quantum error correction algorithms that maintain coherence and accuracy in quantum computations.
+              </p>
+            </div>
+
+            {/* Neural Network Optimization */}
+            <div className="card group">
+              <div className="w-12 h-12 bg-yellow-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-yellow-500/30 transition-colors">
+                <svg className="w-6 h-6 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Neural Optimization</h3>
+              <p className="text-gray-400">
+                Quantum-enhanced training algorithms that optimize neural network architectures and parameters.
+              </p>
+            </div>
+
+            {/* Quantum Algorithms */}
+            <div className="card group">
+              <div className="w-12 h-12 bg-red-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-red-500/30 transition-colors">
+                <svg className="w-6 h-6 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Quantum Algorithms</h3>
+              <p className="text-gray-400">
+                Library of quantum algorithms including Grover's, Shor's, and quantum machine learning variants.
+              </p>
+            </div>
+
+            {/* Scalable Infrastructure */}
+            <div className="card group">
+              <div className="w-12 h-12 bg-indigo-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-indigo-500/30 transition-colors">
+                <svg className="w-6 h-6 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Scalable Infrastructure</h3>
+              <p className="text-gray-400">
+                Cloud-based quantum computing infrastructure that scales from research to enterprise applications.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Applications Section */}
+      <section className="px-4 sm:px-6 lg:px-8 mb-20 bg-gradient-to-r from-purple-600/10 to-pink-600/10 py-20">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Revolutionary Applications
+            </h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              Discover how quantum neural networks are transforming industries and solving previously impossible problems
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Drug Discovery */}
+            <div className="card bg-gradient-to-r from-purple-600/20 to-pink-600/20 border-purple-500/30">
+              <h3 className="text-2xl font-bold mb-4">Drug Discovery & Development</h3>
+              <p className="text-gray-300 mb-6">
+                Accelerate pharmaceutical research with quantum-enhanced molecular modeling and protein folding simulations.
+              </p>
+              <ul className="text-gray-300 space-y-2 mb-6">
+                <li>• Molecular dynamics simulation</li>
+                <li>• Protein structure prediction</li>
+                <li>• Drug-target interaction modeling</li>
+                <li>• Quantum chemistry calculations</li>
+              </ul>
+            </div>
+
+            {/* Financial Modeling */}
+            <div className="card bg-gradient-to-r from-blue-600/20 to-purple-600/20 border-blue-500/30">
+              <h3 className="text-2xl font-bold mb-4">Financial Modeling & Risk</h3>
+              <p className="text-gray-300 mb-6">
+                Revolutionize financial analysis with quantum-powered risk assessment and portfolio optimization.
+              </p>
+              <ul className="text-gray-300 space-y-2 mb-6">
+                <li>• Portfolio optimization</li>
+                <li>• Risk assessment models</li>
+                <li>• Monte Carlo simulations</li>
+                <li>• Market prediction algorithms</li>
+              </ul>
+            </div>
+
+            {/* Climate Modeling */}
+            <div className="card bg-gradient-to-r from-green-600/20 to-blue-600/20 border-green-500/30">
+              <h3 className="text-2xl font-bold mb-4">Climate & Weather Prediction</h3>
+              <p className="text-gray-300 mb-6">
+                Advanced climate modeling with quantum-enhanced atmospheric simulations and weather forecasting.
+              </p>
+              <ul className="text-gray-300 space-y-2 mb-6">
+                <li>• Atmospheric modeling</li>
+                <li>• Ocean circulation patterns</li>
+                <li>• Extreme weather prediction</li>
+                <li>• Climate change impact analysis</li>
+              </ul>
+            </div>
+
+            {/* AI Training */}
+            <div className="card bg-gradient-to-r from-yellow-600/20 to-red-600/20 border-yellow-500/30">
+              <h3 className="text-2xl font-bold mb-4">AI Model Training</h3>
+              <p className="text-gray-300 mb-6">
+                Train complex AI models faster and more efficiently with quantum-enhanced optimization algorithms.
+              </p>
+              <ul className="text-gray-300 space-y-2 mb-6">
+                <li>• Neural network optimization</li>
+                <li>• Hyperparameter tuning</li>
+                <li>• Feature selection</li>
+                <li>• Model compression</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Technical Specifications */}
+      <section className="px-4 sm:px-6 lg:px-8 mb-20">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Technical Specifications
+            </h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              Built with cutting-edge quantum technology and designed for maximum performance and reliability
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-purple-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-purple-400">100+</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Qubits</h3>
+              <p className="text-gray-400">High-fidelity quantum bits for complex computations</p>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-blue-400">99.9%</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Fidelity</h3>
+              <p className="text-gray-400">Quantum gate fidelity ensuring accurate results</p>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-green-400">1000x</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Speedup</h3>
+              <p className="text-gray-400">Performance improvement over classical methods</p>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-16 h-16 bg-red-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-red-400">24/7</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Availability</h3>
+              <p className="text-gray-400">Continuous platform availability and support</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="card bg-gradient-to-r from-purple-600/20 to-pink-600/20 border-purple-500/30">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Ready to Experience Quantum AI?
+            </h2>
+            <p className="text-xl text-gray-300 mb-8">
+              Join the quantum revolution and unlock computational power that was previously impossible. 
+              Our platform is ready to transform your research and business applications.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/contact" className="btn-primary text-lg px-8 py-4">
+                Get Platform Access
+              </Link>
+              <Link href="/quantum-services" className="btn-secondary text-lg px-8 py-4">
+                Explore All Quantum Services
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+>>>>>>> origin/cursor/website-audit-and-enhancement-ce0d
+    </div>
+  );
+}

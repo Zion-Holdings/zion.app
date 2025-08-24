@@ -2,7 +2,7 @@ name: Automation Health Ultimate
 
 on:
   schedule:
-    - cron: '*/20 * * * *'  # Every 20 minutes
+    - cron: '*/20 * * * *' # Every 20 minutes
   workflow_dispatch:
     inputs:
       force_run:

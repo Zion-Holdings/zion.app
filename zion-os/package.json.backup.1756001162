@@ -1,0 +1,39 @@
+{
+  "name": "zion-tech-group-website",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3000",
+    "build": "next build",
+    "start": "next start -p 3000",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@auth/prisma-adapter": "^2.10.0",
+    "@prisma/client": "5.16.1",
+    "bcryptjs": "2.4.3",
+    "jsonwebtoken": "9.0.2",
+    "next": "14.2.5",
+    "react": "18.3.1",
+<<<<<<< HEAD
+    "react-dom": "18.3.1"
+=======
+    "react-dom": "18.3.1",
+    "uuid": "9.0.1",
+    "zod": "3.23.8",
+    "lucide-react": "^0.263.1",
+    "framer-motion": "^10.16.4",
+    "@headlessui/react": "^1.7.17"
+>>>>>>> origin/cursor/website-audit-and-enhancement-8931
+  },
+  "devDependencies": {
+    "@types/node": "24.2.1",
+    "@types/react": "19.1.9",
+    "autoprefixer": "10.4.20",
+    "eslint": "8.57.0",
+    "eslint-config-next": "14.2.5",
+    "postcss": "8.4.40",
+    "tailwindcss": "3.4.7",
+    "typescript": "5.4.5"
+  }
+}

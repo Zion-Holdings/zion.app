@@ -42,7 +42,7 @@ export interface InnovativeBusinessSolution {
 }
 
 export const innovativeBusinessSolutions2025: InnovativeBusinessSolution[] = [
-  // AI-Powered Business Intelligence Suite
+  // AI Business Intelligence Suite
   {
     id: 'ai-business-intelligence-suite',
     name: 'AI Business Intelligence Suite',
@@ -150,7 +150,7 @@ export const innovativeBusinessSolutions2025: InnovativeBusinessSolution[] = [
 
   // AI Sales Intelligence Platform
   {
-    id: 'ai-sales-intelligence-platform',
+    id: 'ai-sales-intelligence-platform-v2',
     name: 'AI Sales Intelligence Platform',
     tagline: 'Intelligent sales optimization and revenue acceleration',
     price: '$3,500',

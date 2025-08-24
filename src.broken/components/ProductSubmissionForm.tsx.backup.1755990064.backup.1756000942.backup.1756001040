@@ -1,0 +1,208 @@
+import React from 'react';
+export function ProductSubmissionForm() {
+<<<<<<< HEAD
+  const { user } = useAuth();
+  const { toast } = useToast();
+  const router = useRouter();
+  const [isSubmitting, setIsSubmitting] = React.useState(false);
+  const [imagePreview, setImagePreview] = React.useState(null as string | null);
+  const [activeTab, setActiveTab] = React.useState("manual");
+  
+  // Initialize the form
+  const form = useForm<ProductFormValues>({
+    resolver: zodResolver(productSchema),
+    defaultValues: {
+      title: "",
+      description: "",
+      price: "",
+      category: "",
+      video: undefined,
+      model: undefined,
+      tags: "",
+    },
+  });
+  
+  // Handle image upload preview
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      form.setValue("image", file);
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setImagePreview(reader.result as string);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const handleVideoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      form.setValue("video", file);
+    }
+  };
+
+  const handleModelChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      form.setValue("model", file);
+    }
+  };
+
+  // Apply AI-generated content to the form
+  const handleApplyGenerated = (content: any) => {
+    form.setValue("description", content.description);
+    form.setValue("tags", content.tags.join(", "));
+    
+    // Set a default price as the middle of the suggested range
+    const averagePrice = ((content.suggestedPrice.min + content.suggestedPrice.max) / 2).toFixed(2);
+    form.setValue("price", averagePrice);
+    
+    // Switch to the manual tab to show applied content
+    setActiveTab("manual");
+  };
+
+  // Handle form submission
+  const onSubmit = async (values: ProductFormValues) => {
+    if (!user) {
+      toast({
+        title: "Authentication required",
+        description: "You must be logged in to submit a product.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    if (!supabase) {
+      toast({
+        title: "Database connection error",
+        description: "Unable to connect to the database. Please try again later.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+    try {
+      const productData = {
+        title: values.title,
+        description: values.description,
+        price: values.price,
+        category: values.category,
+        tags: values.tags,
+        seller: {
+          id: user.id,
+        },
+        createdAt: new Date().toISOString(),
+      };
+      
+      const { data: productRecord, error: productError } = await supabase
+        .from('product_listings')
+        .insert([productData])
+        .select('id')
+        .single();
+        
+      if (productError) {
+        throw new Error(productError.message);
+      }
+
+      let imagePublicUrl: string | undefined;
+
+      // If we have an image, upload it
+      if (values.image) {
+        const imagePath = `product_images/${productRecord.id}/${values.image.name}`;
+        const { error: uploadError } = await supabase.storage
+          .from('products')
+          .upload(imagePath, values.image);
+          
+        if (uploadError) {
+          throw new Error(uploadError.message);
+        }
+        
+        // Get the public URL for the image
+        const { data: publicUrlData } = supabase.storage
+          .from('products')
+          .getPublicUrl(imagePath);
+        imagePublicUrl = publicUrlData.publicUrl;
+          
+        // Update the product with the image URL
+        const { error: updateError } = await supabase
+          .from('product_listings')
+          .update({
+            images: [imagePublicUrl]
+          })
+          .eq('id', productRecord.id);
+          
+      if (updateError) {
+        throw new Error(updateError.message);
+      }
+    }
+
+      // Upload video if provided
+      if (values.video) {
+        const videoPath = `product_videos/${productRecord.id}/${values.video.name}`;
+        const { error: uploadError } = await supabase.storage
+          .from('products')
+          .upload(videoPath, values.video);
+
+        if (uploadError) {
+          throw new Error(uploadError.message);
+        }
+
+        const { data: publicUrlData } = supabase.storage
+          .from('products')
+          .getPublicUrl(videoPath);
+
+        const { error: updateError } = await supabase
+          .from('product_listings')
+          .update({ video_url: publicUrlData.publicUrl })
+          .eq('id', productRecord.id);
+
+        if (updateError) {
+          throw new Error(updateError.message);
+        }
+      }
+
+      // Send listing to moderation service
+      try {
+        await supabase.functions.invoke('moderate-listing', {
+          body: {
+            listingId: productRecord.id,
+            listingType: 'product',
+            description: values.description,
+            images: imagePublicUrl ? [imagePublicUrl] : [],
+            sellerId: user.id,
+          }
+        });
+      } catch (err) {
+        console.error('Error invoking moderation:', err);
+      }
+      
+      // Show success message
+      toast({
+        title: "Product Published!",
+        description: "Your product has been successfully published on Zion.",
+      });
+      
+      // Redirect to product page
+      router.push(`/marketplace/listing/${productRecord.id}`);
+    } catch (error) {
+      toast({
+        title: "Publication Failed",
+        description: error instanceof Error ? error.message : "An unknown error occurred",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+=======
+>>>>>>> origin/automation-error-fixes
+  return (
+    <div>
+      <h1>Component</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

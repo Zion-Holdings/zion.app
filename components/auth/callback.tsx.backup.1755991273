@@ -1,0 +1,1 @@
+export default function Callback() { return <div className="p-8">Auth Callback</div>; }

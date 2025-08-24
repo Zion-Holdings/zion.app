@@ -1,0 +1,25 @@
+{
+  "greeting": "Hello, {{name}}!",
+  "nav": {
+    "home": "Home",
+    "marketplace": "Marketplace",
+    "marketplace_overview": "Overview",
+    "categories": "Categories",
+    "talent": "Talent",
+    "equipment": "Equipment",
+    "community": "Community",
+    "community_overview": "Overview",
+    "blog": "Blog",
+    "partners": "Partners",
+    "resources": "Resources",
+    "docs": "Docs",
+    "tutorials": "Tutorials",
+    "case_studies": "Case Studies",
+    "about": "About",
+    "dashboard": "Dashboard",
+    "analytics": "Analytics",
+    "cart": "Cart"
+  },
+  "login": "Login",
+  "signup": "Sign up"
+}

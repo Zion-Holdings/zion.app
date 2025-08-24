@@ -174,7 +174,7 @@ export default function UltraFuturisticNavigation2030() {
             <div className="flex items-center space-x-4">
               <Link href="/" className="flex items-center space-x-3 group">
                 <div className="relative">
-                  <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-xl flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-xl flex items-center justify-center transform group-hover:shadow-lg hover:shadow-cyan-400/40 transition-transform duration-300">
                     <Zap className="w-6 h-6 text-white" />
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-xl blur-lg opacity-50 group-hover:opacity-75 transition-opacity duration-300"></div>
@@ -255,7 +255,7 @@ export default function UltraFuturisticNavigation2030() {
             <div className="hidden lg:flex items-center space-x-4">
               <Link
                 href="/contact"
-                className="px-6 py-2 bg-gradient-to-r from-purple-500 to-cyan-500 text-white rounded-lg hover:from-purple-600 hover:to-cyan-600 transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-purple-500/25"
+                className="px-6 py-2 bg-gradient-to-r from-purple-500 to-cyan-500 text-white rounded-lg hover:from-purple-600 hover:to-cyan-600 transition-all duration-200 transform hover:shadow-xl hover:shadow-cyan-500/30 shadow-lg hover:shadow-purple-500/25"
               >
                 Get Started
               </Link>
@@ -313,7 +313,7 @@ export default function UltraFuturisticNavigation2030() {
                         key={link.name}
                         href={link.href}
                         onClick={closeMenu}
-                        className={`p-3 rounded-lg text-center transition-all duration-200 transform hover:scale-105 ${
+                        className={`p-3 rounded-lg text-center transition-all duration-200 transform hover:shadow-xl hover:shadow-cyan-500/30 ${
                           link.color.includes('from-') 
                             ? `bg-gradient-to-r ${link.color} text-white` 
                             : 'bg-gray-800 text-gray-300 hover:bg-gray-700'

@@ -1,0 +1,77 @@
+name: Enhanced Workflow Auto-Heal
+
+on:
+  schedule:
+    - cron: '0 */4 * * *'  # Every 4 hours
+  workflow_run:
+    workflows: ["*"]
+    types: [completed, failed]
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: enhanced-workflow-auto-heal
+  cancel-in-progress: false
+
+jobs:
+  monitor-and-heal:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install pyyaml
+
+      - name: Run Auto-Heal Engine
+        run: |
+          python workflow-auto-heal-engine.py
+
+      - name: Generate Health Report
+        run: |
+          python -c "
+          from workflow_auto_heal_engine import WorkflowAutoHealEngine
+          engine = WorkflowAutoHealEngine()
+          report_file = engine.generate_health_report()
+          print(f'Health report generated: {report_file}')
+          "
+
+      - name: Upload Health Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: workflow-health-report
+          path: workflow-health-report.json
+          if-no-files-found: ignore
+
+      - name: Create Auto-Heal PR
+        if: always()
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "chore(auto-heal): automated workflow repairs and health improvements"
+          title: "chore(auto-heal): automated workflow repairs and health improvements"
+          body: |
+            Automated workflow health improvements and repairs.
+            
+            This PR contains:
+            - Workflow health analysis
+            - Automated fixes for common issues
+            - Health score improvements
+            - Recommendations for manual fixes
+          branch: automation/enhanced-auto-heal
+          delete-branch: true
+          labels: |
+            automation
+            auto-heal
+            workflow-health

@@ -360,7 +360,7 @@ const Enhanced2027ServicesShowcase: React.FC = () => {
             <div className="text-6xl mb-4">🔍</div>
             <h3 className="text-2xl font-bold text-white mb-4">No services found</h3>
             <p className="text-gray-400 mb-8">
-              Try adjusting your search terms or category filter to find what you&apos;re looking for.
+              Try adjusting your search terms or category filter to find what you're looking for.
             </p>
             <button
               onClick={() => {
@@ -387,7 +387,7 @@ const Enhanced2027ServicesShowcase: React.FC = () => {
             </h3>
             <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
               Our team of experts is ready to help you implement these revolutionary services 
-              and achieve unprecedented growth. Let&apos;s build the future together.
+              and achieve unprecedented growth. Let's build the future together.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link 

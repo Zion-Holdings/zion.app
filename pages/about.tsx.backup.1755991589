@@ -1,0 +1,33 @@
+<<<<<<< HEAD
+export default function About() {
+  return <div>About Zion</div>;
+}
+=======
+export default function Page(){return null}
+=======
+export default function Page(){return null}
+=======
+import React from 'react';
+
+export default function AboutPage() {
+  return (
+    <div className="container mx-auto px-4 py-10">
+      <h1 className="text-2xl font-semibold">About Zion</h1>
+import type { NextPage } from 'next';
+import Head from 'next/head';
+
+const About: NextPage = () => (
+  <div className="py-10">
+    <Head><title>About - Zion</title></Head>
+    <h1 className="text-2xl font-semibold text-white">About</h1>
+    <p className="text-white/80 mt-2">About page content coming soon.</p>
+  </div>
+);
+
+export default About;
+=======
+      <p className="mt-2 text-gray-600 dark:text-gray-300">Information coming soon.</p>
+    </div>
+  );
+}
+>>>>>>> 5fe4d4a516412daaecc6e2e3437df4b5fdac83d3

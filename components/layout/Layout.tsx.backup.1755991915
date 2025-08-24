@@ -1,0 +1,35 @@
+import React from 'react';
+<<<<<<< HEAD
+import EnhancedNavigation from './EnhancedNavigation';
+=======
+import FuturisticNavigation from './FuturisticNavigation';
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-ae10
+import FuturisticFooter from './FuturisticFooter';
+
+interface LayoutProps {
+  children: React.ReactNode;
+  seo?: SEOConfig;
+}
+
+export default function Layout({ children, seo }: LayoutProps) {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [showEnhancements, setShowEnhancements] = useState(false);
+
+  return (
+    <div className="min-h-screen bg-black text-white">
+<<<<<<< HEAD
+      <EnhancedNavigation />
+      <main className="pt-24 lg:pt-28">
+        {children}
+      </main>
+      <EnhancedFooter />
+=======
+      <FuturisticNavigation />
+      <main className="pt-24 lg:pt-28">
+        {children}
+      </main>
+      <FuturisticFooter />
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-ae10
+    </div>
+  );
+};

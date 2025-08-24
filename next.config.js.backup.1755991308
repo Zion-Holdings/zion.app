@@ -588,59 +588,63 @@ const nextConfig = {
       usedExports: false,
     };
 
-    // PHASE 2: Enhanced Bundle Splitting for Performance Optimization
+    // PHASE 2: Enhanced Bundle Splitting for Performance Optimization with ChunkLoadError mitigation
     if (!isServer) {
       config.optimization = {
         ...config.optimization,
         
-        // Advanced splitChunks configuration for bundle optimization
+        // Advanced splitChunks configuration for bundle optimization and error reduction
         splitChunks: {
           chunks: 'all',
-          minSize: 20000,     // 20KB minimum chunk size
-          maxSize: 244000,    // 244KB maximum chunk size (target from plan)
+          minSize: 30000,     // 30KB minimum chunk size (increased for stability)
+          maxSize: 200000,    // 200KB maximum chunk size (reduced for better loading)
           minChunks: 1,
-          maxAsyncRequests: 30,
-          maxInitialRequests: 30,
+          maxAsyncRequests: 25, // Reduced from 30 to prevent too many concurrent requests
+          maxInitialRequests: 20, // Reduced from 30
+          automaticNameDelimiter: '-',
           cacheGroups: {
+            // Critical vendor libraries that should be bundled together
+            criticalVendor: {
+              test: /[\\/]node_modules[\\/](react|react-dom|next)[\\/]/,
+              name: 'critical-vendor',
+              chunks: 'all',
+              priority: 40,
+              enforce: true,
+              reuseExistingChunk: true,
+            },
+            
             // Heavy libraries that need special handling
             heavy: {
               test: /[\\/]node_modules[\\/](@libp2p|helia|orbitdb|blockstore|datastore|multiformats)[\\/]/,
               name: 'heavy-vendor',
               chunks: 'async', // Only load when needed
               priority: 30,
-              maxSize: 200000,
+              maxSize: 150000, // Reduced for better loading
               enforce: true,
+              reuseExistingChunk: true,
             },
             
-            // Vendor libraries bundle (optimized)
+            // UI libraries bundle
+            ui: {
+              test: /[\\/]node_modules[\\/](@radix-ui|lucide-react|framer-motion)[\\/]/,
+              name: 'ui-vendor',
+              chunks: 'all',
+              priority: 25,
+              maxSize: 150000,
+              enforce: true,
+              reuseExistingChunk: true,
+            },
+            
+            // Standard vendor libraries bundle (optimized)
             vendor: {
               test: /[\\/]node_modules[\\/]/,
               name: 'vendors',
               chunks: 'all',
               priority: 10,
-              maxSize: 200000, // Reduced from 244KB
-              minSize: 10000,  // Prevent tiny chunks
+              maxSize: 150000, // Reduced from 200KB for better loading
+              minSize: 20000,  // Increased to prevent tiny chunks
               enforce: true,
-            },
-            
-            // React ecosystem bundle
-            react: {
-              test: /[\\/]node_modules[\\/](react|react-dom|react-router|@tanstack)[\\/]/,
-              name: 'react-vendor',
-              chunks: 'all',
-              priority: 20,
-              maxSize: 244000,
-              enforce: true,
-            },
-            
-            // UI libraries bundle
-            ui: {
-              test: /[\\/]node_modules[\\/](@radix-ui|@chakra-ui|framer-motion|lucide-react)[\\/]/,
-              name: 'ui-vendor',
-              chunks: 'all',
-              priority: 20,
-              maxSize: 244000,
-              enforce: true,
+              reuseExistingChunk: true,
             },
             
             // Utilities bundle
@@ -648,9 +652,10 @@ const nextConfig = {
               test: /[\\/]node_modules[\\/](lodash|lodash-es|date-fns|axios|zod|yup)[\\/]/,
               name: 'utils-vendor',
               chunks: 'all',
-              priority: 20,
-              maxSize: 244000,
+              priority: 15,
+              maxSize: 150000,
               enforce: true,
+              reuseExistingChunk: true,
             },
             
             // Common application code
@@ -659,8 +664,8 @@ const nextConfig = {
               minChunks: 2,
               chunks: 'all',
               priority: 5,
-              maxSize: 244000,
-              enforce: true,
+              maxSize: 100000,
+              reuseExistingChunk: true,
             },
             
             // Default vendor chunk for everything else
@@ -668,7 +673,7 @@ const nextConfig = {
               minChunks: 2,
               priority: -20,
               reuseExistingChunk: true,
-              maxSize: 244000,
+              maxSize: 150000,
             },
           }
         },

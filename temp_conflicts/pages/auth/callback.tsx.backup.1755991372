@@ -1,0 +1,11 @@
+export default function Callback() { return <div className="p-8">Auth Callback</div>; }
+=======
+export default function Callback(){
+  return <div style={{padding:20}}>Callback</div>
+}
+=======
+export default function AuthCallback() {
+  return <div className="py-10">Auth Callback</div>;
+}
+=======
+export default function AuthCallback() { return <div>Auth callback…</div>; }

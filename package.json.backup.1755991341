@@ -576,11 +576,7 @@
     "cursor:chat:analyze": "node automation/cursor-chat-analyzer.cjs && node automation/cursor-chat-factory.cjs",
     "links:start": "node automation/site-link-orchestrator.cjs",
     "links:cron:start": "bash automation/site-link-cron.sh",
-<<<<<<< HEAD
-    "links:scan": "node automation/site-link-orchestrator.cjs",
-=======
     "links:scan": "node automation/site-link-crawler.cjs && node automation/site-link-fixer.cjs && node automation/external-link-check.cjs",
->>>>>>> origin/cursor/crawl-and-fix-site-links-and-pages-f374
     "promo:start": "node automation/site-promo-orchestrator.cjs",
     "promo:cron:start": "bash automation/site-promo-cron.sh",
     "promo:scan": "node automation/site-promo-analyzer.cjs && node automation/homepage-promo-applier.cjs",
@@ -643,6 +639,18 @@
     "conflicts:watch": "watch -n 30 bash scripts/check-merge-conflicts.sh || true",
     "conflicts:cron:start": "bash automation/merge-conflict-cron.sh start",
     "conflicts:cron:stop": "bash automation/merge-conflict-cron.sh stop",
+          "postautomation": "npm run automation:git-sync",
+      "lint:staged": "lint-staged",
+      "performance:audit": "node automation/performance-audit.cjs",
+      "nextgen:factory": "node automation/nextgen-autonomous-factory.cjs scan",
+      "nextgen:orchestrator": "node automation/nextgen-orchestrator.cjs start",
+      "nextgen:scan": "node automation/nextgen-autonomous-factory.cjs scan",
+      "nextgen:cron:start": "bash automation/nextgen-cron.sh start",
+      "nextgen:cron:stop": "bash automation/nextgen-cron.sh stop",
+      "nextgen:cron:status": "bash automation/nextgen-cron.sh status",
+      "nextgen:scheduler": "node automation/nextgen-scheduler.cjs"
+    },
+=======
     "conflicts:cron:status": "bash automation/merge-conflict-cron.sh status"
   },
   "dependencies": {
@@ -671,6 +679,8 @@
     "glob": "^11.0.3",
     "https": "^1.0.0",
     "import-fresh": "^3.3.1",
+    "react-share": "^5.2.2",
+=======
     "lucide-react": "^0.536.0",
     "mime-types": "^3.0.1",
     "next": "^11.1.4",

@@ -955,5 +955,15 @@ export const serviceCategories = [
   'Design & UI/UX',
   'Development & DevOps',
   'Business Intelligence',
-  'Quantum Computing'
+  'Quantum Computing',
+  'Cybersecurity',
+  'Metaverse & Virtual Reality',
+  'Web3 & DeFi',
+  'IoT & Edge Computing',
+  'Autonomous Vehicles & Robotics',
+  'Climate & Environmental',
+  'Biotechnology & Healthcare',
+  'Financial Technology',
+  'Education Technology',
+  'Enterprise IT'
 ];

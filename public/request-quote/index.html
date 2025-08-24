@@ -1,70 +1,629 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Request a Quote | Zion Tech &amp; AI Marketplace</title>
-        <meta name="description"
-              content="Tell us about your project to receive a customized quote from our experts." />
-        <meta name="author" content="Zion Tech Group" />
-        <meta name="keywords"
-              content="AI marketplace, tech services, artificial intelligence, IT services, AI developers, technology marketplace, AI solutions, machine learning, digital transformation" />
-        <!-- High tech font -->
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap"
-              rel="stylesheet" />
-        <meta name="theme-color" content="#000000" />
-        <!-- Open Graph / Facebook -->
-        <meta property="og:title"
-              content="Request a Quote | Zion Tech &amp; AI Marketplace" />
-        <meta property="og:description"
-              content="Tell us about your project to receive a customized quote from our experts." />
-        <meta property="og:type" content="website" />
-        <meta property="og:image"
-              content="https://drive.google.com/uc?export=view&id=0B0iuzhpa3pD7X0RzZ2lmclN3Ymc" />
-        <meta property="og:url"
-              content="https://app.ziontechgroup.com/request-quote" />
-        <meta property="og:site_name" content="Zion Marketplace" />
-        <!-- Twitter -->
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@lovable_dev" />
-        <meta name="twitter:title"
-              content="Request a Quote | Zion Tech &amp; AI Marketplace" />
-        <meta name="twitter:description"
-              content="Tell us about your project to receive a customized quote from our experts." />
-        <meta name="twitter:image"
-              content="https://drive.google.com/uc?export=view&id=0B0iuzhpa3pD7X0RzZ2lmclN3Ymc" />
-        <!-- Canonical URL -->
-        <link rel="canonical" href="https://app.ziontechgroup.com/request-quote" />
-        <!-- Favicon -->
-        <link rel="icon"
-              href="https://drive.google.com/uc?export=view&id=0B0iuzhpa3pD7X0RzZ2lmclN3Ymc" />
-        <!-- Apple Touch Icon -->
-        <link rel="apple-touch-icon"
-              href="https://drive.google.com/uc?export=view&id=0B0iuzhpa3pD7X0RzZ2lmclN3Ymc" />
-        <!-- Structured data (JSON-LD) for SEO -->
-        <meta http-equiv="Content-Security-Policy"
-              content="default-src 'self'; script-src 'self' 'unsafe-inline' https://js.stripe.com https://*.launchdarkly.com https://www.googletagmanager.com https://widget.intercom.io https://*.googleapis.com https://*.gstatic.com chrome-extension:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://*.supabase.co https://*.stripe.com https://*.sentry.io; object-src 'none'; base-uri 'self';" />
-        <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Zion",
-        "url": "https://app.ziontechgroup.com",
-        "logo": "https://drive.google.com/uc?export=view&id=0B0iuzhpa3pD7X0RzZ2lmclN3Ymc",
-        "description": "The world's first free marketplace dedicated to high-tech and artificial intelligence. Publish, connect, and thrive — all in one place.",
-        "sameAs": [
-          "https://twitter.com/lovable_dev",
-          "https://www.facebook.com/zionmarketplace",
-          "https://www.linkedin.com/company/zion-marketplace"
-        ]
-      }
-        </script>
-    </head>
-    <body>
-        <div id="root"></div>
-        <!-- Redirect to the main application so the SPA loads correctly -->
-        <meta http-equiv="refresh" content="0; url=/request-quote" />
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Quote - Zion Tech Group | Get Pricing for AI & Technology Solutions</title>
+    <meta name="description" content="Request a custom quote for Zion Tech Group's AI, quantum computing, and autonomous systems solutions. Get competitive pricing and ROI estimates for your project.">
+    <meta name="keywords" content="request quote, pricing, AI solutions pricing, quantum computing cost, technology solutions quote">
+    <meta name="author" content="Zion Tech Group">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Request Quote - Zion Tech Group | Get Pricing for AI & Technology Solutions">
+    <meta property="og:description" content="Request a custom quote for Zion Tech Group's AI, quantum computing, and autonomous systems solutions.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ziontechgroup.com/request-quote">
+    <meta property="og:site_name" content="Zion Tech Group">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Request Quote - Zion Tech Group | Get Pricing for AI & Technology Solutions">
+    <meta name="twitter:description" content="Request a custom quote for Zion Tech Group's AI, quantum computing, and autonomous systems solutions.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="/" class="logo">
+                        <img src="/logos/zion-logo.png" alt="Zion Tech Group" class="logo-img">
+                        <span class="logo-text">Zion Tech Group</span>
+                    </a>
+                </div>
+                
+                <div class="nav-menu" id="nav-menu">
+                    <a href="/services" class="nav-link">Services</a>
+                    <a href="/solutions" class="nav-link">Solutions</a>
+                    <a href="/about" class="nav-link">About</a>
+                    <a href="/case-studies" class="nav-link">Case Studies</a>
+                    <a href="/research-development" class="nav-link">R&D</a>
+                    <a href="/contact" class="nav-link">Contact</a>
+                </div>
+                
+                <div class="nav-actions">
+                    <a href="/request-quote" class="btn btn-secondary active">Get Quote</a>
+                    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title">Request a Quote</h1>
+                <p class="page-description">
+                    Get a custom quote for our revolutionary AI, quantum computing, and autonomous systems solutions. 
+                    We'll provide competitive pricing and ROI estimates for your specific project needs.
+                </p>
+            </div>
+        </section>
+
+        <!-- Pricing Overview -->
+        <section class="pricing-overview">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Pricing Overview</h2>
+                    <p class="section-description">Transparent pricing structure for our technology solutions</p>
+                </div>
+                
+                <div class="pricing-tiers">
+                    <div class="pricing-tier">
+                        <div class="tier-header">
+                            <h3 class="tier-name">Starter</h3>
+                            <div class="tier-price">
+                                <span class="price-amount">$25,000</span>
+                                <span class="price-period">/project</span>
+                            </div>
+                        </div>
+                        <div class="tier-features">
+                            <ul class="features-list">
+                                <li>Basic AI integration</li>
+                                <li>Standard implementation</li>
+                                <li>Email support</li>
+                                <li>3-month warranty</li>
+                            </ul>
+                        </div>
+                        <div class="tier-cta">
+                            <a href="#quote-form" class="btn btn-outline">Get Quote</a>
+                        </div>
+                    </div>
+                    
+                    <div class="pricing-tier featured">
+                        <div class="tier-header">
+                            <h3 class="tier-name">Professional</h3>
+                            <div class="tier-price">
+                                <span class="price-amount">$75,000</span>
+                                <span class="price-period">/project</span>
+                            </div>
+                        </div>
+                        <div class="tier-features">
+                            <ul class="features-list">
+                                <li>Advanced AI solutions</li>
+                                <li>Custom implementation</li>
+                                <li>Priority support</li>
+                                <li>12-month warranty</li>
+                                <li>Training included</li>
+                            </ul>
+                        </div>
+                        <div class="tier-cta">
+                            <a href="#quote-form" class="btn btn-primary">Get Quote</a>
+                        </div>
+                    </div>
+                    
+                    <div class="pricing-tier">
+                        <div class="tier-header">
+                            <h3 class="tier-name">Enterprise</h3>
+                            <div class="tier-price">
+                                <span class="price-amount">$200,000+</span>
+                                <span class="price-period">/project</span>
+                            </div>
+                        </div>
+                        <div class="tier-features">
+                            <ul class="features-list">
+                                <li>Full autonomous systems</li>
+                                <li>Quantum computing integration</li>
+                                <li>24/7 dedicated support</li>
+                                <li>Lifetime warranty</li>
+                                <li>Custom development</li>
+                            </ul>
+                        </div>
+                        <div class="tier-cta">
+                            <a href="#quote-form" class="btn btn-outline">Get Quote</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="pricing-note">
+                    <p>
+                        <strong>Note:</strong> All prices are estimates. Final pricing depends on project scope, 
+                        complexity, and specific requirements. Contact us for a detailed custom quote.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ROI Calculator -->
+        <section class="roi-calculator">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">ROI Calculator</h2>
+                    <p class="section-description">Estimate the return on investment for our solutions</p>
+                </div>
+                
+                <div class="calculator-content">
+                    <div class="calculator-form">
+                        <div class="form-group">
+                            <label for="company-size" class="form-label">Company Size</label>
+                            <select id="company-size" class="form-select">
+                                <option value="">Select company size</option>
+                                <option value="small">Small (1-50 employees)</option>
+                                <option value="medium">Medium (51-500 employees)</option>
+                                <option value="large">Large (500+ employees)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="industry" class="form-label">Industry</label>
+                            <select id="industry" class="form-select">
+                                <option value="">Select industry</option>
+                                <option value="technology">Technology</option>
+                                <option value="healthcare">Healthcare</option>
+                                <option value="finance">Finance</option>
+                                <option value="manufacturing">Manufacturing</option>
+                                <option value="retail">Retail</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="current-revenue" class="form-label">Current Annual Revenue</label>
+                            <input type="number" id="current-revenue" class="form-input" placeholder="Enter amount">
+                        </div>
+                        
+                        <button type="button" class="btn btn-primary" onclick="calculateROI()">Calculate ROI</button>
+                    </div>
+                    
+                    <div class="calculator-results">
+                        <h3 class="results-title">Estimated Results</h3>
+                        <div class="result-item">
+                            <span class="result-label">Efficiency Improvement:</span>
+                            <span class="result-value" id="efficiency-result">-</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Cost Reduction:</span>
+                            <span class="result-value" id="cost-reduction-result">-</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Revenue Increase:</span>
+                            <span class="result-value" id="revenue-increase-result">-</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">12-Month ROI:</span>
+                            <span class="result-value" id="roi-result">-</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quote Request Form -->
+        <section class="quote-request" id="quote-form">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Request Your Custom Quote</h2>
+                    <p class="section-description">
+                        Fill out the form below and we'll provide you with a detailed, custom quote 
+                        for your specific project requirements.
+                    </p>
+                </div>
+                
+                <div class="quote-form-container">
+                    <form class="quote-form" data-contact="quote">
+                        <!-- Company Information -->
+                        <div class="form-section">
+                            <h3 class="section-title">Company Information</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="company-name" class="form-label">Company Name *</label>
+                                    <input type="text" id="company-name" name="company_name" class="form-input" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="industry" class="form-label">Industry *</label>
+                                    <select id="industry" name="industry" class="form-select" required>
+                                        <option value="">Select industry</option>
+                                        <option value="technology">Technology</option>
+                                        <option value="healthcare">Healthcare</option>
+                                        <option value="finance">Finance</option>
+                                        <option value="manufacturing">Manufacturing</option>
+                                        <option value="retail">Retail</option>
+                                        <option value="education">Education</option>
+                                        <option value="government">Government</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="company-size" class="form-label">Company Size *</label>
+                                    <select id="company-size" name="company_size" class="form-select" required>
+                                        <option value="">Select company size</option>
+                                        <option value="1-10">1-10 employees</option>
+                                        <option value="11-50">11-50 employees</option>
+                                        <option value="51-200">51-200 employees</option>
+                                        <option value="201-1000">201-1000 employees</option>
+                                        <option value="1000+">1000+ employees</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="annual-revenue" class="form-label">Annual Revenue</label>
+                                    <select id="annual-revenue" name="annual_revenue" class="form-select">
+                                        <option value="">Select revenue range</option>
+                                        <option value="under-1m">Under $1M</option>
+                                        <option value="1m-10m">$1M - $10M</option>
+                                        <option value="10m-100m">$10M - $100M</option>
+                                        <option value="100m-1b">$100M - $1B</option>
+                                        <option value="over-1b">Over $1B</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Contact Information -->
+                        <div class="form-section">
+                            <h3 class="section-title">Contact Information</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="contact-name" class="form-label">Full Name *</label>
+                                    <input type="text" id="contact-name" name="contact_name" class="form-input" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="contact-title" class="form-label">Job Title *</label>
+                                    <input type="text" id="contact-title" name="contact_title" class="form-input" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="contact-email" class="form-label">Email Address *</label>
+                                    <input type="email" id="contact-email" name="contact_email" class="form-input" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="contact-phone" class="form-label">Phone Number</label>
+                                    <input type="tel" id="contact-phone" name="contact_phone" class="form-input">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Project Requirements -->
+                        <div class="form-section">
+                            <h3 class="section-title">Project Requirements</h3>
+                            <div class="form-group">
+                                <label for="services-interest" class="form-label">Services of Interest *</label>
+                                <div class="checkbox-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="services[]" value="ai-autonomous-systems" class="form-checkbox">
+                                        <span class="checkmark"></span>
+                                        AI & Autonomous Systems
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="services[]" value="quantum-computing" class="form-checkbox">
+                                        <span class="checkmark"></span>
+                                        Quantum Computing
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="services[]" value="space-technology" class="form-checkbox">
+                                        <span class="checkmark"></span>
+                                        Space Technology
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="services[]" value="enterprise-it" class="form-checkbox">
+                                        <span class="checkmark"></span>
+                                        Enterprise IT
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="project-description" class="form-label">Project Description *</label>
+                                <textarea id="project-description" name="project_description" rows="6" class="form-textarea" 
+                                    placeholder="Describe your project goals, challenges, and specific requirements..." required></textarea>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="project-timeline" class="form-label">Project Timeline</label>
+                                    <select id="project-timeline" name="project_timeline" class="form-select">
+                                        <option value="">Select timeline</option>
+                                        <option value="asap">ASAP</option>
+                                        <option value="1-3-months">1-3 months</option>
+                                        <option value="3-6-months">3-6 months</option>
+                                        <option value="6-12-months">6-12 months</option>
+                                        <option value="12+months">12+ months</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="budget-range" class="form-label">Budget Range *</label>
+                                    <select id="budget-range" name="budget_range" class="form-select" required>
+                                        <option value="">Select budget range</option>
+                                        <option value="under-50k">Under $50,000</option>
+                                        <option value="50k-100k">$50,000 - $100,000</option>
+                                        <option value="100k-500k">$100,000 - $500,000</option>
+                                        <option value="500k-1m">$500,000 - $1,000,000</option>
+                                        <option value="over-1m">Over $1,000,000</option>
+                                        <option value="undecided">Undecided</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Additional Information -->
+                        <div class="form-section">
+                            <h3 class="section-title">Additional Information</h3>
+                            <div class="form-group">
+                                <label for="current-systems" class="form-label">Current Systems & Infrastructure</label>
+                                <textarea id="current-systems" name="current_systems" rows="4" class="form-textarea" 
+                                    placeholder="Describe your current technology stack, systems, and infrastructure..."></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="success-metrics" class="form-label">Success Metrics & KPIs</label>
+                                <textarea id="success-metrics" name="success_metrics" rows="4" class="form-textarea" 
+                                    placeholder="What metrics will define success for this project?"></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="additional-notes" class="form-label">Additional Notes or Questions</label>
+                                <textarea id="additional-notes" name="additional_notes" rows="4" class="form-textarea" 
+                                    placeholder="Any additional information, questions, or special requirements..."></textarea>
+                            </div>
+                        </div>
+                        
+                        <!-- Preferences -->
+                        <div class="form-section">
+                            <h3 class="section-title">Preferences</h3>
+                            <div class="form-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="newsletter" class="form-checkbox">
+                                    <span class="checkmark"></span>
+                                    Subscribe to our newsletter for updates and insights
+                                </label>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="case_studies" class="form-checkbox">
+                                    <span class="checkmark"></span>
+                                    Send me relevant case studies and success stories
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary form-submit">Submit Quote Request</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- What Happens Next -->
+        <section class="next-steps">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">What Happens Next?</h2>
+                    <p class="section-description">Our process for delivering your custom quote</p>
+                </div>
+                
+                <div class="steps-grid">
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <h3 class="step-title">Submit Request</h3>
+                        <p class="step-description">
+                            Fill out our comprehensive quote request form with your project details 
+                            and requirements.
+                        </p>
+                    </div>
+                    
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <h3 class="step-title">Review & Analysis</h3>
+                        <p class="step-description">
+                            Our team reviews your requirements and analyzes the best approach 
+                            for your project.
+                        </p>
+                    </div>
+                    
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <h3 class="step-title">Custom Quote</h3>
+                        <p class="step-description">
+                            We prepare a detailed, custom quote with pricing, timeline, and 
+                            implementation plan.
+                        </p>
+                    </div>
+                    
+                    <div class="step-item">
+                        <div class="step-number">4</div>
+                        <h3 class="step-title">Consultation</h3>
+                        <p class="step-description">
+                            Schedule a consultation to discuss the quote, answer questions, 
+                            and refine the proposal.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="timeline-note">
+                    <p>
+                        <strong>Response Time:</strong> We typically respond to quote requests within 24-48 hours 
+                        during business days.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta">
+            <div class="container">
+                <div class="cta-content">
+                    <h2 class="cta-title">Ready to Get Started?</h2>
+                    <p class="cta-description">
+                        Transform your business with cutting-edge AI and technology solutions. 
+                        Get your custom quote today.
+                    </p>
+                    <div class="cta-actions">
+                        <a href="#quote-form" class="btn btn-primary">Request Quote</a>
+                        <a href="/contact" class="btn btn-outline">Contact Sales Team</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="/logos/zion-logo.png" alt="Zion Tech Group" class="footer-logo-img">
+                        <span class="footer-logo-text">Zion Tech Group</span>
+                    </div>
+                    <p class="footer-description">
+                        Revolutionary AI & technology solutions for the future of business.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://linkedin.com/company/ziontechgroup" class="social-link" target="_blank" rel="noopener">LinkedIn</a>
+                        <a href="https://twitter.com/ziontechgroup" class="social-link" target="_blank" rel="noopener">Twitter</a>
+                        <a href="https://github.com/ziontechgroup" class="social-link" target="_blank" rel="noopener">GitHub</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="/services/ai-autonomous-systems">AI & Autonomous Systems</a></li>
+                        <li><a href="/services/quantum-computing">Quantum Computing</a></li>
+                        <li><a href="/services/space-technology">Space Technology</a></li>
+                        <li><a href="/services/enterprise-it">Enterprise IT</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Solutions</h4>
+                    <ul class="footer-links">
+                        <li><a href="/solutions/ai-autonomous-business-manager">AI Business Manager</a></li>
+                        <li><a href="/solutions/quantum-neural-network-platform">Quantum Neural Networks</a></li>
+                        <li><a href="/solutions/autonomous-devops-platform">Autonomous DevOps</a></li>
+                        <li><a href="/solutions/ai-powered-enterprise-security">Enterprise Security</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/case-studies">Case Studies</a></li>
+                        <li><a href="/research-development">Research & Development</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Contact</h4>
+                    <div class="contact-info">
+                        <p>Email: <a href="mailto:kleber@ziontechgroup.com">kleber@ziontechgroup.com</a></p>
+                        <p>Phone: <a href="tel:+13024640950">+1 (302) 464-0950</a></p>
+                        <p>Website: <a href="https://ziontechgroup.com">ziontechgroup.com</a></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2025 Zion Tech Group. All rights reserved.</p>
+                    <div class="footer-bottom-links">
+                        <a href="/privacy">Privacy Policy</a>
+                        <a href="/terms">Terms of Service</a>
+                        <a href="/cookies">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/script.js"></script>
+    <script>
+        // ROI Calculator Function
+        function calculateROI() {
+            const companySize = document.getElementById('company-size').value;
+            const industry = document.getElementById('industry').value;
+            const currentRevenue = parseFloat(document.getElementById('current-revenue').value);
+            
+            if (!companySize || !industry || !currentRevenue) {
+                alert('Please fill in all fields to calculate ROI.');
+                return;
+            }
+            
+            // Simple ROI calculation based on company size and industry
+            let efficiencyImprovement, costReduction, revenueIncrease;
+            
+            if (companySize === 'small') {
+                efficiencyImprovement = '35-50%';
+                costReduction = '25-40%';
+                revenueIncrease = '20-35%';
+            } else if (companySize === 'medium') {
+                efficiencyImprovement = '40-60%';
+                costReduction = '30-50%';
+                revenueIncrease = '25-45%';
+            } else {
+                efficiencyImprovement = '50-75%';
+                costReduction = '40-65%';
+                revenueIncrease = '35-60%';
+            }
+            
+            // Calculate ROI based on industry and size
+            let roiPercentage;
+            if (industry === 'technology') {
+                roiPercentage = '350-500%';
+            } else if (industry === 'healthcare') {
+                roiPercentage = '400-600%';
+            } else if (industry === 'finance') {
+                roiPercentage = '300-450%';
+            } else {
+                roiPercentage = '250-400%';
+            }
+            
+            // Update results
+            document.getElementById('efficiency-result').textContent = efficiencyImprovement;
+            document.getElementById('cost-reduction-result').textContent = costReduction;
+            document.getElementById('revenue-increase-result').textContent = revenueIncrease;
+            document.getElementById('roi-result').textContent = roiPercentage;
+        }
+    </script>
+</body>
 </html>

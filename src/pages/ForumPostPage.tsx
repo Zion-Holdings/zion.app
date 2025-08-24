@@ -1,6 +1,7 @@
 
 import { useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -8,7 +9,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Alert, AlertDescription } from "@/components/ui/alert";
-import { ThumbsUp, ThumbsDown, Calendar, Flag, Edit, Trash2, Pin, Lock, CheckCircle } from "lucide-react";
+import { ThumbsUp, ThumbsDown, Calendar, Flag, Edit, Trash2, Pin, Lock, CheckCircle } from 'lucide-react'
 import { formatDistanceToNow, format } from "date-fns";
 import { ForumPost, ForumReply } from "@/types/community";
 import { useAuth } from "@/hooks/useAuth";
@@ -92,7 +93,8 @@ export default function ForumPostPage() {
   // Using `useParams` without type arguments avoids issues when TypeScript
   // can't determine the generic type for the helper from React Router.
   // Cast the result instead to provide the expected shape.
-  const { postId } = useParams() as { postId?: string };
+  const router = useRouter();
+  const postId = router.query.postId as string;
   const { user } = useAuth();
   const { toast } = useToast();
   const [post, setPost] = useState(mockPost);
@@ -110,7 +112,7 @@ export default function ForumPostPage() {
       <div className="container py-8">
         <h1>Post not found</h1>
         <Button asChild className="mt-4">
-          <Link to="/community">Back to Community</Link>
+          <Link href="/community">Back to Community</Link>
         </Button>
       </div>
     );
@@ -122,6 +124,8 @@ export default function ForumPostPage() {
         title: "Authentication required",
         description: "Please sign in to vote on posts",
       });
+      const returnTo = encodeURIComponent(router.asPath);
+      router.push(`/auth/login?returnTo=${returnTo}`);
       return;
     }
     
@@ -138,6 +142,8 @@ export default function ForumPostPage() {
         title: "Authentication required",
         description: "Please sign in to vote on posts",
       });
+      const returnTo = encodeURIComponent(router.asPath);
+      router.push(`/auth/login?returnTo=${returnTo}`);
       return;
     }
     
@@ -154,6 +160,8 @@ export default function ForumPostPage() {
         title: "Authentication required",
         description: "Please sign in to reply",
       });
+      const returnTo = encodeURIComponent(router.asPath);
+      router.push(`/auth/login?returnTo=${returnTo}`);
       return;
     }
     
@@ -212,6 +220,8 @@ export default function ForumPostPage() {
         title: "Authentication required",
         description: "Please sign in to report content",
       });
+      const returnTo = encodeURIComponent(router.asPath);
+      router.push(`/auth/login?returnTo=${returnTo}`);
       return;
     }
     
@@ -252,16 +262,16 @@ export default function ForumPostPage() {
         title={`${post.title} | Community Forum | Zion AI Marketplace`}
         description={post.content.substring(0, 160)}
         keywords={`community, forum, discussion, ${post.tags.join(', ')}`}
-        canonical={`https://ziontechgroup.com/community/post/${post.id}`}
+        canonical={`https://app.ziontechgroup.com/community/post/${post.id}`}
       />
       
       <div className="container py-8">
         <div className="flex items-center gap-3 mb-6">
-          <Link to="/community" className="text-sm text-muted-foreground hover:text-foreground">
+          <Link href="/community" className="text-sm text-muted-foreground hover:text-foreground">
             Forum
           </Link>
           <span className="text-muted-foreground">/</span>
-          <Link to={`/community/category/${post.categoryId}`} className="text-sm text-muted-foreground hover:text-foreground">
+          <Link href={`/community/category/${post.categoryId}`} className="text-sm text-muted-foreground hover:text-foreground">
             {post.categoryId.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}
           </Link>
           <span className="text-muted-foreground">/</span>
@@ -335,7 +345,7 @@ export default function ForumPostPage() {
               <div className="flex items-center gap-2">
                 {(isAuthor || isAdminOrMod) && (
                   <Button variant="ghost" size="sm" asChild>
-                    <Link to={`/community/edit/${post.id}`}>
+                    <Link href={`/community/edit/${post.id}`}>
                       <Edit className="h-4 w-4 mr-1" />
                       Edit
                     </Link>
@@ -399,7 +409,7 @@ export default function ForumPostPage() {
               ) : (
                 <Alert>
                   <AlertDescription>
-                    Please <Link to="/login" className="font-medium text-zion-purple hover:underline">sign in</Link> to join the discussion.
+                    Please <Link href="/auth/login" className="font-medium text-zion-purple hover:underline">sign in</Link> to join the discussion.
                   </AlertDescription>
                 </Alert>
               )}

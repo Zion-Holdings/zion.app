@@ -1,245 +1,164 @@
 
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { 
-  Brain, 
-  Zap, 
-  Users, 
-  Globe,
-  ArrowRight,
-  CheckCircle,
-  Shield,
-  Star,
-  Award,
-  TrendingUp
-} from 'lucide-react';
+import React from "react";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import Link from "next/link";
+import { useTranslation } from "react-i18next";
+import { ArrowRight, Users, Zap, Settings, Search, MessageSquare, Smartphone, Calendar, BookOpen, Code, Building, Clock } from 'lucide-react'
+import { cn } from "@/lib/utils";
 
-const features = [
-  {
-    icon: Brain,
-    title: 'AI-Powered Intelligence',
-    description: 'Advanced machine learning algorithms that understand your needs and match you with the perfect solutions.',
-    benefits: ['Smart Matching', 'Predictive Analytics', 'Continuous Learning'],
-    color: 'from-zion-purple to-zion-purple-dark',
-    bgColor: 'bg-zion-purple/10',
-    borderColor: 'border-zion-purple/20',
-    iconColor: 'text-zion-purple',
-    link: '/zion-hire-ai'
-  },
-  {
-    icon: Zap,
-    title: 'Rapid Deployment',
-    description: 'Get your projects up and running in record time with our streamlined processes and global network.',
-    benefits: ['24/7 Support', 'Global Coverage', 'Instant Quotes'],
-    color: 'from-zion-cyan to-zion-cyan-dark',
-    bgColor: 'bg-zion-cyan/10',
-    borderColor: 'border-zion-cyan/20',
-    iconColor: 'text-zion-cyan',
-    link: '/services'
-  },
-  {
-    icon: Users,
-    title: 'Precision Solutions',
-    description: 'Tailored solutions designed specifically for your unique requirements and business objectives.',
-    benefits: ['Custom Development', 'Scalable Architecture', 'Future-Proof Design'],
-    color: 'from-zion-blue to-zion-blue-dark',
-    bgColor: 'bg-zion-blue/10',
-    borderColor: 'border-zion-blue/20',
-    iconColor: 'text-zion-blue',
-    link: '/request-quote'
-  }
-];
+interface FeatureCTAsProps {
+  className?: string;
+  style?: React.CSSProperties;
+}
 
-const stats = [
-  { number: '10K+', label: 'Projects Completed', icon: CheckCircle, color: 'text-green-400' },
-  { number: '150+', label: 'Countries Served', icon: Globe, color: 'text-zion-cyan' },
-  { number: '99.9%', label: 'Uptime Guarantee', icon: Shield, color: 'text-zion-purple' },
-  { number: '<15min', label: 'Response Time', icon: Zap, color: 'text-yellow-400' }
-];
-
-export function FeatureCTAs() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.1
-      }
+export function FeatureCTAs({ className, style }: FeatureCTAsProps) {
+  const { t } = useTranslation();
+  const features = [
+    {
+      key: 'ai_talent_matching',
+      descriptionKey: 'ai_talent_matching_desc',
+      detailsKey: 'ai_talent_matching_details',
+      icon: <Search className="h-10 w-10 p-2 rounded-md bg-blue-100 text-blue-700" />,
+      link: '/match',
+      badge: 'popular'
+    },
+    {
+      key: 'talent_directory',
+      descriptionKey: 'talent_directory_desc',
+      detailsKey: 'talent_directory_details',
+      icon: <Users className="h-10 w-10 p-2 rounded-md bg-purple-100 text-purple-700" />,
+      link: '/talent'
+    },
+    {
+      key: 'services_marketplace',
+      descriptionKey: 'services_marketplace_desc',
+      detailsKey: 'services_marketplace_details',
+      icon: <Zap className="h-10 w-10 p-2 rounded-md bg-cyan-100 text-cyan-700" />,
+      link: '/services',
+      badge: 'new'
+    },
+    {
+      key: 'equipment_catalog',
+      descriptionKey: 'equipment_catalog_desc',
+      detailsKey: 'equipment_catalog_details',
+      icon: <Settings className="h-10 w-10 p-2 rounded-md bg-amber-100 text-amber-700" />,
+      link: '/equipment'
+    },
+    {
+      key: 'community_hub',
+      descriptionKey: 'community_hub_desc',
+      detailsKey: 'community_hub_details',
+      icon: <MessageSquare className="h-10 w-10 p-2 rounded-md bg-emerald-100 text-emerald-700" />,
+      link: '/community'
+    },
+    {
+      key: 'mobile_app',
+      descriptionKey: 'mobile_app_desc',
+      detailsKey: 'mobile_app_details',
+      icon: <Smartphone className="h-10 w-10 p-2 rounded-md bg-indigo-100 text-indigo-700" />,
+      link: '/mobile-launch',
+      badge: 'featured'
+    },
+    {
+      key: 'enterprise_solutions',
+      descriptionKey: 'enterprise_solutions_desc',
+      detailsKey: 'enterprise_solutions_details',
+      icon: <Building className="h-10 w-10 p-2 rounded-md bg-pink-100 text-pink-700" />,
+      link: '/enterprise'
+    },
+    {
+      key: 'developer_tools',
+      descriptionKey: 'developer_tools_desc',
+      detailsKey: 'developer_tools_details',
+      icon: <Code className="h-10 w-10 p-2 rounded-md bg-gray-100 text-gray-700" />,
+      link: '/developers'
+    },
+    {
+      key: 'learning_resources',
+      descriptionKey: 'learning_resources_desc',
+      detailsKey: 'learning_resources_details',
+      icon: <BookOpen className="h-10 w-10 p-2 rounded-md bg-teal-100 text-teal-700" />,
+      link: '/blog'
+    },
+    {
+      key: 'project_management',
+      descriptionKey: 'project_management_desc',
+      detailsKey: 'project_management_details',
+      icon: <Calendar className="h-10 w-10 p-2 rounded-md bg-red-100 text-red-700" />,
+      link: '/project-milestones'
+    },
+    {
+      key: 'zion_hire_ai',
+      descriptionKey: 'zion_hire_ai_desc',
+      detailsKey: 'zion_hire_ai_details',
+      icon: <Clock className="h-10 w-10 p-2 rounded-md bg-violet-100 text-violet-700" />,
+      link: '/zion-hire-ai',
+      badge: 'premium'
     }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30, scale: 0.95 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut"
-      }
-    }
-  };
-
-  const statVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: { duration: 0.5 }
-    }
-  };
+  ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-zion-slate to-zion-slate-dark relative overflow-hidden">
-      {/* Background decorative elements */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-40 right-20 w-72 h-72 bg-zion-purple rounded-full blur-3xl"></div>
-        <div className="absolute bottom-40 left-20 w-64 h-64 bg-zion-cyan rounded-full blur-3xl"></div>
-      </div>
-
-      <div className="container mx-auto px-4 relative z-10">
-        {/* Header */}
-        <motion.div 
-          className="text-center mb-20"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-            Transform Your Business with
-            <span className="block bg-gradient-to-r from-zion-cyan via-zion-purple to-zion-cyan bg-clip-text text-transparent">
-              Next-Gen Technology
-            </span>
+    <section
+      className={cn(
+        "py-16 bg-gradient-to-b from-background to-background/90",
+        className
+      )}
+      style={style}
+    >
+      <div className="container mx-auto px-4">
+        <div className="mb-12 text-center">
+          <h2 className="text-3xl font-bold tracking-tight mb-3">
+            {t('home.features_heading')}
           </h2>
-          <p className="text-xl text-zion-slate-light max-w-4xl mx-auto leading-relaxed">
-            Experience the future of business solutions with our cutting-edge platform designed to accelerate growth and innovation
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            {t('home.features_subheading')}
           </p>
-        </motion.div>
-
-        {/* Features Grid */}
-        <motion.div 
-          className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature, index) => (
-            <motion.div
-              key={index}
-              variants={itemVariants}
-              whileHover={{ 
-                y: -10, 
-                scale: 1.02,
-                transition: { duration: 0.3 }
-              }}
-              className="group"
-            >
-              <div className={`h-full p-8 rounded-3xl ${feature.bgColor} ${feature.borderColor} border-2 hover:border-opacity-40 transition-all duration-300 backdrop-blur-sm relative overflow-hidden`}>
-                {/* Background gradient overlay */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-5 group-hover:opacity-10 transition-opacity duration-300`}></div>
-                
-                <div className="relative z-10">
-                  {/* Icon */}
-                  <div className={`inline-flex p-4 rounded-2xl ${feature.iconColor} bg-opacity-20 mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                    <feature.icon className="w-8 h-8" />
-                  </div>
-
-                  {/* Content */}
-                  <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-zion-cyan transition-colors duration-200">
-                    {feature.title}
-                  </h3>
-                  
-                  <p className="text-zion-slate-light leading-relaxed mb-6">
-                    {feature.description}
+            <Card key={index} className="overflow-hidden transition-all duration-300 hover:shadow-lg hover:border-primary/50">
+              <CardHeader className="pb-2">
+                <div className="flex justify-between items-start">
+                  {feature.icon}
+                  {feature.badge && (
+                    <Badge variant="secondary" className="bg-primary/20 text-primary">
+                      {t(`badges.${feature.badge}`)}
+                    </Badge>
+                  )}
+                </div>
+                <CardTitle className="mt-4">{t(`features.${feature.key}`)}</CardTitle>
+                {feature.descriptionKey && (
+                  <CardDescription className="line-clamp-2">
+                    {t(`features.${feature.descriptionKey}`)}
+                  </CardDescription>
+                )}
+              </CardHeader>
+              <CardContent>
+                {feature.detailsKey && (
+                  <p className="text-sm text-muted-foreground">
+                    {t(`features.${feature.detailsKey}`)}
                   </p>
-
-                  {/* Benefits */}
-                  <ul className="space-y-3 mb-8">
-                    {feature.benefits.map((benefit, idx) => (
-                      <li key={idx} className="flex items-center gap-3 text-zion-slate-light">
-                        <CheckCircle className="w-4 h-4 text-zion-cyan flex-shrink-0" />
-                        <span className="text-sm">{benefit}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  {/* CTA Button */}
+                )}
+              </CardContent>
+              <CardFooter>
+                <Button asChild className="w-full gap-1">
                   <Link
-                    to={feature.link}
-                    className={`inline-flex items-center gap-2 bg-gradient-to-r ${feature.color} hover:from-zion-purple-light hover:to-zion-purple text-white px-6 py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105`}
+                    href={feature.link}
+                    aria-label={`${t('general.explore')} ${t(`features.${feature.key}`)}`}
+                    className="cursor-pointer"
+                    {...(feature.key === 'ai_talent_matching' && { "data-testid": "explore-ai-talent-matching-cta" })}
                   >
-                    Learn More
-                    <ArrowRight className="w-4 h-4" />
+                    <span>{t('general.explore')} {t(`features.${feature.key}`)}</span>
+                    <ArrowRight className="h-4 w-4" />
                   </Link>
-                </div>
-              </div>
-            </motion.div>
+                </Button>
+              </CardFooter>
+            </Card>
           ))}
-        </motion.div>
-
-        {/* Stats Section */}
-        <motion.div 
-          className="bg-gradient-to-r from-zion-blue/20 to-zion-purple/20 rounded-3xl p-8 md:p-12 border border-zion-blue-light/20"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-white mb-4">
-              Trusted by Industry Leaders
-            </h3>
-            <p className="text-zion-slate-light text-lg">
-              Our track record speaks for itself
-            </p>
-          </div>
-
-          <motion.div 
-            className="grid grid-cols-2 md:grid-cols-4 gap-8"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            {stats.map((stat, index) => (
-              <motion.div
-                key={index}
-                variants={statVariants}
-                className="text-center group"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.2 }}
-              >
-                <div className={`inline-flex p-4 rounded-full bg-white/10 mb-4 ${stat.color} bg-opacity-20 group-hover:scale-110 transition-transform duration-300`}>
-                  <stat.icon className="w-8 h-8" />
-                </div>
-                <div className="text-3xl font-bold text-white mb-2">{stat.number}</div>
-                <div className="text-zion-slate-light text-sm">{stat.label}</div>
-              </motion.div>
-            ))}
-          </motion.div>
-
-          {/* Bottom CTA */}
-          <motion.div 
-            className="text-center mt-12"
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-          >
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-3 bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white px-10 py-4 rounded-xl font-semibold text-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-            >
-              Start Your Journey
-              <Zap className="w-6 h-6" />
-            </Link>
-          </motion.div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

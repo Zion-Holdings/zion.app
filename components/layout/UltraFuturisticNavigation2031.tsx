@@ -81,9 +81,9 @@ const serviceCategories = [
     description: 'Cutting-edge micro solutions',
     services: [
       { name: 'AI Business Intelligence Suite', href: '/ai-business-intelligence-suite', description: 'Intelligent business insights', price: '$299/month' },
+      { name: 'Quantum-Secure Communication Platform', href: '/quantum-secure-communication-platform', description: 'Unbreakable encryption', price: '$599/month' },
       { name: 'AI Customer Success Automation', href: '/ai-customer-success-automation', description: 'Automate customer success', price: '$199/month' },
-      { name: 'Blockchain Supply Chain Transparency', href: '/blockchain-supply-chain-transparency', description: 'End-to-end traceability', price: '$399/month' },
-      { name: 'AI SEO Optimization Platform', href: '/ai-seo-optimization-platform', description: 'AI-powered SEO optimization', price: '$249/month' }
+      { name: 'Blockchain Supply Chain Transparency', href: '/blockchain-supply-chain-transparency', description: 'End-to-end traceability', price: '$399/month' }
     ]
   },
   {
@@ -92,22 +92,10 @@ const serviceCategories = [
     color: 'from-orange-600 via-red-600 to-pink-600',
     description: 'Breakthrough research solutions',
     services: [
-      { name: 'Neuromorphic Computing Platform', href: '/neuromorphic-computing-platform', description: 'Brain-inspired computing', price: '$1,299/month' },
-      { name: 'DNA Computing Platform', href: '/dna-computing-platform', description: 'Molecular computing', price: '$1,599/month' },
+      { name: 'Neuromorphic Computing Platform', href: '/neuromorphic-computing-platform', description: 'Brain-inspired computing', price: '$899/month' },
+      { name: 'DNA Computing Platform', href: '/dna-computing-platform', description: 'Molecular computing', price: '$1,299/month' },
       { name: 'Photonic Computing Infrastructure', href: '/photonic-computing-infrastructure', description: 'Light-speed computing', price: '$699/month' },
       { name: 'Swarm Robotics Orchestration', href: '/swarm-robotics-orchestration', description: 'Coordinate robot swarms', price: '$449/month' }
-    ]
-  },
-  {
-    title: '🎬 2031 Content & Media',
-    icon: Video,
-    color: 'from-pink-600 via-rose-600 to-red-600',
-    description: 'AI-powered content creation',
-    services: [
-      { name: 'AI Video Editing Platform', href: '/ai-video-editing-platform', description: 'Professional video editing', price: '$179/month' },
-      { name: 'AI Website Personalization Engine', href: '/ai-website-personalization-engine', description: 'Personalize every visitor', price: '$349/month' },
-      { name: 'AI Sales Automation Platform', href: '/ai-sales-automation-platform', description: 'Automate sales processes', price: '$399/month' },
-      { name: 'AI HR Recruitment Platform', href: '/ai-hr-recruitment-platform', description: 'Streamline hiring', price: '$299/month' }
     ]
   }
 ];
@@ -217,7 +205,7 @@ export default function UltraFuturisticNavigation2031() {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.8 }}
-                className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-xl font-semibold hover:from-cyan-600 hover:to-blue-600 transition-all duration-200 transform hover:scale-105"
+                className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-xl font-semibold hover:from-cyan-600 hover:to-blue-600 transition-all duration-200 transform hover:shadow-xl hover:shadow-cyan-500/30"
               >
                 Get Started
               </motion.button>
@@ -225,7 +213,7 @@ export default function UltraFuturisticNavigation2031() {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.9 }}
-                className="px-6 py-2 border-2 border-cyan-400 text-cyan-400 rounded-xl font-semibold hover:bg-cyan-400 hover:text-black transition-all duration-200 transform hover:scale-105"
+                className="px-6 py-2 border-2 border-cyan-400 text-cyan-400 rounded-xl font-semibold hover:bg-cyan-400 hover:text-black transition-all duration-200 transform hover:shadow-xl hover:shadow-cyan-500/30"
               >
                 Contact Us
               </motion.button>

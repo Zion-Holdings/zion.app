@@ -1,0 +1,34 @@
+import React from 'react';
+<<<<<<< HEAD
+import Head from 'next/head';
+=======
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-e11d
+import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackground';
+
+export default function Leadership() {
+	return (
+<<<<<<< HEAD
+		<UltraFuturisticBackground variant="quantum" intensity="high">
+			<Head>
+				<title>Leadership | Zion Tech Group</title>
+				<meta name="description" content="Meet the leadership team driving Zion Tech Group's vision and execution." />
+				<link rel="canonical" href="https://ziontechgroup.com/leadership" />
+			</Head>
+			<div className="container mx-auto px-4 py-20 text-white">
+				<h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-6">Leadership</h1>
+				<p className="text-gray-300 max-w-3xl">Profiles are coming soon. For press or partnership inquiries, contact +1 302 464 0950 • kleber@ziontechgroup.com.</p>
+			</div>
+		</UltraFuturisticBackground>
+	);
+}
+=======
+		<UltraFuturisticBackground variant="quantum" intensity="low">
+			<div className="container mx-auto px-4 py-16 text-white">
+				<h1 className="text-4xl md:text-5xl font-bold mb-4">Leadership</h1>
+				<p className="text-gray-300 max-w-3xl">Meet the leaders driving Zion Tech Group forward. For press or speaking requests, contact +1 302 464 0950 or kleber@ziontechgroup.com.</p>
+				<div className="mt-8"><a href="/contact/" className="px-5 py-3 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold">Contact Us</a></div>
+			</div>
+		</UltraFuturisticBackground>
+	);
+}
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-e11d

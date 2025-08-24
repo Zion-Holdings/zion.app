@@ -1,14 +1,14 @@
-import { useState, useEffect } from "react";
-import { useParams, useNavigate, Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { format } from "date-fns";
 import { useAuth } from "@/hooks/useAuth";
 import { useProjects } from "@/hooks/useProjects";
-import { AppHeader } from "@/components/layout/AppHeader";
-import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { ProtectedRoute } from "@/components/ProtectedRoute";
 import { Project, ProjectStatus } from "@/types/projects";
 import { Button } from "@/components/ui/button";
+import {logErrorToProduction} from '@/utils/productionLogger';
 import {
   Card,
   CardContent,
@@ -40,28 +40,18 @@ import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { ProjectReviewSection } from "@/components/projects/reviews/ProjectReviewSection";
-import {
-  AlertCircle,
-  Calendar,
-  CheckCircle2,
-  Clock,
-  FileText,
-  LayersIcon,
-  MessageSquare,
-  Video,
-  User,
-  XCircle,
-} from "lucide-react";
+import { AlertCircle, Calendar, CheckCircle2, Clock, FileText, Layers, MessageSquare, Video, User, XCircle } from 'lucide-react'
 
 function ProjectDetailsContent() {
-  const { projectId } = useParams();
+  const router = useRouter();
+  // Get projectId from Next.js router query params
+  const { projectId } = router.query as { projectId?: string };
   const { user } = useAuth();
-  const navigate = useNavigate();
   const { getProjectById, updateProjectStatus } = useProjects();
   
-  const [project, setProject] = useState(null as Project | null);
+  const [project, setProject] = useState<Project | null>(null);
   const [isLoading, setIsLoading] = useState(true);
-  const [notes, setNotes] = useState([] as any[]);
+  const [notes, setNotes] = useState<any[]>([]);
   const [newNote, setNewNote] = useState("");
   const [isSubmittingNote, setIsSubmittingNote] = useState(false);
   const [activeTab, setActiveTab] = useState("details");
@@ -85,7 +75,7 @@ function ProjectDetailsContent() {
           description: "The requested project could not be found.",
           variant: "destructive",
         });
-        navigate("/dashboard");
+        router.push("/dashboard");
       }
       
       setIsLoading(false);
@@ -108,8 +98,13 @@ function ProjectDetailsContent() {
       if (error) throw error;
       
       setNotes(data || []);
-    } catch (err) {
-      console.error("Error fetching project notes:", err);
+    } catch (err: any) {
+      logErrorToProduction('Error fetching project notes:', { data: err });
+      toast({
+        title: "Failed to load notes",
+        description: err.message || "An error occurred while loading project notes.",
+        variant: "destructive",
+      });
     }
   };
   
@@ -139,10 +134,10 @@ function ProjectDetailsContent() {
         description: "Your note has been added to the project.",
       });
     } catch (err: any) {
-      console.error("Error adding note:", err);
+      logErrorToProduction('Error adding note:', { data: err });
       toast({
         title: "Failed to add note",
-        description: err.message || "An error occurred while adding your note.",
+        description: err.message || "An error occurred while adding note.",
         variant: "destructive",
       });
     } finally {
@@ -213,7 +208,7 @@ function ProjectDetailsContent() {
             <p className="text-muted-foreground mb-4">
               The project you're looking for doesn't exist or you don't have access to it.
             </p>
-            <Button onClick={() => navigate("/dashboard")}>
+            <Button onClick={() => router.push("/dashboard")}>
               Return to Dashboard
             </Button>
           </CardContent>
@@ -227,7 +222,7 @@ function ProjectDetailsContent() {
   const isTalent = user?.id === project.talent_id;
   
   if (!isClient && !isTalent) {
-    navigate("/unauthorized");
+    router.push("/unauthorized");
     return null;
   }
   
@@ -241,7 +236,6 @@ function ProjectDetailsContent() {
         title={`Project: ${project.job?.title || 'Project Details'} | Zion AI Marketplace`} 
         description="View and manage your project details and collaboration."
       />
-      <AppHeader />
       <main className="container mx-auto px-4 py-8">
         <div className="mb-6">
           <div className="flex flex-col md:flex-row justify-between md:items-center gap-4 mb-2">
@@ -315,15 +309,15 @@ function ProjectDetailsContent() {
               
               {isActiveProject && (
                 <Button variant="default" asChild>
-                  <Link to={`/project/${project.id}/milestones`}>
-                    <LayersIcon className="mr-2 h-4 w-4" /> Milestones
+                  <Link href={`/project/[id]/milestones`}>
+                    <Layers className="mr-2 h-4 w-4" /> Milestones
                   </Link>
                 </Button>
               )}
 
               {isActiveProject && (
                 <Button variant="outline" asChild>
-                  <Link to={`/project/${project.id}/room`}>
+                  <Link href={`/project/[id]/room`}>
                     <Video className="mr-2 h-4 w-4" /> Project Room
                   </Link>
                 </Button>
@@ -332,7 +326,7 @@ function ProjectDetailsContent() {
               {(isClient || isTalent) && ["offer_sent", "offer_accepted", "in_progress"].includes(project.status) && (
                 <Button 
                   variant="outline" 
-                  onClick={() => navigate(`/messages?talentId=${project.talent_id}&clientId=${project.client_id}`)}
+                  onClick={() => router.push(`/messages?talentId=${project.talent_id}&clientId=${project.client_id}`)}
                 >
                   <MessageSquare className="mr-2 h-4 w-4" /> Message
                 </Button>
@@ -480,6 +474,7 @@ function ProjectDetailsContent() {
                                     <img
                                       src={note.created_by_profile.avatar_url}
                                       alt={note.created_by_profile.display_name}
+                                      loading="lazy"
                                     />
                                   ) : (
                                     <User className="h-4 w-4" />
@@ -545,6 +540,7 @@ function ProjectDetailsContent() {
                         <img
                           src={project.talent_profile.profile_picture_url}
                           alt={project.talent_profile.full_name}
+                          loading="lazy"
                         />
                       ) : (
                         <User className="h-6 w-6" />
@@ -562,7 +558,7 @@ function ProjectDetailsContent() {
                           variant="outline"
                           size="sm"
                           className="mt-2"
-                          onClick={() => navigate(`/messages?talentId=${project.talent_id}`)}
+                          onClick={() => router.push(`/messages?talentId=${project.talent_id}`)}
                         >
                           <MessageSquare className="mr-1 h-3 w-3" /> Message
                         </Button>
@@ -572,10 +568,11 @@ function ProjectDetailsContent() {
                   
                   <div className="flex items-start gap-4">
                     <Avatar className="h-10 w-10">
-                      {project.client_profile?.avatar_url ? (
+                      {project.talent_profile?.profile_picture_url ? (
                         <img
-                          src={project.client_profile.avatar_url}
-                          alt={project.client_profile.display_name}
+                          src={project.talent_profile.profile_picture_url}
+                          alt={project.talent_profile.full_name}
+                          loading="lazy"
                         />
                       ) : (
                         <User className="h-6 w-6" />
@@ -583,7 +580,7 @@ function ProjectDetailsContent() {
                     </Avatar>
                     <div>
                       <h3 className="font-semibold">
-                        {project.client_profile?.display_name || "Client"}
+                        {project.talent_profile?.full_name || "Client"}
                       </h3>
                       <p className="text-sm text-muted-foreground">Project Owner</p>
                       {isTalent && (
@@ -591,7 +588,7 @@ function ProjectDetailsContent() {
                           variant="outline"
                           size="sm"
                           className="mt-2"
-                          onClick={() => navigate(`/messages?clientId=${project.client_id}`)}
+                          onClick={() => router.push(`/messages?clientId=${project.client_id}`)}
                         >
                           <MessageSquare className="mr-1 h-3 w-3" /> Message
                         </Button>
@@ -638,7 +635,7 @@ function ProjectDetailsContent() {
                   </p>
                   <Button 
                     variant="outline"
-                    onClick={() => navigate(`/messages?talentId=${project.talent_id}`)}
+                    onClick={() => router.push(`/messages?talentId=${project.talent_id}`)}
                     className="w-full"
                   >
                     <MessageSquare className="mr-2 h-4 w-4" /> Discuss Changes
@@ -673,7 +670,6 @@ function ProjectDetailsContent() {
           </div>
         </div>
       </main>
-      <Footer />
     </>
   );
 }

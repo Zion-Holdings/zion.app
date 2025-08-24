@@ -1,0 +1,77 @@
+name: Autonomous Release
+
+on:
+
+
+  push: branches: [main]
+  workflow_dispatch: {}
+
+
+concurrency:
+
+
+
+  group: "github.workflow-${{ github.ref }}"
+  cancel-in-progress: true
+
+  contents: write
+
+jobs:
+
+
+  release: - name: Checkout
+           
+          fetch-depth: 0
+
+      - name: Setup Node.js
+
+
+                
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+
+
+                
+
+      - name: Build
+
+
+                
+
+      - name: Determine version
+
+
+                
+          DATE_VER=$(date +"%Y.%m.%d")
+          COUNT=$(git tag -l "v$DATE_VER.*" | wc -l | tr -d ' ')
+          echo "count=$COUNT" >> $GITHUB_OUTPUT
+          NEXT=$((COUNT+1))
+          echo "version=v$DATE_VER.$NEXT" >> $GITHUB_OUTPUT
+
+      - name: Create tag
+
+
+                
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git tag ${{ steps.ver.outputs.version }}
+          git push origin ${{ steps.ver.outputs.version }}
+
+      - name: Create GitHub Release
+
+
+                
+          tag_name: "${{ steps.ver.outputs.version }}"
+          name: Release ${{ steps.ver.outputs.version }}
+          generate_release_notes: true
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+
+      - name: Upload build artifact
+
+
+                
+          name: web-build
+          path: .next/**
+          if-no-files-found: warn

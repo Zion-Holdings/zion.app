@@ -1,0 +1,9 @@
+export default function Page(){return <div className="prose dark:prose-invert"><h1>Cybersecurity Best Practices</h1><p>Content coming soon.</p></div>}
+=======
+export default function ArticlePage() { return <div className="py-8">Cybersecurity best practices</div>; }
+=======
+import React from 'react';
+
+export default function CybersecurityBestPracticesPage() {
+  return <div>Cybersecurity Best Practices</div>;
+}

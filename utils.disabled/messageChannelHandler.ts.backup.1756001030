@@ -1,0 +1,9 @@
+export const messageChannelHandler = {
+<<<<<<< HEAD
+  sendMessage: (message: any) => {},
+  receiveMessage: (callback: any) => {},
+=======
+  sendMessage: (message: string) => {},
+  receiveMessage: (callback: (message: string) => void) => {},
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-b8f6
+};

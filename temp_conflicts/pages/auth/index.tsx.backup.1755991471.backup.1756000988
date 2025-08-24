@@ -1,0 +1,11 @@
+<<<<<<< HEAD
+import React from 'react';
+
+export default function AuthIndexPage() {
+  return <div>Auth</div>;
+}
+=======
+export default function Auth(){
+  return <div style={{padding:20}}>Auth</div>
+}
+>>>>>>> origin/cursor/deploy-anonymous-zk-voting-for-dao-e4d6

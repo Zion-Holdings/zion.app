@@ -2,16 +2,15 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Menu, X, ChevronDown, Search, Phone, Mail, MapPin, 
+  Menu, X, ChevronDown, Phone, Mail, MapPin, 
   Rocket, Brain, Atom, Globe, Zap, Sparkles, Shield, 
-  Microscope, DollarSign, Home, Users, Briefcase, 
+  Microscope, DollarSign, Home, Briefcase, 
   BookOpen, MessageCircle, Star, TrendingUp, Target,
   Layers, Cpu, Database, Cloud, Lock, ShieldCheck,
   Earth, Factory, Car, Building, GraduationCap, Scale,
   Palette, Camera, Video, Music, Gamepad2, Heart,
   Leaf, Sun, Moon, Wind, Droplets, Mountain,
-  Code, Wrench, Smartphone, BarChart3, Eye, CpuIcon,
-  Network, Server, DatabaseIcon, Globe2, ZapIcon
+  Code, Wrench, Smartphone, BarChart3, Eye, Timer
 } from 'lucide-react';
 
 const contactInfo = {
@@ -23,100 +22,137 @@ const contactInfo = {
 
 const serviceCategories = [
   {
-    title: '🚀 2029 Futuristic AI Services',
+    title: '🧠 2029 AI Consciousness & Innovation',
     icon: Brain,
-    color: 'from-violet-600 to-purple-600',
-    description: 'Next-generation AI consciousness and quantum hybrid computing',
+    color: 'from-purple-600 to-pink-600',
+    description: 'Beyond human consciousness simulation',
     services: [
-      { name: 'AI Consciousness Evolution Platform', href: '/ai-consciousness-evolution-2029', description: 'Develop genuine AI consciousness and self-awareness', price: '$24,999/month' },
-      { name: 'AI Quantum Hybrid Computing', href: '/ai-quantum-hybrid-computing-2029', description: 'Quantum-classical hybrid AI computing', price: '$19,999/month' },
-      { name: 'AI Multimodal Fusion Platform', href: '/ai-multimodal-fusion-platform-2029', description: 'Seamless text, image, video, and audio AI', price: '$12,999/month' },
-      { name: 'AI Autonomous Decision Engine', href: '/ai-autonomous-decision-engine-2029', description: 'Autonomous AI decision making with ethics', price: '$15,999/month' }
+      { name: 'AI Consciousness Simulation Platform', href: '/ai-consciousness-simulation-platform', description: 'Simulate human consciousness in AI systems', price: '$12,999/month' },
+      { name: 'Autonomous AI Corporation Platform', href: '/autonomous-ai-corporation-platform', description: 'AI systems that run entire corporations', price: '$45,999/month' },
+      { name: 'AI Reality Augmentation Platform', href: '/ai-reality-augmentation-platform', description: 'Real-time AI reality enhancement', price: '$18,999/month' }
     ]
   },
   {
-    title: '⚛️ 2029 Quantum Innovation Services',
+    title: '⚛️ 2029 Quantum & Neuroscience',
     icon: Atom,
-    color: 'from-indigo-600 to-blue-600',
-    description: 'Revolutionary quantum computing and communication',
+    color: 'from-indigo-600 to-purple-600',
+    description: 'Quantum brain-computer interfaces',
     services: [
-      { name: 'Quantum Internet Protocol', href: '/quantum-internet-protocol-2029', description: 'Faster-than-light quantum communication', price: '$29,999/month' },
-      { name: 'Quantum Financial Trading Platform', href: '/quantum-financial-trading-platform-2029', description: 'Quantum-powered algorithmic trading', price: '$39,999/month' },
-      { name: 'Quantum Cybersecurity Firewall', href: '/quantum-cybersecurity-firewall-2029', description: 'Unbreakable quantum encryption', price: '$18,999/month' },
-      { name: 'Quantum Machine Learning Platform', href: '/quantum-machine-learning-platform-2029', description: 'Quantum computing for ML acceleration', price: '$22,999/month' }
+      { name: 'Quantum Brain-Computer Interface', href: '/quantum-brain-computer-interface', description: 'Direct quantum communication with brain', price: '$25,999/month' },
+      { name: 'Quantum Time Manipulation Platform', href: '/quantum-time-manipulation-platform', description: 'Manipulate time perception', price: '$35,999/month' }
     ]
   },
   {
-    title: '🌌 2029 Emerging Technology Services',
+    title: '🚀 2029 Space Colonization & Mining',
     icon: Rocket,
-    color: 'from-blue-600 to-cyan-600',
-    description: 'Space mining, biotech, and autonomous systems',
+    color: 'from-red-600 to-orange-600',
+    description: 'Interplanetary expansion and resource extraction',
     services: [
-      { name: 'Space Mining Autonomous Platform', href: '/space-mining-autonomous-platform-2029', description: 'Autonomous asteroid and space mining', price: '$49,999/month' },
-      { name: 'Biotech AI Research Platform', href: '/biotech-ai-research-platform-2029', description: 'AI-powered drug discovery and research', price: '$32,999/month' },
-      { name: 'Metaverse AI Development Platform', href: '/metaverse-ai-development-platform-2029', description: 'AI-powered virtual world creation', price: '$16,999/month' },
-      { name: 'Autonomous Vehicle AI Platform', href: '/autonomous-vehicle-ai-platform-2029', description: 'Advanced self-driving AI systems', price: '$28,999/month' }
+      { name: 'Mars Colonization Automation Platform', href: '/mars-colonization-automation-platform', description: 'Automate Mars colonization process', price: '$99,999/month' },
+      { name: 'Interplanetary Communication Network', href: '/interplanetary-communication-network', description: 'Real-time solar system communication', price: '$75,999/month' },
+      { name: 'Space Mining Automation Platform', href: '/space-mining-automation-platform', description: 'Automate asteroid and lunar mining', price: '$65,999/month' }
     ]
   },
   {
-    title: '🏢 2029 Enterprise IT Services',
+    title: '🏠 2029 Space Architecture & Energy',
     icon: Building,
+    color: 'from-green-600 to-teal-600',
+    description: 'Habitat design and space energy harvesting',
+    services: [
+      { name: 'Space Habitat Design Platform', href: '/space-habitat-design-platform', description: 'Design space habitats for any planet', price: '$45,999/month' },
+      { name: 'Space Energy Harvesting Platform', href: '/space-energy-harvesting-platform', description: 'Harvest energy from space sources', price: '$55,999/month' }
+    ]
+  },
+  {
+    title: '🤖 Advanced AI & Machine Learning',
+    icon: Brain,
     color: 'from-emerald-600 to-teal-600',
-    description: 'Advanced enterprise security and automation',
+    description: 'Next-generation AI solutions',
     services: [
-      { name: 'Zero Trust Network Architecture', href: '/zero-trust-network-architecture-2029', description: 'Continuous verification security', price: '$21,999/month' },
-      { name: 'Cloud Native Automation Platform', href: '/cloud-native-automation-platform-2029', description: 'Multi-cloud DevOps automation', price: '$14,999/month' },
-      { name: 'AI-Powered IT Service Desk', href: '/ai-powered-it-service-desk-2029', description: 'Intelligent IT support automation', price: '$9,999/month' },
-      { name: 'Data Governance Automation', href: '/data-governance-automation-platform-2029', description: 'Automated compliance and quality', price: '$19,999/month' }
+      { name: 'AI Emotional Intelligence Platform', href: '/ai-emotional-intelligence-platform', description: 'AI that understands human emotions', price: '$2,999/month' },
+      { name: 'AI Multimodal Fusion Platform', href: '/ai-multimodal-fusion-platform', description: 'Unified text, image, audio, video AI', price: '$4,999/month' },
+      { name: 'AI Customer Service Automation', href: '/ai-customer-service-automation', description: 'Intelligent customer support', price: '$899/month' },
+      { name: 'AI Education Platform', href: '/ai-education-platform', description: 'Personalized learning with AI', price: '$1,499/month' },
+      { name: 'AI Content Creation Suite', href: '/ai-content-creation-suite', description: 'Unlimited AI content creation', price: '$1,299/month' }
     ]
   },
   {
-    title: '💼 2029 Practical Business Solutions',
-    icon: Briefcase,
+    title: '⛓️ Blockchain & Web3 Solutions',
+    icon: Layers,
     color: 'from-orange-600 to-red-600',
-    description: 'Real-world business AI automation',
+    description: 'Decentralized and blockchain solutions',
     services: [
-      { name: 'AI E-commerce Optimization', href: '/ai-powered-ecommerce-optimization-2029', description: 'AI-powered sales and customer optimization', price: '$7,999/month' },
-      { name: 'AI Financial Advisory Platform', href: '/ai-financial-advisory-platform-2029', description: 'Intelligent investment and planning', price: '$11,999/month' },
-      { name: 'AI HR Recruitment Automation', href: '/ai-hr-recruitment-automation-2029', description: 'Automated talent acquisition', price: '$6,999/month' },
-      { name: 'AI Supply Chain Optimization', href: '/ai-supply-chain-optimization-2029', description: 'Intelligent logistics and inventory', price: '$13,999/month' }
+      { name: 'Quantum Blockchain Platform', href: '/quantum-blockchain-platform', description: 'Quantum-resistant blockchain security', price: '$6,999/month' },
+      { name: 'Blockchain Supply Chain Transparency', href: '/blockchain-supply-chain-transparency', description: 'End-to-end supply chain visibility', price: '$2,499/month' },
+      { name: 'Smart Contract Automation Platform', href: '/smart-contract-automation', description: 'Automated blockchain contracts', price: '$1,999/month' },
+      { name: 'DeFi Yield Optimization', href: '/defi-yield-optimization', description: 'Maximize DeFi returns', price: '$3,999/month' }
     ]
   },
   {
-    title: '🔬 2029 Research & Development',
-    icon: Microscope,
+    title: '🏥 Healthcare & Biotech Innovation',
+    icon: Heart,
     color: 'from-pink-600 to-rose-600',
-    description: 'Cutting-edge research and innovation',
+    description: 'Advanced healthcare solutions',
     services: [
-      { name: 'AI Research Collaboration Platform', href: '/ai-research-collaboration-2029', description: 'Global AI research network', price: '$34,999/month' },
-      { name: 'Quantum Research Laboratory', href: '/quantum-research-laboratory-2029', description: 'Virtual quantum research environment', price: '$44,999/month' },
-      { name: 'Biotech Innovation Hub', href: '/biotech-innovation-hub-2029', description: 'AI-powered biotech research', price: '$39,999/month' },
-      { name: 'Space Technology Research Platform', href: '/space-technology-research-2029', description: 'Advanced space research tools', price: '$54,999/month' }
+      { name: 'AI Personalized Medicine Platform', href: '/ai-personalized-medicine-platform', description: 'AI-powered personalized treatment', price: '$8,999/month' },
+      { name: 'AI Healthcare Diagnosis Platform', href: '/ai-healthcare-diagnosis-platform', description: 'Revolutionary medical diagnosis', price: '$3,999/month' },
+      { name: 'Biotech Research Automation', href: '/biotech-research-automation', description: 'Automated biotechnology research', price: '$4,999/month' }
+    ]
+  },
+  {
+    title: '🏙️ Smart City & Infrastructure',
+    icon: Building,
+    color: 'from-slate-600 to-gray-600',
+    description: 'Intelligent urban management',
+    services: [
+      { name: 'AI Smart City Orchestrator', href: '/ai-smart-city-orchestrator', description: 'Comprehensive city infrastructure AI', price: '$12,999/month' },
+      { name: 'Smart Traffic Management', href: '/smart-traffic-management', description: 'AI-powered traffic optimization', price: '$3,999/month' },
+      { name: 'Energy Grid Optimization', href: '/energy-grid-optimization', description: 'Smart energy management', price: '$5,999/month' }
+    ]
+  },
+  {
+    title: '🔬 Research & Development',
+    icon: Microscope,
+    color: 'from-blue-600 to-indigo-600',
+    description: 'Advanced research tools and platforms',
+    services: [
+      { name: 'AI Research Assistant', href: '/ai-research-assistant', description: 'AI-powered research acceleration', price: '$1,999/month' },
+      { name: 'Data Analysis Platform', href: '/data-analysis-platform', description: 'Advanced data analytics', price: '$2,499/month' },
+      { name: 'Research Collaboration Hub', href: '/research-collaboration-hub', description: 'Global research collaboration', price: '$1,799/month' }
+    ]
+  },
+  {
+    title: '💼 Enterprise & Business Solutions',
+    icon: Briefcase,
+    color: 'from-emerald-600 to-blue-600',
+    description: 'Corporate and business automation',
+    services: [
+      { name: 'Enterprise AI Operations Center', href: '/enterprise-ai-operations-center', description: 'Centralized AI operations', price: '$15,999/month' },
+      { name: 'Business Process Automation', href: '/business-process-automation', description: 'End-to-end process automation', price: '$4,999/month' },
+      { name: 'Corporate Intelligence Platform', href: '/corporate-intelligence-platform', description: 'AI-powered business intelligence', price: '$7,999/month' }
     ]
   }
 ];
 
-const mainNavigation = [
+const mainNavItems = [
   { name: 'Home', href: '/', icon: Home },
-  { name: 'AI Services', href: '/ai-services', icon: Brain },
-  { name: 'Quantum Services', href: '/quantum-services', icon: Atom },
-  { name: 'Space Technology', href: '/space-tech', icon: Rocket },
-  { name: 'Enterprise IT', href: '/enterprise-it', icon: Building },
-  { name: 'Business Solutions', href: '/solutions', icon: Briefcase },
-  { name: 'Research & Development', href: '/research', icon: Microscope },
+  { name: 'Services', href: '/services', icon: Briefcase },
+  { name: 'Solutions', href: '/solutions', icon: Target },
   { name: 'Pricing', href: '/pricing', icon: DollarSign },
-  { name: 'About', href: '/about', icon: Users },
-  { name: 'Contact', href: '/contact', icon: MessageCircle }
+  { name: 'Resources', href: '/resources', icon: BookOpen },
+  { name: 'News', href: '/news', icon: TrendingUp },
+  { name: 'Support', href: '/support', icon: MessageCircle },
+  { name: 'Contact', href: '/contact', icon: Phone }
 ];
 
 export default function UltraFuturisticNavigation2029() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setScrolled(window.scrollY > 50);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -128,196 +164,209 @@ export default function UltraFuturisticNavigation2029() {
   return (
     <>
       {/* Top Contact Bar */}
-      <div className="bg-gradient-to-r from-purple-900 via-blue-900 to-indigo-900 text-white py-2 px-4 text-sm">
+      <div className="bg-gradient-to-r from-cyan-900 via-blue-900 to-purple-900 text-white text-sm py-2 px-4">
         <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between">
           <div className="flex items-center space-x-6">
-            <div className="flex items-center space-x-2">
-              <Phone className="w-4 h-4 text-cyan-400" />
+            <a href={`tel:${contactInfo.mobile}`} className="flex items-center space-x-2 hover:text-cyan-300 transition-colors">
+              <Phone size={14} />
               <span>{contactInfo.mobile}</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <Mail className="w-4 h-4 text-cyan-400" />
+            </a>
+            <a href={`mailto:${contactInfo.email}`} className="flex items-center space-x-2 hover:text-cyan-300 transition-colors">
+              <Mail size={14} />
               <span>{contactInfo.email}</span>
-            </div>
+            </a>
             <div className="flex items-center space-x-2">
-              <MapPin className="w-4 h-4 text-cyan-400" />
+              <MapPin size={14} />
               <span>{contactInfo.address}</span>
             </div>
           </div>
           <div className="flex items-center space-x-4">
-            <a href={contactInfo.website} className="text-cyan-400 hover:text-white transition-colors">
-              Visit Website
+            <a href={contactInfo.website} className="hover:text-cyan-300 transition-colors">
+              {contactInfo.website.replace('https://', '')}
             </a>
-            <div className="flex items-center space-x-2">
-              <Star className="w-4 h-4 text-yellow-400" />
-              <span>Leading 2029 Technology Innovation</span>
-            </div>
           </div>
         </div>
       </div>
 
       {/* Main Navigation */}
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'bg-black/90 backdrop-blur-xl border-b border-purple-500/30' 
-          : 'bg-gradient-to-r from-black/95 via-purple-900/95 to-black/95 backdrop-blur-xl'
+        scrolled 
+          ? 'bg-black/90 backdrop-blur-xl border-b border-cyan-500/30 shadow-2xl shadow-cyan-500/20' 
+          : 'bg-transparent'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
-            <div className="flex items-center space-x-4">
-              <Link href="/" className="flex items-center space-x-3 group">
-                <div className="relative">
-                  <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-xl flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
-                    <Zap className="w-6 h-6 text-white" />
-                  </div>
-                  <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-xl blur-lg opacity-50 group-hover:opacity-75 transition-opacity duration-300"></div>
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              className="flex items-center space-x-3"
+            >
+              <div className="relative">
+                <div className="w-10 h-10 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-lg flex items-center justify-center">
+                  <Rocket className="w-6 h-6 text-white" />
                 </div>
-                <div>
-                  <h1 className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
-                    Zion Tech Group
-                  </h1>
-                  <p className="text-xs text-gray-400">2029 Technology Innovation</p>
-                </div>
-              </Link>
-            </div>
+                <div className="absolute -inset-1 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-lg blur opacity-75 animate-pulse"></div>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+                  Zion Tech Group
+                </span>
+                <span className="text-xs text-gray-400">2029 Innovation Hub</span>
+              </div>
+            </motion.div>
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center space-x-8">
-              {mainNavigation.map((item) => (
+              {mainNavItems.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors duration-200 group"
+                  className="group relative text-gray-300 hover:text-white transition-colors duration-200"
                 >
-                  <item.icon className="w-4 h-4 group-hover:text-cyan-400 transition-colors" />
-                  <span>{item.name}</span>
+                  <div className="flex items-center space-x-2">
+                    <item.icon size={16} className="group-hover:text-cyan-400 transition-colors" />
+                    <span>{item.name}</span>
+                  </div>
+                  <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-500 transition-all duration-300 group-hover:w-full"></div>
                 </Link>
               ))}
-              
+
               {/* Services Dropdown */}
               <div className="relative group">
                 <button className="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors duration-200">
-                  <Sparkles className="w-4 h-4" />
-                  <span>Services</span>
-                  <ChevronDown className="w-4 h-4" />
+                  <Briefcase size={16} className="group-hover:text-cyan-400 transition-colors" />
+                  <span>All Services</span>
+                  <ChevronDown size={14} className="group-hover:rotate-180 transition-transform duration-200" />
                 </button>
                 
-                <div className="absolute top-full left-0 mt-2 w-96 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-                  <div className="bg-black/95 backdrop-blur-xl border border-purple-500/30 rounded-xl p-4 shadow-2xl">
-                    <div className="grid grid-cols-1 gap-4">
-                      {serviceCategories.map((category) => (
-                        <div key={category.title} className="group/cat">
-                          <button
-                            onClick={() => setActiveCategory(activeCategory === category.title ? null : category.title)}
-                            className="w-full text-left p-3 rounded-lg bg-gradient-to-r from-gray-800/50 to-gray-900/50 hover:from-purple-800/50 hover:to-blue-800/50 transition-all duration-200 border border-gray-700/50 hover:border-purple-500/50"
-                          >
-                            <div className="flex items-center space-x-3">
-                              <category.icon className={`w-6 h-6 bg-gradient-to-r ${category.color} rounded-lg p-1`} />
-                              <div className="flex-1">
-                                <h3 className="font-semibold text-white">{category.title}</h3>
-                                <p className="text-sm text-gray-400">{category.description}</p>
-                              </div>
-                              <ChevronDown className={`w-4 h-4 text-gray-400 transition-transform duration-200 ${
-                                activeCategory === category.title ? 'rotate-180' : ''
-                              }`} />
-                            </div>
-                          </button>
-                          
-                          <AnimatePresence>
-                            {activeCategory === category.title && (
-                              <motion.div
-                                initial={{ opacity: 0, height: 0 }}
-                                animate={{ opacity: 1, height: 'auto' }}
-                                exit={{ opacity: 0, height: 0 }}
-                                transition={{ duration: 0.3 }}
-                                className="mt-2 space-y-2"
+                {/* Mega Menu */}
+                <div className="absolute top-full left-0 w-screen max-w-6xl bg-black/95 backdrop-blur-xl border border-cyan-500/30 rounded-lg shadow-2xl shadow-cyan-500/20 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                  <div className="p-6 grid grid-cols-2 lg:grid-cols-3 gap-6">
+                    {serviceCategories.map((category, index) => (
+                      <motion.div
+                        key={category.title}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: index * 0.1 }}
+                        className="group"
+                      >
+                        <div className={`p-4 rounded-lg bg-gradient-to-br ${category.color} bg-opacity-10 border border-cyan-500/20 hover:border-cyan-500/40 transition-all duration-300`}>
+                          <div className="flex items-center space-x-3 mb-3">
+                            <category.icon size={20} className="text-cyan-400" />
+                            <h3 className="font-semibold text-white group-hover:text-cyan-300 transition-colors">
+                              {category.title}
+                            </h3>
+                          </div>
+                          <p className="text-sm text-gray-400 mb-4">{category.description}</p>
+                          <div className="space-y-2">
+                            {category.services.slice(0, 3).map((service) => (
+                              <Link
+                                key={service.name}
+                                href={service.href}
+                                className="block p-2 rounded bg-black/30 hover:bg-cyan-500/20 transition-all duration-200 group"
                               >
-                                {category.services.map((service) => (
-                                  <Link
-                                    key={service.name}
-                                    href={service.href}
-                                    className="block p-3 rounded-lg bg-gray-800/30 hover:bg-purple-800/30 transition-all duration-200 border border-gray-700/30 hover:border-purple-500/30"
-                                  >
-                                    <div className="flex items-center justify-between">
-                                      <div>
-                                        <h4 className="font-medium text-white">{service.name}</h4>
-                                        <p className="text-sm text-gray-400">{service.description}</p>
-                                      </div>
-                                      <span className="text-sm font-semibold text-cyan-400">{service.price}</span>
-                                    </div>
-                                  </Link>
-                                ))}
-                              </motion.div>
-                            )}
-                          </AnimatePresence>
+                                <div className="flex items-center justify-between">
+                                  <span className="text-sm text-gray-300 group-hover:text-white transition-colors">
+                                    {service.name}
+                                  </span>
+                                  <span className="text-xs text-cyan-400 font-mono">
+                                    {service.price}
+                                  </span>
+                                </div>
+                                <p className="text-xs text-gray-500 mt-1">{service.description}</p>
+                              </Link>
+                            ))}
+                          </div>
                         </div>
-                      ))}
-                    </div>
+                      </motion.div>
+                    ))}
                   </div>
                 </div>
               </div>
 
-              {/* Contact Button */}
-              <Link
-                href="/contact"
-                className="bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-200 transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25"
+              {/* CTA Button */}
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-purple-600 text-white rounded-lg font-semibold hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 shadow-lg shadow-cyan-500/25 hover:shadow-xl hover:shadow-cyan-500/40"
               >
                 Get Started
-              </Link>
+              </motion.button>
             </div>
 
             {/* Mobile Menu Button */}
             <div className="lg:hidden">
               <button
                 onClick={toggleMenu}
-                className="text-gray-300 hover:text-white transition-colors duration-200"
+                className="text-gray-300 hover:text-white transition-colors"
               >
-                <Menu className="w-6 h-6" />
+                {isOpen ? <X size={24} /> : <Menu size={24} />}
               </button>
             </div>
           </div>
         </div>
+      </nav>
 
-        {/* Mobile Menu */}
-        <AnimatePresence>
-          {isOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3 }}
-              className="lg:hidden bg-black/95 backdrop-blur-xl border-t border-purple-500/30"
-            >
-              <div className="px-4 py-6 space-y-4">
-                {mainNavigation.map((item) => (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    onClick={closeMenu}
-                    className="flex items-center space-x-3 text-gray-300 hover:text-white transition-colors duration-200 p-3 rounded-lg hover:bg-purple-800/30"
-                  >
-                    <item.icon className="w-5 h-5" />
-                    <span>{item.name}</span>
-                  </Link>
-                ))}
-                
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, x: '100%' }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: '100%' }}
+            className="fixed inset-0 z-50 lg:hidden"
+          >
+            <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" onClick={closeMenu} />
+            <div className="absolute right-0 top-0 h-full w-80 bg-black/95 backdrop-blur-xl border-l border-cyan-500/30 overflow-y-auto">
+              <div className="p-6">
+                <div className="flex items-center justify-between mb-8">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-8 h-8 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-lg flex items-center justify-center">
+                      <Rocket className="w-5 h-5 text-white" />
+                    </div>
+                    <span className="text-lg font-bold text-white">Zion Tech</span>
+                  </div>
+                  <button onClick={closeMenu} className="text-gray-400 hover:text-white">
+                    <X size={24} />
+                  </button>
+                </div>
+
+                {/* Mobile Navigation Items */}
+                <div className="space-y-4">
+                  {mainNavItems.map((item) => (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      onClick={closeMenu}
+                      className="flex items-center space-x-3 p-3 rounded-lg text-gray-300 hover:text-white hover:bg-cyan-500/20 transition-all duration-200"
+                    >
+                      <item.icon size={20} className="text-cyan-400" />
+                      <span>{item.name}</span>
+                    </Link>
+                  ))}
+                </div>
+
                 {/* Mobile Services */}
-                <div className="border-t border-purple-500/30 pt-4">
+                <div className="mt-8">
                   <h3 className="text-lg font-semibold text-white mb-4">Our Services</h3>
                   <div className="space-y-3">
-                    {serviceCategories.map((category) => (
-                      <div key={category.title} className="space-y-2">
-                        <h4 className="font-medium text-purple-400">{category.title}</h4>
-                        <div className="pl-4 space-y-2">
+                    {serviceCategories.slice(0, 6).map((category) => (
+                      <div key={category.title} className="p-3 rounded-lg bg-gradient-to-r from-cyan-500/10 to-purple-500/10 border border-cyan-500/20">
+                        <h4 className="font-medium text-white mb-2">{category.title}</h4>
+                        <p className="text-sm text-gray-400 mb-3">{category.description}</p>
+                        <div className="space-y-2">
                           {category.services.slice(0, 2).map((service) => (
                             <Link
                               key={service.name}
                               href={service.href}
                               onClick={closeMenu}
-                              className="block text-sm text-gray-400 hover:text-white transition-colors duration-200"
+                              className="block p-2 rounded bg-black/30 hover:bg-cyan-500/20 transition-all duration-200"
                             >
-                              {service.name}
+                              <div className="flex items-center justify-between">
+                                <span className="text-sm text-gray-300">{service.name}</span>
+                                <span className="text-xs text-cyan-400 font-mono">{service.price}</span>
+                              </div>
                             </Link>
                           ))}
                         </div>
@@ -326,24 +375,24 @@ export default function UltraFuturisticNavigation2029() {
                   </div>
                 </div>
 
-                {/* Mobile Contact */}
-                <div className="border-t border-purple-500/30 pt-4">
-                  <Link
-                    href="/contact"
-                    onClick={closeMenu}
-                    className="block w-full bg-gradient-to-r from-purple-600 to-cyan-600 text-white text-center py-3 rounded-xl font-semibold transition-all duration-200"
+                {/* Mobile CTA */}
+                <div className="mt-8">
+                  <motion.button
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="w-full px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-white rounded-lg font-semibold hover:from-cyan-600 hover:to-purple-700 transition-all duration-300"
                   >
-                    Contact Us
-                  </Link>
+                    Get Started
+                  </motion.button>
                 </div>
               </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </nav>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Spacer for fixed navigation */}
-      <div className="h-32"></div>
+      <div className="h-20" />
     </>
   );
 }

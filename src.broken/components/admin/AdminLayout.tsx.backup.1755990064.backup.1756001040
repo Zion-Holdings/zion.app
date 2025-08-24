@@ -1,0 +1,31 @@
+import React from 'react';
+<<<<<<< HEAD
+export function AdminLayout() {
+=======
+<<<<<<< HEAD
+import Link from 'next/link';
+
+interface AdminLayoutProps {
+  children: React.ReactNode;
+}
+
+const navItems = [
+  { title: 'Products', href: '/admin/products' },
+  { title: 'Services', href: '/admin/services' },
+  { title: 'Users', href: '/admin/users' },
+  { title: 'Reports', href: '/admin/reports' },
+  { title: 'Moderation', href: '/admin/moderation' },
+];
+
+export function AdminLayout({ children }: AdminLayoutProps) {
+=======
+export function AdminLayout() {
+>>>>>>> origin/automation-error-fixes
+>>>>>>> origin/cursor/website-audit-and-enhancement-63e3
+  return (
+    <div>
+      <h1>Component</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

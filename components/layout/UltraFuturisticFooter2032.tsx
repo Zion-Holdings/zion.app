@@ -2,10 +2,14 @@ import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { 
-  Rocket, Brain, Atom, Zap, Sparkles, Shield, 
-  Phone, Mail, MapPin, Globe, ArrowRight,
-  Linkedin, Twitter, Facebook, Instagram, Youtube, Github,
-  CheckCircle, Award, Star
+  Phone, Mail, MapPin, Globe, Zap, Brain, Atom, 
+  Rocket, Shield, Cpu, Target, Microscope, Users,
+  Facebook, Twitter, Linkedin, Instagram, Youtube,
+  Github, ArrowRight, Heart, Star, Award, CheckCircle,
+  Home, Briefcase, BookOpen, MessageCircle, DollarSign,
+  TrendingUp, Target as TargetIcon, Users as UsersIcon,
+  Briefcase as BriefcaseIcon, BookOpen as BookOpenIcon,
+  MessageCircle as MessageCircleIcon, Star as StarIcon
 } from 'lucide-react';
 
 const contactInfo = {
@@ -15,9 +19,20 @@ const contactInfo = {
   website: 'https://ziontechgroup.com'
 };
 
+const mainNavigationRoutes = [
+  { name: 'Home', href: '/', icon: Home, description: 'Welcome to Zion Tech Group' },
+  { name: 'Services', href: '/services', icon: Briefcase, description: 'Our comprehensive service portfolio' },
+  { name: 'Solutions', href: '/solutions', icon: TargetIcon, description: 'Tailored solutions for your business' },
+  { name: 'Pricing', href: '/pricing', icon: DollarSign, description: 'Transparent pricing and packages' },
+  { name: 'Resources', href: '/resources', icon: BookOpen, description: 'Knowledge base and documentation' },
+  { name: 'Case Studies', href: '/case-studies', icon: Users, description: 'Success stories and implementations' },
+  { name: 'Blog', href: '/blog', icon: MessageCircle, description: 'Latest insights and updates' },
+  { name: 'Contact', href: '/contact', icon: MessageCircle, description: 'Get in touch with our team' }
+];
+
 const serviceCategories = [
   {
-    title: '🧠 Revolutionary AI',
+    title: '🚀 2032 Revolutionary AI Services',
     services: [
       { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-platform' },
       { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-platform' },
@@ -26,48 +41,67 @@ const serviceCategories = [
     ]
   },
   {
-    title: '⚛️ Quantum & Emerging Tech',
+    title: '⚛️ 2032 Quantum & Emerging Tech',
     services: [
+      { name: 'Quantum DNA Computing', href: '/quantum-dna-computing-platform' },
       { name: 'Quantum Internet Security', href: '/quantum-internet-security-gateway' },
-      { name: 'DNA Computing Platform', href: '/biotech-dna-computing-platform' },
       { name: 'Quantum Financial Trading', href: '/quantum-financial-trading-platform' },
       { name: 'Quantum Creativity Studio', href: '/quantum-creativity-studio' }
     ]
   },
   {
-    title: '🏙️ Enterprise IT Solutions',
+    title: '🏙️ 2032 Enterprise IT Solutions',
     services: [
-      { name: 'Autonomous DevOps Platform', href: '/autonomous-devops-platform' },
+      { name: 'Autonomous DevOps', href: '/autonomous-devops-platform' },
       { name: 'Zero Trust Architecture', href: '/zero-trust-network-architecture' },
       { name: 'Edge Computing Orchestration', href: '/edge-computing-orchestration' },
       { name: 'AI IT Operations Center', href: '/ai-powered-it-operations-center' }
     ]
   },
   {
-    title: '🌌 Space & Metaverse',
+    title: '🌌 2032 Space & Metaverse Tech',
     services: [
       { name: 'Space Mining Automation', href: '/space-mining-automation-platform' },
       { name: 'Metaverse Development', href: '/metaverse-development-platform' },
-      { name: 'AI Health Analytics', href: '/ai-predictive-health-analytics' }
+      { name: 'AI Predictive Health', href: '/ai-predictive-health-analytics' },
+      { name: 'AI Autonomous Business', href: '/ai-autonomous-business-manager' }
+    ]
+  },
+  {
+    title: '🎯 2032 Innovative Micro SAAS',
+    services: [
+      { name: 'AI Business Intelligence', href: '/ai-business-intelligence-suite' },
+      { name: 'Quantum-Secure Communication', href: '/quantum-secure-communication-platform' },
+      { name: 'AI Customer Success', href: '/ai-customer-success-automation' },
+      { name: 'Blockchain Supply Chain', href: '/blockchain-supply-chain-transparency' }
+    ]
+  },
+  {
+    title: '🔬 2032 Research & Development',
+    services: [
+      { name: 'Neuromorphic Computing', href: '/neuromorphic-computing-platform' },
+      { name: 'DNA Computing Platform', href: '/dna-computing-platform' },
+      { name: 'Photonic Computing', href: '/photonic-computing-infrastructure' },
+      { name: 'Swarm Robotics', href: '/swarm-robotics-orchestration' }
     ]
   }
 ];
 
 const quickLinks = [
-  { name: 'Home', href: '/' },
-  { name: 'Services', href: '/services' },
-  { name: 'Solutions', href: '/solutions' },
-  { name: 'Pricing', href: '/pricing' },
-  { name: 'Resources', href: '/resources' },
-  { name: 'Case Studies', href: '/case-studies' },
-  { name: 'Blog', href: '/blog' },
-  { name: 'Contact', href: '/contact' }
+  { name: '2032 Services', href: '/2032-futuristic-services-showcase', icon: Star, description: 'Revolutionary 2032 services' },
+  { name: 'Enhanced Pricing', href: '/enhanced-market-pricing-2032', icon: DollarSign, description: 'Comprehensive pricing analysis' },
+  { name: 'Market Pricing', href: '/market-pricing', icon: DollarSign, description: 'Competitive pricing references' },
+  { name: 'Enhanced Services', href: '/enhanced-services-showcase', icon: Star, description: 'Premium service showcase' },
+  { name: 'Revolutionary 2026', href: '/revolutionary-2026-services', icon: TrendingUp, description: '2026 breakthrough services' },
+  { name: 'Ultimate 2026', href: '/ultimate-2026-services-showcase', icon: Target, description: 'Ultimate service portfolio' },
+  { name: 'News & Updates', href: '/news', icon: MessageCircle, description: 'Latest company news' },
+  { name: 'Support', href: '/support', icon: Users, description: 'Technical support and help' }
 ];
 
-const companyLinks = [
+const companyInfo = [
   { name: 'About Us', href: '/about' },
   { name: 'Careers', href: '/careers' },
-  { name: 'News', href: '/news' },
+  { name: 'Press', href: '/press' },
   { name: 'Partners', href: '/partners' },
   { name: 'Support', href: '/support' },
   { name: 'Status', href: '/status' }
@@ -75,224 +109,166 @@ const companyLinks = [
 
 const socialLinks = [
   { name: 'LinkedIn', href: 'https://linkedin.com/company/ziontechgroup', icon: Linkedin },
-  { name: 'GitHub', href: 'https://github.com/Zion-Holdings', icon: Github },
+  { name: 'Twitter', href: 'https://twitter.com/ziontechgroup', icon: Twitter },
+  { name: 'Facebook', href: 'https://facebook.com/ziontechgroup', icon: Facebook },
   { name: 'Instagram', href: 'https://instagram.com/ziontechgroup', icon: Instagram },
-  { name: 'YouTube', href: 'https://youtube.com/@ziontechgroup', icon: Youtube }
+  { name: 'YouTube', href: 'https://youtube.com/ziontechgroup', icon: Youtube },
+  { name: 'GitHub', href: 'https://github.com/Zion-Holdings', icon: Github }
 ];
 
-const certifications = [
-  'ISO 27001 Certified',
-  'SOC 2 Type II Compliant',
-  'GDPR Compliant',
-  'HIPAA Compliant',
-  'PCI DSS Level 1',
-  'FedRAMP Authorized'
-];
+const footerVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      staggerChildren: 0.1
+    }
+  }
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 }
+};
 
 export default function UltraFuturisticFooter2032() {
   return (
-    <footer className="bg-gradient-to-br from-black via-purple-900/20 to-black text-white relative overflow-hidden">
-      {/* Background Elements */}
+    <footer className="relative bg-gradient-to-b from-black via-gray-900 to-black border-t border-cyan-500/30 overflow-hidden">
+      {/* Animated Background Elements */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-cyan-500/5"></div>
-        <div className="absolute top-20 left-10 w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
-        <div className="absolute top-40 right-20 w-1 h-1 bg-cyan-400 rounded-full animate-ping"></div>
-        <div className="absolute bottom-20 left-1/4 w-1.5 h-1.5 bg-purple-300 rounded-full animate-bounce"></div>
-        <div className="absolute bottom-40 right-1/3 w-1 h-1 bg-cyan-300 rounded-full animate-pulse"></div>
+        <div className="absolute top-0 left-0 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-pink-500/5 rounded-full blur-3xl"></div>
       </div>
 
-      <div className="relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-10">
+        <motion.div
+          variants={footerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="space-y-16"
+        >
           {/* Main Footer Content */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
             {/* Company Info */}
-            <div className="space-y-6">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-                className="flex items-center space-x-3"
-              >
-                <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-xl flex items-center justify-center">
+            <motion.div variants={itemVariants} className="lg:col-span-1">
+              <div className="flex items-center space-x-3 mb-6">
+                <div className="w-12 h-12 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 rounded-xl flex items-center justify-center shadow-lg shadow-cyan-500/30">
                   <Rocket className="w-7 h-7 text-white" />
                 </div>
                 <div>
-                  <div className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-cyan-500 bg-clip-text text-transparent">
+                  <h3 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
                     Zion Tech Group
-                  </div>
-                  <div className="text-sm text-gray-400">2032 Revolutionary Technology</div>
+                  </h3>
+                  <p className="text-sm text-cyan-300 font-medium">2032 Future Technology</p>
                 </div>
-              </motion.div>
+              </div>
               
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                viewport={{ once: true }}
-                className="text-gray-300 text-sm leading-relaxed"
-              >
-                Leading provider of 1000+ revolutionary AI, quantum computing, and IT services. 
-                Delivering 1000% ROI through cutting-edge solutions that transform businesses.
-              </motion.p>
+              <p className="text-slate-300 mb-6 leading-relaxed">
+                Leading the future of technology with revolutionary AI, quantum computing, space technology, and autonomous systems. 
+                Empowering businesses with cutting-edge solutions for tomorrow's challenges.
+              </p>
 
               {/* Contact Information */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                viewport={{ once: true }}
-                className="space-y-3"
-              >
-                <div className="flex items-center space-x-3 text-gray-300">
+              <div className="space-y-3">
+                <div className="flex items-center space-x-3 text-slate-300 hover:text-cyan-300 transition-colors">
                   <Phone className="w-4 h-4 text-cyan-400" />
-                  <a href={`tel:${contactInfo.mobile}`} className="text-sm hover:text-cyan-400 transition-colors">
+                  <a href={`tel:${contactInfo.mobile}`} className="hover:text-cyan-300 transition-colors">
                     {contactInfo.mobile}
                   </a>
                 </div>
-                <div className="flex items-center space-x-3 text-gray-300">
-                  <Mail className="w-4 h-4 text-purple-400" />
-                  <a href={`mailto:${contactInfo.email}`} className="text-sm hover:text-purple-400 transition-colors">
+                <div className="flex items-center space-x-3 text-slate-300 hover:text-cyan-300 transition-colors">
+                  <Mail className="w-4 h-4 text-cyan-400" />
+                  <a href={`mailto:${contactInfo.email}`} className="hover:text-cyan-300 transition-colors">
                     {contactInfo.email}
                   </a>
                 </div>
-                <div className="flex items-center space-x-3 text-gray-300">
-                  <MapPin className="w-4 h-4 text-green-400" />
-                  <span className="text-sm">{contactInfo.address}</span>
+                <div className="flex items-center space-x-3 text-slate-300">
+                  <MapPin className="w-4 h-4 text-cyan-400" />
+                  <span>{contactInfo.address}</span>
                 </div>
-                <div className="flex items-center space-x-3 text-gray-300">
-                  <Globe className="w-4 h-4 text-pink-400" />
-                  <a href={contactInfo.website} className="text-sm hover:text-pink-400 transition-colors">
+                <div className="flex items-center space-x-3 text-slate-300 hover:text-cyan-300 transition-colors">
+                  <Globe className="w-4 h-4 text-cyan-400" />
+                  <a href={contactInfo.website} target="_blank" rel="noopener noreferrer" className="hover:text-cyan-300 transition-colors">
                     {contactInfo.website}
                   </a>
                 </div>
-              </motion.div>
-            </div>
+              </div>
+            </motion.div>
 
             {/* Service Categories */}
-            {serviceCategories.map((category, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 + index * 0.1 }}
-                viewport={{ once: true }}
-                className="space-y-6"
-              >
-                <h4 className="text-lg font-semibold text-white flex items-center space-x-2">
-                  <span>{category.title}</span>
-                </h4>
-                <div className="space-y-2">
-                  {category.services.map((service, serviceIndex) => (
-                    <Link
-                      key={serviceIndex}
-                      href={service.href}
-                      className="block text-sm text-gray-400 hover:text-cyan-400 transition-colors duration-200 flex items-center group"
-                    >
-                      <ArrowRight className="w-3 h-3 mr-2 group-hover:translate-x-1 transition-transform duration-200" />
-                      {service.name}
-                    </Link>
-                  ))}
-                </div>
-              </motion.div>
-            ))}
-          </div>
+            <motion.div variants={itemVariants} className="lg:col-span-2">
+              <h3 className="text-xl font-semibold text-white mb-8 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+                Our Revolutionary Services
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {serviceCategories.map((category, index) => (
+                  <div key={index} className="space-y-4">
+                    <h4 className="text-lg font-medium text-white">{category.title}</h4>
+                    <ul className="space-y-2">
+                      {category.services.map((service, serviceIndex) => (
+                        <li key={serviceIndex}>
+                          <Link
+                            href={service.href}
+                            className="text-slate-300 hover:text-cyan-300 transition-colors duration-200 text-sm hover:translate-x-1 inline-block transform transition-transform"
+                          >
+                            {service.name}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
 
-          {/* Additional Links Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 pt-12 border-t border-purple-500/20">
-            <div className="grid grid-cols-2 gap-8">
+            {/* Quick Links & Company Info */}
+            <motion.div variants={itemVariants} className="lg:col-span-1">
+              <h3 className="text-xl font-semibold text-white mb-8 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                Quick Access
+              </h3>
+              
               {/* Quick Links */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-                className="space-y-4"
-              >
-                <h4 className="text-lg font-semibold text-white flex items-center space-x-2">
-                  <span>Quick Links</span>
-                </h4>
-                <div className="space-y-2">
+              <div className="mb-8">
+                <h4 className="text-lg font-medium text-white mb-4">Quick Links</h4>
+                <ul className="space-y-2">
                   {quickLinks.map((link, index) => (
-                    <Link
-                      key={index}
-                      href={link.href}
-                      className="block text-sm text-gray-400 hover:text-cyan-400 transition-colors duration-200"
-                    >
-                      {link.name}
-                    </Link>
+                    <li key={index}>
+                      <Link
+                        href={link.href}
+                        className="flex items-center space-x-2 text-slate-300 hover:text-purple-300 transition-colors duration-200 text-sm group"
+                      >
+                        <link.icon className="w-4 h-4 group-hover:scale-110 transition-transform" />
+                        <span>{link.name}</span>
+                      </Link>
+                    </li>
                   ))}
-                </div>
-              </motion.div>
+                </ul>
+              </div>
 
-              {/* Company */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                viewport={{ once: true }}
-                className="space-y-4"
-              >
-                <h4 className="text-lg font-semibold text-white flex items-center space-x-2">
-                  <span>Company</span>
-                </h4>
-                <div className="space-y-2">
-                  {companyLinks.map((link, index) => (
-                    <Link
-                      key={index}
-                      href={link.href}
-                      className="block text-sm text-gray-400 hover:text-cyan-400 transition-colors duration-200"
-                    >
-                      {link.name}
-                    </Link>
+              {/* Company Info */}
+              <div className="mb-8">
+                <h4 className="text-lg font-medium text-white mb-4">Company</h4>
+                <ul className="space-y-2">
+                  {companyInfo.map((item, index) => (
+                    <li key={index}>
+                      <Link
+                        href={item.href}
+                        className="text-slate-300 hover:text-purple-300 transition-colors duration-200 text-sm"
+                      >
+                        {item.name}
+                      </Link>
+                    </li>
                   ))}
-                </div>
-              </motion.div>
-            </div>
-
-            <div className="grid grid-cols-1 gap-8">
-              {/* Impact Metrics */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-                className="space-y-4"
-              >
-                <h4 className="text-lg font-semibold text-white flex items-center space-x-2">
-                  <span>Our Impact</span>
-                </h4>
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="text-center p-4 bg-gray-800/50 rounded-lg border border-gray-700/50">
-                    <div className="text-2xl font-bold text-cyan-400">1000+</div>
-                    <div className="text-xs text-gray-400">Services</div>
-                  </div>
-                  <div className="text-center p-4 bg-gray-800/50 rounded-lg border border-gray-700/50">
-                    <div className="text-2xl font-bold text-purple-400">1000%</div>
-                    <div className="text-xs text-gray-400">ROI</div>
-                  </div>
-                  <div className="text-center p-4 bg-gray-800/50 rounded-lg border border-gray-700/50">
-                    <div className="text-2xl font-bold text-green-400">24/7</div>
-                    <div className="text-xs text-gray-400">Support</div>
-                  </div>
-                  <div className="text-center p-4 bg-gray-800/50 rounded-lg border border-gray-700/50">
-                    <div className="text-2xl font-bold text-pink-400">99.9%</div>
-                    <div className="text-xs text-gray-400">Uptime</div>
-                  </div>
-                </div>
-              </motion.div>
+                </ul>
+              </div>
 
               {/* Social Links */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                viewport={{ once: true }}
-                className="space-y-4"
-              >
-                <h4 className="text-lg font-semibold text-white flex items-center space-x-2">
-                  <span>Follow Us</span>
-                </h4>
+              <div>
+                <h4 className="text-lg font-medium text-white mb-4">Follow Us</h4>
                 <div className="flex space-x-4">
                   {socialLinks.map((social, index) => (
                     <a
@@ -300,91 +276,74 @@ export default function UltraFuturisticFooter2032() {
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-10 h-10 bg-gray-800/50 border border-gray-700/50 rounded-lg flex items-center justify-center text-gray-400 hover:text-cyan-400 hover:border-cyan-500/50 transition-all duration-200"
+                      className="w-10 h-10 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border border-cyan-500/30 rounded-lg flex items-center justify-center text-cyan-400 hover:text-cyan-300 hover:border-cyan-400/50 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-cyan-500/20"
                     >
                       <social.icon className="w-5 h-5" />
                     </a>
                   ))}
                 </div>
-              </motion.div>
-            </div>
-          </div>
-        </div>
-
-        {/* Newsletter Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="mt-12 pt-12 border-t border-purple-500/20"
-        >
-          <div className="text-center">
-            <h3 className="text-2xl font-bold text-white mb-4">
-              Stay Updated with Latest Innovations
-            </h3>
-            <p className="text-gray-400 mb-6 max-w-2xl mx-auto">
-              Get exclusive insights into the latest AI, quantum computing, and IT innovations. 
-              Be the first to know about new services and breakthrough technologies.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
-              />
-              <button className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-purple-700 transition-all duration-200 shadow-lg hover:shadow-xl">
-                Subscribe
-              </button>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Certifications */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="mt-12 pt-12 border-t border-purple-500/20"
-        >
-          <div className="text-center">
-            <h4 className="text-lg font-semibold text-white mb-4 flex items-center justify-center space-x-2">
-              <Award className="w-5 h-5 text-yellow-400" />
-              <span>Certifications & Compliance</span>
-            </h4>
-            <div className="flex flex-wrap justify-center items-center gap-6 opacity-60">
-              {certifications.map((cert, index) => (
-                <div key={index} className="flex items-center space-x-2 text-gray-400">
-                  <CheckCircle className="w-4 h-4 text-green-400" />
-                  <span className="text-sm">{cert}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Bottom Footer */}
-        <div className="border-t border-purple-500/20 mt-12 pt-6">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
-              <div className="text-gray-400 text-sm">
-                © 2025 Zion Tech Group. All rights reserved.
               </div>
-              <div className="flex items-center space-x-6 text-sm text-gray-400">
-                <Link href="/terms" className="hover:text-cyan-400 transition-colors duration-200">
-                  Terms of Service
-                </Link>
-                <Link href="/privacy" className="hover:text-cyan-400 transition-colors duration-200">
+            </motion.div>
+          </div>
+
+          {/* Newsletter Signup */}
+          <motion.div variants={itemVariants} className="border-t border-cyan-500/30 pt-12">
+            <div className="text-center">
+              <h3 className="text-2xl font-bold text-white mb-4">
+                Stay Ahead with Future Technology
+              </h3>
+              <p className="text-slate-300 mb-8 max-w-2xl mx-auto">
+                Get the latest insights on AI breakthroughs, quantum computing advances, space technology innovations, 
+                and autonomous systems development. Join our community of future technology pioneers.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                <input
+                  type="email"
+                  placeholder="Enter your email address"
+                  className="flex-1 px-4 py-3 bg-black/50 border border-cyan-500/30 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20 transition-all duration-300"
+                />
+                <button className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-medium rounded-lg hover:from-cyan-600 hover:to-purple-600 transition-all duration-300 shadow-lg shadow-cyan-500/30 hover:shadow-cyan-500/50 transform hover:scale-105">
+                  Subscribe
+                </button>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Bottom Bar */}
+          <motion.div variants={itemVariants} className="border-t border-cyan-500/30 pt-8">
+            <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
+              <div className="flex items-center space-x-2 text-slate-400 text-sm">
+                <span>© 2024 Zion Tech Group. All rights reserved.</span>
+                <span className="text-cyan-400">|</span>
+                <span>Leading the Future of Technology</span>
+              </div>
+              
+              <div className="flex items-center space-x-6 text-sm">
+                <Link href="/privacy" className="text-slate-400 hover:text-cyan-300 transition-colors">
                   Privacy Policy
                 </Link>
-                <Link href="/cookies" className="hover:text-cyan-400 transition-colors duration-200">
+                <Link href="/terms" className="text-slate-400 hover:text-cyan-300 transition-colors">
+                  Terms of Service
+                </Link>
+                <Link href="/cookies" className="text-slate-400 hover:text-cyan-300 transition-colors">
                   Cookie Policy
                 </Link>
               </div>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
+      </div>
+
+      {/* Floating Action Button */}
+      <div className="fixed bottom-8 right-8 z-50">
+        <motion.button
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          className="w-14 h-14 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full shadow-2xl shadow-cyan-500/30 hover:shadow-cyan-500/50 transition-all duration-300 flex items-center justify-center text-white"
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        >
+          <ArrowRight className="w-6 h-6 transform rotate-[-90deg]" />
+        </motion.button>
       </div>
     </footer>
   );

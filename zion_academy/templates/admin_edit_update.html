@@ -1,0 +1,194 @@
+{% extends "base.html" %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<div class="container mx-auto px-4 py-8 max-w-4xl">
+    <div class="mb-8">
+        <div class="flex items-center justify-between">
+            <div>
+                <h1 class="text-3xl font-bold text-gray-900 mb-2">Edit Update</h1>
+                <p class="text-lg text-gray-600">Modify the update details and content.</p>
+            </div>
+            <a href="{{ url_for('admin_updates') }}" 
+               class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+                Back to Updates
+            </a>
+        </div>
+    </div>
+
+    <!-- Error Message -->
+    {% if error %}
+    <div class="mb-6 bg-red-50 border border-red-200 rounded-lg p-4">
+        <div class="flex">
+            <div class="flex-shrink-0">
+                <svg class="h-5 w-5 text-red-400" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
+                </svg>
+            </div>
+            <div class="ml-3">
+                <h3 class="text-sm font-medium text-red-800">Error</h3>
+                <p class="text-sm text-red-700 mt-1">{{ error }}</p>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- Edit Update Form -->
+    <div class="bg-white rounded-lg shadow-lg p-8">
+        <form method="POST" class="space-y-6">
+            <!-- Title -->
+            <div>
+                <label for="title" class="block text-sm font-medium text-gray-700 mb-2">
+                    Update Title <span class="text-red-500">*</span>
+                </label>
+                <input type="text" id="title" name="title" required
+                       value="{{ update.title }}"
+                       class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                       placeholder="Enter a clear, descriptive title for your update">
+                <p class="mt-1 text-sm text-gray-500">Keep it concise but informative</p>
+            </div>
+
+            <!-- Summary -->
+            <div>
+                <label for="summary" class="block text-sm font-medium text-gray-700 mb-2">
+                    Preview Summary
+                </label>
+                <textarea id="summary" name="summary" rows="3"
+                          class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 resize-none"
+                          placeholder="Brief summary that will appear in the updates list (optional)">{{ update.summary or '' }}</textarea>
+                <p class="mt-1 text-sm text-gray-500">A 1-2 line summary that appears in the updates preview. If left empty, the first 200 characters of content will be used.</p>
+            </div>
+
+            <!-- Content -->
+            <div>
+                <label for="content" class="block text-sm font-medium text-gray-700 mb-2">
+                    Update Content <span class="text-red-500">*</span>
+                </label>
+                <textarea id="content" name="content" required rows="12"
+                          class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 resize-none font-mono text-sm"
+                          placeholder="Write your update content here...">{{ update.content }}</textarea>
+                <p class="mt-1 text-sm text-gray-500">Full content of your update. You can use basic formatting like bullet points (•), numbered lists, and line breaks.</p>
+            </div>
+
+            <!-- Update Type and Priority -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <label for="update_type" class="block text-sm font-medium text-gray-700 mb-2">
+                        Update Type
+                    </label>
+                    <select id="update_type" name="update_type"
+                            class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                        <option value="general" {% if update.update_type == 'general' %}selected{% endif %}>General</option>
+                        <option value="course" {% if update.update_type == 'course' %}selected{% endif %}>Course</option>
+                        <option value="system" {% if update.update_type == 'system' %}selected{% endif %}>System</option>
+                        <option value="announcement" {% if update.update_type == 'announcement' %}selected{% endif %}>Announcement</option>
+                        <option value="security" {% if update.update_type == 'security' %}selected{% endif %}>Security</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="priority" class="block text-sm font-medium text-gray-700 mb-2">
+                        Priority Level
+                    </label>
+                    <select id="priority" name="priority"
+                            class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                        <option value="low" {% if update.priority == 'low' %}selected{% endif %}>Low</option>
+                        <option value="normal" {% if update.priority == 'normal' %}selected{% endif %}>Normal</option>
+                        <option value="high" {% if update.priority == 'high' %}selected{% endif %}>High</option>
+                        <option value="urgent" {% if update.priority == 'urgent' %}selected{% endif %}>Urgent</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Publish Status -->
+            <div class="flex items-center">
+                <input type="checkbox" id="is_published" name="is_published" 
+                       {% if update.is_published %}checked{% endif %}
+                       class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                <label for="is_published" class="ml-2 block text-sm text-gray-900">
+                    Publish immediately
+                </label>
+                <p class="ml-2 text-sm text-gray-500">Uncheck to save as draft</p>
+            </div>
+
+            <!-- Update Info -->
+            <div class="bg-gray-50 rounded-lg p-4">
+                <h4 class="text-sm font-medium text-gray-900 mb-2">Update Information</h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-600">
+                    <div>
+                        <span class="font-medium">Created:</span> {{ update.created_at.strftime('%B %d, %Y at %I:%M %p') }}
+                    </div>
+                    <div>
+                        <span class="font-medium">Last Modified:</span> {{ update.updated_at.strftime('%B %d, %Y at %I:%M %p') }}
+                    </div>
+                    <div>
+                        <span class="font-medium">ID:</span> #{{ update.id }}
+                    </div>
+                    <div>
+                        <span class="font-medium">Status:</span> 
+                        {% if update.is_published %}
+                        <span class="text-green-600">Published</span>
+                        {% else %}
+                        <span class="text-yellow-600">Draft</span>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form Actions -->
+            <div class="flex items-center justify-end space-x-4 pt-6 border-t">
+                <a href="{{ url_for('admin_updates') }}" 
+                   class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
+                    Cancel
+                </a>
+                <button type="submit" 
+                        class="px-6 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors">
+                    Update Changes
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+// Auto-resize textarea for content
+document.getElementById('content').addEventListener('input', function() {
+    this.style.height = 'auto';
+    this.style.height = this.scrollHeight + 'px';
+});
+
+// Character counter for summary
+document.getElementById('summary').addEventListener('input', function() {
+    const maxLength = 300;
+    const currentLength = this.value.length;
+    const remaining = maxLength - currentLength;
+    
+    // Update or create counter element
+    let counter = this.parentNode.querySelector('.char-counter');
+    if (!counter) {
+        counter = document.createElement('p');
+        counter.className = 'char-counter mt-1 text-sm text-gray-500';
+        this.parentNode.appendChild(counter);
+    }
+    
+    if (remaining < 0) {
+        counter.textContent = `${Math.abs(remaining)} characters over limit`;
+        counter.className = 'char-counter mt-1 text-sm text-red-500';
+    } else {
+        counter.textContent = `${remaining} characters remaining`;
+        counter.className = 'char-counter mt-1 text-sm text-gray-500';
+    }
+});
+
+// Initialize textarea height
+document.addEventListener('DOMContentLoaded', function() {
+    const contentTextarea = document.getElementById('content');
+    contentTextarea.style.height = 'auto';
+    contentTextarea.style.height = contentTextarea.scrollHeight + 'px';
+});
+</script>
+{% endblock %}

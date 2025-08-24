@@ -1,0 +1,62 @@
+{
+  "total": 11,
+  "restored": 0,
+  "failed": 11,
+  "details": [
+    {
+      "file": "pages/403.tsx",
+      "restored": false,
+      "reason": "No valid backup found"
+    },
+    {
+      "file": "pages/ProductsList.tsx",
+      "restored": false,
+      "reason": "No valid backup found"
+    },
+    {
+      "file": "pages/faq.tsx",
+      "restored": false,
+      "reason": "Page is not corrupted"
+    },
+    {
+      "file": "pages/order-success.tsx",
+      "restored": false,
+      "reason": "No valid backup found"
+    },
+    {
+      "file": "pages/thank-you.tsx",
+      "restored": false,
+      "reason": "No valid backup found"
+    },
+    {
+      "file": "pages/gpt-library.tsx",
+      "restored": false,
+      "reason": "No valid backup found"
+    },
+    {
+      "file": "pages/order-confirmation/[orderId].tsx",
+      "restored": false,
+      "reason": "No valid backup found"
+    },
+    {
+      "file": "pages/governance/zgp-library.tsx",
+      "restored": false,
+      "reason": "No valid backup found"
+    },
+    {
+      "file": "pages/governance/create.tsx",
+      "restored": false,
+      "reason": "No valid backup found"
+    },
+    {
+      "file": "pages/governance/my-votes.tsx",
+      "restored": false,
+      "reason": "No valid backup found"
+    },
+    {
+      "file": "pages/governance/[proposalId].tsx",
+      "restored": false,
+      "reason": "No valid backup found"
+    }
+  ]
+}

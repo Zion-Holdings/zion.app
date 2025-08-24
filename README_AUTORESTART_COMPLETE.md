@@ -71,7 +71,7 @@ Your system now has **complete autorestart protection** ensuring all 50+ PM2 pro
 autorestart: true
 
 // Individual processes have:
-cron_restart: "0 */X * * *"  // Scheduled restarts
+cron_restart: "0 */X * * *" // Scheduled restarts
 ```
 
 ### **System Boot Integration**

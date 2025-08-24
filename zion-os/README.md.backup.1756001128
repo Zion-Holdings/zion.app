@@ -1,0 +1,455 @@
+<<<<<<< HEAD
+# Zion OS - Sovereign AI-Powered Digital Economies
+
+Launch sovereign AI-powered digital economies with one click. Unified deployment protocol for Zion ecosystems with marketplace, governance, identity, and more.
+
+## 🚀 Features
+
+### Core Platform
+- **Marketplace & Jobs**: Complete marketplace infrastructure with job posting, talent matching, and project management
+- **AI Governance**: Intelligent governance systems with DAO voting, proposal management, and automated decision-making
+- **Token Systems**: Flexible token economics with rewards, staking, and multi-currency support
+- **Identity & KYC**: Secure identity verification with KYC/AML compliance and Web3 wallet integration
+- **ZionGPT Integration**: Core AI assistant for your economy with natural language processing
+- **Smart Contracts**: On-chain contract builder and management for automated business logic
+
+### Deployment Features
+- **Modular Architecture**: Pick and choose the features you need
+- **Multi-Vertical Support**: Healthcare, Education, Legal, Government, and General
+- **Governance Options**: Admin Control, DAO-lite, or Full DAO
+- **Regional Compliance**: Geographic and regulatory compliance features
+- **Payment Integration**: Stripe and Coinbase Commerce support
+- **AI Moderation**: Built-in content moderation and governance
+
+## 🛠️ Technology Stack
+
+- **Frontend**: Next.js 14, React 18, TypeScript
+- **Styling**: Tailwind CSS with custom design system
+- **Database**: Prisma ORM with SQLite
+- **Authentication**: NextAuth.js
+- **Deployment**: Vercel-ready with optimized build process
+
+## 🚀 Quick Start
+=======
+# Zion OS - AI-Powered Digital Economy Platform
+
+## Overview
+
+Zion OS is a comprehensive platform that enables businesses to launch sovereign AI-powered digital economies with one click. We provide a complete suite of micro SAAS services, IT solutions, and AI-powered tools designed to transform business operations.
+
+## 🌟 Key Features
+
+### Core Platform
+- **One-Click Deployment**: Launch complete digital ecosystems in minutes
+- **Multi-Vertical Support**: Healthcare, Education, Legal, Government, and General business
+- **Governance Systems**: Admin, DAO-lite, and Full DAO options
+- **Token Systems**: ZION$ Shared or Local token economies
+- **Multi-Region Support**: Global deployment with regional compliance
+
+### AI Services
+- **ZionGPT Core**: Advanced AI language models for business applications
+- **AI Content Hub**: Automated content creation and management
+- **AI Customer Support**: Intelligent chatbots and ticket routing
+- **AI Data Analytics**: Business intelligence and predictive modeling
+- **Resume Builder + Proposal AI**: Intelligent document generation
+
+### IT Services
+- **Cloud Migration**: Professional cloud infrastructure migration
+- **Cybersecurity Audit**: Security assessments and compliance consulting
+- **DevOps Automation**: CI/CD pipelines and infrastructure as code
+- **Infrastructure Management**: Scalable and secure cloud solutions
+
+### Micro SAAS Solutions
+- **Invoice Automation**: Streamlined financial processing
+- **HR Management**: Complete employee lifecycle management
+- **Project Management**: Team collaboration and resource optimization
+- **Business Automation**: Workflow automation and productivity tools
+
+### Blockchain & Web3
+- **Smart Contract Audit**: Professional security audits
+- **NFT Marketplace**: White-label NFT trading platforms
+- **DeFi Protocol Development**: Custom DeFi solutions
+- **Web3 Integration**: Blockchain authentication and payments
+
+### Industry Solutions
+- **Healthcare Compliance**: HIPAA-compliant management systems
+- **Legal Document Automation**: AI-powered legal tools
+- **Education LMS**: Learning management platforms
+- **Government Solutions**: Compliance and governance tools
+
+## 🚀 Getting Started
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-e179
+
+### Prerequisites
+- Node.js 18+ 
+- npm or yarn
+- Git
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+<<<<<<< HEAD
+   git clone <repository-url>
+=======
+   git clone https://github.com/ziontechgroup/zion-os.git
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-e179
+   cd zion-os
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Set up environment variables**
+   ```bash
+   cp .env.example .env.local
+   # Edit .env.local with your configuration
+   ```
+
+<<<<<<< HEAD
+4. **Set up the database**
+   ```bash
+   npm run prisma:generate
+   npm run prisma:migrate
+=======
+4. **Run database migrations**
+   ```bash
+   npm run prisma:migrate
+   npm run prisma:generate
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-e179
+   ```
+
+5. **Start the development server**
+   ```bash
+   npm run dev
+   ```
+
+<<<<<<< HEAD
+6. **Open your browser**
+   Navigate to [http://localhost:3000](http://localhost:3000)
+
+## 📱 Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
+- `npm run prisma:generate` - Generate Prisma client
+- `npm run prisma:migrate` - Run database migrations
+
+## 🏗️ Project Structure
+
+```
+zion-os/
+├── src/
+│   ├── app/                 # Next.js app router pages
+│   │   ├── admin/          # Admin panel and deployment
+│   │   ├── multiverse/     # Launch wizard
+│   │   ├── docs/           # Documentation
+│   │   └── api/            # API endpoints
+│   ├── components/         # Reusable React components
+│   └── lib/               # Utilities and configurations
+├── prisma/                # Database schema and migrations
+├── public/                # Static assets
+└── tailwind.config.ts     # Tailwind CSS configuration
+```
+
+## 🎨 Design System
+
+### Color Palette
+- **Primary**: Blue (#3b82f6) - Main actions and highlights
+- **Accent**: Purple (#8b5cf6) - Secondary actions and UI elements
+- **Success**: Green (#10b981) - Positive states and confirmations
+- **Warning**: Yellow (#f59e0b) - Caution and attention states
+- **Error**: Red (#ef4444) - Error states and destructive actions
+
+### Typography
+- **Font Family**: Inter (Google Fonts)
+- **Headings**: Bold weights with proper hierarchy
+- **Body Text**: Optimized for readability with proper line height
+
+### Components
+- **Cards**: Glass-morphism effect with hover animations
+- **Buttons**: Primary and secondary variants with hover states
+- **Forms**: Multi-step deployment wizard with validation
+- **Navigation**: Responsive navigation with mobile menu
+
+## 🔧 Configuration
+
+### Environment Variables
+```env
+DATABASE_URL="file:./dev.db"
+NEXTAUTH_SECRET="your-secret-here"
+NEXTAUTH_URL="http://localhost:3000"
+```
+
+### Database Schema
+The platform uses Prisma with the following main models:
+- **Instance**: Digital economy instances
+- **FeatureToggle**: Enabled/disabled features per instance
+- **Deployment**: Deployment history and status
+- **User**: User management and authentication
+- **ApiKey**: API access management
+
+## 🚀 Deployment
+
+### Vercel (Recommended)
+1. Connect your GitHub repository to Vercel
+2. Set environment variables in Vercel dashboard
+3. Deploy automatically on push to main branch
+
+### Manual Deployment
+1. Build the application: `npm run build`
+2. Start the production server: `npm run start`
+3. Set up reverse proxy (nginx/Apache) if needed
+
+## 📚 Documentation
+
+Comprehensive documentation is available at `/docs` including:
+- Getting Started Guide
+- Deployment Tutorial
+- Feature Reference
+- API Documentation
+- Troubleshooting Guide
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/amazing-feature`
+3. Commit your changes: `git commit -m 'Add amazing feature'`
+4. Push to the branch: `git push origin feature/amazing-feature`
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 🆘 Support
+
+- **Documentation**: `/docs` route in the application
+- **Issues**: GitHub Issues for bug reports and feature requests
+- **Community**: Join our Discord for community support
+
+## 🔮 Roadmap
+
+- [ ] Enhanced AI governance features
+- [ ] Multi-language support
+- [ ] Advanced analytics dashboard
+- [ ] Mobile application
+- [ ] Enterprise SSO integration
+- [ ] Advanced compliance tools
+- [ ] Performance monitoring
+- [ ] Auto-scaling capabilities
+
+---
+
+**Built with ❤️ by Zion Tech Group**
+=======
+6. **Build for production**
+   ```bash
+   npm run build
+   npm start
+   ```
+
+## 📱 Available Routes
+
+### Core Pages
+- `/` - Homepage with service overview
+- `/services` - Comprehensive services catalog
+- `/pricing` - Detailed pricing information
+- `/about` - Company information and team
+- `/contact` - Contact form and information
+
+### Platform Features
+- `/multiverse/launch` - Instance deployment wizard
+- `/admin/os-deploy` - Advanced deployment configuration
+- `/admin/instances` - Instance management dashboard
+
+## 🏗️ Architecture
+
+### Frontend
+- **Next.js 14** - React framework with App Router
+- **TypeScript** - Type-safe development
+- **Tailwind CSS** - Utility-first CSS framework
+- **Responsive Design** - Mobile-first approach
+
+### Backend
+- **Prisma** - Database ORM and migrations
+- **SQLite** - Development database (configurable for production)
+- **Next.js API Routes** - Serverless API endpoints
+- **Authentication** - NextAuth.js integration
+
+### Database Schema
+- **Instances** - Deployed platform instances
+- **Features** - Feature toggles and configurations
+- **Deployments** - Deployment tracking and logs
+- **Users** - User management and authentication
+- **API Keys** - API access management
+
+## 🔧 Configuration
+
+### Environment Variables
+```env
+# Database
+DATABASE_URL="file:./dev.db"
+
+# Authentication
+NEXTAUTH_SECRET="your-secret-key"
+NEXTAUTH_URL="http://localhost:3000"
+
+# API Configuration
+API_BASE_URL="https://api.ziontechgroup.com"
+```
+
+### Feature Configuration
+Enable/disable features through the deployment wizard:
+- Marketplace (Jobs, Talent, Projects)
+- ZionGPT Core
+- Resume Builder + Proposal AI
+- Token system + rewards
+- On-chain contract builder
+- KYC/AML + ID verification
+- DAO proposal voting
+- Incubator + Grants
+- Zion Academy
+- Partner API access
+- Regional/institutional dashboards
+- White-label vendor plugin
+- Web3 login + DID
+- Multi-currency support
+
+## 💰 Pricing
+
+### Zion OS Platform
+- **Starter**: $99/month - Up to 3 instances
+- **Professional**: $299/month - Up to 10 instances
+- **Enterprise**: $999/month - Unlimited instances
+
+### AI Services
+- **ZionGPT Core**: $49-$499/month
+- **AI Content Hub**: $39-$299/month
+- **AI Customer Support**: $29-$199/month
+- **AI Data Analytics**: $59-$399/month
+
+### IT Services
+- **Cloud Migration**: $2,500-$15,000+ (one-time)
+- **Cybersecurity Audit**: $1,500-$9,000+ (one-time)
+- **DevOps Automation**: $89-$499/month
+
+### Micro SAAS Solutions
+- **Invoice Automation**: $25-$129/month
+- **HR Management**: $35-$179/month
+- **Project Management**: $45-$249/month
+
+## 🛠️ Development
+
+### Available Scripts
+```bash
+npm run dev          # Start development server
+npm run build        # Build for production
+npm run start        # Start production server
+npm run lint         # Run ESLint
+npm run prisma:generate  # Generate Prisma client
+npm run prisma:migrate   # Run database migrations
+```
+
+### Code Structure
+```
+src/
+├── app/                 # Next.js App Router pages
+│   ├── api/            # API endpoints
+│   ├── admin/          # Admin interfaces
+│   ├── multiverse/     # Launch wizard
+│   ├── services/       # Services catalog
+│   ├── pricing/        # Pricing information
+│   ├── about/          # Company information
+│   └── contact/        # Contact form
+├── lib/                # Utility libraries
+│   ├── prisma.ts       # Database client
+│   ├── zod.ts          # Validation schemas
+│   └── crypto.ts       # Cryptographic utilities
+└── types/              # TypeScript type definitions
+```
+
+## 🔒 Security & Compliance
+
+### Security Features
+- **Authentication**: Secure user authentication
+- **API Security**: Rate limiting and access control
+- **Data Encryption**: End-to-end encryption
+- **Audit Logging**: Comprehensive activity tracking
+
+### Compliance Standards
+- **SOC 2 Type II**: Security and availability controls
+- **GDPR**: European data protection compliance
+- **HIPAA**: Healthcare data privacy
+- **ISO 27001**: Information security management
+- **PCI DSS**: Payment card industry compliance
+
+## 🌍 Deployment
+
+### Supported Platforms
+- **AWS**: Amazon Web Services
+- **Azure**: Microsoft Azure
+- **Google Cloud**: Google Cloud Platform
+- **DigitalOcean**: Cloud infrastructure
+- **Vercel**: Next.js deployment platform
+
+### Deployment Options
+1. **Quick Launch**: Use the deployment wizard
+2. **Custom Configuration**: Advanced deployment options
+3. **White-label**: Custom branding and domains
+4. **Multi-region**: Global deployment strategy
+
+## 📞 Support
+
+### Contact Information
+- **Phone**: +1 302 464 0950
+- **Email**: kleber@ziontechgroup.com
+- **Address**: 364 E Main St STE 1008, Middletown DE 19709
+- **Business Hours**: Mon-Fri 9AM-6PM EST
+
+### Support Levels
+- **Community**: Documentation and forums
+- **Email Support**: 24-hour response time
+- **Priority Support**: Faster response for professional plans
+- **24/7 Support**: Emergency support for enterprise clients
+
+## 🤝 Contributing
+
+We welcome contributions from the community! Please see our contributing guidelines for more information.
+
+### Development Setup
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests if applicable
+5. Submit a pull request
+
+## 📄 License
+
+This project is proprietary software owned by Zion Tech Group. All rights reserved.
+
+## 🚀 Roadmap
+
+### Upcoming Features
+- **Advanced AI Models**: Custom industry-specific AI solutions
+- **Blockchain Integration**: Enhanced Web3 capabilities
+- **Mobile Applications**: Native mobile apps
+- **API Marketplace**: Third-party integrations
+- **Advanced Analytics**: Business intelligence dashboards
+
+### Long-term Vision
+- **Global Expansion**: Multi-language and regional support
+- **AI Ecosystem**: Comprehensive AI tool marketplace
+- **Enterprise Solutions**: Large-scale deployment options
+- **Industry Specialization**: Vertical-specific solutions
+
+---
+
+**Zion Tech Group** - Pioneering the future of AI-powered digital economies.
+
+For more information, visit [https://ziontechgroup.com](https://ziontechgroup.com)
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-e179

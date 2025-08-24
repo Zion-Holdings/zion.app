@@ -1,0 +1,19 @@
+{
+<<<<<<< HEAD
+  "extends": [],
+  "rules": {
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-unused-vars": "off",
+    "@typescript-eslint/no-empty-object-type": "off",
+    "react-hooks/rules-of-hooks": "off",
+    "@typescript-eslint/parser": "off"
+  }
+}
+=======
+  "extends": ["next/core-web-vitals"],
+  "rules": {
+    "react/no-unescaped-entities": "off",
+    "no-explicit-any": "off"
+  }
+}
+>>>>>>> origin/cursor/website-audit-and-enhancement-ffd4
