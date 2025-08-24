@@ -6,3 +6,5 @@ import Head from 'next/head';
             ← Back to Home</a></div></div></>;
   );
 }
+
+export default Faq;

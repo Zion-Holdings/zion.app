@@ -132,7 +132,7 @@ export default function ModuleCard({ moduleId, title, points, isCompleted, onCom
                     return (
                       <button
                         key={oIdx}
-                        onClick={() => setAnswers((prev) => ({ ...prev, [idx]: oIdx }))}
+                        onClick={() => setAnswers({ ...answers, [idx]: oIdx })}
                         className={`text-left px-3 py-2 rounded-md border text-sm transition ${
                           isSelected
                             ? 'border-purple-600 bg-white dark:bg-black'

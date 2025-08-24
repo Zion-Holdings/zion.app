@@ -219,9 +219,9 @@ export default function AdminTable() {
           {[10, 20, 50].map((n) => <option key={n} value={n}>{n}</option>)}
         </select>
         <div className="ml-auto flex items-center gap-2">
-          <button disabled={page <= 0} onClick={() => setPage((p) => Math.max(0, p - 1))} className="rounded border border-gray-300 dark:border-gray-700 px-2 py-1 disabled:opacity-50">Prev</button>
+          <button disabled={page <= 0} onClick={() => setPage(Math.max(0, page - 1))} className="rounded border border-gray-300 dark:border-gray-700 px-2 py-1 disabled:opacity-50">Prev</button>
           <span>Page {page + 1} / {totalPages}</span>
-          <button disabled={page + 1 >= totalPages} onClick={() => setPage((p) => p + 1)} className="rounded border border-gray-300 dark:border-gray-700 px-2 py-1 disabled:opacity-50">Next</button>
+          <button disabled={page + 1 >= totalPages} onClick={() => setPage(page + 1)} className="rounded border border-gray-300 dark:border-gray-700 px-2 py-1 disabled:opacity-50">Next</button>
         </div>
       </div>
     </div>

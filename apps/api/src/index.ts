@@ -100,7 +100,7 @@ app.get('/notifications', async (req: any, reply: any) => {
 });
 
 const port = Number(process.env.API_PORT || 4000);
-app.listen({ port, host: '0.0.0.0' }).catch((err: any) => {
+app.listen({ port, host: '0.0.0.0' }).catch((err: Error) => {
   app.log.error(err);
-  (process as any).exit(1);
+  console.error('Failed to start server:', err);
 });
