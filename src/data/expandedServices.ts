@@ -6,258 +6,283 @@ export interface ExpandedService {
   subcategory: string;
   price: number;
   currency: string;
-  pricingModel: 'one-time' | 'monthly' | 'hourly' | 'project-based';
+  pricingModel: 'one-time' | 'subscription' | 'usage-based' | 'project-based';
   features: string[];
   benefits: string[];
   useCases: string[];
-  targetAudience: string[];
+  marketPrice: string;
+  contactLink: string;
   tags: string[];
   author: {
     name: string;
     id: string;
     avatarUrl?: string;
-    email?: string;
   };
   images: string[];
   createdAt: string;
+  aiScore: number;
   rating: number;
   reviewCount: number;
-  aiScore: number;
-  website?: string;
-  documentation?: string;
-  support?: string;
-  integration?: string[];
-  compliance?: string[];
-  sla?: string;
+  isNew?: boolean;
+  isFeatured?: boolean;
 }
 
 export const EXPANDED_SERVICES: ExpandedService[] = [
   // AI & Machine Learning Services
   {
-    id: "ai-chatbot-platform",
-    title: "AI Chatbot Platform",
-    description: "Enterprise-grade AI chatbot platform with natural language processing, multi-language support, and seamless integration capabilities.",
-    category: "AI Services",
-    subcategory: "Chatbots & Conversational AI",
-    price: 299,
+    id: "ai-automation-platform",
+    title: "AI-Powered Business Process Automation",
+    description: "Intelligent automation platform that uses AI to streamline business processes, reduce manual work, and increase operational efficiency by up to 300%.",
+    category: "AI & Automation",
+    subcategory: "Process Automation",
+    price: 2500,
     currency: "$",
-    pricingModel: "monthly",
+    pricingModel: "subscription",
     features: [
-      "Multi-language support (50+ languages)",
-      "Advanced NLP with GPT-4 integration",
-      "Custom training on your data",
-      "Analytics dashboard",
-      "API integration",
-      "24/7 customer support"
+      "No-code workflow builder",
+      "AI-powered decision making",
+      "Real-time analytics dashboard",
+      "Integration with 100+ business tools",
+      "Custom AI model training",
+      "24/7 monitoring and alerts"
     ],
     benefits: [
-      "Reduce customer service costs by 60%",
-      "24/7 availability",
-      "Scalable customer support",
-      "Improved customer satisfaction",
-      "Data-driven insights"
+      "Reduce manual work by 80%",
+      "Improve process accuracy to 99.9%",
+      "Cut operational costs by 40%",
+      "Scale operations without hiring",
+      "Real-time insights and reporting"
     ],
     useCases: [
       "Customer service automation",
-      "E-commerce support",
-      "Lead qualification",
-      "Appointment scheduling",
-      "FAQ handling"
+      "Invoice processing",
+      "Data entry and validation",
+      "Report generation",
+      "Email marketing automation"
     ],
-    targetAudience: ["E-commerce", "SaaS companies", "Healthcare", "Financial services", "Education"],
-    tags: ["AI", "Chatbot", "NLP", "Customer Service", "Automation"],
+    marketPrice: "$2,500 - $5,000/month",
+    contactLink: "https://ziontechgroup.com/contact",
+    tags: ["AI Automation", "Process Optimization", "Business Intelligence", "RPA"],
     author: {
-      name: "Zion AI Solutions",
-      id: "zion-ai",
-      email: "ai@ziontechgroup.com"
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100",
     },
-    images: ["https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&h=500"],
+    images: ["https://images.unsplash.com/photo-1516192518150-0d8fee5425e3?auto=format&fit=crop&w=800&h=500"],
     createdAt: "2024-01-15T10:00:00.000Z",
-    rating: 4.8,
+    aiScore: 98,
+    rating: 4.9,
     reviewCount: 156,
-    aiScore: 95,
-    website: "https://ziontechgroup.com/ai-chatbot",
-    documentation: "https://docs.ziontechgroup.com/ai-chatbot",
-    support: "24/7 live chat and email",
-    integration: ["Slack", "Teams", "Zendesk", "Salesforce", "Shopify"],
-    compliance: ["GDPR", "SOC 2", "HIPAA"],
-    sla: "99.9% uptime guarantee"
+    isNew: true,
+    isFeatured: true
   },
   {
     id: "ai-content-generator",
-    title: "AI Content Generator Pro",
-    description: "Advanced AI-powered content generation platform for blogs, social media, marketing materials, and technical documentation.",
-    category: "AI Services",
-    subcategory: "Content Generation",
-    price: 199,
+    title: "AI Content Generation & Marketing Suite",
+    description: "Advanced AI-powered content creation platform that generates high-quality, SEO-optimized content for blogs, social media, and marketing campaigns.",
+    category: "AI & Automation",
+    subcategory: "Content Creation",
+    price: 1800,
     currency: "$",
-    pricingModel: "monthly",
+    pricingModel: "subscription",
     features: [
-      "SEO-optimized content generation",
-      "Multiple content types (blogs, social, ads)",
+      "AI-powered blog post generation",
+      "Social media content creation",
+      "SEO optimization tools",
+      "Multi-language support",
       "Brand voice customization",
-      "Plagiarism detection",
-      "Content calendar management",
-      "Performance analytics"
+      "Content calendar management"
     ],
     benefits: [
-      "Save 20+ hours per week on content creation",
-      "Improve SEO rankings",
-      "Consistent brand messaging",
-      "Increased engagement rates",
-      "Cost-effective content strategy"
+      "Generate 10x more content",
+      "Improve SEO rankings by 60%",
+      "Save 20+ hours per week",
+      "Maintain consistent brand voice",
+      "Multi-platform content distribution"
     ],
     useCases: [
       "Blog content creation",
       "Social media marketing",
-      "Email campaigns",
-      "Product descriptions",
-      "Technical documentation"
+      "Email newsletter generation",
+      "Product description writing",
+      "Marketing copy creation"
     ],
-    targetAudience: ["Marketing agencies", "E-commerce", "SaaS companies", "Content creators", "Small businesses"],
-    tags: ["AI", "Content Generation", "SEO", "Marketing", "Automation"],
+    marketPrice: "$1,800 - $3,500/month",
+    contactLink: "https://ziontechgroup.com/contact",
+    tags: ["Content Marketing", "AI Writing", "SEO", "Social Media"],
     author: {
-      name: "Zion Content AI",
-      id: "zion-content",
-      email: "content@ziontechgroup.com"
-    },
-    images: ["https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-01-20T14:30:00.000Z",
-    rating: 4.7,
-    reviewCount: 89,
-    aiScore: 92,
-    website: "https://ziontechgroup.com/ai-content",
-    documentation: "https://docs.ziontechgroup.com/ai-content",
-    support: "Business hours + emergency support",
-    integration: ["WordPress", "HubSpot", "Mailchimp", "Buffer", "Hootsuite"],
-    compliance: ["GDPR", "CCPA"],
-    sla: "99.5% uptime guarantee"
-  },
-  {
-    id: "ai-data-analytics",
-    title: "AI-Powered Business Intelligence",
-    description: "Comprehensive AI-driven analytics platform that transforms raw data into actionable business insights and predictive analytics.",
-    category: "AI Services",
-    subcategory: "Data Analytics",
-    price: 499,
-    currency: "$",
-    pricingModel: "monthly",
-    features: [
-      "Real-time data processing",
-      "Predictive analytics",
-      "Custom dashboards",
-      "Automated reporting",
-      "Data visualization",
-      "Machine learning models"
-    ],
-    benefits: [
-      "Make data-driven decisions faster",
-      "Identify trends and opportunities",
-      "Reduce operational costs",
-      "Improve customer experience",
-      "Competitive advantage"
-    ],
-    useCases: [
-      "Sales forecasting",
-      "Customer behavior analysis",
-      "Inventory optimization",
-      "Risk assessment",
-      "Performance monitoring"
-    ],
-    targetAudience: ["Enterprises", "Financial services", "Healthcare", "Retail", "Manufacturing"],
-    tags: ["AI", "Analytics", "Business Intelligence", "Machine Learning", "Data Science"],
-    author: {
-      name: "Zion Analytics",
-      id: "zion-analytics",
-      email: "analytics@ziontechgroup.com"
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
     },
     images: ["https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-01-25T09:15:00.000Z",
-    rating: 4.9,
-    reviewCount: 234,
+    createdAt: "2024-01-20T14:30:00.000Z",
+    aiScore: 95,
+    rating: 4.8,
+    reviewCount: 89,
+    isNew: true
+  },
+
+  // Cybersecurity & Compliance Services
+  {
+    id: "zero-trust-security",
+    title: "Zero Trust Security Implementation",
+    description: "Comprehensive zero trust security framework implementation with continuous monitoring, threat detection, and automated response systems.",
+    category: "Cybersecurity",
+    subcategory: "Zero Trust",
+    price: 8500,
+    currency: "$",
+    pricingModel: "project-based",
+    features: [
+      "Identity and access management",
+      "Network segmentation",
+      "Continuous monitoring",
+      "Threat intelligence integration",
+      "Automated incident response",
+      "Compliance reporting"
+    ],
+    benefits: [
+      "Reduce security breaches by 90%",
+      "Meet SOC 2, ISO 27001 compliance",
+      "Real-time threat detection",
+      "Automated security responses",
+      "Comprehensive audit trails"
+    ],
+    useCases: [
+      "Enterprise security transformation",
+      "Cloud security implementation",
+      "Remote workforce security",
+      "Compliance requirements",
+      "Data protection"
+    ],
+    marketPrice: "$8,500 - $25,000",
+    contactLink: "https://ziontechgroup.com/contact",
+    tags: ["Zero Trust", "Cybersecurity", "Compliance", "Identity Management"],
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+    },
+    images: ["https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=800&h=500"],
+    createdAt: "2024-01-18T09:15:00.000Z",
     aiScore: 96,
-    website: "https://ziontechgroup.com/ai-analytics",
-    documentation: "https://docs.ziontechgroup.com/ai-analytics",
-    support: "24/7 dedicated support",
-    integration: ["Salesforce", "HubSpot", "QuickBooks", "Shopify", "AWS"],
-    compliance: ["GDPR", "SOC 2", "HIPAA", "PCI DSS"],
-    sla: "99.99% uptime guarantee"
+    rating: 4.9,
+    reviewCount: 134,
+    isFeatured: true
+  },
+  {
+    id: "ai-threat-detection",
+    title: "AI-Powered Threat Detection & Response",
+    description: "Next-generation threat detection system using machine learning to identify and respond to cyber threats in real-time, reducing response time from hours to seconds.",
+    category: "Cybersecurity",
+    subcategory: "Threat Detection",
+    price: 4200,
+    currency: "$",
+    pricingModel: "subscription",
+    features: [
+      "AI-powered threat detection",
+      "Real-time monitoring",
+      "Automated response actions",
+      "Threat intelligence feeds",
+      "Behavioral analysis",
+      "Incident reporting"
+    ],
+    benefits: [
+      "Detect threats 10x faster",
+      "Reduce false positives by 80%",
+      "Automated incident response",
+      "24/7 threat monitoring",
+      "Predictive threat analysis"
+    ],
+    useCases: [
+      "Network security monitoring",
+      "Endpoint protection",
+      "Cloud security",
+      "IoT device security",
+      "Compliance monitoring"
+    ],
+    marketPrice: "$4,200 - $8,500/month",
+    contactLink: "https://ziontechgroup.com/contact",
+    tags: ["Threat Detection", "AI Security", "Incident Response", "Network Security"],
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+    },
+    images: ["https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&h=500"],
+    createdAt: "2024-01-22T11:45:00.000Z",
+    aiScore: 97,
+    rating: 4.9,
+    reviewCount: 78,
+    isNew: true
   },
 
   // Cloud & DevOps Services
   {
-    id: "cloud-migration-suite",
-    title: "Cloud Migration Suite",
-    description: "End-to-end cloud migration solution with automated tools, expert guidance, and zero-downtime migration strategies.",
-    category: "Cloud Services",
-    subcategory: "Migration & Consulting",
-    price: 2500,
+    id: "multi-cloud-orchestration",
+    title: "Multi-Cloud Orchestration Platform",
+    description: "Intelligent multi-cloud management platform that optimizes costs, improves performance, and provides unified governance across AWS, Azure, Google Cloud, and private clouds.",
+    category: "Cloud & DevOps",
+    subcategory: "Multi-Cloud",
+    price: 3200,
     currency: "$",
-    pricingModel: "project-based",
+    pricingModel: "subscription",
     features: [
-      "Automated migration tools",
-      "Zero-downtime migration",
-      "Performance optimization",
-      "Cost analysis and optimization",
-      "Security assessment",
-      "Post-migration support"
+      "Multi-cloud cost optimization",
+      "Unified monitoring dashboard",
+      "Automated resource scaling",
+      "Cross-cloud security policies",
+      "Performance analytics",
+      "Compliance management"
     ],
     benefits: [
-      "Reduce infrastructure costs by 40%",
-      "Improved scalability and performance",
-      "Enhanced security and compliance",
-      "Faster time to market",
-      "Reduced maintenance overhead"
+      "Reduce cloud costs by 30%",
+      "Improve performance by 40%",
+      "Unified security management",
+      "Automated compliance",
+      "Single pane of glass"
     ],
     useCases: [
-      "On-premise to cloud migration",
       "Multi-cloud strategy",
-      "Application modernization",
-      "Database migration",
-      "Legacy system updates"
+      "Cost optimization",
+      "Performance monitoring",
+      "Security compliance",
+      "Disaster recovery"
     ],
-    targetAudience: ["Enterprises", "Mid-size companies", "Startups", "Government", "Healthcare"],
-    tags: ["Cloud", "Migration", "AWS", "Azure", "DevOps"],
+    marketPrice: "$3,200 - $6,500/month",
+    contactLink: "https://ziontechgroup.com/contact",
+    tags: ["Multi-Cloud", "Cost Optimization", "DevOps", "Cloud Management"],
     author: {
-      name: "Zion Cloud Solutions",
-      id: "zion-cloud",
-      email: "cloud@ziontechgroup.com"
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
     },
-    images: ["https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-02-01T11:00:00.000Z",
+    images: ["https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&h=500"],
+    createdAt: "2024-01-25T16:20:00.000Z",
+    aiScore: 94,
     rating: 4.8,
-    reviewCount: 167,
-    aiScore: 93,
-    website: "https://ziontechgroup.com/cloud-migration",
-    documentation: "https://docs.ziontechgroup.com/cloud-migration",
-    support: "24/7 migration support",
-    integration: ["AWS", "Azure", "GCP", "Docker", "Kubernetes"],
-    compliance: ["SOC 2", "ISO 27001", "FedRAMP"],
-    sla: "99.95% uptime during migration"
+    reviewCount: 112,
+    isFeatured: true
   },
   {
     id: "devops-automation",
-    title: "DevOps Automation Platform",
-    description: "Complete DevOps automation platform with CI/CD pipelines, infrastructure as code, and automated testing frameworks.",
-    category: "Cloud Services",
-    subcategory: "DevOps & Automation",
-    price: 399,
+    title: "DevOps Automation & CI/CD Pipeline",
+    description: "End-to-end DevOps automation platform that streamlines software development, testing, and deployment with intelligent automation and monitoring.",
+    category: "Cloud & DevOps",
+    subcategory: "DevOps Automation",
+    price: 2800,
     currency: "$",
-    pricingModel: "monthly",
+    pricingModel: "subscription",
     features: [
-      "CI/CD pipeline automation",
-      "Infrastructure as Code (IaC)",
+      "Automated CI/CD pipelines",
+      "Infrastructure as Code",
       "Automated testing",
-      "Monitoring and alerting",
-      "Security scanning",
-      "Multi-cloud deployment"
+      "Deployment automation",
+      "Performance monitoring",
+      "Rollback capabilities"
     ],
     benefits: [
       "Deploy 10x faster",
-      "Reduce deployment errors by 80%",
-      "Lower operational costs",
-      "Improved team productivity",
-      "Better code quality"
+      "Reduce deployment errors by 90%",
+      "Automated quality assurance",
+      "Faster time to market",
+      "Improved team productivity"
     ],
     useCases: [
       "Software development",
@@ -266,385 +291,351 @@ export const EXPANDED_SERVICES: ExpandedService[] = [
       "Microservices architecture",
       "Container orchestration"
     ],
-    targetAudience: ["Software companies", "Tech startups", "Enterprises", "Development teams", "DevOps engineers"],
-    tags: ["DevOps", "CI/CD", "Automation", "Docker", "Kubernetes"],
+    marketPrice: "$2,800 - $5,500/month",
+    contactLink: "https://ziontechgroup.com/contact",
+    tags: ["DevOps", "CI/CD", "Automation", "Deployment"],
     author: {
-      name: "Zion DevOps",
-      id: "zion-devops",
-      email: "devops@ziontechgroup.com"
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
     },
-    images: ["https://images.unsplash.com/photo-1593642532973-d31b6557fa68?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-02-05T15:45:00.000Z",
+    images: ["https://images.unsplash.com/photo-1523475496153-3a12d3e9ad12?auto=format&fit=crop&w=800&h=500"],
+    createdAt: "2024-01-28T13:10:00.000Z",
+    aiScore: 93,
     rating: 4.7,
-    reviewCount: 123,
-    aiScore: 91,
-    website: "https://ziontechgroup.com/devops-automation",
-    documentation: "https://docs.ziontechgroup.com/devops-automation",
-    support: "Business hours + emergency support",
-    integration: ["GitHub", "GitLab", "Jenkins", "Docker", "Kubernetes"],
-    compliance: ["SOC 2", "ISO 27001"],
-    sla: "99.9% uptime guarantee"
+    reviewCount: 95,
+    isNew: true
   },
 
-  // Cybersecurity Services
+  // Data & Analytics Services
   {
-    id: "cybersecurity-suite",
-    title: "Enterprise Cybersecurity Suite",
-    description: "Comprehensive cybersecurity solution with threat detection, vulnerability assessment, and 24/7 security monitoring.",
-    category: "Security Services",
-    subcategory: "Cybersecurity",
-    price: 899,
+    id: "real-time-analytics",
+    title: "Real-Time Business Intelligence Platform",
+    description: "Advanced real-time analytics platform that provides instant insights into business performance, customer behavior, and market trends with predictive analytics.",
+    category: "Data & Analytics",
+    subcategory: "Business Intelligence",
+    price: 3800,
     currency: "$",
-    pricingModel: "monthly",
+    pricingModel: "subscription",
     features: [
-      "24/7 threat monitoring",
-      "Vulnerability assessment",
-      "Penetration testing",
-      "Security awareness training",
-      "Incident response",
-      "Compliance reporting"
+      "Real-time data processing",
+      "Predictive analytics",
+      "Interactive dashboards",
+      "Data visualization",
+      "Automated reporting",
+      "Mobile analytics"
     ],
     benefits: [
-      "Protect against 99.9% of threats",
-      "Meet compliance requirements",
-      "Reduce security incidents",
-      "Protect brand reputation",
-      "Lower insurance costs"
+      "Make decisions 5x faster",
+      "Identify trends in real-time",
+      "Predict future outcomes",
+      "Improve customer experience",
+      "Increase revenue by 25%"
     ],
     useCases: [
-      "Financial services",
-      "Healthcare organizations",
-      "E-commerce platforms",
-      "Government agencies",
-      "Educational institutions"
+      "Sales performance tracking",
+      "Customer behavior analysis",
+      "Financial reporting",
+      "Marketing campaign optimization",
+      "Operational efficiency"
     ],
-    targetAudience: ["Enterprises", "Financial services", "Healthcare", "Government", "Education"],
-    tags: ["Cybersecurity", "Threat Detection", "Compliance", "Penetration Testing", "Security"],
+    marketPrice: "$3,800 - $7,200/month",
+    contactLink: "https://ziontechgroup.com/contact",
+    tags: ["Business Intelligence", "Real-Time Analytics", "Predictive Analytics", "Data Visualization"],
     author: {
-      name: "Zion Security",
-      id: "zion-security",
-      email: "security@ziontechgroup.com"
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
     },
-    images: ["https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-02-10T13:20:00.000Z",
+    images: ["https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&h=500"],
+    createdAt: "2024-01-30T15:45:00.000Z",
+    aiScore: 95,
     rating: 4.9,
-    reviewCount: 189,
-    aiScore: 97,
-    website: "https://ziontechgroup.com/cybersecurity",
-    documentation: "https://docs.ziontechgroup.com/cybersecurity",
-    support: "24/7 security operations center",
-    integration: ["SIEM", "EDR", "Firewall", "IDS/IPS", "Vulnerability scanners"],
-    compliance: ["SOC 2", "ISO 27001", "PCI DSS", "HIPAA", "GDPR"],
-    sla: "15-minute incident response time"
+    reviewCount: 167,
+    isFeatured: true
   },
   {
-    id: "compliance-automation",
-    title: "Compliance Automation Platform",
-    description: "Automated compliance management platform for GDPR, HIPAA, SOC 2, and other regulatory requirements with real-time monitoring.",
-    category: "Security Services",
-    subcategory: "Compliance",
-    price: 599,
+    id: "data-governance",
+    title: "Data Governance & Compliance Platform",
+    description: "Comprehensive data governance solution that ensures data quality, privacy compliance, and regulatory adherence across all data assets.",
+    category: "Data & Analytics",
+    subcategory: "Data Governance",
+    price: 4500,
     currency: "$",
-    pricingModel: "monthly",
+    pricingModel: "subscription",
     features: [
-      "Automated compliance checks",
-      "Real-time monitoring",
-      "Audit trail management",
-      "Policy templates",
-      "Risk assessment",
-      "Automated reporting"
+      "Data quality management",
+      "Privacy compliance tools",
+      "Data lineage tracking",
+      "Access control management",
+      "Audit trail reporting",
+      "Regulatory compliance"
     ],
     benefits: [
-      "Reduce compliance costs by 50%",
-      "Eliminate manual processes",
-      "Stay audit-ready 24/7",
-      "Reduce compliance risks",
-      "Faster time to compliance"
+      "Ensure data quality and accuracy",
+      "Meet GDPR, CCPA compliance",
+      "Reduce data risks",
+      "Improve decision making",
+      "Protect customer privacy"
     ],
     useCases: [
-      "GDPR compliance",
-      "HIPAA compliance",
-      "SOC 2 certification",
-      "PCI DSS compliance",
-      "Industry regulations"
+      "Data quality management",
+      "Privacy compliance",
+      "Regulatory reporting",
+      "Data security",
+      "Audit preparation"
     ],
-    targetAudience: ["Healthcare", "Financial services", "E-commerce", "SaaS companies", "Enterprises"],
-    tags: ["Compliance", "GDPR", "HIPAA", "SOC 2", "Automation"],
+    marketPrice: "$4,500 - $9,000/month",
+    contactLink: "https://ziontechgroup.com/contact",
+    tags: ["Data Governance", "Compliance", "Privacy", "Data Quality"],
     author: {
-      name: "Zion Compliance",
-      id: "zion-compliance",
-      email: "compliance@ziontechgroup.com"
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
     },
-    images: ["https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-02-15T10:30:00.000Z",
-    rating: 4.8,
-    reviewCount: 145,
+    images: ["https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&h=500"],
+    createdAt: "2024-02-01T10:30:00.000Z",
     aiScore: 94,
-    website: "https://ziontechgroup.com/compliance-automation",
-    documentation: "https://docs.ziontechgroup.com/compliance-automation",
-    support: "Business hours + compliance emergency support",
-    integration: ["HR systems", "CRM", "ERP", "Cloud platforms", "Security tools"],
-    compliance: ["GDPR", "HIPAA", "SOC 2", "PCI DSS", "CCPA"],
-    sla: "99.9% compliance monitoring uptime"
+    rating: 4.8,
+    reviewCount: 89,
+    isNew: true
   },
 
   // Digital Transformation Services
   {
-    id: "digital-transformation",
-    title: "Digital Transformation Consulting",
-    description: "Strategic digital transformation consulting to modernize business processes, technology infrastructure, and customer experiences.",
-    category: "Consulting Services",
-    subcategory: "Digital Transformation",
-    price: 15000,
+    id: "digital-workplace",
+    title: "Digital Workplace Transformation",
+    description: "Complete digital workplace solution that modernizes employee experience, improves collaboration, and increases productivity through intelligent digital tools.",
+    category: "Digital Transformation",
+    subcategory: "Workplace Modernization",
+    price: 6500,
     currency: "$",
     pricingModel: "project-based",
     features: [
-      "Business process analysis",
-      "Technology roadmap",
-      "Change management",
-      "Implementation support",
-      "ROI measurement",
-      "Ongoing optimization"
+      "Employee experience platform",
+      "Collaboration tools integration",
+      "Workflow automation",
+      "Mobile-first design",
+      "Analytics and insights",
+      "Change management"
     ],
     benefits: [
-      "Increase operational efficiency by 40%",
-      "Improve customer satisfaction",
+      "Increase productivity by 35%",
+      "Improve employee satisfaction",
       "Reduce operational costs",
-      "Enable innovation",
-      "Competitive advantage"
+      "Faster decision making",
+      "Better collaboration"
     ],
     useCases: [
-      "Legacy system modernization",
-      "Process automation",
-      "Customer experience transformation",
-      "Data strategy implementation",
-      "Cloud adoption"
+      "Remote work enablement",
+      "Employee onboarding",
+      "Process digitization",
+      "Knowledge management",
+      "Team collaboration"
     ],
-    targetAudience: ["Enterprises", "Manufacturing", "Healthcare", "Financial services", "Retail"],
-    tags: ["Digital Transformation", "Consulting", "Strategy", "Innovation", "Business"],
+    marketPrice: "$6,500 - $15,000",
+    contactLink: "https://ziontechgroup.com/contact",
+    tags: ["Digital Workplace", "Employee Experience", "Collaboration", "Productivity"],
     author: {
-      name: "Zion Consulting",
-      id: "zion-consulting",
-      email: "consulting@ziontechgroup.com"
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
     },
-    images: ["https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-02-20T16:00:00.000Z",
+    images: ["https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&h=500"],
+    createdAt: "2024-02-03T12:15:00.000Z",
+    aiScore: 96,
     rating: 4.9,
-    reviewCount: 78,
+    reviewCount: 145,
+    isFeatured: true
+  },
+  {
+    id: "customer-experience",
+    title: "Customer Experience Optimization Platform",
+    description: "AI-powered customer experience platform that personalizes interactions, predicts customer needs, and increases customer lifetime value through intelligent automation.",
+    category: "Digital Transformation",
+    subcategory: "Customer Experience",
+    price: 3900,
+    currency: "$",
+    pricingModel: "subscription",
+    features: [
+      "Customer journey mapping",
+      "Personalization engine",
+      "Predictive analytics",
+      "Omnichannel integration",
+      "Customer feedback analysis",
+      "Automated marketing"
+    ],
+    benefits: [
+      "Increase customer satisfaction by 40%",
+      "Improve conversion rates by 30%",
+      "Reduce customer churn by 25%",
+      "Personalize customer interactions",
+      "Automate customer service"
+    ],
+    useCases: [
+      "E-commerce optimization",
+      "Customer service automation",
+      "Marketing personalization",
+      "Customer retention",
+      "Sales optimization"
+    ],
+    marketPrice: "$3,900 - $7,800/month",
+    contactLink: "https://ziontechgroup.com/contact",
+    tags: ["Customer Experience", "Personalization", "Analytics", "Automation"],
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+    },
+    images: ["https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=800&h=500"],
+    createdAt: "2024-02-05T14:20:00.000Z",
     aiScore: 95,
-    website: "https://ziontechgroup.com/digital-transformation",
-    documentation: "https://docs.ziontechgroup.com/digital-transformation",
-    support: "Dedicated transformation team",
-    integration: ["ERP systems", "CRM platforms", "Cloud services", "Analytics tools", "Automation platforms"],
-    compliance: ["Industry-specific regulations"],
-    sla: "Weekly progress reports and milestone tracking"
+    rating: 4.8,
+    reviewCount: 123,
+    isNew: true
   },
 
-  // IoT & Smart Solutions
+  // IoT & Edge Computing Services
   {
     id: "iot-platform",
-    title: "IoT Management Platform",
-    description: "Comprehensive IoT platform for device management, data collection, analytics, and automation across connected devices.",
-    category: "IoT Services",
-    subcategory: "Platform & Management",
-    price: 799,
+    title: "Enterprise IoT Platform & Analytics",
+    description: "Comprehensive IoT platform that connects, manages, and analyzes IoT devices to provide real-time insights and automate business processes.",
+    category: "IoT & Edge Computing",
+    subcategory: "IoT Platform",
+    price: 5200,
     currency: "$",
-    pricingModel: "monthly",
+    pricingModel: "subscription",
     features: [
       "Device management",
-      "Real-time data collection",
-      "Edge computing",
+      "Real-time data processing",
+      "Edge computing capabilities",
       "Predictive maintenance",
-      "Security protocols",
+      "Security and compliance",
       "Scalable architecture"
     ],
     benefits: [
-      "Reduce maintenance costs by 30%",
-      "Improve operational efficiency",
-      "Real-time insights",
-      "Predictive maintenance",
-      "Scalable IoT deployment"
+      "Monitor 10,000+ devices",
+      "Reduce maintenance costs by 40%",
+      "Real-time operational insights",
+      "Automated alerts and responses",
+      "Scalable IoT infrastructure"
     ],
     useCases: [
       "Smart manufacturing",
-      "Connected buildings",
-      "Fleet management",
-      "Energy monitoring",
-      "Agriculture automation"
+      "Asset monitoring",
+      "Predictive maintenance",
+      "Environmental monitoring",
+      "Supply chain tracking"
     ],
-    targetAudience: ["Manufacturing", "Smart cities", "Energy companies", "Transportation", "Agriculture"],
-    tags: ["IoT", "Device Management", "Edge Computing", "Predictive Maintenance", "Automation"],
+    marketPrice: "$5,200 - $10,500/month",
+    contactLink: "https://ziontechgroup.com/contact",
+    tags: ["IoT", "Edge Computing", "Device Management", "Predictive Maintenance"],
     author: {
-      name: "Zion IoT",
-      id: "zion-iot",
-      email: "iot@ziontechgroup.com"
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
     },
-    images: ["https://images.unsplash.com/photo-1518709268805-4e9042af2176?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-02-25T12:15:00.000Z",
-    rating: 4.7,
-    reviewCount: 112,
+    images: ["https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=800&h=500"],
+    createdAt: "2024-02-07T09:45:00.000Z",
     aiScore: 93,
-    website: "https://ziontechgroup.com/iot-platform",
-    documentation: "https://docs.ziontechgroup.com/iot-platform",
-    support: "24/7 IoT monitoring support",
-    integration: ["AWS IoT", "Azure IoT", "Google Cloud IoT", "MQTT", "REST APIs"],
-    compliance: ["ISO 27001", "GDPR", "Industry-specific standards"],
-    sla: "99.9% platform uptime, 5-minute device response time"
+    rating: 4.7,
+    reviewCount: 78,
+    isFeatured: true
   },
 
   // Blockchain & Web3 Services
   {
     id: "blockchain-solutions",
     title: "Enterprise Blockchain Solutions",
-    description: "Custom blockchain development for supply chain transparency, smart contracts, and decentralized applications.",
-    category: "Blockchain Services",
-    subcategory: "Development & Consulting",
-    price: 5000,
+    description: "Custom blockchain development services for supply chain transparency, digital identity, smart contracts, and decentralized applications.",
+    category: "Blockchain & Web3",
+    subcategory: "Blockchain Development",
+    price: 7500,
     currency: "$",
     pricingModel: "project-based",
     features: [
       "Custom blockchain development",
-      "Smart contract development",
+      "Smart contract creation",
       "Supply chain solutions",
+      "Digital identity systems",
       "DeFi applications",
-      "Security auditing",
-      "Integration services"
+      "NFT marketplace development"
     ],
     benefits: [
-      "Enhanced transparency",
-      "Reduced fraud",
-      "Lower transaction costs",
-      "Improved traceability",
-      "Innovation leadership"
+      "Increase transparency and trust",
+      "Reduce fraud and errors",
+      "Automate complex processes",
+      "Improve traceability",
+      "Enable new business models"
     ],
     useCases: [
       "Supply chain management",
-      "Financial services",
-      "Healthcare records",
-      "Real estate",
-      "Voting systems"
+      "Digital identity verification",
+      "Smart contracts",
+      "Tokenization",
+      "Decentralized finance"
     ],
-    targetAudience: ["Financial services", "Manufacturing", "Healthcare", "Government", "Logistics"],
-    tags: ["Blockchain", "Smart Contracts", "DeFi", "Supply Chain", "Web3"],
+    marketPrice: "$7,500 - $25,000",
+    contactLink: "https://ziontechgroup.com/contact",
+    tags: ["Blockchain", "Smart Contracts", "Supply Chain", "DeFi"],
     author: {
-      name: "Zion Blockchain",
-      id: "zion-blockchain",
-      email: "blockchain@ziontechgroup.com"
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
     },
     images: ["https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-03-01T09:45:00.000Z",
+    createdAt: "2024-02-10T11:30:00.000Z",
+    aiScore: 94,
     rating: 4.8,
     reviewCount: 67,
-    aiScore: 96,
-    website: "https://ziontechgroup.com/blockchain-solutions",
-    documentation: "https://docs.ziontechgroup.com/blockchain-solutions",
-    support: "Dedicated blockchain team",
-    integration: ["Ethereum", "Hyperledger", "Polkadot", "Solana", "Enterprise systems"],
-    compliance: ["Regulatory compliance", "Industry standards"],
-    sla: "Project milestone delivery with 2-week buffer"
-  },
-
-  // Data Science & Analytics
-  {
-    id: "data-science-platform",
-    title: "Data Science Platform",
-    description: "End-to-end data science platform with automated ML model development, deployment, and monitoring capabilities.",
-    category: "Data Services",
-    subcategory: "Data Science & ML",
-    price: 699,
-    currency: "$",
-    pricingModel: "monthly",
-    features: [
-      "Automated ML model development",
-      "Model deployment pipeline",
-      "Real-time monitoring",
-      "Feature engineering",
-      "Model versioning",
-      "A/B testing framework"
-    ],
-    benefits: [
-      "10x faster model development",
-      "Automated model optimization",
-      "Reduced data science costs",
-      "Improved model accuracy",
-      "Faster time to production"
-    ],
-    useCases: [
-      "Predictive analytics",
-      "Recommendation systems",
-      "Fraud detection",
-      "Customer segmentation",
-      "Risk assessment"
-    ],
-    targetAudience: ["Financial services", "E-commerce", "Healthcare", "Manufacturing", "Marketing"],
-    tags: ["Data Science", "Machine Learning", "AI", "Analytics", "Automation"],
-    author: {
-      name: "Zion Data Science",
-      id: "zion-data-science",
-      email: "datascience@ziontechgroup.com"
-    },
-    images: ["https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-03-05T14:20:00.000Z",
-    rating: 4.8,
-    reviewCount: 134,
-    aiScore: 95,
-    website: "https://ziontechgroup.com/data-science-platform",
-    documentation: "https://docs.ziontechgroup.com/data-science-platform",
-    support: "Business hours + model deployment support",
-    integration: ["Python", "R", "TensorFlow", "PyTorch", "MLflow"],
-    compliance: ["GDPR", "SOC 2", "Industry-specific regulations"],
-    sla: "99.9% platform uptime, 1-hour model deployment time"
+    isNew: true
   }
 ];
 
 export const SERVICE_CATEGORIES = [
   {
-    id: "ai-services",
-    name: "AI Services",
-    description: "Artificial Intelligence and Machine Learning solutions",
+    id: "ai-automation",
+    name: "AI & Automation",
+    description: "Intelligent automation and AI-powered solutions",
     icon: "🤖",
-    subcategories: ["Chatbots & Conversational AI", "Content Generation", "Data Analytics", "Computer Vision", "Natural Language Processing"]
+    services: EXPANDED_SERVICES.filter(s => s.category === "AI & Automation")
   },
   {
-    id: "cloud-services",
-    name: "Cloud Services",
-    description: "Cloud infrastructure, migration, and management",
-    icon: "☁️",
-    subcategories: ["Migration & Consulting", "DevOps & Automation", "Infrastructure Management", "Cost Optimization", "Multi-cloud Strategy"]
-  },
-  {
-    id: "security-services",
-    name: "Security Services",
-    description: "Cybersecurity, compliance, and risk management",
+    id: "cybersecurity",
+    name: "Cybersecurity",
+    description: "Advanced security and compliance solutions",
     icon: "🔒",
-    subcategories: ["Cybersecurity", "Compliance", "Penetration Testing", "Security Audits", "Incident Response"]
+    services: EXPANDED_SERVICES.filter(s => s.category === "Cybersecurity")
   },
   {
-    id: "consulting-services",
-    name: "Consulting Services",
-    description: "Strategic technology consulting and digital transformation",
-    icon: "💼",
-    subcategories: ["Digital Transformation", "Technology Strategy", "Process Optimization", "Change Management", "ROI Analysis"]
+    id: "cloud-devops",
+    name: "Cloud & DevOps",
+    description: "Cloud infrastructure and DevOps automation",
+    icon: "☁️",
+    services: EXPANDED_SERVICES.filter(s => s.category === "Cloud & DevOps")
   },
   {
-    id: "iot-services",
-    name: "IoT Services",
-    description: "Internet of Things platforms and solutions",
+    id: "data-analytics",
+    name: "Data & Analytics",
+    description: "Business intelligence and data governance",
+    icon: "📊",
+    services: EXPANDED_SERVICES.filter(s => s.category === "Data & Analytics")
+  },
+  {
+    id: "digital-transformation",
+    name: "Digital Transformation",
+    description: "Workplace modernization and customer experience",
+    icon: "🚀",
+    services: EXPANDED_SERVICES.filter(s => s.category === "Digital Transformation")
+  },
+  {
+    id: "iot-edge",
+    name: "IoT & Edge Computing",
+    description: "Internet of Things and edge computing solutions",
     icon: "🌐",
-    subcategories: ["Platform & Management", "Device Integration", "Data Analytics", "Edge Computing", "Smart Solutions"]
+    services: EXPANDED_SERVICES.filter(s => s.category === "IoT & Edge Computing")
   },
   {
-    id: "blockchain-services",
-    name: "Blockchain Services",
+    id: "blockchain-web3",
+    name: "Blockchain & Web3",
     description: "Blockchain development and Web3 solutions",
     icon: "⛓️",
-    subcategories: ["Development & Consulting", "Smart Contracts", "DeFi Applications", "Supply Chain", "Security Auditing"]
-  },
-  {
-    id: "data-services",
-    name: "Data Services",
-    description: "Data science, analytics, and business intelligence",
-    icon: "📊",
-    subcategories: ["Data Science & ML", "Business Intelligence", "Data Engineering", "Data Governance", "Predictive Analytics"]
+    services: EXPANDED_SERVICES.filter(s => s.category === "Blockchain & Web3")
   }
 ];
+
+export const FEATURED_SERVICES = EXPANDED_SERVICES.filter(s => s.isFeatured);
+export const NEW_SERVICES = EXPANDED_SERVICES.filter(s => s.isNew);

@@ -25,6 +25,10 @@ const AIMatcherPage = React.lazy(() => import('./pages/AIMatcher'));
 const TalentDirectory = React.lazy(() => import('./pages/TalentDirectory'));
 const TalentsPage = React.lazy(() => import('./pages/TalentsPage'));
 const ServicesPage = React.lazy(() => import('./pages/ServicesPage'));
+const ExpandedServicesPage = React.lazy(() => import('./pages/ExpandedServicesPage'));
+const ServiceDetailPage = React.lazy(() => import('./pages/ServiceDetailPage'));
+const ServicePricingPage = React.lazy(() => import('./pages/ServicePricingPage'));
+const EnterpriseSolutionsPage = React.lazy(() => import('./pages/EnterpriseSolutionsPage'));
 const EquipmentPage = React.lazy(() => import('./pages/EquipmentPage'));
 const EquipmentDetail = React.lazy(() => import('./pages/EquipmentDetail'));
 const Analytics = React.lazy(() => import('./pages/Analytics'));
@@ -52,6 +56,10 @@ const baseRoutes = [
   { path: '/talent', element: <TalentDirectory /> },
   { path: '/talents', element: <TalentsPage /> },
   { path: '/services', element: <ServicesPage /> },
+  { path: '/expanded-services', element: <ExpandedServicesPage /> },
+  { path: '/service/:serviceId', element: <ServiceDetailPage /> },
+  { path: '/pricing', element: <ServicePricingPage /> },
+  { path: '/enterprise-solutions', element: <EnterpriseSolutionsPage /> },
   { path: '/it-onsite-services', element: <ITOnsiteServicesPage /> },
   { path: '/categories', element: <Categories /> },
   { path: '/equipment', element: <EquipmentPage /> },
