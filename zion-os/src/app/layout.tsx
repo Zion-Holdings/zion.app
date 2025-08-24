@@ -1,11 +1,12 @@
 import "./globals.css";
 import type { ReactNode } from "react";
-import { Navigation } from "@/components/Navigation";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export const metadata = {
   title: "Zion Tech Group - AI-Powered Digital Economy Solutions",
   description: "Launch sovereign AI-powered digital economies with one click. Advanced AI automation, quantum computing, and autonomous business solutions for the future.",
-  keywords: "AI automation, quantum computing, digital economy, autonomous business, Zion Tech Group, AI consciousness, blockchain, cybersecurity",
+  keywords: "AI automation, quantum computing, digital economy, autonomous business, Zion Tech Group, AI consciousness, blockchain, cybersecurity, artificial intelligence, autonomous systems, technology solutions, business automation",
   authors: [{ name: "Zion Tech Group" }],
   creator: "Zion Tech Group",
   publisher: "Zion Tech Group",
@@ -70,9 +71,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             <a href="/multiverse/launch" className="text-sm opacity-80 hover:opacity-100">Launch</a>
             <a href="/admin/os-deploy" className="text-sm opacity-80 hover:opacity-100">Admin Deploy</a>
             <a href="/admin/instances" className="text-sm opacity-80 hover:opacity-100">Instances</a>
-            <a href="/services" className="text-sm opacity-80 hover:opacity-100">Services</a>
-            <a href="/about" className="text-sm opacity-80 hover:opacity-100">About</a>
-            <a href="/contact" className="text-sm opacity-80 hover:opacity-100">Contact</a>
           </div>
         </nav>
         <main className="pt-20">

@@ -1,0 +1,52 @@
+[
+  {
+    "route": "/_app",
+    "title": "",
+    "h1": ""
+  },
+  {
+    "route": "/_document",
+    "title": "",
+    "h1": ""
+  },
+  {
+    "route": "/about",
+    "title": "About Us — Zion Tech Group | Leading-Edge Technology Solutions",
+    "h1": "About Zion Tech Group"
+  },
+  {
+    "route": "/comprehensive-2025-services-showcase",
+    "title": "Comprehensive 2025 Innovative Services Showcase — Zion Tech Group",
+    "h1": "2025 Innovative Services Showcase"
+  },
+  {
+    "route": "/contact",
+    "title": "Contact Us — Zion Tech Group | Get in Touch",
+    "h1": "Get in Touch"
+  },
+  {
+    "route": "/",
+    "title": "Zion Tech Group — Leading-Edge Technology Solutions & Autonomous Innovation Platform",
+    "h1": "Zion Tech Group"
+  },
+  {
+    "route": "/pricing-2025",
+    "title": "2025 Pricing & Services — Zion Tech Group",
+    "h1": "2025 Pricing & Services"
+  },
+  {
+    "route": "/resources",
+    "title": "Resources — Zion Tech Group | Documentation, Tools & Community",
+    "h1": "Resources Hub"
+  },
+  {
+    "route": "/services",
+    "title": "Services — Zion Tech Group | AI, Quantum & Technology Solutions",
+    "h1": "Our Services"
+  },
+  {
+    "route": "/solutions",
+    "title": "Solutions — Zion Tech Group | Industry-Specific Technology Solutions",
+    "h1": "Industry Solutions"
+  }
+]

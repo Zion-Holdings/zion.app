@@ -1,48 +1,190 @@
-# Zion AI Marketplace – Assistant Widget
+# Zion Tech Group - Leading-Edge Technology Solutions
 
-An AI-powered chat assistant for the Zion AI Marketplace. It greets users, answers FAQs, and guides them through browsing listings, pricing/credits, integrations, and vendor onboarding. The widget is responsive and can be included on all pages.
+A modern, responsive website built with Next.js, TypeScript, and Tailwind CSS, showcasing cutting-edge technology solutions in AI, quantum computing, and cybersecurity.
 
-## Features
-- Floating chat bubble, always-on across pages
-- Mobile-friendly panel with accessible controls
-- Greeting + quick action buttons
-- Conversations persisted in `localStorage`
-- Server-side proxy to OpenAI (no API key in browser)
-- Lightweight FAQ context to improve response quality
+## 🚀 Features
 
-## Tech
-- Node.js + Express (ESM)
-- OpenAI API
-- Vanilla JS/CSS widget, no framework
+- **Modern Design**: Beautiful, responsive design with gradient backgrounds and glassmorphism effects
+- **Performance Optimized**: Built with Next.js for optimal performance and SEO
+- **TypeScript**: Full type safety and better development experience
+- **Responsive**: Mobile-first design that works on all devices
+- **Animations**: Smooth animations powered by Framer Motion
+- **Accessibility**: Built with accessibility best practices
 
-## Setup
-1. Copy env and set your key:
-   ```bash
-   cp .env.example .env
-   # Edit .env to set OPENAI_API_KEY and optional OPENAI_MODEL
-   ```
-2. Install and run:
-   ```bash
-   npm install
-   npm run dev
-   # Open http://localhost:3000
-   ```
+## 🛠️ Tech Stack
 
-## Embed on your site
-Include the script and stylesheet in your global layout (so it appears on all pages):
-```html
-<link rel="stylesheet" href="/widget.css" />
-<script src="/widget.js" defer></script>
+- **Framework**: Next.js 13+ with App Router
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion
+- **Icons**: Lucide React
+- **Build Tool**: Webpack with Babel
+- **Deployment**: Ready for Vercel, Netlify, or any static hosting
+
+## 📁 Project Structure
+
 ```
-The widget mounts automatically and talks to `/api/chat` on the same origin.
+zion-tech-group/
+├── components/                 # Reusable UI components
+│   ├── EnhancedNavigation.tsx # Main navigation component
+│   ├── EnhancedFooter.tsx     # Footer component
+│   ├── EnhancedServicesShowcase.tsx # Services showcase
+│   └── EnhancedTestimonialsSection.tsx # Testimonials
+├── pages/                     # Next.js pages
+│   ├── index.tsx             # Homepage
+│   ├── about.tsx             # About page
+│   ├── contact.tsx           # Contact page
+│   ├── _app.tsx              # App wrapper
+│   ├── _document.tsx         # Document wrapper
+│   └── 404.tsx               # 404 error page
+├── data/                      # Data files
+│   └── enhanced-micro-saas-services-2025.ts
+├── public/                    # Static assets
+├── styles/                    # Global styles
+├── babel.config.js           # Babel configuration
+├── next.config.js            # Next.js configuration
+├── package.json              # Dependencies and scripts
+└── tailwind.config.js        # Tailwind CSS configuration
+```
 
-If your site is hosted separately, deploy this server and set `ALLOWED_ORIGIN` accordingly.
+## 🚀 Getting Started
 
-## Customization
-- Edit the system prompt and FAQ in `server.mjs`.
-- Adjust styles in `public/widget.css`.
-- Change greeting, quick actions, or persistence in `public/widget.js`.
+### Prerequisites
 
-## Notes
-- Default model is `gpt-4o-mini`. You can set `OPENAI_MODEL` to any GPT-4 family model available to your key.
-- For enterprise usage, add authentication and stronger rate limiting.
+- Node.js 18+ 
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd zion-tech-group
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Run the development server:
+```bash
+npm run dev
+```
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+### Build for Production
+
+```bash
+npm run build
+npm start
+```
+
+## 📱 Pages
+
+### Homepage (`/`)
+- Hero section with compelling messaging
+- Features showcase
+- Core services overview
+- Statistics and social proof
+- Call-to-action sections
+
+### About (`/about`)
+- Company mission and values
+- Leadership team
+- Company statistics
+- Why choose us section
+
+### Contact (`/contact`)
+- Contact form
+- Company information
+- Office details
+- Response time commitments
+
+## 🎨 Design System
+
+### Colors
+- **Primary**: Cyan to Blue gradients
+- **Background**: Dark slate themes
+- **Accent**: Purple and pink highlights
+- **Text**: White with various opacity levels
+
+### Typography
+- **Headings**: Large, bold with gradient text effects
+- **Body**: Clean, readable text with proper hierarchy
+- **Fonts**: System fonts for optimal performance
+
+### Components
+- **Cards**: Glassmorphism effect with backdrop blur
+- **Buttons**: Gradient backgrounds with hover effects
+- **Navigation**: Fixed header with smooth transitions
+- **Forms**: Modern input styling with focus states
+
+## 🔧 Configuration
+
+### Next.js Configuration
+The project uses a simplified Next.js configuration optimized for performance and compatibility.
+
+### Babel Configuration
+Custom Babel setup for optimal compatibility with modern JavaScript features.
+
+### Tailwind CSS
+Fully configured with custom color schemes and component utilities.
+
+## 📊 Performance
+
+- **Lighthouse Score**: Optimized for 90+ scores
+- **Bundle Size**: Optimized with code splitting
+- **Images**: Optimized and responsive
+- **SEO**: Meta tags and structured data ready
+
+## 🚀 Deployment
+
+### Vercel (Recommended)
+1. Connect your GitHub repository
+2. Deploy automatically on push
+3. Optimized for Next.js
+
+### Netlify
+1. Build command: `npm run build`
+2. Publish directory: `out`
+3. Environment variables as needed
+
+### Static Export
+```bash
+npm run build
+npm run export
+```
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
+
+## 📄 License
+
+This project is proprietary to Zion Tech Group.
+
+## 📞 Support
+
+For support or questions:
+- Email: contact@ziontechgroup.com
+- Phone: +1 (555) 123-4567
+
+## 🔮 Future Enhancements
+
+- [ ] Blog system
+- [ ] E-commerce integration
+- [ ] Multi-language support
+- [ ] Advanced analytics
+- [ ] Customer portal
+- [ ] API documentation
+- [ ] Interactive demos
+
+---
+
+Built with ❤️ by Zion Tech Group

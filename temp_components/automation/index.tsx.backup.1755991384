@@ -256,12 +256,4 @@ const ProductsIndex: NextPage = () => {
   );
 };
 
-<<<<<<< HEAD:pages/products/index.tsx
-export default ProductsIndex;
-=======
-<<<<<<< HEAD
 export default Index;
-=======
-export default Index;
->>>>>>> origin/cursor/deploy-zion-brain-ai-system-5783
->>>>>>> 84d173ee8a40495698da2560d91f786b60cbd3c9:temp_components/automation/index.tsx.backup.1755991384

@@ -1,102 +1,46 @@
-const nextConfig = {
+const path = require('path');
+
+let withSentryConfig = (cfg) => cfg;
+try {
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  const sentry = require('@sentry/nextjs');
+  withSentryConfig = (cfg) => sentry.withSentryConfig(cfg, { silent: true });
+} catch {}
+
+const baseConfig = {
+  assetPrefix: process.env.NODE_ENV === 'production' ? 'https://ziontechgroup.com' : '',
   poweredByHeader: false,
   trailingSlash: false,
   reactStrictMode: true,
-  swcMinify: true,
-  
-  // Disable ESLint during build to avoid parsing errors
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
   
   // Environment configuration
   env: {
     NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000',
-    NEXT_PUBLIC_SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL,
-    NEXT_PUBLIC_SUPABASE_ANON_KEY: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
   },
 
-  // Optimized image handling
   images: {
     domains: ["localhost"],
-    unoptimized: false,
-    formats: ['image/webp', 'image/avif'],
+    unoptimized: true,
   },
 
-  // Compiler optimizations
   compiler: {
     removeConsole: process.env.NODE_ENV === "production",
   },
 
-  // Experimental features for better performance
-  experimental: {
-    optimizeCss: true,
-    optimizePackageImports: ['lucide-react', '@radix-ui/react-icons'],
-    esmExternals: 'loose',
-  },
-
-  // Webpack configuration
   webpack: (config, { dev, isServer }) => {
-    // Basic optimizations
-    if (!dev && !isServer) {
-      config.optimization = {
-        ...config.optimization,
-        splitChunks: {
-          chunks: 'all',
-          minSize: 20000,
-          maxSize: 244000,
-          cacheGroups: {
-            vendor: {
-              test: /[\\/]node_modules[\\/]/,
-              name: 'vendors',
-              chunks: 'all',
-              priority: 10,
-            },
-            common: {
-              name: 'common',
-              minChunks: 2,
-              chunks: 'all',
-              priority: 5,
-              reuseExistingChunk: true,
-            },
-          },
-        },
+    // Simple webpack configuration
+    if (!isServer) {
+      // Client-side optimizations
+      config.resolve.fallback = {
+        fs: false,
+        net: false,
+        tls: false,
+        crypto: false,
       };
     }
-
-    // Handle ESM packages
-    config.module.rules.push({
-      test: /\.m?js$/,
-      type: 'javascript/auto',
-      resolve: {
-        fullySpecified: false,
-      },
-    });
-
-    // Polyfills for Node.js APIs
-    config.resolve.fallback = {
-      ...config.resolve.fallback,
-      fs: false,
-      net: false,
-      tls: false,
-      crypto: false,
-      async_hooks: false,
-      diagnostics_channel: false,
-      worker_threads: false,
-      module: false,
-      child_process: false,
-      http: false,
-      https: false,
-      os: false,
-      path: false,
-      stream: false,
-      util: false,
-      zlib: false,
-      url: false,
-    };
 
     return config;
   },
 };
 
-module.exports = nextConfig;
+module.exports = withSentryConfig(baseConfig);

@@ -26,15 +26,9 @@ import { NotificationProvider } from './context';
 
 // Import analytics provider
 import { AnalyticsProvider } from './context/AnalyticsContext';
-<<<<<<< HEAD
-import { initGA } from './lib/gtag';
-import { ErrorBoundary } from './components/ErrorBoundary';
-=======
 import { ViewModeProvider } from './context/ViewModeContext';
-import { CartProvider } from './context/CartContext';
-import { UnitProvider } from './context/UnitContext';
-import { registerServiceWorker } from './serviceWorkerRegistration';
->>>>>>> origin/a12zhz-codex/support-metric--imperial-units
+import { Provider } from 'react-redux';
+import { store } from './store/store';
 
 // Initialize a React Query client with global error handling
 const queryClient = new QueryClient({
@@ -48,22 +42,6 @@ const queryClient = new QueryClient({
   },
 });
 
-<<<<<<< HEAD
-initGA();
-// Render the app with proper provider structure
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <HelmetProvider>
-      <QueryClientProvider client={queryClient}>
-        <WhitelabelProvider>
-          <Router>
-            <AuthProvider>
-              <NotificationProvider>
-                <AnalyticsProvider>
-                  <LanguageProvider authState={{ isAuthenticated: false, user: null }}>
-                    <ErrorBoundary>
-                      <App />
-=======
 try {
   console.log("main.tsx: Before ReactDOM.createRoot");
   // Render the app with proper provider structure
@@ -71,6 +49,8 @@ try {
     <React.StrictMode>
       <HelmetProvider>
         <QueryClientProvider client={queryClient}>
+=======
+        <Provider store={store}>
           <WhitelabelProvider>
             <Router>
               <AuthProvider>
@@ -78,23 +58,18 @@ try {
                   <AnalyticsProvider>
                     <LanguageProvider authState={{ isAuthenticated: false, user: null }}>
                       <ViewModeProvider>
-                        <UnitProvider>
-                          <CartProvider>
-                            <AppLayout>
-                              <App />
-                            </AppLayout>
-                          </CartProvider>
-                        </UnitProvider>
+                        <AppLayout>
+                          <App />
+                        </AppLayout>
                       </ViewModeProvider>
->>>>>>> origin/a12zhz-codex/support-metric--imperial-units
                       <LanguageDetectionPopup />
-                    </ErrorBoundary>
-                  </LanguageProvider>
-                </AnalyticsProvider>
-              </NotificationProvider>
-            </AuthProvider>
-          </Router>
-        </WhitelabelProvider>
+                    </LanguageProvider>
+                  </AnalyticsProvider>
+                </NotificationProvider>
+              </AuthProvider>
+            </Router>
+          </WhitelabelProvider>
+        </Provider>
       </QueryClientProvider>
     </HelmetProvider>
   </React.StrictMode>,

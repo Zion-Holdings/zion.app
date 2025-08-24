@@ -1,9 +1,8 @@
 module.exports = {
   presets: [
     ['@babel/preset-env', {
-      modules: false, // Preserve ES modules
+      modules: 'commonjs', // Use CommonJS instead of ESM
       targets: {
-        esmodules: true,
         node: '18'
       }
     }],
@@ -14,45 +13,10 @@ module.exports = {
   ],
   plugins: [
     ['@babel/plugin-transform-runtime', {
-      useESModules: true,
+      useESModules: false, // Use CommonJS
       corejs: false,
       helpers: true,
       regenerator: false
     }]
-  ],
-  env: {
-    test: {
-      presets: [
-        ['@babel/preset-env', {
-          modules: 'commonjs',
-          targets: {
-            node: 'current'
-          }
-        }],
-        ['@babel/preset-react', {
-          runtime: 'automatic'
-        }],
-        '@babel/preset-typescript'
-      ]
-    }
-  },
-  // Handle specific problematic packages
-  overrides: [
-    {
-      test: /node_modules\/(formik|react-day-picker)/,
-      presets: [
-        ['@babel/preset-env', {
-          modules: false, // Keep as ESM
-          targets: {
-            esmodules: true
-          }
-        }]
-      ],
-      plugins: [
-        ['@babel/plugin-transform-runtime', {
-          useESModules: true
-        }]
-      ]
-    }
   ]
 };
