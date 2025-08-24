@@ -2,10 +2,9 @@
 import { DynamicListingPage } from "@/components/DynamicListingPage";
 import { ProductListing } from "@/types/listings";
 import { TrustedBySection } from "@/components/TrustedBySection";
-import { ComprehensiveServicesShowcase } from "@/components/ComprehensiveServicesShowcase";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Globe, Zap, Brain, Phone, Mail, MapPin, Clock, Users, CheckCircle } from "lucide-react";
+import { Globe, Zap, Brain } from "lucide-react";
 import { useEffect, useState } from "react";
 import { MICRO_SAAS_SERVICES } from "@/data/microSaasServices";
 
