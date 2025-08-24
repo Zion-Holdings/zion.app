@@ -28,6 +28,7 @@ export function Header() {
     { name: 'Talent', path: '/talent', hasDropdown: true },
     { name: 'Equipment', path: '/equipment' },
     { name: 'About', path: '/about' },
+    { name: 'Pricing', path: '/pricing' },
     { name: 'Contact', path: '/contact' },
     { name: 'Blog', path: '/blog' },
   ];

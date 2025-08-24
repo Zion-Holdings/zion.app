@@ -50,6 +50,7 @@ const CareersPage = React.lazy(() => import('./pages/Careers'));
 const SitemapPage = React.lazy(() => import('./pages/Sitemap'));
 const PrivacyPage = React.lazy(() => import('./pages/Privacy'));
 const TermsPage = React.lazy(() => import('./pages/Terms'));
+const PricingPage = React.lazy(() => import('./pages/Pricing'));
 
 const baseRoutes = [
   { path: '/', element: <Home /> },
@@ -82,6 +83,7 @@ const baseRoutes = [
   { path: '/sitemap', element: <SitemapPage /> },
   { path: '/privacy', element: <PrivacyPage /> },
   { path: '/terms', element: <TermsPage /> },
+  { path: '/pricing', element: <PricingPage /> },
 ];
 
 const App = () => {

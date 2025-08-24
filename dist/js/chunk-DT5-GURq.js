@@ -1,1 +1,0 @@
-import{j as a}from"./chunk-DPa1DrUk.js";import{c as e}from"./chunk-ChnIEr9e.js";function c({children:t,className:n,level:r="h2",id:o}){const i=r;return a.jsx(i,{id:o,className:e("text-4xl font-bold tracking-tight bg-gradient-to-r from-zion-cyan via-zion-purple-light to-zion-purple bg-clip-text text-transparent",n),children:t})}export{c as G};

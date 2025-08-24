@@ -14,6 +14,7 @@ export function Footer() {
         { name: 'About Us', path: '/about' },
         { name: 'Careers', path: '/careers' },
         { name: 'Partners', path: '/partners' },
+        { name: 'Pricing', path: '/pricing' },
         { name: 'Press & Media', path: '/press' },
         { name: 'Contact', path: '/contact' },
       ]
