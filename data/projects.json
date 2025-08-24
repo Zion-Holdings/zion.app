@@ -1,38 +1,17 @@
-{
-  "projects": [
-    {
-      "id": "demo-123",
-      "name": "Zion AI MVP",
-      "participants": {
-        "clientUserId": "client-1",
-        "talentUserId": "talent-1"
-      },
-      "milestones": [
-        {
-          "id": "m1",
-          "title": "Phase 1 – Backend Setup",
-          "description": "Initialize repo, CI, auth, and database schema",
-          "dueDate": "2025-09-15T00:00:00.000Z",
-          "amountUsd": 3000,
-          "status": "Pending",
-          "attachments": [],
-          "createdAt": "2025-08-01T10:00:00.000Z",
-          "updatedAt": "2025-08-01T10:00:00.000Z"
-        },
-        {
-          "id": "m2",
-          "title": "Phase 2 – Core Features",
-          "description": "Implement key marketplace flows",
-          "dueDate": "2025-10-01T00:00:00.000Z",
-          "amountUsd": 5000,
-          "status": "Pending",
-          "attachments": [],
-          "createdAt": "2025-08-01T10:00:00.000Z",
-          "updatedAt": "2025-08-01T10:00:00.000Z"
-        }
-      ],
-      "createdAt": "2025-08-01T10:00:00.000Z",
-      "updatedAt": "2025-08-01T10:00:00.000Z"
-    }
-  ]
-}
+[
+  {
+    "id": "proj-001",
+    "clientId": "acme-inc",
+    "talentSlug": "ava-chen",
+    "title": "RAG Evaluation Pipeline",
+    "status": "Completed",
+    "completedAt": "2025-08-01T10:00:00.000Z"
+  },
+  {
+    "id": "proj-002",
+    "clientId": "globex",
+    "talentSlug": "kenji-yamada",
+    "title": "AI Web App MVP",
+    "status": "InProgress"
+  }
+]
