@@ -246,7 +246,7 @@ const SearchComponent: React.FC = () => {
                 ) : query.length > 0 ? (
                   <div className="p-8 text-center">
                     <Search className="w-12 h-12 text-gray-600 mx-auto mb-4" />
-                    <p className="text-gray-400">No results found for "{query}"</p>
+                    <p className="text-gray-400">No results found for &quot;{query}&quot;</p>
                     <p className="text-gray-500 text-sm mt-2">Try adjusting your search terms or filters</p>
                   </div>
                 ) : (

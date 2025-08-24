@@ -31,7 +31,7 @@ const EnhancedNavigation: React.FC = () => {
 
   const company = [
     { name: 'About Us', href: '/about', icon: Users, description: 'Learn about our mission and team' },
-    { name: 'Our Work', href: '/portfolio', icon: Award, description: 'See our latest projects and achievements' },
+    { name: 'Portfolio', href: '/portfolio', icon: Award, description: 'See our latest projects and achievements' },
     { name: 'Blog & Insights', href: '/blog', icon: BookOpen, description: 'Stay updated with industry trends' },
     { name: 'Contact', href: '/contact', icon: Phone, description: 'Get in touch with our experts' }
   ];

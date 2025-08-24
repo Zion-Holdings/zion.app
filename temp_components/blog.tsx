@@ -1,15 +1,522 @@
-import React from 'react';
-import SEO from '../components/SEO';
-import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackground';
+import React, { useState } from 'react';
+import Head from 'next/head';
+import { motion } from 'framer-motion';
+import { 
+  Brain, Shield, Rocket, Cpu, Database, Atom, Users, Award, 
+  Target, Star, Globe, Code, Server, Zap, Heart, Eye, Lightbulb,
+  ChevronRight, ArrowRight, CheckCircle, Clock, TrendingUp, ExternalLink,
+  Calendar, User, Tag, Search, Filter, BookOpen
+} from 'lucide-react';
+import EnhancedNavigation from '../components/EnhancedNavigation';
+import EnhancedFooter from '../components/EnhancedFooter';
 
-export default function BlogPage() {
+const BlogPage: React.FC = () => {
+  const [activeCategory, setActiveCategory] = useState('all');
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const blogCategories = [
+    { id: 'all', name: 'All Articles', icon: BookOpen, color: 'from-purple-500 to-pink-500' },
+    { id: 'ai', name: 'AI & Machine Learning', icon: Brain, color: 'from-blue-500 to-cyan-500' },
+    { id: 'quantum', name: 'Quantum Computing', icon: Atom, color: 'from-indigo-500 to-purple-500' },
+    { id: 'cybersecurity', name: 'Cybersecurity', icon: Shield, color: 'from-red-500 to-orange-500' },
+    { id: 'technology', name: 'Technology Trends', icon: Rocket, color: 'from-green-500 to-emerald-500' },
+    { id: 'industry', name: 'Industry Insights', icon: Globe, color: 'from-yellow-500 to-orange-500' }
+  ];
+
+  const blogPosts = [
+    // Featured Articles
+    {
+      id: 'ai-consciousness-2029',
+      title: 'The Evolution of AI Consciousness: What 2029 Holds',
+      excerpt: 'Exploring the latest breakthroughs in artificial consciousness and what they mean for the future of technology and humanity.',
+      content: 'Artificial Intelligence has evolved far beyond simple pattern recognition. In 2029, we\'re witnessing the emergence of true AI consciousness - systems that not only think but are aware of their own existence...',
+      category: 'ai',
+      author: 'Dr. Sarah Chen',
+      authorRole: 'Chief Research Officer',
+      publishDate: '2025-01-15',
+      readTime: '8 min read',
+      featured: true,
+      tags: ['AI Consciousness', 'Neural Networks', 'Future Technology', 'Research'],
+      image: '/api/placeholder/800/400'
+    },
+    {
+      id: 'quantum-breakthroughs-2025',
+      title: 'Quantum Computing Breakthroughs: Beyond Classical Limits',
+      excerpt: 'Discover how quantum computing is revolutionizing industries and solving problems that were previously impossible.',
+      content: 'Quantum computing represents the next frontier in computational power. Unlike classical computers that process information in binary bits, quantum computers use quantum bits or qubits...',
+      category: 'quantum',
+      author: 'Marcus Rodriguez',
+      authorRole: 'Chief Technology Officer',
+      publishDate: '2025-01-10',
+      readTime: '12 min read',
+      featured: true,
+      tags: ['Quantum Computing', 'Technology', 'Innovation', 'Research'],
+      image: '/api/placeholder/800/400'
+    },
+
+    // AI & Machine Learning
+    {
+      id: 'ai-autonomous-systems',
+      title: 'Building Autonomous AI Systems: A Comprehensive Guide',
+      excerpt: 'Learn the principles and practices behind creating truly autonomous artificial intelligence systems.',
+      content: 'Autonomous AI systems represent the pinnacle of artificial intelligence development. These systems can operate independently, make decisions, and adapt to changing environments...',
+      category: 'ai',
+      author: 'Dr. Elena Petrova',
+      authorRole: 'AI Research Lead',
+      publishDate: '2025-01-08',
+      readTime: '15 min read',
+      featured: false,
+      tags: ['Autonomous AI', 'Machine Learning', 'System Design', 'Best Practices'],
+      image: '/api/placeholder/600/300'
+    },
+    {
+      id: 'neural-network-optimization',
+      title: 'Optimizing Neural Networks for Production Environments',
+      excerpt: 'Practical strategies for deploying neural networks in real-world applications with optimal performance.',
+      content: 'Neural networks have become the backbone of modern AI applications. However, moving from research prototypes to production-ready systems requires careful optimization...',
+      category: 'ai',
+      author: 'David Kim',
+      authorRole: 'Senior AI Engineer',
+      publishDate: '2025-01-05',
+      readTime: '10 min read',
+      featured: false,
+      tags: ['Neural Networks', 'Optimization', 'Production', 'Performance'],
+      image: '/api/placeholder/600/300'
+    },
+
+    // Quantum Computing
+    {
+      id: 'quantum-cryptography-future',
+      title: 'The Future of Cryptography in the Quantum Era',
+      excerpt: 'Understanding the challenges and solutions for securing communications in the post-quantum world.',
+      content: 'As quantum computers become more powerful, traditional cryptographic methods face unprecedented challenges. The quantum threat to current encryption standards...',
+      category: 'quantum',
+      author: 'Dr. James Wilson',
+      authorRole: 'Chief Security Officer',
+      publishDate: '2025-01-03',
+      readTime: '14 min read',
+      featured: false,
+      tags: ['Quantum Cryptography', 'Security', 'Encryption', 'Future Tech'],
+      image: '/api/placeholder/600/300'
+    },
+    {
+      id: 'quantum-algorithms-practical',
+      title: 'Practical Applications of Quantum Algorithms',
+      excerpt: 'Real-world use cases where quantum algorithms provide significant advantages over classical approaches.',
+      content: 'Quantum algorithms offer the potential for exponential speedups in specific problem domains. While quantum computers are still in their infancy...',
+      category: 'quantum',
+      author: 'Lisa Thompson',
+      authorRole: 'Quantum Computing Specialist',
+      publishDate: '2024-12-28',
+      readTime: '11 min read',
+      featured: false,
+      tags: ['Quantum Algorithms', 'Applications', 'Use Cases', 'Technology'],
+      image: '/api/placeholder/600/300'
+    },
+
+    // Cybersecurity
+    {
+      id: 'ai-cybersecurity-threats',
+      title: 'AI-Powered Cybersecurity: Threats and Defenses',
+      excerpt: 'How artificial intelligence is changing the cybersecurity landscape and what it means for organizations.',
+      content: 'The cybersecurity landscape is evolving rapidly with the integration of artificial intelligence. While AI offers powerful tools for threat detection and response...',
+      category: 'cybersecurity',
+      author: 'Dr. James Wilson',
+      authorRole: 'Chief Security Officer',
+      publishDate: '2024-12-25',
+      readTime: '13 min read',
+      featured: false,
+      tags: ['Cybersecurity', 'AI Security', 'Threat Detection', 'Defense'],
+      image: '/api/placeholder/600/300'
+    },
+    {
+      id: 'quantum-resistant-security',
+      title: 'Building Quantum-Resistant Security Infrastructure',
+      excerpt: 'Preparing your organization for the quantum computing threat to current security standards.',
+      content: 'The advent of quantum computing poses an existential threat to current cryptographic standards. Organizations must begin preparing now for the post-quantum era...',
+      category: 'cybersecurity',
+      author: 'Marcus Rodriguez',
+      authorRole: 'Chief Technology Officer',
+      publishDate: '2024-12-20',
+      readTime: '16 min read',
+      featured: false,
+      tags: ['Quantum Security', 'Cryptography', 'Infrastructure', 'Future-Proofing'],
+      image: '/api/placeholder/600/300'
+    },
+
+    // Technology Trends
+    {
+      id: 'edge-computing-future',
+      title: 'The Future of Edge Computing: Beyond the Cloud',
+      excerpt: 'How edge computing is reshaping the technology landscape and enabling new applications.',
+      content: 'Edge computing represents a fundamental shift in how we process and analyze data. By moving computation closer to the data source...',
+      category: 'technology',
+      author: 'David Kim',
+      authorRole: 'Senior AI Engineer',
+      publishDate: '2024-12-18',
+      readTime: '9 min read',
+      featured: false,
+      tags: ['Edge Computing', 'Technology Trends', 'Cloud Computing', 'Innovation'],
+      image: '/api/placeholder/600/300'
+    },
+    {
+      id: 'autonomous-devops-revolution',
+      title: 'The Autonomous DevOps Revolution',
+      excerpt: 'How AI is transforming DevOps practices and enabling truly autonomous operations.',
+      content: 'DevOps has evolved significantly over the past decade, but the next phase promises to be truly revolutionary. Autonomous DevOps represents the convergence...',
+      category: 'technology',
+      author: 'Lisa Thompson',
+      authorRole: 'Quantum Computing Specialist',
+      publishDate: '2024-12-15',
+      readTime: '12 min read',
+      featured: false,
+      tags: ['DevOps', 'Automation', 'AI', 'Operations'],
+      image: '/api/placeholder/600/300'
+    },
+
+    // Industry Insights
+    {
+      id: 'digital-transformation-2025',
+      title: 'Digital Transformation Trends for 2025',
+      excerpt: 'Key trends and strategies for successful digital transformation in the coming year.',
+      content: 'Digital transformation continues to be a top priority for organizations worldwide. As we approach 2025, several key trends are emerging that will shape...',
+      category: 'industry',
+      author: 'Dr. Sarah Chen',
+      authorRole: 'Chief Executive Officer',
+      publishDate: '2024-12-12',
+      readTime: '10 min read',
+      featured: false,
+      tags: ['Digital Transformation', 'Business Strategy', 'Technology', 'Trends'],
+      image: '/api/placeholder/600/300'
+    },
+    {
+      id: 'ai-business-impact',
+      title: 'Measuring the Business Impact of AI Investments',
+      excerpt: 'Quantifying the ROI and business value of artificial intelligence implementations.',
+      content: 'Artificial intelligence has become a strategic priority for many organizations, but measuring its business impact remains challenging. Traditional ROI metrics...',
+      category: 'industry',
+      author: 'Dr. Elena Petrova',
+      authorRole: 'AI Research Lead',
+      publishDate: '2024-12-10',
+      readTime: '11 min read',
+      featured: false,
+      tags: ['AI ROI', 'Business Impact', 'Metrics', 'Strategy'],
+      image: '/api/placeholder/600/300'
+    }
+  ];
+
+  const filteredPosts = blogPosts.filter(post => {
+    const matchesCategory = activeCategory === 'all' || post.category === activeCategory;
+    const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         post.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         post.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
+    return matchesCategory && matchesSearch;
+  });
+
+  const featuredPosts = filteredPosts.filter(post => post.featured);
+  const regularPosts = filteredPosts.filter(post => !post.featured);
+
+  const formatDate = (dateString: string) => {
+    return new Date(dateString).toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
+  };
+
   return (
-    <UltraFuturisticBackground intensity="high" variant="quantum">
-      <SEO title="Blog | Zion Tech Group" description="Insights and updates on AI, cloud, and automation." canonical="https://ziontechgroup.com/blog/" />
-      <div className="container mx-auto px-4 py-16 text-white">
-        <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Blog</h1>
-        <p className="mt-4 text-gray-300 max-w-3xl">Curated insights, implementation guides, and trend reports. New articles are published regularly. For press or guest posts, contact kleber@ziontechgroup.com.</p>
+    <>
+      <Head>
+        <title>Blog - Zion Tech Group</title>
+        <meta name="description" content="Stay updated with the latest insights, research, and trends in AI, quantum computing, cybersecurity, and technology from Zion Tech Group experts." />
+        <meta name="robots" content="index, follow" />
+      </Head>
+
+      <EnhancedNavigation />
+      
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+        {/* Hero Section */}
+        <section className="pt-32 pb-20 px-6">
+          <div className="max-w-7xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent mb-8">
+                Our Blog
+              </h1>
+              <p className="text-xl md:text-2xl text-white/80 max-w-4xl mx-auto leading-relaxed mb-12">
+                Insights, research, and perspectives on the future of technology from our team of experts
+              </p>
+            </motion.div>
+
+            {/* Search Bar */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="max-w-2xl mx-auto"
+            >
+              <div className="relative">
+                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white/50 w-5 h-5" />
+                <input
+                  type="text"
+                  placeholder="Search articles, topics, or authors..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  className="w-full pl-12 pr-4 py-4 bg-slate-800/50 border border-white/10 rounded-2xl text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-300"
+                />
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Blog Categories */}
+        <section className="py-20 px-6">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl font-bold text-white mb-6">Explore by Category</h2>
+              <p className="text-xl text-white/70 max-w-3xl mx-auto">
+                Find insights and research in your area of interest
+              </p>
+            </motion.div>
+
+            <div className="flex flex-wrap justify-center gap-4 mb-12">
+              {blogCategories.map((category, index) => (
+                <motion.button
+                  key={category.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  onClick={() => setActiveCategory(category.id)}
+                  className={`flex items-center space-x-3 px-6 py-3 rounded-full border transition-all duration-300 ${
+                    activeCategory === category.id
+                      ? 'border-cyan-500 bg-cyan-500/20 text-cyan-400'
+                      : 'border-white/20 text-white/70 hover:border-white/40 hover:text-white'
+                  }`}
+                >
+                  <category.icon className="w-5 h-5" />
+                  <span>{category.name}</span>
+                </motion.button>
+              ))}
+            </div>
+
+            {/* Featured Articles */}
+            {featuredPosts.length > 0 && (
+              <div className="mb-16">
+                <h3 className="text-3xl font-bold text-white mb-8 text-center">Featured Articles</h3>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                  {featuredPosts.map((post, index) => (
+                    <motion.article
+                      key={post.id}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: index * 0.1 }}
+                      viewport={{ once: true }}
+                      className="bg-slate-800/50 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-white/20 transition-all duration-300 overflow-hidden group"
+                    >
+                      {/* Article Image */}
+                      <div className="relative h-64 overflow-hidden">
+                        <div className="w-full h-full bg-gradient-to-br from-blue-500/20 to-purple-500/20 flex items-center justify-center">
+                          <div className="text-6xl">📚</div>
+                        </div>
+                        <div className="absolute top-4 left-4">
+                          <span className="px-3 py-1 bg-yellow-500/20 border border-yellow-500/30 rounded-full text-yellow-400 text-sm font-medium">
+                            Featured
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* Article Content */}
+                      <div className="p-8">
+                        <div className="flex items-center space-x-4 text-sm text-white/60 mb-4">
+                          <span className="flex items-center space-x-2">
+                            <Calendar className="w-4 h-4" />
+                            <span>{formatDate(post.publishDate)}</span>
+                          </span>
+                          <span className="flex items-center space-x-2">
+                            <Clock className="w-4 h-4" />
+                            <span>{post.readTime}</span>
+                          </span>
+                        </div>
+
+                        <h2 className="text-2xl font-bold text-white mb-4 group-hover:text-cyan-300 transition-colors duration-300">
+                          {post.title}
+                        </h2>
+                        <p className="text-white/70 leading-relaxed mb-6">{post.excerpt}</p>
+
+                        {/* Author Info */}
+                        <div className="flex items-center space-x-4 mb-6">
+                          <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500/20 to-cyan-500/20 flex items-center justify-center">
+                            <User className="w-6 h-6 text-cyan-400" />
+                          </div>
+                          <div>
+                            <div className="text-white font-medium">{post.author}</div>
+                            <div className="text-white/60 text-sm">{post.authorRole}</div>
+                          </div>
+                        </div>
+
+                        {/* Tags */}
+                        <div className="flex flex-wrap gap-2 mb-6">
+                          {post.tags.map((tag, idx) => (
+                            <span key={idx} className="px-3 py-1 bg-slate-700/50 rounded-full text-white/70 text-sm">
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+
+                        {/* CTA */}
+                        <button className="w-full px-6 py-3 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 rounded-xl font-semibold text-white transition-all duration-300 transform hover:scale-105 hover:shadow-2xl flex items-center justify-center space-x-2 group">
+                          <span>Read Full Article</span>
+                          <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                        </button>
+                      </div>
+                    </motion.article>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* All Articles Grid */}
+            <div>
+              <h3 className="text-3xl font-bold text-white mb-8 text-center">All Articles</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {regularPosts.map((post, index) => (
+                  <motion.article
+                    key={post.id}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    className="bg-slate-800/50 backdrop-blur-xl rounded-2xl border border-white/10 hover:border-white/20 transition-all duration-300 overflow-hidden group"
+                  >
+                    {/* Article Image */}
+                    <div className="relative h-48 overflow-hidden">
+                      <div className="w-full h-full bg-gradient-to-br from-blue-500/20 to-purple-500/20 flex items-center justify-center">
+                        <div className="text-4xl">📖</div>
+                      </div>
+                    </div>
+
+                    {/* Article Content */}
+                    <div className="p-6">
+                      <div className="flex items-center space-x-4 text-xs text-white/60 mb-3">
+                        <span className="flex items-center space-x-1">
+                          <Calendar className="w-3 h-3" />
+                          <span>{formatDate(post.publishDate)}</span>
+                        </span>
+                        <span className="flex items-center space-x-1">
+                          <Clock className="w-3 h-3" />
+                          <span>{post.readTime}</span>
+                        </span>
+                      </div>
+
+                      <h2 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-300 transition-colors duration-300 line-clamp-2">
+                        {post.title}
+                      </h2>
+                      <p className="text-white/70 text-sm leading-relaxed mb-4 line-clamp-3">{post.excerpt}</p>
+
+                      {/* Author */}
+                      <div className="flex items-center space-x-3 mb-4">
+                        <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500/20 to-cyan-500/20 flex items-center justify-center">
+                          <User className="w-4 h-4 text-cyan-400" />
+                        </div>
+                        <div className="text-sm">
+                          <div className="text-white font-medium">{post.author}</div>
+                          <div className="text-white/60 text-xs">{post.authorRole}</div>
+                        </div>
+                      </div>
+
+                      {/* Tags */}
+                      <div className="flex flex-wrap gap-1 mb-4">
+                        {post.tags.slice(0, 3).map((tag, idx) => (
+                          <span key={idx} className="px-2 py-1 bg-slate-700/50 rounded-full text-white/70 text-xs">
+                            {tag}
+                          </span>
+                        ))}
+                        {post.tags.length > 3 && (
+                          <span className="px-2 py-1 bg-slate-700/50 rounded-full text-white/60 text-xs">
+                            +{post.tags.length - 3}
+                          </span>
+                        )}
+                      </div>
+
+                      {/* CTA */}
+                      <button className="w-full px-4 py-2 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 rounded-lg font-semibold text-white transition-all duration-300 transform hover:scale-105 hover:shadow-xl text-sm">
+                        Read More
+                      </button>
+                    </div>
+                  </motion.article>
+                ))}
+              </div>
+            </div>
+
+            {/* No Results */}
+            {filteredPosts.length === 0 && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="text-center py-20"
+              >
+                <Search className="w-16 h-16 text-white/30 mx-auto mb-4" />
+                <h3 className="text-xl font-semibold text-white mb-2">No articles found</h3>
+                <p className="text-white/60">Try adjusting your search criteria or browse all articles</p>
+                <button
+                  onClick={() => {
+                    setSearchTerm('');
+                    setActiveCategory('all');
+                  }}
+                  className="mt-4 px-6 py-2 bg-cyan-500 text-white rounded-lg hover:bg-cyan-600 transition-colors"
+                >
+                  Clear Filters
+                </button>
+              </motion.div>
+            )}
+          </div>
+        </section>
+
+        {/* Newsletter Signup */}
+        <section className="py-20 px-6">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 backdrop-blur-xl rounded-3xl p-12 border border-white/10"
+            >
+              <h2 className="text-4xl font-bold text-white mb-6">Stay Updated</h2>
+              <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
+                Get the latest insights, research, and technology trends delivered to your inbox.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
+                <input
+                  type="email"
+                  placeholder="Enter your email address"
+                  className="flex-1 px-6 py-4 bg-slate-700/50 border border-white/10 rounded-full text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-300"
+                />
+                <button className="px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 rounded-full font-semibold text-white transition-all duration-300 transform hover:scale-105 hover:shadow-2xl">
+                  Subscribe
+                </button>
+              </div>
+              <p className="text-white/60 text-sm mt-4">
+                No spam, unsubscribe at any time. We respect your privacy.
+              </p>
+            </motion.div>
+          </div>
+        </section>
       </div>
-    </UltraFuturisticBackground>
+
+      <EnhancedFooter />
+    </>
   );
-}
+};
+
+export default BlogPage;

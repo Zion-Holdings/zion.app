@@ -75,7 +75,7 @@ const NewsletterSubscription: React.FC = () => {
         </div>
         <h3 className="text-2xl font-bold text-white mb-2">Welcome to the Future!</h3>
         <p className="text-gray-300 mb-6">
-          You're now subscribed to our newsletter. Get ready for exclusive insights into the world of AI, quantum computing, and cutting-edge technology.
+          You&apos;re now subscribed to our newsletter. Get ready for exclusive insights into the world of AI, quantum computing, and cutting-edge technology.
         </p>
         <button
           onClick={() => setIsSubscribed(false)}
@@ -109,7 +109,7 @@ const NewsletterSubscription: React.FC = () => {
           {/* Benefits */}
           <div className="space-y-6">
             <h3 className="text-2xl font-semibold text-white mb-6">
-              What You'll Get
+              What You&apos;ll Get
             </h3>
             {benefits.map((benefit, index) => (
               <motion.div

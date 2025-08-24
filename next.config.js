@@ -1,3 +1,6 @@
+const os = require('os');
+const path = require('path');
+
 const nextConfig = {
   poweredByHeader: false,
   trailingSlash: false,
