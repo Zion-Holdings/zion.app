@@ -265,7 +265,11 @@ export const comprehensiveServicesExpansion: ComprehensiveService[] = [
     competitors: ['AWS IoT Greengrass, Azure IoT Edge, Google Edge TPU'],
     marketSize: '$12B edge AI',
     growthRate: '38% YoY',
+<<<<<<< HEAD
+    variant: 'edge-computing-enterprise',
+=======
     variant: 'ai-legal-enterprise',
+>>>>>>> origin/cursor/website-audit-and-enhancement-5ec7
     contactInfo: contact,
     realImplementation: true,
     implementationDetails: 'Edge deployment framework with model optimization and device management capabilities.',
@@ -400,7 +404,11 @@ export const comprehensiveServicesExpansion: ComprehensiveService[] = [
     competitors: ['IBM Quantum, Google Quantum, Rigetti'],
     marketSize: '$3B quantum computing',
     growthRate: '55% YoY',
+<<<<<<< HEAD
+    variant: 'quantum-ai-advanced',
+=======
     variant: 'quantum',
+>>>>>>> origin/cursor/website-audit-and-enhancement-5ec7
     contactInfo: contact,
     realImplementation: true,
     implementationDetails: 'Quantum algorithm library with hybrid classical-quantum optimization capabilities.',

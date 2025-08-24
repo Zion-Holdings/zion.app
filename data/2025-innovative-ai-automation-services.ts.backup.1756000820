@@ -130,6 +130,9 @@ export const innovativeAIAutomationServices: InnovativeAIAutomationService[] = [
     competitors: ['Zendesk, Intercom, Freshdesk, Help Scout, Zoho Desk'],
     marketSize: '$15B customer service software market',
     growthRate: '22% annual growth',
+<<<<<<< HEAD
+    variant: 'ai-autonomous',
+=======
     variant: 'default',
     contactInfo: {
       mobile: '+1 302 464 0950',
@@ -137,6 +140,7 @@ export const innovativeAIAutomationServices: InnovativeAIAutomationService[] = [
       address: '364 E Main St STE 1008 Middletown DE 19709',
       website: 'https://ziontechgroup.com'
     },
+>>>>>>> origin/cursor/website-audit-and-enhancement-5ec7
     technology: ['Python, Selenium, Playwright, OpenAI, TensorFlow, Docker'],
     integrations: ['Jenkins, GitHub Actions, GitLab CI, Azure DevOps, Jira'],
     useCases: ['Automated testing, CI/CD integration, Quality assurance, Regression testing'],

@@ -622,6 +622,9 @@ export const advancedITInfrastructureExpansion2025V2 = [
       'Threat detection',
       'Performance monitoring'
     ]
+<<<<<<< HEAD
+=======
 
+>>>>>>> origin/cursor/website-audit-and-enhancement-5ec7
   }
 ];

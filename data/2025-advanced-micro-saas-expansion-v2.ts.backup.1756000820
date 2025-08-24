@@ -226,6 +226,9 @@ export const advancedMicroSaasExpansion2025V2 = [
       'Automated response',
       'Incident management'
     ]
+<<<<<<< HEAD
+=======
 
+>>>>>>> origin/cursor/website-audit-and-enhancement-5ec7
   }
 ];

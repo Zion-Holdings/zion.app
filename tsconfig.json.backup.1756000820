@@ -76,6 +76,11 @@
     "node_modules",
     "zion.app/recovered-content/**",
     "contracts/**",
+<<<<<<< HEAD
+    "cypress/**",
+    "cypress.config.ts"
+=======
     "cypress/**"
+>>>>>>> origin/cursor/website-audit-and-enhancement-5ec7
   ]
 }
