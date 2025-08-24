@@ -12,13 +12,6 @@ const categories = [
     color: "from-purple-500 to-indigo-600",
   },
   {
-    title: "Enterprise Solutions",
-    description: "Advanced AI, cybersecurity, cloud, and digital transformation services",
-    icon: <Lightbulb className="w-10 h-10" />,
-    link: "/expanded-services",
-    color: "from-emerald-500 to-green-600",
-  },
-  {
     title: "Talents",
     description: "Connect with AI experts, developers, and tech specialists",
     icon: <Users className="w-10 h-10" />,
@@ -32,6 +25,13 @@ const categories = [
     link: "/equipment",
     color: "from-amber-500 to-orange-600",
   },
+  {
+    title: "Innovation",
+    description: "Discover cutting-edge solutions and tech breakthroughs",
+    icon: <Lightbulb className="w-10 h-10" />,
+    link: "/category/innovation",
+    color: "from-emerald-500 to-green-600",
+  },
 ];
 
 const specialServices = [
@@ -40,12 +40,8 @@ const specialServices = [
     link: "/it-onsite-services"
   },
   {
-    title: "Enterprise Services",
-    link: "/enhanced-services"
-  },
-  {
-    title: "View Pricing",
-    link: "/pricing"
+    title: "All Services",
+    link: "/all-services"
   }
 ];
 
