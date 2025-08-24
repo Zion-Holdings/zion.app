@@ -27,6 +27,7 @@ import AdvancedWorkflowAutomation from '../components/AdvancedWorkflowAutomation
 import AdvancedAnalyticsDashboard from '../components/AdvancedAnalyticsDashboard';
 import AdvancedProjectHub from '../components/AdvancedProjectHub';
 import AdvancedAIAssistant from '../components/AdvancedAIAssistant';
+import AdvancedPerformanceOptimizer from '../components/AdvancedPerformanceOptimizer';
 
 const Home: NextPage = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -326,6 +327,9 @@ const Home: NextPage = () => {
 
         {/* Advanced AI Assistant Section */}
         <AdvancedAIAssistant />
+
+        {/* Advanced Performance Optimizer Section */}
+        <AdvancedPerformanceOptimizer />
 
         {/* Advanced Features Showcase */}
         <AdvancedFeaturesShowcase />
