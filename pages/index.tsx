@@ -23,6 +23,7 @@ import AdvancedTimeTracking from '../components/AdvancedTimeTracking';
 import AdvancedInvoiceManagement from '../components/AdvancedInvoiceManagement';
 import AdvancedTeamScheduling from '../components/AdvancedTeamScheduling';
 import AdvancedPerformanceDashboard from '../components/AdvancedPerformanceDashboard';
+import AdvancedWorkflowAutomation from '../components/AdvancedWorkflowAutomation';
 
 const Home: NextPage = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -310,6 +311,9 @@ const Home: NextPage = () => {
 
         {/* Advanced Performance Dashboard Section */}
         <AdvancedPerformanceDashboard />
+
+        {/* Advanced Workflow Automation Section */}
+        <AdvancedWorkflowAutomation />
 
         {/* Advanced Features Showcase */}
         <AdvancedFeaturesShowcase />
