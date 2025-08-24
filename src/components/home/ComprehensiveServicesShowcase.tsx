@@ -1,204 +1,300 @@
 import React from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
 import { 
-  ArrowRight, 
   Zap, 
-  Brain, 
   Shield, 
-  Cloud, 
-  Database, 
-  TrendingUp,
-  CheckCircle,
+  TrendingUp, 
+  Globe, 
+  Building, 
+  BarChart3, 
+  Users, 
+  ArrowRight,
   Star,
-  Users,
-  Globe
-} from "lucide-react";
-import { SERVICE_CATEGORIES, SERVICE_PRICING_TIERS } from "@/data/sampleServices";
+  CheckCircle,
+  DollarSign,
+  Clock
+} from 'lucide-react';
+
+const featuredServices = [
+  {
+    id: "ai-chatbot-enterprise",
+    title: "Enterprise AI Chatbot Platform",
+    description: "Custom AI chatbot solution with enterprise-grade security, multi-language support, and seamless CRM integration.",
+    category: "AI Services",
+    price: 2999,
+    rating: 4.9,
+    reviewCount: 156,
+    features: ["Multi-language Support", "CRM Integration", "Analytics Dashboard", "24/7 Support"],
+    icon: <Zap className="w-6 h-6" />,
+    color: "from-purple-500 to-indigo-600"
+  },
+  {
+    id: "cloud-migration-expert",
+    title: "Cloud Migration & Optimization",
+    description: "End-to-end cloud migration services for AWS, Azure, and Google Cloud with cost optimization and security.",
+    category: "IT Services",
+    price: 4999,
+    rating: 4.8,
+    reviewCount: 127,
+    features: ["Multi-cloud Support", "Cost Optimization", "Security Implementation", "Performance Tuning"],
+    icon: <Shield className="w-6 h-6" />,
+    color: "from-cyan-500 to-blue-600"
+  },
+  {
+    id: "workflow-automation-platform",
+    title: "Business Workflow Automation",
+    description: "Intelligent workflow automation platform that streamlines business processes and improves operational efficiency.",
+    category: "Business Solutions",
+    price: 2499,
+    rating: 4.8,
+    reviewCount: 167,
+    features: ["Process Automation", "Integration APIs", "Real-time Monitoring", "Custom Workflows"],
+    icon: <TrendingUp className="w-6 h-6" />,
+    color: "from-emerald-500 to-green-600"
+  },
+  {
+    id: "ecommerce-ai-optimization",
+    title: "E-commerce AI Optimization Suite",
+    description: "AI-powered e-commerce optimization including personalized recommendations, dynamic pricing, and customer behavior analysis.",
+    category: "Digital Solutions",
+    price: 3999,
+    rating: 4.9,
+    reviewCount: 89,
+    features: ["Personalized Recommendations", "Dynamic Pricing", "Inventory Management", "Customer Analytics"],
+    icon: <Globe className="w-6 h-6" />,
+    color: "from-amber-500 to-orange-600"
+  }
+];
+
+const serviceCategories = [
+  {
+    name: "AI Services",
+    description: "Machine Learning, NLP, Computer Vision",
+    icon: <Zap className="w-8 h-8" />,
+    count: 15,
+    color: "from-purple-500 to-indigo-600"
+  },
+  {
+    name: "IT Services",
+    description: "Cloud, Security, DevOps, Infrastructure",
+    icon: <Shield className="w-8 h-8" />,
+    count: 12,
+    color: "from-cyan-500 to-blue-600"
+  },
+  {
+    name: "Business Solutions",
+    description: "Automation, Process Optimization, Analytics",
+    icon: <TrendingUp className="w-8 h-8" />,
+    count: 18,
+    color: "from-emerald-500 to-green-600"
+  },
+  {
+    name: "Specialized Solutions",
+    description: "Healthcare, FinTech, Manufacturing",
+    icon: <Building className="w-8 h-8" />,
+    count: 10,
+    color: "from-red-500 to-pink-600"
+  }
+];
 
 export function ComprehensiveServicesShowcase() {
-  const getCategoryIcon = (icon: string) => {
-    return <span className="text-3xl">{icon}</span>;
-  };
-
-  const getCategoryColor = (index: number) => {
-    const colors = [
-      "from-purple-500 to-indigo-600",
-      "from-cyan-500 to-blue-600", 
-      "from-emerald-500 to-green-600",
-      "from-amber-500 to-orange-600",
-      "from-pink-500 to-rose-600",
-      "from-violet-500 to-purple-600"
-    ];
-    return colors[index % colors.length];
-  };
-
   return (
-    <section className="py-20 bg-gradient-to-b from-zion-blue-dark via-zion-blue to-zion-blue-dark">
+    <section className="py-20 bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-blue-light">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold tracking-tight mb-4 bg-gradient-to-r from-zion-cyan via-white to-zion-purple-light bg-clip-text text-transparent">
-            Comprehensive Tech Solutions
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            Comprehensive Micro SAAS Solutions
           </h2>
-          <p className="text-xl text-zion-slate-light max-w-4xl mx-auto">
-            Discover our complete ecosystem of micro SAAS, IT infrastructure, and AI services designed to transform your business
+          <p className="text-xl text-zion-cyan max-w-3xl mx-auto mb-8">
+            Transform your business with our innovative, scalable, and cost-effective micro SAAS services. 
+            From AI-powered automation to enterprise-grade security, we deliver solutions that drive real results.
           </p>
-          <div className="flex justify-center mt-6">
-            <Badge variant="secondary" className="bg-zion-purple/20 text-zion-cyan border-zion-purple/30">
-              <Star className="h-4 w-4 mr-2" />
-              Trusted by 500+ Companies
-            </Badge>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link to="/comprehensive-services">
+              <Button size="lg" className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white">
+                Explore All Services
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+            </Link>
+            <Link to="/services-pricing">
+              <Button size="lg" variant="outline" className="border-zion-cyan text-zion-cyan hover:bg-zion-cyan/10">
+                <DollarSign className="w-5 h-5 mr-2" />
+                View Pricing
+              </Button>
+            </Link>
           </div>
         </div>
 
-        {/* Service Categories Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
-          {SERVICE_CATEGORIES.map((category, index) => (
-            <Card key={category.id} className="group overflow-hidden border-zion-blue-light bg-zion-blue-dark/50 hover:bg-zion-blue-dark transition-all duration-300 hover:shadow-2xl hover:shadow-zion-purple/20">
-              <CardHeader className="pb-4">
-                <div className="flex items-center justify-between mb-4">
-                  <div className={`rounded-full w-16 h-16 bg-gradient-to-br ${getCategoryColor(index)} flex items-center justify-center`}>
-                    {getCategoryIcon(category.icon)}
+        {/* Featured Services */}
+        <div className="mb-20">
+          <h3 className="text-2xl font-bold text-white text-center mb-12">
+            Featured Solutions
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {featuredServices.map((service) => (
+              <Card key={service.id} className="bg-zion-blue-dark border-zion-blue-light hover:border-zion-purple/50 transition-all duration-300 hover:shadow-2xl hover:shadow-zion-purple/20 group">
+                <CardHeader className="pb-4">
+                  <div className={`w-12 h-12 bg-gradient-to-br ${service.color} rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                    <div className="text-white">
+                      {service.icon}
+                    </div>
                   </div>
-                  <Badge variant="secondary" className="bg-zion-purple/20 text-zion-cyan">
-                    ${category.avgPrice.toLocaleString()}
-                  </Badge>
-                </div>
-                <CardTitle className="text-xl text-white">{category.name}</CardTitle>
-                <CardDescription className="text-zion-slate-light">
-                  {category.description}
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-3">
-                  {category.services.slice(0, 4).map((service, serviceIndex) => (
-                    <div key={serviceIndex} className="flex items-center text-sm text-zion-slate-light">
-                      <CheckCircle className="h-4 w-4 text-zion-cyan mr-2 flex-shrink-0" />
-                      <span>{service}</span>
-                    </div>
-                  ))}
-                  {category.services.length > 4 && (
-                    <div className="text-xs text-zion-slate-light/70">
-                      +{category.services.length - 4} more services
-                    </div>
-                  )}
-                </div>
-                <div className="mt-6">
-                  <Button 
-                    asChild 
-                    className="w-full bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white"
-                  >
-                    <Link to={`/services?category=${category.id}`}>
-                      Explore {category.name}
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-
-        {/* Pricing Tiers */}
-        <div className="mb-16">
-          <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-white mb-4">Flexible Pricing Plans</h3>
-            <p className="text-lg text-zion-slate-light max-w-2xl mx-auto">
-              Choose the perfect plan for your business needs with transparent pricing and no hidden fees
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {SERVICE_PRICING_TIERS.map((tier, index) => (
-              <Card key={tier.name} className={`relative overflow-hidden border-zion-blue-light bg-zion-blue-dark/50 ${
-                index === 1 ? 'ring-2 ring-zion-purple scale-105' : ''
-              }`}>
-                {index === 1 && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <Badge className="bg-zion-purple text-white px-4 py-1">
-                      <TrendingUp className="h-4 w-4 mr-1" />
-                      Most Popular
+                  <div className="flex items-center gap-2 mb-2">
+                    <Badge variant="outline" className="text-xs border-zion-blue-light text-zion-slate-light">
+                      {service.category}
                     </Badge>
                   </div>
-                )}
-                <CardHeader className="text-center pb-4">
-                  <CardTitle className="text-2xl text-white">{tier.name}</CardTitle>
-                  <div className="mt-4">
-                    <span className="text-4xl font-bold text-zion-cyan">{tier.currency}</span>
-                    <span className="text-4xl font-bold text-white">{tier.price.toLocaleString()}</span>
-                  </div>
-                  <CardDescription className="text-zion-slate-light mt-2">
-                    {tier.description}
+                  <CardTitle className="text-lg text-white leading-tight group-hover:text-zion-cyan transition-colors">
+                    {service.title}
+                  </CardTitle>
+                  <CardDescription className="text-zion-slate-light text-sm leading-relaxed">
+                    {service.description}
                   </CardDescription>
                 </CardHeader>
-                <CardContent>
-                  <ul className="space-y-3 mb-6">
-                    {tier.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center text-sm text-zion-slate-light">
-                        <CheckCircle className="h-4 w-4 text-zion-cyan mr-2 flex-shrink-0" />
-                        {feature}
-                      </li>
+                
+                <CardContent className="space-y-4">
+                  {/* Rating and Price */}
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-1">
+                      <Star className="w-4 h-4 text-yellow-400 fill-current" />
+                      <span className="text-white font-medium">{service.rating}</span>
+                      <span className="text-zion-slate-light text-sm">({service.reviewCount})</span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <DollarSign className="w-4 h-4 text-zion-cyan" />
+                      <span className="text-xl font-bold text-white">
+                        {service.price?.toLocaleString()}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Features */}
+                  <div className="space-y-2">
+                    {service.features.slice(0, 3).map((feature, index) => (
+                      <div key={index} className="flex items-center gap-2 text-sm">
+                        <CheckCircle className="w-4 h-4 text-zion-cyan" />
+                        <span className="text-zion-slate-light">{feature}</span>
+                      </div>
                     ))}
-                  </ul>
-                  <Button 
-                    asChild 
-                    className={`w-full ${
-                      index === 1 
-                        ? 'bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white' 
-                        : 'bg-zion-blue hover:bg-zion-blue-light text-white'
-                    }`}
-                  >
-                    <Link to="/request-quote">
-                      Get Started
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
+                  </div>
+
+                  {/* CTA */}
+                  <Link to="/comprehensive-services">
+                    <Button className="w-full bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white">
+                      Learn More
+                      <ArrowRight className="w-4 h-4 ml-2" />
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
             ))}
           </div>
         </div>
 
-        {/* CTA Section */}
-        <div className="text-center bg-gradient-to-r from-zion-purple/20 to-zion-cyan/20 rounded-2xl p-8 border border-zion-purple/30">
-          <h3 className="text-2xl font-bold text-white mb-4">
-            Ready to Transform Your Business?
+        {/* Service Categories */}
+        <div className="mb-20">
+          <h3 className="text-2xl font-bold text-white text-center mb-12">
+            Service Categories
           </h3>
-          <p className="text-zion-slate-light mb-6 max-w-2xl mx-auto">
-            Join hundreds of companies already leveraging our comprehensive tech solutions. 
-            Get a free consultation and discover how we can accelerate your digital transformation.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              size="lg" 
-              className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white"
-              asChild
-            >
-              <Link to="/request-quote">
-                <Users className="mr-2 h-5 w-5" />
-                Get Free Consultation
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {serviceCategories.map((category, index) => (
+              <Link key={index} to="/comprehensive-services">
+                <div className="group block">
+                  <div className="rounded-lg overflow-hidden h-full border border-zion-blue-light bg-zion-blue-dark p-6 transition-all duration-300 hover:border-zion-purple/50 hover:translate-y-[-5px]">
+                    <div className={`rounded-full w-16 h-16 bg-gradient-to-br ${category.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                      <div className="text-white">
+                        {category.icon}
+                      </div>
+                    </div>
+                    <h3 className="text-white text-xl font-bold mb-2 group-hover:text-zion-cyan transition-colors">
+                      {category.name}
+                    </h3>
+                    <p className="text-zion-slate-light mb-4">{category.description}</p>
+                    <div className="flex items-center justify-between">
+                      <span className="text-zion-cyan font-medium">{category.count} Services</span>
+                      <ArrowRight className="w-5 h-5 text-zion-cyan group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </div>
+                </div>
               </Link>
-            </Button>
-            <Button 
-              variant="outline" 
-              size="lg"
-              className="border-zion-cyan text-zion-cyan hover:bg-zion-cyan/10"
-              asChild
-            >
-              <Link to="/contact">
-                <Globe className="mr-2 h-5 w-5" />
-                Contact Our Team
-              </Link>
-            </Button>
+            ))}
           </div>
-          <div className="mt-6 text-sm text-zion-slate-light">
-            <span className="flex items-center justify-center">
-              <Shield className="h-4 w-4 mr-2 text-zion-cyan" />
-              Enterprise-grade security & compliance
-            </span>
+        </div>
+
+        {/* Benefits Section */}
+        <div className="mb-20">
+          <h3 className="text-2xl font-bold text-white text-center mb-12">
+            Why Choose Our Micro SAAS Solutions?
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                icon: <Zap className="w-8 h-8" />,
+                title: "Scalable & Flexible",
+                description: "Start small and scale up as your business grows. Our solutions adapt to your changing needs."
+              },
+              {
+                icon: <Shield className="w-8 h-8" />,
+                title: "Enterprise Security",
+                description: "Bank-level security and compliance standards for all our solutions and services."
+              },
+              {
+                icon: <TrendingUp className="w-8 h-8" />,
+                title: "Proven ROI",
+                description: "Track record of delivering measurable business outcomes and rapid return on investment."
+              },
+              {
+                icon: <Clock className="w-8 h-8" />,
+                title: "Rapid Deployment",
+                description: "Get up and running quickly with our pre-built solutions and expert implementation support."
+              },
+              {
+                icon: <Users className="w-8 h-8" />,
+                title: "Expert Support",
+                description: "24/7 technical support and dedicated account management for enterprise clients."
+              },
+              {
+                icon: <BarChart3 className="w-8 h-8" />,
+                title: "Continuous Innovation",
+                description: "Regular updates and new features to keep you ahead of the competition."
+              }
+            ].map((benefit, index) => (
+              <div key={index} className="text-center p-6 rounded-lg border border-zion-blue-light bg-zion-blue-dark">
+                <div className="w-16 h-16 bg-gradient-to-br from-zion-purple to-zion-purple-dark rounded-full flex items-center justify-center mx-auto mb-4 text-zion-cyan">
+                  {benefit.icon}
+                </div>
+                <h3 className="text-white font-semibold mb-3">{benefit.title}</h3>
+                <p className="text-zion-slate-light text-sm leading-relaxed">{benefit.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* CTA Section */}
+        <div className="text-center">
+          <div className="bg-gradient-to-r from-zion-purple to-zion-purple-dark rounded-2xl p-12 max-w-4xl mx-auto">
+            <h3 className="text-3xl font-bold text-white mb-4">
+              Ready to Transform Your Business?
+            </h3>
+            <p className="text-zion-cyan text-lg mb-8">
+              Join hundreds of businesses already using our micro SAAS solutions to drive innovation and growth
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link to="/comprehensive-services">
+                <Button size="lg" className="bg-zion-cyan text-zion-blue-dark hover:bg-zion-cyan-light">
+                  Explore Services
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Button>
+              </Link>
+              <Button size="lg" variant="outline" className="border-zion-cyan text-zion-cyan hover:bg-zion-cyan/10">
+                <DollarSign className="w-5 h-5 mr-2" />
+                Get Custom Quote
+              </Button>
+            </div>
           </div>
         </div>
       </div>
