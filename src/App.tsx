@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
+import { ErrorBoundary } from "./components/ErrorBoundary";
+import { PageLoading } from "./components/ui/loading";
+import { AccessibilityEnhancer } from "./components/AccessibilityEnhancer";
 
 // Lazy load pages
 const Home = React.lazy(() => import('./pages/Home'));
 const ServicesPage = React.lazy(() => import('./pages/ServicesPage'));
+const ExpandedServicesPage = React.lazy(() => import('./pages/ExpandedServicesPage'));
 const ServicesComparisonPage = React.lazy(() => import('./pages/ServicesComparisonPage'));
 const ITOnsiteServicesPage = React.lazy(() => import('./pages/ITOnsiteServicesPage'));
 const AIServicesPage = React.lazy(() => import('./pages/AIServicesPage'));
@@ -12,15 +16,18 @@ const BlockchainServicesPage = React.lazy(() => import('./pages/BlockchainServic
 const IoTServicesPage = React.lazy(() => import('./pages/IoTServicesPage'));
 const CybersecurityServicesPage = React.lazy(() => import('./pages/CybersecurityServicesPage'));
 const ServicesOverviewPage = React.lazy(() => import('./pages/ServicesOverviewPage'));
+const About = React.lazy(() => import('./pages/About'));
+const Contact = React.lazy(() => import('./pages/Contact'));
 
 const App = () => {
   return (
     <Router>
-      <div className="App">
-        <React.Suspense fallback={<div className="p-4 text-center">Loading...</div>}>
+      <ErrorBoundary>
+        <Suspense fallback={<PageLoading />}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/services" element={<ServicesPage />} />
+            <Route path="/expanded-services" element={<ExpandedServicesPage />} />
             <Route path="/services-comparison" element={<ServicesComparisonPage />} />
             <Route path="/it-onsite-services" element={<ITOnsiteServicesPage />} />
             <Route path="/ai-services" element={<AIServicesPage />} />
@@ -28,9 +35,12 @@ const App = () => {
             <Route path="/iot-services" element={<IoTServicesPage />} />
             <Route path="/cybersecurity-services" element={<CybersecurityServicesPage />} />
             <Route path="/services-overview" element={<ServicesOverviewPage />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
           </Routes>
-        </React.Suspense>
-      </div>
+        </Suspense>
+        <AccessibilityEnhancer />
+      </ErrorBoundary>
     </Router>
   );
 };
