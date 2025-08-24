@@ -5,31 +5,31 @@ import { Briefcase, HardDrive, Lightbulb, Users } from "lucide-react";
 
 const categories = [
   {
+    title: "Micro SAAS",
+    description: "Innovative micro SAAS solutions and AI-powered services",
+    icon: <Briefcase className="w-10 h-10" />,
+    link: "/micro-saas-services",
+    color: "from-purple-500 to-indigo-600",
+  },
+  {
     title: "Services",
     description: "On-demand IT support, consulting, development, and more",
     icon: <Briefcase className="w-10 h-10" />,
     link: "/services",
-    color: "from-purple-500 to-indigo-600",
+    color: "from-cyan-500 to-blue-600",
   },
   {
     title: "Talents",
     description: "Connect with AI experts, developers, and tech specialists",
     icon: <Users className="w-10 h-10" />,
     link: "/talent",
-    color: "from-cyan-500 to-blue-600",
+    color: "from-amber-500 to-orange-600",
   },
   {
     title: "Equipment",
     description: "Rent or buy specialized hardware, servers, and devices",
     icon: <HardDrive className="w-10 h-10" />,
     link: "/equipment",
-    color: "from-amber-500 to-orange-600",
-  },
-  {
-    title: "Innovation",
-    description: "Discover cutting-edge solutions and tech breakthroughs",
-    icon: <Lightbulb className="w-10 h-10" />,
-    link: "/category/innovation",
     color: "from-emerald-500 to-green-600",
   },
 ];

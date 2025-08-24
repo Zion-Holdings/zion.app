@@ -76,6 +76,13 @@ const config: Config = {
           light: "#451582",
           dark: "#000000",
         },
+        "zion-neon": {
+          purple: "#b91c5c",
+          cyan: "#06b6d4",
+          green: "#10b981",
+          pink: "#ec4899",
+          yellow: "#f59e0b",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -98,6 +105,12 @@ const config: Config = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "float": "float 6s ease-in-out infinite",
+        "glow": "glow 3s ease-in-out infinite",
+        "neon-pulse": "neon-pulse 2s ease-in-out infinite",
+        "gradient-shift": "gradient-shift 3s ease infinite",
+        "bounce-slow": "bounce 3s infinite",
+        "pulse-slow": "pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite",
       },
     },
   },
