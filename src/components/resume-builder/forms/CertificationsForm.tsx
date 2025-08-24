@@ -1,0 +1,2 @@
+
+export { CertificationsForm } from './certifications';
