@@ -7,6 +7,11 @@ import './App.css';
 
 // Lazy load pages
 const Home = React.lazy(() => import('./pages/Home'));
+const ContactPage = React.lazy(() => import('./pages/Contact'));
+const AboutPage = React.lazy(() => import('./pages/About'));
+const EnhancedServicesPage = React.lazy(() => import('./pages/EnhancedServicesPage'));
+const Services = React.lazy(() => import('./pages/Services'));
+const NotFoundPage = React.lazy(() => import('./pages/NotFound'));
 
 const App = () => {
   return (
@@ -27,10 +32,14 @@ const App = () => {
           }>
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/services" element={<Home />} />
+              <Route path="/contact" element={<ContactPage />} />
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="/enhanced-services" element={<EnhancedServicesPage />} />
+              <Route path="/services" element={<Services />} />
               <Route path="/comprehensive-services" element={<Home />} />
               <Route path="/services-comparison" element={<Home />} />
               <Route path="/it-onsite-services" element={<Home />} />
+              <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </React.Suspense>
         </main>
