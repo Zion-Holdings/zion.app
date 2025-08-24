@@ -83,12 +83,20 @@ const specialServices = [
     link: "/ai-services"
   },
   {
+    title: "Cybersecurity Services",
+    link: "/cybersecurity-services"
+  },
+  {
     title: "Micro SAAS",
     link: "/micro-saas"
   },
   {
     title: "All Services",
     link: "/comprehensive-services"
+  },
+  {
+    title: "Pricing",
+    link: "/services-pricing"
   }
 ];
 
@@ -148,11 +156,22 @@ const serviceCategories = [
   {
     title: "Micro SAAS",
     link: "/micro-saas"
+=======
+    title: "Cybersecurity",
+    link: "/cybersecurity-services"
+>>>>>>> cursor/expand-services-and-deploy-updates-4082
   },
   {
     title: "All Services",
     link: "/comprehensive-services"
+<<<<<<< HEAD
 >>>>>>> cursor/expand-services-and-deploy-updates-ae24
+=======
+  },
+  {
+    title: "Pricing",
+    link: "/services-pricing"
+>>>>>>> cursor/expand-services-and-deploy-updates-4082
   }
 ];
 

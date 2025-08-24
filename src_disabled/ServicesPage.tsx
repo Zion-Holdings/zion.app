@@ -290,10 +290,8 @@ export default function ServicesPage() {
               </Button>
             </Link>
             <Link to="/comprehensive-services">
-              <Button variant="outline" className="border-zion-cyan text-zion-purple hover:bg-zion-cyan/10">
-                <Globe className="h-4 w-4 mr-2" />
-                All Services
-              </Button>
+              <Button variant="outline" className="border-zion-purple text-zion-cyan hover:bg-zion-purple/10">
+                View All Services
               </Button>
             </Link>
             <Link to="/request-quote">
