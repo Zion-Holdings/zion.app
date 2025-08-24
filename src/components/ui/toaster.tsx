@@ -1,5 +1,11 @@
 import React from 'react';
 
-export const Toaster: React.FC = () => {
-  return null; // Simple placeholder for now
+<<<<<<< HEAD
+export const Toaster = () => {
+  return <div id="toaster" />;
 };
+=======
+export function Toaster() {
+  return <div className="toaster-container"></div>;
+}
+>>>>>>> d0d58136d327183e53cdbb308d5ed67246f24274

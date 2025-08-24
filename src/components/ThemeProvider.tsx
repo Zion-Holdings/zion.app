@@ -1,4 +1,8 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+<<<<<<< HEAD
+import React, { createContext, useContext, useEffect, useState, ReactNode } from 'react';
+=======
+import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+>>>>>>> d0d58136d327183e53cdbb308d5ed67246f24274
 
 type Theme = 'light' | 'dark' | 'system';
 
@@ -9,27 +13,57 @@ interface ThemeContextType {
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
-export const useTheme = () => {
+interface ThemeProviderProps {
+  children: ReactNode;
+  defaultTheme?: Theme;
+}
+
+export function ThemeProvider({ children, defaultTheme = 'system' }: ThemeProviderProps) {
+  const [theme, setTheme] = useState<Theme>(defaultTheme);
+
+  useEffect(() => {
+    const root = window.document.documentElement;
+    
+    if (theme === 'system') {
+      const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      root.classList.remove('light', 'dark');
+      root.classList.add(systemTheme);
+    } else {
+      root.classList.remove('light', 'dark');
+      root.classList.add(theme);
+    }
+  }, [theme]);
+
+  return (
+    <ThemeContext.Provider value={{ theme, setTheme }}>
+      {children}
+    </ThemeContext.Provider>
+  );
+}
+
+export function useTheme() {
   const context = useContext(ThemeContext);
   if (context === undefined) {
     throw new Error('useTheme must be used within a ThemeProvider');
   }
   return context;
+<<<<<<< HEAD
 };
 
 interface ThemeProviderProps {
-  children: React.ReactNode;
+  children: ReactNode;
   defaultTheme?: Theme;
 }
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ 
   children, 
-  defaultTheme = 'dark' 
+  defaultTheme = 'system' 
 }) => {
   const [theme, setTheme] = useState<Theme>(defaultTheme);
 
   useEffect(() => {
     const root = window.document.documentElement;
+    
     root.classList.remove('light', 'dark');
     
     if (theme === 'system') {
@@ -42,7 +76,10 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({
 
   const value = {
     theme,
-    setTheme,
+    setTheme: (newTheme: Theme) => {
+      setTheme(newTheme);
+      localStorage.setItem('theme', newTheme);
+    }
   };
 
   return (
@@ -51,3 +88,6 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({
     </ThemeContext.Provider>
   );
 };
+=======
+}
+>>>>>>> d0d58136d327183e53cdbb308d5ed67246f24274

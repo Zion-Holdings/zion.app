@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 export interface SearchSuggestion {
   id: string;
   text: string;
@@ -44,4 +45,25 @@ export const generateSearchSuggestions = (): SearchSuggestion[] => {
     { id: 'c7', text: 'DevOps', type: 'category' },
     { id: 'c8', text: 'Blockchain', type: 'category' },
   ];
+=======
+export const generateSearchSuggestions = (query: string): string[] => {
+  const suggestions = [
+    'AI Services',
+    'Cybersecurity',
+    'Cloud Migration',
+    'Web Development',
+    'Mobile Apps',
+    'Data Analytics',
+    'Blockchain',
+    'IT Consulting'
+  ];
+  
+  if (!query) return suggestions.slice(0, 5);
+  
+  return suggestions
+    .filter(suggestion => 
+      suggestion.toLowerCase().includes(query.toLowerCase())
+    )
+    .slice(0, 5);
+>>>>>>> b0227f6a3f6a80df96e210611ae67bdcdc943ae0
 };

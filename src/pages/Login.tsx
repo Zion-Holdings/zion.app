@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { SEO } from '@/components/SEO';
@@ -132,3 +133,17 @@ export default function Login() {
     </>
   );
 }
+=======
+import React from 'react';
+
+export default function EquipmentDetail() {
+  return (
+    <div className="min-h-screen bg-zion-blue-dark py-8 text-white">
+      <div className="container mx-auto px-4">
+        <h1 className="text-3xl font-bold mb-6">EquipmentDetail</h1>
+        <p>EquipmentDetail page content will go here.</p>
+      </div>
+    </div>
+  );
+}
+>>>>>>> b0227f6a3f6a80df96e210611ae67bdcdc943ae0

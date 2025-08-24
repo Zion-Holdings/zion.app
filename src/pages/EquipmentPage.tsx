@@ -1,4 +1,5 @@
 import React from 'react';
+<<<<<<< HEAD
 import { Header } from '@/components/header/Header';
 import { Footer } from '@/components/Footer';
 import { SEO } from '@/components/SEO';
@@ -36,3 +37,16 @@ export default function EquipmentPage() {
     </>
   );
 }
+=======
+
+export default function EquipmentPage() {
+  return (
+    <div className="min-h-screen bg-zion-blue-dark py-8 text-white">
+      <div className="container mx-auto px-4">
+        <h1 className="text-3xl font-bold mb-6">Equipment Page</h1>
+        <p>Equipment Page content will go here.</p>
+      </div>
+    </div>
+  );
+}
+>>>>>>> b0227f6a3f6a80df96e210611ae67bdcdc943ae0
