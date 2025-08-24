@@ -1,0 +1,40 @@
+{
+  "timestamp": "2025-07-25T11:34:39.023Z",
+  "summary": {
+    "totalSyncs": 1,
+    "successfulSyncs": 0,
+    "failedSyncs": 1,
+    "successRate": "0.00%",
+    "lastSync": "2025-07-25T11:33:32.175Z",
+    "averageDuration": "2159.00ms",
+    "totalFiles": 0,
+    "averageFilesPerSync": "0.00"
+  },
+  "performance": {
+    "fastestSync": "N/A",
+    "slowestSync": "N/A",
+    "averageDuration": "2159.00ms"
+  },
+  "dailyStats": {
+    "2025-07-25": {
+      "syncs": 1,
+      "successfulSyncs": 0,
+      "failedSyncs": 1,
+      "totalFiles": 0,
+      "totalDuration": 2159,
+      "errors": 0
+    }
+  },
+  "computerStats": {
+    "darwin-MacBook-Pro-de-Kleber.local": {
+      "totalSyncs": 1,
+      "successfulSyncs": 0,
+      "failedSyncs": 1,
+      "lastSync": "2025-07-25T11:33:32.176Z"
+    }
+  },
+  "recommendations": [
+    "Consider increasing retry attempts or adjusting sync interval",
+    "High failure rate detected - check network connectivity and git configuration"
+  ]
+}

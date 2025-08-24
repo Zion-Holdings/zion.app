@@ -186,4 +186,35 @@
     --lk-bg1: #0B1120;
     --lk-bg2: #0F172A;
   }
+
+  /* Skip link styles */
+  .skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #ffffff;
+    color: #000000;
+    padding: 0.5rem 1rem;
+    z-index: 1000;
+    transition: top 0.3s;
+  }
+
+  .skip-link:focus {
+    top: 0;
+  }
+
+  /* Improved placeholder contrast */
+  input::placeholder,
+  textarea::placeholder {
+    color: #b3b3b3;
+    opacity: 1;
+  }
 }
+  @keyframes slide-up {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.3s ease-out;
+  }
