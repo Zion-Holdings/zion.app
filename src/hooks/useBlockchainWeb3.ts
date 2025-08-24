@@ -214,7 +214,7 @@ export const useBlockchainWeb3 = (initialConfig?: Partial<Web3Config>): Blockcha
       setContracts(defaultContracts);
     }
     if (nfts.length === 0) {
-      setNFTs(defaultNFTs);
+      setNfts(defaultNFTs);
     }
     if (defiPositions.length === 0) {
       setDefiPositions(defaultDefiPositions);
@@ -442,7 +442,7 @@ export const useBlockchainWeb3 = (initialConfig?: Partial<Web3Config>): Blockcha
         isListed: false
       };
 
-      setNFTs(prev => [newNFT, ...prev]);
+      setNfts(prev => [newNFT, ...prev]);
       
       // Add transaction
       const transaction: Transaction = {
@@ -485,7 +485,7 @@ export const useBlockchainWeb3 = (initialConfig?: Partial<Web3Config>): Blockcha
       const txHash = '0x' + Math.random().toString(36).substr(2, 64);
       
       // Update NFT owner
-      setNFTs(prev => 
+      setNfts(prev => 
         prev.map(nft => 
           nft.id === nftId 
             ? { ...nft, owner: to, lastTransferDate: new Date() }
@@ -527,7 +527,7 @@ export const useBlockchainWeb3 = (initialConfig?: Partial<Web3Config>): Blockcha
       // Simulate listing
       await new Promise(resolve => setTimeout(resolve, 2000));
       
-      setNFTs(prev => 
+      setNfts(prev => 
         prev.map(nft => 
           nft.id === nftId 
             ? { ...nft, isListed: true, price }
@@ -550,7 +550,7 @@ export const useBlockchainWeb3 = (initialConfig?: Partial<Web3Config>): Blockcha
       // Simulate unlisting
       await new Promise(resolve => setTimeout(resolve, 2000));
       
-      setNFTs(prev => 
+      setNfts(prev => 
         prev.map(nft => 
           nft.id === nftId 
             ? { ...nft, isListed: false, price: undefined }

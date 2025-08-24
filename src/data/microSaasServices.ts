@@ -7,7 +7,6 @@ export const MICRO_SAAS_SERVICES: ProductListing[] = [
     title: "AI-Powered CRM Automation Suite",
     description: "Intelligent customer relationship management with automated lead scoring, sentiment analysis, and predictive customer behavior insights.",
     category: "AI Business Solutions",
-    subcategory: "CRM & Sales",
     price: 299,
     currency: "$",
     pricingModel: "subscription",
