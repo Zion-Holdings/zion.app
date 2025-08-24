@@ -1,5 +1,18 @@
 import React from 'react';
 import Head from 'next/head';
+<<<<<<< HEAD
+import { 
+    <Layout
+      title="Contact Us - Zion Tech Group"
+      description="Get in touch with Zion Tech Group. Our team is ready to discuss your technology needs and help transform your business."
+    >
+      <ContactForm />
+    </Layout>
+  );
+};
+
+const Contact: NextPage = () => {
+=======
   Mail, Phone, MapPin, Clock, MessageSquare, Send, 
   Globe, Building, Users, Award, Shield, Rocket
 } from 'lucide-react';
@@ -678,10 +691,34 @@ export default function ContactPage() {
 
 	return (
 		<UltraFuturisticBackground variant="quantum" intensity="high">
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-e3a5
 			<Head>
 				<title>Contact | Zion Tech Group</title>
 				<link rel="canonical" href="https://ziontechgroup.com/contact" />
 			</Head>
+<<<<<<< HEAD
+			<section className="container mx-auto px-4 py-24">
+				<h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-6">Contact Us</h1>
+				<p className="text-gray-300 mb-10">We respond quickly. Reach us via phone or email.</p>
+				<div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+					<div className="p-6 rounded-2xl bg-black/40 border border-gray-700/60 flex items-center gap-3">
+						<Phone className="w-5 h-5 text-cyan-400" />
+						<a href={`tel:${contact.mobile}`}>{contact.mobile}</a>
+					</div>
+					<div className="p-6 rounded-2xl bg-black/40 border border-gray-700/60 flex items-center gap-3">
+						<Mail className="w-5 h-5 text-purple-400" />
+						<a href={`mailto:${contact.email}`}>{contact.email}</a>
+					</div>
+					<div className="p-6 rounded-2xl bg-black/40 border border-gray-700/60 flex items-center gap-3">
+						<MapPin className="w-5 h-5 text-emerald-400" />
+						<span className="text-sm">{contact.address}</span>
+					</div>
+				</div>
+			</section>
+		</Layout>
+	);
+}
+=======
 			<div className="container mx-auto px-4 py-20 text-white">
 				<h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-6">Talk to Us</h1>
 				<p className="text-gray-300 mb-10 max-w-2xl">We ship outcomes in weeks. Call, email, or visit to get a tailored plan and pricing.</p>
@@ -706,3 +743,4 @@ export default function ContactPage() {
 		</UltraFuturisticBackground>
 	);
 }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-e3a5
