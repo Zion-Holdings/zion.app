@@ -1,43 +1,41 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
+    "target": "ES2017",
     "useDefineForClassFields": true,
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "module": "ESNext",
+    "lib": [
+      "ES2024",
+      "DOM",
+      "DOM.Iterable",
+      "WebWorker",
+      "WebWorker.Iterable"
+    ],
+    "module": "esnext",
     "skipLibCheck": true,
+    "importHelpers": false,
+    "noEmitHelpers": false,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    },
+    /* Bundler mode */
     "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
+    "esModuleInterop": true,
     "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx",
-    "strict": true,
+    "strict": false,
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "noFallthroughCasesInSwitch": true,
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./src/*"]
-    }
+    "noUncheckedIndexedAccess": false,
+    "noImplicitReturns": false,
+    "allowJs": true,
+    "incremental": true,
+    "jsx": "react-jsx",
+    "typeRoots": [
+      "./node_modules/@types"
+    ]
   },
-  "include": [
-    "src/main.tsx",
-    "src/App.tsx",
-    "src/pages/Home.tsx",
-    "src/pages/Contact.tsx",
-    "src/pages/About.tsx",
-    "src/pages/NotFound.tsx",
-    "src/index.css"
-  ],
-  "exclude": [
-    "node_modules",
-    "src/components",
-    "src/context",
-    "src/data",
-    "src/hooks",
-    "src/layout",
-    "src/lib",
-    "src/store",
-    "src/types"
-  ]
+  "include": ["src"],
+  "references": [{ "path": "./tsconfig.node.json" }]
 }

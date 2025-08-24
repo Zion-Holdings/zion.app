@@ -1,307 +1,236 @@
 
-import React from "react";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import { motion } from 'framer-motion';
 import { 
   ArrowRight, 
   Users, 
+  Shield, 
   Zap, 
-  Settings, 
-  Search, 
-  MessageSquare, 
-  Smartphone, 
-  Calendar,
-  BookOpen,
-  Code,
-  Building,
-  Clock,
-  Shield,
-  Database,
-  Cloud,
-  Brain,
   Globe,
-  Lock,
-  BarChart3,
-  Cpu,
-  Network,
-  FileText,
-  Target,
-  Rocket,
-  Palette,
-  Eye,
-  Headphones,
-  Monitor,
-  Smartphone as Mobile,
-  Server,
-  Key,
-  ShieldCheck,
-  Zap as Lightning,
+  Smartphone,
   TrendingUp,
-  Globe2,
-  Layers,
-  Activity,
-  Sparkles,
-  ShoppingCart
-} from "lucide-react";
+  Award,
+  Phone,
+  Mail,
+  Globe as GlobeIcon
+} from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 export function FeatureCTAs() {
+  const { t } = useTranslation();
+
   const features = [
-    // AI & Machine Learning Services
     {
-      title: "AI Talent Matching",
-      description: "Our AI-powered matching algorithm connects you with the perfect talent or job based on skills, experience, and preferences.",
-      icon: <Search className="h-10 w-10 p-2 rounded-md bg-blue-100 text-blue-700" />,
+      icon: <Users className="h-8 w-8" />,
+      title: t('home.feature_talent') || "AI Talent Matching",
+      description: t('home.feature_talent_desc') || "Connect with verified AI and tech professionals",
+      link: "/talent",
+      color: "from-zion-cyan to-zion-cyan-light",
+      cta: t('home.feature_talent_cta') || "Find Talent"
+    },
+    {
+      icon: <Shield className="h-8 w-8" />,
+      title: t('home.feature_services') || "Professional Services",
+      description: t('home.feature_services_desc') || "Expert IT and technology consulting",
+      link: "/services",
+      color: "from-zion-purple to-zion-purple-light",
+      cta: t('home.feature_services_cta') || "Browse Services"
+    },
+    {
+      icon: <Zap className="h-8 w-8" />,
+      title: t('home.feature_equipment') || "Tech Equipment",
+      description: t('home.feature_equipment_desc') || "Cutting-edge hardware and software",
+      link: "/equipment",
+      color: "from-zion-blue to-zion-blue-light",
+      cta: t('home.feature_equipment_cta') || "Shop Equipment"
+    },
+    {
+      icon: <Globe className="h-8 w-8" />,
+      title: t('home.feature_global') || "Global Network",
+      description: t('home.feature_global_desc') || "Access worldwide talent and resources",
       link: "/marketplace",
-      badge: "Popular",
-      details: "Leveraging advanced machine learning, our matching system analyzes over 100+ data points to create perfect connections between talents and opportunities.",
-      price: "$299/month",
-      marketPrice: "$500-800/month"
+      color: "from-zion-cyan to-zion-purple",
+      cta: t('home.feature_global_cta') || "Explore"
     },
     {
-      title: "AI Content Generation",
-      description: "Generate high-quality content, articles, and marketing copy using advanced AI models trained on industry best practices.",
-      icon: <Brain className="h-10 w-10 p-2 rounded-md bg-purple-100 text-purple-700" />,
-      link: "/services",
-      badge: "New",
-      details: "Create engaging content 10x faster with AI-powered writing assistance, SEO optimization, and brand voice consistency.",
-      price: "$99/month",
-      marketPrice: "$150-300/month"
+      icon: <Smartphone className="h-8 w-8" />,
+      title: t('home.feature_mobile') || "Mobile App",
+      description: t('home.feature_mobile_desc') || "Zion on the go with native mobile app",
+      link: "/mobile-launch",
+      color: "from-zion-purple to-zion-purple-dark",
+      cta: t('home.feature_mobile_cta') || "Download"
     },
     {
-      title: "AI-Powered Analytics",
-      description: "Transform raw data into actionable insights with machine learning algorithms and predictive analytics.",
-      icon: <BarChart3 className="h-10 w-10 p-2 rounded-md bg-green-100 text-green-700" />,
-      link: "/services",
-      details: "Get predictive insights, automated reporting, and intelligent recommendations to optimize your business performance.",
-      price: "$199/month",
-      marketPrice: "$300-600/month"
+      icon: <TrendingUp className="h-8 w-8" />,
+      title: t('home.feature_analytics') || "Analytics Dashboard",
+      description: t('home.feature_analytics_desc') || "Track performance and insights",
+      link: "/analytics",
+      color: "from-zion-blue to-zion-cyan",
+      cta: t('home.feature_analytics_cta') || "View Analytics"
     },
     {
-      title: "AI Chatbot Development",
-      description: "Custom AI chatbots for customer service, lead generation, and 24/7 business automation.",
-      icon: <MessageSquare className="h-10 w-10 p-2 rounded-md bg-cyan-100 text-cyan-700" />,
-      link: "/services",
-      details: "Intelligent conversational AI that handles customer inquiries, processes orders, and provides instant support.",
-      price: "$399/month",
-      marketPrice: "$600-1200/month"
-    },
-
-    // IT Infrastructure Services
-    {
-      title: "Cloud Migration & Management",
-      description: "Seamless cloud migration, optimization, and 24/7 management for AWS, Azure, and Google Cloud.",
-      icon: <Cloud className="h-10 w-10 p-2 rounded-md bg-orange-100 text-orange-700" />,
-      link: "/services",
-      badge: "Featured",
-      details: "Reduce cloud costs by 30-50% while improving performance and security with expert cloud management.",
-      price: "$799/month",
-      marketPrice: "$1200-2500/month"
+      icon: <Award className="h-8 w-8" />,
+      title: t('home.feature_quality') || "Quality Assurance",
+      description: t('home.feature_quality_desc') || "Verified professionals and services",
+      link: "/about",
+      color: "from-zion-purple to-zion-cyan",
+      cta: t('home.feature_quality_cta') || "Learn More"
     },
     {
-      title: "Cybersecurity Assessment",
-      description: "Comprehensive security audits, penetration testing, and compliance management for modern businesses.",
-      icon: <Shield className="h-10 w-10 p-2 rounded-md bg-red-100 text-red-700" />,
-      link: "/services",
-      details: "Identify vulnerabilities, implement security best practices, and achieve SOC 2, ISO 27001 compliance.",
-      price: "$599/month",
-      marketPrice: "$800-2000/month"
-    },
-    {
-      title: "DevOps Automation",
-      description: "Streamline development workflows with CI/CD pipelines, infrastructure as code, and automated testing.",
-      icon: <Settings className="h-10 w-10 p-2 rounded-md bg-indigo-100 text-indigo-700" />,
-      link: "/services",
-      details: "Deploy 10x faster with automated testing, monitoring, and infrastructure management.",
-      price: "$499/month",
-      marketPrice: "$700-1500/month"
-    },
-    {
-      title: "Database Optimization",
-      description: "Performance tuning, scaling, and maintenance for SQL and NoSQL databases.",
-      icon: <Database className="h-10 w-10 p-2 rounded-md bg-teal-100 text-teal-700" />,
-      link: "/services",
-      details: "Improve query performance by 5-10x and reduce database costs with expert optimization.",
-      price: "$299/month",
-      marketPrice: "$400-1000/month"
-    },
-
-    // Business Solutions
-    {
-      title: "Digital Transformation",
-      description: "Strategic consulting and implementation to modernize legacy systems and drive business innovation.",
-      icon: <Rocket className="h-10 w-10 p-2 rounded-md bg-pink-100 text-pink-700" />,
-      link: "/services",
-      details: "Transform your business with modern technology stack, automation, and data-driven decision making.",
-      price: "$1499/month",
-      marketPrice: "$2000-5000/month"
-    },
-    {
-      title: "API Development & Integration",
-      description: "Custom API development, third-party integrations, and microservices architecture.",
-      icon: <Code className="h-10 w-10 p-2 rounded-md bg-gray-100 text-gray-700" />,
-      link: "/services",
-      details: "Connect your systems seamlessly with robust APIs, webhooks, and integration solutions.",
-      price: "$399/month",
-      marketPrice: "$600-1500/month"
-    },
-    {
-      title: "Mobile App Development",
-      description: "Native and cross-platform mobile applications for iOS and Android with modern UI/UX.",
-      icon: <Mobile className="h-10 w-10 p-2 rounded-md bg-blue-100 text-blue-700" />,
-      link: "/services",
-      details: "Build engaging mobile experiences with React Native, Flutter, or native development.",
-      price: "$899/month",
-      marketPrice: "$1500-3000/month"
-    },
-    {
-      title: "E-commerce Solutions",
-      description: "Complete online store setup, payment integration, and inventory management systems.",
-      icon: <ShoppingCart className="h-10 w-10 p-2 rounded-md bg-green-100 text-green-700" />,
-      link: "/services",
-      details: "Launch your online business with secure payment processing, inventory tracking, and analytics.",
-      price: "$199/month",
-      marketPrice: "$300-800/month"
-    },
-
-    // Specialized Services
-    {
-      title: "Blockchain Development",
-      description: "Smart contracts, DeFi applications, and blockchain infrastructure development.",
-      icon: <Key className="h-10 w-10 p-2 rounded-md bg-yellow-100 text-yellow-700" />,
-      link: "/services",
-      badge: "Premium",
-      details: "Build secure, scalable blockchain solutions with Solidity, Rust, and modern blockchain frameworks.",
-      price: "$1299/month",
-      marketPrice: "$2000-5000/month"
-    },
-    {
-      title: "IoT Solutions",
-      description: "Internet of Things device development, sensor networks, and data collection systems.",
-      icon: <Network className="h-10 w-10 p-2 rounded-md bg-purple-100 text-purple-700" />,
-      link: "/services",
-      details: "Connect devices, collect data, and build intelligent IoT ecosystems for smart homes and businesses.",
-      price: "$599/month",
-      marketPrice: "$800-2000/month"
-    },
-    {
-      title: "Data Science Consulting",
-      description: "Advanced analytics, machine learning model development, and data strategy consulting.",
-      icon: <TrendingUp className="h-10 w-10 p-2 rounded-md bg-emerald-100 text-emerald-700" />,
-      link: "/services",
-      details: "Transform your data into competitive advantages with predictive modeling and business intelligence.",
-      price: "$899/month",
-      marketPrice: "$1200-3000/month"
-    },
-    {
-      title: "UI/UX Design",
-      description: "User-centered design, prototyping, and user experience optimization for web and mobile.",
-      icon: <Palette className="h-10 w-10 p-2 rounded-md bg-rose-100 text-rose-700" />,
-      link: "/services",
-      details: "Create intuitive, engaging user experiences that drive conversion and user satisfaction.",
-      price: "$299/month",
-      marketPrice: "$400-1200/month"
-    },
-
-    // Enterprise Solutions
-    {
-      title: "Enterprise Solutions",
-      description: "Custom-branded hiring portal, dedicated talent pool, and powerful admin controls for your organization.",
-      icon: <Building className="h-10 w-10 p-2 rounded-md bg-pink-100 text-pink-700" />,
+      icon: <Shield className="h-8 w-8" />,
+      title: t('home.feature_security') || "Enterprise Security",
+      description: t('home.feature_security_desc') || "Bank-level security and compliance",
       link: "/enterprise",
-      details: "Scale your talent acquisition with white-labeled solutions, analytics dashboards, and dedicated account managers.",
-      price: "$2499/month",
-      marketPrice: "$3000-8000/month"
-    },
-    {
-      title: "Developer Tools",
-      description: "Access our API documentation, SDKs, and integration guides to build on top of the Zion platform.",
-      icon: <Code className="h-10 w-10 p-2 rounded-md bg-gray-100 text-gray-700" />,
-      link: "/developers",
-      details: "Leverage our robust API with comprehensive documentation, code examples, and developer support.",
-      price: "Free",
-      marketPrice: "$100-500/month"
-    },
-    {
-      title: "Learning Resources",
-      description: "Access tutorials, courses, and documentation to enhance your skills in AI and tech.",
-      icon: <BookOpen className="h-10 w-10 p-2 rounded-md bg-teal-100 text-teal-700" />,
-      link: "/blog",
-      details: "From beginner guides to advanced technical content, our learning resources help you stay at the cutting edge of technology.",
-      price: "Free",
-      marketPrice: "$50-200/month"
-    },
-    {
-      title: "Project Management",
-      description: "Streamlined tools to manage projects, track milestones, and ensure successful delivery.",
-      icon: <Calendar className="h-10 w-10 p-2 rounded-md bg-red-100 text-red-700" />,
-      link: "/dashboard/projects",
-      details: "Our intuitive project management tools help you track progress, manage deliverables, and ensure timely completion.",
-      price: "$99/month",
-      marketPrice: "$150-400/month"
-    },
-    {
-      title: "Zion Hire AI",
-      description: "AI-powered recruiting assistant to streamline your hiring process and find better matches.",
-      icon: <Clock className="h-10 w-10 p-2 rounded-md bg-violet-100 text-violet-700" />,
-      link: "/zion-hire-ai",
-      badge: "Premium",
-      details: "Automate screening, improve candidate matching, and enhance the hiring experience with our AI recruiting solution.",
-      price: "$399/month",
-      marketPrice: "$600-1500/month"
+      color: "from-zion-blue to-zion-blue-dark",
+      cta: t('home.feature_security_cta') || "Enterprise"
     }
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0, scale: 0.9 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  const hoverVariants = {
+    hover: {
+      y: -8,
+      transition: {
+        duration: 0.3,
+        ease: "easeOut"
+      }
+    }
+  };
+
   return (
-    <section className="py-16 bg-gradient-to-b from-background to-background/90">
+    <section className="py-20 bg-gradient-to-b from-zion-blue-dark via-zion-blue to-zion-blue-light" role="region" aria-labelledby="features-title">
       <div className="container mx-auto px-4">
-        <div className="mb-12 text-center">
-          <h2 className="text-3xl font-bold tracking-tight mb-3">Discover Zion's Powerful Features</h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Explore our comprehensive suite of tools designed to transform how you connect, collaborate, and create in the tech ecosystem.
+        <motion.div 
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 id="features-title" className="text-4xl md:text-5xl font-bold text-white mb-6">
+            Professional <span className="text-transparent bg-clip-text bg-gradient-to-r from-zion-cyan to-zion-purple">Technology Services</span>
+          </h2>
+          <p className="text-zion-slate-light text-lg max-w-3xl mx-auto">
+            Discover our comprehensive suite of professional technology services designed to accelerate your business growth, 
+            enhance security, and drive innovation across all aspects of your organization.
           </p>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        </motion.div>
+
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
           {features.map((feature, index) => (
-            <Card key={index} className="overflow-hidden transition-all duration-300 hover:shadow-lg hover:border-primary/50 group">
-              <CardHeader className="pb-2">
-                <div className="flex justify-between items-start">
-                  {feature.icon}
-                  {feature.badge && (
-                    <Badge variant="secondary" className="bg-primary/20 text-primary">
-                      {feature.badge}
-                    </Badge>
-                  )}
-                </div>
-                <CardTitle className="mt-4">{feature.title}</CardTitle>
-                <CardDescription className="line-clamp-2">{feature.description}</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground mb-3">{feature.details}</p>
-                <div className="space-y-2">
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm font-medium text-green-600">Our Price:</span>
-                    <span className="text-sm font-bold text-green-600">{feature.price}</span>
+            <motion.div 
+              key={index} 
+              className="group"
+              variants={itemVariants}
+              whileHover="hover"
+            >
+              <Link to={feature.link} className="block">
+                <motion.div 
+                  className="rounded-lg overflow-hidden h-full border border-zion-blue-light bg-zion-blue-dark p-6 transition-all duration-300 hover:border-zion-purple/50"
+                  variants={hoverVariants}
+                >
+                  <div className={`rounded-full w-16 h-16 bg-gradient-to-br ${feature.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                    <div className="text-white">
+                      {feature.icon}
+                    </div>
                   </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm text-muted-foreground">Market Price:</span>
-                    <span className="text-sm text-muted-foreground line-through">{feature.marketPrice}</span>
-                  </div>
-                </div>
-              </CardContent>
-              <CardFooter>
-                <Button asChild className="w-full gap-1 group-hover:scale-105 transition-transform">
-                  <Link to={feature.link}>
-                    <span>Explore {feature.title}</span>
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>
-                </Button>
-              </CardFooter>
-            </Card>
+                  <h3 className="text-white text-xl font-bold mb-3">{feature.title}</h3>
+                  <p className="text-zion-slate-light text-sm mb-4 leading-relaxed">{feature.description}</p>
+                  
+                  <Button 
+                    variant="outline" 
+                    className="w-full border-zion-purple text-zion-cyan hover:bg-zion-purple/10 group-hover:border-zion-cyan group-hover:text-zion-cyan-light transition-all duration-300"
+                  >
+                    {feature.cta}
+                    <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                  </Button>
+                </motion.div>
+              </Link>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
+
+        <motion.div 
+          className="text-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
+          <Link to="/comprehensive-services">
+            <Button size="lg" className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white text-lg px-8 py-6">
+              View All Services
+              <ArrowRight className="h-5 w-5 ml-2" />
+            </Button>
+          </Link>
+        </motion.div>
+
+        {/* Contact Information */}
+        <motion.div 
+          className="mt-16 text-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+        >
+          <div className="bg-zion-blue-dark border border-zion-blue-light rounded-lg p-8 max-w-4xl mx-auto">
+            <h3 className="text-2xl font-bold text-white mb-4">
+              Ready to Transform Your Business?
+            </h3>
+            <p className="text-zion-slate-light mb-6">
+              Our expert team is ready to help you implement the perfect technology solutions. 
+              Get in touch today for a personalized consultation and quote.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white">
+                <Phone className="h-4 w-4 mr-2" />
+                Call +1 302 464 0950
+              </Button>
+              <Button variant="outline" className="border-zion-purple text-zion-cyan hover:bg-zion-purple/10">
+                <Mail className="h-4 w-4 mr-2" />
+                Email kleber@ziontechgroup.com
+              </Button>
+              <Button variant="outline" className="border-zion-purple text-zion-cyan hover:bg-zion-purple/10">
+                <GlobeIcon className="h-4 w-4 mr-2" />
+                Visit ziontechgroup.com
+              </Button>
+            </div>
+            <div className="mt-6 text-zion-slate-light text-sm">
+              <p>Address: 364 E Main St STE 1008, Middletown DE 19709</p>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

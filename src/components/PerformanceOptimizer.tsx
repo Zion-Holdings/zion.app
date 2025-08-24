@@ -1,168 +1,118 @@
-import React, { useEffect, useState, useRef, useCallback } from 'react';
-import { motion, useInView } from 'framer-motion';
+import React, { useEffect, useState, useCallback, useRef } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { LoadingSpinner } from '@/components/ui/loading-spinner';
 
-interface PerformanceOptimizerProps {
-  children: React.ReactNode;
-  threshold?: number;
-  delay?: number;
-  className?: string;
-  fallback?: React.ReactNode;
-}
-
-export function PerformanceOptimizer({
-  children,
-  threshold = 0.1,
-  delay = 0,
-  className = '',
-  fallback = null
-}: PerformanceOptimizerProps) {
-  const [isVisible, setIsVisible] = useState(false);
-  const [isLoaded, setIsLoaded] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { threshold });
-
-  const handleIntersection = useCallback(() => {
-    if (inView && !isVisible) {
-      setIsVisible(true);
-      // Simulate loading delay for better UX
-      setTimeout(() => setIsLoaded(true), delay);
-    }
-  }, [inView, isVisible, delay]);
-
-  useEffect(() => {
-    handleIntersection();
-  }, [handleIntersection]);
-
-  // Performance monitoring
-  useEffect(() => {
-    if (typeof window !== 'undefined' && 'performance' in window) {
-      const observer = new PerformanceObserver((list) => {
-        for (const entry of list.getEntries()) {
-          if (entry.entryType === 'largest-contentful-paint') {
-            console.log('LCP:', entry.startTime);
-          }
-        }
-      });
-      
-      observer.observe({ entryTypes: ['largest-contentful-paint'] });
-      
-      return () => observer.disconnect();
-    }
-  }, []);
-
-  if (!isVisible) {
-    return (
-      <div ref={ref} className={className}>
-        {fallback}
-      </div>
-    );
-  }
-
-  if (!isLoaded) {
-    return (
-      <div ref={ref} className={className}>
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.3 }}
-          className="w-full h-full flex items-center justify-center"
-        >
-          <div className="animate-pulse">
-            <div className="w-8 h-8 border-2 border-zion-cyan border-t-transparent rounded-full animate-spin" />
-          </div>
-        </motion.div>
-      </div>
-    );
-  }
-
-  return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      className={className}
-    >
-      {children}
-    </motion.div>
-  );
-}
-
-// Lazy loading wrapper for images
-export function LazyImage({
-  src,
-  alt,
-  className = '',
-  placeholder = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMTcwNzJiIi8+PC9zdmc+'
-}: {
+// Lazy Image Component with Intersection Observer
+interface LazyImageProps {
   src: string;
   alt: string;
   className?: string;
   placeholder?: string;
-}) {
-  const [imageSrc, setImageSrc] = useState(placeholder);
+  threshold?: number;
+  rootMargin?: string;
+}
+
+export function LazyImage({ 
+  src, 
+  alt, 
+  className = '', 
+  placeholder = '/images/placeholder.jpg',
+  threshold = 0.1,
+  rootMargin = '50px'
+}: LazyImageProps) {
   const [isLoaded, setIsLoaded] = useState(false);
-  const imgRef = useRef<HTMLImageElement>(null);
+  const [isInView, setIsInView] = useState(false);
+  const [imageSrc, setImageSrc] = useState(placeholder);
 
-  useEffect(() => {
-    const img = imgRef.current;
-    if (!img) return;
+  const imageRef = useRef<HTMLImageElement>(null);
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setImageSrc(src);
-            observer.unobserve(img);
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    observer.observe(img);
-    return () => observer.unobserve(img);
+  const handleIntersection = useCallback((entries: IntersectionObserverEntry[]) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        setIsInView(true);
+        setImageSrc(src);
+      }
+    });
   }, [src]);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(handleIntersection, {
+      threshold,
+      rootMargin,
+    });
+
+    if (imageRef.current) {
+      observer.observe(imageRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [handleIntersection, threshold, rootMargin]);
+
+  const handleLoad = () => {
+    setIsLoaded(true);
+  };
+
+  const handleError = () => {
+    // Fallback to placeholder on error
+    setImageSrc(placeholder);
+    setIsLoaded(true);
+  };
+
   return (
-    <img
-      ref={imgRef}
-      src={imageSrc}
-      alt={alt}
-      className={`transition-opacity duration-300 ${className} ${
-        isLoaded ? 'opacity-100' : 'opacity-0'
-      }`}
-      onLoad={() => setIsLoaded(true)}
-    />
+    <div className={`relative overflow-hidden ${className}`}>
+      <img
+        ref={imageRef}
+        src={imageSrc}
+        alt={alt}
+        onLoad={handleLoad}
+        onError={handleError}
+        className={`w-full h-full object-cover transition-opacity duration-500 ${
+          isLoaded ? 'opacity-100' : 'opacity-0'
+        }`}
+      />
+      
+      {!isLoaded && (
+        <div className="absolute inset-0 bg-zion-blue-dark/20 flex items-center justify-center">
+          <LoadingSpinner size="md" variant="pulse" />
+        </div>
+      )}
+      
+      {/* Loading shimmer effect */}
+      {!isLoaded && (
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-zion-blue-light/20 to-transparent animate-pulse" />
+      )}
+    </div>
   );
 }
 
-// Virtual scrolling for large lists
-export function VirtualList<T>({
-  items,
-  renderItem,
-  itemHeight,
-  containerHeight,
-  overscan = 5
-}: {
+// Virtual Scrolling Component for Large Lists
+interface VirtualListProps<T> {
   items: T[];
   renderItem: (item: T, index: number) => React.ReactNode;
   itemHeight: number;
   containerHeight: number;
   overscan?: number;
-}) {
+}
+
+export function VirtualList<T>({ 
+  items, 
+  renderItem, 
+  itemHeight, 
+  containerHeight, 
+  overscan = 5 
+}: VirtualListProps<T>) {
   const [scrollTop, setScrollTop] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const visibleStart = Math.max(0, Math.floor(scrollTop / itemHeight) - overscan);
-  const visibleEnd = Math.min(
+  const totalHeight = items.length * itemHeight;
+  const startIndex = Math.max(0, Math.floor(scrollTop / itemHeight) - overscan);
+  const endIndex = Math.min(
     items.length,
     Math.ceil((scrollTop + containerHeight) / itemHeight) + overscan
   );
 
-  const visibleItems = items.slice(visibleStart, visibleEnd);
-  const totalHeight = items.length * itemHeight;
-  const offsetY = visibleStart * itemHeight;
+  const visibleItems = items.slice(startIndex, endIndex);
+  const offsetY = startIndex * itemHeight;
 
   const handleScroll = useCallback((e: React.UIEvent<HTMLDivElement>) => {
     setScrollTop(e.currentTarget.scrollTop);
@@ -177,8 +127,8 @@ export function VirtualList<T>({
       <div style={{ height: totalHeight, position: 'relative' }}>
         <div style={{ transform: `translateY(${offsetY}px)` }}>
           {visibleItems.map((item, index) => (
-            <div key={visibleStart + index} style={{ height: itemHeight }}>
-              {renderItem(item, visibleStart + index)}
+            <div key={startIndex + index} style={{ height: itemHeight }}>
+              {renderItem(item, startIndex + index)}
             </div>
           ))}
         </div>
@@ -187,7 +137,82 @@ export function VirtualList<T>({
   );
 }
 
-// Debounced search hook
+// Performance Monitor Component
+export function PerformanceMonitor() {
+  const [metrics, setMetrics] = useState({
+    fcp: 0,
+    lcp: 0,
+    fid: 0,
+    cls: 0,
+  });
+
+  useEffect(() => {
+    if ('PerformanceObserver' in window) {
+      // First Contentful Paint
+      const fcpObserver = new PerformanceObserver((list) => {
+        const entries = list.getEntries();
+        const fcp = entries[entries.length - 1];
+        setMetrics(prev => ({ ...prev, fcp: fcp.startTime }));
+      });
+      fcpObserver.observe({ entryTypes: ['paint'] });
+
+      // Largest Contentful Paint
+      const lcpObserver = new PerformanceObserver((list) => {
+        const entries = list.getEntries();
+        const lcp = entries[entries.length - 1];
+        setMetrics(prev => ({ ...prev, lcp: lcp.startTime }));
+      });
+      lcpObserver.observe({ entryTypes: ['largest-contentful-paint'] });
+
+      // First Input Delay
+      const fidObserver = new PerformanceObserver((list) => {
+        const entries = list.getEntries();
+        const fid = entries[entries.length - 1];
+        const fidEntry = fid as any;
+        setMetrics(prev => ({ ...prev, fid: fidEntry.processingStart - fidEntry.startTime }));
+      });
+      fidObserver.observe({ entryTypes: ['first-input'] });
+
+      // Cumulative Layout Shift
+      const clsObserver = new PerformanceObserver((list) => {
+        let clsValue = 0;
+        for (const entry of list.getEntries()) {
+          const layoutShiftEntry = entry as any;
+          if (!layoutShiftEntry.hadRecentInput) {
+            clsValue += layoutShiftEntry.value;
+          }
+        }
+        setMetrics(prev => ({ ...prev, cls: clsValue }));
+      });
+      clsObserver.observe({ entryTypes: ['layout-shift'] });
+
+      return () => {
+        fcpObserver.disconnect();
+        lcpObserver.disconnect();
+        fidObserver.disconnect();
+        clsObserver.disconnect();
+      };
+    }
+  }, []);
+
+  // Only show in development
+  if (process.env.NODE_ENV !== 'development') {
+    return null;
+  }
+
+  return (
+    <div className="fixed bottom-4 left-4 bg-zion-blue-dark/90 backdrop-blur-sm border border-zion-purple/30 rounded-lg p-3 text-xs text-white z-50">
+      <div className="font-mono space-y-1">
+        <div>FCP: {metrics.fcp.toFixed(0)}ms</div>
+        <div>LCP: {metrics.lcp.toFixed(0)}ms</div>
+        <div>FID: {metrics.fid.toFixed(0)}ms</div>
+        <div>CLS: {metrics.cls.toFixed(3)}</div>
+      </div>
+    </div>
+  );
+}
+
+// Debounced Search Hook
 export function useDebounce<T>(value: T, delay: number): T {
   const [debouncedValue, setDebouncedValue] = useState<T>(value);
 
@@ -204,26 +229,74 @@ export function useDebounce<T>(value: T, delay: number): T {
   return debouncedValue;
 }
 
-// Intersection observer hook for performance
-export function useIntersectionObserver(
-  options: IntersectionObserverInit = {}
-) {
-  const [isIntersecting, setIsIntersecting] = useState(false);
-  const [entry, setEntry] = useState<IntersectionObserverEntry | null>(null);
-  const elementRef = useRef<HTMLElement | null>(null);
+// Throttled Scroll Hook
+export function useThrottledScroll(callback: () => void, delay: number) {
+  const lastRun = useRef(Date.now());
 
   useEffect(() => {
-    const element = elementRef.current;
-    if (!element) return;
+    const handler = () => {
+      if (Date.now() - lastRun.current >= delay) {
+        callback();
+        lastRun.current = Date.now();
+      }
+    };
 
-    const observer = new IntersectionObserver(([entry]) => {
-      setIsIntersecting(entry.isIntersecting);
-      setEntry(entry);
-    }, options);
+    window.addEventListener('scroll', handler);
+    return () => window.removeEventListener('scroll', handler);
+  }, [callback, delay]);
+}
 
-    observer.observe(element);
-    return () => observer.unobserve(element);
-  }, [options]);
+// Preload Critical Resources
+export function PreloadCriticalResources() {
+  useEffect(() => {
+    // Preload critical CSS
+    const criticalCSS = document.createElement('link');
+    criticalCSS.rel = 'preload';
+    criticalCSS.as = 'style';
+    criticalCSS.href = '/src/index.css';
+    document.head.appendChild(criticalCSS);
 
-  return { ref: elementRef, isIntersecting, entry };
+    // Preload critical fonts
+    const font = document.createElement('link');
+    font.rel = 'preload';
+    font.as = 'font';
+    font.href = '/fonts/orbitron.woff2';
+    font.crossOrigin = 'anonymous';
+    document.head.appendChild(font);
+
+    // Preload critical images
+    const criticalImages = [
+      '/images/zion-logo.png',
+      '/images/zion-homepage-og.jpg'
+    ];
+
+    criticalImages.forEach(src => {
+      const img = document.createElement('link');
+      img.rel = 'preload';
+      img.as = 'image';
+      img.href = src;
+      document.head.appendChild(img);
+    });
+  }, []);
+
+  return null;
+}
+
+// Service Worker Registration
+export function ServiceWorkerRegistration() {
+  useEffect(() => {
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then((registration) => {
+            console.log('SW registered: ', registration);
+          })
+          .catch((registrationError) => {
+            console.log('SW registration failed: ', registrationError);
+          });
+      });
+    }
+  }, []);
+
+  return null;
 }

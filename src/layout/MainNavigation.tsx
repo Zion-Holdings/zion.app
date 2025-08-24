@@ -34,16 +34,6 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
       matches: (path: string) => path.startsWith('/services')
     },
     {
-      key: 'micro-saas',
-      href: '/micro-saas-services',
-      matches: (path: string) => path.startsWith('/micro-saas-services')
-    },
-    {
-      key: 'categories',
-      href: '/categories',
-      matches: (path: string) => path.startsWith('/categories')
-    },
-    {
       key: 'talent',
       href: '/talent',
       matches: (path: string) => path.startsWith('/talent') && !path.includes('/talent-dashboard')
@@ -51,12 +41,22 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
     {
       key: 'equipment',
       href: '/equipment',
-      matches: (path: string) => path.startsWith('/equipment')
+      matches: (path:string) => path.startsWith('/equipment')
     },
     {
       key: 'community',
       href: '/community',
       matches: (path: string) => path.startsWith('/community') || path.startsWith('/forum')
+    },
+    {
+      key: 'about',
+      href: '/about',
+      matches: (path: string) => path === '/about'
+    },
+    {
+      key: 'contact',
+      href: '/contact',
+      matches: (path: string) => path === '/contact'
     }
   ];
 

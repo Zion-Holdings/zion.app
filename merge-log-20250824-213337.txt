@@ -1,0 +1,877 @@
+Merge log started at Sun Aug 24 09:33:37 PM UTC 2025
+📋 Processing branch: cursor/add-2030q1-services-ui-8deb1aee36d
+🔄 Attempting to merge cursor/add-2030q1-services-ui-8deb1aee36d...
+✅ Successfully merged cursor/add-2030q1-services-ui-8deb1aee36d
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-0357
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-0357...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-0357
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-03b6
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-03b6...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-03b6
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-06aa
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-06aa...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-06aa
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-0756
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-0756...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-0756
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-0c04
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-0c04...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-0c04
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-0cca
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-0cca...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-0cca
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-174e
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-174e...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-174e
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-17cc
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-17cc...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-17cc
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-192f
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-192f...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-192f
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-1d5b
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-1d5b...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-1d5b
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-21f8
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-21f8...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-21f8
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-2b91
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-2b91...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-2b91
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-2c85
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-2c85...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-2c85
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-336c
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-336c...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-336c
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-359a
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-359a...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-359a
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-39d5
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-39d5...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-39d5
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-3ac9
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-3ac9...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-3ac9
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-3bf4
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-3bf4...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-3bf4
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-3f02
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-3f02...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-3f02
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-3f57
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-3f57...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-3f57
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-4074
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-4074...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-4074
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-4798
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-4798...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-4798
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-4941
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-4941...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-4941
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-49c1
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-49c1...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-49c1
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-4e03
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-4e03...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-4e03
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-5035
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-5035...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-5035
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-506a
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-506a...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-506a
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-5511
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-5511...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-5511
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-5a0b
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-5a0b...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-5a0b
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-5b39
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-5b39...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-5b39
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-6510
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-6510...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-6510
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-6afb
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-6afb...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-6afb
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-6d14
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-6d14...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-6d14
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-7152
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-7152...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-7152
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-7683
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-7683...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-7683
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-7aec
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-7aec...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-7aec
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-7c2e
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-7c2e...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-7c2e
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-7fe9
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-7fe9...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-7fe9
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-8699
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-8699...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-8699
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-86e9
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-86e9...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-86e9
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-8c77
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-8c77...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-8c77
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-98f2
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-98f2...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-98f2
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-99f7
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-99f7...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-99f7
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-9c6d
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-9c6d...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-9c6d
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-9d8e
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-9d8e...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-9d8e
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-a284
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-a284...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-a284
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-a421
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-a421...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-a421
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-a930
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-a930...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-a930
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-a975
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-a975...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-a975
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-ab61
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-ab61...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-ab61
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-b17c
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-b17c...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-b17c
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-b3c7
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-b3c7...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-b3c7
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-b766
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-b766...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-b766
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-b89c
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-b89c...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-b89c
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-bb33
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-bb33...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-bb33
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-bdcb
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-bdcb...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-bdcb
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-c44e
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-c44e...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-c44e
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-c4de
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-c4de...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-c4de
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-d192
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-d192...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-d192
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-d68c
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-d68c...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-d68c
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-da38
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-da38...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-da38
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-e1f5
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-e1f5...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-e1f5
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-e6ba
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-e6ba...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-e6ba
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-e8d4
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-e8d4...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-e8d4
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-ea8f
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-ea8f...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-ea8f
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-ec85
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-ec85...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-ec85
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-ed33
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-ed33...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-ed33
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-ef5a
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-ef5a...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-ef5a
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-f13c
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-f13c...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-f13c
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-f199
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-f199...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-f199
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-f35d
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-f35d...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-f35d
+---
+📋 Processing branch: cursor/add-and-advertise-new-services-then-build-ff3f
+🔄 Attempting to merge cursor/add-and-advertise-new-services-then-build-ff3f...
+✅ Successfully merged cursor/add-and-advertise-new-services-then-build-ff3f
+---
+📋 Processing branch: cursor/add-lateral-margins-for-zoom-animation-0c88
+🔄 Attempting to merge cursor/add-lateral-margins-for-zoom-animation-0c88...
+✅ Successfully merged cursor/add-lateral-margins-for-zoom-animation-0c88
+---
+📋 Processing branch: cursor/add-more-project-content-0e0b
+🔄 Attempting to merge cursor/add-more-project-content-0e0b...
+✅ Successfully merged cursor/add-more-project-content-0e0b
+---
+📋 Processing branch: cursor/add-more-project-content-1001
+🔄 Attempting to merge cursor/add-more-project-content-1001...
+✅ Successfully merged cursor/add-more-project-content-1001
+---
+📋 Processing branch: cursor/add-more-project-content-1b70
+🔄 Attempting to merge cursor/add-more-project-content-1b70...
+✅ Successfully merged cursor/add-more-project-content-1b70
+---
+📋 Processing branch: cursor/add-more-project-content-1e50
+🔄 Attempting to merge cursor/add-more-project-content-1e50...
+✅ Successfully merged cursor/add-more-project-content-1e50
+---
+📋 Processing branch: cursor/add-more-project-content-2d2a
+🔄 Attempting to merge cursor/add-more-project-content-2d2a...
+✅ Successfully merged cursor/add-more-project-content-2d2a
+---
+📋 Processing branch: cursor/add-more-project-content-3422
+🔄 Attempting to merge cursor/add-more-project-content-3422...
+✅ Successfully merged cursor/add-more-project-content-3422
+---
+📋 Processing branch: cursor/add-more-project-content-343b
+🔄 Attempting to merge cursor/add-more-project-content-343b...
+✅ Successfully merged cursor/add-more-project-content-343b
+---
+📋 Processing branch: cursor/add-more-project-content-3d4b
+🔄 Attempting to merge cursor/add-more-project-content-3d4b...
+✅ Successfully merged cursor/add-more-project-content-3d4b
+---
+📋 Processing branch: cursor/add-more-project-content-43d6
+🔄 Attempting to merge cursor/add-more-project-content-43d6...
+✅ Successfully merged cursor/add-more-project-content-43d6
+---
+📋 Processing branch: cursor/add-more-project-content-4ab0
+🔄 Attempting to merge cursor/add-more-project-content-4ab0...
+✅ Successfully merged cursor/add-more-project-content-4ab0
+---
+📋 Processing branch: cursor/add-more-project-content-4f94
+🔄 Attempting to merge cursor/add-more-project-content-4f94...
+✅ Successfully merged cursor/add-more-project-content-4f94
+---
+📋 Processing branch: cursor/add-more-project-content-56da
+🔄 Attempting to merge cursor/add-more-project-content-56da...
+✅ Successfully merged cursor/add-more-project-content-56da
+---
+📋 Processing branch: cursor/add-more-project-content-5956
+🔄 Attempting to merge cursor/add-more-project-content-5956...
+✅ Successfully merged cursor/add-more-project-content-5956
+---
+📋 Processing branch: cursor/add-more-project-content-5fae
+🔄 Attempting to merge cursor/add-more-project-content-5fae...
+✅ Successfully merged cursor/add-more-project-content-5fae
+---
+📋 Processing branch: cursor/add-more-project-content-68ea
+🔄 Attempting to merge cursor/add-more-project-content-68ea...
+✅ Successfully merged cursor/add-more-project-content-68ea
+---
+📋 Processing branch: cursor/add-more-project-content-6db1
+🔄 Attempting to merge cursor/add-more-project-content-6db1...
+✅ Successfully merged cursor/add-more-project-content-6db1
+---
+📋 Processing branch: cursor/add-more-project-content-715e
+🔄 Attempting to merge cursor/add-more-project-content-715e...
+✅ Successfully merged cursor/add-more-project-content-715e
+---
+📋 Processing branch: cursor/add-more-project-content-783a
+🔄 Attempting to merge cursor/add-more-project-content-783a...
+✅ Successfully merged cursor/add-more-project-content-783a
+---
+📋 Processing branch: cursor/add-more-project-content-8277
+🔄 Attempting to merge cursor/add-more-project-content-8277...
+✅ Successfully merged cursor/add-more-project-content-8277
+---
+📋 Processing branch: cursor/add-more-project-content-a286
+🔄 Attempting to merge cursor/add-more-project-content-a286...
+✅ Successfully merged cursor/add-more-project-content-a286
+---
+📋 Processing branch: cursor/add-more-project-content-a592
+🔄 Attempting to merge cursor/add-more-project-content-a592...
+✅ Successfully merged cursor/add-more-project-content-a592
+---
+📋 Processing branch: cursor/add-more-project-content-aa12
+🔄 Attempting to merge cursor/add-more-project-content-aa12...
+✅ Successfully merged cursor/add-more-project-content-aa12
+---
+📋 Processing branch: cursor/add-more-project-content-decc
+🔄 Attempting to merge cursor/add-more-project-content-decc...
+✅ Successfully merged cursor/add-more-project-content-decc
+---
+📋 Processing branch: cursor/add-more-project-content-e6bb
+🔄 Attempting to merge cursor/add-more-project-content-e6bb...
+✅ Successfully merged cursor/add-more-project-content-e6bb
+---
+📋 Processing branch: cursor/add-more-project-content-ed00
+🔄 Attempting to merge cursor/add-more-project-content-ed00...
+✅ Successfully merged cursor/add-more-project-content-ed00
+---
+📋 Processing branch: cursor/add-services-pricing-q4-2029
+🔄 Attempting to merge cursor/add-services-pricing-q4-2029...
+✅ Successfully merged cursor/add-services-pricing-q4-2029
+---
+📋 Processing branch: cursor/adjust-app-visibility-with-gradients-and-transparency-02c2
+🔄 Attempting to merge cursor/adjust-app-visibility-with-gradients-and-transparency-02c2...
+✅ Successfully merged cursor/adjust-app-visibility-with-gradients-and-transparency-02c2
+---
+📋 Processing branch: cursor/agent-enhancement-and-main-branch-integration-4c76
+🔄 Attempting to merge cursor/agent-enhancement-and-main-branch-integration-4c76...
+✅ Successfully merged cursor/agent-enhancement-and-main-branch-integration-4c76
+---
+📋 Processing branch: cursor/agent-enhancement-and-main-branch-integration-7066
+🔄 Attempting to merge cursor/agent-enhancement-and-main-branch-integration-7066...
+✅ Successfully merged cursor/agent-enhancement-and-main-branch-integration-7066
+---
+📋 Processing branch: cursor/agents-factory-setup
+🔄 Attempting to merge cursor/agents-factory-setup...
+✅ Successfully merged cursor/agents-factory-setup
+---
+📋 Processing branch: cursor/analyze-and-improve-ziontechgroup-website-and-repository-03f9
+🔄 Attempting to merge cursor/analyze-and-improve-ziontechgroup-website-and-repository-03f9...
+✅ Successfully merged cursor/analyze-and-improve-ziontechgroup-website-and-repository-03f9
+---
+📋 Processing branch: cursor/analyze-and-improve-ziontechgroup-website-and-repository-70ca
+🔄 Attempting to merge cursor/analyze-and-improve-ziontechgroup-website-and-repository-70ca...
+✅ Successfully merged cursor/analyze-and-improve-ziontechgroup-website-and-repository-70ca
+---
+📋 Processing branch: cursor/analyze-and-improve-ziontechgroup-website-and-repository-adfc
+🔄 Attempting to merge cursor/analyze-and-improve-ziontechgroup-website-and-repository-adfc...
+✅ Successfully merged cursor/analyze-and-improve-ziontechgroup-website-and-repository-adfc
+---
+📋 Processing branch: cursor/analyze-and-improve-ziontechgroup-website-and-repository-c253
+🔄 Attempting to merge cursor/analyze-and-improve-ziontechgroup-website-and-repository-c253...
+✅ Successfully merged cursor/analyze-and-improve-ziontechgroup-website-and-repository-c253
+---
+📋 Processing branch: cursor/analyze-and-improve-ziontechgroup-website-and-repository-e819
+🔄 Attempting to merge cursor/analyze-and-improve-ziontechgroup-website-and-repository-e819...
+✅ Successfully merged cursor/analyze-and-improve-ziontechgroup-website-and-repository-e819
+---
+📋 Processing branch: cursor/analyze-app-for-improvement-suggestions-cd5e
+🔄 Attempting to merge cursor/analyze-app-for-improvement-suggestions-cd5e...
+✅ Successfully merged cursor/analyze-app-for-improvement-suggestions-cd5e
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-02e7
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-02e7...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-02e7
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-058d
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-058d...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-058d
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-06b1
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-06b1...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-06b1
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-06e9
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-06e9...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-06e9
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-07c1
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-07c1...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-07c1
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-0801
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-0801...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-0801
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-0944
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-0944...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-0944
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-09a0
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-09a0...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-09a0
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-0c1b
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-0c1b...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-0c1b
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-0f2d
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-0f2d...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-0f2d
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-1032
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-1032...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-1032
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-10d2
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-10d2...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-10d2
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-1133
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-1133...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-1133
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-1277
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-1277...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-1277
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-12ce
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-12ce...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-12ce
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-1363
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-1363...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-1363
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-17ce
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-17ce...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-17ce
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-17e5
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-17e5...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-17e5
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-18d2
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-18d2...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-18d2
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-1a50
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-1a50...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-1a50
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-1b99
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-1b99...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-1b99
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-1ca5
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-1ca5...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-1ca5
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-1ea3
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-1ea3...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-1ea3
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-2157
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-2157...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-2157
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-242c
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-242c...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-242c
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-27ff
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-27ff...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-27ff
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-2827
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-2827...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-2827
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-2f79
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-2f79...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-2f79
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-2f8d
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-2f8d...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-2f8d
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-2ffe
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-2ffe...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-2ffe
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-34ad
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-34ad...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-34ad
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-3555
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-3555...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-3555
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-35fe
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-35fe...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-35fe
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-36d0
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-36d0...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-36d0
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-36f1
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-36f1...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-36f1
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-37dd
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-37dd...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-37dd
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-4852
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-4852...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-4852
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-4b02
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-4b02...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-4b02
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-4b5b
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-4b5b...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-4b5b
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-4dbb
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-4dbb...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-4dbb
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-5389
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-5389...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-5389
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-5973
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-5973...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-5973
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-5b25
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-5b25...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-5b25
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-5fcc
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-5fcc...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-5fcc
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-609a
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-609a...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-609a
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-616f
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-616f...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-616f
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-64bc
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-64bc...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-64bc
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-65a3
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-65a3...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-65a3
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-6910
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-6910...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-6910
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-693a
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-693a...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-693a
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-6956
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-6956...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-6956
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-6e6d
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-6e6d...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-6e6d
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-7071
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-7071...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-7071
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-71be
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-71be...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-71be
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-7797
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-7797...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-7797
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-7eea
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-7eea...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-7eea
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-8046
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-8046...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-8046
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-82b7
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-82b7...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-82b7
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-84ee
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-84ee...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-84ee
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-85e9
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-85e9...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-85e9
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-868b
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-868b...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-868b
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-86a1
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-86a1...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-86a1
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-86a2
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-86a2...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-86a2
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-8b8b
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-8b8b...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-8b8b
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-8e8b
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-8e8b...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-8e8b
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-8ebe
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-8ebe...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-8ebe
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-8faa
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-8faa...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-8faa
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-97dd
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-97dd...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-97dd
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-9a74
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-9a74...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-9a74
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-9cbf
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-9cbf...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-9cbf
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-9f45
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-9f45...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-9f45
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-a07b
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-a07b...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-a07b
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-a21b
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-a21b...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-a21b
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-a515
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-a515...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-a515
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-a909
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-a909...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-a909
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-a956
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-a956...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-a956
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-a9ae
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-a9ae...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-a9ae
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-b373
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-b373...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-b373
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-b79e
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-b79e...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-b79e
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-bac0
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-bac0...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-bac0
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-c321
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-c321...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-c321
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-c75d
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-c75d...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-c75d
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-cd36
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-cd36...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-cd36
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-cdb7
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-cdb7...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-cdb7
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-d02e
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-d02e...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-d02e
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-d1de
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-d1de...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-d1de
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-d413
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-d413...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-d413
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-d56f
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-d56f...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-d56f
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-d86e
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-d86e...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-d86e
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-d9ea
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-d9ea...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-d9ea
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-dace
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-dace...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-dace
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-db73
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-db73...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-db73
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-dd4c
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-dd4c...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-dd4c
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-de9b
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-de9b...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-de9b
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-df51
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-df51...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-df51
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-e3e1
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-e3e1...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-e3e1
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-e4a1
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-e4a1...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-e4a1
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-e69d
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-e69d...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-e69d
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-ebbc
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-ebbc...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-ebbc
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-f26f
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-f26f...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-f26f
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-f2cc
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-f2cc...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-f2cc
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-f52d
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-f52d...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-f52d
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-f679
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-f679...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-f679
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-f9be
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-f9be...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-f9be
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-fad1
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-fad1...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-fad1
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-fcb2
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-fcb2...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-fcb2
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-fe8a
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-fe8a...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-fe8a
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-application-ff45
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-application-ff45...
+✅ Successfully merged cursor/analyze-improve-and-deploy-application-ff45
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-ziontechgroup-app
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-ziontechgroup-app...
+⚠️  Merge conflicts detected in cursor/analyze-improve-and-deploy-ziontechgroup-app, attempting to resolve...
+🔧 Resolving conflicts in cursor/analyze-improve-and-deploy-ziontechgroup-app...

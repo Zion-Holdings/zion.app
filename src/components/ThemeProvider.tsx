@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useState, ReactNode } from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react';
 
 type Theme = 'light' | 'dark' | 'system';
 
@@ -18,19 +18,18 @@ export const useTheme = () => {
 };
 
 interface ThemeProviderProps {
-  children: ReactNode;
+  children: React.ReactNode;
   defaultTheme?: Theme;
 }
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ 
   children, 
-  defaultTheme = 'system' 
+  defaultTheme = 'dark' 
 }) => {
   const [theme, setTheme] = useState<Theme>(defaultTheme);
 
   useEffect(() => {
     const root = window.document.documentElement;
-    
     root.classList.remove('light', 'dark');
     
     if (theme === 'system') {
@@ -43,10 +42,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({
 
   const value = {
     theme,
-    setTheme: (newTheme: Theme) => {
-      setTheme(newTheme);
-      localStorage.setItem('theme', newTheme);
-    }
+    setTheme,
   };
 
   return (
