@@ -1,640 +1,483 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import {
-  Building, Users, Shield, Database, Cloud, Zap, Star, DollarSign, Clock, CheckCircle, ArrowRight, Phone, Mail, Globe, TrendingUp, Lightbulb, BarChart3, Lock, Network, Server, Monitor, Smartphone
-} from 'lucide-react';
-
-interface EnterpriseSolution {
-  id: string;
-  title: string;
-  description: string;
-  category: string;
-  price: number;
-  currency: string;
-  duration: string;
-  features: string[];
-  benefits: string[];
-  targetIndustries: string[];
-  icon: React.ReactNode;
-  color: string;
-  marketPrice: string;
-  enterpriseScore: number;
-  contactInfo: {
-    phone: string;
-    email: string;
-    website: string;
-  };
-}
-
-const enterpriseSolutions: EnterpriseSolution[] = [
-  {
-    id: "enterprise-ai",
-    title: "Enterprise AI Platform",
-    description: "Comprehensive AI platform for large organizations with multi-tenant architecture and enterprise-grade security.",
-    category: "AI Platform",
-    price: 50000,
-    currency: "$",
-    duration: "16-32 weeks",
-    features: [
-      "Multi-tenant architecture",
-      "Enterprise security (SOC2, ISO27001)",
-      "Scalable AI model deployment",
-      "Advanced analytics dashboard",
-      "API management and documentation"
-    ],
-    benefits: [
-      "Centralized AI operations",
-      "Reduced development time",
-      "Improved data governance",
-      "Cost optimization",
-      "Competitive advantage"
-    ],
-    targetIndustries: [
-      "Financial Services",
-      "Healthcare",
-      "Manufacturing",
-      "Retail",
-      "Technology"
-    ],
-    icon: <Database className="w-8 h-8" />,
-    color: "from-purple-500 to-indigo-600",
-    marketPrice: "$75,000 - $150,000",
-    enterpriseScore: 98,
-    contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
-    }
-  },
-  {
-    id: "cloud-migration",
-    title: "Enterprise Cloud Migration",
-    description: "End-to-end cloud migration services for large-scale enterprise applications and infrastructure.",
-    category: "Cloud Services",
-    price: 35000,
-    currency: "$",
-    duration: "12-24 weeks",
-    features: [
-      "Cloud readiness assessment",
-      "Migration strategy planning",
-      "Data migration and validation",
-      "Performance optimization",
-      "Post-migration support"
-    ],
-    benefits: [
-      "Reduced infrastructure costs",
-      "Improved scalability",
-      "Enhanced security",
-      "Better disaster recovery",
-      "Operational efficiency"
-    ],
-    targetIndustries: [
-      "Financial Services",
-      "Healthcare",
-      "Manufacturing",
-      "Retail",
-      "Education"
-    ],
-    icon: <Cloud className="w-8 h-8" />,
-    color: "from-blue-500 to-cyan-600",
-    marketPrice: "$50,000 - $100,000",
-    enterpriseScore: 95,
-    contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
-    }
-  },
-  {
-    id: "cybersecurity-suite",
-    title: "Enterprise Cybersecurity Suite",
-    description: "Comprehensive cybersecurity solution including threat detection, prevention, and compliance management.",
-    category: "Security",
-    price: 45000,
-    currency: "$",
-    duration: "8-16 weeks",
-    features: [
-      "Advanced threat detection",
-      "Security information management",
-      "Compliance automation",
-      "Incident response",
-      "Security awareness training"
-    ],
-    benefits: [
-      "Enhanced security posture",
-      "Regulatory compliance",
-      "Reduced security risks",
-      "Customer trust",
-      "Business continuity"
-    ],
-    targetIndustries: [
-      "Financial Services",
-      "Healthcare",
-      "Government",
-      "Technology",
-      "Manufacturing"
-    ],
-    icon: <Shield className="w-8 h-8" />,
-    color: "from-red-500 to-pink-600",
-    marketPrice: "$60,000 - $120,000",
-    enterpriseScore: 97,
-    contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
-    }
-  },
-  {
-    id: "data-governance",
-    title: "Enterprise Data Governance",
-    description: "Comprehensive data governance framework for managing data quality, privacy, and compliance across the organization.",
-    category: "Data Management",
-    price: 30000,
-    currency: "$",
-    duration: "12-20 weeks",
-    features: [
-      "Data quality management",
-      "Privacy compliance (GDPR, CCPA)",
-      "Data lineage tracking",
-      "Master data management",
-      "Data catalog and discovery"
-    ],
-    benefits: [
-      "Improved data quality",
-      "Regulatory compliance",
-      "Better decision making",
-      "Reduced data risks",
-      "Operational efficiency"
-    ],
-    targetIndustries: [
-      "Financial Services",
-      "Healthcare",
-      "Retail",
-      "Manufacturing",
-      "Technology"
-    ],
-    icon: <Database className="w-8 h-8" />,
-    color: "from-green-500 to-emerald-600",
-    marketPrice: "$40,000 - $80,000",
-    enterpriseScore: 93,
-    contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
-    }
-  },
-  {
-    id: "digital-transformation",
-    title: "Digital Transformation Consulting",
-    description: "Strategic consulting and implementation services for enterprise digital transformation initiatives.",
-    category: "Consulting",
-    price: 75000,
-    currency: "$",
-    duration: "24-48 weeks",
-    features: [
-      "Digital maturity assessment",
-      "Transformation roadmap",
-      "Change management",
-      "Technology implementation",
-      "ROI measurement"
-    ],
-    benefits: [
-      "Competitive advantage",
-      "Operational efficiency",
-      "Customer experience improvement",
-      "Revenue growth",
-      "Future readiness"
-    ],
-    targetIndustries: [
-      "Financial Services",
-      "Healthcare",
-      "Manufacturing",
-      "Retail",
-      "Transportation"
-    ],
-    icon: <Lightbulb className="w-8 h-8" />,
-    color: "from-orange-500 to-yellow-600",
-    marketPrice: "$100,000 - $200,000",
-    enterpriseScore: 96,
-    contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
-    }
-  },
-  {
-    id: "enterprise-integration",
-    title: "Enterprise System Integration",
-    description: "Seamless integration of enterprise systems, applications, and data sources for unified operations.",
-    category: "Integration",
-    price: 25000,
-    currency: "$",
-    duration: "8-16 weeks",
-    features: [
-      "API development and management",
-      "Data integration",
-      "Workflow automation",
-      "Real-time synchronization",
-      "Integration monitoring"
-    ],
-    benefits: [
-      "Unified data view",
-      "Improved efficiency",
-      "Reduced manual work",
-      "Better decision making",
-      "Cost savings"
-    ],
-    targetIndustries: [
-      "Financial Services",
-      "Healthcare",
-      "Manufacturing",
-      "Retail",
-      "Logistics"
-    ],
-    icon: <Network className="w-8 h-8" />,
-    color: "from-indigo-500 to-purple-600",
-    marketPrice: "$35,000 - $70,000",
-    enterpriseScore: 91,
-    contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
-    }
-  },
-  {
-    id: "enterprise-mobile",
-    title: "Enterprise Mobile Solutions",
-    description: "Secure mobile applications and platforms for enterprise workforce productivity and customer engagement.",
-    category: "Mobile Development",
-    price: 40000,
-    currency: "$",
-    duration: "12-24 weeks",
-    features: [
-      "Cross-platform development",
-      "Enterprise security",
-      "Offline capabilities",
-      "Integration with enterprise systems",
-      "Mobile device management"
-    ],
-    benefits: [
-      "Improved productivity",
-      "Enhanced customer experience",
-      "Better data access",
-      "Reduced operational costs",
-      "Competitive advantage"
-    ],
-    targetIndustries: [
-      "Financial Services",
-      "Healthcare",
-      "Manufacturing",
-      "Retail",
-      "Field Services"
-    ],
-    icon: <Smartphone className="w-8 h-8" />,
-    color: "from-teal-500 to-cyan-600",
-    marketPrice: "$55,000 - $110,000",
-    enterpriseScore: 94,
-    contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
-    }
-  },
-  {
-    id: "enterprise-analytics",
-    title: "Enterprise Analytics Platform",
-    description: "Comprehensive business intelligence and analytics platform for enterprise-wide data insights and reporting.",
-    category: "Analytics",
-    price: 35000,
-    currency: "$",
-    duration: "16-28 weeks",
-    features: [
-      "Real-time dashboards",
-      "Advanced reporting",
-      "Predictive analytics",
-      "Data visualization",
-      "Self-service analytics"
-    ],
-    benefits: [
-      "Data-driven decisions",
-      "Improved performance",
-      "Cost optimization",
-      "Competitive insights",
-      "Operational efficiency"
-    ],
-    targetIndustries: [
-      "Financial Services",
-      "Healthcare",
-      "Manufacturing",
-      "Retail",
-      "Technology"
-    ],
-    icon: <BarChart3 className="w-8 h-8" />,
-    color: "from-pink-500 to-rose-600",
-    marketPrice: "$45,000 - $90,000",
-    enterpriseScore: 92,
-    contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
-    }
-  }
-];
+import React, { useState } from 'react';
+import { COMPREHENSIVE_SERVICES, CONTACT_INFO } from '@/data/comprehensiveServices';
+import { Building, Shield, Users, Zap, TrendingUp, Star, ArrowRight, CheckCircle, Globe, Database, Lock } from 'lucide-react';
 
 export default function EnterpriseSolutions() {
+  const enterpriseServices = COMPREHENSIVE_SERVICES.filter(service => 
+    service.category === 'Enterprise Solutions'
+  );
+
+  const enterpriseFeatures = [
+    {
+      icon: "🏢",
+      title: "Scalable Architecture",
+      description: "Built to handle enterprise-scale operations and growth",
+      details: ["Multi-tenant design", "Horizontal scaling", "Load balancing", "High availability"]
+    },
+    {
+      icon: "🔒",
+      title: "Enterprise Security",
+      description: "Bank-level security with compliance and governance",
+      details: ["SOC 2 Type II", "GDPR compliance", "Data encryption", "Access controls"]
+    },
+    {
+      icon: "📊",
+      title: "Advanced Analytics",
+      description: "Comprehensive reporting and business intelligence",
+      details: ["Real-time dashboards", "Custom reports", "Data visualization", "Predictive analytics"]
+    },
+    {
+      icon: "🌐",
+      title: "Global Deployment",
+      description: "Multi-region deployment with local compliance",
+      details: ["Multi-cloud strategy", "Edge computing", "CDN integration", "Local data centers"]
+    }
+  ];
+
+  const enterpriseIndustries = [
+    {
+      name: "Financial Services",
+      description: "Banking, insurance, and fintech solutions with regulatory compliance",
+      icon: "🏦",
+      challenges: ["Regulatory compliance", "Data security", "Risk management", "Scalability"],
+      solutions: ["Compliance automation", "Advanced security", "Risk analytics", "Cloud infrastructure"]
+    },
+    {
+      name: "Healthcare",
+      description: "HIPAA-compliant solutions for hospitals and healthcare providers",
+      icon: "🏥",
+      challenges: ["Patient data privacy", "Interoperability", "Regulatory compliance", "System integration"],
+      solutions: ["HIPAA compliance", "HL7 integration", "Data analytics", "Secure cloud"]
+    },
+    {
+      name: "Manufacturing",
+      description: "Industry 4.0 solutions for smart manufacturing and supply chain",
+      icon: "🏭",
+      challenges: ["Supply chain complexity", "Quality control", "Predictive maintenance", "Global operations"],
+      solutions: ["IoT integration", "AI-powered analytics", "Predictive maintenance", "Global ERP"]
+    },
+    {
+      name: "Retail & E-commerce",
+      description: "Omnichannel solutions for modern retail operations",
+      icon: "🛍️",
+      challenges: ["Multi-channel integration", "Inventory management", "Customer experience", "Global expansion"],
+      solutions: ["Unified commerce", "AI analytics", "Personalization", "Global infrastructure"]
+    }
+  ];
+
+  const implementationPhases = [
+    {
+      phase: "Discovery & Strategy",
+      duration: "2-4 weeks",
+      activities: [
+        "Business requirements analysis",
+        "Technology assessment",
+        "Architecture planning",
+        "Risk assessment",
+        "Stakeholder alignment"
+      ],
+      deliverables: ["Requirements document", "Architecture blueprint", "Implementation roadmap", "Risk mitigation plan"]
+    },
+    {
+      phase: "Design & Planning",
+      duration: "4-6 weeks",
+      activities: [
+        "Detailed system design",
+        "Data architecture",
+        "Integration planning",
+        "Security design",
+        "Performance planning"
+      ],
+      deliverables: ["System design documents", "Data models", "Integration specs", "Security protocols"]
+    },
+    {
+      phase: "Development & Testing",
+      duration: "12-24 weeks",
+      activities: [
+        "Agile development",
+        "Continuous integration",
+        "Automated testing",
+        "Security testing",
+        "Performance testing"
+      ],
+      deliverables: ["Working software", "Test results", "Documentation", "Training materials"]
+    },
+    {
+      phase: "Deployment & Support",
+      duration: "4-8 weeks",
+      activities: [
+        "Staged deployment",
+        "User training",
+        "Go-live support",
+        "Performance monitoring",
+        "Ongoing optimization"
+      ],
+      deliverables: ["Production system", "User adoption", "Support processes", "Performance metrics"]
+    }
+  ];
+
+  const successMetrics = [
+    {
+      metric: "ROI Improvement",
+      value: "300%",
+      description: "Average return on investment within 18 months"
+    },
+    {
+      metric: "Cost Reduction",
+      value: "40%",
+      description: "Average operational cost reduction"
+    },
+    {
+      metric: "Efficiency Gain",
+      value: "60%",
+      description: "Average productivity improvement"
+    },
+    {
+      metric: "Time to Market",
+      value: "50%",
+      description: "Faster product and service delivery"
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-zion-blue via-zion-blue-dark to-zion-purple py-20">
+      <div className="bg-gradient-to-r from-slate-800 to-gray-900 text-white py-20">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-            Enterprise Solutions
-          </h1>
-          <p className="text-xl text-zion-slate-light max-w-3xl mx-auto mb-8">
-            Transform your enterprise with scalable, secure, and innovative technology solutions. 
-            We deliver enterprise-grade platforms that drive growth, efficiency, and competitive advantage.
+          <div className="text-6xl mb-6">🏢</div>
+          <h1 className="text-5xl font-bold mb-6">Enterprise Solutions</h1>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+            Transform your enterprise with scalable, secure, and innovative technology solutions designed for large organizations
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link to="/contact">
-              <Button size="lg" className="bg-white text-zion-purple hover:bg-zion-slate-light">
-                Start Enterprise Journey
-              </Button>
-            </Link>
-            <Link to="/request-quote">
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
-                Get Enterprise Quote
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Enterprise Stats */}
-      <section className="bg-zion-blue-dark py-12">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-3xl font-bold text-zion-cyan mb-2">95%</div>
-              <div className="text-zion-slate-light">Enterprise Score</div>
+          <div className="flex flex-wrap justify-center gap-6 text-sm">
+            <div className="flex items-center gap-2">
+              <Building className="w-5 h-5" />
+              <span>{enterpriseServices.length} Enterprise Solutions</span>
             </div>
-            <div>
-              <div className="text-3xl font-bold text-zion-cyan mb-2">40%</div>
-              <div className="text-zion-slate-light">Cost Reduction</div>
+            <div className="flex items-center gap-2">
+              <Star className="w-5 h-5 text-yellow-400" />
+              <span>Enterprise-Grade Quality</span>
             </div>
-            <div>
-              <div className="text-3xl font-bold text-zion-cyan mb-2">8+</div>
-              <div className="text-zion-slate-light">Solution Categories</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-zion-cyan mb-2">24/7</div>
-              <div className="text-zion-slate-light">Enterprise Support</div>
+            <div className="flex items-center gap-2">
+              <Shield className="w-5 h-5" />
+              <span>SOC 2 Compliant</span>
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
-      {/* Contact Information */}
-      <section className="bg-zion-blue py-8">
+      {/* Enterprise Features */}
+      <div className="py-16">
         <div className="container mx-auto px-4">
-          <div className="bg-zion-blue-light rounded-lg p-6 text-center">
-            <h2 className="text-2xl font-bold text-white mb-4">Ready to Transform Your Enterprise?</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-zion-cyan">
-              <div className="flex items-center justify-center gap-3">
-                <Phone className="w-5 h-5" />
-                <span>+1 302 464 0950</span>
-              </div>
-              <div className="flex items-center justify-center gap-3">
-                <Mail className="w-5 h-5" />
-                <span>kleber@ziontechgroup.com</span>
-              </div>
-              <div className="flex items-center justify-center gap-3">
-                <Globe className="w-5 h-5" />
-                <span>ziontechgroup.com</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Enterprise Solutions Grid */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-zion-blue mb-4">Enterprise Solution Portfolio</h2>
-            <p className="text-zion-slate text-lg max-w-2xl mx-auto">
-              Explore our comprehensive range of enterprise solutions, each designed to address complex business challenges 
-              and deliver measurable value to large organizations.
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-zion-blue mb-4">Enterprise-Grade Features</h2>
+            <p className="text-zion-slate-light text-lg max-w-2xl mx-auto">
+              Built for scale, security, and performance that enterprise organizations demand
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {enterpriseSolutions.map((solution) => (
-              <Card key={solution.id} className="h-full hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-zion-blue-light">
-                <CardHeader className="pb-4">
-                  <div className={`w-16 h-16 bg-gradient-to-br ${solution.color} rounded-lg flex items-center justify-center mb-4`}>
-                    <div className="text-white">
-                      {solution.icon}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {enterpriseFeatures.map((feature, index) => (
+              <div key={index} className="bg-white rounded-xl shadow-lg p-6 border border-zion-slate/10 hover:shadow-xl transition-all duration-300">
+                <div className="text-4xl mb-4">{feature.icon}</div>
+                <h3 className="text-xl font-bold text-zion-blue mb-3">{feature.title}</h3>
+                <p className="text-zion-slate-light text-sm mb-4">{feature.description}</p>
+                <div className="space-y-2">
+                  {feature.details.map((detail, detailIndex) => (
+                    <div key={detailIndex} className="flex items-center gap-2 text-sm text-zion-slate">
+                      <CheckCircle className="w-4 h-4 text-zion-green" />
+                      {detail}
                     </div>
-                  </div>
-                  <div className="flex items-center justify-between mb-2">
-                    <Badge variant="secondary" className="text-xs">
-                      {solution.category}
-                    </Badge>
-                    <div className="flex items-center gap-1 text-zion-purple">
-                      <Star className="w-4 h-4 fill-current" />
-                      <span className="text-sm font-medium">Score: {solution.enterpriseScore}</span>
-                    </div>
-                  </div>
-                  <CardTitle className="text-xl">{solution.title}</CardTitle>
-                  <CardDescription className="text-zion-slate">
-                    {solution.description}
-                  </CardDescription>
-                </CardHeader>
-                
-                <CardContent className="space-y-4">
-                  {/* Pricing */}
-                  <div className="flex items-center justify-between p-3 bg-zion-blue-light rounded-lg">
-                    <div className="flex items-center gap-2">
-                      <DollarSign className="w-4 h-4 text-zion-cyan" />
-                      <span className="text-sm text-zion-slate">Our Price:</span>
-                    </div>
-                    <span className="text-2xl font-bold text-zion-purple">
-                      {solution.currency}{solution.price.toLocaleString()}
-                    </span>
-                  </div>
-
-                  {/* Market Comparison */}
-                  <div className="text-center p-3 bg-amber-50 rounded-lg border border-amber-200">
-                    <p className="text-sm text-amber-800">
-                      <span className="font-medium">Market Price:</span> {solution.marketPrice}
-                    </p>
-                    <p className="text-xs text-amber-600 mt-1">
-                      You save up to 40% with Zion Tech Group
-                    </p>
-                  </div>
-
-                  {/* Duration */}
-                  <div className="flex items-center gap-2 text-sm text-zion-slate">
-                    <Clock className="w-4 h-4" />
-                    <span>Duration: {solution.duration}</span>
-                  </div>
-
-                  {/* Target Industries */}
-                  <div>
-                    <h4 className="font-medium text-zion-blue mb-2 flex items-center gap-2">
-                      <Building className="w-4 h-4" />
-                      Target Industries
-                    </h4>
-                    <div className="flex flex-wrap gap-1">
-                      {solution.targetIndustries.slice(0, 3).map((industry, index) => (
-                        <Badge key={index} variant="outline" className="text-xs">
-                          {industry}
-                        </Badge>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Features */}
-                  <div>
-                    <h4 className="font-medium text-zion-blue mb-2 flex items-center gap-2">
-                      <Lightbulb className="w-4 h-4" />
-                      Key Features
-                    </h4>
-                    <ul className="space-y-1">
-                      {solution.features.slice(0, 3).map((feature, index) => (
-                        <li key={index} className="text-sm text-zion-slate flex items-center gap-2">
-                          <CheckCircle className="w-3 h-3 text-zion-cyan" />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Benefits */}
-                  <div>
-                    <h4 className="font-medium text-zion-blue mb-2 flex items-center gap-2">
-                      <TrendingUp className="w-4 h-4" />
-                      Business Benefits
-                    </h4>
-                    <ul className="space-y-1">
-                      {solution.benefits.slice(0, 2).map((benefit, index) => (
-                        <li key={index} className="text-sm text-zion-slate flex items-center gap-2">
-                          <div className="w-1.5 h-1.5 bg-zion-purple rounded-full"></div>
-                          {benefit}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Contact Information */}
-                  <div className="pt-4 border-t border-zion-blue-light">
-                    <div className="text-center space-y-2">
-                      <p className="text-xs text-zion-slate">Contact us for enterprise solutions:</p>
-                      <div className="flex flex-col gap-1 text-xs">
-                        <a 
-                          href={`tel:${solution.contactInfo.phone}`}
-                          className="text-zion-cyan hover:text-zion-purple transition-colors"
-                        >
-                          {solution.contactInfo.phone}
-                        </a>
-                        <a 
-                          href={`mailto:${solution.contactInfo.email}`}
-                          className="text-zion-cyan hover:text-zion-purple transition-colors"
-                        >
-                          {solution.contactInfo.email}
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Action Buttons */}
-                  <div className="flex gap-2 pt-4">
-                    <Link to="/contact" className="flex-1">
-                      <Button className="w-full bg-zion-purple hover:bg-zion-purple-dark">
-                        Get Started
-                      </Button>
-                    </Link>
-                    <Link to="/request-quote" className="flex-1">
-                      <Button variant="outline" className="w-full border-zion-cyan text-zion-cyan hover:bg-zion-cyan/10">
-                        Get Quote
-                      </Button>
-                    </Link>
-                  </div>
-                </CardContent>
-              </Card>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
         </div>
-      </section>
+      </div>
 
-      {/* Enterprise Success Stories */}
-      <section className="bg-zion-blue py-20">
+      {/* Featured Enterprise Services */}
+      <div className="py-16 bg-zion-slate/5">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-white mb-4">Enterprise Success Stories</h2>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-zion-blue mb-4">Enterprise Solutions Portfolio</h2>
             <p className="text-zion-slate-light text-lg max-w-2xl mx-auto">
-              See how leading enterprises are transforming their operations with our solutions.
+              Comprehensive solutions designed for enterprise transformation and growth
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-zion-blue-light rounded-lg p-6 text-center">
-              <div className="w-16 h-16 bg-zion-purple rounded-full flex items-center justify-center mx-auto mb-4">
-                <TrendingUp className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-2">Fortune 500 Manufacturing</h3>
-              <p className="text-zion-slate-light">
-                Achieved 40% cost reduction and 60% efficiency improvement through our enterprise AI platform.
-              </p>
-            </div>
-            
-            <div className="bg-zion-blue-light rounded-lg p-6 text-center">
-              <div className="w-16 h-16 bg-zion-cyan rounded-full flex items-center justify-center mx-auto mb-4">
-                <Shield className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-2">Global Financial Institution</h3>
-              <p className="text-zion-slate-light">
-                Enhanced security posture and achieved 100% compliance with our cybersecurity suite.
-              </p>
-            </div>
-            
-            <div className="bg-zion-blue-light rounded-lg p-6 text-center">
-              <div className="w-16 h-16 bg-zion-purple-dark rounded-full flex items-center justify-center mx-auto mb-4">
-                <Cloud className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-2">Healthcare Enterprise</h3>
-              <p className="text-zion-slate-light">
-                Successfully migrated to cloud with 99.9% uptime and 50% cost savings.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {enterpriseServices.map((service) => (
+              <div key={service.id} className="bg-white rounded-xl shadow-lg border border-zion-slate/10 overflow-hidden hover:shadow-xl transition-all duration-300">
+                <div className="p-6">
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="flex items-center gap-3">
+                      <span className="text-2xl">🏢</span>
+                      <div>
+                        <span className="text-xs font-medium text-zion-slate bg-slate-100 text-slate-800 px-2 py-1 rounded-full">
+                          {service.subcategory}
+                        </span>
+                      </div>
+                    </div>
+                    {service.featured && (
+                      <span className="text-xs font-medium text-zion-purple bg-zion-purple/10 px-2 py-1 rounded-full">
+                        Featured
+                      </span>
+                    )}
+                  </div>
 
-      {/* Call to Action */}
-      <section className="py-20 bg-gradient-to-r from-zion-purple to-zion-purple-dark">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">Ready to Transform Your Enterprise?</h2>
-          <p className="text-zion-slate-light text-lg mb-8 max-w-2xl mx-auto">
-            Join leading enterprises that have already transformed their operations with our innovative technology solutions.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link to="/contact">
-              <Button size="lg" className="bg-white text-zion-purple hover:bg-zion-slate-light">
-                Start Enterprise Journey
-              </Button>
-            </Link>
-            <Link to="/request-quote">
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
-                Get Free Enterprise Consultation
-              </Button>
-            </Link>
+                  <h3 className="text-xl font-bold text-zion-blue mb-2">{service.title}</h3>
+                  <p className="text-zion-slate-light text-sm mb-4">{service.description}</p>
+
+                  {/* Key Features */}
+                  <div className="mb-4">
+                    <h4 className="font-semibold text-zion-slate mb-2 flex items-center gap-2">
+                      <Zap className="w-4 h-4 text-zion-cyan" />
+                      Key Features
+                    </h4>
+                    <div className="space-y-1">
+                      {service.features.slice(0, 3).map((feature, index) => (
+                        <div key={index} className="flex items-center gap-2 text-sm text-zion-slate-light">
+                          <div className="w-1.5 h-1.5 bg-zion-cyan rounded-full"></div>
+                          {feature}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Benefits */}
+                  <div className="mb-4">
+                    <h4 className="font-semibold text-zion-slate mb-2 flex items-center gap-2">
+                      <TrendingUp className="w-4 h-4 text-zion-green" />
+                      Key Benefits
+                    </h4>
+                    <div className="space-y-1">
+                      {service.benefits.slice(0, 2).map((benefit, index) => (
+                        <div key={index} className="flex items-center gap-2 text-sm text-zion-slate-light">
+                          <div className="w-1.5 h-1.5 bg-zion-green rounded-full"></div>
+                          {benefit}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Pricing and Rating */}
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="text-2xl font-bold text-zion-purple">
+                      ${service.price.toLocaleString()}
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <Star className="w-4 h-4 text-yellow-400 fill-current" />
+                      <span className="text-sm font-medium text-zion-slate">{service.rating}</span>
+                      <span className="text-xs text-zion-slate-light">({service.reviewCount})</span>
+                    </div>
+                  </div>
+
+                  <button className="w-full bg-gradient-to-r from-slate-700 to-gray-800 text-white py-3 px-6 rounded-lg font-semibold hover:from-slate-800 hover:to-gray-900 transition-all duration-300">
+                    Schedule Consultation
+                  </button>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
-      </section>
+      </div>
+
+      {/* Industry Solutions */}
+      <div className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-zion-blue mb-4">Industry-Specific Solutions</h2>
+            <p className="text-zion-slate-light text-lg max-w-2xl mx-auto">
+              Tailored solutions for the unique challenges and requirements of different industries
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {enterpriseIndustries.map((industry, index) => (
+              <div key={index} className="bg-white rounded-xl shadow-lg p-6 border border-zion-slate/10 hover:shadow-xl transition-all duration-300">
+                <div className="flex items-start gap-4 mb-6">
+                  <div className="text-4xl">{industry.icon}</div>
+                  <div>
+                    <h3 className="text-xl font-bold text-zion-blue mb-2">{industry.name}</h3>
+                    <p className="text-zion-slate-light text-sm">{industry.description}</p>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <h4 className="font-semibold text-zion-slate mb-3 flex items-center gap-2">
+                      <Lock className="w-4 h-4 text-red-500" />
+                      Key Challenges
+                    </h4>
+                    <div className="space-y-2">
+                      {industry.challenges.map((challenge, challengeIndex) => (
+                        <div key={challengeIndex} className="flex items-center gap-2 text-sm text-zion-slate-light">
+                          <div className="w-1.5 h-1.5 bg-red-500 rounded-full"></div>
+                          {challenge}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div>
+                    <h4 className="font-semibold text-zion-slate mb-3 flex items-center gap-2">
+                      <CheckCircle className="w-4 h-4 text-zion-green" />
+                      Our Solutions
+                    </h4>
+                    <div className="space-y-2">
+                      {industry.solutions.map((solution, solutionIndex) => (
+                        <div key={solutionIndex} className="flex items-center gap-2 text-sm text-zion-slate-light">
+                          <div className="w-1.5 h-1.5 bg-zion-green rounded-full"></div>
+                          {solution}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Implementation Process */}
+      <div className="py-16 bg-zion-slate/5">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-zion-blue mb-4">Enterprise Implementation Process</h2>
+            <p className="text-zion-slate-light text-lg max-w-2xl mx-auto">
+              Our proven methodology ensures successful enterprise transformation
+            </p>
+          </div>
+
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+              {implementationPhases.map((phase, index) => (
+                <div key={index} className="bg-white rounded-xl shadow-lg p-6 border border-zion-slate/10">
+                  <div className="text-center mb-4">
+                    <div className="w-16 h-16 bg-gradient-to-r from-slate-600 to-gray-700 rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold">
+                      {index + 1}
+                    </div>
+                    <h3 className="text-lg font-semibold text-zion-blue mb-2">{phase.phase}</h3>
+                    <p className="text-zion-slate-light text-sm mb-3">{phase.duration}</p>
+                  </div>
+
+                  <div className="mb-4">
+                    <h4 className="font-semibold text-zion-slate mb-2 text-sm">Activities:</h4>
+                    <div className="space-y-1">
+                      {phase.activities.map((activity, activityIndex) => (
+                        <div key={activityIndex} className="text-xs text-zion-slate-light">
+                          • {activity}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div>
+                    <h4 className="font-semibold text-zion-slate mb-2 text-sm">Deliverables:</h4>
+                    <div className="space-y-1">
+                      {phase.deliverables.map((deliverable, deliverableIndex) => (
+                        <div key={deliverableIndex} className="text-xs text-zion-slate-light">
+                          • {deliverable}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Success Metrics */}
+      <div className="py-16 bg-zion-blue-dark text-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">Proven Enterprise Results</h2>
+            <p className="text-zion-slate-light text-lg max-w-2xl mx-auto">
+              Our enterprise solutions deliver measurable business transformation
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+            {successMetrics.map((metric, index) => (
+              <div key={index} className="text-center">
+                <div className="text-4xl font-bold text-zion-cyan mb-2">{metric.value}</div>
+                <h3 className="text-lg font-semibold mb-2">{metric.metric}</h3>
+                <p className="text-zion-slate-light text-sm">{metric.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* CTA Section */}
+      <div className="py-16 bg-gradient-to-r from-slate-800 to-gray-900 text-white">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold mb-4">Ready for Enterprise Transformation?</h2>
+          <p className="text-gray-300 text-lg max-w-2xl mx-auto mb-8">
+            Let's discuss how our enterprise solutions can transform your organization
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href={`mailto:${CONTACT_INFO.email}?subject=Enterprise Solutions Inquiry`}
+              className="inline-flex items-center gap-2 bg-white text-slate-800 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-all duration-300"
+            >
+              Schedule Enterprise Consultation
+              <ArrowRight className="w-5 h-5" />
+            </a>
+            <a
+              href="tel:+13024640950"
+              className="inline-flex items-center gap-2 border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-slate-800 transition-all duration-300"
+            >
+              Call {CONTACT_INFO.phone}
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Contact Section */}
+      <div className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-zion-blue mb-4">Enterprise Experts at Your Service</h2>
+            <p className="text-zion-slate-light text-lg max-w-2xl mx-auto">
+              Our team of enterprise specialists is ready to help you navigate digital transformation
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl">📞</span>
+              </div>
+              <h3 className="text-xl font-semibold text-zion-blue mb-2">Call Us</h3>
+              <p className="text-zion-slate-light">{CONTACT_INFO.phone}</p>
+              <p className="text-zion-slate-light text-sm">{CONTACT_INFO.businessHours}</p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl">✉️</span>
+              </div>
+              <h3 className="text-xl font-semibold text-zion-blue mb-2">Email Us</h3>
+              <p className="text-zion-slate-light">{CONTACT_INFO.email}</p>
+              <p className="text-zion-slate-light text-sm">24/7 Enterprise Support</p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl">📍</span>
+              </div>
+              <h3 className="text-xl font-semibold text-zion-blue mb-2">Visit Us</h3>
+              <p className="text-zion-slate-light text-sm">{CONTACT_INFO.address}</p>
+              <p className="text-zion-slate-light text-sm">Enterprise center available</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
