@@ -1,0 +1,38 @@
+name: Innovation Radar (15-min)
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  radar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+          cache: 'npm'
+      - name: Install deps
+        run: npm ci
+      - name: Run Innovation Radar
+        run: node automation/innovation-radar.cjs
+      - name: Commit and push if changed
+        run: |
+          if [ -n "$(git status --porcelain data/innovation-radar.json)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add data/innovation-radar.json
+            git commit -m "chore(automation): update Innovation Radar data"
+            git push origin HEAD:main
+          else
+            echo "No changes to commit."
+          fi
