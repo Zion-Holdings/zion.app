@@ -1,611 +1,479 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Header } from '@/components/Header';
+import { Footer } from '@/components/Footer';
+import { SEO } from '@/components/SEO';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { TrustedBySection } from '@/components/TrustedBySection';
-import { QuoteFormSection } from '@/components/QuoteFormSection';
+import { Badge } from '@/components/ui/badge';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { 
   Shield, 
   Lock, 
   Eye, 
   AlertTriangle, 
-  Users, 
-  Globe, 
-  Zap,
-  ArrowRight,
-  CheckCircle,
+  CheckCircle, 
   Star,
   Clock,
-  DollarSign,
-  Server,
+  TrendingUp,
+  Phone,
+  Mail,
+  Globe,
+  ArrowRight,
+  Zap,
+  Brain,
   Network,
+  Bot,
+  Sparkles,
+  Users,
   Database,
-  Smartphone
+  Server,
+  Key
 } from 'lucide-react';
+import { COMPREHENSIVE_SERVICES } from '@/data/comprehensiveServices';
+import { TrustedBySection } from '@/components/TrustedBySection';
 
-const securityServices = [
+const CYBERSECURITY_SERVICES = COMPREHENSIVE_SERVICES.filter(service => 
+  service.category === 'Cybersecurity'
+);
+
+const SECURITY_SERVICE_CATEGORIES = [
   {
-    id: 1,
-    title: "Zero-Trust Security Architecture",
-    description: "Implement modern zero-trust security models with continuous verification and least-privilege access controls.",
-    features: [
-      "Identity verification for every access request",
-      "Micro-segmentation of network resources",
-      "Continuous monitoring and threat detection",
-      "Multi-factor authentication (MFA)",
-      "Privileged access management (PAM)"
-    ],
-    price: 7200,
-    currency: "$",
-    duration: "8-12 weeks",
-    icon: <Shield className="w-8 h-8" />,
-    category: "Security Architecture",
-    benefits: [
-      "Reduce attack surface by 80%",
-      "Comply with industry regulations",
-      "Prevent lateral movement attacks",
-      "Build customer trust and confidence"
-    ]
+    id: 'threat-detection',
+    name: 'Threat Detection & Response',
+    description: 'AI-powered security monitoring and incident response',
+    icon: Eye,
+    services: CYBERSECURITY_SERVICES.filter(s => s.title.includes('Threat Detection'))
   },
   {
-    id: 2,
-    title: "Penetration Testing & Vulnerability Assessment",
-    description: "Comprehensive security testing to identify and remediate vulnerabilities before attackers can exploit them.",
-    features: [
-      "External and internal penetration testing",
-      "Web application security testing",
-      "Social engineering assessments",
-      "Physical security testing",
-      "Detailed remediation guidance"
-    ],
-    price: 4500,
-    currency: "$",
-    duration: "2-4 weeks",
-    icon: <Eye className="w-8 h-8" />,
-    category: "Security Testing",
-    benefits: [
-      "Identify security weaknesses proactively",
-      "Meet compliance requirements",
-      "Improve security posture",
-      "Protect brand reputation"
-    ]
-  },
-  {
-    id: 3,
-    title: "Incident Response & Forensics",
-    description: "Rapid response to security incidents with digital forensics to identify root causes and prevent future attacks.",
-    features: [
-      "24/7 incident response team",
-      "Digital forensics and evidence collection",
-      "Threat intelligence integration",
-      "Incident documentation and reporting",
-      "Post-incident lessons learned"
-    ],
-    price: 8500,
-    currency: "$",
-    duration: "Immediate response",
-    icon: <AlertTriangle className="w-8 h-8" />,
-    category: "Incident Response",
-    benefits: [
-      "Minimize incident impact and downtime",
-      "Preserve evidence for legal proceedings",
-      "Improve incident response capabilities",
-      "Reduce recovery time and costs"
-    ]
-  },
-  {
-    id: 4,
-    title: "Security Operations Center (SOC) Setup",
-    description: "Establish a 24/7 security operations center to monitor, detect, and respond to security threats in real-time.",
-    features: [
-      "SOC infrastructure design and setup",
-      "Security monitoring tools implementation",
-      "Incident response procedures",
-      "Threat hunting capabilities",
-      "Security analyst training"
-    ],
-    price: 15000,
-    currency: "$",
-    duration: "12-16 weeks",
-    icon: <Server className="w-8 h-8" />,
-    category: "Security Operations",
-    benefits: [
-      "24/7 threat monitoring and response",
-      "Proactive threat detection",
-      "Centralized security management",
-      "Improved incident response times"
-    ]
-  },
-  {
-    id: 5,
-    title: "Cloud Security & Compliance",
-    description: "Secure your cloud infrastructure and ensure compliance with industry standards and regulations.",
-    features: [
-      "Cloud security architecture review",
-      "Identity and access management (IAM)",
-      "Data encryption and key management",
-      "Compliance assessment and remediation",
-      "Security monitoring and alerting"
-    ],
-    price: 6800,
-    currency: "$",
-    duration: "6-10 weeks",
-    icon: <Globe className="w-8 h-8" />,
-    category: "Cloud Security",
-    benefits: [
-      "Secure cloud deployments",
-      "Meet compliance requirements",
-      "Protect sensitive data",
-      "Reduce security risks"
-    ]
-  },
-  {
-    id: 6,
-    title: "Network Security & Firewall Management",
-    description: "Comprehensive network security solutions including firewall configuration, monitoring, and threat prevention.",
-    features: [
-      "Firewall design and configuration",
-      "Intrusion detection and prevention",
-      "Network segmentation",
-      "Traffic monitoring and analysis",
-      "Security policy management"
-    ],
-    price: 4200,
-    currency: "$",
-    duration: "4-6 weeks",
-    icon: <Network className="w-8 h-8" />,
-    category: "Network Security",
-    benefits: [
-      "Protect network infrastructure",
-      "Prevent unauthorized access",
-      "Monitor network traffic",
-      "Comply with security policies"
-    ]
-  },
-  {
-    id: 7,
-    title: "Data Protection & Privacy",
-    description: "Implement comprehensive data protection measures including encryption, backup, and privacy compliance.",
-    features: [
-      "Data classification and mapping",
-      "Encryption implementation",
-      "Backup and recovery systems",
-      "Privacy impact assessments",
-      "GDPR/CCPA compliance"
-    ],
-    price: 5500,
-    currency: "$",
-    duration: "6-8 weeks",
-    icon: <Database className="w-8 h-8" />,
-    category: "Data Security",
-    benefits: [
-      "Protect sensitive data",
-      "Meet privacy regulations",
-      "Build customer trust",
-      "Avoid data breach penalties"
-    ]
-  },
-  {
-    id: 8,
-    title: "Mobile Device Security",
-    description: "Secure mobile devices and implement mobile device management (MDM) solutions for enterprise environments.",
-    features: [
-      "Mobile device management (MDM)",
-      "App security and vetting",
-      "Device encryption and policies",
-      "Remote wipe capabilities",
-      "Security awareness training"
-    ],
-    price: 3800,
-    currency: "$",
-    duration: "4-6 weeks",
-    icon: <Smartphone className="w-8 h-8" />,
-    category: "Mobile Security",
-    benefits: [
-      "Secure mobile workforce",
-      "Protect corporate data",
-      "Comply with BYOD policies",
-      "Reduce mobile security risks"
-    ]
+    id: 'zero-trust',
+    name: 'Zero Trust Security',
+    description: 'Identity verification and access management',
+    icon: Lock,
+    services: CYBERSECURITY_SERVICES.filter(s => s.title.includes('Zero Trust'))
   }
 ];
 
-const securityTechnologies = [
-  "Next-Generation Firewalls (NGFW)",
-  "Intrusion Detection Systems (IDS)",
-  "Intrusion Prevention Systems (IPS)",
-  "Security Information & Event Management (SIEM)",
-  "Endpoint Detection & Response (EDR)",
-  "Data Loss Prevention (DLP)",
-  "Identity & Access Management (IAM)",
-  "Multi-Factor Authentication (MFA)"
-];
-
-const complianceStandards = [
-  "SOC 2 Type II",
-  "ISO 27001",
-  "PCI DSS",
-  "HIPAA",
-  "GDPR",
-  "CCPA",
-  "NIST Cybersecurity Framework",
-  "FedRAMP"
-];
-
-const threatIntelligence = [
-  "Real-time threat monitoring",
-  "Vulnerability intelligence",
-  "Malware analysis",
-  "Threat hunting",
-  "Security research",
-  "Industry collaboration",
-  "Custom threat feeds",
-  "Risk assessment"
-];
-
 export default function CybersecurityServicesPage() {
+  const [selectedCategory, setSelectedCategory] = useState('all');
+
+  const getCategoryIcon = (category: string) => {
+    const categoryData = SECURITY_SERVICE_CATEGORIES.find(cat => cat.id === category);
+    return categoryData?.icon || Shield;
+  };
+
+  const getPricingModelLabel = (model: string) => {
+    switch (model) {
+      case 'one-time': return 'One-time';
+      case 'monthly': return 'Monthly';
+      case 'hourly': return 'Hourly';
+      case 'project-based': return 'Project-based';
+      default: return model;
+    }
+  };
+
   return (
     <>
-      {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-zion-blue via-zion-blue-dark to-zion-purple">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-            Enterprise-Grade
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-zion-cyan to-zion-purple-light">
-              Cybersecurity Solutions
-            </span>
-          </h1>
-          <p className="text-xl text-zion-slate-light mb-8 max-w-3xl mx-auto">
-            Protect your business with comprehensive cybersecurity services designed to defend 
-            against modern threats, ensure compliance, and build customer trust. Our expert 
-            security team delivers enterprise-grade protection for businesses of all sizes.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link to="/request-quote">
-              <Button size="lg" className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white px-8 py-3">
-                Get Security Quote
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-            </Link>
-            <Link to="/contact">
-              <Button variant="outline" size="lg" className="border-zion-cyan text-zion-cyan hover:bg-zion-cyan/10 px-8 py-3">
-                Security Consultation
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Security Services Grid */}
-      <section className="py-20 bg-zion-blue-dark">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Comprehensive Security Services
-            </h2>
-            <p className="text-zion-slate-light text-lg max-w-2xl mx-auto">
-              Choose from our range of cybersecurity services designed to address specific 
-              security challenges and protect your business assets.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {securityServices.map((service) => (
-              <div key={service.id} className="bg-zion-blue border border-zion-blue-light rounded-lg p-6 hover:border-zion-purple/50 transition-all duration-300 hover:translate-y-[-5px]">
-                <div className="flex items-center mb-4">
-                  <div className="p-3 bg-gradient-to-br from-zion-purple to-zion-purple-dark rounded-lg mr-4">
-                    <div className="text-white">
-                      {service.icon}
-                    </div>
-                  </div>
-                  <div>
-                    <span className="text-zion-cyan text-sm font-medium">{service.category}</span>
-                  </div>
+      <SEO 
+        title="Cybersecurity Services & Solutions - Zion Tech Group" 
+        description="Protect your business with enterprise-grade cybersecurity solutions including threat detection, zero trust security, and compliance services. 24/7 monitoring and support."
+      />
+      <Header />
+      
+      <main className="flex-1">
+        {/* Hero Section */}
+        <section className="bg-gradient-to-br from-zion-blue via-red-900 to-zion-blue-dark py-16 md:py-24 relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-r from-red-900/20 to-blue-900/20"></div>
+          <div className="container mx-auto px-4 md:px-6 relative z-10">
+            <div className="text-center max-w-4xl mx-auto">
+              <div className="flex justify-center mb-6">
+                <div className="bg-white/10 backdrop-blur-sm rounded-full p-4">
+                  <Shield className="h-16 w-16 text-white" />
                 </div>
-                
-                <h3 className="text-white text-xl font-bold mb-3">{service.title}</h3>
-                <p className="text-zion-slate-light mb-4">{service.description}</p>
-                
-                <div className="mb-4">
-                  <h4 className="text-white font-semibold mb-2">Key Features:</h4>
-                  <ul className="space-y-1">
-                    {service.features.slice(0, 3).map((feature, index) => (
-                      <li key={index} className="text-zion-slate-light text-sm flex items-center">
-                        <CheckCircle className="w-4 h-4 text-zion-cyan mr-2 flex-shrink-0" />
-                        {feature}
-                      </li>
+              </div>
+              <h1 className="text-4xl md:text-6xl font-bold tracking-tighter text-white mb-6">
+                Cybersecurity Solutions
+              </h1>
+              <p className="text-xl text-zion-slate-light mb-8 max-w-3xl mx-auto">
+                Protect your business with enterprise-grade cybersecurity solutions. From threat detection 
+                to zero trust security, we deliver comprehensive protection against modern cyber threats.
+              </p>
+              <div className="flex flex-wrap justify-center gap-4">
+                <Button size="lg" className="bg-red-600 hover:bg-red-700 text-white">
+                  <Phone className="mr-2 h-4 w-4" />
+                  Get Security Consultation: +1 302 464 0950
+                </Button>
+                <Button variant="outline" size="lg" className="bg-transparent border-white text-white hover:bg-white/10">
+                  <Mail className="mr-2 h-4 w-4" />
+                  kleber@ziontechgroup.com
+                </Button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Security Service Categories */}
+        <section className="py-16 bg-background">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold tracking-tight mb-4">Security Service Categories</h2>
+              <p className="text-muted-foreground max-w-3xl mx-auto">
+                Comprehensive cybersecurity solutions designed to protect your business from all angles
+              </p>
+            </div>
+            
+            <div className="grid gap-6 md:grid-cols-2">
+              {SECURITY_SERVICE_CATEGORIES.map((category) => {
+                const IconComponent = category.icon;
+                return (
+                  <Card key={category.id} className="text-center hover:shadow-lg transition-shadow cursor-pointer border-red-500/20">
+                    <CardHeader>
+                      <div className="bg-red-500/10 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <IconComponent className="h-10 w-10 text-red-600" />
+                      </div>
+                      <CardTitle className="text-xl">{category.name}</CardTitle>
+                      <CardDescription>{category.description}</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <Badge variant="secondary" className="bg-red-500/20 text-red-600">
+                        {category.services.length} Services
+                      </Badge>
+                    </CardContent>
+                  </Card>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* Security Services Showcase */}
+        <section className="py-16 bg-muted/50">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold tracking-tight mb-4">Security Services Showcase</h2>
+              <p className="text-muted-foreground max-w-3xl mx-auto">
+                Discover how our cybersecurity solutions can protect your business and ensure compliance
+              </p>
+            </div>
+
+            <Tabs value={selectedCategory} onValueChange={setSelectedCategory} className="w-full">
+              <TabsList className="grid w-full grid-cols-3 mb-8">
+                <TabsTrigger value="all">All Security Services</TabsTrigger>
+                {SECURITY_SERVICE_CATEGORIES.map((category) => (
+                  <TabsTrigger key={category.id} value={category.id}>
+                    {category.name}
+                  </TabsTrigger>
+                ))}
+              </TabsList>
+
+              <TabsContent value="all" className="space-y-6">
+                <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                  {CYBERSECURITY_SERVICES.map((service) => (
+                    <SecurityServiceCard key={service.id} service={service} />
+                  ))}
+                </div>
+              </TabsContent>
+
+              {SECURITY_SERVICE_CATEGORIES.map((category) => (
+                <TabsContent key={category.id} value={category.id} className="space-y-6">
+                  <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                    {category.services.map((service) => (
+                      <SecurityServiceCard key={service.id} service={service} />
                     ))}
-                  </ul>
-                </div>
-                
-                <div className="border-t border-zion-blue-light pt-4 mb-4">
-                  <div className="flex items-center justify-between text-sm">
-                    <div className="flex items-center text-zion-cyan">
-                      <DollarSign className="w-4 h-4 mr-1" />
-                      <span className="font-semibold">{service.currency}{service.price.toLocaleString()}</span>
-                    </div>
-                    <div className="flex items-center text-zion-slate-light">
-                      <Clock className="w-4 h-4 mr-1" />
-                      <span>{service.duration}</span>
-                    </div>
                   </div>
+                </TabsContent>
+              ))}
+            </Tabs>
+          </div>
+        </section>
+
+        {/* Security Benefits Section */}
+        <section className="py-16 bg-background">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold tracking-tight mb-4">Why Choose Our Security Solutions?</h2>
+              <p className="text-muted-foreground max-w-3xl mx-auto">
+                Enterprise-grade protection with the agility and pricing of a startup
+              </p>
+            </div>
+            
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+              <div className="text-center">
+                <div className="bg-red-500/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Eye className="h-8 w-8 text-red-600" />
                 </div>
-                
-                <Link to="/request-quote">
-                  <Button className="w-full bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white">
-                    Get Quote
-                  </Button>
-                </Link>
+                <h3 className="font-semibold mb-2">24/7 Monitoring</h3>
+                <p className="text-muted-foreground text-sm">
+                  Round-the-clock security monitoring and threat detection
+                </p>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Security Technologies */}
-      <section className="py-20 bg-zion-blue">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Advanced Security Technologies
-            </h2>
-            <p className="text-zion-slate-light text-lg max-w-2xl mx-auto">
-              We leverage cutting-edge security technologies and tools to deliver 
-              comprehensive protection for your business.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {securityTechnologies.map((tech, index) => (
-              <div key={index} className="text-center p-6 bg-zion-blue-dark border border-zion-blue-light rounded-lg hover:border-zion-purple/50 transition-all duration-300">
-                <div className="w-16 h-16 bg-gradient-to-br from-zion-purple to-zion-purple-dark rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Shield className="w-8 h-8 text-white" />
+              
+              <div className="text-center">
+                <div className="bg-red-500/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Brain className="h-8 w-8 text-red-600" />
                 </div>
-                <h3 className="text-white font-semibold text-sm">{tech}</h3>
+                <h3 className="font-semibold mb-2">AI-Powered Detection</h3>
+                <p className="text-muted-foreground text-sm">
+                  Advanced AI algorithms for faster threat identification
+                </p>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Compliance Standards */}
-      <section className="py-20 bg-zion-blue-dark">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Compliance & Standards
-            </h2>
-            <p className="text-zion-slate-light text-lg max-w-2xl mx-auto">
-              Our security solutions help you meet industry standards and regulatory 
-              requirements across multiple sectors.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {complianceStandards.map((standard, index) => (
-              <div key={index} className="text-center p-6 bg-zion-blue border border-zion-blue-light rounded-lg hover:border-zion-purple/50 transition-all duration-300">
-                <div className="w-16 h-16 bg-gradient-to-br from-zion-cyan to-zion-blue rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Lock className="w-8 h-8 text-white" />
+              
+              <div className="text-center">
+                <div className="bg-red-500/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <CheckCircle className="h-8 w-8 text-red-600" />
                 </div>
-                <h3 className="text-white font-semibold text-sm">{standard}</h3>
+                <h3 className="font-semibold mb-2">Compliance Ready</h3>
+                <p className="text-muted-foreground text-sm">
+                  Meet SOC2, GDPR, HIPAA, and other compliance requirements
+                </p>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Threat Intelligence */}
-      <section className="py-20 bg-zion-blue">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Threat Intelligence & Monitoring
-            </h2>
-            <p className="text-zion-slate-light text-lg max-w-2xl mx-auto">
-              Stay ahead of emerging threats with our comprehensive threat intelligence 
-              and 24/7 security monitoring services.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {threatIntelligence.map((intel, index) => (
-              <div key={index} className="text-center p-6 bg-zion-blue-dark border border-zion-blue-light rounded-lg hover:border-zion-purple/50 transition-all duration-300">
-                <div className="w-16 h-16 bg-gradient-to-br from-zion-purple to-zion-cyan rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Eye className="w-8 h-8 text-white" />
+              
+              <div className="text-center">
+                <div className="bg-red-500/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Zap className="h-8 w-8 text-red-600" />
                 </div>
-                <h3 className="text-white font-semibold text-sm">{intel}</h3>
+                <h3 className="font-semibold mb-2">Rapid Response</h3>
+                <p className="text-muted-foreground text-sm">
+                  Automated incident response and threat mitigation
+                </p>
               </div>
-            ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Why Choose ZionTech for Security */}
-      <section className="py-20 bg-zion-blue-dark">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Why Choose ZionTech Group for Cybersecurity?
+        {/* Security Implementation Process */}
+        <section className="py-16 bg-muted/50">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold tracking-tight mb-4">Security Implementation Process</h2>
+              <p className="text-muted-foreground max-w-3xl mx-auto">
+                Our proven methodology ensures comprehensive security implementation and ongoing protection
+              </p>
+            </div>
+            
+            <div className="grid gap-8 md:grid-cols-4">
+              <div className="text-center">
+                <div className="bg-red-600 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+                  1
+                </div>
+                <h3 className="font-semibold mb-2">Assessment</h3>
+                <p className="text-muted-foreground text-sm">
+                  Comprehensive security audit and vulnerability assessment
+                </p>
+              </div>
+              
+              <div className="text-center">
+                <div className="bg-red-600 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+                  2
+                </div>
+                <h3 className="font-semibold mb-2">Strategy</h3>
+                <p className="text-muted-foreground text-sm">
+                  Develop security roadmap and compliance strategy
+                </p>
+              </div>
+              
+              <div className="text-center">
+                <div className="bg-red-600 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+                  3
+                </div>
+                <h3 className="font-semibold mb-2">Implementation</h3>
+                <p className="text-muted-foreground text-sm">
+                  Deploy security solutions and monitoring systems
+                </p>
+              </div>
+              
+              <div className="text-center">
+                <div className="bg-red-600 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+                  4
+                </div>
+                <h3 className="font-semibold mb-2">Monitoring</h3>
+                <p className="text-muted-foreground text-sm">
+                  24/7 security monitoring and ongoing support
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Compliance & Standards */}
+        <section className="py-16 bg-background">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold tracking-tight mb-4">Compliance & Standards</h2>
+              <p className="text-muted-foreground max-w-3xl mx-auto">
+                Our security solutions help you meet industry standards and regulatory requirements
+              </p>
+            </div>
+            
+            <div className="grid gap-6 md:grid-cols-3 lg:grid-cols-6">
+              {[
+                { name: 'SOC2', icon: '🔒', description: 'Security Controls' },
+                { name: 'GDPR', icon: '🇪🇺', description: 'Data Protection' },
+                { name: 'HIPAA', icon: '🏥', description: 'Healthcare' },
+                { name: 'PCI DSS', icon: '💳', description: 'Payment Security' },
+                { name: 'ISO 27001', icon: '🌐', description: 'Information Security' },
+                { name: 'NIST', icon: '🇺🇸', description: 'Cybersecurity Framework' }
+              ].map((standard) => (
+                <Card key={standard.name} className="text-center hover:shadow-lg transition-shadow">
+                  <CardHeader>
+                    <div className="text-3xl mb-2">{standard.icon}</div>
+                    <CardTitle className="text-lg">{standard.name}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-muted-foreground">{standard.description}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Contact CTA */}
+        <section className="py-16 bg-zion-blue">
+          <div className="container mx-auto px-4 md:px-6 text-center">
+            <h2 className="text-3xl font-bold text-white mb-4">
+              Ready to Secure Your Business?
             </h2>
-            <p className="text-zion-slate-light text-lg max-w-2xl mx-auto">
-              We combine deep security expertise with industry knowledge to deliver 
-              solutions that protect your business and build customer trust.
+            <p className="text-zion-slate-light mb-8 max-w-2xl mx-auto">
+              Get in touch with our cybersecurity experts to discuss your security needs and discover 
+              how we can protect your business from evolving cyber threats.
             </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center p-6">
-              <div className="w-20 h-20 bg-gradient-to-br from-zion-purple to-zion-purple-dark rounded-full flex items-center justify-center mx-auto mb-6">
-                <Star className="w-10 h-10 text-white" />
-              </div>
-              <h3 className="text-white text-xl font-bold mb-3">Certified Experts</h3>
-              <p className="text-zion-slate-light">
-                CISSP, CISM, and CEH certified security professionals with 
-                extensive experience in enterprise security.
-              </p>
-            </div>
-            
-            <div className="text-center p-6">
-              <div className="w-20 h-20 bg-gradient-to-br from-zion-cyan to-zion-blue rounded-full flex items-center justify-center mx-auto mb-6">
-                <Shield className="w-10 h-10 text-white" />
-              </div>
-              <h3 className="text-white text-xl font-bold mb-3">Proven Track Record</h3>
-              <p className="text-zion-slate-light">
-                Successfully protected over 500+ businesses from cyber threats 
-                with zero major security breaches.
-              </p>
-            </div>
-            
-            <div className="text-center p-6">
-              <div className="w-20 h-20 bg-gradient-to-br from-zion-purple to-zion-cyan rounded-full flex items-center justify-center mx-auto mb-6">
-                <Zap className="w-10 h-10 text-white" />
-              </div>
-              <h3 className="text-white text-xl font-bold mb-3">24/7 Support</h3>
-              <p className="text-zion-slate-light">
-                Round-the-clock security monitoring and incident response 
-                to protect your business at all times.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Security Pricing */}
-      <section className="py-20 bg-zion-blue">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Transparent Security Pricing
-            </h2>
-            <p className="text-zion-slate-light text-lg max-w-2xl mx-auto">
-              Competitive pricing for enterprise-grade security solutions with 
-              flexible payment options and comprehensive protection.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <div className="bg-zion-blue-dark border border-zion-blue-light rounded-lg p-8 text-center">
-              <h3 className="text-white text-2xl font-bold mb-4">Essential Security</h3>
-              <div className="text-4xl font-bold text-zion-cyan mb-6">
-                $3,800<span className="text-lg text-zion-slate-light">/project</span>
-              </div>
-              <ul className="text-zion-slate-light space-y-2 mb-8">
-                <li>Basic security assessment</li>
-                <li>Vulnerability scanning</li>
-                <li>Security policy review</li>
-                <li>Email support</li>
-              </ul>
-              <Link to="/request-quote">
-                <Button className="w-full bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white">
-                  Get Started
-                </Button>
-              </Link>
-            </div>
-            
-            <div className="bg-gradient-to-br from-zion-purple to-zion-purple-dark border border-zion-purple rounded-lg p-8 text-center relative">
-              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                <span className="bg-zion-cyan text-zion-blue px-4 py-2 rounded-full text-sm font-bold">
-                  Most Popular
-                </span>
-              </div>
-              <h3 className="text-white text-2xl font-bold mb-4">Professional Security</h3>
-              <div className="text-4xl font-bold text-white mb-6">
-                $7,200<span className="text-lg text-zion-slate-light">/project</span>
-              </div>
-              <ul className="text-white space-y-2 mb-8">
-                <li>Comprehensive security audit</li>
-                <li>Penetration testing</li>
-                <li>Security architecture review</li>
-                <li>Priority support</li>
-              </ul>
-              <Link to="/request-quote">
-                <Button className="w-full bg-white text-zion-purple hover:bg-zion-slate-light">
-                  Get Started
-                </Button>
-              </Link>
-            </div>
-            
-            <div className="bg-zion-blue-dark border border-zion-blue-light rounded-lg p-8 text-center">
-              <h3 className="text-white text-2xl font-bold mb-4">Enterprise Security</h3>
-              <div className="text-4xl font-bold text-zion-cyan mb-6">
-                $15,000<span className="text-lg text-zion-slate-light">/project</span>
-              </div>
-              <ul className="text-zion-slate-light space-y-2 mb-8">
-                <li>Full security transformation</li>
-                <li>SOC setup and management</li>
-                <li>24/7 monitoring and response</li>
-                <li>Dedicated security team</li>
-              </ul>
-              <Link to="/request-quote">
-                <Button className="w-full bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white">
-                  Contact Sales
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Information */}
-      <section className="py-20 bg-zion-blue-dark">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Ready to Secure Your Business?
-          </h2>
-          <p className="text-zion-slate-light text-lg mb-8 max-w-2xl mx-auto">
-            Contact our cybersecurity experts today to discuss how we can help you 
-            protect your business from evolving threats.
-          </p>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-12">
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-gradient-to-br from-zion-purple to-zion-purple-dark rounded-full flex items-center justify-center mx-auto mb-4">
-                <Globe className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-white font-bold mb-2">Visit Us</h3>
-              <p className="text-zion-slate-light text-sm">
-                364 E Main St STE 1008<br />
-                Middletown DE 19709
-              </p>
-            </div>
-            
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-gradient-to-br from-zion-cyan to-zion-blue rounded-full flex items-center justify-center mx-auto mb-4">
-                <Users className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-white font-bold mb-2">Call Us</h3>
-              <p className="text-zion-cyan font-semibold">
-                +1 302 464 0950
-              </p>
-            </div>
-            
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-gradient-to-br from-zion-purple to-zion-cyan rounded-full flex items-center justify-center mx-auto mb-4">
-                <Zap className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-white font-bold mb-2">Email Us</h3>
-              <p className="text-zion-cyan font-semibold">
-                kleber@ziontechgroup.com
-              </p>
-            </div>
-          </div>
-          
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link to="/request-quote">
-              <Button size="lg" className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white px-8 py-3">
-                Request Security Quote
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" className="bg-red-600 hover:bg-red-700 text-white">
+                <Phone className="mr-2 h-4 w-4" />
+                Call: +1 302 464 0950
               </Button>
-            </Link>
-            <Link to="/contact">
-              <Button variant="outline" size="lg" className="border-zion-cyan text-zion-cyan hover:bg-zion-cyan/10 px-8 py-3">
-                Schedule Security Consultation
+              <Button variant="outline" size="lg" className="bg-transparent border-white text-white hover:bg-white/10">
+                <Mail className="mr-2 h-4 w-4" />
+                Email: kleber@ziontechgroup.com
               </Button>
-            </Link>
+            </div>
+            <div className="mt-8 text-zion-slate-light">
+              <p>Address: 364 E Main St STE 1008, Middletown DE 19709</p>
+              <p>Website: <a href="https://ziontechgroup.com" className="text-zion-cyan hover:underline">https://ziontechgroup.com</a></p>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <TrustedBySection />
-      <QuoteFormSection />
+        <TrustedBySection />
+      </main>
+      
+      <Footer />
     </>
+  );
+}
+
+// Security Service Card Component
+function SecurityServiceCard({ service }: { service: any }) {
+  const getPricingModelLabel = (model: string) => {
+    switch (model) {
+      case 'one-time': return 'One-time';
+      case 'monthly': return 'Monthly';
+      case 'hourly': return 'Hourly';
+      case 'project-based': return 'Project-based';
+      default: return model;
+    }
+  };
+
+  return (
+    <Card className="hover:shadow-lg transition-shadow border-red-500/20">
+      <div className="relative">
+        <img
+          src={service.images[0]}
+          alt={service.title}
+          className="w-full h-48 object-cover rounded-t-lg"
+        />
+        {service.featured && (
+          <Badge className="absolute top-3 left-3 bg-red-600">
+            Featured
+          </Badge>
+        )}
+        <Badge className="absolute top-3 right-3 bg-green-600">
+          AI Score: {service.aiScore}
+        </Badge>
+      </div>
+      
+      <CardHeader>
+        <div className="flex items-start justify-between mb-2">
+          <div className="text-2xl">🔒</div>
+          <div className="text-right">
+            <div className="text-2xl font-bold text-red-600">
+              {service.currency}{service.price.toLocaleString()}
+            </div>
+            <div className="text-sm text-muted-foreground">
+              {getPricingModelLabel(service.pricingModel)}
+            </div>
+          </div>
+        </div>
+        
+        <CardTitle className="text-lg leading-tight">{service.title}</CardTitle>
+        <CardDescription className="line-clamp-3">
+          {service.description}
+        </CardDescription>
+      </CardHeader>
+      
+      <CardContent className="space-y-4">
+        {/* Rating and Reviews */}
+        <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1">
+            <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+            <span className="font-medium">{service.rating}</span>
+          </div>
+          <span className="text-muted-foreground">
+            ({service.reviewCount} reviews)
+          </span>
+        </div>
+        
+        {/* Market Price */}
+        <div className="flex items-center gap-2 text-sm">
+          <TrendingUp className="h-4 w-4 text-green-600" />
+          <span className="text-muted-foreground">Market Price:</span>
+          <span className="font-medium">{service.marketPrice}</span>
+        </div>
+        
+        {/* Delivery Time */}
+        <div className="flex items-center gap-2 text-sm">
+          <Clock className="h-4 w-4 text-blue-600" />
+          <span className="text-muted-foreground">Delivery:</span>
+          <span className="font-medium">{service.deliveryTime}</span>
+        </div>
+        
+        {/* Key Features */}
+        <div className="space-y-2">
+          <h4 className="font-medium text-sm">Key Features:</h4>
+          <ul className="space-y-1">
+            {service.features.slice(0, 3).map((feature: string, index: number) => (
+              <li key={index} className="flex items-center gap-2 text-sm text-muted-foreground">
+                <CheckCircle className="h-3 w-3 text-green-600" />
+                {feature}
+              </li>
+            ))}
+          </ul>
+        </div>
+        
+        {/* Contact Information */}
+        <div className="pt-4 border-t">
+          <div className="space-y-2 text-sm">
+            <div className="flex items-center gap-2">
+              <Phone className="h-3 w-3 text-muted-foreground" />
+              <span>{service.contactInfo.phone}</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Mail className="h-3 w-3 text-muted-foreground" />
+              <span>{service.contactInfo.email}</span>
+            </div>
+          </div>
+        </div>
+        
+        {/* Action Buttons */}
+        <div className="flex gap-2 pt-4">
+          <Button className="flex-1 bg-red-600 hover:bg-red-700">
+            Get Security Quote
+          </Button>
+          <Button variant="outline" className="flex-1">
+            Learn More
+          </Button>
+        </div>
+      </CardContent>
+    </Card>
   );
 }
