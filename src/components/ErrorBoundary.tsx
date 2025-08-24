@@ -1,92 +1,177 @@
-import React, { useState, useEffect, ReactNode } from 'react';
-import { AlertTriangle, RefreshCw, Home } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Button } from "@/components/ui/button";
+import { AlertTriangle, RefreshCw, Home, Mail } from "lucide-react";
 
-interface Props {
-  children: ReactNode;
-  fallback?: ReactNode;
+interface ErrorBoundaryProps {
+  children: React.ReactNode;
+  fallback?: React.ReactNode;
 }
 
-export function ErrorBoundary({ children, fallback }: Props) {
-  const [hasError, setHasError] = useState(false);
-  const [error, setError] = useState<Error | null>(null);
-  const [errorInfo, setErrorInfo] = useState<any>(null);
+interface ErrorState {
+  hasError: boolean;
+  error?: Error;
+  errorInfo?: any;
+}
+
+export function ErrorBoundary({ children, fallback }: ErrorBoundaryProps) {
+  const [errorState, setErrorState] = useState<ErrorState>({ hasError: false });
 
   useEffect(() => {
     const handleError = (error: Error, errorInfo: any) => {
       console.error('ErrorBoundary caught an error:', error, errorInfo);
-      setHasError(true);
-      setError(error);
-      setErrorInfo(errorInfo);
+      setErrorState({
+        hasError: true,
+        error,
+        errorInfo
+      });
+
+      // Log error to monitoring service
+      logErrorToService(error, errorInfo);
     };
 
     // Add global error handler
     window.addEventListener('error', (event) => {
-      handleError(event.error, event);
+      handleError(event.error || new Error(event.message), { componentStack: event.filename });
     });
 
+    // Add unhandled rejection handler
     window.addEventListener('unhandledrejection', (event) => {
-      handleError(new Error(event.reason), event);
+      handleError(new Error(event.reason), { componentStack: 'Unhandled Promise Rejection' });
     });
 
     return () => {
-      window.removeEventListener('error', (event) => {
-        handleError(event.error, event);
-      });
-      window.removeEventListener('unhandledrejection', (event) => {
-        handleError(new Error(event.reason), event);
-      });
+      window.removeEventListener('error', handleError as any);
+      window.removeEventListener('unhandledrejection', handleError as any);
     };
   }, []);
 
-  if (hasError) {
+  const logErrorToService = (error: Error, errorInfo: any) => {
+    // In production, you would send this to your error monitoring service
+    // Example: Sentry, LogRocket, etc.
+    if (process.env.NODE_ENV === 'production') {
+      // Send to error monitoring service
+      console.log('Sending error to monitoring service:', { error, errorInfo });
+    }
+  };
+
+  const handleRetry = () => {
+    setErrorState({ hasError: false, error: undefined, errorInfo: undefined });
+  };
+
+  const handleGoHome = () => {
+    window.location.href = '/';
+  };
+
+  const handleReportIssue = () => {
+    const subject = encodeURIComponent('Error Report - Zion Tech Group');
+    const body = encodeURIComponent(`
+Error Details:
+${errorState.error?.message || 'Unknown error'}
+
+Stack Trace:
+${errorState.error?.stack || 'No stack trace available'}
+
+Component Stack:
+${errorState.errorInfo?.componentStack || 'No component stack available'}
+
+User Agent:
+${navigator.userAgent}
+
+URL:
+${window.location.href}
+
+Please describe what you were doing when this error occurred:
+    `);
+    
+    window.location.href = `mailto:support@ziontechgroup.com?subject=${subject}&body=${body}`;
+  };
+
+  if (errorState.hasError) {
     if (fallback) {
       return <>{fallback}</>;
     }
 
     return (
-      <div className="min-h-screen bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-purple flex items-center justify-center p-4">
-        <div className="max-w-md w-full bg-zion-slate-dark/80 backdrop-blur-sm border border-zion-blue-light/20 rounded-2xl p-8 text-center">
-          <div className="w-20 h-20 mx-auto mb-6 bg-red-500/20 rounded-full flex items-center justify-center">
-            <AlertTriangle className="w-10 h-10 text-red-400" />
+      <div className="min-h-screen bg-background flex items-center justify-center p-4">
+        <div className="max-w-md w-full text-center space-y-6">
+          {/* Error Icon */}
+          <div className="mx-auto w-16 h-16 bg-red-500/10 rounded-full flex items-center justify-center">
+            <AlertTriangle className="w-8 h-8 text-red-500" />
           </div>
-          
-          <h1 className="text-2xl font-bold text-white mb-4">
-            Oops! Something went wrong
-          </h1>
-          
-          <p className="text-zion-slate-light mb-6">
-            We encountered an unexpected error. Please try refreshing the page or return to the home page.
-          </p>
 
-          {process.env.NODE_ENV === 'development' && error && (
-            <details className="text-left mb-6 p-4 bg-zion-slate-dark/50 rounded-lg border border-zion-blue-light/20">
-              <summary className="text-zion-cyan cursor-pointer mb-2 font-medium">
+          {/* Error Message */}
+          <div className="space-y-2">
+            <h1 className="text-2xl font-bold text-foreground">
+              Oops! Something went wrong
+            </h1>
+            <p className="text-muted-foreground">
+              We're sorry, but something unexpected happened. Our team has been notified and is working to fix this issue.
+            </p>
+          </div>
+
+          {/* Error Details (Development Only) */}
+          {process.env.NODE_ENV === 'development' && errorState.error && (
+            <details className="text-left bg-muted p-4 rounded-lg">
+              <summary className="cursor-pointer font-medium text-sm mb-2">
                 Error Details (Development)
               </summary>
-              <pre className="text-xs text-zion-slate-light overflow-auto">
-                {error.toString()}
-                {errorInfo?.componentStack}
-              </pre>
+              <div className="text-xs space-y-2">
+                <div>
+                  <strong>Message:</strong> {errorState.error.message}
+                </div>
+                {errorState.error.stack && (
+                  <div>
+                    <strong>Stack:</strong>
+                    <pre className="whitespace-pre-wrap mt-1 bg-background p-2 rounded text-xs">
+                      {errorState.error.stack}
+                    </pre>
+                  </div>
+                )}
+              </div>
             </details>
           )}
 
-          <div className="flex flex-col sm:flex-row gap-3">
-            <button
-              onClick={() => window.location.reload()}
-              className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-zion-purple hover:bg-zion-purple-dark text-white rounded-lg transition-colors"
+          {/* Action Buttons */}
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <Button
+              onClick={handleRetry}
+              className="flex items-center gap-2"
+              variant="default"
             >
               <RefreshCw className="w-4 h-4" />
-              Refresh Page
-            </button>
+              Try Again
+            </Button>
             
-            <Link
-              to="/"
-              className="flex-1 flex items-center justify-center gap-2 px-4 py-3 border border-zion-cyan text-zion-cyan hover:bg-zion-cyan hover:text-zion-slate-dark rounded-lg transition-colors"
+            <Button
+              onClick={handleGoHome}
+              variant="outline"
+              className="flex items-center gap-2"
             >
               <Home className="w-4 h-4" />
               Go Home
-            </Link>
+            </Button>
+          </div>
+
+          {/* Report Issue */}
+          <div className="pt-4 border-t border-border">
+            <p className="text-sm text-muted-foreground mb-3">
+              Still having issues?
+            </p>
+            <Button
+              onClick={handleReportIssue}
+              variant="ghost"
+              size="sm"
+              className="flex items-center gap-2 mx-auto"
+            >
+              <Mail className="w-4 h-4" />
+              Report Issue
+            </Button>
+          </div>
+
+          {/* Contact Information */}
+          <div className="text-xs text-muted-foreground">
+            <p>Need immediate help? Contact our support team:</p>
+            <p className="font-medium">support@ziontechgroup.com</p>
           </div>
         </div>
       </div>
@@ -96,10 +181,48 @@ export function ErrorBoundary({ children, fallback }: Props) {
   return <>{children}</>;
 }
 
-// Hook for functional components to use error boundaries
+// Hook for functional components to handle errors
 export function useErrorHandler() {
   return (error: Error, errorInfo?: any) => {
     console.error('Error caught by useErrorHandler:', error, errorInfo);
-    // You can add error reporting logic here
+    
+    // Log to monitoring service
+    if (process.env.NODE_ENV === 'production') {
+      // Send to error monitoring service
+      console.log('Sending error to monitoring service:', { error, errorInfo });
+    }
   };
+}
+
+// Simple error display component
+export function ErrorDisplay({ 
+  error, 
+  onRetry, 
+  className 
+}: { 
+  error: Error; 
+  onRetry?: () => void;
+  className?: string;
+}) {
+  return (
+    <div className={`p-4 border border-red-200 bg-red-50 rounded-lg ${className || ''}`}>
+      <div className="flex items-start gap-3">
+        <AlertTriangle className="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" />
+        <div className="flex-1">
+          <h3 className="font-medium text-red-800">Something went wrong</h3>
+          <p className="text-sm text-red-700 mt-1">{error.message}</p>
+          {onRetry && (
+            <Button
+              onClick={onRetry}
+              variant="outline"
+              size="sm"
+              className="mt-3"
+            >
+              Try Again
+            </Button>
+          )}
+        </div>
+      </div>
+    </div>
+  );
 }

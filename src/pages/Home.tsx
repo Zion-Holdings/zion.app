@@ -11,55 +11,57 @@ import { QuickAccess } from "@/components/home/QuickAccess";
 import { FeatureCTAs } from "@/components/home/FeatureCTAs";
 import { FeatureHighlights } from "@/components/home/FeatureHighlights";
 import { ITServiceRequestHero } from "@/components/home/ITServiceRequestHero";
+import { TrustIndicators } from "@/components/TrustIndicators";
+import { SecurityHeaders } from "@/components/SecurityHeaders";
 
 export default function Home() {
-  // Structured data for the home page
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "Zion Tech Group",
     "url": "https://ziontechgroup.com",
-    "description": "The Tech & AI Marketplace - Discover top AI and tech talent, services, and equipment in one place.",
+    "description": "The premier tech & AI marketplace connecting top talent, services, and equipment worldwide. Discover AI experts, tech services, and cutting-edge equipment in one place.",
     "potentialAction": {
       "@type": "SearchAction",
-      "target": "https://ziontechgroup.com/search?q={search_term_string}",
+      "target": "https://ziontechgroup.com/marketplace?q={search_term_string}",
       "query-input": "required name=search_term_string"
     },
     "offers": {
       "@type": "Offer",
       "category": "Technology Services",
-      "description": "AI talent matching, IT services, and tech marketplace solutions"
+      "description": "AI and tech talent marketplace services"
     }
   };
 
   return (
     <div className="min-h-screen bg-background">
       <SEO 
-        title="Zion - The Tech & AI Marketplace" 
-        description="Discover top AI and tech talent, services, and equipment in one place. Global IT support, AI-powered matching, and enterprise solutions for the future of work."
-        keywords="AI marketplace, tech talent, IT services, global IT support, AI matching, tech services, enterprise solutions, talent acquisition, IT consulting, AI development"
-        canonical="/"
-        ogType="website"
+        title="Zion Tech Group - The Future of Tech & AI Marketplace" 
+        description="Discover top AI and tech talent, services, and equipment in one place. Connect with experts worldwide and scale your business with cutting-edge technology. SOC 2 certified, GDPR compliant."
+        keywords="AI marketplace, tech talent, IT services, AI experts, tech equipment, cybersecurity, cloud services, digital transformation"
+        canonical="https://ziontechgroup.com/"
         structuredData={structuredData}
       />
 
-      <main>
-        <ITServiceRequestHero />
+      <ITServiceRequestHero />
 
-        <HeroSection />
-        
-        <QuickAccess />
-        
-        <FeatureCTAs />
-        
-        <FeatureHighlights />
-        
-        <CategoriesSection />
-        <BenefitsSection />
-        <HowItWorksSection />
-        <FeaturedListingsSection />
-        <NewsletterSection />
-      </main>
+      <HeroSection />
+      
+      <QuickAccess />
+      
+      <FeatureCTAs />
+      
+      <FeatureHighlights />
+      
+      <TrustIndicators />
+      
+      <SecurityHeaders />
+      
+      <CategoriesSection />
+      <BenefitsSection />
+      <HowItWorksSection />
+      <FeaturedListingsSection />
+      <NewsletterSection />
     </div>
   );
 }
