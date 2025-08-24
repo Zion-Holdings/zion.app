@@ -197,7 +197,6 @@ export function CategoriesSection() {
               key={index}
               variants={itemVariants}
               whileHover="hover"
-              variants={cardVariants}
               className="group relative overflow-hidden rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 p-6 transition-all duration-300"
             >
               <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${category.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
@@ -232,7 +231,6 @@ export function CategoriesSection() {
                 key={index}
                 variants={itemVariants}
                 whileHover="hover"
-                variants={cardVariants}
                 className="group relative overflow-hidden rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 p-6 transition-all duration-300"
               >
                 <div className={`w-12 h-12 rounded-lg bg-gradient-to-r ${service.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>

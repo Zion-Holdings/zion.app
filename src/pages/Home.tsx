@@ -8,7 +8,7 @@ import { FloatingActionButton } from "@/components/ui/floating-action-button";
 import { MessageCircle, Phone, Mail, HelpCircle } from "lucide-react";
 import { QuickAccess } from "@/components/home/QuickAccess";
 import { FeatureCTAs } from "@/components/home/FeatureCTAs";
-import { FeatureHighlights } from "@/components/home/FeatureHighlights";
+
 import { MicroSaasServicesSection } from "@/components/home/MicroSaasServicesSection";
 import { HowItWorksSection } from "@/components/HowItWorksSection";
 import { FeaturedListingsSection } from "@/components/FeaturedListingsSection";
@@ -52,7 +52,7 @@ export default function Home() {
       
       <MicroSaasServicesSection />
       
-      <FeatureHighlights />
+
       
       <CategoriesSection />
       

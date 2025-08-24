@@ -107,7 +107,6 @@ export function BenefitsSection() {
               key={index}
               variants={itemVariants}
               whileHover="hover"
-              variants={cardVariants}
               className={`p-6 rounded-xl border ${benefit.borderColor} ${benefit.bgColor} backdrop-blur-sm transition-all duration-300`}
             >
               <div className={`w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 bg-gradient-to-r ${benefit.color}`}>

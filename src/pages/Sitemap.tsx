@@ -166,7 +166,7 @@ export default function Sitemap() {
         title="Sitemap - Zion Tech Group"
         description="Complete overview of all pages and sections on the Zion Tech Group website. Find what you're looking for quickly and easily."
         keywords="sitemap, navigation, pages, Zion Tech Group, website structure"
-        url="https://ziontechgroup.com/sitemap"
+        canonical="https://ziontechgroup.com/sitemap"
       />
       
       <div className="container mx-auto px-4 py-16">
