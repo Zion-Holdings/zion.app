@@ -1,5 +1,4 @@
 const nextConfig = {
-  assetPrefix,
   poweredByHeader: false,
   trailingSlash: false,
   reactStrictMode: true,
@@ -52,7 +51,7 @@ const nextConfig = {
     // Memory and performance optimizations for 176+ pages
     largePageDataBytes: 128 * 1000, // Reduced to 128KB for better performance
     workerThreads: false, // Disable worker threads to reduce memory usage
-    cpus: Math.min(2, os.cpus().length), // Adaptive CPU limit
+    cpus: Math.min(2, require('os').cpus().length), // Adaptive CPU limit
     // Bundle analysis optimizations moved to root level
     // Disable profiling for faster builds
     swcTraceProfiling: false,
@@ -177,7 +176,7 @@ const nextConfig = {
       // Alias react-router-dom to a lightweight stub to avoid build errors
       config.resolve.alias = {
         ...config.resolve.alias,
-        'react-router-dom': path.resolve(__dirname, 'src/stubs/react-router-dom.ts'),
+        'react-router-dom': require('path').resolve(__dirname, 'src/stubs/react-router-dom.ts'),
       };
 
       if (!isServer) {
@@ -215,11 +214,11 @@ const nextConfig = {
       // Use webpack aliases to completely replace all Sentry imports with mocks
       config.resolve.alias = {
         ...config.resolve.alias,
-        '@sentry/nextjs': path.resolve(__dirname, 'src/utils/sentry-mock.ts'),
-        '@sentry/node': path.resolve(__dirname, 'src/utils/sentry-mock.ts'),
-        '@sentry/tracing': path.resolve(__dirname, 'src/utils/sentry-mock.ts'),
-        '@sentry/react': path.resolve(__dirname, 'src/utils/sentry-mock.ts'),
-        '@sentry/browser': path.resolve(__dirname, 'src/utils/sentry-mock.ts'),
+        '@sentry/nextjs': require('path').resolve(__dirname, 'src/utils/sentry-mock.ts'),
+        '@sentry/node': require('path').resolve(__dirname, 'src/utils/sentry-mock.ts'),
+        '@sentry/tracing': require('path').resolve(__dirname, 'src/utils/sentry-mock.ts'),
+        '@sentry/react': require('path').resolve(__dirname, 'src/utils/sentry-mock.ts'),
+        '@sentry/browser': require('path').resolve(__dirname, 'src/utils/sentry-mock.ts'),
       };
     }
 
@@ -230,7 +229,7 @@ const nextConfig = {
       // Use webpack alias to replace dd-trace with mock implementation
       config.resolve.alias = {
         ...config.resolve.alias,
-        'dd-trace': path.resolve(__dirname, 'src/utils/dd-trace-mock.ts'),
+        'dd-trace': require('path').resolve(__dirname, 'src/utils/dd-trace-mock.ts'),
       };
     }
 
@@ -569,7 +568,7 @@ const nextConfig = {
       
       // Set safe cache options
       config.cache.allowCollectingMemory = false;
-      config.cache.managedPaths = [path.resolve(__dirname, 'node_modules')];
+      config.cache.managedPaths = [require('path').resolve(__dirname, 'node_modules')];
     }
 
     // Define feature flags for tree shaking
@@ -626,8 +625,8 @@ const nextConfig = {
     if (process.env.NETLIFY === 'true' || process.env.CI === 'true') {
       config.resolve.alias = {
         ...config.resolve.alias,
-        'react-day-picker': path.resolve(__dirname, 'src/stubs/calendar-stub.ts'),
-        'react-markdown': path.resolve(__dirname, 'src/stubs/markdown-stub.ts'),
+        'react-day-picker': require('path').resolve(__dirname, 'src/stubs/calendar-stub.ts'),
+        'react-markdown': require('path').resolve(__dirname, 'src/stubs/markdown-stub.ts'),
       };
       console.log('🚑 Emergency stubs enabled for Netlify build');
     }
@@ -705,7 +704,7 @@ const nextConfig = {
     if (!dev) {
       config.resolve.alias = {
         ...config.resolve.alias,
-        'react-router-dom': path.resolve(__dirname, 'src/stubs/react-router-dom.ts'),
+        'react-router-dom': require('path').resolve(__dirname, 'src/stubs/react-router-dom.ts'),
       };
 
       // Note: Compression is handled by Netlify and other deployment platforms
@@ -743,4 +742,4 @@ const nextConfig = {
   },
 };
 
-module.exports = withSentryConfig(baseConfig);
+module.exports = nextConfig;
