@@ -12,6 +12,13 @@ const categories = [
     color: "from-purple-500 to-indigo-600",
   },
   {
+    title: "Micro SAAS",
+    description: "AI, IT, and specialized micro SAAS solutions",
+    icon: <Lightbulb className="w-10 h-10" />,
+    link: "/micro-saas-services",
+    color: "from-emerald-500 to-green-600",
+  },
+  {
     title: "Talents",
     description: "Connect with AI experts, developers, and tech specialists",
     icon: <Users className="w-10 h-10" />,
@@ -24,13 +31,6 @@ const categories = [
     icon: <HardDrive className="w-10 h-10" />,
     link: "/equipment",
     color: "from-amber-500 to-orange-600",
-  },
-  {
-    title: "Innovation",
-    description: "Discover cutting-edge solutions and tech breakthroughs",
-    icon: <Lightbulb className="w-10 h-10" />,
-    link: "/category/innovation",
-    color: "from-emerald-500 to-green-600",
   },
 ];
 
@@ -65,7 +65,7 @@ export function CategoriesSection({ showTitle = true }: CategoriesSectionProps) 
               to={category.link} 
               className="group block"
             >
-              <div className="rounded-lg overflow-hidden h-full border border-zion-blue-light bg-zion-blue-dark p-6 transition-all duration-300 hover:border-zion-purple/50 hover:translate-y-[-5px]">
+              <div className="rounded-lg overflow-hidden h-full border border-zion-blue-light bg-zion-blue-dark p-6 transition-all duration-300 hover:border-zion-purple/50 hover:translate-y-[-5px] hover-lift glass-dark backdrop-blur-sm">
                 <div className={`rounded-full w-16 h-16 bg-gradient-to-br ${category.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
                   <div className="text-white">
                     {category.icon}
