@@ -4,10 +4,10 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Sparkles, Zap, Users } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import { GradientHeading } from './ui/GradientHeading';
+import { GradientHeading } from './GradientHeading';
 import { Button } from './ui/button';
 
-const HeroSection: React.FC = () => {
+export const HeroSection: React.FC = () => {
   const { t } = useTranslation();
 
   const containerVariants = {

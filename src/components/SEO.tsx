@@ -8,6 +8,7 @@ interface SEOProps {
   image?: string;
   url?: string;
   type?: string;
+  canonical?: string;
 }
 
 export const SEO: React.FC<SEOProps> = ({
@@ -16,7 +17,8 @@ export const SEO: React.FC<SEOProps> = ({
   keywords = 'IT services, AI solutions, cybersecurity, cloud computing, micro SAAS, digital transformation',
   image = '/og-image.jpg',
   url = 'https://ziontechgroup.com',
-  type = 'website'
+  type = 'website',
+  canonical
 }) => {
   const fullTitle = title === 'Zion Tech Group - Innovative IT Solutions & AI Services' 
     ? title 
@@ -48,7 +50,7 @@ export const SEO: React.FC<SEOProps> = ({
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       
       {/* Canonical URL */}
-      <link rel="canonical" href={url} />
+      <link rel="canonical" href={canonical || url} />
     </Helmet>
   );
 };

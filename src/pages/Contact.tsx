@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { z } from 'zod';
+import { toast } from 'sonner';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -41,11 +43,7 @@ export default function Contact() {
         }
       }
       setErrors(fieldErrors);
-      toast({
-        title: "Form Validation Error",
-        description: result.error.errors[0].message,
-        variant: "destructive",
-      });
+      toast.error(result.error.errors[0].message);
       return;
     }
 
@@ -56,10 +54,7 @@ export default function Contact() {
 
     setTimeout(() => {
       setIsSubmitting(false);
-      toast({
-        title: "Message Sent",
-        description: "We've received your message and will get back to you soon.",
-      });
+      toast.success("We've received your message and will get back to you soon.");
 
       // Reset form
       setFormData({
@@ -91,11 +86,7 @@ export default function Contact() {
       return Promise.resolve();
     } catch (error) {
       console.error("Error in AI chat:", error);
-      toast({
-        title: "Chat Error",
-        description: "There was an error communicating with our AI assistant. Please try again.",
-        variant: "destructive"
-      });
+      toast.error("There was an error communicating with our AI assistant. Please try again.");
       return Promise.resolve();
     }
   };

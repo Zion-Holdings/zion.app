@@ -76,6 +76,10 @@ const specialServices = [
   {
     title: "Enterprise Solutions",
     link: "/enterprise-solutions"
+  },
+  {
+    title: "Innovative Services",
+    link: "/innovative-services"
   }
 ];
 

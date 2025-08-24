@@ -95,6 +95,34 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
     description: 'Business process automation and RPA solutions',
     icon: '⚡',
     color: 'from-yellow-500 to-orange-600'
+  },
+  {
+    id: 'iot-edge',
+    name: 'IoT & Edge Computing',
+    description: 'Internet of Things and edge computing solutions',
+    icon: '🌐',
+    color: 'from-emerald-500 to-teal-600'
+  },
+  {
+    id: 'quantum-computing',
+    name: 'Quantum Computing',
+    description: 'Quantum computing applications and research',
+    icon: '⚛️',
+    color: 'from-violet-500 to-purple-600'
+  },
+  {
+    id: 'augmented-reality',
+    name: 'AR/VR & Metaverse',
+    description: 'Augmented reality, virtual reality, and metaverse solutions',
+    icon: '🥽',
+    color: 'from-pink-500 to-rose-600'
+  },
+  {
+    id: 'green-tech',
+    name: 'Green Technology',
+    description: 'Sustainable technology and environmental solutions',
+    icon: '🌱',
+    color: 'from-green-500 to-emerald-600'
   }
 ];
 
@@ -861,10 +889,537 @@ export const MICRO_SERVICES: MicroService[] = [
       phone: '+1 302 464 0950',
       website: 'https://ziontechgroup.com'
     }
+  },
+
+  // IoT & Edge Computing Services
+  {
+    id: 'iot-platform',
+    title: 'IoT Platform Development & Management',
+    description: 'Complete IoT platform solutions including device management, data collection, and real-time analytics.',
+    category: 'iot-edge',
+    subcategory: 'IoT Platform',
+    price: 15000,
+    currency: 'USD',
+    pricingModel: 'project-based',
+    features: [
+      'IoT device management platform',
+      'Real-time data collection and processing',
+      'Edge computing implementation',
+      'Device connectivity and protocols',
+      'Analytics and visualization',
+      'Security and monitoring'
+    ],
+    benefits: [
+      'Centralized IoT device management',
+      'Real-time operational insights',
+      'Improved efficiency and automation',
+      'Predictive maintenance capabilities',
+      'Scalable IoT infrastructure'
+    ],
+    marketPrice: '$12,000 - $50,000',
+    deliveryTime: '8-12 weeks',
+    tags: ['IoT', 'Edge Computing', 'Device Management', 'Real-time Analytics', 'Predictive Maintenance'],
+    author: {
+      name: 'Zion IoT Solutions',
+      id: 'zion-iot-solutions',
+      verified: true
+    },
+    images: ['https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&auto=format'],
+    rating: 4.8,
+    reviewCount: 67,
+    aiScore: 93,
+    featured: true,
+    popular: false,
+    contactInfo: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      website: 'https://ziontechgroup.com'
+    }
+  },
+
+  // Quantum Computing Services
+  {
+    id: 'quantum-algorithms',
+    title: 'Quantum Algorithm Development & Optimization',
+    description: 'Quantum computing algorithm development for optimization, cryptography, and machine learning applications.',
+    category: 'quantum-computing',
+    subcategory: 'Algorithm Development',
+    price: 25000,
+    currency: 'USD',
+    pricingModel: 'project-based',
+    features: [
+      'Quantum algorithm design',
+      'Optimization problem solving',
+      'Quantum machine learning',
+      'Cryptography applications',
+      'Simulation and testing',
+      'Performance optimization'
+    ],
+    benefits: [
+      'Exponential speedup for complex problems',
+      'Breakthrough optimization solutions',
+      'Future-proof technology investment',
+      'Competitive advantage in research',
+      'Access to quantum computing resources'
+    ],
+    marketPrice: '$20,000 - $100,000',
+    deliveryTime: '12-16 weeks',
+    tags: ['Quantum Computing', 'Algorithm Development', 'Optimization', 'Machine Learning', 'Cryptography'],
+    author: {
+      name: 'Zion Quantum Research',
+      id: 'zion-quantum-research',
+      verified: true
+    },
+    images: ['https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&auto=format'],
+    rating: 4.9,
+    reviewCount: 23,
+    aiScore: 98,
+    featured: true,
+    popular: false,
+    contactInfo: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      website: 'https://ziontechgroup.com'
+    }
+  },
+
+  // AR/VR & Metaverse Services
+  {
+    id: 'ar-vr-development',
+    title: 'AR/VR Application Development & Metaverse Solutions',
+    description: 'Immersive AR/VR applications and metaverse platform development for gaming, education, and business.',
+    category: 'augmented-reality',
+    subcategory: 'AR/VR Development',
+    price: 18000,
+    currency: 'USD',
+    pricingModel: 'project-based',
+    features: [
+      'AR/VR application development',
+      '3D modeling and animation',
+      'Metaverse platform development',
+      'Cross-platform compatibility',
+      'Interactive user experiences',
+      'Performance optimization'
+    ],
+    benefits: [
+      'Immersive user experiences',
+      'Enhanced engagement and retention',
+      'Innovative marketing opportunities',
+      'Virtual collaboration platforms',
+      'Future-ready technology stack'
+    ],
+    marketPrice: '$15,000 - $60,000',
+    deliveryTime: '10-14 weeks',
+    tags: ['AR/VR', 'Metaverse', '3D Modeling', 'Immersive Technology', 'Virtual Reality'],
+    author: {
+      name: 'Zion Immersive Tech',
+      id: 'zion-immersive-tech',
+      verified: true
+    },
+    images: ['https://images.unsplash.com/photo-1593508512255-86ab42a8e620?w=800&auto=format'],
+    rating: 4.8,
+    reviewCount: 45,
+    aiScore: 94,
+    featured: true,
+    popular: true,
+    contactInfo: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      website: 'https://ziontechgroup.com'
+    }
+  },
+
+  // Green Technology Services
+  {
+    id: 'sustainable-tech',
+    title: 'Sustainable Technology Solutions & Green IT',
+    description: 'Environmentally conscious technology solutions including energy optimization, carbon tracking, and sustainable practices.',
+    category: 'green-tech',
+    subcategory: 'Sustainable Solutions',
+    price: 8000,
+    currency: 'USD',
+    pricingModel: 'project-based',
+    features: [
+      'Energy efficiency optimization',
+      'Carbon footprint tracking',
+      'Sustainable IT practices',
+      'Green cloud solutions',
+      'Environmental compliance',
+      'Sustainability reporting'
+    ],
+    benefits: [
+      'Reduce environmental impact',
+      'Lower energy costs',
+      'Meet sustainability goals',
+      'Improve brand reputation',
+      'Compliance with regulations'
+    ],
+    marketPrice: '$6,000 - $25,000',
+    deliveryTime: '4-6 weeks',
+    tags: ['Green Technology', 'Sustainability', 'Energy Efficiency', 'Carbon Tracking', 'Environmental Compliance'],
+    author: {
+      name: 'Zion Green Tech',
+      id: 'zion-green-tech',
+      verified: true
+    },
+    images: ['https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&auto=format'],
+    rating: 4.7,
+    reviewCount: 78,
+    aiScore: 89,
+    featured: false,
+    popular: true,
+    contactInfo: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      website: 'https://ziontechgroup.com'
+    }
+  },
+
+  // Advanced AI Services
+  {
+    id: 'ai-ethics-governance',
+    title: 'AI Ethics & Governance Framework Development',
+    description: 'Comprehensive AI ethics and governance frameworks to ensure responsible AI development and deployment.',
+    category: 'ai-services',
+    subcategory: 'AI Governance',
+    price: 12000,
+    currency: 'USD',
+    pricingModel: 'project-based',
+    features: [
+      'AI ethics framework development',
+      'Bias detection and mitigation',
+      'Transparency and explainability',
+      'Compliance and auditing',
+      'Risk assessment and management',
+      'Training and implementation'
+    ],
+    benefits: [
+      'Ensure responsible AI deployment',
+      'Meet regulatory requirements',
+      'Build trust with stakeholders',
+      'Reduce AI-related risks',
+      'Competitive advantage in responsible AI'
+    ],
+    marketPrice: '$10,000 - $40,000',
+    deliveryTime: '6-8 weeks',
+    tags: ['AI Ethics', 'Governance', 'Bias Detection', 'Transparency', 'Compliance', 'Risk Management'],
+    author: {
+      name: 'Zion AI Governance',
+      id: 'zion-ai-governance',
+      verified: true
+    },
+    images: ['https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format'],
+    rating: 4.9,
+    reviewCount: 34,
+    aiScore: 96,
+    featured: true,
+    popular: false,
+    contactInfo: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      website: 'https://ziontechgroup.com'
+    }
+  },
+
+  // Advanced Cybersecurity Services
+  {
+    id: 'ai-threat-detection',
+    title: 'AI-Powered Threat Detection & Response',
+    description: 'Next-generation cybersecurity using artificial intelligence for advanced threat detection and automated response.',
+    category: 'cybersecurity',
+    subcategory: 'AI Security',
+    price: 6000,
+    currency: 'USD',
+    pricingModel: 'monthly',
+    features: [
+      'AI-powered threat detection',
+      'Behavioral analysis',
+      'Automated incident response',
+      'Threat intelligence integration',
+      'Real-time monitoring',
+      'Machine learning adaptation'
+    ],
+    benefits: [
+      'Detect threats before they cause damage',
+      'Automated response reduces response time',
+      'Continuous learning improves detection',
+      'Reduce false positives',
+      '24/7 intelligent monitoring'
+    ],
+    marketPrice: '$5,000 - $20,000/month',
+    deliveryTime: '2-3 weeks setup',
+    tags: ['AI Security', 'Threat Detection', 'Automated Response', 'Behavioral Analysis', 'Machine Learning'],
+    author: {
+      name: 'Zion AI Security',
+      id: 'zion-ai-security',
+      verified: true
+    },
+    images: ['https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&auto=format'],
+    rating: 4.9,
+    reviewCount: 89,
+    aiScore: 95,
+    featured: true,
+    popular: true,
+    contactInfo: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      website: 'https://ziontechgroup.com'
+    }
+  },
+
+  // Specialized AI Services
+  {
+    id: 'ai-video-analysis',
+    title: 'AI Video Analysis & Computer Vision Solutions',
+    description: 'Advanced computer vision solutions for video analysis, object detection, and automated video processing.',
+    category: 'ai-services',
+    subcategory: 'Computer Vision',
+    price: 8000,
+    currency: 'USD',
+    pricingModel: 'project-based',
+    features: [
+      'Real-time video analysis',
+      'Object detection and tracking',
+      'Facial recognition systems',
+      'Video content moderation',
+      'Automated video editing',
+      'Performance analytics'
+    ],
+    benefits: [
+      'Automate video processing tasks',
+      'Improve content moderation efficiency',
+      'Enhanced security and surveillance',
+      'Real-time insights from video data',
+      'Scalable video analysis platform'
+    ],
+    marketPrice: '$6,000 - $25,000',
+    deliveryTime: '6-8 weeks',
+    tags: ['Computer Vision', 'Video Analysis', 'Object Detection', 'AI Processing', 'Real-time Analytics'],
+    author: {
+      name: 'Zion Vision AI',
+      id: 'zion-vision-ai',
+      verified: true
+    },
+    images: ['https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format'],
+    rating: 4.8,
+    reviewCount: 67,
+    aiScore: 94,
+    featured: true,
+    popular: false,
+    contactInfo: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      website: 'https://ziontechgroup.com'
+    }
+  },
+
+  // Advanced Data Services
+  {
+    id: 'real-time-analytics',
+    title: 'Real-Time Analytics & Streaming Data Solutions',
+    description: 'High-performance real-time analytics platforms for processing streaming data and providing instant insights.',
+    category: 'data-analytics',
+    subcategory: 'Real-Time Analytics',
+    price: 15000,
+    currency: 'USD',
+    pricingModel: 'project-based',
+    features: [
+      'Real-time data streaming',
+      'Live dashboard creation',
+      'Stream processing engines',
+      'Real-time alerting',
+      'Performance optimization',
+      'Scalable infrastructure'
+    ],
+    benefits: [
+      'Instant business insights',
+      'Proactive decision making',
+      'Real-time monitoring capabilities',
+      'Improved operational efficiency',
+      'Competitive advantage through speed'
+    ],
+    marketPrice: '$12,000 - $50,000',
+    deliveryTime: '8-12 weeks',
+    tags: ['Real-Time Analytics', 'Streaming Data', 'Live Dashboards', 'Performance Monitoring', 'Instant Insights'],
+    author: {
+      name: 'Zion Real-Time Solutions',
+      id: 'zion-realtime-solutions',
+      verified: true
+    },
+    images: ['https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format'],
+    rating: 4.9,
+    reviewCount: 45,
+    aiScore: 96,
+    featured: true,
+    popular: true,
+    contactInfo: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      website: 'https://ziontechgroup.com'
+    }
+  },
+
+  // Advanced Cloud Services
+  {
+    id: 'multi-cloud-orchestration',
+    title: 'Multi-Cloud Orchestration & Management',
+    description: 'Comprehensive multi-cloud management platform for orchestrating workloads across AWS, Azure, Google Cloud, and private clouds.',
+    category: 'cloud-services',
+    subcategory: 'Multi-Cloud',
+    price: 20000,
+    currency: 'USD',
+    pricingModel: 'project-based',
+    features: [
+      'Multi-cloud workload orchestration',
+      'Unified management dashboard',
+      'Cost optimization across clouds',
+      'Security and compliance management',
+      'Performance monitoring',
+      'Automated failover'
+    ],
+    benefits: [
+      'Avoid vendor lock-in',
+      'Optimize costs across cloud providers',
+      'Improved reliability and redundancy',
+      'Centralized management',
+      'Flexible cloud strategy'
+    ],
+    marketPrice: '$15,000 - $75,000',
+    deliveryTime: '10-16 weeks',
+    tags: ['Multi-Cloud', 'Orchestration', 'AWS', 'Azure', 'Google Cloud', 'Management Platform'],
+    author: {
+      name: 'Zion Multi-Cloud Solutions',
+      id: 'zion-multicloud-solutions',
+      verified: true
+    },
+    images: ['https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800&auto=format'],
+    rating: 4.9,
+    reviewCount: 34,
+    aiScore: 97,
+    featured: true,
+    popular: false,
+    contactInfo: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      website: 'https://ziontechgroup.com'
+    }
+  },
+
+  // Advanced Web3 Services
+  {
+    id: 'defi-protocol-development',
+    title: 'DeFi Protocol Development & Smart Contract Auditing',
+    description: 'Complete DeFi protocol development including smart contracts, frontend applications, and comprehensive security auditing.',
+    category: 'blockchain',
+    subcategory: 'DeFi Development',
+    price: 30000,
+    currency: 'USD',
+    pricingModel: 'project-based',
+    features: [
+      'Custom DeFi protocol development',
+      'Smart contract development',
+      'Security auditing and testing',
+      'Frontend application development',
+      'Integration with existing DeFi protocols',
+      'Documentation and deployment'
+    ],
+    benefits: [
+      'Secure and audited DeFi protocols',
+      'Custom financial solutions',
+      'Reduced development risks',
+      'Professional DeFi expertise',
+      'Compliance with best practices'
+    ],
+    marketPrice: '$25,000 - $100,000',
+    deliveryTime: '12-20 weeks',
+    tags: ['DeFi', 'Smart Contracts', 'Blockchain', 'Financial Protocols', 'Security Auditing', 'Web3'],
+    author: {
+      name: 'Zion DeFi Solutions',
+      id: 'zion-defi-solutions',
+      verified: true
+    },
+    images: ['https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&auto=format'],
+    rating: 4.9,
+    reviewCount: 23,
+    aiScore: 98,
+    featured: true,
+    popular: true,
+    contactInfo: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      website: 'https://ziontechgroup.com'
+    }
   }
 ];
 
 // Helper functions
+export const getServiceStats = () => {
+  const totalServices = MICRO_SERVICES.length;
+  const featuredCount = getFeaturedServices().length;
+  const popularCount = getPopularServices().length;
+  const totalValue = getTotalServiceValue();
+  const averagePrice = getAverageServicePrice();
+  const highAIScoreCount = getHighAIScoreServices().length;
+  const topRatedCount = getTopRatedServices().length;
+
+  return {
+    totalServices,
+    featuredCount,
+    popularCount,
+    totalValue,
+    averagePrice,
+    highAIScoreCount,
+    topRatedCount
+  };
+};
+
+export const getServicesBySubcategory = (subcategory: string): MicroService[] => {
+  return MICRO_SERVICES.filter(service => service.subcategory === subcategory);
+};
+
+export const getServicesByAuthor = (authorId: string): MicroService[] => {
+  return MICRO_SERVICES.filter(service => service.author.id === authorId);
+};
+
+export const getServicesByTags = (tags: string[]): MicroService[] => {
+  return MICRO_SERVICES.filter(service => 
+    tags.some(tag => service.tags.includes(tag))
+  );
+};
+
+export const getServicesByRating = (minRating: number): MicroService[] => {
+  return MICRO_SERVICES.filter(service => service.rating >= minRating);
+};
+
+export const getServicesByReviewCount = (minReviews: number): MicroService[] => {
+  return MICRO_SERVICES.filter(service => service.reviewCount >= minReviews);
+};
+
+export const getServicesByPricingModel = (model: 'one-time' | 'monthly' | 'hourly' | 'project-based'): MicroService[] => {
+  return MICRO_SERVICES.filter(service => service.pricingModel === model);
+};
+
+export const getServicesByDeliveryTime = (maxWeeks: number): MicroService[] => {
+  return MICRO_SERVICES.filter(service => {
+    const weeks = parseInt(service.deliveryTime.split('-')[0]);
+    return weeks <= maxWeeks;
+  });
+};
+
+export const getHighAIScoreServices = (minScore: number = 90): MicroService[] => {
+  return MICRO_SERVICES.filter(service => service.aiScore >= minScore);
+};
+
+export const getTopRatedServices = (minRating: number = 4.5): MicroService[] => {
+  return MICRO_SERVICES.filter(service => service.rating >= minRating);
+};
+
+export const getServicesByPriceRange = (minPrice: number, maxPrice: number): MicroService[] => {
+  return MICRO_SERVICES.filter(service => 
+    service.price >= minPrice && service.price <= maxPrice
+  );
+};
+
 export const getServicesByCategory = (categoryId: string): MicroService[] => {
   return MICRO_SERVICES.filter(service => service.category === categoryId);
 };
@@ -884,4 +1439,55 @@ export const searchServices = (query: string): MicroService[] => {
     service.description.toLowerCase().includes(lowercaseQuery) ||
     service.tags.some(tag => tag.toLowerCase().includes(lowercaseQuery))
   );
+};
+
+export const getTotalServiceValue = (): number => {
+  return MICRO_SERVICES.reduce((total, service) => total + service.price, 0);
+};
+
+export const getAverageServicePrice = (): number => {
+  const total = getTotalServiceValue();
+  return total / MICRO_SERVICES.length;
+};
+
+export const getCategoryStats = () => {
+  const stats: Record<string, { count: number; totalValue: number; avgRating: number; avgAIScore: number }> = {};
+  
+  SERVICE_CATEGORIES.forEach(category => {
+    const services = getServicesByCategory(category.id);
+    if (services.length > 0) {
+      const totalValue = services.reduce((sum, service) => sum + service.price, 0);
+      const avgRating = services.reduce((sum, service) => sum + service.rating, 0) / services.length;
+      const avgAIScore = services.reduce((sum, service) => sum + service.aiScore, 0) / services.length;
+      
+      stats[category.id] = {
+        count: services.length,
+        totalValue,
+        avgRating: Math.round(avgRating * 100) / 100,
+        avgAIScore: Math.round(avgAIScore * 100) / 100
+      };
+    }
+  });
+  
+  return stats;
+};
+
+export const getTrendingServices = (): MicroService[] => {
+  // Services with high ratings, many reviews, and recent activity
+  return MICRO_SERVICES
+    .filter(service => service.rating >= 4.7 && service.reviewCount >= 50)
+    .sort((a, b) => (b.rating * b.reviewCount) - (a.rating * a.reviewCount))
+    .slice(0, 10);
+};
+
+export const getBudgetFriendlyServices = (maxPrice: number = 5000): MicroService[] => {
+  return getServicesByPriceRange(0, maxPrice)
+    .sort((a, b) => a.price - b.price);
+};
+
+export const getEnterpriseServices = (): MicroService[] => {
+  // High-value services suitable for enterprise clients
+  return MICRO_SERVICES
+    .filter(service => service.price >= 10000 && service.rating >= 4.5)
+    .sort((a, b) => b.price - a.price);
 };
