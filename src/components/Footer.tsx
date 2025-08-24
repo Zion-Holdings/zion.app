@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Twitter, Linkedin, Facebook, Instagram, Github, Mail, Phone, MapPin, ArrowRight, Sparkles, Zap, Brain, Shield, Cloud, Code, Database, Monitor, Link as LinkIcon, PenTool, Globe, Smartphone } from 'lucide-react';
+import { Twitter, Linkedin, Facebook, Instagram, Github, Mail, Phone, MapPin, ArrowRight, Sparkles, Zap, Brain, Shield, Cloud, Code, Database, Monitor, Link as LinkIcon, PenTool, Globe, Smartphone, CheckCircle, Award, Clock, TrendingUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 
-export function EnhancedFooter() {
+export function Footer() {
   const serviceCategories = [
     { name: 'AI & Chatbots', icon: Brain, link: '/micro-saas-services?category=ai-chatbots' },
     { name: 'Cybersecurity', icon: Shield, link: '/micro-saas-services?category=cybersecurity' },
@@ -47,6 +47,13 @@ export function EnhancedFooter() {
     { name: 'Feedback', link: '/feedback' }
   ];
 
+  const achievements = [
+    { icon: Award, text: "500+ Happy Customers", color: "text-yellow-400" },
+    { icon: CheckCircle, text: "99.9% Uptime", color: "text-green-400" },
+    { icon: Clock, text: "24/7 Support", color: "text-blue-400" },
+    { icon: TrendingUp, text: "10+ Services", color: "text-purple-400" }
+  ];
+
   return (
     <footer className="bg-gradient-to-br from-zion-blue-dark via-zion-slate to-zion-blue border-t border-zion-blue-light">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
@@ -66,18 +73,28 @@ export function EnhancedFooter() {
               Discover top AI and tech talent, services, and equipment in one place.
             </p>
             
+            {/* Achievements */}
+            <div className="space-y-3 mb-6">
+              {achievements.map((achievement, index) => (
+                <div key={index} className="flex items-center space-x-3 text-zion-slate-light group hover:text-white transition-colors">
+                  <achievement.icon className={`w-4 h-4 ${achievement.color} group-hover:scale-110 transition-transform`} />
+                  <span className="text-sm">{achievement.text}</span>
+                </div>
+              ))}
+            </div>
+            
             {/* Contact Details */}
             <div className="space-y-3 mb-6">
-              <div className="flex items-center space-x-3 text-zion-slate-light hover:text-zion-cyan transition-colors">
-                <Phone className="w-4 h-4" />
+              <div className="flex items-center space-x-3 text-zion-slate-light hover:text-zion-cyan transition-colors group">
+                <Phone className="w-4 h-4 group-hover:scale-110 transition-transform" />
                 <span>+1 (302) 464-0950</span>
               </div>
-              <div className="flex items-center space-x-3 text-zion-slate-light hover:text-zion-cyan transition-colors">
-                <Mail className="w-4 h-4" />
+              <div className="flex items-center space-x-3 text-zion-slate-light hover:text-zion-cyan transition-colors group">
+                <Mail className="w-4 h-4 group-hover:scale-110 transition-transform" />
                 <span>kleber@ziontechgroup.com</span>
               </div>
-              <div className="flex items-start space-x-3 text-zion-slate-light hover:text-zion-cyan transition-colors">
-                <MapPin className="w-4 h-4 mt-0.5" />
+              <div className="flex items-start space-x-3 text-zion-slate-light hover:text-zion-cyan transition-colors group">
+                <MapPin className="w-4 h-4 mt-0.5 group-hover:scale-110 transition-transform" />
                 <span>364 E Main St STE 1008<br />Middletown, DE 19709</span>
               </div>
             </div>
@@ -146,15 +163,15 @@ export function EnhancedFooter() {
                   className="flex items-center space-x-2 text-zion-slate-light hover:text-zion-cyan transition-colors group"
                 >
                   <service.icon className="w-4 h-4 group-hover:scale-110 transition-transform" />
-                  <span className="text-sm">{service.name}</span>
+                  <span className="text-sm group-hover:translate-x-1 transition-transform">{service.name}</span>
                 </Link>
               ))}
             </div>
             <div className="mt-4">
               <Link to="/micro-saas-services">
-                <Button variant="outline" size="sm" className="w-full border-zion-cyan/30 text-zion-cyan hover:bg-zion-cyan/10 hover:border-zion-cyan/50">
+                <Button variant="outline" size="sm" className="w-full border-zion-cyan/30 text-zion-cyan hover:bg-zion-cyan/10 hover:border-zion-cyan/50 group">
                   View All Services
-                  <ArrowRight className="w-4 h-4 ml-2" />
+                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
             </div>
@@ -168,9 +185,9 @@ export function EnhancedFooter() {
                 <li key={link.name}>
                   <Link 
                     to={link.link} 
-                    className="text-zion-slate-light hover:text-zion-cyan transition-colors text-sm hover:translate-x-1 inline-block transition-transform"
+                    className="text-zion-slate-light hover:text-zion-cyan transition-colors text-sm hover:translate-x-1 inline-block transition-transform group"
                   >
-                    {link.name}
+                    <span className="group-hover:underline">{link.name}</span>
                   </Link>
                 </li>
               ))}
@@ -188,9 +205,9 @@ export function EnhancedFooter() {
                     <li key={link.name}>
                       <Link 
                         to={link.link} 
-                        className="text-zion-slate-light hover:text-zion-cyan transition-colors text-xs"
+                        className="text-zion-slate-light hover:text-zion-cyan transition-colors text-xs group"
                       >
-                        {link.name}
+                        <span className="group-hover:underline">{link.name}</span>
                       </Link>
                     </li>
                   ))}
@@ -203,9 +220,9 @@ export function EnhancedFooter() {
                     <li key={link.name}>
                       <Link 
                         to={link.link} 
-                        className="text-zion-slate-light hover:text-zion-cyan transition-colors text-xs"
+                        className="text-zion-slate-light hover:text-zion-cyan transition-colors text-xs group"
                       >
-                        {link.name}
+                        <span className="group-hover:underline">{link.name}</span>
                       </Link>
                     </li>
                   ))}
@@ -228,9 +245,9 @@ export function EnhancedFooter() {
                 placeholder="Enter your email"
                 className="flex-1 px-4 py-2 bg-zion-blue-light/20 border border-zion-blue-light/30 rounded-lg text-white placeholder-zion-slate-light focus:outline-none focus:ring-2 focus:ring-zion-cyan/50 focus:border-zion-cyan/50"
               />
-              <Button className="bg-gradient-to-r from-zion-cyan to-zion-purple hover:from-zion-cyan/90 hover:to-zion-purple/90 text-white px-6 py-2 rounded-lg transition-all duration-300 hover:scale-105">
+              <Button className="bg-gradient-to-r from-zion-cyan to-zion-purple hover:from-zion-cyan/90 hover:to-zion-purple/90 text-white px-6 py-2 rounded-lg transition-all duration-300 hover:scale-105 group">
                 Subscribe
-                <ArrowRight className="w-4 h-4 ml-2" />
+                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
             </div>
           </div>

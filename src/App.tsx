@@ -2,6 +2,8 @@ import React from 'react';
 import { Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
+import { Header } from './components/Header';
+import { Footer } from './components/Footer';
 
 // Core pages
 const Home = React.lazy(() => import('./pages/Home'));
@@ -17,6 +19,7 @@ const baseRoutes = [
 const App = () => {
   return (
     <div className="App">
+      <Header />
       <Suspense fallback={
         <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 flex items-center justify-center">
           <div className="text-center">
@@ -31,6 +34,7 @@ const App = () => {
           ))}
         </Routes>
       </Suspense>
+      <Footer />
     </div>
   );
 };
