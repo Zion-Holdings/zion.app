@@ -17,8 +17,6 @@
     "paths": {
       "@/*": [
         "./src/*"
-<<<<<<< HEAD
-=======
       ],
       "@/pages/*": [
         "./src/pages/*"
@@ -37,7 +35,6 @@
       ],
       "@/styles/*": [
         "./src/styles/*"
->>>>>>> cursor/enhance-app-with-new-services-and-futuristic-design-887f
       ]
     },
     /* Bundler mode */
@@ -55,20 +52,12 @@
     "incremental": true,
     "jsx": "react-jsx",
     "typeRoots": [
-<<<<<<< HEAD
-      "./node_modules/@types"
-    ]
-  },
-  "include": ["src"],
-  "references": [{ "path": "./tsconfig.node.json" }]
-=======
       "./node_modules/@types",
       "./src/types"
     ],
     "types": [
       "node"
     ],
-    "jsx": "preserve",
     "noEmit": true,
     "isolatedModules": true,
     "forceConsistentCasingInFileNames": true
@@ -101,6 +90,6 @@
     "pages/**",
     "data/**",
     "utils/**"
-  ]
->>>>>>> cursor/enhance-app-with-new-services-and-futuristic-design-887f
+  ],
+  "references": [{ "path": "./tsconfig.node.json" }]
 }
