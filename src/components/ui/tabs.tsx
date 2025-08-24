@@ -51,6 +51,7 @@ export const TabsTrigger: React.FC<TabsTriggerProps> = ({ value, children, class
         className
       )}
       disabled={disabled}
+      data-state={value === value ? "active" : "inactive"}
     >
       {children}
     </button>
@@ -59,7 +60,13 @@ export const TabsTrigger: React.FC<TabsTriggerProps> = ({ value, children, class
 
 export const TabsContent: React.FC<TabsContentProps> = ({ value, children, className }) => {
   return (
-    <div className={cn("mt-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2", className)}>
+    <div
+      className={cn(
+        "mt-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+        className
+      )}
+      data-state={value === value ? "active" : "inactive"}
+    >
       {children}
     </div>
   );

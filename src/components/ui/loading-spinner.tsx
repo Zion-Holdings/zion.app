@@ -1,195 +1,60 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { cn } from '@/lib/utils';
 
 interface LoadingSpinnerProps {
   size?: 'sm' | 'md' | 'lg' | 'xl';
+  variant?: 'default' | 'primary' | 'secondary' | 'white';
   className?: string;
-  text?: string;
-  variant?: 'default' | 'pulse' | 'dots' | 'bars';
 }
 
 export function LoadingSpinner({ 
   size = 'md', 
-  className, 
-  text,
-  variant = 'default' 
+  variant = 'default',
+  className = '' 
 }: LoadingSpinnerProps) {
   const sizeClasses = {
     sm: 'w-4 h-4',
-    md: 'w-8 h-8',
-    lg: 'w-12 h-12',
-    xl: 'w-16 h-16'
+    md: 'w-6 h-6',
+    lg: 'w-8 h-8',
+    xl: 'w-12 h-12'
   };
 
-  const textSizeClasses = {
-    sm: 'text-sm',
-    md: 'text-base',
-    lg: 'text-lg',
-    xl: 'text-xl'
-  };
-
-  const renderSpinner = () => {
-    switch (variant) {
-      case 'pulse':
-        return (
-          <div className={cn("flex space-x-1", className)}>
-            {[0, 1, 2].map((i) => (
-              <motion.div
-                key={i}
-                className="w-2 h-2 bg-zion-cyan rounded-full"
-                animate={{
-                  scale: [1, 1.2, 1],
-                  opacity: [0.5, 1, 0.5]
-                }}
-                transition={{
-                  duration: 1.4,
-                  repeat: Infinity,
-                  delay: i * 0.2
-                }}
-              />
-            ))}
-          </div>
-        );
-
-      case 'dots':
-        return (
-          <div className={cn("flex space-x-1", className)}>
-            {[0, 1, 2].map((i) => (
-              <motion.div
-                key={i}
-                className="w-2 h-2 bg-zion-purple rounded-full"
-                animate={{
-                  y: [0, -10, 0]
-                }}
-                transition={{
-                  duration: 0.6,
-                  repeat: Infinity,
-                  delay: i * 0.1
-                }}
-              />
-            ))}
-          </div>
-        );
-
-      case 'bars':
-        return (
-          <div className={cn("flex space-x-1", className)}>
-            {[0, 1, 2, 3].map((i) => (
-              <motion.div
-                key={i}
-                className="w-1 bg-zion-cyan rounded-full"
-                animate={{
-                  height: [20, 40, 20]
-                }}
-                transition={{
-                  duration: 1,
-                  repeat: Infinity,
-                  delay: i * 0.1
-                }}
-              />
-            ))}
-          </div>
-        );
-
-      default:
-        return (
-          <motion.div
-            className={cn(
-              "border-2 border-zion-cyan/30 border-t-zion-cyan rounded-full",
-              sizeClasses[size],
-              className
-            )}
-            animate={{ rotate: 360 }}
-            transition={{
-              duration: 1,
-              repeat: Infinity,
-              ease: "linear"
-            }}
-          />
-        );
-    }
+  const variantClasses = {
+    default: 'text-zion-cyan',
+    primary: 'text-zion-blue',
+    secondary: 'text-zion-purple',
+    white: 'text-white'
   };
 
   return (
-    <div className="flex flex-col items-center justify-center space-y-4">
-      {renderSpinner()}
-      {text && (
-        <motion.p
-          className={cn("text-zion-slate-light font-medium", textSizeClasses[size])}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.2 }}
-        >
-          {text}
-        </motion.p>
-      )}
+    <div
+      className={`animate-spin rounded-full border-2 border-current border-t-transparent ${sizeClasses[size]} ${variantClasses[variant]} ${className}`}
+      role="status"
+      aria-label="Loading"
+    >
+      <span className="sr-only">Loading...</span>
     </div>
   );
 }
 
 // Page loading component
-export function PageLoader({ 
-  text = "Loading...",
-  className 
-}: { 
-  text?: string;
-  className?: string;
-}) {
+export function PageLoader() {
   return (
-    <div className={cn("min-h-screen flex items-center justify-center bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-slate-dark", className)}>
-      <div className="text-center">
-        <LoadingSpinner size="xl" variant="default" />
-        <motion.p
-          className="mt-6 text-xl text-zion-cyan font-medium"
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-        >
-          {text}
-        </motion.p>
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-900 via-blue-800 to-slate-900">
+      <div className="text-center text-white">
+        <LoadingSpinner size="xl" variant="white" className="mx-auto mb-4" />
+        <h1 className="text-2xl font-bold">Loading Zion Tech Group...</h1>
+        <p className="mt-2 text-blue-200">Please wait while we prepare your experience.</p>
       </div>
     </div>
   );
 }
 
-// Skeleton loader component
-export function Skeleton({ 
-  className,
-  count = 1 
-}: { 
-  className?: string;
-  count?: number;
-}) {
+// Inline loading component
+export function InlineLoader({ size = 'sm', variant = 'default' }: LoadingSpinnerProps) {
   return (
-    <>
-      {Array.from({ length: count }).map((_, i) => (
-        <motion.div
-          key={i}
-          className={cn(
-            "bg-zion-blue-light/20 rounded-md animate-pulse",
-            className
-          )}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: i * 0.1 }}
-        />
-      ))}
-    </>
-  );
-}
-
-// Card skeleton
-export function CardSkeleton() {
-  return (
-    <div className="bg-zion-blue-dark/50 border border-zion-blue-light/30 rounded-xl p-6 space-y-4">
-      <Skeleton className="h-8 w-3/4" />
-      <Skeleton className="h-4 w-full" />
-      <Skeleton className="h-4 w-2/3" />
-      <div className="flex space-x-2">
-        <Skeleton className="h-6 w-16" />
-        <Skeleton className="h-6 w-20" />
-      </div>
+    <div className="inline-flex items-center">
+      <LoadingSpinner size={size} variant={variant} className="mr-2" />
+      <span className="text-sm text-gray-600">Loading...</span>
     </div>
   );
 }

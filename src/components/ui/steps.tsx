@@ -25,7 +25,7 @@ export const Steps: React.FC<StepsProps> = ({ children, className, currentStep =
           return React.cloneElement(child, {
             isActive: index === currentStep,
             isCompleted: index < currentStep,
-          });
+          } as any);
         }
         return child;
       })}

@@ -1,47 +1,44 @@
-import { useRouter } from "next/router";
-import Link from "next/link";
-import { useEffect } from "react";
-import Head from "next/head";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-const NotFound = () => {
-  const router = useRouter();
-
-  useEffect(() => {
-    console.error(
-      "404 Error: User attempted to access non-existent route:",
-      router.asPath
-    );
-  }, [router.asPath]);
-
-  const path = router.asPath || '';
-  const title = path && path !== '/' ? `404 – ${path} not found` : '404 – Page Not Found';
-  const description = `The page at ${path || 'this URL'} could not be found.`;
-  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || '';
-  const canonical = baseUrl && path ? `${baseUrl}${path}` : undefined;
-
+export default function NotFound() {
   return (
-    <>
-      <Head>
-        <title>{title}</title>
-        <meta name="description" content={description} />
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={description} />
-        {canonical && <meta property="og:url" content={canonical} />}
-      </Head>
-      <div className="flex flex-1 items-center justify-center bg-gray-100">
-        <div className="text-center p-6">
-          <h1 className="text-4xl font-bold mb-4 text-gray-800">404</h1>
-          <p className="text-xl text-gray-700 mb-4">Oops! Page not found</p>
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 flex items-center justify-center">
+      <div className="text-center px-4">
+        <div className="text-9xl font-bold text-blue-400 mb-6">404</div>
+        <h1 className="text-4xl font-bold text-white mb-4">Page Not Found</h1>
+        <p className="text-xl text-blue-100 mb-8 max-w-md mx-auto">
+          Oops! The page you're looking for doesn't exist. It might have been moved, 
+          deleted, or you entered the wrong URL.
+        </p>
+        
+        <div className="space-y-4">
           <Link
-            href="/"
-            className="text-blue-600 hover:text-blue-800 underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded"
+            to="/"
+            className="inline-block bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105"
           >
-            Return to Home
+            Go Home
           </Link>
+          
+          <div className="text-blue-200">
+            <p className="mb-2">Or try these pages:</p>
+            <div className="flex justify-center gap-4">
+              <Link
+                to="/about"
+                className="text-blue-300 hover:text-white transition-colors duration-200"
+              >
+                About
+              </Link>
+              <Link
+                to="/contact"
+                className="text-blue-300 hover:text-white transition-colors duration-200"
+              >
+                Contact
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
-    </>
+    </div>
   );
-};
-
-export default NotFound;
+}
