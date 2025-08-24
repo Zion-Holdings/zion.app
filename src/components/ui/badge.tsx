@@ -11,12 +11,12 @@ export const Badge: React.FC<BadgeProps> = ({
   variant = 'default', 
   className = '' 
 }) => {
-  const baseClasses = 'inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium';
+  const baseClasses = 'inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2';
   
   const variantClasses = {
-    default: 'bg-zion-blue text-white',
-    secondary: 'bg-gray-100 text-gray-800',
-    outline: 'border border-gray-200 text-gray-700'
+    default: 'bg-zion-cyan text-white',
+    secondary: 'bg-zion-blue-light text-zion-cyan',
+    outline: 'border border-zion-cyan text-zion-cyan'
   };
   
   const classes = `${baseClasses} ${variantClasses[variant]} ${className}`;

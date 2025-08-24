@@ -7,59 +7,39 @@ interface CardProps {
 
 export const Card: React.FC<CardProps> = ({ children, className = '' }) => {
   return (
-    <div className={`bg-white rounded-lg border border-gray-200 shadow-sm ${className}`}>
+    <div className={`rounded-lg border border-zion-blue-light bg-zion-blue-dark p-6 ${className}`}>
       {children}
     </div>
   );
 };
 
-interface CardHeaderProps {
-  children: React.ReactNode;
-  className?: string;
-}
-
-export const CardHeader: React.FC<CardHeaderProps> = ({ children, className = '' }) => {
+export const CardHeader: React.FC<CardProps> = ({ children, className = '' }) => {
   return (
-    <div className={`px-6 py-4 border-b border-gray-200 ${className}`}>
+    <div className={`flex flex-col space-y-1.5 p-0 ${className}`}>
       {children}
     </div>
   );
 };
 
-interface CardTitleProps {
-  children: React.ReactNode;
-  className?: string;
-}
-
-export const CardTitle: React.FC<CardTitleProps> = ({ children, className = '' }) => {
+export const CardTitle: React.FC<CardProps> = ({ children, className = '' }) => {
   return (
-    <h3 className={`text-lg font-semibold text-gray-900 ${className}`}>
+    <h3 className={`text-lg font-semibold leading-none tracking-tight text-white ${className}`}>
       {children}
     </h3>
   );
 };
 
-interface CardDescriptionProps {
-  children: React.ReactNode;
-  className?: string;
-}
-
-export const CardDescription: React.FC<CardDescriptionProps> = ({ children, className = '' }) => {
+export const CardDescription: React.FC<CardProps> = ({ children, className = '' }) => {
   return (
-    <p className={`text-sm text-gray-600 ${className}`}>
+    <p className={`text-sm text-zion-slate-light ${className}`}>
       {children}
     </p>
   );
 };
 
-interface CardContentProps {
-  children: React.ReactNode;
-  className?: string;
-}
-
-export const CardContent: React.FC<CardContentProps> = ({ children, className = '' }) => {
+export const CardContent: React.FC<CardProps> = ({ children, className = '' }) => {
   return (
-    <div className={`px-6 py-4 ${className}`}>
+    <div className={`p-0 pt-4 ${className}`}>
       {children}
     </div>
   );
