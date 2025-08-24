@@ -12,13 +12,6 @@ const categories = [
     color: "from-purple-500 to-indigo-600",
   },
   {
-    title: "Micro SAAS",
-    description: "Innovative software solutions and business automation tools",
-    icon: <Lightbulb className="w-10 h-10" />,
-    link: "/micro-saas-services",
-    color: "from-emerald-500 to-green-600",
-  },
-  {
     title: "Talents",
     description: "Connect with AI experts, developers, and tech specialists",
     icon: <Users className="w-10 h-10" />,
@@ -32,6 +25,13 @@ const categories = [
     link: "/equipment",
     color: "from-amber-500 to-orange-600",
   },
+  {
+    title: "Innovation",
+    description: "Discover cutting-edge solutions and tech breakthroughs",
+    icon: <Lightbulb className="w-10 h-10" />,
+    link: "/category/innovation",
+    color: "from-emerald-500 to-green-600",
+  },
 ];
 
 const specialServices = [
@@ -40,16 +40,8 @@ const specialServices = [
     link: "/it-onsite-services"
   },
   {
-    title: "AI Chatbot Builder",
-    link: "/micro-saas-services#ai-chatbot-builder"
-  },
-  {
-    title: "Cloud Migration Pro",
-    link: "/micro-saas-services#cloud-migration-pro"
-  },
-  {
-    title: "Cybersecurity Suite",
-    link: "/micro-saas-services#cybersecurity-suite"
+    title: "Comprehensive Services",
+    link: "/comprehensive-services"
   }
 ];
 
