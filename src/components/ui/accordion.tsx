@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 interface AccordionProps {
@@ -21,7 +22,7 @@ interface AccordionContentProps {
   className?: string;
 }
 
-export function Accordion({ type = 'single', collapsible = false, children }: AccordionProps) {
+export function Accordion({ children }: AccordionProps) {
   return (
     <div className="w-full">
       {children}
@@ -29,7 +30,7 @@ export function Accordion({ type = 'single', collapsible = false, children }: Ac
   );
 }
 
-export function AccordionItem({ value, children }: AccordionItemProps) {
+export function AccordionItem({ children }: AccordionItemProps) {
   const [isOpen, setIsOpen] = React.useState(false);
   
   return (

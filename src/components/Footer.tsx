@@ -1,6 +1,6 @@
-import React from 'react';
+
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Clock, ArrowRight, Facebook, Twitter, Linkedin, Instagram, Github } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, ArrowRight, Facebook, Twitter, Instagram, Github } from 'lucide-react';
 
 export function Footer() {
   return (
@@ -117,7 +117,6 @@ export function Footer() {
               {[
                 { icon: Facebook, href: '#', label: 'Facebook' },
                 { icon: Twitter, href: '#', label: 'Twitter' },
-                { icon: LinkedIn, href: '#', label: 'LinkedIn' },
                 { icon: Instagram, href: '#', label: 'Instagram' },
                 { icon: Github, href: '#', label: 'Github' }
               ].map((social) => (

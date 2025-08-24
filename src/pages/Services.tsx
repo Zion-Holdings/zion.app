@@ -4,7 +4,7 @@ import { COMPREHENSIVE_SERVICES } from '../data/comprehensiveServices';
 import { Link } from 'react-router-dom';
 import { Star, CheckCircle } from 'lucide-react';
 
-export function Services() {
+export default function Services() {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [searchTerm, setSearchTerm] = useState<string>('');
 
@@ -300,5 +300,3 @@ export function Services() {
     </div>
   );
 }
-
-export default Services;
