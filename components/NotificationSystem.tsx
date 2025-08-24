@@ -41,6 +41,10 @@ interface NotificationProviderProps {
 export function NotificationProvider({ children, maxNotifications = 5 }: NotificationProviderProps) {
   const [notifications, setNotifications] = useState<Notification[]>([]);
 
+  const removeNotification = useCallback((id: string) => {
+    setNotifications(prev => prev.filter(n => n.id !== id));
+  }, []);
+
   const addNotification = useCallback((notification: Omit<Notification, 'id'>) => {
     const id = Math.random().toString(36).substr(2, 9);
     const newNotification: Notification = {
@@ -64,11 +68,7 @@ export function NotificationProvider({ children, maxNotifications = 5 }: Notific
         removeNotification(id);
       }, newNotification.duration);
     }
-  }, [maxNotifications]);
-
-  const removeNotification = useCallback((id: string) => {
-    setNotifications(prev => prev.filter(n => n.id !== id));
-  }, []);
+  }, [maxNotifications, removeNotification]);
 
   const clearAll = useCallback(() => {
     setNotifications([]);

@@ -40,7 +40,7 @@ export default function AdvancedSearch() {
   const [selectedResult, setSelectedResult] = useState<number>(-1);
 
   // Mock data - in production, this would come from your backend
-  const mockData: SearchResult[] = [
+  const mockData = useMemo<SearchResult[]>(() => [
     {
       id: '1',
       title: 'Micro SaaS Development',
@@ -86,10 +86,10 @@ export default function AdvancedSearch() {
       tags: ['Security', 'Cybersecurity', 'Protection'],
       relevance: 0.82
     }
-  ];
+  ], []);
 
   // Search suggestions
-  const searchSuggestions: SearchSuggestion[] = [
+  const searchSuggestions = useMemo<SearchSuggestion[]>(() => [
     { text: 'SaaS', type: 'popular', count: 45 },
     { text: 'AI', type: 'popular', count: 32 },
     { text: 'Cloud', type: 'popular', count: 28 },
@@ -100,27 +100,13 @@ export default function AdvancedSearch() {
     { text: 'DevOps', type: 'recent' },
     { text: 'Blockchain', type: 'related' },
     { text: 'IoT', type: 'related' }
-  ];
+  ], []);
 
   // Filter options
   const filterOptions = {
     types: ['service', 'technology', 'page', 'content'],
     tags: ['SaaS', 'AI', 'Cloud', 'Security', 'Development', 'React', 'Next.js', 'AWS', 'Azure', 'GCP']
   };
-
-  // Debounced search
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      if (query.trim()) {
-        performSearch();
-      } else {
-        setResults([]);
-        setSuggestions([]);
-      }
-    }, 300);
-
-    return () => clearTimeout(timer);
-  }, [query, filters]);
 
   const performSearch = useCallback(async () => {
     setIsSearching(true);
@@ -155,7 +141,21 @@ export default function AdvancedSearch() {
     setSuggestions(querySuggestions);
     
     setIsSearching(false);
-  }, [query, filters]);
+  }, [query, filters, mockData, searchSuggestions]);
+
+  // Debounced search
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (query.trim()) {
+        performSearch();
+      } else {
+        setResults([]);
+        setSuggestions([]);
+      }
+    }, 300);
+
+    return () => clearTimeout(timer);
+  }, [query, filters, performSearch]);
 
   const handleSearch = (searchQuery: string) => {
     setQuery(searchQuery);

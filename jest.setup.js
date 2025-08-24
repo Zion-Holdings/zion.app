@@ -1,18 +1,13 @@
-// Basic Jest setup
-import @testing-library/jest-dom';
-
-// Mock environment variables
-process.env.NEXT_PUBLIC_SUPABASE_URL = https://test.supabase.co';
-process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY = test-key';
+import '@testing-library/jest-dom';
 
 // Mock Next.js router
 jest.mock('next/router', () => ({
   useRouter() {
     return {
-      route: /',
-      pathname: /',
+      route: '/',
+      pathname: '/',
       query: {},
-      asPath: /',
+      asPath: '/',
       push: jest.fn(),
       pop: jest.fn(),
       reload: jest.fn(),
@@ -22,11 +17,11 @@ jest.mock('next/router', () => ({
       events: {
         on: jest.fn(),
         off: jest.fn(),
-        emit: jest.fn()
+        emit: jest.fn(),
       },
-      isFallback: false
+      isFallback: false,
     };
-  }
+  },
 }));
 
 // Mock Next.js Image component
@@ -35,5 +30,35 @@ jest.mock('next/image', () => ({
   default: (props) => {
     // eslint-disable-next-line @next/next/no-img-element
     return <img {...props} />;
-  }
+  },
+}));
+
+// Mock Next.js Link component
+jest.mock('next/link', () => ({
+  __esModule: true,
+  default: ({ children, href, ...props }) => {
+    return (
+      <a href={href} {...props}>
+        {children}
+      </a>
+    );
+  },
+}));
+
+// Global test utilities
+global.ResizeObserver = jest.fn().mockImplementation(() => ({
+  observe: jest.fn(),
+  unobserve: jest.fn(),
+  disconnect: jest.fn(),
+}));
+
+global.matchMedia = jest.fn().mockImplementation((query) => ({
+  matches: false,
+  media: query,
+  onchange: null,
+  addListener: jest.fn(),
+  removeListener: jest.fn(),
+  addEventListener: jest.fn(),
+  removeEventListener: jest.fn(),
+  dispatchEvent: jest.fn(),
 }));
