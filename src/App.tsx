@@ -21,11 +21,15 @@ import {
   DeveloperRoutes
 } from './routes';
 const Home = React.lazy(() => import('./pages/Home'));
+const About = React.lazy(() => import('./pages/About'));
 const AIMatcherPage = React.lazy(() => import('./pages/AIMatcher'));
 const TalentDirectory = React.lazy(() => import('./pages/TalentDirectory'));
 const TalentsPage = React.lazy(() => import('./pages/TalentsPage'));
 const ServicesPage = React.lazy(() => import('./pages/ServicesPage'));
-const ServicesShowcase = React.lazy(() => import('./pages/ServicesShowcase'));
+const ServicesHubPage = React.lazy(() => import('./pages/ServicesHubPage'));
+const AIServicesPage = React.lazy(() => import('./pages/AIServicesPage'));
+const ITServicesPage = React.lazy(() => import('./pages/ITServicesPage'));
+const DigitalTransformationPage = React.lazy(() => import('./pages/DigitalTransformationPage'));
 const EquipmentPage = React.lazy(() => import('./pages/EquipmentPage'));
 const EquipmentDetail = React.lazy(() => import('./pages/EquipmentDetail'));
 const Analytics = React.lazy(() => import('./pages/Analytics'));
@@ -43,20 +47,19 @@ const ContactPage = React.lazy(() => import('./pages/Contact'));
 const ZionHireAI = React.lazy(() => import('./pages/ZionHireAI'));
 const RequestQuotePage = React.lazy(() => import('./pages/RequestQuote'));
 
-// New Micro SAAS Service Pages
-const AIContentGenerator = React.lazy(() => import('./pages/AIContentGenerator'));
-const CybersecuritySuite = React.lazy(() => import('./pages/CybersecuritySuite'));
-const CloudCostOptimizer = React.lazy(() => import('./pages/CloudCostOptimizer'));
-
 const baseRoutes = [
   { path: '/', element: <Home /> },
+  { path: '/about', element: <About /> },
   { path: '/match', element: <AIMatcherPage /> },
   { path: '/login', element: <Login /> },
   { path: '/signup', element: <Signup /> },
   { path: '/talent', element: <TalentDirectory /> },
   { path: '/talents', element: <TalentsPage /> },
   { path: '/services', element: <ServicesPage /> },
-  { path: '/services-showcase', element: <ServicesShowcase /> },
+  { path: '/services-hub', element: <ServicesHubPage /> },
+  { path: '/ai-services', element: <AIServicesPage /> },
+  { path: '/it-services', element: <ITServicesPage /> },
+  { path: '/digital-transformation', element: <DigitalTransformationPage /> },
   { path: '/it-onsite-services', element: <ITOnsiteServicesPage /> },
   { path: '/categories', element: <Categories /> },
   { path: '/equipment', element: <EquipmentPage /> },
@@ -72,10 +75,6 @@ const baseRoutes = [
   { path: '/request-quote', element: <RequestQuotePage /> },
   { path: '/blog', element: <Blog /> },
   { path: '/blog/:slug', element: <BlogPost /> },
-  // New Micro SAAS Service Routes
-  { path: '/ai-content-generator', element: <AIContentGenerator /> },
-  { path: '/cybersecurity-suite', element: <CybersecuritySuite /> },
-  { path: '/cloud-optimizer', element: <CloudCostOptimizer /> },
 ];
 
 const App = () => {
