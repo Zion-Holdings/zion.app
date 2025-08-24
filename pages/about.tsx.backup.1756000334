@@ -1,3 +1,83 @@
+<<<<<<< HEAD
+import React from 'react';
+import Head from 'next/head';
+import { motion } from 'framer-motion';
+import { 
+  Brain, Shield, Rocket, Cpu, Database, Atom, Users, Award, 
+  Globe, Code, Server, Network, CheckCircle, TrendingUp
+} from 'lucide-react';
+import EnhancedNavigation from '../components/EnhancedNavigation';
+import EnhancedFooter from '../components/EnhancedFooter';
+
+export default function AboutPage() {
+  const stats = [
+    { number: '35+', label: 'Real Micro SaaS Services', icon: Rocket },
+    { number: '99.9%', label: 'Uptime Guarantee', icon: Shield },
+    { number: '14 Days', label: 'Free Trial', icon: Award },
+    { number: '24/7', label: 'Expert Support', icon: Users }
+  ];
+
+  const values = [
+    {
+      icon: Brain,
+      title: 'Innovation First',
+      description: 'We push the boundaries of what\'s possible with cutting-edge AI, quantum computing, and emerging technologies.',
+      color: 'from-purple-500 to-pink-500'
+    },
+    {
+      icon: Shield,
+      title: 'Trust & Security',
+      description: 'Enterprise-grade security with SOC 2 compliance and quantum-resistant encryption for your peace of mind.',
+      color: 'from-red-500 to-orange-500'
+    },
+    {
+      icon: Globe,
+      title: 'Global Impact',
+      description: 'Our solutions serve businesses worldwide, from startups to Fortune 500 companies, driving digital transformation.',
+      color: 'from-blue-500 to-cyan-500'
+    },
+    {
+      icon: Users,
+      title: 'Customer Success',
+      description: 'Your success is our mission. We provide personalized support and guidance every step of the way.',
+      color: 'from-green-500 to-teal-500'
+    }
+  ];
+
+  const team = [
+    {
+      name: 'Kleber',
+      role: 'Founder & CEO',
+      description: 'Visionary leader with 15+ years in AI and emerging technologies',
+      image: '/team/kleber.jpg'
+    },
+    {
+      name: 'AI Research Team',
+      role: 'Innovation Lab',
+      description: 'World-class researchers pushing the boundaries of AI consciousness',
+      image: '/team/ai-team.jpg'
+    },
+    {
+      name: 'Quantum Engineers',
+      role: 'Quantum Computing',
+      description: 'Experts in quantum algorithms and quantum-resistant security',
+      image: '/team/quantum-team.jpg'
+    }
+  ];
+
+  return (
+    <>
+      <Head>
+        <title>About Us - Zion Tech Group | Revolutionary AI & Quantum Technology</title>
+        <meta name="description" content="Learn about Zion Tech Group's mission to revolutionize business with cutting-edge AI, quantum computing, and emerging technologies. Meet our team of innovators." />
+        <meta name="keywords" content="Zion Tech Group, about us, AI technology, quantum computing, emerging technology, team, mission" />
+        <meta property="og:title" content="About Us - Zion Tech Group" />
+        <meta property="og:description" content="Learn about Zion Tech Group's mission to revolutionize business with cutting-edge AI, quantum computing, and emerging technologies." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://ziontechgroup.com/about" />
+        <link rel="canonical" href="https://ziontechgroup.com/about" />
+      </Head>
+=======
 import type { NextPage } from 'next';
 import Layout from '../components/Layout';
 import { motion } from 'framer-motion';
@@ -319,6 +399,7 @@ const About: NextPage = () => {
     </Layout>
   );
 };
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-b8f6
 
       <EnhancedNavigation />
 

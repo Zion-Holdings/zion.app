@@ -1,9 +1,29 @@
+<<<<<<< HEAD
+import React from 'react';
+import Head from 'next/head';
+import Link from 'next/link';
+import {
+  Mail, Phone, MapPin, ArrowRight, MessageSquare,
+  Clock, Globe, Building, Users, Award, Shield, Home, ChevronRight, Brain
+} from 'lucide-react';
+=======
 import type { NextPage } from 'next';
 import Layout from '../components/Layout';
 import ContactForm from '../components/forms/ContactForm';
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-b8f6
 
 export default function ContactPage() {
   return (
+<<<<<<< HEAD
+    <>
+      <Head>
+        <title>Contact Zion Tech Group | Get in Touch for Technology Solutions</title>
+        <meta name="description" content="Contact Zion Tech Group for revolutionary quantum AI solutions, autonomous systems, and cutting-edge technology platforms. Get expert consultation today." />
+        <meta name="keywords" content="contact Zion Tech Group, technology consultation, AI solutions, quantum computing, autonomous systems" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+=======
     <Layout
       title="Contact Us - Zion Tech Group"
       description="Get in touch with Zion Tech Group. Our team is ready to discuss your technology needs and help transform your business."
@@ -12,6 +32,7 @@ export default function ContactPage() {
     </Layout>
   );
 };
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-b8f6
 
       <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
         {/* Navigation */}

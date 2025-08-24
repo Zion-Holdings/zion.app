@@ -1,8 +1,13 @@
 module.exports = {
   extends: ['next/core-web-vitals'],
   rules: {
+<<<<<<< HEAD
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
+=======
     'react/no-unescaped-entities': 'off',
     'no-unused-vars': 'warn',
     '@next/next/no-img-element': 'warn'
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-b8f6
   }
 };
