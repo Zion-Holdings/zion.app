@@ -1,0 +1,35 @@
+name: Image Optimize
+
+on:
+  schedule:
+    - cron: '0 2 * * *' # daily at 02:00 UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  optimize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      - name: Install imagemin deps
+        run: npm i --no-audit --no-fund imagemin imagemin-mozjpeg imagemin-pngquant imagemin-svgo fast-glob
+      - name: Optimize images
+        run: node scripts/optimize-images.cjs
+      - name: Commit optimized images
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add public
+            git commit -m "chore(automation): optimize public images"
+            git push
+          else
+            echo "No image changes to commit"
+          fi

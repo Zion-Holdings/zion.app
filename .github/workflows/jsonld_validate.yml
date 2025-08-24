@@ -1,0 +1,34 @@
+name: JSON-LD Validate
+
+on:
+  schedule:
+    - cron: '15 3 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      - name: Run validator
+        run: node scripts/validate-jsonld.cjs > jsonld-report.json || echo "VALIDATION_FAILED" > failed
+      - name: Upload report
+        uses: actions/upload-artifact@v4
+        with:
+          name: jsonld-report
+          path: jsonld-report.json
+      - name: Create issue on failure
+        if: ${{ hashFiles('failed') != '' }}
+        run: |
+          TITLE="JSON-LD validation failed"
+          BODY="One or more required JSON-LD types missing. See attached report artifact."
+          echo "$BODY" > body.txt
+          gh issue create --title "$TITLE" --body-file body.txt || true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
