@@ -1,12 +1,9 @@
 import React from 'react';
-
 export function SkipLink() {
   return (
-    <a href="#main-content" className="skip-link">
-      Skip to content
-    </a>
+    <div>
+      <h1>Component</h1>
+      <p>Component placeholder</p>
+    </div>
   );
 }
-
-export default SkipLink;
-

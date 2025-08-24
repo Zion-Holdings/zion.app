@@ -1,3 +1,9 @@
-
-// Export all job application components from the job-application folder
-export * from './job-application';
+import React from 'react';
+export function ApplyToJobModal() {
+  return (
+    <div>
+      <h1>Component</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}
