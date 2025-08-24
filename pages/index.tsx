@@ -12,6 +12,7 @@ import AdvancedFeaturesShowcase from '../components/AdvancedFeaturesShowcase';
 import AdvancedPricing from '../components/AdvancedPricing';
 import AdvancedTeamShowcase from '../components/AdvancedTeamShowcase';
 import AdvancedCaseStudies from '../components/AdvancedCaseStudies';
+import AdvancedNewsletter from '../components/AdvancedNewsletter';
 
 const Home: NextPage = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -305,6 +306,9 @@ const Home: NextPage = () => {
             </div>
           </div>
         </section>
+
+        {/* Advanced Newsletter Section */}
+        <AdvancedNewsletter />
 
         {/* Advanced Contact Form Section */}
         <AdvancedContactForm />
