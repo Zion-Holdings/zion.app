@@ -5,6 +5,7 @@ import { Logo } from './Logo';
 import { UserMenu } from './UserMenu';
 import { LanguageSelector } from './LanguageSelector';
 import { MainNavigation } from '@/layout/MainNavigation';
+import { MobileMenu } from './MobileMenu';
 import { useAuth } from '@/hooks/useAuth';
 import { useWhitelabel } from '@/context/WhitelabelContext';
 import { EnhancedSearchInput } from "@/components/search/EnhancedSearchInput";
@@ -59,10 +60,13 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
       <div className="container flex h-16 items-center px-4 sm:px-6">
         <Logo customLogo={customLogo} customColor={effectiveTheme?.primaryColor} />
 
-        <div className="ml-6 flex-1">
+        {/* Desktop Navigation */}
+        <div className="ml-6 flex-1 hidden md:block">
           <MainNavigation />
         </div>
-        <form onSubmit={handleSubmit} className="hidden md:block w-64 mx-4">
+
+        {/* Desktop Search */}
+        <form onSubmit={handleSubmit} className="hidden lg:block w-64 mx-4">
           <EnhancedSearchInput
             value={query}
             onChange={setQuery}
@@ -74,10 +78,14 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
           />
         </form>
 
-        <div className="flex items-center gap-2">
+        {/* Desktop Actions */}
+        <div className="flex items-center gap-2 hidden md:flex">
           <LanguageSelector />
           {!hideLogin && <UserMenu />}
         </div>
+
+        {/* Mobile Menu */}
+        <MobileMenu className="md:hidden" />
       </div>
     </header>
   );
