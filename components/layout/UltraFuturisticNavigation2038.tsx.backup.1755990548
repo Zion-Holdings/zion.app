@@ -1,0 +1,939 @@
+import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { motion, AnimatePresence } from 'framer-motion';
+import { 
+  Menu, ChevronDown, X, Phone, Mail, MapPin, ArrowRight,
+  Brain, Rocket, Target, Atom, Shield,
+  DollarSign, BarChart3, Globe, Star, Sparkles, 
+  Grid, List, TrendingUp, 
+  Calendar, Calculator, GraduationCap,
+  Cpu, Cloud, Settings, Monitor, Palette, Network, Layers, Code, Heart, ShoppingCart, Clock, MessageCircle, HelpCircle, Building,
+<<<<<<< HEAD
+  Zap, Users, Database, Lock, ShieldCheck, CpuIcon, Server, Wifi, Smartphone, Watch, Camera, Video, Music, Gamepad2
+=======
+  Zap, Users, FileText, ShieldCheck, Database, Server, Lock, Key, Eye, Search, Bell, User, Cog
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-680a
+} from 'lucide-react';
+
+interface NavigationItem {
+  name: string;
+  href: string;
+  icon?: React.ReactNode;
+  description?: string;
+  children?: NavigationItem[];
+  badge?: string;
+  title?: string;
+  featured?: boolean;
+  category?: string;
+  color?: string;
+}
+
+function normalizeHref(href: string): string {
+  if (!href) return href;
+  if (href.startsWith('http://') || href.startsWith('https://') || href.startsWith('mailto:') || href.startsWith('tel:')) {
+    return href;
+  }
+  if (!href.startsWith('/')) return href;
+  const hasQueryOrHash = href.includes('?') || href.includes('#');
+  if (hasQueryOrHash) return href;
+  return href.endsWith('/') ? href : href + '/';
+}
+
+const navigationItems: NavigationItem[] = [
+  {
+    name: 'Micro SAAS Services',
+    href: '/services',
+    icon: <Rocket className="w-5 h-5" />,
+    description: 'Innovative business solutions',
+    badge: 'New',
+    category: 'services',
+    color: 'from-emerald-500 to-cyan-500',
+    children: [
+      { 
+        name: 'All Services', 
+        href: '/services', 
+        description: 'Complete services overview',
+        icon: <Grid className="w-4 h-4" />,
+        featured: true
+      },
+      { 
+        name: 'AI & Consciousness', 
+        href: '/ai-services', 
+        description: 'Advanced AI solutions',
+        icon: <Brain className="w-4 h-4" />,
+        color: 'from-purple-500 to-pink-500'
+      },
+      { 
+        name: 'Quantum Technology', 
+        href: '/quantum-services', 
+        description: 'Quantum computing solutions',
+        icon: <Atom className="w-4 h-4" />,
+        color: 'from-blue-500 to-cyan-500'
+      },
+      { 
+        name: 'Space Technology', 
+        href: '/space-technology', 
+        description: 'Space exploration solutions',
+        icon: <Rocket className="w-4 h-4" />,
+        color: 'from-indigo-500 to-purple-500'
+      },
+      { 
+        name: 'IT Solutions', 
+        href: '/it-services', 
+        description: 'Enterprise IT infrastructure',
+        icon: <Cpu className="w-4 h-4" />,
+        color: 'from-orange-500 to-red-500'
+      },
+      { 
+        name: 'Specialized Solutions', 
+        href: '/solutions', 
+        description: 'Industry-specific solutions',
+        icon: <Target className="w-4 h-4" />,
+        color: 'from-green-500 to-emerald-500'
+      }
+    ]
+  },
+  {
+    name: 'AI Services',
+    href: '/ai-services',
+    icon: <Brain className="w-5 h-5" />,
+    description: 'Revolutionary AI platforms',
+    badge: 'Featured',
+    category: 'ai',
+    color: 'from-purple-500 to-pink-500',
+    children: [
+      {
+        name: 'AI Consciousness Evolution',
+<<<<<<< HEAD
+        href: '/ai-consciousness-evolution-2038',
+        description: 'Next-generation AI consciousness',
+        icon: <Brain className="w-4 h-4" />,
+        featured: true,
+        badge: 'New'
+      },
+      {
+        name: 'Quantum AI Fusion',
+        href: '/quantum-ai-fusion-platform',
+        description: 'Quantum-AI hybrid computing',
+        icon: <Atom className="w-4 h-4" />,
+        badge: 'Revolutionary'
+      },
+      {
+        name: 'Autonomous AI Ecosystem',
+        href: '/autonomous-ai-ecosystem-manager',
+        description: 'Self-managing AI systems',
+        icon: <Settings className="w-4 h-4" />
+      },
+      {
+        name: 'AI Emotional Intelligence',
+        href: '/ai-emotional-intelligence-coach-2038',
+        description: 'Advanced EQ development',
+        icon: <Heart className="w-4 h-4" />
+      },
+      {
+        name: 'AI Predictive Maintenance',
+        href: '/ai-predictive-maintenance-platform-2038',
+        description: 'Intelligent maintenance',
+        icon: <Monitor className="w-4 h-4" />
+=======
+        href: '/ai-consciousness-evolution-2037',
+        description: 'Next-generation AI consciousness',
+        icon: <Brain className="w-4 h-4" />,
+        featured: true
+      },
+      {
+        name: 'AI Emotional Intelligence',
+        href: '/ai-emotional-intelligence-coach',
+        description: 'Personalized EI coaching',
+        icon: <Heart className="w-4 h-4" />
+      },
+      {
+        name: 'AI Autonomous Research',
+        href: '/ai-autonomous-research-assistant',
+        description: 'Fully autonomous research',
+        icon: <Search className="w-4 h-4" />
+      },
+      {
+        name: 'AI Predictive Maintenance',
+        href: '/ai-predictive-maintenance-platform',
+        description: 'Intelligent asset management',
+        icon: <Monitor className="w-4 h-4" />
+      },
+      {
+        name: 'AI Content Personalization',
+        href: '/ai-content-personalization-engine',
+        description: 'Dynamic content optimization',
+        icon: <Palette className="w-4 h-4" />
+      },
+      {
+        name: 'AI Autonomous Ecosystem',
+        href: '/ai-autonomous-ecosystem-manager',
+        description: 'Complex ecosystem management',
+        icon: <Globe className="w-4 h-4" />
+      }
+    ]
+  },
+  {
+    name: 'IT Solutions',
+    href: '/it-services',
+    icon: <Cpu className="w-5 h-5" />,
+    description: 'Enterprise infrastructure',
+    badge: 'Enterprise',
+    category: 'it',
+    color: 'from-orange-500 to-red-500',
+    children: [
+      {
+        name: 'Quantum-Secure Cloud',
+        href: '/quantum-secure-cloud-infrastructure',
+        description: 'Future-proof cloud security',
+        icon: <Cloud className="w-4 h-4" />,
+        featured: true
+      },
+      {
+        name: 'Autonomous IT Operations',
+        href: '/autonomous-it-operations-center',
+        description: 'Self-managing infrastructure',
+        icon: <Settings className="w-4 h-4" />
+      },
+      {
+        name: 'Edge Computing Platform',
+        href: '/edge-computing-orchestration-platform',
+        description: 'Distributed edge management',
+        icon: <Network className="w-4 h-4" />
+      },
+      {
+        name: 'Blockchain Infrastructure',
+        href: '/blockchain-infrastructure-platform',
+        description: 'Enterprise blockchain solutions',
+        icon: <Layers className="w-4 h-4" />
+      },
+      {
+        name: 'AI-Powered DevOps',
+        href: '/ai-powered-devops-platform',
+        description: 'Intelligent development operations',
+        icon: <Code className="w-4 h-4" />
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-680a
+      }
+    ]
+  },
+  {
+    name: 'Quantum Services',
+    href: '/quantum-services',
+    icon: <Atom className="w-5 h-5" />,
+    description: 'Quantum computing solutions',
+<<<<<<< HEAD
+=======
+    badge: 'Quantum',
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-680a
+    category: 'quantum',
+    color: 'from-blue-500 to-cyan-500',
+    children: [
+      {
+<<<<<<< HEAD
+        name: 'Quantum Cloud Infrastructure',
+        href: '/quantum-cloud-infrastructure-platform',
+        description: 'Quantum-enhanced cloud computing',
+        icon: <Cloud className="w-4 h-4" />,
+        featured: true
+      },
+      {
+        name: 'Quantum Cybersecurity',
+        href: '/quantum-cybersecurity-threat-hunter',
+        description: 'Future-proof security',
+        icon: <ShieldCheck className="w-4 h-4" />
+      },
+      {
+        name: 'Quantum Financial Risk',
+        href: '/quantum-financial-risk-analyzer',
+        description: 'Advanced risk analysis',
+        icon: <DollarSign className="w-4 h-4" />
+      },
+      {
+        name: 'Quantum Materials',
+        href: '/quantum-materials-simulation-platform',
+        description: 'Materials discovery',
+        icon: <Layers className="w-4 h-4" />
+      },
+      {
+        name: 'Quantum IoT Security',
+        href: '/quantum-iot-security-platform',
+        description: 'IoT protection',
+        icon: <Wifi className="w-4 h-4" />
+      }
+    ]
+  },
+  {
+    name: 'IT Solutions',
+    href: '/it-services',
+    icon: <Cpu className="w-5 h-5" />,
+    description: 'Enterprise IT infrastructure',
+    category: 'it',
+    color: 'from-orange-500 to-red-500',
+    children: [
+      {
+        name: 'Autonomous DevOps',
+        href: '/autonomous-devops-intelligence-platform',
+        description: 'AI-powered DevOps',
+        icon: <Code className="w-4 h-4" />,
+        featured: true
+      },
+      {
+        name: 'Edge Computing',
+        href: '/edge-computing-orchestration-platform',
+        description: 'Edge computing management',
+        icon: <Network className="w-4 h-4" />
+      },
+      {
+        name: 'Quantum Network Security',
+        href: '/quantum-network-security-platform',
+        description: 'Network protection',
+        icon: <Shield className="w-4 h-4" />
+      },
+      {
+        name: 'AI Data Governance',
+        href: '/ai-powered-data-governance-platform',
+        description: 'Intelligent data management',
+        icon: <Database className="w-4 h-4" />
+      },
+      {
+        name: 'Quantum Database',
+        href: '/quantum-database-optimization-platform',
+        description: 'Database optimization',
+        icon: <Server className="w-4 h-4" />
+=======
+        name: 'Quantum Neural Networks',
+        href: '/quantum-neural-network-platform',
+        description: 'Quantum-powered AI systems',
+        icon: <Brain className="w-4 h-4" />,
+        featured: true
+      },
+      {
+        name: 'Quantum Financial Trading',
+        href: '/quantum-financial-trading-platform',
+        description: 'Quantum-powered trading',
+        icon: <TrendingUp className="w-4 h-4" />
+      },
+      {
+        name: 'Quantum Materials Discovery',
+        href: '/quantum-materials-discovery-platform',
+        description: 'Advanced materials research',
+        icon: <Atom className="w-4 h-4" />
+      },
+      {
+        name: 'Quantum Bio-Computing',
+        href: '/quantum-bio-computing-platform',
+        description: 'Biological quantum computing',
+        icon: <Heart className="w-4 h-4" />
+      },
+      {
+        name: 'Quantum Internet Security',
+        href: '/quantum-internet-security-platform',
+        description: 'Future-proof internet security',
+        icon: <Shield className="w-4 h-4" />
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-680a
+      }
+    ]
+  },
+  {
+    name: 'Space Technology',
+    href: '/space-technology',
+    icon: <Rocket className="w-5 h-5" />,
+    description: 'Space exploration solutions',
+<<<<<<< HEAD
+=======
+    badge: 'Space',
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-680a
+    category: 'space',
+    color: 'from-indigo-500 to-purple-500',
+    children: [
+      {
+<<<<<<< HEAD
+        name: 'AI Space Mission Planner',
+        href: '/ai-powered-space-mission-planner',
+        description: 'Intelligent mission planning',
+=======
+        name: 'Space Resource Mining',
+        href: '/space-resource-mining-platform',
+        description: 'Asteroid mining technology',
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-680a
+        icon: <Rocket className="w-4 h-4" />,
+        featured: true
+      },
+      {
+<<<<<<< HEAD
+        name: 'Space Resource Mining',
+        href: '/space-resource-mining-platform',
+        description: 'Resource extraction',
+        icon: <Target className="w-4 h-4" />
+      },
+      {
+        name: 'Space Technology AI',
+        href: '/ai-powered-space-technology',
+        description: 'AI space solutions',
+        icon: <Brain className="w-4 h-4" />
+=======
+        name: 'AI-Powered Space Tech',
+        href: '/ai-powered-space-technology',
+        description: 'Intelligent space systems',
+        icon: <Brain className="w-4 h-4" />
+      },
+      {
+        name: 'Space Colony Management',
+        href: '/space-colony-management-platform',
+        description: 'Off-world settlement systems',
+        icon: <Building className="w-4 h-4" />
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-680a
+      }
+    ]
+  },
+  {
+<<<<<<< HEAD
+    name: 'Solutions',
+    href: '/solutions',
+    icon: <Target className="w-5 h-5" />,
+    description: 'Industry-specific solutions',
+    category: 'solutions',
+    color: 'from-green-500 to-emerald-500',
+    children: [
+      {
+        name: 'Healthcare AI',
+        href: '/healthcare-ai-solutions',
+        description: 'Healthcare technology',
+        icon: <Heart className="w-4 h-4" />
+      },
+      {
+        name: 'Financial Solutions',
+        href: '/financial-solutions',
+        description: 'Fintech innovations',
+        icon: <DollarSign className="w-4 h-4" />
+      },
+      {
+        name: 'Government Technology',
+        href: '/government-technology-solutions',
+        description: 'Public sector solutions',
+        icon: <Building className="w-4 h-4" />
+      },
+      {
+        name: 'Entertainment & Media',
+        href: '/entertainment-media-solutions',
+        description: 'Media technology',
+        icon: <Video className="w-4 h-4" />
+=======
+    name: 'Enterprise Solutions',
+    href: '/solutions',
+    icon: <Building className="w-5 h-5" />,
+    description: 'Industry-specific solutions',
+    badge: 'Enterprise',
+    category: 'enterprise',
+    color: 'from-green-500 to-emerald-500',
+    children: [
+      {
+        name: 'Financial Services',
+        href: '/financial-services-solutions',
+        description: 'Banking and fintech solutions',
+        icon: <DollarSign className="w-4 h-4" />,
+        featured: true
+      },
+      {
+        name: 'Healthcare Technology',
+        href: '/healthcare-technology-solutions',
+        description: 'Medical and health tech',
+        icon: <Heart className="w-4 h-4" />
+      },
+      {
+        name: 'Manufacturing AI',
+        href: '/manufacturing-ai-solutions',
+        description: 'Smart manufacturing',
+        icon: <Cog className="w-4 h-4" />
+      },
+      {
+        name: 'Retail Technology',
+        href: '/retail-technology-solutions',
+        description: 'E-commerce and retail',
+        icon: <ShoppingCart className="w-4 h-4" />
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-680a
+      }
+    ]
+  }
+];
+
+<<<<<<< HEAD
+const UltraFuturisticNavigation2038: React.FC = () => {
+=======
+const quickLinks = [
+  { name: 'Pricing', href: '/pricing', icon: <DollarSign className="w-4 h-4" /> },
+  { name: 'Contact', href: '/contact', icon: <MessageCircle className="w-4 h-4" /> },
+  { name: 'Support', href: '/support', icon: <HelpCircle className="w-4 h-4" /> },
+  { name: 'Documentation', href: '/api-documentation', icon: <FileText className="w-4 h-4" /> },
+  { name: 'Status', href: '/status', icon: <Monitor className="w-4 h-4" /> }
+];
+
+export default function UltraFuturisticNavigation2038() {
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-680a
+  const [isOpen, setIsOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+<<<<<<< HEAD
+      setIsScrolled(window.scrollY > 20);
+=======
+      setIsScrolled(window.scrollY > 10);
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-680a
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const toggleDropdown = (name: string) => {
+    setActiveDropdown(activeDropdown === name ? null : name);
+  };
+
+<<<<<<< HEAD
+  const closeDropdown = () => {
+    setActiveDropdown(null);
+=======
+  const closeAllDropdowns = () => {
+    setActiveDropdown(null);
+    setIsOpen(false);
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-680a
+  };
+
+  return (
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      isScrolled 
+<<<<<<< HEAD
+        ? 'bg-black/80 backdrop-blur-xl border-b border-cyan-500/20' 
+        : 'bg-transparent'
+    }`}>
+      {/* Top Contact Bar */}
+      <div className="bg-gradient-to-r from-cyan-900/50 to-purple-900/50 border-b border-cyan-500/20">
+=======
+        ? 'bg-black/80 backdrop-blur-xl border-b border-white/10' 
+        : 'bg-transparent'
+    }`}>
+      {/* Top Contact Bar */}
+      <div className="bg-gradient-to-r from-blue-600/20 via-purple-600/20 to-pink-600/20 border-b border-white/10">
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-680a
+        <div className="max-w-7xl mx-auto px-4 py-2">
+          <div className="flex items-center justify-between text-sm">
+            <div className="flex items-center space-x-6">
+              <a 
+                href="tel:+13024640950" 
+<<<<<<< HEAD
+                className="flex items-center text-cyan-400 hover:text-cyan-300 transition-colors"
+              >
+                <Phone className="w-4 h-4 mr-2" />
+                +1 302 464 0950
+              </a>
+              <a 
+                href="mailto:kleber@ziontechgroup.com" 
+                className="flex items-center text-purple-400 hover:text-purple-300 transition-colors"
+              >
+                <Mail className="w-4 h-4 mr-2" />
+                kleber@ziontechgroup.com
+              </a>
+              <div className="flex items-center text-blue-400">
+                <MapPin className="w-4 h-4 mr-2" />
+                364 E Main St STE 1008, Middletown DE 19709
+              </div>
+            </div>
+            <div className="flex items-center space-x-4">
+              <a href="/contact" className="text-cyan-400 hover:text-cyan-300 transition-colors">
+                Get Quote
+              </a>
+              <a href="/demo" className="text-purple-400 hover:text-purple-300 transition-colors">
+                Request Demo
+              </a>
+=======
+                className="flex items-center space-x-2 text-white/80 hover:text-white transition-colors"
+              >
+                <Phone className="w-3 h-3" />
+                <span>+1 302 464 0950</span>
+              </a>
+              <a 
+                href="mailto:kleber@ziontechgroup.com" 
+                className="flex items-center space-x-2 text-white/80 hover:text-white transition-colors"
+              >
+                <Mail className="w-3 h-3" />
+                <span>kleber@ziontechgroup.com</span>
+              </a>
+            </div>
+            <div className="flex items-center space-x-4">
+              <a 
+                href="https://ziontechgroup.com" 
+                className="text-white/80 hover:text-white transition-colors"
+              >
+                ziontechgroup.com
+              </a>
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                <span className="text-green-400 text-xs">Live</span>
+              </div>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-680a
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Navigation */}
+<<<<<<< HEAD
+      <div className="max-w-7xl mx-auto px-4 py-4">
+        <div className="flex items-center justify-between">
+          {/* Logo */}
+          <Link href="/" className="flex items-center space-x-3 group">
+            <div className="relative">
+              <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <Zap className="w-6 h-6 text-white" />
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-xl blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-300"></div>
+            </div>
+            <div>
+              <h1 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+                Zion Tech Group
+              </h1>
+              <p className="text-xs text-gray-400">Future Technology Solutions</p>
+=======
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="flex items-center justify-between h-20">
+          {/* Logo */}
+          <Link href="/" className="flex items-center space-x-3 group">
+            <div className="relative">
+              <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <Zap className="w-6 h-6 text-white" />
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg blur-lg opacity-50 group-hover:opacity-75 transition-opacity duration-300"></div>
+            </div>
+            <div>
+              <h1 className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                Zion Tech Group
+              </h1>
+              <p className="text-xs text-white/60">Future Technology Today</p>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-680a
+            </div>
+          </Link>
+
+          {/* Desktop Navigation */}
+          <div className="hidden lg:flex items-center space-x-8">
+            {navigationItems.map((item) => (
+              <div key={item.name} className="relative group">
+                <button
+                  onClick={() => toggleDropdown(item.name)}
+<<<<<<< HEAD
+                  className="flex items-center space-x-2 px-4 py-2 text-gray-300 hover:text-white transition-colors duration-200 group-hover:text-cyan-400"
+=======
+                  className="flex items-center space-x-2 px-4 py-2 text-white/80 hover:text-white transition-colors rounded-lg hover:bg-white/5 group"
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-680a
+                >
+                  {item.icon}
+                  <span>{item.name}</span>
+                  {item.badge && (
+<<<<<<< HEAD
+                    <span className="px-2 py-1 text-xs bg-gradient-to-r from-cyan-500 to-purple-500 text-white rounded-full">
+                      {item.badge}
+                    </span>
+                  )}
+                  <ChevronDown className="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" />
+=======
+                    <span className="px-2 py-1 text-xs bg-gradient-to-r from-emerald-500 to-cyan-500 text-white rounded-full">
+                      {item.badge}
+                    </span>
+                  )}
+                  <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${
+                    activeDropdown === item.name ? 'rotate-180' : ''
+                  }`} />
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-680a
+                </button>
+
+                {/* Dropdown Menu */}
+                <AnimatePresence>
+                  {activeDropdown === item.name && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                      transition={{ duration: 0.2 }}
+<<<<<<< HEAD
+                      className="absolute top-full left-0 mt-2 w-80 bg-black/90 backdrop-blur-xl border border-cyan-500/20 rounded-2xl shadow-2xl shadow-cyan-500/20 overflow-hidden"
+                    >
+                      <div className="p-4">
+                        <div className="grid grid-cols-1 gap-2">
+=======
+                      className="absolute top-full left-0 mt-2 w-80 bg-black/90 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl z-50"
+                    >
+                      <div className="p-4">
+                        <div className="mb-4">
+                          <h3 className="text-lg font-semibold text-white mb-2">{item.name}</h3>
+                          <p className="text-sm text-white/60">{item.description}</p>
+                        </div>
+                        
+                        <div className="space-y-2">
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-680a
+                          {item.children?.map((child) => (
+                            <Link
+                              key={child.name}
+                              href={normalizeHref(child.href)}
+<<<<<<< HEAD
+                              onClick={closeDropdown}
+                              className="group flex items-center space-x-3 p-3 rounded-xl hover:bg-gradient-to-r hover:from-cyan-500/10 hover:to-purple-500/10 transition-all duration-200"
+                            >
+                              <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${
+                                child.color ? `bg-gradient-to-r ${child.color}` : 'bg-gray-700'
+=======
+                              onClick={closeAllDropdowns}
+                              className={`flex items-center space-x-3 p-3 rounded-lg transition-all duration-200 group ${
+                                child.featured 
+                                  ? 'bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-white/20' 
+                                  : 'hover:bg-white/5'
+                              }`}
+                            >
+                              <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${
+                                child.color ? `bg-gradient-to-r ${child.color}` : 'bg-white/10'
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-680a
+                              }`}>
+                                {child.icon}
+                              </div>
+                              <div className="flex-1">
+                                <div className="flex items-center space-x-2">
+<<<<<<< HEAD
+                                  <h3 className="font-semibold text-white group-hover:text-cyan-400 transition-colors">
+                                    {child.name}
+                                  </h3>
+                                  {child.badge && (
+                                    <span className="px-2 py-1 text-xs bg-gradient-to-r from-cyan-500 to-purple-500 text-white rounded-full">
+                                      {child.badge}
+                                    </span>
+                                  )}
+                                </div>
+                                <p className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors">
+                                  {child.description}
+                                </p>
+                              </div>
+                              <ArrowRight className="w-4 h-4 text-gray-500 group-hover:text-cyan-400 transition-colors" />
+=======
+                                  <span className="text-white font-medium">{child.name}</span>
+                                  {child.featured && (
+                                    <span className="px-2 py-1 text-xs bg-gradient-to-r from-yellow-500 to-orange-500 text-white rounded-full">
+                                      Featured
+                                    </span>
+                                  )}
+                                </div>
+                                <p className="text-sm text-white/60">{child.description}</p>
+                              </div>
+                              <ArrowRight className="w-4 h-4 text-white/40 group-hover:text-white transition-colors" />
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-680a
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            ))}
+          </div>
+
+<<<<<<< HEAD
+          {/* CTA Buttons */}
+          <div className="hidden lg:flex items-center space-x-4">
+            <Link
+              href="/contact"
+              className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-purple-500 text-white rounded-full font-semibold hover:shadow-lg hover:shadow-cyan-500/25 transition-all duration-300 transform hover:scale-105"
+            >
+              Get Started
+            </Link>
+            <Link
+              href="/quote"
+              className="px-6 py-2 border border-cyan-500/30 text-cyan-400 rounded-full font-semibold hover:bg-cyan-500/10 hover:border-cyan-500/50 transition-all duration-300"
+            >
+              Get Quote
+            </Link>
+=======
+          {/* Right Side Actions */}
+          <div className="hidden lg:flex items-center space-x-4">
+            {/* Quick Links */}
+            <div className="flex items-center space-x-2">
+              {quickLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className="p-2 text-white/60 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200"
+                  title={link.name}
+                >
+                  {link.icon}
+                </Link>
+              ))}
+            </div>
+
+            {/* CTA Buttons */}
+            <div className="flex items-center space-x-3">
+              <Link
+                href="/contact"
+                className="px-4 py-2 text-white/80 hover:text-white transition-colors"
+              >
+                Contact
+              </Link>
+              <Link
+                href="/contact"
+                className="px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+              >
+                Get Started
+              </Link>
+            </div>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-680a
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+<<<<<<< HEAD
+            className="lg:hidden p-2 text-gray-300 hover:text-white transition-colors"
+=======
+            className="lg:hidden p-2 text-white/80 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-680a
+          >
+            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Navigation */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
+<<<<<<< HEAD
+            className="lg:hidden bg-black/95 backdrop-blur-xl border-t border-cyan-500/20"
+          >
+            <div className="px-4 py-6 space-y-4">
+              {navigationItems.map((item) => (
+                <div key={item.name}>
+                  <button
+                    onClick={() => toggleDropdown(item.name)}
+                    className="w-full flex items-center justify-between p-3 text-left text-gray-300 hover:text-white transition-colors"
+=======
+            className="lg:hidden bg-black/95 backdrop-blur-xl border-t border-white/10"
+          >
+            <div className="px-4 py-6 space-y-4">
+              {navigationItems.map((item) => (
+                <div key={item.name} className="space-y-2">
+                  <button
+                    onClick={() => toggleDropdown(item.name)}
+                    className="flex items-center justify-between w-full p-3 text-left text-white/80 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-680a
+                  >
+                    <div className="flex items-center space-x-3">
+                      {item.icon}
+                      <span>{item.name}</span>
+                      {item.badge && (
+<<<<<<< HEAD
+                        <span className="px-2 py-1 text-xs bg-gradient-to-r from-cyan-500 to-purple-500 text-white rounded-full">
+=======
+                        <span className="px-2 py-1 text-xs bg-gradient-to-r from-emerald-500 to-cyan-500 text-white rounded-full">
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-680a
+                          {item.badge}
+                        </span>
+                      )}
+                    </div>
+                    <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${
+                      activeDropdown === item.name ? 'rotate-180' : ''
+                    }`} />
+                  </button>
+<<<<<<< HEAD
+                  
+                  {activeDropdown === item.name && (
+                    <div className="ml-6 mt-2 space-y-2">
+=======
+
+                  {activeDropdown === item.name && (
+                    <div className="ml-6 space-y-2">
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-680a
+                      {item.children?.map((child) => (
+                        <Link
+                          key={child.name}
+                          href={normalizeHref(child.href)}
+<<<<<<< HEAD
+                          onClick={() => {
+                            setIsOpen(false);
+                            closeDropdown();
+                          }}
+                          className="block p-3 text-gray-400 hover:text-cyan-400 transition-colors"
+                        >
+                          {child.name}
+=======
+                          onClick={closeAllDropdowns}
+                          className="flex items-center space-x-3 p-3 text-white/60 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
+                        >
+                          {child.icon}
+                          <span>{child.name}</span>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-680a
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+<<<<<<< HEAD
+              
+              <div className="pt-4 border-t border-cyan-500/20 space-y-3">
+                <Link
+                  href="/contact"
+                  onClick={() => setIsOpen(false)}
+                  className="block w-full px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-500 text-white rounded-full font-semibold text-center"
+                >
+                  Get Started
+                </Link>
+                <Link
+                  href="/quote"
+                  onClick={() => setIsOpen(false)}
+                  className="block w-full px-6 py-3 border border-cyan-500/30 text-cyan-400 rounded-full font-semibold text-center"
+                >
+                  Get Quote
+=======
+
+              {/* Mobile Quick Links */}
+              <div className="pt-4 border-t border-white/10">
+                <div className="grid grid-cols-2 gap-2">
+                  {quickLinks.map((link) => (
+                    <Link
+                      key={link.name}
+                      href={link.href}
+                      onClick={closeAllDropdowns}
+                      className="flex items-center space-x-2 p-3 text-white/60 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
+                    >
+                      {link.icon}
+                      <span>{link.name}</span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
+              {/* Mobile CTA */}
+              <div className="pt-4">
+                <Link
+                  href="/contact"
+                  onClick={closeAllDropdowns}
+                  className="block w-full px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-center rounded-lg transition-all duration-300 transform hover:scale-105"
+                >
+                  Get Started Today
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-680a
+                </Link>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </nav>
+  );
+<<<<<<< HEAD
+};
+
+export default UltraFuturisticNavigation2038;
+=======
+}
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-680a

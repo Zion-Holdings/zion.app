@@ -4,5 +4,10 @@
 }
 
 .list {
-  display: block;
+  display: flex;
+  flex-direction: column;
+}
+
+.clamp-text {
+  font-size: clamp(1rem, 2.5vw, 1.125rem);
 }

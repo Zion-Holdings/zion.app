@@ -1,0 +1,39 @@
+name: Homepage Autonomous Update
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update-homepage:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies (ci)
+        run: npm ci
+
+      - name: Run homepage updater
+        env:
+          CI: true
+        run: node automation/homepage-autonomous-updater.cjs
+
+      - name: Push changes (if any)
+        if: always()
+        run: |
+          git status --porcelain
+          git push || true
