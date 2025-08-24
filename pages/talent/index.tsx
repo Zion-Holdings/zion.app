@@ -1,8 +1,13 @@
-export default function TalentIndex() {
+import Head from 'next/head';
+
+export default function TalentPage() {
   return (
-    <div>
-      <h1 className="text-2xl font-bold">Talent</h1>
-      <p className="opacity-70">Talent network coming soon.</p>
-    </div>
+    <>
+      <Head><title>Talent - Zion</title></Head>
+      <div className="py-12">
+        <h1 className="text-3xl font-bold">Talent</h1>
+        <p className="mt-2 text-gray-600">Coming soon.</p>
+      </div>
+    </>
   );
 }

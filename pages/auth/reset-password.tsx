@@ -1,8 +1,13 @@
-export default function ResetPassword() {
+import Head from 'next/head';
+
+export default function ResetPasswordPage() {
   return (
-    <div>
-      <h1 className="text-2xl font-bold">Reset Password</h1>
-      <p className="opacity-70">Choose a new password for your account.</p>
-    </div>
+    <>
+      <Head><title>Reset Password - Zion</title></Head>
+      <div className="py-12">
+        <h1 className="text-3xl font-bold">Reset Password</h1>
+        <p className="mt-2 text-gray-600">Coming soon.</p>
+      </div>
+    </>
   );
 }

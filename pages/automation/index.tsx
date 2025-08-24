@@ -1,8 +1,13 @@
-export default function AutomationIndex() {
+import Head from 'next/head';
+
+export default function AutomationPage() {
   return (
-    <div>
-      <h1 className="text-2xl font-bold">Automation</h1>
-      <p className="opacity-70">Automation tools overview coming soon.</p>
-    </div>
+    <>
+      <Head><title>Automation - Zion</title></Head>
+      <div className="py-12">
+        <h1 className="text-3xl font-bold">Automation</h1>
+        <p className="mt-2 text-gray-600">Coming soon.</p>
+      </div>
+    </>
   );
 }

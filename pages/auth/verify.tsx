@@ -1,8 +1,13 @@
-export default function Verify() {
+import Head from 'next/head';
+
+export default function VerifyPage() {
   return (
-    <div>
-      <h1 className="text-2xl font-bold">Verify</h1>
-      <p className="opacity-70">Please verify your email to continue.</p>
-    </div>
+    <>
+      <Head><title>Verify - Zion</title></Head>
+      <div className="py-12">
+        <h1 className="text-3xl font-bold">Verify</h1>
+        <p className="mt-2 text-gray-600">Coming soon.</p>
+      </div>
+    </>
   );
 }
