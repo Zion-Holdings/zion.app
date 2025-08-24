@@ -18,6 +18,7 @@
     "dev": "NODE_OPTIONS=\"--max-old-space-size=4096 --openssl-legacy-provider\" next dev",
     "build": "NODE_OPTIONS=\"--max-old-space-size=6144 --openssl-legacy-provider\" next build",
     "start": "next start",
+    "export": "EXPORT_BUILD=true NODE_OPTIONS=\"--max-old-space-size=6144 --openssl-legacy-provider\" next build",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "type-check": "tsc --noEmit",
     "prepare": "git config core.hooksPath .husky || true",

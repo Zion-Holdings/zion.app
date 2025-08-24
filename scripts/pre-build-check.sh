@@ -37,13 +37,13 @@ done
 
 # Check for security vulnerabilities
 echo "🔒 Checking for security vulnerabilities..."
-npm audit --audit-level=moderate || {
-  echo "⚠️  Security vulnerabilities found. Consider running: npm audit fix --force"
+pnpm audit --audit-level=moderate || {
+  echo "⚠️  Security vulnerabilities found. Consider running: pnpm audit --fix"
 }
 
 # Check for deprecated packages
 echo "📦 Checking for deprecated packages..."
-npm list | grep -i "deprecated\|warn" || echo "✅ No deprecated packages found"
+pnpm list | grep -i "deprecated\|warn" || echo "✅ No deprecated packages found"
 
 # Validate environment variables
 echo "🌍 Validating environment variables..."
