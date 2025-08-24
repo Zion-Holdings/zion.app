@@ -2,9 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Import Modern Design System */
-@import './modern-design-system.css';
-
 /* Enhanced Futuristic Design System with Superior Contrast */
 :root {
   --neon-blue: #00d4ff;
@@ -122,20 +119,14 @@
 
 .bg-high-contrast-card {
   background-color: var(--bg-card);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
 }
 
 .bg-high-contrast-card-hover {
   background-color: var(--bg-card-hover);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
 }
 
 .bg-high-contrast-overlay {
   background-color: var(--bg-overlay);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
 }
 
 /* Enhanced High Contrast Border Utilities */
@@ -163,7 +154,7 @@
   border-color: var(--border-error);
 }
 
-/* Enhanced Focus States */
+/* Enhanced Focus Utilities */
 .focus-high-contrast {
   outline: 2px solid var(--focus-ring);
   outline-offset: 2px;
@@ -185,7 +176,11 @@
 }
 
 /* Enhanced Shadow Utilities */
-.shadow-high-contrast {
+.shadow-high-contrast-sm {
+  box-shadow: var(--shadow-sm);
+}
+
+.shadow-high-contrast-md {
   box-shadow: var(--shadow-md);
 }
 
@@ -197,11 +192,11 @@
   box-shadow: var(--shadow-xl);
 }
 
-.shadow-neon-high-contrast {
+.shadow-neon {
   box-shadow: var(--shadow-neon);
 }
 
-.shadow-glow-high-contrast {
+.shadow-glow {
   box-shadow: var(--shadow-glow);
 }
 

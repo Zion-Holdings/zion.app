@@ -1,19 +1,15 @@
 import type { NextPage } from 'next';
-import Head from 'next/head';
+import Layout from '../components/Layout';
+import ContactForm from '../components/forms/ContactForm';
 
 const Contact: NextPage = () => {
   return (
-    <div>
-      <Head>
-        <title>Contact - Zion Tech Solutions</title>
-        <meta name="description" content="Contact page" />
-      </Head>
-      
-      <main>
-        <h1>Contact</h1>
-        <p>This page is under construction.</p>
-      </main>
-    </div>
+    <Layout
+      title="Contact Us - Zion Tech Group"
+      description="Get in touch with Zion Tech Group. Our team is ready to discuss your technology needs and help transform your business."
+    >
+      <ContactForm />
+    </Layout>
   );
 };
 
