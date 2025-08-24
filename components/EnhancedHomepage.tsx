@@ -6,9 +6,8 @@ import {
   TrendingUp, 
   Brain, 
   Shield, 
-  Rocket, 
-  Atom, 
-  Sparkles,
+  Eye, 
+  EyeOff, 
   Building, 
   Phone, 
   Mail, 
@@ -28,14 +27,9 @@ import { revolutionary2044AdvancedMicroSaas } from '../data/revolutionary-2044-a
 import { revolutionary2044ITServices } from '../data/revolutionary-2044-it-services';
 import { revolutionary2044AIServices } from '../data/revolutionary-2044-ai-services';
 import { realEnterpriseMicroSaas2025 } from '../data/2025-real-enterprise-micro-saas';
-<<<<<<< HEAD
-=======
-import { innovativeITServicesExpansion2025V3 } from '../data/2025-innovative-it-services-expansion-v3';
-import { innovativeAIServicesExpansion2025V3 } from '../data/2025-innovative-ai-services-expansion-v3';
-=======
->>>>>>> 4e26761e9808218b595a40eae6dfbc7c204b5906
-import { innovative2025ITInfrastructureServices } from '../data/2025-innovative-it-infrastructure-services';
-import { innovative2025AIAutonomousServices } from '../data/2025-innovative-ai-autonomous-services';
+
+import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-it-infrastructure-services';
+import { innovativeAIAutonomousServices2025 } from '../data/2025-innovative-ai-autonomous-services';
 
 const EnhancedHomepage: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -50,7 +44,8 @@ const EnhancedHomepage: React.FC = () => {
     
     // Auto-rotate featured services
     const interval = setInterval(() => {
-      setCurrentServiceIndex((prev) => (prev + 1) % 6);
+      const newIndex = (currentServiceIndex + 1) % 6;
+      setCurrentServiceIndex(newIndex);
     }, 6000);
     
     // Track mouse movement for parallax effects
@@ -78,14 +73,8 @@ const EnhancedHomepage: React.FC = () => {
     ...revolutionary2044ITServices,
     ...revolutionary2044AIServices,
     ...realEnterpriseMicroSaas2025,
-<<<<<<< HEAD
-=======
-    ...innovativeITServicesExpansion2025V3,
-    ...innovativeAIServicesExpansion2025V3
-=======
->>>>>>> 4e26761e9808218b595a40eae6dfbc7c204b5906
-    ...innovative2025ITInfrastructureServices,
-    ...innovative2025AIAutonomousServices
+    ...innovativeITInfrastructureServices2025,
+    ...innovativeAIAutonomousServices2025
   ];
 
   // Filter services by category
@@ -98,11 +87,11 @@ const EnhancedHomepage: React.FC = () => {
   };
 
   const categories = [
-    { id: 'all', name: 'All Services', icon: Sparkles, color: 'from-purple-500 to-pink-500', scheme: 'holographic' as const },
+    { id: 'all', name: 'All Services', icon: Eye, color: 'from-purple-500 to-pink-500', scheme: 'holographic' as const },
     { id: 'ai', name: 'AI & Consciousness', icon: Brain, color: 'from-cyan-500 to-blue-500', scheme: 'cyber' as const },
-    { id: 'quantum', name: 'Quantum Technology', icon: Atom, color: 'from-blue-500 to-indigo-500', scheme: 'quantum' as const },
+    { id: 'quantum', name: 'Quantum Technology', icon: EyeOff, color: 'from-blue-500 to-indigo-500', scheme: 'quantum' as const },
     { id: 'cybersecurity', name: 'Cybersecurity', icon: Shield, color: 'from-red-500 to-orange-500', scheme: 'neon' as const },
-    { id: 'space', name: 'Space Technology', icon: Rocket, color: 'from-indigo-500 to-purple-500', scheme: 'holographic' as const },
+    { id: 'space', name: 'Space Technology', icon: Eye, color: 'from-indigo-500 to-purple-500', scheme: 'holographic' as const },
     { id: 'enterprise', name: 'Enterprise Solutions', icon: Building, color: 'from-green-500 to-teal-500', scheme: 'cyber' as const }
   ];
 
@@ -269,7 +258,7 @@ const EnhancedHomepage: React.FC = () => {
             variants={floatingVariants}
             animate="animate"
           >
-            <Atom className="w-8 h-8" />
+            <EyeOff className="w-8 h-8" />
           </motion.div>
           
           <motion.div
@@ -287,7 +276,7 @@ const EnhancedHomepage: React.FC = () => {
             animate="animate"
             style={{ animationDelay: '2s' }}
           >
-            <Rocket className="w-7 h-7" />
+            <Eye className="w-7 h-7" />
           </motion.div>
         </motion.section>
 
@@ -346,19 +335,28 @@ const EnhancedHomepage: React.FC = () => {
                 <EnhancedServiceCard
                   key={service.id}
                   id={service.id}
-                  title={service.name}
+                  name={service.name}
+                  tagline={service.tagline || service.description.substring(0, 100)}
                   description={service.description}
                   category={service.category}
                   type={(service as any).type || service.category}
-                  features={service.features?.map(f => ({ name: f, description: f }))}
-                  slug={(service as any).slug || service.id}
-                  index={index}
-                  isPopular={Math.random() > 0.7}
-                  isNew={Math.random() > 0.8}
-                  rating={4.0 + Math.random() * 1.0}
-                  reviewCount={Math.floor(Math.random() * 100) + 10}
-                  estimatedDelivery="2-4 weeks"
-                  technologies={['AI', 'Cloud', 'Security', 'Automation']}
+                  pricing={{
+                    starter: '$999',
+                    professional: '$1,999',
+                    enterprise: '$4,999',
+                    custom: 'Contact Us'
+                  }}
+                  features={service.features || []}
+                  benefits={service.features?.slice(0, 3) || []}
+                  useCases={['Enterprise', 'Startup', 'Government']}
+                  marketSize="Multi-billion dollar market"
+                  targetAudience="Technology companies and enterprises"
+                  competitiveAdvantage="Cutting-edge AI and quantum technology"
+                  slug={`/services/${service.id}`}
+                  featured={Math.random() > 0.7}
+                  priority="medium"
+                  technology={['AI', 'Cloud', 'Security']}
+                  compliance={['GDPR', 'SOC2', 'ISO27001']}
                 />
               ))}
             </motion.div>
@@ -444,7 +442,7 @@ const EnhancedHomepage: React.FC = () => {
                     <div className="w-full h-64 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-xl border border-cyan-500/30 flex items-center justify-center">
                       <div className="text-center">
                         <div className="w-16 h-16 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                          <Rocket className="w-8 h-8 text-white" />
+                          <Eye className="w-8 h-8 text-white" />
                         </div>
                         <p className="text-cyan-400 font-medium">Revolutionary Technology</p>
                       </div>

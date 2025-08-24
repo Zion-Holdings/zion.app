@@ -1,6 +1,6 @@
 import React, { Component, ErrorInfo, ReactNode } from 'react';
 import { motion } from 'framer-motion';
-import { AlertTriangle, RefreshCw, Home, ArrowLeft, Bug } from 'lucide-react';
+import { AlertTriangle, Eye, Home, ArrowLeft, EyeOff } from 'lucide-react';
 
 interface Props {
   children: ReactNode;
@@ -13,6 +13,7 @@ interface State {
   error: Error | null;
   errorInfo: ErrorInfo | null;
   errorId: string;
+  showDetails: boolean;
 }
 
 class EnhancedErrorBoundary extends Component<Props, State> {
@@ -22,7 +23,8 @@ class EnhancedErrorBoundary extends Component<Props, State> {
       hasError: false,
       error: null,
       errorInfo: null,
-      errorId: ''
+      errorId: '',
+      showDetails: false
     };
   }
 
@@ -31,7 +33,8 @@ class EnhancedErrorBoundary extends Component<Props, State> {
       hasError: true,
       error,
       errorInfo: null,
-      errorId: `error_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`
+      errorId: `error_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
+      showDetails: false
     };
   }
 
@@ -108,7 +111,7 @@ class EnhancedErrorBoundary extends Component<Props, State> {
   };
 
   private toggleDetails = () => {
-    this.setState(prev => ({ showDetails: !prev.showDetails }));
+    this.setState(prev => ({ ...prev, showDetails: !prev.showDetails }));
   };
 
   render() {

@@ -2843,6 +2843,12 @@ type ApiRouteConfig = {
   handler satisfies PagesPageConfig
 }
 
+// Validate ../../pages/careers.tsx
+{
+  const handler = {} as typeof import("../../pages/careers.js")
+  handler satisfies PagesPageConfig
+}
+
 // Validate ../../pages/careers/[id].tsx
 {
   const handler = {} as typeof import("../../pages/careers/[id].js")
@@ -58202,6 +58208,12 @@ type ApiRouteConfig = {
 // Validate ../../pages/sitemap.tsx
 {
   const handler = {} as typeof import("../../pages/sitemap.js")
+  handler satisfies PagesPageConfig
+}
+
+// Validate ../../pages/sitemap.xml.tsx
+{
+  const handler = {} as typeof import("../../pages/sitemap.xml.js")
   handler satisfies PagesPageConfig
 }
 

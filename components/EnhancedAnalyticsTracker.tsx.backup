@@ -6,10 +6,8 @@ import {
   Clock, 
   TrendingUp, 
   Eye,
-  Activity,
+  EyeOff,
   X,
-  Play,
-  Pause,
   Download
 } from 'lucide-react';
 
@@ -61,10 +59,11 @@ const EnhancedAnalyticsTracker: React.FC = () => {
         data: { path, referrer: document.referrer }
       };
       
-      setEvents(prev => [...prev, event]);
-      setUserBehavior(prev => ({
-        ...prev,
-        pageViews: prev.pageViews + 1,
+      const newEvents = [...events, event];
+      setEvents(newEvents);
+      const newUserBehavior = {
+        ...userBehavior,
+        pageViews: userBehavior.pageViews + 1,
         topPages: updateTopPages(prev.topPages, path)
       }));
     };
@@ -82,7 +81,8 @@ const EnhancedAnalyticsTracker: React.FC = () => {
         data: { tagName, text, href, x: event.clientX, y: event.clientY }
       };
       
-      setEvents(prev => [...prev, clickEvent]);
+      const newClickEvents = [...events, clickEvent];
+      setEvents(newClickEvents);
     };
 
     // Track scroll depth
@@ -98,7 +98,8 @@ const EnhancedAnalyticsTracker: React.FC = () => {
             timestamp: new Date(),
             data: { depth: scrollDepth, page: currentPage }
           };
-          setEvents(prev => [...prev, scrollEvent]);
+          const newScrollEvents = [...events, scrollEvent];
+          setEvents(newScrollEvents);
         }
       }
     };
@@ -116,11 +117,13 @@ const EnhancedAnalyticsTracker: React.FC = () => {
         }
       };
       
-      setEvents(prev => [...prev, formEvent]);
-      setUserBehavior(prev => ({
-        ...prev,
-        conversionRate: prev.conversionRate + 0.1
-      }));
+      const newFormEvents = [...events, formEvent];
+      setEvents(newFormEvents);
+      const newFormUserBehavior = {
+        ...userBehavior,
+        conversionRate: userBehavior.conversionRate + 0.1
+      };
+      setUserBehavior(newFormUserBehavior);
     };
 
     // Track downloads
@@ -135,7 +138,8 @@ const EnhancedAnalyticsTracker: React.FC = () => {
         }
       };
       
-      setEvents(prev => [...prev, downloadEvent]);
+      const newDownloadEvents = [...events, downloadEvent];
+      setEvents(newDownloadEvents);
     };
 
     // Track social shares
@@ -149,7 +153,8 @@ const EnhancedAnalyticsTracker: React.FC = () => {
         }
       };
       
-      setEvents(prev => [...prev, shareEvent]);
+      const newShareEvents = [...events, shareEvent];
+      setEvents(newShareEvents);
     };
 
     // Add event listeners
@@ -357,7 +362,7 @@ const EnhancedAnalyticsTracker: React.FC = () => {
                   {events.slice(-10).reverse().map((event, index) => (
                     <div key={index} className="p-2 bg-gray-800 rounded-lg border-l-4 border-blue-500">
                       <div className="flex items-center gap-2 mb-1">
-                        <Activity className="w-3 h-3 text-blue-400" />
+                        <Eye className="w-3 h-3 text-blue-400" />
                         <span className="text-xs text-gray-400">{event.type}</span>
                         <span className="text-xs text-gray-500">
                           {event.timestamp.toLocaleTimeString()}

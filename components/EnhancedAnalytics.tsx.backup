@@ -1,10 +1,8 @@
 import React, { useEffect, useState, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  BarChart3, TrendingUp, TrendingDown, Users, Eye, MousePointer, 
-  Clock, Target, Zap, Settings, X, Maximize2, Minimize2, 
-  RefreshCw, Download, Share2, Filter, Search, AlertTriangle,
-  CheckCircle, Info, Activity, Globe, Smartphone, Monitor
+  BarChart3, TrendingUp, TrendingDown, Users, Eye, EyeOff, 
+  Clock, Settings, X, Globe, Smartphone, Monitor
 } from 'lucide-react';
 
 interface AnalyticsEvent {
