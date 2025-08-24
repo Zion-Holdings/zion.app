@@ -23,7 +23,7 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }) 
         {
             key: 'services',
             href: '/services',
-            matches: (path) => path.startsWith('/services')
+            matches: (path) => path.startsWith('/services') || path.startsWith('/it-onsite-services')
         },
         {
             key: 'micro-saas',
@@ -41,19 +41,14 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }) 
             matches: (path) => path.startsWith('/equipment')
         },
         {
+            key: 'portfolio',
+            href: '/portfolio',
+            matches: (path) => path.startsWith('/portfolio')
+        },
+        {
             key: 'community',
             href: '/community',
             matches: (path) => path.startsWith('/community') || path.startsWith('/forum')
-        },
-        {
-            key: 'about',
-            href: '/about',
-            matches: (path) => path === '/about'
-        },
-        {
-            key: 'contact',
-            href: '/contact',
-            matches: (path) => path === '/contact'
         }
     ];
     let links = baseLinks.map(link => (Object.assign(Object.assign({}, link), { name: t(`nav.${link.key}`) })));
