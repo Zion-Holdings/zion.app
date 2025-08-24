@@ -1,4 +1,14 @@
 import React, { useState } from 'react';
+
+interface LayoutProps {
+  children: React.ReactNode;
+}
+
+const Layout: React.FC<LayoutProps> = ({ children }) => {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+
+  return (
+    <>
       {/* Top Contact Bar */}
       <TopContactBar />
       
@@ -131,47 +141,8 @@ import React, { useState } from 'react';
           </motion.div>
         </div>
       )}
-    </div>
+    </>
   );
-}
-=======
-import EnhancedNavigation2025 from './EnhancedNavigation2025';
+};
 
-interface LayoutProps {
-  children: React.ReactNode;
-}
-
-export default function Layout({ children }: LayoutProps) {
-  return (
-    <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
-      {/* Skip to content link for accessibility */}
-      <a href="#main" className="skip-link">Skip to main content</a>
-      {/* Futuristic Background */}
-      <UltraFuturisticBackground2035>
-        {/* Layout Structure */}
-        <div className="relative z-10">
-          {/* Top Contact Bar */}
-          <TopContactBar />
-          
-          {/* Navigation */}
-          <UltraFuturisticNavigation2035 />
-          
-          {/* Sidebar and Main Content */}
-          <div className="flex">
-            <EnhancedSidebar2025 
-              isOpen={sidebarOpen} 
-              onClose={() => setSidebarOpen(false)} 
-            />
-            
-            <main id="main" role="main" className="flex-1 pt-24 lg:pt-28">
-              {children}
-            </main>
-          </div>
-          
-          {/* Footer */}
-          <UltraFuturisticFooter2035 />
-        </div>
-      </UltraFuturisticBackground2035>
-    </div>
-  );
-}
+export default Layout;

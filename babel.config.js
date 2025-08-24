@@ -1,9 +1,8 @@
 module.exports = {
   presets: [
     ['@babel/preset-env', {
-      modules: false, // Preserve ES modules
+      modules: 'commonjs', // Use CommonJS for compatibility
       targets: {
-        esmodules: true,
         node: '18'
       }
     }],
@@ -14,10 +13,10 @@ module.exports = {
   ],
   plugins: [
     ['@babel/plugin-transform-runtime', {
-      useESModules: true,
+      useESModules: false,
       corejs: false,
       helpers: true,
-      regenerator: false
+      regenerator: true
     }]
   ],
   env: {

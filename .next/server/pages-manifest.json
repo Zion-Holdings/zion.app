@@ -1,9 +1,9 @@
 {
-  "/": "pages/index.html",
-  "/newsroom": "pages/newsroom.html",
-  "/site-health": "pages/site-health.html",
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
+  "/comprehensive-services-showcase-2025": "pages/comprehensive-services-showcase-2025.html",
+  "/comprehensive-services-showcase-2026": "pages/comprehensive-services-showcase-2026.html",
+  "/": "pages/index.html",
   "/_document": "pages/_document.js",
   "/404": "pages/404.html"
 }

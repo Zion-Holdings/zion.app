@@ -7,7 +7,7 @@ import {
   Rocket, Brain, Atom, Shield, Award, Zap, Cloud, Target, Search,
   Filter, Grid, List, DollarSign, Users, Clock, Eye, Heart
 } from 'lucide-react';
-import Layout from '../components/layout/Layout';
+
 import { comprehensiveRealServices2025 } from '../data/2025-comprehensive-real-services';
 
 const contactInfo = {
@@ -127,7 +127,6 @@ export default function ComprehensiveServicesShowcase2025() {
         <link rel="canonical" href="https://ziontechgroup.com/comprehensive-services-showcase-2025" />
       </Head>
 
-      <Layout>
         {/* Hero Section */}
         <section className="relative py-20 bg-gradient-to-br from-black via-gray-900 to-black overflow-hidden">
           {/* Animated Background */}
@@ -259,7 +258,7 @@ export default function ComprehensiveServicesShowcase2025() {
                 <button
                   onClick={() => setViewMode('list')}
                   className={`p-2 rounded-md transition-all duration-300 ${
-                    viewMode === 'list' ? 'bg-cyan-500 text-white' : 'text-white' : 'text-gray-400 hover:text-white'
+                    viewMode === 'list' ? 'bg-cyan-500 text-white' : 'text-gray-400 hover:text-white'
                   }`}
                 >
                   <List className="w-5 h-5" />
@@ -548,7 +547,6 @@ export default function ComprehensiveServicesShowcase2025() {
             </motion.div>
           </div>
         </section>
-      </Layout>
     </>
   );
 };

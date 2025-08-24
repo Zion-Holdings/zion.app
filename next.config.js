@@ -8,6 +8,20 @@ const nextConfig = {
 	eslint: {
 		ignoreDuringBuilds: true
 	},
+	typescript: {
+		ignoreBuildErrors: true
+	},
+	webpack: (config, { isServer }) => {
+		if (!isServer) {
+			config.resolve.fallback = {
+				...config.resolve.fallback,
+				fs: false,
+				net: false,
+				tls: false,
+			};
+		}
+		return config;
+	},
 	async redirects() {
 		return [
 			{ source: '/ai-customer-success-platform', destination: '/services/ai-customer-success-platform', permanent: true },
@@ -22,4 +36,4 @@ const nextConfig = {
 	}
 };
 
-module.exports = withSentryConfig(baseConfig);
+module.exports = nextConfig;

@@ -1,0 +1,120 @@
+{
+  "version": 3,
+  "pages404": true,
+  "caseSensitive": false,
+  "basePath": "",
+  "redirects": [
+    {
+      "source": "/:file((?!\\.well-known(?:/.*)?)(?:[^/]+/)*[^/]+\\.\\w+)/",
+      "destination": "/:file",
+      "internal": true,
+      "missing": [
+        {
+          "type": "header",
+          "key": "x-nextjs-data"
+        }
+      ],
+      "statusCode": 308,
+      "regex": "^(?:/((?!\\.well-known(?:/.*)?)(?:[^/]+/)*[^/]+\\.\\w+))/$"
+    },
+    {
+      "source": "/:notfile((?!\\.well-known(?:/.*)?)(?:[^/]+/)*[^/\\.]+)",
+      "destination": "/:notfile/",
+      "internal": true,
+      "statusCode": 308,
+      "regex": "^(?:/((?!\\.well-known(?:/.*)?)(?:[^/]+/)*[^/\\.]+))$"
+    },
+    {
+      "source": "/ai-customer-success-platform",
+      "destination": "/services/ai-customer-success-platform",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/ai-customer-success-platform(?:/)?$"
+    },
+    {
+      "source": "/ai-sales-intelligence-platform",
+      "destination": "/services/ai-sales-intelligence-platform",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/ai-sales-intelligence-platform(?:/)?$"
+    },
+    {
+      "source": "/ai-financial-planning-platform",
+      "destination": "/services/ai-financial-planning-platform",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/ai-financial-planning-platform(?:/)?$"
+    },
+    {
+      "source": "/ai-powered-decision-engine",
+      "destination": "/services/ai-powered-decision-engine",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/ai-powered-decision-engine(?:/)?$"
+    },
+    {
+      "source": "/intelligent-content-automation-platform",
+      "destination": "/services/intelligent-content-automation-platform",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/intelligent-content-automation-platform(?:/)?$"
+    },
+    {
+      "source": "/intelligent-hr-analytics-platform",
+      "destination": "/services/intelligent-hr-analytics-platform",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/intelligent-hr-analytics-platform(?:/)?$"
+    },
+    {
+      "source": "/smart-crm-intelligence-suite",
+      "destination": "/services/smart-crm-intelligence-suite",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/smart-crm-intelligence-suite(?:/)?$"
+    },
+    {
+      "source": "/affiliate-attribution-suite",
+      "destination": "/services/affiliate-attribution-suite",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/affiliate-attribution-suite(?:/)?$"
+    }
+  ],
+  "headers": [],
+  "rewrites": {
+    "beforeFiles": [],
+    "afterFiles": [],
+    "fallback": []
+  },
+  "dynamicRoutes": [],
+  "staticRoutes": [
+    {
+      "page": "/",
+      "regex": "^/(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/(?:/)?$"
+    },
+    {
+      "page": "/comprehensive-services-showcase-2025",
+      "regex": "^/comprehensive\\-services\\-showcase\\-2025(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/comprehensive\\-services\\-showcase\\-2025(?:/)?$"
+    },
+    {
+      "page": "/comprehensive-services-showcase-2026",
+      "regex": "^/comprehensive\\-services\\-showcase\\-2026(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/comprehensive\\-services\\-showcase\\-2026(?:/)?$"
+    }
+  ],
+  "dataRoutes": [],
+  "rsc": {
+    "header": "rsc",
+    "varyHeader": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+    "prefetchHeader": "next-router-prefetch",
+    "didPostponeHeader": "x-nextjs-postponed",
+    "contentTypeHeader": "text/x-component",
+    "suffix": ".rsc",
+    "prefetchSuffix": ".prefetch.rsc",
+    "prefetchSegmentHeader": "next-router-segment-prefetch",
+    "prefetchSegmentSuffix": ".segment.rsc",
+    "prefetchSegmentDirSuffix": ".segments"
+  },
+  "rewriteHeaders": {
+    "pathHeader": "x-nextjs-rewritten-path",
+    "queryHeader": "x-nextjs-rewritten-query"
+  }
+}
