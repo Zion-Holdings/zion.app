@@ -35,7 +35,7 @@ export interface CloudDevOpsService {
   reviews: number;
 }
 
-export const advancedCloudDevOpsServices2025: AdvancedCloudDevOpsService[] = [
+export const advancedCloudDevOpsServices2025: CloudDevOpsService[] = [
   {
     id: 'multi-cloud-orchestration-platform',
     name: 'Multi-Cloud Orchestration Platform',

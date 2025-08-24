@@ -21,6 +21,7 @@ const EnhancedNavigation: React.FC = () => {
   }, []);
 
   const services = [
+    { name: 'Advanced Services', href: '/2025-advanced-services-showcase', icon: Brain, description: 'Cutting-edge AI, quantum, and emerging tech services' },
     { name: 'All Services', href: '/comprehensive-2025-services-showcase', icon: Globe, description: 'Complete collection of innovative services' },
     { name: 'AI Business Intelligence', href: 'https://ziontechgroup.com/ai-business-intelligence', icon: Brain, description: 'AI-powered analytics and insights' },
     { name: 'Quantum Cybersecurity', href: 'https://ziontechgroup.com/quantum-cybersecurity', icon: Shield, description: 'Quantum-resistant security solutions' },

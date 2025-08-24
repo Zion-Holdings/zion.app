@@ -317,6 +317,129 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Advanced Services Preview Section */}
+      <section className="py-20 px-6">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-cyan-100 bg-clip-text text-transparent">
+              2025 Advanced Services Portfolio
+            </h2>
+            <p className="text-xl text-white/70 max-w-3xl mx-auto mb-8">
+              Explore our comprehensive collection of cutting-edge micro SAAS services, AI solutions, 
+              quantum technologies, and revolutionary IT services
+            </p>
+            <div className="flex flex-wrap justify-center gap-4 mb-8">
+              <span className="px-4 py-2 bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30 rounded-full text-purple-300 text-sm">
+                🧠 AI & Machine Learning
+              </span>
+              <span className="px-4 py-2 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border border-blue-500/30 rounded-full text-blue-300 text-sm">
+                ⚛️ Quantum Computing
+              </span>
+              <span className="px-4 py-2 bg-gradient-to-r from-green-500/20 to-emerald-500/20 border border-green-500/30 rounded-full text-green-300 text-sm">
+                🛡️ Cybersecurity
+              </span>
+              <span className="px-4 py-2 bg-gradient-to-r from-violet-500/20 to-purple-500/20 border border-violet-500/30 rounded-full text-violet-300 text-sm">
+                🚀 Space Technology
+              </span>
+              <span className="px-4 py-2 bg-gradient-to-r from-orange-500/20 to-yellow-500/20 border border-orange-500/30 rounded-full text-orange-300 text-sm">
+                🌐 Edge Computing
+              </span>
+              <span className="px-4 py-2 bg-gradient-to-r from-pink-500/20 to-rose-500/20 border border-pink-500/30 rounded-full text-pink-300 text-sm">
+                🧬 Neural Interfaces
+              </span>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="/2025-advanced-services-showcase"
+                className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl flex items-center justify-center gap-2"
+              >
+                Explore All Services
+                <ArrowRight className="w-5 h-5" />
+              </a>
+              <a
+                href="/comprehensive-2025-services-showcase"
+                className="px-8 py-4 border border-white/20 hover:border-white/40 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 backdrop-blur-sm bg-white/5 hover:bg-white/10 flex items-center justify-center gap-2"
+              >
+                View Service Catalog
+                <ExternalLink className="w-5 h-5" />
+              </a>
+            </div>
+          </motion.div>
+
+          {/* Featured Services Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            {[
+              {
+                title: "AI Autonomous DevOps Orchestrator",
+                description: "Self-healing DevOps with intelligent automation and predictive maintenance",
+                price: "$1,299/month",
+                icon: "🤖",
+                color: "from-emerald-500 to-teal-600",
+                features: ["Autonomous CI/CD", "Predictive scaling", "Self-healing deployments"],
+                link: "/2025-advanced-services-showcase"
+              },
+              {
+                title: "Quantum Financial Modeling Platform",
+                description: "Quantum-powered financial modeling for unprecedented accuracy and speed",
+                price: "$4,999/month",
+                icon: "💰",
+                color: "from-green-500 to-emerald-600",
+                features: ["Quantum simulations", "Portfolio optimization", "Risk modeling"],
+                link: "/2025-advanced-services-showcase"
+              },
+              {
+                title: "AI-Powered Threat Hunting Platform",
+                description: "Proactive threat detection with autonomous hunting and response",
+                price: "$2,199/month",
+                icon: "🔍",
+                color: "from-red-500 to-pink-600",
+                features: ["Autonomous hunting", "AI behavioral analysis", "Real-time intelligence"],
+                link: "/2025-advanced-services-showcase"
+              }
+            ].map((service, index) => (
+              <motion.div
+                key={service.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="group relative p-6 rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-xl hover:border-cyan-400/30 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl"
+              >
+                <div className="text-4xl mb-4">{service.icon}</div>
+                <h3 className="text-lg font-bold mb-3 text-white">{service.title}</h3>
+                <p className="text-white/70 text-sm mb-4 leading-relaxed">{service.description}</p>
+                <div className="mb-4">
+                  <span className="text-xl font-bold text-cyan-400">{service.price}</span>
+                </div>
+                <div className="mb-4">
+                  <div className="space-y-1">
+                    {service.features.map((feature, idx) => (
+                      <div key={idx} className="flex items-center gap-2 text-xs text-white/70">
+                        <CheckCircle className="w-3 h-3 text-cyan-400 flex-shrink-0" />
+                        <span>{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <a
+                  href={service.link}
+                  className="inline-flex items-center text-cyan-400 group-hover:text-cyan-300 transition-colors duration-300 text-sm font-medium"
+                >
+                  Learn More
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </a>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Enhanced Services Showcase */}
       <div id="services">
         <EnhancedServicesShowcase />
