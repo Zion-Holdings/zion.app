@@ -1,8 +1,9 @@
 import React, { Suspense } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { LoadingSpinner } from "./components/ui/loading-spinner";
+import { EnhancedLoading } from "./components/ui/enhanced-loading";
 import { MainNavigation } from "./layout/MainNavigation";
 import { Footer } from "./components/Footer";
+import { ToastContainer } from "./components/ui/toast";
 import { motion } from "framer-motion";
 
 // Lazy load pages
@@ -21,7 +22,7 @@ const NotFound = React.lazy(() => import('./pages/NotFound'));
 const EnhancedLoadingFallback = () => (
   <div className="min-h-screen bg-zion-blue-dark flex items-center justify-center">
     <div className="text-center">
-      <LoadingSpinner size="xl" text="Loading Zion Tech Group..." variant="pulse" className="mb-8"/>
+      <EnhancedLoading size="xl" text="Loading Zion Tech Group..." variant="pulse" className="mb-8"/>
       <motion.div
         className="mt-8 text-zion-slate-light text-sm"
         animate={{ opacity: [0.5, 1, 0.5] }}
@@ -55,6 +56,7 @@ function App() {
           </Suspense>
         </main>
         <Footer />
+        <ToastContainer />
       </div>
     </Router>
   );

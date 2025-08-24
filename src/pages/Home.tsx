@@ -1,7 +1,7 @@
 
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { ServicesShowcase } from "@/components/ServicesShowcase";
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import { ArrowRight, Sparkles, Globe, Zap, Phone, Mail, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 

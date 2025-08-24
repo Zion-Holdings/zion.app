@@ -54,7 +54,6 @@
   }
 }
 
-<<<<<<< HEAD
 /* Custom Zion Tech Group Colors */
 @layer base {
   :root {
@@ -368,22 +367,23 @@
   
   .print-break {
     page-break-before: always;
-=======
-/* Zion-specific custom properties */
-:root {
-  --zion-blue: #2e73ea;
-  --zion-blue-light: #8ab1f3;
-  --zion-blue-dark: #172d67;
-  --zion-purple: #8c15e9;
-  --zion-purple-light: #b971f2;
-  --zion-purple-dark: #530c8b;
-  --zion-cyan: #22ddd2;
-  --zion-cyan-light: #7aeae4;
-  --zion-cyan-dark: #14847e;
-  --zion-slate: #17072b;
-  --zion-slate-light: #451582;
-  --zion-slate-dark: #000000;
-}
+  }
+
+  /* Zion-specific custom properties */
+  :root {
+    --zion-blue: #2e73ea;
+    --zion-blue-light: #8ab1f3;
+    --zion-blue-dark: #172d67;
+    --zion-purple: #8c15e9;
+    --zion-purple-light: #b971f2;
+    --zion-purple-dark: #530c8b;
+    --zion-cyan: #22ddd2;
+    --zion-cyan-light: #7aeae4;
+    --zion-cyan-dark: #14847e;
+    --zion-slate: #17072b;
+    --zion-slate-light: #451582;
+    --zion-slate-dark: #000000;
+  }
 
 /* Accessibility Enhancements */
 .high-contrast {
@@ -508,7 +508,6 @@
     color: black !important;
     text-decoration: underline !important;
 
-<<<<<<< HEAD
   }
 
   /* Accessibility features */
@@ -567,8 +566,5 @@
   .high-contrast *:focus-visible {
     outline: 3px solid white;
     outline-offset: 2px;
-=======
->>>>>>> 08097bf6eda122747048d9ca1b875b6b63cfa6c0
->>>>>>> 00d51a7221a0391df0e2b7f12fcb54d7369c373b
   }
 }

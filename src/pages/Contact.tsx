@@ -30,8 +30,18 @@ export default function Contact() {
       await new Promise(resolve => setTimeout(resolve, 2000));
       setSubmitStatus('success');
       setFormData({ name: '', email: '', subject: '', message: '' });
+      
+      // Show success toast
+      if (typeof window !== 'undefined' && (window as any).showToast) {
+        (window as any).showToast.success('Message Sent!', 'Thank you for contacting us. We\'ll get back to you soon.');
+      }
     } catch (error) {
       setSubmitStatus('error');
+      
+      // Show error toast
+      if (typeof window !== 'undefined' && (window as any).showToast) {
+        (window as any).showToast.error('Error', 'Failed to send message. Please try again.');
+      }
     } finally {
       setIsSubmitting(false);
     }
