@@ -1,30 +1,16 @@
 import type { Config } from 'tailwindcss';
-import { fontFamily } from 'tailwindcss/defaultTheme';
+import defaultTheme from 'tailwindcss/defaultTheme';
 import plugin from 'tailwindcss/plugin';
 
 const config: Config = {
-  darkMode: ['class'],
+  darkMode: 'class',
   content: [
     './pages/**/*.{ts,tsx}',
     './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
   ],
-  safelist: ['border-border'],
-  corePlugins: {
-    container: true
-  },
   theme: {
-    container: {
-      center: true,
-      padding: {
-        DEFAULT: '1.5rem',
-        sm: '2.5rem',
-      },
-      screens: {
-        '2xl': '1440px',
-      }
-    },
     extend: {
       colors: {
         border: 'hsl(var(--border))',
@@ -87,11 +73,11 @@ const config: Config = {
         sm: 'calc(var(--radius) - 4px)',
       },
       fontFamily: {
-        sans: ['var(--font-inter)', 'Inter Fallback', ...fontFamily.sans],
+        sans: ['var(--font-inter)', 'Inter Fallback', ...defaultTheme.fontFamily.sans],
         heading: [
           'var(--font-poppins)',
           'Poppins Fallback',
-          ...fontFamily.sans
+          ...defaultTheme.fontFamily.sans
         ]
       },
       keyframes: {

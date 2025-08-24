@@ -388,7 +388,7 @@ const AdvancedAIAssistant: React.FC = () => {
       opacity: 1,
       transition: {
         duration: 0.6,
-        ease: "easeOut",
+        ease: "easeOut" as const,
       },
     },
   };
@@ -684,7 +684,7 @@ const AdvancedAIAssistant: React.FC = () => {
                             {Object.entries(insight.data).map(([key, value]) => (
                               <div key={key}>
                                 <div className="text-gray-400 text-xs capitalize">{key.replace(/([A-Z])/g, ' $1')}</div>
-                                <div className="text-white font-medium">{value}</div>
+                                <div className="text-white font-medium">{String(value)}</div>
                               </div>
                             ))}
                           </div>
