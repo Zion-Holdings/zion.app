@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowRight, CheckCircle, Star, Users, Code, Cloud, Brain, Shield, Zap, Globe } from 'lucide-react';
+import { ArrowRight, CheckCircle, Star, Users, Code, Cloud, Brain, Shield, Zap, Globe, Rocket, Cpu, Database, Lock, Zap as Lightning } from 'lucide-react';
 import AdvancedHero from '../components/AdvancedHero';
 import AdvancedServicesShowcase from '../components/AdvancedServicesShowcase';
 import AdvancedTestimonials from '../components/AdvancedTestimonials';
@@ -44,10 +44,10 @@ export default function HomePage() {
   }, []);
 
   const heroStats = [
-    { value: '200+', label: 'Revolutionary Micro SaaS Services', color: 'text-cyan-400', icon: '🚀' },
-    { value: '99.99%', label: 'Uptime Guarantee', color: 'text-fuchsia-400', icon: '🛡️' },
-    { value: '21', label: 'Day Free Trials', color: 'text-blue-400', icon: '⏰' },
-    { value: '24/7', label: 'AI Support', color: 'text-green-400', icon: '🤖' },
+    { value: '200+', label: 'Revolutionary Micro SaaS Services', color: 'text-cyan-400', icon: Rocket },
+    { value: '99.99%', label: 'Uptime Guarantee', color: 'text-fuchsia-400', icon: Shield },
+    { value: '21', label: 'Day Free Trials', color: 'text-blue-400', icon: Zap },
+    { value: '24/7', label: 'AI Support', color: 'text-green-400', icon: Brain },
   ];
 
   const services = [
@@ -55,35 +55,46 @@ export default function HomePage() {
       title: 'Micro SaaS Solutions',
       description: 'Scalable, focused software solutions for specific business needs',
       icon: '💼',
-      features: ['Custom Development', 'API Integration', 'Cloud Deployment', '24/7 Support']
+      features: ['Custom Development', 'API Integration', 'Cloud Deployment', '24/7 Support'],
+      link: '/services/micro-saas'
     },
     {
       title: 'AI & Machine Learning',
       description: 'Cutting-edge artificial intelligence solutions for business automation',
       icon: '🧠',
-      features: ['Predictive Analytics', 'Natural Language Processing', 'Computer Vision', 'Process Automation']
+      features: ['Predictive Analytics', 'Natural Language Processing', 'Computer Vision', 'Process Automation'],
+      link: '/services/ai-ml'
     },
     {
       title: 'Cloud Infrastructure',
       description: 'Robust cloud solutions for scalability and reliability',
       icon: '☁️',
-      features: ['AWS/Azure/GCP', 'Container Orchestration', 'Serverless Architecture', 'Disaster Recovery']
+      features: ['AWS/Azure/GCP', 'Container Orchestration', 'Serverless Architecture', 'Disaster Recovery'],
+      link: '/services/cloud-infrastructure'
     },
     {
       title: 'Cybersecurity',
       description: 'Advanced security solutions to protect your digital assets',
       icon: '🔒',
-      features: ['Threat Detection', 'Penetration Testing', 'Compliance Auditing', 'Incident Response']
+      features: ['Threat Detection', 'Penetration Testing', 'Compliance Auditing', 'Incident Response'],
+      link: '/services/cybersecurity'
     }
   ];
 
   const technologies = [
-    { name: 'React & Next.js', icon: '⚛️' },
-    { name: 'Node.js & Python', icon: '🐍' },
-    { name: 'AWS & Azure', icon: '☁️' },
-    { name: 'Docker & Kubernetes', icon: '🐳' },
-    { name: 'TensorFlow & PyTorch', icon: '🤖' },
-    { name: 'Blockchain & Web3', icon: '⛓️' }
+    { name: 'React & Next.js', icon: '⚛️', description: 'Modern web development' },
+    { name: 'Node.js & Python', icon: '🐍', description: 'Backend & AI development' },
+    { name: 'AWS & Azure', icon: '☁️', description: 'Cloud infrastructure' },
+    { name: 'Docker & Kubernetes', icon: '🐳', description: 'Container orchestration' },
+    { name: 'TensorFlow & PyTorch', icon: '🤖', description: 'Machine learning' },
+    { name: 'Blockchain & Web3', icon: '⛓️', description: 'Decentralized solutions' }
+  ];
+
+  const quickActions = [
+    { title: 'Get Started', description: 'Start your free trial today', action: 'Start Free Trial', link: '/signup', icon: Rocket },
+    { title: 'View Services', description: 'Explore our service catalog', action: 'Browse Services', link: '/services', icon: Code },
+    { title: 'Contact Sales', description: 'Talk to our experts', action: 'Contact Us', link: '/contact', icon: Users },
+    { title: 'Documentation', description: 'Learn how to use our platform', action: 'View Docs', link: '/docs', icon: Database }
   ];
 
   return (
@@ -189,69 +200,143 @@ export default function HomePage() {
               Discover our comprehensive suite of cutting-edge micro SaaS services, IT solutions, and AI innovations. 
               From quantum computing to space technology, we&apos;re building the future today.
             </motion.p>
-          </div>
-        </div>
-        </section>
 
-        {/* Enhanced Performance Metrics Section */}
-        <EnhancedPerformanceMetrics 
-          title="Advanced Performance Analytics"
-          subtitle="Real-time monitoring and intelligent insights for optimal system performance"
-          showCharts={true}
-          autoRefresh={true}
-        />
-
-        {/* Enhanced Security Dashboard Section */}
-        <EnhancedSecurityDashboard 
-          title="Enterprise Security Monitoring"
-          subtitle="Comprehensive threat detection and security analytics for your infrastructure"
-          showThreats={true}
-          autoRefresh={true}
-        />
-
-        {/* Advanced Data Visualization Section */}
-        <AdvancedDataVisualization 
-          title="Interactive Data Analytics"
-          subtitle="Real-time charts, performance metrics, and business intelligence dashboards"
-          showControls={true}
-          autoRefresh={true}
-          refreshInterval={10000}
-          maxDataPoints={30}
-        />
-
-        {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Ready to Transform Your Business?
-            </h2>
-            <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-              Let&rsquo;s discuss how our technology solutions can drive growth, efficiency, and innovation 
-              for your organization.
-            </p>
+            {/* Quick Action Buttons */}
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center"
+              className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
             >
-              <Link 
-                href="#services" 
-                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-300 focus:ring-opacity-50"
-                aria-label="Explore our services"
-              >
+              <Link href="/signup" className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+                Start Free Trial
+              </Link>
+              <Link href="/services" className="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105">
                 Explore Services
               </Link>
-              <Link 
-                href="#contact" 
-                className="bg-transparent border-2 border-white text-white font-bold py-4 px-8 rounded-full text-lg hover:bg-white hover:text-gray-900 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-white focus:ring-opacity-50"
-                aria-label="Contact us"
-              >
-                Contact Us
-              </Link>
+            </motion.div>
+
+            {/* Hero Stats */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto"
+            >
+              {heroStats.map((stat, index) => (
+                <div key={index} className="text-center">
+                  <div className={`text-3xl md:text-4xl font-bold ${stat.color} mb-2`}>
+                    {stat.value}
+                  </div>
+                  <div className="text-sm text-gray-300">{stat.label}</div>
+                </div>
+              ))}
             </motion.div>
           </div>
-        </section>
+        </div>
+      </section>
+
+      {/* Quick Actions Section */}
+      <section className="py-16 bg-gray-800/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Get Started Quickly</h2>
+            <p className="text-xl text-gray-300">Choose your path to success with our streamlined onboarding process</p>
+          </motion.div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {quickActions.map((action, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-gray-800/50 p-6 rounded-lg border border-gray-700 hover:border-blue-500 transition-all duration-300 hover:transform hover:scale-105"
+              >
+                <div className="text-blue-400 mb-4">
+                  <action.icon className="w-8 h-8" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-2">{action.title}</h3>
+                <p className="text-gray-300 mb-4">{action.description}</p>
+                <Link 
+                  href={action.link}
+                  className="inline-flex items-center text-blue-400 hover:text-blue-300 font-medium transition-colors duration-200"
+                >
+                  {action.action}
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Enhanced Performance Metrics Section */}
+      <EnhancedPerformanceMetrics 
+        title="Advanced Performance Analytics"
+        subtitle="Real-time monitoring and intelligent insights for optimal system performance"
+        showCharts={true}
+        autoRefresh={true}
+      />
+
+      {/* Enhanced Security Dashboard Section */}
+      <EnhancedSecurityDashboard 
+        title="Enterprise Security Monitoring"
+        subtitle="Comprehensive threat detection and security analytics for your infrastructure"
+        showThreats={true}
+        autoRefresh={true}
+      />
+
+      {/* Advanced Data Visualization Section */}
+      <AdvancedDataVisualization 
+        title="Interactive Data Analytics"
+        subtitle="Real-time charts, performance metrics, and business intelligence dashboards"
+        showControls={true}
+        autoRefresh={true}
+        refreshInterval={10000}
+        maxDataPoints={30}
+      />
+
+      {/* CTA Section */}
+      <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            Ready to Transform Your Business?
+          </h2>
+          <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
+            Let&rsquo;s discuss how our technology solutions can drive growth, efficiency, and innovation 
+            for your organization.
+          </p>
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center"
+          >
+            <Link 
+              href="#services" 
+              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-300 focus:ring-opacity-50"
+              aria-label="Explore our services"
+            >
+              Explore Services
+            </Link>
+            <Link 
+              href="#contact" 
+              className="bg-transparent border-2 border-white text-white font-bold py-4 px-8 rounded-full text-lg hover:bg-white hover:text-gray-900 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-white focus:ring-opacity-50"
+              aria-label="Contact us"
+            >
+              Contact Us
+            </Link>
+          </motion.div>
+        </div>
+      </section>
 
       {/* Stats Section */}
       <section className="py-20 bg-gray-800" aria-label="Company Statistics">
@@ -267,7 +352,7 @@ export default function HomePage() {
               >
                 <div className="flex justify-center mb-4" aria-hidden="true">
                   <div className={`text-4xl ${stat.color}`}>
-                    {stat.icon}
+                    <stat.icon className="w-12 h-12" />
                   </div>
                 </div>
                 <div className="text-3xl font-bold text-white mb-2">{stat.value}</div>
