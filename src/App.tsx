@@ -41,8 +41,8 @@ const OpenAppRedirect = React.lazy(() => import('./pages/OpenAppRedirect'));
 const ContactPage = React.lazy(() => import('./pages/Contact'));
 const ZionHireAI = React.lazy(() => import('./pages/ZionHireAI'));
 const RequestQuotePage = React.lazy(() => import('./pages/RequestQuote'));
-const ComprehensiveServicesPage = React.lazy(() => import('./pages/ComprehensiveServices'));
-const ServicesPricingPage = React.lazy(() => import('./pages/ServicesPricing'));
+const ExpandedServicesPage = React.lazy(() => import('./pages/ExpandedServicesPage'));
+const PricingGuidePage = React.lazy(() => import('./pages/PricingGuidePage'));
 
 const baseRoutes = [
   { path: '/', element: <Home /> },
@@ -52,8 +52,8 @@ const baseRoutes = [
   { path: '/talent', element: <TalentDirectory /> },
   { path: '/talents', element: <TalentsPage /> },
   { path: '/services', element: <ServicesPage /> },
-  { path: '/comprehensive-services', element: <ComprehensiveServicesPage /> },
-  { path: '/services-pricing', element: <ServicesPricingPage /> },
+  { path: '/expanded-services', element: <ExpandedServicesPage /> },
+  { path: '/pricing-guide', element: <PricingGuidePage /> },
   { path: '/it-onsite-services', element: <ITOnsiteServicesPage /> },
   { path: '/categories', element: <Categories /> },
   { path: '/equipment', element: <EquipmentPage /> },
