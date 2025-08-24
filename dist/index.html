@@ -29,61 +29,6 @@
     
     <!-- Preload critical resources -->
     <link rel="preload" href="data:application/octet-stream;base64,aW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JwppbXBvcnQgUmVhY3RET00gZnJvbSAncmVhY3QtZG9tL2NsaWVudCcKaW1wb3J0IHsgQnJvd3NlclJvdXRlciBhcyBSb3V0ZXIsIFJvdXRlcywgUm91dGUgfSBmcm9tICdyZWFjdC1yb3V0ZXItZG9tJwppbXBvcnQgJy4vaW5kZXguY3NzJwoKLy8gSW1wb3J0IHBhZ2VzCmltcG9ydCBIb21lIGZyb20gJy4vcGFnZXMvSG9tZScKaW1wb3J0IEFib3V0IGZyb20gJy4uL3BhZ2VzL2Fib3V0JwppbXBvcnQgU2VydmljZXMgZnJvbSAnLi4vcGFnZXMvc2VydmljZXMnCmltcG9ydCBDb250YWN0IGZyb20gJy4uL3BhZ2VzL2NvbnRhY3QnCmltcG9ydCBDYXJlZXJzIGZyb20gJy4uL3BhZ2VzL2NhcmVlcnMnCmltcG9ydCBQcml2YWN5IGZyb20gJy4uL3BhZ2VzL3ByaXZhY3knCgovLyBJbXBvcnQgbGF5b3V0IGNvbXBvbmVudHMKaW1wb3J0IFVsdHJhRnV0dXJpc3RpY05hdmlnYXRpb24yMDQ1IGZyb20gJy4uL2NvbXBvbmVudHMvbGF5b3V0L1VsdHJhRnV0dXJpc3RpY05hdmlnYXRpb24yMDQ1JwppbXBvcnQgVWx0cmFGdXR1cmlzdGljRm9vdGVyMjA0NSBmcm9tICcuLi9jb21wb25lbnRzL2xheW91dC9VbHRyYUZ1dHVyaXN0aWNGb290ZXIyMDQ1JwoKZnVuY3Rpb24gQXBwKCkgewogIHJldHVybiAoCiAgICA8Um91dGVyPgogICAgICA8ZGl2IGNsYXNzTmFtZT0iQXBwIj4KICAgICAgICA8VWx0cmFGdXR1cmlzdGljTmF2aWdhdGlvbjIwNDUgLz4KICAgICAgICA8bWFpbj4KICAgICAgICAgIDxSb3V0ZXM+CiAgICAgICAgICAgIDxSb3V0ZSBwYXRoPSIvIiBlbGVtZW50PXs8SG9tZSAvPn0gLz4KICAgICAgICAgICAgPFJvdXRlIHBhdGg9Ii9hYm91dCIgZWxlbWVudD17PEFib3V0IC8+fSAvPgogICAgICAgICAgICA8Um91dGUgcGF0aD0iL3NlcnZpY2VzIiBlbGVtZW50PXs8U2VydmljZXMgLz59IC8+CiAgICAgICAgICAgIDxSb3V0ZSBwYXRoPSIvY29udGFjdCIgZWxlbWVudD17PENvbnRhY3QgLz59IC8+CiAgICAgICAgICAgIDxSb3V0ZSBwYXRoPSIvY2FyZWVycyIgZWxlbWVudD17PENhcmVlcnMgLz59IC8+CiAgICAgICAgICAgIDxSb3V0ZSBwYXRoPSIvcHJpdmFjeSIgZWxlbWVudD17PFByaXZhY3kgLz59IC8+CiAgICAgICAgICA8L1JvdXRlcz4KICAgICAgICA8L21haW4+CiAgICAgICAgPFVsdHJhRnV0dXJpc3RpY0Zvb3RlcjIwNDUgLz4KICAgICAgPC9kaXY+CiAgICA8L1JvdXRlcj4KICApCn0KClJlYWN0RE9NLmNyZWF0ZVJvb3QoZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3Jvb3QnKSEpLnJlbmRlcigKICA8UmVhY3QuU3RyaWN0TW9kZT4KICAgIDxBcHAgLz4KICA8L1JlYWN0LlN0cmljdE1vZGU+Cik=" as="script" />
-    
-    <!-- Critical CSS inline -->
-    <style>
-      /* Critical CSS for above-the-fold content */
-      body {
-        margin: 0;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-          'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-          sans-serif;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        background-color: #172d67;
-        color: #ffffff;
-      }
-      
-      #root {
-        min-height: 100vh;
-      }
-      
-      /* Loading spinner for initial load */
-      .initial-loader {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(135deg, #172d67 0%, #2e73ea 50%, #8c15e9 100%);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 9999;
-      }
-      
-      .spinner {
-        width: 50px;
-        height: 50px;
-        border: 3px solid rgba(255, 255, 255, 0.3);
-        border-radius: 50%;
-        border-top-color: #22ddd2;
-        animation: spin 1s ease-in-out infinite;
-      }
-      
-      @keyframes spin {
-        to { transform: rotate(360deg); }
-      }
-      
-      .loading-text {
-        position: absolute;
-        bottom: 30%;
-        color: white;
-        font-size: 18px;
-        font-weight: 500;
-        text-align: center;
-      }
-    </style>
     <script type="module" crossorigin src="/js/index-DrezZz1Q.js"></script>
     <link rel="modulepreload" crossorigin href="/js/react-vendor-eWpxiX5G.js">
     <link rel="modulepreload" crossorigin href="/js/ui-vendor-Bei3rsp3.js">
@@ -93,9 +38,9 @@
   <body>
     <div id="root">
       <!-- Loading screen while React app loads -->
-      <div class="initial-loader">
-        <div class="spinner"></div>
-        <div class="loading-text">Loading Zion Tech Group...</div>
+      <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, #172d67 0%, #2e73ea 50%, #8c15e9 100%); display: flex; align-items: center; justify-content: center; z-index: 9999;">
+        <div style="width: 50px; height: 50px; border: 3px solid rgba(255, 255, 255, 0.3); border-radius: 50%; border-top-color: #22ddd2; animation: spin 1s ease-in-out infinite;"></div>
+        <div style="position: absolute; bottom: 30%; color: white; font-size: 18px; font-weight: 500; text-align: center;">Loading Zion Tech Group...</div>
       </div>
     </div>
     
