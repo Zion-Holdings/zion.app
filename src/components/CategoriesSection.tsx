@@ -50,8 +50,20 @@ const specialServices = [
     badge: "Popular"
   },
   {
-    title: "Comprehensive Services",
-    link: "/comprehensive-services"
+    title: "All Services",
+    link: "/all-services"
+  },
+  {
+    title: "Expanded Services",
+    link: "/expanded-services"
+  },
+  {
+    title: "Service Comparison",
+    link: "/service-comparison"
+  },
+  {
+    title: "Cost Calculator",
+    link: "/service-calculator"
   }
 ];
 
