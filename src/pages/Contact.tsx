@@ -1,4 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Phone, Mail, MapPin, Globe, MessageCircle, Send, CheckCircle, XCircle } from 'lucide-react';
+import { SEO } from '@/components/SEO';
+import { z } from 'zod';
+import { toast } from 'sonner';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -41,11 +50,7 @@ export default function Contact() {
         }
       }
       setErrors(fieldErrors);
-      toast({
-        title: "Form Validation Error",
-        description: result.error.errors[0].message,
-        variant: "destructive",
-      });
+      toast.error(result.error.errors[0].message);
       return;
     }
 
@@ -56,10 +61,7 @@ export default function Contact() {
 
     setTimeout(() => {
       setIsSubmitting(false);
-      toast({
-        title: "Message Sent",
-        description: "We've received your message and will get back to you soon.",
-      });
+      toast.success("We've received your message and will get back to you soon.");
 
       // Reset form
       setFormData({
@@ -91,11 +93,7 @@ export default function Contact() {
       return Promise.resolve();
     } catch (error) {
       console.error("Error in AI chat:", error);
-      toast({
-        title: "Chat Error",
-        description: "There was an error communicating with our AI assistant. Please try again.",
-        variant: "destructive"
-      });
+      toast.error("There was an error communicating with our AI assistant. Please try again.");
       return Promise.resolve();
     }
   };
@@ -115,7 +113,7 @@ export default function Contact() {
     }
   ];
 
->>>>>>> 1190166b600d0883f3d21629581161b11801bcbf
+
   return (
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-16">

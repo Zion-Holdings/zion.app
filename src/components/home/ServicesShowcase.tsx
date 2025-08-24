@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { getFeaturedServices } from '@/data/microSaasServices';
+import { COMPREHENSIVE_SERVICES } from '@/data/comprehensiveServices';
 import { 
   Brain, 
   Cloud, 
@@ -28,7 +28,7 @@ const categoryColors = {
 };
 
 export function ServicesShowcase() {
-  const featuredServices = getFeaturedServices();
+  const featuredServices = COMPREHENSIVE_SERVICES.slice(0, 6);
 
   return (
     <section className="py-20 bg-gradient-to-b from-zion-blue to-zion-blue-dark">
@@ -82,27 +82,17 @@ export function ServicesShowcase() {
                 {/* Pricing */}
                 <div className="mb-4">
                   <div className="text-2xl font-bold text-zion-purple">
-                    ${service.price}
-                    {service.pricingModel === 'monthly' && '/month'}
-                    {service.pricingModel === 'yearly' && '/year'}
+                    ${service.price?.toLocaleString()}
                   </div>
-                  {service.freeTrial && (
-                    <div className="text-sm text-green-600 flex items-center gap-1">
-                      <CheckCircle className="w-4 h-4" />
-                      {service.freeTrialDays}-day free trial
-                    </div>
-                  )}
                 </div>
 
-                {/* Key Benefits */}
+                {/* Tags */}
                 <div className="mb-4">
-                  <h4 className="font-semibold text-gray-900 mb-2">Key Benefits:</h4>
-                  <div className="space-y-1">
-                    {service.benefits.slice(0, 2).map((benefit, index) => (
-                      <div key={index} className="text-sm text-gray-600 flex items-center gap-2">
-                        <CheckCircle className="w-4 h-4 text-green-500" />
-                        {benefit}
-                      </div>
+                  <div className="flex flex-wrap gap-2">
+                    {service.tags.slice(0, 3).map((tag, index) => (
+                      <Badge key={index} variant="outline" className="text-xs">
+                        {tag}
+                      </Badge>
                     ))}
                   </div>
                 </div>

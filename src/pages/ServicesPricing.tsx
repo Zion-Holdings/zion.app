@@ -179,7 +179,7 @@ export default function ServicesPricing() {
         title="Micro SAAS Services Pricing - Zion Tech Group" 
         description="Transparent pricing for our comprehensive micro SAAS services. Choose from Starter, Professional, or Enterprise tiers to match your business needs and budget."
         keywords="micro SAAS pricing, service costs, AI services pricing, IT solutions pricing"
-        canonical="https://ziontechgroup.com/services-pricing"
+        url="https://ziontechgroup.com/services-pricing"
       />
 
       {/* Hero Section */}

@@ -22,7 +22,7 @@ export const Steps: React.FC<StepsProps> = ({ children, className, currentStep =
     <div className={cn("flex items-center space-x-2", className)}>
       {React.Children.map(children, (child, index) => {
         if (React.isValidElement(child)) {
-          return React.cloneElement(child, {
+          return React.cloneElement(child as React.ReactElement<StepProps>, {
             isActive: index === currentStep,
             isCompleted: index < currentStep,
           });

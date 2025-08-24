@@ -1,5 +1,5 @@
 import React from 'react';
-import { comprehensiveServices } from '@/data/comprehensiveServices';
+import { COMPREHENSIVE_SERVICES } from '@/data/comprehensiveServices';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -26,7 +26,7 @@ import {
 import Target from 'lucide-react/dist/esm/icons/target';
 import { Link } from 'react-router-dom';
 
-const microSAASServices = comprehensiveServices.filter(service => service.category === 'Micro SAAS');
+const microSAASServices = COMPREHENSIVE_SERVICES.filter(service => service.category === 'Micro SAAS');
 
 export default function MicroSAASShowcase() {
   return (
@@ -133,34 +133,17 @@ export default function MicroSAASShowcase() {
                     </div>
                   </div>
 
-                  {/* Key Features */}
+                  {/* Tags */}
                   <div>
                     <h4 className="font-semibold text-zion-blue mb-3 flex items-center gap-2">
                       <Zap className="w-4 h-4" />
                       Key Features
                     </h4>
-                    <div className="space-y-2">
-                      {service.features.slice(0, 4).map((feature, index) => (
-                        <div key={index} className="flex items-center gap-2 text-sm text-gray-700">
-                          <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                          <span>{feature}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Benefits */}
-                  <div>
-                    <h4 className="font-semibold text-zion-blue mb-3 flex items-center gap-2">
-                      <TrendingUp className="w-4 h-4" />
-                      Business Benefits
-                    </h4>
-                    <div className="space-y-2">
-                      {service.benefits.slice(0, 3).map((benefit, index) => (
-                        <div key={index} className="flex items-center gap-2 text-sm text-gray-700">
-                          <div className="w-2 h-2 bg-zion-cyan rounded-full flex-shrink-0"></div>
-                          <span>{benefit}</span>
-                        </div>
+                    <div className="flex flex-wrap gap-2">
+                      {service.tags.slice(0, 4).map((tag, index) => (
+                        <Badge key={index} variant="secondary" className="text-xs bg-zion-cyan-light text-zion-blue">
+                          {tag}
+                        </Badge>
                       ))}
                     </div>
                   </div>
@@ -174,22 +157,20 @@ export default function MicroSAASShowcase() {
                     </div>
                     <div className="flex items-center gap-1">
                       <Clock className="w-4 h-4" />
-                      <span>{service.estimatedDelivery}</span>
+                      <span>{service.availability || '2-4 weeks'}</span>
                     </div>
                   </div>
 
-                  {/* Target Audience */}
+                  {/* Category */}
                   <div>
                     <h4 className="font-semibold text-zion-blue mb-3 flex items-center gap-2">
                       <Users className="w-4 h-4" />
-                      Perfect For
+                      Category
                     </h4>
                     <div className="flex flex-wrap gap-2">
-                      {service.targetAudience.slice(0, 3).map((audience, index) => (
-                        <Badge key={index} variant="secondary" className="text-xs bg-zion-cyan-light text-zion-blue">
-                          {audience}
-                        </Badge>
-                      ))}
+                      <Badge variant="secondary" className="text-xs bg-zion-cyan-light text-zion-blue">
+                        {service.category}
+                      </Badge>
                     </div>
                   </div>
 
@@ -200,18 +181,18 @@ export default function MicroSAASShowcase() {
                     </div>
                     <div className="flex flex-col gap-2">
                       <a 
-                        href={`tel:${service.contactInfo.phone}`}
+                        href="tel:+13024640950"
                         className="flex items-center justify-center gap-2 text-zion-cyan hover:text-zion-cyan-dark transition-colors font-medium"
                       >
                         <Phone className="w-4 h-4" />
-                        {service.contactInfo.phone}
+                        +1 302 464 0950
                       </a>
                       <a 
-                        href={`mailto:${service.contactInfo.email}`}
+                        href="mailto:kleber@ziontechgroup.com"
                         className="flex items-center justify-center gap-2 text-zion-cyan hover:text-zion-cyan-dark transition-colors font-medium"
                       >
                         <Mail className="w-4 h-4" />
-                        {service.contactInfo.email}
+                        kleber@ziontechgroup.com
                       </a>
                     </div>
                     <Link 

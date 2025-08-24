@@ -131,7 +131,7 @@ export default function ComprehensiveServicesPage() {
                 <CardHeader className="pb-4">
                   <div className="flex items-start justify-between">
                     <div className="w-12 h-12 bg-gradient-to-br from-zion-purple to-zion-purple-dark rounded-lg flex items-center justify-center text-zion-cyan mb-3">
-                      {service.icon}
+                      <Building className="w-6 h-6" />
                     </div>
                     <Badge variant="outline" className="border-zion-cyan text-zion-cyan">
                       {service.category}
