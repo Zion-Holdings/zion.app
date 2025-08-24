@@ -1204,25 +1204,50 @@ export default function ServicesPage() {
       {/* Services Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredServices.map((service) => (
-          <div key={service.id} className={`rounded-lg border p-6 space-y-4 ${
+          <div key={service.id} className={`rounded-lg border p-6 space-y-4 transition-all duration-300 hover:scale-105 hover:shadow-2xl ${
             service.popular 
-              ? 'border-blue-500 bg-gradient-to-br from-blue-900/20 to-purple-900/20' 
-              : 'border-white/10 bg-zinc-900/50'
+              ? 'border-blue-500 bg-gradient-to-br from-blue-900/20 to-purple-900/20 shadow-lg shadow-blue-500/20' 
+              : 'border-white/10 bg-zinc-900/50 hover:border-white/20'
           }`}>
             {service.popular && (
-              <div className="inline-block bg-blue-500 text-white text-xs px-2 py-1 rounded-full">
-                Most Popular
+              <div className="inline-block bg-gradient-to-r from-blue-500 to-purple-500 text-white text-xs px-3 py-1 rounded-full font-semibold">
+                ⭐ Most Popular
               </div>
             )}
             
-            <div>
-              <h3 className="text-xl font-semibold mb-2">{service.name}</h3>
-              <p className="text-sm opacity-80 mb-3">{service.tagline}</p>
-              <p className="text-sm mb-4">{service.description}</p>
+            <div className="space-y-3">
+              <div className="flex items-start justify-between">
+                <h3 className="text-xl font-semibold leading-tight">{service.name}</h3>
+                <div className="text-2xl opacity-60">
+                  {service.id.includes('ai') ? '🤖' : 
+                   service.id.includes('quantum') ? '⚛️' : 
+                   service.id.includes('blockchain') ? '🔗' : 
+                   service.id.includes('iot') ? '📡' : 
+                   service.id.includes('security') ? '🔒' : 
+                   service.id.includes('analytics') ? '📊' : 
+                   service.id.includes('cloud') ? '☁️' : 
+                   service.id.includes('gaming') ? '🎮' : 
+                   service.id.includes('finance') ? '💰' : 
+                   service.id.includes('health') ? '🏥' : 
+                   service.id.includes('education') ? '📚' : 
+                   service.id.includes('retail') ? '🛒' : 
+                   service.id.includes('manufacturing') ? '🏭' : 
+                   service.id.includes('space') ? '🚀' : 
+                   service.id.includes('climate') ? '🌍' : 
+                   service.id.includes('legal') ? '⚖️' : 
+                   service.id.includes('real-estate') ? '🏠' : 
+                   service.id.includes('media') ? '🎬' : 
+                   service.id.includes('robotics') ? '🤖' : 
+                   service.id.includes('biotech') ? '🧬' : 
+                   '🚀'}
+                </div>
+              </div>
+              <p className="text-sm opacity-80 font-medium">{service.tagline}</p>
+              <p className="text-sm leading-relaxed">{service.description}</p>
             </div>
 
-            <div className="space-y-3">
-              <div className="flex items-center justify-between">
+            <div className="space-y-4">
+              <div className="flex items-center justify-between p-3 bg-zinc-800/50 rounded-lg">
                 <span className="text-2xl font-bold text-green-400">{service.price}</span>
                 <div className="text-right">
                   <div className="text-sm opacity-60 line-through">{service.marketPrice}</div>
@@ -1231,16 +1256,18 @@ export default function ServicesPage() {
               </div>
 
               <div>
-                <h4 className="font-semibold mb-2">Key Features:</h4>
-                <ul className="space-y-1 text-sm">
-                  {service.features.slice(0, 3).map((feature, index) => (
-                    <li key={index} className="flex items-center gap-2">
-                      <span className="text-green-400">✓</span>
-                      {feature}
+                <h4 className="font-semibold mb-3 text-blue-400">Key Features:</h4>
+                <ul className="space-y-2 text-sm">
+                  {service.features.slice(0, 4).map((feature, index) => (
+                    <li key={index} className="flex items-start gap-2">
+                      <span className="text-green-400 text-lg">✓</span>
+                      <span className="leading-relaxed">{feature}</span>
                     </li>
                   ))}
-                  {service.features.length > 3 && (
-                    <li className="text-sm opacity-60">+{service.features.length - 3} more features</li>
+                  {service.features.length > 4 && (
+                    <li className="text-sm opacity-60 text-center pt-2">
+                      +{service.features.length - 4} more features
+                    </li>
                   )}
                 </ul>
               </div>
@@ -1250,7 +1277,7 @@ export default function ServicesPage() {
                   href={service.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block w-full text-center bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg transition-colors"
+                  className="block w-full text-center bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white py-3 px-4 rounded-lg transition-all duration-300 font-semibold hover:shadow-lg hover:shadow-blue-500/25"
                 >
                   Learn More & Get Started
                 </a>
@@ -1261,25 +1288,51 @@ export default function ServicesPage() {
       </div>
 
       {/* Call to Action */}
-      <div className="text-center bg-gradient-to-r from-blue-900/20 to-purple-900/20 rounded-lg p-8 border border-white/10">
-        <h2 className="text-2xl font-semibold mb-4">Ready to Transform Your Business?</h2>
-        <p className="text-lg opacity-80 mb-6 max-w-2xl mx-auto">
+      <div className="text-center bg-gradient-to-r from-blue-900/20 via-purple-900/20 to-pink-900/20 rounded-lg p-8 border border-white/10">
+        <h2 className="text-3xl font-semibold mb-4">Ready to Transform Your Business?</h2>
+        <p className="text-lg opacity-80 mb-6 max-w-3xl mx-auto">
           Our revolutionary services are designed to give you a competitive edge in the digital economy. 
-          Contact us today to discuss how we can help you achieve unprecedented growth and efficiency.
+          From AI-powered automation to quantum computing solutions, we deliver the future of technology today.
         </p>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 max-w-4xl mx-auto">
+          <div className="text-center space-y-2">
+            <div className="text-3xl">🚀</div>
+            <h3 className="font-semibold">Instant Deployment</h3>
+            <p className="text-sm opacity-80">Deploy in weeks, not months</p>
+          </div>
+          <div className="text-center space-y-2">
+            <div className="text-3xl">💰</div>
+            <h3 className="font-semibold">Massive Savings</h3>
+            <p className="text-sm opacity-80">Up to 75% cost reduction</p>
+          </div>
+          <div className="text-center space-y-2">
+            <div className="text-3xl">🔒</div>
+            <h3 className="font-semibold">Enterprise Security</h3>
+            <p className="text-sm opacity-80">SOC2 & GDPR compliant</p>
+          </div>
+        </div>
+
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
             href="tel:+13024640950"
-            className="bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded-lg font-semibold transition-colors"
+            className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white py-4 px-8 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-green-500/25 text-lg"
           >
-            Call Now: +1 302 464 0950
+            📞 Call Now: +1 302 464 0950
           </a>
           <a
             href="mailto:kleber@ziontechgroup.com"
-            className="bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-lg font-semibold transition-colors"
+            className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white py-4 px-8 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 text-lg"
           >
-            Email Us
+            ✉️ Email Us
           </a>
+        </div>
+
+        <div className="mt-8 p-4 bg-zinc-900/50 rounded-lg border border-white/10">
+          <p className="text-sm opacity-80">
+            <strong>Special Offer:</strong> First-time customers get 30 days free trial on any service. 
+            No credit card required. Start transforming your business today!
+          </p>
         </div>
       </div>
     </div>
