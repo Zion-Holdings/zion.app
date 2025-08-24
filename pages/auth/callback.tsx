@@ -1,20 +1,11 @@
-import type { NextPage } from 'next';
-import Head from 'next/head';
+import React from 'react';
+import EnhancedLayout from '../../components/layout/EnhancedLayout';
 
-const Callback: NextPage = () => {
+export default function AuthCallbackPage() {
   return (
-    <div>
-      <Head>
-        <title>Callback - Zion Tech Solutions</title>
-        <meta name="description" content="Callback page" />
-      </Head>
-      
-      <main>
-        <h1>Callback</h1>
-        <p>This page is under construction.</p>
-      </main>
-    </div>
+    <EnhancedLayout>
+      <h1 className="text-2xl font-semibold">Auth Callback</h1>
+      <p className="text-gray-600">Handling OAuth callback. Coming soon.</p>
+    </EnhancedLayout>
   );
-};
-
-export default Callback;
+}

@@ -1,20 +1,11 @@
-import type { NextPage } from 'next';
-import Head from 'next/head';
+import React from 'react';
+import EnhancedLayout from '../../components/layout/EnhancedLayout';
 
-const Verify: NextPage = () => {
+export default function VerifyPage() {
   return (
-    <div>
-      <Head>
-        <title>Verify - Zion Tech Solutions</title>
-        <meta name="description" content="Verify page" />
-      </Head>
-      
-      <main>
-        <h1>Verify</h1>
-        <p>This page is under construction.</p>
-      </main>
-    </div>
+    <EnhancedLayout>
+      <h1 className="text-2xl font-semibold">Verify</h1>
+      <p className="text-gray-600">Verification flow coming soon.</p>
+    </EnhancedLayout>
   );
-};
-
-export default Verify;
+}

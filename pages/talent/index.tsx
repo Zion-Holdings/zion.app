@@ -1,20 +1,11 @@
-import type { NextPage } from 'next';
-import Head from 'next/head';
+import React from 'react';
+import EnhancedLayout from '../../components/layout/EnhancedLayout';
 
-const Index: NextPage = () => {
+export default function TalentPage() {
   return (
-    <div>
-      <Head>
-        <title>Index - Zion Tech Solutions</title>
-        <meta name="description" content="Index page" />
-      </Head>
-      
-      <main>
-        <h1>Index</h1>
-        <p>This page is under construction.</p>
-      </main>
-    </div>
+    <EnhancedLayout>
+      <h1 className="text-2xl font-semibold">Talent</h1>
+      <p className="text-gray-600">Browse talent opportunities. Coming soon.</p>
+    </EnhancedLayout>
   );
-};
-
-export default Index;
+}

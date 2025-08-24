@@ -1,20 +1,11 @@
-import type { NextPage } from 'next';
-import Head from 'next/head';
+import React from 'react';
+import EnhancedLayout from '../../components/layout/EnhancedLayout';
 
-const AutoUpdate20250808t163819257z: NextPage = () => {
+export default function AutoUpdate5() {
   return (
-    <div>
-      <Head>
-        <title>AutoUpdate20250808t163819257z - Zion Tech Solutions</title>
-        <meta name="description" content="AutoUpdate20250808t163819257z page" />
-      </Head>
-      
-      <main>
-        <h1>AutoUpdate20250808t163819257z</h1>
-        <p>This page is under construction.</p>
-      </main>
-    </div>
+    <EnhancedLayout>
+      <h1 className="text-2xl font-semibold">Auto Update</h1>
+      <p className="text-gray-600">Generated page.</p>
+    </EnhancedLayout>
   );
-};
-
-export default AutoUpdate20250808t163819257z;
+}
