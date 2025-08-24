@@ -12,7 +12,6 @@ import { FeatureCTAs } from "@/components/home/FeatureCTAs";
 import { FeatureHighlights } from "@/components/home/FeatureHighlights";
 import { ITServiceRequestHero } from "@/components/home/ITServiceRequestHero";
 import { ServicesShowcase } from "@/components/ServicesShowcase";
-import EnhancedServicesOverview from "@/components/home/EnhancedServicesOverview";
 
 export default function Home() {
   return (
@@ -35,7 +34,6 @@ export default function Home() {
       <FeatureHighlights />
       
       <ServicesShowcase />
-      <EnhancedServicesOverview />
       
       <CategoriesSection />
       <BenefitsSection />

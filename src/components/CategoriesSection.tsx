@@ -42,14 +42,6 @@ const specialServices = [
   {
     title: "Micro SAAS Services",
     link: "/micro-saas-services"
-  },
-  {
-    title: "Enhanced Tech Services",
-    link: "/enhanced-services"
-  },
-  {
-    title: "Service Comparison",
-    link: "/service-comparison"
   }
 ];
 
@@ -102,6 +94,12 @@ export function CategoriesSection({ showTitle = true }: CategoriesSectionProps) 
                 {service.title}
               </Link>
             ))}
+            <Link 
+              to="/pricing"
+              className="px-6 py-3 bg-zion-purple hover:bg-zion-purple-dark border border-zion-purple/20 hover:border-zion-purple/50 rounded-full text-white transition-all duration-300"
+            >
+              View Pricing
+            </Link>
           </div>
         </div>
         

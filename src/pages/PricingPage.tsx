@@ -300,21 +300,21 @@ export default function PricingPage() {
                 {comparisonFeatures.map((feature, index) => (
                   <tr key={index} className="border-b border-gray-200">
                     <td className="p-4 font-medium">{feature}</td>
-                    <td className="p-4 text-center">
+                    <td className="text-center p-4">
                       {index < 4 ? (
                         <CheckCircle className="h-5 w-5 text-green-500 mx-auto" />
                       ) : (
-                        <X className="h-5 w-5 text-red-500 mx-auto" />
+                        <X className="h-5 w-5 text-gray-400 mx-auto" />
                       )}
                     </td>
-                    <td className="p-4 text-center">
+                    <td className="text-center p-4">
                       {index < 7 ? (
                         <CheckCircle className="h-5 w-5 text-green-500 mx-auto" />
                       ) : (
-                        <X className="h-5 w-5 text-red-500 mx-auto" />
+                        <X className="h-5 w-5 text-gray-400 mx-auto" />
                       )}
                     </td>
-                    <td className="p-4 text-center">
+                    <td className="text-center p-4">
                       <CheckCircle className="h-5 w-5 text-green-500 mx-auto" />
                     </td>
                   </tr>
@@ -342,22 +342,22 @@ export default function PricingPage() {
               {
                 icon: <Zap className="h-8 w-8" />,
                 title: "Immediate Deployment",
-                description: "All services ready for instant deployment"
+                description: "All services are ready for immediate deployment with no setup delays"
               },
               {
                 icon: <Shield className="h-8 w-8" />,
                 title: "Enterprise Security",
-                description: "SOC 2 compliance and 24/7 monitoring"
+                description: "Bank-level security with SOC 2 compliance and 24/7 monitoring"
               },
               {
                 icon: <Users className="h-8 w-8" />,
                 title: "Dedicated Support",
-                description: "24/7 technical support with account managers"
+                description: "24/7 technical support with dedicated account managers"
               },
               {
                 icon: <TrendingUp className="h-8 w-8" />,
                 title: "Proven ROI",
-                description: "Average 300% ROI within 6 months"
+                description: "Average 300% ROI within 6 months of implementation"
               }
             ].map((benefit, index) => (
               <Card key={index} className="bg-zion-blue-dark border-zion-blue-light text-white">
@@ -384,7 +384,11 @@ export default function PricingPage() {
               Ready to Get Started?
             </h2>
             <p className="text-gray-600 text-lg max-w-3xl mx-auto">
+<<<<<<< HEAD
               Get in touch with our team to discuss your needs and find the perfect plan for your business
+=======
+              Get in touch with our team to discuss your needs and discover the perfect plan for your business
+>>>>>>> cursor/expand-services-and-deploy-updates-836c
             </p>
           </div>
           
