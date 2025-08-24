@@ -1,61 +1,105 @@
 
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import React from "react";
+import { motion } from "framer-motion";
+import { Button } from "../ui/button";
+import { Badge } from "../ui/badge";
+import Link from "next/link";
 import { 
+  ArrowRight, 
   Brain, 
+  Shield, 
+  Cloud, 
+  Database, 
   Zap, 
-  Users, 
-  Globe,
-  ArrowRight,
-  CheckCircle,
-  Shield,
+  Code, 
+  Settings, 
+  Link as LinkIcon,
+  Mail,
   Star,
-  Award,
-  TrendingUp
-} from 'lucide-react';
+  CheckCircle
+} from "lucide-react";
 
 const features = [
   {
-    icon: Brain,
-    title: 'AI-Powered Intelligence',
-    description: 'Advanced machine learning algorithms that understand your needs and match you with the perfect solutions.',
-    benefits: ['Smart Matching', 'Predictive Analytics', 'Continuous Learning'],
-    color: 'from-zion-purple to-zion-purple-dark',
-    bgColor: 'bg-zion-purple/10',
-    borderColor: 'border-zion-purple/20',
-    iconColor: 'text-zion-purple',
-    link: '/zion-hire-ai'
+    title: "AI & Machine Learning",
+    description: "Transform your business with intelligent automation and data-driven insights",
+    icon: <Brain className="w-8 h-8" />,
+    link: "/comprehensive-services#ai-ml",
+    color: "from-purple-500 to-indigo-600",
+    cta: "Explore AI Services",
+    benefits: ["Predictive Analytics", "Natural Language Processing", "Computer Vision"],
+    badge: "Popular"
   },
   {
-    icon: Zap,
-    title: 'Rapid Deployment',
-    description: 'Get your projects up and running in record time with our streamlined processes and global network.',
-    benefits: ['24/7 Support', 'Global Coverage', 'Instant Quotes'],
-    color: 'from-zion-cyan to-zion-cyan-dark',
-    bgColor: 'bg-zion-cyan/10',
-    borderColor: 'border-zion-cyan/20',
-    iconColor: 'text-zion-cyan',
-    link: '/services'
+    title: "Cybersecurity",
+    description: "Protect your organization with comprehensive security solutions and monitoring",
+    icon: <Shield className="w-8 h-8" />,
+    link: "/comprehensive-services#cybersecurity",
+    color: "from-red-500 to-pink-600",
+    cta: "Secure Your Business",
+    benefits: ["Threat Detection", "Incident Response", "Compliance"],
+    badge: "Critical"
   },
   {
-    icon: Users,
-    title: 'Precision Solutions',
-    description: 'Tailored solutions designed specifically for your unique requirements and business objectives.',
-    benefits: ['Custom Development', 'Scalable Architecture', 'Future-Proof Design'],
-    color: 'from-zion-blue to-zion-blue-dark',
-    bgColor: 'bg-zion-blue/10',
-    borderColor: 'border-zion-blue/20',
-    iconColor: 'text-zion-blue',
-    link: '/request-quote'
+    title: "Cloud & Infrastructure",
+    description: "Modernize your infrastructure with cloud solutions and DevOps automation",
+    icon: <Cloud className="w-8 h-8" />,
+    link: "/comprehensive-services#cloud-infrastructure",
+    color: "from-blue-500 to-cyan-600",
+    cta: "Cloud Solutions",
+    benefits: ["AWS/Azure/GCP", "Kubernetes", "CI/CD"],
+    badge: "Trending"
+  },
+  {
+    title: "Data & Analytics",
+    description: "Unlock business insights with advanced analytics and data engineering",
+    icon: <Database className="w-8 h-8" />,
+    link: "/comprehensive-services#data-analytics",
+    color: "from-green-500 to-emerald-600",
+    cta: "Data Insights",
+    benefits: ["Big Data", "Business Intelligence", "Data Warehousing"],
+    badge: "Hot"
+  },
+  {
+    title: "Digital Transformation",
+    description: "Accelerate your digital journey with strategic transformation services",
+    icon: <Zap className="w-8 h-8" />,
+    link: "/comprehensive-services#digital-transformation",
+    color: "from-orange-500 to-red-600",
+    cta: "Transform Now",
+    benefits: ["Process Automation", "Legacy Modernization", "Change Management"],
+    badge: "New"
+  },
+  {
+    title: "Web & Mobile",
+    description: "Build custom applications and digital experiences for your business",
+    icon: <Code className="w-8 h-8" />,
+    link: "/comprehensive-services#web-mobile",
+    color: "from-indigo-500 to-purple-600",
+    cta: "Build Apps",
+    benefits: ["React/Next.js", "Mobile Apps", "Progressive Web Apps"],
+    badge: "Featured"
+  },
+  {
+    title: "IT Support & Management",
+    description: "Ensure smooth IT operations with managed services and support",
+    icon: <Settings className="w-8 h-8" />,
+    link: "/comprehensive-services#it-support",
+    color: "from-gray-500 to-slate-600",
+    cta: "Get Support",
+    benefits: ["24/7 Monitoring", "Proactive Maintenance", "Help Desk"],
+    badge: "Essential"
+  },
+  {
+    title: "Blockchain & Web3",
+    description: "Leverage decentralized technologies for innovation and transparency",
+    icon: <LinkIcon className="w-8 h-8" />,
+    link: "/comprehensive-services#blockchain-web3",
+    color: "from-teal-500 to-blue-600",
+    cta: "Explore Web3",
+    benefits: ["Smart Contracts", "DeFi", "NFTs"],
+    badge: "Innovation"
   }
-];
-
-const stats = [
-  { number: '10K+', label: 'Projects Completed', icon: CheckCircle, color: 'text-green-400' },
-  { number: '150+', label: 'Countries Served', icon: Globe, color: 'text-zion-cyan' },
-  { number: '99.9%', label: 'Uptime Guarantee', icon: Shield, color: 'text-zion-purple' },
-  { number: '<15min', label: 'Response Time', icon: Zap, color: 'text-yellow-400' }
 ];
 
 export function FeatureCTAs() {
@@ -64,181 +108,125 @@ export function FeatureCTAs() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.1
+        staggerChildren: 0.1,
+        delayChildren: 0.2
       }
     }
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 30, scale: 0.95 },
+    hidden: { opacity: 0, y: 30, scale: 0.9 },
     visible: {
       opacity: 1,
       y: 0,
       scale: 1,
       transition: {
-        duration: 0.6,
+        duration: 0.5,
         ease: "easeOut"
       }
     }
   };
 
-  const statVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: { duration: 0.5 }
-    }
-  };
-
   return (
-    <section className="py-20 bg-gradient-to-b from-zion-slate to-zion-slate-dark relative overflow-hidden">
-      {/* Background decorative elements */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-40 right-20 w-72 h-72 bg-zion-purple rounded-full blur-3xl"></div>
-        <div className="absolute bottom-40 left-20 w-64 h-64 bg-zion-cyan rounded-full blur-3xl"></div>
-      </div>
-
-      <div className="container mx-auto px-4 relative z-10">
-        {/* Header */}
+    <section className="py-20 bg-zion-blue-dark">
+      <div className="container mx-auto px-4">
         <motion.div 
-          className="text-center mb-20"
-          initial={{ opacity: 0, y: 20 }}
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-            Transform Your Business with
-            <span className="block bg-gradient-to-r from-zion-cyan via-zion-purple to-zion-cyan bg-clip-text text-transparent">
-              Next-Gen Technology
-            </span>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            Explore Our <span className="bg-gradient-to-r from-zion-cyan to-zion-purple bg-clip-text text-transparent">Services</span>
           </h2>
-          <p className="text-xl text-zion-slate-light max-w-4xl mx-auto leading-relaxed">
-            Experience the future of business solutions with our cutting-edge platform designed to accelerate growth and innovation
+          <p className="text-xl text-zion-slate-light max-w-3xl mx-auto">
+            Discover comprehensive solutions designed to accelerate your business growth and digital transformation
           </p>
         </motion.div>
 
-        {/* Features Grid */}
         <motion.div 
-          className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
           {features.map((feature, index) => (
-            <motion.div
-              key={index}
+            <motion.div 
+              key={index} 
               variants={itemVariants}
-              whileHover={{ 
-                y: -10, 
-                scale: 1.02,
-                transition: { duration: 0.3 }
-              }}
-              className="group"
+              className="group relative"
             >
-              <div className={`h-full p-8 rounded-3xl ${feature.bgColor} ${feature.borderColor} border-2 hover:border-opacity-40 transition-all duration-300 backdrop-blur-sm relative overflow-hidden`}>
-                {/* Background gradient overlay */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-5 group-hover:opacity-10 transition-opacity duration-300`}></div>
-                
-                <div className="relative z-10">
-                  {/* Icon */}
-                  <div className={`inline-flex p-4 rounded-2xl ${feature.iconColor} bg-opacity-20 mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                    <feature.icon className="w-8 h-8" />
+              <div className="h-full bg-zion-blue-light border border-zion-blue-light/30 rounded-xl p-6 hover:border-zion-purple/50 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                <div className="flex items-start justify-between mb-4">
+                  <div className={`w-12 h-12 bg-gradient-to-br ${feature.color} rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                    <div className="text-white">
+                      {feature.icon}
+                    </div>
                   </div>
-
-                  {/* Content */}
-                  <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-zion-cyan transition-colors duration-200">
-                    {feature.title}
-                  </h3>
-                  
-                  <p className="text-zion-slate-light leading-relaxed mb-6">
-                    {feature.description}
-                  </p>
-
-                  {/* Benefits */}
-                  <ul className="space-y-3 mb-8">
-                    {feature.benefits.map((benefit, idx) => (
-                      <li key={idx} className="flex items-center gap-3 text-zion-slate-light">
-                        <CheckCircle className="w-4 h-4 text-zion-cyan flex-shrink-0" />
-                        <span className="text-sm">{benefit}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  {/* CTA Button */}
-                  <Link
-                    to={feature.link}
-                    className={`inline-flex items-center gap-2 bg-gradient-to-r ${feature.color} hover:from-zion-purple-light hover:to-zion-purple text-white px-6 py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105`}
-                  >
-                    Learn More
-                    <ArrowRight className="w-4 h-4" />
-                  </Link>
+                  <Badge variant="outline" className="border-zion-purple/30 text-zion-cyan">
+                    {feature.badge}
+                  </Badge>
                 </div>
+                
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-zion-cyan transition-colors">
+                  {feature.title}
+                </h3>
+                
+                <p className="text-zion-slate-light text-sm leading-relaxed mb-4">
+                  {feature.description}
+                </p>
+                
+                <div className="space-y-2 mb-6">
+                  {feature.benefits.map((benefit, idx) => (
+                    <div key={idx} className="flex items-center gap-2 text-sm text-zion-slate-light">
+                      <CheckCircle className="w-4 h-4 text-zion-cyan flex-shrink-0" />
+                      <span>{benefit}</span>
+                    </div>
+                  ))}
+                </div>
+                
+                <Link href={feature.link} className="block">
+                  <Button 
+                    className="w-full bg-zion-purple hover:bg-zion-purple-dark group-hover:bg-zion-cyan group-hover:text-white transition-all duration-300"
+                    size="sm"
+                  >
+                    {feature.cta}
+                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                  </Button>
+                </Link>
               </div>
             </motion.div>
           ))}
         </motion.div>
 
-        {/* Stats Section */}
         <motion.div 
-          className="bg-gradient-to-r from-zion-blue/20 to-zion-purple/20 rounded-3xl p-8 md:p-12 border border-zion-blue-light/20"
-          initial={{ opacity: 0, y: 20 }}
+          className="text-center mt-16"
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-white mb-4">
-              Trusted by Industry Leaders
-            </h3>
-            <p className="text-zion-slate-light text-lg">
-              Our track record speaks for itself
-            </p>
+          <div className="inline-flex items-center gap-2 px-6 py-3 bg-zion-purple/20 backdrop-blur-sm border border-zion-purple/30 rounded-full mb-6">
+            <Star className="w-5 h-5 text-zion-cyan" />
+            <span className="text-zion-cyan font-medium">All services include 24/7 support and quality guarantee</span>
           </div>
-
-          <motion.div 
-            className="grid grid-cols-2 md:grid-cols-4 gap-8"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            {stats.map((stat, index) => (
-              <motion.div
-                key={index}
-                variants={statVariants}
-                className="text-center group"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.2 }}
-              >
-                <div className={`inline-flex p-4 rounded-full bg-white/10 mb-4 ${stat.color} bg-opacity-20 group-hover:scale-110 transition-transform duration-300`}>
-                  <stat.icon className="w-8 h-8" />
-                </div>
-                <div className="text-3xl font-bold text-white mb-2">{stat.number}</div>
-                <div className="text-zion-slate-light text-sm">{stat.label}</div>
-              </motion.div>
-            ))}
-          </motion.div>
-
-          {/* Bottom CTA */}
-          <motion.div 
-            className="text-center mt-12"
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-          >
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-3 bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white px-10 py-4 rounded-xl font-semibold text-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-            >
-              Start Your Journey
-              <Zap className="w-6 h-6" />
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/comprehensive-services">
+              <Button size="lg" className="bg-zion-purple hover:bg-zion-purple-dark">
+                View All Services
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
             </Link>
-          </motion.div>
+            <Link href="/contact">
+              <Button size="lg" variant="outline" className="border-zion-cyan text-zion-cyan hover:bg-zion-cyan hover:text-white">
+                Get Custom Quote
+                <Mail className="ml-2 w-5 h-5" />
+              </Button>
+            </Link>
+          </div>
         </motion.div>
       </div>
     </section>

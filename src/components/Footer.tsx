@@ -1,4 +1,3 @@
-// FooterNewsletter component removed - not available
 import { Twitter, Linkedin, Facebook, Instagram, Github, Mail, Phone, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -200,16 +199,29 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Newsletter */}
+          {/* Legal */}
           <div>
             <h4 className="text-white font-semibold mb-4 text-lg flex items-center">
               <span className="w-6 h-6 bg-gradient-to-r from-zion-purple to-zion-cyan rounded-lg flex items-center justify-center mr-2">
                 <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
               </span>
-              Stay Updated
+              Legal
             </h4>
+            <div className="grid grid-cols-2 gap-3">
+              <Link to="/privacy" className="text-zion-slate-light hover:text-zion-cyan transition-colors text-sm">Privacy Policy</Link>
+              <Link to="/terms" className="text-zion-slate-light hover:text-zion-cyan transition-colors text-sm">Terms of Service</Link>
+              <Link to="/cookies" className="text-zion-slate-light hover:text-zion-cyan transition-colors text-sm">Cookie Policy</Link>
+              <Link to="/accessibility" className="text-zion-slate-light hover:text-zion-cyan transition-colors text-sm">Accessibility</Link>
+            </div>
+          </div>
+        </div>
+
+        {/* Newsletter Section */}
+        <div className="border-t border-zion-blue-light pt-8">
+          <div className="max-w-md">
+            <h4 className="text-white font-semibold mb-4 text-lg">Stay Updated</h4>
             <p className="text-zion-slate-light text-sm mb-4">
               Get the latest insights on technology trends and innovations.
             </p>
@@ -218,16 +230,16 @@ export function Footer() {
         </div>
 
         {/* Bottom Footer */}
-        <div className="border-t border-zion-blue-light pt-8">
+        <div className="border-t border-zion-blue-light pt-8 mt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-zion-slate-light text-sm">
-              &copy; {new Date().getFullYear()} Zion Tech Group. All rights reserved.
-            </p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
-              <Link to="/privacy" className="text-zion-slate-light hover:text-zion-cyan text-sm transition-colors">Privacy Policy</Link>
-              <Link to="/terms" className="text-zion-slate-light hover:text-zion-cyan text-sm transition-colors">Terms of Service</Link>
-              <Link to="/cookies" className="text-zion-slate-light hover:text-zion-cyan text-sm transition-colors">Cookie Policy</Link>
-              <Link to="/accessibility" className="text-zion-slate-light hover:text-zion-cyan text-sm transition-colors">Accessibility</Link>
+            <div className="text-zion-slate-light text-sm mb-4 md:mb-0">
+              © 2024 Zion Tech Group. All rights reserved.
+            </div>
+            <div className="flex space-x-6 text-sm">
+              <Link to="/privacy" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Privacy</Link>
+              <Link to="/terms" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Terms</Link>
+              <Link to="/cookies" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Cookies</Link>
+              <Link to="/accessibility" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Accessibility</Link>
             </div>
           </div>
         </div>

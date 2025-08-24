@@ -1,105 +1,101 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Mail, Send, CheckCircle } from 'lucide-react';
+
+import GradientHeading from "@/components/GradientHeading";
+// import { EnhancedNewsletterForm } from "@/components/EnhancedNewsletterForm";
+import { motion } from "framer-motion";
+import { Mail, Bell, TrendingUp, Users } from "lucide-react";
 
 export function NewsletterSection() {
-  const [email, setEmail] = useState('');
-  const [isSubscribed, setIsSubscribed] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email) return;
-    
-    setIsLoading(true);
-    
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    setIsSubscribed(true);
-    setIsLoading(false);
-    setEmail('');
-  };
+  const benefits = [
+    { icon: <Bell className="w-5 h-5" />, text: "Latest AI & Tech Updates", color: "text-zion-cyan" },
+    { icon: <TrendingUp className="w-5 h-5" />, text: "Marketplace Opportunities", color: "text-zion-purple" },
+    { icon: <Users className="w-5 h-5" />, text: "Community Insights", color: "text-zion-cyan-light" }
+  ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-zion-purple via-zion-purple-dark to-zion-slate-dark relative overflow-hidden">
+    <section className="py-24 bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-blue-light relative overflow-hidden" id="newsletter">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 25% 75%, currentColor 1px, transparent 1px)`,
-          backgroundSize: '50px 50px'
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M40 40c0 22.091-17.909 40-40 40s-40-17.909-40-40 17.909-40 40-40 40 17.909 40 40z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
         }} />
       </div>
-      
-      <div className="container mx-auto px-4 relative z-10">
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div 
-          className="text-center max-w-4xl mx-auto"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          className="max-w-5xl mx-auto text-center"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
         >
-          <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-zion-cyan to-zion-blue mb-8">
-            <Mail className="w-10 h-10 text-white" />
-          </div>
-          
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Stay <span className="bg-gradient-to-r from-zion-cyan to-zion-blue bg-clip-text text-transparent">Connected</span>
-          </h2>
-          <p className="text-zion-slate-light text-lg mb-8 max-w-2xl mx-auto">
-            Get the latest updates on new services, tech insights, and exclusive offers delivered straight to your inbox
-          </p>
-          
-          {!isSubscribed ? (
-            <motion.form 
-              onSubmit={handleSubmit}
-              className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              <input
-                type="email"
-                placeholder="Enter your email address"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="flex-1 px-4 py-3 rounded-lg border border-zion-blue-light/30 bg-zion-blue-dark/50 text-white placeholder:text-zion-slate-light/50 focus:outline-none focus:ring-2 focus:ring-zion-cyan focus:border-transparent transition-colors"
-                required
-              />
-              <button
-                type="submit"
-                disabled={isLoading || !email}
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-zion-cyan to-zion-blue hover:from-zion-cyan-dark hover:to-zion-blue-dark text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+          {/* Header */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mb-8"
+          >
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <Mail className="w-8 h-8 text-zion-cyan" />
+              <GradientHeading className="text-4xl md:text-5xl">Stay Informed & Connected</GradientHeading>
+              <Mail className="w-8 h-8 text-zion-cyan" />
+            </div>
+            <p className="text-zion-slate-light text-xl md:text-2xl mb-8 leading-relaxed max-w-3xl mx-auto">
+              Subscribe to our newsletter for the latest updates on Zion's services, trending tech news, and exclusive marketplace opportunities.
+            </p>
+          </motion.div>
+
+          {/* Benefits */}
+          <motion.div 
+            className="flex flex-wrap justify-center gap-6 mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            {benefits.map((benefit, index) => (
+              <motion.div
+                key={benefit.text}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
+                className="flex items-center gap-2 bg-zion-blue-dark/30 backdrop-blur-sm px-4 py-2 rounded-full border border-zion-purple/20"
               >
-                {isLoading ? (
-                  <>
-                    <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                    Subscribing...
-                  </>
-                ) : (
-                  <>
-                    Subscribe
-                    <Send className="w-4 h-4" />
-                  </>
-                )}
-              </button>
-            </motion.form>
-          ) : (
-            <motion.div 
-              className="inline-flex items-center gap-3 bg-green-500/20 border border-green-500/30 text-green-400 px-6 py-3 rounded-lg"
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
-            >
-              <CheckCircle className="w-5 h-5" />
-              Successfully subscribed! Welcome to the Zion Tech Group community.
-            </motion.div>
-          )}
-          
-          <p className="text-zion-slate-light/70 text-sm mt-6">
-            No spam, unsubscribe at any time. We respect your privacy.
-          </p>
+                <div className={benefit.color}>{benefit.icon}</div>
+                <span className="text-zion-slate-light text-sm font-medium">{benefit.text}</span>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          {/* Newsletter form */}
+          <motion.div 
+            className="max-w-md mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.8 }}
+          >
+            {/* <EnhancedNewsletterForm /> */}
+          </motion.div>
+
+          {/* Trust indicators */}
+          <motion.div 
+            className="mt-12 pt-8 border-t border-zion-purple/20"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 1 }}
+          >
+            <p className="text-zion-slate-light text-sm mb-4">
+              Join 50,000+ professionals who trust Zion for their tech insights
+            </p>
+            <div className="flex justify-center items-center gap-6 opacity-60">
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                <span className="text-green-400 text-xs">No spam, ever</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-zion-cyan rounded-full animate-pulse"></div>
+                <span className="text-zion-cyan text-xs">Unsubscribe anytime</span>
+              </div>
+            </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>
