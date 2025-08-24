@@ -8,15 +8,25 @@ export function HeroSection() {
   const { t } = useTranslation();
   return (
     <section className="relative overflow-hidden py-20 md:py-32">
-      {/* Background gradient effect */}
-      <div className="absolute inset-0 bg-gradient-to-b from-zion-blue-dark via-zion-blue to-zion-blue-light opacity-80"></div>
+      {/* Enhanced background gradient effect */}
+      <div className="absolute inset-0 bg-gradient-to-br from-zion-blue-dark via-zion-blue via-zion-purple/20 to-zion-blue-light opacity-90"></div>
       
-      {/* Animated floating particles */}
+      {/* Enhanced animated floating particles with neon effects */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-2 h-2 rounded-full bg-zion-purple-light opacity-40 animate-pulse"></div>
-        <div className="absolute top-1/3 right-1/3 w-3 h-3 rounded-full bg-zion-cyan opacity-30 animate-pulse"></div>
-        <div className="absolute bottom-1/4 left-1/2 w-2 h-2 rounded-full bg-zion-purple opacity-40 animate-pulse"></div>
-        <div className="absolute top-1/2 right-1/4 w-4 h-4 rounded-full bg-zion-cyan-light opacity-20 animate-pulse"></div>
+        <div className="absolute top-1/4 left-1/4 w-3 h-3 rounded-full bg-zion-purple-light opacity-60 animate-pulse shadow-lg shadow-zion-purple-light/50"></div>
+        <div className="absolute top-1/3 right-1/3 w-4 h-4 rounded-full bg-zion-cyan opacity-50 animate-pulse shadow-lg shadow-zion-cyan/50"></div>
+        <div className="absolute bottom-1/4 left-1/2 w-3 h-3 rounded-full bg-zion-purple opacity-60 animate-pulse shadow-lg shadow-zion-purple/50"></div>
+        <div className="absolute top-1/2 right-1/4 w-5 h-5 rounded-full bg-zion-cyan-light opacity-40 animate-pulse shadow-lg shadow-zion-cyan-light/50"></div>
+        <div className="absolute top-1/6 right-1/6 w-2 h-2 rounded-full bg-zion-purple-light opacity-70 animate-pulse delay-500 shadow-lg shadow-zion-purple-light/50"></div>
+        <div className="absolute bottom-1/3 left-1/6 w-3 h-3 rounded-full bg-zion-cyan opacity-45 animate-pulse delay-1000 shadow-lg shadow-zion-cyan/50"></div>
+      </div>
+      
+      {/* Animated grid pattern */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `radial-gradient(circle at 1px 1px, rgba(255,255,255,0.15) 1px, transparent 0)`,
+          backgroundSize: '50px 50px'
+        }}></div>
       </div>
       
       <div className="container relative z-10 px-4 mx-auto text-center">

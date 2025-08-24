@@ -178,6 +178,90 @@
     scroll-behavior: smooth;
   }
 
+  /* Futuristic animations and effects */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  @keyframes glow {
+    0%, 100% { box-shadow: 0 0 20px rgba(139, 113, 242, 0.5); }
+    50% { box-shadow: 0 0 40px rgba(139, 113, 242, 0.8), 0 0 60px rgba(139, 113, 242, 0.6); }
+  }
+
+  @keyframes neon-pulse {
+    0%, 100% { 
+      text-shadow: 0 0 5px rgba(34, 221, 210, 0.8),
+                   0 0 10px rgba(34, 221, 210, 0.6),
+                   0 0 15px rgba(34, 221, 210, 0.4);
+    }
+    50% { 
+      text-shadow: 0 0 10px rgba(34, 221, 210, 1),
+                   0 0 20px rgba(34, 221, 210, 0.8),
+                   0 0 30px rgba(34, 221, 210, 0.6);
+    }
+  }
+
+  @keyframes gradient-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .float-animation {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .glow-effect {
+    animation: glow 3s ease-in-out infinite;
+  }
+
+  .neon-text {
+    animation: neon-pulse 2s ease-in-out infinite;
+  }
+
+  .gradient-animate {
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+  }
+
+  /* Enhanced backdrop blur effects */
+  .backdrop-blur-enhanced {
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+  }
+
+  /* Glass morphism effects */
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  }
+
+  /* Hover effects */
+  .hover-lift {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Responsive text sizing */
+  .text-responsive {
+    font-size: clamp(1rem, 4vw, 2rem);
+  }
+
+  .text-responsive-lg {
+    font-size: clamp(1.5rem, 6vw, 3rem);
+  }
+
+  .text-responsive-xl {
+    font-size: clamp(2rem, 8vw, 4rem);
+  }
+
   /* LiveKit UI overrides */
   [data-lk-theme='default'] {
     --lk-color-accent: #06B6D4;
