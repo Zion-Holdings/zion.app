@@ -7,7 +7,7 @@ set -e
 
 # Configuration
 BATCH_SIZE=10
-START_FROM=10
+START_FROM=20
 
 echo "Starting batch merge of open PRs..."
 echo "Batch size: $BATCH_SIZE"
