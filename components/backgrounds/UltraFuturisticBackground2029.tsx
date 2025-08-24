@@ -84,21 +84,7 @@ const UltraFuturisticBackground2029: React.FC = () => {
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
         ctx.fill();
-
-      quantumWave.update();
-      quantumWave.draw();
-
-      particles.forEach(particle => {
-        particle.update();
-        particle.draw();
-
-        // Reset dead particles
-        if (particle.life <= 0) {
-          const index = particles.indexOf(particle);
-          if (index > -1) {
-            particles[index] = new Particle();
-          }
-        }
+        ctx.restore();
       });
 
       // Draw connecting lines between nearby particles

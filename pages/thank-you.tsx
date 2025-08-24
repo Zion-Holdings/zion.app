@@ -14,7 +14,7 @@ import Layout from '../components/layout/Layout';
 import SEO from '../components/SEO';
 import Link from 'next/link';
 
-const ThankYouPage: React.FC = () => {
+export default function ThankYouPage() {
   const nextSteps = [
     {
       title: 'Confirmation Email',
@@ -38,7 +38,7 @@ const ThankYouPage: React.FC = () => {
 
 	return (
 		<>
-			<SEO title={pageTitle} description={pageDescription} url="/thank-you" />
+			<SEO title="Thank You" description="Thank you for your message" url="/thank-you" />
 			<section className="relative pt-28 pb-16 md:pt-36 md:pb-24">
 				<div className="container mx-auto px-4 max-w-2xl text-center">
 					<h1 className="text-3xl md:text-5xl font-extrabold tracking-tight gradient-text-cyan-purple">Thank you</h1>

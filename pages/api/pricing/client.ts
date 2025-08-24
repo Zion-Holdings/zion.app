@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import type { ClientBudgetRequest } from '@/utils/api/aiPricing';
-import { generateClientBudgetSuggestion } from '@/utils/api/aiPricing';
-import { logPricingAnalytics } from '@/utils/data/pricingAnalytics';
+import type { ClientBudgetRequest } from '../../../utils/api/aiPricing';
+import { generateClientBudgetSuggestion } from '../../../utils/api/aiPricing';
+import { trackPricingRequest } from '../../../utils/data/pricingAnalytics';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') {
@@ -24,7 +24,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     };
 
     const suggestion = await generateClientBudgetSuggestion(input);
-    await logPricingAnalytics({ kind: 'client_suggestion', payload: { input, suggestion } });
+    await trackPricingRequest({ input, suggestion });
     return res.status(200).json({ suggestion, disclaimer: 'Based on market data & trends' });
   } catch (error) {
     return res.status(500).json({ error: 'Failed to generate budget suggestion' });
