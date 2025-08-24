@@ -3,12 +3,14 @@ import React from 'react';
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'default' | 'outline' | 'ghost';
   size?: 'sm' | 'md' | 'lg';
+  asChild?: boolean;
   children: React.ReactNode;
 }
 
 export const Button: React.FC<ButtonProps> = ({ 
   variant = 'default', 
   size = 'md', 
+  asChild = false,
   children, 
   className = '', 
   ...props 
@@ -28,6 +30,13 @@ export const Button: React.FC<ButtonProps> = ({
   };
   
   const classes = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`;
+  
+  if (asChild) {
+    return React.cloneElement(children as React.ReactElement, {
+      className: classes,
+      ...props
+    });
+  }
   
   return (
     <button className={classes} {...props}>
