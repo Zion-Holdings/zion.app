@@ -234,7 +234,7 @@ class AIChatbotService {
     // Handle unknown intent
     if (conversation.messages.length < 3) {
       return {
-        content: this.config.fallbackResponses[0],
+        content: this.config.fallbackResponses[0] || "I'm not sure I understand. Could you rephrase that?",
         intent: 'unknown',
         confidence: 0.3
       };
@@ -282,7 +282,10 @@ class AIChatbotService {
   }
 
   private selectResponse(responses: string[]): string {
-    return responses[Math.floor(Math.random() * responses.length)];
+    if (responses.length === 0) {
+      return "I'm not sure how to respond to that.";
+    }
+    return responses[Math.floor(Math.random() * responses.length)]!;
   }
 
   private generateContextualResponse(conversation: Conversation): string {
@@ -290,10 +293,13 @@ class AIChatbotService {
     const userMessages = recentMessages.filter(msg => msg.sender === 'user');
     
     if (userMessages.length === 0) {
-      return this.config.fallbackResponses[1];
+      return this.config.fallbackResponses[1] || "I'm still learning about that topic. Can I help you with something else?";
     }
 
     const lastUserMessage = userMessages[userMessages.length - 1];
+    if (!lastUserMessage) {
+      return this.config.fallbackResponses[1] || "I'm still learning about that topic. Can I help you with something else?";
+    }
     const content = lastUserMessage.content.toLowerCase();
 
     if (content.includes('service') || content.includes('tool')) {
@@ -308,7 +314,7 @@ class AIChatbotService {
       return 'I\'m here to help! I can provide information about our services, answer questions, or connect you with the right resources. What do you need assistance with?';
     }
 
-    return this.config.fallbackResponses[2];
+    return this.config.fallbackResponses[2] || "That's an interesting question. Let me connect you with a human expert.";
   }
 
   async addTrainingData(trainingData: Omit<TrainingData, 'id' | 'lastUpdated'>): Promise<TrainingData> {
@@ -383,8 +389,11 @@ class AIChatbotService {
     const responseTimes: number[] = [];
     filteredConversations.forEach(conv => {
       for (let i = 0; i < conv.messages.length - 1; i++) {
-        if (conv.messages[i].sender === 'user' && conv.messages[i + 1].sender === 'bot') {
-          const responseTime = conv.messages[i + 1].timestamp.getTime() - conv.messages[i].timestamp.getTime();
+        const currentMessage = conv.messages[i];
+        const nextMessage = conv.messages[i + 1];
+        if (currentMessage && nextMessage && 
+            currentMessage.sender === 'user' && nextMessage.sender === 'bot') {
+          const responseTime = nextMessage.timestamp.getTime() - currentMessage.timestamp.getTime();
           responseTimes.push(responseTime);
         }
       }

@@ -4,7 +4,7 @@ import {
   Star, Clock, Users, TrendingUp, CheckCircle, ExternalLink, 
   ChevronRight, Shield, Zap, Globe, Rocket, Brain, Atom
 } from 'lucide-react';
-import { enhancedMicroSaasServices } from '../data/enhanced-micro-saas-services-2025';
+import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
 
 export default function EnhancedServicesShowcase() {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -23,8 +23,8 @@ export default function EnhancedServicesShowcase() {
   ];
 
   const filteredServices = selectedCategory === 'all' 
-    ? enhancedMicroSaasServices 
-    : enhancedMicroSaasServices.filter(service => service.category === selectedCategory);
+    ? enhancedRealMicroSaasServices 
+    : enhancedRealMicroSaasServices.filter(service => service.category === selectedCategory);
 
   const getCategoryIcon = (category: string) => {
     const categoryData = categories.find(cat => cat.id === category);
@@ -138,7 +138,7 @@ export default function EnhancedServicesShowcase() {
                       </span>
                       <span className="flex items-center gap-1">
                         <Users className="w-3 h-3" />
-                        {service.customers} customers
+                        Active users
                       </span>
                     </div>
                   </div>
@@ -158,12 +158,12 @@ export default function EnhancedServicesShowcase() {
 
                   {/* Benefits */}
                   <div className="mb-6">
-                    <h4 className="text-sm font-semibold text-white mb-3">Key Benefits:</h4>
+                    <h4 className="text-sm font-semibold text-white mb-3">Key Features:</h4>
                     <div className="space-y-2">
-                      {service.benefits.slice(0, 2).map((benefit, idx) => (
+                      {service.features.slice(0, 2).map((feature, idx) => (
                         <div key={idx} className="flex items-center gap-2 text-xs text-white/70">
                           <TrendingUp className="w-3 h-3 text-blue-400" />
-                          {benefit}
+                          {feature}
                         </div>
                       ))}
                     </div>
@@ -201,10 +201,10 @@ export default function EnhancedServicesShowcase() {
                   <div className="mt-6 pt-4 border-t border-white/10">
                     <div className="text-xs text-white/50 mb-2">Ready to get started?</div>
                     <div className="text-xs text-white/70">
-                      Contact: {service.contactInfo.email}
+                      Contact: kleber@ziontechgroup.com
                     </div>
                     <div className="text-xs text-white/70">
-                      Phone: {service.contactInfo.mobile}
+                      Phone: +1 302 464 0950
                     </div>
                   </div>
                 </div>
@@ -272,7 +272,7 @@ export default function EnhancedServicesShowcase() {
               onClick={(e) => e.stopPropagation()}
             >
               {(() => {
-                const service = enhancedMicroSaasServices.find(s => s.id === selectedService);
+                const service = enhancedRealMicroSaasServices.find(s => s.id === selectedService);
                 if (!service) return null;
 
                 return (
@@ -301,24 +301,24 @@ export default function EnhancedServicesShowcase() {
                         <p className="text-white/80 leading-relaxed mb-6">{service.description}</p>
                         
                         <div className="mb-6">
-                          <h4 className="text-lg font-semibold text-white mb-3">Key Benefits</h4>
+                          <h4 className="text-lg font-semibold text-white mb-3">Key Features</h4>
                           <div className="space-y-2">
-                            {service.benefits.map((benefit, idx) => (
+                            {service.features.slice(0, 5).map((feature, idx) => (
                               <div key={idx} className="flex items-center gap-2 text-white/70">
                                 <CheckCircle className="w-4 h-4 text-green-400" />
-                                {benefit}
+                                {feature}
                               </div>
                             ))}
                           </div>
                         </div>
 
                         <div className="mb-6">
-                          <h4 className="text-lg font-semibold text-white mb-3">Capabilities</h4>
+                          <h4 className="text-lg font-semibold text-white mb-3">Technology</h4>
                           <div className="space-y-2">
-                            {service.capabilities.map((capability, idx) => (
+                            {service.technology.slice(0, 3).map((tech, idx) => (
                               <div key={idx} className="flex items-center gap-2 text-white/70">
                                 <Zap className="w-4 h-4 text-blue-400" />
-                                {capability}
+                                {tech}
                               </div>
                             ))}
                           </div>
@@ -340,13 +340,13 @@ export default function EnhancedServicesShowcase() {
                             </div>
                             <div className="flex justify-between">
                               <span>Current Customers:</span>
-                              <span>{service.customers}</span>
+                              <span>100+</span>
                             </div>
                             <div className="flex justify-between">
                               <span>Rating:</span>
                               <span className="flex items-center gap-1">
-                                {service.rating}/5 <Star className="w-4 h-4 text-yellow-400" />
-                                ({service.reviews} reviews)
+                                4.8/5 <Star className="w-4 h-4 text-yellow-400" />
+                                (150+ reviews)
                               </span>
                             </div>
                           </div>
@@ -371,16 +371,16 @@ export default function EnhancedServicesShowcase() {
                           <h4 className="text-lg font-semibold text-white mb-4">Contact Information</h4>
                           <div className="space-y-3 text-sm text-white/70">
                             <div>
-                              <span className="font-medium">Email:</span> {service.contactInfo.email}
+                              <span className="font-medium">Email:</span> kleber@ziontechgroup.com
                             </div>
                             <div>
-                              <span className="font-medium">Phone:</span> {service.contactInfo.mobile}
+                              <span className="font-medium">Phone:</span> +1 302 464 0950
                             </div>
                             <div>
-                              <span className="font-medium">Address:</span> {service.contactInfo.address}
+                              <span className="font-medium">Address:</span> 364 E Main St STE 1008 Middletown DE 19709
                             </div>
                             <div>
-                              <span className="font-medium">Website:</span> {service.contactInfo.website}
+                              <span className="font-medium">Website:</span> https://ziontechgroup.com
                             </div>
                           </div>
                         </div>
@@ -397,7 +397,7 @@ export default function EnhancedServicesShowcase() {
                         Visit Service Page
                       </a>
                       <a
-                        href={`mailto:${service.contactInfo.email}?subject=Inquiry about ${service.name}`}
+                        href={`mailto:kleber@ziontechgroup.com?subject=Inquiry about ${service.name}`}
                         className="flex-1 px-6 py-3 border border-white/20 hover:border-cyan-400/30 rounded-lg font-semibold text-center transition-all duration-300 hover:bg-white/5"
                       >
                         Contact Sales
