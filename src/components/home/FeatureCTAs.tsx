@@ -16,7 +16,10 @@ import {
   BookOpen,
   Code,
   Building,
-  Clock
+  Clock,
+  Brain,
+  Shield,
+  Cloud
 } from "lucide-react";
 
 export function FeatureCTAs() {
@@ -101,6 +104,30 @@ export function FeatureCTAs() {
       link: "/zion-hire-ai",
       badge: "Premium",
       details: "Automate screening, improve candidate matching, and enhance the hiring experience with our AI recruiting solution."
+    },
+    {
+      title: "AI Development Services",
+      description: "Custom AI solutions including chatbots, content generation, and machine learning models tailored to your business needs.",
+      icon: <Brain className="h-10 w-10 p-2 rounded-md bg-purple-100 text-purple-700" />,
+      link: "/comprehensive-services",
+      badge: "New",
+      details: "From AI chatbots to predictive analytics, we build intelligent solutions that drive business growth and efficiency."
+    },
+    {
+      title: "Cybersecurity Solutions",
+      description: "Comprehensive security services including audits, zero trust implementation, and 24/7 incident response.",
+      icon: <Shield className="h-10 w-10 p-2 rounded-md bg-red-100 text-red-700" />,
+      link: "/comprehensive-services",
+      badge: "Featured",
+      details: "Protect your business with enterprise-grade security solutions, compliance frameworks, and proactive threat detection."
+    },
+    {
+      title: "Cloud & DevOps",
+      description: "Cloud migration, DevOps automation, and infrastructure management for scalable, secure operations.",
+      icon: <Cloud className="h-10 w-10 p-2 rounded-md bg-blue-100 text-blue-700" />,
+      link: "/comprehensive-services",
+      badge: "Popular",
+      details: "Modernize your infrastructure with cloud-native solutions, automated CI/CD pipelines, and cost optimization strategies."
     }
   ];
 
