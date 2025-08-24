@@ -169,8 +169,21 @@ class UltimateRedundancySystem {
     const logMessage = `[${timestamp}] [${level}] ${message}`;
     console.log(logMessage);
     
-    const logFile = path.join(this.logDir, `ultimate-redundancy-${new Date().toISOString().split('T')[0]}.log`);
-    fs.appendFileSync(logFile, logMessage + "\n");
+    try {
+      const logFile = path.join(this.logDir, `ultimate-redundancy-${new Date().toISOString().split('T')[0]}.log`);
+      fs.appendFileSync(logFile, logMessage + "\n");
+    } catch (error) {
+      console.error(`Failed to write to log file: ${error.message}`);
+      // Fallback to console if file logging fails
+      console.log(logMessage);
+    }
+  }
+
+  logError(message, error) {
+    this.log(`ERROR: ${message} - ${error?.message || error}`, "ERROR");
+    if (error?.stack) {
+      this.log(`Stack trace: ${error.stack}`, "ERROR");
+    }
   }
 
   async executeCommand(command, options = {}) {

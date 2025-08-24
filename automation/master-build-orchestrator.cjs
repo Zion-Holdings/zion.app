@@ -11,10 +11,23 @@ const LOG_FILE = path.join(LOG_DIR, 'master-build-orchestrator.log');
 
 if (!fs.existsSync(LOG_DIR)) fs.mkdirSync(LOG_DIR, { recursive: true });
 
-function log(message) {
-  const line = `[${new Date().toISOString()}] ${message}`;
+function log(message, level = 'INFO') {
+  const timestamp = new Date().toISOString();
+  const line = `[${timestamp}] [${level}] ${message}`;
   console.log(line);
-  fs.appendFileSync(LOG_FILE, line + '\n');
+  
+  try {
+    fs.appendFileSync(LOG_FILE, line + '\n');
+  } catch (error) {
+    console.error(`Failed to write to log file: ${error.message}`);
+  }
+}
+
+function logError(message, error) {
+  log(`ERROR: ${message} - ${error?.message || error}`, 'ERROR');
+  if (error?.stack) {
+    log(`Stack trace: ${error.stack}`, 'ERROR');
+  }
 }
 
 class MasterBuildOrchestrator {
