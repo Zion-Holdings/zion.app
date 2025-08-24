@@ -1,0 +1,431 @@
+{
+  "generatedAt": "2025-08-11T23:59:01.085Z",
+  "total": 85,
+  "functions": [
+    {
+      "name": "a11y-alt-text-runner",
+      "schedule": "*/10 * * * *",
+      "file": "a11y-alt-text-runner.js"
+    },
+    {
+      "name": "adaptive-orchestrator",
+      "schedule": "*/5 * * * *",
+      "file": "adaptive-orchestrator.js"
+    },
+    {
+      "name": "ai-changelog-runner",
+      "schedule": "41 */6 * * *",
+      "file": "ai-changelog-runner.js"
+    },
+    {
+      "name": "ai-trends-radar-runner",
+      "schedule": "*/30 * * * *",
+      "file": "ai-trends-radar-runner.js"
+    },
+    {
+      "name": "anchor-links-auto-fixer",
+      "schedule": "*/5 * * * *",
+      "file": "anchor-links-auto-fixer.js"
+    },
+    {
+      "name": "auto-scheduler",
+      "schedule": "*/15 * * * *",
+      "file": "auto-scheduler.js"
+    },
+    {
+      "name": "automation-matrix",
+      "schedule": null,
+      "file": "automation-matrix.js"
+    },
+    {
+      "name": "autonomous-invention-orchestrator",
+      "schedule": null,
+      "file": "autonomous-invention-orchestrator.js"
+    },
+    {
+      "name": "broken-image-scanner",
+      "schedule": "0 */6 * * *",
+      "file": "broken-image-scanner.js"
+    },
+    {
+      "name": "broken-image-scanner-runner",
+      "schedule": "17 */6 * * *",
+      "file": "broken-image-scanner-runner.js"
+    },
+    {
+      "name": "cloud_orchestrator",
+      "schedule": "0 */4 * * *",
+      "file": "cloud_orchestrator.js"
+    },
+    {
+      "name": "component-coupling-graph-runner",
+      "schedule": "29 */6 * * *",
+      "file": "component-coupling-graph-runner.js"
+    },
+    {
+      "name": "component-size-report",
+      "schedule": "*/5 * * * *",
+      "file": "component-size-report.js"
+    },
+    {
+      "name": "content-freshness-score-runner",
+      "schedule": "7 */12 * * *",
+      "file": "content-freshness-score-runner.js"
+    },
+    {
+      "name": "continuous-front-runner",
+      "schedule": "*/3 * * * *",
+      "file": "continuous-front-runner.js"
+    },
+    {
+      "name": "continuous-orchestrator",
+      "schedule": "*/5 * * * *",
+      "file": "continuous-orchestrator.js"
+    },
+    {
+      "name": "dead-code-audit",
+      "schedule": null,
+      "file": "dead-code-audit.js"
+    },
+    {
+      "name": "dead-code-report",
+      "schedule": "7 */6 * * *",
+      "file": "dead-code-report.js"
+    },
+    {
+      "name": "deps-auto-upgrade-runner",
+      "schedule": "7 */12 * * *",
+      "file": "deps-auto-upgrade-runner.js"
+    },
+    {
+      "name": "docs-index-runner",
+      "schedule": "11 */4 * * *",
+      "file": "docs-index-runner.js"
+    },
+    {
+      "name": "docs-search-index-runner",
+      "schedule": "53 */6 * * *",
+      "file": "docs-search-index-runner.js"
+    },
+    {
+      "name": "external-link-check-runner",
+      "schedule": "31 */6 * * *",
+      "file": "external-link-check-runner.js"
+    },
+    {
+      "name": "fast-front-promoter",
+      "schedule": "*/15 * * * *",
+      "file": "fast-front-promoter.js"
+    },
+    {
+      "name": "fast-orchestrator",
+      "schedule": "*/1 * * * *",
+      "file": "fast-orchestrator.js"
+    },
+    {
+      "name": "feature-advertiser",
+      "schedule": null,
+      "file": "feature-advertiser.js"
+    },
+    {
+      "name": "features-capabilities-benefits-advertiser",
+      "schedule": "*/2 * * * *",
+      "file": "features-capabilities-benefits-advertiser.js"
+    },
+    {
+      "name": "front-ads-promoter",
+      "schedule": "*/10 * * * *",
+      "file": "front-ads-promoter.js"
+    },
+    {
+      "name": "front-enhancer",
+      "schedule": "*/5 * * * *",
+      "file": "front-enhancer.js"
+    },
+    {
+      "name": "front-index-futurizer",
+      "schedule": null,
+      "file": "front-index-futurizer.js"
+    },
+    {
+      "name": "front-index-orchestrator",
+      "schedule": "*/5 * * * *",
+      "file": "front-index-orchestrator.js"
+    },
+    {
+      "name": "front-index-scheduler",
+      "schedule": null,
+      "file": "front-index-scheduler.js"
+    },
+    {
+      "name": "front-maximizer",
+      "schedule": "*/5 * * * *",
+      "file": "front-maximizer.js"
+    },
+    {
+      "name": "front-visionary-expander",
+      "schedule": "*/3 * * * *",
+      "file": "front-visionary-expander.js"
+    },
+    {
+      "name": "frontpage-enhancer",
+      "schedule": "*/20 * * * *",
+      "file": "frontpage-enhancer.js"
+    },
+    {
+      "name": "frontpage-scheduler",
+      "schedule": null,
+      "file": "frontpage-scheduler.js"
+    },
+    {
+      "name": "functions-catalog-runner",
+      "schedule": "*/5 * * * *",
+      "file": "functions-catalog-runner.js"
+    },
+    {
+      "name": "home-visionary-expander",
+      "schedule": "*/4 * * * *",
+      "file": "home-visionary-expander.js"
+    },
+    {
+      "name": "homepage-advertiser-scheduler",
+      "schedule": null,
+      "file": "homepage-advertiser-scheduler.js"
+    },
+    {
+      "name": "homepage-enhancer",
+      "schedule": null,
+      "file": "homepage-enhancer.js"
+    },
+    {
+      "name": "homepage-updater",
+      "schedule": null,
+      "file": "homepage-updater.js"
+    },
+    {
+      "name": "homepage-updater-scheduler",
+      "schedule": null,
+      "file": "homepage-updater-scheduler.js"
+    },
+    {
+      "name": "homepage_advertiser",
+      "schedule": "*/15 * * * *",
+      "file": "homepage_advertiser.js"
+    },
+    {
+      "name": "hyper-front-index-accelerator",
+      "schedule": "*/1 * * * *",
+      "file": "hyper-front-index-accelerator.js"
+    },
+    {
+      "name": "image-optimizer-runner",
+      "schedule": "29 */6 * * *",
+      "file": "image-optimizer-runner.js"
+    },
+    {
+      "name": "innovation-lab",
+      "schedule": "*/10 * * * *",
+      "file": "innovation-lab.js"
+    },
+    {
+      "name": "internal-link-graph-runner",
+      "schedule": "*/5 * * * *",
+      "file": "internal-link-graph-runner.js"
+    },
+    {
+      "name": "knowledge-pack-runner",
+      "schedule": "*/10 * * * *",
+      "file": "knowledge-pack-runner.js"
+    },
+    {
+      "name": "license-compliance-auditor",
+      "schedule": "0 2 * * 1",
+      "file": "license-compliance-auditor.js"
+    },
+    {
+      "name": "link-and-health-scheduler",
+      "schedule": "0 */6 * * *",
+      "file": "link-and-health-scheduler.js"
+    },
+    {
+      "name": "link-crawler",
+      "schedule": null,
+      "file": "link-crawler.js"
+    },
+    {
+      "name": "maintenance-scheduler",
+      "schedule": null,
+      "file": "maintenance-scheduler.js"
+    },
+    {
+      "name": "marketing-and-features-promo",
+      "schedule": "0 */2 * * *",
+      "file": "marketing-and-features-promo.js"
+    },
+    {
+      "name": "marketing-scheduler",
+      "schedule": null,
+      "file": "marketing-scheduler.js"
+    },
+    {
+      "name": "media-og-and-optimize",
+      "schedule": null,
+      "file": "media-og-and-optimize.js"
+    },
+    {
+      "name": "metadata-optimizer-runner",
+      "schedule": "*/15 * * * *",
+      "file": "metadata-optimizer-runner.js"
+    },
+    {
+      "name": "netlify-auto-healer-runner",
+      "schedule": "*/20 * * * *",
+      "file": "netlify-auto-healer-runner.js"
+    },
+    {
+      "name": "newsroom-auto-publisher",
+      "schedule": null,
+      "file": "newsroom-auto-publisher.js"
+    },
+    {
+      "name": "newsroom-runner",
+      "schedule": "37 */6 * * *",
+      "file": "newsroom-runner.js"
+    },
+    {
+      "name": "og-image-update-runner",
+      "schedule": "47 */6 * * *",
+      "file": "og-image-update-runner.js"
+    },
+    {
+      "name": "orphan-pages-detector",
+      "schedule": "*/15 * * * *",
+      "file": "orphan-pages-detector.js"
+    },
+    {
+      "name": "pagespeed-insights-runner",
+      "schedule": "11 */6 * * *",
+      "file": "pagespeed-insights-runner.js"
+    },
+    {
+      "name": "readme-advertiser",
+      "schedule": "13 */6 * * *",
+      "file": "readme-advertiser.js"
+    },
+    {
+      "name": "repo-knowledge-graph-runner",
+      "schedule": "23 */6 * * *",
+      "file": "repo-knowledge-graph-runner.js"
+    },
+    {
+      "name": "repo-radar-and-graph",
+      "schedule": null,
+      "file": "repo-radar-and-graph.js"
+    },
+    {
+      "name": "repo-radar-runner",
+      "schedule": "43 */6 * * *",
+      "file": "repo-radar-runner.js"
+    },
+    {
+      "name": "routes-map-runner",
+      "schedule": "*/5 * * * *",
+      "file": "routes-map-runner.js"
+    },
+    {
+      "name": "schedule-content-index",
+      "schedule": null,
+      "file": "schedule-content-index.js"
+    },
+    {
+      "name": "schedule-homepage",
+      "schedule": null,
+      "file": "schedule-homepage.js"
+    },
+    {
+      "name": "schedule-knowledge-graph",
+      "schedule": null,
+      "file": "schedule-knowledge-graph.js"
+    },
+    {
+      "name": "schedule-site-health",
+      "schedule": null,
+      "file": "schedule-site-health.js"
+    },
+    {
+      "name": "security-audit",
+      "schedule": null,
+      "file": "security-audit.js"
+    },
+    {
+      "name": "security-audit-runner",
+      "schedule": "19 */6 * * *",
+      "file": "security-audit-runner.js"
+    },
+    {
+      "name": "seo-audit-runner",
+      "schedule": "0 */2 * * *",
+      "file": "seo-audit-runner.js"
+    },
+    {
+      "name": "site-404-map-runner",
+      "schedule": "17 */6 * * *",
+      "file": "site-404-map-runner.js"
+    },
+    {
+      "name": "site-crawler",
+      "schedule": null,
+      "file": "site-crawler.js"
+    },
+    {
+      "name": "sitemap_runner",
+      "schedule": "0 */12 * * *",
+      "file": "sitemap_runner.js"
+    },
+    {
+      "name": "stale-content-auditor-runner",
+      "schedule": "17 */6 * * *",
+      "file": "stale-content-auditor-runner.js"
+    },
+    {
+      "name": "todo-scanner-runner",
+      "schedule": "13 */6 * * *",
+      "file": "todo-scanner-runner.js"
+    },
+    {
+      "name": "todo-summary-runner",
+      "schedule": "*/30 * * * *",
+      "file": "todo-summary-runner.js"
+    },
+    {
+      "name": "trigger-all-and-commit",
+      "schedule": "*/1 * * * *",
+      "file": "trigger-all-and-commit.js"
+    },
+    {
+      "name": "ui-enhancer",
+      "schedule": null,
+      "file": "ui-enhancer.js"
+    },
+    {
+      "name": "ultrafast-front-orchestrator",
+      "schedule": "*/5 * * * *",
+      "file": "ultrafast-front-orchestrator.js"
+    },
+    {
+      "name": "ultrafast-orchestrator",
+      "schedule": "*/1 * * * *",
+      "file": "ultrafast-orchestrator.js"
+    },
+    {
+      "name": "unused-exports-runner",
+      "schedule": null,
+      "file": "unused-exports-runner.js"
+    },
+    {
+      "name": "unused-media-scanner",
+      "schedule": "*/10 * * * *",
+      "file": "unused-media-scanner.js"
+    }
+  ]
+}

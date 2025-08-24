@@ -1,0 +1,46 @@
+name: Daily Sitemap Refresh
+
+on:
+  schedule:
+    - cron: '11 2 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sitemap:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+          cache: npm
+      - name: Install deps
+        run: npm ci
+      - name: Generate sitemap
+        run: npm run sitemap
+      - name: Create Pull Request
+        id: cpr
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: 'chore(seo): refresh sitemap'
+          title: 'chore(seo): refresh sitemap'
+          body: 'Automated daily sitemap refresh.'
+          branch: automation/sitemap-refresh
+          delete-branch: true
+          labels: automation
+      - name: Enable Auto-merge
+        if: steps.cpr.outputs.pull-request-number
+        uses: peter-evans/enable-pull-request-automerge@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          pull-request-number: ${{ steps.cpr.outputs.pull-request-number }}
+          merge-method: squash

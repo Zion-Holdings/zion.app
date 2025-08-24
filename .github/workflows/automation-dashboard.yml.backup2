@@ -1,0 +1,120 @@
+name: Automation Dashboard
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * *'  # Every 4 hours
+  workflow_run:
+    workflows: ["*"]
+    types: [completed]
+
+
+concurrency:
+  group: "github.workflow-${{ github.ref }}"
+  cancel-in-progress: true
+
+jobs:
+  dashboard-generation:
+    name: Generate Automation Dashboard
+    
+        - name: Checkout code
+        uses: actions/checkout@v4
+        
+        - name: Setup Node.js
+        uses: actions/setup-node@v4
+          'node-version': '18'
+          cache: 'npm'
+          
+        - name: Install dependencies
+        run: npm ci
+        
+        - name: Generate automation status
+        run: |
+          echo "## 🤖 Automation Dashboard" > automation-dashboard.md
+          echo " >> automation-dashboard.md
+          echo "Generated on: $(date)" >> automation-dashboard.md
+          echo " >> automation-dashboard.md
+          echo "### 📊 System Status" >> automation-dashboard.md
+          echo " >> automation-dashboard.md
+          npm run app:status >> automation-dashboard.md
+          echo " >> automation-dashboard.md
+          
+        - name: Generate workflow summary
+        run: |
+          echo "### ⚡ GitHub Actions Summary" >> automation-dashboard.md
+          echo " >> automation-dashboard.md
+          echo "**Total Workflows:** $(ls -1 .github/workflows/*.yml | wc -l)" >> automation-dashboard.md
+          echo " >> automation-dashboard.md
+          echo "**Recent Workflow Runs:**" >> automation-dashboard.md
+          echo " >> automation-dashboard.md
+          # Add workflow run information here
+          
+        - name: Generate agent summary
+        run: |
+          echo "### 🤖 Agent Summary" >> automation-dashboard.md
+          echo " >> automation-dashboard.md
+          echo "**Active Agents:** $(ls -1 automation/agents/*.cjs 2>/dev/null | wc -l)" >> automation-dashboard.md
+          echo " >> automation-dashboard.md
+          echo "**Agent Types:**" >> automation-dashboard.md
+          ls -1 automation/agents/*.cjs 2>/dev/null | sed 's/.*agent-//' | sed 's/\.cjs//' | head -10 | while read agent; do
+            echo "- $agent" >> automation-dashboard.md
+          done
+          echo " >> automation-dashboard.md
+          
+        - name: Generate content summary
+        run: |
+          echo "### 📚 Content Summary" >> automation-dashboard.md
+          echo " >> automation-dashboard.md
+          echo "**Pages:** $(ls -1 pages/*.tsx 2>/dev/null | wc -l)" >> automation-dashboard.md
+          echo "**Components:** $(ls -1 components/*.tsx 2>/dev/null | wc -l)" >> automation-dashboard.md
+          echo "**Documentation:** $(ls -1 *.md 2>/dev/null | wc -l)" >> automation-dashboard.md
+          echo " >> automation-dashboard.md
+          
+        - name: Generate automation coverage
+        run: |
+          echo "### 📈 Automation Coverage" >> automation-dashboard.md
+          echo " >> automation-dashboard.md
+          echo "**Content Analysis:** ✅ Active" >> automation-dashboard.md
+          echo "**Agent Factory:** ✅ Active" >> automation-dashboard.md
+          echo "**Content Generation:** ✅ Active" >> automation-dashboard.md
+          echo "**Performance Monitoring:** ✅ Active" >> automation-dashboard.md
+          echo "**Workflow Management:** ✅ Active" >> automation-dashboard.md
+          echo " >> automation-dashboard.md
+          
+        - name: Generate recommendations
+        run: |
+          echo "### 💡 Recommendations" >> automation-dashboard.md
+          echo " >> automation-dashboard.md
+          echo "1. **Monitor Agent Performance**: Check agent execution logs regularly" >> automation-dashboard.md
+          echo "2. **Review Generated Content**: Validate all auto-generated content" >> automation-dashboard.md
+          echo "3. **Optimize Workflows**: Monitor workflow execution times and optimize" >> automation-dashboard.md
+          echo "4. **Scale Automation**: Add more specialized agents based on needs" >> automation-dashboard.md
+          echo "5. **Security Review**: Regularly review automation permissions and access" >> automation-dashboard.md
+          echo " >> automation-dashboard.md
+          
+        - name: Upload dashboard
+        uses: "actions/upload-artifact@v4
+          name: automation-dashboard
+          path: automation-dashboard.md
+
+  dashboard-deployment:
+    name: Deploy Dashboard
+    
+        
+        - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./automation-dashboard.md
+          destination_dir: automation-dashboard
+          
+        - name: Update dashboard index
+        run: |"
+          echo "# Automation Dashboard" > index.md
+          echo " >> index.md
+          echo "The automation dashboard is available at:" >> index.md
+          echo " >> index.md
+          echo "- [Latest Dashboard](./automation-dashboard/automation-dashboard.md)" >> index.md
+          echo "- [Automation Reports](./reports/)" >> index.md
+          echo "- [Agent Documentation](./agents/docs/)" >> index.md
+          echo " >> index.md
+          echo "Generated on: $(date)" >> index.md

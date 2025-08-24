@@ -1,0 +1,12 @@
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "update 2025 08 15 0457",
+  "description": "import Head from 'next/head'; import Link from 'next/link'; export default function Placeholder() {   return (     <main className=\"min-h-sc",
+  "url": "https://zion.app/reports/updates/update-2025-08-15-0457",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Zion",
+    "url": "https://zion.app"
+  }
+}

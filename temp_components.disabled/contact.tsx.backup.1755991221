@@ -1,0 +1,41 @@
+<<<<<<< HEAD
+import EnhancedLayout from '../components/layout/EnhancedLayout';
+
+export default function Contact() {
+  return (
+    <EnhancedLayout>
+      <div className="py-10">Contact Zion</div>
+    </EnhancedLayout>
+  );
+}
+=======
+export default function Contact() {
+  return (
+    <div>
+      <h1 className="text-2xl font-semibold mb-2">Contact</h1>
+      <p className="text-sm opacity-80">Use the form to request a quote. If you came from a provider card, the provider is pre-selected.</p>
+    </div>
+  );
+}
+=======
+import React from "react";
+import Head from "next/head";
+
+const Page: React.FC = () => {
+  return (
+    <>
+      <Head>
+        <title>Placeholder Page</title>
+        <meta name="robots" content="noindex" />
+      </Head>
+      <main>
+        <h1>Coming soon</h1>
+      </main>
+    </>
+  );
+};
+
+export default Page;
+=======
+export default function Contact() { return null; }
+>>>>>>> origin/cursor/build-partner-integration-portal-and-api-da2c

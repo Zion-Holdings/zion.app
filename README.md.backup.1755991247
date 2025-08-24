@@ -1,0 +1,116 @@
+<<<<<<< HEAD
+## Zion Assistant Monorepo
+
+Cross-platform assistant for hiring managers and remote workers.
+
+### Apps
+- `apps/api`: Fastify API (OpenAI, jobs, talent, projects, notifications)
+- `apps/slack-bot`: Slack Bolt app with `/zion` slash commands and notifications
+- `apps/extension`: Chrome/Edge MV3 extension with popup and background sync
+
+### Quickstart
+1. Copy env: `cp .env.example .env`
+2. Start infra: `docker compose up -d`
+3. Install deps: `pnpm i`
+4. Run dev servers: `pnpm dev`
+5. Build extension icons: `pnpm generate:icons`
+
+### Slack
+- Create a Slack app with OAuth scopes: `commands,chat:write,chat:write.public,users:read,app_mentions:read,channels:history`
+- Set Slash commands:
+  - `/zion` (dispatches subcommands)
+  - `/zion-post-job`, `/zion-suggest-talent`, `/zion-track-project`, `/zion-help` (optional aliases)
+- Redirect URL: `${SLACK_APP_REDIRECT_URL}`
+
+### Google OAuth
+- Create OAuth 2.0 Client (Web) with redirect `${GOOGLE_REDIRECT_URI}`
+- The extension uses `chrome.identity.launchWebAuthFlow` to sign in
+
+### Database & RLS
+- Postgres initialized via `infra/db/init.sql` with RLS policies per `user_id`
+
+### **Contact Information:**
+- **Mobile**: +1 302 464 0950
+- **Email**: kleber@ziontechgroup.com
+- **Website**: https://ziontechgroup.com
+- **Address**: 364 E Main St STE 1008 Middletown DE 19709
+
+⚠️ **IMPORTANT**: This project uses **Supabase for authentication** and **Netlify for environment variable management**. Proper configuration is essential for the application to function correctly.
+
+### Authentication Setup
+
+---
+This README is auto-generated. Do not edit manually.
+
+## 🌟 Featured Services
+
+- Intelligent Orchestrator (1m): /.netlify/functions/intelligent-orchestrator
+- Anomaly Watchdog (10m): /.netlify/functions/anomaly-watchdog
+- Pulse Sync (1m): /.netlify/functions/pulse-sync
+=======
+# Zion AI Marketplace – Chat Assistant
+
+An accessible, mobile-ready chat assistant powered by OpenAI. Includes a floating widget you can embed on every page and a secure server proxy so your API key stays private.
+
+## Quick start
+
+1. Create environment file
+
+```bash
+cp server/.env.sample server/.env
+# edit server/.env and set OPENAI_API_KEY
+```
+
+2. Install dependencies and run
+
+```bash
+cd server
+npm install
+npm run start
+```
+
+This serves the widget at `http://localhost:8787/widget.js` and the chat API at `http://localhost:8787/api/chat`.
+
+## Embed on any page
+
+Add this script tag to your site-wide layout (e.g., in `<body>`):
+
+```html
+<script
+  src="http://localhost:8787/widget.js"
+  data-api-base="http://localhost:8787/api"
+  data-accent="#6c5ce7"
+  data-greeting="Hi! I’m your Zion AI Assistant. How can I help?"
+  async
+  defer
+></script>
+```
+
+- `data-api-base`: Points the widget to your server’s API prefix
+- `data-accent`: Customizes the widget color
+- `data-greeting`: Optional custom greeting shown on first open
+
+The widget creates a floating button and a panel (bottom-right on desktop, full-screen on mobile). It’s accessible via keyboard and screen readers, supports Escape to close, and is responsive.
+
+## How it works
+
+- Frontend: vanilla JS/CSS in `server/public/widget.js` and `server/public/widget.css`
+- Backend: Express server in `server/index.js` exposes `POST /api/chat` and proxies to OpenAI Chat Completions with a Zion-specific system prompt
+- Security: API key remains on the server; the browser never sees it
+
+## Configuration
+
+- `PORT`: Server port (default 8787)
+- `OPENAI_API_KEY`: Your OpenAI API key
+- `OPENAI_MODEL`: Optional model override (`gpt-4o`, `gpt-4o-mini`, `gpt-4.1`, etc.)
+
+## Deploying
+
+- Host the `server` anywhere that supports Node.js (Render, Railway, Fly, Vercel functions, etc.)
+- Update the script `src` and `data-api-base` to your deployed domain
+
+## Notes
+
+- The assistant greets users, answers FAQs, and guides through marketplace features. Customize the system prompt in `server/index.js`.
+- For streaming responses, you can extend the server to use OpenAI streaming and emit text via server-sent events.
+>>>>>>> origin/cursor/build-zion-ai-marketplace-chat-assistant-4a2a

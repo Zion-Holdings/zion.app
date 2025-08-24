@@ -41,6 +41,7 @@ const OpenAppRedirect = React.lazy(() => import('./pages/OpenAppRedirect'));
 const ContactPage = React.lazy(() => import('./pages/Contact'));
 const ZionHireAI = React.lazy(() => import('./pages/ZionHireAI'));
 const RequestQuotePage = React.lazy(() => import('./pages/RequestQuote'));
+<<<<<<< HEAD
 const AboutPage = React.lazy(() => import('./pages/About'));
 const CareersPage = React.lazy(() => import('./pages/Careers'));
 const SitemapPage = React.lazy(() => import('./pages/Sitemap'));
@@ -54,6 +55,9 @@ const InvestorsPage = React.lazy(() => import('./pages/Investors'));
 const HelpPage = React.lazy(() => import('./pages/Help'));
 const CookiesPage = React.lazy(() => import('./pages/Cookies'));
 const AccessibilityPage = React.lazy(() => import('./pages/Accessibility'));
+=======
+const MicroSaasServicesPage = React.lazy(() => import('./pages/MicroSaasServicesPage'));
+>>>>>>> main
 
 const baseRoutes = [
   { path: '/', element: <Home /> },
@@ -63,6 +67,7 @@ const baseRoutes = [
   { path: '/talent', element: <TalentDirectory /> },
   { path: '/talents', element: <TalentsPage /> },
   { path: '/services', element: <ServicesPage /> },
+  { path: '/micro-saas-services', element: <MicroSaasServicesPage /> },
   { path: '/it-onsite-services', element: <ITOnsiteServicesPage /> },
   { path: '/categories', element: <Categories /> },
   { path: '/equipment', element: <EquipmentPage /> },
