@@ -1,0 +1,77 @@
+{
+  "timestamp": "2025-08-24T01:06:34.667Z",
+  "results": [
+    {
+      "name": "type-check",
+      "code": 2
+    },
+    {
+      "name": "lint-quick",
+      "code": 2
+    },
+    {
+      "name": "robots-sitemap-verify",
+      "code": 0
+    },
+    {
+      "name": "fast-sitemap",
+      "code": 0
+    },
+    {
+      "name": "structured-data-injector",
+      "code": 0
+    },
+    {
+      "name": "homepage-promo-update",
+      "code": 0
+    },
+    {
+      "name": "seo-optimizer",
+      "code": 0
+    },
+    {
+      "name": "security-scanner",
+      "code": 0
+    },
+    {
+      "name": "frontend-sync:analyze",
+      "code": 1
+    },
+    {
+      "name": "frontend-sync:factory",
+      "code": 0
+    },
+    {
+      "name": "responsive:analyzer",
+      "code": 1
+    },
+    {
+      "name": "responsive:factory",
+      "code": 1
+    },
+    {
+      "name": "variation:analyzer",
+      "code": 1
+    },
+    {
+      "name": "variation:factory",
+      "code": 1
+    },
+    {
+      "name": "links:crawl",
+      "code": 1
+    },
+    {
+      "name": "links:fix",
+      "code": 1
+    },
+    {
+      "name": "content-autogen:run-once",
+      "code": 0
+    },
+    {
+      "name": "build",
+      "code": 1
+    }
+  ]
+}
