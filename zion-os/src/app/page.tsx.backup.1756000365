@@ -1,0 +1,426 @@
+import Link from 'next/link';
+
+export default function HomePage() {
+  const features = [
+    {
+      icon: "🤖",
+      title: "AI-Powered Intelligence",
+      description: "ZionGPT Core, Resume AI, and autonomous decision engines power your economy with cutting-edge intelligence.",
+      features: [
+        "ZionGPT Core Integration",
+        "Resume Builder + Proposal AI", 
+        "Autonomous Decision Engine",
+        "AI Moderation System"
+      ],
+      gradient: "bg-gradient-to-r from-blue-600 to-purple-600"
+    },
+    {
+      icon: "🏪",
+      title: "Complete Marketplace",
+      description: "Jobs, talent, projects, and token systems create a thriving digital economy ecosystem.",
+      features: [
+        "Job & Talent Marketplace",
+        "Token System + Rewards",
+        "On-chain Contract Builder",
+        "Multi-currency Support"
+      ],
+      gradient: "bg-gradient-to-r from-green-600 to-emerald-600"
+    },
+    {
+      icon: "🗳️",
+      title: "Governance & DAO",
+      description: "Flexible governance from admin control to full DAO systems with dual governance options.",
+      features: [
+        "DAO Proposal Voting",
+        "Dual Governance (Local + Global)",
+        "Sovereign Treasury",
+        "KYC/AML + ID Verification"
+      ],
+      gradient: "bg-gradient-to-r from-purple-600 to-pink-600"
+    },
+    {
+      icon: "⚡",
+      title: "Enterprise Infrastructure",
+      description: "Built for scale with regional dashboards, partner APIs, and white-label solutions.",
+      features: [
+        "Regional Dashboards",
+        "Partner API Access",
+        "White-label Vendor Plugin",
+        "Web3 Login + DID"
+      ],
+      gradient: "bg-gradient-to-r from-orange-600 to-red-600"
+    },
+    {
+      icon: "🎓",
+      title: "Education & Growth",
+      description: "Zion Academy, incubator programs, and grants foster innovation and community growth.",
+      features: [
+        "Zion Academy",
+        "Incubator + Grants",
+        "Regional Job Categories",
+        "Wage Baselines"
+      ],
+      gradient: "bg-gradient-to-r from-teal-600 to-cyan-600"
+    },
+    {
+      icon: "🚀",
+      title: "One-Click Deployment",
+      description: "Launch your complete digital economy in minutes with our unified deployment protocol.",
+      features: [
+        "Automated Orchestration",
+        "CMS Instance Generation",
+        "Landing + Auth Flows",
+        "Blog + Roadmap Setup"
+      ],
+      gradient: "bg-gradient-to-r from-indigo-600 to-blue-600"
+    }
+  ];
+
+  return (
+<<<<<<< HEAD
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <section className="relative py-20 lg:py-32 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/20 to-purple-900/20"></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
+            <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
+              AI-Powered
+            </span>
+            <br />
+            <span className="text-white">Enterprise Solutions</span>
+          </h1>
+          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
+            Transform your business with cutting-edge AI technology. From autonomous systems to quantum computing, 
+            we deliver next-generation solutions that drive innovation and growth.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/contact" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-200 transform hover:scale-105">
+              Get Started Today
+            </Link>
+            <Link href="/solutions" className="border border-white/20 hover:border-white/40 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-200 hover:bg-white/10">
+              Explore Solutions
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Grid */}
+      <section className="py-20 bg-black/20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Our Core Services
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Comprehensive AI solutions designed to revolutionize your business operations and drive sustainable growth.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* AI Autonomous Systems */}
+            <div className="bg-gradient-to-br from-blue-900/20 to-purple-900/20 border border-white/10 rounded-xl p-6 hover:border-white/20 transition-all duration-300 hover:transform hover:scale-105">
+              <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-3">AI Autonomous Systems</h3>
+              <p className="text-gray-300 mb-4">
+                Self-managing AI systems that operate independently, making decisions and executing tasks without human intervention.
+              </p>
+              <Link href="/services/ai-autonomous-systems" className="text-blue-400 hover:text-blue-300 font-medium">
+                Learn More →
+              </Link>
+            </div>
+
+            {/* Quantum Computing */}
+            <div className="bg-gradient-to-br from-purple-900/20 to-pink-900/20 border border-white/10 rounded-xl p-6 hover:border-white/20 transition-all duration-300 hover:transform hover:scale-105">
+              <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-600 rounded-lg flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-3">Quantum Computing</h3>
+              <p className="text-gray-300 mb-4">
+                Next-generation computing solutions that leverage quantum mechanics for unprecedented processing power.
+              </p>
+              <Link href="/services/quantum-computing" className="text-purple-400 hover:text-purple-300 font-medium">
+                Learn More →
+              </Link>
+            </div>
+
+            {/* Enterprise AI */}
+            <div className="bg-gradient-to-br from-green-900/20 to-blue-900/20 border border-white/10 rounded-xl p-6 hover:border-white/20 transition-all duration-300 hover:transform hover:scale-105">
+              <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-blue-600 rounded-lg flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-3">Enterprise AI</h3>
+              <p className="text-gray-300 mb-4">
+                Scalable AI solutions designed for enterprise environments, from data analytics to process automation.
+              </p>
+              <Link href="/services/enterprise-ai" className="text-green-400 hover:text-green-300 font-medium">
+                Learn More →
+              </Link>
+            </div>
+
+            {/* AI Consulting */}
+            <div className="bg-gradient-to-br from-orange-900/20 to-red-900/20 border border-white/10 rounded-xl p-6 hover:border-white/20 transition-all duration-300 hover:transform hover:scale-105">
+              <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-600 rounded-lg flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-3">AI Consulting</h3>
+              <p className="text-gray-300 mb-4">
+                Expert guidance on AI strategy, implementation, and optimization to maximize your technology investments.
+              </p>
+              <Link href="/services/ai-consulting" className="text-orange-400 hover:text-orange-300 font-medium">
+                Learn More →
+              </Link>
+            </div>
+
+            {/* Autonomous Business */}
+            <div className="bg-gradient-to-br from-cyan-900/20 to-blue-900/20 border border-white/10 rounded-xl p-6 hover:border-white/20 transition-all duration-300 hover:transform hover:scale-105">
+              <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-3">Autonomous Business</h3>
+              <p className="text-gray-300 mb-4">
+                Self-operating business systems that manage operations, decision-making, and growth autonomously.
+              </p>
+              <Link href="/services/autonomous-business" className="text-cyan-400 hover:text-cyan-300 font-medium">
+                Learn More →
+              </Link>
+            </div>
+
+            {/* Research & Development */}
+            <div className="bg-gradient-to-br from-indigo-900/20 to-purple-900/20 border border-white/10 rounded-xl p-6 hover:border-white/20 transition-all duration-300 hover:transform hover:scale-105">
+              <div className="w-12 h-12 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-3">Research & Development</h3>
+              <p className="text-gray-300 mb-4">
+                Cutting-edge research in AI consciousness, quantum systems, and next-generation technology.
+              </p>
+              <Link href="/research" className="text-indigo-400 hover:text-indigo-300 font-medium">
+                Learn More →
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Why Choose Zion Tech Group?
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              We combine cutting-edge technology with deep industry expertise to deliver transformative solutions.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <h3 className="text-lg font-semibold text-white mb-2">Innovation First</h3>
+              <p className="text-gray-400">Pioneering the future of AI and autonomous systems</p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+              </div>
+              <h3 className="text-lg font-semibold text-white mb-2">Enterprise Ready</h3>
+              <p className="text-gray-400">Scalable solutions designed for enterprise environments</p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+              </div>
+              <h3 className="text-lg font-semibold text-white mb-2">Expert Team</h3>
+              <p className="text-gray-400">World-class AI researchers and engineers</p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h3 className="text-lg font-semibold text-white mb-2">24/7 Support</h3>
+              <p className="text-gray-400">Round-the-clock technical support and maintenance</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-gradient-to-r from-blue-900/20 to-purple-900/20">
+        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            Ready to Transform Your Business?
+          </h2>
+          <p className="text-xl text-gray-300 mb-8">
+            Join the AI revolution and discover how autonomous systems can drive unprecedented growth and efficiency.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/contact" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-200 transform hover:scale-105">
+              Schedule a Consultation
+            </Link>
+            <Link href="/solutions" className="border border-white/20 hover:border-white/40 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-200 hover:bg-white/10">
+              View Case Studies
+            </Link>
+          </div>
+        </div>
+      </section>
+=======
+    <div className="space-y-12">
+      {/* Hero Section */}
+      <div className="text-center space-y-6 py-12">
+        <div className="space-y-4">
+          <h1 className="text-5xl md:text-6xl font-bold">
+            <span className="gradient-text">Zion OS</span>
+          </h1>
+          <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed">
+            Launch sovereign AI-powered digital economies with one click. 
+            <span className="block text-lg text-white/60 mt-2">
+              Unified deployment protocol for Zion ecosystems
+            </span>
+          </p>
+        </div>
+        
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <a 
+            href="/multiverse/launch" 
+            className="btn-primary text-lg px-8 py-4"
+          >
+            🚀 Launch New Instance
+          </a>
+          <a 
+            href="/admin/instances" 
+            className="btn-secondary text-lg px-8 py-4"
+          >
+            📊 View Instances
+          </a>
+        </div>
+      </div>
+
+      {/* Features Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="card card-hover">
+          <div className="flex items-center space-x-3 mb-4">
+            <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg flex items-center justify-center">
+              <span className="text-white text-lg">🚀</span>
+            </div>
+            <h3 className="text-xl font-semibold">Launch Wizard</h3>
+          </div>
+          <p className="text-white/70 text-sm leading-relaxed">
+            Spin up a new instance with marketplace, governance, identity, and more. 
+            Complete setup in minutes, not days.
+          </p>
+          <a 
+            href="/multiverse/launch" 
+            className="inline-block mt-4 text-blue-400 hover:text-blue-300 transition-colors text-sm font-medium"
+          >
+            Get Started →
+          </a>
+        </div>
+
+        <div className="card card-hover">
+          <div className="flex items-center space-x-3 mb-4">
+            <div className="w-10 h-10 bg-gradient-to-r from-green-600 to-green-700 rounded-lg flex items-center justify-center">
+              <span className="text-white text-lg">⚙️</span>
+            </div>
+            <h3 className="text-xl font-semibold">Admin Instances</h3>
+          </div>
+          <p className="text-white/70 text-sm leading-relaxed">
+            Manage deployed instances, API keys, and governance. 
+            Full control over your digital economy ecosystem.
+          </p>
+          <a 
+            href="/admin/instances" 
+            className="inline-block mt-4 text-green-400 hover:text-green-300 transition-colors text-sm font-medium"
+          >
+            Manage →
+          </a>
+        </div>
+
+        <div className="card card-hover">
+          <div className="flex items-center space-x-3 mb-4">
+            <div className="w-10 h-10 bg-gradient-to-r from-purple-600 to-purple-700 rounded-lg flex items-center justify-center">
+              <span className="text-white text-lg">🔧</span>
+            </div>
+            <h3 className="text-xl font-semibold">OS Deployment</h3>
+          </div>
+          <p className="text-white/70 text-sm leading-relaxed">
+            Advanced deployment options with custom configurations. 
+            Tailor your instance to specific business needs.
+          </p>
+          <a 
+            href="/admin/os-deploy" 
+            className="inline-block mt-4 text-purple-400 hover:text-purple-300 transition-colors text-sm font-medium"
+          >
+            Deploy →
+          </a>
+        </div>
+      </div>
+
+      {/* Stats Section */}
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div className="card text-center">
+          <div className="text-3xl font-bold text-blue-400 mb-2">50+</div>
+          <div className="text-white/60 text-sm">Active Instances</div>
+        </div>
+        <div className="card text-center">
+          <div className="text-3xl font-bold text-green-400 mb-2">15+</div>
+          <div className="text-white/60 text-sm">Features Available</div>
+        </div>
+        <div className="card text-center">
+          <div className="text-3xl font-bold text-purple-400 mb-2">99.9%</div>
+          <div className="text-white/60 text-sm">Uptime</div>
+        </div>
+        <div className="card text-center">
+          <div className="text-3xl font-bold text-orange-400 mb-2">24/7</div>
+          <div className="text-white/60 text-sm">Support</div>
+        </div>
+      </div>
+
+      {/* CTA Section */}
+      <div className="text-center py-12">
+        <div className="card max-w-2xl mx-auto">
+          <h2 className="text-2xl font-bold mb-4">Ready to Launch Your Digital Economy?</h2>
+          <p className="text-white/70 mb-6">
+            Join the future of autonomous business operations. 
+            Deploy your first instance in under 5 minutes.
+          </p>
+          <a 
+            href="/multiverse/launch" 
+            className="btn-primary text-lg px-8 py-4"
+          >
+            Start Building Now
+          </a>
+        </div>
+      </div>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-f7d5
+    </div>
+  );
+}

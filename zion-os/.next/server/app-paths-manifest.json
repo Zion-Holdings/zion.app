@@ -4,6 +4,6 @@
   "/api/health/route": "app/api/health/route.js",
   "/multiverse/launch/page": "app/multiverse/launch/page.js",
   "/page": "app/page.js",
-  "/admin/os-deploy/page": "app/admin/os-deploy/page.js",
-  "/admin/instances/page": "app/admin/instances/page.js"
+  "/admin/instances/page": "app/admin/instances/page.js",
+  "/admin/os-deploy/page": "app/admin/os-deploy/page.js"
 }
