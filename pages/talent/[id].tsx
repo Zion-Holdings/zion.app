@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { ProfileLoadingState } from '@/components/profile/ProfileLoadingState';
 import type { TalentProfile as TalentProfileType } from '@/types/talent';
 import { ProfileErrorState } from '@/components/profile/ProfileErrorState';
@@ -10,6 +10,7 @@ interface TalentProfileWithSocial extends TalentProfileType {
 
 const TalentProfilePage: React.FC = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [profile, setProfile] = useState<TalentProfileWithSocial | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -42,7 +43,22 @@ const TalentProfilePage: React.FC = () => {
   }, [id]);
 
   if (loading) return <ProfileLoadingState />;
-  if (error || !profile) return <ProfileErrorState error={error || 'Profile not found'} />;
+  if (error || !profile) {
+    return (
+      <div className="min-h-screen bg-zion-blue py-8 text-white">
+        <div className="container mx-auto px-4 text-center">
+          <h1 className="text-3xl font-bold mb-4">Profile Not Found</h1>
+          <p className="text-zion-slate-light mb-6">The talent profile you're looking for doesn't exist.</p>
+          <button 
+            onClick={() => navigate('/talent')}
+            className="px-6 py-3 bg-zion-purple hover:bg-zion-purple-dark rounded-md transition-colors"
+          >
+            Back to Talent Directory
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <main className="min-h-screen bg-zion-blue py-8 text-white">
@@ -65,7 +81,7 @@ const TalentProfilePage: React.FC = () => {
         )}
       </div>
     </main>
-    );
+  );
 };
 
 export default TalentProfilePage;

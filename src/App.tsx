@@ -8,7 +8,8 @@ import { WhitelabelProvider } from "./context/WhitelabelContext";
 import { Toaster } from "./components/ui/toaster";
 import { Toaster as SonnerToaster } from "./components/ui/sonner";
 import { ErrorBoundary } from "./components/ErrorBoundary";
-import { PageLoader } from "./components/ui/LoadingSpinner";
+import { PageLoadingFallback } from "./components/ui/LoadingFallback";
+import { ScrollToTop } from "./components/ScrollToTop";
 import {
   AuthRoutes,
   DashboardRoutes,
@@ -72,12 +73,11 @@ const baseRoutes = [
 const App = () => {
   // Ensure each navigation starts at the top of the page
   useScrollToTop();
-  
   return (
     <ErrorBoundary>
       <WhitelabelProvider>
         <ThemeProvider defaultTheme="dark">
-          <Suspense fallback={<PageLoader text="Loading Zion Tech Group..." />}>
+          <Suspense fallback={<PageLoadingFallback />}>
             <Routes>
               {baseRoutes.map(({ path, element }) => (
                 <Route key={path} path={path} element={element} />
@@ -95,6 +95,7 @@ const App = () => {
               <Route path="*" element={<ErrorRoutes />} />
             </Routes>
           </Suspense>
+          <ScrollToTop />
           <Toaster />
           <SonnerToaster position="top-right" />
         </ThemeProvider>
