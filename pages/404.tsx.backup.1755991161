@@ -1,0 +1,5 @@
+<<<<<<< HEAD
+export default function NotFound() { return null }
+=======
+export default function NotFound() { return <div className="p-6">Not Found</div>; }
+>>>>>>> origin/cursor/build-developer-api-and-webhook-integration-62ab

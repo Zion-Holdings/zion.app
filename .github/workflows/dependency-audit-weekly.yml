@@ -1,0 +1,80 @@
+name: Weekly Dependency Audit & Update
+
+on:
+  schedule:
+    - cron: '0 6 * * 1' # Every Monday 06:00 UTC
+  workflow_dispatch: {}
+
+jobs:
+  audit-and-update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Pre-update audit
+        run: |
+          set -e
+          npm audit --json > audit.json || true
+          node -e "const fs=require('fs');let j;try{j=JSON.parse(fs.readFileSync('audit.json','utf8'))}catch(e){j={}};const m=j.metadata||{};const a=m.vulnerabilities||{};console.log('Audit summary (pre):', a);"
+
+      - name: Check outdated packages
+        run: |
+          npm outdated || true | tee outdated.txt
+
+      - name: Attempt safe update (npm update)
+        run: |
+          npm update --no-audit --no-fund || true
+
+      - name: Post-update audit
+        run: |
+          npm audit --json > audit_after.json || true
+          node -e "const fs=require('fs');let j;try{j=JSON.parse(fs.readFileSync('audit_after.json','utf8'))}catch(e){j={}};const m=j.metadata||{};const a=m.vulnerabilities||{};console.log('Audit summary (post):', a);"
+
+      - name: Generate audit summary for Slack
+        run: |
+          node automation/dependency-audit-report.cjs audit.json audit_after.json outdated.txt > audit-summary.txt || true
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: dependency-audit-${{ github.run_id }}
+          path: |
+            audit.json
+            audit_after.json
+            outdated.txt
+            audit-summary.txt
+
+      - name: Notify Slack (optional)
+        if: ${{ secrets.SLACK_WEBHOOK_URL }}
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: |
+          SUMMARY=$(cat audit-summary.txt | sed 's/"/\"/g')
+          curl -X POST -H 'Content-type: application/json' --data "{\"text\": \"$SUMMARY\"}" "$SLACK_WEBHOOK_URL" || true
+
+      - name: Create PR with updates (if any changes)
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: 'chore(deps): weekly dependency updates'
+          title: 'chore(deps): weekly dependency updates'
+          body: |
+            Automated weekly dependency maintenance.
+
+            See attached artifacts in the workflow run for audit and outdated reports.
+          branch: chore/deps-weekly-${{ github.run_number }}
+          delete-branch: true
+          labels: chore, dependencies
+          signoff: false

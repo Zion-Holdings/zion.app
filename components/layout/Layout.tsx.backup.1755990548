@@ -1,0 +1,88 @@
+<<<<<<< HEAD
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import UltraAdvancedFuturisticNavigation2038 from './UltraAdvancedFuturisticNavigation2038';
+import UltraAdvancedFuturisticFooter2038 from './UltraAdvancedFuturisticFooter2038';
+import EnhancedSidebar2025 from './EnhancedSidebar2025';
+import UltraAdvancedFuturisticBackground2038 from '../backgrounds/UltraAdvancedFuturisticBackground2038';
+import UltraAdvancedNeonEffects2038 from '../effects/UltraAdvancedNeonEffects2038';
+=======
+import React, { useState } from 'react';
+import UltraFuturisticNavigation2038 from './UltraFuturisticNavigation2038';
+import UltraFuturisticFooter2038 from './UltraFuturisticFooter2038';
+import EnhancedSidebar2025 from './EnhancedSidebar2025';
+import UltraFuturisticBackground2038 from '../backgrounds/UltraFuturisticBackground2038';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-680a
+import TopContactBar from './TopContactBar';
+import PerformanceMonitor from '../PerformanceMonitor';
+import AccessibilityEnhancer from '../AccessibilityEnhancer';
+import PerformanceOptimizer from '../PerformanceOptimizer';
+
+interface LayoutProps {
+  children: React.ReactNode;
+  seo?: SEOConfig;
+}
+
+export default function Layout({ children, seo }: LayoutProps) {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [showEnhancements, setShowEnhancements] = useState(false);
+
+  return (
+    <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
+      {/* Skip to content link for accessibility */}
+      <a href="#main" className="skip-link">Skip to main content</a>
+      
+      {/* Futuristic Background */}
+<<<<<<< HEAD
+      <UltraAdvancedFuturisticBackground2038 intensity="high" theme="quantum-neon" />
+      
+      {/* Advanced Neon Effects */}
+      <UltraAdvancedNeonEffects2038 intensity="high" theme="quantum-neon" />
+=======
+      <UltraFuturisticBackground2038 intensity="medium" theme="holographic-neon" />
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-680a
+      
+      {/* Layout Structure */}
+      <div className="relative z-10">
+        {/* Navigation */}
+<<<<<<< HEAD
+        <UltraAdvancedFuturisticNavigation2038 />
+=======
+        <UltraFuturisticNavigation2038 />
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-680a
+        
+        {/* Sidebar and Main Content */}
+        <div className="flex">
+          <EnhancedSidebar2025 
+            isOpen={sidebarOpen} 
+            onClose={() => setSidebarOpen(false)} 
+          />
+          
+<<<<<<< HEAD
+          <main id="main" role="main" className="flex-1 pt-24 lg:pt-28">
+            <AccessibilityEnhancer>
+              {children}
+            </AccessibilityEnhancer>
+=======
+          <main id="main" role="main" className="flex-1 pt-32 lg:pt-36">
+            {children}
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-680a
+          </main>
+        </div>
+        
+        {/* Footer */}
+<<<<<<< HEAD
+        <UltraAdvancedFuturisticFooter2038 />
+=======
+        <UltraFuturisticFooter2038 />
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-680a
+      </div>
+
+      {/* Performance Tools */}
+      <PerformanceMonitor />
+      
+      {/* Cookie Consent Banner */}
+      <CookieConsentBanner />
+    </div>
+  );
+};
