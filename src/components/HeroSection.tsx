@@ -89,21 +89,16 @@ export function HeroSection() {
 
         {/* Enhanced CTA Buttons */}
         <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
-          <Button
-            className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-lg py-6 px-8 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
-            size="lg"
-            asChild
+          <Link
+            to="/signup"
+            className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-lg py-6 px-8 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 inline-flex items-center justify-center text-white"
+            role="button"
+            aria-label={t('auth.signup') || 'Get Started'}
+            tabIndex={0}
+            data-testid="hero-signup-btn"
           >
-            <Link
-              to="/signup"
-              role="button"
-              aria-label={t('auth.signup') || 'Get Started'}
-              tabIndex={0}
-              data-testid="hero-signup-btn"
-            >
-              {t('auth.signup') || 'Get Started Free'}
-            </Link>
-          </Button>
+            {t('auth.signup') || 'Get Started Free'}
+          </Link>
           <Link
             id="browse-marketplace"
             to="/marketplace"

@@ -24,17 +24,13 @@ export function ErrorBoundary({ children, fallback }: ErrorBoundaryProps) {
         error,
         errorInfo
       });
-
-      // Log error to monitoring service
       logErrorToService(error, errorInfo);
     };
 
-    // Add global error handler
     window.addEventListener('error', (event) => {
       handleError(event.error || new Error(event.message), { componentStack: event.filename });
     });
 
-    // Add unhandled rejection handler
     window.addEventListener('unhandledrejection', (event) => {
       handleError(new Error(event.reason), { componentStack: 'Unhandled Promise Rejection' });
     });
@@ -46,12 +42,8 @@ export function ErrorBoundary({ children, fallback }: ErrorBoundaryProps) {
   }, []);
 
   const logErrorToService = (error: Error, errorInfo: any) => {
-    // In production, you would send this to your error monitoring service
-    // Example: Sentry, LogRocket, etc.
-    if (process.env.NODE_ENV === 'production') {
-      // Send to error monitoring service
-      console.log('Sending error to monitoring service:', { error, errorInfo });
-    }
+    // In production, this would send to a monitoring service
+    console.log('Sending error to monitoring service:', { error, errorInfo });
   };
 
   const handleRetry = () => {
@@ -82,7 +74,6 @@ ${window.location.href}
 
 Please describe what you were doing when this error occurred:
     `);
-    
     window.location.href = `mailto:support@ziontechgroup.com?subject=${subject}&body=${body}`;
   };
 
@@ -94,12 +85,9 @@ Please describe what you were doing when this error occurred:
     return (
       <div className="min-h-screen bg-background flex items-center justify-center p-4">
         <div className="max-w-md w-full text-center space-y-6">
-          {/* Error Icon */}
           <div className="mx-auto w-16 h-16 bg-red-500/10 rounded-full flex items-center justify-center">
             <AlertTriangle className="w-8 h-8 text-red-500" />
           </div>
-
-          {/* Error Message */}
           <div className="space-y-2">
             <h1 className="text-2xl font-bold text-foreground">
               Oops! Something went wrong
@@ -108,12 +96,10 @@ Please describe what you were doing when this error occurred:
               We're sorry, but something unexpected happened. Our team has been notified and is working to fix this issue.
             </p>
           </div>
-
-          {/* Error Details (Development Only) */}
-          {process.env.NODE_ENV === 'development' && errorState.error && (
+          {errorState.error && (
             <details className="text-left bg-muted p-4 rounded-lg">
               <summary className="cursor-pointer font-medium text-sm mb-2">
-                Error Details (Development)
+                Error Details
               </summary>
               <div className="text-xs space-y-2">
                 <div>
@@ -130,8 +116,6 @@ Please describe what you were doing when this error occurred:
               </div>
             </details>
           )}
-
-          {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Button
               onClick={handleRetry}
@@ -141,7 +125,6 @@ Please describe what you were doing when this error occurred:
               <RefreshCw className="w-4 h-4" />
               Try Again
             </Button>
-            
             <Button
               onClick={handleGoHome}
               variant="outline"
@@ -151,8 +134,6 @@ Please describe what you were doing when this error occurred:
               Go Home
             </Button>
           </div>
-
-          {/* Report Issue */}
           <div className="pt-4 border-t border-border">
             <p className="text-sm text-muted-foreground mb-3">
               Still having issues?
@@ -167,8 +148,6 @@ Please describe what you were doing when this error occurred:
               Report Issue
             </Button>
           </div>
-
-          {/* Contact Information */}
           <div className="text-xs text-muted-foreground">
             <p>Need immediate help? Contact our support team:</p>
             <p className="font-medium">support@ziontechgroup.com</p>
@@ -177,30 +156,23 @@ Please describe what you were doing when this error occurred:
       </div>
     );
   }
-
   return <>{children}</>;
 }
 
-// Hook for functional components to handle errors
 export function useErrorHandler() {
   return (error: Error, errorInfo?: any) => {
     console.error('Error caught by useErrorHandler:', error, errorInfo);
-    
-    // Log to monitoring service
-    if (process.env.NODE_ENV === 'production') {
-      // Send to error monitoring service
-      console.log('Sending error to monitoring service:', { error, errorInfo });
-    }
+    // In production, this would send to a monitoring service
+    console.log('Sending error to monitoring service:', { error, errorInfo });
   };
 }
 
-// Simple error display component
-export function ErrorDisplay({ 
-  error, 
-  onRetry, 
-  className 
-}: { 
-  error: Error; 
+export function ErrorDisplay({
+  error,
+  onRetry,
+  className
+}: {
+  error: Error;
   onRetry?: () => void;
   className?: string;
 }) {
