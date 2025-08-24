@@ -1,7 +1,12 @@
+<<<<<<< HEAD
+=======
+/* Enhanced CSS for Zion Tech Group with Futuristic Design */
+>>>>>>> fca3c1339b92e2c99557b3c800831ed83163fd77
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+<<<<<<< HEAD
 @layer base {
   :root {
     --font-sans: 'Orbitron', system-ui, sans-serif;
@@ -133,13 +138,23 @@
   }
 }
 
+=======
+>>>>>>> fca3c1339b92e2c99557b3c800831ed83163fd77
 @layer base {
   * {
     @apply border-zinc-200 dark:border-zinc-800;
   }
 
   body {
+<<<<<<< HEAD
     @apply bg-zinc-50 dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100 font-sans;
+=======
+    margin: 0;
+    font-family: 'Orbitron', system-ui, sans-serif;
+    background-color: #172d67;
+    color: #ffffff;
+    overflow-x: hidden;
+>>>>>>> fca3c1339b92e2c99557b3c800831ed83163fd77
   }
 
   /* Enhanced Animations */
@@ -153,6 +168,28 @@
       transform: scale(1.05);
     }
   }
+<<<<<<< HEAD
+=======
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0f1a3d;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #22ddd2;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #4de8e0;
+  }
+}
+>>>>>>> fca3c1339b92e2c99557b3c800831ed83163fd77
 
   @keyframes float {
     0%, 100% {
@@ -165,15 +202,16 @@
 
   @keyframes glow {
     0%, 100% {
-      box-shadow: 0 0 20px rgba(34, 221, 210, 0.3);
+      text-shadow: 0 0 5px rgba(34, 221, 210, 0.5);
     }
     50% {
-      box-shadow: 0 0 40px rgba(34, 221, 210, 0.6), 0 0 60px rgba(34, 221, 210, 0.3);
+      text-shadow: 0 0 20px rgba(34, 221, 210, 0.8), 0 0 30px rgba(34, 221, 210, 0.6);
     }
   }
 
   @keyframes neon-pulse {
     0%, 100% {
+<<<<<<< HEAD
       text-shadow: 
         0 0 5px currentColor,
         0 0 10px currentColor,
@@ -198,6 +236,41 @@
     }
     100% {
       background-position: 0% 50%;
+=======
+      opacity: 1;
+      text-shadow: 0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor;
+    }
+    50% {
+      opacity: 0.8;
+      text-shadow: 0 0 2px currentColor, 0 0 5px currentColor, 0 0 10px currentColor;
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 20px rgba(34, 221, 210, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 40px rgba(34, 221, 210, 0.8), 0 0 60px rgba(34, 221, 210, 0.4);
+    }
+  }
+
+  @keyframes rotate-slow {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+>>>>>>> fca3c1339b92e2c99557b3c800831ed83163fd77
     }
   }
 
@@ -234,6 +307,7 @@
     }
   }
 
+<<<<<<< HEAD
   @keyframes dash {
     to {
       stroke-dashoffset: -100;
@@ -463,17 +537,22 @@
   }
 
   .float {
+=======
+  /* Utility classes */
+  .animate-float {
+>>>>>>> fca3c1339b92e2c99557b3c800831ed83163fd77
     animation: float 6s ease-in-out infinite;
   }
 
-  .glow {
+  .animate-glow {
     animation: glow 2s ease-in-out infinite alternate;
   }
 
-  .neon-pulse {
-    animation: neon-pulse 2s ease-in-out infinite;
+  .animate-neon-pulse {
+    animation: neon-pulse 1.5s ease-in-out infinite alternate;
   }
 
+<<<<<<< HEAD
   .gradient-shift {
     background-size: 200% 200%;
     animation: gradient-shift 3s ease infinite;
@@ -609,15 +688,42 @@
     80%, 100% {
       content: '...';
     }
+=======
+  .animate-shimmer {
+    background: linear-gradient(90deg, transparent, rgba(34, 221, 210, 0.2), transparent);
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
   }
 
-  /* Hover effects */
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite alternate;
+>>>>>>> fca3c1339b92e2c99557b3c800831ed83163fd77
+  }
+
+  .animate-rotate-slow {
+    animation: rotate-slow 20s linear infinite;
+  }
+
+  .animate-slide-in-left {
+    animation: slide-in-left 0.8s ease-out;
+  }
+
+  .animate-slide-in-right {
+    animation: slide-in-right 0.8s ease-out;
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.8s ease-out;
+  }
+
+  /* Enhanced hover effects */
   .hover-lift {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 
   .hover-lift:hover {
     transform: translateY(-5px);
+<<<<<<< HEAD
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
   }
 
@@ -627,6 +733,133 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+=======
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  }
+
+  .hover-glow:hover {
+    box-shadow: 0 0 20px rgba(34, 221, 210, 0.6);
+  }
+
+  .hover-neon:hover {
+    text-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor;
+  }
+
+  /* Futuristic design elements */
+  .neon-text {
+    text-shadow: 0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor;
+  }
+
+  .neon-border {
+    box-shadow: 0 0 10px currentColor, inset 0 0 10px currentColor;
+  }
+
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .holographic {
+    background: linear-gradient(45deg, transparent 30%, rgba(34, 221, 210, 0.1) 50%, transparent 70%);
+    background-size: 200% 200%;
+    animation: shimmer 3s infinite;
+  }
+
+  .cyber-grid {
+    background-image: 
+      linear-gradient(rgba(34, 221, 210, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(34, 221, 210, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  /* Button styles */
+  .cyber-button {
+    background: linear-gradient(45deg, #8c15e9, #22ddd2);
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cyber-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+  }
+
+  .cyber-button:hover::before {
+    left: 100%;
+  }
+
+  /* Grid animations */
+  .grid-fade-in {
+    animation: fade-in-up 0.6s ease-out;
+  }
+
+  .grid-fade-in:nth-child(2) { animation-delay: 0.1s; }
+  .grid-fade-in:nth-child(3) { animation-delay: 0.2s; }
+  .grid-fade-in:nth-child(4) { animation-delay: 0.3s; }
+  .grid-fade-in:nth-child(5) { animation-delay: 0.4s; }
+  .grid-fade-in:nth-child(6) { animation-delay: 0.5s; }
+
+  /* Loading states */
+  .loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    color: white;
+    font-size: 1.2rem;
+  }
+
+  .animate-spin {
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+/* Custom CSS utilities */
+@layer utilities {
+  .line-clamp-1 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+  }
+  
+  .line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+  
+  .line-clamp-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+>>>>>>> fca3c1339b92e2c99557b3c800831ed83163fd77
   }
 
   .text-gradient-secondary {

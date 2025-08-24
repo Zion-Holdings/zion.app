@@ -11,9 +11,15 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
+<<<<<<< HEAD
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
+=======
+    "strict": false,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+>>>>>>> fca3c1339b92e2c99557b3c800831ed83163fd77
     "noFallthroughCasesInSwitch": true,
     "baseUrl": ".",
     "paths": {
@@ -21,11 +27,32 @@
     }
   },
   "include": [
+<<<<<<< HEAD
     "src"
   ],
   "references": [
     {
       "path": "./tsconfig.node.json"
     }
+=======
+    "src/main.tsx",
+    "src/App.tsx",
+    "src/pages/Home.tsx",
+    "src/pages/Contact.tsx",
+    "src/pages/About.tsx",
+    "src/pages/Services.tsx",
+    "src/index.css"
+  ],
+  "exclude": [
+    "node_modules",
+    "src/components",
+    "src/context",
+    "src/data",
+    "src/hooks",
+    "src/layout",
+    "src/lib",
+    "src/store",
+    "src/types"
+>>>>>>> fca3c1339b92e2c99557b3c800831ed83163fd77
   ]
 }

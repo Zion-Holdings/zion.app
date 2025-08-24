@@ -9,4 +9,10 @@ export default function EquipmentDetail() {
       </div>
     </div>
   );
+<<<<<<< HEAD
 }
+=======
+};
+
+export default Blog;
+>>>>>>> fca3c1339b92e2c99557b3c800831ed83163fd77
