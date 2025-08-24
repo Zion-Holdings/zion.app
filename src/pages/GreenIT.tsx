@@ -1,4 +1,6 @@
 
+import { AppHeader } from "@/layout/AppHeader";
+import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { GradientHeading } from "@/components/GradientHeading";
 import { Button } from "@/components/ui/button";
@@ -32,6 +34,7 @@ export default function GreenIT() {
         keywords="green IT, sustainable technology, eco-friendly computing, energy efficient hardware"
         canonical="https://ziontechgroup.com/green-it"
       />
+      <AppHeader />
       <main className="min-h-screen bg-zion-blue pt-24 pb-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -125,6 +128,7 @@ export default function GreenIT() {
           </div>
         </div>
       </main>
+      <Footer />
     </>
   );
 }
