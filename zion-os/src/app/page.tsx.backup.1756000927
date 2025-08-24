@@ -101,6 +101,20 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto text-center relative z-10">
           <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <h1 className="text-5xl md:text-7xl font-bold mb-6">
+<<<<<<< HEAD
+              <span className="gradient-text animate-pulse">Zion OS</span>
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
+              Leading provider of AI automation, quantum computing, cybersecurity, and enterprise IT solutions. 
+              Transform your business with cutting-edge technology that drives innovation and growth.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Link href="/multiverse/launch" className="btn-primary text-lg px-8 py-4 transform hover:scale-105 transition-all duration-300">
+                🚀 Launch Your Economy
+              </Link>
+              <Link href="/docs" className="btn-secondary text-lg px-8 py-4 transform hover:scale-105 transition-all duration-300">
+                📚 View Documentation
+=======
               <span className="gradient-text">Zion Tech Group</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
@@ -113,6 +127,7 @@ export default function HomePage() {
               </Link>
               <Link href="/services" className="btn-secondary text-lg px-8 py-4">
                 Explore Services
+>>>>>>> origin/cursor/website-audit-and-enhancement-2f29
               </Link>
             </div>
           </div>
@@ -126,7 +141,11 @@ export default function HomePage() {
         </div>
       </section>
 
+<<<<<<< HEAD
+      {/* Enhanced Features Grid */}
+=======
       {/* Services Overview */}
+>>>>>>> origin/cursor/website-audit-and-enhancement-2f29
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -134,12 +153,61 @@ export default function HomePage() {
               Comprehensive Technology Solutions
             </h2>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+<<<<<<< HEAD
+              From AI automation to quantum computing, we provide end-to-end solutions that drive digital transformation
+=======
               From AI-powered business automation to quantum computing infrastructure, 
               we provide end-to-end solutions for the modern enterprise
+>>>>>>> origin/cursor/website-audit-and-enhancement-2f29
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<<<<<<< HEAD
+            {features.map((feature, index) => (
+              <div 
+                key={index}
+                className={`card group cursor-pointer transform transition-all duration-300 hover:scale-105 ${
+                  activeFeature === index ? 'ring-2 ring-blue-500/50 bg-white/10' : ''
+                }`}
+                onClick={() => setActiveFeature(index)}
+              >
+                <div className={`w-12 h-12 ${feature.bgColor} rounded-lg flex items-center justify-center mb-4 ${feature.hoverBgColor} transition-colors`}>
+                  {feature.icon}
+                </div>
+                <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
+                <p className="text-gray-400">
+                  {feature.description}
+                </p>
+                <div className={`mt-4 h-1 bg-gradient-to-r from-${feature.color}-500/50 to-${feature.color}-600/50 rounded-full transform origin-left transition-all duration-300 ${
+                  activeFeature === index ? 'scale-x-100' : 'scale-x-0'
+                }`}></div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-600/10 to-purple-600/10">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+            <div className="card bg-transparent border-0">
+              <div className="text-4xl font-bold gradient-text mb-2">100+</div>
+              <div className="text-gray-400">Deployed Economies</div>
+            </div>
+            <div className="card bg-transparent border-0">
+              <div className="text-4xl font-bold gradient-text mb-2">50K+</div>
+              <div className="text-gray-400">Active Users</div>
+            </div>
+            <div className="card bg-transparent border-0">
+              <div className="text-4xl font-bold gradient-text mb-2">99.9%</div>
+              <div className="text-gray-400">Uptime</div>
+            </div>
+            <div className="card bg-transparent border-0">
+              <div className="text-4xl font-bold gradient-text mb-2">24/7</div>
+              <div className="text-gray-400">Support</div>
+=======
             <div className="card group">
               <div className="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-500/30 transition-colors">
                 <svg className="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -252,6 +320,7 @@ export default function HomePage() {
             <div>
               <div className="text-4xl font-bold gradient-text mb-2">24/7</div>
               <div className="text-gray-400">Support Available</div>
+>>>>>>> origin/cursor/website-audit-and-enhancement-2f29
             </div>
           </div>
         </div>
@@ -268,6 +337,17 @@ export default function HomePage() {
               Ready to Transform Your Business?
             </h2>
             <p className="text-xl text-gray-300 mb-8">
+<<<<<<< HEAD
+              Join the future of technology with Zion Tech Group. 
+              Our cutting-edge solutions are designed to drive innovation and accelerate your digital transformation.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/multiverse/launch" className="btn-primary text-lg px-8 py-4 transform hover:scale-105 transition-all duration-300">
+                🚀 Start Deployment
+              </Link>
+              <Link href="/admin/instances" className="btn-secondary text-lg px-8 py-4 transform hover:scale-105 transition-all duration-300">
+                👀 View Examples
+=======
               Join hundreds of enterprises worldwide that trust Zion Tech Group 
               to deliver cutting-edge technology solutions.
             </p>
@@ -277,6 +357,7 @@ export default function HomePage() {
               </Link>
               <Link href="/case-studies" className="btn-secondary text-lg px-8 py-4">
                 View Case Studies
+>>>>>>> origin/cursor/website-audit-and-enhancement-2f29
               </Link>
             </div>
           </div>

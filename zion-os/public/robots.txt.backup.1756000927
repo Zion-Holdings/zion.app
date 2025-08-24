@@ -6,13 +6,31 @@ Sitemap: https://ziontechgroup.com/sitemap.xml
 
 # Disallow admin and private areas
 Disallow: /admin/
+<<<<<<< HEAD
+Disallow: /private/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /static/
+=======
 Disallow: /api/
 Disallow: /_next/
 Disallow: /private/
+>>>>>>> origin/cursor/website-audit-and-enhancement-2f29
 
 # Allow important pages
 Allow: /about/
 Allow: /services/
+<<<<<<< HEAD
+Allow: /ai-solutions/
+Allow: /quantum-computing/
+Allow: /research-development/
+Allow: /case-studies/
+Allow: /news/
+Allow: /contact/
+
+# Crawl delay (optional)
+Crawl-delay: 1
+=======
 Allow: /ai-services/
 Allow: /quantum-services/
 Allow: /enterprise-it/
@@ -27,3 +45,4 @@ Allow: /white-papers/
 Allow: /contact/
 Allow: /zion-os/
 Allow: /docs/
+>>>>>>> origin/cursor/website-audit-and-enhancement-2f29

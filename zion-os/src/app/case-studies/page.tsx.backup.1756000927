@@ -1,13 +1,134 @@
 import Link from "next/link";
 
 export const metadata = {
+<<<<<<< HEAD
+  title: "Case Studies - Zion Tech Group",
+  description: "Explore real-world success stories and transformative projects delivered by Zion Tech Group across AI, quantum computing, and enterprise solutions.",
+  keywords: "case studies, success stories, AI projects, quantum computing, enterprise solutions, Zion Tech Group",
+=======
   title: "Case Studies - Zion Tech Group | Client Success Stories",
   description: "Explore real-world examples of how Zion Tech Group has helped clients transform their businesses with AI, quantum computing, and enterprise technology solutions.",
   keywords: "case studies, client success stories, AI implementation, quantum computing, enterprise solutions, Zion Tech Group",
+>>>>>>> origin/cursor/website-audit-and-enhancement-2f29
 };
 
 export default function CaseStudiesPage() {
   return (
+<<<<<<< HEAD
+    <div className="min-h-screen py-20 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        {/* Hero Section */}
+        <div className="text-center mb-16">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            <span className="gradient-text">Case Studies</span>
+          </h1>
+          <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+            Discover how Zion Tech Group has transformed businesses and organizations through innovative 
+            AI, quantum computing, and technology solutions.
+          </p>
+        </div>
+
+        {/* Featured Case Study */}
+        <section className="mb-20">
+          <div className="card bg-gradient-to-r from-blue-600/20 to-purple-600/20 border-blue-500/30 p-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+              <div>
+                <h2 className="text-3xl font-bold mb-4">AI-Powered Financial Risk Assessment</h2>
+                <p className="text-lg text-gray-300 mb-4">
+                  A major financial institution transformed their risk assessment process using our AI Business Intelligence platform.
+                </p>
+                <div className="space-y-2 mb-6">
+                  <div className="flex items-center">
+                    <span className="text-green-400 font-semibold mr-2">✓</span>
+                    <span className="text-gray-300">40% reduction in risk assessment time</span>
+                  </div>
+                  <div className="flex items-center">
+                    <span className="text-green-400 font-semibold mr-2">✓</span>
+                    <span className="text-gray-300">25% improvement in risk prediction accuracy</span>
+                  </div>
+                  <div className="flex items-center">
+                    <span className="text-green-400 font-semibold mr-2">✓</span>
+                    <span className="text-gray-300">$2M annual cost savings</span>
+                  </div>
+                </div>
+                <Link href="/case-studies/financial-ai-risk-assessment" className="btn-primary">
+                  Read Full Case Study
+                </Link>
+              </div>
+              <div className="text-center">
+                <div className="w-32 h-32 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-16 h-16 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                  </svg>
+                </div>
+                <p className="text-sm text-gray-400">Financial Services</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Case Studies Grid */}
+        <section className="mb-20">
+          <h2 className="text-3xl font-bold text-center mb-12">Success Stories by Industry</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Healthcare AI */}
+            <div className="card group">
+              <div className="w-16 h-16 bg-green-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-green-500/30 transition-colors">
+                <svg className="w-8 h-8 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold mb-3">Healthcare AI Diagnosis Platform</h3>
+              <p className="text-gray-400 mb-4">
+                Developed an AI-powered diagnostic platform that improved accuracy by 35% and reduced diagnosis time by 60%.
+              </p>
+              <div className="space-y-2 mb-4">
+                <div className="text-sm text-gray-300">
+                  <span className="font-semibold">Industry:</span> Healthcare
+                </div>
+                <div className="text-sm text-gray-300">
+                  <span className="font-semibold">Technology:</span> AI, Machine Learning
+                </div>
+                <div className="text-sm text-gray-300">
+                  <span className="font-semibold">Results:</span> 35% accuracy improvement
+                </div>
+              </div>
+              <Link href="/case-studies/healthcare-ai-diagnosis" className="text-blue-400 hover:text-blue-300 text-sm font-medium">
+                Read Case Study →
+              </Link>
+            </div>
+
+            {/* Manufacturing Automation */}
+            <div className="card group">
+              <div className="w-16 h-16 bg-blue-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-500/30 transition-colors">
+                <svg className="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold mb-3">Smart Manufacturing Automation</h3>
+              <p className="text-gray-400 mb-4">
+                Implemented AI-driven automation that increased production efficiency by 45% and reduced defects by 30%.
+              </p>
+              <div className="space-y-2 mb-4">
+                <div className="text-sm text-gray-300">
+                  <span className="font-semibold">Industry:</span> Manufacturing
+                </div>
+                <div className="text-sm text-gray-300">
+                  <span className="font-semibold">Technology:</span> AI Automation, IoT
+                </div>
+                <div className="text-sm text-gray-300">
+                  <span className="font-semibold">Results:</span> 45% efficiency increase
+                </div>
+              </div>
+              <Link href="/case-studies/manufacturing-automation" className="text-blue-400 hover:text-blue-300 text-sm font-medium">
+                Read Case Study →
+              </Link>
+            </div>
+
+            {/* Quantum Computing */}
+            <div className="card group">
+              <div className="w-16 h-16 bg-purple-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-500/30 transition-colors">
+=======
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative py-20 px-4 sm:px-6 lg:px-8">
@@ -66,10 +187,209 @@ export default function CaseStudiesPage() {
             {/* Case Study 2 */}
             <div className="card group">
               <div className="w-16 h-16 bg-purple-500/20 rounded-xl flex items-center justify-center mb-6 group-hover:bg-purple-500/30 transition-colors">
+>>>>>>> origin/cursor/website-audit-and-enhancement-2f29
                 <svg className="w-8 h-8 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
+<<<<<<< HEAD
+              <h3 className="text-xl font-semibold mb-3">Quantum Neural Network Research</h3>
+              <p className="text-gray-400 mb-4">
+                Pioneered quantum neural network research that achieved 1000x speedup in certain computational tasks.
+              </p>
+              <div className="space-y-2 mb-4">
+                <div className="text-sm text-gray-300">
+                  <span className="font-semibold">Industry:</span> Research & Development
+                </div>
+                <div className="text-sm text-gray-300">
+                  <span className="font-semibold">Technology:</span> Quantum Computing, AI
+                </div>
+                <div className="text-sm text-gray-300">
+                  <span className="font-semibold">Results:</span> 1000x speedup
+                </div>
+              </div>
+              <Link href="/case-studies/quantum-neural-networks" className="text-blue-400 hover:text-blue-300 text-sm font-medium">
+                Read Case Study →
+              </Link>
+            </div>
+
+            {/* Cybersecurity */}
+            <div className="card group">
+              <div className="w-16 h-16 bg-red-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-red-500/30 transition-colors">
+                <svg className="w-8 h-8 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold mb-3">AI-Powered Threat Detection</h3>
+              <p className="text-gray-400 mb-4">
+                Deployed advanced cybersecurity system that detected 99.7% of threats and reduced false positives by 80%.
+              </p>
+              <div className="space-y-2 mb-4">
+                <div className="text-sm text-gray-300">
+                  <span className="font-semibold">Industry:</span> Cybersecurity
+                </div>
+                <div className="text-sm text-gray-300">
+                  <span className="font-semibold">Technology:</span> AI Security, ML
+                </div>
+                <div className="text-sm text-gray-300">
+                  <span className="font-semibold">Results:</span> 99.7% threat detection
+                </div>
+              </div>
+              <Link href="/case-studies/ai-cybersecurity" className="text-blue-400 hover:text-blue-300 text-sm font-medium">
+                Read Case Study →
+              </Link>
+            </div>
+
+            {/* Retail Analytics */}
+            <div className="card group">
+              <div className="w-16 h-16 bg-yellow-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-yellow-500/30 transition-colors">
+                <svg className="w-8 h-8 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold mb-3">Retail Customer Intelligence</h3>
+              <p className="text-gray-400 mb-4">
+                Built predictive analytics platform that increased customer retention by 28% and revenue by 22%.
+              </p>
+              <div className="space-y-2 mb-4">
+                <div className="text-sm text-gray-300">
+                  <span className="font-semibold">Industry:</span> Retail
+                </div>
+                <div className="text-sm text-gray-300">
+                  <span className="font-semibold">Technology:</span> AI Analytics, ML
+                </div>
+                <div className="text-sm text-gray-300">
+                  <span className="font-semibold">Results:</span> 28% retention increase
+                </div>
+              </div>
+              <Link href="/case-studies/retail-customer-intelligence" className="text-blue-400 hover:text-blue-300 text-sm font-medium">
+                Read Case Study →
+              </Link>
+            </div>
+
+            {/* Space Technology */}
+            <div className="card group">
+              <div className="w-16 h-16 bg-indigo-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-indigo-500/30 transition-colors">
+                <svg className="w-8 h-8 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold mb-3">Satellite Constellation Management</h3>
+              <p className="text-gray-400 mb-4">
+                Developed AI-powered satellite management system that optimized orbital operations and reduced costs by 35%.
+              </p>
+              <div className="space-y-2 mb-4">
+                <div className="text-sm text-gray-300">
+                  <span className="font-semibold">Industry:</span> Space Technology
+                </div>
+                <div className="text-sm text-gray-300">
+                  <span className="font-semibold">Technology:</span> AI, Satellite Systems
+                </div>
+                <div className="text-sm text-gray-300">
+                  <span className="font-semibold">Results:</span> 35% cost reduction
+                </div>
+              </div>
+              <Link href="/case-studies/satellite-constellation-management" className="text-blue-400 hover:text-blue-300 text-sm font-medium">
+                Read Case Study →
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Results Summary */}
+        <section className="mb-20">
+          <h2 className="text-3xl font-bold text-center mb-12">Impact Across Industries</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="card text-center p-6">
+              <div className="text-3xl font-bold text-blue-400 mb-2">500+</div>
+              <p className="text-gray-300">Projects Delivered</p>
+            </div>
+            <div className="card text-center p-6">
+              <div className="text-3xl font-bold text-green-400 mb-2">98%</div>
+              <p className="text-gray-300">Client Satisfaction</p>
+            </div>
+            <div className="card text-center p-6">
+              <div className="text-3xl font-bold text-purple-400 mb-2">$50M+</div>
+              <p className="text-gray-300">Value Generated</p>
+            </div>
+            <div className="card text-center p-6">
+              <div className="text-3xl font-bold text-yellow-400 mb-2">25+</div>
+              <p className="text-gray-300">Industries Served</p>
+            </div>
+          </div>
+        </section>
+
+        {/* Testimonials */}
+        <section className="mb-20">
+          <h2 className="text-3xl font-bold text-center mb-12">What Our Clients Say</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="card">
+              <div className="flex items-center mb-4">
+                <div className="w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center mr-3">
+                  <span className="text-blue-400 font-bold">JD</span>
+                </div>
+                <div>
+                  <div className="font-semibold">John Davis</div>
+                  <div className="text-sm text-gray-400">CTO, TechCorp</div>
+                </div>
+              </div>
+              <p className="text-gray-300">
+                "Zion Tech Group transformed our data analytics capabilities. Their AI solutions helped us 
+                make data-driven decisions that increased our efficiency by 40%."
+              </p>
+            </div>
+            <div className="card">
+              <div className="flex items-center mb-4">
+                <div className="w-12 h-12 bg-green-500/20 rounded-full flex items-center justify-center mr-3">
+                  <span className="text-green-400 font-bold">SM</span>
+                </div>
+                <div>
+                  <div className="font-semibold">Sarah Martinez</div>
+                  <div className="text-sm text-gray-400">VP Engineering, HealthTech</div>
+                </div>
+              </div>
+              <p className="text-gray-300">
+                "The quantum computing solutions from Zion Tech Group opened new possibilities for our 
+                research. We achieved breakthroughs that seemed impossible before."
+              </p>
+            </div>
+            <div className="card">
+              <div className="flex items-center mb-4">
+                <div className="w-12 h-12 bg-purple-500/20 rounded-full flex items-center justify-center mr-3">
+                  <span className="text-purple-400 font-bold">RK</span>
+                </div>
+                <div>
+                  <div className="font-semibold">Robert Kim</div>
+                  <div className="text-sm text-gray-400">CEO, SpaceVentures</div>
+                </div>
+              </div>
+              <p className="text-gray-300">
+                "Working with Zion Tech Group on our satellite constellation project was game-changing. 
+                Their expertise in AI and space technology is unmatched."
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="text-center">
+          <div className="card bg-gradient-to-r from-blue-600/20 to-purple-600/20 border-blue-500/30 max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold mb-4">Ready to Write Your Success Story?</h2>
+            <p className="text-xl text-gray-300 mb-8">
+              Let's discuss how Zion Tech Group can help transform your business with cutting-edge technology solutions.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/contact" className="btn-primary">
+                Start Your Project
+              </Link>
+              <Link href="/services" className="btn-secondary">
+                Explore Our Services
+              </Link>
+            </div>
+          </div>
+        </section>
+      </div>
+=======
               <h3 className="text-2xl font-bold mb-4">Quantum Financial Services</h3>
               <p className="text-purple-400 font-medium mb-3">Quantum Computing for Risk Assessment</p>
               <p className="text-gray-400 mb-6 leading-relaxed">
@@ -370,6 +690,7 @@ export default function CaseStudiesPage() {
           </div>
         </div>
       </section>
+>>>>>>> origin/cursor/website-audit-and-enhancement-2f29
     </div>
   );
 }
