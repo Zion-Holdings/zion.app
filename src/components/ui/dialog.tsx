@@ -1,146 +1,169 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React from 'react';
+import { cn } from '@/lib/utils';
 
-interface DialogContextType {
-  isOpen: boolean;
-  open: () => void;
-  close: () => void;
-}
-
-const DialogContext = createContext<DialogContextType | undefined>(undefined);
-
-interface DialogProps {
+export interface DialogProps extends React.HTMLAttributes<HTMLDivElement> {
   open?: boolean;
   onOpenChange?: (open: boolean) => void;
+}
+
+export interface DialogTriggerProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
 }
 
-export const Dialog: React.FC<DialogProps> = ({ open: controlledOpen, onOpenChange, children }) => {
-  const [internalOpen, setInternalOpen] = useState(false);
-  const isOpen = controlledOpen !== undefined ? controlledOpen : internalOpen;
-  
-  const open = () => {
-    setInternalOpen(true);
-    onOpenChange?.(true);
-  };
-  
-  const close = () => {
-    setInternalOpen(false);
-    onOpenChange?.(false);
-  };
+export interface DialogContentProps extends React.HTMLAttributes<HTMLDivElement> {
+  children: React.ReactNode;
+}
 
-  useEffect(() => {
-    const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === 'Escape' && isOpen) {
-        close();
-      }
-    };
+export interface DialogHeaderProps extends React.HTMLAttributes<HTMLDivElement> {
+  children: React.ReactNode;
+}
 
-    document.addEventListener('keydown', handleEscape);
-    return () => document.removeEventListener('keydown', handleEscape);
-  }, [isOpen]);
+export interface DialogTitleProps extends React.HTMLAttributes<HTMLHeadingElement> {
+  children: React.ReactNode;
+}
+
+export interface DialogDescriptionProps extends React.HTMLAttributes<HTMLParagraphElement> {
+  children: React.ReactNode;
+}
+
+export interface DialogFooterProps extends React.HTMLAttributes<HTMLDivElement> {
+  children: React.ReactNode;
+}
+
+const DialogContext = React.createContext<{
+  open: boolean;
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+} | undefined>(undefined);
+
+export const Dialog: React.FC<DialogProps> = ({
+  open: controlledOpen,
+  onOpenChange,
+  className,
+  children,
+  ...props
+}) => {
+  const [internalOpen, setInternalOpen] = React.useState(false);
+  
+  const isControlled = controlledOpen !== undefined;
+  const open = isControlled ? controlledOpen : internalOpen;
+  
+  const setOpen = React.useCallback((newOpen: boolean | ((prev: boolean) => boolean)) => {
+    if (!isControlled) {
+      setInternalOpen(newOpen);
+    }
+    onOpenChange?.(typeof newOpen === 'function' ? newOpen(open) : newOpen);
+  }, [isControlled, onOpenChange, open]);
 
   return (
-    <DialogContext.Provider value={{ isOpen, open, close }}>
-      {children}
+    <DialogContext.Provider value={{ open, setOpen }}>
+      <div className={cn('relative', className)} {...props}>
+        {children}
+      </div>
     </DialogContext.Provider>
   );
 };
 
-interface DialogTriggerProps {
-  children: React.ReactNode;
-  asChild?: boolean;
-}
-
-export const DialogTrigger: React.FC<DialogTriggerProps> = ({ children, asChild = false }) => {
-  const context = useContext(DialogContext);
+export const DialogTrigger: React.FC<DialogTriggerProps> = ({
+  className,
+  children,
+  ...props
+}) => {
+  const context = React.useContext(DialogContext);
   if (!context) throw new Error('DialogTrigger must be used within Dialog');
-  
-  const { open } = context;
-  
-  if (asChild && React.isValidElement(children)) {
-    return React.cloneElement(children, { onClick: open });
-  }
-  
+
+  const { setOpen } = context;
+
   return (
-    <button onClick={open}>
+    <button
+      type="button"
+      className={cn('inline-flex items-center justify-center', className)}
+      onClick={() => setOpen(true)}
+      {...props}
+    >
       {children}
     </button>
   );
 };
 
-interface DialogContentProps {
-  children: React.ReactNode;
-  className?: string;
-}
-
-export const DialogContent: React.FC<DialogContentProps> = ({ children, className = '' }) => {
-  const context = useContext(DialogContext);
+export const DialogContent: React.FC<DialogContentProps> = ({
+  className,
+  children,
+  ...props
+}) => {
+  const context = React.useContext(DialogContext);
   if (!context) throw new Error('DialogContent must be used within Dialog');
-  
-  const { isOpen, close } = context;
-  
-  if (!isOpen) return null;
-  
+
+  const { open, setOpen } = context;
+
+  if (!open) return null;
+
   return (
     <>
-      <div 
+      {/* Backdrop */}
+      <div
         className="fixed inset-0 z-50 bg-background/80 backdrop-blur-sm"
-        onClick={close}
+        onClick={() => setOpen(false)}
       />
-      <div className="fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border bg-background p-6 shadow-lg duration-200 sm:rounded-lg">
-        {children}
+      
+      {/* Dialog */}
+      <div className="fixed inset-0 z-50 flex items-center justify-center">
+        <div
+          className={cn(
+            'relative w-full max-w-lg rounded-lg border bg-background p-6 shadow-lg',
+            className
+          )}
+          {...props}
+        >
+          {children}
+        </div>
       </div>
     </>
   );
 };
 
-interface DialogHeaderProps {
-  children: React.ReactNode;
-  className?: string;
-}
-
-export const DialogHeader: React.FC<DialogHeaderProps> = ({ children, className = '' }) => {
+export const DialogHeader: React.FC<DialogHeaderProps> = ({
+  className,
+  children,
+  ...props
+}) => {
   return (
-    <div className={`flex flex-col space-y-1.5 text-center sm:text-left ${className}`}>
+    <div className={cn('flex flex-col space-y-1.5 text-center sm:text-left', className)} {...props}>
       {children}
     </div>
   );
 };
 
-interface DialogTitleProps {
-  children: React.ReactNode;
-  className?: string;
-}
-
-export const DialogTitle: React.FC<DialogTitleProps> = ({ children, className = '' }) => {
+export const DialogTitle: React.FC<DialogTitleProps> = ({
+  className,
+  children,
+  ...props
+}) => {
   return (
-    <h2 className={`text-lg font-semibold leading-none tracking-tight ${className}`}>
+    <h2 className={cn('text-lg font-semibold leading-none tracking-tight', className)} {...props}>
       {children}
     </h2>
   );
 };
 
-interface DialogDescriptionProps {
-  children: React.ReactNode;
-  className?: string;
-}
-
-export const DialogDescription: React.FC<DialogDescriptionProps> = ({ children, className = '' }) => {
+export const DialogDescription: React.FC<DialogDescriptionProps> = ({
+  className,
+  children,
+  ...props
+}) => {
   return (
-    <p className={`text-sm text-muted-foreground ${className}`}>
+    <p className={cn('text-sm text-muted-foreground', className)} {...props}>
       {children}
     </p>
   );
 };
 
-interface DialogFooterProps {
-  children: React.ReactNode;
-  className?: string;
-}
-
-export const DialogFooter: React.FC<DialogFooterProps> = ({ children, className = '' }) => {
+export const DialogFooter: React.FC<DialogFooterProps> = ({
+  className,
+  children,
+  ...props
+}) => {
   return (
-    <div className={`flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2 ${className}`}>
+    <div className={cn('flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2', className)} {...props}>
       {children}
     </div>
   );

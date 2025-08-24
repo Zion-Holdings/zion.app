@@ -1,0 +1,4 @@
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+export const NewsletterSection = () => {
+    return (_jsx("section", { className: "py-16 bg-zion-purple", children: _jsxs("div", { className: "container mx-auto px-4 text-center", children: [_jsx("h2", { className: "text-3xl font-bold text-white mb-4", children: "Stay Updated with Tech Trends" }), _jsx("p", { className: "text-xl text-zion-slate-light mb-8 max-w-2xl mx-auto", children: "Get the latest insights on AI, technology, and business innovation delivered to your inbox." }), _jsxs("div", { className: "flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto", children: [_jsx("input", { type: "email", placeholder: "Enter your email", className: "flex-1 px-4 py-3 rounded-lg border-0 focus:ring-2 focus:ring-zion-cyan" }), _jsx("button", { className: "bg-zion-cyan text-white px-6 py-3 rounded-lg hover:bg-zion-cyan-dark transition-colors", children: "Subscribe" })] })] }) }));
+};
