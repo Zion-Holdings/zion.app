@@ -1,8 +1,1 @@
-export default function NotFound() {
-  return (
-    <div>
-      <h1 className="text-2xl font-semibold">404</h1>
-      <p className="opacity-80">Page not found.</p>
-    </div>
-  );
-}
+export default function NotFound() { return <div className="p-6">404 - Not found</div>; }

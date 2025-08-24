@@ -1,1 +1,1 @@
-export default function ChatDigitalTransformation() { return <div>Placeholder</div>; }
+export default function Page() { return <div className="p-6">Digital Transformation Insights</div>; }
