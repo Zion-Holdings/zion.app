@@ -19,7 +19,12 @@ export default function EnhancedServicesShowcase() {
     { id: 'DevOps & Infrastructure', name: 'DevOps', icon: '⚙️' },
     { id: 'Edge Computing', name: 'Edge Computing', icon: '🌐' },
     { id: 'Healthcare AI', name: 'Healthcare', icon: '🏥' },
-    { id: 'Blockchain & DeFi', name: 'Blockchain', icon: '🔗' }
+    { id: 'Blockchain & DeFi', name: 'Blockchain', icon: '🔗' },
+    { id: 'Legal Technology', name: 'Legal Tech', icon: '⚖️' },
+    { id: 'Autonomous Vehicles', name: 'Auto Tech', icon: '🚗' },
+    { id: 'Climate Technology', name: 'Climate Tech', icon: '🌍' },
+    { id: 'Education Technology', name: 'EdTech', icon: '🎓' },
+    { id: 'Manufacturing Technology', name: 'Manufacturing', icon: '🏭' }
   ];
 
   const filteredServices = selectedCategory === 'all' 

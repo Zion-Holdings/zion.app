@@ -107,6 +107,12 @@ const heroStats = [
     ...revolutionary2026MicroSaasServices
   ];
 
+<<<<<<< HEAD
+  // Get new 2029 services for enhanced showcase
+  const cuttingEdge2029Services = cuttingEdgeInnovations2029;
+  const emergingTech2029Services = emergingTechServices2029;
+  const practicalBusiness2029Services = practicalBusinessSolutions2029;
+=======
   const services = [
     {
       title: "AI Business Intelligence",
@@ -163,6 +169,7 @@ const heroStats = [
       features: ["Churn prediction", "Success automation", "Retention optimization"]
     }
   ];
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-ffb8
 
   const featuredOffers = professionalServices.slice(0, 3);
 

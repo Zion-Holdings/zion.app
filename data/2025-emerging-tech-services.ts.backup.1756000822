@@ -142,7 +142,11 @@ export const emergingTechServices2025: MicroSaasService[] = [
     competitors: ['Planet Labs, Maxar Technologies, Airbus Defence and Space, BlackSky'],
     marketSize: '$4.5B Space Data market',
     growthRate: '35% CAGR',
+<<<<<<< HEAD
+    variant: 'default',
+=======
     variant: 'ai-futuristic',
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-ffb8
     contactInfo: contact,
     realImplementation: true,
     implementationDetails: 'Cloud-based platform with satellite data access, custom analytics, and dedicated space technology experts.',
@@ -286,7 +290,11 @@ export const emergingTechServices2025: MicroSaasService[] = [
     competitors: ['NVIDIA DRIVE, ROS, ABB Robotics, KUKA Robotics'],
     marketSize: '$65B Autonomous Systems market',
     growthRate: '40% CAGR',
+<<<<<<< HEAD
+    variant: 'default',
+=======
     variant: 'ai-futuristic',
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-ffb8
     contactInfo: contact,
     realImplementation: true,
     implementationDetails: 'Custom autonomous system development, integration services, and dedicated robotics experts.',
@@ -334,7 +342,11 @@ export const emergingTechServices2025: MicroSaasService[] = [
     competitors: ['Ginkgo Bioworks, Twist Bioscience, Zymergen, Benchling'],
     marketSize: '$15B Synthetic Biology market',
     growthRate: '35% CAGR',
+<<<<<<< HEAD
+    variant: 'default',
+=======
     variant: 'neural',
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-ffb8
     contactInfo: contact,
     realImplementation: true,
     implementationDetails: 'Custom laboratory integration, AI model training, and dedicated biotechnology experts.',

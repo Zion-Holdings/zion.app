@@ -622,5 +622,9 @@ export const advancedITInfrastructureExpansion2025V2 = [
       'Threat detection',
       'Performance monitoring'
     ]
+<<<<<<< HEAD
+
+=======
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-ffb8
   }
 ];
