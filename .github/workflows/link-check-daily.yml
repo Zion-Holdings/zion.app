@@ -1,0 +1,25 @@
+name: Link Check Daily
+
+on:
+  schedule:
+    - cron: "0 6 * * *"
+  workflow_dispatch: {}
+
+jobs:
+  linkcheck:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm ci
+      - name: Run link check
+        run: node scripts/link-check.mjs
+      - name: Commit metrics
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'chore(metrics): update link check summary'
+          file_pattern: public/metrics/links.json automation_logs/link-report.json

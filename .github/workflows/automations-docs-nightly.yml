@@ -1,0 +1,25 @@
+name: Automations Docs Nightly
+
+on:
+  schedule:
+    - cron: "30 2 * * *"
+  workflow_dispatch: {}
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm ci
+      - name: Generate automations docs
+        run: node scripts/generate-automations-docs.mjs
+      - name: Commit docs
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'docs(automation): update AUTMATIONS catalog'
+          file_pattern: docs/AUTOMATIONS.md

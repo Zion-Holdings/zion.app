@@ -1,0 +1,25 @@
+name: Lighthouse Weekly
+
+on:
+  schedule:
+    - cron: "0 5 * * 1"
+  workflow_dispatch: {}
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm ci
+      - name: Run Lighthouse summary
+        run: node scripts/run-lighthouse-local.mjs
+      - name: Commit metrics
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'chore(metrics): update lighthouse performance summary'
+          file_pattern: public/metrics/performance.json
