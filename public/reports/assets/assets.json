@@ -1,0 +1,49 @@
+{
+  "generatedAt": "2025-08-11T23:13:22.409Z",
+  "totalFiles": 7,
+  "totalBytes": 42585320,
+  "items": [
+    {
+      "relPath": "automation/todo-summary.json",
+      "size": 42575917,
+      "sizeHuman": "41 MB",
+      "mtime": "2025-08-05T23:15:12.394Z"
+    },
+    {
+      "relPath": "search/index.json",
+      "size": 5411,
+      "sizeHuman": "5.3 KB",
+      "mtime": "2025-08-05T23:15:12.398Z"
+    },
+    {
+      "relPath": "sitemap.xml",
+      "size": 1486,
+      "sizeHuman": "1.5 KB",
+      "mtime": "2025-08-05T23:15:12.398Z"
+    },
+    {
+      "relPath": "automation/content-registry.json",
+      "size": 1191,
+      "sizeHuman": "1.2 KB",
+      "mtime": "2025-08-05T23:15:12.322Z"
+    },
+    {
+      "relPath": "og/zion-tech-group.svg",
+      "size": 781,
+      "sizeHuman": "781 B",
+      "mtime": "2025-08-05T23:15:12.398Z"
+    },
+    {
+      "relPath": "_redirects",
+      "size": 389,
+      "sizeHuman": "389 B",
+      "mtime": "2025-08-05T23:15:12.322Z"
+    },
+    {
+      "relPath": "og/manifest.json",
+      "size": 145,
+      "sizeHuman": "145 B",
+      "mtime": "2025-08-05T23:15:12.398Z"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "routes": [
+    "/",
+    "/automation/",
+    "/front/",
+    "/main/front/",
+    "/newsroom",
+    "/reports/ai-trends",
+    "/reports/seo",
+    "/site-health"
+  ],
+  "reports": [
+    {
+      "name": "ai-trends",
+      "path": "/reports/ai-trends",
+      "hasIndex": true
+    },
+    {
+      "name": "seo",
+      "path": "/reports/seo",
+      "hasIndex": true
+    }
+  ],
+  "generatedAt": "2025-08-11T23:13:22.362Z"
+}

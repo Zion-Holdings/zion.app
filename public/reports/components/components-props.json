@@ -1,0 +1,15 @@
+{
+  "generatedAt": "2025-08-11T23:13:22.387Z",
+  "totalFiles": 1,
+  "totalComponents": 1,
+  "entries": [
+    {
+      "file": "Landing.tsx",
+      "interfaces": [],
+      "types": [],
+      "components": [
+        "Landing"
+      ]
+    }
+  ]
+}
