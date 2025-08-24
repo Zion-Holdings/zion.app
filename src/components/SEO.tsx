@@ -193,7 +193,7 @@ export function HomePageSEO() {
       description="Discover top AI and tech talent, services, and equipment in one place. Connect with experts, find innovative solutions, and accelerate your tech projects."
       keywords="AI marketplace, tech talent, IT services, tech equipment, AI experts, developers, tech consulting, innovation"
       canonical="/"
-      image="/images/zion-homepage-og.jpg"
+      ogImage="/images/zion-homepage-og.jpg"
       structuredData={{
         "@type": "WebSite",
         "name": "Zion Tech Group",
@@ -223,7 +223,7 @@ export function ServicePageSEO({
       description={description}
       keywords={`${serviceName}, ${category}, tech services, IT solutions, Zion Tech Group`}
       canonical={`/services/${serviceName.toLowerCase().replace(/\s+/g, '-')}`}
-      type="product"
+      ogImage="/images/zion-services-og.jpg"
       structuredData={{
         "@type": "Service",
         "name": serviceName,
@@ -254,7 +254,7 @@ export function TalentPageSEO({
       description={description}
       keywords={`${talentName}, ${skills.join(', ')}, tech talent, AI expert, developer, Zion Tech Group`}
       canonical={`/talent/${talentName.toLowerCase().replace(/\s+/g, '-')}`}
-      type="profile"
+      ogImage="/images/zion-profile-og.jpg"
       structuredData={{
         "@type": "Person",
         "name": talentName,

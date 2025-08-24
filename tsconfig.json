@@ -43,6 +43,32 @@
     "noImplicitAny": false,
     "noImplicitThis": false
   },
-  "include": ["src"],
+  "include": [
+    "src/main.tsx",
+    "src/App.tsx",
+    "src/pages/Home.tsx",
+    "src/pages/ServicesPage.tsx",
+    "src/pages/Contact.tsx",
+    "src/pages/About.tsx"
+  ],
+  "exclude": [
+    "src/components/ui",
+    "src/context",
+    "src/hooks",
+    "src/layout",
+    "src/store",
+    "src/pages/Blog.tsx",
+    "src/pages/BlogPost.tsx",
+    "src/pages/CommunityPage.tsx",
+    "src/pages/ForumCategoryPage.tsx",
+    "src/pages/ForumPostPage.tsx",
+    "src/pages/Index.tsx",
+    "src/pages/NotFound.tsx",
+    "src/pages/Onboarding.tsx",
+    "src/pages/ProfileDetail.tsx",
+    "src/pages/ProfilePage.tsx",
+    "src/pages/Sitemap.tsx",
+    "src/pages/ComprehensiveServicesLanding.tsx"
+  ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

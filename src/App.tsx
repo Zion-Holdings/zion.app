@@ -6,6 +6,8 @@ import './App.css';
 // Lazy load pages for better performance
 const Home = React.lazy(() => import('./pages/Home'));
 const ServicesPage = React.lazy(() => import('./pages/ServicesPage'));
+const ContactPage = React.lazy(() => import('./pages/Contact'));
+const AboutPage = React.lazy(() => import('./pages/About'));
 
 // Simple loading component
 function LoadingSpinner() {
@@ -26,6 +28,8 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<ServicesPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/about" element={<AboutPage />} />
           <Route path="*" element={<div>Page not found</div>} />
         </Routes>
       </Suspense>
