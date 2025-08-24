@@ -1,15 +1,22 @@
 
 import { GradientHeading } from "./GradientHeading";
 import { Link } from "react-router-dom";
-import { Briefcase, HardDrive, Lightbulb, Users } from "lucide-react";
+import { Briefcase, HardDrive, Lightbulb, Users, TrendingUp } from "lucide-react";
 
 const categories = [
   {
-    title: "Services",
-    description: "On-demand IT support, consulting, development, and more",
+    title: "Enhanced Services",
+    description: "AI, cybersecurity, cloud, and specialized IT solutions",
     icon: <Briefcase className="w-10 h-10" />,
-    link: "/services",
+    link: "/enhanced-services",
     color: "from-purple-500 to-indigo-600",
+  },
+  {
+    title: "Services Pricing",
+    description: "Compare pricing and ROI for all our services",
+    icon: <TrendingUp className="w-10 h-10" />,
+    link: "/services-pricing",
+    color: "from-green-500 to-emerald-600",
   },
   {
     title: "Talents",
@@ -24,13 +31,6 @@ const categories = [
     icon: <HardDrive className="w-10 h-10" />,
     link: "/equipment",
     color: "from-amber-500 to-orange-600",
-  },
-  {
-    title: "Innovation",
-    description: "Discover cutting-edge solutions and tech breakthroughs",
-    icon: <Lightbulb className="w-10 h-10" />,
-    link: "/category/innovation",
-    color: "from-emerald-500 to-green-600",
   },
 ];
 
