@@ -1,122 +1,328 @@
 
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
+import React from 'react';
 import { SEO } from "@/components/SEO";
-import { GradientHeading } from "@/components/GradientHeading";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
+import { 
+  Users, 
+  Lightbulb, 
+  Award, 
+  Globe, 
+  Zap,
+  CheckCircle,
+  TrendingUp,
+  Shield,
+  Heart
+} from "lucide-react";
 
 export default function About() {
   return (
-    <>
+    <div className="min-h-screen bg-background">
       <SEO 
-        title="About Zion - The Future of AI & Tech Marketplace" 
-        description="Learn about Zion's mission to create the first free marketplace dedicated to high-tech and artificial intelligence." 
-        keywords="about Zion, AI marketplace, tech platform, mission, vision, team"
-        canonical="https://app.ziontechgroup.com/about"
+        title="About Us - Zion Tech Group" 
+        description="Learn about Zion Tech Group's mission to revolutionize the tech and AI marketplace, our team, and our commitment to innovation."
+        keywords="Zion Tech Group, about us, tech marketplace, AI marketplace, company mission"
+        canonical="https://ziontechgroup.com/about"
       />
-      <Header />
-      <main className="min-h-screen bg-zion-blue pt-24 pb-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <GradientHeading>About Zion</GradientHeading>
-            <p className="mt-4 text-zion-slate-light text-xl max-w-3xl mx-auto">
-              The world's first free marketplace dedicated to high-tech and artificial intelligence
-            </p>
+
+      {/* Hero Section */}
+      <section className="relative bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-purple py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+            About <span className="text-zion-cyan">Zion Tech Group</span>
+          </h1>
+          <p className="text-xl text-zion-slate-light max-w-3xl mx-auto mb-8">
+            Pioneering the future of technology through innovative marketplace solutions, 
+            AI integration, and sustainable tech practices.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Button asChild size="lg" className="bg-zion-cyan hover:bg-zion-cyan/90 text-zion-blue-dark">
+              <Link to="/contact">Get in Touch</Link>
+            </Button>
+            <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-zion-blue-dark">
+              <Link to="/careers">Join Our Team</Link>
+            </Button>
           </div>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
+        </div>
+      </section>
+
+      {/* Mission & Vision */}
+      <section className="py-20 bg-zion-blue-dark/50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl font-bold text-white mb-6">Our Mission</h2>
-              <p className="text-zion-slate-light text-lg mb-6">
-                At Zion, we're on a mission to democratize access to cutting-edge AI and technology solutions. 
-                We believe that innovation thrives when barriers are removed and connections are made.
+              <p className="text-lg text-zion-slate-light mb-6">
+                To democratize access to cutting-edge technology and AI solutions by creating 
+                the world's most comprehensive and accessible marketplace for tech talent, 
+                services, and equipment.
               </p>
-              <p className="text-zion-slate-light text-lg mb-6">
-                Our platform brings together talented AI specialists, innovative companies, and the latest 
-                technological solutions in one seamless ecosystem.
-              </p>
-              <p className="text-zion-slate-light text-lg">
-                By connecting talent with opportunity and innovation with implementation, we're creating 
-                a global community where the future of technology is being built today.
-              </p>
-            </div>
-            <div className="rounded-lg overflow-hidden">
-              <img 
-                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&h=600" 
-                alt="Team collaboration" 
-                className="object-cover w-full h-full"
-              />
-            </div>
-          </div>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24 lg:flex-row-reverse">
-            <div>
-              <h2 className="text-3xl font-bold text-white mb-6">Our Vision</h2>
-              <p className="text-zion-slate-light text-lg mb-6">
-                We envision a world where AI and technology are accessible to all, regardless of geographical 
-                or financial constraints. A world where the best minds can collaborate to solve the most 
-                challenging problems.
-              </p>
-              <p className="text-zion-slate-light text-lg mb-6">
-                Zion is building that world by creating a transparent, ethical, and inclusive platform 
-                that puts people at the center of technological advancement.
-              </p>
-              <p className="text-zion-slate-light text-lg">
-                Our goal is to become the premier destination for AI and tech innovation, fostering 
-                a community that shapes the future of how we live, work, and interact with technology.
-              </p>
-            </div>
-            <div className="rounded-lg overflow-hidden lg:order-first">
-              <img 
-                src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&h=600" 
-                alt="Tech innovation" 
-                className="object-cover w-full h-full"
-              />
-            </div>
-          </div>
-          
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-white mb-8">Our Values</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="bg-zion-blue-dark p-8 rounded-lg border border-zion-blue-light">
-                <div className="bg-zion-blue inline-flex p-4 rounded-full mb-4">
-                  <svg className="w-8 h-8 text-zion-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                  </svg>
+              <div className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="text-zion-cyan w-5 h-5" />
+                  <span className="text-zion-slate-light">Connect businesses with top tech talent</span>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">Innovation</h3>
-                <p className="text-zion-slate-light">
-                  We embrace cutting-edge technologies and creative thinking to push the boundaries of what's possible.
-                </p>
-              </div>
-              
-              <div className="bg-zion-blue-dark p-8 rounded-lg border border-zion-blue-light">
-                <div className="bg-zion-blue inline-flex p-4 rounded-full mb-4">
-                  <svg className="w-8 h-8 text-zion-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-                  </svg>
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="text-zion-cyan w-5 h-5" />
+                  <span className="text-zion-slate-light">Accelerate AI adoption across industries</span>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">Community</h3>
-                <p className="text-zion-slate-light">
-                  We believe in the power of collaboration and fostering an inclusive ecosystem where everyone can thrive.
-                </p>
-              </div>
-              
-              <div className="bg-zion-blue-dark p-8 rounded-lg border border-zion-blue-light">
-                <div className="bg-zion-blue inline-flex p-4 rounded-full mb-4">
-                  <svg className="w-8 h-8 text-zion-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                  </svg>
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="text-zion-cyan w-5 h-5" />
+                  <span className="text-zion-slate-light">Promote sustainable technology practices</span>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">Trust</h3>
-                <p className="text-zion-slate-light">
-                  We maintain the highest standards of integrity, transparency, and ethical practices in everything we do.
-                </p>
               </div>
+            </div>
+            <div className="text-center">
+              <div className="w-32 h-32 bg-zion-purple/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Globe className="w-16 h-16 text-zion-purple" />
+              </div>
+              <h3 className="text-2xl font-semibold text-white mb-4">Vision 2030</h3>
+              <p className="text-zion-slate-light">
+                To become the global standard for technology marketplace excellence, 
+                driving innovation and sustainability in the digital economy.
+              </p>
             </div>
           </div>
         </div>
-      </main>
-      <Footer />
-    </>
+      </section>
+
+      {/* Core Values */}
+      <section className="py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-white text-center mb-16">Our Core Values</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <Card className="bg-zion-blue-dark border-zion-purple/20 hover:border-zion-purple/40 transition-colors">
+              <CardHeader className="text-center">
+                <div className="w-16 h-16 bg-zion-purple/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Zap className="w-8 h-8 text-zion-cyan" />
+                </div>
+                <CardTitle className="text-zion-cyan">Innovation First</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-zion-slate-light text-center">
+                  We constantly push boundaries and embrace emerging technologies to stay ahead of the curve.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-zion-blue-dark border-zion-purple/20 hover:border-zion-purple/40 transition-colors">
+              <CardHeader className="text-center">
+                <div className="w-16 h-16 bg-zion-purple/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Users className="w-8 h-8 text-zion-cyan" />
+                </div>
+                <CardTitle className="text-zion-cyan">Community Driven</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-zion-slate-light text-center">
+                  Our success is built on the strength and collaboration of our global tech community.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-zion-blue-dark border-zion-purple/20 hover:border-zion-purple/40 transition-colors">
+              <CardHeader className="text-center">
+                <div className="w-16 h-16 bg-zion-purple/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Shield className="w-8 h-8 text-zion-cyan" />
+                </div>
+                <CardTitle className="text-zion-cyan">Trust & Security</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-zion-slate-light text-center">
+                  We prioritize the security and privacy of our users above all else.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-zion-blue-dark border-zion-purple/20 hover:border-zion-purple/40 transition-colors">
+              <CardHeader className="text-center">
+                <div className="w-16 h-16 bg-zion-purple/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Heart className="w-8 h-8 text-zion-cyan" />
+                </div>
+                <CardTitle className="text-zion-cyan">Sustainability</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-zion-slate-light text-center">
+                  We're committed to promoting green technology and reducing our environmental impact.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-zion-blue-dark border-zion-purple/20 hover:border-zion-purple/40 transition-colors">
+              <CardHeader className="text-center">
+                <div className="w-16 h-16 bg-zion-purple/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <TrendingUp className="w-8 h-8 text-zion-cyan" />
+                </div>
+                <CardTitle className="text-zion-cyan">Excellence</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-zion-slate-light text-center">
+                  We strive for excellence in everything we do, from product quality to customer service.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-zion-blue-dark border-zion-purple/20 hover:border-zion-purple/40 transition-colors">
+              <CardHeader className="text-center">
+                <div className="w-16 h-16 bg-zion-purple/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Globe className="w-8 h-8 text-zion-cyan" />
+                </div>
+                <CardTitle className="text-zion-cyan">Global Impact</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-zion-slate-light text-center">
+                  We're building solutions that make technology accessible to everyone, everywhere.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Company Stats */}
+      <section className="py-20 bg-zion-blue-dark/50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-white text-center mb-16">Zion by the Numbers</h2>
+          <div className="grid md:grid-cols-4 gap-8 text-center">
+            <div>
+              <div className="text-4xl font-bold text-zion-cyan mb-2">10K+</div>
+              <p className="text-zion-slate-light">Active Users</p>
+            </div>
+            <div>
+              <div className="text-4xl font-bold text-zion-cyan mb-2">500+</div>
+              <p className="text-zion-slate-light">Tech Companies</p>
+            </div>
+            <div>
+              <div className="text-4xl font-bold text-zion-cyan mb-2">50+</div>
+              <p className="text-zion-slate-light">Countries Served</p>
+            </div>
+            <div>
+              <div className="text-4xl font-bold text-zion-cyan mb-2">99.9%</div>
+              <p className="text-zion-slate-light">Uptime</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* What We Do */}
+      <section className="py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-white text-center mb-16">What We Do</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <Card className="bg-zion-blue-dark border-zion-purple/20">
+              <CardHeader>
+                <CardTitle className="text-zion-cyan">AI Talent Marketplace</CardTitle>
+                <CardDescription className="text-zion-slate-light">
+                  Connect businesses with top AI and tech professionals
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-zion-slate-light">
+                  Our AI-powered matching system helps companies find the perfect talent 
+                  for their projects, from developers to data scientists.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-zion-blue-dark border-zion-purple/20">
+              <CardHeader>
+                <CardTitle className="text-zion-cyan">Tech Services Hub</CardTitle>
+                <CardDescription className="text-zion-slate-light">
+                  Comprehensive tech services and solutions
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-zion-slate-light">
+                  From IT consulting to custom software development, we provide 
+                  end-to-end technology solutions for businesses of all sizes.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-zion-blue-dark border-zion-purple/20">
+              <CardHeader>
+                <CardTitle className="text-zion-cyan">Equipment & Infrastructure</CardTitle>
+                <CardDescription className="text-zion-slate-light">
+                  High-tech equipment and infrastructure solutions
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-zion-slate-light">
+                  Access to cutting-edge hardware, cloud infrastructure, and 
+                  specialized equipment for tech projects and research.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-zion-blue-dark border-zion-purple/20">
+              <CardHeader>
+                <CardTitle className="text-zion-cyan">Green IT Solutions</CardTitle>
+                <CardDescription className="text-zion-slate-light">
+                  Sustainable technology practices and solutions
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-zion-slate-light">
+                  We help businesses implement eco-friendly technology solutions 
+                  that reduce environmental impact while improving efficiency.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-zion-blue-dark border-zion-purple/20">
+              <CardHeader>
+                <CardTitle className="text-zion-cyan">Community & Learning</CardTitle>
+                <CardDescription className="text-zion-slate-light">
+                  Knowledge sharing and professional development
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-zion-slate-light">
+                  Our community platform fosters collaboration, learning, and 
+                  innovation among tech professionals worldwide.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-zion-blue-dark border-zion-purple/20">
+              <CardHeader>
+                <CardTitle className="text-zion-cyan">Enterprise Solutions</CardTitle>
+                <CardDescription className="text-zion-slate-light">
+                  Custom solutions for large organizations
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-zion-slate-light">
+                  Tailored technology solutions and consulting services designed 
+                  specifically for enterprise-level organizations.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-gradient-to-r from-zion-purple to-zion-blue">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-bold text-white mb-6">
+            Ready to Join the Future of Tech?
+          </h2>
+          <p className="text-xl text-zion-slate-light mb-8 max-w-2xl mx-auto">
+            Whether you're looking for talent, services, or want to be part of our mission, 
+            we're here to help you succeed.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Button asChild size="lg" className="bg-zion-cyan hover:bg-zion-cyan/90 text-zion-blue-dark">
+              <Link to="/contact">Get Started Today</Link>
+            </Button>
+            <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-zion-blue-dark">
+              <Link to="/marketplace">Explore Marketplace</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+    </div>
   );
 }
