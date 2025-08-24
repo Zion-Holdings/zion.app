@@ -16,15 +16,50 @@ import {
   BookOpen,
   Code,
   Building,
-  Clock
+  Clock,
+  Brain,
+  Server,
+  TrendingUp,
+  CheckCircle
 } from "lucide-react";
 
 export function FeatureCTAs() {
   const features = [
     {
+      title: "AI Services & Solutions",
+      description: "Comprehensive AI services from strategy to implementation, including custom model development and AI consulting.",
+      icon: <Brain className="h-10 w-10 p-2 rounded-md bg-cyan-100 text-cyan-700" />,
+      link: "/ai-services",
+      badge: "New",
+      details: "Transform your business with cutting-edge AI solutions including machine learning, computer vision, NLP, and strategic AI consulting."
+    },
+    {
+      title: "IT Services & Infrastructure",
+      description: "Complete IT solutions including cloud management, cybersecurity, DevOps, and infrastructure modernization.",
+      icon: <Server className="h-10 w-10 p-2 rounded-md bg-blue-100 text-blue-700" />,
+      link: "/it-services",
+      badge: "Popular",
+      details: "From cloud migration to cybersecurity, our IT experts help you build robust, scalable, and secure technology infrastructure."
+    },
+    {
+      title: "Digital Marketing Services",
+      description: "Full-service digital marketing including SEO, PPC, social media, content marketing, and analytics.",
+      icon: <TrendingUp className="h-10 w-10 p-2 rounded-md bg-purple-100 text-purple-700" />,
+      link: "/digital-marketing",
+      badge: "Featured",
+      details: "Drive growth with data-driven marketing strategies, conversion optimization, and comprehensive digital marketing solutions."
+    },
+    {
+      title: "Business Solutions & Consulting",
+      description: "Strategic business consulting, process optimization, and digital transformation services.",
+      icon: <CheckCircle className="h-10 w-10 p-2 rounded-md bg-green-100 text-green-700" />,
+      link: "/business-solutions",
+      details: "Our business consultants help you optimize operations, implement automation, and achieve sustainable growth through strategic planning."
+    },
+    {
       title: "AI Talent Matching",
       description: "Our AI-powered matching algorithm connects you with the perfect talent or job based on skills, experience, and preferences.",
-      icon: <Search className="h-10 w-10 p-2 rounded-md bg-blue-100 text-blue-700" />,
+      icon: <Search className="h-10 w-10 p-2 rounded-md bg-indigo-100 text-indigo-700" />,
       link: "/marketplace",
       badge: "Popular",
       details: "Leveraging advanced machine learning, our matching system analyzes over 100+ data points to create perfect connections between talents and opportunities."
@@ -32,17 +67,9 @@ export function FeatureCTAs() {
     {
       title: "Talent Directory",
       description: "Browse our extensive database of verified AI and tech specialists, filtered by expertise and availability.",
-      icon: <Users className="h-10 w-10 p-2 rounded-md bg-purple-100 text-purple-700" />,
+      icon: <Users className="h-10 w-10 p-2 rounded-md bg-pink-100 text-pink-700" />,
       link: "/talent",
       details: "Every talent in our directory undergoes a rigorous verification process to ensure quality, authenticity, and reliability."
-    },
-    {
-      title: "Services Marketplace",
-      description: "Discover professional tech and AI services for your business needs, from development to consulting.",
-      icon: <Zap className="h-10 w-10 p-2 rounded-md bg-cyan-100 text-cyan-700" />,
-      link: "/services",
-      badge: "New",
-      details: "From on-demand IT support to specialized AI development, our marketplace offers verified services with transparent pricing and reviews."
     },
     {
       title: "Equipment Catalog",
@@ -59,40 +86,11 @@ export function FeatureCTAs() {
       details: "Join thousands of tech professionals in discussions, AMAs with industry leaders, and exclusive community events."
     },
     {
-      title: "Mobile Experience",
-      description: "Take Zion with you on the go with our mobile app for iOS and Android devices.",
-      icon: <Smartphone className="h-10 w-10 p-2 rounded-md bg-indigo-100 text-indigo-700" />,
-      link: "/mobile-launch",
-      badge: "Featured",
-      details: "Manage your projects, communicate with clients or talents, and receive real-time updates wherever you are."
-    },
-    {
       title: "Enterprise Solutions",
       description: "Custom-branded hiring portal, dedicated talent pool, and powerful admin controls for your organization.",
-      icon: <Building className="h-10 w-10 p-2 rounded-md bg-pink-100 text-pink-700" />,
+      icon: <Building className="h-10 w-10 p-2 rounded-md bg-red-100 text-red-700" />,
       link: "/enterprise",
       details: "Scale your talent acquisition with white-labeled solutions, analytics dashboards, and dedicated account managers."
-    },
-    {
-      title: "Developer Tools",
-      description: "Access our API documentation, SDKs, and integration guides to build on top of the Zion platform.",
-      icon: <Code className="h-10 w-10 p-2 rounded-md bg-gray-100 text-gray-700" />,
-      link: "/developers",
-      details: "Leverage our robust API with comprehensive documentation, code examples, and developer support."
-    },
-    {
-      title: "Learning Resources",
-      description: "Access tutorials, courses, and documentation to enhance your skills in AI and tech.",
-      icon: <BookOpen className="h-10 w-10 p-2 rounded-md bg-teal-100 text-teal-700" />,
-      link: "/blog",
-      details: "From beginner guides to advanced technical content, our learning resources help you stay at the cutting edge of technology."
-    },
-    {
-      title: "Project Management",
-      description: "Streamlined tools to manage projects, track milestones, and ensure successful delivery.",
-      icon: <Calendar className="h-10 w-10 p-2 rounded-md bg-red-100 text-red-700" />,
-      link: "/dashboard/projects",
-      details: "Our intuitive project management tools help you track progress, manage deliverables, and ensure timely completion."
     },
     {
       title: "Zion Hire AI",
