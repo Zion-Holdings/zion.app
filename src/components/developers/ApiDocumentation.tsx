@@ -51,10 +51,10 @@ export function ApiDocumentation() {
                 { name: "status", type: "string", description: "Filter by job status (new, active, closed)" }
               ]}
               codeExamples={{
-                curl: `curl -X GET "https://api.ziontechgroup.com/v1/jobs?limit=10&category=development" \\
+                curl: `curl -X GET "https://ziontechgroup.com/api/v1/jobs?limit=10&category=development" \\
   -H "Authorization: Bearer YOUR_API_KEY" \\
   -H "Content-Type: application/json"`,
-                javascript: `const response = await fetch('https://api.ziontechgroup.com/v1/jobs?limit=10&category=development', {
+                                  javascript: `const response = await fetch('https://ziontechgroup.com/api/v1/jobs?limit=10&category=development', {
   method: 'GET',
   headers: {
     'Authorization': 'Bearer YOUR_API_KEY',
@@ -72,7 +72,7 @@ headers = {
 }
 
 response = requests.get(
-    'https://api.ziontechgroup.com/v1/jobs',
+    'https://ziontechgroup.com/api/v1/jobs',
     params={'limit': 10, 'category': 'development'},
     headers=headers
 )
@@ -118,11 +118,11 @@ print(data)`
                 { name: "id", type: "string", description: "The job ID", required: true }
               ]}
               codeExamples={{
-                curl: `curl -X GET "https://api.ziontechgroup.com/v1/jobs/job_abc123" \\
+                curl: `curl -X GET "https://ziontechgroup.com/api/v1/jobs/job_abc123" \\
   -H "Authorization: Bearer YOUR_API_KEY" \\
   -H "Content-Type: application/json"`,
                 javascript: `const jobId = 'job_abc123';
-const response = await fetch(\`https://api.ziontechgroup.com/v1/jobs/\${jobId}\`, {
+const response = await fetch(\`https://ziontechgroup.com/api/v1/jobs/\${jobId}\`, {
   method: 'GET',
   headers: {
     'Authorization': 'Bearer YOUR_API_KEY',
@@ -141,7 +141,7 @@ headers = {
 
 job_id = 'job_abc123'
 response = requests.get(
-    f'https://api.ziontechgroup.com/v1/jobs/{job_id}',
+    f'https://ziontechgroup.com/api/v1/jobs/{job_id}',
     headers=headers
 )
 
@@ -187,7 +187,7 @@ print(data)`
                 { name: "deadline", type: "string", description: "Job deadline (ISO date string)" }
               ]}
               codeExamples={{
-                curl: `curl -X POST "https://api.ziontechgroup.com/v1/jobs" \\
+                curl: `curl -X POST "https://ziontechgroup.com/api/v1/jobs" \\
   -H "Authorization: Bearer YOUR_API_KEY" \\
   -H "Content-Type: application/json" \\
   -d '{
@@ -202,7 +202,7 @@ print(data)`
     },
     "deadline": "2025-06-30T23:59:59Z"
   }'`,
-                javascript: `const response = await fetch('https://api.ziontechgroup.com/v1/jobs', {
+                javascript: `const response = await fetch('https://ziontechgroup.com/api/v1/jobs', {
   method: 'POST',
   headers: {
     'Authorization': 'Bearer YOUR_API_KEY',
@@ -246,7 +246,7 @@ payload = {
 }
 
 response = requests.post(
-    'https://api.ziontechgroup.com/v1/jobs',
+    'https://ziontechgroup.com/api/v1/jobs',
     headers=headers,
     data=json.dumps(payload)
 )
@@ -290,10 +290,10 @@ print(data)`
                 { name: "availability", type: "string", description: "Filter by availability status" }
               ]}
               codeExamples={{
-                curl: `curl -X GET "https://api.ziontechgroup.com/v1/talent?skills=react,typescript" \\
+                curl: `curl -X GET "https://ziontechgroup.com/api/v1/talent?skills=react,typescript" \\
   -H "Authorization: Bearer YOUR_API_KEY" \\
   -H "Content-Type: application/json"`,
-                javascript: `const response = await fetch('https://api.ziontechgroup.com/v1/talent?skills=react,typescript', {
+                javascript: `const response = await fetch('https://ziontechgroup.com/api/v1/talent?skills=react,typescript', {
   method: 'GET',
   headers: {
     'Authorization': 'Bearer YOUR_API_KEY',
@@ -311,7 +311,7 @@ headers = {
 }
 
 response = requests.get(
-    'https://api.ziontechgroup.com/v1/talent',
+    'https://ziontechgroup.com/api/v1/talent',
     params={'skills': 'react,typescript'},
     headers=headers
 )
@@ -351,11 +351,11 @@ print(data)`
                 { name: "id", type: "string", description: "The talent ID", required: true }
               ]}
               codeExamples={{
-                curl: `curl -X GET "https://api.ziontechgroup.com/v1/talent/talent_abc123" \\
+                curl: `curl -X GET "https://ziontechgroup.com/api/v1/talent/talent_abc123" \\
   -H "Authorization: Bearer YOUR_API_KEY" \\
   -H "Content-Type: application/json"`,
                 javascript: `const talentId = 'talent_abc123';
-const response = await fetch(\`https://api.ziontechgroup.com/v1/talent/\${talentId}\`, {
+const response = await fetch(\`https://ziontechgroup.com/api/v1/talent/\${talentId}\`, {
   method: 'GET',
   headers: {
     'Authorization': 'Bearer YOUR_API_KEY',
@@ -374,7 +374,7 @@ headers = {
 
 talent_id = 'talent_abc123'
 response = requests.get(
-    f'https://api.ziontechgroup.com/v1/talent/{talent_id}',
+    f'https://ziontechgroup.com/api/v1/talent/{talent_id}',
     headers=headers
 )
 
@@ -432,7 +432,7 @@ print(data)`
                 { name: "requester_email", type: "string", description: "Email of the requester", required: true }
               ]}
               codeExamples={{
-                curl: `curl -X POST "https://api.ziontechgroup.com/v1/quotes" \\
+                curl: `curl -X POST "https://ziontechgroup.com/api/v1/quotes" \\
   -H "Authorization: Bearer YOUR_API_KEY" \\
   -H "Content-Type: application/json" \\
   -d '{
@@ -446,7 +446,7 @@ print(data)`
     "requester_name": "John Doe",
     "requester_email": "john@example.com"
   }'`,
-                javascript: `const response = await fetch('https://api.ziontechgroup.com/v1/quotes', {
+                javascript: `const response = await fetch('https://ziontechgroup.com/api/v1/quotes', {
   method: 'POST',
   headers: {
     'Authorization': 'Bearer YOUR_API_KEY',
@@ -488,7 +488,7 @@ payload = {
 }
 
 response = requests.post(
-    'https://api.ziontechgroup.com/v1/quotes',
+    'https://ziontechgroup.com/api/v1/quotes',
     headers=headers,
     data=json.dumps(payload)
 )
@@ -529,10 +529,10 @@ print(data)`
                 { name: "status", type: "string", description: "Filter by status (new, viewed, replied, archived)" }
               ]}
               codeExamples={{
-                curl: `curl -X GET "https://api.ziontechgroup.com/v1/quotes" \\
+                curl: `curl -X GET "https://ziontechgroup.com/api/v1/quotes" \\
   -H "Authorization: Bearer YOUR_API_KEY" \\
   -H "Content-Type: application/json"`,
-                javascript: `const response = await fetch('https://api.ziontechgroup.com/v1/quotes', {
+                javascript: `const response = await fetch('https://ziontechgroup.com/api/v1/quotes', {
   method: 'GET',
   headers: {
     'Authorization': 'Bearer YOUR_API_KEY',
@@ -550,7 +550,7 @@ headers = {
 }
 
 response = requests.get(
-    'https://api.ziontechgroup.com/v1/quotes',
+    'https://ziontechgroup.com/api/v1/quotes',
     headers=headers
 )
 

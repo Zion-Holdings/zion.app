@@ -2,8 +2,14 @@
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { useAuth } from "@/hooks/useAuth";
-import { MessageSquare } from "lucide-react";
+import { MessageSquare, ChevronDown, Users, Briefcase, Settings, BarChart3 } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 interface MainNavigationProps {
   isAdmin?: boolean;
@@ -29,9 +35,9 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
       matches: (path: string) => path.startsWith('/marketplace')
     },
     {
-      key: 'categories',
-      href: '/categories',
-      matches: (path: string) => path.startsWith('/categories')
+      key: 'services',
+      href: '/services',
+      matches: (path: string) => path.startsWith('/services')
     },
     {
       key: 'talent',
@@ -47,6 +53,11 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
       key: 'community',
       href: '/community',
       matches: (path: string) => path.startsWith('/community') || path.startsWith('/forum')
+    },
+    {
+      key: 'blog',
+      href: '/blog',
+      matches: (path: string) => path.startsWith('/blog')
     }
   ];
 
@@ -90,6 +101,76 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
             </Link>
           </li>
         ))}
+        
+        {/* Resources Dropdown */}
+        <li>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <button className="inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-colors text-white hover:bg-zion-purple/10 hover:text-zion-cyan">
+                Resources
+                <ChevronDown className="ml-1 h-4 w-4" />
+              </button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="w-48 bg-zion-blue-dark border-zion-blue-light">
+              <DropdownMenuItem asChild>
+                <Link to="/help" className="flex items-center gap-2 text-white hover:bg-zion-purple/10">
+                  <Settings className="h-4 w-4" />
+                  Help Center
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link to="/faq" className="flex items-center gap-2 text-white hover:bg-zion-purple/10">
+                  <Briefcase className="h-4 w-4" />
+                  FAQ
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link to="/sitemap" className="flex items-center gap-2 text-white hover:bg-zion-purple/10">
+                  <BarChart3 className="h-4 w-4" />
+                  Sitemap
+                </Link>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </li>
+        
+        {/* Company Dropdown */}
+        <li>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <button className="inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-colors text-white hover:bg-zion-purple/10 hover:text-zion-cyan">
+                Company
+                <ChevronDown className="ml-1 h-4 w-4" />
+              </button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="w-48 bg-zion-blue-dark border-zion-blue-light">
+              <DropdownMenuItem asChild>
+                <Link to="/about" className="flex items-center gap-2 text-white hover:bg-zion-purple/10">
+                  <Users className="h-4 w-4" />
+                  About Us
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link to="/careers" className="flex items-center gap-2 text-white hover:bg-zion-purple/10">
+                  <Briefcase className="h-4 w-4" />
+                  Careers
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link to="/partners" className="flex items-center gap-2 text-white hover:bg-zion-purple/10">
+                  <Users className="h-4 w-4" />
+                  Partners
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link to="/contact" className="flex items-center gap-2 text-white hover:bg-zion-purple/10">
+                  <Settings className="h-4 w-4" />
+                  Contact
+                </Link>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </li>
         
         {/* Messages link with unread counter */}
         {isAuthenticated && (
