@@ -65,7 +65,7 @@ const Footer: React.FC = () => {
               </div>
             </div>
             <p className="text-white/70 mb-6 max-w-md leading-relaxed">
-              Leading-edge technology solutions and intelligent automation systems that drive digital transformation and innovation across industries.
+              AI-powered cloud automation and autonomous deployment solutions that continuously optimize infrastructure and applications across industries.
             </p>
             
             {/* Social Links */}
