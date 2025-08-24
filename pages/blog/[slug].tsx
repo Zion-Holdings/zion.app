@@ -1,79 +1,113 @@
-import React from 'react';
-import ReactMarkdown from 'react-markdown';
+import type { GetServerSideProps, NextPage } from 'next';
 import Head from 'next/head';
-import NextHead from '@/components/NextHead';
-import type { GetStaticPaths, GetStaticProps } from 'next';
-import { BLOG_POSTS } from '@/data/blog-posts';
-import type { BlogPost } from '@/types/blog';
+import { useEffect, useMemo } from 'react';
+import { BlogPost } from '@/utils/types/blog';
+import { findPostBySlug, listPublishedPosts } from '@/utils/data/blogStore';
+import PostContent from '@/components/blog/PostContent';
+import ShareButtons from '@/components/blog/ShareButtons';
+import SuggestedArticles from '@/components/blog/SuggestedArticles';
+import CTASection from '@/components/blog/CTASection';
+import LikeButton from '@/components/blog/LikeButton';
 
-interface BlogProps {
-  post: BlogPost | null;
-}
+type Props = { post: BlogPost; all: BlogPost[] };
 
-const BlogPostPage: React.FC<BlogProps> = ({ post }) => {
-  if (!post) {
-    return <div>Article not found</div>;
-  }
-  const articleLd = {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    headline: post.title,
-    description: post.excerpt,
-    image: post.featuredImage,
-    datePublished: post.publishedDate,
-    author: {
-      "@type": "Person",
-      name: post.author.name,
-    },
+const PostPage: NextPage<Props> = ({ post, all }) => {
+  const pageUrl = typeof window === 'undefined' ? '' : window.location.href;
+
+  useEffect(() => {
+    // track view
+    fetch(`/api/blog/metrics/${post.id}/views`, { method: 'POST' }).catch(() => {});
+  }, [post.id]);
+
+  const toc = useMemo(() => {
+    const headings: { level: number; text: string; id: string }[] = [];
+    const lines = post.body.split('\n');
+    lines.forEach((line) => {
+      const m = /^(#{1,3})\s+(.*)$/.exec(line);
+      if (m) {
+        const level = m[1].length;
+        const text = m[2].trim();
+        const id = text;
+        headings.push({ level, text, id });
+      }
+    });
+    return headings;
+  }, [post.body]);
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.seo.metaTitle || post.title,
+    description: post.seo.metaDescription,
+    image: post.seo.ogImageUrl || post.coverImageUrl,
+    datePublished: post.publishDate,
+    author: [{ '@type': 'Person', name: post.author }],
+    mainEntityOfPage: { '@type': 'WebPage', '@id': `/blog/${post.slug}` },
   };
+
   return (
-    <>
-      <NextHead
-        title={post.title}
-        description={post.excerpt}
-        openGraph={{ title: post.title, description: post.excerpt, image: post.featuredImage }}
-      />
+    <div>
       <Head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }}
-        />
+        <title>{post.seo.metaTitle || post.title}</title>
+        <meta name="description" content={post.seo.metaDescription} />
+        {post.seo.ogImageUrl || post.coverImageUrl ? (
+          <meta property="og:image" content={post.seo.ogImageUrl || post.coverImageUrl} />
+        ) : null}
+        <meta property="og:title" content={post.seo.metaTitle || post.title} />
+        <meta property="og:description" content={post.seo.metaDescription} />
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={post.seo.metaTitle || post.title} />
+        <meta name="twitter:description" content={post.seo.metaDescription} />
+        {(post.seo.ogImageUrl || post.coverImageUrl) && <meta name="twitter:image" content={post.seo.ogImageUrl || post.coverImageUrl} />}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </Head>
-      <main className="prose dark:prose-invert max-w-3xl mx-auto py-8">
-        <h1>{post.title}</h1>
-        <ReactMarkdown>{post.content}</ReactMarkdown>
-      </main>
-    </>
+
+      <article className="mx-auto max-w-3xl">
+        <h1 className="text-3xl font-bold">{post.title}</h1>
+        <div className="text-gray-600 dark:text-gray-300 mt-1">
+          {new Date(post.publishDate).toLocaleDateString()} • {post.author}
+        </div>
+        {toc.length > 0 && (
+          <nav className="mt-6 p-4 border rounded bg-gray-50 dark:bg-zinc-900">
+            <div className="font-semibold mb-2">On this page</div>
+            <ul className="space-y-1">
+              {toc.map((h, i) => (
+                <li key={i} className={h.level === 1 ? '' : h.level === 2 ? 'ml-3' : 'ml-6'}>
+                  <a href={`#${encodeURIComponent(h.id)}`}>
+                    {h.text}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        )}
+
+        <div className="mt-6">
+          <PostContent body={post.body} />
+        </div>
+
+        <div className="mt-8 flex items-center gap-4">
+          <ShareButtons title={post.title} url={pageUrl || `/blog/${post.slug}`} description={post.seo.metaDescription} onShare={() => fetch(`/api/blog/metrics/${post.id}/shares`, { method: 'POST' }).catch(() => {})} />
+          <LikeButton postId={post.id} initialLikes={post.metrics?.likes || 0} />
+        </div>
+
+        <SuggestedArticles current={post} all={all} />
+
+        <CTASection />
+      </article>
+    </div>
   );
 };
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = BLOG_POSTS.map((p) => ({ params: { slug: p.slug } }));
-  return { paths, fallback: 'blocking' };
-};
-
-export const getStaticProps: GetStaticProps<BlogProps> = async ({ params }) => {
-  const slug = params?.slug as string;
-  const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
-
-  try {
-    const res = await fetch(`${appUrl}/api/blog/${slug}`);
-    if (res.ok) {
-      const post: BlogPost = await res.json();
-      return { props: { post }, revalidate: 60 };
-    }
-  } catch (e) {
-    console.error('Failed to fetch blog post', e);
-  }
-
-  const post = BLOG_POSTS.find((p) => p.slug === slug) || null;
-
-  if (!post) {
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const slug = ctx.params?.slug as string;
+  const post = findPostBySlug(slug);
+  if (!post || post.status !== 'published') {
     return { notFound: true };
   }
-
-  return { props: { post } };
+  const all = listPublishedPosts();
+  return { props: { post, all } };
 };
 
-export default BlogPostPage;
-
+export default PostPage;

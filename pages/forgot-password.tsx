@@ -1,55 +1,7 @@
-import React, { useState } from 'react';
-import Link from 'next/link';
-import { forgotPassword } from '../src/services/auth';
-
-const ForgotPassword = () => {
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
-  const [error, setError] = useState<string | null>(null); // Added error state
-  const [loading, setLoading] = useState(false); // Added loading state
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setLoading(true);
-    setMessage('');
-    setError(null);
-
-    try {
-      await forgotPassword(email);
-      setMessage('If your email address is registered, you will receive a password reset link shortly.');
-    } catch (err: any) {
-      setError(err.message || 'Failed to send reset link. Please try again.');
-    } finally {
-      setLoading(false);
-    }
-  };
-
+import React from 'react';
+import Head from 'next/head';
   return (
-    <div>
-      <h2>Forgot Password</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="email">Email Address</label>
-          <input
-            type="email"
-            id="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-            disabled={loading} // Disable input when loading
-          />
-        </div>
-        <button type="submit" disabled={loading}>
-          {loading ? 'Sending...' : 'Send Reset Link'}
-        </button>
-      </form>
-      {message && <p style={{ color: 'green' }}>{message}</p>}
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-      <p>
-        Remember your password? <Link href="/login">Login</Link>
-      </p>
-    </div>
+    <>
+      <Head><title>forgot-password - Zion App</title><meta name="description" content="forgot-password page" /></Head><div className="container mx-auto px-4 py-8"><h1 className="text-3xl font-bold mb-6">forgot-password</h1><p className="text-lg mb-4">This page is under construction.</p><div className="mt-4"><a href="/" className="text-blue-600 hover:underline">;
+            ← Back to Home</a></div></div></>;
   );
-};
-
-export default ForgotPassword;

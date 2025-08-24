@@ -1,16 +1,55 @@
-from rest_framework import viewsets, status, permissions
+from rest_framework import viewsets, status, permissions, filters
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from django.utils import timezone
-from django.db.models import Count, Sum
+from django.db.models import Count, Sum, Q
+from django.utils.decorators import method_decorator
+from django.views.decorators.cache import cache_page
+from django_filters.rest_framework import DjangoFilterBackend
 from .models import Proposal, Vote
 from .serializers import (
-    ProposalSerializer, ProposalListSerializer, ProposalDetailSerializer,
-                            VoteSerializer, VoteResultSerializer
+    ProposalSerializer,
+    ProposalListSerializer,
+    ProposalDetailSerializer,
+    VoteSerializer,
+    VoteResultSerializer,
 )
+import os
+import requests
+
+def get_wallet_balance(user_id: str) -> float:
+    """Fetch the user's ZION$ balance from Supabase."""
+    url = os.getenv("SUPABASE_URL")
+    key = os.getenv("SUPABASE_SERVICE_ROLE_KEY")
+    if not url or not key:
+        return 0.0
+
+    headers = {
+        "apikey": key,
+        "Authorization": f"Bearer {key}",
+    }
+
+    try:
+        response = requests.get(
+            f"{url}/rest/v1/wallets",
+            params={"user_id": f"eq.{user_id}", "select": "balance"},
+            headers=headers,
+            timeout=5,
+        )
+        response.raise_for_status()
+        data = response.json()
+        if data:
+            return float(data[0].get("balance", 0))
+    except Exception:
+        pass
+    return 0.0
 
 class ProposalViewSet(viewsets.ModelViewSet):
-    queryset = Proposal.objects.all().prefetch_related('votes') # Optimize by prefetching votes
+    queryset = Proposal.objects.all().prefetch_related('votes')  # Optimize by prefetching votes
+    filter_backends = [DjangoFilterBackend, filters.OrderingFilter, filters.SearchFilter]
+    filterset_fields = ['status', 'proposal_type']
+    ordering_fields = ['created_at', 'voting_ends_at']
+    search_fields = ['title', 'summary']
     # permission_classes = [permissions.IsAuthenticatedOrReadOnly] # Adjust as needed
 
     def get_serializer_class(self):
@@ -52,11 +91,9 @@ class ProposalViewSet(viewsets.ModelViewSet):
             context={"proposal": proposal, "request": request}
         )
         if serializer.is_valid():
-            # TODO: Determine voting_power_at_snapshot based on ZION$ holdings
-            # This is a placeholder value.
-            # This logic will need to query user's token balance at the relevant snapshot time/block.
-            # For now, let's assume it's passed in or a default is used.
-            voting_power = serializer.validated_data.get('voting_power_at_snapshot', 1.0) # Default to 1 if not provided
+            voting_power = serializer.validated_data.get('voting_power_at_snapshot')
+            if voting_power is None:
+                voting_power = get_wallet_balance(str(user.id))
 
             serializer.save(
                 proposal=proposal,
@@ -67,24 +104,33 @@ class ProposalViewSet(viewsets.ModelViewSet):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+    @method_decorator(cache_page(300))
     @action(detail=True, methods=['get'])
     def results(self, request, pk=None):
         proposal = self.get_object()
-        votes = proposal.votes.all()
+        aggregates = Vote.objects.filter(proposal=proposal).aggregate(
+            approve_count=Count('id', filter=Q(choice='APPROVE')),
+            reject_count=Count('id', filter=Q(choice='REJECT')),
+            abstain_count=Count('id', filter=Q(choice='ABSTAIN')),
+            approve_power=Sum('voting_power_at_snapshot', filter=Q(choice='APPROVE')),
+            reject_power=Sum('voting_power_at_snapshot', filter=Q(choice='REJECT')),
+            abstain_power=Sum('voting_power_at_snapshot', filter=Q(choice='ABSTAIN')),
+        )
 
-        results_data = {
-            'approve_count': votes.filter(choice='APPROVE').count(),
-            'reject_count': votes.filter(choice='REJECT').count(),
-            'abstain_count': votes.filter(choice='ABSTAIN').count(),
-            'approve_power': votes.filter(choice='APPROVE').aggregate(total=Sum('voting_power_at_snapshot'))['total'] or 0,
-            'reject_power': votes.filter(choice='REJECT').aggregate(total=Sum('voting_power_at_snapshot'))['total'] or 0,
-            'abstain_power': votes.filter(choice='ABSTAIN').aggregate(total=Sum('voting_power_at_snapshot'))['total'] or 0,
-        }
-        results_data['total_votes_cast'] = sum(results_data[key] for key in ['approve_count', 'reject_count', 'abstain_count'])
-        results_data['total_voting_power_cast'] = sum(results_data[key] for key in ['approve_power', 'reject_power', 'abstain_power'])
+        results_data = {k: aggregates.get(k) or 0 for k in aggregates}
+        results_data['total_votes_cast'] = (
+            results_data['approve_count']
+            + results_data['reject_count']
+            + results_data['abstain_count']
+        )
+        results_data['total_voting_power_cast'] = (
+            results_data['approve_power']
+            + results_data['reject_power']
+            + results_data['abstain_power']
+        )
 
         serializer = VoteResultSerializer(data=results_data)
-        serializer.is_valid(raise_exception=True) # Should be valid as we construct it
+        serializer.is_valid(raise_exception=True)
         return Response(serializer.data)
 
 class MyVotesViewSet(viewsets.ReadOnlyModelViewSet):
@@ -94,6 +140,3 @@ class MyVotesViewSet(viewsets.ReadOnlyModelViewSet):
     def get_queryset(self):
         user = self.request.user
         return Vote.objects.filter(voter=user).select_related('proposal')
-
-# TODO: Add filtering capabilities to ProposalViewSet (e.g., using django-filter)
-# for status, type, etc.

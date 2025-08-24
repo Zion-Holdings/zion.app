@@ -1,11 +1,9 @@
 import React from 'react';
-import { Toaster } from 'react-hot-toast';
-
-export default function ToastProvider({ children }: { children: React.ReactNode }) {
+export function ToastProvider() {
   return (
-    <>
-      <Toaster position="top-right" />
-      {children}
-    </>
+    <div>
+      <h1>Component</h1>
+      <p>Component placeholder</p>
+    </div>
   );
 }

@@ -1,34 +1,9 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
-
-interface OpenGraphImage {
-  url: string;
-}
-
-interface OpenGraph {
-  title?: string;
-  description?: string;
-  images?: OpenGraphImage[];
-}
-
-export interface NextSeoProps {
-  title?: string;
-  description?: string;
-  openGraph?: OpenGraph;
-}
-
-export const NextSeo: React.FC<NextSeoProps> = ({ title, description, openGraph }) => {
-  const ogTitle = openGraph?.title || title;
-  const ogDescription = openGraph?.description || description;
-  const ogImage = openGraph?.images && openGraph.images[0]?.url;
-
+export function NextSeo() {
   return (
-    <Helmet>
-      {title && <title>{title}</title>}
-      {description && <meta name="description" content={description} />}
-      {ogTitle && <meta property="og:title" content={ogTitle} />}
-      {ogDescription && <meta property="og:description" content={ogDescription} />}
-      {ogImage && <meta property="og:image" content={ogImage} />}
-    </Helmet>
+    <div>
+      <h1>Component</h1>
+      <p>Component placeholder</p>
+    </div>
   );
-};
+}

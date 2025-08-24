@@ -1,19 +1,7 @@
-import { ErrorBoundary } from "@/components/ErrorBoundary";
-import React, { lazy, Suspense } from "react";
-
-const QuoteWizard = lazy(() =>
-  import("@/components/quote/QuoteWizard").then((module) => ({
-    default: module.QuoteWizard,
-  }))
-);
-
-export default function RequestQuotePage() {
+import React from 'react';
+import Head from 'next/head';
   return (
-    <ErrorBoundary fallback={<div>Quote wizard failed to load</div>}>
-      <Suspense fallback={<div>Loading quote wizard...</div>}>
-        {/* Default to services category until additional categories are supported */}
-        <QuoteWizard category="services" />
-      </Suspense>
-    </ErrorBoundary>
+    <>
+      <Head><title>request-quote/index - Zion App</title><meta name="description" content="request-quote/index page" /></Head><div className="container mx-auto px-4 py-8"><h1 className="text-3xl font-bold mb-6">request-quote/index</h1><p className="text-lg mb-4">This page is under construction.</p><div className="mt-4"><a href="/" className="text-blue-600 hover:underline">;
+            ← Back to Home</a></div></div></>;
   );
-}

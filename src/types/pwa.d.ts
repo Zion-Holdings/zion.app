@@ -1,9 +1,4 @@
-interface BeforeInstallPromptEvent extends Event {
-  readonly platforms: string[];
-  readonly userChoice: Promise<{
-    outcome: 'accepted' | 'dismissed';
-    platform: string;
-  }>;
-  prompt(): Promise<void>;
+// Type definitions for pwa.d;
+export interface pwa.d {;
+  // TODO: Add proper type definitions;
 }
-

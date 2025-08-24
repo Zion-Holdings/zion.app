@@ -1,112 +1,75 @@
 console.log("main.tsx: Start");
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-
-// Integrate axe-core accessibility auditing in development
-if (process.env.NODE_ENV !== 'production') {
-  // Dynamically require to avoid bundling in production
-   
-  const axe = require('@axe-core/react');
-  axe(React, ReactDOM, 1000);
-}
 import App from './App.tsx';
 import './index.css';
-// Removed feat/i18n-implementation and main markers
-import { I18nextProvider } from 'react-i18next';
-import i18n from './i18n'; // Adjust the path if your i18n.js is elsewhere
 import { HelmetProvider } from 'react-helmet-async';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { QueryClient, QueryClientProvider, QueryCache, MutationCache } from '@tanstack/react-query';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { showApiError } from '@/utils/apiErrorHandler';
 import './utils/globalFetchInterceptor';
-import './utils/consoleErrorToast';
-import ToastProvider from './components/ToastProvider';
-import GlobalErrorBoundary from './components/GlobalErrorBoundary';
-import { GlobalSnackbarProvider } from './context/SnackbarContext';
-import { GlobalLoaderProvider } from '@/context/GlobalLoaderContext';
 
+// Import i18n configuration
+import './i18n';
 import { LanguageProvider } from '@/context/LanguageContext';
+import { CurrencyProvider } from '@/context/CurrencyContext';
 import { LanguageDetectionPopup } from './components/LanguageDetectionPopup';
 import { WhitelabelProvider } from '@/context/WhitelabelContext';
 import { AppLayout } from '@/layout/AppLayout';
-import { ReferralMiddleware } from '@/components/referral/ReferralMiddleware';
-import { Provider } from 'react-redux';
-import { store } from './store';
 
 // Import auth and notification providers
 import { AuthProvider } from '@/context/auth/AuthProvider';
-import { NotificationProvider, MessagingProvider } from './context';
-import { ThemeProvider } from '@/context/ThemeContext'; // Import ThemeProvider
+import { NotificationProvider } from './context';
 
 // Import analytics provider
 import { AnalyticsProvider } from './context/AnalyticsContext';
 import { ViewModeProvider } from './context/ViewModeContext';
 import { CartProvider } from './context/CartContext';
-import { FavoritesProvider } from './context/FavoritesContext';
 import { registerServiceWorker } from './serviceWorkerRegistration';
-import { enableDevToolsInStaging } from './utils/devtools';
-
-enableDevToolsInStaging();
 
 // Initialize a React Query client with global error handling
 const queryClient = new QueryClient({
-  queryCache: new QueryCache({
-    onError: (error) => showApiError(error),
-  }),
-  mutationCache: new MutationCache({
-    onError: (error) => showApiError(error),
-  }),
+  defaultOptions: {
+    queries: {
+      onError: (error) => showApiError(error),
+    },
+    mutations: {
+      onError: (error) => showApiError(error),
+    },
+  },
 });
 
 try {
   console.log("main.tsx: Before ReactDOM.createRoot");
-  // Removed initGA() call as it's undefined and likely superseded by AnalyticsProvider
   // Render the app with proper provider structure
   ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
-      <Provider store={store}>
-        <GlobalSnackbarProvider>
-        <GlobalLoaderProvider>
-        <I18nextProvider i18n={i18n}>
-          <HelmetProvider>
-            <QueryClientProvider client={queryClient}>
-              <WhitelabelProvider>
-                <Router>
-                <AuthProvider>
-                  <MessagingProvider>
-                  <NotificationProvider>
-                    <AnalyticsProvider>
+      <HelmetProvider>
+        <QueryClientProvider client={queryClient}>
+          <WhitelabelProvider>
+            <Router>
+              <AuthProvider>
+                <NotificationProvider>
+                  <AnalyticsProvider>
+                    <CurrencyProvider>
                       <LanguageProvider authState={{ isAuthenticated: false, user: null }}>
                         <ViewModeProvider>
                           <CartProvider>
-                            <FavoritesProvider>
-                              <ReferralMiddleware>
-                                <ToastProvider>
-                                  <GlobalErrorBoundary>
-                                    <AppLayout>
-                                      <App />
-                                    </AppLayout>
-                                  </GlobalErrorBoundary>
-                                </ToastProvider>
-                              </ReferralMiddleware>
-                            </FavoritesProvider>
+                            <AppLayout>
+                              <App />
+                            </AppLayout>
                           </CartProvider>
                         </ViewModeProvider>
                         <LanguageDetectionPopup />
                       </LanguageProvider>
-                    </AnalyticsProvider>
-                  </NotificationProvider>
-                  </MessagingProvider>
-                </AuthProvider>
-              </Router>
-            </WhitelabelProvider>
-          </QueryClientProvider>
-        </HelmetProvider>
-        </I18nextProvider>
-        </GlobalLoaderProvider>
-        </GlobalSnackbarProvider>
-      </Provider>
-      {/* Removed duplicate main marker */}
+                    </CurrencyProvider>
+                  </AnalyticsProvider>
+                </NotificationProvider>
+              </AuthProvider>
+            </Router>
+          </WhitelabelProvider>
+        </QueryClientProvider>
+      </HelmetProvider>
     </React.StrictMode>,
   );
   console.log("main.tsx: After ReactDOM.createRoot");
@@ -128,17 +91,3 @@ try {
 }
 
 registerServiceWorker();
-
-// Global fallback for images that fail to load
-// Replace broken images (e.g., offline Unsplash links) with a local placeholder
-document.addEventListener(
-  'error',
-  (event) => {
-    const target = event.target as HTMLElement;
-    if (target instanceof HTMLImageElement && !target.dataset.fallback) {
-      target.dataset.fallback = 'true';
-      target.src = '/placeholder.svg';
-    }
-  },
-  true,
-);

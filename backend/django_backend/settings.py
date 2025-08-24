@@ -17,10 +17,6 @@ INSTALLED_APPS = [
     'drf_yasg',
     'authentication',
     'public_api',
-    'ipo_portal',
-    'django_otp',
-    'django_otp.plugins.otp_totp',
-    'governance.apps.GovernanceConfig',
 ]
 
 MIDDLEWARE = [
@@ -29,7 +25,6 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django_otp.middleware.OTPMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
 ]
 
@@ -68,12 +63,6 @@ USE_I18N = True
 USE_TZ = True
 
 STATIC_URL = '/static/'
-# STATIC_ROOT = BASE_DIR / 'staticfiles' # For production 'collectstatic'
-
-# Media files (user uploads)
-MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'
-
 
 CACHES = {
     'default': {

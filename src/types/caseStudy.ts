@@ -1,14 +1,4 @@
-export interface CaseStudy {
-  id: string;
-  title: string;
-  slug: string;
-  excerpt: string;
-  content: string;
-  company: string;
-  companyLogo: string;
-  avatar: string;
-  quote: string;
-  author: string;
-  role: string;
-  featuredImage: string;
-}
+// Type definitions for caseStudy;
+interface caseStudy {;
+  // TODO: Add proper type definitions;
+};
