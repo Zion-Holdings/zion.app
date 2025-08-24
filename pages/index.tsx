@@ -5,6 +5,8 @@ import { ArrowRight, CheckCircle, Star, Users, Code, Cloud, Brain, Shield, Zap, 
 import { useState, useEffect } from 'react';
 import AdvancedHero from '../components/AdvancedHero';
 import AdvancedServicesShowcase from '../components/AdvancedServicesShowcase';
+import AdvancedTestimonials from '../components/AdvancedTestimonials';
+import AdvancedContactForm from '../components/AdvancedContactForm';
 
 const Home: NextPage = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -254,41 +256,8 @@ const Home: NextPage = () => {
           </div>
         </section>
 
-        {/* Testimonials Section */}
-        <section className="py-20 bg-black">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                What Our Clients Say
-              </h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Don&rsquo;t just take our word for it. Here&rsquo;s what industry leaders have to say about 
-                working with Zion Tech Group.
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {testimonials.map((testimonial, index) => (
-                <div 
-                  key={index}
-                  className="bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-xl p-6 hover:border-blue-500/30 transition-all duration-300 animate-fade-in"
-                  style={{ animationDelay: `${index * 200}ms` }}
-                >
-                  <div className="flex items-center mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                    ))}
-                  </div>
-                  <p className="text-gray-300 mb-6 leading-relaxed">&ldquo;{testimonial.content}&rdquo;</p>
-                  <div>
-                    <div className="font-semibold text-white">{testimonial.name}</div>
-                    <div className="text-gray-400 text-sm">{testimonial.role}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* Advanced Testimonials Section */}
+        <AdvancedTestimonials />
 
         {/* CTA Section */}
         <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600">
@@ -316,6 +285,9 @@ const Home: NextPage = () => {
             </div>
           </div>
         </section>
+
+        {/* Advanced Contact Form Section */}
+        <AdvancedContactForm />
       </main>
     </>
   );
