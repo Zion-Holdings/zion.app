@@ -1,5 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import Link from 'next/link';
 import { useState } from 'react';
 
 const Contact: NextPage = () => {
@@ -258,7 +259,7 @@ const Contact: NextPage = () => {
             <div className="mt-6 text-center">
               <p className="text-sm text-gray-600">
                 By submitting this form, you agree to our{' '}
-                <a href="/privacy" className="text-blue-600 hover:text-blue-700">Privacy Policy</a>
+                <Link href="/privacy" className="text-blue-600 hover:text-blue-700">Privacy Policy</Link>
               </p>
             </div>
           </div>
