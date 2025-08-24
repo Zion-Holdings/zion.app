@@ -1,9 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-<<<<<<< HEAD
   swcMinify: true,
-=======
   
   // Performance optimizations
   experimental: {
@@ -13,7 +11,6 @@ const nextConfig = {
   },
 
   // Image optimization
->>>>>>> a8e698aa2a3f65846644470f902bc566286f2743
   images: {
     domains: ['ziontechgroup.com'],
     formats: ['image/webp', 'image/avif'],
@@ -21,11 +18,6 @@ const nextConfig = {
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     minimumCacheTTL: 60 * 60 * 24 * 30, // 30 days
   },
-<<<<<<< HEAD
-  compiler: {
-    removeConsole: process.env.NODE_ENV === "production",
-  },
-=======
 
   // Headers for performance and security
   async headers() {
@@ -126,7 +118,6 @@ const nextConfig = {
   
   // Powered by header removal
   poweredByHeader: false,
->>>>>>> a8e698aa2a3f65846644470f902bc566286f2743
 };
 
 module.exports = nextConfig;

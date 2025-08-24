@@ -20,27 +20,6 @@ export { aiMarketResearchService } from './aiMarketResearchService';
 export { aiDataAnalyticsService } from './aiDataAnalyticsService';
 export { aiCybersecurityService } from './aiCybersecurityService';
 
-// Advanced IT infrastructure services
-export { advancedITInfrastructureExpansion2025V2 } from '../data/2025-advanced-it-infrastructure-expansion-v2';
-
-// Advanced micro SAAS expansion services
-export { advancedMicroSaasExpansion2025V2 } from '../data/2025-advanced-micro-saas-expansion-v2';
-
-// Advanced AI services expansion
-export { advancedAIServicesExpansion2025V2 } from '../data/2025-advanced-ai-services-expansion-v2';
-
-// Advanced cloud DevOps services
-export { advancedCloudDevOpsServices2025 } from '../data/2025-advanced-cloud-devops-services';
-
-// Advanced energy and sustainability solutions
-export { advancedEnergySustainabilitySolutions2025 } from '../data/2025-advanced-energy-sustainability-solutions';
-
-// Advanced healthcare tech solutions
-export { advancedHealthcareTechSolutions2025 } from '../data/2025-advanced-healthcare-tech-solutions';
-
-// Advanced logistics and supply chain solutions
-export { advancedLogisticsSupplyChainSolutions2025 } from '../data/2025-advanced-logistics-supply-chain-solutions';
-
 // Export types
 export type {
   ContentTemplate,
@@ -107,7 +86,7 @@ export type {
   LegalDocument,
   ContractTemplate,
   LegalReview,
-  ComplianceCheck as LegalComplianceCheck,
+  ComplianceCheck,
   DocumentGenerationRequest
 } from './aiLegalService';
 
@@ -121,13 +100,12 @@ export type {
 } from './aiSalesService';
 
 export type {
-  Candidate,
-  JobPosting,
   Employee,
+  JobPosting,
+  Candidate,
   PerformanceReview,
   TrainingRecord,
-  Document,
-  RecruitmentMetrics
+  Document
 } from './aiHrService';
 
 export type {
@@ -176,12 +154,7 @@ export type {
   APIResponse,
   APIHeader,
   APISchema,
-  APIExample,
-  ExampleRequest,
-  ExampleResponse,
-  RateLimit,
-  AuthenticationRequirement,
-  DocumentationConfig
+  APIExample
 } from './apiDocGeneratorService';
 
 export type {
@@ -217,95 +190,8 @@ export type {
 } from './aiDataAnalyticsService';
 
 export type {
-  SmartContract,
-  NFT,
-  NFTMetadata,
-  NFTAttribute,
-  DeFiPool,
-  BlockchainTransaction,
-  TransactionResult,
-  BlockchainStats,
-  WalletAnalytics,
-  NetworkStatus
-} from './blockchainService';
-
-export type {
-  PipelineConfig,
-  PipelineStage,
-  PipelineTrigger,
-  PerformanceThresholds,
-  InfrastructureConfig,
-  DeploymentMetrics,
-  CodeQualityReport,
-  SecurityScanResult,
-  Vulnerability,
-  ComplianceCheck,
-  MonitoringAlert
-} from './aiDevOpsService';
-
-export type {
-  DataPipeline,
-  DataSource,
-  DataDestination,
-  DataTransformation,
-  PipelineSchedule,
-  PipelineMetrics,
-  DataQualityMetrics,
-  DataQualityIssue,
-  CostMetrics,
-  ConnectionConfig,
-  DataSchema,
-  SchemaField,
-  SchemaIndex,
-  SchemaConstraint,
-  PartitioningStrategy,
-  ValidationRule,
-  DataCatalog,
-  Dataset,
-  DataLineage,
-  DatasetUsage,
-  QueryStats
-} from './aiDataEngineeringService';
-
-export type {
-  FinancialInstrument,
-  Portfolio,
-  PortfolioPosition,
-  RiskMetrics,
-  PerformancePoint,
-  RebalancingSchedule,
-  TradingSignal,
-  MarketAnalysis,
-  TechnicalIndicator,
-  FundamentalFactor,
-  AIInsight,
-  RiskAssessment,
-  RiskFactor as FintechRiskFactor,
-  StressTestResult,
-  ComplianceReport,
-  ComplianceViolation
-} from './aiFintechService';
-
-export type {
-  Patient,
-  MedicalRecord,
-  Medication,
-  VitalSigns,
-  RiskFactor,
-  InsuranceInfo,
-  EmergencyContact,
-  Diagnosis,
-  AIAnalysis,
-  DifferentialDiagnosis,
-  TreatmentPlan,
-  FollowUpSchedule,
-  FollowUpAppointment,
-  HealthAnalytics,
-  RiskAssessment as HealthRiskAssessment,
-  TrendAnalysis,
-  VitalSignsTrend,
-  MedicationTrend,
-  SymptomTrend,
-  HealthTrend,
-  PredictiveInsight
-} from './aiHealthcareService';
+  SecurityThreat,
+  SecurityIncident,
+  SecurityMetrics,
+  AIThreatIntelligence
+} from './aiCybersecurityService';

@@ -1,1 +1,0 @@
-# Streaming connectors tests

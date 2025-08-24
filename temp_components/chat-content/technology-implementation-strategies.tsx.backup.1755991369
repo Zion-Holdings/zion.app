@@ -1,9 +1,0 @@
-<<<<<<< HEAD
-export default function ArticlePage() { return <div className="py-8">Technology implementation strategies</div>; }
-=======
-import React from 'react';
-
-export default function TechnologyImplementationStrategiesPage() {
-  return <div>Technology Implementation Strategies</div>;
-}
->>>>>>> origin/cursor/deploy-ai-podcast-host-with-ziongpt-9517

@@ -1,7 +1,0 @@
-<<<<<<< HEAD
-export default function NotFound(){
-  return <div className="min-h-screen flex items-center justify-center">Page not found.</div>;
-}
-=======
-export default function NotFoundPage() { return null }
->>>>>>> origin/cursor/build-zion-ai-api-developer-documentation-hub-2aa3

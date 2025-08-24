@@ -1,1 +1,0 @@
-# IoT gateway implementation
