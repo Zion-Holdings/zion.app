@@ -123,6 +123,16 @@ export const innovativeAIAutomationServices: InnovativeAIAutomationService[] = [
     setupTime: '4 hours',
     category: 'AI & Testing',
     realService: true,
+<<<<<<< HEAD
+    technology: ['Python', 'Selenium', 'Playwright', 'OpenAI', 'TensorFlow', 'Docker'],
+    integrations: ['Jenkins', 'GitHub Actions', 'GitLab CI', 'Azure DevOps', 'Jira'],
+    useCases: ['Automated testing', 'CI/CD integration', 'Quality assurance', 'Regression testing'],
+    roi: 'Reduce testing time by 80% and increase test coverage by 60%',
+    competitors: ['Selenium', 'Cypress', 'Playwright', 'TestCafe', 'Katalon'],
+    marketSize: '$4.2B+ test automation market',
+    growthRate: '92% YoY',
+    variant: 'default',
+=======
     technology: ['OpenAI GPT-4, React, Node.js, Python, PostgreSQL, Redis, AWS'],
     integrations: ['Zendesk, Intercom, Salesforce, HubSpot, Slack, Microsoft Teams, WhatsApp'],
     useCases: ['Customer support automation, FAQ management, Ticket routing, Chatbot deployment, Support analytics'],
@@ -131,6 +141,7 @@ export const innovativeAIAutomationServices: InnovativeAIAutomationService[] = [
     marketSize: '$15B customer service software market',
     growthRate: '22% annual growth',
     variant: 'ai-futuristic',
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-3b00
     contactInfo: contact,
     realImplementation: true,
     implementationDetails: 'Distributed testing infrastructure with AI-powered test generation and execution orchestration.',
@@ -138,6 +149,8 @@ export const innovativeAIAutomationServices: InnovativeAIAutomationService[] = [
     customers: 94,
     rating: 4.8,
     reviews: 67
+<<<<<<< HEAD
+=======
   },
   {
     id: 'ai-autonomous-devops-orchestrator',
@@ -248,6 +261,7 @@ export const innovativeAIAutomationServices: InnovativeAIAutomationService[] = [
       'Predictive security analytics'
     ],
     popular: true,
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-3b00
     icon: '🛡️',
     color: 'from-red-600 to-pink-700',
     textColor: 'text-red-400',
@@ -257,6 +271,8 @@ export const innovativeAIAutomationServices: InnovativeAIAutomationService[] = [
     trialDays: 21,
     setupTime: '8 hours',
     category: 'AI & Security',
+<<<<<<< HEAD
+=======
     realService: true,
     technology: ['Python, TensorFlow, React, Node.js, PostgreSQL, Redis, AWS, Apache Spark'],
     integrations: ['Salesforce, HubSpot, Google Analytics, Facebook Ads, Shopify, QuickBooks'],
@@ -310,6 +326,7 @@ export const innovativeAIAutomationServices: InnovativeAIAutomationService[] = [
     trialDays: 30,
     setupTime: '2 weeks',
     category: 'AI & Analytics',
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-3b00
     realService: true,
     technology: ['Python, TensorFlow, React, Node.js, PostgreSQL, Redis, AWS, Apache Spark'],
     integrations: ['Salesforce, HubSpot, Google Analytics, Facebook Ads, Shopify, QuickBooks'],
@@ -318,6 +335,15 @@ export const innovativeAIAutomationServices: InnovativeAIAutomationService[] = [
     competitors: ['Tableau, Power BI, Looker, Qlik, Domo'],
     marketSize: '$30B business intelligence market',
     growthRate: '26% annual growth',
+<<<<<<< HEAD
+    variant: 'ai-analytics',
+    contactInfo: {
+      mobile: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008 Middletown DE 19709',
+      website: 'https://ziontechgroup.com'
+    },
+=======
     technology: ['Python, TensorFlow, OpenAI, Elasticsearch, Redis, PostgreSQL'],
     integrations: ['SIEM systems, Firewalls, IDS/IPS, Vulnerability scanners'],
     useCases: ['Security monitoring, Threat detection, Incident response, Compliance management'],
@@ -352,6 +378,7 @@ export const innovativeAIAutomationServices: InnovativeAIAutomationService[] = [
     variant: 'ai-hr',
 =======
     variant: 'ai-futuristic',
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-3b00
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -359,6 +386,13 @@ export const innovativeAIAutomationServices: InnovativeAIAutomationService[] = [
       website: 'https://ziontechgroup.com'
     },
     realImplementation: true,
+<<<<<<< HEAD
+    implementationDetails: 'Complete HR management platform with AI capabilities, comprehensive automation, and compliance features. Includes training and customization services.',
+    launchDate: '2024-07-15',
+    customers: 189,
+    rating: 4.7,
+    reviews: 95
+=======
 =======
 =======
     implementationDetails: 'Complete analytics platform with AI capabilities, natural language queries, and autonomous insights.',
@@ -366,5 +400,6 @@ export const innovativeAIAutomationServices: InnovativeAIAutomationService[] = [
     customers: 234,
     rating: 4.8,
     reviews: 167
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-3b00
   }
 ];

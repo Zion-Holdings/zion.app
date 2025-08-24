@@ -130,7 +130,11 @@ export const innovativeAgricultureServices: InnovativeAgricultureService[] = [
     competitors: ['D-Wave, Rigetti, IBM Quantum, Google Quantum'],
     marketSize: '$9.8B+ quantum agriculture market',
     growthRate: '380% YoY',
+<<<<<<< HEAD
+    variant: 'quantum',
+=======
     variant: 'ai-futuristic',
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-3b00
     contactInfo: contact,
     realImplementation: true,
     implementationDetails: 'Quantum agriculture optimization platform with advanced algorithms and resource allocation capabilities.',
@@ -220,7 +224,11 @@ export const innovativeAgricultureServices: InnovativeAgricultureService[] = [
     competitors: ['IBM Food Trust, VeChain, OriginTrail, Provenance'],
     marketSize: '$18.4B+ food traceability market',
     growthRate: '320% YoY',
+<<<<<<< HEAD
+    variant: 'default',
+=======
     variant: 'ai-futuristic',
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-3b00
     contactInfo: contact,
     realImplementation: true,
     implementationDetails: 'Blockchain food traceability platform with supply chain tracking and product authentication capabilities.',

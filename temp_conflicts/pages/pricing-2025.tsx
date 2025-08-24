@@ -16,6 +16,11 @@ export default function Pricing2025() {
   const categories = [
     { id: 'all', name: 'All Services', icon: '🚀' },
     { id: 'AI & Analytics', name: 'AI & Analytics', icon: '🧠' },
+    { id: 'AI & Healthcare', name: 'AI & Healthcare', icon: '🏥' },
+    { id: 'AI & HR Tech', name: 'AI & HR Tech', icon: '👥' },
+    { id: 'AI & Content Creation', name: 'AI & Content Creation', icon: '✍️' },
+    { id: 'AI & Energy', name: 'AI & Energy', icon: '⚡' },
+    { id: 'AI & Robotics', name: 'AI & Robotics', icon: '🤖' },
     { id: 'Cybersecurity & Quantum', name: 'Cybersecurity & Quantum', icon: '🔒' },
     { id: 'Edge Computing & IoT', name: 'Edge Computing & IoT', icon: '🌐' },
     { id: 'Space Technology & Innovation', name: 'Space Technology & Innovation', icon: '🚀' },
