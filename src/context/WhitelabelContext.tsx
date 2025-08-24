@@ -6,6 +6,7 @@ interface WhitelabelConfig {
   primaryColor: string;
   secondaryColor: string;
   domain: string;
+  isWhitelabel: boolean;
   contactInfo: {
     phone: string;
     email: string;
@@ -19,6 +20,7 @@ const defaultConfig: WhitelabelConfig = {
   primaryColor: '#1e40af',
   secondaryColor: '#7c3aed',
   domain: 'https://ziontechgroup.com',
+  isWhitelabel: false,
   contactInfo: {
     phone: '+1 302 464 0950',
     email: 'kleber@ziontechgroup.com',

@@ -4,6 +4,7 @@ export interface ServiceCategory {
   description: string;
   icon: string;
   color: string;
+  count?: number;
 }
 
 export interface MicroService {
@@ -37,6 +38,10 @@ export interface MicroService {
     phone: string;
     website: string;
   };
+  // Backward compatibility properties
+  support?: string;
+  technologies?: string[];
+  priceType?: string;
 }
 
 export const SERVICE_CATEGORIES: ServiceCategory[] = [
@@ -45,84 +50,96 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
     name: 'AI & Machine Learning',
     description: 'Cutting-edge AI solutions and machine learning services',
     icon: '🤖',
-    color: 'from-purple-500 to-indigo-600'
+    color: 'from-purple-500 to-indigo-600',
+    count: 0
   },
   {
     id: 'cybersecurity',
     name: 'Cybersecurity',
     description: 'Comprehensive security solutions and protection services',
     icon: '🔒',
-    color: 'from-red-500 to-pink-600'
+    color: 'from-red-500 to-pink-600',
+    count: 0
   },
   {
     id: 'cloud-services',
     name: 'Cloud & DevOps',
     description: 'Cloud infrastructure, migration, and DevOps automation',
     icon: '☁️',
-    color: 'from-blue-500 to-cyan-600'
+    color: 'from-blue-500 to-cyan-600',
+    count: 0
   },
   {
     id: 'data-analytics',
     name: 'Data & Analytics',
     description: 'Data engineering, analytics, and business intelligence',
     icon: '📊',
-    color: 'from-green-500 to-emerald-600'
+    color: 'from-green-500 to-emerald-600',
+    count: 0
   },
   {
     id: 'web-development',
     name: 'Web & Mobile Development',
     description: 'Full-stack development and mobile app solutions',
     icon: '💻',
-    color: 'from-orange-500 to-yellow-600'
+    color: 'from-orange-500 to-yellow-600',
+    count: 0
   },
   {
     id: 'it-consulting',
     name: 'IT Consulting',
     description: 'Strategic IT consulting and digital transformation',
     icon: '🎯',
-    color: 'from-teal-500 to-blue-600'
+    color: 'from-teal-500 to-blue-600',
+    count: 0
   },
   {
     id: 'blockchain',
     name: 'Blockchain & Web3',
     description: 'Blockchain development and Web3 solutions',
     icon: '⛓️',
-    color: 'from-indigo-500 to-purple-600'
+    color: 'from-indigo-500 to-purple-600',
+    count: 0
   },
   {
     id: 'automation',
     name: 'Process Automation',
     description: 'Business process automation and RPA solutions',
     icon: '⚡',
-    color: 'from-yellow-500 to-orange-600'
+    color: 'from-yellow-500 to-orange-600',
+    count: 0
   },
   {
     id: 'iot-edge',
     name: 'IoT & Edge Computing',
     description: 'Internet of Things and edge computing solutions',
     icon: '🌐',
-    color: 'from-emerald-500 to-teal-600'
+    color: 'from-emerald-500 to-teal-600',
+    count: 0
   },
   {
     id: 'quantum-computing',
     name: 'Quantum Computing',
-    description: 'Quantum computing applications and research',
+    description: 'Quantum algorithms and computing solutions',
     icon: '⚛️',
-    color: 'from-violet-500 to-purple-600'
+    color: 'from-violet-500 to-purple-600',
+    count: 0
   },
   {
     id: 'augmented-reality',
     name: 'AR/VR & Metaverse',
     description: 'Augmented reality, virtual reality, and metaverse solutions',
     icon: '🥽',
-    color: 'from-pink-500 to-rose-600'
+    color: 'from-pink-500 to-rose-600',
+    count: 0
   },
   {
     id: 'green-tech',
     name: 'Green Technology',
-    description: 'Sustainable technology and environmental solutions',
+    description: 'Sustainable and environmentally friendly tech solutions',
     icon: '🌱',
-    color: 'from-green-500 to-emerald-600'
+    color: 'from-green-400 to-emerald-500',
+    count: 0
   }
 ];
 
@@ -1349,6 +1366,1053 @@ export const MICRO_SERVICES: MicroService[] = [
       phone: '+1 302 464 0950',
       website: 'https://ziontechgroup.com'
     }
+  },
+
+  // Advanced AI & Machine Learning Services
+  {
+    id: 'ai-voice-assistant',
+    title: 'AI Voice Assistant Development',
+    description: 'Custom voice assistants with natural language processing for businesses and applications.',
+    category: 'ai-services',
+    subcategory: 'Voice AI',
+    price: 4500,
+    currency: 'USD',
+    pricingModel: 'project-based',
+    features: [
+      'Custom voice recognition',
+      'Natural language understanding',
+      'Multi-language support',
+      'Integration with business systems',
+      'Voice analytics and insights',
+      'Custom wake word training'
+    ],
+    benefits: [
+      'Improve customer engagement',
+      'Reduce call center costs',
+      '24/7 voice support availability',
+      'Multi-language customer service',
+      'Enhanced user experience'
+    ],
+    marketPrice: '$3,500 - $12,000',
+    deliveryTime: '4-6 weeks',
+    tags: ['Voice AI', 'NLP', 'Voice Recognition', 'Customer Service', 'Automation'],
+    author: {
+      name: 'Zion Voice AI',
+      id: 'zion-voice-ai',
+      verified: true
+    },
+    images: ['https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&auto=format'],
+    rating: 4.8,
+    reviewCount: 92,
+    aiScore: 94,
+    featured: true,
+    popular: false,
+    contactInfo: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      website: 'https://ziontechgroup.com'
+    }
+  },
+
+  {
+    id: 'ai-predictive-maintenance',
+    title: 'AI Predictive Maintenance Solutions',
+    description: 'Machine learning-based predictive maintenance for industrial equipment and machinery.',
+    category: 'ai-services',
+    subcategory: 'Industrial AI',
+    price: 6000,
+    currency: 'USD',
+    pricingModel: 'project-based',
+    features: [
+      'Equipment health monitoring',
+      'Predictive failure analysis',
+      'Maintenance scheduling optimization',
+      'Real-time alerts and notifications',
+      'Historical data analysis',
+      'Cost optimization recommendations'
+    ],
+    benefits: [
+      'Reduce unplanned downtime by 30-50%',
+      'Lower maintenance costs',
+      'Extend equipment lifespan',
+      'Improve operational efficiency',
+      'Data-driven decision making'
+    ],
+    marketPrice: '$4,000 - $15,000',
+    deliveryTime: '6-8 weeks',
+    tags: ['Predictive Maintenance', 'Industrial AI', 'IoT', 'Machine Learning', 'Equipment Monitoring'],
+    author: {
+      name: 'Zion Industrial AI',
+      id: 'zion-industrial-ai',
+      verified: true
+    },
+    images: ['https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&auto=format'],
+    rating: 4.9,
+    reviewCount: 78,
+    aiScore: 95,
+    featured: true,
+    popular: true,
+    contactInfo: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      website: 'https://ziontechgroup.com'
+    }
+  },
+
+  // Advanced Cybersecurity Services
+  {
+    id: 'quantum-encryption',
+    title: 'Quantum-Resistant Encryption Solutions',
+    description: 'Future-proof encryption solutions resistant to quantum computing attacks.',
+    category: 'cybersecurity',
+    subcategory: 'Quantum Security',
+    price: 8000,
+    currency: 'USD',
+    pricingModel: 'project-based',
+    features: [
+      'Post-quantum cryptography',
+      'Quantum key distribution',
+      'Hybrid encryption systems',
+      'Migration planning',
+      'Compliance assessment',
+      'Long-term security strategy'
+    ],
+    benefits: [
+      'Future-proof security against quantum threats',
+      'Meet upcoming security standards',
+      'Protect long-term data security',
+      'Stay ahead of emerging threats',
+      'Compliance with future regulations'
+    ],
+    marketPrice: '$6,000 - $20,000',
+    deliveryTime: '8-12 weeks',
+    tags: ['Quantum Security', 'Post-Quantum Cryptography', 'Encryption', 'Future-Proof Security'],
+    author: {
+      name: 'Zion Quantum Security',
+      id: 'zion-quantum-security',
+      verified: true
+    },
+    images: ['https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&auto=format'],
+    rating: 4.8,
+    reviewCount: 56,
+    aiScore: 93,
+    featured: false,
+    popular: false,
+    contactInfo: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      website: 'https://ziontechgroup.com'
+    }
+  },
+
+  // Advanced Cloud & DevOps Services
+  {
+    id: 'kubernetes-orchestration',
+    title: 'Kubernetes Orchestration & Management',
+    description: 'Enterprise-grade Kubernetes deployment, management, and optimization services.',
+    category: 'cloud-services',
+    subcategory: 'Container Orchestration',
+    price: 4500,
+    currency: 'USD',
+    pricingModel: 'monthly',
+    features: [
+      'Kubernetes cluster setup',
+      'Multi-cluster management',
+      'Auto-scaling configuration',
+      'Monitoring and alerting',
+      'Security hardening',
+      'Performance optimization'
+    ],
+    benefits: [
+      'Improved application scalability',
+      'Better resource utilization',
+      'Automated deployment processes',
+      'Enhanced security posture',
+      'Reduced operational overhead'
+    ],
+    marketPrice: '$3,500 - $10,000/month',
+    deliveryTime: '2-3 weeks setup',
+    tags: ['Kubernetes', 'Container Orchestration', 'DevOps', 'Microservices', 'Cloud Native'],
+    author: {
+      name: 'Zion Cloud Native',
+      id: 'zion-cloud-native',
+      verified: true
+    },
+    images: ['https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&auto=format'],
+    rating: 4.8,
+    reviewCount: 112,
+    aiScore: 91,
+    featured: false,
+    popular: true,
+    contactInfo: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      website: 'https://ziontechgroup.com'
+    }
+  },
+
+  {
+    id: 'serverless-architecture',
+    title: 'Serverless Architecture Design & Implementation',
+    description: 'Design and implement scalable serverless solutions using AWS Lambda, Azure Functions, and more.',
+    category: 'cloud-services',
+    subcategory: 'Serverless',
+    price: 3500,
+    currency: 'USD',
+    pricingModel: 'project-based',
+    features: [
+      'Serverless architecture design',
+      'Function development and deployment',
+      'API gateway configuration',
+      'Event-driven architecture',
+      'Cost optimization',
+      'Monitoring and debugging'
+    ],
+    benefits: [
+      'Pay only for actual usage',
+      'Automatic scaling',
+      'Reduced operational overhead',
+      'Faster time to market',
+      'Built-in high availability'
+    ],
+    marketPrice: '$2,500 - $8,000',
+    deliveryTime: '3-5 weeks',
+    tags: ['Serverless', 'AWS Lambda', 'Azure Functions', 'Event-Driven', 'Microservices'],
+    author: {
+      name: 'Zion Serverless',
+      id: 'zion-serverless',
+      verified: true
+    },
+    images: ['https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&auto=format'],
+    rating: 4.7,
+    reviewCount: 89,
+    aiScore: 89,
+    featured: false,
+    popular: false,
+    contactInfo: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      website: 'https://ziontechgroup.com'
+    }
+  },
+
+  // Advanced Data & Analytics Services
+  {
+    id: 'real-time-analytics',
+    title: 'Real-Time Data Analytics & Streaming',
+    description: 'Real-time data processing and analytics solutions using Apache Kafka, Spark, and modern streaming technologies.',
+    category: 'data-analytics',
+    subcategory: 'Real-Time Analytics',
+    price: 7000,
+    currency: 'USD',
+    pricingModel: 'project-based',
+    features: [
+      'Real-time data pipeline design',
+      'Stream processing implementation',
+      'Real-time dashboard creation',
+      'Data streaming architecture',
+      'Performance optimization',
+      'Monitoring and alerting'
+    ],
+    benefits: [
+      'Instant insights from live data',
+      'Real-time decision making',
+      'Improved customer experience',
+      'Operational efficiency gains',
+      'Competitive advantage'
+    ],
+    marketPrice: '$5,000 - $18,000',
+    deliveryTime: '6-8 weeks',
+    tags: ['Real-Time Analytics', 'Streaming', 'Apache Kafka', 'Apache Spark', 'Data Pipeline'],
+    author: {
+      name: 'Zion Real-Time Analytics',
+      id: 'zion-real-time-analytics',
+      verified: true
+    },
+    images: ['https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format'],
+    rating: 4.9,
+    reviewCount: 67,
+    aiScore: 94,
+    featured: true,
+    popular: false,
+    contactInfo: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      website: 'https://ziontechgroup.com'
+    }
+  },
+
+  {
+    id: 'ai-data-governance',
+    title: 'AI-Powered Data Governance & Quality',
+    description: 'Intelligent data governance solutions ensuring data quality, compliance, and trust.',
+    category: 'data-analytics',
+    subcategory: 'Data Governance',
+    price: 5000,
+    currency: 'USD',
+    pricingModel: 'monthly',
+    features: [
+      'Data quality assessment',
+      'Automated data profiling',
+      'Compliance monitoring',
+      'Data lineage tracking',
+      'Privacy protection',
+      'Governance automation'
+    ],
+    benefits: [
+      'Ensure data accuracy and reliability',
+      'Meet regulatory compliance requirements',
+      'Build trust in data assets',
+      'Reduce data-related risks',
+      'Improve decision-making quality'
+    ],
+    marketPrice: '$3,500 - $12,000/month',
+    deliveryTime: '3-4 weeks setup',
+    tags: ['Data Governance', 'Data Quality', 'Compliance', 'Privacy', 'Data Lineage'],
+    author: {
+      name: 'Zion Data Governance',
+      id: 'zion-data-governance',
+      verified: true
+    },
+    images: ['https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format'],
+    rating: 4.8,
+    reviewCount: 78,
+    aiScore: 92,
+    featured: false,
+    popular: true,
+    contactInfo: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      website: 'https://ziontechgroup.com'
+    }
+  },
+
+  // Advanced Web & Mobile Development
+  {
+    id: 'progressive-web-apps',
+    title: 'Progressive Web App (PWA) Development',
+    description: 'Modern progressive web applications with offline capabilities and native app-like experience.',
+    category: 'web-development',
+    subcategory: 'PWA Development',
+    price: 4000,
+    currency: 'USD',
+    pricingModel: 'project-based',
+    features: [
+      'PWA architecture design',
+      'Service worker implementation',
+      'Offline functionality',
+      'Push notifications',
+      'App-like experience',
+      'Cross-platform compatibility'
+    ],
+    benefits: [
+      'Native app-like experience',
+      'Offline functionality',
+      'Faster loading times',
+      'Reduced development costs',
+      'Better user engagement'
+    ],
+    marketPrice: '$3,000 - $10,000',
+    deliveryTime: '4-6 weeks',
+    tags: ['PWA', 'Progressive Web App', 'Service Workers', 'Offline First', 'Mobile Web'],
+    author: {
+      name: 'Zion PWA Development',
+      id: 'zion-pwa-dev',
+      verified: true
+    },
+    images: ['https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&auto=format'],
+    rating: 4.8,
+    reviewCount: 95,
+    aiScore: 90,
+    featured: false,
+    popular: true,
+    contactInfo: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      website: 'https://ziontechgroup.com'
+    }
+  },
+
+  {
+    id: 'cross-platform-mobile',
+    title: 'Cross-Platform Mobile App Development',
+    description: 'Native-quality mobile applications for iOS and Android using React Native, Flutter, or Xamarin.',
+    category: 'web-development',
+    subcategory: 'Mobile Development',
+    price: 6000,
+    currency: 'USD',
+    pricingModel: 'project-based',
+    features: [
+      'Cross-platform architecture',
+      'Native performance optimization',
+      'Platform-specific features',
+      'App store deployment',
+      'Testing and quality assurance',
+      'Maintenance and updates'
+    ],
+    benefits: [
+      'Single codebase for multiple platforms',
+      'Faster development time',
+      'Cost-effective solution',
+      'Consistent user experience',
+      'Easier maintenance'
+    ],
+    marketPrice: '$4,500 - $15,000',
+    deliveryTime: '6-10 weeks',
+    tags: ['React Native', 'Flutter', 'Cross-Platform', 'Mobile Apps', 'iOS', 'Android'],
+    author: {
+      name: 'Zion Mobile Development',
+      id: 'zion-mobile-dev',
+      verified: true
+    },
+    images: ['https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&auto=format'],
+    rating: 4.9,
+    reviewCount: 156,
+    aiScore: 91,
+    featured: true,
+    popular: true,
+    contactInfo: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      website: 'https://ziontechgroup.com'
+    }
+  },
+
+  // Advanced IT Consulting Services
+  {
+    id: 'digital-transformation',
+    title: 'Digital Transformation Strategy & Implementation',
+    description: 'Comprehensive digital transformation consulting helping businesses modernize and compete in the digital age.',
+    category: 'it-consulting',
+    subcategory: 'Digital Transformation',
+    price: 15000,
+    currency: 'USD',
+    pricingModel: 'project-based',
+    features: [
+      'Digital maturity assessment',
+      'Transformation roadmap',
+      'Technology stack modernization',
+      'Change management',
+      'Process optimization',
+      'Success metrics and KPIs'
+    ],
+    benefits: [
+      'Modernize business operations',
+      'Improve customer experience',
+      'Increase operational efficiency',
+      'Gain competitive advantage',
+      'Future-proof your business'
+    ],
+    marketPrice: '$10,000 - $50,000',
+    deliveryTime: '12-20 weeks',
+    tags: ['Digital Transformation', 'Strategy', 'Modernization', 'Change Management', 'Process Optimization'],
+    author: {
+      name: 'Zion Digital Transformation',
+      id: 'zion-digital-transform',
+      verified: true
+    },
+    images: ['https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&auto=format'],
+    rating: 4.9,
+    reviewCount: 89,
+    aiScore: 95,
+    featured: true,
+    popular: true,
+    contactInfo: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      website: 'https://ziontechgroup.com'
+    }
+  },
+
+  {
+    id: 'enterprise-architecture',
+    title: 'Enterprise Architecture Design & Optimization',
+    description: 'Strategic enterprise architecture planning and optimization for large organizations.',
+    category: 'it-consulting',
+    subcategory: 'Enterprise Architecture',
+    price: 12000,
+    currency: 'USD',
+    pricingModel: 'project-based',
+    features: [
+      'Current state assessment',
+      'Target architecture design',
+      'Technology roadmap planning',
+      'Integration strategy',
+      'Governance framework',
+      'Implementation planning'
+    ],
+    benefits: [
+      'Optimize technology investments',
+      'Improve system integration',
+      'Reduce technical debt',
+      'Enable business agility',
+      'Standardize processes'
+    ],
+    marketPrice: '$8,000 - $30,000',
+    deliveryTime: '10-16 weeks',
+    tags: ['Enterprise Architecture', 'Technology Strategy', 'Integration', 'Governance', 'Roadmap'],
+    author: {
+      name: 'Zion Enterprise Architecture',
+      id: 'zion-enterprise-arch',
+      verified: true
+    },
+    images: ['https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&auto=format'],
+    rating: 4.8,
+    reviewCount: 67,
+    aiScore: 93,
+    featured: false,
+    popular: false,
+    contactInfo: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      website: 'https://ziontechgroup.com'
+    }
+  },
+
+  // Advanced Blockchain & Web3 Services
+  {
+    id: 'defi-platform-development',
+    title: 'DeFi Platform Development & Smart Contracts',
+    description: 'Decentralized finance platform development with smart contracts and DeFi protocols.',
+    category: 'blockchain',
+    subcategory: 'DeFi Development',
+    price: 10000,
+    currency: 'USD',
+    pricingModel: 'project-based',
+    features: [
+      'DeFi protocol design',
+      'Smart contract development',
+      'Security auditing',
+      'Tokenomics design',
+      'Liquidity pool implementation',
+      'Yield farming mechanisms'
+    ],
+    benefits: [
+      'Launch innovative DeFi products',
+      'Secure smart contract implementation',
+      'Compliance with DeFi standards',
+      'Access to new financial markets',
+      'Revenue from DeFi protocols'
+    ],
+    marketPrice: '$7,000 - $25,000',
+    deliveryTime: '12-16 weeks',
+    tags: ['DeFi', 'Smart Contracts', 'Blockchain', 'Cryptocurrency', 'Yield Farming'],
+    author: {
+      name: 'Zion DeFi Development',
+      id: 'zion-defi-dev',
+      verified: true
+    },
+    images: ['https://images.unsplash.com/photo-1639762681485-074d7f9c9449?w=800&800&auto=format'],
+    rating: 4.8,
+    reviewCount: 78,
+    aiScore: 94,
+    featured: true,
+    popular: false,
+    contactInfo: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      website: 'https://ziontechgroup.com'
+    }
+  },
+
+  {
+    id: 'nft-marketplace-development',
+    title: 'NFT Marketplace Development & Smart Contracts',
+    description: 'Custom NFT marketplace development with minting, trading, and auction capabilities.',
+    category: 'blockchain',
+    subcategory: 'NFT Development',
+    price: 8000,
+    currency: 'USD',
+    pricingModel: 'project-based',
+    features: [
+      'NFT marketplace design',
+      'Smart contract development',
+      'Minting functionality',
+      'Trading and auction systems',
+      'Wallet integration',
+      'Metadata management'
+    ],
+    benefits: [
+      'Launch NFT business quickly',
+      'Custom marketplace features',
+      'Revenue from trading fees',
+      'Brand building opportunities',
+      'Access to NFT market'
+    ],
+    marketPrice: '$5,000 - $20,000',
+    deliveryTime: '8-12 weeks',
+    tags: ['NFT', 'Marketplace', 'Smart Contracts', 'Blockchain', 'Digital Art'],
+    author: {
+      name: 'Zion NFT Development',
+      id: 'zion-nft-dev',
+      verified: true
+    },
+    images: ['https://images.unsplash.com/photo-1639762681485-074d7f9c9449?w=800&800&auto=format'],
+    rating: 4.7,
+    reviewCount: 89,
+    aiScore: 91,
+    featured: false,
+    popular: true,
+    contactInfo: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      website: 'https://ziontechgroup.com'
+    }
+  },
+
+  // Advanced Process Automation Services
+  {
+    id: 'rpa-implementation',
+    title: 'Robotic Process Automation (RPA) Implementation',
+    description: 'End-to-end RPA solutions to automate repetitive business processes and workflows.',
+    category: 'automation',
+    subcategory: 'RPA',
+    price: 7000,
+    currency: 'USD',
+    pricingModel: 'project-based',
+    features: [
+      'Process analysis and mapping',
+      'RPA bot development',
+      'Workflow automation',
+      'Integration with existing systems',
+      'Monitoring and analytics',
+      'Training and support'
+    ],
+    benefits: [
+      'Reduce manual work by 70-90%',
+      'Improve accuracy and consistency',
+      '24/7 process execution',
+      'Scalable automation solution',
+      'Quick ROI (3-6 months)'
+    ],
+    marketPrice: '$5,000 - $20,000',
+    deliveryTime: '6-10 weeks',
+    tags: ['RPA', 'Process Automation', 'Workflow Automation', 'Business Process', 'Efficiency'],
+    author: {
+      name: 'Zion RPA Solutions',
+      id: 'zion-rpa-solutions',
+      verified: true
+    },
+    images: ['https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format'],
+    rating: 4.9,
+    reviewCount: 112,
+    aiScore: 93,
+    featured: true,
+    popular: true,
+    contactInfo: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      website: 'https://ziontechgroup.com'
+    }
+  },
+
+  {
+    id: 'workflow-automation',
+    title: 'Business Workflow Automation & Optimization',
+    description: 'Comprehensive workflow automation solutions to streamline business operations and improve efficiency.',
+    category: 'automation',
+    subcategory: 'Workflow Automation',
+    price: 5000,
+    currency: 'USD',
+    pricingModel: 'project-based',
+    features: [
+      'Workflow analysis and design',
+      'Automation implementation',
+      'Integration with business systems',
+      'Process monitoring',
+      'Performance analytics',
+      'Continuous optimization'
+    ],
+    benefits: [
+      'Streamline business processes',
+      'Reduce manual errors',
+      'Improve operational efficiency',
+      'Better resource allocation',
+      'Enhanced compliance tracking'
+    ],
+    marketPrice: '$3,500 - $12,000',
+    deliveryTime: '4-8 weeks',
+    tags: ['Workflow Automation', 'Business Process', 'Efficiency', 'Process Optimization', 'Integration'],
+    author: {
+      name: 'Zion Workflow Automation',
+      id: 'zion-workflow-automation',
+      verified: true
+    },
+    images: ['https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format'],
+    rating: 4.8,
+    reviewCount: 95,
+    aiScore: 90,
+    featured: false,
+    popular: false,
+    contactInfo: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      website: 'https://ziontechgroup.com'
+    }
+  },
+
+  // Advanced IoT & Edge Computing Services
+  {
+    id: 'iot-platform-development',
+    title: 'IoT Platform Development & Management',
+    description: 'End-to-end IoT platform development with device management, data collection, and analytics.',
+    category: 'iot-edge',
+    subcategory: 'IoT Platform',
+    price: 12000,
+    currency: 'USD',
+    pricingModel: 'project-based',
+    features: [
+      'IoT platform architecture',
+      'Device management system',
+      'Data collection and storage',
+      'Real-time analytics',
+      'Security and authentication',
+      'Scalability planning'
+    ],
+    benefits: [
+      'Centralized IoT device management',
+      'Real-time data insights',
+      'Scalable IoT infrastructure',
+      'Enhanced security and privacy',
+      'Reduced operational costs'
+    ],
+    marketPrice: '$8,000 - $30,000',
+    deliveryTime: '12-20 weeks',
+    tags: ['IoT Platform', 'Device Management', 'Real-Time Analytics', 'Edge Computing', 'Smart Devices'],
+    author: {
+      name: 'Zion IoT Solutions',
+      id: 'zion-iot-solutions',
+      verified: true
+    },
+    images: ['https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&auto=format'],
+    rating: 4.8,
+    reviewCount: 67,
+    aiScore: 92,
+    featured: true,
+    popular: false,
+    contactInfo: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      website: 'https://ziontechgroup.com'
+    }
+  },
+
+  {
+    id: 'edge-computing-solutions',
+    title: 'Edge Computing Solutions & Optimization',
+    description: 'Edge computing infrastructure and optimization for low-latency, high-performance applications.',
+    category: 'iot-edge',
+    subcategory: 'Edge Computing',
+    price: 8000,
+    currency: 'USD',
+    pricingModel: 'project-based',
+    features: [
+      'Edge infrastructure design',
+      'Latency optimization',
+      'Data processing at edge',
+      'Security implementation',
+      'Performance monitoring',
+      'Scalability planning'
+    ],
+    benefits: [
+      'Ultra-low latency processing',
+      'Reduced bandwidth usage',
+      'Improved user experience',
+      'Enhanced privacy and security',
+      'Cost-effective data processing'
+    ],
+    marketPrice: '$6,000 - $20,000',
+    deliveryTime: '8-12 weeks',
+    tags: ['Edge Computing', 'Low Latency', 'Performance Optimization', 'IoT', 'Real-Time Processing'],
+    author: {
+      name: 'Zion Edge Computing',
+      id: 'zion-edge-computing',
+      verified: true
+    },
+    images: ['https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&auto=format'],
+    rating: 4.7,
+    reviewCount: 78,
+    aiScore: 89,
+    featured: false,
+    popular: false,
+    contactInfo: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      website: 'https://ziontechgroup.com'
+    }
+  },
+
+  // Advanced Quantum Computing Services
+  {
+    id: 'quantum-algorithm-development',
+    title: 'Quantum Algorithm Development & Optimization',
+    description: 'Custom quantum algorithm development for specific business problems and optimization challenges.',
+    category: 'quantum-computing',
+    subcategory: 'Algorithm Development',
+    price: 15000,
+    currency: 'USD',
+    pricingModel: 'project-based',
+    features: [
+      'Problem analysis and quantum mapping',
+      'Custom algorithm development',
+      'Quantum circuit optimization',
+      'Simulation and testing',
+      'Performance benchmarking',
+      'Documentation and training'
+    ],
+    benefits: [
+      'Solve complex optimization problems',
+      'Exponential speedup for specific tasks',
+      'Competitive advantage in research',
+      'Future-proof technology investment',
+      'Access to quantum computing capabilities'
+    ],
+    marketPrice: '$10,000 - $40,000',
+    deliveryTime: '16-24 weeks',
+    tags: ['Quantum Computing', 'Algorithm Development', 'Optimization', 'Quantum Circuits', 'Research'],
+    author: {
+      name: 'Zion Quantum Computing',
+      id: 'zion-quantum-computing',
+      verified: true
+    },
+    images: ['https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&auto=format'],
+    rating: 4.8,
+    reviewCount: 45,
+    aiScore: 96,
+    featured: true,
+    popular: false,
+    contactInfo: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      website: 'https://ziontechgroup.com'
+    }
+  },
+
+  {
+    id: 'quantum-software-development',
+    title: 'Quantum Software Development & Integration',
+    description: 'Quantum software development and integration with classical computing systems.',
+    category: 'quantum-computing',
+    subcategory: 'Software Development',
+    price: 10000,
+    currency: 'USD',
+    pricingModel: 'project-based',
+    features: [
+      'Quantum software architecture',
+      'Hybrid quantum-classical systems',
+      'API development and integration',
+      'Testing and validation',
+      'Performance optimization',
+      'Documentation and support'
+    ],
+    benefits: [
+      'Bridge quantum and classical computing',
+      'Prepare for quantum advantage',
+      'Innovative software solutions',
+      'Research and development capabilities',
+      'Future technology positioning'
+    ],
+    marketPrice: '$7,000 - $25,000',
+    deliveryTime: '12-18 weeks',
+    tags: ['Quantum Software', 'Hybrid Systems', 'API Development', 'Integration', 'Quantum Advantage'],
+    author: {
+      name: 'Zion Quantum Software',
+      id: 'zion-quantum-software',
+      verified: true
+    },
+    images: ['https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&auto=format'],
+    rating: 4.7,
+    reviewCount: 56,
+    aiScore: 94,
+    featured: false,
+    popular: false,
+    contactInfo: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      website: 'https://ziontechgroup.com'
+    }
+  },
+
+  // Advanced AR/VR & Metaverse Services
+  {
+    id: 'ar-vr-application-development',
+    title: 'AR/VR Application Development & Deployment',
+    description: 'Custom augmented and virtual reality applications for business, education, and entertainment.',
+    category: 'augmented-reality',
+    subcategory: 'AR/VR Development',
+    price: 8000,
+    currency: 'USD',
+    pricingModel: 'project-based',
+    features: [
+      'AR/VR application design',
+      '3D modeling and animation',
+      'Interactive user experience',
+      'Multi-platform deployment',
+      'Performance optimization',
+      'Testing and quality assurance'
+    ],
+    benefits: [
+      'Immersive user experiences',
+      'Enhanced training and education',
+      'Innovative marketing solutions',
+      'Competitive differentiation',
+      'New revenue opportunities'
+    ],
+    marketPrice: '$6,000 - $20,000',
+    deliveryTime: '8-14 weeks',
+    tags: ['AR/VR', 'Augmented Reality', 'Virtual Reality', '3D Modeling', 'Immersive Experience'],
+    author: {
+      name: 'Zion AR/VR Development',
+      id: 'zion-ar-vr-dev',
+      verified: true
+    },
+    images: ['https://images.unsplash.com/photo-1593508512255-86ab42a8c620?w=800&auto=format'],
+    rating: 4.8,
+    reviewCount: 78,
+    aiScore: 91,
+    featured: true,
+    popular: false,
+    contactInfo: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      website: 'https://ziontechgroup.com'
+    }
+  },
+
+  {
+    id: 'metaverse-platform-development',
+    title: 'Metaverse Platform Development & Strategy',
+    description: 'Custom metaverse platform development with virtual worlds, avatars, and social interactions.',
+    category: 'augmented-reality',
+    subcategory: 'Metaverse Development',
+    price: 15000,
+    currency: 'USD',
+    pricingModel: 'project-based',
+    features: [
+      'Metaverse platform architecture',
+      'Virtual world design',
+      'Avatar system development',
+      'Social interaction features',
+      'Monetization systems',
+      'Scalability planning'
+    ],
+    benefits: [
+      'Create immersive virtual experiences',
+      'Build engaged communities',
+      'New revenue streams',
+      'Brand presence in metaverse',
+      'Future technology positioning'
+    ],
+    marketPrice: '$10,000 - $40,000',
+    deliveryTime: '16-24 weeks',
+    tags: ['Metaverse', 'Virtual Worlds', 'Avatars', 'Social Interaction', 'Virtual Reality'],
+    author: {
+      name: 'Zion Metaverse Development',
+      id: 'zion-metaverse-dev',
+      verified: true
+    },
+    images: ['https://images.unsplash.com/photo-1593508512255-86ab42a8c620?w=800&auto=format'],
+    rating: 4.7,
+    reviewCount: 67,
+    aiScore: 93,
+    featured: false,
+    popular: true,
+    contactInfo: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      website: 'https://ziontechgroup.com'
+    }
+  },
+
+  // Advanced Green Technology Services
+  {
+    id: 'carbon-footprint-tracking',
+    title: 'Carbon Footprint Tracking & Reduction Solutions',
+    description: 'AI-powered carbon footprint tracking and reduction strategies for businesses and organizations.',
+    category: 'green-tech',
+    subcategory: 'Carbon Management',
+    price: 4000,
+    currency: 'USD',
+    pricingModel: 'monthly',
+    features: [
+      'Carbon footprint calculation',
+      'Real-time monitoring',
+      'Reduction strategy planning',
+      'Compliance reporting',
+      'Sustainability metrics',
+      'Progress tracking'
+    ],
+    benefits: [
+      'Meet sustainability goals',
+      'Reduce environmental impact',
+      'Comply with regulations',
+      'Improve brand reputation',
+      'Cost savings from efficiency'
+    ],
+    marketPrice: '$3,000 - $10,000/month',
+    deliveryTime: '2-3 weeks setup',
+    tags: ['Carbon Footprint', 'Sustainability', 'Environmental Compliance', 'Green Technology', 'Monitoring'],
+    author: {
+      name: 'Zion Green Solutions',
+      id: 'zion-green-solutions',
+      verified: true
+    },
+    images: ['https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&auto=format'],
+    rating: 4.8,
+    reviewCount: 89,
+    aiScore: 90,
+    featured: false,
+    popular: true,
+    contactInfo: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      website: 'https://ziontechgroup.com'
+    }
+  },
+
+  {
+    id: 'renewable-energy-monitoring',
+    title: 'Renewable Energy Monitoring & Optimization',
+    description: 'Smart monitoring and optimization solutions for renewable energy systems and sustainability initiatives.',
+    category: 'green-tech',
+    subcategory: 'Energy Monitoring',
+    price: 6000,
+    currency: 'USD',
+    pricingModel: 'project-based',
+    features: [
+      'Energy system monitoring',
+      'Performance optimization',
+      'Predictive maintenance',
+      'Efficiency analytics',
+      'Integration with smart grids',
+      'Sustainability reporting'
+    ],
+    benefits: [
+      'Maximize energy efficiency',
+      'Reduce energy costs',
+      'Improve sustainability metrics',
+      'Predictive maintenance savings',
+      'Compliance with energy regulations'
+    ],
+    marketPrice: '$4,500 - $15,000',
+    deliveryTime: '6-10 weeks',
+    tags: ['Renewable Energy', 'Energy Monitoring', 'Sustainability', 'Smart Grids', 'Energy Efficiency'],
+    author: {
+      name: 'Zion Energy Solutions',
+      id: 'zion-energy-solutions',
+      verified: true
+    },
+    images: ['https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&auto=format'],
+    rating: 4.7,
+    reviewCount: 67,
+    aiScore: 89,
+    featured: false,
+    popular: false,
+    contactInfo: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      website: 'https://ziontechgroup.com'
+    }
   }
 ];
 
@@ -1491,3 +2555,73 @@ export const getEnterpriseServices = (): MicroService[] => {
     .filter(service => service.price >= 10000 && service.rating >= 4.5)
     .sort((a, b) => b.price - a.price);
 };
+
+// Compatibility exports for backward compatibility
+export const COMPREHENSIVE_SERVICES = MICRO_SERVICES;
+
+export const CONTACT_INFO = {
+  phone: '+1 302 464 0950',
+  email: 'kleber@ziontechgroup.com',
+  address: '364 E Main St STE 1008 Middletown DE 19709',
+  website: 'https://ziontechgroup.com',
+  mobile: '+1 302 464 0950',
+  businessHours: 'Monday - Friday: 9:00 AM - 6:00 PM EST'
+};
+
+export const SERVICE_PRICING_TIERS = [
+  {
+    name: 'Starter',
+    title: 'Starter',
+    price: '$999',
+    priceValue: 999,
+    features: ['Basic setup', 'Email support', 'Standard features'],
+    popular: false,
+    billingCycle: 'monthly'
+  },
+  {
+    name: 'Professional',
+    title: 'Professional',
+    price: '$2,999',
+    priceValue: 2999,
+    features: ['Advanced features', 'Priority support', 'Custom integrations'],
+    popular: true,
+    billingCycle: 'monthly'
+  },
+  {
+    name: 'Enterprise',
+    title: 'Enterprise',
+    price: '$9,999',
+    priceValue: 9999,
+    features: ['Full customization', '24/7 support', 'Dedicated team'],
+    popular: false,
+    billingCycle: 'monthly'
+  }
+];
+
+export const SERVICE_GUARANTEES = [
+  {
+    title: 'Quality Assurance',
+    description: '100% satisfaction guarantee or your money back',
+    icon: '✅'
+  },
+  {
+    title: 'On-Time Delivery',
+    description: 'We deliver on schedule or you don\'t pay',
+    icon: '⏰'
+  },
+  {
+    title: 'Ongoing Support',
+    description: 'Lifetime support for all our solutions',
+    icon: '🔄'
+  }
+];
+
+// Update category counts
+export const updateCategoryCounts = () => {
+  SERVICE_CATEGORIES.forEach(category => {
+    category.count = MICRO_SERVICES.filter(s => s.category === category.id).length;
+  });
+};
+
+// Call the function to update counts
+updateCategoryCounts();

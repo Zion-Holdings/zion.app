@@ -89,14 +89,14 @@ const PricingPage: React.FC = () => {
                   <div className="text-center mb-8">
                     <h3 className="text-2xl font-bold text-white mb-4">{tier.title}</h3>
                     <div className="text-4xl font-bold text-zion-gold mb-2">
-                      ${formatPrice(tier.price)}
+                      ${formatPrice(tier.priceValue)}
                     </div>
                     <div className="text-zion-slate-light">
                       per {billingCycle === 'yearly' ? 'month' : tier.billingCycle}
                     </div>
                     {billingCycle === 'yearly' && (
                       <div className="text-sm text-zion-gold mt-2">
-                        Billed annually (${getDiscountedPrice(tier.price)})
+                        Billed annually (${getDiscountedPrice(tier.priceValue)})
                       </div>
                     )}
                   </div>

@@ -1,8 +1,6 @@
 
 import React from 'react';
-<<<<<<< HEAD
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import { 
   Brain, 
   Zap, 
@@ -60,269 +58,99 @@ const stats = [
 ];
 
 export function FeatureCTAs() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.1
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30, scale: 0.95 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut"
-      }
-    }
-  };
-
-  const statVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: { duration: 0.5 }
-    }
-  };
-
   return (
     <section className="py-20 bg-gradient-to-b from-zion-slate to-zion-slate-dark relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-40 right-20 w-72 h-72 bg-zion-purple rounded-full blur-3xl"></div>
-        <div className="absolute bottom-40 left-20 w-64 h-64 bg-zion-cyan rounded-full blur-3xl"></div>
+        <div className="absolute bottom-40 left-20 w-72 h-72 bg-zion-cyan rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-zion-blue rounded-full blur-3xl"></div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Header */}
-        <motion.div 
-          className="text-center mb-20"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-            Transform Your Business with
-            <span className="block bg-gradient-to-r from-zion-cyan via-zion-purple to-zion-cyan bg-clip-text text-transparent">
-              Next-Gen Technology
-            </span>
-          </h2>
-          <p className="text-xl text-zion-slate-light max-w-4xl mx-auto leading-relaxed">
-            Experience the future of business solutions with our cutting-edge platform designed to accelerate growth and innovation
-          </p>
-        </motion.div>
-
-        {/* Features Grid */}
-        <motion.div 
-          className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
-          {features.map((feature, index) => (
-            <motion.div
-              key={index}
-              variants={itemVariants}
-              whileHover={{ 
-                y: -10, 
-                scale: 1.02,
-                transition: { duration: 0.3 }
-              }}
-              className="group"
-            >
-              <div className={`h-full p-8 rounded-3xl ${feature.bgColor} ${feature.borderColor} border-2 hover:border-opacity-40 transition-all duration-300 backdrop-blur-sm relative overflow-hidden`}>
-                {/* Background gradient overlay */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-5 group-hover:opacity-10 transition-opacity duration-300`}></div>
-                
-                <div className="relative z-10">
-                  {/* Icon */}
-                  <div className={`inline-flex p-4 rounded-2xl ${feature.iconColor} bg-opacity-20 mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                    <feature.icon className="w-8 h-8" />
-                  </div>
-
-                  {/* Content */}
-                  <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-zion-cyan transition-colors duration-200">
-                    {feature.title}
-                  </h3>
-                  
-                  <p className="text-zion-slate-light leading-relaxed mb-6">
-                    {feature.description}
-                  </p>
-
-                  {/* Benefits */}
-                  <ul className="space-y-3 mb-8">
-                    {feature.benefits.map((benefit, idx) => (
-                      <li key={idx} className="flex items-center gap-3 text-zion-slate-light">
-                        <CheckCircle className="w-4 h-4 text-zion-cyan flex-shrink-0" />
-                        <span className="text-sm">{benefit}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  {/* CTA Button */}
-                  <Link
-                    to={feature.link}
-                    className={`inline-flex items-center gap-2 bg-gradient-to-r ${feature.color} hover:from-zion-purple-light hover:to-zion-purple text-white px-6 py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105`}
-                  >
-                    Learn More
-                    <ArrowRight className="w-4 h-4" />
-                  </Link>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
-
-        {/* Stats Section */}
-        <motion.div 
-          className="bg-gradient-to-r from-zion-blue/20 to-zion-purple/20 rounded-3xl p-8 md:p-12 border border-zion-blue-light/20"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-white mb-4">
-              Trusted by Industry Leaders
-            </h3>
-            <p className="text-zion-slate-light text-lg">
-              Our track record speaks for itself
-            </p>
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-zion-cyan/10 border border-zion-cyan/20 text-zion-cyan text-sm font-medium mb-6">
+            <Star className="w-4 h-4 mr-2" />
+            Why Choose Zion Tech Group
           </div>
-
-          <motion.div 
-            className="grid grid-cols-2 md:grid-cols-4 gap-8"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            {stats.map((stat, index) => (
-              <motion.div
-                key={index}
-                variants={statVariants}
-                className="text-center group"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.2 }}
-              >
-                <div className={`inline-flex p-4 rounded-full bg-white/10 mb-4 ${stat.color} bg-opacity-20 group-hover:scale-110 transition-transform duration-300`}>
-                  <stat.icon className="w-8 h-8" />
-                </div>
-                <div className="text-3xl font-bold text-white mb-2">{stat.number}</div>
-                <div className="text-zion-slate-light text-sm">{stat.label}</div>
-              </motion.div>
-            ))}
-          </motion.div>
-
-          {/* Bottom CTA */}
-          <motion.div 
-            className="text-center mt-12"
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-          >
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-3 bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white px-10 py-4 rounded-xl font-semibold text-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-            >
-              Start Your Journey
-              <Zap className="w-6 h-6" />
-            </Link>
-          </motion.div>
-        </motion.div>
-=======
-import { Link } from "react-router-dom";
-
-export function FeatureCTAs() {
-  const features = [
-    {
-      title: "AI & Automation",
-      description: "Intelligent automation solutions to streamline your business processes",
-      link: "/ai-services",
-      color: "from-purple-500 to-indigo-600"
-    },
-    {
-      title: "Cloud Solutions",
-      description: "Scalable cloud infrastructure and DevOps services for modern businesses",
-      link: "/enterprise-solutions",
-      color: "from-blue-500 to-cyan-600"
-    },
-    {
-      title: "Cybersecurity",
-      description: "Advanced security and protection services to safeguard your digital assets",
-      link: "/comprehensive-services",
-      color: "from-red-500 to-pink-600"
-    },
-    {
-      title: "Data Analytics",
-      description: "Transform your data into actionable insights with advanced analytics",
-      link: "/comprehensive-services",
-      color: "from-green-500 to-emerald-600"
-    },
-    {
-      title: "Micro SAAS",
-      description: "Custom software solutions tailored to your specific business needs",
-      link: "/micro-saas",
-      color: "from-yellow-500 to-orange-600"
-    },
-    {
-      title: "Comprehensive Solutions",
-      description: "End-to-end technology solutions for enterprise transformation",
-      link: "/comprehensive-services",
-      color: "from-indigo-500 to-purple-600"
-    }
-  ];
-
-  return (
-    <section className="py-16 bg-zion-blue-dark">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-white mb-4">Our Key Features</h2>
-          <p className="text-zion-slate-light text-lg max-w-2xl mx-auto">
-            Discover the comprehensive range of services and solutions we offer to help your business thrive in the digital age.
+          
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            Powerful Features That Drive Results
+          </h2>
+          
+          <p className="text-xl text-zion-slate-light max-w-3xl mx-auto">
+            Our comprehensive platform combines cutting-edge technology with proven methodologies 
+            to deliver exceptional outcomes for your business.
           </p>
         </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        {/* Features Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
           {features.map((feature, index) => (
-            <div key={index} className="bg-zion-blue-light rounded-lg p-6 border border-zion-blue-light hover:border-zion-purple/50 transition-all duration-300">
-              <div className={`w-12 h-12 bg-gradient-to-br ${feature.color} rounded-lg flex items-center justify-center mb-4`}>
-                <div className="text-white text-xl font-bold">
-                  {index + 1}
-                </div>
+            <div
+              key={index}
+              className={`${feature.bgColor} ${feature.borderColor} border rounded-2xl p-8 hover:shadow-2xl hover:shadow-zion-cyan/20 transition-all duration-300 group`}
+            >
+              {/* Icon */}
+              <div className={`w-16 h-16 bg-gradient-to-r ${feature.color} rounded-2xl flex items-center justify-center mb-6 shadow-lg`}>
+                <feature.icon className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-semibold text-white mb-3">{feature.title}</h3>
-              <p className="text-zion-slate-light mb-4">{feature.description}</p>
-              <Link 
+
+              {/* Content */}
+              <h3 className="text-2xl font-bold text-white mb-4">{feature.title}</h3>
+              <p className="text-zion-slate-light mb-6 leading-relaxed">{feature.description}</p>
+
+              {/* Benefits */}
+              <ul className="space-y-2 mb-6">
+                {feature.benefits.map((benefit, idx) => (
+                  <li key={idx} className="flex items-center text-zion-slate-light">
+                    <CheckCircle className="w-4 h-4 text-zion-cyan mr-2 flex-shrink-0" />
+                    {benefit}
+                  </li>
+                ))}
+              </ul>
+
+              {/* CTA */}
+              <Link
                 to={feature.link}
-                className="inline-block bg-gradient-to-r from-zion-cyan to-zion-purple text-white px-6 py-2 rounded-lg font-medium hover:from-zion-cyan-dark hover:to-zion-purple-dark transition-all duration-300"
+                className="inline-flex items-center text-zion-cyan hover:text-zion-cyan-light font-semibold group-hover:translate-x-1 transition-transform duration-300"
               >
                 Learn More
+                <ArrowRight className="w-4 h-4 ml-2" />
               </Link>
             </div>
           ))}
         </div>
-        
-        <div className="text-center mt-12">
-          <Link 
-            to="/comprehensive-services"
-            className="inline-block bg-gradient-to-r from-zion-purple to-zion-purple-dark text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-zion-purple-light hover:to-zion-purple transition-all duration-300"
-          >
-            View All Services
-          </Link>
+
+        {/* Stats Section */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+          {stats.map((stat, index) => (
+            <div key={index} className="text-center">
+              <div className={`${stat.color} mb-2`}>
+                <stat.icon className="w-8 h-8 mx-auto" />
+              </div>
+              <div className="text-3xl md:text-4xl font-bold text-white mb-2">{stat.number}</div>
+              <div className="text-zion-slate-light text-sm">{stat.label}</div>
+            </div>
+          ))}
         </div>
->>>>>>> 8ecb7b92b614d6c2cda5536f81725e29ef34b4e1
+
+        {/* CTA Section */}
+        <div className="text-center">
+          <div className="inline-flex items-center space-x-4 bg-zion-blue-light/10 border border-zion-cyan/20 rounded-2xl px-8 py-6 backdrop-blur-sm">
+            <div className="text-left">
+              <h3 className="text-xl font-semibold text-white mb-2">Ready to Get Started?</h3>
+              <p className="text-zion-slate-light">Join thousands of businesses already using Zion Tech Group</p>
+            </div>
+            <Link
+              to="/contact"
+              className="bg-gradient-to-r from-zion-cyan to-zion-purple hover:from-zion-cyan/90 hover:to-zion-purple/90 text-white px-8 py-3 rounded-xl font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-zion-cyan/20"
+            >
+              Start Your Project
+            </Link>
+          </div>
+        </div>
       </div>
     </section>
   );
