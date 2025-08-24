@@ -10,6 +10,7 @@ import { FeaturedListingsSection } from '@/components/FeaturedListingsSection';
 import { NewsletterSection } from '@/components/NewsletterSection';
 import { TrustedBySection } from '@/components/TrustedBySection';
 import { EnhancedQuickAccess } from '@/components/home/EnhancedQuickAccess';
+import { ComprehensiveServicesShowcase } from '@/components/ComprehensiveServicesShowcase';
 import { Button } from '@/components/ui/Button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
@@ -291,6 +292,9 @@ export default function Home() {
 
         {/* Enhanced Quick Access Section */}
         <EnhancedQuickAccess />
+
+        {/* Comprehensive Services Showcase */}
+        <ComprehensiveServicesShowcase />
 
         {/* CTA Section */}
         <section className="py-20 bg-zion-blue text-white">

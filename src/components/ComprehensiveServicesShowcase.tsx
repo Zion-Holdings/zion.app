@@ -1,31 +1,15 @@
 import React, { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { 
-  Phone, 
-  Mail, 
-  Globe, 
-  Clock, 
-  Users, 
-  CheckCircle, 
-  TrendingUp,
-  Shield,
-  Zap,
-  Star
-} from 'lucide-react';
-import { SERVICE_CATEGORIES, ComprehensiveService } from '@/data/comprehensiveServices';
+import { Button } from '@/components/ui/Button';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/Card';
+import { Badge } from '@/components/ui/Badge';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/Tabs';
+import { Phone, Mail, Globe, Clock, Users, CheckCircle, TrendingUp } from 'lucide-react';
+import { SERVICE_CATEGORIES } from '@/data/comprehensiveServices';
 
-interface ServiceCardProps {
-  service: ComprehensiveService;
-}
-
-const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
+const ServiceCard = ({ service }: { service: any }) => {
   const [isExpanded, setIsExpanded] = useState(false);
-
-  const getPricingDisplay = (service: ComprehensiveService) => {
+  
+  const getPricingDisplay = (service: any) => {
     switch (service.pricingModel) {
       case 'one-time':
         return `${service.currency}${service.price.toLocaleString()}`;
@@ -70,10 +54,8 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
           {service.description}
         </CardDescription>
       </CardHeader>
-      
       <CardContent className="pt-0">
         <div className="space-y-4">
-          {/* Pricing */}
           <div className="bg-zion-blue-light/10 rounded-lg p-3 border border-zion-blue-light/20">
             <div className="flex items-center justify-between">
               <span className="text-zion-slate-light text-sm">Starting at</span>
@@ -86,16 +68,15 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
             </div>
           </div>
 
-          {/* Key Features */}
           <div>
             <h4 className="text-white font-semibold text-sm mb-2 flex items-center gap-2">
               <CheckCircle className="h-4 w-4 text-zion-cyan" />
               Key Features
             </h4>
             <div className="grid grid-cols-1 gap-1">
-              {service.features.slice(0, 3).map((feature, index) => (
+              {service.features.slice(0, 3).map((feature: string, index: number) => (
                 <div key={index} className="text-zion-slate-light text-xs flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 bg-zion-cyan rounded-full mt-2 flex-shrink-0"></div>
+                  <div className="w-1.5 h-1.5 bg-zion-cyan rounded-full mt-2 flex-shrink-0" />
                   <span>{feature}</span>
                 </div>
               ))}
@@ -112,9 +93,9 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
             </div>
             {isExpanded && (
               <div className="mt-2 space-y-1">
-                {service.features.slice(3).map((feature, index) => (
+                {service.features.slice(3).map((feature: string, index: number) => (
                   <div key={index} className="text-zion-slate-light text-xs flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-zion-cyan rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-zion-cyan rounded-full mt-2 flex-shrink-0" />
                     <span>{feature}</span>
                   </div>
                 ))}
@@ -122,23 +103,21 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
             )}
           </div>
 
-          {/* Benefits */}
           <div>
             <h4 className="text-white font-semibold text-sm mb-2 flex items-center gap-2">
               <TrendingUp className="h-4 w-4 text-zion-cyan" />
               Benefits
             </h4>
             <div className="grid grid-cols-1 gap-1">
-              {service.benefits.slice(0, 3).map((benefit, index) => (
+              {service.benefits.slice(0, 3).map((benefit: string, index: number) => (
                 <div key={index} className="text-zion-slate-light text-xs flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 bg-zion-cyan rounded-full mt-2 flex-shrink-0"></div>
+                  <div className="w-1.5 h-1.5 bg-zion-cyan rounded-full mt-2 flex-shrink-0" />
                   <span>{benefit}</span>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Delivery & Support */}
           <div className="grid grid-cols-2 gap-3 text-xs">
             <div className="flex items-center gap-2 text-zion-slate-light">
               <Clock className="h-3 w-3 text-zion-cyan" />
@@ -150,16 +129,14 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
             </div>
           </div>
 
-          {/* Tags */}
           <div className="flex flex-wrap gap-1">
-            {service.tags.slice(0, 3).map((tag, index) => (
+            {service.tags.slice(0, 3).map((tag: string, index: number) => (
               <Badge key={index} variant="outline" className="text-xs border-zion-blue-light/30 text-zion-slate-light">
                 {tag}
               </Badge>
             ))}
           </div>
 
-          {/* Contact Information */}
           <div className="bg-zion-blue-light/5 rounded-lg p-3 border border-zion-blue-light/10">
             <h4 className="text-white font-semibold text-sm mb-2">Get Started</h4>
             <div className="space-y-2 text-xs">
@@ -189,8 +166,8 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
   );
 };
 
-export const ComprehensiveServicesShowcase: React.FC = () => {
-  const [selectedCategory, setSelectedCategory] = useState<string>(SERVICE_CATEGORIES[0].name);
+export const ComprehensiveServicesShowcase = () => {
+  const [selectedCategory, setSelectedCategory] = useState(SERVICE_CATEGORIES[0].name);
 
   return (
     <section className="py-20 bg-zion-blue">
@@ -200,12 +177,10 @@ export const ComprehensiveServicesShowcase: React.FC = () => {
             Comprehensive <span className="text-transparent bg-clip-text bg-gradient-to-r from-zion-cyan to-zion-purple">Tech Solutions</span>
           </h2>
           <p className="text-zion-slate-light text-lg max-w-3xl mx-auto">
-            Discover our extensive portfolio of professional technology services designed to accelerate your business growth, 
-            enhance security, and drive innovation across all aspects of your organization.
+            Discover our extensive portfolio of professional technology services designed to accelerate your business growth, enhance security, and drive innovation across all aspects of your organization.
           </p>
         </div>
 
-        {/* Category Tabs */}
         <Tabs value={selectedCategory} onValueChange={setSelectedCategory} className="w-full">
           <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 lg:grid-cols-8 bg-zion-blue-dark border border-zion-blue-light">
             {SERVICE_CATEGORIES.map((category) => (
@@ -220,7 +195,6 @@ export const ComprehensiveServicesShowcase: React.FC = () => {
             ))}
           </TabsList>
 
-          {/* Service Content */}
           {SERVICE_CATEGORIES.map((category) => (
             <TabsContent key={category.name} value={category.name} className="mt-8">
               <div className="text-center mb-8">
@@ -231,7 +205,6 @@ export const ComprehensiveServicesShowcase: React.FC = () => {
                   {category.description}
                 </p>
               </div>
-
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {category.services.map((service) => (
                   <ServiceCard key={service.id} service={service} />
@@ -241,15 +214,13 @@ export const ComprehensiveServicesShowcase: React.FC = () => {
           ))}
         </Tabs>
 
-        {/* Contact CTA */}
         <div className="mt-16 text-center">
           <div className="bg-zion-blue-dark border border-zion-blue-light rounded-lg p-8 max-w-4xl mx-auto">
             <h3 className="text-2xl font-bold text-white mb-4">
               Ready to Transform Your Business?
             </h3>
             <p className="text-zion-slate-light mb-6">
-              Our expert team is ready to help you implement the perfect technology solutions. 
-              Get in touch today for a personalized consultation and quote.
+              Our expert team is ready to help you implement the perfect technology solutions. Get in touch today for a personalized consultation and quote.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white">
