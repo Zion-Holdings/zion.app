@@ -2,6 +2,54 @@
 @tailwind components;
 @tailwind utilities;
 
+<<<<<<< HEAD
+@layer utilities {
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+:root {
+  --bg: #0a0a0a;
+  --fg: #ffffff;
+  --primary: #3b82f6;
+  --primary-dark: #1d4ed8;
+  --secondary: #8b5cf6;
+  --secondary-dark: #7c3aed;
+  --accent: #06b6d4;
+  --accent-dark: #0891b2;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --error: #ef4444;
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+=======
 @layer base {
   :root {
     /* Light theme colors - WCAG AA compliant */
@@ -135,6 +183,7 @@
     color: var(--fg);
     text-shadow: 0 0 1px var(--bg);
   }
+>>>>>>> origin/cursor/enhance-accessibility-and-site-performance-5d26
 }
 
 body {
@@ -143,6 +192,136 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: var(--bg);
   color: var(--fg);
+<<<<<<< HEAD
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--gray-900);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gray-600);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gray-500);
+}
+
+/* Typography enhancements */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+h3 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+/* Button styles */
+.btn-primary {
+  @apply px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900;
+}
+
+.btn-secondary {
+  @apply px-6 py-3 border border-white/20 text-white font-semibold rounded-lg hover:bg-white/10 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white/20 focus:ring-offset-2 focus:ring-offset-gray-900;
+}
+
+/* Card styles */
+.card {
+  @apply p-6 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all duration-300;
+}
+
+/* Gradient text */
+.gradient-text {
+  @apply bg-gradient-to-r from-blue-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent;
+}
+
+/* Animation classes */
+.fade-in {
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.slide-up {
+  animation: slideUp 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive utilities */
+.container {
+  @apply max-w-7xl mx-auto px-4;
+}
+
+/* Focus styles for accessibility */
+*:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Selection styles */
+::selection {
+  background: var(--primary);
+  color: white;
+}
+
+/* Loading states */
+.loading {
+  @apply animate-pulse bg-gray-700 rounded;
+}
+
+/* Status indicators */
+.status-success {
+  @apply text-green-400;
+}
+
+.status-warning {
+  @apply text-yellow-400;
+}
+
+.status-error {
+  @apply text-red-400;
+}
+
+.status-info {
+  @apply text-blue-400;
+=======
   line-height: 1.6;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
@@ -168,4 +347,5 @@ a:focus-visible {
   outline: 2px solid var(--focus-ring);
   outline-offset: 2px;
   text-decoration: underline;
+>>>>>>> origin/cursor/enhance-accessibility-and-site-performance-5d26
 }

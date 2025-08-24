@@ -1,0 +1,163 @@
+import { services } from "@/data/services";
+
+export default function HomePage() {
+  const featuredServices = services.slice(0, 6);
+
+  return (
+<<<<<<< HEAD
+    <div className="space-y-12">
+      {/* Hero Section */}
+      <div className="space-y-6">
+        <h1 className="text-4xl font-bold bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
+          Zion OS
+        </h1>
+        <p className="text-xl opacity-80 max-w-3xl">
+          Launch sovereign AI-powered digital economies with one click. Discover our comprehensive ecosystem of innovative services and solutions.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <a className="p-4 rounded border border-white/10 hover:border-white/20 transition-colors" href="/multiverse/launch">
+            <div className="font-semibold">Launch Wizard</div>
+            <div className="text-sm opacity-80">Spin up a new instance with marketplace, governance, identity, and more.</div>
+          </a>
+          <a className="p-4 rounded border border-white/10 hover:border-white/20 transition-colors" href="/admin/instances">
+            <div className="font-semibold">Admin Instances</div>
+            <div className="text-sm opacity-80">Manage deployed instances, API keys, and governance.</div>
+          </a>
+        </div>
+      </div>
+
+      {/* Featured Services */}
+      <div className="space-y-6">
+        <div className="flex items-center justify-between">
+          <h2 className="text-2xl font-semibold">Featured Services</h2>
+          <a href="/services" className="text-blue-400 hover:text-blue-300 transition-colors">
+            View All Services →
+          </a>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {featuredServices.map((service) => (
+            <div key={service.id} className="p-4 rounded border border-white/10 hover:border-white/20 transition-colors">
+              <div className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                    service.status === 'active' ? 'bg-green-500/20 text-green-400' :
+                    service.status === 'beta' ? 'bg-yellow-500/20 text-yellow-400' :
+                    'bg-blue-500/20 text-blue-400'
+                  }`}>
+                    {service.status}
+                  </span>
+                  <span className="text-xs opacity-60">{service.category}</span>
+                </div>
+                <h3 className="font-semibold">{service.name}</h3>
+                <p className="text-sm opacity-70 line-clamp-2">{service.description}</p>
+                <div className="flex items-center justify-between">
+                  <span className="text-sm font-medium text-blue-400">{service.pricing.starter}</span>
+                  <a 
+                    href={`/services#${service.id}`} 
+                    className="text-xs text-blue-400 hover:text-blue-300 transition-colors"
+                  >
+                    Learn More →
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Contact CTA */}
+      <div className="text-center py-8 border-t border-white/10">
+        <h2 className="text-xl font-semibold mb-3">Ready to Get Started?</h2>
+        <p className="opacity-80 mb-4">Contact our team to discuss your project requirements</p>
+        <div className="flex flex-col sm:flex-row gap-3 justify-center">
+          <a
+            href="mailto:kleber@ziontechgroup.com"
+            className="px-6 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors"
+          >
+            Email Us
+          </a>
+          <a
+            href="tel:+13024640950"
+            className="px-6 py-2 bg-zinc-700 hover:bg-zinc-600 rounded-lg transition-colors"
+          >
+            Call +1 302 464 0950
+          </a>
+        </div>
+      </div>
+=======
+    <div className="space-y-8">
+      <header className="text-center space-y-4">
+        <h1 className="text-4xl font-bold text-high-contrast">Zion OS</h1>
+        <p className="text-xl opacity-90 max-w-2xl mx-auto">
+          Launch sovereign AI-powered digital economies with one click.
+        </p>
+      </header>
+      
+      <section className="space-y-6" aria-labelledby="main-actions">
+        <h2 id="main-actions" className="sr-only">Main Actions</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <a 
+            className="card group block" 
+            href="/multiverse/launch"
+            aria-label="Launch a new Zion instance with marketplace, governance, identity, and more features"
+          >
+            <div className="space-y-3">
+              <h3 className="text-xl font-semibold group-hover:text-[var(--accent)] transition-colors">
+                Launch Wizard
+              </h3>
+              <p className="text-[var(--fg-secondary)]">
+                Spin up a new instance with marketplace, governance, identity, and more.
+              </p>
+              <div className="text-sm text-[var(--accent)] group-hover:text-[var(--accent-hover)] transition-colors">
+                Get Started →
+              </div>
+            </div>
+          </a>
+          
+          <a 
+            className="card group block" 
+            href="/admin/instances"
+            aria-label="Manage deployed instances, API keys, and governance settings"
+          >
+            <div className="space-y-3">
+              <h3 className="text-xl font-semibold group-hover:text-[var(--accent)] transition-colors">
+                Admin Instances
+              </h3>
+              <p className="text-[var(--fg-secondary)]">
+                Manage deployed instances, API keys, and governance.
+              </p>
+              <div className="text-sm text-[var(--accent)] group-hover:text-[var(--accent-hover)] transition-colors">
+                Manage →
+              </div>
+            </div>
+          </a>
+        </div>
+      </section>
+      
+      <section className="space-y-4" aria-labelledby="features">
+        <h2 id="features" className="text-2xl font-semibold">Key Features</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="card">
+            <h3 className="font-semibold mb-2">AI-Powered</h3>
+            <p className="text-sm text-[var(--fg-secondary)]">
+              Built-in AI moderation, ZionGPT core, and intelligent governance systems.
+            </p>
+          </div>
+          <div className="card">
+            <h3 className="font-semibold mb-2">Sovereign</h3>
+            <p className="text-sm text-[var(--fg-secondary)]">
+              Full control over your digital economy with customizable governance and token systems.
+            </p>
+          </div>
+          <div className="card">
+            <h3 className="font-semibold mb-2">Scalable</h3>
+            <p className="text-sm text-[var(--fg-secondary)]">
+              From single instances to multi-region deployments with enterprise-grade infrastructure.
+            </p>
+          </div>
+        </div>
+      </section>
+>>>>>>> origin/cursor/enhance-accessibility-and-site-performance-5d26
+    </div>
+  );
+}
