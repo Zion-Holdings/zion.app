@@ -20,6 +20,10 @@ import SearchPage from "@/pages/SearchPage";
 import ProjectRoom from "@/pages/ProjectRoom";
 import VideoCall from "@/pages/VideoCall";
 import Checkout from "@/pages/Checkout";
+import FAQ from "@/pages/FAQ";
+import HelpCenterPage from "@/pages/HelpCenterPage";
+import ContentGenerator from "@/pages/ContentGenerator";
+import PortfolioBuilder from "@/pages/PortfolioBuilder";
 
 const MarketplaceRoutes = () => {
   return (
@@ -69,6 +73,18 @@ const MarketplaceRoutes = () => {
       
       {/* Search Route */}
       <Route path="/search" element={<SearchPage />} />
+
+      {/* FAQ Route */}
+      <Route path="/faq" element={<FAQ />} />
+
+      {/* Help Center Route */}
+      <Route path="/help" element={<HelpCenterPage />} />
+
+      {/* Tool Routes */}
+      <Route path="/ai-matcher" element={<AIMatcher />} />
+      <Route path="/content-generator" element={<ContentGenerator />} />
+      <Route path="/portfolio-builder" element={<PortfolioBuilder />} />
+      <Route path="/service-description-generator" element={<ServiceDescriptionGenerator />} />
 
       {/* Checkout Route - accessible even in staging */}
       <Route

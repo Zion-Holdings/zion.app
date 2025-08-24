@@ -23,7 +23,9 @@
     "dashboard": "Panel",
     "messages": "Mensajes",
     "post_job": "Publicar Trabajo",
-    "analytics": "Analíticas"
+    "analytics": "Analíticas",
+    "faq": "Preguntas Frecuentes",
+    "help": "Centro de Ayuda"
   },
   "auth": {
     "login": "Iniciar Sesión",

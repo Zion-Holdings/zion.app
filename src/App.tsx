@@ -21,7 +21,6 @@ import {
   DeveloperRoutes
 } from './routes';
 const Home = React.lazy(() => import('./pages/Home'));
-const AIMatcherPage = React.lazy(() => import('./pages/AIMatcher'));
 const TalentDirectory = React.lazy(() => import('./pages/TalentDirectory'));
 const TalentsPage = React.lazy(() => import('./pages/TalentsPage'));
 const ServicesPage = React.lazy(() => import('./pages/ServicesPage'));
@@ -41,6 +40,13 @@ const OpenAppRedirect = React.lazy(() => import('./pages/OpenAppRedirect'));
 const ContactPage = React.lazy(() => import('./pages/Contact'));
 const ZionHireAI = React.lazy(() => import('./pages/ZionHireAI'));
 const RequestQuotePage = React.lazy(() => import('./pages/RequestQuote'));
+const FAQPage = React.lazy(() => import('./pages/FAQ'));
+const HelpCenterPage = React.lazy(() => import('./pages/HelpCenterPage'));
+const GreenITPage = React.lazy(() => import('./pages/GreenIT'));
+const ContentGeneratorPage = React.lazy(() => import('./pages/ContentGenerator'));
+const PortfolioBuilderPage = React.lazy(() => import('./pages/PortfolioBuilder'));
+const ServiceDescriptionGeneratorPage = React.lazy(() => import('./pages/ServiceDescriptionGenerator'));
+const AIMatcherPage = React.lazy(() => import('./pages/AIMatcher'));
 
 const baseRoutes = [
   { path: '/', element: <Home /> },
@@ -65,6 +71,13 @@ const baseRoutes = [
   { path: '/request-quote', element: <RequestQuotePage /> },
   { path: '/blog', element: <Blog /> },
   { path: '/blog/:slug', element: <BlogPost /> },
+  { path: '/faq', element: <FAQPage /> },
+  { path: '/help', element: <HelpCenterPage /> },
+  { path: '/green-it', element: <GreenITPage /> },
+  { path: '/content-generator', element: <ContentGeneratorPage /> },
+  { path: '/portfolio-builder', element: <PortfolioBuilderPage /> },
+  { path: '/service-description-generator', element: <ServiceDescriptionGeneratorPage /> },
+  { path: '/ai-matcher', element: <AIMatcherPage /> },
 ];
 
 const App = () => {
