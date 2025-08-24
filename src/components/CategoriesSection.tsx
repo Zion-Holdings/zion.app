@@ -102,35 +102,35 @@ const serviceCategories = [
   },
   {
     title: "Cybersecurity",
-    description: "Advanced security and compliance",
+    description: "Advanced security and protection services",
     icon: <Shield className="w-8 h-8" />,
     color: "from-red-500 to-pink-600",
     link: "/expanded-services?category=cybersecurity"
   },
   {
     title: "Cloud & DevOps",
-    description: "Cloud migration and automation",
+    description: "Scalable cloud infrastructure and operations",
     icon: <Cloud className="w-8 h-8" />,
     color: "from-blue-500 to-cyan-600",
     link: "/expanded-services?category=cloud-devops"
   },
   {
     title: "Data & Analytics",
-    description: "Business intelligence and governance",
+    description: "Data-driven insights and business intelligence",
     icon: <Database className="w-8 h-8" />,
     color: "from-green-500 to-emerald-600",
     link: "/expanded-services?category=data-analytics"
   },
   {
     title: "Digital Transformation",
-    description: "Strategy and modernization",
+    description: "Modernize and digitize your business",
     icon: <TrendingUp className="w-8 h-8" />,
-    color: "from-orange-500 to-yellow-600",
+    color: "from-orange-500 to-red-600",
     link: "/expanded-services?category=digital-transformation"
   },
   {
-    title: "IoT & Edge",
-    description: "Connected solutions and edge computing",
+    title: "IoT & Edge Computing",
+    description: "Connected devices and edge processing",
     icon: <Cpu className="w-8 h-8" />,
     color: "from-indigo-500 to-purple-600",
     link: "/expanded-services?category=iot-edge"
@@ -141,18 +141,6 @@ const serviceCategories = [
     icon: <LinkIcon className="w-8 h-8" />,
     color: "from-teal-500 to-blue-600",
     link: "/expanded-services?category=blockchain-web3"
-=======
-    title: "AI Services",
-    link: "/ai-services"
-  },
-  {
-    title: "Micro SAAS",
-    link: "/micro-saas"
-  },
-  {
-    title: "All Services",
-    link: "/comprehensive-services"
->>>>>>> cursor/expand-services-and-deploy-updates-ae24
   }
 ];
 
@@ -237,16 +225,15 @@ export function CategoriesSection({ showTitle = true }: CategoriesSectionProps) 
                   <ul className="space-y-2 mb-4">
                     {category.features.map((feature, idx) => (
                       <li key={idx} className="flex items-center gap-2 text-sm text-zion-cyan/70">
-                        <div className="w-3 h-3 bg-zion-cyan rounded-full" />
-                        <span>{feature}</span>
+                        <div className="w-1.5 h-1.5 bg-zion-cyan rounded-full"></div>
+                        {feature}
                       </li>
                     ))}
                   </ul>
                   
-                  {/* Arrow indicator */}
-                  <div className="flex items-center justify-between">
-                    <span className="text-zion-cyan text-sm font-medium">Learn More</span>
-                    <ArrowRight className="w-4 h-4 text-zion-cyan group-hover:translate-x-1 transition-transform duration-300" />
+                  <div className="flex items-center text-zion-cyan text-sm font-medium group-hover:text-zion-cyan-light transition-colors duration-300">
+                    Explore
+                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                   </div>
                 </div>
               </Link>
@@ -254,65 +241,62 @@ export function CategoriesSection({ showTitle = true }: CategoriesSectionProps) 
           ))}
         </motion.div>
 
-        {/* Service Categories */}
-        <div className="mb-12">
-          <h3 className="text-center text-2xl font-bold text-white mb-8">Professional Service Categories</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-            {serviceCategories.map((category) => (
-              <Link 
-                key={category.title}
-                to={category.link}
-                className="group block"
+        {/* Special Services Section */}
+        <motion.div 
+          className="text-center mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+        >
+          <h3 className="text-2xl font-bold text-white mb-6">Specialized Services</h3>
+          <div className="flex flex-wrap justify-center gap-3">
+            {specialServices.map((service, index) => (
+              <motion.div
+                key={service.title}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
               >
-                <div className="rounded-lg overflow-hidden h-full border border-zion-blue-light bg-zion-blue-dark p-4 transition-all duration-300 hover:border-zion-purple/50 hover:translate-y-[-2px]">
-                  <div className={`rounded-full w-12 h-12 bg-gradient-to-br ${category.color} flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300`}>
+                <Link
+                  to={service.link}
+                  className="inline-block px-4 py-2 bg-zion-blue-dark/50 border border-zion-blue-light/30 rounded-full text-zion-slate-light hover:bg-zion-purple/20 hover:border-zion-purple/50 hover:text-white transition-all duration-300 text-sm"
+                >
+                  {service.title}
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Service Categories Grid */}
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          {serviceCategories.map((category, index) => (
+            <motion.div key={category.title} variants={itemVariants}>
+              <Link to={category.link} className="group block">
+                <div className="rounded-xl overflow-hidden h-full border border-zion-blue-light/30 bg-gradient-to-br from-zion-blue-dark/60 to-zion-blue-dark/30 backdrop-blur-sm p-6 transition-all duration-500 hover:border-zion-purple/50 hover:translate-y-[-4px] hover:shadow-xl hover:shadow-zion-purple/20">
+                  <div className={`rounded-full w-12 h-12 bg-gradient-to-br ${category.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
                     <div className="text-white">
                       {category.icon}
                     </div>
                   </div>
-                  <h4 className="text-white text-sm font-bold mb-1">{category.title}</h4>
-                  <p className="text-zion-slate-light text-xs">{category.description}</p>
+                  <h4 className="text-white text-lg font-semibold mb-2 group-hover:text-zion-cyan transition-colors duration-300">
+                    {category.title}
+                  </h4>
+                  <p className="text-zion-slate-light text-sm leading-relaxed">
+                    {category.description}
+                  </p>
                 </div>
               </Link>
-            ))}
-          </div>
-        </div>
-        
-        <motion.div 
-          className="mt-12"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-        >
-          <h3 className="text-center text-xl font-bold text-white mb-6">Featured Services</h3>
-          <div className="flex flex-wrap justify-center gap-4">
-            {specialServices.map((service) => (
-              <Link 
-                key={service.title}
-                to={service.link}
-                className="group relative px-6 py-3 bg-gradient-to-r from-zion-blue-light to-zion-purple/30 hover:from-zion-purple/40 hover:to-zion-purple/60 border border-zion-purple/20 hover:border-zion-purple/50 rounded-full text-zion-cyan transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-zion-purple/25"
-              >
-                {service.title}
-              </Link>
-            ))}
-          </div>
-        </motion.div>
-        
-        <motion.div 
-          className="mt-12 flex justify-center"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-        >
-          <Link 
-            to="/expanded-services" 
-            className="group inline-flex items-center gap-2 text-zion-cyan border-b-2 border-zion-cyan hover:border-zion-cyan-dark transition-colors duration-300 text-lg font-medium"
-          >
-            View All Services
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-          </Link>
+            </motion.div>
+          ))}
         </motion.div>
       </div>
     </section>

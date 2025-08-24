@@ -13,6 +13,8 @@ interface SEOProps {
   structuredData?: object;
   noindex?: boolean;
   nofollow?: boolean;
+  image?: string;
+  type?: string;
 }
 
 export function SEO({
@@ -25,12 +27,15 @@ export function SEO({
   twitterCard = 'summary_large_image',
   structuredData,
   noindex = false,
-  nofollow = false
+  nofollow = false,
+  image,
+  type
 }: SEOProps) {
   const siteName = 'Zion Tech Group';
   const fullTitle = title.includes(siteName) ? title : `${title} | ${siteName}`;
   const fullCanonicalUrl = canonical || 'https://ziontechgroup.com';
-  const fullImageUrl = ogImage.startsWith('http') ? ogImage : `https://ziontechgroup.com${ogImage}`;
+  const fullImageUrl = (image || ogImage).startsWith('http') ? (image || ogImage) : `https://ziontechgroup.com${image || ogImage}`;
+  const fullOgType = type || ogType;
   
   const defaultStructuredData = {
     "@context": "https://schema.org",
@@ -69,7 +74,7 @@ export function SEO({
       {/* Open Graph Meta Tags */}
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
-      <meta property="og:type" content={ogType} />
+      <meta property="og:type" content={fullOgType} />
       <meta property="og:url" content={fullCanonicalUrl} />
       <meta property="og:image" content={fullImageUrl} />
       <meta property="og:image:width" content="1200" />

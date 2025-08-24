@@ -1,19 +1,19 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { cn } from '@/lib/utils';
 
 interface LoadingSpinnerProps {
-<<<<<<< HEAD
   size?: 'sm' | 'md' | 'lg';
-  className?: string;
   text?: string;
 }
 
-export function LoadingSpinner({ size = 'md', className, text }: LoadingSpinnerProps) {
+const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({ 
+  size = 'md', 
+  text = 'Loading Zion Tech Group...' 
+}) => {
   const sizeClasses = {
-    sm: 'w-6 h-6',
-    md: 'w-8 h-8',
-    lg: 'w-12 h-12'
+    sm: 'w-8 h-8',
+    md: 'w-16 h-16',
+    lg: 'w-24 h-24'
   };
 
   const textSizes = {
@@ -23,181 +23,97 @@ export function LoadingSpinner({ size = 'md', className, text }: LoadingSpinnerP
   };
 
   return (
-    <div className={cn('flex flex-col items-center justify-center', className)}>
-      <motion.div
-        className={cn(
-          'border-2 border-zion-blue-light border-t-zion-cyan rounded-full',
-          sizeClasses[size]
-        )}
-        animate={{ rotate: 360 }}
-        transition={{
-          duration: 1,
-          repeat: Infinity,
-          ease: 'linear'
-        }}
-      />
-      {text && (
-        <motion.p
-          className={cn('mt-3 text-zion-slate-light', textSizes[size])}
+    <div className="min-h-screen bg-black flex flex-col items-center justify-center">
+      {/* Animated background particles */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-cyan-400 rounded-full animate-pulse" />
+        <div className="absolute top-3/4 right-1/4 w-1 h-1 bg-blue-400 rounded-full animate-ping" />
+        <div className="absolute top-1/2 left-1/2 w-3 h-3 bg-purple-400 rounded-full animate-bounce" />
+        <div className="absolute top-1/3 right-1/3 w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+      </div>
+
+      {/* Main spinner */}
+      <div className="relative z-10 text-center">
+        {/* Logo/Title */}
+        <motion.h1 
+          className="text-4xl md:text-6xl font-bold mb-8 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          Zion Tech Group
+        </motion.h1>
+
+        {/* Spinner */}
+        <div className="flex justify-center mb-6">
+          <motion.div
+            className={`${sizeClasses[size]} relative`}
+            animate={{ rotate: 360 }}
+            transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+          >
+            {/* Outer ring */}
+            <div className={`${sizeClasses[size]} border-4 border-cyan-500/30 border-t-cyan-400 rounded-full`} />
+            
+            {/* Inner ring */}
+            <div className={`${sizeClasses[size === 'lg' ? 'md' : 'sm']} absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 border-2 border-blue-500/30 border-t-blue-400 rounded-full`} />
+            
+            {/* Center dot */}
+            <div className="w-2 h-2 bg-purple-400 rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 animate-pulse" />
+          </motion.div>
+        </div>
+
+        {/* Loading text */}
+        <motion.p 
+          className={`${textSizes[size]} text-gray-400 max-w-md mx-auto`}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-=======
-  size?: 'sm' | 'md' | 'lg' | 'xl';
-  color?: 'primary' | 'secondary' | 'white' | 'custom';
-  customColor?: string;
-  className?: string;
-  text?: string;
-  showText?: boolean;
-}
-
-export function LoadingSpinner({
-  size = 'md',
-  color = 'primary',
-  customColor,
-  className,
-  text = 'Loading...',
-  showText = false
-}: LoadingSpinnerProps) {
-  const sizeClasses = {
-    sm: 'w-4 h-4',
-    md: 'w-8 h-8',
-    lg: 'w-12 h-12',
-    xl: 'w-16 h-16'
-  };
-
-  const colorClasses = {
-    primary: 'border-zion-purple',
-    secondary: 'border-zion-cyan',
-    white: 'border-white',
-    custom: ''
-  };
-
-  const borderColor = customColor || colorClasses[color];
-
-  return (
-    <div className={cn('flex flex-col items-center justify-center gap-3', className)}>
-      <div className="relative">
-        <motion.div
-          className={cn(
-            'border-2 border-gray-200 rounded-full',
-            sizeClasses[size],
-            borderColor
-          )}
-          style={{
-            borderTopColor: customColor || 'transparent'
-          }}
-          animate={{
-            rotate: 360
-          }}
-          transition={{
-            duration: 1,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-        />
-        
-        {/* Pulsing effect */}
-        <motion.div
-          className={cn(
-            'absolute inset-0 border-2 border-transparent rounded-full',
-            sizeClasses[size]
-          )}
-          animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.3, 0.1, 0.3]
-          }}
-          transition={{
-            duration: 2,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
-      </div>
-      
-      {showText && (
-        <motion.p
-          className="text-sm text-muted-foreground text-center"
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
->>>>>>> cursor/analyze-improve-and-deploy-ziontechgroup-app-f1c5
-          transition={{ delay: 0.3 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
         >
           {text}
         </motion.p>
-      )}
+
+        {/* Progress bar */}
+        <motion.div 
+          className="w-64 h-1 bg-gray-800 rounded-full mt-6 mx-auto overflow-hidden"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+        >
+          <motion.div
+            className="h-full bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full"
+            initial={{ width: "0%" }}
+            animate={{ width: "100%" }}
+            transition={{ duration: 2, ease: "easeInOut" }}
+          />
+        </motion.div>
+      </div>
+
+      {/* Floating elements */}
+      <motion.div
+        className="absolute bottom-10 left-10 text-cyan-400/50 text-xs"
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1, delay: 1 }}
+      >
+        <div className="flex items-center space-x-2">
+          <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse" />
+          <span>AI-Powered</span>
+        </div>
+      </motion.div>
+
+      <motion.div
+        className="absolute bottom-10 right-10 text-purple-400/50 text-xs"
+        initial={{ opacity: 0, x: 20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1, delay: 1.2 }}
+      >
+        <div className="flex items-center space-x-2">
+          <span>Quantum Ready</span>
+          <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse" />
+        </div>
+      </motion.div>
     </div>
   );
-}
+};
 
-<<<<<<< HEAD
-export function LoadingDots({ className }: { className?: string }) {
-  return (
-    <div className={cn('flex space-x-2', className)}>
-      {[0, 1, 2].map((index) => (
-        <motion.div
-          key={index}
-          className="w-2 h-2 bg-zion-cyan rounded-full"
-          animate={{
-            scale: [1, 1.5, 1],
-            opacity: [0.5, 1, 0.5]
-          }}
-          transition={{
-            duration: 1.5,
-            repeat: Infinity,
-            delay: index * 0.2
-          }}
-        />
-      ))}
-=======
-// Skeleton loading component
-export function Skeleton({
-  className,
-  ...props
-}: React.HTMLAttributes<HTMLDivElement>) {
-  return (
-    <div
-      className={cn(
-        'animate-pulse rounded-md bg-muted',
-        className
-      )}
-      {...props}
-    />
-  );
-}
-
-// Page loading component
-export function PageLoader() {
-  return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <LoadingSpinner size="xl" showText text="Loading Zion..." />
->>>>>>> cursor/analyze-improve-and-deploy-ziontechgroup-app-f1c5
-    </div>
-  );
-}
-
-<<<<<<< HEAD
-export function LoadingPulse({ className }: { className?: string }) {
-  return (
-    <motion.div
-      className={cn('w-4 h-4 bg-zion-purple rounded-full', className)}
-      animate={{
-        scale: [1, 1.2, 1],
-        opacity: [0.5, 1, 0.5]
-      }}
-      transition={{
-        duration: 1.5,
-        repeat: Infinity,
-        ease: 'easeInOut'
-      }}
-    />
-=======
-// Inline loading component
-export function InlineLoader({ className }: { className?: string }) {
-  return (
-    <div className={cn('inline-flex items-center gap-2', className)}>
-      <LoadingSpinner size="sm" />
-      <span className="text-sm text-muted-foreground">Loading...</span>
-    </div>
->>>>>>> cursor/analyze-improve-and-deploy-ziontechgroup-app-f1c5
-  );
-}
+export default LoadingSpinner;
