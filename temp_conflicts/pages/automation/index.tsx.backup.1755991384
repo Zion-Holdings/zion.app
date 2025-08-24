@@ -17,8 +17,4 @@ const Index: NextPage = () => {
   );
 };
 
-<<<<<<< HEAD
 export default Index;
-=======
-export default Index;
->>>>>>> origin/cursor/deploy-zion-brain-ai-system-5783

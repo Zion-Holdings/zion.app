@@ -5,57 +5,9 @@ const nextConfig = {
   poweredByHeader: false,
   trailingSlash: false,
   reactStrictMode: true,
-  swcMinify: true,
-  
-  // Disable TypeScript and ESLint during build to avoid parsing errors
-  typescript: {
-    ignoreBuildErrors: true,
-  },
   eslint: {
     ignoreDuringBuilds: true,
   },
-
-  // Optimized for fast builds
-  productionBrowserSourceMaps: false, // Disable for faster builds
-  
-  // Environment configuration
-  env: {
-    NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000',
-  },
-
-  modularizeImports: {
-    'lucide-react': {
-      transform: 'lucide-react/dist/esm/icons/{{kebabCase member}}',
-      skipDefaultConversion: true,
-    },
-    '@radix-ui/react-icons': {
-      transform: '@radix-ui/react-icons/dist/{{member}}',
-    },
-  },
-
-  experimental: {
-    optimizePackageImports: [
-      'lucide-react', 
-      '@radix-ui/react-icons',
-      'recharts',
-      'react-window',
-      'fuse.js'
-    ],
-    // ESM configuration for problematic packages
-    esmExternals: 'loose', // Allow loose ESM handling
-    
-    // Enable CSS optimization for production
-    optimizeCss: process.env.NODE_ENV === 'production', 
-    // Memory and performance optimizations for 176+ pages
-    largePageDataBytes: 128 * 1000, // Reduced to 128KB for better performance
-    workerThreads: false, // Disable worker threads to reduce memory usage
-    cpus: Math.min(2, require('os').cpus().length), // Adaptive CPU limit
-    // Bundle analysis optimizations moved to root level
-    // Disable profiling for faster builds
-    swcTraceProfiling: false,
-    
-  },
-
   images: {
     domains: ["localhost"],
     unoptimized: true,
