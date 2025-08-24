@@ -1,4 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { z } from 'zod';
+
+// Simple toast function since the hook is not available
+const toast = ({ title, description, variant }: { title: string; description: string; variant?: string }) => {
+  console.log(`${title}: ${description}`);
+  // In a real app, this would show a toast notification
+};
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -115,7 +122,6 @@ export default function Contact() {
     }
   ];
 
->>>>>>> 1190166b600d0883f3d21629581161b11801bcbf
   return (
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-16">
@@ -125,35 +131,79 @@ export default function Contact() {
         </p>
         
         <div className="max-w-2xl">
-          <div className="mb-6">
-            <label className="block text-zion-slate mb-2">Name</label>
-            <input 
-              type="text" 
-              className="w-full p-3 border border-zion-slate rounded-lg bg-background text-zion-slate"
-              placeholder="Your name"
-            />
-          </div>
-          
-          <div className="mb-6">
-            <label className="block text-zion-slate mb-2">Email</label>
-            <input 
-              type="email" 
-              className="w-full p-3 border border-zion-slate rounded-lg bg-background text-zion-slate"
-              placeholder="your@email.com"
-            />
-          </div>
-          
-          <div className="mb-6">
-            <label className="block text-zion-slate mb-2">Message</label>
-            <textarea 
-              className="w-full p-3 border border-zion-slate rounded-lg bg-background text-zion-slate h-32"
-              placeholder="Your message..."
-            />
-          </div>
-          
-          <button className="bg-zion-blue hover:bg-zion-blue-dark text-white px-8 py-3 rounded-lg font-semibold transition-colors">
-            Send Message
-          </button>
+          <form onSubmit={handleSubmit}>
+            <div className="mb-6">
+              <label className="block text-zion-slate mb-2">Name</label>
+              <input 
+                type="text" 
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                className="w-full p-3 border border-zion-slate rounded-lg bg-background text-zion-slate"
+                placeholder="Your name"
+              />
+              {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
+            </div>
+            
+            <div className="mb-6">
+              <label className="block text-zion-slate mb-2">Email</label>
+              <input 
+                type="email" 
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                className="w-full p-3 border border-zion-slate rounded-lg bg-background text-zion-slate"
+                placeholder="your@email.com"
+              />
+              {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
+            </div>
+            
+            <div className="mb-6">
+              <label className="block text-zion-slate mb-2">Subject</label>
+              <input 
+                type="text" 
+                name="subject"
+                value={formData.subject}
+                onChange={handleChange}
+                placeholder="Subject"
+                className="w-full p-3 border border-zion-slate rounded-lg bg-background text-zion-slate"
+              />
+              {errors.subject && <p className="text-red-500 text-sm mt-1">{errors.subject}</p>}
+            </div>
+            
+            <div className="mb-6">
+              <label className="block text-zion-slate mb-2">Message</label>
+              <textarea 
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                className="w-full p-3 border border-zion-slate rounded-lg bg-background text-zion-slate h-32"
+                placeholder="Your message..."
+              />
+              {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message}</p>}
+            </div>
+            
+            <button 
+              type="submit"
+              disabled={isSubmitting}
+              className="bg-zion-blue hover:bg-zion-blue-dark text-white px-8 py-3 rounded-lg font-semibold transition-colors disabled:opacity-50"
+            >
+              {isSubmitting ? "Sending..." : "Send Message"}
+            </button>
+          </form>
+        </div>
+
+        <div className="mt-16 grid md:grid-cols-2 gap-8">
+          {offices.map((office, index) => (
+            <div key={index} className="bg-zion-slate/5 p-6 rounded-lg">
+              <h3 className="text-xl font-semibold text-zion-blue mb-4">{office.name}</h3>
+              <div className="space-y-2 text-zion-slate">
+                <p><strong>Address:</strong> {office.address}</p>
+                <p><strong>Phone:</strong> {office.phone}</p>
+                <p><strong>Email:</strong> {office.email}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
