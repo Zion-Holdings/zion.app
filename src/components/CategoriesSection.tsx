@@ -66,6 +66,41 @@ const specialServices = [
   {
     title: "Enterprise Solutions",
     link: "/enterprise-solutions"
+  },
+  {
+    title: "Cloud & DevOps",
+    description: "Cloud migration and automation",
+    icon: <Cloud className="w-8 h-8" />,
+    color: "from-blue-500 to-cyan-600",
+    link: "/expanded-services?category=cloud-devops"
+  },
+  {
+    title: "Data & Analytics",
+    description: "Business intelligence and governance",
+    icon: <Database className="w-8 h-8" />,
+    color: "from-green-500 to-emerald-600",
+    link: "/expanded-services?category=data-analytics"
+  },
+  {
+    title: "Digital Transformation",
+    description: "Strategy and modernization",
+    icon: <TrendingUp className="w-8 h-8" />,
+    color: "from-orange-500 to-yellow-600",
+    link: "/expanded-services?category=digital-transformation"
+  },
+  {
+    title: "IoT & Edge",
+    description: "Connected solutions and edge computing",
+    icon: <Cpu className="w-8 h-8" />,
+    color: "from-indigo-500 to-purple-600",
+    link: "/expanded-services?category=iot-edge"
+  },
+  {
+    title: "Blockchain & Web3",
+    description: "Decentralized solutions and smart contracts",
+    icon: <LinkIcon className="w-8 h-8" />,
+    color: "from-teal-500 to-blue-600",
+    link: "/expanded-services?category=blockchain-web3"
   }
 ];
 

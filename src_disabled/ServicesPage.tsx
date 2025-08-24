@@ -405,10 +405,72 @@ export default function ServicesPage() {
 
   return (
     <>
-      <div className="bg-zion-blue-dark py-4 px-4 md:px-8 mb-6 border-b border-zion-blue-light">
-        <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-          <h2 className="text-white text-lg font-medium">Featured Services</h2>
-          <div className="flex flex-wrap gap-2">
+      {/* Hero Section */}
+      <div className="bg-zion-blue-dark py-16 px-4 md:px-8 border-b border-zion-blue-light">
+        <div className="container mx-auto text-center">
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+            Professional <span className="text-transparent bg-clip-text bg-gradient-to-r from-zion-cyan to-zion-purple">Technology Services</span>
+          </h1>
+          <p className="text-zion-slate-light text-lg md:text-xl max-w-3xl mx-auto mb-8">
+            Transform your business with our comprehensive suite of AI, cybersecurity, cloud, and digital transformation services. 
+            Expert solutions tailored to drive innovation and growth.
+          </p>
+          
+          {/* Contact Information */}
+          <div className="bg-zion-blue-light/10 rounded-lg p-6 max-w-4xl mx-auto border border-zion-blue-light/20">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="flex items-center justify-center gap-3 text-zion-cyan">
+                <Phone className="h-5 w-5" />
+                <div className="text-left">
+                  <div className="text-white font-semibold">Call Us</div>
+                  <a href="tel:+13024640950" className="text-zion-cyan hover:text-zion-cyan-light">
+                    +1 302 464 0950
+                  </a>
+                </div>
+              </div>
+              <div className="flex items-center justify-center gap-3 text-zion-cyan">
+                <Mail className="h-5 w-5" />
+                <div className="text-left">
+                  <div className="text-white font-semibold">Email Us</div>
+                  <a href="mailto:kleber@ziontechgroup.com" className="text-zion-cyan hover:text-zion-cyan-light">
+                    kleber@ziontechgroup.com
+                  </a>
+                </div>
+              </div>
+              <div className="flex items-center justify-center gap-3 text-zion-cyan">
+                <MapPin className="h-5 w-5" />
+                <div className="text-left">
+                  <div className="text-white font-semibold">Visit Us</div>
+                  <a href="https://ziontechgroup.com" target="_blank" rel="noopener noreferrer" className="text-zion-cyan hover:text-zion-cyan-light">
+                    ziontechgroup.com
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div className="mt-4 text-zion-slate-light text-sm">
+              Address: 364 E Main St STE 1008, Middletown DE 19709
+            </div>
+          </div>
+
+            <Link to="/it-onsite-services">
+              <Button variant="outline" className="border-zion-purple text-zion-cyan hover:bg-zion-purple/10">
+                <Globe className="h-4 w-4 mr-2" />
+                Global IT Onsite Services
+              </Button>
+            </Link>
+            <Link to="/comprehensive-services">
+              <Button variant="outline" className="border-zion-purple text-zion-cyan hover:bg-zion-purple/10">
+                View All Services
+              </Button>
+            </Link>
+            <Link to="/request-quote">
+              <Button className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white">
+                Request a Quote
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </div>
             <Link to="/it-onsite-services">
               <Button variant="outline" className="border-zion-purple text-zion-cyan hover:bg-zion-purple/10">
                 <Globe className="h-4 w-4 mr-2" />
