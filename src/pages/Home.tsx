@@ -14,7 +14,7 @@ import { ITServiceRequestHero } from "@/components/home/ITServiceRequestHero";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background" id="main-content">
       <SEO 
         title="Zion - The Tech & AI Marketplace" 
         description="Discover top AI and tech talent, services, and equipment in one place."

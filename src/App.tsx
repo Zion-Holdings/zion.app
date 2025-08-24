@@ -7,6 +7,8 @@ import { useScrollToTop } from "./hooks";
 import { WhitelabelProvider } from "./context/WhitelabelContext";
 import { Toaster } from "./components/ui/toaster";
 import { Toaster as SonnerToaster } from "./components/ui/sonner";
+import { FloatingActionButton } from "./components/FloatingActionButton";
+import { AccessibilityMenu } from "./components/AccessibilityMenu";
 import {
   AuthRoutes,
   DashboardRoutes,
@@ -69,10 +71,14 @@ const baseRoutes = [
 
 const App = () => {
   // Ensure each navigation starts at the top of the page
-  useScrollToTop();
+  const { scrollToTop } = useScrollToTop();
   return (
     <WhitelabelProvider>
       <ThemeProvider defaultTheme="dark">
+        {/* Skip to content link for accessibility */}
+        <a href="#main-content" className="skip-link">
+          Skip to main content
+        </a>
         <Suspense fallback={<div className="p-4 text-center">Loading...</div>}>
           <Routes>
             {baseRoutes.map(({ path, element }) => (
@@ -93,6 +99,12 @@ const App = () => {
         </Suspense>
         <Toaster />
         <SonnerToaster position="top-right" />
+        <FloatingActionButton 
+          onContact={() => window.location.href = '/contact'}
+          onCall={() => window.location.href = 'tel:+1234567890'}
+          onEmail={() => window.location.href = 'mailto:contact@ziontechgroup.com'}
+        />
+        <AccessibilityMenu />
       </ThemeProvider>
     </WhitelabelProvider>
   );
