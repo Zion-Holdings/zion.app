@@ -492,7 +492,6 @@ class UltimateRedundancySystem {
     } catch (error) {
       this.log(`Failed to trigger GitHub Actions: ${error.message}`, "ERROR");
       return false;
-      return false;
     }
   }
 
@@ -649,7 +648,8 @@ class UltimateRedundancySystem {
         
       case "monitor":
         await this.startMonitoring();
-        new Promise(() => {}); // Keep process alive
+        // Keep process alive by not resolving the promise
+        return new Promise(() => {});
         break;
         
       case "stop-monitor":
