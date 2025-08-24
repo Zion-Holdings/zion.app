@@ -1,9 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-<<<<<<< HEAD
-=======
   darkMode: "class",
->>>>>>> origin/by9dba-codex/implement-light/dark-theme-with-persistence
   content: [
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
@@ -11,7 +8,27 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Modern color palette
+        'fade-in': 'fadeIn 0.6s ease-out forwards',
+        'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
+        'fade-in-down': 'fadeInDown 0.6s ease-out forwards',
+        'slide-in-left': 'slideInLeft 0.6s ease-out forwards',
+        'slide-in-right': 'slideInRight 0.6s ease-out forwards',
+        'scale-in': 'scaleIn 0.6s ease-out forwards',
+        'float': 'float 6s ease-in-out infinite',
+        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'bounce-slow': 'bounce 2s infinite',
+        'glow': 'glow 2s ease-in-out infinite alternate',
+        'shimmer': 'shimmer 2.5s linear infinite',
+        'matrix': 'matrix 20s linear infinite',
+        'neon-pulse': 'neonPulse 1.5s ease-in-out infinite',
+        'cyber-float': 'cyberFloat 8s ease-in-out infinite',
+        'hologram': 'hologram 3s ease-in-out infinite',
+        'energy-wave': 'energyWave 4s ease-in-out infinite',
+        'quantum-spin': 'quantumSpin 6s linear infinite',
+        'neural-network': 'neuralNetwork 10s linear infinite',
+        'plasma-flow': 'plasmaFlow 5s ease-in-out infinite',
+        'cyber-grid': 'cyberGrid 15s linear infinite',
+=======
         primary: {
           50: '#eff6ff',
           100: '#dbeafe',
@@ -210,9 +227,6 @@ module.exports = {
         'fade-in': 'fadeIn 0.5s ease-in-out',
         'slide-up': 'slideUp 0.5s ease-out',
         'scale-in': 'scaleIn 0.3s ease-out',
-        'glow': 'glow 2s ease-in-out infinite alternate',
-        'spin-slow': 'spin 8s linear infinite',
-=======
         'shimmer': 'shimmer 2s linear infinite',
         'neon-pulse': 'neonPulse 1.5s ease-in-out infinite alternate',
         'matrix-rain': 'matrixRain 20s linear infinite',
@@ -260,6 +274,25 @@ module.exports = {
         'quantum-learning-accelerator': 'quantumLearningAccelerator 8.5s ease-in-out infinite',
         'intelligent-data-governance': 'intelligentDataGovernance 6.5s ease-in-out infinite',
         'ai-meeting-transcriber': 'aiMeetingTranscriber 4.5s ease-in-out infinite'
+=======
+        'scale-out': 'scaleOut 0.3s ease-out',
+        'bounce-in': 'bounceIn 0.6s ease-out',
+        'bounce-out': 'bounceOut 0.6s ease-out',
+        'rotate-in': 'rotateIn 0.6s ease-out',
+        'rotate-out': 'rotateOut 0.6s ease-out',
+        'flip-in-x': 'flipInX 0.6s ease-out',
+        'flip-in-y': 'flipInY 0.6s ease-out',
+        'zoom-in': 'zoomIn 0.3s ease-out',
+        'zoom-out': 'zoomOut 0.3s ease-out',
+        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'spin-slow': 'spin 3s linear infinite',
+        'bounce-slow': 'bounce 2s infinite',
+        'grid-flow': 'gridFlow 20s linear infinite',
+        'particle': 'particle 7s linear infinite',
+        'scan-line': 'scanLine 3s ease-in-out infinite',
+        'gradient-x': 'gradientX 3s ease-in-out infinite',
+        'bounce-x': 'bounceX 2s ease-in-out infinite',
+        'count-up': 'countUp 2s ease-out forwards',
       },
       keyframes: {
         fadeIn: {
@@ -287,81 +320,85 @@ module.exports = {
           '100%': { transform: 'translateX(0)' },
         },
         scaleIn: {
+          '0%': { transform: 'scale(0)' },
+          '100%': { transform: 'scale(1)' },
+        },
+        scaleOut: {
+          '0%': { transform: 'scale(1)' },
+          '100%': { transform: 'scale(0)' },
+        },
+        bounceIn: {
+          '0%': { transform: 'scale(0.3)', opacity: '0' },
+          '50%': { transform: 'scale(1.05)' },
+          '70%': { transform: 'scale(0.9)' },
+          '100%': { transform: 'scale(1)', opacity: '1' },
+        },
+        bounceOut: {
+          '0%': { transform: 'scale(1)', opacity: '1' },
+          '20%': { transform: 'scale(0.9)' },
+          '50%': { transform: 'scale(1.05)' },
+          '100%': { transform: 'scale(0.3)', opacity: '0' },
+        },
+        rotateIn: {
+          '0%': { transform: 'rotate(-200deg)', opacity: '0' },
+          '100%': { transform: 'rotate(0)', opacity: '1' },
+        },
+        rotateOut: {
+          '0%': { transform: 'rotate(0)', opacity: '1' },
+          '100%': { transform: 'rotate(200deg)', opacity: '0' },
+        },
+        flipInX: {
+          '0%': { transform: 'perspective(400px) rotateX(90deg)', opacity: '0' },
+          '40%': { transform: 'perspective(400px) rotateX(-20deg)' },
+          '60%': { transform: 'perspective(400px) rotateX(10deg)' },
+          '80%': { transform: 'perspective(400px) rotateX(-5deg)' },
+          '100%': { transform: 'perspective(400px) rotateX(0deg)', opacity: '1' },
+        },
+        flipInY: {
+          '0%': { transform: 'perspective(400px) rotateY(90deg)', opacity: '0' },
+          '40%': { transform: 'perspective(400px) rotateY(-20deg)' },
+          '60%': { transform: 'perspective(400px) rotateY(10deg)' },
+          '80%': { transform: 'perspective(400px) rotateY(-5deg)' },
+          '100%': { transform: 'perspective(400px) rotateY(0deg)', opacity: '1' },
+        },
+        zoomIn: {
+          '0%': { transform: 'scale(0.3)', opacity: '0' },
+          '50%': { opacity: '1' },
+          '100%': { transform: 'scale(1)', opacity: '1' },
+        },
+        zoomOut: {
+          '0%': { transform: 'scale(1)', opacity: '1' },
+          '50%': { opacity: '0' },
+          '100%': { transform: 'scale(0.3)', opacity: '0' },
+        },
+        float: {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-20px)' },
+        },
+        gridFlow: {
+          '0%': { transform: 'translateX(0) translateY(0)' },
+          '100%': { transform: 'translateX(60px) translateY(60px)' },
+        },
+        particle: {
+          '0%': { transform: 'translateY(0) scale(1)', opacity: '1' },
+          '50%': { transform: 'translateY(-100px) scale(1.5)', opacity: '0.7' },
+          '100%': { transform: 'translateY(-200px) scale(0.5)', opacity: '0' },
+        },
+        scanLine: {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(100%)' },
+        },
+        gradientX: {
+          '0%, 100%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+        },
+        bounceX: {
+          '0%, 100%': { transform: 'translateX(0)' },
+          '50%': { transform: 'translateX(25%)' },
+        },
+        countUp: {
           '0%': { transform: 'scale(0.8)', opacity: '0' },
-          '100%': { transform: 'scale(1)', opacity: '1' }
-        },
-        glow: {
-          '0%': { boxShadow: '0 0 5px #06b6d4, 0 0 10px #06b6d4, 0 0 15px #06b6d4' },
-          '100%': { boxShadow: '0 0 10px #06b6d4, 0 0 20px #06b6d4, 0 0 30px #06b6d4' }
-        },
-        shimmer: {
-          '0%': { backgroundPosition: '-200% 0' },
-          '100%': { backgroundPosition: '200% 0' }
-        },
-        neonPulse: {
-          '0%': { textShadow: '0 0 5px #06b6d4, 0 0 10px #06b6d4, 0 0 15px #06b6d4' },
-          '100%': { textShadow: '0 0 10px #06b6d4, 0 0 20px #06b6d4, 0 0 30px #06b6d4' }
-        },
-        matrixRain: {
-          '0%': { transform: 'translateY(-100%)' },
-          '100%': { transform: 'translateY(100vh)' }
-        },
-        quantumShift: {
-          '0%, 100%': { transform: 'translateX(0px) rotate(0deg)' },
-          '25%': { transform: 'translateX(10px) rotate(90deg)' },
-          '50%': { transform: 'translateX(0px) rotate(180deg)' },
-          '75%': { transform: 'translateX(-10px) rotate(270deg)' }
-        },
-        spaceDrift: {
-          '0%, 100%': { transform: 'translateX(0px) translateY(0px)' },
-          '25%': { transform: 'translateX(20px) translateY(-10px)' },
-          '50%': { transform: 'translateX(0px) translateY(-20px)' },
-          '75%': { transform: 'translateX(-20px) translateY(-10px)' }
-        },
-        aiBreathe: {
-          '0%, 100%': { transform: 'scale(1)' },
-          '50%': { transform: 'scale(1.05)' }
-        },
-        hologramFlicker: {
-          '0%': { opacity: '1' },
-          '100%': { opacity: '0.7' }
-        },
-        cyberGlitch: {
-          '0%': { transform: 'translate(0)' },
-          '20%': { transform: 'translate(-2px, 2px)' },
-          '40%': { transform: 'translate(-2px, -2px)' },
-          '60%': { transform: 'translate(2px, 2px)' },
-          '80%': { transform: 'translate(2px, -2px)' },
-          '100%': { transform: 'translate(0)' }
-        },
-        neuralPulse: {
-          '0%, 100%': { transform: 'scale(1)', opacity: '1' },
-          '50%': { transform: 'scale(1.1)', opacity: '0.8' }
-        },
-        quantumEntangle: {
-          '0%, 100%': { transform: 'rotate(0deg) scale(1)' },
-          '25%': { transform: 'rotate(90deg) scale(1.1)' },
-          '50%': { transform: 'rotate(180deg) scale(1)' },
-          '75%': { transform: 'rotate(270deg) scale(0.9)' }
-        },
-        spaceTimeWarp: {
-          '0%': { transform: 'perspective(1000px) rotateY(0deg)' },
-          '100%': { transform: 'perspective(1000px) rotateY(360deg)' }
-        },
-        aiConsciousness: {
-          '0%, 100%': { transform: 'scale(1) rotate(0deg)' },
-          '25%': { transform: 'scale(1.05) rotate(5deg)' },
-          '50%': { transform: 'scale(1.1) rotate(0deg)' },
-          '75%': { transform: 'scale(1.05) rotate(-5deg)' }
-        },
-        biotechEvolution: {
-          '0%, 100%': { transform: 'scale(1) translateY(0px)' },
-          '33%': { transform: 'scale(1.1) translateY(-5px)' },
-          '66%': { transform: 'scale(1.05) translateY(5px)' }
-        },
-        metaverseFloat: {
-          '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
-          '50%': { transform: 'translateY(-15px) rotate(180deg)' }
+          '100%': { transform: 'scale(1)', opacity: '1' },
         },
         quantumCompute: {
           '0%': { transform: 'rotate(0deg) scale(1)' },

@@ -116,448 +116,174 @@ module.exports = require("next/dist/shared/lib/no-fallback-error.external.js");
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   "default": () => (/* binding */ EnergyUtilitiesSolutionsPage)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(882015);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_layout_Layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(775927);
-/* harmony import */ var _components_layout_Layout__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_components_layout_Layout__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(682059);
-/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(framer_motion__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(7887);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(608732);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(849788);
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _components_ui_UltraAdvancedFuturisticBackground__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(875847);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(608732);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
 
 
 
 
-
-var EnergyUtilitiesSolutions = () => {
-  var features = [{
-    icon: lucide_react__WEBPACK_IMPORTED_MODULE_3__.Zap,
-    title: "Smart Grid Management",
-    description: "AI-powered grid optimization and real-time energy distribution",
-    color: "from-yellow-500 to-orange-500"
-  }, {
-    icon: lucide_react__WEBPACK_IMPORTED_MODULE_3__.Battery,
-    title: "Energy Storage Solutions",
-    description: "Advanced battery technology and grid-scale storage systems",
-    color: "from-green-500 to-emerald-500"
-  }, {
-    icon: lucide_react__WEBPACK_IMPORTED_MODULE_3__.Wind,
-    title: "Renewable Energy Integration",
-    description: "Seamless integration of wind, solar, and hydro power sources",
-    color: "from-blue-500 to-cyan-500"
-  }, {
-    icon: lucide_react__WEBPACK_IMPORTED_MODULE_3__.Sun,
-    title: "Solar Power Optimization",
-    description: "AI-driven solar panel efficiency and energy harvesting",
-    color: "from-orange-500 to-red-500"
-  }, {
-    icon: lucide_react__WEBPACK_IMPORTED_MODULE_3__.Droplets,
-    title: "Water Management Systems",
-    description: "Intelligent water distribution and conservation platforms",
-    color: "from-cyan-500 to-blue-500"
-  }, {
-    icon: lucide_react__WEBPACK_IMPORTED_MODULE_3__.Leaf,
-    title: "Sustainability Analytics",
-    description: "Comprehensive environmental impact monitoring and reporting",
-    color: "from-emerald-500 to-teal-500"
-  }];
-  var solutions = [{
-    category: "Energy Management",
-    items: ["Real-time Energy Monitoring", "Predictive Load Balancing", "Demand Response Automation", "Energy Efficiency Optimization", "Peak Demand Management", "Grid Stability Control"]
-  }, {
-    category: "Renewable Integration",
-    items: ["Solar Farm Management", "Wind Power Optimization", "Hydroelectric Control Systems", "Biomass Energy Processing", "Geothermal Integration", "Energy Storage Management"]
-  }, {
-    category: "Utility Operations",
-    items: ["Smart Meter Infrastructure", "Billing & Customer Management", "Outage Detection & Response", "Asset Performance Monitoring", "Maintenance Scheduling", "Regulatory Compliance"]
-  }];
-  var technologies = ["AI Consciousness Integration", "Quantum Computing Optimization", "IoT Sensor Networks", "Machine Learning Analytics", "Blockchain Energy Trading", "Predictive Maintenance", "Cloud-Native Architecture", "Edge Computing Solutions"];
-  var benefits = [{
-    icon: lucide_react__WEBPACK_IMPORTED_MODULE_3__.TrendingUp,
-    title: "30% Energy Savings",
-    description: "Reduce operational costs with intelligent energy management"
-  }, {
-    icon: lucide_react__WEBPACK_IMPORTED_MODULE_3__.Shield,
-    title: "Enhanced Reliability",
-    description: "Improve grid stability and reduce outage frequency"
-  }, {
-    icon: lucide_react__WEBPACK_IMPORTED_MODULE_3__.Globe,
-    title: "Environmental Impact",
-    description: "Reduce carbon footprint with renewable energy integration"
-  }, {
-    icon: lucide_react__WEBPACK_IMPORTED_MODULE_3__.Users,
-    title: "Customer Satisfaction",
-    description: "Provide better service with predictive maintenance"
-  }];
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)((_components_layout_Layout__WEBPACK_IMPORTED_MODULE_1___default()), {
-    title: "Energy & Utilities Solutions - Zion Tech Group",
-    description: "Revolutionary AI-powered energy and utilities solutions for smart grid management, renewable integration, and sustainable operations. Transform your energy infrastructure with cutting-edge technology.",
-    keywords: "energy technology, utilities solutions, smart grid, renewable energy, energy management, sustainable technology",
-    canonicalUrl: "https://ziontechgroup.com/energy-utilities-solutions",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("section", {
-      className: "relative py-20 lg:py-32 overflow-hidden",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-        className: "absolute inset-0 bg-gradient-to-br from-yellow-900/20 via-orange-900/20 to-green-900/20"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-        className: "relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.div, {
-          initial: {
-            opacity: 0,
-            y: 20
-          },
-          animate: {
-            opacity: 1,
-            y: 0
-          },
-          transition: {
-            duration: 0.8
-          },
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-            className: "inline-flex items-center space-x-2 px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white/80 text-sm mb-6",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_3__.Zap, {
-              className: "w-4 h-4"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-              children: "Sustainable Energy Technology"
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("h1", {
-            className: "text-4xl lg:text-6xl font-bold text-white mb-6",
-            children: ["Powering the Future of", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-              className: "block bg-gradient-to-r from-yellow-400 via-orange-400 to-green-400 bg-clip-text text-transparent",
-              children: "Energy & Utilities"
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-            className: "text-xl lg:text-2xl text-white/80 max-w-4xl mx-auto mb-8 leading-relaxed",
-            children: "Transform your energy infrastructure with AI consciousness, quantum computing, and autonomous systems. Build a sustainable future with intelligent energy management."
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-            className: "flex flex-col sm:flex-row gap-4 justify-center",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.button, {
-              whileHover: {
-                scale: 1.05
-              },
-              whileTap: {
-                scale: 0.95
-              },
-              className: "px-8 py-4 bg-gradient-to-r from-yellow-500 to-orange-500 text-white font-semibold rounded-lg hover:from-yellow-600 hover:to-orange-600 transition-all duration-300",
-              children: "Get Started Today"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.button, {
-              whileHover: {
-                scale: 1.05
-              },
-              whileTap: {
-                scale: 0.95
-              },
-              className: "px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold rounded-lg hover:bg-white/20 transition-all duration-300",
-              children: "Watch Demo"
-            })]
-          })]
-        })
+var contactInfo = {
+  mobile: '+1 302 464 0950',
+  email: 'kleber@ziontechgroup.com',
+  address: '364 E Main St STE 1008 Middletown DE 19709',
+  website: 'https://ziontechgroup.com'
+};
+var ext = url => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
+  className: "text-cyan-400 underline",
+  href: url,
+  target: "_blank",
+  rel: "noopener noreferrer",
+  children: url.replace('https://', '')
+});
+function EnergyUtilitiesSolutionsPage() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_components_ui_UltraAdvancedFuturisticBackground__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)((next_head__WEBPACK_IMPORTED_MODULE_1___default()), {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("title", {
+        children: "Energy & Utilities Solutions | Zion Tech Group"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("meta", {
+        name: "description",
+        content: "Grid intelligence, demand forecasting, predictive maintenance and carbon reporting with AI and IoT for energy and utilities."
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("link", {
+        rel: "canonical",
+        href: "https://ziontechgroup.com/energy-utilities-solutions"
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("section", {
-      className: "py-20 bg-black/50",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.div, {
-          initial: {
-            opacity: 0,
-            y: 20
-          },
-          whileInView: {
-            opacity: 1,
-            y: 0
-          },
-          transition: {
-            duration: 0.8
-          },
-          viewport: {
-            once: true
-          },
-          className: "text-center mb-16",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
-            className: "text-3xl lg:text-4xl font-bold text-white mb-4",
-            children: "Cutting-Edge Energy Solutions"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-            className: "text-xl text-white/70 max-w-3xl mx-auto",
-            children: "Experience the future of energy technology with our revolutionary AI-powered platforms"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      className: "min-h-screen pt-24 pb-20 px-4 sm:px-6 lg:px-8",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        className: "max-w-6xl mx-auto space-y-10",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("header", {
+          className: "text-center space-y-4",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h1", {
+            className: "text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent",
+            children: "Energy & Utilities Solutions"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+            className: "text-slate-300 max-w-3xl mx-auto",
+            children: "AI and IoT-driven solutions for grid optimization, demand forecasting, predictive maintenance, emissions reporting, and customer experience. Built for utilities, energy retailers, and renewable operators."
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-          className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8",
-          children: features.map((feature, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.div, {
-            initial: {
-              opacity: 0,
-              y: 20
-            },
-            whileInView: {
-              opacity: 1,
-              y: 0
-            },
-            transition: {
-              duration: 0.6,
-              delay: index * 0.1
-            },
-            viewport: {
-              once: true
-            },
-            className: "group p-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl hover:bg-white/10 transition-all duration-300 hover:border-white/20",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-              className: "w-16 h-16 rounded-2xl bg-gradient-to-r ".concat(feature.color, " flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300"),
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(feature.icon, {
-                className: "w-8 h-8 text-white"
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
-              className: "text-xl font-semibold text-white mb-3",
-              children: feature.title
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-              className: "text-white/70 leading-relaxed",
-              children: feature.description
-            })]
-          }, feature.title))
-        })]
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("section", {
-      className: "py-20",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.div, {
-          initial: {
-            opacity: 0,
-            y: 20
-          },
-          whileInView: {
-            opacity: 1,
-            y: 0
-          },
-          transition: {
-            duration: 0.8
-          },
-          viewport: {
-            once: true
-          },
-          className: "text-center mb-16",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
-            className: "text-3xl lg:text-4xl font-bold text-white mb-4",
-            children: "Comprehensive Energy Solutions"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-            className: "text-xl text-white/70 max-w-3xl mx-auto",
-            children: "From generation to distribution, we provide end-to-end solutions for modern energy companies"
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-          className: "grid grid-cols-1 lg:grid-cols-3 gap-8",
-          children: solutions.map((solution, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.div, {
-            initial: {
-              opacity: 0,
-              y: 20
-            },
-            whileInView: {
-              opacity: 1,
-              y: 0
-            },
-            transition: {
-              duration: 0.6,
-              delay: index * 0.2
-            },
-            viewport: {
-              once: true
-            },
-            className: "bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("h3", {
-              className: "text-2xl font-bold text-white mb-6 flex items-center",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_3__.Gauge, {
-                className: "w-6 h-6 text-green-400 mr-3"
-              }), solution.category]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("ul", {
-              className: "space-y-4",
-              children: solution.items.map((item, itemIndex) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("li", {
-                className: "flex items-start space-x-3",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_3__.CheckCircle, {
-                  className: "w-5 h-5 text-green-400 mt-0.5 flex-shrink-0"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-                  className: "text-white/80",
-                  children: item
-                })]
-              }, itemIndex))
-            })]
-          }, solution.category))
-        })]
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("section", {
-      className: "py-20 bg-black/50",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.div, {
-          initial: {
-            opacity: 0,
-            y: 20
-          },
-          whileInView: {
-            opacity: 1,
-            y: 0
-          },
-          transition: {
-            duration: 0.8
-          },
-          viewport: {
-            once: true
-          },
-          className: "text-center mb-16",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
-            className: "text-3xl lg:text-4xl font-bold text-white mb-4",
-            children: "Powered by Revolutionary Technology"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-            className: "text-xl text-white/70 max-w-3xl mx-auto",
-            children: "Built on the latest advancements in AI consciousness, quantum computing, and autonomous systems"
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-          className: "grid grid-cols-2 md:grid-cols-4 gap-6",
-          children: technologies.map((tech, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.div, {
-            initial: {
-              opacity: 0,
-              scale: 0.8
-            },
-            whileInView: {
-              opacity: 1,
-              scale: 1
-            },
-            transition: {
-              duration: 0.5,
-              delay: index * 0.1
-            },
-            viewport: {
-              once: true
-            },
-            className: "text-center p-4 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:bg-white/10 transition-all duration-300",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-              className: "w-12 h-12 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-xl flex items-center justify-center mx-auto mb-3",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_3__.Zap, {
-                className: "w-6 h-6 text-white"
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-              className: "text-white/80 text-sm font-medium",
-              children: tech
-            })]
-          }, tech))
-        })]
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("section", {
-      className: "py-20",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.div, {
-          initial: {
-            opacity: 0,
-            y: 20
-          },
-          whileInView: {
-            opacity: 1,
-            y: 0
-          },
-          transition: {
-            duration: 0.8
-          },
-          viewport: {
-            once: true
-          },
-          className: "text-center mb-16",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
-            className: "text-3xl lg:text-4xl font-bold text-white mb-4",
-            children: "Why Choose Zion Tech Group?"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-            className: "text-xl text-white/70 max-w-3xl mx-auto",
-            children: "Experience the competitive advantages of our revolutionary energy technology solutions"
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-          className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8",
-          children: benefits.map((benefit, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.div, {
-            initial: {
-              opacity: 0,
-              y: 20
-            },
-            whileInView: {
-              opacity: 1,
-              y: 0
-            },
-            transition: {
-              duration: 0.6,
-              delay: index * 0.1
-            },
-            viewport: {
-              once: true
-            },
-            className: "text-center",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-              className: "w-16 h-16 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-6",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(benefit.icon, {
-                className: "w-8 h-8 text-white"
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
-              className: "text-xl font-semibold text-white mb-3",
-              children: benefit.title
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-              className: "text-white/70",
-              children: benefit.description
-            })]
-          }, benefit.title))
-        })]
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("section", {
-      className: "py-20 bg-gradient-to-r from-yellow-900/20 via-orange-900/20 to-green-900/20",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-        className: "max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.div, {
-          initial: {
-            opacity: 0,
-            y: 20
-          },
-          whileInView: {
-            opacity: 1,
-            y: 0
-          },
-          transition: {
-            duration: 0.8
-          },
-          viewport: {
-            once: true
-          },
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
-            className: "text-3xl lg:text-4xl font-bold text-white mb-6",
-            children: "Ready to Transform Your Energy Infrastructure?"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-            className: "text-xl text-white/70 mb-8",
-            children: "Join the future of sustainable energy with our revolutionary AI-powered solutions"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-            className: "flex flex-col sm:flex-row gap-4 justify-center",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.button, {
-              whileHover: {
-                scale: 1.05
-              },
-              whileTap: {
-                scale: 0.95
-              },
-              className: "px-8 py-4 bg-gradient-to-r from-yellow-500 to-orange-500 text-white font-semibold rounded-lg hover:from-yellow-600 hover:to-orange-600 transition-all duration-300 flex items-center justify-center space-x-2",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-                children: "Get Started Today"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_3__.ArrowRight, {
-                className: "w-5 h-5"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("section", {
+          className: "grid grid-cols-1 md:grid-cols-2 gap-6",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+            className: "bg-black/40 rounded-2xl border border-cyan-500/30 p-6",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h2", {
+              className: "text-2xl font-semibold mb-2",
+              children: "Capabilities"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("ul", {
+              className: "list-disc list-inside text-slate-300 space-y-1",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
+                children: "Demand forecasting (15m\u2013hourly granularity) with weather & event features"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
+                children: "Predictive maintenance for transformers, turbines and line assets"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
+                children: "Real-time anomaly detection for generation, storage and consumption"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
+                children: "AMI/SCADA data ingestion, quality checks and digital twin modeling"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
+                children: "Carbon accounting and emissions reporting automation"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
+                children: "Self-service analytics dashboards and alerting"
               })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.button, {
-              whileHover: {
-                scale: 1.05
-              },
-              whileTap: {
-                scale: 0.95
-              },
-              className: "px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold rounded-lg hover:bg-white/20 transition-all duration-300",
-              children: "Schedule a Demo"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+            className: "bg-black/40 rounded-2xl border border-purple-500/30 p-6",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h2", {
+              className: "text-2xl font-semibold mb-2",
+              children: "Benefits"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("ul", {
+              className: "list-disc list-inside text-slate-300 space-y-1",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
+                children: "Reduce technical losses and outages with early warnings"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
+                children: "Improve forecast accuracy to optimize procurement and dispatch"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
+                children: "Lower O&M costs through condition-based maintenance"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
+                children: "Automate ESG and regulatory reporting with audit trails"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
+                children: "Enhance customer CX with proactive notifications"
+              })]
             })]
           })]
-        })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("section", {
+          className: "grid grid-cols-1 md:grid-cols-3 gap-6",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+            className: "bg-black/40 rounded-2xl border border-emerald-500/30 p-6",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h3", {
+              className: "text-xl font-semibold mb-2",
+              children: "Typical Packages"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("ul", {
+              className: "text-slate-300 space-y-1",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
+                children: "Starter (pilot region): $8k\u2013$15k/month"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
+                children: "Pro (multi-region): $20k\u2013$45k/month"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
+                children: "Enterprise (fleet-wide): custom"
+              })]
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+            className: "bg-black/40 rounded-2xl border border-blue-500/30 p-6",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h3", {
+              className: "text-xl font-semibold mb-2",
+              children: "References"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("ul", {
+              className: "list-disc list-inside text-slate-300 space-y-1",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("li", {
+                children: ["AMI/MDM: ", ext('https://www.itron.com/na/solutions/what-we-enable/advanced-metering-infrastructure')]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("li", {
+                children: ["SCADA: ", ext('https://www.gevernova.com/grid-solutions/products/automation-and-protection/scada-systems')]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("li", {
+                children: ["Forecasting: ", ext('https://aws.amazon.com/forecast/pricing/')]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("li", {
+                children: ["ESG reporting: ", ext('https://www.workiva.com/en/pricing')]
+              })]
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+            className: "bg-black/40 rounded-2xl border border-amber-500/30 p-6",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h3", {
+              className: "text-xl font-semibold mb-2",
+              children: "Contact"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("ul", {
+              className: "text-slate-300 space-y-1",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("li", {
+                children: ["Mobile: ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
+                  className: "text-cyan-400",
+                  href: "tel:".concat(contactInfo.mobile),
+                  children: contactInfo.mobile
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("li", {
+                children: ["E-mail: ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
+                  className: "text-cyan-400",
+                  href: "mailto:".concat(contactInfo.email),
+                  children: contactInfo.email
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("li", {
+                children: ["Address: ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+                  className: "text-slate-300",
+                  children: contactInfo.address
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("li", {
+                children: ["Website: ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
+                  className: "text-cyan-400",
+                  href: contactInfo.website,
+                  target: "_blank",
+                  rel: "noopener noreferrer",
+                  children: "ziontechgroup.com"
+                })]
+              })]
+            })]
+          })]
+        })]
       })
     })]
   });
-};
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (EnergyUtilitiesSolutions);
+}
 
 /***/ }),
 

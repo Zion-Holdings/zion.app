@@ -1121,6 +1121,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(882015);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_SEO__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(41415);
+/* harmony import */ var _components_SEO__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_components_SEO__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_layout_Layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(775927);
 /* harmony import */ var _components_layout_Layout__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_components_layout_Layout__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _components_ui_UltraFuturisticServiceCard2026__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(56196);
@@ -1150,7 +1151,7 @@ var InnovativeServicesShowcase2036 = () => {
     return allInnovativeServices.filter(service => service.category.toLowerCase().includes(category.toLowerCase().replace(/\s+/g, '')));
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)((_components_layout_Layout__WEBPACK_IMPORTED_MODULE_2___default()), {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_SEO__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)((_components_SEO__WEBPACK_IMPORTED_MODULE_1___default()), {
       title: "Innovative Services Showcase 2036 - Zion Tech Group",
       description: "Discover our cutting-edge innovative services including AI-powered solutions, quantum computing, space technology, cybersecurity, and more. Transform your business with future-ready technology.",
       keywords: "innovative services, AI solutions, quantum computing, space technology, cybersecurity, sustainability, healthcare, education, creative technology"

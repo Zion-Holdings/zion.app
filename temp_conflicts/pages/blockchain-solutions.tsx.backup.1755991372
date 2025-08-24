@@ -1,4 +1,5 @@
-<<<<<<< HEAD
+export default function BlockchainSolutions() { return <div className="p-8">Blockchain Solutions</div>; }
+=======
 import React from 'react';
 
 export default function BlockchainSolutionsPage() {
@@ -8,4 +9,3 @@ export default function BlockchainSolutionsPage() {
 export default function BlockchainSolutions(){
   return <div style={{padding:20}}>Blockchain Solutions</div>
 }
->>>>>>> origin/cursor/deploy-anonymous-zk-voting-for-dao-e4d6

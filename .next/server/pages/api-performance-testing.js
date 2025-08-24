@@ -120,72 +120,143 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(882015);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_SEO__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(41415);
-/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(7887);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(608732);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
-
-
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(608732);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
 
 
 function ApiPerformanceTestingPage() {
   var features = ['k6/Gatling-compatible test runner', 'SLO-aware latency reports', 'Regression baselines per endpoint', 'CI checks and PR annotations', 'Synthetic traffic for staging'];
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_SEO__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      title: "API Performance Testing",
-      description: "Load, latency and regression testing-as-a-service with CI and SLOs."
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("main", {
-      id: "main",
-      className: "container mx-auto px-4 py-24",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("section", {
-        className: "max-w-5xl mx-auto",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h1", {
-          className: "text-4xl font-extrabold tracking-tight",
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+    className: "relative isolate",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("section", {
+      className: "px-6 lg:px-10 py-16 lg:py-24",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        className: "max-w-6xl mx-auto",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h1", {
+          className: "text-3xl lg:text-5xl font-bold tracking-tight bg-gradient-to-r from-cyan-400 via-fuchsia-400 to-emerald-400 bg-clip-text text-transparent",
           children: "API Performance Testing"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-          className: "mt-4 text-lg text-gray-300",
-          children: "Ship with confidence using automated performance tests and guardrails integrated into your pipeline."
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-          className: "mt-8 grid sm:grid-cols-2 gap-6",
-          children: features.map(f => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-            className: "flex items-start space-x-3 p-4 rounded-xl bg-white/5 border border-white/10",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_3__.Check, {
-              className: "w-5 h-5 text-cyan-400 mt-1"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-              className: "text-gray-200",
-              children: f
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+          className: "mt-4 text-gray-300 max-w-3xl",
+          children: "Load, latency, reliability and regression testing for APIs with synthetic traffic generation, SLO tracking, distributed load injectors, and CI/CD integration. Benchmark providers, catch performance drift, and ship with confidence."
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+          className: "mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6",
+          children: [{
+            title: 'Distributed Load',
+            desc: 'Run tests from multiple regions with coordinated ramp-up and soak phases.'
+          }, {
+            title: 'SLO Dashboards',
+            desc: 'Track p50/p95/p99 latency, error budgets, and throughput trends over time.'
+          }, {
+            title: 'Protocol Coverage',
+            desc: 'HTTP/REST, GraphQL, gRPC, WebSocket, and streaming APIs.'
+          }, {
+            title: 'Regression Gates',
+            desc: 'Fail builds when latency regresses beyond thresholds or budgets are exhausted.'
+          }, {
+            title: 'Realistic Traffic',
+            desc: 'Custom scenarios, auth flows, test data seeding, and user think time.'
+          }, {
+            title: 'Reports & Export',
+            desc: 'Beautiful HTML/CSV exports, signed artifacts, and webhook notifications.'
+          }].map(f => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+            className: "rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h3", {
+              className: "text-lg font-semibold text-white",
+              children: f.title
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+              className: "mt-2 text-sm text-gray-300",
+              children: f.desc
             })]
-          }, f))
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-          className: "mt-8 flex flex-wrap items-center gap-4",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
+          }, f.title))
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          className: "mt-14",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
+            className: "text-2xl font-semibold",
+            children: "Pricing"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+            className: "mt-6 grid grid-cols-1 md:grid-cols-3 gap-6",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+              className: "rounded-2xl border border-cyan-400/30 p-6",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h3", {
+                className: "text-xl font-bold",
+                children: "Starter"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+                className: "mt-2 text-gray-300",
+                children: "Up to 250 RPS, 1 region, CI integration."
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("p", {
+                className: "mt-4 text-3xl font-bold",
+                children: ["$149", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+                  className: "text-base font-normal text-gray-300",
+                  children: "/mo"
+                })]
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+              className: "rounded-2xl border border-fuchsia-400/30 p-6",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h3", {
+                className: "text-xl font-bold",
+                children: "Growth"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+                className: "mt-2 text-gray-300",
+                children: "Up to 2k RPS, 3 regions, regression gates."
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("p", {
+                className: "mt-4 text-3xl font-bold",
+                children: ["$590", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+                  className: "text-base font-normal text-gray-300",
+                  children: "/mo"
+                })]
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+              className: "rounded-2xl border border-emerald-400/30 p-6",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h3", {
+                className: "text-xl font-bold",
+                children: "Enterprise"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+                className: "mt-2 text-gray-300",
+                children: "Unlimited scale, private agents, SSO, and SRE support."
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+                className: "mt-4 text-3xl font-bold",
+                children: "Custom"
+              })]
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("p", {
+            className: "mt-4 text-sm text-gray-400",
+            children: ["Market references: ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+              className: "underline hover:text-cyan-300",
+              href: "https://k6.io/pricing/",
+              target: "_blank",
+              rel: "noreferrer",
+              children: "Grafana k6"
+            }), ", ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+              className: "underline hover:text-cyan-300",
+              href: "https://www.loadmill.com/pricing",
+              target: "_blank",
+              rel: "noreferrer",
+              children: "Loadmill"
+            }), ", ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+              className: "underline hover:text-cyan-300",
+              href: "https://www.blazemeter.com/pricing",
+              target: "_blank",
+              rel: "noreferrer",
+              children: "BlazeMeter"
+            }), "."]
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          className: "mt-14 flex flex-wrap items-center gap-4",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Link, {
             href: "/contact",
-            className: "px-5 py-3 rounded-lg bg-white text-black font-semibold hover:bg-gray-200",
-            children: "Start from $129/mo"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
-            href: "/market-pricing",
-            className: "px-5 py-3 rounded-lg border border-white/20 text-white hover:bg-white/10",
-            children: "Market Pricing"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("a", {
-            href: "https://grafana.com/docs/k6/",
-            target: "_blank",
-            rel: "noreferrer",
-            className: "inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_3__.ExternalLink, {
-              className: "w-4 h-4"
-            }), " k6 Docs"]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("a", {
-            href: "https://gatling.io/open-source/",
-            target: "_blank",
-            rel: "noreferrer",
-            className: "inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_3__.ExternalLink, {
-              className: "w-4 h-4"
-            }), " Gatling OSS"]
+            className: "px-5 py-3 rounded-lg bg-cyan-500 text-black font-semibold",
+            children: "Talk to Sales"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+            href: "mailto:kleber@ziontechgroup.com",
+            className: "px-5 py-3 rounded-lg border border-white/20",
+            children: "Email: kleber@ziontechgroup.com"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+            className: "text-gray-400",
+            children: "Call: +1 302 464 0950"
           })]
         })]
       })
-    })]
+    })
   });
 }
 

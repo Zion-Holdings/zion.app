@@ -143,7 +143,6 @@ const PerformanceMonitor: React.FC<PerformanceMonitorProps> = ({
     return <AlertTriangle className="w-5 h-5 text-red-400" />;
   };
 
-  // Format time values
   const formatTime = (ms: number): string => {
     if (ms === 0) return 'N/A';
     if (ms < 1000) return `${Math.round(ms)}ms`;

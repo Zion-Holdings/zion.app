@@ -170,6 +170,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(882015);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_SEO__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(41415);
+/* harmony import */ var _components_SEO__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_components_SEO__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_layout_Layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(775927);
 /* harmony import */ var _components_layout_Layout__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_components_layout_Layout__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _data_real_2037_q1_additions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(408744);
@@ -212,7 +213,7 @@ var Revolutionary2037ServicesShowcase = () => {
     }
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)((_components_layout_Layout__WEBPACK_IMPORTED_MODULE_2___default()), {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_SEO__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)((_components_SEO__WEBPACK_IMPORTED_MODULE_1___default()), {
       title: "Revolutionary 2037 Services Showcase | Zion Tech Group",
       description: "Discover our cutting-edge 2037 services portfolio featuring AI, Quantum Computing, Space Technology, and Blockchain solutions. Transform your business with next-generation technology.",
       keywords: "AI services, quantum computing, space technology, blockchain, micro SAAS, 2037, Zion Tech Group",

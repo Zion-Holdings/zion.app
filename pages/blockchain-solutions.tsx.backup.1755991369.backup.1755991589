@@ -1,0 +1,25 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+export default function BlockchainSolutions() {
+  return <div className="py-10">Blockchain Solutions</div>;
+}
+=======
+export default function BlockchainSolutions(){return <div className="prose dark:prose-invert"><h1>Blockchain Solutions</h1><p>Coming soon.</p></div>}
+>>>>>>> origin/cursor/build-zion-global-expo-platform-712b
+=======
+export default function BlockchainSolutionsPage() {
+  return (
+    <div className="py-8">
+      <h1 className="text-xl font-semibold mb-2">Blockchain Solutions</h1>
+      <p className="text-gray-600 dark:text-gray-300">Content coming soon.</p>
+    </div>
+  );
+}
+=======
+import React from 'react';
+
+export default function BlockchainSolutionsPage() {
+  return <div>Blockchain Solutions</div>;
+}
+>>>>>>> origin/cursor/deploy-ai-podcast-host-with-ziongpt-9517
+>>>>>>> 5fe4d4a516412daaecc6e2e3437df4b5fdac83d3

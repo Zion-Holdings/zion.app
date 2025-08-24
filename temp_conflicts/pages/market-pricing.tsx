@@ -1,290 +1,88 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { 
-  TrendingUp, TrendingDown, DollarSign, Target, 
-  ArrowRight, Check, Star, BarChart3, 
-  Globe, Zap, Shield, Crown, Brain, Atom
-} from 'lucide-react';
-import Link from 'next/link';
+import React from 'react';
+import Head from 'next/head';
+import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackground';
+import Card from '../components/ui/Card';
 
-export default function MarketPricing() {
-  const [selectedMarket, setSelectedMarket] = useState('ai-consciousness');
+const ext = (url: string, label?: string) => (
+	<a className="text-cyan-300 hover:text-cyan-200 underline" href={url} target="_blank" rel="noopener noreferrer">{label || url.replace('https://','')}</a>
+);
 
-  const markets = [
-    { id: 'ai-consciousness', name: 'AI Consciousness', icon: <Brain className="w-6 h-6" /> },
-    { id: 'quantum-computing', name: 'Quantum Computing', icon: <Atom className="w-6 h-6" /> },
-    { id: 'autonomous-systems', name: 'Autonomous Systems', icon: <Zap className="w-6 h-6" /> },
-    { id: 'enterprise-it', name: 'Enterprise IT', icon: <Shield className="w-6 h-6" /> }
-  ];
+export default function MarketPricingPage() {
+	return (
+		<UltraFuturisticBackground variant="quantum" intensity="high">
+			<Head>
+				<title>Market Pricing | Zion Tech Group</title>
+				<meta name="description" content="Average market prices and credible references for AI, cloud, IT, and micro SaaS services." />
+				<link rel="canonical" href="https://ziontechgroup.com/market-pricing" />
+			</Head>
+			<div className="container mx-auto px-4 py-16 text-white">
+				<h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-6">Market Pricing</h1>
+				<p className="text-gray-300 max-w-3xl mb-10">Benchmarks to guide budgeting and ROI. Prices are indicative; see vendor pages for current rates.</p>
 
-  const marketData = {
-    'ai-consciousness': {
-      marketSize: '$45.2B',
-      growthRate: '+28.4%',
-      growthTrend: 'up',
-      description: 'AI consciousness market is experiencing explosive growth with increasing demand for emotionally intelligent AI systems.',
-      competitors: [
-        {
-          name: 'OpenAI',
-          marketShare: '32%',
-          pricing: '$0.002-$0.02 per 1K tokens',
-          strengths: ['Advanced language models', 'Strong brand recognition', 'Large user base'],
-          weaknesses: ['Limited consciousness features', 'High API costs', 'Privacy concerns'],
-          rating: 4.2
-        },
-        {
-          name: 'Anthropic',
-          marketShare: '18%',
-          pricing: '$0.015-$0.03 per 1K tokens',
-          strengths: ['Safety-focused approach', 'Constitutional AI', 'Research-driven'],
-          weaknesses: ['Smaller model variety', 'Limited enterprise features', 'Higher pricing'],
-          rating: 4.0
-        },
-        {
-          name: 'Zion Tech Group',
-          marketShare: '12%',
-          pricing: '$0.008-$0.015 per 1K tokens',
-          strengths: ['True AI consciousness', 'Enterprise-grade security', 'Competitive pricing'],
-          weaknesses: ['Smaller market presence', 'Limited brand recognition', 'Newer player'],
-          rating: 4.8
-        }
-      ],
-      pricingAnalysis: {
-        lowEnd: '$0.005 per 1K tokens',
-        midRange: '$0.015 per 1K tokens',
-        highEnd: '$0.025 per 1K tokens',
-        ourPosition: 'Mid-range with premium features'
-      }
-    },
-    'quantum-computing': {
-      marketSize: '$8.7B',
-      growthRate: '+45.2%',
-      growthTrend: 'up',
-      description: 'Quantum computing market is rapidly expanding with breakthroughs in qubit stability and error correction.',
-      competitors: [
-        {
-          name: 'IBM',
-          marketShare: '28%',
-          pricing: '$1.60 per quantum hour',
-          strengths: ['Established infrastructure', 'Qiskit ecosystem', 'Research partnerships'],
-          weaknesses: ['Limited qubit count', 'High costs', 'Complex access'],
-          rating: 4.1
-        },
-        {
-          name: 'Google',
-          marketShare: '22%',
-          pricing: '$2.00 per quantum hour',
-          strengths: ['Quantum supremacy', 'Advanced algorithms', 'Research focus'],
-          weaknesses: ['Limited commercial access', 'High pricing', 'Complex setup'],
-          rating: 4.3
-        },
-        {
-          name: 'Zion Tech Group',
-          marketShare: '8%',
-          pricing: '$1.20 per quantum hour',
-          strengths: ['Competitive pricing', 'Enterprise focus', 'Simplified access'],
-          weaknesses: ['Smaller infrastructure', 'Limited qubit variety', 'Newer platform'],
-          rating: 4.5
-        }
-      ],
-      pricingAnalysis: {
-        lowEnd: '$0.80 per quantum hour',
-        midRange: '$1.50 per quantum hour',
-        highEnd: '$2.50 per quantum hour',
-        ourPosition: 'Competitive mid-range pricing'
-      }
-    },
-    'autonomous-systems': {
-      marketSize: '$23.1B',
-      growthRate: '+34.7%',
-      growthTrend: 'up',
-      description: 'Autonomous systems market is growing rapidly with increasing automation in business processes.',
-      competitors: [
-        {
-          name: 'UiPath',
-          marketShare: '25%',
-          pricing: '$420-$1,200 per user/month',
-          strengths: ['Market leader', 'Comprehensive platform', 'Strong partnerships'],
-          weaknesses: ['High costs', 'Complex implementation', 'Limited AI features'],
-          rating: 4.0
-        },
-        {
-          name: 'Automation Anywhere',
-          marketShare: '20%',
-          pricing: '$750-$1,500 per user/month',
-          strengths: ['Enterprise focus', 'Cloud-native', 'Security features'],
-          weaknesses: ['Expensive', 'Steep learning curve', 'Limited customization'],
-          rating: 3.8
-        },
-        {
-          name: 'Zion Tech Group',
-          marketShare: '6%',
-          pricing: '$350-$800 per user/month',
-          strengths: ['AI-powered automation', 'Competitive pricing', 'Easy implementation'],
-          weaknesses: ['Smaller ecosystem', 'Limited integrations', 'Newer platform'],
-          rating: 4.4
-        }
-      ],
-      pricingAnalysis: {
-        lowEnd: '$300 per user/month',
-        midRange: '$750 per user/month',
-        highEnd: '$1,200 per user/month',
-        ourPosition: 'Competitive pricing with AI advantages'
-      }
-    },
-    'enterprise-it': {
-      marketSize: '$1.2T',
-      growthRate: '+12.3%',
-      growthTrend: 'up',
-      description: 'Enterprise IT market continues steady growth with digital transformation initiatives.',
-      competitors: [
-        {
-          name: 'Microsoft',
-          marketShare: '35%',
-          pricing: '$22-$57 per user/month',
-          strengths: ['Market dominance', 'Integrated ecosystem', 'Global presence'],
-          weaknesses: ['Complex licensing', 'High costs', 'Vendor lock-in'],
-          rating: 4.2
-        },
-        {
-          name: 'Salesforce',
-          marketShare: '18%',
-          pricing: '$25-$300 per user/month',
-          strengths: ['CRM leadership', 'Cloud-native', 'Extensive integrations'],
-          weaknesses: ['Expensive', 'Complex pricing', 'Implementation costs'],
-          rating: 4.1
-        },
-        {
-          name: 'Zion Tech Group',
-          marketShare: '3%',
-          pricing: '$18-$45 per user/month',
-          strengths: ['AI-powered features', 'Competitive pricing', 'Modern architecture'],
-          weaknesses: ['Smaller ecosystem', 'Limited integrations', 'Newer player'],
-          rating: 4.3
-        }
-      ],
-      pricingAnalysis: {
-        lowEnd: '$20 per user/month',
-        midRange: '$40 per user/month',
-        highEnd: '$100 per user/month',
-        ourPosition: 'Competitive pricing with AI advantages'
-      }
-    }
-  };
+				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+					<Card className="p-6 bg-black/40 border border-gray-800">
+						<h2 className="text-xl font-semibold mb-2">AI Model APIs</h2>
+						<ul className="text-sm text-gray-300 space-y-2 list-disc list-inside">
+							<li>OpenAI: {ext('https://openai.com/api/pricing','openai.com/api/pricing')}</li>
+							<li>Anthropic: {ext('https://www.anthropic.com/pricing','anthropic.com/pricing')}</li>
+							<li>OpenRouter: {ext('https://openrouter.ai/models','openrouter.ai/models')}</li>
+						</ul>
+					</Card>
 
-  const currentMarket = marketData[selectedMarket as keyof typeof marketData];
-
-  const getGrowthIcon = (trend: string) => {
-    return trend === 'up' ? 
-      <TrendingUp className="w-5 h-5 text-green-400" /> : 
-      <TrendingDown className="w-5 h-5 text-red-400" />;
-  };
-
-  const getRatingStars = (rating: number) => {
-    return Array.from({ length: 5 }, (_, i) => (
-      <Star 
-        key={i} 
-        className={`w-4 h-4 ${i < Math.floor(rating) ? 'text-yellow-400 fill-current' : 'text-gray-400'}`} 
-      />
-    ));
-  };
-
-  return (
-    <UltraAdvancedFuturisticBackground>
-      <Head>
-        <title>Market Pricing & Competitor References | Zion Tech Group</title>
-        <meta name="description" content="Transparent market pricing references and competitor links for AI, security, analytics, and cloud services." />
-        <link rel="canonical" href="https://ziontechgroup.com/market-pricing" />
-      </Head>
-      <div className="min-h-screen pt-24 pb-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-5xl mx-auto space-y-8">
-          <div className="bg-black/30 rounded-2xl border border-sky-500/30 p-6">
-            <h2 className="text-2xl font-semibold mb-2">Status Pages & Incident Comms</h2>
-            <ul className="list-disc list-inside text-slate-300 space-y-1">
-              <li>Statuspage: <a className="text-cyan-400 underline" href={`https://www.atlassian.com/software/statuspage/pricing`} target="_blank" rel="noopener noreferrer">atlassian.com/software/statuspage/pricing</a></li>
-              <li>Freshstatus: <a className="text-cyan-400 underline" href={`https://freshstatus.io/pricing`} target="_blank" rel="noopener noreferrer">freshstatus.io/pricing</a></li>
-              <li>Better Uptime: <a className="text-cyan-400 underline" href={`https://betterstack.com/better-uptime/pricing`} target="_blank" rel="noopener noreferrer">betterstack.com/better-uptime/pricing</a></li>
-            </ul>
-            <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $0–$300/month depending on incidents and subscribers.</div>
-          </div>
-
-          <div className="bg-black/30 rounded-2xl border border-indigo-500/30 p-6">
-            <h2 className="text-2xl font-semibold mb-2">DNS Monitoring & Hygiene</h2>
-            <ul className="list-disc list-inside text-slate-300 space-y-1">
-              <li>DNS Spy (archived reference): <a className="text-cyan-400 underline" href={`https://dnsspy.io`} target="_blank" rel="noopener noreferrer">dnsspy.io</a></li>
-              <li>Better Uptime DNS monitors: <a className="text-cyan-400 underline" href={`https://betterstack.com/better-uptime`} target="_blank" rel="noopener noreferrer">betterstack.com/better-uptime</a></li>
-            </ul>
-            <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $10–$100/month depending on domains and checks.</div>
-          </div>
-          <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Market Pricing & References</h1>
-          <p className="text-slate-300">Below are easy-to-verify vendor references and typical pricing ranges to help you benchmark our offerings.</p>
-
-          <div className="space-y-6">
-            <div className="bg-black/30 rounded-2xl border border-sky-500/30 p-6">
-              <h2 className="text-2xl font-semibold mb-2">MLOps, Prompting & Evaluation</h2>
-              <ul className="list-disc list-inside text-slate-300 space-y-1">
-                <li>Weights & Biases: <a className="text-cyan-400 underline" href={`https://wandb.ai/site/pricing`} target="_blank" rel="noopener noreferrer">wandb.ai/site/pricing</a></li>
-                <li>Humanloop: <a className="text-cyan-400 underline" href={`https://humanloop.com/pricing`} target="_blank" rel="noopener noreferrer">humanloop.com/pricing</a></li>
-                <li>Promptfoo: <a className="text-cyan-400 underline" href={`https://www.promptfoo.dev/pricing`} target="_blank" rel="noopener noreferrer">promptfoo.dev/pricing</a></li>
-              </ul>
-              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $50–$800/month depending on test volume and team size.</div>
-            </div>
-            <div className="bg-black/30 rounded-2xl border border-cyan-500/30 p-6">
-              <h2 className="text-2xl font-semibold mb-2">LLM & AI Platforms</h2>
-              <ul className="list-disc list-inside text-slate-300 space-y-1">
-                				                <li>OpenAI API pricing: <a className="text-cyan-400 underline" href={`https://openai.com/pricing`} target="_blank" rel="noopener noreferrer">openai.com/pricing</a></li>
-                <li>Anthropic pricing: <a className="text-cyan-400 underline" href={`https://www.anthropic.com/pricing`} target="_blank" rel="noopener noreferrer">anthropic.com/pricing</a></li>
-                <li>Langfuse (observability) pricing: <a className="text-cyan-400 underline" href={`https://langfuse.com/pricing`} target="_blank" rel="noopener noreferrer">langfuse.com/pricing</a> (community + paid tiers)</li>
-                <li>OpenRouter model pricing: <a className="text-cyan-400 underline" href={`https://openrouter.ai/models`} target="_blank" rel="noopener noreferrer">openrouter.ai/models</a></li>
-                <li>Vercel AI SDK pricing notes: <a className="text-cyan-400 underline" href={`https://vercel.com/pricing`} target="_blank" rel="noopener noreferrer">vercel.com/pricing</a> (edge/function costs)</li>
-                <li>Groq API pricing: <a className="text-cyan-400 underline" href={`https://wow.groq.com/pricing`} target="_blank" rel="noopener noreferrer">wow.groq.com/pricing</a></li>
-              </ul>
-              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $100–$2,000/month depending on traffic and model choice.</div>
-            </div>
+					<Card className="p-6 bg-black/40 border border-gray-800">
+						<h2 className="text-xl font-semibold mb-2">Vector Databases</h2>
+						<ul className="text-sm text-gray-300 space-y-2 list-disc list-inside">
+							<li>Pinecone: {ext('https://www.pinecone.io/pricing/')}</li>
+							<li>Weaviate: {ext('https://weaviate.io/pricing')}</li>
+							<li>Elastic: {ext('https://www.elastic.co/pricing')}</li>
+						</ul>
+					</Card>
 
             <div className="bg-black/30 rounded-2xl border border-purple-500/30 p-6">
               <h2 className="text-2xl font-semibold mb-2">Security & Compliance</h2>
               <ul className="list-disc list-inside text-slate-300 space-y-1">
                 <li>Wiz pricing overview: <a className="text-cyan-400 underline" href={`https://www.wiz.io/pricing`} target="_blank" rel="noopener noreferrer">wiz.io/pricing</a></li>
-                <li>Prisma Cloud: <a className="text-cyan-400 underline" href={`https://www.paloaltonetworks.com/prisma/cloud`} target="_blank" rel="noopener noreferrer">paloaltonetworks.com/prisma/cloud</a></li>
+                <li>Prisma Cloud: <a className="text-cyan-400 underline" href={`https://www.paloaltonetworks.com/prisma/cloud/pricing`} target="_blank" rel="noopener noreferrer">paloaltonetworks.com/prisma/cloud/pricing</a></li>
                 <li>HashiCorp Vault: <a className="text-cyan-400 underline" href={`https://www.hashicorp.com/products/vault/pricing`} target="_blank" rel="noopener noreferrer">hashicorp.com/products/vault/pricing</a></li>
-                <li>Cloudflare Zero Trust: <a className="text-cyan-400 underline" href={`https://www.cloudflare.com/plans/`} target="_blank" rel="noopener noreferrer">cloudflare.com/plans</a></li>
+                <li>Cloudflare Zero Trust: <a className="text-cyan-400 underline" href={`https://www.cloudflare.com/zero-trust/`} target="_blank" rel="noopener noreferrer">cloudflare.com/zero-trust</a></li>
               </ul>
               <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $200–$5,000/month based on scale and compliance scope.</div>
             </div>
 
-            <div className="bg-black/30 rounded-2xl border border-emerald-500/30 p-6">
-              <h2 className="text-2xl font-semibold mb-2">Data & Analytics</h2>
-              <ul className="list-disc list-inside text-slate-300 space-y-1">
-                <li>Snowflake pricing: <a className="text-cyan-400 underline" href={`https://www.snowflake.com/en/pricing`} target="_blank" rel="noopener noreferrer">snowflake.com/en/pricing</a></li>
-                <li>BigQuery pricing: <a className="text-cyan-400 underline" href={`https://cloud.google.com/bigquery/pricing`} target="_blank" rel="noopener noreferrer">cloud.google.com/bigquery/pricing</a></li>
-                <li>Databricks: <a className="text-cyan-400 underline" href={`https://www.databricks.com/product/pricing`} target="_blank" rel="noopener noreferrer">databricks.com/product/pricing</a></li>
-                <li>dbt Cloud: <a className="text-cyan-400 underline" href={`https://www.getdbt.com/pricing`} target="_blank" rel="noopener noreferrer">getdbt.com/pricing</a></li>
-                <li>ClickHouse Cloud: <a className="text-cyan-400 underline" href={`https://clickhouse.com/pricing`} target="_blank" rel="noopener noreferrer">clickhouse.com/pricing</a></li>
-              </ul>
-              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $100–$3,000/month depending on storage, queries, and concurrency.</div>
-            </div>
+					<Card className="p-6 bg-black/40 border border-gray-800">
+						<h2 className="text-xl font-semibold mb-2">Identity & SSO/SCIM</h2>
+						<ul className="text-sm text-gray-300 space-y-2 list-disc list-inside">
+							<li>Auth0: {ext('https://auth0.com/pricing')}</li>
+							<li>WorkOS: {ext('https://workos.com/pricing')}</li>
+							<li>Okta: {ext('https://www.okta.com/pricing/')}</li>
+						</ul>
+					</Card>
 
-            <div className="bg-black/30 rounded-2xl border border-amber-500/30 p-6">
-              <h2 className="text-2xl font-semibold mb-2">Cloud & Edge</h2>
-              <ul className="list-disc list-inside text-slate-300 space-y-1">
-                <li>AWS pricing calculator: <a className="text-cyan-400 underline" href={`https://calculator.aws`} target="_blank" rel="noopener noreferrer">calculator.aws</a></li>
-                <li>Azure pricing: <a className="text-cyan-400 underline" href={`https://azure.microsoft.com/pricing`} target="_blank" rel="noopener noreferrer">azure.microsoft.com/pricing</a></li>
-                <li>Cloudflare plans: <a className="text-cyan-400 underline" href={`https://www.cloudflare.com/plans/`} target="_blank" rel="noopener noreferrer">cloudflare.com/plans</a></li>
-                <li>Netlify plans: <a className="text-cyan-400 underline" href={`https://www.netlify.com/pricing/`} target="_blank" rel="noopener noreferrer">netlify.com/pricing</a></li>
-              </ul>
-              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $200–$10,000/month depending on traffic and workloads.</div>
-            </div>
+					<Card className="p-6 bg-black/40 border border-gray-800">
+						<h2 className="text-xl font-semibold mb-2">Status & Synthetic Monitoring</h2>
+						<ul className="text-sm text-gray-300 space-y-2 list-disc list-inside">
+							<li>Atlassian Statuspage: {ext('https://www.atlassian.com/software/statuspage/pricing')}</li>
+							<li>Checkly: {ext('https://www.checklyhq.com/pricing/')}</li>
+						</ul>
+					</Card>
 
-            <div className="bg-black/30 rounded-2xl border border-pink-500/30 p-6">
-              <h2 className="text-2xl font-semibold mb-2">Contact Center & Voice AI</h2>
-              <ul className="list-disc list-inside text-slate-300 space-y-1">
-                <li>Twilio: <a className="text-cyan-400 underline" href={`https://www.twilio.com/pricing`} target="_blank" rel="noopener noreferrer">twilio.com/pricing</a></li>
-                <li>Deepgram: <a className="text-cyan-400 underline" href={`https://deepgram.com/pricing`} target="_blank" rel="noopener noreferrer">deepgram.com/pricing</a></li>
-                <li>ElevenLabs: <a className="text-cyan-400 underline" href={`https://elevenlabs.io/pricing`} target="_blank" rel="noopener noreferrer">elevenlabs.io/pricing</a></li>
-              </ul>
-              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $50–$1,500/month by minutes, languages, and concurrency.</div>
-            </div>
+					<Card className="p-6 bg-black/40 border border-gray-800">
+						<h2 className="text-xl font-semibold mb-2">Edge/Platform</h2>
+						<ul className="text-sm text-gray-300 space-y-2 list-disc list-inside">
+							<li>Vercel: {ext('https://vercel.com/pricing')}</li>
+							<li>Cloudflare: {ext('https://www.cloudflare.com/plans/')}</li>
+							<li>Fastly: {ext('https://www.fastly.com/pricing')}</li>
+						</ul>
+					</Card>
+
+					<Card className="p-6 bg-black/40 border border-gray-800">
+						<h2 className="text-xl font-semibold mb-2">Privacy Analytics</h2>
+						<ul className="text-sm text-gray-300 space-y-2 list-disc list-inside">
+							<li>Plausible: {ext('https://plausible.io/pricing')}</li>
+							<li>Fathom: {ext('https://usefathom.com/pricing')}</li>
+						</ul>
+					</Card>
+				</div>
 
             <div className="bg-black/30 rounded-2xl border border-cyan-500/30 p-6">
               <h2 className="text-2xl font-semibold mb-2">Email Deliverability & Warmup</h2>
@@ -333,7 +131,7 @@ export default function MarketPricing() {
               <ul className="list-disc list-inside text-slate-300 space-y-1">
                 <li>Skyflow pricing: <a className="text-cyan-400 underline" href={`https://www.skyflow.com/pricing`} target="_blank" rel="noopener noreferrer">skyflow.com/pricing</a></li>
                 <li>VGS pricing: <a className="text-cyan-400 underline" href={`https://www.verygoodsecurity.com/pricing`} target="_blank" rel="noopener noreferrer">verygoodsecurity.com/pricing</a></li>
-                <li>Transcend: <a className="text-cyan-400 underline" href={`https://www.transcend.io/platform`} target="_blank" rel="noopener noreferrer">transcend.io/platform</a></li>
+                <li>Transcend: <a className="text-cyan-400 underline" href={`https://transcend.io/pricing/`} target="_blank" rel="noopener noreferrer">transcend.io/pricing</a></li>
               </ul>
               <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $100–$2,000/month by data volume and systems.</div>
             </div>
@@ -367,105 +165,6 @@ export default function MarketPricing() {
               </ul>
               <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $100–$1,500/month depending on data volume and controls.</div>
             </div>
-          </div>
-          
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            viewport={{ once: true }}
-            className="text-center"
-          >
-            <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-              {currentMarket.description}
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Competitive Analysis Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold text-center mb-16"
-          >
-            Competitive Analysis
-          </motion.h2>
-          
-          <div className="space-y-8">
-            {currentMarket.competitors.map((competitor, index) => (
-              <motion.div
-                key={competitor.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-cyan-500/50 transition-all duration-300"
-              >
-                <div className="flex flex-col lg:flex-row gap-6">
-                  <div className="flex-1">
-                    <div className="flex items-center justify-between mb-4">
-                      <h3 className="text-2xl font-bold">{competitor.name}</h3>
-                      <div className="flex items-center gap-2">
-                        {getRatingStars(competitor.rating)}
-                        <span className="text-sm text-gray-400">({competitor.rating})</span>
-                      </div>
-                    </div>
-                    
-                    <div className="grid md:grid-cols-2 gap-4 mb-4">
-                      <div>
-                        <span className="text-sm text-gray-400">Market Share:</span>
-                        <p className="font-semibold text-cyan-400">{competitor.marketShare}</p>
-                      </div>
-                      <div>
-                        <span className="text-sm text-gray-400">Pricing:</span>
-                        <p className="font-semibold text-green-400">{competitor.pricing}</p>
-                      </div>
-                    </div>
-                    
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <div>
-                        <h4 className="font-semibold text-green-400 mb-2">Strengths</h4>
-                        <ul className="space-y-1">
-                          {competitor.strengths.map((strength, idx) => (
-                            <li key={idx} className="flex items-center gap-2 text-sm text-gray-300">
-                              <Check className="w-3 h-3 text-green-400 flex-shrink-0" />
-                              {strength}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                      
-                      <div>
-                        <h4 className="font-semibold text-red-400 mb-2">Weaknesses</h4>
-                        <ul className="space-y-1">
-                          {competitor.weaknesses.map((weakness, idx) => (
-                            <li key={idx} className="flex items-center gap-2 text-sm text-gray-300">
-                              <div className="w-3 h-3 bg-red-400 rounded-full flex-shrink-0" />
-                              {weakness}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  {competitor.name === 'Zion Tech Group' && (
-                    <div className="lg:w-48 flex-shrink-0">
-                      <div className="p-4 rounded-xl bg-gradient-to-r from-cyan-500/20 to-blue-600/20 border border-cyan-500/30 text-center">
-                        <Crown className="w-8 h-8 text-cyan-400 mx-auto mb-2" />
-                        <p className="text-sm font-semibold text-cyan-400">Our Position</p>
-                        <p className="text-xs text-gray-300 mt-1">Competitive advantage in AI consciousness and pricing</p>
-                      </div>
-                    </div>
-                  )}
-                </div>
-              </motion.div>
-            ))}
           </div>
 
           <div className="space-y-6">
@@ -512,21 +211,34 @@ export default function MarketPricing() {
             <div className="bg-black/30 rounded-2xl border border-green-500/30 p-6">
               <h2 className="text-2xl font-semibold mb-2">A/B Testing & CRO</h2>
               <ul className="list-disc list-inside text-slate-300 space-y-1">
-                <li>VWO pricing: <a className="text-cyan-400 underline" href={`https://vwo.com/plans/`} target="_blank" rel="noopener noreferrer">vwo.com/plans</a></li>
-                <li>Convert: <a className="text-cyan-400 underline" href={`https://www.convert.com/pricing/`} target="_blank" rel="noopener noreferrer">convert.com/pricing</a></li>
-                <li>Optimizely Web: <a className="text-cyan-400 underline" href={`https://www.optimizely.com/pricing/`} target="_blank" rel="noopener noreferrer">optimizely.com/pricing</a></li>
+                <li>Scale AI: <a className="text-cyan-400 underline" href={`https://scale.com`} target="_blank" rel="noopener noreferrer">scale.com</a></li>
+                <li>Labelbox pricing: <a className="text-cyan-400 underline" href={`https://labelbox.com/pricing/`} target="_blank" rel="noopener noreferrer">labelbox.com/pricing</a></li>
+                <li>Hive data: <a className="text-cyan-400 underline" href={`https://thehive.ai`} target="_blank" rel="noopener noreferrer">thehive.ai</a></li>
               </ul>
-              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $49–$499/month based on visitors and experiments.</div>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $100–$5,000/month based on volume and SLAs.</div>
+            </div>
+          </div>
+
+          {/* Additional easy-to-verify market references */}
+          <div className="space-y-6">
+            <div className="bg-black/30 rounded-2xl border border-sky-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Surveys & Forms</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>Typeform pricing: <a className="text-cyan-400 underline" href={`https://www.typeform.com/pricing/`} target="_blank" rel="noopener noreferrer">typeform.com/pricing</a></li>
+                <li>SurveyMonkey pricing: <a className="text-cyan-400 underline" href={`https://www.surveymonkey.com/pricing/`} target="_blank" rel="noopener noreferrer">surveymonkey.com/pricing</a></li>
+                <li>Tally.so pricing: <a className="text-cyan-400 underline" href={`https://tally.so/pricing`} target="_blank" rel="noopener noreferrer">tally.so/pricing</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $0–$100/month depending on responses and branding.</div>
             </div>
 
-            <div className="bg-black/30 rounded-2xl border border-red-500/30 p-6">
-              <h2 className="text-2xl font-semibold mb-2">Incident Management & On-Call</h2>
+            <div className="bg-black/30 rounded-2xl border border-purple-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Helpdesk & Chat</h2>
               <ul className="list-disc list-inside text-slate-300 space-y-1">
-                <li>PagerDuty pricing: <a className="text-cyan-400 underline" href={`https://www.pagerduty.com/pricing/`} target="_blank" rel="noopener noreferrer">pagerduty.com/pricing</a></li>
-                <li>Opsgenie pricing: <a className="text-cyan-400 underline" href={`https://www.atlassian.com/software/opsgenie/pricing`} target="_blank" rel="noopener noreferrer">atlassian.com/software/opsgenie/pricing</a></li>
-                <li>FireHydrant pricing: <a className="text-cyan-400 underline" href={`https://www.firehydrant.com/pricing/`} target="_blank" rel="noopener noreferrer">firehydrant.com/pricing</a></li>
+                <li>Zendesk pricing: <a className="text-cyan-400 underline" href={`https://www.zendesk.com/pricing/`} target="_blank" rel="noopener noreferrer">zendesk.com/pricing</a></li>
+                <li>Freshdesk pricing: <a className="text-cyan-400 underline" href={`https://freshdesk.com/pricing`} target="_blank" rel="noopener noreferrer">freshdesk.com/pricing</a></li>
+                <li>Intercom pricing: <a className="text-cyan-400 underline" href={`https://www.intercom.com/pricing`} target="_blank" rel="noopener noreferrer">intercom.com/pricing</a></li>
               </ul>
-              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $10–$500/month per responder depending on features.</div>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $20–$500/month by seats and channels.</div>
             </div>
 
             <div className="bg-black/30 rounded-2xl border border-amber-500/30 p-6">
@@ -628,10 +340,11 @@ export default function MarketPricing() {
             <div className="bg-black/30 rounded-2xl border border-rose-500/30 p-6">
               <h2 className="text-2xl font-semibold mb-2">Returns & Logistics</h2>
               <ul className="list-disc list-inside text-slate-300 space-y-1">
-                <li>Loop Returns pricing: <a className="text-cyan-400 underline" href={`https://www.loopreturns.com/pricing`} target="_blank" rel="noopener noreferrer">loopreturns.com/pricing</a></li>
-                <li>AfterShip Returns: <a className="text-cyan-400 underline" href={`https://www.aftership.com/returns-center/pricing`} target="_blank" rel="noopener noreferrer">aftership.com/returns-center/pricing</a></li>
+                <li>Loop Returns: <a className="text-cyan-400 underline" href={`https://www.loopreturns.com/pricing/`} target="_blank" rel="noopener noreferrer">loopreturns.com/pricing</a></li>
+                <li>Happy Returns: <a className="text-cyan-400 underline" href={`https://www.happyreturns.com/`} target="_blank" rel="noopener noreferrer">happyreturns.com</a></li>
+                <li>Shippo: <a className="text-cyan-400 underline" href={`https://goshippo.com/pricing/`} target="_blank" rel="noopener noreferrer">goshippo.com/pricing</a></li>
               </ul>
-              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $29–$299/month depending on orders and policies.</div>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $50–$400/month plus label costs.</div>
             </div>
 
             <div className="bg-black/30 rounded-2xl border border-emerald-500/30 p-6">
@@ -688,212 +401,8 @@ export default function MarketPricing() {
           <div className="text-center text-slate-400 mt-10">
             Need help benchmarking? <a href="/contact" className="text-cyan-400 underline">Contact us</a> — we align to transparent, vendor-verifiable pricing.
           </div>
-
-          <div className="space-y-6">
-            <div className="bg-black/30 rounded-2xl border border-teal-500/30 p-6">
-              <h2 className="text-2xl font-semibold mb-2">Observability & Monitoring</h2>
-              <ul className="list-disc list-inside text-slate-300 space-y-1">
-                <li>Datadog pricing: <a className="text-cyan-400 underline" href={`https://www.datadoghq.com/pricing/`} target="_blank" rel="noopener noreferrer">datadoghq.com/pricing</a></li>
-                <li>New Relic pricing: <a className="text-cyan-400 underline" href={`https://newrelic.com/pricing`} target="_blank" rel="noopener noreferrer">newrelic.com/pricing</a></li>
-                <li>Grafana Cloud pricing: <a className="text-cyan-400 underline" href={`https://grafana.com/pricing/`} target="_blank" rel="noopener noreferrer">grafana.com/pricing</a></li>
-              </ul>
-              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $50–$2,000/month by host count, metrics, and retention.</div>
-            </div>
-
-            <div className="bg-black/30 rounded-2xl border border-lime-500/30 p-6">
-              <h2 className="text-2xl font-semibold mb-2">Website Performance & RUM</h2>
-              <ul className="list-disc list-inside text-slate-300 space-y-1">
-                <li>SpeedCurve pricing: <a className="text-cyan-400 underline" href={`https://www.speedcurve.com/pricing/`} target="_blank" rel="noopener noreferrer">speedcurve.com/pricing</a></li>
-                <li>Calibre pricing: <a className="text-cyan-400 underline" href={`https://calibreapp.com/pricing`} target="_blank" rel="noopener noreferrer">calibreapp.com/pricing</a></li>
-                <li>Cloudflare Web Analytics: <a className="text-cyan-400 underline" href={`https://www.cloudflare.com/web-analytics/`} target="_blank" rel="noopener noreferrer">cloudflare.com/web-analytics</a></li>
-              </ul>
-              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $0–$500/month depending on synthetic runs and MAUs.</div>
-            </div>
-
-            <div className="bg-black/30 rounded-2xl border border-violet-500/30 p-6">
-              <h2 className="text-2xl font-semibold mb-2">Data Labeling & Enrichment</h2>
-              <ul className="list-disc list-inside text-slate-300 space-y-1">
-                <li>Scale AI: <a className="text-cyan-400 underline" href={`https://scale.com`} target="_blank" rel="noopener noreferrer">scale.com</a></li>
-                <li>Labelbox pricing: <a className="text-cyan-400 underline" href={`https://labelbox.com/pricing/`} target="_blank" rel="noopener noreferrer">labelbox.com/pricing</a></li>
-                <li>Hive data: <a className="text-cyan-400 underline" href={`https://thehive.ai`} target="_blank" rel="noopener noreferrer">thehive.ai</a></li>
-              </ul>
-              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $100–$5,000/month based on volume and SLAs.</div>
-            </div>
-          </div>
         </div>
-      </section>
-
-      {/* Pricing Analysis Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold text-center mb-16"
-          >
-            Pricing Analysis
-          </motion.h2>
-          
-          <div className="grid lg:grid-cols-4 gap-6 mb-12">
-            {[
-              { label: 'Low End', price: currentMarket.pricingAnalysis.lowEnd, color: 'from-green-500 to-emerald-600' },
-              { label: 'Mid Range', price: currentMarket.pricingAnalysis.midRange, color: 'from-yellow-500 to-orange-600' },
-              { label: 'High End', price: currentMarket.pricingAnalysis.highEnd, color: 'from-red-500 to-pink-600' },
-              { label: 'Our Position', price: currentMarket.pricingAnalysis.ourPosition, color: 'from-cyan-500 to-blue-600' }
-            ].map((tier, index) => (
-              <motion.div
-                key={tier.label}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="text-center"
-              >
-                <div className={`w-20 h-20 bg-gradient-to-r ${tier.color} rounded-full flex items-center justify-center mx-auto mb-4`}>
-                  <BarChart3 className="w-10 h-10 text-white" />
-                </div>
-                <h3 className="text-lg font-bold mb-2">{tier.label}</h3>
-                <p className="text-2xl font-bold text-cyan-400">{tier.price}</p>
-              </motion.div>
-            ))}
-          </div>
-          
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            viewport={{ once: true }}
-            className="text-center"
-          >
-            <h3 className="text-2xl font-bold mb-4">Strategic Advantages</h3>
-            <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-              {[
-                {
-                  title: 'Competitive Pricing',
-                  description: 'Positioned in the mid-range with premium features that justify our pricing strategy.'
-                },
-                {
-                  title: 'AI-First Approach',
-                  description: 'Unique focus on AI consciousness and emotional intelligence sets us apart from competitors.'
-                },
-                {
-                  title: 'Enterprise Focus',
-                  description: 'Built specifically for enterprise needs with security, scalability, and compliance features.'
-                }
-              ].map((advantage, index) => (
-                <div key={index} className="p-4 rounded-xl bg-white/5 border border-white/10">
-                  <h4 className="font-semibold text-cyan-400 mb-2">{advantage.title}</h4>
-                  <p className="text-sm text-gray-300">{advantage.description}</p>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Market Trends Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold text-center mb-16"
-          >
-            Market Trends & Opportunities
-          </motion.h2>
-          
-          <div className="grid md:grid-cols-2 gap-8">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="p-6 rounded-2xl bg-white/5 border border-white/10"
-            >
-              <h3 className="text-2xl font-bold mb-4 text-green-400">Growth Drivers</h3>
-              <ul className="space-y-3">
-                {[
-                  'Increasing demand for AI consciousness in customer service',
-                  'Quantum computing breakthroughs in cryptography',
-                  'Automation needs in post-pandemic business operations',
-                  'Digital transformation initiatives across industries',
-                  'Growing focus on AI ethics and responsible development'
-                ].map((driver, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <TrendingUp className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-300">{driver}</span>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="p-6 rounded-2xl bg-white/5 border border-white/10"
-            >
-              <h3 className="text-2xl font-bold mb-4 text-blue-400">Market Opportunities</h3>
-              <ul className="space-y-3">
-                {[
-                  'Untapped markets in emerging economies',
-                  'Integration opportunities with existing enterprise systems',
-                  'Custom AI consciousness solutions for specific industries',
-                  'Partnerships with research institutions and universities',
-                  'White-label solutions for enterprise software providers'
-                ].map((opportunity, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <Target className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-300">{opportunity}</span>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Ready to Compete in the Market?
-            </h2>
-            <p className="text-xl text-gray-300 mb-8">
-              Our competitive pricing and unique AI consciousness features give you the edge 
-              you need to succeed in today's rapidly evolving technology landscape.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link 
-                href="/pricing"
-                className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-full hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
-              >
-                View Our Pricing
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Link>
-              <Link 
-                href="/contact"
-                className="px-8 py-4 border-2 border-cyan-500 text-cyan-400 font-semibold rounded-full hover:bg-cyan-500 hover:text-black transition-all duration-300"
-              >
-                Get Custom Quote
-              </Link>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-    </div>
+      </div>
+    </UltraAdvancedFuturisticBackground>
   );
-};
-
-export default MarketPricing;
+}

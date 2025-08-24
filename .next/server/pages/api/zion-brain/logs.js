@@ -26,7 +26,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ handler)
 /* harmony export */ });
-/* harmony import */ var _utils_zionBrain__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(927123);
+/* harmony import */ var _utils_zionBrain__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(471928);
 
 function isAuthorized(req) {
   var token = req.headers['x-admin-token'] || req.query.token;

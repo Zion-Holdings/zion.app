@@ -121,6 +121,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(882015);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_SEO__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(41415);
+/* harmony import */ var _components_SEO__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_components_SEO__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(682059);
 /* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(framer_motion__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7887);
@@ -250,7 +251,7 @@ var CaseStudiesPage = () => {
     variant: "quantum",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
       className: "min-h-screen",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_components_SEO__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)((_components_SEO__WEBPACK_IMPORTED_MODULE_1___default()), {
         title: "Case Studies - Zion Tech Group | Success Stories and Implementation Results",
         description: "Explore real-world success stories and implementation results from Zion Tech Group's technology solutions across various industries.",
         canonical: "https://ziontechgroup.com/resources/case-studies/"
@@ -455,7 +456,6 @@ var CaseStudiesPage = () => {
                   children: ["Read Full Case Study ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_4__.ArrowRight, {
                     className: "w-4 h-4 ml-2"
                   })]
-                }), ">>>>>>> 916d02471c24718d698d51219f240472f9d52b96"]
               })]
             }, index))
           })]
@@ -492,7 +492,6 @@ var CaseStudiesPage = () => {
                 href: "/services",
                 className: "inline-flex items-center px-8 py-4 border border-cyan-500 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-500 hover:text-white transition-all duration-300",
                 children: "View All Services"
-              }), ">>>>>>> 916d02471c24718d698d51219f240472f9d52b96"]
             })]
           })
         })

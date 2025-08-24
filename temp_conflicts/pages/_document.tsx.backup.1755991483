@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 
 export default class ZionDocument extends Document {
@@ -46,4 +45,3 @@ class MyDocument extends Document {
 }
 
 export default MyDocument;
->>>>>>> 5f48a381108fa3a8a43c189dd4b043133ce9307e

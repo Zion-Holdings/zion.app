@@ -116,6 +116,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_layout_Layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(775927);
 /* harmony import */ var _components_layout_Layout__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_components_layout_Layout__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_SEO__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(41415);
+/* harmony import */ var _components_SEO__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_components_SEO__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7887);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(608732);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
@@ -145,7 +146,7 @@ var QuantumThreatDetectionPage = () => {
   var detectionCapabilities = ['Quantum pattern recognition', 'Behavioral analysis', 'Anomaly detection', 'Threat intelligence', 'Risk assessment', 'Incident response', 'Forensic analysis', 'Threat hunting'];
   var applications = ['Enterprise security', 'Government networks', 'Financial systems', 'Healthcare networks', 'Critical infrastructure', 'Cloud environments', 'IoT networks', '5G infrastructure'];
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)((_components_layout_Layout__WEBPACK_IMPORTED_MODULE_1___default()), {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_components_SEO__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)((_components_SEO__WEBPACK_IMPORTED_MODULE_2___default()), {
       title: "Quantum Threat Detection - Zion Tech Group",
       description: "Advanced quantum threat detection platform for comprehensive security monitoring and threat prevention",
       keywords: ['quantum threat detection', 'security monitoring', 'threat prevention', 'quantum security', 'cybersecurity'],

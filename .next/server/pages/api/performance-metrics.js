@@ -183,66 +183,64 @@ function handler(_x, _x2) {
 }
 function _handler() {
   _handler = (0,_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])(function* (req, res) {
-    if (req['method'] !== 'POST') {
-      res.status(405).json({
-        error: 'Method not allowed'
-      });
-      return;
-    }
-    try {
-      var performanceReport = req['body'];
+    if (req.method === 'POST') {
+      try {
+        var performanceReport = req['body'];
 
-      // Validate the report structure
-      if (!performanceReport.metrics || !Array.isArray(performanceReport.metrics)) {
-        res.status(400).json({
-          error: 'Invalid performance report format'
-        });
-        return;
-      }
-
-      // Log performance metrics (in production, you would store these in a database)
-      // Removed console.log('🔧 Performance Report:', { ... });
-
-      // Log critical performance issues
-      var poorMetrics = performanceReport.metrics.filter(m => m.rating === 'poor');
-      if (poorMetrics.length > 0) {
-        console.warn('⚠️ Poor Performance Metrics Detected:', poorMetrics.map(m => "".concat(m.name, ": ").concat(m.value, "ms")));
-      }
-
-      // In production, you would:
-      // 1. Store metrics in a database (e.g., MongoDB, PostgreSQL)
-      // 2. Send to analytics service (e.g., Google Analytics, DataDog)
-      // 3. Trigger alerts for critical performance issues
-      // 4. Aggregate metrics for performance dashboards
-
-      // Example: Send to external analytics service
-      if ( true && process.env['ANALYTICS_ENDPOINT']) {
-        try {
-          yield fetch(process.env['ANALYTICS_ENDPOINT'], {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-              'Authorization': "Bearer ".concat(process.env['ANALYTICS_API_KEY'])
-            },
-            body: JSON.stringify({
-              type: 'performance',
-              data: performanceReport,
-              timestamp: Date.now()
-            })
+        // Validate the report structure
+        if (!performanceReport.metrics || !Array.isArray(performanceReport.metrics)) {
+          res.status(400).json({
+            error: 'Invalid performance report format'
           });
-        } catch (error) {
-          console.error('Error sending to analytics:', error);
+          return;
         }
+
+        // Log performance metrics (in production, you would store these in a database)
+        // Removed console.log('🔧 Performance Report:', { ... });
+
+        // Log critical performance issues
+        var poorMetrics = performanceReport.metrics.filter(m => m.rating === 'poor');
+        if (poorMetrics.length > 0) {
+          console.warn('⚠️ Poor Performance Metrics Detected:', poorMetrics.map(m => "".concat(m.name, ": ").concat(m.value, "ms")));
+        }
+
+        // In production, you would:
+        // 1. Store metrics in a database (e.g., MongoDB, PostgreSQL)
+        // 2. Send to analytics service (e.g., Google Analytics, DataDog)
+        // 3. Trigger alerts for critical performance issues
+        // 4. Aggregate metrics for performance dashboards
+
+        // Example: Send to external analytics service
+        if ( true && process.env['ANALYTICS_ENDPOINT']) {
+          try {
+            yield fetch(process.env['ANALYTICS_ENDPOINT'], {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'Authorization': "Bearer ".concat(process.env['ANALYTICS_API_KEY'])
+              },
+              body: JSON.stringify({
+                type: 'performance',
+                data: performanceReport,
+                timestamp: Date.now()
+              })
+            });
+          } catch (error) {
+            console.error('Error sending to analytics:', error);
+          }
+        }
+        res.status(200).json({
+          success: true,
+          message: 'Performance data recorded'
+        });
+      } catch (error) {
+        console.error('Error processing request:', error);
+        res.status(500).json({
+          success: false,
+          message: 'Internal server error'
+        });
       }
-    } catch (error) {
-      console.error('Error processing request:', error);
-      res.status(500).json({
-        success: false,
-        message: 'Internal server error'
-      });
-      return;
-    }
-    if (req.method === 'GET') {
+    } else if (req.method === 'GET') {
       try {
         var {
           type,

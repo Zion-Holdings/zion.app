@@ -1,0 +1,1 @@
+export default function ArticlePage() { return <div className="py-8">Cloud computing strategies</div>; }

@@ -162,6 +162,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(882015);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_SEO__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(41415);
+/* harmony import */ var _components_SEO__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_components_SEO__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_ui_UltraFuturisticBackground__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(795157);
 /* harmony import */ var _components_ui_UltraFuturisticBackground__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_components_ui_UltraFuturisticBackground__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _components_ui_UltraFuturisticServiceCard2026__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(56196);
@@ -205,7 +206,7 @@ function Innovative2025ExpansionsShowcase() {
   var latestServices = allServices.filter(service => service.launchDate).sort((a, b) => new Date(b.launchDate).getTime() - new Date(a.launchDate).getTime()).slice(0, 8);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
     className: "min-h-screen bg-black text-white",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_SEO__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)((_components_SEO__WEBPACK_IMPORTED_MODULE_1___default()), {
       title: "Innovative 2025 Services & Solutions - Zion Tech Group",
       description: "Discover our cutting-edge innovative services including AI-powered solutions, enterprise IT services, and revolutionary micro SAAS platforms designed for 2025 and beyond.",
       keywords: ["AI services", "IT services", "micro SAAS", "enterprise solutions", "innovation 2025", "digital transformation", "automation"]

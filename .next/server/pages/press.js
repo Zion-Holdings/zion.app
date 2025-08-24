@@ -1,3 +1,4 @@
+"use strict";
 (() => {
 var exports = {};
 exports.id = 485653;
@@ -7,7 +8,6 @@ exports.modules = {
 /***/ 246619:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   config: () => (/* binding */ config),
@@ -32,7 +32,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var private_next_pages_document_tsx__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(private_next_pages_document_tsx__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var private_next_pages_app_tsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(805164);
 /* harmony import */ var private_next_pages_press_tsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(422407);
-/* harmony import */ var private_next_pages_press_tsx__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(private_next_pages_press_tsx__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var next_dist_server_route_modules_pages_pages_handler__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(312289);
 
 
@@ -94,22 +93,50 @@ const handler = (0,next_dist_server_route_modules_pages_pages_handler__WEBPACK_I
 /***/ 333873:
 /***/ ((module) => {
 
-"use strict";
 module.exports = require("path");
 
 /***/ }),
 
 /***/ 422407:
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-throw new Error("Module build failed (from ./node_modules/next/dist/build/babel/loader/index.js):\nSyntaxError: /workspace/pages/press.tsx: Unexpected token (40:3)\n\n\u001b[0m \u001b[90m 38 |\u001b[39m       excerpt\u001b[33m:\u001b[39m \u001b[32m'Collaborating with top-tier research institutions to advance AI consciousness research.'\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 39 |\u001b[39m       category\u001b[33m:\u001b[39m \u001b[32m'Partnerships'\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 40 |\u001b[39m \u001b[33m>>>\u001b[39m\u001b[33m>>>\u001b[39m\u001b[33m>\u001b[39m \u001b[35m916\u001b[39md02471c24718d698d51219f240472f9d52b96\n \u001b[90m    |\u001b[39m    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 41 |\u001b[39m     }\n \u001b[90m 42 |\u001b[39m   ]\u001b[33m;\u001b[39m\n \u001b[90m 43 |\u001b[39m\u001b[0m\n    at constructor (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:137105)\n    at TypeScriptParserMixin.raise (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:194164)\n    at TypeScriptParserMixin.unexpected (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:194550)\n    at TypeScriptParserMixin.parseExprAtom (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:363808)\n    at TypeScriptParserMixin.parseExprAtom (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:269272)\n    at TypeScriptParserMixin.parseExprSubscripts (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:356364)\n    at TypeScriptParserMixin.parseUpdate (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:355963)\n    at TypeScriptParserMixin.parseMaybeUnary (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:355527)\n    at TypeScriptParserMixin.parseMaybeUnary (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:331837)\n    at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:352169)\n    at TypeScriptParserMixin.parseExprOpBaseRightExpr (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:354273)\n    at TypeScriptParserMixin.parseExprOpRightExpr (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:354155)\n    at TypeScriptParserMixin.parseExprOp (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:353265)\n    at TypeScriptParserMixin.parseExprOp (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:320969)\n    at TypeScriptParserMixin.parseExprOps (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:352365)\n    at TypeScriptParserMixin.parseMaybeConditional (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:351760)\n    at TypeScriptParserMixin.parseMaybeAssign (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:350714)\n    at TypeScriptParserMixin.parseMaybeAssign (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:330620)\n    at /workspace/node_modules/next/dist/compiled/babel/bundle.js:191:350260\n    at TypeScriptParserMixin.allowInAnd (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:383968)\n    at TypeScriptParserMixin.parseMaybeAssignAllowIn (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:350239)\n    at TypeScriptParserMixin.parseObjectProperty (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:375017)\n    at TypeScriptParserMixin.parseObjPropValue (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:375659)\n    at TypeScriptParserMixin.parseObjPropValue (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:329702)\n    at TypeScriptParserMixin.parsePropertyDefinition (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:374146)\n    at TypeScriptParserMixin.parseObjectLike (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:372491)\n    at TypeScriptParserMixin.parseExprAtom (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:361743)\n    at TypeScriptParserMixin.parseExprAtom (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:269272)\n    at TypeScriptParserMixin.parseExprSubscripts (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:356364)\n    at TypeScriptParserMixin.parseUpdate (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:355963)\n    at TypeScriptParserMixin.parseMaybeUnary (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:355527)\n    at TypeScriptParserMixin.parseMaybeUnary (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:331837)\n    at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:352169)\n    at TypeScriptParserMixin.parseExprOps (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:352281)\n    at TypeScriptParserMixin.parseMaybeConditional (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:351760)\n    at TypeScriptParserMixin.parseMaybeAssign (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:350714)\n    at TypeScriptParserMixin.parseMaybeAssign (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:330620)\n    at /workspace/node_modules/next/dist/compiled/babel/bundle.js:191:350260\n    at TypeScriptParserMixin.allowInAnd (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:383968)\n    at TypeScriptParserMixin.parseMaybeAssignAllowIn (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:350239)\n    at TypeScriptParserMixin.parseExprListItem (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:379439)\n    at TypeScriptParserMixin.parseExprList (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:378946)\n    at TypeScriptParserMixin.parseArrayLike (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:376925)\n    at TypeScriptParserMixin.parseArrayLike (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:318594)\n    at TypeScriptParserMixin.parseExprAtom (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:361613)\n    at TypeScriptParserMixin.parseExprAtom (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:269272)\n    at TypeScriptParserMixin.parseExprSubscripts (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:356364)\n    at TypeScriptParserMixin.parseUpdate (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:355963)\n    at TypeScriptParserMixin.parseMaybeUnary (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:355527)\n    at TypeScriptParserMixin.parseMaybeUnary (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:331837)");
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ PressPage)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(882015);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _components_SEO__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(41415);
+/* harmony import */ var _components_SEO__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_components_SEO__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(608732);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+function PressPage() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)((_components_SEO__WEBPACK_IMPORTED_MODULE_1___default()), {
+      title: "Press | Zion Tech Group",
+      description: "News, media resources, and press inquiries.",
+      canonical: "/press"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      className: "container mx-auto px-4 py-16",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h1", {
+        className: "text-4xl font-bold mb-4",
+        children: "Press"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+        className: "text-gray-300",
+        children: "Media kit and announcements coming soon."
+      })]
+    })]
+  });
+}
 
 /***/ }),
 
 /***/ 608732:
 /***/ ((module) => {
 
-"use strict";
 module.exports = require("react/jsx-runtime");
 
 /***/ }),
@@ -117,7 +144,6 @@ module.exports = require("react/jsx-runtime");
 /***/ 646060:
 /***/ ((module) => {
 
-"use strict";
 module.exports = require("next/dist/shared/lib/no-fallback-error.external.js");
 
 /***/ }),
@@ -125,7 +151,6 @@ module.exports = require("next/dist/shared/lib/no-fallback-error.external.js");
 /***/ 840361:
 /***/ ((module) => {
 
-"use strict";
 module.exports = require("next/dist/compiled/next-server/pages.runtime.prod.js");
 
 /***/ }),
@@ -133,7 +158,6 @@ module.exports = require("next/dist/compiled/next-server/pages.runtime.prod.js")
 /***/ 882015:
 /***/ ((module) => {
 
-"use strict";
 module.exports = require("react");
 
 /***/ })

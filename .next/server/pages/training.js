@@ -7,7 +7,7 @@ exports.modules = {
 /***/ 5406:
 /***/ (() => {
 
-throw new Error("Module parse failed: Duplicate export 'default' (889:7)\nFile was processed with these loaders:\n * ./node_modules/next/dist/build/babel/loader/index.js\nYou may need an additional loader to handle the result of these loaders.\n| }\n| ;\n> export default Training;");
+throw new Error("Module parse failed: Duplicate export 'default' (861:7)\nFile was processed with these loaders:\n * ./node_modules/next/dist/build/babel/loader/index.js\nYou may need an additional loader to handle the result of these loaders.\n| }\n| ;\n> export default Training;");
 
 /***/ }),
 

@@ -1,10 +1,11 @@
-// Stub API auth utility - placeholder for missing functionality
-export const requireAuth = () => {
-  // Placeholder implementation
-  return true;
-};
+import type { NextApiRequest, NextApiResponse } from 'next';
+import { getUserFromCookies } from '../auth-utils';
 
-export const getCurrentUser = () => {
-  // Placeholder implementation
-  return { id: 'user-1', email: 'user@example.com' };
-};
+export function requireSuperadminApi(req: NextApiRequest, res: NextApiResponse): boolean {
+  const user = getUserFromCookies(req.headers.cookie);
+  if (!user || user.role !== 'superadmin' || !user.twofaVerified) {
+    res.status(401).json({ error: 'Unauthorized' });
+    return false;
+  }
+  return true;
+}

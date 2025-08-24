@@ -197,7 +197,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var pdfkit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(394871);
 /* harmony import */ var pdfkit__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(pdfkit__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _utils_zgp_storage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(55092);
+/* harmony import */ var _utils_zgp_storage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(719635);
 
 
 var config = {

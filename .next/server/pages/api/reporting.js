@@ -5,6 +5,27 @@ exports.id = 660719;
 exports.ids = [660719];
 exports.modules = {
 
+/***/ 333873:
+/***/ ((module) => {
+
+module.exports = require("path");
+
+/***/ }),
+
+/***/ 455511:
+/***/ ((module) => {
+
+module.exports = require("crypto");
+
+/***/ }),
+
+/***/ 629021:
+/***/ ((module) => {
+
+module.exports = require("fs");
+
+/***/ }),
+
 /***/ 685511:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -13,7 +34,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ handler)
 /* harmony export */ });
 /* harmony import */ var _utils_auth__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(415834);
-/* harmony import */ var _utils_fileDb__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8129);
+/* harmony import */ var _utils_fileDb__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(970908);
 
 
 var FILE = 'reporting.json';

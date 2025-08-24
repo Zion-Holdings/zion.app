@@ -15,6 +15,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(882015);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_SEO__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(41415);
+/* harmony import */ var _components_SEO__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_components_SEO__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_layout_Layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(775927);
 /* harmony import */ var _components_layout_Layout__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_components_layout_Layout__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _data_real_2036_innovative_services__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(56229);
@@ -36,7 +37,7 @@ var ServicesMarketing2036 = () => {
   var allServices = [..._data_real_2036_innovative_services__WEBPACK_IMPORTED_MODULE_3__.real2036InnovativeServices, ..._data_real_2036_it_services__WEBPACK_IMPORTED_MODULE_4__.real2036ITServices, ..._data_real_2036_ai_services__WEBPACK_IMPORTED_MODULE_5__.real2036AIServices];
   var categories = [...new Set(allServices.map(service => service.category))];
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)((_components_layout_Layout__WEBPACK_IMPORTED_MODULE_2___default()), {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_SEO__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)((_components_SEO__WEBPACK_IMPORTED_MODULE_1___default()), {
       title: "2036 Services Marketing - Zion Tech Group",
       description: "Comprehensive marketing information for our 2036 innovative services. Discover features, benefits, pricing, and market opportunities.",
       keywords: "AI services marketing, quantum computing solutions, IT services pricing, micro SAAS marketing, 2036 technology solutions"

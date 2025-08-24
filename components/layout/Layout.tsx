@@ -1,10 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import EnhancedNavigation2025 from './EnhancedNavigation2025';
-import UltraFuturisticFooter2034 from './UltraFuturisticFooter2034';
-import EnhancedSidebar2025 from './EnhancedSidebar2025';
-import UltraAdvancedFuturisticBackground from '../backgrounds/UltraAdvancedFuturisticBackground';
-import TopContactBar from './TopContactBar';
+import React from 'react';
+import FuturisticNav from './FuturisticNav';
+import FuturisticFooter from './FuturisticFooter';
+import AnimatedBackground from '../ui/AnimatedBackground';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -16,26 +13,24 @@ interface LayoutProps {
   enableQuantumEffects?: boolean;
 }
 
-export default function Layout({ 
-  children, 
-  backgroundIntensity = 'medium',
-  backgroundTheme = 'quantum',
-  backgroundParticleCount = 200,
-  backgroundAnimationSpeed = 1.0,
-  enableHolographic = true,
-  enableQuantumEffects = true
-}: LayoutProps) {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
-
-  // Close sidebar on route change
-  useEffect(() => {
-    setSidebarOpen(false);
-  }, []);
+const Layout: React.FC<LayoutProps> = ({ children }) => {
+	return (
+		<div className="min-h-screen bg-black text-white">
+			<UltraAdvancedFuturisticBackground variant="neural-quantum-cyberpunk" intensity="high">
+				<QuantumHolographicNavbar />
+				<main className="pt-24 lg:pt-28">
+					{children}
+				</main>
+				<NeoFuturisticFooter />
+			</UltraAdvancedFuturisticBackground>
+		</div>
+	);
+};
 
   return (
-    <div className="min-h-screen bg-black text-white">
-      {/* Top Contact Bar */}
-      <TopContactBar />
+    <div className="min-h-screen bg-black text-white relative">
+      {/* Animated background */}
+      <AnimatedBackground variant="stars" intensity="low" />
       
       {/* Navigation */}
       <EnhancedNavigation2025 />
@@ -58,7 +53,7 @@ export default function Layout({
       </main>
       
       {/* Footer */}
-      <UltraFuturisticFooter2034 />
+      <FuturisticFooter />
     </div>
   );
-}
+};

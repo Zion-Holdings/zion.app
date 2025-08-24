@@ -68,19 +68,13 @@ const legalLinks = [
 const socialLinks = [
   { name: 'LinkedIn', href: 'https://linkedin.com/company/ziontechgroup', icon: Linkedin, color: 'hover:text-blue-400' },
   { name: 'Twitter', href: 'https://twitter.com/ziontechgroup', icon: Twitter, color: 'hover:text-blue-400' },
-  { name: 'Facebook', href: 'https://facebook.com/company/ziontechgroup', icon: Facebook, color: 'hover:text-blue-400' },
-  { name: 'Instagram', href: 'https://instagram.com/ziontechgroup', icon: Instagram, color: 'hover:text-pink-400' },
-  { name: 'YouTube', href: 'https://youtube.com/@ziontechgroup', icon: Youtube, color: 'hover:text-red-400' },
-  { name: 'GitHub', href: 'https://github.com/ziontechgroup', icon: Github, color: 'hover:text-gray-400' }
-];
-
-const quickServices = [
-  { name: 'AI Development', href: '/ai-development', icon: Brain, color: 'from-purple-500 to-pink-500' },
-  { name: 'Quantum Computing', href: '/quantum-computing', icon: Atom, color: 'from-blue-500 to-cyan-500' },
-  { name: 'Cybersecurity', href: '/cybersecurity', icon: Shield, color: 'from-red-500 to-orange-500' },
-  { name: 'Cloud Solutions', href: '/cloud-solutions', icon: Cloud, color: 'from-indigo-500 to-purple-500' },
-  { name: 'Data Analytics', href: '/data-analytics', icon: BarChart3, color: 'from-green-500 to-emerald-500' },
-  { name: 'Web Development', href: '/web-development', icon: Code, color: 'from-yellow-500 to-orange-500' }
+  { name: 'LinkedIn', href: 'https://linkedin.com/company/ziontechgroup', icon: Linkedin, color: 'hover:text-blue-600' },
+  { name: 'Facebook', href: 'https://www.facebook.com/ziontechgroup/', icon: Facebook, color: 'hover:text-blue-500' },
+  { name: 'Instagram', href: 'https://instagram.com/ziontechgroup', icon: Instagram, color: 'hover:text-pink-500' },
+  { name: 'YouTube', href: 'https://youtube.com/@ziontechgroup', icon: Youtube, color: 'hover:text-red-500' },
+  { name: 'GitHub', href: 'https://github.com/ziontechgroup', icon: Github, color: 'hover:text-gray-400' },
+  { name: 'Discord', href: 'https://discord.gg/ziontechgroup', icon: MessageCircle, color: 'hover:text-indigo-500' },
+  { name: 'Medium', href: 'https://medium.com/@ziontechgroup', icon: BookOpen, color: 'hover:text-gray-600' }
 ];
 
 export default function UltraFuturisticFooter2028() {

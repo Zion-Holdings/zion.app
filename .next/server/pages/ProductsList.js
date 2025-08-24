@@ -31,8 +31,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var private_next_pages_document_tsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(833932);
 /* harmony import */ var private_next_pages_document_tsx__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(private_next_pages_document_tsx__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var private_next_pages_app_tsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(805164);
-/* harmony import */ var private_next_pages_ProductsList_tsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(899820);
-/* harmony import */ var next_dist_server_route_modules_pages_pages_handler__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(312289);
+/* harmony import */ var private_next_pages_ProductsList_tsx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(899820);
+/* harmony import */ var next_dist_server_route_modules_pages_pages_handler__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(312289);
 
 
 
@@ -43,19 +43,19 @@ __webpack_require__.r(__webpack_exports__);
 
 
 // Re-export the component (should be the default export).
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,next_dist_build_templates_helpers__WEBPACK_IMPORTED_MODULE_2__.hoist)(private_next_pages_ProductsList_tsx__WEBPACK_IMPORTED_MODULE_5__, 'default'));
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,next_dist_build_templates_helpers__WEBPACK_IMPORTED_MODULE_2__.hoist)(private_next_pages_ProductsList_tsx__WEBPACK_IMPORTED_MODULE_6__, 'default'));
 // Re-export methods.
-const getStaticProps = (0,next_dist_build_templates_helpers__WEBPACK_IMPORTED_MODULE_2__.hoist)(private_next_pages_ProductsList_tsx__WEBPACK_IMPORTED_MODULE_5__, 'getStaticProps');
-const getStaticPaths = (0,next_dist_build_templates_helpers__WEBPACK_IMPORTED_MODULE_2__.hoist)(private_next_pages_ProductsList_tsx__WEBPACK_IMPORTED_MODULE_5__, 'getStaticPaths');
-const getServerSideProps = (0,next_dist_build_templates_helpers__WEBPACK_IMPORTED_MODULE_2__.hoist)(private_next_pages_ProductsList_tsx__WEBPACK_IMPORTED_MODULE_5__, 'getServerSideProps');
-const config = (0,next_dist_build_templates_helpers__WEBPACK_IMPORTED_MODULE_2__.hoist)(private_next_pages_ProductsList_tsx__WEBPACK_IMPORTED_MODULE_5__, 'config');
-const reportWebVitals = (0,next_dist_build_templates_helpers__WEBPACK_IMPORTED_MODULE_2__.hoist)(private_next_pages_ProductsList_tsx__WEBPACK_IMPORTED_MODULE_5__, 'reportWebVitals');
+const getStaticProps = (0,next_dist_build_templates_helpers__WEBPACK_IMPORTED_MODULE_2__.hoist)(private_next_pages_ProductsList_tsx__WEBPACK_IMPORTED_MODULE_6__, 'getStaticProps');
+const getStaticPaths = (0,next_dist_build_templates_helpers__WEBPACK_IMPORTED_MODULE_2__.hoist)(private_next_pages_ProductsList_tsx__WEBPACK_IMPORTED_MODULE_6__, 'getStaticPaths');
+const getServerSideProps = (0,next_dist_build_templates_helpers__WEBPACK_IMPORTED_MODULE_2__.hoist)(private_next_pages_ProductsList_tsx__WEBPACK_IMPORTED_MODULE_6__, 'getServerSideProps');
+const config = (0,next_dist_build_templates_helpers__WEBPACK_IMPORTED_MODULE_2__.hoist)(private_next_pages_ProductsList_tsx__WEBPACK_IMPORTED_MODULE_6__, 'config');
+const reportWebVitals = (0,next_dist_build_templates_helpers__WEBPACK_IMPORTED_MODULE_2__.hoist)(private_next_pages_ProductsList_tsx__WEBPACK_IMPORTED_MODULE_6__, 'reportWebVitals');
 // Re-export legacy methods.
-const unstable_getStaticProps = (0,next_dist_build_templates_helpers__WEBPACK_IMPORTED_MODULE_2__.hoist)(private_next_pages_ProductsList_tsx__WEBPACK_IMPORTED_MODULE_5__, 'unstable_getStaticProps');
-const unstable_getStaticPaths = (0,next_dist_build_templates_helpers__WEBPACK_IMPORTED_MODULE_2__.hoist)(private_next_pages_ProductsList_tsx__WEBPACK_IMPORTED_MODULE_5__, 'unstable_getStaticPaths');
-const unstable_getStaticParams = (0,next_dist_build_templates_helpers__WEBPACK_IMPORTED_MODULE_2__.hoist)(private_next_pages_ProductsList_tsx__WEBPACK_IMPORTED_MODULE_5__, 'unstable_getStaticParams');
-const unstable_getServerProps = (0,next_dist_build_templates_helpers__WEBPACK_IMPORTED_MODULE_2__.hoist)(private_next_pages_ProductsList_tsx__WEBPACK_IMPORTED_MODULE_5__, 'unstable_getServerProps');
-const unstable_getServerSideProps = (0,next_dist_build_templates_helpers__WEBPACK_IMPORTED_MODULE_2__.hoist)(private_next_pages_ProductsList_tsx__WEBPACK_IMPORTED_MODULE_5__, 'unstable_getServerSideProps');
+const unstable_getStaticProps = (0,next_dist_build_templates_helpers__WEBPACK_IMPORTED_MODULE_2__.hoist)(private_next_pages_ProductsList_tsx__WEBPACK_IMPORTED_MODULE_6__, 'unstable_getStaticProps');
+const unstable_getStaticPaths = (0,next_dist_build_templates_helpers__WEBPACK_IMPORTED_MODULE_2__.hoist)(private_next_pages_ProductsList_tsx__WEBPACK_IMPORTED_MODULE_6__, 'unstable_getStaticPaths');
+const unstable_getStaticParams = (0,next_dist_build_templates_helpers__WEBPACK_IMPORTED_MODULE_2__.hoist)(private_next_pages_ProductsList_tsx__WEBPACK_IMPORTED_MODULE_6__, 'unstable_getStaticParams');
+const unstable_getServerProps = (0,next_dist_build_templates_helpers__WEBPACK_IMPORTED_MODULE_2__.hoist)(private_next_pages_ProductsList_tsx__WEBPACK_IMPORTED_MODULE_6__, 'unstable_getServerProps');
+const unstable_getServerSideProps = (0,next_dist_build_templates_helpers__WEBPACK_IMPORTED_MODULE_2__.hoist)(private_next_pages_ProductsList_tsx__WEBPACK_IMPORTED_MODULE_6__, 'unstable_getServerSideProps');
 // Create and export the route module that will be consumed.
 const routeModule = new next_dist_server_route_modules_pages_module_compiled__WEBPACK_IMPORTED_MODULE_0__.PagesRouteModule({
     definition: {
@@ -73,12 +73,12 @@ const routeModule = new next_dist_server_route_modules_pages_module_compiled__WE
         App: private_next_pages_app_tsx__WEBPACK_IMPORTED_MODULE_4__["default"],
         Document: (private_next_pages_document_tsx__WEBPACK_IMPORTED_MODULE_3___default())
     },
-    userland: private_next_pages_ProductsList_tsx__WEBPACK_IMPORTED_MODULE_5__
+    userland: private_next_pages_ProductsList_tsx__WEBPACK_IMPORTED_MODULE_6__
 });
-const handler = (0,next_dist_server_route_modules_pages_pages_handler__WEBPACK_IMPORTED_MODULE_6__.getHandler)({
+const handler = (0,next_dist_server_route_modules_pages_pages_handler__WEBPACK_IMPORTED_MODULE_5__.getHandler)({
     srcPage: "/ProductsList",
     config,
-    userland: private_next_pages_ProductsList_tsx__WEBPACK_IMPORTED_MODULE_5__,
+    userland: private_next_pages_ProductsList_tsx__WEBPACK_IMPORTED_MODULE_6__,
     routeModule,
     getStaticPaths,
     getStaticProps,
@@ -129,46 +129,7 @@ module.exports = require("react");
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ ProductsListPage)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(882015);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(849788);
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(608732);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
 
-
-
-function ProductsListPage() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)((next_head__WEBPACK_IMPORTED_MODULE_1___default()), {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("title", {
-        children: "Products - Zion Tech Group"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("meta", {
-        name: "description",
-        content: "Explore our comprehensive range of technology products and services"
-      })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-      className: "container mx-auto px-4 py-8",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h1", {
-        className: "text-3xl font-bold mb-6",
-        children: "Our Products & Services"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-        className: "text-lg mb-4",
-        children: "Discover our cutting-edge technology solutions designed to transform your business."
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-        className: "mt-4",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
-          href: "/",
-          className: "text-blue-600 hover:underline",
-          children: "\u2190 Back to Home"
-        })
-      })]
-    })]
-  });
-}
 
 /***/ })
 

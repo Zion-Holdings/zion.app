@@ -48,16 +48,97 @@ export default function TopContactBar() {
   if (!isVisible) return null;
 
   return (
-    <motion.div
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      exit={{ y: -100 }}
-      className="relative bg-gradient-to-r from-cyan-900/90 via-blue-900/90 to-purple-900/90 backdrop-blur-xl border-b border-cyan-500/30 z-40"
-    >
-      {/* Background Effects */}
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 via-blue-500/5 to-purple-500/5" />
-        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent" />
+    <div className="relative z-40">
+      {/* Main Contact Bar */}
+      <div className="bg-gradient-to-r from-gray-900/90 via-black/90 to-gray-900/90 border-b border-cyan-500/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-14">
+            {/* Left Side - Contact Info */}
+            <div className="hidden md:flex items-center space-x-6 text-sm">
+              {/* Phone */}
+              <div className="flex items-center space-x-2 text-gray-300 hover:text-cyan-400 transition-colors duration-200 group">
+                <Phone className="w-4 h-4 text-cyan-400 group-hover:scale-110 transition-transform duration-200" />
+                <a href={`tel:${contactInfo.mobile.replace(/[^+\d]/g, '')}`} className="hover:text-cyan-400 transition-colors duration-200">
+                  {contactInfo.mobile}
+                </a>
+              </div>
+
+              {/* Email */}
+              <div className="flex items-center space-x-2 text-gray-300 hover:text-cyan-400 transition-colors duration-200 group">
+                <Mail className="w-4 h-4 text-cyan-400 group-hover:scale-110 transition-transform duration-200" />
+                <a href={`mailto:${contactInfo.email}`} className="hover:text-cyan-400 transition-colors duration-200 font-medium">
+                  {contactInfo.email}
+                </a>
+              </div>
+
+              {/* Address */}
+              <div className="flex items-center space-x-2 text-gray-300 hover:text-cyan-400 transition-colors duration-200 group">
+                <MapPin className="w-4 h-4 text-cyan-400 group-hover:scale-110 transition-transform duration-200" />
+                <a 
+                  href={`https://maps.google.com/?q=${encodeURIComponent(contactInfo.address)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-cyan-400 transition-colors duration-200"
+                >
+                  {contactInfo.address}
+                </a>
+              </div>
+
+              {/* Website */}
+              <div className="flex items-center space-x-2 text-gray-300 hover:text-cyan-400 transition-colors duration-200 group">
+                <Globe className="w-4 h-4 text-cyan-400 group-hover:scale-110 transition-transform duration-200" />
+                <a href={contactInfo.website} target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors duration-200">
+                  {contactInfo.website.replace('https://', '')}
+                </a>
+              </div>
+            </div>
+
+            {/* Center - Business Hours & Rating */}
+            <div className="hidden lg:flex items-center space-x-6 text-sm">
+              {/* Business Hours */}
+              <div className="flex items-center space-x-2 text-gray-300">
+                <Clock className="w-4 h-4 text-cyan-400" />
+                <span>{contactInfo.hours}</span>
+              </div>
+
+              {/* Rating */}
+              <div className="flex items-center space-x-2 text-gray-300">
+                <Star className="w-4 h-4 text-yellow-400 fill-current" />
+                <span>{contactInfo.rating}</span>
+              </div>
+            </div>
+
+            {/* Right Side - Quick Actions & Expand Button */}
+            <div className="flex items-center space-x-4">
+              {/* Quick Actions */}
+              <div className="hidden sm:flex items-center space-x-2">
+                {quickActions.slice(0, 2).map((action) => (
+                  <a
+                    key={action.name}
+                    href={action.href}
+                    className={`flex items-center space-x-2 px-3 py-1.5 text-xs text-white bg-gradient-to-r ${action.color} border border-transparent hover:scale-105 rounded-lg transition-all duration-200 transform`}
+                  >
+                    {action.icon}
+                    <span>{action.name}</span>
+                  </a>
+                ))}
+              </div>
+
+              {/* Expand/Collapse Button */}
+              <button
+                onClick={() => setIsExpanded(!isExpanded)}
+                className="flex items-center space-x-2 px-3 py-1.5 text-xs text-gray-300 hover:text-white bg-gray-800/50 hover:bg-gray-700/50 border border-gray-700/50 hover:border-cyan-500/50 rounded-lg transition-all duration-200"
+              >
+                <span>More Info</span>
+                {isExpanded ? (
+                  <ChevronUp className="w-3 h-3" />
+                ) : (
+                  <ChevronDown className="w-3 h-3" />
+                )}
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

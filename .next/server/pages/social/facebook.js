@@ -135,14 +135,22 @@ function FacebookRedirect() {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)((next_head__WEBPACK_IMPORTED_MODULE_1___default()), {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("title", {
         children: "Facebook | Zion Tech Group"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("link", {
+        rel: "canonical",
+        href: "https://facebook.com/ziontechgroup"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("meta", {
+        httpEquiv: "refresh",
+        content: "0;url=https://facebook.com/ziontechgroup"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("meta", {
         name: "robots",
-        content: "index, follow"
+        content: "noindex, nofollow"
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
       className: "min-h-screen bg-black text-white flex items-center justify-center p-8",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-        children: "Redirecting to Facebook..."
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
+        href: "https://facebook.com/ziontechgroup",
+        className: "text-cyan-400 underline",
+        children: "Continue to Facebook"
       })
     })]
   });

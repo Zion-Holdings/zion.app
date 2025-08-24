@@ -5,6 +5,13 @@ exports.id = 238671;
 exports.ids = [238671];
 exports.modules = {
 
+/***/ 333873:
+/***/ ((module) => {
+
+module.exports = require("path");
+
+/***/ }),
+
 /***/ 354877:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -156,6 +163,13 @@ async function handler(req, res, ctx) {
 /***/ ((module) => {
 
 module.exports = require("crypto");
+
+/***/ }),
+
+/***/ 629021:
+/***/ ((module) => {
+
+module.exports = require("fs");
 
 /***/ }),
 

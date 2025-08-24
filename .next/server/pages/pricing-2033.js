@@ -198,7 +198,7 @@ function Pricing2033Page() {
         content: "https://ziontechgroup.com/pricing-2033"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("meta", {
         property: "og:image",
-        content: "https://ziontechgroup.com/og-image.jpg"
+        content: "https://ziontechgroup.com/og-image.svg"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("meta", {
         name: "twitter:card",
         content: "summary_large_image"

@@ -1,0 +1,3 @@
+export default function Page() {
+  return <div className="py-10">Technology Implementation Strategies</div>;
+}

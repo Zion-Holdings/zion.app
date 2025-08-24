@@ -1,0 +1,1 @@
+export default function CloudComputingStrategiesChat() { return <div className="py-12">Cloud computing strategies content.</div>; }

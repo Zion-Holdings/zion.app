@@ -1,0 +1,39 @@
+import React from 'react';
+import FuturisticNavigation from './FuturisticNavigation';
+import FuturisticFooter from './FuturisticFooter';
+
+interface LayoutProps {
+  children: React.ReactNode;
+  seo?: SEOConfig;
+}
+
+<<<<<<< HEAD
+export default function Layout({ children, seo }: LayoutProps) {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [showEnhancements, setShowEnhancements] = useState(false);
+=======
+const Layout: React.FC<LayoutProps> = ({ children }) => {
+	return (
+		<div className="min-h-screen bg-black text-white">
+			<UltraAdvancedFuturisticBackground variant="neural-quantum-cyberpunk" intensity="high">
+				<QuantumHolographicNavbar />
+				<main className="pt-24 lg:pt-28">
+					{children}
+				</main>
+				<NeoFuturisticFooter />
+			</UltraAdvancedFuturisticBackground>
+		</div>
+	);
+};
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-ee3d
+
+  return (
+    <div className="min-h-screen bg-black text-white">
+      <FuturisticNavigation />
+      <main className="pt-24 lg:pt-28">
+        {children}
+      </main>
+      <FuturisticFooter />
+    </div>
+  );
+};

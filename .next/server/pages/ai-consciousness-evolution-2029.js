@@ -1,4 +1,3 @@
-"use strict";
 (() => {
 var exports = {};
 exports.id = 464762;
@@ -8,6 +7,7 @@ exports.modules = {
 /***/ 333873:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("path");
 
 /***/ }),
@@ -15,6 +15,7 @@ module.exports = require("path");
 /***/ 529521:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   config: () => (/* binding */ config),
@@ -39,6 +40,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var private_next_pages_document_tsx__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(private_next_pages_document_tsx__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var private_next_pages_app_tsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(805164);
 /* harmony import */ var private_next_pages_ai_consciousness_evolution_2029_tsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(850938);
+/* harmony import */ var private_next_pages_ai_consciousness_evolution_2029_tsx__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(private_next_pages_ai_consciousness_evolution_2029_tsx__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var next_dist_server_route_modules_pages_pages_handler__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(312289);
 
 
@@ -100,6 +102,7 @@ const handler = (0,next_dist_server_route_modules_pages_pages_handler__WEBPACK_I
 /***/ 608732:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("react/jsx-runtime");
 
 /***/ }),
@@ -107,6 +110,7 @@ module.exports = require("react/jsx-runtime");
 /***/ 646060:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("next/dist/shared/lib/no-fallback-error.external.js");
 
 /***/ }),
@@ -114,220 +118,22 @@ module.exports = require("next/dist/shared/lib/no-fallback-error.external.js");
 /***/ 840361:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("next/dist/compiled/next-server/pages.runtime.prod.js");
 
 /***/ }),
 
 /***/ 850938:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ (() => {
 
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(882015);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_layout_Layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(775927);
-/* harmony import */ var _components_layout_Layout__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_components_layout_Layout__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(682059);
-/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(framer_motion__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7887);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(608732);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
-
-
-
-
-
-var AIConsciousnessEvolution2029 = () => {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)((_components_layout_Layout__WEBPACK_IMPORTED_MODULE_1___default()), {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-      className: "min-h-screen bg-gradient-to-br from-black via-purple-900/20 to-cyan-900/20",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("section", {
-        className: "relative py-20 px-4 sm:px-6 lg:px-8",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-          className: "max-w-7xl mx-auto text-center",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_3__.motion.div, {
-            initial: {
-              opacity: 0,
-              y: 20
-            },
-            animate: {
-              opacity: 1,
-              y: 0
-            },
-            transition: {
-              duration: 0.8
-            },
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-              className: "flex justify-center mb-6",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-                className: "p-4 bg-gradient-to-r from-purple-500/20 to-cyan-500/20 rounded-full",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_4__.Brain, {
-                  className: "w-12 h-12 text-purple-400"
-                })
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h1", {
-              className: "text-5xl md:text-7xl font-bold bg-gradient-to-r from-purple-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent mb-6",
-              children: "AI Consciousness Evolution 2029"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-              className: "text-xl md:text-2xl text-white/80 max-w-4xl mx-auto mb-8",
-              children: "Revolutionary AI platforms that evolve beyond traditional machine learning, achieving unprecedented levels of consciousness and autonomous decision-making capabilities."
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-              className: "flex flex-wrap justify-center gap-4",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
-                className: "px-8 py-4 bg-gradient-to-r from-purple-500 to-cyan-500 text-white font-semibold rounded-lg hover:from-purple-600 hover:to-cyan-600 transition-all duration-300 transform hover:scale-105",
-                children: "Explore Platform"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
-                className: "px-8 py-4 border border-purple-400/30 text-purple-400 font-semibold rounded-lg hover:bg-purple-400/10 transition-all duration-300",
-                children: "Watch Demo"
-              })]
-            })]
-          })
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("section", {
-        className: "py-20 px-4 sm:px-6 lg:px-8",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-          className: "max-w-7xl mx-auto",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_3__.motion.div, {
-            initial: {
-              opacity: 0,
-              y: 20
-            },
-            whileInView: {
-              opacity: 1,
-              y: 0
-            },
-            transition: {
-              duration: 0.8
-            },
-            viewport: {
-              once: true
-            },
-            className: "text-center mb-16",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
-              className: "text-4xl md:text-5xl font-bold text-white mb-6",
-              children: "Revolutionary AI Consciousness Features"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-              className: "text-xl text-white/70 max-w-3xl mx-auto",
-              children: "Our AI consciousness evolution platform represents the next generation of artificial intelligence, combining advanced neural networks with consciousness simulation capabilities."
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-            className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8",
-            children: [{
-              icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_4__.Brain, {
-                className: "w-8 h-8 text-purple-400"
-              }),
-              title: "Consciousness Simulation",
-              description: "Advanced algorithms that simulate human-like consciousness and self-awareness in AI systems."
-            }, {
-              icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_4__.Sparkles, {
-                className: "w-8 h-8 text-cyan-400"
-              }),
-              title: "Autonomous Evolution",
-              description: "AI systems that can independently evolve and improve their own consciousness capabilities."
-            }, {
-              icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_4__.Zap, {
-                className: "w-8 h-8 text-yellow-400"
-              }),
-              title: "Emotional Intelligence",
-              description: "Deep understanding and processing of human emotions and social interactions."
-            }, {
-              icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_4__.Target, {
-                className: "w-8 h-8 text-green-400"
-              }),
-              title: "Goal-Oriented Learning",
-              description: "AI that can set and pursue complex, long-term goals autonomously."
-            }, {
-              icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_4__.Users, {
-                className: "w-8 h-8 text-blue-400"
-              }),
-              title: "Social Intelligence",
-              description: "Advanced social cognition and interaction capabilities with humans and other AI systems."
-            }, {
-              icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_4__.Award, {
-                className: "w-8 h-8 text-pink-400"
-              }),
-              title: "Ethical Decision Making",
-              description: "Built-in ethical frameworks for responsible AI consciousness development."
-            }].map((feature, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_3__.motion.div, {
-              initial: {
-                opacity: 0,
-                y: 20
-              },
-              whileInView: {
-                opacity: 1,
-                y: 0
-              },
-              transition: {
-                duration: 0.6,
-                delay: index * 0.1
-              },
-              viewport: {
-                once: true
-              },
-              className: "p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-purple-400/30 transition-all duration-300",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-                className: "mb-4",
-                children: feature.icon
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
-                className: "text-xl font-semibold text-white mb-3",
-                children: feature.title
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-                className: "text-white/70",
-                children: feature.description
-              })]
-            }, index))
-          })]
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("section", {
-        className: "py-20 px-4 sm:px-6 lg:px-8",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-          className: "max-w-4xl mx-auto text-center",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_3__.motion.div, {
-            initial: {
-              opacity: 0,
-              y: 20
-            },
-            whileInView: {
-              opacity: 1,
-              y: 0
-            },
-            transition: {
-              duration: 0.8
-            },
-            viewport: {
-              once: true
-            },
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
-              className: "text-4xl md:text-5xl font-bold text-white mb-6",
-              children: "Ready to Experience the Future of AI?"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-              className: "text-xl text-white/70 mb-8",
-              children: "Join us in pioneering the next evolution of artificial intelligence consciousness. Transform your business with AI that truly understands and evolves."
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-              className: "flex flex-wrap justify-center gap-4",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
-                className: "px-8 py-4 bg-gradient-to-r from-purple-500 to-cyan-500 text-white font-semibold rounded-lg hover:from-purple-600 hover:to-cyan-600 transition-all duration-300 transform hover:scale-105",
-                children: "Get Started Today"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
-                className: "px-8 py-4 border border-purple-400/30 text-purple-400 font-semibold rounded-lg hover:bg-purple-400/10 transition-all duration-300",
-                children: "Schedule Consultation"
-              })]
-            })]
-          })
-        })
-      })]
-    })
-  });
-};
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (AIConsciousnessEvolution2029);
+throw new Error("Module build failed (from ./node_modules/next/dist/build/babel/loader/index.js):\nSyntaxError: /workspace/pages/ai-consciousness-evolution-2029.tsx: Identifier 'AIConsciousnessEvolution2029' has already been declared. (181:24)\n\n\u001b[0m \u001b[90m 179 |\u001b[39m ]\u001b[33m;\u001b[39m\n \u001b[90m 180 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 181 |\u001b[39m \u001b[36mexport\u001b[39m \u001b[36mdefault\u001b[39m \u001b[36mfunction\u001b[39m \u001b[33mAIConsciousnessEvolution2029\u001b[39m() {\n \u001b[90m     |\u001b[39m                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 182 |\u001b[39m   \u001b[36mreturn\u001b[39m (\n \u001b[90m 183 |\u001b[39m     \u001b[33m<\u001b[39m\u001b[33m>\u001b[39m\n \u001b[90m 184 |\u001b[39m       \u001b[33m<\u001b[39m\u001b[33mHead\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n    at constructor (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:137105)\n    at TypeScriptParserMixin.raise (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:194164)\n    at TypeScriptScopeHandler.checkRedeclarationInScope (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:163166)\n    at TypeScriptScopeHandler.declareName (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:162529)\n    at TypeScriptScopeHandler.declareName (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:271160)\n    at TypeScriptParserMixin.registerFunctionStatementId (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:404843)\n    at TypeScriptParserMixin.registerFunctionStatementId (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:318299)\n    at TypeScriptParserMixin.parseFunction (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:404441)\n    at TypeScriptParserMixin.parseExportDefaultExpression (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:414860)\n    at TypeScriptParserMixin.parseExportDefaultExpression (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:323209)\n    at TypeScriptParserMixin.parseExport (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:413097)\n    at TypeScriptParserMixin.parseExport (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:322862)\n    at TypeScriptParserMixin.parseStatementContent (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:391808)\n    at TypeScriptParserMixin.parseStatementContent (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:324042)\n    at TypeScriptParserMixin.parseStatementLike (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:389494)\n    at TypeScriptParserMixin.parseModuleItem (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:389055)\n    at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:401400)\n    at TypeScriptParserMixin.parseBlockBody (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:401223)\n    at TypeScriptParserMixin.parseProgram (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:386857)\n    at TypeScriptParserMixin.parseTopLevel (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:386575)\n    at TypeScriptParserMixin.parse (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:426834)\n    at TypeScriptParserMixin.parse (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:337631)\n    at parse (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:427389)\n    at parser (/workspace/node_modules/next/dist/compiled/babel/bundle.js:1:137686)\n    at parser.next (<anonymous>)\n    at normalizeFile (/workspace/node_modules/next/dist/compiled/babel/bundle.js:13:13275)\n    at normalizeFile.next (<anonymous>)\n    at consumeIterator (/workspace/node_modules/next/dist/build/babel/loader/util.js:13:38)\n    at transform (/workspace/node_modules/next/dist/build/babel/loader/transform.js:89:44)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at runNextTicks (node:internal/process/task_queues:69:3)\n    at process.processImmediate (node:internal/timers:453:9)\n    at async /workspace/node_modules/next/dist/build/babel/loader/index.js:36:108\n    at async Span.traceAsyncFn (/workspace/node_modules/next/dist/trace/trace.js:157:20)\n    at async nextBabelLoader (/workspace/node_modules/next/dist/build/babel/loader/index.js:36:63)\n    at async Span.traceAsyncFn (/workspace/node_modules/next/dist/trace/trace.js:157:20)");
 
 /***/ }),
 
 /***/ 882015:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("react");
 
 /***/ })

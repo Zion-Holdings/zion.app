@@ -1,24 +1,31 @@
-import React, { useEffect, useCallback } from 'react';
-import { useRouter } from 'next/router';
+import React, { useEffect, useRef } from 'react';
 
-// Browser API types are declared globally in PerformanceOptimizer.tsx
-
-// Performance entry types for Core Web Vitals
+// Performance entry types
 interface PerformanceEventTiming extends PerformanceEntry {
   processingStart: number;
   processingEnd: number;
-  target?: any | null;
+  target?: any;
+}
+
+interface LayoutShift extends PerformanceEntry {
+  value: number;
+  sources?: LayoutShiftSource[];
+}
+
+interface LayoutShiftSource {
+  node?: any;
+  currentRect?: any;
+  previousRect?: any;
 }
 
 interface AnalyticsTrackerProps {
-  pageTitle?: string;
-  pagePath?: string;
-  customEvents?: Array<{ action: string; parameters: Record<string, unknown> }>;
+  trackingId?: string;
+  enableTracking?: boolean;
 }
 
-const AnalyticsTracker: React.FC<AnalyticsTrackerProps> = ({
-  trackingId = 'G-XXXXXXXXXX',
-  enableTracking = true
+const AnalyticsTracker: React.FC<AnalyticsTrackerProps> = ({ 
+  trackingId = 'G-XXXXXXXXXX', 
+  enableTracking = true 
 }) => {
   const router = useRouter();
   const trackingId = Math.random().toString(36).substr(2, 9);
@@ -391,6 +398,8 @@ const AnalyticsTracker: React.FC<AnalyticsTrackerProps> = ({
 
   // This component doesn't render anything
   return null;
-};
+}
+
+// gtag is declared globally in PerformanceOptimizer.tsx
 
 export default AnalyticsTracker;

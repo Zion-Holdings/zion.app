@@ -15,6 +15,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(882015);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_SEO__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(41415);
+/* harmony import */ var _components_SEO__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_components_SEO__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_ui_UltraFuturisticBackground2041__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(668668);
 /* harmony import */ var _components_ui_UltraFuturisticServiceCard2026__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(56196);
 /* harmony import */ var _components_ui_UltraFuturisticServiceCard2026__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_components_ui_UltraFuturisticServiceCard2026__WEBPACK_IMPORTED_MODULE_3__);
@@ -56,7 +57,7 @@ function FuturisticServicesShowcase2041() {
     // Search functionality is handled by the filter
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_SEO__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)((_components_SEO__WEBPACK_IMPORTED_MODULE_1___default()), {
       title: "2041 Futuristic Services Showcase - Zion Tech Group",
       description: "Explore our revolutionary 2041 futuristic services including AI consciousness evolution, quantum computing, space mining automation, and more cutting-edge solutions.",
       keywords: ["2041 services", "futuristic technology", "AI consciousness", "quantum computing", "space mining", "metaverse", "brain-computer interface", "Zion Tech Group"],

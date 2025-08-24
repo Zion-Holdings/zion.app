@@ -1,4 +1,3 @@
-"use strict";
 (() => {
 var exports = {};
 exports.id = 349892;
@@ -8,6 +7,7 @@ exports.modules = {
 /***/ 333873:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("path");
 
 /***/ }),
@@ -15,6 +15,7 @@ module.exports = require("path");
 /***/ 338616:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   config: () => (/* binding */ config),
@@ -39,6 +40,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var private_next_pages_document_tsx__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(private_next_pages_document_tsx__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var private_next_pages_app_tsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(805164);
 /* harmony import */ var private_next_pages_blog_index_tsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(497168);
+/* harmony import */ var private_next_pages_blog_index_tsx__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(private_next_pages_blog_index_tsx__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var next_dist_server_route_modules_pages_pages_handler__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(312289);
 
 
@@ -98,150 +100,16 @@ const handler = (0,next_dist_server_route_modules_pages_pages_handler__WEBPACK_I
 /***/ }),
 
 /***/ 497168:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ (() => {
 
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
-/* harmony export */   getServerSideProps: () => (/* binding */ getServerSideProps)
-/* harmony export */ });
-/* harmony import */ var _babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(860076);
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(849788);
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(919918);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _components_layout_Layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(775927);
-/* harmony import */ var _components_layout_Layout__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_components_layout_Layout__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(608732);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
-
-
-
-
-
-var BlogHome = _ref => {
-  var {
-    posts,
-    authors,
-    topics,
-    tags
-  } = _ref;
-  var [filters, setFilters] = useState({});
-  var filtered = useMemo(() => {
-    return posts.filter(p => {
-      if (filters.author && p.author !== filters.author) return false;
-      if (filters.topic && !p.topics.includes(filters.topic)) return false;
-      if (filters.tag && !p.tags.includes(filters.tag)) return false;
-      return true;
-    });
-  }, [posts, filters]);
-  var hero = filtered[0];
-  var rest = filtered.slice(1);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)((_components_layout_Layout__WEBPACK_IMPORTED_MODULE_2___default()), {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)((next_head__WEBPACK_IMPORTED_MODULE_0___default()), {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("title", {
-        children: "Blog - Zion AI Marketplace"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("meta", {
-        name: "description",
-        content: "Insights on AI, DevOps, and digital transformation."
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("meta", {
-        property: "og:title",
-        content: "Zion Blog"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("meta", {
-        property: "og:description",
-        content: "Insights on AI, DevOps, and digital transformation."
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("meta", {
-        property: "og:image",
-        content: "/images/og/blog-default.jpg"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("meta", {
-        property: "og:type",
-        content: "website"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("meta", {
-        name: "twitter:card",
-        content: "summary_large_image"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("meta", {
-        name: "twitter:title",
-        content: "Zion Blog"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("meta", {
-        name: "twitter:description",
-        content: "Insights on AI, DevOps, and digital transformation."
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("meta", {
-        name: "twitter:image",
-        content: "/images/og/blog-default.jpg"
-      })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-      className: "mx-auto max-w-6xl",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h1", {
-        className: "text-4xl font-bold mb-4",
-        children: "Zion Blog"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
-        className: "text-gray-600 dark:text-gray-300 mb-3",
-        children: "Thought leadership on AI, DevOps, and building with speed."
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-        className: "mb-6",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(PageShareButtons, {
-          title: "Zion Blog",
-          url:  true ? 'https://zion.app/blog' : 0,
-          description: "Insights on AI and DevOps from Zion.",
-          onShare: network => fetch('/api/analytics/share', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-              url: window.location.href,
-              title: 'Zion Blog',
-              network,
-              utm: 'utm_source=' + network + '&utm_medium=share&utm_campaign=blog'
-            })
-          }).catch(() => {})
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-        className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6",
-        children: posts.map(p => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-          className: "p-6 bg-black/40 border border-gray-700/50 hover:border-cyan-500/40 transition-colors rounded-lg",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h2", {
-            className: "text-white text-xl font-semibold mb-2",
-            children: p.title
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
-            className: "text-gray-400 mb-4",
-            children: p.excerpt
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)((next_link__WEBPACK_IMPORTED_MODULE_1___default()), {
-            href: "/blog/".concat(p.slug),
-            className: "text-cyan-400 hover:text-white font-medium",
-            children: "Read \u2192"
-          })]
-        }, p.slug))
-      })]
-    })]
-  });
-};
-var getServerSideProps = /*#__PURE__*/function () {
-  var _ref2 = (0,_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4__["default"])(function* () {
-    var posts = listPublishedPosts();
-    var authors = listAllAuthors();
-    var topics = listAllTopics();
-    var tags = listAllTags();
-    return {
-      props: {
-        posts,
-        authors,
-        topics,
-        tags
-      }
-    };
-  });
-  return function getServerSideProps() {
-    return _ref2.apply(this, arguments);
-  };
-}();
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (BlogHome);
+throw new Error("Module build failed (from ./node_modules/next/dist/build/babel/loader/index.js):\nSyntaxError: /workspace/pages/blog/index.tsx: Expected corresponding JSX closing tag for <UltraFuturisticBackground>. (94:4)\n\n\u001b[0m \u001b[90m 92 |\u001b[39m         \u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mdiv\u001b[39m\u001b[33m>\u001b[39m\n \u001b[90m 93 |\u001b[39m       \u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mdiv\u001b[39m\u001b[33m>\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 94 |\u001b[39m     \u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mdiv\u001b[39m\u001b[33m>\u001b[39m\n \u001b[90m    |\u001b[39m     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 95 |\u001b[39m   )\u001b[33m;\u001b[39m\n \u001b[90m 96 |\u001b[39m }\u001b[33m;\u001b[39m\n \u001b[90m 97 |\u001b[39m\u001b[0m\n    at constructor (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:137105)\n    at TypeScriptParserMixin.raise (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:194164)\n    at TypeScriptParserMixin.jsxParseElementAt (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:268546)\n    at TypeScriptParserMixin.jsxParseElement (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:268987)\n    at TypeScriptParserMixin.parseExprAtom (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:269115)\n    at TypeScriptParserMixin.parseExprSubscripts (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:356364)\n    at TypeScriptParserMixin.parseUpdate (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:355963)\n    at TypeScriptParserMixin.parseMaybeUnary (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:355527)\n    at TypeScriptParserMixin.parseMaybeUnary (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:331837)\n    at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:352169)\n    at TypeScriptParserMixin.parseExprOps (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:352281)\n    at TypeScriptParserMixin.parseMaybeConditional (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:351760)\n    at TypeScriptParserMixin.parseMaybeAssign (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:350714)\n    at /workspace/node_modules/next/dist/compiled/babel/bundle.js:191:330420\n    at TypeScriptParserMixin.tryParse (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:199742)\n    at TypeScriptParserMixin.parseMaybeAssign (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:330400)\n    at /workspace/node_modules/next/dist/compiled/babel/bundle.js:191:350260\n    at TypeScriptParserMixin.allowInAnd (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:383968)\n    at TypeScriptParserMixin.parseMaybeAssignAllowIn (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:350239)\n    at TypeScriptParserMixin.parseParenAndDistinguishExpression (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:369230)\n    at TypeScriptParserMixin.parseExprAtom (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:361477)\n    at TypeScriptParserMixin.parseExprAtom (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:269272)\n    at TypeScriptParserMixin.parseExprSubscripts (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:356364)\n    at TypeScriptParserMixin.parseUpdate (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:355963)\n    at TypeScriptParserMixin.parseMaybeUnary (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:355527)\n    at TypeScriptParserMixin.parseMaybeUnary (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:331837)\n    at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:352169)\n    at TypeScriptParserMixin.parseExprOps (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:352281)\n    at TypeScriptParserMixin.parseMaybeConditional (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:351760)\n    at TypeScriptParserMixin.parseMaybeAssign (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:350714)\n    at TypeScriptParserMixin.parseMaybeAssign (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:330620)\n    at TypeScriptParserMixin.parseExpressionBase (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:349863)\n    at /workspace/node_modules/next/dist/compiled/babel/bundle.js:191:349774\n    at TypeScriptParserMixin.allowInAnd (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:383926)\n    at TypeScriptParserMixin.parseExpression (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:349753)\n    at TypeScriptParserMixin.parseReturnStatement (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:397586)\n    at TypeScriptParserMixin.parseStatementContent (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:390278)\n    at TypeScriptParserMixin.parseStatementContent (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:324042)\n    at TypeScriptParserMixin.parseStatementLike (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:389494)\n    at TypeScriptParserMixin.parseStatementListItem (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:389120)\n    at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:401423)\n    at TypeScriptParserMixin.parseBlockBody (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:401223)\n    at TypeScriptParserMixin.parseBlock (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:400923)\n    at TypeScriptParserMixin.parseFunctionBody (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:378053)\n    at TypeScriptParserMixin.parseArrowExpression (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:377398)\n    at TypeScriptParserMixin.parseParenAndDistinguishExpression (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:369594)\n    at TypeScriptParserMixin.parseExprAtom (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:361477)\n    at TypeScriptParserMixin.parseExprAtom (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:269272)\n    at TypeScriptParserMixin.parseExprSubscripts (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:356364)\n    at TypeScriptParserMixin.parseUpdate (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:355963)");
 
 /***/ }),
 
 /***/ 608732:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("react/jsx-runtime");
 
 /***/ }),
@@ -249,6 +117,7 @@ module.exports = require("react/jsx-runtime");
 /***/ 646060:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("next/dist/shared/lib/no-fallback-error.external.js");
 
 /***/ }),
@@ -256,6 +125,7 @@ module.exports = require("next/dist/shared/lib/no-fallback-error.external.js");
 /***/ 840361:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("next/dist/compiled/next-server/pages.runtime.prod.js");
 
 /***/ }),
@@ -263,6 +133,7 @@ module.exports = require("next/dist/compiled/next-server/pages.runtime.prod.js")
 /***/ 882015:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("react");
 
 /***/ })

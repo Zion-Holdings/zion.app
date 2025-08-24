@@ -1,4 +1,3 @@
-"use strict";
 (() => {
 var exports = {};
 exports.id = 880923;
@@ -8,6 +7,7 @@ exports.modules = {
 /***/ 38971:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   config: () => (/* binding */ config),
@@ -32,6 +32,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var private_next_pages_document_tsx__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(private_next_pages_document_tsx__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var private_next_pages_app_tsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(805164);
 /* harmony import */ var private_next_pages_governance_create_tsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(930569);
+/* harmony import */ var private_next_pages_governance_create_tsx__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(private_next_pages_governance_create_tsx__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var next_dist_server_route_modules_pages_pages_handler__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(312289);
 
 
@@ -93,6 +94,7 @@ const handler = (0,next_dist_server_route_modules_pages_pages_handler__WEBPACK_I
 /***/ 333873:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("path");
 
 /***/ }),
@@ -100,6 +102,7 @@ module.exports = require("path");
 /***/ 608732:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("react/jsx-runtime");
 
 /***/ }),
@@ -107,6 +110,7 @@ module.exports = require("react/jsx-runtime");
 /***/ 646060:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("next/dist/shared/lib/no-fallback-error.external.js");
 
 /***/ }),
@@ -114,6 +118,7 @@ module.exports = require("next/dist/shared/lib/no-fallback-error.external.js");
 /***/ 840361:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("next/dist/compiled/next-server/pages.runtime.prod.js");
 
 /***/ }),
@@ -121,54 +126,15 @@ module.exports = require("next/dist/compiled/next-server/pages.runtime.prod.js")
 /***/ 882015:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("react");
 
 /***/ }),
 
 /***/ 930569:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ (() => {
 
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ GovernanceCreatePage)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(882015);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(849788);
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(608732);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
-
-
-
-function GovernanceCreatePage() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)((next_head__WEBPACK_IMPORTED_MODULE_1___default()), {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("title", {
-        children: "Create Proposal - Zion Tech Group"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("meta", {
-        name: "description",
-        content: "Create a new governance proposal"
-      })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-      className: "container mx-auto px-4 py-8",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h1", {
-        className: "text-3xl font-bold mb-6",
-        children: "Create Proposal"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-        className: "text-lg mb-4",
-        children: "Submit a new governance proposal for community consideration."
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-        className: "mt-4",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
-          href: "/governance",
-          className: "text-blue-600 hover:underline",
-          children: "\u2190 Back to Governance"
-        })
-      })]
-    })]
-  });
-}
+throw new Error("Module build failed (from ./node_modules/next/dist/build/babel/loader/index.js):\nSyntaxError: /workspace/pages/governance/create.tsx: 'return' outside of function. (3:2)\n\n\u001b[0m \u001b[90m 1 |\u001b[39m \u001b[36mimport\u001b[39m \u001b[33mReact\u001b[39m \u001b[36mfrom\u001b[39m \u001b[32m'react'\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 2 |\u001b[39m \u001b[36mimport\u001b[39m \u001b[33mHead\u001b[39m \u001b[36mfrom\u001b[39m \u001b[32m'next/head'\u001b[39m\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 3 |\u001b[39m   \u001b[36mreturn\u001b[39m (\n \u001b[90m   |\u001b[39m   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 4 |\u001b[39m     \u001b[33m<\u001b[39m\u001b[33m>\u001b[39m\n \u001b[90m 5 |\u001b[39m       \u001b[33m<\u001b[39m\u001b[33mHead\u001b[39m\u001b[33m>\u001b[39m\u001b[33m<\u001b[39m\u001b[33mtitle\u001b[39m\u001b[33m>\u001b[39mgovernance\u001b[33m/\u001b[39mcreate \u001b[33m-\u001b[39m \u001b[33mZion\u001b[39m \u001b[33mApp\u001b[39m\u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mtitle\u001b[39m\u001b[33m>\u001b[39m\u001b[33m<\u001b[39m\u001b[33mmeta\u001b[39m name\u001b[33m=\u001b[39m\u001b[32m\"description\"\u001b[39m content\u001b[33m=\u001b[39m\u001b[32m\"governance/create page\"\u001b[39m \u001b[33m/\u001b[39m\u001b[33m>\u001b[39m\u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mHead\u001b[39m\u001b[33m>\u001b[39m\u001b[33m<\u001b[39m\u001b[33mdiv\u001b[39m className\u001b[33m=\u001b[39m\u001b[32m\"container mx-auto px-4 py-8\"\u001b[39m\u001b[33m>\u001b[39m\u001b[33m<\u001b[39m\u001b[33mh1\u001b[39m className\u001b[33m=\u001b[39m\u001b[32m\"text-3xl font-bold mb-6\"\u001b[39m\u001b[33m>\u001b[39mgovernance\u001b[33m/\u001b[39mcreate\u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mh1\u001b[39m\u001b[33m>\u001b[39m\u001b[33m<\u001b[39m\u001b[33mp\u001b[39m className\u001b[33m=\u001b[39m\u001b[32m\"text-lg mb-4\"\u001b[39m\u001b[33m>\u001b[39m\u001b[33mThis\u001b[39m page is under construction\u001b[33m.\u001b[39m\u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mp\u001b[39m\u001b[33m>\u001b[39m\u001b[33m<\u001b[39m\u001b[33mdiv\u001b[39m className\u001b[33m=\u001b[39m\u001b[32m\"mt-4\"\u001b[39m\u001b[33m>\u001b[39m\u001b[33m<\u001b[39m\u001b[33ma\u001b[39m href\u001b[33m=\u001b[39m\u001b[32m\"/\"\u001b[39m className\u001b[33m=\u001b[39m\u001b[32m\"text-blue-600 hover:underline\"\u001b[39m\u001b[33m>\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 6 |\u001b[39m             ← \u001b[33mBack\u001b[39m to \u001b[33mHome\u001b[39m\u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33ma\u001b[39m\u001b[33m>\u001b[39m\u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mdiv\u001b[39m\u001b[33m>\u001b[39m\u001b[33m<\u001b[39m\u001b[35m/div></\u001b[39m\u001b[33m>\u001b[39m\u001b[33m;\u001b[39m\u001b[0m\n    at constructor (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:137105)\n    at TypeScriptParserMixin.raise (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:194164)\n    at TypeScriptParserMixin.parseReturnStatement (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:397466)\n    at TypeScriptParserMixin.parseStatementContent (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:390278)\n    at TypeScriptParserMixin.parseStatementContent (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:324042)\n    at TypeScriptParserMixin.parseStatementLike (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:389494)\n    at TypeScriptParserMixin.parseModuleItem (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:389055)\n    at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:401400)\n    at TypeScriptParserMixin.parseBlockBody (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:401223)\n    at TypeScriptParserMixin.parseProgram (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:386857)\n    at TypeScriptParserMixin.parseTopLevel (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:386575)\n    at TypeScriptParserMixin.parse (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:426834)\n    at TypeScriptParserMixin.parse (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:337631)\n    at parse (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:427389)\n    at parser (/workspace/node_modules/next/dist/compiled/babel/bundle.js:1:137686)\n    at parser.next (<anonymous>)\n    at normalizeFile (/workspace/node_modules/next/dist/compiled/babel/bundle.js:13:13275)\n    at normalizeFile.next (<anonymous>)\n    at consumeIterator (/workspace/node_modules/next/dist/build/babel/loader/util.js:13:38)\n    at transform (/workspace/node_modules/next/dist/build/babel/loader/transform.js:89:44)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at runNextTicks (node:internal/process/task_queues:69:3)\n    at process.processImmediate (node:internal/timers:453:9)\n    at async /workspace/node_modules/next/dist/build/babel/loader/index.js:36:108\n    at async Span.traceAsyncFn (/workspace/node_modules/next/dist/trace/trace.js:157:20)\n    at async nextBabelLoader (/workspace/node_modules/next/dist/build/babel/loader/index.js:36:63)\n    at async Span.traceAsyncFn (/workspace/node_modules/next/dist/trace/trace.js:157:20)");
 
 /***/ })
 

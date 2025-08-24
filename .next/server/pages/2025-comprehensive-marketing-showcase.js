@@ -22,6 +22,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(882015);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_SEO__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(41415);
+/* harmony import */ var _components_SEO__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_components_SEO__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(682059);
 /* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(framer_motion__WEBPACK_IMPORTED_MODULE_9__);
 /* harmony import */ var _components_layout_UltraFuturisticNavigation2046__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(162979);
@@ -86,7 +87,7 @@ var ComprehensiveMarketingShowcase2025 = () => {
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
     className: "min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_SEO__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)((_components_SEO__WEBPACK_IMPORTED_MODULE_1___default()), {
       title: "2025 Comprehensive Marketing Showcase | Zion Tech Group - Revolutionary AI & IT Solutions",
       description: "Discover Zion Tech Group's revolutionary 2025 services: AI breakthroughs, quantum infrastructure, micro SAAS solutions, and industry transformations. Transform your business today.",
       keywords: ["Zion Tech Group", "AI services", "IT infrastructure", "micro SAAS", "2025 technology", "quantum computing", "business transformation", "innovative solutions"],

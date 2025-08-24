@@ -1,13 +1,10 @@
-<<<<<<< HEAD
-export default function ContactPage() {
-<<<<<<< HEAD
+import React from 'react';
+
+const Component = () => {
   return (
-    <div className="py-8">
-      <h1 className="text-xl font-semibold mb-2">Contact</h1>
-      <p className="text-gray-600 dark:text-gray-300">Reach us at contact@zion.ai</p>
-    </div>
-  );
-}
+    <div>
+      <h1>Page Content</h1>
+      <p>This page is under construction.</p>
 =======
 import React from 'react';
 
@@ -38,8 +35,11 @@ const Contact: NextPage = () => {
   );
 };
 
+export default function Contact() {
+  return <div>Contact</div>;
+}
+=======
 export default Contact;
->>>>>>> origin/cursor/deploy-offworld-zion-os-on-ipfs-and-orbitdb-92ee
 =======
   return <div className="py-10">Contact us at contact@zion.ai</div>;
 }
@@ -51,5 +51,3 @@ export default function Contact(){
 }
 =======
 export default function ContactPage() { return null }
->>>>>>> origin/cursor/build-zion-ai-api-developer-documentation-hub-2aa3
->>>>>>> 5f48a381108fa3a8a43c189dd4b043133ce9307e

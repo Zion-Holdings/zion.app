@@ -36,8 +36,113 @@ function normalizeHref(href: string): string {
 // Enhanced navigation items with better organization
 const navigationItems: NavigationItem[] = [
   {
-    name: 'Micro SAAS Services',
+    name: 'All Services',
     href: '/services',
+    icon: <Globe className="w-5 h-5" />,
+    description: 'Complete portfolio of all technology services',
+    badge: 'Showcase',
+    category: 'main',
+    color: 'from-cyan-500 to-blue-500',
+    children: [
+      { name: 'View All Services', href: '/services', description: 'Complete services portfolio' },
+      { name: 'Service Categories', href: '/services#categories', description: 'Browse by category' },
+      { name: 'Pricing Comparison', href: '/services#pricing', description: 'Compare service costs' },
+      { name: 'Service Search', href: '/services#search', description: 'Find specific services' },
+      { name: 'Latest Innovations', href: '/revolutionary-2025-services-showcase', description: 'Cutting-edge solutions' },
+      { name: '2026 Services', href: '/revolutionary-2026-services', description: 'Next generation solutions' },
+      { name: '2027 Services', href: '/revolutionary-2027-services-showcase', description: 'Future-ready services' },
+      { name: 'Ultimate 2026', href: '/ultimate-2026-services-showcase', description: 'Premium service collection' }
+    ]
+  },
+  {
+    name: 'AI & Machine Learning',
+    href: '/ai-services',
+    icon: <Brain className="w-5 h-5" />,
+    description: 'Revolutionary AI consciousness and emotional intelligence',
+    badge: 'New',
+    category: 'ai',
+    color: 'from-purple-500 to-pink-500',
+    children: [
+      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2025', description: 'Emotional intelligence and self-awareness' },
+      { name: 'AI Quantum Neural Network', href: '/ai-quantum-neural-network', description: 'Hybrid AI-Quantum computing platform' },
+      { name: 'AI Autonomous Research', href: '/ai-autonomous-research-assistant', description: 'Self-directed AI research' },
+      { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-training', description: 'EQ training platform' },
+      { name: 'AI Predictive Maintenance', href: '/ai-predictive-maintenance-platform', description: 'Equipment failure prediction' },
+      { name: 'AI Content Personalization', href: '/ai-content-personalization-engine', description: 'Personalized content delivery' },
+      { name: 'AI Autonomous Ecosystem', href: '/ai-autonomous-ecosystem-manager', description: 'Self-managing AI systems' },
+      { name: 'AI Ethics & Governance', href: '/ai-ethics-governance-framework', description: 'Ethical AI frameworks' },
+      { name: 'AI Creativity Studio', href: '/ai-creativity-studio', description: 'AI-powered creative content' },
+      { name: 'AI Education Platform', href: '/ai-education-platform', description: 'Personalized AI learning' },
+      { name: 'AI Healthcare Diagnostics', href: '/ai-healthcare-diagnostics', description: 'Medical AI solutions' },
+      { name: 'AI Financial Intelligence', href: '/ai-financial-intelligence', description: 'Financial AI analytics' },
+      { name: 'AI Sustainability Platform', href: '/ai-sustainability-platform', description: 'Environmental AI solutions' },
+      { name: 'AI Legal Contract Analyzer', href: '/ai-legal-contract-analyzer', description: 'Legal document analysis' },
+      { name: 'AI Autonomous Code Generation', href: '/ai-autonomous-code-generation', description: 'AI that writes code' },
+      { name: 'AI Autonomous Marketing', href: '/ai-autonomous-marketing-platform', description: 'Autonomous marketing AI' },
+      { name: 'AI Autonomous Sales', href: '/ai-autonomous-sales-platform', description: 'AI that closes deals' },
+      { name: 'AI Autonomous Customer Service', href: '/ai-autonomous-customer-service', description: 'Autonomous support AI' },
+      { name: 'AI Autonomous HR', href: '/ai-autonomous-hr-platform', description: 'Autonomous HR management' },
+      { name: 'Advanced AI Automation', href: '/advanced-ai-automation-services', description: 'AI automation for development, testing, DevOps, security, and data' },
+      { name: 'Cutting-Edge AI Innovations', href: '/cutting-edge-ai-innovations', description: 'Latest AI breakthroughs and innovations' }
+    ]
+  },
+  {
+    name: 'Quantum & Emerging Tech',
+    href: '/quantum-services',
+    icon: <Atom className="w-5 h-5" />,
+    description: 'Quantum computing and breakthrough technologies',
+    badge: 'Hot',
+    category: 'quantum',
+    color: 'from-green-500 to-emerald-500',
+    children: [
+      { name: 'Space Resource Mining', href: '/space-resource-mining-platform', description: 'Asteroid mining and space resources' },
+      { name: 'Quantum Internet Security', href: '/quantum-internet-security-platform', description: 'Unbreakable encryption' },
+      { name: 'Brain-Computer Interface', href: '/brain-computer-interface-platform', description: 'Neural interface technology' },
+      { name: 'Quantum Materials Discovery', href: '/quantum-materials-discovery-platform', description: 'Materials science acceleration' },
+      { name: 'Autonomous Vehicle AI', href: '/autonomous-vehicle-ai-platform', description: 'Self-driving AI systems' },
+      { name: 'Quantum Bio-Computing', href: '/quantum-bio-computing-platform', description: 'Quantum-biological hybrid processing' },
+      { name: 'Quantum Energy Platform', href: '/quantum-energy-platform', description: 'Fusion power simulation' },
+      { name: 'Quantum Robotics', href: '/quantum-robotics', description: 'Quantum-enhanced robotics' },
+      { name: 'Quantum Cybersecurity', href: '/quantum-cybersecurity-platform', description: 'Next-gen security' },
+      { name: 'Quantum Logistics', href: '/quantum-logistics-optimization', description: 'Route optimization' },
+      { name: 'Quantum Metaverse', href: '/quantum-metaverse', description: 'Quantum-enhanced virtual worlds' },
+      { name: 'Quantum IoT Platform', href: '/quantum-iot', description: 'Quantum-secured IoT' },
+      { name: 'Quantum Financial Trading', href: '/quantum-financial-trading-platform', description: 'Quantum-enhanced trading' },
+      { name: 'Quantum Space Technology', href: '/quantum-space-tech', description: 'Space exploration with quantum computing' },
+      { name: 'Quantum Healthcare', href: '/quantum-healthcare', description: 'Medical breakthroughs with quantum computing' },
+      { name: 'Quantum Manufacturing', href: '/quantum-manufacturing', description: 'Next-gen manufacturing processes' }
+    ]
+  },
+  {
+    name: 'IT & Infrastructure',
+    href: '/it-services',
+    icon: <Cpu className="w-5 h-5" />,
+    description: 'Advanced enterprise infrastructure and security',
+    badge: 'Enterprise',
+    category: 'it',
+    color: 'from-blue-500 to-indigo-500',
+    children: [
+      { name: 'Zero Trust Security', href: '/zero-trust-network-architecture', description: 'Next-generation security framework' },
+      { name: 'Quantum Cloud Infrastructure', href: '/quantum-cloud-infrastructure', description: 'Quantum-enhanced cloud computing' },
+      { name: 'Edge Computing Orchestration', href: '/edge-computing-orchestration', description: 'Distributed edge computing' },
+      { name: '5G Private Network Solutions', href: '/5g-private-network-solutions', description: 'Enterprise 5G networks' },
+      { name: 'Cloud Landing Zone', href: '/cloud-landing-zone', description: 'Secure cloud foundation' },
+      { name: 'Cloud Cost Optimizer', href: '/cloud-cost-optimizer', description: 'Cloud cost management' },
+      { name: 'Cloud Backup Compliance', href: '/cloud-backup-compliance', description: 'Compliant cloud backup' },
+      { name: 'Infrastructure Drift Detector', href: '/infrastructure-drift-detector', description: 'Infrastructure monitoring' },
+      { name: 'Kubernetes RBAC Auditor', href: '/kubernetes-rbac-auditor', description: 'K8s security auditing' },
+      { name: 'Managed PostgreSQL HA', href: '/managed-postgres-ha', description: 'High-availability database' },
+      { name: 'LLM Gateway', href: '/llm-gateway', description: 'AI model management' },
+      { name: 'API Security Scanner', href: '/api-security-scanner', description: 'API security testing' },
+      { name: 'API Observability', href: '/api-observability', description: 'API monitoring and analytics' },
+      { name: 'API Mock Contract Testing', href: '/api-mock-contract-testing', description: 'API testing automation' },
+      { name: 'API Latency SLO Tracker', href: '/api-latency-slo-tracker', description: 'Performance monitoring' },
+      { name: 'API Documentation Generator', href: '/api-documentation-generator', description: 'Auto-generated API docs' }
+    ]
+  },
+  {
+    name: 'Micro SAAS Solutions',
+    href: '/micro-saas',
     icon: <Rocket className="w-5 h-5" />,
     description: 'Professional micro SAAS solutions for modern businesses',
     badge: 'New 2025',
@@ -298,45 +403,39 @@ const UltraAdvancedFuturisticNavigation2025: React.FC = () => {
   }, [router.asPath]);
 
   return (
-    <motion.nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'bg-gray-900/95 backdrop-blur-xl border-b border-gray-800/50 shadow-2xl' 
-          : 'bg-transparent'
-      }`}
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6 }}
-    >
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0 -z-10">
-        {isScrolled && (
-          <>
-            {/* Quantum Particle Field */}
-            {[...Array(20)].map((_, i) => (
-              <motion.div
-                key={i}
-                className="absolute w-1 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full"
-                animate={{
-                  x: [0, 100, 0],
-                  y: [0, -100, 0],
-                  opacity: [0, 0.6, 0],
-                  scale: [0, 1, 0],
-                }}
-                transition={{
-                  duration: 8 + i * 0.5,
-                  repeat: -1,
-                  delay: i * 0.3,
-                  ease: "easeInOut"
-                }}
-                style={{
-                  left: `${Math.random() * 100}%`,
-                  top: `${Math.random() * 100}%`
-                }}
-              />
-            ))}
-          </>
-        )}
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      isScrolled 
+        ? 'bg-black/95 backdrop-blur-xl border-b border-gray-800/50 shadow-2xl shadow-cyan-500/20' 
+        : 'bg-transparent'
+    }`}>
+      {/* Top Contact Bar */}
+      <div className="bg-gradient-to-r from-cyan-900/20 via-purple-900/20 to-pink-900/20 border-b border-gray-800/30">
+        <div className="container mx-auto px-4 py-2">
+          <div className="flex items-center justify-between text-sm">
+            <div className="flex items-center gap-6">
+              <div className="flex items-center gap-2 text-cyan-400">
+                <Phone className="w-4 h-4" />
+                <span>{contactInfo.mobile}</span>
+              </div>
+              <div className="flex items-center gap-2 text-purple-400">
+                <Mail className="w-4 h-4" />
+                <span>{contactInfo.email}</span>
+              </div>
+              <div className="flex items-center gap-2 text-pink-400">
+                <MapPin className="w-4 h-4" />
+                <span>{contactInfo.address}</span>
+              </div>
+            </div>
+            <div className="flex items-center gap-4">
+              <a 
+                href="/" 
+                className="text-gray-400 hover:text-cyan-400 transition-colors duration-200"
+              >
+                {contactInfo.website}
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

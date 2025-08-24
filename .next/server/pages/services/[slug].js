@@ -1,20 +1,13 @@
+"use strict";
 (() => {
 var exports = {};
 exports.id = 479840;
 exports.ids = [479840,890636];
 exports.modules = {
 
-/***/ 257092:
-/***/ (() => {
-
-throw new Error("Module build failed (from ./node_modules/next/dist/build/babel/loader/index.js):\nSyntaxError: /workspace/pages/services/[slug].tsx: Unexpected token (47:0)\n\n\u001b[0m \u001b[90m 45 |\u001b[39m \t\t\u001b[33m.\u001b[39mconcat(realServicesQ12025 \u001b[36mas\u001b[39m unknown \u001b[36mas\u001b[39m \u001b[33mService\u001b[39m[])\n \u001b[90m 46 |\u001b[39m \t\t\u001b[33m.\u001b[39mconcat(realServicesQ32025 \u001b[36mas\u001b[39m unknown \u001b[36mas\u001b[39m \u001b[33mService\u001b[39m[])\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 47 |\u001b[39m \u001b[33m===\u001b[39m\u001b[33m===\u001b[39m\u001b[33m=\u001b[39m\n \u001b[90m    |\u001b[39m \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 48 |\u001b[39m \t\t\u001b[33m.\u001b[39mconcat(newVerifiedServicesQ22025 \u001b[36mas\u001b[39m unknown \u001b[36mas\u001b[39m \u001b[33mService\u001b[39m[])\u001b[33m;\u001b[39m\n \u001b[90m 49 |\u001b[39m }\n \u001b[90m 50 |\u001b[39m\u001b[0m\n    at constructor (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:137105)\n    at TypeScriptParserMixin.raise (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:194164)\n    at TypeScriptParserMixin.unexpected (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:194550)\n    at TypeScriptParserMixin.parseExprAtom (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:363808)\n    at TypeScriptParserMixin.parseExprAtom (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:269272)\n    at TypeScriptParserMixin.parseExprSubscripts (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:356364)\n    at TypeScriptParserMixin.parseUpdate (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:355963)\n    at TypeScriptParserMixin.parseMaybeUnary (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:355527)\n    at TypeScriptParserMixin.parseMaybeUnary (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:331837)\n    at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:352169)\n    at TypeScriptParserMixin.parseExprOps (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:352281)\n    at TypeScriptParserMixin.parseMaybeConditional (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:351760)\n    at TypeScriptParserMixin.parseMaybeAssign (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:350714)\n    at TypeScriptParserMixin.parseMaybeAssign (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:330620)\n    at TypeScriptParserMixin.parseExpressionBase (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:349863)\n    at /workspace/node_modules/next/dist/compiled/babel/bundle.js:191:349774\n    at TypeScriptParserMixin.allowInAnd (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:383926)\n    at TypeScriptParserMixin.parseExpression (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:349753)\n    at TypeScriptParserMixin.parseStatementContent (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:392082)\n    at TypeScriptParserMixin.parseStatementContent (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:324042)\n    at TypeScriptParserMixin.parseStatementLike (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:389494)\n    at TypeScriptParserMixin.parseStatementListItem (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:389120)\n    at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:401423)\n    at TypeScriptParserMixin.parseBlockBody (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:401223)\n    at TypeScriptParserMixin.parseBlock (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:400923)\n    at TypeScriptParserMixin.parseFunctionBody (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:378053)\n    at TypeScriptParserMixin.parseFunctionBodyAndFinish (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:377675)\n    at TypeScriptParserMixin.parseFunctionBodyAndFinish (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:318173)\n    at /workspace/node_modules/next/dist/compiled/babel/bundle.js:191:404308\n    at TypeScriptParserMixin.withSmartMixTopicForbiddingContext (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:383677)\n    at TypeScriptParserMixin.parseFunction (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:404262)\n    at TypeScriptParserMixin.parseFunctionStatement (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:397088)\n    at TypeScriptParserMixin.parseStatementContent (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:390089)\n    at TypeScriptParserMixin.parseStatementContent (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:324042)\n    at TypeScriptParserMixin.parseStatementLike (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:389494)\n    at TypeScriptParserMixin.parseModuleItem (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:389055)\n    at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:401400)\n    at TypeScriptParserMixin.parseBlockBody (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:401223)\n    at TypeScriptParserMixin.parseProgram (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:386857)\n    at TypeScriptParserMixin.parseTopLevel (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:386575)\n    at TypeScriptParserMixin.parse (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:426834)\n    at TypeScriptParserMixin.parse (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:337631)\n    at parse (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:427389)\n    at parser (/workspace/node_modules/next/dist/compiled/babel/bundle.js:1:137686)\n    at parser.next (<anonymous>)\n    at normalizeFile (/workspace/node_modules/next/dist/compiled/babel/bundle.js:13:13275)\n    at normalizeFile.next (<anonymous>)\n    at consumeIterator (/workspace/node_modules/next/dist/build/babel/loader/util.js:13:38)\n    at transform (/workspace/node_modules/next/dist/build/babel/loader/transform.js:89:44)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)");
-
-/***/ }),
-
 /***/ 333873:
 /***/ ((module) => {
 
-"use strict";
 module.exports = require("path");
 
 /***/ }),
@@ -22,7 +15,6 @@ module.exports = require("path");
 /***/ 608732:
 /***/ ((module) => {
 
-"use strict";
 module.exports = require("react/jsx-runtime");
 
 /***/ }),
@@ -30,7 +22,6 @@ module.exports = require("react/jsx-runtime");
 /***/ 646060:
 /***/ ((module) => {
 
-"use strict";
 module.exports = require("next/dist/shared/lib/no-fallback-error.external.js");
 
 /***/ }),
@@ -38,7 +29,6 @@ module.exports = require("next/dist/shared/lib/no-fallback-error.external.js");
 /***/ 840361:
 /***/ ((module) => {
 
-"use strict";
 module.exports = require("next/dist/compiled/next-server/pages.runtime.prod.js");
 
 /***/ }),
@@ -46,7 +36,6 @@ module.exports = require("next/dist/compiled/next-server/pages.runtime.prod.js")
 /***/ 882015:
 /***/ ((module) => {
 
-"use strict";
 module.exports = require("react");
 
 /***/ }),
@@ -54,7 +43,6 @@ module.exports = require("react");
 /***/ 932121:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   config: () => (/* binding */ config),

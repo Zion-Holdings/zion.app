@@ -4,7 +4,15 @@ exports.id = 749851;
 exports.ids = [749851,890636];
 exports.modules = {
 
-/***/ 260155:
+/***/ 333873:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("path");
+
+/***/ }),
+
+/***/ 482536:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -91,14 +99,6 @@ const handler = (0,next_dist_server_route_modules_pages_pages_handler__WEBPACK_I
 
 /***/ }),
 
-/***/ 333873:
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("path");
-
-/***/ }),
-
 /***/ 608732:
 /***/ ((module) => {
 
@@ -145,7 +145,7 @@ module.exports = require("react");
 var __webpack_require__ = require("../../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [618096,472076], () => (__webpack_exec__(260155)));
+var __webpack_exports__ = __webpack_require__.X(0, [618096,472076], () => (__webpack_exec__(482536)));
 module.exports = __webpack_exports__;
 
 })();

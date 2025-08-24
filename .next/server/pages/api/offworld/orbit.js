@@ -157,36 +157,110 @@ async function handler(req, res, ctx) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   connectToOrbitDB: () => (/* binding */ connectToOrbitDB),
-/* harmony export */   createOrbitDB: () => (/* binding */ createOrbitDB)
+/* harmony export */   appendChatMessage: () => (/* binding */ appendChatMessage),
+/* harmony export */   connectOrbit: () => (/* binding */ connectOrbit),
+/* harmony export */   editConstitution: () => (/* binding */ editConstitution),
+/* harmony export */   recordVote: () => (/* binding */ recordVote)
 /* harmony export */ });
-/* harmony import */ var _babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(405206);
+/* harmony import */ var _babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(435326);
+/* harmony import */ var _babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(405206);
 
-// Stub offworld orbitdb utility - placeholder for missing functionality
-var createOrbitDB = /*#__PURE__*/function () {
-  var _ref = (0,_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-    // Placeholder implementation
+
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { (0,_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+var createIpfsClient;
+var OrbitDB;
+function lazyLoadDeps() {
+  return _lazyLoadDeps.apply(this, arguments);
+}
+function _lazyLoadDeps() {
+  _lazyLoadDeps = (0,_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])(function* () {
+    try {
+      var ipfsHttp = yield Promise.resolve().then(function webpackMissingModule() { var e = new Error("Cannot find module 'ipfs-http-client'"); e.code = 'MODULE_NOT_FOUND'; throw e; });
+      createIpfsClient = ipfsHttp.create || ipfsHttp;
+    } catch (_unused) {}
+    try {
+      var orbit = yield Promise.resolve().then(function webpackMissingModule() { var e = new Error("Cannot find module 'orbit-db'"); e.code = 'MODULE_NOT_FOUND'; throw e; });
+      OrbitDB = orbit.default || orbit;
+    } catch (_unused2) {}
+  });
+  return _lazyLoadDeps.apply(this, arguments);
+}
+function connectOrbit(_x) {
+  return _connectOrbit.apply(this, arguments);
+}
+function _connectOrbit() {
+  _connectOrbit = (0,_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])(function* (customIpfsUrl) {
+    yield lazyLoadDeps();
+    if (!createIpfsClient || !OrbitDB) return {
+      ipfs: null,
+      orbit: null,
+      stores: null
+    };
+    var ipfsUrl = customIpfsUrl || process.env.IPFS_API || 'http://127.0.0.1:5001';
+    var ipfs = createIpfsClient({
+      url: ipfsUrl
+    });
+    var orbit = yield OrbitDB.createInstance(ipfs);
+
+    // Key stores for offworld
+    var chat = yield orbit.feed('zion.chat');
+    var votes = yield orbit.eventlog('zion.votes');
+    var constitution = yield orbit.docstore('zion.constitution');
     return {
-      id: 'placeholder-orbitdb-id',
-      success: true
+      ipfs,
+      orbit,
+      stores: {
+        chat,
+        votes,
+        constitution
+      }
     };
   });
-  return function createOrbitDB() {
-    return _ref.apply(this, arguments);
-  };
-}();
-var connectToOrbitDB = /*#__PURE__*/function () {
-  var _ref2 = (0,_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (id) {
-    // Placeholder implementation
-    return {
-      connected: true,
-      success: true
-    };
+  return _connectOrbit.apply(this, arguments);
+}
+function appendChatMessage(_x2, _x3) {
+  return _appendChatMessage.apply(this, arguments);
+}
+function _appendChatMessage() {
+  _appendChatMessage = (0,_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])(function* (stores, message) {
+    if (!(stores !== null && stores !== void 0 && stores.chat)) return false;
+    yield stores.chat.add(_objectSpread(_objectSpread({}, message), {}, {
+      ts: message.ts || Date.now()
+    }));
+    return true;
   });
-  return function connectToOrbitDB(_x) {
-    return _ref2.apply(this, arguments);
-  };
-}();
+  return _appendChatMessage.apply(this, arguments);
+}
+function recordVote(_x4, _x5) {
+  return _recordVote.apply(this, arguments);
+}
+function _recordVote() {
+  _recordVote = (0,_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])(function* (stores, vote) {
+    if (!(stores !== null && stores !== void 0 && stores.votes)) return false;
+    yield stores.votes.add(_objectSpread(_objectSpread({}, vote), {}, {
+      ts: vote.ts || Date.now()
+    }));
+    return true;
+  });
+  return _recordVote.apply(this, arguments);
+}
+function editConstitution(_x6, _x7) {
+  return _editConstitution.apply(this, arguments);
+}
+function _editConstitution() {
+  _editConstitution = (0,_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])(function* (stores, change) {
+    if (!(stores !== null && stores !== void 0 && stores.constitution)) return false;
+    var id = "".concat(Date.now(), "-").concat(change.section);
+    yield stores.constitution.put(_objectSpread(_objectSpread({
+      _id: id
+    }, change), {}, {
+      ts: change.ts || Date.now()
+    }));
+    return true;
+  });
+  return _editConstitution.apply(this, arguments);
+}
 
 /***/ }),
 

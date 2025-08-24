@@ -1,4 +1,18 @@
-<<<<<<< HEAD
+export default function ContactPage() {
+  return (
+    <div className="py-8">
+      <h1 className="text-2xl font-semibold text-white">Contact</h1>
+      <p className="text-slate-300 mt-2">Reach out to Zion.</p>
+    </div>
+  );
+}
+=======
+export default function Contact() {
+  return (
+    <div className="py-10">
+      <h1 className="text-2xl font-bold">Contact</h1>
+      <p className="mt-2 text-gray-600 dark:text-gray-300">Reach us at hello@zion.app</p>
+=======
 import React from "react";
 
 export default function ContactPage() {
@@ -26,4 +40,3 @@ import React from 'react';
 export default function ContactPage() {
   return <div>Contact Zion</div>;
 }
->>>>>>> origin/cursor/deploy-ai-podcast-host-with-ziongpt-9517

@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://zion.app/</loc>
+=======
     <loc>https://ziontechgroup.com/500</loc>
     <lastmod>2025-08-19T03:44:42.325Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://zion.app/contact</loc>
+    <lastmod>2025-08-11T11:14:25.268Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+=======
     <loc>https://zion.app/front</loc>
     <lastmod>2025-08-11T11:14:25.268Z</lastmod>
     <changefreq>weekly</changefreq>
@@ -87,7 +96,6 @@
   <url>
     <loc>https://ziontechgroup.com/404</loc>
     <lastmod>2025-08-14T09:38:12.068Z</lastmod>
-=======
     <loc>https://ziontechgroup.com/</loc>
     <lastmod>2025-08-22T18:38:08.718Z</lastmod>
     <changefreq>daily</changefreq>
@@ -4615,6 +4623,7 @@
   </url>
   <url>
     <loc>https://ziontechgroup.com/services/5g-private-network-solutions-2026/</loc>
+=======
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -4959,11 +4968,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ziontechgroup.com/services/ai-seo-content-optimizer/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://ziontechgroup.com/services/ai-seo-optimizer-pro/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -5025,11 +5029,6 @@
   </url>
   <url>
     <loc>https://ziontechgroup.com/services/api-performance-optimizer-pro/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ziontechgroup.com/services/api-performance-testing/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -5109,11 +5108,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ziontechgroup.com/services/browser-automation-cloud/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://ziontechgroup.com/services/browser-automation-copilot/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -5165,11 +5159,6 @@
   </url>
   <url>
     <loc>https://ziontechgroup.com/services/cloud-cost-optimizer/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ziontechgroup.com/services/cloud-finops-analyzer/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -5470,11 +5459,6 @@
   </url>
   <url>
     <loc>https://ziontechgroup.com/services/helpdesk-and-ai-chatbot/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ziontechgroup.com/services/helpdesk-suite/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -5889,11 +5873,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ziontechgroup.com/services/rag-evaluation-lab/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://ziontechgroup.com/services/rag-evaluator-suite/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -5965,11 +5944,6 @@
   </url>
   <url>
     <loc>https://ziontechgroup.com/services/secret-rotation-orchestrator/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ziontechgroup.com/services/secrets-rotation-automation/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -6050,11 +6024,6 @@
   </url>
   <url>
     <loc>https://ziontechgroup.com/services/smb-website-analytics/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ziontechgroup.com/services/soc2-compliance-automation/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -53170,48 +53139,6 @@
   <url>
     <loc>https://zion.app/docs</loc>
     <lastmod>2025-08-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://ziontechgroup.com/ai-financial-forecasting/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://ziontechgroup.com/ai-marketing-attribution/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://ziontechgroup.com/data-governance-starter/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://ziontechgroup.com/zero-trust-network-architecture/</loc>
-    <lastmod>2025-08-22T18:38:08.726Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://ziontechgroup.com/iot-fleet-telemetry/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://ziontechgroup.com/api-security-testing/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://ziontechgroup.com/zero-trust-security-platform/</loc>
-    <lastmod>2025-08-22T18:38:08.726Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://ziontechgroup.com/cdp-starter/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

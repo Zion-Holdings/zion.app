@@ -665,6 +665,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(882015);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_SEO__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(41415);
+/* harmony import */ var _components_SEO__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_components_SEO__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(682059);
 /* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(framer_motion__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(7887);
@@ -705,7 +706,7 @@ function InnovativeServicesShowcase2035() {
     return ((_service$category3 = service.category) === null || _service$category3 === void 0 ? void 0 : _service$category3.includes('Industry')) || ((_service$category4 = service.category) === null || _service$category4 === void 0 ? void 0 : _service$category4.includes('Healthcare')) || ((_service$category5 = service.category) === null || _service$category5 === void 0 ? void 0 : _service$category5.includes('Fintech')) || ((_service$category6 = service.category) === null || _service$category6 === void 0 ? void 0 : _service$category6.includes('Manufacturing'));
   });
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_SEO__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)((_components_SEO__WEBPACK_IMPORTED_MODULE_1___default()), {
       title: "Innovative 2035 Services Showcase | Zion Tech Group - Cutting-Edge AI & Enterprise Solutions",
       description: "Discover our revolutionary 2035 services portfolio featuring advanced AI solutions, enterprise automation, and specialized industry platforms. Transform your business with next-generation technology.",
       canonical: "https://ziontechgroup.com/innovative-services-showcase-2035/"

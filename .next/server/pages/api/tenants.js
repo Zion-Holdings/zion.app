@@ -12,18 +12,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ handler)
 /* harmony export */ });
-/* harmony import */ var _utils_auth__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(415834);
-/* harmony import */ var _utils_tenant__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(117705);
+/* harmony import */ var _utils_auth__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(415834);
+/* harmony import */ var _utils_tenant__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(953152);
 
 
 function handler(req, res) {
   var method = (req.method || 'GET').toUpperCase();
   if (method === 'GET') {
     return res.status(200).json({
-      tenants: (0,_utils_tenant__WEBPACK_IMPORTED_MODULE_0__.getTenants)()
+      tenants: (0,_utils_tenant__WEBPACK_IMPORTED_MODULE_1__.getTenants)()
     });
   }
-  var auth = (0,_utils_auth__WEBPACK_IMPORTED_MODULE_1__.authenticateRequest)(req, false);
+  var auth = (0,_utils_auth__WEBPACK_IMPORTED_MODULE_0__.authenticateRequest)(req, false);
   if (!auth.ok) return res.status(401).json({
     error: auth.error
   });
@@ -34,7 +34,7 @@ function handler(req, res) {
     if (!(branding !== null && branding !== void 0 && branding.name)) return res.status(400).json({
       error: 'branding.name required'
     });
-    var tenant = (0,_utils_tenant__WEBPACK_IMPORTED_MODULE_0__.createTenant)(branding);
+    var tenant = (0,_utils_tenant__WEBPACK_IMPORTED_MODULE_1__.createTenant)(branding);
     return res.status(201).json({
       tenant
     });
@@ -47,7 +47,7 @@ function handler(req, res) {
     if (!tenantId) return res.status(400).json({
       error: 'tenantId required'
     });
-    var result = (0,_utils_tenant__WEBPACK_IMPORTED_MODULE_0__.updateTenant)(tenantId, update || {});
+    var result = (0,_utils_tenant__WEBPACK_IMPORTED_MODULE_1__.updateTenant)(tenantId, update || {});
     if (!result) return res.status(404).json({
       error: 'Tenant not found'
     });
@@ -63,7 +63,7 @@ function handler(req, res) {
     if (!_tenantId || !rotateKey) return res.status(400).json({
       error: 'tenantId and rotateKey required'
     });
-    var _result = (0,_utils_tenant__WEBPACK_IMPORTED_MODULE_0__.rotateTenantApiKey)(_tenantId);
+    var _result = (0,_utils_tenant__WEBPACK_IMPORTED_MODULE_1__.rotateTenantApiKey)(_tenantId);
     if (!_result) return res.status(404).json({
       error: 'Tenant not found'
     });
@@ -225,10 +225,24 @@ async function handler(req, res, ctx) {
 
 /***/ }),
 
+/***/ 333873:
+/***/ ((module) => {
+
+module.exports = require("path");
+
+/***/ }),
+
 /***/ 455511:
 /***/ ((module) => {
 
 module.exports = require("crypto");
+
+/***/ }),
+
+/***/ 629021:
+/***/ ((module) => {
+
+module.exports = require("fs");
 
 /***/ }),
 

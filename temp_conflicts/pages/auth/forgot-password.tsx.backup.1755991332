@@ -1,0 +1,1 @@
+export default function ForgotPasswordPage() { return <div className="py-12">Forgot password flow coming soon.</div>; }

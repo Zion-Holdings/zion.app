@@ -9,13 +9,10 @@ exports.modules = {
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ ThankYouPage)
-/* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(882015);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7887);
 /* harmony import */ var _components_SEO__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(41415);
+/* harmony import */ var _components_SEO__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_components_SEO__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(919918);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(608732);
@@ -25,51 +22,51 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function ThankYouPage() {
+var ThankYouPage = () => {
   var nextSteps = [{
     title: 'Confirmation Email',
     description: 'You\'ll receive a confirmation email within the next few minutes.',
-    icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_4__.Mail, {
+    icon: /*#__PURE__*/_jsx(Mail, {
       className: "w-6 h-6"
     }),
     color: 'from-blue-500 to-cyan-500'
   }, {
     title: 'Team Review',
     description: 'Our team will review your inquiry within 24 hours.',
-    icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_4__.Users, {
+    icon: /*#__PURE__*/_jsx(Users, {
       className: "w-6 h-6"
     }),
     color: 'from-purple-500 to-pink-500'
   }, {
     title: 'Follow-up Call',
     description: 'We\'ll schedule a follow-up call to discuss your needs in detail.',
-    icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_4__.Phone, {
+    icon: /*#__PURE__*/_jsx(Phone, {
       className: "w-6 h-6"
     }),
     color: 'from-green-500 to-emerald-500'
   }];
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_components_SEO__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      title: "Thank You",
-      description: "Thank you for your message",
+  return /*#__PURE__*/_jsxs(_Fragment, {
+    children: [/*#__PURE__*/_jsx(SEO, {
+      title: pageTitle,
+      description: pageDescription,
       url: "/thank-you"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("section", {
+    }), /*#__PURE__*/_jsx("section", {
       className: "relative pt-28 pb-16 md:pt-36 md:pb-24",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      children: /*#__PURE__*/_jsxs("div", {
         className: "container mx-auto px-4 max-w-2xl text-center",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h1", {
+        children: [/*#__PURE__*/_jsx("h1", {
           className: "text-3xl md:text-5xl font-extrabold tracking-tight gradient-text-cyan-purple",
           children: "Thank you"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+        }), /*#__PURE__*/_jsx("p", {
           className: "mt-4 text-gray-300",
           children: "Your message has been received. Our team will get back to you shortly."
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        }), /*#__PURE__*/_jsxs("div", {
           className: "mt-8 flex items-center justify-center gap-4",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)((next_link__WEBPACK_IMPORTED_MODULE_2___default()), {
+          children: [/*#__PURE__*/_jsx(Link, {
             href: "/",
             className: "inline-flex items-center justify-center px-6 py-3 rounded-md bg-white text-black font-semibold hover:bg-gray-200 transition-colors",
             children: "Back to Home"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)((next_link__WEBPACK_IMPORTED_MODULE_2___default()), {
+          }), /*#__PURE__*/_jsx(Link, {
             href: "/services",
             className: "inline-flex items-center justify-center px-6 py-3 rounded-md border border-white/30 text-white font-semibold hover:bg-white/10 transition-colors",
             children: "Explore Services"
@@ -78,7 +75,7 @@ function ThankYouPage() {
       })
     })]
   });
-}
+};
 
 /***/ }),
 

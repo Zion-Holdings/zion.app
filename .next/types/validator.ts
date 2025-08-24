@@ -323,12 +323,6 @@ type ApiRouteConfig = {
   handler satisfies PagesPageConfig
 }
 
-// Validate ../../pages/2026-services-showcase-v3.tsx
-{
-  const handler = {} as typeof import("../../pages/2026-services-showcase-v3.js")
-  handler satisfies PagesPageConfig
-}
-
 // Validate ../../pages/2026-services-showcase.tsx
 {
   const handler = {} as typeof import("../../pages/2026-services-showcase.js")
@@ -359,21 +353,9 @@ type ApiRouteConfig = {
   handler satisfies PagesPageConfig
 }
 
-// Validate ../../pages/2029-ultimate-services-showcase.tsx
-{
-  const handler = {} as typeof import("../../pages/2029-ultimate-services-showcase.js")
-  handler satisfies PagesPageConfig
-}
-
 // Validate ../../pages/2029-ultra-futuristic-innovations.tsx
 {
   const handler = {} as typeof import("../../pages/2029-ultra-futuristic-innovations.js")
-  handler satisfies PagesPageConfig
-}
-
-// Validate ../../pages/2030-revolutionary-services.tsx
-{
-  const handler = {} as typeof import("../../pages/2030-revolutionary-services.js")
   handler satisfies PagesPageConfig
 }
 
@@ -1211,12 +1193,6 @@ type ApiRouteConfig = {
   handler satisfies PagesPageConfig
 }
 
-// Validate ../../pages/ai-diagnostic-platform.tsx
-{
-  const handler = {} as typeof import("../../pages/ai-diagnostic-platform.js")
-  handler satisfies PagesPageConfig
-}
-
 // Validate ../../pages/ai-dream-interpreter-platform.tsx
 {
   const handler = {} as typeof import("../../pages/ai-dream-interpreter-platform.js")
@@ -1250,12 +1226,6 @@ type ApiRouteConfig = {
 // Validate ../../pages/ai-emotional-intelligence-engine.tsx
 {
   const handler = {} as typeof import("../../pages/ai-emotional-intelligence-engine.js")
-  handler satisfies PagesPageConfig
-}
-
-// Validate ../../pages/ai-emotional-intelligence-platform-2029.tsx
-{
-  const handler = {} as typeof import("../../pages/ai-emotional-intelligence-platform-2029.js")
   handler satisfies PagesPageConfig
 }
 
@@ -3455,18 +3425,6 @@ type ApiRouteConfig = {
   handler satisfies PagesPageConfig
 }
 
-// Validate ../../pages/cutting-edge-pricing-2025.tsx
-{
-  const handler = {} as typeof import("../../pages/cutting-edge-pricing-2025.js")
-  handler satisfies PagesPageConfig
-}
-
-// Validate ../../pages/cutting-edge-services-showcase-2025.tsx
-{
-  const handler = {} as typeof import("../../pages/cutting-edge-services-showcase-2025.js")
-  handler satisfies PagesPageConfig
-}
-
 // Validate ../../pages/cybersecurity-services.tsx
 {
   const handler = {} as typeof import("../../pages/cybersecurity-services.js")
@@ -3644,12 +3602,6 @@ type ApiRouteConfig = {
 // Validate ../../pages/debug.tsx
 {
   const handler = {} as typeof import("../../pages/debug.js")
-  handler satisfies PagesPageConfig
-}
-
-// Validate ../../pages/defi-nexus-platform.tsx
-{
-  const handler = {} as typeof import("../../pages/defi-nexus-platform.js")
   handler satisfies PagesPageConfig
 }
 
@@ -4457,6 +4409,12 @@ type ApiRouteConfig = {
   handler satisfies PagesPageConfig
 }
 
+// Validate ../../pages/industry-solutions.tsx
+{
+  const handler = {} as typeof import("../../pages/industry-solutions.js")
+  handler satisfies PagesPageConfig
+}
+
 // Validate ../../pages/infrastructure-drift-detector.tsx
 {
   const handler = {} as typeof import("../../pages/infrastructure-drift-detector.js")
@@ -4769,6 +4727,12 @@ type ApiRouteConfig = {
   handler satisfies PagesPageConfig
 }
 
+// Validate ../../pages/legal.tsx
+{
+  const handler = {} as typeof import("../../pages/legal.js")
+  handler satisfies PagesPageConfig
+}
+
 // Validate ../../pages/llm-gateway.tsx
 {
   const handler = {} as typeof import("../../pages/llm-gateway.js")
@@ -4802,12 +4766,6 @@ type ApiRouteConfig = {
 // Validate ../../pages/manufacturing-ai-solutions.tsx
 {
   const handler = {} as typeof import("../../pages/manufacturing-ai-solutions.js")
-  handler satisfies PagesPageConfig
-}
-
-// Validate ../../pages/market-pricing-2026.tsx
-{
-  const handler = {} as typeof import("../../pages/market-pricing-2026.js")
   handler satisfies PagesPageConfig
 }
 
@@ -7520,12 +7478,6 @@ type ApiRouteConfig = {
 // Validate ../../pages/quantum-threat-detection.tsx
 {
   const handler = {} as typeof import("../../pages/quantum-threat-detection.js")
-  handler satisfies PagesPageConfig
-}
-
-// Validate ../../pages/quantum-trading-algorithm.tsx
-{
-  const handler = {} as typeof import("../../pages/quantum-trading-algorithm.js")
   handler satisfies PagesPageConfig
 }
 
@@ -47381,15 +47333,15 @@ type ApiRouteConfig = {
   handler satisfies PagesPageConfig
 }
 
-// Validate ../../pages/reports/seo/index.html.tsx
+// Validate ../../pages/reports/seo/seo-latest.tsx
 {
-  const handler = {} as typeof import("../../pages/reports/seo/index.html.js")
+  const handler = {} as typeof import("../../pages/reports/seo/seo-latest.js")
   handler satisfies PagesPageConfig
 }
 
-// Validate ../../pages/reports/seo/latest.json.tsx
+// Validate ../../pages/reports/seo/seo-report.tsx
 {
-  const handler = {} as typeof import("../../pages/reports/seo/latest.json.js")
+  const handler = {} as typeof import("../../pages/reports/seo/seo-report.js")
   handler satisfies PagesPageConfig
 }
 
@@ -58709,6 +58661,12 @@ type ApiRouteConfig = {
   handler satisfies PagesPageConfig
 }
 
+// Validate ../../pages/transportation-logistics-solutions.tsx
+{
+  const handler = {} as typeof import("../../pages/transportation-logistics-solutions.js")
+  handler satisfies PagesPageConfig
+}
+
 // Validate ../../pages/trends/trends-2025-08-09t17-40-49-545z.tsx
 {
   const handler = {} as typeof import("../../pages/trends/trends-2025-08-09t17-40-49-545z.js")
@@ -60380,12 +60338,6 @@ type ApiRouteConfig = {
 // Validate ../../pages/ultimate-2038-futuristic-services-showcase.tsx
 {
   const handler = {} as typeof import("../../pages/ultimate-2038-futuristic-services-showcase.js")
-  handler satisfies PagesPageConfig
-}
-
-// Validate ../../pages/ultimate-futuristic-services-showcase-2025.tsx
-{
-  const handler = {} as typeof import("../../pages/ultimate-futuristic-services-showcase-2025.js")
   handler satisfies PagesPageConfig
 }
 

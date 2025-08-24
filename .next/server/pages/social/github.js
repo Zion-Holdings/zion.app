@@ -58,7 +58,7 @@ function GitHubRedirect() {
         content: "0;url=https://github.com/Zion-Holdings"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("meta", {
         name: "robots",
-        content: "index, follow"
+        content: "noindex, nofollow"
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
       className: "min-h-screen bg-black text-white flex items-center justify-center p-8",

@@ -1,0 +1,1 @@
+export default function VerifyPage(){return <div className="prose dark:prose-invert"><h1>Verify</h1><p>Verification in progress.</p></div>}

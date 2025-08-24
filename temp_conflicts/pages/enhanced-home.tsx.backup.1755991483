@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-export default function Page(){return null}
+export default EnhancedHome;
 =======
 import React from 'react';
 
@@ -11,4 +10,3 @@ export default function EnhancedHomePage() {
     </div>
   );
 }
->>>>>>> 5f48a381108fa3a8a43c189dd4b043133ce9307e

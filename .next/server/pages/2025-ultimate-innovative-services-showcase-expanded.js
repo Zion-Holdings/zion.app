@@ -190,6 +190,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(882015);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_SEO__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(41415);
+/* harmony import */ var _components_SEO__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_components_SEO__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(682059);
 /* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(framer_motion__WEBPACK_IMPORTED_MODULE_11__);
 /* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(7887);
@@ -304,7 +305,7 @@ var UltimateInnovativeServicesShowcaseExpanded = () => {
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
     className: "min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_SEO__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)((_components_SEO__WEBPACK_IMPORTED_MODULE_1___default()), {
       title: "2025 Ultimate Innovative Micro SAAS Services Showcase | Zion Tech Group",
       description: "Discover cutting-edge micro SAAS services including Edge Computing, IoT Smart Cities, Fintech Blockchain, Healthcare Biotech, and Space Technology solutions. Transform your business with AI-powered innovation.",
       keywords: ["micro SAAS", "edge computing", "IoT smart cities", "fintech blockchain", "healthcare biotech", "space technology", "AI services", "innovative solutions"]

@@ -74,59 +74,14 @@ const quickLinks = [
 ];
 
 const socialLinks = [
-  { name: 'LinkedIn', href: '#', icon: Linkedin, color: 'hover:text-blue-400' },
-  { name: 'Twitter', href: '#', icon: Twitter, color: 'hover:text-sky-400' },
-  { name: 'Facebook', href: '#', icon: Facebook, color: 'hover:text-blue-600' },
-  { name: 'Instagram', href: '#', icon: Instagram, color: 'hover:text-pink-500' },
-  { name: 'YouTube', href: '#', icon: Youtube, color: 'hover:text-red-500' },
-  { name: 'GitHub', href: '#', icon: Github, color: 'hover:text-gray-400' }
-];
-
-const footerSections = [
-  {
-    title: 'Company',
-    links: [
-      { name: 'About Us', href: '/about' },
-      { name: 'Our Mission', href: '/mission' },
-      { name: 'Leadership Team', href: '/team' },
-      { name: 'Careers', href: '/careers' },
-      { name: 'Press & Media', href: '/press' },
-      { name: 'Partnerships', href: '/partnerships' }
-    ]
-  },
-  {
-    title: 'Solutions',
-    links: [
-      { name: 'AI Services', href: '/ai-services' },
-      { name: 'IT Services', href: '/it-services' },
-      { name: 'Micro SAAS', href: '/micro-saas' },
-      { name: 'Quantum Computing', href: '/quantum-computing' },
-      { name: 'Cybersecurity', href: '/security' },
-      { name: 'Consulting', href: '/consulting' }
-    ]
-  },
-  {
-    title: 'Resources',
-    links: [
-      { name: 'Documentation', href: '/docs' },
-      { name: 'API Reference', href: '/api' },
-      { name: 'Tutorials', href: '/tutorials' },
-      { name: 'Blog', href: '/blog' },
-      { name: 'Case Studies', href: '/case-studies' },
-      { name: 'White Papers', href: '/white-papers' }
-    ]
-  },
-  {
-    title: 'Support',
-    links: [
-      { name: 'Help Center', href: '/help' },
-      { name: 'Contact Support', href: '/support' },
-      { name: 'Status Page', href: '/status' },
-      { name: 'Community Forum', href: '/community' },
-      { name: 'Training', href: '/training' },
-      { name: 'Feedback', href: '/feedback' }
-    ]
-  }
+  { name: 'LinkedIn', href: 'https://www.linkedin.com/company/zion-tech-group', icon: Linkedin, color: 'hover:text-blue-500' },
+  { name: 'Twitter', href: 'https://twitter.com/ziontechgroup', icon: Twitter, color: 'hover:text-blue-400' },
+  { name: 'Facebook', href: 'https://www.facebook.com/ziontechgroup/', icon: Facebook, color: 'hover:text-blue-600' },
+  { name: 'Instagram', href: 'https://instagram.com/ziontechgroup', icon: Instagram, color: 'hover:text-pink-500' },
+  { name: 'YouTube', href: 'https://youtube.com/@ziontechgroup', icon: Youtube, color: 'hover:text-red-500' },
+  { name: 'GitHub', href: 'https://github.com/Zion-Holdings', icon: Github, color: 'hover:text-gray-400' },
+  { name: 'Chat', href: 'https://discord.gg/ziontechgroup', icon: MessageCircle, color: 'hover:text-indigo-500' },
+  { name: 'Community', href: 'https://twitch.tv/ziontechgroup', icon: MessageCircle, color: 'hover:text-purple-500' }
 ];
 
 export default function UltraFuturisticFooter2029() {

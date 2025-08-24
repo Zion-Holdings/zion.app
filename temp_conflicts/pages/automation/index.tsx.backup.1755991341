@@ -1,0 +1,1 @@
+export default function Automation() { return <main className="p-10"><h1 className="text-2xl font-bold">Automation</h1></main>; }

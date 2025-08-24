@@ -1,7 +1,16 @@
 import React, { useEffect, useRef } from 'react';
 
-const UltraFuturisticBackground2036: React.FC = () => {
+interface UltraFuturisticBackground2036Props {
+  variant?: 'default' | 'quantum' | 'space' | 'ai' | 'cyber';
+  intensity?: 'low' | 'medium' | 'high';
+}
+
+export default function UltraFuturisticBackground2036({ 
+  variant = 'default', 
+  intensity = 'medium' 
+}: UltraFuturisticBackground2036Props) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const animationRef = useRef<number | undefined>(undefined);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -12,286 +21,330 @@ const UltraFuturisticBackground2036: React.FC = () => {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    const resizeCanvas = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
 
     let animationFrameId: number;
     let particles: Particle[] = [];
     let connections: Connection[] = [];
 
-    class Particle {
+    // Particle system
+    const particles: Array<{
       x: number;
       y: number;
       vx: number;
       vy: number;
       size: number;
       color: string;
+      type: 'quantum' | 'neon' | 'energy' | 'data';
+    }> = [];
 
-      constructor() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
-        this.vx = (Math.random() - 0.5) * 0.5;
-        this.vy = (Math.random() - 0.5) * 0.5;
-        this.size = Math.random() * 2 + 1;
-        this.opacity = Math.random() * 0.5 + 0.3;
-        this.color = `hsl(${Math.random() * 60 + 180}, 70%, 60%)`;
-      }
+    const colors = {
+      quantum: ['#00ffff', '#0080ff', '#8000ff', '#ff0080'],
+      neon: ['#00ff00', '#ff00ff', '#ffff00', '#00ffff'],
+      energy: ['#ff6600', '#ff0066', '#6600ff', '#00ff66'],
+      data: ['#00ccff', '#cc00ff', '#ffcc00', '#00ffcc']
+    };
 
-      update() {
-        this.x += this.vx;
-        this.y += this.vy;
+    const intensityMultiplier = {
+      low: 0.5,
+      medium: 1,
+      high: 1.5
+    };
 
-        if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
-        if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+    const variantConfig = {
+      default: { particleCount: 50, speed: 1, size: 2 },
+      quantum: { particleCount: 80, speed: 1.5, size: 3 },
+      space: { particleCount: 100, speed: 0.8, size: 2.5 },
+      ai: { particleCount: 120, speed: 2, size: 1.5 },
+      cyber: { particleCount: 90, speed: 1.8, size: 2.2 }
+    };
 
-        this.opacity += (Math.random() - 0.5) * 0.02;
-        this.opacity = Math.max(0.1, Math.min(0.8, this.opacity));
-      }
+    const config = variantConfig[variant];
+    const multiplier = intensityMultiplier[intensity];
 
-      draw() {
-        ctx!.save();
-        ctx!.globalAlpha = this.opacity;
-        ctx!.fillStyle = this.color;
-        ctx!.beginPath();
-        ctx!.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx!.fill();
-        ctx!.restore();
-      }
-    }
-
-    class Connection {
-      particle1: Particle;
-      particle2: Particle;
-      opacity: number;
-
-      constructor(p1: Particle, p2: Particle) {
-        this.particle1 = p1;
-        this.particle2 = p2;
-        this.opacity = Math.random() * 0.3 + 0.1;
-      }
-
-      draw() {
-        const distance = Math.sqrt(
-          Math.pow(this.particle1.x - this.particle2.x, 2) +
-          Math.pow(this.particle1.y - this.particle2.y, 2)
-        );
-
-        if (distance < 150) {
-          ctx!.save();
-          ctx!.globalAlpha = this.opacity * (1 - distance / 150);
-          ctx!.strokeStyle = 'rgba(0, 255, 255, 0.3)';
-          ctx!.lineWidth = 1;
-          ctx!.beginPath();
-          ctx!.moveTo(this.particle1.x, this.particle1.y);
-          ctx!.lineTo(this.particle2.x, this.particle2.y);
-          ctx!.stroke();
-          ctx!.restore();
-        }
-      }
-    }
-
-    // Initialize particles and connections
-    for (let i = 0; i < 100; i++) {
-      particles.push(new Particle());
-    }
-
-    for (let i = 0; i < particles.length; i++) {
-      for (let j = i + 1; j < particles.length; j++) {
-        if (Math.random() < 0.1) {
-          connections.push(new Connection(particles[i], particles[j]));
-        }
-      }
+    // Initialize particles
+    for (let i = 0; i < config.particleCount * multiplier; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * config.speed * multiplier,
+        vy: (Math.random() - 0.5) * config.speed * multiplier,
+        size: Math.random() * config.size * multiplier,
+        opacity: Math.random() * 0.8 + 0.2,
+        color: colors[variant][Math.floor(Math.random() * colors[variant].length)],
+        type: variant === 'default' ? ['quantum', 'neon', 'energy', 'data'][Math.floor(Math.random() * 4)] as any : variant
+      });
     }
 
     const animate = () => {
-      ctx!.fillStyle = 'rgba(0, 0, 0, 0.05)';
-      ctx!.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      particles.forEach(particle => {
-        particle.update();
-        particle.draw();
+      // Create gradient background
+      const gradient = ctx.createRadialGradient(
+        canvas.width / 2, 
+        canvas.height / 2, 
+        0, 
+        canvas.width / 2, 
+        canvas.height / 2, 
+        Math.max(canvas.width, canvas.height) / 2
+      );
+      
+      gradient.addColorStop(0, 'rgba(0, 0, 0, 0.8)');
+      gradient.addColorStop(0.3, 'rgba(20, 20, 40, 0.6)');
+      gradient.addColorStop(0.7, 'rgba(40, 20, 60, 0.4)');
+      gradient.addColorStop(1, 'rgba(0, 0, 0, 0.8)');
+      
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      // Update and draw particles
+      particles.forEach((particle, index) => {
+        // Update position
+        particle.x += particle.vx;
+        particle.y += particle.vy;
+
+        // Wrap around edges
+        if (particle.x < 0) particle.x = canvas.width;
+        if (particle.x > canvas.width) particle.x = 0;
+        if (particle.y < 0) particle.y = canvas.height;
+        if (particle.y > canvas.height) particle.y = 0;
+
+        // Draw particle with glow effect
+        ctx.save();
+        
+        // Create glow effect
+        const glowGradient = ctx.createRadialGradient(
+          particle.x, particle.y, 0,
+          particle.x, particle.y, particle.size * 3
+        );
+        
+        glowGradient.addColorStop(0, `${particle.color}${Math.floor(particle.opacity * 255).toString(16).padStart(2, '0')}`);
+        glowGradient.addColorStop(0.5, `${particle.color}${Math.floor(particle.opacity * 100).toString(16).padStart(2, '0')}`);
+        glowGradient.addColorStop(1, 'transparent');
+        
+        ctx.fillStyle = glowGradient;
+        ctx.beginPath();
+        ctx.arc(particle.x, particle.y, particle.size * 3, 0, Math.PI * 2);
+        ctx.fill();
+        
+        // Draw core particle
+        ctx.fillStyle = particle.color;
+        ctx.beginPath();
+        ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+        ctx.fill();
+        
+        ctx.restore();
+
+        // Draw connections between nearby particles
+        particles.slice(index + 1).forEach(otherParticle => {
+          const distance = Math.sqrt(
+            Math.pow(particle.x - otherParticle.x, 2) + 
+            Math.pow(particle.y - otherParticle.y, 2)
+          );
+          
+          if (distance < 100 * multiplier) {
+            const opacity = (100 - distance) / 100 * 0.3 * multiplier;
+            ctx.strokeStyle = `rgba(0, 255, 255, ${opacity})`;
+            ctx.lineWidth = 0.5;
+            ctx.beginPath();
+            ctx.moveTo(particle.x, particle.y);
+            ctx.lineTo(otherParticle.x, otherParticle.y);
+            ctx.stroke();
+          }
+        });
       });
 
-      connections.forEach(connection => {
-        connection.draw();
-      });
+      // Add floating geometric shapes
+      if (variant === 'quantum' || variant === 'ai') {
+        drawQuantumShapes(ctx, canvas, multiplier);
+      }
 
-      animationFrameId = requestAnimationFrame(animate);
+      // Add data streams for AI variant
+      if (variant === 'ai') {
+        drawDataStreams(ctx, canvas, multiplier);
+      }
+
+      // Add space elements for space variant
+      if (variant === 'space') {
+        drawSpaceElements(ctx, canvas, multiplier);
+      }
+
+      animationRef.current = requestAnimationFrame(animate);
+    };
+
+    const drawQuantumShapes = (ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement, multiplier: number) => {
+      const time = Date.now() * 0.001;
+      
+      for (let i = 0; i < 3; i++) {
+        const x = canvas.width * (0.2 + i * 0.3);
+        const y = canvas.height * (0.3 + Math.sin(time + i) * 0.1);
+        const size = 30 * multiplier;
+        
+        ctx.save();
+        ctx.translate(x, y);
+        ctx.rotate(time + i);
+        
+        // Draw quantum circuit pattern
+        ctx.strokeStyle = `rgba(0, 255, 255, ${0.3 * multiplier})`;
+        ctx.lineWidth = 2;
+        ctx.setLineDash([5, 5]);
+        
+        ctx.beginPath();
+        ctx.moveTo(-size, -size);
+        ctx.lineTo(size, -size);
+        ctx.lineTo(size, size);
+        ctx.lineTo(-size, size);
+        ctx.closePath();
+        ctx.stroke();
+        
+        // Draw inner quantum dots
+        ctx.fillStyle = `rgba(0, 255, 255, ${0.6 * multiplier})`;
+        ctx.beginPath();
+        ctx.arc(0, 0, size * 0.3, 0, Math.PI * 2);
+        ctx.fill();
+        
+        ctx.restore();
+      }
+    };
+
+    const drawDataStreams = (ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement, multiplier: number) => {
+      const time = Date.now() * 0.001;
+      
+      for (let i = 0; i < 5; i++) {
+        const x = canvas.width * (0.1 + i * 0.2);
+        const startY = canvas.height * 0.1;
+        const endY = canvas.height * 0.9;
+        
+        ctx.save();
+        ctx.strokeStyle = `rgba(0, 255, 0, ${0.4 * multiplier})`;
+        ctx.lineWidth = 2;
+        ctx.setLineDash([10, 5]);
+        
+        // Animated data stream
+        const streamY = startY + (endY - startY) * ((time * 0.5 + i * 0.2) % 1);
+        
+        ctx.beginPath();
+        ctx.moveTo(x, startY);
+        ctx.lineTo(x, streamY);
+        ctx.stroke();
+        
+        // Data packets
+        ctx.fillStyle = `rgba(0, 255, 0, ${0.8 * multiplier})`;
+        ctx.fillRect(x - 3, streamY - 3, 6, 6);
+        
+        ctx.restore();
+      }
+    };
+
+    const drawSpaceElements = (ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement, multiplier: number) => {
+      const time = Date.now() * 0.001;
+      
+      // Draw stars
+      for (let i = 0; i < 50 * multiplier; i++) {
+        const x = (i * 12345) % canvas.width;
+        const y = (i * 67890) % canvas.height;
+        const brightness = (Math.sin(time + i) + 1) * 0.5;
+        
+        ctx.save();
+        ctx.fillStyle = `rgba(255, 255, 255, ${brightness * multiplier})`;
+        ctx.beginPath();
+        ctx.arc(x, y, 1, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+      }
+      
+      // Draw nebula
+      const nebulaGradient = ctx.createRadialGradient(
+        canvas.width * 0.7, canvas.height * 0.3, 0,
+        canvas.width * 0.7, canvas.height * 0.3, 200 * multiplier
+      );
+      
+      nebulaGradient.addColorStop(0, 'rgba(255, 0, 255, 0.1)');
+      nebulaGradient.addColorStop(0.5, 'rgba(0, 255, 255, 0.05)');
+      nebulaGradient.addColorStop(1, 'transparent');
+      
+      ctx.fillStyle = nebulaGradient;
+      ctx.beginPath();
+      ctx.arc(canvas.width * 0.7, canvas.height * 0.3, 200 * multiplier, 0, Math.PI * 2);
+      ctx.fill();
     };
 
     animate();
 
-    const handleResize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    };
-
-    window.addEventListener('resize', handleResize);
-
     return () => {
-      window.removeEventListener('resize', handleResize);
-      cancelAnimationFrame(animationFrameId);
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
+      window.removeEventListener('resize', resizeCanvas);
     };
-  }, []);
+  }, [variant, intensity]);
 
   return (
-    <>
-      {/* Enhanced Canvas Background */}
+    <div className="fixed inset-0 -z-10 overflow-hidden">
       <canvas
         ref={canvasRef}
-        className="fixed inset-0 w-full h-full pointer-events-none"
-        style={{ zIndex: -1 }}
+        className="w-full h-full"
+        style={{ display: 'block' }}
       />
-
-      {/* Animated Grid Overlay */}
-      <div className="fixed inset-0 pointer-events-none" style={{ zIndex: -1 }}>
-        <div className="absolute inset-0 bg-gradient-to-br from-transparent via-cyan-500/5 to-transparent" />
+      
+      {/* Additional overlay effects */}
+      <div className="absolute inset-0 pointer-events-none">
+        {/* Grid overlay for cyber variant */}
+        {variant === 'cyber' && (
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(0,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(0,255,255,0.1)_1px,transparent_1px)] bg-[size:50px_50px]" />
+        )}
         
-        {/* Animated Grid Lines */}
-        <svg className="absolute inset-0 w-full h-full opacity-20">
-          <defs>
-            <pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse">
-              <path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(0, 255, 255, 0.3)" strokeWidth="0.5"/>
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#grid)" />
-        </svg>
-
-        {/* Floating Geometric Shapes */}
-        <motion.div
-          className="absolute top-20 left-20 w-32 h-32 border border-cyan-400/30 rounded-full"
-          animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.3, 0.6, 0.3],
-            rotate: [0, 180, 360]
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-        />
+        {/* Quantum field lines */}
+        {variant === 'quantum' && (
+          <div className="absolute inset-0">
+            {[...Array(8)].map((_, i) => (
+              <motion.div
+                key={i}
+                className="absolute w-px h-full bg-gradient-to-b from-transparent via-cyan-400/30 to-transparent"
+                style={{
+                  left: `${(i + 1) * 12.5}%`,
+                  transform: 'translateX(-50%)'
+                }}
+                animate={{
+                  opacity: [0.3, 0.8, 0.3],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  delay: i * 0.5,
+                }}
+              />
+            ))}
+          </div>
+        )}
         
-        <motion.div
-          className="absolute top-40 right-32 w-24 h-24 border border-blue-400/30 transform rotate-45"
-          animate={{
-            scale: [1, 1.3, 1],
-            opacity: [0.2, 0.5, 0.2],
-            rotate: [0, 90, 180, 270, 360]
-          }}
-          transition={{
-            duration: 12,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-        />
-
-        <motion.div
-          className="absolute bottom-32 left-1/3 w-20 h-20 border border-purple-400/30 transform rotate-12"
-          animate={{
-            scale: [1, 1.4, 1],
-            opacity: [0.4, 0.7, 0.4],
-            rotate: [0, -180, -360]
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-        />
-
-        {/* Neon Glow Effects */}
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-radial from-cyan-500/10 via-transparent to-transparent rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-radial from-blue-500/10 via-transparent to-transparent rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-radial from-purple-500/10 via-transparent to-transparent rounded-full blur-3xl" />
+        {/* AI neural network overlay */}
+        {variant === 'ai' && (
+          <div className="absolute inset-0">
+            {[...Array(6)].map((_, i) => (
+              <motion.div
+                key={i}
+                className="absolute w-full h-px bg-gradient-to-r from-transparent via-green-400/20 to-transparent"
+                style={{
+                  top: `${(i + 1) * 16.67}%`,
+                }}
+                animate={{
+                  opacity: [0.2, 0.6, 0.2],
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  delay: i * 0.8,
+                }}
+              />
+            ))}
+          </div>
+        )}
       </div>
-
-      {/* Animated Particles */}
-      <div className="fixed inset-0 pointer-events-none" style={{ zIndex: -1 }}>
-        {[...Array(20)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-1 h-1 bg-cyan-400 rounded-full"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`
-            }}
-            animate={{
-              y: [0, -100, 0],
-              opacity: [0, 1, 0],
-              scale: [0, 1, 0]
-            }}
-            transition={{
-              duration: Math.random() * 3 + 2,
-              repeat: Infinity,
-              delay: Math.random() * 2,
-              ease: "easeInOut"
-            }}
-          />
-        ))}
-      </div>
-
-      {/* Scanning Line Effect */}
-      <motion.div
-        className="fixed top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-cyan-400 to-transparent pointer-events-none"
-        style={{ zIndex: -1 }}
-        animate={{
-          y: [0, 1000]
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: "linear"
-        }}
-      />
-
-      {/* Corner Accents */}
-      <div className="fixed top-0 left-0 w-32 h-32 pointer-events-none" style={{ zIndex: -1 }}>
-        <div className="absolute top-0 left-0 w-16 h-1 bg-gradient-to-r from-cyan-400 to-transparent" />
-        <div className="absolute top-0 left-0 w-1 h-16 bg-gradient-to-b from-cyan-400 to-transparent" />
-      </div>
-      
-      <div className="fixed top-0 right-0 w-32 h-32 pointer-events-none" style={{ zIndex: -1 }}>
-        <div className="absolute top-0 right-0 w-16 h-1 bg-gradient-to-l from-blue-400 to-transparent" />
-        <div className="absolute top-0 right-0 w-1 h-16 bg-gradient-to-b from-blue-400 to-transparent" />
-      </div>
-      
-      <div className="fixed bottom-0 left-0 w-32 h-32 pointer-events-none" style={{ zIndex: -1 }}>
-        <div className="absolute bottom-0 left-0 w-16 h-1 bg-gradient-to-r from-purple-400 to-transparent" />
-        <div className="absolute bottom-0 left-0 w-1 h-16 bg-gradient-to-t from-purple-400 to-transparent" />
-      </div>
-      
-      <div className="fixed bottom-0 right-0 w-32 h-32 pointer-events-none" style={{ zIndex: -1 }}>
-        <div className="absolute bottom-0 right-0 w-16 h-1 bg-gradient-to-l from-pink-400 to-transparent" />
-        <div className="absolute bottom-0 right-0 w-1 h-16 bg-gradient-to-t from-pink-400 to-transparent" />
-      </div>
-
-      {/* Floating Data Streams */}
-      <div className="fixed inset-0 pointer-events-none" style={{ zIndex: -1 }}>
-        {[...Array(5)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute text-cyan-400/30 font-mono text-xs"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`
-            }}
-            animate={{
-              y: [0, -50],
-              opacity: [0, 1, 0]
-            }}
-            transition={{
-              duration: Math.random() * 4 + 3,
-              repeat: Infinity,
-              delay: Math.random() * 3,
-              ease: "easeInOut"
-            }}
-          >
-            {Math.random().toString(16).substring(2, 8).toUpperCase()}
-          </motion.div>
-        ))}
-      </div>
-    </>
+    </div>
   );
 };
 

@@ -1,5 +1,5 @@
-<<<<<<< HEAD
-export default function EnhancedHome() {
+export default function EnhancedHome(){return <div className="prose dark:prose-invert"><h1>Enhanced Home</h1><p>Coming soon.</p></div>}
+=======
   return (
     <div className="py-8">
       <h1 className="text-xl font-semibold mb-2">Enhanced Home</h1>
@@ -13,4 +13,3 @@ import React from 'react';
 export default function EnhancedHomePage() {
   return <div>Enhanced Home</div>;
 }
->>>>>>> origin/cursor/deploy-ai-podcast-host-with-ziongpt-9517

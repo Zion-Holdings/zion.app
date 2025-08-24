@@ -331,7 +331,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(framer_motion__WEBPACK_IMPORTED_MODULE_11__);
 /* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(7887);
 /* harmony import */ var _components_layout_UltraFuturisticNavigation2029__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(446620);
-/* harmony import */ var _components_layout_UltraFuturisticNavigation2029__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_components_layout_UltraFuturisticNavigation2029__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _components_layout_UltraFuturisticFooter2029__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(637213);
 /* harmony import */ var _components_ui_FuturisticAnimatedBackground2029__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(412283);
 /* harmony import */ var _data_2029_ai_autonomous_ecosystem__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(192594);
@@ -419,7 +418,7 @@ function ComprehensivePricing2029() {
         rel: "canonical",
         href: "https://ziontechgroup.com/2029-comprehensive-pricing"
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)((_components_layout_UltraFuturisticNavigation2029__WEBPACK_IMPORTED_MODULE_3___default()), {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("section", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_layout_UltraFuturisticNavigation2029__WEBPACK_IMPORTED_MODULE_3__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("section", {
       className: "relative overflow-hidden py-32",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
         className: "relative z-10 container mx-auto px-4 text-center",

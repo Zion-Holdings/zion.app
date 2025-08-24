@@ -22,7 +22,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_ui_Button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(416729);
 /* harmony import */ var _components_ui_UltraAdvancedFuturisticBackground__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(875847);
 /* harmony import */ var _components_layout_UltraAdvancedNavigation__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(449837);
-/* harmony import */ var _components_layout_UltraAdvancedNavigation__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_components_layout_UltraAdvancedNavigation__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(608732);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__);
 
@@ -78,7 +77,7 @@ function AIBusinessIntelligenceSuite() {
           rel: "canonical",
           href: "https://ziontechgroup.com/ai-business-intelligence-suite"
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)((_components_layout_UltraAdvancedNavigation__WEBPACK_IMPORTED_MODULE_4___default()), {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("section", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_layout_UltraAdvancedNavigation__WEBPACK_IMPORTED_MODULE_4__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("section", {
         className: "relative z-10 pt-32 pb-16 px-4 sm:px-6 lg:px-8",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
           className: "max-w-7xl mx-auto",

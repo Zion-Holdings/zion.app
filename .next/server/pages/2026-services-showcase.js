@@ -10,23 +10,27 @@ exports.modules = {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ ServicesShowcase2026)
+/* harmony export */   "default": () => (/* binding */ Services2026ShowcasePage)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(882015);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(849788);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(682059);
-/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(framer_motion__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(7887);
-/* harmony import */ var _components_ui_UltraAdvancedFuturisticBackground__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(875847);
-/* harmony import */ var _components_layout_UltraAdvancedNavigation__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(449837);
-/* harmony import */ var _components_layout_UltraAdvancedNavigation__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_components_layout_UltraAdvancedNavigation__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _data_revolutionary_2026_services__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(423585);
-/* harmony import */ var _data_emerging_tech_2026_services__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(182423);
-/* harmony import */ var _data_comprehensive_it_2026_services__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(496514);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(608732);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(919918);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(682059);
+/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(framer_motion__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(7887);
+/* harmony import */ var _components_ui_Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(416729);
+/* harmony import */ var _components_ui_UltraFuturisticBackground__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(795157);
+/* harmony import */ var _components_ui_UltraFuturisticBackground__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_components_ui_UltraFuturisticBackground__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _components_ui_UltraFuturisticCard__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(468735);
+/* harmony import */ var _components_ui_UltraFuturisticCard__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_components_ui_UltraFuturisticCard__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _data_innovative_2026_micro_saas_v2__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(877537);
+/* harmony import */ var _data_emerging_tech_2026_services_v2__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(614096);
+/* harmony import */ var _data_enterprise_it_2026_services_v2__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(761482);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(608732);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__);
 
 
 
@@ -37,121 +41,217 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function ServicesShowcase2026() {
+
+
+function Services2026ShowcasePage() {
   var [searchTerm, setSearchTerm] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('');
   var [selectedCategory, setSelectedCategory] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('all');
+  var [selectedPriceRange, setSelectedPriceRange] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('all');
   var [sortBy, setSortBy] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('name');
 
-  // Combine all 2026 services
-  var allServices = [..._data_revolutionary_2026_services__WEBPACK_IMPORTED_MODULE_4__.revolutionary2026Services, ..._data_emerging_tech_2026_services__WEBPACK_IMPORTED_MODULE_5__.emergingTech2026Services, ..._data_comprehensive_it_2026_services__WEBPACK_IMPORTED_MODULE_6__.comprehensiveIT2026Services];
-
-  // Filter and sort services
-  var filteredServices = allServices.filter(service => {
-    var matchesSearch = service.name.toLowerCase().includes(searchTerm.toLowerCase()) || service.description.toLowerCase().includes(searchTerm.toLowerCase()) || service.category.toLowerCase().includes(searchTerm.toLowerCase());
-    var matchesCategory = selectedCategory === 'all' || service.category.includes(selectedCategory);
-    return matchesSearch && matchesCategory;
-  }).sort((a, b) => {
-    switch (sortBy) {
-      case 'price':
-        return parseFloat(a.price.replace(/[^0-9.]/g, '')) - parseFloat(b.price.replace(/[^0-9.]/g, ''));
-      case 'rating':
-        return b.rating - a.rating;
-      case 'customers':
-        return b.customers - a.customers;
-      default:
-        return a.name.localeCompare(b.name);
-    }
-  });
-  var categories = [{
-    id: 'all',
-    name: 'All Services',
-    icon: lucide_react__WEBPACK_IMPORTED_MODULE_8__.Globe,
-    count: allServices.length
-  }, {
-    id: 'AI',
-    name: 'AI & Machine Learning',
-    icon: lucide_react__WEBPACK_IMPORTED_MODULE_8__.Brain,
-    count: allServices.filter(s => s.category.includes('AI')).length
-  }, {
-    id: 'Quantum',
-    name: 'Quantum Computing',
-    icon: lucide_react__WEBPACK_IMPORTED_MODULE_8__.Atom,
-    count: allServices.filter(s => s.category.includes('Quantum')).length
-  }, {
-    id: 'Emerging',
-    name: 'Emerging Technology',
-    icon: lucide_react__WEBPACK_IMPORTED_MODULE_8__.Sparkles,
-    count: allServices.filter(s => s.category.includes('Emerging')).length
-  }, {
-    id: 'IT',
-    name: 'IT & Infrastructure',
-    icon: lucide_react__WEBPACK_IMPORTED_MODULE_8__.Shield,
-    count: allServices.filter(s => s.category.includes('IT') || s.category.includes('Infrastructure')).length
-  }, {
-    id: 'Autonomous',
-    name: 'Autonomous Systems',
-    icon: lucide_react__WEBPACK_IMPORTED_MODULE_8__.Target,
-    count: allServices.filter(s => s.category.includes('Autonomous')).length
-  }, {
-    id: 'Cloud',
-    name: 'Cloud & DevOps',
-    icon: lucide_react__WEBPACK_IMPORTED_MODULE_8__.Cloud,
-    count: allServices.filter(s => s.category.includes('Cloud') || s.category.includes('DevOps')).length
-  }];
+  // Map service variants to supported card variants
+  var mapServiceVariantToCardVariant = serviceVariant => {
+    if (serviceVariant.includes('quantum') && serviceVariant.includes('ai')) return 'quantum-advanced';
+    if (serviceVariant.includes('quantum')) return 'quantum';
+    if (serviceVariant.includes('ai')) return 'ai-futuristic';
+    if (serviceVariant.includes('holographic')) return 'holographic';
+    if (serviceVariant.includes('neural')) return 'neural';
+    if (serviceVariant.includes('cyberpunk')) return 'cyberpunk';
+    if (serviceVariant.includes('enterprise')) return 'enterprise-futuristic';
+    if (serviceVariant.includes('cloud')) return 'quantum-advanced';
+    if (serviceVariant.includes('security')) return 'cyberpunk';
+    if (serviceVariant.includes('data')) return 'neural';
+    if (serviceVariant.includes('mobility')) return 'holographic';
+    if (serviceVariant.includes('network')) return 'quantum-advanced';
+    if (serviceVariant.includes('backup')) return 'quantum-advanced';
+    if (serviceVariant.includes('itsm')) return 'enterprise-futuristic';
+    if (serviceVariant.includes('monitoring')) return 'neural';
+    if (serviceVariant.includes('blockchain')) return 'quantum-advanced';
+    if (serviceVariant.includes('metaverse')) return 'holographic';
+    if (serviceVariant.includes('iot')) return 'quantum-iot';
+    if (serviceVariant.includes('edge')) return 'quantum-advanced';
+    if (serviceVariant.includes('ar')) return 'holographic';
+    if (serviceVariant.includes('digital-twin')) return 'quantum-advanced';
+    if (serviceVariant.includes('5g')) return 'quantum-advanced';
+    if (serviceVariant.includes('biometric')) return 'cyberpunk';
+    if (serviceVariant.includes('autonomous')) return 'ai-futuristic';
+    if (serviceVariant.includes('revolutionary')) return 'quantum-advanced';
+    if (serviceVariant.includes('consulting')) return 'enterprise-futuristic';
+    if (serviceVariant.includes('api')) return 'quantum-advanced';
+    if (serviceVariant.includes('integration')) return 'quantum-advanced';
+    if (serviceVariant.includes('analytics')) return 'neural';
+    return 'default';
+  };
   var contactInfo = {
     mobile: '+1 302 464 0950',
     email: 'kleber@ziontechgroup.com',
     address: '364 E Main St STE 1008 Middletown DE 19709',
     website: 'https://ziontechgroup.com'
   };
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_ui_UltraAdvancedFuturisticBackground__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    intensity: "extreme",
-    colorScheme: "quantum-fusion",
-    particleCount: 600,
-    animationSpeed: 2.5,
-    enableHolographic: true,
-    enableQuantumEffects: true,
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+
+  // Combine all 2026 services
+  var all2026Services = [..._data_innovative_2026_micro_saas_v2__WEBPACK_IMPORTED_MODULE_6__.innovative2026MicroSaasServicesV2, ..._data_emerging_tech_2026_services_v2__WEBPACK_IMPORTED_MODULE_7__.emergingTech2026ServicesV2, ..._data_enterprise_it_2026_services_v2__WEBPACK_IMPORTED_MODULE_8__.enterpriseIT2026ServicesV2];
+
+  // Enhanced categories for 2026
+  var categories = [{
+    id: 'all',
+    name: 'All 2026 Services',
+    icon: '🚀',
+    count: all2026Services.length
+  }, {
+    id: 'ai',
+    name: 'AI & Machine Learning',
+    icon: '🧠',
+    count: all2026Services.filter(s => s.category.includes('AI')).length
+  }, {
+    id: 'quantum',
+    name: 'Quantum & Emerging Tech',
+    icon: '⚛️',
+    count: all2026Services.filter(s => s.category.includes('Quantum') || s.category.includes('Emerging')).length
+  }, {
+    id: 'enterprise',
+    name: 'Enterprise IT',
+    icon: '🏢',
+    count: all2026Services.filter(s => s.category.includes('Enterprise') || s.category.includes('IT')).length
+  }, {
+    id: 'micro-saas',
+    name: 'Micro SaaS',
+    icon: '💻',
+    count: all2026Services.filter(s => s.category.includes('SaaS')).length
+  }];
+  var priceRanges = [{
+    id: 'all',
+    name: 'All Prices',
+    range: 'All'
+  }, {
+    id: 'low',
+    name: 'Under $1K/month',
+    range: 'Under $1K'
+  }, {
+    id: 'medium',
+    name: '$1K - $5K/month',
+    range: '$1K - $5K'
+  }, {
+    id: 'high',
+    name: '$5K - $20K/month',
+    range: '$5K - $20K'
+  }, {
+    id: 'premium',
+    name: '$20K+/month',
+    range: '$20K+'
+  }];
+  var sortOptions = [{
+    id: 'name',
+    name: 'Name A-Z'
+  }, {
+    id: 'price-low',
+    name: 'Price Low to High'
+  }, {
+    id: 'price-high',
+    name: 'Price High to Low'
+  }, {
+    id: 'popularity',
+    name: 'Most Popular'
+  }, {
+    id: 'newest',
+    name: 'Newest First'
+  }];
+
+  // Filter and sort services
+  var filteredServices = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(() => {
+    var filtered = all2026Services;
+
+    // Search filter
+    if (searchTerm) {
+      filtered = filtered.filter(service => service.name.toLowerCase().includes(searchTerm.toLowerCase()) || service.description.toLowerCase().includes(searchTerm.toLowerCase()) || service.category.toLowerCase().includes(searchTerm.toLowerCase()));
+    }
+
+    // Category filter
+    if (selectedCategory !== 'all') {
+      filtered = filtered.filter(service => {
+        if (selectedCategory === 'ai') return service.category.includes('AI');
+        if (selectedCategory === 'quantum') return service.category.includes('Quantum') || service.category.includes('Emerging');
+        if (selectedCategory === 'enterprise') return service.category.includes('Enterprise') || service.category.includes('IT');
+        if (selectedCategory === 'micro-saas') return service.category.includes('SaaS');
+        return true;
+      });
+    }
+
+    // Price range filter
+    if (selectedPriceRange !== 'all') {
+      filtered = filtered.filter(service => {
+        var price = parseInt(service.price.replace('$', '').replace(',', ''));
+        if (selectedPriceRange === 'low') return price < 1000;
+        if (selectedPriceRange === 'medium') return price >= 1000 && price < 5000;
+        if (selectedPriceRange === 'high') return price >= 5000 && price < 20000;
+        if (selectedPriceRange === 'premium') return price >= 20000;
+        return true;
+      });
+    }
+
+    // Sort services
+    filtered.sort((a, b) => {
+      switch (sortBy) {
+        case 'price-low':
+          return parseInt(a.price.replace('$', '').replace(',', '')) - parseInt(b.price.replace('$', '').replace(',', ''));
+        case 'price-high':
+          return parseInt(b.price.replace('$', '').replace(',', '')) - parseInt(a.price.replace('$', '').replace(',', ''));
+        case 'popularity':
+          return (b.popular ? 1 : 0) - (a.popular ? 1 : 0);
+        case 'newest':
+          return new Date(b.launchDate).getTime() - new Date(a.launchDate).getTime();
+        default:
+          return a.name.localeCompare(b.name);
+      }
+    });
+    return filtered;
+  }, [searchTerm, selectedCategory, selectedPriceRange, sortBy, all2026Services]);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)((_components_ui_UltraFuturisticBackground__WEBPACK_IMPORTED_MODULE_4___default()), {
+    intensity: "high",
+    variant: "holographic",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
       className: "min-h-screen",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)((next_head__WEBPACK_IMPORTED_MODULE_1___default()), {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("title", {
-          children: "Zion Tech Group - 2026 Revolutionary Services Showcase | 1500+ Solutions"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("meta", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)((next_head__WEBPACK_IMPORTED_MODULE_1___default()), {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("title", {
+          children: "2026 Services Showcase - Zion Tech Group | Revolutionary AI, Quantum & IT Solutions"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("meta", {
           name: "description",
-          content: "Explore Zion Tech Group's revolutionary 2026 services including AI, quantum computing, emerging technologies, and comprehensive IT solutions. Contact: +1 302 464 0950"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("meta", {
+          content: "Explore our revolutionary 2026 services including AI-powered platforms, quantum computing, emerging technologies, and enterprise IT solutions. Contact: +1 302 464 0950"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("meta", {
           name: "keywords",
-          content: "2026 services, AI services, quantum computing, emerging technology, IT solutions, cybersecurity, cloud computing, autonomous systems, neuromorphic computing, DNA computing, photonic computing, holographic display, swarm robotics, zero trust architecture, edge computing, 5G networks"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("meta", {
+          content: "2026 services, AI services, quantum computing, emerging technology, enterprise IT, micro SaaS, neuromorphic computing, DNA computing, photonic computing, holographic displays, swarm robotics, quantum internet, biometric authentication, zero trust, edge computing, 5G networks"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("meta", {
           name: "author",
           content: "Zion Tech Group"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("meta", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("meta", {
           name: "robots",
           content: "index, follow"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("meta", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("meta", {
           property: "og:title",
-          content: "Zion Tech Group - 2026 Revolutionary Services Showcase"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("meta", {
+          content: "2026 Services Showcase - Zion Tech Group"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("meta", {
           property: "og:description",
-          content: "1500+ cutting-edge services with 1000% ROI guarantee. Contact: +1 302 464 0950"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("meta", {
+          content: "Revolutionary AI, quantum computing, and emerging technology services for 2026 and beyond."
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("meta", {
           property: "og:url",
           content: "https://ziontechgroup.com/2026-services-showcase"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("meta", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("meta", {
           property: "og:type",
           content: "website"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("link", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("link", {
           rel: "canonical",
           href: "https://ziontechgroup.com/2026-services-showcase"
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)((_components_layout_UltraAdvancedNavigation__WEBPACK_IMPORTED_MODULE_3___default()), {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("section", {
-        className: "relative z-10 pt-32 pb-16 px-4 sm:px-6 lg:px-8",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
-          className: "max-w-7xl mx-auto text-center",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_9__.motion.div, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("section", {
+        className: "relative py-32 px-4 sm:px-6 lg:px-8 overflow-hidden",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+          className: "absolute inset-0 bg-gradient-to-r from-purple-900/30 via-transparent to-cyan-900/30"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+          className: "max-w-7xl mx-auto relative z-10 text-center",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_10__.motion.div, {
             initial: {
               opacity: 0,
-              y: 30
+              y: 20
             },
             animate: {
               opacity: 1,
@@ -160,291 +260,302 @@ function ServicesShowcase2026() {
             transition: {
               duration: 0.8
             },
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h1", {
-              className: "text-5xl md:text-7xl font-bold mb-6",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
-                className: "bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent",
-                children: "2026 Revolutionary Services"
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("p", {
-              className: "text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed",
-              children: "Discover the future of technology with our revolutionary AI, quantum computing, emerging technologies, and comprehensive IT solutions"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-              className: "grid grid-cols-2 md:grid-cols-4 gap-6 mb-12",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-                className: "text-center p-4 bg-gray-800/30 rounded-xl border border-gray-700/50 backdrop-blur-sm",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
-                  className: "text-3xl font-bold text-cyan-400 mb-2",
-                  children: allServices.length
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
-                  className: "text-gray-400 text-sm",
-                  children: "Total Services"
-                })]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-                className: "text-center p-4 bg-gray-800/30 rounded-xl border border-gray-700/50 backdrop-blur-sm",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
-                  className: "text-3xl font-bold text-purple-400 mb-2",
-                  children: allServices.filter(s => s.category.includes('AI')).length
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
-                  className: "text-gray-400 text-sm",
-                  children: "AI Services"
-                })]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-                className: "text-center p-4 bg-gray-800/30 rounded-xl border border-gray-700/50 backdrop-blur-sm",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
-                  className: "text-3xl font-bold text-pink-400 mb-2",
-                  children: allServices.filter(s => s.category.includes('Quantum')).length
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
-                  className: "text-gray-400 text-sm",
-                  children: "Quantum Services"
-                })]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-                className: "text-center p-4 bg-gray-800/30 rounded-xl border border-gray-700/50 backdrop-blur-sm",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
-                  className: "text-3xl font-bold text-green-400 mb-2",
-                  children: allServices.filter(s => s.category.includes('Emerging')).length
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
-                  className: "text-gray-400 text-sm",
-                  children: "Emerging Tech"
-                })]
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("h1", {
+              className: "text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-6",
+              children: "2026 Services Showcase"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("p", {
+              className: "text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto",
+              children: "Discover our revolutionary AI, quantum computing, and emerging technology services that will define the future of business and technology."
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+              className: "flex flex-wrap justify-center gap-4 mb-12",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                className: "bg-gradient-to-r from-purple-500/20 to-pink-500/20 backdrop-blur-sm border border-purple-500/30 rounded-full px-6 py-3",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("span", {
+                  className: "text-purple-300 font-semibold",
+                  children: [all2026Services.length, "+ Revolutionary Services"]
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                className: "bg-gradient-to-r from-cyan-500/20 to-blue-500/20 backdrop-blur-sm border border-cyan-500/30 rounded-full px-6 py-3",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
+                  className: "text-cyan-300 font-semibold",
+                  children: "AI-Powered Solutions"
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                className: "bg-gradient-to-r from-green-500/20 to-emerald-500/20 backdrop-blur-sm border border-green-500/30 rounded-full px-6 py-3",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
+                  className: "text-green-300 font-semibold",
+                  children: "Quantum Computing"
+                })
               })]
             })]
           })
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("section", {
-        className: "relative z-10 py-8 px-4 sm:px-6 lg:px-8",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("section", {
+        className: "py-16 px-4 sm:px-6 lg:px-8",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
           className: "max-w-7xl mx-auto",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
-            className: "bg-gray-800/30 rounded-2xl p-6 border border-gray-700/50 backdrop-blur-sm",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-              className: "grid grid-cols-1 md:grid-cols-3 gap-4",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-                className: "relative",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_8__.Search, {
-                  className: "absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
-                  type: "text",
-                  placeholder: "Search services...",
-                  value: searchTerm,
-                  onChange: e => setSearchTerm(e.target.value),
-                  className: "w-full pl-10 pr-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
-                })]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-                className: "relative",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_8__.Filter, {
-                  className: "absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("select", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+            className: "bg-gradient-to-r from-gray-900/50 to-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+              className: "relative mb-8",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_11__.Search, {
+                className: "absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("input", {
+                type: "text",
+                placeholder: "Search 2026 services...",
+                value: searchTerm,
+                onChange: e => setSearchTerm(e.target.value),
+                className: "w-full bg-gray-800/50 border border-gray-600/50 rounded-xl pl-12 pr-4 py-4 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+              className: "grid grid-cols-1 md:grid-cols-3 gap-6 mb-8",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("label", {
+                  className: "block text-sm font-medium text-gray-300 mb-2",
+                  children: "Category"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("select", {
                   value: selectedCategory,
                   onChange: e => setSelectedCategory(e.target.value),
-                  className: "w-full pl-10 pr-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent appearance-none",
-                  children: categories.map(category => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("option", {
+                  className: "w-full bg-gray-800/50 border border-gray-600/50 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent",
+                  children: categories.map(category => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("option", {
                     value: category.id,
                     children: [category.name, " (", category.count, ")"]
                   }, category.id))
                 })]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-                className: "relative",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_8__.TrendingUp, {
-                  className: "absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("select", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("label", {
+                  className: "block text-sm font-medium text-gray-300 mb-2",
+                  children: "Price Range"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("select", {
+                  value: selectedPriceRange,
+                  onChange: e => setSelectedPriceRange(e.target.value),
+                  className: "w-full bg-gray-800/50 border border-gray-600/50 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent",
+                  children: priceRanges.map(range => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("option", {
+                    value: range.id,
+                    children: range.name
+                  }, range.id))
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("label", {
+                  className: "block text-sm font-medium text-gray-300 mb-2",
+                  children: "Sort By"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("select", {
                   value: sortBy,
                   onChange: e => setSortBy(e.target.value),
-                  className: "w-full pl-10 pr-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent appearance-none",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("option", {
-                    value: "name",
-                    children: "Sort by Name"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("option", {
-                    value: "price",
-                    children: "Sort by Price"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("option", {
-                    value: "rating",
-                    children: "Sort by Rating"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("option", {
-                    value: "customers",
-                    children: "Sort by Customers"
-                  })]
+                  className: "w-full bg-gray-800/50 border border-gray-600/50 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent",
+                  children: sortOptions.map(option => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("option", {
+                    value: option.id,
+                    children: option.name
+                  }, option.id))
                 })]
               })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+              className: "text-center",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("p", {
+                className: "text-gray-400",
+                children: ["Showing ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
+                  className: "text-purple-400 font-semibold",
+                  children: filteredServices.length
+                }), " of", ' ', /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
+                  className: "text-purple-400 font-semibold",
+                  children: all2026Services.length
+                }), " 2026 services"]
+              })
+            })]
+          })
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("section", {
+        className: "py-16 px-4 sm:px-6 lg:px-8",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+          className: "max-w-7xl mx-auto",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_10__.AnimatePresence, {
+            mode: "wait",
+            children: filteredServices.length === 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_10__.motion.div, {
+              initial: {
+                opacity: 0
+              },
+              animate: {
+                opacity: 1
+              },
+              exit: {
+                opacity: 0
+              },
+              className: "text-center py-20",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                className: "text-gray-400 text-xl mb-4",
+                children: "No services found matching your criteria"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_ui_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
+                onClick: () => {
+                  setSearchTerm('');
+                  setSelectedCategory('all');
+                  setSelectedPriceRange('all');
+                  setSortBy('name');
+                },
+                variant: "secondary",
+                children: "Clear Filters"
+              })]
+            }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+              className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8",
+              children: filteredServices.map((service, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_10__.motion.div, {
+                initial: {
+                  opacity: 0,
+                  y: 20
+                },
+                animate: {
+                  opacity: 1,
+                  y: 0
+                },
+                exit: {
+                  opacity: 0,
+                  y: -20
+                },
+                transition: {
+                  duration: 0.5,
+                  delay: index * 0.1
+                },
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)((_components_ui_UltraFuturisticCard__WEBPACK_IMPORTED_MODULE_5___default()), {
+                  variant: mapServiceVariantToCardVariant(service.variant),
+                  className: "h-full group hover:scale-105 transition-transform duration-300",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+                    className: "p-6 h-full flex flex-col",
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+                      className: "flex items-start justify-between mb-4",
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                        className: "text-4xl mb-2",
+                        children: service.icon
+                      }), service.popular && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                        className: "bg-gradient-to-r from-yellow-500 to-orange-500 text-black text-xs font-bold px-2 py-1 rounded-full",
+                        children: "POPULAR"
+                      })]
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("h3", {
+                      className: "text-xl font-bold text-white mb-2 group-hover:text-purple-300 transition-colors",
+                      children: service.name
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("p", {
+                      className: "text-gray-300 text-sm mb-4 flex-grow",
+                      children: service.description
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+                      className: "mb-4",
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+                        className: "text-2xl font-bold text-white",
+                        children: [service.price, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
+                          className: "text-gray-400 text-lg font-normal",
+                          children: service.period
+                        })]
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+                        className: "text-sm text-gray-400",
+                        children: [service.trialDays, "-day free trial \u2022 Setup in ", service.setupTime]
+                      })]
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+                      className: "mb-6",
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                        className: "text-sm text-gray-300 mb-2",
+                        children: "Key Features:"
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+                        className: "space-y-1",
+                        children: [service.features.slice(0, 3).map((feature, idx) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+                          className: "flex items-center text-xs text-gray-400",
+                          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_11__.CheckCircle, {
+                            className: "w-3 h-3 text-green-400 mr-2 flex-shrink-0"
+                          }), feature]
+                        }, idx)), service.features.length > 3 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+                          className: "text-xs text-gray-500 mt-1",
+                          children: ["+", service.features.length - 3, " more features"]
+                        })]
+                      })]
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+                      className: "grid grid-cols-2 gap-4 mb-6 text-xs",
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+                        className: "text-center",
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                          className: "text-gray-400",
+                          children: "Customers"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                          className: "text-white font-semibold",
+                          children: service.customers.toLocaleString()
+                        })]
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+                        className: "text-center",
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                          className: "text-gray-400",
+                          children: "Rating"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+                          className: "text-white font-semibold flex items-center justify-center",
+                          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_11__.Star, {
+                            className: "w-3 h-3 text-yellow-400 mr-1"
+                          }), service.rating]
+                        })]
+                      })]
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                      className: "mt-auto",
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)((next_link__WEBPACK_IMPORTED_MODULE_2___default()), {
+                        href: service.link,
+                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(_components_ui_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
+                          variant: "primary",
+                          className: "w-full group-hover:scale-105 transition-transform",
+                          children: ["Learn More", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_11__.ArrowRight, {
+                            className: "w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"
+                          })]
+                        })
+                      })
+                    })]
+                  })
+                })
+              }, service.id))
             })
           })
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("section", {
-        className: "relative z-10 py-16 px-4 sm:px-6 lg:px-8",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-          className: "max-w-7xl mx-auto",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
-            className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8",
-            children: filteredServices.map((service, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_9__.motion.div, {
-              initial: {
-                opacity: 0,
-                y: 30
-              },
-              animate: {
-                opacity: 1,
-                y: 0
-              },
-              transition: {
-                duration: 0.6,
-                delay: index * 0.1
-              },
-              className: "group",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-                className: "bg-gray-800/30 rounded-2xl p-6 border border-gray-700/50 backdrop-blur-sm hover:border-cyan-500/50 transition-all duration-300 hover:transform hover:scale-105",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-                  className: "flex items-start justify-between mb-4",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
-                    className: "text-4xl",
-                    children: service.icon
-                  }), service.popular && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
-                    className: "bg-gradient-to-r from-pink-500 to-purple-600 text-white text-xs px-3 py-1 rounded-full",
-                    children: "Popular"
-                  })]
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h3", {
-                  className: "text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors duration-300",
-                  children: service.name
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("p", {
-                  className: "text-gray-300 text-sm mb-4",
-                  children: service.tagline
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-                  className: "flex items-center justify-between mb-4",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-                    className: "text-2xl font-bold text-cyan-400",
-                    children: [service.price, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
-                      className: "text-gray-400 text-lg font-normal",
-                      children: service.period
-                    })]
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-                    className: "flex items-center space-x-1",
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_8__.Star, {
-                      className: "w-4 h-4 text-yellow-400 fill-current"
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
-                      className: "text-white text-sm",
-                      children: service.rating
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("span", {
-                      className: "text-gray-400 text-sm",
-                      children: ["(", service.reviews, ")"]
-                    })]
-                  })]
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("p", {
-                  className: "text-gray-400 text-sm mb-4 line-clamp-3",
-                  children: service.description
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-                  className: "mb-4",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h4", {
-                    className: "text-white font-semibold mb-2 text-sm",
-                    children: "Key Features:"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("ul", {
-                    className: "space-y-1",
-                    children: service.features.slice(0, 3).map((feature, idx) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("li", {
-                      className: "text-gray-400 text-xs flex items-center",
-                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_8__.Zap, {
-                        className: "w-3 h-3 text-cyan-400 mr-2 flex-shrink-0"
-                      }), feature]
-                    }, idx))
-                  })]
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-                  className: "flex items-center justify-between mb-4",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
-                    className: "text-xs text-gray-500 bg-gray-700/50 px-2 py-1 rounded",
-                    children: service.category
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("span", {
-                    className: "text-xs text-gray-500",
-                    children: [service.customers, "+ customers"]
-                  })]
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("a", {
-                  href: service.link,
-                  className: "w-full bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold py-3 px-4 rounded-xl hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 text-center block",
-                  children: "Learn More"
-                })]
-              })
-            }, service.id))
-          }), filteredServices.length === 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_9__.motion.div, {
-            initial: {
-              opacity: 0
-            },
-            animate: {
-              opacity: 1
-            },
-            className: "text-center py-16",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
-              className: "text-6xl mb-4",
-              children: "\uD83D\uDD0D"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h3", {
-              className: "text-2xl font-bold text-white mb-2",
-              children: "No services found"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("p", {
-              className: "text-gray-400",
-              children: "Try adjusting your search terms or filters"
-            })]
-          })]
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("section", {
-        className: "relative z-10 py-20 px-4 sm:px-6 lg:px-8",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("section", {
+        className: "py-20 px-4 sm:px-6 lg:px-8",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
           className: "max-w-4xl mx-auto text-center",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_9__.motion.div, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_10__.motion.div, {
             initial: {
               opacity: 0,
-              y: 30
+              y: 20
             },
             whileInView: {
               opacity: 1,
               y: 0
             },
-            viewport: {
-              once: true
-            },
             transition: {
               duration: 0.8
             },
-            className: "bg-gradient-to-r from-gray-800/50 to-gray-900/50 rounded-2xl p-8 border border-gray-700/50 backdrop-blur-sm",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h2", {
-              className: "text-3xl font-bold text-white mb-6",
+            viewport: {
+              once: true
+            },
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("h2", {
+              className: "text-4xl md:text-5xl font-bold text-white mb-6",
               children: "Ready to Transform Your Business?"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("p", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("p", {
               className: "text-xl text-gray-300 mb-8",
-              children: "Join thousands of companies already leveraging our revolutionary 2026 AI, quantum, and IT solutions"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-              className: "grid grid-cols-1 md:grid-cols-3 gap-6 mb-8",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-                className: "flex items-center justify-center space-x-3 text-cyan-300",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
-                  className: "text-2xl",
-                  children: "\uD83D\uDCF1"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
-                  className: "font-semibold",
-                  children: contactInfo.mobile
-                })]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-                className: "flex items-center justify-center space-x-3 text-purple-300",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
-                  className: "text-2xl",
-                  children: "\u2709\uFE0F"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
-                  className: "font-semibold",
-                  children: contactInfo.email
-                })]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-                className: "flex items-center justify-center space-x-3 text-pink-300",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
-                  className: "text-2xl",
-                  children: "\uD83D\uDCCD"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
-                  className: "font-semibold text-sm",
-                  children: contactInfo.address
-                })]
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+              children: "Our 2026 services are designed to give you a competitive edge in the rapidly evolving technology landscape."
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
               className: "flex flex-col sm:flex-row gap-4 justify-center",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("a", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)((next_link__WEBPACK_IMPORTED_MODULE_2___default()), {
                 href: "/contact",
-                className: "px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105",
-                children: "Contact Us Now"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("a", {
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(_components_ui_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
+                  variant: "primary",
+                  size: "lg",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_11__.Phone, {
+                    className: "w-5 h-5 mr-2"
+                  }), "Contact Us"]
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)((next_link__WEBPACK_IMPORTED_MODULE_2___default()), {
                 href: "/pricing",
-                className: "px-8 py-4 border border-cyan-500/30 text-cyan-300 font-semibold rounded-xl hover:bg-cyan-500/10 transition-all duration-300",
-                children: "View Pricing"
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(_components_ui_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
+                  variant: "secondary",
+                  size: "lg",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_11__.DollarSign, {
+                    className: "w-5 h-5 mr-2"
+                  }), "View Pricing"]
+                })
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+              className: "mt-8 text-gray-400",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("p", {
+                children: ["Mobile: ", contactInfo.mobile, " | Email: ", contactInfo.email]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("p", {
+                children: contactInfo.address
               })]
             })]
           })

@@ -1,9 +1,4 @@
-<<<<<<< HEAD
 export default function NotFound(){
-<<<<<<< HEAD
-  return <div style={{padding:20}}>Not Found</div>
-}
-=======
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
@@ -23,12 +18,13 @@ const 404: NextPage = () => {
   );
 };
 
+export default function NotFound() {
+  return <div>Not Found</div>;
+}
+=======
 export default 404;
->>>>>>> origin/cursor/deploy-offworld-zion-os-on-ipfs-and-orbitdb-92ee
 =======
   return <div className="min-h-screen flex items-center justify-center">Page not found.</div>;
 }
 =======
 export default function NotFoundPage() { return null }
->>>>>>> origin/cursor/build-zion-ai-api-developer-documentation-hub-2aa3
->>>>>>> 5f48a381108fa3a8a43c189dd4b043133ce9307e

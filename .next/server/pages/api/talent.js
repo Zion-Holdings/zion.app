@@ -16,9 +16,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(405206);
 /* harmony import */ var _utils_supabase_client__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(881476);
 /* harmony import */ var _utils_supabase_client__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_utils_supabase_client__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _data_talent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(226284);
+/* harmony import */ var _data_talent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(603727);
 /* harmony import */ var uuid__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1052);
-/* harmony import */ var _utils_api_translate__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(681612);
+/* harmony import */ var _utils_api_translate__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(165827);
 
 
 function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
@@ -147,14 +147,7 @@ function _handler() {
 
 /***/ }),
 
-/***/ 455511:
-/***/ ((module) => {
-
-module.exports = require("crypto");
-
-/***/ }),
-
-/***/ 681612:
+/***/ 165827:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -245,6 +238,13 @@ function detectLanguageSimple(text) {
   // Default to 'en'
   return 'en';
 }
+
+/***/ }),
+
+/***/ 455511:
+/***/ ((module) => {
+
+module.exports = require("crypto");
 
 /***/ }),
 

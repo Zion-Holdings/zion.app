@@ -1,4 +1,3 @@
-"use strict";
 (() => {
 var exports = {};
 exports.id = 171049;
@@ -8,6 +7,7 @@ exports.modules = {
 /***/ 333873:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("path");
 
 /***/ }),
@@ -15,6 +15,7 @@ module.exports = require("path");
 /***/ 370663:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   config: () => (/* binding */ config),
@@ -39,6 +40,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var private_next_pages_document_tsx__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(private_next_pages_document_tsx__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var private_next_pages_app_tsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(805164);
 /* harmony import */ var private_next_pages_space_technology_tsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(980543);
+/* harmony import */ var private_next_pages_space_technology_tsx__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(private_next_pages_space_technology_tsx__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var next_dist_server_route_modules_pages_pages_handler__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(312289);
 
 
@@ -100,6 +102,7 @@ const handler = (0,next_dist_server_route_modules_pages_pages_handler__WEBPACK_I
 /***/ 608732:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("react/jsx-runtime");
 
 /***/ }),
@@ -107,6 +110,7 @@ module.exports = require("react/jsx-runtime");
 /***/ 646060:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("next/dist/shared/lib/no-fallback-error.external.js");
 
 /***/ }),
@@ -114,6 +118,7 @@ module.exports = require("next/dist/shared/lib/no-fallback-error.external.js");
 /***/ 840361:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("next/dist/compiled/next-server/pages.runtime.prod.js");
 
 /***/ }),
@@ -121,333 +126,15 @@ module.exports = require("next/dist/compiled/next-server/pages.runtime.prod.js")
 /***/ 882015:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("react");
 
 /***/ }),
 
 /***/ 980543:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ (() => {
 
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ SpaceTechnology)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(882015);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(682059);
-/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(framer_motion__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(7887);
-/* harmony import */ var _components_SEO__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(41415);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(608732);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
-
-
-
-
-
-var spaceServices = [{
-  title: 'Space Resource Mining',
-  description: 'Advanced platforms for extracting and processing resources from asteroids and celestial bodies',
-  icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_3__.Rocket, {
-    className: "w-8 h-8 text-orange-400"
-  }),
-  href: '/space-resource-mining-platform',
-  features: ['Asteroid Mining', 'Resource Processing', 'Space Logistics']
-}, {
-  title: 'AI-Powered Space Technology',
-  description: 'Intelligent systems for space exploration, navigation, and mission control',
-  icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_3__.Brain, {
-    className: "w-8 h-8 text-cyan-400"
-  }),
-  href: '/ai-powered-space-technology',
-  features: ['Autonomous Navigation', 'Mission Planning', 'Data Analysis']
-}, {
-  title: 'Satellite Technology',
-  description: 'Advanced satellite systems for communication, observation, and research',
-  icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_3__.Satellite, {
-    className: "w-8 h-8 text-blue-400"
-  }),
-  href: '/satellite-technology-solutions',
-  features: ['Communication Satellites', 'Earth Observation', 'Research Platforms']
-}, {
-  title: 'Space Infrastructure',
-  description: 'Orbital and lunar infrastructure for sustainable space operations',
-  icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_3__.Globe, {
-    className: "w-8 h-8 text-green-400"
-  }),
-  href: '/space-infrastructure-platform',
-  features: ['Orbital Stations', 'Lunar Bases', 'Space Habitats']
-}, {
-  title: 'Space Communications',
-  description: 'High-speed communication networks for interplanetary and deep space missions',
-  icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_3__.Zap, {
-    className: "w-8 h-8 text-yellow-400"
-  }),
-  href: '/space-communications-network',
-  features: ['Deep Space Comms', 'Quantum Communications', 'Network Security']
-}, {
-  title: 'Space Robotics',
-  description: 'Autonomous robotic systems for space exploration and maintenance',
-  icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_3__.Target, {
-    className: "w-8 h-8 text-purple-400"
-  }),
-  href: '/space-robotics-platform',
-  features: ['Autonomous Rovers', 'Maintenance Robots', 'Exploration Drones']
-}];
-function SpaceTechnology() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_SEO__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      title: "Space Technology Solutions | Zion Tech Group",
-      description: "Revolutionary space technology platforms including resource mining, AI-powered exploration, satellite systems, and space infrastructure.",
-      canonical: "https://ziontechgroup.com/space-technology"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-      className: "min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("section", {
-        className: "relative pt-32 pb-20 px-4 sm:px-6 lg:px-8",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-          className: "max-w-7xl mx-auto text-center",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.div, {
-            initial: {
-              opacity: 0,
-              y: 20
-            },
-            animate: {
-              opacity: 1,
-              y: 0
-            },
-            transition: {
-              duration: 0.8
-            },
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h1", {
-              className: "text-5xl md:text-7xl font-bold bg-gradient-to-r from-orange-400 via-red-400 to-purple-400 bg-clip-text text-transparent mb-6",
-              children: "Space Technology Solutions"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-              className: "text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-8",
-              children: "Pioneering space technology platforms that push the boundaries of human exploration and enable sustainable space operations."
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-              className: "flex flex-wrap justify-center gap-4",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.button, {
-                whileHover: {
-                  scale: 1.05
-                },
-                whileTap: {
-                  scale: 0.95
-                },
-                className: "bg-gradient-to-r from-orange-500 to-red-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-2xl transition-all duration-300",
-                children: "Explore Space Solutions"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.button, {
-                whileHover: {
-                  scale: 1.05
-                },
-                whileTap: {
-                  scale: 0.95
-                },
-                className: "border border-orange-500 text-orange-400 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-orange-500 hover:text-white transition-all duration-300",
-                children: "Space Consultation"
-              })]
-            })]
-          })
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("section", {
-        className: "py-20 px-4 sm:px-6 lg:px-8",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-          className: "max-w-7xl mx-auto",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.div, {
-            initial: {
-              opacity: 0,
-              y: 20
-            },
-            animate: {
-              opacity: 1,
-              y: 0
-            },
-            transition: {
-              duration: 0.8,
-              delay: 0.2
-            },
-            className: "text-center mb-16",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
-              className: "text-4xl md:text-5xl font-bold text-white mb-6",
-              children: "Space Technology Portfolio"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-              className: "text-xl text-gray-400 max-w-3xl mx-auto",
-              children: "Comprehensive space solutions designed to accelerate humanity's expansion into the cosmos"
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-            className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8",
-            children: spaceServices.map((service, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.div, {
-              initial: {
-                opacity: 0,
-                y: 20
-              },
-              animate: {
-                opacity: 1,
-                y: 0
-              },
-              transition: {
-                duration: 0.6,
-                delay: index * 0.1
-              },
-              className: "bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-xl border border-gray-700/50 rounded-2xl p-8 hover:border-orange-500/50 transition-all duration-300 group",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-                className: "mb-6",
-                children: service.icon
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
-                className: "text-2xl font-bold text-white mb-4 group-hover:text-orange-400 transition-colors",
-                children: service.title
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-                className: "text-gray-400 mb-6 leading-relaxed",
-                children: service.description
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("ul", {
-                className: "space-y-2 mb-6",
-                children: service.features.map((feature, featureIndex) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("li", {
-                  className: "flex items-center text-gray-300",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_3__.Star, {
-                    className: "w-4 h-4 text-orange-400 mr-2 flex-shrink-0"
-                  }), feature]
-                }, featureIndex))
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.a, {
-                href: service.href,
-                whileHover: {
-                  x: 5
-                },
-                className: "inline-flex items-center text-orange-400 hover:text-orange-300 font-semibold group-hover:text-orange-300 transition-colors",
-                children: ["Learn More ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_3__.ArrowRight, {
-                  className: "w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"
-                })]
-              })]
-            }, service.title))
-          })]
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("section", {
-        className: "py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-orange-900/20 to-red-900/20",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-          className: "max-w-7xl mx-auto",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.div, {
-            initial: {
-              opacity: 0,
-              y: 20
-            },
-            animate: {
-              opacity: 1,
-              y: 0
-            },
-            transition: {
-              duration: 0.8,
-              delay: 0.4
-            },
-            className: "text-center mb-16",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
-              className: "text-4xl md:text-5xl font-bold text-white mb-6",
-              children: "Space Innovation Frontiers"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-              className: "text-xl text-gray-400 max-w-3xl mx-auto",
-              children: "Cutting-edge technologies that are revolutionizing space exploration and commercialization"
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-            className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8",
-            children: [{
-              title: 'Resource Mining',
-              description: 'Extract valuable resources from asteroids and celestial bodies',
-              icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_3__.Rocket, {
-                className: "w-12 h-12 text-orange-400"
-              })
-            }, {
-              title: 'AI Navigation',
-              description: 'Autonomous space navigation and mission planning',
-              icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_3__.Brain, {
-                className: "w-12 h-12 text-cyan-400"
-              })
-            }, {
-              title: 'Quantum Communications',
-              description: 'Secure quantum communication for deep space missions',
-              icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_3__.Atom, {
-                className: "w-12 h-12 text-purple-400"
-              })
-            }, {
-              title: 'Sustainable Infrastructure',
-              description: 'Eco-friendly space habitats and orbital stations',
-              icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_3__.Globe, {
-                className: "w-12 h-12 text-green-400"
-              })
-            }].map((innovation, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.div, {
-              initial: {
-                opacity: 0,
-                y: 20
-              },
-              animate: {
-                opacity: 1,
-                y: 0
-              },
-              transition: {
-                duration: 0.6,
-                delay: 0.6 + index * 0.1
-              },
-              className: "text-center",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-                className: "mb-4 flex justify-center",
-                children: innovation.icon
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
-                className: "text-xl font-bold text-white mb-3",
-                children: innovation.title
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-                className: "text-gray-400",
-                children: innovation.description
-              })]
-            }, innovation.title))
-          })]
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("section", {
-        className: "py-20 px-4 sm:px-6 lg:px-8",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-          className: "max-w-4xl mx-auto text-center",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.div, {
-            initial: {
-              opacity: 0,
-              y: 20
-            },
-            animate: {
-              opacity: 1,
-              y: 0
-            },
-            transition: {
-              duration: 0.8,
-              delay: 0.8
-            },
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
-              className: "text-4xl md:text-5xl font-bold text-white mb-6",
-              children: "Ready to Reach for the Stars?"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-              className: "text-xl text-gray-400 mb-8",
-              children: "Join us in pioneering the next frontier of space technology and exploration."
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-              className: "flex flex-col sm:flex-row gap-4 justify-center",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.button, {
-                whileHover: {
-                  scale: 1.05
-                },
-                whileTap: {
-                  scale: 0.95
-                },
-                className: "bg-gradient-to-r from-orange-500 to-red-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-2xl transition-all duration-300",
-                children: "Launch Space Journey"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.button, {
-                whileHover: {
-                  scale: 1.05
-                },
-                whileTap: {
-                  scale: 0.95
-                },
-                className: "border border-orange-500 text-orange-400 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-orange-500 hover:text-white transition-all duration-300",
-                children: "Space Technology Assessment"
-              })]
-            })]
-          })
-        })
-      })]
-    })]
-  });
-}
+throw new Error("Module build failed (from ./node_modules/next/dist/build/babel/loader/index.js):\nSyntaxError: /workspace/pages/space-technology.tsx: 'import' and 'export' may only appear at the top level. (113:0)\n\n\u001b[0m \u001b[90m 111 |\u001b[39m   ]\u001b[33m;\u001b[39m\n \u001b[90m 112 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 113 |\u001b[39m \u001b[36mexport\u001b[39m \u001b[36mdefault\u001b[39m \u001b[36mfunction\u001b[39m \u001b[33mSpaceTechnology\u001b[39m() {\n \u001b[90m     |\u001b[39m \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 114 |\u001b[39m   \u001b[36mreturn\u001b[39m (\n \u001b[90m 115 |\u001b[39m     \u001b[33m<\u001b[39m\u001b[33mLayout\u001b[39m\u001b[33m>\u001b[39m\n \u001b[90m 116 |\u001b[39m       \u001b[33m<\u001b[39m\u001b[33mSEO\u001b[39m \u001b[0m\n    at constructor (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:137105)\n    at TypeScriptParserMixin.raise (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:194164)\n    at TypeScriptParserMixin.parseStatementContent (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:391693)\n    at TypeScriptParserMixin.parseStatementContent (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:324042)\n    at TypeScriptParserMixin.parseStatementLike (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:389494)\n    at TypeScriptParserMixin.parseStatementListItem (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:389120)\n    at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:401423)\n    at TypeScriptParserMixin.parseBlockBody (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:401223)\n    at TypeScriptParserMixin.parseBlock (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:400923)\n    at TypeScriptParserMixin.parseFunctionBody (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:378053)\n    at TypeScriptParserMixin.parseArrowExpression (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:377398)\n    at TypeScriptParserMixin.parseParenAndDistinguishExpression (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:369594)\n    at TypeScriptParserMixin.parseExprAtom (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:361477)\n    at TypeScriptParserMixin.parseExprAtom (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:269272)\n    at TypeScriptParserMixin.parseExprSubscripts (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:356364)\n    at TypeScriptParserMixin.parseUpdate (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:355963)\n    at TypeScriptParserMixin.parseMaybeUnary (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:355527)\n    at TypeScriptParserMixin.parseMaybeUnary (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:331837)\n    at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:352169)\n    at TypeScriptParserMixin.parseExprOps (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:352281)\n    at TypeScriptParserMixin.parseMaybeConditional (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:351760)\n    at TypeScriptParserMixin.parseMaybeAssign (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:350714)\n    at TypeScriptParserMixin.parseMaybeAssign (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:330620)\n    at /workspace/node_modules/next/dist/compiled/babel/bundle.js:191:350260\n    at TypeScriptParserMixin.allowInAnd (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:383926)\n    at TypeScriptParserMixin.parseMaybeAssignAllowIn (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:350239)\n    at TypeScriptParserMixin.parseVar (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:402967)\n    at TypeScriptParserMixin.parseVarStatement (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:399366)\n    at TypeScriptParserMixin.parseVarStatement (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:323322)\n    at TypeScriptParserMixin.parseStatementContent (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:391398)\n    at TypeScriptParserMixin.parseStatementContent (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:324042)\n    at TypeScriptParserMixin.parseStatementLike (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:389494)\n    at TypeScriptParserMixin.parseModuleItem (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:389055)\n    at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:401400)\n    at TypeScriptParserMixin.parseBlockBody (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:401223)\n    at TypeScriptParserMixin.parseProgram (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:386857)\n    at TypeScriptParserMixin.parseTopLevel (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:386575)\n    at TypeScriptParserMixin.parse (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:426834)\n    at TypeScriptParserMixin.parse (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:337631)\n    at parse (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:427389)\n    at parser (/workspace/node_modules/next/dist/compiled/babel/bundle.js:1:137686)\n    at parser.next (<anonymous>)\n    at normalizeFile (/workspace/node_modules/next/dist/compiled/babel/bundle.js:13:13275)\n    at normalizeFile.next (<anonymous>)\n    at consumeIterator (/workspace/node_modules/next/dist/build/babel/loader/util.js:13:38)\n    at transform (/workspace/node_modules/next/dist/build/babel/loader/transform.js:89:44)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at runNextTicks (node:internal/process/task_queues:69:3)\n    at process.processImmediate (node:internal/timers:453:9)\n    at async /workspace/node_modules/next/dist/build/babel/loader/index.js:36:108");
 
 /***/ })
 

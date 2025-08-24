@@ -13,8 +13,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ handler)
 /* harmony export */ });
 /* harmony import */ var _babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(435326);
-/* harmony import */ var _utils_data_blogStore__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(276290);
-/* harmony import */ var _utils_api_auth__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(849721);
+/* harmony import */ var _utils_data_blogStore__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(276290);
+/* harmony import */ var _utils_api_auth__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(849721);
 
 function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
 function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { (0,_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
@@ -28,8 +28,8 @@ function handler(req, res) {
     error: 'Invalid id'
   });
   if (req.method === 'PUT') {
-    if (!(0,_utils_api_auth__WEBPACK_IMPORTED_MODULE_1__.requireAdmin)(req, res)) return;
-    var posts = (0,_utils_data_blogStore__WEBPACK_IMPORTED_MODULE_2__.readPosts)();
+    if (!(0,_utils_api_auth__WEBPACK_IMPORTED_MODULE_2__.requireAdmin)(req, res)) return;
+    var posts = (0,_utils_data_blogStore__WEBPACK_IMPORTED_MODULE_1__.readPosts)();
     var idx = posts.findIndex(p => p.id === id);
     if (idx < 0) return res.status(404).json({
       error: 'Not found'
@@ -38,11 +38,25 @@ function handler(req, res) {
       id
     });
     posts[idx] = updated;
-    (0,_utils_data_blogStore__WEBPACK_IMPORTED_MODULE_2__.writePosts)(posts);
+    (0,_utils_data_blogStore__WEBPACK_IMPORTED_MODULE_1__.writePosts)(posts);
     return res.status(200).json(updated);
   }
   return res.status(405).end();
 }
+
+/***/ }),
+
+/***/ 333873:
+/***/ ((module) => {
+
+module.exports = require("path");
+
+/***/ }),
+
+/***/ 629021:
+/***/ ((module) => {
+
+module.exports = require("fs");
 
 /***/ }),
 
@@ -61,11 +75,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_dist_server_route_modules_pages_api_module_compiled__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(233480);
 /* harmony import */ var next_dist_server_route_modules_pages_api_module_compiled__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_dist_server_route_modules_pages_api_module_compiled__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var next_dist_build_templates_helpers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(886435);
-/* harmony import */ var private_next_pages_api_blog_posts_id_ts__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(96855);
-/* harmony import */ var next_dist_server_lib_trace_tracer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(858112);
-/* harmony import */ var next_dist_server_lib_trace_tracer__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_dist_server_lib_trace_tracer__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var next_dist_server_lib_trace_constants__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(918766);
-/* harmony import */ var next_dist_server_lib_trace_constants__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(next_dist_server_lib_trace_constants__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var private_next_pages_api_blog_posts_id_ts__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(96855);
+/* harmony import */ var next_dist_server_lib_trace_tracer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(858112);
+/* harmony import */ var next_dist_server_lib_trace_tracer__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(next_dist_server_lib_trace_tracer__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var next_dist_server_lib_trace_constants__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(918766);
+/* harmony import */ var next_dist_server_lib_trace_constants__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(next_dist_server_lib_trace_constants__WEBPACK_IMPORTED_MODULE_6__);
 
 
 
@@ -75,9 +89,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 // Re-export the handler (should be the default export).
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,next_dist_build_templates_helpers__WEBPACK_IMPORTED_MODULE_3__.hoist)(private_next_pages_api_blog_posts_id_ts__WEBPACK_IMPORTED_MODULE_6__, 'default'));
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,next_dist_build_templates_helpers__WEBPACK_IMPORTED_MODULE_3__.hoist)(private_next_pages_api_blog_posts_id_ts__WEBPACK_IMPORTED_MODULE_4__, 'default'));
 // Re-export config.
-const config = (0,next_dist_build_templates_helpers__WEBPACK_IMPORTED_MODULE_3__.hoist)(private_next_pages_api_blog_posts_id_ts__WEBPACK_IMPORTED_MODULE_6__, 'config');
+const config = (0,next_dist_build_templates_helpers__WEBPACK_IMPORTED_MODULE_3__.hoist)(private_next_pages_api_blog_posts_id_ts__WEBPACK_IMPORTED_MODULE_4__, 'config');
 // Create and export the route module that will be consumed.
 const routeModule = new next_dist_server_route_modules_pages_api_module_compiled__WEBPACK_IMPORTED_MODULE_2__.PagesAPIRouteModule({
     definition: {
@@ -88,7 +102,7 @@ const routeModule = new next_dist_server_route_modules_pages_api_module_compiled
         bundlePath: '',
         filename: ''
     },
-    userland: private_next_pages_api_blog_posts_id_ts__WEBPACK_IMPORTED_MODULE_6__,
+    userland: private_next_pages_api_blog_posts_id_ts__WEBPACK_IMPORTED_MODULE_4__,
     distDir: ".next" || 0,
     relativeProjectDir:  false || ''
 });
@@ -110,7 +124,7 @@ async function handler(req, res, ctx) {
     const { query, params, prerenderManifest, routerServerContext } = prepareResult;
     try {
         const method = req.method || 'GET';
-        const tracer = (0,next_dist_server_lib_trace_tracer__WEBPACK_IMPORTED_MODULE_4__.getTracer)();
+        const tracer = (0,next_dist_server_lib_trace_tracer__WEBPACK_IMPORTED_MODULE_5__.getTracer)();
         const activeSpan = tracer.getActiveScopeSpan();
         const onRequestError = routeModule.instrumentationOnRequestError.bind(routeModule);
         const invokeRouteModule = async (span)=>routeModule.render(req, res, {
@@ -141,7 +155,7 @@ async function handler(req, res, ctx) {
                 if (!rootSpanAttributes) {
                     return;
                 }
-                if (rootSpanAttributes.get('next.span_type') !== next_dist_server_lib_trace_constants__WEBPACK_IMPORTED_MODULE_5__.BaseServerSpan.handleRequest) {
+                if (rootSpanAttributes.get('next.span_type') !== next_dist_server_lib_trace_constants__WEBPACK_IMPORTED_MODULE_6__.BaseServerSpan.handleRequest) {
                     console.warn(`Unexpected root span type '${rootSpanAttributes.get('next.span_type')}'. Please report this Next.js issue https://github.com/vercel/next.js`);
                     return;
                 }
@@ -163,9 +177,9 @@ async function handler(req, res, ctx) {
         if (activeSpan) {
             await invokeRouteModule(activeSpan);
         } else {
-            await tracer.withPropagatedContext(req.headers, ()=>tracer.trace(next_dist_server_lib_trace_constants__WEBPACK_IMPORTED_MODULE_5__.BaseServerSpan.handleRequest, {
+            await tracer.withPropagatedContext(req.headers, ()=>tracer.trace(next_dist_server_lib_trace_constants__WEBPACK_IMPORTED_MODULE_6__.BaseServerSpan.handleRequest, {
                     spanName: `${method} ${req.url}`,
-                    kind: next_dist_server_lib_trace_tracer__WEBPACK_IMPORTED_MODULE_4__.SpanKind.SERVER,
+                    kind: next_dist_server_lib_trace_tracer__WEBPACK_IMPORTED_MODULE_5__.SpanKind.SERVER,
                     attributes: {
                         'http.method': method,
                         'http.target': req.url

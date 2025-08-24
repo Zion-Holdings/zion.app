@@ -166,14 +166,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ handler)
 /* harmony export */ });
-/* harmony import */ var _babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(405206);
+/* harmony import */ var _babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(405206);
 /* harmony import */ var child_process__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(579646);
 /* harmony import */ var child_process__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(child_process__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var path__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(333873);
 /* harmony import */ var path__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(path__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var fs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(629021);
 /* harmony import */ var fs__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(fs__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _utils_offworld_ipfs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(340082);
+/* harmony import */ var _utils_offworld_ipfs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(340082);
 
 
 
@@ -183,7 +183,7 @@ function handler(_x, _x2) {
   return _handler.apply(this, arguments);
 }
 function _handler() {
-  _handler = (0,_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_3__["default"])(function* (req, res) {
+  _handler = (0,_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4__["default"])(function* (req, res) {
     if (req.method !== 'POST') return res.status(405).json({
       error: 'Method not allowed'
     });
@@ -210,7 +210,7 @@ function _handler() {
       var {
         cid,
         provider
-      } = yield (0,_utils_offworld_ipfs__WEBPACK_IMPORTED_MODULE_4__.addDirectory)(outDir);
+      } = yield (0,_utils_offworld_ipfs__WEBPACK_IMPORTED_MODULE_3__.addDirectory)(outDir);
       if (!cid) return res.status(500).json({
         error: 'IPFS upload failed'
       });
@@ -247,6 +247,13 @@ module.exports = require("fs");
 /***/ ((module) => {
 
 module.exports = require("next/dist/compiled/next-server/pages-api.runtime.prod.js");
+
+/***/ }),
+
+/***/ 927910:
+/***/ ((module) => {
+
+module.exports = require("stream");
 
 /***/ })
 

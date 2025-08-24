@@ -5,6 +5,13 @@ exports.id = 417639;
 exports.ids = [417639];
 exports.modules = {
 
+/***/ 55591:
+/***/ ((module) => {
+
+module.exports = require("https");
+
+/***/ }),
+
 /***/ 71480:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -152,41 +159,108 @@ async function handler(req, res, ctx) {
 
 /***/ }),
 
+/***/ 74075:
+/***/ ((module) => {
+
+module.exports = require("zlib");
+
+/***/ }),
+
 /***/ 126302:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   createIdentity: () => (/* binding */ createIdentity),
-/* harmony export */   verifyIdentity: () => (/* binding */ verifyIdentity)
+/* harmony export */   buildIdentityProfile: () => (/* binding */ buildIdentityProfile),
+/* harmony export */   generateDIDKey: () => (/* binding */ generateDIDKey),
+/* harmony export */   resolveENS: () => (/* binding */ resolveENS),
+/* harmony export */   resolveLens: () => (/* binding */ resolveLens)
 /* harmony export */ });
 /* harmony import */ var _babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(405206);
 
-// Stub offworld identity utility - placeholder for missing functionality
-var createIdentity = /*#__PURE__*/function () {
-  var _ref = (0,_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-    // Placeholder implementation
+var DIDKit;
+var ethers;
+function lazyLoadDeps() {
+  return _lazyLoadDeps.apply(this, arguments);
+}
+function _lazyLoadDeps() {
+  _lazyLoadDeps = (0,_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    try {
+      DIDKit = yield Promise.resolve().then(function webpackMissingModule() { var e = new Error("Cannot find module '@spruceid/didkit-wasm-node'"); e.code = 'MODULE_NOT_FOUND'; throw e; });
+    } catch (_unused) {}
+    try {
+      ethers = yield Promise.all(/* import() */[__webpack_require__.e(618096), __webpack_require__.e(472076)]).then(__webpack_require__.t.bind(__webpack_require__, 96326, 23));
+    } catch (_unused2) {}
+  });
+  return _lazyLoadDeps.apply(this, arguments);
+}
+function generateDIDKey() {
+  return _generateDIDKey.apply(this, arguments);
+}
+function _generateDIDKey() {
+  _generateDIDKey = (0,_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    yield lazyLoadDeps();
+    if (!DIDKit) return null;
+    try {
+      var key = yield DIDKit.generateEd25519Key();
+      var did = yield DIDKit.keyToDID('key', key);
+      return did;
+    } catch (_unused3) {
+      return null;
+    }
+  });
+  return _generateDIDKey.apply(this, arguments);
+}
+function resolveENS(_x) {
+  return _resolveENS.apply(this, arguments);
+}
+function _resolveENS() {
+  _resolveENS = (0,_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (address) {
+    yield lazyLoadDeps();
+    if (!ethers) return null;
+    try {
+      var provider = ethers.getDefaultProvider();
+      return yield provider.lookupAddress(address);
+    } catch (_unused4) {
+      return null;
+    }
+  });
+  return _resolveENS.apply(this, arguments);
+}
+function resolveLens(_x2) {
+  return _resolveLens.apply(this, arguments);
+}
+function _resolveLens() {
+  _resolveLens = (0,_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (handleOrAddress) {
+    // Placeholder: Lens API would be online; return null in offworld
+    return null;
+  });
+  return _resolveLens.apply(this, arguments);
+}
+function buildIdentityProfile(_x3) {
+  return _buildIdentityProfile.apply(this, arguments);
+}
+function _buildIdentityProfile() {
+  _buildIdentityProfile = (0,_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (address) {
+    var did = yield generateDIDKey();
+    var ens = address ? yield resolveENS(address) : null;
+    var lens = address ? yield resolveLens(address) : null;
     return {
-      id: 'placeholder-id',
-      success: true
+      did: did || undefined,
+      ens,
+      lens,
+      address: address || null
     };
   });
-  return function createIdentity() {
-    return _ref.apply(this, arguments);
-  };
-}();
-var verifyIdentity = /*#__PURE__*/function () {
-  var _ref2 = (0,_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (id) {
-    // Placeholder implementation
-    return {
-      verified: true,
-      success: true
-    };
-  });
-  return function verifyIdentity(_x) {
-    return _ref2.apply(this, arguments);
-  };
-}();
+  return _buildIdentityProfile.apply(this, arguments);
+}
+
+/***/ }),
+
+/***/ 134631:
+/***/ ((module) => {
+
+module.exports = require("tls");
 
 /***/ }),
 
@@ -223,10 +297,66 @@ function _handler() {
 
 /***/ }),
 
+/***/ 379551:
+/***/ ((module) => {
+
+module.exports = require("url");
+
+/***/ }),
+
+/***/ 455511:
+/***/ ((module) => {
+
+module.exports = require("crypto");
+
+/***/ }),
+
+/***/ 491645:
+/***/ ((module) => {
+
+module.exports = require("net");
+
+/***/ }),
+
+/***/ 594735:
+/***/ ((module) => {
+
+module.exports = require("events");
+
+/***/ }),
+
 /***/ 775600:
 /***/ ((module) => {
 
 module.exports = require("next/dist/compiled/next-server/pages-api.runtime.prod.js");
+
+/***/ }),
+
+/***/ 781630:
+/***/ ((module) => {
+
+module.exports = require("http");
+
+/***/ }),
+
+/***/ 927910:
+/***/ ((module) => {
+
+module.exports = require("stream");
+
+/***/ }),
+
+/***/ 977598:
+/***/ ((module) => {
+
+module.exports = require("node:crypto");
+
+/***/ }),
+
+/***/ 979428:
+/***/ ((module) => {
+
+module.exports = require("buffer");
 
 /***/ })
 

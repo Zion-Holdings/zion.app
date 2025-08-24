@@ -1,12 +1,4 @@
 {
-<<<<<<< HEAD
-  "name": "zion-multichain-suite",
-  "version": "0.1.0",
-  "private": true,
-  "description": "Secure, modular smart contracts and deploy scripts for ZION$ multichain (zkSync, Starknet relay, L2s)",
-  "license": "MIT",
-  "scripts": {
-=======
   "name": "zion-ai-assistant",
   "version": "1.0.0",
   "description": "AI-powered chat assistant widget for the Zion AI Marketplace",
@@ -27,7 +19,6 @@
     "functions:run": "node scripts/run-netlify-functions-locally.cjs",
     "functions:run:execute": "node scripts/run-netlify-functions-locally.cjs --execute",
     "front:advertise": "node automation/front-index-advertiser.cjs",
->>>>>>> 5f48a381108fa3a8a43c189dd4b043133ce9307e
     "deps:maintain": "node automation/dependency-update-orchestrator.cjs",
     "deps:cron:start": "bash automation/dependency-maintenance-cron.sh",
     "sitemap": "node scripts/generate-sitemap.mjs",
@@ -38,9 +29,6 @@
     "start": "next start",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "type-check": "tsc --noEmit",
-<<<<<<< HEAD
-    "prepare": "husky install",
-=======
     "prepare": "git config core.hooksPath .husky || true",
     "fix:all": "npm run lint -- --fix || true && node fix_typescript_syntax_errors.cjs || true && node fix_all_typescript_errors.cjs || true && node final_fix.cjs || true",
     "build:heal": "npm run build || (npm run fix:all && npm run build)",
@@ -63,7 +51,6 @@
     "netlify:cron:start": "bash automation/netlify-monitor-cron.sh start",
     "netlify:cron:stop": "bash automation/netlify-monitor-cron.sh stop",
     "netlify:cron:status": "bash automation/netlify-monitor-cron.sh status"
->>>>>>> 5f48a381108fa3a8a43c189dd4b043133ce9307e
     "autonomous": "node automation/launch-enhanced-autonomous-system.js",
     "autonomous:dev": "nodemon automation/launch-enhanced-autonomous-system.js",
     "autonomous:status": "node automation/launch-autonomous-systems-clean.js status",
@@ -234,15 +221,6 @@
     "meta:factory": "node automation/autonomous-meta-factory.cjs",
     "meta:orchestrator": "node automation/autonomous-meta-orchestrator.cjs",
     "meta:cron:start": "bash automation/autonomous-meta-cron.sh",
-<<<<<<< HEAD
-    "admin:dashboard": "node automation/admin-dashboard-updater.cjs",
-    "admin:dashboard:watch": "node automation/admin-dashboard-updater.cjs --watch",
-    "admin:insights": "node automation/admin-insights-researcher.cjs",
-    "admin:insights:watch": "node automation/admin-insights-researcher.cjs --watch",
-    "admin:cron:start": "bash automation/admin-dashboard-cron.sh start",
-    "admin:cron:stop": "bash automation/admin-dashboard-cron.sh stop",
-    "admin:cron:status": "bash automation/admin-dashboard-cron.sh status"
-=======
     "venture:start": "node automation/venture-orchestrator.cjs continuous",
     "venture:once": "node automation/venture-orchestrator.cjs once",
     "venture:analyze": "node automation/venture-services-analyzer.cjs && node automation/venture-services-factory.cjs && node automation/ads-generator.cjs && node automation/service-sales-agents-factory.cjs",
@@ -257,6 +235,13 @@
     "git:cron:start": "bash automation/git-sync-cron.sh start",
     "git:cron:stop": "bash automation/git-sync-cron.sh stop",
     "git:cron:status": "bash automation/git-sync-cron.sh status",
+    "cloud:autonomy": "node scripts/zion-cloud-autonomy.cjs",
+    "cloud:chains": "node scripts/zion-chain-tuner.cjs",
+    "cloud:stuck": "node scripts/zion-stuck-users-scan.cjs",
+    "cloud:daily": "node scripts/zion-daily-report.cjs",
+    "cloud:benchmark": "node scripts/zion-prompt-benchmark.cjs",
+    "cloud:governance": "node scripts/zion-governance-digest.cjs"
+=======
     "homepage:update": "node automation/homepage-updater.cjs",
     "front:futurize": "node automation/front-futurizer.cjs",
     "front:futurize:cron": "node -e \"const cp=require('child_process'); setInterval(()=>cp.exec('node automation/front-futurizer.cjs',()=>{}), 1000*60*60*6)\"",
@@ -344,7 +329,6 @@
     "master:health": "node automation/master-automation-launcher.cjs health",
     "master:status": "node automation/master-automation-launcher.cjs status",
     "master:report": "node automation/master-automation-launcher.cjs report"
->>>>>>> 5f48a381108fa3a8a43c189dd4b043133ce9307e
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
@@ -373,10 +357,6 @@
     "html2canvas": "^1.4.1",
     "https": "^1.0.0",
     "import-fresh": "^3.3.1",
-<<<<<<< HEAD
-    "jspdf": "^3.0.1",
-=======
->>>>>>> 5f48a381108fa3a8a43c189dd4b043133ce9307e
     "lucide-react": "^0.536.0",
     "next": "^11.1.4",
     "node-cron": "^4.2.1",
@@ -384,28 +364,11 @@
     "path": "^0.12.7",
     "postcss": "^8.4.32",
     "react": "^17.0.2",
-<<<<<<< HEAD
-    "react-chartjs-2": "^5.3.0",
-=======
->>>>>>> 5f48a381108fa3a8a43c189dd4b043133ce9307e
     "react-datepicker": "^8.4.0",
     "react-dom": "^17.0.2",
     "uuid": "^11.1.0"
   },
   "devDependencies": {
-<<<<<<< HEAD
-    "@nomicfoundation/hardhat-chai-matchers": "^2.1.0",
-    "@nomicfoundation/hardhat-ethers": "^3.1.0",
-    "@nomicfoundation/hardhat-ignition": "^0.15.13",
-    "@nomicfoundation/hardhat-ignition-ethers": "^0.15.14",
-    "@nomicfoundation/hardhat-network-helpers": "^1.1.0",
-    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
-    "@nomicfoundation/hardhat-verify": "^2.1.1",
-    "@nomicfoundation/ignition-core": "^0.15.13",
-    "@typechain/ethers-v6": "^0.5.1",
-    "@typechain/hardhat": "^9.1.0",
-    "@types/chai": "^4.3.20",
-    "@types/mocha": "^10.0.10",
 =======
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
@@ -424,13 +387,15 @@
     "eslint-config-next": "^14.0.0",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
+  },
+  "type": "module"
+=======
     "husky": "^9.1.7",
     "lint-staged": "^16.1.4",
     "postcss": "^8.4.32",
     "tailwindcss": "^3.4.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.2"
->>>>>>> 5f48a381108fa3a8a43c189dd4b043133ce9307e
   },
   "type": "module"
 =======

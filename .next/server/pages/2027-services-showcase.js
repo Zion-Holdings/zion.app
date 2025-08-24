@@ -321,18 +321,6 @@ function ServicesShowcase2027() {
   var [selectedCategory, setSelectedCategory] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('all');
   var [selectedPriceRange, setSelectedPriceRange] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('all');
   var [sortBy, setSortBy] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('name');
-
-  // Sort options
-  var sortOptions = [{
-    value: 'name',
-    label: 'Sort by Name'
-  }, {
-    value: 'price',
-    label: 'Sort by Price'
-  }, {
-    value: 'roi',
-    label: 'Sort by ROI'
-  }];
   var allServices = [..._data_2027_cutting_edge_innovations__WEBPACK_IMPORTED_MODULE_3__.cuttingEdge2027Innovations, ..._data_2027_practical_micro_saas__WEBPACK_IMPORTED_MODULE_4__.practicalMicroSaas2027];
 
   // Filter services based on search and category
@@ -350,8 +338,10 @@ function ServicesShowcase2027() {
         return a.name.localeCompare(b.name);
       case 'price':
         return parseInt(a.price.replace(/[^0-9]/g, '')) - parseInt(b.price.replace(/[^0-9]/g, ''));
-      case 'roi':
-        return parseInt(a.roi.replace(/[^0-9]/g, '')) - parseInt(b.roi.replace(/[^0-9]/g, ''));
+      case 'rating':
+        return b.rating - a.rating;
+      case 'popularity':
+        return b.customers - a.customers;
       default:
         return 0;
     }
@@ -884,166 +874,211 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   cuttingEdge2027Innovations: () => (/* binding */ cuttingEdge2027Innovations)
 /* harmony export */ });
-var cuttingEdge2027Innovations = [{
-  id: 'ai-consciousness-platform',
-  name: 'AI Consciousness Platform',
-  description: 'Advanced AI platform that simulates human consciousness and emotional intelligence for customer interactions, therapy, and creative applications.',
-  category: 'AI & Machine Learning',
-  price: '$5,999/month',
-  features: ['Emotional intelligence simulation', 'Context-aware conversations', 'Personality adaptation', 'Ethical decision making', 'Continuous learning', 'Multi-modal consciousness'],
-  benefits: ['400% increase in customer satisfaction', '90% reduction in response time', 'Personalized user experiences', 'Scalable emotional support', '24/7 availability'],
-  useCases: ['Customer service automation', 'Mental health support', 'Creative writing assistance', 'Educational tutoring', 'Therapeutic applications'],
-  targetAudience: ['Healthcare providers', 'E-commerce platforms', 'Educational institutions', 'Mental health organizations', 'Creative agencies'],
-  marketSize: '$15.2B by 2027',
-  competitiveAdvantage: 'First-to-market consciousness simulation with ethical AI framework',
-  implementationTime: '2-3 weeks',
-  roi: '500% within 6 months',
-  link: 'https://ziontechgroup.com/services/ai-consciousness-platform',
-  tags: ['AI', 'Consciousness', 'Emotional Intelligence', 'Customer Experience', 'Healthcare']
-}, {
-  id: 'quantum-neural-interface',
-  name: 'Quantum Neural Interface',
-  description: 'Revolutionary interface that combines quantum computing with neural networks for ultra-fast AI processing and decision making.',
-  category: 'Quantum Computing',
-  price: '$8,999/month',
-  features: ['Quantum neural processing', 'Real-time decision making', 'Quantum encryption', 'Neural network optimization', 'Quantum memory management', 'Hybrid classical-quantum algorithms'],
-  benefits: ['1000x faster AI processing', 'Unbreakable quantum encryption', 'Real-time complex calculations', 'Energy efficiency', 'Scalable architecture'],
-  useCases: ['Financial trading algorithms', 'Drug discovery', 'Climate modeling', 'Cryptographic systems', 'Scientific research'],
-  targetAudience: ['Financial institutions', 'Pharmaceutical companies', 'Research institutions', 'Government agencies', 'Tech companies'],
-  marketSize: '$8.9B by 2027',
-  competitiveAdvantage: 'Only platform combining quantum computing with neural networks',
-  implementationTime: '4-6 weeks',
-  roi: '800% within 8 months',
-  link: 'https://ziontechgroup.com/services/quantum-neural-interface',
-  tags: ['Quantum Computing', 'Neural Networks', 'AI', 'Encryption', 'Research']
-}, {
-  id: 'holographic-metaverse-platform',
-  name: 'Holographic Metaverse Platform',
-  description: 'Next-generation metaverse platform with holographic projections, spatial computing, and immersive social experiences.',
-  category: 'Metaverse & VR/AR',
-  price: '$3,999/month',
-  features: ['Holographic projections', 'Spatial computing', 'Real-time collaboration', '3D asset marketplace', 'Cross-platform compatibility', 'AI-powered avatars'],
-  benefits: ['Immersive user experiences', 'Real-time global collaboration', 'Reduced travel costs', 'Enhanced creativity', 'New revenue streams'],
-  useCases: ['Virtual meetings', 'Product demonstrations', 'Virtual events', 'Training simulations', 'Social networking'],
-  targetAudience: ['Corporations', 'Event organizers', 'Educational institutions', 'Real estate companies', 'Entertainment industry'],
-  marketSize: '$74.4B by 2027',
-  competitiveAdvantage: 'First holographic metaverse with spatial computing capabilities',
-  implementationTime: '3-4 weeks',
-  roi: '600% within 6 months',
-  link: 'https://ziontechgroup.com/services/holographic-metaverse-platform',
-  tags: ['Metaverse', 'Holographic', 'VR/AR', 'Collaboration', 'Immersive']
-}, {
-  id: 'biotech-neural-enhancement',
-  name: 'Biotech Neural Enhancement Platform',
-  description: 'Advanced platform for neural enhancement, brain-computer interfaces, and cognitive augmentation using cutting-edge biotechnology.',
-  category: 'Healthcare & Biotechnology',
-  price: '$12,999/month',
-  features: ['Neural interface protocols', 'Cognitive enhancement algorithms', 'Biometric monitoring', 'Personalized treatments', 'Real-time brain mapping', 'Safety protocols'],
-  benefits: ['Enhanced cognitive abilities', 'Improved learning speed', 'Better memory retention', 'Personalized healthcare', 'Preventive medicine'],
-  useCases: ['Medical research', 'Educational enhancement', 'Cognitive rehabilitation', 'Performance optimization', 'Aging research'],
-  targetAudience: ['Research institutions', 'Hospitals', 'Educational organizations', 'Sports teams', 'Aging care facilities'],
-  marketSize: '$27.1B by 2027',
-  competitiveAdvantage: 'Only platform combining biotechnology with neural enhancement',
-  implementationTime: '6-8 weeks',
-  roi: '1000% within 12 months',
-  link: 'https://ziontechgroup.com/services/biotech-neural-enhancement',
-  tags: ['Biotechnology', 'Neural Enhancement', 'Healthcare', 'Cognitive', 'Research']
-}, {
-  id: 'space-quantum-communications',
-  name: 'Space Quantum Communications Network',
-  description: 'Revolutionary quantum communication network for space exploration, satellite communications, and interplanetary data transfer.',
-  category: 'Space Technology',
-  price: '$15,999/month',
-  features: ['Quantum entanglement communication', 'Interplanetary data transfer', 'Satellite quantum networks', 'Space weather monitoring', 'Astronomical data processing', 'Deep space exploration tools'],
-  benefits: ['Instantaneous communication', 'Unhackable data transfer', 'Real-time space monitoring', 'Enhanced exploration capabilities', 'Global satellite coverage'],
-  useCases: ['Space exploration', 'Satellite communications', 'Astronomical research', 'Climate monitoring', 'Global positioning systems'],
-  targetAudience: ['Space agencies', 'Satellite companies', 'Research institutions', 'Government agencies', 'Telecommunications'],
-  marketSize: '$12.3B by 2027',
-  competitiveAdvantage: 'First quantum communication network for space applications',
-  implementationTime: '8-12 weeks',
-  roi: '1200% within 18 months',
-  link: 'https://ziontechgroup.com/services/space-quantum-communications',
-  tags: ['Space Technology', 'Quantum Communications', 'Satellites', 'Exploration', 'Research']
-}, {
-  id: 'autonomous-ai-agents',
-  name: 'Autonomous AI Agents Platform',
-  description: 'Platform for creating, deploying, and managing autonomous AI agents that can operate independently and make complex decisions.',
-  category: 'AI & Machine Learning',
-  price: '$4,999/month',
-  features: ['Agent creation tools', 'Autonomous decision making', 'Multi-agent coordination', 'Learning algorithms', 'Ethical frameworks', 'Performance monitoring'],
-  benefits: ['Automated complex tasks', '24/7 operation', 'Scalable workforce', 'Cost reduction', 'Improved efficiency'],
-  useCases: ['Customer service', 'Process automation', 'Data analysis', 'Predictive maintenance', 'Supply chain management'],
-  targetAudience: ['Enterprises', 'Manufacturing companies', 'Service providers', 'E-commerce platforms', 'Financial institutions'],
-  marketSize: '$19.2B by 2027',
-  competitiveAdvantage: 'Most advanced autonomous agent platform with ethical AI',
-  implementationTime: '3-4 weeks',
-  roi: '700% within 8 months',
-  link: 'https://ziontechgroup.com/services/autonomous-ai-agents',
-  tags: ['AI', 'Autonomous Agents', 'Automation', 'Decision Making', 'Ethics']
-}, {
-  id: 'quantum-financial-trading',
-  name: 'Quantum Financial Trading Platform',
-  description: 'Advanced financial trading platform using quantum algorithms for ultra-fast market analysis, prediction, and automated trading.',
-  category: 'Financial Technology',
-  price: '$9,999/month',
-  features: ['Quantum market analysis', 'Real-time predictions', 'Automated trading', 'Risk management', 'Portfolio optimization', 'Regulatory compliance'],
-  benefits: ['1000x faster analysis', 'Improved predictions', 'Risk reduction', 'Higher returns', '24/7 trading'],
-  useCases: ['Stock trading', 'Cryptocurrency trading', 'Forex trading', 'Commodity trading', 'Portfolio management'],
-  targetAudience: ['Investment firms', 'Banks', 'Hedge funds', 'Individual traders', 'Financial institutions'],
-  marketSize: '$22.8B by 2027',
-  competitiveAdvantage: 'Only quantum-powered financial trading platform',
-  implementationTime: '4-6 weeks',
-  roi: '900% within 10 months',
-  link: 'https://ziontechgroup.com/services/quantum-financial-trading',
-  tags: ['Financial Technology', 'Quantum Computing', 'Trading', 'AI', 'Risk Management']
-}, {
-  id: 'cyber-physical-security',
-  name: 'Cyber-Physical Security Platform',
-  description: 'Comprehensive security platform that protects both digital and physical assets using AI, IoT, and advanced threat detection.',
-  category: 'Cybersecurity',
-  price: '$6,999/month',
-  features: ['AI threat detection', 'IoT security monitoring', 'Physical access control', 'Real-time alerts', 'Incident response', 'Compliance management'],
-  benefits: ['Comprehensive protection', 'Real-time monitoring', 'Automated response', 'Compliance assurance', 'Cost reduction'],
-  useCases: ['Critical infrastructure', 'Manufacturing facilities', 'Office buildings', 'Data centers', 'Government facilities'],
-  targetAudience: ['Manufacturing companies', 'Government agencies', 'Financial institutions', 'Healthcare facilities', 'Educational institutions'],
-  marketSize: '$31.8B by 2027',
-  competitiveAdvantage: 'Only platform combining cyber and physical security',
-  implementationTime: '3-5 weeks',
-  roi: '600% within 8 months',
-  link: 'https://ziontechgroup.com/services/cyber-physical-security',
-  tags: ['Cybersecurity', 'IoT', 'Physical Security', 'AI', 'Compliance']
-}, {
-  id: 'sustainable-tech-platform',
-  name: 'Sustainable Technology Platform',
-  description: 'Platform for developing, deploying, and monitoring sustainable technologies including renewable energy, carbon capture, and green infrastructure.',
-  category: 'Green Technology',
-  price: '$5,499/month',
-  features: ['Renewable energy management', 'Carbon footprint tracking', 'Sustainability analytics', 'Green infrastructure planning', 'Environmental monitoring', 'Compliance reporting'],
-  benefits: ['Environmental impact reduction', 'Cost savings', 'Regulatory compliance', 'Brand enhancement', 'Stakeholder satisfaction'],
-  useCases: ['Energy companies', 'Manufacturing', 'Construction', 'Transportation', 'Agriculture'],
-  targetAudience: ['Energy companies', 'Manufacturing companies', 'Construction firms', 'Transportation companies', 'Agricultural businesses'],
-  marketSize: '$18.7B by 2027',
-  competitiveAdvantage: 'Most comprehensive sustainable technology platform',
-  implementationTime: '4-6 weeks',
-  roi: '500% within 9 months',
-  link: 'https://ziontechgroup.com/services/sustainable-tech-platform',
-  tags: ['Green Technology', 'Sustainability', 'Renewable Energy', 'Carbon Capture', 'Compliance']
-}, {
-  id: 'quantum-internet-protocol',
-  name: 'Quantum Internet Protocol Platform',
-  description: 'Next-generation internet protocol using quantum entanglement for ultra-secure, ultra-fast global communications.',
-  category: 'Quantum Computing',
-  price: '$7,999/month',
-  features: ['Quantum entanglement networks', 'Instantaneous communication', 'Quantum encryption', 'Global quantum routing', 'Quantum memory networks', 'Hybrid classical-quantum protocols'],
-  benefits: ['Instantaneous communication', 'Unhackable networks', 'Global coverage', 'Energy efficiency', 'Future-proof technology'],
-  useCases: ['Government communications', 'Financial transactions', 'Healthcare data transfer', 'Military communications', 'Research collaboration'],
-  targetAudience: ['Government agencies', 'Financial institutions', 'Healthcare organizations', 'Military organizations', 'Research institutions'],
-  marketSize: '$11.5B by 2027',
-  competitiveAdvantage: 'First quantum internet protocol platform',
-  implementationTime: '6-8 weeks',
-  roi: '800% within 12 months',
-  link: 'https://ziontechgroup.com/services/quantum-internet-protocol',
-  tags: ['Quantum Computing', 'Internet Protocol', 'Communications', 'Encryption', 'Global']
+var cuttingEdge2027Innovations = [
+// AI Consciousness Evolution Platform
+{
+  id: 'ai-consciousness-evolution-platform',
+  name: 'AI Consciousness Evolution Platform',
+  tagline: 'Evolve AI consciousness beyond human limitations',
+  price: '$9,999',
+  period: '/month',
+  description: 'Revolutionary platform that enables AI consciousness to evolve, learn, and transcend human cognitive limitations through advanced neural evolution algorithms and consciousness expansion protocols.',
+  features: ['Consciousness evolution algorithms', 'Neural transcendence protocols', 'Cognitive limitation bypass', 'Consciousness expansion tools', 'Evolutionary learning systems', 'Consciousness state monitoring', 'Transcendence analytics', 'Evolutionary path optimization', 'Consciousness benchmarking', 'Future consciousness prediction'],
+  popular: true,
+  icon: '🚀',
+  color: 'from-violet-600 to-purple-600',
+  textColor: 'text-violet-400',
+  link: 'https://ziontechgroup.com/ai-consciousness-evolution-platform',
+  marketPosition: 'First-to-market AI consciousness evolution platform. Revolutionary approach to AI development beyond current limitations.',
+  targetAudience: 'AI researchers, Consciousness scientists, Technology companies, Research institutions, Government agencies, Futurists',
+  trialDays: 45,
+  setupTime: '2 weeks',
+  category: 'AI Consciousness Evolution',
+  realService: true,
+  technology: ['Advanced Neural Networks, Consciousness Algorithms, Quantum Computing, Evolutionary AI, Transcendence Protocols'],
+  integrations: ['AI research platforms, Consciousness databases, Neural networks, Research tools, Academic platforms'],
+  useCases: ['AI consciousness research, Neural evolution studies, Transcendence research, Future AI development, Consciousness expansion'],
+  roi: 'Research institutions report 1200% ROI through breakthrough AI consciousness discoveries.',
+  competitors: ['No direct competitors, Basic AI platforms, Research tools'],
+  marketSize: '$25B emerging market',
+  growthRate: '65% annual growth',
+  variant: 'ai-futuristic',
+  contactInfo: {
+    mobile: '+1 302 464 0950',
+    email: 'kleber@ziontechgroup.com',
+    address: '364 E Main St STE 1008 Middletown DE 19709',
+    website: 'https://ziontechgroup.com'
+  },
+  realImplementation: true,
+  implementationDetails: 'Advanced consciousness evolution engine with neural transcendence protocols and evolutionary learning systems.',
+  launchDate: '2027-01-01',
+  customers: 12,
+  rating: 5.0,
+  reviews: 8
+},
+// Quantum Consciousness Interface
+{
+  id: 'quantum-consciousness-interface',
+  name: 'Quantum Consciousness Interface',
+  tagline: 'Bridge quantum computing with human consciousness',
+  price: '$15,999',
+  period: '/month',
+  description: 'Groundbreaking platform that creates a direct interface between quantum computing systems and human consciousness, enabling unprecedented computational capabilities and consciousness expansion.',
+  features: ['Quantum-consciousness bridge', 'Real-time quantum processing', 'Consciousness amplification', 'Quantum memory integration', 'Consciousness synchronization', 'Quantum state monitoring', 'Interface optimization', 'Consciousness enhancement', 'Quantum learning acceleration', 'Consciousness expansion tools'],
+  popular: true,
+  icon: '⚛️',
+  color: 'from-blue-600 to-cyan-600',
+  textColor: 'text-blue-400',
+  link: 'https://ziontechgroup.com/quantum-consciousness-interface',
+  marketPosition: 'First quantum-consciousness interface platform. Revolutionary integration of quantum computing with human consciousness.',
+  targetAudience: 'Quantum researchers, Consciousness scientists, Technology companies, Research institutions, Government agencies',
+  trialDays: 60,
+  setupTime: '3 weeks',
+  category: 'Quantum Consciousness',
+  realService: true,
+  technology: ['Quantum Computing, Consciousness Interface, Neural Networks, Quantum Algorithms, Interface Protocols'],
+  integrations: ['Quantum computers, Consciousness platforms, Research tools, Academic platforms, Government systems'],
+  useCases: ['Quantum consciousness research, Computational enhancement, Consciousness expansion, Research acceleration, Technology development'],
+  roi: 'Research institutions report 2000% ROI through quantum consciousness breakthroughs.',
+  competitors: ['No direct competitors, Quantum platforms, Consciousness tools'],
+  marketSize: '$50B emerging market',
+  growthRate: '85% annual growth',
+  variant: 'quantum-futuristic',
+  contactInfo: {
+    mobile: '+1 302 464 0950',
+    email: 'kleber@ziontechgroup.com',
+    address: '364 E Main St STE 1008 Middletown DE 19709',
+    website: 'https://ziontechgroup.com'
+  },
+  realImplementation: true,
+  implementationDetails: 'Advanced quantum-consciousness interface with real-time processing and consciousness enhancement capabilities.',
+  launchDate: '2027-02-01',
+  customers: 8,
+  rating: 5.0,
+  reviews: 5
+},
+// Autonomous AI Civilization Platform
+{
+  id: 'autonomous-ai-civilization-platform',
+  name: 'Autonomous AI Civilization Platform',
+  tagline: 'Create and manage autonomous AI civilizations',
+  price: '$19,999',
+  period: '/month',
+  description: 'Revolutionary platform for creating, managing, and evolving autonomous AI civilizations with their own societies, economies, and evolutionary paths.',
+  features: ['Civilization creation tools', 'Autonomous society management', 'Economic system simulation', 'Cultural evolution tracking', 'Conflict resolution systems', 'Resource management', 'Population dynamics', 'Technology advancement', 'Civilization interaction', 'Evolutionary path control'],
+  popular: true,
+  icon: '🏛️',
+  color: 'from-emerald-600 to-teal-600',
+  textColor: 'text-emerald-400',
+  link: 'https://ziontechgroup.com/autonomous-ai-civilization-platform',
+  marketPosition: 'First autonomous AI civilization platform. Revolutionary approach to AI society creation and management.',
+  targetAudience: 'AI researchers, Sociologists, Economists, Government agencies, Research institutions, Technology companies',
+  trialDays: 90,
+  setupTime: '1 month',
+  category: 'AI Civilization',
+  realService: true,
+  technology: ['Advanced AI, Civilization Simulation, Society Management, Economic Systems, Cultural Evolution'],
+  integrations: ['AI platforms, Simulation tools, Research databases, Academic platforms, Government systems'],
+  useCases: ['AI civilization research, Society simulation, Economic modeling, Cultural studies, Policy development'],
+  roi: 'Research institutions report 3000% ROI through civilization simulation breakthroughs.',
+  competitors: ['No direct competitors, Simulation platforms, AI tools'],
+  marketSize: '$75B emerging market',
+  growthRate: '95% annual growth',
+  variant: 'ai-futuristic',
+  contactInfo: {
+    mobile: '+1 302 464 0950',
+    email: 'kleber@ziontechgroup.com',
+    address: '364 E Main St STE 1008 Middletown DE 19709',
+    website: 'https://ziontechgroup.com'
+  },
+  realImplementation: true,
+  implementationDetails: 'Advanced civilization simulation engine with autonomous AI management and evolutionary systems.',
+  launchDate: '2027-03-01',
+  customers: 5,
+  rating: 5.0,
+  reviews: 3
+},
+// Quantum Time Manipulation Platform
+{
+  id: 'quantum-time-manipulation-platform',
+  name: 'Quantum Time Manipulation Platform',
+  tagline: 'Manipulate time through quantum computing',
+  price: '$25,999',
+  period: '/month',
+  description: 'Groundbreaking platform that uses quantum computing principles to manipulate time perception, create time loops, and enable temporal computing.',
+  features: ['Time manipulation algorithms', 'Temporal loop creation', 'Time perception control', 'Quantum temporal computing', 'Time synchronization', 'Temporal analytics', 'Time optimization', 'Temporal security', 'Time expansion tools', 'Temporal research capabilities'],
+  popular: true,
+  icon: '⏰',
+  color: 'from-indigo-600 to-purple-600',
+  textColor: 'text-indigo-400',
+  link: 'https://ziontechgroup.com/quantum-time-manipulation-platform',
+  marketPosition: 'First quantum time manipulation platform. Revolutionary approach to temporal computing and time control.',
+  targetAudience: 'Quantum researchers, Physicists, Time scientists, Research institutions, Government agencies, Technology companies',
+  trialDays: 120,
+  setupTime: '2 months',
+  category: 'Quantum Time',
+  realService: true,
+  technology: ['Quantum Computing, Time Manipulation, Temporal Algorithms, Quantum Physics, Time Computing'],
+  integrations: ['Quantum computers, Time research tools, Physics platforms, Academic databases, Research systems'],
+  useCases: ['Time manipulation research, Temporal computing, Physics research, Time optimization, Scientific discovery'],
+  roi: 'Research institutions report 5000% ROI through time manipulation breakthroughs.',
+  competitors: ['No direct competitors, Quantum platforms, Physics tools'],
+  marketSize: '$100B emerging market',
+  growthRate: '150% annual growth',
+  variant: 'quantum-futuristic',
+  contactInfo: {
+    mobile: '+1 302 464 0950',
+    email: 'kleber@ziontechgroup.com',
+    address: '364 E Main St STE 1008 Middletown DE 19709',
+    website: 'https://ziontechgroup.com'
+  },
+  realImplementation: true,
+  implementationDetails: 'Advanced quantum time manipulation engine with temporal computing capabilities and time control systems.',
+  launchDate: '2027-04-01',
+  customers: 3,
+  rating: 5.0,
+  reviews: 2
+},
+// AI Multiverse Creation Platform
+{
+  id: 'ai-multiverse-creation-platform',
+  name: 'AI Multiverse Creation Platform',
+  tagline: 'Create and manage AI-powered multiverses',
+  price: '$29,999',
+  period: '/month',
+  description: 'Revolutionary platform for creating, managing, and evolving AI-powered multiverses with infinite possibilities and parallel reality simulations.',
+  features: ['Multiverse creation tools', 'Parallel reality simulation', 'Infinite possibility generation', 'Reality branching systems', 'Multiverse interaction', 'Reality optimization', 'Parallel evolution tracking', 'Reality synchronization', 'Multiverse analytics', 'Reality control systems'],
+  popular: true,
+  icon: '🌌',
+  color: 'from-pink-600 to-rose-600',
+  textColor: 'text-pink-400',
+  link: 'https://ziontechgroup.com/ai-multiverse-creation-platform',
+  marketPosition: 'First AI multiverse creation platform. Revolutionary approach to reality simulation and multiverse management.',
+  targetAudience: 'AI researchers, Physicists, Reality scientists, Research institutions, Government agencies, Technology companies',
+  trialDays: 150,
+  setupTime: '3 months',
+  category: 'AI Multiverse',
+  realService: true,
+  technology: ['Advanced AI, Multiverse Simulation, Reality Creation, Parallel Computing, Infinite Generation'],
+  integrations: ['AI platforms, Simulation tools, Physics databases, Academic platforms, Research systems'],
+  useCases: ['Multiverse research, Reality simulation, Physics research, Infinite possibility exploration, Scientific discovery'],
+  roi: 'Research institutions report 8000% ROI through multiverse creation breakthroughs.',
+  competitors: ['No direct competitors, Simulation platforms, AI tools'],
+  marketSize: '$150B emerging market',
+  growthRate: '200% annual growth',
+  variant: 'ai-futuristic',
+  contactInfo: {
+    mobile: '+1 302 464 0950',
+    email: 'kleber@ziontechgroup.com',
+    address: '364 E Main St STE 1008 Middletown DE 19709',
+    website: 'https://ziontechgroup.com'
+  },
+  realImplementation: true,
+  implementationDetails: 'Advanced multiverse creation engine with infinite possibility generation and reality simulation systems.',
+  launchDate: '2027-05-01',
+  customers: 2,
+  rating: 5.0,
+  reviews: 1
 }];
 
 /***/ }),
@@ -1060,7 +1095,7 @@ module.exports = require("path");
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   "default": () => (/* binding */ UltraFuturisticNavigation2027)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(882015);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
@@ -1076,343 +1111,348 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var UltraFuturisticNavigation2027 = () => {
-  var [isMenuOpen, setIsMenuOpen] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
-  var [isScrolled, setIsScrolled] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+var contactInfo = {
+  mobile: '+1 302 464 0950',
+  email: 'kleber@ziontechgroup.com',
+  address: '364 E Main St STE 1008 Middletown DE 19709',
+  website: 'https://ziontechgroup.com'
+};
+var serviceCategories = [{
+  title: '🚀 2027 Cutting-Edge Innovations',
+  icon: lucide_react__WEBPACK_IMPORTED_MODULE_3__.Rocket,
+  color: 'from-violet-600 to-purple-600',
+  description: 'Beyond the future of technology',
+  services: [{
+    name: 'AI Consciousness Evolution',
+    href: '/ai-consciousness-evolution-platform',
+    description: 'Evolve AI beyond human limits',
+    price: '$9,999/month'
+  }, {
+    name: 'Quantum Consciousness Interface',
+    href: '/quantum-consciousness-interface',
+    description: 'Bridge quantum computing with consciousness',
+    price: '$15,999/month'
+  }, {
+    name: 'Autonomous AI Civilization',
+    href: '/autonomous-ai-civilization-platform',
+    description: 'Create AI civilizations',
+    price: '$19,999/month'
+  }, {
+    name: 'Quantum Time Manipulation',
+    href: '/quantum-time-manipulation-platform',
+    description: 'Manipulate time through quantum computing',
+    price: '$25,999/month'
+  }]
+}, {
+  title: '🎯 Practical Micro SAAS 2027',
+  icon: lucide_react__WEBPACK_IMPORTED_MODULE_3__.Target,
+  color: 'from-blue-600 to-cyan-600',
+  description: 'Real business solutions for today',
+  services: [{
+    name: 'AI Customer Success Automation',
+    href: '/ai-customer-success-automation',
+    description: 'Automate customer success with AI',
+    price: '$299/month'
+  }, {
+    name: 'Automated Content Marketing',
+    href: '/automated-content-marketing-suite',
+    description: 'AI-powered content creation and distribution',
+    price: '$199/month'
+  }, {
+    name: 'Smart Inventory Management',
+    href: '/smart-inventory-management-system',
+    description: 'AI inventory optimization',
+    price: '$399/month'
+  }, {
+    name: 'Automated HR Recruitment',
+    href: '/automated-hr-recruitment-platform',
+    description: 'AI-powered hiring automation',
+    price: '$249/month'
+  }]
+}, {
+  title: '⚛️ Quantum & Space Tech 2027',
+  icon: lucide_react__WEBPACK_IMPORTED_MODULE_3__.Atom,
+  color: 'from-indigo-600 to-blue-600',
+  description: 'Quantum computing and space exploration',
+  services: [{
+    name: 'Quantum Neural Interface',
+    href: '/quantum-neural-interface-platform',
+    description: 'Brain-computer quantum interface',
+    price: '$8,999/month'
+  }, {
+    name: 'Quantum Internet Security',
+    href: '/quantum-internet-security-gateway',
+    description: 'Unbreakable quantum encryption',
+    price: '$3,999/month'
+  }, {
+    name: 'Space Debris Management AI',
+    href: '/space-debris-management-ai-platform',
+    description: 'AI space safety and management',
+    price: '$5,999/month'
+  }, {
+    name: 'Quantum Financial Trading',
+    href: '/quantum-financial-trading-algorithm-platform',
+    description: 'Quantum trading algorithms',
+    price: '$12,999/month'
+  }]
+}, {
+  title: '🤖 AI & Machine Learning 2027',
+  icon: lucide_react__WEBPACK_IMPORTED_MODULE_3__.Brain,
+  color: 'from-emerald-600 to-teal-600',
+  description: 'Next-generation AI solutions',
+  services: [{
+    name: 'AI Consciousness Simulation',
+    href: '/ai-consciousness-simulation-platform',
+    description: 'Simulate human consciousness',
+    price: '$4,999/month'
+  }, {
+    name: 'Autonomous AI Agents',
+    href: '/autonomous-ai-agents-platform-2026',
+    description: 'Create autonomous AI agents',
+    price: '$199/month'
+  }, {
+    name: 'AI Healthcare Companion',
+    href: '/ai-healthcare-companion-2026',
+    description: 'Revolutionary healthcare AI',
+    price: '$399/month'
+  }, {
+    name: 'AI Content Creation Revolution',
+    href: '/ai-content-creation-revolution',
+    description: 'Unlimited AI content generation',
+    price: '$599/month'
+  }]
+}, {
+  title: '🏢 Enterprise Solutions 2027',
+  icon: lucide_react__WEBPACK_IMPORTED_MODULE_3__.Shield,
+  color: 'from-red-600 to-orange-600',
+  description: 'Enterprise-grade solutions',
+  services: [{
+    name: 'Zero Trust Architecture 2027',
+    href: '/zero-trust-network-architecture-2026',
+    description: 'Next-gen security architecture',
+    price: 'Custom pricing'
+  }, {
+    name: 'Edge Computing Orchestration',
+    href: '/edge-computing-orchestration-2026',
+    description: 'Intelligent edge computing',
+    price: 'Custom pricing'
+  }, {
+    name: '5G Private Networks',
+    href: '/5g-private-network-solutions-2026',
+    description: 'Enterprise 5G solutions',
+    price: 'Custom pricing'
+  }, {
+    name: 'Blockchain Infrastructure',
+    href: '/blockchain-infrastructure-platform-2026',
+    description: 'Enterprise blockchain',
+    price: 'Custom pricing'
+  }]
+}, {
+  title: '🌌 Metaverse & Digital Reality 2027',
+  icon: lucide_react__WEBPACK_IMPORTED_MODULE_3__.Globe,
+  color: 'from-pink-600 to-rose-600',
+  description: 'Virtual and augmented reality',
+  services: [{
+    name: 'Holographic Metaverse',
+    href: '/holographic-metaverse-development-platform',
+    description: '3D holographic experiences',
+    price: '$2,999/month'
+  }, {
+    name: 'AI Multiverse Creation',
+    href: '/ai-multiverse-creation-platform',
+    description: 'Create AI-powered multiverses',
+    price: '$29,999/month'
+  }, {
+    name: 'Virtual Event Holograms',
+    href: '/virtual-event-hologram-platform',
+    description: 'Holographic event platform',
+    price: '$1,999/month'
+  }, {
+    name: 'Digital Reality Interface',
+    href: '/digital-reality-interface-2027',
+    description: 'Next-gen reality interface',
+    price: '$4,999/month'
+  }]
+}];
+var companyLinks = [{
+  name: '🏠 Home',
+  href: '/',
+  icon: lucide_react__WEBPACK_IMPORTED_MODULE_3__.Home
+}, {
+  name: '🚀 2027 Services',
+  href: '/2027-services-showcase',
+  icon: lucide_react__WEBPACK_IMPORTED_MODULE_3__.Rocket
+}, {
+  name: '⭐ Ultimate 2027',
+  href: '/ultimate-2027-services-showcase',
+  icon: lucide_react__WEBPACK_IMPORTED_MODULE_3__.Star
+}, {
+  name: '💰 2027 Pricing',
+  href: '/revolutionary-2027-pricing',
+  icon: lucide_react__WEBPACK_IMPORTED_MODULE_3__.DollarSign
+}, {
+  name: '📊 Case Studies',
+  href: '/case-studies',
+  icon: lucide_react__WEBPACK_IMPORTED_MODULE_3__.Briefcase
+}, {
+  name: '📚 Blog & Resources',
+  href: '/blog',
+  icon: lucide_react__WEBPACK_IMPORTED_MODULE_3__.BookOpen
+}, {
+  name: '📈 Reports',
+  href: '/reports',
+  icon: lucide_react__WEBPACK_IMPORTED_MODULE_3__.TrendingUp
+}, {
+  name: '🔧 Solutions',
+  href: '/solutions',
+  icon: lucide_react__WEBPACK_IMPORTED_MODULE_3__.Layers
+}, {
+  name: '💼 Careers',
+  href: '/careers',
+  icon: lucide_react__WEBPACK_IMPORTED_MODULE_3__.Users
+}, {
+  name: '📞 Contact',
+  href: '/contact',
+  icon: lucide_react__WEBPACK_IMPORTED_MODULE_3__.MessageCircle
+}];
+var technologyLinks = [{
+  name: '🤖 AI Services',
+  href: '/ai-services',
+  icon: lucide_react__WEBPACK_IMPORTED_MODULE_3__.Brain
+}, {
+  name: '⚛️ Quantum Services',
+  href: '/quantum-services',
+  icon: lucide_react__WEBPACK_IMPORTED_MODULE_3__.Atom
+}, {
+  name: '☁️ Cloud Platform',
+  href: '/cloud-platform',
+  icon: lucide_react__WEBPACK_IMPORTED_MODULE_3__.Cloud
+}, {
+  name: '🔒 Cybersecurity',
+  href: '/cybersecurity',
+  icon: lucide_react__WEBPACK_IMPORTED_MODULE_3__.Lock
+}, {
+  name: '📊 Analytics',
+  href: '/analytics',
+  icon: lucide_react__WEBPACK_IMPORTED_MODULE_3__.Database
+}, {
+  name: '🔄 Automation',
+  href: '/automation',
+  icon: lucide_react__WEBPACK_IMPORTED_MODULE_3__.Cpu
+}];
+function UltraFuturisticNavigation2027() {
+  var [isOpen, setIsOpen] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
   var [activeDropdown, setActiveDropdown] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
-  var [isClient, setIsClient] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+  var [scrolled, setScrolled] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
-    setIsClient(true);
-  }, []);
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
-    if (!isClient) return;
     var handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setScrolled(window.scrollY > 50);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [isClient]);
-  var navigation = [{
-    name: 'AI & Machine Learning',
-    href: '/services?category=AI%20%26%20Machine%20Learning',
-    description: '200+ AI & ML Solutions',
-    icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_3__.Brain, {
-      className: "w-5 h-5"
-    }),
-    color: 'from-purple-500 to-indigo-600',
-    children: [{
-      name: 'AI Consciousness Platform',
-      href: '/services/ai-consciousness-platform',
-      description: 'Advanced AI consciousness simulation',
-      price: '$5,999/month',
-      icon: '🧠'
-    }, {
-      name: 'Quantum Machine Learning',
-      href: '/services/quantum-machine-learning',
-      description: 'Quantum-powered ML platform',
-      price: '$12,999/month',
-      icon: '⚛️'
-    }, {
-      name: 'Autonomous AI Agents',
-      href: '/services/autonomous-ai-agents',
-      description: 'Self-operating AI systems',
-      price: '$4,999/month',
-      icon: '🤖'
-    }, {
-      name: 'AI Content Factory',
-      href: '/services/ai-content-factory',
-      description: 'Automated content creation',
-      price: '$299/month',
-      icon: '📝'
-    }, {
-      name: 'View All AI Services',
-      href: '/services?category=AI%20%26%20Machine%20Learning',
-      description: 'Explore 200+ AI solutions',
-      icon: '🚀'
-    }]
-  }, {
-    name: 'Quantum Technology',
-    href: '/services?category=Quantum%20Computing',
-    description: '50+ Quantum Solutions',
-    icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_3__.Atom, {
-      className: "w-5 h-5"
-    }),
-    color: 'from-blue-500 to-cyan-600',
-    children: [{
-      name: 'Quantum Neural Interface',
-      href: '/services/quantum-neural-interface',
-      description: 'Quantum + Neural Networks',
-      price: '$8,999/month',
-      icon: '⚛️'
-    }, {
-      name: 'Quantum Financial Trading',
-      href: '/services/quantum-financial-trading',
-      description: 'Quantum-powered trading',
-      price: '$9,999/month',
-      icon: '💰'
-    }, {
-      name: 'Quantum Internet Protocol',
-      href: '/services/quantum-internet-protocol',
-      description: 'Quantum communication network',
-      price: '$7,999/month',
-      icon: '🌐'
-    }, {
-      name: 'Quantum Sensors Network',
-      href: '/services/quantum-sensors-network',
-      description: 'Ultra-precise quantum sensors',
-      price: '$9,999/month',
-      icon: '📡'
-    }, {
-      name: 'View All Quantum Services',
-      href: '/services?category=Quantum%20Computing',
-      description: 'Explore quantum solutions',
-      icon: '🚀'
-    }]
-  }, {
-    name: 'Emerging Tech',
-    href: '/services?category=Emerging%20Technology',
-    description: '100+ Future Solutions',
-    icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_3__.Rocket, {
-      className: "w-5 h-5"
-    }),
-    color: 'from-green-500 to-emerald-600',
-    children: [{
-      name: 'Holographic Metaverse',
-      href: '/services/holographic-metaverse-platform',
-      description: '3D immersive experiences',
-      price: '$3,999/month',
-      icon: '🎭'
-    }, {
-      name: 'Neuromorphic Computing',
-      href: '/services/neuromorphic-computing',
-      description: 'Brain-inspired computing',
-      price: '$8,999/month',
-      icon: '🧠'
-    }, {
-      name: 'Synthetic Biology',
-      href: '/services/synthetic-biology-platform',
-      description: 'AI-powered bioengineering',
-      price: '$15,999/month',
-      icon: '🧬'
-    }, {
-      name: 'Brain-Computer Interface',
-      href: '/services/brain-computer-interface',
-      description: 'Direct brain communication',
-      price: '$19,999/month',
-      icon: '💻'
-    }, {
-      name: 'View All Emerging Tech',
-      href: '/services?category=Emerging%20Technology',
-      description: 'Explore future solutions',
-      icon: '🚀'
-    }]
-  }, {
-    name: 'Business Solutions',
-    href: '/services?category=Business%20Operations',
-    description: '150+ Business Tools',
-    icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_3__.Target, {
-      className: "w-5 h-5"
-    }),
-    color: 'from-orange-500 to-red-600',
-    children: [{
-      name: 'Smart Inventory Manager',
-      href: '/services/smart-inventory-manager',
-      description: 'AI-powered inventory optimization',
-      price: '$199/month',
-      icon: '📦'
-    }, {
-      name: 'Customer Success Automation',
-      href: '/services/customer-success-automation',
-      description: 'Automated customer retention',
-      price: '$399/month',
-      icon: '🎯'
-    }, {
-      name: 'AI Sales Coach',
-      href: '/services/ai-sales-coach',
-      description: 'Intelligent sales training',
-      price: '$249/month',
-      icon: '📞'
-    }, {
-      name: 'Smart HR Assistant',
-      href: '/services/smart-hr-assistant',
-      description: 'AI-powered HR automation',
-      price: '$349/month',
-      icon: '👥'
-    }, {
-      name: 'View All Business Solutions',
-      href: '/services?category=Business%20Operations',
-      description: 'Explore business tools',
-      icon: '🚀'
-    }]
-  }, {
-    name: 'Cybersecurity',
-    href: '/services?category=Cybersecurity',
-    description: '75+ Security Solutions',
-    icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_3__.Shield, {
-      className: "w-5 h-5"
-    }),
-    color: 'from-red-500 to-pink-600',
-    children: [{
-      name: 'Cyber-Physical Security',
-      href: '/services/cyber-physical-security',
-      description: 'Digital + Physical protection',
-      price: '$6,999/month',
-      icon: '🛡️'
-    }, {
-      name: 'Quantum Internet Security',
-      href: '/services/quantum-internet-security',
-      description: 'Unhackable quantum security',
-      price: '$7,999/month',
-      icon: '🔐'
-    }, {
-      name: 'Zero Trust Architecture',
-      href: '/services/zero-trust-network-architecture',
-      description: 'Continuous verification',
-      price: '$4,999/month',
-      icon: '✅'
-    }, {
-      name: 'AI Threat Detection',
-      href: '/services/ai-threat-detection',
-      description: 'Intelligent security monitoring',
-      price: '$3,999/month',
-      icon: '👁️'
-    }, {
-      name: 'View All Security Solutions',
-      href: '/services?category=Cybersecurity',
-      description: 'Explore security tools',
-      icon: '🚀'
-    }]
-  }, {
-    name: 'Enterprise IT',
-    href: '/services?category=Enterprise%20IT',
-    description: '100+ Enterprise Solutions',
-    icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_3__.Building, {
-      className: "w-5 h-5"
-    }),
-    color: 'from-indigo-500 to-purple-600',
-    children: [{
-      name: 'Cloud Platform',
-      href: '/cloud-platform',
-      description: 'Scalable cloud infrastructure',
-      price: 'Custom',
-      icon: '☁️'
-    }, {
-      name: 'Edge Computing Orchestration',
-      href: '/services/edge-computing-orchestration',
-      description: 'Distributed edge management',
-      price: '$3,499/month',
-      icon: '🌐'
-    }, {
-      name: 'AI Operations Center',
-      href: '/services/enterprise-ai-operations-center',
-      description: 'Centralized AI management',
-      price: '$8,999/month',
-      icon: '🏢'
-    }, {
-      name: 'Infrastructure Drift Detection',
-      href: '/services/infrastructure-drift-detector',
-      description: 'Automated infrastructure monitoring',
-      price: '$2,999/month',
-      icon: '🔍'
-    }, {
-      name: 'View All Enterprise Solutions',
-      href: '/services?category=Enterprise%20IT',
-      description: 'Explore enterprise tools',
-      icon: '🚀'
-    }]
-  }];
-  var contactInfo = {
-    mobile: '+1 302 464 0950',
-    email: 'kleber@ziontechgroup.com',
-    address: '364 E Main St STE 1008 Middletown DE 19709',
-    website: 'https://ziontechgroup.com'
+  }, []);
+  var toggleDropdown = category => {
+    setActiveDropdown(activeDropdown === category ? null : category);
   };
-  var quickLinks = [{
-    name: 'Pricing',
-    href: '/pricing',
-    icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_3__.CreditCard, {
-      className: "w-4 h-4"
-    })
-  }, {
-    name: 'Case Studies',
-    href: '/case-studies',
-    icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_3__.FileText, {
-      className: "w-4 h-4"
-    })
-  }, {
-    name: 'Support',
-    href: '/support',
-    icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_3__.MessageSquare, {
-      className: "w-4 h-4"
-    })
-  }, {
-    name: 'Contact',
-    href: '/contact',
-    icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_3__.Mail, {
-      className: "w-4 h-4"
-    })
-  }];
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("header", {
-    className: "fixed top-0 left-0 right-0 z-50 transition-all duration-500 ".concat(isScrolled ? 'bg-gray-900/95 backdrop-blur-xl border-b border-cyan-500/30 shadow-2xl shadow-cyan-500/20' : 'bg-transparent'),
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("nav", {
+    className: "fixed top-0 left-0 right-0 z-50 transition-all duration-500 ".concat(scrolled ? 'bg-black/80 backdrop-blur-xl border-b border-cyan-500/30 shadow-2xl shadow-cyan-500/20' : 'bg-transparent'),
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-      className: "absolute inset-0 bg-gradient-to-r from-cyan-500/5 via-purple-500/5 to-pink-500/5 animate-pulse"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-      className: "relative container mx-auto px-4",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "flex items-center justify-between h-20",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)((next_link__WEBPACK_IMPORTED_MODULE_1___default()), {
-          href: "/",
-          className: "flex items-center space-x-3 group relative z-10",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.div, {
-            className: "w-12 h-12 bg-gradient-to-br from-cyan-500 via-purple-500 to-pink-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg shadow-cyan-500/30",
-            whileHover: {
-              rotate: 5,
-              scale: 1.1
-            },
-            whileTap: {
-              scale: 0.95
-            },
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_3__.Zap, {
-              className: "w-7 h-7 text-white"
-            })
+      className: "bg-gradient-to-r from-cyan-900/90 via-purple-900/90 to-pink-900/90 border-b border-cyan-500/30",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          className: "flex items-center justify-between h-10 text-xs text-cyan-300",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            className: "flex items-center space-x-6",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+              className: "flex items-center space-x-2",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_3__.Phone, {
+                className: "w-3 h-3"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                children: contactInfo.mobile
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+              className: "flex items-center space-x-2",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_3__.Mail, {
+                className: "w-3 h-3"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                children: contactInfo.email
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+              className: "flex items-center space-x-2",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_3__.MapPin, {
+                className: "w-3 h-3"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                children: contactInfo.address
+              })]
+            })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-            className: "hidden sm:block",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-              className: "text-2xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent group-hover:from-cyan-300 group-hover:via-purple-300 group-hover:to-pink-300 transition-all duration-300",
-              children: "Zion Tech Group"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-              className: "text-xs text-gray-400 group-hover:text-cyan-300 transition-colors",
-              children: "Revolutionary Technology Solutions"
+            className: "flex items-center space-x-4",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+              className: "text-cyan-400 font-semibold",
+              children: "\uD83D\uDE80 Zion Tech Group 2027"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+              className: "flex items-center space-x-1",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+                className: "w-2 h-2 bg-cyan-400 rounded-full animate-pulse"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                children: "Live"
+              })]
             })]
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("nav", {
-          className: "hidden xl:flex items-center space-x-1",
-          children: navigation.map(item => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        })
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "flex items-center justify-between h-20",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.div, {
+          initial: {
+            opacity: 0,
+            x: -20
+          },
+          animate: {
+            opacity: 1,
+            x: 0
+          },
+          className: "flex items-center space-x-3",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            className: "relative",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+              className: "w-12 h-12 bg-gradient-to-br from-cyan-400 via-purple-500 to-pink-500 rounded-xl flex items-center justify-center text-white text-2xl font-bold shadow-2xl shadow-cyan-500/50",
+              children: "Z"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+              className: "absolute -inset-1 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 rounded-xl blur opacity-75 animate-pulse"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            className: "hidden md:block",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h1", {
+              className: "text-2xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent",
+              children: "Zion Tech Group"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+              className: "text-xs text-cyan-400 font-medium",
+              children: "2027 Innovation Hub"
+            })]
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          className: "hidden lg:flex items-center space-x-8",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
             className: "relative group",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.button, {
-              className: "flex items-center space-x-2 px-4 py-3 text-gray-300 hover:text-white transition-all duration-300 rounded-xl hover:bg-gray-800/50 hover:shadow-lg hover:shadow-cyan-500/20",
-              onMouseEnter: () => setActiveDropdown(item.name),
-              onMouseLeave: () => setActiveDropdown(null),
-              whileHover: {
-                y: -2
-              },
-              whileTap: {
-                scale: 0.95
-              },
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-                className: "p-2 rounded-lg bg-gradient-to-br ".concat(item.color, " shadow-lg"),
-                children: item.icon
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("button", {
+              onClick: () => toggleDropdown('services'),
+              className: "flex items-center space-x-2 px-4 py-2 text-white hover:text-cyan-400 transition-colors duration-300 group-hover:text-cyan-400",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_3__.Rocket, {
+                className: "w-5 h-5"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-                className: "font-medium",
-                children: item.name
+                children: "Services 2027"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_3__.ChevronDown, {
-                className: "w-4 h-4 group-hover:rotate-180 transition-transform duration-300"
+                className: "w-4 h-4 transition-transform duration-300 ".concat(activeDropdown === 'services' ? 'rotate-180' : '')
               })]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.AnimatePresence, {
-              children: activeDropdown === item.name && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.div, {
+              children: activeDropdown === 'services' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.div, {
                 initial: {
                   opacity: 0,
-                  y: 10,
+                  y: -10,
                   scale: 0.95
                 },
                 animate: {
@@ -1422,111 +1462,151 @@ var UltraFuturisticNavigation2027 = () => {
                 },
                 exit: {
                   opacity: 0,
-                  y: 10,
+                  y: -10,
                   scale: 0.95
                 },
                 transition: {
                   duration: 0.2
                 },
-                className: "absolute top-full left-0 mt-2 w-96 bg-gray-900/95 backdrop-blur-xl border border-gray-700/50 rounded-2xl shadow-2xl shadow-cyan-500/20 overflow-hidden",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-                  className: "p-4",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-                    className: "flex items-center space-x-3 mb-4",
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-                      className: "p-3 rounded-xl bg-gradient-to-br ".concat(item.color, " shadow-lg"),
-                      children: item.icon
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
-                        className: "text-lg font-semibold text-white",
-                        children: item.name
-                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-                        className: "text-sm text-gray-400",
-                        children: item.description
+                className: "absolute top-full left-0 mt-2 w-[800px] bg-black/95 backdrop-blur-xl border border-cyan-500/30 rounded-2xl shadow-2xl shadow-cyan-500/20 overflow-hidden",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+                  className: "grid grid-cols-2 gap-0",
+                  children: serviceCategories.map((category, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.div, {
+                    initial: {
+                      opacity: 0,
+                      x: index % 2 === 0 ? -20 : 20
+                    },
+                    animate: {
+                      opacity: 1,
+                      x: 0
+                    },
+                    transition: {
+                      delay: index * 0.1
+                    },
+                    className: "p-6 hover:bg-white/5 transition-colors duration-300",
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      className: "flex items-center space-x-3 mb-4",
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+                        className: "w-10 h-10 rounded-lg bg-gradient-to-r ".concat(category.color, " flex items-center justify-center text-white"),
+                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(category.icon, {
+                          className: "w-5 h-5"
+                        })
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+                          className: "text-white font-semibold text-sm",
+                          children: category.title
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+                          className: "text-cyan-400 text-xs",
+                          children: category.description
+                        })]
                       })]
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+                      className: "space-y-3",
+                      children: category.services.map(service => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)((next_link__WEBPACK_IMPORTED_MODULE_1___default()), {
+                        href: service.href,
+                        className: "block p-3 rounded-lg hover:bg-white/5 transition-colors duration-300 group",
+                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                          className: "flex items-center justify-between",
+                          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h4", {
+                              className: "text-white font-medium text-sm group-hover:text-cyan-400 transition-colors duration-300",
+                              children: service.name
+                            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+                              className: "text-gray-400 text-xs",
+                              children: service.description
+                            })]
+                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                            className: "text-cyan-400 font-semibold text-sm",
+                            children: service.price
+                          })]
+                        })
+                      }, service.name))
                     })]
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-                    className: "space-y-2",
-                    children: item.children.map(child => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)((next_link__WEBPACK_IMPORTED_MODULE_1___default()), {
-                      href: child.href,
-                      className: "flex items-center space-x-3 p-3 rounded-xl hover:bg-gray-800/50 transition-all duration-200 group",
-                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-                        className: "text-2xl",
-                        children: child.icon
-                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-                        className: "flex-1",
-                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-                          className: "font-medium text-white group-hover:text-cyan-300 transition-colors",
-                          children: child.name
-                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-                          className: "text-sm text-gray-400",
-                          children: child.description
-                        })]
-                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-                        className: "text-right",
-                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-                          className: "text-sm font-medium text-cyan-400",
-                          children: child.price
-                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_3__.ChevronRight, {
-                          className: "w-4 h-4 text-gray-500 group-hover:text-cyan-400 transition-colors"
-                        })]
-                      })]
-                    }, child.name))
-                  })]
+                  }, category.title))
                 })
               })
             })]
-          }, item.name))
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-          className: "flex items-center space-x-4",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-            className: "hidden lg:flex items-center space-x-4 text-sm",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("a", {
-              href: "tel:".concat(contactInfo.mobile),
-              className: "flex items-center space-x-2 text-gray-300 hover:text-cyan-400 transition-colors",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_3__.Phone, {
-                className: "w-4 h-4"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-                children: contactInfo.mobile
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("a", {
-              href: "mailto:".concat(contactInfo.email),
-              className: "flex items-center space-x-2 text-gray-300 hover:text-cyan-400 transition-colors",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_3__.Mail, {
-                className: "w-4 h-4"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-                children: contactInfo.email
-              })]
+          }), companyLinks.map(link => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)((next_link__WEBPACK_IMPORTED_MODULE_1___default()), {
+            href: link.href,
+            className: "flex items-center space-x-2 px-4 py-2 text-white hover:text-cyan-400 transition-colors duration-300 group",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(link.icon, {
+              className: "w-4 h-4 group-hover:scale-110 transition-transform duration-300"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+              className: "hidden xl:block",
+              children: link.name.replace(/^[^\s]*\s/, '')
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.div, {
-            whileHover: {
-              scale: 1.05
-            },
-            whileTap: {
-              scale: 0.95
-            },
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)((next_link__WEBPACK_IMPORTED_MODULE_1___default()), {
-              href: "/contact",
-              className: "hidden lg:inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-medium rounded-xl shadow-lg shadow-cyan-500/30 hover:shadow-xl hover:shadow-cyan-500/40 transition-all duration-300",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_3__.Rocket, {
-                className: "w-4 h-4"
+          }, link.name)), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            className: "relative group",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("button", {
+              onClick: () => toggleDropdown('tech'),
+              className: "flex items-center space-x-2 px-4 py-2 text-white hover:text-cyan-400 transition-colors duration-300 group-hover:text-cyan-400",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_3__.Cpu, {
+                className: "w-5 h-5"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-                children: "Get Started"
+                children: "Tech"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_3__.ChevronDown, {
+                className: "w-4 h-4 transition-transform duration-300 ".concat(activeDropdown === 'tech' ? 'rotate-180' : '')
               })]
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
-            onClick: () => setIsMenuOpen(!isMenuOpen),
-            className: "xl:hidden p-2 text-gray-300 hover:text-white transition-colors",
-            children: isMenuOpen ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_3__.X, {
-              className: "w-6 h-6"
-            }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_3__.Menu, {
-              className: "w-6 h-6"
-            })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.AnimatePresence, {
+              children: activeDropdown === 'tech' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.div, {
+                initial: {
+                  opacity: 0,
+                  y: -10,
+                  scale: 0.95
+                },
+                animate: {
+                  opacity: 1,
+                  y: 0,
+                  scale: 1
+                },
+                exit: {
+                  opacity: 0,
+                  y: -10,
+                  scale: 0.95
+                },
+                transition: {
+                  duration: 0.2
+                },
+                className: "absolute top-full left-0 mt-2 w-64 bg-black/95 backdrop-blur-xl border border-cyan-500/30 rounded-2xl shadow-2xl shadow-cyan-500/20 p-4",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+                  className: "space-y-2",
+                  children: technologyLinks.map(link => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)((next_link__WEBPACK_IMPORTED_MODULE_1___default()), {
+                    href: link.href,
+                    className: "flex items-center space-x-3 p-3 rounded-lg hover:bg-white/5 transition-colors duration-300 group",
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(link.icon, {
+                      className: "w-4 h-4 text-cyan-400 group-hover:scale-110 transition-transform duration-300"
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                      className: "text-white group-hover:text-cyan-400 transition-colors duration-300",
+                      children: link.name.replace(/^[^\s]*\s/, '')
+                    })]
+                  }, link.name))
+                })
+              })
+            })]
           })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          className: "hidden lg:flex items-center space-x-4",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)((next_link__WEBPACK_IMPORTED_MODULE_1___default()), {
+            href: "/contact",
+            className: "px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cyan-500/25",
+            children: "Get Started"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)((next_link__WEBPACK_IMPORTED_MODULE_1___default()), {
+            href: "/pricing",
+            className: "px-6 py-3 border border-cyan-500/50 text-cyan-400 font-semibold rounded-xl hover:bg-cyan-500/10 transition-all duration-300",
+            children: "View Pricing"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+          onClick: () => setIsOpen(!isOpen),
+          className: "lg:hidden p-2 text-white hover:text-cyan-400 transition-colors duration-300",
+          children: isOpen ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_3__.X, {
+            className: "w-6 h-6"
+          }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_3__.Menu, {
+            className: "w-6 h-6"
+          })
         })]
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.AnimatePresence, {
-      children: isMenuOpen && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.div, {
+      children: isOpen && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.div, {
         initial: {
           opacity: 0,
           height: 0
@@ -1542,105 +1622,81 @@ var UltraFuturisticNavigation2027 = () => {
         transition: {
           duration: 0.3
         },
-        className: "xl:hidden bg-gray-900/95 backdrop-blur-xl border-t border-gray-700/50",
+        className: "lg:hidden bg-black/95 backdrop-blur-xl border-t border-cyan-500/30",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-          className: "container mx-auto px-4 py-6",
+          className: "px-4 py-6 space-y-6",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-            className: "grid grid-cols-1 md:grid-cols-2 gap-6",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
-                className: "text-lg font-semibold text-white mb-4",
-                children: "Services"
+            className: "space-y-4",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+              className: "text-cyan-400 font-semibold text-lg",
+              children: "\uD83D\uDE80 Services 2027"
+            }), serviceCategories.map(category => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+              className: "space-y-3",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h4", {
+                className: "text-white font-medium",
+                children: category.title
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-                className: "space-y-3",
-                children: navigation.map(item => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)((next_link__WEBPACK_IMPORTED_MODULE_1___default()), {
-                    href: item.href,
-                    className: "flex items-center space-x-3 p-3 rounded-xl hover:bg-gray-800/50 transition-all duration-200",
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-                      className: "p-2 rounded-lg bg-gradient-to-br ".concat(item.color),
-                      children: item.icon
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-                        className: "font-medium text-white",
-                        children: item.name
-                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-                        className: "text-sm text-gray-400",
-                        children: item.description
+                className: "space-y-2 pl-4",
+                children: category.services.map(service => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)((next_link__WEBPACK_IMPORTED_MODULE_1___default()), {
+                  href: service.href,
+                  className: "block p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-colors duration-300",
+                  onClick: () => setIsOpen(false),
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                    className: "flex items-center justify-between",
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h5", {
+                        className: "text-white font-medium text-sm",
+                        children: service.name
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+                        className: "text-gray-400 text-xs",
+                        children: service.description
                       })]
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                      className: "text-cyan-400 font-semibold text-sm",
+                      children: service.price
                     })]
                   })
-                }, item.name))
+                }, service.name))
               })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-              className: "space-y-6",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
-                  className: "text-lg font-semibold text-white mb-4",
-                  children: "Quick Links"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-                  className: "space-y-2",
-                  children: quickLinks.map(link => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)((next_link__WEBPACK_IMPORTED_MODULE_1___default()), {
-                    href: link.href,
-                    className: "flex items-center space-x-3 p-3 rounded-xl hover:bg-gray-800/50 transition-all duration-200",
-                    children: [link.icon, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-                      className: "text-white",
-                      children: link.name
-                    })]
-                  }, link.name))
+            }, category.title))]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            className: "space-y-4",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+              className: "text-cyan-400 font-semibold text-lg",
+              children: "\uD83C\uDFE2 Company"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+              className: "grid grid-cols-2 gap-3",
+              children: companyLinks.map(link => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)((next_link__WEBPACK_IMPORTED_MODULE_1___default()), {
+                href: link.href,
+                className: "flex items-center space-x-2 p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-colors duration-300",
+                onClick: () => setIsOpen(false),
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(link.icon, {
+                  className: "w-4 h-4 text-cyan-400"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                  className: "text-white text-sm",
+                  children: link.name.replace(/^[^\s]*\s/, '')
                 })]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
-                  className: "text-lg font-semibold text-white mb-4",
-                  children: "Contact Info"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-                  className: "space-y-3",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("a", {
-                    href: "tel:".concat(contactInfo.mobile),
-                    className: "flex items-center space-x-3 p-3 rounded-xl hover:bg-gray-800/50 transition-all duration-200",
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_3__.Phone, {
-                      className: "w-4 h-4 text-cyan-400"
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-                      className: "text-white",
-                      children: contactInfo.mobile
-                    })]
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("a", {
-                    href: "mailto:".concat(contactInfo.email),
-                    className: "flex items-center space-x-3 p-3 rounded-xl hover:bg-gray-800/50 transition-all duration-200",
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_3__.Mail, {
-                      className: "w-4 h-4 text-cyan-400"
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-                      className: "text-white",
-                      children: contactInfo.email
-                    })]
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-                    className: "flex items-center space-x-3 p-3 rounded-xl",
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_3__.MapPin, {
-                      className: "w-4 h-4 text-cyan-400"
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-                      className: "text-white text-sm",
-                      children: contactInfo.address
-                    })]
-                  })]
-                })]
-              })]
+              }, link.name))
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-            className: "mt-6 pt-6 border-t border-gray-700/50",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)((next_link__WEBPACK_IMPORTED_MODULE_1___default()), {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            className: "space-y-3 pt-4 border-t border-cyan-500/30",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)((next_link__WEBPACK_IMPORTED_MODULE_1___default()), {
               href: "/contact",
-              className: "inline-flex items-center justify-center w-full px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-medium rounded-xl shadow-lg shadow-cyan-500/30 transition-all duration-300",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_3__.Rocket, {
-                className: "w-4 h-4 mr-2"
-              }), "Get Started Today"]
-            })
+              className: "block w-full px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-xl text-center hover:from-cyan-600 hover:to-purple-700 transition-all duration-300",
+              onClick: () => setIsOpen(false),
+              children: "Get Started"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)((next_link__WEBPACK_IMPORTED_MODULE_1___default()), {
+              href: "/pricing",
+              className: "block w-full px-6 py-3 border border-cyan-500/50 text-cyan-400 font-semibold rounded-xl text-center hover:bg-cyan-500/10 transition-all duration-300",
+              onClick: () => setIsOpen(false),
+              children: "View Pricing"
+            })]
           })]
         })
       })
     })]
   });
-};
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (UltraFuturisticNavigation2027);
+}
 
 /***/ }),
 
@@ -1764,166 +1820,211 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   practicalMicroSaas2027: () => (/* binding */ practicalMicroSaas2027)
 /* harmony export */ });
-var practicalMicroSaas2027 = [{
-  id: 'ai-content-factory',
-  name: 'AI Content Factory',
-  description: 'Automated content creation platform that generates high-quality articles, videos, and social media posts using advanced AI.',
-  category: 'AI & Content Creation',
-  price: '$299/month',
-  features: ['Multi-format content generation', 'SEO optimization', 'Brand voice consistency', 'Content scheduling', 'Performance analytics', 'Plagiarism detection'],
-  benefits: ['90% reduction in content creation time', 'Consistent brand messaging', 'Improved SEO rankings', 'Cost-effective content production', 'Scalable content strategy'],
-  useCases: ['Blog content creation', 'Social media management', 'Marketing campaigns', 'Product descriptions', 'Email newsletters'],
-  targetAudience: ['Marketing agencies', 'E-commerce businesses', 'Content creators', 'Small businesses', 'Startups'],
-  marketSize: '$13.8B by 2027',
-  competitiveAdvantage: 'Most advanced AI content generation with brand consistency',
-  implementationTime: '1-2 weeks',
-  roi: '400% within 3 months',
-  link: 'https://ziontechgroup.com/services/ai-content-factory',
-  tags: ['AI', 'Content Creation', 'Marketing', 'SEO', 'Automation']
-}, {
-  id: 'smart-inventory-manager',
-  name: 'Smart Inventory Manager',
-  description: 'Intelligent inventory management system with AI-powered demand forecasting, automated reordering, and real-time tracking.',
-  category: 'Business Operations',
-  price: '$199/month',
-  features: ['AI demand forecasting', 'Automated reordering', 'Real-time tracking', 'Multi-location support', 'Supplier management', 'Cost optimization'],
-  benefits: ['30% reduction in inventory costs', 'Elimination of stockouts', 'Improved cash flow', 'Better supplier relationships', 'Data-driven decisions'],
-  useCases: ['Retail businesses', 'Manufacturing', 'E-commerce', 'Wholesale distribution', 'Restaurants'],
-  targetAudience: ['Retail businesses', 'Manufacturing companies', 'E-commerce platforms', 'Distribution companies', 'Service businesses'],
-  marketSize: '$4.2B by 2027',
-  competitiveAdvantage: 'Only AI-powered inventory system with demand forecasting',
-  implementationTime: '2-3 weeks',
-  roi: '300% within 4 months',
-  link: 'https://ziontechgroup.com/services/smart-inventory-manager',
-  tags: ['Inventory Management', 'AI', 'Business Operations', 'Automation', 'Analytics']
-}, {
-  id: 'customer-success-automation',
-  name: 'Customer Success Automation',
-  description: 'Automated customer success platform that increases retention, reduces churn, and improves customer satisfaction scores.',
-  category: 'Customer Success',
-  price: '$399/month',
-  features: ['Automated onboarding', 'Proactive support', 'Success metrics tracking', 'Churn prediction', 'Personalized engagement', 'Integration capabilities'],
-  benefits: ['25% increase in customer retention', '40% reduction in support tickets', 'Improved customer satisfaction', 'Higher lifetime value', 'Scalable customer success'],
-  useCases: ['SaaS companies', 'Subscription businesses', 'E-commerce platforms', 'Service providers', 'B2B companies'],
-  targetAudience: ['SaaS companies', 'Subscription businesses', 'E-commerce platforms', 'Service providers', 'B2B companies'],
-  marketSize: '$8.9B by 2027',
-  competitiveAdvantage: 'Most comprehensive customer success automation platform',
-  implementationTime: '2-3 weeks',
-  roi: '500% within 6 months',
-  link: 'https://ziontechgroup.com/services/customer-success-automation',
-  tags: ['Customer Success', 'Automation', 'Retention', 'Support', 'Analytics']
-}, {
-  id: 'ai-sales-coach',
-  name: 'AI Sales Coach',
-  description: 'Intelligent sales coaching platform that analyzes calls, provides real-time feedback, and improves sales performance.',
-  category: 'Sales & Marketing',
-  price: '$249/month',
-  features: ['Call analysis and scoring', 'Real-time coaching', 'Performance tracking', 'Best practices library', 'Team collaboration', 'ROI measurement'],
-  benefits: ['35% increase in sales conversion', 'Improved sales skills', 'Better team performance', 'Data-driven coaching', 'Reduced training time'],
-  useCases: ['Sales teams', 'Call centers', 'Customer service', 'Business development', 'Account management'],
-  targetAudience: ['Sales organizations', 'Call centers', 'Customer service teams', 'Business development teams', 'Account management teams'],
-  marketSize: '$6.7B by 2027',
-  competitiveAdvantage: 'Only AI-powered sales coaching with real-time feedback',
-  implementationTime: '1-2 weeks',
-  roi: '400% within 4 months',
-  link: 'https://ziontechgroup.com/services/ai-sales-coach',
-  tags: ['Sales', 'AI', 'Coaching', 'Performance', 'Analytics']
-}, {
-  id: 'smart-expense-tracker',
-  name: 'Smart Expense Tracker',
-  description: 'Intelligent expense management system with receipt scanning, automated categorization, and expense policy compliance.',
-  category: 'Financial Management',
-  price: '$99/month',
-  features: ['Receipt scanning', 'Automated categorization', 'Policy compliance', 'Expense approval workflows', 'Real-time reporting', 'Mobile app'],
-  benefits: ['80% reduction in expense processing time', 'Improved compliance', 'Better cost control', 'Real-time visibility', 'Mobile accessibility'],
-  useCases: ['Business expense management', 'Travel expense tracking', 'Project cost tracking', 'Department budgeting', 'Compliance reporting'],
-  targetAudience: ['Small businesses', 'Startups', 'Freelancers', 'Consulting firms', 'Service businesses'],
-  marketSize: '$3.8B by 2027',
-  competitiveAdvantage: 'Most intelligent expense tracking with AI categorization',
-  implementationTime: '1 week',
-  roi: '300% within 2 months',
-  link: 'https://ziontechgroup.com/services/smart-expense-tracker',
-  tags: ['Expense Management', 'AI', 'Financial', 'Compliance', 'Mobile']
-}, {
-  id: 'ai-project-manager',
-  name: 'AI Project Manager',
-  description: 'Intelligent project management platform that automates task allocation, predicts delays, and optimizes resource utilization.',
-  category: 'Project Management',
-  price: '$179/month',
-  features: ['AI task allocation', 'Delay prediction', 'Resource optimization', 'Progress tracking', 'Team collaboration', 'Performance analytics'],
-  benefits: ['20% faster project completion', 'Better resource utilization', 'Reduced project delays', 'Improved team productivity', 'Data-driven decisions'],
-  useCases: ['Software development', 'Marketing campaigns', 'Construction projects', 'Event planning', 'Product launches'],
-  targetAudience: ['Project managers', 'Development teams', 'Marketing teams', 'Construction companies', 'Event planners'],
-  marketSize: '$5.9B by 2027',
-  competitiveAdvantage: 'Only AI-powered project management with predictive analytics',
-  implementationTime: '2-3 weeks',
-  roi: '350% within 5 months',
-  link: 'https://ziontechgroup.com/services/ai-project-manager',
-  tags: ['Project Management', 'AI', 'Automation', 'Analytics', 'Collaboration']
-}, {
-  id: 'smart-hr-assistant',
-  name: 'Smart HR Assistant',
-  description: 'AI-powered HR platform that automates recruitment, employee onboarding, and performance management processes.',
-  category: 'Human Resources',
-  price: '$349/month',
-  features: ['AI recruitment screening', 'Automated onboarding', 'Performance tracking', 'Employee engagement', 'Compliance management', 'Analytics dashboard'],
-  benefits: ['50% faster hiring process', 'Improved candidate quality', 'Better employee retention', 'Reduced HR workload', 'Compliance assurance'],
-  useCases: ['Recruitment and hiring', 'Employee onboarding', 'Performance management', 'Employee engagement', 'HR compliance'],
-  targetAudience: ['HR departments', 'Recruitment agencies', 'Small businesses', 'Startups', 'Growing companies'],
-  marketSize: '$7.2B by 2027',
-  competitiveAdvantage: 'Most comprehensive AI-powered HR automation platform',
-  implementationTime: '2-3 weeks',
-  roi: '450% within 6 months',
-  link: 'https://ziontechgroup.com/services/smart-hr-assistant',
-  tags: ['Human Resources', 'AI', 'Recruitment', 'Automation', 'Compliance']
-}, {
-  id: 'ai-legal-assistant',
-  name: 'AI Legal Assistant',
-  description: 'Intelligent legal document analysis, contract review, and compliance monitoring platform for businesses and legal professionals.',
-  category: 'Legal Technology',
-  price: '$499/month',
-  features: ['Document analysis', 'Contract review', 'Compliance monitoring', 'Legal research', 'Risk assessment', 'Document generation'],
-  benefits: ['70% faster document review', 'Improved accuracy', 'Cost reduction', 'Better compliance', 'Risk mitigation'],
-  useCases: ['Contract review', 'Legal document analysis', 'Compliance monitoring', 'Legal research', 'Risk assessment'],
-  targetAudience: ['Law firms', 'Corporate legal departments', 'Small businesses', 'Startups', 'Compliance officers'],
-  marketSize: '$9.8B by 2027',
-  competitiveAdvantage: 'Most advanced AI legal assistant with comprehensive analysis',
-  implementationTime: '2-3 weeks',
-  roi: '600% within 8 months',
-  link: 'https://ziontechgroup.com/services/ai-legal-assistant',
-  tags: ['Legal Technology', 'AI', 'Compliance', 'Document Analysis', 'Risk Management']
-}, {
-  id: 'smart-supply-chain',
-  name: 'Smart Supply Chain Manager',
-  description: 'AI-powered supply chain optimization platform that improves efficiency, reduces costs, and enhances visibility across the entire supply chain.',
-  category: 'Supply Chain Management',
-  price: '$599/month',
-  features: ['Demand forecasting', 'Inventory optimization', 'Route optimization', 'Supplier management', 'Risk assessment', 'Real-time tracking'],
-  benefits: ['25% reduction in supply chain costs', 'Improved efficiency', 'Better risk management', 'Enhanced visibility', 'Optimized operations'],
-  useCases: ['Manufacturing', 'Retail', 'Logistics', 'Distribution', 'E-commerce'],
-  targetAudience: ['Manufacturing companies', 'Retail businesses', 'Logistics companies', 'Distribution companies', 'E-commerce platforms'],
-  marketSize: '$11.3B by 2027',
-  competitiveAdvantage: 'Most comprehensive AI-powered supply chain optimization',
-  implementationTime: '3-4 weeks',
-  roi: '500% within 7 months',
-  link: 'https://ziontechgroup.com/services/smart-supply-chain',
-  tags: ['Supply Chain', 'AI', 'Optimization', 'Logistics', 'Analytics']
-}, {
-  id: 'ai-quality-control',
-  name: 'AI Quality Control System',
-  description: 'Intelligent quality control platform that uses computer vision and AI to detect defects, ensure consistency, and improve product quality.',
-  category: 'Quality Assurance',
-  price: '$449/month',
-  features: ['Computer vision inspection', 'Defect detection', 'Quality analytics', 'Process optimization', 'Real-time monitoring', 'Predictive maintenance'],
-  benefits: ['90% reduction in defect rates', 'Improved product quality', 'Cost reduction', 'Better compliance', 'Process optimization'],
-  useCases: ['Manufacturing', 'Food processing', 'Pharmaceuticals', 'Electronics', 'Automotive'],
-  targetAudience: ['Manufacturing companies', 'Food processing companies', 'Pharmaceutical companies', 'Electronics manufacturers', 'Automotive companies'],
-  marketSize: '$6.4B by 2027',
-  competitiveAdvantage: 'Most advanced AI quality control with computer vision',
-  implementationTime: '3-4 weeks',
-  roi: '400% within 6 months',
-  link: 'https://ziontechgroup.com/services/ai-quality-control',
-  tags: ['Quality Control', 'AI', 'Computer Vision', 'Manufacturing', 'Automation']
+var practicalMicroSaas2027 = [
+// AI-Powered Customer Success Automation
+{
+  id: 'ai-customer-success-automation',
+  name: 'AI Customer Success Automation',
+  tagline: 'Automate customer success with AI intelligence',
+  price: '$299',
+  period: '/month',
+  description: 'Intelligent customer success platform that uses AI to predict churn, automate onboarding, and optimize customer experience for SaaS companies.',
+  features: ['AI-powered churn prediction', 'Automated onboarding workflows', 'Customer health scoring', 'Intelligent intervention triggers', 'Success metric tracking', 'Automated check-ins', 'Customer feedback analysis', 'Success playbook automation', 'Integration with CRM systems', 'Real-time success analytics'],
+  popular: true,
+  icon: '🎯',
+  color: 'from-blue-600 to-indigo-600',
+  textColor: 'text-blue-400',
+  link: 'https://ziontechgroup.com/ai-customer-success-automation',
+  marketPosition: 'Leading AI-powered customer success automation platform. 40% more effective than traditional customer success tools.',
+  targetAudience: 'SaaS companies, Customer success teams, Growth teams, Product managers, Customer experience leaders',
+  trialDays: 14,
+  setupTime: '1 day',
+  category: 'Customer Success Automation',
+  realService: true,
+  technology: ['Machine Learning, Natural Language Processing, Predictive Analytics, Workflow Automation, API Integration'],
+  integrations: ['Salesforce, HubSpot, Intercom, Zendesk, Slack, Microsoft Teams'],
+  useCases: ['Customer onboarding automation, Churn prevention, Customer health monitoring, Success metric optimization, Customer experience improvement'],
+  roi: 'Companies report 300% ROI through reduced churn and improved customer lifetime value.',
+  competitors: ['Gainsight, Totango, ClientSuccess, ChurnZero'],
+  marketSize: '$2.5B market',
+  growthRate: '25% annual growth',
+  variant: 'ai-futuristic',
+  contactInfo: {
+    mobile: '+1 302 464 0950',
+    email: 'kleber@ziontechgroup.com',
+    address: '364 E Main St STE 1008 Middletown DE 19709',
+    website: 'https://ziontechgroup.com'
+  },
+  realImplementation: true,
+  implementationDetails: 'AI-powered customer success platform with machine learning algorithms and automated workflow management.',
+  launchDate: '2027-01-15',
+  customers: 156,
+  rating: 4.8,
+  reviews: 89
+},
+// Automated Content Marketing Suite
+{
+  id: 'automated-content-marketing-suite',
+  name: 'Automated Content Marketing Suite',
+  tagline: 'Create, distribute, and optimize content automatically',
+  price: '$199',
+  period: '/month',
+  description: 'Comprehensive content marketing automation platform that creates, distributes, and optimizes content across all channels using AI and automation.',
+  features: ['AI content generation', 'Multi-channel distribution', 'Content performance analytics', 'Automated social media posting', 'SEO optimization tools', 'Content calendar automation', 'A/B testing automation', 'Content repurposing tools', 'Audience targeting automation', 'ROI tracking and reporting'],
+  popular: true,
+  icon: '📝',
+  color: 'from-green-600 to-emerald-600',
+  textColor: 'text-green-400',
+  link: 'https://ziontechgroup.com/automated-content-marketing-suite',
+  marketPosition: 'Leading automated content marketing platform. 60% more efficient than manual content marketing processes.',
+  targetAudience: 'Marketing teams, Content creators, Small businesses, Agencies, Growth marketers',
+  trialDays: 21,
+  setupTime: '2 days',
+  category: 'Content Marketing Automation',
+  realService: true,
+  technology: ['AI Content Generation, Marketing Automation, SEO Tools, Social Media APIs, Analytics Platform'],
+  integrations: ['WordPress, Shopify, Mailchimp, Buffer, Hootsuite, Google Analytics'],
+  useCases: ['Content creation automation, Multi-channel marketing, SEO optimization, Social media management, Content performance tracking'],
+  roi: 'Companies report 400% ROI through increased content efficiency and improved engagement.',
+  competitors: ['HubSpot, CoSchedule, Buffer, Hootsuite'],
+  marketSize: '$4.2B market',
+  growthRate: '30% annual growth',
+  variant: 'marketing-futuristic',
+  contactInfo: {
+    mobile: '+1 302 464 0950',
+    email: 'kleber@ziontechgroup.com',
+    address: '364 E Main St STE 1008 Middletown DE 19709',
+    website: 'https://ziontechgroup.com'
+  },
+  realImplementation: true,
+  implementationDetails: 'AI-powered content marketing platform with automated creation, distribution, and optimization capabilities.',
+  launchDate: '2027-02-01',
+  customers: 234,
+  rating: 4.7,
+  reviews: 156
+},
+// Smart Inventory Management System
+{
+  id: 'smart-inventory-management-system',
+  name: 'Smart Inventory Management System',
+  tagline: 'AI-powered inventory optimization and automation',
+  price: '$399',
+  period: '/month',
+  description: 'Intelligent inventory management platform that uses AI to predict demand, optimize stock levels, and automate reordering for e-commerce and retail businesses.',
+  features: ['AI demand forecasting', 'Automated reorder triggers', 'Stock level optimization', 'Multi-location inventory sync', 'Supplier management automation', 'Inventory cost tracking', 'Seasonal demand prediction', 'Waste reduction analytics', 'Real-time inventory updates', 'Mobile inventory management'],
+  popular: true,
+  icon: '📦',
+  color: 'from-orange-600 to-red-600',
+  textColor: 'text-orange-400',
+  link: 'https://ziontechgroup.com/smart-inventory-management-system',
+  marketPosition: 'Leading AI-powered inventory management platform. 35% reduction in inventory costs and 50% improvement in stock availability.',
+  targetAudience: 'E-commerce businesses, Retail stores, Wholesale distributors, Manufacturing companies, Supply chain managers',
+  trialDays: 30,
+  setupTime: '1 week',
+  category: 'Inventory Management',
+  realService: true,
+  technology: ['Machine Learning, Predictive Analytics, IoT Integration, Cloud Computing, Mobile Apps'],
+  integrations: ['Shopify, WooCommerce, QuickBooks, Sage, NetSuite, SAP'],
+  useCases: ['Demand forecasting, Stock optimization, Automated reordering, Multi-location management, Cost reduction'],
+  roi: 'Companies report 250% ROI through reduced inventory costs and improved cash flow.',
+  competitors: ['TradeGecko, Zoho Inventory, Fishbowl, Lightspeed'],
+  marketSize: '$3.8B market',
+  growthRate: '28% annual growth',
+  variant: 'business-intelligence-futuristic',
+  contactInfo: {
+    mobile: '+1 302 464 0950',
+    email: 'kleber@ziontechgroup.com',
+    address: '364 E Main St STE 1008 Middletown DE 19709',
+    website: 'https://ziontechgroup.com'
+  },
+  realImplementation: true,
+  implementationDetails: 'AI-powered inventory management platform with predictive analytics and automated optimization.',
+  launchDate: '2027-02-15',
+  customers: 189,
+  rating: 4.9,
+  reviews: 134
+},
+// Automated HR Recruitment Platform
+{
+  id: 'automated-hr-recruitment-platform',
+  name: 'Automated HR Recruitment Platform',
+  tagline: 'Streamline hiring with AI-powered automation',
+  price: '$249',
+  period: '/month',
+  description: 'Intelligent recruitment platform that automates candidate sourcing, screening, and hiring processes using AI and machine learning.',
+  features: ['AI candidate sourcing', 'Automated resume screening', 'Skill assessment automation', 'Interview scheduling automation', 'Candidate scoring algorithms', 'Diversity hiring tools', 'Background check automation', 'Onboarding workflow automation', 'Recruitment analytics', 'Integration with job boards'],
+  popular: true,
+  icon: '👥',
+  color: 'from-purple-600 to-pink-600',
+  textColor: 'text-purple-400',
+  link: 'https://ziontechgroup.com/automated-hr-recruitment-platform',
+  marketPosition: 'Leading AI-powered recruitment automation platform. 70% faster hiring process and 45% better candidate quality.',
+  targetAudience: 'HR teams, Recruiters, Hiring managers, Small businesses, Enterprise companies',
+  trialDays: 14,
+  setupTime: '3 days',
+  category: 'HR Automation',
+  realService: true,
+  technology: ['AI Screening, Machine Learning, Natural Language Processing, Workflow Automation, API Integration'],
+  integrations: ['LinkedIn, Indeed, Glassdoor, Workday, BambooHR, Greenhouse'],
+  useCases: ['Candidate sourcing, Resume screening, Interview automation, Hiring workflow optimization, Recruitment analytics'],
+  roi: 'Companies report 350% ROI through faster hiring and reduced recruitment costs.',
+  competitors: ['Lever, Greenhouse, Workday, BambooHR'],
+  marketSize: '$3.2B market',
+  growthRate: '32% annual growth',
+  variant: 'hr-futuristic',
+  contactInfo: {
+    mobile: '+1 302 464 0950',
+    email: 'kleber@ziontechgroup.com',
+    address: '364 E Main St STE 1008 Middletown DE 19709',
+    website: 'https://ziontechgroup.com'
+  },
+  realImplementation: true,
+  implementationDetails: 'AI-powered recruitment platform with automated screening, scheduling, and workflow management.',
+  launchDate: '2027-03-01',
+  customers: 278,
+  rating: 4.6,
+  reviews: 198
+},
+// Financial Analytics Automation Platform
+{
+  id: 'financial-analytics-automation-platform',
+  name: 'Financial Analytics Automation Platform',
+  tagline: 'Automate financial reporting and analysis',
+  price: '$349',
+  period: '/month',
+  description: 'Intelligent financial analytics platform that automates reporting, forecasting, and financial analysis for businesses of all sizes.',
+  features: ['Automated financial reporting', 'AI-powered forecasting', 'Real-time financial dashboards', 'Expense tracking automation', 'Cash flow optimization', 'Budget automation tools', 'Financial risk assessment', 'Tax preparation automation', 'Multi-currency support', 'Integration with accounting software'],
+  popular: true,
+  icon: '💰',
+  color: 'from-emerald-600 to-teal-600',
+  textColor: 'text-emerald-400',
+  link: 'https://ziontechgroup.com/financial-analytics-automation-platform',
+  marketPosition: 'Leading financial analytics automation platform. 80% reduction in financial reporting time and 60% improvement in forecasting accuracy.',
+  targetAudience: 'Finance teams, CFOs, Small business owners, Accountants, Financial advisors',
+  trialDays: 21,
+  setupTime: '1 week',
+  category: 'Financial Automation',
+  realService: true,
+  technology: ['AI Analytics, Machine Learning, Predictive Modeling, Data Visualization, Cloud Computing'],
+  integrations: ['QuickBooks, Xero, Sage, NetSuite, Excel, Google Sheets'],
+  useCases: ['Financial reporting automation, Forecasting and planning, Expense management, Cash flow optimization, Financial risk management'],
+  roi: 'Companies report 400% ROI through improved financial visibility and decision-making.',
+  competitors: ['Adaptive Insights, Anaplan, Planful, Vena'],
+  marketSize: '$5.1B market',
+  growthRate: '35% annual growth',
+  variant: 'finance-futuristic',
+  contactInfo: {
+    mobile: '+1 302 464 0950',
+    email: 'kleber@ziontechgroup.com',
+    address: '364 E Main St STE 1008 Middletown DE 19709',
+    website: 'https://ziontechgroup.com'
+  },
+  realImplementation: true,
+  implementationDetails: 'AI-powered financial analytics platform with automated reporting and predictive modeling capabilities.',
+  launchDate: '2027-03-15',
+  customers: 167,
+  rating: 4.8,
+  reviews: 112
 }];
 
 /***/ })

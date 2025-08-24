@@ -5,32 +5,48 @@ exports.id = 192273;
 exports.ids = [192273,890636];
 exports.modules = {
 
-/***/ 74075:
-/***/ ((module) => {
-
-module.exports = require("zlib");
-
-/***/ }),
-
 /***/ 302999:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ AICustomerServiceRedirect)
+/* harmony export */   "default": () => (/* binding */ AICustomerService)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(882015);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(44233);
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(849788);
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(608732);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
 
 
-function AICustomerServiceRedirect() {
-  var router = (0,next_router__WEBPACK_IMPORTED_MODULE_1__.useRouter)();
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
-    router.replace('/customer-service-ai');
-  }, [router]);
-  return null;
+
+function AICustomerService() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)((next_head__WEBPACK_IMPORTED_MODULE_1___default()), {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("title", {
+        children: "AI Customer Service | Zion Tech Group"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("meta", {
+        name: "description",
+        content: "AI-powered customer service automation: chat, voice, support workflows, and analytics."
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("link", {
+        rel: "canonical",
+        href: "https://ziontechgroup.com/ai-customer-service"
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      className: "min-h-screen bg-black text-white",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("section", {
+        className: "container mx-auto px-4 py-20",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h1", {
+          className: "text-4xl font-bold mb-6",
+          children: "AI Customer Service"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+          className: "text-gray-300",
+          children: "Automate and augment customer support experiences with AI agents and analytics."
+        })]
+      })
+    })]
+  });
 }
 
 /***/ }),
@@ -39,13 +55,6 @@ function AICustomerServiceRedirect() {
 /***/ ((module) => {
 
 module.exports = require("path");
-
-/***/ }),
-
-/***/ 422326:
-/***/ ((module) => {
-
-module.exports = require("react-dom");
 
 /***/ }),
 
@@ -141,13 +150,6 @@ module.exports = require("react/jsx-runtime");
 
 /***/ }),
 
-/***/ 629021:
-/***/ ((module) => {
-
-module.exports = require("fs");
-
-/***/ }),
-
 /***/ 646060:
 /***/ ((module) => {
 
@@ -166,13 +168,6 @@ module.exports = require("next/dist/compiled/next-server/pages.runtime.prod.js")
 /***/ ((module) => {
 
 module.exports = require("react");
-
-/***/ }),
-
-/***/ 927910:
-/***/ ((module) => {
-
-module.exports = require("stream");
 
 /***/ })
 

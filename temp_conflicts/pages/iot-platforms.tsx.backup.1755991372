@@ -1,4 +1,5 @@
-<<<<<<< HEAD
+export default function IoTPlatforms() { return <div className="p-8">IoT Platforms</div>; }
+=======
 import React from 'react';
 
 export default function IoTPlatformsPage() {
@@ -8,4 +9,3 @@ export default function IoTPlatformsPage() {
 export default function IotPlatforms(){
   return <div style={{padding:20}}>IoT Platforms</div>
 }
->>>>>>> origin/cursor/deploy-anonymous-zk-voting-for-dao-e4d6

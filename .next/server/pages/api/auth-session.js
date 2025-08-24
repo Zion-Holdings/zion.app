@@ -5,6 +5,82 @@ exports.id = 792790;
 exports.ids = [792790];
 exports.modules = {
 
+/***/ 260155:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   clearSessionCookie: () => (/* binding */ clearSessionCookie),
+/* harmony export */   getSessionFromReq: () => (/* binding */ getSessionFromReq),
+/* harmony export */   isInternalAgentRequest: () => (/* binding */ isInternalAgentRequest),
+/* harmony export */   setSessionCookie: () => (/* binding */ setSessionCookie),
+/* harmony export */   signSession: () => (/* binding */ signSession),
+/* harmony export */   verifySessionToken: () => (/* binding */ verifySessionToken)
+/* harmony export */ });
+/* harmony import */ var crypto__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(455511);
+/* harmony import */ var crypto__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(crypto__WEBPACK_IMPORTED_MODULE_0__);
+
+var COOKIE_NAME = 'admin_session';
+function getEnv(name, fallback) {
+  var v = process.env[name] || fallback;
+  if (!v) throw new Error("Missing required env var ".concat(name));
+  return v;
+}
+function signSession(session) {
+  var secret = getEnv('ADMIN_SESSION_SECRET', 'CHANGE_ME_DEV_SECRET');
+  var payload = Buffer.from(JSON.stringify(session)).toString('base64');
+  var hmac = crypto__WEBPACK_IMPORTED_MODULE_0___default().createHmac('sha256', secret).update(payload).digest('hex');
+  return "".concat(payload, ".").concat(hmac);
+}
+function verifySessionToken(token) {
+  if (!token) return null;
+  var secret = getEnv('ADMIN_SESSION_SECRET', 'CHANGE_ME_DEV_SECRET');
+  var parts = token.split('.');
+  if (parts.length !== 2) return null;
+  var [payload, signature] = parts;
+  var expected = crypto__WEBPACK_IMPORTED_MODULE_0___default().createHmac('sha256', secret).update(payload).digest('hex');
+  if (!crypto__WEBPACK_IMPORTED_MODULE_0___default().timingSafeEqual(Buffer.from(signature), Buffer.from(expected))) return null;
+  try {
+    var session = JSON.parse(Buffer.from(payload, 'base64').toString());
+    return session;
+  } catch (_unused) {
+    return null;
+  }
+}
+function getSessionFromReq(req) {
+  var cookieHeader = req.headers.cookie || '';
+  var cookie = cookieHeader.split(';').map(c => c.trim()).find(c => c.startsWith("".concat(COOKIE_NAME, "=")));
+  if (!cookie) return null;
+  var token = cookie.substring(COOKIE_NAME.length + 1);
+  return verifySessionToken(token);
+}
+function setSessionCookie(res, session) {
+  var token = signSession(session);
+  var maxAge = 60 * 60 * 24; // 1 day
+  var expires = new Date(Date.now() + maxAge * 1000).toUTCString();
+  var cookie = "".concat(COOKIE_NAME, "=").concat(token, "; Path=/; HttpOnly; SameSite=Lax; Max-Age=").concat(maxAge, "; Expires=").concat(expires);
+  res.setHeader('Set-Cookie', cookie);
+}
+function clearSessionCookie(res) {
+  var cookie = "".concat(COOKIE_NAME, "=deleted; Path=/; HttpOnly; SameSite=Lax; Max-Age=0; Expires=Thu, 01 Jan 1970 00:00:00 GMT");
+  res.setHeader('Set-Cookie', cookie);
+}
+function isInternalAgentRequest(req) {
+  var key = req.headers['x-internal-key'];
+  var expected = getEnv('AGENT_INTERNAL_KEY', 'DEV_INTERNAL_KEY');
+  if (!key || Array.isArray(key)) return false;
+  return crypto__WEBPACK_IMPORTED_MODULE_0___default().timingSafeEqual(Buffer.from(key), Buffer.from(expected));
+}
+
+/***/ }),
+
+/***/ 455511:
+/***/ ((module) => {
+
+module.exports = require("crypto");
+
+/***/ }),
+
 /***/ 726266:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -12,11 +88,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ handler)
 /* harmony export */ });
-Object(function webpackMissingModule() { var e = new Error("Cannot find module '../../../utils/adminAuth'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+/* harmony import */ var _utils_adminAuth__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(260155);
 
 function handler(req, res) {
-  var isAuthorized = Object(function webpackMissingModule() { var e = new Error("Cannot find module '../../../utils/adminAuth'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())();
-  if (!isAuthorized) {
+  var session = (0,_utils_adminAuth__WEBPACK_IMPORTED_MODULE_0__.getSessionFromReq)(req);
+  var internal = (0,_utils_adminAuth__WEBPACK_IMPORTED_MODULE_0__.isInternalAgentRequest)(req);
+  if (!session && !internal) {
     res.status(401).json({
       error: 'Unauthorized'
     });

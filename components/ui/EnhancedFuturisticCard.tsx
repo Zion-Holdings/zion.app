@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Check, ArrowRight, Mail, Phone, MapPin, Globe } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 interface EnhancedFuturisticCardProps {
   children: React.ReactNode;

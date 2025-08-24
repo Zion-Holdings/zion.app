@@ -5,6 +5,13 @@ exports.id = 30575;
 exports.ids = [30575];
 exports.modules = {
 
+/***/ 333873:
+/***/ ((module) => {
+
+module.exports = require("path");
+
+/***/ }),
+
 /***/ 455511:
 /***/ ((module) => {
 
@@ -61,6 +68,13 @@ function _analyze() {
   return _analyze.apply(this, arguments);
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,_utils_auth__WEBPACK_IMPORTED_MODULE_1__.requireRole)(['superadmin'], analyze));
+
+/***/ }),
+
+/***/ 629021:
+/***/ ((module) => {
+
+module.exports = require("fs");
 
 /***/ }),
 

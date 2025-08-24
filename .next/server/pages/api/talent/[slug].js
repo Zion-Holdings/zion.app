@@ -163,7 +163,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(435326);
 /* harmony import */ var _utils_supabase_client__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(881476);
 /* harmony import */ var _utils_supabase_client__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_utils_supabase_client__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _data_talent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(226284);
+/* harmony import */ var _data_talent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(603727);
 
 
 function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }

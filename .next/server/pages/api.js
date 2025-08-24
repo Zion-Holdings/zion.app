@@ -1,20 +1,13 @@
+"use strict";
 (() => {
 var exports = {};
 exports.id = 804880;
-exports.ids = [804880];
+exports.ids = [804880,890636];
 exports.modules = {
 
-/***/ 26416:
-/***/ (() => {
-
-throw new Error("Module build failed (from ./node_modules/next/dist/build/babel/loader/index.js):\nSyntaxError: /workspace/pages/api.tsx: Identifier 'Globe' has already been declared. (10:12)\n\n\u001b[0m \u001b[90m  8 |\u001b[39m   \u001b[33mFileText\u001b[39m\u001b[33m,\u001b[39m \u001b[33mImage\u001b[39m\u001b[33m,\u001b[39m \u001b[33mVideo\u001b[39m\u001b[33m,\u001b[39m \u001b[33mMusic\u001b[39m\u001b[33m,\u001b[39m \u001b[33mPalette\u001b[39m\u001b[33m,\u001b[39m \u001b[33mType\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m  9 |\u001b[39m   \u001b[33mUser\u001b[39m\u001b[33m,\u001b[39m \u001b[33mSearch\u001b[39m\u001b[33m,\u001b[39m \u001b[33mEye\u001b[39m\u001b[33m,\u001b[39m \u001b[33mHeart\u001b[39m\u001b[33m,\u001b[39m \u001b[33mShoppingCart\u001b[39m\u001b[33m,\u001b[39m \u001b[33mCode\u001b[39m\u001b[33m,\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 10 |\u001b[39m   \u001b[33mDatabase\u001b[39m\u001b[33m,\u001b[39m \u001b[33mGlobe\u001b[39m\u001b[33m,\u001b[39m \u001b[33mShield\u001b[39m\u001b[33m,\u001b[39m \u001b[33mCpu\u001b[39m\u001b[33m,\u001b[39m \u001b[33mUsers2\u001b[39m\u001b[33m,\u001b[39m \u001b[33mAward\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m    |\u001b[39m             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 11 |\u001b[39m   \u001b[33mCheckCircle\u001b[39m\u001b[33m,\u001b[39m \u001b[33mTarget\u001b[39m\u001b[33m,\u001b[39m \u001b[33mBarChart3\u001b[39m\u001b[33m,\u001b[39m \u001b[33mTrendingUp\u001b[39m\u001b[33m,\u001b[39m \u001b[33mLock\u001b[39m\n \u001b[90m 12 |\u001b[39m } \u001b[36mfrom\u001b[39m \u001b[32m'lucide-react'\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 13 |\u001b[39m\u001b[0m\n    at constructor (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:137105)\n    at TypeScriptParserMixin.raise (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:194164)\n    at TypeScriptScopeHandler.declareName (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:270924)\n    at TypeScriptParserMixin.declareNameFromIdentifier (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:279226)\n    at TypeScriptParserMixin.checkIdentifier (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:279152)\n    at TypeScriptParserMixin.checkLVal (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:278197)\n    at TypeScriptParserMixin.finishImportSpecifier (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:422705)\n    at TypeScriptParserMixin.parseImportSpecifier (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:425882)\n    at TypeScriptParserMixin.parseImportSpecifier (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:338125)\n    at TypeScriptParserMixin.parseNamedImportSpecifiers (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:425483)\n    at TypeScriptParserMixin.parseImportSpecifiersAndAfter (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:422062)\n    at TypeScriptParserMixin.parseImport (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:421803)\n    at TypeScriptParserMixin.parseImport (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:322073)\n    at TypeScriptParserMixin.parseStatementContent (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:391781)\n    at TypeScriptParserMixin.parseStatementContent (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:324042)\n    at TypeScriptParserMixin.parseStatementLike (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:389494)\n    at TypeScriptParserMixin.parseModuleItem (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:389055)\n    at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:401400)\n    at TypeScriptParserMixin.parseBlockBody (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:401223)\n    at TypeScriptParserMixin.parseProgram (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:386857)\n    at TypeScriptParserMixin.parseTopLevel (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:386575)\n    at TypeScriptParserMixin.parse (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:426834)\n    at TypeScriptParserMixin.parse (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:337631)\n    at parse (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:427389)\n    at parser (/workspace/node_modules/next/dist/compiled/babel/bundle.js:1:137686)\n    at parser.next (<anonymous>)\n    at normalizeFile (/workspace/node_modules/next/dist/compiled/babel/bundle.js:13:13275)\n    at normalizeFile.next (<anonymous>)\n    at consumeIterator (/workspace/node_modules/next/dist/build/babel/loader/util.js:13:38)\n    at transform (/workspace/node_modules/next/dist/build/babel/loader/transform.js:89:44)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at runNextTicks (node:internal/process/task_queues:69:3)\n    at process.processImmediate (node:internal/timers:453:9)\n    at async /workspace/node_modules/next/dist/build/babel/loader/index.js:36:108\n    at async Span.traceAsyncFn (/workspace/node_modules/next/dist/trace/trace.js:157:20)\n    at async nextBabelLoader (/workspace/node_modules/next/dist/build/babel/loader/index.js:36:63)\n    at async Span.traceAsyncFn (/workspace/node_modules/next/dist/trace/trace.js:157:20)");
-
-/***/ }),
-
-/***/ 672376:
+/***/ 62607:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   config: () => (/* binding */ config),
@@ -27,8 +20,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_dist_server_route_modules_pages_api_module_compiled__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(287602);
 /* harmony import */ var next_dist_server_route_modules_pages_api_module_compiled__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_dist_server_route_modules_pages_api_module_compiled__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var next_dist_build_templates_helpers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(781413);
-/* harmony import */ var private_next_pages_api_tsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(26416);
-/* harmony import */ var private_next_pages_api_tsx__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(private_next_pages_api_tsx__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var private_next_pages_api_index_tsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(704455);
 /* harmony import */ var next_dist_server_lib_trace_tracer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(12410);
 /* harmony import */ var next_dist_server_lib_trace_tracer__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(next_dist_server_lib_trace_tracer__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var next_dist_server_lib_trace_constants__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(670772);
@@ -42,9 +34,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 // Re-export the handler (should be the default export).
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,next_dist_build_templates_helpers__WEBPACK_IMPORTED_MODULE_3__.hoist)(private_next_pages_api_tsx__WEBPACK_IMPORTED_MODULE_4__, 'default'));
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,next_dist_build_templates_helpers__WEBPACK_IMPORTED_MODULE_3__.hoist)(private_next_pages_api_index_tsx__WEBPACK_IMPORTED_MODULE_4__, 'default'));
 // Re-export config.
-const config = (0,next_dist_build_templates_helpers__WEBPACK_IMPORTED_MODULE_3__.hoist)(private_next_pages_api_tsx__WEBPACK_IMPORTED_MODULE_4__, 'config');
+const config = (0,next_dist_build_templates_helpers__WEBPACK_IMPORTED_MODULE_3__.hoist)(private_next_pages_api_index_tsx__WEBPACK_IMPORTED_MODULE_4__, 'config');
 // Create and export the route module that will be consumed.
 const routeModule = new next_dist_server_route_modules_pages_api_module_compiled__WEBPACK_IMPORTED_MODULE_2__.PagesAPIRouteModule({
     definition: {
@@ -55,7 +47,7 @@ const routeModule = new next_dist_server_route_modules_pages_api_module_compiled
         bundlePath: '',
         filename: ''
     },
-    userland: private_next_pages_api_tsx__WEBPACK_IMPORTED_MODULE_4__,
+    userland: private_next_pages_api_index_tsx__WEBPACK_IMPORTED_MODULE_4__,
     distDir: ".next" || 0,
     relativeProjectDir:  false || ''
 });
@@ -160,11 +152,86 @@ async function handler(req, res, ctx) {
 
 /***/ }),
 
+/***/ 608732:
+/***/ ((module) => {
+
+module.exports = require("react/jsx-runtime");
+
+/***/ }),
+
+/***/ 704455:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ ApiHubPage)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(882015);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(849788);
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _components_layout_Layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(775927);
+/* harmony import */ var _components_layout_Layout__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_components_layout_Layout__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(919918);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(608732);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__);
+
+
+
+
+
+function ApiHubPage() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)((next_head__WEBPACK_IMPORTED_MODULE_1___default()), {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("title", {
+        children: "API | Zion Tech Group"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("meta", {
+        name: "description",
+        content: "Zion Tech Group API hub and documentation."
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("link", {
+        rel: "canonical",
+        href: "https://ziontechgroup.com/api/"
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)((_components_layout_Layout__WEBPACK_IMPORTED_MODULE_2___default()), {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("section", {
+        className: "min-h-[60vh] px-4 py-24",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h1", {
+          className: "text-5xl font-bold mb-4",
+          children: "API"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+          className: "text-gray-300 mb-6",
+          children: "Access our API documentation and developer resources."
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)((next_link__WEBPACK_IMPORTED_MODULE_3___default()), {
+          className: "text-cyan-300 underline",
+          href: "/api-documentation",
+          children: "Go to API Documentation"
+        })]
+      })
+    })]
+  });
+}
+
+/***/ }),
+
 /***/ 775600:
 /***/ ((module) => {
 
-"use strict";
 module.exports = require("next/dist/compiled/next-server/pages-api.runtime.prod.js");
+
+/***/ }),
+
+/***/ 840361:
+/***/ ((module) => {
+
+module.exports = require("next/dist/compiled/next-server/pages.runtime.prod.js");
+
+/***/ }),
+
+/***/ 882015:
+/***/ ((module) => {
+
+module.exports = require("react");
 
 /***/ })
 
@@ -175,7 +242,7 @@ module.exports = require("next/dist/compiled/next-server/pages-api.runtime.prod.
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [618096,472076], () => (__webpack_exec__(672376)));
+var __webpack_exports__ = __webpack_require__.X(0, [618096,472076], () => (__webpack_exec__(62607)));
 module.exports = __webpack_exports__;
 
 })();

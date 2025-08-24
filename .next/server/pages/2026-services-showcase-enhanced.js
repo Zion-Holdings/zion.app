@@ -370,13 +370,10 @@ function Services2026ShowcaseEnhancedPage() {
           content: "website"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("meta", {
           property: "og:url",
-          content: "https://ziontechgroup.com/2026-services-showcase-enhanced/"
+          content: "https://ziontechgroup.com/2026-services-showcase-enhanced"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("meta", {
           property: "og:image",
           content: "https://ziontechgroup.com/og-image.svg"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("meta", {
-          property: "og:image:type",
-          content: "image/svg+xml"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("meta", {
           name: "twitter:card",
           content: "summary_large_image"
@@ -388,7 +385,7 @@ function Services2026ShowcaseEnhancedPage() {
           content: "Discover our comprehensive collection of innovative 2026 micro SAAS services, AI solutions, quantum computing, and enterprise IT services."
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("meta", {
           name: "twitter:image",
-          content: "https://ziontechgroup.com/og-image.jpg"
+          content: "https://ziontechgroup.com/og-image.svg"
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("section", {
         className: "relative py-32 px-4 sm:px-6 lg:px-8 overflow-hidden",

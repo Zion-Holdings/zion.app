@@ -1,3 +1,4 @@
+"use strict";
 (() => {
 var exports = {};
 exports.id = 874067;
@@ -7,7 +8,6 @@ exports.modules = {
 /***/ 309499:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   config: () => (/* binding */ config),
@@ -32,7 +32,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var private_next_pages_document_tsx__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(private_next_pages_document_tsx__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var private_next_pages_app_tsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(805164);
 /* harmony import */ var private_next_pages_warehouse_accelerator_tsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(366589);
-/* harmony import */ var private_next_pages_warehouse_accelerator_tsx__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(private_next_pages_warehouse_accelerator_tsx__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var next_dist_server_route_modules_pages_pages_handler__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(312289);
 
 
@@ -94,22 +93,64 @@ const handler = (0,next_dist_server_route_modules_pages_pages_handler__WEBPACK_I
 /***/ 333873:
 /***/ ((module) => {
 
-"use strict";
 module.exports = require("path");
 
 /***/ }),
 
 /***/ 366589:
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-throw new Error("Module build failed (from ./node_modules/next/dist/build/babel/loader/index.js):\nSyntaxError: /workspace/pages/warehouse-accelerator.tsx: Expected corresponding JSX closing tag for <Link>. (43:124)\n\n\u001b[0m \u001b[90m 41 |\u001b[39m \t\t\t\t\t\t\t\t\u001b[33m<\u001b[39m\u001b[33mdiv\u001b[39m className\u001b[33m=\u001b[39m\u001b[32m\"flex items-center text-yellow-400\"\u001b[39m\u001b[33m>\u001b[39m\u001b[33m<\u001b[39m\u001b[33mStar\u001b[39m className\u001b[33m=\u001b[39m\u001b[32m\"w-4 h-4 mr-1\"\u001b[39m \u001b[33m/\u001b[39m\u001b[33m>\u001b[39m{service\u001b[33m.\u001b[39mrating\u001b[33m.\u001b[39mtoFixed(\u001b[35m1\u001b[39m)}\u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mdiv\u001b[39m\u001b[33m>\u001b[39m\n \u001b[90m 42 |\u001b[39m \t\t\t\t\t\t\t\u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mdiv\u001b[39m\u001b[33m>\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 43 |\u001b[39m \t\t\t\t\t\t\t\u001b[33m<\u001b[39m\u001b[33mLink\u001b[39m href\u001b[33m=\u001b[39m\u001b[32m\"/contact\"\u001b[39m variant\u001b[33m=\u001b[39m\u001b[32m\"quantum\"\u001b[39m size\u001b[33m=\u001b[39m\u001b[32m\"lg\"\u001b[39m className\u001b[33m=\u001b[39m\u001b[32m\"w-full\"\u001b[39m\u001b[33m>\u001b[39m\u001b[33mStart\u001b[39m \u001b[33mELT\u001b[39m\u001b[33m<\u001b[39m\u001b[33mArrowRight\u001b[39m className\u001b[33m=\u001b[39m\u001b[32m\"w-5 h-5 ml-2\"\u001b[39m \u001b[33m/\u001b[39m\u001b[33m>\u001b[39m\u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mButton\u001b[39m\u001b[33m>\u001b[39m\n \u001b[90m    |\u001b[39m \t\t\t\t\t\t\t                                                                                                                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 44 |\u001b[39m \t\t\t\t\t\t\t\u001b[33m<\u001b[39m\u001b[33mdiv\u001b[39m className\u001b[33m=\u001b[39m\u001b[32m\"mt-6 space-y-3 text-sm text-slate-300\"\u001b[39m\u001b[33m>\u001b[39m\n \u001b[90m 45 |\u001b[39m \t\t\t\t\t\t\t\t\u001b[33m<\u001b[39m\u001b[33mdiv\u001b[39m className\u001b[33m=\u001b[39m\u001b[32m\"flex items-center space-x-2\"\u001b[39m\u001b[33m>\u001b[39m\u001b[33m<\u001b[39m\u001b[33mPhone\u001b[39m className\u001b[33m=\u001b[39m\u001b[32m\"w-4 h-4 text-cyan-400\"\u001b[39m \u001b[35m/><a href={`tel:${service.contactInfo.mobile.replace(/\u001b[39m[\u001b[33m^\u001b[39m\u001b[33m+\u001b[39m\u001b[37m\u001b[41m\u001b[1m\\\u001b[22m\u001b[49m\u001b[39m\u001b[37m\u001b[41m\u001b[1m\\\u001b[22m\u001b[49m\u001b[39md]\u001b[33m/\u001b[39mg\u001b[33m,\u001b[39m \u001b[32m''\u001b[39m)}\u001b[32m`} className=\"hover:text-white\">{service.contactInfo.mobile}</a></div>\u001b[39m\n \u001b[90m 46 |\u001b[39m \u001b[32m\t\t\t\t\t\t\t\t<div className=\"flex items-center space-x-2\"><Mail className=\"w-4 h-4 text-purple-400\" /><a href={`\u001b[39mmailto\u001b[33m:\u001b[39m${service\u001b[33m.\u001b[39mcontactInfo\u001b[33m.\u001b[39memail}\u001b[32m`} className=\"hover:text-white\">{service.contactInfo.email}</a></div>\u001b[39m\u001b[0m\n    at constructor (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:137105)\n    at TypeScriptParserMixin.raise (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:194164)\n    at TypeScriptParserMixin.jsxParseElementAt (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:268546)\n    at TypeScriptParserMixin.jsxParseElementAt (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:267915)\n    at TypeScriptParserMixin.jsxParseElementAt (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:267915)\n    at TypeScriptParserMixin.jsxParseElementAt (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:267915)\n    at TypeScriptParserMixin.jsxParseElementAt (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:267915)\n    at TypeScriptParserMixin.jsxParseElementAt (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:267915)\n    at TypeScriptParserMixin.jsxParseElement (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:268987)\n    at TypeScriptParserMixin.parseExprAtom (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:269115)\n    at TypeScriptParserMixin.parseExprSubscripts (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:356364)\n    at TypeScriptParserMixin.parseUpdate (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:355963)\n    at TypeScriptParserMixin.parseMaybeUnary (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:355527)\n    at TypeScriptParserMixin.parseMaybeUnary (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:331837)\n    at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:352169)\n    at TypeScriptParserMixin.parseExprOps (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:352281)\n    at TypeScriptParserMixin.parseMaybeConditional (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:351760)\n    at TypeScriptParserMixin.parseMaybeAssign (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:350714)\n    at /workspace/node_modules/next/dist/compiled/babel/bundle.js:191:330420\n    at TypeScriptParserMixin.tryParse (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:199742)\n    at TypeScriptParserMixin.parseMaybeAssign (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:330400)\n    at /workspace/node_modules/next/dist/compiled/babel/bundle.js:191:350260\n    at TypeScriptParserMixin.allowInAnd (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:383968)\n    at TypeScriptParserMixin.parseMaybeAssignAllowIn (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:350239)\n    at TypeScriptParserMixin.parseParenAndDistinguishExpression (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:369230)\n    at TypeScriptParserMixin.parseExprAtom (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:361477)\n    at TypeScriptParserMixin.parseExprAtom (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:269272)\n    at TypeScriptParserMixin.parseExprSubscripts (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:356364)\n    at TypeScriptParserMixin.parseUpdate (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:355963)\n    at TypeScriptParserMixin.parseMaybeUnary (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:355527)\n    at TypeScriptParserMixin.parseMaybeUnary (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:331837)\n    at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:352169)\n    at TypeScriptParserMixin.parseExprOps (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:352281)\n    at TypeScriptParserMixin.parseMaybeConditional (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:351760)\n    at TypeScriptParserMixin.parseMaybeAssign (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:350714)\n    at TypeScriptParserMixin.parseMaybeAssign (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:330620)\n    at TypeScriptParserMixin.parseExpressionBase (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:349863)\n    at /workspace/node_modules/next/dist/compiled/babel/bundle.js:191:349774\n    at TypeScriptParserMixin.allowInAnd (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:383926)\n    at TypeScriptParserMixin.parseExpression (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:349753)\n    at TypeScriptParserMixin.parseReturnStatement (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:397586)\n    at TypeScriptParserMixin.parseStatementContent (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:390278)\n    at TypeScriptParserMixin.parseStatementContent (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:324042)\n    at TypeScriptParserMixin.parseStatementLike (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:389494)\n    at TypeScriptParserMixin.parseStatementListItem (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:389120)\n    at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:401423)\n    at TypeScriptParserMixin.parseBlockBody (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:401223)\n    at TypeScriptParserMixin.parseBlock (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:400923)\n    at TypeScriptParserMixin.parseFunctionBody (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:378053)\n    at TypeScriptParserMixin.parseFunctionBodyAndFinish (/workspace/node_modules/next/dist/compiled/babel/bundle.js:191:377675)");
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ WarehouseAcceleratorPage)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(882015);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _components_SEO__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(41415);
+/* harmony import */ var _components_SEO__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_components_SEO__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(608732);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+function WarehouseAcceleratorPage() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)((_components_SEO__WEBPACK_IMPORTED_MODULE_1___default()), {
+      title: "Warehouse Accelerator",
+      description: "Faster time-to-value for your modern data warehouse.",
+      canonical: "/warehouse-accelerator"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("section", {
+      className: "relative pt-28 pb-16 md:pt-36 md:pb-24",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "container mx-auto px-4 max-w-3xl",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h1", {
+          className: "text-3xl md:text-5xl font-extrabold tracking-tight gradient-text-cyan-purple",
+          children: "Warehouse Accelerator"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+          className: "mt-4 text-gray-300",
+          children: "Blueprints, connectors, and optimizations to accelerate analytics initiatives."
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          className: "mt-8 flex gap-3",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
+            href: "/services",
+            className: "px-4 py-2 rounded-lg bg-white text-black font-medium",
+            children: "Explore Services"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
+            href: "/contact",
+            className: "px-4 py-2 rounded-lg border border-white/10 text-gray-200",
+            children: "Contact Sales"
+          })]
+        })]
+      })
+    })]
+  });
+}
 
 /***/ }),
 
 /***/ 608732:
 /***/ ((module) => {
 
-"use strict";
 module.exports = require("react/jsx-runtime");
 
 /***/ }),
@@ -117,7 +158,6 @@ module.exports = require("react/jsx-runtime");
 /***/ 646060:
 /***/ ((module) => {
 
-"use strict";
 module.exports = require("next/dist/shared/lib/no-fallback-error.external.js");
 
 /***/ }),
@@ -125,7 +165,6 @@ module.exports = require("next/dist/shared/lib/no-fallback-error.external.js");
 /***/ 840361:
 /***/ ((module) => {
 
-"use strict";
 module.exports = require("next/dist/compiled/next-server/pages.runtime.prod.js");
 
 /***/ }),
@@ -133,7 +172,6 @@ module.exports = require("next/dist/compiled/next-server/pages.runtime.prod.js")
 /***/ 882015:
 /***/ ((module) => {
 
-"use strict";
 module.exports = require("react");
 
 /***/ })

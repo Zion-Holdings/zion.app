@@ -1,0 +1,1 @@
+export default function VerifyEmailPage() { return <div className="py-12">Verify email coming soon.</div>; }

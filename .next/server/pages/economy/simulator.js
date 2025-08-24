@@ -5,6 +5,13 @@ exports.id = 464919;
 exports.ids = [464919,890636];
 exports.modules = {
 
+/***/ 173566:
+/***/ ((module) => {
+
+module.exports = require("worker_threads");
+
+/***/ }),
+
 /***/ 333873:
 /***/ ((module) => {
 
@@ -101,6 +108,13 @@ const handler = (0,next_dist_server_route_modules_pages_pages_handler__WEBPACK_I
 /***/ ((module) => {
 
 module.exports = require("react/jsx-runtime");
+
+/***/ }),
+
+/***/ 629021:
+/***/ ((module) => {
+
+module.exports = require("fs");
 
 /***/ }),
 

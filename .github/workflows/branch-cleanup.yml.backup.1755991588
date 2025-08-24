@@ -1,0 +1,53 @@
+name: Branch Cleanup
+
+on:
+  schedule:
+    - cron: '0 3 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  actions: read
+
+<<<<<<< HEAD
+=======
+concurrency:
+  group: branch-cleanup-${{ github.ref }}
+  cancel-in-progress: false
+
+>>>>>>> 5fe4d4a516412daaecc6e2e3437df4b5fdac83d3
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+<<<<<<< HEAD
+      - name: Run workflow
+        run: echo "Workflow completed successfully"
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+=======
+
+      - name: Prune merged and stale branches
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: node automation/branch-cleanup.cjs
+
+      - name: Generate README (non-blocking)
+        run: node scripts/generate-readme.js || true
+>>>>>>> 5fe4d4a516412daaecc6e2e3437df4b5fdac83d3
