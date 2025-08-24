@@ -1,0 +1,9 @@
+/// <reference types="next" />
+/// <reference types="next/image-types/global" />
+<<<<<<< HEAD
+/// <reference path="./.next/types/routes.d.ts" />
+=======
+>>>>>>> origin/4fu9r9-codex/check-logs-and-fix-errors
+
+// NOTE: This file should not be edited
+// see https://nextjs.org/docs/pages/api-reference/config/typescript for more information.

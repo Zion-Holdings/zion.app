@@ -1,0 +1,109 @@
+name: Autonomous Failure Triage
+
+on:
+  workflow_run:
+    workflows: ["*"]
+    types:
+      - completed
+
+permissions:
+  issues: write
+  actions: read
+  contents: read
+
+jobs:
+  triage-failure:
+    if: ${{ github.event.workflow_run.conclusion == 'failure' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Gather failure details
+        id: gather
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const run = context.payload.workflow_run;
+            const { owner, repo } = context.repo;
+
+            // List jobs for the failed run
+            const jobs = await github.rest.actions.listJobsForWorkflowRun({
+              owner,
+              repo,
+              run_id: run.id,
+              per_page: 100
+            });
+
+            const failedJobs = jobs.data.jobs.filter(j => j.conclusion === 'failure' || j.conclusion === 'cancelled' || j.conclusion === 'timed_out');
+
+            const failedSummary = failedJobs.map(j => `- ${j.name} (conclusion: ${j.conclusion})`).join('\n') || '- No individual failed jobs found (run failed at workflow level)';
+
+            const runUrl = run.html_url;
+            const workflowName = run.name || context.workflow;
+            const title = `CI failure: ${workflowName} #${run.run_number}`;
+
+            const body = `
+            The workflow run has failed.
+
+            - Workflow: ${workflowName}
+            - Event: ${run.event}
+            - Run Number: ${run.run_number}
+            - Commit: ${run.head_commit && run.head_commit.id ? run.head_commit.id.substring(0,7) : 'n/a'}
+            - Actor: ${run.actor && run.actor.login ? run.actor.login : 'unknown'}
+            - Branch: ${run.head_branch}
+            - Run URL: ${runUrl}
+
+            Failed jobs:\n${failedSummary}
+
+            This issue was created automatically by the Autonomous Failure Triage workflow to ensure rapid follow-up. It will be updated on subsequent failures of this workflow.`.trim();
+
+            core.setOutput('title', title);
+            core.setOutput('body', body);
+
+      - name: Create or update CI failure issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { owner, repo } = context.repo;
+            const title = core.getInput('title', { required: true });
+            const body = core.getInput('body', { required: true });
+
+            // Search for an open issue with the same title
+            const issues = await github.rest.search.issuesAndPullRequests({
+              q: `repo:${owner}/${repo} is:issue is:open in:title "${title}"`,
+              per_page: 1
+            });
+
+            if (issues.data.items && issues.data.items.length > 0) {
+              const issueNumber = issues.data.items[0].number;
+              await github.rest.issues.update({ owner, repo, issue_number: issueNumber, body });
+              core.notice(`Updated existing issue #${issueNumber}`);
+            } else {
+              const created = await github.rest.issues.create({ owner, repo, title, body, labels: ['ci-failure'] });
+              core.notice(`Created issue #${created.data.number}`);
+            }
+        env:
+          title: ${{ steps.gather.outputs.title }}
+          body: ${{ steps.gather.outputs.body }}
+
+      - name: Add run link as a comment
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { owner, repo } = context.repo;
+            const title = process.env.TITLE;
+            const body = process.env.BODY;
+
+            const issues = await github.rest.search.issuesAndPullRequests({
+              q: `repo:${owner}/${repo} is:issue is:open in:title "${title}"`,
+              per_page: 1
+            });
+
+            if (issues.data.items && issues.data.items.length > 0) {
+              const issueNumber = issues.data.items[0].number;
+              await github.rest.issues.createComment({ owner, repo, issue_number: issueNumber, body: body });
+              core.notice(`Commented on issue #${issueNumber}`);
+            } else {
+              core.warning('No issue found to comment on.');
+            }
+        env:
+          TITLE: ${{ steps.gather.outputs.title }}
+          BODY: ${{ steps.gather.outputs.body }}

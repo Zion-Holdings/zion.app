@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from 'react';
+<<<<<<< HEAD
 import { useParams } from 'react-router-dom';
+=======
+import { useParams, useNavigate } from 'react-router-dom';
+>>>>>>> origin/main
 import { ProfileLoadingState } from '@/components/profile/ProfileLoadingState';
 import type { TalentProfile as TalentProfileType } from '@/types/talent';
 import { ProfileErrorState } from '@/components/profile/ProfileErrorState';
@@ -10,6 +14,10 @@ interface TalentProfileWithSocial extends TalentProfileType {
 
 const TalentProfilePage: React.FC = () => {
   const { id } = useParams();
+<<<<<<< HEAD
+=======
+  const navigate = useNavigate();
+>>>>>>> origin/main
   const [profile, setProfile] = useState<TalentProfileWithSocial | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);

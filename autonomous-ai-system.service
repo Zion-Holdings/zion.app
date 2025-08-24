@@ -1,0 +1,65 @@
+[Unit]
+Description=Autonomous AI Link Health System
+Documentation=https://github.com/Zion-Holdings/zion
+After=network.target
+Wants=network.target
+
+[Service]
+Type=forking
+User=root
+Group=root
+WorkingDirectory=/workspace
+ExecStart=/usr/bin/pm2 start ecosystem.config.js --env production
+ExecReload=/usr/bin/pm2 reload ecosystem.config.js --env production
+ExecStop=/usr/bin/pm2 stop ecosystem.config.js
+ExecStopPost=/usr/bin/pm2 delete ecosystem.config.js
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=autonomous-ai-system
+KillMode=mixed
+KillSignal=SIGINT
+TimeoutStopSec=30
+
+# Environment variables
+Environment=NODE_ENV=production
+Environment=PORT=3000
+
+# Resource limits
+LimitNOFILE=65536
+LimitNPROC=4096
+
+# Security settings
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/workspace
+ReadWritePaths=/var/log
+
+[Install]
+WantedBy=multi-user.target
+
+# Additional security and performance settings
+[Service]
+# Memory management
+MemoryMax=2G
+MemorySwapMax=1G
+
+# CPU management
+CPUQuota=200%
+CPUWeight=100
+
+# IO management
+IOWeight=100
+
+# Restart policy
+StartLimitInterval=60
+StartLimitBurst=3
+StartLimitAction=reboot
+
+# Logging
+LogLevelMax=info
+LogRateLimitIntervalSec=30
+LogRateLimitBurst=1000

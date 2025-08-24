@@ -1,0 +1,85 @@
+[build]
+  # Use `npm ci` for deterministic installs
+  command = "npm ci && npm run migrate:check && npm run build && npm test -- --coverage && mkdir -p .next/coverage-report && cp -R coverage/lcov-report/* .next/coverage-report/ && npm run test:e2e"
+  publish = ".next"
+
+[build.environment]
+  NODE_OPTIONS = "--max_old_space_size=4096"
+  NPM_FLAGS = "--prefer-offline --legacy-peer-deps"
+  NODE_VERSION = "20"
+  NEXT_PUBLIC_SUPABASE_ANON_KEY = "YOUR_SUPABASE_ANON_KEY" # Replace with your actual Supabase key
+  NEXT_PUBLIC_REOWN_PROJECT_ID = "VALID_PROJECT_ID_PLACEHOLDER" # IMPORTANT: Replace with your actual Reown AppKit Project ID
+  EXAMPLE_API_URL = "https://jsonplaceholder.typicode.com/todos/1"
+
+  # Sentry specific configuration
+  # These should be set in Netlify UI for actual values, these are placeholders/docs
+  SENTRY_ORG = "YOUR_SENTRY_ORG_SLUG" # User must set this in Netlify build environment variables
+  SENTRY_PROJECT = "YOUR_SENTRY_PROJECT_SLUG" # User must set this in Netlify build environment variables
+  # SENTRY_AUTH_TOKEN is a secret and should be set in Netlify UI, not here.
+  # We are noting it here for documentation purposes as it's essential for sourcemap uploads.
+  # SENTRY_AUTH_TOKEN = "YOUR_SENTRY_AUTH_TOKEN_HERE" # DO NOT COMMIT ACTUAL TOKEN
+
+  # Default Sentry environment, can be overridden by Netlify contexts/UI
+  SENTRY_ENVIRONMENT = "production"
+
+  # Set SENTRY_RELEASE to the commit SHA from Netlify's build environment
+  SENTRY_RELEASE = "$COMMIT_REF"
+
+  # Expose Sentry release and environment to the client-side
+  # These will be picked up by next.config.js and sentry.*.config.js files
+  NEXT_PUBLIC_SENTRY_RELEASE = "$COMMIT_REF" # Derived from Netlify's COMMIT_REF
+  # NEXT_PUBLIC_SENTRY_ENVIRONMENT should reflect the SENTRY_ENVIRONMENT set for the build
+  # We ensure it's explicitly passed through.
+  # If SENTRY_ENVIRONMENT is overridden by Netlify contexts, that value will be used for the build,
+  # and then passed to NEXT_PUBLIC_SENTRY_ENVIRONMENT.
+  NEXT_PUBLIC_SENTRY_ENVIRONMENT = "$SENTRY_ENVIRONMENT"
+
+  # Update existing Sentry DSNs to be more clearly placeholders if they are generic
+  NEXT_PUBLIC_SENTRY_DSN = "YOUR_NEXT_PUBLIC_SENTRY_DSN_HERE" # User must set this in Netlify build environment variables
+  SENTRY_DSN = "YOUR_SENTRY_DSN_HERE" # User must set this in Netlify build environment variables
+
+  # Ensure SECRETS_SCAN_OMIT_KEYS includes all relevant Sentry keys if needed,
+  # though SENTRY_AUTH_TOKEN is the main one to protect.
+  # DSNs are public but omitting them can reduce noise.
+  # Example if SENTRY_AUTH_TOKEN were also listed here (it should be a secret in UI):
+  # SECRETS_SCAN_OMIT_KEYS = "SENTRY_DSN,NEXT_PUBLIC_SENTRY_DSN,SENTRY_AUTH_TOKEN"
+  # Current SECRETS_SCAN_OMIT_KEYS, DSNs are public but omitting them can reduce scanner noise.
+  SECRETS_SCAN_OMIT_KEYS = "SENTRY_DSN,NEXT_PUBLIC_SENTRY_DSN" # SENTRY_AUTH_TOKEN should be a secret in UI
+  CYPRESS_TEST_USER_DISPLAY_NAME = "YOUR_CYPRESS_TEST_USER_DISPLAY_NAME"
+  CYPRESS_TEST_USER_EMAIL = "YOUR_CYPRESS_TEST_USER_EMAIL"
+  CYPRESS_TEST_USER_PASSWORD = "YOUR_CYPRESS_TEST_USER_PASSWORD"
+  CYPRESS_EXISTING_USER_EMAIL = "YOUR_CYPRESS_EXISTING_USER_EMAIL"
+  CYPRESS_EXISTING_USER_PASSWORD = "YOUR_CYPRESS_EXISTING_USER_PASSWORD"
+  CYPRESS_TEST_USER_NAME = "YOUR_CYPRESS_TEST_USER_NAME"
+  CYPRESS_STRIPE_TEST_CARD = "YOUR_CYPRESS_STRIPE_TEST_CARD"
+
+[functions.environment]
+  SENTRY_LOG_LEVEL = "debug"
+
+[functions.sentryDsnCheckCron]
+  schedule = "@daily"
+
+[functions.healthCheckCron]
+  schedule = "*/5 * * * *"
+
+# [[plugins]]
+# package = "@netlify/plugin-lighthouse"
+#   [plugins.inputs]
+#   output_path = "lighthouse-reports" # This will save reports to 'lighthouse-reports/summary.html' and individual reports in the same dir.
+#
+#   [plugins.inputs.thresholds]
+#   performance = 0.8 # Score from 0 to 1 (e.g., 0.8 = 80)
+#
+#   # Configure bundle size check if the plugin supports it directly.
+#   # The issue mentions "Total JS bundle size > 250 KB".
+#   # This plugin primarily uses Lighthouse's own audits.
+#   # Lighthouse itself doesn't have a direct "total JS bundle size" audit in this format.
+#   # It has "total-byte-weight" which includes all resources, and "unused-javascript".
+#   # We'll rely on the Lighthouse performance score for now, as direct JS bundle size enforcement
+#   # might need a separate tool or script if this plugin doesn't cover it.
+#   # For the purpose of this task, we will focus on what the plugin *can* do.
+#   # If a direct JS bundle size check is critical and not covered by this plugin,
+#   # that would be a separate follow-up.
+#
+#   # The plugin will automatically create 'lighthouse-reports' in the publish directory.
+#   # Netlify automatically makes build artifacts available from the publish directory.

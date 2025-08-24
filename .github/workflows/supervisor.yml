@@ -1,0 +1,28 @@
+name: Supervisor Health Check
+
+on:
+  push:
+    branches: [ main ]
+  schedule:
+    - cron: '0 3 * * *'
+
+jobs:
+  supervisor:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci
+      - name: Run supervisor discovery
+        run: node automation/supervisor-agents-factory.cjs
+      - name: Run supervisor once (no fixes)
+        run: SUPERVISOR_DISABLE_FIXES=1 node automation/supervisor/supervisor-orchestrator.cjs run-once
+      - name: Upload supervisor reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: supervisor-reports
+          path: |
+            data/reports/supervisor/**/*.json
+            automation/logs/supervisor.log
