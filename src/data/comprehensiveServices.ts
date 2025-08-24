@@ -430,12 +430,17 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
       "Government agencies"
     ],
     tags: ["Web Development", "React", "Node.js", "Full-Stack", "Responsive Design", "Performance"],
-    supportLevel: "standard",
-    marketPrice: "$15,000 - $50,000",
-    contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
+    integration: ["React", "Node.js", "MongoDB", "AWS", "Docker"],
+    support: ["24/7 support", "Documentation", "Training"],
+    link: "https://ziontechgroup.com/web-development",
+    rating: 4.8,
+    reviewCount: 156,
+    aiScore: 85,
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
     }
   },
 
@@ -484,12 +489,17 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
       "Government agencies"
     ],
     tags: ["Mobile Development", "React Native", "Flutter", "Cross-Platform", "iOS", "Android"],
-    supportLevel: "standard",
-    marketPrice: "$20,000 - $60,000",
-    contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
+    integration: ["React Native", "Flutter", "Firebase", "AWS", "App Store"],
+    support: ["24/7 support", "Documentation", "Training"],
+    link: "https://ziontechgroup.com/mobile-development",
+    rating: 4.7,
+    reviewCount: 203,
+    aiScore: 82,
+    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
     }
   },
 
@@ -537,12 +547,17 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
       "Technology companies"
     ],
     tags: ["Data Analytics", "Business Intelligence", "Dashboards", "Reporting", "Predictive Analytics"],
-    supportLevel: "standard",
-    marketPrice: "$10,000 - $30,000/month",
-    contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
+    integration: ["Power BI", "Tableau", "Python", "R", "SQL"],
+    support: ["24/7 support", "Documentation", "Training"],
+    link: "https://ziontechgroup.com/data-analytics",
+    rating: 4.9,
+    reviewCount: 89,
+    aiScore: 91,
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
     }
   },
 
@@ -591,12 +606,17 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
       "Healthcare organizations"
     ],
     tags: ["DevOps", "CI/CD", "Automation", "Docker", "Kubernetes", "Infrastructure"],
-    supportLevel: "standard",
-    marketPrice: "$12,000 - $40,000",
-    contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
+    integration: ["Jenkins", "GitLab", "Docker", "Kubernetes", "AWS"],
+    support: ["24/7 support", "Documentation", "Training"],
+    link: "https://ziontechgroup.com/devops",
+    rating: 4.6,
+    reviewCount: 134,
+    aiScore: 78,
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
     }
   },
 
@@ -645,12 +665,17 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
       "Real estate companies"
     ],
     tags: ["Blockchain", "Smart Contracts", "DApps", "Ethereum", "DeFi", "NFTs"],
-    supportLevel: "premium",
-    marketPrice: "$30,000 - $100,000",
-    contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
+    integration: ["Ethereum", "Solidity", "Web3.js", "MetaMask", "IPFS"],
+    support: ["24/7 support", "Documentation", "Training"],
+    link: "https://ziontechgroup.com/blockchain",
+    rating: 4.5,
+    reviewCount: 67,
+    aiScore: 73,
+    image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
     }
   },
 
@@ -699,12 +724,17 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
       "Healthcare organizations"
     ],
     tags: ["IoT", "Device Management", "Edge Computing", "Real-time Analytics", "Automation"],
-    supportLevel: "premium",
-    marketPrice: "$25,000 - $80,000",
-    contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
+    integration: ["IoT devices", "Cloud platforms", "Analytics tools", "Mobile apps"],
+    support: ["24/7 support", "Documentation", "Training"],
+    link: "https://ziontechgroup.com/iot",
+    rating: 4.4,
+    reviewCount: 78,
+    aiScore: 76,
+    image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
     }
   },
 
@@ -752,12 +782,17 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
       "Non-profit organizations"
     ],
     tags: ["Digital Marketing", "Automation", "AI", "Campaign Management", "Analytics"],
-    supportLevel: "standard",
-    marketPrice: "$5,000 - $20,000/month",
-    contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
+    integration: ["HubSpot", "Mailchimp", "Google Analytics", "Facebook Ads", "LinkedIn Ads"],
+    support: ["24/7 support", "Documentation", "Training"],
+    link: "https://ziontechgroup.com/digital-marketing",
+    rating: 4.6,
+    reviewCount: 145,
+    aiScore: 88,
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
     }
   },
 
@@ -806,12 +841,17 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
       "Manufacturing companies"
     ],
     tags: ["IT Strategy", "Digital Transformation", "Consulting", "Governance", "Compliance"],
-    supportLevel: "premium",
-    marketPrice: "$20,000 - $75,000",
-    contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
+    integration: ["Enterprise systems", "Cloud platforms", "Security tools", "Analytics platforms"],
+    support: ["24/7 support", "Documentation", "Training"],
+    link: "https://ziontechgroup.com/it-consulting",
+    rating: 4.8,
+    reviewCount: 92,
+    aiScore: 85,
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
     }
   },
 
@@ -860,12 +900,17 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
       "Government agencies"
     ],
     tags: ["Software Testing", "Automation", "Quality Assurance", "Performance Testing", "Security Testing"],
-    supportLevel: "standard",
-    marketPrice: "$8,000 - $25,000",
-    contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
+    integration: ["Selenium", "JUnit", "TestNG", "Jenkins", "GitLab CI"],
+    support: ["24/7 support", "Documentation", "Training"],
+    link: "https://ziontechgroup.com/software-testing",
+    rating: 4.5,
+    reviewCount: 67,
+    aiScore: 72,
+    image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
     }
   },
   // New AI & Machine Learning Services
@@ -913,12 +958,17 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
       "Publishing companies"
     ],
     tags: ["AI Content", "Content Generation", "SEO", "Marketing", "Automation"],
-    supportLevel: "premium",
-    marketPrice: "$2,500 - $5,000/month",
-    contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
+    integration: ["WordPress", "Shopify", "HubSpot", "Mailchimp", "Social media platforms"],
+    support: ["24/7 support", "Documentation", "Training"],
+    link: "https://ziontechgroup.com/ai-content-generation",
+    rating: 4.9,
+    reviewCount: 1247,
+    aiScore: 96,
+    image: "https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion AI Labs",
+      id: "zion-ai-labs",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
     }
   },
   {
@@ -965,12 +1015,17 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
       "Service-based businesses"
     ],
     tags: ["Customer Support", "AI Automation", "Chatbot", "Customer Experience", "24/7 Support"],
-    supportLevel: "premium",
-    marketPrice: "$1,800 - $3,500/month",
-    contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
+    integration: ["Zendesk", "Intercom", "Slack", "Microsoft Teams", "CRM systems"],
+    support: ["24/7 support", "Documentation", "Training"],
+    link: "https://ziontechgroup.com/ai-customer-support",
+    rating: 4.7,
+    reviewCount: 892,
+    aiScore: 89,
+    image: "https://images.unsplash.com/photo-1551836022-deb4988cc6c0?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion AI Labs",
+      id: "zion-ai-labs",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
     }
   },
   // New Cybersecurity Services
@@ -1018,12 +1073,17 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
       "Security operations centers"
     ],
     tags: ["AI Security", "Threat Detection", "Incident Response", "Cybersecurity", "Real-time Monitoring"],
-    supportLevel: "enterprise",
-    marketPrice: "$4,200 - $8,000/month",
-    contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
+    integration: ["SIEM systems", "EDR platforms", "Firewalls", "Cloud security tools", "Identity providers"],
+    support: ["24/7 support", "Documentation", "Training"],
+    link: "https://ziontechgroup.com/ai-threat-detection",
+    rating: 4.8,
+    reviewCount: 445,
+    aiScore: 94,
+    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion Security Labs",
+      id: "zion-security-labs",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
     }
   },
   {
@@ -1070,13 +1130,17 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
       "Educational institutions"
     ],
     tags: ["Zero Trust", "Access Control", "Identity Management", "Network Security", "Compliance"],
-    estimatedDelivery: "6-12 weeks",
-    supportLevel: "enterprise",
-    marketPrice: "$3,500 - $7,000/month",
-    contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
+    integration: ["Identity providers", "VPN solutions", "Network security tools", "SIEM systems", "Compliance platforms"],
+    support: ["24/7 support", "Documentation", "Training"],
+    link: "https://ziontechgroup.com/zero-trust-security",
+    rating: 4.7,
+    reviewCount: 334,
+    aiScore: 87,
+    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion Security Labs",
+      id: "zion-security-labs",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
     }
   },
   // New Cloud Computing & DevOps Services
@@ -1124,13 +1188,17 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
       "Startups and scale-ups"
     ],
     tags: ["Kubernetes", "Container Orchestration", "DevOps", "Microservices", "Cloud Native"],
-    estimatedDelivery: "4-8 weeks",
-    supportLevel: "premium",
-    marketPrice: "$2,800 - $5,500/month",
-    contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
+    integration: ["Docker", "Helm", "Prometheus", "Grafana", "Jenkins"],
+    support: ["24/7 support", "Documentation", "Training"],
+    link: "https://ziontechgroup.com/kubernetes",
+    rating: 4.6,
+    reviewCount: 223,
+    aiScore: 79,
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
     }
   },
   {
@@ -1177,13 +1245,17 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
       "Enterprise organizations"
     ],
     tags: ["Serverless", "API Development", "Cloud Architecture", "Cost Optimization", "Auto-scaling"],
-    estimatedDelivery: "3-6 weeks",
-    supportLevel: "standard",
-    marketPrice: "$2,200 - $4,500/month",
-    contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
+    integration: ["AWS Lambda", "API Gateway", "DynamoDB", "CloudWatch", "S3"],
+    support: ["24/7 support", "Documentation", "Training"],
+    link: "https://ziontechgroup.com/serverless",
+    rating: 4.5,
+    reviewCount: 178,
+    aiScore: 75,
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
     }
   },
   // New Micro SAAS Services
@@ -1231,13 +1303,17 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
       "Customer service teams"
     ],
     tags: ["Workflow Automation", "Process Optimization", "Business Efficiency", "Integration", "Productivity"],
-    estimatedDelivery: "2-4 weeks",
-    supportLevel: "standard",
-    marketPrice: "$1,200 - $2,500/month",
-    contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
+    integration: ["Slack", "Microsoft Teams", "Zapier", "Salesforce", "HubSpot"],
+    support: ["24/7 support", "Documentation", "Training"],
+    link: "https://ziontechgroup.com/workflow-automation",
+    rating: 4.4,
+    reviewCount: 156,
+    aiScore: 71,
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
     }
   },
   {
@@ -1284,13 +1360,17 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
       "Consulting firms"
     ],
     tags: ["Data Visualization", "Business Intelligence", "Dashboards", "Analytics", "Reporting"],
-    estimatedDelivery: "3-5 weeks",
-    supportLevel: "standard",
-    marketPrice: "$1,500 - $3,000/month",
-    contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
+    integration: ["Power BI", "Tableau", "Python", "R", "SQL databases"],
+    support: ["24/7 support", "Documentation", "Training"],
+    link: "https://ziontechgroup.com/data-visualization",
+    rating: 4.6,
+    reviewCount: 234,
+    aiScore: 78,
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
     }
   },
   // New Specialized IT Services
@@ -1338,13 +1418,17 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
       "Retail businesses"
     ],
     tags: ["Edge Computing", "IoT", "Real-time Processing", "Smart Infrastructure", "Industrial IoT"],
-    estimatedDelivery: "6-10 weeks",
-    supportLevel: "enterprise",
-    marketPrice: "$3,800 - $7,500/month",
-    contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
+    integration: ["IoT devices", "Cloud platforms", "Analytics tools", "Mobile apps", "Industrial systems"],
+    support: ["24/7 support", "Documentation", "Training"],
+    link: "https://ziontechgroup.com/edge-computing",
+    rating: 4.3,
+    reviewCount: 89,
+    aiScore: 74,
+    image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
     }
   },
   {
@@ -1392,13 +1476,17 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
       "Academic institutions"
     ],
     tags: ["Quantum Computing", "Quantum Algorithms", "Quantum-Safe Crypto", "Research", "Innovation"],
-    estimatedDelivery: "12-24 weeks",
-    supportLevel: "enterprise",
-    marketPrice: "$15,000 - $50,000",
-    contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
+    integration: ["Quantum simulators", "Classical computing platforms", "Research tools", "Security frameworks"],
+    support: ["24/7 support", "Documentation", "Training"],
+    link: "https://ziontechgroup.com/quantum-computing",
+    rating: 4.2,
+    reviewCount: 45,
+    aiScore: 68,
+    image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
     }
   },
   // New Blockchain & Fintech Services
@@ -1407,10 +1495,12 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
     title: "DeFi Platform Development",
     description: "Complete decentralized finance platform development including smart contracts, liquidity pools, yield farming, and cross-chain interoperability solutions.",
     category: "Blockchain",
-    subcategory: "DeFi",
-    price: 25000,
-    currency: "$",
-    pricingModel: "per-project",
+    price: {
+      monthly: 0,
+      yearly: 0,
+      oneTime: 25000,
+      currency: "$"
+    },
     features: [
       "Smart contract development and auditing",
       "Liquidity pool implementation",
@@ -1445,13 +1535,17 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
       "Traditional finance companies"
     ],
     tags: ["DeFi", "Smart Contracts", "Blockchain", "Cryptocurrency", "Fintech"],
-    estimatedDelivery: "16-24 weeks",
-    supportLevel: "enterprise",
-    marketPrice: "$25,000 - $100,000",
-    contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
+    integration: ["Ethereum", "Solidity", "Web3.js", "MetaMask", "IPFS"],
+    support: ["24/7 support", "Documentation", "Training"],
+    link: "https://ziontechgroup.com/defi-platform",
+    rating: 4.4,
+    reviewCount: 78,
+    aiScore: 72,
+    image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
     }
   },
   {
@@ -1459,10 +1553,12 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
     title: "NFT Marketplace & Metaverse Platform",
     description: "Complete NFT marketplace development with metaverse integration, virtual real estate, digital art trading, and blockchain-based gaming solutions.",
     category: "Blockchain",
-    subcategory: "NFT & Metaverse",
-    price: 18000,
-    currency: "$",
-    pricingModel: "per-project",
+    price: {
+      monthly: 0,
+      yearly: 0,
+      oneTime: 18000,
+      currency: "$"
+    },
     features: [
       "NFT minting and trading platform",
       "Metaverse virtual world",
@@ -1497,13 +1593,17 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
       "Creative agencies"
     ],
     tags: ["NFT", "Metaverse", "Blockchain", "Virtual Reality", "Digital Art"],
-    estimatedDelivery: "12-20 weeks",
-    supportLevel: "premium",
-    marketPrice: "$18,000 - $75,000",
-    contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
+    integration: ["Ethereum", "Polygon", "VR platforms", "Gaming engines", "Digital wallets"],
+    support: ["24/7 support", "Documentation", "Training"],
+    link: "https://ziontechgroup.com/nft-marketplace",
+    rating: 4.3,
+    reviewCount: 67,
+    aiScore: 69,
+    image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
     }
   },
   // New Web & Mobile Development Services
@@ -1552,13 +1652,17 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
       "Enterprise organizations"
     ],
     tags: ["PWA", "Web Development", "Mobile-First", "Offline Support", "Cross-Platform"],
-    estimatedDelivery: "6-10 weeks",
-    supportLevel: "standard",
-    marketPrice: "$8,500 - $25,000",
-    contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
+    integration: ["React", "Vue.js", "Angular", "Service Workers", "Web APIs"],
+    support: ["24/7 support", "Documentation", "Training"],
+    link: "https://ziontechgroup.com/progressive-web-app",
+    rating: 4.5,
+    reviewCount: 189,
+    aiScore: 76,
+    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
     }
   },
   {
@@ -1606,13 +1710,17 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
       "Startups and scale-ups"
     ],
     tags: ["Mobile Development", "AI Integration", "Machine Learning", "Personalization", "Predictive Analytics"],
-    estimatedDelivery: "8-16 weeks",
-    supportLevel: "premium",
-    marketPrice: "$12,000 - $40,000",
-    contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
+    integration: ["React Native", "Flutter", "TensorFlow", "Core ML", "Firebase"],
+    support: ["24/7 support", "Documentation", "Training"],
+    link: "https://ziontechgroup.com/ai-mobile-app",
+    rating: 4.6,
+    reviewCount: 234,
+    aiScore: 83,
+    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
     }
   },
   // New Digital Marketing & Analytics Services
@@ -1660,13 +1768,17 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
       "Service-based companies"
     ],
     tags: ["Marketing Automation", "AI Marketing", "Campaign Optimization", "Personalization", "ROI Optimization"],
-    estimatedDelivery: "4-8 weeks",
-    supportLevel: "premium",
-    marketPrice: "$2,800 - $5,500/month",
-    contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
+    integration: ["HubSpot", "Mailchimp", "Google Analytics", "Facebook Ads", "LinkedIn Ads"],
+    support: ["24/7 support", "Documentation", "Training"],
+    link: "https://ziontechgroup.com/ai-marketing-automation",
+    rating: 4.7,
+    reviewCount: 345,
+    aiScore: 86,
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
     }
   },
   {
@@ -1713,13 +1825,17 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
       "Consulting firms"
     ],
     tags: ["Predictive Analytics", "Business Intelligence", "Data Science", "Forecasting", "Machine Learning"],
-    estimatedDelivery: "6-10 weeks",
-    supportLevel: "enterprise",
-    marketPrice: "$4,500 - $8,500/month",
-    contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
+    integration: ["Python", "R", "TensorFlow", "PyTorch", "SQL databases"],
+    support: ["24/7 support", "Documentation", "Training"],
+    link: "https://ziontechgroup.com/predictive-analytics",
+    rating: 4.8,
+    reviewCount: 267,
+    aiScore: 89,
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
     }
   },
   // Final Specialized Services
@@ -1767,13 +1883,17 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
       "Technology companies"
     ],
     tags: ["Green IT", "Sustainability", "Energy Efficiency", "Environmental Impact", "Corporate Responsibility"],
-    estimatedDelivery: "8-16 weeks",
-    supportLevel: "premium",
-    marketPrice: "$3,200 - $6,500/month",
-    contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
+    integration: ["Energy monitoring systems", "Cloud platforms", "IoT devices", "Analytics tools"],
+    support: ["24/7 support", "Documentation", "Training"],
+    link: "https://ziontechgroup.com/green-it",
+    rating: 4.5,
+    reviewCount: 123,
+    aiScore: 77,
+    image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
     }
   },
   {
@@ -1820,13 +1940,17 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
       "Real estate companies"
     ],
     tags: ["Digital Twin", "IoT", "Simulation", "Predictive Maintenance", "3D Modeling"],
-    estimatedDelivery: "12-20 weeks",
-    supportLevel: "enterprise",
-    marketPrice: "$5,500 - $12,000/month",
-    contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
+    integration: ["IoT sensors", "3D modeling tools", "Simulation platforms", "Analytics tools", "Cloud platforms"],
+    support: ["24/7 support", "Documentation", "Training"],
+    link: "https://ziontechgroup.com/digital-twin",
+    rating: 4.4,
+    reviewCount: 89,
+    aiScore: 75,
+    image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
     }
   }
 ];
@@ -1875,27 +1999,6 @@ export const SERVICE_CATEGORIES = [
     color: "from-indigo-500 to-purple-600"
   },
   {
-    name: "Mobile Development",
-    description: "Create native-quality mobile applications for your business",
-    services: COMPREHENSIVE_SERVICES.filter(s => s.category === "Mobile Development"),
-    icon: "📱",
-    color: "from-teal-500 to-blue-600"
-  },
-  {
-    name: "IT Consulting",
-    description: "Ensure smooth IT operations with strategic consulting services",
-    services: COMPREHENSIVE_SERVICES.filter(s => s.category === "IT Consulting"),
-    icon: "👔",
-    color: "from-gray-500 to-slate-600"
-  },
-  {
-    name: "Software Testing",
-    description: "Ensure reliable and high-quality software delivery with comprehensive testing services",
-    services: COMPREHENSIVE_SERVICES.filter(s => s.category === "Software Testing"),
-    icon: "⚙️",
-    color: "from-yellow-500 to-amber-600"
-  },
-  {
     name: "Blockchain",
     description: "Leverage decentralized technologies for innovation and transparency",
     services: COMPREHENSIVE_SERVICES.filter(s => s.category === "Blockchain"),
@@ -1903,17 +2006,24 @@ export const SERVICE_CATEGORIES = [
     color: "from-yellow-500 to-amber-600"
   },
   {
-    name: "IoT Solutions",
+    name: "IoT",
     description: "Connect and manage devices with advanced IoT platforms",
-    services: COMPREHENSIVE_SERVICES.filter(s => s.category === "IoT Solutions"),
+    services: COMPREHENSIVE_SERVICES.filter(s => s.category === "IoT"),
     icon: "🌐",
     color: "from-green-500 to-emerald-600"
   },
   {
-    name: "Digital Marketing",
-    description: "Optimize your digital marketing efforts with AI-powered automation",
-    services: COMPREHENSIVE_SERVICES.filter(s => s.category === "Digital Marketing"),
-    icon: "📈",
+    name: "Automation",
+    description: "Streamline operations with intelligent automation solutions",
+    services: COMPREHENSIVE_SERVICES.filter(s => s.category === "Automation"),
+    icon: "⚡",
+    color: "from-orange-500 to-red-600"
+  },
+  {
+    name: "Micro SAAS",
+    description: "Scalable software solutions for modern businesses",
+    services: COMPREHENSIVE_SERVICES.filter(s => s.category === "Micro SAAS"),
+    icon: "🚀",
     color: "from-purple-500 to-indigo-600"
   }
 ];

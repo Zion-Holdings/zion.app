@@ -15,26 +15,10 @@ body {
   min-height: 100vh;
 }
 
-<<<<<<< HEAD
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
-=======
-/* Basic utility classes */
-.loading-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.8);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-  color: white;
-  font-size: 1.2rem;
->>>>>>> 2d0a9714a42cb6b8a431feb1f9dc2a642983276c
+}
 }
 
 ::-webkit-scrollbar-track {
@@ -104,7 +88,6 @@ html {
   50% { transform: translateY(-10px); }
 }
 
-<<<<<<< HEAD
   .dark {
     --background: 0 0% 7%;
     --foreground: 142 71% 45%;
@@ -785,15 +768,7 @@ html {
       opacity: 1;
     }
   }
-=======
-.h-12 {
-  height: 3rem;
-}
 
-.w-12 {
-  width: 3rem;
-}
->>>>>>> 2d0a9714a42cb6b8a431feb1f9dc2a642983276c
 
   @keyframes dash {
     to {
@@ -801,7 +776,6 @@ html {
     }
   }
 
-<<<<<<< HEAD
   @keyframes matrix-rain {
     0% {
       transform: translateY(-100vh);
@@ -812,11 +786,7 @@ html {
       opacity: 0;
     }
   }
-=======
-.border-white {
-  border-color: white;
-}
->>>>>>> 2d0a9714a42cb6b8a431feb1f9dc2a642983276c
+
 
   @keyframes holographic-shift {
     0%, 100% {
@@ -1121,11 +1091,7 @@ html {
   /* Smooth scrolling */
   html {
     scroll-behavior: smooth;
-=======
-.text-lg {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-}
+
 
 .text-center {
   text-align: center;
@@ -1135,20 +1101,12 @@ html {
 @media (max-width: 768px) {
   .mobile-hidden {
     display: none;
->>>>>>> 2d0a9714a42cb6b8a431feb1f9dc2a642983276c
-  }
+}
 
-<<<<<<< HEAD
-  /* Selection styling */
-  ::selection {
-    background: theme('colors["zion-cyan"].DEFAULT');
-    color: theme('colors["zion-slate"].dark);
-=======
-@media (min-width: 769px) {
-  .desktop-hidden {
-    display: none;
->>>>>>> 2d0a9714a42cb6b8a431feb1f9dc2a642983276c
-  }
+/* Selection styling */
+::selection {
+  background: theme('colors["zion-cyan"].DEFAULT');
+  color: theme('colors["zion-slate"].dark');
 }
 
 /* Responsive utilities */
@@ -1156,22 +1114,20 @@ html {
   @apply container mx-auto px-4 sm:px-6 lg:px-8;
 }
 
-<<<<<<< HEAD
-  /* LiveKit UI overrides */
-  [data-lk-theme='default'] {
-    --lk-color-accent: #06B6D4;
-    --lk-button-background: #06B6D4;
-    --lk-button-background-hover: #0891B2;
-    --lk-bg1: #0B1120;
-    --lk-bg2: #0F172A;
-  }
-=======
+/* LiveKit UI overrides */
+[data-lk-theme='default'] {
+  --lk-color-accent: #06B6D4;
+  --lk-button-background: #06B6D4;
+  --lk-button-background-hover: #0891B2;
+  --lk-bg1: #0B1120;
+  --lk-bg2: #0F172A;
+}
+
 /* Enhanced focus states */
 .focus-neon:focus {
   outline: none;
   box-shadow: 0 0 0 3px rgba(34, 221, 210, 0.3), 0 0 20px rgba(34, 221, 210, 0.2);
 }
->>>>>>> 2d0a9714a42cb6b8a431feb1f9dc2a642983276c
 
 /* Loading animations */
 .loading-dots {
@@ -1249,16 +1205,7 @@ html {
   @apply text-sm sm:text-base lg:text-lg;
 }
 
-<<<<<<< HEAD
-  /* Responsive text */
-  .text-responsive {
-    @apply text-sm sm:text-base lg:text-lg;
-  }
 
-  .heading-responsive {
-    @apply text-2xl sm:text-3xl lg:text-4xl xl:text-5xl;
-  }
-}
 
 /* Zion-specific custom properties */
 :root {
@@ -1398,10 +1345,5 @@ html {
   a {
     color: black !important;
     text-decoration: underline !important;
-
-
-=======
-.heading-responsive {
-  @apply text-2xl sm:text-3xl lg:text-4xl xl:text-5xl;
+  }
 }
->>>>>>> 2d0a9714a42cb6b8a431feb1f9dc2a642983276c
