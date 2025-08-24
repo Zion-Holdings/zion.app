@@ -1,7 +1,7 @@
-import React, { useState, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { COMPREHENSIVE_SERVICES } from '../data/comprehensiveServices';
-import { Search, Filter, Star, Clock, Users, Shield, Zap, Brain, Globe, Code, Database, Cloud, Lock, BarChart3, Rocket, Target, TrendingUp, Award, CheckCircle, ArrowRight, Phone, Mail } from 'lucide-react';
+import { Search, Clock, Users, Shield, Zap, Brain, Globe, Code, Database, Cloud, Rocket, CheckCircle, Phone, Mail } from 'lucide-react';
 
 export default function Services() {
   const [searchTerm, setSearchTerm] = useState('');
