@@ -1,3 +1,5 @@
+import { ProductListing } from "@/types/listings";
+
 export interface ServiceCategory {
   id: string;
   name: string;
@@ -6,882 +8,698 @@ export interface ServiceCategory {
   color: string;
 }
 
-export interface MicroService {
-  id: string;
-  title: string;
-  description: string;
-  category: string;
-  subcategory: string;
-  price: number;
-  currency: string;
-  pricingModel: 'one-time' | 'monthly' | 'hourly' | 'project-based';
-  features: string[];
-  benefits: string[];
-  marketPrice: string;
-  deliveryTime: string;
-  tags: string[];
-  author: {
-    name: string;
-    id: string;
-    avatarUrl?: string;
-    verified: boolean;
-  };
-  images: string[];
-  rating: number;
-  reviewCount: number;
-  aiScore: number;
-  featured: boolean;
-  popular: boolean;
-  contactInfo: {
-    email: string;
-    phone: string;
-    website: string;
-  };
-}
-
 export const SERVICE_CATEGORIES: ServiceCategory[] = [
   {
-    id: 'ai-services',
-    name: 'AI & Machine Learning',
-    description: 'Cutting-edge AI solutions and machine learning services',
-    icon: '🤖',
-    color: 'from-purple-500 to-indigo-600'
+    id: "ai-services",
+    name: "AI & Machine Learning",
+    description: "Cutting-edge artificial intelligence and machine learning solutions",
+    icon: "🤖",
+    color: "from-purple-500 to-indigo-600"
   },
   {
-    id: 'cybersecurity',
-    name: 'Cybersecurity',
-    description: 'Comprehensive security solutions and protection services',
-    icon: '🔒',
-    color: 'from-red-500 to-pink-600'
+    id: "it-services",
+    name: "IT & Infrastructure",
+    description: "Comprehensive IT support and infrastructure management",
+    icon: "💻",
+    color: "from-blue-500 to-cyan-600"
   },
   {
-    id: 'cloud-services',
-    name: 'Cloud & DevOps',
-    description: 'Cloud infrastructure, migration, and DevOps automation',
-    icon: '☁️',
-    color: 'from-blue-500 to-cyan-600'
+    id: "cloud-services",
+    name: "Cloud & DevOps",
+    description: "Cloud migration, management, and DevOps automation",
+    icon: "☁️",
+    color: "from-cyan-500 to-teal-600"
   },
   {
-    id: 'data-analytics',
-    name: 'Data & Analytics',
-    description: 'Data engineering, analytics, and business intelligence',
-    icon: '📊',
-    color: 'from-green-500 to-emerald-600'
+    id: "cybersecurity",
+    name: "Cybersecurity",
+    description: "Advanced security solutions and threat protection",
+    icon: "🔒",
+    color: "from-red-500 to-pink-600"
   },
   {
-    id: 'web-development',
-    name: 'Web & Mobile Development',
-    description: 'Full-stack development and mobile app solutions',
-    icon: '💻',
-    color: 'from-orange-500 to-yellow-600'
+    id: "data-services",
+    name: "Data & Analytics",
+    description: "Data engineering, analytics, and business intelligence",
+    icon: "📊",
+    color: "from-green-500 to-emerald-600"
   },
   {
-    id: 'it-consulting',
-    name: 'IT Consulting',
-    description: 'Strategic IT consulting and digital transformation',
-    icon: '🎯',
-    color: 'from-teal-500 to-blue-600'
+    id: "web-development",
+    name: "Web & Mobile Development",
+    description: "Custom web and mobile application development",
+    icon: "🌐",
+    color: "from-orange-500 to-amber-600"
   },
   {
-    id: 'blockchain',
-    name: 'Blockchain & Web3',
-    description: 'Blockchain development and Web3 solutions',
-    icon: '⛓️',
-    color: 'from-indigo-500 to-purple-600'
+    id: "business-solutions",
+    name: "Business Solutions",
+    description: "Digital transformation and business process optimization",
+    icon: "💼",
+    color: "from-indigo-500 to-purple-600"
   },
   {
-    id: 'automation',
-    name: 'Process Automation',
-    description: 'Business process automation and RPA solutions',
-    icon: '⚡',
-    color: 'from-yellow-500 to-orange-600'
+    id: "consulting",
+    name: "IT Consulting",
+    description: "Strategic technology consulting and advisory services",
+    icon: "🎯",
+    color: "from-teal-500 to-green-600"
   }
 ];
 
-export const MICRO_SERVICES: MicroService[] = [
+export const COMPREHENSIVE_SERVICES: ProductListing[] = [
   // AI & Machine Learning Services
   {
-    id: 'ai-chatbot-development',
-    title: 'AI Chatbot Development & Integration',
-    description: 'Custom AI-powered chatbots for customer service, sales, and support with natural language processing capabilities.',
-    category: 'ai-services',
-    subcategory: 'Chatbots',
-    price: 2500,
-    currency: 'USD',
-    pricingModel: 'project-based',
-    features: [
-      'Custom chatbot design and development',
-      'Natural language processing integration',
-      'Multi-platform deployment (web, mobile, social)',
-      'Analytics and performance tracking',
-      '24/7 customer support integration',
-      'Custom training on your business data'
-    ],
-    benefits: [
-      'Reduce customer service costs by 30-50%',
-      'Improve response time from hours to seconds',
-      'Handle multiple customer inquiries simultaneously',
-      'Scalable solution that grows with your business',
-      '24/7 availability without additional staff costs'
-    ],
-    marketPrice: '$2,000 - $8,000',
-    deliveryTime: '2-4 weeks',
-    tags: ['AI Chatbot', 'NLP', 'Customer Service', 'Automation', 'Integration'],
+    id: "ai-chatbot-development",
+    title: "Custom AI Chatbot Development",
+    description: "Intelligent chatbot solutions powered by GPT-4, Claude, or custom models. Includes natural language processing, multi-language support, and seamless integration with your existing systems. Perfect for customer service, sales, and internal operations.",
+    category: "AI & Machine Learning",
+    subcategory: "Chatbots",
+    price: 2999,
+    currency: "$",
+    tags: ["AI Chatbot", "GPT-4", "Customer Service", "NLP", "Integration"],
     author: {
-      name: 'Zion AI Solutions',
-      id: 'zion-ai-solutions',
-      verified: true
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      email: "kleber@ziontechgroup.com",
+      avatarUrl: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=100&h=100",
     },
-    images: ['https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&auto=format'],
+    images: ["https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&h=500"],
+    createdAt: "2024-01-15T10:00:00.000Z",
     rating: 4.9,
-    reviewCount: 156,
+    reviewCount: 47,
     aiScore: 95,
-    featured: true,
-    popular: true,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    location: "Global",
+    availability: "2-3 weeks"
   },
   {
-    id: 'ai-content-generation',
-    title: 'AI Content Generation & Marketing',
-    description: 'AI-powered content creation for blogs, social media, marketing materials, and product descriptions.',
-    category: 'ai-services',
-    subcategory: 'Content Creation',
-    price: 1500,
-    currency: 'USD',
-    pricingModel: 'monthly',
-    features: [
-      'AI-powered blog post generation',
-      'Social media content creation',
-      'Product description optimization',
-      'SEO-optimized content',
-      'Brand voice consistency',
-      'Content calendar management'
-    ],
-    benefits: [
-      'Generate 10x more content in less time',
-      'Improve SEO rankings with optimized content',
-      'Maintain consistent brand voice across all channels',
-      'Reduce content creation costs by 60%',
-      'Scale content marketing efforts efficiently'
-    ],
-    marketPrice: '$1,200 - $3,000/month',
-    deliveryTime: '1-2 weeks setup',
-    tags: ['Content Creation', 'AI Writing', 'Marketing', 'SEO', 'Social Media'],
+    id: "ai-content-generation",
+    title: "AI Content Generation Suite",
+    description: "Complete AI-powered content creation platform for blogs, social media, marketing materials, and technical documentation. Features multiple AI models, content optimization, SEO integration, and multi-language support. Includes API access and white-label options.",
+    category: "AI & Machine Learning",
+    subcategory: "Content Creation",
+    price: 1499,
+    currency: "$",
+    tags: ["Content Generation", "AI Writing", "SEO", "Marketing", "Multi-language"],
     author: {
-      name: 'Zion Content AI',
-      id: 'zion-content-ai',
-      verified: true
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      email: "kleber@ziontechgroup.com",
+      avatarUrl: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=100&h=100",
     },
-    images: ['https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&auto=format'],
+    images: ["https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=800&h=500"],
+    createdAt: "2024-01-20T14:30:00.000Z",
     rating: 4.8,
     reviewCount: 89,
     aiScore: 92,
-    featured: true,
-    popular: false,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    location: "Global",
+    availability: "Immediate"
   },
   {
-    id: 'ai-data-analysis',
-    title: 'AI-Powered Data Analysis & Insights',
-    description: 'Advanced data analytics using machine learning to uncover hidden patterns and provide actionable business insights.',
-    category: 'ai-services',
-    subcategory: 'Data Analytics',
-    price: 3500,
-    currency: 'USD',
-    pricingModel: 'project-based',
-    features: [
-      'Predictive analytics modeling',
-      'Customer behavior analysis',
-      'Sales forecasting and trend analysis',
-      'Custom dashboard creation',
-      'Real-time data monitoring',
-      'Automated reporting systems'
-    ],
-    benefits: [
-      'Make data-driven decisions with confidence',
-      'Identify new business opportunities',
-      'Optimize operations and reduce costs',
-      'Improve customer retention rates',
-      'Stay ahead of market trends'
-    ],
-    marketPrice: '$3,000 - $10,000',
-    deliveryTime: '3-5 weeks',
-    tags: ['Data Analytics', 'Machine Learning', 'Business Intelligence', 'Predictive Analytics', 'Reporting'],
+    id: "machine-learning-models",
+    title: "Custom Machine Learning Model Development",
+    description: "End-to-end development of custom ML models for predictive analytics, image recognition, natural language processing, and more. Includes data preparation, model training, deployment, and ongoing monitoring. Perfect for businesses looking to leverage their data for competitive advantage.",
+    category: "AI & Machine Learning",
+    subcategory: "Model Development",
+    price: 7999,
+    currency: "$",
+    tags: ["Machine Learning", "Custom Models", "Predictive Analytics", "Data Science", "Deployment"],
     author: {
-      name: 'Zion Data Intelligence',
-      id: 'zion-data-intelligence',
-      verified: true
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      email: "kleber@ziontechgroup.com",
+      avatarUrl: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=100&h=100",
     },
-    images: ['https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format'],
+    images: ["https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=800&h=500"],
+    createdAt: "2024-02-01T09:15:00.000Z",
     rating: 4.9,
-    reviewCount: 203,
+    reviewCount: 34,
     aiScore: 96,
-    featured: true,
-    popular: true,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    location: "Global",
+    availability: "4-6 weeks"
+  },
+  {
+    id: "ai-automation-workflows",
+    title: "AI-Powered Workflow Automation",
+    description: "Intelligent automation solutions that streamline business processes using AI. Automate repetitive tasks, document processing, data entry, and decision-making workflows. Includes process analysis, implementation, and optimization services.",
+    category: "AI & Machine Learning",
+    subcategory: "Automation",
+    price: 4499,
+    currency: "$",
+    tags: ["Workflow Automation", "Process Optimization", "AI Integration", "Business Efficiency", "RPA"],
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      email: "kleber@ziontechgroup.com",
+      avatarUrl: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=100&h=100",
+    },
+    images: ["https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&h=500"],
+    createdAt: "2024-01-25T11:45:00.000Z",
+    rating: 4.7,
+    reviewCount: 56,
+    aiScore: 89,
+    location: "Global",
+    availability: "3-4 weeks"
   },
 
-  // Cybersecurity Services
+  // IT & Infrastructure Services
   {
-    id: 'cyber-security-audit',
-    title: 'Comprehensive Cybersecurity Audit & Assessment',
-    description: 'Full security assessment including penetration testing, vulnerability scanning, and compliance review.',
-    category: 'cybersecurity',
-    subcategory: 'Security Audit',
-    price: 4500,
-    currency: 'USD',
-    pricingModel: 'project-based',
-    features: [
-      'Penetration testing (external & internal)',
-      'Vulnerability assessment',
-      'Security policy review',
-      'Compliance audit (SOC2, ISO27001, GDPR)',
-      'Security awareness training',
-      'Detailed remediation roadmap'
-    ],
-    benefits: [
-      'Identify and fix security vulnerabilities',
-      'Meet compliance requirements',
-      'Protect customer data and trust',
-      'Reduce risk of data breaches',
-      'Improve security posture'
-    ],
-    marketPrice: '$4,000 - $15,000',
-    deliveryTime: '2-3 weeks',
-    tags: ['Cybersecurity', 'Penetration Testing', 'Compliance', 'Security Audit', 'Vulnerability Assessment'],
+    id: "it-infrastructure-audit",
+    title: "IT Infrastructure Assessment & Audit",
+    description: "Comprehensive evaluation of your current IT infrastructure, identifying bottlenecks, security vulnerabilities, and optimization opportunities. Includes detailed reporting, recommendations, and implementation roadmap. Essential for businesses planning digital transformation.",
+    category: "IT & Infrastructure",
+    subcategory: "Assessment",
+    price: 2499,
+    currency: "$",
+    tags: ["Infrastructure Audit", "IT Assessment", "Security Review", "Optimization", "Digital Transformation"],
     author: {
-      name: 'Zion Cyber Security',
-      id: 'zion-cyber-security',
-      verified: true
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      email: "kleber@ziontechgroup.com",
+      avatarUrl: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=100&h=100",
     },
-    images: ['https://images.unsplash.com/photo-1510511459019-5dda7724fd87?w=800&auto=format'],
-    rating: 4.9,
-    reviewCount: 178,
-    aiScore: 94,
-    featured: true,
-    popular: true,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    images: ["https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&h=500"],
+    createdAt: "2024-01-10T08:00:00.000Z",
+    rating: 4.8,
+    reviewCount: 67,
+    aiScore: 87,
+    location: "Global",
+    availability: "1-2 weeks"
   },
   {
-    id: 'incident-response',
-    title: '24/7 Incident Response & Threat Hunting',
-    description: 'Round-the-clock security monitoring, threat detection, and incident response services.',
-    category: 'cybersecurity',
-    subcategory: 'Incident Response',
-    price: 2500,
-    currency: 'USD',
-    pricingModel: 'monthly',
-    features: [
-      '24/7 security monitoring',
-      'Real-time threat detection',
-      'Incident response team',
-      'Forensic analysis',
-      'Threat intelligence feeds',
-      'Monthly security reports'
-    ],
-    benefits: [
-      'Immediate response to security incidents',
-      'Reduce downtime and data loss',
-      'Professional incident handling',
-      'Compliance with security regulations',
-      'Peace of mind with 24/7 protection'
-    ],
-    marketPrice: '$2,000 - $8,000/month',
-    deliveryTime: 'Immediate activation',
-    tags: ['Incident Response', 'Threat Hunting', 'Security Monitoring', '24/7 Support', 'Forensics'],
+    id: "network-security-setup",
+    title: "Network Security Implementation",
+    description: "Complete network security setup including firewalls, VPNs, intrusion detection systems, and security monitoring. Features advanced threat protection, 24/7 monitoring, and compliance with industry standards. Includes staff training and documentation.",
+    category: "IT & Infrastructure",
+    subcategory: "Security",
+    price: 5999,
+    currency: "$",
+    tags: ["Network Security", "Firewall", "VPN", "Threat Protection", "Compliance"],
     author: {
-      name: 'Zion Security Operations',
-      id: 'zion-security-ops',
-      verified: true
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      email: "kleber@ziontechgroup.com",
+      avatarUrl: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=100&h=100",
     },
-    images: ['https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&auto=format'],
-    rating: 4.8,
-    reviewCount: 134,
+    images: ["https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=800&h=500"],
+    createdAt: "2024-01-18T13:20:00.000Z",
+    rating: 4.9,
+    reviewCount: 42,
     aiScore: 91,
-    featured: false,
-    popular: true,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    location: "Global",
+    availability: "2-3 weeks"
+  },
+  {
+    id: "hardware-procurement",
+    title: "IT Hardware Procurement & Setup",
+    description: "End-to-end hardware procurement service including needs assessment, vendor selection, purchasing, installation, and configuration. Covers workstations, servers, networking equipment, and peripherals. Includes warranty management and support setup.",
+    category: "IT & Infrastructure",
+    subcategory: "Hardware",
+    price: 1999,
+    currency: "$",
+    tags: ["Hardware Procurement", "Vendor Management", "Installation", "Configuration", "Support"],
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      email: "kleber@ziontechgroup.com",
+      avatarUrl: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=100&h=100",
+    },
+    images: ["https://images.unsplash.com/photo-1547082299-de196ea013d6?auto=format&fit=crop&w=800&h=500"],
+    createdAt: "2024-01-22T15:10:00.000Z",
+    rating: 4.7,
+    reviewCount: 38,
+    aiScore: 84,
+    location: "Global",
+    availability: "1-3 weeks"
   },
 
   // Cloud & DevOps Services
   {
-    id: 'cloud-migration',
-    title: 'Cloud Migration & Infrastructure Setup',
-    description: 'Complete cloud migration services including AWS, Azure, and Google Cloud with optimization and cost management.',
-    category: 'cloud-services',
-    subcategory: 'Cloud Migration',
-    price: 8000,
-    currency: 'USD',
-    pricingModel: 'project-based',
-    features: [
-      'Multi-cloud strategy planning',
-      'Application migration and testing',
-      'Data migration and backup',
-      'Performance optimization',
-      'Cost optimization and monitoring',
-      'Security and compliance setup'
-    ],
-    benefits: [
-      'Reduce infrastructure costs by 30-50%',
-      'Improve scalability and performance',
-      'Enhanced disaster recovery',
-      'Access to latest cloud technologies',
-      'Professional migration expertise'
-    ],
-    marketPrice: '$5,000 - $25,000',
-    deliveryTime: '4-8 weeks',
-    tags: ['Cloud Migration', 'AWS', 'Azure', 'Google Cloud', 'Infrastructure', 'DevOps'],
+    id: "cloud-migration-strategy",
+    title: "Cloud Migration Strategy & Implementation",
+    description: "Comprehensive cloud migration service covering strategy development, infrastructure design, data migration, and application deployment. Supports AWS, Azure, and Google Cloud. Includes cost optimization, security implementation, and performance monitoring.",
+    category: "Cloud & DevOps",
+    subcategory: "Migration",
+    price: 8999,
+    currency: "$",
+    tags: ["Cloud Migration", "AWS", "Azure", "GCP", "Cost Optimization"],
     author: {
-      name: 'Zion Cloud Solutions',
-      id: 'zion-cloud-solutions',
-      verified: true
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      email: "kleber@ziontechgroup.com",
+      avatarUrl: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=100&h=100",
     },
-    images: ['https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800&auto=format'],
+    images: ["https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&h=500"],
+    createdAt: "2024-01-12T10:30:00.000Z",
     rating: 4.9,
-    reviewCount: 267,
+    reviewCount: 73,
     aiScore: 93,
-    featured: true,
-    popular: true,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    location: "Global",
+    availability: "6-8 weeks"
   },
   {
-    id: 'devops-automation',
-    title: 'DevOps Automation & CI/CD Pipeline',
-    description: 'Complete DevOps automation including CI/CD pipelines, infrastructure as code, and monitoring setup.',
-    category: 'cloud-services',
-    subcategory: 'DevOps',
-    price: 4000,
-    currency: 'USD',
-    pricingModel: 'project-based',
-    features: [
-      'CI/CD pipeline setup (Jenkins, GitLab, GitHub Actions)',
-      'Infrastructure as Code (Terraform, CloudFormation)',
-      'Container orchestration (Kubernetes, Docker)',
-      'Monitoring and alerting setup',
-      'Automated testing integration',
-      'Deployment automation'
-    ],
-    benefits: [
-      'Reduce deployment time from days to minutes',
-      'Improve code quality and reliability',
-      'Automate repetitive tasks',
-      'Faster time to market',
-      'Better collaboration between teams'
-    ],
-    marketPrice: '$3,500 - $12,000',
-    deliveryTime: '3-4 weeks',
-    tags: ['DevOps', 'CI/CD', 'Automation', 'Kubernetes', 'Terraform', 'Monitoring'],
+    id: "devops-automation",
+    title: "DevOps Automation & CI/CD Pipeline",
+    description: "Complete DevOps automation setup including continuous integration, continuous deployment, automated testing, and infrastructure as code. Features Docker containerization, Kubernetes orchestration, and monitoring tools. Includes team training and best practices implementation.",
+    category: "Cloud & DevOps",
+    subcategory: "Automation",
+    price: 6499,
+    currency: "$",
+    tags: ["DevOps", "CI/CD", "Docker", "Kubernetes", "Automation"],
     author: {
-      name: 'Zion DevOps Team',
-      id: 'zion-devops-team',
-      verified: true
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      email: "kleber@ziontechgroup.com",
+      avatarUrl: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=100&h=100",
     },
-    images: ['https://images.unsplash.com/photo-1593642532973-d31b6557fa68?w=800&auto=format'],
+    images: ["https://images.unsplash.com/photo-1593642532973-d31b6557fa68?auto=format&fit=crop&w=800&h=500"],
+    createdAt: "2024-01-28T16:45:00.000Z",
     rating: 4.8,
-    reviewCount: 156,
+    reviewCount: 51,
+    aiScore: 90,
+    location: "Global",
+    availability: "4-5 weeks"
+  },
+  {
+    id: "cloud-cost-optimization",
+    title: "Cloud Cost Optimization & Management",
+    description: "Comprehensive cloud cost analysis and optimization service. Identifies cost-saving opportunities, implements resource scheduling, and provides ongoing monitoring and reporting. Includes rightsizing recommendations, reserved instance planning, and cost allocation strategies.",
+    category: "Cloud & DevOps",
+    subcategory: "Cost Management",
+    price: 3499,
+    currency: "$",
+    tags: ["Cost Optimization", "Resource Management", "Cloud Monitoring", "Cost Analysis", "Savings"],
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      email: "kleber@ziontechgroup.com",
+      avatarUrl: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=100&h=100",
+    },
+    images: ["https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&h=500"],
+    createdAt: "2024-02-05T12:15:00.000Z",
+    rating: 4.7,
+    reviewCount: 29,
+    aiScore: 88,
+    location: "Global",
+    availability: "2-3 weeks"
+  },
+
+  // Cybersecurity Services
+  {
+    id: "security-audit-assessment",
+    title: "Comprehensive Security Audit & Assessment",
+    description: "In-depth security evaluation including penetration testing, vulnerability assessment, compliance review, and risk analysis. Covers network, application, and physical security. Includes detailed reporting, remediation guidance, and ongoing security monitoring setup.",
+    category: "Cybersecurity",
+    subcategory: "Audit",
+    price: 7499,
+    currency: "$",
+    tags: ["Security Audit", "Penetration Testing", "Vulnerability Assessment", "Compliance", "Risk Analysis"],
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      email: "kleber@ziontechgroup.com",
+      avatarUrl: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=100&h=100",
+    },
+    images: ["https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=800&h=500"],
+    createdAt: "2024-01-15T09:00:00.000Z",
+    rating: 4.9,
+    reviewCount: 61,
+    aiScore: 94,
+    location: "Global",
+    availability: "3-4 weeks"
+  },
+  {
+    id: "incident-response-planning",
+    title: "Incident Response Planning & Training",
+    description: "Complete incident response program development including plan creation, team training, tabletop exercises, and ongoing maintenance. Features automated threat detection, response playbooks, and communication protocols. Essential for business continuity and compliance.",
+    category: "Cybersecurity",
+    subcategory: "Incident Response",
+    price: 5499,
+    currency: "$",
+    tags: ["Incident Response", "Security Training", "Threat Detection", "Business Continuity", "Compliance"],
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      email: "kleber@ziontechgroup.com",
+      avatarUrl: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=100&h=100",
+    },
+    images: ["https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?auto=format&fit=crop&w=800&h=500"],
+    createdAt: "2024-01-30T14:20:00.000Z",
+    rating: 4.8,
+    reviewCount: 35,
     aiScore: 89,
-    featured: false,
-    popular: true,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    location: "Global",
+    availability: "4-5 weeks"
+  },
+  {
+    id: "compliance-framework",
+    title: "Compliance Framework Implementation",
+    description: "Implementation of industry-standard compliance frameworks including SOC 2, ISO 27001, GDPR, HIPAA, and PCI DSS. Includes gap analysis, policy development, control implementation, and audit preparation. Ensures regulatory compliance and builds customer trust.",
+    category: "Cybersecurity",
+    subcategory: "Compliance",
+    price: 9999,
+    currency: "$",
+    tags: ["Compliance", "SOC 2", "ISO 27001", "GDPR", "HIPAA", "PCI DSS"],
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      email: "kleber@ziontechgroup.com",
+      avatarUrl: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=100&h=100",
+    },
+    images: ["https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&h=500"],
+    createdAt: "2024-02-01T11:30:00.000Z",
+    rating: 4.9,
+    reviewCount: 28,
+    aiScore: 92,
+    location: "Global",
+    availability: "8-12 weeks"
   },
 
   // Data & Analytics Services
   {
-    id: 'data-warehouse',
-    title: 'Data Warehouse Design & Implementation',
-    description: 'Enterprise data warehouse solutions with ETL processes, data modeling, and business intelligence integration.',
-    category: 'data-analytics',
-    subcategory: 'Data Engineering',
-    price: 12000,
-    currency: 'USD',
-    pricingModel: 'project-based',
-    features: [
-      'Data warehouse architecture design',
-      'ETL pipeline development',
-      'Data modeling and schema design',
-      'Business intelligence integration',
-      'Data quality and governance',
-      'Performance optimization'
-    ],
-    benefits: [
-      'Centralized data management',
-      'Improved data quality and consistency',
-      'Faster reporting and analytics',
-      'Better business decision making',
-      'Scalable data infrastructure'
-    ],
-    marketPrice: '$10,000 - $50,000',
-    deliveryTime: '6-10 weeks',
-    tags: ['Data Warehouse', 'ETL', 'Data Modeling', 'Business Intelligence', 'Data Engineering'],
+    id: "data-warehouse-design",
+    title: "Data Warehouse Design & Implementation",
+    description: "End-to-end data warehouse solution including architecture design, ETL pipeline development, data modeling, and analytics dashboard creation. Features real-time data processing, advanced analytics, and business intelligence tools. Perfect for data-driven decision making.",
+    category: "Data & Analytics",
+    subcategory: "Data Warehouse",
+    price: 12999,
+    currency: "$",
+    tags: ["Data Warehouse", "ETL", "Data Modeling", "Analytics", "Business Intelligence"],
     author: {
-      name: 'Zion Data Engineering',
-      id: 'zion-data-engineering',
-      verified: true
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      email: "kleber@ziontechgroup.com",
+      avatarUrl: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=100&h=100",
     },
-    images: ['https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format'],
+    images: ["https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&h=500"],
+    createdAt: "2024-01-20T13:45:00.000Z",
     rating: 4.9,
-    reviewCount: 89,
+    reviewCount: 44,
     aiScore: 95,
-    featured: true,
-    popular: false,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    location: "Global",
+    availability: "8-10 weeks"
   },
   {
-    id: 'business-intelligence',
-    title: 'Business Intelligence Dashboard Development',
-    description: 'Custom BI dashboards and reporting solutions using Power BI, Tableau, or custom web applications.',
-    category: 'data-analytics',
-    subcategory: 'Business Intelligence',
-    price: 3500,
-    currency: 'USD',
-    pricingModel: 'project-based',
-    features: [
-      'Custom dashboard design',
-      'Data visualization and charts',
-      'Interactive reports and filters',
-      'Real-time data integration',
-      'Mobile-responsive design',
-      'User access management'
-    ],
-    benefits: [
-      'Real-time business insights',
-      'Improved decision making',
-      'Better data visibility',
-      'Reduced reporting time',
-      'Enhanced user experience'
-    ],
-    marketPrice: '$3,000 - $15,000',
-    deliveryTime: '3-4 weeks',
-    tags: ['Business Intelligence', 'Dashboards', 'Data Visualization', 'Reporting', 'Analytics'],
+    id: "predictive-analytics",
+    title: "Predictive Analytics & Machine Learning",
+    description: "Advanced predictive analytics solutions using machine learning algorithms for forecasting, trend analysis, and pattern recognition. Includes data preparation, model development, validation, and deployment. Applications in sales forecasting, risk assessment, and operational optimization.",
+    category: "Data & Analytics",
+    subcategory: "Predictive Analytics",
+    price: 8999,
+    currency: "$",
+    tags: ["Predictive Analytics", "Machine Learning", "Forecasting", "Risk Assessment", "Pattern Recognition"],
     author: {
-      name: 'Zion BI Solutions',
-      id: 'zion-bi-solutions',
-      verified: true
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      email: "kleber@ziontechgroup.com",
+      avatarUrl: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=100&h=100",
     },
-    images: ['https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format'],
+    images: ["https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=800&h=500"],
+    createdAt: "2024-01-25T15:30:00.000Z",
+    rating: 4.8,
+    reviewCount: 52,
+    aiScore: 93,
+    location: "Global",
+    availability: "6-8 weeks"
+  },
+  {
+    id: "data-visualization",
+    title: "Interactive Data Visualization & Dashboards",
+    description: "Custom data visualization solutions including interactive dashboards, charts, and reports. Features real-time data updates, drill-down capabilities, and mobile-responsive design. Integrates with various data sources and provides actionable insights for stakeholders.",
+    category: "Data & Analytics",
+    subcategory: "Visualization",
+    price: 3999,
+    currency: "$",
+    tags: ["Data Visualization", "Interactive Dashboards", "Real-time", "Mobile-responsive", "Insights"],
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      email: "kleber@ziontechgroup.com",
+      avatarUrl: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=100&h=100",
+    },
+    images: ["https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&h=500"],
+    createdAt: "2024-02-03T10:15:00.000Z",
     rating: 4.7,
-    reviewCount: 112,
-    aiScore: 88,
-    featured: false,
-    popular: true,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    reviewCount: 38,
+    aiScore: 87,
+    location: "Global",
+    availability: "3-4 weeks"
   },
 
-  // Web & Mobile Development
+  // Web & Mobile Development Services
   {
-    id: 'fullstack-development',
-    title: 'Full-Stack Web Application Development',
-    description: 'Complete web application development using modern technologies like React, Node.js, and cloud deployment.',
-    category: 'web-development',
-    subcategory: 'Web Development',
-    price: 15000,
-    currency: 'USD',
-    pricingModel: 'project-based',
-    features: [
-      'Custom web application development',
-      'Responsive design and UI/UX',
-      'Backend API development',
-      'Database design and integration',
-      'Cloud deployment and hosting',
-      'Ongoing maintenance and support'
-    ],
-    benefits: [
-      'Custom solution tailored to your needs',
-      'Modern, scalable architecture',
-      'Professional user experience',
-      'SEO-optimized and fast loading',
-      'Mobile-responsive design'
-    ],
-    marketPrice: '$12,000 - $50,000',
-    deliveryTime: '8-12 weeks',
-    tags: ['Web Development', 'Full-Stack', 'React', 'Node.js', 'API Development', 'UI/UX'],
+    id: "custom-web-application",
+    title: "Custom Web Application Development",
+    description: "Full-stack web application development using modern technologies like React, Node.js, and cloud-native architecture. Includes responsive design, user experience optimization, and integration with existing systems. Features scalable architecture and performance optimization.",
+    category: "Web & Mobile Development",
+    subcategory: "Web Applications",
+    price: 15999,
+    currency: "$",
+    tags: ["Web Development", "React", "Node.js", "Full-stack", "Responsive Design"],
     author: {
-      name: 'Zion Web Development',
-      id: 'zion-web-development',
-      verified: true
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      email: "kleber@ziontechgroup.com",
+      avatarUrl: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=100&h=100",
     },
-    images: ['https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format'],
+    images: ["https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&h=500"],
+    createdAt: "2024-01-18T12:00:00.000Z",
     rating: 4.9,
-    reviewCount: 234,
-    aiScore: 92,
-    featured: true,
-    popular: true,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    reviewCount: 67,
+    aiScore: 91,
+    location: "Global",
+    availability: "10-12 weeks"
   },
   {
-    id: 'mobile-app-development',
-    title: 'Cross-Platform Mobile App Development',
-    description: 'Native and cross-platform mobile applications for iOS and Android using React Native or Flutter.',
-    category: 'web-development',
-    subcategory: 'Mobile Development',
-    price: 12000,
-    currency: 'USD',
-    pricingModel: 'project-based',
-    features: [
-      'Cross-platform mobile app development',
-      'Native iOS and Android apps',
-      'UI/UX design and prototyping',
-      'Backend integration and APIs',
-      'App store submission',
-      'Post-launch support and updates'
-    ],
-    benefits: [
-      'Reach both iOS and Android users',
-      'Faster development time',
-      'Cost-effective solution',
-      'Consistent user experience',
-      'Easy maintenance and updates'
-    ],
-    marketPrice: '$10,000 - $40,000',
-    deliveryTime: '6-10 weeks',
-    tags: ['Mobile Development', 'React Native', 'Flutter', 'iOS', 'Android', 'Cross-Platform'],
+    id: "mobile-app-development",
+    title: "Cross-Platform Mobile App Development",
+    description: "Native-quality mobile applications for iOS and Android using React Native or Flutter. Includes user interface design, backend integration, testing, and app store deployment. Features offline functionality, push notifications, and analytics integration.",
+    category: "Web & Mobile Development",
+    subcategory: "Mobile Apps",
+    price: 19999,
+    currency: "$",
+    tags: ["Mobile Development", "React Native", "Flutter", "iOS", "Android", "Cross-platform"],
     author: {
-      name: 'Zion Mobile Solutions',
-      id: 'zion-mobile-solutions',
-      verified: true
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      email: "kleber@ziontechgroup.com",
+      avatarUrl: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=100&h=100",
     },
-    images: ['https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&auto=format'],
+    images: ["https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&h=500"],
+    createdAt: "2024-01-22T16:30:00.000Z",
     rating: 4.8,
-    reviewCount: 167,
+    reviewCount: 41,
+    aiScore: 89,
+    location: "Global",
+    availability: "12-16 weeks"
+  },
+  {
+    id: "ecommerce-platform",
+    title: "E-commerce Platform Development",
+    description: "Custom e-commerce solutions with advanced features including inventory management, payment processing, order fulfillment, and customer relationship management. Features mobile-responsive design, SEO optimization, and integration with popular payment gateways.",
+    category: "Web & Mobile Development",
+    subcategory: "E-commerce",
+    price: 24999,
+    currency: "$",
+    tags: ["E-commerce", "Payment Processing", "Inventory Management", "CRM", "SEO"],
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      email: "kleber@ziontechgroup.com",
+      avatarUrl: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=100&h=100",
+    },
+    images: ["https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&h=500"],
+    createdAt: "2024-02-01T14:45:00.000Z",
+    rating: 4.9,
+    reviewCount: 33,
+    aiScore: 92,
+    location: "Global",
+    availability: "14-18 weeks"
+  },
+
+  // Business Solutions Services
+  {
+    id: "digital-transformation",
+    title: "Digital Transformation Strategy & Implementation",
+    description: "Comprehensive digital transformation program including strategy development, process optimization, technology implementation, and change management. Covers all aspects of modernizing business operations for the digital age. Includes ROI analysis and success metrics.",
+    category: "Business Solutions",
+    subcategory: "Digital Transformation",
+    price: 29999,
+    currency: "$",
+    tags: ["Digital Transformation", "Process Optimization", "Change Management", "Technology Implementation", "ROI"],
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      email: "kleber@ziontechgroup.com",
+      avatarUrl: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=100&h=100",
+    },
+    images: ["https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&h=500"],
+    createdAt: "2024-01-15T11:00:00.000Z",
+    rating: 4.9,
+    reviewCount: 25,
+    aiScore: 94,
+    location: "Global",
+    availability: "16-20 weeks"
+  },
+  {
+    id: "business-process-automation",
+    title: "Business Process Automation & Optimization",
+    description: "End-to-end business process automation using RPA, workflow management, and AI-powered decision engines. Identifies automation opportunities, implements solutions, and provides ongoing optimization. Results in increased efficiency, reduced costs, and improved accuracy.",
+    category: "Business Solutions",
+    subcategory: "Process Automation",
+    price: 12999,
+    currency: "$",
+    tags: ["Process Automation", "RPA", "Workflow Management", "Efficiency", "Cost Reduction"],
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      email: "kleber@ziontechgroup.com",
+      avatarUrl: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=100&h=100",
+    },
+    images: ["https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&h=500"],
+    createdAt: "2024-01-28T13:15:00.000Z",
+    rating: 4.8,
+    reviewCount: 38,
     aiScore: 90,
-    featured: false,
-    popular: true,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    location: "Global",
+    availability: "8-10 weeks"
+  },
+  {
+    id: "customer-experience-optimization",
+    title: "Customer Experience Optimization & Analytics",
+    description: "Comprehensive customer experience improvement program including journey mapping, user research, interface optimization, and analytics implementation. Features A/B testing, user feedback collection, and performance measurement. Results in increased customer satisfaction and retention.",
+    category: "Business Solutions",
+    subcategory: "Customer Experience",
+    price: 8999,
+    currency: "$",
+    tags: ["Customer Experience", "User Research", "Journey Mapping", "A/B Testing", "Analytics"],
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      email: "kleber@ziontechgroup.com",
+      avatarUrl: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=100&h=100",
+    },
+    images: ["https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&h=500"],
+    createdAt: "2024-02-05T15:30:00.000Z",
+    rating: 4.7,
+    reviewCount: 31,
+    aiScore: 88,
+    location: "Global",
+    availability: "6-8 weeks"
   },
 
   // IT Consulting Services
   {
-    id: 'digital-transformation',
-    title: 'Digital Transformation Strategy & Consulting',
-    description: 'Comprehensive digital transformation consulting to modernize your business operations and technology stack.',
-    category: 'it-consulting',
-    subcategory: 'Strategy Consulting',
-    price: 8000,
-    currency: 'USD',
-    pricingModel: 'project-based',
-    features: [
-      'Technology assessment and audit',
-      'Digital transformation roadmap',
-      'Change management strategy',
-      'Technology stack modernization',
-      'Process optimization',
-      'Implementation planning'
-    ],
-    benefits: [
-      'Clear transformation roadmap',
-      'Improved operational efficiency',
-      'Competitive advantage',
-      'Better customer experience',
-      'Future-proof technology strategy'
-    ],
-    marketPrice: '$7,000 - $25,000',
-    deliveryTime: '4-6 weeks',
-    tags: ['Digital Transformation', 'Strategy', 'Consulting', 'Change Management', 'Technology Audit'],
+    id: "technology-strategy-consulting",
+    title: "Technology Strategy & Roadmap Consulting",
+    description: "Strategic technology consulting including current state assessment, future state vision, technology roadmap development, and implementation planning. Covers emerging technologies, vendor selection, and investment prioritization. Essential for technology-driven business growth.",
+    category: "IT Consulting",
+    subcategory: "Strategy",
+    price: 14999,
+    currency: "$",
+    tags: ["Technology Strategy", "Roadmap Planning", "Vendor Selection", "Investment Planning", "Emerging Tech"],
     author: {
-      name: 'Zion Digital Consulting',
-      id: 'zion-digital-consulting',
-      verified: true
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      email: "kleber@ziontechgroup.com",
+      avatarUrl: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=100&h=100",
     },
-    images: ['https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&auto=format'],
+    images: ["https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&h=500"],
+    createdAt: "2024-01-12T09:30:00.000Z",
     rating: 4.9,
-    reviewCount: 145,
-    aiScore: 94,
-    featured: true,
-    popular: true,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    reviewCount: 42,
+    aiScore: 93,
+    location: "Global",
+    availability: "4-6 weeks"
   },
   {
-    id: 'it-infrastructure',
-    title: 'IT Infrastructure Assessment & Optimization',
-    description: 'Comprehensive IT infrastructure review, optimization, and modernization planning.',
-    category: 'it-consulting',
-    subcategory: 'Infrastructure',
-    price: 5000,
-    currency: 'USD',
-    pricingModel: 'project-based',
-    features: [
-      'Infrastructure performance analysis',
-      'Capacity planning and optimization',
-      'Security and compliance review',
-      'Cost optimization recommendations',
-      'Technology roadmap planning',
-      'Implementation guidance'
-    ],
-    benefits: [
-      'Optimize infrastructure performance',
-      'Reduce operational costs',
-      'Improve security posture',
-      'Better scalability planning',
-      'Technology modernization roadmap'
-    ],
-    marketPrice: '$4,000 - $15,000',
-    deliveryTime: '3-4 weeks',
-    tags: ['IT Infrastructure', 'Optimization', 'Capacity Planning', 'Cost Optimization', 'Technology Roadmap'],
+    id: "vendor-management",
+    title: "IT Vendor Management & Procurement",
+    description: "Comprehensive vendor management service including vendor evaluation, contract negotiation, performance monitoring, and relationship management. Covers software, hardware, and service providers. Includes cost optimization, SLA management, and risk mitigation strategies.",
+    category: "IT Consulting",
+    subcategory: "Vendor Management",
+    price: 7999,
+    currency: "$",
+    tags: ["Vendor Management", "Contract Negotiation", "Performance Monitoring", "Cost Optimization", "SLA Management"],
     author: {
-      name: 'Zion Infrastructure Consulting',
-      id: 'zion-infrastructure-consulting',
-      verified: true
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      email: "kleber@ziontechgroup.com",
+      avatarUrl: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=100&h=100",
     },
-    images: ['https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&auto=format'],
-    rating: 4.7,
-    reviewCount: 98,
+    images: ["https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&h=500"],
+    createdAt: "2024-01-25T12:45:00.000Z",
+    rating: 4.8,
+    reviewCount: 29,
     aiScore: 87,
-    featured: false,
-    popular: false,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    location: "Global",
+    availability: "3-4 weeks"
   },
-
-  // Blockchain & Web3 Services
   {
-    id: 'smart-contract-development',
-    title: 'Smart Contract Development & Audit',
-    description: 'Ethereum smart contract development, testing, and security auditing for DeFi and NFT projects.',
-    category: 'blockchain',
-    subcategory: 'Smart Contracts',
-    price: 6000,
-    currency: 'USD',
-    pricingModel: 'project-based',
-    features: [
-      'Custom smart contract development',
-      'Security audit and testing',
-      'Gas optimization',
-      'Frontend integration',
-      'Deployment and verification',
-      'Documentation and support'
-    ],
-    benefits: [
-      'Secure and audited smart contracts',
-      'Gas-optimized for cost efficiency',
-      'Professional development expertise',
-      'Reduced security risks',
-      'Compliance with best practices'
-    ],
-    marketPrice: '$5,000 - $20,000',
-    deliveryTime: '4-6 weeks',
-    tags: ['Smart Contracts', 'Ethereum', 'DeFi', 'NFT', 'Blockchain', 'Security Audit'],
+    id: "disaster-recovery-planning",
+    title: "Disaster Recovery & Business Continuity Planning",
+    description: "Comprehensive disaster recovery and business continuity planning including risk assessment, recovery strategy development, testing procedures, and ongoing maintenance. Features automated backup systems, failover procedures, and recovery time objectives. Essential for business resilience.",
+    category: "IT Consulting",
+    subcategory: "Disaster Recovery",
+    price: 11999,
+    currency: "$",
+    tags: ["Disaster Recovery", "Business Continuity", "Risk Assessment", "Backup Systems", "Failover"],
     author: {
-      name: 'Zion Blockchain Solutions',
-      id: 'zion-blockchain-solutions',
-      verified: true
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      email: "kleber@ziontechgroup.com",
+      avatarUrl: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=100&h=100",
     },
-    images: ['https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&auto=format'],
-    rating: 4.8,
-    reviewCount: 78,
+    images: ["https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=800&h=500"],
+    createdAt: "2024-02-02T10:00:00.000Z",
+    rating: 4.9,
+    reviewCount: 23,
     aiScore: 91,
-    featured: false,
-    popular: true,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
-  },
-  {
-    id: 'web3-integration',
-    title: 'Web3 Integration & Wallet Connectivity',
-    description: 'Web3 integration services including wallet connectivity, blockchain data integration, and decentralized features.',
-    category: 'blockchain',
-    subcategory: 'Web3 Integration',
-    price: 4000,
-    currency: 'USD',
-    pricingModel: 'project-based',
-    features: [
-      'Wallet integration (MetaMask, WalletConnect)',
-      'Blockchain data integration',
-      'DeFi protocol integration',
-      'NFT marketplace integration',
-      'Web3 authentication',
-      'Cross-chain compatibility'
-    ],
-    benefits: [
-      'Modern Web3 user experience',
-      'Access to DeFi and NFT markets',
-      'Enhanced user engagement',
-      'Future-proof technology stack',
-      'Competitive advantage in Web3 space'
-    ],
-    marketPrice: '$3,500 - $12,000',
-    deliveryTime: '3-4 weeks',
-    tags: ['Web3', 'Blockchain Integration', 'Wallet Connectivity', 'DeFi', 'NFT', 'Cross-Chain'],
-    author: {
-      name: 'Zion Web3 Solutions',
-      id: 'zion-web3-solutions',
-      verified: true
-    },
-    images: ['https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&auto=format'],
-    rating: 4.7,
-    reviewCount: 56,
-    aiScore: 89,
-    featured: false,
-    popular: false,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
-  },
-
-  // Process Automation Services
-  {
-    id: 'rpa-automation',
-    title: 'RPA Process Automation & Workflow Optimization',
-    description: 'Robotic Process Automation solutions to automate repetitive tasks and optimize business workflows.',
-    category: 'automation',
-    subcategory: 'RPA',
-    price: 3500,
-    currency: 'USD',
-    pricingModel: 'project-based',
-    features: [
-      'Process analysis and mapping',
-      'RPA bot development',
-      'Workflow automation',
-      'Integration with existing systems',
-      'Monitoring and reporting',
-      'Training and support'
-    ],
-    benefits: [
-      'Reduce manual work by 70-90%',
-      'Improve accuracy and consistency',
-      '24/7 operation capability',
-      'Scalable automation solution',
-      'Quick ROI and cost savings'
-    ],
-    marketPrice: '$3,000 - $15,000',
-    deliveryTime: '3-5 weeks',
-    tags: ['RPA', 'Process Automation', 'Workflow Optimization', 'Bot Development', 'Business Process'],
-    author: {
-      name: 'Zion Automation Solutions',
-      id: 'zion-automation-solutions',
-      verified: true
-    },
-    images: ['https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format'],
-    rating: 4.8,
-    reviewCount: 123,
-    aiScore: 90,
-    featured: false,
-    popular: true,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
-  },
-  {
-    id: 'api-integration',
-    title: 'API Integration & Automation Services',
-    description: 'Custom API integration services to connect your business systems and automate data flows.',
-    category: 'automation',
-    subcategory: 'API Integration',
-    price: 2500,
-    currency: 'USD',
-    pricingModel: 'project-based',
-    features: [
-      'API design and development',
-      'Third-party system integration',
-      'Data synchronization',
-      'Webhook implementation',
-      'Error handling and monitoring',
-      'Documentation and testing'
-    ],
-    benefits: [
-      'Seamless system integration',
-      'Automated data synchronization',
-      'Reduced manual data entry',
-      'Improved data accuracy',
-      'Enhanced operational efficiency'
-    ],
-    marketPrice: '$2,000 - $8,000',
-    deliveryTime: '2-3 weeks',
-    tags: ['API Integration', 'System Integration', 'Data Synchronization', 'Webhooks', 'Automation'],
-    author: {
-      name: 'Zion Integration Services',
-      id: 'zion-integration-services',
-      verified: true
-    },
-    images: ['https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&auto=format'],
-    rating: 4.7,
-    reviewCount: 89,
-    aiScore: 86,
-    featured: false,
-    popular: false,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    location: "Global",
+    availability: "6-8 weeks"
   }
 ];
 
-// Helper functions
-export const getServicesByCategory = (categoryId: string): MicroService[] => {
-  return MICRO_SERVICES.filter(service => service.category === categoryId);
+// Service pricing tiers for different business sizes
+export const SERVICE_PRICING_TIERS = {
+  startup: {
+    name: "Startup",
+    description: "Perfect for small businesses and startups",
+    discount: 0.15, // 15% discount
+    features: ["Basic support", "Standard delivery", "Documentation included"]
+  },
+  smb: {
+    name: "Small & Medium Business",
+    description: "Ideal for growing businesses",
+    discount: 0.05, // 5% discount
+    features: ["Priority support", "Fast delivery", "Training included", "30-day support"]
+  },
+  enterprise: {
+    name: "Enterprise",
+    description: "For large organizations with complex needs",
+    discount: 0, // No discount
+    features: ["Dedicated support", "Custom delivery", "Full training", "90-day support", "Custom features"]
+  }
 };
 
-export const getFeaturedServices = (): MicroService[] => {
-  return MICRO_SERVICES.filter(service => service.featured);
+// Contact information
+export const CONTACT_INFO = {
+  mobile: "+1 302 464 0950",
+  email: "kleber@ziontechgroup.com",
+  address: "364 E Main St STE 1008 Middletown DE 19709",
+  website: "https://ziontechgroup.com",
+  businessHours: "Monday - Friday: 9:00 AM - 6:00 PM EST",
+  emergencySupport: "24/7 emergency IT support available"
 };
 
-export const getPopularServices = (): MicroService[] => {
-  return MICRO_SERVICES.filter(service => service.popular);
-};
-
-export const searchServices = (query: string): MicroService[] => {
-  const lowercaseQuery = query.toLowerCase();
-  return MICRO_SERVICES.filter(service => 
-    service.title.toLowerCase().includes(lowercaseQuery) ||
-    service.description.toLowerCase().includes(lowercaseQuery) ||
-    service.tags.some(tag => tag.toLowerCase().includes(lowercaseQuery))
-  );
-};
+// Service guarantees
+export const SERVICE_GUARANTEES = [
+  "100% satisfaction guarantee",
+  "30-day money-back guarantee",
+  "Free consultation and assessment",
+  "Transparent pricing with no hidden fees",
+  "Certified professionals and experts",
+  "Ongoing support and maintenance",
+  "Compliance with industry standards",
+  "Data security and confidentiality"
+];

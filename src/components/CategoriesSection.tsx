@@ -36,28 +36,16 @@ const categories = [
 
 const specialServices = [
   {
-    title: "Enhanced AI & IT Services",
-    link: "/enhanced-services"
-  },
-  {
     title: "IT Onsite Services",
     link: "/it-onsite-services"
   },
   {
-    title: "AI Services",
-    link: "/ai-services"
-  },
-  {
-    title: "Cybersecurity",
-    link: "/cybersecurity-services"
-  },
-  {
-    title: "All Services",
+    title: "Comprehensive Services",
     link: "/comprehensive-services"
   },
   {
-    title: "Pricing",
-    link: "/services-pricing"
+    title: "Pricing & Plans",
+    link: "/pricing"
   }
 ];
 
