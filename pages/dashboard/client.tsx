@@ -1,65 +1,86 @@
-import EnhancedCard from '../../components/ui/EnhancedCard';
-import EnhancedButton from '../../components/ui/EnhancedButton';
-import { useEffect, useState } from 'react';
+import React from 'react';
+import EnhancedLayout from '../../components/layout/EnhancedLayout';
+import OnboardingProgressCard, { OnboardingStep } from '../../components/onboarding/OnboardingProgressCard';
+import SmartNudgeBanner from '../../components/onboarding/SmartNudgeBanner';
+import { fetchOnboardingProgress, fallbackClientProgress, getCurrentUserId } from '../../utils/supabase/onboarding';
 
-const STEPS = [
-  { key: 'job', label: 'Job posted' },
-  { key: 'invite', label: 'First invite sent' },
-  { key: 'response', label: 'First response received' },
-] as const;
+export default function ClientDashboardPage() {
+  const [userId, setUserId] = React.useState<string | null>(null);
+  const [loading, setLoading] = React.useState<boolean>(true);
+  const [steps, setSteps] = React.useState<OnboardingStep[]>([]);
 
-type StepKey = typeof STEPS[number]['key'];
+  React.useEffect(() => {
+    let mounted = true;
+    (async () => {
+      const uid = await getCurrentUserId();
+      if (!mounted) return;
+      setUserId(uid);
 
-export default function ClientDashboard() {
-  const [completed, setCompleted] = useState<Record<StepKey, boolean>>({ job: false, invite: false, response: false });
+      let profile: any | null = null;
+      if (uid) {
+        profile = await fetchOnboardingProgress(uid, 'client');
+      }
 
-  useEffect(() => {
-    try {
-      const raw = window.localStorage.getItem('onboarding.client');
-      if (raw) setCompleted(JSON.parse(raw));
-    } catch {}
+      const data = profile ?? fallbackClientProgress();
+
+      const nextSteps: OnboardingStep[] = [
+        { id: 'job', label: 'Job posted', completed: !!data.job_posted, ctaLabel: 'Post a job', ctaHref: '/jobs/new' },
+        { id: 'invite', label: 'Talent invited', completed: !!data.talent_invited, ctaLabel: 'Invite talent now', ctaHref: '/talent' },
+        { id: 'quote', label: 'Quote received', completed: !!data.quote_received, ctaLabel: 'Request quotes', ctaHref: '/quotes' },
+        { id: 'hire', label: 'First hire complete', completed: !!data.first_hire_complete, ctaLabel: 'Review candidates', ctaHref: '/hires' },
+      ];
+
+      if (!mounted) return;
+      setSteps(nextSteps);
+      setLoading(false);
+    })();
+    return () => { mounted = false; };
   }, []);
 
-  useEffect(() => {
-    try { window.localStorage.setItem('onboarding.client', JSON.stringify(completed)); } catch {}
-  }, [completed]);
-
-  const progress = Math.round((Object.values(completed).filter(Boolean).length / STEPS.length) * 100);
-  const toggle = (key: StepKey) => setCompleted((c) => ({ ...c, [key]: !c[key] }));
+  const percent = React.useMemo(() => {
+    if (steps.length === 0) return 0;
+    return Math.round((steps.filter(s => s.completed).length / steps.length) * 100);
+  }, [steps]);
 
   return (
-    <div className="space-y-4">
-      <EnhancedCard>
-        <div className="flex items-center justify-between">
-          <div>
-            <h1 className="text-lg font-semibold">Welcome back</h1>
-            <p className="text-sm text-gray-600 dark:text-gray-300">Post your first job and invite talent to get started.</p>
-          </div>
-          <div className="text-sm font-medium">{progress}%</div>
+    <EnhancedLayout>
+      <div className="space-y-6">
+        <div>
+          <h1 className="text-2xl font-semibold">Client Dashboard</h1>
+          <p className="text-sm opacity-70">Finish onboarding to start hiring faster.</p>
         </div>
-        <div className="mt-3 h-2 w-full bg-gray-100 dark:bg-gray-800 rounded">
-          <div className="h-2 rounded bg-blue-600" style={{ width: `${progress}%` }} />
-        </div>
-      </EnhancedCard>
 
-      <EnhancedCard>
-        <h2 className="font-semibold mb-2">Checklist</h2>
-        <ul className="space-y-2">
-          {STEPS.map((s) => (
-            <li key={s.key} className="flex items-center justify-between">
-              <div className="flex items-center gap-2">
-                <span className={`inline-flex h-5 w-5 items-center justify-center rounded-full border ${completed[s.key] ? 'bg-emerald-500 text-white border-emerald-500' : 'border-gray-300 dark:border-gray-700'}`}>{completed[s.key] ? '✓' : ''}</span>
-                <span className="text-sm">{s.label}</span>
-              </div>
-              {completed[s.key] ? (
-                <button onClick={() => toggle(s.key)} className="text-xs text-gray-500 hover:underline">Undo</button>
-              ) : (
-                <EnhancedButton onClick={() => toggle(s.key)} variant="secondary" className="text-xs py-1 px-2">{s.key === 'job' ? 'Post a Job' : 'Mark done'}</EnhancedButton>
-              )}
-            </li>
-          ))}
-        </ul>
-      </EnhancedCard>
-    </div>
+        <SmartNudgeBanner
+          role="client"
+          userId={userId}
+          message={percent < 100 ? 'Invite talent now to speed up hiring!' : 'Great! Your hiring setup is complete.'}
+        />
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            {loading ? (
+              <div className="rounded-xl border border-gray-200 dark:border-gray-800 p-5 text-sm opacity-70">Loading progress…</div>
+            ) : (
+              <OnboardingProgressCard
+                title="Your onboarding"
+                steps={steps}
+                highlightColorClass="from-neon-blue to-neon-purple"
+              />
+            )}
+          </div>
+
+          <div className="space-y-4">
+            <div className="rounded-xl border border-gray-200 dark:border-gray-800 p-5">
+              <h3 className="font-medium">Tips</h3>
+              <ul className="mt-2 text-sm list-disc list-inside opacity-80">
+                <li>Clear job briefs attract better proposals.</li>
+                <li>Invite 3–5 talents to increase response rate.</li>
+                <li>Close the loop quickly once you find a match.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </EnhancedLayout>
   );
 }

@@ -1,1 +1,13 @@
-export default function EnhancedHome() { return null; }
+import React from 'react';
+import EnhancedLayout from '../components/layout/EnhancedLayout';
+
+export default function EnhancedHomePage() {
+  return (
+    <EnhancedLayout>
+      <div className="space-y-4">
+        <h1 className="text-2xl font-semibold">Enhanced Home</h1>
+        <p className="opacity-70 text-sm">This page was auto-stubbed and is ready for content.</p>
+      </div>
+    </EnhancedLayout>
+  );
+}
