@@ -1,15 +1,18 @@
 
-import { Helmet } from "react-helmet-async";
+import React from 'react';
+import { Helmet } from 'react-helmet-async';
 
 interface SEOProps {
   title: string;
   description: string;
   keywords?: string;
-  ogImage?: string;
-  ogUrl?: string;
   canonical?: string;
+  ogImage?: string;
+  ogType?: string;
+  twitterCard?: string;
+  structuredData?: object;
   noindex?: boolean;
-  type?: "website" | "article" | "profile";
+  nofollow?: boolean;
   author?: string;
   publishedTime?: string;
   modifiedTime?: string;
@@ -21,105 +24,247 @@ export function SEO({
   title,
   description,
   keywords,
-  ogImage = "https://drive.google.com/uc?export=view&id=0B0iuzhpa3pD7X0RzZ2lmclN3Ymc",
-  ogUrl,
   canonical,
-  noindex,
-  type = "website",
+  ogImage = 'https://ziontechgroup.com/og-image.jpg',
+  ogType = 'website',
+  twitterCard = 'summary_large_image',
+  structuredData,
+  noindex = false,
+  nofollow = false,
   author,
   publishedTime,
   modifiedTime,
   section,
-  tags,
+  tags
 }: SEOProps) {
-  const siteTitle = "Zion - The Future of Tech & AI Marketplace";
-  const fullTitle = title ? `${title} | ${siteTitle}` : siteTitle;
-  const currentUrl = ogUrl || canonical || window.location.href;
+  const siteName = 'Zion Tech Group';
+  const fullTitle = title.includes(siteName) ? title : `${title} | ${siteName}`;
+  const fullCanonicalUrl = canonical || 'https://ziontechgroup.com';
+  const fullImageUrl = ogImage.startsWith('http') ? ogImage : `https://ziontechgroup.com${ogImage}`;
   
-  // Enhanced keywords with default tech-related terms
-  const defaultKeywords = [
-    "AI marketplace", "tech talent", "software development", "digital services",
-    "freelance developers", "tech consulting", "AI solutions", "web development",
-    "mobile apps", "cloud services", "data science", "machine learning"
-  ];
-  const allKeywords = keywords 
-    ? [...keywords.split(',').map(k => k.trim()), ...defaultKeywords]
-    : defaultKeywords;
-  
-  // Structured data for better SEO
-  const structuredData = {
+  const defaultStructuredData = {
     "@context": "https://schema.org",
-    "@type": type === "website" ? "WebSite" : type === "article" ? "Article" : "Profile",
-    "name": fullTitle,
-    "description": description,
-    "url": currentUrl,
-    "publisher": {
-      "@type": "Organization",
-      "name": "Zion Tech Group",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://ziontechgroup.com/logo.png"
-      }
-    },
-    ...(type === "article" && {
-      "author": {
-        "@type": "Person",
-        "name": author || "Zion Team"
-      },
-      "datePublished": publishedTime,
-      "dateModified": modifiedTime,
-      "articleSection": section,
-      "keywords": allKeywords.join(", ")
-    })
+    "@type": "Organization",
+    "name": "Zion Tech Group",
+    "url": "https://ziontechgroup.com",
+    "logo": "https://ziontechgroup.com/logo.png",
+    "description": "The premier AI and tech marketplace connecting talent, services, and innovation.",
+    "sameAs": [
+      "https://twitter.com/ziontechgroup",
+      "https://linkedin.com/company/ziontechgroup",
+      "https://github.com/ziontechgroup"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+1-555-ZION-TECH",
+      "contactType": "customer service",
+      "areaServed": "Worldwide"
+    }
   };
-  
+
+  const finalStructuredData = structuredData || defaultStructuredData;
+
   return (
     <Helmet>
+      {/* Basic Meta Tags */}
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
-      <meta name="keywords" content={allKeywords.join(", ")} />
+      {keywords && <meta name="keywords" content={keywords} />}
+      <meta name="author" content={author || 'Zion Tech Group'} />
+      <meta name="robots" content={`${noindex ? 'noindex' : 'index'}, ${nofollow ? 'nofollow' : 'follow'}`} />
       
-      {/* Enhanced meta tags */}
-      <meta name="author" content={author || "Zion Tech Group"} />
-      <meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow"} />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta name="theme-color" content="#2e73ea" />
+      {/* Canonical URL */}
+      <link rel="canonical" href={fullCanonicalUrl} />
       
-      {/* Open Graph / Facebook */}
-      <meta property="og:type" content={type} />
+      {/* Open Graph Meta Tags */}
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
-      <meta property="og:image" content={ogImage} />
-      <meta property="og:url" content={currentUrl} />
-      <meta property="og:site_name" content={siteTitle} />
+      <meta property="og:type" content={ogType} />
+      <meta property="og:url" content={fullCanonicalUrl} />
+      <meta property="og:image" content={fullImageUrl} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:site_name" content={siteName} />
       <meta property="og:locale" content="en_US" />
-      {author && <meta property="og:author" content={author} />}
-      {publishedTime && <meta property="article:published_time" content={publishedTime} />}
-      {modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
-      {section && <meta property="article:section" content={section} />}
-      {tags && tags.map(tag => <meta key={tag} property="article:tag" content={tag} />)}
       
-      {/* Twitter */}
-      <meta name="twitter:card" content="summary_large_image" />
+      {/* Twitter Card Meta Tags */}
+      <meta name="twitter:card" content={twitterCard} />
       <meta name="twitter:site" content="@ziontechgroup" />
       <meta name="twitter:creator" content="@ziontechgroup" />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={ogImage} />
+      <meta name="twitter:image" content={fullImageUrl} />
       
-      {/* Canonical URL */}
-      <link rel="canonical" href={canonical || currentUrl} />
+      {/* Additional Open Graph Tags for Articles */}
+      {ogType === 'article' && (
+        <>
+          {publishedTime && <meta property="article:published_time" content={publishedTime} />}
+          {modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
+          {author && <meta property="article:author" content={author} />}
+          {section && <meta property="article:section" content={section} />}
+          {tags && tags.map((tag, index) => (
+            <meta key={index} property="article:tag" content={tag} />
+          ))}
+        </>
+      )}
       
-      {/* Additional SEO improvements */}
+      {/* Additional Meta Tags */}
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="theme-color" content="#2e73ea" />
+      <meta name="msapplication-TileColor" content="#2e73ea" />
+      <meta name="apple-mobile-web-app-capable" content="yes" />
+      <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+      <meta name="apple-mobile-web-app-title" content={siteName} />
+      
+      {/* Performance and Security */}
+      <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="format-detection" content="telephone=no" />
+      
+      {/* Favicon and App Icons */}
       <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
       <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
       <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+      <link rel="manifest" href="/site.webmanifest" />
       
-      {/* Structured data */}
+      {/* Preconnect to external domains for performance */}
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      <link rel="preconnect" href="https://www.google-analytics.com" />
+      <link rel="preconnect" href="https://www.googletagmanager.com" />
+      
+      {/* DNS Prefetch for performance */}
+      <link rel="dns-prefetch" href="//www.google-analytics.com" />
+      <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+      <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+      <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+      
+      {/* Structured Data */}
       <script type="application/ld+json">
-        {JSON.stringify(structuredData)}
+        {JSON.stringify(finalStructuredData)}
+      </script>
+      
+      {/* Additional Structured Data for Organization */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "Zion Tech Group",
+          "url": "https://ziontechgroup.com",
+          "description": "The premier AI and tech marketplace connecting talent, services, and innovation.",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://ziontechgroup.com/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        })}
+      </script>
+      
+      {/* Breadcrumb Structured Data */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://ziontechgroup.com"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": title,
+              "item": fullCanonicalUrl
+            }
+          ]
+        })}
       </script>
     </Helmet>
+  );
+}
+
+// Specialized SEO components for different page types
+export function HomePageSEO() {
+  return (
+    <SEO
+      title="Zion - The Tech & AI Marketplace"
+      description="Discover top AI and tech talent, services, and equipment in one place. Connect with experts, find innovative solutions, and accelerate your tech projects."
+      keywords="AI marketplace, tech talent, IT services, tech equipment, AI experts, developers, tech consulting, innovation"
+      canonical="/"
+      ogImage="/images/zion-homepage-og.jpg"
+      structuredData={{
+        "@type": "WebSite",
+        "name": "Zion Tech Group",
+        "url": "https://ziontechgroup.com",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://ziontechgroup.com/search?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }}
+    />
+  );
+}
+
+export function ServicePageSEO({ 
+  serviceName, 
+  description, 
+  category 
+}: { 
+  serviceName: string;
+  description: string;
+  category: string;
+}) {
+  return (
+    <SEO
+      title={`${serviceName} - Zion Tech Group`}
+      description={description}
+      keywords={`${serviceName}, ${category}, tech services, IT solutions, Zion Tech Group`}
+      canonical={`/services/${serviceName.toLowerCase().replace(/\s+/g, '-')}`}
+      ogImage="/images/zion-services-og.jpg"
+      structuredData={{
+        "@type": "Service",
+        "name": serviceName,
+        "description": description,
+        "provider": {
+          "@type": "Organization",
+          "name": "Zion Tech Group"
+        },
+        "category": category,
+        "areaServed": "Worldwide"
+      }}
+    />
+  );
+}
+
+export function TalentPageSEO({ 
+  talentName, 
+  skills, 
+  description 
+}: { 
+  talentName: string;
+  skills: string[];
+  description: string;
+}) {
+  return (
+    <SEO
+      title={`${talentName} - Tech Talent | Zion Tech Group`}
+      description={description}
+      keywords={`${talentName}, ${skills.join(', ')}, tech talent, AI expert, developer, Zion Tech Group`}
+      canonical={`/talent/${talentName.toLowerCase().replace(/\s+/g, '-')}`}
+      ogImage="/images/zion-profile-og.jpg"
+      structuredData={{
+        "@type": "Person",
+        "name": talentName,
+        "description": description,
+        "knowsAbout": skills,
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Zion Tech Group"
+        }
+      }}
+    />
   );
 }

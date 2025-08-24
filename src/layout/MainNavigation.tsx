@@ -1,4 +1,5 @@
 
+import React from 'react';
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { useAuth } from "@/hooks/useAuth";
@@ -11,10 +12,14 @@ interface MainNavigationProps {
   className?: string;
 }
 
-export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: MainNavigationProps) {
+const MainNavigation: React.FC<MainNavigationProps> = ({ 
+  isAdmin = false, 
+  unreadCount = 0, 
+  className 
+}) => {
+  const location = useLocation();
   const { user } = useAuth();
   const isAuthenticated = !!user;
-  const location = useLocation();
   const { t } = useTranslation();
 
   const baseLinks = [
@@ -126,4 +131,6 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
       </ul>
     </nav>
   );
-}
+};
+
+export default MainNavigation;

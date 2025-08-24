@@ -1,43 +1,57 @@
-import React, { createContext, useContext, ReactNode } from 'react';
+import React, { createContext, useContext, useState, useCallback } from 'react';
 
-interface WhitelabelContextType {
-  isWhitelabel: boolean;
-  primaryColor: string;
+interface WhitelabelConfig {
   companyName: string;
   logo: string;
+  primaryColor: string;
+  secondaryColor: string;
+  theme: 'light' | 'dark' | 'auto';
 }
 
-const defaultContext: WhitelabelContextType = {
-  isWhitelabel: false,
-  primaryColor: '#8c15e9',
+interface WhitelabelContextType {
+  config: WhitelabelConfig;
+  updateConfig: (newConfig: Partial<WhitelabelConfig>) => void;
+  resetConfig: () => void;
+}
+
+const defaultConfig: WhitelabelConfig = {
   companyName: 'Zion Tech Group',
-  logo: '/logos/zion-logo.png'
+  logo: '/logo.svg',
+  primaryColor: '#3B82F6',
+  secondaryColor: '#1E40AF',
+  theme: 'auto'
 };
 
-const WhitelabelContext = createContext<WhitelabelContextType>(defaultContext);
+const WhitelabelContext = createContext<WhitelabelContextType | undefined>(undefined);
 
-export const useWhitelabel = () => {
-  const context = useContext(WhitelabelContext);
-  if (!context) {
-    throw new Error('useWhitelabel must be used within a WhitelabelProvider');
-  }
-  return context;
-};
+export const WhitelabelProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const [config, setConfig] = useState<WhitelabelConfig>(defaultConfig);
 
-interface WhitelabelProviderProps {
-  children: ReactNode;
-  config?: Partial<WhitelabelContextType>;
-}
+  const updateConfig = useCallback((newConfig: Partial<WhitelabelConfig>) => {
+    setConfig(prev => ({ ...prev, ...newConfig }));
+  }, []);
 
-export const WhitelabelProvider: React.FC<WhitelabelProviderProps> = ({ 
-  children, 
-  config = {} 
-}) => {
-  const value = { ...defaultContext, ...config };
-  
+  const resetConfig = useCallback(() => {
+    setConfig(defaultConfig);
+  }, []);
+
+  const value: WhitelabelContextType = {
+    config,
+    updateConfig,
+    resetConfig
+  };
+
   return (
     <WhitelabelContext.Provider value={value}>
       {children}
     </WhitelabelContext.Provider>
   );
+};
+
+export const useWhitelabel = (): WhitelabelContextType => {
+  const context = useContext(WhitelabelContext);
+  if (context === undefined) {
+    throw new Error('useWhitelabel must be used within a WhitelabelProvider');
+  }
+  return context;
 };
