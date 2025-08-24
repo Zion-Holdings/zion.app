@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/Button";
 import { Send } from "lucide-react";
 
 interface ChatInputProps {
