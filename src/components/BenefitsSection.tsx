@@ -1,7 +1,7 @@
 
 import { GradientHeading } from "./GradientHeading";
 import { FeatureCard } from "./FeatureCard";
-import { Bot, Clock, Globe, TrendingDown, Sparkles } from "lucide-react";
+import { Bot, Clock, Globe, TrendingDown, Zap, Shield, Users, Award } from "lucide-react";
 import { motion } from "framer-motion";
 
 const benefits = [
@@ -9,129 +9,175 @@ const benefits = [
     title: "AI-Powered Matchmaking",
     description: "Our advanced algorithms match your needs with the perfect service providers or products, saving you time and ensuring optimal results.",
     icon: <Bot className="w-8 h-8" />,
-    gradient: "from-zion-purple to-zion-purple-dark",
-    delay: 0.1,
+    color: "from-purple-500 to-indigo-600",
+    features: ["Smart Recommendations", "Skill-Based Matching", "Real-time Updates"]
   },
   {
     title: "Global Availability",
     description: "Access a worldwide network of tech talents, products, and services to find the best solutions regardless of geographic limitations.",
     icon: <Globe className="w-8 h-8" />,
-    gradient: "from-zion-cyan to-zion-blue",
-    delay: 0.2,
+    color: "from-cyan-500 to-blue-600",
+    features: ["150+ Countries", "24/7 Coverage", "Local Expertise"]
   },
   {
     title: "24/7 Support",
     description: "Our dedicated team is available around the clock to assist with any questions or issues you might encounter during your journey.",
     icon: <Clock className="w-8 h-8" />,
-    gradient: "from-zion-cyan-light to-zion-cyan",
-    delay: 0.3,
+    color: "from-emerald-500 to-green-600",
+    features: ["Instant Chat", "Phone Support", "Email Response"]
   },
   {
     title: "Cost Reduction",
     description: "Eliminate middlemen and reduce costs by up to 40% through direct connections with service providers and product vendors.",
     icon: <TrendingDown className="w-8 h-8" />,
-    gradient: "from-zion-purple-light to-zion-purple",
-    delay: 0.4,
+    color: "from-amber-500 to-orange-600",
+    features: ["No Hidden Fees", "Transparent Pricing", "Bulk Discounts"]
   },
+  {
+    title: "Quality Assurance",
+    description: "Every service provider and product is thoroughly vetted and quality-tested to ensure you receive only the best solutions.",
+    icon: <Shield className="w-8 h-8" />,
+    color: "from-red-500 to-pink-600",
+    features: ["Background Checks", "Portfolio Reviews", "Client Feedback"]
+  },
+  {
+    title: "Community Network",
+    description: "Join a thriving community of tech professionals, share knowledge, and collaborate on innovative projects.",
+    icon: <Users className="w-8 h-8" />,
+    color: "from-indigo-500 to-purple-600",
+    features: ["Expert Forums", "Networking Events", "Knowledge Sharing"]
+  }
 ];
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-      delayChildren: 0.3
-    }
-  }
-};
-
-const itemVariants = {
-  hidden: { y: 30, opacity: 0 },
-  visible: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.6,
-      ease: "easeOut"
-    }
-  }
-};
+const stats = [
+  { number: "50K+", label: "Happy Clients" },
+  { number: "100K+", label: "Projects Completed" },
+  { number: "150+", label: "Countries Served" },
+  { number: "99.9%", label: "Uptime" }
+];
 
 export function BenefitsSection() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" }
+    }
+  };
+
   return (
-    <section className="py-20 bg-zion-blue-light relative overflow-hidden">
-      {/* Background decoration */}
+    <section className="py-20 bg-gradient-to-br from-zion-blue-light via-zion-blue to-zion-blue-dark relative overflow-hidden">
+      {/* Background pattern */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-20 left-10 w-32 h-32 bg-zion-purple rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-10 w-40 h-40 bg-zion-cyan rounded-full blur-3xl"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.15)_1px,transparent_0)] bg-[length:25px_25px]"></div>
       </div>
       
       <div className="container mx-auto px-4 relative z-10">
         <motion.div 
           className="text-center mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
         >
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <Sparkles className="w-8 h-8 text-zion-purple" />
-            <GradientHeading>Why Zion?</GradientHeading>
-            <Sparkles className="w-8 h-8 text-zion-cyan" />
-          </div>
-          <p className="text-zion-slate-light text-lg mt-4 max-w-2xl mx-auto leading-relaxed">
+          <GradientHeading>Why Choose Zion?</GradientHeading>
+          <p className="text-zion-slate-light text-lg mt-4 max-w-3xl mx-auto leading-relaxed">
             Experience the next generation of tech marketplace with features designed to maximize efficiency and value
           </p>
         </motion.div>
         
+        {/* Stats section */}
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
+          className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
         >
-          {benefits.map((benefit, index) => (
+          {stats.map((stat, index) => (
             <motion.div
               key={index}
-              variants={itemVariants}
-              whileHover={{ 
-                y: -5,
-                transition: { duration: 0.3 }
-              }}
+              className="text-center p-6 bg-zion-blue/20 rounded-2xl border border-zion-blue-light/30 backdrop-blur-sm"
+              whileHover={{ scale: 1.05, y: -5 }}
+              transition={{ duration: 0.3 }}
             >
-              <FeatureCard
-                title={benefit.title}
-                description={benefit.description}
-                icon={benefit.icon}
-                className="bg-zion-blue hover:bg-zion-blue-dark transition-all duration-300 border-zion-purple/20 hover:border-zion-purple/50 shadow-lg hover:shadow-xl hover:shadow-zion-purple/25"
-                gradient={benefit.gradient}
-              />
+              <div className="text-3xl md:text-4xl font-bold text-zion-cyan mb-2">
+                {stat.number}
+              </div>
+              <div className="text-zion-slate-light text-sm font-medium">
+                {stat.label}
+              </div>
             </motion.div>
           ))}
         </motion.div>
         
-        {/* Additional trust indicators */}
         <motion.div 
-          className="mt-16 text-center"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.6 }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
         >
-          <div className="inline-flex items-center gap-8 text-zion-slate-light opacity-80">
-            <div className="flex items-center gap-2">
-              <div className="w-3 h-3 bg-zion-cyan rounded-full animate-pulse"></div>
-              <span className="text-sm font-medium">Trusted by 10,000+ companies</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-3 h-3 bg-zion-purple rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
-              <span className="text-sm font-medium">99.9% uptime guarantee</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-3 h-3 bg-zion-cyan-light rounded-full animate-pulse" style={{ animationDelay: '2s' }}></div>
-              <span className="text-sm font-medium">ISO 27001 certified</span>
+          {benefits.map((benefit, index) => (
+            <motion.div key={index} variants={itemVariants}>
+              <div className="h-full bg-gradient-to-br from-zion-blue/80 to-zion-blue-dark/80 backdrop-blur-sm rounded-2xl p-6 border border-zion-blue-light/30 hover:border-zion-purple/50 transition-all duration-500 hover:shadow-2xl hover:shadow-zion-purple/20 group">
+                <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${benefit.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                  <div className="text-white">
+                    {benefit.icon}
+                  </div>
+                </div>
+                
+                <h3 className="text-xl font-bold text-white mb-4 group-hover:text-zion-cyan transition-colors">
+                  {benefit.title}
+                </h3>
+                
+                <p className="text-zion-slate-light mb-6 leading-relaxed">
+                  {benefit.description}
+                </p>
+                
+                {/* Features list */}
+                <div className="space-y-2">
+                  {benefit.features.map((feature, idx) => (
+                    <div key={idx} className="flex items-center gap-2 text-sm text-zion-slate-light">
+                      <div className="w-1.5 h-1.5 rounded-full bg-zion-cyan"></div>
+                      {feature}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+        
+        {/* CTA section */}
+        <motion.div 
+          className="text-center mt-16"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+        >
+          <div className="bg-gradient-to-r from-zion-purple/20 to-zion-cyan/20 backdrop-blur-sm rounded-2xl p-8 border border-zion-purple/30">
+            <h3 className="text-2xl font-bold text-white mb-4">
+              Ready to Experience the Future of Tech Services?
+            </h3>
+            <p className="text-zion-slate-light mb-6 max-w-2xl mx-auto">
+              Join thousands of companies already benefiting from Zion's innovative platform
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button className="px-8 py-4 bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white font-semibold rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
+                Get Started Today
+              </button>
+              <button className="px-8 py-4 border-2 border-zion-cyan text-zion-cyan hover:bg-zion-cyan hover:text-zion-blue-dark font-semibold rounded-xl transition-all duration-300 transform hover:scale-105">
+                Schedule Demo
+              </button>
             </div>
           </div>
         </motion.div>

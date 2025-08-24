@@ -1,74 +1,55 @@
 
 import React from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Check, Star, TrendingUp, Users, Award, Zap } from "lucide-react";
 import { motion } from "framer-motion";
-import { 
-  Zap, 
-  Shield, 
-  Users, 
-  Globe, 
-  Clock, 
-  TrendingUp,
-  Award,
-  Lock
-} from "lucide-react";
 
 export function FeatureHighlights() {
-  const highlights = [
+  const highlightsData = [
     {
-      icon: <Zap className="h-8 w-8" />,
-      title: "AI-Powered Matching",
-      description: "Advanced algorithms connect you with the perfect opportunities and talent",
-      color: "from-zion-cyan to-zion-cyan-light",
-      bgColor: "from-zion-cyan/20 to-zion-cyan-light/20"
+      title: "For Talent Seekers",
+      icon: <Users className="w-8 h-8" />,
+      color: "from-purple-500 to-indigo-600",
+      features: [
+        "AI-powered talent matching based on your specific project requirements",
+        "Verified profiles with skills validation and credential checking",
+        "Transparent pricing and no hidden fees",
+        "Direct communication with potential candidates",
+        "Secure payment protection and dispute resolution",
+        "Post jobs and receive AI-matched applicants"
+      ],
+      stats: "95% Match Rate",
+      cta: "Find Talent"
     },
     {
-      icon: <Shield className="h-8 w-8" />,
-      title: "Verified & Secure",
-      description: "Enterprise-grade security with verified professionals and secure transactions",
-      color: "from-zion-purple to-zion-purple-light",
-      bgColor: "from-zion-purple/20 to-zion-purple-light/20"
+      title: "For Talent & Service Providers",
+      icon: <Award className="w-8 h-8" />,
+      color: "from-cyan-500 to-blue-600",
+      features: [
+        "Create a professional profile showcasing your skills and experience",
+        "Get matched with relevant projects that fit your expertise",
+        "Secure payment processing with on-time disbursements",
+        "Build your reputation through client reviews and ratings",
+        "Access to enterprise clients and high-value projects",
+        "Professional development resources and community support"
+      ],
+      stats: "40% Higher Earnings",
+      cta: "Join as Provider"
     },
     {
-      icon: <Users className="h-8 w-8" />,
-      title: "Global Network",
-      description: "Connect with talent and opportunities from around the world",
-      color: "from-zion-cyan to-zion-cyan-light",
-      bgColor: "from-zion-cyan/20 to-zion-cyan-light/20"
-    },
-    {
-      icon: <Globe className="h-8 w-8" />,
-      title: "24/7 Support",
-      description: "Round-the-clock assistance and support for all your needs",
-      color: "from-zion-purple to-zion-purple-light",
-      bgColor: "from-zion-purple/20 to-zion-purple-light/20"
-    },
-    {
-      icon: <Clock className="h-8 w-8" />,
-      title: "Instant Access",
-      description: "Get started immediately with our streamlined onboarding process",
-      color: "from-zion-cyan to-zion-cyan-light",
-      bgColor: "from-zion-cyan/20 to-zion-cyan-light/20"
-    },
-    {
-      icon: <TrendingUp className="h-8 w-8" />,
-      title: "Growth Focused",
-      description: "Tools and resources designed to accelerate your success",
-      color: "from-zion-purple to-zion-purple-light",
-      bgColor: "from-zion-purple/20 to-zion-purple-light/20"
-    },
-    {
-      icon: <Award className="h-8 w-8" />,
-      title: "Quality Assured",
-      description: "Rigorous vetting process ensures only the best talent and services",
-      color: "from-zion-cyan to-zion-cyan-light",
-      bgColor: "from-zion-cyan/20 to-zion-cyan-light/20"
-    },
-    {
-      icon: <Lock className="h-8 w-8" />,
-      title: "Privacy First",
-      description: "Your data and privacy are protected with enterprise-grade security",
-      color: "from-zion-purple to-zion-purple-light",
-      bgColor: "from-zion-purple/20 to-zion-purple-light/20"
+      title: "For Enterprise Clients",
+      icon: <TrendingUp className="w-8 h-8" />,
+      color: "from-emerald-500 to-green-600",
+      features: [
+        "White-labeled talent portal with your company branding",
+        "Dedicated account management and priority support",
+        "Custom talent pools and preferred provider networks",
+        "Advanced analytics and reporting capabilities",
+        "API access for seamless integration with your HR systems",
+        "Customizable workflow and approval processes"
+      ],
+      stats: "60% Cost Reduction",
+      cta: "Enterprise Solutions"
     }
   ];
 
@@ -77,100 +58,116 @@ export function FeatureHighlights() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2
+        staggerChildren: 0.2
       }
     }
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 30, scale: 0.95 },
+    hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
       y: 0,
-      scale: 1,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut"
-      }
+      transition: { duration: 0.6, ease: "easeOut" }
     }
   };
 
   return (
-    <section className="py-24 bg-gradient-to-br from-zion-slate-dark via-zion-blue-dark to-zion-slate-dark relative overflow-hidden">
+    <section className="py-20 bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-blue-light relative overflow-hidden">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 1px 1px, rgba(255,255,255,0.1) 1px, transparent 0)`,
-          backgroundSize: '80px 80px'
-        }}></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.15)_1px,transparent_0)] bg-[length:40px_40px]"></div>
       </div>
       
       <div className="container mx-auto px-4 relative z-10">
         <motion.div 
-          className="text-center mb-20"
+          className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-zion-cyan via-zion-purple-light to-zion-purple bg-clip-text text-transparent mb-6">
-            Why Choose Zion?
-          </h2>
-          <p className="text-zion-slate-light text-xl md:text-2xl max-w-4xl mx-auto leading-relaxed">
-            Experience the future of tech collaboration with our cutting-edge platform designed for success
+          <h2 className="text-4xl font-bold text-white mb-4">Tailored Solutions for Everyone</h2>
+          <p className="text-zion-slate-light text-xl max-w-4xl mx-auto leading-relaxed">
+            Whatever your role in the tech ecosystem, Zion offers specialized features to help you succeed
           </p>
         </motion.div>
         
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto"
+          className="grid grid-cols-1 lg:grid-cols-3 gap-8"
           variants={containerVariants}
           initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
+          animate="visible"
         >
-          {highlights.map((highlight, index) => (
+          {highlightsData.map((category, index) => (
             <motion.div key={index} variants={itemVariants}>
-              <div className="group bg-gradient-to-br from-zion-blue/10 via-zion-blue/5 to-zion-purple/10 border border-zion-blue-light/20 hover:border-zion-purple/50 rounded-2xl p-8 transition-all duration-500 hover:shadow-2xl hover:shadow-zion-purple/20 transform hover:scale-105 backdrop-blur-sm text-center h-full">
-                <div className={`bg-gradient-to-br ${highlight.bgColor} rounded-2xl w-20 h-20 flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
-                  <div className={`text-transparent bg-gradient-to-br ${highlight.color} bg-clip-text`}>
-                    {highlight.icon}
+              <Card className="h-full bg-gradient-to-br from-zion-blue-dark/90 to-zion-blue-dark border-zion-blue-light/30 hover:border-zion-purple/50 transition-all duration-500 hover:shadow-2xl hover:shadow-zion-purple/20 group overflow-hidden">
+                <CardContent className="p-8 h-full flex flex-col">
+                  {/* Header with icon and stats */}
+                  <div className="text-center mb-6">
+                    <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${category.color} flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                      <div className="text-white">
+                        {category.icon}
+                      </div>
+                    </div>
+                    <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-zion-cyan transition-colors">
+                      {category.title}
+                    </h3>
+                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-zion-blue-light/20 rounded-full border border-zion-cyan/30">
+                      <Star className="w-4 h-4 text-zion-cyan fill-current" />
+                      <span className="text-zion-cyan text-sm font-semibold">{category.stats}</span>
+                    </div>
                   </div>
-                </div>
-                
-                <h3 className="text-xl font-bold text-white mb-4 group-hover:text-zion-cyan transition-colors duration-300">
-                  {highlight.title}
-                </h3>
-                
-                <p className="text-zion-slate-light/80 text-base leading-relaxed">
-                  {highlight.description}
-                </p>
-              </div>
+                  
+                  {/* Features list */}
+                  <div className="flex-1 space-y-4 mb-6">
+                    {category.features.map((feature, idx) => (
+                      <motion.div 
+                        key={idx} 
+                        className="flex items-start gap-3"
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.4, delay: idx * 0.1 }}
+                        viewport={{ once: true }}
+                      >
+                        <Check className="h-5 w-5 text-zion-cyan mt-0.5 flex-shrink-0 group-hover:scale-110 transition-transform" />
+                        <span className="text-zion-slate-light text-sm leading-relaxed">{feature}</span>
+                      </motion.div>
+                    ))}
+                  </div>
+                  
+                  {/* CTA Button */}
+                  <div className="mt-auto">
+                    <button className="w-full py-4 bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white font-semibold rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl group-hover:shadow-zion-purple/50 flex items-center justify-center gap-2">
+                      {category.cta}
+                      <Zap className="w-4 h-4 group-hover:scale-110 transition-transform" />
+                    </button>
+                  </div>
+                </CardContent>
+              </Card>
             </motion.div>
           ))}
         </motion.div>
-
-        {/* Call to action */}
+        
+        {/* Bottom CTA */}
         <motion.div 
-          className="text-center mt-20"
+          className="text-center mt-16"
           initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.4 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
         >
-          <div className="bg-gradient-to-r from-zion-cyan/20 via-zion-purple/20 to-zion-cyan/20 border border-zion-cyan/30 rounded-2xl p-8 max-w-4xl mx-auto backdrop-blur-sm">
-            <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
+          <div className="bg-gradient-to-r from-zion-purple/20 to-zion-cyan/20 backdrop-blur-sm rounded-2xl p-8 border border-zion-purple/30 max-w-3xl mx-auto">
+            <h3 className="text-2xl font-bold text-white mb-4">
               Ready to Transform Your Tech Experience?
             </h3>
-            <p className="text-zion-slate-light text-lg mb-6">
-              Join thousands of professionals already using Zion to accelerate their success
+            <p className="text-zion-slate-light mb-6 text-lg">
+              Join the future of technology services and discover why thousands choose Zion
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-gradient-to-r from-zion-cyan to-zion-purple hover:from-zion-cyan-light hover:to-zion-purple-light text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-zion-cyan/25">
-                Get Started Today
+              <button className="px-8 py-4 bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white font-semibold rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
+                Get Started Free
               </button>
-              <button className="border-2 border-zion-cyan text-zion-cyan hover:bg-zion-cyan hover:text-zion-blue-dark px-8 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105">
-                Learn More
+              <button className="px-8 py-4 border-2 border-zion-cyan text-zion-cyan hover:bg-zion-cyan hover:text-zion-blue-dark font-semibold rounded-xl transition-all duration-300 transform hover:scale-105">
+                Watch Demo
               </button>
             </div>
           </div>
