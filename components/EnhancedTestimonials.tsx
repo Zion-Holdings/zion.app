@@ -240,7 +240,7 @@ const EnhancedTestimonials: React.FC = () => {
 
             {/* Testimonial Card */}
             <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-3xl border border-gray-700/50 p-8 md:p-12 backdrop-blur-sm">
-              <AnimatePresence mode="wait">
+              <AnimatePresence>
                 <motion.div
                   key={currentIndex}
                   variants={testimonialVariants}
@@ -296,7 +296,7 @@ const EnhancedTestimonials: React.FC = () => {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto mb-12"
         >
-          <AnimatePresence mode="wait">
+          <AnimatePresence>
             <motion.div
               key={currentIndex}
               variants={testimonialVariants}
