@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -68,3 +69,6 @@ export function QuickAccess() {
     </section>
   );
 }
+=======
+export { EnhancedQuickAccess as QuickAccess } from './EnhancedQuickAccess';
+>>>>>>> de400afa077674abcb9e5ea4594dec75f3ba260d

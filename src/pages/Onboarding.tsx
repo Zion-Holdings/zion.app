@@ -138,7 +138,9 @@ export default function Onboarding() {
                   }
                   label={step.label}
                   description={step.description}
-                />
+                >
+                  {index + 1}
+                </Step>
               ))}
             </Steps>
           </div>
