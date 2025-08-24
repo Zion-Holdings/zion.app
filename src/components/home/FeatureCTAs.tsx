@@ -16,7 +16,9 @@ import {
   BookOpen,
   Code,
   Building,
-  Clock
+  Clock,
+  TrendingUp,
+  Cloud
 } from "lucide-react";
 
 export function FeatureCTAs() {
@@ -37,12 +39,36 @@ export function FeatureCTAs() {
       details: "Every talent in our directory undergoes a rigorous verification process to ensure quality, authenticity, and reliability."
     },
     {
-      title: "Services Marketplace",
-      description: "Discover professional tech and AI services for your business needs, from development to consulting.",
+      title: "AI Services",
+      description: "Comprehensive AI solutions including development, automation, analytics, and more.",
       icon: <Zap className="h-10 w-10 p-2 rounded-md bg-cyan-100 text-cyan-700" />,
-      link: "/services",
+      link: "/ai-services",
       badge: "New",
-      details: "From on-demand IT support to specialized AI development, our marketplace offers verified services with transparent pricing and reviews."
+      details: "Transform your business with cutting-edge AI services including machine learning, automation, and intelligent analytics."
+    },
+    {
+      title: "IT Services",
+      description: "Professional IT services including infrastructure, security, cloud, and managed services.",
+      icon: <Settings className="h-10 w-10 p-2 rounded-md bg-amber-100 text-amber-700" />,
+      link: "/it-services",
+      badge: "Featured",
+      details: "Comprehensive IT solutions to modernize your infrastructure, enhance security, and drive business growth."
+    },
+    {
+      title: "Digital Transformation",
+      description: "End-to-end digital transformation services to modernize your business operations.",
+      icon: <TrendingUp className="h-10 w-10 p-2 rounded-md bg-emerald-100 text-emerald-700" />,
+      link: "/digital-transformation",
+      badge: "Strategic",
+      details: "Strategic digital transformation services including process automation, customer experience, and innovation labs."
+    },
+    {
+      title: "Cloud Services",
+      description: "Comprehensive cloud solutions including migration, architecture, and optimization.",
+      icon: <Cloud className="h-10 w-10 p-2 rounded-md bg-indigo-100 text-indigo-700" />,
+      link: "/cloud-services",
+      badge: "Scalable",
+      details: "Expert cloud services including migration, security, cost optimization, and multi-cloud strategies."
     },
     {
       title: "Equipment Catalog",
