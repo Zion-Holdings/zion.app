@@ -1,132 +1,154 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 
 const FeaturesSection: React.FC = () => {
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+
   const features = [
     {
-      icon: '🚀',
-      title: 'AI-Powered Automation',
-      description: 'Intelligent systems that streamline operations and boost productivity through machine learning and automation.',
-      color: 'from-cyan-400 to-blue-500',
-      glow: 'glow',
-      href: '/services'
+      icon: "🤖",
+      title: "AI & Machine Learning",
+      description: "Advanced artificial intelligence solutions that learn, adapt, and evolve with your business needs.",
+      color: "from-cyan-500 to-blue-600",
+      glow: "glow",
+      link: "/services#ai"
     },
     {
-      icon: '🔒',
-      title: 'Enterprise Security',
-      description: 'Advanced cybersecurity solutions with real-time threat detection and comprehensive protection for your business.',
-      color: 'from-purple-400 to-pink-500',
-      glow: 'glow-purple',
-      href: '/services'
+      icon: "⚡",
+      title: "Cloud Infrastructure",
+      description: "Scalable cloud solutions designed for performance, security, and seamless integration.",
+      color: "from-purple-500 to-pink-600",
+      glow: "glow-purple",
+      link: "/services#cloud"
     },
     {
-      icon: '☁️',
-      title: 'Cloud Infrastructure',
-      description: 'Scalable cloud solutions that ensure high availability, performance, and cost optimization for your applications.',
-      color: 'from-green-400 to-teal-500',
-      glow: 'glow-pink',
-      href: '/services'
+      icon: "🔒",
+      title: "Cybersecurity",
+      description: "Comprehensive security frameworks protecting your digital assets and ensuring compliance.",
+      color: "from-green-500 to-emerald-600",
+      glow: "glow-green",
+      link: "/services#security"
     },
     {
-      icon: '📊',
-      title: 'Data Analytics',
-      description: 'Transform raw data into actionable insights with our advanced analytics and business intelligence platforms.',
-      color: 'from-orange-400 to-red-500',
-      glow: 'glow',
-      href: '/services'
+      icon: "📱",
+      title: "Digital Transformation",
+      description: "End-to-end digital solutions that modernize operations and enhance customer experiences.",
+      color: "from-orange-500 to-red-600",
+      glow: "glow-orange",
+      link: "/services#digital"
     },
     {
-      icon: '🌐',
-      title: 'Digital Transformation',
-      description: 'End-to-end digital transformation services that modernize your business processes and technology stack.',
-      color: 'from-indigo-400 to-purple-500',
-      glow: 'glow-purple',
-      href: '/services'
+      icon: "🌐",
+      title: "IoT Solutions",
+      description: "Connected device ecosystems that gather data and enable smart decision-making.",
+      color: "from-indigo-500 to-purple-600",
+      glow: "glow-purple",
+      link: "/services#iot"
     },
     {
-      icon: '🤖',
-      title: 'Machine Learning',
-      description: 'Custom ML solutions that learn from your data to provide predictive insights and intelligent automation.',
-      color: 'from-pink-400 to-rose-500',
-      glow: 'glow-pink',
-      href: '/services'
+      icon: "📊",
+      title: "Data Analytics",
+      description: "Powerful insights from your data to drive strategic decisions and optimize performance.",
+      color: "from-yellow-500 to-orange-600",
+      glow: "glow-yellow",
+      link: "/services#analytics"
     }
   ];
 
   return (
     <section className="relative py-24 px-6 overflow-hidden">
       {/* Background Elements */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-0 w-96 h-96 bg-gradient-to-br from-cyan-400/5 to-blue-500/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-gradient-to-br from-purple-400/5 to-pink-500/5 rounded-full blur-3xl"></div>
+      <div className="absolute inset-0">
+        <div className="absolute top-1/4 left-0 w-96 h-96 bg-gradient-to-br from-cyan-400/10 to-blue-600/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-gradient-to-br from-purple-400/10 to-pink-600/10 rounded-full blur-3xl"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Cutting-Edge{' '}
-            <span className="gradient-text">Solutions</span>
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+            <span className="bg-gradient-to-r from-cyan-400 to-purple-600 bg-clip-text text-transparent">
+              Our Core Capabilities
+            </span>
           </h2>
-          <p className="text-xl text-white/70 max-w-3xl mx-auto leading-relaxed">
-            Discover our comprehensive suite of technology solutions designed to drive innovation, 
-            enhance security, and accelerate your business growth in the digital age.
+          <p className="text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
+            We deliver cutting-edge technology solutions that transform businesses and drive innovation across industries.
           </p>
         </div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
-            <Link
+            <div
               key={index}
-              href={feature.href}
-              className="group relative overflow-hidden"
+              className={`group relative p-8 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-white/30 transition-all duration-500 hover:scale-105 hover:shadow-2xl ${
+                hoveredCard === index ? 'bg-white/10' : ''
+              }`}
+              onMouseEnter={() => setHoveredCard(index)}
+              onMouseLeave={() => setHoveredCard(null)}
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div 
-                className={`card-hover p-8 h-full transform transition-all duration-500 hover:scale-105 ${feature.glow}`}
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                {/* Icon */}
-                <div className={`w-16 h-16 bg-gradient-to-br ${feature.color} rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                  {feature.icon}
-                </div>
+              {/* Hover Background */}
+              <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}></div>
+              
+              {/* Icon */}
+              <div className={`relative z-10 w-16 h-16 bg-gradient-to-br ${feature.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 ${feature.glow}`}>
+                <span className="text-3xl">{feature.icon}</span>
+              </div>
 
-                {/* Content */}
+              {/* Content */}
+              <div className="relative z-10">
                 <h3 className="text-xl font-bold text-white mb-4 group-hover:text-cyan-400 transition-colors duration-300">
                   {feature.title}
                 </h3>
-                <p className="text-white/70 leading-relaxed">
+                <p className="text-white/70 leading-relaxed mb-6">
                   {feature.description}
                 </p>
-
-                {/* Hover Arrow */}
-                <div className="absolute bottom-6 right-6 opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all duration-300">
-                  <div className="w-8 h-8 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full flex items-center justify-center">
-                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </div>
-                </div>
-
-                {/* Gradient Border Effect */}
-                <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-cyan-400/0 via-cyan-400/10 to-cyan-400/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                
+                {/* Learn More Link */}
+                <Link
+                  href={feature.link}
+                  className="inline-flex items-center text-cyan-400 hover:text-cyan-300 font-medium group/link transition-colors duration-300"
+                >
+                  Learn More
+                  <span className="ml-2 group-hover/link:translate-x-1 transition-transform duration-300">→</span>
+                </Link>
               </div>
-            </Link>
+
+              {/* Decorative Elements */}
+              <div className="absolute top-4 right-4 opacity-20 group-hover:opacity-40 transition-opacity duration-300">
+                <div className="w-8 h-8 border border-white/30 rounded-full"></div>
+              </div>
+              <div className="absolute bottom-4 left-4 opacity-20 group-hover:opacity-40 transition-opacity duration-300">
+                <div className="w-4 h-4 bg-white/30 rounded-full"></div>
+              </div>
+            </div>
           ))}
         </div>
 
         {/* CTA Section */}
-        <div className="text-center">
-          <div className="inline-block p-1 bg-gradient-to-r from-cyan-400/20 to-purple-400/20 rounded-2xl backdrop-blur-xl border border-white/10">
-            <Link
-              href="/services"
-              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl"
-            >
-              Explore All Services
-              <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </Link>
+        <div className="text-center mt-16">
+          <div className="inline-block p-8 rounded-3xl bg-gradient-to-r from-cyan-500/10 to-purple-500/10 backdrop-blur-xl border border-white/20">
+            <h3 className="text-2xl font-bold text-white mb-4">
+              Ready to Transform Your Business?
+            </h3>
+                           <p className="text-white/80 mb-6 max-w-2xl mx-auto">
+                 Let&apos;s discuss how our innovative solutions can drive your digital transformation journey.
+               </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/contact"
+                className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 hover:shadow-xl"
+              >
+                Get Started Today
+              </Link>
+              <Link
+                href="/case-studies"
+                className="px-8 py-4 bg-white/10 text-white font-bold rounded-xl border border-white/20 hover:bg-white/20 hover:border-cyan-400/50 transition-all duration-300 transform hover:scale-105"
+              >
+                View Our Work
+              </Link>
+            </div>
           </div>
         </div>
       </div>
