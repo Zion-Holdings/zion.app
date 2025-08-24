@@ -1,0 +1,49 @@
+name: WORKFLOW_NAME_PLACEHOLDER
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: '*/10 * * * *'
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  main:
+    name: Main Job
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+            - name: Checkout
+              uses: actions/checkout@v4
+                fetch-depth: 0
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
+                node-version: 20
+                cache: npm
+            - name: Install dependencies
+              run: npm ci
+            - name: Run auto-discovery partition ${{ matrix.partition_index }} of ${{ matrix.partition_total }}
+              env:
+                PARTITION_INDEX: ${{ matrix.partition_index }}"
+                PARTITION_TOTAL: ${{ matrix.partition_total }}"
+                TASK_TIMEOUT_MS: '180000'
+            - name: Upload logs
+                name: auto-discovery-logs-${{ matrix.partition_index }}
+                path: automation/logs/**/*
+                if-no-files-found: ignore

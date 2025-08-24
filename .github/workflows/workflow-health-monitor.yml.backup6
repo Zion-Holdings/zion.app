@@ -1,0 +1,123 @@
+name: Workflow Health Monitor
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'  # Every 6 hours
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  health-check:
+    name: Repository Health Check
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check git repository health
+        run: |
+          echo "=== Git Repository Health Check ==="
+          
+          # Check for detached HEAD
+          if [ "$(git rev-parse --abbrev-ref HEAD)" = "HEAD" ]; then
+            echo "⚠️  Detached HEAD detected - fixing..."
+            git checkout -B automation/health-check-temp
+          fi
+          
+          # Check for rebase state
+          if [ -d ".git/rebase-merge" ] || [ -d ".git/rebase-apply" ]; then
+            echo "⚠️  Rebase state detected - cleaning up..."
+            git rebase --abort 2>/dev/null || true
+            rm -rf .git/rebase-merge .git/rebase-apply 2>/dev/null || true
+          fi
+          
+          # Check for merge state
+          if [ -f ".git/MERGE_HEAD" ]; then
+            echo "⚠️  Merge state detected - cleaning up..."
+            git merge --abort 2>/dev/null || true
+          fi
+          
+          # Check for cherry-pick state
+          if [ -d ".git/CHERRY_PICK_HEAD" ]; then
+            echo "⚠️  Cherry-pick state detected - cleaning up..."
+            git cherry-pick --abort 2>/dev/null || true
+          fi
+          
+          # Check disk space
+          DISK_USAGE=$(df -h . | tail -1 | awk '{print $5}' | sed 's/%//')
+          if [ "$DISK_USAGE" -gt 80 ]; then
+            echo "⚠️  High disk usage detected: ${DISK_USAGE}%"
+          else
+            echo "✅ Disk usage: ${DISK_USAGE}%"
+          fi
+          
+          # Check for large files
+          LARGE_FILES=$(find . -type f -size +10M 2>/dev/null | wc -l)
+          echo "📁 Large files (>10MB): $LARGE_FILES"
+          
+          # Check for old temporary files
+          OLD_TEMP=$(find . -name "*.tmp" -mtime +1 2>/dev/null | wc -l)
+          echo "🗑️  Old temporary files: $OLD_TEMP"
+
+      - name: Clean git state
+        run: |
+          echo "🧹 Cleaning git state..."
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          
+          # Reset to clean state
+          git reset --hard HEAD
+          git clean -fd
+          
+          # Fetch latest changes
+          git fetch --all --prune
+
+      - name: Generate health report
+        run: |
+          echo "📊 Generating health report..."
+          
+          # Create health report
+          cat > automation/health-report-$(date +%Y%m%d-%H%M%S).json << EOF
+          {
+            "timestamp": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
+            "repository": "$(git remote get-url origin)",
+            "branch": "$(git rev-parse --abbrev-ref HEAD)",
+            "commit": "$(git rev-parse HEAD)",
+            "disk_usage": "$(df -h . | tail -1 | awk '{print $5}')",
+            "large_files": $(find . -type f -size +10M 2>/dev/null | wc -l),
+            "old_temp_files": $(find . -name "*.tmp" -mtime +1 2>/dev/null | wc -l),
+            "git_status": "$(git status --porcelain | wc -l | tr -d ' ')"
+          }
+          EOF
+          
+          echo "✅ Health report generated"
+
+      - name: Commit health report
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git add automation/health-report-*.json
+            git commit -m "chore(health): workflow health report [skip ci]"
+            git push origin HEAD:$(git rev-parse --abbrev-ref HEAD)
+          else
+            echo "No health report changes to commit"
+          fi
+
+      - name: Cleanup old health reports
+        run: |
+          # Keep only last 7 health reports
+          find automation -name "health-report-*.json" -mtime +7 -delete 2>/dev/null || true
+          echo "Cleaned up health reports older than 7 days"
