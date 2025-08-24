@@ -84,6 +84,9 @@
   ],
   "exclude": [
     "node_modules",
-    "zion.app/recovered-content/**"
+    "zion.app/recovered-content/**",
+    "contracts/**",
+    "cypress/**",
+    "vitest.config.ts"
   ]
 }

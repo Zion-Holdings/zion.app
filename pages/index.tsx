@@ -1,6 +1,8 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 const Home: NextPage = () => {
   const featuredServices = [
@@ -84,6 +86,8 @@ const Home: NextPage = () => {
         <meta name="description" content="Zion Tech Group provides cutting-edge technology solutions for modern businesses. From AI development to cloud architecture, we help companies transform their digital presence with innovative micro SAAS solutions." />
         <meta name="keywords" content="technology solutions, AI services, cloud migration, web development, mobile apps, cybersecurity, micro SAAS, digital transformation" />
       </Head>
+      
+      <Header />
       
       {/* Hero Section */}
       <main className="container mx-auto px-4 py-16">
@@ -274,6 +278,8 @@ const Home: NextPage = () => {
           </div>
         </div>
       </main>
+
+      <Footer />
     </div>
   );
 };
