@@ -275,6 +275,14 @@
     "h1": "2025 Innovative Services"
   },
   {
+<<<<<<< HEAD
+    "route": "/comprehensive-2025-services-showcase",
+    "title": "Comprehensive 2025 Innovative Services Showcase — Zion Tech Group",
+    "h1": "2025 Innovative Services Showcase"
+  },
+  {
+=======
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-32cd
     "route": "/comprehensive-pricing",
     "title": "Comprehensive Pricing | Zion Tech Group - Micro SaaS Services Pricing & Plans",
     "h1": ""
@@ -406,7 +414,11 @@
   },
   {
     "route": "/",
+<<<<<<< HEAD
+    "title": "Zion Tech Group — AI-Powered Cloud Automation & Autonomous Deployment Platform",
+=======
     "title": "Zion Tech Group — Leading-Edge Technology Solutions & Autonomous Innovation Platform",
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-32cd
     "h1": "Zion Tech Group"
   },
   {
@@ -530,6 +542,14 @@
     "h1": ""
   },
   {
+<<<<<<< HEAD
+    "route": "/pricing-2025",
+    "title": "2025 Pricing & Services — Zion Tech Group",
+    "h1": "2025 Pricing & Services"
+  },
+  {
+=======
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-32cd
     "route": "/pricing-comparison",
     "title": "Pricing Comparison - Zion Tech Group | How We Stack Up Against the Competition",
     "h1": "How We Compare to the Competition"
@@ -692,7 +712,11 @@
   {
     "route": "/ultimate-futuristic-services-showcase-2025",
     "title": "Ultimate Futuristic Services Showcase 2025 | Zion Tech Group",
+<<<<<<< HEAD
+    "h1": ""
+=======
     "h1": "Ultimate Futuristic Services"
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-32cd
   },
   {
     "route": "/url-shortener",
