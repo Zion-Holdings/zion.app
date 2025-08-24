@@ -10,18 +10,34 @@ import { useWhitelabel } from '@/context/WhitelabelContext';
 import { EnhancedSearchInput } from "@/components/search/EnhancedSearchInput";
 import { generateSearchSuggestions } from "@/data/marketplaceData";
 import { useNavigate } from "react-router-dom";
-import { Button } from "@/components/ui/button";
 import { 
+  Search, 
   Menu, 
   X, 
-  ChevronDown, 
-  Zap, 
-  Settings, 
-  Users, 
-  Code, 
-  Shield, 
-  Cloud, 
-  BarChart3
+  ChevronDown,
+  Globe,
+  Building,
+  Users,
+  Zap,
+  Code,
+  Shield,
+  BarChart3,
+  Cloud,
+  Brain,
+  Network,
+  Video,
+  Eye,
+  Server,
+  MessageSquare,
+  TrendingUp,
+  Lightbulb,
+  Settings,
+  HelpCircle,
+  Phone,
+  Mail,
+  MapPin,
+  Handshake,
+  FileText
 } from "lucide-react";
 
 export interface HeaderProps {
@@ -40,7 +56,9 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
   const navigate = useNavigate();
   const [query, setQuery] = useState("");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
+  const [isServicesMenuOpen, setIsServicesMenuOpen] = useState(false);
+  const [isSolutionsMenuOpen, setIsSolutionsMenuOpen] = useState(false);
+  const [isCompanyMenuOpen, setIsCompanyMenuOpen] = useState(false);
   const searchSuggestions = generateSearchSuggestions();
   
   // If we have a white-label tenant and no specific customTheme is provided,
@@ -65,242 +83,332 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
     }
   };
 
-  // Close mobile menu when route changes
+  // Close mobile menu when clicking outside
   useEffect(() => {
-    setIsMobileMenuOpen(false);
-    setIsServicesDropdownOpen(false);
-  }, [navigate]);
+    const handleClickOutside = (event: MouseEvent) => {
+      if (isMobileMenuOpen && !(event.target as Element).closest('.mobile-menu')) {
+        setIsMobileMenuOpen(false);
+      }
+    };
 
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [isMobileMenuOpen]);
+
+  // Services menu items
   const servicesMenuItems = [
-    {
-      title: "AI Services",
-      description: "Cutting-edge AI solutions",
-      icon: <Zap className="h-5 w-5" />,
-      href: "/micro-saas-services?category=AI Services",
-      color: "from-purple-500 to-pink-500"
-    },
-    {
-      title: "IT Services",
-      description: "Professional IT solutions",
-      icon: <Settings className="h-5 w-5" />,
-      href: "/micro-saas-services?category=IT Services",
-      color: "from-blue-500 to-cyan-500"
-    },
-    {
-      title: "Micro SAAS",
-      description: "Scalable software solutions",
-      icon: <Users className="h-5 w-5" />,
-      href: "/micro-saas-services?category=Micro SAAS",
-      color: "from-green-500 to-emerald-500"
-    },
-    {
-      title: "Development",
-      description: "Custom development services",
-      icon: <Code className="h-5 w-5" />,
-      href: "/micro-saas-services?category=Development",
-      color: "from-orange-500 to-red-500"
-    },
-    {
-      title: "Security",
-      description: "Cybersecurity solutions",
-      icon: <Shield className="h-5 w-5" />,
-      href: "/micro-saas-services?category=Security",
-      color: "from-red-500 to-pink-500"
-    },
-    {
-      title: "Cloud & Analytics",
-      description: "Cloud and data solutions",
-      icon: <Cloud className="h-5 w-5" />,
-      href: "/micro-saas-services?category=Cloud",
-      color: "from-indigo-500 to-purple-500"
-    }
+    { title: "AI Development", icon: Brain, link: "/ai-development", description: "Custom AI solutions" },
+    { title: "Cloud Services", icon: Cloud, link: "/cloud-services", description: "AWS, Azure, GCP" },
+    { title: "Cybersecurity", icon: Shield, link: "/cybersecurity", description: "Security & compliance" },
+    { title: "Data Analytics", icon: BarChart3, link: "/data-analytics", description: "Business intelligence" },
+    { title: "DevOps", icon: Zap, link: "/devops", description: "Automation & CI/CD" },
+    { title: "Blockchain", icon: Network, link: "/blockchain", description: "Web3 & DeFi" },
+    { title: "IoT Solutions", icon: Network, link: "/iot-solutions", description: "Connected devices" },
+    { title: "Video Analytics", icon: Video, link: "/video-analytics", description: "AI video processing" }
   ];
-  
+
+  // Solutions menu items
+  const solutionsMenuItems = [
+    { title: "Enterprise", icon: Building, link: "/enterprise", description: "Large organizations" },
+    { title: "Startups", icon: TrendingUp, link: "/startups", description: "Growing businesses" },
+    { title: "Healthcare", icon: Shield, link: "/healthcare", description: "Medical & pharma" },
+    { title: "Fintech", icon: BarChart3, link: "/fintech", description: "Financial services" },
+    { title: "Education", icon: Users, link: "/education", description: "EdTech solutions" },
+    { title: "Retail", icon: BarChart3, link: "/retail", description: "E-commerce & retail" },
+    { title: "Manufacturing", icon: Settings, link: "/manufacturing", description: "Industry 4.0" },
+    { title: "Government", icon: Building, link: "/government", description: "Public sector" }
+  ];
+
+  // Company menu items
+  const companyMenuItems = [
+    { title: "About Us", icon: Users, link: "/about", description: "Our story & mission" },
+    { title: "Careers", icon: TrendingUp, link: "/careers", description: "Join our team" },
+    { title: "Partners", icon: Handshake, link: "/partners", description: "Strategic alliances" },
+    { title: "Contact", icon: Phone, link: "/contact", description: "Get in touch" },
+    { title: "Support", icon: HelpCircle, link: "/support", description: "Help & resources" },
+    { title: "Blog", icon: FileText, link: "/blog", description: "Latest insights" }
+  ];
+
   return (
-    <header 
-      className="sticky top-0 z-50 w-full border-b border-zion-purple/20 bg-zion-blue-dark/95 backdrop-blur-xl shadow-2xl shadow-zion-purple/10"
-      style={headerStyle}
-    >
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-zion-purple/5 via-zion-blue/5 to-zion-cyan/5"></div>
-        <div className="absolute top-0 left-1/4 w-1 h-full bg-gradient-to-b from-transparent via-zion-cyan/20 to-transparent animate-pulse"></div>
-        <div className="absolute top-0 right-1/3 w-1 h-full bg-gradient-to-b from-transparent via-zion-purple/20 to-transparent animate-pulse delay-1000"></div>
+    <>
+      {/* Top contact bar */}
+      <div className="bg-zion-slate-dark border-b border-zion-blue-light/20">
+        <div className="container mx-auto px-4 py-2">
+          <div className="flex flex-col sm:flex-row items-center justify-between text-xs text-zion-slate-light">
+            <div className="flex items-center space-x-4 mb-2 sm:mb-0">
+              <div className="flex items-center space-x-2">
+                <Phone className="h-3 w-3" />
+                <span>+1 302 464 0950</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Mail className="h-3 w-3" />
+                <span>kleber@ziontechgroup.com</span>
+              </div>
+            </div>
+            <div className="flex items-center space-x-2">
+              <MapPin className="h-3 w-3" />
+              <span>364 E Main St STE 1008, Middletown DE 19709</span>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div className="relative container flex h-16 items-center px-4 sm:px-6">
-        <Logo customLogo={customLogo} customColor={effectiveTheme?.primaryColor} />
+      {/* Main header */}
+      <header 
+        className="sticky top-0 z-50 w-full border-b border-zion-purple/20 bg-zion-blue-dark/95 backdrop-blur-md shadow-lg"
+        style={headerStyle}
+      >
+        <div className="container mx-auto px-4">
+          <div className="flex h-16 items-center justify-between">
+            {/* Logo */}
+            <Logo customLogo={customLogo} customColor={effectiveTheme?.primaryColor} />
 
-        {/* Desktop Navigation */}
-        <div className="ml-6 flex-1 hidden lg:block">
-          <MainNavigation />
-          
-          {/* Services Dropdown */}
-          <div className="relative inline-block ml-4">
-            <Button
-              variant="ghost"
-              className="text-white hover:bg-zion-purple/20 hover:text-zion-cyan transition-all duration-300"
-              onMouseEnter={() => setIsServicesDropdownOpen(true)}
-              onMouseLeave={() => setIsServicesDropdownOpen(false)}
-            >
-              Services
-              <ChevronDown className={`ml-1 h-4 w-4 transition-transform duration-300 ${isServicesDropdownOpen ? 'rotate-180' : ''}`} />
-            </Button>
-            
-            {isServicesDropdownOpen && (
-              <div 
-                className="absolute top-full left-0 mt-2 w-96 bg-zion-slate/95 backdrop-blur-xl border border-zion-purple/30 rounded-2xl shadow-2xl shadow-zion-purple/20 p-4"
-                onMouseEnter={() => setIsServicesDropdownOpen(true)}
-                onMouseLeave={() => setIsServicesDropdownOpen(false)}
-              >
-                <div className="grid grid-cols-2 gap-3">
-                  {servicesMenuItems.map((item, index) => (
-                    <Link
-                      key={index}
-                      to={item.href}
-                      className="group p-3 rounded-xl hover:bg-white/10 transition-all duration-300 border border-transparent hover:border-zion-cyan/30"
-                    >
-                      <div className="flex items-center gap-3">
-                        <div className={`p-2 rounded-lg bg-gradient-to-r ${item.color} text-white`}>
-                          {item.icon}
-                        </div>
-                        <div>
-                          <h4 className="font-semibold text-white group-hover:text-zion-cyan transition-colors">
-                            {item.title}
-                          </h4>
-                          <p className="text-xs text-white/60">{item.description}</p>
-                        </div>
-                      </div>
-                    </Link>
-                  ))}
-                </div>
-                <div className="mt-4 pt-4 border-t border-zion-purple/30">
-                  <Link
-                    to="/micro-saas-services"
-                    className="block text-center py-2 px-4 bg-gradient-to-r from-zion-purple to-zion-blue text-white rounded-lg hover:from-zion-purple-light hover:to-zion-blue-light transition-all duration-300"
+            {/* Desktop Navigation */}
+            <nav className="hidden lg:flex items-center space-x-8">
+              {/* Services Dropdown */}
+              <div className="relative group">
+                <button
+                  className="flex items-center space-x-1 text-zion-cyan hover:text-white transition-colors py-2"
+                  onMouseEnter={() => setIsServicesMenuOpen(true)}
+                  onMouseLeave={() => setIsServicesMenuOpen(false)}
+                >
+                  <Zap className="h-4 w-4" />
+                  <span>Services</span>
+                  <ChevronDown className="h-4 w-4" />
+                </button>
+                
+                {isServicesMenuOpen && (
+                  <div 
+                    className="absolute top-full left-0 mt-2 w-96 bg-zion-blue-dark border border-zion-purple/30 rounded-lg shadow-xl backdrop-blur-md"
+                    onMouseEnter={() => setIsServicesMenuOpen(true)}
+                    onMouseLeave={() => setIsServicesMenuOpen(false)}
                   >
-                    View All Services
-                  </Link>
-                </div>
+                    <div className="p-4">
+                      <h3 className="text-zion-cyan font-semibold mb-3">Our Services</h3>
+                      <div className="grid grid-cols-2 gap-3">
+                        {servicesMenuItems.map((item) => (
+                          <Link
+                            key={item.title}
+                            to={item.link}
+                            className="flex items-start space-x-3 p-2 rounded hover:bg-zion-purple/10 transition-colors group"
+                          >
+                            <item.icon className="h-5 w-5 text-zion-cyan mt-0.5" />
+                            <div>
+                              <div className="font-medium text-white group-hover:text-zion-cyan transition-colors">
+                                {item.title}
+                              </div>
+                              <div className="text-xs text-zion-slate-light">
+                                {item.description}
+                              </div>
+                            </div>
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
-            )}
+
+              {/* Solutions Dropdown */}
+              <div className="relative group">
+                <button
+                  className="flex items-center space-x-1 text-zion-cyan hover:text-white transition-colors py-2"
+                  onMouseEnter={() => setIsSolutionsMenuOpen(true)}
+                  onMouseLeave={() => setIsSolutionsMenuOpen(false)}
+                >
+                  <Eye className="h-4 w-4" />
+                  <span>Solutions</span>
+                  <ChevronDown className="h-4 w-4" />
+                </button>
+                
+                {isSolutionsMenuOpen && (
+                  <div 
+                    className="absolute top-full left-0 mt-2 w-96 bg-zion-blue-dark border border-zion-purple/30 rounded-lg shadow-xl backdrop-blur-md"
+                    onMouseEnter={() => setIsSolutionsMenuOpen(true)}
+                    onMouseLeave={() => setIsSolutionsMenuOpen(false)}
+                  >
+                    <div className="p-4">
+                      <h3 className="text-zion-cyan font-semibold mb-3">Industry Solutions</h3>
+                      <div className="grid grid-cols-2 gap-3">
+                        {solutionsMenuItems.map((item) => (
+                          <Link
+                            key={item.title}
+                            to={item.link}
+                            className="flex items-start space-x-3 p-2 rounded hover:bg-zion-purple/10 transition-colors group"
+                          >
+                            <item.icon className="h-5 w-5 text-zion-cyan mt-0.5" />
+                            <div>
+                              <div className="font-medium text-white group-hover:text-zion-cyan transition-colors">
+                                {item.title}
+                              </div>
+                              <div className="text-xs text-zion-slate-light">
+                                {item.description}
+                              </div>
+                            </div>
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* Company Dropdown */}
+              <div className="relative group">
+                <button
+                  className="flex items-center space-x-1 text-zion-cyan hover:text-white transition-colors py-2"
+                  onMouseEnter={() => setIsCompanyMenuOpen(true)}
+                  onMouseLeave={() => setIsCompanyMenuOpen(false)}
+                >
+                  <Building className="h-4 w-4" />
+                  <span>Company</span>
+                  <ChevronDown className="h-4 w-4" />
+                </button>
+                
+                {isCompanyMenuOpen && (
+                  <div 
+                    className="absolute top-full left-0 mt-2 w-80 bg-zion-blue-dark border border-zion-purple/30 rounded-lg shadow-xl backdrop-blur-md"
+                    onMouseEnter={() => setIsCompanyMenuOpen(true)}
+                    onMouseLeave={() => setIsCompanyMenuOpen(false)}
+                  >
+                    <div className="p-4">
+                      <h3 className="text-zion-cyan font-semibold mb-3">About Zion</h3>
+                      <div className="space-y-2">
+                        {companyMenuItems.map((item) => (
+                          <Link
+                            key={item.title}
+                            to={item.link}
+                            className="flex items-center space-x-3 p-2 rounded hover:bg-zion-purple/10 transition-colors group"
+                          >
+                            <item.icon className="h-5 w-5 text-zion-cyan" />
+                            <div>
+                              <div className="font-medium text-white group-hover:text-zion-cyan transition-colors">
+                                {item.title}
+                              </div>
+                              <div className="text-xs text-zion-slate-light">
+                                {item.description}
+                              </div>
+                            </div>
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* Quick Links */}
+              <Link to="/marketplace" className="text-zion-cyan hover:text-white transition-colors">
+                Marketplace
+              </Link>
+              <Link to="/talent" className="text-zion-cyan hover:text-white transition-colors">
+                Talent
+              </Link>
+              <Link to="/blog" className="text-zion-cyan hover:text-white transition-colors">
+                Blog
+              </Link>
+            </nav>
+
+            {/* Search Bar */}
+            <form onSubmit={handleSubmit} className="hidden md:block w-80 mx-4">
+              <EnhancedSearchInput
+                value={query}
+                onChange={setQuery}
+                onSelectSuggestion={(text) => {
+                  navigate(`/search?q=${encodeURIComponent(text)}`);
+                  setQuery("");
+                }}
+                searchSuggestions={searchSuggestions}
+              />
+            </form>
+
+            {/* Right side actions */}
+            <div className="flex items-center gap-4">
+              <LanguageSelector />
+              {!hideLogin && <UserMenu />}
+              
+              {/* Mobile menu button */}
+              <button
+                className="lg:hidden p-2 text-zion-cyan hover:text-white transition-colors"
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              >
+                {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              </button>
+            </div>
           </div>
         </div>
 
-        {/* Search Bar */}
-        <form onSubmit={handleSubmit} className="hidden md:block w-64 mx-4">
-          <EnhancedSearchInput
-            value={query}
-            onChange={setQuery}
-            onSelectSuggestion={(text) => {
-              navigate(`/search?q=${encodeURIComponent(text)}`);
-              setQuery("");
-            }}
-            searchSuggestions={searchSuggestions}
-          />
-        </form>
-
-        {/* Right side items */}
-        <div className="flex items-center gap-2">
-          <LanguageSelector />
-          {!hideLogin && <UserMenu />}
-          
-          {/* Mobile menu button */}
-          <Button
-            variant="ghost"
-            size="sm"
-            className="lg:hidden text-white hover:bg-zion-purple/20 hover:text-zion-cyan"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </Button>
-        </div>
-      </div>
-
-      {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <div className="lg:hidden bg-zion-slate/95 backdrop-blur-xl border-t border-zion-purple/30">
-          <div className="container mx-auto px-4 py-4">
-            <div className="space-y-4">
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
+          <div className="lg:hidden mobile-menu bg-zion-blue-dark border-t border-zion-purple/20">
+            <div className="container mx-auto px-4 py-4">
               {/* Mobile Search */}
-              <form onSubmit={handleSubmit}>
+              <form onSubmit={handleSubmit} className="mb-6">
                 <EnhancedSearchInput
                   value={query}
                   onChange={setQuery}
                   onSelectSuggestion={(text) => {
                     navigate(`/search?q=${encodeURIComponent(text)}`);
                     setQuery("");
+                    setIsMobileMenuOpen(false);
                   }}
                   searchSuggestions={searchSuggestions}
                 />
               </form>
 
               {/* Mobile Navigation */}
-              <nav className="space-y-2">
-                <Link
-                  to="/"
-                  className="block py-2 px-4 text-white hover:bg-zion-purple/20 hover:text-zion-cyan rounded-lg transition-colors"
-                >
-                  Home
-                </Link>
-                <Link
-                  to="/marketplace"
-                  className="block py-2 px-4 text-white hover:bg-zion-purple/20 hover:text-zion-cyan rounded-lg transition-colors"
-                >
-                  Marketplace
-                </Link>
-                <Link
-                  to="/talent"
-                  className="block py-2 px-4 text-white hover:bg-zion-purple/20 hover:text-zion-cyan rounded-lg transition-colors"
-                >
-                  Talent
-                </Link>
-                <Link
-                  to="/equipment"
-                  className="block py-2 px-4 text-white hover:bg-zion-purple/20 hover:text-zion-cyan rounded-lg transition-colors"
-                >
-                  Equipment
-                </Link>
-                <Link
-                  to="/community"
-                  className="block py-2 px-4 text-white hover:bg-zion-purple/20 hover:text-zion-cyan rounded-lg transition-colors"
-                >
-                  Community
-                </Link>
-                
-                {/* Services Section */}
-                <div className="pt-2">
-                  <h4 className="px-4 py-2 text-sm font-semibold text-zion-cyan uppercase tracking-wide">
-                    Services
-                  </h4>
-                  <div className="space-y-1">
-                    {servicesMenuItems.map((item, index) => (
+              <div className="space-y-4">
+                <div>
+                  <h3 className="text-zion-cyan font-semibold mb-2">Services</h3>
+                  <div className="space-y-2 pl-4">
+                    {servicesMenuItems.map((item) => (
                       <Link
-                        key={index}
-                        to={item.href}
-                        className="block py-2 px-6 text-white/80 hover:bg-zion-purple/20 hover:text-zion-cyan rounded-lg transition-colors"
+                        key={item.title}
+                        to={item.link}
+                        className="block text-zion-slate-light hover:text-zion-cyan transition-colors"
+                        onClick={() => setIsMobileMenuOpen(false)}
                       >
-                        <div className="flex items-center gap-3">
-                          <div className={`p-1.5 rounded-lg bg-gradient-to-r ${item.color} text-white`}>
-                            {item.icon}
-                          </div>
-                          <span>{item.title}</span>
-                        </div>
+                        {item.title}
                       </Link>
                     ))}
-                    <Link
-                      to="/micro-saas-services"
-                      className="block py-2 px-6 text-zion-cyan hover:bg-zion-purple/20 rounded-lg transition-colors font-medium"
-                    >
-                      View All Services →
+                  </div>
+                </div>
+
+                <div>
+                  <h3 className="text-zion-cyan font-semibold mb-2">Solutions</h3>
+                  <div className="space-y-2 pl-4">
+                    {solutionsMenuItems.map((item) => (
+                      <Link
+                        key={item.title}
+                        to={item.link}
+                        className="block text-zion-slate-light hover:text-zion-cyan transition-colors"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        {item.title}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+
+                <div>
+                  <h3 className="text-zion-cyan font-semibold mb-2">Quick Links</h3>
+                  <div className="space-y-2 pl-4">
+                    <Link to="/marketplace" className="block text-zion-slate-light hover:text-zion-cyan transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
+                      Marketplace
+                    </Link>
+                    <Link to="/talent" className="block text-zion-slate-light hover:text-zion-cyan transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
+                      Talent
+                    </Link>
+                    <Link to="/blog" className="block text-zion-slate-light hover:text-zion-cyan transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
+                      Blog
                     </Link>
                   </div>
                 </div>
-              </nav>
+              </div>
             </div>
           </div>
-        </div>
-      )}
-    </header>
+        )}
+      </header>
+    </>
   );
 }

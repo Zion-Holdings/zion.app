@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -11,15 +10,19 @@ import {
   Settings, 
   Search, 
   MessageSquare, 
-  Smartphone, 
-  Calendar,
-  BookOpen,
-  Code,
-  Building,
-  Clock,
+  Brain,
   Shield,
+  BarChart3,
+  Code,
   Cloud,
-  BarChart3
+  Globe,
+  Video,
+  TrendingUp,
+  Eye,
+  Server,
+  Network,
+  FileText,
+  Key
 } from "lucide-react";
 
 export function FeatureCTAs() {
@@ -30,14 +33,18 @@ export function FeatureCTAs() {
       icon: <Search className="h-10 w-10 p-2 rounded-md bg-blue-100 text-blue-700" />,
       link: "/marketplace",
       badge: "Popular",
-      details: "Leveraging advanced machine learning, our matching system analyzes over 100+ data points to create perfect connections between talents and opportunities."
+      details: "Leveraging advanced machine learning, our matching system analyzes over 100+ data points to create perfect connections between talents and opportunities.",
+      price: "$99/month",
+      category: "AI Services"
     },
     {
       title: "Talent Directory",
       description: "Browse our extensive database of verified AI and tech specialists, filtered by expertise and availability.",
       icon: <Users className="h-10 w-10 p-2 rounded-md bg-purple-100 text-purple-700" />,
       link: "/talent",
-      details: "Every talent in our directory undergoes a rigorous verification process to ensure quality, authenticity, and reliability."
+      details: "Every talent in our directory undergoes a rigorous verification process to ensure quality, authenticity, and reliability.",
+      price: "Free",
+      category: "Marketplace"
     },
     {
       title: "Services Marketplace",
@@ -45,193 +52,275 @@ export function FeatureCTAs() {
       icon: <Zap className="h-10 w-10 p-2 rounded-md bg-cyan-100 text-cyan-700" />,
       link: "/services",
       badge: "New",
-      details: "From on-demand IT support to specialized AI development, our marketplace offers verified services with transparent pricing and reviews."
+      details: "From on-demand IT support to specialized AI development, our marketplace offers verified services with transparent pricing and reviews.",
+      price: "5% commission",
+      category: "Marketplace"
     },
     {
-      title: "Micro SAAS Solutions",
-      description: "Access innovative micro SAAS services including AI chatbots, content generation, and business automation tools.",
-      icon: <Code className="h-10 w-10 p-2 rounded-md bg-emerald-100 text-emerald-700" />,
-      link: "/micro-saas-services",
-      badge: "Featured",
-      details: "Scalable software solutions starting from $29/month. Transform your business with AI-powered tools and automation."
-    },
-    {
-      title: "Equipment Catalog",
-      description: "Find specialized hardware and tech equipment for AI development and research.",
-      icon: <Settings className="h-10 w-10 p-2 rounded-md bg-amber-100 text-amber-700" />,
+      title: "Equipment & Tools",
+      description: "Access to cutting-edge AI hardware, software licenses, and development tools for your projects.",
+      icon: <Settings className="h-10 w-10 p-2 rounded-md bg-orange-100 text-orange-700" />,
       link: "/equipment",
-      details: "Access cutting-edge technology with flexible options to buy, rent, or lease specialized equipment for your tech projects."
+      details: "Rent or purchase high-performance GPUs, specialized AI chips, and enterprise software tools at competitive rates.",
+      price: "Variable",
+      category: "Hardware"
     },
     {
-      title: "Community Hub",
-      description: "Connect with like-minded professionals, share insights, and stay updated with industry trends.",
-      icon: <MessageSquare className="h-10 w-10 p-2 rounded-md bg-emerald-100 text-emerald-700" />,
-      link: "/community",
-      details: "Join thousands of tech professionals in discussions, AMAs with industry leaders, and exclusive community events."
+      title: "AI Content Generator",
+      description: "Generate high-quality content, code, and creative assets using advanced AI models.",
+      icon: <Brain className="h-10 w-10 p-2 rounded-md bg-purple-100 text-purple-700" />,
+      link: "/services/ai-content",
+      badge: "Hot",
+      details: "Create articles, blog posts, social media content, and marketing copy with AI assistance. Includes plagiarism checking and SEO optimization.",
+      price: "$29/month",
+      category: "AI Services"
     },
     {
-      title: "Mobile Experience",
-      description: "Take Zion with you on the go with our mobile app for iOS and Android devices.",
-      icon: <Smartphone className="h-10 w-10 p-2 rounded-md bg-indigo-100 text-indigo-700" />,
-      link: "/mobile-launch",
-      badge: "Featured",
-      details: "Manage your projects, communicate with clients or talents, and receive real-time updates wherever you are."
+      title: "Cybersecurity Assessment",
+      description: "Comprehensive security audits and vulnerability assessments for your digital infrastructure.",
+      icon: <Shield className="h-10 w-10 p-2 rounded-md bg-red-100 text-red-700" />,
+      link: "/services/cybersecurity",
+      details: "Professional security testing including penetration testing, code review, and compliance audits. Get detailed reports and remediation guidance.",
+      price: "$499/assessment",
+      category: "Security"
     },
     {
-      title: "Enterprise Solutions",
-      description: "Custom-branded hiring portal, dedicated talent pool, and powerful admin controls for your organization.",
-      icon: <Building className="h-10 w-10 p-2 rounded-md bg-pink-100 text-pink-700" />,
-      link: "/enterprise",
-      details: "Scale your talent acquisition with white-labeled solutions, analytics dashboards, and dedicated account managers."
+      title: "Data Analytics Dashboard",
+      description: "Custom business intelligence dashboards with real-time data visualization and reporting.",
+      icon: <BarChart3 className="h-10 w-10 p-2 rounded-md bg-green-100 text-green-700" />,
+      link: "/services/analytics",
+      details: "Transform your data into actionable insights with interactive charts, automated reports, and predictive analytics capabilities.",
+      price: "$199/month",
+      category: "Data Services"
     },
     {
-      title: "Developer Tools",
-      description: "Access our API documentation, SDKs, and integration guides to build on top of the Zion platform.",
-      icon: <Code className="h-10 w-10 p-2 rounded-md bg-gray-100 text-gray-700" />,
-      link: "/developers",
-      details: "Leverage our robust API with comprehensive documentation, code examples, and developer support."
+      title: "Cloud Migration Service",
+      description: "Seamless migration of your applications and data to cloud platforms with zero downtime.",
+      icon: <Cloud className="h-10 w-10 p-2 rounded-md bg-blue-100 text-blue-700" />,
+      link: "/services/cloud-migration",
+      details: "Expert cloud migration planning, execution, and optimization. Support for AWS, Azure, and Google Cloud Platform.",
+      price: "$2,999/project",
+      category: "Cloud Services"
     },
     {
-      title: "Learning Resources",
-      description: "Access tutorials, courses, and documentation to enhance your skills in AI and tech.",
-      icon: <BookOpen className="h-10 w-10 p-2 rounded-md bg-teal-100 text-teal-700" />,
-      link: "/blog",
-      details: "From beginner guides to advanced technical content, our learning resources help you stay at the cutting edge of technology."
+      title: "API Integration Hub",
+      description: "Connect your applications with third-party services through our unified API gateway.",
+      icon: <Code className="h-10 w-10 p-2 rounded-md bg-indigo-100 text-indigo-700" />,
+      link: "/services/api-integration",
+      details: "Pre-built connectors for popular services, custom API development, and comprehensive documentation. Includes monitoring and analytics.",
+      price: "$149/month",
+      category: "Development"
     },
     {
-      title: "Project Management",
-      description: "Streamlined tools to manage projects, track milestones, and ensure successful delivery.",
-      icon: <Calendar className="h-10 w-10 p-2 rounded-md bg-red-100 text-red-700" />,
-      link: "/dashboard/projects",
-      details: "Our intuitive project management tools help you track progress, manage deliverables, and ensure timely completion."
+      title: "AI Model Training",
+      description: "Custom machine learning model development and training for your specific use case.",
+      icon: <Brain className="h-10 w-10 p-2 rounded-md bg-purple-100 text-purple-700" />,
+      link: "/services/ai-training",
+      details: "End-to-end ML pipeline development from data preparation to model deployment. Support for various frameworks and cloud platforms.",
+      price: "$5,999/project",
+      category: "AI Services"
     },
     {
-      title: "Zion Hire AI",
-      description: "AI-powered recruiting assistant to streamline your hiring process and find better matches.",
-      icon: <Clock className="h-10 w-10 p-2 rounded-md bg-violet-100 text-violet-700" />,
-      link: "/zion-hire-ai",
-      badge: "Premium",
-      details: "Automate screening, improve candidate matching, and enhance the hiring experience with our AI recruiting solution."
-    }
-  ];
-
-  const serviceCategories = [
-    {
-      title: "AI Services",
-      description: "Cutting-edge AI solutions",
-      icon: <Zap className="h-8 w-8" />,
-      link: "/micro-saas-services?category=AI Services",
-      color: "from-purple-500 to-pink-500",
-      count: "15+ Services"
+      title: "Blockchain Development",
+      description: "Smart contract development, DApp creation, and blockchain infrastructure setup.",
+      icon: <Globe className="h-10 w-10 p-2 rounded-md bg-yellow-100 text-yellow-700" />,
+      link: "/services/blockchain",
+      details: "Ethereum, Solana, and Polygon smart contract development. Includes security auditing and gas optimization.",
+      price: "$3,999/project",
+      category: "Blockchain"
     },
     {
-      title: "IT Services",
-      description: "Professional IT solutions",
-      icon: <Settings className="h-8 w-8" />,
-      link: "/micro-saas-services?category=IT Services",
-      color: "from-blue-500 to-cyan-500",
-      count: "12+ Services"
+      title: "IoT Platform",
+      description: "Complete IoT solution including device management, data collection, and analytics.",
+      icon: <Network className="h-10 w-10 p-2 rounded-md bg-cyan-100 text-cyan-700" />,
+      link: "/services/iot",
+      details: "Scalable IoT platform with device provisioning, real-time monitoring, and predictive maintenance capabilities.",
+      price: "$399/month",
+      category: "IoT Services"
     },
     {
-      title: "Micro SAAS",
-      description: "Scalable software solutions",
-      icon: <Users className="h-8 w-8" />,
-      link: "/micro-saas-services?category=Micro SAAS",
-      color: "from-green-500 to-emerald-500",
-      count: "8+ Services"
+      title: "Video Analytics AI",
+      description: "AI-powered video analysis for security, retail analytics, and content moderation.",
+      icon: <Video className="h-10 w-10 p-2 rounded-md bg-red-100 text-red-700" />,
+      link: "/services/video-analytics",
+      details: "Real-time video processing with object detection, facial recognition, and behavior analysis. Cloud and edge deployment options.",
+      price: "$299/month",
+      category: "AI Services"
     },
     {
-      title: "Development",
-      description: "Custom development services",
-      icon: <Code className="h-8 w-8" />,
-      link: "/micro-saas-services?category=Development",
-      color: "from-orange-500 to-red-500",
-      count: "10+ Services"
+      title: "Design System Builder",
+      description: "Create consistent design systems and component libraries for your brand.",
+      icon: <FileText className="h-10 w-10 p-2 rounded-md bg-pink-100 text-pink-700" />,
+      link: "/services/design-system",
+      details: "Comprehensive design system including UI components, style guides, and design tokens. Compatible with major design tools.",
+      price: "$1,999/project",
+      category: "Design"
+    },
+    {
+      title: "Performance Monitoring",
+      description: "Real-time application performance monitoring with alerting and optimization recommendations.",
+      icon: <TrendingUp className="h-10 w-10 p-2 rounded-md bg-green-100 text-green-700" />,
+      link: "/services/performance",
+      details: "Monitor application performance, identify bottlenecks, and get actionable insights for optimization.",
+      price: "$99/month",
+      category: "DevOps"
+    },
+    {
+      title: "User Behavior Analytics",
+      description: "Understand user behavior and optimize user experience with advanced analytics.",
+      icon: <Eye className="h-10 w-10 p-2 rounded-md bg-blue-100 text-blue-700" />,
+      link: "/services/user-analytics",
+      details: "Track user journeys, heatmaps, and conversion funnels. Privacy-compliant analytics with GDPR support.",
+      price: "$79/month",
+      category: "Analytics"
+    },
+    {
+      title: "Biometric Authentication",
+      description: "Secure biometric authentication solutions for web and mobile applications.",
+      icon: <Key className="h-10 w-10 p-2 rounded-md bg-purple-100 text-purple-700" />,
+      link: "/services/biometric",
+      details: "Multi-modal biometric authentication including fingerprint, face, and voice recognition. FIDO2 compliant.",
+      price: "$199/month",
+      category: "Security"
+    },
+    {
+      title: "Serverless Functions",
+      description: "Deploy and manage serverless functions with automatic scaling and cost optimization.",
+      icon: <Server className="h-10 w-10 p-2 rounded-md bg-gray-100 text-gray-700" />,
+      link: "/services/serverless",
+      details: "Serverless function development and deployment. Support for AWS Lambda, Azure Functions, and Google Cloud Functions.",
+      price: "$49/month",
+      category: "Cloud Services"
+    },
+    {
+      title: "Network Security",
+      description: "Comprehensive network security solutions including firewalls, VPNs, and threat detection.",
+      icon: <Shield className="h-10 w-10 p-2 rounded-md bg-red-100 text-red-700" />,
+      link: "/services/network-security",
+      details: "Next-generation firewall, intrusion detection, and network monitoring. 24/7 security operations center.",
+      price: "$299/month",
+      category: "Security"
+    },
+    {
+      title: "Data Backup & Recovery",
+      description: "Automated backup solutions with disaster recovery and business continuity planning.",
+      icon: <FileText className="h-10 w-10 p-2 rounded-md bg-blue-100 text-blue-700" />,
+      link: "/services/backup-recovery",
+      details: "Automated backup scheduling, incremental backups, and point-in-time recovery. Multi-region redundancy.",
+      price: "$149/month",
+      category: "Data Services"
+    },
+    {
+      title: "AI Chatbot Platform",
+      description: "Intelligent chatbot development with natural language processing and integration capabilities.",
+      icon: <MessageSquare className="h-10 w-10 p-2 rounded-md bg-green-100 text-green-700" />,
+      link: "/services/chatbot",
+      details: "Custom chatbot development with multi-language support, sentiment analysis, and seamless integration.",
+      price: "$199/month",
+      category: "AI Services"
+    },
+    {
+      title: "Compliance Management",
+      description: "Automated compliance monitoring and reporting for various industry standards.",
+      icon: <FileText className="h-10 w-10 p-2 rounded-md bg-orange-100 text-orange-700" />,
+      link: "/services/compliance",
+      details: "GDPR, HIPAA, SOX, and PCI DSS compliance management. Automated audits and reporting.",
+      price: "$399/month",
+      category: "Compliance"
+    },
+    {
+      title: "DevOps Automation",
+      description: "Streamline your development workflow with automated CI/CD pipelines and infrastructure management.",
+      icon: <Zap className="h-10 w-10 p-2 rounded-md bg-purple-100 text-purple-700" />,
+      link: "/services/devops",
+      details: "Automated testing, deployment, and infrastructure provisioning. Support for major cloud platforms and tools.",
+      price: "$299/month",
+      category: "DevOps"
+    },
+    {
+      title: "Quantum Computing Consulting",
+      description: "Expert guidance on quantum computing applications and algorithm development.",
+      icon: <Brain className="h-10 w-10 p-2 rounded-md bg-indigo-100 text-indigo-700" />,
+      link: "/services/quantum",
+      details: "Quantum algorithm development, optimization, and implementation. Access to quantum computing resources.",
+      price: "$999/hour",
+      category: "Quantum Computing"
+    },
+    {
+      title: "Edge Computing Platform",
+      description: "Deploy applications closer to users with our edge computing infrastructure.",
+      icon: <Network className="h-10 w-10 p-2 rounded-md bg-cyan-100 text-cyan-700" />,
+      link: "/services/edge-computing",
+      details: "Global edge network with low-latency computing. Support for containerized applications and serverless functions.",
+      price: "$199/month",
+      category: "Edge Computing"
+    },
+    {
+      title: "AI Ethics Framework",
+      description: "Develop responsible AI systems with our comprehensive ethics and governance framework.",
+      icon: <Eye className="h-10 w-10 p-2 rounded-md bg-green-100 text-green-700" />,
+      link: "/services/ai-ethics",
+      details: "AI bias detection, explainability, and fairness assessment. Compliance with AI ethics guidelines and regulations.",
+      price: "$2,999/project",
+      category: "AI Governance"
     }
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-background to-background/90 relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 left-20 w-32 h-32 bg-zion-cyan/5 rounded-full animate-pulse"></div>
-        <div className="absolute top-40 right-32 w-24 h-24 bg-zion-purple/5 rounded-full animate-pulse delay-1000"></div>
-        <div className="absolute bottom-20 left-1/3 w-28 h-28 bg-zion-blue/5 rounded-full animate-pulse delay-2000"></div>
-      </div>
-
-      <div className="relative container mx-auto px-4">
-        <div className="mb-16 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 bg-gradient-to-r from-zion-cyan via-zion-purple to-zion-blue bg-clip-text text-transparent">
-            Discover Zion's Powerful Features
+    <section className="py-16 bg-gradient-to-br from-zion-slate to-zion-blue-dark">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold text-white mb-4">
+            Discover Our Services
           </h2>
-          <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-            Explore our comprehensive suite of tools designed to transform how you connect, collaborate, and create in the tech ecosystem.
+          <p className="text-zion-slate-light text-lg max-w-3xl mx-auto">
+            Explore our comprehensive range of AI, IT, and technology services designed to transform your business
           </p>
         </div>
 
-        {/* Service Categories Quick Access */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-semibold text-center mb-8 text-white">
-            Popular Service Categories
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {serviceCategories.map((category, index) => (
-              <Link
-                key={index}
-                to={category.link}
-                className="group block"
-              >
-                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:border-zion-cyan/30 hover:bg-white/10 transition-all duration-300 hover:shadow-2xl hover:shadow-zion-cyan/10">
-                  <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${category.color} p-4 text-white mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                    {category.icon}
-                  </div>
-                  <h4 className="text-lg font-semibold text-white mb-2 group-hover:text-zion-cyan transition-colors">
-                    {category.title}
-                  </h4>
-                  <p className="text-white/70 text-sm mb-3">
-                    {category.description}
-                  </p>
-                  <div className="flex items-center justify-between">
-                    <span className="text-zion-cyan text-sm font-medium">
-                      {category.count}
-                    </span>
-                    <ArrowRight className="h-4 w-4 text-zion-cyan group-hover:translate-x-1 transition-transform duration-300" />
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {features.map((feature, index) => (
-            <Card key={index} className="overflow-hidden transition-all duration-300 hover:shadow-2xl hover:border-primary/50 bg-white/5 backdrop-blur-sm border-white/10 hover:border-zion-cyan/30 group">
-              <CardHeader className="pb-2">
-                <div className="flex justify-between items-start">
-                  <div className="group-hover:scale-110 transition-transform duration-300">
-                    {feature.icon}
-                  </div>
+            <Card key={index} className="bg-white/10 backdrop-blur-sm border border-zion-purple/30 hover:border-zion-purple/60 transition-all duration-300 hover:shadow-2xl hover:shadow-zion-purple/20 group">
+              <CardHeader className="pb-3">
+                <div className="flex items-center justify-between mb-2">
                   {feature.badge && (
-                    <Badge variant="secondary" className="bg-primary/20 text-primary border border-primary/30">
+                    <Badge variant="secondary" className="text-xs">
                       {feature.badge}
                     </Badge>
                   )}
+                  <Badge variant="outline" className="text-xs text-zion-slate-light">
+                    {feature.category}
+                  </Badge>
                 </div>
-                <CardTitle className="mt-4 text-white group-hover:text-zion-cyan transition-colors">
-                  {feature.title}
-                </CardTitle>
-                <CardDescription className="line-clamp-2 text-white/70">
+                <div className="flex items-center justify-between">
+                  <CardTitle className="text-lg text-white group-hover:text-zion-cyan transition-colors">
+                    {feature.title}
+                  </CardTitle>
+                  <div className="text-right">
+                    <div className="text-sm font-semibold text-zion-cyan">
+                      {feature.price}
+                    </div>
+                  </div>
+                </div>
+              </CardHeader>
+              
+              <CardContent className="pb-3">
+                <CardDescription className="text-zion-slate-light mb-3">
                   {feature.description}
                 </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-white/60">{feature.details}</p>
+                <div className="mb-3">
+                  {feature.icon}
+                </div>
+                <p className="text-sm text-zion-slate-light">
+                  {feature.details}
+                </p>
               </CardContent>
+              
               <CardFooter>
-                <Button asChild className="w-full gap-1 bg-gradient-to-r from-zion-purple to-zion-blue hover:from-zion-purple-light hover:to-zion-blue-light text-white border-0">
+                <Button asChild className="w-full bg-gradient-to-r from-zion-blue to-zion-purple hover:from-zion-purple hover:to-zion-blue text-white border-0">
                   <Link to={feature.link}>
-                    <span>Explore {feature.title}</span>
-                    <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
+                    Get Started
+                    <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
               </CardFooter>
@@ -239,37 +328,16 @@ export function FeatureCTAs() {
           ))}
         </div>
 
-        {/* CTA Section */}
-        <div className="mt-16 text-center">
-          <div className="bg-gradient-to-r from-zion-purple/20 via-zion-blue/20 to-zion-cyan/20 rounded-3xl p-12 border border-white/20">
-            <h3 className="text-3xl font-bold text-white mb-4">
-              Ready to Get Started?
-            </h3>
-            <p className="text-xl text-white/80 mb-8 max-w-3xl mx-auto">
-              Join thousands of businesses already using Zion to transform their technology operations and find the perfect solutions.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg"
-                className="bg-gradient-to-r from-zion-cyan to-zion-blue text-white hover:from-zion-cyan-light hover:to-zion-blue-light"
-                asChild
-              >
-                <Link to="/micro-saas-services">
-                  Browse All Services
-                </Link>
-              </Button>
-              <Button 
-                size="lg"
-                variant="outline"
-                className="border-zion-cyan text-zion-cyan hover:bg-zion-cyan hover:text-white"
-                asChild
-              >
-                <Link to="/contact">
-                  Get in Touch
-                </Link>
-              </Button>
-            </div>
-          </div>
+        <div className="text-center mt-12">
+          <p className="text-zion-slate-light mb-4">
+            Don't see what you're looking for?
+          </p>
+          <Button asChild size="lg" className="bg-gradient-to-r from-zion-cyan to-zion-purple hover:from-zion-purple hover:to-zion-cyan text-white border-0">
+            <Link to="/contact">
+              Request Custom Solution
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
+          </Button>
         </div>
       </div>
     </section>

@@ -1,17 +1,15 @@
 import React, { useEffect, useRef } from 'react';
 
 interface FuturisticBackgroundProps {
-  children: React.ReactNode;
-  className?: string;
+  variant?: 'default' | 'cyberpunk' | 'neon' | 'particle' | 'grid';
   intensity?: 'low' | 'medium' | 'high';
-  colorScheme?: 'cyberpunk' | 'neon' | 'holographic' | 'matrix';
+  className?: string;
 }
 
 export function FuturisticBackground({ 
-  children, 
-  className = '', 
+  variant = 'default', 
   intensity = 'medium',
-  colorScheme = 'cyberpunk' 
+  className = '' 
 }: FuturisticBackgroundProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animationRef = useRef<number>();
@@ -23,6 +21,7 @@ export function FuturisticBackground({
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
+    // Set canvas size
     const resizeCanvas = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
@@ -31,149 +30,49 @@ export function FuturisticBackground({
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
 
-    // Particle system
+    // Animation variables
+    let time = 0;
     const particles: Array<{
       x: number;
       y: number;
       vx: number;
       vy: number;
       size: number;
-      opacity: number;
-      life: number;
-      maxLife: number;
+      color: string;
+      alpha: number;
     }> = [];
 
-    const getColorScheme = () => {
-      switch (colorScheme) {
-        case 'cyberpunk':
-          return {
-            primary: '#8c15e9',
-            secondary: '#22ddd2',
-            accent: '#ff0080',
-            background: 'rgba(8, 8, 8, 0.8)'
-          };
-        case 'neon':
-          return {
-            primary: '#00ffff',
-            secondary: '#ff00ff',
-            accent: '#ffff00',
-            background: 'rgba(0, 0, 0, 0.9)'
-          };
-        case 'holographic':
-          return {
-            primary: '#ff6b6b',
-            secondary: '#4ecdc4',
-            accent: '#45b7d1',
-            background: 'rgba(0, 0, 0, 0.7)'
-          };
-        case 'matrix':
-          return {
-            primary: '#00ff00',
-            secondary: '#00cc00',
-            accent: '#009900',
-            background: 'rgba(0, 0, 0, 0.95)'
-          };
-        default:
-          return {
-            primary: '#8c15e9',
-            secondary: '#22ddd2',
-            accent: '#ff0080',
-            background: 'rgba(8, 8, 8, 0.8)'
-          };
-      }
-    };
-
-    const colors = getColorScheme();
-
-    // Create particles
-    const createParticle = () => {
-      const particleCount = intensity === 'low' ? 50 : intensity === 'medium' ? 100 : 200;
+    // Initialize particles
+    const initParticles = () => {
+      particles.length = 0;
+      const particleCount = intensity === 'high' ? 200 : intensity === 'medium' ? 100 : 50;
       
-      if (particles.length < particleCount) {
+      for (let i = 0; i < particleCount; i++) {
         particles.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
           vx: (Math.random() - 0.5) * 2,
           vy: (Math.random() - 0.5) * 2,
           size: Math.random() * 3 + 1,
-          opacity: Math.random() * 0.5 + 0.1,
-          life: Math.random() * 100,
-          maxLife: 100
+          color: `hsl(${Math.random() * 360}, 70%, 60%)`,
+          alpha: Math.random() * 0.5 + 0.5
         });
       }
     };
 
-    // Update and draw particles
+    initParticles();
+
+    // Animation loop
     const animate = () => {
-      ctx.fillStyle = colors.background;
+      time += 0.01;
+      
+      // Clear canvas with fade effect
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      // Create new particles
-      createParticle();
-
-      // Update and draw particles
-      particles.forEach((particle, index) => {
-        particle.x += particle.vx;
-        particle.y += particle.vy;
-        particle.life--;
-
-        // Bounce off edges
-        if (particle.x <= 0 || particle.x >= canvas.width) particle.vx *= -1;
-        if (particle.y <= 0 || particle.y >= canvas.height) particle.vy *= -1;
-
-        // Remove dead particles
-        if (particle.life <= 0) {
-          particles.splice(index, 1);
-          return;
-        }
-
-        // Draw particle
-        const alpha = (particle.life / particle.maxLife) * particle.opacity;
-        ctx.save();
-        ctx.globalAlpha = alpha;
-        
-        // Create gradient for particle
-        const gradient = ctx.createRadialGradient(
-          particle.x, particle.y, 0,
-          particle.x, particle.y, particle.size
-        );
-        gradient.addColorStop(0, colors.primary);
-        gradient.addColorStop(0.5, colors.secondary);
-        gradient.addColorStop(1, 'transparent');
-        
-        ctx.fillStyle = gradient;
-        ctx.beginPath();
-        ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-        ctx.fill();
-        
-        ctx.restore();
-      });
-
-      // Draw connecting lines between nearby particles
-      particles.forEach((particle1, i) => {
-        particles.slice(i + 1).forEach(particle2 => {
-          const distance = Math.sqrt(
-            Math.pow(particle1.x - particle2.x, 2) + 
-            Math.pow(particle1.y - particle2.y, 2)
-          );
-          
-          if (distance < 100) {
-            const alpha = (1 - distance / 100) * 0.3;
-            ctx.strokeStyle = colors.accent;
-            ctx.globalAlpha = alpha;
-            ctx.lineWidth = 1;
-            ctx.beginPath();
-            ctx.moveTo(particle1.x, particle1.y);
-            ctx.lineTo(particle2.x, particle2.y);
-            ctx.stroke();
-          }
-        });
-      });
-
-      // Draw grid lines for cyberpunk effect
-      if (colorScheme === 'cyberpunk' || colorScheme === 'matrix') {
-        ctx.strokeStyle = colors.primary;
-        ctx.globalAlpha = 0.1;
+      // Draw grid pattern
+      if (variant === 'grid' || variant === 'default') {
+        ctx.strokeStyle = `rgba(0, 255, 255, ${0.1 + Math.sin(time) * 0.05})`;
         ctx.lineWidth = 1;
         
         const gridSize = 50;
@@ -191,16 +90,131 @@ export function FuturisticBackground({
         }
       }
 
-      // Draw scanning line effect
-      if (intensity === 'high') {
-        const scanY = (Date.now() / 20) % canvas.height;
-        const gradient = ctx.createLinearGradient(0, scanY - 10, 0, scanY + 10);
-        gradient.addColorStop(0, 'transparent');
-        gradient.addColorStop(0.5, colors.accent + '40');
-        gradient.addColorStop(1, 'transparent');
+      // Draw particles
+      if (variant === 'particle' || variant === 'default') {
+        particles.forEach((particle, index) => {
+          // Update position
+          particle.x += particle.vx;
+          particle.y += particle.vy;
+
+          // Wrap around edges
+          if (particle.x < 0) particle.x = canvas.width;
+          if (particle.x > canvas.width) particle.x = 0;
+          if (particle.y < 0) particle.y = canvas.height;
+          if (particle.y > canvas.height) particle.y = 0;
+
+          // Draw particle
+          ctx.save();
+          ctx.globalAlpha = particle.alpha;
+          ctx.fillStyle = particle.color;
+          ctx.beginPath();
+          ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+          ctx.fill();
+
+          // Add glow effect
+          ctx.shadowColor = particle.color;
+          ctx.shadowBlur = 10;
+          ctx.fill();
+          ctx.restore();
+
+          // Draw connections between nearby particles
+          particles.slice(index + 1).forEach(otherParticle => {
+            const dx = particle.x - otherParticle.x;
+            const dy = particle.y - otherParticle.y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+            
+            if (distance < 100) {
+              ctx.strokeStyle = `rgba(0, 255, 255, ${0.3 * (1 - distance / 100)})`;
+              ctx.lineWidth = 1;
+              ctx.beginPath();
+              ctx.moveTo(particle.x, particle.y);
+              ctx.lineTo(otherParticle.x, otherParticle.y);
+              ctx.stroke();
+            }
+          });
+        });
+      }
+
+      // Draw neon effects
+      if (variant === 'neon' || variant === 'cyberpunk') {
+        // Neon lines
+        const neonLines = [
+          { x1: 0, y1: canvas.height * 0.3, x2: canvas.width, y2: canvas.height * 0.3 },
+          { x1: 0, y1: canvas.height * 0.7, x2: canvas.width, y2: canvas.height * 0.7 },
+          { x1: canvas.width * 0.3, y1: 0, x2: canvas.width * 0.3, y2: canvas.height },
+          { x1: canvas.width * 0.7, y1: 0, x2: canvas.width * 0.7, y2: canvas.height }
+        ];
+
+        neonLines.forEach((line, index) => {
+          const hue = (time * 50 + index * 90) % 360;
+          const color = `hsl(${hue}, 100%, 60%)`;
+          
+          // Main neon line
+          ctx.strokeStyle = color;
+          ctx.lineWidth = 3;
+          ctx.shadowColor = color;
+          ctx.shadowBlur = 20;
+          ctx.beginPath();
+          ctx.moveTo(line.x1, line.y1);
+          ctx.lineTo(line.x2, line.y2);
+          ctx.stroke();
+
+          // Glow effect
+          ctx.strokeStyle = `rgba(${hue}, 100%, 60%, 0.3)`;
+          ctx.lineWidth = 1;
+          ctx.shadowBlur = 0;
+          ctx.beginPath();
+          ctx.moveTo(line.x1, line.y1);
+          ctx.lineTo(line.x2, line.y2);
+          ctx.stroke();
+        });
+      }
+
+      // Draw cyberpunk elements
+      if (variant === 'cyberpunk') {
+        // Scanning lines
+        const scanY = (canvas.height * 0.5) + Math.sin(time * 2) * 100;
+        ctx.strokeStyle = 'rgba(0, 255, 255, 0.8)';
+        ctx.lineWidth = 2;
+        ctx.shadowColor = 'cyan';
+        ctx.shadowBlur = 10;
+        ctx.beginPath();
+        ctx.moveTo(0, scanY);
+        ctx.lineTo(canvas.width, scanY);
+        ctx.stroke();
+
+        // Digital rain effect
+        const rainChars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+        ctx.fillStyle = 'rgba(0, 255, 0, 0.7)';
+        ctx.font = '14px monospace';
         
-        ctx.fillStyle = gradient;
-        ctx.fillRect(0, scanY - 10, canvas.width, 20);
+        for (let i = 0; i < 20; i++) {
+          const x = (i * canvas.width / 20) + Math.sin(time + i) * 20;
+          const y = (time * 100 + i * 30) % canvas.height;
+          const char = rainChars[Math.floor(Math.random() * rainChars.length)];
+          ctx.fillText(char, x, y);
+        }
+      }
+
+      // Draw floating orbs
+      if (variant === 'default') {
+        const orbCount = 3;
+        for (let i = 0; i < orbCount; i++) {
+          const x = canvas.width * 0.5 + Math.cos(time + i * Math.PI * 2 / orbCount) * 200;
+          const y = canvas.height * 0.5 + Math.sin(time + i * Math.PI * 2 / orbCount) * 200;
+          const size = 50 + Math.sin(time * 2 + i) * 20;
+          
+          // Orb glow
+          const gradient = ctx.createRadialGradient(x, y, 0, x, y, size);
+          gradient.addColorStop(0, 'rgba(0, 255, 255, 0.8)');
+          gradient.addColorStop(0.5, 'rgba(0, 255, 255, 0.3)');
+          gradient.addColorStop(1, 'rgba(0, 255, 255, 0)');
+          
+          ctx.fillStyle = gradient;
+          ctx.beginPath();
+          ctx.arc(x, y, size, 0, Math.PI * 2);
+          ctx.fill();
+        }
       }
 
       animationRef.current = requestAnimationFrame(animate);
@@ -214,72 +228,39 @@ export function FuturisticBackground({
       }
       window.removeEventListener('resize', resizeCanvas);
     };
-  }, [intensity, colorScheme]);
+  }, [variant, intensity]);
 
   return (
-    <div className={`relative ${className}`}>
+    <div className={`fixed inset-0 -z-10 ${className}`}>
       <canvas
         ref={canvasRef}
-        className="absolute inset-0 w-full h-full pointer-events-none"
-        style={{ zIndex: -1 }}
+        className="w-full h-full"
+        style={{
+          background: variant === 'cyberpunk' 
+            ? 'linear-gradient(45deg, #000000, #1a0033, #000000)'
+            : variant === 'neon'
+            ? 'linear-gradient(135deg, #000000, #0a0a0a, #000000)'
+            : 'linear-gradient(135deg, #0a0a0a, #1a1a2e, #16213e)'
+        }}
       />
       
-      {/* Overlay gradient for better text readability */}
-      <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-black/20 pointer-events-none" />
-      
-      {/* Content */}
-      <div className="relative z-10">
-        {children}
-      </div>
+      {/* Overlay gradient for depth */}
+      <div 
+        className="absolute inset-0 opacity-30"
+        style={{
+          background: variant === 'cyberpunk'
+            ? 'radial-gradient(circle at 50% 50%, rgba(0, 255, 255, 0.1) 0%, transparent 70%)'
+            : variant === 'neon'
+            ? 'radial-gradient(circle at 30% 30%, rgba(255, 0, 255, 0.1) 0%, transparent 70%)'
+            : 'radial-gradient(circle at 50% 50%, rgba(0, 150, 255, 0.1) 0%, transparent 70%)'
+        }}
+      />
     </div>
   );
 }
 
-// Preset background components for common use cases
-export function CyberpunkBackground({ children, className }: { children: React.ReactNode; className?: string }) {
-  return (
-    <FuturisticBackground 
-      className={className} 
-      intensity="high" 
-      colorScheme="cyberpunk"
-    >
-      {children}
-    </FuturisticBackground>
-  );
-}
-
-export function NeonBackground({ children, className }: { children: React.ReactNode; className?: string }) {
-  return (
-    <FuturisticBackground 
-      className={className} 
-      intensity="medium" 
-      colorScheme="neon"
-    >
-      {children}
-    </FuturisticBackground>
-  );
-}
-
-export function HolographicBackground({ children, className }: { children: React.ReactNode; className?: string }) {
-  return (
-    <FuturisticBackground 
-      className={className} 
-      intensity="low" 
-      colorScheme="holographic"
-    >
-      {children}
-    </FuturisticBackground>
-  );
-}
-
-export function MatrixBackground({ children, className }: { children: React.ReactNode; className?: string }) {
-  return (
-    <FuturisticBackground 
-      className={className} 
-      intensity="high" 
-      colorScheme="matrix"
-    >
-      {children}
-    </FuturisticBackground>
-  );
-}
+// Preset variants for easy use
+export const CyberpunkBackground = () => <FuturisticBackground variant="cyberpunk" intensity="high" />;
+export const NeonBackground = () => <FuturisticBackground variant="neon" intensity="medium" />;
+export const ParticleBackground = () => <FuturisticBackground variant="particle" intensity="high" />;
+export const GridBackground = () => <FuturisticBackground variant="grid" intensity="low" />;
