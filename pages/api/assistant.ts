@@ -35,7 +35,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   try {
-    const { messages } = req.body as { messages?: Array<{ role: 'user' | 'assistant' | 'system'; content: string }> };
+    const { messages } = req.body as { messages?: Array
+
+export default function AssistantPage() {
+  return (
+    <{ role: 'user' | 'assistant' | 'system'; content: string }> };
 
     const preparedMessages = [
       { role: 'system' as const, content: SYSTEM_PROMPT },
@@ -54,4 +58,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     console.error('Assistant API error:', error?.message || error);
     return res.status(500).json({ error: 'Assistant request failed' });
   }
+}
+  );
 }

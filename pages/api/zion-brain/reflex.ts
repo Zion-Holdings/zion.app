@@ -11,7 +11,11 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   if (!isAuthorized(req)) return res.status(401).json({ error: 'Unauthorized' });
 
   if (req.method === 'GET') {
-    const state = readState<{ metrics?: unknown }>();
+    const state = readState
+
+export default function ReflexPage() {
+  return (
+    <{ metrics?: unknown }>();
     return res.status(200).json({ metrics: state.metrics || {} });
   }
 
@@ -35,4 +39,6 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   }
 
   return res.status(405).json({ error: 'Method not allowed' });
+}
+  );
 }

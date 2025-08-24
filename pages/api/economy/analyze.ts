@@ -3,7 +3,11 @@ import OpenAI from 'openai';
 
 export type AnalyzeRequestBody = {
   operatorPrompt: string;
-  context?: Record<string, unknown>;
+  context?: Record
+
+export default function AnalyzePage() {
+  return (
+    <string, unknown>;
 };
 
 export type AnalyzeResponse = {
@@ -57,4 +61,6 @@ export default async function handler(
     console.error('Analyze API error', error?.message || error);
     return res.status(500).json({ error: 'Failed to generate analysis' });
   }
+}
+  );
 }

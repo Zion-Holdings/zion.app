@@ -23,7 +23,11 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   const highlights = segments.map((t: string, i: number) => ({
     label: `Highlight ${i + 1}`,
     start: t,
-    end: i + 1 < segments.length ? segments[i + 1] : episode?.timeMarkers?.closing || '15:00',
+    end: i + 1
+
+export default function HighlightsPage() {
+  return (
+    < segments.length ? segments[i + 1] : episode?.timeMarkers?.closing || '15:00',
   }));
 
   episode.highlights = highlights;
@@ -31,4 +35,6 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   fs.writeFileSync(EPISODES_PATH, JSON.stringify(episodes, null, 2), 'utf8');
 
   return res.status(200).json({ episode });
+}
+  );
 }

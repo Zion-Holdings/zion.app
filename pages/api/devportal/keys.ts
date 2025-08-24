@@ -23,7 +23,11 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     const { id, action, scopes } = req.body || {};
     const keys = getApiKeys();
     const idx = keys.findIndex((k) => k.id === id && k.userId === userId);
-    if (idx < 0) return res.status(404).json({ error: { code: 'not_found', message: 'Key not found' } });
+    if (idx
+
+export default function KeysPage() {
+  return (
+    < 0) return res.status(404).json({ error: { code: 'not_found', message: 'Key not found' } });
 
     if (action === 'regenerate') {
       const { token, hash } = generateApiToken();
@@ -58,4 +62,6 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   }
 
   return res.status(405).json({ error: { code: 'method_not_allowed', message: 'Method not allowed' } });
+}
+  );
 }

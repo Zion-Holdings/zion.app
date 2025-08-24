@@ -43,7 +43,11 @@ const ComprehensiveServicesShowcase2025: React.FC = () => {
   const serviceCategories = [
     {
       title: "AI & Consciousness",
-      icon: <Brain className="w-8 h-8 text-purple-400" />,
+      icon:
+
+export default function Comprehensive-services-showcase-2025Page() {
+  return (
+    <Brain className="w-8 h-8 text-purple-400" />,
       color: "from-purple-500/20 to-purple-600/20",
       borderColor: "border-purple-400/30",
       services: [
@@ -135,21 +139,21 @@ const ComprehensiveServicesShowcase2025: React.FC = () => {
       {/* Header */}
       <div className="flex items-start justify-between mb-4">
         <div className="flex items-center space-x-3">
-          <div className="text-3xl">{service.icon}</div>
-          <div>
-            <h3 className="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors duration-300">
+        <div className="text-3xl">{service.icon}      </div>
+        <div>
+        <h3 className="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors duration-300">
               {service.name}
             </h3>
-            <p className="text-gray-400 text-sm">{service.tagline}</p>
-          </div>
-        </div>
+        <p className="text-gray-400 text-sm">{service.tagline}</p>
+              </div>
+              </div>
         {service.popular && (
           <div className="flex items-center space-x-1 bg-gradient-to-r from-yellow-500 to-orange-500 text-black px-2 py-1 rounded-full text-xs font-semibold">
-            <Star className="w-3 h-3 fill-current" />
-            <span>Popular</span>
-          </div>
+        <Star className="w-3 h-3 fill-current" />
+        <span>Popular</span>
+              </div>
         )}
-      </div>
+            </div>
 
       {/* Description */}
       <p className="text-gray-300 mb-4 leading-relaxed">{service.description}</p>
@@ -159,19 +163,19 @@ const ComprehensiveServicesShowcase2025: React.FC = () => {
         <div className="text-2xl font-bold text-cyan-400">
           {service.price}
           <span className="text-gray-400 text-sm font-normal">{service.period}</span>
-        </div>
+              </div>
         <div className="flex items-center space-x-2">
-          <div className="flex items-center space-x-1">
+        <div className="flex items-center space-x-1">
             {[...Array(5)].map((_, i) => (
               <Star 
                 key={i} 
                 className={`w-4 h-4 ${i < Math.floor(service.rating) ? 'text-yellow-400 fill-current' : 'text-gray-600'}`} 
               />
             ))}
-          </div>
-          <span className="text-gray-400 text-sm">({service.reviews})</span>
-        </div>
-      </div>
+                </div>
+        <span className="text-gray-400 text-sm">({service.reviews})</span>
+              </div>
+              </div>
 
       {/* Features */}
       <div className="mb-4">
@@ -179,30 +183,30 @@ const ComprehensiveServicesShowcase2025: React.FC = () => {
         <div className="grid grid-cols-1 gap-2">
           {service.features.slice(0, 4).map((feature, index) => (
             <div key={index} className="flex items-center space-x-2 text-sm text-gray-400">
-              <Check className="w-3 h-3 text-cyan-400" />
-              <span>{feature}</span>
-            </div>
+        <Check className="w-3 h-3 text-cyan-400" />
+        <span>{feature}</span>
+              </div>
           ))}
-        </div>
-      </div>
+              </div>
+              </div>
 
       {/* Market Info */}
       <div className="grid grid-cols-2 gap-4 mb-4 text-xs">
         <div>
-          <span className="text-gray-400">Market Size:</span>
-          <div className="text-cyan-400 font-semibold">{service.marketSize}</div>
-        </div>
+        <span className="text-gray-400">Market Size:</span>
+        <div className="text-cyan-400 font-semibold">{service.marketSize}      </div>
+              </div>
         <div>
-          <span className="text-gray-400">Growth:</span>
-          <div className="text-green-400 font-semibold">{service.growthRate}</div>
-        </div>
-      </div>
+        <span className="text-gray-400">Growth:</span>
+        <div className="text-green-400 font-semibold">{service.growthRate}      </div>
+              </div>
+              </div>
 
       {/* ROI */}
       <div className="mb-4 p-3 bg-gradient-to-r from-green-500/10 to-teal-500/10 rounded-lg border border-green-500/20">
-        <div className="text-sm text-gray-400 mb-1">ROI Impact:</div>
-        <div className="text-green-400 font-semibold text-sm">{service.roi}</div>
-      </div>
+        <div className="text-sm text-gray-400 mb-1">ROI Impact:      </div>
+        <div className="text-green-400 font-semibold text-sm">{service.roi}      </div>
+              </div>
 
       {/* CTA */}
       <div className="flex space-x-3">
@@ -213,10 +217,10 @@ const ComprehensiveServicesShowcase2025: React.FC = () => {
           Learn More
         </a>
         <button className="px-4 py-3 border border-cyan-400 text-cyan-400 rounded-xl hover:bg-cyan-400 hover:text-black transition-all duration-300">
-          <Star className="w-4 h-4" />
+        <Star className="w-4 h-4" />
         </button>
-      </div>
-    </motion.div>
+              </div>
+        </motion.div>
   );
 
   const ServiceList: React.FC<{ service: Service }> = ({ service }) => (
@@ -226,118 +230,113 @@ const ComprehensiveServicesShowcase2025: React.FC = () => {
       transition={{ duration: 0.5 }}
       className="bg-gradient-to-r from-gray-900/80 to-black/80 backdrop-blur-xl border border-gray-700/50 hover:border-cyan-500/50 rounded-2xl p-6 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/20 group"
     >
-      <div className="flex items-center space-x-6">
-        <div className="text-4xl">{service.icon}</div>
-        
+        <div className="flex items-center space-x-6">
+        <div className="text-4xl">{service.icon}      </div>
         <div className="flex-1">
-          <div className="flex items-center justify-between mb-2">
-            <h3 className="text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors duration-300">
+        <div className="flex items-center justify-between mb-2">
+        <h3 className="text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors duration-300">
               {service.name}
             </h3>
             {service.popular && (
               <div className="flex items-center space-x-1 bg-gradient-to-r from-yellow-500 to-orange-500 text-black px-3 py-1 rounded-full text-sm font-semibold">
-                <Star className="w-4 h-4 fill-current" />
-                <span>Popular</span>
+        <Star className="w-4 h-4 fill-current" />
+        <span>Popular</span>
               </div>
             )}
-          </div>
-          
-          <p className="text-gray-400 text-lg mb-3">{service.tagline}</p>
-          <p className="text-gray-300 mb-4 leading-relaxed">{service.description}</p>
-          
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
-            <div>
-              <span className="text-gray-400">Price:</span>
-              <div className="text-cyan-400 font-semibold">{service.price}{service.period}</div>
-            </div>
-            <div>
-              <span className="text-gray-400">Rating:</span>
-              <div className="flex items-center space-x-1">
-                <span className="text-yellow-400 font-semibold">{service.rating}/5</span>
-                <span className="text-gray-400">({service.reviews})</span>
+                </div>
+        <p className="text-gray-400 text-lg mb-3">{service.tagline}</p>
+        <p className="text-gray-300 mb-4 leading-relaxed">{service.description}</p>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+        <div>
+        <span className="text-gray-400">Price:</span>
+        <div className="text-cyan-400 font-semibold">{service.price}{service.period}      </div>
               </div>
-            </div>
-            <div>
-              <span className="text-gray-400">Market:</span>
-              <div className="text-green-400 font-semibold">{service.marketSize}</div>
-            </div>
-            <div>
-              <span className="text-gray-400">Growth:</span>
-              <div className="text-blue-400 font-semibold">{service.growthRate}</div>
-            </div>
-          </div>
-        </div>
-        
+        <div>
+        <span className="text-gray-400">Rating:</span>
+        <div className="flex items-center space-x-1">
+        <span className="text-yellow-400 font-semibold">{service.rating}/5</span>
+        <span className="text-gray-400">({service.reviews})</span>
+              </div>
+              </div>
+        <div>
+        <span className="text-gray-400">Market:</span>
+        <div className="text-green-400 font-semibold">{service.marketSize}      </div>
+              </div>
+        <div>
+        <span className="text-gray-400">Growth:</span>
+        <div className="text-blue-400 font-semibold">{service.growthRate}      </div>
+              </div>
+              </div>
+              </div>
         <div className="flex flex-col space-y-3">
-          <a
+        <a
             href={service.link}
             className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white py-3 px-6 rounded-xl font-semibold hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
           >
             Learn More
           </a>
-          <button className="px-6 py-3 border border-cyan-400 text-cyan-400 rounded-xl hover:bg-cyan-400 hover:text-black transition-all duration-300">
-            <Star className="w-4 h-4" />
-          </button>
-        </div>
-      </div>
-    </motion.div>
+        <button className="px-6 py-3 border border-cyan-400 text-cyan-400 rounded-xl hover:bg-cyan-400 hover:text-black transition-all duration-300">
+        <Star className="w-4 h-4" />
+        </button>
+              </div>
+              </div>
+        </motion.div>
   );
 
   return (
     <Layout>
-      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900/20 to-black">
+        <div className="min-h-screen bg-gradient-to-br from-black via-gray-900/20 to-black">
         {/* Hero Section */}
         <section className="relative py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto text-center">
-            <motion.div
+        <div className="max-w-7xl mx-auto text-center">
+        <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <div className="flex justify-center mb-6">
-                <div className="p-4 bg-gradient-to-r from-purple-500/20 to-cyan-500/20 rounded-full">
-                  <Star className="w-12 h-12 text-yellow-400" />
-                </div>
+        <div className="flex justify-center mb-6">
+        <div className="p-4 bg-gradient-to-r from-purple-500/20 to-cyan-500/20 rounded-full">
+        <Star className="w-12 h-12 text-yellow-400" />
               </div>
-              <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-purple-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent mb-6">
+              </div>
+        <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-purple-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent mb-6">
                 Comprehensive Services Showcase 2025
               </h1>
-              <p className="text-xl md:text-2xl text-white/80 max-w-4xl mx-auto mb-8">
+        <p className="text-xl md:text-2xl text-white/80 max-w-4xl mx-auto mb-8">
                 Discover our complete portfolio of cutting-edge technology solutions, 
                 from AI consciousness evolution to quantum computing and space technology.
               </p>
-              <div className="flex flex-wrap justify-center gap-4">
-                <button className="px-8 py-4 bg-gradient-to-r from-purple-500 to-cyan-500 text-white font-semibold rounded-lg hover:from-purple-600 hover:to-cyan-600 transition-all duration-300 transform hover:scale-105">
+        <div className="flex flex-wrap justify-center gap-4">
+        <button className="px-8 py-4 bg-gradient-to-r from-purple-500 to-cyan-500 text-white font-semibold rounded-lg hover:from-purple-600 hover:to-cyan-600 transition-all duration-300 transform hover:scale-105">
                   Explore All Services
                 </button>
-                <button className="px-8 py-4 border border-purple-400/30 text-purple-400 font-semibold rounded-lg hover:bg-purple-400/10 transition-all duration-300">
+        <button className="px-8 py-4 border border-purple-400/30 text-purple-400 font-semibold rounded-lg hover:bg-purple-400/10 transition-all duration-300">
                   View Pricing
                 </button>
               </div>
-            </motion.div>
-          </div>
+        </motion.div>
+              </div>
         </section>
 
         {/* Services Categories */}
         <section className="py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <motion.div
+        <div className="max-w-7xl mx-auto">
+        <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+        <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
                 Complete Service Portfolio
               </h2>
-              <p className="text-xl text-white/70 max-w-3xl mx-auto">
+        <p className="text-xl text-white/70 max-w-3xl mx-auto">
                 Our comprehensive suite of services covers every aspect of modern technology, 
                 from artificial intelligence to quantum computing and beyond.
               </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        </motion.div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {serviceCategories.map((category, index) => (
                 <motion.div
                   key={index}
@@ -347,14 +346,14 @@ const ComprehensiveServicesShowcase2025: React.FC = () => {
                   viewport={{ once: true }}
                   className={`p-8 bg-gradient-to-br ${category.color} backdrop-blur-sm rounded-xl border ${category.borderColor} hover:border-opacity-50 transition-all duration-300`}
                 >
-                  <div className="flex items-center mb-6">
+        <div className="flex items-center mb-6">
                     {category.icon}
                     <h3 className="text-2xl font-bold text-white ml-3">{category.title}</h3>
-                  </div>
-                  <div className="space-y-3">
+              </div>
+        <div className="space-y-3">
                     {category.services.map((service, serviceIndex) => (
                       <div key={serviceIndex} className="flex items-center justify-between">
-                        <a
+        <a
                           href={service.href}
                           className="text-white/80 hover:text-white transition-colors flex items-center"
                         >
@@ -368,77 +367,80 @@ const ComprehensiveServicesShowcase2025: React.FC = () => {
                             Featured
                           </span>
                         )}
-                      </div>
+                            </div>
                     ))}
-                  </div>
-                </motion.div>
+                        </div>
+        </motion.div>
               ))}
-            </div>
-          </div>
+                  </div>
+              </div>
         </section>
 
         {/* CTA Section */}
         <section className="py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <motion.div
+        <div className="max-w-4xl mx-auto text-center">
+        <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+        <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
                 Ready to Transform Your Business?
               </h2>
-              <p className="text-xl text-white/70 mb-8">
+        <p className="text-xl text-white/70 mb-8">
                 Choose from our comprehensive portfolio of cutting-edge solutions 
                 and take your business to the next level of technological innovation.
               </p>
-              <div className="flex flex-wrap justify-center gap-4">
-                <button className="px-8 py-4 bg-gradient-to-r from-purple-500 to-cyan-500 text-white font-semibold rounded-lg hover:from-purple-600 hover:to-cyan-600 transition-all duration-300 transform hover:scale-105">
+        <div className="flex flex-wrap justify-center gap-4">
+        <button className="px-8 py-4 bg-gradient-to-r from-purple-500 to-cyan-500 text-white font-semibold rounded-lg hover:from-purple-600 hover:to-cyan-600 transition-all duration-300 transform hover:scale-105">
                   Get Started Today
                 </button>
-                <button className="px-8 py-4 border border-purple-400/30 text-purple-400 font-semibold rounded-lg hover:bg-purple-400/10 transition-all duration-300">
+        <button className="px-8 py-4 border border-purple-400/30 text-purple-400 font-semibold rounded-lg hover:bg-purple-400/10 transition-all duration-300">
                   Schedule Consultation
                 </button>
               </div>
-            </motion.div>
-          </div>
+        </motion.div>
+              </div>
         </section>
 
         {/* CTA Section */}
         <section className="px-4 py-16">
-          <div className="max-w-4xl mx-auto text-center">
-            <motion.div
+        <div className="max-w-4xl mx-auto text-center">
+        <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
               className="bg-gradient-to-r from-cyan-500/10 via-blue-500/10 to-purple-500/10 backdrop-blur-xl border border-cyan-500/30 rounded-3xl p-12"
             >
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+        <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
                 Ready to Transform Your Business?
               </h2>
-              <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+        <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
                 Let our team of experts help you choose the perfect solutions for your business needs
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
                   href="/contact"
                   className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
                 >
                   Get Started Today
                 </a>
-                <a
+        <a
                   href="tel:+13024640950"
                   className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-xl hover:bg-cyan-400 hover:text-black transition-all duration-300"
                 >
                   Call +1 302 464 0950
                 </a>
               </div>
-            </motion.div>
-          </div>
+        </motion.div>
+              </div>
         </section>
-      </main>
-    </Layout>
+        </main>
+        </Layout>
+  );
+}
+
   );
 }

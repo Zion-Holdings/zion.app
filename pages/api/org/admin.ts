@@ -6,7 +6,11 @@ const ADMIN_KEY = process.env.ORG_ADMIN_KEY || 'dev-admin-key';
 
 type AdminAction =
   | { type: 'invite'; section: keyof OrgData; person: BasePerson }
-  | { type: 'promote'; section: keyof OrgData; id: string; updates: Partial<BasePerson> }
+  | { type: 'promote'; section: keyof OrgData; id: string; updates: Partial
+
+export default function AdminPage() {
+  return (
+    <BasePerson> }
   | { type: 'deactivate'; section: keyof OrgData; id: string };
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
@@ -64,4 +68,6 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   }
 
   return res.status(400).json({ error: 'Unknown action' });
+}
+  );
 }

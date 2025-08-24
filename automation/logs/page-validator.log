@@ -61,3 +61,33 @@
 [2025-08-23T22:23:30.217Z]    Warnings: 18
 [2025-08-23T22:23:30.217Z]    Build status: ✅ READY
 [2025-08-23T22:23:30.217Z] ✅ All pages are properly structured for building
+[2025-08-24T00:50:19.551Z] 🔍 Validating 10373 page files...
+[2025-08-24T00:50:19.730Z] 📊 Report saved to /workspace/public/reports/page-validation/latest.json and /workspace/public/reports/page-validation/index.html
+[2025-08-24T00:50:19.730Z] 📊 Validation complete:
+[2025-08-24T00:50:19.730Z]    Total files: 332
+[2025-08-24T00:50:19.730Z]    Files with issues: 332
+[2025-08-24T00:50:19.731Z]    Critical issues: 401
+[2025-08-24T00:50:19.731Z]    Warnings: 129
+[2025-08-24T00:50:19.731Z]    Build status: ❌ WILL FAIL
+[2025-08-24T00:50:19.731Z] 🚨 Build will fail due to critical issues!
+[2025-08-24T00:50:19.731Z]    Check the report for details and fix the issues.
+[2025-08-24T00:57:59.578Z] 🔍 Validating 10373 page files...
+[2025-08-24T00:57:59.771Z] 📊 Report saved to /workspace/public/reports/page-validation/latest.json and /workspace/public/reports/page-validation/index.html
+[2025-08-24T00:57:59.771Z] 📊 Validation complete:
+[2025-08-24T00:57:59.771Z]    Total files: 329
+[2025-08-24T00:57:59.771Z]    Files with issues: 329
+[2025-08-24T00:57:59.771Z]    Critical issues: 396
+[2025-08-24T00:57:59.771Z]    Warnings: 128
+[2025-08-24T00:57:59.771Z]    Build status: ❌ WILL FAIL
+[2025-08-24T00:57:59.771Z] 🚨 Build will fail due to critical issues!
+[2025-08-24T00:57:59.772Z]    Check the report for details and fix the issues.
+[2025-08-24T01:03:24.052Z] 🔍 Validating 10373 page files...
+[2025-08-24T01:03:24.238Z] 📊 Report saved to /workspace/public/reports/page-validation/latest.json and /workspace/public/reports/page-validation/index.html
+[2025-08-24T01:03:24.238Z] 📊 Validation complete:
+[2025-08-24T01:03:24.238Z]    Total files: 173
+[2025-08-24T01:03:24.238Z]    Files with issues: 173
+[2025-08-24T01:03:24.238Z]    Critical issues: 233
+[2025-08-24T01:03:24.238Z]    Warnings: 127
+[2025-08-24T01:03:24.238Z]    Build status: ❌ WILL FAIL
+[2025-08-24T01:03:24.238Z] 🚨 Build will fail due to critical issues!
+[2025-08-24T01:03:24.238Z]    Check the report for details and fix the issues.

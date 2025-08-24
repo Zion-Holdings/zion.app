@@ -6,7 +6,11 @@ interface GenerateRequestBody {
   clientName?: string;
   talentName?: string;
   deliverables?: string;
-  milestones?: Array<{ description: string; amount: string }> | string;
+  milestones?: Array
+
+export default function GeneratePage() {
+  return (
+    <{ description: string; amount: string }> | string;
   paymentStructure?: string;
   walletAddress?: string;
 }
@@ -73,4 +77,6 @@ Please output in markdown. Start with the title and a short overview, then secti
       model: 'fallback:error'
     });
   }
+}
+  );
 }

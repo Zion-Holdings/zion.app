@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import { CheckCircle, ArrowRight, Star, TrendingUp, Phone, Zap, DollarSign, Shield, Mail, MapPin, Rocket, Brain, Sparkles, Atom, Dna } from 'lucide-react';
+import { CheckCircle, ArrowRight, Star, TrendingUp, Phone, Zap, DollarSign, Shield, Mail, MapPin, Rocket, Brain, Sparkles, Atom, Dna, Cpu, ShieldCheck, Clock, Bot } from 'lucide-react';
 import Button from '../components/ui/Button';
 import UltraFuturisticBackground2028 from '../components/ui/UltraFuturisticBackground2028';
 import UltraFuturisticBackground2029 from '../components/backgrounds/UltraFuturisticBackground2029';
@@ -21,6 +21,8 @@ import EnhancedHero2026 from '../components/sections/EnhancedHero2026';
 import UltraFuturisticHero2029 from '../components/sections/UltraFuturisticHero2029';
 import UltraFuturisticServiceShowcase2029 from '../components/sections/UltraFuturisticServiceShowcase2029';
 import UltraFuturisticServiceShowcase2030 from '../components/sections/UltraFuturisticServiceShowcase2030';
+import PerformanceOptimizedServiceShowcase from '../components/sections/PerformanceOptimizedServiceShowcase';
+import PerformanceMonitor from '../components/PerformanceMonitor';
 import { motion } from 'framer-motion';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
 import { extraServices } from '../data/extra-services';
@@ -45,7 +47,7 @@ import { innovative2025Services } from '../data/innovative-2025-services';
 import { revolutionary2025Services } from '../data/revolutionary-2025-services';
 import { nextGenInnovations2025 } from '../data/next-gen-innovations-2025';
 import { innovative2026Services } from '../data/innovative-2026-services';
-import { emergingTech2026Services } from '../data/emerging-tech-2026-services';
+import { emergingTech2026Services } from '../data/emerging-tech-services-2026';
 import { enterpriseIT2026Services } from '../data/enterprise-it-2026-services';
 import { innovative2026MicroSaasServices } from '../data/innovative-2026-micro-saas';
 import { emergingTech2026Services as emergingTech2026ServicesNew } from '../data/emerging-tech-2026-services';
@@ -287,6 +289,14 @@ export default function HomePage() {
           maxServices={12}
         />
 
+        {/* Performance Optimized Service Showcase */}
+        <PerformanceOptimizedServiceShowcase 
+          services={allServices.filter(service => 'variant' in service).slice(0, 12)}
+          title="Performance Optimized Services"
+          subtitle="Experience unparalleled performance and reliability"
+          maxServices={12}
+        />
+
         {/* Contact Information Section */}
         <section className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/10 to-cyan-900/10"></div>
@@ -481,6 +491,10 @@ export default function HomePage() {
       
       {/* Footer */}
               <UltraFuturisticFooter2030 />
-          </UltraFuturisticBackground2030>
+        
+        {/* Performance Monitor */}
+        <PerformanceMonitor />
+      </UltraFuturisticBackground2030>
+    </>
   );
 }

@@ -8,7 +8,11 @@ const DATA_PATH = path.join(process.cwd(), 'data', 'feedback.json');
 type RoadmapStatus = 'planned' | 'in_progress' | 'shipped';
 
 type IncomingPayload = {
-  suggestions?: Array<{ title: string; description: string; status?: RoadmapStatus; source?: string }>;
+  suggestions?: Array
+
+export default function Feedback-syncPage() {
+  return (
+    <{ title: string; description: string; status?: RoadmapStatus; source?: string }>;
 } | { title: string; description: string; status?: RoadmapStatus; source?: string };
 
 function readItems() {
@@ -54,4 +58,6 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 
   writeItems(items);
   return res.status(200).json({ ok: true, count: items.length });
+}
+  );
 }

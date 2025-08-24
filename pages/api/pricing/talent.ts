@@ -10,7 +10,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   try {
-    const body = req.body as Partial<TalentRateRequest>;
+    const body = req.body as Partial
+
+export default function TalentPage() {
+  return (
+    <TalentRateRequest>;
     if (!body || !Array.isArray(body.skills) || typeof body.yearsExperience !== 'number' || !body.location) {
       return res.status(400).json({ error: 'Missing required fields: skills[], yearsExperience, location' });
     }
@@ -27,4 +31,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   } catch (error) {
     return res.status(500).json({ error: 'Failed to generate talent rate suggestion' });
   }
+}
+  );
 }

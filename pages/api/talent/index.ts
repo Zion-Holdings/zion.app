@@ -24,7 +24,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   if (req.method === 'POST') {
     try {
-      const payload = req.body as Partial<TalentProfile>;
+      const payload = req.body as Partial
+
+export default function HomePage() {
+  return (
+    <TalentProfile>;
       const slug = (payload.name || 'talent').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') + '-' + uuid().slice(0, 6);
       const item: TalentProfile = {
         ...payload,
@@ -100,4 +104,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   return res.setHeader('Allow', 'GET, POST').status(405).end('Method Not Allowed');
+}
+  );
 }

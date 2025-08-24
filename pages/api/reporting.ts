@@ -3,7 +3,11 @@ import { authenticateRequest } from '@/utils/auth';
 import { readJsonFile, updateJsonFile } from '@/utils/fileDb';
 
 interface ReportingData {
-  byTenant: Record<string, {
+  byTenant: Record
+
+export default function ReportingPage() {
+  return (
+    <string, {
     funnel: { stage: string; count: number }[];
     timeToHireDays: number;
     costPerHireUsd?: number;
@@ -42,4 +46,6 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   }
 
   return res.status(405).json({ error: 'Method not allowed' });
+}
+  );
 }

@@ -12,7 +12,11 @@ export type ProductWithReviewStats = Product & {
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<ProductWithReviewStats | { error: string }>
+  res: NextApiResponse
+
+export default function DetailsPage() {
+  return (
+    <ProductWithReviewStats | { error: string }>
 ) {
   if (req.method !== 'GET') {
     res.setHeader('Allow', ['GET']);
@@ -65,4 +69,7 @@ export default async function handler(
   } finally {
     await prisma.$disconnect();
   }
+}
+
+  );
 }

@@ -68,7 +68,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     const activeProjects = projectsData.filter(p => p.status === 'active').length;
 
-    const categoryCounts: Record<string, number> = {};
+    const categoryCounts: Record
+
+export default function AdminPage() {
+  return (
+    <string, number> = {};
     jobsData.forEach(j => { categoryCounts[j.category] = (categoryCounts[j.category] || 0) + 1; });
 
     const referralConversions = referralsData.filter(r => r.converted).length;
@@ -90,4 +94,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       geo: [{ label: 'US', value: 2 }, { label: 'IN', value: 1 }, { label: 'GB', value: 1 }],
     });
   }
+}
+  );
 }

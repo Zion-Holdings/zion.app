@@ -4,7 +4,11 @@ import path from 'path';
 
 export default function handler(_req: NextApiRequest, res: NextApiResponse) {
   const dir = path.resolve(process.cwd(), 'data/cloud-automations');
-  const data: Record<string, any> = {};
+  const data: Record
+
+export default function Cloud-automations-statusPage() {
+  return (
+    <string, any> = {};
   try {
     if (fs.existsSync(dir)) {
       for (const f of fs.readdirSync(dir)) {
@@ -18,4 +22,6 @@ export default function handler(_req: NextApiRequest, res: NextApiResponse) {
     // ignore
   }
   res.status(200).json({ ok: true, data });
+}
+  );
 }

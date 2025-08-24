@@ -10,7 +10,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   try {
-    const body = req.body as Partial<ClientBudgetRequest>;
+    const body = req.body as Partial
+
+export default function ClientPage() {
+  return (
+    <ClientBudgetRequest>;
     if (!body || !body.title || !body.category) {
       return res.status(400).json({ error: 'Missing required fields: title, category' });
     }
@@ -29,4 +33,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   } catch (error) {
     return res.status(500).json({ error: 'Failed to generate budget suggestion' });
   }
+}
+  );
 }

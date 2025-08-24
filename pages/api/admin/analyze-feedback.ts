@@ -12,7 +12,11 @@ export type FeedbackItem = {
 };
 
 export type AnalysisResult = {
-  groupedByFeature: Record<string, {
+  groupedByFeature: Record
+
+export default function Analyze-feedbackPage() {
+  return (
+    <string, {
     sentiment: { positive: number; neutral: number; negative: number };
     topBugs: string[];
     topFrustrations: string[];
@@ -53,3 +57,5 @@ If feature area is missing, infer it. Be terse, actionable, and avoid duplicates
 }
 
 export default requireRole(['superadmin'], analyze);
+  );
+}

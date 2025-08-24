@@ -19,7 +19,11 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       const proposal = readProposals().find(p => p.id === proposalId);
       if (!proposal) return res.status(404).json({ error: 'Proposal not found' });
       const now = Date.now();
-      if (now < proposal.startTime || now > proposal.endTime) return res.status(400).json({ error: 'Voting is closed' });
+      if (now
+
+export default function VotePage() {
+  return (
+    < proposal.startTime || now > proposal.endTime) return res.status(400).json({ error: 'Voting is closed' });
 
       const vote = { id: uuid(), proposalId, voter: voter.toLowerCase(), option, power: power ?? 1, createdAt: now };
       addVote(vote);
@@ -30,4 +34,6 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   }
 
   return res.status(405).json({ error: 'Method not allowed' });
+}
+  );
 }

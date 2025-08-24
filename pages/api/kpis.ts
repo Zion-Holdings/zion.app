@@ -8,7 +8,11 @@ export type KpisResponse = {
   runwayMonths: number;
 };
 
-export default function handler(req: NextApiRequest, res: NextApiResponse<KpisResponse>) {
+export default function handler(req: NextApiRequest, res: NextApiResponse
+
+export default function KpisPage() {
+  return (
+    <KpisResponse>) {
   res.status(200).json({
     activeUsers: 12480,
     gmvMonthly: 1200000,
@@ -16,4 +20,6 @@ export default function handler(req: NextApiRequest, res: NextApiResponse<KpisRe
     burn: 62000,
     runwayMonths: 18,
   });
+}
+  );
 }

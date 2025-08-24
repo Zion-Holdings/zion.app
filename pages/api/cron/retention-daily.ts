@@ -61,11 +61,16 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       });
 
       const html = `
-        <div style="font-family:Inter,Arial,sans-serif;font-size:14px;color:#111;">
-          <p>Hi ${user.first_name || "there"},</p>
+
+export default function Retention-dailyPage() {
+  return (
+    <div style="font-family:Inter,Arial,sans-serif;font-size:14px;color:#111;">
+        <p>Hi ${user.first_name || "there"},</p>
           ${copy.bodyHtml}
-          <p><a href="https://zion.app/onboarding" style="color:#4f46e5;">View your onboarding checklist →</a></p>
-        </div>`;
+          <p>
+        <a href="https://zion.app/onboarding" style="color:#4f46e5;">View your onboarding checklist →</a>
+        </p>
+              </div>`;
 
       const resp = await sendEmail({
         to: user.email,
@@ -124,10 +129,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
         const html = `
           <div style="font-family:Inter,Arial,sans-serif;font-size:14px;color:#111;">
-            <p>Hi ${u.first_name || "there"},</p>
+        <p>Hi ${u.first_name || "there"},</p>
             ${copy.bodyHtml}
-            <p><a href="https://zion.app/${(u.persona === "hirer") ? "talent" : "projects"}" style="color:#4f46e5;">Take action →</a></p>
-          </div>`;
+            <p>
+        <a href="https://zion.app/${(u.persona === "hirer") ? "talent" : "projects"}" style="color:#4f46e5;">Take action →</a>
+        </p>
+              </div>`;
 
         const resp = await sendEmail({
           to: u.email,
@@ -175,10 +182,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
       const html = `
         <div style="font-family:Inter,Arial,sans-serif;font-size:14px;color:#111;">
-          <p>Hi ${j.owner_first_name || "there"},</p>
+        <p>Hi ${j.owner_first_name || "there"},</p>
           ${copy.bodyHtml}
-          <p><a href="https://zion.app/jobs/${j.id}/invite" style="color:#4f46e5;">Invite talent now →</a></p>
-        </div>`;
+          <p>
+        <a href="https://zion.app/jobs/${j.id}/invite" style="color:#4f46e5;">Invite talent now →</a>
+        </p>
+              </div>`;
 
       const resp = await sendEmail({
         to: j.owner_email,
@@ -226,10 +235,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
       const html = `
         <div style="font-family:Inter,Arial,sans-serif;font-size:14px;color:#111;">
-          <p>Hi ${t.first_name || "there"},</p>
+        <p>Hi ${t.first_name || "there"},</p>
           ${copy.bodyHtml}
-          <p><a href="https://zion.app/projects" style="color:#4f46e5;">See new projects →</a></p>
-        </div>`;
+          <p>
+        <a href="https://zion.app/projects" style="color:#4f46e5;">See new projects →</a>
+        </p>
+              </div>`;
 
       const resp = await sendEmail({
         to: t.email,
@@ -255,4 +266,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const message = e?.message || "Internal Error";
     return res.status(message === "Unauthorized" ? 401 : 500).json({ error: message });
   }
+}
+  );
 }

@@ -5,7 +5,11 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   try {
     const templates = loadTemplates();
     if (req.method === 'GET') {
-      const byCategory = templates.reduce<Record<string, typeof templates>>((acc, t) => {
+      const byCategory = templates.reduce
+
+export default function TemplatesPage() {
+  return (
+    <Record<string, typeof templates>>((acc, t) => {
         acc[t.category] = acc[t.category] || [];
         acc[t.category].push(t);
         return acc;
@@ -18,4 +22,6 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   } catch (e: any) {
     res.status(500).json({ error: e.message || 'Internal Server Error' });
   }
+}
+  );
 }

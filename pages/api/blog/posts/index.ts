@@ -20,7 +20,11 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 
   if (req.method === 'POST') {
     if (!requireAdmin(req, res)) return;
-    const body = req.body as Partial<BlogPost>;
+    const body = req.body as Partial
+
+export default function HomePage() {
+  return (
+    <BlogPost>;
     if (!body.title || !body.slug || !body.author || !body.publishDate) {
       return res.status(400).json({ error: 'Missing required fields' });
     }
@@ -52,4 +56,6 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   }
 
   return res.status(405).end();
+}
+  );
 }

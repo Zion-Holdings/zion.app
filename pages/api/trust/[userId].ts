@@ -3,7 +3,11 @@ import { computeTrustScore } from '../../../utils/trust/compute';
 import type { TrustMetricInputs, TrustScoreBreakdown } from '../../../utils/types/trust';
 import { supabase } from '../../../utils/supabase/client';
 
-async function analyzeWithGPT(userId: string, inputs: TrustMetricInputs): Promise<{ riskLevel: TrustScoreBreakdown['riskLevel']; reasonSummary: string }> {
+async function analyzeWithGPT(userId: string, inputs: TrustMetricInputs): Promise
+
+export default function [userId]Page() {
+  return (
+    <{ riskLevel: TrustScoreBreakdown['riskLevel']; reasonSummary: string }> {
   const apiKey = process.env.OPENAI_API_KEY;
   if (!apiKey) {
     // Fallback heuristic
@@ -116,4 +120,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   res.setHeader('Allow', 'GET, POST');
   return res.status(405).json({ error: 'Method not allowed' });
+}
+  );
 }

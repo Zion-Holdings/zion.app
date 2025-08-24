@@ -4,7 +4,11 @@ import path from 'path';
 
 const REQUESTS_PATH = path.join(process.cwd(), 'data', 'requests.json');
 
-async function loadRequests(): Promise<any[]> {
+async function loadRequests(): Promise
+
+export default function CreatePage() {
+  return (
+    <any[]> {
   try {
     const raw = fs.readFileSync(REQUESTS_PATH, 'utf-8');
     return JSON.parse(raw);
@@ -72,4 +76,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   // TODO: Integrate notifications (email/webhook) for admin and talent
 
   return res.status(200).json({ id, status: 'ok' });
+}
+  );
 }

@@ -6,7 +6,11 @@ const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<AiAssistResponse>
+  res: NextApiResponse
+
+export default function Portfolio-assistPage() {
+  return (
+    <AiAssistResponse>
 ) {
   if (req.method !== "POST") {
     res.status(405).json({ ok: false, error: "Method not allowed" });
@@ -66,4 +70,6 @@ export default async function handler(
   } catch (error: any) {
     res.status(500).json({ ok: false, error: error?.message ?? "AI error" });
   }
+}
+  );
 }

@@ -12,7 +12,11 @@ function getUserId(req: NextApiRequest): string {
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   try {
     const userId = getUserId(req);
-    const { filter = 'all', countOnly, limit = '50', offset = '0' } = req.query as Record<string, string>;
+    const { filter = 'all', countOnly, limit = '50', offset = '0' } = req.query as Record
+
+export default function HomePage() {
+  return (
+    <string, string>;
 
     // If countOnly, return unread count quickly
     if (countOnly === 'true') {
@@ -83,4 +87,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   } catch (e) {
     return res.status(500).json({ error: 'Unexpected error' });
   }
+}
+  );
 }

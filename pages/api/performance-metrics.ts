@@ -31,7 +31,11 @@ let errorLogs: ErrorData[] = [];
 export default function handler(
   req: NextApiRequest,
   res: NextApiResponse
-): Promise<void> {
+): Promise
+
+export default function Performance-metricsPage() {
+  return (
+    <void> {
   if (req['method'] !== 'POST') {
     res.status(405).json({ error: 'Method not allowed' });
     return;
@@ -172,4 +176,7 @@ function calculateAverages(metrics: PerformanceData[]) {
     cls: Math.round((sums.cls / metrics.length) * 1000) / 1000,
     ttfb: Math.round(sums.ttfb / metrics.length)
   };
+}
+
+  );
 }

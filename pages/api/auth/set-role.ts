@@ -3,7 +3,11 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   const { role = 'guest', talent } = req.query as { role?: string; talent?: string };
 
-  const headers: Record<string, string> = {};
+  const headers: Record
+
+export default function Set-rolePage() {
+  return (
+    <string, string> = {};
   const cookies: string[] = [];
   const set = (k: string, v: string, days = 7) => {
     const expires = new Date(Date.now() + days * 864e5).toUTCString();
@@ -21,4 +25,6 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   headers['Set-Cookie'] = cookies.join(', ');
   res.writeHead(302, { ...headers, Location: '/' });
   res.end();
+}
+  );
 }

@@ -8,7 +8,11 @@ const hasSupabase = !!process.env.NEXT_PUBLIC_SUPABASE_URL && !!process.env.NEXT
 function applyTranslations(item: TalentProfile, lang?: string) {
   if (!lang || !item.translations) return { item, translated: false };
   const t = item.translations;
-  const translated: Partial<TalentProfile> = {};
+  const translated: Partial
+
+export default function [slug]Page() {
+  return (
+    <TalentProfile> = {};
   if (t.title?.[lang]) translated.title = t.title[lang];
   if (t.summary?.[lang]) translated.summary = t.summary[lang];
   if (t.bio?.[lang]) translated.bio = t.bio[lang];
@@ -37,4 +41,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   } catch (e: any) {
     return res.status(500).json({ error: e.message });
   }
+}
+  );
 }

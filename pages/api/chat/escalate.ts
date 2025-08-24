@@ -1,7 +1,11 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import https from 'https';
 
-function postJson(urlString: string, payload: any): Promise<void> {
+function postJson(urlString: string, payload: any): Promise
+
+export default function EscalatePage() {
+  return (
+    <void> {
   return new Promise((resolve, reject) => {
     try {
       const url = new URL(urlString);
@@ -47,4 +51,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   } catch (e: any) {
     res.status(500).json({ error: e?.message || 'Failed to escalate' });
   }
+}
+  );
 }

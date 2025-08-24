@@ -7,7 +7,11 @@ function rand(min: number, max: number) {
 function generateSeries(n: number, base: number, volatility = 0.15) {
   const series: number[] = [];
   let last = base;
-  for (let i = 0; i < n; i++) {
+  for (let i = 0; i
+
+export default function MetricsPage() {
+  return (
+    < n; i++) {
     const change = (Math.random() - 0.5) * 2 * volatility * base;
     last = Math.max(0, Math.round(last + change));
     series.push(last);
@@ -82,4 +86,6 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   }
 
   res.status(200).json(response);
+}
+  );
 }

@@ -1,15 +1,3745 @@
 {
   "summary": {
-    "totalFiles": 0,
-    "filesWithIssues": 0,
-    "totalIssues": 0,
-    "totalWarnings": 0,
-    "buildBreakingFiles": 0,
-    "canBuild": true
+    "totalFiles": 173,
+    "filesWithIssues": 173,
+    "totalIssues": 233,
+    "totalWarnings": 127,
+    "buildBreakingFiles": 109,
+    "canBuild": false
   },
-  "results": [],
-  "buildBreakingFiles": [],
-  "generatedAt": "2025-08-21T01:47:21.214Z"
-=======
-  "generatedAt": "2025-08-21T00:54:56.212Z"
+  "results": [
+    {
+      "file": "pages/_app.js",
+      "issues": [],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "INCOMPLETE_HTML",
+          "message": "Incomplete HTML tags detected",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/admin/_middleware.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_EXPORT_DEFAULT",
+          "message": "Missing export default statement",
+          "line": 1,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_COMPONENT_DECLARATION",
+          "message": "Missing component function/class declaration",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "PAGE_TOO_SHORT",
+          "message": "Page content seems too short, may be incomplete",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/admin/kpi.tsx",
+      "issues": [],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "INCOMPLETE_HTML",
+          "message": "Incomplete HTML tags detected",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/ai-consciousness-evolution-2025.tsx",
+      "issues": [],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "INCOMPLETE_HTML",
+          "message": "Incomplete HTML tags detected",
+          "line": 6,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/ai-customer-service-platform.tsx",
+      "issues": [],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "INCOMPLETE_HTML",
+          "message": "Incomplete HTML tags detected",
+          "line": 6,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/ai-healthcare-analytics.tsx",
+      "issues": [],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "INCOMPLETE_HTML",
+          "message": "Incomplete HTML tags detected",
+          "line": 6,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/ai-hr-management-platform.tsx",
+      "issues": [],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "INCOMPLETE_HTML",
+          "message": "Incomplete HTML tags detected",
+          "line": 6,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/ai-legal-document-analysis.tsx",
+      "issues": [],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "INCOMPLETE_HTML",
+          "message": "Incomplete HTML tags detected",
+          "line": 6,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/ai-manufacturing-optimization.tsx",
+      "issues": [],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "INCOMPLETE_HTML",
+          "message": "Incomplete HTML tags detected",
+          "line": 6,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/ai-supply-chain-optimization.tsx",
+      "issues": [],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "INCOMPLETE_HTML",
+          "message": "Incomplete HTML tags detected",
+          "line": 6,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/admin/[type].ts",
+      "issues": [],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "INCOMPLETE_HTML",
+          "message": "Incomplete HTML tags detected",
+          "line": 88,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/admin/analyze-feedback.ts",
+      "issues": [],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "INCOMPLETE_HTML",
+          "message": "Incomplete HTML tags detected",
+          "line": 19,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/admin/feedback-sync.ts",
+      "issues": [],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "INCOMPLETE_HTML",
+          "message": "Incomplete HTML tags detected",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/admin/logout.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "file": "pages/api/ai/portfolio-assist.ts",
+      "issues": [],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "INCOMPLETE_HTML",
+          "message": "Incomplete HTML tags detected",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/analytics/admin.ts",
+      "issues": [],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "INCOMPLETE_HTML",
+          "message": "Incomplete HTML tags detected",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/analytics/client.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "file": "pages/api/analytics/talent.ts",
+      "issues": [],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "INCOMPLETE_HTML",
+          "message": "Incomplete HTML tags detected",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/assistant.ts",
+      "issues": [],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "INCOMPLETE_HTML",
+          "message": "Incomplete HTML tags detected",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/auth/forgot.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_EXPORT_DEFAULT",
+          "message": "Missing export default statement",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_COMPONENT_DECLARATION",
+          "message": "Missing component function/class declaration",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "PAGE_TOO_SHORT",
+          "message": "Page content seems too short, may be incomplete",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/auth/health.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_EXPORT_DEFAULT",
+          "message": "Missing export default statement",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_COMPONENT_DECLARATION",
+          "message": "Missing component function/class declaration",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "PAGE_TOO_SHORT",
+          "message": "Page content seems too short, may be incomplete",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/auth/logout.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "file": "pages/api/auth/register.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_EXPORT_DEFAULT",
+          "message": "Missing export default statement",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_COMPONENT_DECLARATION",
+          "message": "Missing component function/class declaration",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "PAGE_TOO_SHORT",
+          "message": "Page content seems too short, may be incomplete",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/auth/resend-verification-email.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_EXPORT_DEFAULT",
+          "message": "Missing export default statement",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_COMPONENT_DECLARATION",
+          "message": "Missing component function/class declaration",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "PAGE_TOO_SHORT",
+          "message": "Page content seems too short, may be incomplete",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/auth/session.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_EXPORT_DEFAULT",
+          "message": "Missing export default statement",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_COMPONENT_DECLARATION",
+          "message": "Missing component function/class declaration",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "PAGE_TOO_SHORT",
+          "message": "Page content seems too short, may be incomplete",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/auth/set-role.ts",
+      "issues": [],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "INCOMPLETE_HTML",
+          "message": "Incomplete HTML tags detected",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/blog/[slug].ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_EXPORT_DEFAULT",
+          "message": "Missing export default statement",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_COMPONENT_DECLARATION",
+          "message": "Missing component function/class declaration",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "PAGE_TOO_SHORT",
+          "message": "Page content seems too short, may be incomplete",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/blog/index.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_EXPORT_DEFAULT",
+          "message": "Missing export default statement",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_COMPONENT_DECLARATION",
+          "message": "Missing component function/class declaration",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "PAGE_TOO_SHORT",
+          "message": "Page content seems too short, may be incomplete",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/blog/posts/[id].ts",
+      "issues": [],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "INCOMPLETE_HTML",
+          "message": "Incomplete HTML tags detected",
+          "line": 17,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/blog/posts/index.ts",
+      "issues": [],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "INCOMPLETE_HTML",
+          "message": "Incomplete HTML tags detected",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/categories/[slug]/items.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_EXPORT_DEFAULT",
+          "message": "Missing export default statement",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_COMPONENT_DECLARATION",
+          "message": "Missing component function/class declaration",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "PAGE_TOO_SHORT",
+          "message": "Page content seems too short, may be incomplete",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/categories.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_EXPORT_DEFAULT",
+          "message": "Missing export default statement",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_COMPONENT_DECLARATION",
+          "message": "Missing component function/class declaration",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "PAGE_TOO_SHORT",
+          "message": "Page content seems too short, may be incomplete",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/chat/escalate.ts",
+      "issues": [],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "INCOMPLETE_HTML",
+          "message": "Incomplete HTML tags detected",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/checkout/session.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_EXPORT_DEFAULT",
+          "message": "Missing export default statement",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_COMPONENT_DECLARATION",
+          "message": "Missing component function/class declaration",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "PAGE_TOO_SHORT",
+          "message": "Page content seems too short, may be incomplete",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/checkout-session.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_EXPORT_DEFAULT",
+          "message": "Missing export default statement",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_COMPONENT_DECLARATION",
+          "message": "Missing component function/class declaration",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "PAGE_TOO_SHORT",
+          "message": "Page content seems too short, may be incomplete",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/cloud-automations-status.ts",
+      "issues": [],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "INCOMPLETE_HTML",
+          "message": "Incomplete HTML tags detected",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/contract-builder/generate.ts",
+      "issues": [],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "INCOMPLETE_HTML",
+          "message": "Incomplete HTML tags detected",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/create-payment-intent.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_EXPORT_DEFAULT",
+          "message": "Missing export default statement",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_COMPONENT_DECLARATION",
+          "message": "Missing component function/class declaration",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "PAGE_TOO_SHORT",
+          "message": "Page content seems too short, may be incomplete",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/dev/dashboard.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_EXPORT_DEFAULT",
+          "message": "Missing export default statement",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_COMPONENT_DECLARATION",
+          "message": "Missing component function/class declaration",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "PAGE_TOO_SHORT",
+          "message": "Page content seems too short, may be incomplete",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/devportal/keys.ts",
+      "issues": [],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "INCOMPLETE_HTML",
+          "message": "Incomplete HTML tags detected",
+          "line": 30,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/economy/analyze.ts",
+      "issues": [],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "INCOMPLETE_HTML",
+          "message": "Incomplete HTML tags detected",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/equipment.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_EXPORT_DEFAULT",
+          "message": "Missing export default statement",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_COMPONENT_DECLARATION",
+          "message": "Missing component function/class declaration",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "PAGE_TOO_SHORT",
+          "message": "Page content seems too short, may be incomplete",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/error-report.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_EXPORT_DEFAULT",
+          "message": "Missing export default statement",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_COMPONENT_DECLARATION",
+          "message": "Missing component function/class declaration",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "PAGE_TOO_SHORT",
+          "message": "Page content seems too short, may be incomplete",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/events/expo/vip.ts",
+      "issues": [],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "INCOMPLETE_HTML",
+          "message": "Incomplete HTML tags detected",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/extension-health.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_EXPORT_DEFAULT",
+          "message": "Missing export default statement",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_COMPONENT_DECLARATION",
+          "message": "Missing component function/class declaration",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "PAGE_TOO_SHORT",
+          "message": "Page content seems too short, may be incomplete",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/favorites.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_EXPORT_DEFAULT",
+          "message": "Missing export default statement",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_COMPONENT_DECLARATION",
+          "message": "Missing component function/class declaration",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "PAGE_TOO_SHORT",
+          "message": "Page content seems too short, may be incomplete",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/franchise/applications.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "file": "pages/api/franchise/instances.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "file": "pages/api/generate-team.ts",
+      "issues": [],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "INCOMPLETE_HTML",
+          "message": "Incomplete HTML tags detected",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/governance/metrics.ts",
+      "issues": [],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "INCOMPLETE_HTML",
+          "message": "Incomplete HTML tags detected",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/governance/vote.ts",
+      "issues": [],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "INCOMPLETE_HTML",
+          "message": "Incomplete HTML tags detected",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/grants/[id]/milestones/[milestoneId]/index.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_EXPORT_DEFAULT",
+          "message": "Missing export default statement",
+          "line": 1,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_COMPONENT_DECLARATION",
+          "message": "Missing component function/class declaration",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "PAGE_TOO_SHORT",
+          "message": "Page content seems too short, may be incomplete",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/grants/[id]/milestones/index.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_EXPORT_DEFAULT",
+          "message": "Missing export default statement",
+          "line": 1,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_COMPONENT_DECLARATION",
+          "message": "Missing component function/class declaration",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "PAGE_TOO_SHORT",
+          "message": "Page content seems too short, may be incomplete",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/health/environment.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_EXPORT_DEFAULT",
+          "message": "Missing export default statement",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_COMPONENT_DECLARATION",
+          "message": "Missing component function/class declaration",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "PAGE_TOO_SHORT",
+          "message": "Page content seems too short, may be incomplete",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/health/index.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_EXPORT_DEFAULT",
+          "message": "Missing export default statement",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_COMPONENT_DECLARATION",
+          "message": "Missing component function/class declaration",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "PAGE_TOO_SHORT",
+          "message": "Page content seems too short, may be incomplete",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/health.js",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "file": "pages/api/health.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_EXPORT_DEFAULT",
+          "message": "Missing export default statement",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_COMPONENT_DECLARATION",
+          "message": "Missing component function/class declaration",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "PAGE_TOO_SHORT",
+          "message": "Page content seems too short, may be incomplete",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/healthcheck.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "file": "pages/api/hello.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_EXPORT_DEFAULT",
+          "message": "Missing export default statement",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_COMPONENT_DECLARATION",
+          "message": "Missing component function/class declaration",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "PAGE_TOO_SHORT",
+          "message": "Page content seems too short, may be incomplete",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/image/[...params].ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_EXPORT_DEFAULT",
+          "message": "Missing export default statement",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_COMPONENT_DECLARATION",
+          "message": "Missing component function/class declaration",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "PAGE_TOO_SHORT",
+          "message": "Page content seems too short, may be incomplete",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/investors/financials.csv.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "file": "pages/api/investors/financials.pdf.ts",
+      "issues": [],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "INCOMPLETE_HTML",
+          "message": "Incomplete HTML tags detected",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/investors/one-pager.pdf.ts",
+      "issues": [],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "INCOMPLETE_HTML",
+          "message": "Incomplete HTML tags detected",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/ipo/metrics.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "file": "pages/api/ipo/updates/open-pixel.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "file": "pages/api/kb-chat.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_EXPORT_DEFAULT",
+          "message": "Missing export default statement",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_COMPONENT_DECLARATION",
+          "message": "Missing component function/class declaration",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "PAGE_TOO_SHORT",
+          "message": "Page content seems too short, may be incomplete",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/kpis.ts",
+      "issues": [],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "INCOMPLETE_HTML",
+          "message": "Incomplete HTML tags detected",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/logs.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_EXPORT_DEFAULT",
+          "message": "Missing export default statement",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_COMPONENT_DECLARATION",
+          "message": "Missing component function/class declaration",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "PAGE_TOO_SHORT",
+          "message": "Page content seems too short, may be incomplete",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/marketplace/categories.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_EXPORT_DEFAULT",
+          "message": "Missing export default statement",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_COMPONENT_DECLARATION",
+          "message": "Missing component function/class declaration",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "PAGE_TOO_SHORT",
+          "message": "Page content seems too short, may be incomplete",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/marketplace/equipment.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_EXPORT_DEFAULT",
+          "message": "Missing export default statement",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_COMPONENT_DECLARATION",
+          "message": "Missing component function/class declaration",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "PAGE_TOO_SHORT",
+          "message": "Page content seems too short, may be incomplete",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/marketplace/overview.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_EXPORT_DEFAULT",
+          "message": "Missing export default statement",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_COMPONENT_DECLARATION",
+          "message": "Missing component function/class declaration",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "PAGE_TOO_SHORT",
+          "message": "Page content seems too short, may be incomplete",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/marketplace/product/[productId].ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_EXPORT_DEFAULT",
+          "message": "Missing export default statement",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_COMPONENT_DECLARATION",
+          "message": "Missing component function/class declaration",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "PAGE_TOO_SHORT",
+          "message": "Page content seems too short, may be incomplete",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/marketplace/products.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_EXPORT_DEFAULT",
+          "message": "Missing export default statement",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_COMPONENT_DECLARATION",
+          "message": "Missing component function/class declaration",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "PAGE_TOO_SHORT",
+          "message": "Page content seems too short, may be incomplete",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/marketplace/talent.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_EXPORT_DEFAULT",
+          "message": "Missing export default statement",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_COMPONENT_DECLARATION",
+          "message": "Missing component function/class declaration",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "PAGE_TOO_SHORT",
+          "message": "Page content seems too short, may be incomplete",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/metrics.ts",
+      "issues": [],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "INCOMPLETE_HTML",
+          "message": "Incomplete HTML tags detected",
+          "line": 14,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/newsletter.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_EXPORT_DEFAULT",
+          "message": "Missing export default statement",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_COMPONENT_DECLARATION",
+          "message": "Missing component function/class declaration",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "PAGE_TOO_SHORT",
+          "message": "Page content seems too short, may be incomplete",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/notifications/index.ts",
+      "issues": [],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "INCOMPLETE_HTML",
+          "message": "Incomplete HTML tags detected",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/operator-summary.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "file": "pages/api/org/admin.ts",
+      "issues": [],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "INCOMPLETE_HTML",
+          "message": "Incomplete HTML tags detected",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/partners/sdk.ts",
+      "issues": [],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "INCOMPLETE_HTML",
+          "message": "Incomplete HTML tags detected",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/performance-metrics.ts",
+      "issues": [],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "INCOMPLETE_HTML",
+          "message": "Incomplete HTML tags detected",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/podcast/highlights.ts",
+      "issues": [],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "INCOMPLETE_HTML",
+          "message": "Incomplete HTML tags detected",
+          "line": 30,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/points/redeem.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_EXPORT_DEFAULT",
+          "message": "Missing export default statement",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_COMPONENT_DECLARATION",
+          "message": "Missing component function/class declaration",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "PAGE_TOO_SHORT",
+          "message": "Page content seems too short, may be incomplete",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/pricing/client.ts",
+      "issues": [],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "INCOMPLETE_HTML",
+          "message": "Incomplete HTML tags detected",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/pricing/talent.ts",
+      "issues": [],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "INCOMPLETE_HTML",
+          "message": "Incomplete HTML tags detected",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/products/[productId]/details.ts",
+      "issues": [],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "INCOMPLETE_HTML",
+          "message": "Incomplete HTML tags detected",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/products/index.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_EXPORT_DEFAULT",
+          "message": "Missing export default statement",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_COMPONENT_DECLARATION",
+          "message": "Missing component function/class declaration",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "PAGE_TOO_SHORT",
+          "message": "Page content seems too short, may be incomplete",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/push/send.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_EXPORT_DEFAULT",
+          "message": "Missing export default statement",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_COMPONENT_DECLARATION",
+          "message": "Missing component function/class declaration",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "PAGE_TOO_SHORT",
+          "message": "Page content seems too short, may be incomplete",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/push/subscribe.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_EXPORT_DEFAULT",
+          "message": "Missing export default statement",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_COMPONENT_DECLARATION",
+          "message": "Missing component function/class declaration",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "PAGE_TOO_SHORT",
+          "message": "Page content seems too short, may be incomplete",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/reporting.ts",
+      "issues": [],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "INCOMPLETE_HTML",
+          "message": "Incomplete HTML tags detected",
+          "line": 10,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/requests/create.ts",
+      "issues": [],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "INCOMPLETE_HTML",
+          "message": "Incomplete HTML tags detected",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/requests/list.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "file": "pages/api/resend-verification-email.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_EXPORT_DEFAULT",
+          "message": "Missing export default statement",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_COMPONENT_DECLARATION",
+          "message": "Missing component function/class declaration",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "PAGE_TOO_SHORT",
+          "message": "Page content seems too short, may be incomplete",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/reviews/[productId].ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_EXPORT_DEFAULT",
+          "message": "Missing export default statement",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_COMPONENT_DECLARATION",
+          "message": "Missing component function/class declaration",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "PAGE_TOO_SHORT",
+          "message": "Page content seems too short, may be incomplete",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/reviews/index.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_EXPORT_DEFAULT",
+          "message": "Missing export default statement",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_COMPONENT_DECLARATION",
+          "message": "Missing component function/class declaration",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "PAGE_TOO_SHORT",
+          "message": "Page content seems too short, may be incomplete",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/salary-insights.ts",
+      "issues": [],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "INCOMPLETE_HTML",
+          "message": "Incomplete HTML tags detected",
+          "line": 55,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/search/suggest.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_EXPORT_DEFAULT",
+          "message": "Missing export default statement",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_COMPONENT_DECLARATION",
+          "message": "Missing component function/class declaration",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "PAGE_TOO_SHORT",
+          "message": "Page content seems too short, may be incomplete",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/search.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_EXPORT_DEFAULT",
+          "message": "Missing export default statement",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_COMPONENT_DECLARATION",
+          "message": "Missing component function/class declaration",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "PAGE_TOO_SHORT",
+          "message": "Page content seems too short, may be incomplete",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/services/service-1755574829755-mjafzngh0.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "file": "pages/api/services/service-1755574829756-dtpjs3hda.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "file": "pages/api/services/service-1755574829757-004zwa9h5.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "file": "pages/api/services/service-1755574859753-s9ogm9oyk.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "file": "pages/api/services/service-1755574859754-skb3wundd.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "file": "pages/api/services/service-1755574859756-184u4o0ye.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "file": "pages/api/services/service-1755574889753-v110yzi0o.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "file": "pages/api/services/service-1755574889754-et85fjvw4.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "file": "pages/api/services/service-1755574889755-6zv3536x9.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "file": "pages/api/services/service-1755574889756-c59wed3zt.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "file": "pages/api/services/service-1755574889757-ig9lw8h18.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "file": "pages/api/services/service-1755574919753-4gecmz7p7.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "file": "pages/api/services/service-1755574919754-hiww4t3jq.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "file": "pages/api/services/service-1755574919755-1wskwszzn.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "file": "pages/api/services/service-1755574949752-w2vvoioe0.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "file": "pages/api/services/service-1755574949753-hibfys3hi.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "file": "pages/api/services/service-1755574949754-qtn3lrb9o.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "file": "pages/api/services/service-1755574949755-17j6xhums.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "file": "pages/api/services/service-1755574949756-57ueracld.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "file": "pages/api/services/service-1755574949757-bch15q12n.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "file": "pages/api/services/service-1755574979751-9mkuw0246.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "file": "pages/api/services/service-1755574979752-29yzm6dwh.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "file": "pages/api/services/service-1755574979753-nyci554t5.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "file": "pages/api/services/service-1755575009752-x5t9dpn2n.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "file": "pages/api/services/service-1755575009753-22zvmi50q.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "file": "pages/api/services/service-1755575009754-gd85ryy56.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "file": "pages/api/services/service-1755575009754-uwdlyewog.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "file": "pages/api/services/service-1755575059038-go26ti6m1.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "file": "pages/api/services/service-1755575060139-koj1emhtz.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "file": "pages/api/services/service-1755575060884-h3uamrq1o.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "file": "pages/api/services.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_EXPORT_DEFAULT",
+          "message": "Missing export default statement",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_COMPONENT_DECLARATION",
+          "message": "Missing component function/class declaration",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "PAGE_TOO_SHORT",
+          "message": "Page content seems too short, may be incomplete",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/socket.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "file": "pages/api/status.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_EXPORT_DEFAULT",
+          "message": "Missing export default statement",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_COMPONENT_DECLARATION",
+          "message": "Missing component function/class declaration",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "PAGE_TOO_SHORT",
+          "message": "Page content seems too short, may be incomplete",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/stripe/webhook.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_EXPORT_DEFAULT",
+          "message": "Missing export default statement",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_COMPONENT_DECLARATION",
+          "message": "Missing component function/class declaration",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "PAGE_TOO_SHORT",
+          "message": "Page content seems too short, may be incomplete",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/subscribe.page.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_EXPORT_DEFAULT",
+          "message": "Missing export default statement",
+          "line": 1,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_COMPONENT_DECLARATION",
+          "message": "Missing component function/class declaration",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "PAGE_TOO_SHORT",
+          "message": "Page content seems too short, may be incomplete",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/talent/[id].ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_EXPORT_DEFAULT",
+          "message": "Missing export default statement",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_COMPONENT_DECLARATION",
+          "message": "Missing component function/class declaration",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "PAGE_TOO_SHORT",
+          "message": "Page content seems too short, may be incomplete",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/talent/[slug].ts",
+      "issues": [],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "INCOMPLETE_HTML",
+          "message": "Incomplete HTML tags detected",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/talent/index.ts",
+      "issues": [],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "INCOMPLETE_HTML",
+          "message": "Incomplete HTML tags detected",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/trust/[userId].ts",
+      "issues": [],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "INCOMPLETE_HTML",
+          "message": "Incomplete HTML tags detected",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/vendors/index.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "file": "pages/api/zgp/templates.ts",
+      "issues": [],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "INCOMPLETE_HTML",
+          "message": "Incomplete HTML tags detected",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/zion-brain/logs.ts",
+      "issues": [],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "INCOMPLETE_HTML",
+          "message": "Incomplete HTML tags detected",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/zion-brain/reflex.ts",
+      "issues": [],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "INCOMPLETE_HTML",
+          "message": "Incomplete HTML tags detected",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/zion-whitepaper-pdf.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "file": "pages/autonomous-it-operations-center.tsx",
+      "issues": [],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "INCOMPLETE_HTML",
+          "message": "Incomplete HTML tags detected",
+          "line": 6,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/community/category/[categoryId].tsx",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_EXPORT_DEFAULT",
+          "message": "Missing export default statement",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_COMPONENT_DECLARATION",
+          "message": "Missing component function/class declaration",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "PAGE_TOO_SHORT",
+          "message": "Page content seems too short, may be incomplete",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/dashboard/_middleware.ts",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_EXPORT_DEFAULT",
+          "message": "Missing export default statement",
+          "line": 1,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_COMPONENT_DECLARATION",
+          "message": "Missing component function/class declaration",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "PAGE_TOO_SHORT",
+          "message": "Page content seems too short, may be incomplete",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/dashboard/api-access.tsx",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "file": "pages/dashboard/metrics.tsx",
+      "issues": [],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "INCOMPLETE_HTML",
+          "message": "Incomplete HTML tags detected",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/download.page.tsx",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_EXPORT_DEFAULT",
+          "message": "Missing export default statement",
+          "line": 1,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_COMPONENT_DECLARATION",
+          "message": "Missing component function/class declaration",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "PAGE_TOO_SHORT",
+          "message": "Page content seems too short, may be incomplete",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/download.tsx",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_EXPORT_DEFAULT",
+          "message": "Missing export default statement",
+          "line": 1,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_COMPONENT_DECLARATION",
+          "message": "Missing component function/class declaration",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "PAGE_TOO_SHORT",
+          "message": "Page content seems too short, may be incomplete",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/edge-computing-orchestration-platform.tsx",
+      "issues": [],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "INCOMPLETE_HTML",
+          "message": "Incomplete HTML tags detected",
+          "line": 8,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/events/global.tsx",
+      "issues": [],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "INCOMPLETE_HTML",
+          "message": "Incomplete HTML tags detected",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/expo.tsx",
+      "issues": [],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "INCOMPLETE_HTML",
+          "message": "Incomplete HTML tags detected",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/features/ai-content-generation.tsx",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_EXPORT_DEFAULT",
+          "message": "Missing export default statement",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_COMPONENT_DECLARATION",
+          "message": "Missing component function/class declaration",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "PAGE_TOO_SHORT",
+          "message": "Page content seems too short, may be incomplete",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/franchise-portal/index.tsx",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_EXPORT_DEFAULT",
+          "message": "Missing export default statement",
+          "line": 1,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_COMPONENT_DECLARATION",
+          "message": "Missing component function/class declaration",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "PAGE_TOO_SHORT",
+          "message": "Page content seems too short, may be incomplete",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/governance/org-chart.tsx",
+      "issues": [],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "INCOMPLETE_HTML",
+          "message": "Incomplete HTML tags detected",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/index.page.tsx",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_EXPORT_DEFAULT",
+          "message": "Missing export default statement",
+          "line": 1,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_COMPONENT_DECLARATION",
+          "message": "Missing component function/class declaration",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "PAGE_TOO_SHORT",
+          "message": "Page content seems too short, may be incomplete",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/intelligent-content-automation-platform.tsx",
+      "issues": [],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "INCOMPLETE_HTML",
+          "message": "Incomplete HTML tags detected",
+          "line": 6,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/intelligent-hr-analytics-platform.tsx",
+      "issues": [],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "INCOMPLETE_HTML",
+          "message": "Incomplete HTML tags detected",
+          "line": 6,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/investors/index.tsx",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_EXPORT_DEFAULT",
+          "message": "Missing export default statement",
+          "line": 1,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_COMPONENT_DECLARATION",
+          "message": "Missing component function/class declaration",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "PAGE_TOO_SHORT",
+          "message": "Page content seems too short, may be incomplete",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/mobile-launch.page.tsx",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_EXPORT_DEFAULT",
+          "message": "Missing export default statement",
+          "line": 1,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_COMPONENT_DECLARATION",
+          "message": "Missing component function/class declaration",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "PAGE_TOO_SHORT",
+          "message": "Page content seems too short, may be incomplete",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/more-products.tsx",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_EXPORT_DEFAULT",
+          "message": "Missing export default statement",
+          "line": 1,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_COMPONENT_DECLARATION",
+          "message": "Missing component function/class declaration",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "PAGE_TOO_SHORT",
+          "message": "Page content seems too short, may be incomplete",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/notifications.tsx",
+      "issues": [],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "INCOMPLETE_HTML",
+          "message": "Incomplete HTML tags detected",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/open-app.page.tsx",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_EXPORT_DEFAULT",
+          "message": "Missing export default statement",
+          "line": 1,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_COMPONENT_DECLARATION",
+          "message": "Missing component function/class declaration",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "PAGE_TOO_SHORT",
+          "message": "Page content seems too short, may be incomplete",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/revolutionary-home.tsx",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_EXPORT_DEFAULT",
+          "message": "Missing export default statement",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_COMPONENT_DECLARATION",
+          "message": "Missing component function/class declaration",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "PAGE_TOO_SHORT",
+          "message": "Page content seems too short, may be incomplete",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/roadmap.tsx",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_COMPONENT_DECLARATION",
+          "message": "Missing component function/class declaration",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "PAGE_TOO_SHORT",
+          "message": "Page content seems too short, may be incomplete",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/seo-automation-suite.tsx",
+      "issues": [],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "INCOMPLETE_HTML",
+          "message": "Incomplete HTML tags detected",
+          "line": 6,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/services/github-compliance-bot.tsx",
+      "issues": [],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "INCOMPLETE_HTML",
+          "message": "Incomplete HTML tags detected",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/services/incident-postmortem-generator.tsx",
+      "issues": [],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "INCOMPLETE_HTML",
+          "message": "Incomplete HTML tags detected",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/smart-crm-intelligence-suite.tsx",
+      "issues": [],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "INCOMPLETE_HTML",
+          "message": "Incomplete HTML tags detected",
+          "line": 6,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/team.tsx",
+      "issues": [],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "INCOMPLETE_HTML",
+          "message": "Incomplete HTML tags detected",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/token/model.tsx",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_EXPORT_DEFAULT",
+          "message": "Missing export default statement",
+          "line": 1,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_COMPONENT_DECLARATION",
+          "message": "Missing component function/class declaration",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "PAGE_TOO_SHORT",
+          "message": "Page content seems too short, may be incomplete",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/zero-trust-security-platform.tsx",
+      "issues": [],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "INCOMPLETE_HTML",
+          "message": "Incomplete HTML tags detected",
+          "line": 6,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/zion/ipfs.tsx",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_COMPONENT_DECLARATION",
+          "message": "Missing component function/class declaration",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "PAGE_TOO_SHORT",
+          "message": "Page content seems too short, may be incomplete",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    }
+  ],
+  "buildBreakingFiles": [
+    "pages/admin/_middleware.ts",
+    "pages/api/admin/logout.ts",
+    "pages/api/analytics/client.ts",
+    "pages/api/auth/forgot.ts",
+    "pages/api/auth/health.ts",
+    "pages/api/auth/logout.ts",
+    "pages/api/auth/register.ts",
+    "pages/api/auth/resend-verification-email.ts",
+    "pages/api/auth/session.ts",
+    "pages/api/blog/[slug].ts",
+    "pages/api/blog/index.ts",
+    "pages/api/categories/[slug]/items.ts",
+    "pages/api/categories.ts",
+    "pages/api/checkout/session.ts",
+    "pages/api/checkout-session.ts",
+    "pages/api/create-payment-intent.ts",
+    "pages/api/dev/dashboard.ts",
+    "pages/api/equipment.ts",
+    "pages/api/error-report.ts",
+    "pages/api/extension-health.ts",
+    "pages/api/favorites.ts",
+    "pages/api/franchise/applications.ts",
+    "pages/api/franchise/instances.ts",
+    "pages/api/grants/[id]/milestones/[milestoneId]/index.ts",
+    "pages/api/grants/[id]/milestones/index.ts",
+    "pages/api/health/environment.ts",
+    "pages/api/health/index.ts",
+    "pages/api/health.js",
+    "pages/api/health.ts",
+    "pages/api/healthcheck.ts",
+    "pages/api/hello.ts",
+    "pages/api/image/[...params].ts",
+    "pages/api/investors/financials.csv.ts",
+    "pages/api/ipo/metrics.ts",
+    "pages/api/ipo/updates/open-pixel.ts",
+    "pages/api/kb-chat.ts",
+    "pages/api/logs.ts",
+    "pages/api/marketplace/categories.ts",
+    "pages/api/marketplace/equipment.ts",
+    "pages/api/marketplace/overview.ts",
+    "pages/api/marketplace/product/[productId].ts",
+    "pages/api/marketplace/products.ts",
+    "pages/api/marketplace/talent.ts",
+    "pages/api/newsletter.ts",
+    "pages/api/operator-summary.ts",
+    "pages/api/points/redeem.ts",
+    "pages/api/products/index.ts",
+    "pages/api/push/send.ts",
+    "pages/api/push/subscribe.ts",
+    "pages/api/requests/list.ts",
+    "pages/api/resend-verification-email.ts",
+    "pages/api/reviews/[productId].ts",
+    "pages/api/reviews/index.ts",
+    "pages/api/search/suggest.ts",
+    "pages/api/search.ts",
+    "pages/api/services/service-1755574829755-mjafzngh0.ts",
+    "pages/api/services/service-1755574829756-dtpjs3hda.ts",
+    "pages/api/services/service-1755574829757-004zwa9h5.ts",
+    "pages/api/services/service-1755574859753-s9ogm9oyk.ts",
+    "pages/api/services/service-1755574859754-skb3wundd.ts",
+    "pages/api/services/service-1755574859756-184u4o0ye.ts",
+    "pages/api/services/service-1755574889753-v110yzi0o.ts",
+    "pages/api/services/service-1755574889754-et85fjvw4.ts",
+    "pages/api/services/service-1755574889755-6zv3536x9.ts",
+    "pages/api/services/service-1755574889756-c59wed3zt.ts",
+    "pages/api/services/service-1755574889757-ig9lw8h18.ts",
+    "pages/api/services/service-1755574919753-4gecmz7p7.ts",
+    "pages/api/services/service-1755574919754-hiww4t3jq.ts",
+    "pages/api/services/service-1755574919755-1wskwszzn.ts",
+    "pages/api/services/service-1755574949752-w2vvoioe0.ts",
+    "pages/api/services/service-1755574949753-hibfys3hi.ts",
+    "pages/api/services/service-1755574949754-qtn3lrb9o.ts",
+    "pages/api/services/service-1755574949755-17j6xhums.ts",
+    "pages/api/services/service-1755574949756-57ueracld.ts",
+    "pages/api/services/service-1755574949757-bch15q12n.ts",
+    "pages/api/services/service-1755574979751-9mkuw0246.ts",
+    "pages/api/services/service-1755574979752-29yzm6dwh.ts",
+    "pages/api/services/service-1755574979753-nyci554t5.ts",
+    "pages/api/services/service-1755575009752-x5t9dpn2n.ts",
+    "pages/api/services/service-1755575009753-22zvmi50q.ts",
+    "pages/api/services/service-1755575009754-gd85ryy56.ts",
+    "pages/api/services/service-1755575009754-uwdlyewog.ts",
+    "pages/api/services/service-1755575059038-go26ti6m1.ts",
+    "pages/api/services/service-1755575060139-koj1emhtz.ts",
+    "pages/api/services/service-1755575060884-h3uamrq1o.ts",
+    "pages/api/services.ts",
+    "pages/api/socket.ts",
+    "pages/api/status.ts",
+    "pages/api/stripe/webhook.ts",
+    "pages/api/subscribe.page.ts",
+    "pages/api/talent/[id].ts",
+    "pages/api/vendors/index.ts",
+    "pages/api/zion-whitepaper-pdf.ts",
+    "pages/community/category/[categoryId].tsx",
+    "pages/dashboard/_middleware.ts",
+    "pages/dashboard/api-access.tsx",
+    "pages/download.page.tsx",
+    "pages/download.tsx",
+    "pages/features/ai-content-generation.tsx",
+    "pages/franchise-portal/index.tsx",
+    "pages/index.page.tsx",
+    "pages/investors/index.tsx",
+    "pages/mobile-launch.page.tsx",
+    "pages/more-products.tsx",
+    "pages/open-app.page.tsx",
+    "pages/revolutionary-home.tsx",
+    "pages/roadmap.tsx",
+    "pages/token/model.tsx",
+    "pages/zion/ipfs.tsx"
+  ],
+  "generatedAt": "2025-08-24T01:03:24.224Z"
 }

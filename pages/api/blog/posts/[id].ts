@@ -10,7 +10,11 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     if (!requireAdmin(req, res)) return;
     const posts = readPosts();
     const idx = posts.findIndex((p) => p.id === id);
-    if (idx < 0) return res.status(404).json({ error: 'Not found' });
+    if (idx
+
+export default function [id]Page() {
+  return (
+    < 0) return res.status(404).json({ error: 'Not found' });
     const updated = { ...posts[idx], ...req.body, id };
     posts[idx] = updated;
     writePosts(posts);
@@ -18,4 +22,6 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   }
 
   return res.status(405).end();
+}
+  );
 }
