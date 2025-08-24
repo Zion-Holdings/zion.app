@@ -1,7 +1,6 @@
-import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import { Brain, Zap, Shield, Globe, Users, Award, ArrowRight } from 'lucide-react';
+import { Brain, Zap, Shield, Database, Cloud, Code, ArrowRight } from 'lucide-react';
 
 export default function AISolutions() {
   return (
@@ -55,7 +54,7 @@ export default function AISolutions() {
               </div>
 
               <div className="bg-zion-blue-light/20 rounded-xl p-6 border border-zion-purple/30 hover:border-zion-cyan/50 transition-all duration-300 hover:transform hover:scale-105">
-                <Globe className="w-12 h-12 text-zion-cyan mb-4" />
+                <Database className="w-12 h-12 text-zion-cyan mb-4" />
                 <h3 className="text-xl font-bold text-white mb-3">Computer Vision</h3>
                 <p className="text-zion-slate-light mb-4">
                   Image recognition, object detection, and visual AI for various industries.
@@ -77,7 +76,7 @@ export default function AISolutions() {
               </div>
 
               <div className="bg-zion-blue-light/20 rounded-xl p-6 border border-zion-purple/30 hover:border-zion-cyan/50 transition-all duration-300 hover:transform hover:scale-105">
-                <Users className="w-12 h-12 text-zion-cyan mb-4" />
+                <Cloud className="w-12 h-12 text-zion-cyan mb-4" />
                 <h3 className="text-xl font-bold text-white mb-3">AI Consulting</h3>
                 <p className="text-zion-slate-light mb-4">
                   Strategic guidance for AI implementation and digital transformation.
@@ -88,7 +87,7 @@ export default function AISolutions() {
               </div>
 
               <div className="bg-zion-blue-light/20 rounded-xl p-6 border border-zion-purple/30 hover:border-zion-cyan/50 transition-all duration-300 hover:transform hover:scale-105">
-                <Award className="w-12 h-12 text-zion-cyan mb-4" />
+                <Code className="w-12 h-12 text-zion-cyan mb-4" />
                 <h3 className="text-xl font-bold text-white mb-3">Custom AI Development</h3>
                 <p className="text-zion-slate-light mb-4">
                   Tailored AI solutions designed specifically for your business needs.

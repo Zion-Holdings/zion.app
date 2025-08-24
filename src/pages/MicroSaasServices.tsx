@@ -1,8 +1,4 @@
-import React, { useState } from 'react';
-import { Header } from '@/components/Header';
-import { Footer } from '@/components/Footer';
-import { SEO } from '@/components/SEO';
-import { MICRO_SAAS_SERVICES, MicroSaasService, getServiceByCategory, getServiceBySubcategory } from '@/data/microSaasServices';
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -10,26 +6,25 @@ import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { 
   Search, 
-  Filter, 
+  Grid3X3, 
+  List, 
   Star, 
+  Clock, 
+  DollarSign, 
   Users, 
-  Zap, 
   Shield, 
-  Cloud, 
-  Code, 
-  BarChart3, 
-  Bot, 
-  Briefcase,
-  Globe,
+  Zap, 
+  CheckCircle, 
+  ExternalLink, 
+  Eye,
   Mail,
   Phone,
-  MapPin,
-  ExternalLink,
-  CheckCircle,
-  TrendingUp,
-  Clock,
-  DollarSign
+  MapPin
 } from 'lucide-react';
+import { MICRO_SAAS_SERVICES, MicroSaasService } from '@/data/microSaasServices';
+import { Header } from '@/components/header/Header';
+import { Footer } from '@/components/Footer';
+import { SEO } from '@/components/SEO';
 
 export default function MicroSaasServices() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -65,17 +60,17 @@ export default function MicroSaasServices() {
 
   const getCategoryIcon = (category: string) => {
     switch (category) {
-      case 'AI': return <Bot className="h-5 w-5" />;
+      case 'AI': return <Shield className="h-5 w-5" />;
       case 'IT': return <Shield className="h-5 w-5" />;
-      case 'Development': return <Code className="h-5 w-5" />;
-      case 'Analytics': return <BarChart3 className="h-5 w-5" />;
+      case 'Development': return <Grid3X3 className="h-5 w-5" />;
+      case 'Analytics': return <List className="h-5 w-5" />;
       case 'Security': return <Shield className="h-5 w-5" />;
       case 'Automation': return <Zap className="h-5 w-5" />;
-      case 'Cloud': return <Cloud className="h-5 w-5" />;
-      case 'Marketing': return <TrendingUp className="h-5 w-5" />;
-      case 'Productivity': return <Briefcase className="h-5 w-5" />;
+      case 'Cloud': return <Shield className="h-5 w-5" />;
+      case 'Marketing': return <Grid3X3 className="h-5 w-5" />;
+      case 'Productivity': return <List className="h-5 w-5" />;
       case 'Finance': return <DollarSign className="h-5 w-5" />;
-      default: return <Globe className="h-5 w-5" />;
+      default: return <Eye className="h-5 w-5" />;
     }
   };
 

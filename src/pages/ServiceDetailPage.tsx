@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Star, Clock, Users, Shield, Zap, CheckCircle, ArrowRight } from 'lucide-react';
+import { Phone, Mail, MapPin, Star, CheckCircle, ArrowRight, Shield } from 'lucide-react';
 import { COMPREHENSIVE_SERVICES, SERVICE_PRICING_TIERS, CONTACT_INFO, SERVICE_GUARANTEES } from '../data/comprehensiveServices';
 
 interface ServiceDetailPageProps {}
@@ -136,7 +136,7 @@ const ServiceDetailPage: React.FC<ServiceDetailPageProps> = () => {
                     {SERVICE_GUARANTEES.map((guarantee, index) => (
                       <div key={index} className="bg-zion-blue/20 rounded-lg p-6 border border-zion-blue/30">
                         <div className="flex items-center gap-3 mb-3">
-                          <Shield className="w-6 h-6 text-zion-gold" />
+                          <Shield className="w-6 h-6 text-zion-gold flex-shrink-0" />
                           <h3 className="text-xl font-semibold text-white">{guarantee.title}</h3>
                         </div>
                         <p className="text-zion-slate-light">{guarantee.description}</p>

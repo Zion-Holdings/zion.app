@@ -1,10 +1,8 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-// import { getFeaturedServices, getServicesByCategory } from '@/data/microSaasServices';
 import { COMPREHENSIVE_SERVICES } from '@/data/comprehensiveServices';
 import { 
   Brain, 
@@ -16,9 +14,7 @@ import {
   Mail,
   Phone,
   ExternalLink,
-  Eye,
-  Clock,
-  Globe
+  Clock
 } from 'lucide-react';
 
 const categoryIcons = {
@@ -51,16 +47,6 @@ export function ServicesOverview() {
     if (model === 'per-user') return `$${price}/user`;
     if (model === 'usage-based') return `$${price}/usage`;
     return `$${price}`;
-  };
-
-  const getSupportLevelColor = (level: string) => {
-    switch (level) {
-      case 'basic': return 'bg-gray-100 text-gray-800';
-      case 'standard': return 'bg-blue-100 text-blue-800';
-      case 'premium': return 'bg-purple-100 text-purple-800';
-      case 'enterprise': return 'bg-green-100 text-green-800';
-      default: return 'bg-gray-100 text-gray-800';
-    }
   };
 
   return (
@@ -120,12 +106,6 @@ export function ServicesOverview() {
                     <div className="text-2xl font-bold text-zion-purple">
                       {formatPrice(service.price, service.pricingModel)}
                     </div>
-                    {service.freeTrial && (
-                      <div className="text-sm text-green-600 flex items-center gap-1">
-                        <CheckCircle className="w-4 h-4" />
-                        {service.freeTrialDays}-day free trial
-                      </div>
-                    )}
                   </div>
 
                   {/* Key Benefits */}
@@ -156,18 +136,16 @@ export function ServicesOverview() {
                       Get Started
                     </Button>
                     <div className="flex gap-2">
-                      {service.website && (
+                      {service.contactInfo?.website && (
                         <Button variant="outline" size="sm" className="flex-1">
                           <ExternalLink className="w-4 h-4 mr-1" />
                           Website
                         </Button>
                       )}
-                      {service.demoUrl && (
-                        <Button variant="outline" size="sm" className="flex-1">
-                          <Eye className="w-4 h-4 mr-1" />
-                          Demo
-                        </Button>
-                      )}
+                      <Button variant="outline" size="sm" className="flex-1">
+                        <Mail className="w-4 h-4 mr-1" />
+                        Contact
+                      </Button>
                     </div>
                   </div>
                 </CardContent>

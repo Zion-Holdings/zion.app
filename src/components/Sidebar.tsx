@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import { 
@@ -8,15 +8,11 @@ import {
   Settings, 
   FileText, 
   MessageSquare, 
-  BarChart3, 
   HelpCircle,
   ChevronRight,
   Building2,
   Globe,
   Zap,
-  Shield,
-  Award,
-  BookOpen,
   Code,
   Database,
   Server,
@@ -24,13 +20,14 @@ import {
   Calendar,
   Handshake
 } from 'lucide-react';
+import React from 'react';
 
 interface SidebarProps {
   isOpen?: boolean;
   onClose?: () => void;
 }
 
-export function Sidebar({ isOpen = false, onClose }: SidebarProps) {
+export function Sidebar({ isOpen = false }: SidebarProps) {
   const location = useLocation();
   const [expandedSections, setExpandedSections] = useState<string[]>(['marketplace']);
 
@@ -86,7 +83,7 @@ export function Sidebar({ isOpen = false, onClose }: SidebarProps) {
           className="flex items-center justify-between w-full p-3 text-left text-zion-slate-light hover:text-zion-cyan transition-colors rounded-lg hover:bg-zion-purple/10"
         >
           <div className="flex items-center">
-            {React.createElement(icon, { className: "w-5 h-5 mr-3" })}
+            {icon && React.createElement(icon, { className: "w-5 h-5 mr-3" })}
             <span className="font-medium">{title}</span>
           </div>
           <ChevronRight 
@@ -175,7 +172,7 @@ export function Sidebar({ isOpen = false, onClose }: SidebarProps) {
           {renderNavSection('solutions', navigationItems.solutions, 'Solutions', Zap)}
           
           {/* Resources Section */}
-          {renderNavSection('resources', navigationItems.resources, 'Resources', BookOpen)}
+          {renderNavSection('resources', navigationItems.resources, 'Resources', FileText)}
           
           {/* Community Section */}
           {renderNavSection('community', navigationItems.community, 'Community', Users)}
@@ -189,7 +186,7 @@ export function Sidebar({ isOpen = false, onClose }: SidebarProps) {
               to="/request-quote"
               className="flex items-center px-3 py-2 text-sm bg-zion-cyan hover:bg-zion-cyan-light text-zion-blue-dark rounded-lg transition-colors font-medium"
             >
-              <Award className="w-4 h-4 mr-2" />
+              <Handshake className="w-4 h-4 mr-2" />
               Request Quote
             </Link>
             <Link

@@ -1,12 +1,10 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 
 interface LogoProps {
-  customLogo?: string;
   customColor?: string;
 }
 
-export function Logo({ customLogo, customColor }: LogoProps) {
+export function Logo({ customColor }: LogoProps) {
   const logoColor = customColor || '#3b82f6'; // Default blue color
   
   return (

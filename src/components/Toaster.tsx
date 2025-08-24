@@ -61,7 +61,7 @@ export function useToaster() {
 }
 
 export const toaster = {
-  success: (message: string) => {},
-  error: (message: string) => {},
-  info: (message: string) => {}
+  success: () => {},
+  error: () => {},
+  info: () => {}
 };

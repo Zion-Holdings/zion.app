@@ -3,11 +3,9 @@ import { Link, useLocation } from 'react-router-dom';
 import { Button } from '../ui/button';
 import { Badge } from '../ui/badge';
 import { 
-  X, 
   Home, 
   Users, 
   Briefcase, 
-  Settings, 
   HelpCircle, 
   MessageCircle, 
   Shield, 
@@ -24,9 +22,9 @@ import {
   ChevronRight,
   Sparkles,
   Cpu,
-  Cloud,
   TrendingUp,
-  Building2
+  Building2,
+  X
 } from 'lucide-react';
 
 interface SidebarSection {

@@ -1,15 +1,13 @@
 import React, { Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
 import { ThemeProvider } from "./components/ThemeProvider";
-import { useScrollToTop } from "./hooks/useScrollToTop";
 import { WhitelabelProvider } from "./context/WhitelabelContext";
 import { ToasterProvider } from "./components/Toaster";
 import { Sonner } from "./components/Sonner";
 
 // Lazy load pages
 const Home = React.lazy(() => import('./pages/Home'));
-const AboutPage = React.lazy(() => import('./pages/About'));
+const AboutPage = React.lazy(() => import('./pages/About.tsx'));
 const AISolutionsPage = React.lazy(() => import('./pages/AISolutions'));
 const ITServicesPage = React.lazy(() => import('./pages/ITServices'));
 const EnterprisePage = React.lazy(() => import('./pages/Enterprise'));

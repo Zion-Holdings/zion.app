@@ -9,7 +9,6 @@ import {
   User, 
   Bell, 
   ChevronDown,
-  Globe,
   Settings,
   LogOut,
   Sun,

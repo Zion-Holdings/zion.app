@@ -1,38 +1,32 @@
-import React from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
-import { getFeaturedServices } from '@/data/microSaasServices';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
 import { 
-  Bot, 
-  Shield, 
-  Code, 
-  BarChart3, 
+  Brain, 
+  Cloud, 
   Zap, 
-  TrendingUp, 
-  Briefcase, 
-  DollarSign,
+  Star, 
+  CheckCircle, 
   ArrowRight,
-  Star,
-  Users,
-  CheckCircle
+  Eye
 } from 'lucide-react';
+import { getFeaturedServices } from '@/data/microSaasServices';
 
 export function MicroSaasServicesSection() {
   const featuredServices = getFeaturedServices();
 
   const getCategoryIcon = (category: string) => {
     switch (category) {
-      case 'AI': return <Bot className="h-5 w-5" />;
-      case 'IT': return <Shield className="h-5 w-5" />;
-      case 'Development': return <Code className="h-5 w-5" />;
-      case 'Analytics': return <BarChart3 className="h-5 w-5" />;
+      case 'AI': return <Brain className="h-5 w-5" />;
+      case 'IT': return <Cloud className="h-5 w-5" />;
+      case 'Development': return <Eye className="h-5 w-5" />;
+      case 'Analytics': return <Eye className="h-5 w-5" />;
       case 'Automation': return <Zap className="h-5 w-5" />;
-      case 'Marketing': return <TrendingUp className="h-5 w-5" />;
-      case 'Productivity': return <Briefcase className="h-5 w-5" />;
-      case 'Finance': return <DollarSign className="h-5 w-5" />;
-      default: return <Code className="h-5 w-5" />;
+      case 'Marketing': return <Eye className="h-5 w-5" />;
+      case 'Productivity': return <Eye className="h-5 w-5" />;
+      case 'Finance': return <Eye className="h-5 w-5" />;
+      default: return <Eye className="h-5 w-5" />;
     }
   };
 
@@ -147,7 +141,7 @@ export function MicroSaasServicesSection() {
                 {/* Target Audience */}
                 <div className="pt-2 border-t border-zion-blue-light/20">
                   <div className="flex items-center gap-2 text-xs text-zion-slate-light">
-                    <Users className="h-3 w-3" />
+                    <Eye className="h-3 w-3" />
                     <span>Perfect for {service.targetAudience.slice(0, 2).join(', ')}</span>
                   </div>
                 </div>

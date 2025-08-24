@@ -1,11 +1,9 @@
 
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { Logo } from './Logo';
 import { UserMenu } from './UserMenu';
 import { LanguageSelector } from './LanguageSelector';
 import { MainNavigation } from '@/layout/MainNavigation';
-import { useAuth } from '@/hooks/useAuth';
 import { useWhitelabel } from '@/context/WhitelabelContext';
 import { EnhancedSearchInput } from "@/components/search/EnhancedSearchInput";
 import { generateSearchSuggestions } from "@/data/marketplaceData";
@@ -14,7 +12,6 @@ import { useState } from "react";
 
 export interface HeaderProps {
   hideLogin?: boolean;
-  customLogo?: string;
   customTheme?: {
     primaryColor: string;
     backgroundColor: string;
@@ -22,8 +19,7 @@ export interface HeaderProps {
   };
 }
 
-export function Header({ hideLogin = false, customLogo, customTheme }: HeaderProps) {
-  const { user } = useAuth();
+export function Header({ hideLogin = false, customTheme }: HeaderProps) {
   const { isWhitelabel, primaryColor } = useWhitelabel();
   const navigate = useNavigate();
   const [query, setQuery] = useState("");
@@ -64,7 +60,7 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
       </div>
       
       <div className="container flex h-16 items-center px-4 sm:px-6 relative z-10">
-        <Logo customLogo={customLogo} customColor={effectiveTheme?.primaryColor} />
+        <Logo customColor={effectiveTheme?.primaryColor} />
 
         <div className="ml-6 flex-1">
           <MainNavigation />

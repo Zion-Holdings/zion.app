@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import { COMPREHENSIVE_SERVICES, SERVICE_CATEGORIES } from '@/data/comprehensiveServices';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -6,17 +6,10 @@ import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { 
   Search, 
-  Filter, 
   Star, 
   Clock, 
   Users, 
-  CheckCircle, 
-  TrendingUp,
-  Phone,
-  Mail,
-  Globe,
-  ArrowRight,
-  Sparkles
+  ArrowRight
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -52,11 +45,6 @@ export default function ComprehensiveServicesPage() {
     } else {
       return `$${service.price.toLocaleString()}`;
     }
-  };
-
-  const getCategoryIcon = (category: string) => {
-    const categoryData = SERVICE_CATEGORIES.find(cat => cat.name === category);
-    return categoryData?.icon || '💼';
   };
 
   return (
@@ -144,15 +132,15 @@ export default function ComprehensiveServicesPage() {
                       </Badge>
                     </div>
                     
-                    <div className="flex items-center space-x-4 text-sm text-zion-slate-light">
-                      <div className="flex items-center space-x-1">
-                        <Clock className="h-4 w-4" />
-                        <span>{service.duration || '2-4 weeks'}</span>
-                      </div>
-                      <div className="flex items-center space-x-1">
-                        <Users className="h-4 w-4" />
-                        <span>{service.teamSize || '2-5 people'}</span>
-                      </div>
+                    <div className="flex items-center gap-4 text-sm text-zion-slate-light">
+                      <span className="flex items-center gap-1">
+                        <Clock className="w-4 h-4" />
+                        <span>{service.deliveryTime || '2-4 weeks'}</span>
+                      </span>
+                      <span className="flex items-center gap-1">
+                        <Users className="w-4 h-4" />
+                        <span>{service.author.name || '2-5 people'}</span>
+                      </span>
                     </div>
 
                     <div className="flex flex-wrap gap-2">

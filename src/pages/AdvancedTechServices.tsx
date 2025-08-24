@@ -1,32 +1,22 @@
-import React, { useState } from 'react';
-import { Helmet } from 'react-helmet-async';
-import { 
-  Search, 
-  Filter, 
-  Grid3X3, 
-  List, 
-  Star, 
-  Clock, 
-  DollarSign,
-  Shield,
-  Cloud,
-  Database,
-  Cpu,
-  Zap,
-  TrendingUp,
-  Globe,
-  Lock,
-  BarChart3,
-  Smartphone,
-  Network,
-  Brain,
-  Rocket
-} from 'lucide-react';
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { 
+  Shield, 
+  Cloud, 
+  ArrowRight, 
+  CheckCircle, 
+  BarChart3, 
+  Lock, 
+  Grid3X3,
+  List,
+  Star,
+  Code
+} from 'lucide-react';
+import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Helmet } from 'react-helmet-async';
 
 // Advanced Tech Services Data
 const advancedServices = [
@@ -106,7 +96,7 @@ const advancedServices = [
     aiScore: 94,
     deliveryTime: '14-20 weeks',
     features: ['Edge Computing', 'IoT Management', 'Real-Time Processing', 'AI Inference', 'Security'],
-    icon: Cpu,
+    icon: Code,
     color: 'from-orange-500 to-red-600',
     marketPrice: '$15,000 - $60,000'
   }
@@ -182,11 +172,11 @@ export default function AdvancedTechServices() {
               
               <div className="flex flex-wrap justify-center gap-4 mb-8">
                 <div className="flex items-center gap-2 text-zion-cyan">
-                  <Rocket className="w-5 h-5" />
+                  <ArrowRight className="w-5 h-5" />
                   <span>Innovation First</span>
                 </div>
                 <div className="flex items-center gap-2 text-zion-purple">
-                  <Brain className="w-5 h-5" />
+                  <CheckCircle className="w-5 h-5" />
                   <span>AI-Powered</span>
                 </div>
                 <div className="flex items-center gap-2 text-zion-cyan">
@@ -206,7 +196,7 @@ export default function AdvancedTechServices() {
                 {/* Search */}
                 <div className="lg:col-span-2">
                   <div className="relative">
-                    <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-zion-slate-light" />
+                    <Shield className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-zion-slate-light" />
                     <Input
                       placeholder="Search advanced services..."
                       value={searchQuery}
@@ -276,14 +266,14 @@ export default function AdvancedTechServices() {
                     size="sm"
                     onClick={() => setViewMode('grid')}
                   >
-                    <Grid3X3 className="w-4 h-4" />
+                    <Grid3X3 className="w-4 h-4 mr-1" />
                   </Button>
                   <Button
                     variant={viewMode === 'list' ? 'default' : 'outline'}
                     size="sm"
                     onClick={() => setViewMode('list')}
                   >
-                    <List className="w-4 h-4" />
+                    <List className="w-4 h-4 mr-1" />
                   </Button>
                 </div>
               </div>

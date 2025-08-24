@@ -1,6 +1,5 @@
-import React from 'react';
 import { motion } from 'framer-motion';
-import { Star, Clock, MapPin, Users, TrendingUp, Shield } from 'lucide-react';
+import { Star, Clock, MapPin, TrendingUp, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 interface ServiceCardProps {

@@ -1,15 +1,19 @@
-import * as React from "react"
-import { cn } from "@/lib/utils"
+import * as React from "react";
+import { cn } from "@/lib/utils";
 
 interface StepsProps extends React.HTMLAttributes<HTMLDivElement> {
-  children: React.ReactElement<StepProps>[]
-  currentStep?: number
+  currentStep?: number;
+}
+
+interface StepProps extends React.HTMLAttributes<HTMLDivElement> {
+  isActive?: boolean;
+  isCompleted?: boolean;
+  isLast?: boolean;
 }
 
 const Steps = React.forwardRef<HTMLDivElement, StepsProps>(
   ({ className, children, currentStep = 0, ...props }, ref) => {
-    const steps = React.Children.toArray(children)
-    
+    const steps = React.Children.toArray(children);
     return (
       <div
         ref={ref}
@@ -23,25 +27,28 @@ const Steps = React.forwardRef<HTMLDivElement, StepsProps>(
               isActive: index === currentStep,
               isCompleted: index < currentStep,
               isLast: index === steps.length - 1,
-            })
+            });
           }
-          return step
+          return step;
         })}
       </div>
-    )
+    );
   }
-)
-Steps.displayName = "Steps"
-
-interface StepProps extends React.HTMLAttributes<HTMLDivElement> {
-  children: React.ReactNode
-  isActive?: boolean
-  isCompleted?: boolean
-  isLast?: boolean
-}
+);
+Steps.displayName = "Steps";
 
 const Step = React.forwardRef<HTMLDivElement, StepProps>(
-  ({ className, children, isActive = false, isCompleted = false, isLast = false, ...props }, ref) => {
+  (
+    {
+      className,
+      children,
+      isActive = false,
+      isCompleted = false,
+      isLast = false,
+      ...props
+    },
+    ref
+  ) => {
     return (
       <div
         ref={ref}
@@ -60,11 +67,21 @@ const Step = React.forwardRef<HTMLDivElement, StepProps>(
             )}
           >
             {isCompleted ? (
-              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              <svg
+                className="h-4 w-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M5 13l4 4L19 7"
+                />
               </svg>
             ) : (
-              <span>{React.Children.count(children)}</span>
+              <span>{children}</span>
             )}
           </div>
           {!isLast && (
@@ -77,9 +94,9 @@ const Step = React.forwardRef<HTMLDivElement, StepProps>(
           )}
         </div>
       </div>
-    )
+    );
   }
-)
-Step.displayName = "Step"
+);
+Step.displayName = "Step";
 
-export { Steps, Step }
+export { Steps, Step };

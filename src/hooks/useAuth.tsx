@@ -30,12 +30,12 @@ export function useAuth() {
     checkAuth();
   }, []);
 
-  const login = async (email: string, password: string) => {
+  const login = async (email: string) => {
     // Simulate login
     const mockUser: User = {
       id: '1',
       email,
-      name: 'Test User',
+      name: 'User',
       role: 'user'
     };
     

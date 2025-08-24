@@ -12,9 +12,9 @@ export function Services() {
   
   const filteredServices = allServices.filter(service => {
     const matchesCategory = selectedCategory === 'all' || service.category === selectedCategory;
-    const matchesSearch = service.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    const matchesSearch = service.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          service.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         (service.tags && service.tags.some((tag: string) => tag.toLowerCase().includes(searchTerm.toLowerCase())));
+                         service.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
     return matchesCategory && matchesSearch;
   });
 
@@ -129,7 +129,7 @@ export function Services() {
               {/* Service Card Header */}
               <div className="mb-4">
                 <h3 className="text-xl font-bold text-zion-cyan mb-2 group-hover:text-neon-green transition-colors">
-                  {service.name}
+                  {service.title}
                 </h3>
                 <div className="flex items-center gap-2 mb-3">
                   <span className="px-3 py-1 bg-zion-purple/20 text-zion-purple text-sm rounded-full border border-zion-purple/30">
@@ -151,7 +151,7 @@ export function Services() {
                     {service.price}
                   </span>
                   <span className="text-sm text-zion-slate-light">
-                    {service.duration}
+                    {service.deliveryTime || '2-4 weeks'}
                   </span>
                 </div>
               </div>

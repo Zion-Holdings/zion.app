@@ -1,36 +1,21 @@
-import React, { useState, useEffect } from 'react';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Input } from "@/components/ui/input";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useState, useEffect } from 'react';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
 import { 
   Search, 
-  Filter, 
+  Grid3X3, 
+  List, 
   Star, 
+  Clock, 
+  DollarSign, 
+  Shield, 
+  Zap, 
+  CheckCircle, 
+  ArrowRight, 
   ExternalLink, 
-  Play, 
-  FileText, 
-  DollarSign,
-  Users,
-  Zap,
-  Shield,
-  BarChart3,
-  MessageSquare,
-  Calendar,
-  Mail,
-  Heart,
-  ShoppingCart,
-  GraduationCap,
-  Building,
-  Globe,
-  TrendingUp,
-  Award,
-  Clock,
-  Code
-} from "lucide-react";
-// import { MICRO_SAAS_SERVICES, MicroSaasService, getMicroSaasServicesByCategory, getFeaturedMicroSaasServices } from "@/data/microSaasServices";
+  Eye
+} from 'lucide-react';
 import { SEO } from "@/components/SEO";
 
 export default function MicroSaasServicesPage() {
@@ -41,19 +26,19 @@ export default function MicroSaasServicesPage() {
   const [filteredServices, setFilteredServices] = useState<any[]>([]);
 
   const categories = [
-    { value: 'all', label: 'All Categories', icon: <Globe className="h-4 w-4" /> },
+    { value: 'all', label: 'All Categories', icon: <Grid3X3 className="h-4 w-4" /> },
     { value: 'AI & ML', label: 'AI & Machine Learning', icon: <Zap className="h-4 w-4" /> },
-    { value: 'Development', label: 'Development Tools', icon: <Code className="h-4 w-4" /> },
-    { value: 'Business Tools', label: 'Business Tools', icon: <Building className="h-4 w-4" /> },
+    { value: 'Development', label: 'Development Tools', icon: <List className="h-4 w-4" /> },
+    { value: 'Business Tools', label: 'Business Tools', icon: <Eye className="h-4 w-4" /> },
     { value: 'Security', label: 'Security', icon: <Shield className="h-4 w-4" /> },
-    { value: 'Analytics', label: 'Analytics', icon: <BarChart3 className="h-4 w-4" /> },
-    { value: 'Communication', label: 'Communication', icon: <MessageSquare className="h-4 w-4" /> },
-    { value: 'Productivity', label: 'Productivity', icon: <Calendar className="h-4 w-4" /> },
-    { value: 'Marketing', label: 'Marketing', icon: <Mail className="h-4 w-4" /> },
+    { value: 'Analytics', label: 'Analytics', icon: <Grid3X3 className="h-4 w-4" /> },
+    { value: 'Communication', label: 'Communication', icon: <Eye className="h-4 w-4" /> },
+    { value: 'Productivity', label: 'Productivity', icon: <Clock className="h-4 w-4" /> },
+    { value: 'Marketing', label: 'Marketing', icon: <Eye className="h-4 w-4" /> },
     { value: 'Finance', label: 'Finance', icon: <DollarSign className="h-4 w-4" /> },
-    { value: 'Healthcare', label: 'Healthcare', icon: <Heart className="h-4 w-4" /> },
-    { value: 'Education', label: 'Education', icon: <GraduationCap className="h-4 w-4" /> },
-    { value: 'E-commerce', label: 'E-commerce', icon: <ShoppingCart className="h-4 w-4" /> }
+    { value: 'Healthcare', label: 'Healthcare', icon: <CheckCircle className="h-4 w-4" /> },
+    { value: 'Education', label: 'Education', icon: <Eye className="h-4 w-4" /> },
+    { value: 'E-commerce', label: 'E-commerce', icon: <Eye className="h-4 w-4" /> }
   ];
 
   const priceRanges = [
@@ -80,7 +65,7 @@ export default function MicroSaasServicesPage() {
       filtered = filtered.filter(service =>
         service.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
         service.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        service.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()))
+        service.tags.some((tag: string) => tag.toLowerCase().includes(searchQuery.toLowerCase()))
       );
     }
 
@@ -124,13 +109,13 @@ export default function MicroSaasServicesPage() {
   }, [searchQuery, selectedCategory, priceRange, sortBy]);
 
   const getPriceRange = (service: any) => {
-    const { starter, professional, enterprise, currency } = service.pricing;
+    const { starter, enterprise, currency } = service.pricing;
     return `${currency}${starter} - ${currency}${enterprise}`;
   };
 
   const getCategoryIcon = (category: string) => {
     const cat = categories.find(c => c.value === category);
-    return cat ? cat.icon : <Globe className="h-4 w-4" />;
+    return cat ? cat.icon : <Grid3X3 className="h-4 w-4" />;
   };
 
   return (
@@ -163,11 +148,11 @@ export default function MicroSaasServicesPage() {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button size="lg" className="bg-zion-cyan hover:bg-zion-cyan-light text-zion-slate-dark font-semibold px-8 py-3">
-                <TrendingUp className="h-5 w-5 mr-2" />
+                <ArrowRight className="h-5 w-5 mr-2" />
                 Explore Services
               </Button>
               <Button size="lg" variant="outline" className="border-zion-cyan text-zion-cyan hover:bg-zion-cyan/10 font-semibold px-8 py-3">
-                <Award className="h-5 w-5 mr-2" />
+                <Eye className="h-5 w-5 mr-2" />
                 View Pricing
               </Button>
             </div>
@@ -206,7 +191,8 @@ export default function MicroSaasServicesPage() {
             {/* Search */}
             <div className="relative flex-1 max-w-md">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-zion-slate-light h-4 w-4" />
-              <Input
+              <input
+                type="text"
                 placeholder="Search micro SAAS services..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
@@ -215,49 +201,49 @@ export default function MicroSaasServicesPage() {
             </div>
 
             {/* Category Filter */}
-            <Select value={selectedCategory} onValueChange={setSelectedCategory}>
-              <SelectTrigger className="w-48 bg-zion-slate border-zion-blue-light text-white">
-                <SelectValue placeholder="Select Category" />
-              </SelectTrigger>
-              <SelectContent className="bg-zion-slate border-zion-blue-light">
-                {categories.map((category) => (
-                  <SelectItem key={category.value} value={category.value} className="text-white hover:bg-zion-blue-dark">
-                    <div className="flex items-center gap-2">
-                      {category.icon}
-                      {category.label}
-                    </div>
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
+            <select
+              value={selectedCategory}
+              onChange={(e) => setSelectedCategory(e.target.value)}
+              className="w-48 bg-zion-slate border-zion-blue-light text-white"
+            >
+              <option value="all">Select Category</option>
+              {categories.map((category) => (
+                <option key={category.value} value={category.value} className="text-white hover:bg-zion-blue-dark">
+                  <div className="flex items-center gap-2">
+                    {category.icon}
+                    {category.label}
+                  </div>
+                </option>
+              ))}
+            </select>
 
             {/* Price Range Filter */}
-            <Select value={priceRange} onValueChange={setPriceRange}>
-              <SelectTrigger className="w-40 bg-zion-slate border-zion-blue-light text-white">
-                <SelectValue placeholder="Price Range" />
-              </SelectTrigger>
-              <SelectContent className="bg-zion-slate border-zion-blue-light">
-                {priceRanges.map((range) => (
-                  <SelectItem key={range.value} value={range.value} className="text-white hover:bg-zion-blue-dark">
-                    {range.label}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
+            <select
+              value={priceRange}
+              onChange={(e) => setPriceRange(e.target.value)}
+              className="w-40 bg-zion-slate border-zion-blue-light text-white"
+            >
+              <option value="all">Price Range</option>
+              {priceRanges.map((range) => (
+                <option key={range.value} value={range.value} className="text-white hover:bg-zion-blue-dark">
+                  {range.label}
+                </option>
+              ))}
+            </select>
 
             {/* Sort Options */}
-            <Select value={sortBy} onValueChange={setSortBy}>
-              <SelectTrigger className="w-40 bg-zion-slate border-zion-blue-light text-white">
-                <SelectValue placeholder="Sort by" />
-              </SelectTrigger>
-              <SelectContent className="bg-zion-slate border-zion-blue-light">
-                {sortOptions.map((option) => (
-                  <SelectItem key={option.value} value={option.value} className="text-white hover:bg-zion-blue-dark">
-                    {option.label}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
+            <select
+              value={sortBy}
+              onChange={(e) => setSortBy(e.target.value)}
+              className="w-40 bg-zion-slate border-zion-blue-light text-white"
+            >
+              <option value="featured">Sort by</option>
+              {sortOptions.map((option) => (
+                <option key={option.value} value={option.value} className="text-white hover:bg-zion-blue-dark">
+                  {option.label}
+                </option>
+              ))}
+            </select>
           </div>
         </div>
       </div>
@@ -322,8 +308,8 @@ export default function MicroSaasServicesPage() {
 
                   {/* Tags */}
                   <div className="flex flex-wrap gap-2">
-                    {service.tags.slice(0, 3).map((tag, index) => (
-                      <Badge key={index} variant="outline" className="text-xs border-zion-blue-light text-zion-slate-light">
+                    {service.tags.slice(0, 3).map((tag: string, index: number) => (
+                      <Badge key={index} variant="secondary" className="text-xs">
                         {tag}
                       </Badge>
                     ))}
@@ -333,10 +319,10 @@ export default function MicroSaasServicesPage() {
                   <div className="space-y-2">
                     <h4 className="text-sm font-semibold text-zion-cyan">Key Benefits:</h4>
                     <ul className="text-xs text-zion-slate-light space-y-1">
-                      {service.benefits.slice(0, 2).map((benefit, index) => (
+                      {service.benefits.slice(0, 2).map((benefit: string, index: number) => (
                         <li key={index} className="flex items-start gap-2">
-                          <div className="w-1.5 h-1.5 bg-zion-cyan rounded-full mt-2 flex-shrink-0"></div>
-                          {benefit}
+                          <CheckCircle className="w-4 h-4 text-zion-cyan mt-0.5 flex-shrink-0" />
+                          <span className="text-sm text-zion-slate-light">{benefit}</span>
                         </li>
                       ))}
                     </ul>
@@ -360,7 +346,7 @@ export default function MicroSaasServicesPage() {
                       className="border-zion-purple text-zion-purple-light hover:bg-zion-purple/10"
                     >
                       <a href={service.demo} target="_blank" rel="noopener noreferrer">
-                        <Play className="h-4 w-4" />
+                        <Eye className="h-4 w-4" />
                       </a>
                     </Button>
                   </div>
@@ -372,7 +358,7 @@ export default function MicroSaasServicesPage() {
                       className="flex-1 border-zion-blue-light text-zion-blue-light hover:bg-zion-blue-dark/20"
                     >
                       <a href={service.documentation} target="_blank" rel="noopener noreferrer">
-                        <FileText className="h-4 w-4 mr-2" />
+                        <Eye className="h-4 w-4 mr-2" />
                         Docs
                       </a>
                     </Button>
@@ -382,7 +368,7 @@ export default function MicroSaasServicesPage() {
                       className="flex-1 border-zion-blue-light text-zion-blue-light hover:bg-zion-blue-dark/20"
                     >
                       <a href={`mailto:kleber@ziontechgroup.com?subject=Inquiry about ${service.title}`}>
-                        <Mail className="h-4 w-4 mr-2" />
+                        <Eye className="h-4 w-4 mr-2" />
                         Contact
                       </a>
                     </Button>
@@ -427,7 +413,7 @@ export default function MicroSaasServicesPage() {
               Schedule Demo
             </Button>
             <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 font-semibold px-8 py-3">
-              <MessageSquare className="h-5 w-5 mr-2" />
+              <Eye className="h-5 w-5 mr-2" />
               Contact Sales
             </Button>
           </div>

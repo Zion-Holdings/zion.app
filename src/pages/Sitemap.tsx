@@ -4,25 +4,11 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '../co
 import { Badge } from '../components/ui/badge';
 import { 
   Home, 
-  Users, 
-  Briefcase, 
-  Settings, 
-  HelpCircle, 
-  MessageCircle, 
-  Shield, 
-  Zap, 
-  Globe, 
-  Database, 
-  Lock, 
-  BookOpen, 
-  Phone, 
-  Mail, 
-  MapPin,
-  ExternalLink,
-  Sparkles,
-  Cpu,
-  TrendingUp,
-  Building2
+  ShoppingCart, 
+  FileText, 
+  MessageSquare, 
+  HelpCircle,
+  Globe
 } from 'lucide-react';
 
 interface SitemapSection {
@@ -69,7 +55,7 @@ const sitemapSections: SitemapSection[] = [
     id: 'services',
     title: 'Services & Solutions',
     description: 'Our comprehensive range of technology services',
-    icon: <Zap className="w-6 h-6" />,
+    icon: <ShoppingCart className="w-6 h-6" />,
     links: [
       {
         title: 'Comprehensive Services',
@@ -104,7 +90,7 @@ const sitemapSections: SitemapSection[] = [
     id: 'resources',
     title: 'Resources & Support',
     description: 'Help, documentation, and support resources',
-    icon: <BookOpen className="w-6 h-6" />,
+    icon: <FileText className="w-6 h-6" />,
     links: [
       {
         title: 'Help Center',
@@ -218,7 +204,7 @@ export default function Sitemap() {
                             </Badge>
                           )}
                           {link.isExternal && (
-                            <ExternalLink className="w-3 h-3 text-zion-slate-light" />
+                            <MessageSquare className="w-3 h-3 text-zion-slate-light" />
                           )}
                         </div>
                         {link.description && (
@@ -249,7 +235,7 @@ export default function Sitemap() {
                 href="/comprehensive-services"
                 className="p-4 rounded-lg bg-zion-blue-light/10 hover:bg-zion-blue-light/20 transition-colors text-center"
               >
-                <Zap className="w-8 h-8 text-zion-cyan mx-auto mb-2" />
+                <ShoppingCart className="w-8 h-8 text-zion-cyan mx-auto mb-2" />
                 <div className="font-medium text-white">Services</div>
                 <div className="text-sm text-zion-slate-light">View all services</div>
               </a>
@@ -258,7 +244,7 @@ export default function Sitemap() {
                 href="/contact"
                 className="p-4 rounded-lg bg-zion-blue-light/10 hover:bg-zion-blue-light/20 transition-colors text-center"
               >
-                <MessageCircle className="w-8 h-8 text-zion-cyan mx-auto mb-2" />
+                <MessageSquare className="w-8 h-8 text-zion-cyan mx-auto mb-2" />
                 <div className="font-medium text-white">Contact</div>
                 <div className="text-sm text-zion-slate-light">Get in touch</div>
               </a>
@@ -286,7 +272,7 @@ export default function Sitemap() {
               href="/contact"
               className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-zion-cyan to-zion-purple text-white rounded-lg hover:from-zion-cyan/90 hover:to-zion-purple/90 transition-all font-medium"
             >
-              <MessageCircle className="w-4 h-4" />
+              <MessageSquare className="w-4 h-4" />
               Contact Support
             </a>
             <a

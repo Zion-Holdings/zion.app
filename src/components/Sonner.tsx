@@ -1,31 +1,25 @@
-import React from 'react';
+import { Toaster as Sonner } from "sonner";
 
-interface SonnerProps {
-  position?: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
-  richColors?: boolean;
-  closeButton?: boolean;
-}
+type ToasterProps = React.ComponentProps<typeof Sonner>;
 
-export function Sonner({ 
-  position = 'bottom-right', 
-  richColors = true, 
-  closeButton = true 
-}: SonnerProps) {
+const SonnerComponent = ({ ...props }: ToasterProps) => {
   return (
-    <div className={`fixed ${position === 'top-left' ? 'top-4 left-4' : 
-                           position === 'top-right' ? 'top-4 right-4' :
-                           position === 'bottom-left' ? 'bottom-4 left-4' : 
-                           'bottom-4 right-4'} z-50`}>
-      {/* Sonner toast container */}
-    </div>
+    <Sonner
+      className="toaster group"
+      toastOptions={{
+        classNames: {
+          toast:
+            "group toast group-[.toaster]:bg-background group-[.toaster]:text-foreground group-[.toaster]:border-border group-[.toaster]:shadow-lg",
+          description: "group-[.toast]:text-muted-foreground",
+          actionButton:
+            "group-[.toast]:bg-primary group-[.toast]:text-primary-foreground",
+          cancelButton:
+            "group-[.toast]:bg-muted group-[.toast]:text-muted-foreground",
+        },
+      }}
+      {...props}
+    />
   );
-}
-
-export const toast = {
-  success: (message: string) => console.log('Success:', message),
-  error: (message: string) => console.log('Error:', message),
-  info: (message: string) => console.log('Info:', message),
-  warning: (message: string) => console.log('Warning:', message),
-  loading: (message: string) => console.log('Loading:', message),
-  dismiss: (toastId: string) => console.log('Dismiss:', toastId)
 };
+
+export { SonnerComponent as Sonner };

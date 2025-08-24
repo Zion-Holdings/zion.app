@@ -1,41 +1,22 @@
-import React, { useState, useEffect } from 'react';
-import { SEO } from '@/components/SEO';
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { 
   Search, 
-  Filter, 
   Star, 
   Clock, 
-  DollarSign, 
-  TrendingUp,
   Brain,
-  Shield,
-  Cloud,
-  Database,
-  Code,
-  Target,
-  Zap,
-  Globe,
-  Atom,
-  Eye,
-  Leaf,
   Phone,
   Mail
 } from 'lucide-react';
 import { 
   MICRO_SERVICES, 
   SERVICE_CATEGORIES, 
-  getServiceStats,
-  getServicesByCategory,
-  getFeaturedServices,
-  getPopularServices,
-  getHighAIScoreServices,
-  getServicesByPriceRange
+  getServiceStats
 } from '@/data/comprehensiveServices';
+import { SEO } from '@/components/SEO';
 
 export default function InnovativeServicesShowcase() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -45,9 +26,6 @@ export default function InnovativeServicesShowcase() {
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
 
   const stats = getServiceStats();
-  const featuredServices = getFeaturedServices();
-  const popularServices = getPopularServices();
-  const highAIScoreServices = getHighAIScoreServices();
 
   const filteredServices = MICRO_SERVICES.filter(service => {
     const matchesSearch = searchQuery === '' || 

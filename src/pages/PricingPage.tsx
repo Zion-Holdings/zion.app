@@ -1,10 +1,21 @@
-import React, { useState } from 'react';
-import { Phone, Mail, MapPin, Star, Clock, Users, Shield, Zap, CheckCircle, ArrowRight, Calculator, TrendingUp, Award, Globe } from 'lucide-react';
-import { SERVICE_PRICING_TIERS, CONTACT_INFO, SERVICE_GUARANTEES } from '../data/comprehensiveServices';
+import { useState } from 'react';
+import { Card } from '@/components/ui/card';
+import { 
+  Phone, 
+  Mail, 
+  Users, 
+  Shield, 
+  Zap, 
+  CheckCircle, 
+  ArrowRight, 
+  TrendingUp, 
+  Award, 
+  Globe
+} from 'lucide-react';
+import { SERVICE_PRICING_TIERS, CONTACT_INFO } from '../data/comprehensiveServices';
 
 const PricingPage: React.FC = () => {
   const [billingCycle, setBillingCycle] = useState<'monthly' | 'yearly'>('monthly');
-  const [selectedCategory, setSelectedCategory] = useState<string>('all');
 
   const yearlyDiscount = 0.20; // 20% discount for yearly billing
 
@@ -69,15 +80,8 @@ const PricingPage: React.FC = () => {
             <h2 className="text-3xl font-bold text-white text-center mb-12">Choose Your Plan</h2>
             
             <div className="grid lg:grid-cols-3 gap-8">
-              {SERVICE_PRICING_TIERS.map((tier, index) => (
-                <div
-                  key={tier.name}
-                  className={`relative bg-zion-blue/20 rounded-lg p-8 border-2 transition-all hover:scale-105 ${
-                    tier.name === 'professional' 
-                      ? 'border-zion-gold bg-zion-blue/30' 
-                      : 'border-zion-blue/30'
-                  }`}
-                >
+              {SERVICE_PRICING_TIERS.map((tier) => (
+                <Card key={tier.name} className="h-full bg-white hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
                   {tier.name === 'professional' && (
                     <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                       <span className="bg-zion-gold text-zion-blue-dark px-4 py-2 rounded-full text-sm font-semibold">
@@ -113,7 +117,7 @@ const PricingPage: React.FC = () => {
                   <button className="w-full bg-zion-gold text-zion-blue-dark py-3 rounded-lg font-semibold hover:bg-zion-gold-light transition-colors">
                     Get Started
                   </button>
-                </div>
+                </Card>
               ))}
             </div>
           </div>
