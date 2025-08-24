@@ -1,0 +1,43 @@
+name: Sync Health
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  check-sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run pm2-auto-sync (safe mode)
+        env:
+          AUTO_SYNC_STRATEGY: hardreset
+          AUTO_SYNC_CLEAN: '0'
+        run: node automation/pm2-auto-sync.js || true
+
+      - name: Push if repository is ahead
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # Only push if we have local commits not on origin
+          AHEAD=$(git rev-list --left-right --count HEAD...origin/main | awk '{print $1}')
+          if [ "$AHEAD" != "0" ]; then
+            git push origin HEAD:main
+          else
+            echo "No push needed."
+          fi
+
+

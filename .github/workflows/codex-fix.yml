@@ -1,0 +1,90 @@
+name: Codex Bug Fix
+
+on:
+  issues:
+    types: [labeled]
+
+jobs:
+  autofix_issue:
+    if: github.event.label.name == 'autofix' || github.event.label.name == 'performance'
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      contents: write
+      pull-requests: write
+    env: # Define environment variables at the job level
+      ISSUE_NUMBER: ${{ github.event.issue.number }}
+      ISSUE_TITLE: ${{ github.event.issue.title }}
+      ISSUE_BODY: ${{ github.event.issue.body }}
+      REPO_CONTEXT_JSON: ${{ toJson(github.repository) }}
+      ISSUE_LABELS_JSON: ${{ toJson(github.event.issue.labels) }}
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Also used by create-pull-request action
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install script dependencies
+        run: npm ci
+        working-directory: ./scripts
+
+      - name: Run Codex Bug Fix Script
+        id: run_codex_script # Added id to this step
+        run: node codex-bug-fix.js
+        working-directory: ./scripts
+        # Environment variables defined at job level are automatically available to the script via process.env
+
+      - name: Create Pull Request
+        id: cpr
+        if: steps.run_codex_script.outputs.branch_name != '' && steps.run_codex_script.outputs.branch_name != null
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ env.GITHUB_TOKEN }} # Use from job env
+          branch: ${{ steps.run_codex_script.outputs.branch_name }}
+          title: Autofix:${{ env.ISSUE_TITLE }}"
+          body: |
+            This PR was automatically created by Codex to address issue #${{ env.ISSUE_NUMBER }}.
+
+            Original Issue Title: "${{ env.ISSUE_TITLE }}"
+            Original Issue Body:
+            ```
+            ${{ env.ISSUE_BODY }}
+            ```
+
+            Please review the changes carefully.
+            Link to issue: ${{ github.event.issue.html_url }}
+          labels: autofix, bot # Example labels
+          # Optional: Add commit-message for the PR branch commit if different from code commit
+          # commit-message: Automated PR for issue #${{ env.ISSUE_NUMBER }}
+          # Optional: assignees, reviewers
+          # assignees: ${{ github.event.issue.user.login }}
+          # reviewers: ${{ github.event.issue.user.login }}
+
+      - name: Notify on Script Failure
+        if: failure() && steps.run_codex_script.outcome == 'failure' # Only run if the script step specifically failed
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const issue_number = ${{ env.ISSUE_NUMBER }};
+            const run_url = `https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}`;
+            const commentBody = `🚨 Attempted to automatically fix issue #${issue_number} but the script failed.
+
+            Please review the workflow run for details: ${run_url}
+
+            Sorry for the inconvenience!`;
+
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issue_number,
+              body: commentBody
+            });
+            core.setFailed('Codex script failed, notified issue.'); // Optionally fail the workflow job
+```
