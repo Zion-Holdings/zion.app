@@ -16,6 +16,8 @@ const AuthRoutes = () => {
       {/* Auth Routes */}
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
+      <Route path="/signup/talent" element={<Signup />} />
+      <Route path="/signup/client" element={<Signup />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/update-password" element={<UpdatePassword />} />
       
