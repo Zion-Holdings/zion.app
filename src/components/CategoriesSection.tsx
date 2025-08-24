@@ -1,7 +1,9 @@
 
 import { GradientHeading } from "./GradientHeading";
 import { Link } from "react-router-dom";
-import { Briefcase, HardDrive, Lightbulb, Users, ArrowRight, Star } from "lucide-react";
+import { Briefcase, HardDrive, Lightbulb, Users, Zap, Shield, Cloud, Database, TrendingUp, ArrowRight } from "lucide-react";
+import Cpu from "lucide-react/dist/esm/icons/cpu";
+import { Link as LinkIcon } from "lucide-react";
 import { motion } from "framer-motion";
 
 const categories = [
@@ -60,6 +62,86 @@ const specialServices = [
   {
     title: "Enterprise Solutions",
     link: "/enterprise-solutions"
+  },
+  {
+    title: "AI & Automation",
+    link: "/expanded-services?category=ai-automation"
+  },
+  {
+    title: "Cybersecurity",
+    link: "/expanded-services?category=cybersecurity"
+  },
+  {
+    title: "Cloud & DevOps",
+    link: "/expanded-services?category=cloud-devops"
+  },
+  {
+    title: "Data & Analytics",
+    link: "/expanded-services?category=data-analytics"
+  },
+  {
+    title: "Digital Transformation",
+    link: "/expanded-services?category=digital-transformation"
+  },
+  {
+    title: "IoT & Edge Computing",
+    link: "/expanded-services?category=iot-edge"
+  },
+  {
+    title: "Blockchain & Web3",
+    link: "/expanded-services?category=blockchain-web3"
+  }
+];
+
+const serviceCategories = [
+  {
+    title: "AI & Automation",
+    description: "Intelligent automation and AI solutions",
+    icon: <Zap className="w-8 h-8" />,
+    color: "from-purple-500 to-indigo-600",
+    link: "/expanded-services?category=ai-automation"
+  },
+  {
+    title: "Cybersecurity",
+    description: "Advanced security and compliance",
+    icon: <Shield className="w-8 h-8" />,
+    color: "from-red-500 to-pink-600",
+    link: "/expanded-services?category=cybersecurity"
+  },
+  {
+    title: "Cloud & DevOps",
+    description: "Cloud migration and automation",
+    icon: <Cloud className="w-8 h-8" />,
+    color: "from-blue-500 to-cyan-600",
+    link: "/expanded-services?category=cloud-devops"
+  },
+  {
+    title: "Data & Analytics",
+    description: "Business intelligence and governance",
+    icon: <Database className="w-8 h-8" />,
+    color: "from-green-500 to-emerald-600",
+    link: "/expanded-services?category=data-analytics"
+  },
+  {
+    title: "Digital Transformation",
+    description: "Strategy and modernization",
+    icon: <TrendingUp className="w-8 h-8" />,
+    color: "from-orange-500 to-yellow-600",
+    link: "/expanded-services?category=digital-transformation"
+  },
+  {
+    title: "IoT & Edge",
+    description: "Connected solutions and edge computing",
+    icon: <Cpu className="w-8 h-8" />,
+    color: "from-indigo-500 to-purple-600",
+    link: "/expanded-services?category=iot-edge"
+  },
+  {
+    title: "Blockchain & Web3",
+    description: "Decentralized solutions and smart contracts",
+    icon: <LinkIcon className="w-8 h-8" />,
+    color: "from-teal-500 to-blue-600",
+    link: "/expanded-services?category=blockchain-web3"
   }
 ];
 
@@ -118,7 +200,7 @@ export function CategoriesSection({ showTitle = true }: CategoriesSectionProps) 
         )}
         
         <motion.div 
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -144,7 +226,7 @@ export function CategoriesSection({ showTitle = true }: CategoriesSectionProps) 
                   <ul className="space-y-2 mb-4">
                     {category.features.map((feature, idx) => (
                       <li key={idx} className="flex items-center gap-2 text-sm text-zion-cyan/70">
-                        <Star className="w-3 h-3 fill-current" />
+                        <div className="w-3 h-3 bg-zion-cyan rounded-full" />
                         <span>{feature}</span>
                       </li>
                     ))}
@@ -160,6 +242,30 @@ export function CategoriesSection({ showTitle = true }: CategoriesSectionProps) 
             </motion.div>
           ))}
         </motion.div>
+
+        {/* Service Categories */}
+        <div className="mb-12">
+          <h3 className="text-center text-2xl font-bold text-white mb-8">Professional Service Categories</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+            {serviceCategories.map((category) => (
+              <Link 
+                key={category.title}
+                to={category.link}
+                className="group block"
+              >
+                <div className="rounded-lg overflow-hidden h-full border border-zion-blue-light bg-zion-blue-dark p-4 transition-all duration-300 hover:border-zion-purple/50 hover:translate-y-[-2px]">
+                  <div className={`rounded-full w-12 h-12 bg-gradient-to-br ${category.color} flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300`}>
+                    <div className="text-white">
+                      {category.icon}
+                    </div>
+                  </div>
+                  <h4 className="text-white text-sm font-bold mb-1">{category.title}</h4>
+                  <p className="text-zion-slate-light text-xs">{category.description}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
         
         <motion.div 
           className="mt-12"
@@ -177,11 +283,6 @@ export function CategoriesSection({ showTitle = true }: CategoriesSectionProps) 
                 className="group relative px-6 py-3 bg-gradient-to-r from-zion-blue-light to-zion-purple/30 hover:from-zion-purple/40 hover:to-zion-purple/60 border border-zion-purple/20 hover:border-zion-purple/50 rounded-full text-zion-cyan transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-zion-purple/25"
               >
                 {service.title}
-                {service.badge && (
-                  <span className="absolute -top-2 -right-2 bg-zion-cyan text-zion-blue-dark text-xs px-2 py-1 rounded-full font-bold">
-                    {service.badge}
-                  </span>
-                )}
               </Link>
             ))}
           </div>
@@ -195,10 +296,10 @@ export function CategoriesSection({ showTitle = true }: CategoriesSectionProps) 
           transition={{ duration: 0.6, delay: 0.6 }}
         >
           <Link 
-            to="/categories" 
+            to="/expanded-services" 
             className="group inline-flex items-center gap-2 text-zion-cyan border-b-2 border-zion-cyan hover:border-zion-cyan-dark transition-colors duration-300 text-lg font-medium"
           >
-            View All Categories
+            View All Services
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
           </Link>
         </motion.div>
