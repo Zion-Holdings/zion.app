@@ -54,7 +54,22 @@ const TalentProfilePage: React.FC = () => {
   }, [id]);
 
   if (loading) return <ProfileLoadingState />;
-  if (error || !profile) return <ErrorPage statusCode={404} />;
+  if (error || !profile) {
+    return (
+      <div className="min-h-screen bg-zion-blue flex items-center justify-center text-white">
+        <div className="text-center">
+          <h1 className="text-4xl font-bold mb-4">404</h1>
+          <p className="text-xl mb-4">Talent not found</p>
+          <button 
+            onClick={() => navigate('/')}
+            className="bg-zion-purple hover:bg-zion-purple-dark px-6 py-2 rounded-md"
+          >
+            Return to Home
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <main className="min-h-screen bg-zion-blue py-8 text-white">
