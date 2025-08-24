@@ -11,7 +11,6 @@ import { EnhancedSearchInput } from "@/components/search/EnhancedSearchInput";
 import { generateSearchSuggestions } from "@/data/marketplaceData";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { FuturisticBackground } from '@/components/ui/FuturisticBackground';
 
 export interface HeaderProps {
   hideLogin?: boolean;
@@ -53,48 +52,33 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
   };
   
   return (
-    <>
-      <FuturisticBackground variant="grid" intensity="low" className="opacity-30" />
-      <header 
-        className="sticky top-0 z-50 w-full border-b border-zion-purple/20 bg-zion-blue-dark/95 backdrop-blur-xl relative overflow-hidden"
-        style={headerStyle}
-      >
-        {/* Futuristic header accent */}
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-zion-cyan/10 to-transparent opacity-50" />
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-zion-cyan to-transparent" />
-        
-        <div className="container flex h-16 items-center px-4 sm:px-6 relative z-10">
-          <Logo customLogo={customLogo} customColor={effectiveTheme?.primaryColor} />
+    <header 
+      className="sticky top-0 z-50 w-full border-b border-zion-purple/20 bg-zion-blue-dark/90 backdrop-blur-md glass-effect-dark"
+      style={headerStyle}
+    >
+      <div className="container flex h-16 items-center px-4 sm:px-6">
+        <Logo customLogo={customLogo} customColor={effectiveTheme?.primaryColor} />
 
-          <div className="ml-6 flex-1">
-            <MainNavigation />
-          </div>
-          
-          <form onSubmit={handleSubmit} className="hidden md:block w-64 mx-4">
-            <EnhancedSearchInput
-              value={query}
-              onChange={setQuery}
-              onSelectSuggestion={(text) => {
-                navigate(`/search?q=${encodeURIComponent(text)}`);
-                setQuery("");
-              }}
-              searchSuggestions={searchSuggestions}
-            />
-          </form>
+        <div className="ml-6 flex-1">
+          <MainNavigation />
+        </div>
+        <form onSubmit={handleSubmit} className="hidden md:block w-64 mx-4">
+          <EnhancedSearchInput
+            value={query}
+            onChange={setQuery}
+            onSelectSuggestion={(text) => {
+              navigate(`/search?q=${encodeURIComponent(text)}`);
+              setQuery("");
+            }}
+            searchSuggestions={searchSuggestions}
+          />
+        </form>
 
-          <div className="flex items-center gap-2">
-            <LanguageSelector />
-            {!hideLogin && <UserMenu />}
-          </div>
+        <div className="flex items-center gap-2">
+          <LanguageSelector />
+          {!hideLogin && <UserMenu />}
         </div>
-        
-        {/* Floating navigation indicators */}
-        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 flex space-x-1">
-          <div className="w-2 h-1 bg-zion-cyan rounded-full animate-pulse" />
-          <div className="w-2 h-1 bg-zion-purple rounded-full animate-pulse" style={{ animationDelay: '0.2s' }} />
-          <div className="w-2 h-1 bg-zion-cyan rounded-full animate-pulse" style={{ animationDelay: '0.4s' }} />
-        </div>
-      </header>
-    </>
+      </div>
+    </header>
   );
 }

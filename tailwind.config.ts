@@ -94,28 +94,61 @@ const config: Config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
-        "spin-reverse": {
-          from: { transform: "rotate(360deg)" },
-          to: { transform: "rotate(0deg)" },
+        "neon-glow": {
+          "0%, 100%": { 
+            boxShadow: "0 0 5px #22ddd2, 0 0 10px #22ddd2, 0 0 15px #22ddd2" 
+          },
+          "50%": { 
+            boxShadow: "0 0 10px #22ddd2, 0 0 20px #22ddd2, 0 0 30px #22ddd2" 
+          },
+        },
+        "neon-pulse": {
+          "0%, 100%": { 
+            opacity: "1",
+            textShadow: "0 0 5px #22ddd2, 0 0 10px #22ddd2" 
+          },
+          "50%": { 
+            opacity: "0.8",
+            textShadow: "0 0 10px #22ddd2, 0 0 20px #22ddd2" 
+          },
+        },
+        "gradient-shift": {
+          "0%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
+          "100%": { backgroundPosition: "0% 50%" },
         },
         "float": {
           "0%, 100%": { transform: "translateY(0px)" },
-          "50%": { transform: "translateY(-20px)" },
+          "50%": { transform: "translateY(-10px)" },
         },
-        "glow": {
-          "0%": { boxShadow: "0 0 5px #8c15e9, 0 0 10px #8c15e9, 0 0 15px #8c15e9" },
-          "100%": { boxShadow: "0 0 10px #8c15e9, 0 0 20px #8c15e9, 0 0 30px #8c15e9" },
+        "rotate-slow": {
+          from: { transform: "rotate(0deg)" },
+          to: { transform: "rotate(360deg)" },
+        },
+        "slide-in-left": {
+          from: { transform: "translateX(-100%)", opacity: "0" },
+          to: { transform: "translateX(0)", opacity: "1" },
+        },
+        "slide-in-right": {
+          from: { transform: "translateX(100%)", opacity: "0" },
+          to: { transform: "translateX(0)", opacity: "1" },
+        },
+        "fade-in-up": {
+          from: { transform: "translateY(30px)", opacity: "0" },
+          to: { transform: "translateY(0)", opacity: "1" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "spin-slow": "spin 3s linear infinite",
-        "spin-reverse": "spin-reverse 4s linear infinite",
-        "bounce-slow": "bounce 2s infinite",
-        "pulse-slow": "pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
-        "float": "float 6s ease-in-out infinite",
-        "glow": "glow 2s ease-in-out infinite alternate",
+        "neon-glow": "neon-glow 2s ease-in-out infinite alternate",
+        "neon-pulse": "neon-pulse 2s ease-in-out infinite",
+        "gradient-shift": "gradient-shift 3s ease infinite",
+        "float": "float 3s ease-in-out infinite",
+        "rotate-slow": "rotate-slow 20s linear infinite",
+        "slide-in-left": "slide-in-left 0.8s ease-out",
+        "slide-in-right": "slide-in-right 0.8s ease-out",
+        "fade-in-up": "fade-in-up 0.8s ease-out",
       },
     },
   },
