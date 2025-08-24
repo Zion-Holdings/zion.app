@@ -1,190 +1,198 @@
-import React from 'react';
-import { COMPREHENSIVE_SERVICES, SERVICE_CATEGORIES } from '@/data/comprehensiveServices';
-import { Zap, Shield, Rocket, Users, CheckCircle, Star } from 'lucide-react';
+import React, { useState } from 'react';
+import { SERVICE_CATEGORIES, COMPREHENSIVE_SERVICES, SERVICE_ADDONS } from '@/data/comprehensiveServices';
 
 export function ServicesShowcase() {
-  const popularServices = COMPREHENSIVE_SERVICES.slice(0, 6);
+  const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const filteredServices = COMPREHENSIVE_SERVICES.filter(service => {
+    const matchesCategory = selectedCategory === 'all' || service.category === selectedCategory;
+    const matchesSearch = service.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         service.description.toLowerCase().includes(searchTerm.toLowerCase());
+    return matchesCategory && matchesSearch;
+  });
+
+  const getCategoryIcon = (categoryName: string) => {
+    const category = SERVICE_CATEGORIES.find(cat => cat.name === categoryName);
+    return category?.icon || '💼';
+  };
+
+  const formatPrice = (price: number) => {
+    if (price >= 1000) {
+      return `$${(price / 1000).toFixed(1)}k`;
+    }
+    return `$${price}`;
+  };
 
   return (
-    <section className="py-16 bg-gradient-to-br from-blue-50 to-indigo-100">
+    <div className="py-12 bg-gradient-to-br from-slate-50 to-blue-50">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Why Choose Zion Tech Group Services?
+        {/* Header */}
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            Comprehensive Tech Solutions
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            We deliver enterprise-grade solutions with startup agility and competitive pricing
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Discover our complete range of AI, Micro SAAS, IT, Blockchain, IoT, and Emerging Tech services designed to transform your business.
           </p>
         </div>
 
-        {/* Key Features */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          <div className="text-center p-6 bg-white rounded-lg shadow-md">
-            <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Rocket className="w-8 h-8 text-blue-600" />
+        {/* Search and Filter */}
+        <div className="mb-8">
+          <div className="flex flex-col md:flex-row gap-4 items-center justify-center">
+            <div className="relative w-full max-w-md">
+              <input
+                type="text"
+                placeholder="Search services..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="w-full px-4 py-3 pl-10 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              />
+              <svg className="absolute left-3 top-3.5 h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
             </div>
-            <h3 className="text-xl font-semibold mb-2">Rapid Deployment</h3>
-            <p className="text-gray-600">Get your solutions up and running in days, not months</p>
-          </div>
-          
-          <div className="text-center p-6 bg-white rounded-lg shadow-md">
-            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Shield className="w-8 h-8 text-green-600" />
-            </div>
-            <h3 className="text-xl font-semibold mb-2">Enterprise Security</h3>
-            <p className="text-gray-600">Bank-level security and compliance built-in</p>
-          </div>
-          
-          <div className="text-center p-6 bg-white rounded-lg shadow-md">
-            <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Zap className="w-8 h-8 text-purple-600" />
-            </div>
-            <h3 className="text-xl font-semibold mb-2">Scalable Architecture</h3>
-            <p className="text-gray-600">Grow from startup to enterprise seamlessly</p>
-          </div>
-          
-          <div className="text-center p-6 bg-white rounded-lg shadow-md">
-            <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Users className="w-8 h-8 text-orange-600" />
-            </div>
-            <h3 className="text-xl font-semibold mb-2">Expert Support</h3>
-            <p className="text-gray-600">24/7 technical support and consultation</p>
+            <select
+              value={selectedCategory}
+              onChange={(e) => setSelectedCategory(e.target.value)}
+              className="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            >
+              <option value="all">All Categories</option>
+              {SERVICE_CATEGORIES.map(category => (
+                <option key={category.id} value={category.name}>
+                  {category.name} ({category.count})
+                </option>
+              ))}
+            </select>
           </div>
         </div>
 
-        {/* Popular Service Categories */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-bold text-center mb-8">Popular Service Categories</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {popularServices.map((service) => (
-              <div key={service.id} className="bg-white rounded-lg shadow-md p-6">
-                <div className="flex items-center justify-between mb-4">
-                  <span className="px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full">
-                    {SERVICE_CATEGORIES.find(cat => cat.id === service.category)?.name || 'Service'}
+        {/* Category Pills */}
+        <div className="flex flex-wrap justify-center gap-3 mb-8">
+          <button
+            onClick={() => setSelectedCategory('all')}
+            className={`px-6 py-2 rounded-full font-medium transition-all ${
+              selectedCategory === 'all'
+                ? 'bg-blue-600 text-white shadow-lg'
+                : 'bg-white text-gray-700 border border-gray-300 hover:border-blue-300'
+            }`}
+          >
+            All Services
+          </button>
+          {SERVICE_CATEGORIES.map(category => (
+            <button
+              key={category.id}
+              onClick={() => setSelectedCategory(category.name)}
+              className={`px-6 py-2 rounded-full font-medium transition-all flex items-center gap-2 ${
+                selectedCategory === category.name
+                  ? 'bg-blue-600 text-white shadow-lg'
+                  : 'bg-white text-gray-700 border border-gray-300 hover:border-blue-300'
+              }`}
+            >
+              <span>{category.icon}</span>
+              {category.name}
+            </button>
+          ))}
+        </div>
+
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          {filteredServices.map(service => (
+            <div key={service.id} className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100">
+              {/* Service Image Placeholder */}
+              <div className="h-48 bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center">
+                <span className="text-6xl">{getCategoryIcon(service.category)}</span>
+              </div>
+              
+              {/* Service Content */}
+              <div className="p-6">
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-sm font-medium text-blue-600 bg-blue-50 px-3 py-1 rounded-full">
+                    {service.category}
                   </span>
-                  <div className="flex items-center">
-                    <Star className="w-4 h-4 text-yellow-400 fill-current" />
-                    <span className="ml-1 text-sm text-gray-600">{service.rating}</span>
+                  <div className="flex items-center gap-1">
+                    <span className="text-yellow-400">★</span>
+                    <span className="text-sm font-medium text-gray-700">{service.rating}</span>
                   </div>
                 </div>
-                <h4 className="text-lg font-semibold mb-2">{service.title}</h4>
-                <p className="text-gray-600 text-sm mb-4">{service.description}</p>
-                <div className="flex items-center justify-between">
-                  <span className="text-2xl font-bold text-green-600">
-                    ${service.price}
-                  </span>
-                  <span className="text-sm text-gray-500">{service.currency}</span>
+                
+                <h3 className="text-xl font-bold text-gray-900 mb-3">{service.name}</h3>
+                <p className="text-gray-600 mb-4 line-clamp-3">{service.description}</p>
+                
+                {/* Features */}
+                <div className="mb-4">
+                  <h4 className="text-sm font-semibold text-gray-700 mb-2">Key Features:</h4>
+                  <ul className="space-y-1">
+                    {service.features.slice(0, 3).map((feature, index) => (
+                      <li key={index} className="text-sm text-gray-600 flex items-center gap-2">
+                        <span className="w-1.5 h-1.5 bg-blue-500 rounded-full"></span>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
+                
+                {/* Price and CTA */}
+                <div className="flex items-center justify-between">
+                  <div className="text-2xl font-bold text-gray-900">
+                    {formatPrice(service.price)}
+                  </div>
+                  <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors font-medium">
+                    Learn More
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Addon Services Section */}
+        <div className="bg-white rounded-2xl shadow-lg p-8">
+          <div className="text-center mb-8">
+            <h3 className="text-3xl font-bold text-gray-900 mb-4">
+              Custom Addons & Enhancements
+            </h3>
+            <p className="text-lg text-gray-600">
+              Enhance your services with our specialized addons and customization options
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {SERVICE_ADDONS.slice(0, 9).map(addon => (
+              <div key={addon.id} className="border border-gray-200 rounded-lg p-4 hover:border-blue-300 transition-colors">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-sm font-medium text-blue-600 bg-blue-50 px-2 py-1 rounded">
+                    {addon.category}
+                  </span>
+                  <span className="text-lg font-bold text-gray-900">${addon.price}</span>
+                </div>
+                <h4 className="font-semibold text-gray-900 mb-2">{addon.name}</h4>
+                <p className="text-sm text-gray-600">{addon.description}</p>
               </div>
             ))}
           </div>
         </div>
 
-        {/* What Sets Us Apart */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-bold text-center mb-8">What Sets Us Apart</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="space-y-4">
-              <div className="flex items-start">
-                <CheckCircle className="w-6 h-6 text-green-500 mt-1 mr-3 flex-shrink-0" />
-                <div>
-                  <h4 className="font-semibold">Competitive Pricing</h4>
-                  <p className="text-gray-600">Up to 40% lower than enterprise competitors</p>
-                </div>
-              </div>
-              <div className="flex items-start">
-                <CheckCircle className="w-6 h-6 text-green-500 mt-1 mr-3 flex-shrink-0" />
-                <div>
-                  <h4 className="font-semibold">Global Reach</h4>
-                  <p className="text-gray-600">Serving clients across 50+ countries</p>
-                </div>
-              </div>
+        {/* CTA Section */}
+        <div className="text-center mt-12">
+          <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white">
+            <h3 className="text-3xl font-bold mb-4">
+              Ready to Transform Your Business?
+            </h3>
+            <p className="text-xl mb-6 opacity-90">
+              Get in touch with our experts to discuss your specific needs and find the perfect solution.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                Schedule Consultation
+              </button>
+              <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
+                View All Services
+              </button>
             </div>
-            <div className="space-y-4">
-              <div className="flex items-start">
-                <CheckCircle className="w-6 h-6 text-green-500 mt-1 mr-3 flex-shrink-0" />
-                <div>
-                  <h4 className="font-semibold">Proven Track Record</h4>
-                  <p className="text-gray-600">500+ successful deployments and counting</p>
-                </div>
-              </div>
-              <div className="flex items-start">
-                <CheckCircle className="w-6 h-6 text-green-500 mt-1 mr-3 flex-shrink-0" />
-                <div>
-                  <h4 className="font-semibold">Future-Proof Technology</h4>
-                  <p className="text-gray-600">Built with the latest AI and cloud technologies</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Pricing Tiers */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-bold text-center mb-8">Transparent, Competitive Pricing</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-white rounded-lg shadow-md p-6 text-center">
-              <h4 className="text-xl font-semibold mb-2">Startup</h4>
-              <p className="text-3xl font-bold text-blue-600 mb-4">$299</p>
-              <p className="text-gray-600 mb-4">Perfect for small teams and MVPs</p>
-              <ul className="text-sm text-gray-600 space-y-2">
-                <li>• Basic Support</li>
-                <li>• Standard Features</li>
-                <li>• Community Access</li>
-              </ul>
-            </div>
-            
-            <div className="bg-white rounded-lg shadow-md p-6 text-center border-2 border-blue-500">
-              <h4 className="text-xl font-semibold mb-2">Business</h4>
-              <p className="text-3xl font-bold text-blue-600 mb-4">$799</p>
-              <p className="text-gray-600 mb-4">Ideal for growing businesses</p>
-              <ul className="text-sm text-gray-600 space-y-2">
-                <li>• Priority Support</li>
-                <li>• Advanced Features</li>
-                <li>• Custom Integration</li>
-              </ul>
-            </div>
-            
-            <div className="bg-white rounded-lg shadow-md p-6 text-center">
-              <h4 className="text-xl font-semibold mb-2">Enterprise</h4>
-              <p className="text-3xl font-bold text-blue-600 mb-4">$2,499</p>
-              <p className="text-gray-600 mb-4">For large organizations</p>
-              <ul className="text-sm text-gray-600 space-y-2">
-                <li>• 24/7 Support</li>
-                <li>• All Features</li>
-                <li>• Dedicated Manager</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        {/* Call to Action */}
-        <div className="text-center bg-blue-600 rounded-lg p-8 text-white">
-          <h3 className="text-2xl font-bold mb-4">Ready to Get Started?</h3>
-          <p className="text-lg mb-6">
-            Contact us today to discuss your project requirements and get a custom quote
-          </p>
-          <div className="space-y-2 text-sm">
-            <p><strong>Mobile:</strong> +1 302 464 0950</p>
-            <p><strong>Email:</strong> kleber@ziontechgroup.com</p>
-            <p><strong>Address:</strong> 364 E Main St STE 1008 Middletown DE 19709</p>
-          </div>
-          <div className="mt-6 space-x-4">
-            <a 
-              href="/comprehensive-services" 
-              className="inline-block bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
-            >
-              View All Services
-            </a>
-            <a 
-              href="/services-comparison" 
-              className="inline-block bg-transparent border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors"
-            >
-              Compare Services
-            </a>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
