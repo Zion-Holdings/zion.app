@@ -5,8 +5,8 @@
   "devFiles": [],
   "ampDevFiles": [],
   "lowPriorityFiles": [
-    "static/mtNxLL0jmrcUbyWv7MxcF/_buildManifest.js",
-    "static/mtNxLL0jmrcUbyWv7MxcF/_ssgManifest.js"
+    "static/Jp4VRrGnWzFq86zWeTjpf/_buildManifest.js",
+    "static/Jp4VRrGnWzFq86zWeTjpf/_ssgManifest.js"
   ],
   "rootMainFiles": [],
   "pages": {
@@ -15,7 +15,7 @@
       "static/chunks/framework-6d18543c2c368b0c.js",
       "static/chunks/main-63abec24ebfdce1d.js",
       "static/chunks/996-f63e9faf058fa8be.js",
-      "static/chunks/309-44b39f13e3ed31c5.js",
+      "static/chunks/309-64177f07f169a7ed.js",
       "static/chunks/pages/index-7625cf9797910d0f.js"
     ],
     "/_app": [
@@ -42,15 +42,23 @@
       "static/chunks/framework-6d18543c2c368b0c.js",
       "static/chunks/main-63abec24ebfdce1d.js",
       "static/chunks/996-f63e9faf058fa8be.js",
-      "static/chunks/309-44b39f13e3ed31c5.js",
+      "static/chunks/309-64177f07f169a7ed.js",
       "static/chunks/pages/blog-cc673633d08005bf.js"
+    ],
+    "/careers": [
+      "static/chunks/webpack-fd8027ecb5121007.js",
+      "static/chunks/framework-6d18543c2c368b0c.js",
+      "static/chunks/main-63abec24ebfdce1d.js",
+      "static/chunks/996-f63e9faf058fa8be.js",
+      "static/chunks/309-64177f07f169a7ed.js",
+      "static/chunks/pages/careers-9588e73da9bc6abd.js"
     ],
     "/case-studies": [
       "static/chunks/webpack-fd8027ecb5121007.js",
       "static/chunks/framework-6d18543c2c368b0c.js",
       "static/chunks/main-63abec24ebfdce1d.js",
       "static/chunks/996-f63e9faf058fa8be.js",
-      "static/chunks/309-44b39f13e3ed31c5.js",
+      "static/chunks/309-64177f07f169a7ed.js",
       "static/chunks/pages/case-studies-8963757e43cad674.js"
     ],
     "/contact": [
@@ -78,7 +86,7 @@
       "static/chunks/framework-6d18543c2c368b0c.js",
       "static/chunks/main-63abec24ebfdce1d.js",
       "static/chunks/996-f63e9faf058fa8be.js",
-      "static/chunks/309-44b39f13e3ed31c5.js",
+      "static/chunks/309-64177f07f169a7ed.js",
       "static/chunks/pages/testimonials-f4e8ebd584e519c2.js"
     ]
   },

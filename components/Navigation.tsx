@@ -24,6 +24,7 @@ const Navigation = () => {
     { name: 'Case Studies', href: '/case-studies', icon: '📊' },
     { name: 'Testimonials', href: '/testimonials', icon: '⭐' },
     { name: 'Blog', href: '/blog', icon: '📝' },
+    { name: 'Careers', href: '/careers', icon: '💼' },
     { name: 'Contact', href: '/contact', icon: '📞' }
   ];
 
