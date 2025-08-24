@@ -86,10 +86,7 @@
     "node_modules",
     "zion.app/recovered-content/**",
     "contracts/**",
-    "dao/**",
-    "token/**",
-    "hardhat.config.*",
-    "cypress.config.*",
+    "contracts_backup/**",
     "cypress/**"
   ]
 }

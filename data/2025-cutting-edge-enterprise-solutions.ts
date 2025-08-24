@@ -44,7 +44,6 @@ export interface CuttingEdgeEnterpriseSolution {
 }
 
 export const cuttingEdgeEnterpriseSolutions: CuttingEdgeEnterpriseSolution[] = [
-  // ENTERPRISE SOLUTIONS
   {
     id: 'ai-powered-enterprise-risk-management',
     name: 'AI-Powered Enterprise Risk Management',
@@ -57,7 +56,7 @@ export const cuttingEdgeEnterpriseSolutions: CuttingEdgeEnterpriseSolution[] = [
       currency: 'USD',
       trialDays: 30,
       setupTime: '2-3 weeks',
-      enterprise: 'Custom enterprise pricing available'
+      enterprise: 'Custom enterprise pricing'
     },
     features: [
       'Real-time risk monitoring',
@@ -75,116 +74,30 @@ export const cuttingEdgeEnterpriseSolutions: CuttingEdgeEnterpriseSolution[] = [
       'Reduce risk exposure by 60%',
       'Improve compliance by 85%',
       'Cut risk management costs by 40%',
-      'Real-time monitoring and alerts',
+      'Real-time threat detection',
       'Automated response capabilities'
     ],
-    targetAudience: [
-      'Fortune 500 companies',
-      'Financial institutions',
-      'Healthcare organizations',
-      'Government agencies'
-    ],
+    targetAudience: ['Fortune 500 companies', 'Financial institutions', 'Healthcare organizations', 'Government agencies'],
     marketPosition: 'Leading AI enterprise risk management platform with intelligent automation',
     competitors: ['MetricStream', 'ServiceNow', 'IBM OpenPages', 'RSA Archer', 'SAP GRC'],
     techStack: ['AI/ML', 'Machine Learning', 'Risk Analytics', 'Compliance', 'Automation'],
     realImplementation: true,
-    implementationDetails: 'Advanced AI platform with real-time risk monitoring and automated response capabilities',
+    implementationDetails: 'Advanced AI platform with real-time risk monitoring and automated response capabilities.',
     roi: 'Reduce risk exposure by 60%. Improve compliance by 85%. Cut risk management costs by 40%.',
-    useCases: [
-      'Risk assessment',
-      'Compliance management',
-      'Incident response',
-      'Business continuity',
-      'Strategic planning'
-    ],
+    useCases: ['Risk assessment', 'Compliance management', 'Incident response', 'Business continuity', 'Strategic planning'],
     integrations: ['ERP systems', 'GRC platforms', 'Compliance tools', 'Security systems', 'Business intelligence tools'],
-    support: '24/7 risk monitoring support with dedicated risk analysts',
-    compliance: ['Industry regulations', 'Compliance standards', 'Risk management frameworks'],
+    support: '24/7 enterprise support with dedicated risk management specialists.',
+    compliance: ['SOX', 'GDPR', 'ISO 27001', 'Industry-specific regulations'],
     link: 'https://ziontechgroup.com/ai-powered-enterprise-risk-management',
     icon: '⚠️',
     color: 'from-orange-600 via-red-600 to-pink-600',
     popular: true,
     launchDate: '2025-01-15',
-    customers: 28,
-    rating: 4.7,
-    reviews: 22,
-    marketSize: '$12.8B enterprise risk management market',
-    growthRate: '25% annual growth',
-    contactInfo: {
-      mobile: '+1 302 464 0950',
-      email: 'kleber@ziontechgroup.com',
-      address: '364 E Main St STE 1008 Middletown DE 19709',
-      website: 'https://ziontechgroup.com'
-    }
-  },
-  {
-    id: 'digital-transformation-accelerator',
-    name: 'Digital Transformation Accelerator',
-    tagline: 'Accelerate your digital transformation journey with proven methodologies and expert guidance',
-    description: 'Comprehensive digital transformation service that helps enterprises modernize their operations, adopt new technologies, and create competitive advantages in the digital economy.',
-    category: 'Enterprise Solutions',
-    price: {
-      monthly: 0,
-      yearly: 0,
-      currency: 'USD',
-      trialDays: 0,
-      setupTime: '8-16 weeks',
-      enterprise: 'Project-based pricing: $50,000 - $500,000'
-    },
-    features: [
-      'Digital maturity assessment',
-      'Transformation roadmap development',
-      'Technology stack modernization',
-      'Process reengineering',
-      'Change management consulting',
-      'Digital skills training',
-      'Innovation lab setup',
-      'Performance measurement',
-      'Ongoing optimization',
-      'Executive coaching'
-    ],
-    benefits: [
-      'Accelerate transformation by 40%',
-      'Reduce implementation costs by 30%',
-      'Improve operational efficiency by 50%',
-      'Enhance customer experience',
-      'Create competitive advantages'
-    ],
-    targetAudience: [
-      'Fortune 500 companies',
-      'Mid-market enterprises',
-      'Government agencies',
-      'Healthcare systems',
-      'Financial institutions',
-      'Manufacturing companies'
-    ],
-    marketPosition: 'Premium digital transformation service with proven methodologies and deep industry expertise. More focused and results-driven than general consulting firms.',
-    competitors: ['McKinsey', 'BCG', 'Bain', 'Deloitte', 'Accenture', 'IBM Consulting'],
-    techStack: ['Cloud platforms', 'AI/ML', 'IoT', 'Blockchain', 'RPA', 'Data analytics'],
-    realImplementation: true,
-    implementationDetails: 'Comprehensive transformation service with proven methodologies, certified consultants, and ongoing support. Includes change management and performance measurement.',
-    roi: 'Clients typically see 600% ROI through improved efficiency and competitive advantages.',
-    useCases: [
-      'Legacy system modernization',
-      'Cloud adoption strategy',
-      'Data analytics implementation',
-      'Customer experience transformation',
-      'Supply chain digitization',
-      'Workforce transformation'
-    ],
-    integrations: ['Existing IT systems', 'ERP platforms', 'CRM systems', 'Business intelligence tools', 'Project management platforms'],
-    support: '24/7 transformation support with dedicated transformation consultants and ongoing guidance',
-    compliance: ['Industry regulations', 'Data protection standards', 'Security compliance', 'Change management best practices'],
-    link: 'https://ziontechgroup.com/digital-transformation-accelerator',
-    icon: '🚀',
-    color: 'from-blue-500 to-purple-600',
-    popular: true,
-    launchDate: '2025-01-20',
     customers: 45,
     rating: 4.8,
-    reviews: 35,
-    marketSize: '$45.2B digital transformation market',
-    growthRate: '18% annual growth',
+    reviews: 67,
+    marketSize: '$12.8B enterprise risk management market',
+    growthRate: '25% annual growth',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',

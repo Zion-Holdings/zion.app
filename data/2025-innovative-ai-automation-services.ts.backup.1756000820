@@ -130,17 +130,7 @@ export const innovativeAIAutomationServices: InnovativeAIAutomationService[] = [
     competitors: ['Zendesk, Intercom, Freshdesk, Help Scout, Zoho Desk'],
     marketSize: '$15B customer service software market',
     growthRate: '22% annual growth',
-<<<<<<< HEAD
-    variant: 'ai-autonomous',
-=======
-    variant: 'default',
-    contactInfo: {
-      mobile: '+1 302 464 0950',
-      email: 'kleber@ziontechgroup.com',
-      address: '364 E Main St STE 1008 Middletown DE 19709',
-      website: 'https://ziontechgroup.com'
-    },
->>>>>>> origin/cursor/website-audit-and-enhancement-5ec7
+    variant: 'ai-futuristic',
     technology: ['Python, Selenium, Playwright, OpenAI, TensorFlow, Docker'],
     integrations: ['Jenkins, GitHub Actions, GitLab CI, Azure DevOps, Jira'],
     useCases: ['Automated testing, CI/CD integration, Quality assurance, Regression testing'],
@@ -148,8 +138,13 @@ export const innovativeAIAutomationServices: InnovativeAIAutomationService[] = [
     competitors: ['Selenium, Cypress, Playwright, TestCafe, Katalon'],
     marketSize: '$4.2B+ test automation market',
     growthRate: '92% YoY',
-    variant: 'default',
-    contactInfo: contact,
+    variant: 'ai-futuristic',
+    contactInfo: {
+      mobile: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008 Middletown DE 19709',
+      website: 'https://ziontechgroup.com'
+    },
     realImplementation: true,
     implementationDetails: 'Distributed testing infrastructure with AI-powered test generation and execution orchestration.',
     launchDate: '2025-01-20',
@@ -193,7 +188,7 @@ export const innovativeAIAutomationServices: InnovativeAIAutomationService[] = [
     competitors: ['Terraform, Ansible, Pulumi, Chef, Puppet'],
     marketSize: '$8.7B+ DevOps automation market',
     growthRate: '78% YoY',
-    variant: 'default',
+    variant: 'ai-futuristic',
     contactInfo: contact,
     realImplementation: true,
     implementationDetails: 'Multi-cloud orchestration platform with AI-powered decision making and automated infrastructure management.',
@@ -238,7 +233,7 @@ export const innovativeAIAutomationServices: InnovativeAIAutomationService[] = [
     competitors: ['Apache Airflow, Prefect, Dagster, Luigi, Azkaban'],
     marketSize: '$12.3B+ data pipeline market',
     growthRate: '88% YoY',
-    variant: 'default',
+    variant: 'ai-futuristic',
     contactInfo: contact,
     realImplementation: true,
     implementationDetails: 'Distributed data processing platform with AI-powered workflow optimization and quality assurance.',
@@ -266,16 +261,6 @@ export const innovativeAIAutomationServices: InnovativeAIAutomationService[] = [
       'Predictive security analytics'
     ],
     popular: true,
-    icon: '🛡️',
-    color: 'from-red-600 via-orange-600 to-yellow-600',
-    textColor: 'text-red-400',
-    link: 'https://ziontechgroup.com/ai-autonomous-security-monitor',
-    marketPosition: 'Leading AI security monitoring platform with autonomous threat response capabilities.',
-    targetAudience: 'Enterprise IT teams, Security operations centers, Cybersecurity professionals',
-    trialDays: 30,
-    setupTime: '2-4 hours',
-    category: 'AI Security',
-    realService: true,
     technology: ['React, Node.js, Python, TensorFlow, PostgreSQL, Redis, AWS, Google Analytics'],
     integrations: ['HubSpot, Salesforce, Mailchimp, Facebook Ads, Google Ads, LinkedIn, Twitter'],
     useCases: ['Email marketing automation, Social media management, Lead nurturing, Campaign optimization, Customer segmentation'],
@@ -283,7 +268,7 @@ export const innovativeAIAutomationServices: InnovativeAIAutomationService[] = [
     competitors: ['HubSpot, Marketo, Pardot, ActiveCampaign, ConvertKit'],
     marketSize: '$35B marketing automation market',
     growthRate: '24% annual growth',
-    variant: 'email-marketing',
+    variant: 'ai-futuristic',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -325,7 +310,6 @@ export const innovativeAIAutomationServices: InnovativeAIAutomationService[] = [
     link: 'https://ziontechgroup.com/autonomous-data-analytics',
     marketPosition: 'Competes with Tableau ($70/month), Power BI ($9.99/month), Looker ($5,000/month). Our advantage: AI automation, natural language queries, and autonomous insights.',
     targetAudience: 'Data analysts, Business intelligence teams, Executives, Marketing teams, Sales teams',
-=======
     icon: '🛡️',
     color: 'from-red-600 to-pink-700',
     textColor: 'text-red-400',
@@ -343,14 +327,13 @@ export const innovativeAIAutomationServices: InnovativeAIAutomationService[] = [
     competitors: ['Tableau, Power BI, Looker, Qlik, Domo'],
     marketSize: '$30B business intelligence market',
     growthRate: '26% annual growth',
-    variant: 'ai-analytics',
+    variant: 'ai-futuristic',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
       address: '364 E Main St STE 1008 Middletown DE 19709',
       website: 'https://ziontechgroup.com'
     },
-=======
     technology: ['Python, TensorFlow, OpenAI, Elasticsearch, Redis, PostgreSQL'],
     integrations: ['SIEM systems, Firewalls, IDS/IPS, Vulnerability scanners'],
     useCases: ['Security monitoring, Threat detection, Incident response, Compliance management'],
@@ -358,7 +341,7 @@ export const innovativeAIAutomationServices: InnovativeAIAutomationService[] = [
     competitors: ['Splunk, ELK Stack, IBM QRadar, Microsoft Sentinel, Exabeam'],
     marketSize: '$15.8B+ security monitoring market',
     growthRate: '95% YoY',
-    variant: 'default',
+    variant: 'ai-futuristic',
     contactInfo: contact,
     realImplementation: true,
     implementationDetails: 'Real-time security monitoring platform with AI-powered threat detection and automated response capabilities.',
@@ -382,7 +365,7 @@ export const innovativeAIAutomationServices: InnovativeAIAutomationService[] = [
     competitors: ['Workday, BambooHR, ADP, Paychex, Gusto'],
     marketSize: '$20B HR software market',
     growthRate: '20% annual growth',
-    variant: 'ai-hr',
+    variant: 'ai-futuristic',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -395,6 +378,5 @@ export const innovativeAIAutomationServices: InnovativeAIAutomationService[] = [
     customers: 189,
     rating: 4.7,
     reviews: 95
-=======
   }
 ];
