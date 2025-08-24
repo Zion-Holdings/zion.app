@@ -1,0 +1,40 @@
+name: Autonomous Cloud Agents
+
+on:
+  schedule:
+    - cron: '*/120 * * * *' # every 2 hours
+  workflow_dispatch:
+
+jobs:
+  run-agents:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run autonomous agents
+        run: node automation/cloud-autonomy-orchestrator.cjs | cat
+
+      - name: Commit and push changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'chore(agents): autonomous cloud agents update [skip ci]'
+          file_pattern: |
+            public/openapi.json
+            data/reports/**
+          push_options: '--force-with-lease'
+          commit_user_name: 'zion-bot'
+          commit_user_email: 'bot@zion.app'
