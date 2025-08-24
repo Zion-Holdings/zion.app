@@ -1,26 +1,33 @@
+import React from 'react';
+import { SEO } from '@/components/SEO';
 
-import { CategoriesSection } from "@/components/CategoriesSection";
-import { GradientHeading } from "@/components/GradientHeading";
-
-export default function Categories() {
+const Categories: React.FC = () => {
   return (
     <>
-      <div className="min-h-screen bg-zion-blue">
-        <div className="container mx-auto px-4 py-12">
-          <div className="text-center mb-12">
-            <GradientHeading level="h1" className="text-4xl md:text-5xl font-bold mb-4">
-              Browse Categories
-            </GradientHeading>
-            <p className="text-zion-slate-light text-lg max-w-3xl mx-auto">
-              Explore our extensive range of AI services and products organized by category. 
-              Find exactly what you're looking for to enhance your business or personal projects.
+      <SEO 
+        title="Categories - Zion Tech Group"
+        description="Browse our service categories"
+        canonical="https://ziontechgroup.com/categories"
+      />
+      <div className="min-h-screen bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-slate-dark">
+        <div className="container mx-auto px-4 py-16">
+          <div className="text-center">
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+              Categories
+            </h1>
+            <p className="text-xl text-zion-slate-light mb-8">
+              Browse our service categories
             </p>
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-8 max-w-2xl mx-auto">
+              <p className="text-white">
+                Our categories page is coming soon. You'll be able to browse our comprehensive service categories and find exactly what you need.
+              </p>
+            </div>
           </div>
-          
-          {/* Reuse the Categories Section component */}
-          <CategoriesSection showTitle={false} />
         </div>
       </div>
     </>
   );
-}
+};
+
+export default Categories;

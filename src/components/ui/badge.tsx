@@ -1,25 +1,29 @@
+import React from 'react';
 
-import * as React from "react"
-import { cn } from "@/lib/utils"
-
-import { badgeVariants } from "@/components/ui/badge-variants"
-
-export interface BadgeProps
-  extends React.HTMLAttributes<HTMLSpanElement> {
-  variant?:
-    | "default"
-    | "secondary"
-    | "destructive"
-    | "outline"
-    | "success"
-    | "warning"
-    | "info"
+interface BadgeProps {
+  children: React.ReactNode;
+  variant?: 'default' | 'secondary' | 'outline';
+  className?: string;
 }
 
-function Badge({ className, variant, ...props }: BadgeProps) {
+export const Badge: React.FC<BadgeProps> = ({ 
+  children, 
+  variant = 'default', 
+  className = '' 
+}) => {
+  const baseClasses = 'inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium';
+  
+  const variantClasses = {
+    default: 'bg-zion-blue text-white',
+    secondary: 'bg-gray-100 text-gray-800',
+    outline: 'border border-gray-200 text-gray-700'
+  };
+  
+  const classes = `${baseClasses} ${variantClasses[variant]} ${className}`;
+  
   return (
-    <span className={cn(badgeVariants({ variant }), className)} {...props} />
-  )
-}
-
-export { Badge, badgeVariants }
+    <span className={classes}>
+      {children}
+    </span>
+  );
+};

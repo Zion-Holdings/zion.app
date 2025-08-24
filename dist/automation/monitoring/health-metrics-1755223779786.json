@@ -1,0 +1,26 @@
+{
+  "timestamp": "2025-08-15T02:09:39.659Z",
+  "checks": {
+    "webInterface": {
+      "status": "HEALTHY",
+      "responseTime": 0,
+      "statusCode": 200
+    },
+    "pm2Processes": {
+      "status": "HEALTHY",
+      "healthy": 17,
+      "total": 17,
+      "percentage": 100
+    },
+    "fileSystem": {
+      "status": "HEALTHY",
+      "freeSpace": "overlay         126G   13G  107G  11% /",
+      "lastModified": "2025-08-15T00:13:27.663Z"
+    },
+    "automation": {
+      "status": "DEGRADED",
+      "lastUpdate": "2025-08-14T22:00:41.941Z",
+      "timeSinceUpdate": 14938
+    }
+  }
+}

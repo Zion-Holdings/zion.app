@@ -1,0 +1,86 @@
+<<<<<<< HEAD
+# Zion Tech Group - Innovative Technology Solutions
+
+![Automations: 227](https://img.shields.io/badge/Automations-227-informational) ![Pages: 2960](https://img.shields.io/badge/Pages-2960-success) ![Components: 12](https://img.shields.io/badge/Components-12-blue)
+
+## 🚀 2025 Comprehensive Services Portfolio
+
+Home: https://github.com/Zion-Holdings/zion#readme
+
+- **Frontend Application (Next.js):** Located primarily in `src/` (for application code like components, hooks, pages using App Router) and `pages/` (for API routes and potentially older Pages Router content). This is the main user-facing application.
+- **Backend API (Django):** Located in `backend/`. This Python-based backend serves core business logic and data management, likely interacting with a PostgreSQL database.
+- **Node.js Backend Services:**
+  - **`server/`:** An Express.js application that provides additional API endpoints, potentially for specific features, BFF patterns, or integration tasks. It connects to MongoDB.
+  - **`api/` (within `pages/api/` or `src/pages/api`):** Next.js API routes providing serverless backend functionality directly within the Next.js application.
+- **Monitoring Service:** Located in `monitoring/`. A Node.js service for monitoring URL performance and health. (See `monitoring/README.md` for details).
+- **Supabase Integration:** Utilizes Supabase for backend-as-a-service features, with functions in `supabase/functions/` and schema definitions in `prisma/` (Prisma is used with Supabase, and potentially also for the Django backend or other Node.js services).
+- **Blockchain/DAO Components:** Directories like `dao/` and `token/` suggest features related to Decentralized Autonomous Organizations and cryptocurrency tokens.
+- **SDK:** A software development kit is present in `sdk/`, likely for interacting with Zion platform services.
+- **Documentation:** General documentation is in `docs/`, with specific component documentation potentially within their respective directories.
+- **Testing:** Extensive test suites using Vitest and Cypress are in `tests/` and `cypress/`. See **[docs/QA_TESTING_CHECKLIST.md](docs/QA_TESTING_CHECKLIST.md)** for common QA steps.
+- **Connect Portal:** Access the portal at `/portal` for account management and settings. The previous `/app` path is deprecated.
+
+- **🚀 Innovative Services Expansion** - AI BI, Cybersecurity, DevOps, Customer Experience
+- **⚛️ Emerging Technology Services** - Quantum Computing, Blockchain, Space Tech, IoT, AR/VR
+- **🏭 Specialized Industry Services** - Manufacturing, Healthcare, FinTech, Retail, Education
+
+- **Frontend:** Next.js, React, TypeScript, Redux Toolkit, Chakra UI, Radix UI, Tailwind CSS
+- **Backend (Django):** Python, Django, Django REST Framework, PostgreSQL
+- **Backend (Node.js):** Node.js, Express.js, TypeScript, MongoDB (for `server/`), Next.js API Routes
+- **Database/BaaS:** PostgreSQL, MongoDB, Supabase, Prisma
+- **Authentication:** Supabase Auth (handles login, signup, password reset, social auth) with optional two-factor authentication for the IPO portal
+- **Monitoring:** Custom Node.js service, Sentry, Datadog
+- **CI/CD:** GitHub Actions, Netlify (including Lighthouse CI)
+- **Other:** IPFS, OrbitDB, Ethers.js, Elasticsearch
+
+## Environment Configuration
+
+⚠️ **IMPORTANT**: This project uses **Supabase for authentication** and **Netlify for environment variable management**. Proper configuration is essential for the application to function correctly.
+
+### Authentication Setup
+
+---
+This README is auto-generated. Do not edit manually.
+
+## New Cloud Cron Automations
+
+- Intelligent Orchestrator (1m): /.netlify/functions/intelligent-orchestrator
+- Anomaly Watchdog (10m): /.netlify/functions/anomaly-watchdog
+- Pulse Sync (1m): /.netlify/functions/pulse-sync
+=======
+## Zion Assistant Monorepo
+
+Cross-platform assistant for hiring managers and remote workers.
+
+### Apps
+- `apps/api`: Fastify API (OpenAI, jobs, talent, projects, notifications)
+- `apps/slack-bot`: Slack Bolt app with `/zion` slash commands and notifications
+- `apps/extension`: Chrome/Edge MV3 extension with popup and background sync
+
+### Quickstart
+1. Copy env: `cp .env.example .env`
+2. Start infra: `docker compose up -d`
+3. Install deps: `pnpm i`
+4. Run dev servers: `pnpm dev`
+5. Build extension icons: `pnpm generate:icons`
+
+### Slack
+- Create a Slack app with OAuth scopes: `commands,chat:write,chat:write.public,users:read,app_mentions:read,channels:history`
+- Set Slash commands:
+  - `/zion` (dispatches subcommands)
+  - `/zion-post-job`, `/zion-suggest-talent`, `/zion-track-project`, `/zion-help` (optional aliases)
+- Redirect URL: `${SLACK_APP_REDIRECT_URL}`
+
+### Google OAuth
+- Create OAuth 2.0 Client (Web) with redirect `${GOOGLE_REDIRECT_URI}`
+- The extension uses `chrome.identity.launchWebAuthFlow` to sign in
+
+### Database & RLS
+- Postgres initialized via `infra/db/init.sql` with RLS policies per `user_id`
+
+### Rate limiting
+- Implemented in API with Redis (fallback to in-memory)
+
+### Branding
+- Icon generator: run `pnpm --filter @zion/extension generate:icons` to produce PNGs from `zion.svg`
+>>>>>>> origin/cursor/build-cross-platform-zion-assistant-acdd

@@ -1,85 +1,40 @@
-
-import React from "react";
-import { Link, useLocation } from "react-router-dom";
-import { Home, Search, BriefcaseIcon, MessageSquare, User, MessageCircle } from "lucide-react";
-import { cn } from "@/lib/utils";
-import { useAuth } from "@/hooks/useAuth";
+import React from 'react';
 
 interface MobileBottomNavProps {
   unreadCount?: number;
 }
 
 export function MobileBottomNav({ unreadCount = 0 }: MobileBottomNavProps) {
-  const location = useLocation();
-  const { user } = useAuth();
-  const isAuthenticated = !!user;
-
-  const navItems = [
-    {
-      name: "Home",
-      href: "/",
-      icon: Home,
-      matches: (path: string) => path === "/"
-    },
-    {
-      name: "Browse",
-      href: "/talent",
-      icon: Search,
-      matches: (path: string) => path.startsWith("/talent") || path.startsWith("/categories") || path.startsWith("/marketplace")
-    },
-    {
-      name: "Community",
-      href: "/community",
-      icon: MessageCircle,
-      matches: (path: string) => path.startsWith("/community") || path.startsWith("/forum")
-    },
-    {
-      name: "Messages",
-      href: "/messages",
-      icon: MessageSquare,
-      matches: (path: string) => path.startsWith("/messages") || path.startsWith("/inbox"),
-      badge: unreadCount,
-      authRequired: true
-    },
-    {
-      name: "Dashboard",
-      href: "/dashboard",
-      icon: User,
-      matches: (path: string) => path.startsWith("/dashboard"),
-      authRequired: true
-    }
-  ];
-
-  // Filter items based on auth status
-  const visibleItems = navItems.filter(item => 
-    !item.authRequired || (item.authRequired && isAuthenticated)
-  );
-
   return (
-    <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-zion-blue-dark/95 backdrop-blur-md border-t border-zion-purple/20">
-      <div className="flex justify-around items-center h-16">
-        {visibleItems.map(item => (
-          <Link
-            key={item.name}
-            to={item.href}
-            className={cn(
-              "flex flex-col items-center justify-center w-full h-full px-1 py-1",
-              item.matches(location.pathname)
-                ? "text-zion-cyan"
-                : "text-white/70 hover:text-white"
+    <nav className="fixed bottom-0 left-0 right-0 bg-background border-t border-zion-slate/20 lg:hidden">
+      <div className="flex justify-around py-2">
+        <a href="/" className="flex flex-col items-center p-2 text-zion-slate-light hover:text-zion-cyan transition-colors">
+          <svg className="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+          </svg>
+          <span className="text-xs">Home</span>
+        </a>
+        
+        <a href="/contact" className="flex flex-col items-center p-2 text-zion-slate-light hover:text-zion-cyan transition-colors">
+          <svg className="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+          <span className="text-xs">Contact</span>
+        </a>
+        
+        <div className="flex flex-col items-center p-2 text-zion-slate-light">
+          <div className="relative">
+            <svg className="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+            </svg>
+            {unreadCount > 0 && (
+              <span className="absolute -top-1 -right-1 bg-zion-cyan text-white text-xs px-1.5 py-0.5 rounded-full">
+                {unreadCount}
+              </span>
             )}
-          >
-            <div className="relative">
-              <item.icon className="h-5 w-5 mb-1" />
-              {item.badge && item.badge > 0 && (
-                <span className="absolute -top-2 -right-2 bg-zion-purple text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">
-                  {item.badge > 9 ? '9+' : item.badge}
-                </span>
-              )}
-            </div>
-            <span className="text-xs font-medium">{item.name}</span>
-          </Link>
-        ))}
+          </div>
+          <span className="text-xs">Messages</span>
+        </div>
       </div>
     </nav>
   );

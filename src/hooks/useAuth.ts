@@ -1,14 +1,40 @@
-import { useContext } from 'react';
-import { AuthContext } from '@/context/auth/AuthContext';
-import type { AuthContextType } from '@/types/auth';
+import { useState, useEffect } from 'react';
 
-export const useAuth = (): AuthContextType => {
-  const context = useContext(AuthContext);
-  if (context === undefined) {
-    throw new Error('useAuth must be used within an AuthProvider');
-  }
-  // TypeScript can sometimes lose the narrowing performed above and
-  // assume `context` might still be `{}`. Casting here ensures the
-  // returned value matches `AuthContextType` exactly.
-  return context as AuthContextType;
-};
+interface User {
+  id: string;
+  email: string;
+  name?: string;
+}
+
+export function useAuth() {
+  const [user, setUser] = useState<User | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate auth check
+    const timer = setTimeout(() => {
+      setLoading(false);
+      // For now, no user is logged in
+      setUser(null);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  const signIn = async (email: string, password: string) => {
+    // Simulate sign in
+    return { success: true };
+  };
+
+  const signOut = async () => {
+    setUser(null);
+  };
+
+  return {
+    user,
+    loading,
+    signIn,
+    signOut,
+    isAuthenticated: !!user,
+  };
+}
