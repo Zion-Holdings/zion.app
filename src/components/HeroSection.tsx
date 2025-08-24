@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { GradientHeading } from "@/components/GradientHeading";
+import GradientHeading from "@/components/GradientHeading";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
@@ -14,8 +14,13 @@ export function HeroSection() {
     visible: {
       opacity: 1,
       transition: {
+<<<<<<< HEAD
         staggerChildren: 0.3,
         delayChildren: 0.2
+=======
+        staggerChildren: 0.2,
+        delayChildren: 0.1
+>>>>>>> 516e4ee3bcbb9d3b0209b707c6b86a34fb0cacec
       }
     }
   };
@@ -26,6 +31,7 @@ export function HeroSection() {
       y: 0,
       opacity: 1,
       transition: {
+<<<<<<< HEAD
         duration: 0.6,
         ease: "easeOut"
       }
@@ -42,32 +48,54 @@ export function HeroSection() {
         duration: 4,
         repeat: Infinity,
         ease: "easeInOut"
+=======
+        duration: 0.6
+>>>>>>> 516e4ee3bcbb9d3b0209b707c6b86a34fb0cacec
       }
     }
   };
 
   return (
+<<<<<<< HEAD
     <section className="relative overflow-hidden py-20 md:py-32 min-h-screen flex items-center">
       {/* Enhanced background gradient effect */}
       <div className="absolute inset-0 bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-purple opacity-90"></div>
       
       {/* Animated mesh gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-zion-cyan/20 via-transparent to-zion-purple-light/20"></div>
+=======
+    <section className="relative overflow-hidden py-20 md:py-32" role="banner" aria-labelledby="hero-title">
+      {/* Background gradient effect */}
+      <div className="absolute inset-0 bg-gradient-to-b from-zion-blue-dark via-zion-blue to-zion-blue-light opacity-80"></div>
+>>>>>>> 516e4ee3bcbb9d3b0209b707c6b86a34fb0cacec
       
       {/* Enhanced animated floating particles */}
       <div className="absolute inset-0">
         <motion.div 
-          className="absolute top-1/4 left-1/4 w-3 h-3 rounded-full bg-zion-purple-light opacity-60"
-          variants={particleVariants}
-          animate="animate"
+          className="absolute top-1/4 left-1/4 w-2 h-2 rounded-full bg-zion-purple-light opacity-40"
+          animate={{
+            y: [0, -20, 0],
+            opacity: [0.3, 0.8, 0.3]
+          }}
+          transition={{
+            duration: 3,
+            repeat: Infinity
+          }}
         />
         <motion.div 
-          className="absolute top-1/3 right-1/3 w-4 h-4 rounded-full bg-zion-cyan opacity-50"
-          variants={particleVariants}
-          animate="animate"
-          style={{ animationDelay: "1s" }}
+          className="absolute top-1/3 right-1/3 w-3 h-3 rounded-full bg-zion-cyan opacity-30"
+          animate={{
+            y: [0, -20, 0],
+            opacity: [0.3, 0.8, 0.3]
+          }}
+          transition={{
+            duration: 3,
+            repeat: Infinity,
+            delay: 1
+          }}
         />
         <motion.div 
+<<<<<<< HEAD
           className="absolute bottom-1/4 left-1/2 w-2 h-2 rounded-full bg-zion-purple opacity-60"
           variants={particleVariants}
           animate="animate"
@@ -84,9 +112,35 @@ export function HeroSection() {
           variants={particleVariants}
           animate="animate"
           style={{ animationDelay: "4s" }}
+=======
+          className="absolute bottom-1/4 left-1/2 w-2 h-2 rounded-full bg-zion-purple opacity-40"
+          animate={{
+            y: [0, -20, 0],
+            opacity: [0.3, 0.8, 0.3]
+          }}
+          transition={{
+            duration: 3,
+            repeat: Infinity,
+            delay: 2
+          }}
         />
+        <motion.div 
+          className="absolute top-1/2 right-1/4 w-4 h-4 rounded-full bg-zion-cyan-light opacity-20"
+          animate={{
+            y: [0, -20, 0],
+            opacity: [0.3, 0.8, 0.3]
+          }}
+          transition={{
+            duration: 3,
+            repeat: Infinity,
+            delay: 0.5
+          }}
+>>>>>>> 516e4ee3bcbb9d3b0209b707c6b86a34fb0cacec
+        />
+
       </div>
 
+<<<<<<< HEAD
       {/* Floating feature highlights */}
       <motion.div 
         className="absolute top-1/4 right-1/6 hidden lg:block"
@@ -116,16 +170,18 @@ export function HeroSection() {
         </div>
       </motion.div>
 
+=======
+>>>>>>> 516e4ee3bcbb9d3b0209b707c6b86a34fb0cacec
       {/* Floating geometric shapes */}
       <motion.div 
         className="absolute top-20 right-20 w-32 h-32 border border-zion-cyan/30 rounded-lg rotate-45"
         animate={{ rotate: [45, 405], opacity: [0.3, 0.6, 0.3] }}
-        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+        transition={{ duration: 20, repeat: Infinity }}
       />
       <motion.div 
         className="absolute bottom-20 left-20 w-24 h-24 border border-zion-purple/30 rounded-full"
         animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.6, 0.3] }}
-        transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+        transition={{ duration: 15, repeat: Infinity }}
       />
       
       <motion.div 
@@ -142,7 +198,9 @@ export function HeroSection() {
         </motion.div>
 
         <motion.div variants={itemVariants}>
-          <GradientHeading className="mb-6 text-5xl md:text-7xl font-bold leading-tight">
+          <GradientHeading 
+            className="mb-6 text-5xl md:text-7xl font-bold"
+          >
             {t('home.hero_title')}
           </GradientHeading>
         </motion.div>
@@ -153,6 +211,7 @@ export function HeroSection() {
           </p>
         </motion.div>
 
+<<<<<<< HEAD
         <motion.div variants={itemVariants} className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
           <motion.div
             whileHover={{ scale: 1.05 }}
@@ -187,11 +246,40 @@ export function HeroSection() {
             >
               {t('home.browse_marketplace')}
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+=======
+        <motion.div 
+          className="flex flex-col sm:flex-row justify-center gap-4"
+          variants={itemVariants}
+        >
+          <Button
+            className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-lg py-6 px-8 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+            size="lg"
+            asChild
+          >
+            <Link
+              to="/signup"
+              role="button"
+              aria-label={t('auth.signup')}
+              tabIndex={0}
+              data-testid="hero-signup-btn"
+            >
+              {t('auth.signup')}
+>>>>>>> 516e4ee3bcbb9d3b0209b707c6b86a34fb0cacec
             </Link>
-          </motion.div>
+          </Button>
+          <Link
+            id="browse-marketplace"
+            to="/marketplace"
+            className="border-2 border-zion-cyan text-zion-cyan hover:bg-zion-cyan hover:text-zion-blue-dark active:bg-zion-cyan-light text-lg py-6 px-8 rounded-md inline-flex items-center justify-center transition-all duration-300 hover:shadow-lg transform hover:scale-105"
+            role="button"
+            aria-label={t('home.browse_marketplace')}
+          >
+            {t('home.browse_marketplace')}
+          </Link>
         </motion.div>
 
         {/* Trust indicators */}
+<<<<<<< HEAD
         <motion.div 
           variants={itemVariants}
           className="flex flex-wrap justify-center items-center gap-6 text-zion-slate-light text-sm mb-8"
@@ -211,17 +299,26 @@ export function HeroSection() {
         </motion.div>
 
         {/* Additional CTA section */}
+=======
+>>>>>>> 516e4ee3bcbb9d3b0209b707c6b86a34fb0cacec
         <motion.div 
-          className="mt-12 text-center"
+          className="mt-12 flex flex-wrap justify-center items-center gap-6 text-zion-slate-light/70"
           variants={itemVariants}
         >
-          <p className="text-zion-slate-light mb-4">Trusted by leading tech companies worldwide</p>
-          <div className="flex justify-center items-center gap-8 opacity-60">
-            <div className="w-16 h-8 bg-zion-cyan/20 rounded"></div>
-            <div className="w-16 h-8 bg-zion-purple/20 rounded"></div>
-            <div className="w-16 h-8 bg-zion-blue/20 rounded"></div>
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-2 bg-zion-cyan rounded-full"></div>
+            <span className="text-sm">AI-Powered Matching</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-2 bg-zion-purple rounded-full"></div>
+            <span className="text-sm">Verified Professionals</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-2 bg-zion-blue rounded-full"></div>
+            <span className="text-sm">Secure Platform</span>
           </div>
         </motion.div>
+<<<<<<< HEAD
       </motion.div>
 
       {/* Floating CTA Button */}
@@ -239,6 +336,8 @@ export function HeroSection() {
             <ArrowRight className="w-6 h-6" />
           </Link>
         </Button>
+=======
+>>>>>>> 516e4ee3bcbb9d3b0209b707c6b86a34fb0cacec
       </motion.div>
     </section>
   );

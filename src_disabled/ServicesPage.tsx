@@ -121,6 +121,178 @@ const SERVICE_LISTINGS: ProductListing[] = [
     rating: 4.8,
     reviewCount: 85,
   },
+  // New Specialized IT Services
+  {
+    id: "service-7",
+    title: "Blockchain Development & Smart Contracts",
+    description: "Custom blockchain solutions, smart contract development, and DeFi application creation for modern businesses.",
+    category: "Development",
+    price: 12000,
+    currency: "$",
+    tags: ["Blockchain", "Smart Contracts", "DeFi", "Web3"],
+    author: {
+      name: "Blockchain Innovations",
+      id: "blockchain-innovations",
+      avatarUrl: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=100&h=100",
+    },
+    images: ["https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=800&h=500"],
+    createdAt: "2024-03-15T12:00:00.000Z",
+    aiScore: 96,
+    rating: 4.9,
+    reviewCount: 45,
+  },
+  {
+    id: "service-8",
+    title: "IoT Solutions & Smart City Integration",
+    description: "End-to-end IoT development including sensor networks, data collection, and smart city infrastructure integration.",
+    category: "IoT",
+    price: 18000,
+    currency: "$",
+    tags: ["IoT", "Smart Cities", "Sensor Networks", "Data Collection"],
+    author: {
+      name: "SmartCity Tech",
+      id: "smartcity-tech",
+      avatarUrl: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=100&h=100",
+    },
+    images: ["https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&h=500"],
+    createdAt: "2024-03-14T14:30:00.000Z",
+    aiScore: 93,
+    rating: 4.8,
+    reviewCount: 32,
+  },
+  {
+    id: "service-9",
+    title: "Quantum Computing Consulting",
+    description: "Expert guidance on quantum computing applications, algorithm development, and quantum-ready infrastructure planning.",
+    category: "Consulting",
+    price: 25000,
+    currency: "$",
+    tags: ["Quantum Computing", "Algorithm Development", "Future Tech"],
+    author: {
+      name: "Quantum Solutions",
+      id: "quantum-solutions",
+      avatarUrl: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=100&h=100",
+    },
+    images: ["https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=800&h=500"],
+    createdAt: "2024-03-13T16:45:00.000Z",
+    aiScore: 98,
+    rating: 4.9,
+    reviewCount: 18,
+  },
+  {
+    id: "service-10",
+    title: "Edge Computing & 5G Optimization",
+    description: "Edge computing infrastructure design and 5G network optimization for ultra-low latency applications and IoT deployments.",
+    category: "Infrastructure",
+    price: 15000,
+    currency: "$",
+    tags: ["Edge Computing", "5G", "Low Latency", "IoT"],
+    author: {
+      name: "EdgeTech Solutions",
+      id: "edgetech-solutions",
+      avatarUrl: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?auto=format&fit=crop&w=100&h=100",
+    },
+    images: ["https://images.unsplash.com/photo-1518709268805-4e9042af2176?auto=format&fit=crop&w=800&h=500"],
+    createdAt: "2024-03-12T11:15:00.000Z",
+    aiScore: 91,
+    rating: 4.7,
+    reviewCount: 28,
+  },
+  {
+    id: "service-11",
+    title: "Robotic Process Automation (RPA)",
+    description: "Automate repetitive business processes with intelligent bots that can handle complex workflows and decision-making tasks.",
+    category: "Automation",
+    price: 8000,
+    currency: "$",
+    tags: ["RPA", "Process Automation", "Intelligent Bots", "Workflow"],
+    author: {
+      name: "Automation Experts",
+      id: "automation-experts",
+      avatarUrl: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=100&h=100",
+    },
+    images: ["https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&h=500"],
+    createdAt: "2024-03-11T09:20:00.000Z",
+    aiScore: 89,
+    rating: 4.6,
+    reviewCount: 67,
+  },
+  {
+    id: "service-12",
+    title: "Augmented Reality (AR) & Virtual Reality (VR)",
+    description: "Immersive technology solutions for training, marketing, product visualization, and interactive customer experiences.",
+    category: "Immersive Tech",
+    price: 22000,
+    currency: "$",
+    tags: ["AR/VR", "Immersive Technology", "Training", "Marketing"],
+    author: {
+      name: "Immersive Tech Lab",
+      id: "immersive-tech-lab",
+      avatarUrl: "https://images.unsplash.com/photo-1593508512255-aaab0b0f9c81?auto=format&fit=crop&w=100&h=100",
+    },
+    images: ["https://images.unsplash.com/photo-1593508512255-aaab0b0f9c81?auto=format&fit=crop&w=800&h=500"],
+    createdAt: "2024-03-10T13:40:00.000Z",
+    aiScore: 94,
+    rating: 4.8,
+    reviewCount: 41,
+  },
+  {
+    id: "service-13",
+    title: "Natural Language Processing (NLP) Solutions",
+    description: "Advanced NLP services including chatbots, sentiment analysis, document processing, and multilingual support systems.",
+    category: "AI/ML",
+    price: 9500,
+    currency: "$",
+    tags: ["NLP", "Chatbots", "Sentiment Analysis", "Document Processing"],
+    author: {
+      name: "NLP Specialists",
+      id: "nlp-specialists",
+      avatarUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&h=100",
+    },
+    images: ["https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&h=500"],
+    createdAt: "2024-03-09T15:55:00.000Z",
+    aiScore: 92,
+    rating: 4.7,
+    reviewCount: 53,
+  },
+  {
+    id: "service-14",
+    title: "DevOps & CI/CD Pipeline Optimization",
+    description: "Streamline your development workflow with automated testing, deployment, and monitoring solutions for faster time-to-market.",
+    category: "DevOps",
+    price: 7000,
+    currency: "$",
+    tags: ["DevOps", "CI/CD", "Automation", "Deployment"],
+    author: {
+      name: "DevOps Masters",
+      id: "devops-masters",
+      avatarUrl: "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=100&h=100",
+    },
+    images: ["https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&h=500"],
+    createdAt: "2024-03-08T10:25:00.000Z",
+    aiScore: 90,
+    rating: 4.8,
+    reviewCount: 89,
+  },
+  {
+    id: "service-15",
+    title: "Data Privacy & GDPR Compliance",
+    description: "Comprehensive data privacy solutions including GDPR compliance, data governance, and privacy-by-design implementation.",
+    category: "Compliance",
+    price: 6500,
+    currency: "$",
+    tags: ["Data Privacy", "GDPR", "Compliance", "Data Governance"],
+    author: {
+      name: "Privacy First Solutions",
+      id: "privacy-first",
+      avatarUrl: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=100&h=100",
+    },
+    images: ["https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=800&h=500"],
+    createdAt: "2024-03-07T12:10:00.000Z",
+    aiScore: 87,
+    rating: 4.6,
+    reviewCount: 76,
+  }
 ];
 
 function getRandomItem<T>(arr: T[]): T {
@@ -220,6 +392,13 @@ const SERVICE_FILTERS = [
   { label: 'Analytics', value: 'analytics' },
   { label: 'Consulting', value: 'consulting' },
   { label: 'Strategy', value: 'strategy' },
+  { label: 'IoT', value: 'iot' },
+  { label: 'Infrastructure', value: 'infrastructure' },
+  { label: 'Automation', value: 'automation' },
+  { label: 'Immersive Tech', value: 'immersive tech' },
+  { label: 'AI/ML', value: 'ai/ml' },
+  { label: 'DevOps', value: 'devops' },
+  { label: 'Compliance', value: 'compliance' },
 ];
 
 export default function ServicesPage() {
@@ -235,6 +414,30 @@ export default function ServicesPage() {
 
   return (
     <>
+<<<<<<< HEAD:src/pages/ServicesPage.tsx
+      <div className="bg-zion-blue-dark py-4 px-4 md:px-8 mb-6 border-b border-zion-blue-light">
+        <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+          <h2 className="text-white text-lg font-medium">Featured Services</h2>
+          <div className="flex flex-wrap gap-2">
+            <Link to="/services-showcase">
+              <Button variant="outline" className="border-zion-purple text-zion-cyan hover:bg-zion-purple/10">
+                <Globe className="h-4 w-4 mr-2" />
+                Services Showcase
+              </Button>
+            </Link>
+            <Link to="/pricing">
+              <Button variant="outline" className="border-zion-purple text-zion-cyan hover:bg-zion-purple/10">
+                <Globe className="h-4 w-4 mr-2" />
+                View Pricing
+              </Button>
+            </Link>
+            <Link to="/services-comparison">
+              <Button variant="outline" className="border-zion-purple text-zion-cyan hover:bg-zion-purple/10">
+                <Globe className="h-4 w-4 mr-2" />
+                Compare Services
+              </Button>
+            </Link>
+=======
       {/* Hero Section */}
       <div className="bg-zion-blue-dark py-16 px-4 md:px-8 border-b border-zion-blue-light">
         <div className="container mx-auto text-center">
@@ -283,16 +486,18 @@ export default function ServicesPage() {
           </div>
 
           <div className="flex flex-wrap justify-center gap-4 mt-8">
+>>>>>>> 6de525ab7fd2268019c6a3413cbe79321aeb887d:src_disabled/ServicesPage.tsx
             <Link to="/it-onsite-services">
               <Button variant="outline" className="border-zion-purple text-zion-cyan hover:bg-zion-purple/10">
                 <Globe className="h-4 w-4 mr-2" />
                 Global IT Onsite Services
               </Button>
             </Link>
-            <Link to="/micro-saas-services">
-              <Button variant="outline" className="border-zion-purple text-zion-cyan hover:bg-zion-purple/10">
-                <Brain className="h-4 w-4 mr-2" />
-                Micro SAAS Solutions
+            <Link to="/comprehensive-services">
+              <Button variant="outline" className="border-zion-cyan text-zion-purple hover:bg-zion-cyan/10">
+                <Globe className="h-4 w-4 mr-2" />
+                All Services
+              </Button>
               </Button>
             </Link>
             <Link to="/request-quote">

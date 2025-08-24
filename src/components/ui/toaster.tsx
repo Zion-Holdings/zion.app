@@ -3,6 +3,7 @@ import { Toast, ToastClose, ToastDescription, ToastTitle, ToastViewport } from '
 import { useToast } from './use-toast';
 
 export function Toaster() {
+<<<<<<< HEAD
   const { toasts } = useToast();
 
   return (
@@ -21,4 +22,7 @@ export function Toaster() {
       ))}
     </ToastViewport>
   );
+=======
+  return <div className="toaster-container"></div>;
+>>>>>>> 516e4ee3bcbb9d3b0209b707c6b86a34fb0cacec
 }

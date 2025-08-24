@@ -22,6 +22,11 @@
     "home": "Home",
     "marketplace": "Marketplace",
     "categories": "Categories",
+<<<<<<< HEAD
+=======
+    "services": "Services",
+    "micro-saas": "Micro SAAS",
+>>>>>>> 516e4ee3bcbb9d3b0209b707c6b86a34fb0cacec
     "talent": "Talent",
     "equipment": "Equipment",
     "community": "Community",

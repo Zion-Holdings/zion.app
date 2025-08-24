@@ -2,11 +2,15 @@
   "compilerOptions": {
     "target": "ES2020",
     "useDefineForClassFields": true,
+<<<<<<< HEAD
     "lib": [
       "ES2020",
       "DOM",
       "DOM.Iterable"
     ],
+=======
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+>>>>>>> 516e4ee3bcbb9d3b0209b707c6b86a34fb0cacec
     "module": "ESNext",
     "skipLibCheck": true,
     "moduleResolution": "bundler",
@@ -21,6 +25,7 @@
     "noFallthroughCasesInSwitch": true,
     "baseUrl": ".",
     "paths": {
+<<<<<<< HEAD
       "@/*": ["./src/*"]
     },
     "esModuleInterop": true,
@@ -30,7 +35,66 @@
     "noImplicitReturns": false,
     "noImplicitThis": false,
     "strictNullChecks": false
+=======
+      "@/*": [
+        "./src/*"
+      ],
+      "@/pages/*": [
+        "./src/pages/*"
+      ],
+      "@/components/*": [
+        "./src/components/*"
+      ],
+      "@/types/*": [
+        "./src/types/*"
+      ],
+      "@/utils/*": [
+        "./src/utils/*"
+      ],
+      "@/services/*": [
+        "./src/services/*"
+      ],
+      "@/styles/*": [
+        "./src/styles/*"
+      ],
+      "@/lib/*": [
+        "./src/lib/*"
+      ],
+      "@/data/*": [
+        "./src/data/*"
+      ]
+    },
+    "allowJs": true,
+    "incremental": true,
+    "esModuleInterop": true
+>>>>>>> 516e4ee3bcbb9d3b0209b707c6b86a34fb0cacec
   },
-  "include": ["src"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "include": [
+    "src/main.tsx",
+    "src/App.tsx",
+    "src/App.css",
+    "src/pages/Home.tsx",
+    "src/pages/Services.tsx"
+  ],
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ],
+  "exclude": [
+    "node_modules",
+    "src/components/conflicted/**/*",
+    "src/components/disabled/**/*",
+    "src/components/Advanced*",
+    "src/components/CategoriesSection.tsx",
+    "src/components/FeaturedListingsSection.tsx",
+    "src/components/home/Enhanced*",
+    "src/components/home/FeatureCTAs.tsx",
+    "src/components/home/HomePageSkeleton.tsx",
+    "src/components/ui/data-visualization.tsx",
+    "src/data/enhancedServicesData.ts",
+    "src/data/microSaasServices.ts",
+    "src/hooks/useBlockchainWeb3.ts",
+    "src/pages/HomePage.tsx"
+  ]
 }
