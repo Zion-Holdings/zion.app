@@ -121,82 +121,43 @@ export default SEO;
 export function HomePageSEO() {
   return (
     <SEO
-      title="Zion - The Tech & AI Marketplace"
-      description="Discover top AI and tech talent, services, and equipment in one place. Connect with experts, find innovative solutions, and accelerate your tech projects."
-      keywords="AI marketplace, tech talent, IT services, tech equipment, AI experts, developers, tech consulting, innovation"
+      title="Zion Tech Group - Leading Technology Innovation"
+      description="Transform your business with Zion Tech Group's cutting-edge AI solutions, cloud infrastructure, and digital transformation services. Get started today!"
+      keywords="AI solutions, cloud migration, cybersecurity, digital transformation, business technology, Zion Tech Group"
       canonical="/"
-      image="/images/zion-homepage-og.jpg"
-      structuredData={{
-        "@type": "WebSite",
-        "name": "Zion Tech Group",
-        "url": "https://ziontechgroup.com",
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://ziontechgroup.com/search?q={search_term_string}",
-          "query-input": "required name=search_term_string"
-        }
-      }}
     />
   );
 }
 
-export function ServicePageSEO({ 
-  serviceName, 
-  description, 
-  category 
-}: { 
-  serviceName: string;
-  description: string;
-  category: string;
-}) {
+export function ServicesPageSEO() {
   return (
     <SEO
-      title={`${serviceName} - Zion Tech Group`}
-      description={description}
-      keywords={`${serviceName}, ${category}, tech services, IT solutions, Zion Tech Group`}
-      canonical={`/services/${serviceName.toLowerCase().replace(/\s+/g, '-')}`}
-      type="product"
-      structuredData={{
-        "@type": "Service",
-        "name": serviceName,
-        "description": description,
-        "provider": {
-          "@type": "Organization",
-          "name": "Zion Tech Group"
-        },
-        "category": category,
-        "areaServed": "Worldwide"
-      }}
+      title="Our Services - AI, Cloud, & Technology Solutions | Zion Tech Group"
+      description="Explore our comprehensive range of technology services including AI solutions, cloud migration, cybersecurity, and digital transformation. Expert consulting and implementation."
+      keywords="AI services, cloud solutions, cybersecurity, digital transformation, technology consulting, IT services"
+      canonical="/services"
     />
   );
 }
 
-export function TalentPageSEO({ 
-  talentName, 
-  skills, 
-  description 
-}: { 
-  talentName: string;
-  skills: string[];
-  description: string;
-}) {
+export function ContactPageSEO() {
   return (
     <SEO
-      title={`${talentName} - Tech Talent | Zion Tech Group`}
-      description={description}
-      keywords={`${talentName}, ${skills.join(', ')}, tech talent, AI expert, developer, Zion Tech Group`}
-      canonical={`/talent/${talentName.toLowerCase().replace(/\s+/g, '-')}`}
-      type="profile"
-      structuredData={{
-        "@type": "Person",
-        "name": talentName,
-        "description": description,
-        "knowsAbout": skills,
-        "worksFor": {
-          "@type": "Organization",
-          "name": "Zion Tech Group"
-        }
-      }}
+      title="Contact Us - Get Expert Technology Consultation | Zion Tech Group"
+      description="Ready to transform your business? Contact Zion Tech Group for expert technology consultation, AI solutions, and digital transformation services. Call +1 (302) 464-0950."
+      keywords="contact Zion Tech Group, technology consultation, AI consultation, business transformation, tech support"
+      canonical="/contact"
+    />
+  );
+}
+
+export function AboutPageSEO() {
+  return (
+    <SEO
+      title="About Zion Tech Group - Technology Innovation Leaders"
+      description="Learn about Zion Tech Group's mission to transform businesses through innovative technology solutions, AI expertise, and digital transformation leadership."
+      keywords="about Zion Tech Group, company history, technology leadership, AI expertise, digital transformation"
+      canonical="/about"
     />
   );
 }

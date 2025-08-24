@@ -1,117 +1,96 @@
 import { jsx as _jsx, jsxs as _jsxs, Fragment as _Fragment } from "react/jsx-runtime";
-import { useState } from "react";
-import { SEO } from "@/components/SEO";
-import { GradientHeading } from "@/components/GradientHeading";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Card } from "@/components/ui/card";
-import { toast } from "@/components/ui/use-toast";
-import z from "zod";
-import { ChatAssistant } from "@/components/ChatAssistant";
-import { Mail, MessageSquare, MapPin, Phone } from "lucide-react";
-export default function Contact() {
+import { useState } from 'react';
+import { motion } from 'framer-motion';
+import { Mail, Phone, MapPin, Clock, Send, CheckCircle, MessageSquare, Globe, Building } from 'lucide-react';
+import { Button } from '../components/ui/button';
+import { Input } from '../components/ui/input';
+import { Textarea } from '../components/ui/textarea';
+import { Card } from '../components/ui/card';
+import { Badge } from '../components/ui/badge';
+import FuturisticNeonButton from '../components/ui/FuturisticNeonButton';
+import FuturisticAnimatedBackground from '../components/ui/FuturisticAnimatedBackground';
+import SEO from '../components/SEO';
+const Contact = () => {
     const [formData, setFormData] = useState({
-        name: "",
-        email: "",
-        subject: "",
-        message: ""
+        name: '',
+        email: '',
+        company: '',
+        phone: '',
+        service: '',
+        message: ''
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
-    const [errors, setErrors] = useState({});
-    const [isChatOpen, setIsChatOpen] = useState(false);
-    const handleChange = (e) => {
+    const [isSubmitted, setIsSubmitted] = useState(false);
+    const handleInputChange = (e) => {
         const { name, value } = e.target;
         setFormData(prev => (Object.assign(Object.assign({}, prev), { [name]: value })));
-        setErrors(prev => (Object.assign(Object.assign({}, prev), { [name]: undefined })));
     };
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        const schema = z.object({
-            name: z.string().min(2, "Name must be at least 2 characters"),
-            email: z.string().email("Invalid email address"),
-            subject: z.string().min(2, "Subject must be at least 2 characters"),
-            message: z.string().min(10, "Message must be at least 10 characters"),
-        });
-        const result = schema.safeParse(formData);
-        if (!result.success) {
-            const fieldErrors = {};
-            for (const err of result.error.errors) {
-                if (err.path[0]) {
-                    fieldErrors[err.path[0]] = err.message;
-                }
-            }
-            setErrors(fieldErrors);
-            toast({
-                title: "Form Validation Error",
-                description: result.error.errors[0].message,
-                variant: "destructive",
-            });
-            return;
-        }
-        setErrors({});
-        // Simulate form submission
         setIsSubmitting(true);
+        // Simulate form submission
+        await new Promise(resolve => setTimeout(resolve, 2000));
+        setIsSubmitting(false);
+        setIsSubmitted(true);
+        // Reset form after 3 seconds
         setTimeout(() => {
-            setIsSubmitting(false);
-            toast({
-                title: "Message Sent",
-                description: "We've received your message and will get back to you soon.",
-            });
-            // Reset form
+            setIsSubmitted(false);
             setFormData({
-                name: "",
-                email: "",
-                subject: "",
-                message: "",
+                name: '',
+                email: '',
+                company: '',
+                phone: '',
+                service: '',
+                message: ''
             });
-        }, 1500);
+        }, 3000);
     };
-    // Handle sending messages to the AI chat assistant
-    const handleSendMessage = async (message) => {
-        try {
-            const response = await fetch("https://ziontechgroup.functions.supabase.co/functions/v1/ai-chat", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                    messages: [{ role: "user", content: message }]
-                }),
-            });
-            if (!response.ok) {
-                throw new Error("Failed to get response from AI assistant");
-            }
-            return Promise.resolve();
-        }
-        catch (error) {
-            console.error("Error in AI chat:", error);
-            toast({
-                title: "Chat Error",
-                description: "There was an error communicating with our AI assistant. Please try again.",
-                variant: "destructive"
-            });
-            return Promise.resolve();
-        }
-    };
-    const offices = [
+    const contactMethods = [
         {
-            name: "Headquarters",
-            address: "123 Tech Avenue, San Francisco, CA 94105",
-            phone: "+1 302 464 0950",
-            email: "commercial@ziontechgroup.com"
+            icon: Phone,
+            title: 'Phone',
+            value: '+1 (302) 464-0950',
+            description: 'Call us directly for immediate assistance',
+            action: () => window.location.href = 'tel:+13024640950',
+            color: 'from-green-500 to-emerald-500'
         },
         {
-            name: "East Coast Office",
-            address: "456 Innovation Street, New York, NY 10001",
-            phone: "+1 302 464 0950",
-            email: "commercial@ziontechgroup.com"
+            icon: Mail,
+            title: 'Email',
+            value: 'kleber@ziontechgroup.com',
+            description: 'Send us a detailed message',
+            action: () => window.location.href = 'mailto:kleber@ziontechgroup.com',
+            color: 'from-blue-500 to-cyan-500'
+        },
+        {
+            icon: MapPin,
+            title: 'Address',
+            value: '364 E Main St STE 1008, Middletown DE 19709',
+            description: 'Visit our office for in-person meetings',
+            action: () => window.open('https://maps.google.com/?q=364+E+Main+St+STE+1008+Middletown+DE+19709'),
+            color: 'from-purple-500 to-pink-500'
+        },
+        {
+            icon: Clock,
+            title: 'Business Hours',
+            value: 'Mon-Fri: 9:00 AM - 6:00 PM EST',
+            description: 'We\'re available during business hours',
+            action: null,
+            color: 'from-orange-500 to-red-500'
         }
     ];
-    return (_jsxs(_Fragment, { children: [_jsx(SEO, { title: "Contact Zion - Get in Touch", description: "Have questions or want to learn more? Contact the Zion team about our AI and tech marketplace platform.", keywords: "contact Zion, AI marketplace support, tech platform contact", canonical: "https://ziontechgroup.com/contact" }), _jsx("main", { className: "min-h-screen bg-zion-blue pt-24 pb-20", children: _jsxs("div", { className: "container mx-auto px-4 sm:px-6 lg:px-8", children: [_jsxs("div", { className: "text-center mb-16", children: [_jsx(GradientHeading, { children: "Contact Us" }), _jsx("p", { className: "mt-4 text-zion-slate-light text-xl max-w-3xl mx-auto", children: "Have questions or want to learn more? We'd love to hear from you." })] }), _jsxs("div", { className: "grid grid-cols-1 lg:grid-cols-2 gap-12 mb-24", children: [_jsxs("div", { children: [_jsx("h2", { className: "text-3xl font-bold text-white mb-6", children: "Get in Touch" }), _jsx("p", { className: "text-zion-slate-light text-lg mb-8", children: "Whether you have a question about our platform, pricing, or anything else, our team is ready to answer all your questions." }), _jsxs("form", { onSubmit: handleSubmit, className: "space-y-6", children: [_jsxs("div", { className: "grid grid-cols-1 sm:grid-cols-2 gap-4", children: [_jsxs("div", { children: [_jsx("label", { htmlFor: "name", className: "block text-white mb-2", children: "Your Name" }), _jsx(Input, { id: "name", name: "name", value: formData.name, onChange: handleChange, className: `bg-zion-blue-dark border-zion-blue-light text-white ${errors.name ? 'border-red-500 focus-visible:ring-red-500' : ''}`, placeholder: "John Doe", required: true }), errors.name && (_jsx("p", { className: "mt-1 text-sm text-red-500", children: errors.name }))] }), _jsxs("div", { children: [_jsx("label", { htmlFor: "email", className: "block text-white mb-2", children: "Email Address" }), _jsx(Input, { id: "email", name: "email", type: "email", value: formData.email, onChange: handleChange, className: `bg-zion-blue-dark border-zion-blue-light text-white ${errors.email ? 'border-red-500 focus-visible:ring-red-500' : ''}`, placeholder: "john@example.com", required: true }), errors.email && (_jsx("p", { className: "mt-1 text-sm text-red-500", children: errors.email }))] })] }), _jsxs("div", { children: [_jsx("label", { htmlFor: "subject", className: "block text-white mb-2", children: "Subject" }), _jsx(Input, { id: "subject", name: "subject", value: formData.subject, onChange: handleChange, className: `bg-zion-blue-dark border-zion-blue-light text-white ${errors.subject ? 'border-red-500 focus-visible:ring-red-500' : ''}`, placeholder: "How can we help you?", required: true }), errors.subject && (_jsx("p", { className: "mt-1 text-sm text-red-500", children: errors.subject }))] }), _jsxs("div", { children: [_jsx("label", { htmlFor: "message", className: "block text-white mb-2", children: "Message" }), _jsx(Textarea, { id: "message", name: "message", value: formData.message, onChange: handleChange, className: `bg-zion-blue-dark border-zion-blue-light text-white min-h-[150px] ${errors.message ? 'border-red-500 focus-visible:ring-red-500' : ''}`, placeholder: "Tell us what you'd like to know...", required: true }), errors.message && (_jsx("p", { className: "mt-1 text-sm text-red-500", children: errors.message }))] }), _jsx(Button, { type: "submit", className: "w-full bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple", disabled: isSubmitting, children: isSubmitting ? "Sending..." : "Send Message" })] })] }), _jsxs("div", { children: [_jsx("h2", { className: "text-3xl font-bold text-white mb-6", children: "Our Offices" }), _jsx("div", { className: "grid grid-cols-1 gap-6", children: offices.map((office, index) => (_jsxs(Card, { className: "bg-zion-blue-dark border border-zion-blue-light p-6", children: [_jsx("h3", { className: "text-xl font-bold text-white mb-3", children: office.name }), _jsxs("div", { className: "space-y-3", children: [_jsxs("div", { className: "flex items-start", children: [_jsx(MapPin, { className: "w-5 h-5 text-zion-cyan mr-3 mt-1 flex-shrink-0" }), _jsx("span", { className: "text-zion-slate-light", children: office.address })] }), _jsxs("div", { className: "flex items-center", children: [_jsx(Phone, { className: "w-5 h-5 text-zion-cyan mr-3 flex-shrink-0" }), _jsx("span", { className: "text-zion-slate-light", children: office.phone })] }), _jsxs("div", { className: "flex items-center", children: [_jsx(Mail, { className: "w-5 h-5 text-zion-cyan mr-3 flex-shrink-0" }), _jsx("a", { href: `mailto:${office.email}`, className: "text-zion-cyan hover:underline", children: office.email })] })] })] }, index))) }), _jsx("div", { className: "mt-8 bg-zion-blue-dark border border-zion-blue-light rounded-lg overflow-hidden", children: _jsx("iframe", { src: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12615.297199052566!2d-122.41941455!3d37.7749295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858080b9b0a169%3A0x1ac94fe0532d9e81!2sSan%20Francisco%2C%20CA%2C%20USA!5e0!3m2!1sen!2suk!4v1651234567890!5m2!1sen!2suk", width: "100%", height: "300", style: { border: 0 }, allowFullScreen: true, loading: "lazy", referrerPolicy: "no-referrer-when-downgrade", title: "Zion Office Locations" }) }), _jsx("div", { className: "mt-8", children: _jsxs(Card, { className: "bg-gradient-to-r from-zion-blue-dark to-zion-blue-light border border-zion-purple/30 p-6", children: [_jsxs("div", { className: "flex items-center", children: [_jsx("div", { className: "bg-zion-purple/20 p-3 rounded-full mr-4", children: _jsx(MessageSquare, { className: "h-6 w-6 text-zion-purple" }) }), _jsxs("div", { children: [_jsx("h3", { className: "text-white text-lg font-bold", children: "Live AI Support" }), _jsx("p", { className: "text-zion-slate-light", children: "Get instant answers to your questions" })] })] }), _jsx(Button, { onClick: () => setIsChatOpen(true), className: "w-full mt-4 bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple", children: "Chat With Our AI Assistant" })] }) })] })] }), _jsxs("div", { className: "bg-gradient-to-r from-zion-blue-dark to-zion-blue-light border border-zion-purple/30 rounded-xl p-8 md:p-12 text-center", children: [_jsx("h2", { className: "text-3xl font-bold text-white mb-6", children: "Need immediate assistance?" }), _jsx("p", { className: "text-zion-slate-light text-lg mb-8 max-w-3xl mx-auto", children: "Our customer support team is available 24/7 to help you with any questions." }), _jsxs("div", { className: "flex flex-col sm:flex-row justify-center gap-4", children: [_jsxs(Button, { onClick: () => setIsChatOpen(true), className: "bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple", children: [_jsx(MessageSquare, { className: "mr-2 h-5 w-5" }), "Chat With AI"] }), _jsx(Button, { variant: "outline", className: "border-zion-cyan text-zion-cyan hover:bg-zion-cyan/10", asChild: true, children: _jsxs("a", { href: "mailto:support@ziontechgroup.com", children: [_jsx(Mail, { className: "mr-2 h-5 w-5" }), "Email Support"] }) })] })] })] }) }), isChatOpen && (_jsx(ChatAssistant, { isOpen: isChatOpen, onClose: () => setIsChatOpen(false), recipient: {
-                    id: 'ai-assistant',
-                    name: 'AI Assistant',
-                    avatarUrl: 'https://placehold.co/64x64?text=AI',
-                    role: 'Support Bot'
-                }, onSendMessage: handleSendMessage }))] }));
-}
+    const services = [
+        'AI & Machine Learning',
+        'Cloud Migration',
+        'Cybersecurity',
+        'Digital Transformation',
+        'Web Development',
+        'Mobile Development',
+        'IT Consulting',
+        'Data Analytics',
+        'Business Process Automation',
+        'Custom Software Development'
+    ];
+    return (_jsxs("div", { className: "min-h-screen bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-slate-dark relative overflow-hidden", children: [_jsx(SEO, { title: "Contact Us - Get Expert Technology Consultation | Zion Tech Group", description: "Ready to transform your business? Contact Zion Tech Group for expert technology consultation, AI solutions, and digital transformation services. Call +1 (302) 464-0950.", canonical: "/contact" }), _jsx(FuturisticAnimatedBackground, { intensity: "medium" }), _jsx("section", { className: "relative z-10 pt-32 pb-20 px-4", children: _jsx("div", { className: "max-w-7xl mx-auto text-center", children: _jsxs(motion.div, { initial: { opacity: 0, y: 30 }, animate: { opacity: 1, y: 0 }, transition: { duration: 0.8 }, children: [_jsx(Badge, { className: "mb-6 bg-zion-cyan/20 text-zion-cyan border-zion-cyan/30", children: "\uD83D\uDCDE Get In Touch" }), _jsxs(motion.h1, { className: "text-5xl md:text-7xl font-bold text-white mb-8 leading-tight", initial: { opacity: 0, scale: 0.8 }, animate: { opacity: 1, scale: 1 }, transition: { duration: 1, delay: 0.2 }, children: ["Let's Transform Your", _jsx("br", {}), _jsx("span", { className: "bg-gradient-to-r from-zion-cyan via-zion-purple to-zion-pink bg-clip-text text-transparent", children: "Business Together" })] }), _jsx(motion.p, { className: "text-xl md:text-2xl text-zion-slate-light mb-12 max-w-4xl mx-auto leading-relaxed", initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 }, transition: { duration: 0.8, delay: 0.4 }, children: "Ready to take your business to the next level? Our team of technology experts is here to help you implement innovative solutions that drive growth and competitive advantage." })] }) }) }), _jsx("section", { className: "relative z-10 py-20 px-4", children: _jsx("div", { className: "max-w-7xl mx-auto", children: _jsx("div", { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8", children: contactMethods.map((method, index) => (_jsx(motion.div, { initial: { opacity: 0, y: 30 }, whileInView: { opacity: 1, y: 0 }, transition: { duration: 0.6, delay: index * 0.1 }, viewport: { once: true }, whileHover: { y: -10, scale: 1.02 }, className: "group", children: _jsxs(Card, { className: `bg-zion-blue-dark/30 backdrop-blur-lg border-zion-blue-light/20 hover:border-zion-cyan/50 transition-all duration-300 h-full p-6 text-center cursor-pointer ${method.action ? 'hover:shadow-2xl hover:shadow-zion-cyan/20' : ''}`, onClick: method.action || undefined, children: [_jsx("div", { className: `w-16 h-16 mx-auto mb-4 rounded-xl bg-gradient-to-br ${method.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`, children: _jsx(method.icon, { className: "w-8 h-8 text-white" }) }), _jsx("h3", { className: "text-xl font-bold text-white mb-3 group-hover:text-zion-cyan transition-colors", children: method.title }), _jsx("p", { className: "text-zion-cyan font-medium mb-2", children: method.value }), _jsx("p", { className: "text-zion-slate-light text-sm leading-relaxed", children: method.description })] }) }, method.title))) }) }) }), _jsx("section", { className: "relative z-10 py-20 px-4", children: _jsx("div", { className: "max-w-4xl mx-auto", children: _jsx(motion.div, { initial: { opacity: 0, y: 30 }, whileInView: { opacity: 1, y: 0 }, transition: { duration: 0.8 }, viewport: { once: true }, children: _jsxs(Card, { className: "bg-zion-blue-dark/30 backdrop-blur-lg border-zion-blue-light/30 p-8 md:p-12", children: [_jsxs("div", { className: "text-center mb-8", children: [_jsx("h2", { className: "text-3xl md:text-4xl font-bold text-white mb-4", children: "Send Us a Message" }), _jsx("p", { className: "text-zion-slate-light text-lg", children: "Tell us about your project and we'll get back to you within 2 hours" })] }), isSubmitted ? (_jsxs(motion.div, { className: "text-center py-12", initial: { opacity: 0, scale: 0.8 }, animate: { opacity: 1, scale: 1 }, transition: { duration: 0.5 }, children: [_jsx("div", { className: "w-20 h-20 mx-auto mb-6 bg-green-500/20 rounded-full flex items-center justify-center", children: _jsx(CheckCircle, { className: "w-10 h-10 text-green-400" }) }), _jsx("h3", { className: "text-2xl font-bold text-white mb-4", children: "Message Sent Successfully!" }), _jsx("p", { className: "text-zion-slate-light", children: "Thank you for contacting us. We'll get back to you within 2 hours." })] })) : (_jsxs("form", { onSubmit: handleSubmit, className: "space-y-6", children: [_jsxs("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-6", children: [_jsxs("div", { children: [_jsx("label", { className: "block text-white font-medium mb-2", children: "Full Name *" }), _jsx(Input, { type: "text", name: "name", value: formData.name, onChange: handleInputChange, required: true, className: "bg-zion-slate-dark/50 border-zion-blue-light/30 text-white placeholder-zion-slate-light focus:border-zion-cyan", placeholder: "Enter your full name" })] }), _jsxs("div", { children: [_jsx("label", { className: "block text-white font-medium mb-2", children: "Email Address *" }), _jsx(Input, { type: "email", name: "email", value: formData.email, onChange: handleInputChange, required: true, className: "bg-zion-slate-dark/50 border-zion-blue-light/30 text-white placeholder-zion-slate-light focus:border-zion-cyan", placeholder: "Enter your email" })] })] }), _jsxs("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-6", children: [_jsxs("div", { children: [_jsx("label", { className: "block text-white font-medium mb-2", children: "Company Name" }), _jsx(Input, { type: "text", name: "company", value: formData.company, onChange: handleInputChange, className: "bg-zion-slate-dark/50 border-zion-blue-light/30 text-white placeholder-zion-slate-light focus:border-zion-cyan", placeholder: "Enter your company name" })] }), _jsxs("div", { children: [_jsx("label", { className: "block text-white font-medium mb-2", children: "Phone Number" }), _jsx(Input, { type: "tel", name: "phone", value: formData.phone, onChange: handleInputChange, className: "bg-zion-slate-dark/50 border-zion-blue-light/30 text-white placeholder-zion-slate-light focus:border-zion-cyan", placeholder: "Enter your phone number" })] })] }), _jsxs("div", { children: [_jsx("label", { className: "block text-white font-medium mb-2", children: "Service of Interest" }), _jsxs("select", { name: "service", value: formData.service, onChange: handleInputChange, className: "w-full bg-zion-slate-dark/50 border border-zion-blue-light/30 text-white rounded-md px-3 py-2 focus:border-zion-cyan focus:outline-none", children: [_jsx("option", { value: "", children: "Select a service" }), services.map(service => (_jsx("option", { value: service, children: service }, service)))] })] }), _jsxs("div", { children: [_jsx("label", { className: "block text-white font-medium mb-2", children: "Project Details *" }), _jsx(Textarea, { name: "message", value: formData.message, onChange: handleInputChange, required: true, rows: 6, className: "bg-zion-slate-dark/50 border-zion-blue-light/30 text-white placeholder-zion-slate-light focus:border-zion-cyan resize-none", placeholder: "Tell us about your project, goals, and how we can help..." })] }), _jsx("div", { className: "text-center", children: _jsx(FuturisticNeonButton, { type: "submit", disabled: isSubmitting, size: "lg", className: "text-lg px-8 py-4", children: isSubmitting ? (_jsxs(_Fragment, { children: [_jsx("div", { className: "w-5 h-5 border-2 border-current border-t-transparent rounded-full animate-spin mr-2" }), "Sending Message..."] })) : (_jsxs(_Fragment, { children: [_jsx(Send, { className: "w-5 h-5 mr-2" }), "Send Message"] })) }) })] }))] }) }) }) }), _jsx("section", { className: "relative z-10 py-20 px-4 bg-zion-blue-dark/30", children: _jsx("div", { className: "max-w-7xl mx-auto", children: _jsxs(motion.div, { initial: { opacity: 0, y: 30 }, whileInView: { opacity: 1, y: 0 }, transition: { duration: 0.8 }, viewport: { once: true }, children: [_jsxs("div", { className: "text-center mb-16", children: [_jsxs("h2", { className: "text-4xl md:text-5xl font-bold text-white mb-6", children: ["Why Choose ", _jsx("span", { className: "text-zion-cyan", children: "Zion Tech Group" }), "?"] }), _jsx("p", { className: "text-xl text-zion-slate-light max-w-3xl mx-auto", children: "We're not just another technology company. We're your strategic partner in digital transformation and business innovation." })] }), _jsxs("div", { className: "grid grid-cols-1 md:grid-cols-3 gap-8", children: [_jsxs(motion.div, { initial: { opacity: 0, y: 20 }, whileInView: { opacity: 1, y: 0 }, transition: { duration: 0.6, delay: 0.1 }, viewport: { once: true }, className: "text-center", children: [_jsx("div", { className: "w-16 h-16 mx-auto mb-4 bg-zion-cyan/20 rounded-full flex items-center justify-center", children: _jsx(Building, { className: "w-8 h-8 text-zion-cyan" }) }), _jsx("h3", { className: "text-xl font-bold text-white mb-3", children: "Enterprise Experience" }), _jsx("p", { className: "text-zion-slate-light", children: "Over 10 years of experience working with Fortune 500 companies and startups alike, delivering scalable solutions that grow with your business." })] }), _jsxs(motion.div, { initial: { opacity: 0, y: 20 }, whileInView: { opacity: 1, y: 0 }, transition: { duration: 0.6, delay: 0.2 }, viewport: { once: true }, className: "text-center", children: [_jsx("div", { className: "w-16 h-16 mx-auto mb-4 bg-zion-cyan/20 rounded-full flex items-center justify-center", children: _jsx(Globe, { className: "w-8 h-8 text-zion-cyan" }) }), _jsx("h3", { className: "text-xl font-bold text-white mb-3", children: "Global Reach" }), _jsx("p", { className: "text-zion-slate-light", children: "Serving clients worldwide with remote-first approach, ensuring quality delivery regardless of your location or timezone." })] }), _jsxs(motion.div, { initial: { opacity: 0, y: 20 }, whileInView: { opacity: 1, y: 0 }, transition: { duration: 0.6, delay: 0.3 }, viewport: { once: true }, className: "text-center", children: [_jsx("div", { className: "w-16 h-16 mx-auto mb-4 bg-zion-cyan/20 rounded-full flex items-center justify-center", children: _jsx(MessageSquare, { className: "w-8 h-8 text-zion-cyan" }) }), _jsx("h3", { className: "text-xl font-bold text-white mb-3", children: "24/7 Support" }), _jsx("p", { className: "text-zion-slate-light", children: "Round-the-clock support and maintenance, ensuring your systems run smoothly and your business never stops growing." })] })] })] }) }) }), _jsx("section", { className: "relative z-10 py-20 px-4", children: _jsx("div", { className: "max-w-4xl mx-auto text-center", children: _jsx(motion.div, { initial: { opacity: 0, y: 30 }, whileInView: { opacity: 1, y: 0 }, transition: { duration: 0.8 }, viewport: { once: true }, children: _jsxs(Card, { className: "bg-gradient-to-r from-zion-blue-dark/50 to-zion-purple-dark/50 backdrop-blur-lg border-zion-cyan/30 p-12", children: [_jsx("h2", { className: "text-4xl md:text-5xl font-bold text-white mb-6", children: "Ready to Get Started?" }), _jsx("p", { className: "text-xl text-zion-slate-light mb-8 max-w-2xl mx-auto", children: "Don't wait to transform your business. Contact us today and let's discuss how we can help you achieve your technology goals." }), _jsxs("div", { className: "flex flex-col sm:flex-row gap-4 justify-center", children: [_jsx(FuturisticNeonButton, { onClick: () => window.location.href = 'tel:+13024640950', size: "lg", className: "text-lg px-8 py-4", children: "Call Now" }), _jsx(Button, { variant: "outline", size: "lg", onClick: () => window.location.href = 'mailto:kleber@ziontechgroup.com?subject=Business Consultation Request', className: "border-zion-cyan/50 text-zion-cyan hover:bg-zion-cyan/10 hover:border-zion-cyan text-lg px-8 py-4", children: "Schedule Consultation" })] })] }) }) }) })] }));
+};
+export default Contact;

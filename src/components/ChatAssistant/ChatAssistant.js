@@ -2,8 +2,8 @@ import { jsx as _jsx, jsxs as _jsxs, Fragment as _Fragment } from "react/jsx-run
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Send, Bot, X, Minimize2, Maximize2, MessageCircle } from 'lucide-react';
-import { Button } from '../ui/button';
-import { Input } from '../ui/input';
+import { Button } from '../components/ui/button';
+import { Input } from '../components/ui/input';
 import { ChatMessage } from './ChatMessage';
 const ChatAssistant = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -42,7 +42,7 @@ const ChatAssistant = () => {
             sender: 'user',
             timestamp: new Date()
         };
-        setMessages(prev => [...prev, userMessage]);
+        setMessages((prev) => [...prev, userMessage]);
         setInputValue('');
         setIsTyping(true);
         // Simulate AI response
@@ -53,7 +53,7 @@ const ChatAssistant = () => {
                 sender: 'bot',
                 timestamp: new Date()
             };
-            setMessages(prev => [...prev, botMessage]);
+            setMessages((prev) => [...prev, botMessage]);
             setIsTyping(false);
         }, 1000 + Math.random() * 2000);
     };
