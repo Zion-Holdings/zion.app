@@ -41,6 +41,12 @@
   "include": [
     "src"
   ],
+  "exclude": [
+    "src/pages/FAQ.tsx",
+    "src/pages/RequestQuote.tsx",
+    "src/pages/ServicesPricingPage.tsx",
+    "src/pages/Sitemap.tsx"
+  ],
   "references": [
     {
       "path": "./tsconfig.node.json"
