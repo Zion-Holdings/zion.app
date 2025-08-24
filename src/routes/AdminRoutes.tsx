@@ -6,6 +6,7 @@ import { ProtectedRoute } from "@/components/ProtectedRoute";
 // Admin Pages
 import QuoteManager from "@/pages/admin/QuoteManager";
 import ReviewsModeration from "@/pages/admin/ReviewsModeration";
+import DisputeManagement from "@/pages/admin/DisputeManagement";
 import WhitelabelManager from "@/pages/admin/WhitelabelManager";
 import PartnerManager from "@/pages/admin/PartnerManager";
 import AppMetadataManager from "@/pages/admin/AppMetadataManager";
@@ -31,6 +32,15 @@ const AdminRoutes = () => {
         element={
           <ProtectedRoute adminOnly={true}>
             <ReviewsModeration />
+          </ProtectedRoute>
+        }
+      />
+      
+      <Route
+        path="/admin/disputes"
+        element={
+          <ProtectedRoute adminOnly={true}>
+            <DisputeManagement />
           </ProtectedRoute>
         }
       />

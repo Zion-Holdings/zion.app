@@ -18,10 +18,13 @@
   },
   "nav": {
     "home": "Home",
+    "about": "About",
     "marketplace": "Marketplace",
+    "services": "Services",
     "categories": "Categories",
     "talent": "Talent",
     "equipment": "Equipment",
+    "blog": "Blog",
     "community": "Community",
     "dashboard": "Dashboard",
     "messages": "Messages",

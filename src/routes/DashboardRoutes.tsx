@@ -22,6 +22,19 @@ import DeveloperPortal from "@/pages/DeveloperPortal";
 import WalletPage from "@/pages/Wallet";
 import ContractBuilder from "@/pages/ContractBuilder";
 import Projects from "@/pages/Projects";
+import DisputesPage from "@/pages/dashboard/DisputesPage";
+import DisputeDetail from "@/pages/dashboard/DisputeDetailPage";
+import UpdatePassword from "@/pages/UpdatePassword";
+import Onboarding from "@/pages/Onboarding";
+import TalentOnboarding from "@/pages/TalentOnboarding";
+import ServiceOnboarding from "@/pages/ServiceOnboarding";
+import CompanyWorkspace from "@/pages/CompanyWorkspace";
+import EnterpriseAdmin from "@/pages/EnterpriseAdmin";
+import EnterpriseBilling from "@/pages/EnterpriseBilling";
+import EnterprisePlans from "@/pages/EnterprisePlans";
+import EnterpriseWorkspace from "@/pages/EnterpriseWorkspace";
+import EnterpriseSettings from "@/pages/EnterpriseSettings";
+import EnterpriseUsers from "@/pages/EnterpriseUsers";
 
 const DashboardRoutes = () => {
   return (
@@ -68,7 +81,7 @@ const DashboardRoutes = () => {
         } 
       />
       <Route 
-        path="/project/:id/milestones" 
+        path="/project/:projectId/milestones" 
         element={
           <ProtectedRoute>
             <ProjectMilestones />
@@ -76,7 +89,7 @@ const DashboardRoutes = () => {
         } 
       />
       <Route
-        path="/project/:id"
+        path="/project/:projectId"
         element={
           <ProtectedRoute>
             <ProjectDetails />
@@ -84,7 +97,7 @@ const DashboardRoutes = () => {
         }
       />
       <Route
-        path="/project/:id/room"
+        path="/project/:projectId/room"
         element={
           <ProtectedRoute>
             <ProjectRoom />
@@ -148,10 +161,34 @@ const DashboardRoutes = () => {
         }
       />
       <Route
+        path="/disputes"
+        element={
+          <ProtectedRoute>
+            <DisputesPage />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/disputes/:disputeId"
+        element={
+          <ProtectedRoute>
+            <DisputeDetail />
+          </ProtectedRoute>
+        }
+      />
+      <Route
         path="/projects"
         element={
           <ProtectedRoute>
             <Projects />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/project/:projectId/room"
+        element={
+          <ProtectedRoute>
+            <ProjectRoom />
           </ProtectedRoute>
         }
       />
@@ -200,6 +237,94 @@ const DashboardRoutes = () => {
         element={
           <ProtectedRoute>
             <ContractBuilder />
+          </ProtectedRoute>
+        } 
+      />
+      <Route
+        path="/update-password"
+        element={
+          <ProtectedRoute>
+            <UpdatePassword />
+          </ProtectedRoute>
+        } 
+      />
+      <Route
+        path="/onboarding"
+        element={
+          <ProtectedRoute>
+            <Onboarding />
+          </ProtectedRoute>
+        } 
+      />
+      <Route
+        path="/talent-onboarding"
+        element={
+          <ProtectedRoute>
+            <TalentOnboarding />
+          </ProtectedRoute>
+        } 
+      />
+      <Route
+        path="/service-onboarding"
+        element={
+          <ProtectedRoute>
+            <ServiceOnboarding />
+          </ProtectedRoute>
+        } 
+      />
+      <Route
+        path="/company-workspace"
+        element={
+          <ProtectedRoute>
+            <CompanyWorkspace />
+          </ProtectedRoute>
+        } 
+      />
+      <Route
+        path="/enterprise-admin"
+        element={
+          <ProtectedRoute>
+            <EnterpriseAdmin />
+          </ProtectedRoute>
+        } 
+      />
+      <Route
+        path="/enterprise-billing"
+        element={
+          <ProtectedRoute>
+            <EnterpriseBilling />
+          </ProtectedRoute>
+        } 
+      />
+      <Route
+        path="/enterprise-plans"
+        element={
+          <ProtectedRoute>
+            <EnterprisePlans />
+          </ProtectedRoute>
+        } 
+      />
+      <Route
+        path="/enterprise-workspace"
+        element={
+          <ProtectedRoute>
+            <EnterpriseWorkspace />
+          </ProtectedRoute>
+        } 
+      />
+      <Route
+        path="/enterprise-settings"
+        element={
+          <ProtectedRoute>
+            <EnterpriseSettings />
+          </ProtectedRoute>
+        } 
+      />
+      <Route
+        path="/enterprise-users"
+        element={
+          <ProtectedRoute>
+            <EnterpriseUsers />
           </ProtectedRoute>
         } 
       />

@@ -17,6 +17,7 @@ import HelpCenterPage from "@/pages/HelpCenterPage";
 import AccountSettings from "@/pages/AccountSettings";
 import ProjectRoom from "@/pages/ProjectRoom";
 import VideoCall from "@/pages/VideoCall";
+import CreateProfile from "@/pages/CreateProfile";
 
 const ContentRoutes = () => {
   return (
@@ -31,6 +32,10 @@ const ContentRoutes = () => {
       {/* Help Center Routes */}
       <Route path="/help" element={<HelpCenterPage />} />
       <Route path="/support" element={<HelpCenterPage />} />
+      <Route path="/faq" element={<HelpCenterPage />} />
+      
+      {/* Profile Creation Routes */}
+      <Route path="/create-profile" element={<CreateProfile />} />
       
       {/* Blog Routes */}
       <Route path="/blog" element={<Blog />} />
