@@ -1,6 +1,5 @@
 import React from 'react';
 import Card from '../ui/Card';
-import { ArrowRight } from 'lucide-react';
 
 interface Feature {
   icon: React.ReactNode;
@@ -63,7 +62,7 @@ export default function Features({ title, subtitle, features, columns = 3 }: Fea
                   </div>
                 )}
               </div>
-            </div>
+            </Card>
           ))}
         </div>
 

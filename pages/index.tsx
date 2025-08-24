@@ -1,8 +1,86 @@
-import type { NextPage } from 'next';
-import Layout from '../components/Layout';
-import HeroSection from '../components/sections/HeroSection';
-import ServicesSection from '../components/sections/ServicesSection';
-import ContactForm from '../components/forms/ContactForm';
+import React, { useState, useEffect } from 'react';
+import Head from 'next/head';
+import { motion } from 'framer-motion';
+import { 
+  ArrowRight, Brain, Shield, Rocket, Cpu, Database, Atom, Users, 
+  CheckCircle, Network
+} from 'lucide-react';
+import EnhancedNavigation from '../components/EnhancedNavigation';
+import EnhancedFooter from '../components/EnhancedFooter';
+import EnhancedContactForm from '../components/EnhancedContactForm';
+import EnhancedServicesShowcase from '../components/EnhancedServicesShowcase';
+import EnhancedTestimonialsSection from '../components/EnhancedTestimonialsSection';
+
+export default function HomePage() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
+  const services = [
+    {
+      title: "AI Business Intelligence",
+      description: "Transform data into actionable insights with AI-powered analytics",
+      icon: Brain,
+      color: "from-purple-500 to-pink-500",
+      link: "https://ziontechgroup.com/ai-business-intelligence",
+      price: "$499/month",
+      features: ["AI-powered dashboards", "Predictive analytics", "Real-time insights"]
+    },
+    {
+      title: "Quantum Cybersecurity",
+      description: "Future-proof security with quantum-resistant encryption and AI threat detection",
+      icon: Shield,
+      color: "from-red-500 to-orange-500",
+      link: "https://ziontechgroup.com/quantum-cybersecurity",
+      price: "$799/month",
+      features: ["Quantum-resistant encryption", "AI threat detection", "Zero-trust architecture"]
+    },
+    {
+      title: "AI Customer Experience",
+      description: "Deliver personalized customer experiences at scale with AI",
+      icon: Users,
+      color: "from-green-500 to-teal-500",
+      link: "https://ziontechgroup.com/ai-customer-experience",
+      price: "$399/month",
+      features: ["Customer journey mapping", "AI personalization", "Sentiment analysis"]
+    },
+    {
+      title: "Edge Computing Orchestration",
+      description: "Deploy and manage applications at the edge with intelligent orchestration",
+      icon: Network,
+      color: "from-purple-500 to-pink-500",
+      link: "https://ziontechgroup.com/edge-computing-orchestration",
+      price: "$349/month",
+      features: ["Edge node management", "IoT device management", "Real-time monitoring"]
+    },
+    {
+      title: "Space Technology Innovation",
+      description: "Accelerate space exploration with cutting-edge technology solutions",
+      icon: Rocket,
+      color: "from-violet-500 to-purple-500",
+      link: "https://ziontechgroup.com/space-technology",
+      price: "$2,499/month",
+      features: ["Satellite management", "AI mission planning", "Quantum communication"]
+    },
+    {
+      title: "Neural Interface Development",
+      description: "Build the future of human-computer interaction with neural interfaces",
+      icon: Brain,
+      color: "from-pink-500 to-rose-500",
+      link: "https://ziontechgroup.com/neural-interface",
+      price: "$899/month",
+      features: ["BCI development tools", "Neural signal processing", "AI pattern recognition"]
+    }
+  ];
+
+  const stats = [
+    { number: "500+", label: "Projects Delivered", icon: CheckCircle },
+    { number: "50+", label: "Enterprise Clients", icon: Users },
+    { number: "99.9%", label: "Uptime Guarantee", icon: Shield },
+    { number: "24/7", label: "Support Available", icon: Clock }
+  ];
 
   return (
     <Layout>

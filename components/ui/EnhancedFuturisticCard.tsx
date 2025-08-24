@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Check, ArrowRight, Mail, Phone, MapPin, Globe } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 interface EnhancedFuturisticCardProps {
   children: React.ReactNode;
@@ -26,6 +25,8 @@ const EnhancedFuturisticCard: React.FC<EnhancedFuturisticCardProps> = ({
   const [isHovered, setIsHovered] = useState(false);
   const [isPressed, setIsPressed] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const animationRef = useRef<number | undefined>(undefined);
 
   // Get variant-specific colors and effects
   const getVariantStyles = () => {

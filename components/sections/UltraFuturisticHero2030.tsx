@@ -137,7 +137,7 @@ const UltraFuturisticHero2030: React.FC = () => {
             className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-12 leading-relaxed"
           >
             Experience the next generation of revolutionary technology services. From AI consciousness 
-            and quantum computing to space mining and DNA computing, we&apos;re building the future today.
+            and quantum computing to space mining and DNA computing, we're building the future today.
           </motion.p>
 
           <motion.div
