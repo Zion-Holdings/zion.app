@@ -218,6 +218,7 @@ export default function MainFrontIndex() {
                 ['Automation Hub', '/automation'],
                 ['SEO Audit', '/reports/seo'],
                 ['AI Trends', '/reports/ai-trends'],
+                ['Roadmap', '/reports/roadmap'],
                 ['Redirect Healer', '/.netlify/functions/redirect-healer'],
                 ['Sitemap Prioritizer', '/.netlify/functions/sitemap-prioritizer'],
                 ['Newsroom', '/newsroom'],
