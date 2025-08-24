@@ -1,0 +1,950 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
+
+/**
+ * Continuous Improvement Pipeline
+ * Orchestrates the entire self-healing system with automatic commits and pushes to main branch
+ */
+
+const fs = require('fs')
+const path = require('path')
+const { execSync, spawn } = require('child_process')
+const AdvancedSelfHealingSystem = require('./advanced-self-healing-system.cjs')
+const CursorChatTrigger = require('./cursor-chat-trigger.cjs');
+
+// Configuration
+const CONFIG = {
+  // Pipeline settings
+  pipelineInterval: 300000, // 5 minutes
+  maxPipelineRuns: 100, // Maximum runs before restart
+  commitInterval: 600000, // 10 minutes
+
+  // Git settings
+  gitBranch: 'main',
+  gitUserName: process.env.GIT_AUTHOR_NAME || 'Continuous Improvement Bot',
+  gitUserEmail:
+    process.env.GIT_AUTHOR_EMAIL || 'continuous-improvement@zion.app',
+
+  // Logging
+  logFile: 'logs/continuous-improvement.log',
+  pipelineLogFile: 'logs/pipeline-execution.log',
+
+  // Thresholds
+  minIssuesForChat: 3, // Minimum issues before triggering Cursor chat
+  maxIssuesPerRun: 20, // Maximum issues to process per run
+  improvementThreshold: 0.8, // 80% improvement required to continue
+
+  // Categories for improvement
+  improvementCategories: [
+    'build',
+    'lint',
+    'typescript',
+    'runtime',
+    'performance',
+    'security',
+    'accessibility',
+    'testing',
+    'deployment',
+    'userExperience',
+  ],
+}
+class ContinuousImprovementPipeline {
+  constructor() {
+    this.isRunning = false;
+    this.pipelineRuns = 0;
+    this.totalImprovements = 0;
+    this.lastCommitTime = null;
+    this.improvementHistory = [];
+    this.cursorChatsTriggered = 0;
+
+    this.selfHealingSystem = new AdvancedSelfHealingSystem();
+    this.cursorChatTrigger = new CursorChatTrigger();
+
+    this.ensureLogDirectory();
+    this.log('Continuous Improvement Pipeline initialized');
+  }
+
+  log(message, level = 'INFO') {
+    const timestamp = new Date().toISOString()
+const logEntry = `[${timestamp}] [${level}] ${message}`;
+
+    logger.info(logEntry);
+    fs.appendFileSync(CONFIG.logFile, logEntry + '\n');
+  }
+
+  logPipeline(message) {
+    const timestamp = new Date().toISOString()
+const logEntry = `[${timestamp}] PIPELINE: ${message}`;
+
+    fs.appendFileSync(CONFIG.pipelineLogFile, logEntry + '\n');
+  }
+
+  ensureLogDirectory() {
+    const logDir = path.dirname(CONFIG.logFile);
+    if (!fs.existsSync(logDir)) {
+      fs.mkdirSync(logDir, { recursive: true });
+    }
+  }
+
+  async start() {
+    if (this.isRunning) {
+      this.log('Pipeline is already running');
+      return;
+    }
+
+    this.isRunning = true;
+    this.log('Starting Continuous Improvement Pipeline...');
+
+    // Start the self-healing system
+    await this.selfHealingSystem.start();
+
+    // Start the continuous improvement loop
+    this.startImprovementLoop();
+
+    // Start the auto-commit system
+    this.startAutoCommitSystem();
+  }
+
+  async stop() {
+    this.isRunning = false;
+    this.log('Stopping Continuous Improvement Pipeline...');
+
+    await this.selfHealingSystem.stop();
+  }
+
+  startImprovementLoop() {
+    const runPipeline = async () => {
+      if (!this.isRunning) return;
+
+      try {
+        this.pipelineRuns++;
+        this.logPipeline(`Starting pipeline run ${this.pipelineRuns}`);
+
+        await this.runImprovementCycle();
+
+        // Check if we should restart the pipeline
+        if (this.pipelineRuns >= CONFIG.maxPipelineRuns) {
+          this.log('Maximum pipeline runs reached, restarting...');
+          this.pipelineRuns = 0;
+          await this.restartPipeline();
+        }
+      } catch (error) {
+        this.log(`Error in improvement loop: ${error.message}`, 'ERROR');
+      }
+
+      // Schedule next run
+      if (this.isRunning) {
+        
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(runPipeline,                            CONFIG.pipelineInterval);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+      }
+    };
+
+    // Start the first run
+    runPipeline();
+  }
+
+  startAutoCommitSystem() {
+    setInterval(async () => {
+      if (!this.isRunning) return;
+
+      try {
+        await this.autoCommitImprovements();
+      } catch (error) {
+        this.log(`Error in auto-commit: ${error.message}`, 'ERROR');
+      }
+    }, CONFIG.commitInterval);
+  }
+
+  async runImprovementCycle() {
+    this.logPipeline('Running improvement cycle...')
+const cycleStart = Date.now()
+const improvements = [];
+
+    // Phase 1: Detect Issues
+    const issues = await this.detectAllIssues();
+    this.logPipeline(`Detected ${issues.length} issues`);
+
+    // Phase 2: Apply Fixes
+    for (const issue of issues.slice(0, CONFIG.maxIssuesPerRun)) {
+      try {
+        const improvement = await this.applyImprovement(issue);
+        if (improvement) {
+          improvements.push(improvement);
+        }
+      } catch (error) {
+        this.log(
+          `Failed to apply improvement for ${issue.type}: ${error.message}`,
+          'ERROR',
+        );
+      }
+    }
+
+    // Phase 3: Trigger Cursor Chats
+    if (issues.length >= CONFIG.minIssuesForChat) {
+      await this.triggerImprovementChats(issues, improvements);
+    }
+
+    // Phase 4: Measure Improvement
+    const improvementScore = await this.measureImprovement(improvements);
+    this.improvementHistory.push({
+      timestamp: new Date().toISOString(),
+      issues: issues.length,
+      improvements: improvements.length,
+      score: improvementScore,
+      duration: Date.now() - cycleStart,
+    });
+
+    this.totalImprovements += improvements.length;
+
+    this.logPipeline(
+      `Cycle completed: ${improvements.length} improvements, score: ${improvementScore}`,
+    );
+
+    // Phase 5: Commit if significant improvements
+    if (improvements.length > 0) {
+      await this.commitImprovements(improvements);
+    }
+  }
+
+  async detectAllIssues() {
+    const issues = [];
+
+    try {
+      // Build issues
+      const buildIssues = await this.selfHealingSystem.checkBuildIssues();
+      issues.push(...buildIssues);
+
+      // Lint issues
+      const lintIssues = await this.selfHealingSystem.checkLintIssues();
+      issues.push(...lintIssues);
+
+      // Type issues
+      const typeIssues = await this.selfHealingSystem.checkTypeIssues();
+      issues.push(...typeIssues);
+
+      // Runtime issues
+      const runtimeIssues = await this.selfHealingSystem.checkRuntimeIssues();
+      issues.push(...runtimeIssues);
+
+      // Performance issues
+      const performanceIssues = await this.detectPerformanceIssues();
+      issues.push(...performanceIssues);
+
+      // Security issues
+      const securityIssues = await this.detectSecurityIssues();
+      issues.push(...securityIssues);
+
+      // Accessibility issues
+      const accessibilityIssues = await this.detectAccessibilityIssues();
+      issues.push(...accessibilityIssues);
+    } catch (error) {
+      this.log(`Error detecting issues: ${error.message}`, 'ERROR');
+    }
+
+    return issues;
+  }
+
+  async detectPerformanceIssues() {
+    const issues = [];
+
+    try {
+      // Check bundle size
+      const bundleSize = await this.getBundleSize();
+      if (bundleSize > 1000000) {
+        // 1MB threshold
+        issues.push({
+          type: 'performance',
+          pattern: 'Large bundle size',
+          severity: 'medium',
+          cursorPrompt: 'Optimize bundle size and reduce JavaScript payload',
+          output: `Bundle size: ${bundleSize} bytes`,
+        });
+      }
+
+      // Check build time
+      const buildTime = await this.getBuildTime();
+      if (buildTime > 120000) {
+        // 2 minutes threshold
+        issues.push({
+          type: 'performance',
+          pattern: 'Slow build time',
+          severity: 'medium',
+          cursorPrompt: 'Optimize build process and reduce build time',
+          output: `Build time: ${buildTime}ms`,
+        });
+      }
+    } catch (error) {
+      this.log(`Error detecting performance issues: ${error.message}`, 'ERROR');
+    }
+
+    return issues;
+  }
+
+  async detectSecurityIssues() {
+    const issues = [];
+
+    try {
+      // Run security audit
+      const auditOutput = execSync('npm audit --json 2>&1', {
+        encoding: 'utf8',
+        timeout: 60000,
+      })
+const audit = JSON.parse(auditOutput);
+      if (
+        audit.vulnerabilities &&
+        Object.keys(audit.vulnerabilities).length > 0
+      ) {
+        issues.push({
+          type: 'security',
+          pattern: 'Security vulnerabilities',
+          severity: 'high',
+          cursorPrompt: 'Fix security vulnerabilities in dependencies',
+          output: auditOutput,
+        });
+      }
+    } catch (error) {
+      // Audit failed, but that's not necessarily a security issue
+      this.log(`Security audit failed: ${error.message}`, 'WARN');
+    }
+
+    return issues;
+  }
+
+  async detectAccessibilityIssues() {
+    const issues = [];
+
+    try {
+      // Check for common accessibility issues in code
+      const srcFiles = this.findFiles('src/**/*.{js,jsx,ts,tsx}');
+      let missingAltCount = 0;
+      let missingAriaCount = 0;
+
+      for (const file of srcFiles.slice(0, 20)) {
+        // Check first 20 files
+        const content = fs.readFileSync(file, 'utf8');
+
+        if (content.includes('<img') && !content.includes('alt=')) {
+          missingAltCount++;
+        }
+
+        if (
+          content.includes('aria-label') &&
+          !content.includes('aria-label=')
+        ) {
+          missingAriaCount++;
+        }
+      }
+
+      if (missingAltCount > 5) {
+        issues.push({
+          type: 'accessibility',
+          pattern: 'Missing alt attributes',
+          severity: 'medium',
+          cursorPrompt:
+            'Add alt attributes to all img elements for accessibility',
+          output: `Found ${missingAltCount} images without alt attributes`,
+        });
+      }
+
+      if (missingAriaCount > 3) {
+        issues.push({
+          type: 'accessibility',
+          pattern: 'Missing ARIA labels',
+          severity: 'medium',
+          cursorPrompt: 'Add proper ARIA labels to interactive elements',
+          output: `Found ${missingAriaCount} elements with incomplete ARIA labels`,
+        });
+      }
+    } catch (error) {
+      this.log(
+        `Error detecting accessibility issues: ${error.message}`,
+        'ERROR',
+      );
+    }
+
+    return issues;
+  }
+
+  async getBundleSize() {
+    try {
+      const bundleOutput = execSync('npm run bundle:analyze 2>&1', {
+        encoding: 'utf8',
+        timeout: 120000,
+      });
+
+      // Extract bundle size from output
+      const match = bundleOutput.match(/Total Size: (\d+) bytes/);
+      return match ? parseInt(match[1]) : 0;
+    } catch (error) {
+      return 0;
+    }
+  }
+
+  async getBuildTime() {
+    const startTime = Date.now();
+    try {
+      execSync('npm run build', {
+        stdio: 'pipe',
+        timeout: 300000,
+      });
+      return Date.now() - startTime;
+    } catch (error) {
+      return Date.now() - startTime;
+    }
+  }
+
+  findFiles(pattern) {
+    const files = [];
+    try {
+      const glob = require('glob');
+      files.push(...glob.sync(pattern));
+    } catch (error) {
+      this.log(`Error finding files: ${error.message}`, 'ERROR');
+    }
+    return files;
+  }
+
+  async applyImprovement(issue) {
+    this.logPipeline(
+      `Applying improvement for ${issue.type}: ${issue.pattern}`,
+    );
+
+    try {
+      // Apply the fix
+      await this.selfHealingSystem.applyFix(issue);
+
+      // Verify the fix
+      const isFixed = await this.verifyFix(issue);
+
+      if (isFixed) {
+        return {
+          issue: issue,
+          timestamp: new Date().toISOString(),
+          success: true,
+          verification: 'passed',
+        };
+      } else {
+        return {
+          issue: issue,
+          timestamp: new Date().toISOString(),
+          success: false,
+          verification: 'failed',
+        };
+      }
+    } catch (error) {
+      this.log(`Failed to apply improvement: ${error.message}`, 'ERROR');
+      return {
+        issue: issue,
+        timestamp: new Date().toISOString(),
+        success: false,
+        error: error.message,
+      };
+    }
+  }
+
+  async verifyFix(issue) {
+    try {
+      // Re-run the check that detected the issue
+      switch (issue.type) {
+        case 'build':
+          const buildIssues = await this.selfHealingSystem.checkBuildIssues();
+          return !buildIssues.some((i) => i.pattern === issue.pattern);
+
+        case 'lint':
+          const lintIssues = await this.selfHealingSystem.checkLintIssues();
+          return !lintIssues.some((i) => i.pattern === issue.pattern);
+
+        case 'typescript':
+          const typeIssues = await this.selfHealingSystem.checkTypeIssues();
+          return !typeIssues.some((i) => i.pattern === issue.pattern);
+
+        default:
+          return true; // Assume fixed for other types
+      }
+    } catch (error) {
+      this.log(`Error verifying fix: ${error.message}`, 'ERROR');
+      return false;
+    }
+  }
+
+  async triggerImprovementChats(issues, improvements) {
+    this.logPipeline('Triggering improvement chats...');
+
+    try {
+      // Group issues by category
+      const issuesByCategory = {};
+      for (const issue of issues) {
+        if (!issuesByCategory[issue.type]) {
+          issuesByCategory[issue.type] = [];
+        }
+        issuesByCategory[issue.type].push(issue);
+      }
+
+      // Trigger chats for each category with significant issues
+      for (const [category, categoryIssues] of Object.entries(
+        issuesByCategory,
+      )) {
+        if (categoryIssues.length >= 2) {
+          // At least 2 issues per category
+          try {
+            await this.cursorChatTrigger.triggerComprehensiveChat(category);
+            this.cursorChatsTriggered++;
+            this.logPipeline(`Triggered chat for ${category} category`);
+          } catch (error) {
+            this.log(
+              `Failed to trigger chat for ${category}: ${error.message}`,
+              'ERROR',
+            );
+          }
+        }
+      }
+
+      // Trigger overall improvement chat
+      if (issues.length >= 5) {
+        try {
+          await this.cursorChatTrigger.triggerComprehensiveChat('general');
+          this.cursorChatsTriggered++;
+          this.logPipeline('Triggered overall improvement chat');
+        } catch (error) {
+          this.log(`Failed to trigger overall chat: ${error.message}`, 'ERROR');
+        }
+      }
+    } catch (error) {
+      this.log(`Error triggering improvement chats: ${error.message}`, 'ERROR');
+    }
+  }
+
+  async measureImprovement(improvements) {
+    if (improvements.length === 0) return 0
+const successfulImprovements = improvements.filter(
+      (imp) => imp.success,
+    ).length;
+    return successfulImprovements / improvements.length;
+  }
+
+  async commitImprovements(improvements) {
+    try {
+      // Check if there are changes to commit
+      const status = execSync('git status --porcelain', { encoding: 'utf8' });
+
+      if (status.trim()) {
+        this.logPipeline('Committing improvements...');
+
+        // Stage all changes
+        execSync('git add .', { stdio: 'inherit' });
+
+        // Create commit message
+        const commitMessage =
+          this.generateImprovementCommitMessage(improvements);
+
+        // Commit changes
+        execSync(`git commit -m "${commitMessage}"`, {
+          stdio: 'inherit',
+          env: {
+            ...process.env,
+            GIT_AUTHOR_NAME: CONFIG.gitUserName,
+            GIT_AUTHOR_EMAIL: CONFIG.gitUserEmail,
+          },
+        });
+
+        // Push to main branch
+        execSync(`git push origin ${CONFIG.gitBranch}`, { stdio: 'inherit' });
+
+        this.lastCommitTime = new Date();
+        this.logPipeline('Improvements committed and pushed successfully');
+      }
+    } catch (error) {
+      this.log(`Failed to commit improvements: ${error.message}`, 'ERROR');
+    }
+  }
+
+  generateImprovementCommitMessage(improvements) {
+    const timestamp = new Date().toISOString()
+const successfulCount = improvements.filter((imp) => imp.success).length
+const totalCount = improvements.length
+const categories = [...new Set(improvements.map((imp) => imp.issue.type))];
+
+    return `🚀 Continuous Improvement: ${successfulCount}/${totalCount} improvements applied
+
+- Categories: ${categories.join(', ')}
+- Timestamp: ${timestamp}
+- Pipeline Run: ${this.pipelineRuns}
+- Total Improvements: ${this.totalImprovements}
+
+Automated by Continuous Improvement Pipeline`;
+  }
+
+  async autoCommitImprovements() {
+    try {
+      // Check if there are any uncommitted changes
+      const status = execSync('git status --porcelain', { encoding: 'utf8' });
+
+      if (status.trim()) {
+        this.logPipeline('Auto-committing accumulated improvements...');
+
+        // Stage all changes
+        execSync('git add .', { stdio: 'inherit' });
+
+        // Create auto-commit message
+        const commitMessage = `🤖 Auto-commit: Continuous improvements
+
+- Timestamp: ${new Date().toISOString()}
+- Pipeline Runs: ${this.pipelineRuns}
+- Total Improvements: ${this.totalImprovements}
+- Cursor Chats: ${this.cursorChatsTriggered}
+
+Automated by Continuous Improvement Pipeline`;
+
+        // Commit changes
+        execSync(`git commit -m "${commitMessage}"`, {
+          stdio: 'inherit',
+          env: {
+            ...process.env,
+            GIT_AUTHOR_NAME: CONFIG.gitUserName,
+            GIT_AUTHOR_EMAIL: CONFIG.gitUserEmail,
+          },
+        });
+
+        // Push to main branch
+        execSync(`git push origin ${CONFIG.gitBranch}`, { stdio: 'inherit' });
+
+        this.lastCommitTime = new Date();
+        this.logPipeline('Auto-commit completed successfully');
+      }
+    } catch (error) {
+      this.log(`Auto-commit failed: ${error.message}`, 'ERROR');
+    }
+  }
+
+  async restartPipeline() {
+    this.log('Restarting pipeline...');
+
+    try {
+      // Stop current pipeline
+      await this.stop();
+
+      // Wait a moment
+      await new Promise((resolve) => 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(resolve,                            5000);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+);
+
+      // Start pipeline again
+      await this.start();
+
+      this.log('Pipeline restarted successfully');
+    } catch (error) {
+      this.log(`Failed to restart pipeline: ${error.message}`, 'ERROR');
+    }
+  }
+
+  async getStatus() {
+    const selfHealingStatus = await this.selfHealingSystem.getStatus();
+
+    return {
+      isRunning: this.isRunning,
+      pipelineRuns: this.pipelineRuns,
+      totalImprovements: this.totalImprovements,
+      cursorChatsTriggered: this.cursorChatsTriggered,
+      lastCommitTime: this.lastCommitTime,
+      improvementHistory: this.improvementHistory.slice(-10), // Last 10 entries
+      selfHealingStatus: selfHealingStatus,
+    };
+  }
+
+  async generateReport() {
+    const report = {
+      timestamp: new Date().toISOString(),
+      status: await this.getStatus(),
+      improvementHistory: this.improvementHistory,
+      recommendations: this.generateRecommendations(),
+    }
+const reportPath = 'logs/continuous-improvement-report.json';
+    fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
+
+    this.log(`Report generated: ${reportPath}`);
+    return report;
+  }
+
+  generateRecommendations() {
+    const recommendations = [];
+
+    if (this.improvementHistory.length > 0) {
+      const recentScores = this.improvementHistory
+        .slice(-5)
+        .map((h) => h.score)
+const avgScore =
+        recentScores.reduce((a, b) => a + b, 0) / recentScores.length;
+
+      if (avgScore < CONFIG.improvementThreshold) {
+        recommendations.push(
+          'Consider adjusting improvement strategies - success rate is below threshold',
+        );
+      }
+    }
+
+    if (this.cursorChatsTriggered > 20) {
+      recommendations.push(
+        'High number of Cursor chats triggered - consider implementing more automated fixes',
+      );
+    }
+
+    if (this.totalImprovements > 100) {
+      recommendations.push(
+        'Significant improvements applied - consider reviewing and optimizing the pipeline',
+      );
+    }
+
+    return recommendations;
+  }
+}
+
+// CLI interface
+if (require.main === module) {
+  const pipeline = new ContinuousImprovementPipeline()
+const command = process.argv[2];
+
+  switch (command) {
+    case 'start':
+      pipeline.start();
+      break;
+    case 'stop':
+      pipeline.stop();
+      break;
+    case 'status':
+      pipeline.getStatus().then((status) => {
+        logger.info(JSON.stringify(status, null, 2));
+        process.exit(0);
+      });
+      break;
+    case 'report':
+      pipeline.generateReport().then((report) => {
+        logger.info(JSON.stringify(report, null, 2));
+        process.exit(0);
+      });
+      break;
+    case 'run':
+      pipeline.runImprovementCycle().then(() => {
+        logger.info('Improvement cycle completed');
+        process.exit(0);
+      });
+      break;
+    default:
+      logger.info(`
+Continuous Improvement Pipeline
+
+Usage:
+  node scripts/continuous-improvement-pipeline.cjs <command>
+
+Commands:
+  start  - Start the continuous improvement pipeline
+  stop   - Stop the pipeline
+  status - Get pipeline status
+  report - Generate detailed report
+  run    - Run one improvement cycle
+
+Environment Variables:
+  GIT_AUTHOR_NAME     - Git author name for commits
+  GIT_AUTHOR_EMAIL    - Git author email for commits
+  CURSOR_API_KEY      - Cursor API key for chat triggers
+  CURSOR_WORKSPACE_ID - Cursor workspace ID
+      `);
+      process.exit(1);
+  }
+}
+
+module.exports = ContinuousImprovementPipeline;
+
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+

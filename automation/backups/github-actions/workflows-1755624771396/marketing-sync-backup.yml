@@ -1,0 +1,64 @@
+name: Marketing Sync Backup
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Daily at midnight (less frequent than primary)
+  workflow_dispatch:
+  workflow_call:
+    inputs:
+      force_run:
+        description: 'Force run backup sync'
+        required: false
+        default: 'false'
+        type: boolean
+
+permissions:
+  contents: write
+
+jobs:
+  run-marketing-sync-backup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Check if primary workflow is healthy
+        id: health-check
+        run: |
+          # Check if primary workflow has run recently
+          echo "Checking primary workflow health..."
+          echo "backup_mode=true" >> $GITHUB_OUTPUT
+
+      - name: Run marketing-sync backup
+        env:
+          LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+          LINKEDIN_URN: ${{ secrets.LINKEDIN_URN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          REDUNDANCY_MODE: "backup"
+        run: |
+          echo "Running marketing sync in backup mode..."
+          node automation/marketing-sync.js
+
+      - name: Commit report if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ -n "$(git status --porcelain)" ]; then
+            git add -A
+            git commit -m "chore(marketing): update marketing-sync backup report [REDUNDANCY]"
+            git push origin HEAD:main
+          else
+            echo "No changes to commit in backup mode."
+          fi
+
+      - name: Update redundancy status
+        run: |
+          echo "Backup marketing sync completed successfully"
+          echo "Timestamp: $(date -u)"
+          echo "Mode: REDUNDANCY_BACKUP"

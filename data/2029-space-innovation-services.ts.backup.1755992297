@@ -1,0 +1,524 @@
+export interface SpaceInnovationService2029 {
+  id: string;
+  name: string;
+  description: string;
+  category: string[];
+  price: string;
+  features: string[];
+  benefits: string[];
+  useCases: string[];
+  marketSize: string;
+  competitors: string[];
+  technology: string[];
+  integration: string[];
+  support: string[];
+  compliance: string[];
+  scalability: string;
+  roi: string;
+<<<<<<< HEAD
+  deployment: string | string[];
+  maintenance: string | string[];
+  training: string | string[];
+  documentation: string | string[];
+  api: string | string[];
+  mobile: string | string[];
+  security: string | string[];
+  backup: string | string[];
+  monitoring: string | string[];
+  analytics: string | string[];
+  customization: string | string[];
+  whiteLabel: string | string[];
+  affiliate: string | string[];
+  referral: string | string[];
+  partnership: string | string[];
+  funding: string | string[];
+  exit: string | string[];
+=======
+  deployment: string;
+  maintenance: string;
+  training: string;
+  documentation: string;
+  api: string;
+  mobile: string;
+  security: string;
+  backup: string;
+  monitoring: string;
+  analytics: string;
+  customization: string;
+  whiteLabel: string;
+  affiliate: string;
+  referral: string;
+  partnership: string;
+  funding: string;
+  exit: string;
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-545a
+  contact: {
+    mobile: string;
+    email: string;
+    website: string;
+    address: string;
+  };
+}
+
+export const spaceInnovationServices2029: SpaceInnovationService2029[] = [
+  {
+    id: 'autonomous-space-mining-platform-2029',
+    name: 'Autonomous Space Mining Platform',
+<<<<<<< HEAD
+    description: 'Revolutionary platform that enables autonomous mining operations in space using AI-powered robots, advanced sensors, and orbital resource management.',
+    category: ['Space Technology', 'Mining', 'Autonomous Systems', 'AI', 'Resource Management'],
+    price: '$25,999/month',
+    features: [
+      'Autonomous mining robots',
+      'Resource detection algorithms',
+      'Orbital path optimization',
+      'Real-time monitoring',
+      'Resource processing automation',
+      'Safety protocols',
+      'Regulatory compliance',
+      'Cost optimization'
+=======
+    description: 'Revolutionary platform that enables autonomous mining operations in space using AI-powered robots, drones, and advanced mining technologies for asteroid and lunar resource extraction.',
+    category: ['Space Technology', 'Mining', 'Autonomous Systems', 'AI', 'Resource Extraction'],
+    price: '$25,999/month',
+    features: [
+      'Autonomous mining robots',
+      'AI-powered resource detection',
+      'Real-time mining optimization',
+      'Resource processing automation',
+      'Supply chain management',
+      'Environmental monitoring',
+      'Safety systems',
+      'Regulatory compliance tools'
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-545a
+    ],
+    benefits: [
+      'Access unlimited space resources',
+      'Reduce Earth mining impact',
+      'Enable space colonization',
+      'Create new economic opportunities',
+      'Advance space technology',
+<<<<<<< HEAD
+      'Ensure resource sustainability'
+=======
+      'Ensure resource security'
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-545a
+    ],
+    useCases: [
+      'Space mining companies',
+      'Government space agencies',
+      'Private space companies',
+      'Resource companies',
+      'Research institutions',
+      'Defense contractors'
+    ],
+<<<<<<< HEAD
+    marketSize: '$3.8B by 2029',
+    competitors: ['Planetary Resources', 'Deep Space Industries', 'Asteroid Mining Corporation', 'NASA'],
+    technology: ['AI Robotics', 'Space Sensors', 'Orbital Mechanics', 'Resource Processing'],
+    integration: ['Space mission control', 'Resource tracking systems', 'Financial platforms', 'Regulatory systems'],
+    support: ['Space technology experts', 'Mining specialists', 'Regulatory experts', '24/7 mission support'],
+    compliance: ['Space treaties', 'International law', 'Safety regulations', 'Environmental standards'],
+    scalability: 'Manages multiple mining operations across solar system',
+    roi: '1200% within 60 months',
+    deployment: ['Space-based systems', 'Ground control centers', 'Hybrid operations'],
+    maintenance: ['Remote maintenance', 'Software updates', 'Hardware optimization'],
+    training: ['Space mining certification', 'Safety training', 'Regulatory compliance'],
+    documentation: ['Mission protocols', 'Safety guidelines', 'Regulatory documentation'],
+    api: ['Mining operations API', 'Resource data endpoints', 'Mission control interface'],
+    mobile: ['Mission monitoring apps', 'Resource tracking tools'],
+    security: ['Space-grade security', 'Mission protection', 'Data encryption'],
+    backup: ['Redundant systems', 'Disaster recovery', 'Mission continuity'],
+    monitoring: ['Real-time mission status', 'Resource extraction', 'System health'],
+    analytics: ['Mining efficiency', 'Resource yield', 'Cost analysis'],
+    customization: ['Custom mining protocols', 'Resource-specific operations'],
+=======
+    marketSize: '$45.8B by 2029',
+    competitors: ['Planetary Resources', 'Deep Space Industries', 'Asteroid Mining Corp', 'SpaceX'],
+    technology: ['AI Robotics', 'Space Mining Technology', 'Resource Processing', 'Autonomous Systems'],
+    integration: ['Space infrastructure', 'Mining equipment', 'Processing facilities', 'Transportation systems'],
+    support: ['Space mining experts', 'AI specialists', 'Regulatory experts', '24/7 mission control'],
+    compliance: ['Space treaties', 'Mining regulations', 'Environmental standards', 'Safety protocols'],
+    scalability: 'Operates across multiple space locations simultaneously',
+    roi: '1200% within 60 months',
+    deployment: ['Space-based infrastructure', 'Ground control centers', 'Satellite networks'],
+    maintenance: ['Remote maintenance', 'AI self-repair', 'Ground support operations'],
+    training: ['Space mining certification', 'AI operations training', 'Safety protocols'],
+    documentation: ['Mining protocols', 'Safety guidelines', 'Technical documentation'],
+    api: ['Mining operations API', 'Resource data endpoints', 'Mission control interface'],
+    mobile: ['Mission control apps', 'Field operations tools'],
+    security: ['Space-grade security', 'Mission protection', 'Data encryption'],
+    backup: ['Redundant systems', 'Disaster recovery', 'Mission continuity'],
+    monitoring: ['Real-time operations', 'Resource extraction', 'System health'],
+    analytics: ['Mining efficiency', 'Resource yield', 'Cost analysis'],
+    customization: ['Custom mining protocols', 'Resource-specific processing'],
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-545a
+    whiteLabel: ['Available for space companies'],
+    affiliate: ['30% commission for space industry referrals'],
+    referral: ['$100,000 bonus for major space partnerships'],
+    partnership: ['Strategic partnerships with space agencies and mining companies'],
+    funding: ['Series D funding', '$2.5B valuation'],
+    exit: ['IPO or acquisition by major space company'],
+    contact: {
+      mobile: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      website: 'https://ziontechgroup.com',
+      address: '364 E Main St STE 1008 Middletown DE 19709'
+    }
+  },
+  {
+    id: 'space-weather-prediction-platform-2029',
+    name: 'Space Weather Prediction Platform',
+<<<<<<< HEAD
+    description: 'Advanced platform that predicts space weather events using AI, satellite data, and solar monitoring to protect critical infrastructure and space operations.',
+    category: ['Space Technology', 'Weather Prediction', 'AI', 'Satellite Technology', 'Infrastructure Protection'],
+    price: '$9,999/month',
+    features: [
+      'Solar storm prediction',
+      'Geomagnetic forecasting',
+      'Satellite vulnerability assessment',
+      'Infrastructure protection alerts',
+      'Real-time monitoring',
+      'Historical data analysis',
+      'Risk assessment tools',
+      'Mitigation strategies'
+=======
+    description: 'Advanced platform that predicts space weather events using AI, satellite data, and solar monitoring to protect critical infrastructure and enable space operations.',
+    category: ['Space Technology', 'Weather Prediction', 'AI', 'Satellite Technology', 'Infrastructure Protection'],
+    price: '$7,999/month',
+    features: [
+      'Real-time space weather monitoring',
+      'Solar storm prediction',
+      'Geomagnetic activity forecasting',
+      'Satellite protection alerts',
+      'Infrastructure vulnerability assessment',
+      'Historical data analysis',
+      'Risk mitigation recommendations',
+      'Emergency response planning'
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-545a
+    ],
+    benefits: [
+      'Protect critical infrastructure',
+      'Prevent satellite damage',
+<<<<<<< HEAD
+      'Reduce power grid failures',
+      'Improve aviation safety',
+      'Enable space mission planning',
+      'Reduce economic losses'
+    ],
+    useCases: [
+      'Power grid operators',
+      'Satellite companies',
+      'Aviation industry',
+      'Telecommunications',
+      'Government agencies',
+      'Space missions'
+    ],
+    marketSize: '$1.2B by 2029',
+    competitors: ['NOAA Space Weather', 'ESA Space Weather', 'NASA Heliophysics', 'SpaceX'],
+    technology: ['AI Prediction Models', 'Satellite Sensors', 'Solar Physics', 'Machine Learning'],
+    integration: ['Power grid systems', 'Satellite operations', 'Aviation systems', 'Telecom networks'],
+    support: ['Space weather experts', 'Infrastructure specialists', '24/7 monitoring', 'Emergency response'],
+    compliance: ['Government standards', 'Industry regulations', 'Safety protocols', 'International agreements'],
+    scalability: 'Monitors global space weather conditions in real-time',
+    roi: '400% within 24 months',
+    deployment: ['Cloud-based', 'Satellite networks', 'Ground stations'],
+    maintenance: ['Continuous monitoring', 'Model updates', 'System optimization'],
+    training: ['Space weather training', 'Infrastructure protection', 'Emergency response'],
+    documentation: ['Prediction models', 'Safety protocols', 'Integration guides'],
+    api: ['Weather prediction API', 'Alert systems', 'Data streaming'],
+    mobile: ['Weather monitoring apps', 'Alert notification tools'],
+    security: ['Government-grade security', 'Data protection', 'Access controls'],
+    backup: ['Redundant systems', 'Disaster recovery', 'Continuous operation'],
+    monitoring: ['Solar activity', 'Geomagnetic conditions', 'System performance'],
+    analytics: ['Weather patterns', 'Impact assessment', 'Risk analysis'],
+    customization: ['Industry-specific alerts', 'Custom prediction models'],
+    whiteLabel: ['Available for weather services'],
+    affiliate: ['20% commission for infrastructure referrals'],
+    referral: ['$25,000 bonus for major utility partnerships'],
+    partnership: ['Partnerships with space agencies and infrastructure companies'],
+    funding: ['Series B funding', '$300M valuation'],
+=======
+      'Ensure space mission safety',
+      'Reduce economic losses',
+      'Improve emergency preparedness',
+      'Enable space operations'
+    ],
+    useCases: [
+      'Satellite operators',
+      'Power grid companies',
+      'Telecommunications',
+      'Aviation companies',
+      'Government agencies',
+      'Space missions'
+    ],
+    marketSize: '$18.3B by 2029',
+    competitors: ['NOAA Space Weather', 'NASA Heliophysics', 'ESA Space Weather', 'Private weather companies'],
+    technology: ['AI Prediction Models', 'Satellite Monitoring', 'Solar Physics', 'Machine Learning'],
+    integration: ['Satellite systems', 'Power grids', 'Telecom networks', 'Aviation systems'],
+    support: ['Space weather experts', 'AI specialists', 'Infrastructure specialists', '24/7 monitoring'],
+    compliance: ['Space weather standards', 'Infrastructure regulations', 'Safety protocols'],
+    scalability: 'Monitors global space weather conditions in real-time',
+    roi: '400% within 24 months',
+    deployment: ['Satellite networks', 'Ground stations', 'Cloud-based processing'],
+    maintenance: ['Continuous monitoring', 'Model updates', 'System optimization'],
+    training: ['Space weather training', 'AI operations', 'Emergency response'],
+    documentation: ['Space weather guides', 'Emergency protocols', 'Technical documentation'],
+    api: ['Weather prediction API', 'Alert systems', 'Data streaming'],
+    mobile: ['Weather alert apps', 'Emergency response tools'],
+    security: ['Secure data transmission', 'Access controls', 'Alert verification'],
+    backup: ['Redundant monitoring', 'Disaster recovery', 'Data preservation'],
+    monitoring: ['Space weather conditions', 'System performance', 'Alert accuracy'],
+    analytics: ['Prediction accuracy', 'Event analysis', 'Impact assessment'],
+    customization: ['Industry-specific alerts', 'Custom prediction models'],
+    whiteLabel: ['Available for weather companies'],
+    affiliate: ['20% commission for weather industry referrals'],
+    referral: ['$15,000 bonus for major infrastructure partnerships'],
+    partnership: ['Partnerships with space agencies and infrastructure companies'],
+    funding: ['Series B funding', '$350M valuation'],
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-545a
+    exit: ['IPO or acquisition by major weather company'],
+    contact: {
+      mobile: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      website: 'https://ziontechgroup.com',
+      address: '364 E Main St STE 1008 Middletown DE 19709'
+    }
+  },
+  {
+    id: 'orbital-debris-cleanup-platform-2029',
+    name: 'Orbital Debris Cleanup Platform',
+<<<<<<< HEAD
+    description: 'Innovative platform that removes space debris using autonomous robots, AI navigation, and advanced capture technologies to ensure sustainable space operations.',
+    category: ['Space Technology', 'Environmental Protection', 'Autonomous Systems', 'AI', 'Sustainability'],
+    price: '$18,999/month',
+    features: [
+      'Autonomous debris capture',
+      'AI navigation systems',
+      'Debris tracking algorithms',
+      'Safe disposal methods',
+      'Real-time monitoring',
+      'Collision avoidance',
+      'Cost optimization',
+      'Regulatory compliance'
+    ],
+    benefits: [
+      'Reduce space debris by 80%',
+      'Protect active satellites',
+      'Enable sustainable space operations',
+      'Reduce collision risks',
+      'Comply with space treaties',
+      'Create new business opportunities'
+=======
+    description: 'Innovative platform that uses AI-powered robots and advanced technologies to identify, track, and remove dangerous space debris to ensure safe space operations.',
+    category: ['Space Technology', 'Debris Cleanup', 'AI', 'Robotics', 'Space Safety'],
+    price: '$12,999/month',
+    features: [
+      'AI debris detection',
+      'Autonomous cleanup robots',
+      'Debris tracking systems',
+      'Collision avoidance',
+      'Cleanup mission planning',
+      'Environmental impact assessment',
+      'Safety monitoring',
+      'Regulatory compliance'
+    ],
+    benefits: [
+      'Ensure space safety',
+      'Protect satellites',
+      'Enable space missions',
+      'Reduce collision risks',
+      'Preserve space environment',
+      'Comply with regulations'
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-545a
+    ],
+    useCases: [
+      'Space agencies',
+      'Satellite operators',
+      'Space companies',
+      'Government agencies',
+<<<<<<< HEAD
+      'Environmental organizations',
+      'Insurance companies'
+    ],
+    marketSize: '$2.1B by 2029',
+    competitors: ['ClearSpace', 'Astroscale', 'RemoveDEBRIS', 'ESA Clean Space'],
+    technology: ['AI Robotics', 'Space Navigation', 'Capture Technology', 'Disposal Systems'],
+    integration: ['Satellite tracking', 'Mission control', 'Insurance systems', 'Regulatory platforms'],
+    support: ['Space technology experts', 'Environmental specialists', 'Regulatory experts', '24/7 operations'],
+    compliance: ['Space treaties', 'Environmental regulations', 'Safety standards', 'International law'],
+    scalability: 'Manages multiple cleanup missions simultaneously',
+    roi: '800% within 48 months',
+    deployment: ['Space-based systems', 'Ground control', 'Hybrid operations'],
+    maintenance: ['Remote maintenance', 'Software updates', 'Hardware optimization'],
+    training: ['Debris cleanup certification', 'Safety training', 'Regulatory compliance'],
+    documentation: ['Mission protocols', 'Safety guidelines', 'Environmental impact'],
+    api: ['Cleanup operations API', 'Debris tracking', 'Mission status'],
+    mobile: ['Mission monitoring apps', 'Debris tracking tools'],
+    security: ['Space-grade security', 'Mission protection', 'Data encryption'],
+    backup: ['Redundant systems', 'Disaster recovery', 'Mission continuity'],
+    monitoring: ['Real-time mission status', 'Debris removal', 'System health'],
+    analytics: ['Cleanup efficiency', 'Environmental impact', 'Cost analysis'],
+    customization: ['Custom cleanup protocols', 'Debris-specific operations'],
+    whiteLabel: ['Available for space companies'],
+    affiliate: ['25% commission for space industry referrals'],
+    referral: ['$50,000 bonus for major space partnerships'],
+    partnership: ['Strategic partnerships with space agencies and environmental organizations'],
+    funding: ['Series C funding', '$800M valuation'],
+=======
+      'Defense contractors',
+      'Research institutions'
+    ],
+    marketSize: '$12.7B by 2029',
+    competitors: ['ClearSpace', 'Astroscale', 'RemoveDEBRIS', 'ESA Clean Space'],
+    technology: ['AI Robotics', 'Space Debris Technology', 'Collision Avoidance', 'Cleanup Systems'],
+    integration: ['Satellite networks', 'Space monitoring', 'Mission control', 'Safety systems'],
+    support: ['Space debris experts', 'AI specialists', 'Safety engineers', '24/7 monitoring'],
+    compliance: ['Space debris guidelines', 'Safety protocols', 'Environmental standards'],
+    scalability: 'Operates across multiple orbital regions simultaneously',
+    roi: '600% within 36 months',
+    deployment: ['Space-based cleanup systems', 'Ground control centers', 'Monitoring networks'],
+    maintenance: ['Remote maintenance', 'AI self-repair', 'Ground support'],
+    training: ['Debris cleanup training', 'Safety protocols', 'AI operations'],
+    documentation: ['Cleanup protocols', 'Safety guidelines', 'Technical documentation'],
+    api: ['Cleanup operations API', 'Debris tracking', 'Mission control'],
+    mobile: ['Mission control apps', 'Field operations tools'],
+    security: ['Mission security', 'Data protection', 'Access controls'],
+    backup: ['Redundant systems', 'Mission continuity', 'Data backup'],
+    monitoring: ['Real-time operations', 'Debris tracking', 'System health'],
+    analytics: ['Cleanup efficiency', 'Safety metrics', 'Environmental impact'],
+    customization: ['Custom cleanup protocols', 'Mission-specific systems'],
+    whiteLabel: ['Available for space companies'],
+    affiliate: ['25% commission for space industry referrals'],
+    referral: ['$25,000 bonus for major space partnerships'],
+    partnership: ['Partnerships with space agencies and cleanup companies'],
+    funding: ['Series C funding', '$600M valuation'],
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-545a
+    exit: ['IPO or acquisition by major space company'],
+    contact: {
+      mobile: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      website: 'https://ziontechgroup.com',
+      address: '364 E Main St STE 1008 Middletown DE 19709'
+    }
+  },
+  {
+    id: 'space-based-solar-power-platform-2029',
+    name: 'Space-Based Solar Power Platform',
+<<<<<<< HEAD
+    description: 'Revolutionary platform that captures solar energy in space and transmits it to Earth using advanced wireless power transmission technology.',
+    category: ['Space Technology', 'Renewable Energy', 'Power Transmission', 'Sustainability', 'Clean Energy'],
+    price: '$35,999/month',
+    features: [
+      'Space solar arrays',
+      'Wireless power transmission',
+      'Ground receiving stations',
+=======
+    description: 'Revolutionary platform that captures solar energy in space and transmits it to Earth using advanced wireless power transmission technology for unlimited clean energy.',
+    category: ['Space Technology', 'Solar Power', 'Clean Energy', 'Wireless Transmission', 'Sustainability'],
+    price: '$18,999/month',
+    features: [
+      'Space solar arrays',
+      'Wireless power transmission',
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-545a
+      'Energy storage systems',
+      'Grid integration',
+      'Real-time monitoring',
+      'Efficiency optimization',
+<<<<<<< HEAD
+      'Cost management'
+    ],
+    benefits: [
+      '24/7 solar energy generation',
+      'Reduce fossil fuel dependence',
+      'Enable global energy access',
+      'Reduce carbon emissions',
+      'Create energy independence',
+      'Advance space technology'
+    ],
+    useCases: [
+      'Power utilities',
+      'Government agencies',
+      'Remote communities',
+      'Industrial facilities',
+      'Military bases',
+      'Space stations'
+    ],
+    marketSize: '$4.5B by 2029',
+    competitors: ['Space Solar', 'Caltech Space Solar', 'JAXA Space Solar', 'ESA Solaris'],
+    technology: ['Space Solar Arrays', 'Wireless Power Transmission', 'Energy Storage', 'Grid Integration'],
+    integration: ['Power grids', 'Energy storage', 'Monitoring systems', 'Billing platforms'],
+    support: ['Space technology experts', 'Energy specialists', 'Grid engineers', '24/7 operations'],
+    compliance: ['Energy regulations', 'Safety standards', 'Environmental compliance', 'Grid requirements'],
+    scalability: 'Provides energy to millions of customers globally',
+    roi: '1500% within 72 months',
+    deployment: ['Space-based systems', 'Ground stations', 'Grid integration'],
+    maintenance: ['Space maintenance', 'Ground operations', 'Grid optimization'],
+    training: ['Space solar training', 'Grid integration', 'Safety protocols'],
+    documentation: ['Technical specifications', 'Safety guidelines', 'Integration protocols'],
+    api: ['Power generation API', 'Energy monitoring', 'Grid integration'],
+    mobile: ['Energy monitoring apps', 'Grid management tools'],
+    security: ['Critical infrastructure security', 'Grid protection', 'Data encryption'],
+    backup: ['Redundant systems', 'Disaster recovery', 'Grid resilience'],
+    monitoring: ['Power generation', 'Transmission efficiency', 'Grid performance'],
+    analytics: ['Energy production', 'Efficiency metrics', 'Cost analysis'],
+    customization: ['Custom power solutions', 'Grid-specific integration'],
+    whiteLabel: ['Available for energy companies'],
+    affiliate: ['30% commission for energy industry referrals'],
+    referral: ['$150,000 bonus for major utility partnerships'],
+    partnership: ['Strategic partnerships with space agencies and energy companies'],
+    funding: ['Series D funding', '$3.2B valuation'],
+=======
+      'Environmental impact tracking',
+      'Regulatory compliance'
+    ],
+    benefits: [
+      'Unlimited clean energy',
+      '24/7 power generation',
+      'Reduce carbon emissions',
+      'Energy independence',
+      'Lower energy costs',
+      'Enable space industry'
+    ],
+    useCases: [
+      'Power companies',
+      'Government agencies',
+      'Industrial facilities',
+      'Remote communities',
+      'Space missions',
+      'Military bases'
+    ],
+    marketSize: '$35.2B by 2029',
+    competitors: ['Space Solar Power Initiative', 'Caltech Space Solar', 'ESA Solaris', 'Private space companies'],
+    technology: ['Space Solar Arrays', 'Wireless Power Transmission', 'Energy Storage', 'Grid Integration'],
+    integration: ['Power grids', 'Energy storage', 'Monitoring systems', 'Control centers'],
+    support: ['Space energy experts', 'Power engineers', 'Grid specialists', '24/7 monitoring'],
+    compliance: ['Energy regulations', 'Space safety', 'Environmental standards'],
+    scalability: 'Generates gigawatts of clean energy globally',
+    roi: '800% within 48 months',
+    deployment: ['Space-based solar arrays', 'Ground receiving stations', 'Grid integration'],
+    maintenance: ['Space maintenance', 'Ground operations', 'System optimization'],
+    training: ['Space energy training', 'Grid integration', 'Safety protocols'],
+    documentation: ['Energy protocols', 'Safety guidelines', 'Technical documentation'],
+    api: ['Power generation API', 'Grid integration', 'Monitoring systems'],
+    mobile: ['Power monitoring apps', 'Grid management tools'],
+    security: ['Energy security', 'Grid protection', 'Access controls'],
+    backup: ['Redundant systems', 'Grid stability', 'Energy storage'],
+    monitoring: ['Power generation', 'Grid performance', 'System health'],
+    analytics: ['Energy efficiency', 'Grid stability', 'Environmental impact'],
+    customization: ['Custom power systems', 'Grid-specific integration'],
+    whiteLabel: ['Available for energy companies'],
+    affiliate: ['30% commission for energy industry referrals'],
+    referral: ['$50,000 bonus for major energy partnerships'],
+    partnership: ['Partnerships with space agencies and energy companies'],
+    funding: ['Series D funding', '$1.8B valuation'],
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-545a
+    exit: ['IPO or acquisition by major energy company'],
+    contact: {
+      mobile: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      website: 'https://ziontechgroup.com',
+      address: '364 E Main St STE 1008 Middletown DE 19709'
+    }
+  }
+];

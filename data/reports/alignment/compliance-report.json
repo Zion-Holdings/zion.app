@@ -1,0 +1,15 @@
+{
+  "timestamp": "2025-08-08T17:14:39.523Z",
+  "totalChecks": 2,
+  "failures": 0,
+  "results": [
+    {
+      "check": "package.json exists",
+      "ok": true
+    },
+    {
+      "check": "npm run build script present",
+      "ok": true
+    }
+  ]
+}

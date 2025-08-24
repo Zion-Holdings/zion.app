@@ -1,0 +1,39 @@
+name: Codex Test Loop
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'automation_logs/latest-error.log'
+  issues:
+    types: [labeled]
+
+jobs:
+  run-codex-test-loop:
+    if: github.event_name != 'issues' || contains(github.event.label.name, 'bug')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm ci
+      - name: Capture logs (if provided)
+        run: node scripts/codex-capture-log.mjs
+        env:
+          EXTRA_CONTEXT: ${{ github.event_name == 'issues' && github.event.issue.body || '' }}
+      - name: Run Codex test loop
+        run: node scripts/codex-test-loop.mjs
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_TEST_MODEL: gpt-4o-mini
+          OPENAI_FIX_MODEL: gpt-4o-mini
+          OPEN_PR: 'true'
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: codex-outputs
+          path: automation_logs/**
