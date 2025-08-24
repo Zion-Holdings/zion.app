@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   ArrowRight, Brain, Shield, Rocket, Cpu, Database, Atom, Target, Star, 
   Sparkles, Zap, Users, Award, Clock, CheckCircle, Globe, Code, Server,
-  ChevronRight, ExternalLink, TrendingUp, BarChart3, Cloud, Network
+  ChevronRight, ExternalLink, TrendingUp, BarChart3, Cloud, Network, Calendar
 } from 'lucide-react';
 import EnhancedNavigation from '../components/EnhancedNavigation';
 import EnhancedFooter from '../components/EnhancedFooter';
@@ -354,38 +354,143 @@ export default function HomePage() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent">
-              Latest Autonomous Updates
+              Latest Autonomous Content
             </h2>
             <p className="text-xl text-white/70 max-w-3xl mx-auto">
-              Stay updated with our latest innovations and autonomous system developments
+              Stay updated with our latest innovations, insights, and autonomous system developments
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <a href="/reports/updates/update-2025-08-15-0508" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 transition-all duration-300 transform hover:scale-105">
-              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
-              <h3 className="text-lg font-semibold text-white">Autonomous Update — 2025: 08: 15: 0508</h3>
-              <p className="mt-1 text-sm text-white/75">Freshly published by autonomous agents.</p>
-              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90 group-hover:text-cyan-200 transition-colors duration-300">
-                Open <span aria-hidden>→</span>
+          {/* Content Categories Overview */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            <div className="text-center p-6 rounded-2xl border border-white/10 bg-gradient-to-br from-green-500/10 to-emerald-500/10 backdrop-blur-xl">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-green-500/20 to-emerald-500/20 flex items-center justify-center">
+                <BarChart3 className="w-8 h-8 text-green-400" />
+              </div>
+              <h3 className="text-lg font-semibold text-white mb-2">SEO & Analytics</h3>
+              <p className="text-sm text-white/70 mb-4">Performance insights and optimization reports</p>
+              <div className="text-2xl font-bold text-green-400">4</div>
+              <div className="text-xs text-white/50">Latest Reports</div>
+            </div>
+
+            <div className="text-center p-6 rounded-2xl border border-white/10 bg-gradient-to-br from-red-500/10 to-orange-500/10 backdrop-blur-xl">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-red-500/20 to-orange-500/20 flex items-center justify-center">
+                <Shield className="w-8 h-8 text-red-400" />
+              </div>
+              <h3 className="text-lg font-semibold text-white mb-2">Security & Compliance</h3>
+              <p className="text-sm text-white/70 mb-4">Vulnerability scans and security assessments</p>
+              <div className="text-2xl font-bold text-red-400">2</div>
+              <div className="text-xs text-white/50">Security Updates</div>
+            </div>
+
+            <div className="text-center p-6 rounded-2xl border border-white/10 bg-gradient-to-br from-purple-500/10 to-pink-500/10 backdrop-blur-xl">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center">
+                <Brain className="w-8 h-8 text-purple-400" />
+              </div>
+              <h3 className="text-lg font-semibold text-white mb-2">AI & ML Insights</h3>
+              <p className="text-sm text-white/70 mb-4">Model performance and AI optimization</p>
+              <div className="text-2xl font-bold text-purple-400">3</div>
+              <div className="text-xs text-white/50">AI Reports</div>
+            </div>
+
+            <div className="text-center p-6 rounded-2xl border border-white/10 bg-gradient-to-br from-yellow-500/10 to-orange-500/10 backdrop-blur-xl">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-yellow-500/20 to-orange-500/20 flex items-center justify-center">
+                <Zap className="w-8 h-8 text-yellow-400" />
+              </div>
+              <h3 className="text-lg font-semibold text-white mb-2">System Updates</h3>
+              <p className="text-sm text-white/70 mb-4">Feature deployments and infrastructure</p>
+              <div className="text-2xl font-bold text-yellow-400">5</div>
+              <div className="text-xs text-white/50">Recent Updates</div>
+            </div>
+          </div>
+
+          {/* Featured Content Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            <a href="/reports/structured-data-audit.json" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-green-400/30 transition-all duration-300 transform hover:scale-105">
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-green-500/0 via-green-400/10 to-green-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-green-500/20 to-emerald-500/20 p-2 flex items-center justify-center">
+                  <BarChart3 className="w-4 h-4 text-green-400" />
+                </div>
+                <span className="text-xs text-white/60 uppercase tracking-wider">SEO & Analytics</span>
+              </div>
+              <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-green-300 transition-colors duration-200">
+                Structured Data Audit Report
+              </h3>
+              <p className="text-sm text-white/75 mb-4">Comprehensive JSON-LD coverage analysis and optimization recommendations.</p>
+              <div className="flex items-center justify-between text-xs text-white/50 mb-3">
+                <span className="flex items-center gap-1">
+                  <Calendar className="w-3 h-3" />
+                  2025-08-19
+                </span>
+                <span className="text-green-400">High Priority</span>
+              </div>
+              <div className="inline-flex items-center gap-2 text-green-300 hover:text-green-200 transition-colors duration-200 text-sm font-medium">
+                View Report <span aria-hidden>→</span>
               </div>
             </a>
-            <a href="/reports/updates/update-2025-08-15-0507" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 transition-all duration-300 transform hover:scale-105">
-              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
-              <h3 className="text-lg font-semibold text-white">Autonomous Update — 2025: 08: 15: 0507</h3>
-              <p className="mt-1 text-sm text-white/75">Freshly published by autonomous agents.</p>
-              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90 group-hover:text-cyan-200 transition-colors duration-300">
-                Open <span aria-hidden>→</span>
+
+            <a href="/reports/security-scan-2025-08-19" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-red-400/30 transition-all duration-300 transform hover:scale-105">
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-red-500/0 via-red-400/10 to-red-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-red-500/20 to-orange-500/20 p-2 flex items-center justify-center">
+                  <Shield className="w-4 h-4 text-red-400" />
+                </div>
+                <span className="text-xs text-white/60 uppercase tracking-wider">Security</span>
+              </div>
+              <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-red-300 transition-colors duration-200">
+                Security Vulnerability Scan
+              </h3>
+              <p className="text-sm text-white/75 mb-4">Automated security assessment with vulnerability detection and remediation steps.</p>
+              <div className="flex items-center justify-between text-xs text-white/50 mb-3">
+                <span className="flex items-center gap-1">
+                  <Calendar className="w-3 h-3" />
+                  2025-08-19
+                </span>
+                <span className="text-red-400">High Priority</span>
+              </div>
+              <div className="inline-flex items-center gap-2 text-red-300 hover:text-red-200 transition-colors duration-200 text-sm font-medium">
+                View Report <span aria-hidden>→</span>
               </div>
             </a>
-            <a href="/reports/updates/update-2025-08-15-0457" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 transition-all duration-300 transform hover:scale-105">
-              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
-              <h3 className="text-lg font-semibold text-white">Autonomous Update — 2025: 08: 15: 0457</h3>
-              <p className="mt-1 text-sm text-white/75">Freshly published by autonomous agents.</p>
-              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90 group-hover:text-cyan-200 transition-colors duration-300">
-                Open <span aria-hidden>→</span>
+
+            <a href="/reports/ai-model-performance-2025-08-19" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-purple-400/30 transition-all duration-300 transform hover:scale-105">
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-purple-500/0 via-purple-400/10 to-purple-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-purple-500/20 to-pink-500/20 p-2 flex items-center justify-center">
+                  <Brain className="w-4 h-4 text-purple-400" />
+                </div>
+                <span className="text-xs text-white/60 uppercase tracking-wider">AI & ML</span>
+              </div>
+              <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-purple-300 transition-colors duration-200">
+                AI Model Performance Update
+              </h3>
+              <p className="text-sm text-white/75 mb-4">Latest performance metrics and optimization insights for deployed AI models.</p>
+              <div className="flex items-center justify-between text-xs text-white/50 mb-3">
+                <span className="flex items-center gap-1">
+                  <Calendar className="w-3 h-3" />
+                  2025-08-19
+                </span>
+                <span className="text-purple-400">High Priority</span>
+              </div>
+              <div className="inline-flex items-center gap-2 text-purple-300 hover:text-purple-200 transition-colors duration-200 text-sm font-medium">
+                View Report <span aria-hidden>→</span>
               </div>
             </a>
+          </div>
+
+          {/* View All Content CTA */}
+          <div className="text-center">
+            <a
+              href="/reports"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl"
+            >
+              Explore All Autonomous Content
+              <ArrowRight className="w-5 h-5" />
+            </a>
+            <p className="text-white/50 mt-3 text-sm">
+              Access our complete library of reports, insights, and updates
+            </p>
           </div>
         </div>
       </section>

@@ -21,17 +21,18 @@ const EnhancedNavigation: React.FC = () => {
   }, []);
 
   const services = [
-    { name: 'All Services', href: '/comprehensive-2025-services-showcase', icon: Globe, description: 'Complete collection of innovative services' },
+    { name: 'All Solutions', href: '/comprehensive-2025-services-showcase', icon: Globe, description: 'Complete collection of innovative solutions' },
     { name: 'AI Business Intelligence', href: 'https://ziontechgroup.com/ai-business-intelligence', icon: Brain, description: 'AI-powered analytics and insights' },
     { name: 'Quantum Cybersecurity', href: 'https://ziontechgroup.com/quantum-cybersecurity', icon: Shield, description: 'Quantum-resistant security solutions' },
     { name: 'Edge Computing', href: 'https://ziontechgroup.com/edge-computing-orchestration', icon: Cpu, description: 'Edge orchestration and IoT management' },
     { name: 'Space Technology', href: 'https://ziontechgroup.com/space-technology', icon: Rocket, description: 'Space exploration and satellite tech' },
-    { name: 'Pricing', href: '/pricing-2025', icon: Award, description: 'Transparent pricing for all services' }
+    { name: 'Pricing', href: '/pricing-2025', icon: Award, description: 'Transparent pricing for all solutions' }
   ];
 
   const company = [
     { name: 'About Us', href: '/about', icon: Users, description: 'Learn about our mission and team' },
     { name: 'Our Work', href: '/portfolio', icon: Award, description: 'See our latest projects and achievements' },
+    { name: 'Content Hub', href: '/reports', icon: BookOpen, description: 'Access autonomous content and insights' },
     { name: 'Blog & Insights', href: '/blog', icon: BookOpen, description: 'Stay updated with industry trends' },
     { name: 'Contact', href: '/contact', icon: Phone, description: 'Get in touch with our experts' }
   ];
@@ -71,7 +72,7 @@ const EnhancedNavigation: React.FC = () => {
                 onClick={() => toggleDropdown('services')}
                 className="flex items-center space-x-2 text-white/80 hover:text-white transition-colors duration-200 py-2"
               >
-                <span>Services</span>
+                <span>Solutions</span>
                 <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${
                   activeDropdown === 'services' ? 'rotate-180' : ''
                 }`} />
@@ -88,7 +89,7 @@ const EnhancedNavigation: React.FC = () => {
                   >
                     <div className="p-4">
                       <h3 className="text-sm font-semibold text-white/60 mb-3 uppercase tracking-wider">
-                        Our Services
+                        Our Solutions
                       </h3>
                       <div className="grid grid-cols-1 gap-2">
                         {services.map((service) => (
@@ -124,7 +125,7 @@ const EnhancedNavigation: React.FC = () => {
                 onClick={() => toggleDropdown('company')}
                 className="flex items-center space-x-2 text-white/80 hover:text-white transition-colors duration-200 py-2"
               >
-                <span>Company</span>
+                <span>About</span>
                 <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${
                   activeDropdown === 'company' ? 'rotate-180' : ''
                 }`} />
