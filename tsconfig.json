@@ -62,16 +62,10 @@
     "forceConsistentCasingInFileNames": true
   },
   "include": [
-    "next-env.d.ts",
-    "pages/**/*.ts",
-    "pages/**/*.tsx",
-    "components/**/*.ts",
-    "components/**/*.tsx",
+    "src/**/*.ts",
+    "src/**/*.tsx",
     "types/**/*.ts",
-    "types/**/*.d.ts",
-    "utils/**/*.ts",
-    "services/**/*.ts",
-    "styles/**/*.css"
+    "types/**/*.d.ts"
   ],
   "exclude": [
     "node_modules",
@@ -91,6 +85,8 @@
     "test.disabled/**",
     "services.disabled.temp/**",
     "data.temp/**",
-    "src_backup/**"
+    "src_backup/**",
+    "components/**",
+    "pages/**"
   ]
 }
