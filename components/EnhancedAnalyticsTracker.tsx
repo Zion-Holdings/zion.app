@@ -6,10 +6,10 @@ import {
   Clock, 
   TrendingUp, 
   Eye,
-  Activity,
+  Circle as Activity,
   X,
   Play,
-  Pause,
+  Circle as Pause,
   Download
 } from 'lucide-react';
 
@@ -61,12 +61,12 @@ const EnhancedAnalyticsTracker: React.FC = () => {
         data: { path, referrer: document.referrer }
       };
       
-      setEvents(prev => [...prev, event]);
-      setUserBehavior(prev => ({
-        ...prev,
-        pageViews: prev.pageViews + 1,
-        topPages: updateTopPages(prev.topPages, path)
-      }));
+      setEvents([...events, event]);
+      setUserBehavior({
+        ...userBehavior,
+        pageViews: userBehavior.pageViews + 1,
+        topPages: updateTopPages(userBehavior.topPages, path)
+      });
     };
 
     // Track clicks
@@ -82,7 +82,7 @@ const EnhancedAnalyticsTracker: React.FC = () => {
         data: { tagName, text, href, x: event.clientX, y: event.clientY }
       };
       
-      setEvents(prev => [...prev, clickEvent]);
+      setEvents([...events, clickEvent]);
     };
 
     // Track scroll depth
@@ -98,7 +98,7 @@ const EnhancedAnalyticsTracker: React.FC = () => {
             timestamp: new Date(),
             data: { depth: scrollDepth, page: currentPage }
           };
-          setEvents(prev => [...prev, scrollEvent]);
+          setEvents([...events, scrollEvent]);
         }
       }
     };
@@ -116,11 +116,11 @@ const EnhancedAnalyticsTracker: React.FC = () => {
         }
       };
       
-      setEvents(prev => [...prev, formEvent]);
-      setUserBehavior(prev => ({
-        ...prev,
-        conversionRate: prev.conversionRate + 0.1
-      }));
+      setEvents([...events, formEvent]);
+      setUserBehavior({
+        ...userBehavior,
+        conversionRate: userBehavior.conversionRate + 0.1
+      });
     };
 
     // Track downloads
@@ -135,7 +135,7 @@ const EnhancedAnalyticsTracker: React.FC = () => {
         }
       };
       
-      setEvents(prev => [...prev, downloadEvent]);
+      setEvents([...events, downloadEvent]);
     };
 
     // Track social shares
@@ -149,7 +149,7 @@ const EnhancedAnalyticsTracker: React.FC = () => {
         }
       };
       
-      setEvents(prev => [...prev, shareEvent]);
+      setEvents([...events, shareEvent]);
     };
 
     // Add event listeners
@@ -197,10 +197,10 @@ const EnhancedAnalyticsTracker: React.FC = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       const duration = Math.floor((Date.now() - sessionStart.getTime()) / 1000);
-      setUserBehavior(prev => ({
-        ...prev,
+      setUserBehavior({
+        ...userBehavior,
         averageSessionDuration: duration
-      }));
+      });
     }, 1000);
 
     return () => clearInterval(interval);
@@ -212,10 +212,10 @@ const EnhancedAnalyticsTracker: React.FC = () => {
     if (!visitorId) {
       const newId = 'visitor_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
       localStorage.setItem('visitor_id', newId);
-      setUserBehavior(prev => ({
-        ...prev,
-        uniqueVisitors: prev.uniqueVisitors + 1
-      }));
+      setUserBehavior({
+        ...userBehavior,
+        uniqueVisitors: userBehavior.uniqueVisitors + 1
+      });
     }
   }, []);
 
@@ -245,12 +245,12 @@ const EnhancedAnalyticsTracker: React.FC = () => {
   // Clear analytics data
   const clearAnalytics = () => {
     setEvents([]);
-    setUserBehavior(prev => ({
-      ...prev,
+    setUserBehavior({
+      ...userBehavior,
       pageViews: 0,
       topPages: [],
       userJourney: []
-    }));
+    });
   };
 
   return (
