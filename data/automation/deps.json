@@ -1,0 +1,110 @@
+{
+  "updatedAt": "2025-08-09T21:25:11.777Z",
+  "summary": {
+    "outdated": {
+      "total": 15,
+      "byType": {
+        "undefined": 15
+      },
+      "items": [
+        {
+          "name": "@eslint/js",
+          "current": "9.32.0",
+          "latest": "9.33.0",
+          "wanted": "9.33.0"
+        },
+        {
+          "name": "@netlify/plugin-nextjs",
+          "current": "4.41.3",
+          "latest": "5.12.0",
+          "wanted": "4.41.3"
+        },
+        {
+          "name": "@testing-library/react",
+          "current": "12.1.5",
+          "latest": "16.3.0",
+          "wanted": "12.1.5"
+        },
+        {
+          "name": "@types/node",
+          "current": "24.2.0",
+          "latest": "24.2.1",
+          "wanted": "24.2.1"
+        },
+        {
+          "name": "@types/react",
+          "current": "17.0.34",
+          "latest": "19.1.9",
+          "wanted": "17.0.34"
+        },
+        {
+          "name": "@types/react-dom",
+          "current": "17.0.11",
+          "latest": "19.1.7",
+          "wanted": "17.0.11"
+        },
+        {
+          "name": "eslint",
+          "current": "8.57.1",
+          "latest": "9.33.0",
+          "wanted": "8.57.1"
+        },
+        {
+          "name": "eslint-config-next",
+          "current": "14.2.31",
+          "latest": "15.4.6",
+          "wanted": "14.2.31"
+        },
+        {
+          "name": "framer-motion",
+          "current": "6.5.1",
+          "latest": "12.23.12",
+          "wanted": "6.5.1"
+        },
+        {
+          "name": "lucide-react",
+          "current": "0.536.0",
+          "latest": "0.539.0",
+          "wanted": "0.536.0"
+        },
+        {
+          "name": "next",
+          "current": "11.1.4",
+          "latest": "15.4.6",
+          "wanted": "11.1.4"
+        },
+        {
+          "name": "openai",
+          "current": "5.12.1",
+          "latest": "5.12.2",
+          "wanted": "5.12.2"
+        },
+        {
+          "name": "react",
+          "current": "17.0.2",
+          "latest": "19.1.1",
+          "wanted": "17.0.2"
+        },
+        {
+          "name": "react-dom",
+          "current": "17.0.2",
+          "latest": "19.1.1",
+          "wanted": "17.0.2"
+        },
+        {
+          "name": "tailwindcss",
+          "current": "3.4.17",
+          "latest": "4.1.11",
+          "wanted": "3.4.17"
+        }
+      ]
+    },
+    "vulnerabilities": {
+      "total": 7,
+      "critical": 4,
+      "high": 1,
+      "moderate": 2,
+      "low": 0
+    }
+  }
+}

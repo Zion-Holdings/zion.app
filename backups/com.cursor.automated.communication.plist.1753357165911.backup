@@ -1,0 +1,69 @@
+
+class Script {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    console.log('Starting Script...');
+    
+    try {
+      <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.cursor.automated.communication</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/miami2/Documents/GitHub/bolt.new.zion.app/scripts/start-cursor-automated.sh</string>
+        <string>start</string>
+    </array>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>KeepAlive</key>
+    <true/>
+    <key>StandardOutPath</key>
+    <string>/Users/miami2/Documents/GitHub/bolt.new.zion.app/logs/launchagent.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/miami2/Documents/GitHub/bolt.new.zion.app/logs/launchagent-error.log</string>
+    <key>WorkingDirectory</key>
+    <string>/Users/miami2/Documents/GitHub/bolt.new.zion.app</string>
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>NODE_ENV</key>
+        <string>production</string>
+        <key>CURSOR_SERVER_URL</key>
+        <string>https://api.cursor.sh</string>
+        <key>LOCAL_PORT</key>
+        <string>3008</string>
+        <key>MASTER_PORT</key>
+        <string>3009</string>
+        <key>COORDINATION_PORT</key>
+        <string>3010</string>
+    </dict>
+</dict>
+</plist>
+    } catch (error) {
+      console.error('Error in Script:', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    console.log('Stopping Script...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new Script();
+  script.start().catch(error => {
+    console.error('Failed to start Script:', error);
+    process.exit(1);
+  });
+}
+
+module.exports = Script;

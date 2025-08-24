@@ -1,0 +1,47 @@
+{
+  "version": "1.0.0",
+  "description": "AI Delegation System Configuration",
+  "nodes": {
+    "master": {
+      "port": 3002,
+      "discoveryPort": 3004
+    },
+    "worker": {
+      "port": 3003,
+      "taskPort": 3005
+    }
+  },
+  "ai": {
+    "cursor": {
+      "maxConcurrentRequests": 5,
+      "requestTimeout": 30000
+    },
+    "improvement": {
+      "intervals": {
+        "codeQuality": 900000,
+        "performance": 600000,
+        "security": 1800000,
+        "userExperience": 1200000,
+        "dependencies": 43200000,
+        "aiAnalysis": 300000
+      },
+      "thresholds": {
+        "performanceScore": 85,
+        "securityVulnerabilities": 0,
+        "codeCoverage": 75,
+        "bundleSizeIncrease": 5,
+        "errorRate": 0.005,
+        "lighthouseScore": 90
+      }
+    }
+  },
+  "coordination": {
+    "heartbeatInterval": 5000,
+    "taskSyncInterval": 2000,
+    "discoveryInterval": 30000
+  },
+  "storage": {
+    "basePath": "./ai-improvement-data",
+    "cursorPath": "./cursor-ai-data"
+  }
+}
