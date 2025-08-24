@@ -26,12 +26,7 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
     {
       key: 'marketplace',
       href: '/marketplace',
-      matches: (path: string) => path.startsWith('/marketplace')
-    },
-    {
-      key: 'categories',
-      href: '/categories',
-      matches: (path: string) => path.startsWith('/categories')
+      matches: (path: string) => path.startsWith('/marketplace') || path.startsWith('/categories') || path.startsWith('/equipment') || path.startsWith('/services')
     },
     {
       key: 'talent',
@@ -39,14 +34,19 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
       matches: (path: string) => path.startsWith('/talent') && !path.includes('/talent-dashboard')
     },
     {
-      key: 'equipment',
-      href: '/equipment',
-      matches: (path: string) => path.startsWith('/equipment')
-    },
-    {
       key: 'community',
       href: '/community',
       matches: (path: string) => path.startsWith('/community') || path.startsWith('/forum')
+    },
+    {
+      key: 'about',
+      href: '/about',
+      matches: (path: string) => path.startsWith('/about')
+    },
+    {
+      key: 'contact',
+      href: '/contact',
+      matches: (path: string) => path.startsWith('/contact')
     }
   ];
 
