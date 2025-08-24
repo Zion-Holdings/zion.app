@@ -1,84 +1,200 @@
 
-import React from 'react';
+import React from "react";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
+import { 
+  ArrowRight, 
+  Users, 
+  Zap, 
+  Settings, 
+  Search, 
+  MessageSquare, 
+  Smartphone, 
+  Calendar,
+  BookOpen,
+  Code,
+  Building,
+  Clock,
+  PenTool,
+  Link as LinkIcon,
+  Shield,
+  BarChart3
+} from "lucide-react";
 
 export function FeatureCTAs() {
   const features = [
     {
-      title: "AI & Automation",
-      description: "Intelligent automation solutions to streamline your business processes",
+      title: "AI Talent Matching",
+      description: "Our AI-powered matching algorithm connects you with the perfect talent or job based on skills, experience, and preferences.",
+      icon: <Search className="h-10 w-10 p-2 rounded-md bg-blue-100 text-blue-700" />,
+      link: "/marketplace",
+      badge: "Popular",
+      details: "Leveraging advanced machine learning, our matching system analyzes over 100+ data points to create perfect connections between talents and opportunities."
+    },
+    {
+      title: "Talent Directory",
+      description: "Browse our extensive database of verified AI and tech specialists, filtered by expertise and availability.",
+      icon: <Users className="h-10 w-10 p-2 rounded-md bg-purple-100 text-purple-700" />,
+      link: "/talent",
+      details: "Every talent in our directory undergoes a rigorous verification process to ensure quality, authenticity, and reliability."
+    },
+    {
+      title: "Services Marketplace",
+      description: "Discover professional tech and AI services for your business needs, from development to consulting.",
+      icon: <Zap className="h-10 w-10 p-2 rounded-md bg-cyan-100 text-cyan-700" />,
+      link: "/services",
+      badge: "New",
+      details: "From on-demand IT support to specialized AI development, our marketplace offers verified services with transparent pricing and reviews."
+    },
+    {
+      title: "Equipment Catalog",
+      description: "Find specialized hardware and tech equipment for AI development and research.",
+      icon: <Settings className="h-10 w-10 p-2 rounded-md bg-amber-100 text-amber-700" />,
+      link: "/equipment",
+      details: "Access cutting-edge technology with flexible options to buy, rent, or lease specialized equipment for your tech projects."
+    },
+    {
+      title: "Community Hub",
+      description: "Connect with like-minded professionals, share insights, and stay updated with industry trends.",
+      icon: <MessageSquare className="h-10 w-10 p-2 rounded-md bg-emerald-100 text-emerald-700" />,
+      link: "/community",
+      details: "Join thousands of tech professionals in discussions, AMAs with industry leaders, and exclusive community events."
+    },
+    {
+      title: "Mobile Experience",
+      description: "Take Zion with you on the go with our mobile app for iOS and Android devices.",
+      icon: <Smartphone className="h-10 w-10 p-2 rounded-md bg-indigo-100 text-indigo-700" />,
+      link: "/mobile-launch",
+      badge: "Featured",
+      details: "Manage your projects, communicate with clients or talents, and receive real-time updates wherever you are."
+    },
+    {
+      title: "Enterprise Solutions",
+      description: "Custom-branded hiring portal, dedicated talent pool, and powerful admin controls for your organization.",
+      icon: <Building className="h-10 w-10 p-2 rounded-md bg-pink-100 text-pink-700" />,
+      link: "/enterprise",
+      details: "Scale your talent acquisition with white-labeled solutions, analytics dashboards, and dedicated account managers."
+    },
+    {
+      title: "Developer Tools",
+      description: "Access our API documentation, SDKs, and integration guides to build on top of the Zion platform.",
+      icon: <Code className="h-10 w-10 p-2 rounded-md bg-gray-100 text-gray-700" />,
+      link: "/developers",
+      details: "Leverage our robust API with comprehensive documentation, code examples, and developer support."
+    },
+    {
+      title: "Learning Resources",
+      description: "Access tutorials, courses, and documentation to enhance your skills in AI and tech.",
+      icon: <BookOpen className="h-10 w-10 p-2 rounded-md bg-teal-100 text-teal-700" />,
+      link: "/blog",
+      details: "From beginner guides to advanced technical content, our learning resources help you stay at the cutting edge of technology."
+    },
+    {
+      title: "Project Management",
+      description: "Streamlined tools to manage projects, track milestones, and ensure successful delivery.",
+      icon: <Calendar className="h-10 w-10 p-2 rounded-md bg-red-100 text-red-700" />,
+      link: "/dashboard/projects",
+      details: "Our intuitive project management tools help you track progress, manage deliverables, and ensure timely completion."
+    },
+    {
+      title: "Zion Hire AI",
+      description: "AI-powered recruiting assistant to streamline your hiring process and find better matches.",
+      icon: <Clock className="h-10 w-10 p-2 rounded-md bg-violet-100 text-violet-700" />,
+      link: "/zion-hire-ai",
+      badge: "Premium",
+      details: "Automate screening, improve candidate matching, and enhance the hiring experience with our AI recruiting solution."
+    },
+    // New innovative micro SAAS services
+    {
+      title: "AI Content Generation",
+      description: "Automated content creation for blogs, social media, and marketing using advanced language models.",
+      icon: <PenTool className="h-10 w-10 p-2 rounded-md bg-green-100 text-green-700" />,
       link: "/ai-services",
-      color: "from-purple-500 to-indigo-600"
+      badge: "AI-Powered",
+      details: "Generate high-quality, SEO-optimized content at scale with our AI writing platform that learns your brand voice."
     },
     {
-      title: "Cloud Solutions",
-      description: "Scalable cloud infrastructure and DevOps services for modern businesses",
-      link: "/enterprise-solutions",
-      color: "from-blue-500 to-cyan-600"
+      title: "Smart Contract Development",
+      description: "Blockchain smart contract development and auditing for DeFi, NFTs, and enterprise solutions.",
+      icon: <LinkIcon className="h-10 w-10 p-2 rounded-md bg-orange-100 text-orange-700" />,
+      link: "/blockchain-services",
+      badge: "Blockchain",
+      details: "Build secure, audited smart contracts with our expert blockchain developers and comprehensive security testing."
     },
     {
-      title: "Cybersecurity",
-      description: "Advanced security and protection services to safeguard your digital assets",
-      link: "/comprehensive-services",
-      color: "from-red-500 to-pink-600"
+      title: "IoT Device Management",
+      description: "Complete IoT platform for device provisioning, monitoring, and data analytics.",
+      icon: <Settings className="h-10 w-10 p-2 rounded-md bg-blue-100 text-blue-700" />,
+      link: "/iot-services",
+      badge: "IoT",
+      details: "Manage your connected devices with our comprehensive IoT platform featuring real-time monitoring and predictive analytics."
     },
     {
-      title: "Data Analytics",
-      description: "Transform your data into actionable insights with advanced analytics",
-      link: "/comprehensive-services",
-      color: "from-green-500 to-emerald-600"
+      title: "Zero-Trust Security",
+      description: "Implement zero-trust security architecture with identity verification and continuous monitoring.",
+      icon: <Shield className="h-10 w-10 p-2 rounded-md bg-red-100 text-red-700" />,
+      link: "/cybersecurity-services",
+      badge: "Security",
+      details: "Protect your business with modern zero-trust security that verifies every user and device before granting access."
     },
     {
-      title: "Micro SAAS",
-      description: "Custom software solutions tailored to your specific business needs",
-      link: "/micro-saas",
-      color: "from-yellow-500 to-orange-600"
+      title: "Predictive Analytics",
+      description: "Real-time business intelligence with predictive modeling for forecasting and trend analysis.",
+      icon: <BarChart3 className="h-10 w-10 p-2 rounded-md bg-purple-100 text-purple-700" />,
+      link: "/ai-services",
+      badge: "Analytics",
+      details: "Transform your data into actionable insights with our AI-powered predictive analytics platform."
     },
     {
-      title: "Comprehensive Solutions",
-      description: "End-to-end technology solutions for enterprise transformation",
-      link: "/comprehensive-services",
-      color: "from-indigo-500 to-purple-600"
+      title: "Edge Computing Platform",
+      description: "Distributed edge computing for real-time data processing and low-latency IoT applications.",
+      icon: <Zap className="h-10 w-10 p-2 rounded-md bg-cyan-100 text-cyan-700" />,
+      link: "/iot-services",
+      badge: "Edge",
+      details: "Process data closer to the source with our edge computing platform for faster response times and reduced latency."
     }
   ];
 
   return (
-    <section className="py-16 bg-zion-blue-dark">
+    <section className="py-16 bg-gradient-to-b from-background to-background/90">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-white mb-4">Our Key Features</h2>
-          <p className="text-zion-slate-light text-lg max-w-2xl mx-auto">
-            Discover the comprehensive range of services and solutions we offer to help your business thrive in the digital age.
+        <div className="mb-12 text-center">
+          <h2 className="text-3xl font-bold tracking-tight mb-3">Discover Zion's Powerful Features</h2>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            Explore our comprehensive suite of tools designed to transform how you connect, collaborate, and create in the tech ecosystem.
           </p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature, index) => (
-            <div key={index} className="bg-zion-blue-light rounded-lg p-6 border border-zion-blue-light hover:border-zion-purple/50 transition-all duration-300">
-              <div className={`w-12 h-12 bg-gradient-to-br ${feature.color} rounded-lg flex items-center justify-center mb-4`}>
-                <div className="text-white text-xl font-bold">
-                  {index + 1}
+            <Card key={index} className="overflow-hidden transition-all duration-300 hover:shadow-lg hover:border-primary/50">
+              <CardHeader className="pb-2">
+                <div className="flex justify-between items-start">
+                  {feature.icon}
+                  {feature.badge && (
+                    <Badge variant="secondary" className="bg-primary/20 text-primary">
+                      {feature.badge}
+                    </Badge>
+                  )}
                 </div>
-              </div>
-              <h3 className="text-xl font-semibold text-white mb-3">{feature.title}</h3>
-              <p className="text-zion-slate-light mb-4">{feature.description}</p>
-              <Link 
-                to={feature.link}
-                className="inline-block bg-gradient-to-r from-zion-cyan to-zion-purple text-white px-6 py-2 rounded-lg font-medium hover:from-zion-cyan-dark hover:to-zion-purple-dark transition-all duration-300"
-              >
-                Learn More
-              </Link>
-            </div>
+                <CardTitle className="mt-4">{feature.title}</CardTitle>
+                <CardDescription className="line-clamp-2">{feature.description}</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground">{feature.details}</p>
+              </CardContent>
+              <CardFooter>
+                <Button asChild className="w-full gap-1">
+                  <Link to={feature.link}>
+                    <span>Explore {feature.title}</span>
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </Button>
+              </CardFooter>
+            </Card>
           ))}
-        </div>
-        
-        <div className="text-center mt-12">
-          <Link 
-            to="/comprehensive-services"
-            className="inline-block bg-gradient-to-r from-zion-purple to-zion-purple-dark text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-zion-purple-light hover:to-zion-purple transition-all duration-300"
-          >
-            View All Services
-          </Link>
         </div>
       </div>
     </section>
