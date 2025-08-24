@@ -169,8 +169,8 @@ export default function ComprehensiveServicesPage() {
                 <h3 className="text-lg font-semibold mb-2">{addon.name}</h3>
                 <p className="text-gray-600 text-sm mb-4">{addon.description}</p>
                 <div className="flex items-center justify-between">
-                  <div className="text-sm text-gray-500">{addon.category}</div>
-                  <div className="text-sm text-gray-500">${addon.price}</div>
+                  <div className="text-sm text-gray-500">Category: {addon.category}</div>
+                  <div className="text-sm text-gray-500">Price: ${addon.price}</div>
                 </div>
               </div>
             ))}

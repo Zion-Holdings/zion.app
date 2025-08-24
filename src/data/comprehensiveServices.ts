@@ -6,21 +6,21 @@ export const SERVICE_CATEGORIES = [
     name: "AI Services",
     description: "Cutting-edge artificial intelligence solutions for business automation and decision making",
     icon: "🤖",
-    count: 5
+    count: 7
   },
   {
     id: "micro-saas",
     name: "Micro SAAS",
     description: "Scalable software-as-a-service solutions for business growth and efficiency",
     icon: "💻",
-    count: 5
+    count: 7
   },
   {
     id: "it-services",
     name: "IT Services",
     description: "Comprehensive IT infrastructure and management services",
     icon: "🔧",
-    count: 5
+    count: 7
   },
   {
     id: "blockchain-web3",
@@ -464,6 +464,114 @@ export const COMPREHENSIVE_SERVICES: ProductListing[] = [
       "Security implementation"
     ],
     addons: ["custom-infrastructure", "performance-monitoring", "ongoing-support"]
+  },
+
+  // New AI Services
+  {
+    id: "ai-6",
+    name: "AI-Powered Content Generation",
+    description: "Advanced content generation using GPT and custom language models for marketing, documentation, and creative writing",
+    category: "AI Services",
+    price: 1799,
+    rating: 4.8,
+    image: "/images/ai-content-generation.jpg",
+    features: [
+      "Multi-language content",
+      "Brand voice customization",
+      "SEO optimization",
+      "Content scheduling",
+      "Performance analytics"
+    ],
+    addons: ["custom-model", "api-access", "training-data"]
+  },
+  {
+    id: "ai-7",
+    name: "Predictive Analytics Platform",
+    description: "Comprehensive predictive analytics solution for business forecasting, risk assessment, and trend analysis",
+    category: "AI Services",
+    price: 3499,
+    rating: 4.9,
+    image: "/images/predictive-analytics.jpg",
+    features: [
+      "Machine learning models",
+      "Real-time predictions",
+      "Risk assessment",
+      "Trend analysis",
+      "Automated reporting"
+    ],
+    addons: ["custom-model", "data-connector", "custom-alerts"]
+  },
+
+  // New Micro SAAS Services
+  {
+    id: "micro-6",
+    name: "AI-Powered Project Management",
+    description: "Intelligent project management platform with AI-driven insights, automation, and predictive analytics",
+    category: "Micro SAAS",
+    price: 299,
+    rating: 4.8,
+    image: "/images/ai-project-management.jpg",
+    features: [
+      "AI task prioritization",
+      "Resource optimization",
+      "Risk prediction",
+      "Automated workflows",
+      "Team collaboration"
+    ],
+    addons: ["advanced-analytics", "custom-workflows", "mobile-app"]
+  },
+  {
+    id: "micro-7",
+    name: "Smart Customer Support",
+    description: "AI-powered customer support platform with chatbots, sentiment analysis, and automated ticket routing",
+    category: "Micro SAAS",
+    price: 199,
+    rating: 4.7,
+    image: "/images/smart-customer-support.jpg",
+    features: [
+      "Intelligent chatbots",
+      "Sentiment analysis",
+      "Automated routing",
+      "Knowledge base",
+      "Performance metrics"
+    ],
+    addons: ["custom-templates", "crm-integration", "advanced-analytics"]
+  },
+
+  // New IT Services
+  {
+    id: "it-6",
+    name: "DevOps Automation",
+    description: "Complete DevOps automation including CI/CD pipelines, infrastructure as code, and monitoring",
+    category: "IT Services",
+    price: 2499,
+    rating: 4.8,
+    image: "/images/devops-automation.jpg",
+    features: [
+      "CI/CD pipelines",
+      "Infrastructure as code",
+      "Automated testing",
+      "Monitoring & alerting",
+      "Security scanning"
+    ],
+    addons: ["24-7-support", "custom-automation", "disaster-recovery"]
+  },
+  {
+    id: "it-7",
+    name: "Data Center Migration",
+    description: "Comprehensive data center migration services including planning, execution, and validation",
+    category: "IT Services",
+    price: 4999,
+    rating: 4.9,
+    image: "/images/data-center-migration.jpg",
+    features: [
+      "Migration planning",
+      "Data validation",
+      "Downtime minimization",
+      "Performance testing",
+      "Post-migration support"
+    ],
+    addons: ["24-7-support", "disaster-recovery", "custom-automation"]
   }
 ];
 
@@ -667,5 +775,42 @@ export const SERVICE_ADDONS = [
     description: "Optimization and tuning for maximum performance and efficiency",
     price: 799,
     category: "Emerging Tech"
+  },
+
+  // New Addon Services
+  {
+    id: "ai-training",
+    name: "AI Model Training & Fine-tuning",
+    description: "Custom training and fine-tuning of AI models for specific business use cases",
+    price: 2499,
+    category: "AI Services"
+  },
+  {
+    id: "data-migration",
+    name: "Data Migration & Integration",
+    description: "Seamless data migration between systems with validation and testing",
+    price: 899,
+    category: "IT Services"
+  },
+  {
+    id: "security-audit",
+    name: "Comprehensive Security Audit",
+    description: "Full security assessment including penetration testing and compliance review",
+    price: 1999,
+    category: "IT Services"
+  },
+  {
+    id: "custom-development",
+    name: "Custom Feature Development",
+    description: "Development of custom features and integrations for existing platforms",
+    price: 1499,
+    category: "Micro SAAS"
+  },
+  {
+    id: "consulting",
+    name: "Strategic Technology Consulting",
+    description: "Expert consultation on technology strategy and digital transformation",
+    price: 299,
+    category: "All Services"
   }
 ];
