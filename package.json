@@ -68,7 +68,7 @@
     "netlify:fix": "node automation/netlify-monitor.cjs fix-if-failing",
     "netlify:cron:start": "bash automation/netlify-monitor-cron.sh start",
     "netlify:cron:stop": "bash automation/netlify-monitor-cron.sh stop",
-    "netlify:cron:status": "bash automation/netlify-monitor-cron.sh status"
+    "netlify:cron:status": "bash automation/netlify-monitor-cron.sh status",
     "autonomous": "node automation/launch-enhanced-autonomous-system.js",
     "autonomous:dev": "nodemon automation/launch-enhanced-autonomous-system.js",
     "autonomous:status": "node automation/launch-autonomous-systems-clean.js status",
@@ -333,18 +333,6 @@
     "master:status": "node automation/master-automation-launcher.cjs status",
     "master:report": "node automation/master-automation-launcher.cjs report"
   },
-=======
-          "postautomation": "npm run automation:git-sync",
-      "lint:staged": "lint-staged",
-      "performance:audit": "node automation/performance-audit.cjs",
-      "nextgen:factory": "node automation/nextgen-autonomous-factory.cjs scan",
-      "nextgen:orchestrator": "node automation/nextgen-orchestrator.cjs start",
-      "nextgen:scan": "node automation/nextgen-autonomous-factory.cjs scan",
-      "nextgen:cron:start": "bash automation/nextgen-cron.sh start",
-      "nextgen:cron:stop": "bash automation/nextgen-cron.sh stop",
-      "nextgen:cron:status": "bash automation/nextgen-cron.sh status",
-      "nextgen:scheduler": "node automation/nextgen-scheduler.cjs"
-    },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
     "@google/generative-ai": "^0.24.1",
