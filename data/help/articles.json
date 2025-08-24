@@ -1,0 +1,65 @@
+[
+  {
+    "id": "gs-quick-start",
+    "slug": "getting-started",
+    "title": "Getting Started with Zion AI Marketplace",
+    "body": "Welcome to Zion! Learn how to create an account, set up your profile, and explore the marketplace.",
+    "category": "Getting Started",
+    "updatedAt": "2025-01-01T00:00:00.000Z",
+    "keywords": ["start", "account", "signup", "onboarding"]
+  },
+  {
+    "id": "hire-how-to",
+    "slug": "how-do-i-hire",
+    "title": "How do I hire?",
+    "body": "To hire, post a job from your dashboard, review proposals, and select your preferred talent. See pricing and contracts in the job flow.",
+    "category": "Hiring",
+    "updatedAt": "2025-01-05T00:00:00.000Z",
+    "keywords": ["hire", "post job", "contract"]
+  },
+  {
+    "id": "matching-flow",
+    "slug": "how-do-i-get-matched",
+    "title": "How do I get matched?",
+    "body": "Tell us your project details and timeline. Our system recommends pre-vetted talent that match your requirements.",
+    "category": "Hiring",
+    "updatedAt": "2025-01-04T00:00:00.000Z",
+    "keywords": ["match", "matching", "recommend"]
+  },
+  {
+    "id": "billing-help",
+    "slug": "billing-help",
+    "title": "Billing Help",
+    "body": "Manage payment methods in Settings → Billing. Invoices are issued monthly. For refunds or disputes, contact support.",
+    "category": "Payments",
+    "updatedAt": "2025-01-06T00:00:00.000Z",
+    "keywords": ["billing", "invoice", "payment", "refund"]
+  },
+  {
+    "id": "login-troubleshoot",
+    "slug": "cant-log-in-troubleshooting",
+    "title": "Can't log in? Troubleshooting Guide",
+    "body": "If you can't log in: 1) Reset your password. 2) Check email spam for verification. 3) Ensure correct 2FA code/time sync. 4) If locked out, contact support.",
+    "category": "Getting Started",
+    "updatedAt": "2025-01-03T00:00:00.000Z",
+    "keywords": ["login", "log in", "sign in", "password", "2fa", "otp"]
+  },
+  {
+    "id": "profile-setup",
+    "slug": "profile-setup",
+    "title": "Profile Setup",
+    "body": "Complete your profile with bio, skills, and verified identity for higher visibility.",
+    "category": "Profile Setup",
+    "updatedAt": "2025-01-02T00:00:00.000Z",
+    "keywords": ["profile", "setup", "verification", "kyc"]
+  },
+  {
+    "id": "disputes-guide",
+    "slug": "disputes",
+    "title": "Disputes: How to resolve issues",
+    "body": "Open a dispute from the contract page within 14 days of delivery. Our team mediates and aims for a fair resolution.",
+    "category": "Disputes",
+    "updatedAt": "2025-01-07T00:00:00.000Z",
+    "keywords": ["dispute", "complaint", "issue", "chargeback"]
+  }
+]
