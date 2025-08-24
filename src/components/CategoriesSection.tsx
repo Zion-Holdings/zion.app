@@ -1,43 +1,103 @@
 
 import { GradientHeading } from "./GradientHeading";
 import { Link } from "react-router-dom";
-import { Briefcase, HardDrive, Lightbulb, Users } from "lucide-react";
+import { 
+  Briefcase, 
+  HardDrive, 
+  Lightbulb, 
+  Users, 
+  Brain, 
+  Shield, 
+  Cloud, 
+  Database, 
+  Zap, 
+  Code, 
+  Settings, 
+  Link as LinkIcon 
+} from "lucide-react";
 
 const categories = [
   {
-    title: "Services",
-    description: "On-demand IT support, consulting, development, and more",
-    icon: <Briefcase className="w-10 h-10" />,
-    link: "/services",
+    title: "AI & Machine Learning",
+    description: "Transform your business with intelligent automation and data-driven insights",
+    icon: <Brain className="w-10 h-10" />,
+    link: "/services#ai-ml",
     color: "from-purple-500 to-indigo-600",
+    services: ["AI Strategy", "Custom Models", "Process Automation"]
   },
   {
-    title: "Talents",
-    description: "Connect with AI experts, developers, and tech specialists",
-    icon: <Users className="w-10 h-10" />,
-    link: "/talent",
-    color: "from-cyan-500 to-blue-600",
+    title: "Cybersecurity",
+    description: "Protect your organization with comprehensive security solutions and monitoring",
+    icon: <Shield className="w-10 h-10" />,
+    link: "/services#cybersecurity",
+    color: "from-red-500 to-pink-600",
+    services: ["Security Audits", "Managed SOC", "Compliance"]
   },
   {
-    title: "Equipment",
-    description: "Rent or buy specialized hardware, servers, and devices",
-    icon: <HardDrive className="w-10 h-10" />,
-    link: "/equipment",
-    color: "from-amber-500 to-orange-600",
+    title: "Cloud & Infrastructure",
+    description: "Modernize your infrastructure with cloud solutions and DevOps automation",
+    icon: <Cloud className="w-10 h-10" />,
+    link: "/services#cloud-infrastructure",
+    color: "from-blue-500 to-cyan-600",
+    services: ["Cloud Migration", "DevOps", "Infrastructure"]
   },
   {
-    title: "Innovation",
-    description: "Discover cutting-edge solutions and tech breakthroughs",
-    icon: <Lightbulb className="w-10 h-10" />,
-    link: "/category/innovation",
-    color: "from-emerald-500 to-green-600",
+    title: "Data & Analytics",
+    description: "Unlock business insights with advanced analytics and data engineering",
+    icon: <Database className="w-10 h-10" />,
+    link: "/services#data-analytics",
+    color: "from-green-500 to-emerald-600",
+    services: ["Data Engineering", "AI Analytics", "Business Intelligence"]
   },
+  {
+    title: "Digital Transformation",
+    description: "Accelerate your digital journey with strategic transformation services",
+    icon: <Zap className="w-10 h-10" />,
+    link: "/services#digital-transformation",
+    color: "from-orange-500 to-red-600",
+    services: ["Strategy", "Implementation", "Change Management"]
+  },
+  {
+    title: "Web & Mobile",
+    description: "Build custom applications and digital experiences for your business",
+    icon: <Code className="w-10 h-10" />,
+    link: "/services#web-mobile",
+    color: "from-indigo-500 to-purple-600",
+    services: ["Custom Apps", "Web Development", "Mobile Solutions"]
+  },
+  {
+    title: "IT Support & Management",
+    description: "Ensure smooth IT operations with managed services and support",
+    icon: <Settings className="w-10 h-10" />,
+    link: "/services#it-support",
+    color: "from-gray-500 to-slate-600",
+    services: ["Managed IT", "24/7 Support", "Strategic Planning"]
+  },
+  {
+    title: "Blockchain & Web3",
+    description: "Leverage decentralized technologies for innovation and transparency",
+    icon: <LinkIcon className="w-10 h-10" />,
+    link: "/services#blockchain-web3",
+    color: "from-yellow-500 to-amber-600",
+    services: ["Smart Contracts", "DeFi Apps", "Web3 Integration"]
+  }
 ];
 
 const specialServices = [
   {
     title: "IT Onsite Services",
-    link: "/it-onsite-services"
+    link: "/it-onsite-services",
+    description: "Global IT support in 195+ countries"
+  },
+  {
+    title: "AI Talent Matching",
+    link: "/zion-hire-ai",
+    description: "Find the perfect AI experts"
+  },
+  {
+    title: "Request Custom Quote",
+    link: "/request-quote",
+    description: "Get personalized pricing"
   }
 ];
 
@@ -51,14 +111,15 @@ export function CategoriesSection({ showTitle = true }: CategoriesSectionProps) 
       <div className="container mx-auto px-4">
         {showTitle && (
           <div className="text-center mb-16">
-            <GradientHeading>Explore Categories</GradientHeading>
-            <p className="text-zion-slate-light text-lg mt-4 max-w-2xl mx-auto">
-              Discover our comprehensive ecosystem of tech services, talent, equipment, and innovation
+            <GradientHeading>Explore Our Services</GradientHeading>
+            <p className="text-zion-slate-light text-lg mt-4 max-w-3xl mx-auto">
+              Discover our comprehensive ecosystem of professional technology services, from AI and cybersecurity 
+              to cloud infrastructure and digital transformation
             </p>
           </div>
         )}
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {categories.map((category) => (
             <Link 
               key={category.title} 
@@ -72,34 +133,63 @@ export function CategoriesSection({ showTitle = true }: CategoriesSectionProps) 
                   </div>
                 </div>
                 <h3 className="text-white text-xl font-bold mb-2">{category.title}</h3>
-                <p className="text-zion-slate-light">{category.description}</p>
+                <p className="text-zion-slate-light text-sm mb-4">{category.description}</p>
+                
+                {/* Service Highlights */}
+                <div className="space-y-2">
+                  {category.services.map((service, index) => (
+                    <div key={index} className="flex items-center gap-2 text-zion-cyan text-xs">
+                      <div className="w-1.5 h-1.5 bg-zion-cyan rounded-full"></div>
+                      <span>{service}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </Link>
           ))}
         </div>
         
-        <div className="mt-8">
+        <div className="mb-8">
           <h3 className="text-center text-xl font-bold text-white mb-6">Featured Services</h3>
           <div className="flex flex-wrap justify-center gap-4">
             {specialServices.map((service) => (
               <Link 
                 key={service.title}
                 to={service.link}
-                className="px-6 py-3 bg-zion-blue-light hover:bg-zion-blue-dark border border-zion-purple/20 hover:border-zion-purple/50 rounded-full text-zion-cyan transition-all duration-300"
+                className="group px-6 py-4 bg-zion-blue-light hover:bg-zion-blue-dark border border-zion-purple/20 hover:border-zion-purple/50 rounded-lg text-zion-cyan transition-all duration-300 hover:scale-105"
               >
-                {service.title}
+                <div className="text-center">
+                  <div className="font-semibold mb-1">{service.title}</div>
+                  <div className="text-xs text-zion-slate-light opacity-80">{service.description}</div>
+                </div>
               </Link>
             ))}
           </div>
         </div>
         
-        <div className="mt-12 flex justify-center">
+        <div className="text-center">
           <Link 
-            to="/categories" 
-            className="text-zion-cyan border-b border-zion-cyan hover:border-zion-cyan-dark transition-colors"
+            to="/services" 
+            className="inline-flex items-center gap-2 text-zion-cyan border-b border-zion-cyan hover:border-zion-cyan-dark transition-colors text-lg font-medium"
           >
-            View All Categories →
+            View All Services & Solutions
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
           </Link>
+        </div>
+
+        {/* Contact Information */}
+        <div className="mt-12 text-center">
+          <div className="bg-zion-blue-dark border border-zion-blue-light rounded-lg p-6 max-w-2xl mx-auto">
+            <h4 className="text-white font-semibold mb-3">Ready to Get Started?</h4>
+            <div className="text-zion-slate-light text-sm space-y-1">
+              <p>📞 <a href="tel:+13024640950" className="text-zion-cyan hover:text-zion-cyan-light">+1 302 464 0950</a></p>
+              <p>✉️ <a href="mailto:kleber@ziontechgroup.com" className="text-zion-cyan hover:text-zion-cyan-light">kleber@ziontechgroup.com</a></p>
+              <p>🌐 <a href="https://ziontechgroup.com" target="_blank" rel="noopener noreferrer" className="text-zion-cyan hover:text-zion-cyan-light">ziontechgroup.com</a></p>
+              <p>📍 364 E Main St STE 1008, Middletown DE 19709</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
