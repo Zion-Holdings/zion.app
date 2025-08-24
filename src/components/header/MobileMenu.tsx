@@ -26,16 +26,52 @@ export function MobileMenu({ unreadCount = 0, onClose }: MobileMenuProps) {
       matches: (path: string) => path === '/'
     },
     {
-      key: 'explore',
-      href: '/talent',
+      key: 'marketplace',
+      href: '/marketplace',
       icon: Search,
-      matches: (path: string) => path.startsWith('/talent') || path.startsWith('/categories') || path.startsWith('/marketplace')
+      matches: (path: string) => path.startsWith('/marketplace')
+    },
+    {
+      key: 'services',
+      href: '/services',
+      icon: BriefcaseIcon,
+      matches: (path: string) => path.startsWith('/services')
+    },
+    {
+      key: 'talent',
+      href: '/talent',
+      icon: User,
+      matches: (path: string) => path.startsWith('/talent') && !path.includes('/talent-dashboard')
+    },
+    {
+      key: 'equipment',
+      href: '/equipment',
+      icon: BriefcaseIcon,
+      matches: (path: string) => path.startsWith('/equipment')
     },
     {
       key: 'community',
       href: '/community',
       icon: MessageCircle,
       matches: (path: string) => path.startsWith('/community') || path.startsWith('/forum')
+    },
+    {
+      key: 'about',
+      href: '/about',
+      icon: User,
+      matches: (path: string) => path === '/about'
+    },
+    {
+      key: 'contact',
+      href: '/contact',
+      icon: MessageSquare,
+      matches: (path: string) => path === '/contact'
+    },
+    {
+      key: 'faq',
+      href: '/faq',
+      icon: MessageCircle,
+      matches: (path: string) => path === '/faq'
     },
     {
       key: 'post_job',
