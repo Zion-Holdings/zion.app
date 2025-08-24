@@ -53,25 +53,32 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
   
   return (
     <header 
-      className="sticky top-0 z-50 w-full border-b border-zion-purple/20 bg-zion-blue-dark/90 backdrop-blur-md"
+      className="sticky top-0 z-50 w-full border-b border-zion-purple/20 bg-gradient-to-r from-zion-blue-dark/95 via-zion-blue-dark/90 to-zion-slate-dark/95 backdrop-blur-xl"
       style={headerStyle}
     >
-      <div className="container flex h-16 items-center px-4 sm:px-6">
+      {/* Animated background */}
+      <div className="absolute inset-0 bg-gradient-to-r from-zion-purple/5 via-zion-cyan/5 to-zion-purple/5 animate-pulse"></div>
+      
+      <div className="relative container flex h-16 items-center px-4 sm:px-6">
         <Logo customLogo={customLogo} customColor={effectiveTheme?.primaryColor} />
 
         <div className="ml-6 flex-1">
           <MainNavigation />
         </div>
+        
         <form onSubmit={handleSubmit} className="hidden md:block w-64 mx-4">
-          <EnhancedSearchInput
-            value={query}
-            onChange={setQuery}
-            onSelectSuggestion={(text) => {
-              navigate(`/search?q=${encodeURIComponent(text)}`);
-              setQuery("");
-            }}
-            searchSuggestions={searchSuggestions}
-          />
+          <div className="relative group">
+            <div className="absolute inset-0 bg-gradient-to-r from-zion-purple/20 to-zion-cyan/20 rounded-lg blur opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <EnhancedSearchInput
+              value={query}
+              onChange={setQuery}
+              onSelectSuggestion={(text) => {
+                navigate(`/search?q=${encodeURIComponent(text)}`);
+                setQuery("");
+              }}
+              searchSuggestions={searchSuggestions}
+            />
+          </div>
         </form>
 
         <div className="flex items-center gap-2">
@@ -79,6 +86,9 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
           {!hideLogin && <UserMenu />}
         </div>
       </div>
+      
+      {/* Glowing border effect */}
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-zion-cyan to-transparent opacity-60"></div>
     </header>
   );
 }
