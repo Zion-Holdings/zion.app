@@ -1,67 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     subject: "",
-    message: ""
+    message: "",
   });
+
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [errors, setErrors] = useState<{
-    name?: string;
-    email?: string;
-    subject?: string;
-    message?: string;
-  }>({});
-  const [isChatOpen, setIsChatOpen] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-    setErrors(prev => ({ ...prev, [name]: undefined }));
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
-    const schema = z.object({
-      name: z.string().min(2, "Name must be at least 2 characters"),
-      email: z.string().email("Invalid email address"),
-      subject: z.string().min(2, "Subject must be at least 2 characters"),
-      message: z.string().min(10, "Message must be at least 10 characters"),
-    });
-
-    const result = schema.safeParse(formData);
-    if (!result.success) {
-      const fieldErrors: Record<string, string> = {};
-      for (const err of result.error.errors) {
-        if (err.path[0]) {
-          fieldErrors[err.path[0] as string] = err.message;
-        }
-      }
-      setErrors(fieldErrors);
-      toast({
-        title: "Form Validation Error",
-        description: result.error.errors[0].message,
-        variant: "destructive",
-      });
-      return;
-    }
-
-    setErrors({});
-
-    // Simulate form submission
     setIsSubmitting(true);
-
+    
+    // Simulate form submission
     setTimeout(() => {
       setIsSubmitting(false);
-      toast({
-        title: "Message Sent",
-        description: "We've received your message and will get back to you soon.",
-      });
-
-      // Reset form
+      alert("Thank you for your message! We'll get back to you soon.");
       setFormData({
         name: "",
         email: "",
@@ -71,33 +27,11 @@ export default function Contact() {
     }, 1500);
   };
 
-  // Handle sending messages to the AI chat assistant
-  const handleSendMessage = async (message: string): Promise<void> => {
-    try {
-      const response = await fetch("https://ziontechgroup.functions.supabase.co/functions/v1/ai-chat", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ 
-          messages: [{ role: "user", content: message }] 
-        }),
-      });
-      
-      if (!response.ok) {
-        throw new Error("Failed to get response from AI assistant");
-      }
-      
-      return Promise.resolve();
-    } catch (error) {
-      console.error("Error in AI chat:", error);
-      toast({
-        title: "Chat Error",
-        description: "There was an error communicating with our AI assistant. Please try again.",
-        variant: "destructive"
-      });
-      return Promise.resolve();
-    }
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
   };
 
   const offices = [
@@ -115,7 +49,6 @@ export default function Contact() {
     }
   ];
 
->>>>>>> 1190166b600d0883f3d21629581161b11801bcbf
   return (
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-16">
@@ -124,36 +57,106 @@ export default function Contact() {
           Get in touch with our team for any questions or support.
         </p>
         
-        <div className="max-w-2xl">
-          <div className="mb-6">
-            <label className="block text-zion-slate mb-2">Name</label>
-            <input 
-              type="text" 
-              className="w-full p-3 border border-zion-slate rounded-lg bg-background text-zion-slate"
-              placeholder="Your name"
-            />
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          {/* Contact Form */}
+          <div>
+            <h2 className="text-2xl font-semibold text-zion-blue mb-6">Send us a message</h2>
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div>
+                <label className="block text-zion-slate mb-2 font-medium">Name</label>
+                <input 
+                  type="text" 
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  className="w-full p-3 border border-zion-slate rounded-lg bg-background text-zion-slate focus:border-zion-cyan focus:outline-none"
+                  placeholder="Your name"
+                  required
+                />
+              </div>
+              
+              <div>
+                <label className="block text-zion-slate mb-2 font-medium">Email</label>
+                <input 
+                  type="email" 
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="w-full p-3 border border-zion-slate rounded-lg bg-background text-zion-slate focus:border-zion-cyan focus:outline-none"
+                  placeholder="your@email.com"
+                  required
+                />
+              </div>
+              
+              <div>
+                <label className="block text-zion-slate mb-2 font-medium">Subject</label>
+                <input 
+                  type="text" 
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  className="w-full p-3 border border-zion-slate rounded-lg bg-background text-zion-slate focus:border-zion-cyan focus:outline-none"
+                  placeholder="What can we help you with?"
+                  required
+                />
+              </div>
+              
+              <div>
+                <label className="block text-zion-slate mb-2 font-medium">Message</label>
+                <textarea 
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  className="w-full p-3 border border-zion-slate rounded-lg bg-background text-zion-slate h-32 focus:border-zion-cyan focus:outline-none"
+                  placeholder="Your message..."
+                  required
+                />
+              </div>
+              
+              <button 
+                type="submit"
+                disabled={isSubmitting}
+                className="bg-zion-blue hover:bg-zion-blue-dark disabled:opacity-50 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
+              >
+                {isSubmitting ? "Sending..." : "Send Message"}
+              </button>
+            </form>
           </div>
-          
-          <div className="mb-6">
-            <label className="block text-zion-slate mb-2">Email</label>
-            <input 
-              type="email" 
-              className="w-full p-3 border border-zion-slate rounded-lg bg-background text-zion-slate"
-              placeholder="your@email.com"
-            />
+
+          {/* Contact Information */}
+          <div>
+            <h2 className="text-2xl font-semibold text-zion-blue mb-6">Get in touch</h2>
+            
+            <div className="space-y-8">
+              {offices.map((office, index) => (
+                <div key={index} className="bg-zion-blue-light p-6 rounded-lg">
+                  <h3 className="text-lg font-semibold text-white mb-3">{office.name}</h3>
+                  <div className="space-y-2 text-zion-slate-light">
+                    <p className="flex items-start">
+                      <span className="mr-2">📍</span>
+                      {office.address}
+                    </p>
+                    <p className="flex items-center">
+                      <span className="mr-2">📞</span>
+                      {office.phone}
+                    </p>
+                    <p className="flex items-center">
+                      <span className="mr-2">✉️</span>
+                      {office.email}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-8 bg-zion-blue-light p-6 rounded-lg">
+              <h3 className="text-lg font-semibold text-white mb-3">Business Hours</h3>
+              <p className="text-zion-slate-light">
+                Monday - Friday: 9:00 AM - 6:00 PM EST<br />
+                24/7 emergency support available for enterprise clients
+              </p>
+            </div>
           </div>
-          
-          <div className="mb-6">
-            <label className="block text-zion-slate mb-2">Message</label>
-            <textarea 
-              className="w-full p-3 border border-zion-slate rounded-lg bg-background text-zion-slate h-32"
-              placeholder="Your message..."
-            />
-          </div>
-          
-          <button className="bg-zion-blue hover:bg-zion-blue-dark text-white px-8 py-3 rounded-lg font-semibold transition-colors">
-            Send Message
-          </button>
         </div>
       </div>
     </div>

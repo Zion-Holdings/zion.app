@@ -1,44 +1,40 @@
 
-import { GradientHeading } from "./GradientHeading";
+import React from 'react';
 import { Link } from "react-router-dom";
-import { Briefcase, HardDrive, Lightbulb, Users } from "lucide-react";
+import { Briefcase, HardDrive, Lightbulb, Users, Zap, Shield, Cloud, Database, TrendingUp, Cpu, LinkIcon } from "lucide-react";
 
 const categories = [
   {
     title: "Services",
     description: "On-demand IT support, consulting, development, and more",
     icon: <Briefcase className="w-10 h-10" />,
-    link: "/services",
+    link: "/comprehensive-services",
     color: "from-purple-500 to-indigo-600",
   },
   {
-    title: "Talents",
+    title: "AI Solutions",
     description: "Connect with AI experts, developers, and tech specialists",
     icon: <Users className="w-10 h-10" />,
-    link: "/talent",
+    link: "/ai-services",
     color: "from-cyan-500 to-blue-600",
   },
   {
-    title: "Equipment",
+    title: "Enterprise",
     description: "Rent or buy specialized hardware, servers, and devices",
     icon: <HardDrive className="w-10 h-10" />,
-    link: "/equipment",
+    link: "/enterprise-solutions",
     color: "from-amber-500 to-orange-600",
   },
   {
     title: "Innovation",
     description: "Discover cutting-edge solutions and tech breakthroughs",
     icon: <Lightbulb className="w-10 h-10" />,
-    link: "/category/innovation",
+    link: "/comprehensive-services",
     color: "from-emerald-500 to-green-600",
   },
 ];
 
 const specialServices = [
-  {
-    title: "IT Onsite Services",
-    link: "/it-onsite-services"
-  },
   {
     title: "Comprehensive Services",
     link: "/comprehensive-services"
@@ -56,32 +52,8 @@ const specialServices = [
     link: "/micro-saas"
   },
   {
-    title: "AI & Automation",
-    link: "/expanded-services?category=ai-automation"
-  },
-  {
-    title: "Cybersecurity",
-    link: "/expanded-services?category=cybersecurity"
-  },
-  {
-    title: "Cloud & DevOps",
-    link: "/expanded-services?category=cloud-devops"
-  },
-  {
-    title: "Data & Analytics",
-    link: "/expanded-services?category=data-analytics"
-  },
-  {
-    title: "Digital Transformation",
-    link: "/expanded-services?category=digital-transformation"
-  },
-  {
-    title: "IoT & Edge Computing",
-    link: "/expanded-services?category=iot-edge"
-  },
-  {
-    title: "Blockchain & Web3",
-    link: "/expanded-services?category=blockchain-web3"
+    title: "Enterprise Solutions",
+    link: "/enterprise-solutions"
   }
 ];
 
@@ -91,72 +63,49 @@ const serviceCategories = [
     description: "Intelligent automation and AI solutions",
     icon: <Zap className="w-8 h-8" />,
     color: "from-purple-500 to-indigo-600",
-    link: "/expanded-services?category=ai-automation"
+    link: "/ai-services"
   },
   {
     title: "Cybersecurity",
-    description: "Advanced security and compliance",
+    description: "Advanced security and protection services",
     icon: <Shield className="w-8 h-8" />,
     color: "from-red-500 to-pink-600",
-    link: "/expanded-services?category=cybersecurity"
+    link: "/comprehensive-services"
   },
   {
     title: "Cloud & DevOps",
-    description: "Cloud migration and automation",
+    description: "Cloud infrastructure and development operations",
     icon: <Cloud className="w-8 h-8" />,
     color: "from-blue-500 to-cyan-600",
-    link: "/expanded-services?category=cloud-devops"
+    link: "/enterprise-solutions"
   },
   {
     title: "Data & Analytics",
-    description: "Business intelligence and governance",
+    description: "Big data processing and business intelligence",
     icon: <Database className="w-8 h-8" />,
     color: "from-green-500 to-emerald-600",
-    link: "/expanded-services?category=data-analytics"
+    link: "/comprehensive-services"
   },
   {
     title: "Digital Transformation",
-    description: "Strategy and modernization",
+    description: "Modernize your business with digital solutions",
     icon: <TrendingUp className="w-8 h-8" />,
-    color: "from-orange-500 to-yellow-600",
-    link: "/expanded-services?category=digital-transformation"
+    color: "from-yellow-500 to-orange-600",
+    link: "/enterprise-solutions"
   },
   {
-    title: "IoT & Edge",
-    description: "Connected solutions and edge computing",
+    title: "IoT & Edge Computing",
+    description: "Internet of Things and edge computing solutions",
     icon: <Cpu className="w-8 h-8" />,
     color: "from-indigo-500 to-purple-600",
-    link: "/expanded-services?category=iot-edge"
+    link: "/comprehensive-services"
   },
   {
     title: "Blockchain & Web3",
     description: "Decentralized solutions and smart contracts",
     icon: <LinkIcon className="w-8 h-8" />,
     color: "from-teal-500 to-blue-600",
-    link: "/expanded-services?category=blockchain-web3"
-=======
-    title: "AI Services",
-    link: "/ai-services"
-  },
-  {
-    title: "Micro SAAS",
-    link: "/micro-saas"
-  },
-  {
-    title: "All Services",
     link: "/comprehensive-services"
-  },
-  {
-    title: "Comprehensive Services",
-    link: "/comprehensive-services"
-  },
-  {
-    title: "Services Pricing",
-    link: "/services-pricing"
-=======
-    title: "Enterprise Solutions",
-    link: "/enterprise-solutions"
->>>>>>> 41dde96e69292b30e86ecab86a30986100e57c62
   }
 ];
 
@@ -170,7 +119,7 @@ export function CategoriesSection({ showTitle = true }: CategoriesSectionProps) 
       <div className="container mx-auto px-4">
         {showTitle && (
           <div className="text-center mb-16">
-            <GradientHeading>Explore Categories</GradientHeading>
+            <h2 className="text-4xl font-bold text-white mb-4">Explore Categories</h2>
             <p className="text-zion-slate-light text-lg mt-4 max-w-2xl mx-auto">
               Discover our comprehensive ecosystem of tech services, talent, equipment, and innovation
             </p>
@@ -211,7 +160,7 @@ export function CategoriesSection({ showTitle = true }: CategoriesSectionProps) 
             ))}
             <Link 
               to="/comprehensive-services"
-              className="px-6 py-3 bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple border border-zion-purple/50 hover:border-zion-purple rounded-full text-white transition-all duration-300"
+              className="px-6 py-3 bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple border border-zion-purple/50 hover:border-zion-purple rounded-full text-white transition-colors duration-300"
             >
               View All Services
             </Link>
@@ -220,7 +169,7 @@ export function CategoriesSection({ showTitle = true }: CategoriesSectionProps) 
         
         <div className="mt-12 flex justify-center">
           <Link 
-            to="/categories" 
+            to="/comprehensive-services" 
             className="text-zion-cyan border-b border-zion-cyan hover:border-zion-cyan-dark transition-colors"
           >
             View All Categories →
