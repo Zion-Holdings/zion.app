@@ -1,74 +1,90 @@
 
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { 
+  Search, 
   Users, 
   Briefcase, 
-  Settings, 
-  ShoppingCart, 
-  MessageSquare, 
-  BarChart3,
-  Zap,
-  Globe,
-  Shield,
-  Clock
+  Settings,
+  MessageSquare,
+  Smartphone,
+  Code,
+  BookOpen
 } from 'lucide-react';
 
 const quickAccessItems = [
   {
-    title: 'Find Talent',
-    description: 'Discover skilled professionals',
+    icon: Search,
+    title: "AI Talent Matching",
+    description: "Find the perfect match with our AI algorithm",
+    href: "/match",
+    color: "from-blue-500 to-cyan-500",
+    bgColor: "bg-blue-500/10",
+    borderColor: "border-blue-500/30"
+  },
+  {
     icon: Users,
-    href: '/talent',
-    color: 'from-zion-cyan to-zion-blue',
-    bgColor: 'bg-zion-cyan/10',
-    iconColor: 'text-zion-cyan'
+    title: "Talent Directory",
+    description: "Browse verified professionals worldwide",
+    href: "/talent",
+    color: "from-purple-500 to-pink-500",
+    bgColor: "bg-purple-500/10",
+    borderColor: "border-purple-500/30"
   },
   {
-    title: 'Hire AI',
-    description: 'AI-powered hiring solutions',
-    icon: Zap,
-    href: '/zion-hire-ai',
-    color: 'from-zion-purple to-zion-purple-dark',
-    bgColor: 'bg-zion-purple/10',
-    iconColor: 'text-zion-purple'
+    icon: Briefcase,
+    title: "Services Marketplace",
+    description: "Discover professional tech services",
+    href: "/services",
+    color: "from-cyan-500 to-blue-500",
+    bgColor: "bg-cyan-500/10",
+    borderColor: "border-cyan-500/30"
   },
   {
-    title: 'IT Services',
-    description: '24/7 global IT support',
     icon: Settings,
-    href: '/it-onsite-services',
-    color: 'from-zion-blue to-zion-blue-dark',
-    bgColor: 'bg-zion-blue/10',
-    iconColor: 'text-zion-blue'
+    title: "Equipment Catalog",
+    description: "Access specialized hardware and tools",
+    href: "/equipment",
+    color: "from-amber-500 to-orange-500",
+    bgColor: "bg-amber-500/10",
+    borderColor: "border-amber-500/30"
   },
   {
-    title: 'Marketplace',
-    description: 'Browse products & services',
-    icon: ShoppingCart,
-    href: '/marketplace',
-    color: 'from-zion-green to-zion-green-dark',
-    bgColor: 'bg-zion-green/10',
-    iconColor: 'text-zion-green'
-  },
-  {
-    title: 'Community',
-    description: 'Connect with peers',
     icon: MessageSquare,
-    href: '/community',
-    color: 'from-zion-orange to-zion-orange-dark',
-    bgColor: 'bg-zion-orange/10',
-    iconColor: 'text-zion-orange'
+    title: "Community Hub",
+    description: "Connect with tech professionals",
+    href: "/community",
+    color: "from-emerald-500 to-teal-500",
+    bgColor: "bg-emerald-500/10",
+    borderColor: "border-emerald-500/30"
   },
   {
-    title: 'Analytics',
-    description: 'Track your performance',
-    icon: BarChart3,
-    href: '/analytics',
-    color: 'from-zion-pink to-zion-pink-dark',
-    bgColor: 'bg-zion-pink/10',
-    iconColor: 'text-zion-pink'
+    icon: Smartphone,
+    title: "Mobile App",
+    description: "Take Zion with you on the go",
+    href: "/mobile-launch",
+    color: "from-indigo-500 to-purple-500",
+    bgColor: "bg-indigo-500/10",
+    borderColor: "border-indigo-500/30"
+  },
+  {
+    icon: Code,
+    title: "Developer Tools",
+    description: "API docs, SDKs, and integrations",
+    href: "/developers",
+    color: "from-gray-500 to-slate-500",
+    bgColor: "bg-gray-500/10",
+    borderColor: "border-gray-500/30"
+  },
+  {
+    icon: BookOpen,
+    title: "Learning Resources",
+    description: "Tutorials, courses, and documentation",
+    href: "/blog",
+    color: "from-teal-500 to-cyan-500",
+    bgColor: "bg-teal-500/10",
+    borderColor: "border-teal-500/30"
   }
 ];
 
@@ -79,123 +95,108 @@ export function QuickAccess() {
       opacity: 1,
       transition: {
         staggerChildren: 0.1,
-        delayChildren: 0.2
+        delayChildren: 0.1
       }
     }
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20, scale: 0.95 },
+    hidden: { y: 20, opacity: 0 },
     visible: {
-      opacity: 1,
       y: 0,
-      scale: 1,
-      transition: {
-        duration: 0.5,
-        ease: "easeOut"
-      }
+      opacity: 1,
+      transition: { duration: 0.5 }
     }
   };
 
   return (
-    <section className="py-20 bg-gradient-to-b from-background to-zion-slate/5">
+    <section className="py-20 bg-gradient-to-b from-zion-blue-dark to-zion-blue">
       <div className="container mx-auto px-4">
-        <motion.div
+        {/* Section Header */}
+        <motion.div 
+          className="text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
-            Quick Access to Everything
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            Quick Access to <span className="text-transparent bg-clip-text bg-gradient-to-r from-zion-cyan to-zion-purple">Everything</span>
           </h2>
-          <p className="text-lg md:text-xl text-zion-slate-light max-w-3xl mx-auto leading-relaxed">
-            Everything you need to grow your business, find talent, and access IT services 
-            is just one click away.
+          <p className="text-xl text-zion-slate-light max-w-3xl mx-auto leading-relaxed">
+            Navigate Zion's comprehensive ecosystem with ease. From talent discovery to 
+            community engagement, everything you need is just a click away.
           </p>
         </motion.div>
 
-        <motion.div
+        {/* Quick Access Grid */}
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
-          {quickAccessItems.map((item, index) => {
-            const IconComponent = item.icon;
-            return (
-              <motion.div
-                key={item.title}
-                variants={itemVariants}
-                whileHover={{ 
-                  y: -8, 
-                  scale: 1.02,
-                  transition: { duration: 0.2 }
-                }}
-                className="group"
+          {quickAccessItems.map((item, index) => (
+            <motion.div
+              key={index}
+              className="group relative"
+              variants={itemVariants}
+            >
+              <Link 
+                to={item.href}
+                className="block h-full"
               >
-                <Link
-                  to={item.href}
-                  className="block h-full"
-                >
-                  <div className="relative h-full p-8 rounded-2xl bg-gradient-to-br from-white/5 to-white/10 border border-white/10 backdrop-blur-xl hover:border-white/20 transition-all duration-300 group-hover:shadow-2xl group-hover:shadow-zion-purple/10">
-                    {/* Background glow effect */}
-                    <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${item.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}></div>
-                    
-                    {/* Icon container */}
-                    <div className={`relative z-10 w-16 h-16 ${item.bgColor} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                      <IconComponent className={`w-8 h-8 ${item.iconColor}`} />
-                    </div>
-
-                    {/* Content */}
-                    <div className="relative z-10">
-                      <h3 className="text-xl font-bold text-white mb-3 group-hover:text-zion-cyan transition-colors duration-300">
-                        {item.title}
-                      </h3>
-                      <p className="text-zion-slate-light mb-4 leading-relaxed">
-                        {item.description}
-                      </p>
-                      
-                      {/* Hover indicator */}
-                      <div className="flex items-center gap-2 text-zion-cyan opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-0 group-hover:translate-x-2">
-                        <span className="text-sm font-medium">Get Started</span>
-                        <div className="w-2 h-2 bg-zion-cyan rounded-full"></div>
-                      </div>
-                    </div>
-
-                    {/* Corner accent */}
-                    <div className={`absolute top-4 right-4 w-3 h-3 bg-gradient-to-br ${item.color} rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300`}></div>
+                <div className={`${item.bgColor} ${item.borderColor} border-2 p-6 rounded-2xl h-full hover:transform hover:scale-105 transition-all duration-300 hover:shadow-2xl group-hover:border-opacity-60`}>
+                  <div className={`w-14 h-14 rounded-xl bg-gradient-to-r ${item.color} p-3 mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                    <item.icon className="w-8 h-8 text-white" />
                   </div>
-                </Link>
-              </motion.div>
-            );
-          })}
+                  <h3 className="text-lg font-bold text-white mb-2 group-hover:text-zion-cyan transition-colors duration-200">
+                    {item.title}
+                  </h3>
+                  <p className="text-zion-slate-light text-sm leading-relaxed">
+                    {item.description}
+                  </p>
+                  
+                  {/* Hover effect indicator */}
+                  <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                    <div className="w-2 h-2 bg-zion-cyan rounded-full"></div>
+                  </div>
+                </div>
+              </Link>
+            </motion.div>
+          ))}
         </motion.div>
 
         {/* Bottom CTA */}
-        <motion.div
+        <motion.div 
+          className="text-center mt-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="text-center mt-16"
+          transition={{ duration: 0.6, delay: 0.3 }}
         >
-          <div className="inline-flex items-center gap-4 p-6 bg-gradient-to-r from-zion-purple/10 to-zion-cyan/10 border border-zion-purple/20 rounded-2xl backdrop-blur-sm">
-            <div className="flex items-center gap-2">
-              <Globe className="w-5 h-5 text-zion-cyan" />
-              <span className="text-zion-cyan font-medium">Global Coverage</span>
-            </div>
-            <div className="w-px h-6 bg-zion-purple/30"></div>
-            <div className="flex items-center gap-2">
-              <Shield className="w-5 h-5 text-zion-purple" />
-              <span className="text-zion-purple font-medium">Secure & Reliable</span>
-            </div>
-            <div className="w-px h-6 bg-zion-purple/30"></div>
-            <div className="flex items-center gap-2">
-              <Clock className="w-5 h-5 text-zion-blue" />
-              <span className="text-zion-blue font-medium">24/7 Support</span>
+          <div className="bg-zion-blue-light/10 backdrop-blur-sm rounded-2xl p-8 border border-zion-purple/20 max-w-2xl mx-auto">
+            <h3 className="text-2xl font-bold text-white mb-4">
+              Can't Find What You're Looking For?
+            </h3>
+            <p className="text-zion-slate-light mb-6">
+              Use our powerful search to discover exactly what you need, or contact our support team for personalized assistance.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                to="/search"
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 hover:scale-105"
+              >
+                <Search className="w-4 h-4" />
+                Advanced Search
+              </Link>
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 border border-zion-cyan text-zion-cyan hover:bg-zion-cyan hover:text-zion-blue-dark px-6 py-3 rounded-lg font-medium transition-all duration-200 hover:scale-105"
+              >
+                Get Help
+              </Link>
             </div>
           </div>
         </motion.div>

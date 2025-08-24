@@ -4,15 +4,20 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { MapPin, Clock, Globe, ArrowRight, Shield, Zap } from "lucide-react";
+import { MapPin, Clock, Globe, Shield } from "lucide-react";
 
 export function ITServiceRequestHero() {
   const [location, setLocation] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const navigate = useNavigate();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (location.trim()) {
+      setIsSubmitting(true);
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      setIsSubmitting(false);
       navigate(`/it-onsite-services?location=${encodeURIComponent(location)}`);
     }
   };
@@ -39,136 +44,86 @@ export function ITServiceRequestHero() {
   };
 
   return (
-    <section className="relative bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-purple py-20 md:py-28 border-b border-zion-purple/20 overflow-hidden">
-      {/* Background decorative elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-10 left-10 w-32 h-32 bg-zion-cyan/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-10 right-10 w-40 h-40 bg-zion-purple/10 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-zion-blue/5 rounded-full blur-3xl"></div>
+    <section className="bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-purple py-16 md:py-24 border-b border-zion-purple/20 relative overflow-hidden">
+      {/* Background pattern */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.15)_1px,transparent_0)] bg-[length:20px_20px]"></div>
       </div>
-
+      
       <motion.div 
-        className="container mx-auto px-4 relative z-10"
+        className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10"
         variants={containerVariants}
         initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
+        animate="visible"
       >
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Left content */}
-          <motion.div variants={itemVariants} className="text-white">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="p-2 bg-zion-cyan/20 rounded-lg">
-                <Zap className="w-6 h-6 text-zion-cyan" />
+        <motion.div variants={itemVariants}>
+          <GradientHeading className="mb-6 text-4xl md:text-5xl leading-tight">
+            24x7 Global IT Onsite Services
+          </GradientHeading>
+          <p className="text-lg text-zion-slate-light mb-8 max-w-md leading-relaxed">
+            Request professional technicians anywhere in the world, anytime you need them. 
+            Our global network ensures rapid response times and expert service delivery.
+          </p>
+          
+          {/* Feature highlights */}
+          <div className="space-y-4">
+            <div className="flex items-center gap-3 text-zion-slate-light">
+              <Clock className="w-5 h-5 text-zion-cyan" />
+              <span>Available 24/7 worldwide</span>
+            </div>
+            <div className="flex items-center gap-3 text-zion-slate-light">
+              <Globe className="w-5 h-5 text-zion-purple" />
+              <span>Global technician network</span>
+            </div>
+            <div className="flex items-center gap-3 text-zion-slate-light">
+              <Shield className="w-5 h-5 text-zion-cyan-light" />
+              <span>Certified professionals</span>
+            </div>
+          </div>
+        </motion.div>
+        
+        <motion.div 
+          className="bg-zion-blue-light/20 backdrop-blur-sm p-8 rounded-2xl shadow-2xl border border-zion-purple/20"
+          variants={itemVariants}
+        >
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div>
+              <label htmlFor="location" className="block text-sm font-medium text-zion-slate-light mb-2">
+                Service Location
+              </label>
+              <div className="relative">
+                <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-zion-purple" />
+                <Input
+                  id="location"
+                  value={location}
+                  onChange={(e) => setLocation(e.target.value)}
+                  placeholder="Enter city, country, or address"
+                  className="bg-zion-blue-dark/50 border-zion-blue-light focus:border-zion-purple focus:ring-zion-purple text-white pl-10 py-4 text-lg rounded-lg transition-all duration-200"
+                  required
+                />
               </div>
-              <span className="text-zion-cyan font-semibold text-sm uppercase tracking-wider">
-                Global IT Services
-              </span>
             </div>
             
-            <GradientHeading className="mb-6 text-4xl md:text-5xl lg:text-6xl leading-tight">
-              24x7 Global IT Onsite Services
-            </GradientHeading>
+            <Button 
+              type="submit" 
+              disabled={isSubmitting || !location.trim()}
+              className="w-full bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-lg py-4 rounded-lg transform hover:scale-105 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              {isSubmitting ? (
+                <div className="flex items-center gap-2">
+                  <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                  Requesting Service...
+                </div>
+              ) : (
+                "Request Service"
+              )}
+            </Button>
             
-            <p className="text-lg md:text-xl text-zion-slate-light mb-8 max-w-lg leading-relaxed">
-              Request professional technicians anywhere in the world, anytime you need them. 
-              Fast, reliable, and secure IT solutions for your business.
+            <p className="text-xs text-center text-zion-slate-light mt-4">
+              Available worldwide, 24 hours a day • Response within 2 hours
             </p>
-
-            {/* Feature highlights */}
-            <div className="space-y-4 mb-8">
-              <div className="flex items-center gap-3">
-                <div className="w-2 h-2 bg-zion-cyan rounded-full"></div>
-                <span className="text-zion-cyan-light">Available 24/7 worldwide</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-2 h-2 bg-zion-purple rounded-full"></div>
-                <span className="text-zion-purple-light">Certified technicians</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-2 h-2 bg-zion-blue rounded-full"></div>
-                <span className="text-zion-blue-light">Same-day response guarantee</span>
-              </div>
-            </div>
-
-            {/* Stats */}
-            <div className="grid grid-cols-3 gap-6 pt-6 border-t border-white/10">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-zion-cyan">150+</div>
-                <div className="text-sm text-zion-slate-light">Countries</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-zion-purple">24/7</div>
-                <div className="text-sm text-zion-slate-light">Support</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-zion-blue">15min</div>
-                <div className="text-sm text-zion-slate-light">Response</div>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Right form */}
-          <motion.div variants={itemVariants} className="relative">
-            <div className="relative">
-              {/* Glassmorphism form container */}
-              <div className="backdrop-blur-xl bg-white/10 border border-white/20 rounded-2xl p-8 shadow-2xl">
-                <div className="text-center mb-6">
-                  <div className="w-16 h-16 bg-zion-cyan/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <MapPin className="w-8 h-8 text-zion-cyan" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-white mb-2">Request Service</h3>
-                  <p className="text-zion-slate-light">Enter your location to get started</p>
-                </div>
-
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="relative">
-                    <Input
-                      value={location}
-                      onChange={(e) => setLocation(e.target.value)}
-                      placeholder="Enter service location (e.g., New York, NY)"
-                      className="w-full bg-white/10 border-white/30 focus:border-zion-cyan focus:ring-zion-cyan text-white placeholder-zion-slate-light rounded-xl py-4 px-4 text-lg backdrop-blur-sm"
-                      required
-                    />
-                    <MapPin className="absolute right-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-zion-cyan/50" />
-                  </div>
-
-                  <Button 
-                    type="submit" 
-                    className="w-full bg-gradient-to-r from-zion-cyan to-zion-blue hover:from-zion-cyan-light hover:to-zion-blue-light text-lg py-4 rounded-xl shadow-lg hover:shadow-zion-cyan/25 transition-all duration-300 transform hover:scale-105 group"
-                  >
-                    <span className="flex items-center gap-2">
-                      Request Service Now
-                      <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
-                    </span>
-                  </Button>
-                </form>
-
-                {/* Trust indicators */}
-                <div className="mt-6 pt-6 border-t border-white/10">
-                  <div className="flex items-center justify-center gap-4 text-xs text-zion-slate-light">
-                    <div className="flex items-center gap-1">
-                      <Shield className="w-3 h-3 text-zion-cyan" />
-                      <span>Secure</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <Clock className="w-3 h-3 text-zion-purple" />
-                      <span>Fast</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <Globe className="w-3 h-3 text-zion-blue" />
-                      <span>Global</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Floating elements */}
-              <div className="absolute -top-4 -right-4 w-8 h-8 bg-zion-cyan/30 rounded-full animate-pulse"></div>
-              <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-zion-purple/30 rounded-full animate-pulse" style={{ animationDelay: "1s" }}></div>
-            </div>
-          </motion.div>
-        </div>
+          </form>
+        </motion.div>
       </motion.div>
     </section>
   );
