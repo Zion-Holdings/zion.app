@@ -12,6 +12,7 @@ import { FeatureCTAs } from "@/components/home/FeatureCTAs";
 import { FeatureHighlights } from "@/components/home/FeatureHighlights";
 import { ITServiceRequestHero } from "@/components/home/ITServiceRequestHero";
 import { MicroSaasShowcase } from "@/components/home/MicroSaasShowcase";
+import { ServicesShowcase } from "@/components/home/ServicesShowcase";
 
 export default function Home() {
   return (
@@ -34,6 +35,8 @@ export default function Home() {
       <MicroSaasShowcase />
       
       <FeatureHighlights />
+      
+      <ServicesShowcase />
       
       <CategoriesSection />
       <BenefitsSection />

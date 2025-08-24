@@ -42,6 +42,7 @@ const ContactPage = React.lazy(() => import('./pages/Contact'));
 const ZionHireAI = React.lazy(() => import('./pages/ZionHireAI'));
 const RequestQuotePage = React.lazy(() => import('./pages/RequestQuote'));
 const ComprehensiveServicesPage = React.lazy(() => import('./pages/ComprehensiveServicesPage'));
+const ServicesPricingPage = React.lazy(() => import('./pages/ServicesPricingPage'));
 const AIITSolutionsPage = React.lazy(() => import('./pages/AIITSolutionsPage'));
 const MicroSAASPage = React.lazy(() => import('./pages/MicroSAASPage'));
 const MicroSaasServicesPage = React.lazy(() => import('./pages/MicroSaasServices'));
@@ -69,6 +70,7 @@ const baseRoutes = [
   { path: '/hire-ai', element: <ZionHireAI /> },
   { path: '/request-quote', element: <RequestQuotePage /> },
   { path: '/comprehensive-services', element: <ComprehensiveServicesPage /> },
+  { path: '/services-pricing', element: <ServicesPricingPage /> },
   { path: '/ai-it-solutions', element: <AIITSolutionsPage /> },
   { path: '/micro-saas', element: <MicroSAASPage /> },
   { path: '/blog', element: <Blog /> },

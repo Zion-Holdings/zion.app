@@ -51,6 +51,7 @@ const specialServices = [
     link: "/it-onsite-services"
   },
   {
+<<<<<<< HEAD
     title: "AI & Automation",
     link: "/expanded-services?category=ai-automation"
   },
@@ -152,7 +153,14 @@ const serviceCategories = [
   {
     title: "All Services",
     link: "/comprehensive-services"
->>>>>>> cursor/expand-services-and-deploy-updates-ae24
+  },
+  {
+    title: "Comprehensive Services",
+    link: "/comprehensive-services"
+  },
+  {
+    title: "Services Pricing",
+    link: "/services-pricing"
   }
 ];
 
