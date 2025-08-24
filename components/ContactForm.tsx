@@ -1,7 +1,6 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Send, Phone, Mail, MapPin, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
-import { AnimatePresence } from 'framer-motion';
+import { Send, CheckCircle, AlertCircle, Phone, Mail, MapPin, Clock } from 'lucide-react';
 
 interface ContactFormData {
   name: string;
@@ -13,10 +12,10 @@ interface ContactFormData {
 }
 
 interface ContactFormProps {
-  isReducedMotion?: boolean;
+  className?: string;
 }
 
-const ContactForm: React.FC<ContactFormProps> = ({ isReducedMotion = false }) => {
+const ContactForm: React.FC<ContactFormProps> = ({ className = "" }) => {
   const [formData, setFormData] = useState<ContactFormData>({
     name: '',
     email: '',
@@ -29,54 +28,53 @@ const ContactForm: React.FC<ContactFormProps> = ({ isReducedMotion = false }) =>
   const [errors, setErrors] = useState<Partial<ContactFormData>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [isReducedMotion, setIsReducedMotion] = useState(false);
 
-  const services = [
-    'AI & Machine Learning',
-    'Quantum Computing',
-    'Space Technology',
-    'Cybersecurity',
-    'Cloud Solutions',
-    'Micro SaaS',
-    'Enterprise IT',
-    'Other'
-  ];
+  // Check for reduced motion preference
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    setIsReducedMotion(mediaQuery.matches);
+    
+    const handleChange = (e: MediaQueryListEvent) => setIsReducedMotion(e.matches);
+    mediaQuery.addEventListener('change', handleChange);
+    
+    return () => mediaQuery.removeEventListener('change', handleChange);
+  }, []);
 
   const validateField = useCallback((name: keyof ContactFormData, value: string): string => {
     switch (name) {
-      case 'name': {
-        return value.trim().length < 2 ? 'Name must be at least 2 characters' : '';
-      }
-      case 'email': {
+      case 'name':
+        return value.trim() ? '' : 'Name is required';
+      case 'email':
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return !emailRegex.test(value) ? 'Please enter a valid email address' : '';
-      }
-      case 'phone': {
-        const phoneRegex = /^[+]?[1-9][\d]{0,15}$/;
-        return value && !phoneRegex.test(value.replace(/\s/g, '')) ? 'Please enter a valid phone number' : '';
-      }
-      case 'message': {
-        return value.trim().length < 10 ? 'Message must be at least 10 characters' : '';
-      }
-      default: {
+        return value.trim() ? (emailRegex.test(value) ? '' : 'Please enter a valid email') : 'Email is required';
+      case 'company':
+        return value.trim() ? '' : 'Company is required';
+      case 'phone':
+        return value.trim() ? '' : 'Phone is required';
+      case 'service':
+        return value.trim() ? '' : 'Please select a service';
+      case 'message':
+        return value.trim() ? (value.length >= 10 ? '' : 'Message must be at least 10 characters') : 'Message is required';
+      default:
         return '';
-      }
     }
   }, []);
 
   const handleInputChange = useCallback((e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData({ ...formData, [name]: value });
     
     // Clear error when user starts typing
     if (errors[name as keyof ContactFormData]) {
-      setErrors(prev => ({ ...prev, [name]: '' }));
+      setErrors({ ...errors, [name]: '' });
     }
-  }, [errors]);
+  }, [errors, formData]);
 
   const handleBlur = useCallback((name: keyof ContactFormData) => {
     const error = validateField(name, formData[name]);
-    setErrors(prev => ({ ...prev, [name]: error }));
-  }, [validateField, formData]);
+    setErrors({ ...errors, [name]: error });
+  }, [validateField, formData, errors]);
 
   const validateForm = useCallback((): boolean => {
     const newErrors: Partial<ContactFormData> = {};
@@ -91,32 +89,6 @@ const ContactForm: React.FC<ContactFormProps> = ({ isReducedMotion = false }) =>
       }
     });
 
-  const handleInputChange = (name: string, value: string) => {
-    setFormData(prev => ({ ...prev, [name]: value }));
-    
-    // Clear error when user starts typing
-    if (errors[name]) {
-      setErrors(prev => ({ ...prev, [name]: '' }));
-    }
-  };
-
-  const handleBlur = (name: string) => {
-    const error = validateField(name, formData[name]);
-    if (error) {
-      setErrors(prev => ({ ...prev, [name]: error }));
-    }
-  };
-
-  const validateForm = (): boolean => {
-    const newErrors: FormErrors = {};
-    
-    Object.keys(formData).forEach(key => {
-      const error = validateField(key, formData[key as keyof FormData]);
-      if (error) {
-        newErrors[key] = error;
-      }
-    });
-    
     setErrors(newErrors);
     return isValid;
   }, [formData, validateField]);
@@ -173,32 +145,29 @@ const ContactForm: React.FC<ContactFormProps> = ({ isReducedMotion = false }) =>
 
       {/* Contact Information */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-        {[
-          { icon: Phone, label: 'Phone', value: '+1 (555) 123-4567', href: 'tel:+15551234567' },
-          { icon: Mail, label: 'Email', value: 'hello@ziontechgroup.com', href: 'mailto:hello@ziontechgroup.com' },
-          { icon: MapPin, label: 'Location', value: 'Global Operations', href: '#' }
-        ].map((contact, index) => (
-          <motion.a
-            key={index}
-            href={contact.href}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: isReducedMotion ? 0.1 : 0.4, delay: index * 0.1 }}
-            className="flex flex-col items-center p-4 bg-gray-800/30 rounded-lg border border-gray-700/50 hover:border-cyan-400/50 transition-all duration-300 group"
-          >
-            <div className="p-3 bg-gradient-to-r from-cyan-400/20 to-blue-500/20 rounded-full mb-3 group-hover:from-cyan-400/30 group-hover:to-blue-500/30 transition-all duration-300">
-              <contact.icon className="w-6 h-6 text-cyan-400" />
-            </div>
-            <div className="text-sm text-gray-400 mb-1">{contact.label}</div>
-            <div className="text-white font-medium text-center">{contact.value}</div>
-          </motion.a>
-        ))}
+        <div className="flex items-center gap-3 text-gray-300">
+          <Phone className="w-5 h-5 text-cyan-400" />
+          <span>+1 (555) 123-4567</span>
+        </div>
+        <div className="flex items-center gap-3 text-gray-300">
+          <Mail className="w-5 h-5 text-cyan-400" />
+          <span>contact@ziontechgroup.com</span>
+        </div>
+        <div className="flex items-center gap-3 text-gray-300">
+          <MapPin className="w-5 h-5 text-cyan-400" />
+          <span>San Francisco, CA</span>
+        </div>
+      </div>
+
+      {/* Business Hours */}
+      <div className="flex items-center gap-3 text-gray-300 mb-8 justify-center">
+        <Clock className="w-5 h-5 text-cyan-400" />
+        <span>Mon-Fri: 9:00 AM - 6:00 PM PST</span>
       </div>
 
       {/* Form */}
-      <form onSubmit={handleSubmit} className="space-y-6" noValidate>
+      <form onSubmit={handleSubmit} className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Name */}
           <div>
             <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
               Full Name *
@@ -210,21 +179,17 @@ const ContactForm: React.FC<ContactFormProps> = ({ isReducedMotion = false }) =>
               value={formData.name}
               onChange={handleInputChange}
               onBlur={() => handleBlur('name')}
-              className={`${inputClasses} ${errors.name ? 'border-red-500 focus:border-red-500 focus:ring-red-500/20' : ''}`}
+              className={inputClasses}
               placeholder="Enter your full name"
-              aria-describedby={errors.name ? 'name-error' : undefined}
-              aria-invalid={!!errors.name}
-              required
             />
             {errors.name && (
-              <div id="name-error" className={errorClasses}>
+              <div className={errorClasses}>
                 <AlertCircle className="w-4 h-4" />
                 {errors.name}
               </div>
             )}
           </div>
 
-          {/* Email */}
           <div>
             <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
               Email Address *
@@ -236,14 +201,11 @@ const ContactForm: React.FC<ContactFormProps> = ({ isReducedMotion = false }) =>
               value={formData.email}
               onChange={handleInputChange}
               onBlur={() => handleBlur('email')}
-              className={`${inputClasses} ${errors.email ? 'border-red-500 focus:border-red-500 focus:ring-red-500/20' : ''}`}
+              className={inputClasses}
               placeholder="Enter your email address"
-              aria-describedby={errors.email ? 'email-error' : undefined}
-              aria-invalid={!!errors.email}
-              required
             />
             {errors.email && (
-              <div id="email-error" className={errorClasses}>
+              <div className={errorClasses}>
                 <AlertCircle className="w-4 h-4" />
                 {errors.email}
               </div>
@@ -252,10 +214,9 @@ const ContactForm: React.FC<ContactFormProps> = ({ isReducedMotion = false }) =>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Company */}
           <div>
             <label htmlFor="company" className="block text-sm font-medium text-gray-300 mb-2">
-              Company
+              Company *
             </label>
             <input
               type="text"
@@ -263,15 +224,21 @@ const ContactForm: React.FC<ContactFormProps> = ({ isReducedMotion = false }) =>
               name="company"
               value={formData.company}
               onChange={handleInputChange}
+              onBlur={() => handleBlur('company')}
               className={inputClasses}
               placeholder="Enter your company name"
             />
+            {errors.company && (
+              <div className={errorClasses}>
+                <AlertCircle className="w-4 h-4" />
+                {errors.company}
+              </div>
+            )}
           </div>
 
-          {/* Phone */}
           <div>
             <label htmlFor="phone" className="block text-sm font-medium text-gray-300 mb-2">
-              Phone Number
+              Phone Number *
             </label>
             <input
               type="tel"
@@ -280,13 +247,11 @@ const ContactForm: React.FC<ContactFormProps> = ({ isReducedMotion = false }) =>
               value={formData.phone}
               onChange={handleInputChange}
               onBlur={() => handleBlur('phone')}
-              className={`${inputClasses} ${errors.phone ? 'border-red-500 focus:border-red-500 focus:ring-red-500/20' : ''}`}
+              className={inputClasses}
               placeholder="Enter your phone number"
-              aria-describedby={errors.phone ? 'phone-error' : undefined}
-              aria-invalid={!!errors.phone}
             />
             {errors.phone && (
-              <div id="phone-error" className={errorClasses}>
+              <div className={errorClasses}>
                 <AlertCircle className="w-4 h-4" />
                 {errors.phone}
               </div>
@@ -294,26 +259,34 @@ const ContactForm: React.FC<ContactFormProps> = ({ isReducedMotion = false }) =>
           </div>
         </div>
 
-        {/* Service */}
         <div>
           <label htmlFor="service" className="block text-sm font-medium text-gray-300 mb-2">
-            Service of Interest
+            Service Interest *
           </label>
           <select
             id="service"
             name="service"
             value={formData.service}
             onChange={handleInputChange}
+            onBlur={() => handleBlur('service')}
             className={inputClasses}
           >
             <option value="">Select a service</option>
-            {services.map((service, index) => (
-              <option key={index} value={service}>{service}</option>
-            ))}
+            <option value="ai-solutions">AI & Machine Learning</option>
+            <option value="quantum-computing">Quantum Computing</option>
+            <option value="cybersecurity">Cybersecurity</option>
+            <option value="cloud-solutions">Cloud Solutions</option>
+            <option value="consulting">Technology Consulting</option>
+            <option value="other">Other</option>
           </select>
+          {errors.service && (
+            <div className={errorClasses}>
+              <AlertCircle className="w-4 h-4" />
+              {errors.service}
+            </div>
+          )}
         </div>
 
-        {/* Message */}
         <div>
           <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
             Message *
@@ -325,14 +298,11 @@ const ContactForm: React.FC<ContactFormProps> = ({ isReducedMotion = false }) =>
             onChange={handleInputChange}
             onBlur={() => handleBlur('message')}
             rows={5}
-            className={`${inputClasses} resize-none ${errors.message ? 'border-red-500 focus:border-red-500 focus:ring-red-500/20' : ''}`}
+            className={inputClasses}
             placeholder="Tell us about your project or how we can help..."
-            aria-describedby={errors.message ? 'message-error' : undefined}
-            aria-invalid={!!errors.message}
-            required
           />
           {errors.message && (
-            <div id="message-error" className={errorClasses}>
+            <div className={errorClasses}>
               <AlertCircle className="w-4 h-4" />
               {errors.message}
             </div>
@@ -340,54 +310,50 @@ const ContactForm: React.FC<ContactFormProps> = ({ isReducedMotion = false }) =>
         </div>
 
         {/* Submit Button */}
-        <div className="text-center">
-          <motion.button
-            type="submit"
-            disabled={isSubmitting}
-            whileHover={!isSubmitting && !isReducedMotion ? { scale: 1.02 } : {}}
-            whileTap={!isSubmitting && !isReducedMotion ? { scale: 0.98 } : {}}
-            className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold rounded-lg text-lg shadow-2xl hover:shadow-cyan-500/50 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
-          >
-            {isSubmitting ? (
-              <>
-                <Loader2 className="w-5 h-5 animate-spin" />
-                Sending...
-              </>
-            ) : (
-              <>
-                <Send className="w-5 h-5" />
-                Send Message
-              </>
-            )}
-          </motion.button>
-        </div>
+        <motion.button
+          type="submit"
+          disabled={isSubmitting}
+          whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
+          whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
+          className={`w-full py-4 px-6 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 ${
+            isSubmitting ? 'opacity-50 cursor-not-allowed' : 'hover:from-cyan-600 hover:to-blue-700'
+          }`}
+        >
+          {isSubmitting ? (
+            <>
+              <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+              Sending...
+            </>
+          ) : (
+            <>
+              <Send className="w-5 h-5" />
+              Send Message
+            </>
+          )}
+        </motion.button>
 
         {/* Status Messages */}
-        <AnimatePresence>
-          {submitStatus === 'success' && (
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              className="flex items-center gap-3 p-4 bg-green-600/20 border border-green-500/50 rounded-lg text-green-400"
-            >
-              <CheckCircle className="w-5 h-5" />
-              Thank you! Your message has been sent successfully. We'll get back to you soon.
-            </motion.div>
-          )}
+        {submitStatus === 'success' && (
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="flex items-center gap-3 p-4 bg-green-500/20 border border-green-500/50 rounded-lg text-green-400"
+          >
+            <CheckCircle className="w-5 h-5" />
+            <span>Thank you! Your message has been sent successfully. We'll get back to you soon.</span>
+          </motion.div>
+        )}
 
-          {submitStatus === 'error' && (
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              className="flex items-center gap-3 p-4 bg-red-600/20 border border-red-500/50 rounded-lg text-red-400"
-            >
-              <AlertCircle className="w-5 h-5" />
-              Something went wrong. Please try again or contact us directly.
-            </motion.div>
-          )}
-        </AnimatePresence>
+        {submitStatus === 'error' && (
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="flex items-center gap-3 p-4 bg-red-500/20 border border-red-500/50 rounded-lg text-red-400"
+          >
+            <AlertCircle className="w-5 h-5" />
+            <span>Something went wrong. Please try again or contact us directly.</span>
+          </motion.div>
+        )}
       </form>
     </motion.div>
   );

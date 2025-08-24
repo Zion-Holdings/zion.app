@@ -39,13 +39,13 @@ const AIChatbot: React.FC<AIChatbotProps> = ({ className = "" }) => {
   }, [messages]);
 
   // AI response simulation
-  const generateAIResponse = async (userMessage: string) => {
+  const generateAIResponse = async (userMessage: string): Promise<string> => {
     setIsTyping(true);
     
     // Simulate AI processing time
     await new Promise(resolve => setTimeout(resolve, 1000 + Math.random() * 2000));
     
-    const responses = [
+    const responses: string[] = [
       "That's a great question! Let me help you with that. Our AI solutions are designed to transform your business operations and drive innovation.",
       "I understand you're interested in our services. We offer cutting-edge AI, quantum computing, and autonomous solutions that can revolutionize your business.",
       "Excellent choice! Our quantum computing platform provides unprecedented computational power for complex problem-solving and optimization.",
@@ -54,10 +54,11 @@ const AIChatbot: React.FC<AIChatbotProps> = ({ className = "" }) => {
       "Great question! Our pricing is competitive and we offer flexible plans to meet your specific needs. Let me get you in touch with our sales team."
     ];
     
-    const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+    const randomIndex = Math.floor(Math.random() * responses.length);
+    const randomResponse: string = responses[randomIndex]!;
     
     // Add some context-aware responses
-    let finalResponse = randomResponse;
+    let finalResponse: string = randomResponse;
     if (userMessage.toLowerCase().includes('price') || userMessage.toLowerCase().includes('cost')) {
       finalResponse = "Our pricing varies based on your specific needs. We offer flexible plans starting from $799/month. Would you like me to connect you with our pricing specialist?";
     } else if (userMessage.toLowerCase().includes('ai') || userMessage.toLowerCase().includes('artificial intelligence')) {
@@ -79,7 +80,7 @@ const AIChatbot: React.FC<AIChatbotProps> = ({ className = "" }) => {
       timestamp: new Date()
     };
 
-    setMessages(prev => [...prev, userMessage]);
+    setMessages([...messages, userMessage]);
     setInputValue('');
     
     // Generate AI response
@@ -92,7 +93,7 @@ const AIChatbot: React.FC<AIChatbotProps> = ({ className = "" }) => {
       timestamp: new Date()
     };
 
-    setMessages(prev => [...prev, botMessage]);
+    setMessages([...messages, botMessage]);
     setIsTyping(false);
   };
 
