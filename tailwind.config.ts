@@ -3,7 +3,6 @@ import defaultTheme from 'tailwindcss/defaultTheme';
 import plugin from 'tailwindcss/plugin';
 
 const config: Config = {
-<<<<<<< HEAD
   darkMode: "class",
   content: [
     "./pages/**/*.{ts,tsx}",
@@ -12,15 +11,6 @@ const config: Config = {
     "./src/**/*.{ts,tsx}",
   ],
   safelist: ['border-border'],
-=======
-  darkMode: 'class',
-  content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-  ],
->>>>>>> 6d7be8fce1d5e66d749ea8dd439e0663bfd83322
   theme: {
     extend: {
       colors: {
@@ -50,12 +40,13 @@ const config: Config = {
           foreground: 'hsl(var(--accent-foreground))',
         },
         popover: {
-          DEFAULT: 'hsl(var(--popover))',
-          foreground: 'hsl(var(--popover-foreground))',
+          DEFAULT: 'hsl(var(--card))',
+          foreground: 'hsl(var(--card-foreground))',
         },
         card: {
-<<<<<<< HEAD
-          DEFAULT: hsl(var(--card)),          foreground: hsl(var(--card-foreground)),        },
+          DEFAULT: 'hsl(var(--card))',
+          foreground: 'hsl(var(--card-foreground))',
+        },
         // Custom Zion colors
         "zion-blue": {
           DEFAULT: "#0a0f1f",
@@ -77,31 +68,6 @@ const config: Config = {
           light: "#CBD5E1",
           dark: "#64748B",
         },
-=======
-          DEFAULT: 'hsl(var(--card))',
-          foreground: 'hsl(var(--card-foreground))',
-        },
-        'zion-blue': {
-          DEFAULT: '#2e73ea',
-          light: '#8ab1f3',
-          dark: '#172d67',
-        },
-        'zion-purple': {
-          DEFAULT: '#a855f7',
-          light: '#c084fc',
-          dark: '#6b21a8',
-        },
-        'zion-cyan': {
-          DEFAULT: '#0d9488',
-          light: '#7aeae4',
-          dark: '#0f766e',
-        },
-        'zion-slate': {
-          DEFAULT: '#17072b',
-          light: '#451582',
-          dark: '#000000',
-        }
->>>>>>> 6d7be8fce1d5e66d749ea8dd439e0663bfd83322
       },
       borderRadius: {
         lg: 'var(--radius)',
@@ -124,11 +90,41 @@ const config: Config = {
         'accordion-up': {
           from: { height: 'var(--radix-accordion-content-height)' },
           to: { height: '0' },
+        },
+        'gradient-x': {
+          '0%, 100%': {
+            'background-size': '200% 200%',
+            'background-position': 'left center'
+          },
+          '50%': {
+            'background-size': '200% 200%',
+            'background-position': 'right center'
+          },
+        },
+        'float': {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-20px)' },
+        },
+        'glow': {
+          '0%, 100%': { boxShadow: '0 0 20px rgba(0, 229, 255, 0.5)' },
+          '50%': { boxShadow: '0 0 40px rgba(0, 229, 255, 0.8)' },
+        },
+        'neon-pulse': {
+          '0%, 100%': { 
+            textShadow: '0 0 5px #00e5ff, 0 0 10px #00e5ff, 0 0 15px #00e5ff, 0 0 20px #00e5ff' 
+          },
+          '50%': { 
+            textShadow: '0 0 2px #00e5ff, 0 0 5px #00e5ff, 0 0 7px #00e5ff, 0 0 10px #00e5ff' 
+          },
         }
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        'gradient-x': 'gradient-x 15s ease infinite',
+        'float': 'float 6s ease-in-out infinite',
+        'glow': 'glow 2s ease-in-out infinite alternate',
+        'neon-pulse': 'neon-pulse 2s ease-in-out infinite alternate',
       }
     }
   },
