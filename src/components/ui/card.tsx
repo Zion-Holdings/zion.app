@@ -25,6 +25,11 @@ interface CardContentProps {
   children: React.ReactNode;
 }
 
+interface CardFooterProps {
+  className?: string;
+  children: React.ReactNode;
+}
+
 export function Card({ className = '', children, ...props }: CardProps) {
   return (
     <div className={`bg-zion-blue-dark border border-zion-blue-light rounded-lg ${className}`} {...props}>
@@ -58,6 +63,14 @@ export function CardDescription({ className = '', children, ...props }: CardDesc
 }
 
 export function CardContent({ className = '', children, ...props }: CardContentProps) {
+  return (
+    <div className={`p-6 pt-0 ${className}`} {...props}>
+      {children}
+    </div>
+  );
+}
+
+export function CardFooter({ className = '', children, ...props }: CardFooterProps) {
   return (
     <div className={`p-6 pt-0 ${className}`} {...props}>
       {children}

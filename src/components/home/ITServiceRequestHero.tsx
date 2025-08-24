@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { GradientHeading } from "@/components/GradientHeading";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { useNavigate } from "react-router-dom";
+import { GradientHeading } from "../GradientHeading";
+import { Button } from "../ui/button";
+import { Input } from "../ui/input";
+import { useRouter } from "next/router";
 import { 
   Globe, 
   Clock, 
@@ -24,7 +24,7 @@ const benefits = [
 export function ITServiceRequestHero() {
   const [location, setLocation] = useState("");
   const [serviceType, setServiceType] = useState("");
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -32,7 +32,7 @@ export function ITServiceRequestHero() {
       const params = new URLSearchParams();
       if (location.trim()) params.append('location', location.trim());
       if (serviceType.trim()) params.append('service', serviceType.trim());
-      navigate(`/it-onsite-services?${params.toString()}`);
+      router.push(`/it-onsite-services?${params.toString()}`);
     }
   };
 

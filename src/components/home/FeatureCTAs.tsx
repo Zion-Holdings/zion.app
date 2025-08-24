@@ -1,10 +1,10 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Link } from "react-router-dom";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../ui/card";
+import { Button } from "../ui/button";
+import { Badge } from "../ui/badge";
+import Link from "next/link";
 import { 
   ArrowRight, 
   Brain, 
@@ -123,7 +123,7 @@ const itemVariants = {
     opacity: 1,
     transition: {
       duration: 0.6,
-      ease: "easeOut"
+              ease: "easeOut" as const
     }
   }
 };
@@ -158,7 +158,7 @@ export function FeatureCTAs() {
           {features.map((feature, index) => (
             <motion.div key={index} variants={itemVariants}>
               <div className="group">
-                <Link to={feature.link} className="block">
+                                            <Link href={feature.link} className="block">
                   <div className="rounded-lg overflow-hidden h-full border border-zion-blue-light bg-zion-blue-dark p-6 transition-all duration-300 hover:border-zion-purple/50 hover:translate-y-[-5px] hover:shadow-2xl hover:shadow-zion-purple/25">
                     <div className="flex items-start justify-between mb-4">
                       <div className={`rounded-full w-16 h-16 bg-gradient-to-br ${feature.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
@@ -206,7 +206,7 @@ export function FeatureCTAs() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <Link to="/comprehensive-services">
+                                <Link href="/comprehensive-services">
             <Button size="lg" className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white text-lg px-8 py-6 shadow-lg hover:shadow-zion-purple/25 transition-all duration-300 transform hover:scale-105">
               View All Services
               <ArrowRight className="h-5 w-5 ml-2" />

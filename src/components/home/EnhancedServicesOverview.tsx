@@ -1,9 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { ENHANCED_SERVICES } from '@/data/enhancedServices';
+import Link from 'next/link';
+import { Button } from '../ui/button';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../ui/card';
+import { Badge } from '../ui/badge';
+import { ENHANCED_SERVICES } from '../../data/enhancedServices';
 import { 
   Brain, 
   Shield, 
@@ -65,7 +65,7 @@ const EnhancedServicesOverview: React.FC = () => {
             that drive real business results.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link to="/enhanced-services">
+                          <Link href="/enhanced-services">
               <Button size="lg" className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white">
                 Explore All Services
                 <ArrowRight className="ml-2 w-4 h-4" />

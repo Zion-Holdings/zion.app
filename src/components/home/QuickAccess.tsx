@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { 
   ArrowRight, 
   Search, 
@@ -99,7 +99,7 @@ const itemVariants = {
     opacity: 1,
     transition: {
       duration: 0.6,
-      ease: "easeOut"
+              ease: "easeOut" as const
     }
   }
 };
@@ -133,7 +133,7 @@ export function QuickAccess() {
           {quickLinks.map((link, index) => (
             <motion.div key={index} variants={itemVariants}>
               <Link 
-                to={link.link} 
+                href={link.link} 
                 className="group block"
               >
                 <div className="bg-zion-blue border border-zion-blue-light hover:border-zion-purple/50 rounded-xl p-4 transition-all duration-300 hover:shadow-2xl hover:shadow-zion-purple/25 hover:scale-105 h-full">
@@ -164,7 +164,7 @@ export function QuickAccess() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <Link to="/marketplace">
+                                <Link href="/marketplace">
             <div className="inline-flex items-center gap-2 bg-gradient-to-r from-zion-purple to-zion-cyan hover:from-zion-purple-light hover:to-zion-cyan-light text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-zion-purple/25">
               <span>Explore Full Marketplace</span>
               <ArrowRight className="w-5 h-5" />

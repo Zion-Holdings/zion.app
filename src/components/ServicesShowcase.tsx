@@ -27,7 +27,7 @@ import {
   MapPin,
   Globe
 } from "lucide-react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 const categoryIcons = {
   'AI Business Solutions': Brain,
@@ -105,13 +105,13 @@ export function ServicesShowcase() {
             From AI automation to infrastructure management, we provide solutions that scale with your growth.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link to="/micro-saas-services">
+            <Link href="/micro-saas-services">
               <Button size="lg" className="bg-white text-zion-blue hover:bg-gray-100">
                 <Brain className="h-5 w-5 mr-2" />
                 Explore All Services
               </Button>
             </Link>
-            <Link to="/contact">
+                            <Link href="/contact">
               <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-zion-blue">
                 <Phone className="h-5 w-5 mr-2" />
                 Get Consultation
@@ -153,7 +153,7 @@ export function ServicesShowcase() {
               <Card key={service.id} className="bg-zion-blue-dark border-zion-blue-light text-white hover:border-zion-purple/50 transition-all duration-300 hover:scale-105">
                 <div className="relative">
                   <img 
-                    src={service.images[0]} 
+                    src={service.images?.[0] || '/images/default-service.jpg'} 
                     alt={service.title}
                     className="w-full h-48 object-cover rounded-t-lg"
                   />
@@ -283,17 +283,17 @@ export function ServicesShowcase() {
             <div>
               <h4 className="text-2xl font-bold text-zion-blue mb-6">Quick Actions</h4>
               <div className="space-y-4">
-                <Link to="/request-quote">
+                <Link href="/request-quote">
                   <Button className="w-full bg-zion-purple hover:bg-zion-purple-dark">
                     Request Custom Quote
                   </Button>
                 </Link>
-                <Link to="/contact">
+                <Link href="/contact">
                   <Button variant="outline" className="w-full border-zion-purple text-zion-purple hover:bg-zion-purple hover:text-white">
                     Schedule Consultation
                   </Button>
                 </Link>
-                <Link to="/micro-saas-services">
+                <Link href="/micro-saas-services">
                   <Button variant="outline" className="w-full border-zion-blue text-zion-blue hover:bg-zion-blue hover:text-white">
                     View All Services
                   </Button>
@@ -315,7 +315,7 @@ export function ServicesShowcase() {
           </div>
           
           <div className="text-center mt-12">
-            <Link to="/micro-saas-services">
+            <Link href="/micro-saas-services">
               <Button size="lg" className="bg-zion-purple hover:bg-zion-purple-dark">
                 Explore All Micro SAAS Services
                 <ArrowRight className="h-5 w-5 ml-2" />
