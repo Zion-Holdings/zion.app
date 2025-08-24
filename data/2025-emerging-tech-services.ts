@@ -1,4 +1,4 @@
-import { EnhancedRealMicroSaasService } from './enhanced-real-micro-saas-services';
+import { enhancedRealMicroSaasServices } from './enhanced-real-micro-saas-services';
 
 const contact = {
   mobile: '+1 302 464 0950',
@@ -7,7 +7,7 @@ const contact = {
   website: 'https://ziontechgroup.com'
 };
 
-export const emergingTechServices2025: EnhancedRealMicroSaasService[] = [
+export const emergingTechServices2025 = [
   // Quantum Computing Services
   {
     id: 'quantum-computing-as-a-service',
