@@ -1,5 +1,13 @@
 {
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
-  "/_document": "pages/_document.js"
+  "/_document": "pages/_document.js",
+  "/contact": "pages/contact.html",
+  "/favicon.ico": "pages/favicon.ico.html",
+  "/": "pages/index.html",
+  "/reports/updates/update-2025-08-15-0457": "pages/reports/updates/update-2025-08-15-0457.html",
+  "/reports/updates/update-2025-08-15-0507": "pages/reports/updates/update-2025-08-15-0507.html",
+  "/reports/updates/update-2025-08-15-0508": "pages/reports/updates/update-2025-08-15-0508.html",
+  "/services": "pages/services.html",
+  "/404": "pages/404.html"
 }
