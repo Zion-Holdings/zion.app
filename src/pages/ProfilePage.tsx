@@ -6,9 +6,9 @@ import { toast } from "@/components/ui/use-toast";
 import { SEO } from "@/components/SEO";
 import { AppHeader } from "@/components/layout/AppHeader";
 import { Footer } from "@/components/Footer";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/Avatar";
+import { Badge } from "@/components/ui/Badge";
+import { Button } from "@/components/ui/Button";
 import { HireNowCTA } from "@/components/profile/HireNowCTA";
 import { 
   Star, 

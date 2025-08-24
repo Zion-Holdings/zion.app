@@ -30,7 +30,7 @@ export default function Blog() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setPosts(prev => [...prev, generateRandomBlogPost()]);
+      setPosts((prev: any) => [...prev, generateRandomBlogPost()]);
     }, 120000); // every 2 minutes
     return () => clearInterval(interval);
   }, []);

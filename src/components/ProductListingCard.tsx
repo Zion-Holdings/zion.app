@@ -1,6 +1,6 @@
 import { useNavigate, Link } from "react-router-dom";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/Badge";
+import { Button } from "@/components/ui/Button";
 import { ProductListing } from "@/types/listings";
 import { Star, DollarSign, Heart } from "lucide-react";
 import { useAppDispatch } from "@/store/hooks";

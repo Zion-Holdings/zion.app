@@ -25,7 +25,7 @@ export default function Signup() {
   const navigate = useNavigate();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData(prev => ({
+    setFormData((prev: any) => ({
       ...prev,
       [e.target.name]: e.target.value
     }));
@@ -42,12 +42,11 @@ export default function Signup() {
     setError('');
 
     try {
-      await signup({
-        firstName: formData.firstName,
-        lastName: formData.lastName,
-        email: formData.email,
-        password: formData.password
-      });
+      await signup(
+        formData.email,
+        formData.password,
+        `${formData.firstName} ${formData.lastName}`
+      );
       setSuccess(true);
       setTimeout(() => {
         navigate('/dashboard');
