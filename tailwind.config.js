@@ -1,5 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+<<<<<<< HEAD
+=======
+  darkMode: "class",
+>>>>>>> origin/by9dba-codex/implement-light/dark-theme-with-persistence
   content: [
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',

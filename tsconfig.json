@@ -54,9 +54,21 @@
         "./types/*"
       ]
     },
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> origin/bwren1-codex/fix-typescript-errors-in-files
+    "typeRoots": ["./src/types"],
+
+>>>>>>> origin/bw06m0-codex/fix-typescript-errors-in-components
     /* Bundler mode */
     "moduleResolution": "node",
+<<<<<<< HEAD
     "esModuleInterop": true,
+=======
+    "allowImportingTsExtensions": true,
+>>>>>>> origin/bwren1-codex/fix-typescript-errors-in-files
     "resolveJsonModule": true,
     "strict": true,
     "noUnusedLocals": false,
@@ -77,6 +89,8 @@
     "noEmit": true,
     "isolatedModules": true
   },
+<<<<<<< HEAD
+<<<<<<< HEAD
   "include": [
     "next-env.d.ts",
     "**/*.ts",
@@ -84,6 +98,40 @@
   ],
   "exclude": [
     "node_modules",
-    "zion.app/recovered-content/**"
+    "zion.app/recovered-content/**",
+    "contracts/**",
+    "zion-os/**",
+    "zion_academy/**",
+    "wiki/**",
+    "temp_components/**",
+    "cypress/**",
+    "data/2025-cutting-edge-enterprise-solutions.ts",
+    "data/2025-cutting-edge-it-infrastructure-innovations.ts",
+    "data/2025-emerging-tech-services.ts",
+    "data/2025-enterprise-it-solutions.ts",
+    "data/2025-innovative-agriculture-services.ts",
+    "data/2025-innovative-ai-automation-services.ts",
+    "data/2025-innovative-ai-autonomous-ecosystem.ts",
+    "data/2025-innovative-ai-services-enhanced.ts",
+    "data/2025-innovative-ai-services-expansion-v2.ts",
+    "data/2025-innovative-ai-services-expansion.ts",
+    "data/2025-innovative-ar-vr-services.ts",
+    "data/2025-innovative-business-solutions-expansion.ts",
+    "data/2025-innovative-edge-computing-services.ts",
+    "data/2025-innovative-energy-services.ts",
+    "data/2025-innovative-entertainment-services.ts",
+    "data/2025-innovative-environmental-services.ts",
+    "data/2025-innovative-fintech-services.ts",
+    "data/2025-innovative-gaming-services.ts",
+    "data/2025-innovative-government-services.ts",
+    "data/2025-innovative-healthtech-services.ts",
+    "data/2025-innovative-hospitality-services.ts"
   ]
 }
+=======
+=======
+>>>>>>> origin/bwren1-codex/fix-typescript-errors-in-files
+  "include": ["src", "src/types/offline-shims.d.ts"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}
+>>>>>>> origin/bw06m0-codex/fix-typescript-errors-in-components

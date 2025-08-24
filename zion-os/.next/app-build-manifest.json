@@ -24,14 +24,6 @@
       "static/chunks/381-247f312e065c9478.js",
       "static/chunks/app/multiverse/launch/page-e68b871a7d4de06e.js"
     ],
-    "/page": [
-      "static/chunks/webpack-879f858537244e02.js",
-      "static/chunks/fd9d1056-be48aeae6e94b8d1.js",
-      "static/chunks/23-17d109591ec31f31.js",
-      "static/chunks/main-app-924c9045949c844c.js",
-      "static/chunks/231-f35b59634dca96cb.js",
-      "static/chunks/app/page-af803d8ac3075e4d.js"
-    ],
     "/docs/page": [
       "static/chunks/webpack-879f858537244e02.js",
       "static/chunks/fd9d1056-be48aeae6e94b8d1.js",
@@ -39,6 +31,14 @@
       "static/chunks/main-app-924c9045949c844c.js",
       "static/chunks/231-f35b59634dca96cb.js",
       "static/chunks/app/docs/page-d12732327260e8cb.js"
+    ],
+    "/page": [
+      "static/chunks/webpack-879f858537244e02.js",
+      "static/chunks/fd9d1056-be48aeae6e94b8d1.js",
+      "static/chunks/23-17d109591ec31f31.js",
+      "static/chunks/main-app-924c9045949c844c.js",
+      "static/chunks/231-f35b59634dca96cb.js",
+      "static/chunks/app/page-af803d8ac3075e4d.js"
     ],
     "/admin/os-deploy/page": [
       "static/chunks/webpack-879f858537244e02.js",
