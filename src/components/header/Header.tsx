@@ -10,9 +10,8 @@ import { useWhitelabel } from '@/context/WhitelabelContext';
 import { EnhancedSearchInput } from "@/components/search/EnhancedSearchInput";
 import { generateSearchSuggestions } from "@/data/marketplaceData";
 import { useNavigate } from "react-router-dom";
+import { Search, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Search, Menu, X, Bell, User } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 export interface HeaderProps {
   hideLogin?: boolean;
@@ -32,6 +31,12 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSearchExpanded, setIsSearchExpanded] = useState(false);
   const searchSuggestions = generateSearchSuggestions();
+  
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+    setIsSearchExpanded(false);
+  }, [navigate]);
   
   // If we have a white-label tenant and no specific customTheme is provided,
   // use the tenant's primary color
@@ -56,44 +61,22 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
     }
   };
 
-  const handleSearchSelect = (text: string) => {
-    navigate(`/search?q=${encodeURIComponent(text)}`);
-    setQuery("");
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
     setIsSearchExpanded(false);
   };
 
-  // Close mobile menu when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      const target = event.target as Element;
-      if (!target.closest('.mobile-menu') && !target.closest('.mobile-menu-toggle')) {
-        setIsMobileMenuOpen(false);
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
-
-  // Close mobile menu on route change
-  useEffect(() => {
+  const toggleSearch = () => {
+    setIsSearchExpanded(!isSearchExpanded);
     setIsMobileMenuOpen(false);
-    setIsSearchExpanded(false);
-  }, [navigate]);
+  };
   
   return (
     <header 
-      className="sticky top-0 z-50 w-full border-b border-zion-purple/20 bg-gradient-to-r from-zion-blue-dark/95 via-zion-slate/95 to-zion-blue-dark/95 backdrop-blur-xl shadow-2xl"
+      className="sticky top-0 z-50 w-full border-b border-zion-purple/20 bg-zion-blue-dark/95 backdrop-blur-md"
       style={headerStyle}
     >
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-0 left-0 w-32 h-32 bg-zion-purple/10 rounded-full filter blur-xl animate-pulse"></div>
-        <div className="absolute top-0 right-0 w-24 h-24 bg-zion-cyan/10 rounded-full filter blur-xl animate-pulse delay-1000"></div>
-        <div className="absolute bottom-0 left-1/2 w-20 h-20 bg-zion-blue/10 rounded-full filter blur-xl animate-pulse delay-2000"></div>
-      </div>
-      
-      <div className="container flex h-16 items-center px-4 sm:px-6 relative z-10">
+      <div className="container flex h-16 items-center px-4 sm:px-6">
         <Logo customLogo={customLogo} customColor={effectiveTheme?.primaryColor} />
 
         {/* Desktop Navigation */}
@@ -101,57 +84,41 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
           <MainNavigation />
         </div>
 
-        {/* Enhanced Search - Desktop */}
+        {/* Desktop Search */}
         <div className="hidden md:block w-64 mx-4">
           <EnhancedSearchInput
             value={query}
             onChange={setQuery}
-            onSelectSuggestion={handleSearchSelect}
+            onSelectSuggestion={(text) => {
+              navigate(`/search?q=${encodeURIComponent(text)}`);
+              setQuery("");
+            }}
             searchSuggestions={searchSuggestions}
-            placeholder="Search talents, services, equipment..."
           />
         </div>
 
-        {/* Mobile Search Toggle */}
-        <div className="md:hidden ml-auto mr-2">
-          <Button
-            variant="ghost"
-            size="sm"
-            onClick={() => setIsSearchExpanded(!isSearchExpanded)}
-            className="text-zion-cyan hover:bg-zion-cyan/10"
+        {/* Desktop Actions */}
+        <div className="flex items-center gap-2 hidden md:flex">
+          <LanguageSelector />
+          {!hideLogin && <UserMenu />}
+        </div>
+
+        {/* Mobile Actions */}
+        <div className="flex items-center gap-2 md:hidden">
+          <button
+            onClick={toggleSearch}
+            className="p-2 text-zion-cyan hover:bg-zion-purple/10 rounded-md transition-colors"
             aria-label="Toggle search"
           >
             <Search className="w-5 h-5" />
-          </Button>
-        </div>
-
-        {/* Mobile Menu Toggle */}
-        <Button
-          variant="ghost"
-          size="sm"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="lg:hidden text-zion-cyan hover:bg-zion-cyan/10 mobile-menu-toggle"
-          aria-label="Toggle mobile menu"
-          aria-expanded={isMobileMenuOpen}
-        >
-          {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-        </Button>
-
-        {/* Desktop Actions */}
-        <div className="hidden lg:flex items-center gap-3">
-          {user && (
-            <Button
-              variant="ghost"
-              size="sm"
-              className="text-zion-cyan hover:bg-zion-cyan/10 relative"
-              aria-label="Notifications"
-            >
-              <Bell className="w-5 h-5" />
-              <span className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full animate-pulse"></span>
-            </Button>
-          )}
-          <LanguageSelector />
-          {!hideLogin && <UserMenu />}
+          </button>
+          <button
+            onClick={toggleMobileMenu}
+            className="p-2 text-zion-cyan hover:bg-zion-purple/10 rounded-md transition-colors"
+            aria-label="Toggle mobile menu"
+          >
+            {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
         </div>
       </div>
 
@@ -162,86 +129,48 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            className="md:hidden border-t border-zion-purple/20 bg-zion-blue-dark/95"
+            transition={{ duration: 0.3 }}
+            className="border-t border-zion-purple/20 bg-zion-blue-dark/95"
           >
             <div className="container px-4 py-3">
-                              <EnhancedSearchInput
+              <form onSubmit={handleSubmit} className="flex gap-2">
+                <EnhancedSearchInput
                   value={query}
                   onChange={setQuery}
-                  onSelectSuggestion={handleSearchSelect}
+                  onSelectSuggestion={(text) => {
+                    navigate(`/search?q=${encodeURIComponent(text)}`);
+                    setQuery("");
+                    setIsSearchExpanded(false);
+                  }}
                   searchSuggestions={searchSuggestions}
-                  placeholder="Search talents, services, equipment..."
+                  className="flex-1"
                 />
+                <button
+                  type="submit"
+                  className="px-4 py-2 bg-zion-purple text-white rounded-md hover:bg-zion-purple-dark transition-colors"
+                >
+                  Search
+                </button>
+              </form>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
 
-      {/* Mobile Menu */}
+      {/* Mobile Navigation Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            className="lg:hidden border-t border-zion-purple/20 bg-zion-blue-dark/95 mobile-menu"
+            transition={{ duration: 0.3 }}
+            className="border-t border-zion-purple/20 bg-zion-blue-dark/95 lg:hidden"
           >
-            <div className="container px-4 py-4 space-y-4">
-              {/* Mobile Navigation */}
-              <nav className="space-y-2">
-                <Link
-                  to="/marketplace"
-                  className="block px-3 py-2 text-zion-cyan hover:bg-zion-cyan/10 rounded-md transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Marketplace
-                </Link>
-                <Link
-                  to="/talent"
-                  className="block px-3 py-2 text-zion-cyan hover:bg-zion-cyan/10 rounded-md transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Find Talent
-                </Link>
-                <Link
-                  to="/services"
-                  className="block px-3 py-2 text-zion-cyan hover:bg-zion-cyan/10 rounded-md transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Services
-                </Link>
-                <Link
-                  to="/equipment"
-                  className="block px-3 py-2 text-zion-cyan hover:bg-zion-cyan/10 rounded-md transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Equipment
-                </Link>
-                <Link
-                  to="/community"
-                  className="block px-3 py-2 text-zion-cyan hover:bg-zion-cyan/10 rounded-md transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Community
-                </Link>
-              </nav>
-
-              {/* Mobile Actions */}
-              <div className="pt-4 border-t border-zion-purple/20">
-                <div className="flex items-center gap-3 mb-4">
-                  <LanguageSelector />
-                  {user && (
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      className="text-zion-cyan hover:bg-zion-cyan/10"
-                      aria-label="Notifications"
-                    >
-                      <Bell className="w-5 h-5" />
-                      <span className="ml-1 text-sm">Notifications</span>
-                    </Button>
-                  )}
-                </div>
+            <div className="container px-4 py-4">
+              <MainNavigation className="flex-col space-y-2" />
+              <div className="mt-4 pt-4 border-t border-zion-purple/20">
+                <LanguageSelector />
                 {!hideLogin && <UserMenu />}
               </div>
             </div>

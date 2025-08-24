@@ -1,242 +1,116 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, ReactNode } from 'react';
 import { motion } from 'framer-motion';
-import { AlertTriangle, RefreshCw, Home, ArrowLeft } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { useNavigate } from 'react-router-dom';
+import { AlertTriangle, RefreshCw, Home, ChevronUp } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
 
-interface ErrorBoundaryProps {
-  children: React.ReactNode;
-  fallback?: React.ReactNode;
-  onError?: (error: Error, errorInfo: any) => void;
+interface Props {
+  children: ReactNode;
+  fallback?: ReactNode;
 }
 
 interface ErrorState {
   hasError: boolean;
-  error: Error | null;
+  error?: Error;
 }
 
-// Error Fallback Component
 function ErrorFallback({ error, resetError }: { error: Error; resetError: () => void }) {
   const navigate = useNavigate();
 
-  const handleGoHome = () => {
-    navigate('/');
-    resetError();
-  };
-
-  const handleGoBack = () => {
-    navigate(-1);
-    resetError();
-  };
-
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      className="min-h-screen bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-purple flex items-center justify-center p-4"
-    >
-      <div className="max-w-2xl mx-auto text-center">
-        {/* Error Icon */}
-        <motion.div
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-          transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
-          className="mx-auto w-24 h-24 bg-red-500/20 rounded-full flex items-center justify-center mb-8"
-        >
-          <AlertTriangle className="w-12 h-12 text-red-400" />
-        </motion.div>
-
-        {/* Error Message */}
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-          className="text-4xl font-bold text-white mb-4"
-        >
-          Oops! Something went wrong
-        </motion.h1>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
-          className="text-xl text-zion-slate-light mb-8"
-        >
-          We're sorry, but something unexpected happened. Our team has been notified and is working to fix this issue.
-        </motion.p>
-
-        {/* Error Details (Development Only) */}
-        {process.env.NODE_ENV === 'development' && error && (
+    <div className="min-h-screen bg-zion-blue-dark flex items-center justify-center p-4">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="max-w-md w-full text-center"
+      >
+        <div className="mb-8">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}
-            className="bg-red-500/10 border border-red-500/20 rounded-lg p-4 mb-8 text-left"
+            animate={{ rotate: [0, 10, -10, 0] }}
+            transition={{ duration: 2, repeat: Infinity }}
+            className="mx-auto w-20 h-20 bg-zion-purple/20 rounded-full flex items-center justify-center mb-4"
           >
-            <h3 className="text-lg font-semibold text-red-400 mb-2">Error Details (Development)</h3>
-            <p className="text-red-300 text-sm font-mono break-words">
-              {error.message}
-            </p>
-            {error.stack && (
-              <details className="mt-2">
-                <summary className="text-red-300 text-sm cursor-pointer">Stack Trace</summary>
-                <pre className="text-red-300 text-xs mt-2 whitespace-pre-wrap overflow-auto max-h-32">
-                  {error.stack}
-                </pre>
-              </details>
-            )}
+            <AlertTriangle className="w-10 h-10 text-zion-purple" />
           </motion.div>
-        )}
+          <h1 className="text-2xl font-bold text-white mb-2">Oops! Something went wrong</h1>
+          <p className="text-zion-slate-light">
+            We're sorry, but something unexpected happened. Our team has been notified.
+          </p>
+        </div>
 
-        {/* Action Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center"
-        >
-          <Button
+        <div className="space-y-3 mb-8">
+          <button
             onClick={resetError}
-            className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-lg py-3 px-6 shadow-2xl hover:shadow-zion-purple/25 transition-all duration-300 transform hover:scale-105"
+            className="w-full bg-zion-purple hover:bg-zion-purple-dark text-white py-3 px-6 rounded-md transition-colors flex items-center justify-center gap-2"
           >
-            <RefreshCw className="w-5 h-5 mr-2" />
+            <RefreshCw className="w-4 h-4" />
             Try Again
-          </Button>
-
-          <Button
-            onClick={handleGoBack}
-            variant="outline"
-            className="border-2 border-zion-cyan text-zion-cyan hover:bg-zion-cyan hover:text-zion-blue-dark text-lg py-3 px-6 transition-all duration-300 transform hover:scale-105"
+          </button>
+          
+          <button
+            onClick={() => navigate(-1)}
+            className="w-full bg-zion-blue hover:bg-zion-blue-dark text-white py-3 px-6 rounded-md transition-colors flex items-center justify-center gap-2"
           >
-            <ArrowLeft className="w-5 h-5 mr-2" />
+            <ChevronUp className="w-4 h-4" />
             Go Back
-          </Button>
-
-          <Button
-            onClick={handleGoHome}
-            variant="outline"
-            className="border-2 border-zion-cyan text-zion-cyan hover:bg-zion-cyan hover:text-zion-blue-dark text-lg py-3 px-6 transition-all duration-300 transform hover:scale-105"
+          </button>
+          
+          <Link
+            to="/"
+            className="w-full bg-zion-cyan hover:bg-zion-cyan-dark text-zion-blue-dark py-3 px-6 rounded-md transition-colors flex items-center justify-center gap-2"
           >
-            <Home className="w-5 h-5 mr-2" />
+            <Home className="w-4 h-4" />
             Go Home
-          </Button>
-        </motion.div>
+          </Link>
+        </div>
 
-        {/* Contact Support */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.8 }}
-          className="mt-8 text-zion-slate-light"
-        >
-          <p className="mb-2">Still having issues?</p>
-          <Button
-            variant="link"
-            className="text-zion-cyan hover:text-zion-cyan-light underline"
-            onClick={() => navigate('/contact')}
-          >
-            Contact Support
-          </Button>
-        </motion.div>
-      </div>
-    </motion.div>
+        {process.env.NODE_ENV === 'development' && error && (
+          <details className="text-left bg-zion-blue/20 rounded-md p-4">
+            <summary className="text-zion-cyan cursor-pointer mb-2 font-medium">
+              Error Details (Development)
+            </summary>
+            <pre className="text-xs text-zion-slate-light overflow-auto">
+              {error.stack}
+            </pre>
+          </details>
+        )}
+      </motion.div>
+    </div>
   );
 }
 
-// Functional Error Boundary using React hooks
-export function ErrorBoundary({ children, fallback, onError }: ErrorBoundaryProps) {
-  const [errorState, setErrorState] = useState<ErrorState>({
-    hasError: false,
-    error: null
-  });
+export function ErrorBoundary({ children, fallback }: Props) {
+  const [errorState, setErrorState] = useState<ErrorState>({ hasError: false });
 
   useEffect(() => {
-    const handleError = (error: Error, errorInfo: any) => {
-      console.error('ErrorBoundary caught an error:', error, errorInfo);
-      
-      setErrorState({
-        hasError: true,
-        error
-      });
-
-      // Call custom error handler if provided
-      if (onError) {
-        onError(error, errorInfo);
-      }
-
-      // Log to external error reporting service in production
-      if (process.env.NODE_ENV === 'production') {
-        console.error('Production error:', error.message);
-      }
+    const handleError = (error: ErrorEvent) => {
+      console.error('Error caught by boundary:', error);
+      setErrorState({ hasError: true, error: error.error });
     };
 
-    // Global error handler
-    window.addEventListener('error', (event) => {
-      handleError(event.error || new Error(event.message), { type: 'window.error' });
-    });
+    const handleUnhandledRejection = (event: PromiseRejectionEvent) => {
+      console.error('Unhandled promise rejection:', event);
+      setErrorState({ hasError: true, error: new Error(event.reason) });
+    };
 
-    // Unhandled promise rejection handler
-    window.addEventListener('unhandledrejection', (event) => {
-      handleError(new Error(event.reason), { type: 'unhandledrejection' });
-    });
+    window.addEventListener('error', handleError);
+    window.addEventListener('unhandledrejection', handleUnhandledRejection);
 
     return () => {
-      window.removeEventListener('error', () => {});
-      window.removeEventListener('unhandledrejection', () => {});
+      window.removeEventListener('error', handleError);
+      window.removeEventListener('unhandledrejection', handleUnhandledRejection);
     };
-  }, [onError]);
+  }, []);
 
   const resetError = () => {
-    setErrorState({
-      hasError: false,
-      error: null
-    });
+    setErrorState({ hasError: false, error: undefined });
   };
 
   if (errorState.hasError) {
     if (fallback) {
-      return <>{fallback}</>;
+      return fallback;
     }
-
-    return (
-      <ErrorFallback
-        error={errorState.error!}
-        resetError={resetError}
-      />
-    );
+    return <ErrorFallback error={errorState.error!} resetError={resetError} />;
   }
 
   return <>{children}</>;
-}
-
-// Hook for functional components to handle errors
-export function useErrorHandler() {
-  const [error, setError] = useState<Error | null>(null);
-
-  const handleError = React.useCallback((error: Error) => {
-    setError(error);
-  }, []);
-
-  const clearError = React.useCallback(() => {
-    setError(null);
-  }, []);
-
-  return { error, handleError, clearError };
-}
-
-// Higher-order component for error handling
-export function withErrorBoundary<P extends object>(
-  Component: React.ComponentType<P>,
-  fallback?: React.ReactNode,
-  onError?: (error: Error, errorInfo: any) => void
-) {
-  const WrappedComponent = (props: P) => (
-    <ErrorBoundary fallback={fallback} onError={onError}>
-      <Component {...props} />
-    </ErrorBoundary>
-  );
-
-  WrappedComponent.displayName = `withErrorBoundary(${Component.displayName || Component.name})`;
-
-  return WrappedComponent;
 }

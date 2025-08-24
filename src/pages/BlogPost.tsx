@@ -74,6 +74,10 @@ export default function BlogPost() {
         keywords={post.tags.join(", ")}
         image={post.featuredImage}
         canonical={`https://app.ziontechgroup.com/blog/${post.slug}`}
+        type="article"
+        author={post.author.name}
+        publishedTime={post.publishedDate}
+        tags={post.tags}
       />
       <div className="min-h-screen bg-zion-blue pt-12 pb-20 px-4">
         <div className="container mx-auto">
