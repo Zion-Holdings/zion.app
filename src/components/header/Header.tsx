@@ -53,7 +53,7 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
   
   return (
     <header 
-      className="sticky top-0 z-50 w-full border-b border-zion-purple/20 bg-zion-blue-dark/90 backdrop-blur-md"
+      className="sticky top-0 z-50 w-full border-b border-zion-purple/20 bg-gradient-to-r from-zion-blue-dark/95 via-zion-slate/95 to-zion-purple-dark/95 backdrop-blur-xl shadow-2xl shadow-zion-purple/10"
       style={headerStyle}
     >
       <div className="container flex h-16 items-center px-4 sm:px-6">
