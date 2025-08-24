@@ -130,7 +130,7 @@ export const advancedHealthcareTechSolutions2025: AdvancedHealthcareTechSolution
     competitors: ['IBM Quantum, Google Quantum, Microsoft Azure Quantum, D-Wave, Rigetti'],
     marketSize: '$12B quantum computing market',
     growthRate: '70% annual growth',
-    variant: 'quantum-biology',
+    variant: 'quantum-bio-enterprise',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',

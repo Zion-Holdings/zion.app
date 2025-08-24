@@ -2,7 +2,6 @@ const nextConfig = {
   poweredByHeader: false,
   trailingSlash: false,
   reactStrictMode: true,
-  bundlePagesRouterDependencies: true,
 
   // Optimized for fast builds (hanging issue SOLVED)
   // outputFileTracing: false, // Intentionally disabled via env vars in build scripts and netlify.toml to prevent hanging.
@@ -11,11 +10,10 @@ const nextConfig = {
   // Environment configuration
   env: {
     NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000',
-    NEXT_PUBLIC_SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL,
-    NEXT_PUBLIC_SUPABASE_ANON_KEY: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
+    NEXT_PUBLIC_SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL || '',
+    NEXT_PUBLIC_SUPABASE_ANON_KEY: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '',
   },
 
-  serverExternalPackages: ['@prisma/client'],
   modularizeImports: {
     'lucide-react': {
       transform: 'lucide-react/dist/esm/icons/{{kebabCase member}}',
@@ -24,16 +22,6 @@ const nextConfig = {
     '@radix-ui/react-icons': {
       transform: '@radix-ui/react-icons/dist/{{member}}',
     },
-  },
-  outputFileTracingExcludes: {
-    '*': [
-      'node_modules/@swc/core-linux-x64-gnu',
-      'node_modules/@swc/core-linux-x64-musl',
-      'node_modules/@esbuild/linux-x64',
-      'node_modules/@chainsafe/**/*',
-      'node_modules/three/**/*',
-      'node_modules/@google/model-viewer/**/*',
-    ],
   },
   experimental: {
     optimizePackageImports: [
@@ -98,6 +86,13 @@ const nextConfig = {
   ],
 
   webpack: (config, { dev, isServer, webpack }) => {
+    // Exclude blockchain contracts from the build
+    config.module.rules.push({
+      test: /\.(sol|ts)$/,
+      include: /contracts/,
+      use: 'ignore-loader'
+    });
+
     // Fix EventEmitter memory leak by increasing max listeners
     // events.EventEmitter.defaultMaxListeners = 20; // Will be set by build script
     
