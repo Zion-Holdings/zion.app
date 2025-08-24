@@ -20,7 +20,6 @@
   },
   "nav": {
     "home": "Home",
-    "about": "About",
     "marketplace": "Marketplace",
     "categories": "Categories",
     "talent": "Talent",
@@ -29,14 +28,7 @@
     "dashboard": "Dashboard",
     "messages": "Messages",
     "post_job": "Post Job",
-    "analytics": "Analytics",
-    "services": "Services",
-    "it-onsite-services": "IT Onsite Services",
-    "green-it": "Green IT",
-    "careers": "Careers",
-    "blog": "Blog",
-    "partners": "Partners",
-    "contact": "Contact"
+    "analytics": "Analytics"
   },
   "auth": {
     "login": "Login",

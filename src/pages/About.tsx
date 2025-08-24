@@ -1,21 +1,4 @@
 
-<<<<<<< HEAD
-import React from 'react';
-
-export default function About() {
-  return (
-    <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 py-16">
-        <h1 className="text-4xl font-bold text-zion-blue mb-8">About Zion Tech Group</h1>
-        <p className="text-lg text-zion-slate-light mb-6">
-          Zion Tech Group is a leading technology marketplace that connects businesses with top-tier AI and tech talent.
-        </p>
-        <p className="text-lg text-zion-slate-light">
-          Our mission is to accelerate digital transformation by providing access to the best technology professionals and services.
-        </p>
-      </div>
-    </div>
-=======
 import { SEO } from "@/components/SEO";
 import { GradientHeading } from "@/components/GradientHeading";
 
@@ -26,7 +9,7 @@ export default function About() {
         title="About Zion - The Future of AI & Tech Marketplace" 
         description="Learn about Zion's mission to create the first free marketplace dedicated to high-tech and artificial intelligence." 
         keywords="about Zion, AI marketplace, tech platform, mission, vision, team"
-        canonical="https://ziontechgroup.com/about"
+        url="https://ziontechgroup.com/about"
       />
       <main className="min-h-screen bg-zion-blue pt-24 pb-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -99,19 +82,7 @@ export default function About() {
                 </div>
                 <h3 className="text-xl font-bold text-white mb-3">Innovation</h3>
                 <p className="text-zion-slate-light">
-                  We embrace cutting-edge technologies and creative thinking to push the boundaries of what's possible.
-                </p>
-              </div>
-              
-              <div className="bg-zion-blue-dark p-8 rounded-lg border border-zion-blue-light">
-                <div className="bg-zion-blue inline-flex p-4 rounded-full mb-4">
-                  <svg className="w-8 h-8 text-zion-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold text-white mb-3">Community</h3>
-                <p className="text-zion-slate-light">
-                  We believe in the power of collaboration and fostering an inclusive ecosystem where everyone can thrive.
+                  We constantly push the boundaries of what's possible, embracing new technologies and approaches.
                 </p>
               </div>
               
@@ -123,36 +94,37 @@ export default function About() {
                 </div>
                 <h3 className="text-xl font-bold text-white mb-3">Excellence</h3>
                 <p className="text-zion-slate-light">
-                  We strive for excellence in everything we do, from platform performance to user experience and support.
+                  We maintain the highest standards in everything we do, from platform quality to user experience.
+                </p>
+              </div>
+              
+              <div className="bg-zion-blue-dark p-8 rounded-lg border border-zion-blue-light">
+                <div className="bg-zion-blue inline-flex p-4 rounded-full mb-4">
+                  <svg className="w-8 h-8 text-zion-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3">Community</h3>
+                <p className="text-zion-slate-light">
+                  We believe in the power of collaboration and building strong, supportive networks.
                 </p>
               </div>
             </div>
           </div>
           
           <div className="text-center">
-            <h2 className="text-3xl font-bold text-white mb-8">Join Our Mission</h2>
-            <p className="text-zion-slate-light text-xl mb-8 max-w-3xl mx-auto">
-              Whether you're a talented AI specialist, an innovative company, or someone passionate about 
-              the future of technology, Zion is the place for you.
+            <h2 className="text-3xl font-bold text-white mb-6">Join Our Mission</h2>
+            <p className="text-zion-slate-light text-lg mb-8 max-w-2xl mx-auto">
+              Whether you're a talented professional looking to showcase your skills, 
+              a company seeking innovative solutions, or simply passionate about the future of technology, 
+              Zion is your platform.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a 
-                href="/talent" 
-                className="inline-flex items-center justify-center px-8 py-3 bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white font-semibold rounded-lg transition-all duration-200 transform hover:scale-105"
-              >
-                Explore Talent
-              </a>
-              <a 
-                href="/services" 
-                className="inline-flex items-center justify-center px-8 py-3 bg-zion-blue-dark border border-zion-purple text-zion-cyan hover:bg-zion-purple/10 font-semibold rounded-lg transition-all duration-200"
-              >
-                Discover Services
-              </a>
-            </div>
+            <button className="bg-zion-cyan text-zion-blue-dark px-8 py-3 rounded-lg font-semibold hover:bg-zion-cyan-light transition-colors">
+              Get Started Today
+            </button>
           </div>
         </div>
       </main>
     </>
->>>>>>> cursor/website-audit-and-enhancement-e844
   );
 }

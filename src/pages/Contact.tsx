@@ -1,86 +1,14 @@
-<<<<<<< HEAD
-import React from 'react';
-
-export default function Contact() {
-  return (
-    <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 py-16">
-        <h1 className="text-4xl font-bold text-zion-blue mb-8">Contact Us</h1>
-        <p className="text-lg text-zion-slate-light mb-8">
-          Get in touch with our team for any questions or support.
-        </p>
-        
-        <div className="max-w-2xl">
-          <div className="mb-6">
-            <label className="block text-zion-slate mb-2">Name</label>
-            <input 
-              type="text" 
-              className="w-full p-3 border border-zion-slate rounded-lg bg-background text-zion-slate"
-              placeholder="Your name"
-            />
-          </div>
-          
-          <div className="mb-6">
-            <label className="block text-zion-slate mb-2">Email</label>
-            <input 
-              type="email" 
-              className="w-full p-3 border border-zion-slate rounded-lg bg-background text-zion-slate"
-              placeholder="your@email.com"
-            />
-          </div>
-          
-          <div className="mb-6">
-            <label className="block text-zion-slate mb-2">Message</label>
-            <textarea 
-              className="w-full p-3 border border-zion-slate rounded-lg bg-background text-zion-slate h-32"
-              placeholder="Your message..."
-            />
-          </div>
-          
-          <button className="bg-zion-blue hover:bg-zion-blue-dark text-white px-8 py-3 rounded-lg font-semibold transition-colors">
-            Send Message
-          </button>
-        </div>
-      </div>
-    </div>
-=======
 import { SEO } from "@/components/SEO";
 import { GradientHeading } from "@/components/GradientHeading";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Mail, Phone, MapPin, Clock, MessageSquare, Send } from "lucide-react";
-import { useState } from "react";
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
   return (
     <>
       <SEO 
         title="Contact Zion - Get in Touch" 
         description="Contact Zion Tech Group for support, partnerships, or any questions about our AI and tech marketplace platform." 
         keywords="contact Zion, support, help, partnership, inquiry"
-        canonical="https://ziontechgroup.com/contact"
+        url="https://ziontechgroup.com/contact"
       />
       <main className="min-h-screen bg-zion-blue pt-24 pb-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -93,172 +21,158 @@ export default function Contact() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
-            <Card className="bg-zion-blue-dark border-zion-blue-light">
-              <CardHeader className="text-center">
+            <div className="bg-zion-blue-dark border border-zion-blue-light rounded-lg p-6">
+              <div className="text-center">
                 <div className="bg-zion-blue inline-flex p-3 rounded-full mb-4">
-                  <Mail className="h-6 w-6 text-zion-cyan" />
+                  <svg className="h-6 w-6 text-zion-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
                 </div>
-                <CardTitle className="text-white">Email Us</CardTitle>
-                <CardDescription className="text-zion-slate-light">
-                  Send us a message and we'll get back to you within 24 hours
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="text-center">
-                <p className="text-zion-cyan font-medium">support@ziontechgroup.com</p>
-              </CardContent>
-            </Card>
+                <h3 className="text-xl font-bold text-white mb-2">Email Us</h3>
+                <p className="text-zion-slate-light mb-4">
+                  Send us a message anytime
+                </p>
+                <p className="text-zion-cyan font-semibold">kleber@ziontechgroup.com</p>
+              </div>
+            </div>
 
-            <Card className="bg-zion-blue-dark border-zion-blue-light">
-              <CardHeader className="text-center">
+            <div className="bg-zion-blue-dark border border-zion-blue-light rounded-lg p-6">
+              <div className="text-center">
                 <div className="bg-zion-blue inline-flex p-3 rounded-full mb-4">
-                  <Phone className="h-6 w-6 text-zion-cyan" />
+                  <svg className="h-6 w-6 text-zion-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
                 </div>
-                <CardTitle className="text-white">Call Us</CardTitle>
-                <CardDescription className="text-zion-slate-light">
-                  Speak directly with our support team
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="text-center">
-                <p className="text-zion-cyan font-medium">+1 (555) 123-4567</p>
-              </CardContent>
-            </Card>
+                <h3 className="text-xl font-bold text-white mb-2">Call Us</h3>
+                <p className="text-zion-slate-light mb-4">
+                  Available during business hours
+                </p>
+                <p className="text-zion-cyan font-semibold">+1 302 464 0950</p>
+              </div>
+            </div>
 
-            <Card className="bg-zion-blue-dark border-zion-blue-light">
-              <CardHeader className="text-center">
+            <div className="bg-zion-blue-dark border border-zion-blue-light rounded-lg p-6">
+              <div className="text-center">
                 <div className="bg-zion-blue inline-flex p-3 rounded-full mb-4">
-                  <MessageSquare className="h-6 w-6 text-zion-cyan" />
+                  <svg className="h-6 w-6 text-zion-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
                 </div>
-                <CardTitle className="text-white">Live Chat</CardTitle>
-                <CardDescription className="text-zion-slate-light">
-                  Chat with us in real-time for immediate assistance
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="text-center">
-                <Button className="bg-zion-purple hover:bg-zion-purple-dark">
-                  Start Chat
-                </Button>
-              </CardContent>
-            </Card>
+                <h3 className="text-xl font-bold text-white mb-2">Visit Us</h3>
+                <p className="text-zion-slate-light mb-4">
+                  Our office location
+                </p>
+                <p className="text-zion-slate-light text-sm">
+                  364 E Main St STE 1008<br />
+                  Middletown DE 19709
+                </p>
+              </div>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <div>
               <h2 className="text-3xl font-bold text-white mb-6">Send us a Message</h2>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-zion-slate-light mb-2">
-                      Full Name
-                    </label>
-                    <Input
-                      id="name"
-                      name="name"
-                      type="text"
-                      value={formData.name}
-                      onChange={handleChange}
-                      className="bg-zion-blue-dark border-zion-blue-light text-white placeholder:text-zion-slate-light"
-                      placeholder="Enter your full name"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-zion-slate-light mb-2">
-                      Email Address
-                    </label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      className="bg-zion-blue-dark border-zion-blue-light text-white placeholder:text-zion-slate-light"
-                      placeholder="Enter your email"
-                      required
-                    />
-                  </div>
-                </div>
-                
+              <form className="space-y-6">
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-zion-slate-light mb-2">
+                  <label htmlFor="name" className="block text-zion-slate-light mb-2">
+                    Full Name *
+                  </label>
+                  <input
+                    id="name"
+                    name="name"
+                    type="text"
+                    required
+                    className="w-full p-3 bg-zion-blue-dark border border-zion-blue-light text-white placeholder-zion-slate-light rounded-lg"
+                    placeholder="Enter your full name"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="email" className="block text-zion-slate-light mb-2">
+                    Email Address *
+                  </label>
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    required
+                    className="w-full p-3 bg-zion-blue-dark border border-zion-blue-light text-white placeholder-zion-slate-light rounded-lg"
+                    placeholder="Enter your email address"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="subject" className="block text-zion-slate-light mb-2">
                     Subject
                   </label>
-                  <Input
+                  <input
                     id="subject"
                     name="subject"
                     type="text"
-                    value={formData.subject}
-                    onChange={handleChange}
-                    className="bg-zion-blue-dark border-zion-blue-light text-white placeholder:text-zion-slate-light"
+                    className="w-full p-3 bg-zion-blue-dark border border-zion-blue-light text-white placeholder-zion-slate-light rounded-lg"
                     placeholder="What is this about?"
-                    required
                   />
                 </div>
-                
+
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-zion-slate-light mb-2">
-                    Message
+                  <label htmlFor="message" className="block text-zion-slate-light mb-2">
+                    Message *
                   </label>
-                  <Textarea
+                  <textarea
                     id="message"
                     name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    rows={6}
-                    className="bg-zion-blue-dark border-zion-blue-light text-white placeholder:text-zion-slate-light"
-                    placeholder="Tell us more about your inquiry..."
                     required
+                    rows={6}
+                    className="w-full p-3 bg-zion-blue-dark border border-zion-blue-light text-white placeholder-zion-slate-light rounded-lg resize-none"
+                    placeholder="Tell us how we can help you..."
                   />
                 </div>
-                
-                <Button 
+
+                <button 
                   type="submit" 
-                  className="w-full bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple"
+                  className="w-full bg-zion-cyan text-zion-blue-dark hover:bg-zion-cyan-light px-6 py-3 rounded-lg font-semibold transition-colors"
                 >
-                  <Send className="h-4 w-4 mr-2" />
                   Send Message
-                </Button>
+                </button>
               </form>
             </div>
 
             <div>
-              <h2 className="text-3xl font-bold text-white mb-6">Get in Touch</h2>
-              <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <div className="bg-zion-blue inline-flex p-3 rounded-full">
-                    <MapPin className="h-5 w-5 text-zion-cyan" />
+              <h2 className="text-3xl font-bold text-white mb-6">Business Hours</h2>
+              <div className="bg-zion-blue-dark border border-zion-blue-light rounded-lg p-6">
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <span className="text-zion-slate-light">Monday - Friday</span>
+                    <span className="text-white font-semibold">9:00 AM - 6:00 PM EST</span>
                   </div>
-                  <div>
-                    <h3 className="text-white font-semibold mb-2">Office Location</h3>
-                    <p className="text-zion-slate-light">
-                      123 Tech Innovation Drive<br />
-                      Silicon Valley, CA 94025<br />
-                      United States
-                    </p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-zion-slate-light">Saturday</span>
+                    <span className="text-white font-semibold">10:00 AM - 4:00 PM EST</span>
                   </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="bg-zion-blue inline-flex p-3 rounded-full">
-                    <Clock className="h-5 w-5 text-zion-cyan" />
-                  </div>
-                  <div>
-                    <h3 className="text-white font-semibold mb-2">Business Hours</h3>
-                    <p className="text-zion-slate-light">
-                      Monday - Friday: 9:00 AM - 6:00 PM PST<br />
-                      Saturday: 10:00 AM - 4:00 PM PST<br />
-                      Sunday: Closed
-                    </p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-zion-slate-light">Sunday</span>
+                    <span className="text-white font-semibold">Closed</span>
                   </div>
                 </div>
+              </div>
 
+              <div className="mt-8">
+                <h3 className="text-xl font-bold text-white mb-4">Live Chat Support</h3>
                 <div className="bg-zion-blue-dark border border-zion-blue-light rounded-lg p-6">
-                  <h3 className="text-white font-semibold mb-3">Need Immediate Help?</h3>
+                  <div className="flex items-center mb-4">
+                    <svg className="h-5 w-5 text-zion-cyan mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                    </svg>
+                    <span className="text-white font-semibold">Online Support</span>
+                  </div>
                   <p className="text-zion-slate-light mb-4">
-                    Check out our comprehensive help center and FAQ section for quick answers to common questions.
+                    Need immediate assistance? Our live chat support is available during business hours.
                   </p>
-                  <Button variant="outline" className="border-zion-purple text-zion-cyan hover:bg-zion-purple/10">
-                    Visit Help Center
-                  </Button>
+                  <button className="bg-zion-cyan text-zion-blue-dark hover:bg-zion-cyan-light px-6 py-3 rounded-lg font-semibold transition-colors">
+                    Start Chat
+                  </button>
                 </div>
               </div>
             </div>
@@ -266,6 +180,5 @@ export default function Contact() {
         </div>
       </main>
     </>
->>>>>>> cursor/website-audit-and-enhancement-e844
   );
 }
