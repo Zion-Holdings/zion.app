@@ -1,14 +1,21 @@
 {
-  "generatedAt": "2025-08-11T23:14:56.882Z",
+  "generatedAt": "2025-08-11T22:43:10.973Z",
   "functions": [
     "ai-changelog-runner",
+    "ai-trends-radar-runner",
+    "auto-discovery-runner",
+    "auto-heal-and-optimize",
     "auto-scheduler",
+    "automation-guardian-runner",
     "automation-matrix",
-    "autonomous-innovation-studio",
+    "autonomous-innovation-generator",
     "autonomous-invention-orchestrator",
+    "branch-cleanup-runner",
     "broken-image-scanner",
     "broken-image-scanner-runner",
+    "cloud-autonomous-orchestrator-runner",
     "cloud_orchestrator",
+    "content-refresh-runner",
     "continuous-front-runner",
     "continuous-orchestrator",
     "dead-code-audit",
@@ -21,6 +28,7 @@
     "feature-advertiser",
     "features-capabilities-benefits-advertiser",
     "front-ads-promoter",
+    "front-autopilot",
     "front-enhancer",
     "front-index-futurizer",
     "front-index-orchestrator",
@@ -58,6 +66,7 @@
     "schedule-site-health",
     "security-audit",
     "security-audit-runner",
+    "seo-audit-runner",
     "site-crawler",
     "sitemap_runner",
     "todo-scanner-runner",
@@ -65,6 +74,7 @@
     "trigger-all-and-commit",
     "ui-enhancer",
     "ultrafast-front-orchestrator",
-    "ultrafast-orchestrator"
+    "ultrafast-orchestrator",
+    "website-search-index-runner"
   ]
 }
