@@ -1,329 +1,234 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Clock, Send, CheckCircle, AlertCircle } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
     // Simulate form submission
-    try {
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      setSubmitStatus('success');
-      setFormData({ name: '', email: '', subject: '', message: '' });
-    } catch (error) {
-      setSubmitStatus('error');
-    } finally {
+    setTimeout(() => {
       setIsSubmitting(false);
-    }
+      alert("Thank you for your message! We'll get back to you soon.");
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+    }, 1500);
   };
 
-  const contactInfo = [
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const offices = [
     {
-      icon: Mail,
-      title: 'Email',
-      content: 'info@ziontechgroup.com',
-      link: 'mailto:info@ziontechgroup.com'
+      name: "Headquarters",
+      address: "364 E Main St STE 1008 Middletown DE 19709",
+      phone: "+1 302 464 0950",
+      email: "kleber@ziontechgroup.com"
     },
     {
-      icon: Phone,
-      title: 'Phone',
-      content: '+1 302 464 0950',
-      link: 'tel:+13024640950'
-    },
-    {
-      icon: MapPin,
-      title: 'Address',
-      content: '364 E Main St STE 1008, Middletown DE 19709',
-      link: 'https://maps.google.com/?q=364+E+Main+St+STE+1008+Middletown+DE+19709'
-    },
-    {
-      icon: Clock,
-      title: 'Business Hours',
-      content: 'Mon-Fri: 9AM-6PM EST',
-      link: null
+      name: "Support Office",
+      address: "364 E Main St STE 1008 Middletown DE 19709",
+      phone: "+1 302 464 0950", 
+      email: "support@ziontechgroup.com"
     }
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 }
-  };
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-purple-dark pt-20">
-      <div className="container mx-auto px-4 py-16">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          className="text-center mb-16"
-        >
-          <motion.h1 variants={itemVariants} className="text-4xl md:text-6xl font-bold text-white mb-6">
-            Get in Touch
-          </motion.h1>
-          <motion.p variants={itemVariants} className="text-xl text-zion-slate-light max-w-2xl mx-auto">
-            Ready to transform your business with cutting-edge technology? Let's discuss how Zion Tech Group can help you achieve your goals.
-          </motion.p>
-        </motion.div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Form */}
-          <motion.div variants={itemVariants} className="space-y-6">
-            <Card className="bg-zion-blue-light/10 border-zion-blue-light/20 backdrop-blur-sm">
-              <CardHeader>
-                <CardTitle className="text-2xl font-bold text-white flex items-center">
-                  <Send className="w-6 h-6 mr-2 text-zion-cyan" />
-                  Send us a Message
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-zion-slate-light mb-2">
-                        Name *
-                      </label>
-                      <Input
-                        id="name"
-                        name="name"
-                        type="text"
-                        required
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        className="bg-zion-blue-light/10 border-zion-blue-light/20 text-white placeholder-zion-slate-light focus:border-zion-cyan focus:ring-zion-cyan/20"
-                        placeholder="Your full name"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-zion-slate-light mb-2">
-                        Email *
-                      </label>
-                      <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        required
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        className="bg-zion-blue-light/10 border-zion-blue-light/20 text-white placeholder-zion-slate-light focus:border-zion-cyan focus:ring-zion-cyan/20"
-                        placeholder="your.email@example.com"
-                      />
-                    </div>
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="subject" className="block text-sm font-medium text-zion-slate-light mb-2">
-                      Subject *
-                    </label>
-                    <Input
-                      id="subject"
-                      name="subject"
-                      type="text"
-                      required
-                      value={formData.subject}
-                      onChange={handleInputChange}
-                      className="bg-zion-blue-light/10 border-zion-blue-light/20 text-white placeholder-zion-slate-light focus:border-zion-cyan focus:ring-zion-cyan/20"
-                      placeholder="What can we help you with?"
-                    />
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-zion-slate-light mb-2">
-                      Message *
-                    </label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      required
-                      rows={5}
-                      value={formData.message}
-                      onChange={handleInputChange}
-                      className="bg-zion-blue-light/10 border-zion-blue-light/20 text-white placeholder-zion-slate-light focus:border-zion-cyan focus:ring-zion-cyan/20 resize-none"
-                      placeholder="Tell us more about your project or inquiry..."
-                    />
-                  </div>
-                  
-                  <Button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="w-full bg-gradient-to-r from-zion-cyan to-zion-purple hover:from-zion-cyan/90 hover:to-zion-purple/90 text-white py-3 text-lg font-semibold"
-                  >
-                    {isSubmitting ? (
-                      <div className="flex items-center">
-                        <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
-                        Sending...
-                      </div>
-                    ) : (
-                      <>
-                        <Send className="w-5 h-5 mr-2" />
-                        Send Message
-                      </>
-                    )}
-                  </Button>
-                  
-                  {submitStatus === 'success' && (
-                    <div className="flex items-center text-green-400 bg-green-400/10 p-3 rounded-lg">
-                      <CheckCircle className="w-5 h-5 mr-2" />
-                      Message sent successfully! We'll get back to you soon.
-                    </div>
-                  )}
-                  
-                  {submitStatus === 'error' && (
-                    <div className="flex items-center text-red-400 bg-red-400/10 p-3 rounded-lg">
-                      <AlertCircle className="w-5 h-5 mr-2" />
-                      Something went wrong. Please try again.
-                    </div>
-                  )}
-                </form>
-              </CardContent>
-            </Card>
-          </motion.div>
-
-          {/* Contact Information */}
-          <motion.div variants={itemVariants} className="space-y-6">
-            <div className="space-y-6">
-              {contactInfo.map((info, index) => (
-                <motion.div
-                  key={info.title}
-                  variants={itemVariants}
-                  className="flex items-start space-x-4 p-4 rounded-lg bg-zion-blue-light/10 border border-zion-blue-light/20 hover:border-zion-cyan/40 transition-colors"
-                >
-                  <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-zion-cyan to-zion-purple rounded-lg flex items-center justify-center">
-                    <info.icon className="w-6 h-6 text-white" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-lg font-semibold text-white mb-1">{info.title}</h3>
-                    {info.link ? (
-                      <a
-                        href={info.link}
-                        className="text-zion-slate-light hover:text-zion-cyan transition-colors"
-                        target={info.link.startsWith('http') ? '_blank' : undefined}
-                        rel={info.link.startsWith('http') ? 'noopener noreferrer' : undefined}
-                      >
-                        {info.content}
-                      </a>
-                    ) : (
-                      <p className="text-zion-slate-light">{info.content}</p>
-                    )}
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-
-            {/* Additional Info */}
-            <Card className="bg-zion-blue-light/10 border-zion-blue-light/20 backdrop-blur-sm">
-              <CardHeader>
-                <CardTitle className="text-xl font-bold text-white">Why Choose Zion Tech Group?</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-3">
-                <div className="flex items-center text-zion-slate-light">
-                  <CheckCircle className="w-5 h-5 text-zion-cyan mr-3 flex-shrink-0" />
-                  <span>24/7 Technical Support</span>
-                </div>
-                <div className="flex items-center text-zion-slate-light">
-                  <CheckCircle className="w-5 h-5 text-zion-cyan mr-3 flex-shrink-0" />
-                  <span>Global Network of Experts</span>
-                </div>
-                <div className="flex items-center text-zion-slate-light">
-                  <CheckCircle className="w-5 h-5 text-zion-cyan mr-3 flex-shrink-0" />
-                  <span>Custom Solutions for Your Business</span>
-                </div>
-                <div className="flex items-center text-zion-slate-light">
-                  <CheckCircle className="w-5 h-5 text-zion-cyan mr-3 flex-shrink-0" />
-                  <span>Competitive Pricing & Flexible Plans</span>
-                </div>
-              </CardContent>
-            </Card>
-          </motion.div>
+    <div className="min-h-screen bg-background">
+      {/* Hero Section */}
+      <div className="bg-gradient-to-r from-zion-blue to-zion-purple text-white py-20">
+        <div className="container mx-auto px-4 text-center">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6">Contact Us</h1>
+          <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto">
+            Get in touch with our team for any questions, support, or collaboration opportunities
+          </p>
         </div>
+      </div>
 
-        {/* FAQ Section */}
-        <motion.div variants={itemVariants} className="mt-20">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-white mb-4">Frequently Asked Questions</h2>
-            <p className="text-zion-slate-light">Quick answers to common questions</p>
+      <div className="container mx-auto px-4 py-16">
+        <div className="max-w-6xl mx-auto">
+          {/* Quick Contact Methods */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+            <div className="bg-white p-6 rounded-xl shadow-md border border-gray-100 text-center">
+              <div className="text-zion-cyan text-3xl mb-3">📧</div>
+              <h3 className="text-lg font-semibold text-zion-blue mb-2">Email Us</h3>
+              <p className="text-zion-slate-light text-sm mb-3">
+                Send us a detailed message
+              </p>
+              <a href="mailto:kleber@ziontechgroup.com" className="text-zion-cyan hover:text-zion-cyan-dark font-medium">
+                kleber@ziontechgroup.com
+              </a>
+            </div>
+            
+            <div className="bg-white p-6 rounded-xl shadow-md border border-gray-100 text-center">
+              <div className="text-zion-cyan text-3xl mb-3">📞</div>
+              <h3 className="text-lg font-semibold text-zion-blue mb-2">Call Us</h3>
+              <p className="text-zion-slate-light text-sm mb-3">
+                Speak with our team directly
+              </p>
+              <a href="tel:+13024640950" className="text-zion-cyan hover:text-zion-cyan-dark font-medium">
+                +1 (302) 464-0950
+              </a>
+            </div>
+            
+            <div className="bg-white p-6 rounded-xl shadow-md border border-gray-100 text-center">
+              <div className="text-zion-cyan text-3xl mb-3">💬</div>
+              <h3 className="text-lg font-semibold text-zion-blue mb-2">Live Chat</h3>
+              <p className="text-zion-slate-light text-sm mb-3">
+                Get instant support
+              </p>
+              <button className="text-zion-cyan hover:text-zion-cyan-dark font-medium">
+                Start Chat
+              </button>
+            </div>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <Card className="bg-zion-blue-light/10 border-zion-blue-light/20 backdrop-blur-sm">
-              <CardHeader>
-                <CardTitle className="text-lg font-semibold text-white">What services do you offer?</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-zion-slate-light">
-                  We offer comprehensive IT services including AI development, cloud solutions, cybersecurity, 
-                  digital transformation, and specialized talent placement for tech projects.
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card className="bg-zion-blue-light/10 border-zion-blue-light/20 backdrop-blur-sm">
-              <CardHeader>
-                <CardTitle className="text-lg font-semibold text-white">How quickly can you respond?</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-zion-slate-light">
-                  We typically respond to inquiries within 2 hours during business hours. 
-                  For urgent matters, we offer 24/7 emergency support for existing clients.
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card className="bg-zion-blue-light/10 border-zion-blue-light/20 backdrop-blur-sm">
-              <CardHeader>
-                <CardTitle className="text-lg font-semibold text-white">Do you work internationally?</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-zion-slate-light">
-                  Yes! We have a global network of experts and serve clients in over 150 countries. 
-                  Our team can work remotely or on-site depending on your needs.
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card className="bg-zion-blue-light/10 border-zion-blue-light/20 backdrop-blur-sm">
-              <CardHeader>
-                <CardTitle className="text-lg font-semibold text-white">What makes you different?</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-zion-slate-light">
-                  We combine cutting-edge AI technology with human expertise, offering a unique marketplace 
-                  that connects businesses with verified tech professionals and innovative solutions.
-                </p>
-              </CardContent>
-            </Card>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* Contact Form */}
+            <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+              <h2 className="text-2xl font-semibold text-zion-blue mb-6">Send us a message</h2>
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div>
+                  <label className="block text-zion-slate mb-2 font-medium">Name *</label>
+                  <input 
+                    type="text" 
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    className="w-full p-3 border border-gray-300 rounded-lg bg-white text-zion-slate focus:border-zion-cyan focus:outline-none focus:ring-2 focus:ring-zion-cyan/20 transition-all"
+                    placeholder="Your full name"
+                    required
+                  />
+                </div>
+                
+                <div>
+                  <label className="block text-zion-slate mb-2 font-medium">Email *</label>
+                  <input 
+                    type="email" 
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="w-full p-3 border border-gray-300 rounded-lg bg-white text-zion-slate focus:border-zion-cyan focus:outline-none focus:ring-2 focus:ring-zion-cyan/20 transition-all"
+                    placeholder="your@email.com"
+                    required
+                  />
+                </div>
+                
+                <div>
+                  <label className="block text-zion-slate mb-2 font-medium">Subject *</label>
+                  <input 
+                    type="text" 
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    className="w-full p-3 border border-gray-300 rounded-lg bg-white text-zion-slate focus:border-zion-cyan focus:outline-none focus:ring-2 focus:ring-zion-cyan/20 transition-all"
+                    placeholder="What can we help you with?"
+                    required
+                  />
+                </div>
+                
+                <div>
+                  <label className="block text-zion-slate mb-2 font-medium">Message *</label>
+                  <textarea 
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    className="w-full p-3 border border-gray-300 rounded-lg bg-white text-zion-slate h-32 focus:border-zion-cyan focus:outline-none focus:ring-2 focus:ring-zion-cyan/20 transition-all resize-none"
+                    placeholder="Please describe your inquiry or project requirements..."
+                    required
+                  />
+                </div>
+                
+                <button 
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full bg-gradient-to-r from-zion-blue to-zion-purple hover:from-zion-blue-dark hover:to-zion-purple-dark disabled:opacity-50 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105 shadow-lg"
+                >
+                  {isSubmitting ? (
+                    <span className="flex items-center justify-center">
+                      <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
+                      Sending...
+                    </span>
+                  ) : (
+                    "Send Message"
+                  )}
+                </button>
+              </form>
+            </div>
+
+            {/* Contact Information */}
+            <div className="space-y-6">
+              <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+                <h2 className="text-2xl font-semibold text-zion-blue mb-6">Our Offices</h2>
+                
+                <div className="space-y-6">
+                  {offices.map((office, index) => (
+                    <div key={index} className="border-l-4 border-zion-cyan pl-4">
+                      <h3 className="text-lg font-semibold text-zion-blue mb-3">{office.name}</h3>
+                      <div className="space-y-2 text-zion-slate-light">
+                        <p className="flex items-start">
+                          <span className="mr-3 text-zion-cyan">📍</span>
+                          <span className="text-sm">{office.address}</span>
+                        </p>
+                        <p className="flex items-center">
+                          <span className="mr-3 text-zion-cyan">📞</span>
+                          <a href={`tel:${office.phone}`} className="text-sm hover:text-zion-cyan transition-colors">
+                            {office.phone}
+                          </a>
+                        </p>
+                        <p className="flex items-center">
+                          <span className="mr-3 text-zion-cyan">✉️</span>
+                          <a href={`mailto:${office.email}`} className="text-sm hover:text-zion-cyan transition-colors">
+                            {office.email}
+                          </a>
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+                <h3 className="text-xl font-semibold text-zion-blue mb-4">Business Hours</h3>
+                <div className="space-y-2 text-zion-slate-light">
+                  <p className="flex justify-between">
+                    <span>Monday - Friday:</span>
+                    <span className="font-medium">9:00 AM - 6:00 PM EST</span>
+                  </p>
+                  <p className="flex justify-between">
+                    <span>Saturday:</span>
+                    <span className="font-medium">10:00 AM - 4:00 PM EST</span>
+                  </p>
+                  <p className="flex justify-between">
+                    <span>Sunday:</span>
+                    <span className="font-medium">Closed</span>
+                  </p>
+                </div>
+                <div className="mt-4 p-3 bg-blue-50 rounded-lg border border-blue-200">
+                  <p className="text-sm text-blue-800">
+                    <span className="font-semibold">24/7 Emergency Support</span> available for enterprise clients
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </div>
   );

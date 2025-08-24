@@ -1,91 +1,76 @@
 
 import React from 'react';
 import { CategoriesSection } from "@/components/CategoriesSection";
-import { BenefitsSection } from "@/components/BenefitsSection";
-import { HowItWorksSection } from "@/components/HowItWorksSection";
-import { NewsletterSection } from "@/components/NewsletterSection";
-import { FeaturedListingsSection } from "@/components/FeaturedListingsSection";
-
-import { HeroSection } from "@/components/HeroSection";
-import { QuickAccess } from "@/components/home/QuickAccess";
 import { FeatureCTAs } from "@/components/home/FeatureCTAs";
-import { FeatureHighlights } from "@/components/home/FeatureHighlights";
-import { ITServiceRequestHero } from "@/components/home/ITServiceRequestHero";
-import { FloatingActionButton } from "@/components/ui/floating-action-button";
-import { MessageCircle, Phone, Mail, HelpCircle } from "lucide-react";
+import { ServicesShowcase } from "@/components/home/ServicesShowcase";
 
 export default function Home() {
-  const handleChatSupport = () => {
-    // Implement chat support functionality
-    console.log("Chat support clicked");
-  };
-
-  const handleCallSupport = () => {
-    // Implement call support functionality
-    console.log("Call support clicked");
-  };
-
-  const handleEmailSupport = () => {
-    // Implement email support functionality
-    console.log("Email support clicked");
-  };
-
-  const handleHelp = () => {
-    // Implement help functionality
-    console.log("Help clicked");
-  };
-
   return (
     <div className="min-h-screen bg-background">
+      {/* Enhanced Hero Section */}
+      <div className="relative overflow-hidden bg-gradient-to-br from-zion-blue via-zion-blue-dark to-slate-900">
+        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="relative container mx-auto px-4 py-24">
+          <div className="text-center text-white">
+            <h1 className="text-6xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+              Zion Tech Group
+            </h1>
+            <p className="text-xl md:text-2xl text-blue-100 max-w-4xl mx-auto mb-8 leading-relaxed">
+              Discover top AI and tech talent, services, and equipment in one place.
+              Your comprehensive marketplace for all things technology and AI.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <button className="px-8 py-4 bg-white text-zion-blue font-semibold rounded-lg hover:bg-blue-50 transition-all duration-200 transform hover:scale-105 shadow-lg">
+                Get Started Today
+              </button>
+              <button className="px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-zion-blue transition-all duration-200 transform hover:scale-105">
+                Explore Services
+              </button>
+            </div>
+            
+            {/* Trust Indicators */}
+            <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="text-center">
+                <div className="text-4xl font-bold text-blue-200 mb-2">500+</div>
+                <div className="text-blue-100">Verified Professionals</div>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl font-bold text-blue-200 mb-2">1000+</div>
+                <div className="text-blue-100">Successful Projects</div>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl font-bold text-blue-200 mb-2">24/7</div>
+                <div className="text-blue-100">Support Available</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-
-      <ITServiceRequestHero />
-
-      <HeroSection />
-      
-      <QuickAccess />
-      
-      <FeatureCTAs />
-      
-      <FeatureHighlights />
-      
-      <CategoriesSection />
-      <BenefitsSection />
-      <HowItWorksSection />
-      <FeaturedListingsSection />
-      <NewsletterSection />
-
-      {/* Enhanced Floating Action Button */}
-      <FloatingActionButton
-        variant="expanded"
-        size="lg"
-        position="bottom-right"
-        mainAction={{
-          icon: <HelpCircle className="w-8 h-8" />,
-          onClick: handleHelp,
-          label: "Get Help"
-        }}
-        actions={[
-          {
-            icon: <MessageCircle className="w-5 h-5" />,
-            label: "Live Chat",
-            onClick: handleChatSupport,
-            color: "bg-zion-cyan hover:bg-zion-cyan-light"
-          },
-          {
-            icon: <Phone className="w-5 h-5" />,
-            label: "Call Support",
-            onClick: handleCallSupport,
-            color: "bg-zion-purple hover:bg-zion-purple-light"
-          },
-          {
-            icon: <Mail className="w-5 h-5" />,
-            label: "Email Support",
-            onClick: handleEmailSupport,
-            color: "bg-zion-blue hover:bg-zion-blue-light"
-          }
-        ]}
-      />
+      {/* Main Content */}
+      <div className="container mx-auto px-4 py-16">
+        <FeatureCTAs />
+        
+        <ServicesShowcase />
+        
+        <CategoriesSection />
+        
+        {/* Call to Action Section */}
+        <div className="mt-20 text-center">
+          <div className="bg-gradient-to-r from-zion-blue to-zion-purple rounded-2xl p-12 text-white">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Ready to Transform Your Business?
+            </h2>
+            <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+              Join thousands of companies that trust Zion Tech Group for their technology needs.
+              Get started today and experience the future of tech collaboration.
+            </p>
+            <button className="px-10 py-4 bg-white text-zion-blue font-semibold rounded-lg hover:bg-blue-50 transition-all duration-200 transform hover:scale-105 shadow-lg">
+              Start Your Journey
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
