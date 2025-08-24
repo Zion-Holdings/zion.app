@@ -37,6 +37,14 @@ import path from 'path';
 
 type Service = typeof enhancedRealMicroSaasServices[number];
 
+<<<<<<< HEAD
+const contactInfo = {
+	mobile: '+1 302 464 0950',
+	email: 'kleber@ziontechgroup.com',
+	address: '364 E Main St STE 1008 Middletown DE 19709',
+	website: 'https://ziontechgroup.com'
+};
+=======
   const service = useMemo(() => {
     if (!slug) return undefined;
     const all: any[] = ([] as any[])
@@ -76,6 +84,7 @@ type Service = typeof enhancedRealMicroSaasServices[number];
       }
     });
     if (byLink) return byLink;
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-d80e
 
 function getAllServices(): Service[] {
 	return enhancedRealMicroSaasServices

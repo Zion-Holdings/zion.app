@@ -24,7 +24,14 @@ import { realServicesQ22025 } from '../../data/real-services-q2-2025';
 import { realServicesQ32025 } from '../../data/real-services-q3-2025';
 import { realQ4Services2025, } from '../../data/real-2025-q4-additions';
 import { real2025Q4Additions } from '../../data/real-2025-q4-additions';
+<<<<<<< HEAD:components/services/[slug].tsx.backup.1755992063
+import { realMarketServicesExtended } from '../../data/real-market-services-extended';
+import { real2026Additions } from '../../data/real-2026-additions';
+import { real2026Q1Additions } from '../../data/real-2026-q1-additions';
+import { real2026Q2Additions } from '../../data/real-2026-q2-additions';
+=======
 import { real2025Q4AdditionsBatch2 } from '../../data/real-2025-q4-additions-batch2';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-d80e:pages/services/[slug].tsx
 
 type Service = typeof enhancedRealMicroSaasServices[number];
 
@@ -68,7 +75,14 @@ function getAllServices(): Service[] {
 		.concat(realServicesQ32025 as unknown as Service[])
 		.concat(realQ4Services2025 as unknown as Service[])
 		.concat(real2025Q4Additions as unknown as Service[])
+<<<<<<< HEAD:components/services/[slug].tsx.backup.1755992063
+		.concat(realMarketServicesExtended as unknown as Service[])
+		.concat(real2026Q1Additions as unknown as Service[])
+		.concat(real2026Q2Additions as unknown as Service[])
+		.concat(real2026Additions as unknown as Service[]);
+=======
 		.concat(real2025Q4AdditionsBatch2 as unknown as Service[]);
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-d80e:pages/services/[slug].tsx
 }
 
 function toSlug(value: string): string {

@@ -151,7 +151,11 @@ import { realOperationalServices } from '../data/real-operational-services';
 import { marketReadyServices } from '../data/market-ready-services';
 import { marketValidatedServices } from '../data/market-validated-services';
 import { industryRealServices } from '../data/industry-real-services';
+<<<<<<< HEAD
+import { newSaasItAiServices2025 } from '../data/new-saas-it-ai-services-2025';
+=======
 import { real2025Q4AdditionsBatch2 } from '../data/real-2025-q4-additions-batch2';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-d80e
 
 // Helper function to get service category
 const getServiceCategory = (service: any) => {
@@ -207,7 +211,11 @@ const allServices = [
   ...marketReadyServices,
   ...marketValidatedServices,
   ...industryRealServices,
+<<<<<<< HEAD
+  ...newSaasItAiServices2025
+=======
   ...real2025Q4AdditionsBatch2
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-d80e
 ];
 
 const categories = [
@@ -311,6 +319,40 @@ export default function Services() {
     ...blockchainEmergingTechServices
   ], []);
 
+<<<<<<< HEAD
+  // Get unique categories
+  const categories = useMemo(() => {
+    const cats = [...new Set(allServices.map(service => service.category))];
+    return ['all', ...cats.sort()];
+  }, [allServices]);
+
+  const categories = [
+    { id: 'all', name: 'All Services', icon: '🚀', count: allServices.length },
+    { id: 'ai', name: 'AI & Machine Learning', icon: '🧠', count: innovativeAIServices.length + nextGenAIServices.length },
+    { id: 'quantum', name: 'Quantum & Space', icon: '⚛️', count: quantumSpaceServices.length },
+    { id: 'enterprise', name: 'Enterprise IT', icon: '🏢', count: enterpriseITServices.length + comprehensiveEnterpriseITServices.length },
+    { id: 'micro-saas', name: 'Micro SaaS', icon: '💻', count: enhancedRealMicroSaasServices.length + innovativeMicroSaasSolutions.length }
+  ];
+
+  // Calculate category counts
+  const categoryCounts = categories.map(cat => ({
+    ...cat,
+    count: services.filter(service => cat.id === 'all' || service.category === cat.id).length
+  }));
+
+  // Filter and sort services
+  const filteredServices = useMemo(() => {
+    let filtered = allServices;
+
+    // Filter by search term
+    if (searchTerm) {
+      filtered = filtered.filter(service =>
+        service.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        service.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        service.tagline.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        service.category.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+=======
   // Sort services
   const sortedServices = [...filteredServices].sort((a, b) => {
     switch (sortBy) {
@@ -329,8 +371,14 @@ export default function Services() {
         return getServiceRating(b) - getServiceRating(a);
       default:
         return 0;
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-d80e
     }
 
+<<<<<<< HEAD
+    // Filter by category
+    if (selectedCategory !== 'all') {
+      filtered = filtered.filter(service => service.category === selectedCategory);
+=======
   // Pagination helpers
   const totalPages = Math.max(1, Math.ceil(sortedServices.length / pageSize));
   const currentPageClamped = Math.min(currentPage, totalPages);
@@ -401,6 +449,7 @@ export default function Services() {
         return <GraduationCap className="w-6 h-6 text-yellow-400" />;
       default:
         return <Shield className="w-6 h-6 text-gray-400" />;
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-d80e
     }
 
     // Sort services

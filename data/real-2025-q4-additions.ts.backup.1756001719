@@ -258,7 +258,12 @@ export const realQ4Services2025: RealQ4Service[] = [
 		customers: 70,
 		rating: 4.5,
 		reviews: 28
+<<<<<<< HEAD
+	}
+];
+=======
 	}];
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-d80e
 export const real2025Q4Additions = [
   {
     id: 'ai-governance-control-center',
