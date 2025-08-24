@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-import { Activity, Zap, Clock, HardDrive, TrendingUp, AlertTriangle } from 'lucide-react';
+import { Activity, Zap, Clock, HardDrive, TrendingUp, AlertTriangle, Wifi, WifiOff, RefreshCw, Trash2 } from 'lucide-react';
 import { usePerformance } from '../hooks/usePerformance';
+import { useServiceWorker } from '../hooks/useServiceWorker';
 
 interface PerformanceDashboardProps {
   className?: string;
@@ -12,13 +13,25 @@ export const PerformanceDashboard: React.FC<PerformanceDashboardProps> = ({
   autoRefresh = true
 }) => {
   const { metrics, isMonitoring, startMonitoring, stopMonitoring, getPerformanceScore } = usePerformance();
+  const { 
+    isSupported: swSupported, 
+    isInstalled: swInstalled, 
+    isUpdated: swUpdated, 
+    isOnline, 
+    getVersion, 
+    getCacheInfo, 
+    clearAllCaches,
+    skipWaiting
+  } = useServiceWorker();
+  
   const [isExpanded, setIsExpanded] = useState(false);
   const [refreshInterval, setRefreshInterval] = useState<NodeJS.Timeout | null>(null);
+  const [swVersion, setSwVersion] = useState<string | null>(null);
+  const [cacheInfo, setCacheInfo] = useState<any[] | null>(null);
 
   useEffect(() => {
     if (autoRefresh && isMonitoring) {
       const interval = setInterval(() => {
-        // Force re-render to update metrics
         setRefreshInterval(interval);
       }, 1000);
       
@@ -38,6 +51,20 @@ export const PerformanceDashboard: React.FC<PerformanceDashboardProps> = ({
     };
   }, []);
 
+  // Get service worker version
+  useEffect(() => {
+    if (swInstalled) {
+      getVersion().then(setSwVersion);
+    }
+  }, [swInstalled, getVersion]);
+
+  // Get cache information
+  useEffect(() => {
+    if (swInstalled) {
+      getCacheInfo().then(setCacheInfo);
+    }
+  }, [swInstalled, getCacheInfo]);
+
   const performanceScore = getPerformanceScore();
   const getScoreColor = (score: number) => {
     if (score >= 80) return 'text-green-500';
@@ -56,6 +83,13 @@ export const PerformanceDashboard: React.FC<PerformanceDashboardProps> = ({
     return `${value.toFixed(1)} ${unit}`;
   };
 
+  const handleClearCaches = async () => {
+    const success = await clearAllCaches();
+    if (success) {
+      setCacheInfo([]);
+    }
+  };
+
   return (
     <div className={`bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden ${className}`}>
       {/* Header */}
@@ -66,12 +100,31 @@ export const PerformanceDashboard: React.FC<PerformanceDashboardProps> = ({
             Performance Monitor
           </h3>
           <div className="flex items-center gap-2">
+            {/* Online Status */}
             <div className={`flex items-center gap-1 px-2 py-1 rounded-full text-xs font-medium ${
+              isOnline ? 'bg-green-500/20 text-green-100' : 'bg-red-500/20 text-red-100'
+            }`}>
+              {isOnline ? <Wifi className="w-3 h-3" /> : <WifiOff className="w-3 h-3" />}
+              {isOnline ? 'Online' : 'Offline'}
+            </div>
+            
+            {/* Service Worker Status */}
+            {swSupported && (
+              <div className={`flex items-center gap-1 px-2 py-1 rounded-full text-xs font-medium ${
+                swInstalled ? 'bg-green-500/20 text-green-100' : 'bg-yellow-500/20 text-yellow-100'
+              }`}>
+                <div className={`w-2 h-2 rounded-full ${swInstalled ? 'bg-green-400' : 'bg-yellow-400'}`}></div>
+                {swInstalled ? 'SW Active' : 'SW Inactive'}
+              </div>
+            )}
+            
+            <div className={`flex items-center gap-1 px-2 py-1 text-xs font-medium ${
               isMonitoring ? 'bg-green-500/20 text-green-100' : 'bg-red-500/20 text-red-100'
             }`}>
               <div className={`w-2 h-2 rounded-full ${isMonitoring ? 'bg-green-400' : 'bg-red-400'}`}></div>
               {isMonitoring ? 'Active' : 'Inactive'}
             </div>
+            
             <button
               onClick={() => setIsExpanded(!isExpanded)}
               className="p-1 hover:bg-white/20 rounded transition-colors"
@@ -179,7 +232,55 @@ export const PerformanceDashboard: React.FC<PerformanceDashboardProps> = ({
                 {autoRefresh ? 'Enabled' : 'Disabled'}
               </span>
             </div>
+
+            {/* Service Worker Info */}
+            {swSupported && (
+              <>
+                <div className="flex justify-between">
+                  <span className="text-gray-600 dark:text-gray-400">Service Worker:</span>
+                  <span className={`font-medium ${swInstalled ? 'text-green-600' : 'text-yellow-600'}`}>
+                    {swInstalled ? 'Active' : 'Inactive'}
+                  </span>
+                </div>
+                
+                {swVersion && (
+                  <div className="flex justify-between">
+                    <span className="text-gray-600 dark:text-gray-400">SW Version:</span>
+                    <span className="font-medium text-gray-900 dark:text-white">{swVersion}</span>
+                  </div>
+                )}
+                
+                {swUpdated && (
+                  <div className="flex justify-between">
+                    <span className="text-gray-600 dark:text-gray-400">Update Available:</span>
+                    <span className="font-medium text-yellow-600">Yes</span>
+                  </div>
+                )}
+              </>
+            )}
           </div>
+
+          {/* Cache Information */}
+          {cacheInfo && cacheInfo.length > 0 && (
+            <div className="mt-4 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
+              <h5 className="font-medium text-blue-800 dark:text-blue-200 mb-2">Cache Status</h5>
+              <div className="space-y-2 text-xs text-blue-700 dark:text-blue-300">
+                {cacheInfo.map((cache, index) => (
+                  <div key={index} className="flex justify-between">
+                    <span>{cache.name}:</span>
+                    <span>{cache.size} items</span>
+                  </div>
+                ))}
+                <button
+                  onClick={handleClearCaches}
+                  className="flex items-center gap-1 text-red-600 hover:text-red-700 transition-colors"
+                >
+                  <Trash2 className="w-3 h-3" />
+                  Clear All Caches
+                </button>
+              </div>
+            </div>
+          )}
 
           {/* Performance Tips */}
           <div className="mt-4 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
@@ -204,6 +305,12 @@ export const PerformanceDashboard: React.FC<PerformanceDashboardProps> = ({
               {performanceScore >= 80 && (
                 <li>• Great performance! Keep up the good work</li>
               )}
+              {!isOnline && (
+                <li>• You're offline. Some features may be limited</li>
+              )}
+              {swUpdated && (
+                <li>• Service Worker update available. Refresh to apply</li>
+              )}
             </ul>
           </div>
         </div>
@@ -222,6 +329,15 @@ export const PerformanceDashboard: React.FC<PerformanceDashboardProps> = ({
           >
             {isMonitoring ? 'Stop Monitoring' : 'Start Monitoring'}
           </button>
+          
+          {swSupported && swUpdated && (
+            <button
+              onClick={skipWaiting}
+              className="px-3 py-2 bg-yellow-500 hover:bg-yellow-600 text-white rounded-lg text-sm font-medium transition-colors"
+            >
+              <RefreshCw className="w-4 h-4" />
+            </button>
+          )}
         </div>
       </div>
     </div>
