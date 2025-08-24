@@ -37,15 +37,15 @@ export function Footer() {
             <div className="space-y-3 mb-6">
               <div className="flex items-center gap-3 text-zion-slate-light">
                 <Mail className="w-4 h-4 text-zion-cyan" />
-                <span>hello@ziontechgroup.com</span>
+                <span>kleber@ziontechgroup.com</span>
               </div>
               <div className="flex items-center gap-3 text-zion-slate-light">
                 <Phone className="w-4 h-4 text-zion-cyan" />
-                <span>+1 (555) 123-4567</span>
+                <span>+1 302 464 0950</span>
               </div>
               <div className="flex items-center gap-3 text-zion-slate-light">
                 <MapPin className="w-4 h-4 text-zion-cyan" />
-                <span>Global - Available 24/7</span>
+                <span>364 E Main St STE 1008, Middletown DE 19709</span>
               </div>
             </div>
 
