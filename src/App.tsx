@@ -1,9 +1,8 @@
-import React from 'react'
 import { motion } from 'framer-motion'
-import { ArrowRight, CheckCircle, Star, Users, Code, Cloud, Brain, Shield, Zap, Globe, Rocket, Cpu, Database, Network, Lock, Palette, Target, TrendingUp } from 'lucide-react'
+import { ArrowRight, CheckCircle, Star, Cloud, Brain, Shield, Zap, Rocket, TrendingUp, Target } from 'lucide-react'
 import FuturisticAnimatedBackground from './components/ui/FuturisticAnimatedBackground'
 import FuturisticNeonButton from './components/ui/FuturisticNeonButton'
-import { ENHANCED_SERVICES_DATA, ENHANCED_SERVICE_CATEGORIES, SERVICE_PRICING_TIERS, SERVICE_BENEFITS, MARKET_ANALYSIS } from './data/enhancedServicesData'
+import { ENHANCED_SERVICES_DATA, MARKET_ANALYSIS } from './data/enhancedServicesData'
 
 function App() {
   const heroStats = [

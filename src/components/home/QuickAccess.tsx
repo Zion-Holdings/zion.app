@@ -9,8 +9,7 @@ import {
   Settings, 
   MessageSquare, 
   Smartphone,
-  Zap,
-  TrendingUp
+  Zap
 } from "lucide-react";
 
 export function QuickAccess() {

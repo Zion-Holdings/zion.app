@@ -4,10 +4,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Globe, Zap, Sparkles } from 'lucide-react';
-import { useTranslation } from 'react-i18next';
-
 export default function HeroSection() {
-  const { t } = useTranslation();
 
   const containerVariants = {
     hidden: { opacity: 0 },

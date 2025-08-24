@@ -76,14 +76,7 @@ const itemVariants = {
   }
 };
 
-const cardVariants = {
-  hover: {
-    y: -8,
-    transition: {
-      duration: 0.3,
-    }
-  }
-};
+
 
 export default function FeatureHighlights() {
   return (
