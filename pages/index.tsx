@@ -7,6 +7,8 @@ import AdvancedHero from '../components/AdvancedHero';
 import AdvancedServicesShowcase from '../components/AdvancedServicesShowcase';
 import AdvancedTestimonials from '../components/AdvancedTestimonials';
 import AdvancedContactForm from '../components/AdvancedContactForm';
+import AdvancedStats from '../components/AdvancedStats';
+import AdvancedFeaturesShowcase from '../components/AdvancedFeaturesShowcase';
 
 const Home: NextPage = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -193,6 +195,9 @@ const Home: NextPage = () => {
         {/* Advanced Services Showcase */}
         <AdvancedServicesShowcase />
 
+        {/* Advanced Stats Section */}
+        <AdvancedStats />
+
         {/* Why Choose Us Section */}
         <section className="py-20 bg-gradient-to-br from-gray-900 to-black">
           <div className="container mx-auto px-4">
@@ -258,6 +263,9 @@ const Home: NextPage = () => {
 
         {/* Advanced Testimonials Section */}
         <AdvancedTestimonials />
+
+        {/* Advanced Features Showcase */}
+        <AdvancedFeaturesShowcase />
 
         {/* CTA Section */}
         <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600">
