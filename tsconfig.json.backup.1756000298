@@ -16,6 +16,10 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
+<<<<<<< HEAD
+      "@/*": ["./*"]
+    }
+=======
       "@/*": [
         "./src/*"
       ],
@@ -77,6 +81,7 @@
     "jsx": "preserve",
     "noEmit": true,
     "isolatedModules": true
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-9531
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]

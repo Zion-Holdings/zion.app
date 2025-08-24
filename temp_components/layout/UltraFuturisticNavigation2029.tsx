@@ -357,7 +357,7 @@ export default function UltraFuturisticNavigation2029() {
               className="text-gray-300 hover:text-cyan-400 transition-colors duration-300"
             >
               Get Started
-            </Link>
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
