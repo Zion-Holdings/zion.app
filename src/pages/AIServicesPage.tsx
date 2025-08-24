@@ -1,429 +1,346 @@
 import React from 'react';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Link } from "react-router-dom";
+import { Header } from '@/components/Header';
+import { Footer } from '@/components/Footer';
+import { SEO } from '@/components/SEO';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import { Link } from 'react-router-dom';
 import { 
   Brain, 
-  Zap, 
-  Shield, 
-  BarChart3, 
-  MessageSquare, 
-  Eye, 
+  Database, 
   Code, 
-  Globe,
-  Database,
+  BarChart3, 
+  Shield, 
+  Zap, 
+  Globe, 
+  Users, 
+  MessageSquare, 
+  Eye,
+  Server,
   Network,
+  Circle,
   FileText,
   Video,
-  Search,
-  Lock,
-  TrendingUp,
-  Users,
-  Lightbulb,
-  Phone,
-  Settings,
-  BarChart,
-  Smartphone,
-
-} from "lucide-react";
+  Mic,
+  Monitor,
+  ArrowRight,
+  CheckCircle,
+  Star
+} from 'lucide-react';
 
 export default function AIServicesPage() {
   const aiServices = [
     {
-      id: "ai-chatbot",
-      title: "AI Chatbot Development",
-      description: "Custom AI-powered chatbots for customer service, sales, and support with natural language processing capabilities.",
-      icon: <MessageSquare className="h-8 w-8 text-blue-500" />,
-      price: 2500,
-      currency: "$",
-      features: [
-        "Natural Language Processing",
-        "Multi-language Support",
-        "Integration APIs",
-        "Analytics Dashboard",
-        "Custom Training",
-        "24/7 Support"
-      ],
-      category: "Conversational AI",
-      badge: "Popular",
-      link: "https://ziontechgroup.com/ai-chatbot",
-      details: "Transform customer interactions with intelligent chatbots that understand context, handle complex queries, and provide 24/7 support. Our solutions integrate seamlessly with your existing systems and can be trained on your specific domain knowledge."
+      id: 'ai-development',
+      title: 'AI Development & Integration',
+      description: 'Custom AI solutions development and seamless integration into existing systems',
+      category: 'Development',
+      price: 'From $5,000',
+      features: ['Custom AI Models', 'API Integration', 'Performance Optimization', 'Scalability Planning'],
+      icon: <Brain className="h-8 w-8 text-zion-cyan" />,
+      badge: 'Popular',
+      rating: 4.9,
+      reviewCount: 156,
+      link: '/services/ai-development'
     },
     {
-      id: "ai-content-generation",
-      title: "AI Content Generation Suite",
-      description: "Generate high-quality articles, marketing copy, and creative content using advanced language models.",
-      icon: <FileText className="h-8 w-8 text-green-500" />,
-      price: 1800,
-      currency: "$",
-      features: [
-        "Article Generation",
-        "Marketing Copy",
-        "SEO Optimization",
-        "Plagiarism Detection",
-        "Content Templates",
-        "Bulk Generation"
-      ],
-      category: "Content AI",
-      badge: "New",
-      link: "https://ziontechgroup.com/ai-content",
-      details: "Create engaging, SEO-optimized content at scale. Our AI understands your brand voice and generates content that resonates with your audience while maintaining high quality and originality."
+      id: 'machine-learning',
+      title: 'Machine Learning Solutions',
+      description: 'End-to-end machine learning pipeline development and deployment',
+      category: 'ML/AI',
+      price: 'From $3,500',
+      features: ['Data Preprocessing', 'Model Training', 'Deployment', 'Monitoring'],
+      icon: <Server className="h-8 w-8 text-zion-purple" />,
+      badge: 'Featured',
+      rating: 4.8,
+      reviewCount: 89,
+      link: '/services/machine-learning'
     },
     {
-      id: "ai-image-generation",
-      title: "AI Image Generation Platform",
-      description: "Create stunning visuals, logos, and graphics using state-of-the-art image generation AI models.",
-      icon: <BarChart className="h-8 w-8 text-purple-500" />,
-      price: 3200,
-      currency: "$",
-      features: [
-        "Text-to-Image Generation",
-        "Style Transfer",
-        "Logo Creation",
-        "Brand Consistency",
-        "High Resolution Output",
-        "Commercial License"
-      ],
-      category: "Visual AI",
-      badge: "Featured",
-      link: "https://ziontechgroup.com/ai-images",
-      details: "Generate professional-quality images for marketing, branding, and creative projects. Our platform supports multiple styles and can maintain brand consistency across all generated visuals."
+      id: 'data-science',
+      title: 'Data Science & Analytics',
+      description: 'Transform raw data into actionable business insights with advanced analytics',
+      category: 'Analytics',
+      price: 'From $4,200',
+      features: ['Data Mining', 'Statistical Analysis', 'Visualization', 'Predictive Modeling'],
+      icon: <BarChart3 className="h-8 w-8 text-zion-blue" />,
+      rating: 4.7,
+      reviewCount: 134,
+      link: '/services/data-science'
     },
     {
-      id: "ai-video-editing",
-      title: "AI Video Editing & Enhancement",
-      description: "Automated video editing, enhancement, and post-production using artificial intelligence.",
-      icon: <Video className="h-8 w-8 text-red-500" />,
-      price: 4500,
-      currency: "$",
-      features: [
-        "Auto-editing",
-        "Background Removal",
-        "Color Grading",
-        "Motion Tracking",
-        "4K Resolution",
-        "Batch Processing"
-      ],
-      category: "Video AI",
-      badge: "Premium",
-      link: "https://ziontechgroup.com/ai-video",
-      details: "Streamline your video production workflow with AI-powered editing tools. Automatically enhance quality, remove backgrounds, and apply professional-grade effects in minutes instead of hours."
+      id: 'nlp-processing',
+      title: 'Natural Language Processing',
+      description: 'Advanced text analysis, sentiment analysis, and language understanding systems',
+      category: 'NLP',
+      price: 'From $3,800',
+      features: ['Text Analysis', 'Sentiment Detection', 'Language Models', 'Translation'],
+      icon: <MessageSquare className="h-8 w-8 text-emerald-500" />,
+      rating: 4.6,
+      reviewCount: 67,
+      link: '/services/nlp-processing'
     },
     {
-      id: "ai-data-analytics",
-      title: "AI-Powered Data Analytics",
-      description: "Advanced analytics and insights using machine learning to uncover patterns and trends in your data.",
-      icon: <BarChart3 className="h-8 w-8 text-orange-500" />,
-      price: 3800,
-      currency: "$",
-      features: [
-        "Predictive Analytics",
-        "Pattern Recognition",
-        "Real-time Insights",
-        "Custom Dashboards",
-        "Data Visualization",
-        "API Integration"
-      ],
-      category: "Analytics AI",
-      badge: "Enterprise",
-      link: "https://ziontechgroup.com/ai-analytics",
-      details: "Transform raw data into actionable insights with our AI analytics platform. Predict trends, identify opportunities, and make data-driven decisions with confidence."
+      id: 'computer-vision',
+      title: 'Computer Vision Solutions',
+      description: 'Image and video analysis, object detection, and visual AI applications',
+      category: 'Vision',
+      price: 'From $4,500',
+      features: ['Object Detection', 'Image Classification', 'Video Analysis', 'Facial Recognition'],
+      icon: <Eye className="h-8 w-8 text-amber-500" />,
+      rating: 4.8,
+      reviewCount: 92,
+      link: '/services/computer-vision'
     },
     {
-      id: "ai-cybersecurity",
-      title: "AI Cybersecurity Protection",
-      description: "Intelligent threat detection and prevention using machine learning algorithms.",
-      icon: <Shield className="h-8 w-8 text-cyan-500" />,
-      price: 5500,
-      currency: "$",
-      features: [
-        "Threat Detection",
-        "Behavioral Analysis",
-        "Real-time Monitoring",
-        "Incident Response",
-        "Compliance Reporting",
-        "24/7 Security"
-      ],
-      category: "Security AI",
-      badge: "Critical",
-      link: "https://ziontechgroup.com/ai-security",
-      details: "Protect your digital assets with AI-powered cybersecurity that learns from threats and adapts to new attack vectors. Our system provides comprehensive protection with minimal false positives."
-    },
-    {
-      id: "ai-process-automation",
-      title: "AI Process Automation",
-      description: "Automate complex business processes using intelligent workflow automation and decision-making AI.",
+      id: 'ai-automation',
+      title: 'AI Process Automation',
+      description: 'Intelligent automation solutions to streamline business processes',
+      category: 'Automation',
+      price: 'From $2,800',
+      features: ['Workflow Automation', 'Document Processing', 'Decision Support', 'Process Optimization'],
       icon: <Zap className="h-8 w-8 text-yellow-500" />,
-      price: 4200,
-      currency: "$",
-      features: [
-        "Workflow Automation",
-        "Decision Trees",
-        "Process Optimization",
-        "Integration APIs",
-        "Performance Monitoring",
-        "Custom Rules Engine"
-      ],
-      category: "Automation AI",
-      badge: "Efficient",
-      link: "https://ziontechgroup.com/ai-automation",
-      details: "Streamline operations and reduce manual work with intelligent process automation. Our AI understands your business logic and can make complex decisions automatically."
+      badge: 'New',
+      rating: 4.5,
+      reviewCount: 45,
+      link: '/services/ai-automation'
     },
     {
-      id: "ai-customer-insights",
-      title: "AI Customer Insights Platform",
-      description: "Deep customer understanding through AI-powered analysis of behavior, preferences, and sentiment.",
-      icon: <Users className="h-8 w-8 text-pink-500" />,
-      price: 2800,
-      currency: "$",
-      features: [
-        "Behavioral Analysis",
-        "Sentiment Analysis",
-        "Customer Segmentation",
-        "Predictive Modeling",
-        "Personalization Engine",
-        "ROI Tracking"
-      ],
-      category: "Customer AI",
-      badge: "Insightful",
-      link: "https://ziontechgroup.com/ai-insights",
-      details: "Understand your customers like never before with AI-powered insights. Predict behavior, personalize experiences, and increase customer lifetime value through intelligent analysis."
+      id: 'ai-consulting',
+      title: 'AI Strategy Consulting',
+      description: 'Strategic guidance for AI adoption and digital transformation',
+      category: 'Consulting',
+      price: 'From $6,000',
+      features: ['AI Roadmap', 'Technology Assessment', 'Implementation Planning', 'ROI Analysis'],
+      icon: <Users className="h-8 w-8 text-indigo-500" />,
+      rating: 4.9,
+      reviewCount: 78,
+      link: '/services/ai-consulting'
     },
     {
-      id: "ai-search-optimization",
-      title: "AI Search & Discovery Engine",
-      description: "Intelligent search functionality with semantic understanding and personalized recommendations.",
-      icon: <Search className="h-8 w-8 text-indigo-500" />,
-      price: 3500,
-      currency: "$",
-      features: [
-        "Semantic Search",
-        "Personalized Results",
-        "Auto-complete",
-        "Search Analytics",
-        "Multi-modal Search",
-        "Real-time Indexing"
-      ],
-      category: "Search AI",
-      badge: "Smart",
-      link: "https://ziontechgroup.com/ai-search",
-      details: "Enhance user experience with intelligent search that understands intent and context. Our AI delivers relevant results faster and helps users discover content they didn't know existed."
+      id: 'ai-security',
+      title: 'AI-Powered Cybersecurity',
+      description: 'Advanced threat detection and security automation using artificial intelligence',
+      category: 'Security',
+      price: 'From $5,500',
+      features: ['Threat Detection', 'Behavioral Analysis', 'Incident Response', 'Security Automation'],
+      icon: <Shield className="h-8 w-8 text-red-500" />,
+      rating: 4.7,
+      reviewCount: 112,
+      link: '/services/ai-security'
     },
     {
-      id: "ai-translation",
-      title: "AI Translation & Localization",
-      description: "Accurate, context-aware translation services supporting 100+ languages with cultural adaptation.",
-      icon: <Globe className="h-8 w-8 text-teal-500" />,
-      price: 2200,
-      currency: "$",
-      features: [
-        "100+ Languages",
-        "Context Awareness",
-        "Cultural Adaptation",
-        "Industry Specialization",
-        "API Integration",
-        "Quality Assurance"
-      ],
-      category: "Language AI",
-      badge: "Global",
-      link: "https://ziontechgroup.com/ai-translation",
-      details: "Break language barriers with AI-powered translation that understands context and cultural nuances. Perfect for global businesses, content creators, and international communication."
+      id: 'ai-chatbots',
+      title: 'AI Chatbot Development',
+      description: 'Intelligent conversational AI for customer service and support',
+      category: 'Chatbots',
+      price: 'From $2,500',
+      features: ['Conversational AI', 'Multi-language Support', 'Integration APIs', 'Analytics Dashboard'],
+      icon: <MessageSquare className="h-8 w-8 text-green-500" />,
+      rating: 4.6,
+      reviewCount: 89,
+      link: '/services/ai-chatbots'
     },
     {
-      id: "ai-code-generation",
-      title: "AI Code Generation & Review",
-      description: "Generate, review, and optimize code using advanced AI models trained on millions of repositories.",
-      icon: <Code className="h-8 w-8 text-emerald-500" />,
-      price: 4800,
-      currency: "$",
-      features: [
-        "Code Generation",
-        "Code Review",
-        "Bug Detection",
-        "Performance Optimization",
-        "Documentation",
-        "Multi-language Support"
-      ],
-      category: "Development AI",
-      badge: "Developer",
-      link: "https://ziontechgroup.com/ai-code",
-      details: "Accelerate development with AI that writes, reviews, and optimizes code. Our platform supports multiple programming languages and integrates with your existing development workflow."
+      id: 'ai-content-generation',
+      title: 'AI Content Generation',
+      description: 'Automated content creation for marketing, documentation, and creative projects',
+      category: 'Content',
+      price: 'From $1,800',
+      features: ['Text Generation', 'Image Creation', 'Video Production', 'Content Optimization'],
+      icon: <FileText className="h-8 w-8 text-purple-500" />,
+      rating: 4.4,
+      reviewCount: 56,
+      link: '/services/ai-content-generation'
     },
     {
-      id: "ai-predictive-maintenance",
-      title: "AI Predictive Maintenance",
-      description: "Predict equipment failures and optimize maintenance schedules using IoT data and machine learning.",
-      icon: <Settings className="h-8 w-8 text-gray-500" />,
-      price: 6500,
-      currency: "$",
-      features: [
-        "Failure Prediction",
-        "IoT Integration",
-        "Maintenance Optimization",
-        "Cost Analysis",
-        "Real-time Monitoring",
-        "Custom Alerts"
-      ],
-      category: "IoT AI",
-      badge: "Industrial",
-      link: "https://ziontechgroup.com/ai-maintenance",
-      details: "Reduce downtime and maintenance costs with AI-powered predictive maintenance. Monitor equipment health in real-time and schedule maintenance only when needed."
+      id: 'ai-voice-assistants',
+      title: 'Voice AI & Speech Recognition',
+      description: 'Voice-enabled AI solutions for hands-free interaction and accessibility',
+      category: 'Voice',
+      price: 'From $3,200',
+      features: ['Speech Recognition', 'Voice Synthesis', 'Multi-language', 'Custom Wake Words'],
+      icon: <Mic className="h-8 w-8 text-blue-500" />,
+      rating: 4.5,
+      reviewCount: 43,
+      link: '/services/ai-voice-assistants'
+    },
+    {
+      id: 'ai-iot-solutions',
+      title: 'AI IoT Solutions',
+      description: 'Intelligent Internet of Things solutions with AI-powered analytics',
+      category: 'IoT',
+      price: 'From $4,800',
+      features: ['Sensor Integration', 'Real-time Analytics', 'Predictive Maintenance', 'Edge Computing'],
+      icon: <Network className="h-8 w-8 text-cyan-500" />,
+      rating: 4.6,
+      reviewCount: 38,
+      link: '/services/ai-iot-solutions'
     }
   ];
 
   const categories = [
-    "All Services",
-    "Conversational AI",
-    "Content AI", 
-    "Visual AI",
-    "Video AI",
-    "Analytics AI",
-    "Security AI",
-    "Automation AI",
-    "Customer AI",
-    "Search AI",
-    "Language AI",
-    "Development AI",
-    "IoT AI"
+    { name: 'All Services', count: aiServices.length, active: true },
+    { name: 'Development', count: aiServices.filter(s => s.category === 'Development').length },
+    { name: 'ML/AI', count: aiServices.filter(s => s.category === 'ML/AI').length },
+    { name: 'Analytics', count: aiServices.filter(s => s.category === 'Analytics').length },
+    { name: 'Consulting', count: aiServices.filter(s => s.category === 'Consulting').length },
+    { name: 'Security', count: aiServices.filter(s => s.category === 'Security').length }
   ];
 
-  const [selectedCategory, setSelectedCategory] = React.useState("All Services");
-  const [filteredServices, setFilteredServices] = React.useState(aiServices);
-
-  React.useEffect(() => {
-    if (selectedCategory === "All Services") {
-      setFilteredServices(aiServices);
-    } else {
-      setFilteredServices(aiServices.filter(service => service.category === selectedCategory));
-    }
-  }, [selectedCategory]);
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-zion-blue-dark via-zion-slate to-zion-blue-dark">
-      {/* Hero Section */}
-      <div className="relative overflow-hidden bg-gradient-to-r from-zion-purple/20 to-zion-cyan/20 py-20">
-        <div className="absolute inset-0 bg-gradient-to-r from-zion-purple/10 to-zion-cyan/10 opacity-20"></div>
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-zion-cyan via-zion-purple to-zion-cyan bg-clip-text text-transparent">
-            AI Services
-          </h1>
-          <p className="text-xl md:text-2xl text-zion-slate-light mb-8 max-w-4xl mx-auto">
-            Transform your business with cutting-edge AI solutions. From chatbots to predictive analytics, 
-            we provide enterprise-grade AI services that drive innovation and growth.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Button size="lg" className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white px-8 py-3">
-              <Brain className="h-5 w-5 mr-2" />
-              Explore AI Solutions
-            </Button>
-            <Button size="lg" variant="outline" className="border-zion-cyan text-zion-cyan hover:bg-zion-cyan/10 px-8 py-3">
-              <Lightbulb className="h-5 w-5 mr-2" />
-              Get AI Consultation
-            </Button>
+    <>
+      <SEO 
+        title="AI Services - Zion Tech Group" 
+        description="Comprehensive AI services including development, machine learning, data science, and automation solutions. Transform your business with cutting-edge AI technology."
+        keywords="AI services, machine learning, data science, artificial intelligence, AI development, AI consulting"
+        canonical="https://ziontechgroup.com/ai-services"
+      />
+      <Header />
+      
+      <main className="min-h-screen bg-background">
+        {/* Hero Section */}
+        <section className="relative bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-purple py-20 overflow-hidden">
+          <div className="absolute inset-0 bg-black/20"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-zion-cyan/10 to-zion-purple/10"></div>
+          
+          {/* Animated Background Elements */}
+          <div className="absolute top-20 left-10 w-32 h-32 bg-zion-cyan/20 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-10 w-40 h-40 bg-zion-purple/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+          <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-zion-blue/30 rounded-full blur-2xl animate-pulse delay-500"></div>
+          
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="text-center max-w-4xl mx-auto">
+              <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">
+                AI Services & Solutions
+              </h1>
+              <p className="text-xl text-zion-slate-light mb-8 max-w-3xl mx-auto">
+                Transform your business with cutting-edge artificial intelligence solutions. From custom AI development 
+                to machine learning implementation, we deliver intelligent solutions that drive growth and innovation.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button size="lg" className="bg-zion-purple hover:bg-zion-purple-light text-white">
+                  <Link to="/request-quote">Get Free Consultation</Link>
+                </Button>
+                <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
+                  <Link to="/contact">Contact Our Team</Link>
+                </Button>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
+        </section>
 
-      {/* Category Filter */}
-      <div className="py-8 bg-zion-blue-dark/50">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-wrap justify-center gap-3">
-            {categories.map((category) => (
-              <Button
-                key={category}
-                variant={selectedCategory === category ? "default" : "outline"}
-                onClick={() => setSelectedCategory(category)}
-                className={`${
-                  selectedCategory === category
-                    ? "bg-zion-purple text-white"
-                    : "border-zion-cyan text-zion-cyan hover:bg-zion-cyan/10"
-                }`}
-              >
-                {category}
-              </Button>
-            ))}
-          </div>
-        </div>
-      </div>
+        {/* Services Grid */}
+        <section className="py-20 bg-background">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                Comprehensive AI Solutions
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                Choose from our extensive portfolio of AI services, each designed to address specific business challenges 
+                and drive measurable results.
+              </p>
+            </div>
 
-      {/* Services Grid */}
-      <div className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredServices.map((service) => (
-              <Card key={service.id} className="group overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-zion-purple/20 hover:scale-105 border-zion-blue-light/20 bg-zion-blue-dark/50 backdrop-blur-sm">
-                <CardHeader className="pb-4">
-                  <div className="flex justify-between items-start mb-4">
-                    <div className="p-3 rounded-lg bg-zion-blue-dark/50 group-hover:bg-zion-purple/20 transition-colors">
+            {/* Category Filter */}
+            <div className="flex flex-wrap justify-center gap-3 mb-12">
+              {categories.map((category, index) => (
+                <Button
+                  key={index}
+                  variant={category.active ? "default" : "outline"}
+                  className={category.active ? "bg-zion-purple text-white" : "border-zion-purple/30 text-zion-purple hover:bg-zion-purple/10"}
+                >
+                  {category.name} ({category.count})
+                </Button>
+              ))}
+            </div>
+
+            {/* Services Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {aiServices.map((service) => (
+                <Card key={service.id} className="group hover:shadow-2xl transition-all duration-300 border-zion-purple/20 hover:border-zion-purple/50 bg-card/50 backdrop-blur-sm">
+                  <CardHeader className="pb-4">
+                    <div className="flex justify-between items-start mb-3">
                       {service.icon}
+                      {service.badge && (
+                        <Badge variant="secondary" className="bg-zion-purple/20 text-zion-purple border-zion-purple/30">
+                          {service.badge}
+                        </Badge>
+                      )}
                     </div>
-                    {service.badge && (
-                      <Badge variant="secondary" className="bg-zion-purple/20 text-zion-cyan border-zion-purple/30">
-                        {service.badge}
-                      </Badge>
-                    )}
-                  </div>
-                  <CardTitle className="text-xl text-white group-hover:text-zion-cyan transition-colors">
-                    {service.title}
-                  </CardTitle>
-                  <CardDescription className="text-zion-slate-light text-base">
-                    {service.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="pb-4">
-                  <div className="mb-4">
-                    <p className="text-sm text-zion-slate-light mb-3">{service.details}</p>
-                    <div className="grid grid-cols-2 gap-2">
-                      {service.features.slice(0, 4).map((feature, index) => (
-                        <div key={index} className="flex items-center text-xs text-zion-cyan">
-                          <div className="w-1.5 h-1.5 bg-zion-cyan rounded-full mr-2"></div>
-                          {feature}
+                    <CardTitle className="text-xl group-hover:text-zion-cyan transition-colors">
+                      {service.title}
+                    </CardTitle>
+                    <CardDescription className="text-muted-foreground">
+                      {service.description}
+                    </CardDescription>
+                  </CardHeader>
+                  
+                  <CardContent className="pb-4">
+                    <div className="mb-4">
+                      <span className="text-2xl font-bold text-zion-cyan">{service.price}</span>
+                    </div>
+                    
+                    <div className="space-y-2 mb-4">
+                      {service.features.slice(0, 3).map((feature, index) => (
+                        <div key={index} className="flex items-center text-sm">
+                          <CheckCircle className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
+                          <span className="text-muted-foreground">{feature}</span>
                         </div>
                       ))}
                     </div>
-                  </div>
-                  <div className="text-center mb-4">
-                    <span className="text-3xl font-bold text-zion-cyan">{service.currency}{service.price.toLocaleString()}</span>
-                    <span className="text-zion-slate-light">/project</span>
-                  </div>
-                </CardContent>
-                <CardFooter className="pt-0">
-                  <Button asChild className="w-full bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white group-hover:shadow-lg group-hover:shadow-zion-purple/25 transition-all">
-                    <a href={service.link} target="_blank" rel="noopener noreferrer">
-                      <TrendingUp className="h-4 w-4 mr-2" />
-                      Get Started
-                    </a>
-                  </Button>
-                </CardFooter>
-              </Card>
-            ))}
+                    
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-1">
+                        <Star className="h-4 w-4 text-yellow-500 fill-current" />
+                        <span className="text-sm text-muted-foreground">{service.rating}</span>
+                        <span className="text-sm text-muted-foreground">({service.reviewCount})</span>
+                      </div>
+                      <Badge variant="outline" className="text-xs">
+                        {service.category}
+                      </Badge>
+                    </div>
+                  </CardContent>
+                  
+                  <CardContent className="pt-0">
+                    <Button asChild className="w-full group-hover:bg-zion-purple group-hover:text-white transition-all duration-300">
+                      <Link to={service.link}>
+                        Learn More
+                        <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                      </Link>
+                    </Button>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
-        </div>
-      </div>
+        </section>
 
-      {/* CTA Section */}
-      <div className="py-20 bg-gradient-to-r from-zion-purple/20 to-zion-cyan/20">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold mb-6 text-white">
-            Ready to Transform Your Business with AI?
-          </h2>
-          <p className="text-xl text-zion-slate-light mb-8 max-w-3xl mx-auto">
-            Our AI experts are ready to help you implement the perfect AI solution for your business needs. 
-            Get a free consultation and discover how AI can drive your success.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Button size="lg" className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white px-8 py-3">
-              <MessageSquare className="h-5 w-5 mr-2" />
-              Free AI Consultation
-            </Button>
-            <Button size="lg" variant="outline" className="border-zion-cyan text-zion-cyan hover:bg-zion-cyan/10 px-8 py-3">
-              <Phone className="h-5 w-5 mr-2" />
-              Call +1 302 464 0950
-            </Button>
+        {/* CTA Section */}
+        <section className="py-20 bg-gradient-to-r from-zion-blue-dark to-zion-purple-dark">
+          <div className="container mx-auto px-4 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              Ready to Harness the Power of AI?
+            </h2>
+            <p className="text-xl text-zion-slate-light mb-8 max-w-3xl mx-auto">
+              Let our AI experts help you identify the right solutions for your business. 
+              Get a free consultation and discover how AI can transform your operations.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" className="bg-zion-cyan hover:bg-zion-cyan/80 text-zion-slate-dark">
+                <Link to="/request-quote">Start Your AI Journey</Link>
+              </Button>
+              <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
+                <Link to="/contact">Schedule a Call</Link>
+              </Button>
+            </div>
           </div>
-        </div>
-      </div>
-    </div>
+        </section>
+      </main>
+      
+      <Footer />
+    </>
   );
 }
