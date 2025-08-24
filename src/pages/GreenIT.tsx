@@ -1,4 +1,5 @@
 
+import { AppLayout } from "@/layout/AppLayout";
 import { SEO } from "@/components/SEO";
 import { GradientHeading } from "@/components/GradientHeading";
 import { Button } from "@/components/ui/button";
@@ -25,12 +26,12 @@ export default function GreenIT() {
   ];
 
   return (
-    <>
+    <AppLayout>
       <SEO
         title="Green IT Solutions - Sustainable Technology"
         description="Explore eco-friendly IT solutions and sustainable technology practices that reduce environmental impact while maintaining performance." 
         keywords="green IT, sustainable technology, eco-friendly computing, energy efficient hardware"
-        canonical="https://app.ziontechgroup.com/marketplace/category/green-it"
+        canonical="https://ziontechgroup.com/green-it"
       />
       <main className="min-h-screen bg-zion-blue pt-24 pb-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -72,7 +73,7 @@ export default function GreenIT() {
             </div>
             
             <div className="mb-16">
-              <h2 className="text-2xl font-bold text-white mb-8">Our Green IT Solutions</h2>
+              <h2 className="text-3xl font-bold text-white mb-8">Our Green IT Solutions</h2>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {greenITSolutions.map((solution, index) => (
@@ -88,7 +89,7 @@ export default function GreenIT() {
             </div>
             
             <div className="mb-16">
-              <h2 className="text-2xl font-bold text-white mb-6">Why Choose Green IT?</h2>
+              <h2 className="text-3xl font-bold text-white mb-6">Why Choose Green IT?</h2>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="bg-zion-blue-dark border border-zion-blue-light rounded-lg p-6">
@@ -125,6 +126,6 @@ export default function GreenIT() {
           </div>
         </div>
       </main>
-    </>
+    </AppLayout>
   );
 }

@@ -1,19 +1,17 @@
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
+import { AppLayout } from "@/layout/AppLayout";
 import { SEO } from "@/components/SEO";
 import { completeSitemap } from "@/config/sitemap";
 import { Link } from "react-router-dom";
 
 export default function Sitemap() {
   return (
-    <>
+    <AppLayout>
       <SEO
         title="Sitemap | Zion AI Marketplace"
         description="Human readable sitemap for all public routes"
         keywords="sitemap, navigation"
-        canonical="https://app.ziontechgroup.com/sitemap"
+        canonical="https://ziontechgroup.com/sitemap"
       />
-      <Header />
       <main className="min-h-screen bg-zion-blue pt-24 pb-20">
         <div className="container mx-auto px-4">
           <h1 className="text-3xl font-bold mb-8">Sitemap</h1>
@@ -28,7 +26,6 @@ export default function Sitemap() {
           </ul>
         </div>
       </main>
-      <Footer />
-    </>
+    </AppLayout>
   );
 }
