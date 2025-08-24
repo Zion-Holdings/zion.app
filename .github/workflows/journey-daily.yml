@@ -1,0 +1,32 @@
+name: Journey Friction Daily
+
+on:
+  schedule:
+    - cron: '0 8 * * *'
+  workflow_dispatch:
+
+jobs:
+  journey:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm ci
+      - name: Start Next server (for HTML snapshots)
+        run: npm run build && nohup npx serve -s out -l 3000 & sleep 3 || true
+      - name: Run journey friction analysis
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          SELF_BASE_URL: http://localhost:3000
+        run: npx ts-node scripts/journey-friction-analysis.ts
+      - name: Commit report
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add data/reports/journey/latest.json || true
+          git commit -m "chore(journey): update friction report [skip ci]" || echo "No changes"
+          git push || echo "No push"
