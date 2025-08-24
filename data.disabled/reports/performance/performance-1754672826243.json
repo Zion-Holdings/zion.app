@@ -1,0 +1,27 @@
+{
+  "generatedAt": "2025-08-08T17:07:06.243Z",
+  "build": {
+    "ok": true,
+    "code": 0,
+    "stderr": ""
+  },
+  "metrics": [
+    {
+      "url": "http://localhost:3000/",
+      "statusCode": 200,
+      "ttfbMs": 52,
+      "bytes": 25909
+    },
+    {
+      "url": "http://localhost:3000/enhanced-home",
+      "statusCode": 200,
+      "ttfbMs": 14,
+      "bytes": 17311
+    }
+  ],
+  "thresholds": {
+    "ttfbMs": 800,
+    "bytesHtml": 250000
+  },
+  "alerts": []
+}

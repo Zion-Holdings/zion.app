@@ -1,0 +1,37 @@
+name: Repo Stats Updater
+
+on:
+  schedule:
+    - cron: '*/60 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  stats:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install
+        run: npm ci
+        env:
+          NODE_OPTIONS: --openssl-legacy-provider
+      - name: Update Repo Stats
+        run: node automation/repo-stats-updater.cjs
+      - name: Commit and push
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "chore(repo): update repo stats and badges"
+            git push
+          else
+            echo "No repo stat changes"
+          fi

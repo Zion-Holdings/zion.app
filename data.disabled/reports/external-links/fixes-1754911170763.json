@@ -1,0 +1,32 @@
+{
+  "timestamp": "2025-08-11T11:19:30.763Z",
+  "totalFilesEdited": 0,
+  "edits": [],
+  "rules": [
+    {
+      "from": "https://github.com/Zion-Holdings/zion.app/actions",
+      "to": "/site-health",
+      "reason": "Replace dead GH Actions link with Site Health dashboard"
+    },
+    {
+      "from": "https://github.com/Zion-Holdings/zion.app/tree/main/docs",
+      "to": "/reports/seo",
+      "reason": "Replace non-existent docs with SEO report dashboard"
+    },
+    {
+      "from": "https://github.com/Zion-Holdings/zion.app/blob/main/docs/CHANGELOG_AI.md",
+      "to": "/newsroom",
+      "reason": "Replace missing changelog with Newsroom updates"
+    },
+    {
+      "from": "https://github.com/Zion-Holdings/zion.app/tree/main/automation",
+      "to": "/automation",
+      "reason": "Replace repo folder with in-site automation hub"
+    },
+    {
+      "from": "https://github.com/Zion-Holdings/zion.app",
+      "to": "/",
+      "reason": "Replace repo root with site home"
+    }
+  ]
+}
