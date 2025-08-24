@@ -41,8 +41,9 @@ const OpenAppRedirect = React.lazy(() => import('./pages/OpenAppRedirect'));
 const ContactPage = React.lazy(() => import('./pages/Contact'));
 const ZionHireAI = React.lazy(() => import('./pages/ZionHireAI'));
 const RequestQuotePage = React.lazy(() => import('./pages/RequestQuote'));
-const MicroSaasServicesPage = React.lazy(() => import('./pages/MicroSaasServices'));
-const PricingPage = React.lazy(() => import('./pages/PricingPage'));
+const ComprehensiveServicesPage = React.lazy(() => import('./pages/ComprehensiveServicesPage'));
+const ServicesOverviewPage = React.lazy(() => import('./pages/ServicesOverviewPage'));
+const AIServicesShowcase = React.lazy(() => import('./pages/AIServicesShowcase'));
 
 const baseRoutes = [
   { path: '/', element: <Home /> },
@@ -65,8 +66,9 @@ const baseRoutes = [
   { path: '/zion-hire-ai', element: <ZionHireAI /> },
   { path: '/hire-ai', element: <ZionHireAI /> },
   { path: '/request-quote', element: <RequestQuotePage /> },
-  { path: '/micro-saas-services', element: <MicroSaasServicesPage /> },
-  { path: '/pricing', element: <PricingPage /> },
+  { path: '/comprehensive-services', element: <ComprehensiveServicesPage /> },
+  { path: '/services-overview', element: <ServicesOverviewPage /> },
+  { path: '/ai-services', element: <AIServicesShowcase /> },
   { path: '/blog', element: <Blog /> },
   { path: '/blog/:slug', element: <BlogPost /> },
 ];
