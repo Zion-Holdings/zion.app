@@ -244,6 +244,11 @@ export default function ServicesPage() {
                 Global IT Onsite Services
               </Button>
             </Link>
+            <Link to="/comprehensive-services">
+              <Button variant="outline" className="border-zion-cyan text-zion-cyan hover:bg-zion-cyan/10">
+                View All Services
+              </Button>
+            </Link>
             <Link to="/request-quote">
               <Button className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white">
                 Request a Quote
