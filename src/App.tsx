@@ -9,10 +9,22 @@ const About = React.lazy(() => import('./pages/About'));
 const Contact = React.lazy(() => import('./pages/Contact'));
 const NotFound = React.lazy(() => import('./pages/NotFound'));
 
+// Import new service pages
+const ComprehensiveServicesPage = React.lazy(() => import('./pages/ComprehensiveServicesPage'));
+const ServicesPricingPage = React.lazy(() => import('./pages/ServicesPricingPage'));
+const AIServicesPage = React.lazy(() => import('./pages/AIServicesPage'));
+const MicroSAASPage = React.lazy(() => import('./pages/MicroSAASPage'));
+const EnterpriseSolutions = React.lazy(() => import('./pages/EnterpriseSolutions'));
+
 const baseRoutes = [
   { path: '/', element: <Home /> },
   { path: '/about', element: <About /> },
   { path: '/contact', element: <Contact /> },
+  { path: '/comprehensive-services', element: <ComprehensiveServicesPage /> },
+  { path: '/services-pricing', element: <ServicesPricingPage /> },
+  { path: '/ai-services', element: <AIServicesPage /> },
+  { path: '/micro-saas', element: <MicroSAASPage /> },
+  { path: '/enterprise-solutions', element: <EnterpriseSolutions /> },
 ];
 
 const App = () => {
