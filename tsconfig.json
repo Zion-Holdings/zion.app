@@ -78,6 +78,10 @@
     "isolatedModules": true
   },
   "include": [
+    "src/**/*",
+    "pages/**/*",
+    "components/**/*",
+    "next-env.d.ts"
   ],
   "exclude": [
     "node_modules"
