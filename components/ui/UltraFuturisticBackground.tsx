@@ -12,6 +12,7 @@ const UltraFuturisticBackground: React.FC<UltraFuturisticBackgroundProps> = ({
   className = '' 
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const animationRef = useRef<number | null>(null);
 
   useEffect(() => {

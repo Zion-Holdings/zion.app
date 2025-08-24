@@ -75,7 +75,7 @@ const FuturisticHero: React.FC = () => {
             The future of <span className="neon-text-cyan">micro SaaS</span> is here. 
             Discover <span className="neon-text-green">35+ real services</span> that solve 
             actual business problems with <span className="neon-text-pink">AI-powered intelligence</span>.
-            From content creation to cybersecurity, we've got you covered.
+            From content creation to cybersecurity, we&apos;ve got you covered.
           </p>
         </motion.div>
 
@@ -261,9 +261,8 @@ const FuturisticHero: React.FC = () => {
           </motion.div>
         </div>
       </motion.div>
-        </section>
-      </AnimatedBackground>
-    );
-  };
+    </section>
+  );
+};
 
 export default FuturisticHero;

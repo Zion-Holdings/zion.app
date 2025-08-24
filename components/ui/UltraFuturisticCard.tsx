@@ -69,7 +69,7 @@ const UltraFuturisticCard: React.FC<UltraFuturisticCardProps> = ({
           accent: 'from-cyan-400 to-blue-500'
         };
     }
-  }[variant];
+  };
 
   const variantStyles = getVariantStyles();
   const customGlowColor = glowColor || variantStyles.glow;

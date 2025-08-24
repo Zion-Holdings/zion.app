@@ -54,7 +54,7 @@ export default function ServicesShowcase2026V3() {
               </h1>
               <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-8">
                 Experience the future of technology with our cutting-edge micro SAAS, AI, and emerging technology solutions. 
-                Transform your business with services designed for tomorrow's challenges.
+                Transform your business with services designed for tomorrow&apos;s challenges.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
                 <motion.a

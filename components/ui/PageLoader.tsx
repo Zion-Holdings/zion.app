@@ -130,7 +130,7 @@ const PageLoader: React.FC<PageLoaderProps> = ({
             >
               <div className="inline-block p-4 bg-gray-800/50 rounded-lg border border-gray-700/50">
                 <p className="text-sm text-gray-400">
-                  <span className="text-cyan-400 font-medium">Tip:</span> We're preparing the future of technology for you
+                  <span className="text-cyan-400 font-medium">Tip:</span> We&apos;re preparing the future of technology for you
                 </p>
               </div>
             </motion.div>

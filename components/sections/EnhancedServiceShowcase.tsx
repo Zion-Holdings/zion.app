@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Link from 'next/link';
 import { 
   ArrowRight, ExternalLink, Star, Users, TrendingUp, 
   Shield, Zap, Brain, Rocket, Dna, Globe, Cpu,
@@ -151,7 +152,13 @@ const EnhancedServiceShowcase: React.FC<EnhancedServiceShowcaseProps> = ({
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/5 to-cyan-900/5" />
       
-      <div className="max-w-7xl mx-auto relative z-10">
+      <motion.div 
+        className="max-w-7xl mx-auto relative z-10"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
         {/* Header */}
         <motion.div
           className="text-center mb-16"
@@ -351,7 +358,7 @@ const EnhancedServiceShowcase: React.FC<EnhancedServiceShowcaseProps> = ({
               </div>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Service Statistics */}
         {showStats && (
@@ -391,7 +398,7 @@ const EnhancedServiceShowcase: React.FC<EnhancedServiceShowcaseProps> = ({
             </div>
           </motion.div>
         )}
-      </div>
+      </motion.div>
     </section>
   );
 };

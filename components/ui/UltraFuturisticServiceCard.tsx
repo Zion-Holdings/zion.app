@@ -258,7 +258,7 @@ export default function UltraFuturisticServiceCard({ service }: UltraFuturisticS
             className="flex-1 border-cyan-500 text-cyan-400 hover:bg-cyan-500 hover:text-white"
           >
             {isExpanded ? 'Less' : 'More'}
-          </motion.button>
+          </Button>
         </div>
 
         {/* Contact Info */}
