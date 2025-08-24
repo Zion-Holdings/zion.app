@@ -25,20 +25,7 @@ export function HeroSection() {
       y: 0,
       opacity: 1,
       transition: {
-        duration: 0.6,
-        ease: "easeOut"
-      }
-    }
-  };
-
-  const particleVariants = {
-    animate: {
-      y: [0, -20, 0],
-      opacity: [0.3, 0.8, 0.3],
-      transition: {
-        duration: 3,
-        repeat: Infinity,
-        ease: "easeInOut"
+        duration: 0.6
       }
     }
   };
@@ -52,26 +39,50 @@ export function HeroSection() {
       <div className="absolute inset-0">
         <motion.div 
           className="absolute top-1/4 left-1/4 w-2 h-2 rounded-full bg-zion-purple-light opacity-40"
-          variants={particleVariants}
-          animate="animate"
+          animate={{
+            y: [0, -20, 0],
+            opacity: [0.3, 0.8, 0.3]
+          }}
+          transition={{
+            duration: 3,
+            repeat: Infinity
+          }}
         />
         <motion.div 
           className="absolute top-1/3 right-1/3 w-3 h-3 rounded-full bg-zion-cyan opacity-30"
-          variants={particleVariants}
-          animate="animate"
-          style={{ animationDelay: "1s" }}
+          animate={{
+            y: [0, -20, 0],
+            opacity: [0.3, 0.8, 0.3]
+          }}
+          transition={{
+            duration: 3,
+            repeat: Infinity,
+            delay: 1
+          }}
         />
         <motion.div 
           className="absolute bottom-1/4 left-1/2 w-2 h-2 rounded-full bg-zion-purple opacity-40"
-          variants={particleVariants}
-          animate="animate"
-          style={{ animationDelay: "2s" }}
+          animate={{
+            y: [0, -20, 0],
+            opacity: [0.3, 0.8, 0.3]
+          }}
+          transition={{
+            duration: 3,
+            repeat: Infinity,
+            delay: 2
+          }}
         />
         <motion.div 
           className="absolute top-1/2 right-1/4 w-4 h-4 rounded-full bg-zion-cyan-light opacity-20"
-          variants={particleVariants}
-          animate="animate"
-          style={{ animationDelay: "0.5s" }}
+          animate={{
+            y: [0, -20, 0],
+            opacity: [0.3, 0.8, 0.3]
+          }}
+          transition={{
+            duration: 3,
+            repeat: Infinity,
+            delay: 0.5
+          }}
         />
 
       </div>
@@ -80,12 +91,12 @@ export function HeroSection() {
       <motion.div 
         className="absolute top-20 right-20 w-32 h-32 border border-zion-cyan/30 rounded-lg rotate-45"
         animate={{ rotate: [45, 405], opacity: [0.3, 0.6, 0.3] }}
-        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+        transition={{ duration: 20, repeat: Infinity }}
       />
       <motion.div 
         className="absolute bottom-20 left-20 w-24 h-24 border border-zion-purple/30 rounded-full"
         animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.6, 0.3] }}
-        transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+        transition={{ duration: 15, repeat: Infinity }}
       />
       
       <motion.div 

@@ -37,19 +37,12 @@
     --radius: 0.5rem;
 
     --sidebar-background: 228 12% 92%;
-
     --sidebar-foreground: 0 0% 7%;
-
     --sidebar-primary: 216 84% 53%;
-
     --sidebar-primary-foreground: 142 71% 45%;
-
     --sidebar-accent: 0 0% 68%;
-
     --sidebar-accent-foreground: 0 0% 7%;
-
     --sidebar-border: 0 0% 68%;
-
     --sidebar-ring: 216 84% 53%;
   }
 
@@ -81,6 +74,7 @@
     --border: 0 0% 68%;
     --input: 0 0% 68%;
     --ring: 216 84% 53%;
+    
     --sidebar-background: 228 12% 92%;
     --sidebar-foreground: 0 0% 7%;
     --sidebar-primary: 216 84% 53%;
@@ -152,12 +146,19 @@
     }
   }
 
+  @keyframes neon-pulse {
+    0%, 100% {
+      opacity: 1;
+      text-shadow: 0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor;
+    }
+    50% {
+      opacity: 0.8;
+      text-shadow: 0 0 2px currentColor, 0 0 5px currentColor, 0 0 7px currentColor;
+    }
   }
 
   .neon-pulse {
     animation: neon-pulse 2s ease-in-out infinite;
-  }
-
   }
 
   /* Hover Effects */
@@ -166,10 +167,12 @@
   }
 
   .hover-lift:hover {
+    transform: translateY(-5px);
     box-shadow: 0 20px 40px rgba(34, 221, 210, 0.3);
   }
 
   .hover-glow:hover {
+    box-shadow: 0 0 20px rgba(34, 221, 210, 0.5);
   }
 
   /* LiveKit UI overrides */
