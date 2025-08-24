@@ -134,7 +134,7 @@ function ErrorFallback({ error, errorInfo, onReset, navigate }: ErrorFallbackPro
           </div>
         </div>
 
-        {process.env.NODE_ENV === 'development' && error && (
+        {typeof window !== 'undefined' && window.location.hostname === 'localhost' && error && (
           <motion.div
             className="mt-8 p-4 bg-zion-blue-dark/50 rounded-lg border border-zion-blue-light/30"
             initial={{ opacity: 0, height: 0 }}
