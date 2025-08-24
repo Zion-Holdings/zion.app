@@ -2,8 +2,8 @@
 import React from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 import { useAuth } from '@/hooks/useAuth';
-import { useTenantAdminStatus } from '@/hooks/useWhitelabelTenant';
-import { useWhitelabel } from '@/context/WhitelabelContext';
+import { useTenantAdminStatus } from '@/hooks/useTenantAdminStatus';
+import { useWhitelabel } from '@/hooks/useWhitelabel';
 
 export interface ProtectedRouteProps {
   children: React.ReactNode;

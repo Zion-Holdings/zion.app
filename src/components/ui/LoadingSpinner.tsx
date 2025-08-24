@@ -3,45 +3,6 @@ import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 
 interface LoadingSpinnerProps {
-<<<<<<< HEAD
-  size?: 'sm' | 'md' | 'lg';
-  className?: string;
-  text?: string;
-}
-
-export function LoadingSpinner({ size = 'md', className, text }: LoadingSpinnerProps) {
-  const sizeClasses = {
-    sm: 'w-6 h-6',
-    md: 'w-8 h-8',
-    lg: 'w-12 h-12'
-  };
-
-  const textSizes = {
-    sm: 'text-sm',
-    md: 'text-base',
-    lg: 'text-lg'
-  };
-
-  return (
-    <div className={cn('flex flex-col items-center justify-center', className)}>
-      <motion.div
-        className={cn(
-          'border-2 border-zion-blue-light border-t-zion-cyan rounded-full',
-          sizeClasses[size]
-        )}
-        animate={{ rotate: 360 }}
-        transition={{
-          duration: 1,
-          repeat: Infinity,
-          ease: 'linear'
-        }}
-      />
-      {text && (
-        <motion.p
-          className={cn('mt-3 text-zion-slate-light', textSizes[size])}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-=======
   size?: 'sm' | 'md' | 'lg' | 'xl';
   color?: 'primary' | 'secondary' | 'white' | 'custom';
   customColor?: string;
@@ -99,7 +60,7 @@ export function LoadingSpinner({
         {/* Pulsing effect */}
         <motion.div
           className={cn(
-            'absolute inset-0 border-2 border-transparent rounded-full',
+            'absolute inset-0 rounded-full',
             sizeClasses[size]
           )}
           animate={{
@@ -119,7 +80,6 @@ export function LoadingSpinner({
           className="text-sm text-muted-foreground text-center"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
->>>>>>> cursor/analyze-improve-and-deploy-ziontechgroup-app-f1c5
           transition={{ delay: 0.3 }}
         >
           {text}
@@ -129,7 +89,6 @@ export function LoadingSpinner({
   );
 }
 
-<<<<<<< HEAD
 export function LoadingDots({ className }: { className?: string }) {
   return (
     <div className={cn('flex space-x-2', className)}>
@@ -148,7 +107,10 @@ export function LoadingDots({ className }: { className?: string }) {
           }}
         />
       ))}
-=======
+    </div>
+  );
+}
+
 // Skeleton loading component
 export function Skeleton({
   className,
@@ -166,16 +128,20 @@ export function Skeleton({
 }
 
 // Page loading component
-export function PageLoader() {
+export function PageLoader({ 
+  text = "Loading Zion...", 
+  className = "" 
+}: { 
+  text?: string; 
+  className?: string; 
+}) {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <LoadingSpinner size="xl" showText text="Loading Zion..." />
->>>>>>> cursor/analyze-improve-and-deploy-ziontechgroup-app-f1c5
+    <div className={cn("min-h-screen flex items-center justify-center bg-background", className)}>
+      <LoadingSpinner size="xl" showText text={text} />
     </div>
   );
 }
 
-<<<<<<< HEAD
 export function LoadingPulse({ className }: { className?: string }) {
   return (
     <motion.div
@@ -190,7 +156,9 @@ export function LoadingPulse({ className }: { className?: string }) {
         ease: 'easeInOut'
       }}
     />
-=======
+  );
+}
+
 // Inline loading component
 export function InlineLoader({ className }: { className?: string }) {
   return (
@@ -198,6 +166,5 @@ export function InlineLoader({ className }: { className?: string }) {
       <LoadingSpinner size="sm" />
       <span className="text-sm text-muted-foreground">Loading...</span>
     </div>
->>>>>>> cursor/analyze-improve-and-deploy-ziontechgroup-app-f1c5
   );
 }

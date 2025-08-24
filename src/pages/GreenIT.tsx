@@ -32,7 +32,6 @@ export default function GreenIT() {
         title="Green IT Solutions - Sustainable Technology"
         description="Explore eco-friendly IT solutions and sustainable technology practices that reduce environmental impact while maintaining performance." 
         keywords="green IT, sustainable technology, eco-friendly computing, energy efficient hardware"
-<<<<<<< HEAD
         canonical="https://ziontechgroup.com/green-it"
       />
       <AppHeader />
