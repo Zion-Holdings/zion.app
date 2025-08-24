@@ -1734,17 +1734,17 @@
     "@supabase/realtime-js" "2.11.2"
     "@supabase/storage-js" "2.7.1"
 
-"@tanstack/query-core@5.76.2":
-  version "5.76.2"
-  resolved "https://registry.npmjs.org/@tanstack/query-core/-/query-core-5.76.2.tgz"
-  integrity sha512-PFGwWh5ss9cJQ67l6bZ7hqXbisX2gy13G2jP+VGY1bgdbCfOMWh6UBVnN62QbFXro6CCoX9hYzTnZHr6Rz00YQ==
+"@tanstack/query-core@5.85.5":
+  version "5.85.5"
+  resolved "https://registry.yarnpkg.com/@tanstack/query-core/-/query-core-5.85.5.tgz#c4adc126bb3a927e4d60280bf3cf62210700147c"
+  integrity sha512-KO0WTob4JEApv69iYp1eGvfMSUkgw//IpMnq+//cORBzXf0smyRwPLrUvEe5qtAEGjwZTXrjxg+oJNP/C00t6w==
 
-"@tanstack/react-query@^5.17.19":
-  version "5.76.2"
-  resolved "https://registry.npmjs.org/@tanstack/react-query/-/react-query-5.76.2.tgz"
-  integrity sha512-rGkWberCrFdIxMdvSAJM/UOKeu0O/JVTbMmfhQoJpiU9Uq0EDx2EMCadnNuJWbXR4smDA2t7DY3NKkYFmDVS5A==
+"@tanstack/react-query@^5.85.5":
+  version "5.85.5"
+  resolved "https://registry.yarnpkg.com/@tanstack/react-query/-/react-query-5.85.5.tgz#50a1c02b50a59f93eba8f0d91d54d39c6c534c5e"
+  integrity sha512-/X4EFNcnPiSs8wM2v+b6DqS5mmGeuJQvxBglmDxl6ZQb5V26ouD2SJYAcC3VjbNwqhY2zjxVD15rDA5nGbMn3A==
   dependencies:
-    "@tanstack/query-core" "5.76.2"
+    "@tanstack/query-core" "5.85.5"
 
 "@testing-library/cypress@^8.0.2":
   version "8.0.7"
