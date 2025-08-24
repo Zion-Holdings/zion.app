@@ -1,8 +1,14 @@
-
-import { Link } from 'react-router-dom';
+import { FooterNewsletter } from "@/components/FooterNewsletter";
+import { Twitter, Linkedin, Facebook, Instagram, Github, Mail, Phone, MapPin, ChevronUp } from "lucide-react";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   const footerSections = [
     {
@@ -62,6 +68,17 @@ export function Footer() {
       {/* Grid Pattern Overlay */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(6,182,212,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.1)_1px,transparent_1px)] bg-[size:50px_50px] opacity-20"></div>
 
+      {/* Scroll to top button */}
+      <motion.button
+        onClick={scrollToTop}
+        className="absolute top-8 right-8 p-3 bg-zion-purple hover:bg-zion-purple-dark text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 z-20"
+        whileHover={{ y: -2 }}
+        whileTap={{ scale: 0.95 }}
+        aria-label="Scroll to top"
+      >
+        <ChevronUp className="w-5 h-5" />
+      </motion.button>
+
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
@@ -84,22 +101,41 @@ export function Footer() {
               We transform ideas into innovative digital solutions that drive growth and efficiency.
             </p>
 
+            {/* Contact Info */}
+            <div className="space-y-3 mb-6">
+              <div className="flex items-center gap-3 text-gray-300">
+                <Mail className="w-4 h-4 text-cyan-400" />
+                <span>kleber@ziontechgroup.com</span>
+              </div>
+              <div className="flex items-center gap-3 text-gray-300">
+                <Phone className="w-4 h-4 text-cyan-400" />
+                <span>+1 302 464 0950</span>
+              </div>
+              <div className="flex items-center gap-3 text-gray-300">
+                <MapPin className="w-4 h-4 text-cyan-400" />
+                <span>364 E Main St STE 1008, Middletown, DE 19709</span>
+              </div>
+            </div>
+
             {/* Social Links */}
             <div className="flex space-x-4">
               {[
-                { icon: "🔗", label: "LinkedIn", href: "#" },
-                { icon: "🐦", label: "Twitter", href: "#" },
-                { icon: "📘", label: "Facebook", href: "#" },
-                { icon: "📷", label: "Instagram", href: "#" }
+                { icon: Twitter, label: "Twitter", href: "https://twitter.com/ziontechgroup" },
+                { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/company/zion-tech-group" },
+                { icon: Facebook, label: "Facebook", href: "https://www.facebook.com/ziontechgroup" },
+                { icon: Instagram, label: "Instagram", href: "https://instagram.com/ziontechgroup" },
+                { icon: Github, label: "GitHub", href: "https://github.com/ziontechgroup" }
               ].map((social) => (
                 <a
                   key={social.label}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 rounded-lg flex items-center justify-center text-cyan-400 hover:bg-cyan-500/30 hover:border-cyan-400 transition-all duration-300 group"
+                  aria-label={social.label}
+                  title={social.label}
                 >
-                  <span className="text-lg group-hover:scale-110 transition-transform duration-300">
-                    {social.icon}
-                  </span>
+                  <social.icon className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
                 </a>
               ))}
             </div>
@@ -153,16 +189,7 @@ export function Footer() {
             <div className="space-y-3">
               <h4 className="text-lg font-semibold text-cyan-400">Stay Updated</h4>
               <p className="text-sm text-gray-300">Get the latest tech insights and service updates</p>
-              <div className="flex space-x-2">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="flex-1 px-3 py-2 bg-gray-800/50 border border-cyan-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400/50"
-                />
-                <button className="px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-lg hover:from-cyan-400 hover:to-blue-400 transition-all duration-300 text-sm font-medium">
-                  Subscribe
-                </button>
-              </div>
+              <FooterNewsletter />
             </div>
 
             {/* CTA */}
