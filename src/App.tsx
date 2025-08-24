@@ -54,6 +54,9 @@ const Terms = React.lazy(() => import('./pages/Terms'));
 const HelpCenter = React.lazy(() => import('./pages/HelpCenterPage'));
 const ApiDocs = React.lazy(() => import('./pages/ApiDocsHub'));
 const DeveloperPortal = React.lazy(() => import('./pages/DeveloperPortal'));
+const ComprehensiveServicesPage = React.lazy(() => import('./pages/ComprehensiveServicesPage'));
+const AIServicesShowcase = React.lazy(() => import('./pages/AIServicesShowcase'));
+const EnterpriseSolutionsPage = React.lazy(() => import('./pages/EnterpriseSolutionsPage'));
 
 const baseRoutes = [
   { path: '/', element: <Home /> },
@@ -73,6 +76,9 @@ const baseRoutes = [
   { path: '/talent', element: <TalentDirectory /> },
   { path: '/talents', element: <TalentsPage /> },
   { path: '/services', element: <ServicesPage /> },
+  { path: '/comprehensive-services', element: <ComprehensiveServicesPage /> },
+  { path: '/ai-services', element: <AIServicesShowcase /> },
+  { path: '/enterprise-solutions', element: <EnterpriseSolutionsPage /> },
   { path: '/it-onsite-services', element: <ITOnsiteServicesPage /> },
   { path: '/categories', element: <Categories /> },
   { path: '/equipment', element: <EquipmentPage /> },
@@ -99,6 +105,11 @@ function EnhancedSuspenseFallback() {
     />
   );
 }
+
+// Error Boundary Component
+class ErrorBoundary extends React.Component<{ children: React.ReactNode }, { hasError: boolean; error?: Error }> {
+  constructor(props: { children: React.ReactNode }) {
+    super(props);
     this.state = { hasError: false };
   }
 
@@ -137,7 +148,6 @@ function EnhancedSuspenseFallback() {
 const App = () => {
   // Ensure each navigation starts at the top of the page
   useScrollToTop();
-<<<<<<< HEAD
 
   return (
     <ErrorBoundary>
