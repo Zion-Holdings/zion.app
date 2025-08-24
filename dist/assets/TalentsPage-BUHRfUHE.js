@@ -1,0 +1,1 @@
+import{j as e}from"./index-BtTudPYL.js";function n(){return e.jsx("div",{className:"min-h-screen bg-zion-blue-dark py-8 text-white",children:e.jsxs("div",{className:"container mx-auto px-4",children:[e.jsx("h1",{className:"text-3xl font-bold mb-6",children:"Talents Page"}),e.jsx("p",{children:"Talents Page content will go here."})]})})}export{n as default};
