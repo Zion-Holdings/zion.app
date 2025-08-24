@@ -79,12 +79,18 @@ const footerSections: FooterSection[] = [
 ];
 
 const socialLinks = [
-  { name: 'LinkedIn', href: 'https://linkedin.com/company/ziontechgroup', icon: <Linkedin className="w-5 h-5" />, color: 'hover:text-blue-400' },
-  { name: 'Twitter', href: 'https://twitter.com/ziontechgroup', icon: <Twitter className="w-5 h-5" />, color: 'hover:text-sky-400' },
-  { name: 'Facebook', href: 'https://facebook.com/ziontechgroup', icon: <Facebook className="w-5 h-5" />, color: 'hover:text-blue-600' },
-  { name: 'Instagram', href: 'https://instagram.com/ziontechgroup', icon: <Instagram className="w-5 h-5" />, color: 'hover:text-pink-500' },
-  { name: 'YouTube', href: 'https://youtube.com/@ziontechgroup', icon: <Youtube className="w-5 h-5" />, color: 'hover:text-red-500' },
-  { name: 'GitHub', href: 'https://github.com/Zion-Holdings', icon: <Github className="w-5 h-5" />, color: 'hover:text-gray-400' }
+  { icon: <Linkedin className="w-5 h-5" />, href: 'https://linkedin.com/company/ziontechgroup', label: 'LinkedIn', external: true },
+  { icon: <Twitter className="w-5 h-5" />, href: 'https://twitter.com/ziontechgroup', label: 'Twitter', external: true },
+  { icon: <Github className="w-5 h-5" />, href: 'https://github.com/ziontechgroup', label: 'GitHub', external: true }
+];
+
+const quickLinks = [
+  { name: 'About Us', href: '/about', icon: <Users className="w-4 h-4" /> },
+  { name: 'Contact', href: '/contact', icon: <Phone className="w-4 h-4" /> },
+  { name: 'Support', href: '/support', icon: <HelpCircle className="w-4 h-4" /> },
+  { name: 'Documentation', href: '/docs', icon: <FileText className="w-4 h-4" /> },
+  { name: 'API Reference', href: '/api', icon: <Code className="w-4 h-4" /> },
+  { name: 'Status', href: '/status', icon: <TrendingUp className="w-4 h-4" /> }
 ];
 
 const UltraAdvancedFuturisticFooter2025: React.FC = () => {
@@ -334,52 +340,43 @@ const UltraAdvancedFuturisticFooter2025: React.FC = () => {
           </motion.div>
         </div>
 
-        {/* Bottom Section - Copyright & Links */}
-        <div className="border-t border-gray-800/50 bg-black/20">
-          <div className="container mx-auto px-4 py-8">
-            <div className="flex flex-col lg:flex-row items-center justify-between gap-4">
-              {/* Copyright */}
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                className="text-center lg:text-left"
-              >
-                <p className="text-gray-400 text-sm">
-                  © 2025 Zion Tech Group. All rights reserved. 
-                  <span className="text-cyan-400 ml-2">Revolutionizing Technology</span>
-                </p>
-              </motion.div>
-
-              {/* Bottom Links */}
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="flex flex-wrap items-center gap-6 text-sm"
-              >
-                <Link href="/about" className="text-gray-400 hover:text-cyan-400 transition-colors duration-200">
-                  About
-                </Link>
-                <Link href="/services" className="text-gray-400 hover:text-cyan-400 transition-colors duration-200">
-                  Services
-                </Link>
-                <Link href="/contact" className="text-gray-400 hover:text-cyan-400 transition-colors duration-200">
-                  Contact
-                </Link>
-                <Link href="/privacy" className="text-gray-400 hover:text-cyan-400 transition-colors duration-200">
+        {/* Bottom Bar */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="border-t border-gray-800/50 bg-gray-900/50 backdrop-blur-xl"
+        >
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+              <div className="text-gray-400 text-sm">
+                © 2024 Zion Tech Group. All rights reserved. | 
+                <Link href="/privacy" className="hover:text-white transition-colors duration-200 ml-2">
                   Privacy Policy
                 </Link> | 
                 <Link href="/terms" className="hover:text-white transition-colors duration-200 ml-2">
                   Terms of Service
                 </Link>
-                <Link href="/cookies" className="text-gray-400 hover:text-cyan-400 transition-colors duration-200">
-                  Cookie Policy
-                </Link>
-                <Link href="/sitemap" className="text-gray-400 hover:text-cyan-400 transition-colors duration-200">
-                  Sitemap
-                </Link>
-              </motion.div>
+              </div>
+              
+              <div className="flex items-center space-x-4 text-gray-400 text-sm">
+                <span>Powered by</span>
+                <div className="flex items-center space-x-2">
+                  <Brain className="w-4 h-4 text-cyan-400" />
+                  <span>AI Consciousness</span>
+                </div>
+                <span>•</span>
+                <div className="flex items-center space-x-2">
+                  <Atom className="w-4 h-4 text-purple-400" />
+                  <span>Quantum Computing</span>
+                </div>
+                <span>•</span>
+                <div className="flex items-center space-x-2">
+                  <Rocket className="w-4 h-4 text-pink-400" />
+                  <span>Space Technology</span>
+                </div>
+              </div>
             </div>
           </div>
         </motion.div>
@@ -397,7 +394,6 @@ const UltraAdvancedFuturisticFooter2025: React.FC = () => {
       >
         <ArrowUp className="w-6 h-6 mx-auto" />
       </motion.button>
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     </footer>
   );
 };

@@ -1,18 +1,28 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import { motion } from 'framer-motion';
 
 interface UltraFuturisticBackgroundProps {
   children: React.ReactNode;
-  className?: string;
+  variant?: 'default' | 'quantum' | 'holographic' | 'cyberpunk' | 'neural' | 'space' | 'quantum-entanglement' | 'holographic-matrix' | 'neural-quantum-cyberpunk';
+  intensity?: 'low' | 'medium' | 'high';
 }
 
-const UltraFuturisticBackground: React.FC<UltraFuturisticBackgroundProps> = ({ 
+export default function UltraFuturisticBackground({ 
   children, 
-  className = '' 
-}) => {
+  variant = 'default',
+  intensity = 'medium' 
+}: UltraFuturisticBackgroundProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animationRef = useRef<number | undefined>(undefined);
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  useEffect(() => {
+    if (!isClient) return;
+    
     const canvas = canvasRef.current;
     if (!canvas) return;
 
@@ -35,23 +45,24 @@ const UltraFuturisticBackground: React.FC<UltraFuturisticBackgroundProps> = ({
         canvas.height = rect.height;
       }
 =======
-=======
     // Set canvas size
     const resizeCanvas = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
+=======
     };
 
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
 
-    // Particle system
-    const particles: Array<{
+    // Enhanced Particle class
+    class Particle {
       x: number;
       y: number;
       vx: number;
       vy: number;
       size: number;
+      color: string;
       type: 'energy' | 'data' | 'quantum' | 'holographic' | 'neural' | 'cyberpunk';
       rotation: number;
       rotationSpeed: number;
@@ -591,141 +602,36 @@ const UltraFuturisticBackground: React.FC<UltraFuturisticBackgroundProps> = ({
 
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      opacity: number;
-      color: string;
-      type: 'quantum' | 'neural' | 'cyber';
-    }> = [];
 
-    // Initialize particles
-    const initParticles = () => {
-      particles.length = 0;
-      for (let i = 0; i < 150; i++) {
-        particles.push({
-          x: Math.random() * canvas.width,
-          y: Math.random() * canvas.height,
-          vx: (Math.random() - 0.5) * 2,
-          vy: (Math.random() - 0.5) * 2,
-          size: Math.random() * 3 + 1,
-          opacity: Math.random() * 0.8 + 0.2,
-          color: ['#00ffff', '#ff00ff', '#ffff00', '#00ff00', '#ff0080', '#8000ff'][Math.floor(Math.random() * 6)],
-          type: ['quantum', 'neural', 'cyber'][Math.floor(Math.random() * 3)] as 'quantum' | 'neural' | 'cyber'
-        });
-      }
-    };
-
-    // Neural network connections
-    const connections: Array<{ from: number; to: number; opacity: number }> = [];
-    const initConnections = () => {
-      connections.length = 0;
-      for (let i = 0; i < 50; i++) {
-        connections.push({
-          from: Math.floor(Math.random() * particles.length),
-          to: Math.floor(Math.random() * particles.length),
-          opacity: Math.random() * 0.3 + 0.1
-        });
-      }
-    };
-
-    // Quantum wave function
-    let waveOffset = 0;
-    const drawQuantumWaves = () => {
-      ctx.save();
-      ctx.strokeStyle = 'rgba(0, 255, 255, 0.1)';
-      ctx.lineWidth = 2;
-      
-      for (let i = 0; i < 3; i++) {
+        // Draw particle
         ctx.beginPath();
-        for (let x = 0; x < canvas.width; x += 2) {
-          const y = canvas.height / 2 + 
-            Math.sin((x + waveOffset + i * 100) * 0.01) * 100 +
-            Math.sin((x + waveOffset + i * 50) * 0.02) * 50;
-          if (x === 0) {
-            ctx.moveTo(x, y);
-          } else {
-            ctx.lineTo(x, y);
-          }
-        }
-        ctx.stroke();
-      }
-      ctx.restore();
-      waveOffset += 0.5;
-    };
-
-    // Holographic grid
-    const drawHolographicGrid = () => {
-      ctx.save();
-      ctx.strokeStyle = 'rgba(0, 255, 255, 0.05)';
-      ctx.lineWidth = 1;
-      
-      const gridSize = 50;
-      const offset = Date.now() * 0.001;
-      
-      // Vertical lines
-      for (let x = 0; x < canvas.width; x += gridSize) {
-        ctx.beginPath();
-        ctx.moveTo(x + Math.sin(offset + x * 0.01) * 5, 0);
-        ctx.lineTo(x + Math.sin(offset + x * 0.01) * 5, canvas.height);
-        ctx.stroke();
-      }
-      
-      // Horizontal lines
-      for (let y = 0; y < canvas.height; y += gridSize) {
-        ctx.beginPath();
-        ctx.moveTo(0, y + Math.cos(offset + y * 0.01) * 5);
-        ctx.lineTo(canvas.width, y + Math.cos(offset + y * 0.01) * 5);
-        ctx.stroke();
-      }
-      ctx.restore();
-    };
-
-    // Energy fields
-    const drawEnergyFields = () => {
-      const time = Date.now() * 0.001;
-      const centers = [
-        { x: canvas.width * 0.2, y: canvas.height * 0.3 },
-        { x: canvas.width * 0.8, y: canvas.height * 0.7 },
-        { x: canvas.width * 0.5, y: canvas.height * 0.8 }
-      ];
-
-      centers.forEach((center, index) => {
-        const radius = 100 + Math.sin(time + index) * 30;
-        const gradient = ctx.createRadialGradient(center.x, center.y, 0, center.x, center.y, radius);
-        gradient.addColorStop(0, `rgba(0, 255, 255, ${0.1 + Math.sin(time + index) * 0.05})`);
-        gradient.addColorStop(1, 'rgba(0, 255, 255, 0)');
-        
-        ctx.save();
-        ctx.fillStyle = gradient;
-        ctx.beginPath();
-        ctx.arc(center.x, center.y, radius, 0, Math.PI * 2);
+        ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+        ctx.fillStyle = `${particle.color}${Math.floor(particle.opacity * 255).toString(16).padStart(2, '0')}`;
         ctx.fill();
-        ctx.restore();
+
+        // Add glow effect
+        ctx.shadowColor = particle.color;
+        ctx.shadowBlur = 10;
+        ctx.fill();
+        ctx.shadowBlur = 0;
+
+        // Create quantum connections
+        if (variant === 'quantum') {
+          particles.forEach((otherParticle, j) => {
+            if (i !== j) createQuantumConnection(particle, otherParticle);
+          });
+        }
       });
+
+      animationRef.current = requestAnimationFrame(animate);
     };
 
-    // Main animation loop
-    const animate = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      
-      // Draw background layers
-      drawHolographicGrid();
-      drawQuantumWaves();
-      drawEnergyFields();
-      
-      // Update and draw particles
-      particles.forEach((particle, index) => {
-        // Update position
-        particle.x += particle.vx;
-        particle.y += particle.vy;
-        
-        // Bounce off edges
-        if (particle.x < 0 || particle.x > canvas.width) particle.vx *= -1;
-        if (particle.y < 0 || particle.y > canvas.height) particle.vy *= -1;
-        
-        // Wrap around
-        if (particle.x < 0) particle.x = canvas.width;
-        if (particle.x > canvas.width) particle.x = 0;
-        if (particle.y < 0) particle.y = canvas.height;
-        if (particle.y > canvas.height) particle.y = 0;
+    animate();
+
+    const handleResize = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+=======
       
       // Update and draw particles
               particles = particles.filter(particle => {
@@ -800,7 +706,6 @@ const UltraFuturisticBackground: React.FC<UltraFuturisticBackgroundProps> = ({
 
     window.addEventListener('resize', handleResize);
 
-=======
         
         // Draw particle
         ctx.save();
@@ -887,24 +792,25 @@ const UltraFuturisticBackground: React.FC<UltraFuturisticBackgroundProps> = ({
     initConnections();
     animate();
 
+=======
     return () => {
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current);
       }
-      window.removeEventListener('resize', resizeCanvas);
+      window.removeEventListener('resize', handleResize);
     };
-  }, []);
+  }, [variant, intensity, isClient]);
+
+  const backgroundVariants = {
+    quantum: 'bg-gradient-to-br from-purple-900 via-indigo-900 to-purple-900',
+    holographic: 'bg-gradient-to-br from-cyan-900 via-blue-900 to-cyan-900',
+    cyberpunk: 'bg-gradient-to-br from-red-900 via-orange-900 to-red-900',
+    neural: 'bg-gradient-to-br from-emerald-900 via-green-900 to-emerald-900',
+    space: 'bg-gradient-to-br from-blue-900 via-indigo-900 to-purple-900',
+    default: 'bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900'
+  };
 
   return (
-    <div className={`relative min-h-screen overflow-hidden ${className}`}>
-      <canvas
-        ref={canvasRef}
-        className="fixed inset-0 w-full h-full pointer-events-none z-0"
-        style={{
-          background: getBackgroundGradient(variant),
-        }}
-      />
-      
     <div ref={containerRef} className={`relative w-full h-full ${className}`}>
       <canvas
         ref={canvasRef}
@@ -912,10 +818,6 @@ const UltraFuturisticBackground: React.FC<UltraFuturisticBackgroundProps> = ({
         style={{ zIndex: -1 }}
       />
       {children}
-    </div>
-  );
-}
-=======
       
       {/* CSS animations */}
       <style jsx>{`
@@ -985,3 +887,7 @@ const getOverlayGradient = (variant: string) => {
 };
 
 export default UltraFuturisticBackground;
+=======
+    </div>
+  );
+}

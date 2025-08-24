@@ -24,7 +24,6 @@ export default function EnhancedNavigation() {
           <Link href="/salary-insights"><a>Salary Insights</a></Link>
           <Link href="/admin"><a>Admin</a></Link>
           <Link href="/contact"><a>Contact</a></Link>
-          <Link href="/admin/zion-brain"><a>Admin</a></Link>
 =======
           <Link href="/notifications">
             <a className="relative inline-flex items-center justify-center rounded-full border border-gray-200 dark:border-gray-700 p-2 hover:bg-gray-50 dark:hover:bg-gray-800">

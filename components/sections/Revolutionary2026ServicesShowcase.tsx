@@ -24,7 +24,7 @@ export default function Revolutionary2026ServicesShowcase() {
         staggerChildren: 0.1
       }
     }
-  };
+  ];
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20, scale: 0.95 },
@@ -80,20 +80,20 @@ export default function Revolutionary2026ServicesShowcase() {
           {/* Service Statistics */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
             <div className="text-center">
-              <div className="text-3xl font-bold text-purple-400">{revolutionary2026AIServices.length}</div>
-              <div className="text-gray-400 text-sm">AI Services</div>
+              <div className="text-3xl font-bold text-purple-400">{aiAutonomousServices2026.length}</div>
+              <div className="text-gray-400 text-sm">AI Autonomous Services</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-cyan-400">{revolutionary2026ITServices.length}</div>
-              <div className="text-gray-400 text-sm">IT Solutions</div>
+              <div className="text-3xl font-bold text-cyan-400">{quantumSpaceTechServices2026.length}</div>
+              <div className="text-gray-400 text-sm">Quantum Space Tech</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-pink-400">{revolutionary2026EmergingTechServices.length}</div>
-              <div className="text-gray-400 text-sm">Emerging Tech</div>
+              <div className="text-3xl font-bold text-pink-400">{metaverseDigitalRealityServices2026.length}</div>
+              <div className="text-gray-400 text-sm">Metaverse Services</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-green-400">{revolutionary2026MicroSaasServices.length}</div>
-              <div className="text-gray-400 text-sm">Micro SaaS</div>
+              <div className="text-3xl font-bold text-green-400">∞</div>
+              <div className="text-gray-400 text-sm">Possibilities</div>
             </div>
           </div>
         </motion.div>

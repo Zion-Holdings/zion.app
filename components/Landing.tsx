@@ -46,14 +46,6 @@ export default function Landing() {
             <p className="mx-auto mt-5 max-w-3xl text-lg text-white/80">
               Self-improving, cloud-native agents that invent, generate, and run new automation factories—fixing, optimizing, and syncing changes to the repository continuously.
             </p>
-            
-            {/* Clear Value Proposition */}
-            <div className="mt-6 p-4 rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm">
-              <p className="text-base text-cyan-400 font-medium mb-2">What Zion Does:</p>
-              <p className="text-sm text-white/80">
-                AI-powered deployment of updates across your cloud infrastructure. Automate content generation and deployment effortlessly with intelligent agents that continuously optimize your systems.
-              </p>
-            </div>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <Link href="/automation"><a className="rounded-xl bg-gradient-to-r from-fuchsia-500 to-cyan-500 px-6 py-3 font-semibold shadow-[0_0_30px_rgba(34,211,238,0.35)] hover:shadow-[0_0_40px_rgba(34,211,238,0.6)] transition-shadow">Explore Automations</a></Link>
               <a href="/site-health/workflows/autonomous-meta.yml" target="_blank" rel="noopener" className="rounded-xl border border-white/20 bg-white/5 px-6 py-3 font-semibold backdrop-blur-md hover:bg-white/10">Live Meta Factory</a>

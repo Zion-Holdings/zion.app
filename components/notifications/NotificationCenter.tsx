@@ -72,7 +72,7 @@ export default function NotificationCenter() {
         )}
         {!loading && notifications.length === 0 && (
           <div className="rounded-xl border border-gray-200 dark:border-gray-800 p-6 text-center text-sm text-gray-600 dark:text-gray-300">
-                            You&apos;re all caught up. No notifications.
+            You're all caught up. No notifications.
           </div>
         )}
         {notifications.map((n) => (

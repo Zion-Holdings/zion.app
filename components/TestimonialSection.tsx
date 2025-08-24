@@ -82,7 +82,7 @@ const TestimonialSection: React.FC = () => {
 
               {/* Content */}
               <blockquote className="text-gray-300 mb-6 leading-relaxed italic">
-                &quot;{testimonial.content}&quot;
+                "{testimonial.content}"
               </blockquote>
 
               {/* Author */}

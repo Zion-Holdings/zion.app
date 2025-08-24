@@ -268,8 +268,7 @@ export default function UltraFuturisticNavigation2028() {
                 href="/contact"
                 className="px-6 py-3 bg-gradient-to-r from-purple-500 to-cyan-500 text-white font-semibold rounded-xl hover:from-purple-600 hover:to-cyan-600 transition-all duration-200 transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25"
               >
-                <link.icon className="w-4 h-4" />
-                <span>{link.name.replace(/^[🏠🚀⭐💰📊📚🎯📞🔒]/gu, '').trim()}</span>
+                Get Started
               </Link>
             </div>
 
@@ -303,7 +302,7 @@ export default function UltraFuturisticNavigation2028() {
                       className="flex items-center space-x-3 p-3 rounded-lg hover:bg-purple-500/10 transition-colors duration-200"
                     >
                       <link.icon className="w-5 h-5 text-purple-400" />
-                      <span className="text-purple-200">{link.name.replace(/^[🏠🚀⭐💰📊📚🎯📞🔒]/gu, '').trim()}</span>
+                      <span className="text-white">{link.name.replace('🏠 ', '').replace('🚀 ', '').replace('⭐ ', '').replace('💰 ', '')}</span>
                     </Link>
                   ))}
                 </div>

@@ -91,6 +91,32 @@ const ContactForm: React.FC<ContactFormProps> = ({ isReducedMotion = false }) =>
       }
     });
 
+  const handleInputChange = (name: string, value: string) => {
+    setFormData(prev => ({ ...prev, [name]: value }));
+    
+    // Clear error when user starts typing
+    if (errors[name]) {
+      setErrors(prev => ({ ...prev, [name]: '' }));
+    }
+  };
+
+  const handleBlur = (name: string) => {
+    const error = validateField(name, formData[name]);
+    if (error) {
+      setErrors(prev => ({ ...prev, [name]: error }));
+    }
+  };
+
+  const validateForm = (): boolean => {
+    const newErrors: FormErrors = {};
+    
+    Object.keys(formData).forEach(key => {
+      const error = validateField(key, formData[key as keyof FormData]);
+      if (error) {
+        newErrors[key] = error;
+      }
+    });
+    
     setErrors(newErrors);
     return isValid;
   }, [formData, validateField]);

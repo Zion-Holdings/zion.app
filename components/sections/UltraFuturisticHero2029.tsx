@@ -193,7 +193,7 @@ const UltraFuturisticHero2029: React.FC = () => {
           >
             Experience the future of technology with our revolutionary 2029 services. 
             From AI consciousness simulation to Mars colonization automation, 
-            we&apos;re building tomorrow&apos;s solutions today.
+            we're building tomorrow's solutions today.
           </motion.p>
 
           {/* Floating Icons */}

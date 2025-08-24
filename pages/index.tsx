@@ -556,85 +556,44 @@ import ContactForm from '../components/forms/ContactForm';
 =======
 import React from 'react';
 import Head from 'next/head';
-import Link from 'next/link';
+import { motion } from 'framer-motion';
 import { 
-  Brain, 
-  Shield, 
-  Cloud, 
-  Zap, 
-  Globe, 
-  Database, 
-  Lock, 
-  Users, 
-  BarChart3, 
-  Code, 
-  Smartphone, 
-  Server,
-  ArrowRight,
-  CheckCircle,
-  Star,
-  TrendingUp,
-  Award,
-  Rocket,
-  Atom,
-  Cpu,
-  Satellite,
-  Building,
-  Target,
-  Globe2,
-  Network,
-  FileText,
-  Palette,
-  Search,
-  Monitor,
-  Smartphone as Mobile,
-  Laptop,
-  Shield as Security,
-  Database as DataIcon,
-  Cloud as CloudIcon,
-  Zap as Lightning,
-  Users as TeamIcon,
-  BarChart3 as AnalyticsIcon,
-  Code as CodeIcon,
-  Smartphone as AppIcon,
-  Server as ServerIcon,
-  Brain as AI,
-  Shield as CyberIcon,
-  Globe as WebIcon,
-  Database as BigDataIcon,
-  Lock as PrivacyIcon,
-  Users as SupportIcon,
-  BarChart3 as BI,
-  Code as DevIcon,
-  Smartphone as MobileDev,
-  Server as InfraIcon,
-  ShoppingCart,
-  Mail
+  ArrowRight, Brain, Shield, Rocket, Cpu, Database, Atom, Users, 
+  CheckCircle, Network
 } from 'lucide-react';
 
 export default function HomePage() {
-  const heroServices = [
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
+  const services = [
     {
-      title: "AI-Powered Business Intelligence",
-      description: "Transform your data into actionable insights with our advanced AI analytics platform",
-      icon: <Brain className="w-8 h-8" />,
-      color: "from-purple-500 to-pink-600",
-      price: "$299/month",
-      features: ["Real-time Analytics", "Predictive Insights", "Custom Dashboards", "API Integration"]
+      title: "AI Business Intelligence",
+      description: "Transform data into actionable insights with AI-powered analytics",
+      icon: Brain,
+      color: "from-purple-500 to-pink-500",
+      link: "https://ziontechgroup.com/ai-business-intelligence",
+      price: "$499/month",
+      features: ["AI-powered dashboards", "Predictive analytics", "Real-time insights"]
     },
     {
-      title: "Cloud Infrastructure Management",
-      description: "Scalable cloud solutions with 99.9% uptime guarantee and 24/7 monitoring",
-      icon: <Cloud className="w-8 h-8" />,
-      color: "from-blue-500 to-cyan-600",
-      price: "$199/month",
-      features: ["Auto-scaling", "Load Balancing", "Backup & Recovery", "Security Monitoring"]
+      title: "Quantum Cybersecurity",
+      description: "Future-proof security with quantum-resistant encryption and AI threat detection",
+      icon: Shield,
+      color: "from-red-500 to-orange-500",
+      link: "https://ziontechgroup.com/quantum-cybersecurity",
+      price: "$799/month",
+      features: ["Quantum-resistant encryption", "AI threat detection", "Zero-trust architecture"]
     },
     {
-      title: "Cybersecurity & Compliance",
-      description: "Enterprise-grade security solutions with SOC 2 compliance and threat detection",
-      icon: <Shield className="w-8 h-8" />,
-      color: "from-green-500 to-emerald-600",
+      title: "AI Customer Experience",
+      description: "Deliver personalized customer experiences at scale with AI",
+      icon: Users,
+      color: "from-green-500 to-teal-500",
+      link: "https://ziontechgroup.com/ai-customer-experience",
       price: "$399/month",
       features: ["Threat Detection", "Compliance Reporting", "Penetration Testing", "Security Training"]
     }

@@ -1,114 +1,148 @@
-import React, { useState, useEffect } from 'react';
-import Head from 'next/head';
-import { motion, AnimatePresence } from 'framer-motion';
-import UltraAdvancedFuturisticBackground2035 from './UltraAdvancedFuturisticBackground2035';
-import UltraAdvancedNavigation2035 from './UltraAdvancedNavigation2035';
-import UltraAdvancedFooter2035 from './UltraAdvancedFooter2035';
+import React, { useState } from 'react';
+import UltraFuturisticNavigation2035 from './UltraFuturisticNavigation2035';
+import UltraFuturisticFooter2035 from './UltraFuturisticFooter2035';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
+import UltraAdvancedFuturisticBackground2035 from './UltraAdvancedFuturisticBackground2035';
 import TopContactBar from './TopContactBar';
+import Head from 'next/head';
 
 interface LayoutProps {
   children: React.ReactNode;
   seo?: {
     title?: string;
     description?: string;
-    keywords?: string[];
-    image?: string;
-    url?: string;
-    type?: 'website' | 'article' | 'product';
-    publishedTime?: string;
-    modifiedTime?: string;
-    author?: string;
-    section?: string;
-    tags?: string[];
-    structuredData?: any;
-    noindex?: boolean;
-    nofollow?: boolean;
+    keywords?: string;
+    canonicalUrl?: string;
+    ogImage?: string;
   };
 }
 
 export default function Layout({ children, seo }: LayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [showEnhancements, setShowEnhancements] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
-  useEffect(() => {
-    // Simulate loading time
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 1000);
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  const defaultSEO = {
-    title: 'Zion Tech Group - Revolutionary AI, Quantum Computing & Space Technology Solutions',
-    description: 'Pioneering the future of technology with revolutionary AI consciousness, quantum computing, and autonomous solutions that transform businesses worldwide.',
-    keywords: ['AI', 'artificial intelligence', 'quantum computing', 'space technology', 'cybersecurity', 'machine learning', 'automation', 'Zion Tech Group'],
-    image: '/images/zion-tech-group-og-image.jpg',
-    url: 'https://ziontechgroup.com',
-    type: 'website' as const,
-    author: 'Zion Tech Group',
-    noindex: false,
-    nofollow: false
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Escape' && sidebarOpen) {
+      setSidebarOpen(false);
+    }
   };
 
-  const finalSEO = { ...defaultSEO, ...seo };
+  const title = seo?.title || 'Zion Tech Group - Revolutionary Technology Solutions';
+  const description = seo?.description || 'Leading provider of innovative AI, quantum computing, and enterprise technology solutions. Transform your business with cutting-edge innovations.';
+  const keywords = seo?.keywords || 'AI, quantum computing, enterprise technology, innovation, Zion Tech Group';
+  const canonicalUrl = seo?.canonicalUrl;
+  const ogImage = seo?.ogImage || 'https://ziontechgroup.com/og-image.jpg';
 
   return (
-    <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
+    <div 
+      className="min-h-screen bg-black text-white relative overflow-x-hidden"
+      onKeyDown={handleKeyDown}
+      role="application"
+      aria-label="Zion Tech Group Application"
+    >
       <Head>
-        <title>{finalSEO.title}</title>
-        <meta name="description" content={finalSEO.description} />
-        <meta name="keywords" content={finalSEO.keywords.join(', ')} />
-        <meta name="author" content={finalSEO.author} />
-        <meta name="robots" content={finalSEO.noindex ? 'noindex' : 'index'} />
-        {finalSEO.nofollow && <meta name="robots" content="nofollow" />}
-        
-        {/* Open Graph Meta Tags */}
-        <meta property="og:title" content={finalSEO.title} />
-        <meta property="og:description" content={finalSEO.description} />
-        <meta property="og:type" content={finalSEO.type} />
-        <meta property="og:url" content={finalSEO.url} />
-        <meta property="og:image" content={finalSEO.image} />
-        <meta property="og:site_name" content="Zion Tech Group" />
-        <meta property="og:locale" content="en_US" />
-        
-        {/* Twitter Card Meta Tags */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@ziontechgroup" />
-        <meta name="twitter:creator" content="@ziontechgroup" />
-        <meta name="twitter:title" content={finalSEO.title} />
-        <meta name="twitter:description" content={finalSEO.description} />
-        <meta name="twitter:image" content={finalSEO.image} />
-        
-        {/* Additional Meta Tags */}
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <meta name="keywords" content={keywords} />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="theme-color" content="#000000" />
-        <meta name="msapplication-TileColor" content="#000000" />
+        <meta charSet="utf-8" />
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="Zion Tech Group" />
+        <meta name="theme-color" content="#06b6d4" />
+        
+        {/* Canonical URL */}
+        {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+        
+        {/* PWA Manifest */}
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="msapplication-TileColor" content="#06b6d4" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="apple-mobile-web-app-title" content="Zion Tech Group" />
         
-        {/* Canonical URL */}
-        <link rel="canonical" href={finalSEO.url} />
-        
-        {/* Favicon and App Icons */}
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        {/* Favicons */}
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         
-        {/* Preconnect to external domains for performance */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://www.google-analytics.com" />
+        {/* Open Graph Meta Tags */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:url" content={canonicalUrl || "https://ziontechgroup.com"} />
+        <meta property="og:site_name" content="Zion Tech Group" />
+        <meta property="og:locale" content="en_US" />
+        
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={ogImage} />
+        <meta name="twitter:site" content="@ziontechgroup" />
+        
+        {/* Additional SEO Meta Tags */}
+        <meta name="application-name" content="Zion Tech Group" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="format-detection" content="telephone=no" />
+        
+        {/* Preload Critical Resources */}
+        <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="preload" href="/_next/static/css/app.css" as="style" />
+        
+        {/* DNS Prefetch */}
+        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
+        
+        {/* Security Headers */}
+        <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
+        <meta httpEquiv="X-Frame-Options" content="DENY" />
+        <meta httpEquiv="X-XSS-Protection" content="1; mode=block" />
+        <meta httpEquiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+        
+        {/* Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Zion Tech Group",
+              "url": "https://ziontechgroup.com",
+              "logo": "https://ziontechgroup.com/logo.png",
+              "description": description,
+              "foundingDate": "2024",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "364 E Main St STE 1008",
+                "addressLocality": "Middletown",
+                "addressRegion": "DE",
+                "postalCode": "19709",
+                "addressCountry": "US"
+              },
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+1-302-464-0950",
+                "contactType": "customer service",
+                "email": "kleber@ziontechgroup.com"
+              }
+            })
+          }}
+        />
       </Head>
 
+export default function Layout({ children, seo }: LayoutProps) {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [showEnhancements, setShowEnhancements] = useState(false);
+
+  return (
+    <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
       {/* Futuristic Background */}
       <UltraAdvancedFuturisticBackground2035 />
       
+=======
       {/* Skip to content link for accessibility */}
       <a 
         href="#main" 
@@ -116,6 +150,9 @@ export default function Layout({ children, seo }: LayoutProps) {
       >
         Skip to main content
       </a>
+
+      {/* Enhanced Futuristic Background */}
+      <UltraFuturisticBackground2038 intensity="medium" theme="quantum-neon" />
 
       {/* Loading State */}
       <AnimatePresence>
@@ -189,12 +226,14 @@ export default function Layout({ children, seo }: LayoutProps) {
           viewBox="0 0 24 24"
           aria-hidden="true"
         >
-          {children}
-        </UltraAdvancedFuturisticBackground>
-      </main>
-      
-      {/* Footer */}
-      <FuturisticFooter />
+          <path 
+            strokeLinecap="round" 
+            strokeLinejoin="round" 
+            strokeWidth={2} 
+            d="M5 10l7-7m0 0l7 7m-7-7v18" 
+          />
+        </svg>
+      </motion.button>
     </div>
   );
-};
+}

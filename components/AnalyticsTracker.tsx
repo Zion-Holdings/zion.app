@@ -1,99 +1,55 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useCallback } from 'react';
 
-// Performance entry types
+// Browser API types are declared globally in PerformanceOptimizer.tsx
+
+const AnalyticsTracker: React.FC = () => {
+  const router = useRouter();
+
+// Performance entry types for Core Web Vitals
 interface PerformanceEventTiming extends PerformanceEntry {
   processingStart: number;
   processingEnd: number;
-  target?: any;
+  target?: any | null;
 }
 
-interface LayoutShift extends PerformanceEntry {
-  value: number;
-  sources?: LayoutShiftSource[];
-}
-
-interface LayoutShiftSource {
-  node?: any;
-  currentRect?: any;
-  previousRect?: any;
-}
-
-interface AnalyticsTrackerProps {
-  trackingId?: string;
-  enableTracking?: boolean;
-}
-
-const AnalyticsTracker: React.FC<AnalyticsTrackerProps> = ({ 
-  trackingId = 'G-XXXXXXXXXX', 
-  enableTracking = true 
+const AnalyticsTracker: React.FC<AnalyticsTrackerProps> = ({
+  pageTitle,
+  pagePath,
+  customEvents = []
 }) => {
-  const router = useRouter();
-  const trackingId = Math.random().toString(36).substr(2, 9);
-  const enableTracking = true;
-
-  // Track metrics
-  const trackMetric = useCallback((name: string, value: number) => {
-    if (typeof window !== 'undefined' && window.gtag) {
-      window.gtag('event', 'custom_metric', {
-        metric_name: name,
-        metric_value: value,
-        page_location: window.location.href
-      });
-    }
-  }, []);
-
-  // Track viewport
-  const trackViewport = useCallback(() => {
-    trackMetric('ViewportWidth', window.innerWidth);
-    trackMetric('ViewportHeight', window.innerHeight);
-  }, [trackMetric]);
-
-  // Track interaction
-  const trackInteraction = useCallback((event: Event) => {
-    const target = event.target as HTMLElement;
-    trackMetric('UserInteraction', 1);
-  }, [trackMetric]);
-
   // Track page view
-  const trackPageView = useCallback(() => {
-    if (typeof window !== 'undefined' && enableTracking) {
+  const trackPageView = useCallback((title: string, path: string) => {
+    if (typeof window !== 'undefined') {
       // Google Analytics 4
-      if ((window as any).gtag) {
-        (window as any).gtag('config', trackingId, {
-          page_title: document.title,
+      if (window.gtag) {
+        window.gtag('config', 'G-XXXXXXXXXX', {
+          page_title: title,
           page_location: window.location.href,
-          page_path: window.location.pathname
+          page_path: path
         });
       }
 
       // Google Tag Manager
-      if ((window as any).dataLayer) {
-        (window as any).dataLayer.push({
+      if (window.dataLayer) {
+        window.dataLayer.push({
           event: 'page_view',
-          page_title: document.title,
+          page_title: title,
           page_location: window.location.href,
-          page_path: window.location.pathname,
+          page_path: path,
           timestamp: Date.now()
         });
       }
 
       // Custom analytics
       if (process.env.NODE_ENV === 'development') {
-        console.log('Page View:', { 
-          title: document.title, 
-          path: window.location.pathname, 
-          url: window.location.href 
-        });
+        console.log('Page View:', { title, path, url: window.location.href });
       }
-    }
-  }, [trackingId, enableTracking]);
+    };
 
-  // Track custom events
-  const trackCustomEvent = useCallback((eventName: string, parameters: Record<string, unknown>) => {
-    if (typeof window !== 'undefined' && enableTracking) {
-      // Google Analytics 4
-      if ((window as any).gtag) {
-        (window as any).gtag('event', eventName, {
+    // Helper function to track events
+    const trackEvent = (action: string, parameters: Record<string, unknown>) => {
+      if (typeof window !== 'undefined' && window.gtag) {
+        window.gtag('event', action, {
           ...parameters,
           timestamp: Date.now(),
           page_url: window.location.href
@@ -118,11 +74,6 @@ const AnalyticsTracker: React.FC<AnalyticsTrackerProps> = ({
           // Silently handle fetch errors
         });
       }
-    };
-
-    // Helper function to track metrics
-    const trackMetric = (name: string, value: number) => {
-      trackEvent('Metric', { metric_name: name, metric_value: value });
     };
 
     // Initialize analytics and performance monitoring
@@ -285,26 +236,6 @@ const AnalyticsTracker: React.FC<AnalyticsTrackerProps> = ({
     };
   }, []);
 
-  // Main useEffect for initialization
-  useEffect(() => {
-    if (!enableTracking) return;
-
-    // Initialize analytics
-    trackPageView(pageTitle || document.title, pagePath || window.location.pathname);
-
-    // Track route changes
-    const handleRouteChange = () => {
-      trackPageView(pageTitle || document.title, pagePath || window.location.pathname);
-    };
-
-    router.events.on('routeChangeComplete', handleRouteChange);
-
-    // Cleanup
-    return () => {
-      router.events.off('routeChangeComplete', handleRouteChange);
-    };
-  }, [trackPageView, pageTitle, pagePath, router.events, enableTracking]);
-
   // Track custom events
   const trackCustomEvent = useCallback((eventName: string, parameters?: Record<string, unknown>) => {
     if (typeof window !== 'undefined') {
@@ -318,43 +249,65 @@ const AnalyticsTracker: React.FC<AnalyticsTrackerProps> = ({
       }
 
       // Google Tag Manager
-      if ((window as any).dataLayer) {
-        (window as any).dataLayer.push({
+      if (window.dataLayer) {
+        window.dataLayer.push({
           event: eventName,
           ...parameters,
           timestamp: Date.now(),
-          page_url: window.location.href
+          page_location: window.location.href
         });
       }
 
       // Custom analytics
       if (process.env.NODE_ENV === 'development') {
-        console.log('Custom Event:', eventName, parameters);
+        console.log('Custom Event:', { eventName, parameters });
       }
     }
-  }, [enableTracking]);
+  }, []);
 
-  // Track user interactions
-  const trackUserInteraction = useCallback((event: string, data?: any) => {
-    if (typeof window !== 'undefined' && enableTracking) {
+  // Track user engagement
+  const trackUserEngagement = useCallback(() => {
+    let startTime = Date.now();
+    let isEngaged = false;
+
+    const trackEngagement = () => {
+      const currentTime = Date.now();
+      const timeOnPage = currentTime - startTime;
+
+      // Track engagement after 10 seconds
+      if (timeOnPage > 10000 && !isEngaged) {
+        isEngaged = true;
+        trackCustomEvent('user_engagement', {
+          engagement_time_msec: timeOnPage,
+          engagement_type: 'time_on_page'
+        });
+      }
+
+      // Track scroll depth
+      const scrollDepth = Math.round((window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100);
+      if (scrollDepth > 0 && scrollDepth % 25 === 0) {
+        trackCustomEvent('scroll_depth', {
+          scroll_percentage: scrollDepth,
+          page_location: window.location.href
+        });
+      }
+    };
+
+    // Track user interactions
+    const trackUserInteraction = (event: string, data?: any) => {
       console.log(`[Analytics] User interaction: ${event}`, data);
       
-      if ((window as any).gtag) {
+      if (typeof window !== 'undefined' && (window as any).gtag) {
         (window as any).gtag('event', event, data);
       }
-    }
-  }, [enableTracking]);
-
-  // Initialize tracking
-  useEffect(() => {
-    if (!enableTracking) return;
+    };
 
     // Initialize tracking
-    trackPageView(pageTitle || document.title, pagePath || window.location.pathname);
+    trackPageView();
 
     // Track route changes
     const handleRouteChange = () => {
-      trackPageView(pageTitle || document.title, pagePath || window.location.pathname);
+      trackPageView();
     };
 
     // Add event listeners for user interactions
@@ -390,14 +343,35 @@ const AnalyticsTracker: React.FC<AnalyticsTrackerProps> = ({
       });
     };
 
-    router.events.on('routeChangeComplete', handleRouteChange);
-    return () => {
-      router.events.off('routeChangeComplete', handleRouteChange);
-    };
-  }, [trackingId, enableTracking, trackPageView, trackUserInteraction]);
+    // Add tracking listeners after a short delay to ensure DOM is ready
+    setTimeout(addTrackingListeners, 1000);
 
-  // This component doesn't render anything
+    // Cleanup
+    return () => {
+      // Remove event listeners if needed
+    };
+  }, [trackingId, enableTracking]);
+
+  // This component doesn't render anything visible
   return null;
+};
+
+// Performance entry types
+interface PerformanceEventTiming extends PerformanceEntry {
+  processingStart: number;
+  processingEnd: number;
+  target?: any;
+}
+
+interface LayoutShift extends PerformanceEntry {
+  value: number;
+  sources?: LayoutShiftSource[];
+}
+
+interface LayoutShiftSource {
+  node?: any;
+  currentRect?: any;
+  previousRect?: any;
 }
 
 // gtag is declared globally in PerformanceOptimizer.tsx

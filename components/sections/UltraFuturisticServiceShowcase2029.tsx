@@ -66,7 +66,7 @@ export default function UltraFuturisticServiceShowcase2029({ services }: UltraFu
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Experience the future of technology with our cutting-edge 2029 services. 
-            From AI consciousness to quantum space mining, we&apos;re building tomorrow&apos;s solutions today.
+            From AI consciousness to quantum space mining, we're building tomorrow's solutions today.
           </p>
         </motion.div>
 

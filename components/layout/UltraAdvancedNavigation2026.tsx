@@ -365,7 +365,25 @@ const UltraAdvancedNavigation2026: React.FC<UltraAdvancedNavigation2026Props> = 
                 </div>
               ))}
 
+              {/* Mobile Contact Info */}
+              <div className="pt-4 border-t border-white/10">
+                <div className="space-y-3">
+                  <div className="flex items-center space-x-2 text-gray-400">
+                    <Phone className="w-4 h-4" />
+                    <span>{contactInfo.mobile}</span>
+                  </div>
+                  <div className="flex items-center space-x-2 text-gray-400">
+                    <Mail className="w-4 h-4" />
+                    <span>{contactInfo.email}</span>
+                  </div>
+                  <div className="flex items-center space-x-2 text-gray-400">
+                    <MapPin className="w-4 h-4" />
+                    <span className="text-sm">{contactInfo.address}</span>
+                  </div>
+                </div>
+              ))}
 
+              {/* Mobile Contact Info */}
               <div className="pt-6 border-t border-gray-700/50 space-y-3">
                 <div className="flex items-center space-x-3 text-gray-300">
                   <Phone className="w-5 h-5 text-cyan-400" />

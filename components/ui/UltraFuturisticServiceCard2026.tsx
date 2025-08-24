@@ -269,7 +269,7 @@ const UltraFuturisticServiceCard2026: React.FC<ServiceCardProps> = ({ service, v
       </div>
     </motion.div>
   );
-};
+});
 
 UltraFuturisticServiceCard2026.displayName = 'UltraFuturisticServiceCard2026';
 

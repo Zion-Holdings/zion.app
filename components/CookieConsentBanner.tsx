@@ -42,15 +42,14 @@ const CookieConsentBanner: React.FC<CookieConsentBannerProps> = ({
       try {
         const savedPreferences = JSON.parse(consent);
         setPreferences(savedPreferences);
-        // No cleanup needed for this path
-        return undefined;
       } catch (error) {
         console.warn('Failed to load cookie preferences:', error);
-        // Show banner if preferences are corrupted
-        const timer = setTimeout(() => setIsVisible(true), 2000);
-        return () => clearTimeout(timer);
       }
     }
+
+    timeoutRef.current = setTimeout(() => {
+      setIsVisible(true);
+    }, 2000); // Show after 2 seconds
   }, []);
 
   const handleAcceptAll = () => {
@@ -110,7 +109,7 @@ const CookieConsentBanner: React.FC<CookieConsentBannerProps> = ({
       disableMarketing();
     }
     
-    if (prefs.preferences) {
+    if (prefs.functional) {
       enableFunctional();
     } else {
       disableFunctional();

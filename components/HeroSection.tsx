@@ -53,9 +53,9 @@ const HeroSection: React.FC = () => {
 
         {/* Description */}
         <p className="text-lg md:text-xl lg:text-2xl text-white/80 max-w-4xl mx-auto mb-12 leading-relaxed">
-          AI-powered cloud automation and autonomous deployment solutions that 
-          <span className="text-cyan-400 font-semibold"> continuously optimize</span> your 
-          <span className="text-purple-400 font-semibold"> infrastructure</span> and applications.
+          Leading-edge technology solutions and intelligent automation systems that drive 
+          <span className="text-cyan-400 font-semibold"> digital transformation</span> and 
+          <span className="text-purple-400 font-semibold"> innovation</span> across industries.
         </p>
 
         {/* CTA Buttons */}

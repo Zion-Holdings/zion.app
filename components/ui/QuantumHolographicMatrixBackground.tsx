@@ -8,8 +8,6 @@ interface QuantumHolographicMatrixBackgroundProps {
 }
 
 const QuantumHolographicMatrixBackground: React.FC<QuantumHolographicMatrixBackgroundProps> = ({
-  variant = 'quantum',
-  intensity = 1.0,
   children,
   className = '',
   intensity = 'medium'
@@ -215,7 +213,7 @@ const QuantumHolographicMatrixBackground: React.FC<QuantumHolographicMatrixBackg
   }, [intensity]);
 
   return (
-    <motion.div className={`relative min-h-screen overflow-hidden ${className}`}>
+    <div className={`relative min-h-screen overflow-hidden ${className}`}>
       {/* Quantum Holographic Matrix Canvas Background */}
       <canvas
         ref={canvasRef}
@@ -291,7 +289,7 @@ const QuantumHolographicMatrixBackground: React.FC<QuantumHolographicMatrixBackg
       <div className="relative z-20">
         {children}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

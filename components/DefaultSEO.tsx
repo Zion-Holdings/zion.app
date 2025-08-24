@@ -1,14 +1,68 @@
 import React from 'react';
 import Head from 'next/head';
-import { useRouter } from 'next/router';
 
-interface DefaultSEOProps {
-  title?: string;
-  description?: string;
-  keywords?: string;
-  image?: string;
-  url?: string;
-  type?: string;
+const SITE_NAME = 'Zion Tech Group';
+const SITE_URL = 'https://ziontechgroup.com';
+const DEFAULT_TITLE = 'Zion Tech Group — Autonomous Cloud Automation';
+const DEFAULT_DESC = 'AI-driven, self-improving web platform with autonomous growth, marketing, and optimization.';
+
+export default function DefaultSEO() {
+  const { asPath } = useRouter();
+  const url = `${SITE_URL}${asPath === '/' ? '' : asPath}`;
+  return (
+    <Head>
+      <title>{DEFAULT_TITLE}</title>
+      <meta name="description" content={DEFAULT_DESC} />
+      <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+      <link rel="canonical" href={url} />
+      <meta property="og:type" content="website" />
+      <meta property="og:site_name" content={SITE_NAME} />
+      <meta property="og:title" content={DEFAULT_TITLE} />
+      <meta property="og:description" content={DEFAULT_DESC} />
+      <meta property="og:url" content={url} />
+      <meta property="og:image" content={`${SITE_URL}/og/zion-tech-group.svg`} />
+      <meta property="og:image:alt" content={DEFAULT_TITLE} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={DEFAULT_TITLE} />
+      <meta name="twitter:description" content={DEFAULT_DESC} />
+      <meta name="twitter:image" content={`${SITE_URL}/og/zion-tech-group.svg`} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Organization',
+            name: SITE_NAME,
+            url: SITE_URL,
+            logo: `${SITE_URL}/og/zion-tech-group.svg`,
+            sameAs: [
+              'https://www.linkedin.com/company/zion-holdings/',
+              'https://www.instagram.com/ziontechgroup/'
+            ],
+            description: DEFAULT_DESC
+          })
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'WebSite',
+            url: SITE_URL,
+            name: DEFAULT_TITLE,
+            potentialAction: {
+              '@type': 'SearchAction',
+              target: `${SITE_URL}/search?q={search_term_string}`,
+              'query-input': 'required name=search_term_string'
+            }
+          })
+        }}
+      />
+    </Head>
+  );
 }
 
 const DefaultSEO: React.FC<DefaultSEOProps> = ({

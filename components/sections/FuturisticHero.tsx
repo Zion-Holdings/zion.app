@@ -75,7 +75,7 @@ const FuturisticHero: React.FC = () => {
             The future of <span className="neon-text-cyan">micro SaaS</span> is here. 
             Discover <span className="neon-text-green">35+ real services</span> that solve 
             actual business problems with <span className="neon-text-pink">AI-powered intelligence</span>.
-            From content creation to cybersecurity, we&apos;ve got you covered.
+            From content creation to cybersecurity, we've got you covered.
           </p>
         </motion.div>
 
@@ -234,10 +234,10 @@ const FuturisticHero: React.FC = () => {
       </div>
 
       {/* Floating Elements */}
-      <div className="absolute top-20 left-10 w-4 h-4 bg-neon-blue rounded-full opacity-60 animate-pulse"></div>
-      <div className="absolute top-40 right-20 w-3 h-3 bg-neon-purple rounded-full opacity-60 animate-pulse delay-1000"></div>
-      <div className="absolute bottom-40 left-20 w-2 h-2 bg-neon-green rounded-full opacity-60 animate-pulse delay-2000"></div>
-      <div className="absolute bottom-20 right-10 w-3 h-3 bg-neon-pink rounded-full opacity-60 animate-pulse delay-3000"></div>
+      <div className="absolute top-20 left-10 w-4 h-4 bg-neon-blue rounded-full opacity-60 animate-pulse" />
+      <div className="absolute top-40 right-20 w-3 h-3 bg-neon-purple rounded-full opacity-60 animate-pulse delay-1000" />
+      <div className="absolute bottom-40 left-20 w-2 h-2 bg-neon-green rounded-full opacity-60 animate-pulse delay-2000" />
+      <div className="absolute bottom-20 right-10 w-3 h-3 bg-neon-pink rounded-full opacity-60 animate-pulse delay-3000" />
 
       {/* Scroll Indicator */}
       <motion.div
@@ -261,8 +261,9 @@ const FuturisticHero: React.FC = () => {
           </motion.div>
         </div>
       </motion.div>
-    </section>
-  );
-};
+        </section>
+      </AnimatedBackground>
+    );
+  };
 
 export default FuturisticHero;
