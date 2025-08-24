@@ -1,0 +1,1 @@
+import{j as e}from"./index-B5ykb-0P.js";function r(){return e.jsx("div",{className:"min-h-screen bg-zion-blue-dark py-8 text-white",children:e.jsxs("div",{className:"container mx-auto px-4",children:[e.jsx("h1",{className:"text-3xl font-bold mb-6",children:"Talent Directory"}),e.jsx("p",{children:"Talent Directory page content will go here."})]})})}export{r as default};
