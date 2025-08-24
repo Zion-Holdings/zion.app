@@ -227,6 +227,240 @@ export function Home() {
           </div>
         </section>
 
+        {/* Feature Highlights Section */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Why Choose Zion Tech Group?
+              </h2>
+              <p className="text-xl text-zion-slate-light max-w-3xl mx-auto">
+                We combine cutting-edge technology with proven expertise to deliver solutions that drive real business value.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[
+                {
+                  icon: Brain,
+                  title: 'AI-Powered Solutions',
+                  description: 'Cutting-edge artificial intelligence and machine learning solutions that transform business operations.',
+                  color: 'from-zion-cyan to-blue-500',
+                  benefits: ['Automated workflows', 'Predictive analytics', 'Natural language processing'],
+                  price: 'Starting at $2,500/month'
+                },
+                {
+                  icon: Shield,
+                  title: 'Enterprise Security',
+                  description: 'Military-grade cybersecurity solutions protecting your digital assets and ensuring compliance.',
+                  color: 'from-green-500 to-emerald-500',
+                  benefits: ['24/7 monitoring', 'Threat detection', 'Compliance management'],
+                  price: 'Starting at $1,800/month'
+                },
+                {
+                  icon: Cloud,
+                  title: 'Cloud Excellence',
+                  description: 'Scalable cloud architecture and migration services for modern business needs.',
+                  color: 'from-purple-500 to-pink-500',
+                  benefits: ['Scalable infrastructure', 'Cost optimization', 'Performance tuning'],
+                  price: 'Starting at $1,200/month'
+                },
+                {
+                  icon: Code,
+                  title: 'Custom Development',
+                  description: 'Tailored web, mobile, and software solutions built with the latest technologies.',
+                  color: 'from-orange-500 to-red-500',
+                  benefits: ['Custom applications', 'API development', 'Mobile apps'],
+                  price: 'Starting at $150/hour'
+                },
+                {
+                  icon: Zap,
+                  title: 'Performance Optimization',
+                  description: 'Lightning-fast applications and systems optimized for maximum efficiency.',
+                  color: 'from-yellow-500 to-orange-500',
+                  benefits: ['Speed optimization', 'Resource management', 'Scalability'],
+                  price: 'Starting at $800/month'
+                },
+                {
+                  icon: Globe,
+                  title: 'Global Reach',
+                  description: 'Worldwide deployment and support ensuring your services reach every corner of the globe.',
+                  color: 'from-blue-500 to-cyan-500',
+                  benefits: ['Multi-region deployment', 'Local compliance', '24/7 support'],
+                  price: 'Starting at $2,000/month'
+                }
+              ].map((feature, index) => (
+                <motion.div
+                  key={feature.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  whileHover={{ y: -5 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="h-full bg-zion-blue-light/10 backdrop-blur-sm border border-zion-cyan/30 rounded-2xl p-6 hover:border-zion-cyan/50 transition-all duration-300 hover:shadow-2xl hover:shadow-zion-cyan/20">
+                    <div className="text-center mb-4">
+                      <div className={`mx-auto w-16 h-16 rounded-full bg-gradient-to-r ${feature.color} flex items-center justify-center mb-4`}>
+                        <feature.icon className="w-8 h-8 text-white" />
+                      </div>
+                      <h3 className="text-xl font-bold text-white mb-1">
+                        {feature.title}
+                      </h3>
+                    </div>
+                    
+                    <div className="space-y-4">
+                      <p className="text-zion-slate-light text-center">
+                        {feature.description}
+                      </p>
+                      
+                      <div className="space-y-2">
+                        <h4 className="font-semibold text-zion-cyan text-sm">Key Benefits:</h4>
+                        <div className="flex flex-wrap gap-2 justify-center">
+                          {feature.benefits.map((benefit) => (
+                            <span key={benefit} className="px-2 py-1 bg-zion-cyan/20 text-zion-cyan rounded text-xs border border-zion-cyan/30">
+                              {benefit}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+
+                      <div className="pt-4 border-t border-zion-cyan/20">
+                        <div className="text-center">
+                          <p className="text-zion-purple font-semibold text-sm">
+                            {feature.price}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Trusted By Section */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-zion-blue-light/5 to-zion-purple/5">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Trusted by Industry Leaders
+              </h2>
+              <p className="text-xl text-zion-slate-light max-w-3xl mx-auto">
+                Join hundreds of companies worldwide who trust Zion Tech Group to deliver innovative solutions that drive growth and success.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[
+                {
+                  name: 'TechCorp',
+                  logo: '🚀',
+                  industry: 'Technology',
+                  testimonial: 'Zion Tech Group transformed our AI infrastructure completely.'
+                },
+                {
+                  name: 'SecureBank',
+                  logo: '🏦',
+                  industry: 'Finance',
+                  testimonial: 'Their cybersecurity solutions are unmatched in the industry.'
+                },
+                {
+                  name: 'CloudFlow',
+                  logo: '☁️',
+                  industry: 'Cloud Services',
+                  testimonial: 'Seamless cloud migration with zero downtime.'
+                },
+                {
+                  name: 'DataVault',
+                  logo: '💾',
+                  industry: 'Data Analytics',
+                  testimonial: 'Revolutionary insights through their AI-powered analytics.'
+                },
+                {
+                  name: 'InnovateLab',
+                  logo: '🔬',
+                  industry: 'Research',
+                  testimonial: 'Cutting-edge solutions that push the boundaries of possibility.'
+                },
+                {
+                  name: 'GlobalTech',
+                  logo: '🌍',
+                  industry: 'International',
+                  testimonial: 'World-class service with local expertise worldwide.'
+                }
+              ].map((company, index) => (
+                <motion.div
+                  key={company.name}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  whileHover={{ y: -5 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="h-full bg-zion-blue-light/10 backdrop-blur-sm border border-zion-cyan/30 rounded-2xl p-6 hover:border-zion-cyan/50 transition-all duration-300 hover:shadow-2xl hover:shadow-zion-cyan/20">
+                    <div className="text-center mb-4">
+                      <div className="text-4xl mb-2">{company.logo}</div>
+                      <h3 className="text-xl font-bold text-white mb-1">
+                        {company.name}
+                      </h3>
+                      <p className="text-zion-cyan text-sm font-medium">
+                        {company.industry}
+                      </p>
+                    </div>
+                    
+                    <div className="text-center">
+                      <p className="text-zion-slate-light italic">
+                        "{company.testimonial}"
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Trust Indicators */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              viewport={{ once: true }}
+              className="mt-20 text-center"
+            >
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div>
+                  <div className="text-3xl font-bold text-zion-cyan mb-2">99.9%</div>
+                  <div className="text-zion-slate-light">Uptime Guarantee</div>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-zion-purple mb-2">24/7</div>
+                  <div className="text-zion-slate-light">Expert Support</div>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-zion-cyan mb-2">ISO 27001</div>
+                  <div className="text-zion-slate-light">Security Certified</div>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-zion-purple mb-2">100%</div>
+                  <div className="text-zion-slate-light">Satisfaction Rate</div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
         {/* CTA Section */}
         <section className="py-24 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
