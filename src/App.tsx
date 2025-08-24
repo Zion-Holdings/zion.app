@@ -39,16 +39,7 @@ const Navigation = () => {
             >
               Services
             </Link>
-            <Link
-              to="/about"
-              className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
-                isActive('/about') 
-                  ? 'text-blue-400 bg-white/20' 
-                  : 'text-blue-100 hover:text-white hover:bg-white/10'
-              }`}
-            >
-              About
-            </Link>
+
             <Link
               to="/contact"
               className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
@@ -87,7 +78,6 @@ const Navigation = () => {
 // Only import components that exist
 const Home = React.lazy(() => import('./pages/Home'));
 const ContactPage = React.lazy(() => import('./pages/Contact'));
-const AboutPage = React.lazy(() => import('./pages/About'));
 const FAQPage = React.lazy(() => import('./pages/FAQ'));
 const HelpCenterPage = React.lazy(() => import('./pages/HelpCenter'));
 const PartnersPage = React.lazy(() => import('./pages/Partners'));
@@ -112,7 +102,6 @@ const NotFoundPage = React.lazy(() => import('./pages/NotFound'));
 const baseRoutes = [
   { path: '/', element: <Home /> },
   { path: '/contact', element: <ContactPage /> },
-  { path: '/about', element: <AboutPage /> },
   { path: '/faq', element: <FAQPage /> },
   { path: '/help-center', element: <HelpCenterPage /> },
   { path: '/partners', element: <PartnersPage /> },
