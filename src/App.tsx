@@ -7,9 +7,9 @@ import { useScrollToTop } from "./hooks";
 import { WhitelabelProvider } from "./context/WhitelabelContext";
 import { Toaster } from "./components/ui/toaster";
 import { Toaster as SonnerToaster } from "./components/ui/sonner";
-import { ErrorBoundary } from "./components/ErrorBoundary";
-import { ScrollToTop } from "./components/ScrollToTop";
-import { HomePageSkeleton } from "./components/home/HomePageSkeleton";
+import { ScrollToTop } from "./components/ui/scroll-to-top";
+import { ErrorBoundary } from "./components/ui/error-boundary";
+import { FullScreenLoading } from "./components/ui/loading-fallback";
 import {
   AuthRoutes,
   DashboardRoutes,
@@ -73,12 +73,11 @@ const baseRoutes = [
 const App = () => {
   // Ensure each navigation starts at the top of the page
   useScrollToTop();
-  
   return (
     <ErrorBoundary>
       <WhitelabelProvider>
         <ThemeProvider defaultTheme="dark">
-          <Suspense fallback={<HomePageSkeleton />}>
+          <Suspense fallback={<FullScreenLoading />}>
             <Routes>
               {baseRoutes.map(({ path, element }) => (
                 <Route key={path} path={path} element={element} />

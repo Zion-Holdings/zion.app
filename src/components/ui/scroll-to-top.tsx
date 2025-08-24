@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronUp } from 'lucide-react';
+import { Button } from './button';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false);
@@ -21,40 +22,29 @@ export function ScrollToTop() {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth'
+      behavior: 'smooth',
     });
   };
 
   return (
     <AnimatePresence>
       {isVisible && (
-        <motion.button
-          onClick={scrollToTop}
-          className="fixed bottom-8 right-8 z-50 bg-gradient-to-r from-zion-purple to-zion-cyan text-white p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 group"
-          initial={{ opacity: 0, scale: 0, y: 20 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0, y: 20 }}
-          whileHover={{ 
-            scale: 1.1,
-            y: -2,
-            transition: { duration: 0.2 }
-          }}
-          whileTap={{ scale: 0.95 }}
-          aria-label="Scroll to top"
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.8 }}
+          transition={{ duration: 0.2 }}
+          className="fixed bottom-6 right-6 z-50"
         >
-          <motion.div
-            animate={{ y: [0, -2, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
+          <Button
+            onClick={scrollToTop}
+            size="icon"
+            className="h-12 w-12 rounded-full bg-zion-purple hover:bg-zion-purple-dark shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-200"
+            aria-label="Scroll to top"
           >
-            <ChevronUp className="h-5 w-5" />
-          </motion.div>
-          
-          {/* Tooltip */}
-          <div className="absolute right-full mr-3 top-1/2 transform -translate-y-1/2 bg-zion-blue-dark text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
-            Back to top
-            <div className="absolute left-full top-1/2 transform -translate-y-1/2 w-0 h-0 border-l-4 border-l-zion-blue-dark border-t-2 border-t-transparent border-b-2 border-b-transparent"></div>
-          </div>
-        </motion.button>
+            <ChevronUp className="h-6 w-6" />
+          </Button>
+        </motion.div>
       )}
     </AnimatePresence>
   );
