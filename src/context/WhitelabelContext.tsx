@@ -8,6 +8,11 @@ interface WhitelabelContextType {
   setBrandName: (name: string) => void;
   logo: string;
   setLogo: (logo: string) => void;
+  tenant?: {
+    id: string;
+    name: string;
+    domain: string;
+  };
 }
 
 const WhitelabelContext = createContext<WhitelabelContextType | undefined>(undefined);
@@ -21,6 +26,11 @@ export function WhitelabelProvider({ children }: WhitelabelProviderProps) {
   const [primaryColor, setPrimaryColor] = useState('#8B5CF6'); // Default Zion purple
   const [brandName, setBrandName] = useState('Zion Tech Group');
   const [logo, setLogo] = useState('');
+  const [tenant] = useState({
+    id: 'zion-tech-group',
+    name: 'Zion Tech Group',
+    domain: 'ziontechgroup.com'
+  });
 
   const value: WhitelabelContextType = {
     isWhitelabel,
@@ -30,6 +40,7 @@ export function WhitelabelProvider({ children }: WhitelabelProviderProps) {
     setBrandName,
     logo,
     setLogo,
+    tenant,
   };
 
   return (

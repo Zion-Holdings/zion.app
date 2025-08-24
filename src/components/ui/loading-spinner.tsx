@@ -147,6 +147,11 @@ export function LoadingSkeleton({
   );
 }
 
+interface LoadingOverlayProps {
+  text?: string;
+  showSpinner?: boolean;
+}
+
 // Page loading overlay
 export const LoadingOverlay: React.FC<LoadingOverlayProps> = ({ 
   text = "Loading...", 

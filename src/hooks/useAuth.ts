@@ -5,6 +5,8 @@ interface User {
   name?: string;
   email: string;
   avatar?: string;
+  userType?: 'creator' | 'jobSeeker' | 'employer' | 'buyer' | 'admin';
+  role?: 'user' | 'admin' | 'moderator';
 }
 
 interface AuthContextType {
@@ -13,6 +15,7 @@ interface AuthContextType {
   logout: () => Promise<void>;
   signup: (email: string, password: string, name: string) => Promise<void>;
   isLoading: boolean;
+  isAuthenticated: boolean;
 }
 
 export function useAuth(): AuthContextType {
@@ -100,6 +103,7 @@ export function useAuth(): AuthContextType {
     login,
     logout,
     signup,
-    isLoading
+    isLoading,
+    isAuthenticated: !!user
   };
 }
