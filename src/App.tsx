@@ -28,6 +28,7 @@ const AIServicesPage = React.lazy(() => import('./pages/AIServicesPage'));
 const CybersecurityServicesPage = React.lazy(() => import('./pages/CybersecurityServicesPage'));
 const ServicesPricingPage = React.lazy(() => import('./pages/ServicesPricingPage'));
 const InnovativeServicesShowcase = React.lazy(() => import('./pages/InnovativeServicesShowcase'));
+const AdvancedTechServices = React.lazy(() => import('./pages/AdvancedTechServices'));
 
 const baseRoutes = [
   { path: '/', element: <Home /> },
@@ -48,6 +49,7 @@ const baseRoutes = [
   { path: '/cybersecurity-services', element: <CybersecurityServicesPage /> },
   { path: '/services-pricing', element: <ServicesPricingPage /> },
   { path: '/innovative-services', element: <InnovativeServicesShowcase /> },
+  { path: '/advanced-tech-services', element: <AdvancedTechServices /> },
 ];
 
 // Enhanced loading component with better UX

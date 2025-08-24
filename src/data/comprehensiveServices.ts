@@ -140,6 +140,22 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
     icon: '🌱',
     color: 'from-green-400 to-emerald-500',
     count: 0
+  },
+  {
+    id: 'blockchain-services',
+    name: 'Blockchain & Web3',
+    description: 'Blockchain, smart contracts, DeFi, and Web3 solutions',
+    icon: '⛓️',
+    color: 'from-indigo-500 to-purple-600',
+    count: 0
+  },
+  {
+    id: 'data-services',
+    name: 'Data & Analytics',
+    description: 'Advanced data analytics, BI, and insights platforms',
+    icon: '📊',
+    color: 'from-blue-500 to-cyan-600',
+    count: 0
   }
 ];
 
@@ -2407,6 +2423,236 @@ export const MICRO_SERVICES: MicroService[] = [
     reviewCount: 67,
     aiScore: 89,
     featured: false,
+    popular: false,
+    contactInfo: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      website: 'https://ziontechgroup.com'
+    }
+  },
+
+  // Advanced Blockchain & Web3 Services
+  {
+    id: 'blockchain-smart-contracts',
+    title: 'Blockchain Smart Contract Development',
+    description: 'Custom smart contracts for DeFi, NFTs, DAOs, and enterprise blockchain solutions with security auditing.',
+    category: 'blockchain-services',
+    subcategory: 'Smart Contracts',
+    price: 8000,
+    currency: 'USD',
+    pricingModel: 'project-based',
+    features: [
+      'Custom smart contract development',
+      'Security auditing and testing',
+      'Gas optimization',
+      'Multi-chain deployment',
+      'Integration with existing systems',
+      'Ongoing maintenance and updates'
+    ],
+    benefits: [
+      'Automate complex business processes',
+      'Reduce intermediary costs',
+      'Enhance transparency and trust',
+      'Enable new business models',
+      'Cross-border transaction capabilities'
+    ],
+    marketPrice: '$5,000 - $25,000',
+    deliveryTime: '6-10 weeks',
+    tags: ['Blockchain', 'Smart Contracts', 'DeFi', 'NFTs', 'Web3', 'Security'],
+    author: {
+      name: 'Zion Blockchain',
+      id: 'zion-blockchain',
+      verified: true
+    },
+    images: ['https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&auto=format'],
+    rating: 4.9,
+    reviewCount: 134,
+    aiScore: 96,
+    featured: true,
+    popular: true,
+    contactInfo: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      website: 'https://ziontechgroup.com'
+    }
+  },
+
+  // Advanced Cybersecurity Services
+  {
+    id: 'zero-trust-security',
+    title: 'Zero Trust Security Architecture',
+    description: 'Implement comprehensive zero trust security framework for modern enterprise environments.',
+    category: 'cybersecurity',
+    subcategory: 'Zero Trust',
+    price: 12000,
+    currency: 'USD',
+    pricingModel: 'project-based',
+    features: [
+      'Identity and access management',
+      'Network segmentation',
+      'Continuous monitoring',
+      'Threat detection and response',
+      'Compliance frameworks',
+      'Security training and awareness'
+    ],
+    benefits: [
+      'Reduce attack surface by 80%',
+      'Improve compliance posture',
+      'Enhanced threat detection',
+      'Simplified security management',
+      'Better user experience'
+    ],
+    marketPrice: '$8,000 - $30,000',
+    deliveryTime: '8-12 weeks',
+    tags: ['Zero Trust', 'Cybersecurity', 'IAM', 'Network Security', 'Compliance'],
+    author: {
+      name: 'Zion Cybersecurity',
+      id: 'zion-cybersecurity',
+      verified: true
+    },
+    images: ['https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&auto=format'],
+    rating: 4.8,
+    reviewCount: 89,
+    aiScore: 93,
+    featured: true,
+    popular: false,
+    contactInfo: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      website: 'https://ziontechgroup.com'
+    }
+  },
+
+  // Advanced Cloud & DevOps Services
+  {
+    id: 'multi-cloud-strategy',
+    title: 'Multi-Cloud Strategy & Management',
+    description: 'Design and implement multi-cloud architectures for optimal performance, cost, and reliability.',
+    category: 'cloud-services',
+    subcategory: 'Multi-Cloud',
+    price: 15000,
+    currency: 'USD',
+    pricingModel: 'project-based',
+    features: [
+      'Multi-cloud architecture design',
+      'Cost optimization strategies',
+      'Performance monitoring',
+      'Disaster recovery planning',
+      'Security and compliance',
+      'Ongoing management and optimization'
+    ],
+    benefits: [
+      'Avoid vendor lock-in',
+      'Optimize costs across providers',
+      'Improve reliability and uptime',
+      'Enhanced security posture',
+      'Flexible scaling options'
+    ],
+    marketPrice: '$10,000 - $40,000',
+    deliveryTime: '10-16 weeks',
+    tags: ['Multi-Cloud', 'Cloud Architecture', 'DevOps', 'Cost Optimization', 'Disaster Recovery'],
+    author: {
+      name: 'Zion Cloud Solutions',
+      id: 'zion-cloud-solutions',
+      verified: true
+    },
+    images: ['https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&auto=format'],
+    rating: 4.7,
+    reviewCount: 67,
+    aiScore: 91,
+    featured: false,
+    popular: true,
+    contactInfo: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      website: 'https://ziontechgroup.com'
+    }
+  },
+
+  // Advanced Data & Analytics Services
+  {
+    id: 'real-time-analytics',
+    title: 'Real-Time Data Analytics Platform',
+    description: 'Build real-time analytics platforms for instant insights and decision-making capabilities.',
+    category: 'data-services',
+    subcategory: 'Real-Time Analytics',
+    price: 18000,
+    currency: 'USD',
+    pricingModel: 'project-based',
+    features: [
+      'Real-time data processing',
+      'Interactive dashboards',
+      'Predictive analytics',
+      'Data visualization',
+      'API integration',
+      'Scalable infrastructure'
+    ],
+    benefits: [
+      'Instant business insights',
+      'Improved decision-making',
+      'Enhanced customer experience',
+      'Operational efficiency gains',
+      'Competitive advantage'
+    ],
+    marketPrice: '$12,000 - $50,000',
+    deliveryTime: '12-18 weeks',
+    tags: ['Real-Time Analytics', 'Big Data', 'Data Visualization', 'Predictive Analytics', 'Business Intelligence'],
+    author: {
+      name: 'Zion Data Analytics',
+      id: 'zion-data-analytics',
+      verified: true
+    },
+    images: ['https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format'],
+    rating: 4.9,
+    reviewCount: 112,
+    aiScore: 95,
+    featured: true,
+    popular: true,
+    contactInfo: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      website: 'https://ziontechgroup.com'
+    }
+  },
+
+  // Advanced IoT & Edge Computing Services
+  {
+    id: 'iot-edge-computing',
+    title: 'IoT Edge Computing Solutions',
+    description: 'Deploy intelligent edge computing solutions for IoT devices with real-time processing capabilities.',
+    category: 'iot-services',
+    subcategory: 'Edge Computing',
+    price: 22000,
+    currency: 'USD',
+    pricingModel: 'project-based',
+    features: [
+      'Edge computing infrastructure',
+      'IoT device management',
+      'Real-time data processing',
+      'Local AI inference',
+      'Security and encryption',
+      'Scalable deployment'
+    ],
+    benefits: [
+      'Reduced latency and bandwidth costs',
+      'Enhanced privacy and security',
+      'Offline operation capabilities',
+      'Improved reliability',
+      'Cost-effective scaling'
+    ],
+    marketPrice: '$15,000 - $60,000',
+    deliveryTime: '14-20 weeks',
+    tags: ['IoT', 'Edge Computing', 'Real-Time Processing', 'AI Inference', 'Device Management'],
+    author: {
+      name: 'Zion IoT Solutions',
+      id: 'zion-iot-solutions',
+      verified: true
+    },
+    images: ['https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&auto=format'],
+    rating: 4.8,
+    reviewCount: 78,
+    aiScore: 94,
+    featured: true,
     popular: false,
     contactInfo: {
       email: 'kleber@ziontechgroup.com',
