@@ -1,31 +1,28 @@
-import { ReactNode } from "react";
+import React from 'react';
 
-interface StatItem {
+export type KpiBadgeProps = {
   label: string;
   value: string | number;
-  description?: string;
-}
+  hint?: string;
+  tone?: 'default' | 'success' | 'warning' | 'danger' | 'info';
+};
 
-interface InteractiveStatsProps {
-  stats: StatItem[];
-  className?: string;
-}
+const toneToClasses: Record<NonNullable<KpiBadgeProps['tone']>, string> = {
+  default: 'bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-gray-100',
+  success: 'bg-green-100 text-green-900 dark:bg-green-900/40 dark:text-green-200',
+  warning: 'bg-yellow-100 text-yellow-900 dark:bg-yellow-900/40 dark:text-yellow-200',
+  danger: 'bg-red-100 text-red-900 dark:bg-red-900/40 dark:text-red-200',
+  info: 'bg-blue-100 text-blue-900 dark:bg-blue-900/40 dark:text-blue-200',
+};
 
-export default function InteractiveStats({ 
-  stats, 
-  className = "grid grid-cols-1 md:grid-cols-3 gap-6" 
-}: InteractiveStatsProps) {
+export function KpiBadge({ label, value, hint, tone = 'default' }: KpiBadgeProps) {
   return (
-    <div className={className}>
-      {stats.map((stat, index) => (
-        <div key={index} className="text-center p-6 bg-white rounded-lg shadow-md">
-          <div className="text-3xl font-bold text-blue-600 mb-2">{stat.value}</div>
-          <div className="text-lg font-semibold text-gray-900 mb-1">{stat.label}</div>
-          {stat.description && (
-            <div className="text-gray-600 text-sm">{stat.description}</div>
-          )}
-        </div>
-      ))}
+    <div className={`rounded-xl p-4 border border-black/5 dark:border-white/10 ${toneToClasses[tone]}`}>
+      <div className="text-xs uppercase tracking-wide opacity-70">{label}</div>
+      <div className="text-2xl font-semibold mt-1">{value}</div>
+      {hint && <div className="text-xs opacity-70 mt-1">{hint}</div>}
     </div>
   );
 }
+
+export default KpiBadge;

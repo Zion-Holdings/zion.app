@@ -1,0 +1,10 @@
+{
+  "/_app": "pages/_app.js",
+  "/_document": "pages/_document.js",
+  "/404": "pages/404.js",
+  "/_error": "pages/_error.js",
+  "/auto/auto-update-2025-08-23t23-56-48-824z": "pages/auto/auto-update-2025-08-23t23-56-48-824z.js",
+  "/comprehensive-2025-services-showcase": "pages/comprehensive-2025-services-showcase.js",
+  "/": "pages/index.js",
+  "/pricing-2025": "pages/pricing-2025.js"
+}

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // Mock Supabase client for development
 export const supabase = {
   auth: {
@@ -18,3 +19,13 @@ export const supabase = {
     }),
   }),
 };
+=======
+import { createClient } from "@supabase/supabase-js";
+
+const supabaseUrl =
+  process.env.NEXT_PUBLIC_SUPABASE_URL || "https://placeholder.supabase.co";
+const supabaseAnonKey =
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "placeholder-key";
+
+export const supabase = createClient(supabaseUrl, supabaseAnonKey);
+>>>>>>> 3c1dda747d3aa200ea8a4e49d78b84af83a4d328

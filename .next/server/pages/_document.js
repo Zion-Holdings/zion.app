@@ -1,0 +1,2 @@
+"use strict";(()=>{var e={};e.id=660,e.ids=[660],e.modules={97:e=>{e.exports=require("@sentry/nextjs")},785:e=>{e.exports=require("next/dist/compiled/next-server/pages.runtime.prod.js")},423:e=>{e.exports=require("path")},689:e=>{e.exports=require("react")},997:e=>{e.exports=require("react/jsx-runtime")}};var r=require("../webpack-runtime.js");r.C(e);var __webpack_exec__=e=>r(r.s=e),s=r.X(0,[859,810],()=>__webpack_exec__(810));module.exports=s})();
+//# sourceMappingURL=_document.js.map

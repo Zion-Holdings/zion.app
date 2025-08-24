@@ -1,0 +1,31 @@
+{
+  "updatedAt": "2025-08-24T00:00:37.712Z",
+  "features": [
+    {
+      "title": "Self-Improving Website",
+      "description": "Autonomous workflows run every few minutes to ideate, improve UI, and fix issues automatically.",
+      "cta": {
+        "label": "See the workflows",
+        "href": "https://github.com/Zion-Holdings/zion.app/tree/main/.github/workflows"
+      },
+      "tags": [
+        "Autonomous",
+        "CI",
+        "Cloud"
+      ]
+    },
+    {
+      "title": "Evolving Frontend",
+      "description": "UI refinement agents keep the experience modern, accessible, and performant.",
+      "cta": {
+        "label": "View UI evolution",
+        "href": "https://github.com/Zion-Holdings/zion.app/tree/main/automation/ui-evolution-agents"
+      },
+      "tags": [
+        "Design",
+        "Performance",
+        "A11y"
+      ]
+    }
+  ]
+}

@@ -12,6 +12,7 @@ const EnhancedNavigation: React.FC = () => {
             </Link>
           </div>
           <div className="hidden md:flex space-x-8">
+<<<<<<< HEAD
             <Link href="/" className="text-gray-600 hover:text-gray-900 transition-colors">
               Home
             </Link>
@@ -23,6 +24,31 @@ const EnhancedNavigation: React.FC = () => {
             </Link>
             <Link href="/solutions" className="text-gray-600 hover:text-gray-900 transition-colors">
               Solutions
+=======
+            <Link href="/">
+              <a className="text-gray-600 hover:text-gray-900">Home</a>
+            </Link>
+            <Link href="/services">
+              <a className="text-gray-600 hover:text-gray-900">Services</a>
+            </Link>
+            <Link href="/products">
+              <a className="text-gray-600 hover:text-gray-900">Products</a>
+            </Link>
+            <Link href="/talent">
+              <a className="text-gray-600 hover:text-gray-900">Talent</a>
+            </Link>
+            <Link href="/blog">
+              <a className="text-gray-600 hover:text-gray-900">Blog</a>
+            </Link>
+            <Link href="/automation">
+              <a className="text-gray-600 hover:text-gray-900">Automation</a>
+            </Link>
+            <Link href="/about">
+              <a className="text-gray-600 hover:text-gray-900">About</a>
+            </Link>
+            <Link href="/contact">
+              <a className="text-gray-600 hover:text-gray-900">Contact</a>
+>>>>>>> 3c1dda747d3aa200ea8a4e49d78b84af83a4d328
             </Link>
             <Link href="/about" className="text-gray-600 hover:text-gray-900 transition-colors">
               About

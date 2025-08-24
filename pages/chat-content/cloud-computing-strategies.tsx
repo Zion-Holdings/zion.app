@@ -1,20 +1,10 @@
-import type { NextPage } from 'next';
-import Head from 'next/head';
+import React from 'react';
 
-const CloudComputingStrategies: NextPage = () => {
+export default function CloudComputingStrategiesPage() {
   return (
-    <div>
-      <Head>
-        <title>CloudComputingStrategies - Zion Tech Solutions</title>
-        <meta name="description" content="CloudComputingStrategies page" />
-      </Head>
-      
-      <main>
-        <h1>CloudComputingStrategies</h1>
-        <p>This page is under construction.</p>
-      </main>
+    <div className="container mx-auto px-4 py-10">
+      <h1 className="text-2xl font-semibold">Cloud Computing Strategies</h1>
+      <p className="mt-2 text-gray-600 dark:text-gray-300">Article coming soon.</p>
     </div>
   );
-};
-
-export default CloudComputingStrategies;
+}

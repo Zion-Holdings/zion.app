@@ -1,0 +1,39 @@
+{
+  "timestamp": "2025-08-14T22:01:43.134Z",
+  "success": false,
+  "errors": [
+    "❌ Build failed: Command failed: npm run build"
+  ],
+  "warnings": [
+    "Node.js version v22.16.0 is not v20.x",
+    "Environment variable NODE_VERSION not set",
+    "Environment variable NODE_OPTIONS not set",
+    "⚠️  Could not run security audit"
+  ],
+  "buildLog": [
+    "[2025-08-14T22:01:41.172Z] [INFO] 🚀 Starting comprehensive build automation...",
+    "[2025-08-14T22:01:41.174Z] [INFO] 🔍 Validating build environment...",
+    "[2025-08-14T22:01:41.174Z] [INFO] Node.js version: v22.16.0",
+    "[2025-08-14T22:01:41.174Z] [INFO] Memory usage: 4MB",
+    "[2025-08-14T22:01:41.174Z] [INFO] 📁 Validating required files...",
+    "[2025-08-14T22:01:41.174Z] [INFO] ✅ _headers found",
+    "[2025-08-14T22:01:41.174Z] [INFO] ✅ _redirects found",
+    "[2025-08-14T22:01:41.174Z] [INFO] ✅ package.json found",
+    "[2025-08-14T22:01:41.174Z] [INFO] ✅ next.config.js found",
+    "[2025-08-14T22:01:41.174Z] [INFO] 📦 Checking dependencies...",
+    "[2025-08-14T22:01:41.988Z] [INFO] ℹ️  No outdated packages found",
+    "[2025-08-14T22:01:42.882Z] [WARNING] ⚠️  Could not run security audit",
+    "[2025-08-14T22:01:42.882Z] [INFO] 🌐 Validating network connectivity...",
+    "[2025-08-14T22:01:42.882Z] [INFO] ℹ️  No critical endpoints configured for validation",
+    "[2025-08-14T22:01:42.882Z] [INFO] 🚀 Starting build process...",
+    "[2025-08-14T22:01:42.882Z] [INFO] 🧹 Cleaning previous builds...",
+    "[2025-08-14T22:01:42.885Z] [INFO] 🔨 Running Next.js build...",
+    "[2025-08-14T22:01:43.134Z] [ERROR] ❌ Build failed: Command failed: npm run build",
+    "[2025-08-14T22:01:43.134Z] [INFO] 📊 Generating build report..."
+  ],
+  "summary": {
+    "totalChecks": 19,
+    "errors": 1,
+    "warnings": 4
+  }
+}

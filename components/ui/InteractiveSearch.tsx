@@ -1,40 +1,82 @@
+import React from 'react';
 
-interface InteractiveSearchProps {
-  placeholder?: string;
-  onSearch?: (query: string) => void;
-  className?: string;
-}
+export type CategoryOption = { label: string; value: string };
 
-export default function InteractiveSearch({ 
-  placeholder = "Search...", 
-  onSearch, 
-  className = "w-full max-w-md" 
-}: InteractiveSearchProps) {
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const formData = new FormData(e.target as HTMLFormElement);
-    const query = formData.get('search') as string;
-    onSearch?.(query);
-  };
+export type FilterState = {
+  keyword: string;
+  category: string;
+  minPrice?: number;
+  maxPrice?: number;
+  minRating?: number;
+};
 
+export type InteractiveSearchProps = {
+  categories: CategoryOption[];
+  value: FilterState;
+  onChange: (next: FilterState) => void;
+  priceEnabled?: boolean;
+  ratingEnabled?: boolean;
+};
+
+export default function InteractiveSearch({ categories, value, onChange, priceEnabled = true, ratingEnabled = true }: InteractiveSearchProps) {
   return (
-    <form onSubmit={handleSubmit} className={className}>
-      <div className="relative">
+    <div className="w-full mb-4 p-3 rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-zinc-900">
+      <div className="grid grid-cols-1 md:grid-cols-5 gap-3">
         <input
           type="text"
-          name="search"
-          placeholder={placeholder}
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          value={value.keyword}
+          onChange={(e) => onChange({ ...value, keyword: e.target.value })}
+          placeholder="Search by keyword..."
+          className="col-span-2 px-3 py-2 rounded-md bg-gray-50 dark:bg-zinc-800 border border-gray-200 dark:border-zinc-700 text-sm"
         />
-        <button
-          type="submit"
-          className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
+
+        <select
+          value={value.category}
+          onChange={(e) => onChange({ ...value, category: e.target.value })}
+          className="px-3 py-2 rounded-md bg-gray-50 dark:bg-zinc-800 border border-gray-200 dark:border-zinc-700 text-sm"
         >
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-          </svg>
-        </button>
+          <option value="">All Categories</option>
+          {categories.map((c) => (
+            <option key={c.value} value={c.value}>{c.label}</option>
+          ))}
+        </select>
+
+        {priceEnabled && (
+          <div className="flex items-center gap-2">
+            <input
+              type="number"
+              inputMode="numeric"
+              min={0}
+              value={value.minPrice ?? ''}
+              onChange={(e) => onChange({ ...value, minPrice: e.target.value ? Number(e.target.value) : undefined })}
+              placeholder="Min $"
+              className="w-1/2 px-3 py-2 rounded-md bg-gray-50 dark:bg-zinc-800 border border-gray-200 dark:border-zinc-700 text-sm"
+            />
+            <input
+              type="number"
+              inputMode="numeric"
+              min={0}
+              value={value.maxPrice ?? ''}
+              onChange={(e) => onChange({ ...value, maxPrice: e.target.value ? Number(e.target.value) : undefined })}
+              placeholder="Max $"
+              className="w-1/2 px-3 py-2 rounded-md bg-gray-50 dark:bg-zinc-800 border border-gray-200 dark:border-zinc-700 text-sm"
+            />
+          </div>
+        )}
+
+        {ratingEnabled && (
+          <select
+            value={String(value.minRating ?? '')}
+            onChange={(e) => onChange({ ...value, minRating: e.target.value ? Number(e.target.value) : undefined })}
+            className="px-3 py-2 rounded-md bg-gray-50 dark:bg-zinc-800 border border-gray-200 dark:border-zinc-700 text-sm"
+          >
+            <option value="">Any Rating</option>
+            <option value="4">4+ stars</option>
+            <option value="4.5">4.5+ stars</option>
+            <option value="5">5 stars</option>
+          </select>
+        )}
       </div>
-    </form>
+    </div>
   );
 }
