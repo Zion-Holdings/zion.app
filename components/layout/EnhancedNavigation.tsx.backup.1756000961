@@ -13,6 +13,26 @@ const EnhancedNavigation: React.FC = () => {
     <nav className="bg-white shadow-lg sticky top-0 z-50">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
+<<<<<<< HEAD
+          <div className="text-xl font-bold text-gray-800">
+            <Link href="/" className="text-blue-600 hover:text-blue-700">
+              Zion Tech Group
+            </Link>
+          </div>
+          <div className="hidden md:flex space-x-8">
+<<<<<<< HEAD
+            <Link href="/" className="text-gray-600 hover:text-gray-900 transition-colors">
+              Home
+            </Link>
+            <Link href="/services" className="text-gray-600 hover:text-gray-900 transition-colors">
+              Services
+            </Link>
+            <Link href="/products" className="text-gray-600 hover:text-gray-900 transition-colors">
+              Products
+            </Link>
+            <Link href="/solutions" className="text-gray-600 hover:text-gray-900 transition-colors">
+              Solutions
+=======
             <Link href="/">
               <a className="text-gray-600 hover:text-gray-900">Home</a>
             </Link>
@@ -36,6 +56,7 @@ const EnhancedNavigation: React.FC = () => {
             </Link>
             <Link href="/contact">
               <a className="text-gray-600 hover:text-gray-900">Contact</a>
+>>>>>>> 3c1dda747d3aa200ea8a4e49d78b84af83a4d328
 =======
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
@@ -102,6 +123,7 @@ const EnhancedNavigation: React.FC = () => {
             
             <Link href="/contact" className="text-gray-600 hover:text-blue-600 font-medium transition-colors">
               Contact
+>>>>>>> origin/cursor/website-audit-and-enhancement-79f3
             </Link>
             <Link href="/about" className="text-gray-600 hover:text-gray-900 transition-colors">
               About

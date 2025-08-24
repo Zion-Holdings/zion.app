@@ -1,5 +1,24 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
+<<<<<<< HEAD
+import AnimatedBackground from '../components/AnimatedBackground';
+import Navigation from '../components/Navigation';
+import Footer from '../components/Footer';
+
+export default function ContactPage() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    company: '',
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+=======
     message: '',
     service: 'general'
   });
@@ -710,6 +729,7 @@ const Contact: NextPage = () => {
         </div>
       </section>
     </>
+>>>>>>> origin/cursor/website-audit-and-enhancement-79f3
   );
 };
 

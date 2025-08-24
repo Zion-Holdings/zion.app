@@ -320,4 +320,8 @@ const Products: NextPage = () => {
   );
 };
 
+<<<<<<< HEAD:temp_conflicts/pages/automation/index.tsx.backup.1755991384
+export default Index;
+=======
 export default Products;
+>>>>>>> origin/cursor/website-audit-and-enhancement-79f3:pages/products/index.tsx

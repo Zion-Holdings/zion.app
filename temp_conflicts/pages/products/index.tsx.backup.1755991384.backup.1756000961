@@ -108,6 +108,21 @@ const Blog: NextPage = () => {
   return (
     <>
       <Head>
+<<<<<<< HEAD:temp_conflicts/pages/products/index.tsx.backup.1755991384
+        <title>Index - Zion Tech Solutions</title>
+        <meta name="description" content="Index page" />
+      </Head>
+      
+      <main>
+        <h1>Index</h1>
+        <p>This page is under construction.</p>
+      </main>
+    </div>
+  );
+};
+
+export default Index;
+=======
         <title>Blog - Zion Tech Group</title>
         <meta name="description" content="Stay updated with the latest technology trends, industry insights, and thought leadership content from Zion Tech Group's expert team." />
         <meta name="keywords" content="technology blog, AI trends, cloud computing, blockchain, data analytics, cybersecurity insights" />
@@ -320,3 +335,4 @@ const Blog: NextPage = () => {
 };
 
 export default Blog;
+>>>>>>> origin/cursor/website-audit-and-enhancement-79f3:pages/blog/index.tsx
