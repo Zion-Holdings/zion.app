@@ -53,7 +53,7 @@ const TalentProfilePage: React.FC = () => {
         {profile.skills && profile.skills.length > 0 && (
           <div>
             <h2 className="font-semibold">Skills</h2>
-            <ul className="list-disc ml-5">
+            <ul className="dev-list ml-5">
               {profile.skills.map(skill => (
                 <li key={skill}>{skill}</li>
               ))}

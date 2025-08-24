@@ -7,13 +7,9 @@ interface SEOProps {
   description: string;
   keywords?: string;
   canonical?: string;
-  image?: string;
-  type?: 'website' | 'article' | 'profile' | 'product';
-  author?: string;
-  publishedTime?: string;
-  modifiedTime?: string;
-  section?: string;
-  tags?: string[];
+  ogImage?: string;
+  ogType?: string;
+  twitterCard?: string;
   structuredData?: object;
   noindex?: boolean;
   nofollow?: boolean;
@@ -24,55 +20,37 @@ export function SEO({
   description,
   keywords,
   canonical,
-  image = '/images/zion-og-image.jpg',
-  type = 'website',
-  author,
-  publishedTime,
-  modifiedTime,
-  section,
-  tags,
+  ogImage = 'https://ziontechgroup.com/og-image.jpg',
+  ogType = 'website',
+  twitterCard = 'summary_large_image',
   structuredData,
   noindex = false,
-  nofollow = false,
+  nofollow = false
 }: SEOProps) {
   const siteName = 'Zion Tech Group';
-  const siteUrl = 'https://ziontechgroup.com';
-  const fullTitle = `${title} | ${siteName}`;
-  const fullImageUrl = image.startsWith('http') ? image : `${siteUrl}${image}`;
-  const fullCanonicalUrl = canonical ? `${siteUrl}${canonical}` : siteUrl;
-
-  // Default structured data for organization
+  const fullTitle = title.includes(siteName) ? title : `${title} | ${siteName}`;
   const defaultStructuredData = {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Zion Tech Group",
-    "url": siteUrl,
-    "logo": `${siteUrl}/images/zion-logo.png`,
-    "description": "The premier tech and AI marketplace connecting businesses with top talent, services, and equipment.",
+    "url": "https://ziontechgroup.com",
+    "logo": "https://ziontechgroup.com/logo.png",
+    "description": "The premier AI and tech marketplace connecting talent, services, and innovation.",
     "sameAs": [
       "https://twitter.com/ziontechgroup",
       "https://linkedin.com/company/ziontechgroup",
-      "https://facebook.com/ziontechgroup"
+      "https://github.com/ziontechgroup"
     ],
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+1-555-0123",
+      "telephone": "+1-555-ZION-TECH",
       "contactType": "customer service",
-      "areaServed": "US",
-      "availableLanguage": "English"
-    },
-    "address": {
-      "@type": "PostalAddress",
-      "addressCountry": "US",
-      "addressLocality": "San Francisco",
-      "addressRegion": "CA"
+      "areaServed": "Worldwide"
     }
   };
 
-  // Merge default structured data with custom data
-  const finalStructuredData = structuredData 
-    ? { ...defaultStructuredData, ...structuredData }
-    : defaultStructuredData;
+  const finalStructuredData = structuredData || defaultStructuredData;
+>>>>>>> cursor/analyze-improve-and-deploy-ziontechgroup-app-f1c5
 
   return (
     <Helmet>
@@ -80,11 +58,16 @@ export function SEO({
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
       {keywords && <meta name="keywords" content={keywords} />}
+<<<<<<< HEAD
       <meta name="author" content={author || 'Zion Tech Group'} />
+=======
+      <meta name="robots" content={`${noindex ? 'noindex' : 'index'}, ${nofollow ? 'nofollow' : 'follow'}`} />
+>>>>>>> cursor/analyze-improve-and-deploy-ziontechgroup-app-f1c5
       
       {/* Canonical URL */}
       <link rel="canonical" href={fullCanonicalUrl} />
       
+<<<<<<< HEAD
       {/* Robots Meta */}
       {noindex && <meta name="robots" content="noindex" />}
       {nofollow && <meta name="robots" content="nofollow" />}
@@ -135,16 +118,56 @@ export function SEO({
       <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
       <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
       <link rel="manifest" href="/site.webmanifest" />
+=======
+      {/* Open Graph Meta Tags */}
+      <meta property="og:title" content={fullTitle} />
+      <meta property="og:description" content={description} />
+      <meta property="og:type" content={ogType} />
+      <meta property="og:url" content={canonical || 'https://ziontechgroup.com'} />
+      <meta property="og:image" content={ogImage} />
+      <meta property="og:site_name" content={siteName} />
+      <meta property="og:locale" content="en_US" />
+      
+      {/* Twitter Meta Tags */}
+      <meta name="twitter:card" content={twitterCard} />
+      <meta name="twitter:title" content={fullTitle} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={ogImage} />
+      <meta name="twitter:site" content="@ziontechgroup" />
+      
+      {/* Additional Meta Tags */}
+      <meta name="author" content="Zion Tech Group" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="theme-color" content="#2e73ea" />
+      <meta name="msapplication-TileColor" content="#2e73ea" />
+      
+      {/* Performance and Security */}
+      <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="format-detection" content="telephone=no" />
+>>>>>>> cursor/analyze-improve-and-deploy-ziontechgroup-app-f1c5
       
       {/* Preconnect to external domains for performance */}
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       
+<<<<<<< HEAD
+=======
+      {/* Favicon and App Icons */}
+      <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+      
+      {/* Manifest */}
+      <link rel="manifest" href="/site.webmanifest" />
+      
+>>>>>>> cursor/analyze-improve-and-deploy-ziontechgroup-app-f1c5
       {/* Structured Data */}
       <script type="application/ld+json">
         {JSON.stringify(finalStructuredData)}
       </script>
       
+<<<<<<< HEAD
       {/* Additional Structured Data for Breadcrumbs */}
       {canonical && (
         <script type="application/ld+json">
@@ -168,6 +191,11 @@ export function SEO({
           })}
         </script>
       )}
+=======
+      {/* Additional Performance Hints */}
+      <link rel="dns-prefetch" href="//cdn.ziontechgroup.com" />
+      <link rel="dns-prefetch" href="//api.ziontechgroup.com" />
+>>>>>>> cursor/analyze-improve-and-deploy-ziontechgroup-app-f1c5
     </Helmet>
   );
 }
