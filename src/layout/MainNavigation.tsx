@@ -21,7 +21,22 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
     {
       key: 'home',
       href: '/',
-      matches: (path: string) => path === '/'
+      matches: (path: string) => path === '/' || path === '/home'
+    },
+    {
+      key: 'about',
+      href: '/about',
+      matches: (path: string) => path === '/about'
+    },
+    {
+      key: 'services',
+      href: '/services',
+      matches: (path: string) => path.startsWith('/services')
+    },
+    {
+      key: 'it-onsite-services',
+      href: '/it-onsite-services',
+      matches: (path: string) => path.startsWith('/it-onsite-services')
     },
     {
       key: 'marketplace',
@@ -44,9 +59,34 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
       matches: (path: string) => path.startsWith('/equipment')
     },
     {
+      key: 'green-it',
+      href: '/green-it',
+      matches: (path: string) => path.startsWith('/green-it')
+    },
+    {
       key: 'community',
       href: '/community',
       matches: (path: string) => path.startsWith('/community') || path.startsWith('/forum')
+    },
+    {
+      key: 'blog',
+      href: '/blog',
+      matches: (path: string) => path.startsWith('/blog')
+    },
+    {
+      key: 'partners',
+      href: '/partners',
+      matches: (path: string) => path.startsWith('/partners')
+    },
+    {
+      key: 'careers',
+      href: '/careers',
+      matches: (path: string) => path.startsWith('/careers')
+    },
+    {
+      key: 'contact',
+      href: '/contact',
+      matches: (path: string) => path.startsWith('/contact')
     }
   ];
 
