@@ -6,6 +6,7 @@ import ComprehensiveServices from './pages/ComprehensiveServices';
 import CybersecurityServicesPage from './pages/CybersecurityServicesPage';
 import ExpandedServicesPage from './pages/ExpandedServicesPage';
 import ITOnsiteServicesPage from './pages/ITOnsiteServicesPage';
+import EnhancedServicesShowcase from './pages/EnhancedServicesShowcase';
 import NotFound from './pages/NotFound';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/micro-saas-services" element={<MicroSaasServices />} />
         <Route path="/comprehensive-services" element={<ComprehensiveServices />} />
+        <Route path="/enhanced-services" element={<EnhancedServicesShowcase />} />
         <Route path="/cybersecurity-services" element={<CybersecurityServicesPage />} />
         <Route path="/expanded-services" element={<ExpandedServicesPage />} />
         <Route path="/it-onsite-services" element={<ITOnsiteServicesPage />} />
