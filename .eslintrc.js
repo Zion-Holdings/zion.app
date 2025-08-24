@@ -38,6 +38,22 @@ module.exports = {
     '*.config.ts',
     'scripts/',
     'automation/',
-    'netlify/'
+    'netlify/',
+    'src/',
+    'zion-os/',
+    'zion_academy/',
+    'packages/',
+    'apps/',
+    'generated-services/',
+    'monitoring/',
+    'wiki/',
+    'zion.app/',
+    'backups/',
+    'typechain-types/',
+    'zion-website-analysis.json',
+    '*.backup.*',
+    '*.log',
+    '*.txt',
+    '*.md'
   ]
 };

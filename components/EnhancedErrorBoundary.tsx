@@ -13,6 +13,7 @@ interface State {
   error: Error | null;
   errorInfo: ErrorInfo | null;
   errorId: string;
+  showDetails: boolean;
 }
 
 class EnhancedErrorBoundary extends Component<Props, State> {
@@ -22,7 +23,8 @@ class EnhancedErrorBoundary extends Component<Props, State> {
       hasError: false,
       error: null,
       errorInfo: null,
-      errorId: ''
+      errorId: '',
+      showDetails: false
     };
   }
 
@@ -31,7 +33,8 @@ class EnhancedErrorBoundary extends Component<Props, State> {
       hasError: true,
       error,
       errorInfo: null,
-      errorId: `error_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`
+      errorId: `error_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
+      showDetails: false
     };
   }
 
@@ -77,7 +80,8 @@ class EnhancedErrorBoundary extends Component<Props, State> {
       hasError: false,
       error: null,
       errorInfo: null,
-      errorId: ''
+      errorId: '',
+      showDetails: false
     });
   };
 
@@ -175,13 +179,7 @@ class EnhancedErrorBoundary extends Component<Props, State> {
                   </details>
                 )}
               </motion.div>
-              <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
-                Oops! Something went wrong
-              </h1>
-              <p className="text-gray-600 dark:text-gray-400">
-                We're sorry, but something unexpected happened. Our team has been notified.
-              </p>
-            </div>
+            )}
 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -243,7 +241,7 @@ class EnhancedErrorBoundary extends Component<Props, State> {
                 Zion Tech Group - Revolutionary Technology Solutions
               </p>
             </div>
-          </div>
+          </motion.div>
         </div>
       );
     }
