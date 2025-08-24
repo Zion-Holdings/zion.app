@@ -1,8 +1,3 @@
-export default function Page() {
-  return (
-    <div className="py-12">
-      <h1 className="text-2xl font-semibold">Enhanced Home</h1>
-      <p className="mt-2 opacity-80">This page is being built by autonomous agents.</p>
-    </div>
-  );
+export default function EnhancedHome() {
+  return <div className="py-8">Enhanced Home</div>;
 }
