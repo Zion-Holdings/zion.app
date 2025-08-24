@@ -54,7 +54,7 @@ const TalentProfilePage: React.FC = () => {
   }, [id]);
 
   if (loading) return <ProfileLoadingState />;
-  if (error || !profile) return <ErrorPage statusCode={404} />;
+  if (error || !profile) return <ProfileErrorState error={error || 'Profile not found'} />;
 
   return (
     <main className="min-h-screen bg-zion-blue py-8 text-white">
