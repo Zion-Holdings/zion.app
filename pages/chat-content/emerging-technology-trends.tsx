@@ -1,1 +1,1 @@
-export default function Page() { return <main style={{padding:'2rem'}}>Emerging Technology Trends</main>; }
+export default function ChatContentPage6() { return null; }

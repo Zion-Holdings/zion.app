@@ -1,1 +1,1 @@
-export default function AuthCallback() { return <main style={{padding:'2rem'}}>Auth Callback</main>; }
+export default function AuthCallback() { return null; }

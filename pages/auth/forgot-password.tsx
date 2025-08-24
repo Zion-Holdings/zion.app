@@ -1,1 +1,1 @@
-export default function ForgotPassword() { return <main style={{padding:'2rem'}}>Forgot Password</main>; }
+export default function ForgotPasswordPage() { return null; }

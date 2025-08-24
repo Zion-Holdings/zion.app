@@ -1,1 +1,1 @@
-export default function Products() { return <main style={{padding:'2rem'}}>Products</main>; }
+export default function ProductsPage() { return null; }

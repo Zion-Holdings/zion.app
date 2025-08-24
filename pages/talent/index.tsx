@@ -1,1 +1,1 @@
-export default function Talent() { return <main style={{padding:'2rem'}}>Talent</main>; }
+export default function TalentIndexPage() { return null; }

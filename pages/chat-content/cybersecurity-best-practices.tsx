@@ -1,1 +1,1 @@
-export default function Page() { return <main style={{padding:'2rem'}}>Cybersecurity Best Practices</main>; }
+export default function ChatContentPage3() { return null; }

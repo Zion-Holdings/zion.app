@@ -1,1 +1,1 @@
-export default function AutoUpdate_172307() { return <main style={{padding:'2rem'}}>Auto Update 17:23:07</main>; }
+export default function AutoPageG() { return null; }
