@@ -1,0 +1,40 @@
+name: Automation - Image Optimizer
+
+on:
+  schedule:
+    - cron: '30 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  image-optimizer:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+          cache: 'npm'
+      - name: Install deps
+        run: npm ci
+      - name: Install sharp deps
+        run: sudo apt-get update && sudo apt-get install -y libvips-dev
+      - name: Optimize images
+        run: npm run optimize:images
+      - name: Commit report and optimized images
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: 'chore(images): optimize public assets'
+          title: 'chore(images): optimize public assets'
+          body: Optimized images and wrote report to public/automation-reports
+          branch: automation/image-optimizer
+          delete-branch: true
+          labels: automation

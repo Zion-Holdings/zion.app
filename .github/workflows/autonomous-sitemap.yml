@@ -1,0 +1,27 @@
+name: Autonomous Sitemap
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: '0 * * * *'
+
+permissions:
+  contents: write
+
+jobs:
+  sitemap:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { persist-credentials: true }
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+      - run: npm ci
+      - name: Generate Sitemap
+        run: npm run sitemap
+      - name: Commit and push
+        run: |
+          git config user.name "zion-autonomy-bot"
+          git config user.email "autonomy-bot@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then echo "No changes"; else git commit -m "chore(autonomy): sitemap refresh" && git push; fi

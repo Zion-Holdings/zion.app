@@ -1,0 +1,546 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
+
+/**
+ * Zion App Build Monitor
+ * Monitors build processes and triggers healing on failures
+ */
+
+const fs = require('fs')
+const path = require('path')
+const { spawn, execSync } = require('child_process')
+const chokidar = require('chokidar')
+class BuildMonitor {
+  constructor() {
+    this.isMonitoring = false;
+    this.buildLogPath = path.join(process.cwd(), 'logs', 'build.log');
+    this.errorLogPath = path.join(process.cwd(), 'logs', 'build-errors.log');
+    this.buildHistory = [];
+    this.maxHistorySize = 100;
+
+    // Ensure logs directory exists
+    const logsDir = path.dirname(this.buildLogPath);
+    if (!fs.existsSync(logsDir)) {
+      fs.mkdirSync(logsDir, { recursive: true });
+    }
+  }
+
+  async startMonitoring() {
+    if (this.isMonitoring) {
+      logger.info('Build monitor is already running');
+      return;
+    }
+
+    this.isMonitoring = true;
+    logger.info('Starting build monitoring...');
+
+    // Watch for build-related files
+    this.watchBuildFiles();
+
+    // Monitor build logs
+    this.monitorBuildLogs();
+
+    // Start periodic build health checks
+    this.startPeriodicChecks();
+  }
+
+  watchBuildFiles() {
+    const buildFiles = [
+      'package.json',
+      'next.config.js',
+      'tailwind.config.js',
+      'tsconfig.json',
+      '.env.local',
+      'src/**/*.tsx',
+      'src/**/*.ts',
+      'pages/**/*.tsx',
+      'pages/**/*.ts',
+    ]
+const watcher = chokidar.watch(buildFiles, {
+      ignored: /node_modules|\.git|\.next/,
+      persistent: true,
+    });
+
+    watcher.on('change', (filePath) => {
+      logger.info(`Build file changed: ${filePath}`);
+      this.onBuildFileChange(filePath);
+    });
+
+    watcher.on('error', (error) => {
+      logger.error('Build file watcher error:', error);
+    });
+  }
+
+  async onBuildFileChange(filePath) {
+    logger.info(`Build file changed: ${filePath}`);
+
+    // Wait a bit for the file to be fully written
+    await new Promise((resolve) => 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(resolve,                               1000);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+);
+
+    // Check if the change might cause build issues
+    if (this.shouldTriggerBuildCheck(filePath)) {
+      await this.triggerBuildCheck();
+    }
+  }
+
+  shouldTriggerBuildCheck(filePath) {
+    const criticalFiles = [
+      'package.json',
+      'next.config.js',
+      'tsconfig.json',
+      '.env.local',
+    ];
+
+    return criticalFiles.some((file) => filePath.includes(file));
+  }
+
+  async triggerBuildCheck() {
+    logger.info('Triggering build check due to file change...');
+
+    try {
+      // Run a quick build check
+      await this.runBuildCheck();
+    } catch (error) {
+      logger.error('Build check failed:', error.message);
+      await this.triggerHealing('build_check_failed', { error: error.message });
+    }
+  }
+
+  async runBuildCheck() {
+    return new Promise((resolve, reject) => {
+      logger.info('Running build check...')
+const buildProcess = spawn('npm', ['run', 'build'], {
+        stdio: ['pipe', 'pipe', 'pipe'],
+        cwd: process.cwd(),
+      });
+
+      let output = '';
+      let errorOutput = '';
+
+      buildProcess.stdout.on('data', (data) => {
+        const chunk = data.toString();
+        output += chunk;
+        this.logBuildOutput(chunk);
+      });
+
+      buildProcess.stderr.on('data', (data) => {
+        const chunk = data.toString();
+        errorOutput += chunk;
+        this.logBuildError(chunk);
+      });
+
+      buildProcess.on('close', (code) => {
+        const buildResult = {
+          timestamp: new Date(),
+          success: code === 0,
+          code,
+          output,
+          errorOutput,
+        };
+
+        this.buildHistory.push(buildResult);
+
+        // Keep history size manageable
+        if (this.buildHistory.length > this.maxHistorySize) {
+          this.buildHistory.shift();
+        }
+
+        if (code === 0) {
+          logger.info('Build check completed successfully');
+          resolve(buildResult);
+        } else {
+          logger.error(`Build check failed with code ${code}`);
+          this.analyzeBuildFailure(buildResult);
+          reject(new Error(`Build failed with code ${code}`));
+        }
+      });
+
+      buildProcess.on('error', (error) => {
+        logger.error('Build process error:', error);
+        reject(error);
+      });
+    });
+  }
+
+  analyzeBuildFailure(buildResult) {
+    logger.info('Analyzing build failure...')
+const errorPatterns = {
+      'Module not found': 'dependency',
+      'Cannot resolve module': 'import',
+      'TypeScript error': 'typescript',
+      'ESLint error': 'linting',
+      'Tailwind CSS': 'styling',
+      'Wallet connection': 'wallet',
+      'Supabase connection': 'database',
+      'Environment variable': 'env',
+    }
+const errorText = buildResult.errorOutput.toLowerCase()
+const detectedIssues = [];
+
+    for (const [pattern, issueType] of Object.entries(errorPatterns)) {
+      if (errorText.includes(pattern.toLowerCase())) {
+        detectedIssues.push(issueType);
+      }
+    }
+
+    if (detectedIssues.length > 0) {
+      logger.info(`Detected issues: ${detectedIssues.join(', ')}`);
+      this.triggerHealing('build_failure', {
+        issues: detectedIssues,
+        buildResult,
+      });
+    } else {
+      logger.info('No specific issues detected, triggering generic healing');
+      this.triggerHealing('build_failure', {
+        issues: ['unknown'],
+        buildResult,
+      });
+    }
+  }
+
+  async triggerHealing(issueType, data) {
+    logger.info(`Triggering healing for ${issueType}...`);
+
+    try {
+      // Run self-healing script
+      execSync('node scripts/self-healing.js', {
+        stdio: 'inherit',
+        cwd: process.cwd(),
+      });
+
+      logger.info('Healing process completed');
+
+      // Wait a bit and try building again
+      await new Promise((resolve) => 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(resolve,                               5000);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+);
+      await this.runBuildCheck();
+    } catch (error) {
+      logger.error('Healing process failed:', error.message);
+    }
+  }
+
+  monitorBuildLogs() {
+    // Monitor the build log file for new entries
+    const logWatcher = chokidar.watch(this.buildLogPath, {
+      persistent: true,
+    });
+
+    logWatcher.on('change', () => {
+      this.analyzeBuildLog();
+    });
+  }
+
+  analyzeBuildLog() {
+    try {
+      if (!fs.existsSync(this.buildLogPath)) {
+        return;
+      }
+
+      const logContent = fs.readFileSync(this.buildLogPath, 'utf8')
+const lines = logContent.split('\n');
+
+      // Look for recent errors
+      const recentErrors = lines
+        .slice(-50) // Last 50 lines
+        .filter(
+          (line) =>
+            line.includes('ERROR') ||
+            line.includes('error') ||
+            line.includes('Error') ||
+            line.includes('failed') ||
+            line.includes('Failed'),
+        );
+
+      if (recentErrors.length > 0) {
+        logger.info(`Found ${recentErrors.length} recent build errors`);
+        this.analyzeBuildFailure({
+          timestamp: new Date(),
+          success: false,
+          errorOutput: recentErrors.join('\n'),
+        });
+      }
+    } catch (error) {
+      logger.error('Error analyzing build log:', error.message);
+    }
+  }
+
+  startPeriodicChecks() {
+    // Run periodic build health checks
+    setInterval(
+      async () => {
+        if (this.isMonitoring) {
+          logger.info('Running periodic build health check...');
+          try {
+            await this.runBuildCheck();
+          } catch (error) {
+            logger.error('Periodic build check failed:', error.message);
+          }
+        }
+      },
+      30 * 60 * 1000,
+    ); // Every 30 minutes
+  }
+
+  logBuildOutput(output) {
+    const timestamp = new Date().toISOString()
+const logEntry = `[${timestamp}] [BUILD] ${output}`;
+
+    fs.appendFileSync(this.buildLogPath, logEntry);
+  }
+
+  logBuildError(error) {
+    const timestamp = new Date().toISOString()
+const logEntry = `[${timestamp}] [BUILD_ERROR] ${error}`;
+
+    fs.appendFileSync(this.errorLogPath, logEntry);
+  }
+
+  getBuildHistory() {
+    return this.buildHistory;
+  }
+
+  getBuildStats() {
+    const totalBuilds = this.buildHistory.length
+const successfulBuilds = this.buildHistory.filter(
+      (build) => build.success,
+    ).length
+const failedBuilds = totalBuilds - successfulBuilds;
+
+    return {
+      totalBuilds,
+      successfulBuilds,
+      failedBuilds,
+      successRate: totalBuilds > 0 ? (successfulBuilds / totalBuilds) * 100 : 0,
+      lastBuild: this.buildHistory[this.buildHistory.length - 1] || null,
+    };
+  }
+
+  stopMonitoring() {
+    this.isMonitoring = false;
+    logger.info('Build monitoring stopped');
+  }
+}
+
+// CLI interface
+if (require.main === module) {
+  const monitor = new BuildMonitor();
+
+  // Handle process signals
+  process.on('SIGINT', () => {
+    monitor.stopMonitoring();
+    process.exit(0);
+  });
+
+  process.on('SIGTERM', () => {
+    monitor.stopMonitoring();
+    process.exit(0);
+  });
+
+  // Start monitoring
+  monitor.startMonitoring().catch((error) => {
+    logger.error('Failed to start build monitor:', error);
+    process.exit(1);
+  });
+}
+
+module.exports = BuildMonitor;

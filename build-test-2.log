@@ -1,0 +1,24 @@
+
+> project@0.0.0 build
+> npx next build --no-lint
+
+ ⚠ Linting is disabled.
+[@sentry/nextjs] ACTION REQUIRED: To instrument navigations, the Sentry SDK requires you to export an `onRouterTransitionStart` hook from your `instrumentation-client.(js|ts)` file. You can do so by adding `export const onRouterTransitionStart = Sentry.captureRouterTransitionStart;` to the file.
+  ▲ Next.js 14.2.30
+  - Experiments (use with caution):
+    · instrumentationHook
+
+   Checking validity of types ...
+Failed to compile.
+
+./src/components/developers/ApiDocsLayout.tsx:52:10
+Type error: Cannot find name 'Link'.
+
+[0m [90m 50 |[39m       {[90m/* Sidebar */[39m}[0m
+[0m [90m 51 |[39m       [33m<[39m[33mdiv[39m className[33m=[39m[32m"hidden md:block w-64 border-r border-zinc-800 p-6 sticky top-0 h-screen overflow-y-auto"[39m[33m>[39m[0m
+[0m[31m[1m>[22m[39m[90m 52 |[39m         [33m<[39m[33mLink[39m to[33m=[39m[32m"/developers/docs"[39m className[33m=[39m[32m"flex items-center mb-8"[39m[33m>[39m[0m
+[0m [90m    |[39m          [31m[1m^[22m[39m[0m
+[0m [90m 53 |[39m           [33m<[39m[33mdiv[39m className[33m=[39m[32m"bg-gradient-to-r from-zion-purple to-zion-cyan rounded-md w-8 h-8 mr-3 flex items-center justify-center"[39m[33m>[39m[0m
+[0m [90m 54 |[39m             [33m<[39m[33mspan[39m className[33m=[39m[32m"text-white font-bold"[39m[33m>[39m[33mZ[39m[33m<[39m[33m/[39m[33mspan[39m[33m>[39m[0m
+[0m [90m 55 |[39m           [33m<[39m[33m/[39m[33mdiv[39m[33m>[39m[0m
+Next.js build worker exited with code: 1 and signal: null

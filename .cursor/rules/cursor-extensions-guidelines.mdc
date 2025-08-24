@@ -1,0 +1,56 @@
+---
+description: Cursor extensions usage and workspace configuration policy
+globs: "**/*"
+---
+
+# Cursor Extensions Usage & Configuration Policy
+
+Context:
+This project uses Next.js (v11.x), TypeScript, Tailwind CSS, and ESLint-based formatting/fixing. To maximize developer productivity in Cursor, we must ensure the correct set of VSCode/Cursor extensions are installed, configured, and leveraged continuously. This rule is evergreen and should be enforced by all automation and agents.
+
+Requirements:
+1) Extension coverage
+   - Always ensure the following extensions are installed/enabled in the workspace:
+     - dbaeumer.vscode-eslint (source of truth for formatting and fix-on-save)
+     - bradlc.vscode-tailwindcss (Tailwind CSS IntelliSense)
+     - csstools.postcss (PostCSS syntax)
+     - dsznajder.es7-react-js-snippets (React/TSX snippets)
+     - christian-kohler.path-intellisense (path auto-completion)
+     - eamodio.gitlens (git insights)
+     - EditorConfig.EditorConfig (respect .editorconfig)
+     - mikestead.dotenv (env files)
+     - yzhang.markdown-all-in-one (markdown UX)
+     - unifiedjs.vscode-mdx (MDX authoring, optional but recommended)
+     - redhat.vscode-yaml (YAML schemas; CI config)
+     - GitHub.vscode-github-actions (workflows IDE support)
+     - usernamehw.errorlens (inline diagnostics UX)
+     - wix.vscode-import-cost (bundle awareness)
+     - streetsidesoftware.code-spell-checker (typo detection)
+     - yoavbls.pretty-ts-errors (improved TS error readability)
+   - Avoid enabling Prettier as default formatter unless explicitly configured to cooperate with ESLint. ESLint is our canonical formatter/fixer.
+
+2) Workspace settings alignment
+   - Ensure `.vscode/settings.json` enforces:
+     - formatOnSave and codeActionsOnSave (eslint fix, import organize)
+     - ESLint validate for JS/TS/React flavors
+     - Tailwind CSS class support and language associations
+     - `typescript.tsdk` set to local `node_modules/typescript/lib`
+     - Default formatter = ESLint
+
+3) Continuous validation
+   - On any dependency, lint, or config change, re-check recommended extensions and settings for drift.
+   - When adding new technologies, add their extensions and minimal settings here and to `.vscode` files.
+
+4) Cursor automation
+   - Periodically refresh Cursor memory and rules by running `npm run cursor:memory`.
+   - Agents should surface missing extension warnings during reviews and PRs.
+
+5) Web research mandate
+   - At least quarterly, research for new or improved extensions relevant to Next.js, TypeScript, Tailwind, testing tooling, or MCP. Update recommendations accordingly.
+
+6) Non-goals
+   - Do not introduce formatter conflicts. Prefer ESLint for consistency.
+
+Execution:
+- Keep `.vscode/extensions.json` and `.vscode/settings.json` in sync with this rule.
+- Treat any deviation as a configuration bug to be fixed immediately.

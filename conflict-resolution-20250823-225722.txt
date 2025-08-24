@@ -1,0 +1,366 @@
+2025-08-23 22:57:25 - Merge conflicts detected in 306ipd-codex/add-new-products-page-with-10-items
+2025-08-23 22:57:25 - Resolving conflicts in src/App.tsx for branch 306ipd-codex/add-new-products-page-with-10-items
+2025-08-23 22:57:25 - Resolving conflicts in src/routes/MarketplaceRoutes.tsx for branch 306ipd-codex/add-new-products-page-with-10-items
+2025-08-23 22:57:26 - Merge conflicts detected in 306l03-codex/fix-blank-screen-issue
+2025-08-23 22:57:26 - Resolving conflicts in README.md for branch 306l03-codex/fix-blank-screen-issue
+2025-08-23 22:57:26 - Resolving conflicts in netlify.toml for branch 306l03-codex/fix-blank-screen-issue
+2025-08-23 22:57:27 - Resolving conflicts in next.config.js for branch 306l03-codex/fix-blank-screen-issue
+2025-08-23 22:57:27 - Resolving conflicts in package.json for branch 306l03-codex/fix-blank-screen-issue
+2025-08-23 22:57:27 - Resolving conflicts in pages/_app.tsx for branch 306l03-codex/fix-blank-screen-issue
+2025-08-23 22:57:27 - Resolving conflicts in pages/_document.tsx for branch 306l03-codex/fix-blank-screen-issue
+2025-08-23 22:57:27 - Resolving conflicts in pages/index.tsx for branch 306l03-codex/fix-blank-screen-issue
+2025-08-23 22:57:27 - Resolving conflicts in pages/test.tsx for branch 306l03-codex/fix-blank-screen-issue
+2025-08-23 22:57:27 - Resolving conflicts in public/offline.html for branch 306l03-codex/fix-blank-screen-issue
+2025-08-23 22:57:27 - Resolving conflicts in public/service-worker.js for branch 306l03-codex/fix-blank-screen-issue
+2025-08-23 22:57:27 - Resolving conflicts in public/sw.js for branch 306l03-codex/fix-blank-screen-issue
+2025-08-23 22:57:27 - Resolving conflicts in src/index.css for branch 306l03-codex/fix-blank-screen-issue
+2025-08-23 22:57:27 - Resolving conflicts in src/layout/AppHeader.tsx for branch 306l03-codex/fix-blank-screen-issue
+2025-08-23 22:57:27 - Resolving conflicts in tailwind.config.js for branch 306l03-codex/fix-blank-screen-issue
+2025-08-23 22:57:28 - Merge conflicts detected in 3ycx6d-codex/implement-global-error-boundary-with-toasts
+2025-08-23 22:57:28 - Resolving conflicts in jest.config.js for branch 3ycx6d-codex/implement-global-error-boundary-with-toasts
+2025-08-23 22:57:28 - Resolving conflicts in package.json for branch 3ycx6d-codex/implement-global-error-boundary-with-toasts
+2025-08-23 22:57:28 - Resolving conflicts in src/hooks/use-toast.ts for branch 3ycx6d-codex/implement-global-error-boundary-with-toasts
+2025-08-23 22:57:28 - Resolving conflicts in src/i18n/locales/ar/translation.json for branch 3ycx6d-codex/implement-global-error-boundary-with-toasts
+2025-08-23 22:57:28 - Resolving conflicts in src/i18n/locales/en/translation.json for branch 3ycx6d-codex/implement-global-error-boundary-with-toasts
+2025-08-23 22:57:28 - Resolving conflicts in src/i18n/locales/es/translation.json for branch 3ycx6d-codex/implement-global-error-boundary-with-toasts
+2025-08-23 22:57:28 - Resolving conflicts in src/i18n/locales/pt/translation.json for branch 3ycx6d-codex/implement-global-error-boundary-with-toasts
+2025-08-23 22:57:28 - Resolving conflicts in src/main.tsx for branch 3ycx6d-codex/implement-global-error-boundary-with-toasts
+2025-08-23 22:57:28 - Resolving conflicts in src/utils/sentry.ts for branch 3ycx6d-codex/implement-global-error-boundary-with-toasts
+2025-08-23 22:57:28 - Resolving conflicts in tsconfig.json for branch 3ycx6d-codex/implement-global-error-boundary-with-toasts
+2025-08-23 22:57:29 - Merge conflicts detected in 42l7l1-codex/check-logs-and-fix-errors
+2025-08-23 22:57:29 - Resolving conflicts in package.json for branch 42l7l1-codex/check-logs-and-fix-errors
+2025-08-23 22:57:29 - Resolving conflicts in pages/404.tsx for branch 42l7l1-codex/check-logs-and-fix-errors
+2025-08-23 22:57:29 - Resolving conflicts in pages/500.tsx for branch 42l7l1-codex/check-logs-and-fix-errors
+2025-08-23 22:57:29 - Resolving conflicts in pages/_document.tsx for branch 42l7l1-codex/check-logs-and-fix-errors
+2025-08-23 22:57:29 - Resolving conflicts in pages/offline.tsx for branch 42l7l1-codex/check-logs-and-fix-errors
+2025-08-23 22:57:30 - Merge conflicts detected in 4b9zsu-codex/surface-api-errors-across-the-app
+2025-08-23 22:57:30 - Resolving conflicts in src/components/ChatAssistantTrigger.tsx for branch 4b9zsu-codex/surface-api-errors-across-the-app
+2025-08-23 22:57:30 - Resolving conflicts in src/components/QuoteRequestForm/ServiceTypeStep.tsx for branch 4b9zsu-codex/surface-api-errors-across-the-app
+2025-08-23 22:57:31 - Resolving conflicts in src/hooks/useAISearch.ts for branch 4b9zsu-codex/surface-api-errors-across-the-app
+2025-08-23 22:57:31 - Resolving conflicts in src/hooks/useApiKeys.ts for branch 4b9zsu-codex/surface-api-errors-across-the-app
+2025-08-23 22:57:31 - Resolving conflicts in src/hooks/useFraudPreventionSignup.ts for branch 4b9zsu-codex/surface-api-errors-across-the-app
+2025-08-23 22:57:31 - Resolving conflicts in src/hooks/useWebhooks.ts for branch 4b9zsu-codex/surface-api-errors-across-the-app
+2025-08-23 22:57:31 - Resolving conflicts in src/integrations/supabase/client.ts for branch 4b9zsu-codex/surface-api-errors-across-the-app
+2025-08-23 22:57:31 - Resolving conflicts in src/pages/Contact.tsx for branch 4b9zsu-codex/surface-api-errors-across-the-app
+2025-08-23 22:57:31 - Resolving conflicts in src/pages/admin/TokenManager.tsx for branch 4b9zsu-codex/surface-api-errors-across-the-app
+2025-08-23 22:57:31 - Resolving conflicts in src/utils/referralUtils.ts for branch 4b9zsu-codex/surface-api-errors-across-the-app
+2025-08-23 22:57:31 - Resolving conflicts in src/utils/tokenRewards.ts for branch 4b9zsu-codex/surface-api-errors-across-the-app
+2025-08-23 22:57:32 - Merge conflicts detected in 4cssl2-codex/fix-typescript-errors-in-components
+2025-08-23 22:57:32 - Resolving conflicts in src/types/offline-shims.d.ts for branch 4cssl2-codex/fix-typescript-errors-in-components
+2025-08-23 22:57:32 - Resolving conflicts in tsconfig.json for branch 4cssl2-codex/fix-typescript-errors-in-components
+2025-08-23 22:57:33 - Merge conflicts detected in 4fu9r9-codex/check-logs-and-fix-errors
+2025-08-23 22:57:33 - Resolving conflicts in LOGS_HEALTH_SUMMARY_2025-07-07.md for branch 4fu9r9-codex/check-logs-and-fix-errors
+2025-08-23 22:57:33 - Resolving conflicts in eslint.config.js for branch 4fu9r9-codex/check-logs-and-fix-errors
+2025-08-23 22:57:33 - Resolving conflicts in index.html for branch 4fu9r9-codex/check-logs-and-fix-errors
+2025-08-23 22:57:33 - Resolving conflicts in next-env.d.ts for branch 4fu9r9-codex/check-logs-and-fix-errors
+2025-08-23 22:57:33 - Resolving conflicts in next.config.js for branch 4fu9r9-codex/check-logs-and-fix-errors
+2025-08-23 22:57:33 - Resolving conflicts in package.json for branch 4fu9r9-codex/check-logs-and-fix-errors
+2025-08-23 22:57:33 - Resolving conflicts in pages/_document.tsx for branch 4fu9r9-codex/check-logs-and-fix-errors
+2025-08-23 22:57:33 - Resolving conflicts in pages/api/performance-metrics.ts for branch 4fu9r9-codex/check-logs-and-fix-errors
+2025-08-23 22:57:33 - Resolving conflicts in pages/blog/index.tsx for branch 4fu9r9-codex/check-logs-and-fix-errors
+2025-08-23 22:57:33 - Resolving conflicts in pages/docs/index.tsx for branch 4fu9r9-codex/check-logs-and-fix-errors
+2025-08-23 22:57:33 - Resolving conflicts in pages/index.tsx for branch 4fu9r9-codex/check-logs-and-fix-errors
+2025-08-23 22:57:33 - Resolving conflicts in pages/new-services.tsx for branch 4fu9r9-codex/check-logs-and-fix-errors
+2025-08-23 22:57:33 - Resolving conflicts in pages/offline.tsx for branch 4fu9r9-codex/check-logs-and-fix-errors
+2025-08-23 22:57:33 - Resolving conflicts in pages/search.tsx for branch 4fu9r9-codex/check-logs-and-fix-errors
+2025-08-23 22:57:33 - Resolving conflicts in pages/terms.tsx for branch 4fu9r9-codex/check-logs-and-fix-errors
+2025-08-23 22:57:33 - Resolving conflicts in src/components/ChatWidget.tsx for branch 4fu9r9-codex/check-logs-and-fix-errors
+2025-08-23 22:57:33 - Resolving conflicts in src/components/ErrorBoundary.tsx for branch 4fu9r9-codex/check-logs-and-fix-errors
+2025-08-23 22:57:33 - Resolving conflicts in src/components/auth/login/LoginForm.tsx for branch 4fu9r9-codex/check-logs-and-fix-errors
+2025-08-23 22:57:33 - Resolving conflicts in src/hooks/use-toast.ts for branch 4fu9r9-codex/check-logs-and-fix-errors
+2025-08-23 22:57:33 - Resolving conflicts in src/hooks/useApiKeys.ts for branch 4fu9r9-codex/check-logs-and-fix-errors
+2025-08-23 22:57:33 - Resolving conflicts in src/hooks/useWebhooks.ts for branch 4fu9r9-codex/check-logs-and-fix-errors
+2025-08-23 22:57:33 - Resolving conflicts in src/integrations/supabase/client.ts for branch 4fu9r9-codex/check-logs-and-fix-errors
+2025-08-23 22:57:33 - Resolving conflicts in src/pages/Cart.tsx for branch 4fu9r9-codex/check-logs-and-fix-errors
+2025-08-23 22:57:33 - Resolving conflicts in src/pages/Checkout.tsx for branch 4fu9r9-codex/check-logs-and-fix-errors
+2025-08-23 22:57:33 - Resolving conflicts in src/pages/Contact.tsx for branch 4fu9r9-codex/check-logs-and-fix-errors
+2025-08-23 22:57:34 - Resolving conflicts in src/pages/ListingDetail.tsx for branch 4fu9r9-codex/check-logs-and-fix-errors
+2025-08-23 22:57:34 - Resolving conflicts in src/pages/admin/TokenManager.tsx for branch 4fu9r9-codex/check-logs-and-fix-errors
+2025-08-23 22:57:34 - Resolving conflicts in src/serviceWorkerRegistration.ts for branch 4fu9r9-codex/check-logs-and-fix-errors
+2025-08-23 22:57:34 - Resolving conflicts in src/services/apiClient.ts for branch 4fu9r9-codex/check-logs-and-fix-errors
+2025-08-23 22:57:34 - Resolving conflicts in src/services/auth.ts for branch 4fu9r9-codex/check-logs-and-fix-errors
+2025-08-23 22:57:34 - Resolving conflicts in src/utils/profileConverter.ts for branch 4fu9r9-codex/check-logs-and-fix-errors
+2025-08-23 22:57:34 - Resolving conflicts in src/utils/sentry.ts for branch 4fu9r9-codex/check-logs-and-fix-errors
+2025-08-23 22:57:34 - Resolving conflicts in tailwind.config.js for branch 4fu9r9-codex/check-logs-and-fix-errors
+2025-08-23 22:57:34 - Resolving conflicts in tsconfig.json for branch 4fu9r9-codex/check-logs-and-fix-errors
+2025-08-23 22:57:34 - Resolving conflicts in tsconfig.tsbuildinfo for branch 4fu9r9-codex/check-logs-and-fix-errors
+2025-08-23 22:57:34 - Resolving conflicts in types/global.d.ts for branch 4fu9r9-codex/check-logs-and-fix-errors
+2025-08-23 22:57:35 - Merge conflicts detected in 4o9pcp-codex/add-test-for-failed-login-toast
+2025-08-23 22:57:35 - Resolving conflicts in package-lock.json for branch 4o9pcp-codex/add-test-for-failed-login-toast
+2025-08-23 22:57:35 - Resolving conflicts in package.json for branch 4o9pcp-codex/add-test-for-failed-login-toast
+2025-08-23 22:57:35 - Resolving conflicts in src/components/auth/login/LoginForm.tsx for branch 4o9pcp-codex/add-test-for-failed-login-toast
+2025-08-23 22:57:35 - Resolving conflicts in src/components/ui/toaster.tsx for branch 4o9pcp-codex/add-test-for-failed-login-toast
+2025-08-23 22:57:35 - Resolving conflicts in src/hooks/use-toast.ts for branch 4o9pcp-codex/add-test-for-failed-login-toast
+2025-08-23 22:57:35 - Resolving conflicts in src/services/authService.ts for branch 4o9pcp-codex/add-test-for-failed-login-toast
+2025-08-23 22:57:35 - Resolving conflicts in tests/Login.test.tsx for branch 4o9pcp-codex/add-test-for-failed-login-toast
+2025-08-23 22:57:36 - Merge conflicts detected in 4pkscj-codex/disable-theme-toggle-and-set-default-dark-theme
+2025-08-23 22:57:36 - Resolving conflicts in index.html for branch 4pkscj-codex/disable-theme-toggle-and-set-default-dark-theme
+2025-08-23 22:57:36 - Resolving conflicts in src/index.css for branch 4pkscj-codex/disable-theme-toggle-and-set-default-dark-theme
+2025-08-23 22:57:36 - Resolving conflicts in src/layout/AppHeader.tsx for branch 4pkscj-codex/disable-theme-toggle-and-set-default-dark-theme
+2025-08-23 22:57:37 - Merge conflicts detected in 4xe4ab-codex/fix--settheme--not-found-in-usetheme
+2025-08-23 22:57:37 - Resolving conflicts in src/hooks/useTheme.tsx for branch 4xe4ab-codex/fix--settheme--not-found-in-usetheme
+2025-08-23 22:57:38 - Merge conflicts detected in 51ryr1-codex/implement-eprivacy-directive-consent-banner
+2025-08-23 22:57:38 - Resolving conflicts in pages/privacy-settings.tsx for branch 51ryr1-codex/implement-eprivacy-directive-consent-banner
+2025-08-23 22:57:38 - Resolving conflicts in src/App.tsx for branch 51ryr1-codex/implement-eprivacy-directive-consent-banner
+2025-08-23 22:57:39 - Resolving conflicts in src/context/index.ts for branch 51ryr1-codex/implement-eprivacy-directive-consent-banner
+2025-08-23 22:57:40 - Merge conflicts detected in 591ea5-codex/fix-talent-profile-rendering-issues
+2025-08-23 22:57:40 - Resolving conflicts in src/components/ErrorBoundary.tsx for branch 591ea5-codex/fix-talent-profile-rendering-issues
+2025-08-23 22:57:40 - Resolving conflicts in src/components/profile/TalentProfile.tsx for branch 591ea5-codex/fix-talent-profile-rendering-issues
+2025-08-23 22:57:40 - Resolving conflicts in src/hooks/useTalentProfile.ts for branch 591ea5-codex/fix-talent-profile-rendering-issues
+2025-08-23 22:57:40 - Resolving conflicts in src/routes/TalentRoutes.tsx for branch 591ea5-codex/fix-talent-profile-rendering-issues
+2025-08-23 22:57:41 - Merge conflicts detected in 5dtq58-codex/implement-analytics-and-error-tracking
+2025-08-23 22:57:41 - Resolving conflicts in .env for branch 5dtq58-codex/implement-analytics-and-error-tracking
+2025-08-23 22:57:41 - Resolving conflicts in src/components/ErrorBoundary.tsx for branch 5dtq58-codex/implement-analytics-and-error-tracking
+2025-08-23 22:57:41 - Resolving conflicts in src/components/transactions/PaymentButton.tsx for branch 5dtq58-codex/implement-analytics-and-error-tracking
+2025-08-23 22:57:41 - Resolving conflicts in src/context/AnalyticsContext.tsx for branch 5dtq58-codex/implement-analytics-and-error-tracking
+2025-08-23 22:57:41 - Resolving conflicts in src/integrations/supabase/client.ts for branch 5dtq58-codex/implement-analytics-and-error-tracking
+2025-08-23 22:57:41 - Resolving conflicts in src/main.tsx for branch 5dtq58-codex/implement-analytics-and-error-tracking
+2025-08-23 22:57:42 - Merge conflicts detected in 5i6q3p-codex/add-i18n-support-with-next-i18next
+2025-08-23 22:57:42 - Resolving conflicts in next.config.js for branch 5i6q3p-codex/add-i18n-support-with-next-i18next
+2025-08-23 22:57:42 - Resolving conflicts in package.json for branch 5i6q3p-codex/add-i18n-support-with-next-i18next
+2025-08-23 22:57:42 - Resolving conflicts in public/locales/en-US/translation.json.backup.1755989848 for branch 5i6q3p-codex/add-i18n-support-with-next-i18next
+2025-08-23 22:57:42 - Resolving conflicts in public/locales/es-ES/translation.json.backup.1755989848 for branch 5i6q3p-codex/add-i18n-support-with-next-i18next
+2025-08-23 22:57:42 - Resolving conflicts in src/context/LanguageContext.tsx for branch 5i6q3p-codex/add-i18n-support-with-next-i18next
+2025-08-23 22:57:42 - Resolving conflicts in src/hooks/useTranslationService.ts for branch 5i6q3p-codex/add-i18n-support-with-next-i18next
+2025-08-23 22:57:42 - Resolving conflicts in src/i18n/index.ts for branch 5i6q3p-codex/add-i18n-support-with-next-i18next
+2025-08-23 22:57:42 - Resolving conflicts in src/i18n/locales/ar/translation.json for branch 5i6q3p-codex/add-i18n-support-with-next-i18next
+2025-08-23 22:57:42 - Resolving conflicts in src/i18n/locales/pt/translation.json for branch 5i6q3p-codex/add-i18n-support-with-next-i18next
+2025-08-23 22:57:42 - Resolving conflicts in src/pages/Checkout.tsx for branch 5i6q3p-codex/add-i18n-support-with-next-i18next
+2025-08-23 22:57:42 - Resolving conflicts in src/pages/Home.tsx for branch 5i6q3p-codex/add-i18n-support-with-next-i18next
+2025-08-23 22:57:42 - Resolving conflicts in src/pages/Marketplace.tsx for branch 5i6q3p-codex/add-i18n-support-with-next-i18next
+2025-08-23 22:57:43 - Merge conflicts detected in 5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
+2025-08-23 22:57:43 - Resolving conflicts in .github/workflows/blue-green-deploy.yml for branch 5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
+2025-08-23 22:57:43 - Resolving conflicts in backend/django_backend/settings.py for branch 5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
+2025-08-23 22:57:43 - Resolving conflicts in backend/django_backend/urls.py for branch 5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
+2025-08-23 22:57:43 - Resolving conflicts in backend/public_api/authentication.py for branch 5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
+2025-08-23 22:57:44 - Resolving conflicts in backend/public_api/models.py for branch 5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
+2025-08-23 22:57:44 - Resolving conflicts in backend/public_api/views.py for branch 5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
+2025-08-23 22:57:44 - Resolving conflicts in docs/Payments.md for branch 5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
+2025-08-23 22:57:44 - Resolving conflicts in docs/help/getting-started.md for branch 5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
+2025-08-23 22:57:44 - Resolving conflicts in index.html for branch 5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
+2025-08-23 22:57:44 - Resolving conflicts in package.json for branch 5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
+2025-08-23 22:57:44 - Resolving conflicts in pages/api/kb-chat.ts for branch 5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
+2025-08-23 22:57:44 - Resolving conflicts in public/service-worker.js for branch 5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
+2025-08-23 22:57:44 - Resolving conflicts in scripts/switch-netlify-site.js for branch 5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
+2025-08-23 22:57:44 - Resolving conflicts in src/App.tsx for branch 5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
+2025-08-23 22:57:44 - Resolving conflicts in src/components/DynamicListingPage.tsx for branch 5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
+2025-08-23 22:57:44 - Resolving conflicts in src/components/OfflineToast.tsx for branch 5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
+2025-08-23 22:57:44 - Resolving conflicts in src/components/ProductSubmissionForm.tsx for branch 5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
+2025-08-23 22:57:44 - Resolving conflicts in src/components/SupportChatbot.tsx for branch 5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
+2025-08-23 22:57:44 - Resolving conflicts in src/components/admin/AdminLayout.tsx for branch 5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
+2025-08-23 22:57:44 - Resolving conflicts in src/components/admin/moderation/FlaggedListingsTable.tsx for branch 5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
+2025-08-23 22:57:44 - Resolving conflicts in src/components/auth/login/LoginCard.tsx for branch 5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
+2025-08-23 22:57:44 - Resolving conflicts in src/components/profile/ContactPublisherModal.tsx for branch 5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
+2025-08-23 22:57:44 - Resolving conflicts in src/components/quote/QuoteWizard.tsx for branch 5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
+2025-08-23 22:57:44 - Resolving conflicts in src/components/talent/TalentSkeleton.tsx for branch 5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
+2025-08-23 22:57:44 - Resolving conflicts in src/components/transactions/TransactionHistory.tsx for branch 5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
+2025-08-23 22:57:44 - Resolving conflicts in src/context/CartContext.tsx for branch 5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
+2025-08-23 22:57:44 - Resolving conflicts in src/context/CommunityContext.tsx for branch 5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
+2025-08-23 22:57:44 - Resolving conflicts in src/context/index.ts for branch 5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
+2025-08-23 22:57:44 - Resolving conflicts in src/hooks/talent/useFilterTalents.ts for branch 5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
+2025-08-23 22:57:44 - Resolving conflicts in src/hooks/talent/useTalentData.ts for branch 5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
+2025-08-23 22:57:44 - Resolving conflicts in src/hooks/useFavorites.ts for branch 5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
+2025-08-23 22:57:44 - Resolving conflicts in src/hooks/useFirestoreFavorites.ts for branch 5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
+2025-08-23 22:57:44 - Resolving conflicts in src/hooks/useTalentDirectory.ts for branch 5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
+2025-08-23 22:57:44 - Resolving conflicts in src/integrations/firebase/client.ts for branch 5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
+2025-08-23 22:57:44 - Resolving conflicts in src/integrations/mailchimp/index.ts for branch 5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
+2025-08-23 22:57:44 - Resolving conflicts in src/integrations/slack/bot.ts for branch 5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
+2025-08-23 22:57:44 - Resolving conflicts in src/lib/db.ts for branch 5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
+2025-08-23 22:57:44 - Resolving conflicts in src/main.tsx for branch 5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
+2025-08-23 22:57:44 - Resolving conflicts in src/pages/Cart.tsx for branch 5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
+2025-08-23 22:57:44 - Resolving conflicts in src/pages/CommunityPage.tsx for branch 5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
+2025-08-23 22:57:44 - Resolving conflicts in src/pages/EquipmentPage.tsx for branch 5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
+2025-08-23 22:57:44 - Resolving conflicts in src/pages/Help.tsx for branch 5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
+2025-08-23 22:57:44 - Resolving conflicts in src/pages/Orders.tsx for branch 5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
+2025-08-23 22:57:44 - Resolving conflicts in src/pages/ServicesPage.tsx for branch 5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
+2025-08-23 22:57:44 - Resolving conflicts in src/pages/Signup.tsx for branch 5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
+2025-08-23 22:57:44 - Resolving conflicts in src/pages/SimpleSignup.tsx for branch 5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
+2025-08-23 22:57:44 - Resolving conflicts in src/pages/TalentDirectory.tsx for branch 5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
+2025-08-23 22:57:44 - Resolving conflicts in src/pages/admin/ListingModeration.tsx for branch 5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
+2025-08-23 22:57:44 - Resolving conflicts in src/routes/AdminRoutes.tsx for branch 5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
+2025-08-23 22:57:44 - Resolving conflicts in src/routes/CommunityRoutes.tsx for branch 5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
+2025-08-23 22:57:44 - Resolving conflicts in src/services/apiClient.ts for branch 5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
+2025-08-23 22:57:44 - Resolving conflicts in src/services/escrowService.ts for branch 5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
+2025-08-23 22:57:44 - Resolving conflicts in src/types/vite-env.d.ts for branch 5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
+2025-08-23 22:57:44 - Resolving conflicts in src/utils/retry.ts for branch 5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
+2025-08-23 22:57:44 - Resolving conflicts in src/vite-env.d.ts for branch 5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
+2025-08-23 22:57:44 - Resolving conflicts in supabase/functions/escrow-service/index.ts for branch 5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
+2025-08-23 22:57:44 - Resolving conflicts in tests/Accessibility.test.tsx for branch 5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
+2025-08-23 22:57:44 - Resolving conflicts in tests/QuoteWizard.test.tsx for branch 5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
+2025-08-23 22:57:44 - Resolving conflicts in workbox-config.js for branch 5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
+2025-08-23 22:57:45 - Merge conflicts detected in 5s5bm5-codex/introduce-automated-testing-with-jest-and-cypress
+2025-08-23 22:57:45 - Resolving conflicts in .github/workflows/test.yml for branch 5s5bm5-codex/introduce-automated-testing-with-jest-and-cypress
+2025-08-23 22:57:45 - Resolving conflicts in README.md for branch 5s5bm5-codex/introduce-automated-testing-with-jest-and-cypress
+2025-08-23 22:57:46 - Resolving conflicts in cypress.config.ts for branch 5s5bm5-codex/introduce-automated-testing-with-jest-and-cypress
+2025-08-23 22:57:46 - Resolving conflicts in cypress/e2e/criticalPaths.cy.ts for branch 5s5bm5-codex/introduce-automated-testing-with-jest-and-cypress
+2025-08-23 22:57:46 - Resolving conflicts in cypress/support/e2e.ts for branch 5s5bm5-codex/introduce-automated-testing-with-jest-and-cypress
+2025-08-23 22:57:46 - Resolving conflicts in jest.config.js for branch 5s5bm5-codex/introduce-automated-testing-with-jest-and-cypress
+2025-08-23 22:57:46 - Resolving conflicts in package.json for branch 5s5bm5-codex/introduce-automated-testing-with-jest-and-cypress
+2025-08-23 22:57:46 - Resolving conflicts in tests/EquipmentDetail.test.tsx for branch 5s5bm5-codex/introduce-automated-testing-with-jest-and-cypress
+2025-08-23 22:57:46 - Resolving conflicts in tests/LoginForm.test.tsx for branch 5s5bm5-codex/introduce-automated-testing-with-jest-and-cypress
+2025-08-23 22:57:46 - Resolving conflicts in tests/MarketplaceCard.test.tsx for branch 5s5bm5-codex/introduce-automated-testing-with-jest-and-cypress
+2025-08-23 22:57:46 - Resolving conflicts in tests/RegistrationForm.test.tsx for branch 5s5bm5-codex/introduce-automated-testing-with-jest-and-cypress
+2025-08-23 22:57:46 - Resolving conflicts in tests/__mocks__/server.ts for branch 5s5bm5-codex/introduce-automated-testing-with-jest-and-cypress
+2025-08-23 22:57:46 - Resolving conflicts in tests/jest.setup.ts for branch 5s5bm5-codex/introduce-automated-testing-with-jest-and-cypress
+2025-08-23 22:57:47 - Merge conflicts detected in 5smo5s-codex/check-logs-and-fix-errors
+2025-08-23 22:57:47 - Resolving conflicts in src/pages/Marketplace.tsx for branch 5smo5s-codex/check-logs-and-fix-errors
+2025-08-23 22:57:47 - Resolving conflicts in src/pages/SimpleSignup.tsx for branch 5smo5s-codex/check-logs-and-fix-errors
+2025-08-23 22:57:47 - Resolving conflicts in tsconfig.tsbuildinfo for branch 5smo5s-codex/check-logs-and-fix-errors
+2025-08-23 22:57:47 - Resolving conflicts in types/supabase-ssr.d.ts for branch 5smo5s-codex/check-logs-and-fix-errors
+2025-08-23 22:57:49 - Merge conflicts detected in 5usi8s-codex/debug-persistent-login-failure
+2025-08-23 22:57:49 - Resolving conflicts in pages/talent/[id].tsx for branch 5usi8s-codex/debug-persistent-login-failure
+2025-08-23 22:57:49 - Resolving conflicts in src/lib/axios.ts for branch 5usi8s-codex/debug-persistent-login-failure
+2025-08-23 22:57:49 - Resolving conflicts in src/services/authService.ts for branch 5usi8s-codex/debug-persistent-login-failure
+2025-08-23 22:57:50 - Merge conflicts detected in 5xrg7t-codex/fix-app-loading-blank-screen
+2025-08-23 22:57:50 - Resolving conflicts in next.config.js for branch 5xrg7t-codex/fix-app-loading-blank-screen
+2025-08-23 22:57:51 - Merge conflicts detected in 5yaxyc-codex/implement-wishlist-functionality
+2025-08-23 22:57:51 - Resolving conflicts in .npmrc for branch 5yaxyc-codex/implement-wishlist-functionality
+2025-08-23 22:57:51 - Resolving conflicts in package.json for branch 5yaxyc-codex/implement-wishlist-functionality
+2025-08-23 22:57:51 - Resolving conflicts in pages/404.tsx for branch 5yaxyc-codex/implement-wishlist-functionality
+2025-08-23 22:57:51 - Resolving conflicts in src/App.tsx for branch 5yaxyc-codex/implement-wishlist-functionality
+2025-08-23 22:57:51 - Resolving conflicts in src/components/ProductListingCard.tsx for branch 5yaxyc-codex/implement-wishlist-functionality
+2025-08-23 22:57:51 - Resolving conflicts in src/components/talent/TalentCard.tsx for branch 5yaxyc-codex/implement-wishlist-functionality
+2025-08-23 22:57:51 - Resolving conflicts in src/main.tsx for branch 5yaxyc-codex/implement-wishlist-functionality
+2025-08-23 22:57:51 - Resolving conflicts in src/pages/Wishlist.tsx for branch 5yaxyc-codex/implement-wishlist-functionality
+2025-08-23 22:57:51 - Resolving conflicts in src/store/wishlistSlice.ts for branch 5yaxyc-codex/implement-wishlist-functionality
+2025-08-23 22:57:52 - Merge conflicts detected in 63i3ty-codex/fix-talent-profile-rendering-issues
+2025-08-23 22:57:52 - Resolving conflicts in src/components/ErrorBoundary.tsx for branch 63i3ty-codex/fix-talent-profile-rendering-issues
+2025-08-23 22:57:53 - Merge conflicts detected in 6v4ctq-codex/fix-link-under-register-form
+2025-08-23 22:57:53 - Resolving conflicts in src/mobile/components/onboarding/SignUpForm.tsx for branch 6v4ctq-codex/fix-link-under-register-form
+2025-08-23 22:57:54 - Merge conflicts detected in 6xgubs-codex/fix-blank-screen-issue
+2025-08-23 22:57:54 - Resolving conflicts in pages/_document.tsx for branch 6xgubs-codex/fix-blank-screen-issue
+2025-08-23 22:57:55 - Merge conflicts detected in 74tfm8-codex/implement-instant-messaging-for-negotiations
+2025-08-23 22:57:55 - Resolving conflicts in docs/InstantMessaging.md for branch 74tfm8-codex/implement-instant-messaging-for-negotiations
+2025-08-23 22:57:55 - Resolving conflicts in package.json for branch 74tfm8-codex/implement-instant-messaging-for-negotiations
+2025-08-23 22:57:55 - Resolving conflicts in pages/api/socket.ts for branch 74tfm8-codex/implement-instant-messaging-for-negotiations
+2025-08-23 22:57:55 - Resolving conflicts in src/components/ChatWidget.tsx for branch 74tfm8-codex/implement-instant-messaging-for-negotiations
+2025-08-23 22:57:55 - Resolving conflicts in src/index.css for branch 74tfm8-codex/implement-instant-messaging-for-negotiations
+2025-08-23 22:57:56 - Merge conflicts detected in 75rlpk-codex/fix-modulenamemapper-configuration-for-tests
+2025-08-23 22:57:57 - Resolving conflicts in jest.config.js for branch 75rlpk-codex/fix-modulenamemapper-configuration-for-tests
+2025-08-23 22:57:58 - Merge conflicts detected in 7dxqey-codex/fix-missing-product-export-from-@prisma/client
+2025-08-23 22:57:58 - Resolving conflicts in pages/api/products/[productId]/details.ts for branch 7dxqey-codex/fix-missing-product-export-from-@prisma/client
+2025-08-23 22:57:58 - Resolving conflicts in pages/api/products/index.ts for branch 7dxqey-codex/fix-missing-product-export-from-@prisma/client
+2025-08-23 22:57:58 - Resolving conflicts in pages/marketplace/listing/[slug].tsx for branch 7dxqey-codex/fix-missing-product-export-from-@prisma/client
+2025-08-23 22:57:58 - Resolving conflicts in src/types/product.ts for branch 7dxqey-codex/fix-missing-product-export-from-@prisma/client
+2025-08-23 22:57:59 - Merge conflicts detected in 7fnoko-codex/fix-client-side-rendering-and-javascript-errors
+2025-08-23 22:57:59 - Resolving conflicts in index.html for branch 7fnoko-codex/fix-client-side-rendering-and-javascript-errors
+2025-08-23 22:57:59 - Resolving conflicts in package.json for branch 7fnoko-codex/fix-client-side-rendering-and-javascript-errors
+2025-08-23 22:57:59 - Resolving conflicts in scripts/prerender.js for branch 7fnoko-codex/fix-client-side-rendering-and-javascript-errors
+2025-08-23 22:57:59 - Resolving conflicts in src/main.tsx for branch 7fnoko-codex/fix-client-side-rendering-and-javascript-errors
+2025-08-23 22:58:00 - Merge conflicts detected in 7ieis8-codex/add-error-handling-and-fallback-data
+2025-08-23 22:58:00 - Resolving conflicts in src/pages/ServicesPage.tsx for branch 7ieis8-codex/add-error-handling-and-fallback-data
+2025-08-23 22:58:01 - Merge conflicts detected in 7wzx4b-codex/fix-ts2554-error-in-disputeform
+2025-08-23 22:58:01 - Resolving conflicts in src/components/disputes/DisputeForm.tsx for branch 7wzx4b-codex/fix-ts2554-error-in-disputeform
+2025-08-23 22:58:02 - Merge conflicts detected in 7yfp2f-codex/implement-global-error-boundary-with-toasts
+2025-08-23 22:58:02 - Resolving conflicts in package.json for branch 7yfp2f-codex/implement-global-error-boundary-with-toasts
+2025-08-23 22:58:02 - Resolving conflicts in src/hooks/use-toast.ts for branch 7yfp2f-codex/implement-global-error-boundary-with-toasts
+2025-08-23 22:58:02 - Resolving conflicts in src/i18n/locales/en/translation.json for branch 7yfp2f-codex/implement-global-error-boundary-with-toasts
+2025-08-23 22:58:02 - Resolving conflicts in src/i18n/locales/es/translation.json for branch 7yfp2f-codex/implement-global-error-boundary-with-toasts
+2025-08-23 22:58:02 - Resolving conflicts in src/main.tsx for branch 7yfp2f-codex/implement-global-error-boundary-with-toasts
+2025-08-23 22:58:02 - Resolving conflicts in src/utils/sentry.ts for branch 7yfp2f-codex/implement-global-error-boundary-with-toasts
+2025-08-23 22:58:02 - Resolving conflicts in tsconfig.json for branch 7yfp2f-codex/implement-global-error-boundary-with-toasts
+2025-08-23 22:58:03 - Merge conflicts detected in 7yshjv-codex/implement-eprivacy-directive-consent-banner
+2025-08-23 22:58:03 - Resolving conflicts in package.json for branch 7yshjv-codex/implement-eprivacy-directive-consent-banner
+2025-08-23 22:58:03 - Resolving conflicts in src/App.tsx for branch 7yshjv-codex/implement-eprivacy-directive-consent-banner
+2025-08-23 22:58:03 - Resolving conflicts in src/context/index.ts for branch 7yshjv-codex/implement-eprivacy-directive-consent-banner
+2025-08-23 22:58:04 - Merge conflicts detected in 85f672-codex/implement-wishlist-functionality
+2025-08-23 22:58:04 - Resolving conflicts in package.json for branch 85f672-codex/implement-wishlist-functionality
+2025-08-23 22:58:04 - Resolving conflicts in pages/404.tsx for branch 85f672-codex/implement-wishlist-functionality
+2025-08-23 22:58:04 - Resolving conflicts in src/App.tsx for branch 85f672-codex/implement-wishlist-functionality
+2025-08-23 22:58:04 - Resolving conflicts in src/main.tsx for branch 85f672-codex/implement-wishlist-functionality
+2025-08-23 22:58:04 - Resolving conflicts in src/pages/Wishlist.tsx for branch 85f672-codex/implement-wishlist-functionality
+2025-08-23 22:58:05 - Merge conflicts detected in 87zh7m-codex/fix-netlify-build-failures-due-to-typescript-errors
+2025-08-23 22:58:05 - Resolving conflicts in src/components/ChatWidget.tsx for branch 87zh7m-codex/fix-netlify-build-failures-due-to-typescript-errors
+2025-08-23 22:58:05 - Resolving conflicts in src/pages/OrderConfirmation.tsx for branch 87zh7m-codex/fix-netlify-build-failures-due-to-typescript-errors
+2025-08-23 22:58:05 - Resolving conflicts in src/pages/WhitepaperViewPage.tsx for branch 87zh7m-codex/fix-netlify-build-failures-due-to-typescript-errors
+2025-08-23 22:58:05 - Resolving conflicts in src/types/react-router-dom.d.ts for branch 87zh7m-codex/fix-netlify-build-failures-due-to-typescript-errors
+2025-08-23 22:58:05 - Resolving conflicts in src/types/socket.io.d.ts for branch 87zh7m-codex/fix-netlify-build-failures-due-to-typescript-errors
+2025-08-23 22:58:06 - Resolving conflicts in tsconfig.json for branch 87zh7m-codex/fix-netlify-build-failures-due-to-typescript-errors
+2025-08-23 22:58:07 - Merge conflicts detected in 8aozst-codex/implement-cart-functionality-with-react-context
+2025-08-23 22:58:07 - Resolving conflicts in src/App.tsx for branch 8aozst-codex/implement-cart-functionality-with-react-context
+2025-08-23 22:58:07 - Resolving conflicts in src/components/header/MobileBottomNav.tsx for branch 8aozst-codex/implement-cart-functionality-with-react-context
+2025-08-23 22:58:07 - Resolving conflicts in src/context/CartContext.tsx for branch 8aozst-codex/implement-cart-functionality-with-react-context
+2025-08-23 22:58:07 - Resolving conflicts in src/context/index.ts for branch 8aozst-codex/implement-cart-functionality-with-react-context
+2025-08-23 22:58:07 - Resolving conflicts in src/layout/MainNavigation.tsx for branch 8aozst-codex/implement-cart-functionality-with-react-context
+2025-08-23 22:58:07 - Resolving conflicts in src/main.tsx for branch 8aozst-codex/implement-cart-functionality-with-react-context
+2025-08-23 22:58:07 - Resolving conflicts in src/pages/NewProductsPage.tsx for branch 8aozst-codex/implement-cart-functionality-with-react-context
+2025-08-23 22:58:07 - Resolving conflicts in src/pages/ProductPage.tsx for branch 8aozst-codex/implement-cart-functionality-with-react-context
+2025-08-23 22:58:07 - Resolving conflicts in src/types/cart.ts for branch 8aozst-codex/implement-cart-functionality-with-react-context
+2025-08-23 22:58:08 - Merge conflicts detected in 8arrdw-codex/centralize-fetch-error-handling
+2025-08-23 22:58:08 - Resolving conflicts in package.json for branch 8arrdw-codex/centralize-fetch-error-handling
+2025-08-23 22:58:08 - Resolving conflicts in src/components/ChatAssistantTrigger.tsx for branch 8arrdw-codex/centralize-fetch-error-handling
+2025-08-23 22:58:08 - Resolving conflicts in src/components/ErrorBoundary.tsx for branch 8arrdw-codex/centralize-fetch-error-handling
+2025-08-23 22:58:08 - Resolving conflicts in src/components/FooterNewsletter.jsx for branch 8arrdw-codex/centralize-fetch-error-handling
+2025-08-23 22:58:08 - Resolving conflicts in src/components/support/ChatBotPanel.tsx for branch 8arrdw-codex/centralize-fetch-error-handling
+2025-08-23 22:58:08 - Resolving conflicts in src/hooks/useAISearch.ts for branch 8arrdw-codex/centralize-fetch-error-handling
+2025-08-23 22:58:08 - Resolving conflicts in src/hooks/useFraudPreventionSignup.ts for branch 8arrdw-codex/centralize-fetch-error-handling
+2025-08-23 22:58:08 - Resolving conflicts in src/hooks/useWebhooks.ts for branch 8arrdw-codex/centralize-fetch-error-handling
+2025-08-23 22:58:08 - Resolving conflicts in src/layout/AppLayout.tsx for branch 8arrdw-codex/centralize-fetch-error-handling
+2025-08-23 22:58:08 - Resolving conflicts in src/pages/Checkout.tsx for branch 8arrdw-codex/centralize-fetch-error-handling
+2025-08-23 22:58:08 - Resolving conflicts in src/pages/Contact.tsx for branch 8arrdw-codex/centralize-fetch-error-handling
+2025-08-23 22:58:08 - Resolving conflicts in src/pages/EquipmentDetail.tsx for branch 8arrdw-codex/centralize-fetch-error-handling
+2025-08-23 22:58:08 - Resolving conflicts in src/pages/admin/TokenManager.tsx for branch 8arrdw-codex/centralize-fetch-error-handling
+2025-08-23 22:58:08 - Resolving conflicts in src/services/auth.ts for branch 8arrdw-codex/centralize-fetch-error-handling
+2025-08-23 22:58:08 - Resolving conflicts in src/services/authService.ts for branch 8arrdw-codex/centralize-fetch-error-handling
+2025-08-23 22:58:08 - Resolving conflicts in src/utils/referralUtils.ts for branch 8arrdw-codex/centralize-fetch-error-handling
+2025-08-23 22:58:08 - Resolving conflicts in src/utils/tokenRewards.ts for branch 8arrdw-codex/centralize-fetch-error-handling
+2025-08-23 22:58:09 - Merge conflicts detected in 8axt14-codex/add-error-handling-and-fallback-data
+2025-08-23 22:58:09 - Resolving conflicts in src/pages/ServicesPage.tsx for branch 8axt14-codex/add-error-handling-and-fallback-data
+2025-08-23 22:58:10 - Merge conflicts detected in 8h6b38-codex/fix-typescript-module-and-type-errors
+2025-08-23 22:58:10 - Resolving conflicts in src/components/profile/TalentOnboardingForm.tsx for branch 8h6b38-codex/fix-typescript-module-and-type-errors
+2025-08-23 22:58:10 - Resolving conflicts in src/components/ui/input-otp.tsx for branch 8h6b38-codex/fix-typescript-module-and-type-errors
+2025-08-23 22:58:10 - Resolving conflicts in src/types/external-modules.d.ts for branch 8h6b38-codex/fix-typescript-module-and-type-errors
+2025-08-23 22:58:11 - Merge conflicts detected in 8k1pqw-codex/render-full-profile-on-click
+2025-08-23 22:58:11 - Resolving conflicts in playwright.config.ts for branch 8k1pqw-codex/render-full-profile-on-click
+2025-08-23 22:58:12 - Merge conflicts detected in 8z9e37-codex/implement-light/dark-theme-with-persistence
+2025-08-23 22:58:12 - Resolving conflicts in src/App.tsx for branch 8z9e37-codex/implement-light/dark-theme-with-persistence
+2025-08-23 22:58:12 - Resolving conflicts in src/context/ThemeContext.tsx for branch 8z9e37-codex/implement-light/dark-theme-with-persistence
+2025-08-23 22:58:12 - Resolving conflicts in tailwind.config.js for branch 8z9e37-codex/implement-light/dark-theme-with-persistence
+2025-08-23 22:58:12 - Resolving conflicts in tailwind.config.ts for branch 8z9e37-codex/implement-light/dark-theme-with-persistence
+2025-08-23 22:58:13 - Merge conflicts detected in 8ztzgg-codex/add-i18n-support-with-next-i18next
+2025-08-23 22:58:13 - Resolving conflicts in next.config.js for branch 8ztzgg-codex/add-i18n-support-with-next-i18next
+2025-08-23 22:58:13 - Resolving conflicts in package.json for branch 8ztzgg-codex/add-i18n-support-with-next-i18next
+2025-08-23 22:58:13 - Resolving conflicts in public/locales/en-US/common.json for branch 8ztzgg-codex/add-i18n-support-with-next-i18next
+2025-08-23 22:58:13 - Resolving conflicts in public/locales/es-ES/common.json for branch 8ztzgg-codex/add-i18n-support-with-next-i18next
+2025-08-23 22:58:13 - Resolving conflicts in src/context/LanguageContext.tsx for branch 8ztzgg-codex/add-i18n-support-with-next-i18next
+2025-08-23 22:58:13 - Resolving conflicts in src/i18n/locales/ar/translation.json for branch 8ztzgg-codex/add-i18n-support-with-next-i18next
+2025-08-23 22:58:13 - Resolving conflicts in src/i18n/locales/pt/translation.json for branch 8ztzgg-codex/add-i18n-support-with-next-i18next
+2025-08-23 22:58:13 - Resolving conflicts in src/pages/Marketplace.tsx for branch 8ztzgg-codex/add-i18n-support-with-next-i18next
+2025-08-23 22:58:14 - Merge conflicts detected in 92kxb3-codex/populate-forum-category-with-posts
+2025-08-23 22:58:14 - Resolving conflicts in pages/community/[slug].tsx for branch 92kxb3-codex/populate-forum-category-with-posts
+2025-08-23 22:58:15 - Resolving conflicts in src/types/external-modules.d.ts for branch 92kxb3-codex/populate-forum-category-with-posts
+2025-08-23 22:58:16 - Merge conflicts detected in 96xhsm-codex/fix-accessibility-issues
+2025-08-23 22:58:16 - Resolving conflicts in pages/deploy/genesis.tsx for branch 96xhsm-codex/fix-accessibility-issues
+2025-08-23 22:58:16 - Resolving conflicts in src/pages/features/AIPoweredContent.tsx for branch 96xhsm-codex/fix-accessibility-issues
+2025-08-23 22:58:16 - Resolving conflicts in src/pages/features/AdminDashboard.tsx for branch 96xhsm-codex/fix-accessibility-issues
+2025-08-23 22:58:16 - Resolving conflicts in src/pages/features/Ecommerce.tsx for branch 96xhsm-codex/fix-accessibility-issues
+2025-08-23 22:58:16 - Resolving conflicts in src/pages/features/InstantMessaging.tsx for branch 96xhsm-codex/fix-accessibility-issues
+2025-08-23 22:58:16 - Resolving conflicts in src/pages/features/Integrations.tsx for branch 96xhsm-codex/fix-accessibility-issues
+2025-08-23 22:58:16 - Resolving conflicts in src/pages/features/Internationalization.tsx for branch 96xhsm-codex/fix-accessibility-issues
+2025-08-23 22:58:16 - Resolving conflicts in src/pages/features/Search.tsx for branch 96xhsm-codex/fix-accessibility-issues
+2025-08-23 22:58:16 - Resolving conflicts in src/pages/features/TalentMarketplace.tsx for branch 96xhsm-codex/fix-accessibility-issues
+2025-08-23 22:58:17 - Merge conflicts detected in 9kvoyx-codex/fix-client-side-rendering-and-javascript-errors
+2025-08-23 22:58:17 - Resolving conflicts in scripts/package.json for branch 9kvoyx-codex/fix-client-side-rendering-and-javascript-errors
+2025-08-23 22:58:17 - Resolving conflicts in scripts/prerender.js for branch 9kvoyx-codex/fix-client-side-rendering-and-javascript-errors
+2025-08-23 22:58:17 - Resolving conflicts in src/main.tsx for branch 9kvoyx-codex/fix-client-side-rendering-and-javascript-errors
+2025-08-23 22:58:18 - Merge conflicts detected in 9lfw2u-codex/render-filled-stars-for-ratings
+2025-08-23 22:58:18 - Resolving conflicts in src/components/ListingScoreCard.tsx for branch 9lfw2u-codex/render-filled-stars-for-ratings
+2025-08-23 22:58:18 - Resolving conflicts in src/components/ProductListingCard.tsx for branch 9lfw2u-codex/render-filled-stars-for-ratings
+2025-08-23 22:58:18 - Resolving conflicts in src/pages/EquipmentDetail.tsx for branch 9lfw2u-codex/render-filled-stars-for-ratings
+2025-08-23 22:58:18 - Resolving conflicts in src/pages/ListingDetail.tsx for branch 9lfw2u-codex/render-filled-stars-for-ratings
+2025-08-23 22:58:19 - Merge conflicts detected in 9llxiv-codex/implement-analytics-and-error-tracking
+2025-08-23 22:58:19 - Resolving conflicts in src/components/ErrorBoundary.tsx for branch 9llxiv-codex/implement-analytics-and-error-tracking
+2025-08-23 22:58:19 - Resolving conflicts in src/components/transactions/PaymentButton.tsx for branch 9llxiv-codex/implement-analytics-and-error-tracking
+2025-08-23 22:58:19 - Resolving conflicts in src/main.tsx for branch 9llxiv-codex/implement-analytics-and-error-tracking
+2025-08-23 22:58:20 - Merge conflicts detected in 9pfskl-codex/check-logs-and-fix-errors
+2025-08-23 22:58:20 - Resolving conflicts in package.json for branch 9pfskl-codex/check-logs-and-fix-errors
+2025-08-23 22:58:21 - Merge conflicts detected in 9qozr5-codex/implement-light/dark-theme-with-persistence
+2025-08-23 22:58:21 - Resolving conflicts in src/context/ThemeContext.tsx for branch 9qozr5-codex/implement-light/dark-theme-with-persistence
+2025-08-23 22:58:23 - Merge conflicts detected in 9zcb49-codex/fix-npm-eio-error-during-install
+2025-08-23 22:58:23 - Resolving conflicts in setup.sh for branch 9zcb49-codex/fix-npm-eio-error-during-install
+2025-08-23 22:58:24 - Merge conflicts detected in a12zhz-codex/support-metric--imperial-units
+2025-08-23 22:58:24 - Resolving conflicts in api/shipping-rates.js for branch a12zhz-codex/support-metric--imperial-units
+2025-08-23 22:58:24 - Resolving conflicts in src/components/CheckoutShippingOptions.tsx for branch a12zhz-codex/support-metric--imperial-units
+2025-08-23 22:58:24 - Resolving conflicts in src/main.tsx for branch a12zhz-codex/support-metric--imperial-units
+2025-08-23 22:58:24 - Resolving conflicts in src/pages/Checkout.tsx for branch a12zhz-codex/support-metric--imperial-units
+2025-08-23 22:58:24 - Resolving conflicts in src/pages/EquipmentDetail.tsx for branch a12zhz-codex/support-metric--imperial-units

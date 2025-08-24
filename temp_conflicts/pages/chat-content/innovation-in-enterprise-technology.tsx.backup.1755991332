@@ -1,0 +1,1 @@
+export default function InnovationEnterpriseTechChat() { return <div className="py-12">Innovation in enterprise technology.</div>; }

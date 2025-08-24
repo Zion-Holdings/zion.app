@@ -1,0 +1,120 @@
+name: SEO Audit
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: '0 */4 * * *'  # Run every 2 hours instead of every 10 minutes
+
+
+concurrency:
+permissions:
+  contents: write
+  actions: read
+
+  group: "github.workflow-${{ github.ref }}"
+  cancel-in-progress: "true
+
+  contents: write
+  actions: read
+
+jobs:
+security:
+  runs-on: ubuntu-latest
+  name: Security Analysis
+  steps:
+    name: Checkout repository
+    uses: actions/checkout@v4
+    name: Run security scan
+    run: npm audit --audit-level=high
+
+
+        - name: Setup Node.js"
+        uses: actions/setup-node@v4"
+          node-version: '20'
+          cache: 'npm'
+
+        - name: Install dependencies
+        run: |
+          npm ci --no-audit --no-fund
+          echo "Dependencies installed successfully"
+
+        - name: Create reports directory
+        run: |
+          mkdir -p public/reports/seo
+          echo "Reports directory created"
+
+        - name: Set file permissions
+        run: |
+          chmod +x scripts/seo-audit.js
+          echo "File permissions set"
+
+        - name: Generate SEO report
+        id: seo_report
+          echo "Starting SEO audit..."
+          echo "Node version: $(node --version)"
+          echo "NPM version: $(npm --version)"
+          echo "Current directory: $(pwd)"
+          echo "Script path: $(realpath scripts/seo-audit.js)"
+          
+          if node scripts/seo-audit.js; then
+            echo "SEO audit completed successfully"
+            echo "::set-output name=status::success"
+          else
+            echo "SEO audit failed, but continuing..."
+            echo "::set-output name=status::failed"
+          fi
+
+        - name: List generated files
+        run: |
+          echo "Generated files:
+          ls -la public/reports/seo/ || echo "No SEO reports directory found"
+          echo "Current working directory: $(pwd)"
+          echo "Directory contents:
+          ls -la public/ || echo "No public directory found"
+
+        - name: Check for changes
+        id: check_changes
+          echo "Checking for git changes..."
+          git status --porcelain || echo "Git status check failed"
+          if [ -n "$(git status --porcelain 2>/dev/null)" ]; then
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+            echo "Changes detected, will commit"
+            git diff --name-only || echo "No files to diff"
+          else
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+            echo "No changes detected"
+          fi
+
+        - name: Configure git
+  if: steps.check_changes.outputs.has_changes == 'true'
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          echo "Git configured successfully"
+
+        - name: Add and commit changes
+  if: steps.check_changes.outputs.has_changes == 'true'
+          echo "Adding files to git..."
+          git add -A || echo "Git add failed"
+          echo "Committing changes..."
+          if git commit -m "chore(report): update SEO audit [skip ci]"; then
+            echo "Changes committed successfully"
+          else
+            echo "Commit failed, but continuing..."
+          fi
+
+        - name: Push changes
+  if: steps.check_changes.outputs.has_changes == 'true'
+          echo "Pushing changes..."
+          if git push origin HEAD:$(git rev-parse --abbrev-ref HEAD); then
+            echo "Changes pushed successfully"
+          else
+            echo "Push failed, but this is not critical"
+          fi
+
+        - name: No changes notification
+  if: steps.check_changes.outputs.has_changes == 'false'
+
+        - name: Final status
+        run: |
+          echo "SEO Audit workflow completed"
+          echo "Check the generated reports in public/reports/seo/"

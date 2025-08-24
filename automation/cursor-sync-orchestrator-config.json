@@ -1,0 +1,93 @@
+{
+  "enabled": true,
+  "syncInterval": 60000,
+  "maxConcurrentSyncs": 1,
+  "conflictResolution": "auto",
+  "enableNotifications": true,
+  "enableMetrics": true,
+  "syncTimeout": 30000,
+  "retryAttempts": 3,
+  "retryDelay": 5000,
+  "computerId": "auto-generated",
+  "centralRepository": "origin",
+  "branch": "main",
+  "syncStrategy": "pull-first",
+  "conflictHandling": {
+    "strategy": "reset",
+    "backupBeforeReset": true,
+    "notifyOnConflict": true
+  },
+  "filePatterns": {
+    "include": [
+      "src/**/*",
+      "pages/**/*",
+      "components/**/*",
+      "styles/**/*",
+      "public/**/*",
+      "automation/**/*",
+      "*.json",
+      "*.md",
+      "*.ts",
+      "*.tsx",
+      "*.js",
+      "*.jsx",
+      "*.css",
+      "*.scss",
+      "*.html",
+      "*.py",
+      "*.sh"
+    ],
+    "exclude": [
+      "node_modules/**",
+      ".next/**",
+      "dist/**",
+      "build/**",
+      ".git/**",
+      "*.log",
+      "*.tmp",
+      "*.cache",
+      "coverage/**",
+      "cypress/videos/**",
+      "cypress/screenshots/**",
+      "playwright-logs/**",
+      "test-results/**",
+      "backups/**",
+      "temp/**",
+      "logs/**"
+    ]
+  },
+  "monitoring": {
+    "enabled": true,
+    "healthCheckInterval": 300000,
+    "metricsCollection": true,
+    "alertThresholds": {
+      "syncFailureRate": 0.1,
+      "conflictRate": 0.05,
+      "maxSyncTime": 60000
+    }
+  },
+  "notifications": {
+    "enabled": true,
+    "slack": {
+      "enabled": false,
+      "webhook": ""
+    },
+    "email": {
+      "enabled": false,
+      "recipients": []
+    },
+    "desktop": {
+      "enabled": true,
+      "showSuccess": false,
+      "showErrors": true,
+      "showConflicts": true
+    }
+  },
+  "logging": {
+    "level": "info",
+    "maxLogSize": "10MB",
+    "maxLogFiles": 5,
+    "enableConsole": true,
+    "enableFile": true
+  }
+} 

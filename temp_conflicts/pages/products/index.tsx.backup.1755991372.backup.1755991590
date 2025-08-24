@@ -1,0 +1,11 @@
+export default function Products() { return <div className="p-8">Products</div>; }
+=======
+import React from 'react';
+
+export default function ProductsIndexPage() {
+  return <div>Products</div>;
+}
+=======
+export default function Products(){
+  return <div style={{padding:20}}>Products</div>
+}

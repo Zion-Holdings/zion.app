@@ -1,0 +1,138 @@
+# Page snapshot
+
+```yaml
+- banner:
+  - link "Skip to content":
+    - /url: "#main-content"
+  - navigation:
+    - link "Zion":
+      - /url: /
+    - text: Autonomous Cloud Automations
+    - link "Landing":
+      - /url: /landing/
+    - link "Explore":
+      - /url: /explore/
+    - link "Services":
+      - /url: /services/
+    - link "Automations":
+      - /url: /automation/
+    - link "Reports":
+      - /url: /reports/
+    - link "Updates":
+      - /url: /newsroom/
+    - link "Search":
+      - /url: /search/
+    - link "Get Started":
+      - /url: /main/front/#features
+- main:
+  - main:
+    - heading "Autonomous Front Systems" [level=1]
+    - paragraph: AI-powered automation orchestrating continuous content generation, site optimization, and intelligent workflows.
+    - heading "Auto‑Promoted Features" [level=2]
+    - paragraph: Continuously curated promos linking to live hubs, reports, and docs.
+    - link "Automation Hub Live agents & workflows Open":
+      - /url: /automation/
+    - link "Site Health A11y, performance, links Open":
+      - /url: /site-health/
+    - link "Newsroom Latest autonomous updates Open":
+      - /url: /newsroom/
+    - link "404 Explore more Open":
+      - /url: /404/
+    - link "500 Explore more Open":
+      - /url: /500/
+    - link "About Explore more Open":
+      - /url: /about/
+    - link "Api Documentation Explore more Open":
+      - /url: /api-documentation/
+    - link "Automation Health Explore more Open":
+      - /url: /automation-health/
+    - link "Blog Explore more Open":
+      - /url: /blog/
+    - link "Component Library Explore more Open":
+      - /url: /component-library/
+    - link "Contact Explore more Open":
+      - /url: /contact/
+    - link "Content Hub Explore more Open":
+      - /url: /content-hub/
+    - link "Discover Explore more Open":
+      - /url: /discover/
+    - link "Enhanced Navigation Explore more Open":
+      - /url: /enhanced-navigation/
+    - link "Events Explore more Open":
+      - /url: /events/
+    - link "Explore Explore more Open":
+      - /url: /explore/
+    - heading "Features" [level=2]
+    - paragraph: Core capabilities of the autonomous front systems that power our cloud automation platform.
+    - img
+    - heading "Real-time Monitoring" [level=3]
+    - paragraph: Continuous monitoring of system health, performance metrics, and automated responses to issues.
+    - img
+    - heading "AI-Powered Insights" [level=3]
+    - paragraph: Machine learning algorithms that analyze patterns and provide intelligent recommendations.
+    - img
+    - heading "Automated Workflows" [level=3]
+    - paragraph: Intelligent automation that handles repetitive tasks and orchestrates complex processes.
+    - heading "Capabilities" [level=2]
+    - paragraph: What our autonomous agents can do across the site and cloud infrastructure.
+    - img
+    - heading "Performance Optimization" [level=4]
+    - paragraph: Automatically identify and resolve performance bottlenecks, optimize resource usage, and improve response times.
+    - img
+    - heading "Security Monitoring" [level=4]
+    - paragraph: Continuous security scanning, threat detection, and automated response to security incidents.
+    - img
+    - heading "Content Management" [level=4]
+    - paragraph: Automated content updates, SEO optimization, and intelligent content recommendations.
+    - img
+    - heading "Analytics & Reporting" [level=4]
+    - paragraph: Generate comprehensive reports, track key metrics, and provide actionable insights for decision making.
+    - img
+    - heading "Infrastructure Scaling" [level=4]
+    - paragraph: Automatically scale resources based on demand, optimize costs, and maintain high availability.
+    - img
+    - heading "Integration Hub" [level=4]
+    - paragraph: Seamlessly connect with third-party services, APIs, and external systems for comprehensive automation.
+    - heading "Benefits" [level=2]
+    - paragraph: Key outcomes and ROI from implementing our autonomous cloud automation systems.
+    - img
+    - heading "Cost Reduction" [level=3]
+    - paragraph: Reduce operational costs by up to 60% through automation and intelligent resource management.
+    - img
+    - heading "Efficiency Boost" [level=3]
+    - paragraph: Increase team productivity by 3x with automated workflows and intelligent decision support.
+    - img
+    - heading "Reliability" [level=3]
+    - paragraph: Achieve 99.9% uptime with proactive monitoring and automated incident response.
+    - heading "Ready to Experience Autonomous Cloud Automation?" [level=2]
+    - paragraph: Join the future of cloud management with intelligent automation that works 24/7 to optimize your infrastructure.
+    - link "Get Started Today":
+      - /url: /contact/
+    - link "Explore More":
+      - /url: /explore/
+- contentinfo:
+  - text: Zion
+  - paragraph: Autonomous Cloud Automations
+  - paragraph: Continuous, safe improvements delivered to main.
+  - navigation:
+    - link "Explore":
+      - /url: /explore/
+    - link "Automations":
+      - /url: /automation/
+    - link "Reports":
+      - /url: /reports/
+    - link "Updates":
+      - /url: /newsroom/
+    - link "Site Health":
+      - /url: /site-health/
+    - link "Search":
+      - /url: /search/
+    - link "Sitemap":
+      - /url: /sitemap.xml
+  - link "GitHub":
+    - /url: https://github.com/Zion-Holdings/zion.app
+  - link "Website":
+    - /url: https://ziontechgroup.com
+  - text: © 2025 Zion. All rights reserved. Built with Next.js & Netlify • Tailwind UI
+- alert: Zion Tech Group — Autonomous Cloud Automation
+```

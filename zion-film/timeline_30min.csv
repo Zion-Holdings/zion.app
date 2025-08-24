@@ -1,0 +1,13 @@
+timecode,duration,act,scene,vo_id,key_visuals,sfx,broll,notes
+00:00,45,Act 1,Cold Open,"VO-001","Black frame; line","Sub-bass","City","Hook"
+00:45,135,Act 1,Founders + DAO,"VO-002|VO-003","Sit-down; tally","Ticks","Repos","Origin"
+03:00,120,Act 1,Trailer + Book,"VO-004|VO-005","Montage; book","Motif","Readers","Beacon"
+05:00,180,Act 1,Early Builders,"VO-006|VO-007","Labs; payroll","UI ping","Discord","Belief"
+08:00,120,Act 2,Token + Nations,"VO-011|VO-012","Terminal; tiles","Cheers","Atlas","Launch"
+10:00,180,Act 2,Summit + Academy,"VO-013|VO-014","Stages; minting","Applause","Families","Belonging"
+13:00,180,Act 2,Treasury + Proposals,"VO-015|VO-016","Dash; bars","Data ticks","Signatures","Govern"
+16:00,180,Act 2,Stories + Passports,"VO-017|VO-018","Profiles; QR","Soft","Home; UI","Identity"
+19:00,180,Act 2,Multiplier,"VO-019","Flyovers","Air","Data","Prosperity"
+22:00,180,Act 3,ZionGPT,"VO-021","Neural UI","Low throb","Dash","Guardrails"
+25:00,180,Act 3,AI Passports + Builder,"VO-022|VO-023","Inference; wizard","Clicks","Templates","Founding"
+28:00,120,Act 3,Closing,"VO-024|VO-025","Atlas; faces","Final swell","Constellations","Call"

@@ -1,0 +1,35 @@
+{
+  "pm2": {
+    "enabled": true,
+    "ecosystemFiles": [
+      "ecosystem.pm2.cjs",
+      "ecosystem.redundancy.cjs",
+      "ecosystem.comprehensive-redundancy.cjs"
+    ],
+    "autoRestart": true,
+    "healthCheckInterval": 30000
+  },
+  "github": {
+    "enabled": true,
+    "workflows": [
+      "marketing-sync",
+      "sync-health",
+      "marketing-sync-backup",
+      "sync-health-backup"
+    ],
+    "backupEnabled": true,
+    "healthCheckInterval": 60000
+  },
+  "netlify": {
+    "enabled": true,
+    "autoDeploy": true,
+    "autoRegenerate": true,
+    "healthCheckInterval": 120000
+  },
+  "general": {
+    "logLevel": "INFO",
+    "masterCheckInterval": 60000,
+    "autoRecovery": true,
+    "loadBalancing": true
+  }
+}

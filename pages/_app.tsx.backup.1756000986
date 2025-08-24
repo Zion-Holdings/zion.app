@@ -1,0 +1,25 @@
+import type { AppProps } from 'next/app';
+<<<<<<< HEAD
+import Layout from '../components/Layout';
+import '../styles/globals.css';
+
+export default function App({ Component, pageProps }: AppProps) {
+  return (
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
+  );
+}
+=======
+import '../styles/globals.css';
+import Navigation from '../components/layout/Navigation';
+
+export default function App({ Component, pageProps }: AppProps) {
+  return (
+    <>
+      <Navigation />
+      <Component {...pageProps} />
+    </>
+  );
+}
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-0ea6

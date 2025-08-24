@@ -1,0 +1,57 @@
+<<<<<<< HEAD
+name: "CodeQL"
+=======
+name: CodeQL
+>>>>>>> 5fe4d4a516412daaecc6e2e3437df4b5fdac83d3
+
+on:
+  push:
+    branches: ["main", "develop", "cursor/**"]
+  pull_request:
+    branches: ["main", "develop", "cursor/**"]
+  schedule:
+    - cron: "33 1 * * 1"
+
+permissions:
+  contents: read
+  security-events: write
+
+concurrency:
+  group: codeql-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  analyze:
+    name: Analyze
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+    strategy:
+      fail-fast: false
+      matrix:
+        language: [ 'javascript-typescript' ]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v3
+        with:
+          languages: ${{ matrix.language }}
+
+      - name: Autobuild
+        uses: github/codeql-action/autobuild@v3
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v3
+        with:
+<<<<<<< HEAD
+          category: "/language:${{matrix.language}}"
+ 
+
+=======
+          category: '/language:javascript'
+>>>>>>> 5fe4d4a516412daaecc6e2e3437df4b5fdac83d3

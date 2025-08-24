@@ -1,0 +1,15 @@
+{
+  "config": {
+    "instanceId": "zion-local",
+    "optIn": false,
+    "paused": false,
+    "scope": "full",
+    "peers": [],
+    "secretConfigured": false
+  },
+  "lastSyncedAt": 0,
+  "seenEventIds": {},
+  "latestVersionByEntityId": {},
+  "proposalMerkleById": {},
+  "events": []
+}

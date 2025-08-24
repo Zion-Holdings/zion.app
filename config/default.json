@@ -1,0 +1,10 @@
+{
+  "mongoURI": "mongodb://localhost:27017/zion",
+  "socialMediaLinks": {
+    "linkedin": "https://www.linkedin.com/company/zion-marketplace",
+    "twitter": "https://twitter.com/lovable_dev",
+    "github": "https://github.com/zion-marketplace",
+    "facebook": "https://www.facebook.com/zionmarketplace",
+    "instagram": "https://www.instagram.com/zionmarketplace/"
+  }
+}

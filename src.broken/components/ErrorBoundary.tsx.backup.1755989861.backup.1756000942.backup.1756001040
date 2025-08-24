@@ -1,0 +1,60 @@
+<<<<<<< HEAD
+import React, { type ReactNode } from "react";
+
+interface ErrorBoundaryProps {
+  fallback: ReactNode;
+}
+
+interface ErrorBoundaryState {
+  hasError: boolean;
+}
+
+export class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundaryState> {
+  state: ErrorBoundaryState = { hasError: false };
+=======
+import React from 'react';
+import { captureException } from '@/lib/sentry';
+
+interface Props {
+  children: React.ReactNode;
+  fallback?: React.ReactNode;
+}
+
+interface State {
+  hasError: boolean;
+}
+
+export class ErrorBoundary extends React.Component<Props, State> {
+  state: State = { hasError: false };
+>>>>>>> origin/5dtq58-codex/implement-analytics-and-error-tracking
+
+  static getDerivedStateFromError() {
+    return { hasError: true };
+  }
+
+<<<<<<< HEAD
+  componentDidCatch(error: unknown) {
+    console.error("ErrorBoundary caught an error", error);
+=======
+  componentDidCatch(error: any, errorInfo: any) {
+    captureException(error);
+    console.error(error, errorInfo);
+>>>>>>> origin/5dtq58-codex/implement-analytics-and-error-tracking
+  }
+
+  render() {
+    if (this.state.hasError) {
+<<<<<<< HEAD
+      return this.props.fallback;
+=======
+      return this.props.fallback || <div>Something went wrong.</div>;
+>>>>>>> origin/5dtq58-codex/implement-analytics-and-error-tracking
+    }
+    return this.props.children;
+  }
+}
+<<<<<<< HEAD
+
+export default ErrorBoundary;
+=======
+>>>>>>> origin/5dtq58-codex/implement-analytics-and-error-tracking

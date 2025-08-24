@@ -1,0 +1,70 @@
+name: Auto Semver Release
+
+on:
+
+
+  schedule: - cron: '0 0 * * *'
+  workflow_dispatch: {}
+
+  contents: write
+  id-token: write
+
+concurrency:
+
+
+  group: auto-semver-release
+  cancel-in-progress: true
+
+jobs:
+
+
+  release: - name: Checkout
+           
+          fetch-depth: 0
+      - name: Setup Node
+
+                
+          node-version: 20
+          cache: npm
+      - name: Install deps
+
+                
+      - name: Generate version and changelog
+
+                
+          npx -y conventional-recommended-bump -p conventionalcommits > .bump
+          BUMP=$(cat .bump | tr -d '\n' | tr -d '\r')
+          if [ -z "$BUMP" ]; then BUMP=patch; fi
+          echo "Recommended bump: $BUMP"
+          CURRENT=$(node -p "require('./package.json').version")
+          echo "Current version: $CURRENT"
+          NEW=$(npx -y semver $CURRENT -i $BUMP)
+          echo "new_version=$NEW" >> $GITHUB_OUTPUT
+          npx -y conventional-changelog -p conventionalcommits -r 2 > CHANGELOG.tmp.md
+      - name: Update package.json version
+
+                
+          NEW=${{ steps.sv.outputs.new_version }}"
+          node -e "const fs=require('fs');const p=require('./package.json');p.version='${NEW}';fs.writeFileSync('package.json',JSON.stringify(p,null,2)+'\n')"
+      - name: Commit version bump
+
+                
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add package.json
+            git commit -m "chore(release): v${{ steps.sv.outputs.new_version }} [skip ci]"
+          fi
+      - name: Tag and push
+
+                
+          NEW=${{ steps.sv.outputs.new_version }}
+          git tag v$NEW
+          git push origin HEAD:$(git rev-parse --abbrev-ref HEAD) --tags
+      - name: Create GitHub Release
+
+                
+          tag_name: v${{ steps.sv.outputs.new_version }}
+          name: v${{ steps.sv.outputs.new_version }}
+          body_path: CHANGELOG.tmp.md
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"

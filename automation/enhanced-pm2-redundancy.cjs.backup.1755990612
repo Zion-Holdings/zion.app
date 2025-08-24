@@ -1,0 +1,925 @@
+#!/usr/bin/env node
+"use strict";
+
+<<<<<<< HEAD
+const { spawnSync, execSync } = require("child_process");
+const fs = require("fs");
+const path = require("path");
+const crypto = require("crypto");
+=======
+const { spawnSync } = require("child_process");
+const fs = require("fs");
+const path = require("path");
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-5c78
+
+class EnhancedPM2Redundancy {
+  constructor() {
+    this.workspace = process.cwd();
+    this.logDir = path.join(this.workspace, "automation/logs");
+    this.logFile = path.join(this.logDir, "enhanced-pm2-redundancy.log");
+    this.ensureLogDir();
+    
+    this.config = {
+<<<<<<< HEAD
+      checkInterval: 30000, // 30 seconds
+      maxRestartAttempts: 5,
+      restartDelay: 5000,
+      healthCheckTimeout: 10000,
+      backupInterval: 300000, // 5 minutes
+      maxLogSize: 10 * 1024 * 1024, // 10MB
+      processes: [
+        "zion-auto-sync",
+        "zion-auto-sync-cron",
+        "redundancy-automation-system",
+        "redundancy-health-monitor",
+        "redundancy-git-sync",
+        "redundancy-build-monitor"
+      ],
+      ecosystemFiles: [
+        "ecosystem.pm2.cjs",
+        "ecosystem.redundancy.cjs"
+      ],
+      monitoring: false,
+      checkInterval: null
+    };
+    
+    this.processStates = new Map();
+    this.restartCounts = new Map();
+    this.lastBackup = Date.now();
+=======
+      primaryEcosystem: "ecosystem.pm2.cjs",
+      redundancyEcosystem: "ecosystem.redundancy.cjs",
+      processes: {
+        primary: ["zion-auto-sync", "zion-auto-sync-cron"],
+        redundancy: [
+          "redundancy-automation-system",
+          "redundancy-health-monitor",
+          "redundancy-git-sync",
+          "redundancy-build-monitor"
+        ]
+      },
+      healthCheckInterval: 30000,
+      maxRestartAttempts: 5,
+      restartDelay: 5000,
+      autoRecovery: true,
+      backupProcesses: true
+    };
+    
+    this.monitoring = false;
+    this.checkInterval = null;
+    this.restartAttempts = new Map();
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-5c78
+  }
+
+  ensureLogDir() {
+    if (!fs.existsSync(this.logDir)) {
+      fs.mkdirSync(this.logDir, { recursive: true });
+    }
+  }
+
+  log(message, level = "INFO") {
+    const timestamp = new Date().toISOString();
+    const logMessage = `[${timestamp}] [${level}] ${message}`;
+    console.log(logMessage);
+    
+    try {
+      fs.appendFileSync(this.logFile, logMessage + "\n");
+<<<<<<< HEAD
+      this.rotateLogs();
+=======
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-5c78
+    } catch (error) {
+      console.error(`Failed to write to log file: ${error.message}`);
+    }
+  }
+
+<<<<<<< HEAD
+  rotateLogs() {
+    try {
+      const stats = fs.statSync(this.logFile);
+      if (stats.size > this.config.maxLogSize) {
+        const backupFile = `${this.logFile}.${Date.now()}`;
+        fs.renameSync(this.logFile, backupFile);
+        this.log("Log file rotated", "INFO");
+      }
+    } catch (error) {
+      // Ignore rotation errors
+    }
+  }
+
+=======
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-5c78
+  async runCommand(command, args = [], options = {}) {
+    return new Promise((resolve) => {
+      const result = spawnSync(command, args, {
+        cwd: this.workspace,
+        env: process.env,
+        shell: false,
+        encoding: "utf8",
+<<<<<<< HEAD
+        maxBuffer: 1024 * 1024 * 20,
+        timeout: options.timeout || this.config.healthCheckTimeout,
+=======
+        maxBuffer: 1024 * 1024 * 10,
+        timeout: options.timeout || 30000,
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-5c78
+        ...options
+      });
+      
+      resolve({
+        status: result.status,
+        stdout: result.stdout || "",
+        stderr: result.stderr || "",
+        error: result.error
+      });
+    });
+  }
+
+<<<<<<< HEAD
+  async checkPM2Status() {
+=======
+  async checkPM2Daemon() {
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-5c78
+    try {
+      const result = await this.runCommand("pm2", ["status", "--no-daemon"]);
+      return result.status === 0;
+    } catch (error) {
+<<<<<<< HEAD
+      this.log(`PM2 status check failed: ${error.message}`, "ERROR");
+=======
+      this.log(`Error checking PM2 daemon: ${error.message}`, "ERROR");
+      return false;
+    }
+  }
+
+  async checkProcessHealth(processName) {
+    try {
+      const result = await this.runCommand("pm2", ["show", processName, "--no-daemon"]);
+      return result.status === 0;
+    } catch (error) {
+      this.log(`Error checking process ${processName}: ${error.message}`, "ERROR");
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-5c78
+      return false;
+    }
+  }
+
+  async getProcessInfo(processName) {
+    try {
+      const result = await this.runCommand("pm2", ["show", processName, "--no-daemon"]);
+      if (result.status === 0) {
+<<<<<<< HEAD
+        const output = result.stdout;
+        const statusMatch = output.match(/status\s*:\s*(\w+)/);
+        const pmIdMatch = output.match(/pm id\s*:\s*(\d+)/);
+        const memoryMatch = output.match(/memory\s*:\s*([\d.]+)/);
+        const cpuMatch = output.match(/cpu\s*:\s*([\d.]+)/);
+        
+        return {
+          name: processName,
+          status: statusMatch ? statusMatch[1] : "unknown",
+          pmId: pmIdMatch ? pmIdMatch[1] : null,
+          memory: memoryMatch ? parseFloat(memoryMatch[1]) : 0,
+          cpu: cpuMatch ? parseFloat(cpuMatch[1]) : 0,
+          healthy: statusMatch ? ["online", "launching"].includes(statusMatch[1]) : false
+        };
+      }
+      return null;
+    } catch (error) {
+      this.log(`Failed to get process info for ${processName}: ${error.message}`, "ERROR");
+=======
+        return this.parsePM2ProcessInfo(result.stdout);
+      }
+      return null;
+    } catch (error) {
+      this.log(`Error getting process info for ${processName}: ${error.message}`, "ERROR");
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-5c78
+      return null;
+    }
+  }
+
+<<<<<<< HEAD
+  async startProcess(processName, ecosystemFile = null) {
+    try {
+      let command = ["start", processName];
+      if (ecosystemFile) {
+        command = ["start", ecosystemFile, "--only", processName];
+      }
+      
+      const result = await this.runCommand("pm2", command);
+      if (result.status === 0) {
+        this.log(`Successfully started process: ${processName}`, "INFO");
+        return true;
+      } else {
+        this.log(`Failed to start process: ${processName}`, "ERROR");
+        return false;
+      }
+    } catch (error) {
+      this.log(`Error starting process ${processName}: ${error.message}`, "ERROR");
+      return false;
+    }
+=======
+  parsePM2ProcessInfo(output) {
+    const info = {};
+    const lines = output.split('\n');
+    
+    for (const line of lines) {
+      if (line.includes(':')) {
+        const [key, value] = line.split(':').map(s => s.trim());
+        if (key && value) {
+          info[key] = value;
+        }
+      }
+    }
+    
+    return info;
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-5c78
+  }
+
+  async restartProcess(processName) {
+    try {
+<<<<<<< HEAD
+      const result = await this.runCommand("pm2", ["restart", processName]);
+      if (result.status === 0) {
+        this.log(`Successfully restarted process: ${processName}`, "INFO");
+        return true;
+      } else {
+        this.log(`Failed to restart process: ${processName}`, "ERROR");
+        return false;
+      }
+    } catch (error) {
+      this.log(`Error restarting process ${processName}: ${error.message}`, "ERROR");
+=======
+      this.log(`🔄 Restarting process: ${processName}`);
+      
+      // Check if process exists
+      const exists = await this.checkProcessHealth(processName);
+      if (!exists) {
+        // Process doesn't exist, start it
+        this.log(`📝 Process ${processName} doesn't exist, starting it...`);
+        
+        if (this.config.processes.primary.includes(processName)) {
+          await this.runCommand("pm2", ["start", this.config.primaryEcosystem]);
+        } else if (this.config.processes.redundancy.includes(processName)) {
+          await this.runCommand("pm2", ["start", this.config.redundancyEcosystem]);
+        }
+      } else {
+        // Process exists, restart it
+        await this.runCommand("pm2", ["restart", processName]);
+      }
+      
+      // Wait for restart
+      await this.sleep(this.config.restartDelay);
+      
+      // Verify restart
+      const isHealthy = await this.checkProcessHealth(processName);
+      if (isHealthy) {
+        this.log(`✅ Process ${processName} restarted successfully`);
+        this.restartAttempts.set(processName, 0);
+        return true;
+      } else {
+        this.log(`❌ Process ${processName} restart failed`, "ERROR");
+        return false;
+      }
+    } catch (error) {
+      this.log(`❌ Error restarting process ${processName}: ${error.message}`, "ERROR");
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-5c78
+      return false;
+    }
+  }
+
+<<<<<<< HEAD
+  async stopProcess(processName) {
+    try {
+      const result = await this.runCommand("pm2", ["stop", processName]);
+      if (result.status === 0) {
+        this.log(`Successfully stopped process: ${processName}`, "INFO");
+        return true;
+      } else {
+        this.log(`Failed to stop process: ${processName}`, "ERROR");
+        return false;
+      }
+    } catch (error) {
+      this.log(`Error stopping process ${processName}: ${error.message}`, "ERROR");
+=======
+  async startProcess(processName) {
+    try {
+      this.log(`📝 Starting process: ${processName}`);
+      
+      if (this.config.processes.primary.includes(processName)) {
+        await this.runCommand("pm2", ["start", this.config.primaryEcosystem]);
+      } else if (this.config.processes.redundancy.includes(processName)) {
+        await this.runCommand("pm2", ["start", this.config.redundancyEcosystem]);
+      }
+      
+      // Wait for start
+      await this.sleep(this.config.restartDelay);
+      
+      // Verify start
+      const isHealthy = await this.checkProcessHealth(processName);
+      if (isHealthy) {
+        this.log(`✅ Process ${processName} started successfully`);
+        return true;
+      } else {
+        this.log(`❌ Process ${processName} start failed`, "ERROR");
+        return false;
+      }
+    } catch (error) {
+      this.log(`❌ Error starting process ${processName}: ${error.message}`, "ERROR");
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-5c78
+      return false;
+    }
+  }
+
+<<<<<<< HEAD
+  async deleteProcess(processName) {
+    try {
+      const result = await this.runCommand("pm2", ["delete", processName]);
+      if (result.status === 0) {
+        this.log(`Successfully deleted process: ${processName}`, "INFO");
+        return true;
+      } else {
+        this.log(`Failed to delete process: ${processName}`, "ERROR");
+        return false;
+      }
+    } catch (error) {
+      this.log(`Error deleting process ${processName}: ${error.message}`, "ERROR");
+      return false;
+    }
+  }
+
+  async backupEcosystemFiles() {
+    try {
+      const backupDir = path.join(this.workspace, "automation/backups/pm2");
+      if (!fs.existsSync(backupDir)) {
+        fs.mkdirSync(backupDir, { recursive: true });
+      }
+
+      for (const ecosystemFile of this.config.ecosystemFiles) {
+        const sourcePath = path.join(this.workspace, ecosystemFile);
+        if (fs.existsSync(sourcePath)) {
+          const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+          const backupPath = path.join(backupDir, `${path.basename(ecosystemFile)}.${timestamp}`);
+          fs.copyFileSync(sourcePath, backupPath);
+          this.log(`Backed up ${ecosystemFile} to ${backupPath}`, "INFO");
+        }
+      }
+      
+      this.lastBackup = Date.now();
+    } catch (error) {
+      this.log(`Failed to backup ecosystem files: ${error.message}`, "ERROR");
+    }
+  }
+
+  async restoreFromBackup(ecosystemFile) {
+    try {
+      const backupDir = path.join(this.workspace, "automation/backups/pm2");
+      if (!fs.existsSync(backupDir)) {
+        this.log("No backup directory found", "WARN");
+        return false;
+      }
+
+      const backups = fs.readdirSync(backupDir)
+        .filter(file => file.startsWith(path.basename(ecosystemFile)))
+        .sort()
+        .reverse();
+
+      if (backups.length === 0) {
+        this.log(`No backups found for ${ecosystemFile}`, "WARN");
+        return false;
+      }
+
+      const latestBackup = path.join(backupDir, backups[0]);
+      const targetPath = path.join(this.workspace, ecosystemFile);
+      
+      fs.copyFileSync(latestBackup, targetPath);
+      this.log(`Restored ${ecosystemFile} from backup`, "INFO");
+      return true;
+    } catch (error) {
+      this.log(`Failed to restore from backup: ${error.message}`, "ERROR");
+=======
+  async createBackupProcesses() {
+    if (!this.config.backupProcesses) {
+      return;
+    }
+
+    this.log("🔄 Creating backup PM2 processes...");
+    
+    try {
+      // Create backup ecosystem file
+      const backupEcosystem = this.generateBackupEcosystem();
+      const backupPath = path.join(this.workspace, "ecosystem.backup.pm2.cjs");
+      
+      fs.writeFileSync(backupPath, backupEcosystem);
+      this.log(`✅ Created backup ecosystem file: ${backupPath}`);
+      
+      // Start backup processes
+      await this.runCommand("pm2", ["start", backupPath]);
+      this.log("✅ Backup PM2 processes started");
+      
+    } catch (error) {
+      this.log(`❌ Error creating backup processes: ${error.message}`, "ERROR");
+    }
+  }
+
+  generateBackupEcosystem() {
+    return `module.exports = {
+  apps: [
+    {
+      name: "backup-zion-auto-sync",
+      script: "automation/pm2-auto-sync.js",
+      interpreter: "node",
+      cwd: __dirname,
+      watch: false,
+      autorestart: true,
+      max_restarts: 10,
+      exp_backoff_restart_delay: 5000,
+      env: {
+        NODE_ENV: "production",
+        AUTO_SYNC_REMOTE: process.env.AUTO_SYNC_REMOTE || "origin",
+        AUTO_SYNC_BRANCH: process.env.AUTO_SYNC_BRANCH || "main",
+        AUTO_SYNC_STRATEGY: process.env.AUTO_SYNC_STRATEGY || "hardreset",
+        AUTO_SYNC_CLEAN: process.env.AUTO_SYNC_CLEAN || "1",
+        AUTO_SYNC_GC: process.env.AUTO_SYNC_GC || "0"
+      },
+      log_date_format: "YYYY-MM-DD HH:mm:ss Z",
+      error_file: "automation/logs/backup-zion-auto-sync-error.log",
+      out_file: "automation/logs/backup-zion-auto-sync-out.log",
+      time: true
+    },
+    {
+      name: "backup-redundancy-system",
+      script: "automation/comprehensive-redundancy-system.cjs",
+      interpreter: "node",
+      cwd: __dirname,
+      watch: false,
+      autorestart: true,
+      max_restarts: 5,
+      exp_backoff_restart_delay: 10000,
+      env: {
+        NODE_ENV: "production",
+        REDUNDANCY_LOG_LEVEL: "INFO"
+      },
+      log_date_format: "YYYY-MM-DD HH:mm:ss Z",
+      error_file: "automation/logs/backup-redundancy-system-error.log",
+      out_file: "automation/logs/backup-redundancy-system-out.log",
+      time: true
+    }
+  ]
+};`;
+  }
+
+  async performHealthCheck() {
+    this.log("🔍 Performing enhanced PM2 health check...");
+    
+    const results = {
+      daemon: false,
+      primary: {},
+      redundancy: {},
+      backup: {},
+      timestamp: new Date().toISOString()
+    };
+
+    // Check PM2 daemon
+    results.daemon = await this.checkPM2Daemon();
+    if (!results.daemon) {
+      this.log("❌ PM2 daemon is not running, attempting to start...", "ERROR");
+      await this.runCommand("pm2", ["start"]);
+      results.daemon = await this.checkPM2Daemon();
+    }
+
+    // Check primary processes
+    for (const processName of this.config.processes.primary) {
+      const isHealthy = await this.checkProcessHealth(processName);
+      results.primary[processName] = isHealthy;
+      
+      if (!isHealthy) {
+        this.log(`⚠️ Primary process ${processName} is unhealthy`, "WARN");
+        if (this.config.autoRecovery) {
+          await this.handleProcessFailure(processName, "primary");
+        }
+      }
+    }
+
+    // Check redundancy processes
+    for (const processName of this.config.processes.redundancy) {
+      const isHealthy = await this.checkProcessHealth(processName);
+      results.redundancy[processName] = isHealthy;
+      
+      if (!isHealthy) {
+        this.log(`⚠️ Redundancy process ${processName} is unhealthy`, "WARN");
+        if (this.config.autoRecovery) {
+          await this.handleProcessFailure(processName, "redundancy");
+        }
+      }
+    }
+
+    // Log results
+    this.log(`📊 Health Check Results:
+    - PM2 Daemon: ${results.daemon ? '✅ Running' : '❌ Not Running'}
+    - Primary Processes: ${Object.values(results.primary).filter(Boolean).length}/${Object.keys(results.primary).length} Healthy
+    - Redundancy Processes: ${Object.values(results.redundancy).filter(Boolean).length}/${Object.keys(results.redundancy).length} Healthy`);
+
+    // Save health check results
+    const healthCheckFile = path.join(this.logDir, `pm2-health-check-${new Date().toISOString().split('T')[0]}.json`);
+    try {
+      fs.writeFileSync(healthCheckFile, JSON.stringify(results, null, 2));
+    } catch (error) {
+      this.log(`❌ Failed to save health check results: ${error.message}`, "ERROR");
+    }
+
+    return results;
+  }
+
+  async handleProcessFailure(processName, processType) {
+    const attempts = this.restartAttempts.get(processName) || 0;
+    
+    if (attempts >= this.config.maxRestartAttempts) {
+      this.log(`🚨 Process ${processName} has exceeded max restart attempts (${this.config.maxRestartAttempts})`, "ERROR");
+      
+      if (processType === "primary") {
+        // Try to start redundancy process as backup
+        this.log(`🔄 Attempting to start redundancy process as backup for ${processName}`);
+        await this.startProcess("redundancy-automation-system");
+      }
+      
+      return false;
+    }
+
+    this.log(`🔄 Attempting to restart ${processName} (attempt ${attempts + 1}/${this.config.maxRestartAttempts})`);
+    this.restartAttempts.set(processName, attempts + 1);
+    
+    const success = await this.restartProcess(processName);
+    if (success) {
+      this.restartAttempts.set(processName, 0);
+    }
+    
+    return success;
+  }
+
+  async emergencyRecovery() {
+    this.log("🚨 Starting emergency PM2 recovery...");
+    
+    try {
+      // Kill all PM2 processes
+      await this.runCommand("pm2", ["kill"]);
+      this.log("🔄 Killed all PM2 processes");
+      
+      // Wait for cleanup
+      await this.sleep(5000);
+      
+      // Start primary ecosystem
+      await this.runCommand("pm2", ["start", this.config.primaryEcosystem]);
+      this.log("🔄 Started primary ecosystem");
+      
+      // Wait for startup
+      await this.sleep(10000);
+      
+      // Start redundancy ecosystem
+      await this.runCommand("pm2", ["start", this.config.redundancyEcosystem]);
+      this.log("🔄 Started redundancy ecosystem");
+      
+      // Create backup processes
+      await this.createBackupProcesses();
+      
+      // Perform health check
+      await this.performHealthCheck();
+      
+      this.log("✅ Emergency PM2 recovery completed");
+      return true;
+    } catch (error) {
+      this.log(`❌ Emergency PM2 recovery failed: ${error.message}`, "ERROR");
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-5c78
+      return false;
+    }
+  }
+
+<<<<<<< HEAD
+  async checkProcessHealth(processName) {
+    try {
+      const processInfo = await this.getProcessInfo(processName);
+      if (!processInfo) {
+        return { healthy: false, reason: "Process not found" };
+      }
+
+      // Check if process is consuming excessive resources
+      const memoryThreshold = 500; // 500MB
+      const cpuThreshold = 80; // 80%
+
+      if (processInfo.memory > memoryThreshold) {
+        return { healthy: false, reason: `High memory usage: ${processInfo.memory}MB` };
+      }
+
+      if (processInfo.cpu > cpuThreshold) {
+        return { healthy: false, reason: `High CPU usage: ${processInfo.cpu}%` };
+      }
+
+      return { healthy: processInfo.healthy, reason: processInfo.healthy ? "OK" : "Process not online" };
+    } catch (error) {
+      return { healthy: false, reason: `Health check failed: ${error.message}` };
+    }
+  }
+
+  async recoverProcess(processName) {
+    try {
+      const restartCount = this.restartCounts.get(processName) || 0;
+      
+      if (restartCount >= this.config.maxRestartAttempts) {
+        this.log(`Process ${processName} exceeded restart limit, attempting full recovery`, "WARN");
+        
+        // Stop and delete the process
+        await this.stopProcess(processName);
+        await this.deleteProcess(processName);
+        
+        // Wait before restarting
+        await new Promise(resolve => setTimeout(resolve, this.config.restartDelay));
+        
+        // Try to restart from ecosystem file
+        for (const ecosystemFile of this.config.ecosystemFiles) {
+          if (await this.startProcess(processName, ecosystemFile)) {
+            this.restartCounts.set(processName, 0);
+            this.log(`Successfully recovered process ${processName}`, "INFO");
+            return true;
+          }
+        }
+        
+        this.log(`Failed to recover process ${processName}`, "ERROR");
+        return false;
+      } else {
+        // Normal restart
+        if (await this.restartProcess(processName)) {
+          this.restartCounts.set(processName, restartCount + 1);
+          return true;
+        }
+        return false;
+      }
+    } catch (error) {
+      this.log(`Error during process recovery: ${error.message}`, "ERROR");
+      return false;
+    }
+  }
+
+  async saveHealthReport(results) {
+    try {
+      const reportPath = path.join(this.logDir, "pm2-health-report.json");
+      fs.writeFileSync(reportPath, JSON.stringify(results, null, 2));
+      
+      // Also save to logs directory
+      const logReportPath = path.join(this.logDir, `pm2-health-${new Date().toISOString().split('T')[0]}.json`);
+      fs.writeFileSync(logReportPath, JSON.stringify(results, null, 2));
+      
+      this.log(`💾 Health report saved`);
+    } catch (error) {
+      this.log(`⚠️ Could not save health report: ${error.message}`, "WARN");
+=======
+  async monitorAllProcesses() {
+    this.log("Starting PM2 process monitoring...", "INFO");
+    
+    for (const processName of this.config.processes) {
+      try {
+        const health = await this.checkProcessHealth(processName);
+        
+        if (!health.healthy) {
+          this.log(`Process ${processName} unhealthy: ${health.reason}`, "WARN");
+          
+          if (await this.recoverProcess(processName)) {
+            this.log(`Successfully recovered process ${processName}`, "INFO");
+          } else {
+            this.log(`Failed to recover process ${processName}`, "ERROR");
+          }
+        } else {
+          this.log(`Process ${processName} healthy`, "INFO");
+          // Reset restart count for healthy processes
+          this.restartCounts.set(processName, 0);
+        }
+        
+        // Store process state
+        this.processStates.set(processName, health);
+        
+      } catch (error) {
+        this.log(`Error monitoring process ${processName}: ${error.message}`, "ERROR");
+      }
+    }
+  }
+
+  async generateHealthReport() {
+    try {
+      const report = {
+        timestamp: new Date().toISOString(),
+        pm2Status: await this.checkPM2Status(),
+        processes: {},
+        summary: {
+          total: this.config.processes.length,
+          healthy: 0,
+          unhealthy: 0,
+          recovering: 0
+        }
+      };
+
+      for (const processName of this.config.processes) {
+        const state = this.processStates.get(processName);
+        const health = await this.checkProcessHealth(processName);
+        
+        report.processes[processName] = {
+          health: health.healthy,
+          reason: health.reason,
+          restartCount: this.restartCounts.get(processName) || 0,
+          lastCheck: new Date().toISOString()
+        };
+
+        if (health.healthy) {
+          report.summary.healthy++;
+        } else {
+          report.summary.unhealthy++;
+        }
+      }
+
+      // Save report
+      const reportPath = path.join(this.logDir, "pm2-health-report.json");
+      fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
+      
+      this.log(`Health report generated: ${reportPath}`, "INFO");
+      return report;
+    } catch (error) {
+      this.log(`Failed to generate health report: ${error.message}`, "ERROR");
+      return null;
+    }
+  }
+
+  async startMonitoring() {
+    if (this.monitoring) {
+      this.log("Monitoring already started", "WARN");
+      return;
+    }
+
+    this.monitoring = true;
+    this.log("Starting enhanced PM2 redundancy monitoring", "INFO");
+
+    // Initial backup
+    await this.backupEcosystemFiles();
+=======
+  async startMonitoring() {
+    if (this.monitoring) {
+      this.log("⚠️ Monitoring is already running");
+      return;
+    }
+
+    this.log("🚀 Starting enhanced PM2 redundancy monitoring...");
+    this.monitoring = true;
+
+    // Initial health check
+    await this.performHealthCheck();
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-5c78
+
+    // Start monitoring loop
+    this.checkInterval = setInterval(async () => {
+      try {
+<<<<<<< HEAD
+        await this.monitorAllProcesses();
+        
+        // Backup ecosystem files periodically
+        if (Date.now() - this.lastBackup > this.config.backupInterval) {
+          await this.backupEcosystemFiles();
+        }
+        
+        // Generate health report every 5 minutes
+        if (Date.now() % 300000 < this.config.checkInterval) {
+          await this.generateHealthReport();
+        }
+        
+      } catch (error) {
+        this.log(`Error in monitoring loop: ${error.message}`, "ERROR");
+      }
+    }, this.config.checkInterval);
+
+    this.log("Enhanced PM2 redundancy monitoring started", "INFO");
+=======
+        await this.performHealthCheck();
+      } catch (error) {
+        this.log(`❌ Error in monitoring loop: ${error.message}`, "ERROR");
+      }
+    }, this.config.healthCheckInterval);
+
+    this.log(`✅ Enhanced PM2 redundancy monitoring started with ${this.config.healthCheckInterval}ms intervals`);
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-5c78
+  }
+
+  async stopMonitoring() {
+    if (this.checkInterval) {
+      clearInterval(this.checkInterval);
+      this.checkInterval = null;
+    }
+    
+    this.monitoring = false;
+<<<<<<< HEAD
+    this.log("Enhanced PM2 redundancy monitoring stopped", "INFO");
+  }
+
+  async emergencyRecovery() {
+    this.log("Starting emergency PM2 recovery", "WARN");
+    
+    try {
+      // Kill all PM2 processes
+      await this.runCommand("pm2", ["kill"]);
+      
+      // Wait for cleanup
+      await new Promise(resolve => setTimeout(resolve, 5000));
+      
+      // Restart PM2 daemon
+      await this.runCommand("pm2", ["start"]);
+      
+      // Wait for daemon to be ready
+      await new Promise(resolve => setTimeout(resolve, 3000));
+      
+      // Start all processes from ecosystem files
+      for (const ecosystemFile of this.config.ecosystemFiles) {
+        await this.runCommand("pm2", ["start", ecosystemFile]);
+      }
+      
+      this.log("Emergency PM2 recovery completed", "INFO");
+      return true;
+    } catch (error) {
+      this.log(`Emergency recovery failed: ${error.message}`, "ERROR");
+      return false;
+=======
+    this.log("🛑 Enhanced PM2 redundancy monitoring stopped");
+  }
+
+  sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
+  async cleanup() {
+    this.log("🧹 Cleaning up enhanced PM2 redundancy system...");
+    
+    try {
+      await this.stopMonitoring();
+      
+      // Remove backup ecosystem file if it exists
+      const backupPath = path.join(this.workspace, "ecosystem.backup.pm2.cjs");
+      if (fs.existsSync(backupPath)) {
+        fs.unlinkSync(backupPath);
+        this.log("🗑️ Removed backup ecosystem file");
+      }
+      
+      this.log("✅ Cleanup completed");
+    } catch (error) {
+      this.log(`❌ Error during cleanup: ${error.message}`, "ERROR");
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-5c78
+    }
+  }
+}
+
+<<<<<<< HEAD
+// CLI interface
+if (require.main === module) {
+  const redundancy = new EnhancedPM2Redundancy();
+  
+  const command = process.argv[2];
+  
+  switch (command) {
+    case "start":
+      redundancy.startMonitoring();
+      break;
+    case "stop":
+      redundancy.stopMonitoring();
+      break;
+    case "status":
+      redundancy.monitorAllProcesses();
+      break;
+    case "report":
+      redundancy.generateHealthReport();
+      break;
+    case "recovery":
+      redundancy.emergencyRecovery();
+      break;
+    case "backup":
+      redundancy.backupEcosystemFiles();
+      break;
+    default:
+      console.log("Usage: node enhanced-pm2-redundancy.cjs [start|stop|status|report|recovery|backup]");
+      process.exit(1);
+  }
+=======
+// Start the enhanced PM2 redundancy system
+if (require.main === module) {
+  const system = new EnhancedPM2Redundancy();
+  
+  // Handle graceful shutdown
+  process.on('SIGINT', async () => {
+    system.log("🛑 Shutting down enhanced PM2 redundancy system...");
+    await system.cleanup();
+    process.exit(0);
+  });
+  
+  process.on('SIGTERM', async () => {
+    system.log("🛑 Shutting down enhanced PM2 redundancy system...");
+    await system.cleanup();
+    process.exit(0);
+  });
+  
+  // Start monitoring
+  system.startMonitoring();
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-5c78
+}
+
+module.exports = EnhancedPM2Redundancy;

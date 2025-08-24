@@ -1,0 +1,110 @@
+name: App Monitoring
+
+on:
+
+
+  schedule: - cron: '0 0 * * *'  # Every 6 hours
+  workflow_dispatch:  # Manual trigger
+
+
+concurrency:
+
+
+
+  group: "github.workflow-${{ github.ref }}"
+  cancel-in-progress: true
+
+jobs:
+
+
+  monitor-performance: - name: Checkout code
+           
+        
+      - name: Setup Node.js
+
+        
+                
+          node-version: '20'
+          cache: 'npm'
+          
+      - name: Install dependencies
+
+          
+                
+        
+      - name: Run performance tests
+
+        
+                
+        
+      - name: Run Lighthouse
+
+        
+                
+          npm install -g lighthouse
+          lighthouse https://your-app-url.com --output=json --output-path=./lighthouse-report.json
+          
+      - name: Upload performance report
+
+          
+                
+          name: performance-report
+          path: lighthouse-report.json
+          retention-days: 7
+
+  monitor-security:
+      - name: Checkout code
+
+                
+        
+      - name: Setup Node.js
+
+        
+                
+          node-version: '20'
+          cache: 'npm'
+          
+      - name: Install dependencies
+
+          
+                
+        
+      - name: Run security audit
+
+        
+                
+        
+      - name: Run dependency check
+
+        
+                
+        
+      - name: Upload security report
+
+        
+                
+          name: security-report
+          path: npm-audit.json
+          retention-days: 7
+
+  monitor-uptime:
+      - name: Check application endpoints
+
+                
+          echo "Checking application endpoints..."
+          # Add your endpoint checking logic here
+          
+      - name: Generate uptime report
+
+          
+                
+          echo "Uptime monitoring completed"
+          echo "Timestamp: $(date)"
+          
+      - name: Upload uptime report
+
+          
+                
+          name: uptime-report
+          path: uptime-report.txt
+          retention-days: 7

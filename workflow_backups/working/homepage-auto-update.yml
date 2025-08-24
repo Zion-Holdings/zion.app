@@ -1,0 +1,55 @@
+name: Homepage Auto Update
+
+on:
+
+
+  schedule: - cron: '0 0 * * *'  # Every 30 minutes
+  workflow_dispatch: {}
+
+  contents: write
+
+concurrency:
+
+
+  group: automation-homepage-update
+  cancel-in-progress: true
+
+jobs:
+
+
+  homepage-update: - name: Checkout
+           
+          persist-credentials: false
+
+      - name: Setup Node
+
+
+                
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+
+
+                
+
+      - name: Run homepage updater
+
+
+                
+
+      - name: Commit and push changes
+
+
+                
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(automation): autonomous homepage update"
+            git push https:
+   //x-access-token: ${GITHUB_TOKEN}@github.com/${{ github.repository }} HEAD:main
+          else
+            echo "No changes to commit."
+          fi
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"

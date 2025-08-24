@@ -1,0 +1,11 @@
+module.exports = {
+  plugins: {
+<<<<<<< HEAD
+    'tailwindcss': {},
+    'autoprefixer': {},
+=======
+    tailwindcss: {},
+    autoprefixer: {},
+>>>>>>> origin/cursor/website-audit-and-enhancement-79f3
+  },
+};

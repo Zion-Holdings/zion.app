@@ -1,0 +1,3 @@
+- Snapshot fallback: Integrate off-chain snapshot if required. This repository focuses on on-chain voting using OZ Governor.
+- Verify on Etherscan: use `scripts/post-verify.sh`.
+- ABI export: `npm run abi:export`.

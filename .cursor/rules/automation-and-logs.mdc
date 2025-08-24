@@ -1,0 +1,12 @@
+# Automation and Log-Driven Remediation
+
+- Always scan project logs in `automation/logs/` and CI logs.
+- If errors recur, create or enhance scripts and cron jobs to detect and fix them automatically.
+- Automations should be self-contained and runnable without Cursor or IDE involvement (cron-friendly).
+- You may use this computer's terminal, Google Chrome, and install required software/tools when needed.
+
+## Implementation Guidance
+- Add Node or Bash scripts under `automation/` or `scripts/`.
+- Ensure idempotency and write logs to `automation/logs/`.
+- Provide npm scripts (e.g., `logs:monitor`, `cron:install`) for easy operation.
+- Prefer non-interactive flags; avoid requiring user input.

@@ -1,0 +1,9 @@
+export default function Page(){return <div className="prose dark:prose-invert"><h1>Digital Transformation Insights</h1><p>Content coming soon.</p></div>}
+=======
+export default function ArticlePage() { return <div className="py-8">Digital transformation insights</div>; }
+=======
+import React from 'react';
+
+export default function DigitalTransformationInsightsPage() {
+  return <div>Digital Transformation Insights</div>;
+}

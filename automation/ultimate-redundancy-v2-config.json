@@ -1,0 +1,47 @@
+{
+  "version": "2.0.0",
+  "system": "Ultimate Redundancy Master V2",
+  "enabled": true,
+  "autoRecovery": true,
+  "healthCheckInterval": 30000,
+  "maxRetries": 5,
+  "retryDelay": 5000,
+  "systems": {
+    "pm2": {
+      "enabled": true,
+      "priority": "high",
+      "autoRestart": true,
+      "healthCheck": true
+    },
+    "github": {
+      "enabled": true,
+      "priority": "medium",
+      "autoRestart": false,
+      "healthCheck": true
+    },
+    "netlify": {
+      "enabled": true,
+      "priority": "medium",
+      "autoRestart": false,
+      "healthCheck": true
+    },
+    "build": {
+      "enabled": true,
+      "priority": "high",
+      "autoRestart": true,
+      "healthCheck": true
+    },
+    "automation": {
+      "enabled": true,
+      "priority": "high",
+      "autoRestart": true,
+      "healthCheck": true
+    }
+  },
+  "monitoring": {
+    "enabled": true,
+    "logLevel": "info",
+    "metrics": true,
+    "alerts": true
+  }
+}

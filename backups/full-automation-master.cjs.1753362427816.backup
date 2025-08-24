@@ -1,0 +1,544 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
+
+const fs = require('fs')
+const path = require('path')
+const { execSync, spawn } = require('child_process')
+class FullAutomationMaster {
+  constructor() {
+    this.projectRoot = process.cwd();
+    this.logFile = path.join(this.projectRoot, 'logs', 'master-automation.log');
+    this.ensureLogsDirectory();
+    this.startTime = Date.now();
+  }
+
+  log(message, level = 'INFO') {
+    const timestamp = new Date().toISOString()
+const logMessage = `[${timestamp}] [${level}] ${message}`;
+    logger.info(logMessage)
+const logsDir = path.dirname(this.logFile);
+    if (!fs.existsSync(logsDir)) {
+      fs.mkdirSync(logsDir, { recursive: true });
+    }
+
+    fs.appendFileSync(this.logFile, logMessage + '\n');
+  }
+
+  ensureLogsDirectory() {
+    const logsDir = path.join(this.projectRoot, 'logs');
+    if (!fs.existsSync(logsDir)) {
+      fs.mkdirSync(logsDir, { recursive: true });
+    }
+  }
+
+  async runCommand(command, options = {}) {
+    try {
+      this.log(`Running command: ${command}`)
+const result = execSync(command, {
+        cwd: this.projectRoot,
+        encoding: 'utf8',
+        stdio: 'pipe',
+        ...options,
+      });
+      this.log(`Command completed successfully: ${command}`);
+      return { success: true, output: result };
+    } catch (error) {
+      this.log(`Command failed: ${command} - ${error.message}`, 'ERROR');
+      return {
+        success: false,
+        error: error.message,
+        output: error.stdout || error.stderr,
+      };
+    }
+  }
+
+  fixAllCorruptedFiles() {
+    this.log('Step 1: Fixing all corrupted files...');
+
+    // Fix package.json merge conflicts
+    const packageJsonPath = path.join(this.projectRoot, 'package.json');
+    if (fs.existsSync(packageJsonPath)) {
+      let content = fs.readFileSync(packageJsonPath, 'utf8')
+const originalContent = content;
+
+      content = content
+        .replace(/<<<<<<< HEAD\n/g, '')
+        .replace(/=======\n/g, '')
+        .replace(/>>>>>>> [a-f0-9]+\n/g, '')
+        .replace(/>>>>>>> [a-f0-9]+/g, '');
+
+      if (content !== originalContent) {
+        fs.writeFileSync(packageJsonPath, content);
+        this.log('Fixed package.json merge conflicts');
+      }
+    }
+
+    // Fix API files
+    const apiDir = path.join(this.projectRoot, 'pages', 'api');
+    if (fs.existsSync(apiDir)) {
+      const fixFile = (filePath) => {
+        try {
+          let content = fs.readFileSync(filePath, 'utf8')
+const originalContent = content;
+
+          // If file is all on one line and very long, it's corrupted
+          if (content.split('\n').length === 1 && content.length > 200) {
+            this.log(`Fixing corrupted file: ${filePath}`);
+
+            // Extract imports
+            const importMatches = content.match(/import[^;]+;/g) || []
+const imports = importMatches.join('\n');
+
+            // Extract function body
+            const functionMatch = content.match(
+              /export\s+default\s+.*?function\s+handler\s*\([^)]*\)\s*\{([\s\S]*)\}/,
+            );
+
+            if (functionMatch) {
+              const functionBody = functionMatch[1];
+
+              // Reconstruct with proper formatting
+              content = `${imports}\n\nexport default async function handler(req, res) {\n${functionBody}\n}`;
+
+              // Basic formatting
+              content = content
+                .replace(/\s+/g, ' ')
+                .replace(/\{\s*/g, ' {\n  ')
+                .replace(/\}\s*/g, '\n}\n')
+                .replace(/;\s*/g, ';\n  ')
+                .replace(/\n\s*\n/g, '\n')
+                .replace(/\n\s*$/g, '\n');
+
+              fs.writeFileSync(filePath, content);
+              return true;
+            }
+          }
+
+          return false;
+        } catch (error) {
+          this.log(`Error fixing file ${filePath}: ${error.message}`, 'ERROR');
+          return false;
+        }
+      }
+const processDirectory = (dir) => {
+        const items = fs.readdirSync(dir);
+        let fixedCount = 0;
+
+        for (const item of items) {
+          const fullPath = path.join(dir, item)
+const stat = fs.statSync(fullPath);
+
+          if (stat.isDirectory()) {
+            fixedCount += processDirectory(fullPath);
+          } else if (item.endsWith('.ts') || item.endsWith('.js')) {
+            if (fixFile(fullPath)) {
+              fixedCount++;
+            }
+          }
+        }
+
+        return fixedCount;
+      }
+const fixedCount = processDirectory(apiDir);
+      this.log(`Fixed ${fixedCount} corrupted API files`);
+    }
+  }
+
+  async installDependencies() {
+    this.log('Step 2: Installing dependencies...')
+const result = await this.runCommand('npm install --legacy-peer-deps');
+    return result.success;
+  }
+
+  async fixNextConfig() {
+    this.log('Step 3: Fixing Next.js configuration...')
+const nextConfigPath = path.join(this.projectRoot, 'next.config.js');
+    if (!fs.existsSync(nextConfigPath)) {
+      this.log('next.config.js not found', 'ERROR');
+      return false;
+    }
+
+    try {
+      let content = fs.readFileSync(nextConfigPath, 'utf8')
+const originalContent = content;
+
+      // Add Node.js 22 compatibility workarounds
+      const compatibilityCode = `
+// Node.js 22 compatibility workarounds
+process.env.NODE_OPTIONS = process.env.NODE_OPTIONS || '';
+if (!process.env.NODE_OPTIONS.includes('--no-deprecation')) {
+  process.env.NODE_OPTIONS += ' --no-deprecation';
+}
+if (!process.env.NODE_OPTIONS.includes('--max-old-space-size=4096')) {
+  process.env.NODE_OPTIONS += ' --max-old-space-size=4096';
+}
+
+`;
+
+      // Insert compatibility code at the beginning
+      if (!content.includes('NODE_OPTIONS')) {
+        content = compatibilityCode + content;
+      }
+
+      // Remove problematic experimental features
+      content = content.replace(/experimental:\s*{[^}]*}/g, 'experimental: {}');
+
+      if (content !== originalContent) {
+        fs.writeFileSync(nextConfigPath, content);
+        this.log('Fixed Next.js configuration');
+        return true;
+      }
+
+      return false;
+    } catch (error) {
+      this.log(`Error fixing Next.js config: ${error.message}`, 'ERROR');
+      return false;
+    }
+  }
+
+  async buildProject() {
+    this.log('Step 4: Building project...')
+const result = await this.runCommand('npm run build');
+    return result.success;
+  }
+
+  async startServer() {
+    this.log('Step 5: Starting development server...');
+
+    return new Promise((resolve) => {
+      const server = spawn('npm', ['run', 'dev', '--', '--port', '3001'], {
+        cwd: this.projectRoot,
+        stdio: 'pipe',
+        env: {
+          ...process.env,
+          NODE_OPTIONS: '--no-deprecation --max-old-space-size=4096',
+        },
+      });
+
+      let output = '';
+      let resolved = false;
+
+      server.stdout.on('data', (data) => {
+        output += data.toString();
+        this.log(`Server output: ${data.toString().trim()}`);
+
+        if (output.includes('Ready') && !resolved) {
+          resolved = true;
+          this.log('Development server started successfully');
+          resolve({ success: true, server });
+        }
+      });
+
+      server.stderr.on('data', (data) => {
+        const error = data.toString();
+        this.log(`Server error: ${error}`, 'ERROR');
+
+        if (
+          error.includes(
+            'TypeError: The "to" argument must be of type string',
+          ) &&
+          !resolved
+        ) {
+          resolved = true;
+          this.log('Node.js 22 compatibility issue detected', 'ERROR');
+          resolve({ success: false, error: 'Node.js 22 compatibility issue' });
+        }
+      });
+
+      server.on('error', (error) => {
+        if (!resolved) {
+          resolved = true;
+          this.log(`Server error: ${error.message}`, 'ERROR');
+          resolve({ success: false, error: error.message });
+        }
+      });
+
+      // Timeout after 60 seconds
+      
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(() => {
+        if (!resolved) {
+          resolved = true;
+          this.log('Server startup timeout',                           'WARN');
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+          resolve({ success: false, error: 'Timeout' });
+        }
+      }, 60000);
+    });
+  }
+
+  async healthCheck() {
+    this.log('Step 6: Performing health check...');
+
+    // Wait for server to be ready
+    await new Promise((resolve) => 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(resolve,                           10000);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+);
+
+    try {
+      const response = await fetch('http://localhost:3006/api/health');
+      if (response.ok) {
+        const data = await response.json();
+        this.log(`Health check passed: ${JSON.stringify(data)}`);
+        return true;
+      } else {
+        this.log(`Health check failed: ${response.status}`, 'ERROR');
+        return false;
+      }
+    } catch (error) {
+      this.log(`Health check error: ${error.message}`, 'ERROR');
+      return false;
+    }
+  }
+
+  async runFullAutomation() {
+    this.log('Starting full automation master...');
+
+    try {
+      // Step 1: Fix all corrupted files
+      this.fixAllCorruptedFiles();
+
+      // Step 2: Install dependencies
+      const depsInstalled = await this.installDependencies();
+      if (!depsInstalled) {
+        this.log('Failed to install dependencies', 'ERROR');
+        return false;
+      }
+
+      // Step 3: Fix Next.js configuration
+      await this.fixNextConfig();
+
+      // Step 4: Build project
+      const buildSuccess = await this.buildProject();
+      if (!buildSuccess) {
+        this.log('Build failed, but continuing...', 'WARN');
+      }
+
+      // Step 5: Start server
+      const serverResult = await this.startServer();
+      if (!serverResult.success) {
+        this.log('Server failed to start', 'ERROR');
+        return false;
+      }
+
+      // Step 6: Health check
+      const healthOk = await this.healthCheck();
+      if (!healthOk) {
+        this.log('Health check failed', 'WARN');
+      }
+
+      const endTime = Date.now()
+const duration = (endTime - this.startTime) / 1000;
+
+      this.log(`Full automation completed in ${duration}s`);
+      this.log('App should now be running at http://localhost:3006');
+
+      return true;
+    } catch (error) {
+      this.log(`Full automation failed: ${error.message}`, 'ERROR');
+      return false;
+    }
+  }
+}
+
+// Run if this script is executed directly
+if (require.main === module) {
+  const automation = new FullAutomationMaster();
+  automation
+    .runFullAutomation()
+    .then((success) => {
+      if (success) {
+        logger.info('\n🎉 SUCCESS: App is now running!');
+        logger.info('🌐 Open http://localhost:3006 in your browser');
+        logger.info('📊 Health check: http://localhost:3006/api/health');
+        logger.info('\nPress Ctrl+C to stop the server');
+
+        // Keep the process running
+        process.on('SIGINT', () => {
+          logger.info('\n🛑 Stopping server...');
+          process.exit(0);
+        });
+      } else {
+        logger.info('\n❌ FAILED: Automation did not complete successfully');
+        process.exit(1);
+      }
+    })
+    .catch((error) => {
+      logger.error('Automation failed:', error);
+      process.exit(1);
+    });
+}
+
+module.exports = FullAutomationMaster;

@@ -1,0 +1,1 @@
+export default function DigitalTransformationInsightsChat() { return <div className="py-12">Digital transformation insights.</div>; }

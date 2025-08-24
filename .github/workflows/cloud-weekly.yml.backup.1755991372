@@ -1,0 +1,87 @@
+<<<<<<< HEAD
+name: Cloud Automation (Weekly)
+
+on:
+  schedule:
+    - cron: '0 4 * * 1'
+  workflow_dispatch: {}
+
+jobs:
+  weekly:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+=======
+name: Cloud Weekly Automations
+
+on:
+  schedule:
+    - cron: '30 4 * * 1'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: cloud-weekly
+  cancel-in-progress: false
+
+jobs:
+  weekly:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+>>>>>>> origin/cursor/build-zion-ipo-readiness-portal-e565
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+<<<<<<< HEAD
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Generate venture report
+        run: npm run venture:report || true
+
+      - name: Design audit and beautify
+        run: npm run design:analyze || true
+
+      - name: Repo conflicts check
+        run: npm run conflicts:check || true
+=======
+          node-version: '20.x'
+          cache: 'npm'
+
+      - name: Install deps
+        run: npm ci --no-audit --no-fund
+
+      - name: Infinite improvement loop (bounded)
+        run: npm run autonomous:once || true
+
+      - name: Venture report
+        run: npm run venture:report || true
+
+      - name: Automation dashboard
+        run: npm run automation:dashboard || true
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(automation): weekly cloud automations output"
+            git push
+          else
+            echo "No changes to commit"
+          fi
+>>>>>>> origin/cursor/build-zion-ipo-readiness-portal-e565

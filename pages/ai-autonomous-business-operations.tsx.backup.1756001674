@@ -1,0 +1,49 @@
+import React from 'react';
+import ServiceLanding from '../components/sections/ServiceLanding';
+
+<<<<<<< HEAD
+export default function AiAutonomousBusinessOperations() {
+	return (
+		<ServiceLanding
+			title="AI Autonomous Business Operations"
+			description="Run core operations autonomously with LLM agents orchestrating workflows across sales, support, finance, and ops with human-in-the-loop controls."
+			subtitle="Always-on operators for your business"
+			pricePerMonthUSD={999}
+			implementationWeeks="2-4 weeks"
+			roiNote="Organizations report 4–10x ROI from automation and 24/7 responsiveness"
+			features={[
+				"Agentic workflows for sales, support, and finance",
+				"Guardrails, approvals, and safe action execution",
+				"Playbooks with KPIs and SLAs",
+				"RAG with policy and PII controls",
+				"Observability and audit logs",
+				"Integrations: Salesforce, Zendesk, NetSuite, Slack, Gmail",
+				"Cost controls and routing across model providers",
+				"Human handoff and escalation"
+			]}
+			industries={["SaaS", "Ecommerce", "Fintech", "B2B Services"]}
+=======
+export default function AIAutonomousBusinessOperations() {
+	return (
+		<ServiceLanding
+			title="AI‑Powered Autonomous Business Operations"
+			slug="ai-autonomous-business-operations"
+			description="Continuous AI agents coordinate workflows across sales, support, finance, and operations. They monitor KPIs, trigger automations, and collaborate with humans to keep your business always-on."
+			subtitle="From reactive to autonomous: 24/7 operations with measurable outcomes."
+			pricePerMonthUSD={3500}
+			implementationWeeks="Implementation: 3–6 weeks"
+			roiNote="Average ROI 5–12x within 120 days"
+			features={[
+				"Autonomous KPI monitoring and anomaly detection",
+				"Agentic workflows for ticket triage, billing, collections, and renewals",
+				"Human-in-the-loop approvals and audit trails",
+				"Playbooks for incident response and customer recovery",
+				"Compliance logging and role-based access",
+				"Integrations: Slack/Teams, Jira, Zendesk, QuickBooks, Stripe"
+			]}
+			industries={["SaaS", "Healthcare", "Finance", "Retail"]}
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-adc1
+			canonical="https://ziontechgroup.com/ai-autonomous-business-operations"
+		/>
+	);
+}

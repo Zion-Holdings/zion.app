@@ -1,0 +1,5 @@
+<<<<<<< HEAD
+export default function Talent(){return <div className="prose dark:prose-invert"><h1>Talent</h1><p>Browse talent coming soon.</p></div>}
+=======
+export default function Talent() { return <div className="p-8">Talent</div>; }
+>>>>>>> origin/cursor/build-zion-ipo-readiness-portal-e565

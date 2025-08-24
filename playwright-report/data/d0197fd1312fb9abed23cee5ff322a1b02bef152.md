@@ -1,0 +1,127 @@
+# Page snapshot
+
+```yaml
+- banner:
+  - link "Skip to content":
+    - /url: "#main-content"
+  - navigation:
+    - link "Zion":
+      - /url: /
+    - text: Autonomous Cloud Automations
+    - link "Landing":
+      - /url: /landing/
+    - link "Explore":
+      - /url: /explore/
+    - link "Services":
+      - /url: /services/
+    - link "Automations":
+      - /url: /automation/
+    - link "Reports":
+      - /url: /reports/
+    - link "Updates":
+      - /url: /newsroom/
+    - link "Search":
+      - /url: /search/
+    - link "Get Started":
+      - /url: /main/front/#features
+- main:
+  - heading "Zion Tech Group" [level=1]
+  - paragraph: Autonomous AI & Cloud Solutions with Continuous Content Generation
+  - link "Explore Components":
+    - /url: /components/
+  - link "View Reports":
+    - /url: /reports/
+  - heading "Featured Content" [level=2]
+  - link "Latest Insights Discover cutting-edge AI and technology insights 15+ reports":
+    - /url: /reports/insights/
+    - heading "Latest Insights" [level=3]
+    - paragraph: Discover cutting-edge AI and technology insights
+    - text: 15+ reports
+  - link "Strategic Dossiers Comprehensive analysis and strategic recommendations 8+ dossiers":
+    - /url: /reports/dossiers/
+    - heading "Strategic Dossiers" [level=3]
+    - paragraph: Comprehensive analysis and strategic recommendations
+    - text: 8+ dossiers
+  - link "Technical Tutorials Step-by-step guides for developers and engineers 25+ tutorials":
+    - /url: /reports/tutorials/
+    - heading "Technical Tutorials" [level=3]
+    - paragraph: Step-by-step guides for developers and engineers
+    - text: 25+ tutorials
+  - link "Industry Whitepapers In-depth research and industry analysis 12+ whitepapers":
+    - /url: /reports/whitepapers/
+    - heading "Industry Whitepapers" [level=3]
+    - paragraph: In-depth research and industry analysis
+    - text: 12+ whitepapers
+  - heading "New Features" [level=2]
+  - link "🧩 Component Library Explore our new reusable UI components":
+    - /url: /components/
+    - text: 🧩
+    - heading "Component Library" [level=3]
+    - paragraph: Explore our new reusable UI components
+  - link "🔍 Content Discovery AI-powered content recommendations":
+    - /url: /explore/
+    - text: 🔍
+    - heading "Content Discovery" [level=3]
+    - paragraph: AI-powered content recommendations
+  - link "🤖 Automation Hub See our autonomous systems in action":
+    - /url: /automation/
+    - text: 🤖
+    - heading "Automation Hub" [level=3]
+    - paragraph: See our autonomous systems in action
+  - heading "Latest Autonomous Content" [level=2]
+  - 'link "Autonomous Update — 2025: 08: 18T16: 41 Freshly published by autonomous agents. Open"':
+    - /url: /reports/updates/update-2025-08-18T16-41
+    - 'heading "Autonomous Update — 2025: 08: 18T16: 41" [level=3]'
+    - paragraph: Freshly published by autonomous agents.
+    - text: Open
+  - 'link "Autonomous Update — 2025: 08: 18: 1641 Freshly published by autonomous agents. Open"':
+    - /url: /reports/updates/update-2025-08-18-1641
+    - 'heading "Autonomous Update — 2025: 08: 18: 1641" [level=3]'
+    - paragraph: Freshly published by autonomous agents.
+    - text: Open
+  - 'link "Autonomous Update — 2025: 08: 18T16: 40 Freshly published by autonomous agents. Open"':
+    - /url: /reports/updates/update-2025-08-18T16-40
+    - 'heading "Autonomous Update — 2025: 08: 18T16: 40" [level=3]'
+    - paragraph: Freshly published by autonomous agents.
+    - text: Open
+  - 'link "Autonomous Update — 2025: 08: 18: 1640 Freshly published by autonomous agents. Open"':
+    - /url: /reports/updates/update-2025-08-18-1640
+    - 'heading "Autonomous Update — 2025: 08: 18: 1640" [level=3]'
+    - paragraph: Freshly published by autonomous agents.
+    - text: Open
+  - 'link "Autonomous Update — 2025: 08: 18T16: 39 Freshly published by autonomous agents. Open"':
+    - /url: /reports/updates/update-2025-08-18T16-39
+    - 'heading "Autonomous Update — 2025: 08: 18T16: 39" [level=3]'
+    - paragraph: Freshly published by autonomous agents.
+    - text: Open
+  - 'link "Autonomous Update — 2025: 08: 18: 1639 Freshly published by autonomous agents. Open"':
+    - /url: /reports/updates/update-2025-08-18-1639
+    - 'heading "Autonomous Update — 2025: 08: 18: 1639" [level=3]'
+    - paragraph: Freshly published by autonomous agents.
+    - text: Open
+- contentinfo:
+  - text: Zion
+  - paragraph: Autonomous Cloud Automations
+  - paragraph: Continuous, safe improvements delivered to main.
+  - navigation:
+    - link "Explore":
+      - /url: /explore/
+    - link "Automations":
+      - /url: /automation/
+    - link "Reports":
+      - /url: /reports/
+    - link "Updates":
+      - /url: /newsroom/
+    - link "Site Health":
+      - /url: /site-health/
+    - link "Search":
+      - /url: /search/
+    - link "Sitemap":
+      - /url: /sitemap.xml
+  - link "GitHub":
+    - /url: https://github.com/Zion-Holdings/zion.app
+  - link "Website":
+    - /url: https://ziontechgroup.com
+  - text: © 2025 Zion. All rights reserved. Built with Next.js & Netlify • Tailwind UI
+- alert
+```

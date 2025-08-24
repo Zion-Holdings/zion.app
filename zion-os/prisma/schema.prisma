@@ -1,0 +1,177 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String    @unique
+  emailVerified DateTime?
+  password      String?
+  image         String?
+  role          String    @default("user")
+  onboardingCompleted Boolean @default(false)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  accounts     Account[]
+  sessions     Session[]
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+model Instance {
+  id                 String         @id @default(cuid())
+  name               String
+  slug               String         @unique
+  domain             String?
+  subdomain          String?
+  vertical           String
+  defaultLanguage    String         @default("en")
+  tokenSystem        String         @default("SHARED")
+  governanceType     String         @default("ADMIN")
+  isPublic           Boolean        @default(false)
+  features           FeatureToggle[]
+  apiKeys            ApiKey[]
+  daoConfig          DaoConfig?
+  region             String?
+  country            String?
+  deployments        Deployment[]
+  jobs               Job[]
+  proposals          Proposal[]
+  secrets            Secret[]
+  createdAt          DateTime       @default(now())
+  updatedAt          DateTime       @updatedAt
+}
+
+model FeatureToggle {
+  id         String     @id @default(cuid())
+  key        String
+  enabled    Boolean    @default(false)
+  instance   Instance   @relation(fields: [instanceId], references: [id])
+  instanceId String
+}
+
+model ApiKey {
+  id          String    @id @default(cuid())
+  key         String    @unique
+  name        String
+  instance    Instance? @relation(fields: [instanceId], references: [id])
+  instanceId  String?
+  createdAt   DateTime  @default(now())
+  lastUsedAt  DateTime?
+  scopesJson  String    @default("[]")
+}
+
+model DaoConfig {
+  id             String   @id @default(cuid())
+  instance       Instance @relation(fields: [instanceId], references: [id])
+  instanceId     String   @unique
+  type           String   @default("ADMIN")
+  treasuryWallet String?
+}
+
+model JobCategory {
+  id        String @id @default(cuid())
+  name      String
+  region    String?
+  jobs      Job[]
+}
+
+model Job {
+  id          String      @id @default(cuid())
+  title       String
+  description String
+  instance    Instance    @relation(fields: [instanceId], references: [id])
+  instanceId  String
+  category    JobCategory @relation(fields: [categoryId], references: [id])
+  categoryId  String
+  createdAt   DateTime    @default(now())
+}
+
+model Proposal {
+  id          String   @id @default(cuid())
+  title       String
+  body        String
+  status      String   @default("DRAFT")
+  instance    Instance @relation(fields: [instanceId], references: [id])
+  instanceId  String
+  createdAt   DateTime @default(now())
+}
+
+model Deployment {
+  id          String    @id @default(cuid())
+  instance    Instance  @relation(fields: [instanceId], references: [id])
+  instanceId  String
+  inputJson   String
+  status      String    @default("PENDING")
+  logs        DeploymentLog[]
+  createdAt   DateTime  @default(now())
+  completedAt DateTime?
+}
+
+model DeploymentLog {
+  id           String     @id @default(cuid())
+  deployment   Deployment @relation(fields: [deploymentId], references: [id])
+  deploymentId String
+  level        String     @default("INFO")
+  message      String
+  createdAt    DateTime   @default(now())
+}
+
+model AuditLog {
+  id         String   @id @default(cuid())
+  actorId    String?
+  action     String
+  details    String?
+  createdAt  DateTime @default(now())
+}
+
+model Secret {
+  id         String   @id @default(cuid())
+  name       String
+  value      String
+  instance   Instance? @relation(fields: [instanceId], references: [id])
+  instanceId String?
+  createdAt  DateTime  @default(now())
+}
