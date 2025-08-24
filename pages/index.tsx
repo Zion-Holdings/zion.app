@@ -2,8 +2,15 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 import { ArrowRight, CheckCircle, Star, Users, Code, Cloud, Brain, Shield, Zap, Globe } from 'lucide-react';
+import { useState, useEffect } from 'react';
 
 const Home: NextPage = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
   const services = [
     {
       icon: Brain,
@@ -99,11 +106,13 @@ const Home: NextPage = () => {
       "addressCountry": "US"
     },
     "sameAs": [
-      "https://www.linkedin.com/company/zion-tech-group",
       "https://twitter.com/ziontechgroup",
-      "https://github.com/zion-holdings"
+      "https://linkedin.com/company/ziontechgroup",
+      "https://github.com/ziontechgroup"
     ],
-    "services": [
+    "foundingDate": "2010",
+    "numberOfEmployees": "50-100",
+    "serviceType": [
       "AI Development",
       "Cloud Architecture", 
       "Web Development",
@@ -122,7 +131,6 @@ const Home: NextPage = () => {
         <meta name="author" content="Zion Tech Group" />
         <meta name="robots" content="index,follow" />
         <link rel="canonical" href="https://ziontechgroup.com" />
-        
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://ziontechgroup.com" />
@@ -130,20 +138,17 @@ const Home: NextPage = () => {
         <meta property="og:description" content="Transform your business with cutting-edge AI development, cloud architecture, and digital transformation services." />
         <meta property="og:image" content="https://ziontechgroup.com/og-image.png" />
         <meta property="og:site_name" content="Zion Tech Group" />
-
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://ziontechgroup.com" />
         <meta property="twitter:title" content="Zion Tech Group - Leading AI & Technology Solutions" />
         <meta property="twitter:description" content="Transform your business with cutting-edge AI development, cloud architecture, and digital transformation services." />
         <meta property="twitter:image" content="https://ziontechgroup.com/og-image.png" />
-
         {/* Structured Data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
-
         {/* Additional Meta Tags */}
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#000000" />
@@ -151,23 +156,35 @@ const Home: NextPage = () => {
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        {/* Performance Optimizations */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="//www.google-analytics.com" />
       </Head>
 
-      <main className="min-h-screen bg-black text-white">
+      <main className={`min-h-screen transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
         {/* Hero Section */}
-        <section className="relative overflow-hidden pt-20" aria-label="Hero section">
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/20 to-black"></div>
-          <div className="relative container mx-auto px-4 py-24">
-            <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400 bg-clip-text text-transparent leading-tight">
-                Transform Your Business with
-                <span className="block">Next-Gen Technology</span>
+        <section className="relative py-20 bg-gradient-to-br from-black via-gray-900 to-blue-900 overflow-hidden">
+          {/* Animated Background Elements */}
+          <div className="absolute inset-0 overflow-hidden">
+            <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl animate-pulse animation-delay-1000"></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-blue-500/5 to-purple-500/5 rounded-full blur-3xl animate-pulse animation-delay-500"></div>
+          </div>
+          
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="text-center">
+              <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 animate-fade-in">
+                Pioneering the Future of
+                <span className="block bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                  Technology
+                </span>
               </h1>
-              <p className="text-lg md:text-xl text-white/80 mb-8 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-lg md:text-xl text-white/80 mb-8 max-w-3xl mx-auto leading-relaxed animate-fade-in animation-delay-200">
                 Partner with Zion Tech Group to unlock the power of AI, cloud computing, and digital innovation. 
                 We deliver cutting-edge solutions that drive growth, efficiency, and competitive advantage for businesses worldwide.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in animation-delay-400">
                 <Link 
                   href="/contact" 
                   className="inline-flex items-center px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-black"
