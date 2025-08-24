@@ -135,11 +135,14 @@
     "h1": "AI Guardrails Suite"
   },
   {
+<<<<<<< HEAD
+=======
     "route": "/ai-powered-it-asset-management",
     "title": "AI-Powered IT Asset Management - Zion Tech Group",
     "h1": ""
   },
   {
+>>>>>>> origin/cursor/website-audit-and-enhancement-7e54
     "route": "/ai-seo-suite",
     "title": "AI-Powered SEO Suite | Zion Tech Group - Advanced SEO Tools & Analytics",
     "h1": "AI-Powered SEO Suite"
@@ -210,11 +213,14 @@
     "h1": "Automation Insights"
   },
   {
+<<<<<<< HEAD
+=======
     "route": "/autonomous-business-operations-platform",
     "title": "Autonomous Business Operations Platform - Zion Tech Group",
     "h1": ""
   },
   {
+>>>>>>> origin/cursor/website-audit-and-enhancement-7e54
     "route": "/autonomous-vehicle-ai-platform",
     "title": "{service.name} - Zion Tech Group",
     "h1": ""
@@ -585,11 +591,14 @@
     "h1": ""
   },
   {
+<<<<<<< HEAD
+=======
     "route": "/quantum-neural-network-platform",
     "title": "Quantum Neural Network Platform - Zion Tech Group",
     "h1": ""
   },
   {
+>>>>>>> origin/cursor/website-audit-and-enhancement-7e54
     "route": "/quantum-secure-cloud-infrastructure",
     "title": "",
     "h1": "Quantum-Secure Cloud Infrastructure 2045"
@@ -666,7 +675,11 @@
   },
   {
     "route": "/services",
+<<<<<<< HEAD
+    "title": "Revolutionary 2025 Technology Services | Zion Tech Group",
+=======
     "title": "Revolutionary 2029 Technology Services | Zion Tech Group",
+>>>>>>> origin/cursor/website-audit-and-enhancement-7e54
     "h1": ""
   },
   {
