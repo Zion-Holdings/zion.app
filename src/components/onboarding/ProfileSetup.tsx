@@ -17,7 +17,7 @@ export const ProfileSetup: React.FC<ProfileSetupProps> = ({ onComplete }) => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev: any) => ({
       ...prev,
       [name]: value
     }));
