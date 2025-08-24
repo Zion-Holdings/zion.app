@@ -1,13 +1,8 @@
-import React from 'react';
-import EnhancedLayout from '../../components/layout/EnhancedLayout';
-
-export default function FutureOfWorkAndAutomationPage() {
+export default function FutureOfWorkAndAutomation() {
   return (
-    <EnhancedLayout>
-      <div className="space-y-4">
-        <h1 className="text-2xl font-semibold">Future Of Work And Automation</h1>
-        <p className="opacity-70 text-sm">This page was auto-stubbed and is ready for content.</p>
-      </div>
-    </EnhancedLayout>
+    <div>
+      <h1 className="text-2xl font-semibold">Future of Work & Automation</h1>
+      <p className="text-sm text-gray-600">Content coming soon.</p>
+    </div>
   );
 }
