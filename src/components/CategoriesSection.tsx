@@ -36,6 +36,10 @@ const categories = [
 
 const specialServices = [
   {
+    title: "Enhanced AI & IT Services",
+    link: "/enhanced-services"
+  },
+  {
     title: "IT Onsite Services",
     link: "/it-onsite-services"
   },

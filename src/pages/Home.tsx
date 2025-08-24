@@ -10,8 +10,8 @@ import { HeroSection } from "@/components/HeroSection";
 import { QuickAccess } from "@/components/home/QuickAccess";
 import { FeatureCTAs } from "@/components/home/FeatureCTAs";
 import { FeatureHighlights } from "@/components/home/FeatureHighlights";
+import { EnhancedServicesShowcase } from "@/components/home/EnhancedServicesShowcase";
 import { ITServiceRequestHero } from "@/components/home/ITServiceRequestHero";
-import { ServicesOverview } from "@/components/ServicesOverview";
 
 export default function Home() {
   return (
@@ -33,7 +33,7 @@ export default function Home() {
       
       <FeatureHighlights />
       
-      <ServicesOverview />
+      <EnhancedServicesShowcase />
       
       <CategoriesSection />
       <BenefitsSection />
