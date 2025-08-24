@@ -1,10 +1,11 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Zion - The Future of Tech & AI Marketplace</title>
-    <meta name="description" content="The world's first free marketplace dedicated to high-tech and artificial intelligence. Publish, connect, and thrive — all one place." />
+    <meta name="description" content="The world's first free marketplace dedicated to high-tech and artificial intelligence. Publish, connect, and thrive — all in one place." />
     <meta name="author" content="Zion Tech Group" />
     <meta name="keywords" content="AI marketplace, tech services, artificial intelligence, IT services, AI developers, technology marketplace, AI solutions, machine learning, digital transformation" />
 
@@ -13,25 +14,33 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet" />
 
-    <meta name="theme-color" content="#2e73ea" />
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#8c15e9" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Zion Tech" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json" />
     
     <!-- Open Graph / Facebook -->
     <meta property="og:title" content="Zion - The Future of Tech & AI Marketplace" />
-    <meta property="og:description" content="The world's first free marketplace dedicated to high-tech and artificial intelligence. Publish, connect, and thrive — all one place." />
+    <meta property="og:description" content="The world's first free marketplace dedicated to high-tech and artificial intelligence. Publish, connect, and thrive — all in one place." />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://drive.google.com/uc?export=view&id=0B0iuzhpa3pD7X0RzZ2lmclN3Ymc" />
-    <meta property="og:url" content="https://ziontechgroup.com/" />
+    <meta property="og:url" content="https://app.ziontechgroup.com/" />
     <meta property="og:site_name" content="Zion Marketplace" />
     
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@lovable_dev" />
     <meta name="twitter:title" content="Zion - The Future of Tech & AI Marketplace" />
-    <meta name="twitter:description" content="The world's first free marketplace dedicated to high-tech and artificial intelligence. Publish, connect, and thrive — all one place." />
+    <meta name="twitter:description" content="The world's first free marketplace dedicated to high-tech and artificial intelligence. Publish, connect, and thrive — all in one place." />
     <meta name="twitter:image" content="https://drive.google.com/uc?export=view&id=0B0iuzhpa3pD7X0RzZ2lmclN3Ymc" />
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://ziontechgroup.com/" />
+    <link rel="canonical" href="https://app.ziontechgroup.com/" />
     
     <!-- Favicon -->
     <link rel="icon" href="https://drive.google.com/uc?export=view&id=0B0iuzhpa3pD7X0RzZ2lmclN3Ymc" />
@@ -39,18 +48,15 @@
     <!-- Apple Touch Icon -->
     <link rel="apple-touch-icon" href="https://drive.google.com/uc?export=view&id=0B0iuzhpa3pD7X0RzZ2lmclN3Ymc" />
     
-    <!-- PWA Manifest -->
-    <link rel="manifest" href="/manifest.json" />
-    
     <!-- Structured data (JSON-LD) for SEO -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "Organization",
         "name": "Zion",
-        "url": "https://ziontechgroup.com",
+        "url": "https://app.ziontechgroup.com",
         "logo": "https://drive.google.com/uc?export=view&id=0B0iuzhpa3pD7X0RzZ2lmclN3Ymc",
-        "description": "The world's first free marketplace dedicated to high-tech and artificial intelligence. Publish, connect, and thrive — all one place.",
+        "description": "The world's first free marketplace dedicated to high-tech and artificial intelligence. Publish, connect, and thrive — all in one place.",
         "sameAs": [
           "https://twitter.com/lovable_dev",
           "https://www.facebook.com/zionmarketplace",
@@ -59,13 +65,11 @@
       }
     </script>
   </head>
+
   <body>
-    <div id="root">
-      <div style="text-align: center; padding: 50px; font-family: Arial, sans-serif;">
-        <h1>Zion Tech Group</h1>
-        <p>Loading amazing content...</p>
-      </div>
-    </div>
+    <div id="root"></div>
+    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
+    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
     <script type="module" src="/src/main.tsx"></script>
     
     <!-- Service Worker Registration -->
@@ -75,68 +79,11 @@
           navigator.serviceWorker.register('/sw.js')
             .then((registration) => {
               console.log('SW registered: ', registration);
-              
-              // Check for updates
-              registration.addEventListener('updatefound', () => {
-                const newWorker = registration.installing;
-                newWorker.addEventListener('statechange', () => {
-                  if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-                    // New version available
-                    if (confirm('A new version of Zion is available! Would you like to update?')) {
-                      newWorker.postMessage({ type: 'SKIP_WAITING' });
-                      window.location.reload();
-                    }
-                  }
-                });
-              });
             })
             .catch((registrationError) => {
               console.log('SW registration failed: ', registrationError);
             });
         });
-        
-        // Handle offline/online events
-        window.addEventListener('online', () => {
-          document.body.classList.remove('offline');
-          console.log('Connection restored');
-        });
-        
-        window.addEventListener('offline', () => {
-          document.body.classList.add('offline');
-          console.log('Connection lost');
-        });
-      }
-      
-      // PWA Install prompt
-      let deferredPrompt;
-      window.addEventListener('beforeinstallprompt', (e) => {
-        e.preventDefault();
-        deferredPrompt = e;
-        
-        // Show install button or notification
-        const installButton = document.createElement('div');
-        installButton.innerHTML = `
-          <div style="position: fixed; top: 20px; right: 20px; background: #2e73ea; color: white; padding: 1rem; border-radius: 10px; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
-            <p style="margin: 0 0 0.5rem 0; font-weight: 600;">Install Zion App</p>
-            <button onclick="installApp()" style="background: white; color: #2e73ea; border: none; padding: 0.5rem 1rem; border-radius: 5px; cursor: pointer; font-weight: 600;">Install</button>
-            <button onclick="this.parentElement.remove()" style="background: transparent; color: white; border: 1px solid white; margin-left: 0.5rem; padding: 0.5rem 1rem; border-radius: 5px; cursor: pointer;">Dismiss</button>
-          </div>
-        `;
-        document.body.appendChild(installButton);
-      });
-      
-      function installApp() {
-        if (deferredPrompt) {
-          deferredPrompt.prompt();
-          deferredPrompt.userChoice.then((choiceResult) => {
-            if (choiceResult.outcome === 'accepted') {
-              console.log('User accepted the install prompt');
-            } else {
-              console.log('User dismissed the install prompt');
-            }
-            deferredPrompt = null;
-          });
-        }
       }
     </script>
   </body>

@@ -1,102 +1,29 @@
 {
-  "name": "Zion Tech Group - AI Marketplace",
-  "short_name": "Zion",
-  "description": "The world's first free marketplace dedicated to high-tech and artificial intelligence",
+  "name": "Zion Tech Group - The Future of Tech & AI Marketplace",
+  "short_name": "Zion Tech",
+  "description": "The world's first free marketplace dedicated to high-tech and artificial intelligence. Publish, connect, and thrive — all in one place.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#172d67",
-  "theme_color": "#2e73ea",
+  "theme_color": "#8c15e9",
   "orientation": "portrait-primary",
-  "scope": "/",
-  "lang": "en",
-  "categories": ["business", "productivity", "utilities"],
   "icons": [
     {
-      "src": "/images/zion-logo-192.png",
+      "src": "/icon-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/images/zion-logo-512.png",
+      "src": "/icon-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
-    },
-    {
-      "src": "/images/zion-logo-180.png",
-      "sizes": "180x180",
-      "type": "image/png",
-      "purpose": "apple touch"
     }
   ],
-  "screenshots": [
-    {
-      "src": "/images/screenshot-desktop.png",
-      "sizes": "1280x720",
-      "type": "image/png",
-      "form_factor": "wide",
-      "label": "Zion Tech Group Desktop View"
-    },
-    {
-      "src": "/images/screenshot-mobile.png",
-      "sizes": "390x844",
-      "type": "image/png",
-      "form_factor": "narrow",
-      "label": "Zion Tech Group Mobile View"
-    }
-  ],
-  "shortcuts": [
-    {
-      "name": "AI Talent Matching",
-      "short_name": "AI Match",
-      "description": "Find AI talent or jobs",
-      "url": "/match",
-      "icons": [
-        {
-          "src": "/images/ai-match-icon.png",
-          "sizes": "96x96"
-        }
-      ]
-    },
-    {
-      "name": "Services",
-      "short_name": "Services",
-      "description": "Browse tech services",
-      "url": "/services",
-      "icons": [
-        {
-          "src": "/images/services-icon.png",
-          "sizes": "96x96"
-        }
-      ]
-    },
-    {
-      "name": "Talent Directory",
-      "short_name": "Talent",
-      "description": "Find tech professionals",
-      "url": "/talent",
-      "icons": [
-        {
-          "src": "/images/talent-icon.png",
-          "sizes": "96x96"
-        }
-      ]
-    }
-  ],
-  "related_applications": [],
-  "prefer_related_applications": false,
-  "edge_side_panel": {
-    "preferred_width": 400
-  },
-  "launch_handler": {
-    "client_mode": "navigate-existing"
-  },
-  "handle_links": "preferred",
-  "protocol_handlers": [
-    {
-      "protocol": "web+zion",
-      "url": "/%s"
-    }
-  ]
+  "categories": ["business", "productivity", "technology"],
+  "lang": "en",
+  "dir": "ltr",
+  "scope": "/",
+  "prefer_related_applications": false
 }
