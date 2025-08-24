@@ -1185,6 +1185,8 @@ pre code {
     animation: hologram 5s ease-in-out infinite;
   }
 }
+<<<<<<< HEAD
+=======
 
 /* Responsive typography clamps */
 .h1, h1 { font-size: clamp(2rem, 4vw + 1rem, 3.75rem); }
@@ -1217,3 +1219,4 @@ pre code {
 /* Improve link contrast on dark bg */
 .prose a { color: #67e8f9; }
 .prose a:hover { color: #a5f3fc; }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-ec95

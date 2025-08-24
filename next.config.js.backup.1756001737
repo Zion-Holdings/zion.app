@@ -1,5 +1,19 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+<<<<<<< HEAD
+  reactStrictMode: true,
+  swcMinify: true,
+  images: {
+    domains: ['ziontechgroup.com'],
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+}
+=======
 	reactStrictMode: false,
 	trailingSlash: true,
 	output: 'export',
@@ -16,5 +30,6 @@ const nextConfig = {
 		];
 	}
 };
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-ec95
 
 module.exports = nextConfig
