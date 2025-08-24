@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, SetStateAction, Dispatch } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MessageCircle, X, Send, Bot, User, Sparkles, ChevronUp, ChevronDown } from 'lucide-react';
 
@@ -39,7 +39,7 @@ const AIChatbot: React.FC<AIChatbotProps> = ({ className = "" }) => {
   }, [messages]);
 
   // AI response simulation
-  const generateAIResponse = async (userMessage: string) => {
+  const generateAIResponse = async (userMessage: string): Promise<string> => {
     setIsTyping(true);
     
     // Simulate AI processing time
@@ -66,7 +66,7 @@ const AIChatbot: React.FC<AIChatbotProps> = ({ className = "" }) => {
       finalResponse = "Our quantum computing solutions cover neural networks, cybersecurity, materials discovery, and financial intelligence. These cutting-edge technologies can solve problems that classical computers cannot. What specific quantum application are you exploring?";
     }
     
-    return finalResponse;
+    return finalResponse || "I'm here to help! Please let me know how I can assist you with our services.";
   };
 
   const handleSendMessage = async () => {
@@ -79,7 +79,8 @@ const AIChatbot: React.FC<AIChatbotProps> = ({ className = "" }) => {
       timestamp: new Date()
     };
 
-    setMessages(prev => [...prev, userMessage]);
+    const newMessages = [...messages, userMessage];
+    setMessages(newMessages);
     setInputValue('');
     
     // Generate AI response
@@ -92,7 +93,7 @@ const AIChatbot: React.FC<AIChatbotProps> = ({ className = "" }) => {
       timestamp: new Date()
     };
 
-    setMessages(prev => [...prev, botMessage]);
+    setMessages([...newMessages, botMessage]);
     setIsTyping(false);
   };
 

@@ -285,6 +285,122 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* New Services Showcase Section */}
+      <section className="py-20 px-6">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent">
+              Comprehensive Service Portfolio
+            </h2>
+            <p className="text-xl text-white/70 max-w-3xl mx-auto">
+              From AI-powered analytics to quantum computing solutions, explore our complete range of innovative services
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="text-center p-6 rounded-2xl border border-white/10 bg-gradient-to-br from-purple-500/10 to-pink-500/10 backdrop-blur-xl"
+            >
+              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-500 to-pink-500 p-4 mx-auto mb-4 flex items-center justify-center">
+                <Brain className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-lg font-bold text-white mb-2">AI Services</h3>
+              <p className="text-white/70 text-sm mb-4">Predictive analytics, machine learning, and intelligent automation</p>
+              <a
+                href="/comprehensive-services-showcase?type=AI Services"
+                className="inline-flex items-center text-purple-400 hover:text-purple-300 transition-colors duration-300"
+              >
+                <span className="text-sm font-medium">Explore AI Services</span>
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </a>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="text-center p-6 rounded-2xl border border-white/10 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 backdrop-blur-xl"
+            >
+              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 p-4 mx-auto mb-4 flex items-center justify-center">
+                <Cpu className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-lg font-bold text-white mb-2">IT Solutions</h3>
+              <p className="text-white/70 text-sm mb-4">Cloud infrastructure, cybersecurity, and digital transformation</p>
+              <a
+                href="/comprehensive-services-showcase?type=IT Services"
+                className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors duration-300"
+              >
+                <span className="text-sm font-medium">Explore IT Services</span>
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </a>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="text-center p-6 rounded-2xl border border-white/10 bg-gradient-to-br from-green-500/10 to-emerald-500/10 backdrop-blur-xl"
+            >
+              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-green-500 to-emerald-500 p-4 mx-auto mb-4 flex items-center justify-center">
+                <Database className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-lg font-bold text-white mb-2">Micro SAAS</h3>
+              <p className="text-white/70 text-sm mb-4">Specialized business applications and productivity tools</p>
+              <a
+                href="/comprehensive-services-showcase"
+                className="inline-flex items-center text-green-400 hover:text-green-300 transition-colors duration-300"
+              >
+                <span className="text-sm font-medium">Explore All Services</span>
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </a>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="text-center p-6 rounded-2xl border border-white/10 bg-gradient-to-br from-orange-500/10 to-red-500/10 backdrop-blur-xl"
+            >
+              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-orange-500 to-red-500 p-4 mx-auto mb-4 flex items-center justify-center">
+                <Atom className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-lg font-bold text-white mb-2">Emerging Tech</h3>
+              <p className="text-white/70 text-sm mb-4">Quantum computing, blockchain, and edge computing</p>
+              <a
+                href="/comprehensive-services-showcase"
+                className="inline-flex items-center text-orange-400 hover:text-orange-300 transition-colors duration-300"
+              >
+                <span className="text-sm font-medium">Explore Emerging Tech</span>
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </a>
+            </motion.div>
+          </div>
+
+          <div className="text-center">
+            <a
+              href="/comprehensive-services-showcase"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-white/10 to-white/5 border border-white/20 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:bg-white/20 backdrop-blur-sm"
+            >
+              View Complete Service Portfolio
+              <ArrowRight className="w-5 h-5" />
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Stats Section */}
       <section className="py-20 px-6 bg-gradient-to-r from-white/5 to-white/10">
         <div className="max-w-7xl mx-auto">
@@ -326,7 +442,7 @@ export default function HomePage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="/comprehensive-2025-services-showcase"
+                href="/comprehensive-services-showcase"
                 className="px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl flex items-center justify-center gap-2"
               >
                 Explore All Services

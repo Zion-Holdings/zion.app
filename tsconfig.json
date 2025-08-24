@@ -74,15 +74,33 @@
       "node"
     ],
     "jsx": "preserve",
-    "noEmit": true
+    "noEmit": true,
+    "isolatedModules": true
   },
   "include": [
     "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx"
+    "pages/**/*.ts",
+    "pages/**/*.tsx",
+    "pages/**/*.js",
+    "pages/**/*.jsx",
+    "components/**/*.ts",
+    "components/**/*.tsx",
+    "components/**/*.js",
+    "components/**/*.jsx",
+    "data/**/*.ts",
+    "data/**/*.tsx",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "api/**/*.ts",
+    "api/**/*.tsx"
   ],
   "exclude": [
     "node_modules",
-    "zion.app/recovered-content/**"
+    "zion.app/recovered-content/**",
+    "apps/**",
+    "automation/**",
+    "auto-run-all.js",
+    "**/*.cjs",
+    "**/*.mjs"
   ]
 }
