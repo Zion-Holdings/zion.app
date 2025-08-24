@@ -3,178 +3,93 @@ import { Button } from "@/components/ui/button";
 import { GradientHeading } from "@/components/GradientHeading";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { motion } from "framer-motion";
-import { ArrowRight, Sparkles, Zap, Star } from "lucide-react";
+import { ArrowRight, Sparkles, Users, Zap } from "lucide-react";
 
 export function HeroSection() {
   const { t } = useTranslation();
-  
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.1
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { y: 30, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut"
-      }
-    }
-  };
-
-  const floatingVariants = {
-    animate: {
-      y: [-10, 10, -10],
-      transition: {
-        duration: 3,
-        repeat: Infinity,
-        ease: "easeInOut"
-      }
-    }
-  };
-
   return (
-    <section className="relative overflow-hidden py-20 md:py-32 min-h-screen flex items-center">
-      {/* Enhanced background gradient effect */}
+    <section className="relative overflow-hidden py-20 md:py-32">
+      {/* Background gradient effect */}
       <div className="absolute inset-0 bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-purple opacity-90"></div>
       
-      {/* Animated floating particles with better positioning */}
-      <motion.div 
-        className="absolute inset-0"
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-      >
-        <motion.div 
-          className="absolute top-1/4 left-1/4 w-3 h-3 rounded-full bg-zion-purple-light opacity-60"
-          variants={floatingVariants}
-          animate="animate"
-        />
-        <motion.div 
-          className="absolute top-1/3 right-1/3 w-4 h-4 rounded-full bg-zion-cyan opacity-50"
-          variants={floatingVariants}
-          animate="animate"
-          style={{ animationDelay: "1s" }}
-        />
-        <motion.div 
-          className="absolute bottom-1/4 left-1/2 w-2 h-2 rounded-full bg-zion-purple opacity-60"
-          variants={floatingVariants}
-          animate="animate"
-          style={{ animationDelay: "2s" }}
-        />
-        <motion.div 
-          className="absolute top-1/2 right-1/4 w-5 h-5 rounded-full bg-zion-cyan-light opacity-30"
-          variants={floatingVariants}
-          animate="animate"
-          style={{ animationDelay: "0.5s" }}
-        />
-      </motion.div>
-      
-      {/* Floating tech icons */}
-      <motion.div 
-        className="absolute top-20 right-20 opacity-20"
-        animate={{ rotate: 360 }}
-        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-      >
-        <Sparkles className="w-16 h-16 text-zion-cyan" />
-      </motion.div>
-      
-      <motion.div 
-        className="absolute bottom-20 left-20 opacity-20"
-        animate={{ rotate: -360 }}
-        transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-      >
-        <Zap className="w-12 h-12 text-zion-purple" />
-      </motion.div>
+      {/* Enhanced animated floating particles */}
+      <div className="absolute inset-0">
+        <div className="absolute top-1/4 left-1/4 w-2 h-2 rounded-full bg-zion-purple-light opacity-40 animate-pulse"></div>
+        <div className="absolute top-1/3 right-1/3 w-3 h-3 rounded-full bg-zion-cyan opacity-30 animate-pulse"></div>
+        <div className="absolute bottom-1/4 left-1/2 w-2 h-2 rounded-full bg-zion-purple opacity-40 animate-pulse"></div>
+        <div className="absolute top-1/2 right-1/4 w-4 h-4 rounded-full bg-zion-cyan-light opacity-20 animate-pulse"></div>
+        <div className="absolute top-1/6 right-1/6 w-1 h-1 rounded-full bg-zion-purple-light opacity-50 animate-pulse"></div>
+        <div className="absolute bottom-1/3 left-1/6 w-2 h-2 rounded-full bg-zion-cyan opacity-25 animate-pulse"></div>
+      </div>
       
       <div className="container relative z-10 px-4 mx-auto text-center">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-        >
-          <motion.div variants={itemVariants}>
-            <GradientHeading className="mb-6 text-5xl md:text-7xl font-bold leading-tight">
-              {t('home.hero_title')}
-            </GradientHeading>
-          </motion.div>
+        {/* Enhanced main heading */}
+        <div className="mb-6">
+          <GradientHeading className="text-5xl md:text-7xl font-bold mb-4">
+            {t('home.hero_title') || "The Future of Tech & AI"}
+          </GradientHeading>
+          <div className="flex items-center justify-center gap-2 text-zion-cyan-light text-lg md:text-xl mb-4">
+            <Sparkles className="w-5 h-5" />
+            <span>Powered by Zion Protocol</span>
+            <Sparkles className="w-5 h-5" />
+          </div>
+        </div>
 
-          <motion.div variants={itemVariants}>
-            <p className="text-xl md:text-2xl text-zion-slate-light mb-10 max-w-4xl mx-auto leading-relaxed">
-              {t('home.hero_subtitle')}
-            </p>
-          </motion.div>
+        {/* Enhanced subtitle */}
+        <p className="text-xl md:text-2xl text-zion-slate-light mb-8 max-w-4xl mx-auto leading-relaxed">
+          {t('home.hero_subtitle') || "Connect with world-class AI talent, cutting-edge tech services, and innovative solutions. Join the revolution that's reshaping the future of work."}
+        </p>
 
-          {/* Feature highlights */}
-          <motion.div 
-            variants={itemVariants}
-            className="flex flex-wrap justify-center gap-6 mb-12"
+        {/* Feature highlights */}
+        <div className="flex flex-wrap justify-center gap-6 mb-10 text-zion-slate-light">
+          <div className="flex items-center gap-2">
+            <Users className="w-5 h-5 text-zion-cyan" />
+            <span>10,000+ Verified Talents</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <Zap className="w-5 h-5 text-zion-purple" />
+            <span>AI-Powered Matching</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <Sparkles className="w-5 h-5 text-zion-cyan-light" />
+            <span>24/7 Global Support</span>
+          </div>
+        </div>
+
+        {/* Enhanced CTA buttons */}
+        <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
+          <Button
+            className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-lg py-6 px-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+            size="lg"
+            asChild
           >
-            <div className="flex items-center gap-2 text-zion-cyan">
-              <Star className="w-5 h-5" />
-              <span className="text-sm font-medium">AI-Powered Matching</span>
-            </div>
-            <div className="flex items-center gap-2 text-zion-purple-light">
-              <Sparkles className="w-5 h-5" />
-              <span className="text-sm font-medium">Global Talent Network</span>
-            </div>
-            <div className="flex items-center gap-2 text-zion-cyan-light">
-              <Zap className="w-5 h-5" />
-              <span className="text-sm font-medium">Instant Connections</span>
-            </div>
-          </motion.div>
-
-          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row justify-center gap-4">
-            <Button
-              className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-lg py-6 px-8 group transition-all duration-300 transform hover:scale-105 hover:shadow-2xl"
-              size="lg"
-              asChild
-            >
-              <Link
-                to="/signup"
-                role="button"
-                aria-label={t('auth.signup')}
-                tabIndex={0}
-                data-testid="hero-signup-btn"
-                className="flex items-center gap-2"
-              >
-                {t('auth.signup')}
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </Button>
             <Link
-              id="browse-marketplace"
-              to="/marketplace"
-              className="border-2 border-zion-cyan text-zion-cyan hover:bg-zion-cyan hover:text-zion-blue-dark active:bg-zion-cyan-light text-lg py-6 px-8 rounded-md inline-flex items-center justify-center gap-2 transition-all duration-300 transform hover:scale-105 hover:shadow-xl"
+              to="/signup"
+              role="button"
+              aria-label={t('auth.signup') || "Get Started"}
+              tabIndex={0}
+              data-testid="hero-signup-btn"
+              className="flex items-center gap-2"
             >
-              {t('home.browse_marketplace')}
+              {t('auth.signup') || "Get Started"}
               <ArrowRight className="w-5 h-5" />
             </Link>
-          </motion.div>
-
-          {/* Trust indicators */}
-          <motion.div 
-            variants={itemVariants}
-            className="mt-16 pt-8 border-t border-zion-blue-light/20"
+          </Button>
+          <Link
+            id="browse-marketplace"
+            to="/marketplace"
+            className="border-2 border-zion-cyan text-zion-cyan hover:bg-zion-cyan hover:text-zion-blue-dark active:bg-zion-cyan-light text-lg py-6 px-8 rounded-md inline-flex items-center justify-center gap-2 transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
           >
-            <p className="text-zion-slate-light text-sm mb-4">Trusted by leading tech companies</p>
-            <div className="flex justify-center items-center gap-8 opacity-60">
-              <div className="w-16 h-8 bg-zion-blue-light rounded opacity-50"></div>
-              <div className="w-16 h-8 bg-zion-purple-light rounded opacity-50"></div>
-              <div className="w-16 h-8 bg-zion-cyan rounded opacity-50"></div>
-            </div>
-          </motion.div>
-        </motion.div>
+            {t('home.browse_marketplace') || "Explore Marketplace"}
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
+
+        {/* Trust indicators */}
+        <div className="text-sm text-zion-slate-light opacity-80">
+          <p>Trusted by Fortune 500 companies worldwide</p>
+          <p className="mt-1">Join 50,000+ professionals already using Zion</p>
+        </div>
       </div>
     </section>
   );
