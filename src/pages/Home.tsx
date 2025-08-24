@@ -6,27 +6,26 @@ import { HowItWorksSection } from "@/components/HowItWorksSection";
 import { NewsletterSection } from "@/components/NewsletterSection";
 import { FeaturedListingsSection } from "@/components/FeaturedListingsSection";
 import { SEO } from "@/components/SEO";
-import { HeroSection } from "@/components/HeroSection";
+import { EnhancedHeroSection } from "@/components/home/EnhancedHeroSection";
 import { QuickAccess } from "@/components/home/QuickAccess";
 import { FeatureCTAs } from "@/components/home/FeatureCTAs";
 import { FeatureHighlights } from "@/components/home/FeatureHighlights";
 import { ITServiceRequestHero } from "@/components/home/ITServiceRequestHero";
-import { FloatingCTA } from "@/components/FloatingCTA";
-import { TestimonialCarousel } from "@/components/TestimonialCarousel";
+import { EnhancedServicesShowcase } from "@/components/home/EnhancedServicesShowcase";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-background">
       <SEO 
-        title="Zion - The Tech & AI Marketplace" 
-        description="Discover top AI and tech talent, services, and equipment in one place."
-        keywords="AI, technology, marketplace, services, talent"
-        canonical="https://app.ziontechgroup.com/"
+        title="Zion Tech Group - Premier Tech & AI Marketplace" 
+        description="Discover cutting-edge AI services, enterprise IT solutions, and innovative SaaS platforms. Connect with top talent and transform your business with next-generation technology."
+        keywords="AI services, IT solutions, SaaS platforms, technology marketplace, enterprise solutions, AI consulting, cloud services, cybersecurity, digital transformation"
+        canonical="https://ziontechgroup.com/"
       />
 
       <ITServiceRequestHero />
 
-      <HeroSection />
+      <EnhancedHeroSection />
       
       <QuickAccess />
       
@@ -34,15 +33,13 @@ export default function Home() {
       
       <FeatureHighlights />
       
-      <TestimonialCarousel />
+      <EnhancedServicesShowcase />
       
       <CategoriesSection />
       <BenefitsSection />
       <HowItWorksSection />
       <FeaturedListingsSection />
       <NewsletterSection />
-      
-      <FloatingCTA />
     </div>
   );
 }

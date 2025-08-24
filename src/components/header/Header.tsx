@@ -5,7 +5,6 @@ import { Logo } from './Logo';
 import { UserMenu } from './UserMenu';
 import { LanguageSelector } from './LanguageSelector';
 import { MainNavigation } from '@/layout/MainNavigation';
-import { MobileMenu } from './MobileMenu';
 import { useAuth } from '@/hooks/useAuth';
 import { useWhitelabel } from '@/context/WhitelabelContext';
 import { EnhancedSearchInput } from "@/components/search/EnhancedSearchInput";
@@ -54,19 +53,17 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
   
   return (
     <header 
-      className="sticky top-0 z-50 w-full border-b border-zion-purple/20 bg-zion-blue-dark/90 backdrop-blur-md"
+      className="sticky top-0 z-50 w-full border-b border-zion-purple/30 bg-zion-blue-dark/95 backdrop-blur-xl shadow-2xl shadow-zion-purple/10"
       style={headerStyle}
     >
-      <div className="container flex h-16 items-center px-4 sm:px-6">
+      <div className="container flex h-20 items-center px-4 sm:px-6">
         <Logo customLogo={customLogo} customColor={effectiveTheme?.primaryColor} />
 
-        {/* Desktop Navigation */}
-        <div className="ml-6 flex-1 hidden md:block">
+        <div className="ml-8 flex-1">
           <MainNavigation />
         </div>
-
-        {/* Desktop Search */}
-        <form onSubmit={handleSubmit} className="hidden lg:block w-64 mx-4">
+        
+        <form onSubmit={handleSubmit} className="hidden lg:block w-72 mx-6">
           <EnhancedSearchInput
             value={query}
             onChange={setQuery}
@@ -78,15 +75,14 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
           />
         </form>
 
-        {/* Desktop Actions */}
-        <div className="flex items-center gap-2 hidden md:flex">
+        <div className="flex items-center gap-4">
           <LanguageSelector />
           {!hideLogin && <UserMenu />}
         </div>
-
-        {/* Mobile Menu */}
-        <MobileMenu className="md:hidden" />
       </div>
+      
+      {/* Animated bottom border */}
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-zion-purple to-transparent opacity-60"></div>
     </header>
   );
 }
