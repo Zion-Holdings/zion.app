@@ -1,121 +1,362 @@
 
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
-import { SEO } from "@/components/SEO";
-import { GradientHeading } from "@/components/GradientHeading";
+import React from 'react';
+import { Header } from '@/components/Header';
+import { Footer } from '@/components/Footer';
+import { SEO } from '@/components/SEO';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import { Link } from 'react-router-dom';
+import { 
+  Brain, 
+  Cloud, 
+  Shield, 
+  Code, 
+  Users, 
+  Globe, 
+  Award, 
+  TrendingUp, 
+  Zap, 
+  Circle,
+  Lightbulb,
+  CheckCircle,
+  ArrowRight,
+  Star,
+  Clock,
+  DollarSign
+} from 'lucide-react';
+import { AnimatedBackground, NeonGlow } from '@/components/ui/AnimatedBackground';
 
 export default function About() {
+  const stats = [
+    { label: 'Countries Served', value: '50+', icon: <Globe className="h-8 w-8 text-zion-cyan" /> },
+    { label: 'Projects Completed', value: '500+', icon: <CheckCircle className="h-8 w-8 text-zion-purple" /> },
+    { label: 'Client Satisfaction', value: '98%', icon: <Star className="h-8 w-8 text-zion-blue" /> },
+    { label: 'Years Experience', value: '10+', icon: <Award className="h-8 w-8 text-zion-cyan" /> }
+  ];
+
+  const coreServices = [
+    {
+      title: 'AI & Machine Learning',
+      description: 'Custom AI development, machine learning solutions, and intelligent automation',
+      icon: <Brain className="h-8 w-8 text-zion-cyan" />,
+      features: ['Custom AI Models', 'ML Pipeline Development', 'AI Integration', 'Automation Solutions'],
+      link: '/ai-services'
+    },
+    {
+      title: 'IT Infrastructure',
+      description: 'Cloud migration, cybersecurity, DevOps, and managed IT services',
+      icon: <Cloud className="h-8 w-8 text-zion-blue" />,
+      features: ['Cloud Migration', 'Cybersecurity', 'DevOps Implementation', 'Managed Services'],
+      link: '/it-services'
+    },
+    {
+      title: 'Digital Transformation',
+      description: 'Strategic consulting and implementation for business modernization',
+      icon: <TrendingUp className="h-8 w-8 text-zion-purple" />,
+      features: ['Digital Strategy', 'Process Optimization', 'Legacy Modernization', 'Change Management'],
+      link: '/digital-transformation'
+    },
+    {
+      title: 'Global IT Support',
+      description: 'Onsite IT services available in 50+ countries with local technicians',
+      icon: <Globe className="h-8 w-8 text-green-500" />,
+      features: ['24/7 Support', 'Local Technicians', 'Rapid Response', 'Global Coverage'],
+      link: '/it-onsite-services'
+    }
+  ];
+
+  const values = [
+    {
+      title: 'Innovation First',
+      description: 'We stay at the cutting edge of technology to deliver the most advanced solutions',
+      icon: <Lightbulb className="h-8 w-8 text-yellow-500" />
+    },
+    {
+      title: 'Client Success',
+      description: 'Your success is our success. We measure our performance by your outcomes',
+      icon: <Circle className="h-8 w-8 text-green-500" />
+    },
+    {
+      title: 'Global Excellence',
+      description: 'Consistent quality and service standards across all our global operations',
+      icon: <Award className="h-8 w-8 text-blue-500" />
+    },
+    {
+      title: 'Continuous Learning',
+      description: 'We continuously evolve our skills and knowledge to serve you better',
+      icon: <Zap className="h-8 w-8 text-purple-500" />
+    }
+  ];
+
   return (
     <>
       <SEO 
-        title="About Zion - The Future of AI & Tech Marketplace" 
-        description="Learn about Zion's mission to create the first free marketplace dedicated to high-tech and artificial intelligence." 
-        keywords="about Zion, AI marketplace, tech platform, mission, vision, team"
-        canonical="https://app.ziontechgroup.com/about"
+        title="About Zion Tech Group - Leading AI & IT Services Provider" 
+        description="Learn about Zion Tech Group, a leading provider of AI services, IT solutions, and digital transformation services. Discover our mission, values, and global reach."
+        keywords="about Zion Tech Group, AI services company, IT services provider, digital transformation company"
+        canonical="https://ziontechgroup.com/about"
       />
       <Header />
-      <main className="min-h-screen bg-zion-blue pt-24 pb-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <GradientHeading>About Zion</GradientHeading>
-            <p className="mt-4 text-zion-slate-light text-xl max-w-3xl mx-auto">
-              The world's first free marketplace dedicated to high-tech and artificial intelligence
+      
+      <main className="min-h-screen bg-background">
+        {/* Hero Section */}
+        <section className="relative bg-gradient-to-br from-zion-blue-dark via-zion-purple to-zion-cyan py-20 overflow-hidden">
+          <AnimatedBackground variant="stars" intensity="low" />
+          
+          <div className="absolute inset-0 bg-black/20"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-zion-cyan/10 to-zion-purple/10"></div>
+          
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="text-center max-w-4xl mx-auto">
+              <NeonGlow color="#22ddd2" intensity="high">
+                <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">
+                  About Zion Tech Group
+                </h1>
+              </NeonGlow>
+              <p className="text-xl text-zion-slate-light mb-8 max-w-3xl mx-auto">
+                Leading the digital revolution with cutting-edge AI services, comprehensive IT solutions, 
+                and transformative digital strategies that empower businesses to thrive in the digital age.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button size="lg" className="bg-zion-cyan hover:bg-zion-cyan/80 text-zion-slate-dark">
+                  <Link to="/contact">Contact Our Team</Link>
+                </Button>
+                <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
+                  <Link to="/services-hub">Explore Services</Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Stats Section */}
+        <section className="py-16 bg-background">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              {stats.map((stat, index) => (
+                <div key={index} className="text-center group">
+                  <div className="flex justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                    {stat.icon}
+                  </div>
+                  <div className="text-3xl md:text-4xl font-bold text-zion-cyan mb-2">
+                    {stat.value}
+                  </div>
+                  <div className="text-sm text-muted-foreground">
+                    {stat.label}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Mission & Vision */}
+        <section className="py-20 bg-gradient-to-r from-zion-blue-dark/50 to-zion-purple-dark/50">
+          <div className="container mx-auto px-4">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+                  Our Mission & Vision
+                </h2>
+                <div className="space-y-6">
+                  <div>
+                    <h3 className="text-xl font-semibold text-zion-cyan mb-3">Mission</h3>
+                    <p className="text-zion-slate-light">
+                      To democratize access to cutting-edge AI and IT services, enabling businesses of all sizes 
+                      to leverage the power of technology for growth, innovation, and competitive advantage.
+                    </p>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-zion-purple mb-3">Vision</h3>
+                    <p className="text-zion-slate-light">
+                      To be the global leader in AI-powered business solutions, driving the digital transformation 
+                      of industries and creating a more intelligent, efficient, and sustainable future.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-zion-cyan/20 to-zion-purple/20 rounded-2xl blur-3xl"></div>
+                <div className="relative bg-card/50 backdrop-blur-sm p-8 rounded-2xl border border-zion-cyan/20">
+                  <h3 className="text-2xl font-bold text-white mb-4">Why Choose Zion Tech Group?</h3>
+                  <ul className="space-y-3">
+                    <li className="flex items-center gap-3">
+                      <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
+                      <span className="text-zion-slate-light">Expert team with 10+ years experience</span>
+                    </li>
+                    <li className="flex items-center gap-3">
+                      <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
+                      <span className="text-zion-slate-light">Global presence in 50+ countries</span>
+                    </li>
+                    <li className="flex items-center gap-3">
+                      <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
+                      <span className="text-zion-slate-light">Cutting-edge AI and ML solutions</span>
+                    </li>
+                    <li className="flex items-center gap-3">
+                      <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
+                      <span className="text-zion-slate-light">Proven track record of success</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Core Services */}
+        <section className="py-20 bg-background">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                Our Core Services
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                Comprehensive solutions designed to address the most critical technology challenges 
+                facing modern businesses.
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {coreServices.map((service, index) => (
+                <Card key={index} className="group hover:shadow-2xl transition-all duration-300 border-zion-purple/20 hover:border-zion-purple/50 bg-card/50 backdrop-blur-sm">
+                  <CardHeader className="pb-4">
+                    <div className="flex items-center gap-4 mb-4">
+                      {service.icon}
+                      <CardTitle className="text-xl group-hover:text-zion-cyan transition-colors">
+                        {service.title}
+                      </CardTitle>
+                    </div>
+                    <CardDescription className="text-muted-foreground">
+                      {service.description}
+                    </CardDescription>
+                  </CardHeader>
+                  
+                  <CardContent className="pb-4">
+                    <div className="space-y-2 mb-6">
+                      {service.features.map((feature, idx) => (
+                        <div key={idx} className="flex items-center text-sm">
+                          <CheckCircle className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
+                          <span className="text-muted-foreground">{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                  
+                  <CardContent className="pt-0">
+                    <Button asChild className="w-full group-hover:bg-zion-purple group-hover:text-white transition-all duration-300">
+                      <Link to={service.link}>
+                        Learn More
+                        <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                      </Link>
+                    </Button>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Values Section */}
+        <section className="py-20 bg-gradient-to-r from-zion-purple-dark/50 to-zion-cyan-dark/50">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                Our Core Values
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                The principles that guide everything we do and shape our relationships with clients, 
+                partners, and our team.
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {values.map((value, index) => (
+                <div key={index} className="text-center group">
+                  <div className="flex justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                    {value.icon}
+                  </div>
+                  <h3 className="text-xl font-semibold text-white mb-3">{value.title}</h3>
+                  <p className="text-zion-slate-light text-sm">{value.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Company Information */}
+        <section className="py-20 bg-background">
+          <div className="container mx-auto px-4">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div>
+                <h2 className="text-3xl font-bold text-white mb-6">Company Information</h2>
+                <div className="space-y-4 text-zion-slate-light">
+                  <div>
+                    <h3 className="font-semibold text-zion-cyan">Company Name</h3>
+                    <p>Zion Tech Group</p>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-zion-cyan">Founded</h3>
+                    <p>2014</p>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-zion-cyan">Headquarters</h3>
+                    <p>364 E Main St STE 1008<br />Middletown DE 19709</p>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-zion-cyan">Contact</h3>
+                    <p>Mobile: +1 302 464 0950<br />Email: kleber@ziontechgroup.com</p>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-zion-cyan">Business Hours</h3>
+                    <p>Monday - Friday: 9:00 AM - 6:00 PM EST<br />Saturday: 10:00 AM - 4:00 PM EST<br />24/7 Emergency Support Available</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-zion-blue/20 to-zion-cyan/20 rounded-2xl blur-3xl"></div>
+                <div className="relative bg-card/50 backdrop-blur-sm p-8 rounded-2xl border border-zion-blue/20">
+                  <h3 className="text-2xl font-bold text-white mb-4">Ready to Get Started?</h3>
+                  <p className="text-zion-slate-light mb-6">
+                    Let's discuss how our services can help transform your business and drive growth.
+                  </p>
+                  <div className="space-y-3">
+                    <Button asChild className="w-full bg-zion-cyan hover:bg-zion-cyan/80 text-zion-slate-dark">
+                      <Link to="/request-quote">Request Free Consultation</Link>
+                    </Button>
+                    <Button asChild variant="outline" className="w-full border-zion-cyan text-zion-cyan hover:bg-zion-cyan/10">
+                      <Link to="/contact">Contact Our Team</Link>
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-20 bg-gradient-to-r from-zion-blue-dark to-zion-purple-dark">
+          <div className="container mx-auto px-4 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              Ready to Transform Your Business?
+            </h2>
+            <p className="text-xl text-zion-slate-light mb-8 max-w-3xl mx-auto">
+              Join hundreds of businesses that trust Zion Tech Group for their technology needs. 
+              Let's build the future together.
             </p>
-          </div>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
-            <div>
-              <h2 className="text-3xl font-bold text-white mb-6">Our Mission</h2>
-              <p className="text-zion-slate-light text-lg mb-6">
-                At Zion, we're on a mission to democratize access to cutting-edge AI and technology solutions. 
-                We believe that innovation thrives when barriers are removed and connections are made.
-              </p>
-              <p className="text-zion-slate-light text-lg mb-6">
-                Our platform brings together talented AI specialists, innovative companies, and the latest 
-                technological solutions in one seamless ecosystem.
-              </p>
-              <p className="text-zion-slate-light text-lg">
-                By connecting talent with opportunity and innovation with implementation, we're creating 
-                a global community where the future of technology is being built today.
-              </p>
-            </div>
-            <div className="rounded-lg overflow-hidden">
-              <img 
-                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&h=600" 
-                alt="Team collaboration" 
-                className="object-cover w-full h-full"
-              />
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" className="bg-zion-cyan hover:bg-zion-cyan/80 text-zion-slate-dark">
+                <Link to="/request-quote">Start Your Journey</Link>
+              </Button>
+              <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
+                <Link to="/services-hub">Explore Services</Link>
+              </Button>
             </div>
           </div>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24 lg:flex-row-reverse">
-            <div>
-              <h2 className="text-3xl font-bold text-white mb-6">Our Vision</h2>
-              <p className="text-zion-slate-light text-lg mb-6">
-                We envision a world where AI and technology are accessible to all, regardless of geographical 
-                or financial constraints. A world where the best minds can collaborate to solve the most 
-                challenging problems.
-              </p>
-              <p className="text-zion-slate-light text-lg mb-6">
-                Zion is building that world by creating a transparent, ethical, and inclusive platform 
-                that puts people at the center of technological advancement.
-              </p>
-              <p className="text-zion-slate-light text-lg">
-                Our goal is to become the premier destination for AI and tech innovation, fostering 
-                a community that shapes the future of how we live, work, and interact with technology.
-              </p>
-            </div>
-            <div className="rounded-lg overflow-hidden lg:order-first">
-              <img 
-                src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&h=600" 
-                alt="Tech innovation" 
-                className="object-cover w-full h-full"
-              />
-            </div>
-          </div>
-          
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-white mb-8">Our Values</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="bg-zion-blue-dark p-8 rounded-lg border border-zion-blue-light">
-                <div className="bg-zion-blue inline-flex p-4 rounded-full mb-4">
-                  <svg className="w-8 h-8 text-zion-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold text-white mb-3">Innovation</h3>
-                <p className="text-zion-slate-light">
-                  We embrace cutting-edge technologies and creative thinking to push the boundaries of what's possible.
-                </p>
-              </div>
-              
-              <div className="bg-zion-blue-dark p-8 rounded-lg border border-zion-blue-light">
-                <div className="bg-zion-blue inline-flex p-4 rounded-full mb-4">
-                  <svg className="w-8 h-8 text-zion-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold text-white mb-3">Community</h3>
-                <p className="text-zion-slate-light">
-                  We believe in the power of collaboration and fostering an inclusive ecosystem where everyone can thrive.
-                </p>
-              </div>
-              
-              <div className="bg-zion-blue-dark p-8 rounded-lg border border-zion-blue-light">
-                <div className="bg-zion-blue inline-flex p-4 rounded-full mb-4">
-                  <svg className="w-8 h-8 text-zion-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold text-white mb-3">Trust</h3>
-                <p className="text-zion-slate-light">
-                  We maintain the highest standards of integrity, transparency, and ethical practices in everything we do.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+        </section>
       </main>
+      
       <Footer />
     </>
   );

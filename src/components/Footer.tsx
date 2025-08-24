@@ -69,10 +69,21 @@ export function Footer() {
           </div>
 
           <div>
+            <h3 className="text-white font-semibold mb-4 text-lg">Services</h3>
+            <ul className="space-y-2">
+              <li><Link to="/services-hub" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Services Hub</Link></li>
+              <li><Link to="/ai-services" className="text-zion-slate-light hover:text-zion-cyan transition-colors">AI Services</Link></li>
+              <li><Link to="/it-services" className="text-zion-slate-light hover:text-zion-cyan transition-colors">IT Services</Link></li>
+              <li><Link to="/digital-transformation" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Digital Transformation</Link></li>
+              <li><Link to="/it-onsite-services" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Global IT Support</Link></li>
+              <li><Link to="/zion-hire-ai" className="text-zion-slate-light hover:text-zion-cyan transition-colors">AI Recruiting</Link></li>
+            </ul>
+          </div>
+
+          <div>
             <h3 className="text-white font-semibold mb-4 text-lg">Marketplace</h3>
             <ul className="space-y-2">
               <li><Link to="/marketplace" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Products</Link></li>
-              <li><Link to="/services" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Services</Link></li>
               <li><Link to="/talent" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Talent</Link></li>
               <li><Link to="/equipment" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Equipment</Link></li>
               <li><Link to="/categories" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Categories</Link></li>
@@ -102,6 +113,36 @@ export function Footer() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-zion-blue-light">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            <div>
+              <h4 className="text-white font-semibold mb-3">Contact Information</h4>
+              <div className="space-y-2 text-sm text-zion-slate-light">
+                <p>Mobile: +1 302 464 0950</p>
+                <p>Email: kleber@ziontechgroup.com</p>
+                <p>Address: 364 E Main St STE 1008</p>
+                <p>Middletown DE 19709</p>
+              </div>
+            </div>
+            <div>
+              <h4 className="text-white font-semibold mb-3">Quick Links</h4>
+              <div className="space-y-2 text-sm">
+                <Link to="/request-quote" className="block text-zion-slate-light hover:text-zion-cyan transition-colors">Request Quote</Link>
+                <Link to="/contact" className="block text-zion-slate-light hover:text-zion-cyan transition-colors">Contact Us</Link>
+                <Link to="/about" className="block text-zion-slate-light hover:text-zion-cyan transition-colors">About Us</Link>
+                <Link to="/partners" className="block text-zion-slate-light hover:text-zion-cyan transition-colors">Partnerships</Link>
+              </div>
+            </div>
+            <div>
+              <h4 className="text-white font-semibold mb-3">Business Hours</h4>
+              <div className="space-y-2 text-sm text-zion-slate-light">
+                <p>Monday - Friday: 9:00 AM - 6:00 PM EST</p>
+                <p>Saturday: 10:00 AM - 4:00 PM EST</p>
+                <p>Sunday: Closed</p>
+                <p>24/7 Emergency Support Available</p>
+              </div>
+            </div>
+          </div>
+          
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-zion-slate-light text-sm">
               &copy; {new Date().getFullYear()} Zion Tech Group. All rights reserved.
