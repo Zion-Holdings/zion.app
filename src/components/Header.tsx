@@ -1,110 +1,178 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { Menu, X, Search, Phone, Mail, MapPin } from 'lucide-react';
 
-const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+export function Header() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
   const location = useLocation();
 
   const navigation = [
-    { name: 'Home', path: '/', current: location.pathname === '/' },
-    { name: 'Services', path: '/services', current: location.pathname === '/services' },
-    { name: 'About', path: '/about', current: location.pathname === '/about' },
-    { name: 'Contact', path: '/contact', current: location.pathname === '/contact' },
+    { name: 'Home', href: '/', current: location.pathname === '/' },
+    { name: 'Services', href: '/services', current: location.pathname.startsWith('/services') },
+    { name: 'AI Matcher', href: '/match', current: location.pathname === '/match' },
+    { name: 'Talent', href: '/talent', current: location.pathname.startsWith('/talent') },
+    { name: 'About', href: '/about', current: location.pathname === '/about' },
+    { name: 'Contact', href: '/contact', current: location.pathname === '/contact' },
   ];
 
-  const isActive = (path: string) => location.pathname === path;
+  const serviceCategories = [
+    {
+      name: 'AI Services',
+      description: 'Advanced AI solutions and automation',
+      href: '/micro-saas-services?category=AI Services',
+    },
+    {
+      name: 'IT Services',
+      description: 'Comprehensive IT solutions',
+      href: '/micro-saas-services?category=IT Services',
+    },
+    {
+      name: 'Micro SAAS',
+      description: 'Specialized software solutions',
+      href: '/micro-saas-services?category=Micro SAAS',
+    },
+    {
+      name: 'Development',
+      description: 'Custom development services',
+      href: '/micro-saas-services?category=Development',
+    },
+  ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-zion-blue-dark/90 backdrop-blur-md border-b border-zion-cyan/20">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+    <header className="bg-white shadow-sm border-b border-gray-200">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3 group">
-            <div className="text-2xl font-bold text-zion-cyan group-hover:text-zion-cyan-light transition-colors duration-300">
-              🚀
-            </div>
-            <div className="hidden sm:block">
-              <span className="text-xl font-bold bg-gradient-to-r from-zion-cyan to-zion-purple-light bg-clip-text text-transparent font-orbitron">
-                Zion Tech Group
-              </span>
-            </div>
-          </Link>
+          <div className="flex-shrink-0">
+            <Link to="/" className="flex items-center">
+              <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+                <span className="text-white font-bold text-lg">Z</span>
+              </div>
+              <span className="ml-2 text-xl font-bold text-gray-900">Zion Tech Group</span>
+            </Link>
+          </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex space-x-8">
             {navigation.map((item) => (
-              <Link
-                key={item.name}
-                to={item.path}
-                className={`px-4 py-2 rounded-lg font-medium transition-all duration-300 ${
-                  isActive(item.path)
-                    ? 'bg-zion-cyan text-zion-blue-dark shadow-lg shadow-zion-cyan/30'
-                    : 'text-zion-slate-light hover:text-white hover:bg-zion-blue/50'
-                }`}
-              >
-                {item.name}
-              </Link>
+              <div key={item.name} className="relative">
+                {item.name === 'Services' ? (
+                  <div
+                    className="relative"
+                    onMouseEnter={() => setIsServicesDropdownOpen(true)}
+                    onMouseLeave={() => setIsServicesDropdownOpen(false)}
+                  >
+                    <button
+                      className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                        item.current
+                          ? 'text-blue-600 bg-blue-50'
+                          : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
+                      }`}
+                    >
+                      {item.name}
+                    </button>
+                    {isServicesDropdownOpen && (
+                      <div className="absolute z-10 mt-2 w-80 bg-white rounded-lg shadow-lg border border-gray-200 py-2">
+                        <div className="grid grid-cols-2 gap-4 p-4">
+                          {serviceCategories.map((category) => (
+                            <Link
+                              key={category.name}
+                              to={category.href}
+                              className="group p-3 rounded-lg hover:bg-gray-50 transition-colors"
+                            >
+                              <div className="font-medium text-gray-900 group-hover:text-blue-600">
+                                {category.name}
+                              </div>
+                              <div className="text-sm text-gray-500 group-hover:text-gray-700">
+                                {category.description}
+                              </div>
+                            </Link>
+                          ))}
+                        </div>
+                        <div className="border-t border-gray-200 pt-2">
+                          <Link
+                            to="/services"
+                            className="block px-4 py-2 text-sm text-blue-600 hover:bg-blue-50 font-medium"
+                          >
+                            View All Services →
+                          </Link>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <Link
+                    to={item.href}
+                    className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                      item.current
+                        ? 'text-blue-600 bg-blue-50'
+                        : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
+                    }`}
+                  >
+                    {item.name}
+                  </Link>
+                )}
+              </div>
             ))}
           </nav>
 
           {/* Contact Info */}
           <div className="hidden lg:flex items-center space-x-6">
-            <div className="flex items-center space-x-2 text-zion-cyan">
-              <span className="text-sm">📞</span>
-              <span className="text-sm font-medium">+1 302 464 0950</span>
+            <div className="flex items-center space-x-2 text-sm text-gray-600">
+              <Phone className="w-4 h-4" />
+              <span>+1 302 464 0950</span>
             </div>
-            <Link
-              to="/contact"
-              className="px-6 py-2 bg-gradient-to-r from-zion-cyan to-zion-cyan-light text-zion-blue-dark font-bold rounded-lg hover:from-zion-cyan-light hover:to-zion-cyan transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-zion-cyan/50"
-            >
-              Get Started
-            </Link>
+            <div className="flex items-center space-x-2 text-sm text-gray-600">
+              <Mail className="w-4 h-4" />
+              <span>kleber@ziontechgroup.com</span>
+            </div>
           </div>
 
           {/* Mobile menu button */}
           <div className="md:hidden">
             <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-zion-cyan hover:text-zion-cyan-light transition-colors duration-300"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="text-gray-700 hover:text-blue-600 focus:outline-none focus:text-blue-600"
             >
-              <div className="w-6 h-6 flex flex-col justify-center items-center">
-                <span className={`block w-5 h-0.5 bg-current transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-1' : ''}`}></span>
-                <span className={`block w-5 h-0.5 bg-current transition-all duration-300 mt-1 ${isMenuOpen ? 'opacity-0' : ''}`}></span>
-                <span className={`block w-5 h-0.5 bg-current transition-all duration-300 mt-1 ${isMenuOpen ? '-rotate-45 -translate-y-1' : ''}`}></span>
-              </div>
+              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
         </div>
 
         {/* Mobile Navigation */}
-        {isMenuOpen && (
+        {isMobileMenuOpen && (
           <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-zion-blue-dark/95 backdrop-blur-md border-t border-zion-cyan/20">
+            <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-200">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
-                  to={item.path}
-                  className={`block px-3 py-2 rounded-md text-base font-medium transition-all duration-300 ${
-                    isActive(item.path)
-                      ? 'bg-zion-cyan text-zion-blue-dark'
-                      : 'text-zion-slate-light hover:text-white hover:bg-zion-blue/50'
+                  to={item.href}
+                  className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
+                    item.current
+                      ? 'text-blue-600 bg-blue-50'
+                      : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
                   }`}
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.name}
                 </Link>
               ))}
-              <div className="pt-4 border-t border-zion-cyan/20">
-                <div className="px-3 py-2 text-zion-cyan text-sm">
-                  📞 +1 302 464 0950
+              <div className="pt-4 border-t border-gray-200">
+                <div className="px-3 py-2 text-sm text-gray-600">
+                  <div className="flex items-center space-x-2 mb-2">
+                    <Phone className="w-4 h-4" />
+                    <span>+1 302 464 0950</span>
+                  </div>
+                  <div className="flex items-center space-x-2 mb-2">
+                    <Mail className="w-4 h-4" />
+                    <span>kleber@ziontechgroup.com</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <MapPin className="w-4 h-4" />
+                    <span>364 E Main St STE 1008 Middletown DE 19709</span>
+                  </div>
                 </div>
-                <Link
-                  to="/contact"
-                  className="block mt-2 px-3 py-2 bg-gradient-to-r from-zion-cyan to-zion-cyan-light text-zion-blue-dark font-bold rounded-md text-center"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Get Started
-                </Link>
               </div>
             </div>
           </div>
@@ -112,6 +180,4 @@ const Header = () => {
       </div>
     </header>
   );
-};
-
-export default Header;
+}

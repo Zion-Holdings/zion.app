@@ -1,43 +1,52 @@
 import React from 'react';
-import { cn } from '@/lib/utils';
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'default' | 'outline' | 'ghost';
-  size?: 'sm' | 'md' | 'lg';
-  asChild?: boolean;
+interface ButtonProps {
+  children: React.ReactNode;
+  className?: string;
+  variant?: 'default' | 'destructive' | 'outline' | 'secondary' | 'ghost' | 'link';
+  size?: 'default' | 'sm' | 'lg' | 'icon';
+  onClick?: () => void;
+  type?: 'button' | 'submit' | 'reset';
+  disabled?: boolean;
 }
 
-export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant = 'default', size = 'md', asChild = false, ...props }, ref) => {
-    const baseClasses = 'inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none';
-    
-    const variants = {
-      default: 'bg-primary text-primary-foreground hover:bg-primary/90',
-      outline: 'border border-input bg-background hover:bg-accent hover:text-accent-foreground',
-      ghost: 'hover:bg-accent hover:text-accent-foreground'
-    };
-    
-    const sizes = {
-      sm: 'h-8 px-3 text-sm',
-      md: 'h-10 px-4 py-2',
-      lg: 'h-12 px-8 text-lg'
-    };
-    
-    const classes = cn(
-      baseClasses,
-      variants[variant],
-      sizes[size],
-      className
-    );
-    
-    return (
-      <button
-        className={classes}
-        ref={ref}
-        {...props}
-      />
-    );
-  }
-);
-
-Button.displayName = 'Button';
+export function Button({ 
+  children, 
+  className = '', 
+  variant = 'default', 
+  size = 'default',
+  onClick,
+  type = 'button',
+  disabled = false
+}: ButtonProps) {
+  const baseClasses = 'inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background';
+  
+  const variantClasses = {
+    default: 'bg-primary text-primary-foreground hover:bg-primary/90',
+    destructive: 'bg-destructive text-destructive-foreground hover:bg-destructive/90',
+    outline: 'border border-input hover:bg-accent hover:text-accent-foreground',
+    secondary: 'bg-secondary text-secondary-foreground hover:bg-secondary/80',
+    ghost: 'hover:bg-accent hover:text-accent-foreground',
+    link: 'underline-offset-4 hover:underline text-primary'
+  };
+  
+  const sizeClasses = {
+    default: 'h-10 py-2 px-4',
+    sm: 'h-9 px-3 rounded-md',
+    lg: 'h-11 px-8 rounded-md',
+    icon: 'h-10 w-10'
+  };
+  
+  const classes = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`;
+  
+  return (
+    <button
+      type={type}
+      className={classes}
+      onClick={onClick}
+      disabled={disabled}
+    >
+      {children}
+    </button>
+  );
+}

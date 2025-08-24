@@ -11,9 +11,9 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "strict": false,
-    "noUnusedLocals": false,
-    "noUnusedParameters": false,
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "baseUrl": ".",
     "paths": {
@@ -21,23 +21,36 @@
     }
   },
   "include": [
-    "src/main.tsx",
-    "src/App.tsx",
-    "src/pages/Home.tsx",
-    "src/pages/Contact.tsx",
-    "src/pages/About.tsx",
-    "src/pages/Services.tsx",
-    "src/index.css"
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "types/**/*.ts",
+    "types/**/*.d.ts"
   ],
   "exclude": [
     "node_modules",
-    "src/components",
-    "src/context",
-    "src/data",
-    "src/hooks",
-    "src/layout",
-    "src/lib",
-    "src/store",
-    "src/types"
+    "zion.app/recovered-content/**",
+    "contracts/**",
+    "dao/**",
+    "zion-os/**",
+    "zion_academy/**",
+    "packages/**",
+    "monitoring/**",
+    "scripts/**",
+    "server/**",
+    "cypress/**",
+    "**/*.disabled/**",
+    "__tests__.disabled/**",
+    "plugins.disabled/**",
+    "test.disabled/**",
+    "services.disabled.temp/**",
+    "data.temp/**",
+    "src_backup/**",
+    "components/**",
+    "pages/**"
+  ],
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    }
   ]
 }

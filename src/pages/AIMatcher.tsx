@@ -1,16 +1,12 @@
 import React from 'react';
 
-const AIMatcher = () => {
+export default function AIMatcherPage() {
   return (
-    <div className="min-h-screen bg-background p-8">
-      <div className="container mx-auto text-center">
-        <h1 className="text-4xl font-bold text-white mb-6">AI Talent Matcher</h1>
-        <p className="text-zion-slate-light text-lg">
-          Our AI-powered matching algorithm connects you with the perfect talent or job.
-        </p>
+    <div className="min-h-screen bg-zion-blue-dark py-8 text-white">
+      <div className="container mx-auto px-4">
+        <h1 className="text-3xl font-bold mb-6">AI Matcher</h1>
+        <p>AI Matcher page content will go here.</p>
       </div>
     </div>
   );
-};
-
-export default AIMatcher;
+}
