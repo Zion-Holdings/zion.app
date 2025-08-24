@@ -17,8 +17,7 @@ export function ChatAssistant({ isOpen, onClose, recipient, conversationId, init
         scrollToBottom();
     }, [messages]);
     const scrollToBottom = () => {
-        var _a;
-        (_a = messagesEndRef.current) === null || _a === void 0 ? void 0 : _a.scrollIntoView({ behavior: 'smooth' });
+        messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
     };
     const handleSendMessage = async (message) => {
         if (!message.trim())

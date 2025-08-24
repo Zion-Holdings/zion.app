@@ -22,8 +22,8 @@ export default function Contact() {
     const [isChatOpen, setIsChatOpen] = useState(false);
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setFormData(prev => (Object.assign(Object.assign({}, prev), { [name]: value })));
-        setErrors(prev => (Object.assign(Object.assign({}, prev), { [name]: undefined })));
+        setFormData(prev => ({ ...prev, [name]: value }));
+        setErrors(prev => ({ ...prev, [name]: undefined }));
     };
     const handleSubmit = (e) => {
         e.preventDefault();

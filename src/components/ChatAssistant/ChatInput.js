@@ -6,9 +6,8 @@ export function ChatInput({ onSend, disabled = false }) {
     const [message, setMessage] = useState('');
     const inputRef = useRef(null);
     useEffect(() => {
-        var _a;
         // Focus input when component mounts
-        (_a = inputRef.current) === null || _a === void 0 ? void 0 : _a.focus();
+        inputRef.current?.focus();
     }, []);
     const handleSubmit = (e) => {
         e.preventDefault();
