@@ -1,41 +1,83 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Phone, Mail, Globe, Clock, Users, CheckCircle, TrendingUp } from 'lucide-react';
-import { SERVICE_CATEGORIES } from '@/data/comprehensiveServices';
-const ServiceCard = ({ service }) => {
-    const [isExpanded, setIsExpanded] = useState(false);
-    const getPricingDisplay = (service) => {
-        switch (service.pricingModel) {
-            case 'one-time':
-                return `${service.currency}${service.price.toLocaleString()}`;
-            case 'monthly':
-                return `${service.currency}${service.price.toLocaleString()}/month`;
-            case 'yearly':
-                return `${service.currency}${service.price.toLocaleString()}/year`;
-            case 'per-user':
-                return `${service.currency}${service.price.toLocaleString()}/user`;
-            case 'per-project':
-                return `${service.currency}${service.price.toLocaleString()}/project`;
+import { motion } from 'framer-motion';
+import { Search, TrendingUp, Zap, Shield, Brain, Code, BarChart3, Settings, Globe, Smartphone, Cloud, Lock } from 'lucide-react';
+import { COMPREHENSIVE_SERVICES, serviceCategories } from '../data/comprehensiveServices';
+import { Badge } from './ui/badge';
+import { Card } from './ui/card';
+import { Button } from './ui/button';
+import { Input } from './ui/input';
+import { Select } from './ui/select';
+import FuturisticNeonButton from './ui/FuturisticNeonButton';
+const categoryIcons = {
+    'AI & Machine Learning': Brain,
+    'Cloud & Infrastructure': Cloud,
+    'Cybersecurity': Lock,
+    'Data Analytics': BarChart3,
+    'Digital Transformation': TrendingUp,
+    'E-commerce Solutions': Globe,
+    'Mobile Development': Smartphone,
+    'Web Development': Code,
+    'Business Process Automation': Zap,
+    'IT Consulting': Settings
+};
+const ComprehensiveServicesShowcase = () => {
+    const [searchTerm, setSearchTerm] = useState('');
+    const [selectedCategory, setSelectedCategory] = useState('all');
+    const [sortBy, setSortBy] = useState('name');
+    const filteredServices = COMPREHENSIVE_SERVICES.filter(service => {
+        const matchesSearch = service.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            service.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            service.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
+        const matchesCategory = selectedCategory === 'all' || service.category === selectedCategory;
+        return matchesSearch && matchesCategory;
+    });
+    const sortedServices = [...filteredServices].sort((a, b) => {
+        switch (sortBy) {
+            case 'name':
+                return a.title.localeCompare(b.title);
+            case 'price':
+                const aMinPrice = Math.min(...a.pricing.map(p => p.amount));
+                const bMinPrice = Math.min(...b.pricing.map(p => p.amount));
+                return aMinPrice - bMinPrice;
+            case 'category':
+                return a.category.localeCompare(b.category);
             default:
-                return `${service.currency}${service.price.toLocaleString()}`;
+                return 0;
+        }
+    });
+    const categories = ['all', ...serviceCategories];
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.1
+            }
         }
     };
-    const getSupportLevelColor = (level) => {
-        switch (level) {
-            case 'basic': return 'bg-gray-100 text-gray-800';
-            case 'standard': return 'bg-blue-100 text-blue-800';
-            case 'premium': return 'bg-purple-100 text-purple-800';
-            case 'enterprise': return 'bg-orange-100 text-orange-800';
-            default: return 'bg-gray-100 text-gray-800';
+    const itemVariants = {
+        hidden: { y: 20, opacity: 0 },
+        visible: {
+            y: 0,
+            opacity: 1,
+            transition: {
+                duration: 0.5
+            }
         }
     };
-    return (_jsxs(Card, { className: "h-full border-zion-blue-light bg-zion-blue-dark hover:border-zion-purple/50 transition-all duration-300", children: [_jsxs(CardHeader, { className: "pb-4", children: [_jsxs("div", { className: "flex items-start justify-between mb-2", children: [_jsx(Badge, { variant: "secondary", className: "bg-zion-purple/20 text-zion-cyan border-zion-purple/30", children: service.subcategory }), _jsx(Badge, { className: getSupportLevelColor(service.supportLevel), children: service.supportLevel })] }), _jsx(CardTitle, { className: "text-white text-lg leading-tight mb-2", children: service.title }), _jsx(CardDescription, { className: "text-zion-slate-light text-sm leading-relaxed", children: service.description })] }), _jsx(CardContent, { className: "pt-0", children: _jsxs("div", { className: "space-y-4", children: [_jsxs("div", { className: "bg-zion-blue-light/10 rounded-lg p-3 border border-zion-blue-light/20", children: [_jsxs("div", { className: "flex items-center justify-between", children: [_jsx("span", { className: "text-zion-slate-light text-sm", children: "Starting at" }), _jsx("span", { className: "text-zion-cyan font-bold text-lg", children: getPricingDisplay(service) })] }), _jsxs("div", { className: "text-zion-slate-light text-xs mt-1", children: ["Market range: ", service.marketPrice] })] }), _jsxs("div", { children: [_jsxs("h4", { className: "text-white font-semibold text-sm mb-2 flex items-center gap-2", children: [_jsx(CheckCircle, { className: "h-4 w-4 text-zion-cyan" }), "Key Features"] }), _jsxs("div", { className: "grid grid-cols-1 gap-1", children: [service.features.slice(0, 3).map((feature, index) => (_jsxs("div", { className: "text-zion-slate-light text-xs flex items-start gap-2", children: [_jsx("div", { className: "w-1.5 h-1.5 bg-zion-cyan rounded-full mt-2 flex-shrink-0" }), _jsx("span", { children: feature })] }, index))), service.features.length > 3 && (_jsx(Button, { variant: "ghost", size: "sm", className: "text-zion-cyan hover:text-zion-cyan-light text-xs p-0 h-auto", onClick: () => setIsExpanded(!isExpanded), children: isExpanded ? 'Show less' : `+${service.features.length - 3} more features` }))] }), isExpanded && (_jsx("div", { className: "mt-2 space-y-1", children: service.features.slice(3).map((feature, index) => (_jsxs("div", { className: "text-zion-slate-light text-xs flex items-start gap-2", children: [_jsx("div", { className: "w-1.5 h-1.5 bg-zion-cyan rounded-full mt-2 flex-shrink-0" }), _jsx("span", { children: feature })] }, index))) }))] }), _jsxs("div", { children: [_jsxs("h4", { className: "text-white font-semibold text-sm mb-2 flex items-center gap-2", children: [_jsx(TrendingUp, { className: "h-4 w-4 text-zion-cyan" }), "Benefits"] }), _jsx("div", { className: "grid grid-cols-1 gap-1", children: service.benefits.slice(0, 3).map((benefit, index) => (_jsxs("div", { className: "text-zion-slate-light text-xs flex items-start gap-2", children: [_jsx("div", { className: "w-1.5 h-1.5 bg-zion-cyan rounded-full mt-2 flex-shrink-0" }), _jsx("span", { children: benefit })] }, index))) })] }), _jsxs("div", { className: "grid grid-cols-2 gap-3 text-xs", children: [_jsxs("div", { className: "flex items-center gap-2 text-zion-slate-light", children: [_jsx(Clock, { className: "h-3 w-3 text-zion-cyan" }), _jsx("span", { children: service.estimatedDelivery })] }), _jsxs("div", { className: "flex items-center gap-2 text-zion-slate-light", children: [_jsx(Users, { className: "h-3 w-3 text-zion-cyan" }), _jsxs("span", { children: [service.targetAudience.length, " target audiences"] })] })] }), _jsx("div", { className: "flex flex-wrap gap-1", children: service.tags.slice(0, 3).map((tag, index) => (_jsx(Badge, { variant: "outline", className: "text-xs border-zion-blue-light/30 text-zion-slate-light", children: tag }, index))) }), _jsxs("div", { className: "bg-zion-blue-light/5 rounded-lg p-3 border border-zion-blue-light/10", children: [_jsx("h4", { className: "text-white font-semibold text-sm mb-2", children: "Get Started" }), _jsxs("div", { className: "space-y-2 text-xs", children: [_jsxs("div", { className: "flex items-center gap-2 text-zion-slate-light", children: [_jsx(Phone, { className: "h-3 w-3 text-zion-cyan" }), _jsx("a", { href: `tel:${service.contactInfo.phone}`, className: "text-zion-cyan hover:text-zion-cyan-light", children: service.contactInfo.phone })] }), _jsxs("div", { className: "flex items-center gap-2 text-zion-slate-light", children: [_jsx(Mail, { className: "h-3 w-3 text-zion-cyan" }), _jsx("a", { href: `mailto:${service.contactInfo.email}`, className: "text-zion-cyan hover:text-zion-cyan-light", children: service.contactInfo.email })] }), _jsxs("div", { className: "flex items-center gap-2 text-zion-slate-light", children: [_jsx(Globe, { className: "h-3 w-3 text-zion-cyan" }), _jsx("a", { href: service.contactInfo.website, target: "_blank", rel: "noopener noreferrer", className: "text-zion-cyan hover:text-zion-cyan-light", children: "Visit Website" })] })] })] })] }) })] }));
+    return (_jsxs("div", { className: "min-h-screen bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-slate-dark relative overflow-hidden", children: [_jsxs(motion.div, { className: "relative z-10 text-center py-20 px-4", initial: { opacity: 0, y: -50 }, animate: { opacity: 1, y: 0 }, transition: { duration: 0.8 }, children: [_jsx(motion.h1, { className: "text-5xl md:text-7xl font-bold text-white mb-6 bg-gradient-to-r from-zion-cyan via-zion-purple to-zion-cyan bg-clip-text text-transparent", initial: { opacity: 0, scale: 0.8 }, animate: { opacity: 1, scale: 1 }, transition: { duration: 0.8, delay: 0.2 }, children: "Comprehensive Services" }), _jsx(motion.p, { className: "text-xl md:text-2xl text-zion-slate-light mb-8 max-w-4xl mx-auto leading-relaxed", initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 }, transition: { duration: 0.8, delay: 0.4 }, children: "Discover our comprehensive range of professional services designed to transform your business and drive innovation" }), _jsxs(motion.div, { className: "flex flex-wrap justify-center gap-4 text-zion-cyan", initial: { opacity: 0 }, animate: { opacity: 1 }, transition: { duration: 0.8, delay: 0.6 }, children: [_jsxs("div", { className: "flex items-center gap-2", children: [_jsx(Brain, { className: "w-6 h-6" }), _jsx("span", { children: "AI-Powered" })] }), _jsxs("div", { className: "flex items-center gap-2", children: [_jsx(Zap, { className: "w-6 h-6" }), _jsx("span", { children: "Enterprise Ready" })] }), _jsxs("div", { className: "flex items-center gap-2", children: [_jsx(Shield, { className: "w-6 h-6" }), _jsx("span", { children: "Professional Grade" })] })] })] }), _jsx(motion.div, { className: "relative z-10 max-w-6xl mx-auto px-4 mb-12", initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 }, transition: { duration: 0.8, delay: 0.8 }, children: _jsx(Card, { className: "bg-zion-blue-dark/50 backdrop-blur-lg border-zion-blue-light/30 p-6", children: _jsxs("div", { className: "grid grid-cols-1 md:grid-cols-3 gap-4", children: [_jsxs("div", { className: "relative", children: [_jsx(Search, { className: "absolute left-3 top-1/2 transform -translate-y-1/2 text-zion-slate-light w-5 h-5" }), _jsx(Input, { type: "text", placeholder: "Search services...", value: searchTerm, onChange: (e) => setSearchTerm(e.target.value), className: "pl-10 bg-zion-slate-dark/50 border-zion-blue-light/30 text-white placeholder-zion-slate-light focus:border-zion-cyan" })] }), _jsxs(Select, { value: selectedCategory, onValueChange: setSelectedCategory, children: [_jsx("option", { value: "all", children: "All Categories" }), categories.filter(cat => cat !== 'all').map(category => (_jsx("option", { value: category, children: category }, category)))] }), _jsxs(Select, { value: sortBy, onValueChange: (value) => setSortBy(value), children: [_jsx("option", { value: "name", children: "Sort by Name" }), _jsx("option", { value: "price", children: "Sort by Price" }), _jsx("option", { value: "category", children: "Sort by Category" })] })] }) }) }), _jsxs(motion.div, { className: "relative z-10 max-w-7xl mx-auto px-4 pb-20", variants: containerVariants, initial: "hidden", animate: "visible", children: [_jsx("div", { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8", children: sortedServices.map((service) => {
+                            const CategoryIcon = categoryIcons[service.category] || Globe;
+                            const minPrice = Math.min(...service.pricing.map(p => p.amount));
+                            const maxPrice = Math.max(...service.pricing.map(p => p.amount));
+                            return (_jsx(motion.div, { variants: itemVariants, whileHover: { y: -10, scale: 1.02 }, className: "group", children: _jsxs(Card, { className: "bg-zion-blue-dark/30 backdrop-blur-lg border-zion-blue-light/20 hover:border-zion-cyan/50 transition-all duration-300 h-full overflow-hidden", children: [_jsxs("div", { className: "p-6 border-b border-zion-blue-light/20", children: [_jsxs("div", { className: "flex items-start justify-between mb-4", children: [_jsxs("div", { className: "flex items-center gap-3", children: [_jsx("div", { className: "p-2 bg-gradient-to-br from-zion-cyan to-zion-purple rounded-lg", children: _jsx(CategoryIcon, { className: "w-6 h-6 text-white" }) }), _jsx(Badge, { variant: "outline", className: "border-zion-cyan/50 text-zion-cyan", children: service.category })] }), service.status === 'coming-soon' && (_jsx(Badge, { variant: "secondary", className: "bg-zion-purple/20 text-zion-purple border-zion-purple/30", children: "Coming Soon" }))] }), _jsx("h3", { className: "text-xl font-bold text-white mb-3 group-hover:text-zion-cyan transition-colors", children: service.title }), _jsx("p", { className: "text-zion-slate-light text-sm leading-relaxed mb-4", children: service.description }), _jsxs("div", { className: "bg-zion-slate-dark/30 rounded-lg p-4 mb-4", children: [_jsxs("div", { className: "flex items-center justify-between mb-2", children: [_jsx("span", { className: "text-zion-slate-light text-sm", children: "Starting from" }), _jsxs("span", { className: "text-zion-cyan font-bold", children: ["$", minPrice, minPrice !== maxPrice && ` - $${maxPrice}`] })] }), _jsxs("div", { className: "text-xs text-zion-slate-light", children: [service.pricing.length, " pricing options available"] })] })] }), _jsxs("div", { className: "p-6", children: [_jsxs("h4", { className: "text-white font-semibold mb-3 flex items-center gap-2", children: [_jsx(Zap, { className: "w-4 h-4 text-zion-cyan" }), "Key Features"] }), _jsxs("div", { className: "grid grid-cols-1 gap-2 mb-4", children: [service.features.slice(0, 4).map((feature, index) => (_jsxs("div", { className: "flex items-center gap-2 text-sm text-zion-slate-light", children: [_jsx("div", { className: "w-1.5 h-1.5 bg-zion-cyan rounded-full" }), feature] }, index))), service.features.length > 4 && (_jsxs("div", { className: "text-xs text-zion-cyan", children: ["+", service.features.length - 4, " more features"] }))] }), _jsxs("div", { className: "mb-4", children: [_jsxs("h4", { className: "text-white font-semibold mb-2 flex items-center gap-2", children: [_jsx(TrendingUp, { className: "w-4 h-4 text-zion-cyan" }), "Benefits"] }), _jsxs("div", { className: "text-sm text-zion-slate-light", children: [service.benefits[0], " \u2022 ", service.benefits[1]] })] }), _jsxs("div", { className: "mb-4", children: [_jsxs("h4", { className: "text-white font-semibold mb-2 flex items-center gap-2", children: [_jsx(Shield, { className: "w-4 h-4 text-zion-cyan" }), "Support Level"] }), _jsx(Badge, { variant: "outline", className: `text-xs ${service.supportLevel === 'enterprise'
+                                                                ? 'border-zion-purple/50 text-zion-purple'
+                                                                : service.supportLevel === 'premium'
+                                                                    ? 'border-zion-cyan/50 text-zion-cyan'
+                                                                    : 'border-zion-slate-light/50 text-zion-slate-light'}`, children: service.supportLevel.charAt(0).toUpperCase() + service.supportLevel.slice(1) })] }), _jsx("div", { className: "flex flex-wrap gap-2 mb-6", children: service.tags.slice(0, 3).map((tag, index) => (_jsx(Badge, { variant: "outline", className: "text-xs border-zion-slate-light/30 text-zion-slate-light hover:border-zion-cyan/50 hover:text-zion-cyan transition-colors", children: tag }, index))) }), _jsxs("div", { className: "flex gap-3", children: [_jsx(FuturisticNeonButton, { onClick: () => window.location.href = `mailto:${service.contactInfo.email}?subject=Inquiry about ${service.title}`, className: "flex-1", children: "Get Quote" }), _jsx(Button, { variant: "outline", size: "sm", onClick: () => window.location.href = `tel:${service.contactInfo.phone}`, className: "border-zion-blue-light/30 text-zion-cyan hover:bg-zion-cyan/10 hover:border-zion-cyan", children: "Call Now" })] })] })] }) }, service.id));
+                        }) }), sortedServices.length === 0 && (_jsxs(motion.div, { className: "text-center py-20", initial: { opacity: 0 }, animate: { opacity: 1 }, children: [_jsx("div", { className: "text-zion-slate-light text-lg mb-4", children: "No services found matching your criteria" }), _jsx(Button, { onClick: () => {
+                                    setSearchTerm('');
+                                    setSelectedCategory('all');
+                                }, className: "bg-zion-cyan hover:bg-zion-cyan-light text-white", children: "Clear Filters" })] }))] }), _jsx(motion.div, { className: "relative z-10 max-w-4xl mx-auto px-4 pb-20", initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 }, transition: { duration: 0.8, delay: 1.2 }, children: _jsxs(Card, { className: "bg-gradient-to-r from-zion-blue-dark/50 to-zion-purple-dark/50 backdrop-blur-lg border-zion-cyan/30 p-8 text-center", children: [_jsx("h2", { className: "text-3xl font-bold text-white mb-4", children: "Ready to Transform Your Business?" }), _jsx("p", { className: "text-zion-slate-light text-lg mb-6 max-w-2xl mx-auto", children: "Our team of experts is ready to help you implement the perfect solution for your business needs. Get in touch today for a personalized consultation." }), _jsxs("div", { className: "flex flex-col sm:flex-row gap-4 justify-center", children: [_jsx(FuturisticNeonButton, { onClick: () => window.location.href = 'mailto:kleber@ziontechgroup.com?subject=Business Consultation Request', size: "lg", children: "Schedule Consultation" }), _jsx(Button, { variant: "outline", size: "lg", onClick: () => window.location.href = 'tel:+13024640950', className: "border-zion-cyan/50 text-zion-cyan hover:bg-zion-cyan/10 hover:border-zion-cyan", children: "Call +1 (302) 464-0950" })] }), _jsxs("div", { className: "mt-6 text-zion-slate-light", children: [_jsx("p", { children: "\uD83D\uDCCD 364 E Main St STE 1008, Middletown DE 19709" }), _jsx("p", { children: "\uD83D\uDCE7 kleber@ziontechgroup.com" })] })] }) })] }));
 };
-export const ComprehensiveServicesShowcase = () => {
-    const [selectedCategory, setSelectedCategory] = useState(SERVICE_CATEGORIES[0].name);
-    return (_jsx("section", { className: "py-20 bg-zion-blue", children: _jsxs("div", { className: "container mx-auto px-4", children: [_jsxs("div", { className: "text-center mb-16", children: [_jsxs("h2", { className: "text-4xl md:text-5xl font-bold text-white mb-6", children: ["Comprehensive ", _jsx("span", { className: "text-transparent bg-clip-text bg-gradient-to-r from-zion-cyan to-zion-purple", children: "Tech Solutions" })] }), _jsx("p", { className: "text-zion-slate-light text-lg max-w-3xl mx-auto", children: "Discover our extensive portfolio of professional technology services designed to accelerate your business growth, enhance security, and drive innovation across all aspects of your organization." })] }), _jsxs(Tabs, { value: selectedCategory, onValueChange: setSelectedCategory, className: "w-full", children: [_jsx(TabsList, { className: "grid w-full grid-cols-2 md:grid-cols-4 lg:grid-cols-8 bg-zion-blue-dark border border-zion-blue-light", children: SERVICE_CATEGORIES.map((category) => (_jsxs(TabsTrigger, { value: category.name, className: "text-zion-slate-light data-[state=active]:bg-zion-purple data-[state=active]:text-white data-[state=active]:border-zion-purple", children: [_jsx("span", { className: "hidden md:block", children: category.icon }), _jsx("span", { className: "text-xs md:text-sm", children: category.name.split(' ')[0] })] }, category.name))) }), SERVICE_CATEGORIES.map((category) => (_jsxs(TabsContent, { value: category.name, className: "mt-8", children: [_jsxs("div", { className: "text-center mb-8", children: [_jsxs("h3", { className: "text-2xl font-bold text-white mb-4", children: [category.icon, " ", category.name] }), _jsx("p", { className: "text-zion-slate-light max-w-2xl mx-auto", children: category.description })] }), _jsx("div", { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6", children: category.services.map((service) => (_jsx(ServiceCard, { service: service }, service.id))) })] }, category.name)))] }), _jsx("div", { className: "mt-16 text-center", children: _jsxs("div", { className: "bg-zion-blue-dark border border-zion-blue-light rounded-lg p-8 max-w-4xl mx-auto", children: [_jsx("h3", { className: "text-2xl font-bold text-white mb-4", children: "Ready to Transform Your Business?" }), _jsx("p", { className: "text-zion-slate-light mb-6", children: "Our expert team is ready to help you implement the perfect technology solutions. Get in touch today for a personalized consultation and quote." }), _jsxs("div", { className: "flex flex-col sm:flex-row gap-4 justify-center", children: [_jsxs(Button, { className: "bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white", children: [_jsx(Phone, { className: "h-4 w-4 mr-2" }), "Call +1 302 464 0950"] }), _jsxs(Button, { variant: "outline", className: "border-zion-purple text-zion-cyan hover:bg-zion-purple/10", children: [_jsx(Mail, { className: "h-4 w-4 mr-2" }), "Email kleber@ziontechgroup.com"] }), _jsxs(Button, { variant: "outline", className: "border-zion-purple text-zion-cyan hover:bg-zion-purple/10", children: [_jsx(Globe, { className: "h-4 w-4 mr-2" }), "Visit ziontechgroup.com"] })] }), _jsx("div", { className: "mt-6 text-zion-slate-light text-sm", children: _jsx("p", { children: "Address: 364 E Main St STE 1008, Middletown DE 19709" }) })] }) })] }) }));
-};
+export default ComprehensiveServicesShowcase;
