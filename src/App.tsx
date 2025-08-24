@@ -7,6 +7,7 @@ import { useScrollToTop } from "./hooks";
 import { WhitelabelProvider } from "./context/WhitelabelContext";
 import { Toaster } from "./components/ui/toaster";
 import { Toaster as SonnerToaster } from "./components/ui/sonner";
+import { LoadingSpinner } from "./components/ui/loading-spinner";
 import {
   AuthRoutes,
   DashboardRoutes,
@@ -92,13 +93,35 @@ const baseRoutes = [
   { path: '/help-center', element: <HelpCenterPage /> },
 ];
 
+// Enhanced loading component
+const EnhancedLoadingFallback = () => (
+  <div className="min-h-screen bg-zion-blue-dark flex items-center justify-center">
+    <div className="text-center">
+      <LoadingSpinner 
+        size="xl" 
+        text="Loading Zion..." 
+        variant="pulse" 
+        className="mb-8"
+      />
+      <div className="text-zion-slate-light text-lg max-w-md mx-auto">
+        <p className="mb-4">Preparing your tech marketplace experience...</p>
+        <div className="flex justify-center gap-2">
+          <div className="w-2 h-2 bg-zion-cyan rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
+          <div className="w-2 h-2 bg-zion-purple rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
+          <div className="w-2 h-2 bg-zion-cyan rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
 const App = () => {
   // Ensure each navigation starts at the top of the page
   useScrollToTop();
   return (
     <WhitelabelProvider>
       <ThemeProvider defaultTheme="dark">
-        <Suspense fallback={<div className="p-4 text-center">Loading...</div>}>
+        <Suspense fallback={<EnhancedLoadingFallback />}>
           <Routes>
             {baseRoutes.map(({ path, element }) => (
               <Route key={path} path={path} element={element} />
@@ -121,6 +144,6 @@ const App = () => {
       </ThemeProvider>
     </WhitelabelProvider>
   );
-};
+}
 
 export default App;
