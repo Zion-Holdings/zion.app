@@ -4,8 +4,9 @@ import { ProductListing } from "@/types/listings";
 import { TrustedBySection } from "@/components/TrustedBySection";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Globe } from "lucide-react";
+import { Globe, ArrowRight, Star, TrendingUp } from "lucide-react";
 import { useEffect, useState } from "react";
+import { EXPANDED_SERVICES, FEATURED_SERVICES, NEW_SERVICES } from "@/data/expandedServices";
 
 // Sample service listings
 const SERVICE_LISTINGS: ProductListing[] = [
@@ -244,6 +245,12 @@ export default function ServicesPage() {
                 Global IT Onsite Services
               </Button>
             </Link>
+            <Link to="/expanded-services">
+              <Button variant="outline" className="border-zion-cyan text-zion-cyan hover:bg-zion-cyan/10">
+                <TrendingUp className="h-4 w-4 mr-2" />
+                Enterprise Solutions
+              </Button>
+            </Link>
             <Link to="/request-quote">
               <Button className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white">
                 Request a Quote
@@ -252,6 +259,54 @@ export default function ServicesPage() {
           </div>
         </div>
       </div>
+
+      {/* Featured Services Showcase */}
+      <section className="py-16 bg-gradient-to-r from-zion-blue to-zion-blue-dark">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-white mb-4">Featured Enterprise Services</h2>
+            <p className="text-lg text-zion-slate-light max-w-2xl mx-auto">
+              Discover our most popular and innovative technology solutions
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            {FEATURED_SERVICES.slice(0, 3).map((service) => (
+              <div key={service.id} className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-12 h-12 bg-zion-cyan/20 rounded-full flex items-center justify-center">
+                    <Star className="w-6 h-6 text-zion-cyan" />
+                  </div>
+                  <div>
+                    <h3 className="text-white font-semibold">{service.title}</h3>
+                    <p className="text-zion-slate-light text-sm">{service.subcategory}</p>
+                  </div>
+                </div>
+                <p className="text-zion-slate-light text-sm mb-4 line-clamp-2">
+                  {service.description}
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-white font-bold">{service.currency}{service.price.toLocaleString()}</span>
+                  <Link to={`/service/${service.id}`}>
+                    <Button size="sm" variant="outline" className="border-zion-cyan text-zion-cyan hover:bg-zion-cyan/10">
+                      Learn More <ArrowRight className="w-4 h-4 ml-1" />
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <Link to="/expanded-services">
+              <Button size="lg" className="bg-zion-cyan hover:bg-zion-cyan-dark text-white">
+                View All Enterprise Services <ArrowRight className="w-4 w-4 ml-2" />
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <DynamicListingPage 
         title="IT & AI Services"
         description="Find expert technology service providers for your business needs, from AI development to infrastructure management."
