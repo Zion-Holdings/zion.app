@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 import React, { useState } from 'react';
 import Head from 'next/head';
 import { 
@@ -701,3 +703,4 @@ export default function ContactPage() {
 		</Layout>
 	);
 }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-e946

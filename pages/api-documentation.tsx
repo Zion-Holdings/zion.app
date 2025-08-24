@@ -1,24 +1,18 @@
 import React from 'react';
 import Head from 'next/head';
-import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackground';
-import Card from '../components/ui/Card';
+import Layout from '../components/layout/Layout';
 
-export default function APIDocumentation() {
+export default function APIDocumentationPage() {
 	return (
-		<div className="min-h-screen pt-24 pb-20 px-4 sm:px-6 lg:px-8">
+		<Layout>
 			<Head>
 				<title>API Documentation | Zion Tech Group</title>
-				<meta name="description" content="Explore API docs, references, and code generators." />
 				<link rel="canonical" href="https://ziontechgroup.com/api-documentation" />
 			</Head>
-			<div className="max-w-5xl mx-auto space-y-6">
-				<h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">API Documentation</h1>
-				<ul className="list-disc list-inside text-slate-300 space-y-2">
-					<li><a className="text-cyan-400" href="/api-docs">API Reference</a></li>
-					<li><a className="text-cyan-400" href="/api-documentation-generator">API Documentation Generator</a></li>
-					<li><a className="text-cyan-400" href="/docs">Developer Docs</a></li>
-				</ul>
-			</div>
-		</div>
+			<section className="container mx-auto px-4 py-24">
+				<h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-6">API Documentation</h1>
+				<p className="text-gray-300">REST and SDK references. Coming soon.</p>
+			</section>
+		</Layout>
 	);
 }

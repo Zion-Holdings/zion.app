@@ -28,7 +28,15 @@ import { real2025Q4AugmentedBatch } from '../../data/real-2025-q4-augmented-batc
 import { realMarketServicesExtended } from '../../data/real-market-services-extended';
 import { real2026Additions } from '../../data/real-2026-additions';
 import { real2026Q1Additions } from '../../data/real-2026-q1-additions';
+<<<<<<< HEAD:pages/services/[slug].tsx.backup.1755991636
+import { added2026Q2Services } from '../../data/added-2026-q2-services';
+import { real2026Q3Additions } from '../../data/real-2026-q3-additions';
+import { real2026Q4Additions } from '../../data/real-2026-q4-additions';
+import { real2026Q4NewServices } from '../../data/real-2026-q4-new-services';
+import { additional2026Q4RealServices } from '../../data/additional-2026-q4-real-services';
+=======
 import { real2026Q2Services } from '../../data/real-2026-q2-services';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-e946:pages/services/[slug].tsx
 
 import { real2029Q1Additions } from '../../data/real-2029-q1-additions';
 import { realMarketServices } from '../../data/real-market-services';
@@ -116,9 +124,17 @@ function getAllServices(): Service[] {
 		.concat(realMarketServicesExtended as unknown as Service[])
 		.concat(real2026Q1Additions as unknown as Service[])
 		.concat(real2026Additions as unknown as Service[])
+<<<<<<< HEAD:pages/services/[slug].tsx.backup.1755991636
+		.concat(added2026Q2Services as unknown as Service[])
+		.concat(real2026Q3Additions as unknown as Service[])
+		.concat(real2026Q4Additions as unknown as Service[])
+		.concat(real2026Q4NewServices as unknown as Service[])
+		.concat(newSaasItAiServices2025 as unknown as Service[]);
+=======
 		.concat(additional2026Q4RealServices as unknown as Service[]);
 =======
 		.concat(real2026Q2Services as unknown as Service[]);
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-e946:pages/services/[slug].tsx
 }
 
 function toSlug(value: string): string {
@@ -222,10 +238,14 @@ export default function ServiceDetailPage({ service }: { service: Service }) {
 								},
 								offers: {
 									"@type": "Offer",
+<<<<<<< HEAD:pages/services/[slug].tsx.backup.1755991636
+									        price: "99",
+=======
 									price: (typeof (service as any).price === 'string'
 										? ((service as any).price as string).replace(/[^0-9.]/g, '')
 										: String(((service as any).price?.monthly ?? (service as any).pricing?.monthly ?? ''))
 									),
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-e946:pages/services/[slug].tsx
 									priceCurrency: "USD",
 									availability: "https://schema.org/InStock"
 								}
@@ -292,6 +312,36 @@ export default function ServiceDetailPage({ service }: { service: Service }) {
 					{/* Contact & CTA */}
 					<div className="space-y-6">
 						<Card className="p-6 bg-black/40 border border-gray-700/50">
+<<<<<<< HEAD:pages/services/[slug].tsx.backup.1755991636
+							<div className="text-sm text-gray-400 mb-1">Pricing</div>
+							<div className="text-3xl font-bold text-white">${getPriceValue(service.price)}<span className="text-base font-medium text-gray-400">{service.period || '/month'}</span></div>
+							<div className="text-sm text-gray-400 mt-2">Trial: {service.trialDays || 14} days • Setup: {service.setupTime || 'Fast'} • Competitors: {(service.competitors || []).slice(0,3).join(', ')}</div>
+							<div className="mt-6 flex gap-3">
+								<Link href="/contact" className="flex-1 bg-gradient-to-r from-cyan-500 to-blue-600 text-white">Contact Sales</Button>
+								<Button href={service.link} variant="outline" className="flex-1 border border-gray-600 text-gray-200"><ExternalLink className="w-4 h-4 mr-2" /> Learn More</Button>
+							</div>
+						</Card>
+
+						<Card className="p-6 bg-black/40 border border-gray-700/50">
+							<h3 className="text-white font-semibold mb-3">Contact</h3>
+							<div className="space-y-3 text-sm">
+								<div className="flex items-center gap-2 text-cyan-400"><Phone className="w-4 h-4" /><a href={`tel:${contactInfo.mobile.replace(/[^+\\d]/g, '')}`} className="hover:underline">{contactInfo.mobile}</a></div>
+								<div className="flex items-center gap-2 text-purple-400"><Mail className="w-4 h-4" /><a href={`mailto:${contactInfo.email}`} className="hover:underline">{contactInfo.email}</a></div>
+								<div className="flex items-center gap-2 text-green-400"><MapPin className="w-4 h-4" /><a href={`https://maps.google.com/?q=${encodeURIComponent(contactInfo.address)}`} target="_blank" rel="noopener noreferrer" className="text-xs hover:underline">{contactInfo.address}</a></div>
+							</div>
+						</Card>
+
+						{/* Market Position & ROI */}
+						<Card className="p-6 bg-black/40 border border-gray-700/50">
+							<h3 className="text-white font-semibold mb-3">Market & ROI</h3>
+							<div className="space-y-3 text-sm text-gray-300">
+								{service.marketPosition && <p className="leading-relaxed"><span className="text-gray-400">Position:</span> {service.marketPosition}</p>}
+								{service.roi && <p className="leading-relaxed"><span className="text-gray-400">ROI:</span> {service.roi}</p>}
+								{service.competitors?.length ? (
+									<p className="leading-relaxed"><span className="text-gray-400">Competitors:</span> {service.competitors.slice(0,6).join(', ')}</p>
+								) : null}
+								<a href="/market-pricing" className="inline-block mt-2 text-cyan-300 hover:text-cyan-200">See average market prices →</a>
+=======
 							<h3 className="text-white text-lg font-semibold mb-4">Talk to an expert</h3>
 							<ul className="space-y-2 text-gray-300">
 								<li className="flex items-center gap-2">
@@ -312,6 +362,7 @@ export default function ServiceDetailPage({ service }: { service: Service }) {
 								<Button href={service.link || '#'} variant="outline">
 									Visit Service <ExternalLink className="w-4 h-4 ml-2" />
 								</Button>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-e946:pages/services/[slug].tsx
 							</div>
 						</Card>
 					</div>
