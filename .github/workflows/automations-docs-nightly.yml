@@ -1,17 +1,12 @@
-name: Sitemap Daily
+name: Automations Docs Nightly
 
 on:
   schedule:
-    - cron: "0 1 * * *"
-  push:
-    branches: [ main ]
-    paths:
-      - 'pages/**'
-      - 'public/**'
+    - cron: "30 2 * * *"
   workflow_dispatch: {}
 
 jobs:
-  sitemap:
+  docs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -21,10 +16,10 @@ jobs:
         with:
           node-version: '20'
       - run: npm ci
-      - name: Generate sitemap
-        run: npm run sitemap
-      - name: Commit sitemap
+      - name: Generate automations docs
+        run: node scripts/generate-automations-docs.mjs
+      - name: Commit docs
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: 'chore(seo): update sitemap.xml'
-          file_pattern: public/sitemap.xml
+          commit_message: 'docs(automation): update AUTMATIONS catalog'
+          file_pattern: docs/AUTOMATIONS.md

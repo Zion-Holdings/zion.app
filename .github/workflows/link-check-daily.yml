@@ -1,17 +1,12 @@
-name: Sitemap Daily
+name: Link Check Daily
 
 on:
   schedule:
-    - cron: "0 1 * * *"
-  push:
-    branches: [ main ]
-    paths:
-      - 'pages/**'
-      - 'public/**'
+    - cron: "0 6 * * *"
   workflow_dispatch: {}
 
 jobs:
-  sitemap:
+  linkcheck:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -21,10 +16,10 @@ jobs:
         with:
           node-version: '20'
       - run: npm ci
-      - name: Generate sitemap
-        run: npm run sitemap
-      - name: Commit sitemap
+      - name: Run link check
+        run: node scripts/link-check.mjs
+      - name: Commit metrics
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: 'chore(seo): update sitemap.xml'
-          file_pattern: public/sitemap.xml
+          commit_message: 'chore(metrics): update link check summary'
+          file_pattern: public/metrics/links.json automation_logs/link-report.json

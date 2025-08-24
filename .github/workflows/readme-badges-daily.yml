@@ -1,17 +1,16 @@
-name: Sitemap Daily
+name: README Badges Daily
 
 on:
   schedule:
-    - cron: "0 1 * * *"
+    - cron: "0 4 * * *"
   push:
     branches: [ main ]
     paths:
-      - 'pages/**'
-      - 'public/**'
+      - 'public/automation-catalog.json'
   workflow_dispatch: {}
 
 jobs:
-  sitemap:
+  readme:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -21,10 +20,10 @@ jobs:
         with:
           node-version: '20'
       - run: npm ci
-      - name: Generate sitemap
-        run: npm run sitemap
-      - name: Commit sitemap
+      - name: Update README badges
+        run: node scripts/update-readme-badges.mjs
+      - name: Commit README
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: 'chore(seo): update sitemap.xml'
-          file_pattern: public/sitemap.xml
+          commit_message: 'docs: update README badges'
+          file_pattern: README.md
