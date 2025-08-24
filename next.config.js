@@ -12,20 +12,10 @@ const baseConfig = {
   poweredByHeader: false,
   trailingSlash: false,
   reactStrictMode: true,
-  bundlePagesRouterDependencies: true,
-  // Temporarily disable ESLint during build to handle unescaped entities
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
-  // Temporarily disable TypeScript checking during build
-  typescript: {
-    ignoreBuildErrors: true,
-  },
-
+  
+  // Environment configuration
   env: {
     NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000',
-    NEXT_PUBLIC_SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL || 'placeholder',
-    NEXT_PUBLIC_SUPABASE_ANON_KEY: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'placeholder',
   },
 
   modularizeImports: {
@@ -33,31 +23,14 @@ const baseConfig = {
       transform: 'lucide-react/dist/esm/icons/{{kebabCase member}}',
       skipDefaultConversion: true,
     },
-    '@radix-ui/react-icons': {
-      transform: '@radix-ui/react-icons/dist/{{member}}',
-    },
   },
 
   experimental: {
     optimizePackageImports: [
       'lucide-react',
       '@radix-ui/react-icons',
-      'recharts',
-      'react-window',
-      'fuse.js'
+      'framer-motion'
     ],
-    // ESM configuration for problematic packages
-    esmExternals: 'loose', // Allow loose ESM handling
-    
-    // Enable CSS optimization for production
-    optimizeCss: process.env.NODE_ENV === 'production', 
-    // Memory and performance optimizations for 176+ pages
-    largePageDataBytes: 128 * 1000, // Reduced to 128KB for better performance
-    workerThreads: false, // Disable worker threads to reduce memory usage
-    cpus: Math.min(2, require('os').cpus().length), // Adaptive CPU limit
-    // Bundle analysis optimizations moved to root level
-    // Disable profiling for faster builds
-    swcTraceProfiling: false,
   },
 
   images: {
@@ -69,179 +42,18 @@ const baseConfig = {
     removeConsole: process.env.NODE_ENV === "production",
   },
 
-  transpilePackages: [
-    'react-markdown',
-    'date-fns',
-    'react-day-picker',
-    'bail',
-    'is-plain-obj',
-    'mdast-util-from-markdown',
-    'mdast-util-to-hast',
-    'mdast-util-to-string',
-    'unified',
-    'remark-parse',
-    'remark-rehype',
-    'formik',
-    'lodash',
-    'lodash-es',
-    'lodash/isPlainObject',
-    'lodash/cloneDeep',
-    'lodash/clone',
-    'lodash/toPath',
-    'helia',
-    '@helia/json',
-    'multiformats',
-    'libp2p',
-    '@libp2p/identify',
-    'ajv',
-    'ajv-keywords',
-    '@ungap/structured-clone',
-    'axios-retry',
-  ],
-
-  webpack: (config, { dev, isServer, webpack }) => {
-    // Exclude contracts directory from webpack compilation
-    config.resolve.alias = {
-      ...config.resolve.alias,
-      'hardhat/config': false,
-      'cypress': false,
+  webpack: (config, { dev, isServer }) => {
+    // Exclude contracts directory from build
+    config.watchOptions = {
+      ignored: [
+        /node_modules/,
+        /contracts/,
+        /\.git/,
+        /\.next/
+      ]
     };
-    
-    // Exclude contracts directory from compilation
-    config.module.rules.push({
-      test: /contracts\/.*\.ts$/,
-      loader: 'ignore-loader'
-    });
-    
-    // Exclude hardhat config specifically
-    config.module.rules.push({
-      test: /hardhat\.config\.ts$/,
-      loader: 'ignore-loader'
-    });
-    
-    // Exclude Cypress test files from compilation
-    config.module.rules.push({
-      test: /cypress\/.*\.cy\.(ts|js)$/,
-      loader: 'ignore-loader'
-    });
-    
-    // Exclude Cypress config files
-    config.module.rules.push({
-      test: /cypress\.config\.(ts|js)$/,
-      loader: 'ignore-loader'
-    });
-    
-    // Exclude entire cypress directory from webpack processing
-    config.module.rules.push({
-      test: /cypress\//,
-      loader: 'ignore-loader'
-    });
-    // Fix EventEmitter memory leak by increasing max listeners
-    // events.EventEmitter.defaultMaxListeners = 20; // Will be set by build script
-    
-    // CRITICAL: Add comprehensive polyfills as the very first entry point
-    if (!isServer) {
-      const originalEntry = config.entry;
-      config.entry = async () => {
-        const entries = await originalEntry();
-        
-        // Create comprehensive polyfill array
-        const polyfills = [
-          './src/utils/esm-polyfill.ts',        // ESM module resolution fix
-          './src/utils/serverless-polyfill.ts',  // New serverless polyfill
-          './src/utils/env-polyfill.ts'         // Existing env polyfill
-        ];
-        
-        // Add polyfills to every entry point
-        Object.keys(entries).forEach(entryName => {
-          if (Array.isArray(entries[entryName])) {
-            polyfills.forEach(polyfill => {
-              if (!entries[entryName].includes(polyfill)) {
-                entries[entryName].unshift(polyfill);
-              }
-            });
-          }
-        });
-        
-        return entries;
-      };
 
-      // DISABLED: FINAL NUCLEAR OPTION BannerPlugin causing module resolution issues
-      // The BannerPlugin was injecting absolute paths '/opt/build/repo/src/utils/tslib-polyfill.js'
-      // into third-party node_modules like @walletconnect, @peculiar, etc.
-      // This caused webpack module resolution failures in the Netlify build environment
-      //
-      // Document-level polyfills in _document.tsx will handle runtime errors instead
-
-      // DISABLED: All webpack-level polyfill injection causing module resolution issues
-      // The following approaches were causing third-party node_modules to import absolute paths:
-      // - resolve.alias for tslib
-      // - ProvidePlugin for TypeScript helpers  
-      // - NormalModuleReplacementPlugin for tslib replacement
-      // - BannerPlugin injection into chunks
-      //
-      // Solution: Rely only on document-level and runtime polyfills without webpack interference
-
-      // SIMPLIFIED DefinePlugin 
-      config.plugins.push(
-        new webpack.DefinePlugin({
-          'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'production'),
-          'process.env': JSON.stringify({
-            NODE_ENV: process.env.NODE_ENV || 'production',
-            NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL || '',
-            NEXT_PUBLIC_SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL || '',
-            NEXT_PUBLIC_SUPABASE_ANON_KEY: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '',
-          }),
-        })
-      );
-
-
-    }
-    
-    // Development optimizations to prevent memory leaks with 176+ pages
-    if (dev) {
-      if (!isServer) {
-        config.watchOptions = {
-          ignored: /node_modules/,
-          aggregateTimeout: 300,
-          poll: false, // Use native file watching instead of polling
-        };
-
-        // Disable source maps in development for faster HMR startup
-        config.devtool = false;
-      }
-
-      // Alias react-router-dom to a lightweight stub to avoid build errors
-      config.resolve.alias = {
-        ...config.resolve.alias,
-        'react-router-dom': path.resolve(__dirname, 'src/stubs/react-router-dom.ts'),
-      };
-
-      if (!isServer) {
-        // Optimize memory usage in development
-        config.stats = 'errors-warnings';
-        config.infrastructureLogging = {
-          level: 'error',
-        };
-      }
-    }
-    
-    // For Netlify deployment, exclude problematic files temporarily
-    if (process.env.SKIP_TYPE_CHECK === 'true') {
-      config.externals = config.externals || [];
-      config.externals.push({
-        './src/context/FavoritesContext.tsx': 'empty',
-        './src/context/LanguageContext.tsx': 'empty', 
-        './src/context/RequestQuoteWizard.tsx': 'empty',
-        './src/context/WhitelabelContext.tsx': 'empty',
-        './src/hooks/useApiKeys.ts': 'empty',
-      });
-    }
-
-    if (typeof process !== 'undefined') {
-      process.setMaxListeners(20);
-    }
-
+    // Handle ESM modules properly
     config.module.rules.push({
       test: /\.m?js$/,
       type: 'javascript/auto',
@@ -250,6 +62,7 @@ const baseConfig = {
       },
     });
 
+    // Add polyfills for Node.js APIs
     config.resolve.fallback = {
       ...config.resolve.fallback,
       fs: false,
@@ -269,34 +82,7 @@ const baseConfig = {
       util: false,
       zlib: false,
       url: false,
-      'dd-trace': false,
     };
-
-    if (!dev) {
-      config.optimization = {
-        ...config.optimization,
-        moduleIds: 'deterministic',
-        chunkIds: 'deterministic',
-        splitChunks: {
-          chunks: 'all',
-          cacheGroups: {
-            vendor: {
-              test: /[\\/]node_modules[\\/]/,
-              name: 'vendors',
-              chunks: 'all',
-              priority: 10,
-            },
-            common: {
-              name: 'common',
-              minChunks: 2,
-              chunks: 'all',
-              priority: 5,
-              reuseExistingChunk: true,
-            },
-          },
-        },
-      };
-    }
 
     return config;
   },

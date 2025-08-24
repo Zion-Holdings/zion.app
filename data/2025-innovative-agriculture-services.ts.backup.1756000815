@@ -85,7 +85,11 @@ export const innovativeAgricultureServices: InnovativeAgricultureService[] = [
     competitors: ['John Deere, Trimble, Raven Industries, AGCO'],
     marketSize: '$12.8B+ precision agriculture market',
     growthRate: '200% YoY',
+<<<<<<< HEAD
+    variant: 'ai-futuristic',
+=======
     variant: 'ai-energy',
+>>>>>>> origin/cursor/website-audit-and-enhancement-d2bc
     contactInfo: contact,
     realImplementation: true,
     implementationDetails: 'AI-powered precision agriculture platform with intelligent crop monitoring and optimization capabilities.',
@@ -130,7 +134,11 @@ export const innovativeAgricultureServices: InnovativeAgricultureService[] = [
     competitors: ['D-Wave, Rigetti, IBM Quantum, Google Quantum'],
     marketSize: '$9.8B+ quantum agriculture market',
     growthRate: '380% YoY',
+<<<<<<< HEAD
+    variant: 'quantum-futuristic',
+=======
     variant: 'quantum-advanced',
+>>>>>>> origin/cursor/website-audit-and-enhancement-d2bc
     contactInfo: contact,
     realImplementation: true,
     implementationDetails: 'Quantum agriculture optimization platform with advanced algorithms and resource allocation capabilities.',
@@ -175,7 +183,11 @@ export const innovativeAgricultureServices: InnovativeAgricultureService[] = [
     competitors: ['FoodLogiQ, SafetyChain, TraceGains, FoodShield'],
     marketSize: '$15.6B+ food safety market',
     growthRate: '220% YoY',
+<<<<<<< HEAD
+    variant: 'ai-futuristic',
+=======
     variant: 'ai-energy',
+>>>>>>> origin/cursor/website-audit-and-enhancement-d2bc
     contactInfo: contact,
     realImplementation: true,
     implementationDetails: 'AI-powered food safety monitoring platform with intelligent contamination detection and quality control capabilities.',
@@ -220,7 +232,11 @@ export const innovativeAgricultureServices: InnovativeAgricultureService[] = [
     competitors: ['IBM Food Trust, VeChain, OriginTrail, Provenance'],
     marketSize: '$18.4B+ food traceability market',
     growthRate: '320% YoY',
+<<<<<<< HEAD
+    variant: 'blockchain-futuristic',
+=======
     variant: 'ai-energy',
+>>>>>>> origin/cursor/website-audit-and-enhancement-d2bc
     contactInfo: contact,
     realImplementation: true,
     implementationDetails: 'Blockchain food traceability platform with supply chain tracking and product authentication capabilities.',
@@ -265,7 +281,11 @@ export const innovativeAgricultureServices: InnovativeAgricultureService[] = [
     competitors: ['Plenty, AeroFarms, Bowery Farming, Gotham Greens'],
     marketSize: '$9.3B+ vertical farming market',
     growthRate: '280% YoY',
+<<<<<<< HEAD
+    variant: 'ai-futuristic',
+=======
     variant: 'ai-energy',
+>>>>>>> origin/cursor/website-audit-and-enhancement-d2bc
     contactInfo: contact,
     realImplementation: true,
     implementationDetails: 'AI-powered vertical farming platform with intelligent climate control and crop optimization capabilities.',

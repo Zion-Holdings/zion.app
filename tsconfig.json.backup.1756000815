@@ -74,10 +74,22 @@
   ],
   "exclude": [
     "node_modules",
+<<<<<<< HEAD
+    "src",
+    "zion.app/recovered-content/**",
+    "zion-os",
+    "zion_academy",
+    "packages",
+    "apps",
+    "generated-services",
+    "monitoring",
+    "wiki"
+=======
     "zion.app/recovered-content/**",
     "contracts/**",
     "cypress/**",
     "data/2025-cutting-edge-enterprise-solutions.ts",
     "data/2025-cutting-edge-it-infrastructure-innovations.ts"
+>>>>>>> origin/cursor/website-audit-and-enhancement-d2bc
   ]
 }
