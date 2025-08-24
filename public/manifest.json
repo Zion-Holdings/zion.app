@@ -1,7 +1,7 @@
 {
-  "name": "Zion Tech Group - AI-Powered Tech Marketplace",
-  "short_name": "Zion Tech",
-  "description": "Discover top AI and tech talent, services, and equipment in one place. AI-powered matching for your tech needs.",
+  "name": "Zion Tech Group - AI Marketplace",
+  "short_name": "Zion",
+  "description": "The world's first free marketplace dedicated to high-tech and artificial intelligence",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#172d67",
@@ -9,13 +9,7 @@
   "orientation": "portrait-primary",
   "scope": "/",
   "lang": "en",
-  "dir": "ltr",
-  "categories": [
-    "business",
-    "productivity",
-    "technology",
-    "marketplace"
-  ],
+  "categories": ["business", "productivity", "utilities"],
   "icons": [
     {
       "src": "/images/zion-logo-192.png",
@@ -30,34 +24,10 @@
       "purpose": "any maskable"
     },
     {
-      "src": "/images/zion-logo-72.png",
-      "sizes": "72x72",
-      "type": "image/png"
-    },
-    {
-      "src": "/images/zion-logo-96.png",
-      "sizes": "96x96",
-      "type": "image/png"
-    },
-    {
-      "src": "/images/zion-logo-128.png",
-      "sizes": "128x128",
-      "type": "image/png"
-    },
-    {
-      "src": "/images/zion-logo-144.png",
-      "sizes": "144x144",
-      "type": "image/png"
-    },
-    {
-      "src": "/images/zion-logo-152.png",
-      "sizes": "152x152",
-      "type": "image/png"
-    },
-    {
-      "src": "/images/zion-logo-384.png",
-      "sizes": "384x384",
-      "type": "image/png"
+      "src": "/images/zion-logo-180.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "apple touch"
     }
   ],
   "screenshots": [
@@ -78,21 +48,21 @@
   ],
   "shortcuts": [
     {
-      "name": "Find Talent",
-      "short_name": "Talent",
-      "description": "Browse and find tech talent",
-      "url": "/talent",
+      "name": "AI Talent Matching",
+      "short_name": "AI Match",
+      "description": "Find AI talent or jobs",
+      "url": "/match",
       "icons": [
         {
-          "src": "/images/talent-icon.png",
+          "src": "/images/ai-match-icon.png",
           "sizes": "96x96"
         }
       ]
     },
     {
-      "name": "Browse Services",
+      "name": "Services",
       "short_name": "Services",
-      "description": "Explore tech services",
+      "description": "Browse tech services",
       "url": "/services",
       "icons": [
         {
@@ -102,36 +72,19 @@
       ]
     },
     {
-      "name": "AI Matcher",
-      "short_name": "AI Match",
-      "description": "AI-powered talent matching",
-      "url": "/match",
+      "name": "Talent Directory",
+      "short_name": "Talent",
+      "description": "Find tech professionals",
+      "url": "/talent",
       "icons": [
         {
-          "src": "/images/ai-icon.png",
-          "sizes": "96x96"
-        }
-      ]
-    },
-    {
-      "name": "Equipment",
-      "short_name": "Equipment",
-      "description": "Browse tech equipment",
-      "url": "/equipment",
-      "icons": [
-        {
-          "src": "/images/equipment-icon.png",
+          "src": "/images/talent-icon.png",
           "sizes": "96x96"
         }
       ]
     }
   ],
-  "related_applications": [
-    {
-      "platform": "webapp",
-      "url": "https://ziontechgroup.com"
-    }
-  ],
+  "related_applications": [],
   "prefer_related_applications": false,
   "edge_side_panel": {
     "preferred_width": 400
@@ -143,53 +96,7 @@
   "protocol_handlers": [
     {
       "protocol": "web+zion",
-      "url": "/?protocol=%s"
+      "url": "/%s"
     }
-  ],
-  "file_handlers": [
-    {
-      "action": "/upload",
-      "accept": {
-        "image/*": [".png", ".jpg", ".jpeg", ".gif", ".webp"],
-        "application/pdf": [".pdf"],
-        "text/*": [".txt", ".md", ".json"]
-      }
-    }
-  ],
-  "share_target": {
-    "action": "/share",
-    "method": "POST",
-    "enctype": "multipart/form-data",
-    "params": {
-      "title": "title",
-      "text": "text",
-      "url": "url",
-      "files": [
-        {
-          "name": "files",
-          "accept": ["image/*", "text/*", "application/pdf"]
-        }
-      ]
-    }
-  },
-  "permissions": [
-    "notifications",
-    "background-sync",
-    "storage"
-  ],
-  "background": {
-    "service_worker": "/sw.js",
-    "type": "module"
-  },
-  "features": [
-    "Cross Platform",
-    "fast",
-    "simple",
-    "ai-powered",
-    "offline-capable"
-  ],
-  "developer": {
-    "name": "Zion Tech Group",
-    "url": "https://ziontechgroup.com"
-  }
+  ]
 }

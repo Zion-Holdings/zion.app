@@ -1,111 +1,67 @@
-<<<<<<< HEAD
-import React, { useState, useEffect, ReactNode } from 'react';
-import { motion } from 'framer-motion';
-import { AlertTriangle, RefreshCw, Home, ChevronUp } from 'lucide-react';
-import { Link, useNavigate } from 'react-router-dom';
-
-interface Props {
-  children: ReactNode;
-  fallback?: ReactNode;
-}
-
-interface State {
-  hasError: boolean;
-  error?: Error;
-}
-
-function ErrorFallback({ error, resetError }: { error: Error; resetError: () => void }) {
-  const navigate = useNavigate();
-
-  return (
-    <div className="min-h-screen bg-zion-blue-dark flex items-center justify-center p-4">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="max-w-md w-full text-center"
-      >
-        <div className="mb-8">
-          <motion.div
-            animate={{ rotate: [0, 10, -10, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="mx-auto w-20 h-20 bg-zion-purple/20 rounded-full flex items-center justify-center mb-4"
-          >
-            <AlertTriangle className="w-10 h-10 text-zion-purple" />
-          </motion.div>
-          <h1 className="text-2xl font-bold text-white mb-2">Oops! Something went wrong</h1>
-          <p className="text-zion-slate-light">
-            We're sorry, but something unexpected happened. Our team has been notified.
-          </p>
-        </div>
-
-        <div className="space-y-3 mb-8">
-          <button
-            onClick={resetError}
-            className="w-full bg-zion-purple hover:bg-zion-purple-dark text-white py-3 px-6 rounded-md transition-colors flex items-center justify-center gap-2"
-          >
-            <RefreshCw className="w-4 h-4" />
-            Try Again
-          </button>
-          
-          <button
-            onClick={() => navigate(-1)}
-            className="w-full bg-zion-blue hover:bg-zion-blue-dark text-white py-3 px-6 rounded-md transition-colors flex items-center justify-center gap-2"
-          >
-            <ChevronUp className="w-4 h-4" />
-            Go Back
-          </button>
-          
-          <Link
-            to="/"
-            className="w-full bg-zion-cyan hover:bg-zion-cyan-dark text-zion-blue-dark py-3 px-6 rounded-md transition-colors flex items-center justify-center gap-2"
-          >
-            <Home className="w-4 h-4" />
-            Go Home
-          </Link>
-        </div>
-
-        {process.env.NODE_ENV === 'development' && error && (
-          <details className="text-left bg-zion-blue/20 rounded-md p-4">
-            <summary className="text-zion-cyan cursor-pointer mb-2 font-medium">
-              Error Details (Development)
-            </summary>
-            <pre className="text-xs text-zion-slate-light overflow-auto">
-              {error.stack}
-            </pre>
-          </details>
-        )}
-      </motion.div>
-    </div>
-  );
-}
-
-export function ErrorBoundary({ children, fallback }: Props) {
-  const [errorState, setErrorState] = useState<State>({ hasError: false });
-=======
 import React, { useState, useEffect } from 'react';
-import { AlertTriangle, RefreshCw, Home } from 'lucide-react';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 
 interface ErrorBoundaryProps {
   children: React.ReactNode;
   fallback?: React.ReactNode;
 }
 
+interface ErrorState {
+  hasError: boolean;
+  error: Error | null;
+  errorInfo: any;
+  errorId: string;
+}
+
+// Extend the Window interface to include gtag
+declare global {
+  interface Window {
+    gtag?: (command: string, action: string, params: any) => void;
+  }
+}
+
 export function ErrorBoundary({ children, fallback }: ErrorBoundaryProps) {
-  const [hasError, setHasError] = useState(false);
-  const [error, setError] = useState<Error | null>(null);
->>>>>>> d0d58136d327183e53cdbb308d5ed67246f24274
+  const [errorState, setErrorState] = useState<ErrorState>({
+    hasError: false,
+    error: null,
+    errorInfo: null,
+    errorId: '',
+  });
 
   useEffect(() => {
     const handleError = (event: ErrorEvent) => {
-      console.error('Error caught by boundary:', event.error);
-      setError(event.error);
-      setHasError(true);
+      const errorId = `error_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+      
+      setErrorState({
+        hasError: true,
+        error: event.error || new Error(event.message),
+        errorInfo: { componentStack: event.filename },
+        errorId,
+      });
+
+      // Log error to console
+      console.error('Error caught by boundary:', event.error, event);
+
+      // Log to analytics if available
+      if (window.gtag) {
+        window.gtag('event', 'exception', {
+          description: event.message,
+          fatal: true,
+          error_id: errorId,
+        });
+      }
     };
 
     const handleUnhandledRejection = (event: PromiseRejectionEvent) => {
-      console.error('Unhandled promise rejection:', event.reason);
-      setError(new Error(event.reason));
-      setHasError(true);
+      const errorId = `error_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+      
+      setErrorState({
+        hasError: true,
+        error: event.reason instanceof Error ? event.reason : new Error(String(event.reason)),
+        errorInfo: { componentStack: 'Unhandled Promise Rejection' },
+        errorId,
+      });
     };
 
     window.addEventListener('error', handleError);
@@ -118,71 +74,115 @@ export function ErrorBoundary({ children, fallback }: ErrorBoundaryProps) {
   }, []);
 
   const handleRetry = () => {
-    setHasError(false);
-    setError(null);
-    window.location.reload();
+    setErrorState({
+      hasError: false,
+      error: null,
+      errorInfo: null,
+      errorId: '',
+    });
   };
 
-  if (hasError) {
+  const handleGoHome = () => {
+    window.location.href = '/';
+  };
+
+  const handleReportBug = () => {
+    const errorDetails = {
+      message: errorState.error?.message,
+      stack: errorState.error?.stack,
+      componentStack: errorState.errorInfo?.componentStack,
+      errorId: errorState.errorId,
+      url: window.location.href,
+      userAgent: navigator.userAgent,
+      timestamp: new Date().toISOString(),
+    };
+
+    // Copy error details to clipboard
+    navigator.clipboard.writeText(JSON.stringify(errorDetails, null, 2))
+      .then(() => {
+        alert('Error details copied to clipboard. Please report this to support.');
+      })
+      .catch(() => {
+        // Fallback: open email with error details
+        const subject = encodeURIComponent(`Bug Report - Error ID: ${errorState.errorId}`);
+        const body = encodeURIComponent(JSON.stringify(errorDetails, null, 2));
+        window.open(`mailto:support@ziontechgroup.com?subject=${subject}&body=${body}`);
+      });
+  };
+
+  if (errorState.hasError) {
     if (fallback) {
       return <>{fallback}</>;
     }
 
     return (
-      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 flex items-center justify-center p-4">
-        <div className="max-w-md w-full text-center">
-          <div className="mb-6">
-            <div className="w-20 h-20 bg-red-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
-              <AlertTriangle className="w-10 h-10 text-red-500" />
+      <div className="min-h-screen bg-background flex items-center justify-center p-4">
+        <Card className="w-full max-w-md border-red-500/20 bg-background/95 backdrop-blur-sm">
+          <CardHeader className="text-center pb-4">
+            <div className="mx-auto w-16 h-16 bg-red-500/10 rounded-full flex items-center justify-center mb-4">
+              <span className="text-red-500 text-2xl">⚠️</span>
             </div>
-            <h1 className="text-2xl font-bold text-white mb-2">
-              Something went wrong
-            </h1>
-            <p className="text-white/70 mb-6">
-              We're sorry, but something unexpected happened. Please try again or return to the home page.
-            </p>
-          </div>
-
-          <div className="space-y-3">
-            <button
-              onClick={handleRetry}
-              className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 flex items-center justify-center gap-2"
-            >
-              <RefreshCw className="w-4 h-4" />
-              Try Again
-            </button>
+            <CardTitle className="text-xl text-red-500">Something went wrong</CardTitle>
+            <CardDescription className="text-muted-foreground">
+              We've encountered an unexpected error. Our team has been notified.
+            </CardDescription>
+          </CardHeader>
+          
+          <CardContent className="space-y-4">
+            <div className="bg-muted/50 rounded-lg p-3">
+              <p className="text-sm text-muted-foreground font-mono break-all">
+                Error ID: {errorState.errorId}
+              </p>
+              {errorState.error && (
+                <p className="text-sm text-muted-foreground mt-2">
+                  {errorState.error.message}
+                </p>
+              )}
+            </div>
             
-            <button
-              onClick={() => window.location.href = '/'}
-              className="w-full bg-white/10 backdrop-blur-sm text-white px-6 py-3 rounded-lg font-semibold hover:bg-white/20 transition-all duration-300 flex items-center justify-center gap-2 border border-white/20"
-            >
-              <Home className="w-4 h-4" />
-              Go Home
-            </button>
-          </div>
-
-          {process.env.NODE_ENV === 'development' && error && (
-            <details className="mt-6 text-left">
-              <summary className="cursor-pointer text-sm text-white/60 hover:text-white">
-                Error Details (Development)
-              </summary>
-              <div className="mt-2 p-3 bg-white/10 rounded text-xs font-mono text-white/80 overflow-auto">
-                <div className="mb-2">
-                  <strong>Error:</strong> {error.toString()}
-                </div>
-                <div>
-                  <strong>Stack:</strong>
-                  <pre className="whitespace-pre-wrap mt-1">
-                    {error.stack}
-                  </pre>
-                </div>
-              </div>
-            </details>
-          )}
-        </div>
+            <div className="flex flex-col gap-2">
+              <Button onClick={handleRetry} className="w-full">
+                <span className="mr-2">🔄</span>
+                Try Again
+              </Button>
+              
+              <Button variant="outline" onClick={handleGoHome} className="w-full">
+                <span className="mr-2">🏠</span>
+                Go Home
+              </Button>
+              
+              <Button variant="outline" onClick={handleReportBug} className="w-full">
+                <span className="mr-2">🐛</span>
+                Report Bug
+              </Button>
+            </div>
+            
+            <div className="text-center">
+              <p className="text-xs text-muted-foreground">
+                If this problem persists, please contact support
+              </p>
+            </div>
+          </CardContent>
+        </Card>
       </div>
     );
   }
 
   return <>{children}</>;
+}
+
+// Hook for functional components to handle errors
+export function useErrorHandler() {
+  const [error, setError] = useState<Error | null>(null);
+
+  const handleError = React.useCallback((error: Error) => {
+    setError(error);
+    console.error('Error caught by hook:', error);
+  }, []);
+
+  const clearError = React.useCallback(() => {
+    setError(null);
+  }, []);
+
+  return { error, handleError, clearError };
 }

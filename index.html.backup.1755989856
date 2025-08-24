@@ -14,12 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet" />
 
-<<<<<<< HEAD
-    <meta name="theme-color" content="#000000" />
-    <link rel="manifest" href="/manifest.json" />
-=======
-    <meta name="theme-color" content="#0d0d0d" />
->>>>>>> origin/4pkscj-codex/disable-theme-toggle-and-set-default-dark-theme
+    <meta name="theme-color" content="#2e73ea" />
     
     <!-- Open Graph / Facebook -->
     <meta property="og:title" content="Zion - The Future of Tech & AI Marketplace" />
@@ -45,6 +40,9 @@
     <!-- Apple Touch Icon -->
     <link rel="apple-touch-icon" href="https://drive.google.com/uc?export=view&id=0B0iuzhpa3pD7X0RzZ2lmclN3Ymc" />
     
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+    
     <!-- Structured data (JSON-LD) for SEO -->
     <script type="application/ld+json">
       {
@@ -68,5 +66,77 @@
     <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
     <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
     <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then((registration) => {
+              console.log('SW registered: ', registration);
+              
+              // Check for updates
+              registration.addEventListener('updatefound', () => {
+                const newWorker = registration.installing;
+                newWorker.addEventListener('statechange', () => {
+                  if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                    // New version available
+                    if (confirm('A new version of Zion is available! Would you like to update?')) {
+                      newWorker.postMessage({ type: 'SKIP_WAITING' });
+                      window.location.reload();
+                    }
+                  }
+                });
+              });
+            })
+            .catch((registrationError) => {
+              console.log('SW registration failed: ', registrationError);
+            });
+        });
+        
+        // Handle offline/online events
+        window.addEventListener('online', () => {
+          document.body.classList.remove('offline');
+          console.log('Connection restored');
+        });
+        
+        window.addEventListener('offline', () => {
+          document.body.classList.add('offline');
+          console.log('Connection lost');
+        });
+      }
+      
+      // PWA Install prompt
+      let deferredPrompt;
+      window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferredPrompt = e;
+        
+        // Show install button or notification
+        const installButton = document.createElement('div');
+        installButton.innerHTML = `
+          <div style="position: fixed; top: 20px; right: 20px; background: #2e73ea; color: white; padding: 1rem; border-radius: 10px; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+            <p style="margin: 0 0 0.5rem 0; font-weight: 600;">Install Zion App</p>
+            <button onclick="installApp()" style="background: white; color: #2e73ea; border: none; padding: 0.5rem 1rem; border-radius: 5px; cursor: pointer; font-weight: 600;">Install</button>
+            <button onclick="this.parentElement.remove()" style="background: transparent; color: white; border: 1px solid white; margin-left: 0.5rem; padding: 0.5rem 1rem; border-radius: 5px; cursor: pointer;">Dismiss</button>
+          </div>
+        `;
+        document.body.appendChild(installButton);
+      });
+      
+      function installApp() {
+        if (deferredPrompt) {
+          deferredPrompt.prompt();
+          deferredPrompt.userChoice.then((choiceResult) => {
+            if (choiceResult.outcome === 'accepted') {
+              console.log('User accepted the install prompt');
+            } else {
+              console.log('User dismissed the install prompt');
+            }
+            deferredPrompt = null;
+          });
+        }
+      }
+    </script>
   </body>
 </html>
