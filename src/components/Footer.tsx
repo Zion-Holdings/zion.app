@@ -6,13 +6,13 @@ export function Footer() {
   return (
     <footer className="bg-zion-blue-dark border-t border-zion-blue-light pt-12 pb-8">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+          <div className="lg:col-span-2">
             <div className="mb-4">
               <span className="text-2xl font-bold bg-gradient-to-r from-zion-cyan via-zion-purple-light to-zion-purple bg-clip-text text-transparent">ZION</span>
             </div>
             <p className="text-zion-slate-light mb-4 max-w-xs">
-              The world's first free marketplace dedicated to high-tech and artificial intelligence.
+              The world's first free marketplace dedicated to high-tech and artificial intelligence. Publish, connect, and thrive — all in one place.
             </p>
             <div className="flex space-x-4">
               <a
@@ -89,6 +89,16 @@ export function Footer() {
               <li><Link to="/careers" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Careers</Link></li>
               <li><Link to="/contact" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Contact</Link></li>
               <li><Link to="/sitemap" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Sitemap</Link></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-white font-semibold mb-4 text-lg">Resources & Support</h3>
+            <ul className="space-y-2">
+              <li><Link to="/help-center" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Help Center</Link></li>
+              <li><Link to="/blog" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Blog & News</Link></li>
+              <li><Link to="/sitemap" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Sitemap</Link></li>
+              <li><Link to="/green-it" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Green IT</Link></li>
             </ul>
           </div>
 
