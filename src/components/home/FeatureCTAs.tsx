@@ -16,7 +16,8 @@ import {
   BookOpen,
   Code,
   Building,
-  Clock
+  Clock,
+  BarChart3
 } from "lucide-react";
 
 export function FeatureCTAs() {
@@ -37,12 +38,20 @@ export function FeatureCTAs() {
       details: "Every talent in our directory undergoes a rigorous verification process to ensure quality, authenticity, and reliability."
     },
     {
-      title: "Services Marketplace",
-      description: "Discover professional tech and AI services for your business needs, from development to consulting.",
+      title: "Professional Services",
+      description: "Discover comprehensive IT & AI services for your business needs, from development to consulting and automation.",
       icon: <Zap className="h-10 w-10 p-2 rounded-md bg-cyan-100 text-cyan-700" />,
-      link: "/services",
+      link: "/all-services",
       badge: "New",
-      details: "From on-demand IT support to specialized AI development, our marketplace offers verified services with transparent pricing and reviews."
+      details: "From AI development to IT infrastructure, cybersecurity, and business automation. Transform your business with cutting-edge technology solutions."
+    },
+    {
+      title: "Transparent Pricing",
+      description: "Clear, competitive pricing for all our services with flexible plans to match your business needs and budget.",
+      icon: <BarChart3 className="h-10 w-10 p-2 rounded-md bg-green-100 text-green-700" />,
+      link: "/pricing",
+      badge: "New",
+      details: "Choose from Basic, Professional, or Enterprise plans. All pricing is transparent with no hidden fees. Get custom quotes for complex projects."
     },
     {
       title: "Equipment Catalog",
