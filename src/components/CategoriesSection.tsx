@@ -54,8 +54,75 @@ const categories = [
 const specialServices = [
   {
     title: "IT Onsite Services",
+<<<<<<< HEAD
+    link: "/it-onsite-services"
+  },
+  {
+    title: "Comprehensive Services",
+    link: "/comprehensive-services"
+  },
+  {
+    title: "AI Services",
+    link: "/ai-services"
+  },
+  {
+    title: "Cybersecurity Services",
+    link: "/cybersecurity-services"
+  },
+  {
+    title: "Micro SAAS",
+    link: "/micro-saas"
+  },
+  {
+    title: "All Services",
+    link: "/comprehensive-services"
+  },
+  {
+    title: "Pricing",
+    link: "/services-pricing"
+  },
+  {
+    title: "Enterprise Solutions",
+    link: "/enterprise-solutions"
+  },
+  {
+    title: "Cloud & DevOps",
+    description: "Cloud migration and automation",
+    icon: <Cloud className="w-8 h-8" />,
+    color: "from-blue-500 to-cyan-600",
+    link: "/expanded-services?category=cloud-devops"
+  },
+  {
+    title: "Data & Analytics",
+    description: "Business intelligence and governance",
+    icon: <Database className="w-8 h-8" />,
+    color: "from-green-500 to-emerald-600",
+    link: "/expanded-services?category=data-analytics"
+  },
+  {
+    title: "Digital Transformation",
+    description: "Strategy and modernization",
+    icon: <TrendingUp className="w-8 h-8" />,
+    color: "from-orange-500 to-yellow-600",
+    link: "/expanded-services?category=digital-transformation"
+  },
+  {
+    title: "IoT & Edge",
+    description: "Connected solutions and edge computing",
+    icon: <Cpu className="w-8 h-8" />,
+    color: "from-indigo-500 to-purple-600",
+    link: "/expanded-services?category=iot-edge"
+  },
+  {
+    title: "Blockchain & Web3",
+    description: "Decentralized solutions and smart contracts",
+    icon: <LinkIcon className="w-8 h-8" />,
+    color: "from-teal-500 to-blue-600",
+    link: "/expanded-services?category=blockchain-web3"
+=======
     link: "/it-onsite-services",
     icon: <Sparkles className="w-4 h-4" />
+>>>>>>> 00d51a7221a0391df0e2b7f12fcb54d7369c373b
   }
 ];
 

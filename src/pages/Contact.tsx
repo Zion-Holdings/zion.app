@@ -97,54 +97,124 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="bg-zion-blue/10 p-6 rounded-lg border border-zion-blue/20">
+              <div>
                 <h3 className="text-lg font-semibold text-zion-blue mb-3">Emergency Support</h3>
-                <p className="text-zion-slate-light mb-3">
-                  For urgent cybersecurity incidents or critical system failures, we provide 24/7 emergency support.
-                </p>
-                <p className="text-zion-slate-light">
-                  <strong>Emergency Hotline:</strong> +1 302 464 0950
-                </p>
+                <div className="space-y-2 text-zion-slate-light">
+                  <p><strong>24/7 Hotline:</strong> +1 302 464 0950</p>
+                  <p><strong>Critical Issues:</strong> Immediate response</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
         {/* Additional Contact Methods */}
-        <div className="mt-16 text-center">
-          <h2 className="text-3xl font-bold text-zion-slate mb-8">Other Ways to Connect</h2>
-          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-zion-blue rounded-full mx-auto mb-4 flex items-center justify-center">
+        <div className="mt-16">
+          <h2 className="text-3xl font-bold text-zion-slate mb-8 text-center">Other Ways to Connect</h2>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="text-center p-6 bg-white rounded-lg shadow-sm border border-zion-slate/10">
+              <div className="w-16 h-16 bg-zion-blue rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-white text-2xl">📧</span>
               </div>
-              <h3 className="text-xl font-semibold text-zion-slate mb-2">Email Support</h3>
-              <p className="text-zion-slate-light mb-4">Get detailed responses to your technical questions</p>
-              <a href="mailto:kleber@ziontechgroup.com" className="text-zion-blue hover:text-zion-blue-dark font-medium">
-                Send Email
+              <h3 className="text-xl font-semibold text-zion-slate mb-3">Email Us</h3>
+              <p className="text-zion-slate-light mb-4">
+                Send us a detailed message and we'll get back to you within 24 hours.
+              </p>
+              <a 
+                href="mailto:kleber@ziontechgroup.com"
+                className="text-zion-blue hover:text-zion-blue-dark font-semibold"
+              >
+                kleber@ziontechgroup.com
               </a>
             </div>
             
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-zion-purple rounded-full mx-auto mb-4 flex items-center justify-center">
+            <div className="text-center p-6 bg-white rounded-lg shadow-sm border border-zion-slate/10">
+              <div className="w-16 h-16 bg-zion-purple rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-white text-2xl">📞</span>
               </div>
-              <h3 className="text-xl font-semibold text-zion-slate mb-2">Phone Consultation</h3>
-              <p className="text-zion-slate-light mb-4">Speak directly with our technical experts</p>
-              <a href="tel:+13024640950" className="text-zion-purple hover:text-zion-purple-dark font-medium">
-                Call Now
+              <h3 className="text-xl font-semibold text-zion-slate mb-3">Call Us</h3>
+              <p className="text-zion-slate-light mb-4">
+                Speak directly with our team for immediate assistance and support.
+              </p>
+              <a 
+                href="tel:+13024640950"
+                className="text-zion-purple hover:text-zion-purple-dark font-semibold"
+              >
+                +1 302 464 0950
               </a>
             </div>
             
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-zion-cyan rounded-full mx-auto mb-4 flex items-center justify-center">
-                <span className="text-white text-2xl">💬</span>
+            <div className="text-center p-6 bg-white rounded-lg shadow-sm border border-zion-slate/10">
+              <div className="w-16 h-16 bg-zion-cyan rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-white text-2xl">🌐</span>
               </div>
-              <h3 className="text-xl font-semibold text-zion-slate mb-2">Live Chat</h3>
-              <p className="text-zion-slate-light mb-4">Get instant answers during business hours</p>
-              <button className="text-zion-cyan hover:text-zion-cyan-dark font-medium">
-                Start Chat
-              </button>
+              <h3 className="text-xl font-semibold text-zion-slate mb-3">Visit Website</h3>
+              <p className="text-zion-slate-light mb-4">
+                Explore our services and learn more about what we can do for you.
+              </p>
+              <a 
+                href="https://ziontechgroup.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-zion-cyan hover:text-zion-cyan-dark font-semibold"
+              >
+                ziontechgroup.com
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Map Section */}
+        <div className="mt-16">
+          <h2 className="text-3xl font-bold text-zion-slate mb-8 text-center">Our Location</h2>
+          <div className="bg-white p-6 rounded-lg shadow-sm border border-zion-slate/10">
+            <div className="text-center mb-6">
+              <h3 className="text-xl font-semibold text-zion-slate mb-2">Zion Tech Group Headquarters</h3>
+              <p className="text-zion-slate-light">
+                364 E Main St STE 1008<br />
+                Middletown, DE 19709<br />
+                United States
+              </p>
+            </div>
+            <div className="bg-zion-slate/10 h-64 rounded-lg flex items-center justify-center">
+              <p className="text-zion-slate-light">Interactive Map Coming Soon</p>
+            </div>
+          </div>
+        </div>
+
+        {/* FAQ Section */}
+        <div className="mt-16">
+          <h2 className="text-3xl font-bold text-zion-slate mb-8 text-center">Frequently Asked Questions</h2>
+          
+          <div className="space-y-4">
+            <div className="bg-white p-6 rounded-lg shadow-sm border border-zion-slate/10">
+              <h3 className="text-lg font-semibold text-zion-slate mb-2">What services do you offer?</h3>
+              <p className="text-zion-slate-light">
+                We offer comprehensive IT and AI services including AI development, cybersecurity, cloud solutions, 
+                digital transformation, and more. Visit our services page for detailed information.
+              </p>
+            </div>
+            
+            <div className="bg-white p-6 rounded-lg shadow-sm border border-zion-slate/10">
+              <h3 className="text-lg font-semibold text-zion-slate mb-2">How quickly can you respond to urgent requests?</h3>
+              <p className="text-zion-slate-light">
+                For critical issues, we provide immediate response. For general inquiries, we respond within 24 hours.
+              </p>
+            </div>
+            
+            <div className="bg-white p-6 rounded-lg shadow-sm border border-zion-slate/10">
+              <h3 className="text-lg font-semibold text-zion-slate mb-2">Do you work with international clients?</h3>
+              <p className="text-zion-slate-light">
+                Yes, we serve clients worldwide and can accommodate different time zones and requirements.
+              </p>
+            </div>
+            
+            <div className="bg-white p-6 rounded-lg shadow-sm border border-zion-slate/10">
+              <h3 className="text-lg font-semibold text-zion-slate mb-2">What is your pricing structure?</h3>
+              <p className="text-zion-slate-light">
+                Our pricing varies based on project scope and requirements. Contact us for a personalized quote.
+              </p>
             </div>
           </div>
         </div>
