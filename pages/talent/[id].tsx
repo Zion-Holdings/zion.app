@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from 'react';
+<<<<<<< HEAD
 import { useParams } from 'react-router-dom';
+=======
+import { useParams, useNavigate } from 'react-router-dom';
+>>>>>>> dd620ef4409d707a58974776442fbda9c1819828
 import { ProfileLoadingState } from '@/components/profile/ProfileLoadingState';
 import type { TalentProfile as TalentProfileType } from '@/types/talent';
 import { ProfileErrorState } from '@/components/profile/ProfileErrorState';
@@ -8,6 +12,7 @@ interface TalentProfileWithSocial extends TalentProfileType {
   social?: Record<string, string>;
 }
 
+<<<<<<< HEAD
 // Simple error component for 404
 const ErrorPage: React.FC<{ statusCode: number }> = ({ statusCode }) => (
   <div className="min-h-screen bg-zion-blue flex items-center justify-center text-white">
@@ -22,6 +27,11 @@ const ErrorPage: React.FC<{ statusCode: number }> = ({ statusCode }) => (
 
 const TalentProfilePage: React.FC = () => {
   const { id } = useParams();
+=======
+const TalentProfilePage: React.FC = () => {
+  const { id } = useParams();
+  const navigate = useNavigate();
+>>>>>>> dd620ef4409d707a58974776442fbda9c1819828
   const [profile, setProfile] = useState<TalentProfileWithSocial | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -54,7 +64,26 @@ const TalentProfilePage: React.FC = () => {
   }, [id]);
 
   if (loading) return <ProfileLoadingState />;
+<<<<<<< HEAD
   if (error || !profile) return <ErrorPage statusCode={404} />;
+=======
+  if (error || !profile) {
+    return (
+      <div className="min-h-screen bg-zion-blue flex items-center justify-center text-white">
+        <div className="text-center">
+          <h1 className="text-4xl font-bold mb-4">404</h1>
+          <p className="text-xl mb-4">Talent not found</p>
+          <button 
+            onClick={() => navigate('/')}
+            className="bg-zion-purple hover:bg-zion-purple-dark px-6 py-2 rounded-md"
+          >
+            Return to Home
+          </button>
+        </div>
+      </div>
+    );
+  }
+>>>>>>> dd620ef4409d707a58974776442fbda9c1819828
 
   return (
     <main className="min-h-screen bg-zion-blue py-8 text-white">
