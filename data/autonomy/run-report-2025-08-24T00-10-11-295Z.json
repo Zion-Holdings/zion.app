@@ -1,0 +1,10 @@
+{
+  "timestamp": "2025-08-24T00:10:11.296Z",
+  "results": [
+    {
+      "name": "investor-autopilot",
+      "ok": false,
+      "error": "Missing OPENAI_API_KEY"
+    }
+  ]
+}

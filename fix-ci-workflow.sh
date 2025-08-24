@@ -1,0 +1,46 @@
+#!/bin/bash
+
+# Fix the CI workflow specifically
+cat > .github/workflows/ci.yml << 'EOF'
+name: CI
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: '0 0 * * *'
+
+concurrency:
+  group: "github.workflow-${{ github.ref }}"
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    name: Main Job
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+      
+      - name: Run tests
+        run: npm test
+      
+      - name: Build project
+        run: npm run build
+EOF
+
+echo "✅ CI workflow has been fixed!"

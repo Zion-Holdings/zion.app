@@ -1,56 +1,89 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "ES2017",
+    "useDefineForClassFields": true,
     "lib": [
-      "dom",
-      "dom.iterable",
-      "es6"
+      "ES2024",
+      "DOM",
+      "DOM.Iterable",
+      "WebWorker",
+      "WebWorker.Iterable"
     ],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "noEmit": true,
-    "esModuleInterop": true,
     "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
-    "incremental": true,
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
+    "skipLibCheck": true,
+    "importHelpers": false,
+    "noEmitHelpers": false,
+    "baseUrl": ".",
     "paths": {
       "@/*": [
-        "./*"
+        "./src/*"
+      ],
+      "@/pages/*": [
+        "./src/pages/*",
+        "./pages/*"
+      ],
+      "@/components/*": [
+        "./src/components/*"
+      ],
+      "@/api/*": [
+        "./src/api/*"
+      ],
+      "@/types/*": [
+        "./src/types/*",
+        "./types/*"
+      ],
+      "@/utils/*": [
+        "./src/utils/*"
+      ],
+      "@/hooks/*": [
+        "./src/hooks/*"
+      ],
+      "@/context/*": [
+        "./src/context/*"
+      ],
+      "@/services/*": [
+        "./src/services/*"
+      ],
+      "react-router-dom": [
+        "./src/stubs/react-router-dom.tsx"
+      ],
+      "next-cloudinary": [
+        "./types/next-cloudinary.d.ts"
+      ],
+      "types/*": [
+        "./types/*"
       ]
     },
-    "forceConsistentCasingInFileNames": true,
-    "noImplicitAny": false,
-    "noImplicitReturns": false,
-    "noImplicitThis": false,
+    /* Bundler mode */
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "strict": true,
     "noUnusedLocals": false,
-    "noUnusedParameters": false
+    "noUnusedParameters": false,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitReturns": true,
+    "allowJs": true,
+    "incremental": true,
+    "typeRoots": [
+      "./node_modules/@types",
+      "./types"
+    ],
+    "types": [
+      "node"
+    ],
+    "jsx": "preserve",
+    "noEmit": true,
+    "isolatedModules": true
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx",
-    ".next/types/**/*.ts"
+    "**/*.tsx"
   ],
   "exclude": [
     "node_modules",
-    ".next",
-    "out",
-    "dist",
-    "build",
-    "automation",
-    "scripts",
-    "fix_*.js",
-    "fix_*.cjs",
-    "*.fix.js",
-    "*.fix.cjs"
+    "zion.app/recovered-content/**"
   ]
 }
