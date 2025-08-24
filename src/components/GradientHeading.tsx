@@ -14,7 +14,7 @@ export function GradientHeading({ children, className, level = "h2" }: GradientH
   return (
     <Tag 
       className={cn(
-        "text-4xl font-bold tracking-tight bg-gradient-to-r from-zion-cyan via-zion-purple-light to-zion-purple bg-clip-text text-transparent",
+        "text-4xl font-bold tracking-tight bg-gradient-to-r from-zion-cyan via-zion-purple-light to-zion-purple bg-clip-text text-transparent neon-pulse",
         className
       )}
     >
