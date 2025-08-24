@@ -20,6 +20,7 @@ import AdvancedCustomerSuccess from '../components/AdvancedCustomerSuccess';
 import AdvancedProjectManagement from '../components/AdvancedProjectManagement';
 import AdvancedClientPortal from '../components/AdvancedClientPortal';
 import AdvancedTimeTracking from '../components/AdvancedTimeTracking';
+import AdvancedInvoiceManagement from '../components/AdvancedInvoiceManagement';
 
 const Home: NextPage = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -298,6 +299,9 @@ const Home: NextPage = () => {
 
         {/* Advanced Time Tracking Section */}
         <AdvancedTimeTracking />
+
+        {/* Advanced Invoice Management Section */}
+        <AdvancedInvoiceManagement />
 
         {/* Advanced Features Showcase */}
         <AdvancedFeaturesShowcase />
