@@ -16,25 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@/*": [
-        "./*"
-      ],
-      "@/pages/*": [
-        "./pages/*"
-      ],
-      "@/components/*": [
-        "./components/*"
-      ],
-      "@/types/*": [
-        "./types/*"
-      ],
-      "@/utils/*": [
-        "./utils/*"
-      ],
-      "@/services/*": [
-        "./services/*"
-      ],
-      "@/styles/*": [
-        "./styles/*"
+        "./src/*"
       ]
     },
     /* Bundler mode */
@@ -49,48 +31,28 @@
     "noImplicitReturns": false,
     "allowJs": true,
     "incremental": true,
+    "jsx": "react-jsx",
     "typeRoots": [
-      "./node_modules/@types",
-      "./types"
-    ],
-    "types": [
-      "node"
-    ],
-    "jsx": "preserve",
-    "noEmit": true,
-    "isolatedModules": true,
-    "forceConsistentCasingInFileNames": true
+      "./node_modules/@types"
+    ]
   },
   "include": [
-    "next-env.d.ts",
-    "pages/**/*.ts",
-    "pages/**/*.tsx",
-    "components/**/*.ts",
-    "components/**/*.tsx",
-    "types/**/*.ts",
-    "types/**/*.d.ts",
-    "utils/**/*.ts",
-    "services/**/*.ts",
-    "styles/**/*.css"
+    "src/main.tsx",
+    "src/App.tsx",
+    "src/App.css",
+    "src/index.css",
+    "src/pages/MicroSaasServices.tsx",
+    "src/pages/PricingPage.tsx",
+    "src/data/microSaasServices.ts",
+    "src/types/listings.ts"
   ],
   "exclude": [
     "node_modules",
-    "zion.app/recovered-content/**",
-    "contracts/**",
-    "dao/**",
-    "zion-os/**",
-    "zion_academy/**",
-    "packages/**",
-    "monitoring/**",
-    "scripts/**",
-    "server/**",
-    "cypress/**",
-    "**/*.disabled/**",
-    "__tests__.disabled/**",
-    "plugins.disabled/**",
-    "test.disabled/**",
-    "services.disabled.temp/**",
-    "data.temp/**",
-    "src_backup/**"
+    "src/components",
+    "src/hooks",
+    "src/store",
+    "src/pages/**/*",
+    "!src/pages/MicroSaasServices.tsx",
+    "!src/pages/PricingPage.tsx"
   ]
 }

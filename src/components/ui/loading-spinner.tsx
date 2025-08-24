@@ -148,38 +148,18 @@ export function LoadingSkeleton({
 }
 
 // Page loading overlay
-export function LoadingOverlay({
-  text = 'Loading...',
-  showSpinner = true,
-  className
-}: {
-  text?: string;
-  showSpinner?: boolean;
-  className?: string;
-}) {
+export const LoadingOverlay: React.FC<LoadingOverlayProps> = ({ 
+  text = "Loading...", 
+  showSpinner = true 
+}) => {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      className={cn(
-        'fixed inset-0 z-50 flex items-center justify-center bg-zion-blue-dark/80 backdrop-blur-sm',
-        className
-      )}
-    >
+    <div className="loading-overlay">
       <div className="text-center">
         {showSpinner && (
-          <LoadingSpinner size="xl" color="primary" className="mb-4" />
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-white mx-auto mb-4"></div>
         )}
-        <motion.p
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-          className="text-xl text-white font-medium"
-        >
-          {text}
-        </motion.p>
+        <p className="text-lg">{text}</p>
       </div>
-    </motion.div>
+    </div>
   );
-}
+};
