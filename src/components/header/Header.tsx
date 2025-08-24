@@ -53,10 +53,17 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
   
   return (
     <header 
-      className="sticky top-0 z-50 w-full border-b border-zion-purple/20 bg-zion-blue-dark/90 backdrop-blur-md"
+      className="sticky top-0 z-50 w-full border-b border-zion-purple/20 bg-zion-blue-dark/90 backdrop-blur-md shadow-lg shadow-zion-cyan/10"
       style={headerStyle}
     >
-      <div className="container flex h-16 items-center px-4 sm:px-6">
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-zion-cyan to-transparent opacity-50"></div>
+        <div className="absolute top-0 left-1/4 w-1 h-full bg-gradient-to-b from-transparent via-zion-purple to-transparent opacity-30"></div>
+        <div className="absolute top-0 right-1/4 w-1 h-full bg-gradient-to-b from-transparent via-zion-cyan to-transparent opacity-30"></div>
+      </div>
+      
+      <div className="relative container flex h-16 items-center px-4 sm:px-6">
         <Logo customLogo={customLogo} customColor={effectiveTheme?.primaryColor} />
 
         <div className="ml-6 flex-1">
