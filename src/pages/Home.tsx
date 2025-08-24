@@ -11,12 +11,18 @@ import { QuickAccess } from "@/components/home/QuickAccess";
 import { FeatureCTAs } from "@/components/home/FeatureCTAs";
 import { FeatureHighlights } from "@/components/home/FeatureHighlights";
 import { ITServiceRequestHero } from "@/components/home/ITServiceRequestHero";
+import { ComprehensiveServicesShowcase } from "@/components/home/ComprehensiveServicesShowcase";
 import { BottomNavigation } from "@/components/MobileNavigation";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-background">
-      <HomePageSEO />
+      <SEO 
+        title="Zion - The Tech & AI Marketplace" 
+        description="Discover top AI and tech talent, services, and equipment in one place."
+        keywords="AI, technology, marketplace, services, talent"
+        canonical="https://ziontechgroup.com/"
+      />
 
       <ITServiceRequestHero />
 
@@ -27,6 +33,8 @@ export default function Home() {
       <FeatureCTAs />
       
       <FeatureHighlights />
+      
+      <ComprehensiveServicesShowcase />
       
       <CategoriesSection />
       <BenefitsSection />
