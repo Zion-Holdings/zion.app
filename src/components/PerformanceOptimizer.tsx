@@ -1,229 +1,183 @@
-import React, { useEffect, useState, useRef, useCallback } from 'react';
-import { motion, useInView } from 'framer-motion';
+import React, { useEffect, useState, useRef } from 'react';
 
-interface PerformanceOptimizerProps {
-  children: React.ReactNode;
-  threshold?: number;
-  delay?: number;
-  className?: string;
-  fallback?: React.ReactNode;
+interface PerformanceMetrics {
+  fcp: number;
+  lcp: number;
+  fid: number;
+  cls: number;
+  ttfb: number;
+  overall: number;
 }
 
-export function PerformanceOptimizer({
-  children,
-  threshold = 0.1,
-  delay = 0,
-  className = '',
-  fallback = null
-}: PerformanceOptimizerProps) {
+export function PerformanceOptimizer() {
+  const [metrics, setMetrics] = useState<PerformanceMetrics | null>(null);
   const [isVisible, setIsVisible] = useState(false);
-  const [isLoaded, setIsLoaded] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { threshold });
 
-  const handleIntersection = useCallback(() => {
-    if (inView && !isVisible) {
+  useEffect(() => {
+    // Only show when explicitly enabled
+    if (localStorage.getItem('showPerformance') === 'true') {
       setIsVisible(true);
-      // Simulate loading delay for better UX
-      setTimeout(() => setIsLoaded(true), delay);
-    }
-  }, [inView, isVisible, delay]);
-
-  useEffect(() => {
-    handleIntersection();
-  }, [handleIntersection]);
-
-  // Performance monitoring
-  useEffect(() => {
-    if (typeof window !== 'undefined' && 'performance' in window) {
-      const observer = new PerformanceObserver((list) => {
-        for (const entry of list.getEntries()) {
-          if (entry.entryType === 'largest-contentful-paint') {
-            console.log('LCP:', entry.startTime);
-          }
-        }
-      });
-      
-      observer.observe({ entryTypes: ['largest-contentful-paint'] });
-      
-      return () => observer.disconnect();
+      measurePerformance();
     }
   }, []);
 
-  if (!isVisible) {
-    return (
-      <div ref={ref} className={className}>
-        {fallback}
-      </div>
-    );
-  }
-
-  if (!isLoaded) {
-    return (
-      <div ref={ref} className={className}>
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.3 }}
-          className="w-full h-full flex items-center justify-center"
-        >
-          <div className="animate-pulse">
-            <div className="w-8 h-8 border-2 border-zion-cyan border-t-transparent rounded-full animate-spin" />
-          </div>
-        </motion.div>
-      </div>
-    );
-  }
-
-  return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      className={className}
-    >
-      {children}
-    </motion.div>
-  );
-}
-
-// Lazy loading wrapper for images
-export function LazyImage({
-  src,
-  alt,
-  className = '',
-  placeholder = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMTcwNzJiIi8+PC9zdmc+'
-}: {
-  src: string;
-  alt: string;
-  className?: string;
-  placeholder?: string;
-}) {
-  const [imageSrc, setImageSrc] = useState(placeholder);
-  const [isLoaded, setIsLoaded] = useState(false);
-  const imgRef = useRef<HTMLImageElement>(null);
-
-  useEffect(() => {
-    const img = imgRef.current;
-    if (!img) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
+  const measurePerformance = () => {
+    if ('PerformanceObserver' in window) {
+      // Measure Core Web Vitals
+      const observer = new PerformanceObserver((list) => {
+        const entries = list.getEntries();
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setImageSrc(src);
-            observer.unobserve(img);
+          if (entry.entryType === 'largest-contentful-paint') {
+            updateMetrics('lcp', entry.startTime);
+          } else if (entry.entryType === 'first-input') {
+            const firstInputEntry = entry as PerformanceEventTiming;
+            updateMetrics('fid', firstInputEntry.processingStart - firstInputEntry.startTime);
           }
         });
-      },
-      { threshold: 0.1 }
-    );
+      });
 
-    observer.observe(img);
-    return () => observer.unobserve(img);
-  }, [src]);
+      observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] });
 
-  return (
-    <img
-      ref={imgRef}
-      src={imageSrc}
-      alt={alt}
-      className={`transition-opacity duration-300 ${className} ${
-        isLoaded ? 'opacity-100' : 'opacity-0'
-      }`}
-      onLoad={() => setIsLoaded(true)}
-    />
-  );
-}
+      // Measure other metrics
+      setTimeout(() => {
+        const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
+        if (navigation) {
+          updateMetrics('ttfb', navigation.responseStart - navigation.requestStart);
+        }
+      }, 1000);
+    }
+  };
 
-// Virtual scrolling for large lists
-export function VirtualList<T>({
-  items,
-  renderItem,
-  itemHeight,
-  containerHeight,
-  overscan = 5
-}: {
-  items: T[];
-  renderItem: (item: T, index: number) => React.ReactNode;
-  itemHeight: number;
-  containerHeight: number;
-  overscan?: number;
-}) {
-  const [scrollTop, setScrollTop] = useState(0);
-  const containerRef = useRef<HTMLDivElement>(null);
+  const updateMetrics = (key: keyof PerformanceMetrics, value: number) => {
+    setMetrics(prev => {
+      if (!prev) return null;
+      const newMetrics = { ...prev, [key]: value };
+      
+      // Calculate overall score
+      const scores = [
+        newMetrics.fcp < 1800 ? 100 : Math.max(0, 100 - (newMetrics.fcp - 1800) / 10),
+        newMetrics.lcp < 2500 ? 100 : Math.max(0, 100 - (newMetrics.lcp - 2500) / 25),
+        newMetrics.fid < 100 ? 100 : Math.max(0, 100 - (newMetrics.fid - 100) / 2),
+        newMetrics.cls < 0.1 ? 100 : Math.max(0, 100 - newMetrics.cls * 1000),
+        newMetrics.ttfb < 800 ? 100 : Math.max(0, 100 - (newMetrics.ttfb - 800) / 8)
+      ];
+      
+      newMetrics.overall = Math.round(scores.reduce((a, b) => a + b, 0) / scores.length);
+      
+      return newMetrics;
+    });
+  };
 
-  const visibleStart = Math.max(0, Math.floor(scrollTop / itemHeight) - overscan);
-  const visibleEnd = Math.min(
-    items.length,
-    Math.ceil((scrollTop + containerHeight) / itemHeight) + overscan
-  );
+  const getScoreColor = (score: number) => {
+    if (score >= 90) return 'bg-green-500';
+    if (score >= 70) return 'bg-yellow-500';
+    return 'bg-red-500';
+  };
 
-  const visibleItems = items.slice(visibleStart, visibleEnd);
-  const totalHeight = items.length * itemHeight;
-  const offsetY = visibleStart * itemHeight;
+  const getScoreIcon = (score: number) => {
+    if (score >= 90) return '✅';
+    if (score >= 70) return '⏰';
+    return '⚠️';
+  };
 
-  const handleScroll = useCallback((e: React.UIEvent<HTMLDivElement>) => {
-    setScrollTop(e.currentTarget.scrollTop);
-  }, []);
+  if (!isVisible || !metrics) return null;
 
   return (
-    <div
-      ref={containerRef}
-      style={{ height: containerHeight, overflow: 'auto' }}
-      onScroll={handleScroll}
-    >
-      <div style={{ height: totalHeight, position: 'relative' }}>
-        <div style={{ transform: `translateY(${offsetY}px)` }}>
-          {visibleItems.map((item, index) => (
-            <div key={visibleStart + index} style={{ height: itemHeight }}>
-              {renderItem(item, visibleStart + index)}
+    <div ref={ref} className="fixed bottom-4 right-4 w-80 z-50 bg-background/95 backdrop-blur-sm border-zion-cyan/20 rounded-lg border p-4 shadow-2xl">
+      <div className="pb-2">
+        <h3 className="flex items-center gap-2 text-sm font-semibold">
+          <span>⚡</span>
+          Performance Monitor
+          <span className="ml-auto px-2 py-1 bg-muted rounded text-xs font-mono">
+            {metrics.overall}/100
+          </span>
+        </h3>
+        <p className="text-xs text-muted-foreground">
+          Core Web Vitals & Performance Metrics
+        </p>
+      </div>
+      
+      <div className="space-y-3">
+        <div className="space-y-2">
+          <div className="flex justify-between text-xs">
+            <span>First Contentful Paint</span>
+            <span className="font-mono">{Math.round(metrics.fcp)}ms</span>
+          </div>
+          <div className="w-full bg-muted rounded-full h-1">
+            <div 
+              className="bg-zion-cyan h-1 rounded-full transition-all duration-300"
+              style={{ width: `${Math.min(100, (metrics.fcp / 1800) * 100)}%` }}
+            />
+          </div>
+        </div>
+        
+        <div className="space-y-2">
+          <div className="flex justify-between text-xs">
+            <span>Largest Contentful Paint</span>
+            <span className="font-mono">{Math.round(metrics.lcp)}ms</span>
+          </div>
+          <div className="w-full bg-muted rounded-full h-1">
+            <div 
+              className="bg-zion-cyan h-1 rounded-full transition-all duration-300"
+              style={{ width: `${Math.min(100, (metrics.lcp / 2500) * 100)}%` }}
+            />
+          </div>
+        </div>
+        
+        <div className="space-y-2">
+          <div className="flex justify-between text-xs">
+            <span>First Input Delay</span>
+            <span className="font-mono">{Math.round(metrics.fid)}ms</span>
+          </div>
+          <div className="w-full bg-muted rounded-full h-1">
+            <div>
+              <div 
+                className="bg-zion-cyan h-1 rounded-full transition-all duration-300"
+                style={{ width: `${Math.min(100, (metrics.fid / 100) * 100)}%` }}
+              />
             </div>
-          ))}
+          </div>
+        </div>
+        
+        <div className="space-y-2">
+          <div className="flex justify-between text-xs">
+            <span>Cumulative Layout Shift</span>
+            <span className="font-mono">{metrics.cls.toFixed(3)}</span>
+          </div>
+          <div className="w-full bg-muted rounded-full h-1">
+            <div 
+              className="bg-zion-cyan h-1 rounded-full transition-all duration-300"
+              style={{ width: `${Math.min(100, (metrics.cls / 0.1) * 100)}%` }}
+            />
+          </div>
+        </div>
+        
+        <div className="space-y-2">
+          <div className="flex justify-between text-xs">
+            <span>Time to First Byte</span>
+            <span className="font-mono">{Math.round(metrics.ttfb)}ms</span>
+          </div>
+          <div className="w-full bg-muted rounded-full h-1">
+            <div 
+              className="bg-zion-cyan h-1 rounded-full transition-all duration-300"
+              style={{ width: `${Math.min(100, (metrics.ttfb / 800) * 100)}%` }}
+            />
+          </div>
+        </div>
+        
+        <div className="pt-2 border-t border-border">
+          <div className="flex items-center justify-between">
+            <span className="text-xs font-medium">Overall Score</span>
+            <div className="flex items-center gap-2">
+              <span>{getScoreIcon(metrics.overall)}</span>
+              <span className={`text-sm font-bold ${getScoreColor(metrics.overall).replace('bg-', 'text-')}`}>
+                {metrics.overall}
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   );
-}
-
-// Debounced search hook
-export function useDebounce<T>(value: T, delay: number): T {
-  const [debouncedValue, setDebouncedValue] = useState<T>(value);
-
-  useEffect(() => {
-    const handler = setTimeout(() => {
-      setDebouncedValue(value);
-    }, delay);
-
-    return () => {
-      clearTimeout(handler);
-    };
-  }, [value, delay]);
-
-  return debouncedValue;
-}
-
-// Intersection observer hook for performance
-export function useIntersectionObserver(
-  options: IntersectionObserverInit = {}
-) {
-  const [isIntersecting, setIsIntersecting] = useState(false);
-  const [entry, setEntry] = useState<IntersectionObserverEntry | null>(null);
-  const elementRef = useRef<HTMLElement | null>(null);
-
-  useEffect(() => {
-    const element = elementRef.current;
-    if (!element) return;
-
-    const observer = new IntersectionObserver(([entry]) => {
-      setIsIntersecting(entry.isIntersecting);
-      setEntry(entry);
-    }, options);
-
-    observer.observe(element);
-    return () => observer.unobserve(element);
-  }, [options]);
-
-  return { ref: elementRef, isIntersecting, entry };
 }

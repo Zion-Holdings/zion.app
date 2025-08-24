@@ -2,12 +2,15 @@ import React from 'react';
 import { Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
+import { ErrorBoundary } from './components/ErrorBoundary';
+import { PerformanceOptimizer } from './components/PerformanceOptimizer';
+import { AccessibilityEnhancer } from './components/AccessibilityEnhancer';
 
 // Lazy load only the pages we know work
 const MicroSaasServicesPage = React.lazy(() => import('./pages/MicroSaasServices'));
 const PricingPage = React.lazy(() => import('./pages/PricingPage'));
 
-// Simple loading component
+// Enhanced loading component with skeleton
 const PageLoader = () => (
   <div className="loading-overlay">
     <div className="text-center">
@@ -25,21 +28,27 @@ const baseRoutes = [
 
 function App() {
   return (
-    <div className="app">
-      <main className="main-content">
-        <Suspense fallback={<PageLoader />}>
-          <Routes>
-            {baseRoutes.map((route) => (
-              <Route
-                key={route.path}
-                path={route.path}
-                element={route.element}
-              />
-            ))}
-          </Routes>
-        </Suspense>
-      </main>
-    </div>
+    <ErrorBoundary>
+      <div className="app">
+        <main className="main-content">
+          <Suspense fallback={<PageLoader />}>
+            <Routes>
+              {baseRoutes.map((route) => (
+                <Route
+                  key={route.path}
+                  path={route.path}
+                  element={route.element}
+                />
+              ))}
+            </Routes>
+          </Suspense>
+        </main>
+        
+        {/* Enhanced user experience components */}
+        <PerformanceOptimizer />
+        <AccessibilityEnhancer />
+      </div>
+    </ErrorBoundary>
   );
 }
 

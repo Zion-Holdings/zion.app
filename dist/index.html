@@ -5,7 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Zion Tech Group - AI-Powered Tech Marketplace</title>
     <meta name="description" content="Discover top AI and tech talent, services, and equipment in one place. AI-powered matching for your tech needs." />
-    <script type="module" crossorigin src="/js/index-Bp9qrppl.js"></script>
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#2e73ea" />
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- DNS Prefetch -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Zion Tech Group",
+        "url": "https://app.ziontechgroup.com",
+        "description": "The world's first free marketplace dedicated to high-tech and artificial intelligence",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://app.ziontechgroup.com/search?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    </script>
+    <script type="module" crossorigin src="/js/index-c5j_7Uhj.js"></script>
     <link rel="modulepreload" crossorigin href="/js/chunk-BWeYMIOP.js">
     <link rel="modulepreload" crossorigin href="/js/chunk-VS_nG-gj.js">
     <link rel="modulepreload" crossorigin href="/js/chunk-D7HrI6pR.js">
@@ -18,5 +48,70 @@
         <p>Loading amazing content...</p>
       </div>
     </div>
+    
+    <!-- Service Worker Registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then((registration) => {
+              console.log('SW registered: ', registration);
+              
+              // Handle service worker updates
+              registration.addEventListener('updatefound', () => {
+                const newWorker = registration.installing;
+                newWorker.addEventListener('statechange', () => {
+                  if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                    // New content is available, show update prompt
+                    if (confirm('New version available! Reload to update?')) {
+                      window.location.reload();
+                    }
+                  }
+                });
+              });
+            })
+            .catch((registrationError) => {
+              console.log('SW registration failed: ', registrationError);
+            });
+        });
+        
+        // Handle offline/online events
+        window.addEventListener('offline', () => {
+          document.body.classList.add('offline');
+        });
+        
+        window.addEventListener('online', () => {
+          document.body.classList.remove('offline');
+        });
+      }
+      
+      // PWA Install prompt
+      let deferredPrompt;
+      window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferredPrompt = e;
+        
+        // Create install button (you can customize this)
+        const installButton = document.createElement('button');
+        installButton.textContent = 'Install App';
+        installButton.style.cssText = 'position: fixed; top: 20px; right: 20px; z-index: 1000; padding: 10px 20px; background: #2e73ea; color: white; border: none; border-radius: 5px; cursor: pointer;';
+        installButton.onclick = installApp;
+        document.body.appendChild(installButton);
+      });
+      
+      function installApp() {
+        if (deferredPrompt) {
+          deferredPrompt.prompt();
+          deferredPrompt.userChoice.then((choiceResult) => {
+            if (choiceResult.outcome === 'accepted') {
+              console.log('User accepted the install prompt');
+            } else {
+              console.log('User dismissed the install prompt');
+            }
+            deferredPrompt = null;
+          });
+        }
+      }
+    </script>
   </body>
 </html>
