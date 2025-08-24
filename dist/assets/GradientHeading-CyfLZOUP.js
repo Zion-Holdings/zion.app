@@ -1,1 +1,0 @@
-import{j as n}from"./index-DofKv3_P.js";function r({children:t,className:e=""}){return n.jsx("h2",{className:`text-4xl md:text-5xl font-bold bg-gradient-to-r from-zion-cyan via-zion-purple to-zion-blue bg-clip-text text-transparent ${e}`,children:t})}export{r as G};
