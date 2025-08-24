@@ -41,6 +41,9 @@ const OpenAppRedirect = React.lazy(() => import('./pages/OpenAppRedirect'));
 const ContactPage = React.lazy(() => import('./pages/Contact'));
 const ZionHireAI = React.lazy(() => import('./pages/ZionHireAI'));
 const RequestQuotePage = React.lazy(() => import('./pages/RequestQuote'));
+const MicroSaasServices = React.lazy(() => import('./pages/MicroSaasServices'));
+const AIServices = React.lazy(() => import('./pages/AIServices'));
+const ITServices = React.lazy(() => import('./pages/ITServices'));
 
 const baseRoutes = [
   { path: '/', element: <Home /> },
@@ -50,6 +53,9 @@ const baseRoutes = [
   { path: '/talent', element: <TalentDirectory /> },
   { path: '/talents', element: <TalentsPage /> },
   { path: '/services', element: <ServicesPage /> },
+  { path: '/micro-saas-services', element: <MicroSaasServices /> },
+  { path: '/ai-services', element: <AIServices /> },
+  { path: '/it-services', element: <ITServices /> },
   { path: '/it-onsite-services', element: <ITOnsiteServicesPage /> },
   { path: '/categories', element: <Categories /> },
   { path: '/equipment', element: <EquipmentPage /> },
