@@ -17,7 +17,7 @@ import {
   Shield,
   Clock
 } from 'lucide-react';
-import { AdvancedServiceRecommendation } from '../components/AdvancedServiceRecommendation';
+import AdvancedServiceRecommendation from '../components/AdvancedServiceRecommendation';
 import { Button } from '../components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
 
