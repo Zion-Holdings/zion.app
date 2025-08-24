@@ -19,8 +19,8 @@ export function ContactSection() {
               </div>
               <div>
                 <p className="text-white font-semibold">Email Us</p>
-                <a href="mailto:commercial@ziontechgroup.com" className="text-zion-cyan hover:text-zion-purple transition-colors">
-                  commercial@ziontechgroup.com
+                <a href="mailto:kleber@ziontechgroup.com" className="text-zion-cyan hover:text-zion-purple transition-colors">
+                  kleber@ziontechgroup.com
                 </a>
               </div>
             </div>
