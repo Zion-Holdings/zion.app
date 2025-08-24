@@ -1,0 +1,77 @@
+{
+  "timestamp": "2025-08-19T17:31:16.586Z",
+  "systemStatus": {
+    "totalManagers": 3,
+    "runningManagers": 3,
+    "healthyManagers": 3
+  },
+  "managerStatus": {
+    "pm2": {
+      "status": "running",
+      "started": "2025-08-19T17:31:16.568Z",
+      "health": "healthy"
+    },
+    "github": {
+      "status": "running",
+      "started": "2025-08-19T17:31:16.569Z",
+      "health": "healthy"
+    },
+    "netlify": {
+      "status": "running",
+      "started": "2025-08-19T17:31:16.569Z",
+      "health": "healthy"
+    }
+  },
+  "recoveryAttempts": {},
+  "detailedReports": {
+    "pm2": {
+      "timestamp": "2025-08-19T17:31:16.586Z",
+      "backupProcesses": [],
+      "recoveryAttempts": {},
+      "pm2Status": [
+        {
+          "name": "id",
+          "status": "name",
+          "cpu": "namespace",
+          "memory": "version",
+          "uptime": "mode"
+        },
+        {
+          "name": "\u001b[1m\u001b[36m1\u001b[39m\u001b[22m",
+          "status": "ecosystem.pm2",
+          "cpu": "default",
+          "memory": "0.1.0",
+          "uptime": "\u001b[7m\u001b[1mfork\u001b[22m\u001b[27m"
+        },
+        {
+          "name": "id",
+          "status": "module",
+          "cpu": "version",
+          "memory": "pid",
+          "uptime": "status"
+        },
+        {
+          "name": "\u001b[1m\u001b[36m0\u001b[39m\u001b[22m",
+          "status": "pm2-logrotate",
+          "cpu": "2.7.0",
+          "memory": "13484",
+          "uptime": "\u001b[32m\u001b[1monline\u001b[22m\u001b[39m"
+        }
+      ]
+    },
+    "github": {
+      "timestamp": "2025-08-19T18:46:42.971Z",
+      "backupWorkflows": [],
+      "recoveryAttempts": {},
+      "totalBackups": 0,
+      "healthyBackups": 0
+    },
+    "netlify": {
+      "timestamp": "2025-08-19T18:46:42.971Z",
+      "backupFunctions": [],
+      "recoveryAttempts": {},
+      "totalBackups": 0,
+      "healthyBackups": 0
+    }
+  }
+}

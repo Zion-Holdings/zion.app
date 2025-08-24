@@ -1,10 +1,9 @@
-
-import { QuoteRequestForm } from "@/components/QuoteRequestForm";
-
-export default function RequestQuote() {
+import React from 'react';
+export function RequestQuote() {
   return (
-    <div className="min-h-screen bg-zion-blue">
-      <QuoteRequestForm />
+    <div>
+      <h1>Component</h1>
+      <p>Component placeholder</p>
     </div>
   );
 }

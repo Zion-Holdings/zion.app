@@ -1,0 +1,60 @@
+<<<<<<< HEAD
+import { NextApiRequest, NextApiResponse } from 'next';
+
+export type UserRole = 'investor' | 'franchisee' | 'superadmin';
+
+function parseCookies(cookieHeader: string | undefined): Record<string, string> {
+  if (!cookieHeader) return {};
+  return cookieHeader.split(';').reduce<Record<string, string>>((acc, part) => {
+    const [keyRaw, ...rest] = part.split('=');
+    const key = keyRaw.trim();
+    const value = rest.join('=').trim();
+    if (key) acc[key] = decodeURIComponent(value || '');
+    return acc;
+  }, {});
+}
+
+export function getRoleFromRequest(req: NextApiRequest): UserRole | null {
+  const cookies = parseCookies(req.headers.cookie);
+  const role = cookies['zion_role'] as UserRole | undefined;
+  return role ?? null;
+}
+
+export function requireRole(allowed: UserRole[], handler: (req: NextApiRequest, res: NextApiResponse) => void) {
+  return (req: NextApiRequest, res: NextApiResponse) => {
+    const role = getRoleFromRequest(req);
+    if (!role || !allowed.includes(role)) {
+      res.status(403).json({ error: 'Forbidden' } as any);
+      return;
+    }
+    handler(req, res);
+  };
+=======
+import type { NextApiRequest } from 'next';
+import { getTenantByApiKey, getTenantById } from './tenant';
+
+export interface AuthResult {
+  ok: boolean;
+  error?: string;
+  tenantId?: string;
+}
+
+export function authenticateRequest(req: NextApiRequest, allowPublicGet: boolean = true): AuthResult {
+  const method = (req.method || 'GET').toUpperCase();
+  const apiKey = (req.headers['x-api-key'] || req.headers['authorization']) as string | undefined;
+  const tenantIdHeader = (req.headers['x-tenant-id'] || req.query.tenantId) as string | undefined;
+
+  if (allowPublicGet && method === 'GET') {
+    if (tenantIdHeader && getTenantById(tenantIdHeader)) {
+      return { ok: true, tenantId: tenantIdHeader };
+    }
+  }
+
+  if (!apiKey) return { ok: false, error: 'Missing API key' };
+  const bearer = apiKey.startsWith('Bearer ') ? apiKey.slice(7) : apiKey;
+  const tenant = getTenantByApiKey(bearer);
+  if (!tenant) return { ok: false, error: 'Invalid API key' };
+
+  return { ok: true, tenantId: tenant.id };
+>>>>>>> origin/cursor/build-white-labeled-zion-hire-ai-saas-21f7
+}

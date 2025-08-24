@@ -1,0 +1,367 @@
+
+class Script {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    console.log('Starting Script...');
+    
+    try {
+      Checking for outdated npm packages...
+Checking for outdated pip packages...
+Traceback (most recent call last):
+  File "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/performance/dependency-update.py", line 5, in <module>
+    subprocess.run(['pip', 'list', '--outdated'])
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 505, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 951, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 1821, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'pip'
+Package    Current  Wanted  Latest  Location                Depended by
+commander   11.1.0  11.1.0  14.0.0  node_modules/commander  automation
+jest        29.7.0  29.7.0  30.0.5  node_modules/jest       automation
+ora          7.0.1   7.0.1   8.2.0  node_modules/ora        automation
+Error updating dependencies: Error: Command failed: npm outdated
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at Object.<anonymous> (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/performance/dependency-update.js:7:3)
+    at Module._compile (node:internal/modules/cjs/loader:1730:14)
+    at Object..js (node:internal/modules/cjs/loader:1895:10)
+    at Module.load (node:internal/modules/cjs/loader:1465:32)
+    at Function._load (node:internal/modules/cjs/loader:1282:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 65787,
+  stdout: null,
+  stderr: null
+}
+Checking for outdated npm packages...
+Checking for outdated pip packages...
+Traceback (most recent call last):
+  File "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/performance/dependency-update.py", line 5, in <module>
+    subprocess.run(['pip', 'list', '--outdated'])
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 505, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 951, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 1821, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'pip'
+Package    Current  Wanted  Latest  Location                Depended by
+commander   11.1.0  11.1.0  14.0.0  node_modules/commander  automation
+jest        29.7.0  29.7.0  30.0.5  node_modules/jest       automation
+ora          7.0.1   7.0.1   8.2.0  node_modules/ora        automation
+Error updating dependencies: Error: Command failed: npm outdated
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at Object.<anonymous> (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/performance/dependency-update.js:7:3)
+    at Module._compile (node:internal/modules/cjs/loader:1730:14)
+    at Object..js (node:internal/modules/cjs/loader:1895:10)
+    at Module.load (node:internal/modules/cjs/loader:1465:32)
+    at Function._load (node:internal/modules/cjs/loader:1282:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 71634,
+  stdout: null,
+  stderr: null
+}
+Checking for outdated npm packages...
+Checking for outdated pip packages...
+Traceback (most recent call last):
+  File "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/performance/dependency-update.py", line 5, in <module>
+    subprocess.run(['pip', 'list', '--outdated'])
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 505, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 951, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 1821, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'pip'
+Package    Current  Wanted  Latest  Location                Depended by
+commander   11.1.0  11.1.0  14.0.0  node_modules/commander  automation
+jest        29.7.0  29.7.0  30.0.5  node_modules/jest       automation
+ora          7.0.1   7.0.1   8.2.0  node_modules/ora        automation
+Error updating dependencies: Error: Command failed: npm outdated
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at Object.<anonymous> (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/performance/dependency-update.js:7:3)
+    at Module._compile (node:internal/modules/cjs/loader:1730:14)
+    at Object..js (node:internal/modules/cjs/loader:1895:10)
+    at Module.load (node:internal/modules/cjs/loader:1465:32)
+    at Function._load (node:internal/modules/cjs/loader:1282:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 11359,
+  stdout: null,
+  stderr: null
+}
+Checking for outdated npm packages...
+Checking for outdated pip packages...
+Traceback (most recent call last):
+  File "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/performance/dependency-update.py", line 5, in <module>
+    subprocess.run(['pip', 'list', '--outdated'])
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 505, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 951, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 1821, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'pip'
+Package    Current  Wanted  Latest  Location                Depended by
+commander   11.1.0  11.1.0  14.0.0  node_modules/commander  automation
+jest        29.7.0  29.7.0  30.0.5  node_modules/jest       automation
+ora          7.0.1   7.0.1   8.2.0  node_modules/ora        automation
+Error updating dependencies: Error: Command failed: npm outdated
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at Object.<anonymous> (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/performance/dependency-update.js:7:3)
+    at Module._compile (node:internal/modules/cjs/loader:1730:14)
+    at Object..js (node:internal/modules/cjs/loader:1895:10)
+    at Module.load (node:internal/modules/cjs/loader:1465:32)
+    at Function._load (node:internal/modules/cjs/loader:1282:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 62395,
+  stdout: null,
+  stderr: null
+}
+Checking for outdated npm packages...
+Checking for outdated pip packages...
+Traceback (most recent call last):
+  File "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/performance/dependency-update.py", line 5, in <module>
+    subprocess.run(['pip', 'list', '--outdated'])
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 505, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 951, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 1821, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'pip'
+Package    Current  Wanted  Latest  Location                Depended by
+commander   11.1.0  11.1.0  14.0.0  node_modules/commander  automation
+jest        29.7.0  29.7.0  30.0.5  node_modules/jest       automation
+ora          7.0.1   7.0.1   8.2.0  node_modules/ora        automation
+Error updating dependencies: Error: Command failed: npm outdated
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at Object.<anonymous> (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/performance/dependency-update.js:7:3)
+    at Module._compile (node:internal/modules/cjs/loader:1730:14)
+    at Object..js (node:internal/modules/cjs/loader:1895:10)
+    at Module.load (node:internal/modules/cjs/loader:1465:32)
+    at Function._load (node:internal/modules/cjs/loader:1282:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 12764,
+  stdout: null,
+  stderr: null
+}
+Checking for outdated npm packages...
+Checking for outdated pip packages...
+Traceback (most recent call last):
+  File "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/performance/dependency-update.py", line 5, in <module>
+    subprocess.run(['pip', 'list', '--outdated'])
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 505, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 951, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 1821, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'pip'
+Package    Current  Wanted  Latest  Location                Depended by
+commander   11.1.0  11.1.0  14.0.0  node_modules/commander  automation
+jest        29.7.0  29.7.0  30.0.5  node_modules/jest       automation
+ora          7.0.1   7.0.1   8.2.0  node_modules/ora        automation
+Error updating dependencies: Error: Command failed: npm outdated
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at Object.<anonymous> (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/performance/dependency-update.js:7:3)
+    at Module._compile (node:internal/modules/cjs/loader:1730:14)
+    at Object..js (node:internal/modules/cjs/loader:1895:10)
+    at Module.load (node:internal/modules/cjs/loader:1465:32)
+    at Function._load (node:internal/modules/cjs/loader:1282:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 64619,
+  stdout: null,
+  stderr: null
+}
+Checking for outdated npm packages...
+Checking for outdated pip packages...
+Traceback (most recent call last):
+  File "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/performance/dependency-update.py", line 5, in <module>
+    subprocess.run(['pip', 'list', '--outdated'])
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 505, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 951, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 1821, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'pip'
+Package    Current  Wanted  Latest  Location                Depended by
+commander   11.1.0  11.1.0  14.0.0  node_modules/commander  automation
+jest        29.7.0  29.7.0  30.0.5  node_modules/jest       automation
+ora          7.0.1   7.0.1   8.2.0  node_modules/ora        automation
+Error updating dependencies: Error: Command failed: npm outdated
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at Object.<anonymous> (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/performance/dependency-update.js:7:3)
+    at Module._compile (node:internal/modules/cjs/loader:1730:14)
+    at Object..js (node:internal/modules/cjs/loader:1895:10)
+    at Module.load (node:internal/modules/cjs/loader:1465:32)
+    at Function._load (node:internal/modules/cjs/loader:1282:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 16635,
+  stdout: null,
+  stderr: null
+}
+Checking for outdated npm packages...
+Checking for outdated pip packages...
+Traceback (most recent call last):
+  File "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/performance/dependency-update.py", line 5, in <module>
+    subprocess.run(['pip', 'list', '--outdated'])
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 505, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 951, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 1821, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'pip'
+Package      Current   Wanted   Latest  Location                Depended by
+axios        MISSING   1.10.0   1.10.0  -                       automation
+commander     11.1.0   11.1.0   14.0.0  node_modules/commander  automation
+compression  MISSING    1.8.1    1.8.1  -                       automation
+cors         MISSING    2.8.5    2.8.5  -                       automation
+dotenv       MISSING   16.6.1   17.2.0  -                       automation
+express      MISSING   4.21.2    5.1.0  -                       automation
+helmet       MISSING    7.2.0    8.1.0  -                       automation
+jest          29.7.0   29.7.0   30.0.5  node_modules/jest       automation
+lodash       MISSING  4.17.21  4.17.21  -                       automation
+moment       MISSING   2.30.1   2.30.1  -                       automation
+morgan       MISSING   1.10.1   1.10.1  -                       automation
+node-cron    MISSING    3.0.3    4.2.1  -                       automation
+ora            7.0.1    7.0.1    8.2.0  node_modules/ora        automation
+socket.io    MISSING    4.8.1    4.8.1  -                       automation
+uuid         MISSING    9.0.1   11.1.0  -                       automation
+winston      MISSING   3.17.0   3.17.0  -                       automation
+Error updating dependencies: Error: Command failed: npm outdated
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at Object.<anonymous> (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/performance/dependency-update.js:7:3)
+    at Module._compile (node:internal/modules/cjs/loader:1730:14)
+    at Object..js (node:internal/modules/cjs/loader:1895:10)
+    at Module.load (node:internal/modules/cjs/loader:1465:32)
+    at Function._load (node:internal/modules/cjs/loader:1282:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 90118,
+  stdout: null,
+  stderr: null
+}
+Checking for outdated npm packages...
+Checking for outdated pip packages...
+Traceback (most recent call last):
+  File "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/performance/dependency-update.py", line 5, in <module>
+    subprocess.run(['pip', 'list', '--outdated'])
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 505, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 951, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 1821, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'pip'
+Package       Current   Wanted   Latest  Location                Depended by
+chalk           4.1.2    4.1.2    5.4.1  node_modules/chalk      automation
+cheerio       MISSING    1.1.2    1.1.2  -                       automation
+cli-progress  MISSING   3.12.0   3.12.0  -                       automation
+commander     MISSING   11.1.0   14.0.0  -                       automation
+dotenv         16.6.1   16.6.1   17.2.0  node_modules/dotenv     automation
+eslint         8.57.1   8.57.1   9.31.0  node_modules/eslint     automation
+express        4.21.2   4.21.2    5.1.0  node_modules/express    automation
+glob            7.2.3   10.4.5   11.0.3  node_modules/glob       automation
+inquirer      MISSING    9.3.7   12.8.2  -                       automation
+jest           29.7.0   29.7.0   30.0.5  node_modules/jest       automation
+lighthouse    MISSING   11.7.1   12.8.0  -                       automation
+node-cron       3.0.3    3.0.3    4.2.1  node_modules/node-cron  automation
+node-fetch    MISSING    3.3.2    3.3.2  -                       automation
+nyc           MISSING   15.1.0   17.1.0  -                       automation
+openai        MISSING  4.104.0   5.10.2  -                       automation
+ora             7.0.1    7.0.1    8.2.0  node_modules/ora        automation
+puppeteer     MISSING  21.11.0  24.14.0  -                       automation
+rimraf          3.0.2   5.0.10    6.0.1  node_modules/rimraf     automation
+Error updating dependencies: Error: Command failed: npm outdated
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at Object.<anonymous> (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/performance/dependency-update.js:7:3)
+    at Module._compile (node:internal/modules/cjs/loader:1730:14)
+    at Object..js (node:internal/modules/cjs/loader:1895:10)
+    at Module.load (node:internal/modules/cjs/loader:1465:32)
+    at Function._load (node:internal/modules/cjs/loader:1282:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2714,
+  stdout: null,
+  stderr: null
+}
+    } catch (error) {
+      console.error('Error in Script:', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    console.log('Stopping Script...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new Script();
+  script.start().catch(error => {
+    console.error('Failed to start Script:', error);
+    process.exit(1);
+  });
+}
+
+module.exports = Script;
