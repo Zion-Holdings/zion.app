@@ -4,6 +4,8 @@ import { SEO } from "@/components/SEO";
 import { HeroSection } from "@/components/HeroSection";
 import { CategoriesSection } from "@/components/CategoriesSection";
 import { BenefitsSection } from "@/components/BenefitsSection";
+import { PerformanceOptimizations } from "@/components/PerformanceOptimizations";
+import { AdvancedAnalytics } from "@/components/AdvancedAnalytics";
 
 export default function Home() {
   return (
@@ -19,6 +21,16 @@ export default function Home() {
       
       <CategoriesSection />
       <BenefitsSection />
+      
+      {/* New Performance Section */}
+      <section className="py-16 bg-gradient-to-br from-zion-slate/5 to-zion-blue/5">
+        <PerformanceOptimizations />
+      </section>
+      
+      {/* New Analytics Section */}
+      <section className="py-16">
+        <AdvancedAnalytics />
+      </section>
     </div>
   );
 }
