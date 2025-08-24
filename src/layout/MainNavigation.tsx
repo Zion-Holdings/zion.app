@@ -24,29 +24,14 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
       matches: (path: string) => path === '/'
     },
     {
-      key: 'services',
-      href: '/services',
-      matches: (path: string) => path.startsWith('/services')
-    },
-    {
-      key: 'ai-services',
-      href: '/ai-services',
-      matches: (path: string) => path.startsWith('/ai-services')
-    },
-    {
-      key: 'it-services',
-      href: '/it-services',
-      matches: (path: string) => path.startsWith('/it-services')
-    },
-    {
-      key: 'micro-saas',
-      href: '/micro-saas-services',
-      matches: (path: string) => path.startsWith('/micro-saas-services')
-    },
-    {
       key: 'marketplace',
       href: '/marketplace',
       matches: (path: string) => path.startsWith('/marketplace')
+    },
+    {
+      key: 'services',
+      href: '/services',
+      matches: (path: string) => path.startsWith('/services') || path.startsWith('/it-onsite-services')
     },
     {
       key: 'micro-saas',
@@ -105,13 +90,25 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
             <Link
               to={link.href}
               className={cn(
-                "inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-all duration-300 hover:scale-105",
+                "inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-all duration-300 relative overflow-hidden group",
                 link.matches(location.pathname)
-                  ? "bg-zion-purple/20 text-zion-cyan neon-glow"
-                  : "text-white hover:bg-zion-purple/10 hover:text-zion-cyan hover-glow"
+                  ? "bg-gradient-to-r from-zion-purple/30 to-zion-cyan/30 text-zion-cyan shadow-lg shadow-zion-purple/20"
+                  : "text-white hover:text-zion-cyan"
               )}
             >
-              {link.name}
+              {/* Hover background effect */}
+              <div className={cn(
+                "absolute inset-0 bg-gradient-to-r from-zion-purple/10 to-zion-cyan/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-md",
+                link.matches(location.pathname) && "opacity-100"
+              )} />
+              
+              {/* Glowing border effect */}
+              <div className={cn(
+                "absolute inset-0 rounded-md border border-transparent group-hover:border-zion-purple/30 transition-all duration-300",
+                link.matches(location.pathname) && "border-zion-cyan/50"
+              )} />
+              
+              <span className="relative z-10">{link.name}</span>
             </Link>
           </li>
         ))}
