@@ -1,62 +1,78 @@
-// Temporary type declarations for offline development
+// Minimal type declarations for offline development
 
-declare namespace JSX {
-  interface Element {}
-  interface IntrinsicElements { [elemName: string]: any }
-}
-
-declare namespace React {
-  export type ReactNode = any;
-  export interface ReactElement {}
-  export const Fragment: any;
-  export interface FC<P = {}> {
-    (props: P & { children?: ReactNode }): ReactElement | null;
-  }
-  export type SyntheticEvent<T = any> = any;
-  export type ChangeEvent<T = any> = any;
-  export type KeyboardEvent<T = any> = any;
-  export type MouseEvent<T = any> = any;
-  export type FormEvent<T = any> = any;
-  export type LegacyRef<T> = any;
-  export type Ref<T> = any;
-  export type ElementRef<T> = any;
-  export type ComponentPropsWithoutRef<T> = any;
-  export function useState<S>(initialState: S | (() => S)): [S, (value: S) => void];
-  export function useEffect(effect: () => void | (() => void), deps?: any[]): void;
-  export function useRef<T>(initialValue: T): { current: T };
-  export const StrictMode: any;
-  export function cloneElement(element: ReactElement, props?: any, ...children: ReactNode[]): ReactElement;
-}
-
+// React stubs
 declare module 'react' {
-  export = React;
+  export type FC<P = any> = (props: P) => any;
+  export type ReactNode = any;
+  export interface ChangeEvent<T = any> extends Event { target: T }
+  export interface FormEvent<T = any> extends Event {}
+  export interface KeyboardEvent<T = any> extends Event {}
+  export interface MutableRefObject<T = any> { current: T }
+  export type RefCallback<T> = (instance: T | null) => void;
+  export type Ref<T> = MutableRefObject<T> | RefCallback<T> | null;
+  export type LegacyRef<T> = Ref<T>;
+  export function useState<S = any>(initial?: S): [S, (value: S) => void];
+  export function useEffect(fn: () => any, deps?: any[]): void;
+  export function useRef<T = any>(initial: T): { current: T };
+  const react: any;
+  export default react;
 }
 
 declare module 'react/jsx-runtime' {
-  export function jsx(...args: any[]): any;
-  export const jsxs: any;
-  export const Fragment: any;
+  export {};
+}
+
+declare module 'react-dom' {
+  export function render(...args: any[]): any;
+  const reactDom: any;
+  export default reactDom;
 }
 
 declare module 'react-router-dom' {
-  export function useParams<Params extends Record<string, string | undefined> = {}>(): Partial<Params>;
+  export function useParams<T = any>(): T;
+  export function useNavigate(): any;
+  export const Link: any;
+  export const Route: any;
+  export const Routes: any;
+  export const Navigate: any;
+  const rr: any;
+  export default rr;
 }
 
 declare module 'react-hook-form' {
-  export function useForm<T extends Record<string, any>>(options?: any): any;
+  export function useForm<T = any>(...args: any[]): any;
+  const rhf: any;
+  export default rhf;
 }
 
-declare module 'zod' {
-  export const z: any;
-  export type infer<T> = any;
-  export default z;
+declare module '@hookform/resolvers/zod' {
+  export function zodResolver(...args: any[]): any;
 }
 
-declare module 'class-variance-authority' {
-  export type VariantProps<T> = any;
+declare module '@tanstack/react-query' {
+  export function useQuery<T = any>(...args: any[]): any;
+  export function useMutation<T = any>(...args: any[]): any;
+  const rq: any;
+  export default rq;
 }
 
 declare module 'jspdf' {
-  export class jsPDF {}
+  export class jsPDF {
+    constructor(...args: any[]);
+    [key: string]: any;
+  }
   export default jsPDF;
+}
+
+declare module 'zod' {
+  export type infer<T> = any;
+  const z: any;
+  export { z };
+  export default z;
+}
+
+// Fallback for other modules
+declare module '*' {
+  const value: any;
+  export default value;
 }

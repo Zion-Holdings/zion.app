@@ -55,13 +55,20 @@
       ]
     },
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/bwren1-codex/fix-typescript-errors-in-files
     "typeRoots": ["./src/types"],
 
 >>>>>>> origin/bw06m0-codex/fix-typescript-errors-in-components
     /* Bundler mode */
     "moduleResolution": "node",
+<<<<<<< HEAD
     "esModuleInterop": true,
+=======
+    "allowImportingTsExtensions": true,
+>>>>>>> origin/bwren1-codex/fix-typescript-errors-in-files
     "resolveJsonModule": true,
     "strict": true,
     "noUnusedLocals": false,
@@ -82,6 +89,7 @@
     "noEmit": true,
     "isolatedModules": true
   },
+<<<<<<< HEAD
 <<<<<<< HEAD
   "include": [
     "next-env.d.ts",
@@ -121,6 +129,8 @@
   ]
 }
 =======
+=======
+>>>>>>> origin/bwren1-codex/fix-typescript-errors-in-files
   "include": ["src", "src/types/offline-shims.d.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
