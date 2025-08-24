@@ -79,7 +79,7 @@ const AIChatbot: React.FC<AIChatbotProps> = ({ className = "" }) => {
       timestamp: new Date()
     };
 
-    setMessages(prev => [...prev, userMessage]);
+    setMessages((prev: ChatMessage[]) => [...prev, userMessage]);
     setInputValue('');
     
     // Generate AI response
@@ -92,7 +92,7 @@ const AIChatbot: React.FC<AIChatbotProps> = ({ className = "" }) => {
       timestamp: new Date()
     };
 
-    setMessages(prev => [...prev, botMessage]);
+    setMessages((prev: ChatMessage[]) => [...prev, botMessage]);
     setIsTyping(false);
   };
 
