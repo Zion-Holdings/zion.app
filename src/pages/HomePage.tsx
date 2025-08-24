@@ -4,6 +4,9 @@ import FuturisticAnimatedBackground from '../components/ui/FuturisticAnimatedBac
 import FuturisticNeonButton from '../components/ui/FuturisticNeonButton';
 import { ENHANCED_SERVICES_DATA, MARKET_ANALYSIS } from '../data/enhancedServicesData';
 import { EnhancedComprehensiveServicesShowcase } from '../components/EnhancedComprehensiveServicesShowcase';
+import { EnhancedContactSection } from '../components/EnhancedContactSection';
+import { EnhancedTestimonialsSection } from '../components/EnhancedTestimonialsSection';
+import { EnhancedPricingSection } from '../components/EnhancedPricingSection';
 
 export default function HomePage() {
   const heroStats = [
@@ -352,6 +355,15 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Enhanced Testimonials Section */}
+      <EnhancedTestimonialsSection />
+
+      {/* Enhanced Pricing Section */}
+      <EnhancedPricingSection />
+
+      {/* Enhanced Contact Section */}
+      <EnhancedContactSection />
 
       {/* CTA Section */}
       <section className="py-20 px-6 bg-gradient-to-r from-blue-600/80 to-purple-600/80 backdrop-blur-sm">
