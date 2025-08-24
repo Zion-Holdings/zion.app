@@ -15,7 +15,7 @@ export function Footer() {
       </div>
       
       <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           <div>
             <div className="mb-4">
               <span className="text-2xl font-bold bg-gradient-to-r from-zion-cyan via-zion-purple-light to-zion-purple bg-clip-text text-transparent neon-pulse">ZION TECH GROUP</span>
@@ -102,14 +102,12 @@ export function Footer() {
               <li><Link to="/marketplace" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Products</Link></li>
               <li><Link to="/services" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Services</Link></li>
               <li><Link to="/micro-saas-services" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Micro SAAS</Link></li>
+              <li><Link to="/it-onsite-services" className="text-zion-slate-light hover:text-zion-cyan transition-colors">IT Onsite Services</Link></li>
               <li><Link to="/talent" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Talent</Link></li>
               <li><Link to="/equipment" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Equipment</Link></li>
               <li><Link to="/categories" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Categories</Link></li>
               <li><Link to="/green-it" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Green IT</Link></li>
-<<<<<<< HEAD
-              <li><Link to="/it-onsite-services" className="text-zion-slate-light hover:text-zion-cyan transition-colors">IT Onsite Services</Link></li>
-=======
->>>>>>> 1190166b600d0883f3d21629581161b11801bcbf
+              <li><Link to="/zion-hire-ai" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Hire AI</Link></li>
             </ul>
           </div>
 
@@ -126,33 +124,23 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Support & Resources */}
+          {/* Support */}
           <div>
-<<<<<<< HEAD
-            <h3 className="text-white font-semibold mb-4 text-lg">Support & Resources</h3>
+            <h3 className="text-white font-semibold mb-4 text-lg">Support</h3>
             <ul className="space-y-2">
               <li><Link to="/help" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Help Center</Link></li>
-              <li><Link to="/support" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Support</Link></li>
-              <li><Link to="/zion-hire-ai" className="text-zion-slate-light hover:text-zion-cyan transition-colors">AI Hiring</Link></li>
               <li><Link to="/request-quote" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Request Quote</Link></li>
               <li><Link to="/community" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Community</Link></li>
+              <li><Link to="/match" className="text-zion-slate-light hover:text-zion-cyan transition-colors">AI Matcher</Link></li>
             </ul>
-            
-            {/* Newsletter */}
-            <div className="mt-6">
-              <h4 className="text-white font-semibold mb-3 text-sm">Newsletter</h4>
-              <p className="text-zion-slate-light mb-3 text-xs">
-                Stay updated with the latest tech and AI opportunities.
-              </p>
-              <FooterNewsletter />
-            </div>
-=======
+          </div>
+
+          <div>
             <h3 className="text-white font-semibold mb-4 text-lg">Subscribe to our newsletter</h3>
             <p className="text-zion-slate-light mb-4">
               Stay updated with the latest news on tech, AI, and marketplace opportunities.
             </p>
             <FooterNewsletter />
->>>>>>> 1190166b600d0883f3d21629581161b11801bcbf
           </div>
         </div>
 

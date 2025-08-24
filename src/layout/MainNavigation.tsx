@@ -64,11 +64,6 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
       matches: (path: string) => path.startsWith('/enterprise-solutions')
     },
     {
-      key: 'categories',
-      href: '/categories',
-      matches: (path: string) => path.startsWith('/categories')
-    },
-    {
       key: 'talent',
       href: '/talent',
       matches: (path: string) => path.startsWith('/talent') && !path.includes('/talent-dashboard')
@@ -79,10 +74,14 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
       matches: (path: string) => path.startsWith('/equipment')
     },
     {
+      key: 'categories',
+      href: '/categories',
+      matches: (path: string) => path.startsWith('/categories')
+    },
+    {
       key: 'community',
       href: '/community',
       matches: (path: string) => path.startsWith('/community') || path.startsWith('/forum')
-<<<<<<< HEAD
     },
     {
       key: 'blog',
@@ -103,8 +102,11 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
       key: 'contact',
       href: '/contact',
       matches: (path: string) => path.startsWith('/contact')
-=======
->>>>>>> 1190166b600d0883f3d21629581161b11801bcbf
+    },
+    {
+      key: 'help',
+      href: '/help',
+      matches: (path: string) => path.startsWith('/help')
     }
   ];
 
