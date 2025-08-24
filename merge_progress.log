@@ -1,0 +1,18 @@
+nohup: ignoring input
+Starting comprehensive merge process for unmerged branches...
+Switched to a new branch 'comprehensive-merge-20250823-232218'
+Created merge branch: comprehensive-merge-20250823-232218
+Fetching all remote branches...
+From https://github.com/Zion-Holdings/zion.app
+   fc96978c78b..e664fa54609  main       -> origin/main
+Getting list of unmerged branches...
+Found 1758 unmerged branches to process
+Processing in batches of 5...
+
+=== Batch 1 ===
+Processing branch: b71j7n-codex/fix-unsupported-shell-syntax-in-setup.sh
+  Commits ahead: 0, Last commit: 2025-05-23
+  Trying recursive merge strategy...
+Already up to date.
+  ✓ Successfully merged b71j7n-codex/fix-unsupported-shell-syntax-in-setup.sh (recursive strategy)
+  Branch b71j7n-codex/fix-unsupported-shell-syntax-in-setup.sh merged successfully
