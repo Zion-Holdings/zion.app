@@ -45,6 +45,8 @@ const OpenAppRedirect = React.lazy(() => import('./pages/OpenAppRedirect'));
 const ContactPage = React.lazy(() => import('./pages/Contact'));
 const ZionHireAI = React.lazy(() => import('./pages/ZionHireAI'));
 const RequestQuotePage = React.lazy(() => import('./pages/RequestQuote'));
+const ComprehensiveServicesPage = React.lazy(() => import('./pages/ComprehensiveServices'));
+const ComprehensiveServicesLandingPage = React.lazy(() => import('./pages/ComprehensiveServicesLanding'));
 
 const baseRoutes = [
   { path: '/', element: <Home /> },
@@ -70,6 +72,8 @@ const baseRoutes = [
   { path: '/zion-hire-ai', element: <ZionHireAI /> },
   { path: '/hire-ai', element: <ZionHireAI /> },
   { path: '/request-quote', element: <RequestQuotePage /> },
+  { path: '/comprehensive-services', element: <ComprehensiveServicesPage /> },
+  { path: '/comprehensive-services-landing', element: <ComprehensiveServicesLandingPage /> },
   { path: '/blog', element: <Blog /> },
   { path: '/blog/:slug', element: <BlogPost /> },
 ];

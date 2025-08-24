@@ -45,8 +45,8 @@ const specialServices = [
     link: "/it-onsite-services"
   },
   {
-    title: "Micro SAAS Services",
-    link: "/micro-saas-services"
+    title: "Comprehensive Services",
+    link: "/comprehensive-services"
   }
 ];
 
