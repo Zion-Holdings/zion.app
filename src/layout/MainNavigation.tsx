@@ -26,21 +26,15 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
       icon: <Sparkles className="w-4 h-4" />
     },
     {
-      key: 'services',
-      href: '/services',
-      matches: (path: string) => path.startsWith('/services'),
-      icon: <Zap className="w-4 h-4" />
-    },
-    {
       key: 'marketplace',
       href: '/marketplace',
       matches: (path: string) => path.startsWith('/marketplace'),
       icon: <Zap className="w-4 h-4" />
     },
     {
-      key: 'talent',
-      href: '/talent',
-      matches: (path: string) => path.startsWith('/talent') && !path.includes('/talent-dashboard'),
+      key: 'services',
+      href: '/services',
+      matches: (path: string) => path.startsWith('/services'),
       icon: <Zap className="w-4 h-4" />
     },
     {
@@ -50,9 +44,27 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
       icon: <Zap className="w-4 h-4" />
     },
     {
+      key: 'categories',
+      href: '/categories',
+      matches: (path: string) => path.startsWith('/categories'),
+      icon: <Zap className="w-4 h-4" />
+    },
+    {
+      key: 'talent',
+      href: '/talent',
+      matches: (path: string) => path.startsWith('/talent') && !path.includes('/talent-dashboard'),
+      icon: <Zap className="w-4 h-4" />
+    },
+    {
       key: 'community',
       href: '/community',
       matches: (path: string) => path.startsWith('/community') || path.startsWith('/forum'),
+      icon: <Zap className="w-4 h-4" />
+    },
+    {
+      key: 'about',
+      href: '/about',
+      matches: (path: string) => path.startsWith('/about'),
       icon: <Zap className="w-4 h-4" />
     },
     {
