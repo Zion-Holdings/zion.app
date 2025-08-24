@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { 
   ArrowRight, 
@@ -15,12 +14,10 @@ import {
 } from "lucide-react";
 
 export function EnhancedQuickAccess() {
-  const { t } = useTranslation();
-  
   const quickLinks = [
     {
-      title: t('home.tool_ai_matcher') || "AI Matcher",
-      description: t('home.tool_ai_matcher_desc') || "Find perfect matches",
+      title: "AI Matcher",
+      description: "Find perfect matches",
       icon: <Search className="h-7 w-7" />,
       link: "/match",
       color: "from-zion-cyan to-zion-cyan-light",
@@ -29,8 +26,8 @@ export function EnhancedQuickAccess() {
       hoverColor: "hover:border-zion-cyan/40"
     },
     {
-      title: t('home.tool_talent') || "Talent Directory",
-      description: t('home.tool_talent_desc') || "Browse verified experts",
+      title: "Talent Directory",
+      description: "Browse verified experts",
       icon: <Users className="h-7 w-7" />,
       link: "/talent",
       color: "from-zion-purple to-zion-purple-light",
@@ -39,8 +36,8 @@ export function EnhancedQuickAccess() {
       hoverColor: "hover:border-zion-purple/40"
     },
     {
-      title: t('home.tool_services') || "Services",
-      description: t('home.tool_services_desc') || "Professional solutions",
+      title: "Services",
+      description: "Professional solutions",
       icon: <Briefcase className="h-7 w-7" />,
       link: "/services",
       color: "from-zion-cyan to-zion-cyan-light",
@@ -49,8 +46,8 @@ export function EnhancedQuickAccess() {
       hoverColor: "hover:border-zion-cyan/40"
     },
     {
-      title: t('home.tool_equipment') || "Equipment",
-      description: t('home.tool_equipment_desc') || "Cutting-edge tech",
+      title: "Equipment",
+      description: "Cutting-edge tech",
       icon: <Settings className="h-7 w-7" />,
       link: "/equipment",
       color: "from-zion-purple to-zion-purple-light",
@@ -59,8 +56,8 @@ export function EnhancedQuickAccess() {
       hoverColor: "hover:border-zion-purple/40"
     },
     {
-      title: t('nav.community') || "Community",
-      description: t('home.tool_chat_desc') || "Connect & collaborate",
+      title: "Community",
+      description: "Connect & collaborate",
       icon: <MessageSquare className="h-7 w-7" />,
       link: "/community",
       color: "from-zion-cyan to-zion-cyan-light",

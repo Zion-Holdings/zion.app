@@ -8,6 +8,8 @@ import { GradientHeading } from '@/components/GradientHeading';
 import { FeatureCard } from '@/components/FeatureCard';
 import { FeaturedListingsSection } from '@/components/FeaturedListingsSection';
 import { NewsletterSection } from '@/components/NewsletterSection';
+import { TrustedBySection } from '@/components/TrustedBySection';
+import { EnhancedQuickAccess } from '@/components/home/EnhancedQuickAccess';
 import { Button } from '@/components/ui/Button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
@@ -189,6 +191,9 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Trusted By Section */}
+        <TrustedBySection />
+
         {/* Services Section */}
         <section className="py-20 bg-gray-50">
           <div className="container mx-auto px-4">
@@ -283,6 +288,9 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        {/* Enhanced Quick Access Section */}
+        <EnhancedQuickAccess />
 
         {/* CTA Section */}
         <section className="py-20 bg-zion-blue text-white">

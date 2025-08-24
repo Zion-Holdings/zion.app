@@ -36,6 +36,7 @@ export function PerformanceMonitor({
   const measureFCP = () => {
     const paintEntries = performance.getEntriesByType('paint');
     const fcpEntry = paintEntries.find(entry => entry.name === 'first-contentful-paint');
+
     if (fcpEntry) {
       metricsRef.current.fcp = fcpEntry.startTime;
       if (logToConsole) {
@@ -59,6 +60,7 @@ export function PerformanceMonitor({
           }
         });
         observerRef.current.observe({ entryTypes: ['largest-contentful-paint'] });
+
       } catch (error) {
         console.warn('LCP measurement failed:', error);
       }
@@ -75,6 +77,7 @@ export function PerformanceMonitor({
             if (entry.entryType === 'first-input') {
               // Use a safer way to measure FID
               const fid = entry.processingStart ? entry.processingStart - entry.startTime : 0;
+
               metricsRef.current.fid = fid;
               if (logToConsole) {
                 console.log('FID:', fid, 'ms');
@@ -116,8 +119,10 @@ export function PerformanceMonitor({
   // Measure Time to First Byte (TTFB)
   const measureTTFB = () => {
     const navigationEntry = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
+
     if (navigationEntry) {
       metricsRef.current.ttfb = navigationEntry.responseStart - navigationEntry.requestStart;
+
       if (logToConsole) {
         console.log('TTFB:', metricsRef.current.ttfb, 'ms');
       }

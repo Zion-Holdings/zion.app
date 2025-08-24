@@ -8,6 +8,7 @@ import { WhitelabelProvider } from "./context/WhitelabelContext";
 import { Toaster } from "./components/ui/toaster";
 import { Toaster as SonnerToaster } from "./components/ui/sonner";
 import { ScrollToTop } from "./components/ui/ScrollToTop";
+import { PerformanceMonitor } from "./components/PerformanceMonitor";
 import {
   AuthRoutes,
   DashboardRoutes,
@@ -92,6 +93,7 @@ const App = () => {
   return (
     <WhitelabelProvider>
       <ThemeProvider defaultTheme="dark">
+        <PerformanceMonitor logToConsole={true} />
         <Suspense fallback={<div className="p-4 text-center">Loading...</div>}>
           <Routes>
             {baseRoutes.map(({ path, element }) => (
