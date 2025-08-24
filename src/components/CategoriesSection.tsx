@@ -51,6 +51,18 @@ const specialServices = [
     link: "/it-onsite-services"
   },
   {
+    title: "Enterprise Solutions",
+    link: "/expanded-services"
+  },
+  {
+    title: "AI Services",
+    link: "/ai-services"
+  },
+  {
+    title: "Cybersecurity",
+    link: "/cybersecurity"
+  },
+  {
     title: "AI & Automation",
     link: "/expanded-services?category=ai-automation"
   },
