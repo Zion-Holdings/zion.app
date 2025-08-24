@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Navigate } from 'react-router-dom';
 import { ProfileLoadingState } from '@/components/profile/ProfileLoadingState';
 import type { TalentProfile as TalentProfileType } from '@/types/talent';
 import { ProfileErrorState } from '@/components/profile/ProfileErrorState';
@@ -7,17 +7,6 @@ import { ProfileErrorState } from '@/components/profile/ProfileErrorState';
 interface TalentProfileWithSocial extends TalentProfileType {
   social?: Record<string, string>;
 }
-
-const ErrorPage: React.FC<{ statusCode: number }> = ({ statusCode }) => (
-  <div className="min-h-screen bg-zion-blue flex items-center justify-center">
-    <div className="text-center text-white">
-      <h1 className="text-6xl font-bold mb-4">{statusCode}</h1>
-      <p className="text-xl text-zion-slate-light">
-        {statusCode === 404 ? 'Page Not Found' : 'Something went wrong'}
-      </p>
-    </div>
-  </div>
-);
 
 const TalentProfilePage: React.FC = () => {
   const { id } = useParams();
@@ -53,7 +42,7 @@ const TalentProfilePage: React.FC = () => {
   }, [id]);
 
   if (loading) return <ProfileLoadingState />;
-  if (error || !profile) return <ErrorPage statusCode={404} />;
+  if (error || !profile) return <Navigate to="/404" replace />;
 
   return (
     <main className="min-h-screen bg-zion-blue py-8 text-white">
@@ -63,18 +52,16 @@ const TalentProfilePage: React.FC = () => {
         </h1>
         {profile.skills && profile.skills.length > 0 && (
           <div>
-            <h2 className="text-2xl font-semibold mb-2">Skills</h2>
-            <ul className="list-disc ml-5 space-y-1">
+            <h2 className="font-semibold">Skills</h2>
+            <ul className="list-disc ml-5">
               {profile.skills.map(skill => (
-                <li key={skill} className="text-zion-slate-light">{skill}</li>
+                <li key={skill}>{skill}</li>
               ))}
             </ul>
           </div>
         )}
         {profile.availability_type && (
-          <div className="mt-4">
-            <span className="text-zion-cyan font-medium">Availability:</span> {profile.availability_type}
-          </div>
+          <p>Availability: {profile.availability_type}</p>
         )}
       </div>
     </main>

@@ -1,99 +1,101 @@
-import React, { Component, ErrorInfo, ReactNode } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { AlertTriangle, RefreshCw, Home } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
-interface Props {
-  children: ReactNode;
+interface ErrorBoundaryProps {
+  children: React.ReactNode;
+  fallback?: React.ReactNode;
 }
 
-interface State {
-  hasError: boolean;
-  error?: Error;
-  errorInfo?: ErrorInfo;
-}
+export function ErrorBoundary({ children, fallback }: ErrorBoundaryProps) {
+  const [hasError, setHasError] = useState(false);
+  const [error, setError] = useState<Error | null>(null);
 
-export class ErrorBoundary extends Component<Props, State> {
-  constructor(props: Props) {
-    super(props);
-    this.state = { hasError: false };
-  }
+  useEffect(() => {
+    const handleError = (event: ErrorEvent) => {
+      console.error('Error caught by boundary:', event.error);
+      setError(event.error);
+      setHasError(true);
+    };
 
-  static getDerivedStateFromError(error: Error): State {
-    return { hasError: true, error };
-  }
+    const handleUnhandledRejection = (event: PromiseRejectionEvent) => {
+      console.error('Unhandled promise rejection:', event.reason);
+      setError(new Error(event.reason));
+      setHasError(true);
+    };
 
-  componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-    console.error('Error caught by boundary:', error, errorInfo);
-    this.setState({
-      error,
-      errorInfo,
-    });
-  }
+    window.addEventListener('error', handleError);
+    window.addEventListener('unhandledrejection', handleUnhandledRejection);
 
-  handleReload = () => {
+    return () => {
+      window.removeEventListener('error', handleError);
+      window.removeEventListener('unhandledrejection', handleUnhandledRejection);
+    };
+  }, []);
+
+  const handleRetry = () => {
+    setHasError(false);
+    setError(null);
     window.location.reload();
   };
 
-  handleGoHome = () => {
-    window.location.href = '/';
-  };
-
-  render() {
-    if (this.state.hasError) {
-      return (
-        <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4">
-          <div className="max-w-md w-full bg-white rounded-lg shadow-lg p-8 text-center">
-            <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
-              <AlertTriangle className="w-8 h-8 text-red-600" />
-            </div>
-            
-            <h1 className="text-2xl font-bold text-gray-900 mb-4">
-              Oops! Something went wrong
-            </h1>
-            
-            <p className="text-gray-600 mb-6">
-              We're sorry, but something unexpected happened. Our team has been notified and is working to fix the issue.
-            </p>
-            
-            {process.env.NODE_ENV === 'development' && this.state.error && (
-              <details className="text-left mb-6 p-4 bg-gray-100 rounded-lg">
-                <summary className="cursor-pointer font-medium text-gray-700 mb-2">
-                  Error Details (Development)
-                </summary>
-                <pre className="text-xs text-gray-600 overflow-auto">
-                  {this.state.error.toString()}
-                  {this.state.errorInfo?.componentStack}
-                </pre>
-              </details>
-            )}
-            
-            <div className="space-y-3">
-              <Button
-                onClick={this.handleReload}
-                className="w-full bg-blue-600 hover:bg-blue-700"
-              >
-                <RefreshCw className="w-4 h-4 mr-2" />
-                Try Again
-              </Button>
-              
-              <Button
-                onClick={this.handleGoHome}
-                variant="outline"
-                className="w-full"
-              >
-                <Home className="w-4 h-4 mr-2" />
-                Go Home
-              </Button>
-            </div>
-            
-            <p className="text-sm text-gray-500 mt-6">
-              If the problem persists, please contact our support team.
-            </p>
-          </div>
-        </div>
-      );
+  if (hasError) {
+    if (fallback) {
+      return <>{fallback}</>;
     }
 
-    return this.props.children;
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center p-4">
+        <div className="max-w-md w-full text-center">
+          <div className="mb-6">
+            <div className="w-20 h-20 bg-destructive/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <AlertTriangle className="w-10 h-10 text-destructive" />
+            </div>
+            <h1 className="text-2xl font-bold text-foreground mb-2">
+              Something went wrong
+            </h1>
+            <p className="text-muted-foreground mb-6">
+              We're sorry, but something unexpected happened. Please try again or return to the home page.
+            </p>
+          </div>
+
+          <div className="space-y-3">
+            <Button onClick={handleRetry} className="w-full">
+              <RefreshCw className="w-4 h-4 mr-2" />
+              Try Again
+            </Button>
+            
+            <Button variant="outline" asChild className="w-full">
+              <Link to="/">
+                <Home className="w-4 h-4 mr-2" />
+                Go Home
+              </Link>
+            </Button>
+          </div>
+
+          {process.env.NODE_ENV === 'development' && error && (
+            <details className="mt-6 text-left">
+              <summary className="cursor-pointer text-sm text-muted-foreground hover:text-foreground">
+                Error Details (Development)
+              </summary>
+              <div className="mt-2 p-3 bg-muted rounded text-xs font-mono text-muted-foreground overflow-auto">
+                <div className="mb-2">
+                  <strong>Error:</strong> {error.toString()}
+                </div>
+                <div>
+                  <strong>Stack:</strong>
+                  <pre className="whitespace-pre-wrap mt-1">
+                    {error.stack}
+                  </pre>
+                </div>
+              </div>
+            </details>
+          )}
+        </div>
+      </div>
+    );
   }
+
+  return <>{children}</>;
 }
