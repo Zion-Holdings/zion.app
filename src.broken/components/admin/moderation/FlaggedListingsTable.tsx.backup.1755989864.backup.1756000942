@@ -1,11 +1,7 @@
 import React from 'react';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Button } from '@/components/ui/button';
-<<<<<<< HEAD
-import type { ModerationLog } from '@/types/moderation';
-=======
 import { ModerationLog } from '@/types/moderation';
->>>>>>> origin/5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
 
 interface Props {
   logs: ModerationLog[];

@@ -1,17 +1,10 @@
 import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
-<<<<<<< HEAD
-import { loadWishlistFromDB, removeFromWishlist, getApiUrl } from '@/store/wishlistSlice';
-import { useAuth } from '@/hooks/useAuth';
-import { Button } from '@/components/ui/button';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
-=======
 import { addToWishlist, loadWishlistFromDB, removeFromWishlist, getApiUrl } from '@/store/wishlistSlice';
 import { useAuth } from '@/hooks/useAuth';
 import { Button } from '@/components/ui/button';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { toast } from 'sonner';
->>>>>>> origin/85f672-codex/implement-wishlist-functionality
 
 export default function Wishlist() {
   const dispatch = useAppDispatch();
@@ -25,11 +18,7 @@ export default function Wishlist() {
       navigate(`/login?next=${encodeURIComponent(location.pathname)}`);
       return;
     }
-<<<<<<< HEAD
-    void dispatch(loadWishlistFromDB(user.id!));
-=======
     dispatch(loadWishlistFromDB(user.id!));
->>>>>>> origin/85f672-codex/implement-wishlist-functionality
   }, [user, dispatch, navigate, location]);
 
   const handleRemove = (id: string) => {

@@ -5,11 +5,7 @@ import Cookies from 'js-cookie';
 import { useTranslation } from 'react-i18next';
 import { toast } from '../components/ui/use-toast';
 
-<<<<<<< HEAD
-export type SupportedLanguage = 'en-US' | 'es-ES';
-=======
 export type SupportedLanguage = 'en' | 'es';
->>>>>>> origin/8ztzgg-codex/add-i18n-support-with-next-i18next
 
 export type LanguageContextType = {
   currentLanguage: SupportedLanguage;
@@ -19,13 +15,8 @@ export type LanguageContextType = {
 };
 
 const supportedLanguages = [
-<<<<<<< HEAD
-  { code: 'en-US' as SupportedLanguage, name: 'English', flag: '🇺🇸' },
-  { code: 'es-ES' as SupportedLanguage, name: 'Español', flag: '🇪🇸' }
-=======
   { code: 'en' as SupportedLanguage, name: 'English', flag: '🇺🇸' },
   { code: 'es' as SupportedLanguage, name: 'Español', flag: '🇪🇸' }
->>>>>>> origin/8ztzgg-codex/add-i18n-support-with-next-i18next
 ];
 
 const supportedLanguages = SUPPORTED_LANGUAGES;
@@ -71,15 +62,9 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({
       fetch('/api/detect-language')
         .then(res => res.json())
         .then(data => {
-<<<<<<< HEAD
-          if (data.lang && supportedLanguages.some(l => l.code === data.lang)) {
-            i18n.changeLanguage(data.lang);
-            setCurrentLanguage(data.lang as SupportedLanguage);
-=======
           if (data.lang && supportedLanguages.some(l => l === data.lang.substring(0,2))) {
             i18n.changeLanguage(data.lang.substring(0,2));
             setCurrentLanguage(data.lang.substring(0,2) as SupportedLanguage);
->>>>>>> origin/8ztzgg-codex/add-i18n-support-with-next-i18next
           }
         })
         .catch(() => {});

@@ -1,18 +1,3 @@
-<<<<<<< HEAD
-import { apiClient } from '@/utils/apiClient';
-
-export async function register(name: string, email: string, password: string) {
-  const res = await apiClient('/api/auth/register', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ name, email, password }),
-  });
-  const data = await res.json().catch(() => ({}));
-  return { res, data };
-}
-=======
 import axios, { AxiosRequestHeaders } from 'axios';
 
 // Axios instance
@@ -43,4 +28,3 @@ export const auth = {
 };
 
 export default auth;
->>>>>>> origin/aivbk0-codex/fix-login-form-submission-issues

@@ -1,10 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { safeStorage } from '@/utils/safeStorage';
 import { Button } from '@/components/ui/button';
-<<<<<<< HEAD
-import { useNavigate } from 'react-router-dom';
-import { useCurrency } from '@/context/CurrencyContext';
-=======
 import Link from 'next/link';
 import { useSelector, useDispatch } from 'react-redux';
 import { useState } from 'react';
@@ -25,7 +21,6 @@ import GuestCheckoutModal from '@/components/cart/GuestCheckoutModal';
 import { getStripe } from '@/utils/getStripe';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
->>>>>>> origin/4fu9r9-codex/check-logs-and-fix-errors
 
 interface CartItem {
   id: string;
@@ -35,22 +30,6 @@ interface CartItem {
 }
 
 export default function CartPage() {
-<<<<<<< HEAD
-  const navigate = useNavigate();
-  const { currency } = useCurrency();
-  const [items, setItems] = useState<CartItem[]>([]);
-
-  useEffect(() => {
-    const stored = safeStorage.getItem('cart');
-    if (stored) {
-      try {
-        setItems(JSON.parse(stored) as CartItem[]);
-      } catch {
-        setItems([]);
-      }
-    }
-  }, []);
-=======
   const { t: _t } = useTranslation();
   const items = useSelector((s: RootState) => s.cart.items);
   const dispatch = useDispatch<AppDispatch>();
@@ -58,7 +37,6 @@ export default function CartPage() {
   const [loading, setLoading] = useState(false);
   const [guestOpen, setGuestOpen] = useState(false);
   const { toggle: toggleWishlist, isWishlisted } = useWishlist();
->>>>>>> origin/4fu9r9-codex/check-logs-and-fix-errors
 
   const updateQuantity = (id: string, qty: number) => {
     setItems(prev => {
@@ -68,14 +46,6 @@ export default function CartPage() {
     });
   };
 
-<<<<<<< HEAD
-  const removeItem = (id: string) => {
-    setItems(prev => {
-      const updated = prev.filter(i => i.id !== id);
-      safeStorage.setItem('cart', JSON.stringify(updated));
-      return updated;
-    });
-=======
   const handleCheckout = async (details?: { email?: string; address?: string }) => {
     setLoading(true);
     try {
@@ -111,7 +81,6 @@ export default function CartPage() {
     } else {
       handleCheckout();
     }
->>>>>>> origin/4fu9r9-codex/check-logs-and-fix-errors
   };
 
   const subtotal = items.reduce((sum, i) => sum + i.price * i.quantity, 0);

@@ -42,119 +42,32 @@ const queryClient = new QueryClient({
   },
 });
 
-<<<<<<< HEAD
-function GlobalErrorFallback({ error, resetErrorBoundary }: { error: Error; resetErrorBoundary: () => void }) {
-  const { t } = useTranslation();
-  React.useEffect(() => {
-    captureException(error);
-  }, [error]);
-  return (
-    <div role="alert" className="p-4 text-center">
-      <p className="mb-2">{t('error_boundary.message', 'Something went wrong.')}</p>
-      <button className="rounded bg-blue-600 px-4 py-2 text-white" onClick={resetErrorBoundary}>
-        {t('error_boundary.retry', 'Retry')}
-      </button>
-    </div>
-  );
-}
-
-try {
-  console.log("main.tsx: Before ReactDOM.createRoot");
-  // Render the app with proper provider structure
-  ReactDOM.createRoot(document.getElementById('root')!).render(
-    <React.StrictMode>
-      <HelmetProvider>
-        <QueryClientProvider client={queryClient}>
-          <SnackbarProvider maxSnack={3}>
-            <ToastInitializer />
-=======
 // Render the app with proper provider structure
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <HelmetProvider>
       <QueryClientProvider client={queryClient}>
         <Provider store={store}>
->>>>>>> origin/85f672-codex/implement-wishlist-functionality
           <WhitelabelProvider>
             <Router>
               <AuthProvider>
                 <NotificationProvider>
                   <AnalyticsProvider>
                     <LanguageProvider authState={{ isAuthenticated: false, user: null }}>
-<<<<<<< HEAD
-                      <ErrorBoundary FallbackComponent={GlobalErrorFallback}>
-                        <ViewModeProvider>
-                          <CartProvider>
-                            <ReferralMiddleware>
-                              <AppLayout>
-                                <App />
-                              </AppLayout>
-                            </ReferralMiddleware>
-                          </CartProvider>
-                        </ViewModeProvider>
-                        <LanguageDetectionPopup />
-                      </ErrorBoundary>
-=======
                       <ViewModeProvider>
                         <AppLayout>
                           <App />
                         </AppLayout>
                       </ViewModeProvider>
                       <LanguageDetectionPopup />
->>>>>>> origin/85f672-codex/implement-wishlist-functionality
                     </LanguageProvider>
                   </AnalyticsProvider>
                 </NotificationProvider>
               </AuthProvider>
             </Router>
           </WhitelabelProvider>
-<<<<<<< HEAD
-          </SnackbarProvider>
-        </QueryClientProvider>
-      </HelmetProvider>
-    </React.StrictMode>
-  );
-
-  if (rootElement?.hasChildNodes()) {
-    hydrateRoot(rootElement, app);
-  } else if (rootElement) {
-    createRoot(rootElement).render(app);
-  }
-}
-
-function displayFatalError(message: string) {
-  if (rootElement) {
-    rootElement.innerHTML = `
-      <div style="padding:20px;text-align:center;font-family:sans-serif;">
-        <h1>Application Error</h1>
-        <p>${message}</p>
-      </div>`;
-  }
-}
-
-try {
-  renderApp();
-} catch (error) {
-  console.error('Global error caught in main.tsx:', error);
-  displayFatalError((error as Error).message);
-}
-
-window.addEventListener('error', (e) => {
-  console.error('Unhandled error:', e.error || e.message);
-  displayFatalError(e.message);
-});
-
-window.addEventListener('unhandledrejection', (e) => {
-  const message = (e.reason && e.reason.message) || 'Unhandled promise rejection';
-  console.error('Unhandled rejection:', e.reason);
-  displayFatalError(message);
-});
-
-registerServiceWorker();
-=======
         </Provider>
       </QueryClientProvider>
     </HelmetProvider>
   </React.StrictMode>,
 );
->>>>>>> origin/85f672-codex/implement-wishlist-functionality

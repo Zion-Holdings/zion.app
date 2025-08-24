@@ -1,13 +1,5 @@
-<<<<<<< HEAD
-
-
-
-
-import Link from 'next/link'; // Changed from react-router-dom
-=======
 import { FileText, CheckCircle2, Clock, ShieldAlert } from 'lucide-react';
 import { Link } from 'react-router-dom';
->>>>>>> origin/5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
 import { useAuth } from '@/hooks/useAuth';
 import { useGetOrdersQuery } from '@/hooks/useOrders';
 import { FileText, CheckCircle2, Clock, ShieldAlert } from 'lucide-react';
@@ -17,17 +9,10 @@ import {
   TableCell,
   TableHead,
   TableHeader,
-<<<<<<< HEAD
-  TableRow
-} from "@/components/ui/table";
-import { Badge } from '@/components/ui/badge';
-import Skeleton from '@/components/ui/skeleton';
-=======
   TableRow,
 } from '@/components/ui/table';
 import { Badge } from '@/components/ui/badge';
 import { Skeleton } from '@/components/ui/skeleton';
->>>>>>> origin/5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
 import { EmptyState } from '@/components/ui/empty-state';
 
 export default function OrdersPage() {

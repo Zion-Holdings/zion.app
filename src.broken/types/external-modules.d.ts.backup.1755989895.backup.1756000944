@@ -80,28 +80,6 @@ declare module 'zod';
 declare module 'react-i18next';
 declare module 'react-day-picker';
 declare module 'recharts';
-<<<<<<< HEAD
-declare module 'lucide-react';
-declare module 'react-helmet-async';
-declare module 'sonner';
-declare module 'jspdf' {
-  export class jsPDF {
-    constructor(...args: any[]);
-    [key: string]: any;
-  }
-}
-declare module 'jspdf-autotable';
-declare module 'date-fns';
-declare module 'child_process';
-declare module 'path';
-
-declare global {
-  namespace JSX {
-    interface Element {}
-    interface IntrinsicElements {
-      [elem: string]: any;
-    }
-=======
 declare module 'next' {
   export type GetStaticPaths = any;
   export type GetStaticProps<P = any, Q = any> = any;
@@ -118,6 +96,5 @@ declare module 'next/router' {
     query: Record<string, string | string[]>
       main
     isFallback?: boolean
->>>>>>> origin/92kxb3-codex/populate-forum-category-with-posts
   }
 }

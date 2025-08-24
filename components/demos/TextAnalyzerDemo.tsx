@@ -315,7 +315,7 @@ export default function TextAnalyzerDemo() {
                 <div className="space-y-2">
                   {result.keywords.bigrams.slice(0, 3).map((phrase, index) => (
                     <div key={index} className="flex items-center justify-between">
-                      <span className="text-sm text-gray-300">"{phrase.phrase}"</span>
+                      <span className="text-sm text-gray-300">&quot;{phrase.phrase}&quot;</span>
                       <span className="text-xs text-orange-400">{phrase.count}x</span>
                     </div>
                   ))}

@@ -1,11 +1,5 @@
-<<<<<<< HEAD
-// Re-export from the SSR client to maintain backward compatibility
-export { supabase, createClient } from '@/utils/supabase/client';
-import { logWarn, logDebug } from '@/utils/productionLogger';
-=======
 import { createClient } from '@supabase/supabase-js';
 import api from '@/lib/api';
->>>>>>> origin/4b9zsu-codex/surface-api-errors-across-the-app
 
 // Get actual environment variables
 const envSupabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -55,17 +49,6 @@ async function checkOnline(): Promise<boolean> {
 
 // Optimized safeFetch for development mode with better error handling
 export async function safeFetch(url: string, options: RequestInit = {}) {
-<<<<<<< HEAD
-  try {
-    // In development, provide faster mock responses
-    if (process.env.NODE_ENV === 'development' && url.includes('/favorites')) {
-      return {
-        ok: true,
-        status: 200,
-        json: async () => ([]),
-        text: async () => '[]',
-      } as Response;
-=======
   if (!(await checkOnline())) {
     throw new Error('Failed to connect to Supabase');
   }
@@ -100,7 +83,6 @@ export async function safeFetch(url: string, options: RequestInit = {}) {
       lastError = error;
       // Wait before retrying (exponential backoff)
       await new Promise(resolve => setTimeout(resolve, Math.pow(2, i) * 1000));
->>>>>>> origin/4b9zsu-codex/surface-api-errors-across-the-app
     }
     
     // Use real fetch for other cases

@@ -1,11 +1,5 @@
-<<<<<<< HEAD
-import React, { createContext, useContext } from 'react';
-import type { ReactNode } from 'react';
-import type { ForumPost } from '@/types/community';
-=======
 import React, { createContext, useContext, ReactNode } from 'react';
 import { ForumPost } from '@/types/community';
->>>>>>> origin/5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
 
 interface CommunityContextType {
   featuredPosts: ForumPost[];

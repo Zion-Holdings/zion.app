@@ -111,7 +111,7 @@ const TestimonialsSection: React.FC = () => {
 
                   {/* Content */}
                   <p className="text-gray-300 leading-relaxed mb-6 text-sm">
-                    "{testimonial.content}"
+                    &quot;{testimonial.content}&quot;
                   </p>
 
                   {/* Author */}

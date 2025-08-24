@@ -58,11 +58,6 @@ export function useWebhooks() {
         return;
       }
 
-<<<<<<< HEAD
-      const response = await api.get(`${getWebhookUrl()}/webhooks`, {
-        headers: {
-          Authorization: `Bearer ${session.access_token}`,
-=======
       const authHeader = (typeof session === 'object' && session !== null && 'access_token' in session && typeof (session as { access_token: unknown }).access_token === 'string')
         ? `Bearer ${(session as { access_token: string }).access_token}`
         : undefined;
@@ -71,7 +66,6 @@ export function useWebhooks() {
         method: 'GET',
         headers: {
           ...(authHeader ? { 'Authorization': authHeader } : {}),
->>>>>>> origin/4fu9r9-codex/check-logs-and-fix-errors
           'Content-Type': 'application/json'
         } as HeadersInit,
       });
@@ -109,18 +103,6 @@ export function useWebhooks() {
         return;
       }
 
-<<<<<<< HEAD
-      const response = await api.post(
-        `${getWebhookUrl()}/create`,
-        { name, url, eventTypes, secret },
-        {
-          headers: {
-            Authorization: `Bearer ${session.access_token}`,
-            'Content-Type': 'application/json'
-          }
-        }
-      );
-=======
       const authHeader = (typeof session === 'object' && session !== null && 'access_token' in session && typeof (session as { access_token: unknown }).access_token === 'string')
         ? `Bearer ${(session as { access_token: string }).access_token}`
         : undefined;
@@ -138,7 +120,6 @@ export function useWebhooks() {
           secret
         })
       });
->>>>>>> origin/4fu9r9-codex/check-logs-and-fix-errors
 
       if (response.status < 200 || response.status >= 300) {
         throw new Error(response.data.error || 'Failed to create webhook');
@@ -183,18 +164,6 @@ export function useWebhooks() {
         return;
       }
 
-<<<<<<< HEAD
-      const response = await api.post(
-        `${getWebhookUrl()}/toggle`,
-        { webhookId, isActive },
-        {
-          headers: {
-            Authorization: `Bearer ${session.access_token}`,
-            'Content-Type': 'application/json'
-          }
-        }
-      );
-=======
       const authHeader = (typeof session === 'object' && session !== null && 'access_token' in session && typeof (session as { access_token: unknown }).access_token === 'string')
         ? `Bearer ${(session as { access_token: string }).access_token}`
         : undefined;
@@ -207,7 +176,6 @@ export function useWebhooks() {
         },
         body: JSON.stringify({ webhookId, isActive })
       });
->>>>>>> origin/4fu9r9-codex/check-logs-and-fix-errors
 
       if (response.status < 200 || response.status >= 300) {
         throw new Error(response.data.error || 'Failed to update webhook');
@@ -254,18 +222,6 @@ export function useWebhooks() {
         return;
       }
 
-<<<<<<< HEAD
-      const response = await api.post(
-        `${getWebhookUrl()}/delete`,
-        { webhookId },
-        {
-          headers: {
-            Authorization: `Bearer ${session.access_token}`,
-            'Content-Type': 'application/json'
-          }
-        }
-      );
-=======
       const authHeader = (typeof session === 'object' && session !== null && 'access_token' in session && typeof (session as { access_token: unknown }).access_token === 'string')
         ? `Bearer ${(session as { access_token: string }).access_token}`
         : undefined;
@@ -278,7 +234,6 @@ export function useWebhooks() {
         },
         body: JSON.stringify({ webhookId })
       });
->>>>>>> origin/4fu9r9-codex/check-logs-and-fix-errors
 
       if (response.status < 200 || response.status >= 300) {
         throw new Error(response.data.error || 'Failed to delete webhook');
@@ -324,18 +279,6 @@ export function useWebhooks() {
         return;
       }
 
-<<<<<<< HEAD
-      const response = await api.post(
-        `${getWebhookUrl()}/test`,
-        { webhookId, eventType },
-        {
-          headers: {
-            Authorization: `Bearer ${session.access_token}`,
-            'Content-Type': 'application/json'
-          }
-        }
-      );
-=======
       const authHeader = (typeof session === 'object' && session !== null && 'access_token' in session && typeof (session as { access_token: unknown }).access_token === 'string')
         ? `Bearer ${(session as { access_token: string }).access_token}`
         : undefined;
@@ -348,7 +291,6 @@ export function useWebhooks() {
         },
         body: JSON.stringify({ webhookId, eventType })
       });
->>>>>>> origin/4fu9r9-codex/check-logs-and-fix-errors
 
       if (response.status < 200 || response.status >= 300) {
         throw new Error(response.data.error || 'Failed to test webhook');

@@ -30,13 +30,7 @@ interface SharedWhitepaper {
 }
 
 const WhitepaperViewPage: React.FC = () => {
-<<<<<<< HEAD
-  const router = useRouter();
-  const { id: rawId } = router.query;
-  const id = typeof rawId === 'string' ? rawId : undefined;
-=======
   const { id } = useParams() as { id?: string };
->>>>>>> origin/87zh7m-codex/fix-netlify-build-failures-due-to-typescript-errors
   const [sharedData, setSharedData] = useState<SharedWhitepaper | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);

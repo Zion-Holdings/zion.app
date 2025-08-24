@@ -5,8 +5,6 @@ import { ArrowUp, Filter, SortAsc, TrendingUp, Star, ShoppingCart, AlertTriangle
 import { toast } from '@/hooks/use-toast';
 import apiClient from '@/services/apiClient';
 
-<<<<<<< HEAD
-=======
 const API_BASE = '/api';
 
 // Sample datacenter equipment listings
@@ -337,12 +335,9 @@ const EQUIPMENT_LISTINGS: ProductListing[] = [
     reviewCount: 5,
   },
 ];
->>>>>>> origin/5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
 
 
 
-<<<<<<< HEAD
-=======
   useEffect(() => {
     async function fetchEquipment() {
       try {
@@ -364,7 +359,6 @@ const EQUIPMENT_LISTINGS: ProductListing[] = [
     }, 120000); // add new equipment every 2 minutes
     return () => clearInterval(interval);
   }, []);
->>>>>>> origin/5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
 
 
 

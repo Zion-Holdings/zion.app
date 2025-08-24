@@ -1,0 +1,20 @@
+declare module 'socket.io' {
+  const anySocket: unknown;
+  export default anySocket;
+}
+
+declare module 'socket.io-client' {
+<<<<<<< HEAD
+  export function io(...args: any[]): any;
+  const defaultExport: any;
+=======
+<<<<<<< HEAD
+  export function io(...args: unknown[]): unknown;
+  const defaultExport: unknown;
+=======
+  export function io(...args: any[]): any;
+  const defaultExport: any;
+>>>>>>> origin/87zh7m-codex/fix-netlify-build-failures-due-to-typescript-errors
+>>>>>>> origin/cursor/website-audit-and-enhancement-63e3
+  export default defaultExport;
+}

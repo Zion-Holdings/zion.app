@@ -620,13 +620,6 @@ button,
     background: hsl(var(--background));
   }
 
-<<<<<<< HEAD
-  /* Improved placeholder contrast */
-  input::placeholder,
-  textarea::placeholder {
-    color: #b3b3b3;
-    opacity: 1;
-=======
 /* Basic fallback styles to ensure content renders */
 * {
   box-sizing: border-box;
@@ -690,7 +683,6 @@ button:hover {
 
   .container {
     padding: 0 0.5rem;
->>>>>>> origin/automation-error-fixes
   }
 }
   @keyframes slide-up {
@@ -698,12 +690,6 @@ button:hover {
     to { transform: translateY(0); }
   }
 
-<<<<<<< HEAD
-  .animate-slide-up {
-    animation: slide-up 0.3s ease-out;
-  }
-}
-=======
 /* Ensure text is visible */
 h1,
 h2,
@@ -863,4 +849,3 @@ p {
 .bg-background {
   background-color: hsl(var(--background));
 }
->>>>>>> origin/automation-error-fixes

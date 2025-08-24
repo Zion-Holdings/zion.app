@@ -87,11 +87,7 @@ body {
 
     --radius: 0.5rem;
 
-<<<<<<< HEAD
-    --sidebar-background: 0 0% 10%;
-=======
     --sidebar-background: 0 0% 12%;
->>>>>>> origin/a7jyue-codex/disable-theme-toggle-and-set-default-dark-theme
 
     --sidebar-foreground: 0 0% 100%;
 
@@ -136,15 +132,6 @@ body {
     --border: 0 0% 68%;
     --input: 0 0% 68%;
     --ring: 146 70% 40%;
-<<<<<<< HEAD
-    --sidebar-background: 0 0% 10%;
-    --sidebar-foreground: 0 0% 100%;
-    --sidebar-primary: 146 70% 40%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 0 0% 68%;
-    --sidebar-accent-foreground: 0 0% 7%;
-    --sidebar-border: 0 0% 68%;
-=======
     --sidebar-background: 0 0% 12%;
     --sidebar-foreground: 0 0% 100%;
     --sidebar-primary: 146 70% 40%;
@@ -152,7 +139,6 @@ body {
     --sidebar-accent: 0 0% 20%;
     --sidebar-accent-foreground: 0 0% 100%;
     --sidebar-border: 0 0% 20%;
->>>>>>> origin/a7jyue-codex/disable-theme-toggle-and-set-default-dark-theme
     --sidebar-ring: 146 70% 40%;
   }
 
@@ -584,11 +570,7 @@ button,
 }
 
   ::-webkit-scrollbar-thumb:hover {
-<<<<<<< HEAD
-    background: theme('colors.green.500');
-=======
     background: theme('colors.green.600');
->>>>>>> origin/a7jyue-codex/disable-theme-toggle-and-set-default-dark-theme
   }
 
 .request-textarea {
@@ -640,7 +622,4 @@ button,
   .animate-slide-up {
     animation: slide-up 0.3s ease-out;
   }
-<<<<<<< HEAD
-=======
 }
->>>>>>> origin/a7jyue-codex/disable-theme-toggle-and-set-default-dark-theme

@@ -1,0 +1,18 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+export interface Product {
+  id: string;
+  name: string;
+  description?: string | null;
+}
+=======
+>>>>>>> origin/cursor/website-audit-and-enhancement-63e3
+// Type definitions for product;
+interface product {;
+  // TODO: Add proper type definitions;
+};
+<<<<<<< HEAD
+=======
+>>>>>>> origin/automation-error-fixes
+>>>>>>> origin/cursor/website-audit-and-enhancement-63e3

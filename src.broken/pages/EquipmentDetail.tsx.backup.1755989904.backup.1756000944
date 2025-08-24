@@ -4,14 +4,6 @@ import { NextSeo } from '@/components/NextSeo';
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-<<<<<<< HEAD
-import { ShoppingCart, Truck, Shield, RotateCcw, Clock } from "lucide-react";
-import { RatingStars } from "@/components/RatingStars";
-import { toast } from "@/hooks/use-toast";
-import { useAuth } from "@/hooks/useAuth";
-import { getStripe } from "@/utils/getStripe";
-import { apiClient } from "@/utils/apiClient";
-=======
 import { ShoppingCart, Star, Truck, Shield, RotateCcw, Clock } from "lucide-react";
 import { Switch } from '@/components/ui/switch';
 import { toast } from "@/hooks/use-toast";
@@ -20,7 +12,6 @@ import { getStripe } from "@/utils/getStripe";
 import { safeStorage } from '@/utils/safeStorage';
 import { useUnitSystem } from '@/context';
 import { formatDimensions, formatWeight } from '@/utils/unitConversion';
->>>>>>> origin/a12zhz-codex/support-metric--imperial-units
 
 interface EquipmentSpecification {
   name: string;
@@ -51,40 +42,6 @@ interface EquipmentDetails {
   depthCm?: number;
 }
 
-<<<<<<< HEAD
-// Convert ProductListing to EquipmentDetails format
-function convertProductListingToEquipmentDetails(item: ProductListing): EquipmentDetails {
-  return {
-    id: item.id,
-    name: item.title,
-    description: item.description,
-    brand: item.brand || 'Unknown',
-    category: item.category,
-    subcategory: item.subcategory ?? '',
-    images: item.images || ['https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&h=500'],
-    price: item.price || 0,
-    currency: item.currency || '$',
-    rating: typeof item.rating === 'number' ? item.rating : 0,
-    reviewCount: typeof item.reviewCount === 'number' ? item.reviewCount : 0,
-    inStock: item.availability === 'In Stock' || !item.availability,
-    expectedShipping: item.availability || 'In Stock',
-    specifications: (item.specifications || []).map((spec) => ({ 
-      name: spec, 
-      value: '' 
-    })),
-    features: item.tags || [],
-    warranty: '1 Year Manufacturer Warranty',
-    returnPolicy: '30-day return policy'
-  };
-}
-
-// Build sample data from the shared equipment listings
-export const SAMPLE_EQUIPMENT: { [key: string]: EquipmentDetails } =
-  equipmentListings.reduce((acc, item) => {
-    acc[item.id] = convertProductListingToEquipmentDetails(item);
-    return acc;
-  }, {} as { [key: string]: EquipmentDetails });
-=======
 // Sample data - in a real app this would come from an API
 const SAMPLE_EQUIPMENT: { [key: string]: EquipmentDetails } = {
   "2u-rack-mount-server": {
@@ -207,7 +164,6 @@ const SAMPLE_EQUIPMENT: { [key: string]: EquipmentDetails } = {
     returnPolicy: "21-day return policy for items in original condition"
   }
 };
->>>>>>> origin/a12zhz-codex/support-metric--imperial-units
 
 export default function EquipmentDetail() {
   const router = useRouter();
@@ -218,10 +174,6 @@ export default function EquipmentDetail() {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [quantity, setQuantity] = useState(1);
   const [isAdding, setIsAdding] = useState(false);
-<<<<<<< HEAD
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-=======
   const { unit, setUnit } = useUnitSystem();
   
   // In a real app, this would fetch from an API
@@ -263,7 +215,6 @@ export default function EquipmentDetail() {
       </>
     );
   }
->>>>>>> origin/a12zhz-codex/support-metric--imperial-units
 
   const [equipment, setEquipment] = useState<EquipmentDetails | undefined>();
 
@@ -522,19 +473,6 @@ export default function EquipmentDetail() {
                 )}
               </div>
 
-<<<<<<< HEAD
-              {/* Price */}
-              <div className="bg-zion-blue-light rounded-lg p-4">
-                <div className="text-3xl font-bold text-zion-cyan mb-2">
-                  {formatPrice(equipment.price)}
-                </div>
-                <div className="flex items-center gap-2 text-sm">
-                  <Clock className="h-4 w-4 text-zion-cyan" />
-                  <span className={equipment.inStock ? 'text-green-400' : 'text-yellow-400'}>
-                    {equipment.expectedShipping}
-                  </span>
-                </div>
-=======
               {/* Product Details Tabs */}
               <div className="mt-8">
                 <Tabs defaultValue="description" className="w-full">
@@ -594,7 +532,6 @@ export default function EquipmentDetail() {
                     </div>
                   </TabsContent>
                 </Tabs>
->>>>>>> origin/a12zhz-codex/support-metric--imperial-units
               </div>
 
               {/* Description */}

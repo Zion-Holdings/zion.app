@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-import { Component, ReactNode, ErrorInfo } from 'react';
-=======
 import React, { Component } from 'react';
 import type { ReactNode } from 'react';
 import { Button } from './ui/button';
@@ -8,7 +5,6 @@ import { AlertTriangle } from 'lucide-react';
 
 import {logErrorToProduction} from '@/utils/productionLogger';
 
->>>>>>> origin/4fu9r9-codex/check-logs-and-fix-errors
 
 interface Props {
   children: ReactNode;
@@ -25,10 +21,6 @@ export class ErrorBoundary extends Component<Props, State> {
     return { hasError: true };
   }
 
-<<<<<<< HEAD
-  componentDidCatch(error: Error, info: ErrorInfo) {
-    console.error('Uncaught error:', error, info);
-=======
   static getDerivedStateFromError(error: Error): State {
     return { hasError: true, error };
   }
@@ -40,14 +32,10 @@ export class ErrorBoundary extends Component<Props, State> {
     } else {
       logErrorToProduction('ErrorBoundary caught an error:', error);
     }
->>>>>>> origin/4fu9r9-codex/check-logs-and-fix-errors
   }
 
   override render() {
     if (this.state.hasError) {
-<<<<<<< HEAD
-      return <div className="p-4 text-center">Something went wrong.</div>;
-=======
       if (this.props.fallback) {
         return this.props.fallback;
       }
@@ -57,7 +45,6 @@ export class ErrorBoundary extends Component<Props, State> {
           <p>Please try refreshing the page or contact support if the problem persists.</p>
         </div>
       );
->>>>>>> origin/4fu9r9-codex/check-logs-and-fix-errors
     }
     return this.props.children;
   }

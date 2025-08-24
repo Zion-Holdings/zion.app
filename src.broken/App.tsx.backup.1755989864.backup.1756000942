@@ -54,22 +54,14 @@ import RequestQuotePage from './pages/RequestQuote';
 import WishlistPage from './pages/Wishlist';
 import CartPage from './pages/Cart';
 import Checkout from './pages/Checkout';
-<<<<<<< HEAD
-import PrivacySettings from './pages/PrivacySettings';
-=======
 import { SupportChatbot } from './components/SupportChatbot';
->>>>>>> origin/5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
 
 const baseRoutes = [
   { path: '/', element: <Home /> },
   { path: '/match', element: <AIMatcherPage /> },
   { path: '/login', element: <Login /> },
-<<<<<<< HEAD
-  { path: '/signup', element: <Signup /> },
-=======
   { path: '/register', element: <Signup /> },
   { path: '/signup', element: <SimpleSignup /> },
->>>>>>> origin/5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
   { path: '/talent', element: <TalentDirectory /> },
   { path: '/talents', element: <TalentsPage /> },
   { path: '/services', element: <ServicesPage /> },
@@ -133,16 +125,9 @@ const App = () => {
         <OfflineToast />
         <Toaster />
         <SonnerToaster position="top-right" />
-<<<<<<< HEAD
-          <CookieBanner />
-          <PwaInstallButton />
-        </ThemeProvider>
-      </ConsentProvider>
-=======
         <SupportChatbot />
         <PwaInstallButton />
       </ThemeProvider>
->>>>>>> origin/5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
     </WhitelabelProvider>
   );
 };

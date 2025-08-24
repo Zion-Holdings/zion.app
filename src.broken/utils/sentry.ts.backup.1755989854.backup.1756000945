@@ -1,27 +1,3 @@
-<<<<<<< HEAD
-import * as Sentry from '@sentry/browser';
-
-const DSN = import.meta.env.VITE_SENTRY_DSN;
-
-if (DSN) {
-  Sentry.init({ dsn: DSN });
-}
-
-export function captureException(error: unknown) {
-  if (DSN) {
-    Sentry.captureException(error);
-  }
-  if (typeof console !== 'undefined') {
-    console.error('Sentry captured exception:', error);
-  }
-}
-
-export function captureException(error: unknown, context?: any): void { // Added context capability
-  // The @sentry/nextjs SDK handles initialization.
-  // We can directly call captureException.
-  if (context) {
-    return Sentry.captureException(error, context);
-=======
 export function captureException(error: unknown, context?: unknown): void {
   if (typeof window === 'undefined') {
     import('@sentry/nextjs').then(Sentry => {
@@ -31,6 +7,5 @@ export function captureException(error: unknown, context?: unknown): void {
         Sentry.captureException(error);
       }
     });
->>>>>>> origin/4fu9r9-codex/check-logs-and-fix-errors
   }
 }

@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-=======
 import { useEffect } from 'react';
 import { useRouter } from 'next/router'; // Changed from useNavigate
 import { useFormik } from 'formik';
@@ -23,24 +19,11 @@ const SignupSchema = Yup.object({
     .required('Password is required'),
 });
 
->>>>>>> origin/5smo5s-codex/check-logs-and-fix-errors
 export default function SimpleSignup() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
-<<<<<<< HEAD
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    await fetch('/api/auth/register', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, password }),
-      credentials: 'include',
-    });
-    navigate('/marketplace');
-  };
-=======
   const formik = useFormik({
     initialValues: { email: '', password: '' },
     validationSchema: SignupSchema,
@@ -81,7 +64,6 @@ export default function SimpleSignup() {
       }
     }
   }, [formik.errors, formik.submitCount]);
->>>>>>> origin/5smo5s-codex/check-logs-and-fix-errors
 
   return (
     <form onSubmit={handleSubmit} className="p-4 space-y-2">

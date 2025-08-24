@@ -41,35 +41,6 @@ const queryClient = new QueryClient({
   },
 });
 
-<<<<<<< HEAD
-// Render the app with proper provider structure
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <HelmetProvider>
-      <QueryClientProvider client={queryClient}>
-        <WhitelabelProvider>
-          <Router>
-            <AuthProvider>
-              <NotificationProvider>
-                <AnalyticsProvider>
-                  <LanguageProvider authState={{ isAuthenticated: false, user: null }}>
-                    <ViewModeProvider>
-                      <AppLayout>
-                        <App />
-                      </AppLayout>
-                    </ViewModeProvider>
-                    <LanguageDetectionPopup />
-                  </LanguageProvider>
-                </AnalyticsProvider>
-              </NotificationProvider>
-            </AuthProvider>
-          </Router>
-        </WhitelabelProvider>
-      </QueryClientProvider>
-    </HelmetProvider>
-  </React.StrictMode>,
-);
-=======
 function GlobalErrorFallback({ error, resetErrorBoundary }: { error: Error; resetErrorBoundary: () => void }) {
   const { t } = useTranslation();
   React.useEffect(() => {
@@ -140,6 +111,5 @@ try {
     `;
   }
 }
->>>>>>> origin/3ycx6d-codex/implement-global-error-boundary-with-toasts
 
 registerServiceWorker();

@@ -13,12 +13,6 @@ import { AuthButtons } from '@/components/AuthButtons';
 import { AlertCircle, CheckCircle, Mail } from 'lucide-react';
 
 
-<<<<<<< HEAD
-
-import { toast } from '@/hooks/use-toast';
-import { AuthLayout } from '@/layout';
-import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
-=======
 import { useAuth } from "@/hooks/useAuth";
 import { registerUser } from "@/services/authService";
 import { toast } from "@/hooks/use-toast";
@@ -58,7 +52,6 @@ const signupSchema = z
     message: "Passwords do not match",
     path: ["confirmPassword"],
   });
->>>>>>> origin/5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
 
 
 const SignupSchema = Yup.object({
@@ -77,16 +70,6 @@ const SignupSchema = Yup.object({
 });
 
 export default function Signup() {
-<<<<<<< HEAD
-  const router = useRouter(); // Changed from navigate
-  const [loading, setLoading] = useState(false);
-  const [errorMessage, setErrorMessage] = useState('');
-  const [successMessage, setSuccessMessage] = useState('');
-  const [emailVerificationRequired, setEmailVerificationRequired] = useState(false);
-  const [_authServiceAvailable, setAuthServiceAvailable] = useState(true);
-  const [healthCheckLoading, setHealthCheckLoading] = useState(true);
-  const [healthCheckError, setHealthCheckError] = useState<string | null>(null);
-=======
   const { loginWithGoogle, loginWithFacebook, loginWithTwitter, isAuthenticated, user } = useAuth();
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
@@ -182,7 +165,6 @@ export default function Signup() {
   if (isAuthenticated && user?.profileComplete) {
     return <Navigate to="/" />;
   }
->>>>>>> origin/5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
   
   // Check if this is a partner signup
   const isPartnerSignup = router.query.type === 'partner';
@@ -408,69 +390,6 @@ export default function Signup() {
                 Join the Zion AI Partner Program and start earning rewards
               </p>
             </div>
-<<<<<<< HEAD
-          )}
-          <form onSubmit={handleFormSubmit} className="space-y-4" noValidate>
-          {/* Show Health Check Warning */}
-          {healthCheckError && (
-            <Alert variant="destructive" className="border-yellow-500 bg-yellow-50 text-yellow-900">
-              <AlertCircle className="h-4 w-4" />
-              <AlertDescription className="flex items-center justify-between">
-                <span>{healthCheckError}. You can still try to sign up, but it may fail.</span>
-                <Button 
-                  variant="outline" 
-                  size="sm" 
-                  onClick={performHealthCheck}
-                  disabled={healthCheckLoading}
-                  className="ml-2 text-xs"
-                >
-                  {healthCheckLoading ? 'Checking...' : 'Retry'}
-                </Button>
-              </AlertDescription>
-            </Alert>
-          )}
-          
-          {/* Show Success message */}
-          {successMessage && (
-            <Alert className="border-green-500 bg-green-50 text-green-900" data-testid="success-alert">
-              {emailVerificationRequired ? <Mail className="h-4 w-4" /> : <CheckCircle className="h-4 w-4" />}
-              <AlertDescription>{successMessage}</AlertDescription>
-            </Alert>
-          )}
-          
-          {/* Show Error message */}
-          {errorMessage && (
-            <Alert variant="destructive" data-testid="error-alert">
-              <AlertCircle className="h-4 w-4" />
-              <AlertDescription>{errorMessage}</AlertDescription>
-            </Alert>
-          )}
-          
-          {emailVerificationRequired && (
-            <Alert className="border-blue-500 bg-blue-50 text-blue-900">
-              <Mail className="h-4 w-4" />
-              <AlertDescription>
-                Before you can log in, please click the verification link in the email we sent to <strong>{formik.values.email}</strong>.
-              </AlertDescription>
-            </Alert>
-          )}
-          
-          <div>
-            <label htmlFor="name" className="block text-sm font-medium">
-              Full Name
-            </label>
-            <Input
-              id="name"
-              name="name"
-              data-testid="name-input"
-              value={formik.values.name}
-              onChange={formik.handleChange}
-              disabled={loading || emailVerificationRequired}
-            />
-            {formik.touched.name && formik.errors.name && (
-              <div className="text-red-500 text-sm">{formik.errors.name}</div>
-            )}
-=======
 
             <div className="bg-zion-blue-dark rounded-lg p-6">
               <Form {...form}>
@@ -739,7 +658,6 @@ export default function Signup() {
                 </div>
               </div>
             </div>
->>>>>>> origin/5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
           </div>
           
           <div>

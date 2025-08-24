@@ -5,17 +5,12 @@ import { ChatWidget } from "@/components/ChatWidget";
 import { useParams } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-<<<<<<< HEAD
-import { Skeleton } from "@/components/ui/skeleton";
-import { Star, MessageSquare, Brain, Shield } from "lucide-react";
-=======
 import ImageWithRetry from '@/components/ui/ImageWithRetry';
 import { Star, MessageSquare, Brain, Shield } from 'lucide-react';
 
 
 
 
->>>>>>> origin/4fu9r9-codex/check-logs-and-fix-errors
 import { cn } from "@/lib/utils";
 import { MARKETPLACE_LISTINGS } from "@/data/marketplaceData";
 import { toast } from "@/hooks/use-toast";

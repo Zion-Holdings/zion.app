@@ -118,16 +118,6 @@ export function ChatBotPanel() {
 
   const sendToAIAssistant = async (message: string) => {
     try {
-<<<<<<< HEAD
-      const response = await api.post(
-        "https://ziontechgroup.functions.supabase.co/functions/v1/ai-chat",
-        {
-          messages: [{ role: "user", content: message }]
-        }
-      );
-
-      if (response.status < 200 || response.status >= 300) {
-=======
       const response = await apiClient("https://ziontechgroup.functions.supabase.co/functions/v1/ai-chat", {
         method: "POST",
         headers: {
@@ -139,7 +129,6 @@ export function ChatBotPanel() {
       });
       
       if (!response.ok) {
->>>>>>> origin/8arrdw-codex/centralize-fetch-error-handling
         return {
           success: false,
           message: "I'm having trouble connecting to my knowledge base right now."

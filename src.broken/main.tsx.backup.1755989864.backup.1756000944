@@ -56,18 +56,6 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
                     <ErrorBoundary>
                       <App />
                       <LanguageDetectionPopup />
-<<<<<<< HEAD
-                    </ErrorBoundary>
-                  </LanguageProvider>
-                </AnalyticsProvider>
-              </NotificationProvider>
-            </AuthProvider>
-          </Router>
-        </WhitelabelProvider>
-      </QueryClientProvider>
-    </HelmetProvider>
-  </React.StrictMode>,
-=======
                     </LanguageProvider>
                   </AnalyticsProvider>
                 </NotificationProvider>
@@ -110,5 +98,4 @@ document.addEventListener(
     }
   },
   true,
->>>>>>> origin/5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
 );

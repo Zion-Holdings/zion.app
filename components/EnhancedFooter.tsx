@@ -24,34 +24,33 @@ const EnhancedFooter: React.FC = () => {
 
   const company = [
     { name: 'About Us', href: '/about' },
-    { name: 'Our Team', href: '/team' },
-    { name: 'Careers', href: '/careers' },
-    { name: 'News & Press', href: '/news' },
-    { name: 'Partners', href: '/partners' },
+    { name: 'Portfolio', href: '/portfolio' },
+    { name: 'Blog', href: '/blog' },
+    { name: 'Services', href: '/services' },
     { name: 'Contact', href: '/contact' }
   ];
 
   const resources = [
     { name: 'Blog', href: '/blog' },
-    { name: 'Case Studies', href: '/case-studies' },
-    { name: 'Whitepapers', href: '/whitepapers' },
-    { name: 'Documentation', href: '/docs' },
-    { name: 'API Reference', href: '/api' },
-    { name: 'Support', href: '/support' }
+    { name: 'Portfolio', href: '/portfolio' },
+    { name: 'Services', href: '/services' },
+    { name: 'Sitemap', href: '/sitemap' },
+    { name: 'Technology Insights', href: '/technology-insights' },
+    { name: 'Solutions', href: '/solutions' }
   ];
 
   const legal = [
     { name: 'Privacy Policy', href: '/privacy' },
     { name: 'Terms of Service', href: '/terms' },
-    { name: 'Cookie Policy', href: '/cookies' },
-    { name: 'Security', href: '/security' },
-    { name: 'Compliance', href: '/compliance' }
+    { name: 'Trust & Security', href: '/trust' },
+    { name: 'Site Health', href: '/site-health' },
+    { name: 'Accessibility', href: '/wcag-accessibility-scanner' }
   ];
 
   const socialLinks = [
-    { name: 'Twitter', href: 'https://twitter.com/ziontechgroup', icon: Twitter },
-    { name: 'LinkedIn', href: 'https://linkedin.com/company/ziontechgroup', icon: Linkedin },
-    { name: 'GitHub', href: 'https://github.com/ziontechgroup', icon: Github }
+    { name: 'Twitter', href: 'https://twitter.com', icon: Twitter },
+    { name: 'LinkedIn', href: 'https://linkedin.com', icon: Linkedin },
+    { name: 'GitHub', href: 'https://github.com/Zion-Holdings', icon: Github }
   ];
 
   return (

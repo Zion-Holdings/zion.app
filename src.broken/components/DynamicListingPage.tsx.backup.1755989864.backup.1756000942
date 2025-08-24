@@ -442,13 +442,7 @@ export function DynamicListingPage({
                     className="border-zion-blue-light text-zion-slate-light focus-visible:ring-zion-purple"
                   >
                     {ToggleViewIcon}
-<<<<<<< HEAD
-                    <span className="sr-only">
-                      {isGrid ? "List view" : "Grid view"}
-                    </span>
-=======
                     <span className="sr-only">{isGrid ? "List view" : "Grid view"}</span>
->>>>>>> origin/5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
                   </Button>
                 </div>
               </div>

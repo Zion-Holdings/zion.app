@@ -260,11 +260,7 @@ export function SignUpForm() {
         }
         {/* Link directly to the login page instead of toggling form state */}
         <Link
-<<<<<<< HEAD
-          href="/login"
-=======
           to="/login"
->>>>>>> origin/6v4ctq-codex/fix-link-under-register-form
           className="p-0 h-auto text-zion-cyan hover:text-zion-cyan-light cursor-pointer"
         >
           Sign In

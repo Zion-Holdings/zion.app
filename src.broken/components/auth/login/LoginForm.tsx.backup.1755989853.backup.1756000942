@@ -1,12 +1,8 @@
 
 import { useState } from "react";
-<<<<<<< HEAD
-import { useForm } from "react-hook-form";
-=======
 import { useRouter } from 'next/router';
 import { useForm } from "react-hook-form";
 import type { ControllerRenderProps } from "react-hook-form";
->>>>>>> origin/4fu9r9-codex/check-logs-and-fix-errors
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { LogIn, User, Eye, EyeOff } from "lucide-react";
@@ -54,25 +50,6 @@ export function LoginForm() {
 
     try {
       setIsSubmitting(true);
-<<<<<<< HEAD
-      const { res, data: resData } = await loginUser(data.email, data.password);
-      if (res.status !== 200) {
-        const message = resData?.error || "Invalid credentials";
-        form.setError("root", { message });
-        return;
-      }
-
-      await login(data.email, data.password);
-
-      const next = searchParams.get('next') || '/';
-      if (next === '/checkout') {
-        const intended = sessionStorage.getItem('intendedProduct');
-        sessionStorage.removeItem('intendedProduct');
-        if (intended) {
-          navigate(`/checkout?product=${intended}`);
-        } else {
-          navigate('/checkout');
-=======
       // Pass email and password to the login function
       const result = await login(data.email, data.password, data.rememberMe);
       if (result?.error) {
@@ -88,7 +65,6 @@ export function LoginForm() {
           } else {
             errorMessage = (result.error as any).message;
           }
->>>>>>> origin/4fu9r9-codex/check-logs-and-fix-errors
         }
       } else {
         navigate(next);

@@ -3,11 +3,8 @@ import { useState } from 'react';
 import { useMessaging } from '@/context/MessagingContext';
 import { MainNavigation } from './MainNavigation';
 import { Logo } from '@/components/header/Logo';
-<<<<<<< HEAD
-=======
 import { Container } from '@/components/Container';
 import { useTranslation } from 'react-i18next';
->>>>>>> origin/306l03-codex/fix-blank-screen-issue
 import { Menu, X } from 'lucide-react';
 import { MobileMenu } from '@/components/header/MobileMenu';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -28,10 +25,6 @@ export function AppHeader() {
   
   return (
     <>
-<<<<<<< HEAD
-      <header className="sticky top-0 z-50 w-full border-b border-green-700/20 bg-gray-900/90 backdrop-blur-md">
-        <div className="container flex h-16 items-center px-4 sm:px-6">
-=======
       <header
         style={{ "--nav-height": "64px" } as React.CSSProperties}
         className={cn(
@@ -40,7 +33,6 @@ export function AppHeader() {
         )}
       >
         <Container className="flex h-16 items-center">
->>>>>>> origin/306l03-codex/fix-blank-screen-issue
           <Logo />
           <div className="ml-6 flex-1 hidden md:block">
             <MainNavigation unreadCount={unreadCount} />
@@ -62,10 +54,6 @@ export function AppHeader() {
               )}
             </button>
           </div>
-<<<<<<< HEAD
-          
-        </div>
-=======
 
           <PointsBadge />
           {!isLoggedIn && (
@@ -103,7 +91,6 @@ export function AppHeader() {
             </div>
           )}
         </Container>
->>>>>>> origin/306l03-codex/fix-blank-screen-issue
       </header>
       
       {/* Mobile menu - positioned outside of header to prevent overlap issues */}

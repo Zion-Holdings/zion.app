@@ -286,7 +286,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
             ) : query.trim() && !isLoading ? (
               <div className="p-6 text-center">
                 <p className={`text-sm ${theme === 'dark' ? 'text-gray-400' : 'text-gray-500'}`}>
-                  No results found for "{query}"
+                  No results found for &quot;{query}&quot;
                 </p>
                 <p className={`text-xs mt-1 ${theme === 'dark' ? 'text-gray-500' : 'text-gray-400'}`}>
                   Try different keywords or browse our services

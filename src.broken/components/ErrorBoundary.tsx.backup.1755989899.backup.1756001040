@@ -1,0 +1,71 @@
+import React from 'react';
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+import type { ReactNode, ErrorInfo } from 'react';
+import { toast } from 'react-hot-toast';
+
+interface Props {
+  children: ReactNode;
+=======
+>>>>>>> origin/cursor/website-audit-and-enhancement-63e3
+import { captureException } from '@/lib/sentry';
+
+interface Props {
+  children: React.ReactNode;
+  fallback?: React.ReactNode;
+<<<<<<< HEAD
+=======
+>>>>>>> origin/9llxiv-codex/implement-analytics-and-error-tracking
+>>>>>>> origin/cursor/website-audit-and-enhancement-63e3
+}
+
+interface State {
+  hasError: boolean;
+}
+
+export class ErrorBoundary extends React.Component<Props, State> {
+  state: State = { hasError: false };
+
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  static getDerivedStateFromError(): State {
+    return { hasError: true };
+  }
+
+  componentDidCatch(error: Error, _errorInfo: ErrorInfo) {
+    toast.error(error.message || 'An unexpected error occurred');
+=======
+>>>>>>> origin/cursor/website-audit-and-enhancement-63e3
+  static getDerivedStateFromError() {
+    return { hasError: true };
+  }
+
+  componentDidCatch(error: any, errorInfo: any) {
+    captureException(error);
+    console.error(error, errorInfo);
+<<<<<<< HEAD
+=======
+>>>>>>> origin/9llxiv-codex/implement-analytics-and-error-tracking
+>>>>>>> origin/cursor/website-audit-and-enhancement-63e3
+  }
+
+  render() {
+    if (this.state.hasError) {
+<<<<<<< HEAD
+      return this.props.fallback || <div>Something went wrong.</div>;
+    }
+=======
+<<<<<<< HEAD
+      return null;
+    }
+
+=======
+      return this.props.fallback || <div>Something went wrong.</div>;
+    }
+>>>>>>> origin/9llxiv-codex/implement-analytics-and-error-tracking
+>>>>>>> origin/cursor/website-audit-and-enhancement-63e3
+    return this.props.children;
+  }
+}

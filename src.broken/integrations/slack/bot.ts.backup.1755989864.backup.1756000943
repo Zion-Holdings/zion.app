@@ -1,11 +1,7 @@
 
 // Mock implementation of Slack bot that doesn't require external dependencies
 // This replaces the original implementation which had dependency issues
-<<<<<<< HEAD
-import { switchNetlifySite } from 'scripts/switch-netlify-site.js';
-=======
 import { switchNetlifySite } from '../../../scripts/switch-netlify-site.js';
->>>>>>> origin/5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
 
 interface SlackCommand {
   text: string;

@@ -1,68 +1,33 @@
 import { supabase } from '@/integrations/supabase/client';
 import type { OrderStatus } from '@/lib/orderStatusMachine';
-<<<<<<< HEAD
-import { withAsyncErrorGuard } from '@/utils/withAsyncErrorGuard';
-
-export const holdInEscrow = withAsyncErrorGuard(async (params: {
-=======
 
 export async function holdInEscrow(params: {
->>>>>>> origin/5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
   amount: number;
   currency?: string;
   providerAccountId: string;
   orderId: string;
-<<<<<<< HEAD
-}) => {
-  if (!supabase) throw new Error('Supabase client not initialized');
-=======
 }) {
->>>>>>> origin/5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
   const { data, error } = await supabase.functions.invoke('escrow-service', {
     body: { action: 'hold', ...params },
   });
   if (error) throw error;
-<<<<<<< HEAD
-  // Handle mock response with fallback
-  return data ? (data as { paymentIntentId: string }) : { paymentIntentId: 'mock-payment-intent-id' };
-});
-
-export const releaseEscrow = withAsyncErrorGuard(async (paymentIntentId: string) => {
-  if (!supabase) throw new Error('Supabase client not initialized');
-=======
   return data as { paymentIntentId: string };
 }
 
 export async function releaseEscrow(paymentIntentId: string) {
->>>>>>> origin/5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
   const { data, error } = await supabase.functions.invoke('escrow-service', {
     body: { action: 'release', paymentIntentId },
   });
   if (error) throw error;
-<<<<<<< HEAD
-  // Handle mock response with fallback
-  return data ? (data as { message: string }) : { message: 'Escrow released successfully' };
-});
-
-export const disputeOrder = withAsyncErrorGuard(async (orderId: string) => {
-  if (!supabase) throw new Error('Supabase client not initialized');
-=======
   return data as { message: string };
 }
 
 export async function disputeOrder(orderId: string) {
->>>>>>> origin/5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
   const { data, error } = await supabase.functions.invoke('escrow-service', {
     body: { action: 'dispute', orderId },
   });
   if (error) throw error;
-<<<<<<< HEAD
-  // Handle mock response with fallback
-  return data ? (data as { message: string }) : { message: 'Dispute initiated successfully' };
-});
-=======
   return data as { message: string };
 }
->>>>>>> origin/5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
 
 export type EscrowStatus = OrderStatus;

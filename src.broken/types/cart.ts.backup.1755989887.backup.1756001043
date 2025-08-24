@@ -1,0 +1,35 @@
+export interface CartItem {
+  id: string;
+  name: string;
+  price: number;
+  quantity: number;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  description?: string;
+  image?: string;
+  category?: string;
+  type?: 'physical' | 'digital' | 'service';
+=======
+>>>>>>> origin/8aozst-codex/implement-cart-functionality-with-react-context
+>>>>>>> origin/cursor/website-audit-and-enhancement-63e3
+}
+
+export interface CartContextType {
+  items: CartItem[];
+  dispatch: React.Dispatch<CartAction>;
+}
+
+export type CartAction =
+  | { type: 'ADD_ITEM'; payload: CartItem }
+  | { type: 'REMOVE_ITEM'; payload: string }
+<<<<<<< HEAD
+  | { type: 'CLEAR_CART' };
+=======
+<<<<<<< HEAD
+  | { type: 'CLEAR_CART' }
+  | { type: 'SET_ITEMS'; payload: CartItem[] };
+=======
+  | { type: 'CLEAR_CART' };
+>>>>>>> origin/8aozst-codex/implement-cart-functionality-with-react-context
+>>>>>>> origin/cursor/website-audit-and-enhancement-63e3

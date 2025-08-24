@@ -17,9 +17,6 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
   const { user } = useAuth();
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [text, setText] = useState('');
-<<<<<<< HEAD
-  const socketRef = useRef<any>();
-=======
   const socketRef = useRef<any>(null);
   const inputRef = useRef<HTMLTextAreaElement | null>(null);
 
@@ -35,18 +32,11 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
       logWarn('ChatWidget: failed to load history', { data:  { data: err } });
     }
   }, [isOpen, roomId]);
->>>>>>> origin/4fu9r9-codex/check-logs-and-fix-errors
 
   useEffect(() => {
     if (!isOpen) return;
 
     async function setup() {
-<<<<<<< HEAD
-      const { io } = await import('socket.io-client');
-      socketRef.current = io({ path: '/api/socket', transports: ['websocket'] });
-      socketRef.current.emit('join-room', roomId);
-      socketRef.current.on('receive-message', (msg: ChatMessage) => {
-=======
       const mod = await import('socket.io-client');
       const io = mod.default as typeof import('socket.io-client').default;
       if (!isMounted) return;
@@ -54,7 +44,6 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
       socketRef.current = socket;
       socket.emit('join-room', roomId);
       socket.on('receive-message', (msg: Message) => {
->>>>>>> origin/4fu9r9-codex/check-logs-and-fix-errors
         setMessages(prev => [...prev, msg]);
         triggerNotification('New message', msg.content);
       });
@@ -74,8 +63,6 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
     }
   };
 
-<<<<<<< HEAD
-=======
   // Persist messages whenever they change while open
   useEffect(() => {
     if (!isOpen) return;
@@ -92,7 +79,6 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
     }
   };
 
->>>>>>> origin/4fu9r9-codex/check-logs-and-fix-errors
   const handleSend = () => {
     if (!socketRef.current || !text.trim() || !user) return;
     const msg: ChatMessage = {

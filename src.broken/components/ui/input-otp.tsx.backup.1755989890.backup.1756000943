@@ -33,27 +33,8 @@ const InputOTPSlot = React.forwardRef<
   React.ElementRef<"div">,
   React.ComponentPropsWithoutRef<"div"> & { index: number }
 >(({ index, className, ...props }, ref) => {
-<<<<<<< HEAD
-  const inputOTPContext = React.useContext(OTPInputContext) as unknown;
-  let char: string | undefined = undefined, hasFakeCaret: boolean = false, isActive: boolean = false;
-  if (
-    inputOTPContext &&
-    typeof inputOTPContext === 'object' &&
-    'slots' in inputOTPContext &&
-    Array.isArray((inputOTPContext as { slots: unknown[] }).slots) &&
-    (inputOTPContext as { slots: unknown[] }).slots.length > index
-  ) {
-    const slot = (inputOTPContext as { slots: unknown[] }).slots[index];
-    if (slot && typeof slot === 'object') {
-      char = (slot as { char?: unknown }).char as string | undefined;
-      hasFakeCaret = Boolean((slot as { hasFakeCaret?: unknown }).hasFakeCaret);
-      isActive = Boolean((slot as { isActive?: unknown }).isActive);
-    }
-  }
-=======
   const inputOTPContext = React.useContext(OTPInputContext)
   const { char, hasFakeCaret, isActive } = (inputOTPContext as any).slots[index]
->>>>>>> origin/8h6b38-codex/fix-typescript-module-and-type-errors
 
   return (
     <div

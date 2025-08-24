@@ -1,14 +1,1 @@
-{
-  "/_app": "pages/_app.js",
-  "/_error": "pages/_error.js",
-  "/_document": "pages/_document.js",
-  "/404": "pages/404.js",
-  "/auto/auto-update-2025-08-24t00-54-20-891z": "pages/auto/auto-update-2025-08-24t00-54-20-891z.js",
-  "/": "pages/index.js",
-  "/services/ai-ml": "pages/services/ai-ml.js",
-  "/services/analytics": "pages/services/analytics.js",
-  "/services/cloud": "pages/services/cloud.js",
-  "/services/cybersecurity": "pages/services/cybersecurity.js",
-  "/services/quantum": "pages/services/quantum.js",
-  "/services/transformation": "pages/services/transformation.js"
-}
+{}

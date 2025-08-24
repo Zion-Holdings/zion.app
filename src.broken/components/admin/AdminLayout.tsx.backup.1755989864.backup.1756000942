@@ -11,10 +11,6 @@ const navItems = [
   { title: 'Users', href: '/admin/users' },
   { title: 'Reports', href: '/admin/reports' },
   { title: 'Moderation', href: '/admin/moderation' },
-<<<<<<< HEAD
-  { title: 'Zion Brain', href: '/admin/zion-brain' },
-=======
->>>>>>> origin/5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
 ];
 
 export function AdminLayout({ children }: AdminLayoutProps) {

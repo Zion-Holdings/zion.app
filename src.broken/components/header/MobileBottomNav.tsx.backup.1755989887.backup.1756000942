@@ -1,12 +1,7 @@
 import React from "react";
-<<<<<<< HEAD
-import { useRouter } from "next/router";
-import Link from "next/link";
-=======
 import { Link, useLocation } from "react-router-dom";
 import { Home, Search, BriefcaseIcon, MessageSquare, User, MessageCircle, ShoppingCart } from "lucide-react";
 import { useCart } from "@/context/CartContext";
->>>>>>> origin/8aozst-codex/implement-cart-functionality-with-react-context
 import { cn } from "@/lib/utils";
 import { useAuth } from "@/hooks/useAuth";
 import { useWishlist } from "@/hooks/useWishlist";
@@ -29,21 +24,8 @@ export function MobileBottomNav({ unreadCount = 0 }: MobileBottomNavProps) {
   const router = useRouter();
   const { user } = useAuth();
   const isAuthenticated = !!user;
-<<<<<<< HEAD
-  const { items: wishlistItems } = useWishlist(); // Renamed to avoid conflict
-  const favoritesCount = wishlistItems.length;
-
-  const cartContextValue = useCart(); // Call hook at top level
-  let cartCount = 0;
-  if (cartContextValue && cartContextValue.items) {
-    cartCount = cartContextValue.items.reduce((sum, i) => sum + i.quantity, 0);
-  } else {
-    // logWarn("MobileBottomNav: Cart data or items not available, defaulting cartCount to 0.");
-  }
-=======
   const { items } = useCart();
   const cartCount = items.reduce((sum, i) => sum + i.quantity, 0);
->>>>>>> origin/8aozst-codex/implement-cart-functionality-with-react-context
 
   const navItems = [
     {

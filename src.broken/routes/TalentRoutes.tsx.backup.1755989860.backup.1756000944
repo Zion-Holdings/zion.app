@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-// Routes have been converted to Next.js pages structure
-// This component is no longer needed since Next.js uses file-based routing
-=======
 import { Suspense, lazy } from "react";
 import { Route, Routes } from "react-router-dom";
 import { ProtectedRoute } from "../components/ProtectedRoute";
@@ -11,14 +7,10 @@ import TalentsPage from "../pages/TalentsPage";
 import SavedTalentsPage from "../pages/SavedTalentsPage";
 import CreateTalentProfile from "../pages/CreateTalentProfile";
 import ProfilePage from "../pages/ProfilePage";
->>>>>>> origin/591ea5-codex/fix-talent-profile-rendering-issues
 
 const TalentProfilePage = lazy(() => import("../pages/TalentProfilePage"));
 
 const TalentRoutes = () => {
-<<<<<<< HEAD
-  return null;
-=======
   return (
     <Routes>
       {/* Talent Routes */}
@@ -53,7 +45,6 @@ const TalentRoutes = () => {
       <Route path="/profile/:id" element={<ProfilePage />} />
     </Routes>
   );
->>>>>>> origin/591ea5-codex/fix-talent-profile-rendering-issues
 };
 
 export default TalentRoutes;

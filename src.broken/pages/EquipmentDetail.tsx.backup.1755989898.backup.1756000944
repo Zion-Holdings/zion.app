@@ -4,20 +4,8 @@ import { NextSeo } from '@/components/NextSeo';
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-<<<<<<< HEAD
-import { ShoppingCart, Star, Truck, Shield, RotateCcw, Clock, AlertTriangle, ArrowLeft } from 'lucide-react';
-
-
-
-
-
-
-
-
-=======
 import { ShoppingCart, Truck, Shield, RotateCcw, Clock } from "lucide-react";
 import { RatingStars } from "@/components/RatingStars";
->>>>>>> origin/9lfw2u-codex/render-filled-stars-for-ratings
 import { toast } from "@/hooks/use-toast";
 import { useAuth } from "@/hooks/useAuth";
 import { getStripe } from "@/utils/getStripe";
@@ -341,24 +329,8 @@ export default function EquipmentDetail() {
                 <h1 className="text-3xl font-bold text-white">{equipment.name}</h1>
                 
                 {equipment.rating && (
-<<<<<<< HEAD
-                  <div className="flex items-center gap-2">
-                    <div className="flex items-center">
-                      {[...Array(5)].map((_, i) => (
-                        <Star
-                          key={i}
-                          className={`h-4 w-4 ${
-                            i < Math.floor(equipment.rating!) 
-                              ? 'text-yellow-400 fill-current' 
-                              : 'text-zion-slate-light'
-                          }`}
-                        />
-                      ))}
-                    </div>
-=======
                   <div className="flex items-center gap-2 mb-4">
                     <RatingStars value={equipment.rating} />
->>>>>>> origin/9lfw2u-codex/render-filled-stars-for-ratings
                     <span className="text-sm text-zion-slate-light">
                       {equipment.rating?.toFixed(1)} ({equipment.reviewCount} reviews)
                     </span>

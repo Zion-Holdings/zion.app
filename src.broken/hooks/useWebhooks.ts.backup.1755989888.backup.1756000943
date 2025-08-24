@@ -2,11 +2,7 @@ import { useState } from "react";
 import { useAuth } from "@/hooks/useAuth";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
-<<<<<<< HEAD
-import api from '@/lib/api';
-=======
 import { apiClient } from "@/utils/apiClient";
->>>>>>> origin/8arrdw-codex/centralize-fetch-error-handling
 
 export type WebhookEventType = 'new_application' | 'quote_received' | 'milestone_approved' | 'talent_hired';
 
@@ -62,15 +58,7 @@ export function useWebhooks() {
         return;
       }
 
-<<<<<<< HEAD
-      const authHeader = (typeof session === 'object' && session !== null && 'access_token' in session && typeof (session as { access_token: unknown }).access_token === 'string')
-        ? `Bearer ${(session as { access_token: string }).access_token}`
-        : undefined;
-
-      const response = await fetch(`${getWebhookUrl()}/webhooks`, {
-=======
       const response = await apiClient(`${getWebhookUrl()}/webhooks`, {
->>>>>>> origin/8arrdw-codex/centralize-fetch-error-handling
         method: 'GET',
         headers: {
           ...(authHeader ? { 'Authorization': authHeader } : {}),
@@ -111,15 +99,7 @@ export function useWebhooks() {
         return;
       }
 
-<<<<<<< HEAD
-      const authHeader = (typeof session === 'object' && session !== null && 'access_token' in session && typeof (session as { access_token: unknown }).access_token === 'string')
-        ? `Bearer ${(session as { access_token: string }).access_token}`
-        : undefined;
-
-      const response = await fetch(`${getWebhookUrl()}/create`, {
-=======
       const response = await apiClient(`${getWebhookUrl()}/create`, {
->>>>>>> origin/8arrdw-codex/centralize-fetch-error-handling
         method: 'POST',
         headers: {
           ...(authHeader ? { 'Authorization': authHeader } : {}),
@@ -176,15 +156,7 @@ export function useWebhooks() {
         return;
       }
 
-<<<<<<< HEAD
-      const authHeader = (typeof session === 'object' && session !== null && 'access_token' in session && typeof (session as { access_token: unknown }).access_token === 'string')
-        ? `Bearer ${(session as { access_token: string }).access_token}`
-        : undefined;
-
-      const response = await fetch(`${getWebhookUrl()}/toggle`, {
-=======
       const response = await apiClient(`${getWebhookUrl()}/toggle`, {
->>>>>>> origin/8arrdw-codex/centralize-fetch-error-handling
         method: 'POST',
         headers: {
           ...(authHeader ? { 'Authorization': authHeader } : {}),
@@ -238,15 +210,7 @@ export function useWebhooks() {
         return;
       }
 
-<<<<<<< HEAD
-      const authHeader = (typeof session === 'object' && session !== null && 'access_token' in session && typeof (session as { access_token: unknown }).access_token === 'string')
-        ? `Bearer ${(session as { access_token: string }).access_token}`
-        : undefined;
-
-      const response = await fetch(`${getWebhookUrl()}/delete`, {
-=======
       const response = await apiClient(`${getWebhookUrl()}/delete`, {
->>>>>>> origin/8arrdw-codex/centralize-fetch-error-handling
         method: 'POST',
         headers: {
           ...(authHeader ? { 'Authorization': authHeader } : {}),
@@ -299,15 +263,7 @@ export function useWebhooks() {
         return;
       }
 
-<<<<<<< HEAD
-      const authHeader = (typeof session === 'object' && session !== null && 'access_token' in session && typeof (session as { access_token: unknown }).access_token === 'string')
-        ? `Bearer ${(session as { access_token: string }).access_token}`
-        : undefined;
-
-      const response = await fetch(`${getWebhookUrl()}/test`, {
-=======
       const response = await apiClient(`${getWebhookUrl()}/test`, {
->>>>>>> origin/8arrdw-codex/centralize-fetch-error-handling
         method: 'POST',
         headers: {
           ...(authHeader ? { 'Authorization': authHeader } : {}),
