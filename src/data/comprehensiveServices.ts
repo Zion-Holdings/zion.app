@@ -9,7 +9,7 @@ export const COMPREHENSIVE_SERVICES: ProductListing[] = [
     description: "End-to-end AI workflow automation platform that streamlines business processes, reduces manual tasks by 80%, and provides intelligent decision-making capabilities. Includes process mapping, automation design, and performance analytics.",
     category: "AI & Automation",
     subcategory: "Workflow Automation",
-    price: 2999,
+    price: "2999",
     currency: "$",
     tags: ["AI Automation", "Workflow", "Process Optimization", "Business Intelligence"],
     author: {
@@ -33,7 +33,7 @@ export const COMPREHENSIVE_SERVICES: ProductListing[] = [
     description: "Advanced customer behavior analysis platform using machine learning to predict customer needs, identify churn risks, and optimize customer experience. Real-time insights with actionable recommendations.",
     category: "AI & Analytics",
     subcategory: "Customer Intelligence",
-    price: 1899,
+    price: "1899",
     currency: "$",
     tags: ["Customer Analytics", "Behavior Prediction", "Churn Prevention", "CX Optimization"],
     author: {
@@ -55,7 +55,7 @@ export const COMPREHENSIVE_SERVICES: ProductListing[] = [
     description: "Intelligent content optimization platform that analyzes content performance, suggests improvements, and automatically A/B tests variations to maximize engagement and conversion rates.",
     category: "AI & Marketing",
     subcategory: "Content Optimization",
-    price: 799,
+    price: "799",
     currency: "$",
     tags: ["Content Marketing", "A/B Testing", "Performance Analytics", "SEO Optimization"],
     author: {
@@ -79,7 +79,7 @@ export const COMPREHENSIVE_SERVICES: ProductListing[] = [
     description: "Unified platform for managing and optimizing multi-cloud environments (AWS, Azure, GCP). Features cost optimization, security compliance, and automated scaling across all cloud providers.",
     category: "Cloud & Infrastructure",
     subcategory: "Multi-Cloud Management",
-    price: 3999,
+    price: "3999",
     currency: "$",
     tags: ["Multi-Cloud", "Cost Optimization", "Security Compliance", "Auto-scaling"],
     author: {
@@ -102,7 +102,7 @@ export const COMPREHENSIVE_SERVICES: ProductListing[] = [
     description: "Distributed edge computing solution that brings computation closer to data sources, reducing latency by 60% and improving real-time processing capabilities for IoT and mobile applications.",
     category: "Cloud & Infrastructure",
     subcategory: "Edge Computing",
-    price: 2499,
+    price: "2499",
     currency: "$",
     tags: ["Edge Computing", "IoT", "Low Latency", "Real-time Processing"],
     author: {
@@ -126,7 +126,7 @@ export const COMPREHENSIVE_SERVICES: ProductListing[] = [
     description: "Next-generation cybersecurity platform using machine learning to detect and respond to threats in real-time. Features behavioral analysis, automated incident response, and compliance reporting.",
     category: "Cybersecurity",
     subcategory: "Threat Detection",
-    price: 4999,
+    price: "4999",
     currency: "$",
     tags: ["Threat Detection", "AI Security", "Incident Response", "Compliance"],
     author: {
@@ -149,7 +149,7 @@ export const COMPREHENSIVE_SERVICES: ProductListing[] = [
     description: "Comprehensive zero trust security framework implementation including identity verification, device trust scoring, network segmentation, and continuous monitoring. Reduces attack surface by 90%.",
     category: "Cybersecurity",
     subcategory: "Zero Trust",
-    price: 3499,
+    price: "3499",
     currency: "$",
     tags: ["Zero Trust", "Identity Management", "Network Security", "Continuous Monitoring"],
     author: {
@@ -173,7 +173,7 @@ export const COMPREHENSIVE_SERVICES: ProductListing[] = [
     description: "High-performance real-time data processing pipeline with streaming analytics, real-time dashboards, and predictive modeling. Processes millions of events per second with sub-second latency.",
     category: "Data & Analytics",
     subcategory: "Real-Time Processing",
-    price: 2799,
+    price: "2799",
     currency: "$",
     tags: ["Real-Time Analytics", "Data Pipeline", "Streaming", "Predictive Modeling"],
     author: {
@@ -195,7 +195,7 @@ export const COMPREHENSIVE_SERVICES: ProductListing[] = [
     description: "Comprehensive data governance solution with data lineage tracking, quality monitoring, privacy compliance (GDPR, CCPA), and automated data cataloging. Ensures data integrity and regulatory compliance.",
     category: "Data & Analytics",
     subcategory: "Data Governance",
-    price: 1999,
+    price: "1999",
     currency: "$",
     tags: ["Data Governance", "Compliance", "Data Quality", "Privacy"],
     author: {
@@ -219,7 +219,7 @@ export const COMPREHENSIVE_SERVICES: ProductListing[] = [
     description: "Intelligent DevOps platform that automates CI/CD pipelines, predicts deployment risks, optimizes resource allocation, and provides intelligent monitoring and alerting. Reduces deployment time by 70%.",
     category: "DevOps & Development",
     subcategory: "DevOps Automation",
-    price: 3299,
+    price: "3299",
     currency: "$",
     tags: ["DevOps", "CI/CD", "Automation", "Monitoring"],
     author: {
@@ -242,7 +242,7 @@ export const COMPREHENSIVE_SERVICES: ProductListing[] = [
     description: "Advanced static code analysis tool that identifies security vulnerabilities, code smells, and performance issues. Provides automated refactoring suggestions and maintains code quality standards.",
     category: "DevOps & Development",
     subcategory: "Code Quality",
-    price: 899,
+    price: "899",
     currency: "$",
     tags: ["Code Analysis", "Security", "Quality", "Refactoring"],
     author: {
@@ -266,7 +266,7 @@ export const COMPREHENSIVE_SERVICES: ProductListing[] = [
     description: "Complete IoT solution including device management, data collection, real-time monitoring, and predictive maintenance. Supports thousands of devices with enterprise-grade security and scalability.",
     category: "IoT & Hardware",
     subcategory: "IoT Platform",
-    price: 4499,
+    price: "4499",
     currency: "$",
     tags: ["IoT", "Device Management", "Predictive Maintenance", "Enterprise"],
     author: {
@@ -289,7 +289,7 @@ export const COMPREHENSIVE_SERVICES: ProductListing[] = [
     description: "Intelligent building management system that optimizes energy consumption, monitors environmental conditions, and provides predictive maintenance for HVAC, lighting, and security systems.",
     category: "IoT & Hardware",
     subcategory: "Building Automation",
-    price: 5999,
+    price: "5999",
     currency: "$",
     tags: ["Smart Building", "Energy Management", "HVAC", "Predictive Maintenance"],
     author: {
@@ -313,7 +313,7 @@ export const COMPREHENSIVE_SERVICES: ProductListing[] = [
     description: "Permissioned blockchain platform for enterprise use cases including supply chain tracking, digital identity, and smart contract automation. Features high throughput, privacy controls, and regulatory compliance.",
     category: "Blockchain & Web3",
     subcategory: "Enterprise Blockchain",
-    price: 7999,
+    price: "7999",
     currency: "$",
     tags: ["Blockchain", "Smart Contracts", "Supply Chain", "Digital Identity"],
     author: {
@@ -336,7 +336,7 @@ export const COMPREHENSIVE_SERVICES: ProductListing[] = [
     description: "Comprehensive DeFi analytics platform providing real-time market data, yield optimization strategies, risk assessment, and portfolio tracking across multiple blockchain networks.",
     category: "Blockchain & Web3",
     subcategory: "DeFi Analytics",
-    price: 1499,
+    price: "1499",
     currency: "$",
     tags: ["DeFi", "Analytics", "Risk Management", "Yield Optimization"],
     author: {
@@ -360,7 +360,7 @@ export const COMPREHENSIVE_SERVICES: ProductListing[] = [
     description: "Integrated digital workplace platform combining communication, project management, document collaboration, and workflow automation. Enhances team productivity and remote work capabilities.",
     category: "Digital Transformation",
     subcategory: "Workplace Solutions",
-    price: 1799,
+    price: "1799",
     currency: "$",
     tags: ["Digital Workplace", "Collaboration", "Project Management", "Remote Work"],
     author: {
@@ -382,7 +382,7 @@ export const COMPREHENSIVE_SERVICES: ProductListing[] = [
     description: "Comprehensive service for modernizing legacy systems including assessment, migration planning, data transformation, and new system implementation. Ensures business continuity and improved performance.",
     category: "Digital Transformation",
     subcategory: "System Modernization",
-    price: 12999,
+    price: "12999",
     currency: "$",
     tags: ["Legacy Modernization", "Migration", "Data Transformation", "Business Continuity"],
     author: {
