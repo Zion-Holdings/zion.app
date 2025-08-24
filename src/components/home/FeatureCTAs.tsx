@@ -16,11 +16,26 @@ import {
   BookOpen,
   Code,
   Building,
-  Clock
+  Clock,
+  Shield,
+  Cloud,
+  Database,
+  Globe,
+  Brain,
+  Lock,
+  Server,
+  BarChart3,
+  FileText,
+  Video,
+  FileImage,
+  TrendingUp,
+  MessageCircle,
+  Heart
 } from "lucide-react";
 
 export function FeatureCTAs() {
   const features = [
+    // Existing features
     {
       title: "AI Talent Matching",
       description: "Our AI-powered matching algorithm connects you with the perfect talent or job based on skills, experience, and preferences.",
@@ -101,6 +116,170 @@ export function FeatureCTAs() {
       link: "/zion-hire-ai",
       badge: "Premium",
       details: "Automate screening, improve candidate matching, and enhance the hiring experience with our AI recruiting solution."
+    },
+
+    // NEW MICRO SAAS SERVICES - AI & Machine Learning
+    {
+      title: "AI Content Generator Pro",
+      description: "Generate high-quality content, code, and creative assets with our advanced AI models.",
+      icon: <Brain className="h-10 w-10 p-2 rounded-md bg-gradient-to-br from-purple-100 to-pink-100 text-purple-700" />,
+      link: "/services/ai-content-generation",
+      badge: "Hot",
+      details: "Create blog posts, marketing copy, code snippets, and creative content in seconds. Starting at $29/month with API access."
+    },
+    {
+      title: "AI Image & Video Editor",
+      description: "Professional-grade AI-powered image and video editing tools for creators and businesses.",
+      icon: <FileImage className="h-10 w-10 p-2 rounded-md bg-gradient-to-br from-green-100 to-blue-100 text-green-700" />,
+      link: "/services/ai-media-editing",
+      badge: "Trending",
+      details: "Remove backgrounds, enhance quality, generate variations, and create stunning visuals. Plans from $19/month."
+    },
+    {
+      title: "AI Code Assistant",
+      description: "Intelligent code completion, debugging, and optimization powered by advanced language models.",
+      icon: <Code className="h-10 w-10 p-2 rounded-md bg-gradient-to-br from-orange-100 to-red-100 text-orange-700" />,
+      link: "/services/ai-code-assistant",
+      badge: "Developer Favorite",
+      details: "Write, review, and optimize code in 50+ programming languages. IDE integrations available. Starting at $39/month."
+    },
+    {
+      title: "AI Data Analytics Platform",
+      description: "Transform raw data into actionable insights with our AI-powered analytics suite.",
+      icon: <BarChart3 className="h-10 w-10 p-2 rounded-md bg-gradient-to-br from-indigo-100 to-purple-100 text-indigo-700" />,
+      link: "/services/ai-analytics",
+      badge: "Enterprise",
+      details: "Advanced data visualization, predictive analytics, and automated reporting. Custom pricing for enterprise clients."
+    },
+
+    // NEW MICRO SAAS SERVICES - Cybersecurity
+    {
+      title: "AI Threat Detection",
+      description: "Real-time cybersecurity threat detection and response using advanced AI algorithms.",
+      icon: <Shield className="h-10 w-10 p-2 rounded-md bg-gradient-to-br from-red-100 to-orange-100 text-red-700" />,
+      link: "/services/ai-threat-detection",
+      badge: "Security",
+      details: "24/7 monitoring, instant alerts, and automated response to cyber threats. Starting at $99/month for small businesses."
+    },
+    {
+      title: "Zero Trust Security Suite",
+      description: "Comprehensive zero-trust security implementation for modern enterprise environments.",
+      icon: <Lock className="h-10 w-10 p-2 rounded-md bg-gradient-to-br from-gray-100 to-slate-100 text-gray-700" />,
+      link: "/services/zero-trust-security",
+      badge: "Enterprise",
+      details: "Identity verification, network segmentation, and continuous monitoring. Custom enterprise pricing available."
+    },
+    {
+      title: "Penetration Testing as a Service",
+      description: "Regular security assessments and vulnerability scanning for continuous protection.",
+      icon: <Shield className="h-10 w-10 p-2 rounded-md bg-gradient-to-br from-yellow-100 to-orange-100 text-yellow-700" />,
+      link: "/services/penetration-testing",
+      badge: "Compliance",
+      details: "Monthly security assessments, detailed reports, and remediation guidance. Plans from $299/month."
+    },
+
+    // NEW MICRO SAAS SERVICES - Cloud & Infrastructure
+    {
+      title: "Multi-Cloud Management",
+      description: "Unified management platform for AWS, Azure, Google Cloud, and hybrid environments.",
+      icon: <Cloud className="h-10 w-10 p-2 rounded-md bg-gradient-to-br from-blue-100 to-cyan-100 text-blue-700" />,
+      link: "/services/multi-cloud-management",
+      badge: "Cloud",
+      details: "Cost optimization, security compliance, and unified monitoring across all cloud platforms. Starting at $79/month."
+    },
+    {
+      title: "DevOps Automation Platform",
+      description: "Streamline CI/CD pipelines, infrastructure as code, and deployment automation.",
+      icon: <Zap className="h-10 w-10 p-2 rounded-md bg-gradient-to-br from-green-100 to-emerald-100 text-green-700" />,
+      link: "/services/devops-automation",
+      badge: "DevOps",
+      details: "Automated testing, deployment, and infrastructure management. Plans from $49/month with unlimited pipelines."
+    },
+    {
+      title: "Edge Computing Solutions",
+      description: "Deploy and manage applications at the edge for improved performance and reduced latency.",
+      icon: <Server className="h-10 w-10 p-2 rounded-md bg-gradient-to-br from-purple-100 to-violet-100 text-purple-700" />,
+      link: "/services/edge-computing",
+      badge: "Edge",
+      details: "Global edge network, real-time processing, and IoT integration. Custom pricing based on usage and locations."
+    },
+
+    // NEW MICRO SAAS SERVICES - Business Intelligence
+    {
+      title: "AI-Powered CRM",
+      description: "Intelligent customer relationship management with predictive analytics and automation.",
+      icon: <Users className="h-10 w-10 p-2 rounded-md bg-gradient-to-br from-pink-100 to-rose-100 text-pink-700" />,
+      link: "/services/ai-crm",
+      badge: "Sales",
+      details: "Lead scoring, sales forecasting, and automated follow-ups. Starting at $39/user/month with AI features included."
+    },
+    {
+      title: "Business Process Automation",
+      description: "Automate repetitive tasks and workflows to improve efficiency and reduce costs.",
+      icon: <Zap className="h-10 w-10 p-2 rounded-md bg-gradient-to-br from-yellow-100 to-amber-100 text-yellow-700" />,
+      link: "/services/business-automation",
+      badge: "Automation",
+      details: "Workflow automation, document processing, and integration with 100+ business applications. Plans from $29/month."
+    },
+    {
+      title: "AI Market Research",
+      description: "Comprehensive market analysis and competitive intelligence powered by AI.",
+      icon: <TrendingUp className="h-10 w-10 p-2 rounded-md bg-gradient-to-br from-emerald-100 to-teal-100 text-emerald-700" />,
+      link: "/services/ai-market-research",
+      badge: "Research",
+      details: "Real-time market monitoring, competitor analysis, and trend prediction. Starting at $199/month for comprehensive insights."
+    },
+
+    // NEW MICRO SAAS SERVICES - Communication & Collaboration
+    {
+      title: "AI Meeting Assistant",
+      description: "Intelligent meeting transcription, summarization, and action item tracking.",
+      icon: <MessageCircle className="h-10 w-10 p-2 rounded-md bg-gradient-to-br from-blue-100 to-indigo-100 text-blue-700" />,
+      link: "/services/ai-meeting-assistant",
+      badge: "Productivity",
+      details: "Real-time transcription, smart summaries, and automated follow-ups. Plans from $19/month with unlimited meetings."
+    },
+    {
+      title: "Virtual Event Platform",
+      description: "Host engaging virtual events, webinars, and conferences with AI-powered features.",
+      icon: <Video className="h-10 w-10 p-2 rounded-md bg-gradient-to-br from-purple-100 to-pink-100 text-purple-700" />,
+      link: "/services/virtual-events",
+      badge: "Events",
+      details: "Interactive features, analytics, and AI-powered engagement tools. Starting at $99/month for up to 1000 attendees."
+    },
+    {
+      title: "AI Translation Service",
+      description: "Real-time translation and localization for global communication and content.",
+      icon: <Globe className="h-10 w-10 p-2 rounded-md bg-gradient-to-br from-cyan-100 to-blue-100 text-cyan-700" />,
+      link: "/services/ai-translation",
+      badge: "Global",
+      details: "Support for 100+ languages, real-time translation, and cultural adaptation. Plans from $29/month with API access."
+    },
+
+    // NEW MICRO SAAS SERVICES - Specialized Tools
+    {
+      title: "AI Legal Document Review",
+      description: "Automated legal document analysis, contract review, and compliance checking.",
+      icon: <FileText className="h-10 w-10 p-2 rounded-md bg-gradient-to-br from-slate-100 to-gray-100 text-slate-700" />,
+      link: "/services/ai-legal-review",
+      badge: "Legal",
+      details: "Contract analysis, risk assessment, and compliance monitoring. Starting at $149/month for law firms and businesses."
+    },
+    {
+      title: "AI Financial Advisor",
+      description: "Personalized financial planning and investment recommendations powered by AI.",
+      icon: <TrendingUp className="h-10 w-10 p-2 rounded-md bg-gradient-to-br from-green-100 to-emerald-100 text-green-700" />,
+      link: "/services/ai-financial-advisor",
+      badge: "Finance",
+      details: "Portfolio optimization, risk assessment, and financial goal planning. Plans from $39/month with personalized advice."
+    },
+    {
+      title: "AI Healthcare Assistant",
+      description: "Intelligent health monitoring, symptom analysis, and wellness recommendations.",
+      icon: <Heart className="h-10 w-10 p-2 rounded-md bg-gradient-to-br from-red-100 to-pink-100 text-red-700" />,
+      link: "/services/ai-healthcare",
+      badge: "Healthcare",
+      details: "Health tracking, symptom analysis, and wellness coaching. HIPAA compliant. Starting at $29/month for individuals."
     }
   ];
 
@@ -108,35 +287,39 @@ export function FeatureCTAs() {
     <section className="py-16 bg-gradient-to-b from-background to-background/90">
       <div className="container mx-auto px-4">
         <div className="mb-12 text-center">
-          <h2 className="text-3xl font-bold tracking-tight mb-3">Discover Zion's Powerful Features</h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Explore our comprehensive suite of tools designed to transform how you connect, collaborate, and create in the tech ecosystem.
+          <h2 className="text-4xl font-bold tracking-tight mb-3 bg-gradient-to-r from-zion-cyan via-zion-purple to-zion-purple-light bg-clip-text text-transparent">
+            Discover Zion's Comprehensive Suite of Micro SAAS Solutions
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-4xl mx-auto">
+            Explore our extensive collection of AI-powered tools, cybersecurity solutions, cloud services, and business automation platforms designed to transform your business operations.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {features.map((feature, index) => (
-            <Card key={index} className="overflow-hidden transition-all duration-300 hover:shadow-lg hover:border-primary/50">
+            <Card key={index} className="overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-zion-purple/20 hover:border-zion-purple/50 hover:scale-105 group">
               <CardHeader className="pb-2">
                 <div className="flex justify-between items-start">
-                  {feature.icon}
+                  <div className="group-hover:scale-110 transition-transform duration-300">
+                    {feature.icon}
+                  </div>
                   {feature.badge && (
-                    <Badge variant="secondary" className="bg-primary/20 text-primary">
+                    <Badge variant="secondary" className="bg-gradient-to-r from-zion-purple to-zion-purple-dark text-white border-0">
                       {feature.badge}
                     </Badge>
                   )}
                 </div>
-                <CardTitle className="mt-4">{feature.title}</CardTitle>
-                <CardDescription className="line-clamp-2">{feature.description}</CardDescription>
+                <CardTitle className="mt-4 text-lg group-hover:text-zion-cyan transition-colors duration-300">{feature.title}</CardTitle>
+                <CardDescription className="line-clamp-2 text-sm">{feature.description}</CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">{feature.details}</p>
               </CardContent>
               <CardFooter>
-                <Button asChild className="w-full gap-1">
+                <Button asChild className="w-full gap-1 bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white border-0 group-hover:shadow-lg group-hover:shadow-zion-purple/25 transition-all duration-300">
                   <Link to={feature.link}>
                     <span>Explore {feature.title}</span>
-                    <ArrowRight className="h-4 w-4" />
+                    <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
                   </Link>
                 </Button>
               </CardFooter>
