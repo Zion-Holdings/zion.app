@@ -5,7 +5,8 @@ import {
   Menu, X, ChevronDown, Rocket, Phone, Mail, MapPin,
   Brain, Cpu, Shield, Zap, Star, Users, TrendingUp,
   Globe, Database, Cloud, Lock, Palette, Target,
-  Layers, Sparkles, Atom, Microscope, Satellite
+  Layers, Sparkles, Atom, Microscope, Satellite,
+  Building2, Monitor, DollarSign
 } from 'lucide-react';
 
 const contactInfo = {
@@ -88,7 +89,12 @@ const serviceCategories = [
   }
 ];
 
-const companyLinks = [
+const UltraAdvancedNavigation = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+
+  const companyLinks = [
   { name: 'About Us', href: '/about' },
   { name: '2026 Services', href: '/2026-services-showcase' },
   { name: 'Revolutionary 2026', href: '/revolutionary-2026-services-showcase' },

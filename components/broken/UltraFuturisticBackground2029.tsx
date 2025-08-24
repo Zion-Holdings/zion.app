@@ -5,9 +5,6 @@ const UltraFuturisticBackground2029: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
-    // Check if we're in the browser
-    if (typeof window === 'undefined') return;
-    
     const canvas = canvasRef.current;
     if (!canvas) return;
 
@@ -18,7 +15,8 @@ const UltraFuturisticBackground2029: React.FC = () => {
     canvas.height = window.innerHeight;
 
     let animationFrameId: number;
-    let particles: Array<{
+
+    const particles: Array<{
       x: number;
       y: number;
       vx: number;
@@ -29,8 +27,8 @@ const UltraFuturisticBackground2029: React.FC = () => {
       life: number;
     }> = [];
 
-    // Create initial particles
-    for (let i = 0; i < 150; i++) {
+    // Initialize particles
+    for (let i = 0; i < 50; i++) {
       particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
@@ -44,9 +42,9 @@ const UltraFuturisticBackground2029: React.FC = () => {
     }
 
     const animate = () => {
-      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+      // Update and draw particles
       particles.forEach((particle, index) => {
         particle.x += particle.vx;
         particle.y += particle.vy;
@@ -128,6 +126,13 @@ const UltraFuturisticBackground2029: React.FC = () => {
 
   return (
     <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
+      {/* Canvas for particle effects */}
+      <canvas
+        ref={canvasRef}
+        className="absolute inset-0 w-full h-full"
+        style={{ background: 'transparent' }}
+      />
+      
       {/* Animated gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-black via-purple-900/20 via-cyan-900/20 to-black">
         <motion.div
@@ -204,165 +209,109 @@ const UltraFuturisticBackground2029: React.FC = () => {
             backgroundPosition: ['0px 0px', '50px 50px']
           }}
           transition={{
-            duration: 20,
+            duration: 30,
             repeat: Infinity,
             ease: "linear"
           }}
         />
+      </div>
 
-        {/* Corner Accents */}
-        <div className="absolute top-0 left-0 w-32 h-32 border-l-2 border-t-2 border-purple-500/50">
-          <motion.div
-            className="absolute top-0 left-0 w-2 h-2 bg-purple-500 rounded-full"
-            animate={{
-              scale: [1, 2, 1],
-              opacity: [0.5, 1, 0.5],
-            }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-          />
-        </div>
-
-        <div className="absolute top-0 right-0 w-32 h-32 border-r-2 border-t-2 border-cyan-500/50">
-          <motion.div
-            className="absolute top-0 right-0 w-2 h-2 bg-cyan-500 rounded-full"
-            animate={{
-              scale: [1, 2, 1],
-              opacity: [0.5, 1, 0.5],
-            }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: 1
-            }}
-          />
-        </div>
-
-        <div className="absolute bottom-0 left-0 w-32 h-32 border-l-2 border-b-2 border-indigo-500/50">
-          <motion.div
-            className="absolute bottom-0 left-0 w-2 h-2 bg-indigo-500 rounded-full"
-            animate={{
-              scale: [1, 2, 1],
-              opacity: [0.5, 1, 0.5],
-            }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: 2
-            }}
-          />
-        </div>
-
-        <div className="absolute bottom-0 right-0 w-32 h-32 border-r-2 border-b-2 border-purple-500/50">
-          <motion.div
-            className="absolute bottom-0 right-0 w-2 h-2 bg-purple-500 rounded-full"
-            animate={{
-              scale: [1, 2, 1],
-              opacity: [0.5, 1, 0.5],
-            }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: 3
-            }}
-          />
-        </div>
-
-        {/* Central Energy Core */}
+      {/* Quantum energy waves */}
+      <div className="absolute inset-0">
         <motion.div
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64"
+          className="absolute inset-0"
+          style={{
+            background: 'radial-gradient(ellipse at center, rgba(0, 255, 255, 0.1) 0%, transparent 70%)'
+          }}
           animate={{
-            rotate: 360,
+            scale: [1, 1.5, 1],
+            opacity: [0.1, 0.3, 0.1]
           }}
           transition={{
-            duration: 60,
+            duration: 8,
             repeat: Infinity,
-            ease: "linear"
+            ease: "easeInOut"
           }}
-        >
-          <div className="absolute inset-0 border border-purple-500/20 rounded-full" />
-          <div className="absolute inset-8 border border-cyan-500/20 rounded-full" />
-          <div className="absolute inset-16 border border-indigo-500/20 rounded-full" />
-          
+        />
+      </div>
+
+      {/* Holographic elements */}
+      <motion.div
+        className="absolute top-1/2 left-1/2 w-64 h-64 border border-cyan-400/20 rounded-full"
+        animate={{
+          rotate: [0, 360],
+          scale: [1, 1.2, 1],
+          opacity: [0.1, 0.3, 0.1]
+        }}
+        transition={{
+          duration: 25,
+          repeat: Infinity,
+          ease: "linear"
+        }}
+      />
+
+      <motion.div
+        className="absolute top-1/2 left-1/2 w-32 h-32 border border-purple-400/20 rounded-full"
+        animate={{
+          rotate: [360, 0],
+          scale: [1.2, 1, 1.2],
+          opacity: [0.2, 0.4, 0.2]
+        }}
+        transition={{
+          duration: 20,
+          repeat: Infinity,
+          ease: "linear"
+        }}
+      />
+
+      {/* Neural network connections */}
+      <div className="absolute inset-0">
+        {Array.from({ length: 8 }).map((_, i) => (
           <motion.div
-            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full"
+            key={i}
+            className="absolute w-1 h-1 bg-cyan-400/40 rounded-full"
+            style={{
+              left: `${20 + (i * 10)}%`,
+              top: `${30 + (i * 5)}%`
+            }}
             animate={{
-              scale: [1, 1.5, 1],
-              opacity: [0.5, 1, 0.5],
+              scale: [0, 1, 0],
+              opacity: [0, 1, 0]
             }}
             transition={{
               duration: 3,
               repeat: Infinity,
+              delay: i * 0.3,
               ease: "easeInOut"
             }}
           />
-        </motion.div>
+        ))}
       </div>
 
-      {/* Floating neon orbs */}
-      <motion.div
-        className="absolute top-1/4 right-1/4 w-4 h-4 bg-cyan-400 rounded-full shadow-lg shadow-cyan-400/50"
-        animate={{
-          y: [0, -30, 0],
-          opacity: [0.5, 1, 0.5],
-          scale: [1, 1.5, 1]
-        }}
-        transition={{
-          duration: 6,
-          repeat: Infinity,
-          ease: "easeInOut"
-        }}
-      />
-
-      <motion.div
-        className="absolute bottom-1/3 left-1/3 w-3 h-3 bg-purple-400 rounded-full shadow-lg shadow-purple-400/50"
-        animate={{
-          y: [0, 25, 0],
-          opacity: [0.3, 0.8, 0.3],
-          scale: [1, 1.3, 1]
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: "easeInOut"
-        }}
-      />
-
-      {/* Energy waves */}
-      <motion.div
-        className="absolute bottom-0 left-0 right-0 h-32"
-        style={{
-          background: 'linear-gradient(to top, rgba(0, 255, 255, 0.1), transparent)'
-        }}
-        animate={{
-          opacity: [0.1, 0.3, 0.1],
-          scaleY: [1, 1.2, 1]
-        }}
-        transition={{
-          duration: 10,
-          repeat: Infinity,
-          ease: "easeInOut"
-        }}
-      />
-
-      {/* Canvas for particle animation */}
-      <canvas
-        ref={canvasRef}
-        className="absolute inset-0 w-full h-full"
-        style={{ zIndex: 1 }}
-      />
-
-      {/* Overlay gradient for depth */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
-      
-      {/* Top overlay for better text readability */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-transparent" />
+      {/* Data streams */}
+      <div className="absolute inset-0 overflow-hidden">
+        {Array.from({ length: 5 }).map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-0.5 h-20 bg-gradient-to-b from-cyan-400/60 to-transparent"
+            style={{
+              left: `${15 + (i * 15)}%`,
+              top: '-20px'
+            }}
+            animate={{
+              y: [0, window.innerHeight + 20]
+            }}
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              delay: i * 0.8,
+              ease: "linear"
+            }}
+          />
+        ))}
+      </div>
     </div>
   );
-}
+};
+
+export default UltraFuturisticBackground2029;

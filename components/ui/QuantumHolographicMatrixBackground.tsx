@@ -215,7 +215,7 @@ const QuantumHolographicMatrixBackground: React.FC<QuantumHolographicMatrixBackg
   }, [intensity]);
 
   return (
-    <div className={`relative min-h-screen overflow-hidden ${className}`}>
+    <motion.div className={`relative min-h-screen overflow-hidden ${className}`}>
       {/* Quantum Holographic Matrix Canvas Background */}
       <canvas
         ref={canvasRef}

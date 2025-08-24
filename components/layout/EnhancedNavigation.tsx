@@ -275,5 +275,3 @@ const EnhancedNavigation: React.FC = () => {
     </motion.nav>
   );
 };
-
-export default EnhancedNavigation;

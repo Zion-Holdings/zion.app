@@ -1,16 +1,1 @@
-"use strict";
-(() => {
-var exports = {};
-exports.id = 733220;
-exports.ids = [733220];
-exports.modules = {};
-;
-
-// load runtime
-var __webpack_require__ = require("../webpack-runtime.js");
-__webpack_require__.C(exports);
-var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [472076], () => (__webpack_exec__(833932)));
-module.exports = __webpack_exports__;
-
-})();
+(()=>{var e={};e.id=30660,e.ids=[30660],e.modules={35506:()=>{throw Error("Module build failed (from ./node_modules/next/dist/build/babel/loader/index.js):\nSyntaxError: /workspace/pages/_document.tsx: Identifier 'Document' has already been declared. (3:24)\n\n\x1b[0m \x1b[90m 1 |\x1b[39m \x1b[36mimport\x1b[39m \x1b[33mDocument\x1b[39m\x1b[33m,\x1b[39m { \x1b[33mHtml\x1b[39m\x1b[33m,\x1b[39m \x1b[33mHead\x1b[39m\x1b[33m,\x1b[39m \x1b[33mMain\x1b[39m\x1b[33m,\x1b[39m \x1b[33mNextScript\x1b[39m\x1b[33m,\x1b[39m \x1b[33mDocumentContext\x1b[39m } \x1b[36mfrom\x1b[39m \x1b[32m'next/document'\x1b[39m\x1b[33m;\x1b[39m\x1b[0m\n\x1b[0m \x1b[90m 2 |\x1b[39m\x1b[0m\n\x1b[0m\x1b[31m\x1b[1m>\x1b[22m\x1b[39m\x1b[90m 3 |\x1b[39m \x1b[36mexport\x1b[39m \x1b[36mdefault\x1b[39m \x1b[36mfunction\x1b[39m \x1b[33mDocument\x1b[39m() {\x1b[0m\n\x1b[0m \x1b[90m   |\x1b[39m                         \x1b[31m\x1b[1m^\x1b[22m\x1b[39m\x1b[0m\n\x1b[0m \x1b[90m 4 |\x1b[39m   \x1b[36mreturn\x1b[39m (\x1b[0m\n\x1b[0m \x1b[90m 5 |\x1b[39m     \x1b[33m<\x1b[39m\x1b[33mHtml\x1b[39m lang\x1b[33m=\x1b[39m\x1b[32m\"en\"\x1b[39m\x1b[33m>\x1b[39m\x1b[0m\n\x1b[0m \x1b[90m 6 |\x1b[39m       \x1b[33m<\x1b[39m\x1b[33mHead\x1b[39m\x1b[33m>\x1b[39m\x1b[0m\n    at instantiate (/workspace/node_modules/next/dist/compiled/babel/bundle.js:1910:7115)\n    at constructor (/workspace/node_modules/next/dist/compiled/babel/bundle.js:1910:23111)\n    at Parser.raise (/workspace/node_modules/next/dist/compiled/babel/bundle.js:1910:71277)\n    at TypeScriptScopeHandler.checkRedeclarationInScope (/workspace/node_modules/next/dist/compiled/babel/bundle.js:1910:73809)\n    at TypeScriptScopeHandler.declareName (/workspace/node_modules/next/dist/compiled/babel/bundle.js:1910:73261)\n    at TypeScriptScopeHandler.declareName (/workspace/node_modules/next/dist/compiled/babel/bundle.js:1910:151404)\n    at Parser.registerFunctionStatementId (/workspace/node_modules/next/dist/compiled/babel/bundle.js:1910:279141)\n    at Parser.registerFunctionStatementId (/workspace/node_modules/next/dist/compiled/babel/bundle.js:1910:189018)\n    at Parser.parseFunction (/workspace/node_modules/next/dist/compiled/babel/bundle.js:1910:278741)\n    at Parser.parseExportDefaultExpression (/workspace/node_modules/next/dist/compiled/babel/bundle.js:1910:288601)")}};var m=require("../webpack-runtime.js");m.C(e);var b=m(m.s=35506);module.exports=b})();
