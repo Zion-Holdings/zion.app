@@ -1,42 +1,15 @@
 import React, { useEffect, useRef } from 'react';
 
 interface FuturisticAnimatedBackgroundProps {
-  className?: string;
   intensity?: 'low' | 'medium' | 'high';
-  colorScheme?: 'zion' | 'cyber' | 'quantum';
+  colorScheme?: 'zion' | 'cyber' | 'neon';
 }
 
-export function FuturisticAnimatedBackground({ 
-  className = '', 
+const FuturisticAnimatedBackground: React.FC<FuturisticAnimatedBackgroundProps> = ({
   intensity = 'medium',
-  colorScheme = 'zion' 
-}: FuturisticAnimatedBackgroundProps) {
+  colorScheme = 'zion'
+}) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const animationRef = useRef<number>();
-
-  const colorSchemes = {
-    zion: {
-      primary: '#8c15e9',
-      secondary: '#22ddd2',
-      accent: '#2e73ea',
-      background: 'rgba(23, 7, 43, 0.1)'
-    },
-    cyber: {
-      primary: '#00ff88',
-      secondary: '#ff0088',
-      accent: '#0088ff',
-      background: 'rgba(0, 0, 0, 0.1)'
-    },
-    quantum: {
-      primary: '#ff6b6b',
-      secondary: '#4ecdc4',
-      accent: '#45b7d1',
-      background: 'rgba(0, 0, 0, 0.1)'
-    }
-  };
-
-  const colors = colorSchemes[colorScheme];
-  const intensityMultiplier = { low: 0.5, medium: 1, high: 2 }[intensity];
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -45,196 +18,338 @@ export function FuturisticAnimatedBackground({
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    let particles: Array<{
-      x: number;
-      y: number;
-      vx: number;
-      vy: number;
-      size: number;
-      opacity: number;
-      life: number;
-      maxLife: number;
-    }> = [];
-
+    // Set canvas size
     const resizeCanvas = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
     };
 
-    const createParticle = () => {
-      return {
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 2 * intensityMultiplier,
-        vy: (Math.random() - 0.5) * 2 * intensityMultiplier,
-        size: Math.random() * 3 * intensityMultiplier + 1,
-        opacity: Math.random() * 0.8 + 0.2,
-        life: Math.random() * 100 + 50,
-        maxLife: Math.random() * 100 + 50
-      };
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    // Color schemes
+    const colors = {
+      zion: {
+        primary: '#00D4FF', // zion-cyan
+        secondary: '#8B5CF6', // zion-purple
+        accent: '#3B82F6', // zion-blue
+        background: 'rgba(0, 212, 255, 0.1)',
+        particles: ['#00D4FF', '#8B5CF6', '#3B82F6', '#06B6D4']
+      },
+      cyber: {
+        primary: '#00FF88',
+        secondary: '#FF0088',
+        accent: '#0088FF',
+        background: 'rgba(0, 255, 136, 0.1)',
+        particles: ['#00FF88', '#FF0088', '#0088FF', '#FF8800']
+      },
+      neon: {
+        primary: '#FF00FF',
+        secondary: '#00FFFF',
+        accent: '#FFFF00',
+        background: 'rgba(255, 0, 255, 0.1)',
+        particles: ['#FF00FF', '#00FFFF', '#FFFF00', '#00FF00']
+      }
     };
 
-    const initParticles = () => {
-      const particleCount = Math.floor(50 * intensityMultiplier);
-      particles = Array.from({ length: particleCount }, createParticle);
-    };
+    const currentColors = colors[colorScheme];
 
-    const drawParticles = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    // Particle system
+    class Particle {
+      x: number;
+      y: number;
+      vx: number;
+      vy: number;
+      size: number;
+      color: string;
+      life: number;
+      maxLife: number;
+      type: 'circle' | 'square' | 'triangle';
 
-      // Draw background gradient
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.vx = (Math.random() - 0.5) * (intensity === 'high' ? 2 : intensity === 'medium' ? 1 : 0.5);
+        this.vy = (Math.random() - 0.5) * (intensity === 'high' ? 2 : intensity === 'medium' ? 1 : 0.5);
+        this.size = Math.random() * (intensity === 'high' ? 4 : intensity === 'medium' ? 3 : 2) + 1;
+        this.color = currentColors.particles[Math.floor(Math.random() * currentColors.particles.length)];
+        this.life = Math.random() * 100 + 50;
+        this.maxLife = this.life;
+        this.type = ['circle', 'square', 'triangle'][Math.floor(Math.random() * 3)] as 'circle' | 'square' | 'triangle';
+      }
+
+      update() {
+        this.x += this.vx;
+        this.y += this.vy;
+        this.life--;
+
+        // Bounce off edges
+        if (this.x <= 0 || this.x >= canvas.width) this.vx *= -1;
+        if (this.y <= 0 || this.y >= canvas.height) this.vy *= -1;
+
+        // Wrap around edges
+        if (this.x < 0) this.x = canvas.width;
+        if (this.x > canvas.width) this.x = 0;
+        if (this.y < 0) this.y = canvas.height;
+        if (this.y > canvas.height) this.y = 0;
+      }
+
+      draw() {
+        const alpha = this.life / this.maxLife;
+        ctx.save();
+        ctx.globalAlpha = alpha;
+        ctx.fillStyle = this.color;
+        ctx.strokeStyle = this.color;
+
+        switch (this.type) {
+          case 'circle':
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.fill();
+            break;
+          case 'square':
+            ctx.fillRect(this.x - this.size, this.y - this.size, this.size * 2, this.size * 2);
+            break;
+          case 'triangle':
+            ctx.beginPath();
+            ctx.moveTo(this.x, this.y - this.size);
+            ctx.lineTo(this.x - this.size, this.y + this.size);
+            ctx.lineTo(this.x + this.size, this.y + this.size);
+            ctx.closePath();
+            ctx.fill();
+            break;
+        }
+        ctx.restore();
+      }
+    }
+
+    // Grid system
+    class Grid {
+      spacing: number;
+      offset: number;
+
+      constructor() {
+        this.spacing = intensity === 'high' ? 40 : intensity === 'medium' ? 60 : 80;
+        this.offset = 0;
+      }
+
+      update() {
+        this.offset += 0.5;
+      }
+
+      draw() {
+        ctx.strokeStyle = currentColors.background;
+        ctx.lineWidth = 0.5;
+        ctx.globalAlpha = 0.3;
+
+        // Vertical lines
+        for (let x = this.offset % this.spacing; x < canvas.width; x += this.spacing) {
+          ctx.beginPath();
+          ctx.moveTo(x, 0);
+          ctx.lineTo(x, canvas.height);
+          ctx.stroke();
+        }
+
+        // Horizontal lines
+        for (let y = this.offset % this.spacing; y < canvas.height; y += this.spacing) {
+          ctx.beginPath();
+          ctx.moveTo(0, y);
+          ctx.lineTo(canvas.width, y);
+          ctx.stroke();
+        }
+
+        ctx.globalAlpha = 1;
+      }
+    }
+
+    // Connection lines
+    class ConnectionLines {
+      particles: Particle[];
+      maxDistance: number;
+
+      constructor(particles: Particle[]) {
+        this.particles = particles;
+        this.maxDistance = intensity === 'high' ? 150 : intensity === 'medium' ? 120 : 100;
+      }
+
+      draw() {
+        ctx.strokeStyle = currentColors.background;
+        ctx.lineWidth = 0.5;
+
+        for (let i = 0; i < this.particles.length; i++) {
+          for (let j = i + 1; j < this.particles.length; j++) {
+            const dx = this.particles[i].x - this.particles[j].x;
+            const dy = this.particles[i].y - this.particles[j].y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+
+            if (distance < this.maxDistance) {
+              const alpha = 1 - (distance / this.maxDistance);
+              ctx.globalAlpha = alpha * 0.3;
+              ctx.beginPath();
+              ctx.moveTo(this.particles[i].x, this.particles[i].y);
+              ctx.lineTo(this.particles[j].x, this.particles[j].y);
+              ctx.stroke();
+            }
+          }
+        }
+        ctx.globalAlpha = 1;
+      }
+    }
+
+    // Wave effects
+    class WaveEffect {
+      time: number;
+      amplitude: number;
+      frequency: number;
+
+      constructor() {
+        this.time = 0;
+        this.amplitude = intensity === 'high' ? 30 : intensity === 'medium' ? 20 : 15;
+        this.frequency = intensity === 'high' ? 0.02 : intensity === 'medium' ? 0.015 : 0.01;
+      }
+
+      update() {
+        this.time += 0.05;
+      }
+
+      draw() {
+        ctx.strokeStyle = currentColors.primary;
+        ctx.lineWidth = 2;
+        ctx.globalAlpha = 0.4;
+
+        // Top wave
+        ctx.beginPath();
+        for (let x = 0; x < canvas.width; x++) {
+          const y = Math.sin(x * this.frequency + this.time) * this.amplitude + 50;
+          if (x === 0) {
+            ctx.moveTo(x, y);
+          } else {
+            ctx.lineTo(x, y);
+          }
+        }
+        ctx.stroke();
+
+        // Bottom wave
+        ctx.beginPath();
+        for (let x = 0; x < canvas.width; x++) {
+          const y = Math.sin(x * this.frequency * 0.7 + this.time * 1.3) * this.amplitude + canvas.height - 50;
+          if (x === 0) {
+            ctx.moveTo(x, y);
+          } else {
+            ctx.lineTo(x, y);
+          }
+        }
+        ctx.stroke();
+
+        ctx.globalAlpha = 1;
+      }
+    }
+
+    // Initialize systems
+    const particleCount = intensity === 'high' ? 100 : intensity === 'medium' ? 70 : 50;
+    const particles: Particle[] = [];
+    const grid = new Grid();
+    const waveEffect = new WaveEffect();
+
+    for (let i = 0; i < particleCount; i++) {
+      particles.push(new Particle());
+    }
+
+    const connectionLines = new ConnectionLines(particles);
+
+    // Animation loop
+    const animate = () => {
+      // Clear canvas with gradient background
       const gradient = ctx.createRadialGradient(
         canvas.width / 2, canvas.height / 2, 0,
-        canvas.width / 2, canvas.height / 2, canvas.width / 2
+        canvas.width / 2, canvas.height / 2, Math.max(canvas.width, canvas.height) / 2
       );
-      gradient.addColorStop(0, colors.background);
-      gradient.addColorStop(1, 'transparent');
+      gradient.addColorStop(0, 'rgba(0, 0, 0, 0)');
+      gradient.addColorStop(0.5, currentColors.background);
+      gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
+      
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
+      // Update and draw systems
+      grid.update();
+      grid.draw();
+
+      waveEffect.update();
+      waveEffect.draw();
+
       // Update and draw particles
-      particles.forEach((particle, index) => {
-        // Update position
-        particle.x += particle.vx;
-        particle.y += particle.vy;
-        particle.life--;
+      for (let i = particles.length - 1; i >= 0; i--) {
+        particles[i].update();
+        particles[i].draw();
 
-        // Bounce off edges
-        if (particle.x <= 0 || particle.x >= canvas.width) particle.vx *= -1;
-        if (particle.y <= 0 || particle.y >= canvas.height) particle.vy *= -1;
-
-        // Reset particle if it dies
-        if (particle.life <= 0) {
-          particles[index] = createParticle();
+        // Remove dead particles and create new ones
+        if (particles[i].life <= 0) {
+          particles.splice(i, 1);
+          particles.push(new Particle());
         }
+      }
 
-        // Draw particle
-        const opacity = (particle.life / particle.maxLife) * particle.opacity;
+      // Draw connections
+      connectionLines.draw();
+
+      // Add some floating geometric shapes
+      if (Math.random() < 0.02) {
+        const x = Math.random() * canvas.width;
+        const y = Math.random() * canvas.height;
+        const size = Math.random() * 20 + 10;
+        const color = currentColors.particles[Math.floor(Math.random() * currentColors.particles.length)];
+        
         ctx.save();
-        ctx.globalAlpha = opacity;
+        ctx.globalAlpha = 0.1;
+        ctx.fillStyle = color;
+        ctx.strokeStyle = color;
+        ctx.lineWidth = 1;
         
-        // Glow effect
-        ctx.shadowColor = colors.primary;
-        ctx.shadowBlur = 20 * intensityMultiplier;
-        
-        // Particle
-        ctx.fillStyle = colors.primary;
-        ctx.beginPath();
-        ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-        ctx.fill();
-
-        // Inner glow
-        ctx.fillStyle = colors.secondary;
-        ctx.beginPath();
-        ctx.arc(particle.x, particle.y, particle.size * 0.5, 0, Math.PI * 2);
-        ctx.fill();
-
-        ctx.restore();
-      });
-
-      // Draw connecting lines between nearby particles
-      ctx.strokeStyle = colors.accent;
-      ctx.lineWidth = 0.5;
-      ctx.globalAlpha = 0.3;
-
-      for (let i = 0; i < particles.length; i++) {
-        for (let j = i + 1; j < particles.length; j++) {
-          const dx = particles[i].x - particles[j].x;
-          const dy = particles[i].y - particles[j].y;
-          const distance = Math.sqrt(dx * dx + dy * dy);
-
-          if (distance < 100 * intensityMultiplier) {
-            const opacity = 1 - (distance / (100 * intensityMultiplier));
-            ctx.globalAlpha = opacity * 0.3;
-            ctx.beginPath();
-            ctx.moveTo(particles[i].x, particles[i].y);
-            ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.stroke();
+        if (Math.random() < 0.5) {
+          // Draw hexagon
+          ctx.beginPath();
+          for (let i = 0; i < 6; i++) {
+            const angle = (i * Math.PI) / 3;
+            const px = x + Math.cos(angle) * size;
+            const py = y + Math.sin(angle) * size;
+            if (i === 0) ctx.moveTo(px, py);
+            else ctx.lineTo(px, py);
           }
+          ctx.closePath();
+          ctx.stroke();
+        } else {
+          // Draw diamond
+          ctx.beginPath();
+          ctx.moveTo(x, y - size);
+          ctx.lineTo(x + size, y);
+          ctx.lineTo(x, y + size);
+          ctx.lineTo(x - size, y);
+          ctx.closePath();
+          ctx.stroke();
         }
-      }
-
-      // Draw floating geometric shapes
-      drawGeometricShapes(ctx, colors, intensityMultiplier);
-
-      animationRef.current = requestAnimationFrame(drawParticles);
-    };
-
-    const drawGeometricShapes = (ctx: CanvasRenderingContext2D, colors: any, intensity: number) => {
-      const time = Date.now() * 0.001;
-      
-      // Hexagons
-      for (let i = 0; i < 3 * intensity; i++) {
-        const x = (canvas.width / 4) * (i + 1);
-        const y = canvas.height / 2 + Math.sin(time + i) * 50;
-        const size = 30 + Math.sin(time * 2 + i) * 10;
         
-        ctx.save();
-        ctx.globalAlpha = 0.1;
-        ctx.strokeStyle = colors.primary;
-        ctx.lineWidth = 2;
-        ctx.translate(x, y);
-        ctx.rotate(time + i);
-        
-        ctx.beginPath();
-        for (let j = 0; j < 6; j++) {
-          const angle = (j * Math.PI) / 3;
-          const px = Math.cos(angle) * size;
-          const py = Math.sin(angle) * size;
-          if (j === 0) ctx.moveTo(px, py);
-          else ctx.lineTo(px, py);
-        }
-        ctx.closePath();
-        ctx.stroke();
         ctx.restore();
       }
 
-      // Triangles
-      for (let i = 0; i < 2 * intensity; i++) {
-        const x = canvas.width - (canvas.width / 4) * (i + 1);
-        const y = canvas.height / 2 + Math.cos(time + i) * 60;
-        const size = 25 + Math.sin(time * 1.5 + i) * 8;
-        
-        ctx.save();
-        ctx.globalAlpha = 0.1;
-        ctx.strokeStyle = colors.secondary;
-        ctx.lineWidth = 2;
-        ctx.translate(x, y);
-        ctx.rotate(-time * 0.5 + i);
-        
-        ctx.beginPath();
-        for (let j = 0; j < 3; j++) {
-          const angle = (j * Math.PI * 2) / 3;
-          const px = Math.cos(angle) * size;
-          const py = Math.sin(angle) * size;
-          if (j === 0) ctx.moveTo(px, py);
-          else ctx.lineTo(px, py);
-        }
-        ctx.closePath();
-        ctx.stroke();
-        ctx.restore();
-      }
+      requestAnimationFrame(animate);
     };
 
-    resizeCanvas();
-    initParticles();
-    drawParticles();
+    animate();
 
-    window.addEventListener('resize', resizeCanvas);
-
+    // Cleanup
     return () => {
       window.removeEventListener('resize', resizeCanvas);
-      if (animationRef.current) {
-        cancelAnimationFrame(animationRef.current);
-      }
     };
   }, [intensity, colorScheme]);
 
   return (
     <canvas
       ref={canvasRef}
-      className={`fixed inset-0 pointer-events-none z-0 ${className}`}
+      className="fixed inset-0 pointer-events-none z-0"
       style={{ background: 'transparent' }}
     />
   );
-}
+};
+
+export default FuturisticAnimatedBackground;

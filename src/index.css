@@ -1,197 +1,300 @@
-@layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 222.2 84% 4.9%;
-    --muted: 210 40% 96%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96%;
-    --accent-foreground: 222.2 84% 4.9%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-    --radius: 0.5rem;
-  }
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
-}
-
-/* Zion-specific custom properties */
+/* Custom CSS Variables */
 :root {
-  --zion-blue: #2e73ea;
-  --zion-blue-light: #8ab1f3;
-  --zion-blue-dark: #172d67;
-  --zion-purple: #8c15e9;
-  --zion-purple-light: #b971f2;
-  --zion-purple-dark: #530c8b;
-  --zion-cyan: #22ddd2;
-  --zion-cyan-light: #7aeae4;
-  --zion-cyan-dark: #14847e;
-  --zion-slate: #17072b;
-  --zion-slate-light: #451582;
-  --zion-slate-dark: #000000;
+  --zion-cyan: #00D4FF;
+  --zion-blue: #3B82F6;
+  --zion-purple: #8B5CF6;
+  --zion-pink: #EC4899;
+  --zion-red: #EF4444;
+  --zion-slate: #64748B;
+  --zion-slate-light: #94A3B8;
+  --zion-slate-dark: #334155;
+  --zion-blue-dark: #1E3A8A;
+  --zion-blue-light: #60A5FA;
+  --zion-purple-dark: #5B21B6;
+  --zion-purple-light: #A78BFA;
 }
 
-/* Accessibility Enhancements */
-.high-contrast {
-  --background: 0 0% 0%;
-  --foreground: 0 0% 100%;
-  --card: 0 0% 0%;
-  --card-foreground: 0 0% 100%;
-  --border: 0 0% 100%;
-  --input: 0 0% 100%;
-  --primary: 0 0% 100%;
-  --primary-foreground: 0 0% 0%;
+/* Custom Slider Styles */
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  background: linear-gradient(90deg, var(--zion-cyan), var(--zion-purple));
+  border-radius: 8px;
+  outline: none;
 }
 
-.high-contrast * {
-  border-color: white !important;
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--zion-cyan);
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+  transition: all 0.3s ease;
 }
 
-.high-contrast .bg-muted {
-  background-color: #333 !important;
+.slider::-webkit-slider-thumb:hover {
+  background: var(--zion-purple);
+  box-shadow: 0 0 30px rgba(139, 92, 246, 0.8);
+  transform: scale(1.2);
 }
 
-.large-text {
-  font-size: 1.2em;
+.slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--zion-cyan);
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+  transition: all 0.3s ease;
 }
 
-.large-text h1 { font-size: 2.5em; }
-.large-text h2 { font-size: 2em; }
-.large-text h3 { font-size: 1.75em; }
-.large-text p, .large-text span { font-size: 1.2em; }
-
-/* Reduced motion support */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
+.slider::-moz-range-thumb:hover {
+  background: var(--zion-purple);
+  box-shadow: 0 0 30px rgba(139, 92, 246, 0.8);
+  transform: scale(1.2);
 }
 
-/* Focus management */
-.focus-visible {
-  outline: 2px solid var(--zion-purple);
-  outline-offset: 2px;
-}
-
-/* Custom scrollbar */
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--muted);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--zion-purple);
+  background: rgba(0, 0, 0, 0.1);
   border-radius: 4px;
 }
 
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--zion-cyan), var(--zion-purple));
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--zion-purple-light);
+  background: linear-gradient(180deg, var(--zion-purple), var(--zion-cyan));
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
 }
 
-/* Animation utilities */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+/* Enhanced Focus States */
+.focus-neon:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.3), 0 0 20px rgba(0, 212, 255, 0.5);
 }
 
-@keyframes slideUp {
-  from { transform: translateY(20px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+/* Glow Text Effect */
+.glow-text {
+  text-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor;
 }
 
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
+/* Animated Gradient Background */
+.animated-gradient {
+  background: linear-gradient(-45deg, var(--zion-cyan), var(--zion-blue), var(--zion-purple), var(--zion-pink));
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
 }
 
-.animate-fade-in {
-  animation: fadeIn 0.5s ease-out;
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-.animate-slide-up {
-  animation: slideUp 0.5s ease-out;
+/* Floating Animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
 }
 
-.animate-pulse-slow {
-  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+.animate-float {
+  animation: float 6s ease-in-out infinite;
 }
 
-/* Responsive utilities */
-@media (max-width: 640px) {
-  .container {
-    padding-left: 1rem;
-    padding-right: 1rem;
+/* Pulse Glow */
+@keyframes pulse-glow {
+  0%, 100% { 
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+    transform: scale(1);
+  }
+  50% { 
+    box-shadow: 0 0 40px rgba(0, 212, 255, 0.8);
+    transform: scale(1.05);
   }
 }
 
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Neon Border Animation */
+@keyframes neon-border {
+  0%, 100% { 
+    border-color: var(--zion-cyan);
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+  }
+  50% { 
+    border-color: var(--zion-purple);
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.8);
+  }
+}
+
+.animate-neon-border {
+  animation: neon-border 3s ease-in-out infinite;
+}
+
+/* Matrix Rain Effect */
+@keyframes matrix-rain {
+  0% { transform: translateY(-100vh); opacity: 1; }
+  100% { transform: translateY(100vh); opacity: 0; }
+}
+
+.matrix-rain {
+  animation: matrix-rain 3s linear infinite;
+}
+
+/* Hover Effects */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Glass Morphism */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-dark {
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Enhanced Button States */
+.btn-futuristic {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.btn-futuristic::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn-futuristic:hover::before {
+  left: 100%;
+}
+
+/* Loading Spinner */
+.spinner-futuristic {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(0, 212, 255, 0.3);
+  border-top: 4px solid var(--zion-cyan);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Text Selection */
+::selection {
+  background: var(--zion-cyan);
+  color: white;
+}
+
+::-moz-selection {
+  background: var(--zion-cyan);
+  color: white;
+}
+
+/* Enhanced Form Elements */
+.input-futuristic {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  border-radius: 8px;
+  padding: 12px 16px;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.input-futuristic:focus {
+  outline: none;
+  border-color: var(--zion-cyan);
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+  background: rgba(0, 0, 0, 0.4);
+}
+
+/* Card Hover Effects */
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(45deg, var(--zion-cyan), var(--zion-purple), var(--zion-pink));
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 3s ease infinite;
+}
+
+/* Responsive Design Enhancements */
 @media (max-width: 768px) {
-  .container {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+  .mobile-optimized {
+    font-size: 0.9rem;
+    padding: 0.75rem;
+  }
+  
+  .mobile-hidden {
+    display: none;
   }
 }
 
-/* Print styles */
+@media (max-width: 480px) {
+  .mobile-optimized {
+    font-size: 0.8rem;
+    padding: 0.5rem;
+  }
+}
+
+/* Print Styles */
 @media print {
   .no-print {
     display: none !important;
   }
   
-  body {
+  .print-optimized {
+    color: black !important;
     background: white !important;
-    color: black !important;
-  }
-  
-  a {
-    color: black !important;
-    text-decoration: underline !important;
->>>>>>> cursor/analyze-improve-and-deploy-ziontechgroup-app-f1c5
   }
 }

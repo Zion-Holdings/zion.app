@@ -1,111 +1,221 @@
 import React from 'react';
-import { Button } from './button';
-import { cn } from '@/lib/utils';
+import { motion } from 'framer-motion';
+import { cn } from '../../lib/utils';
 
 interface FuturisticNeonButtonProps {
   children: React.ReactNode;
-  variant?: 'primary' | 'secondary' | 'accent' | 'danger';
-  size?: 'sm' | 'md' | 'lg';
-  className?: string;
   onClick?: () => void;
-  disabled?: boolean;
-  fullWidth?: boolean;
-  icon?: React.ReactNode;
+  variant?: 'primary' | 'secondary' | 'accent' | 'danger';
+  size?: 'sm' | 'md' | 'lg' | 'xl';
   glowIntensity?: 'low' | 'medium' | 'high';
+  disabled?: boolean;
+  className?: string;
+  icon?: React.ReactNode;
+  fullWidth?: boolean;
+  loading?: boolean;
 }
 
-export function FuturisticNeonButton({
+const FuturisticNeonButton: React.FC<FuturisticNeonButtonProps> = ({
   children,
+  onClick,
   variant = 'primary',
   size = 'md',
-  className = '',
-  onClick,
+  glowIntensity = 'medium',
   disabled = false,
-  fullWidth = false,
+  className = '',
   icon,
-  glowIntensity = 'medium'
-}: FuturisticNeonButtonProps) {
-  const baseClasses = cn(
-    'relative overflow-hidden transition-all duration-300 font-semibold tracking-wide',
-    'before:absolute before:inset-0 before:rounded-md before:transition-all before:duration-300',
-    'after:absolute after:inset-0 after:rounded-md after:transition-all after:duration-300',
-    'hover:scale-105 active:scale-95',
-    'disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100',
-    fullWidth ? 'w-full' : '',
-    className
-  );
+  fullWidth = false,
+  loading = false
+}) => {
+  const baseClasses = "relative inline-flex items-center justify-center font-semibold transition-all duration-300 transform hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none";
+  
+  const sizeClasses = {
+    sm: "px-3 py-1.5 text-sm rounded-md",
+    md: "px-4 py-2 text-base rounded-lg",
+    lg: "px-6 py-3 text-lg rounded-xl",
+    xl: "px-8 py-4 text-xl rounded-2xl"
+  };
 
-  const variantStyles = {
+  const variantClasses = {
     primary: {
-      button: 'bg-gradient-to-r from-zion-purple to-zion-purple-dark text-white border-zion-purple/50',
-      before: 'before:bg-gradient-to-r before:from-zion-purple/20 before:to-zion-purple-dark/20',
-      after: 'after:bg-gradient-to-r after:from-zion-cyan/20 after:to-zion-blue/20',
-      glow: 'shadow-[0_0_20px_rgba(140,21,233,0.5)] hover:shadow-[0_0_30px_rgba(140,21,233,0.8)]',
-      border: 'border border-zion-purple/50 hover:border-zion-purple'
+      base: "bg-gradient-to-r from-zion-cyan via-zion-blue to-zion-purple text-white border border-zion-cyan/50",
+      glow: "shadow-[0_0_20px_rgba(0,212,255,0.5)] hover:shadow-[0_0_30px_rgba(0,212,255,0.8)]",
+      focus: "focus:ring-zion-cyan",
+      hover: "hover:border-zion-cyan hover:bg-gradient-to-r hover:from-zion-cyan-light hover:via-zion-blue-light hover:to-zion-purple-light"
     },
     secondary: {
-      button: 'bg-transparent text-zion-cyan border-zion-cyan/50',
-      before: 'before:bg-zion-cyan/10',
-      after: 'after:bg-zion-blue/10',
-      glow: 'shadow-[0_0_20px_rgba(34,221,210,0.5)] hover:shadow-[0_0_30px_rgba(34,221,210,0.8)]',
-      border: 'border border-zion-cyan/50 hover:border-zion-cyan'
+      base: "bg-transparent text-zion-cyan border border-zion-cyan/50",
+      glow: "shadow-[0_0_20px_rgba(0,212,255,0.3)] hover:shadow-[0_0_30px_rgba(0,212,255,0.6)]",
+      focus: "focus:ring-zion-cyan",
+      hover: "hover:bg-zion-cyan/10 hover:border-zion-cyan hover:text-zion-cyan-light"
     },
     accent: {
-      button: 'bg-gradient-to-r from-zion-blue to-zion-blue-dark text-white border-zion-blue/50',
-      before: 'before:bg-gradient-to-r before:from-zion-blue/20 before:to-zion-blue-dark/20',
-      after: 'after:bg-gradient-to-r after:from-zion-purple/20 after:to-zion-cyan/20',
-      glow: 'shadow-[0_0_20px_rgba(46,115,234,0.5)] hover:shadow-[0_0_30px_rgba(46,115,234,0.8)]',
-      border: 'border border-zion-blue/50 hover:border-zion-blue'
+      base: "bg-gradient-to-r from-zion-purple via-zion-pink to-zion-red text-white border border-zion-purple/50",
+      glow: "shadow-[0_0_20px_rgba(139,92,246,0.5)] hover:shadow-[0_0_30px_rgba(139,92,246,0.8)]",
+      focus: "focus:ring-zion-purple",
+      hover: "hover:border-zion-purple hover:bg-gradient-to-r hover:from-zion-purple-light hover:via-zion-pink-light hover:to-zion-red-light"
     },
     danger: {
-      button: 'bg-gradient-to-r from-red-500 to-red-600 text-white border-red-500/50',
-      before: 'before:bg-gradient-to-r before:from-red-500/20 before:to-red-600/20',
-      after: 'after:bg-gradient-to-r after:from-pink-500/20 after:to-red-500/20',
-      glow: 'shadow-[0_0_20px_rgba(239,68,68,0.5)] hover:shadow-[0_0_30px_rgba(239,68,68,0.8)]',
-      border: 'border border-red-500/50 hover:border-red-500'
+      base: "bg-gradient-to-r from-red-500 via-red-600 to-red-700 text-white border border-red-500/50",
+      glow: "shadow-[0_0_20px_rgba(239,68,68,0.5)] hover:shadow-[0_0_30px_rgba(239,68,68,0.8)]",
+      focus: "focus:ring-red-500",
+      hover: "hover:border-red-400 hover:bg-gradient-to-r hover:from-red-400 hover:via-red-500 hover:to-red-600"
     }
   };
 
-  const sizeStyles = {
-    sm: 'px-4 py-2 text-sm',
-    md: 'px-6 py-3 text-base',
-    lg: 'px-8 py-4 text-lg'
+  const glowIntensityClasses = {
+    low: "shadow-[0_0_10px_rgba(0,212,255,0.3)]",
+    medium: "shadow-[0_0_20px_rgba(0,212,255,0.5)]",
+    high: "shadow-[0_0_40px_rgba(0,212,255,0.8)]"
   };
 
-  const glowMultiplier = {
-    low: 1,
-    medium: 1.5,
-    high: 2
+  const widthClasses = fullWidth ? "w-full" : "";
+
+  const buttonClasses = cn(
+    baseClasses,
+    sizeClasses[size],
+    variantClasses[variant].base,
+    variantClasses[variant].glow,
+    variantClasses[variant].focus,
+    variantClasses[variant].hover,
+    glowIntensityClasses[glowIntensity],
+    widthClasses,
+    className
+  );
+
+  // Neon glow effect variants
+  const glowVariants = {
+    initial: { 
+      boxShadow: variantClasses[variant].glow,
+      filter: "brightness(1)"
+    },
+    hover: { 
+      boxShadow: variantClasses[variant].glow.replace('0.5', '0.8').replace('0.3', '0.6'),
+      filter: "brightness(1.1)",
+      scale: 1.05
+    },
+    tap: { 
+      scale: 0.95,
+      filter: "brightness(0.9)"
+    }
   };
 
-  const selectedVariant = variantStyles[variant];
-  const selectedSize = sizeStyles[size];
+  // Inner glow effect
+  const innerGlowVariants = {
+    initial: { opacity: 0.3 },
+    hover: { opacity: 0.6 }
+  };
+
+  // Ripple effect
+  const rippleVariants = {
+    initial: { scale: 0, opacity: 0.8 },
+    animate: { scale: 4, opacity: 0 }
+  };
 
   return (
-    <Button
+    <motion.button
+      className={buttonClasses}
       onClick={onClick}
-      disabled={disabled}
-      className={cn(
-        baseClasses,
-        selectedVariant.button,
-        selectedVariant.before,
-        selectedVariant.after,
-        selectedVariant.glow,
-        selectedVariant.border,
-        selectedSize,
-        `shadow-[0_0_${20 * glowMultiplier[glowIntensity]}px_rgba(140,21,233,0.5)] hover:shadow-[0_0_${30 * glowMultiplier[glowIntensity]}px_rgba(140,21,233,0.8)]`
-      )}
+      disabled={disabled || loading}
+      variants={glowVariants}
+      initial="initial"
+      whileHover="hover"
+      whileTap="tap"
+      transition={{
+        duration: 0.2,
+        ease: "easeInOut"
+      }}
     >
-      <div className="relative z-10 flex items-center justify-center gap-2">
-        {icon && <span className="flex-shrink-0">{icon}</span>}
-        {children}
-      </div>
-      
-      {/* Animated border effect */}
-      <div className="absolute inset-0 rounded-md bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500" />
-      
       {/* Inner glow effect */}
-      <div className="absolute inset-1 rounded-md bg-gradient-to-r from-white/5 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
-    </Button>
+      <motion.div
+        className="absolute inset-0 rounded-inherit bg-gradient-to-r from-white/20 to-transparent opacity-0"
+        variants={innerGlowVariants}
+        initial="initial"
+        whileHover="hover"
+        transition={{ duration: 0.3 }}
+      />
+
+      {/* Animated border */}
+      <motion.div
+        className="absolute inset-0 rounded-inherit border border-transparent"
+        style={{
+          background: `linear-gradient(45deg, ${variant === 'primary' ? '#00D4FF' : variant === 'secondary' ? '#00D4FF' : variant === 'accent' ? '#8B5CF6' : '#EF4444'}, transparent, ${variant === 'primary' ? '#8B5CF6' : variant === 'secondary' ? '#00D4FF' : variant === 'accent' ? '#EC4899' : '#DC2626'})`,
+          backgroundSize: '200% 200%'
+        }}
+        animate={{
+          backgroundPosition: ['0% 0%', '100% 100%', '0% 0%']
+        }}
+        transition={{
+          duration: 3,
+          repeat: Infinity,
+          ease: "linear"
+        }}
+      />
+
+      {/* Content */}
+      <div className="relative z-10 flex items-center gap-2">
+        {loading && (
+          <motion.div
+            className="w-4 h-4 border-2 border-current border-t-transparent rounded-full"
+            animate={{ rotate: 360 }}
+            transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+          />
+        )}
+        {icon && !loading && (
+          <motion.div
+            initial={{ scale: 0.8, opacity: 0.8 }}
+            whileHover={{ scale: 1.1, opacity: 1 }}
+            transition={{ duration: 0.2 }}
+          >
+            {icon}
+          </motion.div>
+        )}
+        <motion.span
+          initial={{ opacity: 0.9 }}
+          whileHover={{ opacity: 1 }}
+          transition={{ duration: 0.2 }}
+        >
+          {children}
+        </motion.span>
+      </div>
+
+      {/* Floating particles effect */}
+      {variant === 'primary' && (
+        <div className="absolute inset-0 overflow-hidden rounded-inherit pointer-events-none">
+          {[...Array(3)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute w-1 h-1 bg-zion-cyan rounded-full"
+              style={{
+                left: `${20 + i * 30}%`,
+                top: `${30 + i * 20}%`
+              }}
+              animate={{
+                y: [0, -10, 0],
+                opacity: [0.3, 0.8, 0.3],
+                scale: [0.5, 1, 0.5]
+              }}
+              transition={{
+                duration: 2 + i * 0.5,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: i * 0.3
+              }}
+            />
+          ))}
+        </div>
+      )}
+
+      {/* Hover ripple effect */}
+      <motion.div
+        className="absolute inset-0 rounded-inherit bg-white/20"
+        variants={rippleVariants}
+        initial="initial"
+        whileHover="animate"
+        transition={{ duration: 0.6 }}
+      />
+    </motion.button>
   );
-}
+};
+
+export default FuturisticNeonButton;

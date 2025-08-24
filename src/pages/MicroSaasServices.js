@@ -1,64 +1,85 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-import { useState } from 'react';
-import { MICRO_SAAS_SERVICES, getServiceByCategory, getPopularServices, getNewServices } from '@/data/microSaasServices';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Input } from '@/components/ui/input';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Star, TrendingUp, Sparkles, Shield, Zap, Globe, Code, BarChart3, Settings, Monitor, Database, Bot } from 'lucide-react';
-import { SEO } from '@/components/SEO';
-import { FuturisticAnimatedBackground } from '@/components/ui/FuturisticAnimatedBackground';
-import { FuturisticNeonButton } from '@/components/ui/FuturisticNeonButton';
+import { useState, useMemo } from 'react';
+import { motion } from 'framer-motion';
+import { Search, TrendingUp, Zap, Shield, Brain, Code, BarChart3, Settings, Globe } from 'lucide-react';
+import { MICRO_SAAS_SERVICES } from '../data/microSaasServices';
+import { Badge } from '../components/ui/badge';
+import { Card } from '../components/ui/card';
+import { Button } from '../components/ui/button';
+import { Input } from '../components/ui/input';
+import { Select } from '../components/ui/select';
+import FuturisticAnimatedBackground from '../components/ui/FuturisticAnimatedBackground';
+import FuturisticNeonButton from '../components/ui/FuturisticNeonButton';
 const categoryIcons = {
-    AI: _jsx(Sparkles, { className: "w-5 h-5" }),
-    IT: _jsx(Settings, { className: "w-5 h-5" }),
-    Development: _jsx(Code, { className: "w-5 h-5" }),
-    Analytics: _jsx(BarChart3, { className: "w-5 h-5" }),
-    Security: _jsx(Shield, { className: "w-5 h-5" }),
-    Automation: _jsx(Zap, { className: "w-5 h-5" }),
-    Integration: _jsx(Database, { className: "w-5 h-5" }),
-    Monitoring: _jsx(Monitor, { className: "w-5 h-5" })
+    'AI': Brain,
+    'IT': Settings,
+    'Business': TrendingUp,
+    'Development': Code,
+    'Marketing': Zap,
+    'Analytics': BarChart3,
+    'Security': Shield,
+    'Automation': Settings
 };
-const categoryColors = {
-    AI: 'from-purple-500 to-pink-500',
-    IT: 'from-blue-500 to-cyan-500',
-    Development: 'from-green-500 to-emerald-500',
-    Analytics: 'from-orange-500 to-red-500',
-    Security: 'from-red-500 to-pink-500',
-    Automation: 'from-yellow-500 to-orange-500',
-    Integration: 'from-indigo-500 to-purple-500',
-    Monitoring: 'from-teal-500 to-blue-500'
-};
-export default function MicroSaasServices() {
-    const [searchQuery, setSearchQuery] = useState('');
+const MicroSaasServices = () => {
+    const [searchTerm, setSearchTerm] = useState('');
     const [selectedCategory, setSelectedCategory] = useState('all');
-    const [sortBy, setSortBy] = useState('rating');
-    const filteredServices = MICRO_SAAS_SERVICES.filter(service => {
-        const matchesSearch = service.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            service.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            service.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()));
-        const matchesCategory = selectedCategory === 'all' || service.category === selectedCategory;
-        return matchesSearch && matchesCategory;
-    });
-    const sortedServices = [...filteredServices].sort((a, b) => {
-        switch (sortBy) {
-            case 'rating':
-                return b.rating - a.rating;
-            case 'aiScore':
-                return b.aiScore - a.aiScore;
-            case 'price':
-                return a.pricing.monthly - b.pricing.monthly;
-            case 'name':
-                return a.title.localeCompare(b.title);
-            default:
-                return 0;
+    const [sortBy, setSortBy] = useState('name');
+    const [priceRange, setPriceRange] = useState(1000);
+    const filteredServices = useMemo(() => {
+        let filtered = MICRO_SAAS_SERVICES.filter(service => {
+            const matchesSearch = service.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                service.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                service.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
+            const matchesCategory = selectedCategory === 'all' || service.category === selectedCategory;
+            const matchesPrice = service.pricing.some(plan => plan.price <= priceRange);
+            return matchesSearch && matchesCategory && matchesPrice;
+        });
+        // Sort services
+        filtered.sort((a, b) => {
+            switch (sortBy) {
+                case 'name':
+                    return a.title.localeCompare(b.title);
+                case 'price':
+                    const aMinPrice = Math.min(...a.pricing.map(p => p.price));
+                    const bMinPrice = Math.min(...b.pricing.map(p => p.price));
+                    return aMinPrice - bMinPrice;
+                case 'category':
+                    return a.category.localeCompare(b.category);
+                default:
+                    return 0;
+            }
+        });
+        return filtered;
+    }, [searchTerm, selectedCategory, sortBy, priceRange]);
+    const categories = ['all', ...Array.from(new Set(MICRO_SAAS_SERVICES.map(s => s.category)))];
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.1
+            }
         }
-    });
-    const popularServices = getPopularServices();
-    const newServices = getNewServices();
-    return (_jsxs("div", { className: "min-h-screen bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-slate-dark relative", children: [_jsx(FuturisticAnimatedBackground, { intensity: "medium", colorScheme: "zion" }), _jsx(SEO, { title: "Micro SAAS Services - Zion Tech Group", description: "Discover innovative micro SAAS solutions for AI, IT, development, analytics, security, and automation. Real pricing, features, and benefits.", keywords: "micro SAAS, AI services, IT solutions, development tools, analytics platform, cybersecurity, automation", canonical: "https://ziontechgroup.com/micro-saas-services" }), _jsxs("div", { className: "relative overflow-hidden z-10", children: [_jsx("div", { className: "absolute inset-0 bg-gradient-to-r from-zion-purple/20 via-zion-cyan/20 to-zion-blue/20" }), _jsxs("div", { className: "relative container mx-auto px-4 py-20 text-center", children: [_jsxs("h1", { className: "text-5xl md:text-7xl font-bold text-white mb-6", children: [_jsx("span", { className: "bg-gradient-to-r from-zion-cyan via-zion-purple-light to-zion-purple bg-clip-text text-transparent", children: "Micro SAAS" }), _jsx("br", {}), _jsx("span", { className: "text-zion-slate-light", children: "Solutions" })] }), _jsx("p", { className: "text-xl md:text-2xl text-zion-slate-light mb-8 max-w-4xl mx-auto", children: "Discover cutting-edge micro SAAS services designed to transform your business. From AI-powered solutions to enterprise-grade tools, we've got everything you need to succeed." }), _jsxs("div", { className: "flex flex-wrap justify-center gap-4", children: [_jsx(FuturisticNeonButton, { size: "lg", variant: "primary", glowIntensity: "high", icon: _jsx(TrendingUp, { className: "w-5 h-5" }), children: "Explore Services" }), _jsx(FuturisticNeonButton, { size: "lg", variant: "secondary", glowIntensity: "medium", icon: _jsx(Globe, { className: "w-5 h-5" }), children: "Contact Sales" })] })] })] }), _jsx("div", { className: "container mx-auto px-4 py-8 relative z-10", children: _jsx("div", { className: "bg-zion-blue-dark/50 backdrop-blur-md rounded-2xl p-6 border border-zion-blue-light/20", children: _jsxs("div", { className: "grid grid-cols-1 md:grid-cols-3 gap-4", children: [_jsx("div", { children: _jsx(Input, { placeholder: "Search services...", value: searchQuery, onChange: (e) => setSearchQuery(e.target.value), className: "bg-zion-blue-dark border-zion-blue-light text-white placeholder-zion-slate-light" }) }), _jsx("div", { children: _jsxs(Select, { value: selectedCategory, onValueChange: setSelectedCategory, children: [_jsx(SelectTrigger, { className: "bg-zion-blue-dark border-zion-blue-light text-white", children: _jsx(SelectValue, { placeholder: "Select Category" }) }), _jsxs(SelectContent, { className: "bg-zion-blue-dark border-zion-blue-light", children: [_jsx(SelectItem, { value: "all", children: "All Categories" }), Object.keys(categoryIcons).map(category => (_jsx(SelectItem, { value: category, children: category }, category)))] })] }) }), _jsx("div", { children: _jsxs(Select, { value: sortBy, onValueChange: setSortBy, children: [_jsx(SelectTrigger, { className: "bg-zion-blue-dark border-zion-blue-light text-white", children: _jsx(SelectValue, { placeholder: "Sort by" }) }), _jsxs(SelectContent, { className: "bg-zion-blue-dark border-zion-blue-light", children: [_jsx(SelectItem, { value: "rating", children: "Highest Rated" }), _jsx(SelectItem, { value: "aiScore", children: "Best AI Score" }), _jsx(SelectItem, { value: "price", children: "Lowest Price" }), _jsx(SelectItem, { value: "name", children: "Alphabetical" })] })] }) })] }) }) }), _jsx("div", { className: "container mx-auto px-4 py-12 relative z-10", children: _jsxs(Tabs, { defaultValue: "all", className: "w-full", children: [_jsxs(TabsList, { className: "grid w-full grid-cols-4 bg-zion-blue-dark/50 backdrop-blur-md border border-zion-blue-light/20", children: [_jsx(TabsTrigger, { value: "all", className: "text-zion-cyan", children: "All Services" }), _jsx(TabsTrigger, { value: "popular", className: "text-zion-cyan", children: "Popular" }), _jsx(TabsTrigger, { value: "new", className: "text-zion-cyan", children: "New" }), _jsx(TabsTrigger, { value: "ai", className: "text-zion-cyan", children: "AI Focus" })] }), _jsx(TabsContent, { value: "all", className: "mt-8", children: _jsx("div", { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6", children: sortedServices.map((service) => (_jsx(ServiceCard, { service: service }, service.id))) }) }), _jsx(TabsContent, { value: "popular", className: "mt-8", children: _jsx("div", { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6", children: popularServices.map((service) => (_jsx(ServiceCard, { service: service }, service.id))) }) }), _jsx(TabsContent, { value: "new", className: "mt-8", children: _jsx("div", { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6", children: newServices.map((service) => (_jsx(ServiceCard, { service: service }, service.id))) }) }), _jsx(TabsContent, { value: "ai", className: "mt-8", children: _jsx("div", { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6", children: getServiceByCategory('AI').map((service) => (_jsx(ServiceCard, { service: service }, service.id))) }) })] }) }), _jsx("div", { className: "container mx-auto px-4 py-16 relative z-10", children: _jsxs("div", { className: "bg-gradient-to-r from-zion-purple/20 to-zion-cyan/20 rounded-3xl p-12 text-center border border-zion-purple/30", children: [_jsx("h2", { className: "text-4xl font-bold text-white mb-6", children: "Ready to Get Started?" }), _jsx("p", { className: "text-xl text-zion-slate-light mb-8 max-w-2xl mx-auto", children: "Contact our team to learn more about our micro SAAS services and how they can transform your business." }), _jsxs("div", { className: "flex flex-col md:flex-row justify-center items-center gap-6 text-zion-slate-light", children: [_jsxs("div", { className: "flex items-center gap-2", children: [_jsx(Globe, { className: "w-5 h-5 text-zion-cyan" }), _jsx("span", { children: "+1 302 464 0950" })] }), _jsxs("div", { className: "flex items-center gap-2", children: [_jsx(Bot, { className: "w-5 h-5 text-zion-cyan" }), _jsx("span", { children: "kleber@ziontechgroup.com" })] }), _jsxs("div", { className: "flex items-center gap-2", children: [_jsx(Settings, { className: "w-5 h-5 text-zion-cyan" }), _jsx("span", { children: "364 E Main St STE 1008 Middletown DE 19709" })] })] })] }) })] }));
-}
-function ServiceCard({ service }) {
-    return (_jsxs(Card, { className: "bg-zion-blue-dark/50 backdrop-blur-md border border-zion-blue-light/20 hover:border-zion-purple/50 transition-all duration-300 hover:scale-105 group", children: [_jsxs(CardHeader, { className: "pb-4", children: [_jsxs("div", { className: "flex items-start justify-between mb-4", children: [_jsx("div", { className: `w-12 h-12 rounded-xl bg-gradient-to-br ${categoryColors[service.category]} flex items-center justify-center`, children: categoryIcons[service.category] }), _jsxs("div", { className: "flex items-center gap-2", children: [service.isNew && (_jsxs(Badge, { className: "bg-gradient-to-r from-zion-cyan to-zion-blue text-white", children: [_jsx(Sparkles, { className: "w-3 h-3 mr-1" }), "New"] })), service.isPopular && (_jsxs(Badge, { className: "bg-gradient-to-r from-zion-purple to-zion-pink text-white", children: [_jsx(TrendingUp, { className: "w-3 h-3 mr-1" }), "Popular"] }))] })] }), _jsx(CardTitle, { className: "text-xl text-white group-hover:text-zion-cyan transition-colors", children: service.title }), _jsx(CardDescription, { className: "text-zion-slate-light", children: service.description })] }), _jsxs(CardContent, { className: "space-y-4", children: [_jsxs("div", { children: [_jsx("h4", { className: "text-sm font-semibold text-zion-cyan mb-2", children: "Key Features" }), _jsx("div", { className: "flex flex-wrap gap-1", children: service.features.slice(0, 4).map((feature, index) => (_jsx(Badge, { variant: "secondary", className: "text-xs bg-zion-blue-light/20 text-zion-slate-light border-zion-blue-light/30", children: feature }, index))) })] }), _jsxs("div", { children: [_jsx("h4", { className: "text-sm font-semibold text-zion-cyan mb-2", children: "Benefits" }), _jsx("ul", { className: "text-sm text-zion-slate-light space-y-1", children: service.benefits.slice(0, 3).map((benefit, index) => (_jsxs("li", { className: "flex items-start gap-2", children: [_jsx("div", { className: "w-1.5 h-1.5 rounded-full bg-zion-cyan mt-2 flex-shrink-0" }), benefit] }, index))) })] }), _jsxs("div", { className: "border-t border-zion-blue-light/20 pt-4", children: [_jsxs("div", { className: "flex items-center justify-between mb-2", children: [_jsx("span", { className: "text-sm text-zion-slate-light", children: "Starting from" }), _jsxs("span", { className: "text-2xl font-bold text-white", children: ["$", service.pricing.monthly] })] }), _jsxs("div", { className: "flex items-center justify-between text-sm text-zion-slate-light", children: [_jsxs("span", { children: ["Market average: $", service.marketPrice.average] }), _jsxs("div", { className: "flex items-center gap-1", children: [_jsx(Star, { className: "w-4 h-4 text-yellow-400 fill-current" }), _jsx("span", { children: service.rating }), _jsxs("span", { className: "text-zion-slate-light", children: ["(", service.reviewCount, ")"] })] })] })] }), _jsxs("div", { className: "flex gap-2 pt-4", children: [_jsx(FuturisticNeonButton, { className: "flex-1", variant: "primary", glowIntensity: "medium", children: "Learn More" }), _jsx(FuturisticNeonButton, { variant: "secondary", glowIntensity: "low", children: "Contact" })] })] })] }));
-}
+    };
+    const itemVariants = {
+        hidden: { y: 20, opacity: 0 },
+        visible: {
+            y: 0,
+            opacity: 1,
+            transition: {
+                duration: 0.5
+            }
+        }
+    };
+    return (_jsxs("div", { className: "min-h-screen bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-slate-dark relative overflow-hidden", children: [_jsx(FuturisticAnimatedBackground, {}), _jsxs(motion.div, { className: "relative z-10 text-center py-20 px-4", initial: { opacity: 0, y: -50 }, animate: { opacity: 1, y: 0 }, transition: { duration: 0.8 }, children: [_jsx(motion.h1, { className: "text-5xl md:text-7xl font-bold text-white mb-6 bg-gradient-to-r from-zion-cyan via-zion-purple to-zion-cyan bg-clip-text text-transparent", initial: { opacity: 0, scale: 0.8 }, animate: { opacity: 1, scale: 1 }, transition: { duration: 0.8, delay: 0.2 }, children: "Micro SAAS Solutions" }), _jsx(motion.p, { className: "text-xl md:text-2xl text-zion-slate-light mb-8 max-w-4xl mx-auto leading-relaxed", initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 }, transition: { duration: 0.8, delay: 0.4 }, children: "Discover innovative, intelligent, and diversified micro SAAS services designed to transform your business operations and drive growth" }), _jsxs(motion.div, { className: "flex flex-wrap justify-center gap-4 text-zion-cyan", initial: { opacity: 0 }, animate: { opacity: 1 }, transition: { duration: 0.8, delay: 0.6 }, children: [_jsxs("div", { className: "flex items-center gap-2", children: [_jsx(Brain, { className: "w-6 h-6" }), _jsx("span", { children: "AI-Powered" })] }), _jsxs("div", { className: "flex items-center gap-2", children: [_jsx(Zap, { className: "w-6 h-6" }), _jsx("span", { children: "Lightning Fast" })] }), _jsxs("div", { className: "flex items-center gap-2", children: [_jsx(Shield, { className: "w-6 h-6" }), _jsx("span", { children: "Enterprise Ready" })] })] })] }), _jsx(motion.div, { className: "relative z-10 max-w-6xl mx-auto px-4 mb-12", initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 }, transition: { duration: 0.8, delay: 0.8 }, children: _jsx(Card, { className: "bg-zion-blue-dark/50 backdrop-blur-lg border-zion-blue-light/30 p-6", children: _jsxs("div", { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4", children: [_jsxs("div", { className: "relative", children: [_jsx(Search, { className: "absolute left-3 top-1/2 transform -translate-y-1/2 text-zion-slate-light w-5 h-5" }), _jsx(Input, { type: "text", placeholder: "Search services...", value: searchTerm, onChange: (e) => setSearchTerm(e.target.value), className: "pl-10 bg-zion-slate-dark/50 border-zion-blue-light/30 text-white placeholder-zion-slate-light focus:border-zion-cyan" })] }), _jsxs(Select, { value: selectedCategory, onValueChange: setSelectedCategory, children: [_jsx("option", { value: "all", children: "All Categories" }), categories.filter(cat => cat !== 'all').map(category => (_jsx("option", { value: category, children: category }, category)))] }), _jsxs(Select, { value: sortBy, onValueChange: (value) => setSortBy(value), children: [_jsx("option", { value: "name", children: "Sort by Name" }), _jsx("option", { value: "price", children: "Sort by Price" }), _jsx("option", { value: "category", children: "Sort by Category" })] }), _jsxs("div", { children: [_jsxs("label", { className: "block text-sm text-zion-slate-light mb-2", children: ["Max Price: $", priceRange] }), _jsx("input", { type: "range", min: "0", max: "10000", step: "100", value: priceRange, onChange: (e) => setPriceRange(Number(e.target.value)), className: "w-full h-2 bg-zion-slate-dark rounded-lg appearance-none cursor-pointer slider" })] })] }) }) }), _jsxs(motion.div, { className: "relative z-10 max-w-7xl mx-auto px-4 pb-20", variants: containerVariants, initial: "hidden", animate: "visible", children: [_jsx("div", { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8", children: filteredServices.map((service) => {
+                            const CategoryIcon = categoryIcons[service.category] || Globe;
+                            const minPrice = Math.min(...service.pricing.map(p => p.price));
+                            const maxPrice = Math.max(...service.pricing.map(p => p.price));
+                            return (_jsx(motion.div, { variants: itemVariants, whileHover: { y: -10, scale: 1.02 }, className: "group", children: _jsxs(Card, { className: "bg-zion-blue-dark/30 backdrop-blur-lg border-zion-blue-light/20 hover:border-zion-cyan/50 transition-all duration-300 h-full overflow-hidden", children: [_jsxs("div", { className: "p-6 border-b border-zion-blue-light/20", children: [_jsxs("div", { className: "flex items-start justify-between mb-4", children: [_jsxs("div", { className: "flex items-center gap-3", children: [_jsx("div", { className: "p-2 bg-gradient-to-br from-zion-cyan to-zion-purple rounded-lg", children: _jsx(CategoryIcon, { className: "w-6 h-6 text-white" }) }), _jsx(Badge, { variant: "outline", className: "border-zion-cyan/50 text-zion-cyan", children: service.category })] }), service.status === 'coming-soon' && (_jsx(Badge, { variant: "secondary", className: "bg-zion-purple/20 text-zion-purple border-zion-purple/30", children: "Coming Soon" }))] }), _jsx("h3", { className: "text-xl font-bold text-white mb-3 group-hover:text-zion-cyan transition-colors", children: service.title }), _jsx("p", { className: "text-zion-slate-light text-sm leading-relaxed mb-4", children: service.description }), _jsxs("div", { className: "bg-zion-slate-dark/30 rounded-lg p-4 mb-4", children: [_jsxs("div", { className: "flex items-center justify-between mb-2", children: [_jsx("span", { className: "text-zion-slate-light text-sm", children: "Starting from" }), _jsxs("span", { className: "text-zion-cyan font-bold", children: ["$", minPrice, minPrice !== maxPrice && ` - $${maxPrice}`] })] }), _jsxs("div", { className: "text-xs text-zion-slate-light", children: [service.pricing.length, " pricing plans available"] })] })] }), _jsxs("div", { className: "p-6", children: [_jsxs("h4", { className: "text-white font-semibold mb-3 flex items-center gap-2", children: [_jsx(Zap, { className: "w-4 h-4 text-zion-cyan" }), "Key Features"] }), _jsxs("div", { className: "grid grid-cols-1 gap-2 mb-4", children: [service.features.slice(0, 4).map((feature, index) => (_jsxs("div", { className: "flex items-center gap-2 text-sm text-zion-slate-light", children: [_jsx("div", { className: "w-1.5 h-1.5 bg-zion-cyan rounded-full" }), feature] }, index))), service.features.length > 4 && (_jsxs("div", { className: "text-xs text-zion-cyan", children: ["+", service.features.length - 4, " more features"] }))] }), _jsxs("div", { className: "mb-4", children: [_jsxs("h4", { className: "text-white font-semibold mb-2 flex items-center gap-2", children: [_jsx(TrendingUp, { className: "w-4 h-4 text-zion-cyan" }), "Benefits"] }), _jsxs("div", { className: "text-sm text-zion-slate-light", children: [service.benefits[0], " \u2022 ", service.benefits[1]] })] }), _jsx("div", { className: "flex flex-wrap gap-2 mb-6", children: service.tags.slice(0, 3).map((tag, index) => (_jsx(Badge, { variant: "outline", className: "text-xs border-zion-slate-light/30 text-zion-slate-light hover:border-zion-cyan/50 hover:text-zion-cyan transition-colors", children: tag }, index))) }), _jsxs("div", { className: "flex gap-3", children: [_jsx(FuturisticNeonButton, { onClick: () => window.location.href = `mailto:${service.contactInfo.email}?subject=Inquiry about ${service.title}`, className: "flex-1", children: "Get Quote" }), _jsx(Button, { variant: "outline", size: "sm", onClick: () => window.location.href = `tel:${service.contactInfo.phone}`, className: "border-zion-blue-light/30 text-zion-cyan hover:bg-zion-cyan/10 hover:border-zion-cyan", children: "Call Now" })] })] })] }) }, service.id));
+                        }) }), filteredServices.length === 0 && (_jsxs(motion.div, { className: "text-center py-20", initial: { opacity: 0 }, animate: { opacity: 1 }, children: [_jsx("div", { className: "text-zion-slate-light text-lg mb-4", children: "No services found matching your criteria" }), _jsx(Button, { onClick: () => {
+                                    setSearchTerm('');
+                                    setSelectedCategory('all');
+                                    setPriceRange(10000);
+                                }, className: "bg-zion-cyan hover:bg-zion-cyan-light text-white", children: "Clear Filters" })] }))] }), _jsx(motion.div, { className: "relative z-10 max-w-4xl mx-auto px-4 pb-20", initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 }, transition: { duration: 0.8, delay: 1.2 }, children: _jsxs(Card, { className: "bg-gradient-to-r from-zion-blue-dark/50 to-zion-purple-dark/50 backdrop-blur-lg border-zion-cyan/30 p-8 text-center", children: [_jsx("h2", { className: "text-3xl font-bold text-white mb-4", children: "Ready to Transform Your Business?" }), _jsx("p", { className: "text-zion-slate-light text-lg mb-6 max-w-2xl mx-auto", children: "Our team of experts is ready to help you implement the perfect solution for your business needs. Get in touch today for a personalized consultation." }), _jsxs("div", { className: "flex flex-col sm:flex-row gap-4 justify-center", children: [_jsx(FuturisticNeonButton, { onClick: () => window.location.href = 'mailto:kleber@ziontechgroup.com?subject=Business Consultation Request', size: "lg", children: "Schedule Consultation" }), _jsx(Button, { variant: "outline", size: "lg", onClick: () => window.location.href = 'tel:+13024640950', className: "border-zion-cyan/50 text-zion-cyan hover:bg-zion-cyan/10 hover:border-zion-cyan", children: "Call +1 (302) 464-0950" })] }), _jsxs("div", { className: "mt-6 text-zion-slate-light", children: [_jsx("p", { children: "\uD83D\uDCCD 364 E Main St STE 1008, Middletown DE 19709" }), _jsx("p", { children: "\uD83D\uDCE7 kleber@ziontechgroup.com" })] })] }) })] }));
+};
+export default MicroSaasServices;
