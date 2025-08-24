@@ -21,6 +21,10 @@ import {
   DeveloperRoutes
 } from './routes';
 const Home = React.lazy(() => import('./pages/Home'));
+const About = React.lazy(() => import('./pages/About'));
+const Careers = React.lazy(() => import('./pages/Careers'));
+const GreenIT = React.lazy(() => import('./pages/GreenIT'));
+const Sitemap = React.lazy(() => import('./pages/Sitemap'));
 const AIMatcherPage = React.lazy(() => import('./pages/AIMatcher'));
 const TalentDirectory = React.lazy(() => import('./pages/TalentDirectory'));
 const TalentsPage = React.lazy(() => import('./pages/TalentsPage'));
@@ -44,6 +48,10 @@ const RequestQuotePage = React.lazy(() => import('./pages/RequestQuote'));
 
 const baseRoutes = [
   { path: '/', element: <Home /> },
+  { path: '/about', element: <About /> },
+  { path: '/careers', element: <Careers /> },
+  { path: '/green-it', element: <GreenIT /> },
+  { path: '/sitemap', element: <Sitemap /> },
   { path: '/match', element: <AIMatcherPage /> },
   { path: '/login', element: <Login /> },
   { path: '/signup', element: <Signup /> },
