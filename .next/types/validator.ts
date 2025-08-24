@@ -28,6 +28,18 @@ type PagesPageConfig = {
 
 
 
+// Validate ../../pages/about.tsx
+{
+  const handler = {} as typeof import("../../pages/about.js")
+  handler satisfies PagesPageConfig
+}
+
+// Validate ../../pages/contact.tsx
+{
+  const handler = {} as typeof import("../../pages/contact.js")
+  handler satisfies PagesPageConfig
+}
+
 // Validate ../../pages/index.tsx
 {
   const handler = {} as typeof import("../../pages/index.js")

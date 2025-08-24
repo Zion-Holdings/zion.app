@@ -25,18 +25,19 @@
     "loader": "default",
     "loaderFile": "",
     "domains": [
-      "localhost"
+      "ziontechgroup.com"
     ],
     "disableStaticImages": false,
-    "minimumCacheTTL": 60,
+    "minimumCacheTTL": 2592000,
     "formats": [
-      "image/webp"
+      "image/webp",
+      "image/avif"
     ],
     "dangerouslyAllowSVG": false,
     "contentSecurityPolicy": "script-src 'none'; frame-src 'none'; sandbox;",
     "contentDispositionType": "attachment",
     "remotePatterns": [],
-    "unoptimized": true,
+    "unoptimized": false,
     "sizes": [
       640,
       750,
