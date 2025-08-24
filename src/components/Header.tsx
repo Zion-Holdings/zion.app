@@ -1,4 +1,4 @@
 
-import { Header as HeaderComponent } from './header/Header';
+import { EnhancedHeader } from './header/EnhancedHeader';
 
-export { HeaderComponent as Header };
+export { EnhancedHeader as Header };
