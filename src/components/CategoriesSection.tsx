@@ -1,56 +1,73 @@
 
 import { GradientHeading } from "./GradientHeading";
 import { Link } from "react-router-dom";
-import { Briefcase, HardDrive, Lightbulb, Users, Brain, Monitor, Zap, Settings, Zap as ZapIcon } from "lucide-react";
+import { Briefcase, HardDrive, Lightbulb, Users, Brain, Code, Shield, BarChart3, Link as LinkIcon, UserCheck } from "lucide-react";
+import Workflow from "lucide-react/dist/esm/icons/workflow";
 
 const categories = [
   {
-    title: "Micro SAAS Services",
-    description: "AI-powered tools, business automation, and innovative solutions",
-    icon: <ZapIcon className="w-10 h-10" />,
-    link: "/micro-saas-services",
-    color: "from-zion-cyan to-zion-blue",
-    featured: true
-  },
-  {
-    title: "AI & IT Services",
-    description: "Professional IT consulting, development, and AI integration",
+    title: "AI Services",
+    description: "AI-powered solutions for content generation, chatbots, analytics, and automation",
     icon: <Brain className="w-10 h-10" />,
-    link: "/services",
-    color: "from-zion-purple to-zion-purple-dark",
-    featured: true
+    link: "/micro-saas-services?category=AI",
+    color: "from-purple-500 to-pink-600",
+    count: "12 Services"
   },
   {
-    title: "Talent Network",
-    description: "Connect with AI experts, developers, and tech specialists",
-    icon: <Users className="w-10 h-10" />,
-    link: "/talent",
-    color: "from-zion-cyan to-zion-blue",
-    featured: false
-  },
-  {
-    title: "Equipment & Hardware",
-    description: "Rent or buy specialized hardware, servers, and devices",
+    title: "IT Solutions",
+    description: "Cloud migration, cybersecurity, infrastructure management, and optimization",
     icon: <HardDrive className="w-10 h-10" />,
-    link: "/equipment",
-    color: "from-amber-500 to-orange-600",
-    featured: false
+    link: "/micro-saas-services?category=IT",
+    color: "from-blue-500 to-cyan-600",
+    count: "8 Services"
   },
   {
-    title: "Innovation Hub",
-    description: "Discover cutting-edge solutions and tech breakthroughs",
-    icon: <Lightbulb className="w-10 h-10" />,
-    link: "/category/innovation",
-    color: "from-emerald-500 to-green-600",
-    featured: false
+    title: "Development",
+    description: "API development, mobile apps, custom software, and technical consulting",
+    icon: <Code className="w-10 h-10" />,
+    link: "/micro-saas-services?category=Development",
+    color: "from-green-500 to-emerald-600",
+    count: "15 Services"
   },
   {
-    title: "AI Hiring Platform",
-    description: "AI-powered recruitment and talent acquisition tools",
-    icon: <ZapIcon className="w-10 h-10" />,
-    link: "/zion-hire-ai",
-    color: "from-zion-purple to-zion-purple-dark",
-    featured: true
+    title: "Analytics & BI",
+    description: "Business intelligence, data analytics, reporting, and predictive insights",
+    icon: <BarChart3 className="w-10 h-10" />,
+    link: "/micro-saas-services?category=Analytics",
+    color: "from-orange-500 to-red-600",
+    count: "6 Services"
+  },
+  {
+    title: "Security",
+    description: "Cybersecurity monitoring, threat detection, compliance, and protection",
+    icon: <Shield className="w-10 h-10" />,
+    link: "/micro-saas-services?category=Security",
+    color: "from-red-500 to-pink-600",
+    count: "9 Services"
+  },
+  {
+    title: "Automation",
+    description: "Workflow automation, business process optimization, and AI decision making",
+    icon: <Workflow className="w-10 h-10" />,
+    link: "/micro-saas-services?category=Automation",
+    color: "from-indigo-500 to-purple-600",
+    count: "11 Services"
+  },
+  {
+    title: "Integration",
+    description: "Enterprise integration, API management, data synchronization, and connectors",
+    icon: <LinkIcon className="w-10 h-10" />,
+    link: "/micro-saas-services?category=Integration",
+    color: "from-teal-500 to-blue-600",
+    count: "7 Services"
+  },
+  {
+    title: "Consulting",
+    description: "Digital transformation, technology strategy, and change management",
+    icon: <UserCheck className="w-10 h-10" />,
+    link: "/micro-saas-services?category=Consulting",
+    color: "from-yellow-500 to-orange-600",
+    count: "5 Services"
   }
 ];
 
@@ -58,17 +75,17 @@ const specialServices = [
   {
     title: "IT Onsite Services",
     link: "/it-onsite-services",
-    description: "Global IT support and maintenance"
+    description: "Global IT support and consulting"
   },
   {
-    title: "Cloud Solutions",
-    link: "/services",
-    description: "Scalable cloud infrastructure"
-  },
-  {
-    title: "Cybersecurity",
+    title: "Micro SAAS Solutions",
     link: "/micro-saas-services",
-    description: "Advanced threat protection"
+    description: "Complete suite of business solutions"
+  },
+  {
+    title: "AI Development",
+    link: "/zion-hire-ai",
+    description: "Custom AI solutions and platforms"
   }
 ];
 
@@ -77,101 +94,89 @@ interface CategoriesSectionProps {
 }
 
 export function CategoriesSection({ showTitle = true }: CategoriesSectionProps) {
-  const featuredCategories = categories.filter(cat => cat.featured);
-  const regularCategories = categories.filter(cat => !cat.featured);
-
   return (
-    <section className="py-20 bg-zion-blue">
-      <div className="container mx-auto px-4">
+    <section className="py-20 bg-gradient-to-br from-zion-blue via-zion-blue-dark to-zion-slate-dark relative overflow-hidden">
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-10 left-10 w-32 h-32 bg-zion-purple/10 rounded-full filter blur-xl animate-pulse"></div>
+        <div className="absolute top-1/4 right-20 w-24 h-24 bg-zion-cyan/10 rounded-full filter blur-xl animate-pulse delay-1000"></div>
+        <div className="absolute bottom-20 left-1/3 w-28 h-28 bg-zion-purple-light/10 rounded-full filter blur-xl animate-pulse delay-2000"></div>
+      </div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         {showTitle && (
           <div className="text-center mb-16">
-            <GradientHeading>Explore Our Ecosystem</GradientHeading>
+            <GradientHeading>Explore Our Services</GradientHeading>
             <p className="text-zion-slate-light text-lg mt-4 max-w-3xl mx-auto">
-              Discover our comprehensive ecosystem of tech services, talent, equipment, and innovation solutions
+              Discover our comprehensive ecosystem of micro SAAS services, IT solutions, and innovative technology platforms
             </p>
+            <div className="mt-6">
+              <span className="inline-block bg-zion-purple/20 text-zion-cyan px-4 py-2 rounded-full text-sm border border-zion-purple/30">
+                ✨ {categories.length} Service Categories • 73+ Solutions Available
+              </span>
+            </div>
           </div>
         )}
         
-        {/* Featured Categories */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-bold text-white text-center mb-8">Featured Services</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {featuredCategories.map((category) => (
-              <Link 
-                key={category.title} 
-                to={category.link} 
-                className="group block"
-              >
-                <div className="rounded-xl overflow-hidden h-full border-2 border-zion-blue-light bg-zion-blue-dark p-8 transition-all duration-300 hover:border-zion-purple/50 hover:translate-y-[-8px] hover:shadow-2xl hover:shadow-zion-purple/20">
-                  <div className={`rounded-2xl w-20 h-20 bg-gradient-to-br ${category.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
-                    <div className="text-white">
-                      {category.icon}
-                    </div>
-                  </div>
-                  <h3 className="text-white text-2xl font-bold mb-3">{category.title}</h3>
-                  <p className="text-zion-slate-light text-lg leading-relaxed">{category.description}</p>
-                  <div className="mt-6 flex items-center text-zion-cyan group-hover:text-zion-purple-light transition-colors">
-                    <span className="font-semibold">Learn More</span>
-                    <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-
-        {/* Regular Categories */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          {regularCategories.map((category) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          {categories.map((category) => (
             <Link 
               key={category.title} 
               to={category.link} 
               className="group block"
             >
-              <div className="rounded-lg overflow-hidden h-full border border-zion-blue-light bg-zion-blue-dark p-6 transition-all duration-300 hover:border-zion-purple/50 hover:translate-y-[-5px] hover:shadow-xl hover:shadow-zion-purple/20">
-                <div className={`rounded-full w-16 h-16 bg-gradient-to-br ${category.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+              <div className="rounded-xl overflow-hidden h-full border border-zion-blue-light bg-zion-blue-dark/80 p-6 transition-all duration-500 hover:border-zion-purple/50 hover:translate-y-[-8px] hover:shadow-2xl hover:shadow-zion-purple/20 backdrop-blur-sm">
+                <div className={`rounded-full w-16 h-16 bg-gradient-to-br ${category.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500`}>
                   <div className="text-white">
                     {category.icon}
                   </div>
                 </div>
-                <h3 className="text-white text-xl font-bold mb-2">{category.title}</h3>
-                <p className="text-zion-slate-light">{category.description}</p>
+                <h3 className="text-white text-xl font-bold mb-2 group-hover:text-zion-cyan transition-colors duration-300">
+                  {category.title}
+                </h3>
+                <p className="text-zion-slate-light mb-3 text-sm leading-relaxed">
+                  {category.description}
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-zion-cyan text-xs font-medium">
+                    {category.count}
+                  </span>
+                  <div className="w-6 h-6 bg-zion-purple/20 rounded-full flex items-center justify-center group-hover:bg-zion-purple/40 transition-colors duration-300">
+                    <div className="w-2 h-2 bg-zion-cyan rounded-full group-hover:scale-150 transition-transform duration-300"></div>
+                  </div>
+                </div>
               </div>
             </Link>
           ))}
         </div>
         
-        {/* Special Services */}
         <div className="mb-8">
-          <h3 className="text-center text-xl font-bold text-white mb-6">Specialized Solutions</h3>
+          <h3 className="text-center text-2xl font-bold text-white mb-8">Featured Service Categories</h3>
           <div className="flex flex-wrap justify-center gap-4">
             {specialServices.map((service) => (
               <Link 
                 key={service.title}
                 to={service.link}
-                className="group px-6 py-4 bg-zion-blue-light hover:bg-zion-blue-dark border border-zion-purple/20 hover:border-zion-purple/50 rounded-xl text-zion-cyan transition-all duration-300 hover:shadow-lg hover:shadow-zion-purple/20"
+                className="group px-6 py-4 bg-zion-blue-light/20 hover:bg-zion-blue-light/30 border border-zion-purple/20 hover:border-zion-purple/50 rounded-full text-zion-cyan transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-zion-purple/20"
               >
                 <div className="text-center">
-                  <div className="font-semibold text-lg mb-1">{service.title}</div>
-                  <div className="text-sm text-zion-slate-light opacity-80">{service.description}</div>
+                  <div className="font-semibold mb-1">{service.title}</div>
+                  <div className="text-xs text-zion-slate-light opacity-80">{service.description}</div>
                 </div>
               </Link>
             ))}
           </div>
         </div>
         
-        {/* CTA */}
-        <div className="mt-12 flex justify-center">
+        <div className="text-center">
           <Link 
             to="/micro-saas-services" 
-            className="inline-flex items-center gap-2 text-zion-cyan border-b-2 border-zion-cyan hover:border-zion-cyan-dark transition-colors text-lg font-semibold pb-1"
+            className="inline-flex items-center text-zion-cyan border-b border-zion-cyan hover:border-zion-cyan-dark transition-colors group"
           >
-            Explore All Services
-            <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
+            View All Services
+            <div className="ml-2 w-5 h-5 bg-zion-cyan/20 rounded-full flex items-center justify-center group-hover:bg-zion-cyan/40 transition-colors duration-300">
+              <div className="w-2 h-2 bg-zion-cyan rounded-full group-hover:scale-150 transition-transform duration-300"></div>
+            </div>
           </Link>
         </div>
       </div>
