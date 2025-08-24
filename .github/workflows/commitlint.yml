@@ -2,10 +2,10 @@ name: Commitlint
 
 on:
   pull_request:
-    types: [opened, synchronize, reopened, edited]
+  push:
 
 jobs:
-  lint:
+  commitlint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -13,9 +13,4 @@ jobs:
           fetch-depth: 0
       - uses: wagoid/commitlint-github-action@v6
         with:
-          node-version: '20'
-          cache: npm
-      - name: Install dependencies
-        run: npm ci --no-audit --no-fund
-      - name: Run workflow
-        run: echo "Workflow completed successfully"
+          configFile: commitlint.config.cjs
