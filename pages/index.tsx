@@ -1,6 +1,8 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
+import Navigation from '../components/Navigation';
+import Footer from '../components/Footer';
 
 const Home: NextPage = () => {
   const featuredServices = [
@@ -85,8 +87,10 @@ const Home: NextPage = () => {
         <meta name="keywords" content="technology solutions, AI services, cloud migration, web development, mobile apps, cybersecurity, micro SAAS, digital transformation" />
       </Head>
       
+      <Navigation />
+      
       {/* Hero Section */}
-      <main className="container mx-auto px-4 py-16">
+      <main className="container mx-auto px-4 py-16 pt-32">
         <div className="text-center text-white mb-20">
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
             Welcome to Zion Tech Group
@@ -194,6 +198,8 @@ const Home: NextPage = () => {
           </div>
         </section>
       </main>
+      
+      <Footer />
     </div>
   );
 };

@@ -252,18 +252,18 @@ const Products: NextPage = () => {
 
                   {/* Action Buttons */}
                   <div className="flex gap-3">
-                    <a
+                    <Link
                       href="/contact"
                       className="flex-1 bg-blue-600 hover:bg-blue-700 text-white text-center py-3 px-4 rounded-lg font-medium transition-colors duration-200"
                     >
                       Get Started
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                       href="/contact"
                       className="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-700 text-center py-3 px-4 rounded-lg font-medium transition-colors duration-200"
                     >
                       Request Demo
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -288,12 +288,12 @@ const Products: NextPage = () => {
                   <span className="text-2xl font-bold text-gray-900">{product.price}</span>
                   <span className="text-gray-500">/month</span>
                 </div>
-                <a
+                <Link
                   href="/contact"
                   className="w-full bg-blue-600 hover:bg-blue-700 text-white text-center py-2 px-4 rounded-lg font-medium transition-colors duration-200"
                 >
                   Learn More
-                </a>
+                </Link>
               </div>
             ))}
           </div>
@@ -368,12 +368,12 @@ const Products: NextPage = () => {
               Choose the perfect product for your business needs and start transforming your operations today.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
+              <Link
                 href="/contact"
                 className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-300"
               >
                 Get Started Today
-              </a>
+              </Link>
               <a
                 href="tel:+13024640950"
                 className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-300"

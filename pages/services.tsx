@@ -1,5 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import Link from 'next/link';
 import { useState, useMemo } from 'react';
 import { enhancedRealMicroSaasServices, serviceCategories, getServicesByCategory, getServicesByTechnology, getServicesByPriceRange } from '../data/enhanced-real-micro-saas-services';
 
@@ -74,10 +75,10 @@ const Services: NextPage = () => {
           <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
             Revolutionary Micro SAAS Services
           </h1>
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-8">
-            Discover our cutting-edge portfolio of innovative technology solutions designed to transform your business. 
-            From AI-powered analytics to quantum computing platforms, we're building the future today.
-          </p>
+                      <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-8">
+              Discover our cutting-edge portfolio of innovative technology solutions designed to transform your business. 
+              From AI-powered analytics to quantum computing platforms, we&apos;re building the future today.
+            </p>
           <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-500">
             <span>🚀 8+ Revolutionary Services</span>
             <span>⚡ 99.9% Uptime Guarantee</span>
@@ -256,12 +257,12 @@ const Services: NextPage = () => {
                   >
                     Learn More
                   </a>
-                  <a
+                  <Link
                     href="/contact"
                     className="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-700 text-center py-2 px-4 rounded-lg font-medium transition-colors duration-200"
                   >
                     Get Quote
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -274,7 +275,7 @@ const Services: NextPage = () => {
             <div className="text-6xl mb-4">🔍</div>
             <h3 className="text-xl font-semibold text-gray-900 mb-2">No services found</h3>
             <p className="text-gray-600 mb-6">
-              Try adjusting your filters or search terms to find what you're looking for.
+              Try adjusting your filters or search terms to find what you&apos;re looking for.
             </p>
             <button
               onClick={() => {
@@ -300,12 +301,12 @@ const Services: NextPage = () => {
               Our team of experts is ready to help you implement the perfect solution for your business needs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
+              <Link
                 href="/contact"
                 className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-300"
               >
                 Get Started Today
-              </a>
+              </Link>
               <a
                 href="tel:+13024640950"
                 className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-300"
