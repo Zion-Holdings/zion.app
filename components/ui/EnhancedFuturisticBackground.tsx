@@ -289,7 +289,16 @@ const EnhancedFuturisticBackground: React.FC<EnhancedFuturisticBackgroundProps> 
         ctx.restore();
       }
 
-      animationRef.current = requestAnimationFrame(animate);
+      // Respect reduced motion
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (prefersReduced) {
+        // Slow down updates
+        setTimeout(() => {
+          animationRef.current = requestAnimationFrame(animate);
+        }, 100);
+      } else {
+        animationRef.current = requestAnimationFrame(animate);
+      }
     };
 
     animate();
