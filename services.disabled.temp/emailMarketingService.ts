@@ -235,10 +235,13 @@ class EmailMarketingService {
       const growthRate = 0.05; // 5% daily growth
       const subscribers = Math.floor(baseSubscribers * Math.pow(1 + growthRate, 30 - i));
       
-      data.push({
-        date: date.toISOString().split('T')[0],
-        subscribers
-      });
+      const dateStr = date.toISOString().split('T')[0];
+      if (dateStr) {
+        data.push({
+          date: dateStr,
+          subscribers
+        });
+      }
     }
     
     return data;

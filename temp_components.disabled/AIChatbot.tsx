@@ -80,11 +80,13 @@ const AIChatbot: React.FC<AIChatbotProps> = ({ className = "" }) => {
       timestamp: new Date()
     };
 
-    setMessages(prev => [...prev, userMessage]);
+    setMessages([...messages, userMessage]);
     setInputValue('');
     
     // Generate AI response
     const aiResponse = await generateAIResponse(userMessage.content);
+    
+    if (!aiResponse) return; // Early return if no response
     
     const botMessage: ChatMessage = {
       id: (Date.now() + 1).toString(),
@@ -93,7 +95,7 @@ const AIChatbot: React.FC<AIChatbotProps> = ({ className = "" }) => {
       timestamp: new Date()
     };
 
-    setMessages(prev => [...prev, botMessage]);
+    setMessages([...messages, userMessage, botMessage]);
     setIsTyping(false);
   };
 

@@ -440,7 +440,7 @@ class DatabasePerformanceMonitorService {
     
     for (const query of slowQueries.slice(0, 5)) {
       const whereMatch = query.query.match(/where\s+(\w+)\s*=/i);
-      if (whereMatch) {
+      if (whereMatch && whereMatch[1]) {
         const column = whereMatch[1];
         const table = this.extractTableName(query.query);
         
@@ -566,10 +566,13 @@ class DatabasePerformanceMonitorService {
     
     for (let i = 0; i < days; i++) {
       const date = new Date(startDate.getTime() + i * 24 * 60 * 60 * 1000);
-      data.push({
-        date: date.toISOString().split('T')[0],
-        avgTime: Math.floor(Math.random() * 200) + 50
-      });
+      const dateStr = date.toISOString().split('T')[0];
+      if (dateStr) {
+        data.push({
+          date: dateStr,
+          avgTime: Math.floor(Math.random() * 200) + 50
+        });
+      }
     }
     
     return data;
@@ -581,10 +584,13 @@ class DatabasePerformanceMonitorService {
     
     for (let i = 0; i < days; i++) {
       const date = new Date(startDate.getTime() + i * 24 * 60 * 60 * 1000);
-      data.push({
-        date: date.toISOString().split('T')[0],
-        count: Math.floor(Math.random() * 1000) + 100
-      });
+      const dateStr = date.toISOString().split('T')[0];
+      if (dateStr) {
+        data.push({
+          date: dateStr,
+          count: Math.floor(Math.random() * 1000) + 100
+        });
+      }
     }
     
     return data;

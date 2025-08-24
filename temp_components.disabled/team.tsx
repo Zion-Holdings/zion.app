@@ -10,6 +10,7 @@ import EnhancedNavigation from '../components/EnhancedNavigation';
 import EnhancedFooter from '../components/EnhancedFooter';
 
 export default function TeamPage() {
+<<<<<<< HEAD
   const teamMembers = [
     {
       name: 'Kleber Oliveira',
@@ -324,5 +325,15 @@ export default function TeamPage() {
 
       <EnhancedFooter />
     </div>
+  );
+=======
+  return
+
+export default function TeamPage() {
+  return (
+    <OrgChartPage />;
+>>>>>>> a8f0f845e290c358af6875dc27c33d0b4e7e2446
+}
+
   );
 }

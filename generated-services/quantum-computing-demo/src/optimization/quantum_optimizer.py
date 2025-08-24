@@ -1,1 +1,0 @@
-# Quantum optimizer implementation

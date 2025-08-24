@@ -1,1 +1,0 @@
-# Wallet manager implementation

@@ -20,38 +20,6 @@ export { aiMarketResearchService } from './aiMarketResearchService';
 export { aiDataAnalyticsService } from './aiDataAnalyticsService';
 export { aiCybersecurityService } from './aiCybersecurityService';
 
-// Advanced futuristic micro SAAS services
-export { advancedFuturisticMicroSaasServices } from '../data/2025-advanced-futuristic-micro-saas-expansion';
-
-// Advanced IT infrastructure services
-export { advancedITInfrastructureServices } from '../data/2025-advanced-it-infrastructure-services';
-
-// Advanced AI automation services
-export { advancedAIAutomationServices } from '../data/2025-advanced-ai-automation-services';
-
-// Advanced AI & IT Services
-export { aiCybersecurityService } from './aiCybersecurityService';
-export { aiDevOpsService } from './aiDevOpsService';
-export { aiDataEngineeringService } from './aiDataEngineeringService';
-export { aiFintechService } from './aiFintechService';
-export { aiHealthcareService } from './aiHealthcareService';
-
-// New AI-powered services
-export { aiCybersecurityService } from './aiCybersecurityService';
-export { aiDevOpsAutomationService } from './aiDevOpsAutomationService';
-export { aiFinancialAnalyticsService } from './aiFinancialAnalyticsService';
-export { aiHealthcareAnalyticsService } from './aiHealthcareAnalyticsService';
-
-// Export 2025 innovative micro SAAS expansion services
-export { innovative2025MicroSaasExpansionV3 } from '../data/2025-innovative-micro-saas-expansion-v3';
-
-// Export new 2025 services
-export { advancedAIMLServices } from '../data/2025-advanced-ai-ml-services';
-export { advancedCybersecurityServices } from '../data/2025-advanced-cybersecurity-services';
-export { advancedCloudDevOpsServices2025 } from '../data/2025-advanced-cloud-devops-services';
-export { industrySpecificSolutions } from '../data/2025-industry-specific-solutions';
-export { emergingTechnologyServices } from '../data/2025-emerging-technology-services';
-
 // Export types
 export type {
   ContentTemplate,
@@ -118,7 +86,7 @@ export type {
   LegalDocument,
   ContractTemplate,
   LegalReview,
-  ComplianceCheck as LegalComplianceCheck,
+  ComplianceCheck,
   DocumentGenerationRequest
 } from './aiLegalService';
 
@@ -132,13 +100,12 @@ export type {
 } from './aiSalesService';
 
 export type {
-  Candidate,
-  JobPosting,
   Employee,
+  JobPosting,
+  Candidate,
   PerformanceReview,
   TrainingRecord,
-  Document,
-  RecruitmentMetrics
+  Document
 } from './aiHrService';
 
 export type {
@@ -187,12 +154,7 @@ export type {
   APIResponse,
   APIHeader,
   APISchema,
-  APIExample,
-  ExampleRequest,
-  ExampleResponse,
-  RateLimit,
-  AuthenticationRequirement,
-  DocumentationConfig
+  APIExample
 } from './apiDocGeneratorService';
 
 export type {
@@ -211,7 +173,8 @@ export type {
 export type {
   MarketTrend,
   CompetitorAnalysis as MarketCompetitorAnalysis,
-  MarketInsight,
+  MarketSegment,
+  MarketReport,
   MarketResearchRequest,
   MarketResearchResponse
 } from './aiMarketResearchService';
@@ -227,95 +190,8 @@ export type {
 } from './aiDataAnalyticsService';
 
 export type {
-  SmartContract,
-  NFT,
-  NFTMetadata,
-  NFTAttribute,
-  DeFiPool,
-  BlockchainTransaction,
-  TransactionResult,
-  BlockchainStats,
-  WalletAnalytics,
-  NetworkStatus
-} from './blockchainService';
-
-export type {
-  PipelineConfig,
-  PipelineStage,
-  PipelineTrigger,
-  PerformanceThresholds,
-  InfrastructureConfig,
-  DeploymentMetrics,
-  CodeQualityReport,
-  SecurityScanResult,
-  Vulnerability,
-  ComplianceCheck,
-  MonitoringAlert
-} from './aiDevOpsService';
-
-export type {
-  DataPipeline,
-  DataSource,
-  DataDestination,
-  DataTransformation,
-  PipelineSchedule,
-  PipelineMetrics,
-  DataQualityMetrics,
-  DataQualityIssue,
-  CostMetrics,
-  ConnectionConfig,
-  DataSchema,
-  SchemaField,
-  SchemaIndex,
-  SchemaConstraint,
-  PartitioningStrategy,
-  ValidationRule,
-  DataCatalog,
-  Dataset,
-  DataLineage,
-  DatasetUsage,
-  QueryStats
-} from './aiDataEngineeringService';
-
-export type {
-  FinancialInstrument,
-  Portfolio,
-  PortfolioPosition,
-  RiskMetrics,
-  PerformancePoint,
-  RebalancingSchedule,
-  TradingSignal,
-  MarketAnalysis,
-  TechnicalIndicator,
-  FundamentalFactor,
-  AIInsight,
-  RiskAssessment,
-  RiskFactor as FintechRiskFactor,
-  StressTestResult,
-  ComplianceReport,
-  ComplianceViolation
-} from './aiFintechService';
-
-export type {
-  Patient,
-  MedicalRecord,
-  Medication,
-  VitalSigns,
-  RiskFactor,
-  InsuranceInfo,
-  EmergencyContact,
-  Diagnosis,
-  AIAnalysis,
-  DifferentialDiagnosis,
-  TreatmentPlan,
-  FollowUpSchedule,
-  FollowUpAppointment,
-  HealthAnalytics,
-  RiskAssessment as HealthRiskAssessment,
-  TrendAnalysis,
-  VitalSignsTrend,
-  MedicationTrend,
-  SymptomTrend,
-  HealthTrend,
-  PredictiveInsight
-} from './aiHealthcareService';
+  SecurityThreat,
+  SecurityIncident,
+  SecurityMetrics,
+  AIThreatIntelligence
+} from './aiCybersecurityService';

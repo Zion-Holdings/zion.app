@@ -256,7 +256,10 @@ class PasswordGeneratorService {
     const selected: string[] = [];
     for (let i = 0; i < count; i++) {
       const randomIndex = Math.floor(Math.random() * wordList.length);
-      selected.push(wordList[randomIndex]);
+      const word = wordList[randomIndex];
+      if (word) {
+        selected.push(word);
+      }
     }
     
     return selected;

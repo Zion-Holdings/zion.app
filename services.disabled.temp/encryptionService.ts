@@ -73,7 +73,7 @@ class EncryptionService {
 
     try {
       // Convert data to buffer if it's a string
-      const dataBuffer = Buffer.isBuffer(data) ? data : Buffer.from(data, 'utf8');
+      const dataBuffer = (Buffer as any).isBuffer(data) ? data : (Buffer as any).from(data, 'utf8');
       
       // Generate initialization vector
       const iv = this.generateIV(algorithm);
@@ -295,8 +295,8 @@ class EncryptionService {
     
     // Ensure the key is the right size
     const keyBytes = keySize / 8;
-    const keyBuffer = Buffer.alloc(keyBytes);
-    const hashBuffer = Buffer.from(hash, 'hex');
+          const keyBuffer = (Buffer as any).alloc(keyBytes);
+      const hashBuffer = (Buffer as any).from(hash, 'hex');
     
     for (let i = 0; i < keyBytes; i++) {
       keyBuffer[i] = hashBuffer[i % hashBuffer.length];
@@ -316,10 +316,15 @@ class EncryptionService {
   ): Promise<Buffer> {
     // In production, use proper cryptographic libraries
     // This is a simplified XOR-based encryption for demonstration
-    const encrypted = Buffer.alloc(data.length);
+          const encrypted = (Buffer as any).alloc(data.length);
     
     for (let i = 0; i < data.length; i++) {
-      encrypted[i] = data[i] ^ key[i % key.length] ^ iv[i % iv.length];
+      const dataByte = data[i];
+      const keyByte = key[i % key.length];
+      const ivByte = iv[i % iv.length];
+      if (dataByte !== undefined && keyByte !== undefined && ivByte !== undefined) {
+        encrypted[i] = dataByte ^ keyByte ^ ivByte;
+      }
     }
     
     return encrypted;
@@ -343,7 +348,7 @@ class EncryptionService {
    */
   private generateRandomBytes(size: number): Buffer {
     // In production, use crypto.randomBytes() or similar
-    const buffer = Buffer.alloc(size);
+          const buffer = (Buffer as any).alloc(size);
     for (let i = 0; i < size; i++) {
       buffer[i] = Math.floor(Math.random() * 256);
     }
@@ -369,7 +374,10 @@ class EncryptionService {
   private generateChecksum(data: Buffer): string {
     let checksum = 0;
     for (let i = 0; i < data.length; i++) {
-      checksum = (checksum + data[i]) & 0xFFFFFFFF;
+      const byte = data[i];
+      if (byte !== undefined) {
+        checksum = (checksum + byte) & 0xFFFFFFFF;
+      }
     }
     return checksum.toString(16).padStart(8, '0');
   }
@@ -414,13 +422,13 @@ class EncryptionService {
   private decode(data: string, encoding: string): Buffer {
     switch (encoding) {
       case 'base64':
-        return Buffer.from(data, 'base64');
+        return (Buffer as any).from(data, 'base64');
       case 'hex':
-        return Buffer.from(data, 'hex');
+        return (Buffer as any).from(data, 'hex');
       case 'utf8':
-        return Buffer.from(data, 'utf8');
+        return (Buffer as any).from(data, 'utf8');
       default:
-        return Buffer.from(data, 'base64');
+        return (Buffer as any).from(data, 'base64');
     }
   }
 

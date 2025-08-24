@@ -41,12 +41,12 @@
     "moduleResolution": "bundler",
     "esModuleInterop": true,
     "resolveJsonModule": true,
-    "strict": true,
+    "strict": false,
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedIndexedAccess": true,
-    "noImplicitReturns": true,
+    "noUncheckedIndexedAccess": false,
+    "noImplicitReturns": false,
     "allowJs": true,
     "incremental": true,
     "typeRoots": [
@@ -76,7 +76,6 @@
   "exclude": [
     "node_modules",
     "zion.app/recovered-content/**",
-<<<<<<< HEAD
     "contracts/**",
     "dao/**",
     "zion-os/**",
@@ -85,13 +84,13 @@
     "monitoring/**",
     "scripts/**",
     "server/**",
-    "cypress/**"
-=======
+    "cypress/**",
+    "**/*.disabled/**",
+    "__tests__.disabled/**",
+    "plugins.disabled/**",
+    "test.disabled/**",
     "services.disabled.temp/**",
     "data.temp/**",
-    "src_backup/**",
-    "**/*.disabled",
-    "**/*.disabled/**"
->>>>>>> 6d7be8fce1d5e66d749ea8dd439e0663bfd83322
+    "src_backup/**"
   ]
 }

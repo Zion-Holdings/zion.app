@@ -563,16 +563,18 @@ class CustomerSupportService {
       date.setDate(date.getDate() - i);
       const dateStr = date.toISOString().split('T')[0];
       
-      const dayTickets = tickets.filter(t => 
-        t.createdAt.toISOString().split('T')[0] === dateStr
-      );
-      
-      const opened = dayTickets.length;
-      const resolved = dayTickets.filter(t => 
-        t.resolvedAt && t.resolvedAt.toISOString().split('T')[0] === dateStr
-      ).length;
-      
-      trends.push({ date: dateStr, opened, resolved });
+      if (dateStr) {
+        const dayTickets = tickets.filter(t => 
+          t.createdAt.toISOString().split('T')[0] === dateStr
+        );
+        
+        const opened = dayTickets.length;
+        const resolved = dayTickets.filter(t => 
+          t.resolvedAt && t.resolvedAt.toISOString().split('T')[0] === dateStr
+        ).length;
+        
+        trends.push({ date: dateStr, opened, resolved });
+      }
     }
     
     return trends;

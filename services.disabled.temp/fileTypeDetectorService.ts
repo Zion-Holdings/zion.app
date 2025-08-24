@@ -57,7 +57,7 @@ class FileTypeDetectorService {
       
       if (file instanceof File) {
         buffer = new Uint8Array(await file.arrayBuffer());
-      } else if (Buffer.isBuffer(file)) {
+      } else if ((Buffer as any).isBuffer(file)) {
         buffer = new Uint8Array(file);
       } else {
         buffer = file;
@@ -95,7 +95,7 @@ class FileTypeDetectorService {
   async analyzeFile(file: File | Buffer | Uint8Array): Promise<FileAnalysisResult> {
     const fileType = await this.detectFileType(file);
     const buffer = file instanceof File ? new Uint8Array(await file.arrayBuffer()) : 
-                   Buffer.isBuffer(file) ? new Uint8Array(file) : file;
+                   (Buffer as any).isBuffer(file) ? new Uint8Array(file) : file;
 
     const result: FileAnalysisResult = {
       fileType,
@@ -158,7 +158,7 @@ class FileTypeDetectorService {
 
     // Check file size
     const buffer = file instanceof File ? new Uint8Array(await file.arrayBuffer()) : 
-                   Buffer.isBuffer(file) ? new Uint8Array(file) : file;
+                   (Buffer as any).isBuffer(file) ? new Uint8Array(file) : file;
     
     if (buffer.length > 100 * 1024 * 1024) { // 100MB
       warnings.push('File size is very large (>100MB)');
@@ -410,9 +410,11 @@ class FileTypeDetectorService {
     for (const [magic, mimeTypes] of this.magicNumbers.entries()) {
       if (hex.startsWith(magic)) {
         const mimeType = mimeTypes[0];
-        const fileType = this.mimeTypes.get(mimeType);
-        if (fileType) {
-          return { ...fileType, confidence: 0.95 };
+        if (mimeType) {
+          const fileType = this.mimeTypes.get(mimeType);
+          if (fileType) {
+            return { ...fileType, confidence: 0.95 };
+          }
         }
       }
     }

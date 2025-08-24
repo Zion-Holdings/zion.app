@@ -1,143 +1,183 @@
-import React, { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import SearchModal from './SearchModal';
+import CookieConsent from './CookieConsent';
+import BackToTop from './BackToTop';
+import ProgressBar from './ProgressBar';
 
-const Navigation: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
+const Navigation = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const router = useRouter();
 
-  const navigation = [
-    { name: 'Home', href: '/', current: router.pathname === '/' },
-    { name: 'Dashboard', href: '/dashboard', current: router.pathname === '/dashboard' },
-    { name: 'Services', href: '/services', current: router.pathname === '/services' },
-    { name: 'Status', href: '/status', current: router.pathname === '/status' },
-    { name: 'Automation', href: '/automation', current: router.pathname.startsWith('/automation') },
-    { name: 'Reports', href: '/reports', current: router.pathname.startsWith('/reports') },
-    { name: 'About', href: '/about', current: router.pathname === '/about' },
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        setIsSearchOpen(true);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('keydown', handleKeyDown);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
+
+  const navigationItems = [
+    { name: 'Home', href: '/', icon: '🏠' },
+    { name: 'About', href: '/about', icon: 'ℹ️' },
+    { name: 'Services', href: '/services', icon: '🚀' },
+    { name: 'Products', href: '/products', icon: '💎' },
+    { name: 'Case Studies', href: '/case-studies', icon: '📊' },
+    { name: 'Testimonials', href: '/testimonials', icon: '⭐' },
+    { name: 'Blog', href: '/blog', icon: '📝' },
+    { name: 'Careers', href: '/careers', icon: '💼' },
+    { name: 'Contact', href: '/contact', icon: '📞' }
   ];
 
-  const isCurrentPage = (href: string) => {
-    if (href === '/') {
-      return router.pathname === '/';
-    }
-    return router.pathname.startsWith(href);
-  };
+  const isActive = (href: string) => router.pathname === href;
 
   return (
-    <nav className="bg-white shadow-lg">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
-          <div className="flex">
-            <div className="flex-shrink-0 flex items-center">
-              <Link href="/" className="text-xl font-bold text-blue-600">
-                bolt.new.zion.app
-              </Link>
+    <>
+      {/* Progress Bar */}
+      <ProgressBar />
+      
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
+      }`}>
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-between h-16 md:h-20">
+          {/* Logo */}
+          <Link href="/" className="flex items-center space-x-3 group">
+            <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center text-white text-xl font-bold group-hover:scale-110 transition-transform duration-200">
+              Z
             </div>
-            <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
-              {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className={`inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium ${
-                    isCurrentPage(item.href)
-                      ? 'border-blue-500 text-gray-900'
-                      : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'
-                  }`}
-                >
-                  {item.name}
-                </Link>
-              ))}
+            <div className="hidden md:block">
+              <div className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors duration-200">
+                Zion Tech Group
+              </div>
+              <div className="text-xs text-gray-500">Innovation & Technology</div>
             </div>
-          </div>
-          
-          <div className="hidden sm:ml-6 sm:flex sm:items-center">
-            <div className="flex space-x-4">
+          </Link>
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-8">
+            {navigationItems.map((item) => (
               <Link
-                href="/automation/service-factory-dashboard.html"
-                className="text-gray-500 hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium"
+                key={item.name}
+                href={item.href}
+                className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-all duration-200 ${
+                  isActive(item.href)
+                    ? 'bg-blue-600 text-white shadow-lg'
+                    : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
+                }`}
               >
-                Factory Dashboard
+                <span className="text-sm">{item.icon}</span>
+                <span className="font-medium">{item.name}</span>
               </Link>
-              <Link
-                href="/services"
-                className="bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700"
-              >
-                View Services
-              </Link>
-            </div>
+            ))}
           </div>
 
-          <div className="-mr-2 flex items-center sm:hidden">
+          {/* Search and CTA Buttons */}
+          <div className="hidden md:flex items-center space-x-4">
             <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
+              onClick={() => setIsSearchOpen(true)}
+              className="flex items-center space-x-2 px-4 py-2 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200"
             >
-              <span className="sr-only">Open main menu</span>
-              {!isOpen ? (
-                <svg className="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-              ) : (
-                <svg className="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              )}
+              <span>🔍</span>
+              <span className="text-sm">Search</span>
+              <kbd className="px-2 py-1 bg-gray-100 border border-gray-300 rounded text-xs">⌘K</kbd>
             </button>
+            <Link
+              href="/contact"
+              className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-200 shadow-lg"
+            >
+              Get Started
+            </Link>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="md:hidden p-2 rounded-lg text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-colors duration-200"
+          >
+            <div className="w-6 h-6 flex flex-col justify-center items-center">
+              <span className={`block w-5 h-0.5 bg-current transition-all duration-300 ${
+                isMenuOpen ? 'rotate-45 translate-y-1' : '-translate-y-1'
+              }`}></span>
+              <span className={`block w-5 h-0.5 bg-current transition-all duration-300 ${
+                isMenuOpen ? 'opacity-0' : 'opacity-100'
+              }`}></span>
+              <span className={`block w-5 h-0.5 bg-current transition-all duration-300 ${
+                isMenuOpen ? '-rotate-45 -translate-y-1' : 'translate-y-1'
+              }`}></span>
+            </div>
+          </button>
+        </div>
+
+        {/* Mobile Menu */}
+        <div className={`md:hidden transition-all duration-300 overflow-hidden ${
+          isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+        }`}>
+          <div className="py-4 space-y-2">
+            {navigationItems.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                onClick={() => setIsMenuOpen(false)}
+                className={`flex items-center space-x-3 px-4 py-3 rounded-lg transition-all duration-200 ${
+                  isActive(item.href)
+                    ? 'bg-blue-600 text-white'
+                    : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
+                }`}
+              >
+                <span className="text-lg">{item.icon}</span>
+                <span className="font-medium">{item.name}</span>
+              </Link>
+            ))}
+            <div className="pt-4 space-y-3">
+              <button
+                onClick={() => {
+                  setIsSearchOpen(true);
+                  setIsMenuOpen(false);
+                }}
+                className="block w-full flex items-center justify-center space-x-2 px-6 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200"
+              >
+                <span>🔍</span>
+                <span>Search</span>
+              </button>
+              <Link
+                href="/contact"
+                onClick={() => setIsMenuOpen(false)}
+                className="block w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-lg font-semibold text-center hover:from-blue-700 hover:to-purple-700 transition-all duration-200"
+              >
+                Get Started
+              </Link>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Mobile menu */}
-      {isOpen && (
-        <div className="sm:hidden">
-          <div className="pt-2 pb-3 space-y-1">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className={`block pl-3 pr-4 py-2 border-l-4 text-base font-medium ${
-                  isCurrentPage(item.href)
-                    ? 'bg-blue-50 border-blue-500 text-blue-700'
-                    : 'border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700'
-                }`}
-                onClick={() => setIsOpen(false)}
-              >
-                {item.name}
-              </Link>
-            ))}
-          </div>
-          <div className="pt-4 pb-3 border-t border-gray-200">
-            <div className="flex items-center px-4">
-              <div className="flex-shrink-0">
-                <div className="h-10 w-10 rounded-full bg-blue-600 flex items-center justify-center">
-                  <span className="text-white font-medium text-sm">AI</span>
-                </div>
-              </div>
-              <div className="ml-3">
-                <div className="text-base font-medium text-gray-800">AI Service Factory</div>
-                <div className="text-sm font-medium text-gray-500">Automated Service Creation</div>
-              </div>
-            </div>
-            <div className="mt-3 space-y-1">
-              <Link
-                href="/automation/service-factory-dashboard.html"
-                className="block px-4 py-2 text-base font-medium text-gray-500 hover:text-gray-800 hover:bg-gray-100"
-                onClick={() => setIsOpen(false)}
-              >
-                Factory Dashboard
-              </Link>
-              <Link
-                href="/services"
-                className="block px-4 py-2 text-base font-medium text-gray-500 hover:text-gray-800 hover:bg-gray-100"
-                onClick={() => setIsOpen(false)}
-              >
-                View Services
-              </Link>
-            </div>
-          </div>
-        </div>
-      )}
+      {/* Search Modal */}
+      <SearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
+      
+      {/* Cookie Consent Banner */}
+      <CookieConsent />
+      
+      {/* Back to Top Button */}
+      <BackToTop />
     </nav>
+    </>
   );
 };
 

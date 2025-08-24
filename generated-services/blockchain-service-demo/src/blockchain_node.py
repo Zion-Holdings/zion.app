@@ -1,1 +1,0 @@
-# Blockchain node implementation

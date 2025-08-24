@@ -78,7 +78,7 @@ class EmailValidationService {
     try {
       // Extract domain
       const domainMatch = email.match(/@([^@]+)$/);
-      if (domainMatch) {
+      if (domainMatch && domainMatch[1]) {
         result.domain = domainMatch[1].toLowerCase();
       }
 
@@ -113,10 +113,12 @@ class EmailValidationService {
 
         // Check for role-based accounts
         const localPart = email.split('@')[0];
-        const isRole = this.roleAccounts.has(localPart.toLowerCase());
-        result.details.role = isRole;
-        if (isRole) {
-          result.warnings.push('Email appears to be a role-based account');
+        if (localPart) {
+          const isRole = this.roleAccounts.has(localPart.toLowerCase());
+          result.details.role = isRole;
+          if (isRole) {
+            result.warnings.push('Email appears to be a role-based account');
+          }
         }
 
         // MX record check (simplified - in production, you'd use DNS lookup)

@@ -1,2 +1,0 @@
-# Run npm security audit every hour
-0 * * * * cd /path/to/zion.app && ./scripts/hourly-npm-audit.sh
