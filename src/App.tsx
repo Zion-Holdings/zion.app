@@ -1,24 +1,6 @@
 import React from 'react';
 import { Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
-<<<<<<< HEAD
-import { Header } from './components/Header';
-import { EnhancedFooter } from './components/EnhancedFooter';
-import './App.css';
-
-// Lazy load pages
-const Home = React.lazy(() => import('./pages/Home'));
-const AllServicesPage = React.lazy(() => import('./pages/AllServicesPage'));
-const ContactPage = React.lazy(() => import('./pages/ContactPage'));
-const AboutPage = React.lazy(() => import('./pages/AboutPage'));
-
-// Loading component
-const LoadingSpinner = () => (
-  <div className="flex items-center justify-center min-h-screen">
-    <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-zion-cyan"></div>
-  </div>
-);
-=======
 
 import { ThemeProvider } from "./components/ThemeProvider";
 import { useScrollToTop } from "./hooks";
@@ -92,30 +74,9 @@ const baseRoutes = [
   { path: '/blog', element: <Blog /> },
   { path: '/blog/:slug', element: <BlogPost /> },
 ];
->>>>>>> 181cfac2212680d9635253bde265173d9d08eca1
 
 function App() {
   return (
-<<<<<<< HEAD
-    <div className="App">
-      <Header />
-      <main className="pt-20">
-        <Suspense fallback={<LoadingSpinner />}>
-          <Routes>
-            {/* Base Routes */}
-            <Route path="/" element={<Home />} />
-            <Route path="/all-services" element={<AllServicesPage />} />
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="/about" element={<AboutPage />} />
-            
-            {/* Catch all route */}
-            <Route path="*" element={<Home />} />
-          </Routes>
-        </Suspense>
-      </main>
-      <EnhancedFooter />
-    </div>
-=======
     <WhitelabelProvider>
       <ThemeProvider defaultTheme="dark">
         <Header />
@@ -144,14 +105,7 @@ function App() {
         <SonnerToaster position="top-right" />
       </ThemeProvider>
     </WhitelabelProvider>
->>>>>>> 181cfac2212680d9635253bde265173d9d08eca1
   );
 }
 
-<<<<<<< HEAD
 export default App;
-=======
-
-
-export default App;
->>>>>>> 181cfac2212680d9635253bde265173d9d08eca1
