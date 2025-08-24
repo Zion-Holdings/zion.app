@@ -1,11 +1,11 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 
 interface SEOProps {
-  title: string;
+  title?: string;
   description?: string;
   keywords?: string;
   ogImage?: string;
+<<<<<<< HEAD
   ogUrl?: string;
   canonical?: string;
   ogType?: string;
@@ -263,3 +263,40 @@ export function TalentPageSEO({
     />
   );
 }
+=======
+  canonical?: string;
+}
+
+export function SEO({ 
+  title = 'Zion Tech Group - AI, IT, and Micro SAAS Solutions',
+  description = 'Discover innovative micro SAAS solutions, cutting-edge AI services, and professional IT solutions designed to transform your business',
+  keywords = 'AI services, IT solutions, micro SAAS, business automation, cybersecurity, cloud computing',
+  ogImage = '/og-image.jpg',
+  canonical = 'https://ziontechgroup.com'
+}: SEOProps) {
+  return (
+    <>
+      <title>{title}</title>
+      <meta name="description" content={description} />
+      <meta name="keywords" content={keywords} />
+      <meta name="robots" content="index, follow" />
+      
+      {/* Open Graph */}
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
+      <meta property="og:image" content={ogImage} />
+      <meta property="og:url" content={canonical} />
+      <meta property="og:type" content="website" />
+      
+      {/* Twitter */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={ogImage} />
+      
+      {/* Canonical */}
+      <link rel="canonical" href={canonical} />
+    </>
+  );
+}
+>>>>>>> 181cfac2212680d9635253bde265173d9d08eca1

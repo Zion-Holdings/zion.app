@@ -5,7 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+<<<<<<< HEAD
     "build": "tsc && vite build",
+=======
+    "build": "vite build",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+>>>>>>> 181cfac2212680d9635253bde265173d9d08eca1
     "preview": "vite preview",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "type-check": "tsc --noEmit",
@@ -153,7 +158,7 @@
     "react-day-picker": "^8.10.0",
     "react-hook-form": "^7.50.1",
     "react-i18next": "^14.0.1",
-    "react-router-dom": "^6.22.0",
+    "react-router-dom": "^6.20.1",
     "recharts": "^2.12.0",
     "sonner": "^1.4.0",
     "vaul": "^0.9.0",

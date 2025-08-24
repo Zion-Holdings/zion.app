@@ -1,4 +1,5 @@
 import React from 'react';
+<<<<<<< HEAD
 import { Mail, Phone, MapPin, Globe, Sparkles, Send, Clock, Users } from 'lucide-react';
 
 export default function ContactPage() {
@@ -269,3 +270,16 @@ export default function ContactPage() {
     </div>
   );
 }
+=======
+
+export default function EquipmentDetail() {
+  return (
+    <div className="min-h-screen bg-zion-blue-dark py-8 text-white">
+      <div className="container mx-auto px-4">
+        <h1 className="text-3xl font-bold mb-6">EquipmentDetail</h1>
+        <p>EquipmentDetail page content will go here.</p>
+      </div>
+    </div>
+  );
+}
+>>>>>>> 181cfac2212680d9635253bde265173d9d08eca1
