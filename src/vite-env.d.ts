@@ -1,8 +1,5 @@
 
-/// <reference types="vite/client" />
-/// <reference types="react" />
-/// <reference types="react-dom" />
-/// <reference types="react-router-dom" />
+
 
 interface ImportMetaEnv {
   readonly VITE_APP_TITLE: string;
@@ -57,7 +54,14 @@ declare var process: {
 declare module '@/components/ui/badge' {
   export interface BadgeProps {
     className?: string;
-    variant?: "default" | "secondary" | "destructive" | "outline";
+    variant?:
+      | "default"
+      | "secondary"
+      | "destructive"
+      | "outline"
+      | "success"
+      | "warning"
+      | "info";
     children?: React.ReactNode;
     key?: string | number;
   }
@@ -111,8 +115,9 @@ declare module '@/components/ProductListingCard' {
   export interface ProductListingCardProps {
     listing: any;
     view?: any;  // Made optional to fix the errors
-    onRequestQuote: (listingId: string) => void;
+    onRequestQuote?: (listingId: string) => void;
     key?: string | number;
+    detailBasePath?: string;
   }
 
   export const ProductListingCard: React.FC<ProductListingCardProps>;

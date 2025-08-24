@@ -1,0 +1,38 @@
+[
+  {
+    "id": "1b8e6f0a-9f23-4b5c-9fd0-aaa100000001",
+    "title": "How to Hire AI Talent: A Practical Guide",
+    "slug": "how-to-hire-ai-talent",
+    "coverImageUrl": "/images/blog/ai-hiring-cover.jpg",
+    "author": "Zion Team",
+    "publishDate": "2025-08-01T09:00:00.000Z",
+    "tags": ["hiring", "ai", "talent"],
+    "topics": ["AI", "Recruiting"],
+    "seo": {
+      "metaTitle": "How to Hire AI Talent",
+      "metaDescription": "Step-by-step guide to sourcing, interviewing, and onboarding AI engineers and data scientists.",
+      "ogImageUrl": "/images/blog/ai-hiring-cover.jpg"
+    },
+    "body": "# Hiring AI Talent\n\nFinding great AI professionals requires a clear role definition, practical assessments, and a fast, candidate-friendly process.\n\n## Define the role\nOutline responsibilities, required skills, and business outcomes.\n\n## Assess practically\nUse small take-home tasks aligned to real work.\n\n## Decide fast\nGreat candidates move quickly—optimize your process.",
+    "status": "published",
+    "metrics": { "views": 0, "likes": 0, "shares": 0 }
+  },
+  {
+    "id": "1b8e6f0a-9f23-4b5c-9fd0-aaa100000002",
+    "title": "DevOps for AI: MLOps Foundations",
+    "slug": "mlops-foundations-devops-for-ai",
+    "coverImageUrl": "/images/blog/mlops-cover.jpg",
+    "author": "Zion Team",
+    "publishDate": "2025-08-05T12:00:00.000Z",
+    "tags": ["mlops", "devops"],
+    "topics": ["DevOps", "AI"],
+    "seo": {
+      "metaTitle": "MLOps Foundations",
+      "metaDescription": "Core practices for reliable AI delivery: data, training, deployment, and monitoring.",
+      "ogImageUrl": "/images/blog/mlops-cover.jpg"
+    },
+    "body": "# MLOps Foundations\n\nShip AI reliably with versioned data, automated training, model registry, and online monitoring.",
+    "status": "published",
+    "metrics": { "views": 0, "likes": 0, "shares": 0 }
+  }
+]
