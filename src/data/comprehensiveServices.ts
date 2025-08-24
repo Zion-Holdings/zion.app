@@ -1,581 +1,497 @@
-export interface ComprehensiveService {
+export interface Service {
   id: string;
   title: string;
   description: string;
   category: string;
   subcategory: string;
   price: number;
-  currency: string;
-  pricingModel: string;
+  priceType: 'one-time' | 'monthly' | 'yearly' | 'per-user';
   features: string[];
   benefits: string[];
   useCases: string[];
-  targetAudience: string[];
-  tags: string[];
-  estimatedDelivery: string;
-  supportLevel: string;
-  marketPrice: string;
-  contactInfo: {
-    phone: string;
-    email: string;
-    website: string;
-  };
+  technologies: string[];
+  deliveryTime: string;
+  support: string;
+  rating: number;
+  reviewCount: number;
+  featured: boolean;
 }
 
-export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
-  // AI & Machine Learning Services
+export const SERVICE_CATEGORIES = [
   {
-    id: "ai-powered-crm",
-    title: "AI-Powered Customer Relationship Management",
-    description: "Intelligent CRM system that uses machine learning to predict customer behavior, automate follow-ups, and optimize sales strategies.",
-    category: "AI & Machine Learning",
-    subcategory: "Business Applications",
-    price: 1500,
-    currency: "$",
-    pricingModel: "monthly",
-    features: [
-      "Predictive customer analytics",
-      "Automated lead scoring",
-      "Smart email campaigns",
-      "Sales forecasting",
-      "Customer sentiment analysis",
-      "Integration with existing tools"
-    ],
-    benefits: [
-      "Increase sales conversion by 35%",
-      "Reduce manual follow-up time by 60%",
-      "Improve customer retention",
-      "Data-driven decision making",
-      "Scalable automation"
-    ],
-    useCases: [
-      "Sales teams",
-      "Marketing departments",
-      "Customer service",
-      "E-commerce businesses",
-      "B2B companies"
-    ],
-    targetAudience: [
-      "Sales teams",
-      "Marketing teams",
-      "Customer service managers",
-      "Business owners",
-      "Sales managers"
-    ],
-    tags: ["AI", "CRM", "Sales Automation", "Customer Analytics", "Machine Learning"],
-    estimatedDelivery: "2-3 weeks",
-    supportLevel: "premium",
-    marketPrice: "$1,500 - $5,000/month",
-    contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
-    }
+    id: "ai-ml",
+    name: "AI & Machine Learning",
+    icon: "🤖",
+    count: 8
   },
   {
-    id: "quantum-computing-simulation",
-    title: "Quantum Computing Simulation Platform",
-    description: "Advanced quantum computing simulation and optimization platform for research institutions and enterprises exploring quantum algorithms.",
-    category: "AI & Machine Learning",
-    subcategory: "Quantum Computing",
-    price: 5000,
-    currency: "$",
-    pricingModel: "monthly",
-    features: [
-      "Quantum circuit simulator",
-      "Algorithm optimization tools",
-      "Performance benchmarking",
-      "Multi-qubit support",
-      "Cloud-based access",
-      "Real-time collaboration"
-    ],
-    benefits: [
-      "Accelerate quantum research",
-      "Reduce hardware costs",
-      "Faster algorithm development",
-      "Collaborative development",
-      "Scalable simulations",
-      "Future-proof technology"
-    ],
-    useCases: [
-      "Academic research",
-      "Pharmaceutical development",
-      "Financial modeling",
-      "Cryptography research",
-      "Material science",
-      "Climate modeling"
-    ],
-    targetAudience: [
-      "Research institutions",
-      "Universities",
-      "Pharmaceutical companies",
-      "Financial services",
-      "Government agencies",
-      "Technology companies"
-    ],
-    tags: ["Quantum Computing", "Simulation", "Research", "Algorithm Development", "Cloud Platform"],
-    estimatedDelivery: "2-4 weeks",
-    supportLevel: "standard",
-    marketPrice: "$5,000 - $15,000/month",
-    contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
-    }
+    id: "cybersecurity",
+    name: "Cybersecurity",
+    icon: "🔒",
+    count: 5
   },
   {
-    id: "ai-ethics-compliance",
-    title: "AI Ethics & Compliance Framework",
-    description: "Comprehensive framework for ensuring ethical AI deployment, regulatory compliance, and responsible AI development across organizations.",
-    category: "AI & Machine Learning",
-    subcategory: "Ethics & Compliance",
-    price: 8000,
-    currency: "$",
-    pricingModel: "monthly",
-    features: [
-      "Ethical AI guidelines",
-      "Compliance monitoring",
-      "Bias detection tools",
-      "Audit trails",
-      "Training modules",
-      "Risk assessment"
-    ],
-    benefits: [
-      "Ensure regulatory compliance",
-      "Build trust with stakeholders",
-      "Reduce legal risks",
-      "Improve AI transparency",
-      "Ethical decision making"
-    ],
-    useCases: [
-      "Financial institutions",
-      "Healthcare organizations",
-      "Government agencies",
-      "Technology companies",
-      "Autonomous vehicles"
-    ],
-    targetAudience: [
-      "AI ethics officers",
-      "Compliance managers",
-      "Legal teams",
-      "Data scientists",
-      "Executives"
-    ],
-    tags: ["AI Ethics", "Compliance", "Regulatory", "Risk Management", "Transparency"],
-    estimatedDelivery: "3-4 weeks",
-    supportLevel: "premium",
-    marketPrice: "$8,000 - $20,000/month",
-    contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
-    }
+    id: "cloud-devops",
+    name: "Cloud & DevOps",
+    icon: "☁️",
+    count: 6
   },
   {
-    id: "edge-ai-platform",
-    title: "Edge AI Computing Platform",
-    description: "Distributed AI computing platform that brings machine learning capabilities to edge devices, IoT sensors, and mobile applications.",
-    category: "AI & Machine Learning",
-    subcategory: "Edge Computing",
-    price: 12000,
-    currency: "$",
-    pricingModel: "monthly",
-    features: [
-      "Edge device optimization",
-      "Real-time inference",
-      "Offline AI capabilities",
-      "Device management",
-      "Model compression",
-      "Security protocols"
-    ],
-    benefits: [
-      "Reduce latency",
-      "Lower bandwidth costs",
-      "Enhanced privacy",
-      "Offline functionality",
-      "Scalable deployment"
-    ],
-    useCases: [
-      "Autonomous vehicles",
-      "Smart cities",
-      "Industrial IoT",
-      "Mobile applications",
-      "Healthcare devices"
-    ],
-    targetAudience: [
-      "IoT companies",
-      "Automotive manufacturers",
-      "Smart city planners",
-      "Healthcare providers",
-      "Manufacturing companies"
-    ],
-    tags: ["Edge AI", "IoT", "Real-time", "Mobile", "Distributed Computing"],
-    estimatedDelivery: "4-6 weeks",
-    supportLevel: "premium",
-    marketPrice: "$12,000 - $30,000/month",
-    contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
-    }
+    id: "web-development",
+    name: "Web Development",
+    icon: "🌐",
+    count: 4
   },
+  {
+    id: "data-analytics",
+    name: "Data Analytics",
+    icon: "📊",
+    count: 3
+  }
+];
 
-  // Cybersecurity Services
+export const COMPREHENSIVE_SERVICES = [
   {
-    id: "cyber-threat-intelligence",
-    title: "Cyber Threat Intelligence Platform",
-    description: "Real-time threat detection and response platform that provides comprehensive cybersecurity intelligence and automated incident response.",
-    category: "Cybersecurity",
-    subcategory: "Threat Intelligence",
-    price: 10000,
-    currency: "$",
-    pricingModel: "monthly",
+    id: "ai-chatbot-platform",
+    title: "AI Chatbot Platform",
+    description: "Custom AI-powered chatbot solution for customer service, sales, and support automation",
+    category: "ai-ml",
+    subcategory: "Chatbots",
+    price: 5000,
+    priceType: "one-time",
+    pricingModel: "one-time",
+    duration: "4-6 weeks",
+    teamSize: "3-4 people",
+    rating: 4.7,
+    reviewCount: 45,
+    featured: true,
+    freeTrial: true,
+    freeTrialDays: 14,
+    website: "https://ziontechgroup.com",
+    demoUrl: "https://demo.ziontechgroup.com",
+    tags: ["AI", "Chatbot", "Customer Service", "Automation"],
     features: [
-      "Real-time threat monitoring",
-      "Automated incident response",
-      "Threat hunting tools",
-      "Vulnerability assessment",
-      "Security analytics",
-      "Compliance reporting"
+      "Natural language processing",
+      "Multi-platform integration",
+      "Analytics dashboard",
+      "Custom training",
+      "API access"
     ],
     benefits: [
-      "Proactive threat detection",
-      "Reduced response time",
-      "Compliance adherence",
-      "Cost savings",
-      "Enhanced security posture"
+      "Reduce customer service costs by 30%",
+      "Improve response time to under 1 second",
+      "Handle multiple conversations simultaneously",
+      "Scalable customer support solution"
     ],
-    useCases: [
-      "Security operations centers",
-      "Financial institutions",
-      "Healthcare organizations",
-      "Government agencies",
-      "Enterprise networks"
-    ],
-    targetAudience: [
-      "CISOs",
-      "Security analysts",
-      "IT managers",
-      "Compliance officers",
-      "Security teams"
-    ],
-    tags: ["Cybersecurity", "Threat Intelligence", "Incident Response", "Compliance", "Security Analytics"],
-    estimatedDelivery: "3-5 weeks",
-    supportLevel: "premium",
-    marketPrice: "$10,000 - $25,000/month",
+    images: ["https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=800&h=500"],
+    estimatedDelivery: "4-6 weeks",
+    targetAudience: ["E-commerce", "Customer Support", "Sales Teams", "Service Businesses"],
     contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
+      phone: "+1-555-0123",
+      email: "ai-services@ziontechgroup.com"
     }
   },
   {
-    id: "zero-trust-security",
-    title: "Zero Trust Security Architecture",
-    description: "Comprehensive zero trust security implementation that verifies every user, device, and network request before granting access.",
-    category: "Cybersecurity",
-    subcategory: "Access Control",
-    price: 25000,
-    currency: "$",
-    pricingModel: "project",
+    id: "predictive-analytics-platform",
+    title: "Predictive Analytics Platform",
+    description: "Advanced data analytics platform with machine learning models for business forecasting and insights",
+    category: "ai-ml",
+    subcategory: "Analytics",
+    price: 8000,
+    priceType: "one-time",
+    pricingModel: "one-time",
+    duration: "6-8 weeks",
+    teamSize: "4-5 people",
+    rating: 4.8,
+    reviewCount: 32,
+    featured: true,
+    tags: ["Analytics", "Machine Learning", "Forecasting", "Business Intelligence"],
     features: [
-      "Identity verification",
-      "Device trust scoring",
-      "Network segmentation",
-      "Continuous monitoring",
-      "Policy enforcement",
-      "Audit logging"
+      "Real-time data processing",
+      "Custom ML model development",
+      "Interactive dashboards",
+      "API integration",
+      "Automated reporting"
     ],
     benefits: [
-      "Enhanced security",
-      "Reduced attack surface",
-      "Compliance achievement",
-      "Improved visibility",
-      "Scalable security"
+      "Improve decision-making accuracy by 40%",
+      "Identify market trends and opportunities",
+      "Optimize resource allocation",
+      "Reduce operational risks"
     ],
-    useCases: [
-      "Enterprise networks",
-      "Cloud environments",
-      "Critical infrastructure",
-      "Financial services",
-      "Healthcare systems"
-    ],
-    targetAudience: [
-      "Security architects",
-      "Network administrators",
-      "IT directors",
-      "Compliance managers",
-      "Security consultants"
-    ],
-    tags: ["Zero Trust", "Security Architecture", "Access Control", "Network Security", "Compliance"],
+    images: ["https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&h=500"],
     estimatedDelivery: "6-8 weeks",
-    supportLevel: "premium",
-    marketPrice: "$25,000 - $100,000/project",
+    targetAudience: ["Business Analysts", "Data Scientists", "Executives", "Operations Teams"],
     contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
+      phone: "+1-555-0124",
+      email: "analytics@ziontechgroup.com"
     }
   },
-
-  // Cloud & Infrastructure Services
   {
-    id: "multi-cloud-orchestration",
-    title: "Multi-Cloud Orchestration Platform",
-    description: "Unified platform for managing and orchestrating workloads across multiple cloud providers with automated optimization and cost management.",
-    category: "Cloud & Infrastructure",
-    subcategory: "Cloud Management",
-    price: 8000,
-    currency: "$",
-    pricingModel: "monthly",
-    features: [
-      "Multi-cloud management",
-      "Cost optimization",
-      "Workload migration",
-      "Performance monitoring",
-      "Security compliance",
-      "Automated scaling"
-    ],
-    benefits: [
-      "Cost reduction",
-      "Vendor flexibility",
-      "Improved performance",
-      "Risk mitigation",
-      "Operational efficiency"
-    ],
-    useCases: [
-      "Enterprise IT",
-      "DevOps teams",
-      "Cloud architects",
-      "IT managers",
-      "System administrators"
-    ],
-    targetAudience: [
-      "Cloud architects",
-      "DevOps engineers",
-      "IT managers",
-      "System administrators",
-      "Cloud consultants"
-    ],
-    tags: ["Multi-Cloud", "Orchestration", "Cost Management", "DevOps", "Automation"],
-    estimatedDelivery: "3-4 weeks",
-    supportLevel: "standard",
-    marketPrice: "$8,000 - $20,000/month",
-    contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
-    }
-  },
-
-  // Data & Analytics Services
-  {
-    id: "real-time-data-pipeline",
-    title: "Real-Time Data Pipeline Platform",
-    description: "High-performance data streaming platform that processes and analyzes data in real-time for instant insights and decision making.",
-    category: "Data & Analytics",
-    subcategory: "Real-Time Processing",
-    price: 15000,
-    currency: "$",
-    pricingModel: "monthly",
-    features: [
-      "Real-time data streaming",
-      "Stream processing",
-      "Data transformation",
-      "Real-time analytics",
-      "Scalable architecture",
-      "Monitoring dashboard"
-    ],
-    benefits: [
-      "Instant insights",
-      "Real-time decisions",
-      "Scalable processing",
-      "Cost optimization",
-      "Competitive advantage"
-    ],
-    useCases: [
-      "Financial trading",
-      "IoT monitoring",
-      "E-commerce analytics",
-      "Social media monitoring",
-      "Supply chain tracking"
-    ],
-    targetAudience: [
-      "Data engineers",
-      "Data scientists",
-      "Business analysts",
-      "IT managers",
-      "Product managers"
-    ],
-    tags: ["Real-Time", "Data Streaming", "Analytics", "Big Data", "Stream Processing"],
-    estimatedDelivery: "4-6 weeks",
-    supportLevel: "premium",
-    marketPrice: "$15,000 - $40,000/month",
-    contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
-    }
-  },
-
-  // Web & Mobile Development Services
-  {
-    id: "progressive-web-app",
-    title: "Progressive Web App Development",
-    description: "Modern progressive web applications that provide native app-like experience with offline functionality and cross-platform compatibility.",
-    category: "Web & Mobile Development",
-    subcategory: "Progressive Web Apps",
+    id: "computer-vision-solution",
+    title: "Computer Vision Solution",
+    description: "Custom computer vision applications for quality control, security, and automation using deep learning",
+    category: "ai-ml",
+    subcategory: "Computer Vision",
     price: 12000,
-    currency: "$",
-    pricingModel: "project",
+    priceType: "one-time",
+    pricingModel: "one-time",
+    duration: "8-10 weeks",
+    teamSize: "5-6 people",
+    rating: 4.9,
+    reviewCount: 28,
+    featured: true,
+    tags: ["Computer Vision", "Deep Learning", "Quality Control", "Automation"],
     features: [
-      "Offline functionality",
-      "Push notifications",
-      "App-like experience",
-      "Cross-platform",
-      "Fast loading",
-      "SEO optimized"
+      "Object detection and recognition",
+      "Image classification",
+      "Real-time video processing",
+      "Custom model training",
+      "API endpoints"
     ],
     benefits: [
-      "Lower development costs",
-      "Faster deployment",
-      "Better user experience",
-      "Improved performance",
-      "Easier maintenance"
+      "Automate quality control processes",
+      "Improve accuracy by 95%+",
+      "Reduce manual inspection costs",
+      "24/7 monitoring capability"
     ],
-    useCases: [
-      "E-commerce platforms",
-      "Business applications",
-      "Content platforms",
-      "Social media apps",
-      "Utility applications"
-    ],
-    targetAudience: [
-      "Business owners",
-      "Product managers",
-      "Marketing teams",
-      "Startups",
-      "Enterprises"
-    ],
-    tags: ["PWA", "Web Development", "Mobile", "Offline", "Cross-Platform"],
-    estimatedDelivery: "4-6 weeks",
-    supportLevel: "standard",
-    marketPrice: "$12,000 - $50,000/project",
+    images: ["https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=800&h=500"],
+    estimatedDelivery: "8-10 weeks",
+    targetAudience: ["Manufacturing", "Security", "Healthcare", "Retail"],
     contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
+      phone: "+1-555-0125",
+      email: "vision@ziontechgroup.com"
     }
   },
-
-  // IT Support & Consulting Services
   {
-    id: "managed-it-services",
-    title: "Managed IT Services & Support",
-    description: "Comprehensive managed IT services including 24/7 monitoring, proactive maintenance, and strategic technology consulting.",
-    category: "IT Support & Consulting",
-    subcategory: "Managed Services",
-    price: 5000,
-    currency: "$",
-    pricingModel: "monthly",
+    id: "cloud-migration-service",
+    title: "Cloud Migration Service",
+    description: "Complete cloud migration solution for AWS, Azure, or Google Cloud with minimal downtime",
+    category: "cloud-devops",
+    subcategory: "Migration",
+    price: 15000,
+    priceType: "one-time",
+    pricingModel: "one-time",
+    duration: "8-12 weeks",
+    teamSize: "6-8 people",
+    rating: 4.6,
+    reviewCount: 35,
+    featured: false,
+    tags: ["Cloud Migration", "AWS", "Azure", "DevOps", "Infrastructure"],
     features: [
-      "24/7 monitoring",
-      "Proactive maintenance",
-      "Help desk support",
-      "Security management",
-      "Backup & recovery",
-      "Strategic consulting"
+      "Infrastructure assessment",
+      "Migration planning",
+      "Data migration",
+      "Testing and validation",
+      "Post-migration support"
     ],
     benefits: [
-      "Reduced IT costs",
-      "Improved uptime",
-      "Expert support",
-      "Proactive maintenance",
-      "Strategic guidance"
+      "Reduce infrastructure costs by 25-40%",
+      "Improve scalability and flexibility",
+      "Enhanced security and compliance",
+      "Better disaster recovery"
     ],
-    useCases: [
-      "Small businesses",
-      "Medium enterprises",
-      "Healthcare organizations",
-      "Financial services",
-      "Educational institutions"
-    ],
-    targetAudience: [
-      "Business owners",
-      "IT managers",
-      "Operations directors",
-      "CFOs",
-      "CIOs"
-    ],
-    tags: ["Managed IT", "24/7 Support", "Proactive Maintenance", "Consulting", "Monitoring"],
-    estimatedDelivery: "1-2 weeks",
-    supportLevel: "premium",
-    marketPrice: "$5,000 - $15,000/month",
-    contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
-    }
-  },
-
-  // Blockchain & Web3 Services
-  {
-    id: "defi-platform",
-    title: "DeFi Platform Development",
-    description: "Decentralized finance platform development including smart contracts, yield farming, and liquidity management solutions.",
-    category: "Blockchain & Web3",
-    subcategory: "DeFi",
-    price: 30000,
-    currency: "$",
-    pricingModel: "project",
-    features: [
-      "Smart contract development",
-      "Yield farming protocols",
-      "Liquidity management",
-      "Security auditing",
-      "Frontend development",
-      "Mobile integration"
-    ],
-    benefits: [
-      "Innovation leadership",
-      "Revenue generation",
-      "Community building",
-      "Technology advancement",
-      "Market positioning"
-    ],
-    useCases: [
-      "Financial services",
-      "Cryptocurrency exchanges",
-      "Investment platforms",
-      "Lending protocols",
-      "Trading platforms"
-    ],
-    targetAudience: [
-      "Financial institutions",
-      "Crypto startups",
-      "Investment firms",
-      "Trading platforms",
-      "Fintech companies"
-    ],
-    tags: ["DeFi", "Blockchain", "Smart Contracts", "Cryptocurrency", "Web3"],
+    images: ["https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=800&h=500"],
     estimatedDelivery: "8-12 weeks",
-    supportLevel: "premium",
-    marketPrice: "$30,000 - $150,000/project",
+    targetAudience: ["IT Managers", "DevOps Engineers", "System Administrators", "CTOs"],
     contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
+      phone: "+1-555-0126",
+      email: "cloud@ziontechgroup.com"
+    }
+  },
+  {
+    id: "cybersecurity-audit",
+    title: "Cybersecurity Audit & Assessment",
+    description: "Comprehensive security assessment including penetration testing, vulnerability analysis, and compliance review",
+    category: "cybersecurity",
+    subcategory: "Assessment",
+    price: 7000,
+    priceType: "one-time",
+    pricingModel: "one-time",
+    duration: "3-4 weeks",
+    teamSize: "3-4 people",
+    rating: 4.8,
+    reviewCount: 28,
+    featured: true,
+    tags: ["Security", "Penetration Testing", "Compliance", "Vulnerability Assessment"],
+    features: [
+      "Security assessment",
+      "Penetration testing",
+      "Vulnerability scanning",
+      "Compliance review",
+      "Detailed report"
+    ],
+    benefits: [
+      "Identify security vulnerabilities",
+      "Meet compliance requirements",
+      "Protect against cyber threats",
+      "Improve security posture"
+    ],
+    images: ["https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=800&h=500"],
+    estimatedDelivery: "3-4 weeks",
+    targetAudience: ["Security Teams", "Compliance Officers", "IT Managers", "Risk Managers"],
+    contactInfo: {
+      phone: "+1-555-0127",
+      email: "security@ziontechgroup.com"
+    }
+  },
+  {
+    id: "data-warehouse-solution",
+    title: "Data Warehouse Solution",
+    description: "Enterprise data warehouse design and implementation with ETL processes and business intelligence tools",
+    category: "data-analytics",
+    subcategory: "Data Warehouse",
+    price: 25000,
+    priceType: "one-time",
+    pricingModel: "one-time",
+    duration: "12-16 weeks",
+    teamSize: "8-10 people",
+    rating: 4.7,
+    reviewCount: 38,
+    featured: false,
+    tags: ["Data Warehouse", "ETL", "Business Intelligence", "Big Data"],
+    features: [
+      "Data modeling",
+      "ETL pipeline development",
+      "Data governance",
+      "BI dashboard creation",
+      "Performance optimization"
+    ],
+    benefits: [
+      "Centralized data management",
+      "Improved data quality and consistency",
+      "Faster reporting and analytics",
+      "Better decision-making insights"
+    ],
+    images: ["https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&h=500"],
+    estimatedDelivery: "12-16 weeks",
+    targetAudience: ["Data Engineers", "Business Analysts", "Data Scientists", "IT Managers"],
+    contactInfo: {
+      phone: "+1-555-0128",
+      email: "data@ziontechgroup.com"
+    }
+  },
+  {
+    id: "web-application-development",
+    title: "Web Application Development",
+    description: "Custom web application development with modern frameworks and responsive design",
+    category: "web-development",
+    subcategory: "Web Apps",
+    price: 15000,
+    priceType: "one-time",
+    pricingModel: "one-time",
+    duration: "10-14 weeks",
+    teamSize: "5-7 people",
+    rating: 4.6,
+    reviewCount: 42,
+    featured: false,
+    tags: ["Web Development", "React", "Node.js", "Responsive Design"],
+    features: [
+      "Custom UI/UX design",
+      "Frontend development",
+      "Backend API development",
+      "Database design",
+      "Testing and deployment"
+    ],
+    benefits: [
+      "Custom solution for your business needs",
+      "Modern, responsive design",
+      "Scalable architecture",
+      "Ongoing support and maintenance"
+    ],
+    images: ["https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=800&h=500"],
+    estimatedDelivery: "10-14 weeks",
+    targetAudience: ["Startups", "Small Businesses", "Enterprises", "Digital Agencies"],
+    contactInfo: {
+      phone: "+1-555-0129",
+      email: "web@ziontechgroup.com"
+    }
+  },
+  {
+    id: "devops-automation",
+    title: "DevOps Automation Platform",
+    description: "Complete CI/CD pipeline automation with infrastructure as code and monitoring solutions",
+    category: "cloud-devops",
+    subcategory: "Automation",
+    price: 18000,
+    priceType: "one-time",
+    pricingModel: "one-time",
+    duration: "10-12 weeks",
+    teamSize: "6-8 people",
+    rating: 4.7,
+    reviewCount: 41,
+    featured: false,
+    tags: ["DevOps", "CI/CD", "Automation", "Infrastructure as Code"],
+    features: [
+      "CI/CD pipeline setup",
+      "Infrastructure automation",
+      "Monitoring and alerting",
+      "Security scanning",
+      "Performance optimization"
+    ],
+    benefits: [
+      "Reduce deployment time by 80%",
+      "Improve code quality and reliability",
+      "Faster time to market",
+      "Reduced human error"
+    ],
+    images: ["https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=800&h=500"],
+    estimatedDelivery: "10-12 weeks",
+    targetAudience: ["DevOps Engineers", "Software Teams", "System Administrators", "CTOs"],
+    contactInfo: {
+      phone: "+1-555-0130",
+      email: "devops@ziontechgroup.com"
+    }
+  },
+  {
+    id: "ai-content-optimization",
+    title: "AI Content Performance Optimizer",
+    description: "Intelligent content optimization platform that analyzes content performance and suggests improvements",
+    category: "ai-ml",
+    subcategory: "Content Optimization",
+    price: 6000,
+    priceType: "one-time",
+    pricingModel: "one-time",
+    duration: "5-7 weeks",
+    teamSize: "4-5 people",
+    rating: 4.5,
+    reviewCount: 23,
+    featured: false,
+    tags: ["Content Marketing", "AI", "Performance Analytics", "SEO Optimization"],
+    features: [
+      "Content analysis",
+      "Performance tracking",
+      "A/B testing",
+      "SEO optimization",
+      "Analytics dashboard"
+    ],
+    benefits: [
+      "Improve content performance",
+      "Increase engagement rates",
+      "Better SEO rankings",
+      "Data-driven content decisions"
+    ],
+    images: ["https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=800&h=500"],
+    estimatedDelivery: "5-7 weeks",
+    targetAudience: ["Marketing Teams", "Content Creators", "SEO Specialists", "Digital Agencies"],
+    contactInfo: {
+      phone: "+1-555-0131",
+      email: "content@ziontechgroup.com"
+    }
+  },
+  {
+    id: "network-security-solution",
+    title: "Network Security Solution",
+    description: "Comprehensive network security implementation including firewalls, intrusion detection, and monitoring",
+    category: "cybersecurity",
+    subcategory: "Network Security",
+    price: 20000,
+    priceType: "one-time",
+    pricingModel: "one-time",
+    duration: "12-16 weeks",
+    teamSize: "7-9 people",
+    rating: 4.8,
+    reviewCount: 52,
+    featured: false,
+    tags: ["Network Security", "Firewall", "Intrusion Detection", "Monitoring"],
+    features: [
+      "Network assessment",
+      "Security architecture design",
+      "Firewall implementation",
+      "Intrusion detection",
+      "24/7 monitoring"
+    ],
+    benefits: [
+      "Protect against network threats",
+      "Compliance with security standards",
+      "Real-time threat detection",
+      "Comprehensive security coverage"
+    ],
+    images: ["https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=800&h=500"],
+    estimatedDelivery: "12-16 weeks",
+    targetAudience: ["Network Administrators", "Security Engineers", "IT Managers", "CISOs"],
+    contactInfo: {
+      phone: "+1-555-0132",
+      email: "network@ziontechgroup.com"
     }
   }
 ];
 
-export const SERVICE_CATEGORIES = [
-  "AI & Machine Learning",
-  "Cybersecurity", 
-  "Cloud & Infrastructure",
-  "Data & Analytics",
-  "Digital Transformation",
-  "Web & Mobile Development",
-  "IT Support & Consulting",
-  "Blockchain & Web3"
+export const SERVICE_PRICING_TIERS = [
+  {
+    name: "Starter",
+    price: 5000,
+    features: [
+      "Basic implementation",
+      "Standard support",
+      "Documentation",
+      "Training session"
+    ]
+  },
+  {
+    name: "Professional",
+    price: 15000,
+    features: [
+      "Advanced features",
+      "Priority support",
+      "Custom integrations",
+      "Extended training",
+      "Performance optimization"
+    ]
+  },
+  {
+    name: "Enterprise",
+    price: 50000,
+    features: [
+      "Full customization",
+      "24/7 support",
+      "Dedicated team",
+      "Custom development",
+      "Ongoing maintenance"
+    ]
+  }
 ];
+
+export const SERVICE_ADDONS = [
+  {
+    service: "AI Chatbot Development",
+    addons: [
+      { name: "Multi-language Support", price: 2000 },
+      { name: "Advanced Analytics", price: 1500 },
+      { name: "Custom Integrations", price: 3000 }
+    ]
+  },
+  {
+    service: "Cloud Migration",
+    addons: [
+      { name: "Data Backup Solution", price: 5000 },
+      { name: "Performance Monitoring", price: 3000 },
+      { name: "Security Hardening", price: 4000 }
+    ]
+  },
+  {
+    service: "Cybersecurity Assessment",
+    addons: [
+      { name: "Social Engineering Testing", price: 3000 },
+      { name: "Compliance Certification", price: 5000 },
+      { name: "Security Training", price: 2000 }
+    ]
+  },
+  {
+    service: "Data Warehouse Solution",
+    addons: [
+      { name: "Advanced Analytics", price: 8000 },
+      { name: "Data Governance", price: 6000 },
+      { name: "Performance Tuning", price: 4000 }
+    ]
+  }
+];
+
+export const CONTACT_INFO = {
+  phone: "+1 302 464 0950",
+  email: "kleber@ziontechgroup.com",
+  address: "364 E Main St STE 1008 Middletown DE 19709",
+  website: "https://ziontechgroup.com",
+  businessHours: "Monday - Friday: 9:00 AM - 6:00 PM EST",
+  emergencySupport: "24/7 emergency support available for enterprise clients"
+};
