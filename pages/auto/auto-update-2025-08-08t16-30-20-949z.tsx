@@ -1,1 +1,1 @@
-export default function AutoUpdate_163020() { return <div>Auto update placeholder</div>; }
+export default function Page() { return <div className="p-6">Auto Update</div>; }

@@ -1,1 +1,1 @@
-export default function ChatDataAnalytics() { return <div>Placeholder</div>; }
+export default function Page() { return <div className="p-6">Data Analytics Implementation</div>; }

@@ -1,1 +1,1 @@
-export default function ChatTechImplementation() { return <div>Placeholder</div>; }
+export default function Page() { return <div className="p-6">Technology Implementation Strategies</div>; }
