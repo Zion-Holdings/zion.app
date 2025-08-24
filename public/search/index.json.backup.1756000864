@@ -1,5 +1,7 @@
 [
   {
+<<<<<<< HEAD
+=======
     "route": "/2025-advanced-services-showcase",
     "title": "",
     "h1": ""
@@ -65,6 +67,7 @@
     "h1": "Service not found"
   },
   {
+>>>>>>> origin/cursor/website-audit-and-enhancement-2f88
     "route": "/_app",
     "title": "",
     "h1": ""
@@ -77,6 +80,9 @@
   {
     "route": "/about",
     "title": "About Us - Zion Tech Group",
+<<<<<<< HEAD
+    "h1": "About Zion Tech Group"
+=======
     "h1": "We build practical AI and platform solutions"
   },
   {
@@ -273,6 +279,7 @@
     "route": "/comprehensive-2025-innovative-services-showcase",
     "title": "",
     "h1": "2025 Innovative Services"
+>>>>>>> origin/cursor/website-audit-and-enhancement-2f88
   },
   {
     "route": "/comprehensive-2025-services-showcase",
@@ -280,6 +287,8 @@
     "h1": "2025 Innovative Services Showcase"
   },
   {
+<<<<<<< HEAD
+=======
     "route": "/comprehensive-pricing",
     "title": "Comprehensive Pricing | Zion Tech Group - Micro SaaS Services Pricing & Plans",
     "h1": ""
@@ -410,11 +419,17 @@
     "h1": ""
   },
   {
+>>>>>>> origin/cursor/website-audit-and-enhancement-2f88
     "route": "/",
     "title": "Zion Tech Group — Leading-Edge Technology Solutions & Autonomous Innovation Platform",
     "h1": "Zion Tech Group"
   },
   {
+<<<<<<< HEAD
+    "route": "/portfolio",
+    "title": "Our Work - Zion Tech Group | Portfolio of Revolutionary Technology Solutions",
+    "h1": "Our Work"
+=======
     "route": "/innovative-services-showcase-2025",
     "title": "Innovative Services Showcase 2025 | Zion Tech Group",
     "h1": ""
@@ -538,6 +553,7 @@
     "route": "/portfolio",
     "title": "Portfolio - Zion Tech Group | Our Projects & Success Stories",
     "h1": "Our Portfolio"
+>>>>>>> origin/cursor/website-audit-and-enhancement-2f88
   },
   {
     "route": "/pricing-2025",
@@ -545,6 +561,61 @@
     "h1": "2025 Pricing & Services"
   },
   {
+<<<<<<< HEAD
+    "route": "/whitepapers",
+    "title": "Whitepapers - Zion Tech Group | Research & Insights",
+    "h1": "Whitepapers & Research"
+  },
+  {
+    "route": "/solutions/enterprise",
+    "title": "Enterprise Solutions - Zion Tech Group",
+    "h1": "Enterprise Solutions"
+  },
+  {
+    "route": "/solutions",
+    "title": "Technology Solutions - Zion Tech Group",
+    "h1": "Technology Solutions"
+  },
+  {
+    "route": "/solutions/industry",
+    "title": "Industry Specialized Solutions - Zion Tech Group",
+    "h1": "Industry Specialized Solutions"
+  },
+  {
+    "route": "/solutions/startups",
+    "title": "Startup Tools - Zion Tech Group",
+    "h1": "Startup Tools"
+  },
+  {
+    "route": "/services/ai-ml",
+    "title": "AI & Machine Learning Services - Zion Tech Group",
+    "h1": "AI & Machine Learning"
+  },
+  {
+    "route": "/services/cybersecurity",
+    "title": "Cybersecurity Services - Zion Tech Group",
+    "h1": "Cybersecurity"
+  },
+  {
+    "route": "/services/devops",
+    "title": "DevOps & Infrastructure Services - Zion Tech Group",
+    "h1": "DevOps & Infrastructure"
+  },
+  {
+    "route": "/services/edge-computing",
+    "title": "Edge Computing Services - Zion Tech Group",
+    "h1": "Edge Computing"
+  },
+  {
+    "route": "/services/quantum",
+    "title": "Quantum Computing Services - Zion Tech Group",
+    "h1": "Quantum Computing"
+  },
+  {
+    "route": "/services/space-tech",
+    "title": "Space Technology Services - Zion Tech Group",
+    "h1": "Space Technology"
+=======
     "route": "/pricing-comparison",
     "title": "Pricing Comparison - Zion Tech Group | How We Stack Up Against the Competition",
     "h1": "How We Compare to the Competition"
@@ -3958,5 +4029,6 @@
     "route": "/academy/founder-course",
     "title": "",
     "h1": "Founder Course: Launch Your Zion Instance"
+>>>>>>> origin/cursor/website-audit-and-enhancement-2f88
   }
 ]
