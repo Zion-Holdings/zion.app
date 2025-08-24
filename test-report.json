@@ -1,0 +1,234 @@
+{
+  "timestamp": "2025-07-25T14:27:14.556Z",
+  "duration": 428,
+  "summary": {
+    "total": 26,
+    "passed": 23,
+    "failed": 3,
+    "successRate": 88.46153846153845
+  },
+  "results": [
+    {
+      "testName": "Core File: intelligent-automation-orchestrator.js",
+      "passed": true,
+      "message": "File exists",
+      "details": {
+        "file": "intelligent-automation-orchestrator.js"
+      },
+      "timestamp": "2025-07-25T14:27:14.135Z"
+    },
+    {
+      "testName": "Core File: autonomous-system.js",
+      "passed": true,
+      "message": "File exists",
+      "details": {
+        "file": "autonomous-system.js"
+      },
+      "timestamp": "2025-07-25T14:27:14.138Z"
+    },
+    {
+      "testName": "Core File: autonomous-orchestrator.js",
+      "passed": true,
+      "message": "File exists",
+      "details": {
+        "file": "autonomous-orchestrator.js"
+      },
+      "timestamp": "2025-07-25T14:27:14.138Z"
+    },
+    {
+      "testName": "Core File: autonomous-daemon.js",
+      "passed": true,
+      "message": "File exists",
+      "details": {
+        "file": "autonomous-daemon.js"
+      },
+      "timestamp": "2025-07-25T14:27:14.138Z"
+    },
+    {
+      "testName": "Core File: automation-manager.js",
+      "passed": true,
+      "message": "File exists",
+      "details": {
+        "file": "automation-manager.js"
+      },
+      "timestamp": "2025-07-25T14:27:14.139Z"
+    },
+    {
+      "testName": "Core File: improved-automation-orchestrator.js",
+      "passed": true,
+      "message": "File exists",
+      "details": {
+        "file": "improved-automation-orchestrator.js"
+      },
+      "timestamp": "2025-07-25T14:27:14.139Z"
+    },
+    {
+      "testName": "Core System Import",
+      "passed": false,
+      "message": "Import failed: Unexpected token 'async'",
+      "details": null,
+      "timestamp": "2025-07-25T14:27:14.140Z"
+    },
+    {
+      "testName": "Netlify File: netlify-monitor.js",
+      "passed": true,
+      "message": "File exists",
+      "details": {
+        "file": "netlify-monitor.js"
+      },
+      "timestamp": "2025-07-25T14:27:14.141Z"
+    },
+    {
+      "testName": "Netlify File: netlify-error-fixer.js",
+      "passed": true,
+      "message": "File exists",
+      "details": {
+        "file": "netlify-error-fixer.js"
+      },
+      "timestamp": "2025-07-25T14:27:14.142Z"
+    },
+    {
+      "testName": "Netlify File: netlify-build-automation.js",
+      "passed": true,
+      "message": "File exists",
+      "details": {
+        "file": "netlify-build-automation.js"
+      },
+      "timestamp": "2025-07-25T14:27:14.142Z"
+    },
+    {
+      "testName": "Netlify File: netlify-build-monitor.js",
+      "passed": true,
+      "message": "File exists",
+      "details": {
+        "file": "netlify-build-monitor.js"
+      },
+      "timestamp": "2025-07-25T14:27:14.142Z"
+    },
+    {
+      "testName": "Netlify Monitor Import",
+      "passed": true,
+      "message": "Netlify monitor imported successfully",
+      "details": null,
+      "timestamp": "2025-07-25T14:27:14.156Z"
+    },
+    {
+      "testName": "Performance File: performance/monitor.js",
+      "passed": true,
+      "message": "File exists",
+      "details": {
+        "file": "performance/monitor.js"
+      },
+      "timestamp": "2025-07-25T14:27:14.158Z"
+    },
+    {
+      "testName": "Performance File: performance/frontend-fix.js",
+      "passed": true,
+      "message": "File exists",
+      "details": {
+        "file": "performance/frontend-fix.js"
+      },
+      "timestamp": "2025-07-25T14:27:14.160Z"
+    },
+    {
+      "testName": "Performance Monitor Import",
+      "passed": true,
+      "message": "Performance monitor imported successfully",
+      "details": null,
+      "timestamp": "2025-07-25T14:27:14.163Z"
+    },
+    {
+      "testName": "CI File: continuous-improvement/enhanced-automation.js",
+      "passed": true,
+      "message": "File exists",
+      "details": {
+        "file": "continuous-improvement/enhanced-automation.js"
+      },
+      "timestamp": "2025-07-25T14:27:14.164Z"
+    },
+    {
+      "testName": "CI File: continuous-improvement/monitor.js",
+      "passed": true,
+      "message": "File exists",
+      "details": {
+        "file": "continuous-improvement/monitor.js"
+      },
+      "timestamp": "2025-07-25T14:27:14.165Z"
+    },
+    {
+      "testName": "CI File: continuous-improvement/improve.js",
+      "passed": true,
+      "message": "File exists",
+      "details": {
+        "file": "continuous-improvement/improve.js"
+      },
+      "timestamp": "2025-07-25T14:27:14.165Z"
+    },
+    {
+      "testName": "CI System Import",
+      "passed": false,
+      "message": "Import failed: The \"path\" argument must be of type string. Received undefined",
+      "details": null,
+      "timestamp": "2025-07-25T14:27:14.538Z"
+    },
+    {
+      "testName": "Task File: tasks/DependencyUpdater.js",
+      "passed": true,
+      "message": "File exists",
+      "details": {
+        "file": "tasks/DependencyUpdater.js"
+      },
+      "timestamp": "2025-07-25T14:27:14.540Z"
+    },
+    {
+      "testName": "Task File: tasks/SecurityScanner.js",
+      "passed": true,
+      "message": "File exists",
+      "details": {
+        "file": "tasks/SecurityScanner.js"
+      },
+      "timestamp": "2025-07-25T14:27:14.540Z"
+    },
+    {
+      "testName": "Task File: tasks/CodeQualityEnforcer.js",
+      "passed": true,
+      "message": "File exists",
+      "details": {
+        "file": "tasks/CodeQualityEnforcer.js"
+      },
+      "timestamp": "2025-07-25T14:27:14.540Z"
+    },
+    {
+      "testName": "Task System Import",
+      "passed": true,
+      "message": "Task system imported successfully",
+      "details": null,
+      "timestamp": "2025-07-25T14:27:14.543Z"
+    },
+    {
+      "testName": "Cursor File: cursor-automated-communication.js",
+      "passed": true,
+      "message": "File exists",
+      "details": {
+        "file": "cursor-automated-communication.js"
+      },
+      "timestamp": "2025-07-25T14:27:14.546Z"
+    },
+    {
+      "testName": "Cursor File: cursor-automated-extension/background.js",
+      "passed": true,
+      "message": "File exists",
+      "details": {
+        "file": "cursor-automated-extension/background.js"
+      },
+      "timestamp": "2025-07-25T14:27:14.547Z"
+    },
+    {
+      "testName": "Cursor System Import",
+      "passed": false,
+      "message": "Import failed: missing ) after argument list",
+      "details": null,
+      "timestamp": "2025-07-25T14:27:14.549Z"
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+name: Scheduled Tests with Retry
+
+on:
+  schedule:
+    - cron: '*/30 * * * *' # Runs every 30 minutes
+  workflow_dispatch: # Allows manual triggering
+
+jobs:
+  test_and_retry:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Jest Tests
+        id: jest_tests_initial
+        continue-on-error: true # Important to allow subsequent steps to evaluate outcome
+        run: npm test -- --coverageReporters=json-summary --coverageReporters=text --coverageDirectory="./coverage-jest"
+
+      - name: Run Playwright Integration Tests
+        id: playwright_tests_initial
+        continue-on-error: true # Important to allow subsequent steps to evaluate outcome
+        run: npm run test:e2e
+
+      - name: Check for initial test failures
+        id: initial_test_run_status
+        if: steps.jest_tests_initial.outcome == 'failure' || steps.playwright_tests_initial.outcome == 'failure'
+        run: echo "Initial tests failed. Proceeding with rollback and retry."
+
+      - name: Rollback last commit
+        if: steps.initial_test_run_status.conclusion == 'success' # Runs if the previous 'Check for initial test failures' step ran
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "actions-bot@github.com"
+          git reset HEAD~1 --hard
+          echo "Rolled back the last commit."
+
+      - name: Reinstall dependencies after rollback
+        if: steps.initial_test_run_status.conclusion == 'success'
+        run: npm ci
+
+      - name: Rerun Jest Tests after rollback
+        id: jest_tests_retry
+        if: steps.initial_test_run_status.conclusion == 'success'
+        continue-on-error: true
+        run: npm test -- --coverageReporters=json-summary --coverageReporters=text --coverageDirectory="./coverage-jest-retry"
+
+      - name: Rerun Playwright Integration Tests after rollback
+        id: playwright_tests_retry
+        if: steps.initial_test_run_status.conclusion == 'success'
+        continue-on-error: true
+        run: npm run test:e2e
+
+      - name: Check for retry test failures
+        id: retry_test_run_status
+        # This step runs if the initial tests failed (meaning initial_test_run_status ran)
+        # AND either of the retry tests also failed.
+        if: steps.initial_test_run_status.conclusion == 'success' && (steps.jest_tests_retry.outcome == 'failure' || steps.playwright_tests_retry.outcome == 'failure')
+        run: echo "Tests failed after rollback and retry. Proceeding to isolate logs and create GitHub issue."
+
+      - name: Prepare logs for upload
+        if: steps.retry_test_run_status.conclusion == 'success' # Runs if the previous 'Check for retry test failures' step ran
+        run: |
+          mkdir -p ./failure_logs/jest
+          mkdir -p ./failure_logs/playwright
+          # Copy Jest coverage/logs (assuming text report is in stdout/stderr, json-summary might be useful)
+          # The main logs are captured by Actions itself. We'll focus on reports.
+          if [ -d "./coverage-jest-retry" ]; then
+            cp -r ./coverage-jest-retry ./failure_logs/jest/
+          fi
+          # Copy Playwright reports
+          if [ -d "./playwright-report" ]; then
+            cp -r ./playwright-report ./failure_logs/playwright/
+          fi
+          # Capture full test output from initial and retry phases for context
+          echo "Initial Jest Test Output:" > ./failure_logs/test_run_summary.txt
+          echo "${{ steps.jest_tests_initial.outputs.stdout }}" >> ./failure_logs/test_run_summary.txt
+           ec
+Initial Jest Test Error Output:" >> ./failure_logs/test_run_summary.txt
+
+          echo "
+Initial Playwright Test Output:" >> ./failure_logs/test_run_summary.txt
+          echo "${{ steps.playwright_tests_initial.outputs.stdout }}" >> ./failure_logs/test_run_summary.txt
+          echo "
+Initial Playwright Test Error Output:" >> ./failure_logs/test_run_summary.txt
+          echo "${{ steps.playwright_tests_initial.outputs.stderr }}" >> ./failure_logs/test_run_summary.txt
+
+          if [ -d "./coverage-jest-retry" ]; then
+            echo "
+Retry Jest Test Output:" >> ./failure_logs/test_run_summary.txt
+            echo "${{ steps.jest_tests_retry.outputs.stdout }}" >> ./failure_logs/test_run_summary.txt
+            echo "
+Retry Jest Test Error Output:" >> ./failure_logs/test_run_summary.txt
+            echo "${{ steps.jest_tests_retry.outputs.stderr }}" >> ./failure_logs/test_run_summary.txt
+          fi
+          if [ -d "./playwright-report" ]; then # Assuming playwright retry also ran
+            echo "
+Retry Playwright Test Output:" >> ./failure_logs/test_run_summary.txt
+            echo "${{ steps.playwright_tests_retry.outputs.stdout }}" >> ./failure_logs/test_run_summary.txt
+            echo "
+Retry Playwright Test Error Output:" >> ./failure_logs/test_run_summary.txt
+            echo "${{ steps.playwright_tests_retry.outputs.stderr }}" >> ./failure_logs/test_run_summary.txt
+          fi
+
+      - name: Upload failure logs
+        if: steps.retry_test_run_status.conclusion == 'success'
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-failure-logs-${{ github.run_id }}
+          path: ./failure_logs/
+
+      - name: Create GitHub Issue on persistent failure
+        if: steps.retry_test_run_status.conclusion == 'success'
+        uses: peter-evans/create-issue-from-file@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          title: "Automated Tests Persistently Failing after Rollback and Retry"
+          content-filepath: ./failure_logs/test_run_summary.txt # Using the summary for the main issue body
+          labels: |
+            bug
+            automated-test-failure
+          assignees: '' # Optional: assign to specific users or teams

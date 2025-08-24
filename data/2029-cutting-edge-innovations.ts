@@ -443,7 +443,7 @@ export const cuttingEdgeInnovations2029: CuttingEdgeInnovation2029[] = [
     competitors: ['Boston Dynamics, iRobot, Fetch Robotics, Locus Robotics'],
     marketSize: '$12B swarm robotics market',
     growthRate: '400% annual growth',
-    variant: 'iot-futuristic',
+    variant: 'robotics-futuristic',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',

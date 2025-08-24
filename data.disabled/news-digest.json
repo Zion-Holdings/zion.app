@@ -1,0 +1,12 @@
+{
+  "generatedAt": "2024-01-01T00:00:00.000Z",
+  "items": [
+    {
+      "source": "seed",
+      "title": "Automation seed: News Digest",
+      "url": "https://example.com",
+      "summary": "This digest will be updated by the cloud automation.",
+      "tags": ["news", "ai"]
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 import js from '@eslint/js';
-import typescript from '@typescript-eslint/eslint-plugin';
-import typescriptParser from '@typescript-eslint/parser';
+import react from 'eslint-plugin-react';
+import reactHooks from 'eslint-plugin-react-hooks';
+import reactRefresh from 'eslint-plugin-react-refresh';
 
 export default [
   js.configs.recommended,
@@ -9,16 +10,9 @@ export default [
     languageOptions: {
       ecmaVersion: 2020,
       sourceType: 'module',
-      parser: typescriptParser,
-      parserOptions: {
-        ecmaVersion: 2020,
-        sourceType: 'module',
-        ecmaFeatures: {
-          jsx: true
-        }
-      },
       globals: {
-        // Node.js globals
+        ...globals.browser,
+        ...globals.node,
         process: 'readonly',
         console: 'readonly',
         module: 'readonly',
@@ -28,39 +22,24 @@ export default [
         setTimeout: 'readonly',
         setInterval: 'readonly',
         clearTimeout: 'readonly',
-        clearInterval: 'readonly',
-        NodeJS: 'readonly',
-        // Browser globals
-        window: 'readonly',
-        document: 'readonly',
-        navigator: 'readonly',
-        fetch: 'readonly',
-        URL: 'readonly',
-        URLSearchParams: 'readonly',
-        File: 'readonly',
-        // Canvas and animation globals
-        HTMLCanvasElement: 'readonly',
-        HTMLDivElement: 'readonly',
-        HTMLButtonElement: 'readonly',
-        HTMLAnchorElement: 'readonly',
-        HTMLInputElement: 'readonly',
-        HTMLTextAreaElement: 'readonly',
-        HTMLSelectElement: 'readonly',
-        CanvasRenderingContext2D: 'readonly',
-        MouseEvent: 'readonly',
-        requestAnimationFrame: 'readonly',
-        cancelAnimationFrame: 'readonly'
+        clearInterval: 'readonly'
+      },
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true
+        }
       }
     },
     plugins: {
-      '@typescript-eslint': typescript
+      react,
+      'react-hooks': reactHooks,
+      'react-refresh': reactRefresh
     },
     rules: {
-      'no-unused-vars': 'off',
-      '@typescript-eslint/no-unused-vars': 'warn',
+      'no-unused-vars': 'warn',
       'no-console': 'warn',
-      '@typescript-eslint/no-explicit-any': 'warn',
-      'no-undef': 'error'
+      'react/jsx-uses-react': 'off',
+      'react/react-in-jsx-scope': 'off'
     }
   },
   {
