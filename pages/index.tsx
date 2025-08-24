@@ -31,6 +31,7 @@ import AdvancedPerformanceOptimizer from '../components/AdvancedPerformanceOptim
 import FinalIntegrationHub from '../components/FinalIntegrationHub';
 import EnhancedPerformanceMetrics from '../components/EnhancedPerformanceMetrics';
 import EnhancedSecurityDashboard from '../components/EnhancedSecurityDashboard';
+import AdvancedDataVisualization from '../components/AdvancedDataVisualization';
 
 export default function HomePage() {
   const [_isMenuOpen, _setIsMenuOpen] = useState(false);
@@ -177,6 +178,9 @@ export default function HomePage() {
               Discover our comprehensive suite of cutting-edge micro SaaS services, IT solutions, and AI innovations. 
               From quantum computing to space technology, we&apos;re building the future today.
             </motion.p>
+          </div>
+        </div>
+        </section>
 
         {/* Enhanced Performance Metrics Section */}
         <EnhancedPerformanceMetrics 
@@ -192,6 +196,16 @@ export default function HomePage() {
           subtitle="Comprehensive threat detection and security analytics for your infrastructure"
           showThreats={true}
           autoRefresh={true}
+        />
+
+        {/* Advanced Data Visualization Section */}
+        <AdvancedDataVisualization 
+          title="Interactive Data Analytics"
+          subtitle="Real-time charts, performance metrics, and business intelligence dashboards"
+          showControls={true}
+          autoRefresh={true}
+          refreshInterval={10000}
+          maxDataPoints={30}
         />
 
         {/* CTA Section */}
@@ -226,14 +240,7 @@ export default function HomePage() {
               </Link>
             </motion.div>
           </div>
-        </div>
-        
-        {/* Floating Elements */}
-        <div className="absolute top-20 left-10 text-6xl animate-bounce" aria-hidden="true">🚀</div>
-        <div className="absolute top-40 right-20 text-5xl animate-pulse" aria-hidden="true">⚛️</div>
-        <div className="absolute bottom-40 left-20 text-4xl animate-spin" aria-hidden="true">🤖</div>
-        <div className="absolute bottom-20 right-10 text-5xl animate-bounce" aria-hidden="true">💎</div>
-      </section>
+        </section>
 
       {/* Stats Section */}
       <section className="py-20 bg-gray-800" aria-label="Company Statistics">
