@@ -168,6 +168,7 @@
     background: theme('colors["zion-purple"].dark');
     border-radius: 5px;
   }
+<<<<<<< HEAD
 
   ::-webkit-scrollbar-thumb:hover {
     background: theme('colors["zion-purple"].DEFAULT');
