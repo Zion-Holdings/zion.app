@@ -1,86 +1,118 @@
 
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Home, Search, BriefcaseIcon, MessageSquare, User, MessageCircle } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
+import { 
+  Home, 
+  Search, 
+  Briefcase, 
+  Users, 
+  User 
+} from "lucide-react";
 import { useAuth } from "@/hooks/useAuth";
 
-interface MobileBottomNavProps {
-  unreadCount?: number;
-}
-
-export function MobileBottomNav({ unreadCount = 0 }: MobileBottomNavProps) {
+export function MobileBottomNav() {
   const location = useLocation();
   const { user } = useAuth();
-  const isAuthenticated = !!user;
 
   const navItems = [
     {
-      name: "Home",
-      href: "/",
+      path: "/",
       icon: Home,
-      matches: (path: string) => path === "/"
+      label: "Home",
+      active: location.pathname === "/"
     },
     {
-      name: "Browse",
-      href: "/talent",
+      path: "/marketplace",
       icon: Search,
-      matches: (path: string) => path.startsWith("/talent") || path.startsWith("/categories") || path.startsWith("/marketplace")
+      label: "Search",
+      active: location.pathname.startsWith("/marketplace") || location.pathname.startsWith("/search")
     },
     {
-      name: "Community",
-      href: "/community",
-      icon: MessageCircle,
-      matches: (path: string) => path.startsWith("/community") || path.startsWith("/forum")
+      path: "/services",
+      icon: Briefcase,
+      label: "Services",
+      active: location.pathname.startsWith("/services")
     },
     {
-      name: "Messages",
-      href: "/messages",
-      icon: MessageSquare,
-      matches: (path: string) => path.startsWith("/messages") || path.startsWith("/inbox"),
-      badge: unreadCount,
-      authRequired: true
+      path: "/talent",
+      icon: Users,
+      label: "Talent",
+      active: location.pathname.startsWith("/talent")
     },
     {
-      name: "Dashboard",
-      href: "/dashboard",
+      path: user ? "/dashboard" : "/login",
       icon: User,
-      matches: (path: string) => path.startsWith("/dashboard"),
-      authRequired: true
+      label: user ? "Profile" : "Login",
+      active: location.pathname.startsWith("/dashboard") || location.pathname.startsWith("/login")
     }
   ];
 
-  // Filter items based on auth status
-  const visibleItems = navItems.filter(item => 
-    !item.authRequired || (item.authRequired && isAuthenticated)
-  );
-
   return (
-    <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-zion-blue-dark/95 backdrop-blur-md border-t border-zion-purple/20">
-      <div className="flex justify-around items-center h-16">
-        {visibleItems.map(item => (
-          <Link
-            key={item.name}
-            to={item.href}
-            className={cn(
-              "flex flex-col items-center justify-center w-full h-full px-1 py-1",
-              item.matches(location.pathname)
-                ? "text-zion-cyan"
-                : "text-white/70 hover:text-white"
-            )}
-          >
-            <div className="relative">
-              <item.icon className="h-5 w-5 mb-1" />
-              {item.badge && item.badge > 0 && (
-                <span className="absolute -top-2 -right-2 bg-zion-purple text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">
-                  {item.badge > 9 ? '9+' : item.badge}
-                </span>
-              )}
-            </div>
-            <span className="text-xs font-medium">{item.name}</span>
-          </Link>
-        ))}
+    <motion.nav
+      className="fixed bottom-0 left-0 right-0 z-50 bg-zion-blue-dark/95 backdrop-blur-md border-t border-zion-purple/20 md:hidden"
+      initial={{ y: 100 }}
+      animate={{ y: 0 }}
+      transition={{ type: "spring", stiffness: 300, damping: 30 }}
+    >
+      <div className="flex items-center justify-around px-2 py-3">
+        {navItems.map((item, index) => {
+          const Icon = item.icon;
+          return (
+            <motion.div
+              key={item.path}
+              className="relative"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Link
+                to={item.path}
+                className={`flex flex-col items-center justify-center w-16 h-16 rounded-xl transition-all duration-300 ${
+                  item.active 
+                    ? "text-zion-cyan bg-zion-blue/20" 
+                    : "text-zion-slate-light hover:text-zion-cyan hover:bg-zion-blue/10"
+                }`}
+              >
+                {/* Active indicator */}
+                {item.active && (
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-zion-cyan/20 to-zion-purple/20 rounded-xl border border-zion-cyan/30"
+                    layoutId="activeTab"
+                    initial={false}
+                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                  />
+                )}
+                
+                <div className="relative z-10">
+                  <Icon className={`h-5 w-5 mb-1 ${item.active ? "text-zion-cyan" : ""}`} />
+                  <span className={`text-xs font-medium ${item.active ? "text-zion-cyan" : ""}`}>
+                    {item.label}
+                  </span>
+                </div>
+                
+                {/* Pulse effect for active items */}
+                {item.active && (
+                  <motion.div
+                    className="absolute inset-0 rounded-xl border border-zion-cyan/50"
+                    animate={{
+                      scale: [1, 1.05, 1],
+                      opacity: [0.5, 0.8, 0.5]
+                    }}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                  />
+                )}
+              </Link>
+            </motion.div>
+          );
+        })}
       </div>
-    </nav>
+      
+      {/* Safe area for devices with home indicators */}
+      <div className="h-1 bg-gradient-to-r from-zion-cyan via-zion-purple to-zion-cyan opacity-30" />
+    </motion.nav>
   );
 }

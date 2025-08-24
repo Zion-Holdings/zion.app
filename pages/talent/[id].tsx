@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
-import ErrorPage from 'next/error';
+import { useParams, useNavigate } from 'react-router-dom';
 import { ProfileLoadingState } from '@/components/profile/ProfileLoadingState';
 import type { TalentProfile as TalentProfileType } from '@/types/talent';
 import { ProfileErrorState } from '@/components/profile/ProfileErrorState';
@@ -10,8 +9,8 @@ interface TalentProfileWithSocial extends TalentProfileType {
 }
 
 const TalentProfilePage: React.FC = () => {
-  const router = useRouter();
-  const { id } = router.query as { id?: string };
+  const { id } = useParams();
+  const navigate = useNavigate();
   const [profile, setProfile] = useState<TalentProfileWithSocial | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -44,7 +43,11 @@ const TalentProfilePage: React.FC = () => {
   }, [id]);
 
   if (loading) return <ProfileLoadingState />;
-  if (error || !profile) return <ErrorPage statusCode={404} />;
+  if (error || !profile) {
+    // Redirect to 404 page
+    navigate('/404', { replace: true });
+    return null;
+  }
 
   return (
     <main className="min-h-screen bg-zion-blue py-8 text-white">

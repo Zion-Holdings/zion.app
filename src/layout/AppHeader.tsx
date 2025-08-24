@@ -70,7 +70,7 @@ export function AppHeader() {
       )}
 
       {/* Mobile Bottom Navigation */}
-      {isMobile && <MobileBottomNav unreadCount={unreadCount} />}
+      {isMobile && <MobileBottomNav />}
     </>
   );
 }
