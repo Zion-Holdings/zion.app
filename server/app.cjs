@@ -180,7 +180,31 @@ app.get('/health', (req, res) => {
 });
 
 app.post('/api/codex/suggest-fix', (req, res) => {
-  const { filePath, errorLog, route } = req.body; // Added filePath and errorLog
+  let { filePath, errorLog, route } = req.body; // Added filePath and errorLog
+
+  // -------------------------------------------------------------------------
+  // Input validation & security
+  // -------------------------------------------------------------------------
+  // 1. Basic sanity check – we only allow relative paths that stay **inside**
+  //    the project directory to prevent path-traversal ("../../etc/passwd").
+  // 2. Restrict to a known subset of folders where source files live to avoid
+  //    arbitrary file references. Adjust `ALLOWED_PREFIXES` if your layout
+  //    changes.
+  const ALLOWED_PREFIXES = ['src/', 'pages/', 'server/', 'backend/', 'public_api/'];
+
+  if (filePath) {
+    const normalizedPath = path.posix.normalize(filePath).replace(/^\/+/, ''); // Remove leading slash
+
+    const isTraversal = normalizedPath.includes('..');
+    const hasAllowedPrefix = ALLOWED_PREFIXES.some((prefix) => normalizedPath.startsWith(prefix));
+
+    if (isTraversal || !hasAllowedPrefix) {
+      return res.status(400).json({ error: 'Invalid file path provided.' });
+    }
+
+    // Use the sanitized path for downstream logic
+    filePath = normalizedPath;
+  }
 
   if (!filePath && !route) {
     // We need at least some context, filePath is preferred for targeted fixes.
