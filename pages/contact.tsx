@@ -72,7 +72,7 @@ const Contact: NextPage = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900">Phone</h3>
-                  <a href="tel:+13024640950" className="text-blue-600 hover:text-blue-700 text-lg">
+                  <a href="/tel:+13024640950" className="text-blue-600 hover:text-blue-700 text-lg">
                     +1 302 464 0950
                   </a>
                   <p className="text-gray-600 text-sm">Available Monday - Friday, 9 AM - 6 PM EST</p>
@@ -274,7 +274,7 @@ const Contact: NextPage = () => {
             </div>
             <h3 className="text-lg font-semibold text-gray-900 mb-2">Free Consultation</h3>
             <p className="text-gray-600 mb-4">Get a free 30-minute consultation to discuss your project requirements</p>
-            <a href="tel:+13024640950" className="text-blue-600 hover:text-blue-700 font-medium">
+            <a href="/tel:+13024640950" className="text-blue-600 hover:text-blue-700 font-medium">
               Schedule Now →
             </a>
           </div>
@@ -300,7 +300,7 @@ const Contact: NextPage = () => {
             </div>
             <h3 className="text-lg font-semibold text-gray-900 mb-2">Emergency Support</h3>
             <p className="text-gray-600 mb-4">24/7 emergency support for enterprise clients</p>
-            <a href="tel:+13024640950" className="text-blue-600 hover:text-blue-700 font-medium">
+            <a href="/tel:+13024640950" className="text-blue-600 hover:text-blue-700 font-medium">
               Call Now →
             </a>
           </div>
