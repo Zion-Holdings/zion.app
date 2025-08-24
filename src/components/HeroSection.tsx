@@ -4,7 +4,6 @@ import { GradientHeading } from "@/components/GradientHeading";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles, Zap, Users } from "lucide-react";
 
 export function HeroSection() {
   const { t } = useTranslation();
@@ -32,9 +31,10 @@ export function HeroSection() {
     }
   };
 
-  const floatingVariants = {
-    float: {
-      y: [-10, 10, -10],
+  const particleVariants = {
+    animate: {
+      y: [0, -20, 0],
+      x: [0, 10, 0],
       transition: {
         duration: 3,
         repeat: Infinity,
@@ -44,95 +44,71 @@ export function HeroSection() {
   };
 
   return (
-    <section className="relative overflow-hidden py-20 md:py-32 min-h-[80vh] flex items-center">
-      {/* Enhanced background with multiple layers */}
+    <section className="relative overflow-hidden py-20 md:py-32">
+      {/* Enhanced background gradient effect */}
       <div className="absolute inset-0 bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-purple opacity-90"></div>
       
-      {/* Animated mesh gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-zion-cyan/20 via-transparent to-zion-purple/20 animate-pulse"></div>
-      
-      {/* Enhanced floating particles with better positioning */}
-      <motion.div 
-        className="absolute inset-0"
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-      >
+      {/* Animated floating particles with enhanced effects */}
+      <div className="absolute inset-0">
         <motion.div 
           className="absolute top-1/4 left-1/4 w-3 h-3 rounded-full bg-zion-purple-light opacity-60"
-          variants={floatingVariants}
-          animate="float"
+          variants={particleVariants}
+          animate="animate"
         />
         <motion.div 
           className="absolute top-1/3 right-1/3 w-4 h-4 rounded-full bg-zion-cyan opacity-40"
-          variants={floatingVariants}
-          animate="float"
+          variants={particleVariants}
+          animate="animate"
           style={{ animationDelay: "1s" }}
         />
         <motion.div 
           className="absolute bottom-1/4 left-1/2 w-2 h-2 rounded-full bg-zion-purple opacity-50"
-          variants={floatingVariants}
-          animate="float"
+          variants={particleVariants}
+          animate="animate"
           style={{ animationDelay: "2s" }}
         />
         <motion.div 
           className="absolute top-1/2 right-1/4 w-5 h-5 rounded-full bg-zion-cyan-light opacity-30"
-          variants={floatingVariants}
-          animate="float"
+          variants={particleVariants}
+          animate="animate"
           style={{ animationDelay: "0.5s" }}
         />
         <motion.div 
           className="absolute top-3/4 left-1/3 w-2 h-2 rounded-full bg-zion-purple-light opacity-40"
-          variants={floatingVariants}
-          animate="float"
+          variants={particleVariants}
+          animate="animate"
           style={{ animationDelay: "1.5s" }}
         />
-      </motion.div>
+      </div>
       
-      {/* Glassmorphism content container */}
-      <div className="container relative z-10 px-4 mx-auto text-center">
-        <motion.div
-          variants={itemVariants}
-          className="mb-8"
-        >
-          {/* Enhanced title with icon */}
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <Sparkles className="w-8 h-8 text-zion-cyan animate-pulse" />
-            <GradientHeading className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight">
-              {t('home.hero_title')}
-            </GradientHeading>
-            <Zap className="w-8 h-8 text-zion-purple animate-pulse" />
-          </div>
+      {/* Subtle mesh gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
+      
+      <motion.div 
+        className="container relative z-10 px-4 mx-auto text-center"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
+        <motion.div variants={itemVariants}>
+          <GradientHeading className="mb-6 text-5xl md:text-7xl font-bold leading-tight">
+            {t('home.hero_title')}
+          </GradientHeading>
         </motion.div>
 
-        <motion.div variants={itemVariants} className="mb-12">
-          <p className="text-xl md:text-2xl lg:text-3xl text-zion-slate-light mb-6 max-w-4xl mx-auto leading-relaxed">
-            {t('home.hero_subtitle')}
-          </p>
-          
-          {/* Feature highlights */}
-          <div className="flex flex-wrap justify-center gap-6 text-sm md:text-base text-zion-cyan-light">
-            <div className="flex items-center gap-2">
-              <Users className="w-4 h-4" />
-              <span>Global Talent Network</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Zap className="w-4 h-4" />
-              <span>AI-Powered Matching</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Sparkles className="w-4 h-4" />
-              <span>24/7 IT Services</span>
-            </div>
-          </div>
-        </motion.div>
+        <motion.p 
+          className="text-xl md:text-2xl text-zion-slate-light mb-10 max-w-3xl mx-auto leading-relaxed"
+          variants={itemVariants}
+        >
+          {t('home.hero_subtitle')}
+        </motion.p>
 
         <motion.div 
+          className="flex flex-col sm:flex-row justify-center gap-4"
           variants={itemVariants}
-          className="flex flex-col sm:flex-row justify-center gap-4 mb-8"
         >
           <Button
-            className="group bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-lg py-6 px-8 rounded-xl shadow-2xl hover:shadow-zion-purple/25 transition-all duration-300 transform hover:scale-105"
+            className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-lg py-6 px-8 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
             size="lg"
             asChild
           >
@@ -142,45 +118,38 @@ export function HeroSection() {
               aria-label={t('auth.signup')}
               tabIndex={0}
               data-testid="hero-signup-btn"
-              className="flex items-center gap-2"
             >
               {t('auth.signup')}
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
             </Link>
           </Button>
-          
           <Link
             id="browse-marketplace"
             to="/marketplace"
-            className="group border-2 border-zion-cyan text-zion-cyan hover:bg-zion-cyan hover:text-zion-blue-dark active:bg-zion-cyan-light text-lg py-6 px-8 rounded-xl inline-flex items-center justify-center gap-2 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-zion-cyan/25 backdrop-blur-sm bg-white/5"
+            className="border-2 border-zion-cyan text-zion-cyan hover:bg-zion-cyan hover:text-zion-blue-dark active:bg-zion-cyan-light text-lg py-6 px-8 rounded-md inline-flex items-center justify-center transform hover:scale-105 transition-all duration-200 hover:shadow-lg"
           >
             {t('home.browse_marketplace')}
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
           </Link>
         </motion.div>
 
         {/* Trust indicators */}
         <motion.div 
+          className="mt-12 flex flex-wrap justify-center items-center gap-8 text-zion-slate-light text-sm"
           variants={itemVariants}
-          className="text-center"
         >
-          <p className="text-zion-slate-light text-sm mb-3">Trusted by leading companies worldwide</p>
-          <div className="flex justify-center items-center gap-8 opacity-60">
-            <div className="w-16 h-8 bg-zion-cyan/20 rounded animate-pulse"></div>
-            <div className="w-16 h-8 bg-zion-purple/20 rounded animate-pulse" style={{ animationDelay: "0.5s" }}></div>
-            <div className="w-16 h-8 bg-zion-blue/20 rounded animate-pulse" style={{ animationDelay: "1s" }}></div>
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-2 bg-zion-cyan rounded-full"></div>
+            <span>24/7 Support</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-2 bg-zion-purple rounded-full"></div>
+            <span>Global Network</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-2 bg-zion-cyan-light rounded-full"></div>
+            <span>AI-Powered</span>
           </div>
         </motion.div>
-      </div>
-
-      {/* Bottom wave effect */}
-      <div className="absolute bottom-0 left-0 right-0">
-        <svg className="w-full h-16 text-background" viewBox="0 0 1200 120" preserveAspectRatio="none">
-          <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="currentColor"></path>
-          <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="currentColor"></path>
-          <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="currentColor"></path>
-        </svg>
-      </div>
+      </motion.div>
     </section>
   );
 }
