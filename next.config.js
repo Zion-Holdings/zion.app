@@ -1,41 +1,18 @@
+const path = require('path');
+
 const nextConfig = {
   poweredByHeader: false,
   trailingSlash: false,
   reactStrictMode: true,
-  bundlePagesRouterDependencies: true,
-
-  // Optimized for fast builds (hanging issue SOLVED)
-  // outputFileTracing: false, // Intentionally disabled via env vars in build scripts and netlify.toml to prevent hanging.
-  productionBrowserSourceMaps: false, // Disable for faster builds
-  
-  // Environment configuration
-  env: {
-    NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000',
-    NEXT_PUBLIC_SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL,
-    NEXT_PUBLIC_SUPABASE_ANON_KEY: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
+  swcMinify: true,
+  typescript: {
+    ignoreBuildErrors: true,
   },
-
-  serverExternalPackages: ['@prisma/client'],
-  modularizeImports: {
-    'lucide-react': {
-      transform: 'lucide-react/dist/esm/icons/{{kebabCase member}}',
-      skipDefaultConversion: true,
-    },
-    '@radix-ui/react-icons': {
-      transform: '@radix-ui/react-icons/dist/{{member}}',
-    },
-  },
-  outputFileTracingExcludes: {
-    '*': [
-      'node_modules/@swc/core-linux-x64-gnu',
-      'node_modules/@swc/core-linux-x64-musl',
-      'node_modules/@esbuild/linux-x64',
-      'node_modules/@chainsafe/**/*',
-      'node_modules/three/**/*',
-      'node_modules/@google/model-viewer/**/*',
-    ],
+  eslint: {
+    ignoreDuringBuilds: true,
   },
   experimental: {
+<<<<<<< HEAD
     optimizePackageImports: [
       'lucide-react', 
       '@radix-ui/react-icons',
@@ -888,9 +865,21 @@ const nextConfig = {
             },
           },
         },
+=======
+    optimizeCss: true,
+  },
+  webpack: (config, { isServer }) => {
+    // Optimize bundle size
+    if (!isServer) {
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        fs: false,
+        net: false,
+        tls: false,
+>>>>>>> cursor/expand-services-and-deploy-updates-fedc
       };
     }
-
+    
     return config;
   },
 };

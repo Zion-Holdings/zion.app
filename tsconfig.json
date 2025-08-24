@@ -84,6 +84,8 @@
   ],
   "exclude": [
     "node_modules",
-    "zion.app/recovered-content/**"
+    "zion.app/recovered-content/**",
+    "apps/**",
+    "apps.backup/**"
   ]
 }

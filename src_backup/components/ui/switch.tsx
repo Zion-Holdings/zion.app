@@ -1,6 +1,6 @@
-import React from 'react'
-;
-export export export default function switch()   {;
+import React from 'react';
+
+export default function Switch() {
   return (
     <div>
       <h1>Component</h1>
