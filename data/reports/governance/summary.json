@@ -1,0 +1,11 @@
+{
+  "updatedAt": "2025-08-10T15:03:40.596Z",
+  "thresholds": {
+    "quorum": "min(10% of circulating ZION$, 50M)",
+    "approval": "YES ≥ 50% of votes cast; for upgrades YES ≥ 66%",
+    "veto": "Security Council can veto with 5-of-9 multisig (time-limited)",
+    "timing": "- Voting Period: 5–7 days\n- Timelock: 48–96 hours before execution"
+  },
+  "lifecycleHighlights": "# Proposal Lifecycle\n\n1. Draft: authors prepare spec and rationale; optional temperature check\n2. Review: formalization, risk analysis, and delegate feedback\n3. Active Voting: onchain vote window opens\n4. Queued: successful proposals enter timelock\n5. Executed: transactions executed by executor\n6. Finalized: monitoring and post-mortem recorded\n\n## Metadata",
+  "tokenRoleHighlights": "# ZION$ Role in Governance\n\n- Voting Power: direct or delegated\n- Proposal Deposits: refundable if quorum is reached; slashed on spam\n- Incentives: rewards for participation and analysis reports\n- Checkpoints: snapshot-based voting with delegation graph"
+}
