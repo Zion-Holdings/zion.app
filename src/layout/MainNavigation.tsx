@@ -24,19 +24,9 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
       matches: (path: string) => path === '/'
     },
     {
-      key: 'services',
-      href: '/micro-saas-services',
-      matches: (path: string) => path.startsWith('/micro-saas-services') || path.startsWith('/services') || path.startsWith('/it-onsite-services')
-    },
-    {
       key: 'marketplace',
       href: '/marketplace',
       matches: (path: string) => path.startsWith('/marketplace')
-    },
-    {
-      key: 'micro-saas',
-      href: '/micro-saas-services',
-      matches: (path: string) => path.startsWith('/micro-saas-services')
     },
     {
       key: 'categories',

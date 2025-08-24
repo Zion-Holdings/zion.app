@@ -21,19 +21,16 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }) 
             matches: (path) => path.startsWith('/marketplace')
         },
         {
-            key: 'services',
-            href: '/services',
-            matches: (path) => path.startsWith('/services') || path.startsWith('/it-onsite-services')
-        },
-        {
-<<<<<<< HEAD
-=======
             key: 'micro-saas',
             href: '/micro-saas-services',
             matches: (path) => path.startsWith('/micro-saas-services')
         },
         {
->>>>>>> 8600ee6a2f6219c9a2b9fbe2e3a248b1b5713ae1
+            key: 'categories',
+            href: '/categories',
+            matches: (path) => path.startsWith('/categories')
+        },
+        {
             key: 'talent',
             href: '/talent',
             matches: (path) => path.startsWith('/talent') && !path.includes('/talent-dashboard')
@@ -44,25 +41,9 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }) 
             matches: (path) => path.startsWith('/equipment')
         },
         {
-<<<<<<< HEAD
             key: 'community',
             href: '/community',
             matches: (path) => path.startsWith('/community') || path.startsWith('/forum')
-        },
-        {
-            key: 'about',
-            href: '/about',
-            matches: (path) => path === '/about'
-=======
-            key: 'portfolio',
-            href: '/portfolio',
-            matches: (path) => path.startsWith('/portfolio')
-        },
-        {
-            key: 'community',
-            href: '/community',
-            matches: (path) => path.startsWith('/community') || path.startsWith('/forum')
->>>>>>> 8600ee6a2f6219c9a2b9fbe2e3a248b1b5713ae1
         }
     ];
     let links = baseLinks.map(link => (Object.assign(Object.assign({}, link), { name: t(`nav.${link.key}`) })));
@@ -84,9 +65,9 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }) 
             matches: (path) => path.startsWith('/analytics')
         });
     }
-    return (_jsx("nav", { className: cn("navbar ml-6 hidden md:flex", className), children: _jsxs("ul", { className: "flex items-center gap-1", children: [links.map((link) => (_jsx("li", { children: _jsx(Link, { to: link.href, className: cn("inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-colors", link.matches(location.pathname)
-                            ? "bg-zion-purple/20 text-zion-cyan"
-                            : "text-white hover:bg-zion-purple/10 hover:text-zion-cyan"), children: link.name }) }, link.name))), isAuthenticated && (_jsx("li", { children: _jsxs(Link, { to: "/messages", className: cn("inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-colors relative", location.pathname === "/messages" || location.pathname === "/inbox"
-                            ? "bg-zion-purple/20 text-zion-cyan"
-                            : "text-white hover:bg-zion-purple/10 hover:text-zion-cyan"), children: [_jsx(MessageSquare, { className: "w-4 h-4 mr-1" }), t('nav.messages'), unreadCount > 0 && (_jsx("span", { className: "absolute -top-1 -right-1 bg-zion-purple text-white text-xs rounded-full h-5 w-5 flex items-center justify-center", children: unreadCount }))] }) }))] }) }));
+    return (_jsx("nav", { className: cn("navbar ml-6 hidden md:flex", className), children: _jsxs("ul", { className: "flex items-center gap-1", children: [links.map((link) => (_jsx("li", { children: _jsxs(Link, { to: link.href, className: cn("inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-all duration-300 relative group", link.matches(location.pathname)
+                            ? "bg-zion-purple/20 text-zion-cyan shadow-lg shadow-zion-cyan/20"
+                            : "text-white hover:bg-zion-purple/10 hover:text-zion-cyan hover:shadow-lg hover:shadow-zion-cyan/10"), children: [link.name, link.matches(location.pathname) && (_jsx("div", { className: "absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-zion-cyan to-zion-purple rounded-full" })), _jsx("div", { className: "absolute inset-0 rounded-md bg-gradient-to-r from-zion-cyan/0 via-zion-cyan/5 to-zion-cyan/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" })] }) }, link.name))), isAuthenticated && (_jsx("li", { children: _jsxs(Link, { to: "/messages", className: cn("inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-all duration-300 relative group", location.pathname === "/messages" || location.pathname === "/inbox"
+                            ? "bg-zion-purple/20 text-zion-cyan shadow-lg shadow-zion-cyan/20"
+                            : "text-white hover:bg-zion-purple/10 hover:text-zion-cyan hover:shadow-lg hover:shadow-zion-cyan/10"), children: [_jsx(MessageSquare, { className: "w-4 h-4 mr-1" }), t('nav.messages'), unreadCount > 0 && (_jsx("span", { className: "absolute -top-1 -right-1 bg-gradient-to-r from-zion-purple to-zion-cyan text-white text-xs rounded-full h-5 w-5 flex items-center justify-center shadow-lg shadow-zion-cyan/30", children: unreadCount })), _jsx("div", { className: "absolute inset-0 rounded-md bg-gradient-to-r from-zion-cyan/0 via-zion-cyan/5 to-zion-cyan/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" })] }) }))] }) }));
 }

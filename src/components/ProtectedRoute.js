@@ -1,8 +1,8 @@
 import { jsx as _jsx, Fragment as _Fragment } from "react/jsx-runtime";
 import { Navigate, useLocation } from 'react-router-dom';
 import { useAuth } from '@/hooks/useAuth';
-import { useTenantAdminStatus } from '@/hooks/useTenantAdminStatus';
-import { useWhitelabel } from '@/hooks/useWhitelabel';
+import { useTenantAdminStatus } from '@/hooks/useWhitelabelTenant';
+import { useWhitelabel } from '@/context/WhitelabelContext';
 export const ProtectedRoute = ({ children, adminOnly = false, tenantAdminAllowed = false, requiredUserType }) => {
     const { user, isLoading } = useAuth();
     const location = useLocation();

@@ -1,90 +1,100 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { ArrowRight, Globe, Brain, Shield, Zap, Database, Users } from 'lucide-react';
-const features = [
-    {
-        title: "AI-Powered Matching",
-        description: "Advanced AI algorithms connect you with the perfect tech professionals and services",
-        details: "Our intelligent matching system analyzes your requirements and preferences to find the ideal matches from our extensive network of verified professionals.",
-        icon: _jsx(Brain, { className: "h-8 w-8 text-zion-purple" }),
-        link: "/ai-matcher",
-        badge: "AI"
-    },
-    {
-        title: "Secure Platform",
-        description: "Enterprise-grade security protecting your data and transactions",
-        details: "Bank-level encryption, secure payment processing, and comprehensive data protection ensure your information stays safe and confidential.",
-        icon: _jsx(Shield, { className: "h-8 w-8 text-zion-cyan" }),
-        link: "/security",
-        badge: "Secure"
-    },
-    {
-        title: "Global Network",
-        description: "Access to worldwide tech talent and innovative solutions",
-        details: "Connect with professionals and companies from around the globe, bringing diverse perspectives and cutting-edge solutions to your projects.",
-        icon: _jsx(Globe, { className: "h-8 w-8 text-zion-blue" }),
-        link: "/network",
-        badge: "Global"
-    },
-    {
-        title: "Real-time Analytics",
-        description: "Comprehensive insights into your tech ecosystem performance",
-        details: "Monitor project progress, track performance metrics, and gain valuable insights to optimize your technology investments and strategies.",
-        icon: _jsx(Database, { className: "h-8 w-8 text-zion-green" }),
-        link: "/analytics",
-        badge: "Analytics"
-    },
-    {
-        title: "24/7 Support",
-        description: "Round-the-clock assistance for all your tech needs",
-        details: "Our dedicated support team is available 24/7 to help you with any questions, technical issues, or guidance you may need.",
-        icon: _jsx(Users, { className: "h-8 w-8 text-zion-orange" }),
-        link: "/support",
-        badge: "Support"
-    },
-    {
-        title: "Innovation Hub",
-        description: "Stay ahead with the latest tech trends and emerging solutions",
-        details: "Access cutting-edge technologies, research insights, and innovative approaches to keep your business at the forefront of digital transformation.",
-        icon: _jsx(Zap, { className: "h-8 w-8 text-zion-yellow" }),
-        link: "/innovation",
-        badge: "Innovation"
-    }
-];
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Link } from "react-router-dom";
+import { ArrowRight, Users, Zap, Settings, Search, MessageSquare, Smartphone, Calendar, BookOpen, Code, Building, Clock } from "lucide-react";
 export function FeatureCTAs() {
-    const containerVariants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.1,
-                delayChildren: 0.2
-            }
-        }
-    };
-    const cardVariants = {
-        hidden: { y: 20, opacity: 0, scale: 0.95 },
-        visible: {
-            y: 0,
-            opacity: 1,
-            scale: 1,
-            transition: {
-                duration: 0.5,
-                ease: "easeOut"
-            }
+    const features = [
+        {
+            title: "AI Talent Matching",
+            description: "Our AI-powered matching algorithm connects you with the perfect talent or job based on skills, experience, and preferences.",
+            icon: _jsx(Search, { className: "h-10 w-10 p-2 rounded-md bg-blue-100 text-blue-700" }),
+            link: "/marketplace",
+            badge: "Popular",
+            details: "Leveraging advanced machine learning, our matching system analyzes over 100+ data points to create perfect connections between talents and opportunities."
         },
-        hover: {
-            y: -8,
-            scale: 1.02,
-            transition: {
-                duration: 0.3,
-                ease: "easeOut"
-            }
+        {
+            title: "Talent Directory",
+            description: "Browse our extensive database of verified AI and tech specialists, filtered by expertise and availability.",
+            icon: _jsx(Users, { className: "h-10 w-10 p-2 rounded-md bg-purple-100 text-purple-700" }),
+            link: "/talent",
+            details: "Every talent in our directory undergoes a rigorous verification process to ensure quality, authenticity, and reliability."
+        },
+        {
+            title: "Services Marketplace",
+            description: "Discover professional tech and AI services for your business needs, from development to consulting.",
+            icon: _jsx(Zap, { className: "h-10 w-10 p-2 rounded-md bg-cyan-100 text-cyan-700" }),
+            link: "/services",
+            badge: "New",
+            details: "From on-demand IT support to specialized AI development, our marketplace offers verified services with transparent pricing and reviews."
+        },
+        {
+            title: "Equipment Catalog",
+            description: "Find specialized hardware and tech equipment for AI development and research.",
+            icon: _jsx(Settings, { className: "h-10 w-10 p-2 rounded-md bg-amber-100 text-amber-700" }),
+            link: "/equipment",
+            details: "Access cutting-edge technology with flexible options to buy, rent, or lease specialized equipment for your tech projects."
+        },
+        {
+            title: "Community Hub",
+            description: "Connect with like-minded professionals, share insights, and stay updated with industry trends.",
+            icon: _jsx(MessageSquare, { className: "h-10 w-10 p-2 rounded-md bg-emerald-100 text-emerald-700" }),
+            link: "/community",
+            details: "Join thousands of tech professionals in discussions, AMAs with industry leaders, and exclusive community events."
+        },
+        {
+            title: "Mobile Experience",
+            description: "Take Zion with you on the go with our mobile app for iOS and Android devices.",
+            icon: _jsx(Smartphone, { className: "h-10 w-10 p-2 rounded-md bg-indigo-100 text-indigo-700" }),
+            link: "/mobile-launch",
+            badge: "Featured",
+            details: "Manage your projects, communicate with clients or talents, and receive real-time updates wherever you are."
+        },
+        {
+            title: "Enterprise Solutions",
+            description: "Custom-branded hiring portal, dedicated talent pool, and powerful admin controls for your organization.",
+            icon: _jsx(Building, { className: "h-10 w-10 p-2 rounded-md bg-pink-100 text-pink-700" }),
+            link: "/enterprise",
+            details: "Scale your talent acquisition with white-labeled solutions, analytics dashboards, and dedicated account managers."
+        },
+        {
+            title: "Developer Tools",
+            description: "Access our API documentation, SDKs, and integration guides to build on top of the Zion platform.",
+            icon: _jsx(Code, { className: "h-10 w-10 p-2 rounded-md bg-gray-100 text-gray-700" }),
+            link: "/developers",
+            details: "Leverage our robust API with comprehensive documentation, code examples, and developer support."
+        },
+        {
+            title: "Learning Resources",
+            description: "Access tutorials, courses, and documentation to enhance your skills in AI and tech.",
+            icon: _jsx(BookOpen, { className: "h-10 w-10 p-2 rounded-md bg-teal-100 text-teal-700" }),
+            link: "/blog",
+            details: "From beginner guides to advanced technical content, our learning resources help you stay at the cutting edge of technology."
+        },
+        {
+            title: "Project Management",
+            description: "Streamlined tools to manage projects, track milestones, and ensure successful delivery.",
+            icon: _jsx(Calendar, { className: "h-10 w-10 p-2 rounded-md bg-red-100 text-red-700" }),
+            link: "/dashboard/projects",
+            details: "Our intuitive project management tools help you track progress, manage deliverables, and ensure timely completion."
+        },
+        {
+            title: "Zion Hire AI",
+            description: "AI-powered recruiting assistant to streamline your hiring process and find better matches.",
+            icon: _jsx(Clock, { className: "h-10 w-10 p-2 rounded-md bg-violet-100 text-violet-700" }),
+            link: "/zion-hire-ai",
+            badge: "Premium",
+            details: "Automate screening, improve candidate matching, and enhance the hiring experience with our AI recruiting solution."
+        },
+        {
+            title: "Micro SAAS Services",
+            description: "Comprehensive suite of micro SAAS solutions for AI, IT, Development, Business, Security, Analytics, Automation, and Integration.",
+            icon: _jsx(Zap, { className: "h-10 w-10 p-2 rounded-md bg-emerald-100 text-emerald-700" }),
+            link: "/micro-saas-services",
+            badge: "New",
+            details: "Transform your business with our cutting-edge micro SAAS solutions including AI content generation, cybersecurity monitoring, and enterprise integration platforms."
         }
-    };
-    return (_jsx("section", { className: "py-16 bg-gradient-to-b from-background to-background/90", role: "region", "aria-labelledby": "features-title", children: _jsxs("div", { className: "container mx-auto px-4", children: [_jsxs(motion.div, { className: "mb-12 text-center", initial: { opacity: 0, y: 20 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: true }, transition: { duration: 0.6 }, children: [_jsx("h2", { id: "features-title", className: "text-3xl font-bold tracking-tight mb-3", children: "Discover Zion's Powerful Features" }), _jsx("p", { className: "text-lg text-muted-foreground max-w-3xl mx-auto", children: "Explore our comprehensive suite of tools designed to transform how you connect, collaborate, and create in the tech ecosystem." })] }), _jsx(motion.div, { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6", variants: containerVariants, initial: "hidden", whileInView: "visible", viewport: { once: true }, children: features.map((feature, index) => (_jsx(motion.div, { variants: cardVariants, whileHover: "hover", className: "group", children: _jsxs(Card, { className: "overflow-hidden transition-all duration-300 hover:shadow-xl hover:border-primary/50 h-full flex flex-col", children: [_jsxs(CardHeader, { className: "pb-2", children: [_jsxs("div", { className: "flex justify-between items-start", children: [_jsx(motion.div, { whileHover: { rotate: 5, scale: 1.1 }, transition: { duration: 0.2 }, children: feature.icon }), feature.badge && (_jsx(Badge, { variant: "secondary", className: "bg-primary/20 text-primary", children: feature.badge }))] }), _jsx(CardTitle, { className: "mt-4 group-hover:text-primary transition-colors duration-300", children: feature.title }), _jsx(CardDescription, { className: "line-clamp-2", children: feature.description })] }), _jsx(CardContent, { className: "flex-1", children: _jsx("p", { className: "text-sm text-muted-foreground", children: feature.details }) }), _jsx(CardFooter, { children: _jsx(Button, { asChild: true, className: "w-full gap-1 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300", children: _jsxs(Link, { to: feature.link, "aria-label": `Explore ${feature.title}`, children: [_jsxs("span", { children: ["Explore ", feature.title] }), _jsx(motion.div, { whileHover: { x: 4 }, transition: { duration: 0.2 }, children: _jsx(ArrowRight, { className: "h-4 w-4" }) })] }) }) })] }) }, index))) })] }) }));
+    ];
+    return (_jsx("section", { className: "py-16 bg-gradient-to-b from-background to-background/90", children: _jsxs("div", { className: "container mx-auto px-4", children: [_jsxs("div", { className: "mb-12 text-center", children: [_jsx("h2", { className: "text-3xl font-bold tracking-tight mb-3", children: "Discover Zion's Powerful Features" }), _jsx("p", { className: "text-lg text-muted-foreground max-w-3xl mx-auto", children: "Explore our comprehensive suite of tools designed to transform how you connect, collaborate, and create in the tech ecosystem." })] }), _jsx("div", { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6", children: features.map((feature, index) => (_jsxs(Card, { className: "overflow-hidden transition-all duration-300 hover:shadow-lg hover:border-primary/50", children: [_jsxs(CardHeader, { className: "pb-2", children: [_jsxs("div", { className: "flex justify-between items-start", children: [feature.icon, feature.badge && (_jsx(Badge, { variant: "secondary", className: "bg-primary/20 text-primary", children: feature.badge }))] }), _jsx(CardTitle, { className: "mt-4", children: feature.title }), _jsx(CardDescription, { className: "line-clamp-2", children: feature.description })] }), _jsx(CardContent, { children: _jsx("p", { className: "text-sm text-muted-foreground", children: feature.details }) }), _jsx(CardFooter, { children: _jsx(Button, { asChild: true, className: "w-full gap-1", children: _jsxs(Link, { to: feature.link, children: [_jsxs("span", { children: ["Explore ", feature.title] }), _jsx(ArrowRight, { className: "h-4 w-4" })] }) }) })] }, index))) })] }) }));
 }
