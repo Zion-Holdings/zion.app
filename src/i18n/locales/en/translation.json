@@ -19,14 +19,26 @@
   "nav": {
     "home": "Home",
     "marketplace": "Marketplace",
-    "categories": "Categories",
+    "services": "Services",
     "talent": "Talent",
     "equipment": "Equipment",
     "community": "Community",
+    "company": "Company",
+    "blog": "Blog",
     "dashboard": "Dashboard",
     "messages": "Messages",
     "post_job": "Post Job",
-    "analytics": "Analytics"
+    "analytics": "Analytics",
+    "about": "About Us",
+    "careers": "Careers",
+    "partners": "Partners",
+    "contact": "Contact",
+    "products": "Products",
+    "green-it": "Green IT",
+    "help": "Help Center",
+    "developers": "Developer Portal",
+    "api-docs": "API Documentation",
+    "sitemap": "Sitemap"
   },
   "auth": {
     "login": "Login",
