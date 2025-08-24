@@ -33,7 +33,7 @@ export function AccordionItem({ children }: AccordionItemProps) {
     <div className="border border-zion-slate rounded-lg mb-2">
       {React.Children.map(children, (child) => {
         if (React.isValidElement(child)) {
-          return React.cloneElement(child, { isOpen, setIsOpen } as any);
+          return React.cloneElement(child, { isOpen, setIsOpen } as { isOpen: boolean; setIsOpen: React.Dispatch<React.SetStateAction<boolean>> });
         }
         return child;
       })}

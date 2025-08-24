@@ -1,22 +1,22 @@
 import React from 'react';
 import Head from 'next/head';
 import { motion } from 'framer-motion';
-import { Users, Award, Globe, Zap, Shield, Target } from 'lucide-react';
+import { Users, TrendingUp, Clock, CheckCircle } from 'lucide-react';
 
 export default function AboutPage() {
   const values = [
     {
-      icon: Zap,
+      icon: TrendingUp,
       title: "Innovation First",
       description: "We push the boundaries of what's possible, constantly exploring new technologies and approaches."
     },
     {
-      icon: Shield,
+      icon: CheckCircle,
       title: "Security & Trust",
       description: "Enterprise-grade security is built into everything we do, ensuring your data and systems are protected."
     },
     {
-      icon: Target,
+      icon: Clock,
       title: "Results Driven",
       description: "We measure success by the tangible impact our solutions have on your business outcomes."
     },

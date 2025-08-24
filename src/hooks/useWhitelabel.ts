@@ -49,8 +49,7 @@ export const useWhitelabel = (): WhitelabelState => {
           },
           isLoading: false,
         });
-      } catch (error) {
-        console.error('Error fetching whitelabel config:', error);
+      } catch {
         setState({
           config: null,
           tenant: null,

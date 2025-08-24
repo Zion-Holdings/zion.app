@@ -66,9 +66,8 @@ export function ITServiceRequestHero() {
               24x7 Global IT Onsite Services
             </GradientHeading>
             
-            <p className="text-lg text-zion-slate-light mb-8 max-w-lg leading-relaxed">
-              Request professional technicians anywhere in the world, anytime you need them. 
-              From emergency repairs to scheduled maintenance, we've got you covered.
+            <p className="text-lg text-zinc-600 dark:text-zinc-400 mb-8">
+              Don&apos;t let IT challenges slow down your business. Get expert help fast.
             </p>
 
             {/* Benefits */}

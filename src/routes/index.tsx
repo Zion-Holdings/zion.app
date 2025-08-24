@@ -1,5 +1,4 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
 
 // Placeholder route components
 export const AuthRoutes = () => <div>Auth Routes</div>;

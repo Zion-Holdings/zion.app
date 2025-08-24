@@ -61,18 +61,16 @@ export function FuturisticAnimatedBackground({
       canvas.height = window.innerHeight;
     };
 
-    const createParticle = () => {
-      return {
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 2 * intensityMultiplier,
-        vy: (Math.random() - 0.5) * 2 * intensityMultiplier,
-        size: Math.random() * 3 * intensityMultiplier + 1,
-        opacity: Math.random() * 0.8 + 0.2,
-        life: Math.random() * 100 + 50,
-        maxLife: Math.random() * 100 + 50
-      };
-    };
+    const createParticle = (): { x: number; y: number; vx: number; vy: number; size: number; opacity: number; life: number; maxLife: number } => ({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      vx: (Math.random() - 0.5) * 2 * intensityMultiplier,
+      vy: (Math.random() - 0.5) * 2 * intensityMultiplier,
+      size: Math.random() * 3 * intensityMultiplier + 1,
+      opacity: Math.random() * 0.8 + 0.2,
+      life: Math.random() * 100 + 50,
+      maxLife: Math.random() * 100 + 50
+    });
 
     const initParticles = () => {
       const particleCount = Math.floor(50 * intensityMultiplier);
@@ -160,7 +158,7 @@ export function FuturisticAnimatedBackground({
       animationRef.current = requestAnimationFrame(drawParticles);
     };
 
-    const drawGeometricShapes = (ctx: CanvasRenderingContext2D, colors: any, intensity: number) => {
+    const drawGeometricShapes = (ctx: CanvasRenderingContext2D, colors: { primary: string; secondary: string; accent: string }, intensity: number) => {
       const time = Date.now() * 0.001;
       
       // Hexagons
@@ -228,7 +226,7 @@ export function FuturisticAnimatedBackground({
         cancelAnimationFrame(animationRef.current);
       }
     };
-  }, [intensity, colorScheme]);
+  }, [intensity, colorScheme, colors, intensityMultiplier]);
 
   return (
     <canvas

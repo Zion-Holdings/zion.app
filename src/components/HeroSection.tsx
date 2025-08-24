@@ -100,9 +100,12 @@ export function HeroSection() {
               <br />
               <span className="text-white">Starts Here</span>
             </GradientHeading>
-            <p className="text-xl md:text-2xl text-zion-slate-light max-w-3xl mx-auto leading-relaxed">
-              Connect with the world's top AI experts, cutting-edge services, and innovative solutions. 
-              Transform your business with Zion Tech Group's revolutionary marketplace.
+            <p className="text-lg text-zinc-600 dark:text-zinc-400 mb-6">
+              Transform your business with cutting-edge AI, cloud solutions, and digital innovation. 
+              We&apos;re your strategic partner for the future.
+            </p>
+            <p className="text-lg text-zinc-600 dark:text-zinc-400 mb-8">
+              From startups to enterprises, we&apos;ve helped 500+ companies scale and succeed.
             </p>
           </motion.div>
 

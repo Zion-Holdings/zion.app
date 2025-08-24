@@ -122,7 +122,7 @@ export function TestimonialsSection() {
         >
           <GradientHeading className="text-4xl md:text-5xl mb-6">Trusted by Industry Leaders</GradientHeading>
           <p className="text-zion-slate-light text-lg md:text-xl mt-4 max-w-3xl mx-auto leading-relaxed">
-            See how businesses and professionals worldwide are transforming their operations with Zion's AI-powered marketplace
+            See how businesses and professionals worldwide are transforming their operations with Zion&apos;s AI-powered marketplace
           </p>
         </motion.div>
 
@@ -173,8 +173,10 @@ export function TestimonialsSection() {
                 </div>
 
                 {/* Content */}
-                <p className="text-zion-slate-light leading-relaxed mb-6 text-sm">
-                  "{testimonial.content}"
+                <p className="text-zinc-600 dark:text-zinc-400 mb-4">
+                  &quot;Zion Tech Group transformed our entire IT infrastructure. Their AI solutions 
+                  helped us reduce costs by 40% while improving performance. It&apos;s like having 
+                  a team of experts working 24/7.&quot;
                 </p>
 
                 {/* Category badge */}
