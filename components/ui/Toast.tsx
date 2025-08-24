@@ -1,263 +1,183 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import { createPortal } from 'react-dom';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { CheckCircle, AlertCircle, X, Info } from 'lucide-react';
 
-export interface ToastProps {
+export type ToastType = 'success' | 'error' | 'info' | 'warning';
+
+export interface Toast {
   id: string;
-  type: 'success' | 'error' | 'warning' | 'info';
+  type: ToastType;
   title: string;
   message?: string;
   duration?: number;
-  onClose?: (id: string) => void;
-  action?: {
-    label: string;
-    onClick: () => void;
-  };
 }
 
-interface ToastContextType {
-  showToast: (toast: Omit<ToastProps, 'id'>) => void;
-  hideToast: (id: string) => void;
-  clearToasts: () => void;
+interface ToastProps {
+  toast: Toast;
+  onRemove: (id: string) => void;
 }
 
-const ToastContext = React.createContext<ToastContextType | undefined>(undefined);
-
-export const useToast = () => {
-  const context = React.useContext(ToastContext);
-  if (!context) {
-    throw new Error('useToast must be used within a ToastProvider');
-  }
-  return context;
-};
-
-const ToastItem: React.FC<ToastProps> = ({
-  id,
-  type,
-  title,
-  message,
-  duration = 5000,
-  onClose,
-  action
-}) => {
-  const [isVisible, setIsVisible] = useState(false);
-  const [isExiting, setIsExiting] = useState(false);
+const ToastItem: React.FC<ToastProps> = ({ toast, onRemove }) => {
+  const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
-    // Animate in
-    const timer = setTimeout(() => setIsVisible(true), 100);
-    
-    // Auto-dismiss
-    if (duration > 0) {
-      const dismissTimer = setTimeout(() => {
-        handleClose();
-      }, duration);
-      
-      return () => clearTimeout(dismissTimer);
-    }
-    
+    const timer = setTimeout(() => {
+      setIsVisible(false);
+      setTimeout(() => onRemove(toast.id), 300);
+    }, toast.duration || 5000);
+
     return () => clearTimeout(timer);
-  }, [duration]);
+  }, [toast.id, toast.duration, onRemove]);
 
-  const handleClose = useCallback(() => {
-    setIsExiting(true);
-    setTimeout(() => {
-      onClose?.(id);
-    }, 300);
-  }, [id, onClose]);
-
-  const handleAction = useCallback(() => {
-    action?.onClick();
-    handleClose();
-  }, [action, handleClose]);
-
-  const typeStyles = {
-    success: {
-      icon: '✓',
-      bg: 'bg-green-500',
-      border: 'border-green-400',
-      text: 'text-green-800',
-      iconBg: 'bg-green-100'
-    },
-    error: {
-      icon: '✕',
-      bg: 'bg-red-500',
-      border: 'border-red-400',
-      text: 'text-red-800',
-      iconBg: 'bg-red-100'
-    },
-    warning: {
-      icon: '⚠',
-      bg: 'bg-yellow-500',
-      border: 'border-yellow-400',
-      text: 'text-yellow-800',
-      iconBg: 'bg-yellow-100'
-    },
-    info: {
-      icon: 'ℹ',
-      bg: 'bg-blue-500',
-      border: 'border-blue-400',
-      text: 'text-blue-800',
-      iconBg: 'bg-blue-100'
+  const getIcon = () => {
+    switch (toast.type) {
+      case 'success':
+        return <CheckCircle className="w-5 h-5 text-green-400" />;
+      case 'error':
+        return <AlertCircle className="w-5 h-5 text-red-400" />;
+      case 'warning':
+        return <AlertCircle className="w-5 h-5 text-yellow-400" />;
+      case 'info':
+        return <Info className="w-5 h-5 text-blue-400" />;
+      default:
+        return <Info className="w-5 h-5 text-blue-400" />;
     }
   };
 
-  const styles = typeStyles[type];
+  const getBorderColor = () => {
+    switch (toast.type) {
+      case 'success':
+        return 'border-green-500/20';
+      case 'error':
+        return 'border-red-500/20';
+      case 'warning':
+        return 'border-yellow-500/20';
+      case 'info':
+        return 'border-blue-500/20';
+      default:
+        return 'border-blue-500/20';
+    }
+  };
+
+  const getBackgroundColor = () => {
+    switch (toast.type) {
+      case 'success':
+        return 'bg-green-500/10';
+      case 'error':
+        return 'bg-red-500/10';
+      case 'warning':
+        return 'bg-yellow-500/10';
+      case 'info':
+        return 'bg-blue-500/10';
+      default:
+        return 'bg-blue-500/10';
+    }
+  };
 
   return (
-    <div
-      className={`
-        relative w-full max-w-sm bg-white rounded-lg shadow-lg border-l-4 p-4 mb-3
-        transform transition-all duration-300 ease-out
-        ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'}
-        ${isExiting ? 'translate-x-full opacity-0' : ''}
-        ${styles.border}
-      `}
-      role="alert"
-      aria-live="assertive"
-      aria-atomic="true"
+    <motion.div
+      initial={{ opacity: 0, x: 300, scale: 0.8 }}
+      animate={{ opacity: isVisible ? 1 : 0, x: isVisible ? 0 : 300, scale: isVisible ? 1 : 0.8 }}
+      exit={{ opacity: 0, x: 300, scale: 0.8 }}
+      transition={{ duration: 0.3, ease: "easeInOut" }}
+      className={`relative p-4 rounded-xl border ${getBorderColor()} ${getBackgroundColor()} backdrop-blur-xl shadow-2xl max-w-sm`}
     >
-      {/* Progress bar */}
-      {duration > 0 && (
-        <div className="absolute top-0 left-0 w-full h-1 bg-gray-200 rounded-t-lg overflow-hidden">
-          <div
-            className={`h-full ${styles.bg} transition-all duration-300 ease-linear`}
-            style={{
-              width: isVisible ? '0%' : '100%',
-              transitionDuration: `${duration}ms`
-            }}
-          />
-        </div>
-      )}
-
       <div className="flex items-start space-x-3">
-        {/* Icon */}
-        <div className={`flex-shrink-0 w-6 h-6 rounded-full ${styles.iconBg} flex items-center justify-center text-sm font-bold ${styles.text}`}>
-          {styles.icon}
+        <div className="flex-shrink-0 mt-0.5">
+          {getIcon()}
         </div>
-
-        {/* Content */}
         <div className="flex-1 min-w-0">
-          <h4 className={`text-sm font-semibold ${styles.text}`}>
-            {title}
+          <h4 className="text-sm font-semibold text-white">
+            {toast.title}
           </h4>
-          {message && (
-            <p className="mt-1 text-sm text-gray-600">
-              {message}
+          {toast.message && (
+            <p className="mt-1 text-sm text-white/70">
+              {toast.message}
             </p>
           )}
-          
-          {/* Action button */}
-          {action && (
-            <button
-              onClick={handleAction}
-              className="mt-2 text-sm font-medium text-blue-600 hover:text-blue-800 focus:outline-none focus:underline"
-            >
-              {action.label}
-            </button>
-          )}
         </div>
-
-        {/* Close button */}
         <button
-          onClick={handleClose}
-          className="flex-shrink-0 w-5 h-5 text-gray-400 hover:text-gray-600 focus:outline-none focus:text-gray-600"
-          aria-label="Close notification"
+          onClick={() => {
+            setIsVisible(false);
+            setTimeout(() => onRemove(toast.id), 300);
+          }}
+          className="flex-shrink-0 ml-2 p-1 rounded-lg hover:bg-white/10 transition-colors duration-200"
         >
-          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-            <path
-              fillRule="evenodd"
-              d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-              clipRule="evenodd"
-            />
-          </svg>
+          <X className="w-4 h-4 text-white/60 hover:text-white" />
         </button>
       </div>
+      
+      {/* Progress bar */}
+      <div className="absolute bottom-0 left-0 right-0 h-1 bg-white/20 rounded-b-xl overflow-hidden">
+        <motion.div
+          className={`h-full ${
+            toast.type === 'success' ? 'bg-green-400' :
+            toast.type === 'error' ? 'bg-red-400' :
+            toast.type === 'warning' ? 'bg-yellow-400' :
+            'bg-blue-400'
+          }`}
+          initial={{ width: '100%' }}
+          animate={{ width: '0%' }}
+          transition={{ duration: toast.duration || 5000, ease: "linear" }}
+        />
+      </div>
+    </motion.div>
+  );
+};
+
+interface ToastContainerProps {
+  toasts: Toast[];
+  onRemove: (id: string) => void;
+}
+
+export const ToastContainer: React.FC<ToastContainerProps> = ({ toasts, onRemove }) => {
+  return (
+    <div className="fixed top-4 right-4 z-50 space-y-3">
+      <AnimatePresence>
+        {toasts.map((toast) => (
+          <ToastItem key={toast.id} toast={toast} onRemove={onRemove} />
+        ))}
+      </AnimatePresence>
     </div>
   );
 };
 
-export const ToastContainer: React.FC = () => {
-  const [toasts, setToasts] = useState<ToastProps[]>([]);
+// Hook for managing toasts
+export const useToast = () => {
+  const [toasts, setToasts] = useState<Toast[]>([]);
 
-  const showToast = useCallback((toast: Omit<ToastProps, 'id'>) => {
+  const addToast = (toast: Omit<Toast, 'id'>) => {
     const id = Math.random().toString(36).substr(2, 9);
     const newToast = { ...toast, id };
     setToasts(prev => [...prev, newToast]);
-  }, []);
-
-  const hideToast = useCallback((id: string) => {
-    setToasts(prev => prev.filter(toast => toast.id !== id));
-  }, []);
-
-  const clearToasts = useCallback(() => {
-    setToasts([]);
-  }, []);
-
-  // Limit toasts to prevent memory issues
-  useEffect(() => {
-    if (toasts.length > 5) {
-      setToasts(prev => prev.slice(-5));
-    }
-  }, [toasts.length]);
-
-  const contextValue: ToastContextType = {
-    showToast,
-    hideToast,
-    clearToasts
   };
 
-  return (
-    <ToastContext.Provider value={contextValue}>
-      {toasts.length > 0 && createPortal(
-        <div
-          className="fixed top-4 right-4 z-50 space-y-2 max-w-sm"
-          role="region"
-          aria-label="Notifications"
-        >
-          {toasts.map(toast => (
-            <ToastItem
-              key={toast.id}
-              {...toast}
-              onClose={hideToast}
-            />
-          ))}
-        </div>,
-        document.body
-      )}
-    </ToastContext.Provider>
-  );
-};
+  const removeToast = (id: string) => {
+    setToasts(prev => prev.filter(toast => toast.id !== id));
+  };
 
-// Utility functions for quick toast creation
-export const toast = {
-  success: (title: string, message?: string, options?: Partial<ToastProps>) => {
-    // This would be called from the context
-    return { type: 'success' as const, title, message, ...options };
-  },
-  error: (title: string, message?: string, options?: Partial<ToastProps>) => {
-    return { type: 'error' as const, title, message, ...options };
-  },
-  warning: (title: string, message?: string, options?: Partial<ToastProps>) => {
-    return { type: 'warning' as const, title, message, ...options };
-  },
-  info: (title: string, message?: string, options?: Partial<ToastProps>) => {
-    return { type: 'info' as const, title, message, ...options };
-  }
-};
+  const showSuccess = (title: string, message?: string) => {
+    addToast({ type: 'success', title, message });
+  };
 
-// HOC to wrap components with toast functionality
-export const withToast = <P extends object>(
-  Component: React.ComponentType<P & { toast?: ToastContextType }>
-) => {
-  const WrappedComponent = (props: P) => (
-    <ToastContext.Consumer>
-      {(toastContext) => (
-        <Component {...props} toast={toastContext} />
-      )}
-    </ToastContext.Consumer>
-  );
-  
-  WrappedComponent.displayName = `withToast(${Component.displayName || Component.name || 'Component'})`;
-  
-  return WrappedComponent;
+  const showError = (title: string, message?: string) => {
+    addToast({ type: 'error', title, message });
+  };
+
+  const showInfo = (title: string, message?: string) => {
+    addToast({ type: 'info', title, message });
+  };
+
+  const showWarning = (title: string, message?: string) => {
+    addToast({ type: 'warning', title, message });
+  };
+
+  return {
+    toasts,
+    showSuccess,
+    showError,
+    showInfo,
+    showWarning,
+    removeToast,
+  };
 };

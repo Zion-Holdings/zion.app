@@ -1,88 +1,148 @@
-import React from 'react';
-import Head from 'next/head';
-import Link from 'next/link';
-import {
-  Brain, Zap, Target, BarChart3, Users, TrendingUp,
-  MessageSquare, Mail, Phone, MapPin, ArrowRight,
-  Star, CheckCircle, Rocket, Globe, Shield, Cpu,
-  Building, Award, Lock, Server, Network, Monitor
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { 
+  ArrowRight, Brain, Shield, Rocket, Cpu, Database, Atom, Target, Star, 
+  Sparkles, Zap, Users, Award, Clock, CheckCircle, Globe, Code, Server,
+  ChevronRight, ExternalLink, TrendingUp, BarChart3, Cloud, Network
 } from 'lucide-react';
 import EnhancedNavigation from '../components/EnhancedNavigation';
 import EnhancedFooter from '../components/EnhancedFooter';
 import EnhancedContactForm from '../components/EnhancedContactForm';
-import EnhancedServicesShowcase from '../components/EnhancedServicesShowcase';
-import EnhancedTestimonialsSection from '../components/EnhancedTestimonialsSection';
-import AccessibilityEnhancer from '../components/AccessibilityEnhancer';
-import { ResourcePreloader } from '../components/PerformanceOptimizer';
+import SEOHead from '../components/SEOHead';
+import { ToastContainer, useToast } from '../components/ui/Toast';
+import { Service, Feature, Stat, UpdateItem } from '../types';
 
 export default function HomePage() {
+  const [currentFeature, setCurrentFeature] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  const { toasts, removeToast } = useToast();
+
+  useEffect(() => {
+    setIsVisible(true);
+    
+    // Auto-rotate features
+    const interval = setInterval(() => {
+      setCurrentFeature((prev) => (prev + 1) % 6);
+    }, 5000);
+    
+    return () => clearInterval(interval);
+  }, []);
+
+  const features: Feature[] = [
+    {
+      icon: Brain,
+      title: "AI Autonomous Ecosystem",
+      description: "Revolutionary autonomous AI solutions that adapt and evolve",
+      color: "from-purple-500 to-pink-500"
+    },
+    {
+      icon: Atom,
+      title: "Quantum AI Neural Networks",
+      description: "Quantum-powered AI with advanced consciousness capabilities",
+      color: "from-blue-500 to-cyan-500"
+    },
+    {
+      icon: Shield,
+      title: "Quantum Cybersecurity",
+      description: "Quantum-resistant security with AI-powered threat detection",
+      color: "from-red-500 to-orange-500"
+    },
+    {
+      icon: Rocket,
+      title: "Space Resource Intelligence",
+      description: "AI-powered space resource discovery and optimization",
+      color: "from-indigo-500 to-purple-500"
+    },
+    {
+      icon: Cpu,
+      title: "Autonomous DevOps",
+      description: "AI-powered DevOps optimization and automation",
+      color: "from-emerald-500 to-teal-500"
+    },
+    {
+      icon: Database,
+      title: "Edge Computing Orchestration",
+      description: "Advanced edge computing optimization platform",
+      color: "from-yellow-500 to-orange-500"
+    }
+  ];
+
+  const services: Service[] = [
+    {
+      title: "AI & Machine Learning",
+      description: "Custom AI solutions, neural networks, and autonomous systems",
+      icon: Brain,
+      color: "from-purple-500 to-pink-500"
+    },
+    {
+      title: "Quantum Computing",
+      description: "Quantum algorithms, cryptography, and quantum AI integration",
+      icon: Atom,
+      color: "from-blue-500 to-cyan-500"
+    },
+    {
+      title: "Cybersecurity",
+      description: "Advanced threat detection, quantum-resistant encryption",
+      icon: Shield,
+      color: "from-red-500 to-orange-500"
+    },
+    {
+      title: "Cloud Infrastructure",
+      description: "Scalable cloud solutions, edge computing, and DevOps",
+      icon: Cloud,
+      color: "from-emerald-500 to-teal-500"
+    },
+    {
+      title: "Data Analytics",
+      description: "Big data processing, predictive analytics, and insights",
+      icon: BarChart3,
+      color: "from-indigo-500 to-purple-500"
+    },
+    {
+      title: "Digital Transformation",
+      description: "End-to-end digital transformation and modernization",
+      icon: Rocket,
+      color: "from-yellow-500 to-orange-500"
+    }
+  ];
+
+  const stats: Stat[] = [
+    { number: "500+", label: "Projects Delivered", icon: CheckCircle },
+    { number: "50+", label: "Enterprise Clients", icon: Users },
+    { number: "99.9%", label: "Uptime Guarantee", icon: Shield },
+    { number: "24/7", label: "Support Available", icon: Clock }
+  ];
+
+  const updates: UpdateItem[] = [
+    {
+      title: "Autonomous Update — 2025: 08: 15: 0508",
+      href: "/reports/updates/update-2025-08-15-0508",
+      description: "Freshly published by autonomous agents.",
+      date: "2025-08-15"
+    },
+    {
+      title: "Autonomous Update — 2025: 08: 15: 0507",
+      href: "/reports/updates/update-2025-08-15-0507",
+      description: "Freshly published by autonomous agents.",
+      date: "2025-08-15"
+    },
+    {
+      title: "Autonomous Update — 2025: 08: 15: 0457",
+      href: "/reports/updates/update-2025-08-15-0457",
+      description: "Freshly published by autonomous agents.",
+      date: "2025-08-15"
+    }
+  ];
+
   return (
-    <>
-      <Head>
-        <title>Zion Tech Group — Leading-Edge Technology Solutions & Autonomous Innovation Platform</title>
-        <meta name="description" content="Zion Tech Group delivers cutting-edge AI, quantum computing, cybersecurity, and digital transformation solutions. Leading the future of autonomous innovation with enterprise-grade technology." />
-        <meta name="keywords" content="AI, artificial intelligence, quantum computing, cybersecurity, digital transformation, autonomous systems, technology solutions, machine learning, edge computing, space technology, DevOps, enterprise solutions" />
-        <meta name="author" content="Zion Tech Group" />
-        <meta name="robots" content="index, follow" />
-        
-        {/* Open Graph */}
-        <meta property="og:title" content="Zion Tech Group — Leading-Edge Technology Solutions" />
-        <meta property="og:description" content="Cutting-edge AI, quantum computing, cybersecurity, and digital transformation solutions. Leading the future of autonomous innovation." />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://ziontechgroup.com" />
-        <meta property="og:site_name" content="Zion Tech Group" />
-        <meta property="og:image" content="https://ziontechgroup.com/og-image.jpg" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Zion Tech Group — Leading-Edge Technology Solutions" />
-        <meta name="twitter:description" content="Cutting-edge AI, quantum computing, cybersecurity, and digital transformation solutions." />
-        <meta name="twitter:image" content="https://ziontechgroup.com/twitter-image.jpg" />
-        
-        {/* Canonical */}
-        <link rel="canonical" href="https://ziontechgroup.com" />
-        
-        {/* Additional Meta Tags */}
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="theme-color" content="#0f172a" />
-        <meta name="msapplication-TileColor" content="#0f172a" />
-        
-        {/* Preconnect to external domains */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        
-        {/* Structured Data */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              "name": "Zion Tech Group",
-              "url": "https://ziontechgroup.com",
-              "logo": "https://ziontechgroup.com/logo.png",
-              "description": "Leading-edge technology solutions and autonomous innovation platform",
-              "address": {
-                "@type": "PostalAddress",
-                "addressCountry": "Global"
-              },
-              "contactPoint": {
-                "@type": "ContactPoint",
-                "telephone": "+1-555-123-4567",
-                "contactType": "customer service",
-                "email": "kleber@ziontechgroup.com"
-              },
-              "sameAs": [
-                "https://twitter.com/ziontechgroup",
-                "https://linkedin.com/company/ziontechgroup",
-                "https://github.com/ziontechgroup"
-              ]
-            })
-          }}
-        />
-      </Head>
+    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white overflow-hidden">
+      <SEOHead
+        title="Zion Tech Group — Leading-Edge Technology Solutions & Autonomous Innovation Platform"
+        description="Zion Tech Group delivers cutting-edge AI, quantum computing, cybersecurity, and digital transformation solutions. Leading the future of autonomous innovation."
+        keywords="AI, quantum computing, cybersecurity, digital transformation, autonomous systems, technology solutions"
+        url="https://ziontechgroup.com"
+        type="website"
+      />
 
       <ResourcePreloader />
 
@@ -327,69 +387,25 @@ export default function HomePage() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" role="list" aria-label="Latest updates">
-            <motion.article
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              viewport={{ once: true }}
-              role="listitem"
-            >
-              <a 
-                href="/reports/updates/update-2025-08-15-0508" 
-                className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 transition-all duration-300 transform hover:scale-105 block"
-                aria-label="Read autonomous update from August 15, 2025 at 05:08"
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {updates.map((update, index) => (
+              <motion.a
+                key={update.href}
+                href={update.href}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 transition-all duration-300 transform hover:scale-105"
               >
                 <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
-                <h3 className="text-lg font-semibold text-white">Autonomous Update — 2025: 08: 15: 0508</h3>
-                <p className="mt-1 text-sm text-white/75">Freshly published by autonomous agents.</p>
+                <h3 className="text-lg font-semibold text-white">{update.title}</h3>
+                <p className="mt-1 text-sm text-white/75">{update.description}</p>
                 <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90 group-hover:text-cyan-200 transition-colors duration-300">
-                  Open <span aria-hidden="true">→</span>
+                  Open <span aria-hidden>→</span>
                 </div>
-              </a>
-            </motion.article>
-            
-            <motion.article
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
-              role="listitem"
-            >
-              <a 
-                href="/reports/updates/update-2025-08-15-0507" 
-                className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 transition-all duration-300 transform hover:scale-105 block"
-                aria-label="Read autonomous update from August 15, 2025 at 05:07"
-              >
-                <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
-                <h3 className="text-lg font-semibold text-white">Autonomous Update — 2025: 08: 15: 0507</h3>
-                <p className="mt-1 text-sm text-white/75">Freshly published by autonomous agents.</p>
-                <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90 group-hover:text-cyan-200 transition-colors duration-300">
-                  Open <span aria-hidden="true">→</span>
-                </div>
-              </a>
-            </motion.article>
-            
-            <motion.article
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              viewport={{ once: true }}
-              role="listitem"
-            >
-              <a 
-                href="/reports/updates/update-2025-08-15-0457" 
-                className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 transition-all duration-300 transform hover:scale-105 block"
-                aria-label="Read autonomous update from August 15, 2025 at 04:57"
-              >
-                <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
-                <h3 className="text-lg font-semibold text-white">Autonomous Update — 2025: 08: 15: 0457</h3>
-                <p className="mt-1 text-sm text-white/75">Freshly published by autonomous agents.</p>
-                <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90 group-hover:text-cyan-200 transition-colors duration-300">
-                  Open <span aria-hidden="true">→</span>
-                </div>
-              </a>
-            </motion.article>
+              </motion.a>
+            ))}
           </div>
         </div>
       </section>
@@ -418,6 +434,9 @@ export default function HomePage() {
       </main>
 
       <EnhancedFooter />
+
+      {/* Toast Container */}
+      <ToastContainer toasts={toasts} onRemove={removeToast} />
     </div>
   );
 }
