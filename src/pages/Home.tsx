@@ -11,11 +11,13 @@ import { QuickAccess } from "@/components/home/QuickAccess";
 import { FeatureCTAs } from "@/components/home/FeatureCTAs";
 import { FeatureHighlights } from "@/components/home/FeatureHighlights";
 import { ITServiceRequestHero } from "@/components/home/ITServiceRequestHero";
-import { MicroSaasServicesSection } from "@/components/home/MicroSaasServicesSection";
+import { FuturisticBackground } from "@/components/FuturisticBackground";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative">
+      <FuturisticBackground intensity="low" />
+      
       <SEO 
         title="Zion - The Tech & AI Marketplace" 
         description="Discover top AI and tech talent, services, and equipment in one place."
@@ -30,8 +32,6 @@ export default function Home() {
       <QuickAccess />
       
       <FeatureCTAs />
-      
-      <MicroSaasServicesSection />
       
       <FeatureHighlights />
       
