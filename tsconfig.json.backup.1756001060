@@ -84,9 +84,13 @@
     "next-env.d.ts"
   ],
   "exclude": [
+<<<<<<< HEAD
+    "node_modules"
+=======
     "node_modules",
     "zion.app/recovered-content/**",
     "apps/**",
     "src/**"
+>>>>>>> origin/cursor/website-audit-and-enhancement-e549
   ]
 }

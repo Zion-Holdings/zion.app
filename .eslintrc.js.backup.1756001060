@@ -1,6 +1,13 @@
 module.exports = {
   extends: ['next/core-web-vitals'],
   rules: {
+<<<<<<< HEAD
+    'react/no-unescaped-entities': 'off',
+    'no-unused-vars': 'warn',
+    '@next/next/no-img-element': 'warn'
+  }
+};
+=======
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
     '@typescript-eslint/no-unused-vars': [
@@ -26,3 +33,4 @@ module.exports = {
     'apps/'
   ]
 };
+>>>>>>> origin/cursor/website-audit-and-enhancement-e549

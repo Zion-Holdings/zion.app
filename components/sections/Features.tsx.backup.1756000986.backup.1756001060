@@ -1,5 +1,9 @@
 import React from 'react';
 import Card from '../ui/Card';
+<<<<<<< HEAD
+import { ArrowRight } from 'lucide-react';
+=======
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-0ea6
 
 interface Feature {
   icon: React.ReactNode;
@@ -62,9 +66,15 @@ export default function Features({ title, subtitle, features, columns = 3 }: Fea
                   </div>
                 )}
               </div>
+<<<<<<< HEAD:components/sections/Features.tsx.backup.1756000986
+<<<<<<< HEAD
+            </div>
+=======
             </Card>
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-0ea6
 =======
             </div>
+>>>>>>> origin/cursor/website-audit-and-enhancement-e549:components/sections/Features.tsx
           ))}
         </div>
 

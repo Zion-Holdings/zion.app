@@ -1,5 +1,7 @@
 [
   {
+<<<<<<< HEAD
+=======
     "route": "/2025-advanced-services-showcase",
     "title": "",
     "h1": ""
@@ -65,6 +67,7 @@
     "h1": "Service not found"
   },
   {
+>>>>>>> origin/cursor/website-audit-and-enhancement-e549
     "route": "/_app",
     "title": "",
     "h1": ""
@@ -77,6 +80,38 @@
   {
     "route": "/about",
     "title": "About Us - Zion Tech Group",
+<<<<<<< HEAD
+    "h1": ""
+  },
+  {
+    "route": "/ai-autonomous-research-assistant",
+    "title": "AI Autonomous Research Assistant - Zion Tech Group",
+    "h1": ""
+  },
+  {
+    "route": "/ai-business-intelligence",
+    "title": "AI Business Intelligence - Zion Tech Group",
+    "h1": ""
+  },
+  {
+    "route": "/blog",
+    "title": "Blog & Insights - Zion Tech Group",
+    "h1": ""
+  },
+  {
+    "route": "/comprehensive-2025-services-showcase",
+    "title": "Comprehensive 2025 Innovative Services Showcase — Zion Tech Group",
+    "h1": "2025 Innovative Services Showcase"
+  },
+  {
+    "route": "/contact",
+    "title": "Contact Us - Zion Tech Group",
+    "h1": ""
+  },
+  {
+    "route": "/edge-computing-orchestration",
+    "title": "Edge Computing Orchestration - Zion Tech Group",
+=======
     "h1": "We build practical AI and platform solutions"
   },
   {
@@ -402,6 +437,7 @@
   {
     "route": "/index.page",
     "title": "",
+>>>>>>> origin/cursor/website-audit-and-enhancement-e549
     "h1": ""
   },
   {
@@ -410,6 +446,51 @@
     "h1": "Zion Tech Group"
   },
   {
+<<<<<<< HEAD
+    "route": "/portfolio",
+    "title": "Our Portfolio - Zion Tech Group",
+    "h1": ""
+  },
+  {
+    "route": "/pricing-2025",
+    "title": "Pricing 2025 - Zion Tech Group",
+    "h1": ""
+  },
+  {
+    "route": "/privacy",
+    "title": "Privacy Policy - Zion Tech Group",
+    "h1": ""
+  },
+  {
+    "route": "/quantum-cybersecurity",
+    "title": "Quantum Cybersecurity - Zion Tech Group",
+    "h1": ""
+  },
+  {
+    "route": "/resources",
+    "title": "Resources - Zion Tech Group",
+    "h1": ""
+  },
+  {
+    "route": "/solutions",
+    "title": "Technology Solutions - Zion Tech Group",
+    "h1": ""
+  },
+  {
+    "route": "/space-technology",
+    "title": "Space Technology - Zion Tech Group",
+    "h1": ""
+  },
+  {
+    "route": "/team",
+    "title": "Our Team - Zion Tech Group",
+    "h1": ""
+  },
+  {
+    "route": "/terms",
+    "title": "Terms of Service - Zion Tech Group",
+    "h1": ""
+=======
     "route": "/innovative-services-showcase-2025",
     "title": "Innovative Services Showcase 2025 | Zion Tech Group",
     "h1": ""
@@ -3968,5 +4049,6 @@
     "route": "/academy/founder-course",
     "title": "",
     "h1": "Founder Course: Launch Your Zion Instance"
+>>>>>>> origin/cursor/website-audit-and-enhancement-e549
   }
 ]

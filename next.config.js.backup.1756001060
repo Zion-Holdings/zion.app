@@ -2,7 +2,10 @@ const os = require('os');
 const path = require('path');
 
 const nextConfig = {
+<<<<<<< HEAD
+=======
   assetPrefix: process.env.NODE_ENV === 'production' ? 'https://ziontechgroup.com' : '',
+>>>>>>> origin/cursor/website-audit-and-enhancement-e549
   poweredByHeader: false,
   trailingSlash: false,
   reactStrictMode: true,
@@ -53,7 +56,10 @@ const nextConfig = {
     largePageDataBytes: 128 * 1000, // Reduced to 128KB for better performance
     workerThreads: false, // Disable worker threads to reduce memory usage
     cpus: Math.min(2, require('os').cpus().length), // Adaptive CPU limit
+<<<<<<< HEAD
+=======
     // Bundle analysis optimizations moved to root level
+>>>>>>> origin/cursor/website-audit-and-enhancement-e549
     // Disable profiling for faster builds
     swcTraceProfiling: false,
   },
