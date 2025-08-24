@@ -33,36 +33,36 @@ export default function ContactPage() {
   // Enhanced service advertising content
   const serviceHighlights = [
     {
-      title: '🚀 Quantum AI Cognitive Platform',
-      description: 'The world\'s first quantum-enhanced AI with human-like reasoning. Achieve 1000% ROI through breakthrough discoveries.',
+      title: '🤖 AI Customer Success Automation',
+      description: 'Intelligent customer success automation with AI-powered churn prediction. Achieve 400% ROI through proactive customer management.',
       price: '$299/month',
-      features: ['Quantum neural networks', 'Human-like reasoning', '1000% ROI reported'],
-      link: 'https://ziontechgroup.com/quantum-ai-cognitive',
-      color: 'from-purple-500 to-indigo-600'
+      features: ['AI churn prediction', 'Automated onboarding', 'Customer health scoring'],
+      link: 'https://ziontechgroup.com/services/ai-customer-success-automation',
+      color: 'from-blue-500 to-cyan-600'
     },
     {
-      title: '🏭 Autonomous Manufacturing AI',
-      description: 'Self-learning manufacturing systems with zero downtime. Achieve 400% ROI within 6 months.',
+      title: '📝 Automated Content Marketing Suite',
+      description: 'AI-powered content creation and distribution across multiple channels. Achieve 300% ROI through automated content generation.',
       price: '$199/month',
-      features: ['Predictive maintenance', 'Quality control automation', 'Supply chain intelligence'],
-      link: 'https://ziontechgroup.com/autonomous-manufacturing',
-      color: 'from-orange-500 to-red-600'
+      features: ['AI content generation', 'Multi-channel distribution', 'SEO optimization'],
+      link: 'https://ziontechgroup.com/services/automated-content-marketing-suite',
+      color: 'from-purple-500 to-pink-600'
     },
     {
-      title: '🔒 Quantum Cybersecurity Suite',
-      description: 'Quantum-resistant security for the post-quantum era. 300% ROI within 4 months.',
-      price: '$159/month',
-      features: ['Quantum-resistant encryption', 'AI threat detection', 'Zero-trust architecture'],
-      link: 'https://ziontechgroup.com/quantum-cybersecurity',
-      color: 'from-red-500 to-pink-600'
-    },
-    {
-      title: '🚀 Space Technology Platform',
-      description: 'Revolutionary space exploration and satellite management. 500% ROI within 8 months.',
+      title: '📦 Smart Inventory Management System',
+      description: 'AI-powered inventory optimization with demand forecasting. Achieve 500% ROI through reduced carrying costs.',
       price: '$399/month',
-      features: ['Satellite mission management', 'Space data analytics', 'Orbital optimization'],
-      link: 'https://ziontechgroup.com/space-technology',
-      color: 'from-blue-500 to-indigo-600'
+      features: ['AI demand forecasting', 'Automated reordering', 'Real-time tracking'],
+      link: 'https://ziontechgroup.com/services/smart-inventory-management-system',
+      color: 'from-green-500 to-emerald-600'
+    },
+    {
+      title: '🔐 Quantum Internet Security Gateway',
+      description: 'Unbreakable quantum encryption for the future internet. Achieve 1000% ROI through future-proof security.',
+      price: '$3,999/month',
+      features: ['Quantum key distribution', 'Unbreakable encryption', 'Real-time monitoring'],
+      link: 'https://ziontechgroup.com/services/quantum-internet-security-gateway',
+      color: 'from-indigo-500 to-blue-600'
     }
   ];
 
@@ -71,39 +71,72 @@ export default function ContactPage() {
     {
       icon: '⚡',
       title: 'Lightning Fast Setup',
-      description: 'Get started in minutes, not weeks. Our services are designed for immediate value delivery.',
+      description: 'Get started in minutes, not weeks. Our services are designed for immediate value delivery with 30-90 day free trials.',
       color: 'from-yellow-500 to-orange-600'
     },
     {
       icon: '💰',
       title: 'Transparent Pricing',
-      description: 'No hidden fees, no enterprise sales calls. Simple monthly pricing that scales.',
+      description: 'No hidden fees, no enterprise sales calls. Simple monthly pricing from $99 to $25,999 that scales with your business.',
       color: 'from-green-500 to-emerald-600'
     },
     {
       icon: '🔒',
       title: 'Enterprise Security',
-      description: 'Bank-level security, SOC 2 compliance, and 99.9% uptime guarantee.',
+      description: 'Bank-level security, SOC 2 compliance, 99.9% uptime guarantee, and quantum-resistant encryption.',
       color: 'from-blue-500 to-indigo-600'
     },
     {
       icon: '📊',
       title: 'Proven ROI',
-      description: 'Each service delivers measurable ROI within months. 300-1000% returns reported.',
+      description: 'Each service delivers measurable ROI within months. 300-1200% returns reported by our customers.',
       color: 'from-purple-500 to-violet-600'
+    },
+    {
+      icon: '🚀',
+      title: 'Cutting-Edge Technology',
+      description: 'Access to 500+ revolutionary services including AI consciousness, quantum computing, and space technology.',
+      color: 'from-pink-500 to-rose-600'
+    },
+    {
+      icon: '🌍',
+      title: 'Global Support',
+      description: '24/7 dedicated support team with expertise in AI, quantum computing, and emerging technologies.',
+      color: 'from-teal-500 to-cyan-600'
     }
   ];
 
   const serviceOptions = [
     'Quantum AI & Computing',
+    'AI Consciousness & Neural Interfaces',
     'Autonomous Systems & Robotics',
     'Healthcare & Biotechnology',
-    'Cybersecurity & Defense',
-    'Financial Technology',
-    'Space & Aerospace Technology',
-    'Custom AI Development',
-    'Enterprise Integration',
-    'Technical Consultation',
+    'Space Technology & Exploration',
+    'Metaverse & Digital Reality',
+    'Edge Computing & IoT',
+    'Blockchain & Web3',
+    'Cybersecurity & Zero Trust',
+    'AI Automation & Machine Learning',
+    'Enterprise IT Solutions',
+    'Micro SaaS Platforms',
+    'Financial Technology & Risk Management',
+    'Climate & Sustainability',
+    'Education & E-Learning',
+    'Manufacturing & Industry 4.0',
+    'Transportation & Logistics',
+    'Retail & E-commerce',
+    'Media & Entertainment',
+    'Real Estate & PropTech',
+    'Legal & Compliance',
+    'AI Customer Success Automation',
+    'Content Marketing Automation',
+    'Smart Inventory Management',
+    'HR Recruitment Automation',
+    'Quantum Internet Security',
+    'Space Debris Management',
+    'Holographic Metaverse Development',
+    '5G Private Networks',
+    'AI Multimodal Fusion',
     'Other'
   ];
 
@@ -254,51 +287,27 @@ export default function ContactPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white relative overflow-hidden">
-      {/* Enhanced Background Effects */}
-      <div className="quantum-matrix-grid"></div>
-      <div className="holographic-rings"></div>
-      <div className="neural-network-pattern"></div>
-      <div className="cyberpunk-grid"></div>
-      <div className="quantum-field-effect"></div>
-      
+    <UltraFuturisticBackground variant="neural" intensity="medium">
       <Head>
-        <title>Contact Us - Zion Tech Group | Revolutionary AI, Quantum & IT Services</title>
-        <meta name="description" content="Contact Zion Tech Group for revolutionary AI, quantum computing, and IT services. Get in touch for consultations, demos, and partnership opportunities." />
-        <meta name="keywords" content="contact, AI services, quantum computing, IT services, consultation, partnership, Zion Tech Group" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-        <meta property="og:title" content="Contact Us - Zion Tech Group" />
-        <meta property="og:description" content="Contact Zion Tech Group for revolutionary AI, quantum computing, and IT services." />
+        <title>Contact Us - Zion Tech Group | Get Expert AI & Quantum Computing Support</title>
+        <meta name="description" content="Contact Zion Tech Group for expert AI & quantum computing support. Available 24/7 via phone, email, or visit our Delaware headquarters. Get started with your revolutionary tech project today." />
+        <meta name="keywords" content="contact, AI support, quantum computing support, tech consultation, Zion Tech Group contact" />
+        <meta name="author" content="Zion Tech Group" />
+        <meta name="robots" content="index, follow" />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content="Contact Us - Zion Tech Group | Get Expert AI & Quantum Computing Support" />
+        <meta property="og:description" content="Contact Zion Tech Group for expert AI & quantum computing support. Available 24/7 via phone, email, or visit our Delaware headquarters." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://ziontechgroup.com/contact" />
         <meta property="og:image" content="https://ziontechgroup.com/og-image.jpg" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Contact Us - Zion Tech Group | Get Expert AI & Quantum Computing Support" />
+        <meta name="twitter:description" content="Contact Zion Tech Group for expert AI & quantum computing support. Available 24/7 via phone, email, or visit our Delaware headquarters." />
+        <meta name="twitter:image" content="https://ziontechgroup.com/og-image.jpg" />
       </Head>
-
-      {/* Enhanced Header */}
-      <header className="relative z-10 bg-black/80 backdrop-blur-xl border-b border-green-500/20">
-        <div className="container mx-auto px-4 py-8">
-          <div className="text-center">
-            <h1 className="neural-text text-5xl md:text-6xl font-bold mb-6">
-              Get In Touch
-            </h1>
-            <p className="quantum-text text-xl md:text-2xl mb-8 max-w-4xl mx-auto">
-              Ready to revolutionize your business with cutting-edge AI, quantum computing, and IT solutions?
-            </p>
-            <div className="flex flex-wrap justify-center gap-6 text-sm">
-              <span className="px-6 py-3 bg-green-500/20 border border-green-500/40 rounded-full text-green-400 font-semibold">
-                📞 +1 302 464 0950
-              </span>
-              <span className="px-6 py-3 bg-cyan-500/20 border border-cyan-500/40 rounded-full text-cyan-400 font-semibold">
-                ✉️ kleber@ziontechgroup.com
-              </span>
-              <span className="px-6 py-3 bg-purple-500/20 border border-purple-500/40 rounded-full text-purple-400 font-semibold">
-                🌐 ziontechgroup.com
-              </span>
-            </div>
-          </div>
-        </div>
-      </header>
 
       <div className="container mx-auto px-4 py-12">
         {/* Hero Section */}
@@ -769,6 +778,6 @@ export default function ContactPage() {
           </UltraFuturisticCard>
         </div>
       </div>
-    </div>
+    </UltraFuturisticBackground>
   );
 }
