@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 export const innovativeAIServices2025ExpansionV2 = [
   // AI Consciousness Evolution Platform
   {
@@ -304,7 +303,9 @@ export const innovativeAIServices2025ExpansionV2 = [
     customers: 178,
     rating: 4.8,
     reviews: 145
-=======
+  }
+];
+
 export interface InnovativeAIService2025 {
   id: string;
   name: string;
@@ -326,7 +327,6 @@ export interface InnovativeAIService2025 {
   techStack: string[];
   realImplementation: boolean;
   implementationDetails: string;
-=======
   roi: string;
   useCases: string[];
   integrations: string[];
@@ -466,7 +466,6 @@ export const innovativeAIServices2025: InnovativeAIService2025[] = [
     icon: '🛡️',
     color: 'from-red-500 to-pink-600',
     popular: true,
-=======
     launchDate: '2024-11-15',
     customers: 1200,
     rating: 4.8,
@@ -855,6 +854,5 @@ export const innovativeAIServices2025: InnovativeAIService2025[] = [
     customers: 480,
     rating: 4.8,
     reviews: 67
->>>>>>> 4e26761e9808218b595a40eae6dfbc7c204b5906
   }
 ];

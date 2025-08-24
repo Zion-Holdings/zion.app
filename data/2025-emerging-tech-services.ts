@@ -1,4 +1,4 @@
-import { EnhancedRealMicroSaasService } from './enhanced-real-micro-saas-services';
+import { MicroSaasService } from './enhanced-real-micro-saas-services';
 
 const contact = {
   mobile: '+1 302 464 0950',
@@ -7,7 +7,7 @@ const contact = {
   website: 'https://ziontechgroup.com'
 };
 
-export const emergingTechServices2025: EnhancedRealMicroSaasService[] = [
+export const emergingTechServices2025: MicroSaasService[] = [
   // Quantum Computing Services
   {
     id: 'quantum-computing-as-a-service',
@@ -46,7 +46,7 @@ export const emergingTechServices2025: EnhancedRealMicroSaasService[] = [
     competitors: ['IBM Quantum, Amazon Braket, Google Quantum, Microsoft Azure Quantum'],
     marketSize: '$1.5B Quantum Computing market',
     growthRate: '45% CAGR',
-    variant: 'quantum-futuristic',
+    variant: 'quantum',
     contactInfo: contact,
     realImplementation: true,
     implementationDetails: 'Cloud-based platform with quantum hardware access, custom algorithm development, and dedicated support.',
@@ -94,7 +94,7 @@ export const emergingTechServices2025: EnhancedRealMicroSaasService[] = [
     competitors: ['Hyperledger Fabric, R3 Corda, Ethereum Enterprise, Polygon'],
     marketSize: '$19B Blockchain market',
     growthRate: '87% CAGR',
-    variant: 'blockchain-futuristic',
+    variant: 'default',
     contactInfo: contact,
     realImplementation: true,
     implementationDetails: 'On-premise or cloud deployment with custom smart contracts, integration services, and dedicated support.',
@@ -142,7 +142,7 @@ export const emergingTechServices2025: EnhancedRealMicroSaasService[] = [
     competitors: ['Planet Labs, Maxar Technologies, Airbus Defence and Space, BlackSky'],
     marketSize: '$4.5B Space Data market',
     growthRate: '35% CAGR',
-    variant: 'space-futuristic',
+    variant: 'default',
     contactInfo: contact,
     realImplementation: true,
     implementationDetails: 'Cloud-based platform with satellite data access, custom analytics, and dedicated space technology experts.',
@@ -190,7 +190,7 @@ export const emergingTechServices2025: EnhancedRealMicroSaasService[] = [
     competitors: ['AWS IoT, Azure IoT Hub, Google Cloud IoT, PTC ThingWorx'],
     marketSize: '$1.1T IoT market',
     growthRate: '25% CAGR',
-    variant: 'iot-futuristic',
+    variant: 'ai-futuristic',
     contactInfo: contact,
     realImplementation: true,
     implementationDetails: 'Cloud-hosted platform with custom device integrations, edge computing deployment, and dedicated support.',
@@ -238,7 +238,7 @@ export const emergingTechServices2025: EnhancedRealMicroSaasService[] = [
     competitors: ['Unity, Unreal Engine, PTC Vuforia, Magic Leap'],
     marketSize: '$45B AR/VR market',
     growthRate: '30% CAGR',
-    variant: 'ar-futuristic',
+    variant: 'holographic',
     contactInfo: contact,
     realImplementation: true,
     implementationDetails: 'Cloud-based platform with custom content development, device support, and dedicated AR/VR experts.',
@@ -286,7 +286,7 @@ export const emergingTechServices2025: EnhancedRealMicroSaasService[] = [
     competitors: ['NVIDIA DRIVE, ROS, ABB Robotics, KUKA Robotics'],
     marketSize: '$65B Autonomous Systems market',
     growthRate: '40% CAGR',
-    variant: 'autonomous-futuristic',
+    variant: 'default',
     contactInfo: contact,
     realImplementation: true,
     implementationDetails: 'Custom autonomous system development, integration services, and dedicated robotics experts.',
@@ -334,7 +334,7 @@ export const emergingTechServices2025: EnhancedRealMicroSaasService[] = [
     competitors: ['Ginkgo Bioworks, Twist Bioscience, Zymergen, Benchling'],
     marketSize: '$15B Synthetic Biology market',
     growthRate: '35% CAGR',
-    variant: 'biotech-futuristic',
+    variant: 'ai-futuristic',
     contactInfo: contact,
     realImplementation: true,
     implementationDetails: 'Custom laboratory integration, AI model training, and dedicated biotechnology experts.',
@@ -382,7 +382,7 @@ export const emergingTechServices2025: EnhancedRealMicroSaasService[] = [
     competitors: ['Schneider Electric, Siemens, GE Digital, ABB'],
     marketSize: '$75B Smart Energy market',
     growthRate: '20% CAGR',
-    variant: 'energy-futuristic',
+    variant: 'default',
     contactInfo: contact,
     realImplementation: true,
     implementationDetails: 'Custom energy system integration, AI model training, and dedicated energy experts.',
@@ -430,7 +430,7 @@ export const emergingTechServices2025: EnhancedRealMicroSaasService[] = [
     competitors: ['Siemens Mobility, Cubic Corporation, Kapsch TrafficCom, TomTom'],
     marketSize: '$45B Intelligent Transportation market',
     growthRate: '18% CAGR',
-    variant: 'transportation-futuristic',
+    variant: 'default',
     contactInfo: contact,
     realImplementation: true,
     implementationDetails: 'Custom transportation system integration, AI model training, and dedicated mobility experts.',
@@ -478,7 +478,7 @@ export const emergingTechServices2025: EnhancedRealMicroSaasService[] = [
     competitors: ['ISARA Corporation, PQShield, Crypto Quantique, Qrypt'],
     marketSize: '$8B Quantum Cybersecurity market',
     growthRate: '50% CAGR',
-    variant: 'quantum-security-futuristic',
+    variant: 'quantum-cyberpunk',
     contactInfo: contact,
     realImplementation: true,
     implementationDetails: 'Custom security integration, post-quantum cryptography implementation, and dedicated cybersecurity experts.',

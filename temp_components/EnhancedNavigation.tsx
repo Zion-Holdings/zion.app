@@ -21,12 +21,15 @@ const EnhancedNavigation: React.FC = () => {
   }, []);
 
   const services = [
-    { name: 'All Services', href: '/comprehensive-2025-services-showcase', icon: Globe, description: 'Complete collection of innovative services' },
-    { name: 'AI Business Intelligence', href: 'https://ziontechgroup.com/ai-business-intelligence', icon: Brain, description: 'AI-powered analytics and insights' },
-    { name: 'Quantum Cybersecurity', href: 'https://ziontechgroup.com/quantum-cybersecurity', icon: Shield, description: 'Quantum-resistant security solutions' },
-    { name: 'Edge Computing', href: 'https://ziontechgroup.com/edge-computing-orchestration', icon: Cpu, description: 'Edge orchestration and IoT management' },
-    { name: 'Space Technology', href: 'https://ziontechgroup.com/space-technology', icon: Rocket, description: 'Space exploration and satellite tech' },
-    { name: 'Pricing', href: '/pricing-2025', icon: Award, description: 'Transparent pricing for all services' }
+    { name: 'All Services', href: '/comprehensive-2025-innovative-services-showcase', icon: Globe, description: 'Complete collection of innovative services' },
+    { name: 'AI & Machine Learning', href: '/comprehensive-2025-innovative-services-showcase?category=AI%20%26%20Machine%20Learning', icon: Brain, description: 'AI-powered solutions and ML platforms' },
+    { name: 'Cybersecurity', href: '/comprehensive-2025-innovative-services-showcase?category=Cybersecurity', icon: Shield, description: 'Advanced security and threat protection' },
+    { name: 'DevOps & Infrastructure', href: '/comprehensive-2025-innovative-services-showcase?category=DevOps%20%26%20Infrastructure', icon: Cpu, description: 'DevOps automation and infrastructure' },
+    { name: 'Edge Computing & IoT', href: '/comprehensive-2025-innovative-services-showcase?category=Edge%20Computing', icon: Database, description: 'Edge computing and IoT solutions' },
+    { name: 'Healthcare AI', href: '/comprehensive-2025-innovative-services-showcase?category=Healthcare%20AI', icon: Users, description: 'AI-powered healthcare solutions' },
+    { name: 'Quantum Computing', href: '/comprehensive-2025-innovative-services-showcase?category=Quantum%20Computing%20%26%20AI', icon: Atom, description: 'Quantum computing and AI integration' },
+    { name: 'Space Technology', href: '/comprehensive-2025-innovative-services-showcase?category=Space%20Technology', icon: Rocket, description: 'Space exploration and satellite tech' },
+    { name: 'Pricing', href: '/comprehensive-pricing-2025', icon: Award, description: 'Comprehensive pricing for all services' }
   ];
 
   const company = [

@@ -179,10 +179,10 @@ export default function HomePage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="#services"
+                href="/comprehensive-2025-innovative-services-showcase"
                 className="px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl flex items-center justify-center gap-2"
               >
-                Explore Services
+                Explore All Services
                 <ArrowRight className="w-5 h-5" />
               </a>
               <a
