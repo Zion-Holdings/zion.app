@@ -1,12 +1,18 @@
-import { useRouter } from 'next/router';
+import Head from 'next/head';
+import type { GetServerSideProps } from 'next';
 
-export default function TalentDetail() {
-  const router = useRouter();
-  const { slug } = router.query as { slug?: string };
+export const getServerSideProps: GetServerSideProps = async () => {
+  return { props: {} };
+};
+
+export default function TalentProfilePage() {
   return (
-    <div>
-      <h1 className="text-2xl font-bold">Talent: {slug || 'Loading...'}</h1>
-      <p className="opacity-70">Profile details coming soon.</p>
-    </div>
+    <>
+      <Head><title>Talent Profile - Zion</title></Head>
+      <div className="py-12">
+        <h1 className="text-3xl font-bold">Talent Profile</h1>
+        <p className="mt-2 text-gray-600">Coming soon.</p>
+      </div>
+    </>
   );
 }

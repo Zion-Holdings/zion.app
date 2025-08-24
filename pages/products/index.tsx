@@ -1,8 +1,13 @@
-export default function ProductsIndex() {
+import Head from 'next/head';
+
+export default function ProductsPage() {
   return (
-    <div>
-      <h1 className="text-2xl font-bold">Products</h1>
-      <p className="opacity-70">Explore our products soon.</p>
-    </div>
+    <>
+      <Head><title>Products - Zion</title></Head>
+      <div className="py-12">
+        <h1 className="text-3xl font-bold">Products</h1>
+        <p className="mt-2 text-gray-600">Coming soon.</p>
+      </div>
+    </>
   );
 }
