@@ -10,14 +10,28 @@
     "h1": ""
   },
   {
+<<<<<<< HEAD
+    "route": "/about",
+    "title": "About Us — Zion Tech Group | Leading-Edge Technology Solutions",
+    "h1": "About Zion Tech Group"
+  },
+  {
+=======
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-4816
     "route": "/comprehensive-2025-services-showcase",
     "title": "Comprehensive 2025 Innovative Services Showcase — Zion Tech Group",
     "h1": "2025 Innovative Services Showcase"
   },
   {
+<<<<<<< HEAD
+    "route": "/contact",
+    "title": "Contact Us — Zion Tech Group | Get in Touch",
+    "h1": "Get in Touch"
+=======
     "route": "/comprehensive-2026-services-showcase",
     "title": "2026 Comprehensive Services Showcase — Zion Tech Group",
     "h1": "2026 Comprehensive Services Showcase"
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-4816
   },
   {
     "route": "/",
@@ -30,8 +44,24 @@
     "h1": "2025 Pricing & Services"
   },
   {
+<<<<<<< HEAD
+    "route": "/resources",
+    "title": "Resources — Zion Tech Group | Documentation, Tools & Community",
+    "h1": "Resources Hub"
+  },
+  {
+    "route": "/services",
+    "title": "Services — Zion Tech Group | AI, Quantum & Technology Solutions",
+    "h1": "Our Services"
+  },
+  {
+    "route": "/solutions",
+    "title": "Solutions — Zion Tech Group | Industry-Specific Technology Solutions",
+    "h1": "Industry Solutions"
+=======
     "route": "/services-advertising-2026",
     "title": "2026 Services Advertising & Marketing — Zion Tech Group",
     "h1": "2026 Services Advertising & Marketing"
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-4816
   }
 ]
