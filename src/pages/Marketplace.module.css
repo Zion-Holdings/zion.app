@@ -4,7 +4,8 @@
 }
 
 .list {
-  display: block;
+  display: flex;
+  flex-direction: column;
 }
 
 .clamp-text {

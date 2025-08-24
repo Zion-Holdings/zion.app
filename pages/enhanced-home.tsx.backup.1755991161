@@ -1,0 +1,5 @@
+<<<<<<< HEAD
+export default function EnhancedHome() { return null }
+=======
+export default function EnhancedHome() { return <div className="p-6">Enhanced Home</div>; }
+>>>>>>> origin/cursor/build-developer-api-and-webhook-integration-62ab
