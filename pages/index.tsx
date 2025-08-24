@@ -160,7 +160,7 @@ export default function HomePage() {
                 <div className="w-12 h-12 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-lg flex items-center justify-center mx-auto mb-4">
                   <span className="text-xl">⚛️</span>
                 </div>
-                <h3 className="text-lg font-semibold text-blue-400 mb-2">Next.js 14</h3>
+                <h3 className="text-lg font-semibold text-blue-400 mb-2">Next.js 15</h3>
                 <p className="text-white/70 text-sm">React framework with SSR/SSG</p>
               </div>
               
@@ -327,8 +327,8 @@ export default function HomePage() {
                   <li>• GitHub Actions Redundancy</li>
                   <li>• Netlify Functions Redundancy</li>
                 </ul>
-                <Link href="/automation" className="text-cyan-400 hover:text-cyan-300 text-sm font-semibold">
-                  Explore Redundancy Systems →
+                <Link href="/services" className="text-cyan-400 hover:text-cyan-300 text-sm font-semibold">
+                  Explore Redundancy Services →
                 </Link>
               </div>
 
@@ -341,8 +341,8 @@ export default function HomePage() {
                   <li>• Autonomous Agents</li>
                   <li>• Innovation Systems</li>
                 </ul>
-                <Link href="/automation" className="text-fuchsia-400 hover:text-fuchsia-300 text-sm font-semibold">
-                  Explore AI Systems →
+                <Link href="/services" className="text-fuchsia-400 hover:text-fuchsia-300 text-sm font-semibold">
+                  Explore AI Services →
                 </Link>
               </div>
 
@@ -355,8 +355,8 @@ export default function HomePage() {
                   <li>• Performance Optimization</li>
                   <li>• Quality Assurance</li>
                 </ul>
-                <Link href="/automation" className="text-green-400 hover:text-green-300 text-sm font-semibold">
-                  Explore Build Systems →
+                <Link href="/services" className="text-green-400 hover:text-green-300 text-sm font-semibold">
+                  Explore Build Services →
                 </Link>
               </div>
             </div>
@@ -448,40 +448,40 @@ export default function HomePage() {
             </div>
           </section>
 
-          {/* Key Pages & Resources */}
+          {/* Project Documentation & Resources */}
           <section className="mx-auto max-w-7xl px-6 pb-16">
-            <h2 className="text-center text-4xl font-bold tracking-wide text-white/90 mb-12">📚 Key Pages & Resources</h2>
+            <h2 className="text-center text-4xl font-bold tracking-wide text-white/90 mb-12">📚 Project Documentation & Resources</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
-                <h3 className="text-xl font-bold text-blue-400 mb-4 text-center">📖 Core Pages</h3>
+                <h3 className="text-xl font-bold text-blue-400 mb-4 text-center">📖 Core Resources</h3>
                 <ul className="text-white/80 text-sm space-y-2 mb-4">
-                  <li>• <Link href="/about" className="text-blue-400 hover:text-blue-300">About Us</Link> - Mission & vision</li>
-                  <li>• <Link href="/services" className="text-blue-400 hover:text-blue-300">AI Services</Link> - Solutions & offerings</li>
-                  <li>• <Link href="/resources" className="text-blue-400 hover:text-blue-300">Resources</Link> - Tools & insights</li>
-                  <li>• <Link href="/case-studies" className="text-blue-400 hover:text-blue-300">Case Studies</Link> - Success stories</li>
-                  <li>• <Link href="/blog" className="text-blue-400 hover:text-blue-300">Blog</Link> - Latest articles</li>
+                  <li>• <Link href="/about" className="text-blue-400 hover:text-blue-300">About Zion Tech Group</Link> - Project overview</li>
+                  <li>• <Link href="/resources" className="text-blue-400 hover:text-blue-300">Architecture & Docs</Link> - System design & guides</li>
+                  <li>• <Link href="/services" className="text-blue-400 hover:text-blue-300">Service Catalog</Link> - Platform capabilities</li>
+                  <li>• <Link href="/blog" className="text-blue-400 hover:text-blue-300">Engineering Blog</Link> - Insights & tutorials</li>
+                  <li>• <Link href="/privacy" className="text-blue-400 hover:text-blue-300">Privacy & Security</Link> - Policies & practices</li>
                 </ul>
               </div>
 
               <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
-                <h3 className="text-xl font-bold text-purple-400 mb-4 text-center">🔧 Solutions & Automations</h3>
+                <h3 className="text-xl font-bold text-purple-400 mb-4 text-center">🔧 Automation & CI/CD</h3>
                 <ul className="text-white/80 text-sm space-y-2 mb-4">
-                  <li>• <Link href="/automation" className="text-purple-400 hover:text-purple-300">Automation Systems</Link> - Redundancy, AI, orchestration</li>
-                  <li>• <Link href="/services" className="text-purple-400 hover:text-purple-300">Professional Services</Link> - Delivery & integration</li>
-                  <li>• <Link href="/case-studies" className="text-purple-400 hover:text-purple-300">Case Studies</Link> - Proof in production</li>
-                  <li>• <Link href="/blog" className="text-purple-400 hover:text-purple-300">Insights</Link> - Research & trends</li>
-                  <li>• <Link href="/contact" className="text-purple-400 hover:text-purple-300">Contact</Link> - Talk to an expert</li>
+                  <li>• <Link href="/services" className="text-purple-400 hover:text-purple-300">Redundancy Systems</Link> - Ultimate & Comprehensive</li>
+                  <li>• <Link href="/case-studies" className="text-purple-400 hover:text-purple-300">Case Studies</Link> - Advanced features in action</li>
+                  <li>• <Link href="/services" className="text-purple-400 hover:text-purple-300">PM2 & Process Mgmt</Link> - Reliable operations</li>
+                  <li>• <Link href="/resources" className="text-purple-400 hover:text-purple-300">GitHub Actions</Link> - CI/CD automation</li>
+                  <li>• <Link href="/resources" className="text-purple-400 hover:text-purple-300">Continuous Operation</Link> - Zero-downtime</li>
                 </ul>
               </div>
 
               <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
-                <h3 className="text-xl font-bold text-green-400 mb-4 text-center">🚀 Resources & Policies</h3>
+                <h3 className="text-xl font-bold text-green-400 mb-4 text-center">🚀 Advanced Features</h3>
                 <ul className="text-white/80 text-sm space-y-2 mb-4">
-                  <li>• <Link href="/resources" className="text-green-400 hover:text-green-300">Security & Compliance</Link> - Best practices</li>
-                  <li>• <Link href="/resources" className="text-green-400 hover:text-green-300">Testing & QA</Link> - Tooling & process</li>
-                  <li>• <Link href="/resources" className="text-green-400 hover:text-green-300">Performance</Link> - Monitoring & tuning</li>
-                  <li>• <Link href="/privacy" className="text-green-400 hover:text-green-300">Privacy Policy</Link> - Data handling</li>
-                  <li>• <Link href="/reports/updates/update-2025-08-15-0406" className="text-green-400 hover:text-green-300">Latest Update</Link> - Autonomous report</li>
+                  <li>• <Link href="/privacy" className="text-green-400 hover:text-green-300">Security & Privacy</Link> - Protection measures</li>
+                  <li>• <Link href="/resources" className="text-green-400 hover:text-green-300">Testing & QA</Link> - Quality assurance</li>
+                  <li>• <Link href="/services" className="text-green-400 hover:text-green-300">Service Generation</Link> - Auto-creation</li>
+                  <li>• <Link href="/services" className="text-green-400 hover:text-green-300">Automation Systems</Link> - System details</li>
+                  <li>• <Link href="/blog" className="text-green-400 hover:text-green-300">Growth Strategies</Link> - Scaling systems</li>
                 </ul>
               </div>
             </div>
@@ -525,8 +525,8 @@ export default function HomePage() {
                   <li>• Threat detection & response</li>
                   <li>• Zero-trust architecture</li>
                 </ul>
-                <Link href="/resources" className="text-cyan-400 hover:text-cyan-300 text-sm font-semibold">
-                  Explore Security Resources →
+                <Link href="/SECURITY.md" className="text-cyan-400 hover:text-cyan-300 text-sm font-semibold">
+                  View Security Guide →
                 </Link>
               </div>
 
@@ -539,8 +539,8 @@ export default function HomePage() {
                   <li>• Security testing</li>
                   <li>• Continuous validation</li>
                 </ul>
-                <Link href="/resources" className="text-fuchsia-400 hover:text-fuchsia-300 text-sm font-semibold">
-                  Explore Testing Resources →
+                <Link href="/TESTING.md" className="text-fuchsia-400 hover:text-fuchsia-300 text-sm font-semibold">
+                  View Testing Guide →
                 </Link>
               </div>
 
@@ -553,8 +553,8 @@ export default function HomePage() {
                   <li>• Analytics dashboard</li>
                   <li>• Predictive maintenance</li>
                 </ul>
-                <Link href="/resources" className="text-green-400 hover:text-green-300 text-sm font-semibold">
-                  Explore Performance Resources →
+                <Link href="/PERFORMANCE.md" className="text-green-400 hover:text-green-300 text-sm font-semibold">
+                  View Performance Guide →
                 </Link>
               </div>
             </div>
