@@ -1,0 +1,1047 @@
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import { 
+<<<<<<< HEAD
+  Download, BookOpen, Video, FileText, 
+  ArrowRight, ExternalLink, Search, Filter,
+  Calendar, Clock, User, Tag, Star, 
+  TrendingUp, Globe, Zap
+} from 'lucide-react';
+import Link from 'next/link';
+
+export default function Resources() {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('all');
+
+  const categories = [
+    { id: 'all', name: 'All Resources', count: 45 },
+    { id: 'whitepapers', name: 'White Papers', count: 12 },
+    { id: 'guides', name: 'Guides & Tutorials', count: 18 },
+    { id: 'webinars', name: 'Webinars', count: 8 },
+    { id: 'tools', name: 'Tools & Templates', count: 7 }
+=======
+  BookOpen, Video, Code, FileText, Users, Globe, 
+  CheckCircle, ArrowRight, Brain, Rocket, Shield, Zap,
+  BarChart3, Database, Cloud, Lock, Settings, Star, Atom
+} from 'lucide-react';
+
+export default function Resources() {
+  const resourceCategories = [
+    {
+      title: 'Documentation',
+      description: 'Comprehensive technical documentation and API references',
+      icon: <FileText className="w-12 h-12 text-cyan-400" />,
+      resources: [
+        { name: 'API Reference', description: 'Complete API documentation with examples', href: '/api' },
+        { name: 'Integration Guides', description: 'Step-by-step integration tutorials', href: '/integration-guides' },
+        { name: 'Best Practices', description: 'Recommended implementation patterns', href: '/best-practices' },
+        { name: 'Troubleshooting', description: 'Common issues and solutions', href: '/troubleshooting' }
+      ]
+    },
+    {
+      title: 'Tutorials & Learning',
+      description: 'Interactive tutorials and educational content',
+      icon: <Video className="w-12 h-12 text-purple-400" />,
+      resources: [
+        { name: 'Getting Started', description: 'Quick start guides for beginners', href: '/getting-started' },
+        { name: 'Video Tutorials', description: 'Visual learning resources', href: '/video-tutorials' },
+        { name: 'Interactive Demos', description: 'Hands-on learning experiences', href: '/demos' },
+        { name: 'Learning Paths', description: 'Structured learning journeys', href: '/learning-paths' }
+      ]
+    },
+    {
+      title: 'Code Examples',
+      description: 'Ready-to-use code samples and templates',
+      icon: <Code className="w-12 h-12 text-green-400" />,
+      resources: [
+        { name: 'Code Snippets', description: 'Reusable code examples', href: '/code-snippets' },
+        { name: 'Templates', description: 'Project templates and boilerplates', href: '/templates' },
+        { name: 'Sample Projects', description: 'Complete example applications', href: '/sample-projects' },
+        { name: 'GitHub Repositories', description: 'Open source code examples', href: '/github' }
+      ]
+    },
+    {
+      title: 'Knowledge Base',
+      description: 'In-depth articles and technical insights',
+      icon: <BookOpen className="w-12 h-12 text-blue-400" />,
+      resources: [
+        { name: 'Technical Articles', description: 'Deep dive technical content', href: '/articles' },
+        { name: 'Case Studies', description: 'Real-world implementation stories', href: '/case-studies' },
+        { name: 'White Papers', description: 'Comprehensive research documents', href: '/white-papers' },
+        { name: 'Industry Insights', description: 'Trends and analysis', href: '/insights' }
+      ]
+    }
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-370b
+  ];
+
+  const featuredResources = [
+    {
+<<<<<<< HEAD
+      id: 1,
+      title: 'AI Consciousness Implementation Guide',
+      description: 'Comprehensive guide to implementing AI consciousness systems in enterprise environments, including best practices, architecture patterns, and case studies.',
+      category: 'guides',
+      type: 'PDF Guide',
+      size: '2.4 MB',
+      downloads: 1247,
+      views: 0,
+      usage: 0,
+      rating: 4.9,
+      author: 'Dr. Sarah Chen',
+      date: '2024-01-10',
+      featured: true,
+      tags: ['AI Consciousness', 'Implementation', 'Enterprise', 'Best Practices']
+    },
+    {
+      id: 2,
+      title: 'Quantum Computing Fundamentals Whitepaper',
+      description: 'Deep dive into quantum computing principles, applications, and business implications for technology leaders and decision makers.',
+      category: 'whitepapers',
+      type: 'Whitepaper',
+      size: '5.1 MB',
+      downloads: 892,
+      views: 0,
+      usage: 0,
+      rating: 4.8,
+      author: 'Prof. Michael Rodriguez',
+      date: '2024-01-08',
+      featured: true,
+      tags: ['Quantum Computing', 'Fundamentals', 'Business Impact', 'Technology']
+    }
+  ];
+
+  const whitepapers = [
+    {
+      id: 3,
+      title: 'The Future of Autonomous Business Systems',
+      description: 'Exploring how autonomous systems are reshaping business operations and what this means for the future of work and productivity.',
+      category: 'whitepapers',
+      type: 'Whitepaper',
+      size: '3.2 MB',
+      downloads: 567,
+      views: 0,
+      usage: 0,
+      rating: 4.7,
+      author: 'Dr. Alex Thompson',
+      date: '2024-01-05',
+      tags: ['Autonomous Systems', 'Future of Work', 'Business Automation']
+    },
+    {
+      id: 4,
+      title: 'Cybersecurity in the Age of AI',
+      description: 'Comprehensive analysis of AI-powered cybersecurity threats and the innovative solutions being developed to counter them.',
+      category: 'whitepapers',
+      type: 'Whitepaper',
+      size: '4.8 MB',
+      downloads: 423,
+      views: 0,
+      usage: 0,
+      rating: 4.6,
+      author: 'Marcus Johnson',
+      date: '2024-01-03',
+      tags: ['Cybersecurity', 'AI Security', 'Threat Analysis']
+    },
+    {
+      id: 5,
+      title: 'Micro-SaaS Architecture Patterns',
+      description: 'Detailed guide to building scalable micro-SaaS applications with modern cloud-native technologies and best practices.',
+      category: 'whitepapers',
+      type: 'Whitepaper',
+      size: '2.9 MB',
+      downloads: 345,
+      views: 0,
+      usage: 0,
+      rating: 4.5,
+      author: 'Lisa Wang',
+      date: '2023-12-28',
+      tags: ['Micro-SaaS', 'Architecture', 'Cloud Native', 'Scalability']
+    }
+  ];
+
+  const guides = [
+    {
+      id: 6,
+      title: 'Getting Started with AI Consciousness APIs',
+      description: 'Step-by-step tutorial for developers to integrate AI consciousness capabilities into their applications.',
+      category: 'guides',
+      type: 'Tutorial',
+      size: '1.8 MB',
+      downloads: 789,
+      views: 0,
+      usage: 0,
+      rating: 4.8,
+      author: 'David Kim',
+      date: '2024-01-02',
+      tags: ['API Integration', 'AI Consciousness', 'Developer Guide', 'Tutorial']
+    },
+    {
+      id: 7,
+      title: 'Quantum Machine Learning Implementation',
+      description: 'Practical guide to implementing quantum machine learning algorithms and integrating them with classical ML workflows.',
+      category: 'guides',
+      type: 'Guide',
+      size: '3.5 MB',
+      downloads: 456,
+      views: 0,
+      usage: 0,
+      rating: 4.7,
+      author: 'Dr. Elena Petrova',
+      date: '2023-12-30',
+      tags: ['Quantum ML', 'Machine Learning', 'Implementation', 'Algorithms']
+    },
+    {
+      id: 8,
+      title: 'Enterprise AI Governance Framework',
+      description: 'Comprehensive framework for implementing responsible AI governance in enterprise environments.',
+      category: 'guides',
+      type: 'Framework',
+      size: '2.1 MB',
+      downloads: 678,
+      views: 0,
+      usage: 0,
+      rating: 4.9,
+      author: 'Dr. Robert Chang',
+      date: '2023-12-25',
+      tags: ['AI Governance', 'Enterprise', 'Ethics', 'Compliance']
+    }
+  ];
+
+  const webinars = [
+    {
+      id: 9,
+      title: 'AI Consciousness: From Theory to Practice',
+      description: 'Join our experts as they demonstrate real-world applications of AI consciousness technology.',
+      category: 'webinars',
+      type: 'Webinar',
+      duration: '60 min',
+      downloads: 0,
+      views: 1245,
+      usage: 0,
+      rating: 4.8,
+      author: 'Dr. Sarah Chen',
+      date: '2024-01-15',
+      tags: ['AI Consciousness', 'Live Demo', 'Expert Panel', 'Q&A']
+    },
+    {
+      id: 10,
+      title: 'Quantum Computing for Business Leaders',
+      description: 'Executive overview of quantum computing opportunities and strategic implications for business.',
+      category: 'webinars',
+      type: 'Webinar',
+      duration: '45 min',
+      downloads: 0,
+      views: 892,
+      usage: 0,
+      rating: 4.7,
+      author: 'Prof. Michael Rodriguez',
+      date: '2024-01-12',
+      tags: ['Executive Overview', 'Strategic Planning', 'Business Impact']
+    }
+  ];
+
+  const tools = [
+    {
+      id: 11,
+      title: 'AI Consciousness Assessment Tool',
+      description: 'Interactive tool to evaluate your organization\'s readiness for AI consciousness implementation.',
+      category: 'tools',
+      type: 'Interactive Tool',
+      size: 'Web App',
+      downloads: 0,
+      views: 0,
+      usage: 2341,
+      rating: 4.9,
+      author: 'Zion Tech Team',
+      date: '2024-01-01',
+      tags: ['Assessment', 'Readiness', 'Interactive', 'Evaluation']
+    },
+    {
+      id: 12,
+      title: 'Quantum Computing ROI Calculator',
+      description: 'Calculate the potential return on investment for quantum computing projects in your organization.',
+      category: 'tools',
+      type: 'Calculator',
+      size: 'Web App',
+      downloads: 0,
+      views: 0,
+      usage: 1567,
+      rating: 4.6,
+      author: 'Finance Team',
+      date: '2023-12-20',
+      tags: ['ROI Calculator', 'Financial Planning', 'Investment Analysis']
+    }
+  ];
+
+  const allResources = [...featuredResources, ...whitepapers, ...guides, ...webinars, ...tools];
+
+  const filteredResources = allResources.filter(resource => {
+    const matchesSearch = resource.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         resource.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         resource.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
+    const matchesCategory = selectedCategory === 'all' || resource.category === selectedCategory;
+    return matchesSearch && matchesCategory;
+  });
+
+  const formatDate = (dateString: string) => {
+    return new Date(dateString).toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
+  };
+
+  const getCategoryColor = (category: string) => {
+    const colors = {
+      whitepapers: 'from-purple-500 to-pink-500',
+      guides: 'from-cyan-500 to-blue-500',
+      webinars: 'from-green-500 to-emerald-500',
+      tools: 'from-orange-500 to-red-500'
+    };
+    return colors[category as keyof typeof colors] || 'from-gray-500 to-gray-600';
+  };
+
+  const getTypeIcon = (type: string) => {
+    switch (type.toLowerCase()) {
+      case 'pdf guide':
+      case 'guide':
+      case 'framework':
+        return <FileText className="w-5 h-5" />;
+      case 'whitepaper':
+        return <BookOpen className="w-5 h-5" />;
+      case 'tutorial':
+        return <Video className="w-5 h-5" />;
+      case 'webinar':
+        return <Video className="w-5 h-5" />;
+      case 'interactive tool':
+      case 'calculator':
+        return <Zap className="w-5 h-5" />;
+      default:
+        return <FileText className="w-5 h-5" />;
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-black text-white">
+      {/* Hero Section */}
+      <section className="relative py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto text-center">
+=======
+      title: 'AI Implementation Guide',
+      description: 'Complete guide to implementing AI solutions in your business',
+      category: 'Guide',
+      icon: <Brain className="w-8 h-8 text-cyan-400" />,
+      href: '/ai-implementation-guide'
+    },
+    {
+      title: 'Quantum Computing Primer',
+      description: 'Introduction to quantum computing and its business applications',
+      category: 'Primer',
+      icon: <Atom className="w-8 h-8 text-purple-400" />,
+      href: '/quantum-computing-primer'
+    },
+    {
+      title: 'Space Technology Overview',
+      description: 'Comprehensive overview of space technology solutions',
+      category: 'Overview',
+      icon: <Rocket className="w-8 h-8 text-blue-400" />,
+      href: '/space-technology-overview'
+    },
+    {
+      title: 'Micro SAAS Development',
+      description: 'Step-by-step guide to building micro SAAS solutions',
+      category: 'Guide',
+      icon: <Code className="w-8 h-8 text-green-400" />,
+      href: '/micro-saas-development'
+    }
+  ];
+
+  const learningPaths = [
+    {
+      title: 'AI & Machine Learning',
+      description: 'Master artificial intelligence and machine learning fundamentals',
+      duration: '8 weeks',
+      level: 'Intermediate',
+      icon: <Brain className="w-8 h-8 text-cyan-400" />
+    },
+    {
+      title: 'Quantum Computing',
+      description: 'Learn quantum computing principles and applications',
+      duration: '6 weeks',
+      level: 'Advanced',
+      icon: <Atom className="w-8 h-8 text-purple-400" />
+    },
+    {
+      title: 'Space Technology',
+      description: 'Explore space technology and satellite systems',
+      duration: '10 weeks',
+      level: 'Intermediate',
+      icon: <Rocket className="w-8 h-8 text-blue-400" />
+    },
+    {
+      title: 'Micro SAAS Development',
+      description: 'Build and deploy micro software solutions',
+      duration: '12 weeks',
+      level: 'Beginner',
+      icon: <Code className="w-8 h-8 text-green-400" />
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-black text-white">
+      {/* Hero Section */}
+      <section className="relative py-20 lg:py-32 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/20 to-purple-900/20"></div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-370b
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+<<<<<<< HEAD
+            className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-6"
+          >
+            Resources & Tools
+=======
+            className="text-5xl lg:text-7xl font-bold bg-gradient-to-r from-indigo-400 to-purple-600 bg-clip-text text-transparent mb-6"
+          >
+            Resources & Learning
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-370b
+          </motion.h1>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+<<<<<<< HEAD
+            className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-12"
+          >
+            Access our comprehensive library of whitepapers, guides, webinars, and tools 
+            to accelerate your AI consciousness and quantum computing journey.
+          </motion.p>
+          
+          {/* Search and Filter */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="max-w-4xl mx-auto"
+          >
+            <div className="relative mb-8">
+              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+              <input
+                type="text"
+                placeholder="Search resources, guides, and tools..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="w-full pl-12 pr-4 py-4 bg-white/10 border border-white/20 rounded-full text-white placeholder-gray-400 focus:outline-none focus:border-cyan-500 focus:bg-white/20 transition-all duration-300"
+              />
+            </div>
+            
+            <div className="flex flex-wrap gap-3 justify-center">
+              {categories.map((category) => (
+                <button
+                  key={category.id}
+                  onClick={() => setSelectedCategory(category.id)}
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                    selectedCategory === category.id
+                      ? 'bg-gradient-to-r from-cyan-500 to-blue-600 text-white'
+                      : 'bg-white/10 text-gray-300 hover:bg-white/20 hover:text-white'
+                  }`}
+                >
+                  {category.name} ({category.count})
+                </button>
+              ))}
+            </div>
+=======
+            className="text-xl lg:text-2xl text-gray-300 max-w-4xl mx-auto mb-8"
+          >
+            Access comprehensive knowledge, tutorials, and resources to master cutting-edge technology and drive innovation in your business.
+          </motion.p>
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="flex flex-wrap justify-center gap-4"
+          >
+            <a href="#resources" className="bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center space-x-2">
+              <span>Explore Resources</span>
+              <ArrowRight className="w-5 h-5" />
+            </a>
+            <a href="/contact" className="border border-indigo-500 text-indigo-400 hover:bg-indigo-500 hover:text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300">
+              Get Support
+            </a>
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-370b
+          </motion.div>
+        </div>
+      </section>
+
+<<<<<<< HEAD
+      {/* Featured Resources Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <motion.h2 
+=======
+      {/* Featured Resources */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div 
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-370b
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+<<<<<<< HEAD
+            className="text-4xl md:text-5xl font-bold text-center mb-16"
+          >
+            Featured Resources
+          </motion.h2>
+          
+          <div className="grid lg:grid-cols-2 gap-8">
+            {featuredResources.map((resource, index) => (
+              <motion.div
+                key={resource.id}
+=======
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-indigo-400 to-purple-600 bg-clip-text text-transparent">
+              Featured Resources
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Start your learning journey with our most popular and comprehensive resources.
+            </p>
+          </motion.div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {featuredResources.map((resource, index) => (
+              <motion.div 
+                key={index}
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-370b
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                viewport={{ once: true }}
+<<<<<<< HEAD
+                className="group cursor-pointer"
+              >
+                <div className="relative overflow-hidden rounded-2xl bg-white/5 border border-white/10 hover:border-cyan-500/50 transition-all duration-300">
+                  <div className="p-6">
+                    <div className="flex items-center gap-3 mb-4">
+                      <span className={`px-3 py-1 rounded-full text-xs font-medium bg-gradient-to-r ${getCategoryColor(resource.category)} text-white`}>
+                        {categories.find(c => c.id === resource.category)?.name}
+                      </span>
+                      <span className="text-gray-400 text-sm flex items-center gap-1">
+                        <Calendar className="w-4 h-4" />
+                        {formatDate(resource.date)}
+                      </span>
+                    </div>
+                    
+                    <h3 className="text-2xl font-bold mb-3 group-hover:text-cyan-400 transition-colors duration-300">
+                      {resource.title}
+                    </h3>
+                    
+                    <p className="text-gray-300 mb-4 leading-relaxed">
+                      {resource.description}
+                    </p>
+                    
+                    <div className="flex items-center gap-4 text-sm text-gray-400 mb-4">
+                      <span className="flex items-center gap-1">
+                        <User className="w-4 h-4" />
+                        {resource.author}
+                      </span>
+                      <span className="flex items-center gap-1">
+                        <Download className="w-4 h-4" />
+                        {resource.downloads || resource.views || resource.usage} {resource.downloads ? 'downloads' : resource.views ? 'views' : 'users'}
+                      </span>
+                      <span className="flex items-center gap-1">
+                        <Star className="w-4 h-4 text-yellow-400" />
+                        {resource.rating}
+                      </span>
+                    </div>
+                    
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2 text-cyan-400">
+                        {getTypeIcon(resource.type)}
+                        <span className="text-sm font-medium">{resource.type}</span>
+                      </div>
+                      
+                      <button className="px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium rounded-full hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 flex items-center gap-2">
+                        Download
+                        <ArrowRight className="w-4 h-4" />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+=======
+                className="bg-gray-900/50 p-6 rounded-2xl border border-gray-800 hover:border-indigo-500/50 transition-all duration-300"
+              >
+                <div className="flex items-center space-x-3 mb-4">
+                  {resource.icon}
+                  <span className="text-sm text-indigo-400 bg-indigo-400/10 px-2 py-1 rounded-full">
+                    {resource.category}
+                  </span>
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-3">{resource.title}</h3>
+                <p className="text-gray-300 text-sm mb-4">{resource.description}</p>
+                <a 
+                  href={resource.href}
+                  className="text-indigo-400 hover:text-indigo-300 transition-colors text-sm font-medium"
+                >
+                  Learn More →
+                </a>
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-370b
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Resource Categories */}
+<<<<<<< HEAD
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <motion.h2 
+=======
+      <section id="resources" className="py-20 bg-gradient-to-r from-gray-900 to-black">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div 
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-370b
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+<<<<<<< HEAD
+            className="text-4xl md:text-5xl font-bold text-center mb-16"
+          >
+            Browse by Category
+          </motion.h2>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {categories.slice(1).map((category, index) => {
+              const categoryResources = allResources.filter(r => r.category === category.id);
+              const topResource = categoryResources[0];
+              
+              return (
+                <motion.div
+                  key={category.name}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="group cursor-pointer"
+                >
+                  <div className="h-full bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-cyan-500/50 transition-all duration-300">
+                    <div className="p-6">
+                      <div className={`w-16 h-16 bg-gradient-to-r ${getCategoryColor(category.id)} rounded-full flex items-center justify-center mb-4`}>
+                        {getTypeIcon(topResource?.type || 'guide')}
+                      </div>
+                      
+                      <h3 className="text-xl font-bold mb-3 group-hover:text-cyan-400 transition-colors duration-300">
+                        {category.name}
+                      </h3>
+                      
+                      <p className="text-gray-300 mb-4 text-sm leading-relaxed">
+                        {category.id === 'whitepapers' && 'In-depth research papers and technical analysis'}
+                        {category.id === 'guides' && 'Step-by-step tutorials and implementation guides'}
+                        {category.id === 'webinars' && 'Live and recorded educational sessions'}
+                        {category.id === 'tools' && 'Interactive tools, calculators, and templates'}
+                      </p>
+                      
+                      <div className="flex items-center justify-between">
+                        <span className="text-sm text-gray-400">
+                          {category.count} resources
+                        </span>
+                        <ArrowRight className="w-5 h-5 text-cyan-400 group-hover:translate-x-1 transition-transform duration-300" />
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* All Resources Grid */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-4xl md:text-5xl font-bold text-center mb-16"
+          >
+            All Resources
+          </motion.h2>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {filteredResources.map((resource, index) => (
+              <motion.div
+                key={resource.id}
+=======
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-indigo-400 to-purple-600 bg-clip-text text-transparent">
+              Resource Categories
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Explore our organized collection of resources designed to accelerate your learning and implementation.
+            </p>
+          </motion.div>
+          
+          <div className="grid lg:grid-cols-2 gap-8">
+            {resourceCategories.map((category, index) => (
+              <motion.div 
+                key={index}
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-370b
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                viewport={{ once: true }}
+<<<<<<< HEAD
+                className="group cursor-pointer"
+              >
+                <div className="h-full bg-white/5 border border-white/10 rounded-xl overflow-hidden hover:border-cyan-500/50 transition-all duration-300">
+                  <div className="p-5">
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className={`px-2 py-1 rounded-full text-xs font-medium bg-gradient-to-r ${getCategoryColor(resource.category)} text-white`}>
+                        {categories.find(c => c.id === resource.category)?.name}
+                      </span>
+                    </div>
+                    
+                    <h3 className="text-lg font-bold mb-3 group-hover:text-cyan-400 transition-colors duration-300 line-clamp-2">
+                      {resource.title}
+                    </h3>
+                    
+                    <p className="text-gray-300 mb-4 text-sm leading-relaxed line-clamp-3">
+                      {resource.description}
+                    </p>
+                    
+                    <div className="flex items-center justify-between text-xs text-gray-400 mb-4">
+                      <span className="flex items-center gap-1">
+                        <User className="w-3 h-3" />
+                        {resource.author}
+                      </span>
+                      <span className="flex items-center gap-1">
+                        <Star className="w-3 h-3 text-yellow-400" />
+                        {resource.rating}
+                      </span>
+                    </div>
+                    
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2 text-cyan-400 text-sm">
+                        {getTypeIcon(resource.type)}
+                        <span>{resource.type}</span>
+                      </div>
+                      
+                      <button className="px-3 py-1 bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-xs font-medium rounded-full hover:from-cyan-600 hover:to-blue-700 transition-all duration-300">
+                        Download
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+=======
+                className="bg-gray-800/50 p-8 rounded-2xl border border-gray-700 hover:border-indigo-500/50 transition-all duration-300"
+              >
+                <div className="flex items-center space-x-4 mb-6">
+                  {category.icon}
+                  <h3 className="text-2xl font-bold text-white">{category.title}</h3>
+                </div>
+                <p className="text-gray-300 mb-6">{category.description}</p>
+                
+                <div className="space-y-4">
+                  {category.resources.map((resource, idx) => (
+                    <div key={idx} className="flex items-center justify-between p-4 bg-gray-900/50 rounded-lg">
+                      <div>
+                        <h4 className="text-white font-medium">{resource.name}</h4>
+                        <p className="text-gray-400 text-sm">{resource.description}</p>
+                      </div>
+                      <a 
+                        href={resource.href}
+                        className="text-indigo-400 hover:text-indigo-300 transition-colors"
+                      >
+                        →
+                      </a>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Learning Paths */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-indigo-400 to-purple-600 bg-clip-text text-transparent">
+              Learning Paths
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Structured learning journeys designed to take you from beginner to expert in cutting-edge technologies.
+            </p>
+          </motion.div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {learningPaths.map((path, index) => (
+              <motion.div 
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-gray-900/50 p-6 rounded-2xl border border-gray-800 hover:border-indigo-500/50 transition-all duration-300"
+              >
+                <div className="flex items-center space-x-3 mb-4">
+                  {path.icon}
+                  <span className="text-sm text-indigo-400 bg-indigo-400/10 px-2 py-1 rounded-full">
+                    {path.level}
+                  </span>
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-3">{path.title}</h3>
+                <p className="text-gray-300 text-sm mb-4">{path.description}</p>
+                <div className="flex items-center justify-between text-sm text-gray-400">
+                  <span>Duration: {path.duration}</span>
+                  <a href="#" className="text-indigo-400 hover:text-indigo-300 transition-colors">
+                    Start Learning →
+                  </a>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Interactive Learning */}
+      <section className="py-20 bg-gradient-to-r from-gray-900 to-black">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-indigo-400 to-purple-600 bg-clip-text text-transparent">
+              Interactive Learning Experiences
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Engage with hands-on learning through interactive demos, sandboxes, and real-world projects.
+            </p>
+          </motion.div>
+          
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h3 className="text-3xl font-bold mb-6 text-white">Learn by Doing</h3>
+              <p className="text-lg text-gray-300 mb-6">
+                Our interactive learning platform provides hands-on experience with real tools and technologies, 
+                allowing you to build practical skills through experimentation and guided projects.
+              </p>
+              <ul className="space-y-3">
+                {[
+                  'Interactive Code Sandboxes',
+                  'Real-time Collaboration',
+                  'Guided Project Tutorials',
+                  'Instant Feedback & Validation',
+                  'Community Learning Forums'
+                ].map((feature, index) => (
+                  <li key={index} className="flex items-center space-x-2 text-gray-300">
+                    <CheckCircle className="w-5 h-5 text-indigo-400 flex-shrink-0" />
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+            
+            <motion.div 
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center"
+            >
+              <div className="w-64 h-64 mx-auto bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center mb-6">
+                <BookOpen className="w-32 h-32 text-white" />
+              </div>
+              <p className="text-gray-300">
+                Interactive learning accelerates skill development and retention.
+              </p>
+            </motion.div>
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-370b
+          </div>
+        </div>
+      </section>
+
+<<<<<<< HEAD
+      {/* Newsletter Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto text-center">
+          <motion.div
+=======
+      {/* Community & Support */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div 
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-370b
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+<<<<<<< HEAD
+            className="p-8 rounded-3xl bg-gradient-to-r from-cyan-500/10 to-purple-600/10 border border-cyan-500/20"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Get New Resources First
+            </h2>
+            <p className="text-xl text-gray-300 mb-8">
+              Be the first to access our latest whitepapers, guides, and tools. 
+              Subscribe to our resource updates.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+              <input
+                type="email"
+                placeholder="Enter your email address"
+                className="flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-full text-white placeholder-gray-400 focus:outline-none focus:border-cyan-500 focus:bg-white/20 transition-all duration-300"
+              />
+              <button className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-full hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105">
+                Subscribe
+              </button>
+            </div>
+            
+            <p className="text-sm text-gray-400 mt-4">
+              Get notified about new resources, exclusive content, and early access to tools.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto text-center">
+          <motion.div
+=======
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-indigo-400 to-purple-600 bg-clip-text text-transparent">
+              Community & Support
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Join our community of learners and get support from experts and peers.
+            </p>
+          </motion.div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                title: 'Community Forums',
+                description: 'Connect with other learners and share knowledge',
+                icon: <Users className="w-12 h-12 text-cyan-400" />,
+                href: '/forums'
+              },
+              {
+                title: 'Expert Support',
+                description: 'Get help from our team of technology experts',
+                icon: <Star className="w-12 h-12 text-purple-400" />,
+                href: '/support'
+              },
+              {
+                title: 'Live Events',
+                description: 'Attend webinars, workshops, and live Q&A sessions',
+                icon: <Globe className="w-12 h-12 text-green-400" />,
+                href: '/events'
+              }
+            ].map((item, index) => (
+              <motion.div 
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="text-center p-6 bg-gray-800/50 rounded-xl border border-gray-700 hover:border-indigo-500/50 transition-all duration-300"
+              >
+                <div className="flex justify-center mb-4">{item.icon}</div>
+                <h3 className="text-xl font-semibold text-white mb-3">{item.title}</h3>
+                <p className="text-gray-300 text-sm mb-4">{item.description}</p>
+                <a 
+                  href={item.href}
+                  className="text-indigo-400 hover:text-indigo-300 transition-colors text-sm font-medium"
+                >
+                  Join Now →
+                </a>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action */}
+      <section className="py-20 bg-gradient-to-r from-gray-900 to-black">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.div 
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-370b
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+<<<<<<< HEAD
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Need Custom Resources?
+            </h2>
+            <p className="text-xl text-gray-300 mb-8">
+              Can't find what you're looking for? Our team can create custom whitepapers, 
+              guides, and tools tailored to your specific needs.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link 
+                href="/contact"
+                className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-full hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
+              >
+                Request Custom Content
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Link>
+              <Link 
+                href="/contact"
+                className="px-8 py-4 border-2 border-cyan-500 text-cyan-400 font-semibold rounded-full hover:bg-cyan-500 hover:text-black transition-all duration-300"
+              >
+                Schedule a Consultation
+              </Link>
+=======
+            <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-indigo-400 to-purple-600 bg-clip-text text-transparent">
+              Ready to Start Learning?
+            </h2>
+            <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+              Begin your journey to mastering cutting-edge technology with our comprehensive resources and learning paths.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <a href="#resources" className="bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center space-x-2">
+                <span>Explore Resources</span>
+                <ArrowRight className="w-5 h-5" />
+              </a>
+              <a href="/contact" className="border border-indigo-500 text-indigo-400 hover:bg-indigo-500 hover:text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300">
+                Get Personalized Guidance
+              </a>
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-370b
+            </div>
+          </motion.div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default ResourcesPage;
