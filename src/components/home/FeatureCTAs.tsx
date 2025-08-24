@@ -16,8 +16,18 @@ import {
   BookOpen,
   Code,
   Building,
-  Clock
+  Clock,
+  Brain,
+  Cloud,
+  Shield,
+  TrendingUp,
+  Bot,
+  FileText,
+  BarChart3,
+  Globe
 } from "lucide-react";
+import GitBranch from "lucide-react/dist/esm/icons/git-branch";
+import Target from "lucide-react/dist/esm/icons/target";
 
 export function FeatureCTAs() {
   const features = [
@@ -28,6 +38,78 @@ export function FeatureCTAs() {
       link: "/marketplace",
       badge: "Popular",
       details: "Leveraging advanced machine learning, our matching system analyzes over 100+ data points to create perfect connections between talents and opportunities."
+    },
+    {
+      title: "AI Chatbot Builder Pro",
+      description: "No-code AI chatbot creation platform with advanced NLP, multi-language support, and seamless integration capabilities.",
+      icon: <Bot className="h-10 w-10 p-2 rounded-md bg-cyan-100 text-cyan-700" />,
+      link: "/micro-saas-services",
+      badge: "New",
+      details: "Reduce customer service costs by 60% with 24/7 AI-powered support. Features drag & drop interface, CRM integration, and analytics dashboard."
+    },
+    {
+      title: "AI Content Generator Suite",
+      description: "Advanced AI-powered content creation platform for blogs, social media, marketing copy, and technical documentation.",
+      icon: <FileText className="h-10 w-10 p-2 rounded-md bg-purple-100 text-purple-700" />,
+      link: "/micro-saas-services",
+      badge: "Featured",
+      details: "10x faster content creation with SEO optimization, plagiarism detection, brand voice customization, and performance analytics."
+    },
+    {
+      title: "AI-Powered Business Intelligence",
+      description: "Comprehensive data analytics platform with AI-driven insights, predictive analytics, and automated reporting.",
+      icon: <BarChart3 className="h-10 w-10 p-2 rounded-md bg-green-100 text-green-700" />,
+      link: "/micro-saas-services",
+      badge: "Premium",
+      details: "Uncover hidden business insights, predict future trends, and make data-driven decisions faster with our advanced analytics platform."
+    },
+    {
+      title: "Cloud Migration Pro",
+      description: "End-to-end cloud migration services including assessment, planning, execution, and optimization for AWS, Azure, and Google Cloud.",
+      icon: <Cloud className="h-10 w-10 p-2 rounded-md bg-indigo-100 text-indigo-700" />,
+      link: "/micro-saas-services",
+      badge: "Enterprise",
+      details: "Reduce infrastructure costs by 30-50% with improved scalability, enhanced security, and better disaster recovery capabilities."
+    },
+    {
+      title: "Comprehensive Cybersecurity Audit",
+      description: "Full security assessment including penetration testing, vulnerability scanning, compliance review, and security recommendations.",
+      icon: <Shield className="h-10 w-10 p-2 rounded-md bg-red-100 text-red-700" />,
+      link: "/micro-saas-services",
+      badge: "Critical",
+      details: "Identify and fix security vulnerabilities, meet compliance requirements, and protect against modern cyber threats with our expert security team."
+    },
+    {
+      title: "DevOps Automation Suite",
+      description: "Complete DevOps automation platform with CI/CD pipelines, infrastructure as code, monitoring, and deployment automation.",
+      icon: <GitBranch className="h-10 w-10 p-2 rounded-md bg-orange-100 text-orange-700" />,
+      link: "/micro-saas-services",
+      badge: "Popular",
+      details: "10x faster deployment cycles, reduced manual errors, improved code quality, and better team collaboration with our automation tools."
+    },
+    {
+      title: "Custom AI Model Training",
+      description: "Specialized AI model development and training services for computer vision, NLP, and predictive analytics applications.",
+      icon: <Brain className="h-10 w-10 p-2 rounded-md bg-violet-100 text-violet-700" />,
+      link: "/micro-saas-services",
+      badge: "Expert",
+      details: "Tailored AI solutions for specific use cases with improved accuracy, competitive advantage, and expert guidance throughout the process."
+    },
+    {
+      title: "AI Process Automation Platform",
+      description: "Intelligent automation platform that combines RPA with AI to automate complex business processes and improve efficiency.",
+      icon: <TrendingUp className="h-10 w-10 p-2 rounded-md bg-teal-100 text-teal-700" />,
+      link: "/micro-saas-services",
+      badge: "Innovative",
+      details: "Reduce manual work by 70-90%, improve process accuracy, faster execution, and enhanced compliance with our intelligent automation platform."
+    },
+    {
+      title: "AI Customer Insights Platform",
+      description: "Advanced customer analytics platform that uses AI to analyze behavior, predict churn, and provide actionable insights.",
+      icon: <Target className="h-10 w-10 p-2 rounded-md bg-pink-100 text-pink-700" />,
+      link: "/micro-saas-services",
+      badge: "Strategic",
+      details: "Reduce customer churn by 20-40%, increase lifetime value, improve satisfaction scores, and better targeted marketing campaigns."
     },
     {
       title: "Talent Directory",
@@ -41,7 +123,6 @@ export function FeatureCTAs() {
       description: "Discover professional tech and AI services for your business needs, from development to consulting.",
       icon: <Zap className="h-10 w-10 p-2 rounded-md bg-cyan-100 text-cyan-700" />,
       link: "/services",
-      badge: "New",
       details: "From on-demand IT support to specialized AI development, our marketplace offers verified services with transparent pricing and reviews."
     },
     {
@@ -63,7 +144,6 @@ export function FeatureCTAs() {
       description: "Take Zion with you on the go with our mobile app for iOS and Android devices.",
       icon: <Smartphone className="h-10 w-10 p-2 rounded-md bg-indigo-100 text-indigo-700" />,
       link: "/mobile-launch",
-      badge: "Featured",
       details: "Manage your projects, communicate with clients or talents, and receive real-time updates wherever you are."
     },
     {
@@ -116,7 +196,7 @@ export function FeatureCTAs() {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature, index) => (
-            <Card key={index} className="overflow-hidden transition-all duration-300 hover:shadow-lg hover:border-primary/50">
+            <Card key={index} className="overflow-hidden transition-all duration-300 hover:shadow-lg hover:border-primary/50 group">
               <CardHeader className="pb-2">
                 <div className="flex justify-between items-start">
                   {feature.icon}
@@ -126,22 +206,48 @@ export function FeatureCTAs() {
                     </Badge>
                   )}
                 </div>
-                <CardTitle className="mt-4">{feature.title}</CardTitle>
+                <CardTitle className="mt-4 group-hover:text-primary transition-colors">{feature.title}</CardTitle>
                 <CardDescription className="line-clamp-2">{feature.description}</CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">{feature.details}</p>
               </CardContent>
               <CardFooter>
-                <Button asChild className="w-full gap-1">
+                <Button asChild className="w-full gap-1 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
                   <Link to={feature.link}>
                     <span>Explore {feature.title}</span>
-                    <ArrowRight className="h-4 w-4" />
+                    <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </Button>
               </CardFooter>
             </Card>
           ))}
+        </div>
+
+        {/* Call to Action */}
+        <div className="mt-16 text-center">
+          <div className="bg-gradient-to-r from-zion-purple/10 to-zion-blue/10 rounded-2xl p-8 border border-zion-purple/20">
+            <h3 className="text-2xl font-bold text-white mb-4">
+              Ready to Explore Our Complete Service Portfolio?
+            </h3>
+            <p className="text-zion-slate-light mb-6 max-w-2xl mx-auto">
+              From AI-powered solutions to comprehensive IT services, discover how Zion Tech Group can transform your business operations and drive innovation.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button asChild size="lg" className="bg-zion-purple hover:bg-zion-purple-light">
+                <Link to="/micro-saas-services">
+                  <Globe className="h-5 w-5 mr-2" />
+                  View All Services
+                </Link>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="border-zion-cyan text-zion-cyan hover:bg-zion-cyan/10">
+                <Link to="/contact">
+                  <MessageSquare className="h-5 w-5 mr-2" />
+                  Get in Touch
+                </Link>
+              </Button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
