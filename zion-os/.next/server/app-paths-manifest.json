@@ -1,18 +1,9 @@
 {
   "/_not-found/page": "app/_not-found/page.js",
-  "/about/page": "app/about/page.js",
-  "/accessibility/page": "app/accessibility/page.js",
   "/api/deploy/route": "app/api/deploy/route.js",
   "/api/health/route": "app/api/health/route.js",
-  "/ai-autonomous-research-assistant/page": "app/ai-autonomous-research-assistant/page.js",
-  "/contact/page": "app/contact/page.js",
   "/multiverse/launch/page": "app/multiverse/launch/page.js",
   "/page": "app/page.js",
-  "/privacy/page": "app/privacy/page.js",
-  "/research/page": "app/research/page.js",
-  "/services/page": "app/services/page.js",
-  "/terms/page": "app/terms/page.js",
-  "/solutions/page": "app/solutions/page.js",
-  "/admin/os-deploy/page": "app/admin/os-deploy/page.js",
-  "/admin/instances/page": "app/admin/instances/page.js"
+  "/admin/instances/page": "app/admin/instances/page.js",
+  "/admin/os-deploy/page": "app/admin/os-deploy/page.js"
 }

@@ -25,44 +25,56 @@ import {
 export default function AdminDeployPage() {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
+  const [messageType, setMessageType] = useState<'success' | 'error' | 'info'>('info');
 
   async function onSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setLoading(true);
     setMessage(null);
-    const formData = new FormData(event.currentTarget);
-    const features: Record<string, boolean> = {};
-    FeatureKeys.forEach((k) => (features[k] = formData.get(k) === "on"));
+    
+    try {
+      const formData = new FormData(event.currentTarget);
+      const features: Record<string, boolean> = {};
+      FeatureKeys.forEach((k) => (features[k] = formData.get(k) === "on"));
 
-    const payload = {
-      instanceName: String(formData.get("instanceName") || ""),
-      domain: String(formData.get("domain") || "" ) || undefined,
-      subdomain: String(formData.get("subdomain") || "" ) || undefined,
-      vertical: String(formData.get("vertical") || "GENERAL"),
-      defaultLanguage: String(formData.get("defaultLanguage") || "en"),
-      tokenSystem: String(formData.get("tokenSystem") || "SHARED"),
-      governanceType: String(formData.get("governanceType") || "ADMIN"),
-      region: String(formData.get("region") || "") || undefined,
-      country: String(formData.get("country") || "") || undefined,
-      features,
-      addons: {
-        paymentGateway: String(formData.get("paymentGateway") || "") || undefined,
-        sovereignTreasury: formData.get("sovereignTreasury") === "on",
-        dualGovernance: formData.get("dualGovernance") === "on",
-        aiModeration: formData.get("aiModeration") === "on",
-        affiliatePanel: formData.get("affiliatePanel") === "on",
-      },
-    };
+      const payload = {
+        instanceName: String(formData.get("instanceName") || ""),
+        domain: String(formData.get("domain") || "" ) || undefined,
+        subdomain: String(formData.get("subdomain") || "" ) || undefined,
+        vertical: String(formData.get("vertical") || "GENERAL"),
+        defaultLanguage: String(formData.get("defaultLanguage") || "en"),
+        tokenSystem: String(formData.get("tokenSystem") || "SHARED"),
+        governanceType: String(formData.get("governanceType") || "ADMIN"),
+        region: String(formData.get("region") || "") || undefined,
+        country: String(formData.get("country") || "") || undefined,
+        features,
+        addons: {
+          paymentGateway: String(formData.get("paymentGateway") || "") || undefined,
+          sovereignTreasury: formData.get("sovereignTreasury") === "on",
+          dualGovernance: formData.get("dualGovernance") === "on",
+          aiModeration: formData.get("aiModeration") === "on",
+          affiliatePanel: formData.get("affiliatePanel") === "on",
+        },
+      };
 
-    const res = await fetch("/api/deploy", { method: "POST", body: JSON.stringify(payload) });
-    const data = await res.json();
-    setLoading(false);
-    if (!res.ok) {
-      setMessage(data.error || "Deployment failed");
-      return;
+      const res = await fetch("/api/deploy", { method: "POST", body: JSON.stringify(payload) });
+      const data = await res.json();
+      
+      if (!res.ok) {
+        setMessageType('error');
+        setMessage(data.error || "Deployment failed");
+        return;
+      }
+      
+      setMessageType('success');
+      setMessage(`✅ Deployment queued successfully! Deployment ID: ${data.deploymentId}`);
+      (event.target as HTMLFormElement).reset();
+    } catch (error) {
+      setMessageType('error');
+      setMessage("An unexpected error occurred. Please try again.");
+    } finally {
+      setLoading(false);
     }
-    setMessage(`Deployment queued: ${data.deploymentId}`);
-    (event.target as HTMLFormElement).reset();
   }
 
   const getVerticalIcon = (vertical: string) => {
@@ -86,51 +98,144 @@ export default function AdminDeployPage() {
 
   return (
     <div className="space-y-8">
-      {/* Header Section */}
-      <div className="text-center space-y-4 pb-8 border-b border-white/10">
-        <div className="flex items-center justify-center gap-3 mb-4">
-          <div className="p-3 bg-blue-500/20 rounded-full">
-            <Rocket className="w-8 h-8 text-blue-400" />
-          </div>
-          <h1 className="text-4xl font-bold bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
-            Unified Deployment
-          </h1>
-        </div>
+      {/* Header */}
+      <div className="text-center space-y-4">
+        <h1 className="text-4xl font-bold gradient-text">Unified Deployment</h1>
         <p className="text-xl text-white/70 max-w-2xl mx-auto">
-          Launch sovereign AI-powered digital economies with comprehensive configuration options
+          Launch your sovereign AI-powered digital economy with advanced configuration options
         </p>
       </div>
 
-      <form onSubmit={onSubmit} className="space-y-8">
-        {/* Basic Configuration Card */}
-        <div className="bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 p-6">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="p-2 bg-blue-500/20 rounded-lg">
-              <Globe className="w-5 h-5 text-blue-400" />
-            </div>
-            <h2 className="text-2xl font-semibold">Basic Configuration</h2>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="space-y-4">
-              <label className="block">
-                <span className="block text-sm font-medium text-white/80 mb-2">Instance Name</span>
-                <input 
-                  name="instanceName" 
-                  required 
-                  className="w-full bg-zinc-900/50 border border-white/20 rounded-lg p-3 text-white placeholder-white/40 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-200" 
-                  placeholder="Enter instance name"
-                />
-              </label>
+      {/* Form */}
+      <div className="card max-w-6xl mx-auto">
+        <form onSubmit={onSubmit} className="space-y-8">
+          {/* Basic Configuration */}
+          <div className="space-y-6">
+            <h2 className="text-2xl font-semibold text-white border-b border-white/10 pb-2">
+              🚀 Basic Configuration
+            </h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="space-y-2">
+                <label className="block text-white font-medium">
+                  Instance Name *
+                  <input 
+                    name="instanceName" 
+                    required 
+                    className="input-field mt-2" 
+                    placeholder="Enter instance name"
+                  />
+                </label>
+              </div>
               
-              <div className="grid grid-cols-2 gap-4">
-                <label className="block">
-                  <span className="block text-sm font-medium text-white/80 mb-2">Domain</span>
+              <div className="space-y-2">
+                <label className="block text-white font-medium">
+                  Vertical
+                  <select name="vertical" className="select-field mt-2">
+                    <option value="GENERAL">General</option>
+                    <option value="HEALTH">Healthcare</option>
+                    <option value="EDUCATION">Education</option>
+                    <option value="LAW">Legal</option>
+                    <option value="GOV">Government</option>
+                  </select>
+                </label>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="space-y-2">
+                <label className="block text-white font-medium">
+                  Domain
                   <input 
                     name="domain" 
-                    placeholder="zion.example.com" 
-                    className="w-full bg-zinc-900/50 border border-white/20 rounded-lg p-3 text-white placeholder-white/40 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-200" 
+                    className="input-field mt-2" 
+                    placeholder="zion.example.com"
                   />
+                </label>
+              </div>
+              
+              <div className="space-y-2">
+                <label className="block text-white font-medium">
+                  Subdomain
+                  <input 
+                    name="subdomain" 
+                    className="input-field mt-2" 
+                    placeholder="latam"
+                />
+                </label>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="space-y-2">
+                <label className="block text-white font-medium">
+                  Default Language
+                  <input 
+                    name="defaultLanguage" 
+                    defaultValue="en" 
+                    className="input-field mt-2"
+                  />
+                </label>
+              </div>
+              
+              <div className="space-y-2">
+                <label className="block text-white font-medium">
+                  Token System
+                  <select name="tokenSystem" className="select-field mt-2">
+                    <option value="SHARED">ZION$ Shared</option>
+                    <option value="LOCAL">Local</option>
+                  </select>
+                </label>
+              </div>
+              
+              <div className="space-y-2">
+                <label className="block text-white font-medium">
+                  Governance Type
+                  <select name="governanceType" className="select-field mt-2">
+                    <option value="ADMIN">Admin</option>
+                    <option value="DAO_LITE">DAO-lite</option>
+                    <option value="DAO_FULL">Full DAO</option>
+                  </select>
+                </label>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="space-y-2">
+                <label className="block text-white font-medium">
+                  Region
+                  <input 
+                    name="region" 
+                    className="input-field mt-2" 
+                    placeholder="North America"
+                  />
+                </label>
+              </div>
+              
+              <div className="space-y-2">
+                <label className="block text-white font-medium">
+                  Country
+                  <input 
+                    name="country" 
+                    className="input-field mt-2" 
+                    placeholder="United States"
+                  />
+                </label>
+              </div>
+            </div>
+          </div>
+
+          {/* Feature Toggles */}
+          <div className="space-y-6">
+            <h2 className="text-2xl font-semibold text-white border-b border-white/10 pb-2">
+              ⚡ Core Features
+            </h2>
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {FeatureKeys.map((k) => (
+                <label key={k} className="flex items-center space-x-3 p-3 rounded-lg bg-white/5 hover:bg-white/8 transition-colors cursor-pointer">
+                  <input type="checkbox" name={k} className="checkbox-field" />
+                  <span className="text-white/90 text-sm">{labelFor(k)}</span>
                 </label>
                 <label className="block">
                   <span className="block text-sm font-medium text-white/80 mb-2">Subdomain</span>
@@ -185,193 +290,77 @@ export default function AdminDeployPage() {
             </div>
             <h2 className="text-2xl font-semibold">Governance & Economy</h2>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <label className="block">
-              <span className="block text-sm font-medium text-white/80 mb-2">Token System</span>
-              <div className="relative">
-                <select 
-                  name="tokenSystem" 
-                  className="w-full bg-zinc-900/50 border border-white/20 rounded-lg p-3 text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-200 appearance-none"
-                >
-                  <option value="SHARED">ZION$ Shared</option>
-                  <option value="LOCAL">Local</option>
-                </select>
-                <div className="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none">
-                  <svg className="w-4 h-4 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </div>
-              </div>
-            </label>
-            
-            <label className="block">
-              <span className="block text-sm font-medium text-white/80 mb-2">Governance Type</span>
-              <div className="relative">
-                <select 
-                  name="governanceType" 
-                  className="w-full bg-zinc-900/50 border border-white/20 rounded-lg p-3 text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-200 appearance-none"
-                >
-                  <option value="ADMIN">Admin</option>
-                  <option value="DAO_LITE">DAO-lite</option>
-                  <option value="DAO_FULL">Full DAO</option>
-                </select>
-                <div className="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none">
-                  <svg className="w-4 h-4 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </div>
-              </div>
-            </label>
-          </div>
-        </div>
 
-        {/* Location & Region Card */}
-        <div className="bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 p-6">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="p-2 bg-green-500/20 rounded-lg">
-              <MapPin className="w-5 h-5 text-green-400" />
-            </div>
-            <h2 className="text-2xl font-semibold">Location & Region</h2>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <label className="block">
-              <span className="block text-sm font-medium text-white/80 mb-2">Region</span>
-              <input 
-                name="region" 
-                className="w-full bg-zinc-900/50 border border-white/20 rounded-lg p-3 text-white placeholder-white/40 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-200" 
-                placeholder="e.g., North America"
-              />
-            </label>
+          {/* Optional Add-ons */}
+          <div className="space-y-6">
+            <h2 className="text-2xl font-semibold text-white border-b border-white/10 pb-2">
+              🎯 Optional Add-ons
+            </h2>
             
-            <label className="block">
-              <span className="block text-sm font-medium text-white/80 mb-2">Country</span>
-              <input 
-                name="country" 
-                className="w-full bg-zinc-900/50 border border-white/20 rounded-lg p-3 text-white placeholder-white/40 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-200" 
-                placeholder="e.g., United States"
-              />
-            </label>
-          </div>
-        </div>
-
-        {/* Feature Toggles Card */}
-        <div className="bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 p-6">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="p-2 bg-orange-500/20 rounded-lg">
-              <Sparkles className="w-5 h-5 text-orange-400" />
-            </div>
-            <h2 className="text-2xl font-semibold">Feature Toggles</h2>
-          </div>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {FeatureKeys.map((k) => (
-              <label key={k} className="flex items-center gap-3 p-3 bg-white/5 rounded-lg border border-white/10 hover:border-white/20 transition-colors cursor-pointer">
-                <input type="checkbox" name={k} className="w-4 h-4 text-blue-600 bg-zinc-900 border-white/20 rounded focus:ring-blue-500 focus:ring-2" />
-                <span className="text-sm text-white/90">{labelFor(k)}</span>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              <label className="flex items-center space-x-3 p-3 rounded-lg bg-white/5 hover:bg-white/8 transition-colors cursor-pointer">
+                <input type="checkbox" name="sovereignTreasury" className="checkbox-field" />
+                <span className="text-white/90 text-sm">Sovereign DAO treasury</span>
               </label>
-            ))}
-          </div>
-        </div>
-
-        {/* Optional Add-ons Card */}
-        <div className="bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 p-6">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="p-2 bg-yellow-500/20 rounded-lg">
-              <Zap className="w-5 h-5 text-yellow-400" />
-            </div>
-            <h2 className="text-2xl font-semibold">Optional Add-ons</h2>
-          </div>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <div className="space-y-4">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                <label className="flex items-center gap-3 p-3 bg-white/5 rounded-lg border border-white/10 hover:border-white/20 transition-colors cursor-pointer">
-                  <input type="checkbox" name="sovereignTreasury" className="w-4 h-4 text-blue-600 bg-zinc-900 border-white/20 rounded focus:ring-blue-500 focus:ring-2" />
-                  <span className="text-sm text-white/90">Sovereign DAO treasury</span>
-                </label>
-                <label className="flex items-center gap-3 p-3 bg-white/5 rounded-lg border border-white/10 hover:border-white/20 transition-colors cursor-pointer">
-                  <input type="checkbox" name="dualGovernance" className="w-4 h-4 text-blue-600 bg-zinc-900 border-white/20 rounded focus:ring-blue-500 focus:ring-2" />
-                  <span className="text-sm text-white/90">Dual governance</span>
-                </label>
-                <label className="flex items-center gap-3 p-3 bg-white/5 rounded-lg border border-white/10 hover:border-white/20 transition-colors cursor-pointer">
-                  <input type="checkbox" name="aiModeration" className="w-4 h-4 text-blue-600 bg-zinc-900 border-white/20 rounded focus:ring-blue-500 focus:ring-2" />
-                  <span className="text-sm text-white/90">AI moderation</span>
-                </label>
-                <label className="flex items-center gap-3 p-3 bg-white/5 rounded-lg border border-white/10 hover:border-white/20 transition-colors cursor-pointer">
-                  <input type="checkbox" name="affiliatePanel" className="w-4 h-4 text-blue-600 bg-zinc-900 border-white/20 rounded focus:ring-blue-500 focus:ring-2" />
-                  <span className="text-sm text-white/90">Affiliate panel</span>
-                </label>
-              </div>
-            </div>
-            
-            <div className="space-y-4">
-              <label className="block">
-                <span className="block text-sm font-medium text-white/80 mb-2">Payment Gateway</span>
-                <div className="relative">
-                  <select 
-                    name="paymentGateway" 
-                    className="w-full bg-zinc-900/50 border border-white/20 rounded-lg p-3 text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-200 appearance-none"
-                  >
-                    <option value="">None</option>
-                    <option value="stripe">Stripe</option>
-                    <option value="coinbase-commerce">Coinbase Commerce</option>
-                  </select>
-                  <div className="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none">
-                    <svg className="w-4 h-4 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </div>
-                </div>
+              
+              <label className="flex items-center space-x-3 p-3 rounded-lg bg-white/5 hover:bg-white/8 transition-colors cursor-pointer">
+                <input type="checkbox" name="dualGovernance" className="checkbox-field" />
+                <span className="text-white/90 text-sm">Dual governance (local + global)</span>
+              </label>
+              
+              <label className="flex items-center space-x-3 p-3 rounded-lg bg-white/5 hover:bg-white/8 transition-colors cursor-pointer">
+                <input type="checkbox" name="aiModeration" className="checkbox-field" />
+                <span className="text-white/90 text-sm">AI moderation system</span>
+              </label>
+              
+              <label className="flex items-center space-x-3 p-3 rounded-lg bg-white/5 hover:bg-white/8 transition-colors cursor-pointer">
+                <input type="checkbox" name="affiliatePanel" className="checkbox-field" />
+                <span className="text-white/90 text-sm">Gov/institution affiliate panel</span>
               </label>
             </div>
-          </div>
-        </div>
 
-        {/* Deployment Action */}
-        <div className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 backdrop-blur-sm rounded-xl border border-blue-500/30 p-6">
-          <div className="flex items-center justify-between">
             <div className="space-y-2">
-              <h3 className="text-xl font-semibold text-white">Ready to Deploy?</h3>
-              <p className="text-white/70">Your Zion ecosystem will be deployed with the selected configuration</p>
+              <label className="block text-white font-medium">
+                Payment Gateway
+                <select name="paymentGateway" className="select-field mt-2">
+                  <option value="">None</option>
+                  <option value="stripe">Stripe</option>
+                  <option value="coinbase-commerce">Coinbase Commerce</option>
+                </select>
+              </label>
             </div>
-            <button 
-              disabled={loading} 
-              className="flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold rounded-xl transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg hover:shadow-xl"
-            >
-              {loading ? (
-                <>
-                  <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                  <span>Deploying...</span>
-                </>
-              ) : (
-                <>
-                  <Play className="w-5 h-5" />
-                  <span>Deploy Instance</span>
-                </>
-              )}
-            </button>
           </div>
-          
-          {message && (
-            <div className={`mt-4 p-4 rounded-lg border ${
-              message.includes('failed') 
-                ? 'bg-red-500/20 border-red-500/30 text-red-300' 
-                : 'bg-green-500/20 border-green-500/30 text-green-300'
-            }`}>
-              <div className="flex items-center gap-2">
-                {message.includes('failed') ? (
-                  <AlertCircle className="w-5 h-5" />
+
+          {/* Submit Section */}
+          <div className="border-t border-white/10 pt-6">
+            <div className="flex flex-col sm:flex-row items-center gap-4">
+              <button 
+                disabled={loading} 
+                className="btn-primary text-lg px-8 py-4 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {loading ? (
+                  <div className="flex items-center space-x-2">
+                    <div className="spinner w-5 h-5"></div>
+                    <span>Deploying...</span>
+                  </div>
                 ) : (
-                  <CheckCircle className="w-5 h-5" />
+                  "🚀 Deploy Instance"
                 )}
-                <span className="font-medium">{message}</span>
-              </div>
+              </button>
+              
+              {message && (
+                <div className={`flex items-center space-x-2 px-4 py-2 rounded-lg ${
+                  messageType === 'success' ? 'bg-green-500/20 text-green-400 border border-green-500/30' :
+                  messageType === 'error' ? 'bg-red-500/20 text-red-400 border border-red-500/30' :
+                  'bg-blue-500/20 text-blue-400 border border-blue-500/30'
+                }`}>
+                  <span>{message}</span>
+                </div>
+              )}
             </div>
-          )}
-        </div>
-      </form>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }
