@@ -84,7 +84,6 @@ export const innovativeITServicesEnhanced2025: InnovativeITService[] = [
     competitors: ['AWS, Azure, GCP - but we offer quantum-secure encryption'],
     marketSize: '$45.5B cloud security market',
     growthRate: '35% annual growth',
-    variant: 'quantum-cloud-enterprise',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -137,7 +136,6 @@ export const innovativeITServicesEnhanced2025: InnovativeITService[] = [
     competitors: ['Cisco Zero Trust, Palo Alto Networks, Fortinet, Check Point'],
     marketSize: '$38.5B zero trust market',
     growthRate: '28% annual growth',
-    variant: 'zero-trust-enterprise',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -190,7 +188,6 @@ export const innovativeITServicesEnhanced2025: InnovativeITService[] = [
     competitors: ['Datadog, New Relic, Splunk, Dynatrace'],
     marketSize: '$12.3B DevOps market',
     growthRate: '22% annual growth',
-    variant: 'devops-ai-enterprise',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -243,7 +240,6 @@ export const innovativeITServicesEnhanced2025: InnovativeITService[] = [
     competitors: ['AWS Greengrass, Azure IoT Edge, Google Cloud IoT Edge, EdgeX Foundry'],
     marketSize: '$25.5B edge computing market',
     growthRate: '32% annual growth',
-    variant: 'edge-orchestration-enterprise',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -296,7 +292,6 @@ export const innovativeITServicesEnhanced2025: InnovativeITService[] = [
     competitors: ['Cloudflare, AWS Shield, Akamai, Fastly'],
     marketSize: '$15.6B network security market',
     growthRate: '30% annual growth',
-    variant: 'quantum-internet-enterprise',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -349,7 +344,6 @@ export const innovativeITServicesEnhanced2025: InnovativeITService[] = [
     competitors: ['CrowdStrike, SentinelOne, Darktrace, Cylance'],
     marketSize: '$42.5B AI cybersecurity market',
     growthRate: '38% annual growth',
-    variant: 'ai-cybersecurity-enterprise',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -402,7 +396,6 @@ export const innovativeITServicesEnhanced2025: InnovativeITService[] = [
     competitors: ['ConsenSys, Alchemy, Infura, QuickNode'],
     marketSize: '$28.5B blockchain market',
     growthRate: '45% annual growth',
-    variant: 'blockchain-enterprise',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -455,7 +448,6 @@ export const innovativeITServicesEnhanced2025: InnovativeITService[] = [
     competitors: ['Armis, Forescout, Claroty, Nozomi Networks'],
     marketSize: '$18.5B IoT security market',
     growthRate: '25% annual growth',
-    variant: 'iot-security-enterprise',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -508,7 +500,6 @@ export const innovativeITServicesEnhanced2025: InnovativeITService[] = [
     competitors: ['OneTrust, TrustArc, WireWheel, BigID'],
     marketSize: '$15.5B data privacy market',
     growthRate: '22% annual growth',
-    variant: 'data-privacy-enterprise',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -561,7 +552,6 @@ export const innovativeITServicesEnhanced2025: InnovativeITService[] = [
     competitors: ['CloudHealth', 'CloudCheckr', 'AWS Cost Explorer', 'Azure Cost Management'],
     marketSize: '$22.5B cloud management market',
     growthRate: '28% annual growth',
-    variant: 'cloud-cost-enterprise',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -614,7 +604,6 @@ export const innovativeITServicesEnhanced2025: InnovativeITService[] = [
     competitors: ['None - First to market'],
     marketSize: '$25B+ potential market',
     growthRate: '500%+ annual growth',
-    variant: 'quantum-security',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -667,7 +656,6 @@ export const innovativeITServicesEnhanced2025: InnovativeITService[] = [
     competitors: ['ServiceNow', 'BMC Helix', 'BMC TrueSight', 'IBM Tivoli'],
     marketSize: '$12.5B IT operations market',
     growthRate: '28% annual growth',
-    variant: 'autonomous-it',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -720,7 +708,6 @@ export const innovativeITServicesEnhanced2025: InnovativeITService[] = [
     competitors: ['AWS Greengrass', 'Azure IoT Edge', 'Google Cloud IoT Edge', 'Kubernetes Edge'],
     marketSize: '$8.5B edge computing market',
     growthRate: '32% annual growth',
-    variant: 'edge-computing',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -773,7 +760,6 @@ export const innovativeITServicesEnhanced2025: InnovativeITService[] = [
     competitors: ['Hyperledger Fabric', 'Ethereum Enterprise', 'Corda', 'Quorum'],
     marketSize: '$6.8B enterprise blockchain market',
     growthRate: '45% annual growth',
-    variant: 'blockchain',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -826,7 +812,6 @@ export const innovativeITServicesEnhanced2025: InnovativeITService[] = [
     competitors: ['GitLab', 'Jenkins', 'CircleCI', 'Travis CI'],
     marketSize: '$7.2B DevOps market',
     growthRate: '25% annual growth',
-    variant: 'ai-devops',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -879,7 +864,6 @@ export const innovativeITServicesEnhanced2025: InnovativeITService[] = [
     competitors: ['Okta', 'Ping Identity', 'ForgeRock', 'CyberArk'],
     marketSize: '$9.8B zero trust security market',
     growthRate: '35% annual growth',
-    variant: 'zero-trust',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -932,7 +916,6 @@ export const innovativeITServicesEnhanced2025: InnovativeITService[] = [
     competitors: ['None - First to market'],
     marketSize: '$35B+ potential market',
     growthRate: '600%+ annual growth',
-    variant: 'quantum-networking',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',

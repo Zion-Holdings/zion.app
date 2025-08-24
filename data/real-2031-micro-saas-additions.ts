@@ -1,4 +1,4 @@
-import { EnhancedRealMicroSaasService } from './enhanced-real-micro-saas-services';
+import { MicroSaasService } from './enhanced-real-micro-saas-services';
 
 const contact = {
 	mobile: '+1 302 464 0950',
@@ -7,7 +7,7 @@ const contact = {
 	website: 'https://ziontechgroup.com'
 };
 
-export const real2031MicroSaasAdditions: EnhancedRealMicroSaasService[] = [
+export const real2031MicroSaasAdditions: MicroSaasService[] = [
 	{
 		id: 'feature-flags-starter',
 		name: 'Feature Flags Starter',

@@ -83,7 +83,6 @@ export const innovativeRealMicroSaasServices2025: InnovativeMicroSaasService[] =
     competitors: ['Tableau, Power BI, Looker, QlikView'],
     marketSize: '$29.5B BI market',
     growthRate: '15% annual growth',
-    variant: 'ai-bi-enterprise',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -136,7 +135,6 @@ export const innovativeRealMicroSaasServices2025: InnovativeMicroSaasService[] =
     competitors: ['Jasper, Copy.ai, Writesonic, ContentBot'],
     marketSize: '$12.5B content marketing market',
     growthRate: '18% annual growth',
-    variant: 'ai-content-enterprise',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -189,7 +187,6 @@ export const innovativeRealMicroSaasServices2025: InnovativeMicroSaasService[] =
     competitors: ['Intercom, Zendesk, Freshdesk, Help Scout'],
     marketSize: '$18.5B customer service market',
     growthRate: '12% annual growth',
-    variant: 'ai-support-enterprise',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -242,7 +239,6 @@ export const innovativeRealMicroSaasServices2025: InnovativeMicroSaasService[] =
     competitors: ['HubSpot Sales Hub, Pipedrive, Salesforce, Pipedrive'],
     marketSize: '$22.5B sales intelligence market',
     growthRate: '14% annual growth',
-    variant: 'ai-sales-enterprise',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -295,7 +291,6 @@ export const innovativeRealMicroSaasServices2025: InnovativeMicroSaasService[] =
     competitors: ['Gainsight', 'Totango', 'ClientSuccess', 'ChurnZero'],
     marketSize: '$2.5B customer success market',
     growthRate: '25% annual growth',
-    variant: 'customer-success',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -348,7 +343,6 @@ export const innovativeRealMicroSaasServices2025: InnovativeMicroSaasService[] =
     competitors: ['Blue Yonder', 'Manhattan Associates', 'SAP Supply Chain', 'Oracle SCM'],
     marketSize: '$15B supply chain optimization market',
     growthRate: '20% annual growth',
-    variant: 'supply-chain',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -401,7 +395,6 @@ export const innovativeRealMicroSaasServices2025: InnovativeMicroSaasService[] =
     competitors: ['Planful', 'Adaptive Insights', 'Anaplan', 'Vena Solutions'],
     marketSize: '$3.2B financial planning market',
     growthRate: '18% annual growth',
-    variant: 'financial-planning',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -454,7 +447,6 @@ export const innovativeRealMicroSaasServices2025: InnovativeMicroSaasService[] =
     competitors: ['Visier', 'Tableau HR', 'Workday People Analytics', 'BambooHR Analytics'],
     marketSize: '$2.8B HR analytics market',
     growthRate: '22% annual growth',
-    variant: 'hr-analytics',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -507,7 +499,6 @@ export const innovativeRealMicroSaasServices2025: InnovativeMicroSaasService[] =
     competitors: ['Gong', 'Chorus.ai', 'SalesLoft', 'Outreach'],
     marketSize: '$4.1B sales intelligence market',
     growthRate: '24% annual growth',
-    variant: 'sales-intelligence',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -560,7 +551,6 @@ export const innovativeRealMicroSaasServices2025: InnovativeMicroSaasService[] =
     competitors: ['Palantir', 'C3.ai', 'DataRobot', 'H2O.ai'],
     marketSize: '$8.5B AI decision market',
     growthRate: '35% annual growth',
-    variant: 'decision-engine',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -613,7 +603,6 @@ export const innovativeRealMicroSaasServices2025: InnovativeMicroSaasService[] =
     competitors: ['Jasper', 'Copy.ai', 'Writesonic', 'ContentBot'],
     marketSize: '$2.1B content automation market',
     growthRate: '28% annual growth',
-    variant: 'content-automation',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -666,7 +655,6 @@ export const innovativeRealMicroSaasServices2025: InnovativeMicroSaasService[] =
     competitors: ['Salesforce Einstein', 'HubSpot AI', 'Microsoft Dynamics AI', 'Zoho CRM AI'],
     marketSize: '$6.8B AI-enhanced CRM market',
     growthRate: '26% annual growth',
-    variant: 'crm-intelligence',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',

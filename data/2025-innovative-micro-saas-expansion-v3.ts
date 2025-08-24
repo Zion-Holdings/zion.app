@@ -86,7 +86,7 @@ export const innovative2025MicroSaasExpansionV3: InnovativeMicroSaasService[] = 
     competitors: ['Tableau, Power BI, Looker, QlikView'],
     marketSize: '$25B+ Business Intelligence market',
     growthRate: '15% YoY',
-    variant: 'ai-business-intelligence-enterprise',
+    variant: 'ai-sales-intelligence-enterprise',
     contactInfo: contact,
     realImplementation: true,
     implementationDetails: 'Cloud-native platform with real-time data processing and AI model training',

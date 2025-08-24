@@ -84,6 +84,16 @@
   ],
   "exclude": [
     "node_modules",
-    "zion.app/recovered-content/**"
+    "zion.app/recovered-content/**",
+    "contracts/**",
+    "zion-os/**",
+    "zion_academy/**",
+    "universe/**",
+    "wiki/**",
+    "vision/**",
+    "cypress/**",
+    "data/2025-*.ts",
+    "data/*expansion-v2.ts",
+    "data/2025-innovative-ai-services-expansion-v2.ts"
   ]
 }

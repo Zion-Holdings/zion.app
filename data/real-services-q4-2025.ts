@@ -1,4 +1,4 @@
-import { EnhancedRealMicroSaasService } from './enhanced-real-micro-saas-services';
+import { MicroSaasService } from './enhanced-real-micro-saas-services';
 
 const contactInfo = {
 	mobile: '+1 302 464 0950',
@@ -7,7 +7,7 @@ const contactInfo = {
 	website: 'https://ziontechgroup.com'
 };
 
-export const realServicesQ42025: EnhancedRealMicroSaasService[] = [
+export const realServicesQ42025: MicroSaasService[] = [
 	{
 		id: 'tls-certificate-monitor',
 		name: 'TLS Certificate Monitor',

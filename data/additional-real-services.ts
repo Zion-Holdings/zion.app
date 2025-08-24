@@ -1,6 +1,6 @@
-import type { EnhancedRealMicroSaasService } from './enhanced-real-micro-saas-services';
+import type { MicroSaasService } from './enhanced-real-micro-saas-services';
 
-export const additionalEnhancedServices: EnhancedRealMicroSaasService[] = [
+export const additionalEnhancedServices: MicroSaasService[] = [
   {
     id: 'synthetic-data-generator',
     name: 'Synthetic Data Generator',

@@ -1,4 +1,4 @@
-import { EnhancedRealMicroSaasService } from './enhanced-real-micro-saas-services';
+import { MicroSaasService } from './enhanced-real-micro-saas-services';
 
 const contact = {
   mobile: '+1 302 464 0950',
@@ -7,7 +7,7 @@ const contact = {
   website: 'https://ziontechgroup.com'
 };
 
-export const newRealInnovations: EnhancedRealMicroSaasService[] = [
+export const newRealInnovations: MicroSaasService[] = [
   {
     id: 'status-pages-slo',
     name: 'Status Pages & SLO Automation',
