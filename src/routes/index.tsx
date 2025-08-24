@@ -1,101 +1,69 @@
 import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 
-// Route component exports
-export const AuthRoutes: React.FC = () => {
-  return (
-    <div className="p-4">
-      <h2>Authentication Routes</h2>
-      <p>Authentication functionality will be implemented here.</p>
-    </div>
-  );
-};
+// Placeholder route components - these can be expanded later
+export const AuthRoutes = () => (
+  <Routes>
+    <Route path="*" element={<div>Auth Routes - Coming Soon</div>} />
+  </Routes>
+);
 
-export const DashboardRoutes: React.FC = () => {
-  return (
-    <div className="p-4">
-      <h2>Dashboard Routes</h2>
-      <p>Dashboard functionality will be implemented here.</p>
-    </div>
-  );
-};
+export const DashboardRoutes = () => (
+  <Routes>
+    <Route path="*" element={<div>Dashboard Routes - Coming Soon</div>} />
+  </Routes>
+);
 
-export const MarketplaceRoutes: React.FC = () => {
-  return (
-    <div className="p-4">
-      <h2>Marketplace Routes</h2>
-      <p>Marketplace functionality will be implemented here.</p>
-    </div>
-  );
-};
+export const MarketplaceRoutes = () => (
+  <Routes>
+    <Route path="*" element={<div>Marketplace Routes - Coming Soon</div>} />
+  </Routes>
+);
 
-export const TalentRoutes: React.FC = () => {
-  return (
-    <div className="p-4">
-      <h2>Talent Routes</h2>
-      <p>Talent functionality will be implemented here.</p>
-    </div>
-  );
-};
+export const TalentRoutes = () => (
+  <Routes>
+    <Route path="*" element={<div>Talent Routes - Coming Soon</div>} />
+  </Routes>
+);
 
-export const AdminRoutes: React.FC = () => {
-  return (
-    <div className="p-4">
-      <h2>Admin Routes</h2>
-      <p>Admin functionality will be implemented here.</p>
-    </div>
-  );
-};
+export const AdminRoutes = () => (
+  <Routes>
+    <Route path="*" element={<div>Admin Routes - Coming Soon</div>} />
+  </Routes>
+);
 
-export const MobileAppRoutes: React.FC = () => {
-  return (
-    <div className="p-4">
-      <h2>Mobile App Routes</h2>
-      <p>Mobile app functionality will be implemented here.</p>
-    </div>
-  );
-};
+export const MobileAppRoutes = () => (
+  <Routes>
+    <Route path="*" element={<div>Mobile App Routes - Coming Soon</div>} />
+  </Routes>
+);
 
-export const ContentRoutes: React.FC = () => {
-  return (
-    <div className="p-4">
-      <h2>Content Routes</h2>
-      <p>Content functionality will be implemented here.</p>
-    </div>
-  );
-};
+export const ContentRoutes = () => (
+  <Routes>
+    <Route path="*" element={<div>Content Routes - Coming Soon</div>} />
+  </Routes>
+);
 
-export const ErrorRoutes: React.FC = () => {
-  return (
-    <div className="p-4">
-      <h2>Error Routes</h2>
-      <p>Error handling will be implemented here.</p>
-    </div>
-  );
-};
+export const ErrorRoutes = () => (
+  <Routes>
+    <Route path="*" element={<div>Error Routes - Coming Soon</div>} />
+  </Routes>
+);
 
-export const EnterpriseRoutes: React.FC = () => {
-  return (
-    <div className="p-4">
-      <h2>Enterprise Routes</h2>
-      <p>Enterprise functionality will be implemented here.</p>
-    </div>
-  );
-};
+export const EnterpriseRoutes = () => (
+  <Routes>
+    <Route path="*" element={<div>Enterprise Routes - Coming Soon</div>} />
+  </Routes>
+);
 
-export const CommunityRoutes: React.FC = () => {
-  return (
-    <div className="p-4">
-      <h2>Community Routes</h2>
-      <p>Community functionality will be implemented here.</p>
-    </div>
-  );
-};
+export const CommunityRoutes = () => (
+  <Routes>
+    <Route path="*" element={<div>Community Routes - Coming Soon</div>} />
+  </Routes>
+);
 
-export const DeveloperRoutes: React.FC = () => {
-  return (
-    <div className="p-4">
-      <h2>Developer Routes</h2>
-      <p>Developer functionality will be implemented here.</p>
-    </div>
-  );
-};
+export const DeveloperRoutes = () => (
+  <Routes>
+    <Route path="*" element={<div>Developer Routes - Coming Soon</div>} />
+  </Routes>
+);
