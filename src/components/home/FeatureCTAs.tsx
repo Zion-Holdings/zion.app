@@ -14,9 +14,7 @@ import {
   Code, 
   Settings, 
   Link as LinkIcon,
-  Phone,
   Mail,
-  Globe,
   Star,
   CheckCircle
 } from "lucide-react";

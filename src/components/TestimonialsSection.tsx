@@ -134,7 +134,7 @@ export function TestimonialsSection() {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          {stats.map((stat, index) => (
+          {stats.map((stat) => (
             <motion.div key={stat.label} variants={itemVariants} className="text-center">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-zion-purple/20 border border-zion-purple/30 rounded-xl mb-4">
                 <stat.icon className="w-8 h-8 text-zion-cyan" />

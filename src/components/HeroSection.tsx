@@ -157,7 +157,7 @@ export function HeroSection() {
             <div className="space-y-2">
               <div className="flex items-center justify-between text-sm">
                 <span className="text-zion-slate-light">Response Time</span>
-                <span className="text-white font-medium">< 2 hours</span>
+                <span className="text-white font-medium">&lt; 2 hours</span>
               </div>
               <div className="flex items-center justify-between text-sm">
                 <span className="text-zion-slate-light">Success Rate</span>

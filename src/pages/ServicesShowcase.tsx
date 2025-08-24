@@ -2,18 +2,13 @@ import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
+
 import { 
-  Globe, 
   Shield, 
   Brain, 
   Cloud, 
-  Database, 
-  Lock, 
   Zap, 
-  Users, 
   BarChart3, 
-  Settings,
   Phone,
   Mail,
   MapPin,

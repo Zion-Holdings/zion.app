@@ -4,7 +4,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { 
-  Check, 
   X, 
   Phone, 
   Mail, 
@@ -15,17 +14,10 @@ import {
   Shield,
   Zap,
   BarChart3,
-  Users,
-  Settings,
-  Globe,
-  Lock,
-  Database,
   Monitor,
   Eye,
-  MessageSquare,
   Star,
   TrendingUp,
-  Clock,
   DollarSign,
   CheckCircle
 } from "lucide-react";
@@ -334,7 +326,7 @@ export default function ServicesComparison() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           {SERVICE_COMPARISONS.map((service) => (
-            <Card 
+            <div
               key={service.category}
               className={`cursor-pointer hover:shadow-lg transition-all ${
                 selectedCategory === service.category 
@@ -345,53 +337,55 @@ export default function ServicesComparison() {
                 selectedCategory === service.category ? null : service.category
               )}
             >
-              <CardHeader className="text-center">
-                <div className="flex justify-center mb-4">
-                  {service.icon}
-                </div>
-                <CardTitle className="text-lg">{service.category}</CardTitle>
-                <CardDescription className="text-sm">{service.description}</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div>
-                  <h4 className="font-semibold mb-2 text-zinc-800 dark:text-zinc-200">Best For</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {service.bestFor.slice(0, 2).map((item, index) => (
-                      <Badge key={index} variant="secondary" className="text-xs">
-                        {item}
-                      </Badge>
-                    ))}
-                    {service.bestFor.length > 2 && (
-                      <Badge variant="outline" className="text-xs">
-                        +{service.bestFor.length - 2} more
-                      </Badge>
-                    )}
+              <Card>
+                <CardHeader className="text-center">
+                  <div className="flex justify-center mb-4">
+                    {service.icon}
                   </div>
-                </div>
-                
-                <div className="flex justify-between items-center">
+                  <CardTitle className="text-lg">{service.category}</CardTitle>
+                  <CardDescription className="text-sm">{service.description}</CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-4">
                   <div>
-                    <p className="text-sm text-zinc-600 dark:text-zinc-400">Starting Price</p>
-                    <p className="text-xl font-bold text-zion-blue">
-                      ${service.startingPrice.toLocaleString()}
-                    </p>
+                    <h4 className="font-semibold mb-2 text-zinc-800 dark:text-zinc-200">Best For</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {service.bestFor.slice(0, 2).map((item, index) => (
+                        <Badge key={index} variant="secondary" className="text-xs">
+                          {item}
+                        </Badge>
+                      ))}
+                      {service.bestFor.length > 2 && (
+                        <Badge variant="outline" className="text-xs">
+                          +{service.bestFor.length - 2} more
+                        </Badge>
+                      )}
+                    </div>
                   </div>
-                  <div>
-                    <p className="text-sm text-zinc-600 dark:text-zinc-400">Deploy Time</p>
-                    <p className="text-sm font-medium">{service.timeToDeploy}</p>
+                  
+                  <div className="flex justify-between items-center">
+                    <div>
+                      <p className="text-sm text-zinc-600 dark:text-zinc-400">Starting Price</p>
+                      <p className="text-xl font-bold text-zion-blue">
+                        ${service.startingPrice.toLocaleString()}
+                      </p>
+                    </div>
+                    <div>
+                      <p className="text-sm text-zinc-600 dark:text-zinc-400">Deploy Time</p>
+                      <p className="text-sm font-medium">{service.timeToDeploy}</p>
+                    </div>
                   </div>
-                </div>
 
-                <div className="flex gap-2">
-                  <Badge className={`text-xs ${getComplexityColor(service.complexity)}`}>
-                    {service.complexity} Complexity
-                  </Badge>
-                  <Badge className={`text-xs ${getScalabilityColor(service.scalability)}`}>
-                    {service.scalability} Scalability
-                  </Badge>
-                </div>
-              </CardContent>
-            </Card>
+                  <div className="flex gap-2">
+                    <Badge className={`text-xs ${getComplexityColor(service.complexity)}`}>
+                      {service.complexity} Complexity
+                    </Badge>
+                    <Badge className={`text-xs ${getScalabilityColor(service.scalability)}`}>
+                      {service.scalability} Scalability
+                    </Badge>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
           ))}
         </div>
 
