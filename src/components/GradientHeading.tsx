@@ -3,16 +3,29 @@ import React from 'react';
 interface GradientHeadingProps {
   children: React.ReactNode;
   className?: string;
+  size?: 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl';
 }
 
-export function GradientHeading({ children, className = '' }: GradientHeadingProps) {
+export function GradientHeading({ 
+  children, 
+  className = '', 
+  size = '2xl' 
+}: GradientHeadingProps) {
+  const sizeClasses = {
+    sm: 'text-sm',
+    md: 'text-base',
+    lg: 'text-lg',
+    xl: 'text-xl',
+    '2xl': 'text-2xl',
+    '3xl': 'text-3xl',
+    '4xl': 'text-4xl',
+    '5xl': 'text-5xl',
+    '6xl': 'text-6xl'
+  };
+
   return (
-<<<<<<< HEAD
-    <h2 className={`text-4xl md:text-5xl font-bold bg-gradient-to-r from-zion-cyan via-zion-purple to-zion-blue bg-clip-text text-transparent ${className}`}>
-=======
-    <h2 className={`text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent ${className}`}>
->>>>>>> bfd29442eb0d815cc7d437a97d09f1130ceb6a0c
+    <h1 className={`${sizeClasses[size]} font-bold bg-gradient-to-r from-zion-cyan via-zion-purple-light to-zion-purple bg-clip-text text-transparent ${className}`}>
       {children}
-    </h2>
+    </h1>
   );
 }
