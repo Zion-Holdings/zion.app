@@ -12,6 +12,13 @@ const categories = [
     color: "from-purple-500 to-indigo-600",
   },
   {
+    title: "Micro SAAS",
+    description: "Innovative software solutions and business automation tools",
+    icon: <Lightbulb className="w-10 h-10" />,
+    link: "/micro-saas-services",
+    color: "from-emerald-500 to-green-600",
+  },
+  {
     title: "Talents",
     description: "Connect with AI experts, developers, and tech specialists",
     icon: <Users className="w-10 h-10" />,
@@ -25,13 +32,6 @@ const categories = [
     link: "/equipment",
     color: "from-amber-500 to-orange-600",
   },
-  {
-    title: "Innovation",
-    description: "Discover cutting-edge solutions and tech breakthroughs",
-    icon: <Lightbulb className="w-10 h-10" />,
-    link: "/category/innovation",
-    color: "from-emerald-500 to-green-600",
-  },
 ];
 
 const specialServices = [
@@ -40,8 +40,16 @@ const specialServices = [
     link: "/it-onsite-services"
   },
   {
-    title: "Micro SAAS Services",
-    link: "/micro-saas-services"
+    title: "AI Chatbot Builder",
+    link: "/micro-saas-services#ai-chatbot-builder"
+  },
+  {
+    title: "Cloud Migration Pro",
+    link: "/micro-saas-services#cloud-migration-pro"
+  },
+  {
+    title: "Cybersecurity Suite",
+    link: "/micro-saas-services#cybersecurity-suite"
   }
 ];
 
@@ -97,18 +105,12 @@ export function CategoriesSection({ showTitle = true }: CategoriesSectionProps) 
           </div>
         </div>
         
-        <div className="mt-12 flex justify-center gap-6">
+        <div className="mt-12 flex justify-center">
           <Link 
             to="/categories" 
             className="text-zion-cyan border-b border-zion-cyan hover:border-zion-cyan-dark transition-colors"
           >
             View All Categories →
-          </Link>
-          <Link 
-            to="/pricing" 
-            className="text-zion-cyan border-b border-zion-cyan hover:border-zion-cyan-dark transition-colors"
-          >
-            View Pricing →
           </Link>
         </div>
       </div>
