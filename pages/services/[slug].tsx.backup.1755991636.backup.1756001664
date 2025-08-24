@@ -32,7 +32,12 @@ import { added2026Q2Services } from '../../data/added-2026-q2-services';
 import { real2026Q3Additions } from '../../data/real-2026-q3-additions';
 import { real2026Q4Additions } from '../../data/real-2026-q4-additions';
 import { real2026Q4NewServices } from '../../data/real-2026-q4-new-services';
+<<<<<<< HEAD:pages/services/[slug].tsx.backup.1755991636
+import { real2027Q1Additions } from '../../data/real-2027-q1-additions';
+import { newSaasItAiServices2025 } from '../../data/new-saas-it-ai-services-2025';
+=======
 import { additional2026Q4RealServices } from '../../data/additional-2026-q4-real-services';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-dcf3:pages/services/[slug].tsx
 
 import { real2029Q1Additions } from '../../data/real-2029-q1-additions';
 import { realMarketServices } from '../../data/real-market-services';
@@ -124,9 +129,18 @@ function getAllServices(): Service[] {
 		.concat(real2026Q3Additions as unknown as Service[])
 		.concat(real2026Q4Additions as unknown as Service[])
 		.concat(real2026Q4NewServices as unknown as Service[])
+<<<<<<< HEAD:pages/services/[slug].tsx.backup.1755991636
+		.concat(real2027Q1Additions as unknown as Service[])
+		// Additional sources to cover more service slugs
+		.concat((innovativeMicroSaasServicesV3 as unknown) as Service[])
+		.concat((innovative2026MicroSaasServicesV2 as unknown) as Service[])
+		.concat((ultimateRealMicroSaasServices2025 as unknown) as Service[])
+		.concat((innovativeRealMicroSaasServices2025 as unknown) as Service[]);
+=======
 		.concat(newSaasItAiServices2025 as unknown as Service[]);
 =======
 		.concat(additional2026Q4RealServices as unknown as Service[]);
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-dcf3:pages/services/[slug].tsx
 }
 
 function toSlug(value: string): string {
