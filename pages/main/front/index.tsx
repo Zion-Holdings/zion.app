@@ -214,17 +214,22 @@ export default function MainFrontIndex() {
 
             {/* Quick Links */}
             <div className="mx-auto mt-8 flex max-w-3xl flex-wrap justify-center gap-2">
-              {[
-                ['Automation Hub', '/automation'],
-                ['SEO Audit', '/reports/seo'],
-                ['AI Trends', '/reports/ai-trends'],
-                ['Newsroom', '/newsroom'],
-                ['Site Health', '/site-health'],
-              ].map(([label, href]) => (
-                <Link key={label as string} href={href as string}>
-                  <a className="rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-xs text-white/80 backdrop-blur hover:bg-white/10">{label as string}</a>
-                </Link>
-              ))}
+                             {[
+                 ['Automation Hub', '/automation'],
+                 ['SEO Audit', '/reports/seo'],
+                 ['AI Trends', '/reports/ai-trends'],
+                 ['Redirect Healer', '/.netlify/functions/redirect-healer'],
+                 ['Sitemap Prioritizer', '/.netlify/functions/sitemap-prioritizer'],
+                 ['Alt‑Text Auditor', '/.netlify/functions/a11y-alt-text-auditor-runner'],
+                 ['Revenue CTA Inserter', '/.netlify/functions/revenue-cta-inserter-runner'],
+                 ['Design Token Report', '/automation/design-tokens/latest.json'],
+                 ['Newsroom', '/newsroom'],
+                 ['Site Health', '/site-health'],
+               ].map(([label, href]) => (
+                 <Link key={label as string} href={href as string}>
+                   <a className="rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-xs text-white/80 backdrop-blur hover:bg-white/10">{label as string}</a>
+                 </Link>
+               ))}
             </div>
           </div>
         </motion.section>
@@ -402,19 +407,18 @@ export default function MainFrontIndex() {
         {/* Command Center */}
         <section id="command-center" className="mx-auto max-w-7xl px-6 pb-14">
           <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Command Center</h2>
-                     <div className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-             {[
-               { title: 'Automation Hub', desc: 'Runbooks, factories, and live autonomous agents.', href: '/automation' },
-               { title: 'Site Health', desc: 'A11y, performance, and link‑health dashboards.', href: '/site-health' },
-               { title: 'SEO Audit', desc: 'Continuous on‑site SEO scans with proposed diffs.', href: '/reports/seo' },
-               { title: 'AI Trends', desc: 'Intelligence signals from the AI/cloud ecosystem.', href: '/reports/ai-trends' },
-               { title: 'Dependency Health', desc: 'Live radar of npm packages by update urgency.', href: '/reports/deps' },
-               { title: 'Newsroom', desc: 'Curated updates and product evolution highlights.', href: '/newsroom' },
-               { title: 'Cloud Automations', desc: 'Netlify scheduled functions powering jobs 24/7.', href: '/automation' },
-               { title: 'Docs', desc: 'Technical notes and guides for the platform.', href: 'https://github.com/Zion-Holdings/zion.app/tree/main/docs', external: true },
-               { title: 'AI Changelog', desc: 'Summarized autonomous changes and highlights.', href: 'https://github.com/Zion-Holdings/zion.app/blob/main/docs/CHANGELOG_AI.md', external: true }
-             ].map((card) => (
-<article key={card.title} className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 holo tilt-on-hover">
+          <div className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              { title: 'Automation Hub', desc: 'Runbooks, factories, and live autonomous agents.', href: '/automation' },
+              { title: 'Site Health', desc: 'A11y, performance, and link‑health dashboards.', href: '/site-health' },
+              { title: 'SEO Audit', desc: 'Continuous on‑site SEO scans with proposed diffs.', href: '/reports/seo' },
+              { title: 'AI Trends', desc: 'Intelligence signals from the AI/cloud ecosystem.', href: '/reports/ai-trends' },
+              { title: 'Newsroom', desc: 'Curated updates and product evolution highlights.', href: '/newsroom' },
+              { title: 'Cloud Automations', desc: 'Netlify scheduled functions powering jobs 24/7.', href: '/automation' },
+              { title: 'Docs', desc: 'Technical notes and guides for the platform.', href: 'https://github.com/Zion-Holdings/zion.app/tree/main/docs', external: true },
+              { title: 'AI Changelog', desc: 'Summarized autonomous changes and highlights.', href: 'https://github.com/Zion-Holdings/zion.app/blob/main/docs/CHANGELOG_AI.md', external: true }
+            ].map((card) => (
+              <article key={card.title} className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 holo tilt-on-hover">
                 <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
                 <h3 className="text-lg font-semibold">{card.title}</h3>
                 <p className="mt-1 text-sm text-white/75">{card.desc}</p>
@@ -444,10 +448,8 @@ export default function MainFrontIndex() {
               { label: 'Homepage Advertiser', desc: 'Curates and updates the home explore section.', href: '/.netlify/functions/homepage_advertiser' },
               { label: 'Cloud Orchestrator', desc: 'Runs fast improvement cycle and git sync.', href: '/.netlify/functions/cloud_orchestrator' },
               { label: 'Sitemap Runner', desc: 'Keeps sitemap fresh for SEO visibility.', href: '/.netlify/functions/sitemap_runner' },
-              { label: 'SEO Audit Runner', desc: 'Analyzes SEO and writes reports autonomously.', href: '/.netlify/functions/seo-audit-runner' },
-              { label: 'AI Trends Radar', desc: 'Fetches and summarizes AI trends periodically.', href: '/.netlify/functions/ai-trends-radar-runner' },
-              { label: 'UI Beautifier', desc: 'Improves UI polish and consistency automatically.', href: '/.netlify/functions/ui-beautifier-runner' },
-              { label: 'Deps Auto-Upgrade', desc: 'Upgrades dependencies safely and commits changes.', href: '/.netlify/functions/deps-auto-upgrade-runner' },
+              { label: 'Smart Redirect Manager', desc: 'Fixes internal 404s; updates public/_redirects and report.', href: '/.netlify/functions/redirect-manager' },
+              { label: 'A11y Alt‑Text Auditor', desc: 'Scans for missing alt attributes and publishes reports.', href: '/.netlify/functions/a11y-audit-runner' },
             ].map((f) => (
               <a key={f.label} href={f.href} target="_blank" rel="noopener" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
                 <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
@@ -1722,6 +1724,10 @@ export default function MainFrontIndex() {
               <Link href="/newsroom"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
   <div className="text-base font-semibold">AI Changelog — highlights</div>
   <div className="mt-1 text-sm text-white/75">Summarized updates</div>
+  <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
+              <Link href="/.netlify/functions/autonomous-innovation-generator"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
+  <div className="text-base font-semibold">Autonomous Innovation Generator</div>
+  <div className="mt-1 text-sm text-white/75">Front promos + homepage refresh</div>
   <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
   </div>
 </section>
