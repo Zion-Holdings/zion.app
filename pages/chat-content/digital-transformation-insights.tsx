@@ -1,1 +1,1 @@
-export default function ChatContent(){return null;}
+export default function Page() { return <main style={{padding:'2rem'}}>Digital Transformation Insights</main>; }

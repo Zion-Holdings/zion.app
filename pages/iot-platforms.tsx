@@ -1,9 +1,1 @@
-import EnhancedLayout from '../components/layout/EnhancedLayout';
-
-export default function IotPlatforms() {
-  return (
-    <EnhancedLayout>
-      <h1 className="text-2xl font-semibold">IoT Platforms</h1>
-    </EnhancedLayout>
-  );
-}
+export default function IoTPlatforms() { return <main style={{padding:'2rem'}}>IoT Platforms</main>; }
