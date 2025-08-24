@@ -37,12 +37,12 @@ export function FeatureCTAs() {
       details: "Every talent in our directory undergoes a rigorous verification process to ensure quality, authenticity, and reliability."
     },
     {
-      title: "Services Marketplace",
-      description: "Discover professional tech and AI services for your business needs, from development to consulting.",
+      title: "Premium Services",
+      description: "Discover our comprehensive suite of AI-powered solutions, enterprise IT services, and innovative SaaS platforms.",
       icon: <Zap className="h-10 w-10 p-2 rounded-md bg-cyan-100 text-cyan-700" />,
-      link: "/services",
+      link: "/enhanced-services",
       badge: "New",
-      details: "From on-demand IT support to specialized AI development, our marketplace offers verified services with transparent pricing and reviews."
+      details: "From AI content generation to cybersecurity assessment, our premium services drive innovation and accelerate business growth."
     },
     {
       title: "Equipment Catalog",
