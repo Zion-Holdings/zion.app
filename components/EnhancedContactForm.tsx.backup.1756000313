@@ -1,0 +1,824 @@
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import { 
+<<<<<<< HEAD
+  Mail, Phone, MapPin, Send, CheckCircle, AlertCircle,
+  User, Building, MessageSquare, Globe, Zap
+} from 'lucide-react';
+
+export default function EnhancedContactForm() {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+=======
+  Send, Mail, Phone, MapPin, CheckCircle, 
+  Brain, Shield, Rocket, Cpu, Database, Atom
+} from 'lucide-react';
+
+interface FormData {
+  name: string;
+  email: string;
+  company: string;
+  phone: string;
+  service: string;
+  budget: string;
+  timeline: string;
+  message: string;
+}
+
+const EnhancedContactForm: React.FC = () => {
+  const [formData, setFormData] = useState<FormData>({
+    name: '',
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-a32a
+    email: '',
+    company: '',
+    phone: '',
+    service: '',
+<<<<<<< HEAD
+    message: '',
+    budget: '',
+    timeline: '',
+    howDidYouHear: ''
+  });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [errors, setErrors] = useState<Record<string, string>>({});
+
+  const serviceOptions = [
+    { value: 'ai-ml', label: 'AI & Machine Learning', icon: '🧠' },
+    { value: 'quantum', label: 'Quantum Computing', icon: '⚛️' },
+    { value: 'cybersecurity', label: 'Cybersecurity', icon: '🛡️' },
+    { value: 'space-tech', label: 'Space Technology', icon: '🚀' },
+    { value: 'edge-computing', label: 'Edge Computing', icon: '🌐' },
+    { value: 'devops', label: 'DevOps & Infrastructure', icon: '⚙️' },
+    { value: 'digital-transformation', label: 'Digital Transformation', icon: '🔄' },
+    { value: 'custom', label: 'Custom Solution', icon: '🎯' }
+  ];
+
+  const budgetOptions = [
+    { value: 'under-10k', label: 'Under $10K' },
+    { value: '10k-50k', label: '$10K - $50K' },
+    { value: '50k-100k', label: '$50K - $100K' },
+    { value: '100k-500k', label: '$100K - $500K' },
+    { value: '500k-plus', label: '$500K+' },
+    { value: 'discuss', label: 'Let\'s Discuss' }
+  ];
+
+  const timelineOptions = [
+    { value: 'asap', label: 'ASAP' },
+    { value: '1-3-months', label: '1-3 Months' },
+    { value: '3-6-months', label: '3-6 Months' },
+    { value: '6-12-months', label: '6-12 Months' },
+    { value: '12-plus-months', label: '12+ Months' },
+    { value: 'flexible', label: 'Flexible' }
+  ];
+
+  const howDidYouHearOptions = [
+    { value: 'search', label: 'Search Engine' },
+    { value: 'social-media', label: 'Social Media' },
+    { value: 'referral', label: 'Referral' },
+    { value: 'advertisement', label: 'Advertisement' },
+    { value: 'event', label: 'Event/Conference' },
+    { value: 'other', label: 'Other' }
+  ];
+
+  const validateForm = () => {
+    const newErrors: Record<string, string> = {};
+
+    if (!formData.firstName.trim()) newErrors.firstName = 'First name is required';
+    if (!formData.lastName.trim()) newErrors.lastName = 'Last name is required';
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email is required';
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = 'Please enter a valid email address';
+    }
+    if (!formData.company.trim()) newErrors.company = 'Company name is required';
+    if (!formData.message.trim()) newErrors.message = 'Message is required';
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+=======
+    budget: '',
+    timeline: '',
+    message: ''
+  });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const services = [
+    { value: 'ai-ml', label: 'AI & Machine Learning', icon: Brain, color: 'from-purple-500 to-pink-500' },
+    { value: 'quantum', label: 'Quantum Computing', icon: Atom, color: 'from-blue-500 to-cyan-500' },
+    { value: 'cybersecurity', label: 'Cybersecurity', icon: Shield, color: 'from-red-500 to-orange-500' },
+    { value: 'space-tech', label: 'Space Technology', icon: Rocket, color: 'from-indigo-500 to-purple-500' },
+    { value: 'cloud', label: 'Cloud Solutions', icon: Cpu, color: 'from-emerald-500 to-teal-500' },
+    { value: 'data', label: 'Data & Analytics', icon: Database, color: 'from-yellow-500 to-orange-500' }
+  ];
+
+  const budgets = [
+    { value: 'under-10k', label: 'Under $10,000' },
+    { value: '10k-50k', label: '$10,000 - $50,000' },
+    { value: '50k-100k', label: '$50,000 - $100,000' },
+    { value: '100k-500k', label: '$100,000 - $500,000' },
+    { value: '500k-plus', label: '$500,000+' }
+  ];
+
+  const timelines = [
+    { value: 'asap', label: 'ASAP' },
+    { value: '1-3-months', label: '1-3 months' },
+    { value: '3-6-months', label: '3-6 months' },
+    { value: '6-12-months', label: '6-12 months' },
+    { value: '12-plus-months', label: '12+ months' }
+  ];
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-a32a
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+<<<<<<< HEAD
+    
+    if (!validateForm()) return;
+
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      
+      // In a real implementation, you would send the data to your backend
+      console.log('Form submitted:', formData);
+      
+      setSubmitStatus('success');
+      setFormData({
+        firstName: '',
+        lastName: '',
+=======
+    setIsSubmitting(true);
+    
+    // Simulate form submission
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    
+    setIsSubmitting(false);
+    setIsSubmitted(true);
+    
+    // Reset form after 5 seconds
+    setTimeout(() => {
+      setIsSubmitted(false);
+      setFormData({
+        name: '',
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-a32a
+        email: '',
+        company: '',
+        phone: '',
+        service: '',
+<<<<<<< HEAD
+        message: '',
+        budget: '',
+        timeline: '',
+        howDidYouHear: ''
+      });
+      setErrors({});
+    } catch (error) {
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleInputChange = (field: string, value: string) => {
+    setFormData(prev => ({ ...prev, [field]: value }));
+    if (errors[field]) {
+      setErrors(prev => ({ ...prev, [field]: '' }));
+    }
+  };
+
+  const inputClasses = "w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-200";
+  const errorClasses = "border-red-500/50 focus:ring-red-500/50";
+
+  return (
+    <div className="max-w-4xl mx-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        {/* Contact Information */}
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="space-y-8"
+        >
+          <div>
+            <h3 className="text-2xl font-bold text-white mb-4">Let&apos;s Build Something Amazing Together</h3>
+            <p className="text-white/70 leading-relaxed">
+              Ready to transform your business with cutting-edge technology? Our team of experts 
+              is here to help you navigate the future of innovation.
+            </p>
+          </div>
+
+          {/* Contact Methods */}
+          <div className="space-y-6">
+            <div className="flex items-start space-x-4">
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-600 to-cyan-600 flex items-center justify-center flex-shrink-0">
+                <Mail className="w-6 h-6 text-white" />
+              </div>
+              <div>
+                <h4 className="text-white font-semibold mb-1">Email Us</h4>
+                <p className="text-white/70">kleber@ziontechgroup.com</p>
+                <p className="text-white/50 text-sm">We&apos;ll respond within 24 hours</p>
+              </div>
+            </div>
+
+            <div className="flex items-start space-x-4">
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center flex-shrink-0">
+                <Phone className="w-6 h-6 text-white" />
+              </div>
+              <div>
+                <h4 className="text-white font-semibold mb-1">Call Us</h4>
+                <p className="text-white/70">+1 (555) 123-4567</p>
+                <p className="text-white/50 text-sm">Mon-Fri 9AM-6PM EST</p>
+              </div>
+            </div>
+
+            <div className="flex items-start space-x-4">
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-green-600 to-emerald-600 flex items-center justify-center flex-shrink-0">
+                <Globe className="w-6 h-6 text-white" />
+              </div>
+              <div>
+                <h4 className="text-white font-semibold mb-1">Global Operations</h4>
+                <p className="text-white/70">Worldwide deployment & support</p>
+                <p className="text-white/50 text-sm">24/7 technical assistance</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Why Choose Us */}
+          <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+            <h4 className="text-white font-semibold mb-4 flex items-center gap-2">
+              <Zap className="w-5 h-5 text-cyan-400" />
+              Why Choose Zion Tech Group?
+            </h4>
+            <ul className="space-y-2 text-sm text-white/70">
+              <li className="flex items-center gap-2">
+                <CheckCircle className="w-4 h-4 text-cyan-400" />
+                AI-powered solutions & automation
+              </li>
+              <li className="flex items-center gap-2">
+                <CheckCircle className="w-4 h-4 text-cyan-400" />
+                Quantum computing expertise
+              </li>
+              <li className="flex items-center gap-2">
+                <CheckCircle className="w-4 h-4 text-cyan-400" />
+                Enterprise-grade security
+              </li>
+              <li className="flex items-center gap-2">
+                <CheckCircle className="w-4 h-4 text-cyan-400" />
+                Global deployment capabilities
+              </li>
+            </ul>
+          </div>
+        </motion.div>
+
+        {/* Contact Form */}
+        <motion.div
+          initial={{ opacity: 0, x: 30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="bg-white/5 rounded-2xl p-8 border border-white/10 backdrop-blur-xl"
+        >
+          <form onSubmit={handleSubmit} className="space-y-6">
+            {/* Name Fields */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label htmlFor="firstName" className="block text-white font-medium mb-2">
+                  First Name *
+                </label>
+                <input
+                  type="text"
+                  id="firstName"
+                  value={formData.firstName}
+                  onChange={(e) => handleInputChange('firstName', e.target.value)}
+                  className={`${inputClasses} ${errors.firstName ? errorClasses : ''}`}
+                  placeholder="John"
+                  required
+                />
+                {errors.firstName && (
+                  <p className="text-red-400 text-sm mt-1 flex items-center gap-1">
+                    <AlertCircle className="w-4 h-4" />
+                    {errors.firstName}
+                  </p>
+                )}
+              </div>
+
+              <div>
+                <label htmlFor="lastName" className="block text-white font-medium mb-2">
+                  Last Name *
+                </label>
+                <input
+                  type="text"
+                  id="lastName"
+                  value={formData.lastName}
+                  onChange={(e) => handleInputChange('lastName', e.target.value)}
+                  className={`${inputClasses} ${errors.lastName ? errorClasses : ''}`}
+                  placeholder="Doe"
+                  required
+                />
+                {errors.lastName && (
+                  <p className="text-red-400 text-sm mt-1 flex items-center gap-1">
+                    <AlertCircle className="w-4 h-4" />
+                    {errors.lastName}
+                  </p>
+                )}
+              </div>
+            </div>
+
+            {/* Company & Email */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label htmlFor="company" className="block text-white font-medium mb-2">
+                  Company *
+                </label>
+                <input
+                  type="text"
+                  id="company"
+                  value={formData.company}
+                  onChange={(e) => handleInputChange('company', e.target.value)}
+                  className={`${inputClasses} ${errors.company ? errorClasses : ''}`}
+                  placeholder="Your Company"
+                  required
+                />
+                {errors.company && (
+                  <p className="text-red-400 text-sm mt-1 flex items-center gap-1">
+                    <AlertCircle className="w-4 h-4" />
+                    {errors.company}
+                  </p>
+                )}
+              </div>
+
+              <div>
+                <label htmlFor="email" className="block text-white font-medium mb-2">
+                  Email *
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  value={formData.email}
+                  onChange={(e) => handleInputChange('email', e.target.value)}
+                  className={`${inputClasses} ${errors.email ? errorClasses : ''}`}
+                  placeholder="john@company.com"
+                  required
+                />
+                {errors.email && (
+                  <p className="text-red-400 text-sm mt-1 flex items-center gap-1">
+                    <AlertCircle className="w-4 h-4" />
+                    {errors.email}
+                  </p>
+                )}
+              </div>
+            </div>
+
+            {/* Phone & Service */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label htmlFor="phone" className="block text-white font-medium mb-2">
+                  Phone
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  value={formData.phone}
+                  onChange={(e) => handleInputChange('phone', e.target.value)}
+                  className={inputClasses}
+                  placeholder="+1 (555) 123-4567"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="service" className="block text-white font-medium mb-2">
+                  Service Interest
+                </label>
+                <select
+                  id="service"
+                  value={formData.service}
+                  onChange={(e) => handleInputChange('service', e.target.value)}
+                  className={inputClasses}
+                >
+                  <option value="">Select a service</option>
+                  {serviceOptions.map((option) => (
+                    <option key={option.value} value={option.value}>
+                      {option.icon} {option.label}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            </div>
+
+            {/* Budget & Timeline */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label htmlFor="budget" className="block text-white font-medium mb-2">
+                  Budget Range
+                </label>
+                <select
+                  id="budget"
+                  value={formData.budget}
+                  onChange={(e) => handleInputChange('budget', e.target.value)}
+                  className={inputClasses}
+                >
+                  <option value="">Select budget range</option>
+                  {budgetOptions.map((option) => (
+                    <option key={option.value} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              <div>
+                <label htmlFor="timeline" className="block text-white font-medium mb-2">
+                  Project Timeline
+                </label>
+                <select
+                  id="timeline"
+                  value={formData.timeline}
+                  onChange={(e) => handleInputChange('timeline', e.target.value)}
+                  className={inputClasses}
+                >
+                  <option value="">Select timeline</option>
+                  {timelineOptions.map((option) => (
+                    <option key={option.value} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            </div>
+
+            {/* How did you hear */}
+            <div>
+              <label htmlFor="howDidYouHear" className="block text-white font-medium mb-2">
+                How did you hear about us?
+              </label>
+              <select
+                id="howDidYouHear"
+                value={formData.howDidYouHear}
+                onChange={(e) => handleInputChange('howDidYouHear', e.target.value)}
+                className={inputClasses}
+              >
+                <option value="">Select an option</option>
+                {howDidYouHearOptions.map((option) => (
+                  <option key={option.value} value={option.value}>
+                    {option.label}
+=======
+        budget: '',
+        timeline: '',
+        message: ''
+      });
+    }, 5000);
+  };
+
+  if (isSubmitted) {
+    return (
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        className="text-center py-12"
+      >
+        <div className="w-20 h-20 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6">
+          <CheckCircle className="w-10 h-10 text-white" />
+        </div>
+        <h3 className="text-2xl font-bold text-white mb-4">Thank You!</h3>
+                  <p className="text-white/70 max-w-md mx-auto">
+            We&apos;ve received your message and will get back to you within 24 hours. 
+            Our team is excited to discuss your project!
+          </p>
+      </motion.div>
+    );
+  }
+
+  return (
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      {/* Contact Information */}
+      <div className="space-y-8">
+        <div>
+          <h3 className="text-2xl font-bold text-white mb-4">Let&apos;s Build Something Amazing</h3>
+          <p className="text-white/70 leading-relaxed">
+            Ready to transform your business with cutting-edge technology? 
+            Our team of experts is here to help you navigate the future of innovation.
+          </p>
+        </div>
+
+        {/* Contact Details */}
+        <div className="space-y-6">
+          <div className="flex items-start space-x-4">
+            <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-xl flex items-center justify-center flex-shrink-0">
+              <Mail className="w-6 h-6 text-white" />
+            </div>
+            <div>
+              <h4 className="text-white font-semibold mb-1">Email Us</h4>
+              <p className="text-white/70">kleber@ziontechgroup.com</p>
+              <p className="text-white/50 text-sm">We&apos;ll respond within 24 hours</p>
+            </div>
+          </div>
+
+          <div className="flex items-start space-x-4">
+            <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center flex-shrink-0">
+              <Phone className="w-6 h-6 text-white" />
+            </div>
+            <div>
+              <h4 className="text-white font-semibold mb-1">Call Us</h4>
+              <p className="text-white/70">+1 302 464 0950</p>
+              <p className="text-white/50 text-sm">Mon-Fri 9AM-6PM EST</p>
+            </div>
+          </div>
+
+          <div className="flex items-start space-x-4">
+            <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-xl flex items-center justify-center flex-shrink-0">
+              <MapPin className="w-6 h-6 text-white" />
+            </div>
+            <div>
+              <h4 className="text-white font-semibold mb-1">Visit Us</h4>
+              <p className="text-white/70">364 E Main St STE 1008</p>
+              <p className="text-white/70">Middletown DE 19709</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Why Choose Us */}
+        <div>
+          <h4 className="text-white font-semibold mb-4">Why Choose Zion Tech Group?</h4>
+          <div className="grid grid-cols-2 gap-4">
+            {services.slice(0, 4).map((service) => (
+              <div key={service.value} className="flex items-center space-x-3">
+                <div className={`w-8 h-8 rounded-lg bg-gradient-to-br ${service.color} p-2`}>
+                  <service.icon className="w-4 h-4 text-white" />
+                </div>
+                <span className="text-white/70 text-sm">{service.label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Contact Form */}
+      <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8">
+        <form onSubmit={handleSubmit} className="space-y-6">
+          {/* Name and Email */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label htmlFor="name" className="block text-white font-medium mb-2">
+                Full Name *
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value={formData.name}
+                onChange={handleInputChange}
+                required
+                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-cyan-500 focus:bg-white/15 transition-all duration-200"
+                placeholder="John Doe"
+              />
+            </div>
+            <div>
+              <label htmlFor="email" className="block text-white font-medium mb-2">
+                Email Address *
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleInputChange}
+                required
+                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-cyan-500 focus:bg-white/15 transition-all duration-200"
+                placeholder="john@company.com"
+              />
+            </div>
+          </div>
+
+          {/* Company and Phone */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label htmlFor="company" className="block text-white font-medium mb-2">
+                Company
+              </label>
+              <input
+                type="text"
+                id="company"
+                name="company"
+                value={formData.company}
+                onChange={handleInputChange}
+                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-cyan-500 focus:bg-white/15 transition-all duration-200"
+                placeholder="Your Company"
+              />
+            </div>
+            <div>
+              <label htmlFor="phone" className="block text-white font-medium mb-2">
+                Phone Number
+              </label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                value={formData.phone}
+                onChange={handleInputChange}
+                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-cyan-500 focus:bg-white/15 transition-all duration-200"
+                placeholder="+1 (555) 123-4567"
+              />
+            </div>
+          </div>
+
+          {/* Service Selection */}
+          <div>
+            <label htmlFor="service" className="block text-white font-medium mb-2">
+              Service of Interest *
+            </label>
+            <select
+              id="service"
+              name="service"
+              value={formData.service}
+              onChange={handleInputChange}
+              required
+              className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:border-cyan-500 focus:bg-white/15 transition-all duration-200"
+            >
+              <option value="">Select a service</option>
+              {services.map((service) => (
+                <option key={service.value} value={service.value}>
+                  {service.label}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          {/* Budget and Timeline */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label htmlFor="budget" className="block text-white font-medium mb-2">
+                Budget Range
+              </label>
+              <select
+                id="budget"
+                name="budget"
+                value={formData.budget}
+                onChange={handleInputChange}
+                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:border-cyan-500 focus:bg-white/15 transition-all duration-200"
+              >
+                <option value="">Select budget</option>
+                {budgets.map((budget) => (
+                  <option key={budget.value} value={budget.value}>
+                    {budget.label}
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-a32a
+                  </option>
+                ))}
+              </select>
+            </div>
+<<<<<<< HEAD
+
+            {/* Message */}
+            <div>
+              <label htmlFor="message" className="block text-white font-medium mb-2">
+                Project Details *
+              </label>
+              <textarea
+                id="message"
+                value={formData.message}
+                onChange={(e) => handleInputChange('message', e.target.value)}
+                className={`${inputClasses} min-h-[120px] resize-none ${errors.message ? errorClasses : ''}`}
+                placeholder="Tell us about your project, goals, and how we can help..."
+                required
+              />
+              {errors.message && (
+                <p className="text-red-400 text-sm mt-1 flex items-center gap-1">
+                  <AlertCircle className="w-4 h-4" />
+                  {errors.message}
+                </p>
+              )}
+            </div>
+
+            {/* Submit Button */}
+            <motion.button
+              type="submit"
+              disabled={isSubmitting}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="w-full py-4 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 disabled:from-gray-600 disabled:to-gray-700 text-white font-semibold rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl"
+            >
+              {isSubmitting ? (
+                <>
+                  <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                  Sending...
+                </>
+              ) : (
+                <>
+                  <Send className="w-5 h-5" />
+                  Send Message
+                </>
+              )}
+            </motion.button>
+
+            {/* Status Messages */}
+            {submitStatus === 'success' && (
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="p-4 bg-green-500/20 border border-green-500/30 rounded-lg flex items-center gap-2 text-green-400"
+              >
+                <CheckCircle className="w-5 h-5" />
+                                 Thank you! Your message has been sent successfully. We&apos;ll get back to you within 24 hours.
+              </motion.div>
+            )}
+
+            {submitStatus === 'error' && (
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="p-4 bg-red-500/20 border border-red-500/30 rounded-lg flex items-center gap-2 text-red-400"
+              >
+                <AlertCircle className="w-5 h-5" />
+                Something went wrong. Please try again or contact us directly.
+              </motion.div>
+            )}
+          </form>
+        </motion.div>
+      </div>
+    </div>
+  );
+}
+=======
+            <div>
+              <label htmlFor="timeline" className="block text-white font-medium mb-2">
+                Project Timeline
+              </label>
+              <select
+                id="timeline"
+                name="timeline"
+                value={formData.timeline}
+                onChange={handleInputChange}
+                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:border-cyan-500 focus:bg-white/15 transition-all duration-200"
+              >
+                <option value="">Select timeline</option>
+                {timelines.map((timeline) => (
+                  <option key={timeline.value} value={timeline.value}>
+                    {timeline.label}
+                  </option>
+                ))}
+              </select>
+            </div>
+          </div>
+
+          {/* Message */}
+          <div>
+            <label htmlFor="message" className="block text-white font-medium mb-2">
+              Project Details *
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              value={formData.message}
+              onChange={handleInputChange}
+              required
+              rows={4}
+              className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-cyan-500 focus:bg-white/15 transition-all duration-200 resize-none"
+              placeholder="Tell us about your project, goals, and how we can help..."
+            />
+          </div>
+
+          {/* Submit Button */}
+          <button
+            type="submit"
+            disabled={isSubmitting}
+            className="w-full px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 disabled:from-gray-500 disabled:to-gray-600 rounded-xl text-white font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl disabled:transform-none disabled:shadow-none flex items-center justify-center space-x-2"
+          >
+            {isSubmitting ? (
+              <>
+                <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                <span>Sending...</span>
+              </>
+            ) : (
+              <>
+                <Send className="w-5 h-5" />
+                <span>Send Message</span>
+              </>
+            )}
+          </button>
+
+          <p className="text-white/50 text-sm text-center">
+            By submitting this form, you agree to our{' '}
+            <a href="/privacy" className="text-cyan-400 hover:text-cyan-300 transition-colors duration-200">
+              Privacy Policy
+            </a>
+          </p>
+        </form>
+      </div>
+    </div>
+  );
+};
+
+export default EnhancedContactForm;
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-a32a

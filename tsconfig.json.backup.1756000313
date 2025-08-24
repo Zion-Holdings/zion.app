@@ -78,6 +78,10 @@
     "noEmit": true,
     "isolatedModules": true
   },
+<<<<<<< HEAD
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
+=======
   "include": [
     "next-env.d.ts",
     "**/*.ts",
@@ -114,4 +118,5 @@
     "data/2025-innovative-healthtech-services.ts",
     "data/2025-innovative-hospitality-services.ts"
   ]
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-a32a
 }
