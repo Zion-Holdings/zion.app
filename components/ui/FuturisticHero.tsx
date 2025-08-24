@@ -1,25 +1,39 @@
+import React from 'react';
 import Link from 'next/link';
-import AnimatedBackground from './AnimatedBackground';
 
 export default function FuturisticHero() {
   return (
-    <section className="relative py-20 sm:py-28">
-      <AnimatedBackground />
-      <div className="text-center max-w-4xl mx-auto">
-        <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight">
-          Build and Hire with Zion AI Marketplace
+    <section className="relative pt-20 pb-16 md:pt-28 md:pb-24 text-center text-gray-100">
+      <div className="max-w-5xl mx-auto px-6">
+        <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">
+          <span className="gradient-text drop-shadow-neon">Zion AI Marketplace</span>
+          <span className="block mt-3 text-xl md:text-2xl font-medium text-gray-300">Autonomous, intelligent automations for teams that move fast</span>
         </h1>
-        <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
-          Discover elite AI talent, launch projects faster, and grow your business.
+        <p className="mt-6 text-gray-300/90 md:text-lg">
+          Hire world-class AI talent, rent compute, and run cloud automations. All in one futuristic platform.
         </p>
         <div className="mt-8 flex items-center justify-center gap-3">
-          <Link href="/partners"><a className="px-5 py-3 rounded-lg bg-indigo-600 text-white shadow hover:bg-indigo-500">Become a Partner</a></Link>
-          <Link href="/services"><a className="px-5 py-3 rounded-lg border border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-900">Explore Services</a></Link>
+          <Link href="/services"><a className="btn-primary">Explore Services</a></Link>
+          <Link href="/seo"><a className="btn-secondary">Localized Pages</a></Link>
+          <Link href="/project/demo/room"><a className="btn-ghost">Start a Call</a></Link>
         </div>
-        <div className="mt-10 mx-auto max-w-3xl p-6 rounded-2xl bg-white/70 dark:bg-black/40 backdrop-blur border border-gray-200 dark:border-gray-800 shadow">
-          <p className="text-sm text-gray-700 dark:text-gray-300">
-            Talent marketplace • Project accelerators • Secure contracts • Integrated AI toolchain
-          </p>
+      </div>
+      <div className="mt-12 max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 text-left px-6">
+        <div className="stat-card">
+          <div className="stat-value">24/7</div>
+          <div className="stat-label">Cloud automations</div>
+        </div>
+        <div className="stat-card">
+          <div className="stat-value">150ms</div>
+          <div className="stat-label">Realtime media</div>
+        </div>
+        <div className="stat-card">
+          <div className="stat-value">+SEO</div>
+          <div className="stat-label">Long-tail landing pages</div>
+        </div>
+        <div className="stat-card">
+          <div className="stat-value">Autoheal</div>
+          <div className="stat-label">Self-fixing builds</div>
         </div>
       </div>
     </section>
