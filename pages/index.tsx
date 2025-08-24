@@ -18,6 +18,7 @@ import AdvancedBlog from '../components/AdvancedBlog';
 import AdvancedAnalytics from '../components/AdvancedAnalytics';
 import AdvancedCustomerSuccess from '../components/AdvancedCustomerSuccess';
 import AdvancedProjectManagement from '../components/AdvancedProjectManagement';
+import AdvancedClientPortal from '../components/AdvancedClientPortal';
 
 const Home: NextPage = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -290,6 +291,9 @@ const Home: NextPage = () => {
 
         {/* Advanced Project Management Section */}
         <AdvancedProjectManagement />
+
+        {/* Advanced Client Portal Section */}
+        <AdvancedClientPortal />
 
         {/* Advanced Features Showcase */}
         <AdvancedFeaturesShowcase />
