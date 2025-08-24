@@ -61,7 +61,7 @@ export function HowItWorksSection() {
       scale: 1,
       transition: {
         duration: 0.8,
-        ease: "easeOut",
+        ease: "easeOut" as const,
       },
     },
     hover: {
@@ -69,7 +69,7 @@ export function HowItWorksSection() {
       scale: 1.05,
       transition: {
         duration: 0.3,
-        ease: "easeOut",
+        ease: "easeOut" as const,
       },
     },
   };
@@ -81,7 +81,7 @@ export function HowItWorksSection() {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: "easeOut",
+        ease: "easeOut" as const,
       },
     },
   };
@@ -92,7 +92,7 @@ export function HowItWorksSection() {
       rotate: 5,
       transition: {
         duration: 0.3,
-        ease: "easeOut",
+        ease: "easeOut" as const,
       },
     },
   };

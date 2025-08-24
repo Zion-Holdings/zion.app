@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import Head from 'next/head';
 
 interface SEOProps {
   title: string;
@@ -67,7 +67,7 @@ export function SEO({
   const finalStructuredData = structuredData || defaultStructuredData;
 
   return (
-    <Helmet>
+    <Head>
       {/* Basic Meta Tags */}
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
@@ -164,6 +164,6 @@ export function SEO({
           })}
         </script>
       )}
-    </Helmet>
+    </Head>
   );
 }

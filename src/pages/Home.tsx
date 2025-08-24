@@ -12,15 +12,15 @@ import { FeatureCTAs } from "@/components/home/FeatureCTAs";
 import { FeatureHighlights } from "@/components/home/FeatureHighlights";
 import { ITServiceRequestHero } from "@/components/home/ITServiceRequestHero";
 import { ServicesShowcase } from "@/components/ServicesShowcase";
-import EnhancedServicesOverview from "@/components/home/EnhancedServicesOverview";
+import { EnhancedServicesOverview } from "@/components/home/EnhancedServicesOverview";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-background">
       <SEO 
         title="Zion - The Tech & AI Marketplace" 
-        description="Discover top AI and tech talent, services, and equipment in one place."
-        keywords="AI, technology, marketplace, services, talent"
+        description="Discover top AI and tech talent, services, and equipment in one place. Connect with verified professionals and cutting-edge technology solutions."
+        keywords="AI, technology, marketplace, services, talent, IT support, cybersecurity, cloud computing, digital transformation"
         canonical="https://app.ziontechgroup.com/"
       />
 

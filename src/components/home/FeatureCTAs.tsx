@@ -1,5 +1,6 @@
 
 import React from "react";
+import { motion } from "framer-motion";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -16,7 +17,9 @@ import {
   Link as LinkIcon,
   Phone,
   Mail,
-  Globe
+  Globe,
+  Star,
+  CheckCircle
 } from "lucide-react";
 
 const features = [
@@ -26,7 +29,9 @@ const features = [
     icon: <Brain className="w-8 h-8" />,
     link: "/comprehensive-services#ai-ml",
     color: "from-purple-500 to-indigo-600",
-    cta: "Explore AI Services"
+    cta: "Explore AI Services",
+    benefits: ["Predictive Analytics", "Natural Language Processing", "Computer Vision"],
+    badge: "Popular"
   },
   {
     title: "Cybersecurity",
@@ -34,7 +39,9 @@ const features = [
     icon: <Shield className="w-8 h-8" />,
     link: "/comprehensive-services#cybersecurity",
     color: "from-red-500 to-pink-600",
-    cta: "Secure Your Business"
+    cta: "Secure Your Business",
+    benefits: ["Threat Detection", "Incident Response", "Compliance"],
+    badge: "Critical"
   },
   {
     title: "Cloud & Infrastructure",
@@ -42,7 +49,9 @@ const features = [
     icon: <Cloud className="w-8 h-8" />,
     link: "/comprehensive-services#cloud-infrastructure",
     color: "from-blue-500 to-cyan-600",
-    cta: "Cloud Solutions"
+    cta: "Cloud Solutions",
+    benefits: ["AWS/Azure/GCP", "Kubernetes", "CI/CD"],
+    badge: "Trending"
   },
   {
     title: "Data & Analytics",
@@ -50,7 +59,9 @@ const features = [
     icon: <Database className="w-8 h-8" />,
     link: "/comprehensive-services#data-analytics",
     color: "from-green-500 to-emerald-600",
-    cta: "Data Insights"
+    cta: "Data Insights",
+    benefits: ["Big Data", "Business Intelligence", "Data Warehousing"],
+    badge: "Hot"
   },
   {
     title: "Digital Transformation",
@@ -58,7 +69,9 @@ const features = [
     icon: <Zap className="w-8 h-8" />,
     link: "/comprehensive-services#digital-transformation",
     color: "from-orange-500 to-red-600",
-    cta: "Transform Now"
+    cta: "Transform Now",
+    benefits: ["Process Automation", "Legacy Modernization", "Change Management"],
+    badge: "New"
   },
   {
     title: "Web & Mobile",
@@ -66,7 +79,9 @@ const features = [
     icon: <Code className="w-8 h-8" />,
     link: "/comprehensive-services#web-mobile",
     color: "from-indigo-500 to-purple-600",
-    cta: "Build Apps"
+    cta: "Build Apps",
+    benefits: ["React/Next.js", "Mobile Apps", "Progressive Web Apps"],
+    badge: "Featured"
   },
   {
     title: "IT Support & Management",
@@ -74,7 +89,9 @@ const features = [
     icon: <Settings className="w-8 h-8" />,
     link: "/comprehensive-services#it-support",
     color: "from-gray-500 to-slate-600",
-    cta: "Get Support"
+    cta: "Get Support",
+    benefits: ["24/7 Monitoring", "Proactive Maintenance", "Help Desk"],
+    badge: "Essential"
   },
   {
     title: "Blockchain & Web3",
@@ -82,15 +99,46 @@ const features = [
     icon: <LinkIcon className="w-8 h-8" />,
     link: "/comprehensive-services#blockchain-web3",
     color: "from-yellow-500 to-amber-600",
-    cta: "Web3 Solutions"
+    cta: "Web3 Solutions",
+    benefits: ["Smart Contracts", "DeFi", "NFTs"],
+    badge: "Innovative"
   }
 ];
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.2
+    }
+  }
+};
+
+const itemVariants = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut"
+    }
+  }
+};
+
 export function FeatureCTAs() {
   return (
-    <section className="py-20 bg-zion-blue">
+    <section className="py-20 bg-gradient-to-br from-zion-blue via-zion-blue-dark to-zion-purple-dark">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        <motion.div 
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Professional <span className="text-transparent bg-clip-text bg-gradient-to-r from-zion-cyan to-zion-purple">Technology Services</span>
           </h2>
@@ -98,72 +146,121 @@ export function FeatureCTAs() {
             Discover our comprehensive suite of professional technology services designed to accelerate your business growth, 
             enhance security, and drive innovation across all aspects of your organization.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
           {features.map((feature, index) => (
-            <div key={index} className="group">
-              <Link to={feature.link} className="block">
-                <div className="rounded-lg overflow-hidden h-full border border-zion-blue-light bg-zion-blue-dark p-6 transition-all duration-300 hover:border-zion-purple/50 hover:translate-y-[-5px]">
-                  <div className={`rounded-full w-16 h-16 bg-gradient-to-br ${feature.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                    <div className="text-white">
-                      {feature.icon}
+            <motion.div key={index} variants={itemVariants}>
+              <div className="group">
+                <Link to={feature.link} className="block">
+                  <div className="rounded-lg overflow-hidden h-full border border-zion-blue-light bg-zion-blue-dark p-6 transition-all duration-300 hover:border-zion-purple/50 hover:translate-y-[-5px] hover:shadow-2xl hover:shadow-zion-purple/25">
+                    <div className="flex items-start justify-between mb-4">
+                      <div className={`rounded-full w-16 h-16 bg-gradient-to-br ${feature.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                        <div className="text-white">
+                          {feature.icon}
+                        </div>
+                      </div>
+                      {feature.badge && (
+                        <Badge className="bg-zion-purple text-white border-0 text-xs">
+                          {feature.badge}
+                        </Badge>
+                      )}
                     </div>
+                    <h3 className="text-white text-xl font-bold mb-3 group-hover:text-zion-cyan transition-colors duration-300">{feature.title}</h3>
+                    <p className="text-zion-slate-light text-sm mb-4 leading-relaxed">{feature.description}</p>
+                    
+                    {/* Benefits */}
+                    <div className="mb-4">
+                      {feature.benefits.map((benefit, benefitIndex) => (
+                        <div key={benefitIndex} className="flex items-center gap-2 text-xs text-zion-slate-light mb-1">
+                          <CheckCircle className="w-3 h-3 text-zion-cyan flex-shrink-0" />
+                          <span>{benefit}</span>
+                        </div>
+                      ))}
+                    </div>
+                    
+                    <Button 
+                      variant="outline" 
+                      className="w-full border-zion-purple text-zion-cyan hover:bg-zion-purple/10 group-hover:border-zion-cyan group-hover:text-zion-cyan-light transition-all duration-300"
+                    >
+                      {feature.cta}
+                      <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                    </Button>
                   </div>
-                  <h3 className="text-white text-xl font-bold mb-3">{feature.title}</h3>
-                  <p className="text-zion-slate-light text-sm mb-4 leading-relaxed">{feature.description}</p>
-                  
-                  <Button 
-                    variant="outline" 
-                    className="w-full border-zion-purple text-zion-cyan hover:bg-zion-purple/10 group-hover:border-zion-cyan group-hover:text-zion-cyan-light transition-all duration-300"
-                  >
-                    {feature.cta}
-                    <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-                  </Button>
-                </div>
-              </Link>
-            </div>
+                </Link>
+              </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
-        <div className="text-center">
+        <motion.div 
+          className="text-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
           <Link to="/comprehensive-services">
-            <Button size="lg" className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white text-lg px-8 py-6">
+            <Button size="lg" className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white text-lg px-8 py-6 shadow-lg hover:shadow-zion-purple/25 transition-all duration-300 transform hover:scale-105">
               View All Services
               <ArrowRight className="h-5 w-5 ml-2" />
             </Button>
           </Link>
-        </div>
+        </motion.div>
 
-        {/* Contact Information */}
-        <div className="mt-16 text-center">
-          <div className="bg-zion-blue-dark border border-zion-blue-light rounded-lg p-8 max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold text-white mb-4">
-              Ready to Transform Your Business?
-            </h3>
-            <p className="text-zion-slate-light mb-6">
-              Our expert team is ready to help you implement the perfect technology solutions. 
-              Get in touch today for a personalized consultation and quote.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white">
+        {/* Enhanced Contact Information */}
+        <motion.div 
+          className="mt-20 text-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+        >
+          <div className="bg-zion-blue-dark border border-zion-blue-light rounded-2xl p-8 max-w-4xl mx-auto shadow-2xl">
+            <div className="mb-6">
+              <div className="inline-flex items-center gap-2 bg-zion-purple/20 rounded-full px-4 py-2 border border-zion-purple/30 mb-4">
+                <Star className="w-4 h-4 text-zion-cyan" />
+                <span className="text-sm text-zion-cyan font-medium">Ready to Transform Your Business?</span>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-4">
+                Let's Build Something Amazing Together
+              </h3>
+              <p className="text-zion-slate-light mb-6">
+                Our expert team is ready to help you implement the perfect technology solutions. 
+                Get in touch today for a personalized consultation and quote.
+              </p>
+            </div>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
+              <Button className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white shadow-lg hover:shadow-zion-purple/25 transition-all duration-300 transform hover:scale-105">
                 <Phone className="h-4 w-4 mr-2" />
                 Call +1 302 464 0950
               </Button>
-              <Button variant="outline" className="border-zion-purple text-zion-cyan hover:bg-zion-purple/10">
+              <Button variant="outline" className="border-zion-purple text-zion-cyan hover:bg-zion-purple/10 transition-all duration-300">
                 <Mail className="h-4 w-4 mr-2" />
                 Email kleber@ziontechgroup.com
               </Button>
-              <Button variant="outline" className="border-zion-purple text-zion-cyan hover:bg-zion-purple/10">
+              <Button variant="outline" className="border-zion-purple text-zion-cyan hover:bg-zion-purple/10 transition-all duration-300">
                 <Globe className="h-4 w-4 mr-2" />
                 Visit ziontechgroup.com
               </Button>
             </div>
-            <div className="mt-6 text-zion-slate-light text-sm">
-              <p>Address: 364 E Main St STE 1008, Middletown DE 19709</p>
+            
+            <div className="bg-zion-blue/50 rounded-lg p-4 border border-zion-blue-light/30">
+              <div className="text-zion-slate-light text-sm">
+                <p className="font-medium mb-2">📍 Main Office:</p>
+                <p>364 E Main St STE 1008, Middletown DE 19709</p>
+                <p className="mt-1 text-zion-cyan">🌍 Global Services Available • 24/7 Support</p>
+              </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

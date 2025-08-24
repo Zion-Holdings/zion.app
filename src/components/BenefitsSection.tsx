@@ -1,6 +1,6 @@
 
 import { GradientHeading } from "./GradientHeading";
-import { FeatureCard } from "./FeatureCard";
+
 import { Bot, Clock, Globe, TrendingDown, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -59,7 +59,7 @@ export function BenefitsSection() {
       scale: 1,
       transition: {
         duration: 0.6,
-        ease: "easeOut",
+        ease: "easeOut" as const,
       },
     },
   };
@@ -71,7 +71,7 @@ export function BenefitsSection() {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: "easeOut",
+        ease: "easeOut" as const,
       },
     },
   };
