@@ -3,7 +3,6 @@
 ## Overview
 
 This comprehensive redundancy automation system provides complete coverage for all automation systems in the project:
-
 - **PM2 Process Management** - Automated monitoring and recovery of PM2 processes
 - **GitHub Actions Workflows** - Health monitoring and automatic restoration of GitHub Actions workflows
 - **Netlify Functions** - Comprehensive monitoring and regeneration of Netlify serverless functions
@@ -68,7 +67,6 @@ This comprehensive redundancy automation system provides complete coverage for a
 - **Features**: Function validation, manifest regeneration, configuration checking
 
 ## 📋 System Requirements
-
 - **Node.js**: Version 16 or higher
 - **PM2**: Globally installed (`npm install -g pm2`)
 - **Git**: Available in PATH
@@ -80,18 +78,18 @@ This comprehensive redundancy automation system provides complete coverage for a
 
 ```javascript
 {
-  "systems": {
-    "comprehensive": true,
-    "pm2": true,
-    "githubActions": true,
-    "netlifyFunctions": true
-  },
-  "orchestration": {
-    "healthCheckInterval": 300000, // 5 minutes
-    "systemStartupDelay": 10000,   // 10 seconds
-    "enableCrossSystemRecovery": true,
-    "enableMetricsAggregation": true
-  }
+ "systems": {
+ "comprehensive": true,
+ "pm2": true,
+ "githubActions": true,
+ "netlifyFunctions": true
+ },
+ "orchestration": {
+ "healthCheckInterval": 300000, // 5 minutes
+ "systemStartupDelay": 10000, // 10 seconds
+ "enableCrossSystemRecovery": true,
+ "enableMetricsAggregation": true
+ }
 }
 ```
 
@@ -99,14 +97,14 @@ This comprehensive redundancy automation system provides complete coverage for a
 
 ```javascript
 {
-  "pm2": {
-    "enabled": true,
-    "healthCheckInterval": 30000, // 30 seconds
-    "maxRestartAttempts": 3,
-    "restartDelay": 5000, // 5 seconds
-    "enableBackupProcesses": true,
-    "backupProcessPrefix": "backup-"
-  }
+ "pm2": {
+ "enabled": true,
+ "healthCheckInterval": 30000, // 30 seconds
+ "maxRestartAttempts": 3,
+ "restartDelay": 5000, // 5 seconds
+ "enableBackupProcesses": true,
+ "backupProcessPrefix": "backup-"
+ }
 }
 ```
 
@@ -114,13 +112,13 @@ This comprehensive redundancy automation system provides complete coverage for a
 
 ```javascript
 {
-  "githubActions": {
-    "enabled": true,
-    "healthCheckInterval": 300000, // 5 minutes
-    "workflowValidation": true,
-    "backupWorkflowGeneration": true,
-    "localExecution": true
-  }
+ "githubActions": {
+ "enabled": true,
+ "healthCheckInterval": 300000, // 5 minutes
+ "workflowValidation": true,
+ "backupWorkflowGeneration": true,
+ "localExecution": true
+ }
 }
 ```
 
@@ -128,13 +126,13 @@ This comprehensive redundancy automation system provides complete coverage for a
 
 ```javascript
 {
-  "netlifyFunctions": {
-    "enabled": true,
-    "healthCheckInterval": 600000, // 10 minutes
-    "manifestRegeneration": true,
-    "functionValidation": true,
-    "deploymentMonitoring": true
-  }
+ "netlifyFunctions": {
+ "enabled": true,
+ "healthCheckInterval": 600000, // 10 minutes
+ "manifestRegeneration": true,
+ "functionValidation": true,
+ "deploymentMonitoring": true
+ }
 }
 ```
 
@@ -178,21 +176,18 @@ cp automation/redundancy-config.example.json automation/redundancy-config.json
 ### System Health Dashboard
 
 The system provides comprehensive health monitoring:
-
 - **PM2 Processes**: Status, resource usage, restart counts
 - **GitHub Actions**: Workflow health, execution status
 - **Netlify Functions**: Function availability, manifest status
 - **Cross-System Dependencies**: Inter-system health analysis
 
 ### Health Check Intervals
-
 - **PM2 Processes**: Every 30 seconds
 - **GitHub Actions**: Every 5 minutes
 - **Netlify Functions**: Every 10 minutes
 - **System Orchestration**: Every 5 minutes
 
 ### Recovery Mechanisms
-
 - **Automatic Restart**: Failed processes are automatically restarted
 - **Backup Process Creation**: Backup processes are created for critical services
 - **Escalation**: Multiple restart attempts with increasing delays
@@ -203,22 +198,21 @@ The system provides comprehensive health monitoring:
 ### Common Issues
 
 1. **PM2 Not Installed**
-   ```bash
-   npm install -g pm2
-   ```
+ ```bash
+ npm install -g pm2
+ ```
 
 2. **Permission Issues**
-   ```bash
-   sudo chmod +x automation/start-comprehensive-redundancy.sh
-   ```
+ ```bash
+ sudo chmod +x automation/start-comprehensive-redundancy.sh
+ ```
 
 3. **Configuration Errors**
-   - Check `automation/redundancy-config.json`
-   - Verify all required fields are present
-   - Check file permissions
+- Check `automation/redundancy-config.json`
+- Verify all required fields are present
+- Check file permissions
 
 ### Log Files
-
 - **System Logs**: `automation/logs/system.log`
 - **PM2 Logs**: `automation/logs/pm2.log`
 - **GitHub Actions Logs**: `automation/logs/github-actions.log`
@@ -238,7 +232,6 @@ export DEBUG_REDUNDANCY=true
 ### Cross-System Recovery
 
 The system can coordinate recovery across multiple systems:
-
 - **Dependency Analysis**: Identifies which systems depend on others
 - **Recovery Order**: Ensures systems are recovered in the correct sequence
 - **Health Propagation**: Monitors how system health affects other systems
@@ -246,7 +239,6 @@ The system can coordinate recovery across multiple systems:
 ### Performance Metrics
 
 Comprehensive performance monitoring:
-
 - **Response Times**: System response time tracking
 - **Resource Usage**: CPU, memory, and disk usage monitoring
 - **Error Rates**: Error frequency and pattern analysis
@@ -255,7 +247,6 @@ Comprehensive performance monitoring:
 ### Automated Testing
 
 Built-in testing capabilities:
-
 - **Health Check Tests**: Validates all health check mechanisms
 - **Recovery Tests**: Tests automatic recovery procedures
 - **Performance Tests**: Validates system performance under load
@@ -268,28 +259,28 @@ Built-in testing capabilities:
 To add a new system to the redundancy framework:
 
 1. **Create System Manager**
-   ```javascript
-   // automation/redundancy/new-system-manager.cjs
-   class NewSystemManager {
-     async checkHealth() { /* health check logic */ }
-     async recover() { /* recovery logic */ }
-   }
-   ```
+ ```javascript
+ // automation/redundancy/new-system-manager.cjs
+ class NewSystemManager {
+ async checkHealth() { /* health check logic */ }
+ async recover() { /* recovery logic */ }
+ }
+ ```
 
 2. **Update Configuration**
-   ```json
-   {
-     "newSystem": {
-       "enabled": true,
-       "healthCheckInterval": 60000
-     }
-   }
-   ```
+ ```json
+ {
+ "newSystem": {
+ "enabled": true,
+ "healthCheckInterval": 60000
+ }
+ }
+ ```
 
 3. **Register with Orchestrator**
-   ```javascript
-   orchestrator.registerSystem('newSystem', new NewSystemManager());
-   ```
+ ```javascript
+ orchestrator.registerSystem('newSystem', new NewSystemManager());
+ ```
 
 ### Custom Health Checks
 
@@ -297,10 +288,10 @@ Implement custom health check logic:
 
 ```javascript
 class CustomHealthCheck {
-  async validate() {
-    // Custom validation logic
-    return { healthy: true, details: 'Custom check passed' };
-  }
+ async validate() {
+ // Custom validation logic
+ return { healthy: true, details: 'Custom check passed' };
+ }
 }
 ```
 
@@ -310,11 +301,11 @@ Implement custom recovery procedures:
 
 ```javascript
 class CustomRecovery {
-  async execute() {
-    // Custom recovery logic
-    await this.restartService();
-    await this.validateRecovery();
-  }
+ async execute() {
+ // Custom recovery logic
+ await this.restartService();
+ await this.validateRecovery();
+ }
 }
 ```
 
@@ -387,7 +378,6 @@ npm test -- --grep "PM2"
 ### Code Style
 
 Follow the project's coding standards:
-
 - Use ES6+ features
 - Implement proper error handling
 - Add comprehensive logging
@@ -400,7 +390,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## 🆘 Support
 
 ### Getting Help
-
 - **Documentation**: Check this README and related documentation
 - **Issues**: Report bugs and feature requests via GitHub Issues
 - **Discussions**: Join community discussions on GitHub Discussions
@@ -408,7 +397,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ### Reporting Issues
 
 When reporting issues, please include:
-
 - **System Information**: OS, Node.js version, PM2 version
 - **Configuration**: Relevant configuration files
 - **Logs**: Error logs and system logs
@@ -418,7 +406,6 @@ When reporting issues, please include:
 ## 🔮 Future Enhancements
 
 ### Planned Features
-
 - **Machine Learning**: AI-powered failure prediction
 - **Cloud Integration**: AWS, Azure, and GCP monitoring
 - **Mobile App**: Mobile monitoring and control
@@ -426,7 +413,6 @@ When reporting issues, please include:
 - **Multi-Environment Support**: Development, staging, and production environments
 
 ### Roadmap
-
 - **Q1**: Enhanced monitoring and alerting
 - **Q2**: Cloud platform integration
 - **Q3**: Machine learning capabilities
@@ -435,7 +421,6 @@ When reporting issues, please include:
 ## 📊 Performance Benchmarks
 
 ### System Performance
-
 - **Startup Time**: < 5 seconds
 - **Health Check Latency**: < 100ms
 - **Recovery Time**: < 30 seconds
@@ -443,7 +428,6 @@ When reporting issues, please include:
 - **CPU Usage**: < 5% average
 
 ### Scalability
-
 - **Supported Processes**: Up to 100 PM2 processes
 - **Supported Workflows**: Up to 50 GitHub Actions workflows
 - **Supported Functions**: Up to 200 Netlify functions
@@ -452,13 +436,11 @@ When reporting issues, please include:
 ## 🔒 Security Considerations
 
 ### Access Control
-
 - **File Permissions**: Secure file permissions for configuration files
 - **Environment Variables**: Use environment variables for sensitive data
 - **Network Security**: Secure communication between components
 
 ### Data Protection
-
 - **Log Sanitization**: Remove sensitive information from logs
 - **Configuration Encryption**: Encrypt sensitive configuration data
 - **Audit Logging**: Comprehensive audit trail for all operations
@@ -466,20 +448,17 @@ When reporting issues, please include:
 ## 📈 Monitoring and Alerting
 
 ### Alert Channels
-
 - **Email Notifications**: Configurable email alerts
 - **Slack Integration**: Slack channel notifications
 - **Webhook Support**: Custom webhook endpoints
 - **SMS Alerts**: Text message notifications (optional)
 
 ### Alert Rules
-
 - **Critical Alerts**: Immediate notification for system failures
 - **Warning Alerts**: Notifications for degraded performance
 - **Info Alerts**: General system status updates
 
 ### Alert Escalation
-
 - **Level 1**: Immediate notification to on-call team
 - **Level 2**: Escalation to system administrators
 - **Level 3**: Escalation to management team
@@ -487,21 +466,18 @@ When reporting issues, please include:
 ## 🎯 Best Practices
 
 ### System Design
-
 - **Separation of Concerns**: Each system has a dedicated manager
 - **Fault Tolerance**: Systems continue operating even if components fail
 - **Graceful Degradation**: Systems degrade gracefully under load
 - **Monitoring First**: Comprehensive monitoring before automation
 
 ### Operational Excellence
-
 - **Automated Testing**: Regular testing of all systems
 - **Documentation**: Comprehensive documentation for all components
 - **Training**: Regular training for operations team
 - **Post-Incident Reviews**: Learn from every incident
 
 ### Performance Optimization
-
 - **Resource Monitoring**: Monitor and optimize resource usage
 - **Caching**: Implement appropriate caching strategies
 - **Load Balancing**: Distribute load across multiple instances
@@ -510,14 +486,12 @@ When reporting issues, please include:
 ## 🔧 Maintenance
 
 ### Regular Maintenance
-
 - **Daily**: Review system logs and health status
 - **Weekly**: Update dependencies and security patches
 - **Monthly**: Review and update configuration
 - **Quarterly**: Comprehensive system review and optimization
 
 ### Backup and Recovery
-
 - **Configuration Backups**: Regular backup of configuration files
 - **System Snapshots**: System state snapshots for recovery
 - **Disaster Recovery**: Comprehensive disaster recovery procedures
@@ -526,14 +500,12 @@ When reporting issues, please include:
 ## 📊 Metrics and Analytics
 
 ### Key Performance Indicators
-
 - **System Uptime**: Overall system availability
 - **Recovery Time**: Time to recover from failures
 - **Error Rate**: Frequency of system errors
 - **Performance Metrics**: Response times and throughput
 
 ### Data Collection
-
 - **Real-time Monitoring**: Continuous data collection
 - **Historical Analysis**: Long-term trend analysis
 - **Performance Baselines**: Establish performance baselines
@@ -568,19 +540,19 @@ When reporting issues, please include:
 ### Common Problems
 
 1. **PM2 Processes Not Starting**
-   - Check PM2 installation
-   - Verify ecosystem file
-   - Check file permissions
+- Check PM2 installation
+- Verify ecosystem file
+- Check file permissions
 
 2. **GitHub Actions Not Working**
-   - Verify GitHub token
-   - Check workflow syntax
-   - Validate repository access
+- Verify GitHub token
+- Check workflow syntax
+- Validate repository access
 
 3. **Netlify Functions Failing**
-   - Check function syntax
-   - Verify environment variables
-   - Check deployment status
+- Check function syntax
+- Verify environment variables
+- Check deployment status
 
 ### Debug Commands
 
@@ -599,7 +571,6 @@ npm test -- --grep "PM2"
 ```
 
 ### Getting Help
-
 - **Documentation**: Check this README first
 - **Logs**: Review system logs for errors
 - **Community**: Ask questions in GitHub Discussions
@@ -608,21 +579,18 @@ npm test -- --grep "PM2"
 ## 📚 Additional Resources
 
 ### Documentation
-
 - **API Reference**: Complete API documentation
 - **Configuration Guide**: Detailed configuration options
 - **Deployment Guide**: Step-by-step deployment instructions
 - **Troubleshooting Guide**: Common problems and solutions
 
 ### Community
-
 - **GitHub Discussions**: Community discussions and Q&A
 - **GitHub Issues**: Bug reports and feature requests
 - **Contributing Guide**: How to contribute to the project
 - **Code of Conduct**: Community guidelines and standards
 
 ### External Resources
-
 - **PM2 Documentation**: Official PM2 documentation
 - **GitHub Actions**: GitHub Actions documentation
 - **Netlify Functions**: Netlify functions documentation
