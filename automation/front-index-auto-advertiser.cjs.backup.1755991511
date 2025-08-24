@@ -22,7 +22,13 @@ function buildTiles() {
     { href: '/reports/ai-trends', label: 'AI Trends', tagline: 'Signals for new automations' },
     { href: '/newsroom', label: 'Newsroom', tagline: 'Autonomous updates & highlights' },
     { href: '/.netlify/functions/docs-index-runner', label: 'Docs', tagline: 'Technical notes & guides' },
-    { href: '/newsroom', label: 'AI Changelog', tagline: 'Summarized autonomous changes' }
+    { href: '/newsroom', label: 'AI Changelog', tagline: 'Summarized autonomous changes' },
+    { href: '/.netlify/functions/frontend-sync-autonomous-runner', label: 'Frontend Sync Autonomous', tagline: 'High‑frequency front sync' },
+    { href: '/.netlify/functions/ui-evolution-runner', label: 'UI Evolution Runner', tagline: 'Analyze & beautify UI' },
+    { href: '/.netlify/functions/linting-orchestrator-runner', label: 'Linting Orchestrator', tagline: 'Auto lint checks & fixes' },
+    { href: '/.netlify/functions/diversification-runner', label: 'Diversification Runner', tagline: 'New variations & ideas' },
+    { href: '/.netlify/functions/meta-orchestrator-runner', label: 'Meta Orchestrator', tagline: 'Knowledge & meta refresh' },
+    { href: '/.netlify/functions/venture-runner', label: 'Venture Orchestrator', tagline: 'Services & sales agents' }
   ];
 
   return items.map((it) => {
