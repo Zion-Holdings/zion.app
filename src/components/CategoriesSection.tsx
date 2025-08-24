@@ -48,6 +48,10 @@ const specialServices = [
     title: "IT Onsite Services",
     link: "/it-onsite-services",
     badge: "Popular"
+  },
+  {
+    title: "Comprehensive Services",
+    link: "/comprehensive-services"
   }
 ];
 

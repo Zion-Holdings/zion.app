@@ -11,6 +11,7 @@ import { QuickAccess } from "@/components/home/QuickAccess";
 import { FeatureCTAs } from "@/components/home/FeatureCTAs";
 import { FeatureHighlights } from "@/components/home/FeatureHighlights";
 import { ITServiceRequestHero } from "@/components/home/ITServiceRequestHero";
+import { ComprehensiveServicesShowcase } from "@/components/home/ComprehensiveServicesShowcase";
 import { BottomNavigation } from "@/components/MobileNavigation";
 
 export default function Home() {
@@ -32,6 +33,8 @@ export default function Home() {
       <FeatureCTAs />
       
       <FeatureHighlights />
+      
+      <ComprehensiveServicesShowcase />
       
       <CategoriesSection />
       <BenefitsSection />

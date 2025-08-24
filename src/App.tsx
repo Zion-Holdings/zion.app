@@ -56,6 +56,8 @@ const Marketplace = React.lazy(() => import('./pages/Marketplace'));
 const Developers = React.lazy(() => import('./pages/Developers'));
 const Enterprise = React.lazy(() => import('./pages/Enterprise'));
 const Mobile = React.lazy(() => import('./pages/Mobile'));
+const ComprehensiveServicesPage = React.lazy(() => import('./pages/ComprehensiveServices'));
+const ComprehensiveServicesLandingPage = React.lazy(() => import('./pages/ComprehensiveServicesLanding'));
 
 const baseRoutes = [
   { path: '/', element: <Home /> },
@@ -79,6 +81,8 @@ const baseRoutes = [
   { path: '/zion-hire-ai', element: <ZionHireAI /> },
   { path: '/hire-ai', element: <ZionHireAI /> },
   { path: '/request-quote', element: <RequestQuotePage /> },
+  { path: '/comprehensive-services', element: <ComprehensiveServicesPage /> },
+  { path: '/comprehensive-services-landing', element: <ComprehensiveServicesLandingPage /> },
   { path: '/blog', element: <Blog /> },
   { path: '/blog/:slug', element: <BlogPost /> },
   { path: '/about', element: <About /> },
