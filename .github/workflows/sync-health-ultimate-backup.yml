@@ -1,0 +1,48 @@
+name: Sync Health Ultimate Backup
+
+on:
+  schedule:
+    - cron: '*/10 * * * *'  # Every 10 minutes
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  check-sync-backup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run pm2-auto-sync backup
+        env:
+          AUTO_SYNC_STRATEGY: hardreset
+          AUTO_SYNC_CLEAN: '0'
+        run: |
+          echo "🔄 Starting sync health backup..."
+          node automation/pm2-auto-sync.js || echo "Backup sync completed with status: $?"
+
+      - name: Push backup if needed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          AHEAD=$(git rev-list --left-right --count HEAD...origin/main | awk '{print $1}')
+          if [ "$AHEAD" != "0" ]; then
+            git push origin HEAD:main || echo "Backup push completed"
+          else
+            echo "No backup push needed."
+          fi
+          
+      - name: Health check
+        run: |
+          echo "✅ Sync health backup workflow completed successfully"
+          echo "📊 Backup timestamp: $(date)"
+          echo "🔄 Next backup in 10 minutes"

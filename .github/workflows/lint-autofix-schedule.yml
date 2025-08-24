@@ -1,0 +1,43 @@
+name: Lint Autofix Schedule
+
+on:
+  schedule:
+    - cron: '0 3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  lint-autofix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Use Node.js 20.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm ci
+      - name: Run ESLint autofix
+        run: npm run lint:fix || true
+      - name: Run type check
+        run: npm run type-check || true
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: chore(eslint): scheduled auto-fix lint issues
+          branch: chore/eslint-autofix
+          title: chore(eslint): scheduled auto-fix
+          body: Automated ESLint fixes
+          signoff: false
+          delete-branch: true
+          add-paths: |
+            **/*.js
+            **/*.jsx
+            **/*.ts
+            **/*.tsx

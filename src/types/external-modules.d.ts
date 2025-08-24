@@ -9,6 +9,10 @@ declare module "@radix-ui/react-navigation-menu";
 declare module "react-resizable-panels";
 declare module "@radix-ui/react-toggle-group";
 declare module "@radix-ui/react-toggle";
+declare module '*.module.css' {
+  const classes: { [key: string]: string };
+  export default classes;
+}
 
 declare module '@tanstack/react-query';
 declare module 'react-day-picker' {
@@ -27,7 +31,11 @@ declare module 'react-day-picker' {
 declare module 'sonner';
 declare module 'lucide-react' {
   import { FC, SVGProps } from 'react';
-  export type LucideProps = SVGProps<SVGSVGElement>;
+  export interface LucideProps extends SVGProps<SVGSVGElement> {
+    color?: string;
+    size?: number | string;
+    strokeWidth?: number | string;
+  }
   export type LucideIcon = FC<LucideProps>;
 
   export const AlertCircle: LucideIcon;
@@ -324,8 +332,14 @@ declare module 'react-dom/client';
 declare module 'react-dom';
 declare module '@hello-pangea/dnd';
 declare module 'react-redux';
+declare module 'notistack';
+declare module '@sentry/browser';
 declare module 'semver';
 declare module 'ws';
 declare module 'recharts';
+declare module 'next' {
+  export type GetStaticPaths = any;
+  export type GetStaticProps<P = any, Q = any> = any;
+}
 declare module 'next-themes';
 declare module 'tailwind-merge';

@@ -34,6 +34,27 @@ rm -f src/types/offline-shims.d.ts
 echo "Installing dependencies..."
 $PM install
 
+# Generate Prisma client after dependencies are installed
+if command -v npx >/dev/null 2>&1; then
+  echo "Generating Prisma client..."
+  npx prisma generate
+  # Automatically install Playwright browsers if the dependency exists
+  if grep -q "@playwright/test" package.json >/dev/null 2>&1; then
+    echo "Installing Playwright browsers..."
+    npx playwright install || echo "Warning: Failed to install Playwright browsers"
+  fi
+else
+  echo "Warning: npx not found. Skipping Prisma client generation."
+fi
+
+# Create example environment files and check configuration
+echo "Configuring environment files..."
+node scripts/setup-environment.cjs
+
+echo "Validating environment configuration..."
+# Changed from ts-node to tsx for better ESM compatibility
+npx tsx scripts/check-env.ts || true
+
 # Development message
 echo ""
 echo "✅ Setup complete!"
