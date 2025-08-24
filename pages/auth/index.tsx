@@ -1,11 +1,8 @@
-import React from 'react';
-import EnhancedLayout from '../../components/layout/EnhancedLayout';
-
-export default function AuthIndexPage() {
+export default function AuthIndex() {
   return (
-    <EnhancedLayout>
+    <div className="space-y-2">
       <h1 className="text-2xl font-semibold">Auth</h1>
-      <p className="text-gray-600">Sign in/up coming soon.</p>
-    </EnhancedLayout>
+      <p>Select an auth action.</p>
+    </div>
   );
 }

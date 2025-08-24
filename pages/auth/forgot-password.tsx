@@ -1,11 +1,8 @@
-import React from 'react';
-import EnhancedLayout from '../../components/layout/EnhancedLayout';
-
-export default function ForgotPasswordPage() {
+export default function ForgotPassword() {
   return (
-    <EnhancedLayout>
+    <div className="space-y-2">
       <h1 className="text-2xl font-semibold">Forgot Password</h1>
-      <p className="text-gray-600">Flow coming soon.</p>
-    </EnhancedLayout>
+      <p>Enter your email to reset your password.</p>
+    </div>
   );
 }

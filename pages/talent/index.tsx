@@ -1,11 +1,8 @@
-import React from 'react';
-import EnhancedLayout from '../../components/layout/EnhancedLayout';
-
-export default function TalentPage() {
+export default function Talent() {
   return (
-    <EnhancedLayout>
+    <div className="space-y-2">
       <h1 className="text-2xl font-semibold">Talent</h1>
-      <p className="text-gray-600">Browse talent opportunities. Coming soon.</p>
-    </EnhancedLayout>
+      <p>Find AI talent.</p>
+    </div>
   );
 }

@@ -10,6 +10,8 @@ export default function EnhancedNavigation() {
         <div className="flex items-center gap-4 text-sm">
           <Link href="/about"><a>About</a></Link>
           <Link href="/blog"><a>Blog</a></Link>
+          <Link href="/partners"><a>Partners</a></Link>
+          <Link href="/affiliate-dashboard"><a>Affiliate Dashboard</a></Link>
           <Link href="/contact"><a>Contact</a></Link>
           <Link href="/protocol/un-bridge"><a>UN Bridge</a></Link>
           <Link href="/governance/global-outreach"><a>Global Outreach</a></Link>
