@@ -8,29 +8,22 @@ function runNode(relPath, args = []) {
 }
 
 exports.config = {
-  schedule: '0 3 * * *',
+  schedule: '17 3 * * *',
 };
 
 exports.handler = async () => {
   const logs = [];
-  const hasToken = !!(process.env.GITHUB_TOKEN || process.env.GH_TOKEN);
-
-  function logStep(name, fn) {
+  function step(name, rel, args = []) {
     logs.push(`\n=== ${name} ===`);
-    const { status, stdout, stderr } = fn();
+    const { status, stdout, stderr } = runNode(rel, args);
     if (stdout) logs.push(stdout);
     if (stderr) logs.push(stderr);
     logs.push(`exit=${status}`);
     return status;
   }
 
-  if (!hasToken) {
-    logs.push('Skipping branch cleanup: missing GITHUB_TOKEN/GH_TOKEN');
-    return { statusCode: 200, body: logs.join('\n') };
-  }
-
-  logStep('branch:cleanup', () => runNode('automation/branch-cleanup.cjs'));
-  logStep('git:sync', () => runNode('automation/advanced-git-sync.cjs'));
+  step('branch:cleanup', 'automation/branch-cleanup.cjs');
+  step('git:sync', 'automation/advanced-git-sync.cjs');
 
   return { statusCode: 200, body: logs.join('\n') };
 };
