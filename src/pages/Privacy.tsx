@@ -1,4 +1,4 @@
-import { AppHeader } from "@/layout/AppHeader";
+import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { GradientHeading } from "@/components/GradientHeading";
@@ -11,7 +11,7 @@ export default function Privacy() {
         description="Learn how Zion Tech Group handles your data and protects your privacy."
         canonical="https://ziontechgroup.com/privacy"
       />
-      <AppHeader />
+      <Header />
       <main className="min-h-screen bg-zion-blue pt-24 pb-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">

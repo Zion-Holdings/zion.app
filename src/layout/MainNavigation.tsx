@@ -1,94 +1,30 @@
 
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
-import { useAuth } from "@/hooks/useAuth";
-import { MessageSquare, ChevronDown } from "lucide-react";
-import { useTranslation } from "react-i18next";
+import { ChevronDown } from "lucide-react";
 import { useState } from "react";
 
-interface MainNavigationProps {
-  isAdmin?: boolean;
-  unreadCount?: number;
-  className?: string;
-}
-
-export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: MainNavigationProps) {
-  const { user } = useAuth();
-  const isAuthenticated = !!user;
+export function MainNavigation() {
   const location = useLocation();
-  const { t } = useTranslation();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const baseLinks = [
-    {
-      key: 'home',
-      href: '/',
-      matches: (path: string) => path === '/'
-    },
-    {
-      key: 'about',
-      href: '/about',
-      matches: (path: string) => path === '/about'
-    },
-    {
-      key: 'services',
-      href: '/services',
-      matches: (path: string) => path.startsWith('/services')
-    },
-    {
-      key: 'talent',
-      href: '/talent',
-      matches: (path: string) => path.startsWith('/talent') && !path.includes('/talent-dashboard')
-    },
-    {
-      key: 'equipment',
-      href: '/equipment',
-      matches: (path: string) => path.startsWith('/equipment')
-    },
-    {
-      key: 'community',
-      href: '/community',
-      matches: (path: string) => path.startsWith('/community') || path.startsWith('/forum')
-    },
-    {
-      key: 'help',
-      href: '/help',
-      matches: (path: string) => path === '/help' || path === '/faq'
-    }
+    { key: 'home', href: '/', name: 'Home' },
+    { key: 'about', href: '/about', name: 'About' },
+    { key: 'services', href: '/services', name: 'Services' },
+    { key: 'help', href: '/help', name: 'Help' }
   ];
 
-  let links = baseLinks.map(link => ({ ...link, name: t(`nav.${link.key}`) }));
-  
-  // Add authenticated-only links
-  if (isAuthenticated) {
-    links.push({
-      key: 'dashboard',
-      name: t('nav.dashboard'),
-      href: '/dashboard',
-      matches: (path: string) => path === '/dashboard' || path === '/client-dashboard' || path === '/talent-dashboard'
-    });
-  }
-  
-  // Add admin-only links
-  if (isAdmin) {
-    links.push({
-      key: 'analytics',
-      name: t('nav.analytics'),
-      href: '/analytics',
-      matches: (path: string) => path.startsWith('/analytics')
-    });
-  }
-  
   return (
-    <nav className={cn("navbar ml-6 hidden md:flex", className)}>
+    <nav className="navbar ml-6 hidden md:flex">
       <ul className="flex items-center gap-1">
-        {links.map((link) => (
-          <li key={link.name}>
+        {baseLinks.map((link) => (
+          <li key={link.key}>
             <Link
               to={link.href}
               className={cn(
                 "inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-colors",
-                link.matches(location.pathname)
+                location.pathname === link.href
                   ? "bg-zion-purple/20 text-zion-cyan"
                   : "text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
               )}
@@ -98,7 +34,6 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
           </li>
         ))}
         
-        {/* Marketplace dropdown */}
         <li className="relative">
           <button
             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
@@ -109,61 +44,34 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
                 : "text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
             )}
           >
-            {t('nav.marketplace')}
+            Marketplace
             <ChevronDown className="ml-1 h-4 w-4" />
           </button>
-          
           {isDropdownOpen && (
             <div className="absolute top-full left-0 mt-1 w-48 bg-zion-blue-dark border border-zion-purple/20 rounded-md shadow-lg z-50">
               <div className="py-2">
-                <Link
-                  to="/marketplace"
-                  className="block px-4 py-2 text-sm text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
-                  onClick={() => setIsDropdownOpen(false)}
-                >
-                  {t('nav.marketplace')}
-                </Link>
-                <Link
-                  to="/categories"
-                  className="block px-4 py-2 text-sm text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
-                  onClick={() => setIsDropdownOpen(false)}
-                >
-                  {t('nav.categories')}
-                </Link>
-                <Link
-                  to="/green-it"
-                  className="block px-4 py-2 text-sm text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
-                  onClick={() => setIsDropdownOpen(false)}
-                >
-                  Green IT
-                </Link>
+                <Link to="/ai-services" className="block px-4 py-2 text-sm text-white hover:bg-zion-purple/10 hover:text-zion-cyan" onClick={() => setIsDropdownOpen(false)}>AI Services</Link>
+                <Link to="/cybersecurity" className="block px-4 py-2 text-sm text-white hover:bg-zion-purple/10 hover:text-zion-cyan" onClick={() => setIsDropdownOpen(false)}>Cybersecurity</Link>
+                <Link to="/expanded-services" className="block px-4 py-2 text-sm text-white hover:bg-zion-purple/10 hover:text-zion-cyan" onClick={() => setIsDropdownOpen(false)}>IT Services</Link>
+                <Link to="/green-it" className="block px-4 py-2 text-sm text-white hover:bg-zion-purple/10 hover:text-zion-cyan" onClick={() => setIsDropdownOpen(false)}>Green IT</Link>
               </div>
             </div>
           )}
         </li>
         
-        {/* Messages link with unread counter */}
-        {isAuthenticated && (
-          <li>
-            <Link
-              to="/messages"
-              className={cn(
-                "inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-colors relative",
-                location.pathname === "/messages" || location.pathname === "/inbox"
-                  ? "bg-zion-purple/20 text-zion-cyan"
-                  : "text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
-              )}
-            >
-              <MessageSquare className="w-4 h-4 mr-1" />
-              {t('nav.messages')}
-              {unreadCount > 0 && (
-                <span className="absolute -top-1 -right-1 bg-zion-purple text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
-                  {unreadCount}
-                </span>
-              )}
-            </Link>
-          </li>
-        )}
+        <li>
+          <Link
+            to="/contact"
+            className={cn(
+              "inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-colors",
+              location.pathname === '/contact'
+                ? "bg-zion-purple/20 text-zion-cyan"
+                : "text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
+            )}
+          >
+            Contact
+          </Link>
+        </li>
       </ul>
     </nav>
   );

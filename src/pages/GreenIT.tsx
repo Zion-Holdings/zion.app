@@ -119,7 +119,7 @@ export default function GreenIT() {
             <p className="text-zion-slate-light text-lg mb-8 max-w-2xl mx-auto">
               Connect with our experts to discuss how we can help you build a more sustainable IT infrastructure.
             </p>
-            <Button className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple" asChild>
+            <Button className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple">
               <Link to="/contact">Contact Our Team</Link>
             </Button>
           </div>

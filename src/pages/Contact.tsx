@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { AppHeader } from "@/layout/AppHeader";
+import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { GradientHeading } from "@/components/GradientHeading";
@@ -7,12 +7,13 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
-import { toast } from "@/components/ui/use-toast";
+import { useToast } from "@/components/ui/use-toast";
 import z from "zod";
 import { ChatAssistant } from "@/components/ChatAssistant";
 import { Mail, MessageSquare, MapPin, Phone } from "lucide-react";
 
 export default function Contact() {
+  const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -53,11 +54,7 @@ export default function Contact() {
         }
       }
       setErrors(fieldErrors);
-      toast({
-        title: "Form Validation Error",
-        description: result.error.errors[0].message,
-        variant: "destructive",
-      });
+      toast("error", result.error.errors[0].message, {});
       return;
     }
 
@@ -68,10 +65,7 @@ export default function Contact() {
 
     setTimeout(() => {
       setIsSubmitting(false);
-      toast({
-        title: "Message Sent",
-        description: "We've received your message and will get back to you soon.",
-      });
+      toast("success", "We've received your message and will get back to you soon.", {});
 
       // Reset form
       setFormData({
@@ -116,7 +110,7 @@ export default function Contact() {
         keywords="contact, support, Zion Tech Group, AI marketplace, tech services"
         canonical="https://ziontechgroup.com/contact"
       />
-      <AppHeader />
+              <Header />
       <main className="min-h-screen bg-zion-blue pt-24 pb-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -270,13 +264,7 @@ export default function Contact() {
       </main>
 
       {/* AI Chat Assistant */}
-      {isChatOpen && (
-        <ChatAssistant
-          isOpen={isChatOpen}
-          onClose={() => setIsChatOpen(false)}
-          onSendMessage={handleSendMessage}
-        />
-      )}
+      <ChatAssistant />
 
       <Footer />
     </>

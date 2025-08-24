@@ -6,7 +6,7 @@ import { HowItWorksSection } from "@/components/HowItWorksSection";
 import { NewsletterSection } from "@/components/NewsletterSection";
 import { FeaturedListingsSection } from "@/components/FeaturedListingsSection";
 import { SEO } from "@/components/SEO";
-import { HeroSection } from "@/components/HeroSection";
+import { HeroSection } from "@/components/home/HeroSection";
 import { QuickAccess } from "@/components/home/QuickAccess";
 import { FeatureCTAs } from "@/components/home/FeatureCTAs";
 import { FeatureHighlights } from "@/components/home/FeatureHighlights";
