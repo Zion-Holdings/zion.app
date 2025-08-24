@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 import React from "react";
 import { Link } from "react-router-dom";
@@ -174,3 +175,6 @@ export function QuickAccess() {
     </section>
   );
 }
+=======
+export { EnhancedQuickAccess as QuickAccess } from './EnhancedQuickAccess';
+>>>>>>> 0b9a118024123a3c2f448bf2a162454cb5d4ae95
