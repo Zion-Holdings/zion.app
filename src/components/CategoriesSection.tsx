@@ -6,9 +6,9 @@ import { Briefcase, HardDrive, Lightbulb, Users } from "lucide-react";
 const categories = [
   {
     title: "Services",
-    description: "Professional IT & AI services, consulting, development, and automation",
+    description: "On-demand IT support, consulting, development, and more",
     icon: <Briefcase className="w-10 h-10" />,
-    link: "/all-services",
+    link: "/services",
     color: "from-purple-500 to-indigo-600",
   },
   {
@@ -40,8 +40,12 @@ const specialServices = [
     link: "/it-onsite-services"
   },
   {
-    title: "Comprehensive Services",
-    link: "/comprehensive-services"
+    title: "Advanced AI Services",
+    link: "/advanced-services"
+  },
+  {
+    title: "Services Comparison",
+    link: "/services-comparison"
   }
 ];
 

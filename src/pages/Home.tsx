@@ -1,7 +1,17 @@
 
 import React from 'react';
-import { ExpandedServicesShowcase } from "@/components/home/ExpandedServicesShowcase";
+import { CategoriesSection } from "@/components/CategoriesSection";
+import { BenefitsSection } from "@/components/BenefitsSection";
+import { HowItWorksSection } from "@/components/HowItWorksSection";
+import { NewsletterSection } from "@/components/NewsletterSection";
+import { FeaturedListingsSection } from "@/components/FeaturedListingsSection";
 import { SEO } from "@/components/SEO";
+import { HeroSection } from "@/components/HeroSection";
+import { QuickAccess } from "@/components/home/QuickAccess";
+import { FeatureCTAs } from "@/components/home/FeatureCTAs";
+import { FeatureHighlights } from "@/components/home/FeatureHighlights";
+import { ITServiceRequestHero } from "@/components/home/ITServiceRequestHero";
+import { AdvancedServicesShowcase } from "@/components/home/AdvancedServicesShowcase";
 
 export default function Home() {
   return (
@@ -10,54 +20,26 @@ export default function Home() {
         title="Zion - The Tech & AI Marketplace" 
         description="Discover top AI and tech talent, services, and equipment in one place."
         keywords="AI, technology, marketplace, services, talent"
-        canonical="https://ziontechgroup.com/"
+        canonical="https://app.ziontechgroup.com/"
       />
 
-      {/* Simple Hero Section */}
-      <section className="py-20 bg-gradient-to-r from-zion-blue to-zion-purple text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6">
-            Zion Tech Group
-          </h1>
-          <p className="text-xl mb-8 max-w-3xl mx-auto">
-            Cutting-edge AI, IT, and micro SAAS solutions for modern businesses
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/expanded-services" className="bg-zion-cyan text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-zion-cyan-dark transition-colors">
-              View All Services
-            </a>
-            <a href="/services-overview" className="border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white hover:text-zion-blue transition-colors">
-              Services Overview
-            </a>
-          </div>
-        </div>
-      </section>
+      <ITServiceRequestHero />
 
-      {/* Expanded Services Showcase - This is the main component we want to work */}
-      <ExpandedServicesShowcase />
+      <HeroSection />
       
-      {/* Simple Contact Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Ready to Get Started?
-          </h2>
-          <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-            Contact us today to discuss your project requirements and get a free consultation.
-          </p>
-          <div className="space-y-4">
-            <div className="text-lg">
-              <strong>Phone:</strong> +1 302 464 0950
-            </div>
-            <div className="text-lg">
-              <strong>Email:</strong> kleber@ziontechgroup.com
-            </div>
-            <div className="text-lg">
-              <strong>Address:</strong> 364 E Main St STE 1008 Middletown DE 19709
-            </div>
-          </div>
-        </div>
-      </section>
+      <QuickAccess />
+      
+      <FeatureCTAs />
+      
+      <FeatureHighlights />
+      
+      <AdvancedServicesShowcase />
+      
+      <CategoriesSection />
+      <BenefitsSection />
+      <HowItWorksSection />
+      <FeaturedListingsSection />
+      <NewsletterSection />
     </div>
   );
 }
