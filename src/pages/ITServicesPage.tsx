@@ -1,368 +1,548 @@
 import React from 'react';
-import { Header } from '@/components/Header';
-import { Footer } from '@/components/Footer';
-import { SEO } from '@/components/SEO';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Link } from 'react-router-dom';
 import { 
-  Cloud, 
-  Shield, 
   Server, 
+  Shield, 
+  Cloud, 
   Database, 
-  Code, 
   Network, 
-  Globe, 
-  Users, 
-  Zap, 
-  Monitor,
-  Lock,
-  Settings,
-  BarChart3,
+  Monitor, 
+  Code, 
   Smartphone,
-  ArrowRight,
-  CheckCircle,
-  Star,
+  Globe,
+  Users,
+  Lock,
+  Zap,
+  BarChart3,
+  Settings,
+  Phone,
+  MessageSquare,
   Clock,
-  DollarSign
+  CheckCircle,
+  Star
 } from 'lucide-react';
 
 export default function ITServicesPage() {
   const itServices = [
     {
-      id: 'cloud-migration',
-      title: 'Cloud Migration & Strategy',
-      description: 'Seamless migration to cloud platforms with optimization and cost management',
-      category: 'Cloud',
-      price: 'From $8,000',
-      features: ['Migration Planning', 'Cost Optimization', 'Performance Tuning', 'Security Implementation'],
-      icon: <Cloud className="h-8 w-8 text-zion-blue" />,
-      badge: 'Popular',
+      id: "cloud-migration",
+      title: "Cloud Migration & Strategy",
+      description: "Comprehensive cloud migration services to help businesses move to AWS, Azure, or Google Cloud with minimal downtime.",
+      features: [
+        "Multi-cloud strategy planning",
+        "Data migration & synchronization",
+        "Performance optimization",
+        "Security & compliance setup",
+        "24/7 monitoring & support"
+      ],
+      pricing: {
+        starter: "$2,999",
+        professional: "$8,999",
+        enterprise: "$24,999"
+      },
+      icon: <Cloud className="h-8 w-8 text-blue-500" />,
+      category: "Cloud Services",
+      badge: "Popular",
+      delivery: "4-8 weeks",
       rating: 4.9,
-      reviewCount: 234,
-      deliveryTime: '4-8 weeks',
-      link: '/services/cloud-migration'
+      reviews: 127
     },
     {
-      id: 'cybersecurity-audit',
-      title: 'Cybersecurity Assessment',
-      description: 'Comprehensive security audits and vulnerability assessments for your infrastructure',
-      category: 'Security',
-      price: 'From $5,500',
-      features: ['Security Audit', 'Vulnerability Scan', 'Penetration Testing', 'Compliance Review'],
+      id: "cybersecurity-audit",
+      title: "Cybersecurity Audit & Assessment",
+      description: "Comprehensive security assessment including penetration testing, vulnerability scanning, and compliance auditing.",
+      features: [
+        "Penetration testing",
+        "Vulnerability assessment",
+        "Compliance auditing (SOC2, ISO27001)",
+        "Security policy review",
+        "Incident response planning"
+      ],
+      pricing: {
+        starter: "$1,999",
+        professional: "$4,999",
+        enterprise: "$12,999"
+      },
       icon: <Shield className="h-8 w-8 text-red-500" />,
-      badge: 'Featured',
+      category: "Security",
+      badge: "Critical",
+      delivery: "2-4 weeks",
       rating: 4.8,
-      reviewCount: 189,
-      deliveryTime: '2-4 weeks',
-      link: '/services/cybersecurity-audit'
+      reviews: 89
     },
     {
-      id: 'devops-implementation',
-      title: 'DevOps Implementation',
-      description: 'Streamline development and operations with CI/CD pipelines and automation',
-      category: 'DevOps',
-      price: 'From $6,500',
-      features: ['CI/CD Setup', 'Infrastructure as Code', 'Monitoring Tools', 'Automation Scripts'],
-      icon: <Code className="h-8 w-8 text-green-500" />,
+      id: "network-infrastructure",
+      title: "Network Infrastructure Design",
+      description: "Enterprise-grade network design and implementation for optimal performance, security, and scalability.",
+      features: [
+        "Network architecture design",
+        "Hardware procurement",
+        "Installation & configuration",
+        "Performance optimization",
+        "Ongoing maintenance"
+      ],
+      pricing: {
+        starter: "$3,999",
+        professional: "$9,999",
+        enterprise: "$29,999"
+      },
+      icon: <Network className="h-8 w-8 text-green-500" />,
+      category: "Infrastructure",
+      badge: "Essential",
+      delivery: "6-12 weeks",
       rating: 4.7,
-      reviewCount: 156,
-      deliveryTime: '6-10 weeks',
-      link: '/services/devops-implementation'
+      reviews: 156
     },
     {
-      id: 'data-backup-recovery',
-      title: 'Data Backup & Recovery',
-      description: 'Comprehensive data protection solutions with disaster recovery planning',
-      category: 'Data',
-      price: 'From $3,200',
-      features: ['Backup Strategy', 'Disaster Recovery', 'Data Encryption', 'Recovery Testing'],
+      id: "data-backup-recovery",
+      title: "Data Backup & Disaster Recovery",
+      description: "Comprehensive backup solutions and disaster recovery planning to protect your critical business data.",
+      features: [
+        "Automated backup systems",
+        "Cloud & on-premise storage",
+        "Disaster recovery planning",
+        "Regular testing & validation",
+        "Rapid recovery procedures"
+      ],
+      pricing: {
+        starter: "$499/month",
+        professional: "$1,299/month",
+        enterprise: "$3,999/month"
+      },
       icon: <Database className="h-8 w-8 text-purple-500" />,
-      rating: 4.6,
-      reviewCount: 98,
-      deliveryTime: '2-3 weeks',
-      link: '/services/data-backup-recovery'
-    },
-    {
-      id: 'network-infrastructure',
-      title: 'Network Infrastructure',
-      description: 'Design and implementation of scalable network solutions for growing businesses',
-      category: 'Infrastructure',
-      price: 'From $7,500',
-      features: ['Network Design', 'Hardware Installation', 'Security Configuration', 'Performance Optimization'],
-      icon: <Network className="h-8 w-8 text-cyan-500" />,
-      rating: 4.8,
-      reviewCount: 134,
-      deliveryTime: '4-6 weeks',
-      link: '/services/network-infrastructure'
-    },
-    {
-      id: 'managed-it-services',
-      title: 'Managed IT Services',
-      description: '24/7 IT support and management for continuous business operations',
-      category: 'Management',
-      price: 'From $2,500/month',
-      features: ['24/7 Monitoring', 'Help Desk Support', 'Proactive Maintenance', 'Performance Reports'],
-      icon: <Monitor className="h-8 w-8 text-blue-500" />,
-      badge: 'New',
-      rating: 4.5,
-      reviewCount: 67,
-      deliveryTime: '1-2 weeks',
-      link: '/services/managed-it-services'
-    },
-    {
-      id: 'mobile-app-development',
-      title: 'Mobile App Development',
-      description: 'Custom mobile applications for iOS and Android platforms',
-      category: 'Development',
-      price: 'From $15,000',
-      features: ['UI/UX Design', 'Cross-platform Development', 'Testing & QA', 'App Store Deployment'],
-      icon: <Smartphone className="h-8 w-8 text-indigo-500" />,
-      rating: 4.7,
-      reviewCount: 89,
-      deliveryTime: '8-16 weeks',
-      link: '/services/mobile-app-development'
-    },
-    {
-      id: 'web-application',
-      title: 'Web Application Development',
-      description: 'Custom web applications and e-commerce solutions',
-      category: 'Development',
-      price: 'From $12,000',
-      features: ['Custom Development', 'Responsive Design', 'Database Design', 'Security Implementation'],
-      icon: <Globe className="h-8 w-8 text-emerald-500" />,
-      rating: 4.6,
-      reviewCount: 112,
-      deliveryTime: '6-12 weeks',
-      link: '/services/web-application'
-    },
-    {
-      id: 'it-consulting',
-      title: 'IT Strategy Consulting',
-      description: 'Strategic IT planning and digital transformation consulting',
-      category: 'Consulting',
-      price: 'From $8,500',
-      features: ['Technology Assessment', 'Digital Roadmap', 'Vendor Selection', 'Implementation Planning'],
-      icon: <Users className="h-8 w-8 text-amber-500" />,
+      category: "Data Protection",
+      badge: "Essential",
+      delivery: "2-3 weeks",
       rating: 4.9,
-      reviewCount: 78,
-      deliveryTime: '2-4 weeks',
-      link: '/services/it-consulting'
+      reviews: 203
     },
     {
-      id: 'data-analytics',
-      title: 'Data Analytics & BI',
-      description: 'Business intelligence solutions and data analytics implementation',
-      category: 'Analytics',
-      price: 'From $6,800',
-      features: ['Data Warehouse Setup', 'Dashboard Creation', 'Report Automation', 'Data Visualization'],
-      icon: <BarChart3 className="h-8 w-8 text-pink-500" />,
+      id: "it-support",
+      title: "24/7 IT Support & Helpdesk",
+      description: "Round-the-clock IT support for businesses with dedicated technicians and comprehensive issue resolution.",
+      features: [
+        "24/7 phone & email support",
+        "Remote & on-site assistance",
+        "Priority ticket system",
+        "Knowledge base access",
+        "Monthly reporting"
+      ],
+      pricing: {
+        starter: "$299/month",
+        professional: "$799/month",
+        enterprise: "$1,999/month"
+      },
+      icon: <Users className="h-8 w-8 text-cyan-500" />,
+      category: "Support",
+      badge: "Popular",
+      delivery: "Immediate",
+      rating: 4.8,
+      reviews: 342
+    },
+    {
+      id: "mobile-app-development",
+      title: "Mobile App Development",
+      description: "Custom mobile application development for iOS and Android with modern UI/UX and backend integration.",
+      features: [
+        "Native iOS & Android apps",
+        "Cross-platform solutions",
+        "Backend API development",
+        "App store submission",
+        "Post-launch support"
+      ],
+      pricing: {
+        starter: "$8,999",
+        professional: "$24,999",
+        enterprise: "$59,999"
+      },
+      icon: <Smartphone className="h-8 w-8 text-indigo-500" />,
+      category: "Development",
+      badge: "Featured",
+      delivery: "8-16 weeks",
+      rating: 4.9,
+      reviews: 178
+    },
+    {
+      id: "web-development",
+      title: "Web Development & E-commerce",
+      description: "Professional web development services including custom websites, e-commerce platforms, and web applications.",
+      features: [
+        "Custom website design",
+        "E-commerce integration",
+        "Content management systems",
+        "SEO optimization",
+        "Performance optimization"
+      ],
+      pricing: {
+        starter: "$3,999",
+        professional: "$9,999",
+        enterprise: "$24,999"
+      },
+      icon: <Globe className="h-8 w-8 text-orange-500" />,
+      category: "Development",
+      badge: "Popular",
+      delivery: "4-8 weeks",
+      rating: 4.8,
+      reviews: 267
+    },
+    {
+      id: "system-administration",
+      title: "System Administration & Maintenance",
+      description: "Comprehensive system administration services including server management, updates, and performance monitoring.",
+      features: [
+        "Server administration",
+        "System updates & patches",
+        "Performance monitoring",
+        "Backup management",
+        "Security hardening"
+      ],
+      pricing: {
+        starter: "$799/month",
+        professional: "$1,999/month",
+        enterprise: "$4,999/month"
+      },
+      icon: <Server className="h-8 w-8 text-gray-500" />,
+      category: "Administration",
+      badge: "Essential",
+      delivery: "Ongoing",
       rating: 4.7,
-      reviewCount: 95,
-      deliveryTime: '4-8 weeks',
-      link: '/services/data-analytics'
+      reviews: 134
     },
     {
-      id: 'endpoint-security',
-      title: 'Endpoint Security',
-      description: 'Comprehensive endpoint protection and device management solutions',
-      category: 'Security',
-      price: 'From $4,200',
-      features: ['Antivirus Protection', 'Device Management', 'Threat Detection', 'Policy Enforcement'],
-      icon: <Lock className="h-8 w-8 text-orange-500" />,
-      rating: 4.6,
-      reviewCount: 73,
-      deliveryTime: '2-3 weeks',
-      link: '/services/endpoint-security'
+      id: "monitoring-analytics",
+      title: "IT Monitoring & Analytics",
+      description: "Advanced monitoring solutions with real-time analytics and proactive issue detection for IT infrastructure.",
+      features: [
+        "Real-time monitoring",
+        "Performance analytics",
+        "Alert management",
+        "Custom dashboards",
+        "Predictive maintenance"
+      ],
+      pricing: {
+        starter: "$199/month",
+        professional: "$499/month",
+        enterprise: "$1,299/month"
+      },
+      icon: <Monitor className="h-8 w-8 text-teal-500" />,
+      category: "Monitoring",
+      badge: "Smart",
+      delivery: "1-2 weeks",
+      rating: 4.8,
+      reviews: 95
     },
     {
-      id: 'it-automation',
-      title: 'IT Process Automation',
-      description: 'Automate repetitive IT tasks and workflows for efficiency',
-      category: 'Automation',
-      price: 'From $3,800',
-      features: ['Workflow Automation', 'Script Development', 'Integration Setup', 'Monitoring Tools'],
-      icon: <Zap className="h-8 w-8 text-yellow-500" />,
-      rating: 4.5,
-      reviewCount: 56,
-      deliveryTime: '3-5 weeks',
-      link: '/services/it-automation'
+      id: "api-development",
+      title: "API Development & Integration",
+      description: "Custom API development and third-party system integration to streamline business processes and data flow.",
+      features: [
+        "RESTful API development",
+        "Third-party integrations",
+        "API documentation",
+        "Testing & validation",
+        "Performance optimization"
+      ],
+      pricing: {
+        starter: "$2,999",
+        professional: "$7,999",
+        enterprise: "$19,999"
+      },
+      icon: <Code className="h-8 w-8 text-yellow-500" />,
+      category: "Development",
+      badge: "Technical",
+      delivery: "4-6 weeks",
+      rating: 4.9,
+      reviews: 87
+    },
+    {
+      id: "compliance-consulting",
+      title: "IT Compliance & Governance",
+      description: "Compliance consulting services to help businesses meet regulatory requirements and industry standards.",
+      features: [
+        "Compliance assessment",
+        "Policy development",
+        "Audit preparation",
+        "Training & awareness",
+        "Ongoing compliance monitoring"
+      ],
+      pricing: {
+        starter: "$1,999",
+        professional: "$4,999",
+        enterprise: "$12,999"
+      },
+      icon: <CheckCircle className="h-8 w-8 text-emerald-500" />,
+      category: "Compliance",
+      badge: "Required",
+      delivery: "3-6 weeks",
+      rating: 4.8,
+      reviews: 112
+    },
+    {
+      id: "virtualization-solutions",
+      title: "Virtualization & Container Solutions",
+      description: "Advanced virtualization and containerization solutions to optimize resource utilization and deployment efficiency.",
+      features: [
+        "VMware & Hyper-V setup",
+        "Docker containerization",
+        "Kubernetes orchestration",
+        "Resource optimization",
+        "High availability setup"
+      ],
+      pricing: {
+        starter: "$3,999",
+        professional: "$9,999",
+        enterprise: "$24,999"
+      },
+      icon: <Zap className="h-8 w-8 text-violet-500" />,
+      category: "Virtualization",
+      badge: "Advanced",
+      delivery: "4-8 weeks",
+      rating: 4.7,
+      reviews: 73
     }
   ];
 
   const categories = [
-    { name: 'All Services', count: itServices.length, active: true },
-    { name: 'Cloud', count: itServices.filter(s => s.category === 'Cloud').length },
-    { name: 'Security', count: itServices.filter(s => s.category === 'Security').length },
-    { name: 'Development', count: itServices.filter(s => s.category === 'Development').length },
-    { name: 'Infrastructure', count: itServices.filter(s => s.category === 'Infrastructure').length },
-    { name: 'Management', count: itServices.filter(s => s.category === 'Management').length }
+    "All Services",
+    "Cloud Services",
+    "Security",
+    "Infrastructure",
+    "Data Protection",
+    "Support",
+    "Development",
+    "Administration",
+    "Monitoring",
+    "Compliance",
+    "Virtualization"
   ];
 
+  const [selectedCategory, setSelectedCategory] = React.useState("All Services");
+
+  const filteredServices = selectedCategory === "All Services" 
+    ? itServices 
+    : itServices.filter(service => service.category === selectedCategory);
+
   return (
-    <>
-      <SEO 
-        title="IT Services - Zion Tech Group" 
-        description="Comprehensive IT services including cloud migration, cybersecurity, DevOps, and infrastructure solutions. Expert IT consulting and managed services."
-        keywords="IT services, cloud migration, cybersecurity, DevOps, managed IT services, IT consulting"
-        canonical="https://ziontechgroup.com/it-services"
-      />
-      <Header />
-      
-      <main className="min-h-screen bg-background">
-        {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-cyan py-20 overflow-hidden">
-          <div className="absolute inset-0 bg-black/20"></div>
-          <div className="absolute inset-0 bg-gradient-to-r from-zion-blue/10 to-zion-cyan/10"></div>
-          
-          {/* Animated Background Elements */}
-          <div className="absolute top-20 left-10 w-32 h-32 bg-zion-blue/20 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-10 w-40 h-40 bg-zion-cyan/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-          <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-zion-purple/30 rounded-full blur-2xl animate-pulse delay-500"></div>
-          
-          <div className="container mx-auto px-4 relative z-10">
-            <div className="text-center max-w-4xl mx-auto">
-              <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">
-                IT Services & Solutions
-              </h1>
-              <p className="text-xl text-zion-slate-light mb-8 max-w-3xl mx-auto">
-                Transform your business technology infrastructure with our comprehensive IT services. 
-                From cloud migration to cybersecurity, we deliver enterprise-grade solutions that drive growth.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="bg-zion-cyan hover:bg-zion-cyan/80 text-zion-slate-dark">
-                  <Link to="/request-quote">Get Free Assessment</Link>
+    <div className="min-h-screen bg-gradient-to-br from-zion-blue-dark via-zion-slate to-zion-blue-dark">
+      {/* Hero Section */}
+      <div className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-zion-purple/20 to-zion-cyan/20"></div>
+        <div className="relative container mx-auto px-4 py-20 text-center">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-zion-cyan via-zion-purple to-zion-cyan bg-clip-text text-transparent">
+            IT Services Hub
+          </h1>
+          <p className="text-xl md:text-2xl text-zion-slate-light mb-8 max-w-4xl mx-auto">
+            Comprehensive IT solutions designed to modernize your infrastructure, enhance security, 
+            and drive business growth. From cloud migration to cybersecurity, we've got you covered.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Button size="lg" className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white">
+              <Server className="h-5 w-5 mr-2" />
+              Explore IT Services
+            </Button>
+            <Button size="lg" variant="outline" className="border-zion-cyan text-zion-cyan hover:bg-zion-cyan/10">
+              <MessageSquare className="h-5 w-5 mr-2" />
+              Get Free Consultation
+            </Button>
+          </div>
+        </div>
+      </div>
+
+      {/* Stats Section */}
+      <div className="container mx-auto px-4 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+          <div className="p-6 rounded-lg bg-zion-slate/30 border border-zion-purple/20">
+            <div className="text-3xl font-bold text-zion-cyan mb-2">500+</div>
+            <div className="text-zion-slate-light">Projects Completed</div>
+          </div>
+          <div className="p-6 rounded-lg bg-zion-slate/30 border border-zion-purple/20">
+            <div className="text-3xl font-bold text-zion-cyan mb-2">99.9%</div>
+            <div className="text-zion-slate-light">Uptime Guarantee</div>
+          </div>
+          <div className="p-6 rounded-lg bg-zion-slate/30 border border-zion-purple/20">
+            <div className="text-3xl font-bold text-zion-cyan mb-2">24/7</div>
+            <div className="text-zion-slate-light">Support Available</div>
+          </div>
+          <div className="p-6 rounded-lg bg-zion-slate/30 border border-zion-purple/20">
+            <div className="text-3xl font-bold text-zion-cyan mb-2">50+</div>
+            <div className="text-zion-slate-light">Expert Engineers</div>
+          </div>
+        </div>
+      </div>
+
+      {/* Category Filter */}
+      <div className="container mx-auto px-4 py-8">
+        <div className="flex flex-wrap justify-center gap-2 mb-8">
+          {categories.map((category) => (
+            <Button
+              key={category}
+              variant={selectedCategory === category ? "default" : "outline"}
+              onClick={() => setSelectedCategory(category)}
+              className={`${
+                selectedCategory === category 
+                  ? 'bg-zion-purple text-white' 
+                  : 'border-zion-purple text-zion-purple hover:bg-zion-purple/10'
+              }`}
+            >
+              {category}
+            </Button>
+          ))}
+        </div>
+      </div>
+
+      {/* Services Grid */}
+      <div className="container mx-auto px-4 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {filteredServices.map((service) => (
+            <Card key={service.id} className="group overflow-hidden border-zion-purple/20 bg-zion-slate/50 backdrop-blur-sm hover:border-zion-purple/50 transition-all duration-300 hover:shadow-2xl hover:shadow-zion-purple/20">
+              <CardHeader className="pb-4">
+                <div className="flex justify-between items-start mb-4">
+                  <div className="p-3 rounded-lg bg-zion-slate/30 group-hover:bg-zion-purple/20 transition-colors">
+                    {service.icon}
+                  </div>
+                  <div className="flex flex-col items-end gap-2">
+                    {service.badge && (
+                      <Badge className="bg-gradient-to-r from-zion-cyan to-zion-purple text-white border-0">
+                        {service.badge}
+                      </Badge>
+                    )}
+                    <div className="flex items-center gap-1 text-sm text-zion-slate-light">
+                      <Star className="h-4 w-4 text-yellow-500 fill-current" />
+                      <span>{service.rating}</span>
+                      <span>({service.reviews})</span>
+                    </div>
+                  </div>
+                </div>
+                <CardTitle className="text-xl text-white group-hover:text-zion-cyan transition-colors">
+                  {service.title}
+                </CardTitle>
+                <CardDescription className="text-zion-slate-light">
+                  {service.description}
+                </CardDescription>
+              </CardHeader>
+              
+              <CardContent className="space-y-4">
+                <div>
+                  <h4 className="font-semibold text-zion-cyan mb-2">Key Features:</h4>
+                  <ul className="space-y-1">
+                    {service.features.slice(0, 3).map((feature, index) => (
+                      <li key={index} className="text-sm text-zion-slate-light flex items-center">
+                        <div className="w-1.5 h-1.5 bg-zion-purple rounded-full mr-2"></div>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <h4 className="font-semibold text-zion-cyan mb-2">Pricing:</h4>
+                    <div className="space-y-1">
+                      <div className="text-sm text-zion-slate-light">
+                        <span className="font-medium">Starter:</span> {service.pricing.starter}
+                      </div>
+                      <div className="text-sm text-zion-slate-light">
+                        <span className="font-medium">Professional:</span> {service.pricing.professional}
+                      </div>
+                      <div className="text-sm text-zion-slate-light">
+                        <span className="font-medium">Enterprise:</span> {service.pricing.enterprise}
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-zion-cyan mb-2">Delivery:</h4>
+                    <div className="text-sm text-zion-slate-light flex items-center">
+                      <Clock className="h-4 w-4 mr-2 text-zion-purple" />
+                      {service.delivery}
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+              
+              <div className="p-6 pt-0 space-y-3">
+                <Button className="w-full bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white">
+                  <MessageSquare className="h-4 w-4 mr-2" />
+                  Get Quote
                 </Button>
-                <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
-                  <Link to="/contact">Contact Our Team</Link>
+                <Button variant="outline" className="w-full border-zion-cyan text-zion-cyan hover:bg-zion-cyan/10">
+                  <Phone className="h-4 w-4 mr-2" />
+                  Call Now
                 </Button>
               </div>
+            </Card>
+          ))}
+        </div>
+      </div>
+
+      {/* Why Choose Us Section */}
+      <div className="container mx-auto px-4 py-16">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold text-white mb-4">Why Choose Zion Tech Group?</h2>
+          <p className="text-zion-slate-light max-w-2xl mx-auto">
+            We combine technical expertise with business acumen to deliver IT solutions that drive real business value.
+          </p>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="text-center p-6">
+            <div className="w-16 h-16 bg-zion-purple/20 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Settings className="h-8 w-8 text-zion-purple" />
             </div>
-          </div>
-        </section>
-
-        {/* Services Grid */}
-        <section className="py-20 bg-background">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Enterprise IT Solutions
-              </h2>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                Choose from our comprehensive portfolio of IT services, each designed to address specific 
-                business challenges and drive measurable results.
-              </p>
-            </div>
-
-            {/* Category Filter */}
-            <div className="flex flex-wrap justify-center gap-3 mb-12">
-              {categories.map((category, index) => (
-                <Button
-                  key={index}
-                  variant={category.active ? "default" : "outline"}
-                  className={category.active ? "bg-zion-cyan text-zion-slate-dark" : "border-zion-cyan/30 text-zion-cyan hover:bg-zion-cyan/10"}
-                >
-                  {category.name} ({category.count})
-                </Button>
-              ))}
-            </div>
-
-            {/* Services Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {itServices.map((service) => (
-                <Card key={service.id} className="group hover:shadow-2xl transition-all duration-300 border-zion-cyan/20 hover:border-zion-cyan/50 bg-card/50 backdrop-blur-sm">
-                  <CardHeader className="pb-4">
-                    <div className="flex justify-between items-start mb-3">
-                      {service.icon}
-                      {service.badge && (
-                        <Badge variant="secondary" className="bg-zion-cyan/20 text-zion-cyan border-zion-cyan/30">
-                          {service.badge}
-                        </Badge>
-                      )}
-                    </div>
-                    <CardTitle className="text-xl group-hover:text-zion-cyan transition-colors">
-                      {service.title}
-                    </CardTitle>
-                    <CardDescription className="text-muted-foreground">
-                      {service.description}
-                    </CardDescription>
-                  </CardHeader>
-                  
-                  <CardContent className="pb-4">
-                    <div className="mb-4">
-                      <span className="text-2xl font-bold text-zion-cyan">{service.price}</span>
-                    </div>
-                    
-                    <div className="space-y-2 mb-4">
-                      {service.features.slice(0, 3).map((feature, index) => (
-                        <div key={index} className="flex items-center text-sm">
-                          <CheckCircle className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
-                          <span className="text-muted-foreground">{feature}</span>
-                        </div>
-                      ))}
-                    </div>
-                    
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="flex items-center gap-1">
-                        <Star className="h-4 w-4 text-yellow-500 fill-current" />
-                        <span className="text-sm text-muted-foreground">{service.rating}</span>
-                        <span className="text-sm text-muted-foreground">({service.reviewCount})</span>
-                      </div>
-                      <Badge variant="outline" className="text-xs">
-                        {service.category}
-                      </Badge>
-                    </div>
-
-                    <div className="flex items-center justify-between text-sm text-muted-foreground">
-                      <div className="flex items-center gap-1">
-                        <Clock className="h-4 w-4" />
-                        <span>{service.deliveryTime}</span>
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <DollarSign className="h-4 w-4" />
-                        <span>Fixed Price</span>
-                      </div>
-                    </div>
-                  </CardContent>
-                  
-                  <CardContent className="pt-0">
-                    <Button asChild className="w-full group-hover:bg-zion-cyan group-hover:text-zion-slate-dark transition-all duration-300">
-                      <Link to={service.link}>
-                        Learn More
-                        <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                      </Link>
-                    </Button>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-r from-zion-blue-dark to-zion-cyan-dark">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Ready to Transform Your IT Infrastructure?
-            </h2>
-            <p className="text-xl text-zion-slate-light mb-8 max-w-3xl mx-auto">
-              Let our IT experts help you identify the right solutions for your business. 
-              Get a free assessment and discover how modern IT can transform your operations.
+            <h3 className="text-xl font-semibold text-white mb-2">Expert Team</h3>
+            <p className="text-zion-slate-light">
+              Certified professionals with years of experience in enterprise IT solutions.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-zion-cyan hover:bg-zion-cyan/80 text-zion-slate-dark">
-                <Link to="/request-quote">Start Your IT Transformation</Link>
-              </Button>
-              <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
-                <Link to="/contact">Schedule a Call</Link>
-              </Button>
-            </div>
           </div>
-        </section>
-      </main>
-      
-      <Footer />
-    </>
+          
+          <div className="text-center p-6">
+            <div className="w-16 h-16 bg-zion-cyan/20 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Clock className="h-8 w-8 text-zion-cyan" />
+            </div>
+            <h3 className="text-xl font-semibold text-white mb-2">24/7 Support</h3>
+            <p className="text-zion-slate-light">
+              Round-the-clock support to ensure your systems are always running smoothly.
+            </p>
+          </div>
+          
+          <div className="text-center p-6">
+            <div className="w-16 h-16 bg-zion-purple/20 rounded-full flex items-center justify-center mx-auto mb-4">
+              <CheckCircle className="h-8 w-8 text-zion-purple" />
+            </div>
+            <h3 className="text-xl font-semibold text-white mb-2">Proven Results</h3>
+            <p className="text-zion-slate-light">
+              Track record of successful implementations and satisfied clients across industries.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Contact Section */}
+      <div className="container mx-auto px-4 py-16">
+        <div className="text-center">
+          <h2 className="text-3xl font-bold text-white mb-4">Ready to Transform Your IT Infrastructure?</h2>
+          <p className="text-zion-slate-light mb-8 max-w-2xl mx-auto">
+            Our IT experts are ready to help you modernize your technology stack and drive business growth. 
+            Get in touch today for a free consultation.
+          </p>
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <Button size="lg" className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white">
+              <MessageSquare className="h-5 w-5 mr-2" />
+              Free Consultation
+            </Button>
+            <Button size="lg" variant="outline" className="border-zion-cyan text-zion-cyan hover:bg-zion-cyan/10">
+              <Phone className="h-5 w-5 mr-2" />
+              Call +1 302 464 0950
+            </Button>
+          </div>
+          <div className="mt-8 text-zion-slate-light">
+            <p>Email: kleber@ziontechgroup.com</p>
+            <p>Address: 364 E Main St STE 1008, Middletown DE 19709</p>
+            <p>Website: https://ziontechgroup.com</p>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
