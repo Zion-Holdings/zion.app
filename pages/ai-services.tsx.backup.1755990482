@@ -1,0 +1,455 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+<<<<<<< HEAD
+import { Brain, Zap, Target, Shield, Rocket, Star, ArrowRight } from 'lucide-react';
+import Link from 'next/link';
+import Button from '../components/ui/Button';
+
+export default function AIServices() {
+  const aiServices = [
+    {
+      title: 'AI Consciousness Evolution Platform',
+      description: 'Revolutionary AI platform that evolves consciousness and understanding',
+      icon: <Brain className="w-8 h-8 text-cyan-400" />,
+      href: '/ai-consciousness-evolution-platform',
+      featured: true
+    },
+    {
+      title: 'AI Autonomous Research Assistant',
+      description: 'Intelligent research automation with advanced AI capabilities',
+      icon: <Zap className="w-8 h-8 text-purple-400" />,
+      href: '/ai-autonomous-research-assistant'
+    },
+    {
+      title: 'AI Emotional Intelligence Trainer',
+      description: 'Advanced emotional intelligence training using AI',
+      icon: <Target className="w-8 h-8 text-emerald-400" />,
+      href: '/ai-emotional-intelligence-trainer'
+    },
+    {
+      title: 'AI Predictive Maintenance Platform',
+      description: 'Predictive maintenance orchestration with AI',
+      icon: <Shield className="w-8 h-8 text-blue-400" />,
+      href: '/ai-predictive-maintenance-orchestrator'
+    },
+    {
+      title: 'AI Content Personalization Engine',
+      description: 'Dynamic content personalization powered by AI',
+      icon: <Rocket className="w-8 h-8 text-orange-400" />,
+      href: '/ai-content-personalization-engine'
+    },
+    {
+      title: 'AI Autonomous Ecosystem Manager',
+      description: 'Comprehensive ecosystem management with AI',
+      icon: <Star className="w-8 h-8 text-yellow-400" />,
+      href: '/ai-autonomous-ecosystem-manager'
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-black text-white">
+      {/* Hero Section */}
+      <section className="relative pt-32 pb-20 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-cyan-900/20 via-purple-900/20 to-blue-900/20"></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center"
+          >
+            <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-6">
+              AI Services
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-8">
+              Revolutionary AI solutions that transform businesses and drive innovation across industries
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button href="/contact" className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-8 py-4 text-lg">
+                Get Started
+              </Button>
+              <Button href="/solutions" variant="outline" className="border-cyan-500 text-cyan-400 px-8 py-4 text-lg">
+                View Solutions
+=======
+import { 
+  Brain, Cpu, Bot, Zap, Target, 
+  TrendingUp, Shield, Globe, Users, Award,
+  ArrowRight, CheckCircle, Star, Lightbulb
+} from 'lucide-react';
+import Layout from '../components/layout/Layout';
+import Button from '../components/ui/Button';
+
+const AIServices: React.FC = () => {
+  const services = [
+    {
+      title: 'Machine Learning & AI',
+      description: 'Custom AI models and machine learning solutions for business automation',
+      icon: <Brain className="w-8 h-8 text-cyan-400" />,
+      features: ['Predictive Analytics', 'Natural Language Processing', 'Computer Vision', 'Deep Learning Models']
+    },
+    {
+      title: 'AI Automation',
+      description: 'Intelligent process automation using AI and robotic process automation',
+      icon: <Bot className="w-8 h-8 text-purple-400" />,
+      features: ['Process Automation', 'Workflow Optimization', 'Intelligent Document Processing', 'Chatbot Development']
+    },
+    {
+      title: 'Data Analytics',
+      description: 'Advanced analytics and business intelligence powered by AI',
+      icon: <TrendingUp className="w-8 h-8 text-green-400" />,
+      features: ['Business Intelligence', 'Data Visualization', 'Predictive Modeling', 'Real-time Analytics']
+    },
+    {
+      title: 'AI Consulting',
+      description: 'Strategic AI consulting and implementation guidance',
+      icon: <Lightbulb className="w-8 h-8 text-blue-400" />,
+      features: ['AI Strategy', 'Technology Assessment', 'Implementation Planning', 'Team Training']
+    }
+  ];
+
+  const benefits = [
+    'Increased operational efficiency',
+    'Enhanced decision-making capabilities',
+    'Cost reduction through automation',
+    'Improved customer experience',
+    'Competitive advantage in the market',
+    'Scalable and sustainable solutions'
+  ];
+
+  const industries = [
+    {
+      name: 'Healthcare',
+      applications: ['Medical Diagnosis', 'Drug Discovery', 'Patient Care', 'Medical Imaging']
+    },
+    {
+      name: 'Finance',
+      applications: ['Fraud Detection', 'Risk Assessment', 'Algorithmic Trading', 'Customer Service']
+    },
+    {
+      name: 'Manufacturing',
+      applications: ['Predictive Maintenance', 'Quality Control', 'Supply Chain Optimization', 'Production Planning']
+    },
+    {
+      name: 'Retail',
+      applications: ['Personalized Marketing', 'Inventory Management', 'Customer Analytics', 'Price Optimization']
+    }
+  ];
+
+  const technologies = [
+    'TensorFlow & PyTorch',
+    'OpenAI GPT Models',
+    'Computer Vision APIs',
+    'Natural Language Processing',
+    'Cloud AI Services',
+    'Edge AI Computing'
+  ];
+
+  return (
+    <Layout>
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900 via-purple-900 to-cyan-900 opacity-50"></div>
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.05%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%222%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-30"></div>
+        
+        <div className="relative z-10 text-center max-w-6xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="flex items-center justify-center mb-6">
+              <Brain className="w-12 h-12 text-cyan-400 mr-3" />
+              <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
+                AI Services
+              </h1>
+            </div>
+            <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
+              Transform your business with cutting-edge artificial intelligence solutions. 
+              From automation to analytics, we bring AI to life.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button href="/contact" variant="quantum" size="lg" className="text-lg px-8 py-4">
+                Start AI Transformation
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+              <Button href="/services" variant="outline" size="lg" className="text-lg px-8 py-4">
+                View All Services
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-c095
+              </Button>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+<<<<<<< HEAD
+      {/* Services Grid */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              Advanced AI Solutions
+            </h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              Discover our cutting-edge AI services designed to revolutionize your business operations
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {aiServices.map((service, index) => (
+              <motion.div
+                key={service.title}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8 hover:border-cyan-500/50 transition-all duration-300 hover:transform hover:scale-105"
+              >
+                <div className="mb-6">
+                  {service.icon}
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-4">{service.title}</h3>
+                <p className="text-gray-400 mb-6">{service.description}</p>
+                <Link 
+                  href={service.href}
+                  className="inline-flex items-center text-cyan-400 hover:text-cyan-300 transition-colors"
+                >
+                  Learn More <ArrowRight className="w-4 h-4 ml-2" />
+                </Link>
+                {service.featured && (
+                  <span className="inline-block bg-gradient-to-r from-yellow-400 to-orange-500 text-black text-xs font-bold px-3 py-1 rounded-full mt-4">
+                    Featured
+                  </span>
+                )}
+=======
+      {/* Services Section */}
+      <section className="py-20 bg-gray-900">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              AI Service Portfolio
+            </h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              Comprehensive AI solutions designed to drive innovation, 
+              efficiency, and growth across your organization.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {services.map((service, index) => (
+              <motion.div
+                key={service.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-gray-800/50 border border-gray-700/50 rounded-2xl p-6 hover:border-cyan-500/50 transition-all duration-300"
+              >
+                <div className="mb-4">{service.icon}</div>
+                <h3 className="text-xl font-semibold text-white mb-3">{service.title}</h3>
+                <p className="text-gray-400 mb-4">{service.description}</p>
+                <ul className="space-y-2">
+                  {service.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-center text-sm text-gray-300">
+                      <CheckCircle className="w-4 h-4 text-cyan-400 mr-2 flex-shrink-0" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits Section */}
+      <section className="py-20 bg-black/50">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Why Choose AI?
+            </h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              Artificial intelligence is not just a technology trend—it's a 
+              fundamental shift in how businesses operate and compete.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {benefits.map((benefit, index) => (
+              <motion.div
+                key={benefit}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="text-center"
+              >
+                <div className="w-16 h-16 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Star className="w-8 h-8 text-white" />
+                </div>
+                <p className="text-lg text-white">{benefit}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Industries Section */}
+      <section className="py-20 bg-gray-900">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Industry Solutions
+            </h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              AI solutions tailored for specific industries, 
+              addressing unique challenges and opportunities.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {industries.map((industry, index) => (
+              <motion.div
+                key={industry.name}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-gray-800/50 border border-gray-700/50 rounded-2xl p-6"
+              >
+                <h3 className="text-xl font-semibold text-white mb-4 flex items-center">
+                  <Target className="w-6 h-6 text-cyan-400 mr-2" />
+                  {industry.name}
+                </h3>
+                <ul className="space-y-2">
+                  {industry.applications.map((app, idx) => (
+                    <li key={idx} className="text-gray-300 text-sm flex items-center">
+                      <ArrowRight className="w-3 h-3 text-cyan-400 mr-2 flex-shrink-0" />
+                      {app}
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Technologies Section */}
+      <section className="py-20 bg-black/50">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Cutting-Edge Technologies
+            </h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              We leverage the latest AI technologies and frameworks 
+              to deliver state-of-the-art solutions.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {technologies.map((tech, index) => (
+              <motion.div
+                key={tech}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-gray-800/30 border border-gray-700/30 rounded-xl p-4 text-center hover:border-cyan-500/50 transition-all duration-300"
+              >
+                <Cpu className="w-8 h-8 text-cyan-400 mx-auto mb-2" />
+                <p className="text-white font-medium">{tech}</p>
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-c095
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+<<<<<<< HEAD
+      <section className="py-20 bg-gradient-to-r from-cyan-900/20 via-purple-900/20 to-blue-900/20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Ready to Transform Your Business?
+            </h2>
+            <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+              Let our AI experts help you implement cutting-edge solutions that drive growth and innovation
+            </p>
+            <Button href="/contact" className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-10 py-4 text-lg">
+              Start Your AI Journey
+            </Button>
+          </motion.div>
+        </div>
+      </section>
+    </div>
+  );
+}
+=======
+      <section className="py-20 bg-gradient-to-r from-blue-900 via-purple-900 to-cyan-900">
+        <div className="max-w-4xl mx-auto text-center px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Ready to Embrace AI?
+            </h2>
+            <p className="text-xl text-gray-300 mb-8">
+              Transform your business with intelligent automation, 
+              predictive analytics, and AI-powered insights.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button href="/contact" variant="quantum" size="lg" className="text-lg px-8 py-4">
+                Start AI Journey
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+              <Button href="/services" variant="outline" size="lg" className="text-lg px-8 py-4">
+                Explore All Services
+              </Button>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+    </Layout>
+  );
+};
+
+export default AIServices;
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-c095

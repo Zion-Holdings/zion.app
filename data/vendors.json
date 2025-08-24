@@ -1,0 +1,31 @@
+{
+  "vendors": [
+    {
+      "id": "v_seed_1",
+      "slug": "acme-ai",
+      "name": "Acme AI Labs",
+      "servicesOffered": ["AI prototyping", "MLOps", "Data labeling"],
+      "teamSize": 12,
+      "logoUrl": "/logo.png",
+      "about": "We build AI prototypes in days, not weeks.",
+      "verified": true,
+      "verificationDocs": [],
+      "caseStudies": [
+        { "title": "Retail demand forecasting" }
+      ],
+      "packages": [
+        { "id": "pkg1", "title": "AI prototype in 3 days", "description": "Rapid prototyping sprint.", "priceUsd": 2999, "timeframe": "3 days" }
+      ],
+      "sampleProjects": [
+        { "id": "sp1", "title": "Vision demo", "description": "Object detection PoC" }
+      ],
+      "testimonials": [
+        { "author": "CTO, ShopCo", "quote": "Delivered in record time." }
+      ],
+      "commissionSplitPct": 10,
+      "suspended": false,
+      "tokens": 0,
+      "rating": 4.8
+    }
+  ]
+}
