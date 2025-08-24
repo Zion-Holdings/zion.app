@@ -31,7 +31,21 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
     {
       key: 'services',
       href: '/services',
+<<<<<<< HEAD
       matches: (path: string) => path.startsWith('/services') || path.startsWith('/it-onsite-services')
+=======
+      matches: (path: string) => path.startsWith('/services')
+    },
+    {
+      key: 'micro-saas',
+      href: '/micro-saas-services',
+      matches: (path: string) => path.startsWith('/micro-saas-services')
+    },
+    {
+      key: 'categories',
+      href: '/categories',
+      matches: (path: string) => path.startsWith('/categories')
+>>>>>>> cfb04f63b138e721e668a86f56f120d011c10c16
     },
     {
       key: 'talent',
@@ -41,17 +55,24 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
     {
       key: 'equipment',
       href: '/equipment',
+<<<<<<< HEAD
       matches: (path:string) => path.startsWith('/equipment')
+=======
+      matches: (path: string) => path.startsWith('/equipment')
+>>>>>>> cfb04f63b138e721e668a86f56f120d011c10c16
     },
     {
       key: 'community',
       href: '/community',
       matches: (path: string) => path.startsWith('/community') || path.startsWith('/forum')
+<<<<<<< HEAD
     },
     {
       key: 'about',
       href: '/about',
       matches: (path: string) => path === '/about'
+=======
+>>>>>>> cfb04f63b138e721e668a86f56f120d011c10c16
     }
   ];
 

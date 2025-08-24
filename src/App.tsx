@@ -1,4 +1,5 @@
 import React from 'react';
+<<<<<<< HEAD
 import { Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
@@ -110,5 +111,27 @@ const App = () => {
     </WhitelabelProvider>
   );
 };
+=======
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import Contact from './pages/Contact';
+import About from './pages/About';
+import NotFound from './pages/NotFound';
+
+function App() {
+  return (
+    <Router>
+      <div className="App min-h-screen bg-zion-blue-dark">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/about" element={<About />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </div>
+    </Router>
+  );
+}
+>>>>>>> cfb04f63b138e721e668a86f56f120d011c10c16
 
 export default App;

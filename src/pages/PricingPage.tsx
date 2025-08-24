@@ -81,12 +81,118 @@ export default function PricingPage() {
                   </a>
                 </div>
               </div>
+<<<<<<< HEAD
+=======
+            </TabsContent>
+          </Tabs>
+        </div>
+      </section>
+
+      {/* Feature Comparison */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-zion-blue mb-4">
+              Feature Comparison
+            </h2>
+            <p className="text-gray-600 text-lg max-w-3xl mx-auto">
+              See how our plans stack up against each other and the competition
+            </p>
+          </div>
+          
+          <div className="overflow-x-auto">
+            <table className="w-full border-collapse">
+              <thead>
+                <tr className="border-b-2 border-zion-blue">
+                  <th className="text-left p-4 text-zion-blue font-bold">Features</th>
+                  <th className="text-center p-4 text-zion-blue font-bold">Basic</th>
+                  <th className="text-center p-4 text-zion-purple font-bold">Professional</th>
+                  <th className="text-center p-4 text-zion-blue font-bold">Enterprise</th>
+                </tr>
+              </thead>
+              <tbody>
+                {comparisonFeatures.map((feature, index) => (
+                  <tr key={index} className="border-b border-gray-200">
+                    <td className="p-4 font-medium">{feature}</td>
+                    <td className="text-center p-4">
+                      {index < 4 ? (
+                        <CheckCircle className="h-5 w-5 text-green-500 mx-auto" />
+                      ) : (
+                        <X className="h-5 w-5 text-gray-400 mx-auto" />
+                      )}
+                    </td>
+                    <td className="text-center p-4">
+                      {index < 7 ? (
+                        <CheckCircle className="h-5 w-5 text-green-500 mx-auto" />
+                      ) : (
+                        <X className="h-5 w-5 text-gray-400 mx-auto" />
+                      )}
+                    </td>
+                    <td className="text-center p-4">
+                      <CheckCircle className="h-5 w-5 text-green-500 mx-auto" />
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section className="py-20 bg-zion-blue">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Why Choose Zion Tech Group?
+            </h2>
+            <p className="text-zion-slate-light text-lg max-w-3xl mx-auto">
+              We deliver enterprise-grade solutions with startup agility and proven results
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                icon: <Zap className="h-8 w-8" />,
+                title: "Immediate Deployment",
+                description: "All services are ready for immediate deployment with no setup delays"
+              },
+              {
+                icon: <Shield className="h-8 w-8" />,
+                title: "Enterprise Security",
+                description: "Bank-level security with SOC 2 compliance and 24/7 monitoring"
+              },
+              {
+                icon: <Users className="h-8 w-8" />,
+                title: "Dedicated Support",
+                description: "24/7 technical support with dedicated account managers"
+              },
+              {
+                icon: <TrendingUp className="h-8 w-8" />,
+                title: "Proven ROI",
+                description: "Average 300% ROI within 6 months of implementation"
+              }
+            ].map((benefit, index) => (
+              <Card key={index} className="bg-zion-blue-dark border-zion-blue-light text-white">
+                <CardHeader className="text-center">
+                  <div className="mx-auto w-16 h-16 bg-zion-purple rounded-full flex items-center justify-center mb-4">
+                    {benefit.icon}
+                  </div>
+                  <CardTitle className="text-xl">{benefit.title}</CardTitle>
+                </CardHeader>
+                <CardContent className="text-center">
+                  <p className="text-zion-slate-light">{benefit.description}</p>
+                </CardContent>
+              </Card>
+>>>>>>> cfb04f63b138e721e668a86f56f120d011c10c16
             ))}
           </div>
         </div>
       </section>
 
       {/* Contact Section */}
+<<<<<<< HEAD
       <section className="bg-gray-900 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-8">Need a Custom Quote?</h2>
@@ -94,6 +200,20 @@ export default function PricingPage() {
             Contact us for custom pricing plans tailored to your specific business requirements.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+=======
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-zion-blue mb-4">
+              Ready to Get Started?
+            </h2>
+            <p className="text-gray-600 text-lg max-w-3xl mx-auto">
+              Get in touch with our team to discuss your needs and discover the perfect plan for your business
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+>>>>>>> cfb04f63b138e721e668a86f56f120d011c10c16
             <div>
               <h3 className="text-xl font-semibold mb-2">Phone</h3>
               <p>{CONTACT_INFO.mobile}</p>

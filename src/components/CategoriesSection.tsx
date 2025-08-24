@@ -14,6 +14,13 @@ const categories = [
     delay: 0.1,
   },
   {
+    title: "Micro SAAS",
+    description: "AI, IT, and specialized micro SAAS solutions",
+    icon: <Lightbulb className="w-10 h-10" />,
+    link: "/micro-saas-services",
+    color: "from-emerald-500 to-green-600",
+  },
+  {
     title: "Talents",
     description: "Connect with AI experts, developers, and tech specialists",
     icon: <Users className="w-10 h-10" />,
@@ -29,6 +36,7 @@ const categories = [
     color: "from-amber-500 to-orange-600",
     delay: 0.3,
   },
+<<<<<<< HEAD
   {
     title: "Innovation",
     description: "Discover cutting-edge solutions and tech breakthroughs",
@@ -37,6 +45,8 @@ const categories = [
     color: "from-emerald-500 to-green-600",
     delay: 0.4,
   },
+=======
+>>>>>>> cfb04f63b138e721e668a86f56f120d011c10c16
 ];
 
 const specialServices = [
@@ -124,6 +134,7 @@ export function CategoriesSection({ showTitle = true }: CategoriesSectionProps) 
               viewport={{ once: true }}
               transition={{ delay: category.delay }}
             >
+<<<<<<< HEAD
               <Link 
                 to={category.link} 
                 className="group block"
@@ -155,6 +166,12 @@ export function CategoriesSection({ showTitle = true }: CategoriesSectionProps) 
                   {/* Hover indicator */}
                   <div className="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="w-8 h-0.5 bg-gradient-to-r from-zion-cyan to-zion-purple rounded-full"></div>
+=======
+              <div className="rounded-lg overflow-hidden h-full border border-zion-blue-light bg-zion-blue-dark p-6 transition-all duration-300 hover:border-zion-purple/50 hover:translate-y-[-5px] hover-lift glass-dark backdrop-blur-sm">
+                <div className={`rounded-full w-16 h-16 bg-gradient-to-br ${category.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                  <div className="text-white">
+                    {category.icon}
+>>>>>>> cfb04f63b138e721e668a86f56f120d011c10c16
                   </div>
                 </motion.div>
               </Link>
@@ -185,6 +202,12 @@ export function CategoriesSection({ showTitle = true }: CategoriesSectionProps) 
                 </Link>
               </motion.div>
             ))}
+            <Link 
+              to="/pricing"
+              className="px-6 py-3 bg-zion-purple hover:bg-zion-purple-dark border border-zion-purple/20 hover:border-zion-purple/50 rounded-full text-white transition-all duration-300"
+            >
+              View Pricing
+            </Link>
           </div>
         </motion.div>
         
