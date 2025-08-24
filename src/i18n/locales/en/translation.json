@@ -19,6 +19,7 @@
   "nav": {
     "home": "Home",
     "marketplace": "Marketplace",
+    "services": "Services",
     "categories": "Categories",
     "talent": "Talent",
     "equipment": "Equipment",
@@ -26,7 +27,12 @@
     "dashboard": "Dashboard",
     "messages": "Messages",
     "post_job": "Post Job",
-    "analytics": "Analytics"
+    "analytics": "Analytics",
+    "ai-hiring": "AI Hiring",
+    "help": "Help Center",
+    "faq": "FAQ",
+    "about": "About",
+    "contact": "Contact"
   },
   "auth": {
     "login": "Login",
