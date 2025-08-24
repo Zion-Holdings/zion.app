@@ -26,6 +26,14 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }) 
             matches: (path) => path.startsWith('/services') || path.startsWith('/it-onsite-services')
         },
         {
+<<<<<<< HEAD
+=======
+            key: 'micro-saas',
+            href: '/micro-saas-services',
+            matches: (path) => path.startsWith('/micro-saas-services')
+        },
+        {
+>>>>>>> 8600ee6a2f6219c9a2b9fbe2e3a248b1b5713ae1
             key: 'talent',
             href: '/talent',
             matches: (path) => path.startsWith('/talent') && !path.includes('/talent-dashboard')
@@ -36,6 +44,7 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }) 
             matches: (path) => path.startsWith('/equipment')
         },
         {
+<<<<<<< HEAD
             key: 'community',
             href: '/community',
             matches: (path) => path.startsWith('/community') || path.startsWith('/forum')
@@ -44,6 +53,16 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }) 
             key: 'about',
             href: '/about',
             matches: (path) => path === '/about'
+=======
+            key: 'portfolio',
+            href: '/portfolio',
+            matches: (path) => path.startsWith('/portfolio')
+        },
+        {
+            key: 'community',
+            href: '/community',
+            matches: (path) => path.startsWith('/community') || path.startsWith('/forum')
+>>>>>>> 8600ee6a2f6219c9a2b9fbe2e3a248b1b5713ae1
         }
     ];
     let links = baseLinks.map(link => (Object.assign(Object.assign({}, link), { name: t(`nav.${link.key}`) })));

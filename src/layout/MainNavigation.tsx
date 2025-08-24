@@ -32,6 +32,14 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
       key: 'services',
       href: '/services',
       matches: (path: string) => path.startsWith('/services') || path.startsWith('/it-onsite-services')
+<<<<<<< HEAD
+=======
+    },
+    {
+      key: 'micro-saas',
+      href: '/micro-saas-services',
+      matches: (path: string) => path.startsWith('/micro-saas-services')
+>>>>>>> 8600ee6a2f6219c9a2b9fbe2e3a248b1b5713ae1
     },
     {
       key: 'talent',
@@ -41,17 +49,25 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
     {
       key: 'equipment',
       href: '/equipment',
-      matches: (path:string) => path.startsWith('/equipment')
+      matches: (path: string) => path.startsWith('/equipment')
+    },
+    {
+      key: 'portfolio',
+      href: '/portfolio',
+      matches: (path: string) => path.startsWith('/portfolio')
     },
     {
       key: 'community',
       href: '/community',
       matches: (path: string) => path.startsWith('/community') || path.startsWith('/forum')
+<<<<<<< HEAD
     },
     {
       key: 'about',
       href: '/about',
       matches: (path: string) => path === '/about'
+=======
+>>>>>>> 8600ee6a2f6219c9a2b9fbe2e3a248b1b5713ae1
     }
   ];
 
