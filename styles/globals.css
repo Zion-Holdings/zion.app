@@ -2,6 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Futuristic background */
+.futuristic-bg {
+  background: radial-gradient(1200px 600px at 20% 10%, rgba(34,211,238,0.15), transparent 60%),
+              radial-gradient(900px 500px at 80% 90%, rgba(217,70,239,0.12), transparent 60%),
+              radial-gradient(800px 400px at 50% 30%, rgba(139,92,246,0.10), transparent 60%),
+              linear-gradient(180deg, rgba(15,23,42,0.9), rgba(2,6,23,0.95));
+  animation: bg-shift 20s ease-in-out infinite alternate;
+}
+
+.grid-overlay {
+  background-image: linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(circle at 50% 50%, black 50%, transparent 100%);
+  animation: grid-pan 30s linear infinite;
+}
+
+@keyframes grid-pan {
+  from { background-position: 0 0, 0 0; }
+  to { background-position: 200px 100px, 200px 100px; }
+}
+
+@keyframes bg-shift {
+  0% { filter: hue-rotate(0deg) saturate(1.2); }
+  100% { filter: hue-rotate(30deg) saturate(1.5); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px) translateX(0px); }
+  50% { transform: translateY(-12px) translateX(6px); }
+  100% { transform: translateY(0px) translateX(0px); }
+}
+
+.animate-float { animation: float 8s ease-in-out infinite; }
+
 /* Import Modern Design System */
 @import './modern-design-system.css';
 
