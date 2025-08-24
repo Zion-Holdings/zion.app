@@ -1,45 +1,43 @@
 
 import React from 'react';
-import { CategoriesSection } from "@/components/CategoriesSection";
-import { BenefitsSection } from "@/components/BenefitsSection";
-import { HowItWorksSection } from "@/components/HowItWorksSection";
-import { NewsletterSection } from "@/components/NewsletterSection";
-import { FeaturedListingsSection } from "@/components/FeaturedListingsSection";
-import { SEO } from "@/components/SEO";
-import { HeroSection } from "@/components/HeroSection";
-import { QuickAccess } from "@/components/home/QuickAccess";
-import { FeatureCTAs } from "@/components/home/FeatureCTAs";
-import { FeatureHighlights } from "@/components/home/FeatureHighlights";
-import { ITServiceRequestHero } from "@/components/home/ITServiceRequestHero";
-import { MicroSaasShowcase } from "@/components/home/MicroSaasShowcase";
+import { HeroSection } from "../components/HeroSection";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-background">
-      <SEO 
-        title="Zion - The Tech & AI Marketplace" 
-        description="Discover top AI and tech talent, services, and equipment in one place."
-        keywords="AI, technology, marketplace, services, talent"
-        canonical="https://app.ziontechgroup.com/"
-      />
-
-      <ITServiceRequestHero />
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-4xl font-bold text-center mb-8 text-gradient">
+          Welcome to Zion Tech Group
+        </h1>
+        <p className="text-xl text-center mb-12 text-muted-foreground">
+          Your trusted partner for innovative technology solutions
+        </p>
+      </div>
 
       <HeroSection />
       
-      <QuickAccess />
-      
-      <FeatureCTAs />
-      
-      <MicroSaasShowcase />
-      
-      <FeatureHighlights />
-      
-      <CategoriesSection />
-      <BenefitsSection />
-      <HowItWorksSection />
-      <FeaturedListingsSection />
-      <NewsletterSection />
+      <div className="container mx-auto px-4 py-16">
+        <div className="grid md:grid-cols-3 gap-8">
+          <div className="glass-effect p-6 rounded-lg">
+            <h3 className="text-xl font-semibold mb-4 text-zion-cyan">Innovation</h3>
+            <p className="text-muted-foreground">
+              Cutting-edge technology solutions that drive your business forward.
+            </p>
+          </div>
+          <div className="glass-effect p-6 rounded-lg">
+            <h3 className="text-xl font-semibold mb-4 text-zion-purple">Excellence</h3>
+            <p className="text-muted-foreground">
+              Quality service delivery with attention to every detail.
+            </p>
+          </div>
+          <div className="glass-effect p-6 rounded-lg">
+            <h3 className="text-xl font-semibold mb-4 text-zion-blue">Partnership</h3>
+            <p className="text-muted-foreground">
+              Long-term relationships built on trust and mutual success.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
