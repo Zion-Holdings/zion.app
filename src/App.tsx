@@ -1,19 +1,39 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import NotFound from './pages/NotFound';
-import MicroSaasServices from './pages/MicroSaasServices';
 
-<<<<<<< HEAD
-// Lazy load pages with better error handling
+import { ThemeProvider } from "./components/ThemeProvider";
+import { useScrollToTop } from "./hooks/useScrollToTop";
+import { WhitelabelProvider } from "./context/WhitelabelContext";
+import { ToasterProvider } from "./components/Toaster";
+import { Sonner } from "./components/Sonner";
+
+// Lazy load pages
+const Home = React.lazy(() => import('./pages/Home'));
+const AboutPage = React.lazy(() => import('./pages/About'));
+const AISolutionsPage = React.lazy(() => import('./pages/AISolutions'));
+const ITServicesPage = React.lazy(() => import('./pages/ITServices'));
+const EnterprisePage = React.lazy(() => import('./pages/Enterprise'));
+const DeveloperPortalPage = React.lazy(() => import('./pages/DeveloperPortal'));
+const HelpCenterPage = React.lazy(() => import('./pages/HelpCenter'));
+const CookiesPage = React.lazy(() => import('./pages/Cookies'));
+const AccessibilityPage = React.lazy(() => import('./pages/Accessibility'));
+
+// Our comprehensive services pages
 const ComprehensiveServicesPage = React.lazy(() => import('./pages/ComprehensiveServicesPage'));
 const ServiceDetailPage = React.lazy(() => import('./pages/ServiceDetailPage'));
 const PricingPage = React.lazy(() => import('./pages/PricingPage'));
 
 const baseRoutes = [
   { path: '/', element: <Home /> },
-  { path: '/about', element: <About /> },
-  { path: '/contact', element: <Contact /> },
+  { path: '/about', element: <AboutPage /> },
+  { path: '/ai-solutions', element: <AISolutionsPage /> },
+  { path: '/it-services', element: <ITServicesPage /> },
+  { path: '/enterprise', element: <EnterprisePage /> },
+  { path: '/developers', element: <DeveloperPortalPage /> },
+  { path: '/help-center', element: <HelpCenterPage /> },
+  { path: '/cookies', element: <CookiesPage /> },
+  { path: '/accessibility', element: <AccessibilityPage /> },
+  // Our comprehensive services routes
   { path: '/comprehensive-services', element: <ComprehensiveServicesPage /> },
   { path: '/services/:id', element: <ServiceDetailPage /> },
   { path: '/pricing', element: <PricingPage /> },
@@ -40,29 +60,23 @@ function ErrorBoundary({ children }: { children: React.ReactNode }) {
 function App() {
   return (
     <ErrorBoundary>
-      <Router>
-        <Routes>
-          {baseRoutes.map(({ path, element }) => (
-            <Route key={path} path={path} element={element} />
-          ))}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </Router>
+      <WhitelabelProvider>
+        <ThemeProvider>
+          <Router>
+            <Suspense fallback={<EnhancedSuspenseFallback />}>
+              <Routes>
+                {baseRoutes.map(({ path, element }) => (
+                  <Route key={path} path={path} element={element} />
+                ))}
+              </Routes>
+            </Suspense>
+            <ToasterProvider />
+            <Sonner />
+          </Router>
+        </ThemeProvider>
+      </WhitelabelProvider>
     </ErrorBoundary>
   );
 }
-=======
-function App() {
-  return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/micro-saas-services" element={<MicroSaasServices />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </Router>
-  );
-}
->>>>>>> f2b2fbcfb4f353ea65468110a1b8ef64d9d7cf73
 
 export default App;
