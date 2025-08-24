@@ -1,0 +1,67 @@
+name: Autonomous Daily Automation
+
+on:
+  schedule:
+    - cron: '15 3 * * *' # daily at 03:15 UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: autonomous-daily
+  cancel-in-progress: false
+
+jobs:
+  run-automation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run comprehensive automations
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          set -e
+          npm run automation:all || true
+          npm run frontend-sync:analyze || true
+          npm run venture:analyze || true
+          npm run feature-marketing:analyze || true
+          npm run alignment:scan || true
+          npm run ui-evolution:analyze || true
+          npm run variation:analyze || true
+
+      - name: Lint (non-fatal)
+        run: npm run lint || true
+
+      - name: Type check (non-fatal)
+        run: npx tsc --noEmit || true
+
+      - name: Commit and push changes (if any)
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -e
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore(autonomous-daily): apply automated analyses & updates [skip ci]"
+            git push origin HEAD:main
+          fi
