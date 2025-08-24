@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-
-
-export function Toaster() {
-  return <div className="toaster-container"></div>;
-}
-=======
 import React from 'react';
 import { cn } from '@/lib/utils';
 
@@ -98,6 +91,7 @@ export const Toaster: React.FC<ToasterProps> = ({ toasts, onDismiss }) => {
             onClick={() => onDismiss(toast.id)}
             className="rounded-md p-1 text-muted-foreground hover:text-foreground"
           >
+            <span className="sr-only">Close</span>
             ×
           </button>
         </div>
@@ -105,4 +99,3 @@ export const Toaster: React.FC<ToasterProps> = ({ toasts, onDismiss }) => {
     </div>
   );
 };
->>>>>>> 2d0a9714a42cb6b8a431feb1f9dc2a642983276c

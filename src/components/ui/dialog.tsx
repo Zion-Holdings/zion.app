@@ -54,7 +54,13 @@ export const Dialog: React.FC<DialogProps> = ({
   };
 
   return (
-    <DialogContext.Provider value={{ open: isOpen, setOpen: handleOpenChange }}>
+    <DialogContext.Provider value={{ open: isOpen, setOpen: (value: boolean | ((prev: boolean) => boolean)) => {
+      if (typeof value === 'function') {
+        setIsOpen(value);
+      } else {
+        setIsOpen(value);
+      }
+    }}}>
       <div className={cn('relative', className)} {...props}>
         {children}
       </div>

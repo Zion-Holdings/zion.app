@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { COMPREHENSIVE_SERVICES } from '../data/comprehensiveServices';
-import { Brain, Zap, Target, Monitor, Circle, ArrowRight, CheckCircle, Users } from 'lucide-react';
+import { Brain, Zap, Target, Monitor, Circle, ArrowRight, CheckCircle, Users, Clock } from 'lucide-react';
 
 const AIServicesShowcase: React.FC = () => {
   const [activeTab, setActiveTab] = useState('services');

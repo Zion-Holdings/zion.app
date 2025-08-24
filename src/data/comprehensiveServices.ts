@@ -368,7 +368,6 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
       "Wholesale distributors",
       "Restaurant and hospitality"
     ],
-<<<<<<< HEAD
     targetAudience: ["Inventory managers", "Retail owners", "Operations managers", "Small businesses", "E-commerce companies"],
     integration: ["Shopify", "WooCommerce", "QuickBooks", "Xero", "Shipping carriers", "POS systems"],
     support: ["Phone support", "Email support", "Implementation assistance", "Training sessions", "Documentation"],
@@ -384,16 +383,6 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
       avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
     },
     tags: ["Inventory Management", "AI", "Automation", "Retail", "E-commerce"]
-=======
-    tags: ["Cloud Migration", "AWS", "Azure", "GCP", "Infrastructure", "Optimization"],
-    estimatedDelivery: "8-16 weeks",
-    supportLevel: "premium",
-    marketPrice: "$18,000 - $75,000",
-    contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
-    }
   },
 
   // Web Development Services
@@ -401,11 +390,13 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
     id: "web-app-development",
     title: "Modern Web Application Development",
     description: "Full-stack web application development using cutting-edge technologies and best practices for optimal performance and user experience.",
-    category: "Web Development",
-    subcategory: "Full-Stack Development",
-    price: 15000,
-    currency: "$",
-    pricingModel: "per-project",
+    category: "Development",
+    price: {
+      monthly: 0,
+      yearly: 0,
+      oneTime: 15000,
+      currency: "$"
+    },
     features: [
       "Responsive design and development",
       "Frontend and backend development",
@@ -439,7 +430,6 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
       "Government agencies"
     ],
     tags: ["Web Development", "React", "Node.js", "Full-Stack", "Responsive Design", "Performance"],
-    estimatedDelivery: "6-12 weeks",
     supportLevel: "standard",
     marketPrice: "$15,000 - $50,000",
     contactInfo: {
@@ -454,11 +444,13 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
     id: "mobile-app-development",
     title: "Cross-Platform Mobile App Development",
     description: "Native-quality mobile applications for iOS and Android using cross-platform technologies for cost-effective development and maintenance.",
-    category: "Mobile Development",
-    subcategory: "Cross-Platform",
-    price: 20000,
-    currency: "$",
-    pricingModel: "per-project",
+    category: "Development",
+    price: {
+      monthly: 0,
+      yearly: 0,
+      oneTime: 20000,
+      currency: "$"
+    },
     features: [
       "Cross-platform development (iOS & Android)",
       "Native performance optimization",
@@ -492,7 +484,6 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
       "Government agencies"
     ],
     tags: ["Mobile Development", "React Native", "Flutter", "Cross-Platform", "iOS", "Android"],
-    estimatedDelivery: "8-16 weeks",
     supportLevel: "standard",
     marketPrice: "$20,000 - $60,000",
     contactInfo: {
@@ -507,11 +498,12 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
     id: "data-analytics-platform",
     title: "Business Intelligence & Data Analytics Platform",
     description: "Comprehensive data analytics solution that transforms raw data into actionable insights for informed decision-making and business growth.",
-    category: "Data Analytics",
-    subcategory: "Business Intelligence",
-    price: 10000,
-    currency: "$",
-    pricingModel: "monthly",
+    category: "Analytics",
+    price: {
+      monthly: 10000,
+      yearly: 100000,
+      currency: "$"
+    },
     features: [
       "Data integration and warehousing",
       "Real-time dashboards and reports",
@@ -545,7 +537,6 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
       "Technology companies"
     ],
     tags: ["Data Analytics", "Business Intelligence", "Dashboards", "Reporting", "Predictive Analytics"],
-    estimatedDelivery: "4-8 weeks",
     supportLevel: "standard",
     marketPrice: "$10,000 - $30,000/month",
     contactInfo: {
@@ -560,11 +551,13 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
     id: "devops-automation",
     title: "DevOps & CI/CD Pipeline Automation",
     description: "End-to-end DevOps implementation with automated CI/CD pipelines, infrastructure as code, and monitoring solutions for faster, more reliable software delivery.",
-    category: "DevOps & Automation",
-    subcategory: "CI/CD & Automation",
-    price: 12000,
-    currency: "$",
-    pricingModel: "per-project",
+    category: "Automation",
+    price: {
+      monthly: 0,
+      yearly: 0,
+      oneTime: 12000,
+      currency: "$"
+    },
     features: [
       "CI/CD pipeline setup and automation",
       "Infrastructure as code (IaC)",
@@ -598,7 +591,6 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
       "Healthcare organizations"
     ],
     tags: ["DevOps", "CI/CD", "Automation", "Docker", "Kubernetes", "Infrastructure"],
-    estimatedDelivery: "6-10 weeks",
     supportLevel: "standard",
     marketPrice: "$12,000 - $40,000",
     contactInfo: {
@@ -614,10 +606,12 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
     title: "Blockchain & Smart Contract Development",
     description: "Custom blockchain solutions and smart contract development for decentralized applications, supply chain tracking, and secure digital transactions.",
     category: "Blockchain",
-    subcategory: "Development",
-    price: 30000,
-    currency: "$",
-    pricingModel: "per-project",
+    price: {
+      monthly: 0,
+      yearly: 0,
+      oneTime: 30000,
+      currency: "$"
+    },
     features: [
       "Custom blockchain development",
       "Smart contract creation",
@@ -651,7 +645,6 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
       "Real estate companies"
     ],
     tags: ["Blockchain", "Smart Contracts", "DApps", "Ethereum", "DeFi", "NFTs"],
-    estimatedDelivery: "12-24 weeks",
     supportLevel: "premium",
     marketPrice: "$30,000 - $100,000",
     contactInfo: {
@@ -666,11 +659,13 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
     id: "iot-platform",
     title: "IoT Platform & Device Management",
     description: "Comprehensive IoT platform for device management, data collection, and real-time monitoring with advanced analytics and automation capabilities.",
-    category: "IoT Solutions",
-    subcategory: "Platform Development",
-    price: 25000,
-    currency: "$",
-    pricingModel: "per-project",
+    category: "IoT",
+    price: {
+      monthly: 0,
+      yearly: 0,
+      oneTime: 25000,
+      currency: "$"
+    },
     features: [
       "IoT device management",
       "Real-time data collection",
@@ -704,7 +699,6 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
       "Healthcare organizations"
     ],
     tags: ["IoT", "Device Management", "Edge Computing", "Real-time Analytics", "Automation"],
-    estimatedDelivery: "16-24 weeks",
     supportLevel: "premium",
     marketPrice: "$25,000 - $80,000",
     contactInfo: {
@@ -719,11 +713,12 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
     id: "digital-marketing-automation",
     title: "AI-Powered Digital Marketing Automation",
     description: "Intelligent marketing automation platform that leverages AI to optimize campaigns, personalize content, and maximize ROI across all digital channels.",
-    category: "Digital Marketing",
-    subcategory: "Automation",
-    price: 5000,
-    currency: "$",
-    pricingModel: "monthly",
+    category: "IT Services",
+    price: {
+      monthly: 5000,
+      yearly: 50000,
+      currency: "$"
+    },
     features: [
       "Multi-channel campaign management",
       "AI-powered content optimization",
@@ -757,7 +752,6 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
       "Non-profit organizations"
     ],
     tags: ["Digital Marketing", "Automation", "AI", "Campaign Management", "Analytics"],
-    estimatedDelivery: "2-4 weeks",
     supportLevel: "standard",
     marketPrice: "$5,000 - $20,000/month",
     contactInfo: {
@@ -772,11 +766,13 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
     id: "it-strategy-consulting",
     title: "IT Strategy & Digital Transformation Consulting",
     description: "Strategic IT consulting services to align technology with business objectives, optimize IT operations, and drive digital transformation initiatives.",
-    category: "IT Consulting",
-    subcategory: "Strategy",
-    price: 20000,
-    currency: "$",
-    pricingModel: "per-project",
+    category: "IT Services",
+    price: {
+      monthly: 0,
+      yearly: 0,
+      oneTime: 20000,
+      currency: "$"
+    },
     features: [
       "IT strategy development",
       "Technology roadmap planning",
@@ -810,7 +806,6 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
       "Manufacturing companies"
     ],
     tags: ["IT Strategy", "Digital Transformation", "Consulting", "Governance", "Compliance"],
-    estimatedDelivery: "8-16 weeks",
     supportLevel: "premium",
     marketPrice: "$20,000 - $75,000",
     contactInfo: {
@@ -825,11 +820,13 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
     id: "software-testing-automation",
     title: "Automated Software Testing & Quality Assurance",
     description: "Comprehensive software testing services including automated testing, performance testing, and quality assurance to ensure reliable and high-quality software delivery.",
-    category: "Software Testing",
-    subcategory: "Automation",
-    price: 8000,
-    currency: "$",
-    pricingModel: "per-project",
+    category: "IT Services",
+    price: {
+      monthly: 0,
+      yearly: 0,
+      oneTime: 8000,
+      currency: "$"
+    },
     features: [
       "Test automation framework development",
       "Performance and load testing",
@@ -863,7 +860,6 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
       "Government agencies"
     ],
     tags: ["Software Testing", "Automation", "Quality Assurance", "Performance Testing", "Security Testing"],
-    estimatedDelivery: "4-8 weeks",
     supportLevel: "standard",
     marketPrice: "$8,000 - $25,000",
     contactInfo: {
@@ -877,11 +873,12 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
     id: "ai-content-generation",
     title: "AI-Powered Content Generation Platform",
     description: "Enterprise-grade AI content generation platform that creates high-quality, SEO-optimized content for blogs, social media, marketing materials, and technical documentation.",
-    category: "AI & Machine Learning",
-    subcategory: "Content & Marketing",
-    price: 2500,
-    currency: "$",
-    pricingModel: "monthly",
+    category: "AI Services",
+    price: {
+      monthly: 2500,
+      yearly: 25000,
+      currency: "$"
+    },
     features: [
       "Multi-language content generation",
       "SEO optimization and keyword integration",
@@ -916,7 +913,6 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
       "Publishing companies"
     ],
     tags: ["AI Content", "Content Generation", "SEO", "Marketing", "Automation"],
-    estimatedDelivery: "2-4 weeks",
     supportLevel: "premium",
     marketPrice: "$2,500 - $5,000/month",
     contactInfo: {
@@ -929,11 +925,12 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
     id: "ai-customer-support",
     title: "Intelligent Customer Support Automation",
     description: "AI-powered customer support platform that provides 24/7 automated assistance, intelligent ticket routing, and personalized customer experiences.",
-    category: "AI & Machine Learning",
-    subcategory: "Customer Experience",
-    price: 1800,
-    currency: "$",
-    pricingModel: "monthly",
+    category: "AI Services",
+    price: {
+      monthly: 1800,
+      yearly: 18000,
+      currency: "$"
+    },
     features: [
       "Natural language processing for customer queries",
       "Automated ticket classification and routing",
@@ -968,7 +965,6 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
       "Service-based businesses"
     ],
     tags: ["Customer Support", "AI Automation", "Chatbot", "Customer Experience", "24/7 Support"],
-    estimatedDelivery: "3-6 weeks",
     supportLevel: "premium",
     marketPrice: "$1,800 - $3,500/month",
     contactInfo: {
@@ -982,11 +978,12 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
     id: "ai-threat-detection",
     title: "AI-Powered Threat Detection & Response",
     description: "Next-generation cybersecurity platform that uses artificial intelligence to detect, analyze, and respond to threats in real-time, providing proactive protection against evolving cyber risks.",
-    category: "Cybersecurity",
-    subcategory: "Threat Detection",
-    price: 4200,
-    currency: "$",
-    pricingModel: "monthly",
+    category: "Security",
+    price: {
+      monthly: 4200,
+      yearly: 42000,
+      currency: "$"
+    },
     features: [
       "Real-time threat detection using AI/ML",
       "Behavioral analysis and anomaly detection",
@@ -1021,7 +1018,6 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
       "Security operations centers"
     ],
     tags: ["AI Security", "Threat Detection", "Incident Response", "Cybersecurity", "Real-time Monitoring"],
-    estimatedDelivery: "4-8 weeks",
     supportLevel: "enterprise",
     marketPrice: "$4,200 - $8,000/month",
     contactInfo: {
@@ -1034,11 +1030,12 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
     id: "zero-trust-security",
     title: "Zero Trust Security Architecture",
     description: "Comprehensive zero trust security implementation that verifies every user, device, and network connection before granting access, ensuring maximum security for modern hybrid work environments.",
-    category: "Cybersecurity",
-    subcategory: "Access Control",
-    price: 3500,
-    currency: "$",
-    pricingModel: "monthly",
+    category: "Security",
+    price: {
+      monthly: 3500,
+      yearly: 35000,
+      currency: "$"
+    },
     features: [
       "Identity verification and authentication",
       "Device trust assessment",
@@ -1087,11 +1084,12 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
     id: "kubernetes-orchestration",
     title: "Enterprise Kubernetes Orchestration Platform",
     description: "Advanced Kubernetes management platform that simplifies container orchestration, provides automated scaling, monitoring, and security for enterprise-grade applications.",
-    category: "Cloud Computing",
-    subcategory: "Container Orchestration",
-    price: 2800,
-    currency: "$",
-    pricingModel: "monthly",
+    category: "Cloud",
+    price: {
+      monthly: 2800,
+      yearly: 28000,
+      currency: "$"
+    },
     features: [
       "Multi-cluster management",
       "Automated scaling and load balancing",
@@ -1139,11 +1137,12 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
     id: "serverless-architecture",
     title: "Serverless Architecture & API Development",
     description: "End-to-end serverless architecture design and implementation, including API development, event-driven processing, and cost-optimized cloud solutions.",
-    category: "Cloud Computing",
-    subcategory: "Serverless",
-    price: 2200,
-    currency: "$",
-    pricingModel: "monthly",
+    category: "Cloud",
+    price: {
+      monthly: 2200,
+      yearly: 22000,
+      currency: "$"
+    },
     features: [
       "Serverless architecture design",
       "API Gateway and Lambda development",
@@ -1192,11 +1191,12 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
     id: "workflow-automation",
     title: "Business Workflow Automation Platform",
     description: "Intelligent workflow automation platform that streamlines business processes, reduces manual tasks, and improves operational efficiency across all departments.",
-    category: "Digital Transformation",
-    subcategory: "Process Automation",
-    price: 1200,
-    currency: "$",
-    pricingModel: "monthly",
+    category: "IT Services",
+    price: {
+      monthly: 1200,
+      yearly: 12000,
+      currency: "$"
+    },
     features: [
       "Drag-and-drop workflow builder",
       "Integration with 100+ business tools",
@@ -1244,11 +1244,12 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
     id: "data-visualization",
     title: "Interactive Data Visualization Dashboard",
     description: "Advanced data visualization platform that transforms complex data into interactive charts, graphs, and dashboards for better decision-making and insights.",
-    category: "Data Analytics",
-    subcategory: "Visualization",
-    price: 1500,
-    currency: "$",
-    pricingModel: "monthly",
+    category: "Analytics",
+    price: {
+      monthly: 1500,
+      yearly: 15000,
+      currency: "$"
+    },
     features: [
       "Interactive charts and graphs",
       "Real-time data updates",
@@ -1297,11 +1298,12 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
     id: "edge-computing",
     title: "Edge Computing & IoT Platform",
     description: "Comprehensive edge computing platform that brings computation and data storage closer to data sources, enabling real-time processing for IoT applications and edge devices.",
-    category: "IoT Solutions",
-    subcategory: "Edge Computing",
-    price: 3800,
-    currency: "$",
-    pricingModel: "monthly",
+    category: "IoT",
+    price: {
+      monthly: 3800,
+      yearly: 38000,
+      currency: "$"
+    },
     features: [
       "Edge node management and monitoring",
       "Real-time data processing",
@@ -1349,11 +1351,13 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
     id: "quantum-computing",
     title: "Quantum Computing Solutions & Consulting",
     description: "Cutting-edge quantum computing solutions and consulting services for organizations looking to leverage quantum algorithms and quantum-safe cryptography.",
-    category: "AI & Machine Learning",
-    subcategory: "Quantum Computing",
-    price: 15000,
-    currency: "$",
-    pricingModel: "per-project",
+    category: "AI Services",
+    price: {
+      monthly: 0,
+      yearly: 0,
+      oneTime: 15000,
+      currency: "$"
+    },
     features: [
       "Quantum algorithm development",
       "Quantum-safe cryptography implementation",
@@ -1507,11 +1511,13 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
     id: "progressive-web-app",
     title: "Progressive Web App (PWA) Development",
     description: "High-performance progressive web applications that provide native app-like experiences with offline functionality, push notifications, and cross-platform compatibility.",
-    category: "Web Development",
-    subcategory: "Progressive Web Apps",
-    price: 8500,
-    currency: "$",
-    pricingModel: "per-project",
+    category: "Development",
+    price: {
+      monthly: 0,
+      yearly: 0,
+      oneTime: 8500,
+      currency: "$"
+    },
     features: [
       "Offline functionality and caching",
       "Push notifications",
@@ -1559,11 +1565,13 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
     id: "ai-powered-mobile-app",
     title: "AI-Powered Mobile Application Development",
     description: "Intelligent mobile applications that leverage artificial intelligence for personalized experiences, predictive analytics, and automated decision-making.",
-    category: "Mobile Development",
-    subcategory: "AI Integration",
-    price: 12000,
-    currency: "$",
-    pricingModel: "per-project",
+    category: "Development",
+    price: {
+      monthly: 0,
+      yearly: 0,
+      oneTime: 12000,
+      currency: "$"
+    },
     features: [
       "AI-powered personalization",
       "Predictive analytics",
@@ -1612,11 +1620,12 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
     id: "ai-marketing-automation",
     title: "AI-Powered Marketing Automation Platform",
     description: "Intelligent marketing automation platform that uses AI to optimize campaigns, personalize content, and maximize ROI across all marketing channels.",
-    category: "Digital Marketing",
-    subcategory: "Marketing Automation",
-    price: 2800,
-    currency: "$",
-    pricingModel: "monthly",
+    category: "IT Services",
+    price: {
+      monthly: 2800,
+      yearly: 28000,
+      currency: "$"
+    },
     features: [
       "AI-driven campaign optimization",
       "Personalized content delivery",
@@ -1664,11 +1673,12 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
     id: "predictive-analytics",
     title: "Predictive Analytics & Business Intelligence",
     description: "Advanced predictive analytics platform that provides actionable insights, trend forecasting, and data-driven recommendations for strategic business decisions.",
-    category: "Data Analytics",
-    subcategory: "Predictive Analytics",
-    price: 4500,
-    currency: "$",
-    pricingModel: "monthly",
+    category: "Analytics",
+    price: {
+      monthly: 4500,
+      yearly: 45000,
+      currency: "$"
+    },
     features: [
       "Predictive modeling and forecasting",
       "Advanced statistical analysis",
@@ -1717,11 +1727,12 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
     id: "green-it-solutions",
     title: "Green IT & Sustainable Technology Solutions",
     description: "Environmentally conscious IT solutions that reduce carbon footprint, optimize energy consumption, and implement sustainable technology practices for eco-friendly business operations.",
-    category: "Digital Transformation",
-    subcategory: "Sustainability",
-    price: 3200,
-    currency: "$",
-    pricingModel: "monthly",
+    category: "IT Services",
+    price: {
+      monthly: 3200,
+      yearly: 32000,
+      currency: "$"
+    },
     features: [
       "Energy-efficient infrastructure design",
       "Carbon footprint monitoring",
@@ -1769,11 +1780,12 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
     id: "digital-twin-platform",
     title: "Digital Twin & Simulation Platform",
     description: "Advanced digital twin platform that creates virtual replicas of physical systems, enabling real-time monitoring, predictive maintenance, and simulation-based optimization.",
-    category: "IoT Solutions",
-    subcategory: "Digital Twins",
-    price: 5500,
-    currency: "$",
-    pricingModel: "monthly",
+    category: "IoT",
+    price: {
+      monthly: 5500,
+      yearly: 55000,
+      currency: "$"
+    },
     features: [
       "3D digital twin creation",
       "Real-time data synchronization",
@@ -1821,44 +1833,44 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
 
 export const SERVICE_CATEGORIES = [
   {
-    name: "AI & Machine Learning",
+    name: "AI Services",
     description: "Transform your business with intelligent automation and data-driven insights",
-    services: COMPREHENSIVE_SERVICES.filter(s => s.category === "AI & Machine Learning"),
+    services: COMPREHENSIVE_SERVICES.filter(s => s.category === "AI Services"),
     icon: "🤖",
     color: "from-purple-500 to-indigo-600"
   },
   {
-    name: "Cybersecurity",
+    name: "Security",
     description: "Protect your organization with comprehensive security solutions and monitoring",
-    services: COMPREHENSIVE_SERVICES.filter(s => s.category === "Cybersecurity"),
+    services: COMPREHENSIVE_SERVICES.filter(s => s.category === "Security"),
     icon: "🔒",
     color: "from-red-500 to-pink-600"
   },
   {
-    name: "Cloud Computing",
+    name: "Cloud",
     description: "Modernize your infrastructure with cloud solutions and DevOps automation",
-    services: COMPREHENSIVE_SERVICES.filter(s => s.category === "Cloud Computing"),
+    services: COMPREHENSIVE_SERVICES.filter(s => s.category === "Cloud"),
     icon: "☁️",
     color: "from-blue-500 to-cyan-600"
   },
   {
-    name: "Data Analytics",
+    name: "Analytics",
     description: "Unlock business insights with advanced analytics and data engineering",
-    services: COMPREHENSIVE_SERVICES.filter(s => s.category === "Data Analytics"),
+    services: COMPREHENSIVE_SERVICES.filter(s => s.category === "Analytics"),
     icon: "📊",
     color: "from-green-500 to-emerald-600"
   },
   {
-    name: "Digital Transformation",
+    name: "IT Services",
     description: "Accelerate your digital journey with strategic transformation services",
-    services: COMPREHENSIVE_SERVICES.filter(s => s.category === "Digital Transformation"),
+    services: COMPREHENSIVE_SERVICES.filter(s => s.category === "IT Services"),
     icon: "🚀",
     color: "from-orange-500 to-red-600"
   },
   {
-    name: "Web Development",
+    name: "Development",
     description: "Build custom applications and digital experiences for your business",
-    services: COMPREHENSIVE_SERVICES.filter(s => s.category === "Web Development"),
+    services: COMPREHENSIVE_SERVICES.filter(s => s.category === "Development"),
     icon: "💻",
     color: "from-indigo-500 to-purple-600"
   },
@@ -1903,6 +1915,5 @@ export const SERVICE_CATEGORIES = [
     services: COMPREHENSIVE_SERVICES.filter(s => s.category === "Digital Marketing"),
     icon: "📈",
     color: "from-purple-500 to-indigo-600"
->>>>>>> 2d0a9714a42cb6b8a431feb1f9dc2a642983276c
   }
 ];

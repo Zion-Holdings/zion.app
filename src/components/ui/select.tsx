@@ -1,64 +1,3 @@
-<<<<<<< HEAD
-
-
-interface SelectProps {
-  children: React.ReactNode;
-  className?: string;
-  value?: string;
-  onChange?: (e: React.ChangeEvent<HTMLSelectElement>) => void;
-  disabled?: boolean;
-}
-
-export function Select({ 
-  children, 
-  className = '', 
-  value, 
-  onChange, 
-  disabled = false 
-}: SelectProps) {
-  const baseClasses = 'flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50';
-  
-  return (
-    <select
-      className={`${baseClasses} ${className}`}
-      value={value}
-      onChange={onChange}
-      disabled={disabled}
-    >
-      {children}
-    </select>
-  );
-}
-
-interface SelectItemProps {
-  children: React.ReactNode;
-  value: string;
-}
-
-export function SelectItem({ children, value }: SelectItemProps) {
-  return (
-    <option value={value}>
-      {children}
-    </option>
-  );
-}
-
-export function SelectTrigger({ children, className = '' }: { children: React.ReactNode; className?: string }) {
-  return (
-    <div className={`flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 ${className}`}>
-      {children}
-    </div>
-  );
-}
-
-export function SelectValue({ placeholder }: { placeholder?: string }) {
-  return <span className="text-sm">{placeholder || 'Select an option'}</span>;
-}
-
-export function SelectContent({ children }: { children: React.ReactNode }) {
-  return <div className="relative">{children}</div>;
-}
-=======
 import React from 'react';
 import { cn } from '@/lib/utils';
 
@@ -100,8 +39,14 @@ export const Select: React.FC<SelectProps> = ({
   className,
   ...props
 }) => {
+  const handleValueChange = (newValue: string) => {
+    if (!disabled && onValueChange) {
+      onValueChange(newValue);
+    }
+  };
+
   return (
-    <SelectContext.Provider value={{ value, onValueChange: onValueChange || (() => {}), disabled }}>
+    <SelectContext.Provider value={{ value, onValueChange: handleValueChange, disabled }}>
       <div className={cn('relative', className)} {...props}>
         {children}
       </div>
@@ -109,25 +54,19 @@ export const Select: React.FC<SelectProps> = ({
   );
 };
 
-export const SelectTrigger: React.FC<SelectTriggerProps> = ({
-  children,
-  className,
-  ...props
-}) => {
+export const SelectTrigger: React.FC<SelectTriggerProps> = ({ children, className, ...props }) => {
   const context = React.useContext(SelectContext);
   if (!context) {
-    throw new Error('SelectTrigger must be used within Select');
+    throw new Error('SelectTrigger must be used within a Select component');
   }
-
-  const { disabled } = context;
 
   return (
     <button
       className={cn(
-        'flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50',
+        'flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50',
         className
       )}
-      disabled={disabled}
+      disabled={context.disabled}
       {...props}
     >
       {children}
@@ -135,69 +74,44 @@ export const SelectTrigger: React.FC<SelectTriggerProps> = ({
   );
 };
 
-export const SelectContent: React.FC<SelectContentProps> = ({
-  children,
-  className,
-  ...props
-}) => {
-  return (
-    <div
-      className={cn(
-        'relative z-50 min-w-[8rem] overflow-hidden rounded-md border bg-popover text-popover-foreground shadow-md data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2',
-        className
-      )}
-      {...props}
-    >
-      {children}
-    </div>
-  );
-};
-
-export const SelectItem: React.FC<SelectItemProps> = ({
-  value,
-  children,
-  disabled = false,
-  className,
-  ...props
-}) => {
+export const SelectValue: React.FC<SelectValueProps> = ({ placeholder, className, ...props }) => {
   const context = React.useContext(SelectContext);
   if (!context) {
-    throw new Error('SelectItem must be used within Select');
+    throw new Error('SelectValue must be used within a Select component');
   }
 
-  const { onValueChange } = context;
-
   return (
-    <div
-      className={cn(
-        'relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
-        disabled && 'pointer-events-none opacity-50',
-        className
-      )}
-      onClick={() => !disabled && onValueChange(value)}
-      {...props}
-    >
-      {children}
-    </div>
-  );
-};
-
-export const SelectValue: React.FC<SelectValueProps> = ({
-  placeholder = 'Select an option',
-  className,
-  ...props
-}) => {
-  const context = React.useContext(SelectContext);
-  if (!context) {
-    throw new Error('SelectValue must be used within Select');
-  }
-
-  const { value } = context;
-
-  return (
-    <span className={cn('block truncate', className)} {...props}>
-      {value || placeholder}
+    <span className={cn('text-sm', className)} {...props}>
+      {context.value || placeholder || 'Select an option'}
     </span>
   );
 };
->>>>>>> 2d0a9714a42cb6b8a431feb1f9dc2a642983276c
+
+export const SelectContent: React.FC<SelectContentProps> = ({ children, className, ...props }) => {
+  return (
+    <div className={cn('relative', className)} {...props}>
+      {children}
+    </div>
+  );
+};
+
+export const SelectItem: React.FC<SelectItemProps> = ({ value, children, disabled, className, ...props }) => {
+  const context = React.useContext(SelectContext);
+  if (!context) {
+    throw new Error('SelectItem must be used within a Select component');
+  }
+
+  return (
+    <div
+      className={cn(
+        'relative flex w-full cursor-pointer select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground',
+        disabled && 'pointer-events-none opacity-50',
+        className
+      )}
+      onClick={() => context.onValueChange(value)}
+      {...props}
+    >
+      {children}
+    </div>
+  );
+};

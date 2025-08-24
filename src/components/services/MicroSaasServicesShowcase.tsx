@@ -139,7 +139,7 @@ export function MicroSaasServicesShowcase() {
             
             {/* Category Filter */}
             <div>
-              <Select value={selectedCategory} onChange={(e) => setSelectedCategory(e.target.value)}>
+              <Select value={selectedCategory} onValueChange={setSelectedCategory}>
                 <SelectTrigger className="bg-white/20 border-white/30 text-white focus:bg-white/30 focus:border-zion-cyan/50 h-12">
                   <SelectValue placeholder="Category" />
                 </SelectTrigger>
@@ -154,10 +154,7 @@ export function MicroSaasServicesShowcase() {
             
             {/* Price Filter */}
             <div>
-              <Select value={priceRange} onChange={(e) => setPriceRange(e.target.value)}>
-                <SelectTrigger className="bg-white/20 border-white/30 text-white focus:bg-white/30 focus:border-zion-cyan/50 h-12">
-                  <SelectValue placeholder="Price Range" />
-                </SelectTrigger>
+              <Select value={priceRange} onValueChange={setPriceRange}>
                 <SelectContent>
                   <SelectItem value="all">All Prices</SelectItem>
                   <SelectItem value="free">Free</SelectItem>

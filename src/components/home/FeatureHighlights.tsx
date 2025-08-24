@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Check, Sparkles, Users, Building, ArrowRight } from "lucide-react";
@@ -105,122 +103,64 @@ export function FeatureHighlights() {
         viewport={{ once: true }}
       >
         <motion.div 
-          className="text-center mb-12"
+          className="text-center mb-16"
           variants={itemVariants}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Tailored Solutions for Everyone</h2>
-          <p className="text-zion-slate-light text-lg md:text-xl max-w-4xl mx-auto leading-relaxed">
-            Whatever your role in the tech ecosystem, Zion offers specialized features to help you succeed
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            Platform <span className="bg-gradient-to-r from-zion-cyan to-zion-purple bg-clip-text text-transparent">Highlights</span>
+          </h2>
+          <p className="text-zion-slate-light text-lg max-w-3xl mx-auto">
+            Discover how Zion Tech Group's platform serves different user types with tailored features and capabilities
           </p>
         </motion.div>
-        
+
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8"
+          className="grid grid-cols-1 lg:grid-cols-3 gap-8"
           variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
         >
-          {highlightsData.map((category, index) => (
+          {highlightsData.map((highlight, index) => (
             <motion.div
               key={index}
               variants={itemVariants}
               whileHover="hover"
               className="group"
             >
-              <Card className={`h-full ${category.bgColor} border-2 ${category.borderColor} bg-zion-blue-dark/50 backdrop-blur-sm hover:border-zion-purple/50 transition-all duration-300 hover:shadow-2xl hover:shadow-zion-purple/20`}>
-                <CardContent className="p-6 md:p-8">
-                  <div className="flex items-center gap-3 mb-6">
-                    <div className={`w-12 h-12 bg-gradient-to-br ${category.color} rounded-xl flex items-center justify-center shadow-lg`}>
-                      <div className="text-white">
-                        {category.icon}
-                      </div>
+              <Card className={`h-full border-2 ${highlight.borderColor} bg-gradient-to-br from-zion-slate-dark to-zion-slate hover:shadow-2xl hover:shadow-zion-cyan/20 transition-all duration-300`}>
+                <CardContent className="p-8">
+                  <div className={`w-16 h-16 ${highlight.bgColor} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                    <div className={`text-white ${highlight.color} bg-gradient-to-r bg-clip-text`}>
+                      {highlight.icon}
                     </div>
-                    <h3 className="text-xl md:text-2xl font-bold text-white group-hover:text-zion-cyan transition-colors">
-                      {category.title}
-                    </h3>
                   </div>
                   
-                  <ul className="space-y-4 mb-6">
-                    {category.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start group/item">
-                        <div className="w-6 h-6 bg-zion-cyan/20 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0 group-hover/item:bg-zion-cyan/40 transition-colors">
-                          <Check className="h-3 w-3 text-zion-cyan" />
-                        </div>
-                        <span className="text-zion-slate-light leading-relaxed group-hover/item:text-white transition-colors">
+                  <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-zion-cyan transition-colors">
+                    {highlight.title}
+                  </h3>
+                  
+                  <ul className="space-y-3 mb-6">
+                    {highlight.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-start space-x-3">
+                        <Check className="w-5 h-5 text-zion-cyan mt-0.5 flex-shrink-0" />
+                        <span className="text-zion-slate-light text-sm leading-relaxed">
                           {feature}
                         </span>
                       </li>
                     ))}
                   </ul>
-
-                  <div className="flex items-center justify-between">
-                    <div className="w-8 h-8 bg-zion-purple/20 rounded-full flex items-center justify-center group-hover:bg-zion-purple/40 transition-colors">
-                      <ArrowRight className="w-4 h-4 text-zion-purple" />
-                    </div>
-                    <span className="text-xs text-zion-cyan font-medium bg-zion-cyan/10 px-3 py-1 rounded-full">
-                      Learn More
-                    </span>
-                  </div>
+                  
+                  <button className="w-full bg-gradient-to-r from-zion-cyan to-zion-purple text-white py-3 px-4 rounded-xl font-medium hover:shadow-lg hover:shadow-zion-cyan/25 transition-all duration-300 flex items-center justify-center space-x-2 group-hover:scale-105">
+                    <span>Learn More</span>
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </button>
                 </CardContent>
               </Card>
             </motion.div>
           ))}
         </motion.div>
-
-        {/* Call to action */}
-        <motion.div 
-          className="mt-12 text-center"
-          variants={itemVariants}
-        >
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-zion-purple/20 to-zion-cyan/20 px-8 py-4 rounded-full border border-zion-purple/30">
-            <Sparkles className="w-5 h-5 text-zion-cyan" />
-            <span className="text-zion-slate-light font-medium">
-              Ready to get started? Join thousands of users already on Zion
-            </span>
-          </div>
-        </motion.div>
       </motion.div>
     </section>
   );
 }
-=======
-import React from 'react';
-
-export const FeatureHighlights: React.FC = () => {
-  return (
-    <section className="py-16 bg-gray-50">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Why Choose Zion Tech Group?
-          </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            We deliver exceptional value through innovation, expertise, and proven results
-          </p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="text-center">
-            <div className="text-4xl mb-4">🎯</div>
-            <h3 className="text-xl font-semibold mb-3">Proven Results</h3>
-            <p className="text-gray-600">
-              Track record of successful projects and satisfied clients across industries
-            </p>
-          </div>
-          <div className="text-center">
-            <div className="text-4xl mb-4">⚡</div>
-            <h3 className="text-xl font-semibold mb-3">Fast Delivery</h3>
-            <p className="text-gray-600">
-              Rapid development and deployment with agile methodologies
-            </p>
-          </div>
-          <div className="text-center">
-            <div className="text-4xl mb-4">🔒</div>
-            <h3 className="text-xl font-semibold mb-3">Enterprise Security</h3>
-            <p className="text-gray-600">
-              Bank-level security and compliance for all solutions
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
->>>>>>> 2d0a9714a42cb6b8a431feb1f9dc2a642983276c
