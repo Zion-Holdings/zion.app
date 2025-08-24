@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+import FeatureCard from './components/FeatureCard';
+=======
 import Link from 'next/link';
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-ac8e
 
 export default function HomePage() {
   const features = [
@@ -79,6 +83,31 @@ export default function HomePage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
+<<<<<<< HEAD
+      <section className="relative overflow-hidden py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto text-center">
+          <div className="hero-gradient absolute inset-0 -z-10"></div>
+          
+          <div className="animate-fade-in">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6">
+              <span className="gradient-text">Launch Sovereign</span>
+              <br />
+              <span className="text-white">AI-Powered Digital Economies</span>
+            </h1>
+            
+            <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto mb-8 leading-relaxed">
+              Deploy complete AI-powered marketplaces, governance systems, and digital economies with one click. 
+              Built for the future of decentralized business.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <a href="/multiverse/launch" className="btn-primary hover-lift">
+                🚀 Launch Your Economy
+              </a>
+              <a href="/admin/instances" className="btn-secondary hover-lift">
+                📊 View Instances
+              </a>
+=======
       <section className="relative py-20 lg:py-32 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-900/20 to-purple-900/20"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -211,12 +240,38 @@ export default function HomePage() {
               <Link href="/research" className="text-indigo-400 hover:text-indigo-300 font-medium">
                 Learn More →
               </Link>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-ac8e
             </div>
           </div>
         </div>
       </section>
 
       {/* Features Section */}
+<<<<<<< HEAD
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white/5">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16 animate-slide-up">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Everything You Need to Build the Future
+            </h2>
+            <p className="text-xl text-white/70 max-w-2xl mx-auto">
+              From AI-powered marketplaces to decentralized governance, Zion OS provides the complete toolkit 
+              for launching sovereign digital economies.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {features.map((feature, index) => (
+              <FeatureCard
+                key={index}
+                icon={feature.icon}
+                title={feature.title}
+                description={feature.description}
+                features={feature.features}
+                gradient={feature.gradient}
+              />
+            ))}
+=======
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -268,11 +323,55 @@ export default function HomePage() {
               <h3 className="text-xl font-semibold text-white mb-2">Proven Results</h3>
               <p className="text-gray-300">Track record of successful AI implementations and ROI.</p>
             </div>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-ac8e
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
+<<<<<<< HEAD
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="glass-effect rounded-2xl p-12 animate-slide-up">
+            <h2 className="text-4xl font-bold mb-6">
+              Ready to Build the Future?
+            </h2>
+            <p className="text-xl text-white/70 mb-8 max-w-2xl mx-auto">
+              Join the revolution in decentralized business. Launch your sovereign AI-powered digital economy today.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="/multiverse/launch" className="btn-primary hover-lift text-lg px-8 py-4">
+                🚀 Start Building Now
+              </a>
+              <a href="/admin/instances" className="btn-secondary hover-lift text-lg px-8 py-4">
+                📊 Explore Examples
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white/5">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+            <div className="animate-fade-in">
+              <div className="text-3xl font-bold text-blue-400 mb-2">100+</div>
+              <div className="text-white/70">Features Available</div>
+            </div>
+            <div className="animate-fade-in" style={{animationDelay: '0.1s'}}>
+              <div className="text-3xl font-bold text-purple-400 mb-2">50+</div>
+              <div className="text-white/70">Deployment Options</div>
+            </div>
+            <div className="animate-fade-in" style={{animationDelay: '0.2s'}}>
+              <div className="text-3xl font-bold text-green-400 mb-2">24/7</div>
+              <div className="text-white/70">AI Orchestration</div>
+            </div>
+            <div className="animate-fade-in" style={{animationDelay: '0.3s'}}>
+              <div className="text-3xl font-bold text-orange-400 mb-2">∞</div>
+              <div className="text-white/70">Scalability</div>
+            </div>
+=======
       <section className="py-20 bg-gradient-to-r from-blue-900/20 to-purple-900/20">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
@@ -288,6 +387,7 @@ export default function HomePage() {
             <Link href="/solutions" className="border border-white/20 hover:border-white/40 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-200 hover:bg-white/10">
               View Case Studies
             </Link>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-ac8e
           </div>
         </div>
       </section>
