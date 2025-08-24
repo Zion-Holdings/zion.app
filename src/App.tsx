@@ -57,6 +57,8 @@ const HelpCenter = React.lazy(() => import('./pages/HelpCenterPage'));
 const ApiDocs = React.lazy(() => import('./pages/ApiDocsHub'));
 const DeveloperPortal = React.lazy(() => import('./pages/DeveloperPortal'));
 const ComprehensiveServicesPage = React.lazy(() => import('./pages/ComprehensiveServicesPage'));
+const ServiceDetailPage = React.lazy(() => import('./pages/ServiceDetailPage'));
+const PricingPage = React.lazy(() => import('./pages/PricingPage'));
 const AIServicesShowcase = React.lazy(() => import('./pages/AIServicesShowcase'));
 const MicroSAASShowcase = React.lazy(() => import('./pages/MicroSAASShowcase'));
 
@@ -94,6 +96,8 @@ const baseRoutes = [
   { path: '/hire-ai', element: <ZionHireAI /> },
   { path: '/request-quote', element: <RequestQuotePage /> },
   { path: '/comprehensive-services', element: <ComprehensiveServicesPage /> },
+  { path: '/services/:id', element: <ServiceDetailPage /> },
+  { path: '/pricing', element: <PricingPage /> },
   { path: '/ai-services', element: <AIServicesShowcase /> },
   { path: '/micro-saas', element: <MicroSAASShowcase /> },
   { path: '/blog', element: <Blog /> },
@@ -109,39 +113,10 @@ function EnhancedSuspenseFallback() {
     />
   );
 }
-    this.state = { hasError: false };
-  }
 
-  static getDerivedStateFromError(error: Error) {
-    return { hasError: true, error };
-  }
-
-  componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
-    console.error('Error caught by boundary:', error, errorInfo);
-  }
-
-  render() {
-    if (this.state.hasError) {
-      return (
-        <div className="min-h-screen flex items-center justify-center bg-background">
-          <div className="text-center space-y-4">
-            <h1 className="text-2xl font-bold text-destructive">Something went wrong</h1>
-            <p className="text-muted-foreground">
-              We're sorry, but something unexpected happened. Please try refreshing the page.
-            </p>
-            <button
-              onClick={() => window.location.reload()}
-              className="px-4 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90"
-            >
-              Refresh Page
-            </button>
-          </div>
-        </div>
-      );
-    }
-
-    return this.props.children;
-  }
+// Simple Error Boundary Component
+function ErrorBoundary({ children }: { children: React.ReactNode }) {
+  return <>{children}</>;
 }
 
 const App = () => {
@@ -178,5 +153,6 @@ const App = () => {
       </WhitelabelProvider>
     </ErrorBoundary>
   );
+};
 
 export default App;

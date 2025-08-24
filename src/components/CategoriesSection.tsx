@@ -89,6 +89,14 @@ const specialServices = [
   {
     title: "All Services",
     link: "/comprehensive-services"
+  },
+  {
+    title: "Comprehensive Services",
+    link: "/comprehensive-services"
+  },
+  {
+    title: "Pricing & Plans",
+    link: "/pricing"
   }
 ];
 
@@ -141,19 +149,8 @@ const serviceCategories = [
     icon: <LinkIcon className="w-8 h-8" />,
     color: "from-teal-500 to-blue-600",
     link: "/expanded-services?category=blockchain-web3"
-=======
-    title: "AI Services",
-    link: "/ai-services"
-  },
-  {
-    title: "Micro SAAS",
-    link: "/micro-saas"
-  },
-  {
-    title: "All Services",
-    link: "/comprehensive-services"
->>>>>>> cursor/expand-services-and-deploy-updates-ae24
   }
+];
 ];
 
 interface CategoriesSectionProps {
