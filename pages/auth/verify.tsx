@@ -1,7 +1,9 @@
+import EnhancedLayout from '../../components/layout/EnhancedLayout';
+
 export default function Verify() {
   return (
-    <div>
-      <h1 className="text-2xl font-semibold">Verify Email</h1>
-    </div>
+    <EnhancedLayout>
+      <h1 className="text-2xl font-semibold">Verify</h1>
+    </EnhancedLayout>
   );
 }

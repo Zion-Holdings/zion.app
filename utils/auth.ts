@@ -1,99 +1,69 @@
-import { GetServerSidePropsContext } from 'next';
-import { createServerClient } from '@supabase/ssr';
-import type { CookieOptions } from '@supabase/ssr';
 import type { NextApiRequest } from 'next';
+import { useMemo } from 'react';
 
-export type AllowedRole = 'Founder' | 'Admin' | 'Finance';
+export type AppUser = {
+  id: string;
+  name: string;
+  role: 'admin' | 'client' | 'talent' | 'guest';
+};
 
-export type RequireRoleResult =
-  | { redirect: { destination: string; permanent: false } }
-  | { props: { userId: string | null; roles: string[] } };
-
-function getCookies(ctx: GetServerSidePropsContext) {
-  const cookies: { [key: string]: string } = {};
-  ctx.req.headers.cookie?.split(';').forEach((cookie) => {
-    const [name, ...rest] = cookie.trim().split('=');
-    cookies[name] = decodeURIComponent(rest.join('='));
-  });
-  return cookies;
+function parseCookie(cookieHeader: string | undefined): Record<string, string> {
+  if (!cookieHeader) return {};
+  return cookieHeader.split(';').reduce((acc, part) => {
+    const [k, v] = part.trim().split('=');
+    if (k) acc[k] = decodeURIComponent(v || '');
+    return acc;
+  }, {} as Record<string, string>);
 }
 
-export async function getUserAndRolesFromSupabase(ctx: GetServerSidePropsContext): Promise<{ userId: string | null; roles: string[] }> {
-  try {
-    const cookieOptions: CookieOptions = {
-      name: 'sb',
-      domain: undefined,
-      path: '/',
-      sameSite: 'lax',
-    } as any;
+export function parseUserFromRequest(req: NextApiRequest): AppUser {
+  // Priority: x-user header (JSON) > cookie x-user (JSON)
+  const headerUser = req.headers['x-user'];
+  if (typeof headerUser === 'string') {
+    try {
+      const u = JSON.parse(headerUser);
+      if (u && u.id && u.role) return { ...u, name: u.name || 'User' } as AppUser;
+    } catch {}
+  }
+  const cookies = parseCookie(req.headers.cookie);
+  const cookieUser = cookies['x-user'];
+  if (cookieUser) {
+    try {
+      const u = JSON.parse(cookieUser);
+      if (u && u.id && u.role) return { ...u, name: u.name || 'User' } as AppUser;
+    } catch {}
+  }
+  return { id: 'guest', name: 'Guest', role: 'guest' };
+}
 
-    const supabase = createServerClient(
-      process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://placeholder.supabase.co',
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'placeholder-key',
-      {
-        cookies: {
-          get: (key: string) => getCookies(ctx)[key],
-          set: (_key: string, _value: string, _opts: CookieOptions) => {},
-          remove: (_key: string, _opts: CookieOptions) => {},
-        },
-        cookieOptions,
-      }
-    );
-
-    const { data } = await supabase.auth.getUser();
-    const user = data?.user || null;
-    const roles: string[] = Array.isArray(user?.user_metadata?.roles)
-      ? (user!.user_metadata!.roles as string[])
-      : typeof user?.user_metadata?.role === 'string'
-      ? [user!.user_metadata!.role as string]
-      : [];
-
-    return { userId: user?.id ?? null, roles };
-  } catch (error) {
-    return { userId: null, roles: [] };
+export function ensureAdmin(user: AppUser) {
+  if (user.role !== 'admin') {
+    const err = new Error('Forbidden');
+    // @ts-ignore
+    err.statusCode = 403;
+    throw err;
   }
 }
 
-export async function requireAdminRole(ctx: GetServerSidePropsContext): Promise<RequireRoleResult> {
-  // Dev bypass
-  if (process.env.DEV_ADMIN_BYPASS === 'true') {
-    return { props: { userId: 'dev-bypass', roles: ['Admin'] } };
-  }
-
-  // Header-based override for local testing
-  const mockRole = ctx.req.headers['x-mock-role'];
-  if (typeof mockRole === 'string' && ['Founder', 'Admin', 'Finance'].includes(mockRole)) {
-    return { props: { userId: 'mock', roles: [mockRole] } };
-  }
-
-  const { userId, roles } = await getUserAndRolesFromSupabase(ctx);
-
-  const allowed: AllowedRole[] = ['Founder', 'Admin', 'Finance'];
-  const hasAccess = roles.some((r) => allowed.includes(r as AllowedRole));
-
-  if (!userId || !hasAccess) {
-    return {
-      redirect: { destination: '/auth', permanent: false },
-    };
-  }
-
-  return { props: { userId, roles } };
+export function ensureInvolvedOrAdmin(user: AppUser, clientId: string, talentId: string) {
+  if (user.role === 'admin') return;
+  if (user.id === clientId || user.id === talentId) return;
+  const err = new Error('Forbidden');
+  // @ts-ignore
+  err.statusCode = 403;
+  throw err;
 }
 
-export async function ensureAdminFromApi(req: NextApiRequest): Promise<{ userId: string | null; roles: string[]; allowed: boolean }> {
-  if (process.env.DEV_ADMIN_BYPASS === 'true') {
-    return { userId: 'dev-bypass', roles: ['Admin'], allowed: true };
-  }
-  const mockRole = req.headers['x-mock-role'];
-  if (typeof mockRole === 'string' && ['Founder', 'Admin', 'Finance'].includes(mockRole)) {
-    return { userId: 'mock', roles: [mockRole], allowed: true };
-  }
-  // Basic cookie parse for SSR client reuse is not available in API directly using our helper,
-  // but we can accept x-user-id and x-roles for internal calls if needed.
-  const xUserId = typeof req.headers['x-user-id'] === 'string' ? (req.headers['x-user-id'] as string) : null;
-  const xRolesHeader = typeof req.headers['x-roles'] === 'string' ? (req.headers['x-roles'] as string) : '';
-  const xRoles = xRolesHeader ? xRolesHeader.split(',').map((s) => s.trim()) : [];
-  const allowedRoles: AllowedRole[] = ['Founder', 'Admin', 'Finance'];
-  const allowed = xUserId !== null && xRoles.some((r) => allowedRoles.includes(r as AllowedRole));
-  return { userId: xUserId, roles: xRoles, allowed };
+export function useCurrentUser(): AppUser {
+  // For demo, read from global injected by server or default guest
+  // In real app, replace with actual auth provider (Supabase, etc.)
+  const user = useMemo<AppUser>(() => {
+    if (typeof window === 'undefined') return { id: 'guest', name: 'Guest', role: 'guest' };
+    try {
+      const data = window.localStorage.getItem('x-user');
+      if (data) return JSON.parse(data);
+    } catch {}
+    return { id: 'guest', name: 'Guest', role: 'guest' };
+  }, []);
+  return user;
 }

@@ -1,7 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
-import UseTokensButton from '../../components/tokens/UseTokensButton';
 
 const AiSeoAuditor: NextPage = () => {
   return (
@@ -11,11 +10,10 @@ const AiSeoAuditor: NextPage = () => {
         <meta name="description" content="AiSeoAuditor service" />
       </Head>
       
-      <main className="space-y-4">
+      <main>
         <h1>AiSeoAuditor</h1>
         <p>Service details coming soon...</p>
-        <UseTokensButton serviceId="ai-seo-auditor" />
-        <Link href="/services">Back to Services</Link>
+        <Link href="/services"><a>Back to Services</a></Link>
       </main>
     </div>
   );

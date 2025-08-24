@@ -1,1 +1,1 @@
-export default function Page() { return <div>Emerging Technology Trends</div>; }
+export default function ChatContent(){return null;}

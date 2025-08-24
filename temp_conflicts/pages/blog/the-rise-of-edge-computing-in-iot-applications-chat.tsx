@@ -1,8 +1,8 @@
-
+import type { NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 
-const TheRiseOfEdgeComputingInIotApplicationsChat = () => {
+const TheRiseOfEdgeComputingInIotApplicationsChat: NextPage = () => {
   return (
     <div>
       <Head>
@@ -13,7 +13,7 @@ const TheRiseOfEdgeComputingInIotApplicationsChat = () => {
       <main>
         <h1>TheRiseOfEdgeComputingInIotApplicationsChat</h1>
         <p>Blog content coming soon...</p>
-        <a href="/blog">Back to Blog</a>
+        <Link href="/blog"><a>Back to Blog</a></Link>
       </main>
     </div>
   );

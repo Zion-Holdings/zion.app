@@ -1,8 +1,8 @@
-
+import type { NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 
-const ApiFirstDevelopmentBuildingScalableSystemsChat = () => {
+const ApiFirstDevelopmentBuildingScalableSystemsChat: NextPage = () => {
   return (
     <div>
       <Head>
@@ -13,7 +13,7 @@ const ApiFirstDevelopmentBuildingScalableSystemsChat = () => {
       <main>
         <h1>ApiFirstDevelopmentBuildingScalableSystemsChat</h1>
         <p>Blog content coming soon...</p>
-        <a href="/blog">Back to Blog</a>
+        <Link href="/blog"><a>Back to Blog</a></Link>
       </main>
     </div>
   );
