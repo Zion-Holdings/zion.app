@@ -1,0 +1,22 @@
+
+import Head from 'next/head';
+import Link from 'next/link';
+
+const NetworkEngineeringChat = () => {
+  return (
+    <div>
+      <Head>
+        <title>NetworkEngineeringChat - Zion Tech Solutions</title>
+        <meta name="description" content="NetworkEngineeringChat blog post" />
+      </Head>
+      
+      <main>
+        <h1>NetworkEngineeringChat</h1>
+        <p>Blog content coming soon...</p>
+        <Link href="/blog">Back to Blog</Link>
+      </main>
+    </div>
+  );
+};
+
+export default NetworkEngineeringChat;

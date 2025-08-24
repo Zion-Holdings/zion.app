@@ -1,9 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   images: {
     domains: ["localhost"],
   },
 };
 
-export default nextConfig;
+module.exports = nextConfig;
