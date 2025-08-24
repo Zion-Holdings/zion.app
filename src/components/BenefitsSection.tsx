@@ -44,7 +44,7 @@ export function BenefitsSection() {
               title={benefit.title}
               description={benefit.description}
               icon={benefit.icon}
-              className="bg-zion-blue hover:bg-zion-blue-dark transition-all duration-300"
+              className="bg-zion-blue hover:bg-zion-blue-dark transition-all duration-500 hover:shadow-xl hover:shadow-zion-purple/20 hover:transform hover:scale-105"
             />
           ))}
         </div>
