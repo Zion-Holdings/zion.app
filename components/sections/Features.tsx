@@ -62,7 +62,7 @@ export default function Features({ title, subtitle, features, columns = 3 }: Fea
                   </div>
                 )}
               </div>
-            </Card>
+            </div>
           ))}
         </div>
 
