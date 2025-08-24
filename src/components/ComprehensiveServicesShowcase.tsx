@@ -127,7 +127,7 @@ export function ComprehensiveServicesShowcase() {
           <TabsContent value="all" className="mt-8">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredServices.map((service) => (
-                <ServiceCard key={service.id} service={service} />
+                <ServiceCard key={service.id} service={service} getCategoryIcon={getCategoryIcon} />
               ))}
             </div>
           </TabsContent>
@@ -136,7 +136,7 @@ export function ComprehensiveServicesShowcase() {
             <TabsContent key={category.id} value={category.id} className="mt-8">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {category.services.map((service) => (
-                  <ServiceCard key={service.id} service={service} />
+                  <ServiceCard key={service.id} service={service} getCategoryIcon={getCategoryIcon} />
                 ))}
               </div>
             </TabsContent>
@@ -248,9 +248,10 @@ export function ComprehensiveServicesShowcase() {
 
 interface ServiceCardProps {
   service: any;
+  getCategoryIcon: (category: string) => React.ReactNode;
 }
 
-function ServiceCard({ service }: ServiceCardProps) {
+function ServiceCard({ service, getCategoryIcon }: ServiceCardProps) {
   return (
     <Card className="group hover:scale-105 transition-all duration-300 bg-slate-800/50 backdrop-blur-sm border border-slate-700 hover:border-cyan-500/50">
       <div className="relative overflow-hidden rounded-t-lg">
