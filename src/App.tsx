@@ -1,6 +1,7 @@
 import React from 'react';
 <<<<<<< HEAD
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+<<<<<<< HEAD
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 
@@ -35,11 +36,14 @@ import {
   CommunityRoutes,
   DeveloperRoutes
 } from './routes';
+=======
+import './App.css';
+
+// Lazy load pages
+>>>>>>> f3114b5ec6e0762a89ac302f1e1c77234f5ec6df
 const Home = React.lazy(() => import('./pages/Home'));
-const AIMatcherPage = React.lazy(() => import('./pages/AIMatcher'));
-const TalentDirectory = React.lazy(() => import('./pages/TalentDirectory'));
-const TalentsPage = React.lazy(() => import('./pages/TalentsPage'));
 const ServicesPage = React.lazy(() => import('./pages/ServicesPage'));
+<<<<<<< HEAD
 const EquipmentPage = React.lazy(() => import('./pages/EquipmentPage'));
 const EquipmentDetail = React.lazy(() => import('./pages/EquipmentDetail'));
 const Analytics = React.lazy(() => import('./pages/Analytics'));
@@ -97,11 +101,15 @@ const baseRoutes = [
   { path: '/terms', element: <TermsPage /> },
   { path: '/faq', element: <FAQPage /> },
 ];
+=======
+const ComprehensiveServicesPage = React.lazy(() => import('./pages/ComprehensiveServicesPage'));
+const ServicesComparisonPage = React.lazy(() => import('./pages/ServicesComparisonPage'));
+const ITOnsiteServicesPage = React.lazy(() => import('./pages/ITOnsiteServicesPage'));
+>>>>>>> f3114b5ec6e0762a89ac302f1e1c77234f5ec6df
 
 const App = () => {
-  // Ensure each navigation starts at the top of the page
-  useScrollToTop();
   return (
+<<<<<<< HEAD
     <WhitelabelProvider>
       <ThemeProvider defaultTheme="dark">
         <Suspense fallback={<div className="p-4 text-center">Loading...</div>}>
@@ -131,5 +139,22 @@ const App = () => {
 >>>>>>> cursor/website-audit-and-enhancement-e844
   );
 }
+=======
+    <Router>
+      <div className="App">
+        <React.Suspense fallback={<div className="p-4 text-center">Loading...</div>}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/services" element={<ServicesPage />} />
+            <Route path="/comprehensive-services" element={<ComprehensiveServicesPage />} />
+            <Route path="/services-comparison" element={<ServicesComparisonPage />} />
+            <Route path="/it-onsite-services" element={<ITOnsiteServicesPage />} />
+          </Routes>
+        </React.Suspense>
+      </div>
+    </Router>
+  );
+};
+>>>>>>> f3114b5ec6e0762a89ac302f1e1c77234f5ec6df
 
 export default App;
