@@ -53,6 +53,12 @@ import { innovativeEducationServices2025 } from '../data/2025-innovative-educati
 import { innovativeSustainabilityServices2025 } from '../data/2025-innovative-sustainability-services';
 import { innovativeLogisticsServices2025 } from '../data/2025-innovative-logistics-services';
 
+// Import our new innovative service categories
+import { advancedAIAutomationServices2025 } from '../data/2025-advanced-ai-automation-services';
+import { blockchainWeb3Services2025 } from '../data/2025-blockchain-web3-services';
+import { cybersecurityQuantumServices2025 } from '../data/2025-cybersecurity-quantum-services';
+import { spaceMetaverseServices2025 } from '../data/2025-space-metaverse-services';
+
 // Import existing services for comprehensive coverage
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
 import { innovativeMicroSaasServices } from '../data/innovative-micro-saas-services';
@@ -65,7 +71,11 @@ const allServices = [
   ...innovativeITServices2025,
   ...emergingTechServices2025,
   ...additionalRealServices2025,
-  ...newInnovativeAIServices
+  ...newInnovativeAIServices,
+  ...advancedAIAutomationServices2025,
+  ...blockchainWeb3Services2025,
+  ...cybersecurityQuantumServices2025,
+  ...spaceMetaverseServices2025
 ];
 
 const contactInfo = {
@@ -84,6 +94,42 @@ const serviceCategories: Array<{
   services: ServiceUnion[];
   gradient: string;
 }> = [
+  {
+    id: 'ai-automation',
+    title: '🤖 AI & Automation',
+    description: 'Revolutionary AI automation with consciousness and emotional intelligence',
+    icon: Brain,
+    color: 'from-violet-500 to-purple-500',
+    services: [...advancedAIAutomationServices2025],
+    gradient: 'from-violet-500/20 to-indigo-500/20'
+  },
+  {
+    id: 'blockchain-web3',
+    title: '🔗 Blockchain & Web3',
+    description: 'Decentralized solutions with quantum security and DeFi optimization',
+    icon: Shield,
+    color: 'from-indigo-500 to-blue-500',
+    services: [...blockchainWeb3Services2025],
+    gradient: 'from-indigo-500/20 to-cyan-500/20'
+  },
+  {
+    id: 'cybersecurity-quantum',
+    title: '🔐 Cybersecurity & Quantum',
+    description: 'Future-proof security with quantum-resistant encryption and AI threat hunting',
+    icon: Lock,
+    color: 'from-blue-500 to-cyan-500',
+    services: [...cybersecurityQuantumServices2025],
+    gradient: 'from-blue-500/20 to-teal-500/20'
+  },
+  {
+    id: 'space-metaverse',
+    title: '🚀 Space & Metaverse',
+    description: 'Space technology, quantum communications, and immersive virtual worlds',
+    icon: Rocket,
+    color: 'from-teal-500 to-emerald-500',
+    services: [...spaceMetaverseServices2025],
+    gradient: 'from-teal-500/20 to-green-500/20'
+  },
   {
     id: 'ai-consciousness',
     title: '🧠 AI & Consciousness',
