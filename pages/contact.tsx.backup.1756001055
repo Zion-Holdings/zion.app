@@ -1,11 +1,23 @@
+<<<<<<< HEAD
+import React from 'react';
 =======
 =======
+=======
+>>>>>>> origin/cursor/website-audit-and-enhancement-7c0f
 import React, { useState } from 'react';
 import Head from 'next/head';
 import React from 'react';
 import SEO from '../components/SEO';
 =======
 import { 
+<<<<<<< HEAD
+import type { NextPage } from 'next';
+import Layout from '../components/Layout';
+import ContactForm from '../components/forms/ContactForm';
+
+  return (
+import { useState } from 'react';
+=======
     <Layout
       title="Contact Us - Zion Tech Group"
       description="Get in touch with Zion Tech Group. Our team is ready to discuss your technology needs and help transform your business."
@@ -32,11 +44,20 @@ import SmartHeader from '../components/SmartHeader';
 import SmartFooter from '../components/SmartFooter';
 
 export default function ContactPage() {
+>>>>>>> origin/cursor/website-audit-and-enhancement-7c0f
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     company: '',
     phone: '',
+<<<<<<< HEAD
+    subject: '',
+    message: ''
+  });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+=======
     service: '',
     message: '',
     budget: '',
@@ -45,6 +66,7 @@ export default function ContactPage() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+>>>>>>> origin/cursor/website-audit-and-enhancement-7c0f
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -61,60 +83,224 @@ export default function ContactPage() {
     // Simulate form submission
     await new Promise(resolve => setTimeout(resolve, 2000));
     
+<<<<<<< HEAD
+    setSubmitStatus('success');
+    setIsSubmitting(false);
+    
+    // Reset form after success
+    setTimeout(() => {
+=======
     setIsSubmitted(true);
     setIsSubmitting(false);
     
     // Reset form after 5 seconds
     setTimeout(() => {
       setIsSubmitted(false);
+>>>>>>> origin/cursor/website-audit-and-enhancement-7c0f
       setFormData({
         name: '',
         email: '',
         company: '',
         phone: '',
+<<<<<<< HEAD
+        subject: '',
+        message: ''
+      });
+      setSubmitStatus('idle');
+    }, 3000);
+=======
         service: '',
         message: '',
         budget: '',
         timeline: ''
       });
     }, 5000);
+>>>>>>> origin/cursor/website-audit-and-enhancement-7c0f
   };
 
   const contactMethods = [
     {
       icon: Phone,
       title: 'Call Us',
+<<<<<<< HEAD
+      details: '+1 (555) 123-4567',
+      description: 'Available 24/7 for urgent inquiries',
+      color: 'from-blue-500 to-cyan-500',
+      action: 'tel:+15551234567'
+=======
       value: '+1 (302) 464-0950',
       description: 'Available 24/7 for urgent inquiries',
       color: 'from-blue-500 to-cyan-500',
       action: 'tel:+13024640950'
+>>>>>>> origin/cursor/website-audit-and-enhancement-7c0f
     },
     {
       icon: Mail,
       title: 'Email Us',
+<<<<<<< HEAD
+      details: 'contact@ziontechgroup.com',
+      description: 'Response within 2 hours guaranteed',
+      color: 'from-purple-500 to-pink-500',
+      action: 'mailto:contact@ziontechgroup.com'
+=======
       value: 'kleber@ziontechgroup.com',
       description: 'Response within 2 hours guaranteed',
       color: 'from-green-500 to-emerald-500',
       action: 'mailto:kleber@ziontechgroup.com'
+>>>>>>> origin/cursor/website-audit-and-enhancement-7c0f
     },
     {
       icon: MapPin,
       title: 'Visit Us',
+<<<<<<< HEAD
+      details: 'San Francisco, CA',
+      description: 'Global headquarters and innovation center',
+      color: 'from-green-500 to-emerald-500',
+      action: '#'
+=======
       value: 'Middletown, DE',
       description: 'Global headquarters and innovation center',
       color: 'from-purple-500 to-pink-500',
       action: 'https://maps.google.com/?q=Middletown,DE'
+>>>>>>> origin/cursor/website-audit-and-enhancement-7c0f
     },
     {
       icon: Clock,
       title: 'Business Hours',
+<<<<<<< HEAD
+      details: '24/7 Support',
+      description: 'Global team across all time zones',
+=======
       value: '24/7 Support',
       description: 'Always here when you need us',
+>>>>>>> origin/cursor/website-audit-and-enhancement-7c0f
       color: 'from-orange-500 to-red-500',
       action: '#'
     }
   ];
 
+<<<<<<< HEAD
+  const officeLocations = [
+    {
+      city: 'San Francisco',
+      country: 'United States',
+      address: '123 Innovation Drive, Suite 100',
+      phone: '+1 (555) 123-4567',
+      email: 'sf@ziontechgroup.com',
+      timezone: 'PST (UTC-8)'
+    },
+    {
+      city: 'London',
+      country: 'United Kingdom',
+      address: '456 Tech Square, Floor 3',
+      phone: '+44 20 1234 5678',
+      email: 'london@ziontechgroup.com',
+      timezone: 'GMT (UTC+0)'
+    },
+    {
+      city: 'Singapore',
+      country: 'Singapore',
+      address: '789 Digital Hub, Level 5',
+      phone: '+65 6123 4567',
+      email: 'sg@ziontechgroup.com',
+      timezone: 'SGT (UTC+8)'
+    }
+  ];
+
+  const departments = [
+    {
+      name: 'Sales & Business Development',
+      email: 'sales@ziontechgroup.com',
+      phone: '+1 (555) 123-4000',
+      description: 'New business opportunities and partnerships'
+    },
+    {
+      name: 'Technical Support',
+      email: 'support@ziontechgroup.com',
+      phone: '+1 (555) 123-4001',
+      description: 'Technical assistance and troubleshooting'
+    },
+    {
+      name: 'Partnerships',
+      email: 'partnerships@ziontechgroup.com',
+      phone: '+1 (555) 123-4002',
+      description: 'Strategic partnerships and collaborations'
+    },
+    {
+      name: 'Media & Press',
+      email: 'press@ziontechgroup.com',
+      phone: '+1 (555) 123-4003',
+      description: 'Media inquiries and press releases'
+    }
+  ];
+
+  return (
+    <>
+      <Head>
+        <title>Contact Us - Zion Tech Group</title>
+        <meta name="description" content="Get in touch with Zion Tech Group. Contact our experts for AI, quantum computing, and autonomous systems solutions. Available 24/7 for support." />
+        <meta name="robots" content="index, follow" />
+      </Head>
+
+      <EnhancedNavigation />
+      
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+        {/* Hero Section */}
+        <section className="pt-32 pb-20 px-6">
+          <div className="max-w-7xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent mb-8">
+                Get in Touch
+              </h1>
+              <p className="text-xl md:text-2xl text-white/80 max-w-4xl mx-auto leading-relaxed mb-12">
+                Ready to transform your business with revolutionary AI and quantum computing solutions? 
+                Our experts are here to help you every step of the way.
+              </p>
+            </motion.div>
+
+            {/* Contact Methods Grid */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto"
+            >
+              {contactMethods.map((method, index) => (
+                <motion.div
+                  key={method.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.1 * index }}
+                  className="bg-slate-800/50 backdrop-blur-xl rounded-2xl p-6 border border-white/10 hover:border-white/20 transition-all duration-300 group"
+                >
+                  <a href={method.action} className="block">
+                    <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${method.color} p-4 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                      <method.icon className="w-8 h-8 text-white" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-white mb-3">{method.title}</h3>
+                    <p className="text-cyan-400 font-semibold text-lg mb-2">{method.details}</p>
+                    <p className="text-white/70 text-sm">{method.description}</p>
+                  </a>
+                </motion.div>
+              ))}
+            </motion.div>
+
+      {/* CTA Section */}
+    <div className="min-h-[60vh] px-6 py-24">
+      <SEO title="Contact | Zion Tech Group" description="Contact Zion Tech Group" />
+      <div className="max-w-3xl mx-auto">
+        <h1 className="text-4xl font-bold text-white mb-4">Contact</h1>
+        <p className="text-gray-300 mb-6">We would love to hear from you. Reach out to discuss how we can help.</p>
+        <div className="space-y-3 text-gray-200">
+          <a href="tel:+13024640950" className="block hover:text-cyan-400">+1 302 464 0950</a>
+          <a href="mailto:kleber@ziontechgroup.com" className="block hover:text-purple-400">kleber@ziontechgroup.com</a>
+        </div>
+      </div>
+=======
       <section className="relative z-10 py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
@@ -229,10 +415,15 @@ export default function ContactPage() {
               >
                 Call Now
               </a>
+>>>>>>> origin/cursor/website-audit-and-enhancement-7c0f
             </div>
           </motion.div>
         </div>
       </section>
+<<<<<<< HEAD
+      </UltraFuturisticBackground>
+    </div>
+=======
         {/* Contact Form Section */}
         <section className="py-20 px-6">
           <div className="max-w-7xl mx-auto">
@@ -532,6 +723,7 @@ export default function ContactPage() {
                 >
                   <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${method.color} p-4 mb-4 flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
                     <method.icon className="w-8 h-8 text-white" />
+>>>>>>> origin/cursor/website-audit-and-enhancement-7c0f
                   </div>
                   <h3 className="text-xl font-bold text-white mb-2">{method.title}</h3>
                   <p className="text-cyan-400 font-semibold text-lg mb-2">{method.value}</p>
@@ -543,6 +735,93 @@ export default function ContactPage() {
         </div>
       </section>
 
+<<<<<<< HEAD
+        {/* Department Contacts */}
+        <section className="py-20 px-6">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl font-bold text-white mb-6">Department Contacts</h2>
+              <p className="text-xl text-white/70 max-w-3xl mx-auto">
+                Connect directly with the right team for your specific needs and inquiries.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {departments.map((dept, index) => (
+                <motion.div
+                  key={dept.name}
+                  initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-slate-800/50 backdrop-blur-xl rounded-2xl p-6 border border-white/10 hover:border-white/20 transition-all duration-300"
+                >
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 p-3 flex items-center justify-center">
+                      <Users className="w-6 h-6 text-purple-400" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-xl font-semibold text-white mb-2">{dept.name}</h3>
+                      <p className="text-white/70 mb-4">{dept.description}</p>
+                      <div className="space-y-2">
+                        <div className="flex items-center space-x-2 text-white/70">
+                          <Mail className="w-4 h-4 text-cyan-400" />
+                          <a href={`mailto:${dept.email}`} className="hover:text-cyan-400 transition-colors duration-300">
+                            {dept.email}
+                          </a>
+                        </div>
+                        <div className="flex items-center space-x-2 text-white/70">
+                          <Phone className="w-4 h-4 text-purple-400" />
+                          <a href={`tel:${dept.phone.replace(/[^+\d]/g, '')}`} className="hover:text-purple-400 transition-colors duration-300">
+                            {dept.phone}
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-20 px-6">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 backdrop-blur-xl rounded-3xl p-12 border border-white/10"
+            >
+              <h2 className="text-4xl font-bold text-white mb-6">Ready to Get Started?</h2>
+              <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
+                Don't wait to transform your business with cutting-edge AI and quantum computing solutions. 
+                Contact us today and take the first step towards the future.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <button className="px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 rounded-full font-semibold text-white transition-all duration-300 transform hover:scale-105 hover:shadow-2xl">
+                  Schedule a Consultation
+                </button>
+                <button className="px-8 py-4 bg-slate-800/50 hover:bg-slate-800/80 rounded-full font-semibold text-white border border-white/20 transition-all duration-300">
+                  Download Brochure
+                </button>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+      </div>
+
+      <EnhancedFooter />
+    </>
+=======
       {/* Contact Form */}
       <section id="contact-form" className="py-20 px-6 bg-gradient-to-r from-white/5 to-white/10">
         <div className="max-w-4xl mx-auto">
@@ -884,6 +1163,7 @@ export default function ContactPage() {
 
       <SmartFooter />
     </div>
+>>>>>>> origin/cursor/website-audit-and-enhancement-7c0f
   );
 };
 

@@ -51,8 +51,13 @@
   },
   {
     "route": "/404",
+<<<<<<< HEAD
+    "title": "",
+    "h1": "404 - Page Not Found"
+=======
     "title": "404 - Page Not Found | Zion Tech Group",
     "h1": "404"
+>>>>>>> origin/cursor/website-audit-and-enhancement-7c0f
   },
   {
     "route": "/500",
@@ -76,7 +81,11 @@
   },
   {
     "route": "/about",
+<<<<<<< HEAD
+    "title": "About Us - Zion Tech Group | AI-Powered Technology Solutions",
+=======
     "title": "About Us | Zion Tech Group",
+>>>>>>> origin/cursor/website-audit-and-enhancement-7c0f
     "h1": "About Zion Tech Group"
   },
   {
@@ -246,7 +255,11 @@
   },
   {
     "route": "/case-studies",
+<<<<<<< HEAD
+    "title": "Case Studies - Zion Tech Group | Client Success Stories & AI Implementations",
+=======
     "title": "",
+>>>>>>> origin/cursor/website-audit-and-enhancement-7c0f
     "h1": "Case Studies"
   },
   {
@@ -291,8 +304,18 @@
   },
   {
     "route": "/contact",
+<<<<<<< HEAD
+    "title": "Contact Us - Zion Tech Group | Get Started with Revolutionary Micro SaaS Services",
+    "h1": "Let's Transform Your Business"
+  },
+  {
+    "route": "/cookies",
+    "title": "Cookie Policy - Zion Tech Group | Cookie Usage & Management",
+    "h1": "Cookie Policy"
+=======
     "title": "Contact Us | Zion Tech Group",
     "h1": "Get in Touch"
+>>>>>>> origin/cursor/website-audit-and-enhancement-7c0f
   },
   {
     "route": "/cutting-edge-pricing-2025",
@@ -365,11 +388,14 @@
     "h1": "Enhanced Services Showcase"
   },
   {
+<<<<<<< HEAD
+=======
     "route": "/explore",
     "title": "Explore Technology Categories | Zion Tech Group",
     "h1": "Explore Technology Categories"
   },
   {
+>>>>>>> origin/cursor/website-audit-and-enhancement-7c0f
     "route": "/expo",
     "title": "",
     "h1": ""
@@ -555,6 +581,14 @@
     "h1": ""
   },
   {
+<<<<<<< HEAD
+    "route": "/privacy",
+    "title": "Privacy Policy - Zion Tech Group | Data Protection & Privacy",
+    "h1": "Privacy Policy"
+  },
+  {
+=======
+>>>>>>> origin/cursor/website-audit-and-enhancement-7c0f
     "route": "/products",
     "title": "Products - Placeholder",
     "h1": "Products"
@@ -630,11 +664,14 @@
     "h1": "Salary Insights"
   },
   {
+<<<<<<< HEAD
+=======
     "route": "/search",
     "title": "Search | Zion Tech Group",
     "h1": "Search Our Services"
   },
   {
+>>>>>>> origin/cursor/website-audit-and-enhancement-7c0f
     "route": "/secrets-rotation-automation",
     "title": "",
     "h1": "Secrets Rotation Automation"
@@ -661,8 +698,13 @@
   },
   {
     "route": "/services",
+<<<<<<< HEAD
+    "title": "Revolutionary 2029 Technology Services | Zion Tech Group",
+    "h1": ""
+=======
     "title": "AI & Technology Services | Zion Tech Group",
     "h1": "AI & Technology Services"
+>>>>>>> origin/cursor/website-audit-and-enhancement-7c0f
   },
   {
     "route": "/site-health",
@@ -672,7 +714,11 @@
   {
     "route": "/sitemap",
     "title": "Sitemap | Zion Tech Group",
+<<<<<<< HEAD
+    "h1": "Sitemap"
+=======
     "h1": "Site Map"
+>>>>>>> origin/cursor/website-audit-and-enhancement-7c0f
   },
   {
     "route": "/soc2-compliance-automation",
@@ -800,6 +846,14 @@
     "h1": "{service.name}"
   },
   {
+<<<<<<< HEAD
+    "route": "/services/ai-autonomous-business-manager",
+    "title": "AI Autonomous Business Manager - Zion Tech Group | Autonomous Business Operations",
+    "h1": "AI Autonomous Business Manager"
+  },
+  {
+=======
+>>>>>>> origin/cursor/website-audit-and-enhancement-7c0f
     "route": "/services/ai-model-development-chat",
     "title": "AiModelDevelopmentChat - Zion Tech Solutions",
     "h1": "AiModelDevelopmentChat"
