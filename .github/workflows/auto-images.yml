@@ -1,0 +1,26 @@
+name: Auto Images Optimization
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  images:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Install sharp
+        run: npm i sharp --no-save
+      - name: Optimize images
+        run: node automation/auto-image-optimizer.cjs
