@@ -15,12 +15,8 @@ export default defineConfig({
       output: {
         manualChunks: {
           'react-vendor': ['react', 'react-dom'],
-          'ui-vendor': ['@radix-ui/react-accordion', '@radix-ui/react-alert-dialog', '@radix-ui/react-avatar', '@radix-ui/react-dropdown-menu', '@radix-ui/react-popover', '@radix-ui/react-select', '@radix-ui/react-tabs', '@radix-ui/react-toast'],
-          'form-vendor': ['react-hook-form', '@hookform/resolvers', 'zod'],
-          'utils-vendor': ['date-fns', 'clsx', 'class-variance-authority', 'tailwind-merge'],
-          'animation-vendor': ['framer-motion', 'embla-carousel-react'],
-          'charts-vendor': ['recharts'],
-          'i18n-vendor': ['react-i18next', 'i18next', 'i18next-browser-languagedetector']
+          'utils-vendor': ['clsx', 'tailwind-merge'],
+          'animation-vendor': ['framer-motion']
         }
       }
     },
