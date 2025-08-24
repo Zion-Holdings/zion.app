@@ -91,6 +91,25 @@ const navigationItems = [
     ]
   },
   {
+    name: 'AI Automation',
+    href: '/ai-automation-services',
+    icon: <Zap className="w-5 h-5" />,
+    description: 'Advanced AI-powered automation solutions',
+    badge: 'Hot',
+    children: [
+      { name: 'AI Code Generation', href: '/ai-code-generation-review', description: 'Automated code generation and review' },
+      { name: 'DevOps Automation', href: '/ai-devops-automation', description: 'Intelligent DevOps workflows' },
+      { name: 'Customer Support AI', href: '/ai-customer-support-automation', description: 'AI-powered customer support' },
+      { name: 'Marketing Automation', href: '/ai-marketing-automation', description: 'Intelligent marketing automation' },
+      { name: 'Sales Intelligence', href: '/ai-sales-intelligence', description: 'AI-powered sales insights' },
+      { name: 'Business Intelligence', href: '/ai-business-intelligence-suite', description: 'Advanced analytics and insights' },
+      { name: 'Content Automation', href: '/ai-content-generation-platform', description: 'AI content creation' },
+      { name: 'Process Automation', href: '/ai-process-automation', description: 'Intelligent workflow automation' },
+      { name: 'Quality Assurance AI', href: '/ai-quality-assurance', description: 'Automated testing and QA' },
+      { name: 'Data Processing AI', href: '/ai-data-processing', description: 'Intelligent data handling' }
+    ]
+  },
+  {
     name: 'Quantum & Emerging Tech',
     href: '/quantum-services',
     icon: <Atom className="w-5 h-5" />,
@@ -112,6 +131,25 @@ const navigationItems = [
       { name: 'Quantum Financial Trading', href: '/quantum-financial-trading', description: 'Quantum trading algorithms' },
       { name: 'Quantum-Secure Cloud Infrastructure', href: '/quantum-secure-cloud-infrastructure', description: 'Future-proof cloud security' },
       { name: 'Quantum-Ready Database', href: '/quantum-ready-database-platform', description: 'Quantum-resistant data storage' }
+    ]
+  },
+  {
+    name: 'Cybersecurity',
+    href: '/cybersecurity-services',
+    icon: <Shield className="w-5 h-5" />,
+    description: 'Next-generation cybersecurity solutions',
+    badge: 'Hot',
+    children: [
+      { name: 'Zero Trust Security', href: '/zero-trust-security-platform', description: 'Advanced zero trust implementation' },
+      { name: 'AI Threat Intelligence', href: '/ai-threat-intelligence', description: 'AI-powered threat detection' },
+      { name: 'Cloud Security Posture', href: '/cloud-security-posture', description: 'Multi-cloud security management' },
+      { name: 'DevSecOps Security', href: '/devsecops-security-platform', description: 'Security in DevOps pipelines' },
+      { name: 'IoT Security Platform', href: '/iot-security-platform', description: 'IoT device protection' },
+      { name: 'Quantum Cybersecurity', href: '/quantum-cybersecurity', description: 'Quantum security solutions' },
+      { name: 'Incident Response AI', href: '/incident-response-ai', description: 'Automated incident handling' },
+      { name: 'Compliance Automation', href: '/compliance-automation', description: 'Regulatory compliance tools' },
+      { name: 'Vulnerability Management', href: '/vulnerability-management', description: 'Automated vulnerability scanning' },
+      { name: 'Security Analytics', href: '/security-analytics', description: 'Advanced security insights' }
     ]
   },
   {
@@ -192,6 +230,25 @@ const navigationItems = [
       { name: 'AI HR Management', href: '/ai-hr-management-platform', description: 'HR operations automation' },
       { name: 'AI Supply Chain', href: '/ai-supply-chain-optimization', description: 'Supply chain optimization' },
       { name: 'AI Legal Analysis', href: '/ai-legal-document-analysis', description: 'Legal document processing' }
+    ]
+  },
+  {
+    name: 'Healthcare & Biotech',
+    href: '/healthcare-biotech-services',
+    icon: <Heart className="w-5 h-5" />,
+    description: 'AI-powered healthcare and biotechnology',
+    badge: 'New',
+    children: [
+      { name: 'AI Drug Discovery', href: '/ai-drug-discovery-platform', description: 'AI-powered drug development' },
+      { name: 'Precision Medicine', href: '/precision-medicine-genomics', description: 'Personalized healthcare' },
+      { name: 'Medical Imaging AI', href: '/ai-medical-imaging-analysis', description: 'AI image analysis' },
+      { name: 'Digital Health Platform', href: '/digital-health-telemedicine', description: 'Telemedicine solutions' },
+      { name: 'Clinical Trial Management', href: '/clinical-trial-management-optimization', description: 'Trial optimization' },
+      { name: 'Healthcare Analytics', href: '/healthcare-analytics', description: 'Health data insights' },
+      { name: 'Patient Engagement', href: '/patient-engagement-platform', description: 'Patient communication' },
+      { name: 'Medical Device AI', href: '/medical-device-ai', description: 'Smart medical devices' },
+      { name: 'Healthcare Security', href: '/healthcare-cybersecurity', description: 'Medical data protection' },
+      { name: 'Biotech Research Tools', href: '/biotech-research-tools', description: 'Research automation' }
     ]
   },
   {
