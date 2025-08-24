@@ -1,7 +1,6 @@
-import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import { Accessibility, Eye, Ear, Hand, Brain, CheckCircle } from 'lucide-react';
+import { CheckCircle } from 'lucide-react';
 
 export default function AccessibilityPage() {
   return (

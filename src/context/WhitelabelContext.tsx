@@ -1,4 +1,3 @@
-import React, { createContext, useContext, ReactNode } from 'react';
 
 interface WhitelabelConfig {
   companyName: string;

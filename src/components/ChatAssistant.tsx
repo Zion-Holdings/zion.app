@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 
 export const ChatAssistant: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);

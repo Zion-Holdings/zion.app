@@ -1,11 +1,10 @@
 
-import React from 'react';
 import { CategoriesSection } from "@/components/CategoriesSection";
 import { BenefitsSection } from "@/components/BenefitsSection";
 import { HeroSection } from "@/components/HeroSection";
 import { SEO } from "@/components/SEO";
 import { FloatingActionButton } from "@/components/ui/floating-action-button";
-import { MessageCircle, Phone, Mail, HelpCircle, Zap, Shield, Users, Globe } from "lucide-react";
+import { Phone, Mail } from 'lucide-react';
 import { HowItWorksSection } from "@/components/HowItWorksSection";
 import { FeaturedListingsSection } from "@/components/FeaturedListingsSection";
 import { NewsletterSection } from "@/components/NewsletterSection";

@@ -1,6 +1,4 @@
-import React, { useState, useEffect, ReactNode } from 'react';
 import { motion } from 'framer-motion';
-import { AlertTriangle, RefreshCw, Home, ChevronUp } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 
 interface Props {

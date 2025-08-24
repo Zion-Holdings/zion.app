@@ -1,19 +1,6 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { 
-  Twitter, 
-  Linkedin, 
-  Github, 
-  Mail, 
-  Phone, 
-  MapPin,
-  ArrowUp,
-  Globe,
-  Shield,
-  Users,
-  Zap
-} from 'lucide-react';
+import { Mail, Phone } from 'lucide-react';
 
 export function EnhancedFooter() {
   const scrollToTop = () => {

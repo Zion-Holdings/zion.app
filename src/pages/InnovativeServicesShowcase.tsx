@@ -1,22 +1,5 @@
-import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { 
-  Rocket, 
-  Brain, 
-  Shield, 
-  Cloud, 
-  Database, 
-  Globe, 
-  Zap, 
-  Target,
-  Star,
-  TrendingUp,
-  Users,
-  Award,
-  ArrowRight,
-  CheckCircle,
-  Play
-} from 'lucide-react';
+import { ArrowRight, CheckCircle } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
 import { Button } from '../components/ui/button';
 import { Badge } from '../components/ui/badge';

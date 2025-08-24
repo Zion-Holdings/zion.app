@@ -1,27 +1,5 @@
-import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { 
-  Search, 
-  Filter, 
-  Grid3X3, 
-  List, 
-  Star, 
-  Clock, 
-  DollarSign,
-  Shield,
-  Cloud,
-  Database,
-  Cpu,
-  Zap,
-  TrendingUp,
-  Globe,
-  Lock,
-  BarChart3,
-  Smartphone,
-  Network,
-  Brain,
-  Rocket
-} from 'lucide-react';
+import { Search, Grid3X3 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';

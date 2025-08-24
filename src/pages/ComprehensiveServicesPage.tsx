@@ -1,23 +1,9 @@
-import React, { useState, useMemo } from 'react';
 import { COMPREHENSIVE_SERVICES, SERVICE_CATEGORIES } from '@/data/comprehensiveServices';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { 
-  Search, 
-  Filter, 
-  Star, 
-  Clock, 
-  Users, 
-  CheckCircle, 
-  TrendingUp,
-  Phone,
-  Mail,
-  Globe,
-  ArrowRight,
-  Sparkles
-} from 'lucide-react';
+import { Search, CheckCircle, Phone, Mail, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function ComprehensiveServicesPage() {

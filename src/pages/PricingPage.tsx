@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { Phone, Mail, MapPin, Star, Clock, Users, Shield, Zap, CheckCircle, ArrowRight, Calculator, TrendingUp, Award, Globe } from 'lucide-react';
+import { Phone, Mail, CheckCircle, ArrowRight } from 'lucide-react';
 import { SERVICE_PRICING_TIERS, CONTACT_INFO, SERVICE_GUARANTEES } from '../data/comprehensiveServices';
 
 const PricingPage: React.FC = () => {

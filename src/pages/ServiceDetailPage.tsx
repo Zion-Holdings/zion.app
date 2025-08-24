@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Star, Clock, Users, Shield, Zap, CheckCircle, ArrowRight } from 'lucide-react';
+import { Phone, Mail, CheckCircle, ArrowRight } from 'lucide-react';
 import { COMPREHENSIVE_SERVICES, SERVICE_PRICING_TIERS, CONTACT_INFO, SERVICE_GUARANTEES } from '../data/comprehensiveServices';
 
 interface ServiceDetailPageProps {}

@@ -1,20 +1,7 @@
-import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { 
-  Menu, 
-  X, 
-  Search, 
-  User, 
-  Bell, 
-  ChevronDown,
-  Globe,
-  Settings,
-  LogOut,
-  Sun,
-  Moon
-} from 'lucide-react';
+import { Menu, X, Search } from 'lucide-react';
 
 interface NavigationProps {
   onThemeToggle?: () => void;

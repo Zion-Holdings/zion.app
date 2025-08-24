@@ -1,7 +1,6 @@
 
 
 import { motion } from 'framer-motion';
-import { User, Sparkles } from 'lucide-react';
 
 export function ProfileLoadingState() {
   const containerVariants = {

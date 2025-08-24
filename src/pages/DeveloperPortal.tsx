@@ -1,7 +1,6 @@
-import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import { Code, BookOpen, Zap, Shield, Users, Globe, ArrowRight, Terminal, Database, FileCode, CheckCircle } from 'lucide-react';
+import { ArrowRight, CheckCircle } from 'lucide-react';
 
 export default function DeveloperPortal() {
   return (

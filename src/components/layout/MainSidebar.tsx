@@ -1,33 +1,7 @@
-import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '../ui/button';
 import { Badge } from '../ui/badge';
-import { 
-  X, 
-  Home, 
-  Users, 
-  Briefcase, 
-  Settings, 
-  HelpCircle, 
-  MessageCircle, 
-  Shield, 
-  Zap, 
-  Globe, 
-  Database, 
-  Lock, 
-  BookOpen, 
-  Phone, 
-  Mail, 
-  MapPin,
-  ExternalLink,
-  ChevronDown,
-  ChevronRight,
-  Sparkles,
-  Cpu,
-  Cloud,
-  TrendingUp,
-  Building2
-} from 'lucide-react';
+import { X, Phone, Mail } from 'lucide-react';
 
 interface SidebarSection {
   id: string;

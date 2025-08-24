@@ -1,5 +1,3 @@
-import React from 'react';
-import { Share2, Twitter, Facebook, Linkedin, Link as LinkIcon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export const SocialShareSection: React.FC = () => {

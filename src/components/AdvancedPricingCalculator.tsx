@@ -1,5 +1,3 @@
-import React, { useState, useEffect } from 'react';
-import { Calculator, TrendingUp, Zap, Target, Users, Clock, DollarSign, Settings } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Button } from './ui/button';
 import { Badge } from './ui/badge';

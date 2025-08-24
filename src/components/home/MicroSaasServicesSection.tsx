@@ -1,23 +1,9 @@
-import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
 import { getFeaturedServices } from '@/data/microSaasServices';
-import { 
-  Bot, 
-  Shield, 
-  Code, 
-  BarChart3, 
-  Zap, 
-  TrendingUp, 
-  Briefcase, 
-  DollarSign,
-  ArrowRight,
-  Star,
-  Users,
-  CheckCircle
-} from 'lucide-react';
+import { ArrowRight, CheckCircle } from 'lucide-react';
 
 export function MicroSaasServicesSection() {
   const featuredServices = getFeaturedServices();

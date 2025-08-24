@@ -1,35 +1,10 @@
-import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { 
-  Search, 
-  Filter, 
-  Star, 
-  ExternalLink, 
-  Play, 
-  FileText, 
-  DollarSign,
-  Users,
-  Zap,
-  Shield,
-  BarChart3,
-  MessageSquare,
-  Calendar,
-  Mail,
-  Heart,
-  ShoppingCart,
-  GraduationCap,
-  Building,
-  Globe,
-  TrendingUp,
-  Award,
-  Clock,
-  Code
-} from "lucide-react";
+import { Search, Mail } from 'lucide-react';
 // import { MICRO_SAAS_SERVICES, MicroSaasService, getMicroSaasServicesByCategory, getFeaturedMicroSaasServices } from "@/data/microSaasServices";
 import { SEO } from "@/components/SEO";
 

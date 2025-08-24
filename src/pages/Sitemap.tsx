@@ -1,25 +1,7 @@
-import React from 'react';
 import { SEO } from '../components/SEO';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '../components/ui/card.js';
 import { Badge } from '../components/ui/badge.js';
-import { 
-  Home, 
-  HelpCircle, 
-  MessageCircle, 
-  Zap, 
-  Globe, 
-  Database, 
-  Lock, 
-  BookOpen, 
-  Phone, 
-  Mail, 
-  MapPin,
-  ExternalLink,
-  Sparkles,
-  Cpu,
-  TrendingUp,
-  Building2
-} from 'lucide-react';
+import { Phone, Mail } from 'lucide-react';
 
 interface SitemapSection {
   id: string;

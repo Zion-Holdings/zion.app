@@ -1,6 +1,5 @@
-import React, { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
-import { Search, Filter, Star, ExternalLink, Zap, Shield, Cloud, Brain, Globe, Lock, Cpu, Database, Network, Code, BarChart3, Users, Smartphone, Server, Key, Eye, Rocket, Target, TrendingUp, Award, Clock, CheckCircle, ArrowRight, Phone } from 'lucide-react';
+import { Search, CheckCircle, ArrowRight, Phone } from 'lucide-react';
 
 interface Service {
   id: string;

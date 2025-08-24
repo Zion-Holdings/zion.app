@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -6,20 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 // import { getFeaturedServices, getServicesByCategory } from '@/data/microSaasServices';
 import { COMPREHENSIVE_SERVICES } from '@/data/comprehensiveServices';
-import { 
-  Brain, 
-  Cloud, 
-  Zap, 
-  Star, 
-  CheckCircle, 
-  ArrowRight,
-  Mail,
-  Phone,
-  ExternalLink,
-  Eye,
-  Clock,
-  Globe
-} from 'lucide-react';
+import { CheckCircle, ArrowRight, Mail, Phone } from 'lucide-react';
 
 const categoryIcons = {
   'AI Services': <Brain className="w-6 h-6" />,

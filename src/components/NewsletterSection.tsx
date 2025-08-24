@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, CheckCircle, Sparkles, ArrowRight } from 'lucide-react';
+import { Mail, CheckCircle, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 

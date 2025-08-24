@@ -1,6 +1,4 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
-import { User, LogIn } from 'lucide-react';
 
 export function UserMenu() {
   // For now, we'll show a simple login button

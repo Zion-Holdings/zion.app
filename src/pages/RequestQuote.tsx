@@ -1,5 +1,4 @@
 
-import React from 'react';
 import { QuoteRequestForm } from "@/components/QuoteRequestForm";
 import { SEO } from "@/components/SEO";
 import { AppHeader } from "@/layout/AppHeader";

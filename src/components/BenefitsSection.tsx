@@ -1,6 +1,4 @@
-import React from 'react';
 import { GradientHeading } from "./GradientHeading";
-import { Bot, Clock, Globe, TrendingDown, Sparkles, Shield, Zap, Users } from "lucide-react";
 import { motion } from "framer-motion";
 
 const benefits = [

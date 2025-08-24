@@ -1,4 +1,3 @@
-import React from 'react';
 import { FaqSection } from "@/components/FaqSection";
 import { SEO } from "@/components/SEO";
 import { AppHeader } from "@/layout/AppHeader";

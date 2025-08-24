@@ -1,29 +1,5 @@
-import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { cn } from '@/lib/utils';
-import { 
-  Home, 
-  ShoppingCart, 
-  Users, 
-  Settings, 
-  FileText, 
-  MessageSquare, 
-  BarChart3, 
-  HelpCircle,
-  ChevronRight,
-  Building2,
-  Globe,
-  Zap,
-  Shield,
-  Award,
-  BookOpen,
-  Code,
-  Database,
-  Server,
-  MapPin,
-  Calendar,
-  Handshake
-} from 'lucide-react';
 
 interface SidebarProps {
   isOpen?: boolean;

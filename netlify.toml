@@ -4,3 +4,37 @@
 
 [build.environment]
   NODE_OPTIONS = "--max-old-space-size=6144 --openssl-legacy-provider"
+
+# Disable Next.js plugin since this is a Vite project
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+  enabled = false
+
+# Headers for Vite build
+[[headers]]
+  for = "/*"
+  values = {
+    Cache-Control = "public, max-age=0, must-revalidate"
+    Permissions-Policy = "interest-cohort=()"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+  }
+
+[[headers]]
+  for = "/assets/*"
+  values = {
+    Cache-Control = "public, max-age=31536000, immutable"
+  }
+
+[[headers]]
+  for = "/js/*"
+  values = {
+    Cache-Control = "public, max-age=31536000, immutable"
+  }
+
+[[headers]]
+  for = "/css/*"
+  values = {
+    Cache-Control = "public, max-age=31536000, immutable"
+  }

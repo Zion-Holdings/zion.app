@@ -1,7 +1,6 @@
-import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import { Brain, Zap, Shield, Globe, Users, Award, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 export default function AISolutions() {
   return (

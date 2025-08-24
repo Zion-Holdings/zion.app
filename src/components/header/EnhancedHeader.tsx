@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Phone, Mail, MapPin, Menu, X, Zap, Brain, Shield } from 'lucide-react';
+import { Phone, Mail, Menu, X } from 'lucide-react';
 
 export function EnhancedHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

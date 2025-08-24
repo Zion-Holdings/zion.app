@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import { Header } from '@/components/Header';
 import Footer from '@/components/Footer';
 import { SEO } from '@/components/SEO';
@@ -8,28 +7,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { 
-  Search, 
-  Filter, 
-  Star, 
-  Users, 
-  Zap, 
-  Shield, 
-  Cloud, 
-  Code, 
-  BarChart3, 
-  Bot, 
-  Briefcase,
-  Globe,
-  Mail,
-  Phone,
-  MapPin,
-  ExternalLink,
-  CheckCircle,
-  TrendingUp,
-  Clock,
-  DollarSign
-} from 'lucide-react';
+import { Search, Mail, Phone, CheckCircle } from 'lucide-react';
 
 export default function MicroSaasServices() {
   const [searchTerm, setSearchTerm] = useState('');
