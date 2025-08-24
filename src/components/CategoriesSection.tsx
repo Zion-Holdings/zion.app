@@ -38,6 +38,22 @@ const specialServices = [
   {
     title: "IT Onsite Services",
     link: "/it-onsite-services"
+  },
+  {
+    title: "AI Services",
+    link: "/ai-services"
+  },
+  {
+    title: "Blockchain Solutions",
+    link: "/blockchain-services"
+  },
+  {
+    title: "IoT Platform",
+    link: "/iot-services"
+  },
+  {
+    title: "Cybersecurity",
+    link: "/cybersecurity-services"
   }
 ];
 
