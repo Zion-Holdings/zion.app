@@ -51,8 +51,13 @@
   },
   {
     "route": "/404",
+<<<<<<< HEAD
+    "title": "404 - Page Not Found | Zion Tech Group",
+    "h1": "404"
+=======
     "title": "",
     "h1": "404 - Page Not Found"
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-b56b
   },
   {
     "route": "/500",
@@ -71,13 +76,22 @@
   },
   {
     "route": "/_document",
+<<<<<<< HEAD
+    "title": "",
+=======
     "title": "Zion Tech Group - Pioneering Autonomous Business Operations",
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-b56b
     "h1": ""
   },
   {
     "route": "/about",
+<<<<<<< HEAD
+    "title": "About Us | Zion Tech Group",
+    "h1": "About Zion Tech Group"
+=======
     "title": "About Us - Zion Tech Group",
     "h1": "We build practical AI and platform solutions"
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-b56b
   },
   {
     "route": "/agency-dashboard",
@@ -291,8 +305,13 @@
   },
   {
     "route": "/contact",
+<<<<<<< HEAD
+    "title": "Contact Us | Zion Tech Group",
+    "h1": "Get in Touch"
+=======
     "title": "Contact Us - Zion Tech Group | Get Started with Revolutionary Micro SaaS Services",
     "h1": "Let's Transform Your Business"
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-b56b
   },
   {
     "route": "/cutting-edge-pricing-2025",
@@ -365,6 +384,14 @@
     "h1": "Enhanced Services Showcase"
   },
   {
+<<<<<<< HEAD
+    "route": "/explore",
+    "title": "Explore Technology Categories | Zion Tech Group",
+    "h1": "Explore Technology Categories"
+  },
+  {
+=======
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-b56b
     "route": "/expo",
     "title": "",
     "h1": ""
@@ -411,8 +438,13 @@
   },
   {
     "route": "/",
+<<<<<<< HEAD
+    "title": "Zion Tech Group — Leading-Edge Technology Solutions & Autonomous Innovation Platform",
+    "h1": "Zion Tech Group"
+=======
     "title": "",
     "h1": ""
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-b56b
   },
   {
     "route": "/innovative-services-showcase-2025",
@@ -625,6 +657,14 @@
     "h1": "Salary Insights"
   },
   {
+<<<<<<< HEAD
+    "route": "/search",
+    "title": "Search | Zion Tech Group",
+    "h1": "Search Our Services"
+  },
+  {
+=======
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-b56b
     "route": "/secrets-rotation-automation",
     "title": "",
     "h1": "Secrets Rotation Automation"
@@ -651,8 +691,13 @@
   },
   {
     "route": "/services",
+<<<<<<< HEAD
+    "title": "AI & Technology Services | Zion Tech Group",
+    "h1": "AI & Technology Services"
+=======
     "title": "Revolutionary 2029 Technology Services | Zion Tech Group",
     "h1": ""
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-b56b
   },
   {
     "route": "/site-health",
@@ -662,7 +707,11 @@
   {
     "route": "/sitemap",
     "title": "Sitemap | Zion Tech Group",
+<<<<<<< HEAD
+    "h1": "Site Map"
+=======
     "h1": "Sitemap"
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-b56b
   },
   {
     "route": "/soc2-compliance-automation",
