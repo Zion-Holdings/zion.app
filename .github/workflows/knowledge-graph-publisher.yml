@@ -1,0 +1,49 @@
+name: Repo Knowledge Graph Publisher
+
+on:
+  schedule:
+    - cron: '5 */6 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: knowledge-graph-publisher
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Configure Git identity
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Build knowledge graph
+        run: node automation/repo-knowledge-graph.cjs
+
+      - name: Commit and push graph
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git add data/reports/repo-knowledge-graph.json
+            git commit -m "chore: repo knowledge graph refreshed [skip ci]"
+            git push
+          else
+            echo "No changes to commit"
+          fi
