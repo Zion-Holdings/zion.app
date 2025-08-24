@@ -1,0 +1,29 @@
+{
+  "name": "Zion Tech Group - The Future of Tech & AI Marketplace",
+  "short_name": "Zion Tech",
+  "description": "The world's first free marketplace dedicated to high-tech and artificial intelligence. Publish, connect, and thrive — all in one place.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#172d67",
+  "theme_color": "#8c15e9",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "productivity", "technology"],
+  "lang": "en",
+  "dir": "ltr",
+  "scope": "/",
+  "prefer_related_applications": false
+}
