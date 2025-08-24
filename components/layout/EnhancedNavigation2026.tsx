@@ -3,9 +3,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { 
   Menu, X, ChevronDown, Rocket, Phone, Mail, MapPin,
-  Brain, Shield,
-  Target,
-  Sparkles, Atom, Satellite, Search
+  Brain, Cpu, Shield, Zap, Star, Users, TrendingUp,
+  Globe, Database, Cloud, Lock, Palette, Target,
+  Layers, Sparkles, Atom, Microscope, Satellite,
+  Search, Bell, User, Settings, LogOut, SparklesIcon
 } from 'lucide-react';
 
 const contactInfo = {
@@ -87,8 +88,7 @@ const serviceCategories = [
 const companyLinks = [
   { name: 'About Us', href: '/about' },
   { name: '2026 Services', href: '/2026-services-showcase' },
-  { name: 'Enhanced 2026 Services', href: '/2026-services-showcase-enhanced' },
-  { name: 'Enhanced 2026 Pricing', href: '/pricing-enhanced-2026' },
+  { name: '2026 Innovations', href: '/2026-innovations-showcase' },
   { name: 'News & Updates', href: '/news' },
   { name: 'Case Studies', href: '/case-studies' },
   { name: 'Blog & Resources', href: '/blog' },
@@ -152,7 +152,7 @@ const EnhancedNavigation2026 = () => {
                 whileHover={{ scale: 1.05 }}
                 className="flex items-center space-x-2 text-cyan-300 hover:text-cyan-200 transition-colors"
               >
-                <Sparkles className="w-4 h-4" />
+                <SparklesIcon className="w-4 h-4" />
                 <span className="font-semibold">2026 Revolutionary Services</span>
               </motion.div>
             </div>
@@ -271,7 +271,7 @@ const EnhancedNavigation2026 = () => {
                 placeholder="Search services..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                                  className="w-64 pl-10 pr-4 py-2 bg-white/10 border border-cyan-500/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
+                className="w-64 pl-10 pr-4 py-2 bg-white/10 border border-cyan-500/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-transparent"
               />
             </motion.div>
 
@@ -316,7 +316,7 @@ const EnhancedNavigation2026 = () => {
                   placeholder="Search services..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-10 pr-4 py-3 bg-white/10 border border-cyan-500/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
+                  className="w-full pl-10 pr-4 py-3 bg-white/10 border border-cyan-500/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-transparent"
                 />
               </div>
 
