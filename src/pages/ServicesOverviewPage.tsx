@@ -264,7 +264,7 @@ export default function ServicesOverviewPage() {
                   </div>
                 </div>
 
-                <Button asChild className="w-full bg-gradient-to-r from-zion-purple to-zion-cyan hover:from-zion-purple-light hover:to-zion-cyan-light text-white">
+                <Button className="w-full bg-gradient-to-r from-zion-purple to-zion-cyan hover:from-zion-purple-light hover:to-zion-cyan-light text-white">
                   <Link to={category.link}>
                     Explore {category.title}
                   </Link>
@@ -300,7 +300,7 @@ export default function ServicesOverviewPage() {
               </CardHeader>
               <CardContent className="pb-4">
                 <p className="text-lg font-bold text-zion-cyan mb-4">{service.price}</p>
-                <Button asChild className="w-full bg-gradient-to-r from-zion-blue to-zion-cyan hover:from-zion-blue-light hover:to-zion-cyan-light text-white">
+                <Button className="w-full bg-gradient-to-r from-zion-blue to-zion-cyan hover:from-zion-blue-light hover:to-zion-cyan-light text-white">
                   <Link to={service.link}>
                     Learn More
                   </Link>

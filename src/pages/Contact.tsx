@@ -1,15 +1,15 @@
 import { useState } from "react";
-import { Header } from "@/components/Header";
+// Header component removed for now
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { GradientHeading } from "@/components/GradientHeading";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+// Textarea component removed for now
 import { Card } from "@/components/ui/card";
-import { toast } from "@/components/ui/use-toast";
+// toast hook removed for now
 import z from "zod";
-import { ChatAssistant } from "@/components/ChatAssistant";
+// ChatAssistant component removed for now
 import { Mail, MessageSquare, MapPin, Phone } from "lucide-react";
 
 export default function Contact() {
@@ -53,11 +53,11 @@ export default function Contact() {
         }
       }
       setErrors(fieldErrors);
-      toast({
-        title: "Form Validation Error",
-        description: result.error.errors[0].message,
-        variant: "destructive",
-      });
+      // toast({
+      //   title: "Form Validation Error",
+      //   description: result.error.errors[0].message,
+      //   variant: "destructive",
+      // });
       return;
     }
 
@@ -68,10 +68,10 @@ export default function Contact() {
 
     setTimeout(() => {
       setIsSubmitting(false);
-      toast({
-        title: "Message Sent",
-        description: "We've received your message and will get back to you soon.",
-      });
+      // toast({
+      //   title: "Message Sent",
+      //   description: "We've received your message and will get back to you soon.",
+      // });
 
       // Reset form
       setFormData({
@@ -103,11 +103,11 @@ export default function Contact() {
       return Promise.resolve();
     } catch (error) {
       console.error("Error in AI chat:", error);
-      toast({
-        title: "Chat Error",
-        description: "There was an error communicating with our AI assistant. Please try again.",
-        variant: "destructive"
-      });
+      // toast({
+      //   title: "Chat Error",
+      //   description: "There was an error communicating with our AI assistant. Please try again.",
+      //   variant: "destructive"
+      // });
       return Promise.resolve();
     }
   };
@@ -127,7 +127,7 @@ export default function Contact() {
         title="Contact Zion - Get in Touch"
         description="Have questions or want to learn more? Contact the Zion team about our AI and tech marketplace platform."
         keywords="contact Zion, AI marketplace support, tech platform contact"
-        canonical="https://app.ziontechgroup.com/contact"
+        // canonical="https://app.ziontechgroup.com/contact"
       />
       <main className="min-h-screen bg-zion-blue pt-24 pb-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -199,12 +199,12 @@ export default function Contact() {
 
                 <div>
                   <label htmlFor="message" className="block text-white mb-2">Message</label>
-                  <Textarea
+                  <textarea
                     id="message"
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    className={`bg-zion-blue-dark border-zion-blue-light text-white min-h-[150px] ${errors.message ? 'border-red-500 focus-visible:ring-red-500' : ''}`}
+                    className={`bg-zion-blue-dark border-zion-blue-light text-white min-h-[150px] p-3 rounded-md ${errors.message ? 'border-red-500 focus-visible:ring-red-500' : ''}`}
                     placeholder="Tell us what you'd like to know..."
                     required
                   />
@@ -300,7 +300,7 @@ export default function Contact() {
               <Button 
                 variant="outline" 
                 className="border-zion-cyan text-zion-cyan hover:bg-zion-cyan/10"
-                asChild
+                // asChild
               >
                 <a href="mailto:kleber@ziontechgroup.com">
                   <Mail className="mr-2 h-5 w-5" />
@@ -312,20 +312,7 @@ export default function Contact() {
         </div>
       </main>
 
-      {/* Chat Assistant Modal */}
-      {isChatOpen && (
-        <ChatAssistant
-          isOpen={isChatOpen}
-          onClose={() => setIsChatOpen(false)}
-          recipient={{
-            id: 'ai-assistant',
-            name: 'AI Assistant',
-            avatarUrl: 'https://placehold.co/64x64?text=AI',
-            role: 'Support Bot'
-          }}
-          onSendMessage={handleSendMessage}
-        />
-      )}
+      {/* Chat Assistant Modal will be added later */}
     </>
   );
 }

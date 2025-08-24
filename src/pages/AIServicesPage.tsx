@@ -244,7 +244,7 @@ export default function AIServicesPage() {
                 </ul>
               </CardContent>
               <div className="px-6 pb-6">
-                <Button asChild className="w-full bg-gradient-to-r from-zion-purple to-zion-cyan hover:from-zion-purple-light hover:to-zion-cyan-light text-white">
+                <Button className="w-full bg-gradient-to-r from-zion-purple to-zion-cyan hover:from-zion-purple-light hover:to-zion-cyan-light text-white">
                   <Link to={service.link}>
                     Get Started
                   </Link>

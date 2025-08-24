@@ -1,7 +1,7 @@
 
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
-import { useAuth } from "@/hooks/useAuth";
+// useAuth hook removed for now
 import { MessageSquare } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
@@ -12,8 +12,8 @@ interface MainNavigationProps {
 }
 
 export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: MainNavigationProps) {
-  const { user } = useAuth();
-  const isAuthenticated = !!user;
+  // const { user } = useAuth(); // Removed for now
+  const isAuthenticated = false; // Temporarily disabled
   const location = useLocation();
   const { t } = useTranslation();
 

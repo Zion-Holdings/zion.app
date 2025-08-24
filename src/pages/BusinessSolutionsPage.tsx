@@ -292,7 +292,7 @@ export default function BusinessSolutionsPage() {
                 </ul>
               </CardContent>
               <div className="px-6 pb-6">
-                <Button asChild className="w-full bg-gradient-to-r from-zion-blue to-zion-cyan hover:from-zion-blue-light hover:to-zion-cyan-light text-white">
+                <Button className="w-full bg-gradient-to-r from-zion-blue to-zion-cyan hover:from-zion-blue-light hover:to-zion-cyan-light text-white">
                   <Link to={solution.link}>
                     Get Started
                   </Link>
