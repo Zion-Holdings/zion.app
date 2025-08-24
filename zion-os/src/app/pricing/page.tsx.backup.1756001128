@@ -43,7 +43,11 @@ const servicePricing: ServicePricing[] = [
         name: "Professional",
         price: "$299",
         period: "/month",
+<<<<<<< HEAD
+        description: "Ideal for growing businesses and teams",
+=======
         description: "Ideal for growing businesses",
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-e179
         features: ["Up to 10 instances", "Advanced features", "Priority support", "Custom domains", "Advanced analytics", "API access"],
         popular: true,
         cta: "Get Started",
@@ -61,6 +65,11 @@ const servicePricing: ServicePricing[] = [
     ]
   },
   {
+<<<<<<< HEAD
+    serviceName: "AI Content Hub",
+    category: "AI Services",
+    description: "Comprehensive content creation and management platform powered by advanced AI",
+=======
     serviceName: "ZionGPT Core",
     category: "AI Services",
     description: "Advanced AI language model optimized for business applications",
@@ -100,6 +109,7 @@ const servicePricing: ServicePricing[] = [
     serviceName: "AI Content Hub",
     category: "AI Services",
     description: "Comprehensive content creation and management platform powered by AI",
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-e179
     features: ["AI content generation", "SEO optimization", "Multi-platform publishing", "Content calendar", "Performance analytics", "Team collaboration"],
     benefits: ["Generate 10x more content", "Improve SEO rankings", "Save 20+ hours per week"],
     tiers: [
@@ -107,8 +117,13 @@ const servicePricing: ServicePricing[] = [
         name: "Starter",
         price: "$39",
         period: "/month",
+<<<<<<< HEAD
+        description: "For individual creators and small teams",
+        features: ["Up to 50 AI-generated articles/month", "Basic SEO tools", "Social media scheduling", "Basic analytics"],
+=======
         description: "For content creators and small teams",
         features: ["50 AI-generated articles/month", "Basic SEO tools", "Social media integration", "Content calendar", "Basic analytics"],
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-e179
         cta: "Start Free Trial",
         ctaLink: "/services/ai-content-hub"
       },
@@ -116,8 +131,14 @@ const servicePricing: ServicePricing[] = [
         name: "Professional",
         price: "$99",
         period: "/month",
+<<<<<<< HEAD
+        description: "For growing content teams and businesses",
+        features: ["Up to 200 AI-generated articles/month", "Advanced SEO optimization", "Multi-platform publishing", "Content calendar", "Team collaboration", "Advanced analytics"],
+        popular: true,
+=======
         description: "For growing content teams",
         features: ["200 AI-generated articles/month", "Advanced SEO optimization", "Multi-platform publishing", "Team collaboration", "Advanced analytics", "API access"],
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-e179
         cta: "Get Started",
         ctaLink: "/services/ai-content-hub"
       },
@@ -125,14 +146,52 @@ const servicePricing: ServicePricing[] = [
         name: "Enterprise",
         price: "$299",
         period: "/month",
+<<<<<<< HEAD
+        description: "For large organizations and agencies",
+        features: ["Unlimited AI-generated content", "Custom AI models", "White-label options", "API access", "Dedicated support", "Custom integrations"],
+=======
         description: "For large content operations",
         features: ["Unlimited content generation", "Custom AI models", "White-label options", "Advanced integrations", "Dedicated support", "Custom workflows"],
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-e179
         cta: "Contact Sales",
         ctaLink: "mailto:kleber@ziontechgroup.com"
       }
     ]
   },
   {
+<<<<<<< HEAD
+    serviceName: "AI Customer Support Suite",
+    category: "AI Services",
+    description: "Intelligent customer support automation with chatbots and smart routing",
+    features: ["AI chatbots", "Smart ticket routing", "Sentiment analysis", "Knowledge base", "24/7 availability", "Multi-language support"],
+    benefits: ["Reduce support costs by 50%", "Improve response time by 80%", "Increase customer satisfaction"],
+    tiers: [
+      {
+        name: "Starter",
+        price: "$29",
+        period: "/month",
+        description: "For small businesses starting with AI support",
+        features: ["Basic chatbot", "Up to 100 conversations/month", "Email support", "Basic knowledge base"],
+        cta: "Start Free Trial",
+        ctaLink: "/services/ai-customer-support"
+      },
+      {
+        name: "Professional",
+        price: "$79",
+        period: "/month",
+        description: "For businesses with growing support needs",
+        features: ["Advanced AI chatbot", "Up to 1000 conversations/month", "Smart ticket routing", "Sentiment analysis", "Multi-channel support", "Advanced analytics"],
+        popular: true,
+        cta: "Get Started",
+        ctaLink: "/services/ai-customer-support"
+      },
+      {
+        name: "Enterprise",
+        price: "$199",
+        period: "/month",
+        description: "For large organizations with complex support requirements",
+        features: ["Custom AI models", "Unlimited conversations", "Custom integrations", "White-label options", "Dedicated support", "Custom training"],
+=======
     serviceName: "Digital Marketplace Platform",
     category: "E-commerce & Services",
     description: "Complete marketplace solution for jobs, talent, projects, and services",
@@ -163,6 +222,7 @@ const servicePricing: ServicePricing[] = [
         period: "/month",
         description: "For large marketplaces",
         features: ["Unlimited users", "Custom development", "White-label options", "Advanced integrations", "Dedicated support", "Custom workflows"],
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-e179
         cta: "Contact Sales",
         ctaLink: "mailto:kleber@ziontechgroup.com"
       }
@@ -172,24 +232,42 @@ const servicePricing: ServicePricing[] = [
     serviceName: "Cloud Migration Services",
     category: "IT Services",
     description: "Professional cloud migration and optimization services",
+<<<<<<< HEAD
+    features: ["Infrastructure assessment", "Migration planning", "Data migration", "Performance optimization", "24/7 support", "Security compliance"],
+=======
     features: ["Infrastructure assessment", "Migration planning", "Data migration", "Performance optimization", "24/7 support", "Post-migration support"],
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-e179
     benefits: ["Reduce infrastructure costs by 40%", "Improve scalability", "Enhanced security"],
     tiers: [
       {
         name: "Basic Migration",
         price: "$2,500",
         period: "one-time",
+<<<<<<< HEAD
+        description: "For simple applications and small infrastructures",
+        features: ["Infrastructure assessment", "Basic migration plan", "Data migration", "Basic optimization", "30 days support"],
+=======
         description: "Simple infrastructure migration",
         features: ["Infrastructure assessment", "Basic migration plan", "Data migration", "Basic testing", "Documentation"],
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-e179
         cta: "Get Quote",
         ctaLink: "mailto:kleber@ziontechgroup.com"
       },
       {
+<<<<<<< HEAD
+        name: "Professional Migration",
+        price: "$7,500",
+        period: "one-time",
+        description: "For complex applications and medium infrastructures",
+        features: ["Comprehensive assessment", "Detailed migration plan", "Advanced optimization", "Security hardening", "90 days support", "Performance monitoring"],
+        popular: true,
+=======
         name: "Standard Migration",
         price: "$7,500",
         period: "one-time",
         description: "Comprehensive migration with optimization",
         features: ["Detailed assessment", "Comprehensive plan", "Data migration", "Performance optimization", "Testing & validation", "Training"],
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-e179
         cta: "Get Quote",
         ctaLink: "mailto:kleber@ziontechgroup.com"
       },
@@ -197,8 +275,13 @@ const servicePricing: ServicePricing[] = [
         name: "Enterprise Migration",
         price: "$15,000+",
         period: "one-time",
+<<<<<<< HEAD
+        description: "For large-scale enterprise migrations",
+        features: ["Full infrastructure audit", "Custom migration strategy", "Advanced optimization", "Security compliance", "6 months support", "Custom training"],
+=======
         description: "Complex enterprise migration",
         features: ["Full assessment", "Custom migration strategy", "Advanced optimization", "Custom integrations", "Ongoing support", "SLA guarantee"],
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-e179
         cta: "Contact Sales",
         ctaLink: "mailto:kleber@ziontechgroup.com"
       }
@@ -215,17 +298,31 @@ const servicePricing: ServicePricing[] = [
         name: "Basic Audit",
         price: "$1,500",
         period: "one-time",
+<<<<<<< HEAD
+        description: "For small businesses and startups",
+        features: ["Basic security assessment", "Vulnerability scan", "Compliance checklist", "Basic recommendations", "30 days support"],
+=======
         description: "Essential security assessment",
         features: ["Basic security scan", "Vulnerability assessment", "Compliance checklist", "Basic report", "Email support"],
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-e179
         cta: "Get Quote",
         ctaLink: "mailto:kleber@ziontechgroup.com"
       },
       {
+<<<<<<< HEAD
+        name: "Professional Audit",
+        price: "$4,500",
+        period: "one-time",
+        description: "For growing businesses with compliance needs",
+        features: ["Comprehensive security assessment", "Penetration testing", "Compliance audit", "Detailed recommendations", "Security training", "90 days support"],
+        popular: true,
+=======
         name: "Standard Audit",
         price: "$4,500",
         period: "one-time",
         description: "Comprehensive security assessment",
         features: ["Full security audit", "Penetration testing", "Compliance audit", "Detailed report", "Remediation guidance", "Phone support"],
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-e179
         cta: "Get Quote",
         ctaLink: "mailto:kleber@ziontechgroup.com"
       },
@@ -233,8 +330,124 @@ const servicePricing: ServicePricing[] = [
         name: "Enterprise Audit",
         price: "$9,000+",
         period: "one-time",
+<<<<<<< HEAD
+        description: "For large organizations with complex security requirements",
+        features: ["Full security assessment", "Advanced penetration testing", "Compliance certification", "Custom security policies", "Incident response planning", "6 months support"],
+        cta: "Contact Sales",
+        ctaLink: "mailto:kleber@ziontechgroup.com"
+      }
+    ]
+  },
+  {
+    serviceName: "Invoice Automation System",
+    category: "Business Automation",
+    description: "Automate invoice processing and financial reporting",
+    features: ["Automated invoice processing", "Payment tracking", "Financial reporting", "Integration with accounting software", "Mobile app", "Multi-currency support"],
+    benefits: ["Save 15+ hours per month", "Reduce payment delays", "Improve cash flow"],
+    tiers: [
+      {
+        name: "Starter",
+        price: "$25",
+        period: "/month",
+        description: "For small businesses and freelancers",
+        features: ["Up to 100 invoices/month", "Basic automation", "Payment tracking", "Basic reporting", "Email support"],
+        cta: "Start Free Trial",
+        ctaLink: "/services/invoice-automation"
+      },
+      {
+        name: "Professional",
+        price: "$59",
+        period: "/month",
+        description: "For growing businesses with more complex needs",
+        features: ["Up to 500 invoices/month", "Advanced automation", "Multi-currency support", "Advanced reporting", "Accounting integrations", "Priority support"],
+        popular: true,
+        cta: "Get Started",
+        ctaLink: "/services/invoice-automation"
+      },
+      {
+        name: "Enterprise",
+        price: "$129",
+        period: "/month",
+        description: "For large organizations with high volume",
+        features: ["Unlimited invoices", "Custom automation", "Custom integrations", "White-label options", "Dedicated support", "Custom training"],
+        cta: "Contact Sales",
+        ctaLink: "mailto:kleber@ziontechgroup.com"
+      }
+    ]
+  },
+  {
+    serviceName: "Smart Contract Audit Services",
+    category: "Blockchain & Web3",
+    description: "Professional smart contract security audits and optimization",
+    features: ["Security audit", "Code review", "Vulnerability assessment", "Gas optimization", "Documentation", "Ongoing support"],
+    benefits: ["Ensure contract security", "Reduce risk of exploits", "Optimize gas costs"],
+    tiers: [
+      {
+        name: "Basic Audit",
+        price: "$3,000",
+        period: "one-time",
+        description: "For simple smart contracts and basic DeFi protocols",
+        features: ["Basic security review", "Vulnerability assessment", "Basic recommendations", "30 days support"],
+        cta: "Get Quote",
+        ctaLink: "mailto:kleber@ziontechgroup.com"
+      },
+      {
+        name: "Professional Audit",
+        price: "$8,000",
+        period: "one-time",
+        description: "For complex smart contracts and DeFi protocols",
+        features: ["Comprehensive security audit", "Advanced vulnerability assessment", "Gas optimization", "Detailed documentation", "90 days support"],
+        popular: true,
+        cta: "Get Quote",
+        ctaLink: "mailto:kleber@ziontechgroup.com"
+      },
+      {
+        name: "Enterprise Audit",
+        price: "$20,000+",
+        period: "one-time",
+        description: "For large-scale DeFi protocols and enterprise blockchain solutions",
+        features: ["Full security audit", "Custom security framework", "Advanced optimization", "Custom documentation", "6 months support", "Custom training"],
+        cta: "Contact Sales",
+        ctaLink: "mailto:kleber@ziontechgroup.com"
+      }
+    ]
+  },
+  {
+    serviceName: "Healthcare Compliance Platform",
+    category: "Industry Solutions",
+    description: "HIPAA-compliant healthcare management system",
+    features: ["HIPAA compliance", "Patient management", "Appointment scheduling", "Billing automation", "Electronic health records", "Security audit logs"],
+    benefits: ["Ensure HIPAA compliance", "Improve patient care", "Reduce administrative costs"],
+    tiers: [
+      {
+        name: "Starter",
+        price: "$199",
+        period: "/month",
+        description: "For small medical practices and clinics",
+        features: ["Up to 100 patients", "Basic HIPAA compliance", "Appointment scheduling", "Basic billing", "Email support"],
+        cta: "Start Free Trial",
+        ctaLink: "/services/healthcare-compliance"
+      },
+      {
+        name: "Professional",
+        price: "$499",
+        period: "/month",
+        description: "For growing medical practices and multi-location clinics",
+        features: ["Up to 500 patients", "Advanced HIPAA compliance", "Advanced scheduling", "Automated billing", "Electronic health records", "Priority support"],
+        popular: true,
+        cta: "Get Started",
+        ctaLink: "/services/healthcare-compliance"
+      },
+      {
+        name: "Enterprise",
+        price: "$1,299",
+        period: "/month",
+        description: "For large healthcare organizations and hospital systems",
+        features: ["Unlimited patients", "Full HIPAA compliance", "Custom workflows", "Custom integrations", "White-label options", "Dedicated support"],
+=======
         description: "Advanced security assessment",
         features: ["Advanced testing", "Custom compliance", "Ongoing monitoring", "Security training", "Incident response", "Dedicated support"],
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-e179
         cta: "Contact Sales",
         ctaLink: "mailto:kleber@ziontechgroup.com"
       }
@@ -242,7 +455,11 @@ const servicePricing: ServicePricing[] = [
   }
 ];
 
+<<<<<<< HEAD
+const categories = ["All", "Core Platform", "AI Services", "IT Services", "Business Automation", "Blockchain & Web3", "Industry Solutions"];
+=======
 const categories = ["All", "Core Platform", "AI Services", "IT Services", "E-commerce & Services"];
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-e179
 
 export default function PricingPage() {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -260,6 +477,37 @@ export default function PricingPage() {
         </p>
       </div>
 
+<<<<<<< HEAD
+      {/* Contact Information */}
+      <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg p-6 text-white">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+          <div>
+            <h3 className="font-semibold">Contact Us</h3>
+            <p className="text-sm opacity-90">+1 302 464 0950</p>
+          </div>
+          <div>
+            <h3 className="font-semibold">Email</h3>
+            <p className="text-sm opacity-90">kleber@ziontechgroup.com</p>
+          </div>
+          <div>
+            <h3 className="font-semibold">Address</h3>
+            <p className="text-sm opacity-90">364 E Main St STE 1008<br />Middletown DE 19709</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Category Filter */}
+      <div className="flex justify-center">
+        <select
+          value={selectedCategory}
+          onChange={(e) => setSelectedCategory(e.target.value)}
+          className="p-3 bg-zinc-900 border border-white/10 rounded"
+        >
+          {categories.map(category => (
+            <option key={category} value={category}>{category}</option>
+          ))}
+        </select>
+=======
       {/* Category Filter */}
       <div className="flex justify-center">
         <div className="flex flex-wrap gap-2 bg-zinc-800 rounded-lg p-1">
@@ -277,6 +525,7 @@ export default function PricingPage() {
             </button>
           ))}
         </div>
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-e179
       </div>
 
       {/* Services Pricing */}
@@ -284,6 +533,16 @@ export default function PricingPage() {
         {filteredServices.map((service, serviceIndex) => (
           <div key={serviceIndex} className="space-y-6">
             <div className="text-center space-y-2">
+<<<<<<< HEAD
+              <h2 className="text-3xl font-bold">{service.serviceName}</h2>
+              <p className="text-lg opacity-80">{service.description}</p>
+            </div>
+
+            {/* Features and Benefits */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <h3 className="text-xl font-semibold mb-3">Key Features</h3>
+=======
               <h2 className="text-2xl font-bold">{service.serviceName}</h2>
               <p className="text-lg opacity-80">{service.description}</p>
             </div>
@@ -292,6 +551,7 @@ export default function PricingPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <h3 className="text-lg font-semibold mb-3">Key Features</h3>
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-e179
                 <ul className="space-y-2">
                   {service.features.map((feature, index) => (
                     <li key={index} className="flex items-center gap-2">
@@ -302,7 +562,11 @@ export default function PricingPage() {
                 </ul>
               </div>
               <div>
+<<<<<<< HEAD
+                <h3 className="text-xl font-semibold mb-3">Benefits</h3>
+=======
                 <h3 className="text-lg font-semibold mb-3">Benefits</h3>
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-e179
                 <ul className="space-y-2">
                   {service.benefits.map((benefit, index) => (
                     <li key={index} className="flex items-center gap-2">
@@ -317,31 +581,65 @@ export default function PricingPage() {
             {/* Pricing Tiers */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {service.tiers.map((tier, tierIndex) => (
+<<<<<<< HEAD
+                <div 
+                  key={tierIndex} 
+                  className={`border rounded-lg p-6 relative ${
+                    tier.popular 
+                      ? 'border-blue-500 bg-blue-500/10' 
+=======
                 <div
                   key={tierIndex}
                   className={`relative border rounded-lg p-6 ${
                     tier.popular
                       ? 'border-blue-500 bg-blue-500/10'
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-e179
                       : 'border-white/10'
                   }`}
                 >
                   {tier.popular && (
                     <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+<<<<<<< HEAD
+                      <span className="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+=======
                       <span className="bg-blue-500 text-white px-3 py-1 rounded-full text-xs font-medium">
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-e179
                         Most Popular
                       </span>
                     </div>
                   )}
+<<<<<<< HEAD
+                  
+                  <div className="text-center space-y-4">
+                    <h3 className="text-xl font-semibold">{tier.name}</h3>
+                    <div className="space-y-1">
+                      <div className="text-3xl font-bold">{tier.price}</div>
+                      <div className="text-sm opacity-80">{tier.period}</div>
+=======
 
                   <div className="text-center space-y-4">
                     <h3 className="text-xl font-semibold">{tier.name}</h3>
                     <div>
                       <span className="text-3xl font-bold">{tier.price}</span>
                       <span className="text-lg opacity-80">{tier.period}</span>
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-e179
                     </div>
                     <p className="text-sm opacity-80">{tier.description}</p>
                   </div>
 
+<<<<<<< HEAD
+                  <div className="mt-6 space-y-3">
+                    <h4 className="font-semibold">Includes:</h4>
+                    <ul className="space-y-2 text-sm">
+                      {tier.features.map((feature, index) => (
+                        <li key={index} className="flex items-center gap-2">
+                          <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+=======
                   <ul className="space-y-3 mt-6">
                     {tier.features.map((feature, index) => (
                       <li key={index} className="flex items-center gap-2 text-sm">
@@ -350,11 +648,16 @@ export default function PricingPage() {
                       </li>
                     ))}
                   </ul>
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-e179
 
                   <div className="mt-6">
                     <a
                       href={tier.ctaLink}
+<<<<<<< HEAD
+                      className={`block w-full text-center py-3 px-4 rounded-lg font-semibold transition-colors ${
+=======
                       className={`block w-full text-center py-3 px-4 rounded-lg font-medium transition-colors ${
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-e179
                         tier.popular
                           ? 'bg-blue-600 hover:bg-blue-700 text-white'
                           : 'bg-zinc-700 hover:bg-zinc-600 text-white'
@@ -370,6 +673,51 @@ export default function PricingPage() {
         ))}
       </div>
 
+<<<<<<< HEAD
+      {/* Additional Information */}
+      <div className="bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg p-8 text-white">
+        <div className="text-center space-y-4">
+          <h2 className="text-2xl font-bold">Need a Custom Solution?</h2>
+          <p className="opacity-90">
+            We offer custom development and enterprise solutions tailored to your specific needs.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="mailto:kleber@ziontechgroup.com"
+              className="px-6 py-3 bg-white text-purple-600 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+            >
+              Contact Sales
+            </a>
+            <a
+              href="tel:+13024640950"
+              className="px-6 py-3 border border-white text-white rounded-lg font-semibold hover:bg-white hover:text-purple-600 transition-colors"
+            >
+              Call Now
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* FAQ Section */}
+      <div className="space-y-6">
+        <h2 className="text-2xl font-bold text-center">Frequently Asked Questions</h2>
+        <div className="space-y-4">
+          <div className="border border-white/10 rounded-lg p-4">
+            <h3 className="font-semibold mb-2">Do you offer free trials?</h3>
+            <p className="text-sm opacity-80">Yes, most of our services offer free trials so you can test them before committing.</p>
+          </div>
+          <div className="border border-white/10 rounded-lg p-4">
+            <h3 className="font-semibold mb-2">Can I upgrade or downgrade my plan?</h3>
+            <p className="text-sm opacity-80">Absolutely! You can change your plan at any time, and we'll prorate the billing accordingly.</p>
+          </div>
+          <div className="border border-white/10 rounded-lg p-4">
+            <h3 className="font-semibold mb-2">What payment methods do you accept?</h3>
+            <p className="text-sm opacity-80">We accept all major credit cards, PayPal, and bank transfers for enterprise plans.</p>
+          </div>
+          <div className="border border-white/10 rounded-lg p-4">
+            <h3 className="font-semibold mb-2">Is there a setup fee?</h3>
+            <p className="text-sm opacity-80">No setup fees for our monthly plans. One-time services may have project-based pricing.</p>
+=======
       {/* Additional Services */}
       <div className="bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg p-8 text-white">
         <div className="text-center space-y-4">
@@ -418,6 +766,7 @@ export default function PricingPage() {
           <div>
             <h3 className="font-semibold">Address</h3>
             <p className="opacity-80">364 E Main St STE 1008<br />Middletown DE 19709</p>
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-e179
           </div>
         </div>
       </div>
