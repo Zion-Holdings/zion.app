@@ -1,13 +1,25 @@
 
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
+import { useAuth } from "@/hooks/useAuth";
+import { MessageSquare, ChevronDown, Users, Briefcase, Settings, BarChart3 } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 interface MainNavigationProps {
+  isAdmin?: boolean;
+  unreadCount?: number;
   className?: string;
 }
 
-export function MainNavigation({ className }: MainNavigationProps) {
+export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: MainNavigationProps) {
+  const { user } = useAuth();
+  const isAuthenticated = !!user;
   const location = useLocation();
   const { t } = useTranslation();
 
@@ -15,22 +27,7 @@ export function MainNavigation({ className }: MainNavigationProps) {
     {
       key: 'home',
       href: '/',
-      matches: (path: string) => path === '/' || path === '/home'
-    },
-    {
-      key: 'about',
-      href: '/about',
-      matches: (path: string) => path === '/about'
-    },
-    {
-      key: 'services',
-      href: '/services',
-      matches: (path: string) => path.startsWith('/services')
-    },
-    {
-      key: 'it-onsite-services',
-      href: '/it-onsite-services',
-      matches: (path: string) => path.startsWith('/it-onsite-services')
+      matches: (path: string) => path === '/'
     },
     {
       key: 'marketplace',
@@ -38,29 +35,9 @@ export function MainNavigation({ className }: MainNavigationProps) {
       matches: (path: string) => path.startsWith('/marketplace')
     },
     {
-      key: 'micro-saas',
-      href: '/micro-saas-services',
-      matches: (path: string) => path.startsWith('/micro-saas-services')
-    },
-    {
-      key: 'comprehensive-services',
-      href: '/comprehensive-services',
-      matches: (path: string) => path.startsWith('/comprehensive-services')
-    },
-    {
-      key: 'ai-services',
-      href: '/ai-services',
-      matches: (path: string) => path.startsWith('/ai-services')
-    },
-    {
-      key: 'enterprise-solutions',
-      href: '/enterprise-solutions',
-      matches: (path: string) => path.startsWith('/enterprise-solutions')
-    },
-    {
-      key: 'categories',
-      href: '/categories',
-      matches: (path: string) => path.startsWith('/categories')
+      key: 'services',
+      href: '/services',
+      matches: (path: string) => path.startsWith('/services')
     },
     {
       key: 'talent',
@@ -76,11 +53,35 @@ export function MainNavigation({ className }: MainNavigationProps) {
       key: 'community',
       href: '/community',
       matches: (path: string) => path.startsWith('/community') || path.startsWith('/forum')
-
+    },
+    {
+      key: 'blog',
+      href: '/blog',
+      matches: (path: string) => path.startsWith('/blog')
     }
   ];
 
   let links = baseLinks.map(link => ({ ...link, name: t(`nav.${link.key}`) }));
+  
+  // Add authenticated-only links
+  if (isAuthenticated) {
+    links.push({
+      key: 'dashboard',
+      name: t('nav.dashboard'),
+      href: '/dashboard',
+      matches: (path: string) => path === '/dashboard' || path === '/client-dashboard' || path === '/talent-dashboard'
+    });
+  }
+  
+  // Add admin-only links
+  if (isAdmin) {
+    links.push({
+      key: 'analytics',
+      name: t('nav.analytics'),
+      href: '/analytics',
+      matches: (path: string) => path.startsWith('/analytics')
+    });
+  }
   
   return (
     <nav className={cn("navbar ml-6 hidden md:flex", className)}>
@@ -90,22 +91,109 @@ export function MainNavigation({ className }: MainNavigationProps) {
             <Link
               to={link.href}
               className={cn(
-                "inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-all duration-300 relative group",
+                "inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-colors",
                 link.matches(location.pathname)
-                  ? "bg-zion-purple/20 text-zion-cyan shadow-lg shadow-zion-cyan/20"
-                  : "text-white hover:bg-zion-purple/10 hover:text-zion-cyan hover:shadow-lg hover:shadow-zion-cyan/10"
+                  ? "bg-zion-purple/20 text-zion-cyan"
+                  : "text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
               )}
             >
               {link.name}
-              {link.matches(location.pathname) && (
-                <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-zion-cyan to-zion-purple rounded-full"></div>
-              )}
-              <div className="absolute inset-0 rounded-md bg-gradient-to-r from-zion-cyan/0 via-zion-cyan/5 to-zion-cyan/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </Link>
           </li>
         ))}
         
-
+        {/* Resources Dropdown */}
+        <li>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <button className="inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-colors text-white hover:bg-zion-purple/10 hover:text-zion-cyan">
+                Resources
+                <ChevronDown className="ml-1 h-4 w-4" />
+              </button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="w-48 bg-zion-blue-dark border-zion-blue-light">
+              <DropdownMenuItem asChild>
+                <Link to="/help" className="flex items-center gap-2 text-white hover:bg-zion-purple/10">
+                  <Settings className="h-4 w-4" />
+                  Help Center
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link to="/faq" className="flex items-center gap-2 text-white hover:bg-zion-purple/10">
+                  <Briefcase className="h-4 w-4" />
+                  FAQ
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link to="/sitemap" className="flex items-center gap-2 text-white hover:bg-zion-purple/10">
+                  <BarChart3 className="h-4 w-4" />
+                  Sitemap
+                </Link>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </li>
+        
+        {/* Company Dropdown */}
+        <li>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <button className="inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-colors text-white hover:bg-zion-purple/10 hover:text-zion-cyan">
+                Company
+                <ChevronDown className="ml-1 h-4 w-4" />
+              </button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="w-48 bg-zion-blue-dark border-zion-blue-light">
+              <DropdownMenuItem asChild>
+                <Link to="/about" className="flex items-center gap-2 text-white hover:bg-zion-purple/10">
+                  <Users className="h-4 w-4" />
+                  About Us
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link to="/careers" className="flex items-center gap-2 text-white hover:bg-zion-purple/10">
+                  <Briefcase className="h-4 w-4" />
+                  Careers
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link to="/partners" className="flex items-center gap-2 text-white hover:bg-zion-purple/10">
+                  <Users className="h-4 w-4" />
+                  Partners
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link to="/contact" className="flex items-center gap-2 text-white hover:bg-zion-purple/10">
+                  <Settings className="h-4 w-4" />
+                  Contact
+                </Link>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </li>
+        
+        {/* Messages link with unread counter */}
+        {isAuthenticated && (
+          <li>
+            <Link
+              to="/messages"
+              className={cn(
+                "inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-colors relative",
+                location.pathname === "/messages" || location.pathname === "/inbox"
+                  ? "bg-zion-purple/20 text-zion-cyan"
+                  : "text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
+              )}
+            >
+              <MessageSquare className="w-4 h-4 mr-1" />
+              {t('nav.messages')}
+              {unreadCount > 0 && (
+                <span className="absolute -top-1 -right-1 bg-zion-purple text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                  {unreadCount}
+                </span>
+              )}
+            </Link>
+          </li>
+        )}
       </ul>
     </nav>
   );
