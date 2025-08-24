@@ -1,627 +1,244 @@
-"use client";
-
-import { useState } from "react";
-
-interface Service {
-  id: string;
-  name: string;
-  category: "AI Services" | "IT Services" | "Micro SAAS" | "Digital Economy";
-  description: string;
-  features: string[];
-  benefits: string[];
-  pricing: {
-    starter: string;
-    professional: string;
-    enterprise: string;
-  };
-  link: string;
-  icon: string;
-}
-
-const services: Service[] = [
-  // AI Services
-  {
-    id: "zion-gpt-enterprise",
-    name: "ZionGPT Enterprise",
-    category: "AI Services",
-    description: "Advanced AI-powered business intelligence and automation platform with custom training and deployment capabilities.",
-    features: [
-      "Custom AI model training on your data",
-      "Multi-language support (100+ languages)",
-      "Advanced analytics and insights",
-      "API integration and webhooks",
-      "Real-time data processing",
-      "Custom prompt engineering",
-      "Role-based access control",
-      "Audit trails and compliance"
-    ],
-    benefits: [
-      "Increase productivity by 300%",
-      "Reduce operational costs by 40%",
-      "24/7 intelligent automation",
-      "Scalable AI infrastructure",
-      "Enterprise-grade security"
-    ],
-    pricing: {
-      starter: "$299/month",
-      professional: "$899/month", 
-      enterprise: "Custom pricing"
-    },
-    link: "https://ziontechgroup.com/ai-services/zion-gpt",
-    icon: "🤖"
-  },
-  {
-    id: "ai-content-generation",
-    name: "AI Content Generation Suite",
-    category: "AI Services",
-    description: "Comprehensive AI-powered content creation platform for marketing, documentation, and creative projects.",
-    features: [
-      "Multi-format content generation (blogs, social media, emails)",
-      "SEO-optimized content creation",
-      "Brand voice customization",
-      "Multi-language content",
-      "Content scheduling and automation",
-      "Performance analytics",
-      "Plagiarism detection",
-      "Collaborative editing tools"
-    ],
-    benefits: [
-      "10x faster content creation",
-      "Consistent brand messaging",
-      "Improved SEO rankings",
-      "Cost-effective content strategy",
-      "Scalable content operations"
-    ],
-    pricing: {
-      starter: "$199/month",
-      professional: "$499/month",
-      enterprise: "Custom pricing"
-    },
-    link: "https://ziontechgroup.com/ai-services/content-generation",
-    icon: "✍️"
-  },
-  {
-    id: "ai-data-analytics",
-    name: "AI-Powered Data Analytics",
-    category: "AI Services",
-    description: "Intelligent data analysis and visualization platform with predictive insights and automated reporting.",
-    features: [
-      "Real-time data processing",
-      "Predictive analytics and forecasting",
-      "Interactive dashboards",
-      "Automated report generation",
-      "Data quality monitoring",
-      "Integration with 100+ data sources",
-      "Advanced visualization tools",
-      "Custom ML model deployment"
-    ],
-    benefits: [
-      "Data-driven decision making",
-      "Identify hidden patterns and trends",
-      "Automated insights delivery",
-      "Improved operational efficiency",
-      "Competitive advantage through analytics"
-    ],
-    pricing: {
-      starter: "$399/month",
-      professional: "$799/month",
-      enterprise: "Custom pricing"
-    },
-    link: "https://ziontechgroup.com/ai-services/data-analytics",
-    icon: "📊"
-  },
-  
-  // IT Services
-  {
-    id: "cloud-infrastructure",
-    name: "Cloud Infrastructure Management",
-    category: "IT Services",
-    description: "End-to-end cloud infrastructure design, deployment, and management for scalable business solutions.",
-    features: [
-      "Multi-cloud strategy and implementation",
-      "Infrastructure as Code (IaC)",
-      "Auto-scaling and load balancing",
-      "Disaster recovery planning",
-      "Security and compliance",
-      "24/7 monitoring and support",
-      "Cost optimization",
-      "Performance tuning"
-    ],
-    benefits: [
-      "Reduced infrastructure costs by 30%",
-      "Improved system reliability (99.9% uptime)",
-      "Faster deployment cycles",
-      "Enhanced security posture",
-      "Scalable architecture"
-    ],
-    pricing: {
-      starter: "$2,500/month",
-      professional: "$5,000/month",
-      enterprise: "Custom pricing"
-    },
-    link: "https://ziontechgroup.com/it-services/cloud-infrastructure",
-    icon: "☁️"
-  },
-  {
-    id: "cybersecurity",
-    name: "Cybersecurity & Compliance",
-    category: "IT Services",
-    description: "Comprehensive cybersecurity solutions including threat detection, incident response, and compliance management.",
-    features: [
-      "Security assessment and penetration testing",
-      "Threat detection and response",
-      "Vulnerability management",
-      "Compliance auditing (SOC2, ISO27001, GDPR)",
-      "Security awareness training",
-      "Incident response planning",
-      "Security monitoring 24/7",
-      "Regular security updates"
-    ],
-    benefits: [
-      "Protect against cyber threats",
-      "Meet regulatory requirements",
-      "Build customer trust",
-      "Reduce security risks",
-      "Comprehensive protection"
-    ],
-    pricing: {
-      starter: "$1,500/month",
-      professional: "$3,500/month",
-      enterprise: "Custom pricing"
-    },
-    link: "https://ziontechgroup.com/it-services/cybersecurity",
-    icon: "🔒"
-  },
-  {
-    id: "devops-automation",
-    name: "DevOps & CI/CD Automation",
-    category: "IT Services",
-    description: "Streamlined development operations with automated testing, deployment, and monitoring pipelines.",
-    features: [
-      "CI/CD pipeline design and implementation",
-      "Automated testing and quality gates",
-      "Container orchestration (Kubernetes)",
-      "Infrastructure monitoring",
-      "Performance optimization",
-      "Security scanning integration",
-      "Deployment automation",
-      "Rollback capabilities"
-    ],
-    benefits: [
-      "Faster time to market",
-      "Improved code quality",
-      "Reduced deployment risks",
-      "Better team collaboration",
-      "Increased development velocity"
-    ],
-    pricing: {
-      starter: "$2,000/month",
-      professional: "$4,500/month",
-      enterprise: "Custom pricing"
-    },
-    link: "https://ziontechgroup.com/it-services/devops",
-    icon: "⚡"
-  },
-  
-  // Micro SAAS
-  {
-    id: "digital-marketplace",
-    name: "Digital Marketplace Platform",
-    category: "Micro SAAS",
-    description: "White-label marketplace solution for businesses to create their own digital commerce platforms.",
-    features: [
-      "Multi-vendor marketplace",
-      "Payment processing integration",
-      "Inventory management",
-      "Order tracking system",
-      "Customer reviews and ratings",
-      "Mobile-responsive design",
-      "Analytics dashboard",
-      "Multi-language support"
-    ],
-    benefits: [
-      "Launch marketplace in 2 weeks",
-      "Reduce development costs by 70%",
-      "Scalable architecture",
-      "Customizable branding",
-      "Integrated payment solutions"
-    ],
-    pricing: {
-      starter: "$299/month",
-      professional: "$699/month",
-      enterprise: "Custom pricing"
-    },
-    link: "https://ziontechgroup.com/saas/marketplace",
-    icon: "🛒"
-  },
-  {
-    id: "project-management",
-    name: "Project Management Suite",
-    category: "Micro SAAS",
-    description: "Comprehensive project management solution with task tracking, team collaboration, and resource management.",
-    features: [
-      "Task and milestone tracking",
-      "Team collaboration tools",
-      "Resource allocation",
-      "Time tracking and reporting",
-      "Gantt charts and timelines",
-      "File sharing and storage",
-      "Mobile applications",
-      "Integration with popular tools"
-    ],
-    benefits: [
-      "Improve project delivery by 40%",
-      "Better team coordination",
-      "Real-time project visibility",
-      "Resource optimization",
-      "Streamlined workflows"
-    ],
-    pricing: {
-      starter: "$15/user/month",
-      professional: "$25/user/month",
-      enterprise: "Custom pricing"
-    },
-    link: "https://ziontechgroup.com/saas/project-management",
-    icon: "📋"
-  },
-  {
-    id: "crm-system",
-    name: "Customer Relationship Management",
-    category: "Micro SAAS",
-    description: "Intelligent CRM system with lead management, sales automation, and customer analytics.",
-    features: [
-      "Lead capture and scoring",
-      "Sales pipeline management",
-      "Email marketing automation",
-      "Customer analytics",
-      "Mobile CRM app",
-      "Integration capabilities",
-      "Custom reporting",
-      "Multi-currency support"
-    ],
-    benefits: [
-      "Increase sales by 25%",
-      "Better customer retention",
-      "Automated sales processes",
-      "Improved customer insights",
-      "Streamlined operations"
-    ],
-    pricing: {
-      starter: "$29/user/month",
-      professional: "$59/user/month",
-      enterprise: "Custom pricing"
-    },
-    link: "https://ziontechgroup.com/saas/crm",
-    icon: "👥"
-  },
-  
-  // Digital Economy
-  {
-    id: "zion-ecosystem",
-    name: "Zion Digital Economy Platform",
-    category: "Digital Economy",
-    description: "Complete digital economy solution with marketplace, governance, identity, and token systems.",
-    features: [
-      "Integrated marketplace and job platform",
-      "DAO governance and voting systems",
-      "Digital identity and KYC/AML",
-      "Token rewards and incentives",
-      "Regional dashboards",
-      "Partner API access",
-      "White-label solutions",
-      "Multi-currency support"
-    ],
-    benefits: [
-      "Launch digital economy in one click",
-      "Sovereign governance systems",
-      "Integrated token economics",
-      "Scalable regional deployment",
-      "Complete ecosystem solution"
-    ],
-    pricing: {
-      starter: "$999/month",
-      professional: "$2,499/month",
-      enterprise: "Custom pricing"
-    },
-    link: "https://ziontechgroup.com/digital-economy",
-    icon: "🌐"
-  },
-  {
-    id: "blockchain-solutions",
-    name: "Blockchain & Web3 Solutions",
-    category: "Digital Economy",
-    description: "Enterprise blockchain solutions including smart contracts, DeFi platforms, and Web3 integration.",
-    features: [
-      "Smart contract development",
-      "DeFi platform creation",
-      "NFT marketplace development",
-      "Wallet integration",
-      "Cross-chain interoperability",
-      "Security auditing",
-      "Regulatory compliance",
-      "Performance optimization"
-    ],
-    benefits: [
-      "Future-proof technology stack",
-      "Enhanced transparency and security",
-      "Reduced transaction costs",
-      "New revenue opportunities",
-      "Competitive advantage"
-    ],
-    pricing: {
-      starter: "$5,000/month",
-      professional: "$12,000/month",
-      enterprise: "Custom pricing"
-    },
-    link: "https://ziontechgroup.com/blockchain-solutions",
-    icon: "⛓️"
-  },
-  {
-    id: "quantum-computing",
-    name: "Quantum Computing Solutions",
-    category: "AI Services",
-    description: "Next-generation quantum computing applications for optimization, cryptography, and scientific research.",
-    features: [
-      "Quantum algorithm development",
-      "Optimization problem solving",
-      "Cryptographic security",
-      "Quantum machine learning",
-      "Simulation and modeling",
-      "Quantum error correction",
-      "Hybrid classical-quantum systems",
-      "Industry-specific applications"
-    ],
-    benefits: [
-      "Exponential computational power",
-      "Solve previously intractable problems",
-      "Revolutionary security protocols",
-      "Breakthrough scientific discoveries",
-      "Competitive quantum advantage"
-    ],
-    pricing: {
-      starter: "$2,500/month",
-      professional: "$7,500/month",
-      enterprise: "Custom pricing"
-    },
-    link: "https://ziontechgroup.com/quantum-computing",
-    icon: "⚛️"
-  },
-  {
-    id: "edge-computing",
-    name: "Edge Computing & IoT",
-    category: "IT Services",
-    description: "Distributed computing infrastructure for real-time data processing and IoT device management.",
-    features: [
-      "Edge node deployment",
-      "Real-time data processing",
-      "IoT device management",
-      "5G network optimization",
-      "Latency reduction",
-      "Bandwidth optimization",
-      "Security at the edge",
-      "Scalable architecture"
-    ],
-    benefits: [
-      "Ultra-low latency processing",
-      "Reduced bandwidth costs",
-      "Enhanced privacy and security",
-      "Real-time decision making",
-      "Scalable IoT deployments"
-    ],
-    pricing: {
-      starter: "$1,200/month",
-      professional: "$3,500/month",
-      enterprise: "Custom pricing"
-    },
-    link: "https://ziontechgroup.com/edge-computing",
-    icon: "🌐"
-  },
-  {
-    id: "metaverse-platform",
-    name: "Metaverse Development Platform",
-    category: "Digital Economy",
-    description: "Complete metaverse infrastructure for virtual worlds, digital twins, and immersive experiences.",
-    features: [
-      "3D world creation tools",
-      "Avatar customization systems",
-      "Virtual event platforms",
-      "Digital asset marketplace",
-      "Spatial computing integration",
-      "Multi-user collaboration",
-      "VR/AR device support",
-      "Blockchain integration"
-    ],
-    benefits: [
-      "New digital revenue streams",
-      "Enhanced customer engagement",
-      "Virtual collaboration spaces",
-      "Immersive brand experiences",
-      "Future-ready platform"
-    ],
-    pricing: {
-      starter: "$1,500/month",
-      professional: "$4,500/month",
-      enterprise: "Custom pricing"
-    },
-    link: "https://ziontechgroup.com/metaverse-platform",
-    icon: "🌍"
-  }
-];
+import Link from 'next/link';
 
 export default function ServicesPage() {
-  const [selectedCategory, setSelectedCategory] = useState<string>("All");
-  const [searchTerm, setSearchTerm] = useState("");
-
-  const categories = ["All", ...Array.from(new Set(services.map(s => s.category)))];
-  
-  const filteredServices = services.filter(service => {
-    const matchesCategory = selectedCategory === "All" || service.category === selectedCategory;
-    const matchesSearch = service.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         service.description.toLowerCase().includes(searchTerm.toLowerCase());
-    return matchesCategory && matchesSearch;
-  });
+  const services = [
+    {
+      title: "AI & Machine Learning Solutions",
+      description: "Advanced artificial intelligence and machine learning solutions that transform business operations and decision-making processes.",
+      features: [
+        "Predictive Analytics & Forecasting",
+        "Natural Language Processing",
+        "Computer Vision & Image Recognition",
+        "Autonomous Decision Engines",
+        "AI-Powered Process Automation",
+        "Machine Learning Model Development"
+      ],
+      icon: (
+        <svg className="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+        </svg>
+      ),
+      color: "blue"
+    },
+    {
+      title: "Quantum Computing Services",
+      description: "Next-generation quantum computing solutions for complex problem-solving and computational breakthroughs across industries.",
+      features: [
+        "Quantum Algorithm Development",
+        "Quantum Machine Learning",
+        "Quantum Cryptography",
+        "Quantum Simulation",
+        "Quantum Optimization",
+        "Quantum Error Correction"
+      ],
+      icon: (
+        <svg className="w-8 h-8 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+      ),
+      color: "purple"
+    },
+    {
+      title: "Cybersecurity & Threat Intelligence",
+      description: "Enterprise-grade security solutions with AI-powered threat detection, prevention, and response capabilities.",
+      features: [
+        "Advanced Threat Detection",
+        "Zero-Day Vulnerability Research",
+        "Penetration Testing",
+        "Security Architecture Design",
+        "Incident Response & Recovery",
+        "Compliance & Risk Management"
+      ],
+      icon: (
+        <svg className="w-8 h-8 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+        </svg>
+      ),
+      color: "indigo"
+    },
+    {
+      title: "Enterprise Digital Transformation",
+      description: "Comprehensive business solutions designed for scalability, efficiency, and growth in the digital age.",
+      features: [
+        "Digital Strategy Consulting",
+        "Cloud Infrastructure Migration",
+        "Legacy System Modernization",
+        "Data Architecture Design",
+        "Business Process Optimization",
+        "Change Management & Training"
+      ],
+      icon: (
+        <svg className="w-8 h-8 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+        </svg>
+      ),
+      color: "green"
+    },
+    {
+      title: "Research & Development",
+      description: "Cutting-edge R&D initiatives pushing the boundaries of technology and innovation across multiple domains.",
+      features: [
+        "Emerging Technology Research",
+        "Proof of Concept Development",
+        "Prototype Creation",
+        "Academic Collaboration",
+        "Patent Development",
+        "Technology Transfer"
+      ],
+      icon: (
+        <svg className="w-8 h-8 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+        </svg>
+      ),
+      color: "red"
+    },
+    {
+      title: "Strategic Technology Consulting",
+      description: "Expert guidance and strategic consulting for digital transformation and technology adoption.",
+      features: [
+        "Technology Strategy Development",
+        "Digital Roadmap Planning",
+        "Technology Stack Evaluation",
+        "Vendor Selection & Management",
+        "Performance Optimization",
+        "Scalability Planning"
+      ],
+      icon: (
+        <svg className="w-8 h-8 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+        </svg>
+      ),
+      color: "yellow"
+    }
+  ];
 
   return (
-    <div className="space-y-8">
-      <div className="text-center space-y-4">
-        <h1 className="text-4xl font-bold">Zion Tech Group Services</h1>
-        <p className="text-xl opacity-80 max-w-3xl mx-auto">
-          Comprehensive micro SAAS, IT services, and AI solutions to accelerate your digital transformation
-        </p>
-      </div>
-
-      {/* Contact Information */}
-      <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg p-6 text-white">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
-          <div>
-            <div className="font-semibold">📱 Contact</div>
-            <div>+1 302 464 0950</div>
-          </div>
-          <div>
-            <div className="font-semibold">✉️ Email</div>
-            <div>kleber@ziontechgroup.com</div>
-          </div>
-          <div>
-            <div className="font-semibold">📍 Address</div>
-            <div>364 E Main St STE 1008<br />Middletown DE 19709</div>
-          </div>
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <section className="relative py-20 px-4 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/20 to-indigo-900/20"></div>
+        <div className="relative max-w-7xl mx-auto text-center">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6">
+            Our <span className="gradient-text">Services</span>
+          </h1>
+          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+            Comprehensive technology solutions designed to accelerate your digital transformation and drive innovation across your organization.
+          </p>
         </div>
-      </div>
-
-      {/* Filters */}
-      <div className="flex flex-col sm:flex-row gap-4 items-center justify-between">
-        <div className="flex gap-2 flex-wrap">
-          {categories.map(category => (
-            <button
-              key={category}
-              onClick={() => setSelectedCategory(category)}
-              className={`px-4 py-2 rounded-full text-sm ${
-                selectedCategory === category
-                  ? "bg-blue-600 text-white"
-                  : "bg-zinc-800 text-zinc-300 hover:bg-zinc-700"
-              }`}
-            >
-              {category}
-            </button>
-          ))}
-        </div>
-        <input
-          type="text"
-          placeholder="Search services..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          className="px-4 py-2 bg-zinc-800 border border-white/10 rounded-lg text-white placeholder-zinc-400"
-        />
-      </div>
+      </section>
 
       {/* Services Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {filteredServices.map(service => (
-          <div key={service.id} className="bg-zinc-900 border border-white/10 rounded-lg p-6 hover:border-white/20 transition-all">
-            <div className="flex items-center gap-3 mb-4">
-              <span className="text-2xl">{service.icon}</span>
-              <div>
-                <h3 className="font-semibold text-lg">{service.name}</h3>
-                <span className="text-sm text-blue-400">{service.category}</span>
-              </div>
-            </div>
-            
-            <p className="text-sm opacity-80 mb-4">{service.description}</p>
-            
-            <div className="space-y-3 mb-4">
-              <div>
-                <div className="font-semibold text-sm mb-2">Key Features:</div>
-                <ul className="text-xs space-y-1 opacity-80">
-                  {service.features.slice(0, 3).map((feature, index) => (
-                    <li key={index}>• {feature}</li>
-                  ))}
-                  {service.features.length > 3 && (
-                    <li className="text-blue-400">+{service.features.length - 3} more features</li>
-                  )}
-                </ul>
-              </div>
-              
-              <div>
-                <div className="font-semibold text-sm mb-2">Benefits:</div>
-                <ul className="text-xs space-y-1 opacity-80">
-                  {service.benefits.slice(0, 2).map((benefit, index) => (
-                    <li key={index}>• {benefit}</li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-
-            <div className="space-y-2 mb-4">
-              <div className="text-sm font-semibold">Pricing:</div>
-              <div className="grid grid-cols-3 gap-2 text-xs">
-                <div>
-                  <div className="opacity-60">Starter</div>
-                  <div className="font-semibold">{service.pricing.starter}</div>
-                </div>
-                <div>
-                  <div className="opacity-60">Professional</div>
-                  <div className="font-semibold">{service.pricing.professional}</div>
-                </div>
-                <div>
-                  <div className="opacity-60">Enterprise</div>
-                  <div className="font-semibold">{service.pricing.enterprise}</div>
+      <section className="py-20 px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {services.map((service, index) => (
+              <div key={index} className="card group hover:scale-105 transition-all duration-300">
+                <div className="flex items-start space-x-4">
+                  <div className="flex-shrink-0">
+                    {service.icon}
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors duration-300">
+                      {service.title}
+                    </h3>
+                    <p className="text-gray-400 mb-4 leading-relaxed">
+                      {service.description}
+                    </p>
+                    <ul className="space-y-2">
+                      {service.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-center text-sm text-gray-300">
+                          <svg className="w-4 h-4 text-green-400 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </div>
-            </div>
-
-            <a
-              href={service.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block w-full text-center bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg text-sm font-medium transition-colors"
-            >
-              Learn More
-            </a>
+            ))}
           </div>
-        ))}
-      </div>
+        </div>
+      </section>
 
-      {/* Specialized Services */}
-      <div className="space-y-6">
-        <h2 className="text-2xl font-semibold text-center">Specialized Service Pages</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <a href="/services/ai-automation" className="bg-gradient-to-r from-green-600 to-blue-600 rounded-lg p-6 text-white hover:scale-105 transition-transform">
-            <div className="text-3xl mb-3">🤖</div>
-            <h3 className="text-xl font-semibold mb-2">AI Workflow Automation</h3>
-            <p className="opacity-90 mb-4">Transform your business processes with intelligent automation powered by cutting-edge AI technology</p>
-            <div className="text-sm opacity-80">Learn more about our AI automation services →</div>
-          </a>
+      {/* Process Section */}
+      <section className="py-20 px-4 bg-black/20">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-white mb-4">Our Process</h2>
+            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+              A proven methodology that ensures successful project delivery and maximum value for our clients.
+            </p>
+          </div>
           
-          <a href="/services/blockchain-web3" className="bg-gradient-to-r from-orange-600 to-purple-600 rounded-lg p-6 text-white hover:scale-105 transition-transform">
-            <div className="text-3xl mb-3">⛓️</div>
-            <h3 className="text-xl font-semibold mb-2">Blockchain & Web3 Solutions</h3>
-            <p className="opacity-90 mb-4">Enterprise-grade blockchain infrastructure and Web3 integration services for the future of decentralized business</p>
-            <div className="text-sm opacity-80">Explore our blockchain solutions →</div>
-          </a>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-blue-600/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-blue-400">1</span>
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-2">Discovery</h3>
+              <p className="text-gray-400 text-sm">
+                Understanding your business needs, challenges, and objectives through comprehensive analysis.
+              </p>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-16 h-16 bg-purple-600/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-purple-400">2</span>
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-2">Strategy</h3>
+              <p className="text-gray-400 text-sm">
+                Developing a tailored technology strategy and roadmap aligned with your business goals.
+              </p>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-16 h-16 bg-indigo-600/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-indigo-400">3</span>
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-2">Implementation</h3>
+              <p className="text-gray-400 text-sm">
+                Executing the solution with agile methodologies and continuous feedback loops.
+              </p>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-16 h-16 bg-green-600/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-green-400">4</span>
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-2">Optimization</h3>
+              <p className="text-gray-400 text-sm">
+                Continuous monitoring, improvement, and support to ensure long-term success.
+              </p>
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
 
-      {/* Call to Action */}
-      <div className="text-center space-y-4 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg p-8 text-white">
-        <h2 className="text-2xl font-bold">Ready to Transform Your Business?</h2>
-        <p className="opacity-90 max-w-2xl mx-auto">
-          Let our team of experts help you choose the right services and create a customized solution that fits your business needs.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a
-            href="mailto:kleber@ziontechgroup.com"
-            className="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
-          >
-            Get Started Today
-          </a>
-          <a
-            href="tel:+13024640950"
-            className="border border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors"
-          >
-            Call Now
-          </a>
+      {/* CTA Section */}
+      <section className="py-20 px-4">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl font-bold text-white mb-6">Ready to Get Started?</h2>
+          <p className="text-xl text-gray-400 mb-8">
+            Let's discuss how our services can transform your business and drive innovation.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link 
+              href="/contact" 
+              className="btn-primary"
+            >
+              Schedule a Consultation
+            </Link>
+            <Link 
+              href="/case-studies" 
+              className="btn-secondary"
+            >
+              View Our Work
+            </Link>
+          </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 }
