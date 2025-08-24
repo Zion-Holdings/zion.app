@@ -13,7 +13,7 @@ export type SitemapItem = {
 };
 
 // Current date for lastmod
-const currentDate = '2025-05-15';
+const currentDate = '2025-01-15';
 
 // Public Pages - Accessible to all users
 export const publicPages: SitemapItem[] = [
@@ -184,8 +184,8 @@ export const talentRoutes: SitemapItem[] = [
     lastmod: currentDate,
   },
   {
-    path: '/portfolio',
-    label: 'Portfolio',
+    path: '/portfolio-builder',
+    label: 'Portfolio Builder',
     description: 'Manage your portfolio and resume',
     requiredAuth: true,
     requiredRoles: ['jobSeeker', 'creator'],
@@ -194,8 +194,8 @@ export const talentRoutes: SitemapItem[] = [
     lastmod: currentDate,
   },
   {
-    path: '/create-profile',
-    label: 'Create Profile',
+    path: '/create-talent-profile',
+    label: 'Create Talent Profile',
     description: 'Set up your talent profile',
     requiredAuth: true,
     requiredRoles: ['jobSeeker', 'creator'],
