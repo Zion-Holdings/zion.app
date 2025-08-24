@@ -1,23 +1,20 @@
 import { SEO } from "@/components/SEO";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import TermsOfService from "@/legal/TermsOfService";
+import { AppLayout } from "@/layout";
 
 export default function Terms() {
   return (
-    <>
+    <AppLayout>
       <SEO
-        title="Terms of Service"
-        description="The terms and conditions for using the Zion platform."
-        canonical="https://app.ziontechgroup.com/terms"
+        title="Terms of Service | Zion Tech Group"
+        description="The terms and conditions for using the Zion Tech Group platform."
+        canonical="https://ziontechgroup.com/terms"
       />
-      <Header />
       <main className="min-h-screen bg-zion-blue pt-24 pb-20">
         <div className="container mx-auto px-4">
           <TermsOfService />
         </div>
       </main>
-      <Footer />
-    </>
+    </AppLayout>
   );
 }

@@ -3,6 +3,7 @@ import { GradientHeading } from "@/components/GradientHeading";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { AppLayout } from "@/layout";
 
 export default function Careers() {
   // Sample job listings
@@ -122,11 +123,12 @@ export default function Careers() {
 
   return (
     <>
+    <AppLayout>
       <SEO
-        title="Careers at Zion - Join Our Team"
-        description="Join the team building the future of AI and technology. Explore career opportunities at Zion's innovative marketplace platform."
-        keywords="Zion careers, AI jobs, tech careers, remote work, startup jobs"
-        canonical="https://app.ziontechgroup.com/careers"
+        title="Careers at Zion Tech Group - Join Our Team"
+        description="Join the team building the future of AI and technology. Explore career opportunities at Zion Tech Group's innovative marketplace platform."
+        keywords="Zion Tech Group careers, AI jobs, tech careers, remote work, startup jobs"
+        canonical="https://ziontechgroup.com/careers"
       />
       <main className="min-h-screen bg-zion-blue pt-24 pb-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -228,6 +230,6 @@ export default function Careers() {
           </div>
         </div>
       </main>
-    </>
+    </AppLayout>
   );
 }
