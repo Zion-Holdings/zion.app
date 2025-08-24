@@ -1,0 +1,154 @@
+{
+  "generatedAt": "2025-08-15T03:48:17.873Z",
+  "summary": {
+    "totalLinks": 106,
+    "vulnerabilitiesFound": 4,
+    "securityScore": 30,
+    "riskLevel": "critical"
+  },
+  "categories": {
+    "malicious": 0,
+    "suspicious": 0,
+    "http": 0,
+    "ports": 0,
+    "ipAddresses": 0,
+    "other": 7
+  },
+  "vulnerabilities": [
+    {
+      "url": "http://localhost:3000/reports/automation/health.json",
+      "vulnerabilities": [
+        {
+          "type": "insecure_protocol",
+          "category": "http",
+          "severity": "medium",
+          "description": "URL uses insecure HTTP protocol",
+          "details": "HTTP traffic is not encrypted and vulnerable to interception"
+        },
+        {
+          "type": "suspicious_port",
+          "category": "ports",
+          "severity": "medium",
+          "description": "URL uses non-standard port",
+          "details": "Port 3000 is non-standard and may indicate suspicious activity"
+        }
+      ],
+      "riskLevel": "medium",
+      "recommendations": [
+        {
+          "action": "Upgrade to HTTPS",
+          "priority": "medium",
+          "effort": "low"
+        },
+        {
+          "action": "Use standard ports or verify necessity",
+          "priority": "medium",
+          "effort": "low"
+        }
+      ]
+    },
+    {
+      "url": "http://localhost:3000/automation/control.json",
+      "vulnerabilities": [
+        {
+          "type": "insecure_protocol",
+          "category": "http",
+          "severity": "medium",
+          "description": "URL uses insecure HTTP protocol",
+          "details": "HTTP traffic is not encrypted and vulnerable to interception"
+        },
+        {
+          "type": "suspicious_port",
+          "category": "ports",
+          "severity": "medium",
+          "description": "URL uses non-standard port",
+          "details": "Port 3000 is non-standard and may indicate suspicious activity"
+        }
+      ],
+      "riskLevel": "medium",
+      "recommendations": [
+        {
+          "action": "Upgrade to HTTPS",
+          "priority": "medium",
+          "effort": "low"
+        },
+        {
+          "action": "Use standard ports or verify necessity",
+          "priority": "medium",
+          "effort": "low"
+        }
+      ]
+    },
+    {
+      "url": "http://localhost:3000/automation/schedule-hints.json",
+      "vulnerabilities": [
+        {
+          "type": "insecure_protocol",
+          "category": "http",
+          "severity": "medium",
+          "description": "URL uses insecure HTTP protocol",
+          "details": "HTTP traffic is not encrypted and vulnerable to interception"
+        },
+        {
+          "type": "suspicious_port",
+          "category": "ports",
+          "severity": "medium",
+          "description": "URL uses non-standard port",
+          "details": "Port 3000 is non-standard and may indicate suspicious activity"
+        }
+      ],
+      "riskLevel": "medium",
+      "recommendations": [
+        {
+          "action": "Upgrade to HTTPS",
+          "priority": "medium",
+          "effort": "low"
+        },
+        {
+          "action": "Use standard ports or verify necessity",
+          "priority": "medium",
+          "effort": "low"
+        }
+      ]
+    },
+    {
+      "url": "http://www.w3.org/2000/svg",
+      "vulnerabilities": [
+        {
+          "type": "insecure_protocol",
+          "category": "http",
+          "severity": "medium",
+          "description": "URL uses insecure HTTP protocol",
+          "details": "HTTP traffic is not encrypted and vulnerable to interception"
+        }
+      ],
+      "riskLevel": "medium",
+      "recommendations": [
+        {
+          "action": "Upgrade to HTTPS",
+          "priority": "medium",
+          "effort": "low"
+        }
+      ]
+    }
+  ],
+  "recommendations": [
+    {
+      "priority": "high",
+      "action": "Improve overall security posture",
+      "description": "Current security score: 30/100",
+      "effort": "high"
+    },
+    {
+      "priority": "low",
+      "action": "Implement regular security scanning",
+      "description": "Schedule periodic security audits",
+      "effort": "low"
+    }
+  ],
+  "metadata": {
+    "scanner": "Security Link Scanner v1.0",
+    "patterns": 5,
+    "securityLevels": 4
+  }
+}

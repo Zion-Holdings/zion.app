@@ -1,0 +1,158 @@
+{
+  "lastUpdated": "2025-01-15T00:00:00.000Z",
+  "services": [
+    {
+      "id": "ai-analytics",
+      "label": "AI-Powered Data Analytics Platform",
+      "href": "/demo/analytics/",
+      "category": "AI & Machine Learning",
+      "status": "active",
+      "description": "Advanced analytics platform with machine learning capabilities for business intelligence and predictive insights.",
+      "technologyStack": ["Python", "TensorFlow", "React", "Node.js"],
+      "pricing": "$99/month",
+      "performance": {
+        "uptime": "99.9%",
+        "response": "<200ms",
+        "users": "10,000+"
+      },
+      "lastUpdated": "2025-01-15",
+      "priority": 1
+    },
+    {
+      "id": "support-bot",
+      "label": "Intelligent Customer Support Bot",
+      "href": "/demo/support-bot/",
+      "category": "AI & Machine Learning",
+      "status": "active",
+      "description": "AI-powered chatbot that provides 24/7 customer support with natural language processing capabilities.",
+      "technologyStack": ["Python", "NLP", "React", "FastAPI"],
+      "pricing": "$0.10/conversation",
+      "performance": {
+        "uptime": "99.8%",
+        "response": "<100ms",
+        "users": "50,000+"
+      },
+      "lastUpdated": "2025-01-14",
+      "priority": 2
+    },
+    {
+      "id": "predictive-maintenance",
+      "label": "Predictive Maintenance System",
+      "href": "/demo/predictive-maintenance/",
+      "category": "AI & Machine Learning",
+      "status": "active",
+      "description": "AI-driven predictive maintenance system that monitors equipment health and predicts failures.",
+      "technologyStack": ["Python", "Scikit-learn", "React", "PostgreSQL"],
+      "pricing": "$50/equipment/month",
+      "performance": {
+        "uptime": "99.9%",
+        "response": "<300ms",
+        "users": "15,000+"
+      },
+      "lastUpdated": "2025-01-08",
+      "priority": 3
+    },
+    {
+      "id": "video-analytics",
+      "label": "Real-time Video Analytics",
+      "href": "/demo/video-analytics/",
+      "category": "AI & Machine Learning",
+      "status": "beta",
+      "description": "Advanced video analytics platform with real-time object detection and tracking capabilities.",
+      "technologyStack": ["Python", "OpenCV", "TensorFlow", "WebRTC"],
+      "pricing": "$25/stream/month",
+      "performance": {
+        "uptime": "99.7%",
+        "response": "<500ms",
+        "users": "8,000+"
+      },
+      "lastUpdated": "2025-01-07",
+      "priority": 4
+    },
+    {
+      "id": "iot-pipeline",
+      "label": "Real-time IoT Data Pipeline",
+      "href": "/demo/iot-pipeline/",
+      "category": "IoT & Edge",
+      "status": "beta",
+      "description": "High-performance data pipeline for processing IoT sensor data with real-time analytics and alerting.",
+      "technologyStack": ["Apache Kafka", "Python", "Node.js", "MongoDB"],
+      "pricing": "$5/device/month",
+      "performance": {
+        "uptime": "99.7%",
+        "response": "<50ms",
+        "users": "5,000+"
+      },
+      "lastUpdated": "2025-01-13",
+      "priority": 5
+    },
+    {
+      "id": "edge-orchestrator",
+      "label": "Edge Computing Orchestrator",
+      "href": "/demo/edge-orchestrator/",
+      "category": "IoT & Edge",
+      "status": "development",
+      "description": "Intelligent edge computing platform that optimizes resource allocation and workload distribution.",
+      "technologyStack": ["Kubernetes", "Docker", "Python", "Go"],
+      "pricing": "$20/node/month",
+      "performance": {
+        "uptime": "99.8%",
+        "response": "<200ms",
+        "users": "3,000+"
+      },
+      "lastUpdated": "2025-01-09",
+      "priority": 6
+    },
+    {
+      "id": "blockchain",
+      "label": "Blockchain Smart Contract Platform",
+      "href": "/demo/blockchain/",
+      "category": "Blockchain",
+      "status": "development",
+      "description": "Enterprise-grade blockchain platform for creating and deploying smart contracts with advanced security features.",
+      "technologyStack": ["Ethereum", "Solidity", "Web3.js", "React"],
+      "pricing": "$0.01/transaction",
+      "performance": {
+        "uptime": "99.5%",
+        "response": "<500ms",
+        "users": "2,000+"
+      },
+      "lastUpdated": "2025-01-12",
+      "priority": 7
+    },
+    {
+      "id": "quantum",
+      "label": "Quantum Computing Simulator",
+      "href": "/demo/quantum/",
+      "category": "Quantum Computing",
+      "status": "beta",
+      "description": "Advanced quantum computing simulator for research and development of quantum algorithms.",
+      "technologyStack": ["Python", "Qiskit", "React", "WebAssembly"],
+      "pricing": "$0.50/minute",
+      "performance": {
+        "uptime": "99.6%",
+        "response": "<1s",
+        "users": "1,000+"
+      },
+      "lastUpdated": "2025-01-11",
+      "priority": 8
+    },
+    {
+      "id": "api-gateway",
+      "label": "Microservice API Gateway",
+      "href": "/demo/api-gateway/",
+      "category": "Microservices",
+      "status": "active",
+      "description": "High-performance API gateway for managing microservices with advanced routing and security features.",
+      "technologyStack": ["Node.js", "Express", "Redis", "Docker"],
+      "pricing": "$0.001/request",
+      "performance": {
+        "uptime": "99.9%",
+        "response": "<100ms",
+        "users": "25,000+"
+      },
+      "lastUpdated": "2025-01-10",
+      "priority": 9
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "timestamp": "2025-08-11T11:17:51.297Z",
+  "totalFilesScanned": 8,
+  "totalRoutes": 8,
+  "missingLinks": 1,
+  "routes": [
+    "/",
+    "/automation",
+    "/front",
+    "/main/front",
+    "/newsroom",
+    "/reports/ai-trends",
+    "/reports/seo",
+    "/site-health"
+  ],
+  "missing": [
+    {
+      "sourceFile": "pages/index.tsx",
+      "href": "/services"
+    }
+  ]
+}

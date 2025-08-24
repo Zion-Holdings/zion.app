@@ -1,0 +1,15 @@
+{
+  "generatedAt": "2025-08-15T03:11:20.297Z",
+  "summary": {
+    "totalFilesProcessed": 0,
+    "totalChanges": 0
+  },
+  "fixes": [],
+  "patterns": {
+    "GitHub Actions": "https://github.com/Zion-Holdings/zion/actions",
+    "GitHub Docs": "https://github.com/Zion-Holdings/zion/tree/main/docs",
+    "GitHub Issues": "https://github.com/Zion-Holdings/zion/issues",
+    "GitHub Blob Docs": "https://github.com/Zion-Holdings/zion/blob/main/docs/",
+    "Repository Name": "https://github.com/Zion-Holdings/zion"
+  }
+}

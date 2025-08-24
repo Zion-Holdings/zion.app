@@ -1,122 +1,204 @@
+import React from 'react';
+import { motion } from 'framer-motion';
 
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
-import { SEO } from "@/components/SEO";
-import { GradientHeading } from "@/components/GradientHeading";
-
-export default function About() {
+export function About() {
   return (
-    <>
-      <SEO 
-        title="About Zion - The Future of AI & Tech Marketplace" 
-        description="Learn about Zion's mission to create the first free marketplace dedicated to high-tech and artificial intelligence." 
-        keywords="about Zion, AI marketplace, tech platform, mission, vision, team"
-        canonical="https://app.ziontechgroup.com/about"
-      />
-      <Header />
-      <main className="min-h-screen bg-zion-blue pt-24 pb-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <GradientHeading>About Zion</GradientHeading>
-            <p className="mt-4 text-zion-slate-light text-xl max-w-3xl mx-auto">
-              The world's first free marketplace dedicated to high-tech and artificial intelligence
+    <div className="min-h-screen bg-zion-blue-dark text-white relative overflow-hidden">
+      {/* Animated Background */}
+      <div className="absolute inset-0 bg-quantum-gradient opacity-20 animate-pulse"></div>
+      <div className="absolute inset-0 bg-quantum-mesh"></div>
+      
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        {/* Header Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-16"
+        >
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-holographic-gradient bg-clip-text text-transparent animate-holographic-shift">
+            About Zion Tech Group
+          </h1>
+          <p className="text-xl md:text-2xl text-zion-slate-light mb-8 max-w-3xl mx-auto">
+            Pioneering the future of technology with revolutionary AI consciousness, quantum computing, and autonomous solutions
+          </p>
+        </motion.div>
+
+        {/* Mission Section */}
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="mb-20"
+        >
+          <div className="bg-gradient-to-r from-zion-blue-light/20 to-zion-purple/20 border border-zion-cyan/30 rounded-2xl p-8 backdrop-blur-sm">
+            <h2 className="text-3xl font-bold text-zion-cyan mb-6">Our Mission</h2>
+            <p className="text-lg text-zion-slate-light leading-relaxed">
+              At Zion Tech Group, we are committed to revolutionizing the technology landscape by developing 
+              cutting-edge AI solutions, quantum computing applications, and autonomous systems that transform 
+              businesses and empower humanity. Our mission is to bridge the gap between current technology 
+              limitations and future possibilities, creating a world where artificial intelligence enhances 
+              human potential rather than replacing it.
             </p>
           </div>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
-            <div>
-              <h2 className="text-3xl font-bold text-white mb-6">Our Mission</h2>
-              <p className="text-zion-slate-light text-lg mb-6">
-                At Zion, we're on a mission to democratize access to cutting-edge AI and technology solutions. 
-                We believe that innovation thrives when barriers are removed and connections are made.
-              </p>
-              <p className="text-zion-slate-light text-lg mb-6">
-                Our platform brings together talented AI specialists, innovative companies, and the latest 
-                technological solutions in one seamless ecosystem.
-              </p>
-              <p className="text-zion-slate-light text-lg">
-                By connecting talent with opportunity and innovation with implementation, we're creating 
-                a global community where the future of technology is being built today.
-              </p>
+        </motion.div>
+
+        {/* Vision Section */}
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="mb-20"
+        >
+          <div className="bg-gradient-to-r from-zion-purple/20 to-zion-cyan/20 border border-zion-purple/30 rounded-2xl p-8 backdrop-blur-sm">
+            <h2 className="text-3xl font-bold text-zion-purple mb-6">Our Vision</h2>
+            <p className="text-lg text-zion-slate-light leading-relaxed">
+              We envision a future where technology seamlessly integrates with human consciousness, 
+              creating a symbiotic relationship that accelerates innovation and solves humanity's 
+              greatest challenges. From sustainable energy solutions to advanced healthcare systems, 
+              our vision encompasses a world transformed by intelligent, ethical, and accessible technology.
+            </p>
+          </div>
+        </motion.div>
+
+        {/* Values Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="mb-20"
+        >
+          <h2 className="text-3xl font-bold text-zion-cyan mb-8 text-center">Our Core Values</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Innovation",
+                description: "Pushing boundaries and exploring uncharted technological territories",
+                icon: "🚀"
+              },
+              {
+                title: "Ethics",
+                description: "Ensuring responsible AI development and ethical technology deployment",
+                icon: "⚖️"
+              },
+              {
+                title: "Excellence",
+                description: "Delivering world-class solutions with uncompromising quality",
+                icon: "⭐"
+              },
+              {
+                title: "Collaboration",
+                description: "Working together with clients and partners to achieve shared success",
+                icon: "🤝"
+              },
+              {
+                title: "Sustainability",
+                description: "Creating technology solutions that benefit future generations",
+                icon: "🌱"
+              },
+              {
+                title: "Accessibility",
+                description: "Making advanced technology available to businesses of all sizes",
+                icon: "🌍"
+              }
+            ].map((value, index) => (
+              <motion.div
+                key={value.title}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
+                className="bg-zion-blue-light/10 backdrop-blur-sm border border-zion-cyan/20 rounded-xl p-6 text-center hover:border-zion-cyan/50 transition-all duration-300 hover:shadow-quantum"
+              >
+                <div className="text-4xl mb-4">{value.icon}</div>
+                <h3 className="text-xl font-bold text-zion-cyan mb-3">{value.title}</h3>
+                <p className="text-zion-slate-light">{value.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Contact Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className="text-center"
+        >
+          <div className="bg-gradient-to-r from-zion-blue-light/20 to-zion-purple/20 border border-zion-cyan/30 rounded-2xl p-8 backdrop-blur-sm">
+            <h2 className="text-3xl font-bold text-zion-cyan mb-6">Get in Touch</h2>
+            <p className="text-zion-slate-light mb-6 max-w-2xl mx-auto">
+              Ready to transform your business with cutting-edge technology? Let's discuss how 
+              Zion Tech Group can help you achieve your goals.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button className="px-8 py-4 bg-gradient-to-r from-zion-cyan to-zion-purple text-white rounded-lg text-lg font-semibold hover:shadow-neon transition-all duration-300 transform hover:scale-105">
+                Contact Us
+              </button>
+              <button className="px-8 py-4 bg-zion-blue-light/20 text-zion-cyan border border-zion-cyan/30 rounded-lg text-lg font-semibold hover:bg-zion-blue-light/30 transition-all duration-300">
+                Learn More
+              </button>
             </div>
-            <div className="rounded-lg overflow-hidden">
-              <img 
-                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&h=600" 
-                alt="Team collaboration" 
-                className="object-cover w-full h-full"
-              />
+          </div>
+        </motion.div>
+      </div>
+
+      {/* Footer Section */}
+      <div className="bg-zion-slate-dark py-12 border-t border-zion-blue-light">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            {/* Company Info */}
+            <div className="col-span-1 md:col-span-2">
+              <h3 className="text-xl font-bold text-white mb-4">Zion Tech Group</h3>
+              <p className="text-zion-slate-light mb-4">
+                Pioneering the future of technology with revolutionary AI consciousness, 
+                quantum computing, and autonomous solutions that transform businesses worldwide.
+              </p>
+              <div className="flex items-center gap-4 text-zion-slate-light">
+                <a href="https://ziontechgroup.com" className="hover:text-zion-cyan transition-colors">
+                  ziontechgroup.com
+                </a>
+              </div>
+            </div>
+
+            {/* Contact Info */}
+            <div>
+              <h4 className="text-lg font-semibold text-white mb-4">Contact</h4>
+              <div className="space-y-2 text-zion-slate-light">
+                <p>📱 +1 302 464 0950</p>
+                <p>✉️ kleber@ziontechgroup.com</p>
+                <p>📍 364 E Main St STE 1008<br />Middletown DE 19709</p>
+              </div>
+            </div>
+
+            {/* Quick Links */}
+            <div>
+              <h4 className="text-lg font-semibold text-white mb-4">Services</h4>
+              <div className="space-y-2">
+                <a href="/comprehensive-services" className="block text-zion-slate-light hover:text-zion-cyan transition-colors">
+                  Comprehensive Services
+                </a>
+                <a href="/ai-services" className="block text-zion-slate-light hover:text-zion-cyan transition-colors">
+                  AI Services
+                </a>
+                <a href="/enterprise-solutions" className="block text-zion-slate-light hover:text-zion-cyan transition-colors">
+                  Enterprise Solutions
+                </a>
+                <a href="/micro-saas-services" className="block text-zion-slate-light hover:text-zion-cyan transition-colors">
+                  Micro SAAS Services
+                </a>
+              </div>
             </div>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24 lg:flex-row-reverse">
-            <div>
-              <h2 className="text-3xl font-bold text-white mb-6">Our Vision</h2>
-              <p className="text-zion-slate-light text-lg mb-6">
-                We envision a world where AI and technology are accessible to all, regardless of geographical 
-                or financial constraints. A world where the best minds can collaborate to solve the most 
-                challenging problems.
-              </p>
-              <p className="text-zion-slate-light text-lg mb-6">
-                Zion is building that world by creating a transparent, ethical, and inclusive platform 
-                that puts people at the center of technological advancement.
-              </p>
-              <p className="text-zion-slate-light text-lg">
-                Our goal is to become the premier destination for AI and tech innovation, fostering 
-                a community that shapes the future of how we live, work, and interact with technology.
-              </p>
-            </div>
-            <div className="rounded-lg overflow-hidden lg:order-first">
-              <img 
-                src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&h=600" 
-                alt="Tech innovation" 
-                className="object-cover w-full h-full"
-              />
-            </div>
-          </div>
-          
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-white mb-8">Our Values</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="bg-zion-blue-dark p-8 rounded-lg border border-zion-blue-light">
-                <div className="bg-zion-blue inline-flex p-4 rounded-full mb-4">
-                  <svg className="w-8 h-8 text-zion-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold text-white mb-3">Innovation</h3>
-                <p className="text-zion-slate-light">
-                  We embrace cutting-edge technologies and creative thinking to push the boundaries of what's possible.
-                </p>
-              </div>
-              
-              <div className="bg-zion-blue-dark p-8 rounded-lg border border-zion-blue-light">
-                <div className="bg-zion-blue inline-flex p-4 rounded-full mb-4">
-                  <svg className="w-8 h-8 text-zion-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold text-white mb-3">Community</h3>
-                <p className="text-zion-slate-light">
-                  We believe in the power of collaboration and fostering an inclusive ecosystem where everyone can thrive.
-                </p>
-              </div>
-              
-              <div className="bg-zion-blue-dark p-8 rounded-lg border border-zion-blue-light">
-                <div className="bg-zion-blue inline-flex p-4 rounded-full mb-4">
-                  <svg className="w-8 h-8 text-zion-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold text-white mb-3">Trust</h3>
-                <p className="text-zion-slate-light">
-                  We maintain the highest standards of integrity, transparency, and ethical practices in everything we do.
-                </p>
-              </div>
-            </div>
+          <div className="border-t border-zion-blue-light mt-8 pt-8 text-center">
+            <p className="text-zion-slate-light text-sm">
+              © 2024 Zion Tech Group. All rights reserved. | 
+              <a href="/privacy" className="ml-2 hover:text-zion-cyan transition-colors">Privacy Policy</a> | 
+              <a href="/terms" className="ml-2 hover:text-zion-cyan transition-colors">Terms of Service</a>
+            </p>
           </div>
         </div>
-      </main>
-      <Footer />
-    </>
+      </div>
+    </div>
   );
 }
