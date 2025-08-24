@@ -2,12 +2,167 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --bg: #0b0e1a;
-  --fg: #e6e8f0;
+@layer base {
+  :root {
+    /* Light theme colors - WCAG AA compliant */
+    --bg: #ffffff;
+    --fg: #1a1a1a;
+    --bg-secondary: #f8f9fa;
+    --fg-secondary: #6c757d;
+    --border: #dee2e6;
+    --accent: #2c4cff;
+    --accent-hover: #1a3aef;
+    --success: #27c29d;
+    --warning: #f5b301;
+    --error: #dc3545;
+    --focus-ring: #2c4cff40;
+  }
+
+  .dark {
+    /* Dark theme colors - WCAG AA compliant */
+    --bg: #0b0e1a;
+    --fg: #e6e8f0;
+    --bg-secondary: #1a1d2e;
+    --fg-secondary: #a1a5b7;
+    --border: #2d3748;
+    --accent: #4f6bff;
+    --accent-hover: #6b85ff;
+    --success: #2dd4bf;
+    --warning: #fbbf24;
+    --error: #f87171;
+    --focus-ring: #4f6bff40;
+  }
+
+  /* System theme detection */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0b0e1a;
+      --fg: #e6e8f0;
+      --bg-secondary: #1a1d2e;
+      --fg-secondary: #a1a5b7;
+      --border: #2d3748;
+      --accent: #4f6bff;
+      --accent-hover: #6b85ff;
+      --success: #2dd4bf;
+      --warning: #fbbf24;
+      --error: #f87171;
+      --focus-ring: #4f6bff40;
+    }
+  }
+
+  /* High contrast mode support */
+  @media (prefers-contrast: high) {
+    :root {
+      --bg: #ffffff;
+      --fg: #000000;
+      --bg-secondary: #f0f0f0;
+      --fg-secondary: #333333;
+      --border: #000000;
+      --accent: #0000ff;
+      --accent-hover: #0000cc;
+      --success: #008000;
+      --warning: #ff8c00;
+      --error: #ff0000;
+      --focus-ring: #000000;
+    }
+  }
+
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  /* Focus styles for accessibility */
+  .focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 2px;
+  }
+
+  /* Button styles with proper contrast */
+  .btn-primary {
+    @apply px-4 py-2 rounded bg-[var(--accent)] text-white hover:bg-[var(--accent-hover)] 
+           focus:outline-none focus:ring-2 focus:ring-[var(--focus-ring)] focus:ring-offset-2 
+           transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply px-4 py-2 rounded border border-[var(--border)] bg-[var(--bg-secondary)] 
+           text-[var(--fg)] hover:bg-[var(--border)] focus:outline-none 
+           focus:ring-2 focus:ring-[var(--focus-ring)] focus:ring-offset-2 
+           transition-colors duration-200;
+  }
+
+  /* Form input styles */
+  .form-input {
+    @apply w-full bg-[var(--bg-secondary)] border border-[var(--border)] rounded p-2 
+           text-[var(--fg)] placeholder-[var(--fg-secondary)] focus:outline-none 
+           focus:ring-2 focus:ring-[var(--focus-ring)] focus:ring-offset-2 
+           transition-colors duration-200;
+  }
+
+  /* Card styles */
+  .card {
+    @apply rounded border border-[var(--border)] bg-[var(--bg-secondary)] p-4 
+           hover:border-[var(--accent)] transition-colors duration-200;
+  }
+}
+
+@layer utilities {
+  /* Screen reader only content */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  /* High contrast text utilities */
+  .text-high-contrast {
+    color: var(--fg);
+    text-shadow: 0 0 1px var(--bg);
+  }
 }
 
 body {
   background: var(--bg);
   color: var(--fg);
+  line-height: 1.6;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Ensure proper focus indicators */
+*:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+/* Improve link contrast and focus states */
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+  text-decoration: underline;
 }

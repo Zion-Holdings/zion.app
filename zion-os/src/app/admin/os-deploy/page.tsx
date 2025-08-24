@@ -47,74 +47,267 @@ export default function AdminDeployPage() {
   }
 
   return (
-    <div className="space-y-6">
-      <h1 className="text-2xl font-semibold">Unified Deployment</h1>
-      <form onSubmit={onSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="space-y-3">
-          <label className="block">Instance Name<input name="instanceName" required className="mt-1 w-full bg-zinc-900 border border-white/10 rounded p-2" /></label>
-          <div className="grid grid-cols-2 gap-3">
-            <label className="block">Domain<input name="domain" placeholder="zion.example.com" className="mt-1 w-full bg-zinc-900 border border-white/10 rounded p-2" /></label>
-            <label className="block">Subdomain<input name="subdomain" placeholder="latam" className="mt-1 w-full bg-zinc-900 border border-white/10 rounded p-2" /></label>
-          </div>
-          <div className="grid grid-cols-2 gap-3">
-            <label className="block">Vertical<select name="vertical" className="mt-1 w-full bg-zinc-900 border border-white/10 rounded p-2">
-              <option>GENERAL</option>
-              <option>HEALTH</option>
-              <option>EDUCATION</option>
-              <option>LAW</option>
-              <option>GOV</option>
-            </select></label>
-            <label className="block">Default Language<input name="defaultLanguage" defaultValue="en" className="mt-1 w-full bg-zinc-900 border border-white/10 rounded p-2" /></label>
-          </div>
-          <div className="grid grid-cols-2 gap-3">
-            <label className="block">Token System<select name="tokenSystem" className="mt-1 w-full bg-zinc-900 border border-white/10 rounded p-2">
-              <option value="SHARED">ZION$ Shared</option>
-              <option value="LOCAL">Local</option>
-            </select></label>
-            <label className="block">Governance<select name="governanceType" className="mt-1 w-full bg-zinc-900 border border-white/10 rounded p-2">
-              <option value="ADMIN">Admin</option>
-              <option value="DAO_LITE">DAO-lite</option>
-              <option value="DAO_FULL">Full DAO</option>
-            </select></label>
-          </div>
-          <div className="grid grid-cols-2 gap-3">
-            <label className="block">Region<input name="region" className="mt-1 w-full bg-zinc-900 border border-white/10 rounded p-2" /></label>
-            <label className="block">Country<input name="country" className="mt-1 w-full bg-zinc-900 border border-white/10 rounded p-2" /></label>
-          </div>
-        </div>
+    <div className="space-y-8">
+      <header>
+        <h1 className="text-3xl font-bold text-high-contrast">Unified Deployment</h1>
+        <p className="text-[var(--fg-secondary)] mt-2">
+          Configure and deploy a new Zion instance with your preferred features and settings.
+        </p>
+      </header>
 
-        <div className="space-y-4">
-          <div>
-            <div className="font-semibold mb-2">Feature Toggles</div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-              {FeatureKeys.map((k) => (
-                <label key={k} className="flex items-center gap-2 text-sm">
-                  <input type="checkbox" name={k} />
-                  <span>{labelFor(k)}</span>
+      <form onSubmit={onSubmit} className="space-y-8" aria-label="Instance deployment configuration">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <section className="space-y-6" aria-labelledby="basic-config">
+            <h2 id="basic-config" className="text-xl font-semibold">Basic Configuration</h2>
+            <div className="space-y-4">
+              <div>
+                <label htmlFor="instanceName" className="block font-medium mb-2">
+                  Instance Name <span className="text-[var(--error)]" aria-label="required">*</span>
                 </label>
-              ))}
+                <input 
+                  id="instanceName"
+                  name="instanceName" 
+                  required 
+                  className="form-input"
+                  aria-describedby="instanceName-help"
+                />
+                <div id="instanceName-help" className="text-sm text-[var(--fg-secondary)] mt-1">
+                  A unique name for your Zion instance
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label htmlFor="domain" className="block font-medium mb-2">Domain</label>
+                  <input 
+                    id="domain"
+                    name="domain" 
+                    placeholder="zion.example.com" 
+                    className="form-input"
+                    aria-describedby="domain-help"
+                  />
+                  <div id="domain-help" className="text-sm text-[var(--fg-secondary)] mt-1">
+                    Custom domain (optional)
+                  </div>
+                </div>
+                <div>
+                  <label htmlFor="subdomain" className="block font-medium mb-2">Subdomain</label>
+                  <input 
+                    id="subdomain"
+                    name="subdomain" 
+                    placeholder="latam" 
+                    className="form-input"
+                    aria-describedby="subdomain-help"
+                  />
+                  <div id="subdomain-help" className="text-sm text-[var(--fg-secondary)] mt-1">
+                    Subdomain for your instance
+                  </div>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label htmlFor="vertical" className="block font-medium mb-2">Vertical</label>
+                  <select 
+                    id="vertical"
+                    name="vertical" 
+                    className="form-input"
+                    aria-describedby="vertical-help"
+                  >
+                    <option value="GENERAL">General</option>
+                    <option value="HEALTH">Health</option>
+                    <option value="EDUCATION">Education</option>
+                    <option value="LAW">Law</option>
+                    <option value="GOV">Government</option>
+                  </select>
+                  <div id="vertical-help" className="text-sm text-[var(--fg-secondary)] mt-1">
+                    Industry focus area
+                  </div>
+                </div>
+                <div>
+                  <label htmlFor="defaultLanguage" className="block font-medium mb-2">Default Language</label>
+                  <input 
+                    id="defaultLanguage"
+                    name="defaultLanguage" 
+                    defaultValue="en" 
+                    className="form-input"
+                    aria-describedby="language-help"
+                  />
+                  <div id="language-help" className="text-sm text-[var(--fg-secondary)] mt-1">
+                    Primary language code
+                  </div>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label htmlFor="tokenSystem" className="block font-medium mb-2">Token System</label>
+                  <select 
+                    id="tokenSystem"
+                    name="tokenSystem" 
+                    className="form-input"
+                    aria-describedby="token-help"
+                  >
+                    <option value="SHARED">ZION$ Shared</option>
+                    <option value="LOCAL">Local</option>
+                  </select>
+                  <div id="token-help" className="text-sm text-[var(--fg-secondary)] mt-1">
+                    Token system type
+                  </div>
+                </div>
+                <div>
+                  <label htmlFor="governanceType" className="block font-medium mb-2">Governance</label>
+                  <select 
+                    id="governanceType"
+                    name="governanceType" 
+                    className="form-input"
+                    aria-describedby="governance-help"
+                  >
+                    <option value="ADMIN">Admin</option>
+                    <option value="DAO_LITE">DAO-lite</option>
+                    <option value="DAO_FULL">Full DAO</option>
+                  </select>
+                  <div id="governance-help" className="text-sm text-[var(--fg-secondary)] mt-1">
+                    Governance structure
+                  </div>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label htmlFor="region" className="block font-medium mb-2">Region</label>
+                  <input 
+                    id="region"
+                    name="region" 
+                    className="form-input"
+                    aria-describedby="region-help"
+                  />
+                  <div id="region-help" className="text-sm text-[var(--fg-secondary)] mt-1">
+                    Geographic region
+                  </div>
+                </div>
+                <div>
+                  <label htmlFor="country" className="block font-medium mb-2">Country</label>
+                  <input 
+                    id="country"
+                    name="country" 
+                    className="form-input"
+                    aria-describedby="country-help"
+                  />
+                  <div id="country-help" className="text-sm text-[var(--fg-secondary)] mt-1">
+                    Target country
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-          <div>
-            <div className="font-semibold mb-2">Optional Add-ons</div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm">
-              <label className="flex items-center gap-2"><input type="checkbox" name="sovereignTreasury" /> Sovereign DAO treasury</label>
-              <label className="flex items-center gap-2"><input type="checkbox" name="dualGovernance" /> Dual governance (local + global)</label>
-              <label className="flex items-center gap-2"><input type="checkbox" name="aiModeration" /> AI moderation system</label>
-              <label className="flex items-center gap-2"><input type="checkbox" name="affiliatePanel" /> Gov/institution affiliate panel</label>
-              <label className="block col-span-2">Payment Gateway<select name="paymentGateway" className="mt-1 w-full bg-zinc-900 border border-white/10 rounded p-2">
-                <option value="">None</option>
-                <option value="stripe">Stripe</option>
-                <option value="coinbase-commerce">Coinbase Commerce</option>
-              </select></label>
+          </section>
+
+          <section className="space-y-6" aria-labelledby="features-addons">
+            <h2 id="features-addons" className="text-xl font-semibold">Features & Add-ons</h2>
+            
+            <div className="space-y-4">
+              <div>
+                <h3 className="font-medium mb-3">Feature Toggles</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {FeatureKeys.map((k) => (
+                    <label key={k} className="flex items-center gap-3 text-sm cursor-pointer">
+                      <input 
+                        type="checkbox" 
+                        name={k} 
+                        className="w-4 h-4 text-[var(--accent)] bg-[var(--bg-secondary)] border-[var(--border)] rounded focus:ring-[var(--focus-ring)]"
+                      />
+                      <span>{labelFor(k)}</span>
+                    </label>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <h3 className="font-medium mb-3">Optional Add-ons</h3>
+                <div className="space-y-3">
+                  <label className="flex items-center gap-3 text-sm cursor-pointer">
+                    <input 
+                      type="checkbox" 
+                      name="sovereignTreasury" 
+                      className="w-4 h-4 text-[var(--accent)] bg-[var(--bg-secondary)] border-[var(--border)] rounded focus:ring-[var(--focus-ring)]"
+                    />
+                    <span>Sovereign DAO treasury</span>
+                  </label>
+                  <label className="flex items-center gap-3 text-sm cursor-pointer">
+                    <input 
+                      type="checkbox" 
+                      name="dualGovernance" 
+                      className="w-4 h-4 text-[var(--accent)] bg-[var(--bg-secondary)] border-[var(--border)] rounded focus:ring-[var(--focus-ring)]"
+                    />
+                    <span>Dual governance (local + global)</span>
+                  </label>
+                  <label className="flex items-center gap-3 text-sm cursor-pointer">
+                    <input 
+                      type="checkbox" 
+                      name="aiModeration" 
+                      className="w-4 h-4 text-[var(--accent)] bg-[var(--bg-secondary)] border-[var(--border)] rounded focus:ring-[var(--focus-ring)]"
+                    />
+                    <span>AI moderation system</span>
+                  </label>
+                  <label className="flex items-center gap-3 text-sm cursor-pointer">
+                    <input 
+                      type="checkbox" 
+                      name="affiliatePanel" 
+                      className="w-4 h-4 text-[var(--accent)] bg-[var(--bg-secondary)] border-[var(--border)] rounded focus:ring-[var(--focus-ring)]"
+                    />
+                    <span>Gov/institution affiliate panel</span>
+                  </label>
+                  
+                  <div>
+                    <label htmlFor="paymentGateway" className="block font-medium mb-2">Payment Gateway</label>
+                    <select 
+                      id="paymentGateway"
+                      name="paymentGateway" 
+                      className="form-input"
+                      aria-describedby="payment-help"
+                    >
+                      <option value="">None</option>
+                      <option value="stripe">Stripe</option>
+                      <option value="coinbase-commerce">Coinbase Commerce</option>
+                    </select>
+                    <div id="payment-help" className="text-sm text-[var(--fg-secondary)] mt-1">
+                      Payment processing integration
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
+          </section>
         </div>
 
-        <div className="md:col-span-2 flex items-center gap-3">
-          <button disabled={loading} className="px-4 py-2 rounded bg-zion-blue text-white disabled:opacity-50">{loading ? "Deploying..." : "Deploy Instance"}</button>
-          {message && <div className="text-sm opacity-80">{message}</div>}
-        </div>
+        <section className="border-t border-[var(--border)] pt-6">
+          <div className="flex items-center gap-4">
+            <button 
+              type="submit"
+              disabled={loading} 
+              className="btn-primary"
+              aria-describedby="submit-help"
+            >
+              {loading ? "Deploying..." : "Deploy Instance"}
+            </button>
+            {message && (
+              <div 
+                className={`text-sm px-3 py-2 rounded ${
+                  message.includes("failed") 
+                    ? "bg-[var(--error)]/10 text-[var(--error)] border border-[var(--error)]/20" 
+                    : "bg-[var(--success)]/10 text-[var(--success)] border border-[var(--success)]/20"
+                }`}
+                role="status"
+                aria-live="polite"
+              >
+                {message}
+              </div>
+            )}
+          </div>
+          <div id="submit-help" className="text-sm text-[var(--fg-secondary)] mt-2">
+            Click to deploy your configured Zion instance
+          </div>
+        </section>
       </form>
     </div>
   );
