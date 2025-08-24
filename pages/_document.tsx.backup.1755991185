@@ -1,0 +1,32 @@
+import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document';
+
+<<<<<<< HEAD
+export default class MyDocument extends Document {
+=======
+class MyDocument extends Document {
+>>>>>>> origin/cursor/build-investor-and-franchisee-growth-portal-dc8f
+  static async getInitialProps(ctx: DocumentContext) {
+    const initialProps = await Document.getInitialProps(ctx);
+    return { ...initialProps };
+  }
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/cursor/build-investor-and-franchisee-growth-portal-dc8f
+  render() {
+    return (
+      <Html lang="en">
+        <Head />
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    );
+  }
+}
+<<<<<<< HEAD
+=======
+
+export default MyDocument;
+>>>>>>> origin/cursor/build-investor-and-franchisee-growth-portal-dc8f
