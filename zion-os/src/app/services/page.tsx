@@ -1,0 +1,761 @@
+"use client";
+
+import React, { useState } from 'react';
+import { 
+  Check, Star, TrendingUp, Clock, DollarSign, ShieldCheck, Search, Filter, 
+  Grid3X3, List, Phone, Mail, MapPin, ArrowRight, ExternalLink, Brain, 
+  Rocket, Globe, Cpu, Lock, Eye, Zap, BarChart3, Users, Target, 
+  Database, Cloud, Code, Shield, Palette, Camera, Video, Music, 
+  FileText, Calendar, CreditCard, ShoppingCart, Truck, Building,
+  Wifi, Smartphone, Monitor, Server, Network, Key, Fingerprint,
+  EyeOff
+} from 'lucide-react';
+
+interface Service {
+  id: string;
+  name: string;
+  description: string;
+  category: string;
+  features: string[];
+  pricing: {
+    starter: string;
+    professional: string;
+    enterprise: string;
+  };
+  marketPosition: string;
+  useCases: string[];
+  competitors: string[];
+  marketSize: string;
+  growthRate: string;
+  roi: string;
+  color: string;
+  textColor: string;
+  gradient: string;
+  cta: string;
+  link?: string;
+  popular?: boolean;
+}
+
+export default function ServicesPage() {
+  const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  const [searchQuery, setSearchQuery] = useState<string>('');
+
+  const allServices: Service[] = [
+    // AI & Machine Learning Services
+    {
+      id: 'ai-content-generator',
+      name: 'AI Content Generator Pro',
+      description: 'Advanced AI-powered content creation platform for blogs, social media, and marketing materials.',
+      category: 'AI & Machine Learning',
+      features: [
+        'GPT-4 powered content generation',
+        'Multi-language support (50+ languages)',
+        'SEO-optimized content templates',
+        'Brand voice customization',
+        'Plagiarism detection',
+        'Content scheduling & publishing',
+        'Analytics & performance tracking',
+        'Team collaboration tools'
+      ],
+      pricing: {
+        starter: '$79/month',
+        professional: '$199/month',
+        enterprise: '$499/month'
+      },
+      marketPosition: 'Competes with Jasper, Copy.ai, and Writesonic',
+      useCases: ['Content marketing agencies', 'E-commerce brands', 'SaaS companies', 'Bloggers'],
+      competitors: ['Jasper', 'Copy.ai', 'Writesonic', 'ContentBot'],
+      marketSize: '$1.2B',
+      growthRate: '25.3%',
+      roi: '300-500%',
+      color: 'bg-gradient-to-br from-purple-500 to-pink-600',
+      textColor: 'text-purple-400',
+      gradient: 'from-purple-400 to-pink-500',
+      cta: 'Start Free Trial',
+      link: 'https://content.ziontechgroup.com',
+      popular: true
+    },
+    {
+      id: 'ai-chatbot-platform',
+      name: 'AI Chatbot Platform',
+      description: 'Enterprise-grade AI chatbot solution with natural language processing and multi-channel integration.',
+      category: 'AI & Machine Learning',
+      features: [
+        'GPT-4 powered conversations',
+        'Multi-language support',
+        'Voice & text interfaces',
+        'CRM integration',
+        'Analytics dashboard',
+        'Custom training data',
+        'API access',
+        'White-label solutions'
+      ],
+      pricing: {
+        starter: '$99/month',
+        professional: '$299/month',
+        enterprise: '$799/month'
+      },
+      marketPosition: 'Alternative to Intercom, Drift, and ManyChat',
+      useCases: ['Customer support', 'E-commerce', 'Lead generation', 'Enterprise support'],
+      competitors: ['Intercom', 'Drift', 'ManyChat', 'MobileMonkey'],
+      marketSize: '$2.8B',
+      growthRate: '23.7%',
+      roi: '250-400%',
+      color: 'bg-gradient-to-br from-blue-500 to-indigo-600',
+      textColor: 'text-blue-400',
+      gradient: 'from-blue-400 to-indigo-500',
+      cta: 'Build Your Bot',
+      link: 'https://chatbot.ziontechgroup.com'
+    },
+    {
+      id: 'ai-data-analytics',
+      name: 'AI Data Analytics Suite',
+      description: 'Intelligent data analysis platform with predictive analytics and automated insights.',
+      category: 'AI & Machine Learning',
+      features: [
+        'Real-time data processing',
+        'Predictive analytics',
+        'Automated reporting',
+        'Natural language queries',
+        'Data visualization',
+        'Machine learning models',
+        'API integrations',
+        'Custom dashboards'
+      ],
+      pricing: {
+        starter: '$149/month',
+        professional: '$399/month',
+        enterprise: '$999/month'
+      },
+      marketPosition: 'Competes with Tableau, Power BI, and Looker',
+      useCases: ['Data teams', 'Business analysts', 'Executives', 'Marketing teams'],
+      competitors: ['Tableau', 'Power BI', 'Looker', 'Qlik'],
+      marketSize: '$23.4B',
+      growthRate: '18.9%',
+      roi: '400-600%',
+      color: 'bg-gradient-to-br from-green-500 to-emerald-600',
+      textColor: 'text-green-400',
+      gradient: 'from-green-400 to-emerald-500',
+      cta: 'Start Analyzing',
+      link: 'https://analytics.ziontechgroup.com'
+    },
+
+    // Cybersecurity Services
+    {
+      id: 'quantum-encryption',
+      name: 'Quantum Encryption Platform',
+      description: 'Future-proof encryption using quantum-resistant algorithms and post-quantum cryptography.',
+      category: 'Cybersecurity',
+      features: [
+        'Post-quantum cryptography',
+        'Quantum-resistant algorithms',
+        'Multi-layer encryption',
+        'Key management system',
+        'Compliance certifications',
+        '24/7 monitoring',
+        'Threat intelligence',
+        'Incident response'
+      ],
+      pricing: {
+        starter: '$299/month',
+        professional: '$799/month',
+        enterprise: '$1,999/month'
+      },
+      marketPosition: 'Leading edge quantum security solution',
+      useCases: ['Financial institutions', 'Healthcare', 'Government', 'Defense contractors'],
+      competitors: ['IBM Quantum', 'Microsoft Azure Quantum', 'Google Quantum'],
+      marketSize: '$1.8B',
+      growthRate: '45.2%',
+      roi: '500-800%',
+      color: 'bg-gradient-to-br from-indigo-500 to-purple-600',
+      textColor: 'text-indigo-400',
+      gradient: 'from-indigo-400 to-purple-500',
+      cta: 'Secure Your Data',
+      link: 'https://quantum.ziontechgroup.com'
+    },
+    {
+      id: 'zero-trust-security',
+      name: 'Zero Trust Security Platform',
+      description: 'Comprehensive zero trust architecture with continuous verification and least privilege access.',
+      category: 'Cybersecurity',
+      features: [
+        'Identity verification',
+        'Device trust scoring',
+        'Network segmentation',
+        'Continuous monitoring',
+        'Threat detection',
+        'Automated response',
+        'Compliance reporting',
+        'API security'
+      ],
+      pricing: {
+        starter: '$199/month',
+        professional: '$599/month',
+        enterprise: '$1,499/month'
+      },
+      marketPosition: 'Modern alternative to traditional VPN solutions',
+      useCases: ['Remote workforces', 'Healthcare', 'Financial services', 'Government'],
+      competitors: ['Okta', 'Palo Alto Networks', 'CrowdStrike', 'Zscaler'],
+      marketSize: '$19.8B',
+      growthRate: '17.3%',
+      roi: '300-500%',
+      color: 'bg-gradient-to-br from-red-500 to-pink-600',
+      textColor: 'text-red-400',
+      gradient: 'from-red-400 to-pink-500',
+      cta: 'Implement Zero Trust',
+      link: 'https://zerotrust.ziontechgroup.com'
+    },
+
+    // Cloud & Infrastructure Services
+    {
+      id: 'edge-computing-platform',
+      name: 'Edge Computing Platform',
+      description: 'Distributed edge computing infrastructure for low-latency applications and IoT devices.',
+      category: 'Cloud & Infrastructure',
+      features: [
+        'Global edge locations',
+        'Real-time processing',
+        'IoT device management',
+        'Load balancing',
+        'Auto-scaling',
+        'Monitoring & analytics',
+        'API gateway',
+        'Security & compliance'
+      ],
+      pricing: {
+        starter: '$89/month',
+        professional: '$249/month',
+        enterprise: '$699/month'
+      },
+      marketPosition: 'Competes with AWS Edge, Cloudflare Workers, and Azure Edge',
+      useCases: ['IoT applications', 'Gaming', 'Real-time analytics', 'CDN services'],
+      competitors: ['AWS Edge', 'Cloudflare Workers', 'Azure Edge', 'Google Cloud Edge'],
+      marketSize: '$15.7B',
+      growthRate: '37.8%',
+      roi: '250-400%',
+      color: 'bg-gradient-to-br from-cyan-500 to-blue-600',
+      textColor: 'text-cyan-400',
+      gradient: 'from-cyan-400 to-blue-500',
+      cta: 'Deploy Edge Apps',
+      link: 'https://edge.ziontechgroup.com'
+    },
+    {
+      id: 'serverless-platform',
+      name: 'Serverless Development Platform',
+      description: 'Complete serverless platform with auto-scaling, pay-per-use pricing, and developer tools.',
+      category: 'Cloud & Infrastructure',
+      features: [
+        'Auto-scaling functions',
+        'Pay-per-use pricing',
+        'Multiple runtimes',
+        'API management',
+        'Database integration',
+        'Monitoring & logging',
+        'CI/CD pipelines',
+        'Templates & examples'
+      ],
+      pricing: {
+        starter: '$29/month',
+        professional: '$99/month',
+        enterprise: '$299/month'
+      },
+      marketPosition: 'Alternative to AWS Lambda, Azure Functions, and Google Cloud Functions',
+      useCases: ['Startups', 'Developers', 'Microservices', 'Event-driven apps'],
+      competitors: ['AWS Lambda', 'Azure Functions', 'Google Cloud Functions', 'Vercel'],
+      marketSize: '$12.3B',
+      growthRate: '28.5%',
+      roi: '200-350%',
+      color: 'bg-gradient-to-br from-orange-500 to-red-600',
+      textColor: 'text-orange-400',
+      gradient: 'from-orange-400 to-red-500',
+      cta: 'Go Serverless',
+      link: 'https://serverless.ziontechgroup.com'
+    },
+
+    // Blockchain & Web3 Services
+    {
+      id: 'defi-platform',
+      name: 'DeFi Development Platform',
+      description: 'Complete DeFi platform for building decentralized financial applications and smart contracts.',
+      category: 'Blockchain & Web3',
+      features: [
+        'Smart contract templates',
+        'DeFi protocol integration',
+        'Liquidity management',
+        'Yield farming tools',
+        'Cross-chain bridges',
+        'Security auditing',
+        'Analytics dashboard',
+        'Mobile wallet SDK'
+      ],
+      pricing: {
+        starter: '$199/month',
+        professional: '$599/month',
+        enterprise: '$1,499/month'
+      },
+      marketPosition: 'Leading DeFi development platform',
+      useCases: ['DeFi protocols', 'Crypto startups', 'Financial institutions', 'Developers'],
+      competitors: ['Chainlink', 'Aave', 'Uniswap', 'Compound'],
+      marketSize: '$8.9B',
+      growthRate: '67.3%',
+      roi: '600-1000%',
+      color: 'bg-gradient-to-br from-yellow-500 to-orange-600',
+      textColor: 'text-yellow-400',
+      gradient: 'from-yellow-400 to-orange-500',
+      cta: 'Build DeFi Apps',
+      link: 'https://defi.ziontechgroup.com'
+    },
+    {
+      id: 'nft-marketplace-platform',
+      name: 'NFT Marketplace Platform',
+      description: 'White-label NFT marketplace solution with minting, trading, and royalty management.',
+      category: 'Blockchain & Web3',
+      features: [
+        'NFT minting tools',
+        'Marketplace creation',
+        'Royalty management',
+        'Multi-chain support',
+        'Payment processing',
+        'Analytics & reporting',
+        'Mobile apps',
+        'API access'
+      ],
+      pricing: {
+        starter: '$149/month',
+        professional: '$449/month',
+        enterprise: '$1,199/month'
+      },
+      marketPosition: 'Alternative to OpenSea, Rarible, and Foundation',
+      useCases: ['Artists', 'Gaming companies', 'Brands', 'Marketplace operators'],
+      competitors: ['OpenSea', 'Rarible', 'Foundation', 'SuperRare'],
+      marketSize: '$3.4B',
+      growthRate: '89.2%',
+      roi: '400-700%',
+      color: 'bg-gradient-to-br from-pink-500 to-rose-600',
+      textColor: 'text-pink-400',
+      gradient: 'from-pink-400 to-rose-500',
+      cta: 'Create NFT Market',
+      link: 'https://nft.ziontechgroup.com'
+    },
+
+    // IoT & Hardware Services
+    {
+      id: 'iot-platform',
+      name: 'IoT Device Management Platform',
+      description: 'Comprehensive IoT platform for device management, data collection, and analytics.',
+      category: 'IoT & Hardware',
+      features: [
+        'Device provisioning',
+        'Real-time monitoring',
+        'Data collection',
+        'Edge computing',
+        'Security management',
+        'Analytics dashboard',
+        'API integrations',
+        'Mobile apps'
+      ],
+      pricing: {
+        starter: '$79/month',
+        professional: '$199/month',
+        enterprise: '$499/month'
+      },
+      marketPosition: 'Competes with AWS IoT, Azure IoT, and Google Cloud IoT',
+      useCases: ['Manufacturing', 'Smart cities', 'Agriculture', 'Healthcare'],
+      competitors: ['AWS IoT', 'Azure IoT', 'Google Cloud IoT', 'IBM Watson IoT'],
+      marketSize: '$11.2B',
+      growthRate: '24.7%',
+      roi: '300-500%',
+      color: 'bg-gradient-to-br from-teal-500 to-cyan-600',
+      textColor: 'text-teal-400',
+      gradient: 'from-teal-400 to-cyan-500',
+      cta: 'Connect Your Devices',
+      link: 'https://iot.ziontechgroup.com'
+    },
+
+    // Fintech Services
+    {
+      id: 'payment-processing-platform',
+      name: 'Payment Processing Platform',
+      description: 'Modern payment processing with support for crypto, traditional payments, and global markets.',
+      category: 'Fintech',
+      features: [
+        'Multi-currency support',
+        'Crypto payments',
+        'Fraud detection',
+        'Compliance tools',
+        'Analytics dashboard',
+        'API access',
+        'Mobile SDKs',
+        'White-label solutions'
+      ],
+      pricing: {
+        starter: '$99/month',
+        professional: '$299/month',
+        enterprise: '$799/month'
+      },
+      marketPosition: 'Alternative to Stripe, PayPal, and Square',
+      useCases: ['E-commerce', 'SaaS companies', 'Marketplaces', 'Freelancers'],
+      competitors: ['Stripe', 'PayPal', 'Square', 'Adyen'],
+      marketSize: '$89.3B',
+      growthRate: '12.8%',
+      roi: '200-350%',
+      color: 'bg-gradient-to-br from-emerald-500 to-green-600',
+      textColor: 'text-emerald-400',
+      gradient: 'from-emerald-400 to-green-500',
+      cta: 'Start Processing',
+      link: 'https://payments.ziontechgroup.com'
+    },
+
+    // Marketing & Sales Services
+    {
+      id: 'ai-marketing-automation',
+      name: 'AI Marketing Automation Platform',
+      description: 'Intelligent marketing automation with AI-powered personalization and campaign optimization.',
+      category: 'Marketing & Sales',
+      features: [
+        'AI-powered segmentation',
+        'Personalized campaigns',
+        'Multi-channel marketing',
+        'A/B testing',
+        'Analytics & reporting',
+        'CRM integration',
+        'Lead scoring',
+        'Revenue attribution'
+      ],
+      pricing: {
+        starter: '$129/month',
+        professional: '$349/month',
+        enterprise: '$899/month'
+      },
+      marketPosition: 'Competes with HubSpot, Marketo, and Pardot',
+      useCases: ['Marketing teams', 'B2B companies', 'E-commerce', 'Agencies'],
+      competitors: ['HubSpot', 'Marketo', 'Pardot', 'ActiveCampaign'],
+      marketSize: '$16.8B',
+      growthRate: '19.4%',
+      roi: '350-600%',
+      color: 'bg-gradient-to-br from-violet-500 to-purple-600',
+      textColor: 'text-violet-400',
+      gradient: 'from-violet-400 to-purple-500',
+      cta: 'Automate Marketing',
+      link: 'https://marketing.ziontechgroup.com'
+    },
+
+    // Development & DevOps Services
+    {
+      id: 'low-code-platform',
+      name: 'Low-Code Development Platform',
+      description: 'Visual development platform for building applications without extensive coding knowledge.',
+      category: 'Development & DevOps',
+      features: [
+        'Drag-and-drop builder',
+        'Pre-built components',
+        'Database integration',
+        'API management',
+        'User management',
+        'Deployment tools',
+        'Analytics dashboard',
+        'Mobile app generation'
+      ],
+      pricing: {
+        starter: '$89/month',
+        professional: '$249/month',
+        enterprise: '$699/month'
+      },
+      marketPosition: 'Alternative to Bubble, Webflow, and OutSystems',
+      useCases: ['Business users', 'Citizen developers', 'Startups', 'Enterprises'],
+      competitors: ['Bubble', 'Webflow', 'OutSystems', 'Mendix'],
+      marketSize: '$13.2B',
+      growthRate: '22.8%',
+      roi: '250-400%',
+      color: 'bg-gradient-to-br from-slate-500 to-gray-600',
+      textColor: 'text-slate-400',
+      gradient: 'from-slate-400 to-gray-500',
+      cta: 'Build Without Code',
+      link: 'https://lowcode.ziontechgroup.com'
+    }
+  ];
+
+  const categories = [
+    { id: 'all', name: 'All Services', icon: Grid3X3 },
+    { id: 'AI & Machine Learning', name: 'AI & ML', icon: Brain },
+    { id: 'Cybersecurity', name: 'Security', icon: Shield },
+    { id: 'Cloud & Infrastructure', name: 'Cloud', icon: Cloud },
+    { id: 'Blockchain & Web3', name: 'Web3', icon: Globe },
+    { id: 'IoT & Hardware', name: 'IoT', icon: Cpu },
+    { id: 'Fintech', name: 'Fintech', icon: CreditCard },
+    { id: 'Marketing & Sales', name: 'Marketing', icon: Target },
+    { id: 'Development & DevOps', name: 'DevOps', icon: Code }
+  ];
+
+  const filteredServices = allServices.filter(service => {
+    const matchesCategory = selectedCategory === 'all' || service.category === selectedCategory;
+    const matchesSearch = service.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                         service.description.toLowerCase().includes(searchQuery.toLowerCase());
+    return matchesCategory && matchesSearch;
+  });
+
+  const contactInfo = {
+    mobile: '+1 302 464 0950',
+    email: 'kleber@ziontechgroup.com',
+    website: 'https://ziontechgroup.com',
+    address: '364 E Main St STE 1008 Middletown DE 19709'
+  };
+
+  return (
+    <div className="min-h-screen bg-gray-900 text-white">
+      {/* Header */}
+      <div className="bg-gradient-to-r from-blue-900 to-purple-900 py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+            Zion Tech Group Services
+          </h1>
+          <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed mb-8">
+            Discover our comprehensive suite of innovative micro SaaS, IT, and AI services. 
+            Real solutions with competitive pricing, designed to transform your business.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a 
+              href={`tel:${contactInfo.mobile}`}
+              className="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-semibold transition-colors"
+            >
+              <Phone className="w-5 h-5 mr-2" />
+              Call {contactInfo.mobile}
+            </a>
+            <a 
+              href={`mailto:${contactInfo.email}`}
+              className="inline-flex items-center px-6 py-3 border border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white rounded-lg font-semibold transition-colors"
+            >
+              <Mail className="w-5 h-5 mr-2" />
+              Email Us
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Search and Filter */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="flex flex-col lg:flex-row gap-6 mb-8">
+          {/* Search */}
+          <div className="flex-1">
+            <div className="relative">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+              <input
+                type="text"
+                placeholder="Search services..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full pl-10 pr-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+          </div>
+
+          {/* Category Filter */}
+          <div className="flex flex-wrap gap-2">
+            {categories.map((category) => (
+              <button
+                key={category.id}
+                onClick={() => setSelectedCategory(category.id)}
+                className={`flex items-center px-4 py-2 rounded-lg border transition-colors ${
+                  selectedCategory === category.id
+                    ? 'bg-blue-600 border-blue-500 text-white'
+                    : 'bg-gray-800 border-gray-700 text-gray-300 hover:bg-gray-700'
+                }`}
+              >
+                <category.icon className="w-4 h-4 mr-2" />
+                {category.name}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {filteredServices.map((service) => (
+            <div
+              key={service.id}
+              className="bg-gray-800 rounded-xl p-8 border border-gray-700 hover:border-blue-500 transition-colors"
+            >
+              {/* Service Header */}
+              <div className="flex items-start justify-between mb-6">
+                <div className="flex items-center space-x-4">
+                  <div className={`w-16 h-16 rounded-xl flex items-center justify-center text-2xl ${service.color}`}>
+                    {service.name.includes('AI') && <Brain className="w-8 h-8" />}
+                    {service.name.includes('Security') && <Shield className="w-8 h-8" />}
+                    {service.name.includes('Cloud') && <Cloud className="w-8 h-8" />}
+                    {service.name.includes('Blockchain') && <Globe className="w-8 h-8" />}
+                    {service.name.includes('IoT') && <Cpu className="w-8 h-8" />}
+                    {service.name.includes('Payment') && <CreditCard className="w-8 h-8" />}
+                    {service.name.includes('Marketing') && <Target className="w-8 h-8" />}
+                    {service.name.includes('Development') && <Code className="w-8 h-8" />}
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-white mb-2">{service.name}</h3>
+                    <span className="inline-block px-3 py-1 bg-gray-700 text-gray-300 text-sm rounded-full">
+                      {service.category}
+                    </span>
+                  </div>
+                </div>
+                {service.popular && (
+                  <span className="px-3 py-1 bg-gradient-to-r from-yellow-500 to-orange-500 text-white text-sm rounded-full font-medium">
+                    Popular
+                  </span>
+                )}
+              </div>
+
+              {/* Description */}
+              <p className="text-gray-300 mb-6 leading-relaxed">{service.description}</p>
+
+              {/* Pricing */}
+              <div className="bg-gray-700/50 rounded-lg p-4 mb-6">
+                <h4 className="text-white font-semibold mb-3 flex items-center">
+                  <DollarSign className="w-4 h-4 mr-2" />
+                  Pricing Plans
+                </h4>
+                <div className="grid grid-cols-3 gap-4 text-sm">
+                  <div className="text-center">
+                    <div className="text-gray-400 text-xs">Starter</div>
+                    <div className="text-white font-semibold">{service.pricing.starter}</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-gray-400 text-xs">Professional</div>
+                    <div className="text-white font-semibold">{service.pricing.professional}</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-gray-400 text-xs">Enterprise</div>
+                    <div className="text-white font-semibold">{service.pricing.enterprise}</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Market Analysis */}
+              <div className="grid grid-cols-2 gap-4 mb-6 text-sm">
+                <div>
+                  <span className="text-gray-400">Market Size:</span>
+                  <div className="text-white font-semibold">{service.marketSize}</div>
+                </div>
+                <div>
+                  <span className="text-gray-400">Growth Rate:</span>
+                  <div className="text-green-400 font-semibold">{service.growthRate}</div>
+                </div>
+                <div>
+                  <span className="text-gray-400">ROI Expectation:</span>
+                  <div className="text-blue-400 font-semibold">{service.roi}</div>
+                </div>
+                <div>
+                  <span className="text-gray-400">Competitors:</span>
+                  <div className="text-gray-300 text-xs">{service.competitors.slice(0, 2).join(', ')}</div>
+                </div>
+              </div>
+
+              {/* Features */}
+              <div className="mb-6">
+                <h4 className="text-white font-semibold mb-3 flex items-center">
+                  <Check className="w-4 h-4 mr-2 text-green-400" />
+                  Key Features
+                </h4>
+                <div className="grid grid-cols-1 gap-2">
+                  {service.features.slice(0, 4).map((feature, index) => (
+                    <div key={index} className="flex items-center text-gray-300 text-sm">
+                      <span className="w-2 h-2 bg-blue-500 rounded-full mr-3 flex-shrink-0" />
+                      {feature}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Use Cases */}
+              <div className="mb-6">
+                <h4 className="text-white font-semibold mb-3 flex items-center">
+                  <Users className="w-4 h-4 mr-2 text-blue-400" />
+                  Perfect For
+                </h4>
+                <div className="flex flex-wrap gap-2">
+                  {service.useCases.slice(0, 3).map((useCase, index) => (
+                    <span key={index} className="px-2 py-1 bg-gray-700 rounded text-xs text-gray-300">
+                      {useCase}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* CTA */}
+              <div className="flex flex-col sm:flex-row gap-3">
+                <a
+                  href={service.link || '/contact'}
+                  target={service.link ? '_blank' : '_self'}
+                  rel={service.link ? 'noopener noreferrer' : ''}
+                  className="flex-1 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-3 px-6 rounded-lg text-center transition-all duration-300 transform hover:scale-105"
+                >
+                  {service.cta}
+                </a>
+                <a
+                  href="/contact"
+                  className="px-6 py-3 border border-gray-600 text-gray-300 hover:bg-gray-700 hover:text-white rounded-lg font-semibold transition-colors text-center"
+                >
+                  Learn More
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* No Results */}
+        {filteredServices.length === 0 && (
+          <div className="text-center py-20">
+            <Search className="w-16 h-16 text-gray-600 mx-auto mb-4" />
+            <h3 className="text-xl font-semibold text-gray-400 mb-2">No services found</h3>
+            <p className="text-gray-500">Try adjusting your search or filter criteria.</p>
+          </div>
+        )}
+      </div>
+
+      {/* Contact Section */}
+      <div className="bg-gradient-to-r from-gray-800 to-gray-900 py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-4xl font-bold text-white mb-8">Ready to Get Started?</h2>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-12">
+            Choose from our comprehensive suite of services and start transforming your business today. 
+            All services come with free trials and no setup fees.
+          </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div className="text-center">
+              <Phone className="w-12 h-12 text-blue-400 mx-auto mb-4" />
+              <h3 className="text-lg font-semibold text-white mb-2">Call Us</h3>
+              <p className="text-gray-300">{contactInfo.mobile}</p>
+            </div>
+            <div className="text-center">
+              <Mail className="w-12 h-12 text-blue-400 mx-auto mb-4" />
+              <h3 className="text-lg font-semibold text-white mb-2">Email Us</h3>
+              <p className="text-gray-300">{contactInfo.email}</p>
+            </div>
+            <div className="text-center">
+              <MapPin className="w-12 h-12 text-blue-400 mx-auto mb-4" />
+              <h3 className="text-lg font-semibold text-white mb-2">Visit Us</h3>
+              <p className="text-gray-300">{contactInfo.address}</p>
+            </div>
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="/contact"
+              className="inline-flex items-center px-8 py-4 bg-blue-600 hover:bg-blue-700 rounded-lg font-semibold text-lg transition-colors"
+            >
+              Contact Sales Team
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </a>
+            <a
+              href="https://ziontechgroup.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-8 py-4 border border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white rounded-lg font-semibold text-lg transition-colors"
+            >
+              Visit Website
+              <ExternalLink className="w-5 h-5 ml-2" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
