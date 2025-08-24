@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
-import NotFound from './pages/NotFound';
 import MicroSaasServices from './pages/MicroSaasServices';
 
 function App() {
@@ -10,7 +9,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/micro-saas-services" element={<MicroSaasServices />} />
-        <Route path="*" element={<NotFound />} />
+        <Route path="*" element={<Home />} />
       </Routes>
     </Router>
   );
