@@ -1,65 +1,54 @@
-import React, { useEffect } from 'react';
-import Head from 'next/head';
+import { Helmet } from "react-helmet-async";
 
 interface SEOProps {
-  title?: string;
-  description?: string;
-  keywords?: string | string[];
+  title: string;
+  description: string;
+  keywords?: string;
+  canonical?: string;
   image?: string;
-  url?: string;
   type?: 'website' | 'article' | 'product';
+  author?: string;
   publishedTime?: string;
   modifiedTime?: string;
-  author?: string;
   section?: string;
   tags?: string[];
-  structuredData?: any;
-  noindex?: boolean;
-  nofollow?: boolean;
 }
 
-const SEO: React.FC<SEOProps> = ({
-  title = 'Zion Tech Group - Revolutionary AI, Quantum Computing & Space Technology Solutions',
-  description = 'Pioneering the future of technology with revolutionary AI consciousness, quantum computing, and autonomous solutions that transform businesses worldwide. Leading-edge services in AI, cybersecurity, space tech, and quantum solutions.',
-  keywords = 'AI, artificial intelligence, quantum computing, space technology, cybersecurity, machine learning, automation, Zion Tech Group, technology solutions, enterprise software, cloud computing, blockchain, IoT, robotics',
-  image = '/images/zion-tech-group-og-image.jpg',
-  url = 'https://ziontechgroup.com',
-  type = 'website',
+export function SEO({
+  title,
+  description,
+  keywords,
+  canonical,
+  image = "https://ziontechgroup.com/og-image.jpg",
+  type = "website",
+  author = "Zion Tech Group",
   publishedTime,
   modifiedTime,
-  author = 'Zion Tech Group',
   section,
-  tags = [],
-  structuredData,
-  noindex = false,
-  nofollow = false,
-}) => {
-  const fullTitle = title.includes('Zion Tech Group') ? title : `${title} | Zion Tech Group`;
-  const fullUrl = url.startsWith('http') ? url : `https://ziontechgroup.com${url}`;
-  const fullImage = image.startsWith('http') ? image : `https://ziontechgroup.com${image}`;
+  tags = []
+}: SEOProps) {
+  const siteName = "Zion Tech Group";
+  const fullTitle = title.includes(siteName) ? title : `${title} | ${siteName}`;
+  const fullDescription = description.length > 160 ? description.substring(0, 157) + "..." : description;
+  const fullUrl = canonical || `https://ziontechgroup.com${window.location.pathname}`;
+  
+  // Process keywords
+  const newKeywords = keywords ? keywords.split(',').map(k => k.trim()) : [];
+  
+  // Analyze description
+  const descLength = description.length;
+  const descOptimal = descLength >= 120 && descLength <= 160;
+  const descHasKeywords = newKeywords.some(keyword => 
+    description.toLowerCase().includes(keyword)
+  );
 
   return (
-    <Head>
+    <Helmet>
       {/* Basic Meta Tags */}
       <title>{fullTitle}</title>
-      <meta name="description" content={description} />
-      <meta name="keywords" content={Array.isArray(keywords) ? keywords.join(', ') : keywords} />
-      <meta name="author" content={author} />
-      <meta name="robots" content={noindex ? 'noindex' : 'index'} />
-      {nofollow && <meta name="robots" content="nofollow" />}
-      
-      {/* Robots Meta */}
-      {noindex && <meta name="robots" content="noindex" />}
-      {nofollow && <meta name="robots" content="nofollow" />}
-      {!noindex && !nofollow && <meta name="robots" content="index, follow" />}
-      
-      // Analyze description
-      const description = newMetaTags.description || '';
-      const descLength = description.length;
-      const descOptimal = descLength >= 120 && descLength <= 160;
-      const descHasKeywords = newKeywords.some(keyword => 
-        description.toLowerCase().includes(keyword)
-      );
+      <meta name="description" content={fullDescription} />
+      {keywords && <meta name="keywords" content={keywords} />}
+      <link rel="canonical" href={fullUrl} />
       
       {/* Open Graph Meta Tags */}
       <meta property="og:title" content={fullTitle} />
@@ -157,30 +146,39 @@ const SEO: React.FC<SEOProps> = ({
         }}
       />
       
-      {/* Preconnect to external domains for performance */}
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-      <link rel="preconnect" href="https://www.google-analytics.com" />
-      <link rel="preconnect" href="https://www.googletagmanager.com" />
-      
-      {/* DNS Prefetch for performance */}
-      <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-      <link rel="dns-prefetch" href="//www.google-analytics.com" />
-      <link rel="dns-prefetch" href="//www.googletagmanager.com" />
-      
-      {/* Favicon and App Icons */}
-      <link rel="icon" href="/favicon.ico" />
-      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-      <link rel="manifest" href="/site.webmanifest" />
-      
-      {/* Additional Performance Optimizations */}
-      <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-      <meta name="format-detection" content="telephone=no" />
-      <meta name="mobile-web-app-capable" content="yes" />
-    </Head>
+      {/* Additional Structured Data for Articles */}
+      {type === 'article' && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Article",
+              "headline": title,
+              "description": description,
+              "image": image,
+              "author": {
+                "@type": "Person",
+                "name": author
+              },
+              "publisher": {
+                "@type": "Organization",
+                "name": "Zion Tech Group",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://ziontechgroup.com/images/zion-tech-group-logo.png"
+                }
+              },
+              "datePublished": publishedTime,
+              "dateModified": modifiedTime || publishedTime,
+              "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": fullUrl
+              }
+            })
+          }}
+        />
+      )}
+    </Helmet>
   );
-};
-
-export default SEO;
+}

@@ -1,31 +1,26 @@
-
-# Allow all crawlers
 User-agent: *
 Allow: /
 
-# Sitemap location
-Sitemap: https://app.ziontechgroup.com/sitemap.xml
-Sitemap: https://app.ziontechgroup.com/sitemap
+# Sitemaps
+Sitemap: https://zion.app/sitemap.xml
+Sitemap: https://zion.app/sitemap.txt
 
-# Specific rules for major crawlers
-User-agent: Googlebot
+# Crawl-delay
+Crawl-delay: 1
+<<<<<<< HEAD
+=======
+
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /static/
+
+# Allow important pages
 Allow: /
+Allow: /about
+Allow: /contact
+Allow: /services
+Allow: /technologies
 
-User-agent: Bingbot
-Allow: /
-
-User-agent: Yandexbot
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
-
-# Disallow admin and authentication pages
-Disallow: /dashboard/
-Disallow: /login/
-Disallow: /signup/
-Disallow: /forgot-password/
-Disallow: /onboarding/
+>>>>>>> a8e698aa2a3f65846644470f902bc566286f2743

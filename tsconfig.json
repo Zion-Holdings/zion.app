@@ -16,30 +16,31 @@
     "baseUrl": ".",
     "paths": {
       "@/*": [
-        "./*"
+        "./src/*"
       ],
       "@/pages/*": [
-        "./pages/*"
+        "./src/pages/*"
       ],
       "@/components/*": [
-        "./components/*"
+        "./src/components/*"
       ],
       "@/types/*": [
-        "./types/*"
+        "./src/types/*"
       ],
       "@/utils/*": [
-        "./utils/*"
+        "./src/utils/*"
       ],
       "@/services/*": [
-        "./services/*"
+        "./src/services/*"
       ],
       "@/styles/*": [
-        "./styles/*"
+        "./src/styles/*"
       ]
     },
     /* Bundler mode */
     "moduleResolution": "bundler",
     "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
     "strict": false,
     "noUnusedLocals": false,
@@ -51,7 +52,7 @@
     "incremental": true,
     "typeRoots": [
       "./node_modules/@types",
-      "./types"
+      "./src/types"
     ],
     "types": [
       "node"
@@ -62,16 +63,9 @@
     "forceConsistentCasingInFileNames": true
   },
   "include": [
-    "next-env.d.ts",
-    "pages/**/*.ts",
-    "pages/**/*.tsx",
-    "components/**/*.ts",
-    "components/**/*.tsx",
-    "types/**/*.ts",
-    "types/**/*.d.ts",
-    "utils/**/*.ts",
-    "services/**/*.ts",
-    "styles/**/*.css"
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.d.ts"
   ],
   "exclude": [
     "node_modules",
@@ -91,6 +85,10 @@
     "test.disabled/**",
     "services.disabled.temp/**",
     "data.temp/**",
-    "src_backup/**"
+    "src_backup/**",
+    "components/**",
+    "pages/**",
+    "data/**",
+    "utils/**"
   ]
 }

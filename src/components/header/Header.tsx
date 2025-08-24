@@ -1,15 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { Logo } from './Logo';
-import { UserMenu } from './UserMenu';
-import { LanguageSelector } from './LanguageSelector';
-import { MainNavigation } from '@/layout/MainNavigation';
-import { useAuth } from '@/hooks/useAuth';
-import { useWhitelabel } from '@/context/WhitelabelContext';
-import { EnhancedSearchInput } from "@/components/search/EnhancedSearchInput";
-import { generateSearchSuggestions } from "@/data/marketplaceData";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from 'react-router-dom';
 import { Search, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -24,33 +15,16 @@ export interface HeaderProps {
 }
 
 export function Header({ hideLogin = false, customLogo, customTheme }: HeaderProps) {
-  const { user } = useAuth();
-  const { isWhitelabel, primaryColor } = useWhitelabel();
   const navigate = useNavigate();
   const [query, setQuery] = useState("");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSearchExpanded, setIsSearchExpanded] = useState(false);
-  const searchSuggestions = generateSearchSuggestions();
   
   // Close mobile menu when route changes
   useEffect(() => {
     setIsMobileMenuOpen(false);
     setIsSearchExpanded(false);
   }, [navigate]);
-  
-  // If we have a white-label tenant and no specific customTheme is provided,
-  // use the tenant's primary color
-  const effectiveTheme = customTheme || (isWhitelabel ? {
-    primaryColor,
-    backgroundColor: '#000000', // Default dark background
-    textColor: '#ffffff', // Default light text
-  } : undefined);
-  
-  const headerStyle = effectiveTheme ? {
-    backgroundColor: effectiveTheme.backgroundColor,
-    color: effectiveTheme.textColor,
-    borderColor: `${effectiveTheme.primaryColor}20`
-  } : {};
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -72,35 +46,51 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
   };
   
   return (
-    <header 
-      className="sticky top-0 z-50 w-full border-b border-zion-purple/20 bg-zion-blue-dark/95 backdrop-blur-md"
-      style={headerStyle}
-    >
+    <header className="sticky top-0 z-50 w-full border-b border-zion-purple/20 bg-zion-blue-dark/95 backdrop-blur-md">
       <div className="container flex h-16 items-center px-4 sm:px-6">
-        <Logo customLogo={customLogo} customColor={effectiveTheme?.primaryColor} />
+        <div className="text-2xl font-bold text-zion-cyan">Zion Tech</div>
 
         {/* Desktop Navigation */}
         <div className="ml-6 flex-1 hidden lg:block">
-          <MainNavigation />
+          <nav className="flex space-x-8">
+            <Link to="/" className="text-zion-cyan hover:text-zion-purple transition-colors">
+              Home
+            </Link>
+            <Link to="/services" className="text-zion-cyan hover:text-zion-purple transition-colors">
+              Services
+            </Link>
+            <Link to="/about" className="text-zion-cyan hover:text-zion-purple transition-colors">
+              About
+            </Link>
+            <Link to="/contact" className="text-zion-cyan hover:text-zion-purple transition-colors">
+              Contact
+            </Link>
+          </nav>
         </div>
 
         {/* Desktop Search */}
         <div className="hidden md:block w-64 mx-4">
-          <EnhancedSearchInput
-            value={query}
-            onChange={setQuery}
-            onSelectSuggestion={(text) => {
-              navigate(`/search?q=${encodeURIComponent(text)}`);
-              setQuery("");
-            }}
-            searchSuggestions={searchSuggestions}
-          />
+          <form onSubmit={handleSubmit} className="relative">
+            <input
+              type="text"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="Search services..."
+              className="w-full px-4 py-2 bg-zion-blue-light/20 border border-zion-purple/30 rounded-md text-white placeholder-zion-slate-light focus:outline-none focus:border-zion-purple"
+            />
+          </form>
         </div>
 
         {/* Desktop Actions */}
         <div className="flex items-center gap-2 hidden md:flex">
-          <LanguageSelector />
-          {!hideLogin && <UserMenu />}
+          {!hideLogin && (
+            <Link
+              to="/login"
+              className="px-4 py-2 bg-zion-purple text-white rounded-md hover:bg-zion-purple-dark transition-colors"
+            >
+              Login
+            </Link>
+          )}
         </div>
 
         {/* Mobile Actions */}
@@ -134,16 +124,12 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
           >
             <div className="container px-4 py-3">
               <form onSubmit={handleSubmit} className="flex gap-2">
-                <EnhancedSearchInput
+                <input
+                  type="text"
                   value={query}
-                  onChange={setQuery}
-                  onSelectSuggestion={(text) => {
-                    navigate(`/search?q=${encodeURIComponent(text)}`);
-                    setQuery("");
-                    setIsSearchExpanded(false);
-                  }}
-                  searchSuggestions={searchSuggestions}
-                  className="flex-1"
+                  onChange={(e) => setQuery(e.target.value)}
+                  placeholder="Search services..."
+                  className="flex-1 px-4 py-2 bg-zion-blue-light/20 border border-zion-purple/30 rounded-md text-white placeholder-zion-slate-light focus:outline-none focus:border-zion-purple"
                 />
                 <button
                   type="submit"
@@ -168,10 +154,29 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
             className="border-t border-zion-purple/20 bg-zion-blue-dark/95 lg:hidden"
           >
             <div className="container px-4 py-4">
-              <MainNavigation className="flex-col space-y-2" />
+              <nav className="flex flex-col space-y-2">
+                <Link to="/" className="text-zion-cyan hover:text-zion-purple transition-colors py-2">
+                  Home
+                </Link>
+                <Link to="/services" className="text-zion-cyan hover:text-zion-purple transition-colors py-2">
+                  Services
+                </Link>
+                <Link to="/about" className="text-zion-cyan hover:text-zion-purple transition-colors py-2">
+                  About
+                </Link>
+                <Link to="/contact" className="text-zion-cyan hover:text-zion-purple transition-colors py-2">
+                  Contact
+                </Link>
+              </nav>
               <div className="mt-4 pt-4 border-t border-zion-purple/20">
-                <LanguageSelector />
-                {!hideLogin && <UserMenu />}
+                {!hideLogin && (
+                  <Link
+                    to="/login"
+                    className="block w-full px-4 py-2 bg-zion-purple text-white rounded-md hover:bg-zion-purple-dark transition-colors text-center"
+                  >
+                    Login
+                  </Link>
+                )}
               </div>
             </div>
           </motion.div>

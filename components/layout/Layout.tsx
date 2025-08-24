@@ -1,10 +1,7 @@
-import React, { useState } from 'react';
-import UltraFuturisticNavigation2035 from './UltraFuturisticNavigation2035';
-import UltraFuturisticFooter2035 from './UltraFuturisticFooter2035';
-import EnhancedSidebar2025 from './EnhancedSidebar2025';
-import UltraAdvancedFuturisticBackground2035 from './UltraAdvancedFuturisticBackground2035';
-import TopContactBar from './TopContactBar';
-import Head from 'next/head';
+import React, { useState, useEffect } from 'react';
+import { Header } from './Header';
+import { Footer } from './Footer';
+import { Helmet } from 'react-helmet-async';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -17,22 +14,20 @@ interface LayoutProps {
   };
 }
 
-export default function Layout({ children, seo }: LayoutProps) {
+export function Layout({ children, seo }: LayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [showEnhancements, setShowEnhancements] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
 
-  const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === 'Escape' && sidebarOpen) {
+  const title = seo?.title || 'Zion Tech Group - Revolutionary Technology Solutions';
+  const description = seo?.description || 'Pioneering the future of technology with revolutionary AI consciousness, quantum computing, and autonomous solutions that transform businesses worldwide.';
+  const keywords = seo?.keywords || 'AI, artificial intelligence, quantum computing, blockchain, cybersecurity, cloud computing, IoT, machine learning, automation, technology solutions';
+  const canonicalUrl = seo?.canonicalUrl || 'https://ziontechgroup.com';
+  const ogImage = seo?.ogImage || 'https://ziontechgroup.com/og-image.jpg';
+
+  const handleKeyDown = (event: React.KeyboardEvent) => {
+    if (event.key === 'Escape') {
       setSidebarOpen(false);
     }
   };
-
-  const title = seo?.title || 'Zion Tech Group - Revolutionary Technology Solutions';
-  const description = seo?.description || 'Leading provider of innovative AI, quantum computing, and enterprise technology solutions. Transform your business with cutting-edge innovations.';
-  const keywords = seo?.keywords || 'AI, quantum computing, enterprise technology, innovation, Zion Tech Group';
-  const canonicalUrl = seo?.canonicalUrl;
-  const ogImage = seo?.ogImage || 'https://ziontechgroup.com/og-image.jpg';
 
   return (
     <div 
@@ -41,7 +36,7 @@ export default function Layout({ children, seo }: LayoutProps) {
       role="application"
       aria-label="Zion Tech Group Application"
     >
-      <Head>
+      <Helmet>
         <title>{title}</title>
         <meta name="description" content={description} />
         <meta name="keywords" content={keywords} />
@@ -90,7 +85,6 @@ export default function Layout({ children, seo }: LayoutProps) {
         
         {/* Preload Critical Resources */}
         <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
-        <link rel="preload" href="/_next/static/css/app.css" as="style" />
         
         {/* DNS Prefetch */}
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />
@@ -131,109 +125,62 @@ export default function Layout({ children, seo }: LayoutProps) {
             })
           }}
         />
-      </Head>
+      </Helmet>
 
-export default function Layout({ children, seo }: LayoutProps) {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [showEnhancements, setShowEnhancements] = useState(false);
+      {/* Header */}
+      <Header />
 
-  return (
-    <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
-      {/* Futuristic Background */}
-      <UltraAdvancedFuturisticBackground2035 />
-      
-=======
-      {/* Skip to content link for accessibility */}
-      <a 
-        href="#main" 
-        className="skip-link sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-cyan-500 focus:text-white focus:rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-300"
+      {/* Main Content */}
+      <main className="flex-1 relative z-10">
+        {children}
+      </main>
+
+      {/* Footer */}
+      <Footer />
+
+      {/* Sidebar Overlay */}
+      {sidebarOpen && (
+        <div 
+          className="fixed inset-0 bg-black/50 z-40 lg:hidden"
+          onClick={() => setSidebarOpen(false)}
+        />
+      )}
+
+      {/* Sidebar */}
+      <div
+        className={`fixed top-0 right-0 h-full w-80 bg-zion-blue-dark border-l border-zion-blue-light transform transition-transform duration-300 ease-in-out z-50 lg:translate-x-full ${
+          sidebarOpen ? 'translate-x-0' : 'translate-x-full'
+        }`}
       >
-        Skip to main content
-      </a>
-
-      {/* Enhanced Futuristic Background */}
-      <UltraFuturisticBackground2038 intensity="medium" theme="quantum-neon" />
-
-      {/* Loading State */}
-      <AnimatePresence>
-        {isLoading && (
-          <motion.div
-            initial={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black"
+        <div className="flex items-center justify-between p-6 border-b border-zion-blue-light">
+          <h2 className="text-xl font-semibold text-white">Menu</h2>
+          <button
+            onClick={() => setSidebarOpen(false)}
+            className="text-zion-slate-light hover:text-white transition-colors"
           >
-            <div className="text-center">
-              <div className="w-16 h-16 border-4 border-cyan-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-              <p className="text-cyan-400 text-lg font-semibold">Loading Zion Tech Group</p>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      {/* Layout Structure */}
-      <div className="relative z-10">
-        {/* Top Contact Bar */}
-        <TopContactBar />
-        
-        {/* Navigation */}
-        <UltraAdvancedNavigation2035 />
-        
-        {/* Sidebar and Main Content */}
-        <div className="flex">
-          <EnhancedSidebar2025 
-            isOpen={sidebarOpen} 
-            onClose={() => setSidebarOpen(false)}
-            aria-hidden={!sidebarOpen}
-            aria-label="Main navigation menu"
-          />
-          
-          <main 
-            id="main" 
-            role="main" 
-            className="flex-1 pt-24 lg:pt-28 min-h-screen"
-            aria-label="Main content"
-          >
-            {/* Announcement for screen readers when sidebar opens/closes */}
-            <div 
-              aria-live="polite" 
-              aria-atomic="true" 
-              className="sr-only"
-            >
-              {sidebarOpen ? 'Sidebar opened' : 'Sidebar closed'}
-            </div>
-            
-            {children}
-          </main>
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
         </div>
         
-        {/* Footer */}
-        <UltraAdvancedFooter2035 />
+        <nav className="p-6">
+          <div className="space-y-4">
+            <a href="/" className="block text-zion-slate-light hover:text-white transition-colors">
+              Home
+            </a>
+            <a href="/services" className="block text-zion-slate-light hover:text-white transition-colors">
+              Services
+            </a>
+            <a href="/about" className="block text-zion-slate-light hover:text-white transition-colors">
+              About
+            </a>
+            <a href="/contact" className="block text-zion-slate-light hover:text-white transition-colors">
+              Contact
+            </a>
+          </div>
+        </nav>
       </div>
-
-      {/* Back to top button */}
-      <motion.button
-        initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1 }}
-        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        className="fixed bottom-8 right-8 z-40 p-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-full shadow-2xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-110 focus:outline-none focus:ring-4 focus:ring-cyan-300/50"
-        aria-label="Back to top"
-      >
-        <svg 
-          className="w-6 h-6" 
-          fill="none" 
-          stroke="currentColor" 
-          viewBox="0 0 24 24"
-          aria-hidden="true"
-        >
-          <path 
-            strokeLinecap="round" 
-            strokeLinejoin="round" 
-            strokeWidth={2} 
-            d="M5 10l7-7m0 0l7 7m-7-7v18" 
-          />
-        </svg>
-      </motion.button>
     </div>
   );
 }
