@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Facebook, Twitter, Linkedin, Instagram, Github, Mail, Phone, MapPin } from 'lucide-react';
-import { FooterNewsletter } from './FooterNewsletter';
 
 export function Footer() {
   return (
@@ -127,15 +126,6 @@ export function Footer() {
               <li><Link to="/request-quote" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Request Quote</Link></li>
               <li><Link to="/community" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Community</Link></li>
             </ul>
-            
-            {/* Newsletter */}
-            <div className="mt-6">
-              <h4 className="text-white font-semibold mb-3 text-sm">Newsletter</h4>
-              <p className="text-zion-slate-light mb-3 text-xs">
-                Stay updated with the latest tech and AI opportunities.
-              </p>
-              <FooterNewsletter />
-            </div>
           </div>
         </div>
 

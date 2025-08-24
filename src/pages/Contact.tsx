@@ -1,108 +1,24 @@
 import React, { useState } from 'react';
-import { z } from 'zod';
-import { toast } from '@/components/ui/use-toast';
-import { Chat } from 'react-chat-elements';
+import { SEO } from "@/components/SEO";
 import { MapPin, Phone, Mail } from 'lucide-react';
-import SEO from '@/components/SEO';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     subject: "",
-    message: ""
+    message: "",
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [errors, setErrors] = useState<{
-    name?: string;
-    email?: string;
-    subject?: string;
-    message?: string;
-  }>({});
-  const [isChatOpen, setIsChatOpen] = useState(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
-    setErrors(prev => ({ ...prev, [name]: undefined }));
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-
-    const schema = z.object({
-      name: z.string().min(2, "Name must be at least 2 characters"),
-      email: z.string().email("Invalid email address"),
-      subject: z.string().min(2, "Subject must be at least 2 characters"),
-      message: z.string().min(10, "Message must be at least 10 characters"),
-    });
-
-    const result = schema.safeParse(formData);
-    if (!result.success) {
-      const fieldErrors: Record<string, string> = {};
-      for (const err of result.error.errors) {
-        if (err.path[0]) {
-          fieldErrors[err.path[0] as string] = err.message;
-        }
-      }
-      setErrors(fieldErrors);
-      toast({
-        title: "Form Validation Error",
-        description: result.error.errors[0].message,
-        variant: "destructive",
-      });
-      return;
-    }
-
-    setErrors({});
-
-    // Simulate form submission
-    setIsSubmitting(true);
-
-    setTimeout(() => {
-      setIsSubmitting(false);
-      toast({
-        title: "Message Sent",
-        description: "We've received your message and will get back to you soon.",
-      });
-
-      // Reset form
-      setFormData({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
-      });
-    }, 1500);
-  };
-
-  // Handle sending messages to the AI chat assistant
-  const handleSendMessage = async (message: string): Promise<void> => {
-    try {
-      const response = await fetch("https://ziontechgroup.functions.supabase.co/functions/v1/ai-chat", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ 
-          messages: [{ role: "user", content: message }] 
-        }),
-      });
-      
-      if (!response.ok) {
-        throw new Error("Failed to get response from AI assistant");
-      }
-      
-      return Promise.resolve();
-    } catch (error) {
-      console.error("Error in AI chat:", error);
-      toast({
-        title: "Chat Error",
-        description: "There was an error communicating with our AI assistant. Please try again.",
-        variant: "destructive"
-      });
-      return Promise.resolve();
-    }
+    // Handle form submission
+    console.log('Form submitted:', formData);
   };
 
   const offices = [
@@ -214,22 +130,14 @@ export default function Contact() {
               
               <button
                 type="submit"
-                disabled={isSubmitting}
-                className="w-full bg-gradient-to-r from-zion-purple to-zion-purple-dark text-white py-4 px-6 rounded-lg font-semibold text-lg hover:from-zion-purple-dark hover:to-zion-purple transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                className="w-full bg-gradient-to-r from-zion-purple to-zion-purple-dark text-white py-4 px-6 rounded-lg font-semibold text-lg hover:from-zion-purple-dark hover:to-zion-purple transition-all duration-300 transform hover:scale-105"
               >
-                {isSubmitting ? (
-                  <div className="flex items-center justify-center">
-                    <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-3"></div>
-                    Sending Message...
-                  </div>
-                ) : (
-                  "Send Message"
-                )}
+                Send Message
               </button>
             </form>
           </div>
 
-          {/* Contact Information & AI Chat */}
+          {/* Contact Information */}
           <div className="space-y-8">
             {/* Office Locations */}
             <div className="bg-white rounded-2xl p-8 shadow-xl border border-zion-slate-100">
@@ -259,20 +167,6 @@ export default function Contact() {
                   </div>
                 ))}
               </div>
-            </div>
-
-            {/* AI Chat Assistant */}
-            <div className="bg-gradient-to-br from-zion-purple to-zion-purple-dark rounded-2xl p-8 text-white">
-              <h3 className="text-2xl font-bold mb-4">AI Chat Assistant</h3>
-              <p className="text-zion-slate-100 mb-6">
-                Get instant answers to your questions about our services, pricing, and capabilities.
-              </p>
-              <Chat
-                endpoint="https://ziontechgroup.functions.supabase.co/functions/v1/ai-chat"
-                placeholder="Ask me anything about Zion Tech Group..."
-                className="bg-white/10 border-white/20 text-white placeholder-white/70"
-                onSendMessage={handleSendMessage}
-              />
             </div>
           </div>
         </div>
