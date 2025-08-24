@@ -2,12 +2,12 @@
 import { DynamicListingPage } from "@/components/DynamicListingPage";
 import { ProductListing } from "@/types/listings";
 import { TrustedBySection } from "@/components/TrustedBySection";
-import { ServicesOverview } from "@/components/services/ServicesOverview";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
-import { Globe, Zap } from "lucide-react";
+import { Globe, ArrowRight, Star } from "lucide-react";
 import { useEffect, useState } from "react";
-import { MICRO_SAAS_SERVICES } from "@/data/microSaasServices";
+import { EXPANDED_SERVICES } from "@/data/expandedServices";
 
 // Sample service listings
 const SERVICE_LISTINGS: ProductListing[] = [
@@ -221,21 +221,10 @@ const SERVICE_FILTERS = [
   { label: 'Analytics', value: 'analytics' },
   { label: 'Consulting', value: 'consulting' },
   { label: 'Strategy', value: 'strategy' },
-  { label: 'AI Services', value: 'ai-services' },
-  { label: 'Business Solutions', value: 'business-solutions' },
-  { label: 'Cybersecurity', value: 'cybersecurity' },
-  { label: 'Cloud Services', value: 'cloud-services' },
-  { label: 'Data Services', value: 'data-services' },
-  { label: 'E-commerce', value: 'e-commerce' },
-  { label: 'Marketing', value: 'marketing' },
-  { label: 'Integration', value: 'integration' },
-  { label: 'Blockchain', value: 'blockchain' },
-  { label: 'IoT', value: 'iot' },
-  { label: 'Hardware', value: 'hardware' }
 ];
 
 export default function ServicesPage() {
-  const [listings, setListings] = useState<ProductListing[]>([...SERVICE_LISTINGS, ...MICRO_SAAS_SERVICES]);
+  const [listings, setListings] = useState<ProductListing[]>(SERVICE_LISTINGS);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -257,10 +246,9 @@ export default function ServicesPage() {
                 Global IT Onsite Services
               </Button>
             </Link>
-            <Link to="/micro-saas-services">
-              <Button variant="outline" className="border-zion-purple text-zion-cyan hover:bg-zion-purple/10">
-                <Zap className="h-4 w-4 mr-2" />
-                Micro SAAS Services
+            <Link to="/pricing">
+              <Button variant="outline" className="border-zion-cyan text-zion-cyan hover:bg-zion-cyan/10">
+                View Pricing Guide
               </Button>
             </Link>
             <Link to="/request-quote">
@@ -279,7 +267,124 @@ export default function ServicesPage() {
         categoryFilters={SERVICE_FILTERS}
         initialPrice={{ min: 3000, max: 10000 }}
       />
-      <ServicesOverview />
+
+      {/* New Comprehensive Services Section */}
+      <section className="py-20 bg-gradient-to-r from-zion-blue to-zion-purple">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-white mb-6">
+              Discover Our Complete Service Portfolio
+            </h2>
+            <p className="text-xl text-zion-slate-light max-w-3xl mx-auto mb-8">
+              From AI chatbots to blockchain development, we offer 25+ specialized micro SAAS services and IT solutions
+            </p>
+            <Link to="/comprehensive-services">
+              <Button size="lg" className="bg-zion-cyan hover:bg-zion-cyan-dark text-white">
+                View All Services
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+            </Link>
+          </div>
+
+          {/* Featured Service Categories */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            {[
+              {
+                title: "AI Services",
+                count: 3,
+                description: "Chatbots, Content Generation, Analytics",
+                icon: "🤖",
+                color: "from-purple-500 to-indigo-600"
+              },
+              {
+                title: "Cloud Services", 
+                count: 3,
+                description: "Migration, DevOps, Serverless",
+                icon: "☁️",
+                color: "from-cyan-500 to-blue-600"
+              },
+              {
+                title: "Cybersecurity",
+                count: 3,
+                description: "Audit, Zero Trust, Incident Response",
+                icon: "🛡️",
+                color: "from-red-500 to-pink-600"
+              },
+              {
+                title: "Emerging Tech",
+                count: 3,
+                description: "Blockchain, IoT, AR/VR",
+                icon: "🚀",
+                color: "from-green-500 to-emerald-600"
+              }
+            ].map((category) => (
+              <div key={category.title} className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center border border-white/20">
+                <div className="text-4xl mb-4">{category.icon}</div>
+                <h3 className="text-white text-xl font-bold mb-2">{category.title}</h3>
+                <p className="text-zion-slate-light text-sm mb-3">{category.description}</p>
+                <div className="text-zion-cyan font-semibold">{category.count} Services</div>
+              </div>
+            ))}
+          </div>
+
+          {/* Sample Featured Services */}
+          <div className="mb-12">
+            <h3 className="text-2xl font-bold text-white text-center mb-8">Featured Services</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {EXPANDED_SERVICES.filter(s => s.featured).slice(0, 3).map((service) => (
+                <div key={service.id} className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
+                  <div className="flex items-center justify-between mb-3">
+                    <Badge className="bg-zion-cyan text-white text-xs">
+                      {service.category}
+                    </Badge>
+                    <div className="flex items-center space-x-1">
+                      <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                      <span className="text-white text-sm">{service.rating}</span>
+                    </div>
+                  </div>
+                  <h4 className="text-white font-semibold mb-2">{service.title}</h4>
+                  <p className="text-zion-slate-light text-sm mb-3 overflow-hidden text-ellipsis" style={{ display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}>
+                    {service.description}
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-zion-cyan font-bold">${service.price?.toLocaleString()}</span>
+                    <Link to="/comprehensive-services">
+                      <Button size="sm" variant="outline" className="border-zion-cyan text-zion-cyan hover:bg-zion-cyan/10">
+                        Learn More
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* CTA Section */}
+          <div className="text-center">
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-8 border border-white/20">
+              <h3 className="text-2xl font-bold text-white mb-4">
+                Need a Custom Solution?
+              </h3>
+              <p className="text-zion-slate-light mb-6">
+                Our expert team can tailor any service to your specific business requirements
+              </p>
+              <div className="flex flex-col sm:flex-row justify-center gap-4">
+                <Link to="/request-quote">
+                  <Button size="lg" className="bg-zion-cyan hover:bg-zion-cyan-dark text-white">
+                    Request Custom Quote
+                  </Button>
+                </Link>
+                <Link to="/contact">
+                  <Button size="lg" variant="outline" className="border-zion-cyan text-zion-cyan hover:bg-zion-cyan/10">
+                    Contact Our Team
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <TrustedBySection />
     </>
   );
