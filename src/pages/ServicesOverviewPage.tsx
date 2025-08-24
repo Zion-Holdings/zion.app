@@ -5,332 +5,325 @@ import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
 import { 
   Brain, 
-    Server,
-  TrendingUp,
-  CheckCircle,
-  Users,
-  Settings,
+  Cloud, 
+  Shield, 
+  Server, 
+  Zap, 
+  TrendingUp, 
+  Users, 
   Globe,
-  Zap,
-  Search,
-  Shield,
-  BarChart3,
-  MessageSquare,
-  FileText,
-  Mail,
-  Eye,
-  Video,
-  Cloud,
   Database,
-  Code,
-  Smartphone,
-  HardDrive,
+  Network,
   Monitor,
-  Leaf,
+  Code,
+  Target,
   Lightbulb,
-  Building,
-  DollarSign,
+  Rocket,
+  ArrowRight,
+  CheckCircle,
   Star,
-  ShoppingCart,
-  Phone
+  Clock,
+  DollarSign
 } from 'lucide-react';
+import { SEO } from '@/components/SEO';
 
-const ServiceCategories = [
+const SERVICE_CATEGORIES = [
   {
-    title: "AI Services & Solutions",
-    description: "Transform your business with cutting-edge artificial intelligence",
-    icon: <Brain className="h-16 w-16 text-zion-cyan" />,
-    link: "/ai-services",
-    badge: "New",
-    color: "from-cyan-500 to-blue-600",
+    id: 'ai-services',
+    title: 'AI & Machine Learning Services',
+    description: 'Transform your business with cutting-edge artificial intelligence solutions',
+    icon: <Brain className="h-12 w-12 text-blue-500" />,
+    color: 'from-blue-500 to-cyan-500',
     services: [
-      "AI Strategy Consulting",
-      "Custom AI Model Development", 
-      "Computer Vision Solutions",
-      "Natural Language Processing",
-      "AI Ethics & Compliance",
-      "AI Training & Workshops"
+      'AI Development & Integration',
+      'AI Process Automation',
+      'AI-Powered Analytics',
+      'Intelligent Chatbots',
+      'AI Cybersecurity',
+      'AI Content Generation',
+      'AI Video Processing',
+      'AI Data Processing',
+      'AI Recommendation Systems',
+      'AI Computer Vision',
+      'AI NLP Services',
+      'AI IoT Solutions'
     ],
-    priceRange: "$500 - $50,000+",
-    features: ["Machine Learning", "Deep Learning", "AI Integration", "Model Optimization"]
+    link: '/ai-services',
+    badge: '12 Services',
+    pricing: 'Starting from $1,500'
   },
   {
-    title: "IT Services & Infrastructure",
-    description: "Build robust, scalable, and secure technology infrastructure",
-    icon: <Server className="h-16 w-16 text-zion-blue" />,
-    link: "/it-services",
-    badge: "Popular",
-    color: "from-blue-500 to-purple-600",
+    id: 'it-services',
+    title: 'IT Infrastructure & Services',
+    description: 'Comprehensive IT solutions to modernize your technology stack',
+    icon: <Server className="h-12 w-12 text-green-500" />,
+    color: 'from-green-500 to-emerald-500',
     services: [
-      "Cloud Infrastructure Management",
-      "Cybersecurity Services",
-      "DevOps & CI/CD",
-      "Network Infrastructure",
-      "Data Center Services",
-      "24/7 IT Support"
+      'Cloud Infrastructure & Migration',
+      'Cybersecurity & Compliance',
+      'Network Infrastructure',
+      'Data Management & Analytics',
+      'Managed IT Services',
+      'Custom Software Development',
+      'Disaster Recovery',
+      'Virtualization',
+      'Mobile Device Management',
+      'IT Strategy & Consulting',
+      'Performance Monitoring',
+      'Compliance & Auditing'
     ],
-    priceRange: "$500 - $20,000/month",
-    features: ["Cloud Migration", "Security", "Automation", "Monitoring"]
+    link: '/it-services',
+    badge: '12 Services',
+    pricing: 'Starting from $2,000'
   },
   {
-    title: "Digital Marketing Services",
-    description: "Drive growth with data-driven marketing strategies",
-    icon: <TrendingUp className="h-16 w-16 text-zion-purple" />,
-    link: "/digital-marketing",
-    badge: "Featured",
-    color: "from-purple-500 to-pink-600",
+    id: 'digital-transformation',
+    title: 'Digital Transformation',
+    description: 'End-to-end digital transformation services for modern businesses',
+    icon: <TrendingUp className="h-12 w-12 text-purple-500" />,
+    color: 'from-purple-500 to-pink-500',
     services: [
-      "Search Engine Optimization (SEO)",
-      "Pay-Per-Click (PPC) Management",
-      "Social Media Marketing",
-      "Content Marketing Strategy",
-      "Email Marketing Campaigns",
-      "Marketing Analytics"
+      'Digital Strategy & Roadmap',
+      'Process Automation & Optimization',
+      'Customer Experience Transformation',
+      'Data Analytics & Business Intelligence',
+      'Cloud Transformation & Migration',
+      'Mobile-First Transformation',
+      'E-commerce & Digital Commerce',
+      'Digital Workplace Transformation',
+      'Digital Security & Compliance',
+      'Change Management & Training',
+      'Digital Innovation Lab',
+      'Digital Transformation Consulting'
     ],
-    priceRange: "$500 - $15,000/month",
-    features: ["SEO", "PPC", "Social Media", "Content", "Analytics"]
+    link: '/digital-transformation',
+    badge: '12 Services',
+    pricing: 'Starting from $8,000'
   },
   {
-    title: "Business Solutions & Consulting",
-    description: "Strategic consulting and process optimization for growth",
-          icon: <CheckCircle className="h-16 w-16 text-zion-green" />,
-    link: "/business-solutions",
-    color: "from-green-500 to-emerald-600",
+    id: 'cloud-services',
+    title: 'Cloud Services & Solutions',
+    description: 'Expert cloud solutions for scalable and secure infrastructure',
+    icon: <Cloud className="h-12 w-12 text-indigo-500" />,
+    color: 'from-indigo-500 to-blue-500',
     services: [
-      "Business Strategy Consulting",
-      "Process Automation",
-      "Digital Transformation",
-      "Change Management",
-      "Financial Planning",
-      "Market Research"
+      'Cloud Migration & Strategy',
+      'Cloud Architecture Design',
+      'Cloud Security & Compliance',
+      'Cloud Cost Optimization',
+      'Cloud Monitoring & Management',
+      'Multi-Cloud Strategy',
+      'Cloud-Native Development',
+      'Cloud Backup & Disaster Recovery',
+      'Edge Computing Solutions',
+      'Serverless Architecture',
+      'Cloud Consulting Services',
+      'Cloud Training & Certification'
     ],
-    priceRange: "$150 - $200,000+",
-    features: ["Strategy", "Automation", "Transformation", "Consulting"]
-  },
-  {
-    title: "Talent & Recruitment",
-    description: "Connect with verified AI and tech specialists worldwide",
-    icon: <Users className="h-16 w-16 text-zion-pink" />,
-    link: "/talent",
-    badge: "Premium",
-    color: "from-pink-500 to-rose-600",
-    services: [
-      "AI Talent Matching",
-      "Talent Directory Access",
-      "Recruitment Services",
-      "Skill Assessment",
-      "Background Verification",
-      "Contract Management"
-    ],
-    priceRange: "Free - $5,000+",
-    features: ["AI Matching", "Verification", "Assessment", "Management"]
-  },
-  {
-    title: "Equipment & Hardware",
-    description: "Access cutting-edge technology and specialized equipment",
-    icon: <Settings className="h-16 w-16 text-zion-amber" />,
-    link: "/equipment",
-    color: "from-amber-500 to-orange-600",
-    services: [
-      "AI Development Hardware",
-      "GPU Clusters & Servers",
-      "Specialized Equipment",
-      "Rental Services",
-      "Maintenance Support",
-      "Technical Consultation"
-    ],
-    priceRange: "$100 - $100,000+",
-    features: ["Hardware", "Rental", "Support", "Consultation"]
+    link: '/cloud-services',
+    badge: '12 Services',
+    pricing: 'Starting from $3,000'
   }
 ];
 
-const AdditionalServices = [
+const SERVICE_FEATURES = [
   {
-    title: "Onsite IT Services",
-    description: "Professional IT support at your location",
-    icon: <Globe className="h-8 w-8 text-zion-cyan" />,
-    link: "/it-onsite-services",
-    price: "From $150/hour"
+    icon: <CheckCircle className="h-8 w-8 text-zion-cyan" />,
+    title: 'Expert Team',
+    description: 'Certified professionals with years of industry experience'
   },
   {
-    title: "Zion Hire AI",
-    description: "AI-powered recruiting assistant",
-    icon: <Brain className="h-8 w-8 text-zion-purple" />,
-    link: "/zion-hire-ai",
-    price: "From $500/month"
+    icon: <Star className="h-8 w-8 text-zion-purple" />,
+    title: 'Quality Guaranteed',
+    description: 'Proven methodologies and best practices for successful delivery'
   },
   {
-    title: "Enterprise Solutions",
-    description: "Custom solutions for large organizations",
-    icon: <Building className="h-8 w-8 text-zion-blue" />,
-    link: "/enterprise",
-    price: "Custom pricing"
+    icon: <Clock className="h-8 w-8 text-zion-cyan" />,
+    title: 'Fast Delivery',
+    description: 'Efficient processes to deliver results within agreed timelines'
   },
   {
-    title: "Green IT Solutions",
-    description: "Sustainable technology solutions",
-    icon: <Leaf className="h-8 w-8 text-zion-green" />,
-    link: "/green-it",
-    price: "From $1,000"
+    icon: <DollarSign className="h-8 w-8 text-zion-purple" />,
+    title: 'Competitive Pricing',
+    description: 'Transparent pricing with flexible engagement models'
   }
+];
+
+const INDUSTRY_SOLUTIONS = [
+  { industry: 'Healthcare', services: ['HIPAA Compliance', 'AI Diagnostics', 'Data Security', 'Cloud Migration'] },
+  { industry: 'Finance', services: ['Regulatory Compliance', 'Fraud Detection', 'Risk Management', 'Digital Banking'] },
+  { industry: 'Manufacturing', services: ['IoT Integration', 'Predictive Maintenance', 'Supply Chain Optimization', 'Quality Control'] },
+  { industry: 'Retail', services: ['E-commerce Platforms', 'Customer Analytics', 'Inventory Management', 'Omnichannel Solutions'] },
+  { industry: 'Education', services: ['Learning Management Systems', 'Student Analytics', 'Digital Classrooms', 'Remote Learning'] },
+  { industry: 'Government', services: ['Digital Services', 'Cybersecurity', 'Data Management', 'Citizen Engagement'] }
 ];
 
 export default function ServicesOverviewPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-zion-slate via-zion-blue-dark to-zion-slate">
+    <div className="min-h-screen bg-gradient-to-br from-zion-blue-dark via-zion-slate to-zion-purple-dark">
+      <SEO 
+        title="Services Overview - Zion Tech Group" 
+        description="Comprehensive overview of all our micro SAAS services including AI, IT, digital transformation, and cloud solutions. Expert services for businesses."
+        keywords="services overview, AI services, IT services, digital transformation, cloud services, micro SAAS, business solutions"
+        canonical="https://ziontechgroup.com/services-overview"
+      />
+
       {/* Hero Section */}
-      <div className="relative overflow-hidden bg-gradient-to-r from-zion-purple-dark via-zion-purple to-zion-cyan py-20">
+      <div className="relative overflow-hidden bg-gradient-to-r from-zion-blue-dark to-zion-purple-dark py-20">
         <div className="absolute inset-0 bg-black/20"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20"></div>
         <div className="relative container mx-auto px-4 text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-            Our Services & Solutions
+            Our Services Overview
           </h1>
-          <p className="text-xl text-zion-cyan-light max-w-4xl mx-auto mb-8">
-            Comprehensive technology services to transform your business. From AI development to IT infrastructure, 
-            digital marketing to business consulting - we provide end-to-end solutions for the modern enterprise.
+          <p className="text-xl text-zion-cyan max-w-3xl mx-auto mb-8">
+            Discover our comprehensive range of micro SAAS services designed to transform your business 
+            through technology innovation and expert solutions.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Button size="lg" className="bg-zion-cyan hover:bg-zion-cyan-light text-zion-slate font-semibold">
-              <Search className="h-5 w-5 mr-2" />
-              Explore All Services
+            <Button asChild size="lg" className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple">
+              <Link to="/request-quote">Get Started</Link>
             </Button>
-            <Button size="lg" variant="outline" className="border-zion-cyan text-zion-cyan hover:bg-zion-cyan/10">
-              <MessageSquare className="h-5 w-5 mr-2" />
-              Get Free Consultation
+            <Button asChild size="lg" variant="outline" className="border-zion-cyan text-zion-cyan hover:bg-zion-cyan/10">
+              <Link to="/contact">Schedule Consultation</Link>
             </Button>
           </div>
         </div>
       </div>
 
-      {/* Main Service Categories */}
-      <div className="container mx-auto px-4 py-16">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-white mb-4">
-            Core Service Categories
-          </h2>
-          <p className="text-lg text-zion-slate-light max-w-3xl mx-auto">
-            Choose from our comprehensive range of professional services designed to meet your business needs
-          </p>
+      {/* Service Features */}
+      <div className="py-16 bg-zion-slate/50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-white text-center mb-12">Why Choose Our Services?</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {SERVICE_FEATURES.map((feature, index) => (
+              <div key={index} className="text-center">
+                <div className="mb-4">{feature.icon}</div>
+                <h3 className="text-xl font-semibold text-white mb-3">{feature.title}</h3>
+                <p className="text-zion-cyan/80">{feature.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
+      </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
-          {ServiceCategories.map((category, index) => (
-            <Card key={index} className="group hover:shadow-2xl transition-all duration-300 border-zion-purple/20 hover:border-zion-purple/50 bg-zion-blue-dark/50 backdrop-blur-sm overflow-hidden">
-              <div className={`h-2 bg-gradient-to-r ${category.color}`}></div>
-              <CardHeader className="pb-4">
-                <div className="flex justify-between items-start mb-4">
-                  <div className="p-4 rounded-xl bg-zion-purple/10 group-hover:bg-zion-purple/20 transition-colors">
+      {/* Service Categories */}
+      <div className="py-20 bg-zion-slate">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-white mb-4">Service Categories</h2>
+            <p className="text-xl text-zion-cyan max-w-3xl mx-auto">
+              Explore our comprehensive service categories designed to meet your business needs
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {SERVICE_CATEGORIES.map((category) => (
+              <Card key={category.id} className="bg-zion-blue-dark/50 border-zion-purple/20 hover:border-zion-purple/50 transition-all duration-300 hover:shadow-2xl hover:shadow-zion-purple/20 overflow-hidden">
+                <div className={`bg-gradient-to-r ${category.color} p-6 text-white`}>
+                  <div className="flex items-center justify-between mb-4">
                     {category.icon}
-                  </div>
-                  {category.badge && (
-                    <Badge variant="secondary" className="bg-zion-cyan/20 text-zion-cyan border-zion-cyan/30">
+                    <Badge variant="secondary" className="bg-white/20 text-white border-white/30">
                       {category.badge}
                     </Badge>
-                  )}
-                </div>
-                <CardTitle className="text-2xl text-white group-hover:text-zion-cyan transition-colors mb-2">
-                  {category.title}
-                </CardTitle>
-                <CardDescription className="text-zion-slate-light text-lg">
-                  {category.description}
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="pb-6">
-                <div className="mb-6">
-                  <p className="text-xl font-bold text-zion-cyan mb-2">{category.priceRange}</p>
-                  <p className="text-sm text-zion-slate-light">Price range</p>
-                </div>
-                
-                <div className="mb-6">
-                  <h4 className="font-semibold text-white mb-3">Key Services:</h4>
-                  <ul className="space-y-2">
-                    {category.services.map((service, serviceIndex) => (
-                      <li key={serviceIndex} className="flex items-center text-sm text-zion-slate-light">
-                        <div className="w-2 h-2 bg-zion-cyan rounded-full mr-3"></div>
-                        {service}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="mb-6">
-                  <h4 className="font-semibold text-white mb-3">Features:</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {category.features.map((feature, featureIndex) => (
-                      <Badge key={featureIndex} variant="outline" className="text-zion-cyan border-zion-cyan/30">
-                        {feature}
-                      </Badge>
-                    ))}
+                  </div>
+                  <h3 className="text-2xl font-bold mb-2">{category.title}</h3>
+                  <p className="text-white/90 mb-4">{category.description}</p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-white/80">{category.pricing}</span>
+                    <Button asChild variant="outline" className="border-white text-white hover:bg-white/20">
+                      <Link to={category.link}>Explore Services <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                    </Button>
                   </div>
                 </div>
-
-                <Button asChild className="w-full bg-gradient-to-r from-zion-purple to-zion-cyan hover:from-zion-purple-light hover:to-zion-cyan-light text-white">
-                  <Link to={category.link}>
-                    Explore {category.title}
-                  </Link>
-                </Button>
-              </CardContent>
-            </Card>
-          ))}
+                
+                <CardContent className="p-6">
+                  <h4 className="text-white font-semibold mb-4">Services Include:</h4>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    {category.services.map((service, index) => (
+                      <div key={index} className="flex items-center text-sm text-zion-cyan/70">
+                        <CheckCircle className="w-4 h-4 text-zion-cyan mr-2" />
+                        {service}
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
+      </div>
 
-        {/* Additional Services */}
-        <div className="text-center mb-12">
-          <h3 className="text-3xl font-bold text-white mb-4">
-            Additional Services
-          </h3>
-          <p className="text-lg text-zion-slate-light max-w-2xl mx-auto">
-            Specialized solutions and add-on services to complement your core needs
+      {/* Industry Solutions */}
+      <div className="py-20 bg-zion-blue-dark/30">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-white mb-4">Industry-Specific Solutions</h2>
+            <p className="text-xl text-zion-cyan max-w-3xl mx-auto">
+              Tailored solutions designed for your specific industry needs and compliance requirements
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {INDUSTRY_SOLUTIONS.map((solution, index) => (
+              <div key={index} className="bg-zion-blue-dark/30 p-6 rounded-lg border border-zion-purple/20">
+                <h3 className="text-xl font-semibold text-white mb-4">{solution.industry}</h3>
+                <ul className="space-y-2">
+                  {solution.services.map((service, idx) => (
+                    <li key={idx} className="text-sm text-zion-cyan/70 flex items-center">
+                      <span className="w-2 h-2 bg-zion-cyan rounded-full mr-2"></span>
+                      {service}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Service Statistics */}
+      <div className="py-16 bg-zion-slate">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+              <div className="text-4xl font-bold text-zion-cyan mb-2">48+</div>
+              <p className="text-white">Services Available</p>
+            </div>
+            <div>
+              <div className="text-4xl font-bold text-zion-purple mb-2">500+</div>
+              <p className="text-white">Projects Completed</p>
+            </div>
+            <div>
+              <div className="text-4xl font-bold text-zion-cyan mb-2">98%</div>
+              <p className="text-white">Client Satisfaction</p>
+            </div>
+            <div>
+              <div className="text-4xl font-bold text-zion-purple mb-2">24/7</div>
+              <p className="text-white">Support Available</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* CTA Section */}
+      <div className="py-20 bg-gradient-to-r from-zion-purple-dark to-zion-blue-dark">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-4xl font-bold text-white mb-6">Ready to Transform Your Business?</h2>
+          <p className="text-xl text-zion-cyan mb-8 max-w-2xl mx-auto">
+            Our expert team is ready to help you choose the right services and implement solutions that drive growth.
           </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          {AdditionalServices.map((service, index) => (
-            <Card key={index} className="group hover:shadow-xl transition-all duration-300 border-zion-blue/20 hover:border-zion-blue/50 bg-zion-blue-dark/30 backdrop-blur-sm">
-              <CardHeader className="pb-3">
-                <div className="p-3 rounded-lg bg-zion-blue/10 group-hover:bg-zion-blue/20 transition-colors mb-3">
-                  {service.icon}
-                </div>
-                <CardTitle className="text-lg text-white group-hover:text-zion-cyan transition-colors">
-                  {service.title}
-                </CardTitle>
-                <CardDescription className="text-zion-slate-light">
-                  {service.description}
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="pb-4">
-                <p className="text-lg font-bold text-zion-cyan mb-4">{service.price}</p>
-                <Button asChild className="w-full bg-gradient-to-r from-zion-blue to-zion-cyan hover:from-zion-blue-light hover:to-zion-cyan-light text-white">
-                  <Link to={service.link}>
-                    Learn More
-                  </Link>
-                </Button>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-
-        {/* CTA Section */}
-        <div className="text-center py-16 bg-gradient-to-r from-zion-purple/20 to-zion-blue/20 rounded-2xl">
-          <h2 className="text-4xl font-bold text-white mb-6">
-            Ready to Get Started?
-          </h2>
-          <p className="text-xl text-zion-slate-light mb-8 max-w-3xl mx-auto">
-            Our expert team is ready to help you choose the right services and create a customized solution for your business needs.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-zion-purple hover:bg-zion-purple-light text-white">
-              <MessageSquare className="h-5 w-5 mr-2" />
-              Schedule Free Consultation
+          <div className="flex flex-wrap justify-center gap-4">
+            <Button asChild size="lg" className="bg-gradient-to-r from-zion-cyan to-zion-cyan-dark hover:from-zion-cyan-light hover:to-zion-cyan text-zion-slate">
+              <Link to="/request-quote">Get Free Quote</Link>
             </Button>
-            <Button size="lg" variant="outline" className="border-zion-cyan text-zion-cyan hover:bg-zion-cyan/10">
-              <FileText className="h-5 w-5 mr-2" />
-              Request Custom Quote
+            <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+              <Link to="/contact">Contact Our Team</Link>
             </Button>
-            <Button size="lg" variant="outline" className="border-zion-blue text-zion-blue hover:bg-zion-blue/10">
-              <Phone className="h-5 w-5 mr-2" />
-              Call Us: +1 302 464 0950
-            </Button>
+          </div>
+          <div className="mt-8 text-zion-cyan">
+            <p>Mobile: +1 302 464 0950 | Email: kleber@ziontechgroup.com</p>
+            <p>Address: 364 E Main St STE 1008 Middletown DE 19709</p>
           </div>
         </div>
       </div>
