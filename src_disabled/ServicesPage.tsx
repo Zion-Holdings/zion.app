@@ -4,8 +4,10 @@ import { ProductListing } from "@/types/listings";
 import { TrustedBySection } from "@/components/TrustedBySection";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Globe } from "lucide-react";
+import { Globe, ArrowRight, Star, Zap, Shield, Brain, Database, HardDrive, CheckCircle, Phone, Mail } from "lucide-react";
 import { useEffect, useState } from "react";
+import { EXPANDED_SERVICES } from "@/data/expandedServices";
+import { Badge } from "@/components/ui/badge";
 
 // Sample service listings
 const SERVICE_LISTINGS: ProductListing[] = [
@@ -284,6 +286,50 @@ const SERVICE_LISTINGS: ProductListing[] = [
   },
 ];
 
+// Featured expanded services for preview
+const FEATURED_EXPANDED_SERVICES = [
+  {
+    id: "ai-automation-workflow",
+    title: "AI-Powered Business Process Automation",
+    description: "Transform manual workflows into intelligent, automated processes using cutting-edge AI and machine learning.",
+    category: "AI & Machine Learning",
+    price: 8500,
+    icon: <Brain className="w-8 h-8 text-zion-purple" />,
+    benefits: ["60% reduction in processing time", "99.9% accuracy", "24/7 automated operations"],
+    link: "/expanded-services"
+  },
+  {
+    id: "zero-trust-security-framework",
+    title: "Zero-Trust Security Architecture",
+    description: "Implement enterprise-grade zero-trust security framework that continuously verifies every connection.",
+    category: "Cybersecurity",
+    price: 12000,
+    icon: <Shield className="w-8 h-8 text-zion-blue" />,
+    benefits: ["Eliminate trust-based vulnerabilities", "Real-time threat detection", "Compliance standards"],
+    link: "/expanded-services"
+  },
+  {
+    id: "multi-cloud-orchestration",
+    title: "Multi-Cloud Infrastructure Orchestration",
+    description: "Seamlessly manage workloads across multiple cloud providers with intelligent automation and cost optimization.",
+    category: "Cloud & DevOps",
+    price: 9500,
+    icon: <Globe className="w-8 h-8 text-zion-cyan" />,
+    benefits: ["40% cost reduction", "Eliminate vendor lock-in", "Centralized management"],
+    link: "/expanded-services"
+  },
+  {
+    id: "real-time-data-pipeline",
+    title: "Real-Time Data Pipeline & Analytics",
+    description: "Build scalable real-time data processing pipelines with sub-second latency for instant insights.",
+    category: "Data & Analytics",
+    price: 11000,
+    icon: <Database className="w-8 h-8 text-zion-green" />,
+    benefits: ["Sub-second latency", "Millions of events/second", "Instant decision-making"],
+    link: "/expanded-services"
+  }
+];
+
 function getRandomItem<T>(arr: T[]): T {
   return arr[Math.floor(Math.random() * arr.length)];
 }
@@ -415,14 +461,78 @@ export default function ServicesPage() {
                 Global IT Onsite Services
               </Button>
             </Link>
-            <Link to="/request-quote">
+            <Link to="/expanded-services">
               <Button className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white">
+                <Zap className="h-4 w-4 mr-2" />
+                View All Advanced Services
+              </Button>
+            </Link>
+            <Link to="/request-quote">
+              <Button variant="outline" className="border-zion-cyan text-zion-cyan hover:bg-zion-cyan/10">
                 Request a Quote
               </Button>
             </Link>
           </div>
         </div>
       </div>
+
+      {/* Featured Expanded Services Section */}
+      <div className="bg-gradient-to-r from-zion-slate-light to-zion-blue-light py-16">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Featured Advanced Technology Services
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Discover our comprehensive suite of cutting-edge micro SAAS solutions and professional IT services designed to transform your business.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            {FEATURED_EXPANDED_SERVICES.map((service) => (
+              <div key={service.id} className="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div className="flex items-center justify-between mb-4">
+                  {service.icon}
+                  <Badge variant="secondary" className="bg-zion-purple/10 text-zion-purple">
+                    {service.category}
+                  </Badge>
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">{service.title}</h3>
+                <p className="text-gray-600 text-sm mb-4">{service.description}</p>
+                <div className="space-y-2 mb-4">
+                  {service.benefits.map((benefit, index) => (
+                    <div key={index} className="flex items-center text-sm text-gray-600">
+                      <CheckCircle className="w-4 h-4 mr-2 text-green-500 flex-shrink-0" />
+                      {benefit}
+                    </div>
+                  ))}
+                </div>
+                <div className="flex items-center justify-between">
+                  <div className="text-2xl font-bold text-zion-blue">
+                    ${service.price.toLocaleString()}
+                  </div>
+                  <Link to={service.link}>
+                    <Button size="sm" className="bg-zion-purple hover:bg-zion-purple-dark">
+                      Learn More
+                      <ArrowRight className="w-4 h-4 ml-2" />
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <Link to="/expanded-services">
+              <Button size="lg" className="bg-gradient-to-r from-zion-purple to-zion-blue hover:from-zion-purple-dark hover:to-zion-blue-dark text-white">
+                Explore All {EXPANDED_SERVICES.length} Advanced Services
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </div>
+
       <DynamicListingPage 
         title="IT & AI Services"
         description="Find expert technology service providers for your business needs, from AI development to infrastructure management."
@@ -431,6 +541,34 @@ export default function ServicesPage() {
         categoryFilters={SERVICE_FILTERS}
         initialPrice={{ min: 3000, max: 10000 }}
       />
+
+      {/* Contact Information Section */}
+      <div className="bg-zion-blue py-16">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            Ready to Get Started?
+          </h2>
+          <p className="text-xl text-zion-slate-light mb-8 max-w-2xl mx-auto">
+            Our expert team is ready to help you implement cutting-edge technology solutions. 
+            Get in touch today for a personalized consultation and quote.
+          </p>
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-8">
+            <Button size="lg" className="bg-white text-zion-blue hover:bg-zion-slate-light">
+              <Phone className="w-5 h-5 mr-2" />
+              Call Now: +1 302 464 0950
+            </Button>
+            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-zion-blue">
+              <Mail className="w-5 h-5 mr-2" />
+              Email: kleber@ziontechgroup.com
+            </Button>
+          </div>
+          <div className="text-zion-slate-light">
+            <p className="text-lg">Address: 364 E Main St STE 1008, Middletown DE 19709</p>
+            <p className="text-lg">Website: <a href="https://ziontechgroup.com" className="underline hover:text-white">https://ziontechgroup.com</a></p>
+          </div>
+        </div>
+      </div>
+
       <TrustedBySection />
     </>
   );
