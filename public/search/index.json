@@ -10,6 +10,11 @@
     "h1": ""
   },
   {
+    "route": "/about",
+    "title": "About Us - Zion Tech Group",
+    "h1": "About Zion Tech Group"
+  },
+  {
     "route": "/comprehensive-2025-services-showcase",
     "title": "Comprehensive 2025 Innovative Services Showcase — Zion Tech Group",
     "h1": "2025 Innovative Services Showcase"
@@ -20,8 +25,68 @@
     "h1": "Zion Tech Group"
   },
   {
+    "route": "/portfolio",
+    "title": "Our Work - Zion Tech Group | Portfolio of Revolutionary Technology Solutions",
+    "h1": "Our Work"
+  },
+  {
     "route": "/pricing-2025",
     "title": "2025 Pricing & Services — Zion Tech Group",
     "h1": "2025 Pricing & Services"
+  },
+  {
+    "route": "/whitepapers",
+    "title": "Whitepapers - Zion Tech Group | Research & Insights",
+    "h1": "Whitepapers & Research"
+  },
+  {
+    "route": "/solutions/enterprise",
+    "title": "Enterprise Solutions - Zion Tech Group",
+    "h1": "Enterprise Solutions"
+  },
+  {
+    "route": "/solutions",
+    "title": "Technology Solutions - Zion Tech Group",
+    "h1": "Technology Solutions"
+  },
+  {
+    "route": "/solutions/industry",
+    "title": "Industry Specialized Solutions - Zion Tech Group",
+    "h1": "Industry Specialized Solutions"
+  },
+  {
+    "route": "/solutions/startups",
+    "title": "Startup Tools - Zion Tech Group",
+    "h1": "Startup Tools"
+  },
+  {
+    "route": "/services/ai-ml",
+    "title": "AI & Machine Learning Services - Zion Tech Group",
+    "h1": "AI & Machine Learning"
+  },
+  {
+    "route": "/services/cybersecurity",
+    "title": "Cybersecurity Services - Zion Tech Group",
+    "h1": "Cybersecurity"
+  },
+  {
+    "route": "/services/devops",
+    "title": "DevOps & Infrastructure Services - Zion Tech Group",
+    "h1": "DevOps & Infrastructure"
+  },
+  {
+    "route": "/services/edge-computing",
+    "title": "Edge Computing Services - Zion Tech Group",
+    "h1": "Edge Computing"
+  },
+  {
+    "route": "/services/quantum",
+    "title": "Quantum Computing Services - Zion Tech Group",
+    "h1": "Quantum Computing"
+  },
+  {
+    "route": "/services/space-tech",
+    "title": "Space Technology Services - Zion Tech Group",
+    "h1": "Space Technology"
   }
 ]
