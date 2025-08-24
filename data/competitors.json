@@ -1,0 +1,7 @@
+[
+  { "name": "Vercel", "url": "https://vercel.com" },
+  { "name": "Netlify", "url": "https://www.netlify.com" },
+  { "name": "Render", "url": "https://render.com" },
+  { "name": "Supabase", "url": "https://supabase.com" },
+  { "name": "Cloudflare", "url": "https://www.cloudflare.com" }
+]
