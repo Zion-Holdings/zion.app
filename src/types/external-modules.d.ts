@@ -32,8 +32,8 @@ declare module 'sonner';
 declare module 'lucide-react' {
   import { FC, SVGProps } from 'react';
   export interface LucideProps extends SVGProps<SVGSVGElement> {
-    size?: number | string;
     color?: string;
+    size?: number | string;
     strokeWidth?: number | string;
   }
   export type LucideIcon = FC<LucideProps>;
@@ -332,13 +332,14 @@ declare module 'react-dom/client';
 declare module 'react-dom';
 declare module '@hello-pangea/dnd';
 declare module 'react-redux';
+declare module 'notistack';
+declare module '@sentry/browser';
 declare module 'semver';
 declare module 'ws';
 declare module 'recharts';
 declare module 'next' {
   export type GetStaticPaths = any;
   export type GetStaticProps<P = any, Q = any> = any;
-  export type GetServerSideProps<P = any, Q = any> = any;
 }
 declare module 'next-themes';
 declare module 'tailwind-merge';
