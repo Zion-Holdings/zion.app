@@ -16,55 +16,37 @@
     "baseUrl": ".",
     "paths": {
       "@/*": [
-        "./src/*"
+        "./*"
       ],
       "@/pages/*": [
-        "./src/pages/*",
         "./pages/*"
       ],
       "@/components/*": [
-        "./src/components/*"
-      ],
-      "@/api/*": [
-        "./src/api/*"
+        "./components/*"
       ],
       "@/types/*": [
-        "./src/types/*",
         "./types/*"
       ],
       "@/utils/*": [
-        "./src/utils/*",
         "./utils/*"
       ],
-      "@/hooks/*": [
-        "./src/hooks/*"
-      ],
-      "@/context/*": [
-        "./src/context/*"
-      ],
       "@/services/*": [
-        "./src/services/*"
+        "./services/*"
       ],
-      "react-router-dom": [
-        "./src/stubs/react-router-dom.tsx"
-      ],
-      "next-cloudinary": [
-        "./types/next-cloudinary.d.ts"
-      ],
-      "types/*": [
-        "./types/*"
+      "@/styles/*": [
+        "./styles/*"
       ]
     },
     /* Bundler mode */
     "moduleResolution": "node",
     "esModuleInterop": true,
     "resolveJsonModule": true,
-    "strict": false,
+    "strict": true,
     "noUnusedLocals": false,
     "noUnusedParameters": false,
-    "noFallthroughCasesInSwitch": false,
-    "noUncheckedIndexedAccess": false,
-    "noImplicitReturns": false,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitReturns": true,
     "allowJs": true,
     "incremental": true,
     "typeRoots": [
@@ -84,41 +66,22 @@
     "pages/**/*.tsx",
     "components/**/*.ts",
     "components/**/*.tsx",
-    "data/**/*.ts",
-    "data/**/*.tsx",
-    "temp_components/**/*.ts",
-    "temp_components/**/*.tsx",
-    "src/**/*.ts",
-    "src/**/*.tsx",
     "types/**/*.ts",
-    "types/**/*.tsx",
+    "types/**/*.d.ts",
     "utils/**/*.ts",
-    "utils/**/*.tsx",
-    "hooks/**/*.ts",
-    "hooks/**/*.tsx",
-    "context/**/*.ts",
-    "context/**/*.tsx",
     "services/**/*.ts",
-    "services/**/*.tsx",
-    "api/**/*.ts",
-    "api/**/*.tsx"
+    "styles/**/*.css"
   ],
   "exclude": [
     "node_modules",
+    "src",
     "zion.app/recovered-content/**",
-    "apps/**",
-    "browserstack.config.ts",
-    "**/*.test.ts",
-    "**/*.test.tsx",
-    "**/*.spec.ts",
-    "**/*.spec.tsx",
-    "contracts/**",
-    "**/hardhat.config.ts",
-    "cypress.config.ts",
-    "cypress/**/*",
-    "**/*.cy.ts",
-    "**/*.cy.tsx",
-    "**/*.cy.js",
-    "**/*.cy.jsx"
+    "zion-os",
+    "zion_academy",
+    "packages",
+    "apps",
+    "generated-services",
+    "monitoring",
+    "wiki"
   ]
 }

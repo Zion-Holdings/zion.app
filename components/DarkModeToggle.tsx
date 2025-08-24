@@ -85,7 +85,7 @@ const DarkModeToggle: React.FC = () => {
         aria-expanded={isOpen}
         aria-haspopup="true"
       >
-        <AnimatePresence mode="wait">
+        <AnimatePresence>
           <motion.div
             key={theme}
             initial={{ rotate: -90, opacity: 0 }}

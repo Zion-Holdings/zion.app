@@ -1,386 +1,486 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Brain, Shield, Rocket, Cpu, Database, Atom, Target, Star, 
-  Sparkles, Zap, Users, Award, Clock, CheckCircle, Globe, Code, Server,
-  ChevronRight, ExternalLink, TrendingUp, BarChart3, Cloud, Network,
-  Search, Filter, ArrowRight
+  Brain, Shield, Rocket, Cpu, Database, Atom, Users, 
+  Award, ExternalLink, Github, Globe, Zap, Star, CheckCircle,
+  TrendingUp, BarChart3, Cloud, Network, Search, Filter, ArrowRight,
+  BookOpen, FileText, Building, Lock, Satellite, Microchip
 } from 'lucide-react';
 import EnhancedNavigation from '../components/EnhancedNavigation';
 import EnhancedFooter from '../components/EnhancedFooter';
 
 export default function ServicesPage() {
-  const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
+  const [searchTerm, setSearchTerm] = useState('');
 
   const categories = [
-    { id: 'all', name: 'All Services', icon: Star },
+    { id: 'all', name: 'All Services', icon: Globe },
     { id: 'ai', name: 'AI & Machine Learning', icon: Brain },
-    { id: 'quantum', name: 'Quantum Technology', icon: Atom },
+    { id: 'quantum', name: 'Quantum Computing', icon: Atom },
     { id: 'cybersecurity', name: 'Cybersecurity', icon: Shield },
-    { id: 'business', name: 'Business Solutions', icon: Target },
-    { id: 'emerging', name: 'Emerging Tech', icon: Rocket }
+    { id: 'space', name: 'Space Technology', icon: Rocket },
+    { id: 'edge', name: 'Edge Computing', icon: Cpu },
+    { id: 'enterprise', name: 'Enterprise Solutions', icon: Building }
   ];
 
   const services = [
-    // AI & Machine Learning
     {
-      title: "AI Business Intelligence",
-      description: "Transform data into actionable insights with AI-powered analytics and predictive modeling",
-      category: "ai",
-      icon: Brain,
-      color: "from-purple-500 to-pink-500",
-      price: "$499/month",
-      features: ["AI-powered dashboards", "Predictive analytics", "Real-time insights", "Custom ML models"],
-      link: "/services/ai-business-intelligence"
+      id: 1,
+      title: 'AI Business Intelligence Platform',
+      category: 'ai',
+      description: 'Transform your data into actionable insights with our AI-powered analytics platform. Real-time processing, predictive analytics, and automated reporting.',
+      features: [
+        'AI-powered dashboards and visualizations',
+        'Predictive analytics and forecasting',
+        'Real-time data processing',
+        'Automated reporting and alerts',
+        'Natural language query interface',
+        'Custom ML model development'
+      ],
+      technologies: ['Python', 'TensorFlow', 'React', 'AWS', 'PostgreSQL', 'Kubernetes'],
+      pricing: 'Starting at $499/month',
+      image: '/api/placeholder/600/400',
+      link: '/services/ai-business-intelligence',
+      featured: true
     },
     {
-      title: "AI Autonomous Agents",
-      description: "Deploy intelligent autonomous agents that handle complex business operations",
-      category: "ai",
-      icon: Brain,
-      color: "from-blue-500 to-cyan-500",
-      price: "$799/month",
-      features: ["Task automation", "Decision making", "Process optimization", "24/7 operation"],
-      link: "/services/ai-autonomous-agents"
+      id: 2,
+      title: 'Quantum-Resistant Cybersecurity Framework',
+      category: 'cybersecurity',
+      description: 'Future-proof your security with quantum-resistant encryption and AI-powered threat detection. Zero-trust architecture with 24/7 monitoring.',
+      features: [
+        'Post-quantum cryptography',
+        'AI-powered threat detection',
+        'Zero-trust architecture',
+        'Real-time monitoring and alerts',
+        'Compliance automation',
+        'Incident response automation'
+      ],
+      technologies: ['Rust', 'Post-Quantum Cryptography', 'AI/ML', 'Kubernetes', 'Zero Trust'],
+      pricing: 'Starting at $799/month',
+      image: '/api/placeholder/600/400',
+      link: '/services/quantum-cybersecurity',
+      featured: true
     },
     {
-      title: "AI Content Factory",
-      description: "Generate high-quality content at scale with advanced AI content creation tools",
-      category: "ai",
-      icon: Brain,
-      color: "from-green-500 to-teal-500",
-      price: "$299/month",
-      features: ["Content generation", "SEO optimization", "Multi-format support", "Brand consistency"],
-      link: "/services/ai-content-factory"
+      id: 3,
+      title: 'Edge Computing Orchestration Platform',
+      category: 'edge',
+      description: 'Deploy and manage applications at the edge with intelligent orchestration. IoT device management, real-time analytics, and distributed computing.',
+      features: [
+        'Edge node management and monitoring',
+        'IoT device orchestration',
+        'Real-time analytics processing',
+        'Load balancing and optimization',
+        'Automatic scaling and failover',
+        'Multi-cloud edge deployment'
+      ],
+      technologies: ['Kubernetes', 'Edge Computing', 'IoT Protocols', 'Real-time Analytics', 'Microservices'],
+      pricing: 'Starting at $349/month',
+      image: '/api/placeholder/600/400',
+      link: '/services/edge-computing',
+      featured: false
     },
     {
-      title: "AI Customer Experience",
-      description: "Deliver personalized customer experiences at scale with AI-powered personalization",
-      category: "ai",
-      icon: Users,
-      color: "from-indigo-500 to-purple-500",
-      price: "$399/month",
-      features: ["Customer journey mapping", "AI personalization", "Sentiment analysis", "Predictive support"],
-      link: "/services/ai-customer-experience"
-    },
-
-    // Quantum Technology
-    {
-      title: "Quantum Neural Interface",
-      description: "Revolutionary brain-computer interface powered by quantum computing",
-      category: "quantum",
-      icon: Atom,
-      color: "from-blue-500 to-cyan-500",
-      price: "$2,999/month",
-      features: ["Quantum processing", "Neural mapping", "Real-time interface", "Advanced algorithms"],
-      link: "/services/quantum-neural-interface"
+      id: 4,
+      title: 'Space Technology Innovation Platform',
+      category: 'space',
+      description: 'Accelerate space exploration with cutting-edge technology solutions. Satellite management, AI mission planning, and quantum communication.',
+      features: [
+        'Satellite constellation management',
+        'AI-powered mission planning',
+        'Quantum communication systems',
+        'Space resource optimization',
+        'Real-time satellite monitoring',
+        'Autonomous navigation systems'
+      ],
+      technologies: ['Python', 'AI/ML', 'Satellite APIs', 'Real-time Processing', 'Cloud Infrastructure'],
+      pricing: 'Starting at $2,499/month',
+      image: '/api/placeholder/600/400',
+      link: '/services/space-technology',
+      featured: false
     },
     {
-      title: "Quantum Financial Trading",
-      description: "Quantum-powered trading algorithms for superior market performance",
-      category: "quantum",
-      icon: Atom,
-      color: "from-green-500 to-emerald-500",
-      price: "$1,999/month",
-      features: ["Quantum algorithms", "Risk assessment", "Portfolio optimization", "Real-time execution"],
-      link: "/services/quantum-financial-trading"
+      id: 5,
+      title: 'Neural Interface Development Kit',
+      category: 'ai',
+      description: 'Build the future of human-computer interaction with our comprehensive neural interface development toolkit.',
+      features: [
+        'BCI development tools and SDKs',
+        'Neural signal processing',
+        'AI pattern recognition',
+        'Real-time data analysis',
+        'Medical compliance tools',
+        'Custom interface development'
+      ],
+      technologies: ['Python', 'Signal Processing', 'AI/ML', 'Real-time Systems', 'Medical Standards'],
+      pricing: 'Starting at $899/month',
+      image: '/api/placeholder/600/400',
+      link: '/services/neural-interface',
+      featured: false
     },
     {
-      title: "Quantum Internet Protocol",
-      description: "Next-generation quantum internet infrastructure for ultra-secure communication",
-      category: "quantum",
-      icon: Atom,
-      color: "from-purple-500 to-pink-500",
-      price: "$3,999/month",
-      features: ["Quantum encryption", "Entanglement networks", "Zero-latency", "Unhackable security"],
-      link: "/services/quantum-internet-protocol"
+      id: 6,
+      title: 'AI Customer Experience Platform',
+      category: 'ai',
+      description: 'Deliver personalized customer experiences at scale with AI-powered automation and intelligent insights.',
+      features: [
+        'Customer journey mapping',
+        'AI personalization engine',
+        'Sentiment analysis',
+        'Automated customer support',
+        'Predictive customer behavior',
+        'Multi-channel integration'
+      ],
+      technologies: ['Python', 'AI/ML', 'NLP', 'React', 'AWS', 'Analytics'],
+      pricing: 'Starting at $399/month',
+      image: '/api/placeholder/600/400',
+      link: '/services/ai-customer-experience',
+      featured: false
     },
     {
-      title: "Quantum Sensors Network",
-      description: "Advanced quantum sensor technology for precision measurement and detection",
-      category: "quantum",
-      icon: Atom,
-      color: "from-orange-500 to-red-500",
-      price: "$1,499/month",
-      features: ["Quantum precision", "Multi-sensor fusion", "Real-time monitoring", "Advanced analytics"],
-      link: "/services/quantum-sensors-network"
-    },
-
-    // Cybersecurity
-    {
-      title: "Quantum Cybersecurity",
-      description: "Future-proof security with quantum-resistant encryption and AI threat detection",
-      category: "cybersecurity",
-      icon: Shield,
-      color: "from-red-500 to-orange-500",
-      price: "$799/month",
-      features: ["Quantum-resistant encryption", "AI threat detection", "Zero-trust architecture", "24/7 monitoring"],
-      link: "/services/quantum-cybersecurity"
+      id: 7,
+      title: 'Enterprise Digital Transformation Suite',
+      category: 'enterprise',
+      description: 'Comprehensive digital transformation solution including process automation, data analytics, and AI-powered decision support.',
+      features: [
+        'Digital twin technology',
+        'Process automation',
+        'Data analytics and insights',
+        'AI decision support',
+        'Cloud migration services',
+        'Change management support'
+      ],
+      technologies: ['Digital Twins', 'AI/ML', 'Process Automation', 'Data Analytics', 'Cloud Migration'],
+      pricing: 'Custom pricing',
+      image: '/api/placeholder/600/400',
+      link: '/services/digital-transformation',
+      featured: false
     },
     {
-      title: "AI-Powered Threat Detection",
-      description: "Advanced AI algorithms for real-time threat detection and response",
-      category: "cybersecurity",
-      icon: Shield,
-      color: "from-purple-500 to-indigo-500",
-      price: "$599/month",
-      features: ["Behavioral analysis", "Threat intelligence", "Automated response", "Forensic analysis"],
-      link: "/services/ai-threat-detection"
-    },
-    {
-      title: "SOC2 Compliance Automation",
-      description: "Automated compliance management for SOC2 and other security frameworks",
-      category: "cybersecurity",
-      icon: Shield,
-      color: "from-green-500 to-teal-500",
-      price: "$899/month",
-      features: ["Automated audits", "Compliance monitoring", "Risk assessment", "Documentation"],
-      link: "/services/soc2-compliance-automation"
-    },
-
-    // Business Solutions
-    {
-      title: "Smart Inventory Manager",
-      description: "AI-powered inventory optimization and demand forecasting",
-      category: "business",
-      icon: Target,
-      color: "from-blue-500 to-indigo-500",
-      price: "$349/month",
-      features: ["Demand forecasting", "Stock optimization", "Supplier management", "Cost reduction"],
-      link: "/services/smart-inventory-manager"
-    },
-    {
-      title: "Customer Success Automation",
-      description: "Automate customer success processes with intelligent workflows",
-      category: "business",
-      icon: Users,
-      color: "from-green-500 to-emerald-500",
-      price: "$449/month",
-      features: ["Onboarding automation", "Success tracking", "Churn prevention", "Growth optimization"],
-      link: "/services/customer-success-automation"
-    },
-    {
-      title: "AI Sales Coach",
-      description: "Intelligent sales coaching and performance optimization platform",
-      category: "business",
-      icon: Target,
-      color: "from-orange-500 to-red-500",
-      price: "$399/month",
-      features: ["Performance analytics", "Coaching recommendations", "Skill development", "ROI tracking"],
-      link: "/services/ai-sales-coach"
-    },
-    {
-      title: "Smart HR Assistant",
-      description: "AI-powered HR automation and employee experience optimization",
-      category: "business",
-      icon: Users,
-      color: "from-purple-500 to-pink-500",
-      price: "$299/month",
-      features: ["Recruitment automation", "Employee engagement", "Performance management", "Compliance"],
-      link: "/services/smart-hr-assistant"
-    },
-
-    // Emerging Tech
-    {
-      title: "Holographic Metaverse Platform",
-      description: "Next-generation holographic technology for immersive experiences",
-      category: "emerging",
-      icon: Rocket,
-      color: "from-violet-500 to-purple-500",
-      price: "$4,999/month",
-      features: ["3D holography", "Spatial computing", "Immersive experiences", "Multi-user support"],
-      link: "/services/holographic-metaverse-platform"
-    },
-    {
-      title: "Neuromorphic Computing",
-      description: "Brain-inspired computing architecture for advanced AI applications",
-      category: "emerging",
-      icon: Rocket,
-      color: "from-blue-500 to-cyan-500",
-      price: "$3,999/month",
-      features: ["Brain-like processing", "Energy efficiency", "Adaptive learning", "Scalable architecture"],
-      link: "/services/neuromorphic-computing"
-    },
-    {
-      title: "Synthetic Biology Platform",
-      description: "Revolutionary platform for synthetic biology research and applications",
-      category: "emerging",
-      icon: Rocket,
-      color: "from-green-500 to-emerald-500",
-      price: "$5,999/month",
-      features: ["DNA synthesis", "Gene editing", "Bioinformatics", "Lab automation"],
-      link: "/services/synthetic-biology-platform"
-    },
-    {
-      title: "Brain-Computer Interface",
-      description: "Advanced neural interface technology for human-computer interaction",
-      category: "emerging",
-      icon: Rocket,
-      color: "from-pink-500 to-rose-500",
-      price: "$2,999/month",
-      features: ["Neural signal processing", "Real-time interface", "Multi-modal input", "Safety protocols"],
-      link: "/services/brain-computer-interface"
+      id: 8,
+      title: 'Quantum AI Neural Networks',
+      category: 'quantum',
+      description: 'Quantum-powered AI with advanced consciousness capabilities. Hybrid quantum-classical neural networks for complex problem solving.',
+      features: [
+        'Hybrid quantum-classical networks',
+        'Quantum consciousness simulation',
+        'Advanced pattern recognition',
+        'Quantum optimization algorithms',
+        'Real-time quantum processing',
+        'Scalable quantum architecture'
+      ],
+      technologies: ['Qiskit', 'Python', 'Quantum Algorithms', 'AI/ML', 'Quantum Hardware'],
+      pricing: 'Starting at $1,499/month',
+      image: '/api/placeholder/600/400',
+      link: '/services/quantum-ai',
+      featured: false
     }
   ];
 
   const filteredServices = services.filter(service => {
-    const matchesSearch = service.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         service.description.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesCategory = selectedCategory === 'all' || service.category === selectedCategory;
-    return matchesSearch && matchesCategory;
+    const matchesSearch = service.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         service.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         service.features.some(feature => feature.toLowerCase().includes(searchTerm.toLowerCase()));
+    return matchesCategory && matchesSearch;
   });
+
+  const featuredServices = services.filter(service => service.featured);
+
+  const stats = [
+    { number: '50+', label: 'Services Available', icon: Zap },
+    { number: '99.9%', label: 'Uptime Guarantee', icon: Shield },
+    { number: '24/7', label: 'Support Available', icon: Users },
+    { number: '30', label: 'Day Free Trial', icon: Star }
+  ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white">
       <Head>
-        <title>Services — Zion Tech Group | AI, Quantum & Technology Solutions</title>
-        <meta name="description" content="Explore Zion Tech Group's comprehensive suite of AI, quantum computing, cybersecurity, and emerging technology services. Transform your business with cutting-edge solutions." />
-        <meta property="og:title" content="Zion Tech Group Services" />
-        <meta property="og:description" content="AI, quantum computing, cybersecurity, and emerging technology solutions" />
+        <title>Services - Zion Tech Group | AI, Quantum Computing, Cybersecurity & More</title>
+        <meta name="description" content="Explore Zion Tech Group's comprehensive range of technology services including AI, quantum computing, cybersecurity, edge computing, and space technology solutions." />
+        <meta name="keywords" content="Zion Tech Group services, AI services, quantum computing services, cybersecurity solutions, edge computing, space technology, technology consulting" />
+        <meta property="og:title" content="Services - Zion Tech Group" />
+        <meta property="og:description" content="Comprehensive technology services for the future." />
         <link rel="canonical" href="https://ziontechgroup.com/services" />
       </Head>
 
       <EnhancedNavigation />
 
       {/* Hero Section */}
-      <section className="relative py-20 px-6">
+      <section className="relative pt-32 pb-16 px-6">
         <div className="max-w-6xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-white via-blue-100 to-cyan-100 bg-clip-text text-transparent mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-white via-blue-100 to-cyan-100 bg-clip-text text-transparent mb-6">
               Our Services
             </h1>
-            <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed">
-              Revolutionary technology solutions that transform businesses and drive innovation
+            <p className="text-xl text-white/80 max-w-3xl mx-auto">
+              Cutting-edge technology solutions that drive innovation and transform businesses. 
+              From AI and quantum computing to cybersecurity and space technology.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Search and Filter */}
-      <section className="py-12 px-6">
+      {/* Stats Section */}
+      <section className="py-16 px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col md:flex-row gap-6 items-center justify-between">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {stats.map((stat, index) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="text-center"
+              >
+                <div className="flex justify-center mb-3">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-600 to-cyan-600 flex items-center justify-center">
+                    <stat.icon className="w-6 h-6 text-white" />
+                  </div>
+                </div>
+                <div className="text-3xl font-bold text-white mb-2">{stat.number}</div>
+                <div className="text-white/70">{stat.label}</div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Services */}
+      {featuredServices.length > 0 && (
+        <section className="py-16 px-6">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Featured Services</h2>
+              <p className="text-white/70">Our most popular and innovative solutions</p>
+            </div>
+            
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {featuredServices.map((service, index) => (
+                <motion.div
+                  key={service.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="bg-slate-800/50 backdrop-blur-xl rounded-2xl border border-white/10 overflow-hidden hover:border-white/20 transition-all duration-300"
+                >
+                  {/* Service Image */}
+                  <div className="relative h-48 bg-gradient-to-br from-slate-700 to-slate-800 flex items-center justify-center">
+                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-600 to-cyan-600 flex items-center justify-center">
+                      <categories.find(cat => cat.id === service.category)?.icon className="w-8 h-8 text-white" />
+                    </div>
+                    <div className="absolute top-4 right-4 px-3 py-1 bg-gradient-to-r from-blue-600 to-cyan-600 text-white text-xs font-medium rounded-full">
+                      Featured
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <div className="p-6">
+                    <div className="mb-4">
+                      <span className="inline-block px-3 py-1 bg-white/10 rounded-full text-xs text-cyan-400 font-medium mb-3">
+                        {categories.find(cat => cat.id === service.category)?.name}
+                      </span>
+                      <h3 className="text-xl font-bold text-white mb-3">{service.title}</h3>
+                      <p className="text-white/70 text-sm leading-relaxed mb-4">{service.description}</p>
+                    </div>
+
+                    {/* Key Features */}
+                    <div className="mb-4">
+                      <h4 className="text-white font-medium mb-2 text-sm">Key Features</h4>
+                      <ul className="space-y-1">
+                        {service.features.slice(0, 3).map((feature, idx) => (
+                          <li key={idx} className="flex items-center space-x-2 text-sm text-white/70">
+                            <CheckCircle className="w-3 h-3 text-green-400 flex-shrink-0" />
+                            <span>{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {/* Pricing */}
+                    <div className="mb-4">
+                      <div className="text-cyan-400 font-semibold">{service.pricing}</div>
+                    </div>
+
+                    {/* CTA */}
+                    <a
+                      href={service.link}
+                      className="inline-flex items-center space-x-2 text-cyan-400 hover:text-cyan-300 transition-colors duration-300 font-medium"
+                    >
+                      <span>Learn More</span>
+                      <ArrowRight className="w-4 h-4" />
+                    </a>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Filters and Search */}
+      <section className="py-8 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-col lg:flex-row gap-6 items-center justify-between">
+            {/* Category Filters */}
+            <div className="flex flex-wrap gap-3">
+              {categories.map((category) => (
+                <button
+                  key={category.id}
+                  onClick={() => setSelectedCategory(category.id)}
+                  className={`flex items-center space-x-2 px-4 py-2 rounded-full border transition-all duration-300 ${
+                    selectedCategory === category.id
+                      ? 'bg-blue-600 border-blue-500 text-white'
+                      : 'border-white/20 text-white/70 hover:border-white/40 hover:text-white'
+                  }`}
+                >
+                  <category.icon className="w-4 h-4" />
+                  <span>{category.name}</span>
+                </button>
+              ))}
+            </div>
+
             {/* Search */}
-            <div className="relative flex-1 max-w-md">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-white/50 w-5 h-5" />
+            <div className="relative">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-white/50" />
               <input
                 type="text"
                 placeholder="Search services..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 bg-slate-800/50 border border-slate-600/30 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="pl-10 pr-4 py-2 bg-white/10 border border-white/20 rounded-full text-white placeholder-white/50 focus:outline-none focus:border-blue-500 transition-colors duration-300"
               />
-            </div>
-
-            {/* Category Filter */}
-            <div className="flex flex-wrap gap-2">
-              {categories.map((category) => (
-                <button
-                  key={category.id}
-                  onClick={() => setSelectedCategory(category.id)}
-                  className={`px-4 py-2 rounded-lg border transition-all duration-300 flex items-center gap-2 ${
-                    selectedCategory === category.id
-                      ? 'bg-blue-600 border-blue-500 text-white'
-                      : 'bg-slate-800/50 border-slate-600/30 text-white/70 hover:bg-slate-700/50'
-                  }`}
-                >
-                  <category.icon className="w-4 h-4" />
-                  {category.name}
-                </button>
-              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Services Grid */}
-      <section className="py-20 px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredServices.map((service, index) => (
-              <motion.div
-                key={service.title}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                className="bg-gradient-to-br from-slate-800/50 to-slate-700/50 rounded-xl p-8 border border-slate-600/30 hover:border-blue-500/50 transition-all duration-300 hover:transform hover:scale-105"
-              >
-                <div className={`w-16 h-16 rounded-lg bg-gradient-to-r ${service.color} flex items-center justify-center mb-6`}>
-                  <service.icon className="w-8 h-8 text-white" />
-                </div>
-                
-                <h3 className="text-xl font-bold mb-3 text-white">{service.title}</h3>
-                <p className="text-white/80 leading-relaxed mb-6">{service.description}</p>
-                
-                <div className="mb-6">
-                  <div className="text-2xl font-bold text-blue-400 mb-2">{service.price}</div>
-                  <div className="text-sm text-white/60">Starting price</div>
-                </div>
-
-                <div className="mb-6">
-                  <h4 className="font-semibold text-white mb-3">Key Features:</h4>
-                  <ul className="space-y-2">
-                    {service.features.map((feature) => (
-                      <li key={feature} className="flex items-center gap-2 text-sm text-white/70">
-                        <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <a
-                  href={service.link}
-                  className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 font-semibold transition-colors duration-300"
-                >
-                  Learn More
-                  <ArrowRight className="w-4 h-4" />
-                </a>
-              </motion.div>
-            ))}
+      {/* All Services Grid */}
+      <section className="py-16 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">All Services</h2>
+            <p className="text-white/70">Explore our complete range of technology solutions</p>
           </div>
 
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={`${selectedCategory}-${searchTerm}`}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            >
+              {filteredServices.map((service, index) => (
+                <motion.div
+                  key={service.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="bg-slate-800/50 backdrop-blur-xl rounded-2xl border border-white/10 overflow-hidden hover:border-white/20 transition-all duration-300"
+                >
+                  {/* Service Image */}
+                  <div className="h-48 bg-gradient-to-br from-slate-700 to-slate-800 flex items-center justify-center">
+                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-600 to-cyan-600 flex items-center justify-center">
+                      {(() => {
+                        const category = categories.find(cat => cat.id === service.category);
+                        return category ? <category.icon className="w-8 h-8 text-white" /> : <Globe className="w-8 h-8 text-white" />;
+                      })()}
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <div className="p-6">
+                    <div className="mb-4">
+                      <span className="inline-block px-3 py-1 bg-white/10 rounded-full text-xs text-cyan-400 font-medium mb-3">
+                        {categories.find(cat => cat.id === service.category)?.name}
+                      </span>
+                      <h3 className="text-lg font-bold text-white mb-3">{service.title}</h3>
+                      <p className="text-white/70 text-sm leading-relaxed mb-4">{service.description}</p>
+                    </div>
+
+                    {/* Key Features */}
+                    <div className="mb-4">
+                      <h4 className="text-white font-medium mb-2 text-sm">Key Features</h4>
+                      <ul className="space-y-1">
+                        {service.features.slice(0, 2).map((feature, idx) => (
+                          <li key={idx} className="flex items-center space-x-2 text-sm text-white/70">
+                            <CheckCircle className="w-3 h-3 text-green-400 flex-shrink-0" />
+                            <span>{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {/* Pricing */}
+                    <div className="mb-4">
+                      <div className="text-cyan-400 font-semibold text-sm">{service.pricing}</div>
+                    </div>
+
+                    {/* CTA */}
+                    <a
+                      href={service.link}
+                      className="inline-flex items-center space-x-2 text-cyan-400 hover:text-cyan-300 transition-colors duration-300 font-medium"
+                    >
+                      <span>Learn More</span>
+                      <ArrowRight className="w-4 h-4" />
+                    </a>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          </AnimatePresence>
+
           {filteredServices.length === 0 && (
-            <div className="text-center py-20">
-              <div className="text-6xl mb-4">🔍</div>
-              <h3 className="text-2xl font-bold text-white mb-2">No services found</h3>
-              <p className="text-white/60">Try adjusting your search or filter criteria</p>
-            </div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="text-center py-16"
+            >
+              <div className="w-16 h-16 rounded-full bg-white/10 mx-auto mb-4 flex items-center justify-center">
+                <Search className="w-8 h-8 text-white/50" />
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2">No services found</h3>
+              <p className="text-white/70">Try adjusting your search criteria or category selection.</p>
+            </motion.div>
           )}
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-6 bg-gradient-to-r from-slate-900/50 to-slate-800/50">
+      <section className="py-16 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
+            className="bg-gradient-to-r from-blue-600/20 to-cyan-600/20 backdrop-blur-xl rounded-3xl border border-blue-500/30 p-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Ready to Get Started?
             </h2>
-            <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
-              Let's discuss how our cutting-edge technology solutions can transform your business and drive innovation.
+            <p className="text-white/80 text-lg mb-8 max-w-2xl mx-auto">
+              Let's discuss how our cutting-edge technology solutions can transform your business 
+              and drive innovation in your industry.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="mailto:kleber@ziontechgroup.com"
-                className="px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl flex items-center justify-center gap-2"
+                href="/contact"
+                className="px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 rounded-full font-semibold text-white transition-all duration-300 transform hover:scale-105 hover:shadow-2xl"
               >
-                Schedule Consultation
-                <ArrowRight className="w-5 h-5" />
+                Get Started
               </a>
               <a
-                href="/pricing"
-                className="px-8 py-4 border border-white/20 hover:border-white/40 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 backdrop-blur-sm bg-white/5 hover:bg-white/10"
+                href="/pricing-2025"
+                className="px-8 py-4 border border-white/20 hover:border-white/40 rounded-full font-semibold text-white transition-all duration-300 transform hover:scale-105 backdrop-blur-sm bg-white/5 hover:bg-white/10"
               >
                 View Pricing
               </a>
