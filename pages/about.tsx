@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React from 'react';
 import Head from 'next/head';
 import { motion } from 'framer-motion';
@@ -99,7 +98,7 @@ export default function AboutPage() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-xl text-gray-300 leading-relaxed"
           >
-            We're a forward-thinking technology company dedicated to revolutionizing how businesses operate through innovative micro SaaS solutions, cutting-edge AI services, and robust cloud infrastructure.
+            We&apos;re a forward-thinking technology company dedicated to revolutionizing how businesses operate through innovative micro SaaS solutions, cutting-edge AI services, and robust cloud infrastructure.
           </motion.p>
         </div>
       </section>
@@ -270,7 +269,7 @@ export default function AboutPage() {
           >
             <h2 className="text-4xl font-bold text-white mb-6">Ready to Work With Us?</h2>
             <p className="text-xl text-blue-100 mb-8">
-              Let's discuss how we can help transform your business with our innovative technology solutions.
+              Let&apos;s discuss how we can help transform your business with our innovative technology solutions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
@@ -290,23 +289,5 @@ export default function AboutPage() {
         </div>
       </section>
     </div>
-=======
-import Head from 'next/head';
-import Link from 'next/link';
-
-export default function Placeholder() {
-  return (
-    <main className="min-h-screen p-8">
-      <Head>
-        <title>About - Placeholder</title>
-        <meta name="robots" content="noindex" />
-      </Head>
-      <div className="max-w-3xl mx-auto">
-        <h1 className="text-2xl font-semibold mb-2">About</h1>
-        <p className="text-gray-600 mb-6">Auto-generated placeholder for missing route: <code>/about</code>.</p>
-        <Link href="/"><a className="text-blue-600 hover:underline">Back to Home</a></Link>
-      </div>
-    </main>
->>>>>>> cursor/install-dependencies-with-lockfile-mismatch-a802
   );
 }

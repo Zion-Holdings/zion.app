@@ -72,7 +72,7 @@ export default function OfflinePage() {
           transition={{ delay: 0.3 }}
           className="text-3xl font-bold text-white mb-4"
         >
-          You're Offline
+          You&apos;re Offline
         </motion.h1>
 
         {/* Description */}
@@ -82,7 +82,7 @@ export default function OfflinePage() {
           transition={{ delay: 0.4 }}
           className="text-gray-300 mb-8 leading-relaxed"
         >
-          It looks like you've lost your internet connection. Don't worry - we've cached some content for offline viewing.
+          It looks like you&apos;ve lost your internet connection. Don&apos;t worry - we&apos;ve cached some content for offline viewing.
         </motion.p>
 
         {/* Status Indicator */}
