@@ -1,446 +1,336 @@
-import React, { useState } from 'react';
-import { 
-  MICRO_SERVICES, 
-  MicroService,
-  getServicesByCategory
-} from '@/data/comprehensiveServices';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
+import React from 'react';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Link } from "react-router-dom";
 import { 
   Brain, 
-  Bot, 
-  BarChart3, 
-  PenTool, 
   MessageSquare, 
+  Eye, 
+  PenTool, 
+  BarChart3, 
+  Shield,
   Zap,
-  CheckCircle,
-  Star,
-  DollarSign,
-  Clock,
-  TrendingUp,
-  Users,
-  Award,
-  Mail,
-  Phone,
   Globe,
-  ArrowRight,
-  Lightbulb,
-  Shield
-} from 'lucide-react';
-import { SEO } from '@/components/SEO';
+  Users,
+  TrendingUp,
+  CheckCircle,
+  ArrowRight
+} from "lucide-react";
+import { TrustedBySection } from "@/components/TrustedBySection";
 
-const aiServices = getServicesByCategory('ai-services');
+const aiServices = [
+  {
+    id: "ai-content",
+    title: "AI-Powered Content Generation",
+    description: "Automated content creation for blogs, social media, and marketing materials using advanced language models.",
+    price: 299,
+    currency: "$",
+    period: "/month",
+    features: [
+      "Unlimited content generation",
+      "Multi-language support",
+      "SEO optimization",
+      "Brand voice customization",
+      "Plagiarism detection",
+      "Content calendar management"
+    ],
+    icon: <PenTool className="h-8 w-8" />,
+    category: "Content Creation",
+    badge: "Popular",
+    link: "/services",
+    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800&h=500"
+  },
+  {
+    id: "ai-chatbot",
+    title: "AI-Powered Customer Support Bot",
+    description: "Intelligent chatbot with natural language processing for 24/7 customer support and lead generation.",
+    price: 450,
+    currency: "$",
+    period: "/month",
+    features: [
+      "Natural language processing",
+      "Multi-channel integration",
+      "Lead qualification",
+      "24/7 availability",
+      "Analytics dashboard",
+      "Custom training"
+    ],
+    icon: <MessageSquare className="h-8 w-8" />,
+    category: "Customer Support",
+    badge: "Featured",
+    link: "/services",
+    image: "https://images.unsplash.com/photo-1551434678-e076c223a5ab?auto=format&fit=crop&w=800&h=500"
+  },
+  {
+    id: "ai-video",
+    title: "AI-Powered Video Analytics",
+    description: "Computer vision platform for video surveillance, object detection, facial recognition, and behavioral analysis.",
+    price: 1800,
+    currency: "$",
+    period: "/month",
+    features: [
+      "Real-time object detection",
+      "Facial recognition",
+      "Behavioral analysis",
+      "Custom model training",
+      "API integration",
+      "Compliance reporting"
+    ],
+    icon: <Eye className="h-8 w-8" />,
+    category: "Computer Vision",
+    badge: "Advanced",
+    link: "/services",
+    image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?auto=format&fit=crop&w=800&h=500"
+  },
+  {
+    id: "ai-analytics",
+    title: "Predictive Analytics Dashboard",
+    description: "Real-time business intelligence platform with predictive modeling for sales forecasting and trend analysis.",
+    price: 800,
+    currency: "$",
+    period: "/month",
+    features: [
+      "Predictive modeling",
+      "Real-time dashboards",
+      "Custom algorithms",
+      "Data visualization",
+      "Automated reporting",
+      "API access"
+    ],
+    icon: <BarChart3 className="h-8 w-8" />,
+    category: "Business Intelligence",
+    badge: "Pro",
+    link: "/services",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c072?auto=format&fit=crop&w=800&h=500"
+  },
+  {
+    id: "ai-security",
+    title: "AI-Powered Threat Detection",
+    description: "Advanced cybersecurity using machine learning to detect and prevent sophisticated cyber threats in real-time.",
+    price: 1200,
+    currency: "$",
+    period: "/month",
+    features: [
+      "Real-time threat detection",
+      "Behavioral analysis",
+      "Automated response",
+      "Threat intelligence",
+      "Compliance monitoring",
+      "24/7 SOC support"
+    ],
+    icon: <Shield className="h-8 w-8" />,
+    category: "Cybersecurity",
+    badge: "Enterprise",
+    link: "/services",
+    image: "https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=800&h=500"
+  },
+  {
+    id: "ai-automation",
+    title: "Intelligent Process Automation",
+    description: "AI-driven workflow automation that learns from your business processes and continuously improves efficiency.",
+    price: 650,
+    currency: "$",
+    period: "/month",
+    features: [
+      "Process mining",
+      "Workflow automation",
+      "Machine learning",
+      "Integration APIs",
+      "Performance analytics",
+      "Custom workflows"
+    ],
+    icon: <Zap className="h-8 w-8" />,
+    category: "Automation",
+    badge: "New",
+    link: "/services",
+    image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?auto=format&fit=crop&w=800&h=500"
+  }
+];
 
-const AIServiceCard: React.FC<{ service: MicroService }> = ({ service }) => {
-  const [showDetails, setShowDetails] = useState(false);
-
-  return (
-    <Card className="h-full border-zion-blue-light bg-zion-blue-dark hover:border-zion-purple/50 transition-all duration-300 group">
-      <CardHeader className="pb-3">
-        <div className="flex items-start justify-between">
-          <div className="flex-1">
-            <CardTitle className="text-white text-lg mb-2 group-hover:text-zion-cyan transition-colors">
-              {service.title}
-            </CardTitle>
-            <CardDescription className="text-zion-slate-light text-sm line-clamp-2">
-              {service.description}
-            </CardDescription>
-          </div>
-          {service.featured && (
-            <Badge variant="secondary" className="bg-zion-purple text-white text-xs">
-              <Award className="w-3 h-3 mr-1" />
-              Featured
-            </Badge>
-          )}
-        </div>
-        
-        <div className="flex items-center gap-2 mt-3">
-          <div className="flex items-center gap-1">
-            <Star className="w-4 h-4 text-yellow-400 fill-current" />
-            <span className="text-white text-sm">{service.rating}</span>
-            <span className="text-zion-slate-light text-sm">({service.reviewCount})</span>
-          </div>
-          <Badge variant="outline" className="border-zion-purple text-zion-cyan text-xs">
-            AI Score: {service.aiScore}
-          </Badge>
-        </div>
-      </CardHeader>
-
-      <CardContent className="pt-0">
-        <div className="space-y-3">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <DollarSign className="w-4 h-4 text-green-400" />
-              <span className="text-white font-semibold">
-                ${service.price.toLocaleString()}
-              </span>
-              <span className="text-zion-slate-light text-sm">
-                {service.pricingModel === 'monthly' ? '/month' : 'one-time'}
-              </span>
-            </div>
-            <div className="flex items-center gap-1 text-zion-slate-light text-sm">
-              <Clock className="w-3 h-3" />
-              {service.deliveryTime}
-            </div>
-          </div>
-
-          <div className="flex flex-wrap gap-1">
-            {service.tags.map((tag, index) => (
-              <Badge key={index} variant="outline" className="text-xs border-zion-blue-light text-zion-slate-light">
-                {tag}
-              </Badge>
-            ))}
-          </div>
-
-          <div className="space-y-2">
-            <div className="flex items-center gap-2 text-zion-slate-light text-sm">
-              <TrendingUp className="w-4 h-4 text-zion-purple" />
-              <span>Market Price: {service.marketPrice}</span>
-            </div>
-            
-            <div className="flex items-center gap-2 text-zion-slate-light text-sm">
-              <Users className="w-4 h-4 text-zion-cyan" />
-              <span>{service.author.name}</span>
-              {service.author.verified && (
-                <CheckCircle className="w-4 h-4 text-green-400" />
-              )}
-            </div>
-          </div>
-
-          <Button
-            onClick={() => setShowDetails(!showDetails)}
-            variant="outline"
-            className="w-full border-zion-purple text-zion-cyan hover:bg-zion-purple/10 group-hover:border-zion-cyan transition-colors"
-          >
-            {showDetails ? 'Hide Details' : 'View Details'}
-            <ArrowRight className={`w-4 h-4 ml-2 transition-transform ${showDetails ? 'rotate-90' : ''}`} />
-          </Button>
-
-          {showDetails && (
-            <div className="space-y-4 pt-3 border-t border-zion-blue-light">
-              <div>
-                <h4 className="text-white font-semibold mb-2 flex items-center gap-2">
-                  <Zap className="w-4 h-4 text-zion-purple" />
-                  Key Features
-                </h4>
-                <ul className="space-y-1">
-                  {service.features.map((feature, index) => (
-                    <li key={index} className="text-zion-slate-light text-sm flex items-start gap-2">
-                      <CheckCircle className="w-3 h-3 text-green-400 mt-0.5 flex-shrink-0" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div>
-                <h4 className="text-white font-semibold mb-2 flex items-center gap-2">
-                  <TrendingUp className="w-4 h-4 text-zion-cyan" />
-                  Benefits
-                </h4>
-                <ul className="space-y-1">
-                  {service.benefits.map((benefit, index) => (
-                    <li key={index} className="text-zion-slate-light text-sm flex items-start gap-2">
-                      <CheckCircle className="w-3 h-3 text-green-400 mt-0.5 flex-shrink-0" />
-                      {benefit}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="bg-zion-blue p-3 rounded-lg">
-                <h4 className="text-white font-semibold mb-2">Contact Information</h4>
-                <div className="space-y-2 text-sm">
-                  <div className="flex items-center gap-2 text-zion-slate-light">
-                    <Mail className="w-4 h-4 text-zion-purple" />
-                    <a 
-                      href={`mailto:${service.contactInfo.email}`}
-                      className="text-zion-cyan hover:underline"
-                    >
-                      {service.contactInfo.email}
-                    </a>
-                  </div>
-                  <div className="flex items-center gap-2 text-zion-slate-light">
-                    <Phone className="w-4 h-4 text-zion-purple" />
-                    <a 
-                      href={`tel:${service.contactInfo.phone}`}
-                      className="text-zion-cyan hover:underline"
-                    >
-                      {service.contactInfo.phone}
-                    </a>
-                  </div>
-                  <div className="flex items-center gap-2 text-zion-slate-light">
-                    <Globe className="w-4 h-4 text-zion-purple" />
-                    <a 
-                      href={service.contactInfo.website}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-zion-cyan hover:underline"
-                    >
-                      {service.contactInfo.website}
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
-        </div>
-      </CardContent>
-    </Card>
-  );
-};
-
-const AIFeatureSection: React.FC = () => (
-  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-    <div className="text-center p-6 bg-zion-blue-dark border border-zion-blue-light rounded-lg">
-      <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4">
-        <Brain className="w-8 h-8 text-white" />
-      </div>
-      <h3 className="text-white font-semibold mb-2">Machine Learning</h3>
-      <p className="text-zion-slate-light text-sm">Advanced ML models and algorithms for predictive analytics</p>
-    </div>
-    
-    <div className="text-center p-6 bg-zion-blue-dark border border-zion-blue-light rounded-lg">
-      <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-full flex items-center justify-center mx-auto mb-4">
-        <Bot className="w-8 h-8 text-white" />
-      </div>
-      <h3 className="text-white font-semibold mb-2">AI Automation</h3>
-      <p className="text-zion-slate-light text-sm">Intelligent automation for business processes</p>
-    </div>
-    
-    <div className="text-center p-6 bg-zion-blue-dark border border-zion-blue-light rounded-lg">
-      <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4">
-        <BarChart3 className="w-8 h-8 text-white" />
-      </div>
-      <h3 className="text-white font-semibold mb-2">Data Intelligence</h3>
-      <p className="text-zion-slate-light text-sm">Deep insights from complex data analysis</p>
-    </div>
-    
-    <div className="text-center p-6 bg-zion-blue-dark border border-zion-blue-light rounded-lg">
-      <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-yellow-600 rounded-full flex items-center justify-center mx-auto mb-4">
-        <PenTool className="w-8 h-8 text-white" />
-      </div>
-      <h3 className="text-white font-semibold mb-2">Content Creation</h3>
-      <p className="text-zion-slate-light text-sm">AI-powered content generation and optimization</p>
-    </div>
-  </div>
-);
-
-const AIBenefitsSection: React.FC = () => (
-  <div className="bg-zion-blue-dark border border-zion-blue-light rounded-lg p-8 mb-12">
-    <h2 className="text-3xl font-bold text-white text-center mb-8">Why Choose AI Solutions?</h2>
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div className="flex items-start gap-3">
-        <div className="w-10 h-10 bg-zion-purple rounded-full flex items-center justify-center flex-shrink-0">
-          <Shield className="w-5 h-5 text-white" />
-        </div>
-        <div>
-          <h3 className="text-white font-semibold mb-2">Precision & Accuracy</h3>
-          <p className="text-zion-slate-light text-sm">AI systems provide consistent, accurate results with minimal errors</p>
-        </div>
-      </div>
-      
-      <div className="flex items-start gap-3">
-        <div className="w-10 h-10 bg-zion-purple rounded-full flex items-center justify-center flex-shrink-0">
-          <Zap className="w-5 h-5 text-white" />
-        </div>
-        <div>
-          <h3 className="text-white font-semibold mb-2">Speed & Efficiency</h3>
-          <p className="text-zion-slate-light text-sm">Process large amounts of data and tasks in seconds, not hours</p>
-        </div>
-      </div>
-      
-      <div className="flex items-start gap-3">
-        <div className="w-10 h-10 bg-zion-purple rounded-full flex items-center justify-center flex-shrink-0">
-          <TrendingUp className="w-5 h-5 text-white" />
-        </div>
-        <div>
-          <h3 className="text-white font-semibold mb-2">Scalability</h3>
-          <p className="text-zion-slate-light text-sm">Grow your operations without proportional cost increases</p>
-        </div>
-      </div>
-      
-      <div className="flex items-start gap-3">
-        <div className="w-10 h-10 bg-zion-purple rounded-full flex items-center justify-center flex-shrink-0">
-          <Lightbulb className="w-5 h-5 text-white" />
-        </div>
-        <div>
-          <h3 className="text-white font-semibold mb-2">Innovation</h3>
-          <p className="text-zion-slate-light text-sm">Stay ahead of competition with cutting-edge AI capabilities</p>
-        </div>
-      </div>
-      
-      <div className="flex items-start gap-3">
-        <div className="w-10 h-10 bg-zion-purple rounded-full flex items-center justify-center flex-shrink-0">
-          <Shield className="w-5 h-5 text-white" />
-        </div>
-        <div>
-          <h3 className="text-white font-semibold mb-2">Security</h3>
-          <p className="text-zion-slate-light text-sm">Advanced threat detection and security automation</p>
-        </div>
-      </div>
-      
-      <div className="flex items-start gap-3">
-        <div className="w-10 h-10 bg-zion-purple rounded-full flex items-center justify-center flex-shrink-0">
-          <Zap className="w-5 h-5 text-white" />
-        </div>
-        <div>
-          <h3 className="text-white font-semibold mb-2">Integration</h3>
-          <p className="text-zion-slate-light text-sm">Seamlessly integrate with existing systems and workflows</p>
-        </div>
-      </div>
-    </div>
-  </div>
-);
-
-const AICaseStudiesSection: React.FC = () => (
-  <div className="space-y-6 mb-12">
-    <h2 className="text-3xl font-bold text-white text-center mb-8">AI Success Stories</h2>
-    
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <div className="bg-zion-blue-dark border border-zion-blue-light rounded-lg p-6">
-        <div className="flex items-center gap-3 mb-4">
-          <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-full flex items-center justify-center">
-            <MessageSquare className="w-6 h-6 text-white" />
-          </div>
-          <div>
-            <h3 className="text-white font-semibold">Customer Service AI</h3>
-            <p className="text-zion-slate-light text-sm">E-commerce Company</p>
-          </div>
-        </div>
-        <p className="text-zion-slate-light text-sm mb-4">
-          Implemented AI chatbot that handles 80% of customer inquiries, reducing response time from 2 hours to 30 seconds.
-        </p>
-        <div className="flex items-center gap-4 text-sm">
-          <span className="text-green-400">↑ 300%</span>
-          <span className="text-zion-slate-light">Customer Satisfaction</span>
-        </div>
-      </div>
-      
-      <div className="bg-zion-blue-dark border border-zion-blue-light rounded-lg p-6">
-        <div className="flex items-center gap-3 mb-4">
-          <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-full flex items-center justify-center">
-            <BarChart3 className="w-6 h-6 text-white" />
-          </div>
-          <div>
-            <h3 className="text-white font-semibold">Predictive Analytics</h3>
-            <p className="text-zion-slate-light text-sm">Financial Services</p>
-          </div>
-        </div>
-        <p className="text-zion-slate-light text-sm mb-4">
-          AI-powered risk assessment system that predicts market trends with 92% accuracy, improving investment decisions.
-        </p>
-        <div className="flex items-center gap-4 text-sm">
-          <span className="text-green-400">↑ 25%</span>
-          <span className="text-zion-slate-light">Portfolio Returns</span>
-        </div>
-      </div>
-    </div>
-  </div>
-);
+const benefits = [
+  {
+    title: "Cost Efficiency",
+    description: "Reduce operational costs by up to 40% through intelligent automation and optimization",
+    icon: <TrendingUp className="h-6 w-6" />
+  },
+  {
+    title: "24/7 Availability",
+    description: "AI services never sleep, providing round-the-clock support and monitoring",
+    icon: <Globe className="h-6 w-6" />
+  },
+  {
+    title: "Scalability",
+    description: "Easily scale your AI capabilities as your business grows without additional infrastructure",
+    icon: <Users className="h-6 w-6" />
+  },
+  {
+    title: "Continuous Learning",
+    description: "AI models continuously improve and adapt to your specific business needs and data",
+    icon: <Brain className="h-6 w-6" />
+  }
+];
 
 export default function AIServicesPage() {
   return (
-    <div className="min-h-screen bg-zion-blue">
-      <SEO 
-        title="AI & Machine Learning Services - Zion Tech Group" 
-        description="Expert AI development, machine learning, and intelligent automation services. Transform your business with cutting-edge AI solutions at competitive prices."
-        keywords="AI services, machine learning, chatbot development, data analytics, content generation, AI automation, predictive analytics"
-        canonical="https://ziontechgroup.com/ai-services"
-      />
-
+    <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <div className="bg-gradient-to-br from-zion-blue-dark to-zion-blue py-20 px-4">
-        <div className="container mx-auto text-center">
-          <div className="w-24 h-24 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-6">
-            <Brain className="w-12 h-12 text-white" />
-          </div>
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-            AI & Machine Learning Services
-          </h1>
-          <p className="text-xl text-zion-slate-light max-w-3xl mx-auto mb-8">
-            Transform your business with cutting-edge AI solutions. From intelligent chatbots to predictive analytics, 
-            we deliver innovative AI services that drive growth and efficiency.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white px-8"
-              onClick={() => window.location.href = 'mailto:kleber@ziontechgroup.com'}
-            >
-              <Mail className="w-4 h-4 mr-2" />
-              Get AI Consultation
-            </Button>
-            <Button 
-              variant="outline" 
-              className="border-zion-purple text-zion-cyan hover:bg-zion-purple/10 px-8"
-              onClick={() => window.location.href = 'tel:+13024640950'}
-            >
-              <Phone className="w-4 h-4 mr-2" />
-              Call Now
-            </Button>
+      <section className="bg-gradient-to-br from-zion-blue via-zion-purple to-zion-blue-dark py-20">
+        <div className="container mx-auto px-4 text-center">
+          <div className="max-w-4xl mx-auto">
+            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+              AI-Powered Solutions for the
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-zion-cyan to-zion-purple-light">
+                Modern Business
+              </span>
+            </h1>
+            <p className="text-xl text-zion-slate-light mb-8 max-w-3xl mx-auto">
+              Transform your business with cutting-edge artificial intelligence solutions. From content creation to predictive analytics, 
+              our AI services deliver measurable results and competitive advantages.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link to="/request-quote">
+                <Button size="lg" className="bg-zion-cyan hover:bg-zion-cyan-dark text-white px-8 py-3">
+                  Get Started Today
+                </Button>
+              </Link>
+              <Link to="/contact">
+                <Button size="lg" variant="outline" className="border-zion-cyan text-zion-cyan hover:bg-zion-cyan/10 px-8 py-3">
+                  Schedule Demo
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Main Content */}
-      <div className="container mx-auto px-4 py-12">
-        <AIFeatureSection />
-        <AIBenefitsSection />
-        <AICaseStudiesSection />
-        
-        <div className="space-y-8">
-          <div className="text-center">
-            <h2 className="text-3xl font-bold text-white mb-4">Our AI Services</h2>
-            <p className="text-zion-slate-light max-w-2xl mx-auto">
-              Comprehensive AI solutions designed to meet your business needs. Each service is crafted with expertise 
-              and delivered with precision to ensure maximum value and impact.
+      {/* Benefits Section */}
+      <section className="py-16 bg-zion-blue">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-white mb-4">Why Choose AI Services?</h2>
+            <p className="text-zion-slate-light text-lg">
+              Leverage the power of artificial intelligence to drive innovation and growth
             </p>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {aiServices.map((service) => (
-              <AIServiceCard key={service.id} service={service} />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {benefits.map((benefit, index) => (
+              <div key={index} className="text-center p-6">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-zion-cyan rounded-full mb-4">
+                  <div className="text-white">
+                    {benefit.icon}
+                  </div>
+                </div>
+                <h3 className="text-white text-xl font-semibold mb-2">{benefit.title}</h3>
+                <p className="text-zion-slate-light">{benefit.description}</p>
+              </div>
             ))}
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Contact CTA */}
-      <div className="bg-zion-blue-dark border-t border-zion-blue-light py-16 px-4">
-        <div className="container mx-auto text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">
-            Ready to Harness the Power of AI?
-          </h2>
-          <p className="text-zion-slate-light max-w-2xl mx-auto mb-8">
-            Let's discuss how AI can transform your business operations, improve efficiency, and drive innovation. 
-            Our experts are ready to help you implement the right AI solutions.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white px-8"
-              onClick={() => window.location.href = 'mailto:kleber@ziontechgroup.com'}
-            >
-              <Mail className="w-4 h-4 mr-2" />
-              Start AI Project
-            </Button>
-            <Button 
-              variant="outline" 
-              className="border-zion-purple text-zion-cyan hover:bg-zion-purple/10 px-8"
-              onClick={() => window.location.href = 'tel:+13024640950'}
-            >
-              <Phone className="w-4 h-4 mr-2" />
-              Schedule Call
-            </Button>
+      {/* AI Services Grid */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">Our AI Service Portfolio</h2>
+            <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
+              Choose from our comprehensive range of AI-powered solutions designed to address your specific business challenges
+            </p>
           </div>
-          <div className="mt-8 text-zion-slate-light">
-            <p>Mobile: +1 302 464 0950</p>
-            <p>Email: kleber@ziontechgroup.com</p>
-            <p>Address: 364 E Main St STE 1008, Middletown DE 19709</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {aiServices.map((service) => (
+              <Card key={service.id} className="overflow-hidden hover:shadow-lg transition-all duration-300">
+                <div className="aspect-video overflow-hidden">
+                  <img 
+                    src={service.image} 
+                    alt={service.title}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <CardHeader className="pb-3">
+                  <div className="flex justify-between items-start mb-2">
+                    <Badge variant="secondary" className="bg-zion-purple/20 text-zion-purple">
+                      {service.category}
+                    </Badge>
+                    {service.badge && (
+                      <Badge variant="outline" className="border-zion-cyan text-zion-cyan">
+                        {service.badge}
+                      </Badge>
+                    )}
+                  </div>
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="p-2 bg-zion-blue/10 rounded-lg">
+                      {service.icon}
+                    </div>
+                    <CardTitle className="text-xl">{service.title}</CardTitle>
+                  </div>
+                  <CardDescription className="text-base">
+                    {service.description}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="pb-4">
+                  <div className="mb-4">
+                    <span className="text-3xl font-bold text-zion-purple">
+                      {service.currency}{service.price}
+                    </span>
+                    <span className="text-muted-foreground">{service.period}</span>
+                  </div>
+                  <ul className="space-y-2">
+                    {service.features.slice(0, 3).map((feature, index) => (
+                      <li key={index} className="flex items-center gap-2 text-sm">
+                        <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0" />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+                <CardContent className="pt-0">
+                  <Button asChild className="w-full">
+                    <Link to={service.link}>
+                      Learn More
+                      <ArrowRight className="h-4 w-4 ml-2" />
+                    </Link>
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-16 bg-zion-blue">
+        <div className="container mx-auto px-4 text-center">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-3xl font-bold text-white mb-4">
+              Ready to Transform Your Business with AI?
+            </h2>
+            <p className="text-zion-slate-light text-lg mb-8">
+              Join thousands of businesses already leveraging our AI solutions to drive growth and innovation
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link to="/request-quote">
+                <Button size="lg" className="bg-zion-cyan hover:bg-zion-cyan-dark text-white px-8 py-3">
+                  Request Custom Quote
+                </Button>
+              </Link>
+              <Link to="/contact">
+                <Button size="lg" variant="outline" className="border-zion-cyan text-zion-cyan hover:bg-zion-cyan/10 px-8 py-3">
+                  Contact Our AI Experts
+                </Button>
+              </Link>
+            </div>
+            <div className="mt-8 text-zion-slate-light">
+              <p>📞 <strong>Mobile:</strong> +1 302 464 0950</p>
+              <p>📧 <strong>Email:</strong> kleber@ziontechgroup.com</p>
+              <p>📍 <strong>Address:</strong> 364 E Main St STE 1008 Middletown DE 19709</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <TrustedBySection />
     </div>
   );
 }

@@ -4,199 +4,198 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 import { 
+  Link as LinkIcon, 
+  DollarSign as Coins, 
   Shield, 
-  Lock, 
-  Eye, 
   Zap, 
-  AlertTriangle,
+  Database,
   Globe,
   TrendingUp,
   CheckCircle,
   ArrowRight,
+  Lock,
   Network,
-  Database,
-  Smartphone,
-  TrendingUp as Activity,
-  Users
+  Wallet,
+  BarChart3
 } from "lucide-react";
 import { TrustedBySection } from "@/components/TrustedBySection";
 
-const cybersecurityServices = [
+const blockchainServices = [
   {
-    id: "threat-detection",
-    title: "AI-Powered Threat Detection",
-    description: "Advanced cybersecurity using machine learning to detect and prevent sophisticated cyber threats in real-time.",
-    price: 1200,
-    currency: "$",
-    period: "/month",
-    features: [
-      "Real-time threat detection",
-      "Behavioral analysis",
-      "Automated response",
-      "Threat intelligence",
-      "Compliance monitoring",
-      "24/7 SOC support"
-    ],
-    icon: <Eye className="h-8 w-8" />,
-    category: "Threat Detection",
-    badge: "Popular",
-    link: "/services",
-    image: "https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=800&h=500"
-  },
-  {
-    id: "zero-trust",
-    title: "Zero-Trust Security Framework",
-    description: "Implementation of zero-trust security architecture with identity verification, micro-segmentation, and continuous monitoring.",
-    price: 4200,
-    currency: "$",
-    period: "/month",
-    features: [
-      "Identity verification",
-      "Micro-segmentation",
-      "Continuous monitoring",
-      "Access control",
-      "Network isolation",
-      "Security policies"
-    ],
-    icon: <Lock className="h-8 w-8" />,
-    category: "Architecture",
-    badge: "Enterprise",
-    link: "/services",
-    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=800&h=500"
-  },
-  {
-    id: "penetration-testing",
-    title: "Penetration Testing & Vulnerability Assessment",
-    description: "Comprehensive security testing to identify vulnerabilities and assess your security posture.",
-    price: 2500,
-    currency: "$",
-    period: "/assessment",
-    features: [
-      "External penetration testing",
-      "Internal security assessment",
-      "Web application testing",
-      "Social engineering",
-      "Detailed reporting",
-      "Remediation guidance"
-    ],
-    icon: <AlertTriangle className="h-8 w-8" />,
-    category: "Testing",
-    badge: "Critical",
-    link: "/services",
-    image: "https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=800&h=500"
-  },
-  {
-    id: "incident-response",
-    title: "Incident Response & Forensics",
-    description: "Rapid response to security incidents with digital forensics and recovery services.",
+    id: "smart-contracts",
+    title: "Smart Contract Development",
+    description: "Custom smart contract development for DeFi, NFTs, and enterprise blockchain solutions with comprehensive auditing.",
     price: 3500,
     currency: "$",
-    period: "/incident",
+    period: "/project",
     features: [
-      "24/7 incident response",
-      "Digital forensics",
-      "Evidence preservation",
-      "Recovery planning",
-      "Legal support",
-      "Post-incident analysis"
-    ],
-    icon: <Activity className="h-8 w-8" />,
-    category: "Response",
-    badge: "Emergency",
-    link: "/services",
-    image: "https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=800&h=500"
-  },
-  {
-    id: "compliance-audit",
-    title: "Compliance & Audit Services",
-    description: "Ensure compliance with industry standards including SOC 2, ISO 27001, GDPR, and HIPAA.",
-    price: 1800,
-    currency: "$",
-    period: "/month",
-    features: [
-      "Compliance assessment",
-      "Policy development",
-      "Audit preparation",
-      "Gap analysis",
-      "Training programs",
+      "Custom smart contract development",
+      "Security auditing & testing",
+      "Gas optimization",
+      "Multi-chain deployment",
+      "Documentation & training",
       "Ongoing support"
     ],
-    icon: <Shield className="h-8 w-8" />,
-    category: "Compliance",
-    badge: "Required",
+    icon: <Zap className="h-8 w-8" />,
+    category: "Development",
+    badge: "Popular",
     link: "/services",
-    image: "https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=800&h=500"
+    image: "https://images.unsplash.com/photo-1639762681057-408e52192e55?auto=format&fit=crop&w=800&h=500"
   },
   {
-    id: "security-training",
-    title: "Security Awareness Training",
-    description: "Comprehensive training programs to educate employees on cybersecurity best practices and threat awareness.",
-    price: 450,
+    id: "defi-platform",
+    title: "DeFi Platform Development",
+    description: "Complete DeFi platform development including DEX, lending protocols, yield farming, and liquidity management.",
+    price: 15000,
     currency: "$",
-    period: "/user/month",
+    period: "/platform",
     features: [
-      "Interactive training modules",
-      "Phishing simulations",
-      "Security assessments",
-      "Progress tracking",
-      "Compliance reporting",
-      "Custom content"
+      "DEX development",
+      "Lending protocols",
+      "Yield farming",
+      "Liquidity management",
+      "Security audits",
+      "UI/UX design"
     ],
-    icon: <Users className="h-8 w-8" />,
-    category: "Training",
-    badge: "Essential",
+    icon: <Coins className="h-8 w-8" />,
+    category: "DeFi",
+    badge: "Enterprise",
     link: "/services",
-    image: "https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=800&h=500"
+    image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=800&h=500"
+  },
+  {
+    id: "nft-marketplace",
+    title: "NFT Marketplace Development",
+    description: "Custom NFT marketplace with minting, trading, auctions, and royalty distribution systems.",
+    price: 8000,
+    currency: "$",
+    period: "/marketplace",
+    features: [
+      "NFT minting & trading",
+      "Auction system",
+      "Royalty distribution",
+      "Multi-chain support",
+      "Admin dashboard",
+      "Analytics & reporting"
+    ],
+    icon: <Database className="h-8 w-8" />,
+    category: "NFTs",
+    badge: "Featured",
+    link: "/services",
+    image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=800&h=500"
+  },
+  {
+    id: "enterprise-blockchain",
+    title: "Enterprise Blockchain Solutions",
+    description: "Private blockchain networks for enterprise use cases including supply chain, identity management, and asset tracking.",
+    price: 25000,
+    currency: "$",
+    period: "/solution",
+    features: [
+      "Private blockchain setup",
+      "Consensus mechanisms",
+      "Identity management",
+      "Supply chain tracking",
+      "Integration APIs",
+      "Training & support"
+    ],
+    icon: <Network className="h-8 w-8" />,
+    category: "Enterprise",
+    badge: "Custom",
+    link: "/services",
+    image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=800&h=500"
+  },
+  {
+    id: "blockchain-security",
+    title: "Blockchain Security & Auditing",
+    description: "Comprehensive security audits, penetration testing, and vulnerability assessment for blockchain applications.",
+    price: 5000,
+    currency: "$",
+    period: "/audit",
+    features: [
+      "Smart contract auditing",
+      "Penetration testing",
+      "Vulnerability assessment",
+      "Security best practices",
+      "Compliance checking",
+      "Remediation guidance"
+    ],
+    icon: <Shield className="h-8 w-8" />,
+    category: "Security",
+    badge: "Critical",
+    link: "/services",
+    image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=800&h=500"
+  },
+  {
+    id: "blockchain-consulting",
+    title: "Blockchain Strategy Consulting",
+    description: "Strategic consulting for blockchain adoption, tokenomics design, and regulatory compliance guidance.",
+    price: 3000,
+    currency: "$",
+    period: "/day",
+    features: [
+      "Blockchain strategy",
+      "Tokenomics design",
+      "Regulatory compliance",
+      "Technology selection",
+      "Implementation roadmap",
+      "Risk assessment"
+    ],
+    icon: <BarChart3 className="h-8 w-8" />,
+    category: "Consulting",
+    badge: "Expert",
+    link: "/services",
+    image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=800&h=500"
   }
 ];
 
-const securityBenefits = [
+const blockchainBenefits = [
   {
-    title: "Proactive Protection",
-    description: "Identify and prevent threats before they can cause damage to your business",
-    icon: <Shield className="h-6 w-6" />
+    title: "Transparency",
+    description: "Immutable, transparent records that build trust and enable verifiable transactions",
+    icon: <Globe className="h-6 w-6" />
   },
   {
-    title: "Compliance Assurance",
-    description: "Meet industry standards and regulatory requirements with confidence",
+    title: "Security",
+    description: "Cryptographic security and decentralized architecture protect against fraud and attacks",
     icon: <Lock className="h-6 w-6" />
   },
   {
-    title: "24/7 Monitoring",
-    description: "Round-the-clock security monitoring and incident response capabilities",
-    icon: <Eye className="h-6 w-6" />
+    title: "Efficiency",
+    description: "Automated smart contracts reduce intermediaries and streamline complex processes",
+    icon: <Zap className="h-6 w-6" />
   },
   {
-    title: "Cost Reduction",
-    description: "Prevent costly security breaches and minimize financial impact",
+    title: "Innovation",
+    description: "Enable new business models and revenue streams through tokenization and DeFi",
     icon: <TrendingUp className="h-6 w-6" />
   }
 ];
 
-const securityThreats = [
+const useCases = [
   {
-    title: "Ransomware Attacks",
-    description: "Protect against encryption-based attacks that can cripple your business operations",
-    icon: <AlertTriangle className="h-6 w-6" />
+    title: "Supply Chain Management",
+    description: "Track products from origin to consumer with immutable records and real-time visibility",
+    icon: <LinkIcon className="h-6 w-6" />
   },
   {
-    title: "Data Breaches",
-    description: "Safeguard sensitive information from unauthorized access and exfiltration",
-    icon: <Database className="h-6 w-6" />
+    title: "Digital Identity",
+    description: "Self-sovereign identity solutions for secure, privacy-preserving authentication",
+    icon: <Shield className="h-6 w-6" />
   },
   {
-    title: "Phishing Scams",
-    description: "Train employees to recognize and avoid sophisticated social engineering attacks",
-    icon: <Users className="h-6 w-6" />
+    title: "Asset Tokenization",
+    description: "Convert real-world assets into digital tokens for fractional ownership and trading",
+    icon: <Coins className="h-6 w-6" />
   },
   {
-    title: "Insider Threats",
-    description: "Monitor and control access to prevent malicious or accidental insider incidents",
-    icon: <Network className="h-6 w-6" />
+    title: "Decentralized Finance",
+    description: "Build financial services without intermediaries using smart contracts and DeFi protocols",
+    icon: <Wallet className="h-6 w-6" />
   }
 ];
 
-export default function CybersecurityServicesPage() {
+export default function BlockchainServicesPage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
@@ -204,24 +203,24 @@ export default function CybersecurityServicesPage() {
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-4xl mx-auto">
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-              Cybersecurity Solutions for the
+              Blockchain Solutions for the
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-zion-cyan to-zion-purple-light">
-                Digital Age
+                Digital Economy
               </span>
             </h1>
             <p className="text-xl text-zion-slate-light mb-8 max-w-3xl mx-auto">
-              Protect your business with enterprise-grade cybersecurity solutions. From threat detection to compliance, 
-              we deliver comprehensive security services that keep your assets safe and your business compliant.
+              Transform your business with cutting-edge blockchain technology. From DeFi platforms to enterprise solutions, 
+              we deliver secure, scalable, and innovative blockchain applications.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link to="/request-quote">
                 <Button size="lg" className="bg-zion-cyan hover:bg-zion-cyan-dark text-white px-8 py-3">
-                  Secure Your Business
+                  Start Your Project
                 </Button>
               </Link>
               <Link to="/contact">
                 <Button size="lg" variant="outline" className="border-zion-cyan text-zion-cyan hover:bg-zion-cyan/10 px-8 py-3">
-                  Security Assessment
+                  Schedule Consultation
                 </Button>
               </Link>
             </div>
@@ -233,13 +232,13 @@ export default function CybersecurityServicesPage() {
       <section className="py-16 bg-zion-blue">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-white mb-4">Why Choose Our Cybersecurity?</h2>
+            <h2 className="text-3xl font-bold text-white mb-4">Why Choose Blockchain?</h2>
             <p className="text-zion-slate-light text-lg">
-              Comprehensive protection that adapts to evolving threats and business needs
+              Leverage the power of decentralized technology to create trust, transparency, and efficiency
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {securityBenefits.map((benefit, index) => (
+            {blockchainBenefits.map((benefit, index) => (
               <div key={index} className="text-center p-6">
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-zion-cyan rounded-full mb-4">
                   <div className="text-white">
@@ -254,42 +253,42 @@ export default function CybersecurityServicesPage() {
         </div>
       </section>
 
-      {/* Threats Section */}
+      {/* Use Cases Section */}
       <section className="py-16 bg-zion-blue-dark">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-white mb-4">Modern Security Threats</h2>
+            <h2 className="text-3xl font-bold text-white mb-4">Blockchain Use Cases</h2>
             <p className="text-zion-slate-light text-lg">
-              Stay protected against evolving cyber threats and attack vectors
+              Discover how blockchain technology can transform your industry
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {securityThreats.map((threat, index) => (
+            {useCases.map((useCase, index) => (
               <div key={index} className="text-center p-6 border border-zion-blue-light rounded-lg">
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-zion-purple rounded-full mb-4">
                   <div className="text-white">
-                    {threat.icon}
+                    {useCase.icon}
                   </div>
                 </div>
-                <h3 className="text-white text-xl font-semibold mb-2">{threat.title}</h3>
-                <p className="text-zion-slate-light">{threat.description}</p>
+                <h3 className="text-white text-xl font-semibold mb-2">{useCase.title}</h3>
+                <p className="text-zion-slate-light">{useCase.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Cybersecurity Services Grid */}
+      {/* Blockchain Services Grid */}
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Our Cybersecurity Service Portfolio</h2>
+            <h2 className="text-3xl font-bold mb-4">Our Blockchain Service Portfolio</h2>
             <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-              Choose from our comprehensive range of security solutions designed to protect your business
+              Choose from our comprehensive range of blockchain solutions designed to address your specific business needs
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {cybersecurityServices.map((service) => (
+            {blockchainServices.map((service) => (
               <Card key={service.id} className="overflow-hidden hover:shadow-lg transition-all duration-300">
                 <div className="aspect-video overflow-hidden">
                   <img 
@@ -354,20 +353,20 @@ export default function CybersecurityServicesPage() {
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold text-white mb-4">
-              Ready to Secure Your Business?
+              Ready to Build the Future with Blockchain?
             </h2>
             <p className="text-zion-slate-light text-lg mb-8">
-              Don't wait for a breach to happen. Protect your business with proactive cybersecurity solutions
+              Join the blockchain revolution and transform your business with decentralized technology
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link to="/request-quote">
                 <Button size="lg" className="bg-zion-cyan hover:bg-zion-cyan-dark text-white px-8 py-3">
-                  Get Security Quote
+                  Get Blockchain Quote
                 </Button>
               </Link>
               <Link to="/contact">
                 <Button size="lg" variant="outline" className="border-zion-cyan text-zion-cyan hover:bg-zion-cyan/10 px-8 py-3">
-                  Contact Security Experts
+                  Contact Blockchain Experts
                 </Button>
               </Link>
             </div>
