@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { 
   Search, 
   Star, 
@@ -22,28 +23,29 @@ import {
   TrendingUp,
   DollarSign,
   Lightbulb,
-  Lock,
+  Brain,
+  Monitor,
   Eye,
-  AlertTriangle,
-  Server,
-  Network,
-  Key,
-  ShieldCheck
+  MessageSquare,
+  BarChart3,
+  FileText,
+  Bot,
+  Sparkles
 } from 'lucide-react';
 import { EXPANDED_SERVICES, type ExpandedService } from '@/data/expandedServices';
 import { TrustedBySection } from '@/components/TrustedBySection';
 
-export default function CybersecurityServicesPage() {
+export default function AIServicesPage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedSubcategory, setSelectedSubcategory] = useState<string>('all');
   const [priceRange, setPriceRange] = useState<string>('all');
 
-  // Filter only security services
-  const securityServices = EXPANDED_SERVICES.filter(service => 
-    service.category === 'Security Services'
+  // Filter only AI services
+  const aiServices = EXPANDED_SERVICES.filter(service => 
+    service.category === 'AI Services'
   );
 
-  const filteredServices = securityServices.filter(service => {
+  const filteredServices = aiServices.filter(service => {
     const matchesSearch = service.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
                          service.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
                          service.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()));
@@ -51,9 +53,9 @@ export default function CybersecurityServicesPage() {
     const matchesSubcategory = selectedSubcategory === 'all' || service.subcategory === selectedSubcategory;
     
     let matchesPrice = true;
-    if (priceRange === 'low') matchesPrice = service.price < 500;
-    else if (priceRange === 'medium') matchesPrice = service.price >= 500 && service.price < 1000;
-    else if (priceRange === 'high') matchesPrice = service.price >= 1000;
+    if (priceRange === 'low') matchesPrice = service.price < 300;
+    else if (priceRange === 'medium') matchesPrice = service.price >= 300 && service.price < 800;
+    else if (priceRange === 'high') matchesPrice = service.price >= 800;
     
     return matchesSearch && matchesSubcategory && matchesPrice;
   });
@@ -78,49 +80,49 @@ export default function CybersecurityServicesPage() {
 
   const getSubcategoryIcon = (subcategory: string) => {
     switch (subcategory) {
-      case 'Cybersecurity': return <Shield className="w-5 h-5" />;
-      case 'Compliance': return <ShieldCheck className="w-5 h-5" />;
-      case 'Penetration Testing': return <Eye className="w-5 h-5" />;
-      case 'Security Audits': return <Server className="w-5 h-5" />;
-      case 'Incident Response': return <AlertTriangle className="w-5 h-5" />;
-      default: return <Lock className="w-5 h-5" />;
+      case 'Chatbots & Conversational AI': return <MessageSquare className="w-5 h-5" />;
+      case 'Content Generation': return <FileText className="w-5 h-5" />;
+      case 'Data Analytics': return <BarChart3 className="w-5 h-5" />;
+      case 'Computer Vision': return <Eye className="w-5 h-5" />;
+      case 'Natural Language Processing': return <Brain className="w-5 h-5" />;
+      default: return <Monitor className="w-5 h-5" />;
     }
   };
 
-  const securitySubcategories = [
-    'Cybersecurity',
-    'Compliance',
-    'Penetration Testing',
-    'Security Audits',
-    'Incident Response'
+  const aiSubcategories = [
+    'Chatbots & Conversational AI',
+    'Content Generation', 
+    'Data Analytics',
+    'Computer Vision',
+    'Natural Language Processing'
   ];
 
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-zion-blue via-red-600 to-red-800 py-20">
+      <section className="bg-gradient-to-br from-zion-blue via-zion-purple to-zion-purple-dark py-20">
         <div className="container mx-auto px-4 text-center">
           <div className="mb-6">
-            <Shield className="w-20 h-20 text-white mx-auto mb-4" />
+            <Brain className="w-20 h-20 text-white mx-auto mb-4" />
           </div>
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-            Cybersecurity & Compliance
+            AI-Powered Solutions
           </h1>
           <p className="text-xl text-zion-slate-light mb-8 max-w-3xl mx-auto">
-            Protect your business with enterprise-grade cybersecurity solutions and automated compliance management. 
-            Stay ahead of threats and maintain regulatory compliance with confidence.
+            Transform your business with cutting-edge artificial intelligence solutions. 
+            From chatbots to predictive analytics, we deliver AI that drives real results.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link to="/contact">
-              <Button size="lg" className="bg-white text-red-800 hover:bg-zion-slate-light">
+              <Button size="lg" className="bg-white text-zion-purple hover:bg-zion-slate-light">
                 <Mail className="w-5 h-5 mr-2" />
-                Security Assessment
+                Start AI Journey
               </Button>
             </Link>
             <Link to="/request-quote">
               <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
                 <DollarSign className="w-5 h-5 mr-2" />
-                Get Security Quote
+                Get AI Quote
               </Button>
             </Link>
           </div>
@@ -153,27 +155,27 @@ export default function CybersecurityServicesPage() {
         </div>
       </section>
 
-      {/* Security Capabilities Overview */}
+      {/* AI Capabilities Overview */}
       <section className="py-16 bg-zion-blue">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-white mb-4">Security Capabilities</h2>
+            <h2 className="text-3xl font-bold text-white mb-4">AI Capabilities</h2>
             <p className="text-zion-slate-light text-lg">
-              Comprehensive cybersecurity and compliance solutions for modern businesses
+              Explore our comprehensive AI service categories designed to solve real business challenges
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {securitySubcategories.map((subcategory) => {
+            {aiSubcategories.map((subcategory) => {
               const icon = getSubcategoryIcon(subcategory);
-              const services = securityServices.filter(s => s.subcategory === subcategory);
+              const services = aiServices.filter(s => s.subcategory === subcategory);
               const avgPrice = services.length > 0 ? 
                 Math.round(services.reduce((sum, s) => sum + s.price, 0) / services.length) : 0;
               
               return (
-                <Card key={subcategory} className="bg-zion-blue-dark border-zion-blue-light hover:border-red-500/50 transition-all duration-300">
+                <Card key={subcategory} className="bg-zion-blue-dark border-zion-blue-light hover:border-zion-purple/50 transition-all duration-300">
                   <CardHeader className="text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-700 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <div className="w-16 h-16 bg-gradient-to-br from-zion-purple to-zion-purple-dark rounded-full flex items-center justify-center mx-auto mb-4">
                       <div className="text-white">
                         {icon}
                       </div>
@@ -207,7 +209,7 @@ export default function CybersecurityServicesPage() {
             <div className="flex-1 relative">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-zion-slate-light w-4 h-4" />
               <Input
-                placeholder="Search security services, compliance, or threats..."
+                placeholder="Search AI services, features, or use cases..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="pl-10 bg-zion-blue-dark border-zion-blue-light text-white placeholder:text-zion-slate-light"
@@ -216,11 +218,11 @@ export default function CybersecurityServicesPage() {
             
             <Select value={selectedSubcategory} onValueChange={setSelectedSubcategory}>
               <SelectTrigger className="w-full lg:w-48 bg-zion-blue-dark border-zion-blue-light text-white">
-                <SelectValue placeholder="Security Category" />
+                <SelectValue placeholder="AI Category" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="all">All Security Categories</SelectItem>
-                {securitySubcategories.map(sub => (
+                <SelectItem value="all">All AI Categories</SelectItem>
+                {aiSubcategories.map(sub => (
                   <SelectItem key={sub} value={sub}>{sub}</SelectItem>
                 ))}
               </SelectContent>
@@ -232,33 +234,33 @@ export default function CybersecurityServicesPage() {
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="all">All Prices</SelectItem>
-                <SelectItem value="low">Under $500</SelectItem>
-                <SelectItem value="medium">$500 - $1K</SelectItem>
-                <SelectItem value="high">Over $1K</SelectItem>
+                <SelectItem value="low">Under $300</SelectItem>
+                <SelectItem value="medium">$300 - $800</SelectItem>
+                <SelectItem value="high">Over $800</SelectItem>
               </SelectContent>
             </Select>
           </div>
         </div>
       </section>
 
-      {/* Security Services Grid */}
+      {/* AI Services Grid */}
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-zion-blue mb-4">
-              {filteredServices.length} Security Services Found
+              {filteredServices.length} AI Services Found
             </h2>
             <p className="text-zion-slate-light">
-              Discover comprehensive security solutions to protect your business and maintain compliance
+              Discover AI solutions that can transform your business operations and customer experience
             </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
             {filteredServices.map((service) => (
-              <Card key={service.id} className="h-full border-zion-blue-light hover:border-red-500/50 transition-all duration-300 hover:shadow-xl">
+              <Card key={service.id} className="h-full border-zion-blue-light hover:border-zion-purple/50 transition-all duration-300 hover:shadow-xl">
                 <CardHeader className="pb-4">
                   <div className="flex items-start justify-between mb-3">
-                    <Badge variant="secondary" className="bg-red-500/20 text-red-600 border-red-500/30">
+                    <Badge variant="secondary" className="bg-zion-purple/20 text-zion-purple border-zion-purple/30">
                       {service.subcategory}
                     </Badge>
                     <div className="flex items-center gap-1 text-zion-slate-light">
@@ -284,7 +286,7 @@ export default function CybersecurityServicesPage() {
                       </span>
                     </div>
                     <div className="text-right">
-                      <div className="text-2xl font-bold text-red-600">
+                      <div className="text-2xl font-bold text-zion-purple">
                         {service.currency}{service.price.toLocaleString()}
                       </div>
                       {service.pricingModel === 'monthly' && (
@@ -295,9 +297,9 @@ export default function CybersecurityServicesPage() {
 
                   {/* AI Score */}
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-zion-slate-light">Security Score</span>
-                    <Badge className="bg-gradient-to-r from-red-500 to-red-700 text-white">
-                      <Shield className="w-3 h-3 mr-1" />
+                    <span className="text-sm text-zion-slate-light">AI Intelligence Score</span>
+                    <Badge className="bg-gradient-to-r from-zion-purple to-zion-purple-dark text-white">
+                      <Brain className="w-3 h-3 mr-1" />
                       {service.aiScore}/100
                     </Badge>
                   </div>
@@ -359,7 +361,7 @@ export default function CybersecurityServicesPage() {
                   {/* Action Buttons */}
                   <div className="flex flex-col gap-2 pt-4">
                     <Link to={`/services/${service.id}`}>
-                      <Button className="w-full bg-red-600 hover:bg-red-700 text-white">
+                      <Button className="w-full bg-zion-purple hover:bg-zion-purple-dark text-white">
                         <Lightbulb className="w-4 h-4 mr-2" />
                         Learn More
                       </Button>
@@ -425,8 +427,8 @@ export default function CybersecurityServicesPage() {
 
           {filteredServices.length === 0 && (
             <div className="text-center py-16">
-              <h3 className="text-xl font-semibold text-zion-slate-light mb-2">No security services found</h3>
-              <p className="text-zion-slate-light mb-4">Try adjusting your search criteria or browse all security categories</p>
+              <h3 className="text-xl font-semibold text-zion-slate-light mb-2">No AI services found</h3>
+              <p className="text-zion-slate-light mb-4">Try adjusting your search criteria or browse all AI categories</p>
               <Button onClick={() => {
                 setSearchQuery('');
                 setSelectedSubcategory('all');
@@ -439,92 +441,122 @@ export default function CybersecurityServicesPage() {
         </div>
       </section>
 
-      {/* Security Statistics */}
+      {/* AI Success Stories */}
       <section className="py-16 bg-zion-blue">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-white mb-4">Security by the Numbers</h2>
+            <h2 className="text-3xl font-bold text-white mb-4">AI Success Stories</h2>
             <p className="text-zion-slate-light text-lg">
-              Our security solutions protect businesses worldwide
+              See how our AI solutions have transformed businesses across industries
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="text-4xl font-bold text-zion-cyan mb-2">99.9%</div>
-              <div className="text-white font-semibold">Threat Detection Rate</div>
-              <div className="text-zion-slate-light text-sm">Advanced AI-powered threat detection</div>
-            </div>
-            
-            <div className="text-center">
-              <div className="text-4xl font-bold text-zion-cyan mb-2">24/7</div>
-              <div className="text-white font-semibold">Security Monitoring</div>
-              <div className="text-zion-slate-light text-sm">Round-the-clock threat monitoring</div>
-            </div>
-            
-            <div className="text-center">
-              <div className="text-4xl font-bold text-zion-cyan mb-2">15min</div>
-              <div className="text-white font-semibold">Response Time</div>
-              <div className="text-zion-slate-light text-sm">Average incident response time</div>
-            </div>
-            
-            <div className="text-center">
-              <div className="text-4xl font-bold text-zion-cyan mb-2">100%</div>
-              <div className="text-white font-semibold">Compliance Success</div>
-              <div className="text-zion-slate-light text-sm">Regulatory compliance rate</div>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <Card className="bg-zion-blue-dark border-zion-blue-light">
+              <CardHeader>
+                <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center mb-4">
+                  <TrendingUp className="w-6 h-6 text-white" />
+                </div>
+                <CardTitle className="text-white">E-commerce Growth</CardTitle>
+                <CardDescription className="text-zion-slate-light">
+                  AI-powered recommendations increased sales by 35%
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-zion-slate-light text-sm">
+                  Our AI chatbot and recommendation engine helped a major retailer increase 
+                  conversion rates and average order value significantly.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-zion-blue-dark border-zion-blue-light">
+              <CardHeader>
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center mb-4">
+                  <Users className="w-6 h-6 text-white" />
+                </div>
+                <CardTitle className="text-white">Customer Service</CardTitle>
+                <CardDescription className="text-zion-slate-light">
+                  Reduced response time from hours to seconds
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-zion-slate-light text-sm">
+                  AI chatbot implementation reduced customer service costs by 60% while 
+                  improving customer satisfaction scores.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-zion-blue-dark border-zion-blue-light">
+              <CardHeader>
+                <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center mb-4">
+                  <BarChart3 className="w-6 h-6 text-white" />
+                </div>
+                <CardTitle className="text-white">Predictive Analytics</CardTitle>
+                <CardDescription className="text-zion-slate-light">
+                  Prevented $2M in potential losses
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-zion-slate-light text-sm">
+                  AI-powered risk assessment and predictive analytics helped a financial 
+                  institution identify and prevent fraudulent activities.
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
 
-      {/* Why Choose Zion Security */}
+      {/* Why AI with Zion */}
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-zion-blue mb-4">Why Choose Zion for Security?</h2>
+            <h2 className="text-3xl font-bold text-zion-blue mb-4">Why Choose Zion for AI Solutions?</h2>
             <p className="text-zion-slate-light text-lg max-w-3xl mx-auto">
-              We combine cutting-edge security technology with deep compliance expertise to protect your business
+              We combine deep AI expertise with industry knowledge to deliver solutions that drive measurable business outcomes
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-700 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Shield className="w-8 h-8 text-white" />
+              <div className="w-16 h-16 bg-gradient-to-br from-zion-purple to-zion-purple-dark rounded-full flex items-center justify-center mx-auto mb-4">
+                <Brain className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-semibold text-zion-blue mb-2">Proven Security</h3>
+              <h3 className="text-xl font-semibold text-zion-blue mb-2">AI Expertise</h3>
               <p className="text-zion-slate-light">
-                Track record of protecting businesses from sophisticated cyber threats
+                Deep expertise in machine learning, NLP, computer vision, and emerging AI technologies
               </p>
             </div>
 
             <div className="text-center">
               <div className="w-16 h-16 bg-gradient-to-br from-zion-cyan to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <ShieldCheck className="w-8 h-8 text-white" />
+                <Zap className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-semibold text-zion-blue mb-2">Compliance Expert</h3>
+              <h3 className="text-xl font-semibold text-zion-blue mb-2">Business Focus</h3>
               <p className="text-zion-slate-light">
-                Deep expertise in GDPR, HIPAA, SOC 2, PCI DSS, and industry regulations
+                AI solutions designed to solve real business problems, not just showcase technology
               </p>
             </div>
 
             <div className="text-center">
               <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Zap className="w-8 h-8 text-white" />
+                <Shield className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-semibold text-zion-blue mb-2">Rapid Response</h3>
+              <h3 className="text-xl font-semibold text-zion-blue mb-2">Enterprise Security</h3>
               <p className="text-zion-slate-light">
-                Quick incident response and recovery to minimize business impact
+                Bank-level security and compliance standards for all AI implementations
               </p>
             </div>
 
             <div className="text-center">
               <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Network className="w-8 h-8 text-white" />
+                <Zap className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-semibold text-zion-blue mb-2">Global Coverage</h3>
+              <h3 className="text-xl font-semibold text-zion-blue mb-2">Rapid Deployment</h3>
               <p className="text-zion-slate-light">
-                Security solutions that work across all locations and jurisdictions
+                Pre-built AI models and rapid deployment frameworks for faster time to value
               </p>
             </div>
 
@@ -534,17 +566,17 @@ export default function CybersecurityServicesPage() {
               </div>
               <h3 className="text-xl font-semibold text-zion-blue mb-2">24/7 Support</h3>
               <p className="text-zion-slate-light">
-                Round-the-clock security operations center and expert support
+                Round-the-clock support and monitoring for all AI systems and implementations
               </p>
             </div>
 
             <div className="text-center">
               <div className="w-16 h-16 bg-gradient-to-br from-pink-500 to-rose-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <TrendingUp className="w-8 h-8 text-white" />
+                <Sparkles className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-semibold text-zion-blue mb-2">Continuous Improvement</h3>
+              <h3 className="text-xl font-semibold text-zion-blue mb-2">Continuous Innovation</h3>
               <p className="text-zion-slate-light">
-                Always evolving security measures to counter new threats
+                Always up-to-date with the latest AI research and technology breakthroughs
               </p>
             </div>
           </div>
@@ -552,30 +584,30 @@ export default function CybersecurityServicesPage() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 bg-gradient-to-br from-zion-blue via-red-600 to-red-800">
+      <section className="py-16 bg-gradient-to-br from-zion-blue via-zion-purple to-zion-purple-dark">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">Ready to Secure Your Business?</h2>
+          <h2 className="text-3xl font-bold text-white mb-4">Ready to Harness the Power of AI?</h2>
           <p className="text-zion-slate-light text-lg mb-8 max-w-2xl mx-auto">
-            Let's discuss how our cybersecurity and compliance solutions can protect your business 
-            and maintain regulatory compliance
+            Let's discuss how artificial intelligence can transform your business operations, 
+            improve customer experience, and drive growth
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link to="/contact">
-              <Button size="lg" className="bg-white text-red-800 hover:bg-zion-slate-light">
+              <Button size="lg" className="bg-white text-zion-purple hover:bg-zion-slate-light">
                 <Mail className="w-5 h-5 mr-2" />
-                Security Assessment
+                Schedule AI Consultation
               </Button>
             </Link>
             <Link to="/request-quote">
               <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
                 <DollarSign className="w-5 h-5 mr-2" />
-                Get Security Quote
+                Get AI Quote
               </Button>
             </Link>
             <a href="tel:+13024640950">
               <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
                 <Phone className="w-5 h-5 mr-2" />
-                Call Security Experts
+                Call AI Experts
               </Button>
             </a>
           </div>
