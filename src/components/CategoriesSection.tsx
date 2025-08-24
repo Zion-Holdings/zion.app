@@ -1,15 +1,22 @@
 
 import { GradientHeading } from "./GradientHeading";
 import { Link } from "react-router-dom";
-import { Briefcase, HardDrive, Lightbulb, Users } from "lucide-react";
+import { Briefcase, HardDrive, Lightbulb, Users, Brain } from "lucide-react";
 
 const categories = [
   {
-    title: "Services",
-    description: "On-demand IT support, consulting, development, and more",
+    title: "Comprehensive Services",
+    description: "Micro SAAS, IT services, and AI solutions",
     icon: <Briefcase className="w-10 h-10" />,
-    link: "/services",
+    link: "/comprehensive-services",
     color: "from-purple-500 to-indigo-600",
+  },
+  {
+    title: "AI Solutions",
+    description: "Cutting-edge AI and machine learning services",
+    icon: <Brain className="w-10 h-10" />,
+    link: "/comprehensive-services",
+    color: "from-pink-500 to-rose-600",
   },
   {
     title: "Talents",
@@ -25,19 +32,24 @@ const categories = [
     link: "/equipment",
     color: "from-amber-500 to-orange-600",
   },
-  {
-    title: "Innovation",
-    description: "Discover cutting-edge solutions and tech breakthroughs",
-    icon: <Lightbulb className="w-10 h-10" />,
-    link: "/category/innovation",
-    color: "from-emerald-500 to-green-600",
-  },
 ];
 
 const specialServices = [
   {
     title: "IT Onsite Services",
     link: "/it-onsite-services"
+  },
+  {
+    title: "AI Development",
+    link: "/comprehensive-services"
+  },
+  {
+    title: "Cloud Migration",
+    link: "/comprehensive-services"
+  },
+  {
+    title: "Cybersecurity",
+    link: "/comprehensive-services"
   }
 ];
 
