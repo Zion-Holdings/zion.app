@@ -44,7 +44,7 @@ const TalentProfilePage: React.FC = () => {
 
   if (loading) return <ProfileLoadingState />;
   if (error || !profile) {
-    // Redirect to 404 page
+    // Redirect to 404 page or show error state
     navigate('/404', { replace: true });
     return null;
   }
