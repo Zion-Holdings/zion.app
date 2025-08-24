@@ -63,7 +63,7 @@ function ErrorFallback({ error, resetError }: { error: Error; resetError: () => 
           </Link>
         </div>
 
-        {process.env.NODE_ENV === 'development' && error && (
+        {import.meta.env.MODE === 'development' && error && (
           <details className="text-left bg-zion-blue/20 rounded-md p-4">
             <summary className="text-zion-cyan cursor-pointer mb-2 font-medium">
               Error Details (Development)

@@ -12,6 +12,7 @@ const Home = React.lazy(() => import('./pages/Home'));
 const AboutPage = React.lazy(() => import('./pages/About'));
 const Contact = React.lazy(() => import('./pages/Contact'));
 const Sitemap = React.lazy(() => import('./pages/Sitemap'));
+const Services = React.lazy(() => import('./pages/Services'));
 const AISolutionsPage = React.lazy(() => import('./pages/AISolutions'));
 const ITServicesPage = React.lazy(() => import('./pages/ITServices'));
 const EnterprisePage = React.lazy(() => import('./pages/Enterprise'));
@@ -36,6 +37,7 @@ const baseRoutes = [
   { path: '/', element: <Home /> },
   { path: '/about', element: <AboutPage /> },
   { path: '/contact', element: <Contact /> },
+  { path: '/services', element: <Services /> },
   { path: '/sitemap', element: <Sitemap /> },
   { path: '/ai-solutions', element: <AISolutionsPage /> },
   { path: '/it-services', element: <ITServicesPage /> },
