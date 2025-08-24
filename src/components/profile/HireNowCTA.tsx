@@ -44,7 +44,7 @@ export function HireNowCTA({ talentName, hourlyRate, onHire }: HireNowCTAProps) 
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev: HireData) => ({
       ...prev,
       [name]: value
     }));
