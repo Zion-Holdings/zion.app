@@ -1,45 +1,44 @@
-import React from "react";
-import {
-  useToast as useToastHook,
-  Toast,
-} from "@/components/ui/toast";
+import React, { useState, useCallback } from 'react';
 
-// Extend the Toast component props with common toast options
-export type ToastOptions = React.ComponentPropsWithoutRef<typeof Toast> & {
+export interface ToastOptions {
+  id: string;
+  title: string;
   description?: string;
-  title?: string;
-  variant?: "default" | "destructive" | "success";
-};
-
-export const useToast = useToastHook;
-
-// Base toast function that delegates to the implementation from `useToastHook`.
-function baseToast(props: ToastOptions) {
-  const { toast } = useToastHook();
-  toast(props);
+  type?: 'success' | 'error' | 'warning' | 'info';
+  duration?: number;
 }
 
-// Convenience helpers mirroring common toast variants.
-baseToast.title = (title: string) => {
-  baseToast({ title });
-};
+export const useToast = () => {
+  const [toasts, setToasts] = useState<ToastOptions[]>([]);
 
-baseToast.description = (description: string) => {
-  baseToast({ description });
-};
+  const toast = useCallback((options: Omit<ToastOptions, 'id'>) => {
+    const newToast: ToastOptions = {
+      id: Math.random().toString(36).substr(2, 9),
+      duration: 5000,
+      ...options,
+    };
 
-baseToast.error = (error: string) => {
-  baseToast({ variant: "destructive", title: "Error", description: error });
-};
+    setToasts(prev => [...prev, newToast]);
 
-baseToast.success = (message: string) => {
-  baseToast({ variant: "success", title: "Success", description: message });
-};
+    if (newToast.duration) {
+      setTimeout(() => {
+        setToasts(prev => prev.filter(t => t !== newToast));
+      }, newToast.duration);
+    }
+  }, []);
 
-// Export the callable toast function.
-export const toast = baseToast as typeof baseToast & {
-  title: (title: string) => void;
-  description: (description: string) => void;
-  error: (error: string) => void;
-  success: (message: string) => void;
+  const dismiss = useCallback((toastToDismiss: ToastOptions) => {
+    setToasts(prev => prev.filter(t => t !== toastToDismiss));
+  }, []);
+
+  const dismissAll = useCallback(() => {
+    setToasts([]);
+  }, []);
+
+  return {
+    toasts,
+    toast,
+    dismiss,
+    dismissAll,
+  };
 };

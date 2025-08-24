@@ -1,0 +1,117 @@
+import type { NextPage } from 'next';
+import Head from 'next/head';
+
+const BlogIndex: NextPage = () => {
+  const featuredPosts = [
+    {
+      title: "The Future of AI in Business: Trends and Opportunities for 2024",
+      excerpt: "Discover how artificial intelligence is reshaping business operations and creating new opportunities for growth and innovation.",
+      category: "AI & Machine Learning",
+      readTime: "8 min read",
+      date: "December 15, 2024",
+      author: "Zion Tech Team",
+      image: "/blog/ai-future-business.jpg",
+      href: "/blog/ai-future-business-2024"
+    },
+    {
+      title: "Cloud Migration Strategies: A Comprehensive Guide for Enterprises",
+      excerpt: "Learn the best practices and strategies for successful cloud migration, from planning to execution and optimization.",
+      category: "Cloud & Infrastructure",
+      readTime: "12 min read",
+      date: "December 10, 2024",
+      author: "Cloud Solutions Team",
+      image: "/blog/cloud-migration-guide.jpg",
+      href: "/blog/cloud-migration-strategies"
+    },
+    {
+      title: "Building Scalable Microservices: Architecture Patterns and Best Practices",
+      excerpt: "Explore the fundamentals of microservices architecture and learn how to build scalable, maintainable systems.",
+      category: "Software Development",
+      readTime: "15 min read",
+      date: "December 5, 2024",
+      author: "Engineering Team",
+      image: "/blog/microservices-architecture.jpg",
+      href: "/blog/microservices-architecture-patterns"
+    }
+  ];
+
+  const recentPosts = [
+    {
+      title: "Cybersecurity Best Practices for Remote Work Environments",
+      excerpt: "Essential security measures to protect your business in the era of remote work and distributed teams.",
+      category: "Cybersecurity",
+      readTime: "6 min read",
+      date: "December 1, 2024",
+      href: "/blog/cybersecurity-remote-work"
+    },
+    {
+      title: "Data Analytics for Business Growth: Key Metrics and Insights",
+      excerpt: "Learn how to leverage data analytics to drive business decisions and identify growth opportunities.",
+      category: "Data & Analytics",
+      readTime: "10 min read",
+      date: "November 28, 2024",
+      href: "/blog/data-analytics-business-growth"
+    },
+    {
+      title: "DevOps Automation: Streamlining Your Development Pipeline",
+      excerpt: "Discover how automation can improve your DevOps processes and accelerate software delivery.",
+      category: "DevOps",
+      readTime: "9 min read",
+      date: "November 25, 2024",
+      href: "/blog/devops-automation-pipeline"
+    },
+    {
+      title: "UI/UX Design Trends: Creating Engaging User Experiences",
+      excerpt: "Explore the latest design trends and learn how to create user experiences that convert and engage.",
+      category: "Design & UX",
+      readTime: "7 min read",
+      date: "November 20, 2024",
+      href: "/blog/ui-ux-design-trends-2024"
+    },
+    {
+      title: "API Security: Protecting Your Digital Assets",
+      excerpt: "Essential security measures to protect your APIs from threats and ensure data integrity.",
+      category: "API Development",
+      readTime: "8 min read",
+      date: "November 18, 2024",
+      href: "/blog/api-security-best-practices"
+    },
+    {
+      title: "Mobile App Development: Native vs Cross-Platform Solutions",
+      excerpt: "Compare native and cross-platform approaches to mobile development and choose the right strategy for your project.",
+      category: "Mobile Development",
+      readTime: "11 min read",
+      date: "November 15, 2024",
+      href: "/blog/native-vs-cross-platform-mobile"
+    }
+  ];
+
+  const categories = [
+    "AI & Machine Learning",
+    "Cloud & Infrastructure", 
+    "Software Development",
+    "Cybersecurity",
+    "Data & Analytics",
+    "DevOps",
+    "Design & UX",
+    "API Development",
+    "Mobile Development",
+    "Digital Transformation"
+  ];
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50">
+      <Head>
+        <title>Index - Zion Tech Solutions</title>
+        <meta name="description" content="Index page" />
+      </Head>
+      
+      <main>
+        <h1>Index</h1>
+        <p>This page is under construction.</p>
+      </main>
+    </div>
+  );
+};
+
+export default Index;

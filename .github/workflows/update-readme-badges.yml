@@ -1,0 +1,49 @@
+name: Update README Badges
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'badges/*.json'
+      - '.github/workflows/update-readme-badges.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Render badges
+        id: render
+        run: |
+          OWNER_REPO=${GITHUB_REPOSITORY}
+          echo "Using repo: $OWNER_REPO"
+          LH_URL="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/${OWNER_REPO}/main/badges/lighthouse.json"
+          A11Y_URL="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/${OWNER_REPO}/main/badges/a11y.json"
+          LINKS_URL="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/${OWNER_REPO}/main/badges/links.json"
+          cat > badges.tmp <<BADGES
+          [![Lighthouse](${LH_URL})](#)
+          [![Accessibility](${A11Y_URL})](#)
+          [![Links](${LINKS_URL})](#)
+          BADGES
+      - name: Update README badges section
+        run: |
+          node - <<'NODE'
+          import { promises as fs } from 'node:fs';
+          const readme = await fs.readFile('README.md', 'utf8');
+          const badges = await fs.readFile('badges.tmp', 'utf8');
+          const start = '<!-- badges:start -->';
+          const end = '<!-- badges:end -->';
+          const pattern = new RegExp(`${start}[\s\S]*?${end}`);
+          const updated = readme.replace(pattern, `${start}\n\n${badges}\n${end}`);
+          await fs.writeFile('README.md', updated, 'utf8');
+          console.log('README badges section updated');
+          NODE
+      - name: Commit README update
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'docs(readme): update badges'
+          file_pattern: README.md

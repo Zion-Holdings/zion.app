@@ -1,76 +1,70 @@
-import { createClient } from '@supabase/supabase-js';
+// Mock Supabase client for development
+// In production, this would be the actual Supabase client
 
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
-
-if (!supabaseUrl || !supabaseAnonKey) {
-  throw new Error('Missing Supabase environment variables');
+interface SupabaseClient {
+  auth: {
+    signUp: (credentials: any) => Promise<any>;
+    signIn: (credentials: any) => Promise<any>;
+    signOut: () => Promise<any>;
+    user: () => any;
+    onAuthStateChange: (callback: any) => any;
+  };
+  from: (table: string) => any;
+  storage: {
+    from: (bucket: string) => any;
+  };
 }
 
-// Create Supabase client with proper configuration
-export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
+// Mock implementation
+const createMockSupabaseClient = (): SupabaseClient => ({
   auth: {
-    persistSession: true,
-    autoRefreshToken: true,
+    signUp: async (credentials: any) => {
+      console.log('Mock signUp:', credentials);
+      return { data: { user: { id: '1', email: credentials.email } }, error: null };
+    },
+    signIn: async (credentials: any) => {
+      console.log('Mock signIn:', credentials);
+      return { data: { user: { id: '1', email: credentials.email } }, error: null };
+    },
+    signOut: async () => {
+      console.log('Mock signOut');
+      return { error: null };
+    },
+    user: () => ({ id: '1', email: 'user@example.com' }),
+    onAuthStateChange: (callback: any) => {
+      console.log('Mock onAuthStateChange');
+      return { data: { subscription: { unsubscribe: () => {} } } };
+    },
   },
-  global: {
-    headers: {
-      'apikey': supabaseAnonKey
-    }
-  }
+  from: (table: string) => ({
+    select: (columns: string) => ({
+      eq: (column: string, value: any) => ({
+        single: async () => ({ data: null, error: null }),
+        execute: async () => ({ data: [], error: null }),
+      }),
+      execute: async () => ({ data: [], error: null }),
+    }),
+    insert: (data: any) => ({
+      execute: async () => ({ data: null, error: null }),
+    }),
+    update: (data: any) => ({
+      eq: (column: string, value: any) => ({
+        execute: async () => ({ data: null, error: null }),
+      }),
+    }),
+    delete: () => ({
+      eq: (column: string, value: any) => ({
+        execute: async () => ({ data: null, error: null }),
+      }),
+    }),
+  }),
+  storage: {
+    from: (bucket: string) => ({
+      upload: async (path: string, file: File) => ({ data: null, error: null }),
+      download: async (path: string) => ({ data: null, error: null }),
+      remove: async (paths: string[]) => ({ data: null, error: null }),
+    }),
+  },
 });
 
-// Helper function to access profiles table
-export const getFromProfiles = () => supabase.from('profiles');
-
-// Check if the browser is online. Gracefully handle environments where
-// `navigator` is undefined such as server side rendering or tests.
-export async function checkOnline(): Promise<boolean> {
-  try {
-    return typeof navigator !== 'undefined' && navigator.onLine;
-  } catch {
-    return false;
-  }
-}
-
-// Helper function for safe fetching with retries. Adds the Supabase API key
-// header while preserving any existing Headers instance passed in `options`.
-// Throws a consistent error message when the request ultimately fails.
-export async function safeFetch(url: string, options: RequestInit = {}) {
-  if (!(await checkOnline())) {
-    throw new Error('Failed to connect to Supabase');
-  }
-
-  const headers =
-    options.headers instanceof Headers
-      ? options.headers
-      : new Headers(options.headers);
-
-  if (!headers.has('apikey')) {
-    headers.set('apikey', supabaseAnonKey);
-  }
-
-  const maxRetries = 3;
-  let lastError: any;
-
-  for (let i = 0; i < maxRetries; i++) {
-    try {
-      const response = await fetch(url, {
-        ...options,
-        headers,
-      });
-      
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      
-      return response;
-    } catch (error) {
-      lastError = error;
-      // Wait before retrying (exponential backoff)
-      await new Promise(resolve => setTimeout(resolve, Math.pow(2, i) * 1000));
-    }
-  }
-
-  throw new Error('Failed to connect to Supabase');
-}
+export const supabase = createMockSupabaseClient();

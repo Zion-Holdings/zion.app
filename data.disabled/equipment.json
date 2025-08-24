@@ -1,0 +1,34 @@
+[
+  {
+    "slug": "workstation-pro-1",
+    "name": "Workstation Pro 1",
+    "description": "High‑performance workstation rental with 64GB RAM and RTX 4090 for model training and rendering.",
+    "category": "compute",
+    "dailyRateUsd": 120,
+    "rating": 4.7
+  },
+  {
+    "slug": "field-router-kit",
+    "name": "Field Router Kit",
+    "description": "5G/LTE bonded router with dual SIM and rugged case. Perfect for on‑site deployments.",
+    "category": "networking",
+    "dailyRateUsd": 45,
+    "rating": 4.6
+  },
+  {
+    "slug": "sensor-pack-a",
+    "name": "Sensor Pack A",
+    "description": "Assorted industrial sensors with data logger and cables for rapid prototyping.",
+    "category": "iot",
+    "dailyRateUsd": 30,
+    "rating": 4.5
+  },
+  {
+    "slug": "lighting-kit-studio",
+    "name": "Lighting Kit Studio",
+    "description": "Portable LED lighting kit with stands and softboxes for photo/video shoots.",
+    "category": "media",
+    "dailyRateUsd": 35,
+    "rating": 4.8
+  }
+]

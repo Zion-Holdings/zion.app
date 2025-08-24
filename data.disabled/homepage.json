@@ -1,0 +1,31 @@
+{
+  "features": [
+    { "title": "Self‑Improving", "desc": "Agents continuously analyze, invent, and evolve automations." },
+    { "title": "Repo Sync", "desc": "Changes are committed and pushed automatically to main." },
+    { "title": "Zero Ops", "desc": "Runs fully in the cloud—no servers or manual intervention." },
+    { "title": "Safety‑First", "desc": "Conservative edits with logs, reports, and guardrails." },
+    { "title": "Scalable", "desc": "Generates domain‑specific factories on demand." },
+    { "title": "Observability", "desc": "Dashboards, reports, and GitHub Actions artifacts." }
+  ],
+  "capabilities": [
+    { "title": "Code Quality & Refactors", "desc": "Lints, fixes, and proposes refactors with type‑safety improvements." },
+    { "title": "Performance & A11y", "desc": "Optimizes bundles, assets, and accessibility with continuous checks." },
+    { "title": "Content & SEO", "desc": "Curates content, updates promotions, and tunes metadata for reach." }
+  ],
+  "benefits": [
+    "24/7 progress without human intervention",
+    "Rapid feedback loop with safe, incremental edits",
+    "Continuous delivery directly to main branch",
+    "Fewer regressions via layered checks and reports"
+  ],
+  "explore": [
+    { "href": "/services/ai-seo-auditor", "text": "AI SEO Auditor — automate SEO improvements" },
+    { "href": "/services/customer-support-chatbot", "text": "Customer Support Chatbot — reduce response time" },
+    { "href": "/services/landing-page-generator", "text": "Landing Page Generator — launch pages instantly" },
+    { "href": "/services/price-intelligence-service", "text": "Price Intelligence — market‑aware pricing" },
+    { "href": "/automation", "text": "Automation Status — live agents & reports" },
+    { "href": "/newsroom", "text": "Newsroom — latest autonomous updates" },
+    { "href": "/site-health", "text": "Site Health — audits & insights" },
+    { "href": "/contact", "text": "Contact — discuss your use‑case" }
+  ]
+}

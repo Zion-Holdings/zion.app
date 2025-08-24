@@ -1,0 +1,759 @@
+{
+  "timestamp": "2025-08-15T03:47:44.146Z",
+  "predictions": [
+    {
+      "url": "https://ziontechgroup.com/front",
+      "features": {
+        "linkAge": 0,
+        "failureRate": 0,
+        "responseTime": 0,
+        "domainReliability": 1,
+        "contentType": 0,
+        "updateFrequency": 0.009082025462962964
+      },
+      "failureProbability": 0.550058782304989,
+      "healthScore": 100,
+      "riskScore": 100
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/14/apples-blood-oxygen-monitoring-returns-to-its-latest-apple-watches/",
+      "features": {
+        "linkAge": 0,
+        "failureRate": 0,
+        "responseTime": 0,
+        "domainReliability": 1,
+        "contentType": 0,
+        "updateFrequency": 0.009082025462962964
+      },
+      "failureProbability": 0.550058782304989,
+      "healthScore": 100,
+      "riskScore": 100
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/14/leaked-meta-ai-rules-show-chatbots-were-allowed-to-have-romantic-chats-with-kids/",
+      "features": {
+        "linkAge": 0,
+        "failureRate": 0,
+        "responseTime": 0,
+        "domainReliability": 1,
+        "contentType": 0,
+        "updateFrequency": 0.009082025462962964
+      },
+      "failureProbability": 0.550058782304989,
+      "healthScore": 100,
+      "riskScore": 100
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/14/the-wait-is-almost-over-the-2025-startup-battlefield-200-list-drops-august-27/",
+      "features": {
+        "linkAge": 0,
+        "failureRate": 0,
+        "responseTime": 0,
+        "domainReliability": 1,
+        "contentType": 0,
+        "updateFrequency": 0.009082025462962964
+      },
+      "failureProbability": 0.550058782304989,
+      "healthScore": 100,
+      "riskScore": 100
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/14/cohere-hires-long-time-meta-research-head-joelle-pineau-as-its-chief-ai-officer/",
+      "features": {
+        "linkAge": 0,
+        "failureRate": 0,
+        "responseTime": 0,
+        "domainReliability": 1,
+        "contentType": 0,
+        "updateFrequency": 0.009082025462962964
+      },
+      "failureProbability": 0.550058782304989,
+      "healthScore": 100,
+      "riskScore": 100
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/14/ai-translation-tech-palabra-gets-backing-from-reddit-co-founders-venture-firm/",
+      "features": {
+        "linkAge": 0,
+        "failureRate": 0,
+        "responseTime": 0,
+        "domainReliability": 1,
+        "contentType": 0,
+        "updateFrequency": 0.009082025462962964
+      },
+      "failureProbability": 0.550058782304989,
+      "healthScore": 100,
+      "riskScore": 100
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/14/buzzy-ai-startup-multiverse-creates-two-of-the-smallest-high-performing-models-ever/",
+      "features": {
+        "linkAge": 0,
+        "failureRate": 0,
+        "responseTime": 0,
+        "domainReliability": 1,
+        "contentType": 0,
+        "updateFrequency": 0.009082025462962964
+      },
+      "failureProbability": 0.550058782304989,
+      "healthScore": 100,
+      "riskScore": 100
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/14/lovable-projects-1b-in-arr-within-next-12-months/",
+      "features": {
+        "linkAge": 0,
+        "failureRate": 0,
+        "responseTime": 0,
+        "domainReliability": 1,
+        "contentType": 0,
+        "updateFrequency": 0.009082025462962964
+      },
+      "failureProbability": 0.550058782304989,
+      "healthScore": 100,
+      "riskScore": 100
+    },
+    {
+      "url": "https://formspree.io/f/xyyqzqyp",
+      "features": {
+        "linkAge": 0,
+        "failureRate": 1,
+        "responseTime": 0,
+        "domainReliability": 0,
+        "contentType": 0,
+        "updateFrequency": 0.009082025462962964
+      },
+      "failureProbability": 0.7111361027648062,
+      "healthScore": 100,
+      "riskScore": 100
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/14/u-s-government-is-reportedly-in-discussions-to-take-stake-in-intel/",
+      "features": {
+        "linkAge": 0,
+        "failureRate": 0,
+        "responseTime": 0,
+        "domainReliability": 1,
+        "contentType": 0,
+        "updateFrequency": 0.009082025462962964
+      },
+      "failureProbability": 0.550058782304989,
+      "healthScore": 100,
+      "riskScore": 100
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/14/google-pushes-ai-into-flight-deals-as-antitrust-scrutiny-competition-heat-up/",
+      "features": {
+        "linkAge": 0,
+        "failureRate": 0,
+        "responseTime": 0,
+        "domainReliability": 1,
+        "contentType": 0,
+        "updateFrequency": 0.009082025462962964
+      },
+      "failureProbability": 0.550058782304989,
+      "healthScore": 100,
+      "riskScore": 100
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/14/what-is-bluesky-everything-to-know-about-the-x-competitor/",
+      "features": {
+        "linkAge": 0,
+        "failureRate": 0,
+        "responseTime": 0,
+        "domainReliability": 1,
+        "contentType": 0,
+        "updateFrequency": 0.009082025462962964
+      },
+      "failureProbability": 0.550058782304989,
+      "healthScore": 100,
+      "riskScore": 100
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/14/bluesky-rolls-out-massive-revamp-to-policies-and-community-guidelines/",
+      "features": {
+        "linkAge": 0,
+        "failureRate": 0,
+        "responseTime": 0,
+        "domainReliability": 1,
+        "contentType": 0,
+        "updateFrequency": 0.009082025462962964
+      },
+      "failureProbability": 0.550058782304989,
+      "healthScore": 100,
+      "riskScore": 100
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/14/cohere-hits-a-6-8b-valuation-as-investors-amd-nvidia-and-salesforce-double-down/",
+      "features": {
+        "linkAge": 0,
+        "failureRate": 0,
+        "responseTime": 0,
+        "domainReliability": 1,
+        "contentType": 0,
+        "updateFrequency": 0.009082025462962964
+      },
+      "failureProbability": 0.550058782304989,
+      "healthScore": 100,
+      "riskScore": 100
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/14/norway-spy-chief-blames-russian-hackers-for-hijacking-dam/",
+      "features": {
+        "linkAge": 0,
+        "failureRate": 0,
+        "responseTime": 0,
+        "domainReliability": 1,
+        "contentType": 0,
+        "updateFrequency": 0.009082025462962964
+      },
+      "failureProbability": 0.550058782304989,
+      "healthScore": 100,
+      "riskScore": 100
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/14/pixel-10-ai-capabilities-and-everything-else-we-expect-out-of-the-made-by-google-2025-event/",
+      "features": {
+        "linkAge": 0,
+        "failureRate": 0,
+        "responseTime": 0,
+        "domainReliability": 1,
+        "contentType": 0,
+        "updateFrequency": 0.009082025462962964
+      },
+      "failureProbability": 0.550058782304989,
+      "healthScore": 100,
+      "riskScore": 100
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/14/iphone-17-the-thinnest-iphone-ever-and-everything-else-were-expecting-out-of-apples-hardware-event/",
+      "features": {
+        "linkAge": 0,
+        "failureRate": 0,
+        "responseTime": 0,
+        "domainReliability": 1,
+        "contentType": 0,
+        "updateFrequency": 0.009082025462962964
+      },
+      "failureProbability": 0.550058782304989,
+      "healthScore": 100,
+      "riskScore": 100
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/14/kodak-denies-its-shutting-down-amid-media-reports-of-financial-struggles/",
+      "features": {
+        "linkAge": 0,
+        "failureRate": 0,
+        "responseTime": 0,
+        "domainReliability": 1,
+        "contentType": 0,
+        "updateFrequency": 0.009082025462962964
+      },
+      "failureProbability": 0.550058782304989,
+      "healthScore": 100,
+      "riskScore": 100
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/14/chatgpt-everything-to-know-about-the-ai-chatbot/",
+      "features": {
+        "linkAge": 0,
+        "failureRate": 0,
+        "responseTime": 0,
+        "domainReliability": 1,
+        "contentType": 0,
+        "updateFrequency": 0.009082025462962964
+      },
+      "failureProbability": 0.550058782304989,
+      "healthScore": 100,
+      "riskScore": 100
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/13/co-founder-of-elon-musks-xai-departs-the-company/",
+      "features": {
+        "linkAge": 0,
+        "failureRate": 0,
+        "responseTime": 0,
+        "domainReliability": 1,
+        "contentType": 0,
+        "updateFrequency": 0.009082025462962964
+      },
+      "failureProbability": 0.550058782304989,
+      "healthScore": 100,
+      "riskScore": 100
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/10/security-flaws-in-a-carmakers-web-portal-let-one-hacker-remotely-unlock-cars-from-anywhere/",
+      "features": {
+        "linkAge": 0,
+        "failureRate": 0,
+        "responseTime": 0,
+        "domainReliability": 1,
+        "contentType": 0,
+        "updateFrequency": 0.009082025462962964
+      },
+      "failureProbability": 0.550058782304989,
+      "healthScore": 100,
+      "riskScore": 100
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/10/the-hidden-cost-of-living-amid-mark-zuckerbergs-110m-compound/",
+      "features": {
+        "linkAge": 0,
+        "failureRate": 0,
+        "responseTime": 0,
+        "domainReliability": 1,
+        "contentType": 0,
+        "updateFrequency": 0.009082025462962964
+      },
+      "failureProbability": 0.550058782304989,
+      "healthScore": 100,
+      "riskScore": 100
+    },
+    {
+      "url": "https://ziontechgroup.com",
+      "features": {
+        "linkAge": 0,
+        "failureRate": 0,
+        "responseTime": 0,
+        "domainReliability": 1,
+        "contentType": 0,
+        "updateFrequency": 0.009082025462962964
+      },
+      "failureProbability": 0.550058782304989,
+      "healthScore": 100,
+      "riskScore": 100
+    },
+    {
+      "url": "https://ziontechgroup.com\\",
+      "features": {
+        "linkAge": 0,
+        "failureRate": 0,
+        "responseTime": 0,
+        "domainReliability": 1,
+        "contentType": 0,
+        "updateFrequency": 0.009082025462962964
+      },
+      "failureProbability": 0.550058782304989,
+      "healthScore": 100,
+      "riskScore": 100
+    },
+    {
+      "url": "https://www.theverge.com/pages/installer-newsletter-sign-up",
+      "features": {
+        "linkAge": 0,
+        "failureRate": 0,
+        "responseTime": 0,
+        "domainReliability": 1,
+        "contentType": 0,
+        "updateFrequency": 0.009082025462962964
+      },
+      "failureProbability": 0.550058782304989,
+      "healthScore": 100,
+      "riskScore": 100
+    },
+    {
+      "url": "https://ziontechgroup.com/main/front\\",
+      "features": {
+        "linkAge": 0,
+        "failureRate": 0,
+        "responseTime": 0,
+        "domainReliability": 1,
+        "contentType": 0,
+        "updateFrequency": 0.009082025462962964
+      },
+      "failureProbability": 0.550058782304989,
+      "healthScore": 100,
+      "riskScore": 100
+    },
+    {
+      "url": "https://ziontechgroup.com/main/front",
+      "features": {
+        "linkAge": 0,
+        "failureRate": 0,
+        "responseTime": 0,
+        "domainReliability": 1,
+        "contentType": 0,
+        "updateFrequency": 0.009082025462962964
+      },
+      "failureProbability": 0.550058782304989,
+      "healthScore": 100,
+      "riskScore": 100
+    },
+    {
+      "url": "https://ziontechgroup.com/automation\\",
+      "features": {
+        "linkAge": 0,
+        "failureRate": 0,
+        "responseTime": 0,
+        "domainReliability": 1,
+        "contentType": 0,
+        "updateFrequency": 0.009082025462962964
+      },
+      "failureProbability": 0.550058782304989,
+      "healthScore": 100,
+      "riskScore": 100
+    },
+    {
+      "url": "https://ziontechgroup.com/landing",
+      "features": {
+        "linkAge": 0,
+        "failureRate": 0,
+        "responseTime": 0,
+        "domainReliability": 1,
+        "contentType": 0,
+        "updateFrequency": 0.009082025462962964
+      },
+      "failureProbability": 0.550058782304989,
+      "healthScore": 100,
+      "riskScore": 100
+    },
+    {
+      "url": "https://ziontechgroup.com/landing\\",
+      "features": {
+        "linkAge": 0,
+        "failureRate": 0,
+        "responseTime": 0,
+        "domainReliability": 1,
+        "contentType": 0,
+        "updateFrequency": 0.009082025462962964
+      },
+      "failureProbability": 0.550058782304989,
+      "healthScore": 100,
+      "riskScore": 100
+    },
+    {
+      "url": "https://ziontechgroup.com/services",
+      "features": {
+        "linkAge": 0,
+        "failureRate": 0,
+        "responseTime": 0,
+        "domainReliability": 1,
+        "contentType": 0,
+        "updateFrequency": 0.009082025462962964
+      },
+      "failureProbability": 0.550058782304989,
+      "healthScore": 100,
+      "riskScore": 100
+    },
+    {
+      "url": "https://ziontechgroup.com/automation",
+      "features": {
+        "linkAge": 0,
+        "failureRate": 0,
+        "responseTime": 0,
+        "domainReliability": 1,
+        "contentType": 0,
+        "updateFrequency": 0.009082025462962964
+      },
+      "failureProbability": 0.550058782304989,
+      "healthScore": 100,
+      "riskScore": 100
+    },
+    {
+      "url": "https://ziontechgroup.com/services\\",
+      "features": {
+        "linkAge": 0,
+        "failureRate": 0,
+        "responseTime": 0,
+        "domainReliability": 1,
+        "contentType": 0,
+        "updateFrequency": 0.009082025462962964
+      },
+      "failureProbability": 0.550058782304989,
+      "healthScore": 100,
+      "riskScore": 100
+    },
+    {
+      "url": "https://github.com/Zion-Holdings/zion.app",
+      "features": {
+        "linkAge": 0,
+        "failureRate": 0.5,
+        "responseTime": 0,
+        "domainReliability": 0.5,
+        "contentType": 0,
+        "updateFrequency": 0.009082025462962964
+      },
+      "failureProbability": 0.6343462752626184,
+      "healthScore": 100,
+      "riskScore": 100
+    },
+    {
+      "url": "https://ziontechgroup.com/explore\\",
+      "features": {
+        "linkAge": 0,
+        "failureRate": 0,
+        "responseTime": 0,
+        "domainReliability": 1,
+        "contentType": 0,
+        "updateFrequency": 0.009082025462962964
+      },
+      "failureProbability": 0.550058782304989,
+      "healthScore": 100,
+      "riskScore": 100
+    },
+    {
+      "url": "https://ziontechgroup.com/explore",
+      "features": {
+        "linkAge": 0,
+        "failureRate": 0,
+        "responseTime": 0,
+        "domainReliability": 1,
+        "contentType": 0,
+        "updateFrequency": 0.009082025462962964
+      },
+      "failureProbability": 0.550058782304989,
+      "healthScore": 100,
+      "riskScore": 100
+    },
+    {
+      "url": "https://ian.sh/tsa",
+      "features": {
+        "linkAge": 0,
+        "failureRate": 0,
+        "responseTime": 0,
+        "domainReliability": 1,
+        "contentType": 0,
+        "updateFrequency": 0.009082025462962964
+      },
+      "failureProbability": 0.550058782304989,
+      "healthScore": 100,
+      "riskScore": 100
+    },
+    {
+      "url": "https://ai.googleblog.com/2018/05/duplex-ai-system-for-natural-conversation.html",
+      "features": {
+        "linkAge": 0,
+        "failureRate": 0,
+        "responseTime": 0,
+        "domainReliability": 1,
+        "contentType": 0,
+        "updateFrequency": 0.009082025462962964
+      },
+      "failureProbability": 0.550058782304989,
+      "healthScore": 100,
+      "riskScore": 100
+    },
+    {
+      "url": "https://www.wired.com/story/elon-musk-government-young-engineers/",
+      "features": {
+        "linkAge": 0,
+        "failureRate": 0,
+        "responseTime": 0,
+        "domainReliability": 1,
+        "contentType": 0,
+        "updateFrequency": 0.009082025462962964
+      },
+      "failureProbability": 0.550058782304989,
+      "healthScore": 100,
+      "riskScore": 100
+    },
+    {
+      "url": "https://about.fb.com/news/2024/07/open-source-ai-is-the-path-forward/",
+      "features": {
+        "linkAge": 0,
+        "failureRate": 0,
+        "responseTime": 0,
+        "domainReliability": 1,
+        "contentType": 0,
+        "updateFrequency": 0.009082025462962964
+      },
+      "failureProbability": 0.550058782304989,
+      "healthScore": 100,
+      "riskScore": 100
+    },
+    {
+      "url": "https://fly.io/blog/youre-all-nuts/",
+      "features": {
+        "linkAge": 0,
+        "failureRate": 0,
+        "responseTime": 0,
+        "domainReliability": 1,
+        "contentType": 0,
+        "updateFrequency": 0.009082025462962964
+      },
+      "failureProbability": 0.550058782304989,
+      "healthScore": 100,
+      "riskScore": 100
+    },
+    {
+      "url": "https://www.foldnfly.com/",
+      "features": {
+        "linkAge": 0,
+        "failureRate": 0,
+        "responseTime": 0,
+        "domainReliability": 1,
+        "contentType": 0,
+        "updateFrequency": 0.009082025462962964
+      },
+      "failureProbability": 0.550058782304989,
+      "healthScore": 100,
+      "riskScore": 100
+    },
+    {
+      "url": "https://schema.org",
+      "features": {
+        "linkAge": 0,
+        "failureRate": 0,
+        "responseTime": 0,
+        "domainReliability": 1,
+        "contentType": 0,
+        "updateFrequency": 0.009082025462962964
+      },
+      "failureProbability": 0.550058782304989,
+      "healthScore": 100,
+      "riskScore": 100
+    },
+    {
+      "url": "https://www.instagram.com/ziontechgroup/",
+      "features": {
+        "linkAge": 0,
+        "failureRate": 0,
+        "responseTime": 0,
+        "domainReliability": 1,
+        "contentType": 0,
+        "updateFrequency": 0.009082025462962964
+      },
+      "failureProbability": 0.550058782304989,
+      "healthScore": 100,
+      "riskScore": 100
+    },
+    {
+      "url": "https://blog.hopefullyuseful.com/blog/advantage-air-ezone-tablet-diy-repair/",
+      "features": {
+        "linkAge": 0,
+        "failureRate": 0,
+        "responseTime": 0,
+        "domainReliability": 1,
+        "contentType": 0,
+        "updateFrequency": 0.009082025462962964
+      },
+      "failureProbability": 0.550058782304989,
+      "healthScore": 100,
+      "riskScore": 100
+    },
+    {
+      "url": "https://deepmind.google/technologies/gemini/",
+      "features": {
+        "linkAge": 0,
+        "failureRate": 0,
+        "responseTime": 0,
+        "domainReliability": 1,
+        "contentType": 0,
+        "updateFrequency": 0.009082025462962964
+      },
+      "failureProbability": 0.550058782304989,
+      "healthScore": 100,
+      "riskScore": 100
+    },
+    {
+      "url": "http://www.w3.org/2000/svg",
+      "features": {
+        "linkAge": 0,
+        "failureRate": 0,
+        "responseTime": 0,
+        "domainReliability": 1,
+        "contentType": 0,
+        "updateFrequency": 0.009082025462962964
+      },
+      "failureProbability": 0.550058782304989,
+      "healthScore": 100,
+      "riskScore": 100
+    },
+    {
+      "url": "https://github.com/Zion-Holdings/zion",
+      "features": {
+        "linkAge": 0,
+        "failureRate": 0.5,
+        "responseTime": 0,
+        "domainReliability": 0.5,
+        "contentType": 0,
+        "updateFrequency": 0.009082025462962964
+      },
+      "failureProbability": 0.6343462752626184,
+      "healthScore": 100,
+      "riskScore": 100
+    },
+    {
+      "url": "https://explore.zoom.us/en/terms/",
+      "features": {
+        "linkAge": 0,
+        "failureRate": 0,
+        "responseTime": 0,
+        "domainReliability": 1,
+        "contentType": 0,
+        "updateFrequency": 0.009082025462962964
+      },
+      "failureProbability": 0.550058782304989,
+      "healthScore": 100,
+      "riskScore": 100
+    },
+    {
+      "url": "https://ciechanow.ski/airfoil/",
+      "features": {
+        "linkAge": 0,
+        "failureRate": 0,
+        "responseTime": 0,
+        "domainReliability": 1,
+        "contentType": 0,
+        "updateFrequency": 0.009082025462962964
+      },
+      "failureProbability": 0.550058782304989,
+      "healthScore": 100,
+      "riskScore": 100
+    },
+    {
+      "url": "https://www.linkedin.com/company/zion-holdings/",
+      "features": {
+        "linkAge": 0,
+        "failureRate": 0,
+        "responseTime": 0,
+        "domainReliability": 1,
+        "contentType": 0,
+        "updateFrequency": 0.009082025462962964
+      },
+      "failureProbability": 0.550058782304989,
+      "healthScore": 100,
+      "riskScore": 100
+    }
+  ],
+  "insights": [
+    {
+      "type": "high-risk-links",
+      "count": 51,
+      "description": "51 links identified as high-risk",
+      "examples": [
+        "https://ziontechgroup.com/front",
+        "https://techcrunch.com/2025/08/14/apples-blood-oxygen-monitoring-returns-to-its-latest-apple-watches/",
+        "https://techcrunch.com/2025/08/14/leaked-meta-ai-rules-show-chatbots-were-allowed-to-have-romantic-chats-with-kids/"
+      ]
+    },
+    {
+      "type": "likely-failures",
+      "count": 1,
+      "description": "1 links likely to fail soon",
+      "examples": [
+        "https://formspree.io/f/xyyqzqyp"
+      ]
+    },
+    {
+      "type": "performance-trend",
+      "metric": "average-health-score",
+      "value": "100.0",
+      "description": "Average link health score: 100.0%"
+    }
+  ],
+  "recommendations": [
+    {
+      "priority": "high",
+      "action": "Implement proactive monitoring for high-risk links",
+      "description": "Monitor 51 high-risk links more frequently",
+      "effort": "medium"
+    },
+    {
+      "priority": "critical",
+      "action": "Preventive maintenance for likely failures",
+      "description": "Address 1 links before they fail",
+      "effort": "high"
+    }
+  ]
+}

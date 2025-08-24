@@ -1,0 +1,75 @@
+name: App Crawl and Index
+
+on:
+  schedule:
+    - cron: '15 */2 * * *' # every 2 hours at minute 15
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: app-crawl-index-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  crawl-and-index:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Generate sitemap
+        env:
+          SITEMAP_BASE_URL: https://zion.app
+        run: node scripts/generate-sitemap.js | cat
+
+      - name: Generate search index
+        run: node scripts/generate-search-index.js | cat
+
+      - name: Internal link sentinel (static analysis)
+        run: node automation/site-link-crawler.cjs || true
+
+      - name: External link check (network)
+        run: node automation/external-link-check.cjs || true
+
+      - name: Live site crawl (end-to-end)
+        run: |
+          python3 --version
+          python3 crawl_links.py https://zion.app --max-pages 3000 --timeout 10 --delay 0.1 --output data/reports/link-crawl/latest.csv || true
+
+      - name: Upload crawl artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-crawl-and-index-artifacts
+          path: |
+            public/sitemap.xml
+            public/search/index.json
+            data/reports/link-sentinel/**/*.json
+            data/reports/external-links/**/*.json
+            data/reports/link-crawl/**/*.csv
+          if-no-files-found: warn
+
+      - name: Commit and push changes
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "chore(crawl): update sitemap/search index and link reports [skip ci]"
+            git push
+          else
+            echo "No changes to commit"
+          fi

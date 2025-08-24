@@ -1,37 +1,31 @@
-
-import React from "react";
-import { SEO } from "@/components/SEO";
-import { MobileLaunchHero } from "@/components/mobile-app/MobileLaunchHero";
-import { MobileFeatureShowcase } from "@/components/mobile-app/MobileFeatureShowcase";
-import { AppTestimonials } from "@/components/mobile-app/AppTestimonials";
-import { MobileEmailCapture } from "@/components/mobile-app/MobileEmailCapture";
-import { AppStoreBanner } from "@/components/mobile-app/AppStoreBanner";
-import { QrCodeDownload } from "@/components/mobile-app/QrCodeDownload";
-import { CommunityTrust } from "@/components/mobile-app/CommunityTrust";
+import React from 'react';
+import { SEO } from '@/components/SEO';
 
 const MobileLaunchPage: React.FC = () => {
   return (
     <>
-      <SEO
-        title="Get the Zion App - AI Marketplace in Your Pocket"
-        description="Download the Zion mobile app for iOS and Android. Hire AI talent, find tech jobs, and manage projects on the go."
-        keywords="Zion mobile app, AI talent app, tech job app, project management app, iOS app, Android app"
-        canonical="/mobile-launch"
+      <SEO 
+        title="Mobile Launch - Zion Tech Group"
+        description="Launch our mobile application"
+        canonical="https://ziontechgroup.com/mobile-launch"
       />
-      
-      <MobileLaunchHero />
-      
-      <MobileFeatureShowcase />
-      
-      <QrCodeDownload />
-      
-      <CommunityTrust />
-      
-      <AppTestimonials />
-
-      <MobileEmailCapture />
-
-      <AppStoreBanner />
+      <div className="min-h-screen bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-slate-dark">
+        <div className="container mx-auto px-4 py-16">
+          <div className="text-center">
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+              Mobile Launch
+            </h1>
+            <p className="text-xl text-zion-slate-light mb-8">
+              Launch our mobile application
+            </p>
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-8 max-w-2xl mx-auto">
+              <p className="text-white">
+                Our mobile application is coming soon. You'll be able to access Zion Tech Group on the go with our mobile app.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 };

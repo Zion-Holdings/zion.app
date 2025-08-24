@@ -1,0 +1,56 @@
+{
+  "generatedAt": "2025-08-11T11:15:10.457Z",
+  "dryRun": false,
+  "changes": [
+    {
+      "file": "/workspace/public/reports/links/index.html",
+      "from": "https://zion.app/payments/stripe-checkout/wechatpay/4/",
+      "to": "https://zion.app/payments/stripe-checkout/wechatpay/4"
+    },
+    {
+      "file": "/workspace/public/reports/links/index.html",
+      "from": "https://zion.app/payments/stripe-checkout/card/4/",
+      "to": "https://zion.app/payments/stripe-checkout/card/4"
+    },
+    {
+      "file": "/workspace/public/reports/links/index.html",
+      "from": "https://zion.app/payments/stripe-checkout/wechatpay/5/",
+      "to": "https://zion.app/payments/stripe-checkout/wechatpay/5"
+    },
+    {
+      "file": "/workspace/public/reports/links/index.html",
+      "from": "https://zion.app/payments/stripe-checkout/card/5/",
+      "to": "https://zion.app/payments/stripe-checkout/card/5"
+    },
+    {
+      "file": "/workspace/public/reports/links/index.html",
+      "from": "https://zion.app/payments/stripe-checkout/wechatpay/6/",
+      "to": "https://zion.app/payments/stripe-checkout/wechatpay/6"
+    },
+    {
+      "file": "/workspace/public/reports/links/index.html",
+      "from": "https://zion.app/payments/stripe-checkout/card/6/",
+      "to": "https://zion.app/payments/stripe-checkout/card/6"
+    },
+    {
+      "file": "/workspace/public/reports/links/index.html",
+      "from": "https://zion.app/payments/stripe-checkout/wechatpay/7/",
+      "to": "https://zion.app/payments/stripe-checkout/wechatpay/7"
+    },
+    {
+      "file": "/workspace/public/reports/links/index.html",
+      "from": "https://zion.app/payments/stripe-checkout/card/7/",
+      "to": "https://zion.app/payments/stripe-checkout/card/7"
+    },
+    {
+      "file": "/workspace/public/reports/links/index.html",
+      "from": "https://zion.app/payments/stripe-checkout/wechatpay/8/",
+      "to": "https://zion.app/payments/stripe-checkout/wechatpay/8"
+    },
+    {
+      "file": "/workspace/public/reports/links/index.html",
+      "from": "https://zion.app/payments/stripe-checkout/card/8/",
+      "to": "https://zion.app/payments/stripe-checkout/card/8"
+    }
+  ]
+}

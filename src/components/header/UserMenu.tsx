@@ -1,88 +1,69 @@
+import React, { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { useAuth } from '@/hooks/useAuth';
+import { ChevronDown, User, Settings, LogOut } from 'lucide-react';
 
-import { Link, useNavigate } from "react-router-dom";
-import { useAuth } from "@/hooks/useAuth";
-import { useToast } from "@/hooks/use-toast";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Button } from "@/components/ui/button";
-import { 
-  DropdownMenu, 
-  DropdownMenuContent, 
-  DropdownMenuItem, 
-  DropdownMenuSeparator, 
-  DropdownMenuTrigger 
-} from "@/components/ui/dropdown-menu";
+export const UserMenu: React.FC = () => {
+  const { user, isAuthenticated, logout } = useAuth();
+  const [isOpen, setIsOpen] = useState(false);
 
-export function UserMenu() {
-  const { user, logout } = useAuth();
-  const navigate = useNavigate();
-  const { toast } = useToast();
-
-  const handleIconClick = () => {
-    if (user) {
-      navigate("/profile");
-    } else {
-      navigate("/login");
-    }
-  };
-
-  const handleSignOut = async () => {
-    try {
-      await logout();
-    } catch (error) {
-      toast({
-        title: "Error signing out",
-        description: "There was an error signing you out. Please try again.",
-        variant: "destructive",
-      });
-    }
-  };
-
-  if (!user) {
+  if (!isAuthenticated) {
     return (
-      <div className="hidden md:flex items-center space-x-4">
-        <Link to="/login" className="text-zion-slate-light hover:text-white">Login</Link>
-        <Link 
-          to="/signup" 
-          className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-zion-purple text-white hover:bg-zion-purple-light h-10 px-4 py-2"
-        >
-          Register
-        </Link>
+      <div className="flex items-center space-x-4">
+        <Button variant="outline" size="sm">
+          Sign In
+        </Button>
+        <Button size="sm">
+          Get Started
+        </Button>
       </div>
     );
   }
 
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="ghost" className="h-8 w-8 rounded-full" onClick={handleIconClick}>
-          <Avatar className="h-8 w-8">
-            <AvatarImage src={user.avatarUrl || ""} alt={user.displayName || "User Avatar"} />
-            <AvatarFallback>{user.displayName?.charAt(0).toUpperCase() || "U"}</AvatarFallback>
-          </Avatar>
-          <span className="sr-only">Open user menu</span>
-        </Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
-        <div className="grid gap-2 px-2 py-2">
-          <div className="text-sm font-medium leading-none">{user.displayName || "User"}</div>
-          <div className="text-muted-foreground text-xs leading-none">{user.email}</div>
+    <div className="relative">
+      <Button
+        variant="ghost"
+        onClick={() => setIsOpen(!isOpen)}
+        className="flex items-center space-x-2"
+      >
+        <Avatar className="w-8 h-8">
+          <AvatarImage src={user?.avatar} />
+          <AvatarFallback>
+            {user?.name?.charAt(0) || 'U'}
+          </AvatarFallback>
+        </Avatar>
+        <span className="hidden md:block">{user?.name}</span>
+        <ChevronDown className="w-4 h-4" />
+      </Button>
+
+      {isOpen && (
+        <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50 border">
+          <div className="px-4 py-2 border-b">
+            <p className="text-sm font-medium text-gray-900">{user?.name}</p>
+            <p className="text-sm text-gray-500">{user?.email}</p>
+          </div>
+          
+          <button className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 flex items-center space-x-2">
+            <User className="w-4 h-4" />
+            <span>Profile</span>
+          </button>
+          
+          <button className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 flex items-center space-x-2">
+            <Settings className="w-4 h-4" />
+            <span>Settings</span>
+          </button>
+          
+          <button
+            onClick={logout}
+            className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 flex items-center space-x-2"
+          >
+            <LogOut className="w-4 h-4" />
+            <span>Sign Out</span>
+          </button>
         </div>
-        <DropdownMenuSeparator />
-        <DropdownMenuItem asChild>
-          <Link to="/dashboard">Dashboard</Link>
-        </DropdownMenuItem>
-        <DropdownMenuItem asChild>
-          <Link to="/profile">Profile</Link>
-        </DropdownMenuItem>
-        <DropdownMenuItem asChild>
-          <Link to="/saved-talents">Saved Talents</Link>
-        </DropdownMenuItem>
-        <DropdownMenuItem asChild>
-          <Link to="/wallet">Wallet</Link>
-        </DropdownMenuItem>
-        <DropdownMenuSeparator />
-        <DropdownMenuItem onClick={handleSignOut}>Sign Out</DropdownMenuItem>
-      </DropdownMenuContent>
-    </DropdownMenu>
+      )}
+    </div>
   );
-}
+};

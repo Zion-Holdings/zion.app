@@ -1,0 +1,37 @@
+name: Sync Cloud Reown Allowlist
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'infra/allowlist.json'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  sync_allowlist:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install requests library
+        run: pip install requests
+
+      - name: Run Unit Tests
+        run: |
+          python -m unittest tests/scripts/test_sync_reown_allowlist.py
+
+      - name: Sync Allowlist
+        env:
+          CLOUD_REOWN_TOKEN: ${{ secrets.CLOUD_REOWN_TOKEN }}
+          CLOUD_REOWN_PROJECT_ID: ${{ secrets.CLOUD_REOWN_PROJECT_ID }} # Assuming this secret will be created
+        run: python scripts/sync_reown_allowlist.py

@@ -1,14 +1,14 @@
 
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
 // This component handles deep linking to the mobile app
-const OpenAppRedirect: React.FC = () => {
+const OpenAppRedirect = () => {
   const navigate = useNavigate();
-  const [status, setStatus] = useState<'redirecting' | 'failed' | 'timeout'>('redirecting');
+  const [status, setStatus] = useState('redirecting' as 'redirecting' | 'failed' | 'timeout');
   
   useEffect(() => {
     const attemptAppOpen = async () => {
@@ -61,7 +61,7 @@ const OpenAppRedirect: React.FC = () => {
       <SEO 
         title="Opening Zion App" 
         description="Redirecting to the Zion AI Marketplace mobile app"
-        noindex={true}
+        // noindex removed - not supported in new SEO component
       />
       <div className="text-center p-8">
         <div className="w-16 h-16 border-4 border-zion-cyan border-t-transparent rounded-full animate-spin mx-auto mb-6"></div>

@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, FormEvent, KeyboardEvent } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Send } from "lucide-react";
 
@@ -16,7 +16,7 @@ export function ChatInput({ onSend, disabled = false }: ChatInputProps) {
     inputRef.current?.focus();
   }, []);
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (message.trim() && !disabled) {
       onSend(message);
@@ -24,13 +24,10 @@ export function ChatInput({ onSend, disabled = false }: ChatInputProps) {
     }
   };
 
-  const handleKeyPress = (e: KeyboardEvent<HTMLTextAreaElement>) => {
+  const handleKeyPress = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
-      if (message.trim() && !disabled) {
-        onSend(message);
-        setMessage('');
-      }
+      handleSubmit(e);
     }
   };
 
@@ -38,10 +35,10 @@ export function ChatInput({ onSend, disabled = false }: ChatInputProps) {
     <form onSubmit={handleSubmit} className="flex items-end gap-2">
       <textarea
         ref={inputRef}
-        className="flex-1 min-h-[40px] max-h-[120px] px-3 py-2 bg-zion-blue-dark border border-zion-blue-light rounded-md focus:outline-none focus:ring-2 focus:ring-zion-purple focus:border-transparent resize-none text-black placeholder:text-zion-slate-light"
+        className="flex-1 min-h-[40px] max-h-[120px] px-3 py-2 bg-zion-blue-dark border border-zion-blue-light rounded-md focus:outline-none focus:ring-2 focus:ring-zion-purple focus:border-transparent resize-none text-white placeholder:text-zion-slate-light"
         placeholder="Type your message..."
         value={message}
-        onChange={(e) => setMessage(e.target.value)}
+        onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setMessage(e.target.value)}
         onKeyDown={handleKeyPress}
         rows={1}
         disabled={disabled}
