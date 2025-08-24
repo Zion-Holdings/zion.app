@@ -37,12 +37,19 @@
     --radius: 0.5rem;
 
     --sidebar-background: 228 12% 92%;
+
     --sidebar-foreground: 0 0% 7%;
+
     --sidebar-primary: 216 84% 53%;
+
     --sidebar-primary-foreground: 142 71% 45%;
+
     --sidebar-accent: 0 0% 68%;
+
     --sidebar-accent-foreground: 0 0% 7%;
+
     --sidebar-border: 0 0% 68%;
+
     --sidebar-ring: 216 84% 53%;
   }
 
@@ -77,11 +84,11 @@
     --sidebar-background: 228 12% 92%;
     --sidebar-foreground: 0 0% 7%;
     --sidebar-primary: 216 84% 53%;
-    --sidebar-primary-foreground: 210 40% 98%;
-    --sidebar-accent: 210 40% 96%;
-    --sidebar-accent-foreground: 224 71% 4%;
-    --sidebar-border: 214 32% 91%;
-    --sidebar-ring: 262 83% 58%;
+    --sidebar-primary-foreground: 142 71% 45%;
+    --sidebar-accent: 0 0% 68%;
+    --sidebar-accent-foreground: 0 0% 7%;
+    --sidebar-border: 0 0% 68%;
+    --sidebar-ring: 216 84% 53%;
   }
 
   .light {
@@ -135,15 +142,12 @@
     @apply bg-background text-foreground font-sans;
   }
 
-  /* Enhanced Pulse Animation */
   @keyframes pulse {
     0%, 100% {
       opacity: 1;
-      transform: scale(1);
     }
     50% {
       opacity: 0.5;
-      transform: scale(1.05);
     }
   }
 
@@ -151,43 +155,30 @@
     animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
 
-  /* Futuristic Glow Effects */
-  @keyframes glow {
-    0%, 100% {
-      box-shadow: 0 0 20px rgba(34, 221, 210, 0.3);
-    }
-    50% {
-      box-shadow: 0 0 40px rgba(34, 221, 210, 0.6), 0 0 60px rgba(34, 221, 210, 0.3);
-    }
+  /* Custom scrollbar for webkit browsers */
+  ::-webkit-scrollbar {
+    width: 10px;
   }
 
-  .glow {
-    animation: glow 3s ease-in-out infinite;
+  ::-webkit-scrollbar-track {
+    background: theme('colors["zion-blue"].DEFAULT');
   }
 
-  /* Neon Pulse Effect */
-  @keyframes neon-pulse {
-    0%, 100% {
-      text-shadow: 
-        0 0 5px currentColor,
-        0 0 10px currentColor,
-        0 0 15px currentColor,
-        0 0 20px currentColor;
-    }
-    50% {
-      text-shadow: 
-        0 0 2px currentColor,
-        0 0 5px currentColor,
-        0 0 10px currentColor,
-        0 0 15px currentColor;
-    }
+  ::-webkit-scrollbar-thumb {
+    background: theme('colors["zion-purple"].dark');
+    border-radius: 5px;
   }
 
-  .neon-pulse {
-    animation: neon-pulse 2s ease-in-out infinite;
+  ::-webkit-scrollbar-thumb:hover {
+    background: theme('colors["zion-purple"].DEFAULT');
   }
 
-  /* Floating Animation */
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Futuristic animations */
   @keyframes float {
     0%, 100% {
       transform: translateY(0px);
@@ -197,105 +188,82 @@
     }
   }
 
-  .float {
-    animation: float 6s ease-in-out infinite;
-  }
-
-  /* Rotate Animation */
-  @keyframes rotate {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
-
-  .rotate {
-    animation: rotate 20s linear infinite;
-  }
-
-  /* Shimmer Effect */
-  @keyframes shimmer {
-    0% {
-      background-position: -200% 0;
-    }
-    100% {
-      background-position: 200% 0;
-    }
-  }
-
-  .shimmer {
-    background: linear-gradient(90deg, transparent, rgba(34, 221, 210, 0.2), transparent);
-    background-size: 200% 100%;
-    animation: shimmer 2s infinite;
-  }
-
-  /* Gradient Text Animation */
-  @keyframes gradient-shift {
+  @keyframes glow {
     0%, 100% {
+      box-shadow: 0 0 20px rgba(34, 221, 210, 0.3);
+    }
+    50% {
+      box-shadow: 0 0 40px rgba(34, 221, 210, 0.6);
+    }
+  }
+
+  @keyframes neon-pulse {
+    0%, 100% {
+      text-shadow: 0 0 5px rgba(34, 221, 210, 0.5), 0 0 10px rgba(34, 221, 210, 0.3);
+    }
+    50% {
+      text-shadow: 0 0 20px rgba(34, 221, 210, 0.8), 0 0 30px rgba(34, 221, 210, 0.5);
+    }
+  }
+
+  @keyframes gradient-shift {
+    0% {
       background-position: 0% 50%;
     }
     50% {
       background-position: 100% 50%;
     }
+    100% {
+      background-position: 0% 50%;
+    }
   }
 
-  .gradient-animate {
+  .float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  .neon-pulse {
+    animation: neon-pulse 2s ease-in-out infinite;
+  }
+
+  .gradient-shift {
     background-size: 200% 200%;
     animation: gradient-shift 3s ease infinite;
   }
 
-  /* Hover Lift Effect */
-  .hover-lift {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .hover-lift:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(34, 221, 210, 0.2);
-  }
-
-  /* Custom scrollbar for webkit browsers */
+  /* Enhanced scrollbar */
   ::-webkit-scrollbar {
     width: 12px;
   }
 
   ::-webkit-scrollbar-track {
-    background: #1e40af;
+    background: linear-gradient(180deg, #172d67 0%, #2e73ea 100%);
     border-radius: 6px;
   }
 
   ::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, #8b5cf6, #06b6d4);
+    background: linear-gradient(180deg, #8c15e9 0%, #22ddd2 100%);
     border-radius: 6px;
-    border: 2px solid #1e40af;
+    border: 2px solid #172d67;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(180deg, #a855f7, #0891b2);
-  }
-
-  /* Smooth scrolling */
-  html {
-    scroll-behavior: smooth;
+    background: linear-gradient(180deg, #b971f2 0%, #7aeae4 100%);
   }
 
   /* Selection styling */
   ::selection {
-    background: #8b5cf6;
-    color: white;
+    background: rgba(34, 221, 210, 0.3);
+    color: #ffffff;
   }
 
   ::-moz-selection {
-    background: #8b5cf6;
-    color: white;
-  }
-
-  /* Focus outline */
-  *:focus {
-    outline: 2px solid #06b6d4;
-    outline-offset: 2px;
+    background: rgba(34, 221, 210, 0.3);
+    color: #ffffff;
   }
 
   /* LiveKit UI overrides */
@@ -305,111 +273,5 @@
     --lk-button-background-hover: #0891B2;
     --lk-bg1: #0B1120;
     --lk-bg2: #0F172A;
-  }
-
-  /* Custom utility classes */
-  .text-gradient {
-    background: linear-gradient(135deg, #06b6d4, #8b5cf6);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .bg-glass {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  .border-gradient {
-    border: 2px solid;
-    border-image: linear-gradient(45deg, #06b6d4, #8b5cf6) 1;
-  }
-
-  /* Responsive text sizing */
-  .text-responsive {
-    font-size: clamp(1rem, 4vw, 2rem);
-  }
-
-  .text-responsive-lg {
-    font-size: clamp(1.5rem, 6vw, 3rem);
-  }
-
-  .text-responsive-xl {
-    font-size: clamp(2rem, 8vw, 4rem);
-  }
-
-  /* Enhanced button styles */
-  .btn-futuristic {
-    position: relative;
-    overflow: hidden;
-    background: linear-gradient(45deg, #8b5cf6, #06b6d4);
-    border: none;
-    color: white;
-    padding: 12px 24px;
-    border-radius: 8px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    cursor: pointer;
-  }
-
-  .btn-futuristic::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: left 0.5s;
-  }
-
-  .btn-futuristic:hover::before {
-    left: 100%;
-  }
-
-  .btn-futuristic:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(34, 221, 210, 0.3);
-  }
-
-  /* Card hover effects */
-  .card-hover {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .card-hover:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 
-      0 20px 40px rgba(0, 0, 0, 0.3),
-      0 0 20px rgba(34, 221, 210, 0.2);
-  }
-
-  /* Loading spinner */
-  .spinner {
-    width: 40px;
-    height: 40px;
-    border: 4px solid rgba(34, 221, 210, 0.3);
-    border-top: 4px solid #06b6d4;
-    border-radius: 50%;
-    animation: rotate 1s linear infinite;
-  }
-
-  /* Typing animation */
-  .typing-animation {
-    overflow: hidden;
-    border-right: 2px solid #06b6d4;
-    white-space: nowrap;
-    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
-  }
-
-  @keyframes typing {
-    from { width: 0; }
-    to { width: 100%; }
-  }
-
-  @keyframes blink-caret {
-    from, to { border-color: transparent; }
-    50% { border-color: #06b6d4; }
   }
 }

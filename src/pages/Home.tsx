@@ -10,6 +10,7 @@ import { EnhancedHeroSection } from "@/components/home/EnhancedHeroSection";
 import { QuickAccess } from "@/components/home/QuickAccess";
 import { FeatureCTAs } from "@/components/home/FeatureCTAs";
 import { FeatureHighlights } from "@/components/home/FeatureHighlights";
+import { MicroSaasShowcase } from "@/components/home/MicroSaasShowcase";
 import { ITServiceRequestHero } from "@/components/home/ITServiceRequestHero";
 
 export default function Home() {
@@ -31,6 +32,8 @@ export default function Home() {
       <FeatureCTAs />
       
       <FeatureHighlights />
+      
+      <MicroSaasShowcase />
       
       <CategoriesSection />
       <BenefitsSection />
