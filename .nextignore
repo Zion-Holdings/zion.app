@@ -1,0 +1,8 @@
+contracts/
+temp_components/
+zion_academy/
+zion-os/
+automation/
+typechain-types/
+*.sol
+hardhat.config.ts

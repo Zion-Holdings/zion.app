@@ -131,6 +131,13 @@ export const innovativeAIAutomationServices: InnovativeAIAutomationService[] = [
     marketSize: '$15B customer service software market',
     growthRate: '22% annual growth',
     variant: 'ai-futuristic',
+    contactInfo: {
+      mobile: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008 Middletown DE 19709',
+      website: 'https://ziontechgroup.com'
+    },
+=======
     technology: ['Python, Selenium, Playwright, OpenAI, TensorFlow, Docker'],
     integrations: ['Jenkins, GitHub Actions, GitLab CI, Azure DevOps, Jira'],
     useCases: ['Automated testing, CI/CD integration, Quality assurance, Regression testing'],
@@ -139,12 +146,7 @@ export const innovativeAIAutomationServices: InnovativeAIAutomationService[] = [
     marketSize: '$4.2B+ test automation market',
     growthRate: '92% YoY',
     variant: 'ai-futuristic',
-    contactInfo: {
-      mobile: '+1 302 464 0950',
-      email: 'kleber@ziontechgroup.com',
-      address: '364 E Main St STE 1008 Middletown DE 19709',
-      website: 'https://ziontechgroup.com'
-    },
+    contactInfo: contact,
     realImplementation: true,
     implementationDetails: 'Distributed testing infrastructure with AI-powered test generation and execution orchestration.',
     launchDate: '2025-01-20',

@@ -10,9 +10,29 @@
     "h1": ""
   },
   {
+    "route": "/about",
+    "title": "About Us - Zion Tech Group",
+    "h1": ""
+  },
+  {
+    "route": "/ai-powered-it-asset-management",
+    "title": "AI-Powered IT Asset Management - Zion Tech Group",
+    "h1": ""
+  },
+  {
+    "route": "/autonomous-business-operations-platform",
+    "title": "Autonomous Business Operations Platform - Zion Tech Group",
+    "h1": ""
+  },
+  {
     "route": "/comprehensive-2025-services-showcase",
     "title": "Comprehensive 2025 Innovative Services Showcase — Zion Tech Group",
     "h1": "2025 Innovative Services Showcase"
+  },
+  {
+    "route": "/contact",
+    "title": "Contact Us - Zion Tech Group",
+    "h1": ""
   },
   {
     "route": "/",
@@ -20,8 +40,28 @@
     "h1": "Zion Tech Group"
   },
   {
+    "route": "/portfolio",
+    "title": "Our Work - Zion Tech Group | Portfolio of Revolutionary Technology Solutions",
+    "h1": "Our Work"
+  },
+  {
     "route": "/pricing-2025",
     "title": "2025 Pricing & Services — Zion Tech Group",
     "h1": "2025 Pricing & Services"
+  },
+  {
+    "route": "/quantum-neural-network-platform",
+    "title": "Quantum Neural Network Platform - Zion Tech Group",
+    "h1": ""
+  },
+  {
+    "route": "/sitemap.xml",
+    "title": "",
+    "h1": ""
+  },
+  {
+    "route": "/whitepapers",
+    "title": "Whitepapers - Zion Tech Group",
+    "h1": ""
   }
 ]
