@@ -1,53 +1,154 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 
-export function FuturisticBackground() {
+interface FuturisticBackgroundProps {
+  className?: string;
+  intensity?: 'low' | 'medium' | 'high';
+}
+
+export function FuturisticBackground({ className = '', intensity = 'medium' }: FuturisticBackgroundProps) {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const particlesRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    // Set canvas size
+    const resizeCanvas = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
+
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    // Matrix rain effect
+    const matrixRain = () => {
+      const characters = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+      const fontSize = 14;
+      const columns = canvas.width / fontSize;
+      const drops: number[] = [];
+
+      for (let i = 0; i < columns; i++) {
+        drops[i] = 1;
+      }
+
+      const draw = () => {
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        ctx.fillStyle = '#22ddd2';
+        ctx.font = `${fontSize}px monospace`;
+
+        for (let i = 0; i < drops.length; i++) {
+          const text = characters.charAt(Math.floor(Math.random() * characters.length));
+          ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+          if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+            drops[i] = 0;
+          }
+          drops[i]++;
+        }
+      };
+
+      const interval = setInterval(draw, 50);
+      return () => clearInterval(interval);
+    };
+
+    const cleanup = matrixRain();
+
+    return () => {
+      cleanup();
+      window.removeEventListener('resize', resizeCanvas);
+    };
+  }, []);
+
+  useEffect(() => {
+    const particlesContainer = particlesRef.current;
+    if (!particlesContainer) return;
+
+    // Create floating particles
+    const createParticle = () => {
+      const particle = document.createElement('div');
+      const size = Math.random() * 4 + 2;
+      const x = Math.random() * window.innerWidth;
+      const y = Math.random() * window.innerHeight;
+      const duration = Math.random() * 20 + 10;
+      const delay = Math.random() * 5;
+
+      particle.className = 'absolute rounded-full bg-zion-cyan opacity-20';
+      particle.style.cssText = `
+        width: ${size}px;
+        height: ${size}px;
+        left: ${x}px;
+        top: ${y}px;
+        animation: float ${duration}s ease-in-out infinite;
+        animation-delay: ${delay}s;
+      `;
+
+      particlesContainer.appendChild(particle);
+
+      // Remove particle after animation
+      setTimeout(() => {
+        if (particle.parentNode) {
+          particle.parentNode.removeChild(particle);
+        }
+      }, (duration + delay) * 1000);
+    };
+
+    // Create particles based on intensity
+    const particleCount = intensity === 'low' ? 10 : intensity === 'medium' ? 20 : 35;
+    const interval = setInterval(() => {
+      for (let i = 0; i < particleCount; i++) {
+        createParticle();
+      }
+    }, 2000);
+
+    return () => clearInterval(interval);
+  }, [intensity]);
+
   return (
-    <div className="fixed inset-0 -z-10 overflow-hidden">
-      {/* Animated Grid */}
-      <div className="absolute inset-0 bg-gradient-to-br from-zion-purple/20 via-zion-blue/20 to-zion-cyan/20">
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent_50%,rgba(139,92,246,0.1)_50%),linear-gradient(0deg,transparent_50%,rgba(139,92,246,0.1)_50%)] bg-[length:50px_50px] animate-pulse"></div>
-      </div>
+    <div className={`fixed inset-0 pointer-events-none ${className}`}>
+      {/* Matrix rain canvas */}
+      <canvas
+        ref={canvasRef}
+        className="absolute inset-0 opacity-10"
+        style={{ zIndex: 1 }}
+      />
       
-      {/* Floating Particles */}
-      <div className="absolute inset-0">
-        {[...Array(20)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute w-1 h-1 bg-zion-cyan rounded-full animate-float"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 5}s`,
-              animationDuration: `${3 + Math.random() * 4}s`
-            }}
-          />
-        ))}
-      </div>
+      {/* Floating particles */}
+      <div
+        ref={particlesRef}
+        className="absolute inset-0"
+        style={{ zIndex: 2 }}
+      />
       
-      {/* Glowing Orbs */}
-      <div className="absolute top-20 left-20 w-32 h-32 bg-zion-purple/30 rounded-full blur-xl animate-pulse"></div>
-      <div className="absolute top-40 right-32 w-24 h-24 bg-zion-cyan/30 rounded-full blur-xl animate-pulse delay-1000"></div>
-      <div className="absolute bottom-20 left-1/3 w-28 h-28 bg-zion-blue/30 rounded-full blur-xl animate-pulse delay-2000"></div>
+      {/* Grid overlay */}
+      <div 
+        className="absolute inset-0 opacity-5"
+        style={{
+          backgroundImage: `
+            linear-gradient(rgba(34, 221, 210, 0.1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(34, 221, 210, 0.1) 1px, transparent 1px)
+          `,
+          backgroundSize: '50px 50px'
+        }}
+      />
       
-      {/* Animated Lines */}
-      <div className="absolute inset-0">
-        <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-          <defs>
-            <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="rgba(139,92,246,0.5)" />
-              <stop offset="50%" stopColor="rgba(59,130,246,0.5)" />
-              <stop offset="100%" stopColor="rgba(34,211,238,0.5)" />
-            </linearGradient>
-          </defs>
-          <path
-            d="M0,50 Q25,25 50,50 T100,50"
-            stroke="url(#lineGradient)"
-            strokeWidth="0.1"
-            fill="none"
-            className="animate-dash"
-          />
-        </svg>
-      </div>
+      {/* Radial gradient overlay */}
+      <div 
+        className="absolute inset-0"
+        style={{
+          background: `
+            radial-gradient(circle at 20% 80%, rgba(140, 21, 233, 0.1) 0%, transparent 50%),
+            radial-gradient(circle at 80% 20%, rgba(34, 221, 210, 0.1) 0%, transparent 50%),
+            radial-gradient(circle at 40% 40%, rgba(140, 21, 233, 0.05) 0%, transparent 50%)
+          `
+        }}
+      />
     </div>
   );
 }
