@@ -59,20 +59,31 @@ export function CategoriesSection({ showTitle = true }: CategoriesSectionProps) 
         )}
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {categories.map((category) => (
+          {categories.map((category, index) => (
             <Link 
               key={category.title} 
               to={category.link} 
               className="group block"
+              aria-label={`Explore ${category.title} - ${category.description}`}
             >
-              <div className="rounded-lg overflow-hidden h-full border border-zion-blue-light bg-zion-blue-dark p-6 transition-all duration-300 hover:border-zion-purple/50 hover:translate-y-[-5px]">
-                <div className={`rounded-full w-16 h-16 bg-gradient-to-br ${category.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+              <div className="rounded-xl overflow-hidden h-full border border-zion-blue-light bg-zion-blue-dark p-6 transition-all duration-500 hover:border-zion-purple/50 hover:translate-y-[-8px] hover:shadow-2xl hover:shadow-zion-purple/20 group-hover:bg-zion-blue-dark/90">
+                <div className={`rounded-full w-16 h-16 bg-gradient-to-br ${category.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-all duration-500 shadow-lg`}>
                   <div className="text-white">
                     {category.icon}
                   </div>
                 </div>
-                <h3 className="text-white text-xl font-bold mb-2">{category.title}</h3>
-                <p className="text-zion-slate-light">{category.description}</p>
+                <h3 className="text-white text-xl font-bold mb-3 group-hover:text-zion-cyan transition-colors duration-300">{category.title}</h3>
+                <p className="text-zion-slate-light group-hover:text-zion-slate-light/80 transition-colors duration-300">{category.description}</p>
+                
+                {/* Hover indicator */}
+                <div className="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="flex items-center text-zion-cyan text-sm font-medium">
+                    <span>Learn more</span>
+                    <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                </div>
               </div>
             </Link>
           ))}

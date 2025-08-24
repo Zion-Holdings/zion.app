@@ -5,6 +5,8 @@ import { BenefitsSection } from "@/components/BenefitsSection";
 import { HowItWorksSection } from "@/components/HowItWorksSection";
 import { NewsletterSection } from "@/components/NewsletterSection";
 import { FeaturedListingsSection } from "@/components/FeaturedListingsSection";
+import { StatisticsSection } from "@/components/StatisticsSection";
+import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { SEO } from "@/components/SEO";
 import { HeroSection } from "@/components/HeroSection";
 import { QuickAccess } from "@/components/home/QuickAccess";
@@ -33,6 +35,8 @@ export default function Home() {
       <FeatureHighlights />
       
       <CategoriesSection />
+      <StatisticsSection />
+      <TestimonialsSection />
       <BenefitsSection />
       <HowItWorksSection />
       <FeaturedListingsSection />
