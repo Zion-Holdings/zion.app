@@ -1,85 +1,65 @@
+#!/usr/bin/env node
+
 const fs = require('fs');
 const path = require('path');
 
-function ensureDir(dirPath) {
-  if (!fs.existsSync(dirPath)) {
-    fs.mkdirSync(dirPath, { recursive: true });
-  }
+const ROOT = process.cwd();
+const PUBLIC_DIR = path.join(ROOT, 'public');
+const OUTPUT_JSON = path.join(ROOT, 'data', 'alt-text-suggestions.json');
+const OUTPUT_MD = path.join(ROOT, 'docs', 'alt-text-suggestions.md');
+
+function ensureDir(filePath) {
+  fs.mkdirSync(path.dirname(filePath), { recursive: true });
 }
 
-function listFilesRecursively(startDir, exts) {
+function walkImages(dir) {
   const results = [];
-  function walk(dir) {
-    const entries = fs.readdirSync(dir, { withFileTypes: true });
-    for (const entry of entries) {
-      const abs = path.join(dir, entry.name);
-      if (entry.isDirectory()) {
-        walk(abs);
-      } else {
-        const ext = path.extname(entry.name).toLowerCase();
-        if (exts.includes(ext)) results.push(abs);
-      }
-    }
+  if (!fs.existsSync(dir)) return results;
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    const p = path.join(dir, entry.name);
+    if (entry.isDirectory()) results.push(...walkImages(p));
+    else if (/\.(png|jpe?g|gif|webp|svg|ico)$/i.test(entry.name)) results.push(p);
   }
-  walk(startDir);
-  return results.sort();
+  return results;
 }
 
-function suggestAltFromFilename(filePath) {
-  const rel = filePath.replace(/\\/g, '/');
-  const filename = path.basename(rel, path.extname(rel));
-  const parts = filename
+function toTitleCase(str) {
+  return str.replace(/\b\w+/g, (w) => w.charAt(0).toUpperCase() + w.slice(1));
+}
+
+function suggestFromFilename(name) {
+  const base = name.replace(/\.[^.]+$/, '');
+  const cleaned = base
     .replace(/[_-]+/g, ' ')
+    .replace(/\b(\d{2,}x\d{2,}|\d{3,})\b/g, '')
     .replace(/\s+/g, ' ')
-    .trim()
-    .split(' ')
-    .filter(Boolean)
-    .map(w => w.replace(/\d+/g, ''))
-    .filter(Boolean);
-  const cleaned = parts.join(' ').trim();
-  const folder = path.basename(path.dirname(rel));
-  const baseSuggestion = cleaned ? cleaned : folder;
-  if (!baseSuggestion) return 'Decorative graphic';
-  const words = baseSuggestion.split(' ').filter(Boolean);
-  const cased = words.map((w, i) => (i === 0 ? w.charAt(0).toUpperCase() + w.slice(1) : w)).join(' ');
-  return cased.length > 3 ? cased : `${cased} image`;
+    .trim();
+  const titled = toTitleCase(cleaned || base);
+  return titled.length ? titled : 'Illustration';
 }
 
-function buildReport(images, publicDir) {
-  const items = images.map(abs => {
-    const relFromRoot = path.relative(process.cwd(), abs).replace(/\\/g, '/');
-    const relFromPublic = path.relative(publicDir, abs).replace(/\\/g, '/');
-    return {
-      file: relFromRoot,
-      publicPath: `/${relFromPublic}`.replace(/\\/g, '/'),
-      suggestion: suggestAltFromFilename(abs),
-      bytes: fs.statSync(abs).size,
-      updatedAt: new Date().toISOString(),
-    };
+function main() {
+  const files = walkImages(PUBLIC_DIR);
+  const suggestions = files.map((abs) => {
+    const rel = path.relative(ROOT, abs);
+    return { path: rel, suggestedAlt: suggestFromFilename(path.basename(abs)) };
   });
-  return {
-    generatedAt: new Date().toISOString(),
-    total: items.length,
-    images: items,
-  };
+
+  ensureDir(OUTPUT_JSON);
+  fs.writeFileSync(OUTPUT_JSON, JSON.stringify({ generatedAt: new Date().toISOString(), count: suggestions.length, suggestions }, null, 2));
+
+  const lines = [];
+  lines.push('# Alt Text Suggestions');
+  lines.push('');
+  lines.push(`Generated: ${new Date().toISOString()}`);
+  lines.push('');
+  for (const s of suggestions) {
+    lines.push(`- ${s.path}: ${'`' + s.suggestedAlt.replace(/`/g, '\\`') + '`'}`);
+  }
+  ensureDir(OUTPUT_MD);
+  fs.writeFileSync(OUTPUT_MD, lines.join('\n'));
+
+  console.log(`Alt text suggestions written to: ${path.relative(ROOT, OUTPUT_JSON)} and ${path.relative(ROOT, OUTPUT_MD)}`);
 }
 
-(function main() {
-  const publicDir = path.resolve(process.cwd(), 'public');
-  const outDir = path.resolve(process.cwd(), 'data', 'reports', 'alt-text');
-  ensureDir(outDir);
-
-  if (!fs.existsSync(publicDir)) {
-    console.error('No public/ directory found');
-    process.exit(0);
-  }
-
-  const images = listFilesRecursively(publicDir, ['.jpg', '.jpeg', '.png', '.gif', '.svg', '.webp']);
-  const report = buildReport(images, publicDir);
-  const ts = new Date().toISOString().replace(/[:.]/g, '-');
-  const latestPath = path.join(outDir, 'latest.json');
-  const tsPath = path.join(outDir, `alt-text-${ts}.json`);
-  fs.writeFileSync(latestPath, JSON.stringify(report, null, 2));
-  fs.writeFileSync(tsPath, JSON.stringify(report, null, 2));
-  console.log(`Alt-text suggestions written: ${latestPath}`);
-})();
+main();

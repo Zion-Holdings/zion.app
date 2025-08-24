@@ -12,21 +12,6 @@ export default function AutomationHub() {
         <p className="text-white/70 mb-8">Discover our autonomous, self-healing systems that keep the codebase evergreen. Powered by scheduled cloud functions — no GitHub Actions required.</p>
                 <ul className="space-y-4">
           <li className="rounded-lg bg-white/5 border border-white/10 p-5">
-            <h2 className="text-xl font-bold">Orphan Page Auditor</h2>
-            <p className="text-white/70">Detects pages with no inbound links and publishes a report.</p>
-            <a className="text-cyan-300 underline" href="/.netlify/functions/orphan-page-audit-runner" target="_blank" rel="noopener">Trigger / View</a>
-          </li>
-          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
-            <h2 className="text-xl font-bold">Meta OG Enhancer</h2>
-            <p className="text-white/70">Adds missing Open Graph/Twitter meta tags to pages.</p>
-            <a className="text-cyan-300 underline" href="/.netlify/functions/meta-og-enhancer-runner" target="_blank" rel="noopener">Trigger / View</a>
-          </li>
-          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
-            <h2 className="text-xl font-bold">RSS Feed Generator</h2>
-            <p className="text-white/70">Generates an RSS feed for key updates and reports.</p>
-            <a className="text-cyan-300 underline" href="/feed.xml" target="_blank" rel="noopener">Open Feed</a>
-          </li>
-          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
             <h2 className="text-xl font-bold">SEO Audit</h2>
             <p className="text-white/70">Generates SEO report for all pages and publishes it.</p>
             <a className="text-cyan-300 underline" href="/.netlify/functions/seo-audit-runner" target="_blank" rel="noopener">Trigger / View</a>
@@ -139,21 +124,27 @@ export default function AutomationHub() {
           </li>
 
           <li className="rounded-lg bg-white/5 border border-white/10 p-5">
-            <h2 className="text-xl font-bold">Content Freshness Auditor</h2>
-            <p className="text-white/70">Analyzes repo content freshness and publishes a report.</p>
-            <a className="text-cyan-300 underline" href="/.netlify/functions/content-freshness-runner" target="_blank" rel="noopener">Trigger / View</a>
+            <h2 className="text-xl font-bold">A11y Audit</h2>
+            <p className="text-white/70">Scans pages/components for missing alt text and empty anchors; writes reports and syncs.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/a11y-audit-runner" target="_blank" rel="noopener">Trigger / View</a>
           </li>
 
           <li className="rounded-lg bg-white/5 border border-white/10 p-5">
-            <h2 className="text-xl font-bold">Internal Anchor Auditor</h2>
-            <p className="text-white/70">Detects broken in-page anchors across TSX/MD content.</p>
-            <a className="text-cyan-300 underline" href="/.netlify/functions/internal-anchor-audit-runner" target="_blank" rel="noopener">Trigger / View</a>
+            <h2 className="text-xl font-bold">Alt Text Suggester</h2>
+            <p className="text-white/70">Suggests alt text for images in public and writes suggestions to docs.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/alt-text-suggester-runner" target="_blank" rel="noopener">Trigger / View</a>
           </li>
 
           <li className="rounded-lg bg-white/5 border border-white/10 p-5">
-            <h2 className="text-xl font-bold">Orphan Asset Scanner</h2>
-            <p className="text-white/70">Finds unreferenced files in public/ for cleanup planning.</p>
-            <a className="text-cyan-300 underline" href="/.netlify/functions/orphan-asset-report-runner" target="_blank" rel="noopener">Trigger / View</a>
+            <h2 className="text-xl font-bold">Docs Gap Finder</h2>
+            <p className="text-white/70">Finds TODO/FIXME/TBD markers and compiles a docs gaps report.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/docs-gap-finder-runner" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Code Churn Heatmap</h2>
+            <p className="text-white/70">Analyzes git history to highlight most‑changed files and hotspots.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/code-churn-heatmap-runner" target="_blank" rel="noopener">Trigger / View</a>
           </li>
         </ul>
       </main>

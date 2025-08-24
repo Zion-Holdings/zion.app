@@ -217,15 +217,11 @@ export default function Home() {
               { title: 'Automation Guardian (10m)', desc: 'Runs improvement, orchestrators, quick fixes and syncs to main.', href: '/.netlify/functions/automation-guardian-runner' },
               { title: 'Auto Discovery Runner (30m)', desc: 'Discovers and runs high‑value orchestrators autonomously.', href: '/.netlify/functions/auto-discovery-runner' },
               { title: 'Cloud Autonomous Orchestrator (15m)', desc: 'Runs cloud orchestrations, then syncs and rebuilds.', href: '/.netlify/functions/cloud-autonomous-orchestrator-runner' },
-              { title: 'Smart Redirect Manager', desc: 'Fixes internal 404s by auto-adding redirects; writes a public report.', href: '/.netlify/functions/redirect-manager' },
-              { title: 'A11y Alt-Text Auditor', desc: 'Scans for missing alt text and publishes a report.', href: '/.netlify/functions/a11y-audit-runner' },
               { title: 'Branch Cleanup Runner (daily)', desc: 'Deletes merged or stale ephemeral branches via GitHub API.', href: '/.netlify/functions/branch-cleanup-runner' },
-              { title: 'Redirect Healer', desc: 'Heals broken internal links by auto-adding smart redirects.', href: '/.netlify/functions/redirect-healer' },
-              { title: 'Sitemap Prioritizer', desc: 'Regenerates sitemap with popularity-weighted priorities.', href: '/.netlify/functions/sitemap-prioritizer' },
-              { title: 'Internal Link Suggester', desc: 'Builds a related-links map and report; commits updates.', href: '/.netlify/functions/internal-link-suggester' },
-              { title: 'User Journey Simulator', desc: 'Simulates multi-step site journeys and publishes a report.', href: '/.netlify/functions/user-journey-simulator' },
-              { title: 'Meta Audit', desc: 'Audits meta descriptions across pages and writes a report.', href: '/.netlify/functions/meta-audit' },
-              { title: 'README Badges Updater', desc: 'Keeps README automation badges fresh with last run time.', href: '/.netlify/functions/readme-badges-updater' },
+              { title: 'A11y Audit (hourly)', desc: 'Scans pages/components for missing alt text and empty anchors; writes reports and syncs.', href: '/.netlify/functions/a11y-audit-runner' },
+              { title: 'Alt Text Suggester (2h)', desc: 'Suggests alt text for images in public and writes suggestions.', href: '/.netlify/functions/alt-text-suggester-runner' },
+              { title: 'Docs Gap Finder (30m)', desc: 'Finds TODO/FIXME/TBD markers and compiles a docs gap report.', href: '/.netlify/functions/docs-gap-finder-runner' },
+              { title: 'Code Churn Heatmap (daily)', desc: 'Analyzes git history to highlight most‑changed files.', href: '/.netlify/functions/code-churn-heatmap-runner' },
             ].map((tool) => (
               <a key={tool.title} href={tool.href} className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
                 <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
@@ -237,7 +233,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* AUTO-GENERATED: HOME_UPDATER_START */}
+        {/* AUTO-GENERATED: HOME_UPDATER_START */
  <section className="mx-auto max-w-7xl px-6 pb-16">
    <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Explore more</h2>
    <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">

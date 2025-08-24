@@ -1,93 +1,125 @@
+#!/usr/bin/env node
+
 const fs = require('fs');
 const path = require('path');
-const axios = require('axios');
-const cheerio = require('cheerio');
 
-async function fetchHtml(url, timeoutMs = 15000) {
-  try {
-    const res = await axios.get(url, { timeout: timeoutMs, headers: { 'User-Agent': 'zion-a11y-audit-bot' } });
-    return res.data || '';
-  } catch (e) {
-    return '';
-  }
+const ROOT = process.cwd();
+const TARGET_DIRS = ['pages', 'components'];
+const OUTPUT_JSON = path.join(ROOT, 'data', 'a11y-report.json');
+const OUTPUT_MD = path.join(ROOT, 'docs', 'a11y-report.md');
+
+function ensureDir(filePath) {
+  fs.mkdirSync(path.dirname(filePath), { recursive: true });
 }
 
-function ensureDir(dirPath) {
-  fs.mkdirSync(dirPath, { recursive: true });
+function walk(dir) {
+  const out = [];
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    const p = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      out.push(...walk(p));
+    } else if (/\.(tsx|jsx|ts|js)$/.test(entry.name)) {
+      out.push(p);
+    }
+  }
+  return out;
 }
 
-function analyzeA11y(html, url) {
-  const $ = cheerio.load(html);
-  const issues = [];
-
-  // html[lang]
-  if ($('html').attr('lang') == null) {
-    issues.push({ type: 'html-lang-missing', message: 'Missing lang attribute on <html>', url });
+function approximateLineNumber(source, index) {
+  let line = 1;
+  for (let i = 0; i < index && i < source.length; i++) {
+    if (source.charCodeAt(i) === 10) line++;
   }
-
-  // meta description
-  if ($('meta[name="description"]').length === 0) {
-    issues.push({ type: 'meta-description-missing', message: 'Missing meta description', url });
-  }
-
-  // images without alt
-  $('img').each((_, el) => {
-    const alt = $(el).attr('alt');
-    if (alt == null || String(alt).trim() === '') {
-      issues.push({ type: 'img-alt-missing', message: 'Image missing alt attribute', url, src: $(el).attr('src') || '' });
-    }
-  });
-
-  // anchors without text
-  $('a').each((_, el) => {
-    const text = $(el).text().trim();
-    const ariaLabel = $(el).attr('aria-label');
-    if (!text && !(ariaLabel && ariaLabel.trim())) {
-      issues.push({ type: 'anchor-no-text', message: 'Anchor without discernible text', url, href: $(el).attr('href') || '' });
-    }
-  });
-
-  return issues;
+  return line;
 }
 
-async function main() {
-  const base = (process.env.SITE_URL || process.env.URL || process.env.DEPLOY_PRIME_URL || '').replace(/\/$/, '') || 'https://example.com';
-  const pages = Array.from(new Set([
-    '/', '/main/front', '/automation', '/newsroom', '/site-health'
-  ]));
+function analyzeFile(filePath) {
+  const source = fs.readFileSync(filePath, 'utf8');
+  const findings = [];
 
-  const results = [];
-  for (const route of pages) {
-    const url = `${base}${route}`;
-    const html = await fetchHtml(url);
-    if (!html) {
-      results.push({ url, error: 'fetch_failed' });
-      continue;
+  // <img ...> without alt=
+  const imgRegex = /<img\b((?:(?!>).)*)>/gis;
+  let m;
+  while ((m = imgRegex.exec(source))) {
+    const tag = m[0];
+    if (!/\balt\s*=/.test(tag)) {
+      findings.push({
+        type: 'img-missing-alt',
+        line: approximateLineNumber(source, m.index),
+        snippet: tag.slice(0, 120)
+      });
     }
-    const issues = analyzeA11y(html, url);
-    results.push({ url, issues, totals: { issues: issues.length } });
   }
 
-  const summary = {
+  // <Image ...> (Next.js) without alt=
+  const nextImgRegex = /<Image\b((?:(?!>).)*)>/gis;
+  while ((m = nextImgRegex.exec(source))) {
+    const tag = m[0];
+    if (!/\balt\s*=/.test(tag)) {
+      findings.push({
+        type: 'next-image-missing-alt',
+        line: approximateLineNumber(source, m.index),
+        snippet: tag.slice(0, 120)
+      });
+    }
+  }
+
+  // <a ...> without discernible text (very naive: innerHTML empty)
+  const anchorRegex = /<a\b[^>]*>(\s*)<\/a>/gis;
+  while ((m = anchorRegex.exec(source))) {
+    findings.push({
+      type: 'anchor-empty-text',
+      line: approximateLineNumber(source, m.index),
+      snippet: m[0].slice(0, 120)
+    });
+  }
+
+  return findings;
+}
+
+function main() {
+  const files = [];
+  for (const d of TARGET_DIRS) {
+    const abs = path.join(ROOT, d);
+    if (fs.existsSync(abs)) files.push(...walk(abs));
+  }
+
+  const report = {
     generatedAt: new Date().toISOString(),
-    base,
-    totals: {
-      pages: results.length,
-      issues: results.reduce((sum, r) => sum + (r.totals?.issues || 0), 0)
-    },
-    results
+    summary: { filesScanned: files.length, issues: 0 },
+    results: {}
   };
 
-  const outDir = path.resolve(__dirname, '..', 'data', 'reports');
-  ensureDir(outDir);
-  const outFile = path.join(outDir, 'a11y-report.json');
-  fs.writeFileSync(outFile, JSON.stringify(summary, null, 2));
-  console.log(`a11y report written: ${path.relative(process.cwd(), outFile)}`);
+  for (const f of files) {
+    const rel = path.relative(ROOT, f);
+    const findings = analyzeFile(f);
+    if (findings.length) {
+      report.results[rel] = findings;
+      report.summary.issues += findings.length;
+    }
+  }
+
+  ensureDir(OUTPUT_JSON);
+  fs.writeFileSync(OUTPUT_JSON, JSON.stringify(report, null, 2));
+
+  const lines = [];
+  lines.push('# Accessibility Report');
+  lines.push('');
+  lines.push(`Generated: ${report.generatedAt}`);
+  lines.push(`Files scanned: ${report.summary.filesScanned}`);
+  lines.push(`Issues found: ${report.summary.issues}`);
+  lines.push('');
+  for (const [file, findings] of Object.entries(report.results)) {
+    lines.push(`## ${file}`);
+    for (const item of findings) {
+      lines.push(`- [${item.type}] line ${item.line}: ${'`' + item.snippet.replace(/`/g, '\\`') + '`'}`);
+    }
+    lines.push('');
+  }
+  ensureDir(OUTPUT_MD);
+  fs.writeFileSync(OUTPUT_MD, lines.join('\n'));
+
+  console.log(`A11y report written to: ${path.relative(ROOT, OUTPUT_JSON)} and ${path.relative(ROOT, OUTPUT_MD)}`);
 }
 
-if (require.main === module) {
-  main().catch(err => {
-    console.error(err);
-    process.exit(1);
-  });
-}
+main();
