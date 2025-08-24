@@ -171,6 +171,7 @@ html {
   * {
     @apply border-zinc-200 dark:border-zinc-800;
   }
+}
 
 @keyframes shimmer {
   0% { background-position: -200% 0; }
@@ -1339,5 +1340,5 @@ html {
   a {
     color: black !important;
     text-decoration: underline !important;
-
-
+  }
+}

@@ -32,6 +32,7 @@
     "contracts/**",
     "dao/**",
     "zion-os/**",
+    "zion-os/**",
     "zion_academy/**",
     "packages/**",
     "monitoring/**",
@@ -45,6 +46,7 @@
     "services.disabled.temp/**",
     "data.temp/**",
     "src_backup/**",
+    "src/backup/**",
     "components/**",
     "pages/**"
   ],
