@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Zion Academy</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .metric-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .metric-card.secondary {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+        .metric-card.success {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+        .metric-card.warning {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        }
+        .chart-container {
+            position: relative;
+            height: 300px;
+        }
+        .feedback-item {
+            transition: all 0.2s ease;
+        }
+        .feedback-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .priority-critical { border-left: 4px solid #dc3545; }
+        .priority-high { border-left: 4px solid #fd7e14; }
+        .priority-medium { border-left: 4px solid #ffc107; }
+        .priority-low { border-left: 4px solid #28a745; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="min-h-screen">
+        <!-- Header -->
+        <header class="bg-white shadow-sm border-b">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center py-6">
+                    <div>
+                        <h1 class="text-3xl font-bold text-gray-900">Admin Dashboard</h1>
+                        <p class="text-gray-600">Analytics & Feedback Management</p>
+                    </div>
+                    <div class="flex space-x-4">
+                        <button onclick="refreshData()" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
+                            Refresh Data
+                        </button>
+                        <a href="/" class="bg-gray-600 text-white px-4 py-2 rounded-lg hover:bg-gray-700">
+                            Back to Academy
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <!-- Key Metrics -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                <div class="metric-card rounded-lg p-6 shadow-lg">
+                    <div class="flex items-center">
+                        <div class="flex-1">
+                            <p class="text-blue-100 text-sm font-medium">Total Views</p>
+                            <p class="text-3xl font-bold" id="total-views">-</p>
+                        </div>
+                        <div class="text-blue-100">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="metric-card secondary rounded-lg p-6 shadow-lg">
+                    <div class="flex items-center">
+                        <div class="flex-1">
+                            <p class="text-pink-100 text-sm font-medium">Total Clicks</p>
+                            <p class="text-3xl font-bold" id="total-clicks">-</p>
+                        </div>
+                        <div class="text-pink-100">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.322M5.136 7.965l-2.322-.777M13.95 4.05l-2.322.777M7.188 16.761l-.777-2.322M5.136 16.035l-2.322.777M13.95 19.95l-2.322-.777"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="metric-card success rounded-lg p-6 shadow-lg">
+                    <div class="flex items-center">
+                        <div class="flex-1">
+                            <p class="text-cyan-100 text-sm font-medium">Avg Completion</p>
+                            <p class="text-3xl font-bold" id="avg-completion">-</p>
+                        </div>
+                        <div class="text-cyan-100">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="metric-card warning rounded-lg p-6 shadow-lg">
+                    <div class="flex items-center">
+                        <div class="flex-1">
+                            <p class="text-green-100 text-sm font-medium">Feedback Count</p>
+                            <p class="text-3xl font-bold" id="feedback-count">-</p>
+                        </div>
+                        <div class="text-green-100">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts Row -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+                <!-- Content Performance Chart -->
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Content Performance (Last 30 Days)</h3>
+                    <div class="chart-container">
+                        <canvas id="contentChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Feedback Distribution Chart -->
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Feedback Distribution</h3>
+                    <div class="chart-container">
+                        <canvas id="feedbackChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Top Content & Recent Feedback -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+                <!-- Top Performing Content -->
+                <div class="bg-white rounded-lg shadow">
+                    <div class="px-6 py-4 border-b border-gray-200">
+                        <h3 class="text-lg font-semibold text-gray-900">Top Performing Content</h3>
+                    </div>
+                    <div class="p-6">
+                        <div id="top-content-list" class="space-y-4">
+                            <!-- Content will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Feedback -->
+                <div class="bg-white rounded-lg shadow">
+                    <div class="px-6 py-4 border-b border-gray-200">
+                        <h3 class="text-lg font-semibold text-gray-900">Recent Feedback</h3>
+                    </div>
+                    <div class="p-6">
+                        <div id="recent-feedback-list" class="space-y-4">
+                            <!-- Feedback will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feedback Management -->
+            <div class="bg-white rounded-lg shadow">
+                <div class="px-6 py-4 border-b border-gray-200">
+                    <h3 class="text-lg font-semibold text-gray-900">Feedback Management</h3>
+                </div>
+                <div class="p-6">
+                    <div class="mb-4">
+                        <div class="flex space-x-4 mb-4">
+                            <button onclick="filterFeedback('all')" class="filter-btn active px-4 py-2 rounded-lg bg-blue-600 text-white">
+                                All
+                            </button>
+                            <button onclick="filterFeedback('open')" class="filter-btn px-4 py-2 rounded-lg bg-gray-200 text-gray-700 hover:bg-gray-300">
+                                Open
+                            </button>
+                            <button onclick="filterFeedback('in_progress')" class="filter-btn px-4 py-2 rounded-lg bg-yellow-200 text-yellow-700 hover:bg-yellow-300">
+                                In Progress
+                            </button>
+                            <button onclick="filterFeedback('resolved')" class="filter-btn px-4 py-2 rounded-lg bg-green-200 text-green-700 hover:bg-green-300">
+                                Resolved
+                            </button>
+                        </div>
+                    </div>
+                    <div id="feedback-management-list" class="space-y-4">
+                        <!-- Feedback items will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Feedback Response Modal -->
+    <div id="feedback-modal" class="fixed inset-0 bg-gray-600 bg-opacity-50 hidden z-50">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white rounded-lg max-w-2xl w-full">
+                <div class="px-6 py-4 border-b border-gray-200">
+                    <h3 class="text-lg font-semibold text-gray-900">Respond to Feedback</h3>
+                    <button onclick="closeFeedbackModal()" class="float-right text-gray-400 hover:text-gray-600">&times;</button>
+                </div>
+                <div class="p-6">
+                    <form id="feedback-response-form">
+                        <input type="hidden" id="feedback-id" name="feedback_id">
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Status</label>
+                            <select id="feedback-status" name="status" class="w-full border border-gray-300 rounded-lg px-3 py-2">
+                                <option value="open">Open</option>
+                                <option value="in_progress">In Progress</option>
+                                <option value="resolved">Resolved</option>
+                                <option value="closed">Closed</option>
+                            </select>
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Priority</label>
+                            <select id="feedback-priority" name="priority" class="w-full border border-gray-300 rounded-lg px-3 py-2">
+                                <option value="low">Low</option>
+                                <option value="medium">Medium</option>
+                                <option value="high">High</option>
+                                <option value="critical">Critical</option>
+                            </select>
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Admin Response</label>
+                            <textarea id="admin-response" name="admin_response" rows="4" class="w-full border border-gray-300 rounded-lg px-3 py-2" placeholder="Provide a response or update..."></textarea>
+                        </div>
+                        <div class="flex justify-end space-x-3">
+                            <button type="button" onclick="closeFeedbackModal()" class="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50">
+                                Cancel
+                            </button>
+                            <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                                Update Feedback
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentFilter = 'all';
+        let allFeedback = [];
+
+        // Initialize dashboard
+        document.addEventListener('DOMContentLoaded', function() {
+            loadDashboardData();
+            setupEventListeners();
+        });
+
+        function setupEventListeners() {
+            document.getElementById('feedback-response-form').addEventListener('submit', handleFeedbackUpdate);
+        }
+
+        async function loadDashboardData() {
+            try {
+                const [analyticsData, feedbackData] = await Promise.all([
+                    fetch('/api/analytics/dashboard').then(r => r.json()),
+                    fetch('/api/feedback/list').then(r => r.json())
+                ]);
+
+                updateMetrics(analyticsData);
+                updateCharts(analyticsData, feedbackData);
+                updateTopContent(analyticsData);
+                updateFeedbackLists(feedbackData.feedbacks);
+                
+                allFeedback = feedbackData.feedbacks;
+            } catch (error) {
+                console.error('Failed to load dashboard data:', error);
+            }
+        }
+
+        function updateMetrics(data) {
+            // Calculate totals from top content
+            const totalViews = data.top_courses.reduce((sum, course) => sum + course.views, 0);
+            const totalClicks = Math.floor(totalViews * 0.3); // Estimate clicks as 30% of views
+            const avgCompletion = 75; // Placeholder - would come from actual data
+            const feedbackCount = data.feedback_summary.reduce((sum, item) => sum + item.count, 0);
+
+            document.getElementById('total-views').textContent = totalViews.toLocaleString();
+            document.getElementById('total-clicks').textContent = totalClicks.toLocaleString();
+            document.getElementById('avg-completion').textContent = avgCompletion + '%';
+            document.getElementById('feedback-count').textContent = feedbackCount;
+        }
+
+        function updateCharts(analyticsData, feedbackData) {
+            // Content Performance Chart
+            const contentCtx = document.getElementById('contentChart').getContext('2d');
+            new Chart(contentCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+                    datasets: [{
+                        label: 'Course Views',
+                        data: [120, 190, 300, 250],
+                        borderColor: '#667eea',
+                        backgroundColor: 'rgba(102, 126, 234, 0.1)',
+                        tension: 0.4
+                    }, {
+                        label: 'Lesson Views',
+                        data: [80, 150, 220, 180],
+                        borderColor: '#764ba2',
+                        backgroundColor: 'rgba(118, 75, 162, 0.1)',
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            // Feedback Distribution Chart
+            const feedbackCtx = document.getElementById('feedbackChart').getContext('2d');
+            new Chart(feedbackCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: feedbackData.feedbacks.map(f => f.type.replace('_', ' ').replace(/\b\w/g, l => l.toUpperCase())),
+                    datasets: [{
+                        data: feedbackData.feedbacks.map(f => f.count || 1),
+                        backgroundColor: [
+                            '#667eea',
+                            '#764ba2',
+                            '#f093fb',
+                            '#f5576c'
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                        }
+                    }
+                }
+            });
+        }
+
+        function updateTopContent(data) {
+            const container = document.getElementById('top-content-list');
+            container.innerHTML = '';
+
+            // Top courses
+            data.top_courses.slice(0, 5).forEach((course, index) => {
+                const item = document.createElement('div');
+                item.className = 'flex items-center justify-between p-3 bg-gray-50 rounded-lg';
+                item.innerHTML = `
+                    <div class="flex items-center space-x-3">
+                        <div class="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold">
+                            ${index + 1}
+                        </div>
+                        <div>
+                            <p class="font-medium text-gray-900">${course.title}</p>
+                            <p class="text-sm text-gray-600">Course</p>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <p class="font-semibold text-gray-900">${course.views}</p>
+                        <p class="text-sm text-gray-600">views</p>
+                    </div>
+                `;
+                container.appendChild(item);
+            });
+        }
+
+        function updateFeedbackLists(feedbacks) {
+            updateRecentFeedback(feedbacks.slice(0, 5));
+            updateFeedbackManagement(feedbacks);
+        }
+
+        function updateRecentFeedback(feedbacks) {
+            const container = document.getElementById('recent-feedback-list');
+            container.innerHTML = '';
+
+            feedbacks.forEach(feedback => {
+                const item = document.createElement('div');
+                item.className = `feedback-item p-3 bg-gray-50 rounded-lg priority-${feedback.priority}`;
+                item.innerHTML = `
+                    <div class="flex justify-between items-start mb-2">
+                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                            ${feedback.type.replace('_', ' ').replace(/\b\w/g, l => l.toUpperCase())}
+                        </span>
+                        <span class="text-xs text-gray-500">${new Date(feedback.created_at).toLocaleDateString()}</span>
+                    </div>
+                    <h4 class="font-medium text-gray-900 mb-1">${feedback.title}</h4>
+                    <p class="text-sm text-gray-600 line-clamp-2">${feedback.description}</p>
+                `;
+                container.appendChild(item);
+            });
+        }
+
+        function updateFeedbackManagement(feedbacks) {
+            const container = document.getElementById('feedback-management-list');
+            container.innerHTML = '';
+
+            feedbacks.forEach(feedback => {
+                const item = document.createElement('div');
+                item.className = `feedback-item p-4 bg-white border rounded-lg priority-${feedback.priority}`;
+                item.innerHTML = `
+                    <div class="flex justify-between items-start mb-3">
+                        <div class="flex space-x-2">
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                                ${feedback.type.replace('_', ' ').replace(/\b\w/g, l => l.toUpperCase())}
+                            </span>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
+                                ${feedback.priority}
+                            </span>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                                ${feedback.status}
+                            </span>
+                        </div>
+                        <span class="text-xs text-gray-500">${new Date(feedback.created_at).toLocaleDateString()}</span>
+                    </div>
+                    <h4 class="font-medium text-gray-900 mb-2">${feedback.title}</h4>
+                    <p class="text-sm text-gray-600 mb-3">${feedback.description}</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-xs text-gray-500">Content: ${feedback.content_type} ${feedback.content_id || 'N/A'}</span>
+                        <button onclick="openFeedbackModal(${feedback.id})" class="px-3 py-1 bg-blue-600 text-white text-sm rounded hover:bg-blue-700">
+                            Respond
+                        </button>
+                    </div>
+                `;
+                container.appendChild(item);
+            });
+        }
+
+        function filterFeedback(status) {
+            currentFilter = status;
+            
+            // Update active filter button
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active', 'bg-blue-600', 'text-white'));
+            event.target.classList.add('active', 'bg-blue-600', 'text-white');
+            
+            let filteredFeedback = allFeedback;
+            if (status !== 'all') {
+                filteredFeedback = allFeedback.filter(f => f.status === status);
+            }
+            
+            updateFeedbackManagement(filteredFeedback);
+        }
+
+        function openFeedbackModal(feedbackId) {
+            const feedback = allFeedback.find(f => f.id === feedbackId);
+            if (!feedback) return;
+
+            document.getElementById('feedback-id').value = feedback.id;
+            document.getElementById('feedback-status').value = feedback.status;
+            document.getElementById('feedback-priority').value = feedback.priority;
+            document.getElementById('admin-response').value = feedback.admin_response || '';
+
+            document.getElementById('feedback-modal').classList.remove('hidden');
+        }
+
+        function closeFeedbackModal() {
+            document.getElementById('feedback-modal').classList.add('hidden');
+        }
+
+        async function handleFeedbackUpdate(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(e.target);
+            const feedbackId = formData.get('feedback_id');
+            
+            try {
+                const response = await fetch(`/api/feedback/${feedbackId}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        status: formData.get('status'),
+                        priority: formData.get('priority'),
+                        admin_response: formData.get('admin_response')
+                    })
+                });
+
+                if (response.ok) {
+                    closeFeedbackModal();
+                    loadDashboardData(); // Refresh data
+                } else {
+                    alert('Failed to update feedback');
+                }
+            } catch (error) {
+                console.error('Error updating feedback:', error);
+                alert('Error updating feedback');
+            }
+        }
+
+        function refreshData() {
+            loadDashboardData();
+        }
+    </script>
+</body>
+</html>

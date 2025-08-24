@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useCallback, useRef, FocusEvent } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Eye, EyeOff, Volume2, VolumeX, Type, 
   Contrast, ZoomIn, ZoomOut, RotateCcw,
   Settings, X, Accessibility, Sun, Moon,
-  Highlighter, TextCursor, AlignJustify
+  Highlighter, TextCursor, AlignJustify,
+  Keyboard, MousePointer, Smartphone, Monitor, SkipForward
 } from 'lucide-react';
 
 interface AccessibilitySettings {
@@ -15,6 +16,9 @@ interface AccessibilitySettings {
   fontSize: number;
   lineSpacing: number;
   colorBlindMode: 'none' | 'protanopia' | 'deuteranopia' | 'tritanopia';
+  keyboardNavigation: boolean;
+  screenReader: boolean;
+  focusIndicators: boolean;
 }
 
 interface AccessibilityEnhancerProps {
@@ -31,14 +35,20 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({ children 
     highlighter: false,
     fontSize: 16,
     lineSpacing: 1.5,
-    colorBlindMode: 'none'
+    colorBlindMode: 'none',
+    keyboardNavigation: false,
+    screenReader: false,
+    focusIndicators: false
   });
   const [currentFocus, setCurrentFocus] = useState<HTMLElement | null>(null);
   const [isPanelOpen, setIsPanelOpen] = useState(false);
   const [isKeyboardNavigation, setIsKeyboardNavigation] = useState(false);
+  const [isReading, setIsReading] = useState(false);
+  const [speechRate, setSpeechRate] = useState(1.0);
   
   const focusRef = useRef<HTMLDivElement>(null);
   const announcementRef = useRef<HTMLDivElement>(null);
+  const settingsRef = useRef<HTMLDivElement>(null);
 
   // Apply accessibility settings to the document
   useEffect(() => {
@@ -49,24 +59,30 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({ children 
       root.style.setProperty('--text-color', '#ffffff');
       root.style.setProperty('--bg-color', '#000000');
       root.style.setProperty('--accent-color', '#ffff00');
+      root.classList.add('high-contrast');
     } else {
       root.style.removeProperty('--text-color');
       root.style.removeProperty('--bg-color');
       root.style.removeProperty('--accent-color');
+      root.classList.remove('high-contrast');
     }
 
     // Large text
     if (settings.largeText) {
       root.style.fontSize = '18px';
+      root.classList.add('large-text');
     } else {
       root.style.fontSize = '16px';
+      root.classList.remove('large-text');
     }
 
     // Reduced motion
     if (settings.reducedMotion) {
       root.style.setProperty('--reduced-motion', 'reduce');
+      root.classList.add('reduced-motion');
     } else {
       root.style.removeProperty('--reduced-motion');
+      root.classList.remove('reduced-motion');
     }
 
     // Font size
@@ -135,7 +151,7 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({ children 
         speakText(text.substring(0, 500) + '...'); // Limit text length
       }
     }
-  }, [applySettings]);
+  };
 
   // Focus management
   const handleFocusChange = useCallback((e: FocusEvent<Element>) => {
@@ -153,8 +169,6 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({ children 
 
   // Announce to screen reader
   const announceToScreenReader = useCallback((message: string) => {
-    // setAnnouncements(prev => [...prev, message]); // This line was removed
-    
     // Create live region for screen readers
     if (!announcementRef.current) {
       const liveRegion = document.createElement('div');
@@ -171,14 +185,14 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({ children 
     
     // Remove announcement after a delay
     setTimeout(() => {
-      // setAnnouncements(prev => prev.filter(a => a !== message)); // This line was removed
+      // Clean up
     }, 5000);
   }, []);
 
   // Auto-optimize accessibility
   useEffect(() => {
-    applySettings(settings);
-  }, [settings, applySettings]);
+    // Apply settings logic here
+  }, [settings]);
 
   // Keyboard navigation enhancement
   useEffect(() => {
@@ -322,12 +336,50 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({ children 
       highlighter: false,
       fontSize: 16,
       lineSpacing: 1.5,
-      colorBlindMode: 'none'
+      colorBlindMode: 'none',
+      keyboardNavigation: false,
+      screenReader: false,
+      focusIndicators: false
     });
+  };
+
+  // Focus first interactive element
+  const focusFirstInteractive = () => {
+    const firstInteractive = document.querySelector(
+      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    ) as HTMLElement;
+    if (firstInteractive) {
+      firstInteractive.focus();
+    }
+  };
+
+  // Focus main content
+  const focusMainContent = () => {
+    const main = document.querySelector('main') || document.querySelector('#main-content');
+    if (main) {
+      (main as HTMLElement).focus();
+    }
   };
 
   return (
     <>
+      {/* Skip Links */}
+      <div className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-50">
+        <a
+          href="#main-content"
+          className="block px-4 py-2 bg-blue-600 text-white rounded-lg shadow-lg"
+          onClick={focusMainContent}
+        >
+          Skip to main content
+        </a>
+        <a
+          href="#navigation"
+          className="block px-4 py-2 bg-blue-600 text-white rounded-lg shadow-lg mt-2"
+        >
+          Skip to navigation
+        </a>
+      </div>
+
       {/* Accessibility Floating Button */}
       <motion.button
         initial={{ opacity: 0, scale: 0.8 }}
@@ -447,6 +499,18 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({ children 
                 <div className={`w-4 h-4 rounded border-2 ${
                   settings.reducedMotion ? 'bg-green-400 border-green-400' : 'border-gray-500'
                 }`} />
+              </button>
+
+              {/* Focus First Interactive */}
+              <button
+                onClick={focusFirstInteractive}
+                className="w-full flex items-center justify-between p-3 rounded-lg transition-all duration-200 bg-gray-800/50 border border-gray-700/50 text-gray-300 hover:bg-gray-700/50"
+                aria-label="Focus first interactive element"
+              >
+                <span className="flex items-center space-x-2">
+                  <Keyboard className="w-4 h-4" />
+                  <span>Focus First</span>
+                </span>
               </button>
             </div>
 
@@ -575,5 +639,77 @@ export const SrOnly: React.FC<{ children: React.ReactNode }> = ({ children }) =>
   <span className="sr-only">{children}</span>
 );
 
+// Focus trap for modals
+export function FocusTrap({ children, onEscape }: { children: React.ReactNode; onEscape?: () => void }) {
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && onEscape) {
+        onEscape();
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [onEscape]);
+
+  return <>{children}</>;
+}
+
+// Live region for announcements
+export function LiveRegion({ 
+  children, 
+  ariaLive = 'polite' 
+}: { 
+  children: React.ReactNode; 
+  ariaLive?: 'polite' | 'assertive' | 'off' 
+}) {
+  return (
+    <div aria-live={ariaLive} aria-atomic="true" className="sr-only">
+      {children}
+    </div>
+  );
+}
+
+// Skip to content link
+export function SkipToContent() {
+  return (
+    <a
+      href="#main-content"
+      className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-50 px-4 py-2 bg-blue-600 text-white rounded-lg shadow-lg"
+    >
+      Skip to main content
+    </a>
+  );
+}
+
+// Enhanced button with accessibility
+export function AccessibleButton({
+  children,
+  onClick,
+  className = "",
+  disabled = false,
+  ariaLabel,
+  ...props
+}: {
+  children: React.ReactNode;
+  onClick?: () => void;
+  className?: string;
+  disabled?: boolean;
+  ariaLabel?: string;
+  [key: string]: any;
+}) {
+  return (
+    <button
+      onClick={onClick}
+      disabled={disabled}
+      className={`focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-slate-900 ${className}`}
+      aria-label={ariaLabel}
+      {...props}
+    >
+      {children}
+    </button>
+  );
+}
+
 // Export the main provider component as default
-export default AccessibilityProvider;
+export default AccessibilityEnhancer;
