@@ -143,6 +143,33 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: var(--bg);
   color: var(--fg);
+<<<<<<< HEAD
+  line-height: 1.6;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Ensure proper focus indicators */
+*:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+/* Improve link contrast and focus states */
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+  text-decoration: underline;
+=======
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 }
 
@@ -284,4 +311,5 @@ html {
   .container-padding {
     @apply px-8;
   }
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-ac8e
 }
