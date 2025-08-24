@@ -1,4 +1,4 @@
-import { EnhancedRealMicroSaasService } from './enhanced-real-micro-saas-services';
+import { MicroSaasService } from './enhanced-real-micro-saas-services';
 
 const contact = {
 	mobile: '+1 302 464 0950',
@@ -7,7 +7,7 @@ const contact = {
 	website: 'https://ziontechgroup.com'
 };
 
-export const enterpriseITSolutions: EnhancedRealMicroSaasService[] = [
+export const enterpriseITSolutions: MicroSaasService[] = [
 	{
 		id: 'enterprise-data-governance-automation',
 		name: 'Enterprise Data Governance Automation',
@@ -43,7 +43,7 @@ export const enterpriseITSolutions: EnhancedRealMicroSaasService[] = [
 		competitors: ['Collibra, Informatica, Alation, IBM InfoSphere'],
 		marketSize: '$12B data governance market',
 		growthRate: '25% CAGR',
-		variant: 'enterprise-futuristic',
+		variant: 'default',
 		contactInfo: contact,
 		realImplementation: true,
 		implementationDetails: 'Enterprise platform with governance engine, compliance monitoring, and system integrations.',
@@ -87,7 +87,7 @@ export const enterpriseITSolutions: EnhancedRealMicroSaasService[] = [
 		competitors: ['Kong, Apigee, AWS API Gateway, Azure API Management'],
 		marketSize: '$8B API management market',
 		growthRate: '30% CAGR',
-		variant: 'enterprise-futuristic',
+		variant: 'default',
 		contactInfo: contact,
 		realImplementation: true,
 		implementationDetails: 'Enterprise platform with API gateway, governance engine, and security controls.',
@@ -131,7 +131,7 @@ export const enterpriseITSolutions: EnhancedRealMicroSaasService[] = [
 		competitors: ['Okta, Azure AD, AWS IAM, Ping Identity'],
 		marketSize: '$15B IAM market',
 		growthRate: '28% CAGR',
-		variant: 'enterprise-futuristic',
+		variant: 'default',
 		contactInfo: contact,
 		realImplementation: true,
 		implementationDetails: 'Enterprise platform with identity engine, security controls, and compliance monitoring.',
@@ -175,7 +175,7 @@ export const enterpriseITSolutions: EnhancedRealMicroSaasService[] = [
 		competitors: ['UiPath, Automation Anywhere, Microsoft Power Automate, Pega'],
 		marketSize: '$25B workflow automation market',
 		growthRate: '35% CAGR',
-		variant: 'enterprise-futuristic',
+		variant: 'default',
 		contactInfo: contact,
 		realImplementation: true,
 		implementationDetails: 'Enterprise platform with AI engine, workflow automation, and system integrations.',
@@ -219,7 +219,7 @@ export const enterpriseITSolutions: EnhancedRealMicroSaasService[] = [
 		competitors: ['Datadog, New Relic, Splunk, Dynatrace'],
 		marketSize: '$18B monitoring and observability market',
 		growthRate: '32% CAGR',
-		variant: 'enterprise-futuristic',
+		variant: 'default',
 		contactInfo: contact,
 		realImplementation: true,
 		implementationDetails: 'Enterprise platform with monitoring engine, observability tools, and alerting system.',

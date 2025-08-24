@@ -55,7 +55,7 @@
       ]
     },
     /* Bundler mode */
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "strict": true,
@@ -84,6 +84,8 @@
   ],
   "exclude": [
     "node_modules",
-    "zion.app/recovered-content/**"
+    "zion.app/recovered-content/**",
+    "contracts/**",
+    "cypress/**"
   ]
 }
