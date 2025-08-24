@@ -101,6 +101,14 @@ export function FeatureCTAs() {
       link: "/zion-hire-ai",
       badge: "Premium",
       details: "Automate screening, improve candidate matching, and enhance the hiring experience with our AI recruiting solution."
+    },
+    {
+      title: "Comprehensive Services",
+      description: "Access our complete range of micro SAAS, IT services, and AI solutions in one platform.",
+      icon: <Settings className="h-10 w-10 p-2 rounded-md bg-emerald-100 text-emerald-700" />,
+      link: "/comprehensive-services",
+      badge: "New",
+      details: "Discover 30+ professional services including AI development, cloud migration, cybersecurity, and more."
     }
   ];
 
