@@ -1,21 +1,18 @@
+<<<<<<< HEAD
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import { AppWrapper } from './AppWrapper'
+import './index.css'
+=======
 import React from 'react';
-import { createRoot } from 'react-dom/client';
+import ReactDOM from 'react-dom/client';
 import App from './App';
 import './index.css';
-import { BrowserRouter } from 'react-router-dom';
+>>>>>>> 181cfac2212680d9635253bde265173d9d08eca1
 
-const rootElement = document.getElementById('root');
-
-if (!rootElement) {
-  throw new Error('Root element not found');
-}
-
-const root = createRoot(rootElement);
-
-root.render(
+ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </React.StrictMode>
-);
+    <AppWrapper />
+  </React.StrictMode>,
+)
+
