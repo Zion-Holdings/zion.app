@@ -173,7 +173,7 @@ export default function ForumCategoryPage() {
         title={`${category.name} | Community Forum | Zion AI Marketplace`}
         description={category.description}
         keywords={`community, forum, ${category.id}, discussion, AI marketplace, questions, answers`}
-        canonical={`https://app.ziontechgroup.com/community/category/${categoryId}`}
+        canonical={`https://ziontechgroup.com/community/category/${categoryId}`}
       />
 
       <Suspense fallback={<div className="text-center py-16">Loading...</div>}>
