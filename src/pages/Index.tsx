@@ -1,5 +1,5 @@
 
-import { Header } from "@/components/Header";
+
 import { Footer } from "@/components/Footer";
 import { TrustedBySection } from "@/components/TrustedBySection";
 import { TestimonialCarousel } from "@/components/TestimonialCarousel";
@@ -80,10 +80,9 @@ export default function Index() {
         title={t("home.seo_title")} 
         description={t("home.seo_description")} 
         keywords={t("home.seo_keywords")}
-        canonical="https://app.ziontechgroup.com/"
+        canonical="https://ziontechgroup.com/"
       />
-      <Header />
-      <HeroSection />
+              <HeroSection />
       
       {/* Quick Access Tools Section */}
       <section className="py-16 bg-zion-blue-dark">

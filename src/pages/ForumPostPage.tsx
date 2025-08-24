@@ -252,7 +252,7 @@ export default function ForumPostPage() {
         title={`${post.title} | Community Forum | Zion AI Marketplace`}
         description={post.content.substring(0, 160)}
         keywords={`community, forum, discussion, ${post.tags.join(', ')}`}
-        canonical={`https://app.ziontechgroup.com/community/post/${post.id}`}
+        canonical={`https://ziontechgroup.com/community/post/${post.id}`}
       />
       
       <div className="container py-8">
