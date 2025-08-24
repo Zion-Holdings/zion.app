@@ -1,4 +1,5 @@
 import React from 'react';
+<<<<<<< HEAD
 import { Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
@@ -103,5 +104,26 @@ const App = () => {
     </WhitelabelProvider>
   );
 };
+=======
+import { Routes, Route } from 'react-router-dom';
+import { Layout } from './layout/Layout';
+import { Home } from './pages/Home';
+import { Services } from './pages/Services';
+import { About } from './pages/About';
+import { Contact } from './pages/Contact';
+
+function App() {
+  return (
+    <Layout>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+    </Layout>
+  );
+}
+>>>>>>> cursor/enhance-app-with-new-services-and-futuristic-design-887f
 
 export default App;

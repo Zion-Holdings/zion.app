@@ -1,18 +1,8 @@
 
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { Logo } from './Logo';
-import { UserMenu } from './UserMenu';
-import { LanguageSelector } from './LanguageSelector';
-import { MainNavigation } from '@/layout/MainNavigation';
-import { useAuth } from '@/hooks/useAuth';
-import { useWhitelabel } from '@/context/WhitelabelContext';
-import { EnhancedSearchInput } from "@/components/search/EnhancedSearchInput";
-import { generateSearchSuggestions } from "@/data/marketplaceData";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from 'react-router-dom';
+import { Search, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Search, Menu, X, Bell, User } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 export interface HeaderProps {
   hideLogin?: boolean;
@@ -25,27 +15,16 @@ export interface HeaderProps {
 }
 
 export function Header({ hideLogin = false, customLogo, customTheme }: HeaderProps) {
-  const { user } = useAuth();
-  const { isWhitelabel, primaryColor } = useWhitelabel();
   const navigate = useNavigate();
   const [query, setQuery] = useState("");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSearchExpanded, setIsSearchExpanded] = useState(false);
-  const searchSuggestions = generateSearchSuggestions();
   
-  // If we have a white-label tenant and no specific customTheme is provided,
-  // use the tenant's primary color
-  const effectiveTheme = customTheme || (isWhitelabel ? {
-    primaryColor,
-    backgroundColor: '#000000', // Default dark background
-    textColor: '#ffffff', // Default light text
-  } : undefined);
-  
-  const headerStyle = effectiveTheme ? {
-    backgroundColor: effectiveTheme.backgroundColor,
-    color: effectiveTheme.textColor,
-    borderColor: `${effectiveTheme.primaryColor}20`
-  } : {};
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+    setIsSearchExpanded(false);
+  }, [navigate]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -56,95 +35,80 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
     }
   };
 
-  const handleSearchSelect = (text: string) => {
-    navigate(`/search?q=${encodeURIComponent(text)}`);
-    setQuery("");
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
     setIsSearchExpanded(false);
   };
 
-  // Close mobile menu when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      const target = event.target as Element;
-      if (!target.closest('.mobile-menu') && !target.closest('.mobile-menu-toggle')) {
-        setIsMobileMenuOpen(false);
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
-
-  // Close mobile menu on route change
-  useEffect(() => {
+  const toggleSearch = () => {
+    setIsSearchExpanded(!isSearchExpanded);
     setIsMobileMenuOpen(false);
-    setIsSearchExpanded(false);
-  }, [navigate]);
+  };
   
   return (
-    <header 
-      className="sticky top-0 z-50 w-full border-b border-zion-purple/20 bg-zion-blue-dark/95 backdrop-blur-md shadow-lg"
-      style={headerStyle}
-    >
+    <header className="sticky top-0 z-50 w-full border-b border-zion-purple/20 bg-zion-blue-dark/95 backdrop-blur-md">
       <div className="container flex h-16 items-center px-4 sm:px-6">
-        <Logo customLogo={customLogo} customColor={effectiveTheme?.primaryColor} />
+        <div className="text-2xl font-bold text-zion-cyan">Zion Tech</div>
 
         {/* Desktop Navigation */}
         <div className="ml-6 flex-1 hidden lg:block">
-          <MainNavigation />
+          <nav className="flex space-x-8">
+            <Link to="/" className="text-zion-cyan hover:text-zion-purple transition-colors">
+              Home
+            </Link>
+            <Link to="/services" className="text-zion-cyan hover:text-zion-purple transition-colors">
+              Services
+            </Link>
+            <Link to="/about" className="text-zion-cyan hover:text-zion-purple transition-colors">
+              About
+            </Link>
+            <Link to="/contact" className="text-zion-cyan hover:text-zion-purple transition-colors">
+              Contact
+            </Link>
+          </nav>
         </div>
 
-        {/* Enhanced Search - Desktop */}
+        {/* Desktop Search */}
         <div className="hidden md:block w-64 mx-4">
-          <EnhancedSearchInput
-            value={query}
-            onChange={setQuery}
-            onSelectSuggestion={handleSearchSelect}
-            searchSuggestions={searchSuggestions}
-            placeholder="Search talents, services, equipment..."
-          />
+          <form onSubmit={handleSubmit} className="relative">
+            <input
+              type="text"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="Search services..."
+              className="w-full px-4 py-2 bg-zion-blue-light/20 border border-zion-purple/30 rounded-md text-white placeholder-zion-slate-light focus:outline-none focus:border-zion-purple"
+            />
+          </form>
         </div>
 
-        {/* Mobile Search Toggle */}
-        <div className="md:hidden ml-auto mr-2">
-          <Button
-            variant="ghost"
-            size="sm"
-            onClick={() => setIsSearchExpanded(!isSearchExpanded)}
-            className="text-zion-cyan hover:bg-zion-cyan/10"
+        {/* Desktop Actions */}
+        <div className="flex items-center gap-2 hidden md:flex">
+          {!hideLogin && (
+            <Link
+              to="/login"
+              className="px-4 py-2 bg-zion-purple text-white rounded-md hover:bg-zion-purple-dark transition-colors"
+            >
+              Login
+            </Link>
+          )}
+        </div>
+
+        {/* Mobile Actions */}
+        <div className="flex items-center gap-2 md:hidden">
+          <button
+            onClick={toggleSearch}
+            className="p-2 text-zion-cyan hover:bg-zion-purple/10 rounded-md transition-colors"
             aria-label="Toggle search"
           >
             <Search className="w-5 h-5" />
-          </Button>
-        </div>
-
-        {/* Mobile Menu Toggle */}
-        <Button
-          variant="ghost"
-          size="sm"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="lg:hidden text-zion-cyan hover:bg-zion-cyan/10 mobile-menu-toggle"
-          aria-label="Toggle mobile menu"
-          aria-expanded={isMobileMenuOpen}
-        >
-          {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-        </Button>
-
-        {/* Desktop Actions */}
-        <div className="hidden lg:flex items-center gap-3">
-          {user && (
-            <Button
-              variant="ghost"
-              size="sm"
-              className="text-zion-cyan hover:bg-zion-cyan/10 relative"
-              aria-label="Notifications"
-            >
-              <Bell className="w-5 h-5" />
-              <span className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full animate-pulse"></span>
-            </Button>
-          )}
-          <LanguageSelector />
-          {!hideLogin && <UserMenu />}
+          </button>
+          <button
+            onClick={toggleMobileMenu}
+            className="p-2 text-zion-cyan hover:bg-zion-purple/10 rounded-md transition-colors"
+            aria-label="Toggle mobile menu"
+          >
+            {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
         </div>
       </div>
 
@@ -155,87 +119,64 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            className="md:hidden border-t border-zion-purple/20 bg-zion-blue-dark/95"
+            transition={{ duration: 0.3 }}
+            className="border-t border-zion-purple/20 bg-zion-blue-dark/95"
           >
             <div className="container px-4 py-3">
-                              <EnhancedSearchInput
+              <form onSubmit={handleSubmit} className="flex gap-2">
+                <input
+                  type="text"
                   value={query}
-                  onChange={setQuery}
-                  onSelectSuggestion={handleSearchSelect}
-                  searchSuggestions={searchSuggestions}
-                  placeholder="Search talents, services, equipment..."
+                  onChange={(e) => setQuery(e.target.value)}
+                  placeholder="Search services..."
+                  className="flex-1 px-4 py-2 bg-zion-blue-light/20 border border-zion-purple/30 rounded-md text-white placeholder-zion-slate-light focus:outline-none focus:border-zion-purple"
                 />
+                <button
+                  type="submit"
+                  className="px-4 py-2 bg-zion-purple text-white rounded-md hover:bg-zion-purple-dark transition-colors"
+                >
+                  Search
+                </button>
+              </form>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
 
-      {/* Mobile Menu */}
+      {/* Mobile Navigation Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            className="lg:hidden border-t border-zion-purple/20 bg-zion-blue-dark/95 mobile-menu"
+            transition={{ duration: 0.3 }}
+            className="border-t border-zion-purple/20 bg-zion-blue-dark/95 lg:hidden"
           >
-            <div className="container px-4 py-4 space-y-4">
-              {/* Mobile Navigation */}
-              <nav className="space-y-2">
-                <Link
-                  to="/marketplace"
-                  className="block px-3 py-2 text-zion-cyan hover:bg-zion-cyan/10 rounded-md transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Marketplace
+            <div className="container px-4 py-4">
+              <nav className="flex flex-col space-y-2">
+                <Link to="/" className="text-zion-cyan hover:text-zion-purple transition-colors py-2">
+                  Home
                 </Link>
-                <Link
-                  to="/talent"
-                  className="block px-3 py-2 text-zion-cyan hover:bg-zion-cyan/10 rounded-md transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Find Talent
-                </Link>
-                <Link
-                  to="/services"
-                  className="block px-3 py-2 text-zion-cyan hover:bg-zion-cyan/10 rounded-md transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
+                <Link to="/services" className="text-zion-cyan hover:text-zion-purple transition-colors py-2">
                   Services
                 </Link>
-                <Link
-                  to="/equipment"
-                  className="block px-3 py-2 text-zion-cyan hover:bg-zion-cyan/10 rounded-md transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Equipment
+                <Link to="/about" className="text-zion-cyan hover:text-zion-purple transition-colors py-2">
+                  About
                 </Link>
-                <Link
-                  to="/community"
-                  className="block px-3 py-2 text-zion-cyan hover:bg-zion-cyan/10 rounded-md transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Community
+                <Link to="/contact" className="text-zion-cyan hover:text-zion-purple transition-colors py-2">
+                  Contact
                 </Link>
               </nav>
-
-              {/* Mobile Actions */}
-              <div className="pt-4 border-t border-zion-purple/20">
-                <div className="flex items-center gap-3 mb-4">
-                  <LanguageSelector />
-                  {user && (
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      className="text-zion-cyan hover:bg-zion-cyan/10"
-                      aria-label="Notifications"
-                    >
-                      <Bell className="w-5 h-5" />
-                      <span className="ml-1 text-sm">Notifications</span>
-                    </Button>
-                  )}
-                </div>
-                {!hideLogin && <UserMenu />}
+              <div className="mt-4 pt-4 border-t border-zion-purple/20">
+                {!hideLogin && (
+                  <Link
+                    to="/login"
+                    className="block w-full px-4 py-2 bg-zion-purple text-white rounded-md hover:bg-zion-purple-dark transition-colors text-center"
+                  >
+                    Login
+                  </Link>
+                )}
               </div>
             </div>
           </motion.div>

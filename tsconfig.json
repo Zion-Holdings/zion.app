@@ -17,11 +17,33 @@
     "paths": {
       "@/*": [
         "./src/*"
+<<<<<<< HEAD
+=======
+      ],
+      "@/pages/*": [
+        "./src/pages/*"
+      ],
+      "@/components/*": [
+        "./src/components/*"
+      ],
+      "@/types/*": [
+        "./src/types/*"
+      ],
+      "@/utils/*": [
+        "./src/utils/*"
+      ],
+      "@/services/*": [
+        "./src/services/*"
+      ],
+      "@/styles/*": [
+        "./src/styles/*"
+>>>>>>> cursor/enhance-app-with-new-services-and-futuristic-design-887f
       ]
     },
     /* Bundler mode */
     "moduleResolution": "bundler",
     "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
     "strict": false,
     "noUnusedLocals": false,
@@ -33,9 +55,52 @@
     "incremental": true,
     "jsx": "react-jsx",
     "typeRoots": [
+<<<<<<< HEAD
       "./node_modules/@types"
     ]
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
+=======
+      "./node_modules/@types",
+      "./src/types"
+    ],
+    "types": [
+      "node"
+    ],
+    "jsx": "preserve",
+    "noEmit": true,
+    "isolatedModules": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "zion.app/recovered-content/**",
+    "contracts/**",
+    "dao/**",
+    "zion-os/**",
+    "zion_academy/**",
+    "packages/**",
+    "monitoring/**",
+    "scripts/**",
+    "server/**",
+    "cypress/**",
+    "**/*.disabled/**",
+    "__tests__.disabled/**",
+    "plugins.disabled/**",
+    "test.disabled/**",
+    "services.disabled.temp/**",
+    "data.temp/**",
+    "src_backup/**",
+    "components/**",
+    "pages/**",
+    "data/**",
+    "utils/**"
+  ]
+>>>>>>> cursor/enhance-app-with-new-services-and-futuristic-design-887f
 }
