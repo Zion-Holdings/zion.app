@@ -1,15 +1,16 @@
 {
-  "name": "Zion Tech Group",
+  "name": "Zion Tech Group - Revolutionary Technology Solutions",
   "short_name": "Zion Tech",
-  "description": "Revolutionary AI & Quantum Technology Solutions",
+  "description": "Leading provider of revolutionary micro SaaS services, AI solutions, cloud infrastructure, and cutting-edge technology services.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#000000",
-  "theme_color": "#000000",
+  "background_color": "#1f2937",
+  "theme_color": "#3b82f6",
   "orientation": "portrait-primary",
   "scope": "/",
   "lang": "en-US",
-  "categories": ["business", "productivity", "technology"],
+  "dir": "ltr",
+  "categories": ["business", "productivity", "technology", "utilities"],
   "icons": [
     {
       "src": "/icons/icon-72x72.png",
@@ -62,31 +63,7 @@
   ],
   "shortcuts": [
     {
-      "name": "Services",
-      "short_name": "Services",
-      "description": "Explore our revolutionary technology services",
-      "url": "/services",
-      "icons": [
-        {
-          "src": "/icons/services-96x96.png",
-          "sizes": "96x96"
-        }
-      ]
-    },
-    {
-      "name": "Contact",
-      "short_name": "Contact",
-      "description": "Get in touch with our team",
-      "url": "/contact",
-      "icons": [
-        {
-          "src": "/icons/contact-96x96.png",
-          "sizes": "96x96"
-        }
-      ]
-    },
-    {
-      "name": "About",
+      "name": "About Us",
       "short_name": "About",
       "description": "Learn about Zion Tech Group",
       "url": "/about",
@@ -96,30 +73,49 @@
           "sizes": "96x96"
         }
       ]
+    },
+    {
+      "name": "Contact",
+      "short_name": "Contact",
+      "description": "Get in touch with us",
+      "url": "/contact",
+      "icons": [
+        {
+          "src": "/icons/contact-96x96.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Services",
+      "short_name": "Services",
+      "description": "View our services",
+      "url": "/services",
+      "icons": [
+        {
+          "src": "/icons/services-96x96.png",
+          "sizes": "96x96"
+        }
+      ]
     }
   ],
   "screenshots": [
     {
-      "src": "/screenshots/desktop-1.png",
+      "src": "/screenshots/desktop-home.png",
       "sizes": "1280x720",
       "type": "image/png",
       "form_factor": "wide",
-      "label": "Homepage - Revolutionary Technology Solutions"
+      "label": "Homepage on desktop"
     },
     {
-      "src": "/screenshots/mobile-1.png",
+      "src": "/screenshots/mobile-home.png",
       "sizes": "390x844",
       "type": "image/png",
       "form_factor": "narrow",
-      "label": "Mobile - AI & Quantum Services"
+      "label": "Homepage on mobile"
     }
   ],
-  "related_applications": [
-    {
-      "platform": "webapp",
-      "url": "https://ziontechgroup.com"
-    }
-  ],
+  "related_applications": [],
   "prefer_related_applications": false,
   "edge_side_panel": {
     "preferred_width": 400
@@ -127,11 +123,38 @@
   "launch_handler": {
     "client_mode": "navigate-existing"
   },
-  "handle_links": "preferred",
   "protocol_handlers": [
     {
       "protocol": "web+zion",
       "url": "/?protocol=%s"
     }
-  ]
+  ],
+  "file_handlers": [
+    {
+      "action": "/upload",
+      "accept": {
+        "text/*": [".txt", ".md", ".json"],
+        "application/pdf": [".pdf"],
+        "image/*": [".png", ".jpg", ".jpeg", ".gif", ".webp"]
+      }
+    }
+  ],
+  "share_target": {
+    "action": "/share",
+    "method": "POST",
+    "enctype": "multipart/form-data",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url",
+      "files": [
+        {
+          "name": "files",
+          "accept": ["image/*", "text/*", "application/pdf"]
+        }
+      ]
+    }
+  },
+  "handle_links": "preferred",
+  "capture_links": "existing-client-navigate"
 }
