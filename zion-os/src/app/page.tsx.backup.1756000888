@@ -45,6 +45,198 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
+<<<<<<< HEAD
+  const services = [
+    {
+      title: 'AI Autonomous Systems',
+      description: 'Next-generation AI systems that operate independently, making intelligent decisions and driving business transformation.',
+      href: '/ai-autonomous-systems',
+      icon: '🤖',
+      features: ['Autonomous Decision Making', 'Self-Learning Algorithms', 'Business Process Automation']
+    },
+    {
+      title: 'Quantum Computing Solutions',
+      description: 'Harness the power of quantum computing for complex problem-solving and advanced computational capabilities.',
+      href: '/quantum-computing',
+      icon: '⚛️',
+      features: ['Quantum Algorithms', 'Optimization Problems', 'Cryptography & Security']
+    },
+    {
+      title: 'Advanced Cybersecurity',
+      description: 'Comprehensive security solutions powered by AI to protect your digital assets and infrastructure.',
+      href: '/cybersecurity-solutions',
+      icon: '🔒',
+      features: ['Threat Detection', 'AI-Powered Security', 'Compliance Automation']
+    },
+    {
+      title: 'IT Infrastructure Services',
+      description: 'Modern, scalable infrastructure solutions designed for the digital age.',
+      href: '/it-infrastructure',
+      icon: '🏗️',
+      features: ['Cloud Architecture', 'DevOps Automation', 'Performance Optimization']
+    }
+  ];
+
+  const stats = [
+    { number: '500+', label: 'AI Models Deployed' },
+    { number: '50+', label: 'Enterprise Clients' },
+    { number: '99.9%', label: 'Uptime Guarantee' },
+    { number: '24/7', label: 'Support Available' }
+  ];
+
+  const testimonials = [
+    {
+      quote: "Zion Tech Group transformed our business operations with their AI solutions. The results exceeded our expectations.",
+      author: "Sarah Johnson",
+      position: "CTO, TechCorp Inc.",
+      company: "TechCorp Inc."
+    },
+    {
+      quote: "Their quantum computing expertise helped us solve complex optimization problems that were previously impossible.",
+      author: "Dr. Michael Chen",
+      position: "Research Director",
+      company: "Quantum Research Labs"
+    }
+  ];
+
+  return (
+    <>
+      {/* Structured Data for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Zion Tech Group",
+            "url": "https://ziontechgroup.com",
+            "logo": "https://ziontechgroup.com/logo.svg",
+            "description": "Pioneering the future of digital transformation through innovative AI, blockchain, and cloud solutions.",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Middletown",
+              "addressRegion": "DE",
+              "addressCountry": "US"
+            },
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+1-302-464-0950",
+              "contactType": "customer service",
+              "email": "kleber@ziontechgroup.com"
+            },
+            "sameAs": [
+              "https://linkedin.com/company/ziontechgroup",
+              "https://twitter.com/ziontechgroup",
+              "https://github.com/Zion-Holdings"
+            ]
+          })
+        }}
+      />
+
+      <div className="min-h-screen space-y-12">
+        {/* Hero Section */}
+        <section className="relative py-20 px-4 sm:px-6 lg:px-8" aria-labelledby="hero-heading">
+          <div className="max-w-7xl mx-auto text-center">
+            <div className="animate-fade-in">
+              <h1 id="hero-heading" className="text-5xl md:text-7xl font-bold mb-6">
+                <span className="gradient-text">Zion Tech Group</span>
+              </h1>
+              <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
+                Pioneering the future of digital transformation through innovative AI, blockchain, and cloud solutions. 
+                Launch sovereign AI-powered digital economies with one click.
+              </p>
+              <div className="flex flex-wrap justify-center gap-4 text-sm mb-8" role="list" aria-label="Company highlights">
+                <div className="flex items-center gap-2" role="listitem">
+                  <span aria-hidden="true">📍</span>
+                  <span>Middletown, DE</span>
+                </div>
+                <div className="flex items-center gap-2" role="listitem">
+                  <span aria-hidden="true">🌍</span>
+                  <span>Global Reach</span>
+                </div>
+                <div className="flex items-center gap-2" role="listitem">
+                  <span aria-hidden="true">🚀</span>
+                  <span>Innovation First</span>
+                </div>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <Link 
+                  href="/multiverse/launch" 
+                  className="btn-primary text-lg px-8 py-4"
+                  aria-label="Launch your digital economy"
+                >
+                  Launch Your Economy
+                </Link>
+                <Link 
+                  href="/services" 
+                  className="btn-secondary text-lg px-8 py-4"
+                  aria-label="Explore our services"
+                >
+                  Explore Services
+                </Link>
+              </div>
+            </div>
+          </div>
+          
+          {/* Background Elements */}
+          <div className="absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-blue-500/20 to-purple-600/20 rounded-full blur-3xl animate-pulse-slow"></div>
+          </div>
+        </section>
+
+        {/* Quick Actions */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8" aria-labelledby="quick-actions-heading">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 id="quick-actions-heading" className="text-3xl md:text-4xl font-bold mb-4">
+                Quick Actions
+              </h2>
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Get started with our comprehensive solutions and services
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" role="list" aria-label="Quick action cards">
+              <a className="card group" href="/services" role="listitem" aria-label="Explore our services">
+                <div className="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-500/30 transition-colors" aria-hidden="true">
+                  <span className="text-2xl">🛠️</span>
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Our Services</h3>
+                <p className="text-gray-400">
+                  Explore our comprehensive micro SAAS, IT, and AI solutions
+                </p>
+              </a>
+              
+              <a className="card group" href="/solutions" role="listitem" aria-label="View industry solutions">
+                <div className="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-500/30 transition-colors" aria-hidden="true">
+                  <span className="text-2xl">🎯</span>
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Industry Solutions</h3>
+                <p className="text-gray-400">
+                  Tailored solutions for healthcare, education, legal, and more
+                </p>
+              </a>
+              
+              <a className="card group" href="/contact" role="listitem" aria-label="Contact us to get started">
+                <div className="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-green-500/30 transition-colors" aria-hidden="true">
+                  <span className="text-2xl">📞</span>
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Get Started</h3>
+                <p className="text-gray-400">
+                  Contact us to discuss your digital transformation project
+                </p>
+              </a>
+              
+              <a className="card group" href="/multiverse/launch" role="listitem" aria-label="Use the launch wizard">
+                <div className="w-12 h-12 bg-red-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-red-500/30 transition-colors" aria-hidden="true">
+                  <span className="text-2xl">🚀</span>
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Launch Wizard</h3>
+                <p className="text-gray-400">
+                  Spin up a new instance with marketplace, governance, and more
+                </p>
+              </a>
+=======
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -242,10 +434,58 @@ export default function HomePage() {
                   All Quantum Services
                 </Link>
               </div>
+>>>>>>> origin/cursor/website-audit-and-enhancement-ce0d
             </div>
           </div>
         </section>
 
+<<<<<<< HEAD
+        {/* Featured Services */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8" aria-labelledby="featured-services-heading">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 id="featured-services-heading" className="text-3xl md:text-4xl font-bold mb-4">
+                Featured Services
+              </h2>
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Discover our cutting-edge solutions that drive digital transformation
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8" role="list" aria-label="Featured services">
+              <div className="card group" role="listitem">
+                <div className="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-500/30 transition-colors" aria-hidden="true">
+                  <span className="text-2xl">🤖</span>
+                </div>
+                <h3 className="text-xl font-semibold mb-2">AI & Machine Learning</h3>
+                <p className="text-gray-400">
+                  Advanced AI solutions including ZionGPT Enterprise, content moderation, and intelligent automation.
+                </p>
+                <a href="/services" className="text-blue-400 hover:underline text-sm mt-4 inline-block" aria-label="Learn more about AI services">Learn More →</a>
+              </div>
+              
+              <div className="card group" role="listitem">
+                <div className="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-500/30 transition-colors" aria-hidden="true">
+                  <span className="text-2xl">☁️</span>
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Cloud & Infrastructure</h3>
+                <p className="text-gray-400">
+                  Scalable cloud solutions, DevOps automation, and infrastructure management services.
+                </p>
+                <a href="/services" className="text-blue-400 hover:underline text-sm mt-4 inline-block" aria-label="Learn more about cloud services">Learn More →</a>
+              </div>
+              
+              <div className="card group" role="listitem">
+                <div className="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-green-500/30 transition-colors" aria-hidden="true">
+                  <span className="text-2xl">🔒</span>
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Cybersecurity</h3>
+                <p className="text-gray-400">
+                  Comprehensive security solutions, compliance management, and threat detection systems.
+                </p>
+                <a href="/services" className="text-blue-400 hover:underline text-sm mt-4 inline-block" aria-label="Learn more about cybersecurity services">Learn More →</a>
+              </div>
+=======
       {/* CTA Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
@@ -264,6 +504,7 @@ export default function HomePage() {
               <Link href="/case-studies" className="btn-secondary text-lg px-8 py-4">
                 View Success Stories
               </Link>
+>>>>>>> origin/cursor/website-audit-and-enhancement-ce0d
             </div>
           </div>
         </section>
