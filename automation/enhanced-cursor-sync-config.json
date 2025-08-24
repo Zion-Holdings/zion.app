@@ -1,0 +1,81 @@
+{
+  "enabled": true,
+  "autoCommit": true,
+  "autoPush": true,
+  "autoPull": true,
+  "branch": "main",
+  "commitMessageTemplate": "🔄 Auto-sync [{computer}] {description}",
+  "maxCommitSize": 100,
+  "enableLogging": true,
+  "syncInterval": 60000,
+  "enableConflictResolution": true,
+  "enableBackup": true,
+  "enableMetrics": true,
+  "enableHealthCheck": true,
+  "maxRetries": 5,
+  "retryDelay": 3000,
+  "excludePatterns": [
+    "node_modules/**",
+    ".next/**",
+    "dist/**",
+    "build/**",
+    ".git/**",
+    "*.log",
+    "*.tmp",
+    "*.cache",
+    "coverage/**",
+    "cypress/videos/**",
+    "cypress/screenshots/**",
+    "playwright-report/**",
+    "test-results/**",
+    "temp/**",
+    "backups/**",
+    "logs/**",
+    "automation/logs/**",
+    "automation/backups/**",
+    "automation/metrics/**"
+  ],
+  "includePatterns": [
+    "src/**/*",
+    "pages/**/*",
+    "components/**/*",
+    "styles/**/*",
+    "public/**/*",
+    "automation/**/*",
+    "*.json",
+    "*.md",
+    "*.ts",
+    "*.tsx",
+    "*.js",
+    "*.jsx",
+    "*.css",
+    "*.scss",
+    "*.html"
+  ],
+  "priorityFiles": [
+    "package.json",
+    "package-lock.json",
+    "yarn.lock",
+    "next.config.js",
+    "tailwind.config.js",
+    "tsconfig.json",
+    "README.md",
+    "automation/enhanced-cursor-sync-config.json"
+  ],
+  "notifications": {
+    "enabled": false,
+    "webhook": "",
+    "email": "",
+    "slack": ""
+  },
+  "healthCheck": {
+    "enabled": true,
+    "interval": 300000,
+    "maxFailures": 3
+  },
+  "backup": {
+    "enabled": true,
+    "maxBackups": 10,
+    "retentionDays": 7
+  }
+} 

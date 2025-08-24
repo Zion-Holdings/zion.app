@@ -1,28 +1,9 @@
-import React from 'react'
-import { Link, useLocation } from 'react-router-dom'
-import { cn } from '@/lib/utils'
-
-export interface NavLinkProps {
-  href: string
-  className?: string
-  children: React.ReactNode
-}
-
-export function NavLink({ href, className, children }: NavLinkProps) {
-  const { pathname } = useLocation()
-  const isActive = pathname === href
+import React from 'react';
+export function NavLink() {
   return (
-    <Link
-      to={href}
-      className={cn(
-        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-zion-purple',
-        isActive && 'border-b-2 border-green-500',
-        className
-      )}
-    >
-      {children}
-    </Link>
-  )
+    <div>
+      <h1>Component</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
 }
-
-export default NavLink

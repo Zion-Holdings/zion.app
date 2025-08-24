@@ -1,23 +1,20 @@
 
 import { useState } from 'react';
 import { useMessaging } from '@/context/MessagingContext';
-import { NavLink } from '@/components/NavLink';
-import { ResponsiveNavigation } from '@/components/navigation/ResponsiveNavigation';
+import { MainNavigation } from './MainNavigation';
 import { Logo } from '@/components/header/Logo';
+import { LanguageSelector } from '@/components/header/LanguageSelector';
+import { CurrencySelector } from '@/components/header/CurrencySelector';
 import { useTranslation } from 'react-i18next';
 import { Menu, X } from 'lucide-react';
 import { MobileMenu } from '@/components/header/MobileMenu';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { MobileBottomNav } from '@/components/header/MobileBottomNav';
-import { PointsBadge } from '@/components/loyalty/PointsBadge';
-import { useAuth } from '@/hooks/useAuth';
-import { AvatarMenu } from '@/components/header/AvatarMenu';
 
 export function AppHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const isMobile = useIsMobile();
   const { t } = useTranslation();
-  const { user } = useAuth();
   
   // Try to access the messaging context, but provide a fallback value if it's not available
   let unreadCount = 0;
@@ -30,18 +27,18 @@ export function AppHeader() {
   
   return (
     <>
-      <header className="sticky top-0 z-50 w-full border-b border-primary/20 bg-card/90 backdrop-blur-md">
+      <header className="sticky top-0 z-50 w-full border-b border-zion-purple/20 bg-zion-blue-dark/90 backdrop-blur-md">
         <div className="container flex h-16 items-center px-4 sm:px-6">
           <Logo />
           <div className="ml-6 flex-1 hidden md:block">
-            <ResponsiveNavigation />
+            <MainNavigation unreadCount={unreadCount} />
           </div>
           
           {/* Mobile menu button */}
           <div className="md:hidden ml-auto mr-4">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="inline-flex items-center justify-center rounded-md p-2 text-foreground/70 hover:text-foreground hover:bg-primary/10 focus:outline-none"
+              className="inline-flex items-center justify-center rounded-md p-2 text-white/70 hover:text-white hover:bg-zion-purple/10 focus:outline-none"
               aria-expanded={mobileMenuOpen}
               aria-label={t('general.toggle_mobile_menu')}
             >
@@ -54,20 +51,8 @@ export function AppHeader() {
             </button>
           </div>
 
-          <PointsBadge />
-          {!user && (
-            <div className="ml-4">
-              <NavLink href="/login" className="text-sm font-medium text-foreground/70 hover:text-foreground" aria-label="Login" data-testid="login-link">
-                Login
-              </NavLink>
-            </div>
-          )}
-          {/* User avatar menu */}
-          {user && (
-            <div className="ml-4">
-              <AvatarMenu />
-            </div>
-          )}
+          <CurrencySelector />
+          <LanguageSelector />
         </div>
       </header>
       
@@ -79,7 +64,7 @@ export function AppHeader() {
             onClick={() => setMobileMenuOpen(false)}
             aria-hidden="true"
           />
-          <div className="relative bg-card border-t border-primary/20 h-auto max-h-[calc(100vh-4rem)] overflow-y-auto">
+          <div className="relative bg-zion-blue-dark border-t border-zion-purple/20 h-auto max-h-[calc(100vh-4rem)] overflow-y-auto">
             <MobileMenu 
               unreadCount={unreadCount} 
               onClose={() => setMobileMenuOpen(false)} 

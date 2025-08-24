@@ -1,17 +1,19 @@
-name: CI
+name: Test
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
-  test:
+  main:
+    name: Main Job
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - name: Checkout repository
+        uses: actions/checkout@v4
         with:
           node-version: 18
       - run: npm ci
@@ -23,13 +25,29 @@ jobs:
             echo "Build failed: dist folder not found"
             exit 1
           fi
-      - run: npm run test -- --coverage
+      - name: Verify asset paths
+        run: |
+          npx serve out/ --cors --single -l 5000 &
+          SERVE_PID=$!
+          sleep 5
+          kill $SERVE_PID
+      - name: Run Vitest with Coverage
+        run: npx vitest run --coverage
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
         with:
-          files: coverage/lcov.info
-          fail_ci_if_error: true
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: ./coverage/coverage-final.json
       - run: npm run cypress:run
+        env:
+          TEST_USER_EMAIL: ${{ secrets.CYPRESS_TEST_USER_EMAIL }}
+          TEST_USER_PASSWORD: ${{ secrets.CYPRESS_TEST_USER_PASSWORD }}
+          TEST_USER_DISPLAY_NAME: ${{ secrets.CYPRESS_TEST_USER_DISPLAY_NAME }}
+          NEXT_PUBLIC_REOWN_PROJECT_ID: ${{ secrets.VITE_REOWN_PROJECT_ID_CI }} # Assuming secret name will be updated
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL_CI }} # Assuming secret name will be updated
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY_CI }} # Assuming secret name will be updated
+          NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL_CI }} # Assuming secret name will be updated
+          NEXT_PUBLIC_VAPID_PUBLIC_KEY: ${{ secrets.VITE_VAPID_PUBLIC_KEY_CI }} # Assuming secret name will be updated
       - uses: actions/upload-artifact@v4
         with:
           name: coverage-report

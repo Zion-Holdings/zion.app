@@ -1,11 +1,14 @@
 
 import { useState } from "react";
+import { useRouter } from 'next/router';
 import { useForm } from "react-hook-form";
+import type { ControllerRenderProps } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { LogIn, User, Eye, EyeOff } from "lucide-react";
-import { fireEvent } from '@/lib/analytics';
+
 import { useAuth } from "@/hooks/useAuth";
+import { loginUser } from "@/services/authService";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -17,21 +20,21 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Alert, AlertDescription } from "@/components/ui/alert";
-import { Link } from "react-router-dom";
-
-import { Checkbox } from "@/components/ui/checkbox";
+import { Link, useNavigate } from "react-router-dom";
+import { LoadingOverlay } from "@/components/LoadingOverlay";
 
 // Form validation schema
 const loginSchema = z.object({
   email: z.string().email("Please enter a valid email").min(1, "Email is required"),
   password: z.string().min(6, "Password must be at least 6 characters"),
-  rememberMe: z.boolean().default(false),
 });
 
 type LoginFormValues = z.infer<typeof loginSchema>;
 
 export function LoginForm() {
   const { isLoading, login } = useAuth();
+  const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
   const [showPassword, setShowPassword] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   
@@ -40,7 +43,6 @@ export function LoginForm() {
     defaultValues: {
       email: "",
       password: "",
-      rememberMe: false,
     },
   });
 
@@ -49,13 +51,18 @@ export function LoginForm() {
 
     try {
       setIsSubmitting(true);
-      // Pass email, password, and rememberMe to the login function
-      const result = await login(data.email, data.password, data.rememberMe);
-      if (result.error) {
-        form.setError("root", { message: result.error });
-      } else {
-        fireEvent('login', { method: 'email' }); // Assuming email login
+      const { res, data: resData } = await loginUser(data.email, data.password);
+      if (!res.ok) {
+        toast.error(resData?.error || "Invalid credentials");
+        return;
       }
+      toast.success("Logged in successfully");
+      if (resData?.token) {
+        document.cookie = `token=${resData.token}; path=/`;
+      }
+      navigate("/");
+    } catch (err) {
+      toast.error("Unable to login. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
@@ -143,34 +150,10 @@ export function LoginForm() {
           )}
         />
 
-        <FormField
-          control={form.control}
-          name="rememberMe"
-          render={({ field }) => (
-            <FormItem className="flex flex-row items-start space-x-3 space-y-0">
-              <FormControl>
-                <Checkbox
-                  checked={field.value}
-                  onCheckedChange={field.onChange}
-                  className="border-zion-blue-light data-[state=checked]:bg-zion-purple data-[state=checked]:text-white"
-                  aria-label="Remember me"
-                />
-              </FormControl>
-              <div className="space-y-1 leading-none">
-                <FormLabel className="text-zion-slate-light">Remember me</FormLabel>
-              </div>
-            </FormItem>
-          )}
-        />
-
         <div className="flex items-center justify-between">
           <div className="text-sm">
-            {/* "Remember me" checkbox is now above, this div can be used for "Forgot Password" if it's still needed */}
-            {/* If "Remember me" was previously here, it's moved. */}
-          </div>
-          <div className="text-sm">
             <Link to="/forgot-password" className="font-medium text-zion-cyan hover:text-zion-cyan-light">
-              Forgot password?
+              Forgot your password?
             </Link>
           </div>
         </div>
@@ -183,6 +166,7 @@ export function LoginForm() {
           {isLoading || isSubmitting ? "Logging in..." : "Login"}
         </Button>
       </form>
+      <LoadingOverlay visible={isLoading || isSubmitting} />
     </Form>
   );
 }

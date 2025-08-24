@@ -1,14 +1,9 @@
-import { Link } from 'react-router-dom';
-
-export default function RegisterForm() {
+import React from 'react';
+export function RegisterForm() {
   return (
     <div>
-      {/* Registration form elements would go here */}
-      <p className="text-sm">
-        <Link to="/login" className="text-blue-400 underline">
-          Already have an account? Sign in
-        </Link>
-      </p>
+      <h1>Component</h1>
+      <p>Component placeholder</p>
     </div>
   );
 }

@@ -8,12 +8,12 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
-      "@/pages/*": ["./src/pages/*"],
+      "@/pages/*": ["./src/pages/*", "./pages/*"],
       "axios": ["./src/lib/axios.ts"],
       "next": ["./types/next"],
       "next/*": ["./types/next/*"]
     },
-    "types": ["vite/client", "react", "react-router-dom", "socket.io", "socket.io-client", "vitest/globals"],
+    "types": ["vite/client", "react", "vitest/globals", "node"],
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
     "esModuleInterop": true,
@@ -35,7 +35,7 @@
     "./*.config.cjs",
     "./*.config.ts", // Catches cypress.config.ts, playwright.config.ts, tailwind.config.ts, vitest.config.ts
     "./stackbit.config.ts", // Explicitly add stackbit.config.ts if not covered by above
-    "./**/*.d.ts",   // Broadly include all d.ts files
+    "./**/*.d.ts", // Broadly include all d.ts files
     "./types/**/*.d.ts",
 
     // Explicitly list the four persistently problematic files
@@ -49,6 +49,10 @@
     "./src/**/*.tsx", // This should cover the problematic .tsx files too
     "./src/**/*.js",
     "./src/**/*.jsx",
+    "./pages/**/*.ts",
+    "./pages/**/*.tsx",
+    "./pages/**/*.js",
+    "./pages/**/*.jsx",
 
     // Other specific directories/patterns
     "./eslint.config.js",
@@ -78,7 +82,11 @@
     "./stories/**/*.js",
     "./stories/**/*.jsx",
     "./stories/**/*.ts",
-    "./stories/**/*.tsx"
+    "./stories/**/*.tsx",
+    "./pages/**/*.ts",
+    "./pages/**/*.tsx",
+    "./pages/**/*.js",
+    "./pages/**/*.jsx"
   ],
   "exclude": [
     "node_modules",

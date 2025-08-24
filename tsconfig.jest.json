@@ -8,13 +8,12 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
-      "@/pages/*": ["./src/pages/*"],
+      "@/pages/*": ["./src/pages/*", "./pages/*"],
       "axios": ["./src/lib/axios.ts"],
-      "next": ["./types/next"],
-      "next/*": ["./types/next/*"]
+      "next-cloudinary": ["./types/next-cloudinary.d.ts"]
     },
     // Modified for Jest: removed vite/client, vitest/globals; added jest, @testing-library/jest-dom
-    "types": ["jest", "@testing-library/jest-dom", "react", "react-router-dom", "socket.io", "socket.io-client"],
+    "types": ["jest", "@testing-library/jest-dom", "react", "node"],
 
     /* Bundler mode related - some might be less relevant for Jest's CJS context but keep for consistency */
     "moduleResolution": "node", // Changed from bundler to node for CommonJS context
@@ -33,7 +32,8 @@
     "noUnusedParameters": false,
     "noFallthroughCasesInSwitch": true
   },
-  "include": [ // Broad include for tests, can be refined by Jest's testMatch
+  "include": [
+    // Broad include for tests, can be refined by Jest's testMatch
     "src/**/*.ts",
     "src/**/*.tsx",
     "src/**/*.js",
@@ -46,6 +46,8 @@
     "__tests__/**/*.tsx",
     "__tests__/**/*.js",
     "__tests__/**/*.jsx",
+    "pages/**/*.ts",
+    "pages/**/*.tsx",
     "types/**/*.d.ts"
   ],
   // "references": [] // Removed references to tsconfig.node.json
