@@ -4,128 +4,86 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { SEO } from "@/components/SEO";
 import { 
-  PenTool, 
-  FileText, 
+  BarChart3, 
+  TrendingUp, 
   Brain, 
   Zap, 
-  Target, 
+  Crosshair, 
   Users, 
   DollarSign,
   ArrowRight,
   CheckCircle,
   Star,
   Globe,
-  Shield,
-  Type,
-  Image,
-  Video,
-  Mic,
-  Palette,
-  ShoppingBag,
-  Mail
+  Shield
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
-export default function AIContentGenerator() {
+export default function AIAnalyticsDashboard() {
   const features = [
     {
-      title: "AI Writing Assistant",
-      description: "Generate high-quality content for blogs, social media, and marketing campaigns",
-      icon: <PenTool className="h-6 w-6 text-zion-cyan" />
+      title: "AI-Powered Insights",
+      description: "Advanced machine learning algorithms analyze your data to uncover hidden patterns and opportunities",
+      icon: <Brain className="h-6 w-6 text-zion-cyan" />
     },
     {
-      title: "Multi-Format Support",
-      description: "Create content in various formats: text, images, videos, and audio",
-      icon: <FileText className="h-6 w-6 text-zion-purple" />
+      title: "Real-time Analytics",
+      description: "Monitor your business metrics in real-time with live dashboards and instant notifications",
+      icon: <Zap className="h-6 w-6 text-zion-purple" />
     },
     {
-      title: "Brand Voice Consistency",
-      description: "Maintain your brand's unique voice across all content pieces",
-      icon: <Type className="h-6 w-6 text-zion-blue" />
+      title: "Predictive Analytics",
+      description: "Forecast future trends and make data-driven decisions with confidence",
+      icon: <TrendingUp className="h-6 w-6 text-zion-blue" />
     },
     {
-      title: "SEO Optimization",
-      description: "AI-powered SEO suggestions to improve content visibility and ranking",
-      icon: <Target className="h-6 w-6 text-zion-cyan" />
-    }
-  ];
-
-  const contentTypes = [
-    {
-      title: "Blog Posts",
-      description: "Long-form articles and blog content",
-      icon: <FileText className="h-8 w-8 text-zion-cyan" />
-    },
-    {
-      title: "Social Media",
-      description: "Posts for all major social platforms",
-      icon: <Users className="h-8 w-8 text-zion-purple" />
-    },
-    {
-      title: "Marketing Copy",
-      description: "Ads, landing pages, and promotional content",
-      icon: <Target className="h-8 w-8 text-zion-blue" />
-    },
-    {
-      title: "Product Descriptions",
-      description: "Compelling product and service descriptions",
-      icon: <ShoppingBag className="h-8 w-8 text-zion-cyan" />
-    },
-    {
-      title: "Email Campaigns",
-      description: "Newsletters and email marketing content",
-      icon: <Mail className="h-8 w-8 text-zion-purple" />
-    },
-    {
-      title: "Video Scripts",
-      description: "Scripts for video content and presentations",
-      icon: <Video className="h-8 w-8 text-zion-blue" />
+      title: "Custom Dashboards",
+      description: "Build personalized dashboards tailored to your specific business needs",
+      icon: <BarChart3 className="h-6 w-6 text-zion-cyan" />
     }
   ];
 
   const pricingPlans = [
     {
       name: "Starter",
-      price: "$49",
+      price: "$99",
       period: "/month",
-      description: "Perfect for individuals and small businesses",
+      description: "Perfect for small businesses getting started with AI analytics",
       features: [
-        "Up to 50 content pieces/month",
-        "Basic AI writing tools",
-        "Standard templates",
+        "Up to 5 data sources",
+        "Basic AI insights",
+        "Standard dashboards",
         "Email support",
-        "Basic SEO suggestions"
+        "Monthly reports"
       ],
       popular: false
     },
     {
       name: "Professional",
-      price: "$149",
+      price: "$299",
       period: "/month",
-      description: "Advanced content creation for growing businesses",
+      description: "Advanced analytics for growing businesses",
       features: [
-        "Up to 200 content pieces/month",
-        "Advanced AI writing tools",
-        "Custom templates",
+        "Up to 20 data sources",
+        "Advanced AI insights",
+        "Custom dashboards",
         "Priority support",
-        "Advanced SEO optimization",
-        "Brand voice training",
-        "Multi-language support"
+        "Real-time alerts",
+        "API access"
       ],
       popular: true
     },
     {
       name: "Enterprise",
-      price: "$399",
+      price: "$799",
       period: "/month",
-      description: "Full-scale content creation for large organizations",
+      description: "Full-scale AI analytics for large organizations",
       features: [
-        "Unlimited content pieces",
+        "Unlimited data sources",
         "Custom AI models",
-        "White-label solutions",
+        "White-label dashboards",
         "Dedicated support",
-        "Advanced analytics",
-        "API access",
+        "Advanced security",
         "Custom integrations"
       ],
       popular: false
@@ -134,32 +92,32 @@ export default function AIContentGenerator() {
 
   const testimonials = [
     {
-      name: "Jennifer Martinez",
-      role: "Marketing Director, GrowthBrand",
-      content: "Zion's AI Content Generator increased our content output by 300% while maintaining quality. Game-changer!",
+      name: "Sarah Chen",
+      role: "CTO, TechFlow Inc.",
+      content: "Zion's AI Analytics Dashboard transformed how we understand our customer data. The insights are game-changing.",
       rating: 5
     },
     {
-      name: "David Kim",
-      role: "Content Creator, TechBlog",
-      content: "The AI writing assistant is incredibly intuitive. It understands context and generates engaging content.",
+      name: "Marcus Rodriguez",
+      role: "Data Scientist, DataCorp",
+      content: "The predictive analytics capabilities are incredible. We've improved our forecasting accuracy by 40%.",
       rating: 5
     },
     {
-      name: "Lisa Thompson",
-      role: "CEO, StartupXYZ",
-      content: "We've saved countless hours on content creation. The ROI is immediate and substantial.",
+      name: "Emily Watson",
+      role: "VP Operations, GrowthTech",
+      content: "Real-time dashboards help us make faster, better decisions. ROI was immediate.",
       rating: 5
     }
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-zion-slate-dark via-zion-purple-dark to-zion-slate-dark">
+    <div className="min-h-screen bg-gradient-to-br from-zion-slate-dark via-zion-blue-dark to-zion-slate-dark">
       <SEO 
-        title="AI Content Generator - Zion Tech Group" 
-        description="Create engaging, high-quality content with AI-powered writing tools. Generate blogs, social media posts, and marketing copy instantly."
-        keywords="AI content generator, content creation, AI writing, marketing copy, Zion Tech Group"
-        canonical="https://ziontechgroup.com/ai-content-generator"
+        title="AI Analytics Dashboard - Zion Tech Group" 
+        description="Transform your business with AI-powered analytics, real-time insights, and predictive intelligence. Get started today!"
+        keywords="AI analytics, business intelligence, predictive analytics, data insights, Zion Tech Group"
+        canonical="https://ziontechgroup.com/ai-analytics-dashboard"
       />
 
       {/* Hero Section */}
@@ -167,14 +125,14 @@ export default function AIContentGenerator() {
         <div className="absolute inset-0 bg-gradient-to-r from-zion-purple/20 via-zion-cyan/20 to-zion-blue/20 animate-pulse"></div>
         <div className="container mx-auto relative z-10 text-center">
           <Badge className="mb-6 bg-zion-cyan/20 text-zion-cyan border-zion-cyan/30">
-            ✍️ AI-Powered Content Creation
+            🚀 New AI-Powered Service
           </Badge>
           <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-zion-cyan via-zion-purple to-zion-blue bg-clip-text text-transparent">
-            AI Content Generator
+            AI Analytics Dashboard
           </h1>
           <p className="text-xl md:text-2xl text-zion-slate-light mb-8 max-w-4xl mx-auto">
-            Transform your content creation with AI-powered writing tools. Generate engaging blogs, social media posts, 
-            marketing copy, and more in seconds. Maintain your brand voice while scaling your content production.
+            Transform your business data into actionable intelligence with our advanced AI-powered analytics platform. 
+            Get real-time insights, predictive analytics, and custom dashboards.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white px-8 py-4 text-lg">
@@ -185,7 +143,7 @@ export default function AIContentGenerator() {
             </Button>
             <Button asChild variant="outline" size="lg" className="border-zion-cyan text-zion-cyan hover:bg-zion-cyan/10 px-8 py-4 text-lg">
               <Link to="/contact">
-                Try Demo
+                Schedule Demo
               </Link>
             </Button>
           </div>
@@ -197,10 +155,10 @@ export default function AIContentGenerator() {
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-4">
-              Powerful Content Creation Features
+              Powerful AI Analytics Features
             </h2>
             <p className="text-xl text-zion-slate-light max-w-3xl mx-auto">
-              Our AI platform combines natural language processing with creative intelligence to deliver content that resonates with your audience.
+              Our platform combines cutting-edge AI technology with intuitive design to deliver insights that drive business growth.
             </p>
           </div>
           
@@ -224,47 +182,15 @@ export default function AIContentGenerator() {
         </div>
       </section>
 
-      {/* Content Types Section */}
-      <section className="py-20 px-4 bg-zion-slate-dark/30">
-        <div className="container mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">
-              Create Any Type of Content
-            </h2>
-            <p className="text-xl text-zion-slate-light max-w-3xl mx-auto">
-              From blog posts to social media content, our AI handles all your content creation needs.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {contentTypes.map((type, index) => (
-              <Card key={index} className="bg-zion-slate-dark/50 border-zion-purple/20 hover:border-zion-purple/40 transition-all duration-300 hover:shadow-2xl hover:shadow-zion-purple/20 text-center">
-                <CardHeader>
-                  <div className="mx-auto mb-4 p-3 bg-zion-purple/10 rounded-full w-20 h-20 flex items-center justify-center">
-                    {type.icon}
-                  </div>
-                  <CardTitle className="text-white">{type.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-zion-slate-light">
-                    {type.description}
-                  </CardDescription>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Pricing Section */}
-      <section className="py-20 px-4">
+      <section className="py-20 px-4 bg-zion-slate-dark/30">
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-4">
               Simple, Transparent Pricing
             </h2>
             <p className="text-xl text-zion-slate-light max-w-3xl mx-auto">
-              Choose the plan that fits your content creation needs. All plans include our core AI writing features.
+              Choose the plan that fits your business needs. All plans include our core AI analytics features.
             </p>
           </div>
           
@@ -308,14 +234,14 @@ export default function AIContentGenerator() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 px-4 bg-zion-slate-dark/30">
+      <section className="py-20 px-4">
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-4">
-              Trusted by Content Creators
+              Trusted by Industry Leaders
             </h2>
             <p className="text-xl text-zion-slate-light max-w-3xl mx-auto">
-              See what our customers say about the transformative power of AI content generation.
+              See what our customers say about the transformative power of AI analytics.
             </p>
           </div>
           
@@ -344,10 +270,10 @@ export default function AIContentGenerator() {
       <section className="py-20 px-4 bg-gradient-to-r from-zion-purple/20 via-zion-cyan/20 to-zion-blue/20">
         <div className="container mx-auto text-center">
           <h2 className="text-4xl font-bold text-white mb-6">
-            Ready to Transform Your Content Creation?
+            Ready to Transform Your Business?
           </h2>
           <p className="text-xl text-zion-slate-light mb-8 max-w-3xl mx-auto">
-            Join thousands of creators already using AI to scale their content production and engage their audience.
+            Join thousands of businesses already using AI analytics to drive growth and make better decisions.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white px-8 py-4 text-lg">
