@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { MicroSaasServicesShowcase } from '@/components/services/MicroSaasServicesShowcase';
 import { Sparkles, Star, Zap, Brain } from 'lucide-react';
 

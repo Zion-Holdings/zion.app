@@ -1,5 +1,5 @@
-import React from 'react';
-import { Users, Target, Award, Zap, Globe, Shield, Sparkles, TrendingUp, Code, Lightbulb } from 'lucide-react';
+
+import { Users, Target, Award, Zap, Globe, Shield, Sparkles } from 'lucide-react';
 
 export default function AboutPage() {
   const stats = [

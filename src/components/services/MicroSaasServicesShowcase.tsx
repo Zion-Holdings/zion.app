@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -7,26 +7,17 @@ import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { 
   Search, 
-  Filter, 
   Star, 
   Users, 
-  Zap, 
   Shield, 
   Code, 
   BarChart3,
   Bot,
-  Globe,
   Building,
-  TrendingUp,
   CheckCircle,
   ArrowRight,
   Sparkles,
   Brain,
-  Database,
-  Cloud,
-  Smartphone,
-  FileText,
-  Lock,
   Settings
 } from 'lucide-react';
 import { MICRO_SAAS_SERVICES, MicroSaasService, getServiceByCategory, getFeaturedServices } from '@/data/microSaasServices';
@@ -148,11 +139,11 @@ export function MicroSaasServicesShowcase() {
             
             {/* Category Filter */}
             <div>
-              <Select value={selectedCategory} onValueChange={setSelectedCategory}>
+              <Select value={selectedCategory} onChange={(e) => setSelectedCategory(e.target.value)}>
                 <SelectTrigger className="bg-white/20 border-white/30 text-white focus:bg-white/30 focus:border-zion-cyan/50 h-12">
                   <SelectValue placeholder="Category" />
                 </SelectTrigger>
-                <SelectContent className="bg-zion-slate-dark border-zion-cyan/30">
+                <SelectContent>
                   <SelectItem value="all">All Categories</SelectItem>
                   {categories.map((category) => (
                     <SelectItem key={category} value={category}>{category}</SelectItem>
@@ -163,11 +154,11 @@ export function MicroSaasServicesShowcase() {
             
             {/* Price Filter */}
             <div>
-              <Select value={priceRange} onValueChange={setPriceRange}>
+              <Select value={priceRange} onChange={(e) => setPriceRange(e.target.value)}>
                 <SelectTrigger className="bg-white/20 border-white/30 text-white focus:bg-white/30 focus:border-zion-cyan/50 h-12">
                   <SelectValue placeholder="Price Range" />
                 </SelectTrigger>
-                <SelectContent className="bg-zion-slate-dark border-zion-cyan/30">
+                <SelectContent>
                   <SelectItem value="all">All Prices</SelectItem>
                   <SelectItem value="free">Free</SelectItem>
                   <SelectItem value="low">$1 - $50</SelectItem>

@@ -11,7 +11,7 @@ import { Toaster as SonnerToaster } from "./components/ui/sonner";
 import { ScrollToTop } from "./components/ScrollToTop";
 
 // Lazy load pages
-const Home = React.lazy(() => import('./pages/Home'));
+const Home = React.lazy(() => import('./pages/Home').then(module => ({ default: module.Home })));
 const Services = React.lazy(() => import('./pages/Services'));
 const About = React.lazy(() => import('./pages/About'));
 const Contact = React.lazy(() => import('./pages/Contact'));

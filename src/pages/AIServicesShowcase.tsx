@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { COMPREHENSIVE_SERVICES } from '../data/comprehensiveServices';
-import { Brain, Zap, Target, Monitor, Volume2, Circle, ArrowRight, CheckCircle, Star, Clock, Users } from 'lucide-react';
+import { Brain, Zap, Target, Monitor, Circle, ArrowRight, CheckCircle, Users } from 'lucide-react';
 
 const AIServicesShowcase: React.FC = () => {
   const [activeTab, setActiveTab] = useState('services');
 
   const aiServices = COMPREHENSIVE_SERVICES.filter(service => 
-    service.category === 'AI & Machine Learning'
+    service.category === 'AI Services'
   );
 
   const aiCapabilities = [
@@ -233,7 +233,7 @@ const AIServicesShowcase: React.FC = () => {
                   <div key={service.id} className="bg-zion-blue-dark border border-zion-blue-light rounded-xl p-6 hover:border-zion-purple transition-all duration-300">
                     <div className="flex items-start justify-between mb-4">
                       <h3 className="text-xl font-bold text-white">{service.title}</h3>
-                      {service.supportLevel === 'premium' && (
+                      {service.badge === 'Premium' && (
                         <span className="bg-zion-purple text-white text-xs px-2 py-1 rounded-full font-medium">
                           Premium
                         </span>
@@ -244,15 +244,15 @@ const AIServicesShowcase: React.FC = () => {
                     <div className="space-y-3 mb-4">
                       <div className="flex items-center justify-between">
                         <span className="text-zion-slate-light text-sm">Price:</span>
-                        <span className="text-white font-bold">{service.currency}{service.price}</span>
+                        <span className="text-white font-bold">{service.price.currency}{service.price.monthly}</span>
                       </div>
                       <div className="flex items-center justify-between">
                         <span className="text-zion-slate-light text-sm">Delivery:</span>
-                        <span className="text-zion-slate-light text-sm">{service.estimatedDelivery}</span>
+                        <span className="text-zion-slate-light text-sm">1-2 weeks</span>
                       </div>
                       <div className="flex items-center justify-between">
                         <span className="text-zion-slate-light text-sm">Support:</span>
-                        <span className="text-zion-slate-light text-sm capitalize">{service.supportLevel}</span>
+                        <span className="text-zion-slate-light text-sm capitalize">24/7</span>
                       </div>
                     </div>
 
@@ -267,7 +267,7 @@ const AIServicesShowcase: React.FC = () => {
                     </div>
 
                     <a
-                      href={`mailto:${service.contactInfo.email}?subject=Inquiry about ${service.title}`}
+                      href={`mailto:kleber@ziontechgroup.com?subject=Inquiry about ${service.title}`}
                       className="w-full bg-zion-purple hover:bg-zion-purple-dark text-white text-center py-2 px-4 rounded-lg transition-colors duration-200 flex items-center justify-center gap-2"
                     >
                       Get Started

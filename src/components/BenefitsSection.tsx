@@ -1,5 +1,5 @@
 
-import React from 'react';
+
 import { CheckCircle, Zap, Shield, Users, Globe, TrendingUp } from 'lucide-react';
 
 export function BenefitsSection() {

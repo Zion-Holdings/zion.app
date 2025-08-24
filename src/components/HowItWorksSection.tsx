@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { motion } from 'framer-motion';
 import { Search, Users, FileText, Rocket, CheckCircle } from 'lucide-react';
 

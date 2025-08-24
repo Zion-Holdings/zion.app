@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Sparkles, ChevronDown, Search, Phone, Mail, MapPin } from 'lucide-react';
+import { Menu, X, Sparkles, ChevronDown, Phone, Mail, MapPin } from 'lucide-react';
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

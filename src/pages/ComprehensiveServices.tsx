@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Search, Filter, Star, Clock, DollarSign, Users, Zap, Brain, Cloud, Database, Shield, Settings, Eye, Leaf, CreditCard, Heart, Truck, ShoppingCart, Phone, Mail, MapPin, Globe } from 'lucide-react';
+import { useState } from 'react';
+import { Search, Star, Users, Zap, Brain, Shield, Settings, Phone, Mail, MapPin } from 'lucide-react';
 
 const ComprehensiveServices: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');

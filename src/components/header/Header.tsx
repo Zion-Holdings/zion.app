@@ -1,7 +1,7 @@
 
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { Search, Menu, X, ChevronDown, Globe, Phone, Mail, Menu as MenuIcon } from "lucide-react";
+import { Search, ChevronDown, Globe, Phone, Mail } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export interface HeaderProps {
@@ -15,7 +15,7 @@ export interface HeaderProps {
   onMenuToggle?: () => void;
 }
 
-export function Header({ hideLogin = false, customLogo, customTheme, onMenuToggle }: HeaderProps) {
+export function Header({ onMenuToggle }: HeaderProps) {
   const navigate = useNavigate();
   const location = useLocation();
   const [query, setQuery] = useState("");
@@ -47,10 +47,7 @@ export function Header({ hideLogin = false, customLogo, customTheme, onMenuToggl
     }
   };
 
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-    setIsSearchExpanded(false);
-  };
+
 
   const toggleSearch = () => {
     setIsSearchExpanded(!isSearchExpanded);
