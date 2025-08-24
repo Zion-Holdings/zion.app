@@ -594,63 +594,245 @@ export const EXPANDED_SERVICES: ExpandedService[] = [
 
   // FinTech & Digital Banking Services
   {
-    id: "digital-banking-platform",
-    title: "Digital Banking & FinTech Platform Development",
-    description: "Build secure, scalable digital banking platforms with modern fintech capabilities including mobile banking, digital payments, lending automation, and regulatory compliance features.",
+    id: "fintech-platform-development",
+    title: "FinTech Platform Development",
+    description: "Build cutting-edge financial technology platforms with advanced security, compliance, and user experience. From digital banking to payment solutions, we deliver scalable fintech infrastructure.",
     category: "FinTech & Digital Banking",
     subcategory: "Platform Development",
-    price: 35000,
+    price: 45000,
     currency: "$",
     pricingModel: "project-based",
     features: [
-      "Mobile banking application development",
-      "Digital payment processing systems",
-      "Lending and credit automation",
-      "Regulatory compliance and reporting",
-      "Multi-currency and international support",
-      "Advanced security and fraud detection"
+      "Multi-tenant architecture with role-based access control",
+      "Real-time transaction processing and settlement",
+      "Advanced fraud detection and risk management",
+      "Compliance with PCI DSS, SOC 2, and regulatory standards",
+      "Mobile-first responsive design with biometric authentication",
+      "API-first architecture for third-party integrations"
     ],
     benefits: [
-      "Modern digital banking capabilities",
-      "Enhanced customer experience and engagement",
-      "Reduced operational costs",
-      "Compliance with banking regulations",
-      "Scalable platform for business growth",
-      "Competitive advantage in fintech space"
+      "Secure, compliant financial platform ready for production",
+      "Scalable architecture supporting millions of transactions",
+      "Reduced compliance risk with built-in regulatory features",
+      "Faster time-to-market with proven fintech patterns",
+      "Lower operational costs through automation"
     ],
     useCases: [
-      "Digital banking transformation",
-      "Neobank platform development",
-      "Payment processing solutions",
-      "Lending platform automation",
-      "Financial services mobile apps"
+      "Digital banking applications",
+      "Payment processing platforms",
+      "Lending and credit management systems",
+      "Investment and wealth management platforms",
+      "RegTech compliance solutions"
     ],
     targetAudience: [
-      "Traditional banks and credit unions",
-      "Fintech startups",
-      "Financial services companies",
+      "Banks and credit unions",
+      "FinTech startups",
       "Payment processors",
-      "Lending companies"
+      "Investment firms",
+      "Regulatory technology companies"
     ],
-    marketPrice: "$35,000 - $75,000",
+    marketPrice: "$40,000 - $80,000",
     contactInfo: {
       phone: "+1 302 464 0950",
       email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com/digital-banking-platform"
+      website: "https://ziontechgroup.com/fintech-platforms"
     },
-    tags: ["FinTech", "Digital Banking", "Mobile Banking", "Payments", "Lending"],
+    tags: ["FinTech", "Digital Banking", "Payment Processing", "Compliance", "Security"],
     author: {
       name: "Zion Tech Group",
       id: "zion-tech-group",
       avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
     },
-    images: ["https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-02-05T11:45:00.000Z",
-    aiScore: 96,
+    images: ["https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&h=500"],
+    createdAt: "2024-02-10T14:30:00.000Z",
+    aiScore: 98,
     rating: 4.9,
-    reviewCount: 203,
+    reviewCount: 156,
+    availability: "1 month",
+    deliveryTime: "20-24 weeks",
+    supportLevel: "enterprise"
+  },
+
+  // Emerging Technology Services
+  {
+    id: "quantum-computing-strategy",
+    title: "Quantum Computing Strategy & Implementation",
+    description: "Navigate the quantum revolution with our comprehensive strategy and implementation services. From algorithm development to quantum-ready infrastructure, we help organizations prepare for the quantum future.",
+    category: "Quantum Computing",
+    subcategory: "Strategy & Consulting",
+    price: 35000,
+    currency: "$",
+    pricingModel: "project-based",
+    features: [
+      "Quantum readiness assessment and roadmap development",
+      "Quantum algorithm design and optimization",
+      "Hybrid classical-quantum system architecture",
+      "Post-quantum cryptography implementation",
+      "Quantum workforce training and education",
+      "Vendor evaluation and technology selection"
+    ],
+    benefits: [
+      "Early advantage in quantum computing adoption",
+      "Future-proof security with post-quantum cryptography",
+      "Optimized algorithms for quantum hardware",
+      "Reduced risk in quantum technology investments",
+      "Competitive advantage in research and development"
+    ],
+    useCases: [
+      "Drug discovery and molecular modeling",
+      "Financial portfolio optimization",
+      "Logistics and supply chain optimization",
+      "Cryptography and cybersecurity",
+      "Machine learning and AI acceleration"
+    ],
+    targetAudience: [
+      "Pharmaceutical companies",
+      "Financial institutions",
+      "Research organizations",
+      "Government agencies",
+      "Technology companies"
+    ],
+    marketPrice: "$30,000 - $60,000",
+    contactInfo: {
+      phone: "+1 302 464 0950",
+      email: "kleber@ziontechgroup.com",
+      website: "https://ziontechgroup.com/quantum-computing"
+    },
+    tags: ["Quantum Computing", "Algorithm Development", "Post-Quantum Cryptography", "Strategy", "Research"],
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
+    },
+    images: ["https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=800&h=500"],
+    createdAt: "2024-02-12T09:15:00.000Z",
+    aiScore: 99,
+    rating: 4.8,
+    reviewCount: 89,
     availability: "1 month",
     deliveryTime: "16-20 weeks",
+    supportLevel: "premium"
+  },
+
+  // Sustainability & Green Tech
+  {
+    id: "sustainability-ai-platform",
+    title: "AI-Powered Sustainability Management Platform",
+    description: "Transform your environmental impact with our intelligent sustainability platform. Monitor, analyze, and optimize your organization's carbon footprint, energy usage, and sustainability metrics in real-time.",
+    category: "Green Tech & Sustainability",
+    subcategory: "Environmental Optimization",
+    price: 28000,
+    currency: "$",
+    pricingModel: "subscription",
+    features: [
+      "Real-time carbon footprint tracking and analysis",
+      "AI-powered energy optimization recommendations",
+      "Sustainability reporting and compliance automation",
+      "Supply chain environmental impact assessment",
+      "Predictive analytics for sustainability planning",
+      "Integration with existing ERP and IoT systems"
+    ],
+    benefits: [
+      "Reduce carbon footprint by 25-40%",
+      "Achieve sustainability certifications faster",
+      "Lower energy costs through intelligent optimization",
+      "Enhanced brand reputation and stakeholder trust",
+      "Compliance with environmental regulations"
+    ],
+    useCases: [
+      "Corporate sustainability management",
+      "Manufacturing environmental compliance",
+      "Retail supply chain optimization",
+      "Real estate energy management",
+      "Government environmental monitoring"
+    ],
+    targetAudience: [
+      "Large corporations",
+      "Manufacturing companies",
+      "Retail chains",
+      "Real estate developers",
+      "Government agencies"
+    ],
+    marketPrice: "$25,000 - $50,000",
+    contactInfo: {
+      phone: "+1 302 464 0950",
+      email: "kleber@ziontechgroup.com",
+      website: "https://ziontechgroup.com/sustainability-ai"
+    },
+    tags: ["Sustainability", "AI", "Environmental Management", "Carbon Tracking", "Energy Optimization"],
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
+    },
+    images: ["https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=800&h=500"],
+    createdAt: "2024-02-14T11:20:00.000Z",
+    aiScore: 95,
+    rating: 4.9,
+    reviewCount: 134,
+    availability: "1-2 weeks",
+    deliveryTime: "12-16 weeks",
+    supportLevel: "premium"
+  },
+
+  // Advanced AI Services
+  {
+    id: "multimodal-ai-platform",
+    title: "Multimodal AI Platform for Enterprise",
+    description: "Unlock the power of multimodal AI with our comprehensive platform that processes text, images, audio, and video simultaneously. Build intelligent applications that understand context across multiple data types.",
+    category: "AI & Machine Learning",
+    subcategory: "Advanced AI",
+    price: 52000,
+    currency: "$",
+    pricingModel: "project-based",
+    features: [
+      "Unified multimodal data processing pipeline",
+      "Cross-modal learning and knowledge transfer",
+      "Real-time multimodal inference engine",
+      "Custom model training and fine-tuning",
+      "Enterprise-grade security and privacy controls",
+      "Scalable cloud and edge deployment options"
+    ],
+    benefits: [
+      "Enhanced AI accuracy through multimodal learning",
+      "Reduced training data requirements",
+      "Better context understanding and decision making",
+      "Future-proof AI infrastructure",
+      "Competitive advantage in AI applications"
+    ],
+    useCases: [
+      "Autonomous vehicle perception systems",
+      "Healthcare diagnostic platforms",
+      "Content moderation and safety",
+      "Customer service automation",
+      "Quality control and inspection"
+    ],
+    targetAudience: [
+      "Technology companies",
+      "Healthcare organizations",
+      "Automotive manufacturers",
+      "Media companies",
+      "Manufacturing companies"
+    ],
+    marketPrice: "$45,000 - $85,000",
+    contactInfo: {
+      phone: "+1 302 464 0950",
+      email: "kleber@ziontechgroup.com",
+      website: "https://ziontechgroup.com/multimodal-ai"
+    },
+    tags: ["Multimodal AI", "Computer Vision", "NLP", "Audio Processing", "Enterprise AI"],
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
+    },
+    images: ["https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&h=500"],
+    createdAt: "2024-02-16T15:45:00.000Z",
+    aiScore: 97,
+    rating: 4.9,
+    reviewCount: 78,
+    availability: "1 month",
+    deliveryTime: "20-24 weeks",
     supportLevel: "enterprise"
   }
 ];
@@ -665,7 +847,12 @@ export const SERVICE_CATEGORIES = [
   "Quantum Computing",
   "Green Tech & Sustainability",
   "AR/VR & Metaverse",
-  "FinTech & Digital Banking"
+  "FinTech & Digital Banking",
+  "Healthcare Technology",
+  "Manufacturing & Industry 4.0",
+  "Retail & E-commerce",
+  "Education Technology",
+  "Government & Public Sector"
 ];
 
 export const SERVICE_SUBCATEGORIES = {
@@ -738,5 +925,40 @@ export const SERVICE_SUBCATEGORIES = {
     "Lending Platforms",
     "RegTech Solutions",
     "Digital Wallets"
+  ],
+  "Healthcare Technology": [
+    "Telemedicine Platforms",
+    "Electronic Health Records",
+    "Medical Imaging AI",
+    "Patient Engagement",
+    "Healthcare Analytics"
+  ],
+  "Manufacturing & Industry 4.0": [
+    "Smart Factory Solutions",
+    "Predictive Maintenance",
+    "Quality Control Systems",
+    "Supply Chain Optimization",
+    "Digital Twin Technology"
+  ],
+  "Retail & E-commerce": [
+    "Omnichannel Platforms",
+    "Inventory Management",
+    "Customer Analytics",
+    "Payment Processing",
+    "Mobile Commerce"
+  ],
+  "Education Technology": [
+    "Learning Management Systems",
+    "Virtual Classrooms",
+    "Student Analytics",
+    "Content Creation Tools",
+    "Assessment Platforms"
+  ],
+  "Government & Public Sector": [
+    "Digital Government Services",
+    "Citizen Engagement Platforms",
+    "Data Analytics & Reporting",
+    "Cybersecurity & Compliance",
+    "Smart City Solutions"
   ]
 };
