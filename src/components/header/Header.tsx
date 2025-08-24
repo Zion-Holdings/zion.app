@@ -53,10 +53,24 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
   
   return (
     <header 
-      className="sticky top-0 z-50 w-full border-b border-zion-purple/20 bg-zion-blue-dark/90 backdrop-blur-md"
+      className="sticky top-0 z-50 w-full border-b border-zion-purple/20 bg-zion-blue-dark/90 backdrop-blur-md relative overflow-hidden"
       style={headerStyle}
     >
-      <div className="container flex h-16 items-center px-4 sm:px-6">
+      {/* Futuristic animated background */}
+      <div className="absolute inset-0 bg-gradient-to-r from-zion-purple/5 via-zion-cyan/5 to-zion-purple/5"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-zion-purple/10 to-transparent"></div>
+      
+      {/* Animated border glow */}
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-zion-cyan to-transparent opacity-60"></div>
+      
+      {/* Floating particles */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-4 left-1/4 w-1 h-1 bg-zion-cyan rounded-full animate-pulse opacity-60"></div>
+        <div className="absolute top-8 right-1/3 w-1 h-1 bg-zion-purple rounded-full animate-pulse opacity-40 delay-1000"></div>
+        <div className="absolute top-12 left-1/2 w-1 h-1 bg-zion-cyan rounded-full animate-pulse opacity-50 delay-2000"></div>
+      </div>
+
+      <div className="container flex h-16 items-center px-4 sm:px-6 relative z-10">
         <Logo customLogo={customLogo} customColor={effectiveTheme?.primaryColor} />
 
         <div className="ml-6 flex-1">
