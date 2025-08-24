@@ -1,0 +1,104 @@
+name: Autoheal
+
+on:
+  workflow_dispatch:
+    inputs:
+      issue_number:
+        description: 'GitHub issue number to autoheal'
+        required: true
+  issues:
+    types: [labeled]
+
+jobs:
+  autoheal:
+    if: github.event.label.name == 'autoheal' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: dev
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Resolve issue number
+        id: resolve
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "issue=${{ github.event.inputs.issue_number }}" >> $GITHUB_OUTPUT
+          else
+            echo "issue=${{ github.event.issue.number }}" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Fetch issue details
+        id: issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issue_number = Number(process.env.ISSUE);
+            const { data } = await github.rest.issues.get({ owner: context.repo.owner, repo: context.repo.repo, issue_number });
+            core.setOutput('title', data.title);
+            core.setOutput('body', data.body || '');
+        env:
+          ISSUE: ${{ steps.resolve.outputs.issue }}
+
+      - name: Run OpenAI Codex fixer
+        id: codex
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          node -e "const fs=require('fs');
+          const { execSync } = require('child_process');
+          const title=process.env.TITLE||'';const body=process.env.BODY||'';
+          const prompt = `You are an expert JS/TS engineer. Analyze this crash report and propose a minimal code change to fix it. Provide the exact file path(s) and unified diff. If tests are missing, add minimal ones.`;
+          const input = `${title}\n\n${body}`;
+          const OpenAI = require('openai');
+          const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+          (async () => {
+            const resp = await client.chat.completions.create({ model:'gpt-4o-mini', temperature:0.2, messages:[{role:'system', content:prompt},{role:'user', content:input}]});
+            const out = resp.choices?.[0]?.message?.content || '';
+            fs.writeFileSync('autoheal.patch', out);
+          })().then(()=>{}).catch(e=>{console.error(e); process.exit(1);});"
+        env:
+          TITLE: ${{ steps.issue.outputs.title }}
+          BODY: ${{ steps.issue.outputs.body }}
+
+      - name: Apply patch if present
+        run: |
+          if [ -s autoheal.patch ]; then
+            echo "Patch proposal:" && cat autoheal.patch || true
+            git config user.email "autoheal@zion.app"
+            git config user.name "Zion Autoheal"
+            npx patch-package < autoheal.patch || true
+          fi
+
+      - name: Build and test
+        run: |
+          npm run build
+          npm test --if-present
+
+      - name: Commit and push
+        if: success()
+        run: |
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(autoheal): apply fix from OpenAI"
+            git push origin dev
+          else
+            echo "No changes to commit"
+          fi
+
+      - name: Comment on issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issue_number = Number(process.env.ISSUE);
+            await github.rest.issues.createComment({ owner: context.repo.owner, repo: context.repo.repo, issue_number, body: `Autoheal run completed. Build: ${{ job.status }}` });
+        env:
+          ISSUE: ${{ steps.resolve.outputs.issue }}

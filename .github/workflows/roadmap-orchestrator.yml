@@ -1,0 +1,35 @@
+name: Roadmap Orchestrator
+
+on:
+  schedule:
+    - cron: '0 8 * * 1'
+  workflow_dispatch: {}
+
+jobs:
+  roadmap:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: dev
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm ci
+      - name: Run orchestrator
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPO: ${{ github.repository }}
+        run: node automation/roadmap-orchestrator.cjs
+      - name: Commit and push
+        run: |
+          git config user.email "roadmap-bot@zion.app"
+          git config user.name "Zion Roadmap Bot"
+          git add data/reports/roadmap/*.md || true
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(roadmap): weekly roadmap update"
+            git push origin dev
+          else
+            echo "No changes"
+          fi
