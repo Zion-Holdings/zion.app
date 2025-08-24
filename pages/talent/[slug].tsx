@@ -1,9 +1,7 @@
-import EnhancedLayout from '../../components/layout/EnhancedLayout';
+import { GetServerSideProps } from 'next';
 
-export default function TalentDetail() {
-  return (
-    <EnhancedLayout>
-      <h1 className="text-2xl font-semibold">Talent Detail</h1>
-    </EnhancedLayout>
-  );
-}
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  return { props: { slug: ctx.params?.slug ?? '' } };
+};
+
+export default function TalentSlug({ slug }: { slug: string }) { return <main style={{padding:'2rem'}}>Talent: {slug}</main>; }
