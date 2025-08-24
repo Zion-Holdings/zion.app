@@ -39,7 +39,9 @@
     "typeRoots": [
       "./node_modules/@types"
     ],
-    "types": ["react", "react-dom", "node"]
+    "types": ["react", "react-dom", "node"],
+    "noImplicitAny": false,
+    "noImplicitThis": false
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]

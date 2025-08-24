@@ -1,114 +1,83 @@
-import { useState, useEffect } from 'react';
+import * as React from 'react';
 import { ForumPost } from '@/types/community';
 
 export const usePostsByCategory = (category: string) => {
-  const [posts, setPosts] = useState<ForumPost[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const [posts, setPosts] = React.useState<ForumPost[]>([]);
+  const [loading, setLoading] = React.useState(false);
+  const [error, setError] = React.useState<string>('');
 
-  useEffect(() => {
-    const fetchPosts = async () => {
-      try {
-        setLoading(true);
-        // Simulate API call
-        await new Promise(resolve => setTimeout(resolve, 1000));
-        
-        // Mock data - in real app, this would come from API
-        const mockPosts: ForumPost[] = [
-          {
-            id: '1',
-            title: 'Getting started with the platform',
-            content: 'I\'m new here and would like to know how to get started...',
-            authorId: 'user1',
-            authorName: 'NewUser',
-            authorAvatar: '/avatars/user1.jpg',
-            category,
-            tags: ['getting-started', 'help'],
-            createdAt: '2024-01-15T10:00:00Z',
-            updatedAt: '2024-01-15T10:00:00Z',
-            likes: 5,
-            replies: [
-              {
-                id: 'reply1',
-                content: 'Welcome! Here\'s how to get started...',
-                authorId: 'admin',
-                authorName: 'Admin',
-                authorAvatar: '/avatars/admin.jpg',
-                createdAt: '2024-01-15T11:00:00Z',
-                updatedAt: '2024-01-15T11:00:00Z',
-                likes: 3,
-              },
-            ],
-            isPinned: false,
-            isLocked: false,
-          },
-          {
-            id: '2',
-            title: 'Best practices for project management',
-            content: 'What are some best practices you\'ve found useful...',
-            authorId: 'user2',
-            authorName: 'ProjectManager',
-            authorAvatar: '/avatars/user2.jpg',
-            category,
-            tags: ['project-management', 'best-practices'],
-            createdAt: '2024-01-14T15:30:00Z',
-            updatedAt: '2024-01-14T15:30:00Z',
-            likes: 12,
-            replies: [
-              {
-                id: 'reply2',
-                content: 'I recommend using agile methodology...',
-                authorId: 'user3',
-                authorName: 'AgileExpert',
-                authorAvatar: '/avatars/user3.jpg',
-                createdAt: '2024-01-14T16:00:00Z',
-                updatedAt: '2024-01-14T16:00:00Z',
-                likes: 8,
-              },
-            ],
-            isPinned: false,
-            isLocked: false,
-          },
-        ];
-
-        setPosts(mockPosts);
-        setError(null);
-      } catch (err) {
-        setError('Failed to fetch posts');
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    if (category) {
-      fetchPosts();
+  const fetchPosts = React.useCallback(async () => {
+    setLoading(true);
+    setError('');
+    
+    try {
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      // Mock data - in real app, this would be an API call
+      const mockPosts: ForumPost[] = [
+        {
+          id: '1',
+          title: 'Getting Started with Zion Platform',
+          content: 'I\'m new to the platform and would love some tips on how to get started...',
+          authorName: 'John Doe',
+          authorAvatar: '/avatars/john.jpg',
+          category: category,
+          createdAt: new Date().toISOString(),
+          updatedAt: new Date().toISOString(),
+          likes: 5,
+          replies: []
+        },
+        {
+          id: '2',
+          title: 'Best Practices for Project Management',
+          content: 'What are some best practices you\'ve found for managing projects on Zion?',
+          authorName: 'Jane Smith',
+          authorAvatar: '/avatars/jane.jpg',
+          category: category,
+          createdAt: new Date().toISOString(),
+          updatedAt: new Date().toISOString(),
+          likes: 12,
+          replies: []
+        }
+      ];
+      
+      setPosts(mockPosts);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Failed to fetch posts');
+    } finally {
+      setLoading(false);
     }
   }, [category]);
 
-  const addPost = (post: Omit<ForumPost, 'id' | 'createdAt' | 'updatedAt' | 'likes' | 'replies'>) => {
-    const newPost: ForumPost = {
-      ...post,
+  const addPost = React.useCallback((newPost: Omit<ForumPost, 'id' | 'createdAt' | 'updatedAt' | 'likes' | 'replies'>) => {
+    const post: ForumPost = {
+      ...newPost,
       id: Math.random().toString(36).substr(2, 9),
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
       likes: 0,
-      replies: [],
+      replies: []
     };
     
-    setPosts(prev => [newPost, ...prev]);
-  };
+    setPosts(prev => [post, ...prev]);
+  }, []);
 
-  const updatePost = (id: string, updates: Partial<ForumPost>) => {
-    setPosts(prev => prev.map(post => 
-      post.id === id 
+  const updatePost = React.useCallback((id: string, updates: Partial<ForumPost>) => {
+    setPosts(prev => prev.map(post =>
+      post.id === id
         ? { ...post, ...updates, updatedAt: new Date().toISOString() }
         : post
     ));
-  };
+  }, []);
 
-  const deletePost = (id: string) => {
+  const deletePost = React.useCallback((id: string) => {
     setPosts(prev => prev.filter(post => post.id !== id));
-  };
+  }, []);
+
+  React.useEffect(() => {
+    fetchPosts();
+  }, [fetchPosts]);
 
   return {
     posts,
@@ -117,5 +86,6 @@ export const usePostsByCategory = (category: string) => {
     addPost,
     updatePost,
     deletePost,
+    refetch: fetchPosts
   };
 };

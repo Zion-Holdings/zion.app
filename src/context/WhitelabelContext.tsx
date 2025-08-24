@@ -1,64 +1,44 @@
-import React, { createContext, useContext, useState } from 'react';
+import * as React from 'react';
 
 interface WhitelabelConfig {
-  name: string;
+  companyName: string;
   logo: string;
   primaryColor: string;
   secondaryColor: string;
-  domain: string;
-  features: string[];
+  theme: 'light' | 'dark' | 'auto';
 }
 
 interface WhitelabelContextType {
   config: WhitelabelConfig;
   updateConfig: (newConfig: Partial<WhitelabelConfig>) => void;
-  isWhitelabeled: boolean;
+  resetConfig: () => void;
 }
 
 const defaultConfig: WhitelabelConfig = {
-  name: 'Zion Tech Group',
+  companyName: 'Zion Tech Group',
   logo: '/logo.svg',
   primaryColor: '#3B82F6',
   secondaryColor: '#1E40AF',
-  domain: 'ziontechgroup.com',
-  features: ['ai', 'marketplace', 'services'],
+  theme: 'auto'
 };
 
-const WhitelabelContext = createContext<WhitelabelContextType | undefined>(undefined);
+const WhitelabelContext = React.createContext<WhitelabelContextType | undefined>(undefined);
 
-export const useWhitelabel = () => {
-  const context = useContext(WhitelabelContext);
-  if (context === undefined) {
-    throw new Error('useWhitelabel must be used within a WhitelabelProvider');
-  }
-  return context;
-};
+export const WhitelabelProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const [config, setConfig] = React.useState<WhitelabelConfig>(defaultConfig);
 
-interface WhitelabelProviderProps {
-  children: React.ReactNode;
-  initialConfig?: Partial<WhitelabelConfig>;
-}
-
-export const WhitelabelProvider: React.FC<WhitelabelProviderProps> = ({ 
-  children, 
-  initialConfig = {} 
-}) => {
-  const [config, setConfig] = useState<WhitelabelConfig>({
-    ...defaultConfig,
-    ...initialConfig,
-  });
-
-  const updateConfig = (newConfig: Partial<WhitelabelConfig>) => {
+  const updateConfig = React.useCallback((newConfig: Partial<WhitelabelConfig>) => {
     setConfig(prev => ({ ...prev, ...newConfig }));
-  };
+  }, []);
 
-  const isWhitelabeled = config.name !== defaultConfig.name || 
-                         config.domain !== defaultConfig.domain;
+  const resetConfig = React.useCallback(() => {
+    setConfig(defaultConfig);
+  }, []);
 
   const value: WhitelabelContextType = {
     config,
     updateConfig,
-    isWhitelabeled,
+    resetConfig
   };
 
   return (
@@ -66,4 +46,12 @@ export const WhitelabelProvider: React.FC<WhitelabelProviderProps> = ({
       {children}
     </WhitelabelContext.Provider>
   );
+};
+
+export const useWhitelabel = (): WhitelabelContextType => {
+  const context = React.useContext(WhitelabelContext);
+  if (context === undefined) {
+    throw new Error('useWhitelabel must be used within a WhitelabelProvider');
+  }
+  return context;
 };
