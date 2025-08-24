@@ -1,0 +1,26 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://zion.app/sitemap.xml
+Sitemap: https://zion.app/sitemap.txt
+
+# Crawl-delay
+Crawl-delay: 1
+<<<<<<< HEAD
+=======
+
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /static/
+
+# Allow important pages
+Allow: /
+Allow: /about
+Allow: /contact
+Allow: /services
+Allow: /technologies
+
+>>>>>>> a8e698aa2a3f65846644470f902bc566286f2743

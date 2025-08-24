@@ -1,0 +1,55 @@
+name: Homepage Auto PR
+
+on:
+  push:
+    branches:
+      - cursor/autonomous-cloud-page-enhancer-and-advertiser-**
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  open-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Open or update PR and label automerge
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const core = require('@actions/core');
+            const { owner, repo } = context.repo;
+            const head = context.ref.replace('refs/heads/', '');
+            const base = 'main';
+            const title = 'Automated: Homepage refresh';
+            const body = 'This PR was created automatically by the autonomous homepage updater. It updates `data/homepage.json` and related homepage content.';
+
+            // Check for existing open PR from this branch
+            const prs = await github.paginate(github.rest.pulls.list, { owner, repo, state: 'open', base, per_page: 100 });
+            let existing = prs.find(pr => pr.head && pr.head.ref === head);
+
+            if (!existing) {
+              try {
+                const created = await github.rest.pulls.create({ owner, repo, head, base, title, body });
+                existing = created.data;
+              } catch (err) {
+                core.warning(`Failed to create PR: ${err.message}`);
+              }
+            }
+
+            if (existing) {
+              try {
+                await github.rest.issues.addLabels({ owner, repo, issue_number: existing.number, labels: ['automerge'] });
+                core.setOutput('pr_number', existing.number);
+                core.notice(`PR #${existing.number} ready with automerge label.`);
+              } catch (err) {
+                core.warning(`Failed to label PR: ${err.message}`);
+              }
+            } else {
+              core.notice('No PR created or found.');
+            }

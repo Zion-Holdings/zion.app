@@ -7,6 +7,9 @@ import { useScrollToTop } from "./hooks";
 import { WhitelabelProvider } from "./context/WhitelabelContext";
 import { Toaster } from "./components/ui/toaster";
 import { Toaster as SonnerToaster } from "./components/ui/sonner";
+import { ErrorBoundary } from "./components/ErrorBoundary";
+import { PageLoader } from "./components/ui/loading-spinner";
+import { PreloadCriticalResources, ServiceWorkerRegistration } from "./components/PerformanceOptimizer";
 import {
   AuthRoutes,
   DashboardRoutes,
@@ -20,6 +23,8 @@ import {
   CommunityRoutes,
   DeveloperRoutes
 } from './routes';
+
+// Lazy load pages with better error handling
 const Home = React.lazy(() => import('./pages/Home'));
 const AIMatcherPage = React.lazy(() => import('./pages/AIMatcher'));
 const TalentDirectory = React.lazy(() => import('./pages/TalentDirectory'));
@@ -71,34 +76,53 @@ const baseRoutes = [
   { path: '/blog/:slug', element: <BlogPost /> },
 ];
 
+// Enhanced loading component with better UX
+function EnhancedSuspenseFallback() {
+  return (
+    <PageLoader 
+      text="Loading Zion Tech Group..." 
+      className="bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-slate-dark"
+    />
+  );
+}
+
 const App = () => {
   // Ensure each navigation starts at the top of the page
   useScrollToTop();
+
   return (
-    <WhitelabelProvider>
-      <ThemeProvider defaultTheme="dark">
-        <Suspense fallback={<div className="p-4 text-center">Loading...</div>}>
-          <Routes>
-            {baseRoutes.map(({ path, element }) => (
-              <Route key={path} path={path} element={element} />
-            ))}
-            <Route path="/auth/*" element={<AuthRoutes />} />
-            <Route path="/dashboard/*" element={<DashboardRoutes />} />
-            <Route path="/marketplace/*" element={<MarketplaceRoutes />} />
-            <Route path="/talent/*" element={<TalentRoutes />} />
-            <Route path="/admin/*" element={<AdminRoutes />} />
-            <Route path="/mobile/*" element={<MobileAppRoutes />} />
-            <Route path="/content/*" element={<ContentRoutes />} />
-            <Route path="/enterprise/*" element={<EnterpriseRoutes />} />
-            <Route path="/community/*" element={<CommunityRoutes />} />
-            <Route path="/developers/*" element={<DeveloperRoutes />} />
-            <Route path="*" element={<ErrorRoutes />} />
-          </Routes>
-        </Suspense>
-        <Toaster />
-        <SonnerToaster position="top-right" />
-      </ThemeProvider>
-    </WhitelabelProvider>
+    <ErrorBoundary>
+      <WhitelabelProvider>
+        <ThemeProvider defaultTheme="dark">
+          {/* Performance Optimizations */}
+          <PreloadCriticalResources />
+          <ServiceWorkerRegistration />
+          
+          <Suspense fallback={<EnhancedSuspenseFallback />}>
+            <Routes>
+              {baseRoutes.map(({ path, element }) => (
+                <Route key={path} path={path} element={element} />
+              ))}
+              <Route path="/auth/*" element={<AuthRoutes />} />
+              <Route path="/dashboard/*" element={<DashboardRoutes />} />
+              <Route path="/marketplace/*" element={<MarketplaceRoutes />} />
+              <Route path="/talent/*" element={<TalentRoutes />} />
+              <Route path="/admin/*" element={<AdminRoutes />} />
+              <Route path="/mobile/*" element={<MobileAppRoutes />} />
+              <Route path="/content/*" element={<ContentRoutes />} />
+              <Route path="/enterprise/*" element={<EnterpriseRoutes />} />
+              <Route path="/community/*" element={<CommunityRoutes />} />
+              <Route path="/developers/*" element={<DeveloperRoutes />} />
+              <Route path="*" element={<ErrorRoutes />} />
+            </Routes>
+          </Suspense>
+          
+          {/* Toast Notifications */}
+          <Toaster />
+          <SonnerToaster position="top-right" />
+        </ThemeProvider>
+      </WhitelabelProvider>
+    </ErrorBoundary>
   );
 };
 
