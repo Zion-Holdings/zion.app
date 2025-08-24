@@ -40,12 +40,16 @@ const specialServices = [
     link: "/it-onsite-services"
   },
   {
-    title: "Advanced AI Services",
-    link: "/advanced-services"
+    title: "Comprehensive Services",
+    link: "/comprehensive-services"
   },
   {
-    title: "Services Comparison",
-    link: "/services-comparison"
+    title: "AI Services",
+    link: "/ai-services"
+  },
+  {
+    title: "Enterprise Solutions",
+    link: "/enterprise-solutions"
   }
 ];
 
@@ -98,18 +102,6 @@ export function CategoriesSection({ showTitle = true }: CategoriesSectionProps) 
                 {service.title}
               </Link>
             ))}
-            <Link 
-              to="/expanded-services"
-              className="px-6 py-3 bg-zion-purple hover:bg-zion-purple-dark border border-zion-purple/20 hover:border-zion-purple/50 rounded-full text-white transition-all duration-300"
-            >
-              View All Services
-            </Link>
-            <Link 
-              to="/services-pricing"
-              className="px-6 py-3 bg-zion-cyan hover:bg-zion-cyan-dark border border-zion-cyan/20 hover:border-zion-cyan/50 rounded-full text-white transition-all duration-300"
-            >
-              View Pricing
-            </Link>
           </div>
         </div>
         
