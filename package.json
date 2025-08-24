@@ -53,9 +53,9 @@
     "jspdf-autotable": "^3.8.1",
     "lucide-react": "^0.323.0",
     "next-themes": "^0.2.1",
-    "react": "^18.2.0",
+    "react": "^18.3.1",
     "react-day-picker": "^8.10.0",
-    "react-dom": "^18.2.0",
+    "react-dom": "^18.3.1",
     "react-helmet-async": "^2.0.4",
     "react-hook-form": "^7.50.1",
     "react-i18next": "^14.0.1",
@@ -90,13 +90,13 @@
     "rimraf": "^5.0.5",
     "tailwindcss": "^3.4.1",
     "ts-jest": "^29.1.1",
-    "typescript": "^5.2.2",
+    "typescript": "^5.8.3",
     "vite": "^5.0.8",
     "vitest": "^1.4.0"
   },
   "peerDependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "overrides": {
     "@humanwhocodes/object-schema": "@eslint/object-schema@1.0.0",
