@@ -2,15 +2,8 @@
 import React from 'react';
 import { CategoriesSection } from "@/components/CategoriesSection";
 import { BenefitsSection } from "@/components/BenefitsSection";
-import { HowItWorksSection } from "@/components/HowItWorksSection";
-import { NewsletterSection } from "@/components/NewsletterSection";
-import { FeaturedListingsSection } from "@/components/FeaturedListingsSection";
-import { SEO } from "@/components/SEO";
 import { HeroSection } from "@/components/HeroSection";
-import { QuickAccess } from "@/components/home/QuickAccess";
-import { FeatureCTAs } from "@/components/home/FeatureCTAs";
-import { FeatureHighlights } from "@/components/home/FeatureHighlights";
-import { ITServiceRequestHero } from "@/components/home/ITServiceRequestHero";
+import { SEO } from "@/components/SEO";
 import { FloatingActionButton } from "@/components/ui/floating-action-button";
 import { MessageCircle, Phone, Mail, HelpCircle } from "lucide-react";
 
@@ -46,47 +39,33 @@ export default function Home() {
 
       <HeroSection />
       
-      <QuickAccess />
-      
-      <FeatureHighlights />
-      
       <CategoriesSection />
       
-      <FeaturedListingsSection />
-      
       <BenefitsSection />
-      
-      <HowItWorksSection />
-      
-      <ITServiceRequestHero />
-      
-      <FeatureCTAs />
-      
-      <NewsletterSection />
 
       {/* Floating Action Button for Support */}
       <FloatingActionButton
         actions={[
           {
-            icon: MessageCircle,
+            icon: <MessageCircle className="w-5 h-5" />,
             label: "Chat Support",
             onClick: handleChatSupport,
             color: "bg-zion-blue hover:bg-zion-blue-dark"
           },
           {
-            icon: Phone,
+            icon: <Phone className="w-5 h-5" />,
             label: "Call Support",
             onClick: handleCallSupport,
             color: "bg-zion-purple hover:bg-zion-purple-dark"
           },
           {
-            icon: Mail,
+            icon: <Mail className="w-5 h-5" />,
             label: "Email Support",
             onClick: handleEmailSupport,
             color: "bg-zion-cyan hover:bg-zion-cyan-dark"
           },
           {
-            icon: HelpCircle,
+            icon: <HelpCircle className="w-5 h-5" />,
             label: "Help",
             onClick: handleHelp,
             color: "bg-zion-slate hover:bg-zion-slate-dark"

@@ -1,100 +1,20 @@
 import React from 'react';
 import { Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import './App.css';
-import { ThemeProvider } from "./components/ThemeProvider";
-import { useScrollToTop } from "./hooks";
-import { WhitelabelProvider } from "./context/WhitelabelContext";
-import { Toaster } from "./components/ui/toaster";
-import { Toaster as SonnerToaster } from "./components/ui/sonner";
 import { LoadingSpinner } from "./components/ui/loading-spinner";
-import {
-  AuthRoutes,
-  DashboardRoutes,
-  MarketplaceRoutes,
-  TalentRoutes,
-  AdminRoutes,
-  MobileAppRoutes,
-  ContentRoutes,
-  ErrorRoutes,
-  EnterpriseRoutes,
-  CommunityRoutes,
-  DeveloperRoutes
-} from './routes';
+
+// Import only the pages that exist
 const Home = React.lazy(() => import('./pages/Home'));
-const AIMatcherPage = React.lazy(() => import('./pages/AIMatcher'));
-const TalentDirectory = React.lazy(() => import('./pages/TalentDirectory'));
-const TalentsPage = React.lazy(() => import('./pages/TalentsPage'));
-const ServicesPage = React.lazy(() => import('./pages/ServicesPage'));
-const EquipmentPage = React.lazy(() => import('./pages/EquipmentPage'));
-const EquipmentDetail = React.lazy(() => import('./pages/EquipmentDetail'));
-const Analytics = React.lazy(() => import('./pages/Analytics'));
-const MobileLaunchPage = React.lazy(() => import('./pages/MobileLaunchPage'));
-const CommunityPage = React.lazy(() => import('./pages/CommunityPage'));
-const Categories = React.lazy(() => import('./pages/Categories'));
-const Blog = React.lazy(() => import('./pages/Blog'));
-const BlogPost = React.lazy(() => import('./pages/BlogPost'));
-const PartnersPage = React.lazy(() => import('./pages/Partners'));
-const MarketplacePage = React.lazy(() => import('./pages/Marketplace'));
-const Login = React.lazy(() => import('./pages/Login'));
-const Signup = React.lazy(() => import('./pages/Signup'));
-const ITOnsiteServicesPage = React.lazy(() => import('./pages/ITOnsiteServicesPage'));
-const OpenAppRedirect = React.lazy(() => import('./pages/OpenAppRedirect'));
-const ContactPage = React.lazy(() => import('./pages/Contact'));
-const ZionHireAI = React.lazy(() => import('./pages/ZionHireAI'));
-const RequestQuotePage = React.lazy(() => import('./pages/RequestQuote'));
-const ComprehensiveServices = React.lazy(() => import('./pages/ComprehensiveServices'));
+const Contact = React.lazy(() => import('./pages/Contact'));
+const About = React.lazy(() => import('./pages/About'));
+const Sitemap = React.lazy(() => import('./pages/Sitemap'));
 const AIServicesPage = React.lazy(() => import('./pages/AIServicesPage'));
+const ComprehensiveServices = React.lazy(() => import('./pages/ComprehensiveServices'));
 const EnterpriseSolutions = React.lazy(() => import('./pages/EnterpriseSolutions'));
-const MicroSaasServicesPage = React.lazy(() => import('./pages/MicroSaasServices'));
-const AboutPage = React.lazy(() => import('./pages/About'));
-const PrivacyPage = React.lazy(() => import('./pages/Privacy'));
-const TermsPage = React.lazy(() => import('./pages/Terms'));
-const CareersPage = React.lazy(() => import('./pages/Careers'));
-const SitemapPage = React.lazy(() => import('./pages/Sitemap'));
-const GreenITPage = React.lazy(() => import('./pages/GreenIT'));
-const HelpCenterPage = React.lazy(() => import('./pages/HelpCenterPage'));
+const NotFound = React.lazy(() => import('./pages/NotFound'));
 
-const baseRoutes = [
-  { path: '/', element: <Home /> },
-  { path: '/match', element: <AIMatcherPage /> },
-  { path: '/login', element: <Login /> },
-  { path: '/signup', element: <Signup /> },
-  { path: '/talent', element: <TalentDirectory /> },
-  { path: '/talents', element: <TalentsPage /> },
-  { path: '/services', element: <ServicesPage /> },
-  { path: '/comprehensive-services', element: <ComprehensiveServices /> },
-  { path: '/ai-services', element: <AIServicesPage /> },
-  { path: '/enterprise-solutions', element: <EnterpriseSolutions /> },
-  { path: '/micro-saas-services', element: <MicroSaasServicesPage /> },
-  { path: '/it-onsite-services', element: <ITOnsiteServicesPage /> },
-  { path: '/categories', element: <Categories /> },
-  { path: '/equipment', element: <EquipmentPage /> },
-  { path: '/equipment/:id', element: <EquipmentDetail /> },
-  { path: '/analytics', element: <Analytics /> },
-  { path: '/mobile-launch', element: <MobileLaunchPage /> },
-  { path: '/open-app', element: <OpenAppRedirect /> },
-  { path: '/community', element: <CommunityPage /> },
-  { path: '/contact', element: <ContactPage /> },
-  { path: '/partners', element: <PartnersPage /> },
-  { path: '/marketplace', element: <MarketplacePage /> },
-  { path: '/zion-hire-ai', element: <ZionHireAI /> },
-  { path: '/hire-ai', element: <ZionHireAI /> },
-  { path: '/request-quote', element: <RequestQuotePage /> },
-  { path: '/blog', element: <Blog /> },
-  { path: '/blog/:slug', element: <BlogPost /> },
-  { path: '/about', element: <AboutPage /> },
-  { path: '/privacy', element: <PrivacyPage /> },
-  { path: '/terms', element: <TermsPage /> },
-  { path: '/careers', element: <CareersPage /> },
-  { path: '/sitemap', element: <SitemapPage /> },
-  { path: '/green-it', element: <GreenITPage /> },
-  { path: '/help', element: <HelpCenterPage /> },
-  { path: '/help-center', element: <HelpCenterPage /> },
-];
-
-// Enhanced loading component
-const EnhancedLoadingFallback = () => (
+// Simple loading component
+const LoadingFallback = () => (
   <div className="min-h-screen bg-zion-blue-dark flex items-center justify-center">
     <div className="text-center">
       <LoadingSpinner 
@@ -116,33 +36,19 @@ const EnhancedLoadingFallback = () => (
 );
 
 const App = () => {
-  // Ensure each navigation starts at the top of the page
-  useScrollToTop();
   return (
-    <WhitelabelProvider>
-      <ThemeProvider defaultTheme="dark">
-        <Suspense fallback={<EnhancedLoadingFallback />}>
-          <Routes>
-            {baseRoutes.map(({ path, element }) => (
-              <Route key={path} path={path} element={element} />
-            ))}
-            <Route path="/auth/*" element={<AuthRoutes />} />
-            <Route path="/dashboard/*" element={<DashboardRoutes />} />
-            <Route path="/marketplace/*" element={<MarketplaceRoutes />} />
-            <Route path="/talent/*" element={<TalentRoutes />} />
-            <Route path="/admin/*" element={<AdminRoutes />} />
-            <Route path="/mobile/*" element={<MobileAppRoutes />} />
-            <Route path="/content/*" element={<ContentRoutes />} />
-            <Route path="/enterprise/*" element={<EnterpriseRoutes />} />
-            <Route path="/community/*" element={<CommunityRoutes />} />
-            <Route path="/developers/*" element={<DeveloperRoutes />} />
-            <Route path="*" element={<ErrorRoutes />} />
-          </Routes>
-        </Suspense>
-        <Toaster />
-        <SonnerToaster position="top-right" />
-      </ThemeProvider>
-    </WhitelabelProvider>
+    <Suspense fallback={<LoadingFallback />}>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/sitemap" element={<Sitemap />} />
+        <Route path="/ai-services" element={<AIServicesPage />} />
+        <Route path="/comprehensive-services" element={<ComprehensiveServices />} />
+        <Route path="/enterprise-solutions" element={<EnterpriseSolutions />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </Suspense>
   );
 }
 
