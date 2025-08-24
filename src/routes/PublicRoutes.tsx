@@ -1,8 +1,9 @@
-// Routes have been converted to Next.js pages structure
-// This component is no longer needed since Next.js uses file-based routing
-
-const PublicRoutes = () => {
-  return null;
-};
-
-export default PublicRoutes;
+import React from 'react';
+export function PublicRoutes() {
+  return (
+    <div>
+      <h1>Component</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

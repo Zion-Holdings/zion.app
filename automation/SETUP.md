@@ -1,4 +1,36 @@
-# Optimization Automation Setup Guide
+const winston = require('winston');
+
+const logger = winston.createLogger({
+level: 'info',
+format: winston.format.combine(
+winston.format.timestamp(),
+winston.format.errors({ stack: true }),
+winston.format.json()
+),
+defaultMeta: { service: 'automation-script' },
+transports: [
+new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+new winston.transports.File({ filename: 'logs/combined.log' })
+]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+logger.add(new winston.transports.Console({
+format: winston.format.simple()
+}));
+}
+
+class Script {
+constructor() {
+this.isRunning = false;
+}
+
+async start() {
+this.isRunning = true;
+logger.info('Starting Script...');
+
+    try {
+      # Optimization Automation Setup Guide
 
 This guide will help you set up the Slack and Cursor agents optimization automation system from scratch.
 
@@ -51,7 +83,7 @@ SLACK_WEBHOOK_URL=https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXX
 SLACK_SIGNING_SECRET=your-slack-signing-secret
 SLACK_CHANNEL=#optimization-alerts
 
-# Cursor Agent Configuration  
+# Cursor Agent Configuration
 CURSOR_API_KEY=your-cursor-api-key
 CURSOR_PROJECT_ID=your-project-id
 
@@ -69,33 +101,39 @@ ENABLE_PERFORMANCE_MONITORING=true
 ### 3. Slack App Setup
 
 #### Create Slack App
+
 1. Go to [api.slack.com](https://api.slack.com/apps)
 2. Click **"Create New App"** → **"From scratch"**
 3. Choose app name and workspace
 
 #### Configure Bot Token Scopes
+
 In **OAuth & Permissions**, add these scopes:
+
 - `chat:write`
-- `commands` 
+- `commands`
 - `incoming-webhook`
 - `channels:read`
 - `users:read`
 
 #### Create Slash Commands
+
 In **Slash Commands**, create:
 
-| Command | Request URL | Description |
-|---------|-------------|-------------|
-| `/optimize` | `https://your-domain.com/api/slack/commands` | Trigger optimization |
-| `/status` | `https://your-domain.com/api/slack/commands` | Check performance status |
-| `/report` | `https://your-domain.com/api/slack/commands` | Generate performance report |
+| Command        | Request URL                                  | Description                  |
+| -------------- | -------------------------------------------- | ---------------------------- |
+| `/optimize`    | `https://your-domain.com/api/slack/commands` | Trigger optimization         |
+| `/status`      | `https://your-domain.com/api/slack/commands` | Check performance status     |
+| `/report`      | `https://your-domain.com/api/slack/commands` | Generate performance report  |
 | `/suggestions` | `https://your-domain.com/api/slack/commands` | Get optimization suggestions |
 
 #### Install App to Workspace
+
 1. In **Install App**, click **"Install to Workspace"**
 2. Copy the **Bot User OAuth Token** to your `.env` file
 
 #### Create Incoming Webhook
+
 1. In **Incoming Webhooks**, toggle **"Activate Incoming Webhooks"**
 2. Click **"Add New Webhook to Workspace"**
 3. Select your target channel
@@ -104,14 +142,18 @@ In **Slash Commands**, create:
 ### 4. Cursor Agent Configuration
 
 #### Install Cursor Rules
+
 The automation system includes specialized Cursor rules:
+
 - `.cursor/rules/optimization/performance-optimization-agent.mdc`
 - `.cursor/rules/automation/slack-cursor-integration-agent.mdc`
 
 These are automatically created during setup.
 
 #### Configure Cursor API (Optional)
+
 If you have Cursor API access:
+
 1. Get your API key from Cursor dashboard
 2. Add it to your `.env` file as `CURSOR_API_KEY`
 
@@ -142,6 +184,7 @@ npm run automation:diagnose
 ```
 
 This will check:
+
 - ✅ Environment variables
 - ✅ Dependencies
 - ✅ Required files
@@ -173,6 +216,7 @@ npm run automation:start
 ### 4. Verify Slack Integration
 
 In your Slack workspace, try these commands:
+
 - `/status` - Check if bot responds
 - `/optimize bundle` - Test optimization trigger
 - `/suggestions` - Get optimization suggestions
@@ -181,18 +225,19 @@ In your Slack workspace, try these commands:
 
 Once running, access these URLs:
 
-| URL | Description |
-|-----|-------------|
-| `http://localhost:3001/health` | System health check |
-| `http://localhost:3001/dashboard` | Performance dashboard |
-| `http://localhost:3001/slack-status` | Slack integration status |
-| `http://localhost:3001/api/performance/metrics` | Performance metrics API |
+| URL                                             | Description              |
+| ----------------------------------------------- | ------------------------ |
+| `http://localhost:3001/health`                  | System health check      |
+| `http://localhost:3001/dashboard`               | Performance dashboard    |
+| `http://localhost:3001/slack-status`            | Slack integration status |
+| `http://localhost:3001/api/performance/metrics` | Performance metrics API  |
 
 ## 🛠️ Troubleshooting
 
 ### Common Issues
 
 #### 1. Slack Bot Not Responding
+
 ```bash
 # Check if bot token is valid
 curl -X POST -H "Authorization: Bearer $SLACK_BOT_TOKEN" \
@@ -201,28 +246,34 @@ curl -X POST -H "Authorization: Bearer $SLACK_BOT_TOKEN" \
 ```
 
 **Solutions:**
+
 - Verify `SLACK_BOT_TOKEN` in `.env`
 - Check bot scopes in Slack app settings
 - Ensure bot is invited to target channel
 
 #### 2. Performance Monitoring Not Working
+
 ```bash
 # Check if monitoring is enabled
 npm run automation:test-monitoring
 ```
 
 **Solutions:**
+
 - Verify `ENABLE_PERFORMANCE_MONITORING=true`
 - Check if build directory exists (`.next`)
 - Ensure proper file permissions
 
 #### 3. Cursor Agent Not Triggering
+
 **Solutions:**
+
 - Verify Cursor rules are in correct location
 - Check rule file syntax (YAML frontmatter)
 - Ensure agent is configured for target file types
 
 #### 4. Port Already in Use
+
 ```bash
 # Find process using port 3001
 lsof -i :3001
@@ -325,3 +376,38 @@ If you encounter issues:
 2. Check the troubleshooting section above
 3. Review logs: `npm run automation:logs`
 4. Open an issue with diagnostic results and error logs
+   } catch (error) {
+   logger.error('Error in Script:', error);
+   throw error;
+   }
+   }
+
+stop() {
+this.isRunning = false;
+logger.info('Stopping Script...');
+}
+}
+
+// Start the script
+if (require.main === module) {
+const script = new Script();
+script.start().catch(error => {
+logger.error('Failed to start Script:', error);
+process.exit(1);
+});
+}
+
+module.exports = Script;
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+// Add cleanup logic here
+process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+// Add cleanup logic here
+process.exit(0);
+});

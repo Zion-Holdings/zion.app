@@ -1,13 +1,15 @@
-#!/usr/bin/env node
-
 const fs = require('fs');
 const path = require('path');
-const { execSync } = require('child_process');
+const { execSync: _execSync } = require('child_process');
 
 // Performance monitoring and optimization script
 class PerformanceMonitor {
   constructor() {
-    this.metricsFile = path.join(process.cwd(), '.next', 'performance-metrics.json');
+    this.metricsFile = path.join(
+      process.cwd(),
+      '.next',
+      'performance-metrics.json',
+    );
     this.colors = {
       reset: '\x1b[0m',
       bright: '\x1b[1m',
@@ -16,7 +18,7 @@ class PerformanceMonitor {
       yellow: '\x1b[33m',
       blue: '\x1b[34m',
       magenta: '\x1b[35m',
-      cyan: '\x1b[36m'
+      cyan: '\x1b[36m',
     };
   }
 
@@ -38,23 +40,20 @@ class PerformanceMonitor {
   }
 
   async runHealthCheck() {
-    console.log(this.colorize('\n🏥 Development Server Health Check', 'bright'));
-    console.log(this.colorize('===================================\n', 'cyan'));
-
     const checks = [
       { name: 'Node.js Version', check: () => this.checkNodeVersion() },
       { name: 'Dependencies', check: () => this.checkDependencies() },
       { name: 'Environment Config', check: () => this.checkEnvironment() },
       { name: 'Build Files', check: () => this.checkBuildFiles() },
-      { name: 'Server Response', check: () => this.checkServerResponse() }
+      { name: 'Server Response', check: () => this.checkServerResponse() },
     ];
 
-    for (const { name, check } of checks) {
+    for (const { name: _name, check } of checks) {
       try {
-        const result = await check();
-        console.log(`${this.colorize('✅', 'green')} ${name}: ${this.colorize(result, 'green')}`);
-      } catch (error) {
-        console.log(`${this.colorize('❌', 'red')} ${name}: ${this.colorize(error.message, 'red')}`);
+        const _result = await check();
+        // console.warn(`${this.colorize('✅', 'green')} ${_name}: ${this.colorize(_result, 'green')}`);
+      } catch (_error) {
+        // console.warn(`${this.colorize('❌', 'red')} ${_name}: ${this.colorize(_error.message, 'red')}`);
       }
     }
   }
@@ -90,40 +89,38 @@ class PerformanceMonitor {
     if (!buildDir) {
       return 'No build files (run npm run build)';
     }
-    
+
     const buildManifest = path.join('.next', 'build-manifest.json');
     if (fs.existsSync(buildManifest)) {
       const manifest = JSON.parse(fs.readFileSync(buildManifest, 'utf8'));
       const pageCount = Object.keys(manifest.pages || {}).length;
       return `Built successfully (${pageCount} pages)`;
     }
-    
+
     return 'Build directory exists';
   }
 
   async checkServerResponse() {
     try {
       // Check if development server is running
-      const response = await fetch('http://localhost:3000/api/health')
-        .catch(() => null);
-      
+      const response = await fetch('http://localhost:3000/api/health').catch(
+        () => null,
+      );
+
       if (response && response.ok) {
         return `Server responding (${response.status})`;
       } else {
         return 'Server not running (start with npm run dev)';
       }
-    } catch (error) {
+    } catch (_error) {
       return 'Server not running (start with npm run dev)';
     }
   }
 
   analyzeBundle() {
-    console.log(this.colorize('\n📦 Bundle Analysis', 'bright'));
-    console.log(this.colorize('==================\n', 'cyan'));
-
     const buildDir = path.join(process.cwd(), '.next');
     if (!fs.existsSync(buildDir)) {
-      console.log(this.colorize('⚠️  No build found. Run npm run build first.', 'yellow'));
+      // console.warn(this.colorize('⚠️  No build found. Run npm run build first.', 'yellow'));
       return;
     }
 
@@ -131,15 +128,15 @@ class PerformanceMonitor {
     const staticDir = path.join(buildDir, 'static', 'chunks');
     if (fs.existsSync(staticDir)) {
       const chunks = this.getChunkInfo(staticDir);
-      
-      console.log(this.colorize(`📊 Total Chunks: ${chunks.length}`, 'blue'));
-      console.log(this.colorize(`📏 Total Size: ${this.formatBytes(chunks.reduce((sum, chunk) => sum + chunk.size, 0))}`, 'blue'));
-      
+
+      // console.warn(this.colorize(`📊 Total Chunks: ${chunks.length}`, 'blue'));
+      // console.warn(this.colorize(`📏 Total Size: ${this.formatBytes(chunks.reduce((sum, chunk) => sum + chunk.size, 0))}`, 'blue'));
+
       // Show largest chunks
       const largest = chunks.sort((a, b) => b.size - a.size).slice(0, 5);
-      console.log(this.colorize('\n🔥 Largest Chunks:', 'yellow'));
-      largest.forEach((chunk, i) => {
-        console.log(`${i + 1}. ${chunk.name} - ${this.formatBytes(chunk.size)}`);
+      // console.warn(this.colorize('\n🔥 Largest Chunks:', 'yellow'));
+      largest.forEach((_chunk, _i) => {
+        // console.warn(`${_i + 1}. ${_chunk.name} - ${this.formatBytes(_chunk.size)}`);
       });
 
       // Categorize chunks
@@ -150,71 +147,71 @@ class PerformanceMonitor {
   getChunkInfo(dir) {
     const chunks = [];
     const files = fs.readdirSync(dir);
-    
+
     for (const file of files) {
       const filePath = path.join(dir, file);
       const stat = fs.statSync(filePath);
-      
+
       if (stat.isFile() && file.endsWith('.js')) {
         chunks.push({
           name: file,
           size: stat.size,
-          path: filePath
+          path: filePath,
         });
       }
     }
-    
+
     return chunks;
   }
 
   categorizeChunks(chunks) {
     const categories = {
-      'Framework': [],
+      Framework: [],
       'UI Libraries': [],
-      'Vendors': [],
-      'Pages': [],
-      'Common': [],
-      'Other': []
+      Vendors: [],
+      Pages: [],
+      Common: [],
+      Other: [],
     };
 
-    chunks.forEach(chunk => {
-      const name = chunk.name.toLowerCase();
-      if (name.includes('framework')) {
-        categories['Framework'].push(chunk);
-      } else if (name.includes('ui-libs')) {
-        categories['UI Libraries'].push(chunk);
-      } else if (name.includes('vendors')) {
-        categories['Vendors'].push(chunk);
-      } else if (name.includes('pages')) {
-        categories['Pages'].push(chunk);
-      } else if (name.includes('common')) {
-        categories['Common'].push(chunk);
+    chunks.forEach((_chunk, _i) => {
+      const _name = _chunk.name.toLowerCase();
+      if (_name.includes('framework')) {
+        categories['Framework'].push(_chunk);
+      } else if (_name.includes('ui-libs')) {
+        categories['UI Libraries'].push(_chunk);
+      } else if (_name.includes('vendors')) {
+        categories['Vendors'].push(_chunk);
+      } else if (_name.includes('pages')) {
+        categories['Pages'].push(_chunk);
+      } else if (_name.includes('common')) {
+        categories['Common'].push(_chunk);
       } else {
-        categories['Other'].push(chunk);
+        categories['Other'].push(_chunk);
       }
     });
 
-    console.log(this.colorize('\n📂 Chunk Categories:', 'magenta'));
-    Object.entries(categories).forEach(([category, categoryChunks]) => {
+    // console.warn(this.colorize('\n📂 Chunk Categories:', 'magenta'));
+    Object.entries(categories).forEach(([_category, categoryChunks]) => {
       if (categoryChunks.length > 0) {
-        const totalSize = categoryChunks.reduce((sum, chunk) => sum + chunk.size, 0);
-        console.log(`${category}: ${categoryChunks.length} chunks (${this.formatBytes(totalSize)})`);
+        const _totalSize = categoryChunks.reduce(
+          (sum, _chunk) => sum + _chunk.size,
+          0,
+        );
+        // console.warn(`${_category}: ${categoryChunks.length} chunks (${this.formatBytes(_totalSize)})`);
       }
     });
   }
 
   generateOptimizationReport() {
-    console.log(this.colorize('\n⚡ Optimization Recommendations', 'bright'));
-    console.log(this.colorize('=================================\n', 'cyan'));
-
     const recommendations = [
       {
         category: '🎯 Critical',
         items: [
           'Implement dynamic imports for large components',
           'Use React.lazy() for non-critical components',
-          'Enable compression (gzip/brotli) in production'
-        ]
+          'Enable compression (gzip/brotli) in production',
+        ],
       },
       {
         category: '📈 Performance',
@@ -222,8 +219,8 @@ class PerformanceMonitor {
           'Add bundle analyzer to webpack config',
           'Implement tree shaking for unused code',
           'Optimize images with next/image',
-          'Use service workers for caching'
-        ]
+          'Use service workers for caching',
+        ],
       },
       {
         category: '🔧 Development',
@@ -231,17 +228,17 @@ class PerformanceMonitor {
           'Set up performance monitoring',
           'Implement error boundaries',
           'Add Lighthouse CI for performance tracking',
-          'Use React DevTools Profiler'
-        ]
-      }
+          'Use React DevTools Profiler',
+        ],
+      },
     ];
 
     recommendations.forEach(({ category, items }) => {
-      console.log(this.colorize(category, 'yellow'));
-      items.forEach(item => {
-        console.log(`  • ${item}`);
+      // console.warn(this.colorize(category, 'yellow'));
+      items.forEach((item) => {
+        // console.warn(`  • ${item}`);
       });
-      console.log('');
+      // console.warn('');
     });
   }
 
@@ -249,7 +246,7 @@ class PerformanceMonitor {
     const timestamp = new Date().toISOString();
     const data = {
       timestamp,
-      ...metrics
+      ...metrics,
     };
 
     // Load existing metrics
@@ -257,8 +254,8 @@ class PerformanceMonitor {
     if (fs.existsSync(this.metricsFile)) {
       try {
         history = JSON.parse(fs.readFileSync(this.metricsFile, 'utf8'));
-      } catch (error) {
-        console.log(this.colorize('⚠️  Could not read existing metrics', 'yellow'));
+      } catch (_error) {
+        // console.warn(this.colorize('⚠️  Could not read existing metrics', 'yellow'));
       }
     }
 
@@ -268,31 +265,30 @@ class PerformanceMonitor {
 
     // Save to file
     fs.writeFileSync(this.metricsFile, JSON.stringify(history, null, 2));
-    console.log(this.colorize('\n💾 Metrics saved to .next/performance-metrics.json', 'green'));
+    // console.warn(this.colorize('\n💾 Metrics saved to .next/performance-metrics.json', 'green'));
   }
 
   async run() {
     const startTime = Date.now();
-    
-    console.log(this.colorize('🚀 Performance Monitor', 'bright'));
-    console.log(this.colorize('====================', 'cyan'));
-    
+
+    // console.warn(this.colorize('🚀 Performance Monitor', 'bright'));
+    // console.warn(this.colorize('====================', 'cyan'));
+
     await this.runHealthCheck();
     this.analyzeBundle();
     this.generateOptimizationReport();
-    
     const duration = Date.now() - startTime;
-    console.log(this.colorize(`\n⏱️  Analysis completed in ${this.formatTime(duration)}`, 'green'));
-    
+    // console.warn(this.colorize(`\n⏱️  Analysis completed in ${this.formatTime(duration)}`, 'green'));
+
     // Save basic metrics
     this.saveMetrics({
       analysisTime: duration,
       buildExists: fs.existsSync('.next'),
-      nodeVersion: process.version
+      nodeVersion: process.version,
     });
   }
 }
 
 // Run the monitor
 const monitor = new PerformanceMonitor();
-monitor.run().catch(console.error); 
+monitor.run().catch(console.error);

@@ -13,60 +13,70 @@ import './src/utils/server-polyfill';
 
 // Conditionally import Sentry to avoid Node.js dependencies in browser
 let Sentry: any = null;
-
-// Conditional re-export to avoid build errors
 let onRequestError: any = null;
 
-if (typeof window === 'undefined') {
-  try {
-    // Smart Sentry detection: Use same logic as next.config.js
-    const shouldDisableSentry = process.env.SKIP_SENTRY_BUILD === 'true' || 
-                               process.env.CI === 'true' ||
-                               process.env.NODE_ENV === 'production' ||
-                               !process.env.SENTRY_DSN ||
-                               process.env.SENTRY_DSN?.includes('dummy') ||
-                               process.env.SENTRY_DSN?.includes('placeholder');
-    
-    if (shouldDisableSentry) {
-      // Use mock during production builds or when DSN not configured
-      const mockSentry = await import('./src/utils/sentry-mock');
-      Sentry = mockSentry.default;
-      onRequestError = mockSentry.onRequestError;
-      console.log('Using Sentry mock (Smart Detection)');
-    } else {
-      // Dynamic imports to replace require() calls
-      const sentryModule = await import("@sentry/nextjs");
-      Sentry = sentryModule;
-      const sentryConfig = await import('./sentry');
-      onRequestError = sentryConfig.onRequestError;
-    }
-  } catch (error) {
-    console.warn('Sentry import failed, using mock:', error);
-    // Fallback to mock if import fails
+async function initializeSentryOrMock() {
+  if (process.env['NEXT_RUNTIME'] === 'edge') {
+    console.log('instrumentation.ts: Edge runtime detected. Forcing Sentry mock.');
+    const mockSentry = await import('./src/utils/sentry-mock'); // Ensure this path is correct
+    Sentry = mockSentry.default;
+    onRequestError = mockSentry.onRequestError; // Ensure mock provides this if used
+  } else if (typeof window === 'undefined') { // Node.js server environment
+    console.log('instrumentation.ts: Node.js runtime detected.');
     try {
+      const shouldDisableSentry =
+        process.env['SKIP_SENTRY_BUILD'] === 'true' ||
+        process.env['CI'] === 'true' ||
+        !process.env['SENTRY_DSN'] ||
+        process.env['SENTRY_DSN']?.includes('dummy') ||
+        process.env['SENTRY_DSN']?.includes('placeholder');
+
+      if (shouldDisableSentry) {
+        console.log('instrumentation.ts: Sentry DSN invalid or disabled by env var, using Sentry mock for Node.js.');
+        const mockSentry = await import('./src/utils/sentry-mock');
+        Sentry = mockSentry.default;
+        onRequestError = mockSentry.onRequestError;
+      } else {
+        console.log('instrumentation.ts: Valid Sentry DSN found, attempting to load actual @sentry/nextjs for Node.js.');
+        const sentryModule = await import("@sentry/nextjs");
+        Sentry = sentryModule;
+        // If ./sentry has specific onRequestError, it should be imported here too.
+        // For now, assuming @sentry/nextjs covers it or it's not critical for this path.
+        console.log('instrumentation.ts: Actual Sentry SDK loaded for Node.js.');
+      }
+    } catch (error) {
+      console.warn('instrumentation.ts: Sentry SDK import/init failed for Node.js, falling back to mock:', error);
       const mockSentry = await import('./src/utils/sentry-mock');
       Sentry = mockSentry.default;
       onRequestError = mockSentry.onRequestError;
-    } catch (mockError) {
-      console.error('Mock Sentry also failed:', mockError);
     }
+  } else {
+    // Client-side environment, Sentry is typically handled by _app.tsx or similar client-specific setup.
+    // The instrumentation hook (register function) primarily runs server-side (Node or Edge).
+    console.log('instrumentation.ts: Client-side context detected, Sentry init deferred to client-specific logic.');
   }
 }
 
-export { onRequestError };
+// Call initializeSentryOrMock at module load time.
+// The register function will then use the initialized Sentry object.
+// We need to handle the promise here or make register async and await this.
+const sentryInitializationPromise = initializeSentryOrMock();
+
+export { onRequestError }; // This might be null if not set by mock/actual
 
 export async function register() {
+  await sentryInitializationPromise; // Ensure initialization is complete
+
   console.log("instrumentation.ts: register() called");
 
-  // Skip if Sentry not available (e.g., client-side)
-  if (!Sentry) {
-    console.log("instrumentation.ts: Sentry not available, skipping initialization");
+  if (!Sentry || typeof Sentry.init !== 'function') {
+    console.log("instrumentation.ts: Sentry SDK not available or not correctly initialized, skipping Sentry.init().");
     return;
   }
 
-  const SENTRY_DSN = process.env.SENTRY_DSN || process.env.NEXT_PUBLIC_SENTRY_DSN;
-  const SENTRY_RELEASE = process.env.SENTRY_RELEASE || process.env.NEXT_PUBLIC_SENTRY_RELEASE;
-  const SENTRY_ENVIRONMENT = process.env.SENTRY_ENVIRONMENT || process.env.NEXT_PUBLIC_SENTRY_ENVIRONMENT;
+  const SENTRY_DSN = process.env['SENTRY_DSN'] || process.env['NEXT_PUBLIC_SENTRY_DSN'];
+  const SENTRY_RELEASE = process.env['SENTRY_RELEASE'] || process.env['NEXT_PUBLIC_SENTRY_RELEASE'];
+  const SENTRY_ENVIRONMENT = process.env['SENTRY_ENVIRONMENT'] || process.env['NEXT_PUBLIC_SENTRY_ENVIRONMENT'];
 
   // Enhanced validation for development placeholders and dummy values
   const isInvalidDsn = !SENTRY_DSN || 
@@ -141,4 +151,5 @@ export async function register() {
   } catch (error) {
     console.error("instrumentation.ts: Failed to initialize Sentry:", error);
   }
+>>>>>>> origin/codex/reactivate-features-gradually
 }

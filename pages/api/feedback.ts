@@ -1,68 +1,78 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import mongoose from 'mongoose';
-import { z } from 'zod';
-import type { Document, Model } from 'mongoose';
-import { withErrorLogging } from '@/utils/withErrorLogging';
-import {logErrorToProduction} from '@/utils/productionLogger';
-import { sendFeedbackEmail } from '@/lib/email';
+import fs from 'fs';
+import path from 'path';
+import { v4 as uuidv4 } from 'uuid';
 
-const mongoUri = process.env.MONGO_URI || 'mongodb://localhost:27017/zion';
+export type RoadmapStatus = 'planned' | 'in_progress' | 'shipped';
+export type RoadmapItem = {
+  id: string;
+  title: string;
+  description: string;
+  status: RoadmapStatus;
+  votes: number;
+  createdAt: string;
+  source?: string;
+};
 
-const feedbackSchema = new mongoose.Schema({
-  rating: { type: Number, required: true, min: 1, max: 5 },
-  comment: String,
-  url: String,
-  userAgent: String,
-  createdAt: { type: Date, default: Date.now },
-});
+const DATA_PATH = path.join(process.cwd(), 'data', 'feedback.json');
 
-interface FeedbackDoc extends Document {
-  rating: number;
-  comment?: string;
-  url?: string;
-  userAgent?: string;
-  createdAt: Date;
-}
-
-const Feedback: Model<FeedbackDoc> =
-  mongoose.models.Feedback ||
-  mongoose.model<FeedbackDoc>('Feedback', feedbackSchema);
-
-async function connect() {
-  if (mongoose.connection.readyState === 0) {
-    await mongoose.connect(mongoUri);
-  }
-}
-
-const FeedbackValidator = z.object({
-  rating: z.number().min(1).max(5),
-  comment: z.string().optional(),
-  url: z.string(),
-  userAgent: z.string(),
-});
-
-async function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method !== 'POST') {
-    res.setHeader('Allow', 'POST');
-    return res.status(405).end(`Method ${req.method} Not Allowed`);
-  }
-
-  const parsed = FeedbackValidator.safeParse(req.body);
-  if (!parsed.success) {
-    return res.status(400).json({
-      error: parsed.error?.errors[0]?.message || 'Invalid feedback data',
-    });
-  }
-
+function readItems(): RoadmapItem[] {
   try {
-    await connect();
-    await Feedback.create(parsed.data);
-    await sendFeedbackEmail(parsed.data).catch(() => undefined);
-    return res.status(201).json({ success: true });
-  } catch (err) {
-    logErrorToProduction('Error saving feedback:', { data: err });
-    return res.status(500).json({ error: 'Failed to save feedback' });
+    const raw = fs.readFileSync(DATA_PATH, 'utf8');
+    return JSON.parse(raw || '[]');
+  } catch {
+    return [];
   }
 }
 
-export default withErrorLogging(handler);
+function writeItems(items: RoadmapItem[]) {
+  fs.writeFileSync(DATA_PATH, JSON.stringify(items, null, 2), 'utf8');
+}
+
+export default function handler(req: NextApiRequest, res: NextApiResponse) {
+  if (req.method === 'GET') {
+    const items = readItems();
+    return res.status(200).json({ items });
+  }
+
+  if (req.method === 'POST') {
+    const { title, description } = req.body || {};
+    if (!title || !description) return res.status(400).json({ error: 'Missing title or description' });
+    const items = readItems();
+    const item: RoadmapItem = {
+      id: uuidv4(),
+      title: String(title).slice(0, 200),
+      description: String(description).slice(0, 2000),
+      status: 'planned',
+      votes: 0,
+      createdAt: new Date().toISOString(),
+    };
+    items.push(item);
+    writeItems(items);
+    return res.status(201).json({ item });
+  }
+
+  if (req.method === 'PATCH') {
+    const { id, action, status } = req.body || {};
+    if (!id) return res.status(400).json({ error: 'Missing id' });
+    const items = readItems();
+    const idx = items.findIndex((i) => i.id === id);
+    if (idx === -1) return res.status(404).json({ error: 'Not found' });
+
+    if (action === 'upvote') {
+      items[idx].votes = (items[idx].votes || 0) + 1;
+    } else if (action === 'set_status') {
+      if (!['planned', 'in_progress', 'shipped'].includes(status)) {
+        return res.status(400).json({ error: 'Invalid status' });
+      }
+      items[idx].status = status as RoadmapStatus;
+    } else {
+      return res.status(400).json({ error: 'Invalid action' });
+    }
+
+    writeItems(items);
+    return res.status(200).json({ item: items[idx] });
+  }
+
+  return res.status(405).json({ error: 'Method not allowed' });
+}

@@ -15,21 +15,26 @@ Based on the analysis of the Zion Academy codebase, this guide provides actionab
 ## 🚀 Priority 1: Immediate Optimizations (Day 1)
 
 ### 1.1 Icon Library Optimization
+
 **Current Issue**: 113+ files importing from `lucide-react` potentially loading entire library
 **Impact**: 2-5 MB bundle reduction
 
 **Implementation**:
+
 ```bash
 # Update imports in affected files to use the optimized icons file
 # Replace direct lucide-react imports with imports from src/components/ui/icons.ts
 ```
 
 **Files to Update**:
+
 - All components currently importing from `lucide-react` directly
 - Use the centralized icon barrel export created at `src/components/ui/icons.ts`
 
 ### 1.2 Bundle Analyzer Setup
+
 **Implementation**:
+
 ```bash
 # Enable bundle analysis
 npm run build:analyze
@@ -39,7 +44,9 @@ npm run bundle:analyze
 ```
 
 ### 1.3 Console Statement Removal
+
 **Current Implementation**: Already configured in `next.config.js`
+
 ```javascript
 compiler: {
   removeConsole: process.env.NODE_ENV === 'production' ? {
@@ -53,6 +60,7 @@ compiler: {
 ### 2.1 Implement Dynamic Imports for Heavy Components
 
 **Target Components for Dynamic Loading**:
+
 - Chart components (recharts dependency)
 - Form components (react-hook-form + validation)
 - Video components (react-player)
@@ -61,6 +69,7 @@ compiler: {
 - Crypto/Web3 components (ethers.js)
 
 **Implementation Pattern**:
+
 ```javascript
 // Replace static imports with dynamic imports
 const DynamicChart = dynamic(() => import('./Chart'), {
@@ -70,7 +79,9 @@ const DynamicChart = dynamic(() => import('./Chart'), {
 ```
 
 ### 2.2 Route-Level Code Splitting
+
 **Target Routes**:
+
 - `/admin/*` - Administrative functions
 - `/dashboard/*` - Analytics and reporting
 - `/settings/*` - User preferences
@@ -79,12 +90,15 @@ const DynamicChart = dynamic(() => import('./Chart'), {
 ## 🎯 Priority 3: Asset Optimization (Week 1)
 
 ### 3.1 Image Optimization
+
 **Current Configuration**: Already optimized in `next.config.js`
+
 - WebP and AVIF format support
 - Responsive image sizes
 - Lazy loading enabled
 
 **Additional Implementation**:
+
 ```javascript
 // Ensure all images use Next.js Image component
 import Image from 'next/image';
@@ -97,11 +111,13 @@ import Image from 'next/image';
   priority={isAboveTheFold}
   placeholder="blur"
   blurDataURL="data:image/jpeg;base64,..."
-/>
+/>;
 ```
 
 ### 3.2 Font Optimization
+
 **Implementation**:
+
 ```css
 /* Add to global CSS */
 @font-face {
@@ -114,6 +130,7 @@ import Image from 'next/image';
 ```
 
 **Preload Critical Fonts**:
+
 ```html
 <!-- Add to _document.js or layout -->
 <link
@@ -121,14 +138,16 @@ import Image from 'next/image';
   href="/fonts/inter-var.woff2"
   as="font"
   type="font/woff2"
-  crossOrigin="anonymous"
+  crossorigin="anonymous"
 />
 ```
 
 ## 🎯 Priority 4: Advanced Optimizations (Week 2)
 
 ### 4.1 Service Worker Implementation
+
 **Create** `public/sw.js`:
+
 ```javascript
 const CACHE_NAME = 'zion-academy-v1';
 const urlsToCache = [
@@ -138,23 +157,25 @@ const urlsToCache = [
   '/fonts/inter-var.woff2',
 ];
 
-self.addEventListener('install', event => {
+self.addEventListener('install', (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(cache => cache.addAll(urlsToCache))
+    caches.open(CACHE_NAME).then((cache) => cache.addAll(urlsToCache)),
   );
 });
 
-self.addEventListener('fetch', event => {
+self.addEventListener('fetch', (event) => {
   event.respondWith(
-    caches.match(event.request)
-      .then(response => response || fetch(event.request))
+    caches
+      .match(event.request)
+      .then((response) => response || fetch(event.request)),
   );
 });
 ```
 
 ### 4.2 Resource Hints Optimization
-**Add to _document.js**:
+
+**Add to \_document.js**:
+
 ```javascript
 // DNS prefetch for external domains
 <link rel="dns-prefetch" href="//fonts.googleapis.com" />
@@ -166,13 +187,15 @@ self.addEventListener('fetch', event => {
 ```
 
 ### 4.3 Component Memoization
+
 **High-Impact Components to Memoize**:
+
 ```javascript
 // Product cards, user profiles, and data tables
 export const ProductCard = React.memo(({ product, onUpdate }) => {
   const memoizedStats = useMemo(() => calculateStats(product), [product.id]);
   const handleUpdate = useCallback((id) => onUpdate(id), [onUpdate]);
-  
+
   return <Card>...</Card>;
 });
 ```
@@ -180,7 +203,9 @@ export const ProductCard = React.memo(({ product, onUpdate }) => {
 ## 🎯 Priority 5: Performance Monitoring (Week 2)
 
 ### 5.1 Core Web Vitals Monitoring
+
 **Implementation**:
+
 ```javascript
 // Add to _app.js or layout
 import { getCLS, getFID, getFCP, getLCP, getTTFB } from 'web-vitals';
@@ -198,7 +223,9 @@ getTTFB(sendToAnalytics);
 ```
 
 ### 5.2 Performance Budget Setup
+
 **Add to next.config.js**:
+
 ```javascript
 performance: {
   hints: 'warning',
@@ -210,6 +237,7 @@ performance: {
 ## 📊 Monitoring & Validation
 
 ### Performance Metrics to Track
+
 - **First Contentful Paint (FCP)**: Target < 1.8s
 - **Largest Contentful Paint (LCP)**: Target < 2.5s
 - **First Input Delay (FID)**: Target < 100ms
@@ -217,6 +245,7 @@ performance: {
 - **Time to Interactive (TTI)**: Target < 3.8s
 
 ### Tools for Monitoring
+
 1. **Lighthouse CI** - Automated performance testing
 2. **Bundle Analyzer** - Bundle size monitoring
 3. **Web Vitals** - Real user monitoring
@@ -225,6 +254,7 @@ performance: {
 ## 🔧 Build Process Optimizations
 
 ### Enhanced Build Commands
+
 ```json
 {
   "scripts": {
@@ -236,6 +266,7 @@ performance: {
 ```
 
 ### CI/CD Performance Checks
+
 ```yaml
 # Add to GitHub Actions or similar
 - name: Performance Audit
@@ -248,16 +279,19 @@ performance: {
 ## 🎯 Expected Timeline & ROI
 
 ### Phase 1 (Week 1): Foundation
+
 - **Effort**: 8-12 hours
 - **Expected Improvement**: 30-40% faster loading
 - **Bundle Reduction**: 15-20 MB
 
 ### Phase 2 (Week 2): Advanced
-- **Effort**: 12-16 hours  
+
+- **Effort**: 12-16 hours
 - **Expected Improvement**: 50-70% faster loading
 - **Bundle Reduction**: 25-35 MB
 
 ### Phase 3 (Ongoing): Monitoring
+
 - **Effort**: 2-4 hours/week
 - **Benefit**: Prevent performance regression
 - **Continuous optimization**
@@ -273,11 +307,13 @@ performance: {
 ## 📈 Business Impact
 
 ### User Experience
+
 - **Faster Page Loads**: Improved user satisfaction
 - **Better SEO**: Core Web Vitals affect search rankings
 - **Higher Conversion**: 1 second improvement = 7% conversion increase
 
 ### Technical Benefits
+
 - **Reduced Server Load**: Better caching and optimization
 - **Lower Bandwidth Costs**: Smaller asset sizes
 - **Improved Developer Experience**: Better build times

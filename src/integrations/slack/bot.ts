@@ -1,7 +1,7 @@
 
 // Mock implementation of Slack bot that doesn't require external dependencies
 // This replaces the original implementation which had dependency issues
-import { switchNetlifySite } from 'scripts/switch-netlify-site.js';
+import { switchNetlifySite } from '../../../scripts/switch-netlify-site.js';
 
 interface SlackCommand {
   text: string;
@@ -31,11 +31,11 @@ declare const globalThis: {
   };
 };
 
-// Mock App class that mimics the Slack Bolt SDK behavior
+type CommandHandler = (args: { command?: SlackCommand; ack: SlackAck; respond: SlackRespond }) => Promise<void>;
 class MockApp {
-  private commandHandlers: Record<string, Function> = {};
+  private commandHandlers: Record<string, CommandHandler> = {};
 
-  command(commandName: string, handler: Function) {
+  command(commandName: string, handler: CommandHandler) {
     this.commandHandlers[commandName] = handler;
     return this;
   }
@@ -62,9 +62,9 @@ async function askZionGPT(prompt: string): Promise<string> {
   return `AI response to: ${prompt}`;
 }
 
-app.command('/zion', async ({ command, ack, respond }: { command: SlackCommand, ack: SlackAck, respond: SlackRespond }) => {
+app.command('/zion', async ({ command, ack, respond }: { command?: SlackCommand, ack: SlackAck, respond: SlackRespond }) => {
   await ack();
-  const [action, ...args] = command.text.split(/\s+/);
+  const [action, ...args] = command?.text.split(/\s+/) || [];
 
   switch (action) {
     case 'post-job':
@@ -98,8 +98,9 @@ app.command('/zion-rollback', async ({ ack, respond }: { ack: SlackAck, respond:
   try {
     await switchNetlifySite();
     await respond('Rollback complete. DNS switched to the previous site.');
-  } catch (err: any) {
-    await respond(`Rollback failed: ${err.message}`);
+  } catch (err: unknown) {
+    const message = err instanceof Error ? err.message : String(err);
+    await respond(`Rollback failed: ${message}`);
   }
 });
 
