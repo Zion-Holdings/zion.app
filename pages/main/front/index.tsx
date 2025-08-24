@@ -218,8 +218,8 @@ export default function MainFrontIndex() {
                 ['Automation Hub', '/automation'],
                 ['SEO Audit', '/reports/seo'],
                 ['AI Trends', '/reports/ai-trends'],
-                ['Competitive Intelligence', '/reports/competitive-intel'],
-                ['Performance Budget', '/reports/performance-budget'],
+                ['Redirect Healer', '/.netlify/functions/redirect-healer'],
+                ['Sitemap Prioritizer', '/.netlify/functions/sitemap-prioritizer'],
                 ['Newsroom', '/newsroom'],
                 ['Site Health', '/site-health'],
               ].map(([label, href]) => (
@@ -314,25 +314,9 @@ export default function MainFrontIndex() {
   <div className="text-base font-semibold">AI Trends Radar</div>
   <div className="mt-1 text-sm text-white/75">Signals powering strategy</div>
   <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
-            <Link href="/reports/competitive-intel"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
-  <div className="text-base font-semibold">Competitive Intelligence</div>
-  <div className="mt-1 text-sm text-white/75">Market signals & headlines</div>
-  <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
-            <Link href="/reports/performance-budget"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
-  <div className="text-base font-semibold">Performance Budget</div>
-  <div className="mt-1 text-sm text-white/75">Largest assets & risks</div>
-  <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
             <Link href="/newsroom"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
   <div className="text-base font-semibold">Newsroom</div>
   <div className="mt-1 text-sm text-white/75">Product evolution</div>
-  <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
-            <Link href="/reports/component-docs"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
-  <div className="text-base font-semibold">Component Docs</div>
-  <div className="mt-1 text-sm text-white/75">Props documentation from code</div>
-  <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
-            <Link href="/reports/content-gaps"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
-  <div className="text-base font-semibold">Content Gaps</div>
-  <div className="mt-1 text-sm text-white/75">Density & metadata insights</div>
   <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
             <a href="https://github.com/Zion-Holdings/zion.app/tree/main/docs" target="_blank" rel="noopener" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
   <div className="text-base font-semibold">Docs & Guides</div>
@@ -396,58 +380,23 @@ export default function MainFrontIndex() {
               <div className="mt-3 text-xs text-cyan-300/90">View logs via Netlify →</div>
             </a>
             <a
-              href="/reports/competitive-intel"
+              href="https://github.com/Zion-Holdings/zion.app/tree/main/automation"
+              target="_blank" rel="noopener"
               className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover"
             >
               <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
-              <div className="text-lg font-semibold">Competitive Intelligence Radar</div>
-              <p className="mt-1 text-sm text-white/75">Auto-summarized competitor headlines and shifts.</p>
-              <div className="mt-3 text-xs text-cyan-300/90">Open report →</div>
+              <div className="text-lg font-semibold">Local Orchestrators</div>
+              <p className="mt-1 text-sm text-white/75">Node-based orchestrators that can run on any scheduler or platform.</p>
+              <div className="mt-3 text-xs text-cyan-300/90">Browse orchestration scripts ↗</div>
             </a>
             <a
-              href="/reports/performance-budget"
+              href="/automation"
               className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover"
             >
               <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
-              <div className="text-lg font-semibold">Performance Budget Watcher</div>
-              <p className="mt-1 text-sm text-white/75">Monitors asset sizes; flags budget risks.</p>
-              <div className="mt-3 text-xs text-cyan-300/90">Open report →</div>
-            </a>
-            <a
-              href="/.netlify/functions/innovation-scout"
-              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover"
-            >
-              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
-              <div className="text-lg font-semibold">Innovation Scout (3m)</div>
-              <p className="mt-1 text-sm text-white/75">Researches AI trends, curates content, updates newsroom, and syncs.</p>
-              <div className="mt-3 text-xs text-cyan-300/90">Trigger now →</div>
-            </a>
-            <a
-              href="/.netlify/functions/content-ux-curator"
-              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover"
-            >
-              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
-              <div className="text-lg font-semibold">Content & UX Curator (7m)</div>
-              <p className="mt-1 text-sm text-white/75">Regenerates OG images, docs indexes, and homepage/front promos.</p>
-              <div className="mt-3 text-xs text-cyan-300/90">Trigger now →</div>
-            </a>
-            <a
-              href="/.netlify/functions/security-and-integrity-runner"
-              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover"
-            >
-              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
-              <div className="text-lg font-semibold">Security & Integrity Runner (15m)</div>
-              <p className="mt-1 text-sm text-white/75">Security audit, external link checks, image integrity and sitemap.</p>
-              <div className="mt-3 text-xs text-cyan-300/90">Trigger now →</div>
-            </a>
-            <a
-              href="/.netlify/functions/autonomous-cloud-maximizer"
-              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover"
-            >
-              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
-              <div className="text-lg font-semibold">Autonomous Cloud Maximizer (2m)</div>
-              <p className="mt-1 text-sm text-white/75">High-frequency orchestrator that chains innovation + integrity.</p>
-              <div className="mt-3 text-xs text-cyan-300/90">Trigger now →</div>
+              <div className="text-lg font-semibold">Autonomous Cloud Orchestrator</div>
+              <p className="mt-1 text-sm text-white/75">End-to-end agents launching factories and syncing safe diffs to main.</p>
+              <div className="mt-3 text-xs text-cyan-300/90">Open Automation Hub →</div>
             </a>
           </div>
         </motion.section>
@@ -498,9 +447,10 @@ export default function MainFrontIndex() {
               { label: 'Sitemap Runner', desc: 'Keeps sitemap fresh for SEO visibility.', href: '/.netlify/functions/sitemap_runner' },
               { label: 'Smart Redirect Manager', desc: 'Fixes internal 404s; updates public/_redirects and report.', href: '/.netlify/functions/redirect-manager' },
               { label: 'A11y Alt‑Text Auditor', desc: 'Scans for missing alt attributes and publishes reports.', href: '/.netlify/functions/a11y-audit-runner' },
-              { label: 'Performance Budget Enforcer', desc: 'Scans public assets against size budgets; writes reports.', href: '/.netlify/functions/perf-budget-enforcer' },
-              { label: 'Stale Content Refresher', desc: 'Finds stale docs/pages and publishes a refresh report.', href: '/.netlify/functions/stale-content-refresher' },
-              { label: 'Docs Glossary Builder', desc: 'Builds a glossary from docs headings and commits to the repo.', href: '/.netlify/functions/docs-glossary-builder' },
+              { label: 'Terminology Consistency', desc: 'Normalizes product terminology across docs and README.', href: '/.netlify/functions/terminology-consistency-runner' },
+              { label: 'Cloud Automation Inventor', desc: 'Drafts new useful cloud automations on a fast cadence.', href: '/.netlify/functions/cloud-automation-inventor' },
+              { label: 'Autonomous Front Advertiser', desc: 'Curates homepage promos with live cloud function links.', href: '/.netlify/functions/autonomous-front-advertiser' },
+              { label: 'Hyper Sync Committer', desc: 'Commits heartbeat stamps to keep pipelines hot.', href: '/.netlify/functions/hyper-sync-committer' },
             ].map((f) => (
               <a key={f.label} href={f.href} target="_blank" rel="noopener" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
                 <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
@@ -1775,6 +1725,10 @@ export default function MainFrontIndex() {
               <Link href="/newsroom"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
   <div className="text-base font-semibold">AI Changelog — highlights</div>
   <div className="mt-1 text-sm text-white/75">Summarized updates</div>
+  <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
+              <Link href="/.netlify/functions/autonomous-innovation-generator"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
+  <div className="text-base font-semibold">Autonomous Innovation Generator</div>
+  <div className="mt-1 text-sm text-white/75">Front promos + homepage refresh</div>
   <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
   </div>
 </section>
