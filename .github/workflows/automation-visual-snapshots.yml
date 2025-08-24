@@ -1,0 +1,47 @@
+name: Automation - Visual Snapshots
+
+on:
+  schedule:
+    - cron: '0 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  visual-snapshots:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+          cache: 'npm'
+      - name: Install deps
+        run: npm ci
+      - name: Install Playwright
+        run: npx playwright install --with-deps chromium
+      - name: Start Next for snapshots
+        run: |
+          npm run build
+          npx serve -s out -l 3000 &
+          echo "Started static server"
+      - name: Run visual auditor
+        env:
+          BASE_URL: http://localhost:3000
+        run: npm run audit:visual
+      - name: Commit report
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: 'chore(visual): update visual snapshot report'
+          title: 'chore(visual): update visual snapshot report'
+          body: Generated visual snapshot report and artifacts under public/automation-reports
+          branch: automation/visual-snapshots
+          delete-branch: true
+          labels: automation
