@@ -1,173 +1,184 @@
-import React, { useState, useEffect, useRef, useCallback, Suspense } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { LoadingSpinner } from '@/components/ui/loading-spinner';
+import React, { useEffect, useState, useRef, useCallback } from 'react';
+import { motion, useInView } from 'framer-motion';
 
-// Lazy loading wrapper with loading states
-interface LazyComponentProps {
-  component: React.ComponentType<any>;
+interface PerformanceOptimizerProps {
+  children: React.ReactNode;
+  threshold?: number;
+  delay?: number;
+  className?: string;
   fallback?: React.ReactNode;
-  props?: any;
 }
 
-export function LazyComponent({ component: Component, fallback, props }: LazyComponentProps) {
+export function PerformanceOptimizer({
+  children,
+  threshold = 0.1,
+  delay = 0,
+  className = '',
+  fallback = null
+}: PerformanceOptimizerProps) {
+  const [isVisible, setIsVisible] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { threshold });
+
+  const handleIntersection = useCallback(() => {
+    if (inView && !isVisible) {
+      setIsVisible(true);
+      // Simulate loading delay for better UX
+      setTimeout(() => setIsLoaded(true), delay);
+    }
+  }, [inView, isVisible, delay]);
+
+  useEffect(() => {
+    handleIntersection();
+  }, [handleIntersection]);
+
+  // Performance monitoring
+  useEffect(() => {
+    if (typeof window !== 'undefined' && 'performance' in window) {
+      const observer = new PerformanceObserver((list) => {
+        for (const entry of list.getEntries()) {
+          if (entry.entryType === 'largest-contentful-paint') {
+            console.log('LCP:', entry.startTime);
+          }
+        }
+      });
+      
+      observer.observe({ entryTypes: ['largest-contentful-paint'] });
+      
+      return () => observer.disconnect();
+    }
+  }, []);
+
+  if (!isVisible) {
+    return (
+      <div ref={ref} className={className}>
+        {fallback}
+      </div>
+    );
+  }
+
+  if (!isLoaded) {
+    return (
+      <div ref={ref} className={className}>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.3 }}
+          className="w-full h-full flex items-center justify-center"
+        >
+          <div className="animate-pulse">
+            <div className="w-8 h-8 border-2 border-zion-cyan border-t-transparent rounded-full animate-spin" />
+          </div>
+        </motion.div>
+      </div>
+    );
+  }
+
   return (
-    <Suspense fallback={fallback || <LoadingSpinner size="lg" showText />}>
-      <Component {...props} />
-    </Suspense>
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className={className}
+    >
+      {children}
+    </motion.div>
   );
 }
 
-// Intersection Observer for lazy loading images
-interface LazyImageProps {
-  src: string;
-  alt: string;
-  className?: string;
-  placeholder?: string;
-  threshold?: number;
-  rootMargin?: string;
-  onLoad?: () => void;
-  onError?: () => void;
-}
-
+// Lazy loading wrapper for images
 export function LazyImage({
   src,
   alt,
   className = '',
-  placeholder = '/images/placeholder.jpg',
-  threshold = 0.1,
-  rootMargin = '50px',
-  onLoad,
-  onError
-}: LazyImageProps) {
+  placeholder = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMTcwNzJiIi8+PC9zdmc+'
+}: {
+  src: string;
+  alt: string;
+  className?: string;
+  placeholder?: string;
+}) {
+  const [imageSrc, setImageSrc] = useState(placeholder);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [isInView, setIsInView] = useState(false);
-  const [hasError, setHasError] = useState(false);
   const imgRef = useRef<HTMLImageElement>(null);
 
-  const handleIntersection = useCallback((entries: IntersectionObserverEntry[]) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        setIsInView(true);
-      }
-    });
-  }, []);
-
   useEffect(() => {
-    const observer = new IntersectionObserver(handleIntersection, {
-      threshold,
-      rootMargin
-    });
+    const img = imgRef.current;
+    if (!img) return;
 
-    if (imgRef.current) {
-      observer.observe(imgRef.current);
-    }
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setImageSrc(src);
+            observer.unobserve(img);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
 
-    return () => observer.disconnect();
-  }, [handleIntersection, threshold, rootMargin]);
-
-  const handleImageLoad = () => {
-    setIsLoaded(true);
-    onLoad?.();
-  };
-
-  const handleImageError = () => {
-    setHasError(true);
-    onError?.();
-  };
+    observer.observe(img);
+    return () => observer.unobserve(img);
+  }, [src]);
 
   return (
-    <div className={`relative overflow-hidden ${className}`}>
-      {/* Placeholder */}
-      <AnimatePresence>
-        {!isLoaded && !hasError && (
-          <motion.div
-            initial={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="absolute inset-0 bg-zion-slate-light/20 animate-pulse"
-          >
-            <img
-              src={placeholder}
-              alt=""
-              className="w-full h-full object-cover opacity-50"
-            />
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      {/* Actual Image */}
-      {isInView && !hasError && (
-        <motion.img
-          ref={imgRef}
-          src={src}
-          alt={alt}
-          className={`w-full h-full object-cover transition-opacity duration-300 ${
-            isLoaded ? 'opacity-100' : 'opacity-0'
-          }`}
-          onLoad={handleImageLoad}
-          onError={handleImageError}
-          loading="lazy"
-        />
-      )}
-
-      {/* Error State */}
-      {hasError && (
-        <div className="absolute inset-0 bg-zion-slate-light/20 flex items-center justify-center">
-          <div className="text-center text-zion-slate-light">
-            <div className="text-2xl mb-2">📷</div>
-            <div className="text-sm">Image failed to load</div>
-          </div>
-        </div>
-      )}
-    </div>
+    <img
+      ref={imgRef}
+      src={imageSrc}
+      alt={alt}
+      className={`transition-opacity duration-300 ${className} ${
+        isLoaded ? 'opacity-100' : 'opacity-0'
+      }`}
+      onLoad={() => setIsLoaded(true)}
+    />
   );
 }
 
 // Virtual scrolling for large lists
-interface VirtualListProps<T> {
-  items: T[];
-  height: number;
-  itemHeight: number;
-  renderItem: (item: T, index: number) => React.ReactNode;
-  overscan?: number;
-}
-
 export function VirtualList<T>({
   items,
-  height,
-  itemHeight,
   renderItem,
+  itemHeight,
+  containerHeight,
   overscan = 5
-}: VirtualListProps<T>) {
+}: {
+  items: T[];
+  renderItem: (item: T, index: number) => React.ReactNode;
+  itemHeight: number;
+  containerHeight: number;
+  overscan?: number;
+}) {
   const [scrollTop, setScrollTop] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const totalHeight = items.length * itemHeight;
-  const visibleCount = Math.ceil(height / itemHeight);
-  const startIndex = Math.max(0, Math.floor(scrollTop / itemHeight) - overscan);
-  const endIndex = Math.min(
-    items.length - 1,
-    Math.floor(scrollTop / itemHeight) + visibleCount + overscan
+  const visibleStart = Math.max(0, Math.floor(scrollTop / itemHeight) - overscan);
+  const visibleEnd = Math.min(
+    items.length,
+    Math.ceil((scrollTop + containerHeight) / itemHeight) + overscan
   );
 
-  const visibleItems = items.slice(startIndex, endIndex + 1);
-  const offsetY = startIndex * itemHeight;
+  const visibleItems = items.slice(visibleStart, visibleEnd);
+  const totalHeight = items.length * itemHeight;
+  const offsetY = visibleStart * itemHeight;
 
-  const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
+  const handleScroll = useCallback((e: React.UIEvent<HTMLDivElement>) => {
     setScrollTop(e.currentTarget.scrollTop);
-  };
+  }, []);
 
   return (
     <div
       ref={containerRef}
-      style={{ height, overflow: 'auto' }}
+      style={{ height: containerHeight, overflow: 'auto' }}
       onScroll={handleScroll}
-      className="scrollbar-thin scrollbar-thumb-zion-purple/20 scrollbar-track-transparent"
     >
       <div style={{ height: totalHeight, position: 'relative' }}>
         <div style={{ transform: `translateY(${offsetY}px)` }}>
           {visibleItems.map((item, index) => (
-            <div key={startIndex + index} style={{ height: itemHeight }}>
-              {renderItem(item, startIndex + index)}
+            <div key={visibleStart + index} style={{ height: itemHeight }}>
+              {renderItem(item, visibleStart + index)}
             </div>
           ))}
         </div>
@@ -176,37 +187,7 @@ export function VirtualList<T>({
   );
 }
 
-// Performance monitoring hook
-export function usePerformanceMonitor(componentName: string) {
-  const renderCount = useRef(0);
-  const lastRenderTime = useRef(performance.now());
-
-  useEffect(() => {
-    renderCount.current += 1;
-    const currentTime = performance.now();
-    const timeSinceLastRender = currentTime - lastRenderTime.current;
-    
-    if (process.env.NODE_ENV === 'development') {
-      console.log(`${componentName} rendered ${renderCount.current} times in ${timeSinceLastRender.toFixed(2)}ms`);
-    }
-    
-    lastRenderTime.current = currentTime;
-  });
-
-  const measurePerformance = useCallback((operation: string, fn: () => void) => {
-    const start = performance.now();
-    fn();
-    const end = performance.now();
-    
-    if (process.env.NODE_ENV === 'development') {
-      console.log(`${componentName} - ${operation}: ${(end - start).toFixed(2)}ms`);
-    }
-  }, [componentName]);
-
-  return { renderCount: renderCount.current, measurePerformance };
-}
-
-// Debounced input hook for search optimization
+// Debounced search hook
 export function useDebounce<T>(value: T, delay: number): T {
   const [debouncedValue, setDebouncedValue] = useState<T>(value);
 
@@ -223,67 +204,26 @@ export function useDebounce<T>(value: T, delay: number): T {
   return debouncedValue;
 }
 
-// Throttled scroll hook for performance
-export function useThrottledScroll(callback: () => void, delay: number) {
-  const lastCall = useRef(0);
-
-  const throttledCallback = useCallback(() => {
-    const now = Date.now();
-    if (now - lastCall.current >= delay) {
-      lastCall.current = now;
-      callback();
-    }
-  }, [callback, delay]);
+// Intersection observer hook for performance
+export function useIntersectionObserver(
+  options: IntersectionObserverInit = {}
+) {
+  const [isIntersecting, setIsIntersecting] = useState(false);
+  const [entry, setEntry] = useState<IntersectionObserverEntry | null>(null);
+  const elementRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
-    window.addEventListener('scroll', throttledCallback, { passive: true });
-    return () => window.removeEventListener('scroll', throttledCallback);
-  }, [throttledCallback]);
-}
+    const element = elementRef.current;
+    if (!element) return;
 
-// Memory leak prevention hook
-export function useCleanupEffect(effect: () => void, deps: any[]) {
-  useEffect(() => {
-    let isSubscribed = true;
+    const observer = new IntersectionObserver(([entry]) => {
+      setIsIntersecting(entry.isIntersecting);
+      setEntry(entry);
+    }, options);
 
-    const cleanup = () => {
-      isSubscribed = false;
-    };
+    observer.observe(element);
+    return () => observer.unobserve(element);
+  }, [options]);
 
-    if (isSubscribed) {
-      effect();
-    }
-
-    return cleanup;
-  }, deps);
-}
-
-// Bundle size analyzer (development only)
-export function useBundleAnalyzer() {
-  useEffect(() => {
-    if (process.env.NODE_ENV === 'development') {
-      // This would integrate with webpack-bundle-analyzer or similar
-      console.log('Bundle analysis available in development mode');
-    }
-  }, []);
-}
-
-// Performance budget checker
-export function usePerformanceBudget(componentName: string, budgetMs: number = 16) {
-  const measureRender = useCallback(() => {
-    const start = performance.now();
-    
-    return () => {
-      const end = performance.now();
-      const renderTime = end - start;
-      
-      if (renderTime > budgetMs) {
-        console.warn(
-          `${componentName} render time (${renderTime.toFixed(2)}ms) exceeds budget (${budgetMs}ms)`
-        );
-      }
-    };
-  }, [componentName, budgetMs]);
-
-  return measureRender;
+  return { ref: elementRef, isIntersecting, entry };
 }

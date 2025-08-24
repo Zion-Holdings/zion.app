@@ -384,11 +384,7 @@ export default function PricingPage() {
               Ready to Get Started?
             </h2>
             <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-<<<<<<< HEAD
-              Get in touch with our team to discuss your needs and find the perfect plan for your business
-=======
               Get in touch with our team to discuss your needs and discover the perfect plan for your business
->>>>>>> cursor/expand-services-and-deploy-updates-836c
             </p>
           </div>
           
