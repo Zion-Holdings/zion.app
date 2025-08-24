@@ -1,0 +1,39 @@
+name: Autonomous Cloud Bot (Images)
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 2 * * 1'
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: cloud-autobot-images
+  cancel-in-progress: false
+
+jobs:
+  run-images:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - run: npm ci --ignore-scripts
+      - name: Audit images
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GIT_AUTHOR_NAME: zion-autobot
+          GIT_AUTHOR_EMAIL: autobot@users.noreply.github.com
+          GIT_COMMITTER_NAME: zion-autobot
+          GIT_COMMITTER_EMAIL: autobot@users.noreply.github.com
+          AUTOBOT_TASKS: |
+            images:audit
+        run: node automation/cloud-autobot.cjs
