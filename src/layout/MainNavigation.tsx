@@ -29,6 +29,16 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
       matches: (path: string) => path.startsWith('/marketplace')
     },
     {
+      key: 'services',
+      href: '/services',
+      matches: (path: string) => path.startsWith('/services')
+    },
+    {
+      key: 'equipment',
+      href: '/equipment',
+      matches: (path: string) => path.startsWith('/equipment')
+    },
+    {
       key: 'categories',
       href: '/categories',
       matches: (path: string) => path.startsWith('/categories')
@@ -39,14 +49,19 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
       matches: (path: string) => path.startsWith('/talent') && !path.includes('/talent-dashboard')
     },
     {
-      key: 'equipment',
-      href: '/equipment',
-      matches: (path: string) => path.startsWith('/equipment')
-    },
-    {
       key: 'community',
       href: '/community',
       matches: (path: string) => path.startsWith('/community') || path.startsWith('/forum')
+    },
+    {
+      key: 'about',
+      href: '/about',
+      matches: (path: string) => path.startsWith('/about')
+    },
+    {
+      key: 'blog',
+      href: '/blog',
+      matches: (path: string) => path.startsWith('/blog')
     }
   ];
 
