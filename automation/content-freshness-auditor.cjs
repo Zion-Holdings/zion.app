@@ -1,112 +1,101 @@
+#!/usr/bin/env node
 const fs = require('fs');
 const path = require('path');
-const fse = require('fs-extra');
-const glob = require('glob');
 
-function getFiles(patterns, ignore = []) {
-  const files = new Set();
-  for (const pattern of patterns) {
-    for (const file of glob.sync(pattern, { ignore, nodir: true })) {
-      files.add(path.normalize(file));
+function listFilesRecursively(startDir, includeExtensions = ['.md', '.mdx', '.js', '.jsx', '.ts', '.tsx', '.json'], excludeDirs = ['.git', 'node_modules', '.next', 'out', 'public/automation']) {
+  const results = [];
+  function walk(dir) {
+    let entries = [];
+    try { entries = fs.readdirSync(dir, { withFileTypes: true }); } catch { return; }
+    for (const entry of entries) {
+      const full = path.join(dir, entry.name);
+      const rel = path.relative(process.cwd(), full);
+      if (entry.isDirectory()) {
+        if (excludeDirs.some(x => rel === x || rel.startsWith(x + path.sep))) continue;
+        walk(full);
+      } else {
+        if (includeExtensions.includes(path.extname(entry.name))) {
+          results.push(full);
+        }
+      }
     }
   }
-  return Array.from(files);
+  walk(startDir);
+  return results;
 }
 
-function filePathToRoute(filePath) {
-  const normalized = filePath.replace(/\\/g, '/');
-  if (normalized.startsWith('pages/')) {
-    const rel = normalized.replace(/^pages\//, '').replace(/\.(tsx|ts|jsx|js)$/, '');
-    if (rel === '_app' || rel === '_document' || rel.startsWith('api/')) return null;
-    const route = '/' + rel.replace(/index$/i, '');
-    return route === '/' ? route : route.replace(/\/$/, '');
-  }
-  if (normalized.startsWith('docs/')) {
-    return '/docs/' + normalized.replace(/^docs\//, '').replace(/\.(md|mdx)$/, '');
-  }
-  if (normalized.startsWith('data/')) {
-    return '/data/' + normalized.replace(/^data\//, '').replace(/\.(md|mdx|json|csv|yml|yaml)$/, '');
-  }
-  return null;
+function ensureDir(filePath) {
+  const dir = path.dirname(filePath);
+  fs.mkdirSync(dir, { recursive: true });
 }
 
-function classifyAgeDays(ageDays) {
-  if (ageDays <= 1) return 'hot';
-  if (ageDays <= 7) return 'warm';
-  if (ageDays <= 30) return 'stale';
-  return 'cold';
+function daysSince(date) {
+  const ms = Date.now() - date.getTime();
+  return Math.floor(ms / (1000 * 60 * 60 * 24));
 }
 
 function main() {
-  const cwd = process.cwd();
-  const startTime = Date.now();
-  const patterns = [
-    'pages/**/*.{tsx,ts,jsx,js}',
-    'docs/**/*.{md,mdx}',
-    'data/**/*.{md,mdx,json,csv,yml,yaml}',
+  const roots = [
+    path.join(process.cwd(), 'pages'),
+    path.join(process.cwd(), 'docs'),
+    path.join(process.cwd(), 'components')
   ];
-  const ignore = [
-    '**/node_modules/**',
-    '**/.git/**',
-    'pages/_app.tsx',
-    'pages/_document.tsx',
-  ];
-
-  const files = getFiles(patterns, ignore);
-
+  const files = roots.flatMap(root => listFilesRecursively(root));
   const items = [];
   for (const file of files) {
     try {
       const stat = fs.statSync(file);
-      if (!stat.isFile()) continue;
-      const route = filePathToRoute(file);
-      if (route === null) continue;
-      const modifiedAt = stat.mtime;
-      const ageDays = Math.max(0, (Date.now() - modifiedAt.getTime()) / (1000 * 60 * 60 * 24));
+      const lastModified = stat.mtime;
+      const d = daysSince(lastModified);
       items.push({
-        file,
-        route,
-        modifiedAt: modifiedAt.toISOString(),
-        ageDays: Number(ageDays.toFixed(2)),
-        status: classifyAgeDays(ageDays),
+        file: path.relative(process.cwd(), file),
+        sizeBytes: stat.size,
+        lastModifiedIso: lastModified.toISOString(),
+        daysSinceModified: d
       });
-    } catch (e) {
-      // ignore
-    }
+    } catch {}
   }
+  items.sort((a, b) => b.daysSinceModified - a.daysSinceModified);
 
-  items.sort((a, b) => b.ageDays - a.ageDays);
-  const staleTop = items.slice(0, 30);
-
-  const freshness = {
+  const summary = {
     generatedAt: new Date().toISOString(),
     totalFiles: items.length,
-    summary: {
-      hot: items.filter(i => i.status === 'hot').length,
-      warm: items.filter(i => i.status === 'warm').length,
-      stale: items.filter(i => i.status === 'stale').length,
-      cold: items.filter(i => i.status === 'cold').length,
-    },
-    stalestTop30: staleTop,
+    staleThresholdDays: 60,
+    counts: {
+      gt180: items.filter(x => x.daysSinceModified >= 180).length,
+      gt120: items.filter(x => x.daysSinceModified >= 120 && x.daysSinceModified < 180).length,
+      gt60: items.filter(x => x.daysSinceModified >= 60 && x.daysSinceModified < 120).length,
+      lt60: items.filter(x => x.daysSinceModified < 60).length
+    }
   };
 
-  const outDir = path.resolve(cwd, 'public', 'automation');
-  fse.ensureDirSync(outDir);
-  const outFile = path.join(outDir, 'content-freshness-report.json');
-  fs.writeFileSync(outFile, JSON.stringify(freshness, null, 2));
+  const jsonPath = path.join(process.cwd(), 'public', 'automation', 'content-freshness.json');
+  ensureDir(jsonPath);
+  fs.writeFileSync(jsonPath, JSON.stringify({ summary, items }, null, 2));
 
-  console.log('Content Freshness Auditor');
-  console.log('- files scanned:', items.length);
-  console.log('- summary:', JSON.stringify(freshness.summary));
-  console.log('- output:', path.relative(cwd, outFile));
+  const top = items.slice(0, 50);
+  const mdLines = [];
+  mdLines.push('# Content Freshness Report');
+  mdLines.push('');
+  mdLines.push(`Generated: ${summary.generatedAt}`);
+  mdLines.push('');
+  mdLines.push('| File | Days Since Modified | Last Modified | Size (bytes) |');
+  mdLines.push('|---|---:|---|---:|');
+  for (const it of top) {
+    mdLines.push(`| ${it.file} | ${it.daysSinceModified} | ${it.lastModifiedIso} | ${it.sizeBytes} |`);
+  }
+  const mdPath = path.join(process.cwd(), 'docs', 'CONTENT_FRESHNESS.md');
+  ensureDir(mdPath);
+  fs.writeFileSync(mdPath, mdLines.join('\n'));
+
+  // Also write a small summary stamp for quick diffs
+  const stampPath = path.join(process.cwd(), 'automation', 'logs', 'content-freshness-stamp.txt');
+  ensureDir(stampPath);
+  fs.writeFileSync(stampPath, `updated ${new Date().toISOString()}\n`);
+
+  console.log(`[content-freshness] Wrote ${jsonPath} and ${mdPath}.`);
 }
 
 if (require.main === module) {
-  try {
-    main();
-    process.exit(0);
-  } catch (err) {
-    console.error('content-freshness-auditor failed:', err);
-    process.exit(1);
-  }
+  try { main(); process.exit(0); } catch (e) { console.error(e); process.exit(1); }
 }

@@ -218,7 +218,6 @@ export default function MainFrontIndex() {
                 ['Automation Hub', '/automation'],
                 ['SEO Audit', '/reports/seo'],
                 ['AI Trends', '/reports/ai-trends'],
-                ['Roadmap', '/reports/roadmap'],
                 ['Redirect Healer', '/.netlify/functions/redirect-healer'],
                 ['Sitemap Prioritizer', '/.netlify/functions/sitemap-prioritizer'],
                 ['Newsroom', '/newsroom'],
@@ -442,18 +441,15 @@ export default function MainFrontIndex() {
           <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Netlify Automations</h2>
           <p className="mx-auto mt-2 max-w-3xl text-center text-sm text-white/70">Zero‑ops scheduled functions power background tasks that improve the site and ship small, safe diffs to main.</p>
           <div className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-                        {[
+            {[ 
               { label: 'Homepage Advertiser', desc: 'Curates and updates the home explore section.', href: '/.netlify/functions/homepage_advertiser' },
               { label: 'Cloud Orchestrator', desc: 'Runs fast improvement cycle and git sync.', href: '/.netlify/functions/cloud_orchestrator' },
               { label: 'Sitemap Runner', desc: 'Keeps sitemap fresh for SEO visibility.', href: '/.netlify/functions/sitemap_runner' },
-              { label: 'Innovation Generator', desc: 'Synthesizes new promos and syncs to main.', href: '/.netlify/functions/innovation-generator' },
-              { label: 'Dependency Health Runner', desc: 'Auto-upgrades dependencies safely and syncs.', href: '/.netlify/functions/dependency-health-runner' },
-              { label: 'Changelog Publisher', desc: 'Publishes AI-generated changelog updates.', href: '/.netlify/functions/changelog-publisher' },
               { label: 'Smart Redirect Manager', desc: 'Fixes internal 404s; updates public/_redirects and report.', href: '/.netlify/functions/redirect-manager' },
               { label: 'A11y Alt‑Text Auditor', desc: 'Scans for missing alt attributes and publishes reports.', href: '/.netlify/functions/a11y-audit-runner' },
-              { label: 'OG Coverage Auditor', desc: 'Audits pages for Open Graph tag coverage and publishes a report.', href: '/.netlify/functions/og-coverage-auditor' },
-              { label: 'Performance Budget Reporter', desc: 'Scans public assets and CSS to report on size budgets.', href: '/.netlify/functions/performance-budget-runner' },
-              { label: 'Roadmap Auto‑Builder', desc: 'Synthesizes a roadmap from TODO signals into docs/reports.', href: '/.netlify/functions/roadmap-builder-runner' },
+              { label: 'Content Freshness Auditor', desc: 'Analyzes repo content freshness and publishes a report.', href: '/.netlify/functions/content-freshness-runner' },
+              { label: 'Internal Anchor Auditor', desc: 'Detects broken in-page anchors across TSX/MD content.', href: '/.netlify/functions/internal-anchor-audit-runner' },
+              { label: 'Orphan Asset Scanner', desc: 'Finds unreferenced files in public/ for cleanup planning.', href: '/.netlify/functions/orphan-asset-report-runner' },
             ].map((f) => (
               <a key={f.label} href={f.href} target="_blank" rel="noopener" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
                 <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
@@ -1683,7 +1679,7 @@ export default function MainFrontIndex() {
         {/* AUTO-GENERATED: FRONT_ADS_START */
 <section id="auto-promoted" className="mx-auto max-w-7xl px-6 pb-14">
   <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Auto‑Promoted Features</h2>
-  <p className="mx-auto mt-2 max-w-3xl text-center text-sm text-white/70">Continuously curated promos linking to live hubs, reports, docs, and new intelligence tools.</p>
+  <p className="mx-auto mt-2 max-w-3xl text-center text-sm text-white/70">Continuously curated promos linking to live hubs, reports, and docs.</p>
   <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
               <Link href="/automation"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
   <div className="text-base font-semibold">Automation Hub</div>
