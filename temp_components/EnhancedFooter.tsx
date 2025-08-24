@@ -69,9 +69,9 @@ const EnhancedFooter: React.FC = () => {
               </span>
             </div>
             <p className="text-white/70 mb-6 max-w-md leading-relaxed">
-              Leading-edge technology solutions and autonomous innovation platform. 
-              Empowering businesses with cutting-edge AI, quantum computing, and 
-              digital transformation solutions.
+              AI-powered cloud automation and autonomous deployment platform. 
+              Empowering businesses with intelligent agents that continuously 
+              optimize infrastructure and applications.
             </p>
             
             {/* Contact Info */}
