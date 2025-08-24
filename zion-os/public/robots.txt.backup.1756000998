@@ -8,6 +8,19 @@ Sitemap: https://ziontechgroup.com/sitemap.xml
 Disallow: /admin/
 Disallow: /api/
 Disallow: /_next/
+<<<<<<< HEAD
+Disallow: /multiverse/
+
+# Allow important pages
+Allow: /services/
+Allow: /about/
+Allow: /contact/
+Allow: /news/
+Allow: /careers/
+
+# Crawl delay
+Crawl-delay: 1
+=======
 Disallow: /private/
 
 # Allow important pages
@@ -15,3 +28,4 @@ Allow: /docs/
 Allow: /multiverse/
 Allow: /community/
 Allow: /contact/
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-2e5c
