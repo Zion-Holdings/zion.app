@@ -1,0 +1,5 @@
+<<<<<<< HEAD
+export default function FutureOfWorkAndAutomation() { return <div>Future of Work and Automation</div>; }
+=======
+export default function Page(){return null}
+>>>>>>> origin/cursor/enable-vendor-agency-marketplace-operations-5a51

@@ -1,0 +1,40 @@
+area/automation:
+  - 'automation/**'
+area/frontend:
+  - 'pages/**'
+  - 'components/**'
+  - 'styles/**'
+  - 'public/**'
+area/backend:
+  - 'utils/**'
+  - 'hooks/**'
+
+type/docs:
+  - 'docs/**'
+  - '**/*.md'
+
+type/ci:
+  - '.github/**'
+  - 'netlify.toml'
+
+type/test:
+  - '__tests__/**'
+
+type/security:
+  - 'automation/security-**'
+
+type/performance:
+  - 'automation/**performance**'
+  - 'automation/**optimizer**'
+
+type/dependencies:
+  - 'package.json'
+  - 'package-lock.json'
+
+type/chore:
+  - '*.config.*'
+  - '.editorconfig'
+  - '.eslintrc.*'
+  - 'tsconfig.*'
+  - 'postcss.config.js'
+  - 'tailwind.config.js'

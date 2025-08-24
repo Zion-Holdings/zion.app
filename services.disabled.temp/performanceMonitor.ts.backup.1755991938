@@ -1,0 +1,616 @@
+export interface PerformanceMetrics {
+<<<<<<< HEAD
+  timestamp: number;
+  url: string;
+=======
+  url: string;
+  timestamp: Date;
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-deploy-dfdd
+  loadTime: number;
+  firstContentfulPaint: number;
+  largestContentfulPaint: number;
+  cumulativeLayoutShift: number;
+  firstInputDelay: number;
+  timeToInteractive: number;
+  totalBlockingTime: number;
+  speedIndex: number;
+  performanceScore: number;
+  accessibilityScore: number;
+  bestPracticesScore: number;
+  seoScore: number;
+}
+
+<<<<<<< HEAD
+export interface PerformanceReport {
+  url: string;
+  averageMetrics: PerformanceMetrics;
+  trends: PerformanceTrend[];
+  recommendations: string[];
+  grade: 'A' | 'B' | 'C' | 'D' | 'F';
+  lastUpdated: number;
+}
+
+export interface PerformanceTrend {
+  metric: keyof PerformanceMetrics;
+  trend: 'improving' | 'declining' | 'stable';
+  change: number;
+  period: 'day' | 'week' | 'month';
+=======
+export interface PerformanceAlert {
+  id: string;
+  url: string;
+  type: 'critical' | 'warning' | 'info';
+  message: string;
+  metric: string;
+  threshold: number;
+  currentValue: number;
+  timestamp: Date;
+  resolved: boolean;
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-deploy-dfdd
+}
+
+export interface MonitoringConfig {
+  urls: string[];
+<<<<<<< HEAD
+  frequency: 'hourly' | 'daily' | 'weekly';
+  alertThresholds: {
+    loadTime: number;
+    performanceScore: number;
+    accessibilityScore: number;
+  };
+}
+
+class PerformanceMonitorService {
+  private metrics: Map<string, PerformanceMetrics[]> = new Map();
+  private config: MonitoringConfig = {
+    urls: [],
+    frequency: 'daily',
+    alertThresholds: {
+      loadTime: 3000,
+      performanceScore: 80,
+      accessibilityScore: 90
+    }
+  };
+
+  async monitorPerformance(url: string): Promise<PerformanceMetrics> {
+    try {
+      // In a real implementation, this would use Lighthouse, WebPageTest, or similar tools
+      const metrics = await this.simulatePerformanceMeasurement(url);
+      
+      // Store metrics
+      if (!this.metrics.has(url)) {
+        this.metrics.set(url, []);
+      }
+      this.metrics.get(url)!.push(metrics);
+      
+      // Keep only last 30 measurements
+      const urlMetrics = this.metrics.get(url)!;
+      if (urlMetrics.length > 30) {
+        this.metrics.set(url, urlMetrics.slice(-30));
+      }
+      
+      return metrics;
+    } catch (error) {
+      console.error('Performance monitoring failed:', error);
+      throw new Error('Failed to monitor performance. Please try again.');
+    }
+  }
+
+  private async simulatePerformanceMeasurement(url: string): Promise<PerformanceMetrics> {
+    // Simulate network delay and measurement time
+    await new Promise(resolve => setTimeout(resolve, 500 + Math.random() * 1000));
+    
+    const baseLoadTime = 800 + Math.random() * 2000;
+    const performanceScore = Math.max(50, 100 - Math.random() * 30);
+    
+    return {
+      timestamp: Date.now(),
+      url,
+      loadTime: Math.round(baseLoadTime),
+      firstContentfulPaint: Math.round(baseLoadTime * 0.6),
+      largestContentfulPaint: Math.round(baseLoadTime * 0.8),
+      cumulativeLayoutShift: Math.random() * 0.1,
+      firstInputDelay: Math.random() * 100,
+      timeToInteractive: Math.round(baseLoadTime * 1.2),
+      totalBlockingTime: Math.random() * 200,
+      speedIndex: Math.round(baseLoadTime * 0.7),
+      performanceScore: Math.round(performanceScore),
+      accessibilityScore: Math.max(80, 100 - Math.random() * 15),
+      bestPracticesScore: Math.max(85, 100 - Math.random() * 10),
+      seoScore: Math.max(90, 100 - Math.random() * 8)
+    };
+  }
+
+  async generateReport(url: string): Promise<PerformanceReport> {
+    const urlMetrics = this.metrics.get(url) || [];
+    
+    if (urlMetrics.length === 0) {
+      throw new Error('No performance data available for this URL');
+    }
+    
+    const averageMetrics = this.calculateAverageMetrics(urlMetrics);
+    const trends = this.analyzeTrends(urlMetrics);
+    const recommendations = this.generateRecommendations(averageMetrics);
+    const grade = this.calculateGrade(averageMetrics.performanceScore);
+    
+    return {
+      url,
+      averageMetrics,
+      trends,
+      recommendations,
+      grade,
+      lastUpdated: Date.now()
+    };
+  }
+
+  private calculateAverageMetrics(metrics: PerformanceMetrics[]): PerformanceMetrics {
+    const sum = metrics.reduce((acc, metric) => ({
+      timestamp: Date.now(),
+      url: metric.url,
+      loadTime: acc.loadTime + metric.loadTime,
+      firstContentfulPaint: acc.firstContentfulPaint + metric.firstContentfulPaint,
+      largestContentfulPaint: acc.largestContentfulPaint + metric.largestContentfulPaint,
+      cumulativeLayoutShift: acc.cumulativeLayoutShift + metric.cumulativeLayoutShift,
+      firstInputDelay: acc.firstInputDelay + metric.firstInputDelay,
+      timeToInteractive: acc.timeToInteractive + metric.timeToInteractive,
+      totalBlockingTime: acc.totalBlockingTime + metric.totalBlockingTime,
+      speedIndex: acc.speedIndex + metric.speedIndex,
+      performanceScore: acc.performanceScore + metric.performanceScore,
+      accessibilityScore: acc.accessibilityScore + metric.accessibilityScore,
+      bestPracticesScore: acc.bestPracticesScore + metric.bestPracticesScore,
+      seoScore: acc.seoScore + metric.seoScore
+    }), {
+      timestamp: 0,
+      url: '',
+      loadTime: 0,
+      firstContentfulPaint: 0,
+      largestContentfulPaint: 0,
+      cumulativeLayoutShift: 0,
+      firstInputDelay: 0,
+      timeToInteractive: 0,
+      totalBlockingTime: 0,
+      speedIndex: 0,
+      performanceScore: 0,
+      accessibilityScore: 0,
+      bestPracticesScore: 0,
+      seoScore: 0
+    });
+    
+    const count = metrics.length;
+    
+    return {
+      timestamp: Date.now(),
+      url: metrics[0].url,
+      loadTime: Math.round(sum.loadTime / count),
+      firstContentfulPaint: Math.round(sum.firstContentfulPaint / count),
+      largestContentfulPaint: Math.round(sum.largestContentfulPaint / count),
+      cumulativeLayoutShift: Math.round((sum.cumulativeLayoutShift / count) * 1000) / 1000,
+      firstInputDelay: Math.round(sum.firstInputDelay / count),
+      timeToInteractive: Math.round(sum.timeToInteractive / count),
+      totalBlockingTime: Math.round(sum.totalBlockingTime / count),
+      speedIndex: Math.round(sum.speedIndex / count),
+      performanceScore: Math.round(sum.performanceScore / count),
+      accessibilityScore: Math.round(sum.accessibilityScore / count),
+      bestPracticesScore: Math.round(sum.bestPracticesScore / count),
+      seoScore: Math.round(sum.seoScore / count)
+    };
+  }
+
+  private analyzeTrends(metrics: PerformanceMetrics[]): PerformanceTrend[] {
+    if (metrics.length < 2) return [];
+    
+    const trends: PerformanceTrend[] = [];
+    const recentMetrics = metrics.slice(-7); // Last 7 measurements
+    const olderMetrics = metrics.slice(0, -7);
+    
+    if (olderMetrics.length === 0) return trends;
+    
+    const metricKeys: (keyof PerformanceMetrics)[] = [
+      'loadTime', 'performanceScore', 'accessibilityScore', 'bestPracticesScore', 'seoScore'
+    ];
+    
+    metricKeys.forEach(key => {
+      if (typeof recentMetrics[0][key] === 'number') {
+        const recentAvg = this.calculateAverage(recentMetrics.map(m => m[key] as number));
+        const olderAvg = this.calculateAverage(olderMetrics.map(m => m[key] as number));
+        const change = recentAvg - olderAvg;
+        
+        let trend: 'improving' | 'declining' | 'stable' = 'stable';
+        if (key === 'loadTime') {
+          trend = change < -100 ? 'improving' : change > 100 ? 'declining' : 'stable';
+        } else {
+          trend = change > 2 ? 'improving' : change < -2 ? 'declining' : 'stable';
+        }
+        
+        trends.push({
+          metric: key,
+          trend,
+          change: Math.round(change * 100) / 100,
+          period: 'week'
+        });
+      }
+    });
+    
+    return trends;
+  }
+
+  private calculateAverage(values: number[]): number {
+    return values.reduce((sum, val) => sum + val, 0) / values.length;
+  }
+
+  private generateRecommendations(metrics: PerformanceMetrics): string[] {
+    const recommendations: string[] = [];
+    
+    if (metrics.loadTime > 3000) {
+      recommendations.push('Optimize image sizes and implement lazy loading to reduce load time');
+    }
+    
+    if (metrics.performanceScore < 80) {
+      recommendations.push('Minimize JavaScript bundles and implement code splitting');
+      recommendations.push('Optimize critical rendering path and reduce render-blocking resources');
+    }
+    
+    if (metrics.accessibilityScore < 90) {
+      recommendations.push('Add proper ARIA labels and ensure keyboard navigation works');
+      recommendations.push('Improve color contrast and provide alternative text for images');
+    }
+    
+    if (metrics.cumulativeLayoutShift > 0.1) {
+      recommendations.push('Set explicit dimensions for images and avoid inserting content above existing content');
+    }
+    
+    if (metrics.totalBlockingTime > 200) {
+      recommendations.push('Break up long tasks and optimize JavaScript execution');
+    }
+    
+    if (recommendations.length === 0) {
+      recommendations.push('Performance looks great! Keep monitoring for any regressions.');
+    }
+    
+    return recommendations;
+  }
+
+  private calculateGrade(score: number): 'A' | 'B' | 'C' | 'D' | 'F' {
+    if (score >= 90) return 'A';
+    if (score >= 80) return 'B';
+    if (score >= 70) return 'C';
+    if (score >= 60) return 'D';
+    return 'F';
+  }
+
+  async getHistoricalData(url: string, days: number = 30): Promise<PerformanceMetrics[]> {
+    const urlMetrics = this.metrics.get(url) || [];
+    const cutoff = Date.now() - (days * 24 * 60 * 60 * 1000);
+    
+    return urlMetrics.filter(metric => metric.timestamp >= cutoff);
+  }
+
+  async setMonitoringConfig(config: MonitoringConfig): Promise<void> {
+    this.config = { ...config };
+  }
+
+  async getMonitoringConfig(): Promise<MonitoringConfig> {
+    return { ...this.config };
+  }
+
+  async addUrlToMonitoring(url: string): Promise<void> {
+    if (!this.config.urls.includes(url)) {
+      this.config.urls.push(url);
+    }
+  }
+
+  async removeUrlFromMonitoring(url: string): Promise<void> {
+    this.config.urls = this.config.urls.filter(u => u !== url);
+    this.metrics.delete(url);
+  }
+
+  async getMonitoredUrls(): Promise<string[]> {
+    return [...this.config.urls];
+  }
+
+  async checkAlerts(): Promise<{ url: string; alerts: string[] }[]> {
+    const alerts: { url: string; alerts: string[] }[] = [];
+    
+    for (const url of this.config.urls) {
+      const urlMetrics = this.metrics.get(url);
+      if (!urlMetrics || urlMetrics.length === 0) continue;
+      
+      const latestMetrics = urlMetrics[urlMetrics.length - 1];
+      const urlAlerts: string[] = [];
+      
+      if (latestMetrics.loadTime > this.config.alertThresholds.loadTime) {
+        urlAlerts.push(`Load time (${latestMetrics.loadTime}ms) exceeds threshold (${this.config.alertThresholds.loadTime}ms)`);
+      }
+      
+      if (latestMetrics.performanceScore < this.config.alertThresholds.performanceScore) {
+        urlAlerts.push(`Performance score (${latestMetrics.performanceScore}) below threshold (${this.config.alertThresholds.performanceScore})`);
+      }
+      
+      if (latestMetrics.accessibilityScore < this.config.alertThresholds.accessibilityScore) {
+        urlAlerts.push(`Accessibility score (${latestMetrics.accessibilityScore}) below threshold (${this.config.alertThresholds.accessibilityScore})`);
+      }
+      
+      if (urlAlerts.length > 0) {
+        alerts.push({ url, alerts: urlAlerts });
+      }
+    }
+    
+    return alerts;
+  }
+}
+
+export default PerformanceMonitorService;
+=======
+  frequency: '1min' | '5min' | '15min' | '1hour' | '6hours' | 'daily';
+  thresholds: {
+    loadTime: number;
+    firstContentfulPaint: number;
+    largestContentfulPaint: number;
+    cumulativeLayoutShift: number;
+  };
+  notifications: {
+    email: boolean;
+    slack: boolean;
+    webhook: boolean;
+  };
+}
+
+export class PerformanceMonitorService {
+  private apiKey: string;
+  private baseUrl: string;
+
+  constructor(apiKey: string, baseUrl: string = 'https://api.ziontech.ai') {
+    this.apiKey = apiKey;
+    this.baseUrl = baseUrl;
+  }
+
+  async monitorWebsite(url: string): Promise<PerformanceMetrics> {
+    try {
+      // In a real implementation, this would use Lighthouse, WebPageTest, or similar
+      const response = await fetch(`${this.baseUrl}/performance/monitor`, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${this.apiKey}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ url }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Performance monitoring failed: ${response.statusText}`);
+      }
+
+      return await response.json();
+    } catch (error) {
+      // Fallback to mock data for demo purposes
+      return this.generateMockMetrics(url);
+    }
+  }
+
+  async getHistoricalData(url: string, days: number = 30): Promise<PerformanceMetrics[]> {
+    try {
+      const response = await fetch(`${this.baseUrl}/performance/history?url=${encodeURIComponent(url)}&days=${days}`, {
+        headers: {
+          'Authorization': `Bearer ${this.apiKey}`,
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error(`Failed to fetch historical data: ${response.statusText}`);
+      }
+
+      return await response.json();
+    } catch (error) {
+      // Generate mock historical data
+      return this.generateMockHistoricalData(url, days);
+    }
+  }
+
+  async setMonitoringConfig(config: MonitoringConfig): Promise<void> {
+    try {
+      const response = await fetch(`${this.baseUrl}/performance/config`, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${this.apiKey}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(config),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Failed to set monitoring config: ${response.statusText}`);
+      }
+    } catch (error) {
+      console.error('Failed to set monitoring config:', error);
+      throw error;
+    }
+  }
+
+  async getAlerts(url?: string): Promise<PerformanceAlert[]> {
+    try {
+      const params = url ? `?url=${encodeURIComponent(url)}` : '';
+      const response = await fetch(`${this.baseUrl}/performance/alerts${params}`, {
+        headers: {
+          'Authorization': `Bearer ${this.apiKey}`,
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error(`Failed to fetch alerts: ${response.statusText}`);
+      }
+
+      return await response.json();
+    } catch (error) {
+      // Generate mock alerts
+      return this.generateMockAlerts(url);
+    }
+  }
+
+  async generateReport(url: string, timeframe: 'day' | 'week' | 'month'): Promise<{
+    summary: {
+      averageLoadTime: number;
+      averagePerformanceScore: number;
+      uptime: number;
+      alertsCount: number;
+    };
+    trends: {
+      loadTime: number[];
+      performanceScore: number[];
+      dates: string[];
+    };
+    recommendations: string[];
+  }> {
+    const historicalData = await this.getHistoricalData(url, timeframe === 'day' ? 1 : timeframe === 'week' ? 7 : 30);
+    
+    const loadTimes = historicalData.map(d => d.loadTime);
+    const performanceScores = historicalData.map(d => d.performanceScore);
+    const dates = historicalData.map(d => d.timestamp.toISOString().split('T')[0]);
+
+    return {
+      summary: {
+        averageLoadTime: loadTimes.reduce((a, b) => a + b, 0) / loadTimes.length,
+        averagePerformanceScore: performanceScores.reduce((a, b) => a + b, 0) / performanceScores.length,
+        uptime: 99.8,
+        alertsCount: Math.floor(Math.random() * 5)
+      },
+      trends: {
+        loadTime: loadTimes,
+        performanceScore: performanceScores,
+        dates
+      },
+      recommendations: [
+        'Optimize image sizes and use WebP format',
+        'Implement lazy loading for below-the-fold content',
+        'Minimize render-blocking resources',
+        'Use a CDN for static assets',
+        'Enable compression for text-based resources'
+      ]
+    };
+  }
+
+  private generateMockMetrics(url: string): PerformanceMetrics {
+    return {
+      url,
+      timestamp: new Date(),
+      loadTime: Math.random() * 2000 + 500,
+      firstContentfulPaint: Math.random() * 1500 + 300,
+      largestContentfulPaint: Math.random() * 2500 + 800,
+      cumulativeLayoutShift: Math.random() * 0.1,
+      firstInputDelay: Math.random() * 100 + 20,
+      timeToInteractive: Math.random() * 3000 + 1000,
+      totalBlockingTime: Math.random() * 200 + 50,
+      speedIndex: Math.random() * 2000 + 800,
+      performanceScore: Math.floor(Math.random() * 30) + 70,
+      accessibilityScore: Math.floor(Math.random() * 20) + 80,
+      bestPracticesScore: Math.floor(Math.random() * 20) + 80,
+      seoScore: Math.floor(Math.random() * 20) + 80
+    };
+  }
+
+  private generateMockHistoricalData(url: string, days: number): PerformanceMetrics[] {
+    const data: PerformanceMetrics[] = [];
+    const now = new Date();
+
+    for (let i = days - 1; i >= 0; i--) {
+      const date = new Date(now);
+      date.setDate(date.getDate() - i);
+      
+      data.push({
+        url,
+        timestamp: date,
+        loadTime: Math.random() * 2000 + 500,
+        firstContentfulPaint: Math.random() * 1500 + 300,
+        largestContentfulPaint: Math.random() * 2500 + 800,
+        cumulativeLayoutShift: Math.random() * 0.1,
+        firstInputDelay: Math.random() * 100 + 20,
+        timeToInteractive: Math.random() * 3000 + 1000,
+        totalBlockingTime: Math.random() * 200 + 50,
+        speedIndex: Math.random() * 2000 + 800,
+        performanceScore: Math.floor(Math.random() * 30) + 70,
+        accessibilityScore: Math.floor(Math.random() * 20) + 80,
+        bestPracticesScore: Math.floor(Math.random() * 20) + 80,
+        seoScore: Math.floor(Math.random() * 20) + 80
+      });
+    }
+
+    return data;
+  }
+
+  private generateMockAlerts(url?: string): PerformanceAlert[] {
+    const alerts: PerformanceAlert[] = [
+      {
+        id: '1',
+        url: url || 'https://example.com',
+        type: 'warning',
+        message: 'Load time exceeded threshold',
+        metric: 'loadTime',
+        threshold: 2000,
+        currentValue: 2500,
+        timestamp: new Date(),
+        resolved: false
+      },
+      {
+        id: '2',
+        url: url || 'https://example.com',
+        type: 'info',
+        message: 'Performance score improved',
+        metric: 'performanceScore',
+        threshold: 80,
+        currentValue: 85,
+        timestamp: new Date(),
+        resolved: true
+      }
+    ];
+
+    return url ? alerts.filter(a => a.url === url) : alerts;
+  }
+}
+
+// Pricing tiers for the Performance Monitor
+export const PERFORMANCE_MONITOR_PRICING = {
+  starter: {
+    name: 'Starter',
+    price: 19,
+    period: '/month',
+    features: [
+      'Monitor up to 5 URLs',
+      '5-minute monitoring frequency',
+      'Basic performance metrics',
+      'Email alerts',
+      '7-day data retention',
+      'Basic reporting'
+    ]
+  },
+  professional: {
+    name: 'Professional',
+    price: 49,
+    period: '/month',
+    features: [
+      'Monitor up to 25 URLs',
+      '1-minute monitoring frequency',
+      'Advanced performance metrics',
+      'Email, Slack, and webhook alerts',
+      '30-day data retention',
+      'Advanced reporting and analytics',
+      'Custom thresholds',
+      'API access'
+    ]
+  },
+  enterprise: {
+    name: 'Enterprise',
+    price: 149,
+    period: '/month',
+    features: [
+      'Monitor unlimited URLs',
+      'Real-time monitoring',
+      'All performance metrics',
+      'Multiple notification channels',
+      '1-year data retention',
+      'Custom dashboards',
+      'White-label reporting',
+      'Priority support',
+      'SLA guarantee'
+    ]
+  }
+};
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-deploy-dfdd
