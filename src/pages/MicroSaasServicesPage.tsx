@@ -1,10 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Input } from "@/components/ui/input";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { 
   Search, 
   Filter, 
@@ -24,8 +18,8 @@ import {
   Mail,
   MapPin
 } from "lucide-react";
-import { MICRO_SAAS_SERVICES, MicroSaasService, getMicroSaasServicesByCategory } from '@/data/microSaasServices';
-import { SEO } from '@/components/SEO';
+import { MICRO_SAAS_SERVICES, MicroSaasService, getMicroSaasServicesByCategory } from '../data/microSaasServices';
+import { SEO } from '../components/SEO';
 
 const categoryIcons = {
   'AI Services': <Zap className="h-5 w-5" />,
@@ -135,7 +129,8 @@ export default function MicroSaasServicesPage() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             <div className="relative">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-zion-slate-light h-5 w-5" />
-              <Input
+              <input
+                type="text"
                 placeholder="Search services..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
@@ -143,42 +138,39 @@ export default function MicroSaasServicesPage() {
               />
             </div>
             
-            <Select value={selectedCategory} onValueChange={setSelectedCategory}>
-              <SelectTrigger className="bg-white/20 border-white/30 text-white">
-                <SelectValue placeholder="All Categories" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="all">All Categories</SelectItem>
-                {categories.map(category => (
-                  <SelectItem key={category} value={category}>{category}</SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
+            <select
+              value={selectedCategory}
+              onChange={(e) => setSelectedCategory(e.target.value)}
+              className="bg-white/20 border-white/30 text-white"
+            >
+              <option value="all">All Categories</option>
+              {categories.map(category => (
+                <option key={category} value={category}>{category}</option>
+              ))}
+            </select>
 
-            <Select value={priceRange} onValueChange={setPriceRange}>
-              <SelectTrigger className="bg-white/20 border-white/30 text-white">
-                <SelectValue placeholder="All Prices" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="all">All Prices</SelectItem>
-                <SelectItem value="0-100">$0 - $100</SelectItem>
-                <SelectItem value="100-500">$100 - $500</SelectItem>
-                <SelectItem value="500-1000">$500 - $1,000</SelectItem>
-                <SelectItem value="1000+">$1,000+</SelectItem>
-              </SelectContent>
-            </Select>
+            <select
+              value={priceRange}
+              onChange={(e) => setPriceRange(e.target.value)}
+              className="bg-white/20 border-white/30 text-white"
+            >
+              <option value="all">All Prices</option>
+              <option value="0-100">$0 - $100</option>
+              <option value="100-500">$100 - $500</option>
+              <option value="500-1000">$500 - $1,000</option>
+              <option value="1000+">$1,000+</option>
+            </select>
 
-            <Button 
+            <button
               onClick={() => {
                 setSearchQuery('');
                 setSelectedCategory('all');
                 setPriceRange('all');
               }}
-              variant="outline"
               className="border-zion-cyan text-zion-cyan hover:bg-zion-cyan hover:text-white"
             >
               Clear Filters
-            </Button>
+            </button>
           </div>
         </div>
       </div>
@@ -187,7 +179,7 @@ export default function MicroSaasServicesPage() {
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredServices.map((service) => (
-            <Card key={service.id} className="group overflow-hidden bg-white/10 backdrop-blur-md border-white/20 hover:border-zion-cyan/50 transition-all duration-300 hover:shadow-2xl hover:shadow-zion-cyan/20">
+            <div key={service.id} className="group overflow-hidden bg-white/10 backdrop-blur-md border-white/20 hover:border-zion-cyan/50 transition-all duration-300 hover:shadow-2xl hover:shadow-zion-cyan/20">
               <div className="relative">
                 <img 
                   src={service.images[0]} 
@@ -195,40 +187,40 @@ export default function MicroSaasServicesPage() {
                   className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute top-4 left-4 flex gap-2">
-                  <Badge className="bg-zion-purple/90 text-white">
+                  <span className="bg-zion-purple/90 text-white px-2 py-1 rounded-full text-xs flex items-center">
                     {categoryIcons[service.category]}
                     {service.category}
-                  </Badge>
+                  </span>
                   {service.featured && (
-                    <Badge className="bg-zion-cyan text-zion-slate-dark">
+                    <span className="bg-zion-cyan text-zion-slate-dark px-2 py-1 rounded-full text-xs">
                       Featured
-                    </Badge>
+                    </span>
                   )}
                 </div>
                 <div className="absolute top-4 right-4">
-                  <Badge className={`${pricingModelColors[service.pricingModel]} text-xs`}>
+                  <span className={`${pricingModelColors[service.pricingModel]} text-xs px-2 py-1 rounded-full`}>
                     {service.pricingModel}
-                  </Badge>
+                  </span>
                 </div>
               </div>
 
-              <CardHeader className="pb-3">
+              <div className="pb-3">
                 <div className="flex items-start justify-between">
-                  <CardTitle className="text-xl text-white group-hover:text-zion-cyan transition-colors">
+                  <h3 className="text-xl text-white group-hover:text-zion-cyan transition-colors">
                     {service.title}
-                  </CardTitle>
+                  </h3>
                   <div className="flex items-center gap-1 text-zion-cyan">
                     <Star className="h-4 w-4 fill-current" />
                     <span className="text-sm font-medium">{service.rating}</span>
                     <span className="text-xs text-white/60">({service.reviewCount})</span>
                   </div>
                 </div>
-                <CardDescription className="text-white/70 line-clamp-2">
+                <p className="text-white/70 line-clamp-2">
                   {service.description}
-                </CardDescription>
-              </CardHeader>
+                </p>
+              </div>
 
-              <CardContent className="pb-4">
+              <div className="pb-4">
                 <div className="space-y-4">
                   {/* Price and Market Info */}
                   <div className="bg-white/10 rounded-lg p-3">
@@ -236,9 +228,9 @@ export default function MicroSaasServicesPage() {
                       <span className="text-2xl font-bold text-zion-cyan">
                         {service.currency}{service.price.toLocaleString()}
                       </span>
-                      <Badge className="bg-zion-blue text-white">
+                      <span className="bg-zion-blue text-white px-2 py-1 rounded-full text-xs">
                         AI Score: {service.aiScore}
-                      </Badge>
+                      </span>
                     </div>
                     <p className="text-xs text-white/60">{service.marketPrice}</p>
                   </div>
@@ -277,15 +269,15 @@ export default function MicroSaasServicesPage() {
                   {/* Tags */}
                   <div className="flex flex-wrap gap-1">
                     {service.tags.slice(0, 3).map((tag, index) => (
-                      <Badge key={index} variant="secondary" className="text-xs bg-white/20 text-white/80">
+                      <span key={index} className="bg-white/20 text-white/80 px-2 py-1 rounded-full text-xs">
                         {tag}
-                      </Badge>
+                      </span>
                     ))}
                   </div>
                 </div>
-              </CardContent>
+              </div>
 
-              <CardFooter className="pt-0">
+              <div className="pt-0">
                 <div className="w-full space-y-3">
                   <div className="flex items-center justify-between text-xs text-white/60">
                     <div className="flex items-center gap-1">
@@ -299,29 +291,19 @@ export default function MicroSaasServicesPage() {
                   </div>
                   
                   <div className="flex gap-2">
-                    <Button 
-                      asChild 
-                      className="flex-1 bg-gradient-to-r from-zion-purple to-zion-blue hover:from-zion-purple-light hover:to-zion-blue-light text-white"
-                    >
-                      <a href={service.contactLink} target="_blank" rel="noopener noreferrer">
-                        Get Quote
-                        <ArrowRight className="h-4 w-4 ml-2" />
-                      </a>
-                    </Button>
+                    <a href={service.contactLink} target="_blank" rel="noopener noreferrer" className="flex-1 bg-gradient-to-r from-zion-purple to-zion-blue hover:from-zion-purple-light hover:to-zion-blue-light text-white px-4 py-2 rounded-lg text-sm font-medium flex items-center justify-center">
+                      Get Quote
+                      <ArrowRight className="h-4 w-4 ml-2" />
+                    </a>
                     
-                    <Button 
-                      variant="outline" 
-                      className="border-zion-cyan text-zion-cyan hover:bg-zion-cyan hover:text-white"
-                      asChild
-                    >
-                      <a href="mailto:kleber@ziontechgroup.com?subject=Inquiry about service">
-                        <Mail className="h-4 w-4" />
-                      </a>
-                    </Button>
+                    <a href="mailto:kleber@ziontechgroup.com?subject=Inquiry about service" className="border-zion-cyan text-zion-cyan hover:bg-zion-cyan hover:text-white px-4 py-2 rounded-lg text-sm font-medium flex items-center justify-center">
+                      <Mail className="h-4 w-4 mr-2" />
+                      Email Us
+                    </a>
                   </div>
                 </div>
-              </CardFooter>
-            </Card>
+              </div>
+            </div>
           ))}
         </div>
 
@@ -330,16 +312,16 @@ export default function MicroSaasServicesPage() {
             <div className="text-6xl mb-4">🔍</div>
             <h3 className="text-2xl font-semibold text-white mb-2">No services found</h3>
             <p className="text-white/60 mb-6">Try adjusting your search criteria or browse all services</p>
-            <Button 
+            <button 
               onClick={() => {
                 setSearchQuery('');
                 setSelectedCategory('all');
                 setPriceRange('all');
               }}
-              className="bg-zion-cyan text-zion-slate-dark hover:bg-zion-cyan-light"
+              className="bg-zion-cyan text-zion-slate-dark hover:bg-zion-cyan-light px-6 py-3 rounded-lg text-sm font-medium"
             >
               View All Services
-            </Button>
+            </button>
           </div>
         )}
       </div>
@@ -356,28 +338,15 @@ export default function MicroSaasServicesPage() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              size="lg"
-              className="bg-gradient-to-r from-zion-cyan to-zion-blue text-white hover:from-zion-cyan-light hover:to-zion-blue-light"
-              asChild
-            >
-              <a href="tel:+13024640950">
-                <Phone className="h-5 w-5 mr-2" />
-                Call Now: +1 302 464 0950
-              </a>
-            </Button>
+            <a href="tel:+13024640950" className="bg-gradient-to-r from-zion-cyan to-zion-blue text-white hover:from-zion-cyan-light hover:to-zion-blue-light px-6 py-3 rounded-lg text-sm font-medium flex items-center justify-center">
+              <Phone className="h-5 w-5 mr-2" />
+              Call Now: +1 302 464 0950
+            </a>
             
-            <Button 
-              size="lg"
-              variant="outline"
-              className="border-zion-cyan text-zion-cyan hover:bg-zion-cyan hover:text-white"
-              asChild
-            >
-              <a href="mailto:kleber@ziontechgroup.com">
-                <Mail className="h-5 w-5 mr-2" />
-                Email Us
-              </a>
-            </Button>
+            <a href="mailto:kleber@ziontechgroup.com" className="border-zion-cyan text-zion-cyan hover:bg-zion-cyan hover:text-white px-6 py-3 rounded-lg text-sm font-medium flex items-center justify-center">
+              <Mail className="h-5 w-5 mr-2" />
+              Email Us
+            </a>
           </div>
           
           <div className="mt-8 text-white/60">

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { COMPREHENSIVE_SERVICES } from '../data/comprehensiveServices';
 import { ENHANCED_SERVICES } from '../data/enhancedServices';
+import { Link } from 'react-router-dom';
 
 export function Services() {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
@@ -102,15 +103,71 @@ export function Services() {
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
-                className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
+                className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
                   selectedCategory === category
-                    ? 'bg-zion-cyan text-zion-blue-dark shadow-neon'
-                    : 'bg-zion-blue-light/20 text-zion-slate-light hover:bg-zion-blue-light/30 hover:text-white border border-zion-cyan/30'
+                    ? 'bg-gradient-to-r from-zion-cyan to-zion-purple text-white shadow-neon'
+                    : 'bg-zion-blue-light/20 text-zion-cyan border border-zion-cyan/30 hover:bg-zion-blue-light/30'
                 }`}
               >
                 {category === 'all' ? 'All Services' : category}
               </button>
             ))}
+          </div>
+
+          {/* Quick Navigation to Comprehensive Services */}
+          <div className="mb-12">
+            <h3 className="text-2xl font-bold text-zion-cyan mb-6 text-center">Explore Our Service Categories</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              {[
+                {
+                  title: "Comprehensive Services",
+                  description: "Full portfolio of IT & AI services",
+                  link: "/comprehensive-services",
+                  icon: "🚀",
+                  color: "from-zion-cyan to-zion-blue-light"
+                },
+                {
+                  title: "AI Services",
+                  description: "AI-powered solutions & consulting",
+                  link: "/ai-services",
+                  icon: "🤖",
+                  color: "from-zion-purple to-zion-cyan"
+                },
+                {
+                  title: "Enterprise Solutions",
+                  description: "Large-scale business transformation",
+                  link: "/enterprise-solutions",
+                  icon: "🏢",
+                  color: "from-zion-cyan to-zion-purple"
+                },
+                {
+                  title: "IT Onsite Services",
+                  description: "Global IT support & maintenance",
+                  link: "/it-onsite-services",
+                  icon: "🌍",
+                  color: "from-zion-purple to-zion-cyan"
+                }
+              ].map((service, index) => (
+                <motion.div
+                  key={service.title}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
+                  className="group bg-gradient-to-br from-zion-blue-light/10 to-zion-purple/10 backdrop-blur-sm border border-zion-cyan/20 rounded-xl p-6 hover:border-zion-cyan/50 transition-all duration-300 hover:shadow-quantum text-center"
+                >
+                  <div className="text-4xl mb-4">{service.icon}</div>
+                  <h3 className="text-lg font-bold text-zion-cyan mb-2 group-hover:text-neon-green transition-colors">
+                    {service.title}
+                  </h3>
+                  <p className="text-zion-slate-light text-sm mb-4">{service.description}</p>
+                  <Link to={service.link}>
+                    <button className="px-4 py-2 bg-gradient-to-r from-zion-cyan to-zion-purple text-white rounded-lg text-sm font-semibold hover:shadow-neon transition-all duration-300 transform hover:scale-105">
+                      Explore
+                    </button>
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </motion.div>
 

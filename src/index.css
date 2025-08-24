@@ -135,11 +135,11 @@
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-zion-blue-light;
   }
 
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply bg-zion-blue-dark text-white font-sans;
   }
 
   /* Enhanced Animations */
