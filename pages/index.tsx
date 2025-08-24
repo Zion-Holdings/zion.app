@@ -222,10 +222,10 @@ export default function Home() {
                { title: 'Branch Cleanup Runner (daily)', desc: 'Deletes merged or stale ephemeral branches via GitHub API.', href: '/.netlify/functions/branch-cleanup-runner' },
                { title: 'Redirect Healer', desc: 'Heals broken internal links by auto-adding smart redirects.', href: '/.netlify/functions/redirect-healer' },
                { title: 'Sitemap Prioritizer', desc: 'Regenerates sitemap with popularity-weighted priorities.', href: '/.netlify/functions/sitemap-prioritizer' },
-               { title: 'Content Freshness Auditor', desc: 'Analyzes repo content freshness and publishes a report.', href: '/.netlify/functions/content-freshness-runner' },
-               { title: 'Internal Anchor Auditor', desc: 'Detects broken in-page anchors across TSX/MD content.', href: '/.netlify/functions/internal-anchor-audit-runner' },
-               { title: 'Orphan Asset Scanner', desc: 'Finds unreferenced files in public/ for cleanup planning.', href: '/.netlify/functions/orphan-asset-report-runner' },
-             ].map((tool) => (
+               { title: 'Orphan Page Auditor', desc: 'Detects pages with no inbound links and publishes a report.', href: '/.netlify/functions/orphan-page-audit-runner' },
+               { title: 'Meta OG Enhancer', desc: 'Adds missing Open Graph/Twitter meta tags to pages.', href: '/.netlify/functions/meta-og-enhancer-runner' },
+               { title: 'RSS Feed Generator', desc: 'Generates an RSS feed for key updates and reports.', href: '/feed.xml' },
+            ].map((tool) => (
               <a key={tool.title} href={tool.href} className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
                 <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
                 <h3 className="text-lg font-semibold">{tool.title}</h3>
