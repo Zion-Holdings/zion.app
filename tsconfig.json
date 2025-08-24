@@ -42,7 +42,6 @@
     "src"
   ],
   "exclude": [
-    "src/pages/ComprehensiveServicesPage.tsx",
     "src/pages/FAQ.tsx",
     "src/pages/RequestQuote.tsx",
     "src/pages/ServicesPricingPage.tsx",
