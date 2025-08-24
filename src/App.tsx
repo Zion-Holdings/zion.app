@@ -41,6 +41,13 @@ const OpenAppRedirect = React.lazy(() => import('./pages/OpenAppRedirect'));
 const ContactPage = React.lazy(() => import('./pages/Contact'));
 const ZionHireAI = React.lazy(() => import('./pages/ZionHireAI'));
 const RequestQuotePage = React.lazy(() => import('./pages/RequestQuote'));
+const AboutPage = React.lazy(() => import('./pages/About'));
+const GreenITPage = React.lazy(() => import('./pages/GreenIT'));
+const CareersPage = React.lazy(() => import('./pages/Careers'));
+const PrivacyPage = React.lazy(() => import('./pages/Privacy'));
+const TermsPage = React.lazy(() => import('./pages/Terms'));
+const SitemapPage = React.lazy(() => import('./pages/Sitemap'));
+const FAQPage = React.lazy(() => import('./pages/FAQ'));
 
 const baseRoutes = [
   { path: '/', element: <Home /> },
@@ -65,6 +72,13 @@ const baseRoutes = [
   { path: '/request-quote', element: <RequestQuotePage /> },
   { path: '/blog', element: <Blog /> },
   { path: '/blog/:slug', element: <BlogPost /> },
+  { path: '/about', element: <AboutPage /> },
+  { path: '/green-it', element: <GreenITPage /> },
+  { path: '/careers', element: <CareersPage /> },
+  { path: '/privacy', element: <PrivacyPage /> },
+  { path: '/terms', element: <TermsPage /> },
+  { path: '/sitemap', element: <SitemapPage /> },
+  { path: '/faq', element: <FAQPage /> },
 ];
 
 const App = () => {
