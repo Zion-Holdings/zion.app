@@ -2,6 +2,8 @@ import "./globals.css";
 import type { ReactNode } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Sidebar from "@/components/Sidebar";
+import ScrollToTop from "@/components/ScrollToTop";
 
 export const metadata = {
   title: "Zion Tech Group - AI-Powered Technology Solutions",
@@ -28,9 +30,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body className="min-h-screen bg-gray-50 text-gray-900">
+        <Sidebar />
         <Header />
-        <main className="min-h-screen">{children}</main>
+        <main className="min-h-screen lg:ml-64">{children}</main>
         <Footer />
+        <ScrollToTop />
       </body>
     </html>
   );
