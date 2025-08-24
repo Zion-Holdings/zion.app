@@ -1,54 +1,103 @@
 
 import { GradientHeading } from "./GradientHeading";
 import { Link } from "react-router-dom";
-import { Briefcase, HardDrive, Lightbulb, Users, ArrowRight } from "lucide-react";
-import { motion } from "framer-motion";
-import { useState } from "react";
+import { 
+  Briefcase, 
+  HardDrive, 
+  Lightbulb, 
+  Users, 
+  Brain, 
+  Shield, 
+  Cloud, 
+  Database, 
+  Zap, 
+  Code, 
+  Settings, 
+  Link as LinkIcon 
+} from "lucide-react";
 
 const categories = [
   {
-    title: "Services",
-    description: "On-demand IT support, consulting, development, and more",
-    icon: <Briefcase className="w-10 h-10" />,
-    link: "/services",
+    title: "AI & Machine Learning",
+    description: "Transform your business with intelligent automation and data-driven insights",
+    icon: <Brain className="w-10 h-10" />,
+    link: "/services#ai-ml",
     color: "from-purple-500 to-indigo-600",
-    gradient: "from-zion-purple to-zion-purple-dark",
-    delay: 0,
+    services: ["AI Strategy", "Custom Models", "Process Automation"]
   },
   {
-    title: "Talents",
-    description: "Connect with AI experts, developers, and tech specialists",
-    icon: <Users className="w-10 h-10" />,
-    link: "/talent",
-    color: "from-cyan-500 to-blue-600",
-    gradient: "from-zion-cyan to-zion-blue",
-    delay: 0.1,
+    title: "Cybersecurity",
+    description: "Protect your organization with comprehensive security solutions and monitoring",
+    icon: <Shield className="w-10 h-10" />,
+    link: "/services#cybersecurity",
+    color: "from-red-500 to-pink-600",
+    services: ["Security Audits", "Managed SOC", "Compliance"]
   },
   {
-    title: "Equipment",
-    description: "Rent or buy specialized hardware, servers, and devices",
-    icon: <HardDrive className="w-10 h-10" />,
-    link: "/equipment",
-    color: "from-amber-500 to-orange-600",
-    gradient: "from-zion-cyan to-zion-purple",
-    delay: 0.2,
+    title: "Cloud & Infrastructure",
+    description: "Modernize your infrastructure with cloud solutions and DevOps automation",
+    icon: <Cloud className="w-10 h-10" />,
+    link: "/services#cloud-infrastructure",
+    color: "from-blue-500 to-cyan-600",
+    services: ["Cloud Migration", "DevOps", "Infrastructure"]
   },
   {
-    title: "Innovation",
-    description: "Discover cutting-edge solutions and tech breakthroughs",
-    icon: <Lightbulb className="w-10 h-10" />,
-    link: "/category/innovation",
-    color: "from-emerald-500 to-green-600",
-    gradient: "from-zion-purple-light to-zion-cyan",
-    delay: 0.3,
+    title: "Data & Analytics",
+    description: "Unlock business insights with advanced analytics and data engineering",
+    icon: <Database className="w-10 h-10" />,
+    link: "/services#data-analytics",
+    color: "from-green-500 to-emerald-600",
+    services: ["Data Engineering", "AI Analytics", "Business Intelligence"]
   },
+  {
+    title: "Digital Transformation",
+    description: "Accelerate your digital journey with strategic transformation services",
+    icon: <Zap className="w-10 h-10" />,
+    link: "/services#digital-transformation",
+    color: "from-orange-500 to-red-600",
+    services: ["Strategy", "Implementation", "Change Management"]
+  },
+  {
+    title: "Web & Mobile",
+    description: "Build custom applications and digital experiences for your business",
+    icon: <Code className="w-10 h-10" />,
+    link: "/services#web-mobile",
+    color: "from-indigo-500 to-purple-600",
+    services: ["Custom Apps", "Web Development", "Mobile Solutions"]
+  },
+  {
+    title: "IT Support & Management",
+    description: "Ensure smooth IT operations with managed services and support",
+    icon: <Settings className="w-10 h-10" />,
+    link: "/services#it-support",
+    color: "from-gray-500 to-slate-600",
+    services: ["Managed IT", "24/7 Support", "Strategic Planning"]
+  },
+  {
+    title: "Blockchain & Web3",
+    description: "Leverage decentralized technologies for innovation and transparency",
+    icon: <LinkIcon className="w-10 h-10" />,
+    link: "/services#blockchain-web3",
+    color: "from-yellow-500 to-amber-600",
+    services: ["Smart Contracts", "DeFi Apps", "Web3 Integration"]
+  }
 ];
 
 const specialServices = [
   {
     title: "IT Onsite Services",
     link: "/it-onsite-services",
-    description: "Professional on-site technical support and solutions"
+    description: "Global IT support in 195+ countries"
+  },
+  {
+    title: "AI Talent Matching",
+    link: "/zion-hire-ai",
+    description: "Find the perfect AI experts"
+  },
+  {
+    title: "Request Custom Quote",
+    link: "/request-quote",
+    description: "Get personalized pricing"
   }
 ];
 
@@ -57,175 +106,91 @@ interface CategoriesSectionProps {
 }
 
 export function CategoriesSection({ showTitle = true }: CategoriesSectionProps) {
-  const [hoveredCard, setHoveredCard] = useState<string | null>(null);
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        duration: 0.8,
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const cardVariants = {
-    hidden: { opacity: 0, y: 30, scale: 0.9 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut",
-      },
-    },
-    hover: {
-      y: -8,
-      scale: 1.02,
-      transition: {
-        duration: 0.3,
-        ease: "easeOut",
-      },
-    },
-  };
-
-  const iconVariants = {
-    hover: {
-      scale: 1.1,
-      rotate: 5,
-      transition: {
-        duration: 0.3,
-        ease: "easeOut",
-      },
-    },
-  };
-
   return (
-    <section 
-      className="py-20 bg-zion-blue relative overflow-hidden"
-      aria-labelledby="categories-heading"
-    >
-      {/* Background pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 25% 25%, hsl(220, 65%, 65%) 2px, transparent 2px)`,
-          backgroundSize: '50px 50px'
-        }} />
-      </div>
-
-      <div className="container mx-auto px-4 relative z-10">
+    <section className="py-20 bg-zion-blue">
+      <div className="container mx-auto px-4">
         {showTitle && (
-          <motion.div 
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <GradientHeading id="categories-heading">Explore Categories</GradientHeading>
-            <p className="text-zion-slate-light text-lg mt-4 max-w-2xl mx-auto leading-relaxed">
-              Discover our comprehensive ecosystem of tech services, talent, equipment, and innovation
+          <div className="text-center mb-16">
+            <GradientHeading>Explore Our Services</GradientHeading>
+            <p className="text-zion-slate-light text-lg mt-4 max-w-3xl mx-auto">
+              Discover our comprehensive ecosystem of professional technology services, from AI and cybersecurity 
+              to cloud infrastructure and digital transformation
             </p>
-          </motion.div>
+          </div>
         )}
         
-        <motion.div 
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-        >
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {categories.map((category) => (
-            <motion.div
-              key={category.title}
-              variants={cardVariants}
-              whileHover="hover"
-              onHoverStart={() => setHoveredCard(category.title)}
-              onHoverEnd={() => setHoveredCard(null)}
+            <Link 
+              key={category.title} 
+              to={category.link} 
+              className="group block"
             >
-              <Link 
-                to={category.link} 
-                className="group block h-full"
-                aria-label={`Explore ${category.title} category`}
-              >
-                <div className="rounded-xl overflow-hidden h-full border border-zion-blue-light bg-zion-blue-dark p-6 transition-all duration-300 hover:border-zion-purple/50 relative">
-                  {/* Hover effect overlay */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${category.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-300`} />
-                  
-                  <motion.div 
-                    className={`rounded-full w-16 h-16 bg-gradient-to-br ${category.color} flex items-center justify-center mb-6 group-hover:shadow-lg transition-all duration-300`}
-                    variants={iconVariants}
-                  >
-                    <div className="text-white">
-                      {category.icon}
-                    </div>
-                  </motion.div>
-                  
-                  <h3 className="text-white text-xl font-bold mb-3 group-hover:text-zion-cyan transition-colors duration-300">
-                    {category.title}
-                  </h3>
-                  <p className="text-zion-slate-light group-hover:text-zion-slate-light/80 transition-colors duration-300 leading-relaxed">
-                    {category.description}
-                  </p>
-                  
-                  {/* Arrow indicator */}
-                  <motion.div 
-                    className="absolute bottom-4 right-4 text-zion-cyan opacity-0 group-hover:opacity-100 transition-all duration-300"
-                    initial={{ x: -10 }}
-                    whileHover={{ x: 5 }}
-                  >
-                    <ArrowRight className="w-5 h-5" />
-                  </motion.div>
+              <div className="rounded-lg overflow-hidden h-full border border-zion-blue-light bg-zion-blue-dark p-6 transition-all duration-300 hover:border-zion-purple/50 hover:translate-y-[-5px]">
+                <div className={`rounded-full w-16 h-16 bg-gradient-to-br ${category.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                  <div className="text-white">
+                    {category.icon}
+                  </div>
                 </div>
-              </Link>
-            </motion.div>
+                <h3 className="text-white text-xl font-bold mb-2">{category.title}</h3>
+                <p className="text-zion-slate-light text-sm mb-4">{category.description}</p>
+                
+                {/* Service Highlights */}
+                <div className="space-y-2">
+                  {category.services.map((service, index) => (
+                    <div key={index} className="flex items-center gap-2 text-zion-cyan text-xs">
+                      <div className="w-1.5 h-1.5 bg-zion-cyan rounded-full"></div>
+                      <span>{service}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </Link>
           ))}
-        </motion.div>
+        </div>
         
-        <motion.div 
-          className="mt-12"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-        >
+        <div className="mb-8">
           <h3 className="text-center text-xl font-bold text-white mb-6">Featured Services</h3>
           <div className="flex flex-wrap justify-center gap-4">
             {specialServices.map((service) => (
               <Link 
                 key={service.title}
                 to={service.link}
-                className="group px-6 py-3 bg-zion-blue-light hover:bg-zion-blue-dark border border-zion-purple/20 hover:border-zion-purple/50 rounded-full text-zion-cyan transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-zion-purple/50 focus:ring-offset-2 focus:ring-offset-zion-blue"
-                aria-label={`Learn more about ${service.title}`}
+                className="group px-6 py-4 bg-zion-blue-light hover:bg-zion-blue-dark border border-zion-purple/20 hover:border-zion-purple/50 rounded-lg text-zion-cyan transition-all duration-300 hover:scale-105"
               >
-                <span className="flex items-center gap-2">
-                  {service.title}
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-                </span>
+                <div className="text-center">
+                  <div className="font-semibold mb-1">{service.title}</div>
+                  <div className="text-xs text-zion-slate-light opacity-80">{service.description}</div>
+                </div>
               </Link>
             ))}
           </div>
-        </motion.div>
+        </div>
         
-        <motion.div 
-          className="mt-12 flex justify-center"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-        >
+        <div className="text-center">
           <Link 
-            to="/categories" 
-            className="group text-zion-cyan border-b-2 border-zion-cyan hover:border-zion-cyan-dark transition-all duration-300 flex items-center gap-2 hover:gap-3"
-            aria-label="View all categories"
+            to="/services" 
+            className="inline-flex items-center gap-2 text-zion-cyan border-b border-zion-cyan hover:border-zion-cyan-dark transition-colors text-lg font-medium"
           >
-            View All Categories
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+            View All Services & Solutions
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
           </Link>
-        </motion.div>
+        </div>
+
+        {/* Contact Information */}
+        <div className="mt-12 text-center">
+          <div className="bg-zion-blue-dark border border-zion-blue-light rounded-lg p-6 max-w-2xl mx-auto">
+            <h4 className="text-white font-semibold mb-3">Ready to Get Started?</h4>
+            <div className="text-zion-slate-light text-sm space-y-1">
+              <p>📞 <a href="tel:+13024640950" className="text-zion-cyan hover:text-zion-cyan-light">+1 302 464 0950</a></p>
+              <p>✉️ <a href="mailto:kleber@ziontechgroup.com" className="text-zion-cyan hover:text-zion-cyan-light">kleber@ziontechgroup.com</a></p>
+              <p>🌐 <a href="https://ziontechgroup.com" target="_blank" rel="noopener noreferrer" className="text-zion-cyan hover:text-zion-cyan-light">ziontechgroup.com</a></p>
+              <p>📍 364 E Main St STE 1008, Middletown DE 19709</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
