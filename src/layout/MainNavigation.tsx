@@ -2,8 +2,9 @@
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { useAuth } from "@/hooks/useAuth";
-import { MessageSquare } from "lucide-react";
+import { MessageSquare, ChevronDown } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { useState } from "react";
 
 interface MainNavigationProps {
   isAdmin?: boolean;
@@ -16,12 +17,14 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
   const isAuthenticated = !!user;
   const location = useLocation();
   const { t } = useTranslation();
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const [companyOpen, setCompanyOpen] = useState(false);
 
   const baseLinks = [
     {
       key: 'home',
       href: '/',
-      matches: (path: string) => path === '/' || path === '/home'
+      matches: (path: string) => path === '/'
     },
     {
       key: 'about',
@@ -29,44 +32,14 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
       matches: (path: string) => path === '/about'
     },
     {
-      key: 'services',
-      href: '/services',
-      matches: (path: string) => path.startsWith('/services')
-    },
-    {
-      key: 'it-onsite-services',
-      href: '/it-onsite-services',
-      matches: (path: string) => path.startsWith('/it-onsite-services')
-    },
-    {
       key: 'marketplace',
       href: '/marketplace',
       matches: (path: string) => path.startsWith('/marketplace')
     },
     {
-      key: 'micro-saas',
-      href: '/micro-saas-services',
-      matches: (path: string) => path.startsWith('/micro-saas-services')
-    },
-    {
-      key: 'comprehensive-services',
-      href: '/comprehensive-services',
-      matches: (path: string) => path.startsWith('/comprehensive-services')
-    },
-    {
-      key: 'ai-services',
-      href: '/ai-services',
-      matches: (path: string) => path.startsWith('/ai-services')
-    },
-    {
-      key: 'enterprise-solutions',
-      href: '/enterprise-solutions',
-      matches: (path: string) => path.startsWith('/enterprise-solutions')
-    },
-    {
-      key: 'categories',
-      href: '/categories',
-      matches: (path: string) => path.startsWith('/categories')
+      key: 'services',
+      href: '/services',
+      matches: (path: string) => path.startsWith('/services') || path.startsWith('/it-onsite-services')
     },
     {
       key: 'talent',
@@ -79,32 +52,19 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
       matches: (path: string) => path.startsWith('/equipment')
     },
     {
+      key: 'green-it',
+      href: '/green-it',
+      matches: (path: string) => path === '/green-it'
+    },
+    {
       key: 'community',
       href: '/community',
       matches: (path: string) => path.startsWith('/community') || path.startsWith('/forum')
-<<<<<<< HEAD
     },
     {
       key: 'blog',
       href: '/blog',
       matches: (path: string) => path.startsWith('/blog')
-    },
-    {
-      key: 'partners',
-      href: '/partners',
-      matches: (path: string) => path.startsWith('/partners')
-    },
-    {
-      key: 'careers',
-      href: '/careers',
-      matches: (path: string) => path.startsWith('/careers')
-    },
-    {
-      key: 'contact',
-      href: '/contact',
-      matches: (path: string) => path.startsWith('/contact')
-=======
->>>>>>> 1190166b600d0883f3d21629581161b11801bcbf
     }
   ];
 
@@ -138,20 +98,112 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
             <Link
               to={link.href}
               className={cn(
-                "inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-all duration-300 relative group",
+                "inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-colors",
                 link.matches(location.pathname)
-                  ? "bg-zion-purple/20 text-zion-cyan shadow-lg shadow-zion-cyan/20"
-                  : "text-white hover:bg-zion-purple/10 hover:text-zion-cyan hover:shadow-lg hover:shadow-zion-cyan/10"
+                  ? "bg-zion-purple/20 text-zion-cyan"
+                  : "text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
               )}
             >
               {link.name}
-              {link.matches(location.pathname) && (
-                <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-zion-cyan to-zion-purple rounded-full"></div>
-              )}
-              <div className="absolute inset-0 rounded-md bg-gradient-to-r from-zion-cyan/0 via-zion-cyan/5 to-zion-cyan/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </Link>
           </li>
         ))}
+        
+        {/* Services Dropdown */}
+        <li className="relative">
+          <button
+            onClick={() => setServicesOpen(!servicesOpen)}
+            onMouseEnter={() => setServicesOpen(true)}
+            onMouseLeave={() => setServicesOpen(false)}
+            className={cn(
+              "inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-colors",
+              location.pathname.startsWith('/services') || location.pathname.startsWith('/it-onsite-services')
+                ? "bg-zion-purple/20 text-zion-cyan"
+                : "text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
+            )}
+          >
+            Services
+            <ChevronDown className="ml-1 h-4 w-4" />
+          </button>
+          
+          {servicesOpen && (
+            <div
+              className="absolute top-full left-0 mt-1 w-48 bg-zion-blue-dark border border-zion-purple/20 rounded-md shadow-lg py-2 z-50"
+              onMouseEnter={() => setServicesOpen(true)}
+              onMouseLeave={() => setServicesOpen(false)}
+            >
+              <Link
+                to="/services"
+                className="block px-4 py-2 text-sm text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
+              >
+                All Services
+              </Link>
+              <Link
+                to="/it-onsite-services"
+                className="block px-4 py-2 text-sm text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
+              >
+                IT Onsite Services
+              </Link>
+              <Link
+                to="/green-it"
+                className="block px-4 py-2 text-sm text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
+              >
+                Green IT Solutions
+              </Link>
+            </div>
+          )}
+        </li>
+        
+        {/* Company Dropdown */}
+        <li className="relative">
+          <button
+            onClick={() => setCompanyOpen(!companyOpen)}
+            onMouseEnter={() => setCompanyOpen(true)}
+            onMouseLeave={() => setCompanyOpen(false)}
+            className={cn(
+              "inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-colors",
+              location.pathname === '/about' || location.pathname === '/careers' || location.pathname === '/partners'
+                ? "bg-zion-purple/20 text-zion-cyan"
+                : "text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
+            )}
+          >
+            Company
+            <ChevronDown className="ml-1 h-4 w-4" />
+          </button>
+          
+          {companyOpen && (
+            <div
+              className="absolute top-full left-0 mt-1 w-48 bg-zion-blue-dark border border-zion-purple/20 rounded-md shadow-lg py-2 z-50"
+              onMouseEnter={() => setCompanyOpen(true)}
+              onMouseLeave={() => setCompanyOpen(false)}
+            >
+              <Link
+                to="/about"
+                className="block px-4 py-2 text-sm text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
+              >
+                About Us
+              </Link>
+              <Link
+                to="/careers"
+                className="block px-4 py-2 text-sm text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
+              >
+                Careers
+              </Link>
+              <Link
+                to="/partners"
+                className="block px-4 py-2 text-sm text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
+              >
+                Partners
+              </Link>
+              <Link
+                to="/contact"
+                className="block px-4 py-2 text-sm text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
+              >
+                Contact
+              </Link>
+            </div>
+          )}
+        </li>
         
         {/* Messages link with unread counter */}
         {isAuthenticated && (
@@ -159,20 +211,19 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
             <Link
               to="/messages"
               className={cn(
-                "inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-all duration-300 relative group",
+                "inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-colors relative",
                 location.pathname === "/messages" || location.pathname === "/inbox"
-                  ? "bg-zion-purple/20 text-zion-cyan shadow-lg shadow-zion-cyan/20"
-                  : "text-white hover:bg-zion-purple/10 hover:text-zion-cyan hover:shadow-lg hover:shadow-zion-cyan/10"
+                  ? "bg-zion-purple/20 text-zion-cyan"
+                  : "text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
               )}
             >
               <MessageSquare className="w-4 h-4 mr-1" />
               {t('nav.messages')}
               {unreadCount > 0 && (
-                <span className="absolute -top-1 -right-1 bg-gradient-to-r from-zion-purple to-zion-cyan text-white text-xs rounded-full h-5 w-5 flex items-center justify-center shadow-lg shadow-zion-cyan/30">
+                <span className="absolute -top-1 -right-1 bg-zion-purple text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
                   {unreadCount}
                 </span>
               )}
-              <div className="absolute inset-0 rounded-md bg-gradient-to-r from-zion-cyan/0 via-zion-cyan/5 to-zion-cyan/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </Link>
           </li>
         )}
