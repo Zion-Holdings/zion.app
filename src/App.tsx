@@ -8,6 +8,7 @@ const ServicesPage = React.lazy(() => import('./pages/ServicesPage'));
 const ComprehensiveServicesPage = React.lazy(() => import('./pages/ComprehensiveServicesPage'));
 const ServicesComparisonPage = React.lazy(() => import('./pages/ServicesComparisonPage'));
 const ITOnsiteServicesPage = React.lazy(() => import('./pages/ITOnsiteServicesPage'));
+const MicroSaasServicesPage = React.lazy(() => import('./pages/MicroSaasServicesPage'));
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
             <Route path="/comprehensive-services" element={<ComprehensiveServicesPage />} />
             <Route path="/services-comparison" element={<ServicesComparisonPage />} />
             <Route path="/it-onsite-services" element={<ITOnsiteServicesPage />} />
+            <Route path="/micro-saas-services" element={<MicroSaasServicesPage />} />
           </Routes>
         </React.Suspense>
       </div>

@@ -1,4 +1,4 @@
-import{c as e}from"./star-CCWfGMYl.js";
+import{c as e}from"./star-BMXiTSf1.js";
 /**
  * @license lucide-react v0.323.0 - ISC
  *
