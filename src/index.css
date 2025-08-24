@@ -135,11 +135,11 @@
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-zinc-200 dark:border-zinc-800;
   }
 
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply bg-zinc-50 dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100 font-sans;
   }
 
   /* Enhanced Animations */
@@ -234,8 +234,102 @@
     }
   }
 
+  @keyframes dash {
+    to {
+      stroke-dashoffset: -100;
+    }
+  }
+
+  @keyframes matrix-rain {
+    0% {
+      transform: translateY(-100vh);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100vh);
+      opacity: 0;
+    }
+  }
+
+  @keyframes holographic-shift {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  @keyframes quantum-pulse {
+    0%, 100% {
+      box-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
+    }
+    50% {
+      box-shadow: 0 0 40px rgba(139, 92, 246, 0.8), 0 0 60px rgba(59, 130, 246, 0.6);
+    }
+  }
+
   .pulse {
     animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .animate-dash {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+    animation: dash 3s linear infinite;
+  }
+
+  .animate-matrix-rain {
+    animation: matrix-rain 20s linear infinite;
+  }
+
+  .animate-holographic-shift {
+    background-size: 200% 200%;
+    animation: holographic-shift 3s ease infinite;
+  }
+
+  .animate-quantum-pulse {
+    animation: quantum-pulse 2s ease-in-out infinite;
+  }
+
+  .hover\:shadow-neon:hover {
+    box-shadow: 0 0 20px rgba(34, 221, 210, 0.5), 0 0 40px rgba(34, 221, 210, 0.3);
+  }
+
+  .bg-zion-cyan {
+    background-color: #22ddd2;
+  }
+
+  .bg-zion-purple {
+    background-color: #8b5cf6;
+  }
+
+  .bg-zion-blue {
+    background-color: #3b82f6;
+  }
+
+  .bg-zion-blue-dark {
+    background-color: #1e293b;
+  }
+
+  .text-zion-cyan {
+    color: #22ddd2;
+  }
+
+  .text-zion-purple {
+    color: #8b5cf6;
+  }
+
+  .text-zion-blue {
+    color: #3b82f6;
+  }
+
+  .border-zion-cyan {
+    border-color: #22ddd2;
+  }
+
+  .shadow-neon {
+    box-shadow: 0 0 20px rgba(34, 221, 210, 0.3);
   }
 
   .float {
