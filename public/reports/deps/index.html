@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Dependency Health Radar</title>
+<meta name="description" content="Live report of npm dependency health across this repo." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  body { background:#020617; color:white; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
+  .container { max-width: 1000px; margin: 2rem auto; padding: 0 1rem; }
+  .card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 16px; backdrop-filter: blur(8px); }
+  h1 { font-size: 1.75rem; font-weight: 800; margin: 0; background: linear-gradient(90deg, #f0abfc, #a78bfa, #22d3ee); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+  thead th { text-align: left; font-weight: 600; color: rgba(255,255,255,0.8); padding: 8px; border-bottom: 1px solid rgba(255,255,255,0.12); }
+  .grid { display:grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: 8px; margin-top: 12px; }
+  .pill { border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.06); border-radius: 12px; padding: 8px 10px; text-align:center; font-size: 12px; color: rgba(255,255,255,0.8); }
+  a { color: #67e8f9; }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <h1>Dependency Health Radar</h1>
+      <p style="color:rgba(255,255,255,0.7)">Autonomous scan comparing installed versions to latest stable on npm. Generated at 2025-08-11T22:25:57.740Z.</p>
+      <div class="grid">
+        <div class="pill">Total: <strong>55</strong></div>
+        <div class="pill">Up-to-date: <strong>31</strong></div>
+        <div class="pill">Patch: <strong>6</strong></div>
+        <div class="pill">Minor: <strong>7</strong></div>
+        <div class="pill">Major: <strong>11</strong></div>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Package</th>
+            <th>Current</th>
+            <th>Latest</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><code>@commitlint/cli</code></td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">^19.8.1</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">19.8.1</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="background:#10B981;color:white;padding:2px 8px;border-radius:9999px;font-size:12px">up-to-date</span></td>
+    </tr>
+<tr>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><code>@commitlint/config-conventional</code></td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">^19.8.1</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">19.8.1</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="background:#10B981;color:white;padding:2px 8px;border-radius:9999px;font-size:12px">up-to-date</span></td>
+    </tr>
+<tr>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><code>@eslint/js</code></td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">^9.32.0</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">9.33.0</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="background:#F59E0B;color:white;padding:2px 8px;border-radius:9999px;font-size:12px">minor-update</span></td>
+    </tr>
+<tr>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><code>@google-analytics/data</code></td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">^5.2.0</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">5.2.0</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="background:#10B981;color:white;padding:2px 8px;border-radius:9999px;font-size:12px">up-to-date</span></td>
+    </tr>
+<tr>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><code>@google/generative-ai</code></td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">^0.24.1</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">0.24.1</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="background:#10B981;color:white;padding:2px 8px;border-radius:9999px;font-size:12px">up-to-date</span></td>
+    </tr>
+<tr>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><code>@magneticwatermelon/mcp-toolkit</code></td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">^1.1.4</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">1.1.5</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="background:#3B82F6;color:white;padding:2px 8px;border-radius:9999px;font-size:12px">patch-update</span></td>
+    </tr>
+<tr>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><code>@modelcontextprotocol/sdk</code></td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">^1.17.1</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">1.17.2</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="background:#3B82F6;color:white;padding:2px 8px;border-radius:9999px;font-size:12px">patch-update</span></td>
+    </tr>
+<tr>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><code>@modelcontextprotocol/server-filesystem</code></td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">^2025.7.29</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">2025.7.29</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="background:#10B981;color:white;padding:2px 8px;border-radius:9999px;font-size:12px">up-to-date</span></td>
+    </tr>
+<tr>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><code>@modelcontextprotocol/server-memory</code></td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">^2025.8.4</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">2025.8.4</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="background:#10B981;color:white;padding:2px 8px;border-radius:9999px;font-size:12px">up-to-date</span></td>
+    </tr>
+<tr>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><code>@modelcontextprotocol/server-sequential-thinking</code></td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">^2025.7.1</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">2025.7.1</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="background:#10B981;color:white;padding:2px 8px;border-radius:9999px;font-size:12px">up-to-date</span></td>
+    </tr>
+<tr>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><code>@supabase/ssr</code></td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">^0.6.1</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">0.6.1</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="background:#10B981;color:white;padding:2px 8px;border-radius:9999px;font-size:12px">up-to-date</span></td>
+    </tr>
+<tr>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><code>@supabase/supabase-js</code></td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">^2.39.0</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">2.54.0</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="background:#F59E0B;color:white;padding:2px 8px;border-radius:9999px;font-size:12px">minor-update</span></td>
+    </tr>
+<tr>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><code>@testing-library/jest-dom</code></td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">^6.6.4</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">6.6.4</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="background:#10B981;color:white;padding:2px 8px;border-radius:9999px;font-size:12px">up-to-date</span></td>
+    </tr>
+<tr>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><code>@testing-library/react</code></td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">12.1.5</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">16.3.0</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="background:#EF4444;color:white;padding:2px 8px;border-radius:9999px;font-size:12px">major-update</span></td>
+    </tr>
+<tr>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><code>@types/node</code></td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">^24.2.0</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">24.2.1</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="background:#3B82F6;color:white;padding:2px 8px;border-radius:9999px;font-size:12px">patch-update</span></td>
+    </tr>
+<tr>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><code>@types/node-cron</code></td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">^3.0.11</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">3.0.11</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="background:#10B981;color:white;padding:2px 8px;border-radius:9999px;font-size:12px">up-to-date</span></td>
+    </tr>
+<tr>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><code>@types/react</code></td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">17.0.34</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">19.1.10</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="background:#EF4444;color:white;padding:2px 8px;border-radius:9999px;font-size:12px">major-update</span></td>
+    </tr>
+<tr>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><code>@types/react-datepicker</code></td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">^6.2.0</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">7.0.0</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="background:#EF4444;color:white;padding:2px 8px;border-radius:9999px;font-size:12px">major-update</span></td>
+    </tr>
+<tr>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><code>@types/react-dom</code></td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">17.0.11</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">19.1.7</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="background:#EF4444;color:white;padding:2px 8px;border-radius:9999px;font-size:12px">major-update</span></td>
+    </tr>
+<tr>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><code>@typescript-eslint/eslint-plugin</code></td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">^8.39.0</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">8.39.1</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="background:#3B82F6;color:white;padding:2px 8px;border-radius:9999px;font-size:12px">patch-update</span></td>
+    </tr>
+<tr>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><code>@typescript-eslint/parser</code></td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">^8.39.0</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">8.39.1</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="background:#3B82F6;color:white;padding:2px 8px;border-radius:9999px;font-size:12px">patch-update</span></td>
+    </tr>
+<tr>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><code>autoprefixer</code></td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">^10.4.16</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">10.4.21</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="background:#3B82F6;color:white;padding:2px 8px;border-radius:9999px;font-size:12px">patch-update</span></td>
+    </tr>
+<tr>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><code>axios</code></td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">^1.11.0</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">1.11.0</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="background:#10B981;color:white;padding:2px 8px;border-radius:9999px;font-size:12px">up-to-date</span></td>
+    </tr>
+<tr>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><code>chalk</code></td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">^5.5.0</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">5.5.0</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="background:#10B981;color:white;padding:2px 8px;border-radius:9999px;font-size:12px">up-to-date</span></td>
+    </tr>
+<tr>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><code>cheerio</code></td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">^1.1.2</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">1.1.2</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="background:#10B981;color:white;padding:2px 8px;border-radius:9999px;font-size:12px">up-to-date</span></td>
+    </tr>
+<tr>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><code>child_process</code></td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">^1.0.2</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">1.0.2</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="background:#10B981;color:white;padding:2px 8px;border-radius:9999px;font-size:12px">up-to-date</span></td>
+    </tr>
+<tr>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><code>chokidar</code></td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">^4.0.3</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">4.0.3</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="background:#10B981;color:white;padding:2px 8px;border-radius:9999px;font-size:12px">up-to-date</span></td>
+    </tr>
+<tr>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><code>cron-parser</code></td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">^5.3.0</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">5.3.0</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="background:#10B981;color:white;padding:2px 8px;border-radius:9999px;font-size:12px">up-to-date</span></td>
+    </tr>
+<tr>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><code>eslint</code></td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">^8.57.0</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">9.33.0</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="background:#EF4444;color:white;padding:2px 8px;border-radius:9999px;font-size:12px">major-update</span></td>
+    </tr>
+<tr>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><code>eslint-config-next</code></td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">^14.0.0</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">15.4.6</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="background:#EF4444;color:white;padding:2px 8px;border-radius:9999px;font-size:12px">major-update</span></td>
+    </tr>
+<tr>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><code>eslint-plugin-react-hooks</code></td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">^5.2.0</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">5.2.0</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="background:#10B981;color:white;padding:2px 8px;border-radius:9999px;font-size:12px">up-to-date</span></td>
+    </tr>
+<tr>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><code>eslint-plugin-react-refresh</code></td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">^0.4.20</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">0.4.20</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="background:#10B981;color:white;padding:2px 8px;border-radius:9999px;font-size:12px">up-to-date</span></td>
+    </tr>
+<tr>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><code>events</code></td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">^3.3.0</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">3.3.0</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="background:#10B981;color:white;padding:2px 8px;border-radius:9999px;font-size:12px">up-to-date</span></td>
+    </tr>
+<tr>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><code>framer-motion</code></td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">^6.5.1</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">12.23.12</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="background:#EF4444;color:white;padding:2px 8px;border-radius:9999px;font-size:12px">major-update</span></td>
+    </tr>
+<tr>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><code>fs</code></td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">^0.0.1-security</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">0.0.1-security</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="background:#10B981;color:white;padding:2px 8px;border-radius:9999px;font-size:12px">up-to-date</span></td>
+    </tr>
+<tr>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><code>fs-extra</code></td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">^11.3.1</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">11.3.1</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="background:#10B981;color:white;padding:2px 8px;border-radius:9999px;font-size:12px">up-to-date</span></td>
+    </tr>
+<tr>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><code>glob</code></td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">^11.0.3</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">11.0.3</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="background:#10B981;color:white;padding:2px 8px;border-radius:9999px;font-size:12px">up-to-date</span></td>
+    </tr>
+<tr>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><code>https</code></td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">^1.0.0</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">1.0.0</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="background:#10B981;color:white;padding:2px 8px;border-radius:9999px;font-size:12px">up-to-date</span></td>
+    </tr>
+<tr>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><code>husky</code></td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">^9.1.7</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">9.1.7</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="background:#10B981;color:white;padding:2px 8px;border-radius:9999px;font-size:12px">up-to-date</span></td>
+    </tr>
+<tr>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><code>import-fresh</code></td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">^3.3.1</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">3.3.1</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="background:#10B981;color:white;padding:2px 8px;border-radius:9999px;font-size:12px">up-to-date</span></td>
+    </tr>
+<tr>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><code>lint-staged</code></td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">^16.1.5</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">16.1.5</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="background:#10B981;color:white;padding:2px 8px;border-radius:9999px;font-size:12px">up-to-date</span></td>
+    </tr>
+<tr>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><code>lucide-react</code></td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">^0.536.0</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">0.539.0</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="background:#F59E0B;color:white;padding:2px 8px;border-radius:9999px;font-size:12px">minor-update</span></td>
+    </tr>
+<tr>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><code>next</code></td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">^11.1.4</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">15.4.6</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="background:#EF4444;color:white;padding:2px 8px;border-radius:9999px;font-size:12px">major-update</span></td>
+    </tr>
+<tr>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><code>node-cron</code></td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">^4.2.1</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">4.2.1</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="background:#10B981;color:white;padding:2px 8px;border-radius:9999px;font-size:12px">up-to-date</span></td>
+    </tr>
+<tr>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><code>openai</code></td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">^5.11.0</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">5.12.2</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="background:#F59E0B;color:white;padding:2px 8px;border-radius:9999px;font-size:12px">minor-update</span></td>
+    </tr>
+<tr>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><code>path</code></td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">^0.12.7</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">0.12.7</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="background:#10B981;color:white;padding:2px 8px;border-radius:9999px;font-size:12px">up-to-date</span></td>
+    </tr>
+<tr>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><code>postcss</code></td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">^8.4.32</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">8.5.6</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="background:#F59E0B;color:white;padding:2px 8px;border-radius:9999px;font-size:12px">minor-update</span></td>
+    </tr>
+<tr>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><code>react</code></td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">^17.0.2</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">19.1.1</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="background:#EF4444;color:white;padding:2px 8px;border-radius:9999px;font-size:12px">major-update</span></td>
+    </tr>
+<tr>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><code>react-datepicker</code></td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">^8.4.0</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">8.4.0</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="background:#10B981;color:white;padding:2px 8px;border-radius:9999px;font-size:12px">up-to-date</span></td>
+    </tr>
+<tr>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><code>react-dom</code></td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">^17.0.2</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">19.1.1</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="background:#EF4444;color:white;padding:2px 8px;border-radius:9999px;font-size:12px">major-update</span></td>
+    </tr>
+<tr>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><code>sharp</code></td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">^0.33.4</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">0.34.3</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="background:#F59E0B;color:white;padding:2px 8px;border-radius:9999px;font-size:12px">minor-update</span></td>
+    </tr>
+<tr>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><code>tailwindcss</code></td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">^3.4.0</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">4.1.11</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="background:#EF4444;color:white;padding:2px 8px;border-radius:9999px;font-size:12px">major-update</span></td>
+    </tr>
+<tr>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><code>ts-node</code></td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">^10.9.2</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">10.9.2</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="background:#10B981;color:white;padding:2px 8px;border-radius:9999px;font-size:12px">up-to-date</span></td>
+    </tr>
+<tr>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><code>typescript</code></td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">^5.6.3</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">5.9.2</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="background:#F59E0B;color:white;padding:2px 8px;border-radius:9999px;font-size:12px">minor-update</span></td>
+    </tr>
+<tr>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><code>uuid</code></td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">^11.1.0</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06);color:#cbd5e1">11.1.0</td>
+      <td style="padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="background:#10B981;color:white;padding:2px 8px;border-radius:9999px;font-size:12px">up-to-date</span></td>
+    </tr>
+        </tbody>
+      </table>
+      <p style="margin-top:12px;color:rgba(255,255,255,0.6)">JSON data: <a href="/data/reports/dependency-health.json">/data/reports/dependency-health.json</a></p>
+    </div>
+  </div>
+</body>
+</html>
