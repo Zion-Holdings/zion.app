@@ -1311,3 +1311,941 @@ Merge log started at Sun Aug 24 09:33:37 PM UTC 2025
 🔄 Attempting to merge cursor/analyze-improve-and-deploy-ziontechgroup-app-fb01...
 ⚠️  Merge conflicts detected in cursor/analyze-improve-and-deploy-ziontechgroup-app-fb01, attempting to resolve...
 🔧 Resolving conflicts in cursor/analyze-improve-and-deploy-ziontechgroup-app-fb01...
+✅ Successfully resolved conflicts and merged cursor/analyze-improve-and-deploy-ziontechgroup-app-fb01
+---
+📋 Processing branch: cursor/analyze-improve-and-deploy-ziontechgroup-app-ffbd
+🔄 Attempting to merge cursor/analyze-improve-and-deploy-ziontechgroup-app-ffbd...
+✅ Successfully merged cursor/analyze-improve-and-deploy-ziontechgroup-app-ffbd
+---
+📋 Processing branch: cursor/analyze-website-for-navigation-automation-1ae1
+🔄 Attempting to merge cursor/analyze-website-for-navigation-automation-1ae1...
+✅ Successfully merged cursor/analyze-website-for-navigation-automation-1ae1
+---
+📋 Processing branch: cursor/auto-push-to-main-autonomous
+🔄 Attempting to merge cursor/auto-push-to-main-autonomous...
+✅ Successfully merged cursor/auto-push-to-main-autonomous
+---
+📋 Processing branch: cursor/automate-ai-and-it-service-creation-6b2f
+🔄 Attempting to merge cursor/automate-ai-and-it-service-creation-6b2f...
+✅ Successfully merged cursor/automate-ai-and-it-service-creation-6b2f
+---
+📋 Processing branch: cursor/automate-all-existing-automations-and-clean-up-00ba
+🔄 Attempting to merge cursor/automate-all-existing-automations-and-clean-up-00ba...
+✅ Successfully merged cursor/automate-all-existing-automations-and-clean-up-00ba
+---
+📋 Processing branch: cursor/automate-all-existing-automations-and-clean-up-0259
+🔄 Attempting to merge cursor/automate-all-existing-automations-and-clean-up-0259...
+✅ Successfully merged cursor/automate-all-existing-automations-and-clean-up-0259
+---
+📋 Processing branch: cursor/automate-all-existing-automations-and-clean-up-1358
+🔄 Attempting to merge cursor/automate-all-existing-automations-and-clean-up-1358...
+✅ Successfully merged cursor/automate-all-existing-automations-and-clean-up-1358
+---
+📋 Processing branch: cursor/automate-all-existing-automations-and-clean-up-1c36
+🔄 Attempting to merge cursor/automate-all-existing-automations-and-clean-up-1c36...
+✅ Successfully merged cursor/automate-all-existing-automations-and-clean-up-1c36
+---
+📋 Processing branch: cursor/automate-all-existing-automations-and-clean-up-28bc
+🔄 Attempting to merge cursor/automate-all-existing-automations-and-clean-up-28bc...
+✅ Successfully merged cursor/automate-all-existing-automations-and-clean-up-28bc
+---
+📋 Processing branch: cursor/automate-all-existing-automations-and-clean-up-31e7
+🔄 Attempting to merge cursor/automate-all-existing-automations-and-clean-up-31e7...
+✅ Successfully merged cursor/automate-all-existing-automations-and-clean-up-31e7
+---
+📋 Processing branch: cursor/automate-all-existing-automations-and-clean-up-3f4b
+🔄 Attempting to merge cursor/automate-all-existing-automations-and-clean-up-3f4b...
+✅ Successfully merged cursor/automate-all-existing-automations-and-clean-up-3f4b
+---
+📋 Processing branch: cursor/automate-all-existing-automations-and-clean-up-4597
+🔄 Attempting to merge cursor/automate-all-existing-automations-and-clean-up-4597...
+✅ Successfully merged cursor/automate-all-existing-automations-and-clean-up-4597
+---
+📋 Processing branch: cursor/automate-all-existing-automations-and-clean-up-494d
+🔄 Attempting to merge cursor/automate-all-existing-automations-and-clean-up-494d...
+✅ Successfully merged cursor/automate-all-existing-automations-and-clean-up-494d
+---
+📋 Processing branch: cursor/automate-all-existing-automations-and-clean-up-4ba9
+🔄 Attempting to merge cursor/automate-all-existing-automations-and-clean-up-4ba9...
+✅ Successfully merged cursor/automate-all-existing-automations-and-clean-up-4ba9
+---
+📋 Processing branch: cursor/automate-all-existing-automations-and-clean-up-4c1c
+🔄 Attempting to merge cursor/automate-all-existing-automations-and-clean-up-4c1c...
+✅ Successfully merged cursor/automate-all-existing-automations-and-clean-up-4c1c
+---
+📋 Processing branch: cursor/automate-all-existing-automations-and-clean-up-4c68
+🔄 Attempting to merge cursor/automate-all-existing-automations-and-clean-up-4c68...
+✅ Successfully merged cursor/automate-all-existing-automations-and-clean-up-4c68
+---
+📋 Processing branch: cursor/automate-all-existing-automations-and-clean-up-5891
+🔄 Attempting to merge cursor/automate-all-existing-automations-and-clean-up-5891...
+✅ Successfully merged cursor/automate-all-existing-automations-and-clean-up-5891
+---
+📋 Processing branch: cursor/automate-all-existing-automations-and-clean-up-6146
+🔄 Attempting to merge cursor/automate-all-existing-automations-and-clean-up-6146...
+✅ Successfully merged cursor/automate-all-existing-automations-and-clean-up-6146
+---
+📋 Processing branch: cursor/automate-all-existing-automations-and-clean-up-6258
+🔄 Attempting to merge cursor/automate-all-existing-automations-and-clean-up-6258...
+✅ Successfully merged cursor/automate-all-existing-automations-and-clean-up-6258
+---
+📋 Processing branch: cursor/automate-all-existing-automations-and-clean-up-6327
+🔄 Attempting to merge cursor/automate-all-existing-automations-and-clean-up-6327...
+✅ Successfully merged cursor/automate-all-existing-automations-and-clean-up-6327
+---
+📋 Processing branch: cursor/automate-all-existing-automations-and-clean-up-64cf
+🔄 Attempting to merge cursor/automate-all-existing-automations-and-clean-up-64cf...
+✅ Successfully merged cursor/automate-all-existing-automations-and-clean-up-64cf
+---
+📋 Processing branch: cursor/automate-all-existing-automations-and-clean-up-8805
+🔄 Attempting to merge cursor/automate-all-existing-automations-and-clean-up-8805...
+✅ Successfully merged cursor/automate-all-existing-automations-and-clean-up-8805
+---
+📋 Processing branch: cursor/automate-all-existing-automations-and-clean-up-89ab
+🔄 Attempting to merge cursor/automate-all-existing-automations-and-clean-up-89ab...
+✅ Successfully merged cursor/automate-all-existing-automations-and-clean-up-89ab
+---
+📋 Processing branch: cursor/automate-all-existing-automations-and-clean-up-911b
+🔄 Attempting to merge cursor/automate-all-existing-automations-and-clean-up-911b...
+✅ Successfully merged cursor/automate-all-existing-automations-and-clean-up-911b
+---
+📋 Processing branch: cursor/automate-all-existing-automations-and-clean-up-9138
+🔄 Attempting to merge cursor/automate-all-existing-automations-and-clean-up-9138...
+✅ Successfully merged cursor/automate-all-existing-automations-and-clean-up-9138
+---
+📋 Processing branch: cursor/automate-all-existing-automations-and-clean-up-a0f5
+🔄 Attempting to merge cursor/automate-all-existing-automations-and-clean-up-a0f5...
+✅ Successfully merged cursor/automate-all-existing-automations-and-clean-up-a0f5
+---
+📋 Processing branch: cursor/automate-all-existing-automations-and-clean-up-aa83
+🔄 Attempting to merge cursor/automate-all-existing-automations-and-clean-up-aa83...
+✅ Successfully merged cursor/automate-all-existing-automations-and-clean-up-aa83
+---
+📋 Processing branch: cursor/automate-all-existing-automations-and-clean-up-ad2b
+🔄 Attempting to merge cursor/automate-all-existing-automations-and-clean-up-ad2b...
+✅ Successfully merged cursor/automate-all-existing-automations-and-clean-up-ad2b
+---
+📋 Processing branch: cursor/automate-all-existing-automations-and-clean-up-b22a
+🔄 Attempting to merge cursor/automate-all-existing-automations-and-clean-up-b22a...
+✅ Successfully merged cursor/automate-all-existing-automations-and-clean-up-b22a
+---
+📋 Processing branch: cursor/automate-all-existing-automations-and-clean-up-b733
+🔄 Attempting to merge cursor/automate-all-existing-automations-and-clean-up-b733...
+✅ Successfully merged cursor/automate-all-existing-automations-and-clean-up-b733
+---
+📋 Processing branch: cursor/automate-all-existing-automations-and-clean-up-bdcb
+🔄 Attempting to merge cursor/automate-all-existing-automations-and-clean-up-bdcb...
+✅ Successfully merged cursor/automate-all-existing-automations-and-clean-up-bdcb
+---
+📋 Processing branch: cursor/automate-all-existing-automations-and-clean-up-c69f
+🔄 Attempting to merge cursor/automate-all-existing-automations-and-clean-up-c69f...
+✅ Successfully merged cursor/automate-all-existing-automations-and-clean-up-c69f
+---
+📋 Processing branch: cursor/automate-all-existing-automations-and-clean-up-ce5e
+🔄 Attempting to merge cursor/automate-all-existing-automations-and-clean-up-ce5e...
+✅ Successfully merged cursor/automate-all-existing-automations-and-clean-up-ce5e
+---
+📋 Processing branch: cursor/automate-all-existing-automations-and-clean-up-d558
+🔄 Attempting to merge cursor/automate-all-existing-automations-and-clean-up-d558...
+✅ Successfully merged cursor/automate-all-existing-automations-and-clean-up-d558
+---
+📋 Processing branch: cursor/automate-all-existing-automations-and-clean-up-d8d5
+🔄 Attempting to merge cursor/automate-all-existing-automations-and-clean-up-d8d5...
+✅ Successfully merged cursor/automate-all-existing-automations-and-clean-up-d8d5
+---
+📋 Processing branch: cursor/automate-all-existing-automations-and-clean-up-da67
+🔄 Attempting to merge cursor/automate-all-existing-automations-and-clean-up-da67...
+✅ Successfully merged cursor/automate-all-existing-automations-and-clean-up-da67
+---
+📋 Processing branch: cursor/automate-all-existing-automations-and-clean-up-f34e
+🔄 Attempting to merge cursor/automate-all-existing-automations-and-clean-up-f34e...
+✅ Successfully merged cursor/automate-all-existing-automations-and-clean-up-f34e
+---
+📋 Processing branch: cursor/automate-all-existing-automations-and-clean-up-feb4
+🔄 Attempting to merge cursor/automate-all-existing-automations-and-clean-up-feb4...
+✅ Successfully merged cursor/automate-all-existing-automations-and-clean-up-feb4
+---
+📋 Processing branch: cursor/automate-and-accelerate-app-monetization-factories-7e44
+🔄 Attempting to merge cursor/automate-and-accelerate-app-monetization-factories-7e44...
+✅ Successfully merged cursor/automate-and-accelerate-app-monetization-factories-7e44
+---
+📋 Processing branch: cursor/automate-and-enhance-project-automations-a8b3
+🔄 Attempting to merge cursor/automate-and-enhance-project-automations-a8b3...
+✅ Successfully merged cursor/automate-and-enhance-project-automations-a8b3
+---
+📋 Processing branch: cursor/automate-and-stabilize-husky-processes-for-main-branch-b783
+🔄 Attempting to merge cursor/automate-and-stabilize-husky-processes-for-main-branch-b783...
+✅ Successfully merged cursor/automate-and-stabilize-husky-processes-for-main-branch-b783
+---
+📋 Processing branch: cursor/automate-app-discovery-and-exposure-with-agent-factories-7ed7
+🔄 Attempting to merge cursor/automate-app-discovery-and-exposure-with-agent-factories-7ed7...
+✅ Successfully merged cursor/automate-app-discovery-and-exposure-with-agent-factories-7ed7
+---
+📋 Processing branch: cursor/automate-app-intelligence-and-deploy-90c6
+🔄 Attempting to merge cursor/automate-app-intelligence-and-deploy-90c6...
+✅ Successfully merged cursor/automate-app-intelligence-and-deploy-90c6
+---
+📋 Processing branch: cursor/automate-app-link-and-sublink-fixes-055b
+🔄 Attempting to merge cursor/automate-app-link-and-sublink-fixes-055b...
+✅ Successfully merged cursor/automate-app-link-and-sublink-fixes-055b
+---
+📋 Processing branch: cursor/automate-automation-redundancy-and-build-improvement-1200
+🔄 Attempting to merge cursor/automate-automation-redundancy-and-build-improvement-1200...
+✅ Successfully merged cursor/automate-automation-redundancy-and-build-improvement-1200
+---
+📋 Processing branch: cursor/automate-automation-redundancy-and-build-improvement-2064
+🔄 Attempting to merge cursor/automate-automation-redundancy-and-build-improvement-2064...
+✅ Successfully merged cursor/automate-automation-redundancy-and-build-improvement-2064
+---
+📋 Processing branch: cursor/automate-automation-redundancy-and-build-improvement-330f
+🔄 Attempting to merge cursor/automate-automation-redundancy-and-build-improvement-330f...
+✅ Successfully merged cursor/automate-automation-redundancy-and-build-improvement-330f
+---
+📋 Processing branch: cursor/automate-automation-redundancy-and-build-improvement-3403
+🔄 Attempting to merge cursor/automate-automation-redundancy-and-build-improvement-3403...
+✅ Successfully merged cursor/automate-automation-redundancy-and-build-improvement-3403
+---
+📋 Processing branch: cursor/automate-automation-redundancy-and-build-improvement-43c0
+🔄 Attempting to merge cursor/automate-automation-redundancy-and-build-improvement-43c0...
+✅ Successfully merged cursor/automate-automation-redundancy-and-build-improvement-43c0
+---
+📋 Processing branch: cursor/automate-automation-redundancy-and-build-improvement-4a85
+🔄 Attempting to merge cursor/automate-automation-redundancy-and-build-improvement-4a85...
+✅ Successfully merged cursor/automate-automation-redundancy-and-build-improvement-4a85
+---
+📋 Processing branch: cursor/automate-automation-redundancy-and-build-improvement-7bfb
+🔄 Attempting to merge cursor/automate-automation-redundancy-and-build-improvement-7bfb...
+✅ Successfully merged cursor/automate-automation-redundancy-and-build-improvement-7bfb
+---
+📋 Processing branch: cursor/automate-automation-redundancy-and-build-improvement-87ee
+🔄 Attempting to merge cursor/automate-automation-redundancy-and-build-improvement-87ee...
+✅ Successfully merged cursor/automate-automation-redundancy-and-build-improvement-87ee
+---
+📋 Processing branch: cursor/automate-automation-redundancy-and-build-improvement-8d77
+🔄 Attempting to merge cursor/automate-automation-redundancy-and-build-improvement-8d77...
+✅ Successfully merged cursor/automate-automation-redundancy-and-build-improvement-8d77
+---
+📋 Processing branch: cursor/automate-automation-redundancy-and-build-improvement-90f7
+🔄 Attempting to merge cursor/automate-automation-redundancy-and-build-improvement-90f7...
+✅ Successfully merged cursor/automate-automation-redundancy-and-build-improvement-90f7
+---
+📋 Processing branch: cursor/automate-automation-redundancy-and-build-improvement-940b
+🔄 Attempting to merge cursor/automate-automation-redundancy-and-build-improvement-940b...
+✅ Successfully merged cursor/automate-automation-redundancy-and-build-improvement-940b
+---
+📋 Processing branch: cursor/automate-automation-redundancy-and-build-improvement-964e
+🔄 Attempting to merge cursor/automate-automation-redundancy-and-build-improvement-964e...
+✅ Successfully merged cursor/automate-automation-redundancy-and-build-improvement-964e
+---
+📋 Processing branch: cursor/automate-automation-redundancy-and-build-improvement-97d7
+🔄 Attempting to merge cursor/automate-automation-redundancy-and-build-improvement-97d7...
+✅ Successfully merged cursor/automate-automation-redundancy-and-build-improvement-97d7
+---
+📋 Processing branch: cursor/automate-automation-redundancy-and-build-improvement-e3e4
+🔄 Attempting to merge cursor/automate-automation-redundancy-and-build-improvement-e3e4...
+✅ Successfully merged cursor/automate-automation-redundancy-and-build-improvement-e3e4
+---
+📋 Processing branch: cursor/automate-automation-redundancy-and-build-improvement-ea74
+🔄 Attempting to merge cursor/automate-automation-redundancy-and-build-improvement-ea74...
+✅ Successfully merged cursor/automate-automation-redundancy-and-build-improvement-ea74
+---
+📋 Processing branch: cursor/automate-automation-redundancy-and-build-improvement-f8c0
+🔄 Attempting to merge cursor/automate-automation-redundancy-and-build-improvement-f8c0...
+✅ Successfully merged cursor/automate-automation-redundancy-and-build-improvement-f8c0
+---
+📋 Processing branch: cursor/automate-automation-redundancy-and-build-improvement-f915
+🔄 Attempting to merge cursor/automate-automation-redundancy-and-build-improvement-f915...
+✅ Successfully merged cursor/automate-automation-redundancy-and-build-improvement-f915
+---
+📋 Processing branch: cursor/automate-broken-link-and-missing-page-checks-b931
+🔄 Attempting to merge cursor/automate-broken-link-and-missing-page-checks-b931...
+✅ Successfully merged cursor/automate-broken-link-and-missing-page-checks-b931
+---
+📋 Processing branch: cursor/automate-broken-link-checking-with-agent-factories-41c3
+🔄 Attempting to merge cursor/automate-broken-link-checking-with-agent-factories-41c3...
+✅ Successfully merged cursor/automate-broken-link-checking-with-agent-factories-41c3
+---
+📋 Processing branch: cursor/automate-cloud-cron-jobs-and-sync-repository-16dc
+🔄 Attempting to merge cursor/automate-cloud-cron-jobs-and-sync-repository-16dc...
+✅ Successfully merged cursor/automate-cloud-cron-jobs-and-sync-repository-16dc
+---
+📋 Processing branch: cursor/automate-cloud-cron-jobs-and-sync-repository-5730
+🔄 Attempting to merge cursor/automate-cloud-cron-jobs-and-sync-repository-5730...
+✅ Successfully merged cursor/automate-cloud-cron-jobs-and-sync-repository-5730
+---
+📋 Processing branch: cursor/automate-cloud-cron-jobs-and-sync-repository-8cc5
+🔄 Attempting to merge cursor/automate-cloud-cron-jobs-and-sync-repository-8cc5...
+✅ Successfully merged cursor/automate-cloud-cron-jobs-and-sync-repository-8cc5
+---
+📋 Processing branch: cursor/automate-commit-push-and-sync-across-computers-bbfb
+🔄 Attempting to merge cursor/automate-commit-push-and-sync-across-computers-bbfb...
+✅ Successfully merged cursor/automate-commit-push-and-sync-across-computers-bbfb
+---
+📋 Processing branch: cursor/automate-continuous-development-processes-4d04
+🔄 Attempting to merge cursor/automate-continuous-development-processes-4d04...
+✅ Successfully merged cursor/automate-continuous-development-processes-4d04
+---
+📋 Processing branch: cursor/automate-continuous-project-improvement-and-integration-3bb7
+🔄 Attempting to merge cursor/automate-continuous-project-improvement-and-integration-3bb7...
+✅ Successfully merged cursor/automate-continuous-project-improvement-and-integration-3bb7
+---
+📋 Processing branch: cursor/automate-continuous-project-optimization-and-diversity-631b
+🔄 Attempting to merge cursor/automate-continuous-project-optimization-and-diversity-631b...
+✅ Successfully merged cursor/automate-continuous-project-optimization-and-diversity-631b
+---
+📋 Processing branch: cursor/automate-cursor-warning-fixes-and-merge-9f31
+🔄 Attempting to merge cursor/automate-cursor-warning-fixes-and-merge-9f31...
+✅ Successfully merged cursor/automate-cursor-warning-fixes-and-merge-9f31
+---
+📋 Processing branch: cursor/automate-deployment-redundancy-and-clean-up-0b6a
+🔄 Attempting to merge cursor/automate-deployment-redundancy-and-clean-up-0b6a...
+✅ Successfully merged cursor/automate-deployment-redundancy-and-clean-up-0b6a
+---
+📋 Processing branch: cursor/automate-deployment-redundancy-and-clean-up-1895
+🔄 Attempting to merge cursor/automate-deployment-redundancy-and-clean-up-1895...
+✅ Successfully merged cursor/automate-deployment-redundancy-and-clean-up-1895
+---
+📋 Processing branch: cursor/automate-deployment-redundancy-and-clean-up-405f
+🔄 Attempting to merge cursor/automate-deployment-redundancy-and-clean-up-405f...
+✅ Successfully merged cursor/automate-deployment-redundancy-and-clean-up-405f
+---
+📋 Processing branch: cursor/automate-deployment-redundancy-and-clean-up-5b71
+🔄 Attempting to merge cursor/automate-deployment-redundancy-and-clean-up-5b71...
+✅ Successfully merged cursor/automate-deployment-redundancy-and-clean-up-5b71
+---
+📋 Processing branch: cursor/automate-deployment-redundancy-and-clean-up-5c78
+🔄 Attempting to merge cursor/automate-deployment-redundancy-and-clean-up-5c78...
+✅ Successfully merged cursor/automate-deployment-redundancy-and-clean-up-5c78
+---
+📋 Processing branch: cursor/automate-deployment-redundancy-and-clean-up-5d6d
+🔄 Attempting to merge cursor/automate-deployment-redundancy-and-clean-up-5d6d...
+✅ Successfully merged cursor/automate-deployment-redundancy-and-clean-up-5d6d
+---
+📋 Processing branch: cursor/automate-deployment-redundancy-and-clean-up-60e4
+🔄 Attempting to merge cursor/automate-deployment-redundancy-and-clean-up-60e4...
+✅ Successfully merged cursor/automate-deployment-redundancy-and-clean-up-60e4
+---
+📋 Processing branch: cursor/automate-deployment-redundancy-and-clean-up-6a10
+🔄 Attempting to merge cursor/automate-deployment-redundancy-and-clean-up-6a10...
+✅ Successfully merged cursor/automate-deployment-redundancy-and-clean-up-6a10
+---
+📋 Processing branch: cursor/automate-deployment-redundancy-and-clean-up-8421
+🔄 Attempting to merge cursor/automate-deployment-redundancy-and-clean-up-8421...
+✅ Successfully merged cursor/automate-deployment-redundancy-and-clean-up-8421
+---
+📋 Processing branch: cursor/automate-deployment-redundancy-and-clean-up-94f3
+🔄 Attempting to merge cursor/automate-deployment-redundancy-and-clean-up-94f3...
+✅ Successfully merged cursor/automate-deployment-redundancy-and-clean-up-94f3
+---
+📋 Processing branch: cursor/automate-deployment-redundancy-and-clean-up-a700
+🔄 Attempting to merge cursor/automate-deployment-redundancy-and-clean-up-a700...
+✅ Successfully merged cursor/automate-deployment-redundancy-and-clean-up-a700
+---
+📋 Processing branch: cursor/automate-deployment-redundancy-and-clean-up-ae58
+🔄 Attempting to merge cursor/automate-deployment-redundancy-and-clean-up-ae58...
+✅ Successfully merged cursor/automate-deployment-redundancy-and-clean-up-ae58
+---
+📋 Processing branch: cursor/automate-deployment-redundancy-and-clean-up-c86d
+🔄 Attempting to merge cursor/automate-deployment-redundancy-and-clean-up-c86d...
+✅ Successfully merged cursor/automate-deployment-redundancy-and-clean-up-c86d
+---
+📋 Processing branch: cursor/automate-deployment-redundancy-and-clean-up-e342
+🔄 Attempting to merge cursor/automate-deployment-redundancy-and-clean-up-e342...
+✅ Successfully merged cursor/automate-deployment-redundancy-and-clean-up-e342
+---
+📋 Processing branch: cursor/automate-deployment-redundancy-and-clean-up-ece7
+🔄 Attempting to merge cursor/automate-deployment-redundancy-and-clean-up-ece7...
+✅ Successfully merged cursor/automate-deployment-redundancy-and-clean-up-ece7
+---
+📋 Processing branch: cursor/automate-deployment-redundancy-and-clean-up-fcee
+🔄 Attempting to merge cursor/automate-deployment-redundancy-and-clean-up-fcee...
+✅ Successfully merged cursor/automate-deployment-redundancy-and-clean-up-fcee
+---
+📋 Processing branch: cursor/automate-deployment-redundancy-and-clean-up-fd72
+🔄 Attempting to merge cursor/automate-deployment-redundancy-and-clean-up-fd72...
+✅ Successfully merged cursor/automate-deployment-redundancy-and-clean-up-fd72
+---
+📋 Processing branch: cursor/automate-error-fixing-and-deploy-to-main-8fed
+🔄 Attempting to merge cursor/automate-error-fixing-and-deploy-to-main-8fed...
+✅ Successfully merged cursor/automate-error-fixing-and-deploy-to-main-8fed
+---
+📋 Processing branch: cursor/automate-exponential-app-usefulness-with-agent-factories-28bf
+🔄 Attempting to merge cursor/automate-exponential-app-usefulness-with-agent-factories-28bf...
+✅ Successfully merged cursor/automate-exponential-app-usefulness-with-agent-factories-28bf
+---
+📋 Processing branch: cursor/automate-feature-and-content-updates-from-chat-a9d7
+🔄 Attempting to merge cursor/automate-feature-and-content-updates-from-chat-a9d7...
+✅ Successfully merged cursor/automate-feature-and-content-updates-from-chat-a9d7
+---
+📋 Processing branch: cursor/automate-feature-comparison-and-merge-to-main-24d8
+🔄 Attempting to merge cursor/automate-feature-comparison-and-merge-to-main-24d8...
+✅ Successfully merged cursor/automate-feature-comparison-and-merge-to-main-24d8
+---
+📋 Processing branch: cursor/automate-front-page-content-and-feature-advertising-3397
+🔄 Attempting to merge cursor/automate-front-page-content-and-feature-advertising-3397...
+✅ Successfully merged cursor/automate-front-page-content-and-feature-advertising-3397
+---
+📋 Processing branch: cursor/automate-fundraising-deck-and-deal-room-generation-c352
+🔄 Attempting to merge cursor/automate-fundraising-deck-and-deal-room-generation-c352...
+✅ Successfully merged cursor/automate-fundraising-deck-and-deal-room-generation-c352
+---
+📋 Processing branch: cursor/automate-futuristic-front-page-enhancements-738d
+🔄 Attempting to merge cursor/automate-futuristic-front-page-enhancements-738d...
+✅ Successfully merged cursor/automate-futuristic-front-page-enhancements-738d
+---
+📋 Processing branch: cursor/automate-futuristic-front-page-enhancements-aafa
+🔄 Attempting to merge cursor/automate-futuristic-front-page-enhancements-aafa...
+✅ Successfully merged cursor/automate-futuristic-front-page-enhancements-aafa
+---
+📋 Processing branch: cursor/automate-layout-fixing-and-agent-factory-suggestions-1ae5
+🔄 Attempting to merge cursor/automate-layout-fixing-and-agent-factory-suggestions-1ae5...
+✅ Successfully merged cursor/automate-layout-fixing-and-agent-factory-suggestions-1ae5
+---
+📋 Processing branch: cursor/automate-main-page-with-futuristic-design-e1b7
+🔄 Attempting to merge cursor/automate-main-page-with-futuristic-design-e1b7...
+✅ Successfully merged cursor/automate-main-page-with-futuristic-design-e1b7
+---
+📋 Processing branch: cursor/automate-merge-conflict-resolution-and-main-branch-sync-421c
+🔄 Attempting to merge cursor/automate-merge-conflict-resolution-and-main-branch-sync-421c...
+✅ Successfully merged cursor/automate-merge-conflict-resolution-and-main-branch-sync-421c
+---
+📋 Processing branch: cursor/automate-netlify-build-fixes-and-monitoring-43ee
+🔄 Attempting to merge cursor/automate-netlify-build-fixes-and-monitoring-43ee...
+✅ Successfully merged cursor/automate-netlify-build-fixes-and-monitoring-43ee
+---
+📋 Processing branch: cursor/automate-netlify-build-fixing-and-monitoring-f10e
+🔄 Attempting to merge cursor/automate-netlify-build-fixing-and-monitoring-f10e...
+✅ Successfully merged cursor/automate-netlify-build-fixing-and-monitoring-f10e
+---
+📋 Processing branch: cursor/automate-new-app-page-and-feature-additions-3779
+🔄 Attempting to merge cursor/automate-new-app-page-and-feature-additions-3779...
+✅ Successfully merged cursor/automate-new-app-page-and-feature-additions-3779
+---
+📋 Processing branch: cursor/automate-project-development-with-netlify-7f13
+🔄 Attempting to merge cursor/automate-project-development-with-netlify-7f13...
+✅ Successfully merged cursor/automate-project-development-with-netlify-7f13
+---
+📋 Processing branch: cursor/automate-project-enhancement-and-merge-cac0
+🔄 Attempting to merge cursor/automate-project-enhancement-and-merge-cac0...
+✅ Successfully merged cursor/automate-project-enhancement-and-merge-cac0
+---
+📋 Processing branch: cursor/automate-project-error-resolution-6856
+🔄 Attempting to merge cursor/automate-project-error-resolution-6856...
+✅ Successfully merged cursor/automate-project-error-resolution-6856
+---
+📋 Processing branch: cursor/automate-project-sync-to-github-main-branch-89d5
+🔄 Attempting to merge cursor/automate-project-sync-to-github-main-branch-89d5...
+✅ Successfully merged cursor/automate-project-sync-to-github-main-branch-89d5
+---
+📋 Processing branch: cursor/automate-redundancy-and-cleanup-d88b
+🔄 Attempting to merge cursor/automate-redundancy-and-cleanup-d88b...
+✅ Successfully merged cursor/automate-redundancy-and-cleanup-d88b
+---
+📋 Processing branch: cursor/automate-script-management-and-repository-integration-0e77
+🔄 Attempting to merge cursor/automate-script-management-and-repository-integration-0e77...
+✅ Successfully merged cursor/automate-script-management-and-repository-integration-0e77
+---
+📋 Processing branch: cursor/automate-site-navigation-enhancement-285c
+🔄 Attempting to merge cursor/automate-site-navigation-enhancement-285c...
+✅ Successfully merged cursor/automate-site-navigation-enhancement-285c
+---
+📋 Processing branch: cursor/automate-terminal-content-generation-and-deploy-5f97
+🔄 Attempting to merge cursor/automate-terminal-content-generation-and-deploy-5f97...
+✅ Successfully merged cursor/automate-terminal-content-generation-and-deploy-5f97
+---
+📋 Processing branch: cursor/automate-user-retention-emails-with-zion-ai-bea1
+🔄 Attempting to merge cursor/automate-user-retention-emails-with-zion-ai-bea1...
+✅ Successfully merged cursor/automate-user-retention-emails-with-zion-ai-bea1
+---
+📋 Processing branch: cursor/automate-website-analysis-and-improvement-fe83
+🔄 Attempting to merge cursor/automate-website-analysis-and-improvement-fe83...
+✅ Successfully merged cursor/automate-website-analysis-and-improvement-fe83
+---
+📋 Processing branch: cursor/automate-zion-s-content-creation-with-gpt-4-5aba
+🔄 Attempting to merge cursor/automate-zion-s-content-creation-with-gpt-4-5aba...
+✅ Successfully merged cursor/automate-zion-s-content-creation-with-gpt-4-5aba
+---
+📋 Processing branch: cursor/automated-agent-creation-and-market-research-9320
+🔄 Attempting to merge cursor/automated-agent-creation-and-market-research-9320...
+✅ Successfully merged cursor/automated-agent-creation-and-market-research-9320
+---
+📋 Processing branch: cursor/automated-content-crawling-and-agent-factory-creation-1e64
+🔄 Attempting to merge cursor/automated-content-crawling-and-agent-factory-creation-1e64...
+✅ Successfully merged cursor/automated-content-crawling-and-agent-factory-creation-1e64
+---
+📋 Processing branch: cursor/automated-error-fixing-agent-creation-51d4
+🔄 Attempting to merge cursor/automated-error-fixing-agent-creation-51d4...
+✅ Successfully merged cursor/automated-error-fixing-agent-creation-51d4
+---
+📋 Processing branch: cursor/automated-project-automation-health-monitor-40af
+🔄 Attempting to merge cursor/automated-project-automation-health-monitor-40af...
+✅ Successfully merged cursor/automated-project-automation-health-monitor-40af
+---
+📋 Processing branch: cursor/automated-project-verification-and-merge-af4c
+🔄 Attempting to merge cursor/automated-project-verification-and-merge-af4c...
+✅ Successfully merged cursor/automated-project-verification-and-merge-af4c
+---
+📋 Processing branch: cursor/autonomous-cloud-automation-and-sync-1971
+🔄 Attempting to merge cursor/autonomous-cloud-automation-and-sync-1971...
+✅ Successfully merged cursor/autonomous-cloud-automation-and-sync-1971
+---
+📋 Processing branch: cursor/autonomous-cloud-automation-and-sync-387c
+🔄 Attempting to merge cursor/autonomous-cloud-automation-and-sync-387c...
+✅ Successfully merged cursor/autonomous-cloud-automation-and-sync-387c
+---
+📋 Processing branch: cursor/autonomous-cloud-automation-and-sync-7157
+🔄 Attempting to merge cursor/autonomous-cloud-automation-and-sync-7157...
+✅ Successfully merged cursor/autonomous-cloud-automation-and-sync-7157
+---
+📋 Processing branch: cursor/autonomous-cloud-automations
+🔄 Attempting to merge cursor/autonomous-cloud-automations...
+✅ Successfully merged cursor/autonomous-cloud-automations
+---
+📋 Processing branch: cursor/autonomous-cloud-page-enhancer-and-advertiser-2c4d
+🔄 Attempting to merge cursor/autonomous-cloud-page-enhancer-and-advertiser-2c4d...
+✅ Successfully merged cursor/autonomous-cloud-page-enhancer-and-advertiser-2c4d
+---
+📋 Processing branch: cursor/autonomous-cloud-page-enhancer-and-advertiser-493e
+🔄 Attempting to merge cursor/autonomous-cloud-page-enhancer-and-advertiser-493e...
+✅ Successfully merged cursor/autonomous-cloud-page-enhancer-and-advertiser-493e
+---
+📋 Processing branch: cursor/autonomous-cloud-page-enhancer-and-advertiser-5e01
+🔄 Attempting to merge cursor/autonomous-cloud-page-enhancer-and-advertiser-5e01...
+✅ Successfully merged cursor/autonomous-cloud-page-enhancer-and-advertiser-5e01
+---
+📋 Processing branch: cursor/autonomous-cloud-page-enhancer-and-advertiser-5eb1
+🔄 Attempting to merge cursor/autonomous-cloud-page-enhancer-and-advertiser-5eb1...
+✅ Successfully merged cursor/autonomous-cloud-page-enhancer-and-advertiser-5eb1
+---
+📋 Processing branch: cursor/autonomous-cloud-page-enhancer-and-advertiser-5f27
+🔄 Attempting to merge cursor/autonomous-cloud-page-enhancer-and-advertiser-5f27...
+✅ Successfully merged cursor/autonomous-cloud-page-enhancer-and-advertiser-5f27
+---
+📋 Processing branch: cursor/autonomous-cloud-page-enhancer-and-advertiser-6a86
+🔄 Attempting to merge cursor/autonomous-cloud-page-enhancer-and-advertiser-6a86...
+✅ Successfully merged cursor/autonomous-cloud-page-enhancer-and-advertiser-6a86
+---
+📋 Processing branch: cursor/autonomous-cloud-page-enhancer-and-advertiser-c4d6
+🔄 Attempting to merge cursor/autonomous-cloud-page-enhancer-and-advertiser-c4d6...
+✅ Successfully merged cursor/autonomous-cloud-page-enhancer-and-advertiser-c4d6
+---
+📋 Processing branch: cursor/autonomous-cloud-page-enhancer-and-advertiser-d666
+🔄 Attempting to merge cursor/autonomous-cloud-page-enhancer-and-advertiser-d666...
+✅ Successfully merged cursor/autonomous-cloud-page-enhancer-and-advertiser-d666
+---
+📋 Processing branch: cursor/autonomous-cloud-page-enhancer-and-advertiser-e70a
+🔄 Attempting to merge cursor/autonomous-cloud-page-enhancer-and-advertiser-e70a...
+✅ Successfully merged cursor/autonomous-cloud-page-enhancer-and-advertiser-e70a
+---
+📋 Processing branch: cursor/autonomous-error-detection-and-self-healing-agent-creation-e237
+🔄 Attempting to merge cursor/autonomous-error-detection-and-self-healing-agent-creation-e237...
+✅ Successfully merged cursor/autonomous-error-detection-and-self-healing-agent-creation-e237
+---
+📋 Processing branch: cursor/bc-0eb9b268-3d59-444a-ae5e-1a800d74b240-750d
+🔄 Attempting to merge cursor/bc-0eb9b268-3d59-444a-ae5e-1a800d74b240-750d...
+✅ Successfully merged cursor/bc-0eb9b268-3d59-444a-ae5e-1a800d74b240-750d
+---
+📋 Processing branch: cursor/bc-1772f1c0-da62-42ef-9572-bdbe32120470-042f
+🔄 Attempting to merge cursor/bc-1772f1c0-da62-42ef-9572-bdbe32120470-042f...
+✅ Successfully merged cursor/bc-1772f1c0-da62-42ef-9572-bdbe32120470-042f
+---
+📋 Processing branch: cursor/bc-37c9148a-8898-4045-b95f-8ca2f79cfa5c-9330
+🔄 Attempting to merge cursor/bc-37c9148a-8898-4045-b95f-8ca2f79cfa5c-9330...
+✅ Successfully merged cursor/bc-37c9148a-8898-4045-b95f-8ca2f79cfa5c-9330
+---
+📋 Processing branch: cursor/bc-37e0a79f-43c4-4216-bd12-ddf1b3362bec-8633
+🔄 Attempting to merge cursor/bc-37e0a79f-43c4-4216-bd12-ddf1b3362bec-8633...
+✅ Successfully merged cursor/bc-37e0a79f-43c4-4216-bd12-ddf1b3362bec-8633
+---
+📋 Processing branch: cursor/bc-3b39ce21-390e-4be8-b543-94ce23e119f2-8ade
+🔄 Attempting to merge cursor/bc-3b39ce21-390e-4be8-b543-94ce23e119f2-8ade...
+✅ Successfully merged cursor/bc-3b39ce21-390e-4be8-b543-94ce23e119f2-8ade
+---
+📋 Processing branch: cursor/bc-48461f9b-0a4a-4201-97e1-9dcf030b601c-eb8c
+🔄 Attempting to merge cursor/bc-48461f9b-0a4a-4201-97e1-9dcf030b601c-eb8c...
+✅ Successfully merged cursor/bc-48461f9b-0a4a-4201-97e1-9dcf030b601c-eb8c
+---
+📋 Processing branch: cursor/bc-4c9bcb37-354d-44c8-a4c3-43cbf1ad6b2d-c76c
+🔄 Attempting to merge cursor/bc-4c9bcb37-354d-44c8-a4c3-43cbf1ad6b2d-c76c...
+✅ Successfully merged cursor/bc-4c9bcb37-354d-44c8-a4c3-43cbf1ad6b2d-c76c
+---
+📋 Processing branch: cursor/bc-4fc567b1-4586-4af3-be0c-14d02f7830f9-6109
+🔄 Attempting to merge cursor/bc-4fc567b1-4586-4af3-be0c-14d02f7830f9-6109...
+✅ Successfully merged cursor/bc-4fc567b1-4586-4af3-be0c-14d02f7830f9-6109
+---
+📋 Processing branch: cursor/bc-51f07a8d-4b14-47f7-af65-e76188b38c99-87a6
+🔄 Attempting to merge cursor/bc-51f07a8d-4b14-47f7-af65-e76188b38c99-87a6...
+✅ Successfully merged cursor/bc-51f07a8d-4b14-47f7-af65-e76188b38c99-87a6
+---
+📋 Processing branch: cursor/bc-61ed10c3-d6b9-406a-971b-955feec9361a-849c
+🔄 Attempting to merge cursor/bc-61ed10c3-d6b9-406a-971b-955feec9361a-849c...
+✅ Successfully merged cursor/bc-61ed10c3-d6b9-406a-971b-955feec9361a-849c
+---
+📋 Processing branch: cursor/bc-72e5cd32-ab56-4d88-a1cc-84565311636f-3e8e
+🔄 Attempting to merge cursor/bc-72e5cd32-ab56-4d88-a1cc-84565311636f-3e8e...
+✅ Successfully merged cursor/bc-72e5cd32-ab56-4d88-a1cc-84565311636f-3e8e
+---
+📋 Processing branch: cursor/bc-85c13f69-d674-45c3-ae5d-2ff76a6c2c81-991b
+🔄 Attempting to merge cursor/bc-85c13f69-d674-45c3-ae5d-2ff76a6c2c81-991b...
+✅ Successfully merged cursor/bc-85c13f69-d674-45c3-ae5d-2ff76a6c2c81-991b
+---
+📋 Processing branch: cursor/bc-861d90f7-28fa-4a5a-912d-2374573c9dc0-8db3
+🔄 Attempting to merge cursor/bc-861d90f7-28fa-4a5a-912d-2374573c9dc0-8db3...
+✅ Successfully merged cursor/bc-861d90f7-28fa-4a5a-912d-2374573c9dc0-8db3
+---
+📋 Processing branch: cursor/bc-ea46a2eb-982d-4fb0-930c-ef6544ba8a75-a20a
+🔄 Attempting to merge cursor/bc-ea46a2eb-982d-4fb0-930c-ef6544ba8a75-a20a...
+✅ Successfully merged cursor/bc-ea46a2eb-982d-4fb0-930c-ef6544ba8a75-a20a
+---
+📋 Processing branch: cursor/bc-fb46ff41-f41c-4a05-88f2-2122b9c9c4ce-81c6
+🔄 Attempting to merge cursor/bc-fb46ff41-f41c-4a05-88f2-2122b9c9c4ce-81c6...
+✅ Successfully merged cursor/bc-fb46ff41-f41c-4a05-88f2-2122b9c9c4ce-81c6
+---
+📋 Processing branch: cursor/build-ai-powered-project-teams-dcf8
+🔄 Attempting to merge cursor/build-ai-powered-project-teams-dcf8...
+✅ Successfully merged cursor/build-ai-powered-project-teams-dcf8
+---
+📋 Processing branch: cursor/build-ai-powered-smart-contract-generator-b22e
+🔄 Attempting to merge cursor/build-ai-powered-smart-contract-generator-b22e...
+✅ Successfully merged cursor/build-ai-powered-smart-contract-generator-b22e
+---
+📋 Processing branch: cursor/build-ai-pricing-suggestion-engine-ea4e
+🔄 Attempting to merge cursor/build-ai-pricing-suggestion-engine-ea4e...
+✅ Successfully merged cursor/build-ai-pricing-suggestion-engine-ea4e
+---
+📋 Processing branch: cursor/build-ai-resume-and-portfolio-builder-workflow-2029
+🔄 Attempting to merge cursor/build-ai-resume-and-portfolio-builder-workflow-2029...
+✅ Successfully merged cursor/build-ai-resume-and-portfolio-builder-workflow-2029
+---
+📋 Processing branch: cursor/build-ai-resume-and-portfolio-tool-4f12
+🔄 Attempting to merge cursor/build-ai-resume-and-portfolio-tool-4f12...
+✅ Successfully merged cursor/build-ai-resume-and-portfolio-tool-4f12
+---
+📋 Processing branch: cursor/build-and-fix-errors-008f
+🔄 Attempting to merge cursor/build-and-fix-errors-008f...
+✅ Successfully merged cursor/build-and-fix-errors-008f
+---
+📋 Processing branch: cursor/build-and-fix-errors-079c
+🔄 Attempting to merge cursor/build-and-fix-errors-079c...
+✅ Successfully merged cursor/build-and-fix-errors-079c
+---
+📋 Processing branch: cursor/build-and-fix-errors-0ebf
+🔄 Attempting to merge cursor/build-and-fix-errors-0ebf...
+✅ Successfully merged cursor/build-and-fix-errors-0ebf
+---
+📋 Processing branch: cursor/build-and-fix-errors-0ec8
+🔄 Attempting to merge cursor/build-and-fix-errors-0ec8...
+✅ Successfully merged cursor/build-and-fix-errors-0ec8
+---
+📋 Processing branch: cursor/build-and-fix-errors-0f78
+🔄 Attempting to merge cursor/build-and-fix-errors-0f78...
+✅ Successfully merged cursor/build-and-fix-errors-0f78
+---
+📋 Processing branch: cursor/build-and-fix-errors-0fb2
+🔄 Attempting to merge cursor/build-and-fix-errors-0fb2...
+✅ Successfully merged cursor/build-and-fix-errors-0fb2
+---
+📋 Processing branch: cursor/build-and-fix-errors-1dae
+🔄 Attempting to merge cursor/build-and-fix-errors-1dae...
+✅ Successfully merged cursor/build-and-fix-errors-1dae
+---
+📋 Processing branch: cursor/build-and-fix-errors-20b1
+🔄 Attempting to merge cursor/build-and-fix-errors-20b1...
+✅ Successfully merged cursor/build-and-fix-errors-20b1
+---
+📋 Processing branch: cursor/build-and-fix-errors-2334
+🔄 Attempting to merge cursor/build-and-fix-errors-2334...
+✅ Successfully merged cursor/build-and-fix-errors-2334
+---
+📋 Processing branch: cursor/build-and-fix-errors-2599
+🔄 Attempting to merge cursor/build-and-fix-errors-2599...
+✅ Successfully merged cursor/build-and-fix-errors-2599
+---
+📋 Processing branch: cursor/build-and-fix-errors-28eb
+🔄 Attempting to merge cursor/build-and-fix-errors-28eb...
+✅ Successfully merged cursor/build-and-fix-errors-28eb
+---
+📋 Processing branch: cursor/build-and-fix-errors-2df6
+🔄 Attempting to merge cursor/build-and-fix-errors-2df6...
+✅ Successfully merged cursor/build-and-fix-errors-2df6
+---
+📋 Processing branch: cursor/build-and-fix-errors-3358
+🔄 Attempting to merge cursor/build-and-fix-errors-3358...
+✅ Successfully merged cursor/build-and-fix-errors-3358
+---
+📋 Processing branch: cursor/build-and-fix-errors-3cda
+🔄 Attempting to merge cursor/build-and-fix-errors-3cda...
+✅ Successfully merged cursor/build-and-fix-errors-3cda
+---
+📋 Processing branch: cursor/build-and-fix-errors-4070
+🔄 Attempting to merge cursor/build-and-fix-errors-4070...
+✅ Successfully merged cursor/build-and-fix-errors-4070
+---
+📋 Processing branch: cursor/build-and-fix-errors-4469
+🔄 Attempting to merge cursor/build-and-fix-errors-4469...
+✅ Successfully merged cursor/build-and-fix-errors-4469
+---
+📋 Processing branch: cursor/build-and-fix-errors-4788
+🔄 Attempting to merge cursor/build-and-fix-errors-4788...
+✅ Successfully merged cursor/build-and-fix-errors-4788
+---
+📋 Processing branch: cursor/build-and-fix-errors-4dff
+🔄 Attempting to merge cursor/build-and-fix-errors-4dff...
+✅ Successfully merged cursor/build-and-fix-errors-4dff
+---
+📋 Processing branch: cursor/build-and-fix-errors-58a7
+🔄 Attempting to merge cursor/build-and-fix-errors-58a7...
+✅ Successfully merged cursor/build-and-fix-errors-58a7
+---
+📋 Processing branch: cursor/build-and-fix-errors-67d7
+🔄 Attempting to merge cursor/build-and-fix-errors-67d7...
+✅ Successfully merged cursor/build-and-fix-errors-67d7
+---
+📋 Processing branch: cursor/build-and-fix-errors-6ada
+🔄 Attempting to merge cursor/build-and-fix-errors-6ada...
+✅ Successfully merged cursor/build-and-fix-errors-6ada
+---
+📋 Processing branch: cursor/build-and-fix-errors-6dc9
+🔄 Attempting to merge cursor/build-and-fix-errors-6dc9...
+✅ Successfully merged cursor/build-and-fix-errors-6dc9
+---
+📋 Processing branch: cursor/build-and-fix-errors-711d
+🔄 Attempting to merge cursor/build-and-fix-errors-711d...
+✅ Successfully merged cursor/build-and-fix-errors-711d
+---
+📋 Processing branch: cursor/build-and-fix-errors-74c2
+🔄 Attempting to merge cursor/build-and-fix-errors-74c2...
+✅ Successfully merged cursor/build-and-fix-errors-74c2
+---
+📋 Processing branch: cursor/build-and-fix-errors-76f3
+🔄 Attempting to merge cursor/build-and-fix-errors-76f3...
+✅ Successfully merged cursor/build-and-fix-errors-76f3
+---
+📋 Processing branch: cursor/build-and-fix-errors-7a1f
+🔄 Attempting to merge cursor/build-and-fix-errors-7a1f...
+✅ Successfully merged cursor/build-and-fix-errors-7a1f
+---
+📋 Processing branch: cursor/build-and-fix-errors-800d
+🔄 Attempting to merge cursor/build-and-fix-errors-800d...
+✅ Successfully merged cursor/build-and-fix-errors-800d
+---
+📋 Processing branch: cursor/build-and-fix-errors-8064
+🔄 Attempting to merge cursor/build-and-fix-errors-8064...
+✅ Successfully merged cursor/build-and-fix-errors-8064
+---
+📋 Processing branch: cursor/build-and-fix-errors-8308
+🔄 Attempting to merge cursor/build-and-fix-errors-8308...
+✅ Successfully merged cursor/build-and-fix-errors-8308
+---
+📋 Processing branch: cursor/build-and-fix-errors-856d
+🔄 Attempting to merge cursor/build-and-fix-errors-856d...
+✅ Successfully merged cursor/build-and-fix-errors-856d
+---
+📋 Processing branch: cursor/build-and-fix-errors-8662
+🔄 Attempting to merge cursor/build-and-fix-errors-8662...
+✅ Successfully merged cursor/build-and-fix-errors-8662
+---
+📋 Processing branch: cursor/build-and-fix-errors-8b64
+🔄 Attempting to merge cursor/build-and-fix-errors-8b64...
+✅ Successfully merged cursor/build-and-fix-errors-8b64
+---
+📋 Processing branch: cursor/build-and-fix-errors-8da2
+🔄 Attempting to merge cursor/build-and-fix-errors-8da2...
+✅ Successfully merged cursor/build-and-fix-errors-8da2
+---
+📋 Processing branch: cursor/build-and-fix-errors-97a7
+🔄 Attempting to merge cursor/build-and-fix-errors-97a7...
+✅ Successfully merged cursor/build-and-fix-errors-97a7
+---
+📋 Processing branch: cursor/build-and-fix-errors-9dce
+🔄 Attempting to merge cursor/build-and-fix-errors-9dce...
+✅ Successfully merged cursor/build-and-fix-errors-9dce
+---
+📋 Processing branch: cursor/build-and-fix-errors-a120
+🔄 Attempting to merge cursor/build-and-fix-errors-a120...
+✅ Successfully merged cursor/build-and-fix-errors-a120
+---
+📋 Processing branch: cursor/build-and-fix-errors-a8bf
+🔄 Attempting to merge cursor/build-and-fix-errors-a8bf...
+✅ Successfully merged cursor/build-and-fix-errors-a8bf
+---
+📋 Processing branch: cursor/build-and-fix-errors-a934
+🔄 Attempting to merge cursor/build-and-fix-errors-a934...
+✅ Successfully merged cursor/build-and-fix-errors-a934
+---
+📋 Processing branch: cursor/build-and-fix-errors-ad81
+🔄 Attempting to merge cursor/build-and-fix-errors-ad81...
+✅ Successfully merged cursor/build-and-fix-errors-ad81
+---
+📋 Processing branch: cursor/build-and-fix-errors-aec6
+🔄 Attempting to merge cursor/build-and-fix-errors-aec6...
+✅ Successfully merged cursor/build-and-fix-errors-aec6
+---
+📋 Processing branch: cursor/build-and-fix-errors-b823
+🔄 Attempting to merge cursor/build-and-fix-errors-b823...
+✅ Successfully merged cursor/build-and-fix-errors-b823
+---
+📋 Processing branch: cursor/build-and-fix-errors-c3e5
+🔄 Attempting to merge cursor/build-and-fix-errors-c3e5...
+✅ Successfully merged cursor/build-and-fix-errors-c3e5
+---
+📋 Processing branch: cursor/build-and-fix-errors-c928
+🔄 Attempting to merge cursor/build-and-fix-errors-c928...
+✅ Successfully merged cursor/build-and-fix-errors-c928
+---
+📋 Processing branch: cursor/build-and-fix-errors-cf10
+🔄 Attempting to merge cursor/build-and-fix-errors-cf10...
+✅ Successfully merged cursor/build-and-fix-errors-cf10
+---
+📋 Processing branch: cursor/build-and-fix-errors-cfbd
+🔄 Attempting to merge cursor/build-and-fix-errors-cfbd...
+✅ Successfully merged cursor/build-and-fix-errors-cfbd
+---
+📋 Processing branch: cursor/build-and-fix-errors-d3be
+🔄 Attempting to merge cursor/build-and-fix-errors-d3be...
+✅ Successfully merged cursor/build-and-fix-errors-d3be
+---
+📋 Processing branch: cursor/build-and-fix-errors-d4a6
+🔄 Attempting to merge cursor/build-and-fix-errors-d4a6...
+✅ Successfully merged cursor/build-and-fix-errors-d4a6
+---
+📋 Processing branch: cursor/build-and-fix-errors-e619
+🔄 Attempting to merge cursor/build-and-fix-errors-e619...
+✅ Successfully merged cursor/build-and-fix-errors-e619
+---
+📋 Processing branch: cursor/build-and-fix-errors-f2da
+🔄 Attempting to merge cursor/build-and-fix-errors-f2da...
+✅ Successfully merged cursor/build-and-fix-errors-f2da
+---
+📋 Processing branch: cursor/build-and-fix-errors-f404
+🔄 Attempting to merge cursor/build-and-fix-errors-f404...
+✅ Successfully merged cursor/build-and-fix-errors-f404
+---
+📋 Processing branch: cursor/build-and-fix-errors-f8b4
+🔄 Attempting to merge cursor/build-and-fix-errors-f8b4...
+✅ Successfully merged cursor/build-and-fix-errors-f8b4
+---
+📋 Processing branch: cursor/build-and-fix-errors-f8e2
+🔄 Attempting to merge cursor/build-and-fix-errors-f8e2...
+✅ Successfully merged cursor/build-and-fix-errors-f8e2
+---
+📋 Processing branch: cursor/build-and-fix-errors-fad9
+🔄 Attempting to merge cursor/build-and-fix-errors-fad9...
+✅ Successfully merged cursor/build-and-fix-errors-fad9
+---
+📋 Processing branch: cursor/build-and-fix-errors-ff02
+🔄 Attempting to merge cursor/build-and-fix-errors-ff02...
+✅ Successfully merged cursor/build-and-fix-errors-ff02
+---
+📋 Processing branch: cursor/build-categorized-ziongpt-prompt-library-535a
+🔄 Attempting to merge cursor/build-categorized-ziongpt-prompt-library-535a...
+✅ Successfully merged cursor/build-categorized-ziongpt-prompt-library-535a
+---
+📋 Processing branch: cursor/build-client-quote-request-form-74ea
+🔄 Attempting to merge cursor/build-client-quote-request-form-74ea...
+✅ Successfully merged cursor/build-client-quote-request-form-74ea
+---
+📋 Processing branch: cursor/build-community-driven-zion-roadmap-page-15c3
+🔄 Attempting to merge cursor/build-community-driven-zion-roadmap-page-15c3...
+✅ Successfully merged cursor/build-community-driven-zion-roadmap-page-15c3
+---
+📋 Processing branch: cursor/build-community-forum-for-zion-ai-marketplace-7967
+🔄 Attempting to merge cursor/build-community-forum-for-zion-ai-marketplace-7967...
+✅ Successfully merged cursor/build-community-forum-for-zion-ai-marketplace-7967
+---
+📋 Processing branch: cursor/build-cross-platform-zion-assistant-acdd
+🔄 Attempting to merge cursor/build-cross-platform-zion-assistant-acdd...
+✅ Successfully merged cursor/build-cross-platform-zion-assistant-acdd
+---
+📋 Processing branch: cursor/build-dao-proposal-drafting-system-with-templates-9858
+🔄 Attempting to merge cursor/build-dao-proposal-drafting-system-with-templates-9858...
+✅ Successfully merged cursor/build-dao-proposal-drafting-system-with-templates-9858
+---
+📋 Processing branch: cursor/build-decentralized-governance-system-for-zion-2328
+🔄 Attempting to merge cursor/build-decentralized-governance-system-for-zion-2328...
+✅ Successfully merged cursor/build-decentralized-governance-system-for-zion-2328
+---
+📋 Processing branch: cursor/build-developer-api-and-webhook-integration-62ab
+🔄 Attempting to merge cursor/build-developer-api-and-webhook-integration-62ab...
+✅ Successfully merged cursor/build-developer-api-and-webhook-integration-62ab
+---
+📋 Processing branch: cursor/build-digital-nation-creation-module-4d41
+🔄 Attempting to merge cursor/build-digital-nation-creation-module-4d41...
+✅ Successfully merged cursor/build-digital-nation-creation-module-4d41
+---
+📋 Processing branch: cursor/build-digital-nation-creation-module-57e8
+🔄 Attempting to merge cursor/build-digital-nation-creation-module-57e8...
+✅ Successfully merged cursor/build-digital-nation-creation-module-57e8
+---
+📋 Processing branch: cursor/build-failed-due-to-missing-dotenv-module-c691
+🔄 Attempting to merge cursor/build-failed-due-to-missing-dotenv-module-c691...
+✅ Successfully merged cursor/build-failed-due-to-missing-dotenv-module-c691
+---
+📋 Processing branch: cursor/build-failed-due-to-syntax-error-and-missing-output-directory-cc13
+🔄 Attempting to merge cursor/build-failed-due-to-syntax-error-and-missing-output-directory-cc13...
+✅ Successfully merged cursor/build-failed-due-to-syntax-error-and-missing-output-directory-cc13
+---
+📋 Processing branch: cursor/build-fix-and-push-changes-8412
+🔄 Attempting to merge cursor/build-fix-and-push-changes-8412...
+✅ Successfully merged cursor/build-fix-and-push-changes-8412
+---
+📋 Processing branch: cursor/build-global-zion-ecosystem-deployer-b3de
+🔄 Attempting to merge cursor/build-global-zion-ecosystem-deployer-b3de...
+✅ Successfully merged cursor/build-global-zion-ecosystem-deployer-b3de
+---
+📋 Processing branch: cursor/build-interactive-talent-resume-and-portfolio-39e4
+🔄 Attempting to merge cursor/build-interactive-talent-resume-and-portfolio-39e4...
+✅ Successfully merged cursor/build-interactive-talent-resume-and-portfolio-39e4
+---
+📋 Processing branch: cursor/build-investor-and-franchisee-growth-portal-dc8f
+🔄 Attempting to merge cursor/build-investor-and-franchisee-growth-portal-dc8f...
+✅ Successfully merged cursor/build-investor-and-franchisee-growth-portal-dc8f
+---
+📋 Processing branch: cursor/build-investor-matchmaking-tool-37fa
+🔄 Attempting to merge cursor/build-investor-matchmaking-tool-37fa...
+✅ Successfully merged cursor/build-investor-matchmaking-tool-37fa
+---
+📋 Processing branch: cursor/build-it-equipment-product-listing-page-a901
+🔄 Attempting to merge cursor/build-it-equipment-product-listing-page-a901...
+✅ Successfully merged cursor/build-it-equipment-product-listing-page-a901
+---
+📋 Processing branch: cursor/build-it-service-provider-directory-page-d0d3
+🔄 Attempting to merge cursor/build-it-service-provider-directory-page-d0d3...
+✅ Successfully merged cursor/build-it-service-provider-directory-page-d0d3
+---
+📋 Processing branch: cursor/build-next-app-and-export-1aa3
+🔄 Attempting to merge cursor/build-next-app-and-export-1aa3...
+✅ Successfully merged cursor/build-next-app-and-export-1aa3
+---
+📋 Processing branch: cursor/build-next-app-and-health-checks-86dd
+🔄 Attempting to merge cursor/build-next-app-and-health-checks-86dd...
+✅ Successfully merged cursor/build-next-app-and-health-checks-86dd
+---
+📋 Processing branch: cursor/build-next-app-with-cloudinary-integration-c549
+🔄 Attempting to merge cursor/build-next-app-with-cloudinary-integration-c549...
+✅ Successfully merged cursor/build-next-app-with-cloudinary-integration-c549
+---
+📋 Processing branch: cursor/build-next-app-with-syntax-error-c5e0
+🔄 Attempting to merge cursor/build-next-app-with-syntax-error-c5e0...
+✅ Successfully merged cursor/build-next-app-with-syntax-error-c5e0
+---
+📋 Processing branch: cursor/build-nextjs-app-and-deploy-39fe
+🔄 Attempting to merge cursor/build-nextjs-app-and-deploy-39fe...
+✅ Successfully merged cursor/build-nextjs-app-and-deploy-39fe
+---
+📋 Processing branch: cursor/build-nextjs-app-and-deploy-b5a7
+🔄 Attempting to merge cursor/build-nextjs-app-and-deploy-b5a7...
+✅ Successfully merged cursor/build-nextjs-app-and-deploy-b5a7
+---
+📋 Processing branch: cursor/build-nextjs-app-and-handle-errors-5869
+🔄 Attempting to merge cursor/build-nextjs-app-and-handle-errors-5869...
+✅ Successfully merged cursor/build-nextjs-app-and-handle-errors-5869
+---
+📋 Processing branch: cursor/build-nextjs-app-and-handle-publish-error-1f35
+🔄 Attempting to merge cursor/build-nextjs-app-and-handle-publish-error-1f35...
+✅ Successfully merged cursor/build-nextjs-app-and-handle-publish-error-1f35
+---
+📋 Processing branch: cursor/build-nextjs-app-with-dependency-installation-d447
+🔄 Attempting to merge cursor/build-nextjs-app-with-dependency-installation-d447...
+⚠️  Merge conflicts detected in cursor/build-nextjs-app-with-dependency-installation-d447, attempting to resolve...
+🔧 Resolving conflicts in cursor/build-nextjs-app-with-dependency-installation-d447...
