@@ -4,8 +4,11 @@ import { ProductListing } from "@/types/listings";
 import { TrustedBySection } from "@/components/TrustedBySection";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Globe } from "lucide-react";
+import { Globe, Zap, Shield, Cloud, Database, TrendingUp, ArrowRight, DollarSign } from "lucide-react";
+import Cpu from "lucide-react/dist/esm/icons/cpu";
+import { Link as LinkIcon } from "lucide-react";
 import { useEffect, useState } from "react";
+import { ALL_EXPANDED_SERVICES } from "@/data/expandedServices";
 
 // Sample service listings
 const SERVICE_LISTINGS: ProductListing[] = [
@@ -120,6 +123,73 @@ const SERVICE_LISTINGS: ProductListing[] = [
     rating: 4.8,
     reviewCount: 85,
   },
+];
+
+// Service categories with icons and descriptions
+const SERVICE_CATEGORIES = [
+  {
+    title: "AI & Automation",
+    description: "Intelligent automation, machine learning, and AI-powered solutions",
+    icon: <Zap className="w-8 h-8" />,
+    color: "from-purple-500 to-indigo-600",
+    services: 3,
+    avgPrice: "$7,500",
+    link: "/expanded-services?category=ai-automation"
+  },
+  {
+    title: "Cybersecurity",
+    description: "Advanced threat detection, compliance, and zero trust security",
+    icon: <Shield className="w-8 h-8" />,
+    color: "from-red-500 to-pink-600",
+    services: 3,
+    avgPrice: "$12,700",
+    link: "/expanded-services?category=cybersecurity"
+  },
+  {
+    title: "Cloud & DevOps",
+    description: "Cloud migration, automation, and Kubernetes management",
+    icon: <Cloud className="w-8 h-8" />,
+    color: "from-blue-500 to-cyan-600",
+    services: 3,
+    avgPrice: "$17,300",
+    link: "/expanded-services?category=cloud-devops"
+  },
+  {
+    title: "Data & Analytics",
+    description: "Data engineering, business intelligence, and governance",
+    icon: <Database className="w-8 h-8" />,
+    color: "from-green-500 to-emerald-600",
+    services: 3,
+    avgPrice: "$16,000",
+    link: "/expanded-services?category=data-analytics"
+  },
+  {
+    title: "Digital Transformation",
+    description: "Strategy, legacy modernization, and change management",
+    icon: <TrendingUp className="w-8 h-8" />,
+    color: "from-orange-500 to-yellow-600",
+    services: 3,
+    avgPrice: "$28,000",
+    link: "/expanded-services?category=digital-transformation"
+  },
+  {
+    title: "IoT & Edge Computing",
+    description: "IoT platforms, edge analytics, and connected solutions",
+    icon: <Cpu className="w-8 h-8" />,
+    color: "from-indigo-500 to-purple-600",
+    services: 2,
+    avgPrice: "$22,000",
+    link: "/expanded-services?category=iot-edge"
+  },
+  {
+    title: "Blockchain & Web3",
+    description: "Blockchain development, smart contracts, and Web3 integration",
+    icon: <LinkIcon className="w-8 h-8" />,
+    color: "from-teal-500 to-blue-600",
+    services: 2,
+    avgPrice: "$25,000",
+    link: "/expanded-services?category=blockchain-web3"
+  }
 ];
 
 function getRandomItem<T>(arr: T[]): T {
@@ -244,14 +314,63 @@ export default function ServicesPage() {
                 Global IT Onsite Services
               </Button>
             </Link>
-            <Link to="/request-quote">
+            <Link to="/expanded-services">
               <Button className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white">
+                <Zap className="h-4 w-4 mr-2" />
+                View All Services
+              </Button>
+            </Link>
+            <Link to="/services-pricing">
+              <Button variant="outline" className="border-zion-cyan text-zion-cyan hover:bg-zion-cyan/10">
+                <DollarSign className="h-4 w-4 mr-2" />
+                Pricing Guide
+              </Button>
+            </Link>
+            <Link to="/request-quote">
+              <Button variant="outline" className="border-zion-cyan text-zion-cyan hover:bg-zion-cyan/10">
                 Request a Quote
               </Button>
             </Link>
           </div>
         </div>
       </div>
+
+      {/* Service Categories Overview */}
+      <section className="py-16 bg-gradient-to-b from-background to-zion-blue/5">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Comprehensive Service Categories</h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Explore our extensive range of technology services across multiple domains, from AI and cybersecurity to cloud infrastructure and digital transformation.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {SERVICE_CATEGORIES.map((category) => (
+              <Link key={category.title} to={category.link} className="group block">
+                <div className="rounded-lg overflow-hidden h-full border border-zion-blue-light bg-white p-6 transition-all duration-300 hover:border-zion-purple/50 hover:shadow-lg hover:translate-y-[-2px]">
+                  <div className={`rounded-full w-16 h-16 bg-gradient-to-br ${category.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                    <div className="text-white">
+                      {category.icon}
+                    </div>
+                  </div>
+                  <h3 className="text-lg font-bold mb-2 text-zion-blue">{category.title}</h3>
+                  <p className="text-sm text-muted-foreground mb-4 line-clamp-2">{category.description}</p>
+                  <div className="flex justify-between items-center text-sm text-muted-foreground mb-3">
+                    <span>{category.services} services</span>
+                    <span>Avg: {category.avgPrice}</span>
+                  </div>
+                  <div className="flex items-center text-zion-purple font-medium group-hover:text-zion-purple-dark transition-colors">
+                    <span>Explore Services</span>
+                    <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <DynamicListingPage 
         title="IT & AI Services"
         description="Find expert technology service providers for your business needs, from AI development to infrastructure management."
@@ -260,6 +379,7 @@ export default function ServicesPage() {
         categoryFilters={SERVICE_FILTERS}
         initialPrice={{ min: 3000, max: 10000 }}
       />
+      
       <TrustedBySection />
     </>
   );
