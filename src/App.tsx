@@ -49,6 +49,8 @@ const ExpandedServicesPage = React.lazy(() => import('./pages/ExpandedServicesPa
 const ServiceComparisonPage = React.lazy(() => import('./pages/ServiceComparisonPage'));
 const ServiceCalculatorPage = React.lazy(() => import('./pages/ServiceCalculatorPage'));
 const AllServicesOverviewPage = React.lazy(() => import('./pages/AllServicesOverviewPage'));
+const ServiceAnalyticsDashboard = React.lazy(() => import('./pages/ServiceAnalyticsDashboard'));
+const ServiceMarketplace = React.lazy(() => import('./pages/ServiceMarketplace'));
 
 const baseRoutes = [
   { path: '/', element: <Home /> },
@@ -62,6 +64,8 @@ const baseRoutes = [
   { path: '/all-services', element: <AllServicesOverviewPage /> },
   { path: '/service-comparison', element: <ServiceComparisonPage /> },
   { path: '/service-calculator', element: <ServiceCalculatorPage /> },
+  { path: '/service-analytics', element: <ServiceAnalyticsDashboard /> },
+  { path: '/service-marketplace', element: <ServiceMarketplace /> },
   { path: '/it-onsite-services', element: <ITOnsiteServicesPage /> },
   { path: '/categories', element: <Categories /> },
   { path: '/equipment', element: <EquipmentPage /> },

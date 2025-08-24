@@ -64,6 +64,14 @@ const specialServices = [
   {
     title: "Cost Calculator",
     link: "/service-calculator"
+  },
+  {
+    title: "Service Analytics",
+    link: "/service-analytics"
+  },
+  {
+    title: "Service Marketplace",
+    link: "/service-marketplace"
   }
 ];
 

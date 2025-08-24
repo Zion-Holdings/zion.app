@@ -1,0 +1,11 @@
+export const BLOG_POSTS = [
+    {
+        id: '1',
+        title: 'Welcome to Zion Tech Group',
+        excerpt: 'Discover our comprehensive range of IT and AI services.',
+        content: 'Welcome to Zion Tech Group. We offer a wide range of innovative IT and AI solutions.',
+        author: 'Zion Tech Group',
+        publishedAt: '2024-01-01T00:00:00.000Z',
+        tags: ['welcome', 'introduction']
+    }
+];
