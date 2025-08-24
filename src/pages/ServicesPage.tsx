@@ -4,10 +4,11 @@ import { ProductListing } from "@/types/listings";
 import { TrustedBySection } from "@/components/TrustedBySection";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Globe } from "lucide-react";
+import { Globe, Sparkles, ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
+import { ENHANCED_SERVICES } from "@/data/enhancedServices";
 
-// Sample service listings
+// Enhanced service listings with real micro SAAS solutions
 const SERVICE_LISTINGS: ProductListing[] = [
   {
     id: "service-1",
@@ -260,6 +261,66 @@ export default function ServicesPage() {
         categoryFilters={SERVICE_FILTERS}
         initialPrice={{ min: 3000, max: 10000 }}
       />
+
+      {/* Enhanced Services Showcase */}
+      <section className="py-20 bg-zion-blue-dark">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <div className="flex items-center justify-center space-x-2 mb-4">
+              <Sparkles className="w-8 h-8 text-zion-cyan" />
+              <h2 className="text-3xl font-bold text-white">Enhanced Micro SAAS Services</h2>
+              <Sparkles className="w-8 h-8 text-zion-cyan" />
+            </div>
+            <p className="text-zion-slate-light text-lg max-w-3xl mx-auto">
+              Discover our comprehensive suite of innovative micro SAAS solutions designed to transform your business operations
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            {ENHANCED_SERVICES.slice(0, 6).map((service) => (
+              <div key={service.id} className="bg-zion-blue border border-zion-blue-light rounded-lg p-6 hover:border-zion-purple/50 transition-all duration-300">
+                <div className="flex items-start justify-between mb-4">
+                  <h3 className="text-xl font-bold text-white">{service.title}</h3>
+                  {service.featured && (
+                    <span className="px-2 py-1 bg-zion-purple text-white text-xs rounded-full">Featured</span>
+                  )}
+                </div>
+                <p className="text-zion-slate-light mb-4 line-clamp-3">{service.description}</p>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="text-2xl font-bold text-zion-cyan">${service.price?.toLocaleString()}/month</div>
+                  <div className="flex items-center space-x-1 text-sm text-zion-slate-light">
+                    <span className="w-2 h-2 bg-zion-cyan rounded-full"></span>
+                    <span>AI Score: {service.aiScore}%</span>
+                  </div>
+                </div>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {service.tags.slice(0, 3).map((tag) => (
+                    <span key={tag} className="px-2 py-1 bg-zion-blue-light text-zion-slate-light text-xs rounded">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <Link 
+                  to="/enhanced-services"
+                  className="inline-flex items-center space-x-2 text-zion-cyan hover:text-zion-cyan-light transition-colors"
+                >
+                  <span>Learn More</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <Link to="/enhanced-services">
+              <Button size="lg" className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white">
+                View All Enhanced Services
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <TrustedBySection />
     </>
   );
