@@ -1,47 +1,52 @@
-import { FooterNewsletter } from "@/components/FooterNewsletter";
-import { Twitter, Linkedin, Facebook, Instagram, Github, Mail, Phone, MapPin } from "lucide-react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Facebook, Twitter, Linkedin, Instagram, Github } from 'lucide-react';
 
-export function Footer() {
+export default function Footer() {
   return (
-    <footer className="bg-zion-blue-dark border-t border-zion-blue-light pt-12 pb-8 relative overflow-hidden">
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-zion-cyan to-transparent opacity-50"></div>
-        <div className="absolute bottom-0 left-1/4 w-1 h-full bg-gradient-to-t from-transparent via-zion-purple to-transparent opacity-30"></div>
-        <div className="absolute bottom-0 right-1/4 w-1 h-full bg-gradient-to-t from-transparent via-zion-cyan to-transparent opacity-30"></div>
-        <div className="absolute top-1/2 left-0 w-32 h-32 bg-zion-cyan/5 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 right-0 w-32 h-32 bg-zion-cyan/5 rounded-full blur-3xl"></div>
-      </div>
-      
-      <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="bg-zion-blue-dark text-white py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div>
-            <div className="mb-4">
-              <span className="text-2xl font-bold bg-gradient-to-r from-zion-cyan via-zion-purple-light to-zion-purple bg-clip-text text-transparent neon-pulse">ZION TECH GROUP</span>
+          {/* Company Info */}
+          <div className="lg:col-span-1">
+            <div className="flex items-center space-x-2 mb-4">
+              <div className="w-8 h-8 bg-gradient-to-r from-zion-cyan to-zion-purple rounded-lg flex items-center justify-center">
+                <span className="text-white font-bold text-lg">Z</span>
+              </div>
+              <span className="text-xl font-bold bg-gradient-to-r from-zion-cyan to-zion-purple bg-clip-text text-transparent">
+                Zion Tech Group
+              </span>
             </div>
-            <p className="text-zion-slate-light mb-6 max-w-xs">
-              The world's first free marketplace dedicated to high-tech and artificial intelligence. Connecting talent, services, and innovation.
+            <p className="text-zion-slate-light mb-6 text-sm leading-relaxed">
+              Empowering businesses with cutting-edge AI, IT solutions, and innovative technology services. 
+              Your trusted partner in digital transformation and technological advancement.
             </p>
             
             {/* Contact Info */}
-            <div className="space-y-3 mb-6">
-              <div className="flex items-center text-zion-slate-light">
-                <Mail className="h-4 w-4 mr-2 text-zion-cyan" />
-                <span>info@ziontechgroup.com</span>
-              </div>
-              <div className="flex items-center text-zion-slate-light">
-                <Phone className="h-4 w-4 mr-2 text-zion-cyan" />
-                <span>+1 302 464 0950</span>
-              </div>
-              <div className="flex items-center text-zion-slate-light">
-                <MapPin className="h-4 w-4 mr-2 text-zion-cyan" />
-                <span>364 E Main St STE 1008 Middletown DE 19709</span>
-              </div>
+            <div className="mb-6 space-y-2 text-sm">
+              <p className="text-zion-slate-light">
+                <span className="font-semibold text-zion-cyan">Phone:</span> +1 302 464 0950
+              </p>
+              <p className="text-zion-slate-light">
+                <span className="font-semibold text-zion-cyan">Email:</span> kleber@ziontechgroup.com
+              </p>
+              <p className="text-zion-slate-light">
+                <span className="font-semibold text-zion-cyan">Address:</span> 364 E Main St STE 1008, Middletown DE 19709
+              </p>
             </div>
-            
+
             {/* Social Links */}
             <div className="flex space-x-4">
+              <a
+                href="https://facebook.com/ziontechgroup"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-zion-slate-light hover:text-zion-cyan transition-colors"
+                aria-label="Facebook"
+                title="Facebook"
+              >
+                <Facebook className="h-5 w-5" aria-label="Facebook" />
+              </a>
               <a
                 href="https://twitter.com/ziontechgroup"
                 target="_blank"
@@ -53,7 +58,7 @@ export function Footer() {
                 <Twitter className="h-5 w-5" aria-label="Twitter" />
               </a>
               <a
-                href="https://www.linkedin.com/company/zion-tech-group"
+                href="https://linkedin.com/company/ziontechgroup"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-zion-slate-light hover:text-zion-cyan transition-colors"
@@ -61,16 +66,6 @@ export function Footer() {
                 title="LinkedIn"
               >
                 <Linkedin className="h-5 w-5" aria-label="LinkedIn" />
-              </a>
-              <a
-                href="https://www.facebook.com/ziontechgroup"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-zion-slate-light hover:text-zion-cyan transition-colors"
-                aria-label="Facebook"
-                title="Facebook"
-              >
-                <Facebook className="h-5 w-5" aria-label="Facebook" />
               </a>
               <a
                 href="https://instagram.com/ziontechgroup"
@@ -106,10 +101,10 @@ export function Footer() {
               <li><Link to="/equipment" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Equipment</Link></li>
               <li><Link to="/categories" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Categories</Link></li>
               <li><Link to="/green-it" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Green IT</Link></li>
-<<<<<<< HEAD
               <li><Link to="/it-onsite-services" className="text-zion-slate-light hover:text-zion-cyan transition-colors">IT Onsite Services</Link></li>
-=======
->>>>>>> 1190166b600d0883f3d21629581161b11801bcbf
+              <li><Link to="/comprehensive-services" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Comprehensive Services</Link></li>
+              <li><Link to="/ai-services" className="text-zion-slate-light hover:text-zion-cyan transition-colors">AI Services</Link></li>
+              <li><Link to="/cybersecurity-services" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Cybersecurity</Link></li>
             </ul>
           </div>
 
@@ -128,7 +123,6 @@ export function Footer() {
 
           {/* Support & Resources */}
           <div>
-<<<<<<< HEAD
             <h3 className="text-white font-semibold mb-4 text-lg">Support & Resources</h3>
             <ul className="space-y-2">
               <li><Link to="/help" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Help Center</Link></li>
@@ -144,15 +138,17 @@ export function Footer() {
               <p className="text-zion-slate-light mb-3 text-xs">
                 Stay updated with the latest tech and AI opportunities.
               </p>
-              <FooterNewsletter />
+              <div className="flex">
+                <input
+                  type="email"
+                  placeholder="your@email.com"
+                  className="flex-1 px-3 py-2 text-sm text-zion-slate bg-white rounded-l-lg focus:outline-none"
+                />
+                <button className="px-4 py-2 bg-zion-cyan text-white text-sm font-medium rounded-r-lg hover:bg-zion-cyan-dark transition-colors">
+                  Subscribe
+                </button>
+              </div>
             </div>
-=======
-            <h3 className="text-white font-semibold mb-4 text-lg">Subscribe to our newsletter</h3>
-            <p className="text-zion-slate-light mb-4">
-              Stay updated with the latest news on tech, AI, and marketplace opportunities.
-            </p>
-            <FooterNewsletter />
->>>>>>> 1190166b600d0883f3d21629581161b11801bcbf
           </div>
         </div>
 

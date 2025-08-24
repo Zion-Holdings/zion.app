@@ -1,19 +1,16 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { EXPANDED_SERVICES, SERVICE_CATEGORIES, CONTACT_INFO, PRICING_TIERS } from '@/data/expandedServices';
+import { ALL_EXPANDED_SERVICES, EXPANDED_SERVICE_CATEGORIES, CONTACT_INFO } from '@/data/expandedServices';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Input } from '@/components/ui/input';
 import { Search, Mail, Phone, MapPin, Globe, Star, Clock, DollarSign, Users, Shield, Zap, Brain, Cloud, Lock, Database, Smartphone, Code, BarChart3, Circle } from 'lucide-react';
 import { SEO } from '@/components/SEO';
 
 export default function ComprehensiveServicesPage() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
-  const [priceRange, setPriceRange] = useState('all');
 
-  const filteredServices = EXPANDED_SERVICES.filter(service => {
+  const filteredServices = ALL_EXPANDED_SERVICES.filter(service => {
     const matchesSearch = service.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          service.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          service.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
@@ -21,18 +18,8 @@ export default function ComprehensiveServicesPage() {
     const matchesCategory = selectedCategory === 'all' || 
                            service.category.toLowerCase().includes(selectedCategory.toLowerCase());
     
-    const matchesPrice = priceRange === 'all' || 
-                        (priceRange === 'low' && service.price && service.price < 5000) ||
-                        (priceRange === 'medium' && service.price && service.price >= 5000 && service.price < 15000) ||
-                        (priceRange === 'high' && service.price && service.price >= 15000);
-    
-    return matchesSearch && matchesCategory && matchesPrice;
+    return matchesSearch && matchesCategory;
   });
-
-  const getCategoryIcon = (categoryName: string) => {
-    const category = SERVICE_CATEGORIES.find(cat => cat.name.includes(categoryName) || categoryName.includes(cat.name));
-    return category?.icon || '💼';
-  };
 
   const formatPrice = (price: number | null) => {
     if (!price) return 'Contact Us';
@@ -110,47 +97,35 @@ export default function ComprehensiveServicesPage() {
             </div>
             <div className="flex items-center gap-2">
               <Globe className="w-5 h-5" />
-              <a href={CONTACT_INFO.website} className="font-semibold hover:underline">
-                {CONTACT_INFO.website}
+              <a href={CONTACT_INFO.domain} className="font-semibold hover:underline">
+                {CONTACT_INFO.domain}
               </a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Search and Filters */}
+      {/* Search and Filter Section */}
       <section className="py-12 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="flex flex-col md:flex-row gap-4 mb-8">
-              <div className="flex-1 relative">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-                <Input
-                  placeholder="Search services, technologies, or keywords..."
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  className="pl-10 py-3 text-lg"
-                />
-              </div>
+              <input
+                type="text"
+                placeholder="Search services..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              />
               <select
                 value={selectedCategory}
                 onChange={(e) => setSelectedCategory(e.target.value)}
                 className="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               >
                 <option value="all">All Categories</option>
-                {SERVICE_CATEGORIES.map(category => (
-                  <option key={category.id} value={category.id}>{category.name}</option>
+                {EXPANDED_SERVICE_CATEGORIES.map(category => (
+                  <option key={category.value} value={category.value}>{category.label}</option>
                 ))}
-              </select>
-              <select
-                value={priceRange}
-                onChange={(e) => setPriceRange(e.target.value)}
-                className="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              >
-                <option value="all">All Prices</option>
-                <option value="low">Under $5,000</option>
-                <option value="medium">$5,000 - $15,000</option>
-                <option value="high">$15,000+</option>
               </select>
             </div>
             <div className="text-center">
@@ -171,17 +146,16 @@ export default function ComprehensiveServicesPage() {
               Explore our comprehensive range of professional services designed to accelerate your business growth
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-            {SERVICE_CATEGORIES.map(category => (
-              <Card key={category.id} className="text-center hover:shadow-lg transition-shadow cursor-pointer">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {EXPANDED_SERVICE_CATEGORIES.map(category => (
+              <Card key={category.value} className="text-center hover:shadow-lg transition-shadow cursor-pointer">
                 <CardHeader>
-                  <div className="text-4xl mb-2">{category.icon}</div>
-                  <CardTitle className="text-lg">{category.name}</CardTitle>
+                  <div className="text-4xl mb-2">💼</div>
+                  <CardTitle className="text-lg">{category.label}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-gray-600">{category.description}</p>
-                  <p className="text-sm font-semibold text-blue-600 mt-2">
-                    {category.services.length} services
+                  <p className="text-sm text-gray-600">
+                    Professional {category.label.toLowerCase()} services to help your business grow
                   </p>
                 </CardContent>
               </Card>
@@ -203,7 +177,7 @@ export default function ComprehensiveServicesPage() {
           {filteredServices.length === 0 ? (
             <div className="text-center py-12">
               <p className="text-gray-600 text-lg">No services found matching your criteria.</p>
-              <Button onClick={() => { setSearchTerm(''); setSelectedCategory('all'); setPriceRange('all'); }} className="mt-4">
+              <Button onClick={() => { setSearchTerm(''); setSelectedCategory('all'); }} className="mt-4">
                 Clear Filters
               </Button>
             </div>
@@ -232,7 +206,7 @@ export default function ComprehensiveServicesPage() {
                   <CardHeader>
                     <div className="flex items-start justify-between mb-2">
                       <Badge variant="secondary" className="text-xs">
-                        {getCategoryIcon(service.category)} {service.category}
+                        {service.category}
                       </Badge>
                       {service.aiScore && (
                         <Badge className="bg-gradient-to-r from-green-500 to-blue-500 text-white text-xs">
@@ -249,30 +223,30 @@ export default function ComprehensiveServicesPage() {
                   </CardHeader>
                   
                   <CardContent>
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {service.tags.slice(0, 3).map(tag => (
-                        <Badge key={tag} variant="outline" className="text-xs">
-                          {tag}
-                        </Badge>
-                      ))}
-                    </div>
-                    
                     <div className="flex items-center justify-between mb-4">
-                      <div className="flex items-center gap-2 text-sm text-gray-600">
+                      <div className="flex items-center gap-2 text-sm text-gray-500">
                         <Clock className="w-4 h-4" />
                         <span>{service.availability}</span>
                       </div>
-                      <div className="flex items-center gap-2 text-sm text-gray-600">
-                        <Users className="w-4 h-4" />
-                        <span>{service.author.name}</span>
+                      <div className="flex items-center gap-2 text-sm text-gray-500">
+                        <MapPin className="w-4 h-4" />
+                        <span>{service.location}</span>
                       </div>
+                    </div>
+                    
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {service.tags.slice(0, 3).map((tag, index) => (
+                        <Badge key={index} variant="outline" className="text-xs">
+                          {tag}
+                        </Badge>
+                      ))}
                     </div>
                     
                     <div className="flex items-center justify-between">
                       <div className="text-2xl font-bold text-blue-600">
                         {formatPrice(service.price)}
                       </div>
-                      <Button asChild size="sm" className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700">
+                      <Button size="sm" className="bg-blue-600 hover:bg-blue-700">
                         <a href={`mailto:${CONTACT_INFO.email}?subject=Inquiry about ${service.title}`}>
                           Get Quote
                         </a>
@@ -286,110 +260,55 @@ export default function ComprehensiveServicesPage() {
         </div>
       </section>
 
-      {/* Pricing Tiers */}
+      {/* Contact Section */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Pricing Tiers</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Flexible pricing options to meet your business needs and budget
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">Ready to Get Started?</h2>
+            <p className="text-xl text-gray-600 mb-8">
+              Contact us today for a free consultation and discover how our services can transform your business
             </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {PRICING_TIERS.map((tier, index) => (
-              <Card key={tier.name} className={`text-center ${index === 1 ? 'ring-2 ring-blue-500 scale-105' : ''}`}>
-                <CardHeader>
-                  <CardTitle className="text-2xl">{tier.name}</CardTitle>
-                  <div className="text-4xl font-bold text-blue-600 mb-2">{tier.price}</div>
-                  <CardDescription className="text-gray-600">{tier.description}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-3 mb-6">
-                    {tier.features.map(feature => (
-                      <li key={feature} className="flex items-center gap-2">
-                        <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                        <span className="text-sm">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <Button asChild className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700">
-                    <a href={`mailto:${CONTACT_INFO.email}?subject=Pricing inquiry for ${tier.name} tier`}>
-                      Get Started
-                    </a>
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose Us */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Choose Zion Tech Group?</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We deliver exceptional value through expertise, innovation, and proven results
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Circle className="w-8 h-8 text-white" />
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+              <div className="text-center">
+                <Phone className="w-12 h-12 mx-auto mb-4 text-blue-600" />
+                <h3 className="text-xl font-semibold mb-2">Call Us</h3>
+                <p className="text-gray-600">{CONTACT_INFO.mobile}</p>
               </div>
-              <h3 className="text-xl font-semibold mb-2">Proven Expertise</h3>
-              <p className="text-gray-600">15+ years of experience in IT and AI solutions</p>
+              <div className="text-center">
+                <Mail className="w-12 h-12 mx-auto mb-4 text-blue-600" />
+                <h3 className="text-xl font-semibold mb-2">Email Us</h3>
+                <p className="text-gray-600">{CONTACT_INFO.email}</p>
+              </div>
+              <div className="text-center">
+                <MapPin className="w-12 h-12 mx-auto mb-4 text-blue-600" />
+                <h3 className="text-xl font-semibold mb-2">Visit Us</h3>
+                <p className="text-gray-600">{CONTACT_INFO.address}</p>
+              </div>
             </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Zap className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Fast Delivery</h3>
-              <p className="text-gray-600">Quick turnaround times without compromising quality</p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Shield className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Quality Guarantee</h3>
-              <p className="text-gray-600">100% satisfaction guarantee on all our services</p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Users className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">24/7 Support</h3>
-              <p className="text-gray-600">Round-the-clock support for enterprise clients</p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700">
+                <a href={`mailto:${CONTACT_INFO.email}?subject=Service Inquiry`}>
+                  Get Free Consultation
+                </a>
+              </Button>
+              <Button asChild variant="outline" size="lg">
+                <a href={`tel:${CONTACT_INFO.mobile}`}>
+                  Call Now
+                </a>
+              </Button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-900 via-purple-900 to-indigo-900 text-white">
+      {/* Footer Contact Info */}
+      <section className="py-8 bg-gray-900 text-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Ready to Transform Your Business?
-          </h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-            Let's discuss how our comprehensive IT and AI services can accelerate your growth and digital transformation
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="bg-white text-blue-900 hover:bg-gray-100">
-              <a href={`mailto:${CONTACT_INFO.email}?subject=Business Transformation Consultation`}>
-                Schedule Free Consultation
-              </a>
-            </Button>
-            <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-blue-900">
-              <a href={`tel:${CONTACT_INFO.mobile}`}>
-                Call {CONTACT_INFO.mobile}
-              </a>
-            </Button>
-          </div>
-          <div className="mt-8 text-blue-100">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-6 text-sm">
+            <p>📱 <a href={`tel:${CONTACT_INFO.mobile}`} className="hover:underline">{CONTACT_INFO.mobile}</a></p>
+            <p>✉️ <a href={`mailto:${CONTACT_INFO.email}`} className="hover:underline">{CONTACT_INFO.email}</a></p>
             <p>📍 {CONTACT_INFO.address}</p>
-            <p>🌐 <a href={CONTACT_INFO.website} className="hover:underline">{CONTACT_INFO.website}</a></p>
+            <p>🌐 <a href={CONTACT_INFO.domain} className="hover:underline">{CONTACT_INFO.domain}</a></p>
           </div>
         </div>
       </section>

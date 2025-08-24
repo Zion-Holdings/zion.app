@@ -1,6 +1,5 @@
 
 import { GradientHeading } from "./GradientHeading";
-import { FeatureCard } from "./FeatureCard";
 import { Bot, Clock, Globe, TrendingDown, Sparkles, Shield, Zap, Users } from "lucide-react";
 import { motion } from "framer-motion";
 
