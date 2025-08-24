@@ -5,7 +5,7 @@ const config = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://app.ziontechgroup.com',
+    url: 'https://ziontechgroup.com',
     siteName: 'Zion Tech Marketplace',
     images: [
       {

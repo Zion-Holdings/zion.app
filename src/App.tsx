@@ -24,6 +24,9 @@ import {
 } from './routes';
 
 const Home = React.lazy(() => import('./pages/Home'));
+const About = React.lazy(() => import('./pages/About'));
+const Services = React.lazy(() => import('./pages/Services'));
+const Marketplace = React.lazy(() => import('./pages/Marketplace'));
 const AIMatcherPage = React.lazy(() => import('./pages/AIMatcher'));
 const TalentDirectory = React.lazy(() => import('./pages/TalentDirectory'));
 const TalentsPage = React.lazy(() => import('./pages/TalentsPage'));
@@ -46,9 +49,17 @@ const RequestQuotePage = React.lazy(() => import('./pages/RequestQuote'));
 const ComprehensiveServices = React.lazy(() => import('./pages/ComprehensiveServices'));
 const AIServicesPage = React.lazy(() => import('./pages/AIServicesPage'));
 const EnterpriseSolutions = React.lazy(() => import('./pages/EnterpriseSolutionsPage'));
+const Careers = React.lazy(() => import('./pages/Careers'));
+const Privacy = React.lazy(() => import('./pages/Privacy'));
+const Terms = React.lazy(() => import('./pages/Terms'));
+const GreenIT = React.lazy(() => import('./pages/GreenIT'));
+const Sitemap = React.lazy(() => import('./pages/Sitemap'));
 
 const baseRoutes = [
   { path: '/', element: <Home /> },
+  { path: '/about', element: <About /> },
+  { path: '/services', element: <Services /> },
+  { path: '/marketplace', element: <Marketplace /> },
   { path: '/match', element: <AIMatcherPage /> },
   { path: '/login', element: <Login /> },
   { path: '/signup', element: <Signup /> },
@@ -73,6 +84,11 @@ const baseRoutes = [
   { path: '/request-quote', element: <RequestQuotePage /> },
   { path: '/blog', element: <Blog /> },
   { path: '/blog/:slug', element: <BlogPost /> },
+  { path: '/careers', element: <Careers /> },
+  { path: '/privacy', element: <Privacy /> },
+  { path: '/terms', element: <Terms /> },
+  { path: '/green-it', element: <GreenIT /> },
+  { path: '/sitemap', element: <Sitemap /> },
 ];
 
 function App() {
