@@ -8,8 +8,7 @@ const AppMetadataManager: React.FC = () => {
     <>
       <SEO
         title="App Metadata Manager"
-        description="Manage app store metadata for the Zion mobile application"
-        // noindex removed - not supported in new SEO component
+        description="Manage application metadata and configuration"
       />
       
       <div className="container py-8">

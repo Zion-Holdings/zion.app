@@ -1,249 +1,241 @@
 import React, { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Switch } from '@/components/ui/switch';
-import { Label } from '@/components/ui/label';
-import { Separator } from '@/components/ui/separator';
+import { Eye, EyeOff, Volume2, VolumeX, Sun, Moon, Monitor, Settings } from 'lucide-react';
 
-interface AccessibilitySettings {
-  highContrast: boolean;
-  largeText: boolean;
-  reducedMotion: boolean;
-  screenReader: boolean;
-  keyboardNavigation: boolean;
-  focusIndicator: boolean;
+interface AccessibilityEnhancerProps {
+  className?: string;
 }
 
-export function AccessibilityEnhancer() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [settings, setSettings] = useState<AccessibilitySettings>({
-    highContrast: false,
-    largeText: false,
-    reducedMotion: false,
-    screenReader: false,
-    keyboardNavigation: false,
-    focusIndicator: false,
-  });
+export function AccessibilityEnhancer({ className }: AccessibilityEnhancerProps) {
+  const [isVisible, setIsVisible] = useState(false);
+  const [highContrast, setHighContrast] = useState(false);
+  const [largeText, setLargeText] = useState(false);
+  const [reducedMotion, setReducedMotion] = useState(false);
+  const [focusIndicator, setFocusIndicator] = useState(true);
 
   useEffect(() => {
-    // Load saved settings
-    const savedSettings = localStorage.getItem('accessibility-settings');
-    if (savedSettings) {
-      try {
-        const parsed = JSON.parse(savedSettings);
-        setSettings(parsed);
-        applySettings(parsed);
-      } catch (error) {
-        console.error('Failed to parse accessibility settings:', error);
-      }
-    }
+    // Load saved preferences from localStorage
+    const savedHighContrast = localStorage.getItem('zion-high-contrast') === 'true';
+    const savedLargeText = localStorage.getItem('zion-large-text') === 'true';
+    const savedReducedMotion = localStorage.getItem('zion-reduced-motion') === 'true';
+    const savedFocusIndicator = localStorage.getItem('zion-focus-indicator') !== 'false';
+
+    setHighContrast(savedHighContrast);
+    setLargeText(savedLargeText);
+    setReducedMotion(savedReducedMotion);
+    setFocusIndicator(savedFocusIndicator);
+
+    // Apply saved preferences
+    applyAccessibilitySettings(savedHighContrast, savedLargeText, savedReducedMotion, savedFocusIndicator);
   }, []);
 
-  const applySettings = (newSettings: AccessibilitySettings) => {
+  const applyAccessibilitySettings = (
+    highContrast: boolean,
+    largeText: boolean,
+    reducedMotion: boolean,
+    focusIndicator: boolean
+  ) => {
     const root = document.documentElement;
     
-    if (newSettings.highContrast) {
+    // High contrast
+    if (highContrast) {
       root.classList.add('high-contrast');
     } else {
       root.classList.remove('high-contrast');
     }
-    
-    if (newSettings.largeText) {
+
+    // Large text
+    if (largeText) {
       root.classList.add('large-text');
     } else {
       root.classList.remove('large-text');
     }
-    
-    if (newSettings.reducedMotion) {
+
+    // Reduced motion
+    if (reducedMotion) {
       root.classList.add('reduced-motion');
     } else {
       root.classList.remove('reduced-motion');
     }
-    
-    if (newSettings.focusIndicator) {
+
+    // Focus indicator
+    if (focusIndicator) {
       root.classList.add('focus-visible');
     } else {
       root.classList.remove('focus-visible');
     }
   };
 
-  const handleSettingChange = (key: keyof AccessibilitySettings, value: boolean) => {
-    const newSettings = { ...settings, [key]: value };
-    setSettings(newSettings);
-    localStorage.setItem('accessibility-settings', JSON.stringify(newSettings));
-    applySettings(newSettings);
+  const toggleHighContrast = () => {
+    const newValue = !highContrast;
+    setHighContrast(newValue);
+    localStorage.setItem('zion-high-contrast', newValue.toString());
+    applyAccessibilitySettings(newValue, largeText, reducedMotion, focusIndicator);
   };
 
-  const resetSettings = () => {
-    const defaultSettings: AccessibilitySettings = {
-      highContrast: false,
-      largeText: false,
-      reducedMotion: false,
-      screenReader: false,
-      keyboardNavigation: false,
-      focusIndicator: false,
-    };
-    setSettings(defaultSettings);
-    localStorage.removeItem('accessibility-settings');
-    applySettings(defaultSettings);
+  const toggleLargeText = () => {
+    const newValue = !largeText;
+    setLargeText(newValue);
+    localStorage.setItem('zion-large-text', newValue.toString());
+    applyAccessibilitySettings(highContrast, newValue, reducedMotion, focusIndicator);
+  };
+
+  const toggleReducedMotion = () => {
+    const newValue = !reducedMotion;
+    setReducedMotion(newValue);
+    localStorage.setItem('zion-reduced-motion', newValue.toString());
+    applyAccessibilitySettings(highContrast, largeText, newValue, focusIndicator);
+  };
+
+  const toggleFocusIndicator = () => {
+    const newValue = !focusIndicator;
+    setFocusIndicator(newValue);
+    localStorage.setItem('zion-focus-indicator', newValue.toString());
+    applyAccessibilitySettings(highContrast, largeText, reducedMotion, newValue);
+  };
+
+  const resetToDefaults = () => {
+    setHighContrast(false);
+    setLargeText(false);
+    setReducedMotion(false);
+    setFocusIndicator(true);
+    
+    localStorage.removeItem('zion-high-contrast');
+    localStorage.removeItem('zion-large-text');
+    localStorage.removeItem('zion-reduced-motion');
+    localStorage.removeItem('zion-focus-indicator');
+    
+    applyAccessibilitySettings(false, false, false, true);
+  };
+
+  const speakText = (text: string) => {
+    if ('speechSynthesis' in window) {
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.rate = 0.9;
+      utterance.pitch = 1;
+      speechSynthesis.speak(utterance);
+    }
   };
 
   return (
     <>
-      {/* Skip Links */}
-      <div className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-50">
-        <a href="#main-content" className="bg-zion-cyan text-white px-4 py-2 rounded-md">
-          Skip to main content
-        </a>
-        <a href="#navigation" className="bg-zion-cyan text-white px-4 py-2 rounded-md ml-2">
-          Skip to navigation
-        </a>
-      </div>
-
-      {/* Accessibility Toggle Button */}
+      {/* Toggle Button */}
       <Button
-        onClick={() => setIsOpen(!isOpen)}
-        variant="outline"
-        size="icon"
-        className="fixed top-4 right-4 z-50 bg-background/95 backdrop-blur-sm border-zion-cyan/20 hover:bg-zion-cyan/10"
-        aria-label="Accessibility Settings"
+        onClick={() => setIsVisible(!isVisible)}
+        className={`fixed top-4 right-4 z-50 w-12 h-12 rounded-full bg-zion-purple hover:bg-zion-purple-dark text-white shadow-lg ${className || ''}`}
+        aria-label="Toggle accessibility options"
+        aria-expanded={isVisible}
       >
-        <span className="text-zion-cyan">A</span>
+        <Settings className="w-5 h-5" />
       </Button>
 
       {/* Accessibility Panel */}
-      {isOpen && (
-        <Card className="fixed top-16 right-4 w-80 z-50 bg-background/95 backdrop-blur-sm border-zion-cyan/20 shadow-2xl">
-          <CardHeader className="pb-3">
+      {isVisible && (
+        <div className="fixed top-20 right-4 z-50 w-80 bg-white dark:bg-zion-slate-dark rounded-lg shadow-2xl border border-zion-purple/20 p-6">
+          <div className="flex items-center justify-between mb-4">
+            <h3 className="text-lg font-semibold text-zion-slate-dark dark:text-white">
+              Accessibility Options
+            </h3>
+            <Button
+              onClick={() => setIsVisible(false)}
+              variant="ghost"
+              size="sm"
+              className="text-zion-slate-light hover:text-zion-slate-dark dark:hover:text-white"
+            >
+              ×
+            </Button>
+          </div>
+
+          <div className="space-y-4">
+            {/* High Contrast */}
             <div className="flex items-center justify-between">
-              <CardTitle className="text-lg flex items-center gap-2">
-                <span className="text-zion-cyan">A</span>
-                Accessibility Settings
-              </CardTitle>
+              <div className="flex items-center gap-2">
+                {highContrast ? <Eye className="w-4 h-4 text-zion-cyan" /> : <EyeOff className="w-4 h-4 text-zion-slate-light" />}
+                <span className="text-sm text-zion-slate-dark dark:text-white">High Contrast</span>
+              </div>
               <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => setIsOpen(false)}
-                aria-label="Close accessibility settings"
-              >
-                ×
-              </Button>
-            </div>
-            <CardDescription>
-              Customize your experience for better accessibility
-            </CardDescription>
-          </CardHeader>
-          
-          <CardContent className="space-y-4">
-            {/* Visual Enhancements */}
-            <div className="space-y-3">
-              <h4 className="text-sm font-semibold flex items-center gap-2">
-                <span>👁️</span>
-                Visual Enhancements
-              </h4>
-              
-              <div className="flex items-center justify-between">
-                <Label htmlFor="high-contrast" className="text-sm">
-                  High Contrast
-                </Label>
-                <Switch
-                  id="high-contrast"
-                  checked={settings.highContrast}
-                  onCheckedChange={(checked) => handleSettingChange('highContrast', checked)}
-                />
-              </div>
-              
-              <div className="flex items-center justify-between">
-                <Label htmlFor="large-text" className="text-sm">
-                  Large Text
-                </Label>
-                <Switch
-                  id="large-text"
-                  checked={settings.largeText}
-                  onCheckedChange={(checked) => handleSettingChange('largeText', checked)}
-                />
-              </div>
-              
-              <div className="flex items-center justify-between">
-                <Label htmlFor="focus-indicator" className="text-sm">
-                  Enhanced Focus
-                </Label>
-                <Switch
-                  id="focus-indicator"
-                  checked={settings.focusIndicator}
-                  onCheckedChange={(checked) => handleSettingChange('focusIndicator', checked)}
-                />
-              </div>
-            </div>
-            
-            <Separator />
-            
-            {/* Motion and Navigation */}
-            <div className="space-y-3">
-              <h4 className="text-sm font-semibold flex items-center gap-2">
-                <span>🖱️</span>
-                Navigation & Motion
-              </h4>
-              
-              <div className="flex items-center justify-between">
-                <Label htmlFor="reduced-motion" className="text-sm">
-                  Reduced Motion
-                </Label>
-                <Switch
-                  id="reduced-motion"
-                  checked={settings.reducedMotion}
-                  onCheckedChange={(checked) => handleSettingChange('reducedMotion', checked)}
-                />
-              </div>
-              
-              <div className="flex items-center justify-between">
-                <Label htmlFor="keyboard-nav" className="text-sm">
-                  Keyboard Navigation
-                </Label>
-                <Switch
-                  id="keyboard-nav"
-                  checked={settings.keyboardNavigation}
-                  onCheckedChange={(checked) => handleSettingChange('keyboardNavigation', checked)}
-                />
-              </div>
-            </div>
-            
-            <Separator />
-            
-            {/* Screen Reader */}
-            <div className="space-y-3">
-              <h4 className="text-sm font-semibold flex items-center gap-2">
-                <span>🔊</span>
-                Screen Reader
-              </h4>
-              
-              <div className="flex items-center justify-between">
-                <Label htmlFor="screen-reader" className="text-sm">
-                  Enhanced Support
-                </Label>
-                <Switch
-                  id="screen-reader"
-                  checked={settings.screenReader}
-                  onCheckedChange={(checked) => handleSettingChange('screenReader', checked)}
-                />
-              </div>
-            </div>
-            
-            {/* Quick Actions */}
-            <div className="pt-2">
-              <Button
-                onClick={resetSettings}
-                variant="outline"
+                onClick={toggleHighContrast}
+                variant={highContrast ? "default" : "outline"}
                 size="sm"
-                className="w-full"
+                className={highContrast ? "bg-zion-cyan" : ""}
               >
-                <span className="mr-2">⚙️</span>
-                Reset to Defaults
+                {highContrast ? "On" : "Off"}
               </Button>
             </div>
-          </CardContent>
-        </Card>
+
+            {/* Large Text */}
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <span className="text-sm text-zion-slate-dark dark:text-white">Large Text</span>
+              </div>
+              <Button
+                onClick={toggleLargeText}
+                variant={largeText ? "default" : "outline"}
+                size="sm"
+                className={largeText ? "bg-zion-cyan" : ""}
+              >
+                {largeText ? "On" : "Off"}
+              </Button>
+            </div>
+
+            {/* Reduced Motion */}
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <span className="text-sm text-zion-slate-dark dark:text-white">Reduced Motion</span>
+              </div>
+              <Button
+                onClick={toggleReducedMotion}
+                variant={reducedMotion ? "default" : "outline"}
+                size="sm"
+                className={reducedMotion ? "bg-zion-cyan" : ""}
+              >
+                {reducedMotion ? "On" : "Off"}
+              </Button>
+            </div>
+
+            {/* Focus Indicator */}
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <span className="text-sm text-zion-slate-dark dark:text-white">Focus Indicator</span>
+              </div>
+              <Button
+                onClick={toggleFocusIndicator}
+                variant={focusIndicator ? "default" : "outline"}
+                size="sm"
+                className={focusIndicator ? "bg-zion-cyan" : ""}
+              >
+                {focusIndicator ? "On" : "Off"}
+              </Button>
+            </div>
+
+            {/* Reset Button */}
+            <Button
+              onClick={resetToDefaults}
+              variant="outline"
+              className="w-full mt-4 border-zion-cyan text-zion-cyan hover:bg-zion-cyan hover:text-white"
+            >
+              Reset to Defaults
+            </Button>
+
+            {/* Help Text */}
+            <div className="text-xs text-zion-slate-light mt-4 p-3 bg-zion-slate-light/10 rounded">
+              <p className="mb-2">These settings help make Zion Tech Group more accessible for all users.</p>
+              <p>Changes are saved automatically and will persist across sessions.</p>
+            </div>
+          </div>
+        </div>
       )}
+
+      {/* Keyboard Navigation Instructions */}
+      <div className="sr-only">
+        <h2>Keyboard Navigation</h2>
+        <ul>
+          <li>Tab: Navigate between interactive elements</li>
+          <li>Enter/Space: Activate buttons and links</li>
+          <li>Escape: Close modals and panels</li>
+          <li>Arrow keys: Navigate within components</li>
+        </ul>
+      </div>
     </>
   );
 }
@@ -254,40 +246,36 @@ export const accessibilityStyles = `
   .high-contrast {
     --background: 0 0% 0%;
     --foreground: 0 0% 100%;
-    --primary: 0 0% 100%;
-    --secondary: 0 0% 20%;
-    --muted: 0 0% 20%;
-    --accent: 0 0% 100%;
+    --card: 0 0% 0%;
+    --card-foreground: 0 0% 100%;
     --border: 0 0% 100%;
     --input: 0 0% 100%;
     --ring: 0 0% 100%;
   }
-  
+
   /* Large Text Mode */
   .large-text {
     font-size: 1.2em;
-    line-height: 1.6;
   }
-  
+
   .large-text h1 { font-size: 2.5em; }
   .large-text h2 { font-size: 2em; }
   .large-text h3 { font-size: 1.75em; }
   .large-text p { font-size: 1.2em; }
-  
+
   /* Reduced Motion */
-  .reduced-motion *, .reduced-motion *::before, .reduced-motion *::after {
+  .reduced-motion * {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
   }
-  
-  /* Focus Indicator */
-  .focus-visible:focus {
-    outline: 3px solid hsl(var(--ring));
-    outline-offset: 2px;
+
+  /* Focus Indicators */
+  .focus-visible *:focus {
+    outline: 3px solid #22ddd2 !important;
+    outline-offset: 2px !important;
   }
-  
+
   /* Screen Reader Only */
   .sr-only {
     position: absolute;
@@ -299,11 +287,5 @@ export const accessibilityStyles = `
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
     border: 0;
-  }
-  
-  /* Focus visible utility */
-  .focus-visible:focus-visible {
-    outline: 2px solid hsl(var(--ring));
-    outline-offset: 2px;
   }
 `;
