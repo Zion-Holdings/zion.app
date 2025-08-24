@@ -1,38 +1,37 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Search, Users, FileText, Rocket, CheckCircle } from 'lucide-react';
+
+import { GradientHeading } from "./GradientHeading";
+import { Check, Handshake, Search, Send, ArrowRight, Sparkles, Zap, TrendingUp } from "lucide-react";
+import { motion } from "framer-motion";
 
 const steps = [
   {
-    icon: <Search className="w-8 h-8" />,
-    title: "Discover",
-    description: "Browse our comprehensive catalog of services, talent, and solutions",
-    color: "from-zion-cyan to-zion-cyan-dark"
+    title: "Create & Post",
+    description: "Publish your service, job, or equipment in minutes with our AI-powered smart forms that guide you through the process.",
+    icon: Send,
+    color: "from-zion-purple to-zion-purple-dark",
+    step: "01"
   },
   {
-    icon: <Users className="w-8 h-8" />,
-    title: "Connect",
-    description: "Get matched with the perfect team or service for your project",
-    color: "from-zion-purple to-zion-purple-dark"
+    title: "AI Matchmaking",
+    description: "Our advanced AI algorithms analyze requirements and automatically match you with the perfect providers, talent, or opportunities.",
+    icon: Search,
+    color: "from-zion-cyan to-zion-cyan-dark",
+    step: "02"
   },
   {
-    icon: <FileText className="w-8 h-8" />,
-    title: "Plan",
-    description: "Collaborate on project requirements, timeline, and deliverables",
-    color: "from-zion-blue to-zion-blue-dark"
+    title: "Connect & Collaborate",
+    description: "Connect directly with matched providers through our secure platform. Negotiate terms, share files, and collaborate seamlessly.",
+    icon: Handshake,
+    color: "from-zion-blue to-zion-blue-dark",
+    step: "03"
   },
   {
-    icon: <Rocket className="w-8 h-8" />,
-    title: "Execute",
-    description: "Watch your vision come to life with our expert execution",
-    color: "from-green-500 to-emerald-600"
+    title: "Deliver & Succeed",
+    description: "Complete your project with confidence. Our platform ensures quality delivery and provides ongoing support for success.",
+    icon: Check,
+    color: "from-zion-purple-light to-zion-cyan",
+    step: "04"
   },
-  {
-    icon: <CheckCircle className="w-8 h-8" />,
-    title: "Deliver",
-    description: "Receive your completed project with ongoing support and maintenance",
-    color: "from-orange-500 to-red-600"
-  }
 ];
 
 export function HowItWorksSection() {
@@ -48,10 +47,11 @@ export function HowItWorksSection() {
   };
 
   const itemVariants = {
-    hidden: { y: 30, opacity: 0 },
+    hidden: { opacity: 0, y: 30, scale: 0.9 },
     visible: {
-      y: 0,
       opacity: 1,
+      y: 0,
+      scale: 1,
       transition: {
         duration: 0.6,
         ease: "easeOut"
@@ -59,82 +59,130 @@ export function HowItWorksSection() {
     }
   };
 
+  const stepVariants = {
+    hidden: { scale: 0, rotate: -180 },
+    visible: {
+      scale: 1,
+      rotate: 0,
+      transition: {
+        duration: 0.5,
+        ease: "backOut"
+      }
+    }
+  };
+
   return (
-    <section className="py-20 bg-gradient-to-br from-zion-blue via-zion-slate-dark to-zion-blue-dark relative overflow-hidden">
+    <section className="py-20 bg-gradient-to-b from-zion-blue to-zion-blue-dark relative overflow-hidden">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 50% 50%, currentColor 1px, transparent 1px)`,
-          backgroundSize: '40px 40px'
+          backgroundImage: `radial-gradient(circle at 50% 50%, ${'#8c15e9'} 2px, transparent 2px)`,
+          backgroundSize: '80px 80px'
         }} />
       </div>
       
       <div className="container mx-auto px-4 relative z-10">
         <motion.div 
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 20 }}
+          className="text-center mb-20"
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            How It <span className="bg-gradient-to-r from-zion-cyan to-zion-purple bg-clip-text text-transparent">Works</span>
-          </h2>
-          <p className="text-zion-slate-light text-lg max-w-3xl mx-auto">
-            Our streamlined process ensures your project success from concept to completion
+          <GradientHeading className="text-4xl md:text-5xl mb-6">How Zion Works</GradientHeading>
+          <p className="text-zion-slate-light text-lg md:text-xl mt-4 max-w-3xl mx-auto leading-relaxed">
+            A streamlined four-step process that leverages AI to connect technology providers with clients seamlessly
           </p>
         </motion.div>
-        
+
         <motion.div 
-          className="relative"
+          className="relative max-w-6xl mx-auto"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
-          {/* Connection line */}
-          <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-zion-cyan via-zion-purple to-zion-blue transform -translate-y-1/2 hidden lg:block" />
+          {/* Enhanced timeline line */}
+          <div className="absolute left-1/2 top-0 h-full w-1 bg-gradient-to-b from-zion-purple via-zion-cyan via-zion-blue to-zion-purple-light transform -translate-x-1/2 hidden md:block" />
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+          <div className="space-y-16 md:space-y-0">
             {steps.map((step, index) => (
-              <motion.div key={index} variants={itemVariants} className="relative">
-                <div className="text-center">
-                  {/* Step number */}
-                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-zion-slate-dark border-2 border-zion-blue-light text-white font-bold text-lg mb-4 relative z-10">
-                    {index + 1}
+              <motion.div 
+                key={step.title}
+                className={`flex flex-col md:flex-row items-center ${
+                  index % 2 === 0 ? "md:flex-row-reverse" : ""
+                } relative`}
+                variants={itemVariants}
+              >
+                {/* Content */}
+                <div className="md:w-1/2 mb-8 md:mb-0 md:px-16 text-center md:text-right">
+                  {index % 2 === 0 ? (
+                    <motion.div 
+                      initial={{ opacity: 0, x: 50 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.6, delay: 0.2 }}
+                    >
+                      <div className="inline-flex items-center gap-2 px-3 py-1 bg-zion-purple/20 border border-zion-purple/30 rounded-full mb-4">
+                        <Sparkles className="w-4 h-4 text-zion-cyan" />
+                        <span className="text-zion-cyan text-sm font-medium">Step {step.step}</span>
+                      </div>
+                      <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">{step.title}</h3>
+                      <p className="text-zion-slate-light leading-relaxed text-lg">{step.description}</p>
+                    </motion.div>
+                  ) : null}
+                </div>
+                
+                {/* Step indicator */}
+                <div className="relative z-10 flex items-center justify-center w-20 h-20 rounded-full bg-zion-blue-dark border-4 border-zion-purple mx-4 md:mx-0 shadow-2xl">
+                  <motion.div 
+                    className={`absolute inset-0 rounded-full bg-gradient-to-br ${step.color} opacity-20`}
+                    variants={stepVariants}
+                  />
+                  <div className="relative z-10 flex items-center justify-center w-12 h-12 rounded-full bg-zion-blue-light border-2 border-zion-purple">
+                    <step.icon className="w-6 h-6 text-zion-cyan" />
                   </div>
-                  
-                  {/* Icon */}
-                  <div className={`inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br ${step.color} mb-6 shadow-lg`}>
-                    <div className="text-white">
-                      {step.icon}
-                    </div>
+                  <div className="absolute -top-2 -right-2 w-8 h-8 bg-zion-cyan rounded-full flex items-center justify-center text-zion-blue-dark text-sm font-bold">
+                    {step.step}
                   </div>
-                  
-                  <h3 className="text-xl font-semibold text-white mb-3">
-                    {step.title}
-                  </h3>
-                  <p className="text-zion-slate-light leading-relaxed text-sm">
-                    {step.description}
-                  </p>
+                </div>
+
+                {/* Content for odd steps */}
+                <div className="md:w-1/2 md:px-16 text-center md:text-left">
+                  {index % 2 !== 0 ? (
+                    <motion.div 
+                      initial={{ opacity: 0, x: -50 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.6, delay: 0.2 }}
+                    >
+                      <div className="inline-flex items-center gap-2 px-3 py-1 bg-zion-purple/20 border border-zion-purple/30 rounded-full mb-4">
+                        <Sparkles className="w-4 h-4 text-zion-cyan" />
+                        <span className="text-zion-cyan text-sm font-medium">Step {step.step}</span>
+                      </div>
+                      <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">{step.title}</h3>
+                      <p className="text-zion-slate-light leading-relaxed text-lg">{step.description}</p>
+                    </motion.div>
+                  ) : null}
                 </div>
               </motion.div>
             ))}
           </div>
-        </motion.div>
-        
-        {/* Bottom CTA */}
-        <motion.div 
-          className="text-center mt-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-        >
-          <button className="inline-flex items-center gap-3 bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-            Get Started Today
-            <Rocket className="w-5 h-5" />
-          </button>
+
+          {/* CTA section */}
+          <motion.div 
+            className="mt-20 text-center"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.8 }}
+          >
+                      <div className="inline-flex items-center gap-3 px-8 py-4 bg-zion-purple/20 backdrop-blur-sm border border-zion-purple/30 rounded-full">
+            <TrendingUp className="w-6 h-6 text-zion-cyan" />
+            <span className="text-zion-cyan font-semibold text-lg">Ready to get started?</span>
+            <ArrowRight className="w-5 h-5 text-zion-cyan" />
+          </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>
