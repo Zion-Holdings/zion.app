@@ -25,7 +25,11 @@ const AIMatcherPage = React.lazy(() => import('./pages/AIMatcher'));
 const TalentDirectory = React.lazy(() => import('./pages/TalentDirectory'));
 const TalentsPage = React.lazy(() => import('./pages/TalentsPage'));
 const ServicesPage = React.lazy(() => import('./pages/ServicesPage'));
-const MicroSaasServices = React.lazy(() => import('./pages/MicroSaasServices'));
+const AIServicesPage = React.lazy(() => import('./pages/AIServicesPage'));
+const ITServicesPage = React.lazy(() => import('./pages/ITServicesPage'));
+const DigitalMarketingServicesPage = React.lazy(() => import('./pages/DigitalMarketingServicesPage'));
+const BusinessSolutionsPage = React.lazy(() => import('./pages/BusinessSolutionsPage'));
+const ServicesOverviewPage = React.lazy(() => import('./pages/ServicesOverviewPage'));
 const EquipmentPage = React.lazy(() => import('./pages/EquipmentPage'));
 const EquipmentDetail = React.lazy(() => import('./pages/EquipmentDetail'));
 const Analytics = React.lazy(() => import('./pages/Analytics'));
@@ -50,8 +54,12 @@ const baseRoutes = [
   { path: '/signup', element: <Signup /> },
   { path: '/talent', element: <TalentDirectory /> },
   { path: '/talents', element: <TalentsPage /> },
-  { path: '/services', element: <ServicesPage /> },
-  { path: '/micro-saas-services', element: <MicroSaasServices /> },
+  { path: '/services', element: <ServicesOverviewPage /> },
+  { path: '/legacy-services', element: <ServicesPage /> },
+  { path: '/ai-services', element: <AIServicesPage /> },
+  { path: '/it-services', element: <ITServicesPage /> },
+  { path: '/digital-marketing', element: <DigitalMarketingServicesPage /> },
+  { path: '/business-solutions', element: <BusinessSolutionsPage /> },
   { path: '/it-onsite-services', element: <ITOnsiteServicesPage /> },
   { path: '/categories', element: <Categories /> },
   { path: '/equipment', element: <EquipmentPage /> },
