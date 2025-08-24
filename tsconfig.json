@@ -22,6 +22,7 @@
     /* Bundler mode */
     "moduleResolution": "bundler",
     "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
     "strict": false,
     "noUnusedLocals": false,
@@ -32,9 +33,13 @@
     "allowJs": true,
     "incremental": true,
     "jsx": "react-jsx",
+    "jsxImportSource": "react",
+    "outDir": "./dist-tsc",
+    "noEmit": true,
     "typeRoots": [
       "./node_modules/@types"
-    ]
+    ],
+    "types": ["react", "react-dom", "node"]
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
