@@ -53,7 +53,7 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
   
   return (
     <header 
-      className="sticky top-0 z-50 w-full border-b border-zion-purple/20 bg-zion-blue-dark/90 backdrop-blur-md"
+      className="sticky top-0 z-50 w-full border-b border-zion-purple/20 bg-zion-blue-dark/95 backdrop-blur-lg shadow-2xl shadow-zion-purple/10"
       style={headerStyle}
     >
       <div className="container flex h-16 items-center px-4 sm:px-6">
@@ -62,6 +62,7 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
         <div className="ml-6 flex-1">
           <MainNavigation />
         </div>
+        
         <form onSubmit={handleSubmit} className="hidden md:block w-64 mx-4">
           <EnhancedSearchInput
             value={query}
@@ -79,6 +80,9 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
           {!hideLogin && <UserMenu />}
         </div>
       </div>
+      
+      {/* Animated Header Border */}
+      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-zion-cyan to-transparent opacity-60"></div>
     </header>
   );
 }
