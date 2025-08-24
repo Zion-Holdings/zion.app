@@ -1,0 +1,34 @@
+import React from 'react';
+
+export function FeatureHighlights() {
+  return (
+    <section className="py-16 bg-white">
+      <div className="container mx-auto px-4">
+        <h2 className="text-3xl font-bold text-center mb-12">Feature Highlights</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="text-center p-6">
+            <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span className="text-2xl">🚀</span>
+            </div>
+            <h3 className="text-xl font-semibold mb-2">Fast & Reliable</h3>
+            <p className="text-gray-600">Lightning-fast performance and reliable service delivery</p>
+          </div>
+          <div className="text-center p-6">
+            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span className="text-2xl">🔒</span>
+            </div>
+            <h3 className="text-xl font-semibold mb-2">Secure</h3>
+            <p className="text-gray-600">Enterprise-grade security and data protection</p>
+          </div>
+          <div className="text-center p-6">
+            <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span className="text-2xl">💡</span>
+            </div>
+            <h3 className="text-xl font-semibold mb-2">Innovative</h3>
+            <p className="text-gray-600">Cutting-edge technology and innovative solutions</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
