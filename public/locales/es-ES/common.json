@@ -11,7 +11,9 @@
     "yes": "Sí",
     "no": "No",
     "success": "Éxito",
-    "error": "Error"
+    "error": "Error",
+    "open_main_menu": "Abrir menú principal",
+    "toggle_mobile_menu": "Alternar menú móvil"
   },
   "nav": {
     "home": "Inicio",
@@ -80,5 +82,9 @@
     "ar": "العربية",
     "language_changed": "Idioma cambiado a {{language}}",
     "switch_to_detected": "¿Cambiar a {{language}}?"
+  },
+  "error_boundary": {
+    "message": "Algo salió mal.",
+    "retry": "Reintentar"
   }
 }

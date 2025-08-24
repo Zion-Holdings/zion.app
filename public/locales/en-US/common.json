@@ -14,7 +14,9 @@
     "error": "Error",
     "explore": "Explore",
     "menu": "Menu",
-    "saving": "Saving..."
+    "saving": "Saving...",
+    "open_main_menu": "Open main menu",
+    "toggle_mobile_menu": "Toggle mobile menu"
   },
   "nav": {
     "home": "Home",
@@ -124,5 +126,9 @@
     "edit": "Edit",
     "saved": "Saved",
     "changes_saved": "Translation changes have been saved"
+  },
+  "error_boundary": {
+    "message": "Something went wrong.",
+    "retry": "Retry"
   }
 }

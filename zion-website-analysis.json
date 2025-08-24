@@ -1,0 +1,5218 @@
+{
+  "summary": {
+    "totalPagesCrawled": 79,
+    "totalLinksFound": 511,
+    "brokenLinksCount": 278,
+    "missingContentCount": 10,
+    "externalLinksCount": 165,
+    "internalLinksCount": 346,
+    "sitemapUrlsCount": 981,
+    "analysisDuration": "0.00s",
+    "timestamp": "2025-08-23T00:25:33.286Z"
+  },
+  "brokenLinks": [
+    {
+      "url": "tel:+1 302 464 0950",
+      "parentUrl": "https://ziontechgroup.com",
+      "status": 0,
+      "error": "Unsupported protocol tel:",
+      "issues": [
+        "Connection error: Unsupported protocol tel:"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908686035
+    },
+    {
+      "url": "mailto:kleber@ziontechgroup.com",
+      "parentUrl": "https://ziontechgroup.com",
+      "status": 0,
+      "error": "Unsupported protocol mailto:",
+      "issues": [
+        "Connection error: Unsupported protocol mailto:"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908686035
+    },
+    {
+      "url": "https://linkedin.com/company/ziontechgroup",
+      "parentUrl": "https://ziontechgroup.com",
+      "status": 404,
+      "contentType": "text/html",
+      "contentLength": "51660",
+      "issues": [
+        "HTTP 404 - Not Found",
+        "404 page content detected"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908698920
+    },
+    {
+      "url": "https://twitter.com/ziontechgroup",
+      "parentUrl": "https://ziontechgroup.com",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908699157
+    },
+    {
+      "url": "https://github.com/Zion-Holdings",
+      "parentUrl": "https://ziontechgroup.com",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908699443
+    },
+    {
+      "url": "https://youtube.com/@ziontechgroup",
+      "parentUrl": "https://ziontechgroup.com",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908699682
+    },
+    {
+      "url": "https://facebook.com/ziontechgroup",
+      "parentUrl": "https://ziontechgroup.com/ai-consciousness-evolution-2029/",
+      "status": 200,
+      "contentType": "text/html; charset=\"utf-8\"",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content",
+        "404 page content detected"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908557254
+    },
+    {
+      "url": "https://instagram.com/ziontechgroup",
+      "parentUrl": "https://ziontechgroup.com/ai-consciousness-evolution-2029/",
+      "status": 429,
+      "contentType": "text/html; charset=\"utf-8\"",
+      "contentLength": "0",
+      "issues": [
+        "HTTP 429 - Unknown",
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908558092
+    },
+    {
+      "url": "https://github.com/ziontechgroup",
+      "parentUrl": "https://ziontechgroup.com/ai-consciousness-evolution-2029/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908558418
+    },
+    {
+      "url": "https://discord.gg/ziontechgroup",
+      "parentUrl": "https://ziontechgroup.com/ai-consciousness-evolution-2029/",
+      "status": 200,
+      "contentType": "text/html",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908558637
+    },
+    {
+      "url": "https://twitch.tv/ziontechgroup",
+      "parentUrl": "https://ziontechgroup.com/ai-consciousness-evolution-2029/",
+      "status": 200,
+      "contentType": "text/html",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908558697
+    },
+    {
+      "url": "https://ziontechgroup.com/quantum-neural-network-platform/",
+      "parentUrl": "",
+      "status": 0,
+      "error": "Request failed with status code 404",
+      "issues": [
+        "Crawl error: Request failed with status code 404"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908558940
+    },
+    {
+      "url": "https://ziontechgroup.com/autonomous-business-operations-platform/",
+      "parentUrl": "",
+      "status": 0,
+      "error": "Request failed with status code 404",
+      "issues": [
+        "Crawl error: Request failed with status code 404"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908559177
+    },
+    {
+      "url": "tel:+13024640950",
+      "parentUrl": "https://ziontechgroup.com/privacy/",
+      "status": 0,
+      "error": "Unsupported protocol tel:",
+      "issues": [
+        "Connection error: Unsupported protocol tel:"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908680618
+    },
+    {
+      "url": "https://www.semanticscholar.org/",
+      "parentUrl": "https://ziontechgroup.com/ai-autonomous-research-assistant/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908567107
+    },
+    {
+      "url": "https://scholar.google.com/",
+      "parentUrl": "https://ziontechgroup.com/ai-autonomous-research-assistant/",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908567223
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-powered-it-asset-management/",
+      "parentUrl": "",
+      "status": 0,
+      "error": "Request failed with status code 404",
+      "issues": [
+        "Crawl error: Request failed with status code 404"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908584766
+    },
+    {
+      "url": "https://www.vanta.com/",
+      "parentUrl": "https://ziontechgroup.com/soc2-compliance-automation/",
+      "status": 200,
+      "contentType": "text/html",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908585215
+    },
+    {
+      "url": "https://drata.com/",
+      "parentUrl": "https://ziontechgroup.com/soc2-compliance-automation/",
+      "status": 403,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 403 - Forbidden",
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908585272
+    },
+    {
+      "url": "https://securityscorecard.com/",
+      "parentUrl": "https://ziontechgroup.com/soc2-compliance-automation/",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908585472
+    },
+    {
+      "url": "https://humanloop.com/",
+      "parentUrl": "https://ziontechgroup.com/rag-evaluation-lab/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908586518
+    },
+    {
+      "url": "https://arize.com/",
+      "parentUrl": "https://ziontechgroup.com/rag-evaluation-lab/",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908586904
+    },
+    {
+      "url": "https://promptfoo.dev/",
+      "parentUrl": "https://ziontechgroup.com/rag-evaluation-lab/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908587071
+    },
+    {
+      "url": "https://www.jasper.ai/pricing",
+      "parentUrl": "https://ziontechgroup.com/ai-content-generator/",
+      "status": 200,
+      "contentType": "text/html",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content",
+        "404 page content detected"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908588107
+    },
+    {
+      "url": "https://www.copy.ai/pricing",
+      "parentUrl": "https://ziontechgroup.com/ai-content-generator/",
+      "status": 200,
+      "contentType": "text/html",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908588297
+    },
+    {
+      "url": "https://writesonic.com/pricing",
+      "parentUrl": "https://ziontechgroup.com/ai-content-generator/",
+      "status": 200,
+      "contentType": "text/html",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content",
+        "404 page content detected"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908588643
+    },
+    {
+      "url": "https://www.sonarsource.com/plans-and-pricing/",
+      "parentUrl": "https://ziontechgroup.com/ai-code-review/",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908590016
+    },
+    {
+      "url": "https://www.codacy.com/pricing",
+      "parentUrl": "https://ziontechgroup.com/ai-code-review/",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908590111
+    },
+    {
+      "url": "https://aws.amazon.com/codeguru/pricing/",
+      "parentUrl": "https://ziontechgroup.com/ai-code-review/",
+      "status": 200,
+      "contentType": "text/html;charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908590171
+    },
+    {
+      "url": "https://www.venasolutions.com/pricing",
+      "parentUrl": "https://ziontechgroup.com/ai-financial-planning-platform/",
+      "status": 404,
+      "contentType": "text/html;charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 404 - Not Found",
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908592618
+    },
+    {
+      "url": "https://www.mosaic.tech/pricing",
+      "parentUrl": "https://ziontechgroup.com/ai-financial-planning-platform/",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 404 - Not Found",
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908592820
+    },
+    {
+      "url": "https://www.o9solutions.com/",
+      "parentUrl": "https://ziontechgroup.com/intelligent-supply-chain-optimization/",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908595453
+    },
+    {
+      "url": "https://www.kinaxis.com/en/products/rapidresponse",
+      "parentUrl": "https://ziontechgroup.com/intelligent-supply-chain-optimization/",
+      "status": 404,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": "72292",
+      "issues": [
+        "HTTP 404 - Not Found"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908596707
+    },
+    {
+      "url": "https://www.arkieva.com/",
+      "parentUrl": "https://ziontechgroup.com/intelligent-supply-chain-optimization/",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908597083
+    },
+    {
+      "url": "https://www.runzero.com/pricing/",
+      "parentUrl": "https://ziontechgroup.com/it-asset-discovery-agent/",
+      "status": 200,
+      "contentType": "text/html",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908601082
+    },
+    {
+      "url": "https://www.lansweeper.com/pricing/",
+      "parentUrl": "https://ziontechgroup.com/it-asset-discovery-agent/",
+      "status": 403,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 403 - Forbidden",
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908601215
+    },
+    {
+      "url": "https://nmap.org/",
+      "parentUrl": "https://ziontechgroup.com/it-asset-discovery-agent/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908601767
+    },
+    {
+      "url": "https://www.crunchydata.com/products/crunchy-bridge",
+      "parentUrl": "https://ziontechgroup.com/managed-postgres-ha/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908603207
+    },
+    {
+      "url": "https://aiven.io/postgresql",
+      "parentUrl": "https://ziontechgroup.com/managed-postgres-ha/",
+      "status": 200,
+      "contentType": "text/html",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content",
+        "404 page content detected"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908606360
+    },
+    {
+      "url": "https://cloud.google.com/sql/pricing",
+      "parentUrl": "https://ziontechgroup.com/managed-postgres-ha/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908607286
+    },
+    {
+      "url": "https://developer.hashicorp.com/vault",
+      "parentUrl": "https://ziontechgroup.com/secrets-rotation-automation/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908609682
+    },
+    {
+      "url": "https://cloud.google.com/kms",
+      "parentUrl": "https://ziontechgroup.com/secrets-rotation-automation/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908610275
+    },
+    {
+      "url": "https://grafana.com/docs/k6/",
+      "parentUrl": "https://ziontechgroup.com/api-performance-testing/",
+      "status": 200,
+      "contentType": "text/html",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908611553
+    },
+    {
+      "url": "https://gatling.io/open-source/",
+      "parentUrl": "https://ziontechgroup.com/api-performance-testing/",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908612657
+    },
+    {
+      "url": "tel:+",
+      "parentUrl": "https://ziontechgroup.com/tls-certificate-monitor/",
+      "status": 0,
+      "error": "Unsupported protocol tel:",
+      "issues": [
+        "Connection error: Unsupported protocol tel:"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908619068
+    },
+    {
+      "url": "https://maps.google.com/?q=364%20E%20Main%20St%20STE%201008%20Middletown%20DE%2019709",
+      "parentUrl": "https://ziontechgroup.com/tls-certificate-monitor/",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908619521
+    },
+    {
+      "url": "https://wandb.ai/site/pricing",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908624603
+    },
+    {
+      "url": "https://humanloop.com/pricing",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908624664
+    },
+    {
+      "url": "https://www.promptfoo.dev/pricing",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908625360
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/safety-best-practices",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 403,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 403 - Forbidden",
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908625415
+    },
+    {
+      "url": "https://www.anthropic.com/news",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908625675
+    },
+    {
+      "url": "https://github.com/guardrails-ai/guardrails",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908625959
+    },
+    {
+      "url": "https://platform.openai.com/pricing",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 403,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 403 - Forbidden",
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908626058
+    },
+    {
+      "url": "https://www.anthropic.com/pricing",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908626176
+    },
+    {
+      "url": "https://langfuse.com/pricing",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908626375
+    },
+    {
+      "url": "https://openrouter.ai/models",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908626561
+    },
+    {
+      "url": "https://vercel.com/pricing",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908626623
+    },
+    {
+      "url": "https://wow.groq.com/pricing",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908626842
+    },
+    {
+      "url": "https://www.wiz.io/pricing",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908626886
+    },
+    {
+      "url": "https://www.paloaltonetworks.com/prisma/cloud/pricing",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 404,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": "59226",
+      "issues": [
+        "HTTP 404 - Not Found"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908630439
+    },
+    {
+      "url": "https://www.hashicorp.com/products/vault/pricing",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908631208
+    },
+    {
+      "url": "https://www.cloudflare.com/plans/zero-trust/",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 404 - Not Found",
+        "Suspiciously small HTML content",
+        "404 page content detected"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908631345
+    },
+    {
+      "url": "https://www.snowflake.com/en/pricing/",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 404,
+      "contentType": "text/html;charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 404 - Not Found",
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908631672
+    },
+    {
+      "url": "https://cloud.google.com/bigquery/pricing",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908632240
+    },
+    {
+      "url": "https://www.databricks.com/product/pricing",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908632453
+    },
+    {
+      "url": "https://www.getdbt.com/pricing/",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908632567
+    },
+    {
+      "url": "https://clickhouse.com/pricing",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908634055
+    },
+    {
+      "url": "https://calculator.aws/",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908634094
+    },
+    {
+      "url": "https://azure.microsoft.com/pricing",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908634395
+    },
+    {
+      "url": "https://www.cloudflare.com/plans/",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908634516
+    },
+    {
+      "url": "https://www.docraptor.com/pricing",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 404,
+      "contentType": "text/html",
+      "contentLength": "1758",
+      "issues": [
+        "HTTP 404 - Not Found"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908634636
+    },
+    {
+      "url": "https://www.pdfmonkey.io/pricing",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908635101
+    },
+    {
+      "url": "https://elevenlabs.io/pricing",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908635907
+    },
+    {
+      "url": "https://www.cloudzero.com/pricing",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908637055
+    },
+    {
+      "url": "https://www.finout.io/pricing",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908637351
+    },
+    {
+      "url": "https://auth0.com/pricing",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908637514
+    },
+    {
+      "url": "https://www.okta.com/pricing/",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html;charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908638062
+    },
+    {
+      "url": "https://postmaster.google.com/",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908638802
+    },
+    {
+      "url": "https://www.mailgun.com/pricing/",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908638867
+    },
+    {
+      "url": "https://postmarkapp.com/pricing",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908639656
+    },
+    {
+      "url": "https://folderly.com/",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908639985
+    },
+    {
+      "url": "https://amplitude.com/pricing",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908640489
+    },
+    {
+      "url": "https://www.mutinyhq.com/product",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908640755
+    },
+    {
+      "url": "https://www.pinecone.io/pricing/",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908640904
+    },
+    {
+      "url": "https://salt.security/",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908641209
+    },
+    {
+      "url": "https://www.skyflow.com/pricing",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908641420
+    },
+    {
+      "url": "https://www.verygoodsecurity.com/pricing",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908641565
+    },
+    {
+      "url": "https://www.transcend.io/platform",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 404 - Not Found",
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908641687
+    },
+    {
+      "url": "https://workos.com/pricing",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908641818
+    },
+    {
+      "url": "https://console.weaviate.cloud/pricing",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908642859
+    },
+    {
+      "url": "https://qdrant.tech/pricing/",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908642942
+    },
+    {
+      "url": "https://github.com/pricing",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908643193
+    },
+    {
+      "url": "https://circleci.com/pricing/",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908643325
+    },
+    {
+      "url": "https://render.com/pricing",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908643714
+    },
+    {
+      "url": "https://www.datadoghq.com/pricing/",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908643763
+    },
+    {
+      "url": "https://grafana.com/pricing/",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908644017
+    },
+    {
+      "url": "https://calibreapp.com/pricing",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908644336
+    },
+    {
+      "url": "https://www.cloudflare.com/web-analytics/",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908644548
+    },
+    {
+      "url": "https://scale.com/",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content",
+        "404 page content detected"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908644599
+    },
+    {
+      "url": "https://hightouch.com/pricing",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908644913
+    },
+    {
+      "url": "https://www.getcensus.com/pricing",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908645074
+    },
+    {
+      "url": "https://drata.com/pricing",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 403,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 403 - Forbidden",
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908645843
+    },
+    {
+      "url": "https://www.vanta.com/pricing",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908651148
+    },
+    {
+      "url": "https://secureframe.com/pricing",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908651393
+    },
+    {
+      "url": "https://www.yotpo.com/pricing/",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908654420
+    },
+    {
+      "url": "https://loox.app/pricing",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908656377
+    },
+    {
+      "url": "https://calendly.com/pricing",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908656596
+    },
+    {
+      "url": "https://cal.com/pricing",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908656951
+    },
+    {
+      "url": "https://www.talentlms.com/pricing",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908657861
+    },
+    {
+      "url": "https://www.docebo.com/pricing/",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908659065
+    },
+    {
+      "url": "https://www.learnworlds.com/pricing/",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908659393
+    },
+    {
+      "url": "https://sentry.io/pricing/",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908659497
+    },
+    {
+      "url": "https://linear.app/pricing",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908659703
+    },
+    {
+      "url": "https://www.postman.com/pricing/",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908659813
+    },
+    {
+      "url": "https://www.refersion.com/pricing",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908659918
+    },
+    {
+      "url": "https://www.leaddyno.com/pricing",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908660019
+    },
+    {
+      "url": "https://partnerstack.com/pricing",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908660074
+    },
+    {
+      "url": "https://www.loopreturns.com/pricing",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908661026
+    },
+    {
+      "url": "https://returnly.com/",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908661440
+    },
+    {
+      "url": "https://www.aftership.com/returns-center/pricing",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908662484
+    },
+    {
+      "url": "https://freshdesk.com/pricing",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908662596
+    },
+    {
+      "url": "https://www.zendesk.com/pricing/",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908662674
+    },
+    {
+      "url": "https://www.atlassian.com/software/jira/service-management/pricing",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908664251
+    },
+    {
+      "url": "https://www.rudderstack.com/pricing/",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908664727
+    },
+    {
+      "url": "https://www.loopreturns.com/pricing/",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908665284
+    },
+    {
+      "url": "https://www.happyreturns.com/",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html;charset=utf-8",
+      "contentLength": "56587",
+      "issues": [
+        "404 page content detected"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908665425
+    },
+    {
+      "url": "https://launchdarkly.com/pricing/",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908665739
+    },
+    {
+      "url": "https://www.flagsmith.com/pricing",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908666655
+    },
+    {
+      "url": "https://www.split.io/pricing/",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908666928
+    },
+    {
+      "url": "https://pactflow.io/pricing/",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908667965
+    },
+    {
+      "url": "https://stoplight.io/pricing",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908668074
+    },
+    {
+      "url": "https://www.nobl9.com/pricing",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908668228
+    },
+    {
+      "url": "https://grafana.com/docs/grafana-cloud/monitor-infrastructure/slo/",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 404,
+      "contentType": "text/html",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 404 - Not Found",
+        "Suspiciously small HTML content",
+        "404 page content detected"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908668372
+    },
+    {
+      "url": "https://docs.datadoghq.com/service_management/service_level_objectives/",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": "111172",
+      "issues": [
+        "404 page content detected"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908668467
+    },
+    {
+      "url": "https://treblle.com/pricing",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908668533
+    },
+    {
+      "url": "https://www.datadoghq.com/product/apm/",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908668681
+    },
+    {
+      "url": "https://workers.cloudflare.com/",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908672014
+    },
+    {
+      "url": "https://www.onetrust.com/products/privacy-management/",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html;charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908672308
+    },
+    {
+      "url": "https://owasp.org/www-project-api-security/",
+      "parentUrl": "https://ziontechgroup.com/market-pricing/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908672504
+    },
+    {
+      "url": "mailto:careers@ziontechgroup.com",
+      "parentUrl": "https://ziontechgroup.com/careers/",
+      "status": 0,
+      "error": "Unsupported protocol mailto:",
+      "issues": [
+        "Connection error: Unsupported protocol mailto:"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908676986
+    },
+    {
+      "url": "https://ziontechgroup.com/accessibility/",
+      "parentUrl": "",
+      "status": 0,
+      "error": "Request failed with status code 404",
+      "issues": [
+        "Crawl error: Request failed with status code 404"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908683780
+    },
+    {
+      "url": "https://ziontechgroup.com/2026-services-showcase-enhanced/",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908702929
+    },
+    {
+      "url": "https://ziontechgroup.com/2026-services-showcase/",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908703313
+    },
+    {
+      "url": "https://ziontechgroup.com/2027-services-showcase/",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908703645
+    },
+    {
+      "url": "https://ziontechgroup.com/2028-services-showcase/",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908703973
+    },
+    {
+      "url": "https://ziontechgroup.com/2029-comprehensive-pricing/",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908726333
+    },
+    {
+      "url": "https://ziontechgroup.com/2029-innovative-services-showcase/",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908724616
+    },
+    {
+      "url": "https://ziontechgroup.com/2029-ultra-futuristic-innovations/",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908704971
+    },
+    {
+      "url": "https://ziontechgroup.com/2034-innovations/",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908705342
+    },
+    {
+      "url": "https://ziontechgroup.com/404/",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908705553
+    },
+    {
+      "url": "https://ziontechgroup.com/500/",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908705826
+    },
+    {
+      "url": "https://ziontechgroup.com/5g-enterprise-network/",
+      "parentUrl": "",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 404 - Not Found",
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908705963
+    },
+    {
+      "url": "https://ziontechgroup.com/5g-enterprise-solutions/",
+      "parentUrl": "",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 404 - Not Found",
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908706110
+    },
+    {
+      "url": "https://ziontechgroup.com/5g-network-optimization/",
+      "parentUrl": "",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 404 - Not Found",
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908706257
+    },
+    {
+      "url": "https://ziontechgroup.com/5g-private-network-solutions-2026/",
+      "parentUrl": "",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 404 - Not Found",
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908706394
+    },
+    {
+      "url": "https://ziontechgroup.com/5g-private-network-solutions/",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908706659
+    },
+    {
+      "url": "https://ziontechgroup.com/about/",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908706809
+    },
+    {
+      "url": "https://ziontechgroup.com/accessibility-auditor/",
+      "parentUrl": "",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 404 - Not Found",
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908706945
+    },
+    {
+      "url": "https://ziontechgroup.com/accessibility-scanner/",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908707205
+    },
+    {
+      "url": "https://ziontechgroup.com/advanced-ai-automation-services/",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908707552
+    },
+    {
+      "url": "https://ziontechgroup.com/advanced-cybersecurity-suite/",
+      "parentUrl": "",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 404 - Not Found",
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908707687
+    },
+    {
+      "url": "https://ziontechgroup.com/advanced-it-infrastructure-services/",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908707989
+    },
+    {
+      "url": "https://ziontechgroup.com/advanced-research-automation/",
+      "parentUrl": "",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 404 - Not Found",
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908708160
+    },
+    {
+      "url": "https://ziontechgroup.com/affiliate-attribution-hub/",
+      "parentUrl": "",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 404 - Not Found",
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908708343
+    },
+    {
+      "url": "https://ziontechgroup.com/agentic-rag-helpdesk/",
+      "parentUrl": "",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 404 - Not Found",
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908708478
+    },
+    {
+      "url": "https://ziontechgroup.com/agentic-rag/",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908708717
+    },
+    {
+      "url": "https://ziontechgroup.com/agentic-sales-outreach/",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908709075
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-ad-creative-generator/",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908709347
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-agent-orchestrator/",
+      "parentUrl": "",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 404 - Not Found",
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908709500
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-agents/",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908709747
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-analytics-copilot/",
+      "parentUrl": "",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 404 - Not Found",
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908709878
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-assistant/",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908710212
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-automation-services/",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908710566
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-autonomous-business-manager-2029/",
+      "parentUrl": "",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 404 - Not Found",
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908710723
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-autonomous-business-manager/",
+      "parentUrl": "",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 404 - Not Found",
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908710890
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-autonomous-business-operations/",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908711129
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-autonomous-business-platform-2026/",
+      "parentUrl": "",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 404 - Not Found",
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908711285
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-autonomous-business-platform/",
+      "parentUrl": "",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 404 - Not Found",
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908711434
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-autonomous-business-process-automation/",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908711678
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-autonomous-code-review/",
+      "parentUrl": "",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 404 - Not Found",
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908711838
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-autonomous-creative-director/",
+      "parentUrl": "",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 404 - Not Found",
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908711973
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-autonomous-data/",
+      "parentUrl": "",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 404 - Not Found",
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908712133
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-autonomous-decision-engine/",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908712355
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-autonomous-decision-platform/",
+      "parentUrl": "",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 404 - Not Found",
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908712524
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-autonomous-devops/",
+      "parentUrl": "",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 404 - Not Found",
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908712684
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-autonomous-ecosystem-manager/",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908712825
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-autonomous-ecosystem/",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908713084
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-autonomous-education-professor/",
+      "parentUrl": "",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 404 - Not Found",
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908713227
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-autonomous-healthcare-physician/",
+      "parentUrl": "",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 404 - Not Found",
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908713388
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-autonomous-learning-system/",
+      "parentUrl": "",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 404 - Not Found",
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908713523
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-autonomous-legal-counsel/",
+      "parentUrl": "",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 404 - Not Found",
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908713677
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-autonomous-logistics/",
+      "parentUrl": "",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 404 - Not Found",
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908713810
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-autonomous-manufacturing/",
+      "parentUrl": "",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 404 - Not Found",
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908713967
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-autonomous-research-assistant/",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908714103
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-autonomous-research/",
+      "parentUrl": "",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 404 - Not Found",
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908714239
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-autonomous-robotics/",
+      "parentUrl": "",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 404 - Not Found",
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908714387
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-autonomous-scientific-researcher/",
+      "parentUrl": "",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 404 - Not Found",
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908714527
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-autonomous-security/",
+      "parentUrl": "",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 404 - Not Found",
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908714680
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-autonomous-systems-platform/",
+      "parentUrl": "",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 404 - Not Found",
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908714816
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-autonomous-testing/",
+      "parentUrl": "",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 404 - Not Found",
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908714965
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-autonomous-vehicle-platform/",
+      "parentUrl": "",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 404 - Not Found",
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908715102
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-autonomous-vehicle/",
+      "parentUrl": "",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 404 - Not Found",
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908715242
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-autonomous-vehicles-platform/",
+      "parentUrl": "",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 404 - Not Found",
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908715371
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-autonomous-vehicles/",
+      "parentUrl": "",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 404 - Not Found",
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908715522
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-autonomous-venture-capitalist/",
+      "parentUrl": "",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 404 - Not Found",
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908715657
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-biomedical-research/",
+      "parentUrl": "",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 404 - Not Found",
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908715794
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-biotech-drug-discovery/",
+      "parentUrl": "",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 404 - Not Found",
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908715938
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-blockchain-analytics/",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908716161
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-blockchain-governance/",
+      "parentUrl": "",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 404 - Not Found",
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908716313
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-brain-computer-interface/",
+      "parentUrl": "",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 404 - Not Found",
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908716449
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-brain-interface/",
+      "parentUrl": "",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 404 - Not Found",
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908716604
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-brand-personality-generator/",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908716904
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-business-intelligence-elite-2026/",
+      "parentUrl": "",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 404 - Not Found",
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908717046
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-business-intelligence-pro/",
+      "parentUrl": "",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 404 - Not Found",
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908717203
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-business-intelligence-suite-2029/",
+      "parentUrl": "",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 404 - Not Found",
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908717402
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-business-intelligence-suite/",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908717735
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-business-intelligence/",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908718100
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-climate-prediction-engine/",
+      "parentUrl": "",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 404 - Not Found",
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908718250
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-climate-prediction-platform/",
+      "parentUrl": "",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 404 - Not Found",
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908718407
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-climate-prediction/",
+      "parentUrl": "",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 404 - Not Found",
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908718545
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-code-generation-enterprise/",
+      "parentUrl": "",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 404 - Not Found",
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908718681
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-code-review-copilot/",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908718939
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-code-review/",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908719083
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-compliance-automation/",
+      "parentUrl": "",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 404 - Not Found",
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908719219
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-computer-vision-platform/",
+      "parentUrl": "",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 404 - Not Found",
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908719371
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-consciousness-evolution-2025/",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908719647
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-consciousness-evolution-2029/",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908719782
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-consciousness-evolution-platform/",
+      "parentUrl": "",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 404 - Not Found",
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908719939
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-consciousness-evolution/",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908720190
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-consciousness-simulation-platform/",
+      "parentUrl": "",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 404 - Not Found",
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908720331
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-consciousness-simulation/",
+      "parentUrl": "",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 404 - Not Found",
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908720463
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-consciousness-simulator/",
+      "parentUrl": "",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 404 - Not Found",
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908720600
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-content-creation-revolution/",
+      "parentUrl": "",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 404 - Not Found",
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908720733
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-content-creation/",
+      "parentUrl": "",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 404 - Not Found",
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908720863
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-content-factory/",
+      "parentUrl": "",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 404 - Not Found",
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908721013
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-content-generation-automation-2033/",
+      "parentUrl": "",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 404 - Not Found",
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908721168
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-content-generation-pro-2029/",
+      "parentUrl": "",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 0,
+      "issues": [
+        "HTTP 404 - Not Found",
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908721321
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-content-generator/",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908721469
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-content-marketing-automation/",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908721701
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-content-personalization-engine/",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908721858
+    },
+    {
+      "url": "https://ziontechgroup.com/contact#main",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908722077
+    },
+    {
+      "url": "https://ziontechgroup.com/support#main",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908722484
+    },
+    {
+      "url": "https://ziontechgroup.com/resources",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908722946
+    },
+    {
+      "url": "https://ziontechgroup.com/support#faq",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908723133
+    },
+    {
+      "url": "https://ziontechgroup.com/support#community",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908723333
+    },
+    {
+      "url": "https://ziontechgroup.com/contact/#main",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908723842
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-consciousness-evolution-2029/#main",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908724108
+    },
+    {
+      "url": "https://ziontechgroup.com/services/",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908724436
+    },
+    {
+      "url": "https://ziontechgroup.com/quantum-services/",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908724914
+    },
+    {
+      "url": "https://ziontechgroup.com/enterprise-it/",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908725252
+    },
+    {
+      "url": "https://ziontechgroup.com/space-tech/",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908725559
+    },
+    {
+      "url": "https://ziontechgroup.com/micro-saas/",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908725942
+    },
+    {
+      "url": "https://ziontechgroup.com/research-development/",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908726185
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-creativity-studio/",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908726574
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-market-research/",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908726795
+    },
+    {
+      "url": "https://ziontechgroup.com/quantum-financial-trading/",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908727063
+    },
+    {
+      "url": "https://ziontechgroup.com/services/quantum-learning-accelerator-2029/",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908727464
+    },
+    {
+      "url": "https://ziontechgroup.com/metaverse-digital-reality-platform/",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908727705
+    },
+    {
+      "url": "https://ziontechgroup.com/services/ai-predictive-health-analytics-2029/",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908727988
+    },
+    {
+      "url": "https://ziontechgroup.com/services/ai-autonomous-business-manager-2029/",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908728276
+    },
+    {
+      "url": "https://ziontechgroup.com/autonomous-devops-platform/",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908728520
+    },
+    {
+      "url": "https://ziontechgroup.com/quantum-cloud-infrastructure/",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908728765
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-powered-enterprise-security/",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908729018
+    },
+    {
+      "url": "https://ziontechgroup.com/docs/",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908729257
+    },
+    {
+      "url": "https://ziontechgroup.com/api/",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908729485
+    },
+    {
+      "url": "https://ziontechgroup.com/case-studies/",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908729865
+    },
+    {
+      "url": "https://ziontechgroup.com/white-papers/",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908730148
+    },
+    {
+      "url": "https://ziontechgroup.com/news/",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908730526
+    },
+    {
+      "url": "https://ziontechgroup.com/events/",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908730794
+    },
+    {
+      "url": "https://ziontechgroup.com/webinars/",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908731084
+    },
+    {
+      "url": "https://ziontechgroup.com/cookies/",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908731413
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-emotional-intelligence-training",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908731600
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-autonomous-business-operations",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908731785
+    },
+    {
+      "url": "https://ziontechgroup.com/space-resource-mining-platform/#main",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908732152
+    },
+    {
+      "url": "https://ziontechgroup.com/brain-computer-interface-platform/#main",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908732389
+    },
+    {
+      "url": "https://ziontechgroup.com/quantum-financial-trading-platform/#main",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908732638
+    },
+    {
+      "url": "https://ziontechgroup.com/services",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908732826
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-emotional-intelligence-training/#main",
+      "parentUrl": "",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 0,
+      "issues": [
+        "Suspiciously small HTML content"
+      ],
+      "isBroken": true,
+      "responseTime": 1755908733181
+    }
+  ],
+  "missingContent": [
+    {
+      "url": "https://ziontechgroup.com/_next/static/chunks/polyfills-42372ed130431b0a.js",
+      "title": "",
+      "textLength": 75520,
+      "headings": 0,
+      "images": 0,
+      "links": 2,
+      "metaDescription": "",
+      "metaKeywords": "",
+      "issues": [
+        "Short or missing title",
+        "No headings found",
+        "Missing meta description",
+        "Meta description too short"
+      ],
+      "hasContentIssues": true
+    },
+    {
+      "url": "https://ziontechgroup.com/_next/static/chunks/webpack-e219339f62a4a96e.js",
+      "title": "",
+      "textLength": 960,
+      "headings": 0,
+      "images": 0,
+      "links": 0,
+      "metaDescription": "",
+      "metaKeywords": "",
+      "issues": [
+        "Short or missing title",
+        "No headings found",
+        "Missing meta description",
+        "Meta description too short"
+      ],
+      "hasContentIssues": true
+    },
+    {
+      "url": "https://ziontechgroup.com/_next/static/chunks/framework-1548034a53843b9f.js",
+      "title": "",
+      "textLength": 63388,
+      "headings": 0,
+      "images": 0,
+      "links": 0,
+      "metaDescription": "",
+      "metaKeywords": "",
+      "issues": [
+        "Short or missing title",
+        "No headings found",
+        "Missing meta description",
+        "Meta description too short"
+      ],
+      "hasContentIssues": true
+    },
+    {
+      "url": "https://ziontechgroup.com/_next/static/chunks/main-9ff70c445fcad225.js",
+      "title": "",
+      "textLength": 118293,
+      "headings": 0,
+      "images": 0,
+      "links": 0,
+      "metaDescription": "",
+      "metaKeywords": "",
+      "issues": [
+        "Short or missing title",
+        "No headings found",
+        "Missing meta description",
+        "Meta description too short"
+      ],
+      "hasContentIssues": true
+    },
+    {
+      "url": "https://ziontechgroup.com/_next/static/chunks/pages/_app-fdcfa4ae11cb1205.js",
+      "title": "",
+      "textLength": 185665,
+      "headings": 0,
+      "images": 0,
+      "links": 0,
+      "metaDescription": "",
+      "metaKeywords": "",
+      "issues": [
+        "Short or missing title",
+        "No headings found",
+        "Missing meta description",
+        "Meta description too short"
+      ],
+      "hasContentIssues": true
+    },
+    {
+      "url": "https://ziontechgroup.com/_next/static/chunks/4808-64817caa03158d5e.js",
+      "title": "",
+      "textLength": 176010,
+      "headings": 0,
+      "images": 0,
+      "links": 0,
+      "metaDescription": "",
+      "metaKeywords": "",
+      "issues": [
+        "Short or missing title",
+        "No headings found",
+        "Missing meta description",
+        "Meta description too short"
+      ],
+      "hasContentIssues": true
+    },
+    {
+      "url": "https://ziontechgroup.com/_next/static/chunks/pages/index-ab3b71c171eeaec2.js",
+      "title": "",
+      "textLength": 39617,
+      "headings": 0,
+      "images": 0,
+      "links": 0,
+      "metaDescription": "",
+      "metaKeywords": "",
+      "issues": [
+        "Short or missing title",
+        "No headings found",
+        "Missing meta description",
+        "Meta description too short"
+      ],
+      "hasContentIssues": true
+    },
+    {
+      "url": "https://ziontechgroup.com/_next/static/VoueYmaOg_Q3KSe7Vpw0C/_buildManifest.js",
+      "title": "",
+      "textLength": 36975,
+      "headings": 0,
+      "images": 0,
+      "links": 0,
+      "metaDescription": "",
+      "metaKeywords": "",
+      "issues": [
+        "Short or missing title",
+        "No headings found",
+        "Missing meta description",
+        "Meta description too short"
+      ],
+      "hasContentIssues": true
+    },
+    {
+      "url": "https://ziontechgroup.com/_next/static/VoueYmaOg_Q3KSe7Vpw0C/_ssgManifest.js",
+      "title": "",
+      "textLength": 123,
+      "headings": 0,
+      "images": 0,
+      "links": 0,
+      "metaDescription": "",
+      "metaKeywords": "",
+      "issues": [
+        "Short or missing title",
+        "No headings found",
+        "No images and minimal text",
+        "Missing meta description",
+        "Meta description too short"
+      ],
+      "hasContentIssues": true
+    },
+    {
+      "url": "https://ziontechgroup.com/_next/static/css/9281571ab1c679b1.css",
+      "title": "",
+      "textLength": 36193,
+      "headings": 0,
+      "images": 0,
+      "links": 0,
+      "metaDescription": "",
+      "metaKeywords": "",
+      "issues": [
+        "Short or missing title",
+        "No headings found",
+        "Missing meta description",
+        "Meta description too short"
+      ],
+      "hasContentIssues": true
+    }
+  ],
+  "externalLinks": [
+    "tel:+1 302 464 0950",
+    "mailto:kleber@ziontechgroup.com",
+    "https://linkedin.com/company/ziontechgroup",
+    "https://twitter.com/ziontechgroup",
+    "https://github.com/Zion-Holdings",
+    "https://youtube.com/@ziontechgroup",
+    "https://facebook.com/ziontechgroup",
+    "https://instagram.com/ziontechgroup",
+    "https://github.com/ziontechgroup",
+    "https://discord.gg/ziontechgroup",
+    "https://twitch.tv/ziontechgroup",
+    "tel:+13024640950",
+    "https://arxiv.org/",
+    "https://www.semanticscholar.org/",
+    "https://scholar.google.com/",
+    "https://www.vanta.com/",
+    "https://drata.com/",
+    "https://securityscorecard.com/",
+    "https://humanloop.com/",
+    "https://arize.com/",
+    "https://promptfoo.dev/",
+    "https://www.jasper.ai/pricing",
+    "https://www.copy.ai/pricing",
+    "https://writesonic.com/pricing",
+    "https://www.sonarsource.com/plans-and-pricing/",
+    "https://www.codacy.com/pricing",
+    "https://aws.amazon.com/codeguru/pricing/",
+    "https://www.anaplan.com/",
+    "https://www.venasolutions.com/pricing",
+    "https://www.mosaic.tech/pricing",
+    "https://www.o9solutions.com/",
+    "https://www.kinaxis.com/en/products/rapidresponse",
+    "https://www.arkieva.com/",
+    "https://www.runzero.com/pricing/",
+    "https://www.lansweeper.com/pricing/",
+    "https://nmap.org/",
+    "https://www.crunchydata.com/products/crunchy-bridge",
+    "https://aiven.io/postgresql",
+    "https://cloud.google.com/sql/pricing",
+    "https://playwright.dev/",
+    "https://pptr.dev/",
+    "https://developer.hashicorp.com/vault",
+    "https://cloud.google.com/kms",
+    "https://grafana.com/docs/k6/",
+    "https://gatling.io/open-source/",
+    "tel:+",
+    "https://maps.google.com/?q=364%20E%20Main%20St%20STE%201008%20Middletown%20DE%2019709",
+    "https://wandb.ai/site/pricing",
+    "https://humanloop.com/pricing",
+    "https://www.promptfoo.dev/pricing",
+    "https://platform.openai.com/docs/guides/safety-best-practices",
+    "https://www.anthropic.com/news",
+    "https://github.com/guardrails-ai/guardrails",
+    "https://platform.openai.com/pricing",
+    "https://www.anthropic.com/pricing",
+    "https://langfuse.com/pricing",
+    "https://openrouter.ai/models",
+    "https://vercel.com/pricing",
+    "https://wow.groq.com/pricing",
+    "https://www.wiz.io/pricing",
+    "https://www.paloaltonetworks.com/prisma/cloud/pricing",
+    "https://www.hashicorp.com/products/vault/pricing",
+    "https://www.cloudflare.com/plans/zero-trust/",
+    "https://www.snowflake.com/en/pricing/",
+    "https://cloud.google.com/bigquery/pricing",
+    "https://www.databricks.com/product/pricing",
+    "https://www.getdbt.com/pricing/",
+    "https://clickhouse.com/pricing",
+    "https://calculator.aws/",
+    "https://azure.microsoft.com/pricing",
+    "https://www.cloudflare.com/plans/",
+    "https://www.netlify.com/pricing/",
+    "https://www.docraptor.com/pricing",
+    "https://www.pdfmonkey.io/pricing",
+    "https://cloudconvert.com/pricing",
+    "https://gotenberg.dev/",
+    "https://www.twilio.com/pricing",
+    "https://deepgram.com/pricing",
+    "https://elevenlabs.io/pricing",
+    "https://www.kubecost.com/pricing",
+    "https://www.cloudzero.com/pricing",
+    "https://www.finout.io/pricing",
+    "https://auth0.com/pricing",
+    "https://www.okta.com/pricing/",
+    "https://azure.microsoft.com/pricing/details/active-directory/",
+    "https://postmaster.google.com/",
+    "https://www.mailgun.com/pricing/",
+    "https://sendgrid.com/pricing/",
+    "https://postmarkapp.com/pricing",
+    "https://folderly.com/",
+    "https://amplitude.com/pricing",
+    "https://mixpanel.com/pricing/",
+    "https://www.mutinyhq.com/product",
+    "https://www.pinecone.io/pricing/",
+    "https://weaviate.io/pricing",
+    "https://www.elastic.co/pricing",
+    "https://www.fastly.com/pricing",
+    "https://salt.security/",
+    "https://www.skyflow.com/pricing",
+    "https://www.verygoodsecurity.com/pricing",
+    "https://www.transcend.io/platform",
+    "https://workos.com/pricing",
+    "https://console.weaviate.cloud/pricing",
+    "https://qdrant.tech/pricing/",
+    "https://github.com/pricing",
+    "https://circleci.com/pricing/",
+    "https://render.com/pricing",
+    "https://www.datadoghq.com/pricing/",
+    "https://newrelic.com/pricing",
+    "https://grafana.com/pricing/",
+    "https://www.speedcurve.com/pricing/",
+    "https://calibreapp.com/pricing",
+    "https://www.cloudflare.com/web-analytics/",
+    "https://scale.com/",
+    "https://labelbox.com/pricing",
+    "https://hightouch.com/pricing",
+    "https://www.getcensus.com/pricing",
+    "https://segment.com/pricing",
+    "https://drata.com/pricing",
+    "https://www.vanta.com/pricing",
+    "https://secureframe.com/pricing",
+    "https://www.yotpo.com/pricing/",
+    "https://judge.me/pricing",
+    "https://loox.app/pricing",
+    "https://calendly.com/pricing",
+    "https://cal.com/pricing",
+    "https://acuityscheduling.com/signup",
+    "https://www.talentlms.com/pricing",
+    "https://www.docebo.com/pricing/",
+    "https://www.learnworlds.com/pricing/",
+    "https://sentry.io/pricing/",
+    "https://linear.app/pricing",
+    "https://www.postman.com/pricing/",
+    "https://www.refersion.com/pricing",
+    "https://www.leaddyno.com/pricing",
+    "https://partnerstack.com/pricing",
+    "https://www.loopreturns.com/pricing",
+    "https://returnly.com/",
+    "https://www.aftership.com/returns-center/pricing",
+    "https://freshdesk.com/pricing",
+    "https://www.zendesk.com/pricing/",
+    "https://www.atlassian.com/software/jira/service-management/pricing",
+    "https://segment.com/pricing/",
+    "https://www.rudderstack.com/pricing/",
+    "https://www.loopreturns.com/pricing/",
+    "https://www.happyreturns.com/",
+    "https://goshippo.com/pricing/",
+    "https://launchdarkly.com/pricing/",
+    "https://www.flagsmith.com/pricing",
+    "https://www.split.io/pricing/",
+    "https://pactflow.io/pricing/",
+    "https://stoplight.io/pricing",
+    "https://www.nobl9.com/pricing",
+    "https://grafana.com/docs/grafana-cloud/monitor-infrastructure/slo/",
+    "https://docs.datadoghq.com/service_management/service_level_objectives/",
+    "https://treblle.com/pricing",
+    "https://opentelemetry.io/docs/",
+    "https://www.datadoghq.com/product/apm/",
+    "https://www.montecarlodata.com/",
+    "https://www.ibm.com/products/databand",
+    "https://docs.getdbt.com/docs/build/tests",
+    "https://workers.cloudflare.com/",
+    "https://www.onetrust.com/products/privacy-management/",
+    "https://owasp.org/www-project-api-security/",
+    "mailto:careers@ziontechgroup.com"
+  ],
+  "internalLinks": [
+    "https://ziontechgroup.com/#main",
+    "https://ziontechgroup.com/",
+    "https://ziontechgroup.com/contact",
+    "https://ziontechgroup.com/support",
+    "https://ziontechgroup.com/contact/",
+    "https://ziontechgroup.com/ai-consciousness-evolution-2029/",
+    "https://ziontechgroup.com/quantum-neural-network-platform/",
+    "https://ziontechgroup.com/autonomous-business-operations-platform/",
+    "https://ziontechgroup.com/space-resource-mining-platform/",
+    "https://ziontechgroup.com/brain-computer-interface-platform/",
+    "https://ziontechgroup.com/quantum-financial-trading-platform/",
+    "https://ziontechgroup.com/ai-emotional-intelligence-training/",
+    "https://ziontechgroup.com/quantum-materials-discovery-platform/",
+    "https://ziontechgroup.com/autonomous-vehicle-ai-platform/",
+    "https://ziontechgroup.com/quantum-bio-computing-platform/",
+    "https://ziontechgroup.com/ai-autonomous-research-assistant/",
+    "https://ziontechgroup.com/ai-predictive-maintenance-platform/",
+    "https://ziontechgroup.com/ai-content-personalization-engine/",
+    "https://ziontechgroup.com/ai-autonomous-ecosystem-manager/",
+    "https://ziontechgroup.com/ai-ethics-governance-framework/",
+    "https://ziontechgroup.com/ai-customer-success-platform/",
+    "https://ziontechgroup.com/ai-sales-intelligence-platform/",
+    "https://ziontechgroup.com/quantum-internet-security-platform/",
+    "https://ziontechgroup.com/quantum-cloud-infrastructure-platform/",
+    "https://ziontechgroup.com/ai-powered-space-technology/",
+    "https://ziontechgroup.com/quantum-secure-cloud-infrastructure/",
+    "https://ziontechgroup.com/autonomous-it-operations-center/",
+    "https://ziontechgroup.com/edge-computing-orchestration-platform/",
+    "https://ziontechgroup.com/blockchain-infrastructure-platform/",
+    "https://ziontechgroup.com/ai-powered-devops-platform/",
+    "https://ziontechgroup.com/zero-trust-security-platform/",
+    "https://ziontechgroup.com/ai-powered-cybersecurity/",
+    "https://ziontechgroup.com/ai-powered-it-asset-management/",
+    "https://ziontechgroup.com/soc2-compliance-automation/",
+    "https://ziontechgroup.com/rag-evaluation-lab/",
+    "https://ziontechgroup.com/ai-content-generator/",
+    "https://ziontechgroup.com/ai-code-review/",
+    "https://ziontechgroup.com/intelligent-hr-analytics-platform/",
+    "https://ziontechgroup.com/ai-financial-planning-platform/",
+    "https://ziontechgroup.com/intelligent-supply-chain-optimization/",
+    "https://ziontechgroup.com/intelligent-content-automation-platform/",
+    "https://ziontechgroup.com/smart-crm-intelligence-suite/",
+    "https://ziontechgroup.com/seo-automation-suite/",
+    "https://ziontechgroup.com/it-asset-discovery-agent/",
+    "https://ziontechgroup.com/managed-postgres-ha/",
+    "https://ziontechgroup.com/browser-automation-cloud/",
+    "https://ziontechgroup.com/secrets-rotation-automation/",
+    "https://ziontechgroup.com/api-performance-testing/",
+    "https://ziontechgroup.com/sales-copilot/",
+    "https://ziontechgroup.com/serverless-cron-manager/",
+    "https://ziontechgroup.com/sso-in-a-box/",
+    "https://ziontechgroup.com/status-pages-slo/",
+    "https://ziontechgroup.com/synthetic-monitor-recorder/",
+    "https://ziontechgroup.com/tls-certificate-monitor/",
+    "https://ziontechgroup.com/uptime-slo-monitor/",
+    "https://ziontechgroup.com/comprehensive-services-showcase-2025/",
+    "https://ziontechgroup.com/pricing/",
+    "https://ziontechgroup.com/market-pricing/",
+    "https://ziontechgroup.com/about/",
+    "https://ziontechgroup.com/support/",
+    "https://ziontechgroup.com/blog/",
+    "https://ziontechgroup.com/careers/",
+    "https://ziontechgroup.com/partners/",
+    "https://ziontechgroup.com/investors/",
+    "https://ziontechgroup.com/privacy/",
+    "https://ziontechgroup.com/terms/",
+    "https://ziontechgroup.com/security/",
+    "https://ziontechgroup.com/accessibility/",
+    "https://ziontechgroup.com/_next/static/chunks/polyfills-42372ed130431b0a.js",
+    "https://ziontechgroup.com/_next/static/chunks/webpack-e219339f62a4a96e.js",
+    "https://ziontechgroup.com/_next/static/chunks/framework-1548034a53843b9f.js",
+    "https://ziontechgroup.com/_next/static/chunks/main-9ff70c445fcad225.js",
+    "https://ziontechgroup.com/_next/static/chunks/pages/_app-fdcfa4ae11cb1205.js",
+    "https://ziontechgroup.com/_next/static/chunks/4808-64817caa03158d5e.js",
+    "https://ziontechgroup.com/_next/static/chunks/pages/index-ab3b71c171eeaec2.js",
+    "https://ziontechgroup.com/_next/static/VoueYmaOg_Q3KSe7Vpw0C/_buildManifest.js",
+    "https://ziontechgroup.com/_next/static/VoueYmaOg_Q3KSe7Vpw0C/_ssgManifest.js",
+    "https://ziontechgroup.com/_next/static/css/9281571ab1c679b1.css",
+    "https://ziontechgroup.com/contact#main",
+    "https://ziontechgroup.com/_next/static/chunks/pages/contact-f73d9507ecf2de27.js",
+    "https://ziontechgroup.com/support#main",
+    "https://ziontechgroup.com/resources",
+    "https://ziontechgroup.com/support#faq",
+    "https://ziontechgroup.com/support#community",
+    "https://ziontechgroup.com/_next/static/chunks/2749-f33058722919a564.js",
+    "https://ziontechgroup.com/_next/static/chunks/pages/support-f70dec4ede163938.js",
+    "https://ziontechgroup.com/contact/#main",
+    "https://ziontechgroup.com/ai-consciousness-evolution-2029/#main",
+    "https://ziontechgroup.com/services/",
+    "https://ziontechgroup.com/2029-innovative-services-showcase/",
+    "https://ziontechgroup.com/quantum-services/",
+    "https://ziontechgroup.com/enterprise-it/",
+    "https://ziontechgroup.com/space-tech/",
+    "https://ziontechgroup.com/micro-saas/",
+    "https://ziontechgroup.com/research-development/",
+    "https://ziontechgroup.com/2029-comprehensive-pricing/",
+    "https://ziontechgroup.com/ai-creativity-studio/",
+    "https://ziontechgroup.com/ai-market-research/",
+    "https://ziontechgroup.com/quantum-financial-trading/",
+    "https://ziontechgroup.com/services/quantum-learning-accelerator-2029/",
+    "https://ziontechgroup.com/metaverse-digital-reality-platform/",
+    "https://ziontechgroup.com/services/ai-predictive-health-analytics-2029/",
+    "https://ziontechgroup.com/services/ai-autonomous-business-manager-2029/",
+    "https://ziontechgroup.com/autonomous-devops-platform/",
+    "https://ziontechgroup.com/quantum-cloud-infrastructure/",
+    "https://ziontechgroup.com/ai-powered-enterprise-security/",
+    "https://ziontechgroup.com/docs/",
+    "https://ziontechgroup.com/api/",
+    "https://ziontechgroup.com/case-studies/",
+    "https://ziontechgroup.com/white-papers/",
+    "https://ziontechgroup.com/news/",
+    "https://ziontechgroup.com/events/",
+    "https://ziontechgroup.com/webinars/",
+    "https://ziontechgroup.com/cookies/",
+    "https://ziontechgroup.com/ai-emotional-intelligence-training",
+    "https://ziontechgroup.com/ai-autonomous-business-operations",
+    "https://ziontechgroup.com/_next/static/chunks/8406-69eac128453983a3.js",
+    "https://ziontechgroup.com/_next/static/chunks/pages/ai-consciousness-evolution-2029-5a6b4f4a3c4973e0.js",
+    "https://ziontechgroup.com/space-resource-mining-platform/#main",
+    "https://ziontechgroup.com/_next/static/chunks/pages/space-resource-mining-platform-02c6253812bb6698.js",
+    "https://ziontechgroup.com/brain-computer-interface-platform/#main",
+    "https://ziontechgroup.com/_next/static/chunks/pages/brain-computer-interface-platform-bdf6078bb3283e3b.js",
+    "https://ziontechgroup.com/quantum-financial-trading-platform/#main",
+    "https://ziontechgroup.com/services",
+    "https://ziontechgroup.com/_next/static/chunks/pages/quantum-financial-trading-platform-eaffda13fa20c573.js",
+    "https://ziontechgroup.com/ai-emotional-intelligence-training/#main",
+    "https://ziontechgroup.com/market-pricing",
+    "https://ziontechgroup.com/_next/static/chunks/pages/ai-emotional-intelligence-training-a742d2be91043c75.js",
+    "https://ziontechgroup.com/quantum-materials-discovery-platform/#main",
+    "https://ziontechgroup.com/_next/static/chunks/pages/quantum-materials-discovery-platform-8d7e7ce299bbe265.js",
+    "https://ziontechgroup.com/autonomous-vehicle-ai-platform/#main",
+    "https://ziontechgroup.com/_next/static/chunks/5914-b16dfc6645da172c.js",
+    "https://ziontechgroup.com/_next/static/chunks/pages/autonomous-vehicle-ai-platform-a0d20a739058fd07.js",
+    "https://ziontechgroup.com/quantum-bio-computing-platform/#main",
+    "https://ziontechgroup.com/_next/static/chunks/pages/quantum-bio-computing-platform-192fb3e6e236c3f8.js",
+    "https://ziontechgroup.com/ai-autonomous-research-assistant/#main",
+    "https://ziontechgroup.com/_next/static/chunks/pages/ai-autonomous-research-assistant-172b0a6c27a2f572.js",
+    "https://ziontechgroup.com/ai-predictive-maintenance-platform/#main",
+    "https://ziontechgroup.com/_next/static/chunks/pages/ai-predictive-maintenance-platform-6582a00f59f396dd.js",
+    "https://ziontechgroup.com/ai-content-personalization-engine/#main",
+    "https://ziontechgroup.com/_next/static/chunks/pages/ai-content-personalization-engine-4ed95f8473906102.js",
+    "https://ziontechgroup.com/ai-autonomous-ecosystem-manager/#main",
+    "https://ziontechgroup.com/_next/static/chunks/pages/ai-autonomous-ecosystem-manager-a638036f8fb07e74.js",
+    "https://ziontechgroup.com/ai-ethics-governance-framework/#main",
+    "https://ziontechgroup.com/_next/static/chunks/pages/ai-ethics-governance-framework-d94716aa9c054fd4.js",
+    "https://ziontechgroup.com/ai-customer-success-platform/#main",
+    "https://ziontechgroup.com/demo",
+    "https://ziontechgroup.com/pricing",
+    "https://ziontechgroup.com/_next/static/chunks/pages/ai-customer-success-platform-4aab1f60cb9fd94d.js",
+    "https://ziontechgroup.com/ai-sales-intelligence-platform/#main",
+    "https://ziontechgroup.com/_next/static/chunks/pages/ai-sales-intelligence-platform-7a6332a151d35255.js",
+    "https://ziontechgroup.com/quantum-internet-security-platform/#main",
+    "https://ziontechgroup.com/_next/static/chunks/pages/quantum-internet-security-platform-86ec328be42af804.js",
+    "https://ziontechgroup.com/quantum-cloud-infrastructure-platform/#main",
+    "https://ziontechgroup.com/_next/static/chunks/pages/quantum-cloud-infrastructure-platform-5a03bf4c96ecc73a.js",
+    "https://ziontechgroup.com/ai-powered-space-technology/#main",
+    "https://ziontechgroup.com/_next/static/chunks/pages/ai-powered-space-technology-74c1f97f6a29ace9.js",
+    "https://ziontechgroup.com/quantum-secure-cloud-infrastructure/#main",
+    "https://ziontechgroup.com/_next/static/chunks/pages/quantum-secure-cloud-infrastructure-d346699b4a1f6f24.js",
+    "https://ziontechgroup.com/autonomous-it-operations-center/#main",
+    "https://ziontechgroup.com/_next/static/chunks/pages/autonomous-it-operations-center-794a1fba8e973a3d.js",
+    "https://ziontechgroup.com/edge-computing-orchestration-platform/#main",
+    "https://ziontechgroup.com/_next/static/chunks/pages/edge-computing-orchestration-platform-7628e8deb91c6127.js",
+    "https://ziontechgroup.com/blockchain-infrastructure-platform/#main",
+    "https://ziontechgroup.com/_next/static/chunks/pages/blockchain-infrastructure-platform-536f0f8d36ddb2a1.js",
+    "https://ziontechgroup.com/ai-powered-devops-platform/#main",
+    "https://ziontechgroup.com/_next/static/chunks/pages/ai-powered-devops-platform-b8e94dff731753a7.js",
+    "https://ziontechgroup.com/zero-trust-security-platform/#main",
+    "https://ziontechgroup.com/_next/static/chunks/pages/zero-trust-security-platform-d85fb18581a84b5a.js",
+    "https://ziontechgroup.com/ai-powered-cybersecurity/#main",
+    "https://ziontechgroup.com/_next/static/chunks/pages/ai-powered-cybersecurity-a97f078d336eca73.js",
+    "https://ziontechgroup.com/soc2-compliance-automation/#main",
+    "https://ziontechgroup.com/_next/static/chunks/pages/soc2-compliance-automation-c1ed0ce1b79adbe6.js",
+    "https://ziontechgroup.com/rag-evaluation-lab/#main",
+    "https://ziontechgroup.com/_next/static/chunks/pages/rag-evaluation-lab-b7f7f012c60b6747.js",
+    "https://ziontechgroup.com/ai-content-generator/#main",
+    "https://ziontechgroup.com/_next/static/chunks/pages/ai-content-generator-cbdfd60d5417a98a.js",
+    "https://ziontechgroup.com/ai-code-review/#main",
+    "https://ziontechgroup.com/_next/static/chunks/pages/ai-code-review-e711b676a094dfa4.js",
+    "https://ziontechgroup.com/intelligent-hr-analytics-platform/#main",
+    "https://ziontechgroup.com/_next/static/chunks/pages/intelligent-hr-analytics-platform-dd10f1a5665aef57.js",
+    "https://ziontechgroup.com/ai-financial-planning-platform/#main",
+    "https://ziontechgroup.com/_next/static/chunks/pages/ai-financial-planning-platform-b29517b757afc669.js",
+    "https://ziontechgroup.com/intelligent-supply-chain-optimization/#main",
+    "https://ziontechgroup.com/_next/static/chunks/pages/intelligent-supply-chain-optimization-0500af42fb36668c.js",
+    "https://ziontechgroup.com/intelligent-content-automation-platform/#main",
+    "https://ziontechgroup.com/_next/static/chunks/pages/intelligent-content-automation-platform-dbaf22d209f29c7d.js",
+    "https://ziontechgroup.com/smart-crm-intelligence-suite/#main",
+    "https://ziontechgroup.com/_next/static/chunks/pages/smart-crm-intelligence-suite-d4f5e748c69c8603.js",
+    "https://ziontechgroup.com/seo-automation-suite/#main",
+    "https://ziontechgroup.com/_next/static/chunks/pages/seo-automation-suite-8b53fb621e692b8f.js",
+    "https://ziontechgroup.com/it-asset-discovery-agent/#main",
+    "https://ziontechgroup.com/_next/static/chunks/pages/it-asset-discovery-agent-8f5599e480920291.js",
+    "https://ziontechgroup.com/managed-postgres-ha/#main",
+    "https://ziontechgroup.com/_next/static/chunks/pages/managed-postgres-ha-e7c83425cdd55f4b.js",
+    "https://ziontechgroup.com/browser-automation-cloud/#main",
+    "https://ziontechgroup.com/_next/static/chunks/pages/browser-automation-cloud-c0ec9054f7df08d2.js",
+    "https://ziontechgroup.com/secrets-rotation-automation/#main",
+    "https://ziontechgroup.com/_next/static/chunks/pages/secrets-rotation-automation-bafd580648eac627.js",
+    "https://ziontechgroup.com/api-performance-testing/#main",
+    "https://ziontechgroup.com/_next/static/chunks/pages/api-performance-testing-a6b2b4a7a326991b.js",
+    "https://ziontechgroup.com/sales-copilot/#main",
+    "https://ziontechgroup.com/_next/static/chunks/pages/sales-copilot-b12372e48485ea52.js",
+    "https://ziontechgroup.com/serverless-cron-manager/#main",
+    "https://ziontechgroup.com/_next/static/chunks/2552-b9334537277c5dc3.js",
+    "https://ziontechgroup.com/_next/static/chunks/pages/serverless-cron-manager-20d2154511875bf5.js",
+    "https://ziontechgroup.com/sso-in-a-box/#main",
+    "https://ziontechgroup.com/_next/static/chunks/pages/sso-in-a-box-d16f77c4af615b61.js",
+    "https://ziontechgroup.com/status-pages-slo/#main",
+    "https://ziontechgroup.com/_next/static/chunks/pages/status-pages-slo-0984ba4182d3c50c.js",
+    "https://ziontechgroup.com/synthetic-monitor-recorder/#main",
+    "https://ziontechgroup.com/_next/static/chunks/pages/synthetic-monitor-recorder-25c100d1b6129eff.js",
+    "https://ziontechgroup.com/tls-certificate-monitor/#main",
+    "https://ziontechgroup.com/tls-certificate-monitor",
+    "https://ziontechgroup.com/_next/static/chunks/pages/tls-certificate-monitor-4126b49f0775c18a.js",
+    "https://ziontechgroup.com/uptime-slo-monitor/#main",
+    "https://ziontechgroup.com/_next/static/chunks/pages/uptime-slo-monitor-77b98a57ed5f941d.js",
+    "https://ziontechgroup.com/comprehensive-services-showcase-2025/#main",
+    "https://ziontechgroup.com/space-resource-mining-platform",
+    "https://ziontechgroup.com/ai-sales-intelligence-platform",
+    "https://ziontechgroup.com/ai-healthcare-analytics",
+    "https://ziontechgroup.com/ai-consciousness-evolution",
+    "https://ziontechgroup.com/ai-healthcare-diagnostics",
+    "https://ziontechgroup.com/ai-fraud-detection-system",
+    "https://ziontechgroup.com/ai-quantum-neural-network",
+    "https://ziontechgroup.com/quantum-cloud-infrastructure",
+    "https://ziontechgroup.com/ai-powered-devops-platform",
+    "https://ziontechgroup.com/quantum-networking",
+    "https://ziontechgroup.com/quantum-data-center",
+    "https://ziontechgroup.com/quantum-cybersecurity",
+    "https://ziontechgroup.com/zero-trust-security-architecture",
+    "https://ziontechgroup.com/quantum-secure-cloud-infrastructure",
+    "https://ziontechgroup.com/space-mining-platform",
+    "https://ziontechgroup.com/quantum-machine-learning-platform",
+    "https://ziontechgroup.com/synthetic-biology-platform",
+    "https://ziontechgroup.com/quantum-internet-security-platform",
+    "https://ziontechgroup.com/autonomous-vehicle-ai-platform",
+    "https://ziontechgroup.com/quantum-encryption-gateway",
+    "https://ziontechgroup.com/ai-legal-document-intelligence",
+    "https://ziontechgroup.com/quantum-cybersecurity-intelligence",
+    "https://ziontechgroup.com/quantum-internet-infrastructure",
+    "https://ziontechgroup.com/ai-customer-success-automation",
+    "https://ziontechgroup.com/ai-supply-chain-optimization",
+    "https://ziontechgroup.com/ai-legal-document-analysis",
+    "https://ziontechgroup.com/ai-autonomous-ecosystem",
+    "https://ziontechgroup.com/ai-creativity-studio",
+    "https://ziontechgroup.com/ai-financial-intelligence",
+    "https://ziontechgroup.com/ai-emotional-intelligence-platform",
+    "https://ziontechgroup.com/ai-predictive-analytics-engine",
+    "https://ziontechgroup.com/ai-recommendation-engine",
+    "https://ziontechgroup.com/ai-energy-management-system",
+    "https://ziontechgroup.com/ai-autonomous-research-assistant",
+    "https://ziontechgroup.com/ai-content-personalization-engine",
+    "https://ziontechgroup.com/zero-trust-security-platform",
+    "https://ziontechgroup.com/blockchain-enterprise-platform",
+    "https://ziontechgroup.com/autonomous-it-operations",
+    "https://ziontechgroup.com/quantum-cloud-migration",
+    "https://ziontechgroup.com/cloud-native-app-development-platform",
+    "https://ziontechgroup.com/infrastructure-as-code-platform",
+    "https://ziontechgroup.com/it-asset-management-discovery-platform",
+    "https://ziontechgroup.com/autonomous-it-operations-center",
+    "https://ziontechgroup.com/blockchain-infrastructure-platform",
+    "https://ziontechgroup.com/quantum-bio-computing",
+    "https://ziontechgroup.com/quantum-energy-platform",
+    "https://ziontechgroup.com/quantum-materials-discovery",
+    "https://ziontechgroup.com/quantum-internet-security",
+    "https://ziontechgroup.com/neuromorphic-computing-platform",
+    "https://ziontechgroup.com/brain-computer-interface-platform",
+    "https://ziontechgroup.com/ai-autonomous-business-process-automation",
+    "https://ziontechgroup.com/ai-financial-fraud-detection",
+    "https://ziontechgroup.com/quantum-network-security",
+    "https://ziontechgroup.com/quantum-financial-risk-management",
+    "https://ziontechgroup.com/ai-creative-content-studio",
+    "https://ziontechgroup.com/autonomous-manufacturing-intelligence",
+    "https://ziontechgroup.com/ai-content-marketing-automation",
+    "https://ziontechgroup.com/ai-financial-planning-platform",
+    "https://ziontechgroup.com/ai-manufacturing-optimization",
+    "https://ziontechgroup.com/ai-ethics-governance",
+    "https://ziontechgroup.com/ai-education-platform",
+    "https://ziontechgroup.com/ai-sustainability-platform",
+    "https://ziontechgroup.com/ai-computer-vision-platform",
+    "https://ziontechgroup.com/ai-quality-control-system",
+    "https://ziontechgroup.com/ai-predictive-maintenance-platform",
+    "https://ziontechgroup.com/edge-computing-orchestration",
+    "https://ziontechgroup.com/edge-computing-orchestration-platform",
+    "https://ziontechgroup.com/data-pipeline-etl-platform",
+    "https://ziontechgroup.com/database-performance-optimization-platform",
+    "https://ziontechgroup.com/brain-computer-interface",
+    "https://ziontechgroup.com/autonomous-vehicle-ai",
+    "https://ziontechgroup.com/quantum-robotics",
+    "https://ziontechgroup.com/quantum-logistics-optimization",
+    "https://ziontechgroup.com/quantum-materials-discovery-platform",
+    "https://ziontechgroup.com/quantum-threat-detection",
+    "https://ziontechgroup.com/ai-education-intelligence",
+    "https://ziontechgroup.com/ai-hr-analytics-platform",
+    "https://ziontechgroup.com/ai-nlp-suite",
+    "https://ziontechgroup.com/ai-customer-segmentation-platform",
+    "https://ziontechgroup.com/api-gateway-management-platform",
+    "https://ziontechgroup.com/network-monitoring-analytics-platform",
+    "https://ziontechgroup.com/metaverse-ai-development",
+    "https://ziontechgroup.com/ai-customer-intelligence-platform",
+    "https://ziontechgroup.com/quantum-identity-verification",
+    "https://ziontechgroup.com/autonomous-supply-chain-orchestration",
+    "https://ziontechgroup.com/quantum-compliance-automation",
+    "https://ziontechgroup.com/_next/static/chunks/3448-24b4c25dfe3a008f.js",
+    "https://ziontechgroup.com/_next/static/chunks/pages/comprehensive-services-showcase-2025-d3fa473e50d9bd45.js",
+    "https://ziontechgroup.com/pricing/#main",
+    "https://ziontechgroup.com/services#ai-&-consciousness-services",
+    "https://ziontechgroup.com/services#quantum-&-emerging-tech",
+    "https://ziontechgroup.com/services#enterprise-it-solutions",
+    "https://ziontechgroup.com/services#micro-saas-solutions",
+    "https://ziontechgroup.com/_next/static/chunks/pages/pricing-c00afd9e4142c6bc.js",
+    "https://ziontechgroup.com/market-pricing/#main",
+    "https://ziontechgroup.com/_next/static/chunks/pages/market-pricing-77ea0bf398f7eef5.js",
+    "https://ziontechgroup.com/about/#main",
+    "https://ziontechgroup.com/_next/static/chunks/pages/about-8dbdc8ca7f1612cf.js",
+    "https://ziontechgroup.com/support/#main",
+    "https://ziontechgroup.com/support/#faq",
+    "https://ziontechgroup.com/support/#community",
+    "https://ziontechgroup.com/blog/#main",
+    "https://ziontechgroup.com/blog/performance-optimization/",
+    "https://ziontechgroup.com/blog/cloud-native-automation/",
+    "https://ziontechgroup.com/blog/ai-automation-trends-2025/",
+    "https://ziontechgroup.com/blog/future-of-work/",
+    "https://ziontechgroup.com/blog/ai-ethics-automation/",
+    "https://ziontechgroup.com/blog/autonomous-content-generation/",
+    "https://ziontechgroup.com/training/",
+    "https://ziontechgroup.com/_next/static/chunks/pages/blog-463a803c682cb083.js",
+    "https://ziontechgroup.com/careers/#main",
+    "https://ziontechgroup.com/careers/#open-positions",
+    "https://ziontechgroup.com/contact?position=ai-research-scientist",
+    "https://ziontechgroup.com/contact?position=quantum-computing-engineer",
+    "https://ziontechgroup.com/contact?position=autonomous-systems-engineer",
+    "https://ziontechgroup.com/contact?position=space-technology-researcher",
+    "https://ziontechgroup.com/_next/static/chunks/pages/careers-2601ca80960121f6.js",
+    "https://ziontechgroup.com/partners/#main",
+    "https://ziontechgroup.com/_next/static/chunks/pages/partners-60bff4be8400aea5.js",
+    "https://ziontechgroup.com/investors/#main",
+    "https://ziontechgroup.com/_next/static/chunks/pages/investors-fc628b1a0f28089d.js",
+    "https://ziontechgroup.com/privacy/#main",
+    "https://ziontechgroup.com/_next/static/chunks/pages/privacy-b0a32c5f0d35179b.js",
+    "https://ziontechgroup.com/terms/#main",
+    "https://ziontechgroup.com/_next/static/chunks/pages/terms-6d9f3b1b6cf3a6f1.js",
+    "https://ziontechgroup.com/security/#main",
+    "https://ziontechgroup.com/_next/static/chunks/4425-52b74efbc391c572.js",
+    "https://ziontechgroup.com/_next/static/chunks/pages/security-411fe71e3736db25.js"
+  ],
+  "pageAnalysis": [
+    {
+      "url": "https://ziontechgroup.com",
+      "title": "Zion Tech Group – Future of Technology | AI, Quantum Computing & Emerging Tech",
+      "textLength": 3149,
+      "headings": 9,
+      "images": 0,
+      "links": 92,
+      "metaDescription": "Transform your business with Zion Tech Group's revolutionary AI services, quantum cybersecurity, and cutting-edge emerging technologies. Leading the future of technology innovation.",
+      "metaKeywords": "AI services, quantum computing, cybersecurity, emerging technologies, micro SAAS, automation, Zion Tech Group, technology innovation, business transformation",
+      "issues": [],
+      "hasContentIssues": false
+    },
+    {
+      "url": "https://ziontechgroup.com/#main",
+      "title": "Zion Tech Group – Future of Technology | AI, Quantum Computing & Emerging Tech",
+      "textLength": 3149,
+      "headings": 9,
+      "images": 0,
+      "links": 92,
+      "metaDescription": "Transform your business with Zion Tech Group's revolutionary AI services, quantum cybersecurity, and cutting-edge emerging technologies. Leading the future of technology innovation.",
+      "metaKeywords": "AI services, quantum computing, cybersecurity, emerging technologies, micro SAAS, automation, Zion Tech Group, technology innovation, business transformation",
+      "issues": [],
+      "hasContentIssues": false
+    },
+    {
+      "url": "https://ziontechgroup.com/",
+      "title": "Zion Tech Group – Future of Technology | AI, Quantum Computing & Emerging Tech",
+      "textLength": 3149,
+      "headings": 9,
+      "images": 0,
+      "links": 92,
+      "metaDescription": "Transform your business with Zion Tech Group's revolutionary AI services, quantum cybersecurity, and cutting-edge emerging technologies. Leading the future of technology innovation.",
+      "metaKeywords": "AI services, quantum computing, cybersecurity, emerging technologies, micro SAAS, automation, Zion Tech Group, technology innovation, business transformation",
+      "issues": [],
+      "hasContentIssues": false
+    },
+    {
+      "url": "https://ziontechgroup.com/contact",
+      "title": "Zion Tech Group – Future of Technology | AI, Quantum Computing & Emerging Tech",
+      "textLength": 7153,
+      "headings": 25,
+      "images": 0,
+      "links": 184,
+      "metaDescription": "Transform your business with Zion Tech Group's revolutionary AI services, quantum cybersecurity, and cutting-edge emerging technologies. Leading the future of technology innovation.",
+      "metaKeywords": "AI services, quantum computing, cybersecurity, emerging technologies, micro SAAS, automation, Zion Tech Group, technology innovation, business transformation",
+      "issues": [],
+      "hasContentIssues": false
+    },
+    {
+      "url": "https://ziontechgroup.com/support",
+      "title": "Zion Tech Group – Future of Technology | AI, Quantum Computing & Emerging Tech",
+      "textLength": 4647,
+      "headings": 21,
+      "images": 0,
+      "links": 98,
+      "metaDescription": "Transform your business with Zion Tech Group's revolutionary AI services, quantum cybersecurity, and cutting-edge emerging technologies. Leading the future of technology innovation.",
+      "metaKeywords": "AI services, quantum computing, cybersecurity, emerging technologies, micro SAAS, automation, Zion Tech Group, technology innovation, business transformation",
+      "issues": [],
+      "hasContentIssues": false
+    },
+    {
+      "url": "https://ziontechgroup.com/contact/",
+      "title": "Zion Tech Group – Future of Technology | AI, Quantum Computing & Emerging Tech",
+      "textLength": 7153,
+      "headings": 25,
+      "images": 0,
+      "links": 184,
+      "metaDescription": "Transform your business with Zion Tech Group's revolutionary AI services, quantum cybersecurity, and cutting-edge emerging technologies. Leading the future of technology innovation.",
+      "metaKeywords": "AI services, quantum computing, cybersecurity, emerging technologies, micro SAAS, automation, Zion Tech Group, technology innovation, business transformation",
+      "issues": [],
+      "hasContentIssues": false
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-consciousness-evolution-2029/",
+      "title": "Zion Tech Group – Future of Technology | AI, Quantum Computing & Emerging Tech",
+      "textLength": 6470,
+      "headings": 51,
+      "images": 0,
+      "links": 167,
+      "metaDescription": "Transform your business with Zion Tech Group's revolutionary AI services, quantum cybersecurity, and cutting-edge emerging technologies. Leading the future of technology innovation.",
+      "metaKeywords": "AI services, quantum computing, cybersecurity, emerging technologies, micro SAAS, automation, Zion Tech Group, technology innovation, business transformation",
+      "issues": [],
+      "hasContentIssues": false
+    },
+    {
+      "url": "https://ziontechgroup.com/space-resource-mining-platform/",
+      "title": "Zion Tech Group – Future of Technology | AI, Quantum Computing & Emerging Tech",
+      "textLength": 3301,
+      "headings": 10,
+      "images": 0,
+      "links": 92,
+      "metaDescription": "Transform your business with Zion Tech Group's revolutionary AI services, quantum cybersecurity, and cutting-edge emerging technologies. Leading the future of technology innovation.",
+      "metaKeywords": "AI services, quantum computing, cybersecurity, emerging technologies, micro SAAS, automation, Zion Tech Group, technology innovation, business transformation",
+      "issues": [],
+      "hasContentIssues": false
+    },
+    {
+      "url": "https://ziontechgroup.com/brain-computer-interface-platform/",
+      "title": "Zion Tech Group – Future of Technology | AI, Quantum Computing & Emerging Tech",
+      "textLength": 3229,
+      "headings": 10,
+      "images": 0,
+      "links": 92,
+      "metaDescription": "Transform your business with Zion Tech Group's revolutionary AI services, quantum cybersecurity, and cutting-edge emerging technologies. Leading the future of technology innovation.",
+      "metaKeywords": "AI services, quantum computing, cybersecurity, emerging technologies, micro SAAS, automation, Zion Tech Group, technology innovation, business transformation",
+      "issues": [],
+      "hasContentIssues": false
+    },
+    {
+      "url": "https://ziontechgroup.com/quantum-financial-trading-platform/",
+      "title": "Zion Tech Group – Future of Technology | AI, Quantum Computing & Emerging Tech",
+      "textLength": 3475,
+      "headings": 11,
+      "images": 0,
+      "links": 94,
+      "metaDescription": "Transform your business with Zion Tech Group's revolutionary AI services, quantum cybersecurity, and cutting-edge emerging technologies. Leading the future of technology innovation.",
+      "metaKeywords": "AI services, quantum computing, cybersecurity, emerging technologies, micro SAAS, automation, Zion Tech Group, technology innovation, business transformation",
+      "issues": [],
+      "hasContentIssues": false
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-emotional-intelligence-training/",
+      "title": "Zion Tech Group – Future of Technology | AI, Quantum Computing & Emerging Tech",
+      "textLength": 3601,
+      "headings": 13,
+      "images": 0,
+      "links": 96,
+      "metaDescription": "Transform your business with Zion Tech Group's revolutionary AI services, quantum cybersecurity, and cutting-edge emerging technologies. Leading the future of technology innovation.",
+      "metaKeywords": "AI services, quantum computing, cybersecurity, emerging technologies, micro SAAS, automation, Zion Tech Group, technology innovation, business transformation",
+      "issues": [],
+      "hasContentIssues": false
+    },
+    {
+      "url": "https://ziontechgroup.com/quantum-materials-discovery-platform/",
+      "title": "Zion Tech Group – Future of Technology | AI, Quantum Computing & Emerging Tech",
+      "textLength": 3297,
+      "headings": 10,
+      "images": 0,
+      "links": 92,
+      "metaDescription": "Transform your business with Zion Tech Group's revolutionary AI services, quantum cybersecurity, and cutting-edge emerging technologies. Leading the future of technology innovation.",
+      "metaKeywords": "AI services, quantum computing, cybersecurity, emerging technologies, micro SAAS, automation, Zion Tech Group, technology innovation, business transformation",
+      "issues": [],
+      "hasContentIssues": false
+    },
+    {
+      "url": "https://ziontechgroup.com/autonomous-vehicle-ai-platform/",
+      "title": "Zion Tech Group – Future of Technology | AI, Quantum Computing & Emerging Tech",
+      "textLength": 3859,
+      "headings": 11,
+      "images": 0,
+      "links": 93,
+      "metaDescription": "Transform your business with Zion Tech Group's revolutionary AI services, quantum cybersecurity, and cutting-edge emerging technologies. Leading the future of technology innovation.",
+      "metaKeywords": "AI services, quantum computing, cybersecurity, emerging technologies, micro SAAS, automation, Zion Tech Group, technology innovation, business transformation",
+      "issues": [],
+      "hasContentIssues": false
+    },
+    {
+      "url": "https://ziontechgroup.com/quantum-bio-computing-platform/",
+      "title": "Zion Tech Group – Future of Technology | AI, Quantum Computing & Emerging Tech",
+      "textLength": 3227,
+      "headings": 10,
+      "images": 0,
+      "links": 92,
+      "metaDescription": "Transform your business with Zion Tech Group's revolutionary AI services, quantum cybersecurity, and cutting-edge emerging technologies. Leading the future of technology innovation.",
+      "metaKeywords": "AI services, quantum computing, cybersecurity, emerging technologies, micro SAAS, automation, Zion Tech Group, technology innovation, business transformation",
+      "issues": [],
+      "hasContentIssues": false
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-autonomous-research-assistant/",
+      "title": "Zion Tech Group – Future of Technology | AI, Quantum Computing & Emerging Tech",
+      "textLength": 3675,
+      "headings": 13,
+      "images": 0,
+      "links": 99,
+      "metaDescription": "Transform your business with Zion Tech Group's revolutionary AI services, quantum cybersecurity, and cutting-edge emerging technologies. Leading the future of technology innovation.",
+      "metaKeywords": "AI services, quantum computing, cybersecurity, emerging technologies, micro SAAS, automation, Zion Tech Group, technology innovation, business transformation",
+      "issues": [],
+      "hasContentIssues": false
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-predictive-maintenance-platform/",
+      "title": "Zion Tech Group – Future of Technology | AI, Quantum Computing & Emerging Tech",
+      "textLength": 3434,
+      "headings": 10,
+      "images": 0,
+      "links": 92,
+      "metaDescription": "Transform your business with Zion Tech Group's revolutionary AI services, quantum cybersecurity, and cutting-edge emerging technologies. Leading the future of technology innovation.",
+      "metaKeywords": "AI services, quantum computing, cybersecurity, emerging technologies, micro SAAS, automation, Zion Tech Group, technology innovation, business transformation",
+      "issues": [],
+      "hasContentIssues": false
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-content-personalization-engine/",
+      "title": "Zion Tech Group – Future of Technology | AI, Quantum Computing & Emerging Tech",
+      "textLength": 3251,
+      "headings": 10,
+      "images": 0,
+      "links": 92,
+      "metaDescription": "Transform your business with Zion Tech Group's revolutionary AI services, quantum cybersecurity, and cutting-edge emerging technologies. Leading the future of technology innovation.",
+      "metaKeywords": "AI services, quantum computing, cybersecurity, emerging technologies, micro SAAS, automation, Zion Tech Group, technology innovation, business transformation",
+      "issues": [],
+      "hasContentIssues": false
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-autonomous-ecosystem-manager/",
+      "title": "Zion Tech Group – Future of Technology | AI, Quantum Computing & Emerging Tech",
+      "textLength": 3726,
+      "headings": 11,
+      "images": 0,
+      "links": 95,
+      "metaDescription": "Transform your business with Zion Tech Group's revolutionary AI services, quantum cybersecurity, and cutting-edge emerging technologies. Leading the future of technology innovation.",
+      "metaKeywords": "AI services, quantum computing, cybersecurity, emerging technologies, micro SAAS, automation, Zion Tech Group, technology innovation, business transformation",
+      "issues": [],
+      "hasContentIssues": false
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-ethics-governance-framework/",
+      "title": "Zion Tech Group – Future of Technology | AI, Quantum Computing & Emerging Tech",
+      "textLength": 3255,
+      "headings": 10,
+      "images": 0,
+      "links": 92,
+      "metaDescription": "Transform your business with Zion Tech Group's revolutionary AI services, quantum cybersecurity, and cutting-edge emerging technologies. Leading the future of technology innovation.",
+      "metaKeywords": "AI services, quantum computing, cybersecurity, emerging technologies, micro SAAS, automation, Zion Tech Group, technology innovation, business transformation",
+      "issues": [],
+      "hasContentIssues": false
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-customer-success-platform/",
+      "title": "Zion Tech Group – Future of Technology | AI, Quantum Computing & Emerging Tech",
+      "textLength": 7356,
+      "headings": 27,
+      "images": 0,
+      "links": 188,
+      "metaDescription": "Transform your business with Zion Tech Group's revolutionary AI services, quantum cybersecurity, and cutting-edge emerging technologies. Leading the future of technology innovation.",
+      "metaKeywords": "AI services, quantum computing, cybersecurity, emerging technologies, micro SAAS, automation, Zion Tech Group, technology innovation, business transformation",
+      "issues": [],
+      "hasContentIssues": false
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-sales-intelligence-platform/",
+      "title": "Zion Tech Group – Future of Technology | AI, Quantum Computing & Emerging Tech",
+      "textLength": 7284,
+      "headings": 27,
+      "images": 0,
+      "links": 188,
+      "metaDescription": "Transform your business with Zion Tech Group's revolutionary AI services, quantum cybersecurity, and cutting-edge emerging technologies. Leading the future of technology innovation.",
+      "metaKeywords": "AI services, quantum computing, cybersecurity, emerging technologies, micro SAAS, automation, Zion Tech Group, technology innovation, business transformation",
+      "issues": [],
+      "hasContentIssues": false
+    },
+    {
+      "url": "https://ziontechgroup.com/quantum-internet-security-platform/",
+      "title": "Zion Tech Group – Future of Technology | AI, Quantum Computing & Emerging Tech",
+      "textLength": 3920,
+      "headings": 11,
+      "images": 0,
+      "links": 93,
+      "metaDescription": "Transform your business with Zion Tech Group's revolutionary AI services, quantum cybersecurity, and cutting-edge emerging technologies. Leading the future of technology innovation.",
+      "metaKeywords": "AI services, quantum computing, cybersecurity, emerging technologies, micro SAAS, automation, Zion Tech Group, technology innovation, business transformation",
+      "issues": [],
+      "hasContentIssues": false
+    },
+    {
+      "url": "https://ziontechgroup.com/quantum-cloud-infrastructure-platform/",
+      "title": "Zion Tech Group – Future of Technology | AI, Quantum Computing & Emerging Tech",
+      "textLength": 3251,
+      "headings": 10,
+      "images": 0,
+      "links": 92,
+      "metaDescription": "Transform your business with Zion Tech Group's revolutionary AI services, quantum cybersecurity, and cutting-edge emerging technologies. Leading the future of technology innovation.",
+      "metaKeywords": "AI services, quantum computing, cybersecurity, emerging technologies, micro SAAS, automation, Zion Tech Group, technology innovation, business transformation",
+      "issues": [],
+      "hasContentIssues": false
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-powered-space-technology/",
+      "title": "Zion Tech Group – Future of Technology | AI, Quantum Computing & Emerging Tech",
+      "textLength": 3234,
+      "headings": 10,
+      "images": 0,
+      "links": 92,
+      "metaDescription": "Transform your business with Zion Tech Group's revolutionary AI services, quantum cybersecurity, and cutting-edge emerging technologies. Leading the future of technology innovation.",
+      "metaKeywords": "AI services, quantum computing, cybersecurity, emerging technologies, micro SAAS, automation, Zion Tech Group, technology innovation, business transformation",
+      "issues": [],
+      "hasContentIssues": false
+    },
+    {
+      "url": "https://ziontechgroup.com/quantum-secure-cloud-infrastructure/",
+      "title": "Zion Tech Group – Future of Technology | AI, Quantum Computing & Emerging Tech",
+      "textLength": 3685,
+      "headings": 11,
+      "images": 0,
+      "links": 95,
+      "metaDescription": "Transform your business with Zion Tech Group's revolutionary AI services, quantum cybersecurity, and cutting-edge emerging technologies. Leading the future of technology innovation.",
+      "metaKeywords": "AI services, quantum computing, cybersecurity, emerging technologies, micro SAAS, automation, Zion Tech Group, technology innovation, business transformation",
+      "issues": [],
+      "hasContentIssues": false
+    },
+    {
+      "url": "https://ziontechgroup.com/autonomous-it-operations-center/",
+      "title": "Zion Tech Group – Future of Technology | AI, Quantum Computing & Emerging Tech",
+      "textLength": 3659,
+      "headings": 11,
+      "images": 0,
+      "links": 95,
+      "metaDescription": "Transform your business with Zion Tech Group's revolutionary AI services, quantum cybersecurity, and cutting-edge emerging technologies. Leading the future of technology innovation.",
+      "metaKeywords": "AI services, quantum computing, cybersecurity, emerging technologies, micro SAAS, automation, Zion Tech Group, technology innovation, business transformation",
+      "issues": [],
+      "hasContentIssues": false
+    },
+    {
+      "url": "https://ziontechgroup.com/edge-computing-orchestration-platform/",
+      "title": "Zion Tech Group – Future of Technology | AI, Quantum Computing & Emerging Tech",
+      "textLength": 3667,
+      "headings": 11,
+      "images": 0,
+      "links": 95,
+      "metaDescription": "Transform your business with Zion Tech Group's revolutionary AI services, quantum cybersecurity, and cutting-edge emerging technologies. Leading the future of technology innovation.",
+      "metaKeywords": "AI services, quantum computing, cybersecurity, emerging technologies, micro SAAS, automation, Zion Tech Group, technology innovation, business transformation",
+      "issues": [],
+      "hasContentIssues": false
+    },
+    {
+      "url": "https://ziontechgroup.com/blockchain-infrastructure-platform/",
+      "title": "Zion Tech Group – Future of Technology | AI, Quantum Computing & Emerging Tech",
+      "textLength": 3250,
+      "headings": 10,
+      "images": 0,
+      "links": 92,
+      "metaDescription": "Transform your business with Zion Tech Group's revolutionary AI services, quantum cybersecurity, and cutting-edge emerging technologies. Leading the future of technology innovation.",
+      "metaKeywords": "AI services, quantum computing, cybersecurity, emerging technologies, micro SAAS, automation, Zion Tech Group, technology innovation, business transformation",
+      "issues": [],
+      "hasContentIssues": false
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-powered-devops-platform/",
+      "title": "Zion Tech Group – Future of Technology | AI, Quantum Computing & Emerging Tech",
+      "textLength": 3234,
+      "headings": 10,
+      "images": 0,
+      "links": 92,
+      "metaDescription": "Transform your business with Zion Tech Group's revolutionary AI services, quantum cybersecurity, and cutting-edge emerging technologies. Leading the future of technology innovation.",
+      "metaKeywords": "AI services, quantum computing, cybersecurity, emerging technologies, micro SAAS, automation, Zion Tech Group, technology innovation, business transformation",
+      "issues": [],
+      "hasContentIssues": false
+    },
+    {
+      "url": "https://ziontechgroup.com/zero-trust-security-platform/",
+      "title": "Zion Tech Group – Future of Technology | AI, Quantum Computing & Emerging Tech",
+      "textLength": 3770,
+      "headings": 11,
+      "images": 0,
+      "links": 95,
+      "metaDescription": "Transform your business with Zion Tech Group's revolutionary AI services, quantum cybersecurity, and cutting-edge emerging technologies. Leading the future of technology innovation.",
+      "metaKeywords": "AI services, quantum computing, cybersecurity, emerging technologies, micro SAAS, automation, Zion Tech Group, technology innovation, business transformation",
+      "issues": [],
+      "hasContentIssues": false
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-powered-cybersecurity/",
+      "title": "Zion Tech Group – Future of Technology | AI, Quantum Computing & Emerging Tech",
+      "textLength": 3243,
+      "headings": 10,
+      "images": 0,
+      "links": 92,
+      "metaDescription": "Transform your business with Zion Tech Group's revolutionary AI services, quantum cybersecurity, and cutting-edge emerging technologies. Leading the future of technology innovation.",
+      "metaKeywords": "AI services, quantum computing, cybersecurity, emerging technologies, micro SAAS, automation, Zion Tech Group, technology innovation, business transformation",
+      "issues": [],
+      "hasContentIssues": false
+    },
+    {
+      "url": "https://ziontechgroup.com/soc2-compliance-automation/",
+      "title": "Zion Tech Group – Future of Technology | AI, Quantum Computing & Emerging Tech",
+      "textLength": 4017,
+      "headings": 20,
+      "images": 0,
+      "links": 97,
+      "metaDescription": "Transform your business with Zion Tech Group's revolutionary AI services, quantum cybersecurity, and cutting-edge emerging technologies. Leading the future of technology innovation.",
+      "metaKeywords": "AI services, quantum computing, cybersecurity, emerging technologies, micro SAAS, automation, Zion Tech Group, technology innovation, business transformation",
+      "issues": [],
+      "hasContentIssues": false
+    },
+    {
+      "url": "https://ziontechgroup.com/rag-evaluation-lab/",
+      "title": "Zion Tech Group – Future of Technology | AI, Quantum Computing & Emerging Tech",
+      "textLength": 4085,
+      "headings": 20,
+      "images": 0,
+      "links": 97,
+      "metaDescription": "Transform your business with Zion Tech Group's revolutionary AI services, quantum cybersecurity, and cutting-edge emerging technologies. Leading the future of technology innovation.",
+      "metaKeywords": "AI services, quantum computing, cybersecurity, emerging technologies, micro SAAS, automation, Zion Tech Group, technology innovation, business transformation",
+      "issues": [],
+      "hasContentIssues": false
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-content-generator/",
+      "title": "Zion Tech Group – Future of Technology | AI, Quantum Computing & Emerging Tech",
+      "textLength": 3855,
+      "headings": 20,
+      "images": 0,
+      "links": 97,
+      "metaDescription": "Transform your business with Zion Tech Group's revolutionary AI services, quantum cybersecurity, and cutting-edge emerging technologies. Leading the future of technology innovation.",
+      "metaKeywords": "AI services, quantum computing, cybersecurity, emerging technologies, micro SAAS, automation, Zion Tech Group, technology innovation, business transformation",
+      "issues": [],
+      "hasContentIssues": false
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-code-review/",
+      "title": "Zion Tech Group – Future of Technology | AI, Quantum Computing & Emerging Tech",
+      "textLength": 3882,
+      "headings": 20,
+      "images": 0,
+      "links": 97,
+      "metaDescription": "Transform your business with Zion Tech Group's revolutionary AI services, quantum cybersecurity, and cutting-edge emerging technologies. Leading the future of technology innovation.",
+      "metaKeywords": "AI services, quantum computing, cybersecurity, emerging technologies, micro SAAS, automation, Zion Tech Group, technology innovation, business transformation",
+      "issues": [],
+      "hasContentIssues": false
+    },
+    {
+      "url": "https://ziontechgroup.com/intelligent-hr-analytics-platform/",
+      "title": "Zion Tech Group – Future of Technology | AI, Quantum Computing & Emerging Tech",
+      "textLength": 3732,
+      "headings": 11,
+      "images": 0,
+      "links": 95,
+      "metaDescription": "Transform your business with Zion Tech Group's revolutionary AI services, quantum cybersecurity, and cutting-edge emerging technologies. Leading the future of technology innovation.",
+      "metaKeywords": "AI services, quantum computing, cybersecurity, emerging technologies, micro SAAS, automation, Zion Tech Group, technology innovation, business transformation",
+      "issues": [],
+      "hasContentIssues": false
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-financial-planning-platform/",
+      "title": "Zion Tech Group – Future of Technology | AI, Quantum Computing & Emerging Tech",
+      "textLength": 3928,
+      "headings": 12,
+      "images": 0,
+      "links": 97,
+      "metaDescription": "Transform your business with Zion Tech Group's revolutionary AI services, quantum cybersecurity, and cutting-edge emerging technologies. Leading the future of technology innovation.",
+      "metaKeywords": "AI services, quantum computing, cybersecurity, emerging technologies, micro SAAS, automation, Zion Tech Group, technology innovation, business transformation",
+      "issues": [],
+      "hasContentIssues": false
+    },
+    {
+      "url": "https://ziontechgroup.com/intelligent-supply-chain-optimization/",
+      "title": "Zion Tech Group – Future of Technology | AI, Quantum Computing & Emerging Tech",
+      "textLength": 4082,
+      "headings": 20,
+      "images": 0,
+      "links": 97,
+      "metaDescription": "Transform your business with Zion Tech Group's revolutionary AI services, quantum cybersecurity, and cutting-edge emerging technologies. Leading the future of technology innovation.",
+      "metaKeywords": "AI services, quantum computing, cybersecurity, emerging technologies, micro SAAS, automation, Zion Tech Group, technology innovation, business transformation",
+      "issues": [],
+      "hasContentIssues": false
+    },
+    {
+      "url": "https://ziontechgroup.com/intelligent-content-automation-platform/",
+      "title": "Zion Tech Group – Future of Technology | AI, Quantum Computing & Emerging Tech",
+      "textLength": 3715,
+      "headings": 11,
+      "images": 0,
+      "links": 95,
+      "metaDescription": "Transform your business with Zion Tech Group's revolutionary AI services, quantum cybersecurity, and cutting-edge emerging technologies. Leading the future of technology innovation.",
+      "metaKeywords": "AI services, quantum computing, cybersecurity, emerging technologies, micro SAAS, automation, Zion Tech Group, technology innovation, business transformation",
+      "issues": [],
+      "hasContentIssues": false
+    },
+    {
+      "url": "https://ziontechgroup.com/smart-crm-intelligence-suite/",
+      "title": "Zion Tech Group – Future of Technology | AI, Quantum Computing & Emerging Tech",
+      "textLength": 3678,
+      "headings": 11,
+      "images": 0,
+      "links": 95,
+      "metaDescription": "Transform your business with Zion Tech Group's revolutionary AI services, quantum cybersecurity, and cutting-edge emerging technologies. Leading the future of technology innovation.",
+      "metaKeywords": "AI services, quantum computing, cybersecurity, emerging technologies, micro SAAS, automation, Zion Tech Group, technology innovation, business transformation",
+      "issues": [],
+      "hasContentIssues": false
+    },
+    {
+      "url": "https://ziontechgroup.com/seo-automation-suite/",
+      "title": "Zion Tech Group – Future of Technology | AI, Quantum Computing & Emerging Tech",
+      "textLength": 3721,
+      "headings": 11,
+      "images": 0,
+      "links": 95,
+      "metaDescription": "Transform your business with Zion Tech Group's revolutionary AI services, quantum cybersecurity, and cutting-edge emerging technologies. Leading the future of technology innovation.",
+      "metaKeywords": "AI services, quantum computing, cybersecurity, emerging technologies, micro SAAS, automation, Zion Tech Group, technology innovation, business transformation",
+      "issues": [],
+      "hasContentIssues": false
+    },
+    {
+      "url": "https://ziontechgroup.com/it-asset-discovery-agent/",
+      "title": "Zion Tech Group – Future of Technology | AI, Quantum Computing & Emerging Tech",
+      "textLength": 3916,
+      "headings": 12,
+      "images": 0,
+      "links": 97,
+      "metaDescription": "Transform your business with Zion Tech Group's revolutionary AI services, quantum cybersecurity, and cutting-edge emerging technologies. Leading the future of technology innovation.",
+      "metaKeywords": "AI services, quantum computing, cybersecurity, emerging technologies, micro SAAS, automation, Zion Tech Group, technology innovation, business transformation",
+      "issues": [],
+      "hasContentIssues": false
+    },
+    {
+      "url": "https://ziontechgroup.com/managed-postgres-ha/",
+      "title": "Zion Tech Group – Future of Technology | AI, Quantum Computing & Emerging Tech",
+      "textLength": 4191,
+      "headings": 20,
+      "images": 0,
+      "links": 97,
+      "metaDescription": "Transform your business with Zion Tech Group's revolutionary AI services, quantum cybersecurity, and cutting-edge emerging technologies. Leading the future of technology innovation.",
+      "metaKeywords": "AI services, quantum computing, cybersecurity, emerging technologies, micro SAAS, automation, Zion Tech Group, technology innovation, business transformation",
+      "issues": [],
+      "hasContentIssues": false
+    },
+    {
+      "url": "https://ziontechgroup.com/browser-automation-cloud/",
+      "title": "Zion Tech Group – Future of Technology | AI, Quantum Computing & Emerging Tech",
+      "textLength": 3547,
+      "headings": 11,
+      "images": 0,
+      "links": 97,
+      "metaDescription": "Transform your business with Zion Tech Group's revolutionary AI services, quantum cybersecurity, and cutting-edge emerging technologies. Leading the future of technology innovation.",
+      "metaKeywords": "AI services, quantum computing, cybersecurity, emerging technologies, micro SAAS, automation, Zion Tech Group, technology innovation, business transformation",
+      "issues": [],
+      "hasContentIssues": false
+    },
+    {
+      "url": "https://ziontechgroup.com/secrets-rotation-automation/",
+      "title": "Zion Tech Group – Future of Technology | AI, Quantum Computing & Emerging Tech",
+      "textLength": 3546,
+      "headings": 11,
+      "images": 0,
+      "links": 97,
+      "metaDescription": "Transform your business with Zion Tech Group's revolutionary AI services, quantum cybersecurity, and cutting-edge emerging technologies. Leading the future of technology innovation.",
+      "metaKeywords": "AI services, quantum computing, cybersecurity, emerging technologies, micro SAAS, automation, Zion Tech Group, technology innovation, business transformation",
+      "issues": [],
+      "hasContentIssues": false
+    },
+    {
+      "url": "https://ziontechgroup.com/api-performance-testing/",
+      "title": "Zion Tech Group – Future of Technology | AI, Quantum Computing & Emerging Tech",
+      "textLength": 3501,
+      "headings": 11,
+      "images": 0,
+      "links": 97,
+      "metaDescription": "Transform your business with Zion Tech Group's revolutionary AI services, quantum cybersecurity, and cutting-edge emerging technologies. Leading the future of technology innovation.",
+      "metaKeywords": "AI services, quantum computing, cybersecurity, emerging technologies, micro SAAS, automation, Zion Tech Group, technology innovation, business transformation",
+      "issues": [],
+      "hasContentIssues": false
+    },
+    {
+      "url": "https://ziontechgroup.com/sales-copilot/",
+      "title": "Zion Tech Group – Future of Technology | AI, Quantum Computing & Emerging Tech",
+      "textLength": 3565,
+      "headings": 11,
+      "images": 0,
+      "links": 93,
+      "metaDescription": "Transform your business with Zion Tech Group's revolutionary AI services, quantum cybersecurity, and cutting-edge emerging technologies. Leading the future of technology innovation.",
+      "metaKeywords": "AI services, quantum computing, cybersecurity, emerging technologies, micro SAAS, automation, Zion Tech Group, technology innovation, business transformation",
+      "issues": [],
+      "hasContentIssues": false
+    },
+    {
+      "url": "https://ziontechgroup.com/serverless-cron-manager/",
+      "title": "Zion Tech Group – Future of Technology | AI, Quantum Computing & Emerging Tech",
+      "textLength": 3682,
+      "headings": 11,
+      "images": 0,
+      "links": 93,
+      "metaDescription": "Transform your business with Zion Tech Group's revolutionary AI services, quantum cybersecurity, and cutting-edge emerging technologies. Leading the future of technology innovation.",
+      "metaKeywords": "AI services, quantum computing, cybersecurity, emerging technologies, micro SAAS, automation, Zion Tech Group, technology innovation, business transformation",
+      "issues": [],
+      "hasContentIssues": false
+    },
+    {
+      "url": "https://ziontechgroup.com/sso-in-a-box/",
+      "title": "Zion Tech Group – Future of Technology | AI, Quantum Computing & Emerging Tech",
+      "textLength": 3641,
+      "headings": 11,
+      "images": 0,
+      "links": 96,
+      "metaDescription": "Transform your business with Zion Tech Group's revolutionary AI services, quantum cybersecurity, and cutting-edge emerging technologies. Leading the future of technology innovation.",
+      "metaKeywords": "AI services, quantum computing, cybersecurity, emerging technologies, micro SAAS, automation, Zion Tech Group, technology innovation, business transformation",
+      "issues": [],
+      "hasContentIssues": false
+    },
+    {
+      "url": "https://ziontechgroup.com/status-pages-slo/",
+      "title": "Zion Tech Group – Future of Technology | AI, Quantum Computing & Emerging Tech",
+      "textLength": 3123,
+      "headings": 9,
+      "images": 0,
+      "links": 92,
+      "metaDescription": "Transform your business with Zion Tech Group's revolutionary AI services, quantum cybersecurity, and cutting-edge emerging technologies. Leading the future of technology innovation.",
+      "metaKeywords": "AI services, quantum computing, cybersecurity, emerging technologies, micro SAAS, automation, Zion Tech Group, technology innovation, business transformation",
+      "issues": [],
+      "hasContentIssues": false
+    },
+    {
+      "url": "https://ziontechgroup.com/synthetic-monitor-recorder/",
+      "title": "Zion Tech Group – Future of Technology | AI, Quantum Computing & Emerging Tech",
+      "textLength": 3123,
+      "headings": 9,
+      "images": 0,
+      "links": 92,
+      "metaDescription": "Transform your business with Zion Tech Group's revolutionary AI services, quantum cybersecurity, and cutting-edge emerging technologies. Leading the future of technology innovation.",
+      "metaKeywords": "AI services, quantum computing, cybersecurity, emerging technologies, micro SAAS, automation, Zion Tech Group, technology innovation, business transformation",
+      "issues": [],
+      "hasContentIssues": false
+    },
+    {
+      "url": "https://ziontechgroup.com/tls-certificate-monitor/",
+      "title": "Zion Tech Group – Future of Technology | AI, Quantum Computing & Emerging Tech",
+      "textLength": 3864,
+      "headings": 12,
+      "images": 0,
+      "links": 97,
+      "metaDescription": "Transform your business with Zion Tech Group's revolutionary AI services, quantum cybersecurity, and cutting-edge emerging technologies. Leading the future of technology innovation.",
+      "metaKeywords": "AI services, quantum computing, cybersecurity, emerging technologies, micro SAAS, automation, Zion Tech Group, technology innovation, business transformation",
+      "issues": [],
+      "hasContentIssues": false
+    },
+    {
+      "url": "https://ziontechgroup.com/uptime-slo-monitor/",
+      "title": "Zion Tech Group – Future of Technology | AI, Quantum Computing & Emerging Tech",
+      "textLength": 3570,
+      "headings": 11,
+      "images": 0,
+      "links": 93,
+      "metaDescription": "Transform your business with Zion Tech Group's revolutionary AI services, quantum cybersecurity, and cutting-edge emerging technologies. Leading the future of technology innovation.",
+      "metaKeywords": "AI services, quantum computing, cybersecurity, emerging technologies, micro SAAS, automation, Zion Tech Group, technology innovation, business transformation",
+      "issues": [],
+      "hasContentIssues": false
+    },
+    {
+      "url": "https://ziontechgroup.com/comprehensive-services-showcase-2025/",
+      "title": "Zion Tech Group – Future of Technology | AI, Quantum Computing & Emerging Tech",
+      "textLength": 35094,
+      "headings": 192,
+      "images": 0,
+      "links": 191,
+      "metaDescription": "Transform your business with Zion Tech Group's revolutionary AI services, quantum cybersecurity, and cutting-edge emerging technologies. Leading the future of technology innovation.",
+      "metaKeywords": "AI services, quantum computing, cybersecurity, emerging technologies, micro SAAS, automation, Zion Tech Group, technology innovation, business transformation",
+      "issues": [],
+      "hasContentIssues": false
+    },
+    {
+      "url": "https://ziontechgroup.com/pricing/",
+      "title": "Zion Tech Group – Future of Technology | AI, Quantum Computing & Emerging Tech",
+      "textLength": 9779,
+      "headings": 54,
+      "images": 0,
+      "links": 193,
+      "metaDescription": "Transform your business with Zion Tech Group's revolutionary AI services, quantum cybersecurity, and cutting-edge emerging technologies. Leading the future of technology innovation.",
+      "metaKeywords": "AI services, quantum computing, cybersecurity, emerging technologies, micro SAAS, automation, Zion Tech Group, technology innovation, business transformation",
+      "issues": [],
+      "hasContentIssues": false
+    },
+    {
+      "url": "https://ziontechgroup.com/market-pricing/",
+      "title": "Zion Tech Group – Future of Technology | AI, Quantum Computing & Emerging Tech",
+      "textLength": 12432,
+      "headings": 52,
+      "images": 0,
+      "links": 230,
+      "metaDescription": "Transform your business with Zion Tech Group's revolutionary AI services, quantum cybersecurity, and cutting-edge emerging technologies. Leading the future of technology innovation.",
+      "metaKeywords": "AI services, quantum computing, cybersecurity, emerging technologies, micro SAAS, automation, Zion Tech Group, technology innovation, business transformation",
+      "issues": [],
+      "hasContentIssues": false
+    },
+    {
+      "url": "https://ziontechgroup.com/about/",
+      "title": "Zion Tech Group – Future of Technology | AI, Quantum Computing & Emerging Tech",
+      "textLength": 8114,
+      "headings": 32,
+      "images": 0,
+      "links": 186,
+      "metaDescription": "Transform your business with Zion Tech Group's revolutionary AI services, quantum cybersecurity, and cutting-edge emerging technologies. Leading the future of technology innovation.",
+      "metaKeywords": "AI services, quantum computing, cybersecurity, emerging technologies, micro SAAS, automation, Zion Tech Group, technology innovation, business transformation",
+      "issues": [],
+      "hasContentIssues": false
+    },
+    {
+      "url": "https://ziontechgroup.com/support/",
+      "title": "Zion Tech Group – Future of Technology | AI, Quantum Computing & Emerging Tech",
+      "textLength": 4647,
+      "headings": 21,
+      "images": 0,
+      "links": 98,
+      "metaDescription": "Transform your business with Zion Tech Group's revolutionary AI services, quantum cybersecurity, and cutting-edge emerging technologies. Leading the future of technology innovation.",
+      "metaKeywords": "AI services, quantum computing, cybersecurity, emerging technologies, micro SAAS, automation, Zion Tech Group, technology innovation, business transformation",
+      "issues": [],
+      "hasContentIssues": false
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/",
+      "title": "Zion Tech Group – Future of Technology | AI, Quantum Computing & Emerging Tech",
+      "textLength": 8214,
+      "headings": 30,
+      "images": 0,
+      "links": 193,
+      "metaDescription": "Transform your business with Zion Tech Group's revolutionary AI services, quantum cybersecurity, and cutting-edge emerging technologies. Leading the future of technology innovation.",
+      "metaKeywords": "AI services, quantum computing, cybersecurity, emerging technologies, micro SAAS, automation, Zion Tech Group, technology innovation, business transformation",
+      "issues": [],
+      "hasContentIssues": false
+    },
+    {
+      "url": "https://ziontechgroup.com/careers/",
+      "title": "Zion Tech Group – Future of Technology | AI, Quantum Computing & Emerging Tech",
+      "textLength": 11717,
+      "headings": 54,
+      "images": 0,
+      "links": 192,
+      "metaDescription": "Transform your business with Zion Tech Group's revolutionary AI services, quantum cybersecurity, and cutting-edge emerging technologies. Leading the future of technology innovation.",
+      "metaKeywords": "AI services, quantum computing, cybersecurity, emerging technologies, micro SAAS, automation, Zion Tech Group, technology innovation, business transformation",
+      "issues": [],
+      "hasContentIssues": false
+    },
+    {
+      "url": "https://ziontechgroup.com/partners/",
+      "title": "Zion Tech Group – Future of Technology | AI, Quantum Computing & Emerging Tech",
+      "textLength": 3273,
+      "headings": 10,
+      "images": 0,
+      "links": 92,
+      "metaDescription": "Transform your business with Zion Tech Group's revolutionary AI services, quantum cybersecurity, and cutting-edge emerging technologies. Leading the future of technology innovation.",
+      "metaKeywords": "AI services, quantum computing, cybersecurity, emerging technologies, micro SAAS, automation, Zion Tech Group, technology innovation, business transformation",
+      "issues": [],
+      "hasContentIssues": false
+    },
+    {
+      "url": "https://ziontechgroup.com/investors/",
+      "title": "Zion Tech Group – Future of Technology | AI, Quantum Computing & Emerging Tech",
+      "textLength": 3257,
+      "headings": 10,
+      "images": 0,
+      "links": 92,
+      "metaDescription": "Transform your business with Zion Tech Group's revolutionary AI services, quantum cybersecurity, and cutting-edge emerging technologies. Leading the future of technology innovation.",
+      "metaKeywords": "AI services, quantum computing, cybersecurity, emerging technologies, micro SAAS, automation, Zion Tech Group, technology innovation, business transformation",
+      "issues": [],
+      "hasContentIssues": false
+    },
+    {
+      "url": "https://ziontechgroup.com/privacy/",
+      "title": "Zion Tech Group – Future of Technology | AI, Quantum Computing & Emerging Tech",
+      "textLength": 4399,
+      "headings": 16,
+      "images": 0,
+      "links": 94,
+      "metaDescription": "Transform your business with Zion Tech Group's revolutionary AI services, quantum cybersecurity, and cutting-edge emerging technologies. Leading the future of technology innovation.",
+      "metaKeywords": "AI services, quantum computing, cybersecurity, emerging technologies, micro SAAS, automation, Zion Tech Group, technology innovation, business transformation",
+      "issues": [],
+      "hasContentIssues": false
+    },
+    {
+      "url": "https://ziontechgroup.com/terms/",
+      "title": "Zion Tech Group – Future of Technology | AI, Quantum Computing & Emerging Tech",
+      "textLength": 5393,
+      "headings": 18,
+      "images": 0,
+      "links": 92,
+      "metaDescription": "Transform your business with Zion Tech Group's revolutionary AI services, quantum cybersecurity, and cutting-edge emerging technologies. Leading the future of technology innovation.",
+      "metaKeywords": "AI services, quantum computing, cybersecurity, emerging technologies, micro SAAS, automation, Zion Tech Group, technology innovation, business transformation",
+      "issues": [],
+      "hasContentIssues": false
+    },
+    {
+      "url": "https://ziontechgroup.com/security/",
+      "title": "Zion Tech Group – Future of Technology | AI, Quantum Computing & Emerging Tech",
+      "textLength": 4221,
+      "headings": 17,
+      "images": 0,
+      "links": 94,
+      "metaDescription": "Transform your business with Zion Tech Group's revolutionary AI services, quantum cybersecurity, and cutting-edge emerging technologies. Leading the future of technology innovation.",
+      "metaKeywords": "AI services, quantum computing, cybersecurity, emerging technologies, micro SAAS, automation, Zion Tech Group, technology innovation, business transformation",
+      "issues": [],
+      "hasContentIssues": false
+    },
+    {
+      "url": "https://ziontechgroup.com/_next/static/chunks/polyfills-42372ed130431b0a.js",
+      "title": "",
+      "textLength": 75520,
+      "headings": 0,
+      "images": 0,
+      "links": 2,
+      "metaDescription": "",
+      "metaKeywords": "",
+      "issues": [
+        "Short or missing title",
+        "No headings found",
+        "Missing meta description",
+        "Meta description too short"
+      ],
+      "hasContentIssues": true
+    },
+    {
+      "url": "https://ziontechgroup.com/_next/static/chunks/webpack-e219339f62a4a96e.js",
+      "title": "",
+      "textLength": 960,
+      "headings": 0,
+      "images": 0,
+      "links": 0,
+      "metaDescription": "",
+      "metaKeywords": "",
+      "issues": [
+        "Short or missing title",
+        "No headings found",
+        "Missing meta description",
+        "Meta description too short"
+      ],
+      "hasContentIssues": true
+    },
+    {
+      "url": "https://ziontechgroup.com/_next/static/chunks/framework-1548034a53843b9f.js",
+      "title": "",
+      "textLength": 63388,
+      "headings": 0,
+      "images": 0,
+      "links": 0,
+      "metaDescription": "",
+      "metaKeywords": "",
+      "issues": [
+        "Short or missing title",
+        "No headings found",
+        "Missing meta description",
+        "Meta description too short"
+      ],
+      "hasContentIssues": true
+    },
+    {
+      "url": "https://ziontechgroup.com/_next/static/chunks/main-9ff70c445fcad225.js",
+      "title": "",
+      "textLength": 118293,
+      "headings": 0,
+      "images": 0,
+      "links": 0,
+      "metaDescription": "",
+      "metaKeywords": "",
+      "issues": [
+        "Short or missing title",
+        "No headings found",
+        "Missing meta description",
+        "Meta description too short"
+      ],
+      "hasContentIssues": true
+    },
+    {
+      "url": "https://ziontechgroup.com/_next/static/chunks/pages/_app-fdcfa4ae11cb1205.js",
+      "title": "",
+      "textLength": 185665,
+      "headings": 0,
+      "images": 0,
+      "links": 0,
+      "metaDescription": "",
+      "metaKeywords": "",
+      "issues": [
+        "Short or missing title",
+        "No headings found",
+        "Missing meta description",
+        "Meta description too short"
+      ],
+      "hasContentIssues": true
+    },
+    {
+      "url": "https://ziontechgroup.com/_next/static/chunks/4808-64817caa03158d5e.js",
+      "title": "",
+      "textLength": 176010,
+      "headings": 0,
+      "images": 0,
+      "links": 0,
+      "metaDescription": "",
+      "metaKeywords": "",
+      "issues": [
+        "Short or missing title",
+        "No headings found",
+        "Missing meta description",
+        "Meta description too short"
+      ],
+      "hasContentIssues": true
+    },
+    {
+      "url": "https://ziontechgroup.com/_next/static/chunks/pages/index-ab3b71c171eeaec2.js",
+      "title": "",
+      "textLength": 39617,
+      "headings": 0,
+      "images": 0,
+      "links": 0,
+      "metaDescription": "",
+      "metaKeywords": "",
+      "issues": [
+        "Short or missing title",
+        "No headings found",
+        "Missing meta description",
+        "Meta description too short"
+      ],
+      "hasContentIssues": true
+    },
+    {
+      "url": "https://ziontechgroup.com/_next/static/VoueYmaOg_Q3KSe7Vpw0C/_buildManifest.js",
+      "title": "",
+      "textLength": 36975,
+      "headings": 0,
+      "images": 0,
+      "links": 0,
+      "metaDescription": "",
+      "metaKeywords": "",
+      "issues": [
+        "Short or missing title",
+        "No headings found",
+        "Missing meta description",
+        "Meta description too short"
+      ],
+      "hasContentIssues": true
+    },
+    {
+      "url": "https://ziontechgroup.com/_next/static/VoueYmaOg_Q3KSe7Vpw0C/_ssgManifest.js",
+      "title": "",
+      "textLength": 123,
+      "headings": 0,
+      "images": 0,
+      "links": 0,
+      "metaDescription": "",
+      "metaKeywords": "",
+      "issues": [
+        "Short or missing title",
+        "No headings found",
+        "No images and minimal text",
+        "Missing meta description",
+        "Meta description too short"
+      ],
+      "hasContentIssues": true
+    },
+    {
+      "url": "https://ziontechgroup.com/_next/static/css/9281571ab1c679b1.css",
+      "title": "",
+      "textLength": 36193,
+      "headings": 0,
+      "images": 0,
+      "links": 0,
+      "metaDescription": "",
+      "metaKeywords": "",
+      "issues": [
+        "Short or missing title",
+        "No headings found",
+        "Missing meta description",
+        "Meta description too short"
+      ],
+      "hasContentIssues": true
+    }
+  ],
+  "sitemapIssues": [
+    "https://ziontechgroup.com/2026-services-showcase-enhanced/",
+    "https://ziontechgroup.com/2026-services-showcase/",
+    "https://ziontechgroup.com/2027-services-showcase/",
+    "https://ziontechgroup.com/2028-services-showcase/",
+    "https://ziontechgroup.com/2029-comprehensive-pricing/",
+    "https://ziontechgroup.com/2029-innovative-services-showcase/",
+    "https://ziontechgroup.com/2029-ultra-futuristic-innovations/",
+    "https://ziontechgroup.com/2034-innovations/",
+    "https://ziontechgroup.com/404/",
+    "https://ziontechgroup.com/500/",
+    "https://ziontechgroup.com/5g-enterprise-network/",
+    "https://ziontechgroup.com/5g-enterprise-solutions/",
+    "https://ziontechgroup.com/5g-network-optimization/",
+    "https://ziontechgroup.com/5g-private-network-solutions-2026/",
+    "https://ziontechgroup.com/5g-private-network-solutions/",
+    "https://ziontechgroup.com/about/",
+    "https://ziontechgroup.com/accessibility-auditor/",
+    "https://ziontechgroup.com/accessibility-scanner/",
+    "https://ziontechgroup.com/advanced-ai-automation-services/",
+    "https://ziontechgroup.com/advanced-cybersecurity-suite/",
+    "https://ziontechgroup.com/advanced-it-infrastructure-services/",
+    "https://ziontechgroup.com/advanced-research-automation/",
+    "https://ziontechgroup.com/affiliate-attribution-hub/",
+    "https://ziontechgroup.com/agentic-rag-helpdesk/",
+    "https://ziontechgroup.com/agentic-rag/",
+    "https://ziontechgroup.com/agentic-sales-outreach/",
+    "https://ziontechgroup.com/ai-ad-creative-generator/",
+    "https://ziontechgroup.com/ai-agent-orchestrator/",
+    "https://ziontechgroup.com/ai-agents/",
+    "https://ziontechgroup.com/ai-analytics-copilot/",
+    "https://ziontechgroup.com/ai-assistant/",
+    "https://ziontechgroup.com/ai-automation-services/",
+    "https://ziontechgroup.com/ai-autonomous-business-manager-2029/",
+    "https://ziontechgroup.com/ai-autonomous-business-manager/",
+    "https://ziontechgroup.com/ai-autonomous-business-operations/",
+    "https://ziontechgroup.com/ai-autonomous-business-platform-2026/",
+    "https://ziontechgroup.com/ai-autonomous-business-platform/",
+    "https://ziontechgroup.com/ai-autonomous-business-process-automation/",
+    "https://ziontechgroup.com/ai-autonomous-code-review/",
+    "https://ziontechgroup.com/ai-autonomous-creative-director/",
+    "https://ziontechgroup.com/ai-autonomous-data/",
+    "https://ziontechgroup.com/ai-autonomous-decision-engine/",
+    "https://ziontechgroup.com/ai-autonomous-decision-platform/",
+    "https://ziontechgroup.com/ai-autonomous-devops/",
+    "https://ziontechgroup.com/ai-autonomous-ecosystem-manager/",
+    "https://ziontechgroup.com/ai-autonomous-ecosystem/",
+    "https://ziontechgroup.com/ai-autonomous-education-professor/",
+    "https://ziontechgroup.com/ai-autonomous-healthcare-physician/",
+    "https://ziontechgroup.com/ai-autonomous-learning-system/",
+    "https://ziontechgroup.com/ai-autonomous-legal-counsel/",
+    "https://ziontechgroup.com/ai-autonomous-logistics/",
+    "https://ziontechgroup.com/ai-autonomous-manufacturing/",
+    "https://ziontechgroup.com/ai-autonomous-research-assistant/",
+    "https://ziontechgroup.com/ai-autonomous-research/",
+    "https://ziontechgroup.com/ai-autonomous-robotics/",
+    "https://ziontechgroup.com/ai-autonomous-scientific-researcher/",
+    "https://ziontechgroup.com/ai-autonomous-security/",
+    "https://ziontechgroup.com/ai-autonomous-systems-platform/",
+    "https://ziontechgroup.com/ai-autonomous-testing/",
+    "https://ziontechgroup.com/ai-autonomous-vehicle-platform/",
+    "https://ziontechgroup.com/ai-autonomous-vehicle/",
+    "https://ziontechgroup.com/ai-autonomous-vehicles-platform/",
+    "https://ziontechgroup.com/ai-autonomous-vehicles/",
+    "https://ziontechgroup.com/ai-autonomous-venture-capitalist/",
+    "https://ziontechgroup.com/ai-biomedical-research/",
+    "https://ziontechgroup.com/ai-biotech-drug-discovery/",
+    "https://ziontechgroup.com/ai-blockchain-analytics/",
+    "https://ziontechgroup.com/ai-blockchain-governance/",
+    "https://ziontechgroup.com/ai-brain-computer-interface/",
+    "https://ziontechgroup.com/ai-brain-interface/",
+    "https://ziontechgroup.com/ai-brand-personality-generator/",
+    "https://ziontechgroup.com/ai-business-intelligence-elite-2026/",
+    "https://ziontechgroup.com/ai-business-intelligence-pro/",
+    "https://ziontechgroup.com/ai-business-intelligence-suite-2029/",
+    "https://ziontechgroup.com/ai-business-intelligence-suite/",
+    "https://ziontechgroup.com/ai-business-intelligence/",
+    "https://ziontechgroup.com/ai-climate-prediction-engine/",
+    "https://ziontechgroup.com/ai-climate-prediction-platform/",
+    "https://ziontechgroup.com/ai-climate-prediction/",
+    "https://ziontechgroup.com/ai-code-generation-enterprise/",
+    "https://ziontechgroup.com/ai-code-review-copilot/",
+    "https://ziontechgroup.com/ai-code-review/",
+    "https://ziontechgroup.com/ai-compliance-automation/",
+    "https://ziontechgroup.com/ai-computer-vision-platform/",
+    "https://ziontechgroup.com/ai-consciousness-evolution-2025/",
+    "https://ziontechgroup.com/ai-consciousness-evolution-2029/",
+    "https://ziontechgroup.com/ai-consciousness-evolution-platform/",
+    "https://ziontechgroup.com/ai-consciousness-evolution/",
+    "https://ziontechgroup.com/ai-consciousness-simulation-platform/",
+    "https://ziontechgroup.com/ai-consciousness-simulation/",
+    "https://ziontechgroup.com/ai-consciousness-simulator/",
+    "https://ziontechgroup.com/ai-content-creation-revolution/",
+    "https://ziontechgroup.com/ai-content-creation/",
+    "https://ziontechgroup.com/ai-content-factory/",
+    "https://ziontechgroup.com/ai-content-generation-automation-2033/",
+    "https://ziontechgroup.com/ai-content-generation-pro-2029/",
+    "https://ziontechgroup.com/ai-content-generator/",
+    "https://ziontechgroup.com/ai-content-marketing-automation/",
+    "https://ziontechgroup.com/ai-content-personalization-engine/",
+    "https://ziontechgroup.com/ai-creativity-studio/",
+    "https://ziontechgroup.com/ai-market-research/",
+    "https://ziontechgroup.com/ai-powered-enterprise-security/",
+    "https://ziontechgroup.com/autonomous-devops-platform/",
+    "https://ziontechgroup.com/case-studies/",
+    "https://ziontechgroup.com/cookies/",
+    "https://ziontechgroup.com/docs/",
+    "https://ziontechgroup.com/enterprise-it/",
+    "https://ziontechgroup.com/events/",
+    "https://ziontechgroup.com/micro-saas/",
+    "https://ziontechgroup.com/news/",
+    "https://ziontechgroup.com/quantum-cloud-infrastructure/",
+    "https://ziontechgroup.com/quantum-financial-trading/",
+    "https://ziontechgroup.com/quantum-services/",
+    "https://ziontechgroup.com/research-development/",
+    "https://ziontechgroup.com/services/",
+    "https://ziontechgroup.com/space-tech/",
+    "https://ziontechgroup.com/webinars/",
+    "https://ziontechgroup.com/white-papers/"
+  ],
+  "recommendations": [
+    {
+      "priority": "HIGH",
+      "category": "Broken Links",
+      "description": "Found 278 broken links that need immediate attention",
+      "actions": [
+        "Review and fix all broken internal links",
+        "Update or remove broken external links",
+        "Implement redirects for moved pages",
+        "Set up monitoring for link health"
+      ]
+    },
+    {
+      "priority": "MEDIUM",
+      "category": "Content Quality",
+      "description": "Found 10 pages with content issues",
+      "actions": [
+        "Review pages with minimal content",
+        "Add proper headings and structure",
+        "Ensure all pages have meaningful titles",
+        "Add relevant images and media content",
+        "Add meta descriptions for better SEO"
+      ]
+    },
+    {
+      "priority": "LOW",
+      "category": "External Links",
+      "description": "Found 563 external links",
+      "actions": [
+        "Regularly verify external link validity",
+        "Consider adding nofollow attributes where appropriate",
+        "Monitor external link performance"
+      ]
+    }
+  ]
+}
