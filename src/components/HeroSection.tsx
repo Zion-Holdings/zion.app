@@ -124,23 +124,13 @@ export function HeroSection() {
           variants={itemVariants}
           className="flex flex-col sm:flex-row justify-center gap-6"
         >
-          <Button
-            className="group bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-lg py-6 px-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-            size="lg"
-            asChild
+          <Link
+            to="/signup"
+            className="group bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-lg py-6 px-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 inline-flex items-center justify-center rounded-md font-medium text-white"
           >
-            <Link
-              to="/signup"
-              role="button"
-              aria-label={t('auth.signup')}
-              tabIndex={0}
-              data-testid="hero-signup-btn"
-              className="flex items-center gap-2"
-            >
-              {t('auth.signup')}
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
-            </Link>
-          </Button>
+            {t('auth.signup')}
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
+          </Link>
           
           <Link
             id="browse-marketplace"
