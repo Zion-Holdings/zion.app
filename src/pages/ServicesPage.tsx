@@ -4,9 +4,8 @@ import { ProductListing } from "@/types/listings";
 import { TrustedBySection } from "@/components/TrustedBySection";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Globe, Zap, Brain } from "lucide-react";
+import { Globe } from "lucide-react";
 import { useEffect, useState } from "react";
-import { MICRO_SAAS_SERVICES } from "@/data/microSaasServices";
 
 // Sample service listings
 const SERVICE_LISTINGS: ProductListing[] = [
@@ -121,235 +120,6 @@ const SERVICE_LISTINGS: ProductListing[] = [
     rating: 4.8,
     reviewCount: 85,
   },
-  // New innovative micro SAAS services
-  {
-    id: "service-7",
-    title: "AI-Powered Content Generation",
-    description: "Automated content creation for blogs, social media, and marketing materials using advanced language models.",
-    category: "AI Services",
-    price: 299,
-    currency: "$",
-    tags: ["Content Creation", "AI Writing", "Marketing Automation"],
-    author: {
-      name: "ContentAI Pro",
-      id: "content-ai-pro",
-      avatarUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&h=100",
-    },
-    images: ["https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-03-15T12:00:00.000Z",
-    aiScore: 96,
-    rating: 4.9,
-    reviewCount: 156,
-  },
-  {
-    id: "service-8",
-    title: "Smart Contract Development",
-    description: "Blockchain smart contract development and auditing for DeFi, NFTs, and enterprise blockchain solutions.",
-    category: "Blockchain",
-    price: 3500,
-    currency: "$",
-    tags: ["Smart Contracts", "Blockchain", "DeFi", "NFTs"],
-    author: {
-      name: "BlockChain Solutions",
-      id: "blockchain-solutions",
-      avatarUrl: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=100&h=100",
-    },
-    images: ["https://images.unsplash.com/photo-1639762681057-408e52192e55?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-03-10T14:30:00.000Z",
-    aiScore: 93,
-    rating: 4.8,
-    reviewCount: 89,
-  },
-  {
-    id: "service-9",
-    title: "IoT Device Management Platform",
-    description: "Complete IoT solution including device provisioning, monitoring, data collection, and analytics dashboard.",
-    category: "IoT",
-    price: 1200,
-    currency: "$",
-    tags: ["IoT", "Device Management", "Data Analytics", "Monitoring"],
-    author: {
-      name: "IoT Masters",
-      id: "iot-masters",
-      avatarUrl: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?auto=format&fit=crop&w=100&h=100",
-    },
-    images: ["https://images.unsplash.com/photo-1518709268805-4e9042af2176?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-03-08T09:15:00.000Z",
-    aiScore: 91,
-    rating: 4.7,
-    reviewCount: 67,
-  },
-  {
-    id: "service-10",
-    title: "AI-Powered Customer Support Bot",
-    description: "Intelligent chatbot with natural language processing for 24/7 customer support and lead generation.",
-    category: "AI Services",
-    price: 450,
-    currency: "$",
-    tags: ["Chatbot", "Customer Support", "NLP", "Lead Generation"],
-    author: {
-      name: "BotGenius",
-      id: "bot-genius",
-      avatarUrl: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?auto=format&fit=crop&w=100&h=100",
-    },
-    images: ["https://images.unsplash.com/photo-1551434678-e076c223a5ab?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-03-12T11:45:00.000Z",
-    aiScore: 94,
-    rating: 4.8,
-    reviewCount: 123,
-  },
-  {
-    id: "service-11",
-    title: "Predictive Analytics Dashboard",
-    description: "Real-time business intelligence platform with predictive modeling for sales forecasting and trend analysis.",
-    category: "Analytics",
-    price: 800,
-    currency: "$",
-    tags: ["Predictive Analytics", "Business Intelligence", "Forecasting", "Real-time"],
-    author: {
-      name: "Predictive Insights",
-      id: "predictive-insights",
-      avatarUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=100&h=100",
-    },
-    images: ["https://images.unsplash.com/photo-1460925895917-afdab827c072?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-03-14T16:20:00.000Z",
-    aiScore: 92,
-    rating: 4.7,
-    reviewCount: 78,
-  },
-  {
-    id: "service-12",
-    title: "API Gateway & Management",
-    description: "Enterprise-grade API management platform with rate limiting, authentication, monitoring, and developer portal.",
-    category: "Development",
-    price: 650,
-    currency: "$",
-    tags: ["API Management", "Gateway", "Rate Limiting", "Developer Portal"],
-    author: {
-      name: "API Hub",
-      id: "api-hub",
-      avatarUrl: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=100&h=100",
-    },
-    images: ["https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-03-11T13:10:00.000Z",
-    aiScore: 89,
-    rating: 4.6,
-    reviewCount: 92,
-  },
-  {
-    id: "service-13",
-    title: "Zero-Trust Security Framework",
-    description: "Implementation of zero-trust security architecture with identity verification, micro-segmentation, and continuous monitoring.",
-    category: "Security",
-    price: 4200,
-    currency: "$",
-    tags: ["Zero-Trust", "Identity Verification", "Micro-segmentation", "Security"],
-    author: {
-      name: "SecureZero",
-      id: "secure-zero",
-      avatarUrl: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=100&h=100",
-    },
-    images: ["https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-03-13T10:30:00.000Z",
-    aiScore: 95,
-    rating: 4.9,
-    reviewCount: 134,
-  },
-  {
-    id: "service-14",
-    title: "Multi-Cloud Cost Optimization",
-    description: "Automated cost optimization across AWS, Azure, and Google Cloud with intelligent resource scaling and cost allocation.",
-    category: "Management",
-    price: 550,
-    currency: "$",
-    tags: ["Multi-Cloud", "Cost Optimization", "Resource Scaling", "Automation"],
-    author: {
-      name: "CloudCost Pro",
-      id: "cloudcost-pro",
-      avatarUrl: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=100&h=100",
-    },
-    images: ["https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-03-09T15:45:00.000Z",
-    aiScore: 88,
-    rating: 4.5,
-    reviewCount: 67,
-  },
-  {
-    id: "service-15",
-    title: "AI-Powered Video Analytics",
-    description: "Computer vision platform for video surveillance, object detection, facial recognition, and behavioral analysis.",
-    category: "AI Services",
-    price: 1800,
-    currency: "$",
-    tags: ["Computer Vision", "Video Analytics", "Object Detection", "Facial Recognition"],
-    author: {
-      name: "VisionAI",
-      id: "vision-ai",
-      avatarUrl: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?auto=format&fit=crop&w=100&h=100",
-    },
-    images: ["https://images.unsplash.com/photo-1518709268805-4e9042af2176?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-03-16T08:15:00.000Z",
-    aiScore: 97,
-    rating: 4.9,
-    reviewCount: 189,
-  },
-  {
-    id: "service-16",
-    title: "Edge Computing Platform",
-    description: "Distributed edge computing solution for real-time data processing, IoT applications, and low-latency services.",
-    category: "Infrastructure",
-    price: 2200,
-    currency: "$",
-    tags: ["Edge Computing", "Real-time Processing", "IoT", "Low Latency"],
-    author: {
-      name: "EdgeTech Solutions",
-      id: "edgetech-solutions",
-      avatarUrl: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?auto=format&fit=crop&w=100&h=100",
-    },
-    images: ["https://images.unsplash.com/photo-1518709268805-4e9042af2176?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-03-17T12:00:00.000Z",
-    aiScore: 90,
-    rating: 4.6,
-    reviewCount: 73,
-  },
-  {
-    id: "service-17",
-    title: "Quantum Computing Consulting",
-    description: "Expert guidance on quantum computing applications, algorithm development, and quantum-safe cryptography.",
-    category: "Consulting",
-    price: 15000,
-    currency: "$",
-    tags: ["Quantum Computing", "Algorithm Development", "Cryptography", "Future Tech"],
-    author: {
-      name: "Quantum Insights",
-      id: "quantum-insights",
-      avatarUrl: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?auto=format&fit=crop&w=100&h=100",
-    },
-    images: ["https://images.unsplash.com/photo-1518709268805-4e9042af2176?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-03-18T14:30:00.000Z",
-    aiScore: 98,
-    rating: 5.0,
-    reviewCount: 45,
-  },
-  {
-    id: "service-18",
-    title: "Green IT Sustainability Platform",
-    description: "Comprehensive platform for measuring, monitoring, and reducing IT carbon footprint with sustainability reporting.",
-    category: "Sustainability",
-    price: 750,
-    currency: "$",
-    tags: ["Green IT", "Sustainability", "Carbon Footprint", "Reporting"],
-    author: {
-      name: "GreenTech Solutions",
-      id: "greentech-solutions",
-      avatarUrl: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?auto=format&fit=crop&w=100&h=100",
-    },
-    images: ["https://images.unsplash.com/photo-1518709268805-4e9042af2176?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-03-19T09:45:00.000Z",
-    aiScore: 87,
-    rating: 4.5,
-    reviewCount: 56,
-  }
 ];
 
 function getRandomItem<T>(arr: T[]): T {
@@ -449,15 +219,10 @@ const SERVICE_FILTERS = [
   { label: 'Analytics', value: 'analytics' },
   { label: 'Consulting', value: 'consulting' },
   { label: 'Strategy', value: 'strategy' },
-  { label: 'AI Services', value: 'ai-services' },
-  { label: 'Blockchain', value: 'blockchain' },
-  { label: 'IoT', value: 'iot' },
-  { label: 'Infrastructure', value: 'infrastructure' },
-  { label: 'Sustainability', value: 'sustainability' },
 ];
 
 export default function ServicesPage() {
-  const [listings, setListings] = useState<ProductListing[]>([...SERVICE_LISTINGS, ...MICRO_SAAS_SERVICES]);
+  const [listings, setListings] = useState<ProductListing[]>(SERVICE_LISTINGS);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -473,22 +238,22 @@ export default function ServicesPage() {
         <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <h2 className="text-white text-lg font-medium">Featured Services</h2>
           <div className="flex flex-wrap gap-2">
-            <Link to="/services-overview">
-              <Button variant="outline" className="border-zion-cyan text-zion-cyan hover:bg-zion-cyan/10">
+            <Link to="/expanded-services">
+              <Button variant="outline" className="border-zion-purple text-zion-cyan hover:bg-zion-purple/10">
                 <Globe className="h-4 w-4 mr-2" />
                 View All Services
+              </Button>
+            </Link>
+            <Link to="/pricing-guide">
+              <Button variant="outline" className="border-zion-purple text-zion-cyan hover:bg-zion-purple/10">
+                <Globe className="h-4 w-4 mr-2" />
+                Pricing Guide
               </Button>
             </Link>
             <Link to="/it-onsite-services">
               <Button variant="outline" className="border-zion-purple text-zion-cyan hover:bg-zion-purple/10">
                 <Globe className="h-4 w-4 mr-2" />
                 Global IT Onsite Services
-              </Button>
-            </Link>
-            <Link to="/micro-saas-services">
-              <Button variant="outline" className="border-zion-purple text-zion-cyan hover:bg-zion-purple/10">
-                <Brain className="h-4 w-4 mr-2" />
-                Micro SAAS Solutions
               </Button>
             </Link>
             <Link to="/request-quote">
