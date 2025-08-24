@@ -7,6 +7,9 @@ import { InteractivePortfolio } from "../components/InteractivePortfolio";
 import { PerformanceMonitor } from "../components/PerformanceMonitor";
 import { AIChatAssistant } from "../components/AIChatAssistant";
 import { AnalyticsDashboard } from "../components/AnalyticsDashboard";
+import { CollaborationPlatform } from "../components/CollaborationPlatform";
+import { ProjectManagementDashboard } from "../components/ProjectManagementDashboard";
+import { AdvancedNotificationSystem } from "../components/AdvancedNotificationSystem";
 
 export default function Home() {
   return (
@@ -129,6 +132,70 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Revolutionary Features Section */}
+      <section className="py-16 bg-gradient-to-br from-zion-purple/5 to-zion-emerald/5">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-zion-slate mb-4">
+              Revolutionary Features
+            </h2>
+            <p className="text-lg text-zion-slate-light max-w-3xl mx-auto">
+              Experience the future of technology with our groundbreaking capabilities
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="bg-white dark:bg-zion-slate p-8 rounded-2xl border border-zion-slate-light hover:shadow-xl transition-all duration-300">
+              <div className="w-16 h-16 bg-gradient-to-br from-zion-purple to-zion-cyan rounded-2xl flex items-center justify-center mb-6">
+                <span className="text-white text-3xl">🎥</span>
+              </div>
+              <h3 className="text-2xl font-bold text-zion-slate mb-4">Real-Time Collaboration</h3>
+              <p className="text-zion-slate-light mb-6">
+                Advanced video conferencing with screen sharing, AI-powered meeting insights, and seamless team collaboration tools.
+              </p>
+              <ul className="space-y-2 text-zion-slate-light">
+                <li className="flex items-center gap-2">
+                  <span className="w-2 h-2 bg-zion-purple rounded-full"></span>
+                  HD video & audio quality
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="w-2 h-2 bg-zion-purple rounded-full"></span>
+                  Screen sharing & recording
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="w-2 h-2 bg-zion-purple rounded-full"></span>
+                  AI meeting transcription
+                </li>
+              </ul>
+            </div>
+            
+            <div className="bg-white dark:bg-zion-slate p-8 rounded-2xl border border-zion-slate-light hover:shadow-xl transition-all duration-300">
+              <div className="w-16 h-16 bg-gradient-to-br from-zion-emerald to-zion-gold rounded-2xl flex items-center justify-center mb-6">
+                <span className="text-white text-3xl">📋</span>
+              </div>
+              <h3 className="text-2xl font-bold text-zion-slate mb-4">Project Management</h3>
+              <p className="text-zion-slate-light mb-6">
+                Comprehensive project tracking with Gantt charts, task management, and real-time progress monitoring.
+              </p>
+              <ul className="space-y-2 text-zion-slate-light">
+                <li className="flex items-center gap-2">
+                  <span className="w-2 h-2 bg-zion-emerald rounded-full"></span>
+                  Gantt chart visualization
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="w-2 h-2 bg-zion-emerald rounded-full"></span>
+                  Team collaboration tools
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="w-2 h-2 bg-zion-emerald rounded-full"></span>
+                  Budget & timeline tracking
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Stats Section */}
       <section className="py-16 bg-gradient-to-r from-zion-blue-dark to-zion-slate">
         <div className="container mx-auto px-4">
@@ -205,10 +272,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Floating Tools */}
+      {/* Floating Tools - Enterprise Suite */}
       <PerformanceMonitor />
       <AIChatAssistant />
       <AnalyticsDashboard />
+      <CollaborationPlatform />
+      <ProjectManagementDashboard />
+      <AdvancedNotificationSystem />
     </div>
   );
 }
