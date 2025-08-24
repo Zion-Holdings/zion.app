@@ -1,57 +1,116 @@
-import React from 'react';
+import type { NextPage } from 'next';
 import Head from 'next/head';
+import Link from 'next/link';
+import { useTranslation } from 'react-i18next';
 
-export default function HomePage() {
+const FeatureCard = ({ title, desc }: { title: string; desc: string }) => (
+  <div className="neon-card p-5">
+    <h3 className="font-semibold text-lg mb-1">{title}</h3>
+    <p className="text-sm opacity-80">{desc}</p>
+  </div>
+);
+
+const Home: NextPage = () => {
+  const { t } = useTranslation();
   return (
-    <>
+    <div>
       <Head>
-        <title>Zion — Autonomous Cloud Automations</title>
-        <meta name="description" content="Fully autonomous cloud automations: self-healing, analysis, optimization, and releases." />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Zion AI Marketplace</title>
+        <meta name="description" content="Zion AI Marketplace" />
       </Head>
-      <main className="relative overflow-hidden">
-        <div className="bg-aurora a" />
-        <div className="bg-aurora b" />
-        <div className="grid-overlay" />
-        <div className="floating-dots" />
 
-        <section className="relative z-10 max-w-6xl mx-auto px-4 py-20 text-center">
-          <h1 className="animated-gradient-text neon-text text-4xl md:text-6xl font-extrabold tracking-tight">Autonomous Cloud Automations</h1>
-          <p className="mt-4 text-gray-200 max-w-2xl mx-auto">Runs 100% in the cloud. No servers. No humans. Continuous improvements synced back to this repository.</p>
-          <div className="mt-8 flex flex-wrap gap-4 justify-center">
-            <a href="https://github.com/Zion-Holdings/zion.app/actions" className="button-glow px-5 py-2 rounded bg-indigo-600 text-white">View Live Workflows</a>
-            <a href="/docs/AUTONOMOUS_AUTOMATIONS.md" className="button-glow px-5 py-2 rounded bg-cyan-600 text-white">Read Automation Docs</a>
+      <section className="futuristic-hero relative min-h-[70vh] flex items-center justify-center text-center bg-black text-white">
+        <div className="animated-gradient"></div>
+        <div className="grid-overlay"></div>
+        <div className="noise"></div>
+        <div className="orb cyan floating" style={{ top: '10%', left: '10%' }}></div>
+        <div className="orb purple floating" style={{ top: '0%', right: '8%' }}></div>
+        <div className="orb pink floating" style={{ bottom: '0%', left: '40%' }}></div>
+
+        <div className="relative z-10 container mx-auto px-6 py-20">
+          <div className="badge-future mx-auto mb-4 w-max">
+            <span className="fi fi-us"></span>
+            <span>Multilingual + Autonomous</span>
+          </div>
+          <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight neon-glow">
+            Build, Deploy, and Monetize AI — Globally, Autonomously
+          </h1>
+          <p className="mt-4 text-lg md:text-xl opacity-90 max-w-3xl mx-auto">
+            The Zion AI Marketplace connects global buyers and AI operators with autonomous workflows, instant localization, and futuristic developer UX.
+          </p>
+          <div className="mt-8 flex items-center justify-center gap-3">
+            <button className="button-neon px-5 py-3">{t('cta.post_job')}</button>
+            <button className="button-neon px-5 py-3 border border-white/20 bg-transparent">{t('cta.create_profile')}</button>
+          </div>
+        </div>
+      </section>
+
+      <main className="space-y-16 container mx-auto px-6 py-12">
+        <section className="space-y-6">
+          <h2 className="text-2xl md:text-3xl font-bold">Why Zion</h2>
+          <div className="grid md:grid-cols-3 gap-4">
+            <FeatureCard title="Global by Default" desc="i18n with RTL support, auto language detection, and AI translation backfill." />
+            <FeatureCard title="Operator-First" desc="AI workflows that translate, tag, summarize, and optimize content automatically." />
+            <FeatureCard title="Launch Fast" desc="Modern design system, responsive UI, and neon-glass visuals that stand out." />
           </div>
         </section>
 
-        <section className="relative z-10 max-w-6xl mx-auto px-4 pb-20 grid md:grid-cols-3 gap-6">
-          <GlassCard title="Spec-Dev & Alignment" desc="Continuously scans specs and site, applies targeted fixes and updates automatically." />
-          <GlassCard title="Self-Healing & Linting" desc="Finds and fixes errors, empty files, and conventions across the codebase." />
-          <GlassCard title="UI Evolution" desc="Analyzes and beautifies UI for consistency, accessibility, and performance." />
-          <GlassCard title="Responsive & Links" desc="Ensures responsive content and fixes broken links site-wide." />
-          <GlassCard title="Dependencies" desc="Daily patch bumps and weekly minor updates keep the stack fresh and secure." />
-          <GlassCard title="Image Optimization" desc="Optimizes images automatically to keep page loads fast." />
+        <div className="hr-future" />
+
+        <section className="space-y-6">
+          <h2 className="text-2xl md:text-3xl font-bold">Capabilities</h2>
+          <div className="grid md:grid-cols-3 gap-4">
+            <FeatureCard title="Autonomous Agents" desc="Release notes, taxonomy tagging, SEO audit, market signals, and translation sync." />
+            <FeatureCard title="Marketplace Integrations" desc="Connect talent, services, and AI solutions end-to-end." />
+            <FeatureCard title="Scalable Infrastructure" desc="Cloud-native, CI/CD automation, and continuous improvement workflows." />
+          </div>
         </section>
 
-        <section className="relative z-10 max-w-6xl mx-auto px-4 pb-24">
-          <h2 className="animated-gradient-text text-2xl font-bold mb-3">How it works</h2>
-          <ol className="list-decimal list-inside text-gray-200 space-y-1">
-            <li>Workflows run on schedules and on-demand in GitHub-hosted runners.</li>
-            <li>Automations perform analysis, fixes, and optimization using npm scripts.</li>
-            <li>Changes are committed back to the current branch with safe concurrency guards.</li>
-            <li>Prereleases are tagged automatically when updates land.</li>
-          </ol>
+        <div className="hr-future" />
+
+        <section className="space-y-6">
+          <h2 className="text-2xl md:text-3xl font-bold">Benefits</h2>
+          <div className="grid md:grid-cols-3 gap-4">
+            <FeatureCard title="Faster Go-To-Market" desc="Automations eliminate repetitive work and keep content aligned." />
+            <FeatureCard title="Global Reach" desc="Serve English, Portuguese, Spanish, and Arabic audiences from day one." />
+            <FeatureCard title="Always On" desc="Cloud agents run on schedules and commit results automatically." />
+          </div>
+        </section>
+
+        <div className="hr-future" />
+
+        <section className="space-y-4">
+          <h2 className="text-2xl md:text-3xl font-bold">Autonomous Cloud Agents</h2>
+          <ul className="grid md:grid-cols-3 gap-4">
+            <li className="neon-card p-4">
+              <h3 className="font-semibold"><Link href="/auto/language-sync">Global Language Sync Agent</Link></h3>
+              <p className="text-sm opacity-80">Backfills missing translations and keeps locale files fresh.</p>
+            </li>
+            <li className="neon-card p-4">
+              <h3 className="font-semibold"><Link href="/auto/market-signals">AI Market Signals Agent</Link></h3>
+              <p className="text-sm opacity-80">Curates AI/tech trends daily and stores reports.</p>
+            </li>
+            <li className="neon-card p-4">
+              <h3 className="font-semibold"><Link href="/auto/seo-audit">Autonomous SEO Auditor</Link></h3>
+              <p className="text-sm opacity-80">Finds SEO gaps and generates actionable reports.</p>
+            </li>
+            <li className="neon-card p-4">
+              <h3 className="font-semibold"><Link href="/auto/release-notes-agent">AI Release Notes Agent</Link></h3>
+              <p className="text-sm opacity-80">Summarizes daily commits into readable release notes.</p>
+            </li>
+            <li className="neon-card p-4">
+              <h3 className="font-semibold"><Link href="/auto/taxonomy-agent">AI Taxonomy Tagger</Link></h3>
+              <p className="text-sm opacity-80">Suggests page tags to improve discovery.</p>
+            </li>
+            <li className="neon-card p-4">
+              <h3 className="font-semibold"><Link href="/public/hreflang.xml">Hreflang Generator</Link></h3>
+              <p className="text-sm opacity-80">Keeps alternate language hreflang links up to date.</p>
+            </li>
+          </ul>
         </section>
       </main>
-    </>
-  );
-}
-
-function GlassCard({ title, desc }: { title: string; desc: string }) {
-  return (
-    <div className="glass rounded-xl p-5 text-white">
-      <div className="font-semibold">{title}</div>
-      <div className="text-sm text-gray-200 mt-1">{desc}</div>
     </div>
   );
-}
+};
+
+export default Home;
