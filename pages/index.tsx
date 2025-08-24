@@ -217,14 +217,9 @@ export default function Home() {
                { title: 'Automation Guardian (10m)', desc: 'Runs improvement, orchestrators, quick fixes and syncs to main.', href: '/.netlify/functions/automation-guardian-runner' },
                { title: 'Auto Discovery Runner (30m)', desc: 'Discovers and runs high‑value orchestrators autonomously.', href: '/.netlify/functions/auto-discovery-runner' },
                { title: 'Cloud Autonomous Orchestrator (15m)', desc: 'Runs cloud orchestrations, then syncs and rebuilds.', href: '/.netlify/functions/cloud-autonomous-orchestrator-runner' },
-               { title: 'Smart Redirect Manager', desc: 'Fixes internal 404s by auto-adding redirects; writes a public report.', href: '/.netlify/functions/redirect-manager' },
-               { title: 'A11y Alt-Text Auditor', desc: 'Scans for missing alt text and publishes a report.', href: '/.netlify/functions/a11y-audit-runner' },
                { title: 'Branch Cleanup Runner (daily)', desc: 'Deletes merged or stale ephemeral branches via GitHub API.', href: '/.netlify/functions/branch-cleanup-runner' },
-               { title: 'Redirect Healer', desc: 'Heals broken internal links by auto-adding smart redirects.', href: '/.netlify/functions/redirect-healer' },
-               { title: 'Sitemap Prioritizer', desc: 'Regenerates sitemap with popularity-weighted priorities.', href: '/.netlify/functions/sitemap-prioritizer' },
-               { title: 'Performance Budget Enforcer', desc: 'Scans public assets against size budgets; writes reports and commits.', href: '/.netlify/functions/perf-budget-enforcer' },
-               { title: 'Stale Content Refresher', desc: 'Finds stale docs/pages and publishes a refresh report.', href: '/.netlify/functions/stale-content-refresher' },
-               { title: 'Docs Glossary Builder', desc: 'Builds a glossary from docs headings and commits to the repo.', href: '/.netlify/functions/docs-glossary-builder' },
+               { title: 'Content Freshness Auditor (20m)', desc: 'Ranks stale pages/docs and publishes a freshness report.', href: '/.netlify/functions/content-freshness-auditor' },
+               { title: 'Dependency Intelligence Upgrader (30m)', desc: 'Performs safe dependency updates and syncs to main.', href: '/.netlify/functions/dependency-intelligence-upgrader' },
             ].map((tool) => (
               <a key={tool.title} href={tool.href} className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
                 <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />

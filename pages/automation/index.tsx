@@ -86,6 +86,16 @@ export default function AutomationHub() {
             <p className="text-white/70">High-frequency orchestrator that chains innovation + integrity.</p>
             <a className="text-cyan-300 underline" href="/.netlify/functions/autonomous-cloud-maximizer" target="_blank" rel="noopener">Trigger / View</a>
           </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Content Freshness Auditor</h2>
+            <p className="text-white/70">Ranks stale pages/docs and publishes a freshness report.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/content-freshness-auditor" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Dependency Intelligence Upgrader</h2>
+            <p className="text-white/70">Performs safe dependency updates and syncs to main.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/dependency-intelligence-upgrader" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
         </ul>
       </main>
     </div>
