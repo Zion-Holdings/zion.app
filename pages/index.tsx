@@ -22,6 +22,7 @@ import AdvancedClientPortal from '../components/AdvancedClientPortal';
 import AdvancedTimeTracking from '../components/AdvancedTimeTracking';
 import AdvancedInvoiceManagement from '../components/AdvancedInvoiceManagement';
 import AdvancedTeamScheduling from '../components/AdvancedTeamScheduling';
+import AdvancedPerformanceDashboard from '../components/AdvancedPerformanceDashboard';
 
 const Home: NextPage = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -306,6 +307,9 @@ const Home: NextPage = () => {
 
         {/* Advanced Team Scheduling Section */}
         <AdvancedTeamScheduling />
+
+        {/* Advanced Performance Dashboard Section */}
+        <AdvancedPerformanceDashboard />
 
         {/* Advanced Features Showcase */}
         <AdvancedFeaturesShowcase />
