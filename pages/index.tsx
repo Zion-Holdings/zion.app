@@ -389,7 +389,7 @@ export default function HomePage() {
                 <div className="font-semibold text-lg mb-2">Email</div>
                 <a 
                   href="mailto:kleber@ziontechgroup.com" 
-                  className="text-blue-100 hover:text-white transition-colors duration-300"
+                  className="text-blue-100 hover:text-blue-100 hover:text-white transition-colors duration-300"
                   aria-label="Email us at kleber@ziontechgroup.com"
                 >
                   kleber@ziontechgroup.com
