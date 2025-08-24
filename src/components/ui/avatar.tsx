@@ -1,43 +1,66 @@
 import React from 'react';
 import { cn } from '@/lib/utils';
 
-interface AvatarProps {
-  children: React.ReactNode;
-  className?: string;
+export interface AvatarProps extends React.HTMLAttributes<HTMLDivElement> {
+  children?: React.ReactNode;
 }
 
-interface AvatarImageProps {
+export interface AvatarImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   src: string;
   alt: string;
-  className?: string;
 }
 
-interface AvatarFallbackProps {
+export interface AvatarFallbackProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
-  className?: string;
 }
 
-export const Avatar: React.FC<AvatarProps> = ({ children, className }) => {
+export const Avatar: React.FC<AvatarProps> = ({
+  className,
+  children,
+  ...props
+}) => {
   return (
-    <div className={cn("relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full", className)}>
+    <div
+      className={cn(
+        'relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full',
+        className
+      )}
+      {...props}
+    >
       {children}
     </div>
   );
 };
 
-export const AvatarImage: React.FC<AvatarImageProps> = ({ src, alt, className }) => {
+export const AvatarImage: React.FC<AvatarImageProps> = ({
+  className,
+  src,
+  alt,
+  ...props
+}) => {
   return (
     <img
+      className={cn('aspect-square h-full w-full', className)}
       src={src}
       alt={alt}
-      className={cn("aspect-square h-full w-full", className)}
+      {...props}
     />
   );
 };
 
-export const AvatarFallback: React.FC<AvatarFallbackProps> = ({ children, className }) => {
+export const AvatarFallback: React.FC<AvatarFallbackProps> = ({
+  className,
+  children,
+  ...props
+}) => {
   return (
-    <div className={cn("flex h-full w-full items-center justify-center rounded-full bg-muted", className)}>
+    <div
+      className={cn(
+        'flex h-full w-full items-center justify-center rounded-full bg-muted',
+        className
+      )}
+      {...props}
+    >
       {children}
     </div>
   );
