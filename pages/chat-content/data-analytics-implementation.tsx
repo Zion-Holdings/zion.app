@@ -1,1 +1,3 @@
-export default function Article() { return <div>Data analytics implementation</div>; }
+export default function DataAnalyticsImplementation() {
+  return <div style={{ padding: 24 }}>Data Analytics Implementation</div>;
+}

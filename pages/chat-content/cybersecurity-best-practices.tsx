@@ -1,1 +1,3 @@
-export default function Article() { return <div>Cybersecurity best practices</div>; }
+export default function CybersecurityBestPractices() {
+  return <div style={{ padding: 24 }}>Cybersecurity Best Practices</div>;
+}

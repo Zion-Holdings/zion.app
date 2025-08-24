@@ -1,1 +1,3 @@
-export default function Article() { return <div>Innovation in enterprise technology</div>; }
+export default function InnovationInEnterpriseTechnology() {
+  return <div style={{ padding: 24 }}>Innovation in Enterprise Technology</div>;
+}

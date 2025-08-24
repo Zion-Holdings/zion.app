@@ -1,1 +1,3 @@
-export default function Article() { return <div>Emerging technology trends</div>; }
+export default function EmergingTechnologyTrends() {
+  return <div style={{ padding: 24 }}>Emerging Technology Trends</div>;
+}
