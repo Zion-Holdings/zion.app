@@ -155,6 +155,127 @@
     animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
 
+  /* Futuristic animations */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  @keyframes glow {
+    0%, 100% {
+      box-shadow: 0 0 20px rgba(34, 221, 210, 0.5);
+    }
+    50% {
+      box-shadow: 0 0 40px rgba(34, 221, 210, 0.8), 0 0 60px rgba(34, 221, 210, 0.4);
+    }
+  }
+
+  @keyframes neon-pulse {
+    0%, 100% {
+      text-shadow: 0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor;
+    }
+    50% {
+      text-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor;
+    }
+  }
+
+  @keyframes cyber-scan {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  @keyframes matrix-rain {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(100vh);
+    }
+  }
+
+  .float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .glow {
+    animation: glow 2s ease-in-out infinite;
+  }
+
+  .neon-pulse {
+    animation: neon-pulse 2s ease-in-out infinite;
+  }
+
+  .cyber-scan {
+    animation: cyber-scan 3s linear infinite;
+  }
+
+  .matrix-rain {
+    animation: matrix-rain 10s linear infinite;
+  }
+
+  /* Futuristic hover effects */
+  .futuristic-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.6, 1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .futuristic-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(34, 221, 210, 0.2), transparent);
+    transition: left 0.5s;
+  }
+
+  .futuristic-card:hover::before {
+    left: 100%;
+  }
+
+  .futuristic-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(34, 221, 210, 0.3);
+  }
+
+  /* Neon text effects */
+  .neon-text {
+    text-shadow: 0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor;
+  }
+
+  .neon-text:hover {
+    text-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor;
+  }
+
+  /* Gradient text animations */
+  .gradient-text {
+    background: linear-gradient(45deg, #8c15e9, #22ddd2, #ff0080, #8c15e9);
+    background-size: 400% 400%;
+    animation: gradient-shift 3s ease infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  @keyframes gradient-shift {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
   /* Custom scrollbar for webkit browsers */
   ::-webkit-scrollbar {
     width: 10px;

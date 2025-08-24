@@ -1,508 +1,725 @@
-import { ProductListing } from "@/types/listings";
+export interface MicroSaasService {
+  id: string;
+  title: string;
+  description: string;
+  category: 'AI' | 'IT' | 'Development' | 'Analytics' | 'Security' | 'Automation' | 'Integration' | 'Consulting';
+  features: string[];
+  pricing: {
+    monthly: number;
+    yearly: number;
+    enterprise: number;
+    currency: string;
+  };
+  benefits: string[];
+  useCases: string[];
+  targetAudience: string[];
+  integration: string[];
+  support: string[];
+  rating: number;
+  reviewCount: number;
+  launchDate: string;
+  status: 'Live' | 'Beta' | 'Coming Soon';
+  website: string;
+  demo: string;
+  documentation: string;
+  apiAvailable: boolean;
+  freeTier: boolean;
+  tags: string[];
+}
 
-// Comprehensive Micro SAAS Services Data
-export const MICRO_SAAS_SERVICES: ProductListing[] = [
-  // AI-Powered Micro SAAS Services
+export const MICRO_SAAS_SERVICES: MicroSaasService[] = [
+  // AI Services
   {
-    id: "ai-content-optimizer",
-    title: "AI Content Optimization Suite",
-    description: "Advanced AI-powered content optimization tool that analyzes, suggests improvements, and automatically enhances your content for SEO, readability, and engagement. Features include real-time optimization suggestions, A/B testing recommendations, and performance analytics.",
-    category: "AI Content Tools",
-    price: 299,
-    currency: "$",
-    tags: ["Content Optimization", "SEO", "AI Writing", "Analytics"],
-    author: {
-      name: "ContentAI Pro",
-      id: "contentai-pro",
-      avatarUrl: "https://images.unsplash.com/photo-1573497161161-c3e73707e25c?auto=format&fit=crop&w=100&h=100",
+    id: 'ai-content-generator-pro',
+    title: 'AI Content Generator Pro',
+    description: 'Advanced AI-powered content creation platform for blogs, social media, and marketing materials with multi-language support and SEO optimization.',
+    category: 'AI',
+    features: [
+      'Multi-language content generation',
+      'SEO-optimized writing',
+      'Brand voice customization',
+      'Plagiarism detection',
+      'Content scheduling',
+      'Analytics dashboard',
+      'API integration',
+      'Team collaboration tools'
+    ],
+    pricing: {
+      monthly: 49,
+      yearly: 490,
+      enterprise: 999,
+      currency: '$'
     },
-    images: ["https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-01-15T10:30:00.000Z",
+    benefits: [
+      '10x faster content creation',
+      'SEO-optimized content',
+      'Consistent brand voice',
+      'Multi-language reach',
+      'Cost-effective marketing'
+    ],
+    useCases: [
+      'Blog content creation',
+      'Social media posts',
+      'Email marketing campaigns',
+      'Product descriptions',
+      'SEO content optimization'
+    ],
+    targetAudience: [
+      'Marketing agencies',
+      'Content creators',
+      'E-commerce businesses',
+      'Startups',
+      'Enterprise marketing teams'
+    ],
+    integration: [
+      'WordPress',
+      'Shopify',
+      'HubSpot',
+      'Mailchimp',
+      'Social media platforms'
+    ],
+    support: [
+      '24/7 live chat',
+      'Email support',
+      'Video tutorials',
+      'API documentation',
+      'Dedicated account manager'
+    ],
     rating: 4.8,
-    reviewCount: 156,
-    featured: true,
-    location: "Global",
-    availability: "Immediate",
-    aiScore: 94,
-
+    reviewCount: 1247,
+    launchDate: '2024-01-15',
+    status: 'Live',
+    website: 'https://ziontechgroup.com/ai-content-generator',
+    demo: 'https://ziontechgroup.com/ai-content-generator/demo',
+    documentation: 'https://ziontechgroup.com/ai-content-generator/docs',
+    apiAvailable: true,
+    freeTier: true,
+    tags: ['AI', 'Content Creation', 'SEO', 'Marketing', 'Automation']
   },
   {
-    id: "ai-social-scheduler",
-    title: "AI Social Media Scheduler Pro",
-    description: "Intelligent social media management platform that uses AI to determine optimal posting times, generate engaging captions, and schedule content across multiple platforms. Includes analytics, competitor analysis, and automated engagement responses.",
-    category: "Social Media Tools",
-    price: 199,
-    currency: "$",
-    tags: ["Social Media", "AI Scheduling", "Content Management", "Analytics"],
-    author: {
-      name: "SocialAI Hub",
-      id: "socialai-hub",
-      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100",
+    id: 'smart-data-analytics',
+    title: 'Smart Data Analytics Platform',
+    description: 'Intelligent data analytics platform that automatically discovers insights, generates reports, and provides actionable recommendations using AI.',
+    category: 'Analytics',
+    features: [
+      'AI-powered insight discovery',
+      'Automated report generation',
+      'Predictive analytics',
+      'Real-time dashboards',
+      'Data visualization',
+      'Custom alerts',
+      'Data integration',
+      'Advanced filtering'
+    ],
+    pricing: {
+      monthly: 79,
+      yearly: 790,
+      enterprise: 1499,
+      currency: '$'
     },
-    images: ["https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-01-20T14:15:00.000Z",
-    rating: 4.7,
-    reviewCount: 89,
-    location: "Global",
-    availability: "Immediate",
-    aiScore: 91,
-
-  },
-  {
-    id: "ai-email-marketer",
-    title: "AI Email Marketing Automation",
-    description: "Complete email marketing solution powered by AI that personalizes content, optimizes send times, and predicts customer behavior. Features include smart segmentation, A/B testing, and predictive analytics for maximum engagement.",
-    category: "Email Marketing",
-    price: 399,
-    currency: "$",
-    tags: ["Email Marketing", "Automation", "AI Personalization", "Analytics"],
-    author: {
-      name: "EmailAI Solutions",
-      id: "emailai-solutions",
-      avatarUrl: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=100&h=100",
-    },
-    images: ["https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-01-25T09:45:00.000Z",
+    benefits: [
+      'Instant insights discovery',
+      'Automated reporting',
+      'Predictive business intelligence',
+      'Real-time decision making',
+      'Cost-effective analytics'
+    ],
+    useCases: [
+      'Business intelligence',
+      'Sales analytics',
+      'Customer behavior analysis',
+      'Performance tracking',
+      'Market research'
+    ],
+    targetAudience: [
+      'Data analysts',
+      'Business intelligence teams',
+      'Marketing managers',
+      'Sales teams',
+      'Executive leadership'
+    ],
+    integration: [
+      'Google Analytics',
+      'Salesforce',
+      'HubSpot',
+      'MySQL',
+      'PostgreSQL',
+      'Excel/CSV'
+    ],
+    support: [
+      'Priority support',
+      'Custom training',
+      'Data migration assistance',
+      'API support',
+      'Dedicated success manager'
+    ],
     rating: 4.9,
-    reviewCount: 234,
-    featured: true,
-    location: "Global",
-    availability: "Immediate",
-    aiScore: 96,
-
+    reviewCount: 892,
+    launchDate: '2024-02-01',
+    status: 'Live',
+    website: 'https://ziontechgroup.com/smart-analytics',
+    demo: 'https://ziontechgroup.com/smart-analytics/demo',
+    documentation: 'https://ziontechgroup.com/smart-analytics/docs',
+    apiAvailable: true,
+    freeTier: true,
+    tags: ['Analytics', 'AI', 'Business Intelligence', 'Data Visualization', 'Reporting']
   },
   {
-    id: "ai-customer-support",
-    title: "AI Customer Support Assistant",
-    description: "Intelligent customer support platform that uses AI to handle common inquiries, route complex issues to human agents, and provide 24/7 support. Includes sentiment analysis, automated responses, and seamless human handoff.",
-    category: "Customer Support",
-    price: 599,
-    currency: "$",
-    tags: ["Customer Support", "AI Chatbot", "Automation", "24/7 Support"],
-    author: {
-      name: "SupportAI Pro",
-      id: "supportai-pro",
-      avatarUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&h=100",
+    id: 'ai-customer-support',
+    title: 'AI Customer Support Assistant',
+    description: 'Intelligent customer support automation with natural language processing, ticket routing, and 24/7 availability.',
+    category: 'AI',
+    features: [
+      'Natural language processing',
+      'Automated ticket routing',
+      'Knowledge base integration',
+      'Multi-language support',
+      'Sentiment analysis',
+      'Escalation management',
+      'Performance analytics',
+      'CRM integration'
+    ],
+    pricing: {
+      monthly: 39,
+      yearly: 390,
+      enterprise: 799,
+      currency: '$'
     },
-    images: ["https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-02-01T11:20:00.000Z",
-    rating: 4.8,
-    reviewCount: 167,
-    location: "Global",
-    availability: "1-2 Weeks",
-    aiScore: 93,
-
-  },
-  {
-    id: "ai-inventory-manager",
-    title: "AI Inventory Management System",
-    description: "Smart inventory management solution that predicts demand, optimizes stock levels, and automates reordering. Uses machine learning to analyze sales patterns and prevent stockouts while minimizing excess inventory.",
-    category: "Inventory Management",
-    price: 799,
-    currency: "$",
-    tags: ["Inventory Management", "AI Prediction", "Automation", "Supply Chain"],
-    author: {
-      name: "InventoryAI",
-      id: "inventoryai",
-      avatarUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=100&h=100",
-    },
-    images: ["https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-02-05T13:30:00.000Z",
+    benefits: [
+      '24/7 customer support',
+      'Instant response times',
+      'Reduced support costs',
+      'Improved customer satisfaction',
+      'Scalable support operations'
+    ],
+    useCases: [
+      'Customer service automation',
+      'FAQ handling',
+      'Ticket classification',
+      'Customer satisfaction monitoring',
+      'Support team optimization'
+    ],
+    targetAudience: [
+      'E-commerce businesses',
+      'SaaS companies',
+      'Customer support teams',
+      'Service providers',
+      'Enterprise organizations'
+    ],
+    integration: [
+      'Zendesk',
+      'Freshdesk',
+      'Intercom',
+      'Salesforce',
+      'Shopify',
+      'Custom APIs'
+    ],
+    support: [
+      'Setup assistance',
+      'Training sessions',
+      'Custom configuration',
+      'Priority support',
+      'Success planning'
+    ],
     rating: 4.7,
-    reviewCount: 78,
-    location: "Global",
-    availability: "Immediate",
-    aiScore: 89,
-
+    reviewCount: 1563,
+    launchDate: '2024-01-20',
+    status: 'Live',
+    website: 'https://ziontechgroup.com/ai-support',
+    demo: 'https://ziontechgroup.com/ai-support/demo',
+    documentation: 'https://ziontechgroup.com/ai-support/docs',
+    apiAvailable: true,
+    freeTier: true,
+    tags: ['AI', 'Customer Support', 'Automation', 'NLP', 'Help Desk']
   },
   {
-    id: "ai-project-manager",
-    title: "AI Project Management Assistant",
-    description: "Intelligent project management platform that uses AI to predict project timelines, identify potential risks, and optimize resource allocation. Features include automated task assignment, progress tracking, and intelligent reporting.",
-    category: "Project Management",
-    price: 499,
-    currency: "$",
-    tags: ["Project Management", "AI Prediction", "Task Automation", "Risk Management"],
-    author: {
-      name: "ProjectAI",
-      id: "projectai",
-      avatarUrl: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=100&h=100",
+    id: 'cyber-security-monitor',
+    title: 'Cyber Security Monitor',
+    description: 'Real-time cybersecurity monitoring and threat detection platform with automated incident response and compliance reporting.',
+    category: 'Security',
+    features: [
+      'Real-time threat detection',
+      'Automated incident response',
+      'Vulnerability scanning',
+      'Compliance reporting',
+      'Security analytics',
+      'Threat intelligence',
+      'Incident management',
+      'Security awareness training'
+    ],
+    pricing: {
+      monthly: 99,
+      yearly: 990,
+      enterprise: 1999,
+      currency: '$'
     },
-    images: ["https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-02-10T15:45:00.000Z",
-    rating: 4.6,
-    reviewCount: 112,
-    location: "Global",
-    availability: "Immediate",
-    aiScore: 87,
-
-  },
-  {
-    id: "ai-financial-advisor",
-    title: "AI Financial Planning Assistant",
-    description: "Personalized financial planning platform that uses AI to analyze spending patterns, suggest investment strategies, and provide financial advice. Includes budget tracking, goal setting, and retirement planning tools.",
-    category: "Financial Tools",
-    price: 349,
-    currency: "$",
-    tags: ["Financial Planning", "AI Analysis", "Budgeting", "Investment"],
-    author: {
-      name: "FinanceAI",
-      id: "financeai",
-      avatarUrl: "https://images.unsplash.com/photo-1573497019940-1c4c3acd3789?auto=format&fit=crop&w=100&h=100",
-    },
-    images: ["https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-02-15T10:15:00.000Z",
-    rating: 4.8,
-    reviewCount: 189,
-    featured: true,
-    location: "Global",
-    availability: "Immediate",
-    aiScore: 92,
-
-  },
-  {
-    id: "ai-hr-assistant",
-    title: "AI HR Management Suite",
-    description: "Comprehensive HR management platform that uses AI to streamline recruitment, employee onboarding, performance tracking, and retention strategies. Features include resume screening, skill assessment, and predictive analytics.",
-    category: "HR Management",
-    price: 699,
-    currency: "$",
-    tags: ["HR Management", "Recruitment", "AI Screening", "Performance Tracking"],
-    author: {
-      name: "HRAI Solutions",
-      id: "hrai-solutions",
-      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100",
-    },
-    images: ["https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-02-20T12:00:00.000Z",
-    rating: 4.7,
-    reviewCount: 134,
-    location: "Global",
-    availability: "1-2 Weeks",
-    aiScore: 90,
-
-  },
-  {
-    id: "ai-marketing-analytics",
-    title: "AI Marketing Analytics Platform",
-    description: "Advanced marketing analytics solution that uses AI to analyze customer behavior, predict campaign performance, and optimize marketing strategies. Includes attribution modeling, customer segmentation, and ROI optimization.",
-    category: "Marketing Analytics",
-    price: 899,
-    currency: "$",
-    tags: ["Marketing Analytics", "AI Prediction", "Customer Behavior", "ROI Optimization"],
-    author: {
-      name: "MarketingAI",
-      id: "marketingai",
-      avatarUrl: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=100&h=100",
-    },
-    images: ["https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-02-25T14:30:00.000Z",
+    benefits: [
+      '24/7 security monitoring',
+      'Instant threat detection',
+      'Automated response',
+      'Compliance assurance',
+      'Reduced security risks'
+    ],
+    useCases: [
+      'Threat detection',
+      'Incident response',
+      'Compliance monitoring',
+      'Security auditing',
+      'Risk assessment'
+    ],
+    targetAudience: [
+      'IT security teams',
+      'Compliance officers',
+      'System administrators',
+      'Security consultants',
+      'Enterprise organizations'
+    ],
+    integration: [
+      'SIEM systems',
+      'Firewall management',
+      'Endpoint protection',
+      'Cloud security platforms',
+      'Identity management'
+    ],
+    support: [
+      'Security consultation',
+      'Incident response support',
+      'Compliance guidance',
+      '24/7 security operations',
+      'Custom security policies'
+    ],
     rating: 4.9,
-    reviewCount: 203,
-    featured: true,
-    location: "Global",
-    availability: "Immediate",
-    aiScore: 95,
-
+    reviewCount: 734,
+    launchDate: '2024-02-10',
+    status: 'Live',
+    website: 'https://ziontechgroup.com/cyber-security',
+    demo: 'https://ziontechgroup.com/cyber-security/demo',
+    documentation: 'https://ziontechgroup.com/cyber-security/docs',
+    apiAvailable: true,
+    freeTier: false,
+    tags: ['Cybersecurity', 'Threat Detection', 'Compliance', 'Incident Response', 'Security Monitoring']
   },
   {
-    id: "ai-sales-forecaster",
-    title: "AI Sales Forecasting & CRM",
-    description: "Intelligent sales CRM that uses AI to predict sales outcomes, identify high-value prospects, and optimize sales strategies. Features include lead scoring, opportunity tracking, and automated follow-up scheduling.",
-    category: "Sales CRM",
-    price: 649,
-    currency: "$",
-    tags: ["Sales CRM", "AI Forecasting", "Lead Scoring", "Automation"],
-    author: {
-      name: "SalesAI Pro",
-      id: "salesai-pro",
-      avatarUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&h=100",
+    id: 'workflow-automation-pro',
+    title: 'Workflow Automation Pro',
+    description: 'Advanced workflow automation platform that streamlines business processes with AI-powered decision making and integration capabilities.',
+    category: 'Automation',
+    features: [
+      'Visual workflow builder',
+      'AI decision making',
+      'Multi-system integration',
+      'Conditional logic',
+      'Approval workflows',
+      'Performance analytics',
+      'Custom triggers',
+      'Mobile app access'
+    ],
+    pricing: {
+      monthly: 69,
+      yearly: 690,
+      enterprise: 1299,
+      currency: '$'
     },
-    images: ["https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-03-01T09:00:00.000Z",
+    benefits: [
+      'Process efficiency improvement',
+      'Error reduction',
+      'Cost savings',
+      'Scalable operations',
+      'Better compliance'
+    ],
+    useCases: [
+      'HR onboarding',
+      'Invoice processing',
+      'Customer onboarding',
+      'Project management',
+      'Quality assurance'
+    ],
+    targetAudience: [
+      'Operations managers',
+      'Process improvement teams',
+      'HR professionals',
+      'Finance teams',
+      'Project managers'
+    ],
+    integration: [
+      'Slack',
+      'Microsoft Teams',
+      'Google Workspace',
+      'Salesforce',
+      'QuickBooks',
+      'Custom APIs'
+    ],
+    support: [
+      'Workflow design assistance',
+      'Integration support',
+      'Training programs',
+      'Process optimization',
+      'Success planning'
+    ],
     rating: 4.8,
-    reviewCount: 178,
-    location: "Global",
-    availability: "Immediate",
-    aiScore: 93,
-
+    reviewCount: 1102,
+    launchDate: '2024-01-25',
+    status: 'Live',
+    website: 'https://ziontechgroup.com/workflow-automation',
+    demo: 'https://ziontechgroup.com/workflow-automation/demo',
+    documentation: 'https://ziontechgroup.com/workflow-automation/docs',
+    apiAvailable: true,
+    freeTier: true,
+    tags: ['Automation', 'Workflow', 'Process Management', 'Integration', 'Business Process']
+  },
+  {
+    id: 'ai-code-assistant',
+    title: 'AI Code Assistant',
+    description: 'Intelligent coding assistant that provides real-time suggestions, code review, and automated testing using advanced AI models.',
+    category: 'Development',
+    features: [
+      'Real-time code suggestions',
+      'Automated code review',
+      'Bug detection',
+      'Performance optimization',
+      'Security scanning',
+      'Documentation generation',
+      'Multi-language support',
+      'IDE integration'
+    ],
+    pricing: {
+      monthly: 59,
+      yearly: 590,
+      enterprise: 1199,
+      currency: '$'
+    },
+    benefits: [
+      'Faster development',
+      'Higher code quality',
+      'Reduced bugs',
+      'Better security',
+      'Improved productivity'
+    ],
+    useCases: [
+      'Code development',
+      'Code review',
+      'Bug fixing',
+      'Performance optimization',
+      'Security auditing'
+    ],
+    targetAudience: [
+      'Software developers',
+      'Development teams',
+      'Code reviewers',
+      'DevOps engineers',
+      'Technical leads'
+    ],
+    integration: [
+      'VS Code',
+      'IntelliJ IDEA',
+      'GitHub',
+      'GitLab',
+      'Bitbucket',
+      'CI/CD pipelines'
+    ],
+    support: [
+      'Setup assistance',
+      'Custom training',
+      'API support',
+      'Integration help',
+      'Best practices guidance'
+    ],
+    rating: 4.9,
+    reviewCount: 2341,
+    launchDate: '2024-02-05',
+    status: 'Live',
+    website: 'https://ziontechgroup.com/ai-code-assistant',
+    demo: 'https://ziontechgroup.com/ai-code-assistant/demo',
+    documentation: 'https://ziontechgroup.com/ai-code-assistant/docs',
+    apiAvailable: true,
+    freeTier: true,
+    tags: ['AI', 'Development', 'Code Review', 'Bug Detection', 'Programming']
+  },
+  {
+    id: 'cloud-cost-optimizer',
+    title: 'Cloud Cost Optimizer',
+    description: 'AI-powered cloud cost optimization platform that analyzes usage patterns and provides recommendations to reduce cloud spending.',
+    category: 'IT',
+    features: [
+      'Cost analysis dashboard',
+      'Usage optimization',
+      'Reserved instance recommendations',
+      'Spot instance management',
+      'Cost forecasting',
+      'Budget alerts',
+      'Multi-cloud support',
+      'Automated optimization'
+    ],
+    pricing: {
+      monthly: 49,
+      yearly: 490,
+      enterprise: 999,
+      currency: '$'
+    },
+    benefits: [
+      'Significant cost savings',
+      'Better resource utilization',
+      'Automated optimization',
+      'Budget control',
+      'ROI improvement'
+    ],
+    useCases: [
+      'Cloud cost management',
+      'Resource optimization',
+      'Budget planning',
+      'Cost forecasting',
+      'Multi-cloud management'
+    ],
+    targetAudience: [
+      'Cloud architects',
+      'DevOps engineers',
+      'IT managers',
+      'Finance teams',
+      'System administrators'
+    ],
+    integration: [
+      'AWS',
+      'Azure',
+      'Google Cloud',
+      'Kubernetes',
+      'Docker',
+      'Terraform'
+    ],
+    support: [
+      'Cost analysis consultation',
+      'Optimization strategies',
+      'Implementation support',
+      'Best practices guidance',
+      'ROI tracking'
+    ],
+    rating: 4.7,
+    reviewCount: 876,
+    launchDate: '2024-02-15',
+    status: 'Live',
+    website: 'https://ziontechgroup.com/cloud-cost-optimizer',
+    demo: 'https://ziontechgroup.com/cloud-cost-optimizer/demo',
+    documentation: 'https://ziontechgroup.com/cloud-cost-optimizer/docs',
+    apiAvailable: true,
+    freeTier: true,
+    tags: ['Cloud', 'Cost Optimization', 'DevOps', 'Resource Management', 'AWS/Azure/GCP']
+  },
+  {
+    id: 'ai-project-manager',
+    title: 'AI Project Manager',
+    description: 'Intelligent project management platform that uses AI to predict risks, optimize resource allocation, and ensure project success.',
+    category: 'Automation',
+    features: [
+      'AI risk prediction',
+      'Resource optimization',
+      'Timeline forecasting',
+      'Team performance analytics',
+      'Automated reporting',
+      'Risk mitigation',
+      'Progress tracking',
+      'Stakeholder communication'
+    ],
+    pricing: {
+      monthly: 79,
+      yearly: 790,
+      enterprise: 1499,
+      currency: '$'
+    },
+    benefits: [
+      'Better project success rates',
+      'Risk reduction',
+      'Resource optimization',
+      'Improved communication',
+      'Data-driven decisions'
+    ],
+    useCases: [
+      'Project planning',
+      'Risk management',
+      'Resource allocation',
+      'Progress monitoring',
+      'Stakeholder reporting'
+    ],
+    targetAudience: [
+      'Project managers',
+      'Program managers',
+      'Team leads',
+      'Stakeholders',
+      'Executive leadership'
+    ],
+    integration: [
+      'Jira',
+      'Asana',
+      'Trello',
+      'Microsoft Project',
+      'Slack',
+      'Microsoft Teams'
+    ],
+    support: [
+      'Implementation support',
+      'Custom training',
+      'Best practices guidance',
+      'Success planning',
+      'Ongoing consultation'
+    ],
+    rating: 4.8,
+    reviewCount: 945,
+    launchDate: '2024-02-20',
+    status: 'Live',
+    website: 'https://ziontechgroup.com/ai-project-manager',
+    demo: 'https://ziontechgroup.com/ai-project-manager/demo',
+    documentation: 'https://ziontechgroup.com/ai-project-manager/docs',
+    apiAvailable: true,
+    freeTier: true,
+    tags: ['AI', 'Project Management', 'Risk Management', 'Resource Optimization', 'Team Collaboration']
+  },
+  {
+    id: 'data-privacy-compliance',
+    title: 'Data Privacy Compliance Manager',
+    description: 'Comprehensive data privacy and compliance platform that helps organizations meet GDPR, CCPA, and other regulatory requirements.',
+    category: 'Security',
+    features: [
+      'Privacy impact assessments',
+      'Data mapping',
+      'Consent management',
+      'Breach notification',
+      'Compliance reporting',
+      'Data subject rights',
+      'Audit trails',
+      'Training modules'
+    ],
+    pricing: {
+      monthly: 89,
+      yearly: 890,
+      enterprise: 1799,
+      currency: '$'
+    },
+    benefits: [
+      'Regulatory compliance',
+      'Risk mitigation',
+      'Customer trust',
+      'Legal protection',
+      'Operational efficiency'
+    ],
+    useCases: [
+      'GDPR compliance',
+      'CCPA compliance',
+      'Data privacy audits',
+      'Consent management',
+      'Breach response'
+    ],
+    targetAudience: [
+      'Compliance officers',
+      'Legal teams',
+      'Data protection officers',
+      'IT security teams',
+      'Privacy consultants'
+    ],
+    integration: [
+      'CRM systems',
+      'Marketing platforms',
+      'Analytics tools',
+      'Customer databases',
+      'HR systems'
+    ],
+    support: [
+      'Compliance consultation',
+      'Legal guidance',
+      'Implementation support',
+      'Training programs',
+      'Audit assistance'
+    ],
+    rating: 4.9,
+    reviewCount: 623,
+    launchDate: '2024-03-01',
+    status: 'Live',
+    website: 'https://ziontechgroup.com/data-privacy',
+    demo: 'https://ziontechgroup.com/data-privacy/demo',
+    documentation: 'https://ziontechgroup.com/data-privacy/docs',
+    apiAvailable: true,
+    freeTier: false,
+    tags: ['Privacy', 'Compliance', 'GDPR', 'CCPA', 'Data Protection']
+  },
+  {
+    id: 'ai-marketing-automation',
+    title: 'AI Marketing Automation Suite',
+    description: 'Intelligent marketing automation platform that personalizes campaigns, optimizes conversions, and provides predictive analytics.',
+    category: 'AI',
+    features: [
+      'AI-powered personalization',
+      'Predictive analytics',
+      'Campaign optimization',
+      'Customer segmentation',
+      'A/B testing automation',
+      'ROI tracking',
+      'Multi-channel campaigns',
+      'Behavioral targeting'
+    ],
+    pricing: {
+      monthly: 99,
+      yearly: 990,
+      enterprise: 1999,
+      currency: '$'
+    },
+    benefits: [
+      'Higher conversion rates',
+      'Better ROI',
+      'Personalized experiences',
+      'Automated optimization',
+      'Data-driven decisions'
+    ],
+    useCases: [
+      'Email marketing',
+      'Social media campaigns',
+      'Website personalization',
+      'Lead nurturing',
+      'Customer retention'
+    ],
+    targetAudience: [
+      'Marketing teams',
+      'Digital marketers',
+      'E-commerce businesses',
+      'Marketing agencies',
+      'Growth hackers'
+    ],
+    integration: [
+      'Mailchimp',
+      'HubSpot',
+      'Salesforce',
+      'Shopify',
+      'Google Analytics',
+      'Facebook Ads'
+    ],
+    support: [
+      'Strategy consultation',
+      'Implementation support',
+      'Performance optimization',
+      'Training programs',
+      'Success planning'
+    ],
+    rating: 4.8,
+    reviewCount: 1876,
+    launchDate: '2024-02-25',
+    status: 'Live',
+    website: 'https://ziontechgroup.com/ai-marketing',
+    demo: 'https://ziontechgroup.com/ai-marketing/demo',
+    documentation: 'https://ziontechgroup.com/ai-marketing/docs',
+    apiAvailable: true,
+    freeTier: true,
+    tags: ['AI', 'Marketing', 'Automation', 'Personalization', 'Analytics']
   }
 ];
 
-// IT Services & Solutions
-export const IT_SERVICES: ProductListing[] = [
-  {
-    id: "cloud-migration-expert",
-    title: "Enterprise Cloud Migration Services",
-    description: "Complete cloud migration solution including assessment, planning, execution, and optimization. Specializes in AWS, Azure, and Google Cloud with zero-downtime migration strategies and cost optimization.",
-    category: "Cloud Services",
-    price: 15000,
-    currency: "$",
-    tags: ["Cloud Migration", "AWS", "Azure", "Zero Downtime"],
-    author: {
-      name: "CloudMigrate Pro",
-      id: "cloudmigrate-pro",
-      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100",
-    },
-    images: ["https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-01-10T08:00:00.000Z",
-    rating: 4.9,
-    reviewCount: 67,
-    featured: true,
-    location: "Global",
-    availability: "4-6 Weeks",
-    aiScore: 96,
-
-  },
-  {
-    id: "cybersecurity-audit",
-    title: "Comprehensive Cybersecurity Audit",
-    description: "Full security assessment including penetration testing, vulnerability scanning, compliance review, and security roadmap development. Covers GDPR, SOC2, ISO27001, and industry-specific regulations.",
-    category: "Cybersecurity",
-    price: 8000,
-    currency: "$",
-    tags: ["Security Audit", "Penetration Testing", "Compliance", "GDPR"],
-    author: {
-      name: "SecureNet Solutions",
-      id: "securenet-solutions",
-      avatarUrl: "https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=100&h=100",
-    },
-    images: ["https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-01-15T10:30:00.000Z",
-    rating: 4.8,
-    reviewCount: 89,
-    location: "Global",
-    availability: "2-3 Weeks",
-    aiScore: 94,
-
-  },
-  {
-    id: "devops-automation",
-    title: "DevOps Automation & CI/CD Pipeline",
-    description: "Complete DevOps transformation including CI/CD pipeline setup, infrastructure as code, monitoring, and automation. Supports Docker, Kubernetes, Terraform, and major cloud platforms.",
-    category: "DevOps",
-    price: 12000,
-    currency: "$",
-    tags: ["DevOps", "CI/CD", "Kubernetes", "Automation"],
-    author: {
-      name: "DevOps Masters",
-      id: "devops-masters",
-      avatarUrl: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=100&h=100",
-    },
-    images: ["https://images.unsplash.com/photo-1547082299-de196ea013d6?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-01-20T14:15:00.000Z",
-    rating: 4.7,
-    reviewCount: 56,
-    location: "Global",
-    availability: "3-4 Weeks",
-    aiScore: 91,
-
-  },
-  {
-    id: "data-analytics-platform",
-    title: "Enterprise Data Analytics Platform",
-    description: "End-to-end data analytics solution including data warehousing, ETL processes, business intelligence dashboards, and machine learning capabilities. Supports real-time analytics and predictive modeling.",
-    category: "Data Analytics",
-    price: 25000,
-    currency: "$",
-    tags: ["Data Analytics", "Business Intelligence", "Machine Learning", "Real-time"],
-    author: {
-      name: "DataInsight Pro",
-      id: "datainsight-pro",
-      avatarUrl: "https://images.unsplash.com/photo-1573497019940-1c4c3acd3789?auto=format&fit=crop&w=100&h=100",
-    },
-    images: ["https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-01-25T11:45:00.000Z",
-    rating: 4.9,
-    reviewCount: 78,
-    featured: true,
-    location: "Global",
-    availability: "6-8 Weeks",
-    aiScore: 97,
-
-  },
-  {
-    id: "network-infrastructure",
-    title: "Network Infrastructure Design & Implementation",
-    description: "Complete network infrastructure solution including design, implementation, security, and monitoring. Covers LAN, WAN, wireless, and cloud networking with redundancy and disaster recovery.",
-    category: "Network Infrastructure",
-    price: 18000,
-    currency: "$",
-    tags: ["Network Design", "Infrastructure", "Security", "Disaster Recovery"],
-    author: {
-      name: "NetworkPro Solutions",
-      id: "networkpro-solutions",
-      avatarUrl: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=100&h=100",
-    },
-    images: ["https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-02-01T09:30:00.000Z",
-    rating: 4.8,
-    reviewCount: 45,
-    location: "Global",
-    availability: "4-5 Weeks",
-    aiScore: 89,
-
-  }
-];
-
-// AI Services & Solutions
-export const AI_SERVICES: ProductListing[] = [
-  {
-    id: "custom-ai-model",
-    title: "Custom AI Model Development",
-    description: "End-to-end custom AI model development including data preparation, model training, deployment, and maintenance. Specializes in computer vision, NLP, and predictive analytics for enterprise applications.",
-    category: "AI Development",
-    price: 35000,
-    currency: "$",
-    tags: ["Custom AI", "Machine Learning", "Computer Vision", "NLP"],
-    author: {
-      name: "AI Model Labs",
-      id: "ai-model-labs",
-      avatarUrl: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=100&h=100",
-    },
-    images: ["https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-01-05T12:00:00.000Z",
-    rating: 4.9,
-    reviewCount: 123,
-    featured: true,
-    location: "Global",
-    availability: "8-12 Weeks",
-    aiScore: 98,
-
-  },
-  {
-    id: "ai-integration-service",
-    title: "AI Integration & API Development",
-    description: "Complete AI integration service including API development, system integration, and ongoing support. Specializes in integrating AI capabilities into existing business systems and workflows.",
-    category: "AI Integration",
-    price: 20000,
-    currency: "$",
-    tags: ["AI Integration", "API Development", "System Integration", "Workflow Automation"],
-    author: {
-      name: "AI Integration Pro",
-      id: "ai-integration-pro",
-      avatarUrl: "https://images.unsplash.com/photo-1573497019940-1c4c3acd3789?auto=format&fit=crop&w=100&h=100",
-    },
-    images: ["https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-01-10T15:45:00.000Z",
-    rating: 4.8,
-    reviewCount: 89,
-    location: "Global",
-    availability: "6-8 Weeks",
-    aiScore: 93,
-
-  },
-  {
-    id: "ai-consulting",
-    title: "AI Strategy & Implementation Consulting",
-    description: "Strategic AI consulting services including AI readiness assessment, roadmap development, implementation planning, and change management. Helps organizations identify and implement AI opportunities.",
-    category: "AI Consulting",
-    price: 15000,
-    currency: "$",
-    tags: ["AI Strategy", "Consulting", "Implementation", "Change Management"],
-    author: {
-      name: "AI Strategy Partners",
-      id: "ai-strategy-partners",
-      avatarUrl: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=100&h=100",
-    },
-    images: ["https://images.unsplash.com/photo-1664575602276-acd073f104c1?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-01-15T10:00:00.000Z",
-    rating: 4.9,
-    reviewCount: 156,
-    featured: true,
-    location: "Global",
-    availability: "2-3 Weeks",
-    aiScore: 95,
-
-  },
-  {
-    id: "ai-training-program",
-    title: "AI Training & Certification Program",
-    description: "Comprehensive AI training program for teams including machine learning fundamentals, practical applications, and hands-on projects. Customized for different skill levels and business needs.",
-    category: "AI Training",
-    price: 8000,
-    currency: "$",
-    tags: ["AI Training", "Certification", "Machine Learning", "Team Development"],
-    author: {
-      name: "AI Academy Pro",
-      id: "ai-academy-pro",
-      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100",
-    },
-    images: ["https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-01-20T13:30:00.000Z",
-    rating: 4.7,
-    reviewCount: 67,
-    location: "Global",
-    availability: "1-2 Weeks",
-    aiScore: 88,
-
-  },
-  {
-    id: "ai-maintenance",
-    title: "AI Model Maintenance & Optimization",
-    description: "Ongoing AI model maintenance including performance monitoring, retraining, optimization, and updates. Ensures models remain accurate and efficient as data and business requirements evolve.",
-    category: "AI Maintenance",
-    price: 5000,
-    currency: "$",
-    tags: ["AI Maintenance", "Model Optimization", "Performance Monitoring", "Retraining"],
-    author: {
-      name: "AI Maintenance Pro",
-      id: "ai-maintenance-pro",
-      avatarUrl: "https://images.unsplash.com/photo-1573497019940-1c4c3acd3789?auto=format&fit=crop&w=100&h=100",
-    },
-    images: ["https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-01-25T11:15:00.000Z",
-    rating: 4.8,
-    reviewCount: 89,
-    location: "Global",
-    availability: "Immediate",
-    aiScore: 91,
-
-  }
-];
-
-// Combined services for marketplace
-export const ALL_SERVICES = [
-  ...MICRO_SAAS_SERVICES,
-  ...IT_SERVICES,
-  ...AI_SERVICES
-];
-
-// Service categories for filtering
-export const SERVICE_CATEGORIES = [
-  { label: 'AI Content Tools', value: 'ai-content-tools' },
-  { label: 'Social Media Tools', value: 'social-media-tools' },
-  { label: 'Email Marketing', value: 'email-marketing' },
-  { label: 'Customer Support', value: 'customer-support' },
-  { label: 'Inventory Management', value: 'inventory-management' },
-  { label: 'Project Management', value: 'project-management' },
-  { label: 'Financial Tools', value: 'financial-tools' },
-  { label: 'HR Management', value: 'hr-management' },
-  { label: 'Marketing Analytics', value: 'marketing-analytics' },
-  { label: 'Sales CRM', value: 'sales-crm' },
-  { label: 'Cloud Services', value: 'cloud-services' },
-  { label: 'Cybersecurity', value: 'cybersecurity' },
-  { label: 'DevOps', value: 'devops' },
-  { label: 'Data Analytics', value: 'data-analytics' },
-  { label: 'Network Infrastructure', value: 'network-infrastructure' },
-  { label: 'AI Development', value: 'ai-development' },
-  { label: 'AI Integration', value: 'ai-integration' },
-  { label: 'AI Consulting', value: 'ai-consulting' },
-  { label: 'AI Training', value: 'ai-training' },
-  { label: 'AI Maintenance', value: 'ai-maintenance' }
-];
-
-// Pricing tiers for different service types
-export const PRICING_TIERS = {
-  microSaas: { min: 199, max: 899 },
-  itServices: { min: 8000, max: 25000 },
-  aiServices: { min: 5000, max: 35000 }
+export const getServiceByCategory = (category: string) => {
+  return MICRO_SAAS_SERVICES.filter(service => service.category === category);
 };
 
-// Contact information
-export const CONTACT_INFO = {
-  mobile: "+1 302 464 0950",
-  email: "kleber@ziontechgroup.com",
-  address: "364 E Main St STE 1008 Middletown DE 19709",
-  website: "https://ziontechgroup.com"
+export const getServiceById = (id: string) => {
+  return MICRO_SAAS_SERVICES.find(service => service.id === id);
+};
+
+export const getServicesByTag = (tag: string) => {
+  return MICRO_SAAS_SERVICES.filter(service => 
+    service.tags.some(serviceTag => 
+      serviceTag.toLowerCase().includes(tag.toLowerCase())
+    )
+  );
 };
