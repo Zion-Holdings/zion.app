@@ -1,0 +1,21 @@
+name: Regenerate package-lock
+
+on:
+  workflow_dispatch:
+
+jobs:
+  regenerate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: rm -rf node_modules package-lock.json
+      - run: npm install
+      - uses: EndBug/add-and-commit@v9
+        with:
+          add: 'package-lock.json'
+          message: 'Fix: Regenerate package-lock.json'
+          author_name: 'Kleber Alcatrao'
+          author_email: 'kleber@ziontechgroup.com'

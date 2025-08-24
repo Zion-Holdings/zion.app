@@ -1,0 +1,14 @@
+[
+  {
+    "id": "cert-ai-track",
+    "name": "Zion AI Track (Foundations)",
+    "issuer": "Zion Academy",
+    "level": "Foundational"
+  },
+  {
+    "id": "cert-ai-advanced",
+    "name": "Zion AI Track (Advanced)",
+    "issuer": "Zion Academy",
+    "level": "Advanced"
+  }
+]

@@ -1,0 +1,35 @@
+name: Release Drafter
+
+on:
+  push:
+<<<<<<< HEAD
+    branches: [ main ]
+=======
+    branches:
+      - main
+>>>>>>> origin/cursor/deploy-autonomous-cloud-automations-and-sync-c342
+  workflow_dispatch:
+
+permissions:
+  contents: write
+<<<<<<< HEAD
+  pull-requests: read
+=======
+>>>>>>> origin/cursor/deploy-autonomous-cloud-automations-and-sync-c342
+
+jobs:
+  update_release_draft:
+    runs-on: ubuntu-latest
+    steps:
+<<<<<<< HEAD
+      - uses: release-drafter/release-drafter@v6
+        with:
+          config-name: release-drafter.yml
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+=======
+      - uses: actions/checkout@v4
+      - uses: release-drafter/release-drafter@v6
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+>>>>>>> origin/cursor/deploy-autonomous-cloud-automations-and-sync-c342

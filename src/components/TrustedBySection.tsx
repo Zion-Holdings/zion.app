@@ -1,157 +1,47 @@
+import React from 'react';
 
-import { GradientHeading } from "./GradientHeading";
-import { useState } from "react";
-
-// Real company logos for trusted partners - with more reliable image URLs
-const trustedCompanies = [
-  {
-    name: "NVIDIA",
-    logo: "/logos/nvidia-logo.svg",
-    alt: "NVIDIA logo"
-  },
-  {
-    name: "American Express",
-    logo: "/logos/amex-logo.svg",
-    alt: "American Express logo"
-  },
-  {
-    name: "Walt Disney",
-    logo: "/logos/disney-logo.svg",
-    alt: "Walt Disney logo"
-  },
-  {
-    name: "AMD",
-    logo: "/logos/amd-logo.svg",
-    alt: "AMD logo"
-  },
-  {
-    name: "Apple",
-    logo: "/logos/apple-logo.svg",
-    alt: "Apple logo"
-  },
-  {
-    name: "EA Games",
-    logo: "/logos/ea-logo.svg",
-    alt: "EA Games logo"
-  },
-  {
-    name: "Louis Vuitton",
-    logo: "/logos/lv-logo.svg",
-    alt: "Louis Vuitton logo"
-  },
-  {
-    name: "Nike",
-    logo: "/logos/nike-logo.svg",
-    alt: "Nike logo"
-  },
-  {
-    name: "Pandora",
-    logo: "/logos/pandora-logo.svg",
-    alt: "Pandora logo"
-  },
-  {
-    name: "Huawei",
-    logo: "/logos/huawei-logo.svg",
-    alt: "Huawei logo"
-  },
-  {
-    name: "Johnson & Johnson",
-    logo: "/logos/jnj-logo.svg",
-    alt: "Johnson & Johnson logo"
-  },
-  {
-    name: "Universal",
-    logo: "/logos/universal-logo.svg",
-    alt: "Universal Studios logo"
-  },
-  {
-    name: "Ubisoft",
-    logo: "/logos/ubisoft-logo.svg",
-    alt: "Ubisoft logo"
-  },
-  {
-    name: "Bayer",
-    logo: "/logos/bayer-logo.svg",
-    alt: "Bayer logo"
-  },
-  {
-    name: "Avaya",
-    logo: "/logos/avaya-logo.svg",
-    alt: "Avaya logo"
-  },
-  {
-    name: "Silicon Valley Bank",
-    logo: "/logos/svb-logo.svg",
-    alt: "Silicon Valley Bank logo"
-  },
-  {
-    name: "Dell",
-    logo: "/logos/dell-logo.svg",
-    alt: "Dell logo"
-  },
-  {
-    name: "Lenovo",
-    logo: "/logos/lenovo-logo.svg",
-    alt: "Lenovo logo"
-  },
-  {
-    name: "Citi Bank",
-    logo: "/logos/citi-logo.svg",
-    alt: "Citi Bank logo"
-  },
-  {
-    name: "Thomson Reuters",
-    logo: "/logos/thomson-reuters-logo.svg",
-    alt: "Thomson Reuters logo"
-  }
+const TRUSTED_COMPANIES = [
+  { name: 'TechCorp', logo: '/logos/techcorp.svg' },
+  { name: 'InnovateLab', logo: '/logos/innovatelab.svg' },
+  { name: 'FutureSystems', logo: '/logos/futuresystems.svg' },
+  { name: 'DigitalFlow', logo: '/logos/digitalflow.svg' },
+  { name: 'SmartSolutions', logo: '/logos/smartsolutions.svg' },
+  { name: 'NextGen', logo: '/logos/nextgen.svg' },
 ];
 
-export function TrustedBySection() {
-  // Use state to track logos that failed to load
-  const [failedLogos, setFailedLogos] = useState<Record<string, boolean>>({});
-
-  const handleImageError = (companyName: string) => {
-    setFailedLogos(prev => ({
-      ...prev,
-      [companyName]: true
-    }));
-  };
-
+export const TrustedBySection: React.FC = () => {
   return (
-    <section className="py-16 bg-zion-blue-dark">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-16 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <GradientHeading className="mb-2">Trusted By Industry Leaders</GradientHeading>
-          <p className="text-zion-slate-light">Join the growing network of companies relying on Zion's marketplace</p>
+          <h2 className="text-2xl font-semibold text-gray-600 mb-2">
+            Trusted by Leading Companies
+          </h2>
+          <p className="text-lg text-gray-500">
+            Join hundreds of innovative companies already using our platform
+          </p>
         </div>
         
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 items-center max-w-7xl mx-auto">
-          {trustedCompanies.map((company, index) => (
-            <div 
-              key={index} 
-              className="flex items-center justify-center bg-zion-blue-light p-5 rounded-lg border border-zion-purple/10 h-20 transition-all duration-300 hover:border-zion-purple/30 hover:bg-zion-blue group"
-            >
-              {failedLogos[company.name] ? (
-                // Fallback to text if image fails to load
-                <div className="text-white font-semibold text-center">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
+          {TRUSTED_COMPANIES.map((company) => (
+            <div key={company.name} className="flex items-center justify-center">
+              <div className="w-24 h-16 bg-white rounded-lg shadow-sm flex items-center justify-center p-4 hover:shadow-md transition-shadow">
+                <div className="text-gray-400 font-semibold text-sm text-center">
                   {company.name}
                 </div>
-              ) : (
-                <img 
-                  src={company.logo} 
-                  alt={company.alt} 
-                  className="max-h-10 max-w-full opacity-70 group-hover:opacity-100 transition-opacity duration-300 filter invert"
-                  onError={() => handleImageError(company.name)}
-                />
-              )}
+              </div>
             </div>
           ))}
         </div>
         
-        <div className="text-center mt-10">
-          <p className="text-zion-slate-light text-sm">And many more enterprises worldwide...</p>
+        <div className="text-center mt-12">
+          <div className="inline-flex items-center space-x-2 text-sm text-gray-500">
+            <span>★</span>
+            <span>4.9/5 rating from 2,000+ customers</span>
+            <span>★</span>
+          </div>
         </div>
       </div>
     </section>
   );
-}
+};
