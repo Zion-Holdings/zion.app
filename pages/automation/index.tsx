@@ -103,6 +103,11 @@ export default function AutomationHub() {
             <p className="text-white/70">Flags stale content by last git change and suggests refresh.</p>
             <a className="text-cyan-300 underline" href="/.netlify/functions/content-staleness-runner" target="_blank" rel="noopener">Trigger / View</a>
           </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Revenue Ideas Orchestrator</h2>
+            <p className="text-white/70">Generates monetization proposals and components; syncs to main.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/revenue-agents-runner" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
         </ul>
         <div className="mt-12">
           <h2 className="text-2xl font-bold mb-3">New Intelligent Automations</h2>
