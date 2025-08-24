@@ -4,7 +4,8 @@
   "private": true,
   "engines": {
     "node": ">=20.18.1",
-    "npm": ">=10.0.0"
+    "npm": ">=10.0.0",
+    "pnpm": ">=8.0.0"
   },
   "scripts": {
     "sitemap": "node scripts/generate-sitemap.mjs",
