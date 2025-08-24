@@ -8,22 +8,25 @@ function runNode(relPath, args = []) {
 }
 
 exports.config = {
-  schedule: '0 4 * * *',
+  schedule: '*/30 * * * *', // every 30 minutes
 };
 
 exports.handler = async () => {
   const logs = [];
-  function step(name, rel, args = []) {
+  function logStep(name, fn) {
     logs.push(`\n=== ${name} ===`);
-    const { status, stdout, stderr } = runNode(rel, args);
+    const { status, stdout, stderr } = fn();
     if (stdout) logs.push(stdout);
     if (stderr) logs.push(stderr);
     logs.push(`exit=${status}`);
     return status;
   }
 
-  step('deps:auto-upgrade', 'automation/deps-auto-upgrade.cjs');
-  step('git:sync', 'automation/advanced-git-sync.cjs');
+  // Run dependency auto-upgrade
+  logStep('deps:auto-upgrade', () => runNode('automation/deps-auto-upgrade.cjs'));
+
+  // Attempt to push any changes
+  logStep('git:sync', () => runNode('automation/advanced-git-sync.cjs'));
 
   return { statusCode: 200, body: logs.join('\n') };
 };
