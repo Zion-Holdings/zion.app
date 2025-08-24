@@ -8,8 +8,8 @@ interface TalentProfileWithSocial extends TalentProfileType {
   social?: Record<string, string>;
 }
 
-export default function TalentProfilePage() {
-  const { id } = useParams() as { id?: string };
+const TalentProfilePage: React.FC = () => {
+  const { id } = useParams();
   const [profile, setProfile] = useState<TalentProfileWithSocial | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -66,4 +66,6 @@ export default function TalentProfilePage() {
       </div>
     </main>
   );
-}
+};
+
+export default TalentProfilePage;
