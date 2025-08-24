@@ -1,310 +1,524 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { useTranslation } from 'react-i18next';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Input } from "@/components/ui/input";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { 
+  ENHANCED_SERVICES, 
+  getServicesByCategory, 
+  getPopularServices, 
+  getNewServices, 
+  getPremiumServices,
+  type EnhancedService 
+} from "@/data/enhancedServices";
 import { 
   Search, 
   Filter, 
   Star, 
   Clock, 
-  MapPin, 
-  Shield,
-  Zap,
-  Users,
-  Globe,
-  Award,
+  Users, 
+  Zap, 
+  TrendingUp, 
+  Shield, 
+  Brain,
+  Cloud,
+  Code,
+  Settings,
+  BarChart3,
+  ArrowRight,
+  Play,
+  ExternalLink,
   Phone,
   Mail,
-  Globe as GlobeIcon
-} from 'lucide-react';
-import { ENHANCED_SERVICES, SERVICE_CATEGORIES } from '@/data/enhancedServices';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Badge } from '@/components/ui/badge';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+  MapPin,
+  CheckCircle,
+  DollarSign,
+  Calendar
+} from "lucide-react";
+import { SimpleFuturisticBackground } from "@/components/ui/FuturisticBackground";
 
 export default function EnhancedServicesPage() {
-  const { t } = useTranslation();
-  const [selectedCategory, setSelectedCategory] = useState<string>("all");
-  const [searchTerm, setSearchTerm] = useState("");
-  const [sortBy, setSortBy] = useState<string>("rating");
+  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  const [selectedPricing, setSelectedPricing] = useState<string>('all');
+  const [sortBy, setSortBy] = useState<string>('popularity');
 
-  const filteredServices = ENHANCED_SERVICES.filter(service => {
-    const matchesCategory = selectedCategory === "all" ||
-      SERVICE_CATEGORIES.some(cat => cat.id === selectedCategory && cat.services.includes(service.id));
-    
-    const matchesSearch = searchTerm === "" ||
-      service.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      service.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      service.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
-    
-    return matchesCategory && matchesSearch;
-  });
+  const popularServices = getPopularServices();
+  const newServices = getNewServices();
+  const premiumServices = getPremiumServices();
 
-  const sortedServices = [...filteredServices].sort((a, b) => {
-    switch (sortBy) {
-      case "rating":
-        return b.rating - a.rating;
-      case "price":
-        return a.price - b.price;
-      case "aiScore":
-        return b.aiScore - a.aiScore;
-      case "newest":
-        return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
-      default:
-        return 0;
+  const categories = [
+    { id: 'all', label: 'All Services', icon: <Zap className="h-4 w-4" /> },
+    { id: 'AI', label: 'AI Services', icon: <Brain className="h-4 w-4" /> },
+    { id: 'IT', label: 'IT Services', icon: <Settings className="h-4 w-4" /> },
+    { id: 'SAAS', label: 'SAAS Solutions', icon: <Cloud className="h-4 w-4" /> },
+    { id: 'Development', label: 'Development', icon: <Code className="h-4 w-4" /> },
+    { id: 'Consulting', label: 'Consulting', icon: <Users className="h-4 w-4" /> },
+    { id: 'Automation', label: 'Automation', icon: <TrendingUp className="h-4 w-4" /> },
+    { id: 'Integration', label: 'Integration', icon: <BarChart3 className="h-4 w-4" /> }
+  ];
+
+  const pricingModels = [
+    { id: 'all', label: 'All Pricing' },
+    { id: 'hourly', label: 'Hourly' },
+    { id: 'monthly', label: 'Monthly' },
+    { id: 'project', label: 'Project-based' },
+    { id: 'subscription', label: 'Subscription' }
+  ];
+
+  const sortOptions = [
+    { id: 'popularity', label: 'Most Popular' },
+    { id: 'rating', label: 'Highest Rated' },
+    { id: 'price-low', label: 'Price: Low to High' },
+    { id: 'price-high', label: 'Price: High to Low' },
+    { id: 'newest', label: 'Newest First' }
+  ];
+
+  const getFilteredServices = () => {
+    let filtered = ENHANCED_SERVICES;
+
+    // Category filter
+    if (selectedCategory !== 'all') {
+      filtered = filtered.filter(service => service.category === selectedCategory);
     }
-  });
 
-  const featuredServices = ENHANCED_SERVICES.filter(service => service.aiScore >= 95);
+    // Pricing filter
+    if (selectedPricing !== 'all') {
+      filtered = filtered.filter(service => service.price.pricingModel === selectedPricing);
+    }
+
+    // Search filter
+    if (searchQuery) {
+      const query = searchQuery.toLowerCase();
+      filtered = filtered.filter(service => 
+        service.title.toLowerCase().includes(query) ||
+        service.description.toLowerCase().includes(query) ||
+        service.tags.some(tag => tag.toLowerCase().includes(query))
+      );
+    }
+
+    // Sorting
+    switch (sortBy) {
+      case 'rating':
+        filtered.sort((a, b) => b.rating - a.rating);
+        break;
+      case 'price-low':
+        filtered.sort((a, b) => a.price.min - b.price.min);
+        break;
+      case 'price-high':
+        filtered.sort((a, b) => b.price.max - a.price.max);
+        break;
+      case 'newest':
+        filtered.sort((a, b) => new Date(b.createdAt || Date.now()).getTime() - new Date(a.createdAt || Date.now()).getTime());
+        break;
+      default: // popularity
+        filtered.sort((a, b) => (b.reviewCount || 0) - (a.reviewCount || 0));
+    }
+
+    return filtered;
+  };
+
+  const formatPrice = (service: EnhancedService) => {
+    const { min, max, currency, pricingModel } = service.price;
+    if (pricingModel === 'hourly') {
+      return `${currency}${min}-${max}/hour`;
+    } else if (pricingModel === 'monthly') {
+      return `${currency}${min}-${max}/month`;
+    } else if (pricingModel === 'project') {
+      return `${currency}${min.toLocaleString()}-${max.toLocaleString()}`;
+    }
+    return `${currency}${min}-${max}`;
+  };
+
+  const getCategoryIcon = (category: string) => {
+    switch (category) {
+      case 'AI': return <Brain className="h-5 w-5 text-purple-400" />;
+      case 'IT': return <Settings className="h-5 w-5 text-blue-400" />;
+      case 'SAAS': return <Cloud className="h-5 w-5 text-cyan-400" />;
+      case 'Development': return <Code className="h-5 w-5 text-green-400" />;
+      case 'Consulting': return <Users className="h-5 w-5 text-orange-400" />;
+      case 'Automation': return <TrendingUp className="h-5 w-5 text-pink-400" />;
+      case 'Integration': return <BarChart3 className="h-5 w-5 text-yellow-400" />;
+      default: return <Zap className="h-5 w-5 text-gray-400" />;
+    }
+  };
+
+  const filteredServices = getFilteredServices();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-slate-dark">
-      {/* Hero Section */}
-      <div className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-zion-purple/20 to-zion-cyan/20"></div>
-        <div className="container mx-auto px-4 py-20 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center"
-          >
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              {t('services.hero.title') || "Innovative Tech Solutions"}
+    <SimpleFuturisticBackground>
+      <div className="min-h-screen py-20">
+        <div className="container mx-auto px-4">
+          {/* Header Section */}
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-zion-purple/20 to-zion-cyan/20 border border-zion-purple/30 rounded-full px-4 py-2 mb-6">
+              <Zap className="h-4 w-4 text-zion-cyan" />
+              <span className="text-sm font-medium text-zion-cyan">Premium Services</span>
+            </div>
+            <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 bg-gradient-to-r from-white via-zion-cyan to-zion-purple bg-clip-text text-transparent">
+              Our Premium Services
             </h1>
-            <p className="text-xl text-zion-slate-light mb-8 max-w-3xl mx-auto">
-              {t('services.hero.description') || "Discover cutting-edge technology solutions that transform businesses and drive innovation across industries."}
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              Discover our comprehensive suite of AI-powered solutions, enterprise IT services, and innovative SaaS platforms. 
+              Each service is designed to drive innovation and accelerate your business growth.
             </p>
-            
-            {/* Search and Filter Bar */}
-            <div className="max-w-4xl mx-auto bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
-              <div className="flex flex-col md:flex-row gap-4">
-                <div className="flex-1 relative">
-                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-zion-slate-light h-5 w-5" />
-                  <Input
-                    placeholder={t('services.search.placeholder') || "Search services..."}
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                    className="pl-10 bg-white/20 border-white/30 text-white placeholder:text-zion-slate-light"
-                  />
+          </div>
+
+          {/* Contact Information Banner */}
+          <div className="bg-gradient-to-r from-zion-purple/20 to-zion-cyan/20 border border-zion-purple/30 rounded-2xl p-6 mb-12 backdrop-blur-sm">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+              <div className="flex items-center justify-center gap-3">
+                <Phone className="h-5 w-5 text-zion-cyan" />
+                <div>
+                  <div className="text-sm text-zion-slate-light">Phone</div>
+                  <div className="text-white font-semibold">+1 302 464 0950</div>
                 </div>
-                
-                <Select value={selectedCategory} onValueChange={setSelectedCategory}>
-                  <SelectTrigger className="w-full md:w-48 bg-white/20 border-white/30 text-white">
-                    <SelectValue placeholder={t('services.filter.category') || "All Categories"} />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="all">{t('services.filter.all') || "All Categories"}</SelectItem>
-                    {SERVICE_CATEGORIES.map((category) => (
-                      <SelectItem key={category.id} value={category.id}>
-                        {category.name}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-                
-                <Select value={sortBy} onValueChange={setSortBy}>
-                  <SelectTrigger className="w-full md:w-48 bg-white/20 border-white/30 text-white">
-                    <SelectValue placeholder={t('services.sort.placeholder') || "Sort by"} />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="rating">{t('services.sort.rating') || "Highest Rating"}</SelectItem>
-                    <SelectItem value="price">{t('services.sort.price') || "Lowest Price"}</SelectItem>
-                    <SelectItem value="aiScore">{t('services.sort.aiScore') || "AI Score"}</SelectItem>
-                    <SelectItem value="newest">{t('services.sort.newest') || "Newest"}</SelectItem>
-                  </SelectContent>
-                </Select>
+              </div>
+              <div className="flex items-center justify-center gap-3">
+                <Mail className="h-5 w-5 text-zion-cyan" />
+                <div>
+                  <div className="text-sm text-zion-slate-light">Email</div>
+                  <div className="text-white font-semibold">kleber@ziontechgroup.com</div>
+                </div>
+              </div>
+              <div className="flex items-center justify-center gap-3">
+                <MapPin className="h-5 w-5 text-zion-cyan" />
+                <div>
+                  <div className="text-sm text-zion-slate-light">Address</div>
+                  <div className="text-white font-semibold">364 E Main St STE 1008, Middletown DE 19709</div>
+                </div>
               </div>
             </div>
-          </motion.div>
-        </div>
-      </div>
+          </div>
 
-      {/* Featured Services */}
-      {featuredServices.length > 0 && (
-        <div className="container mx-auto px-4 py-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              {t('services.featured.title') || "Featured Solutions"}
-            </h2>
-            <p className="text-zion-slate-light text-lg">
-              {t('services.featured.description') || "Our top-rated, AI-powered solutions trusted by industry leaders"}
-            </p>
-          </motion.div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {featuredServices.map((service, index) => (
-              <motion.div
-                key={service.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 * index }}
-              >
-                <Card className="bg-white/10 backdrop-blur-sm border-white/20 hover:border-zion-cyan/50 transition-all duration-300 hover:shadow-2xl hover:shadow-zion-cyan/20">
-                  <CardHeader className="pb-4">
-                    <div className="flex items-center justify-between mb-2">
-                      <Badge variant="secondary" className="bg-zion-cyan/20 text-zion-cyan border-zion-cyan/30">
-                        {service.aiScore} AI Score
-                      </Badge>
-                      <div className="flex items-center gap-1">
-                        <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                        <span className="text-white text-sm">{service.rating}</span>
-                      </div>
-                    </div>
-                    <CardTitle className="text-white text-xl">{service.title}</CardTitle>
-                    <CardDescription className="text-zion-slate-light">
-                      {service.description}
-                    </CardDescription>
-                  </CardHeader>
+          {/* Featured Services Tabs */}
+          <Tabs defaultValue="all" className="mb-16">
+            <TabsList className="grid w-full grid-cols-5 bg-zion-blue-dark/50 border border-zion-purple/30 p-1 rounded-lg">
+              <TabsTrigger value="all" className="data-[state=active]:bg-zion-purple data-[state=active]:text-white">
+                <Zap className="h-4 w-4 mr-2" />
+                All
+              </TabsTrigger>
+              <TabsTrigger value="popular" className="data-[state=active]:bg-zion-purple data-[state=active]:text-white">
+                <Star className="h-4 w-4 mr-2" />
+                Popular
+              </TabsTrigger>
+              <TabsTrigger value="new" className="data-[state=active]:bg-zion-purple data-[state=active]:text-white">
+                <Zap className="h-4 w-4 mr-2" />
+                New
+              </TabsTrigger>
+              <TabsTrigger value="premium" className="data-[state=active]:bg-zion-purple data-[state=active]:text-white">
+                <Shield className="h-4 w-4 mr-2" />
+                Premium
+              </TabsTrigger>
+              <TabsTrigger value="custom" className="data-[state=active]:bg-zion-purple data-[state=active]:text-white">
+                <Filter className="h-4 w-4 mr-2" />
+                Custom
+              </TabsTrigger>
+            </TabsList>
+
+            <TabsContent value="all" className="mt-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {ENHANCED_SERVICES.map((service) => (
+                  <ServiceCard key={service.id} service={service} />
+                ))}
+              </div>
+            </TabsContent>
+
+            <TabsContent value="popular" className="mt-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {popularServices.map((service) => (
+                  <ServiceCard key={service.id} service={service} />
+                ))}
+              </div>
+            </TabsContent>
+
+            <TabsContent value="new" className="mt-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {newServices.map((service) => (
+                  <ServiceCard key={service.id} service={service} />
+                ))}
+              </div>
+            </TabsContent>
+
+            <TabsContent value="premium" className="mt-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {premiumServices.map((service) => (
+                  <ServiceCard key={service.id} service={service} />
+                ))}
+              </div>
+            </TabsContent>
+
+            <TabsContent value="custom" className="mt-8">
+              {/* Filters and Search */}
+              <div className="bg-zion-blue-dark/30 border border-zion-purple/30 rounded-xl p-6 mb-8 backdrop-blur-sm">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+                  <div>
+                    <label className="text-sm font-medium text-white mb-2 block">Search Services</label>
+                    <Input
+                      placeholder="Search by name, description, or tags..."
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      className="bg-zion-blue-dark/50 border-zion-purple/30 text-white placeholder:text-zion-slate-light"
+                    />
+                  </div>
                   
-                  <CardContent>
-                    <div className="space-y-4">
-                      <div className="flex items-center justify-between">
-                        <span className="text-2xl font-bold text-white">
-                          {service.currency}{service.price.toLocaleString()}
-                        </span>
-                        <Badge variant="outline" className="border-zion-purple/30 text-zion-purple">
-                          {service.pricingModel}
-                        </Badge>
-                      </div>
-                      
-                      <div className="flex flex-wrap gap-2">
-                        {service.tags.slice(0, 3).map((tag) => (
-                          <Badge key={tag} variant="secondary" className="bg-white/10 text-zion-slate-light">
-                            {tag}
-                          </Badge>
+                  <div>
+                    <label className="text-sm font-medium text-white mb-2 block">Category</label>
+                    <Select value={selectedCategory} onValueChange={setSelectedCategory}>
+                      <SelectTrigger className="bg-zion-blue-dark/50 border-zion-purple/30 text-white">
+                        <SelectValue placeholder="Select category" />
+                      </SelectTrigger>
+                      <SelectContent className="bg-zion-blue-dark border-zion-purple/30">
+                        {categories.map((category) => (
+                          <SelectItem key={category.id} value={category.id} className="text-white">
+                            {category.label}
+                          </SelectItem>
                         ))}
-                      </div>
-                      
-                      <div className="flex items-center justify-between text-sm text-zion-slate-light">
-                        <div className="flex items-center gap-1">
-                          <Clock className="h-4 w-4" />
-                          {service.availability}
-                        </div>
-                        <div className="flex items-center gap-1">
-                          <MapPin className="h-4 w-4" />
-                          {service.location}
-                        </div>
-                      </div>
-                      
-                      <Button className="w-full bg-gradient-to-r from-zion-cyan to-zion-purple hover:from-zion-cyan/90 hover:to-zion-purple/90">
-                        {t('services.cta.learn_more') || "Learn More"}
-                      </Button>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
+                  
+                  <div>
+                    <label className="text-sm font-medium text-white mb-2 block">Pricing Model</label>
+                    <Select value={selectedPricing} onValueChange={setSelectedPricing}>
+                      <SelectTrigger className="bg-zion-blue-dark/50 border-zion-purple/30 text-white">
+                        <SelectValue placeholder="Select pricing" />
+                      </SelectTrigger>
+                      <SelectContent className="bg-zion-blue-dark border-zion-purple/30">
+                        {pricingModels.map((pricing) => (
+                          <SelectItem key={pricing.id} value={pricing.id} className="text-white">
+                            {pricing.label}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
+                  
+                  <div>
+                    <label className="text-sm font-medium text-white mb-2 block">Sort By</label>
+                    <Select value={sortBy} onValueChange={setSortBy}>
+                      <SelectTrigger className="bg-zion-blue-dark/50 border-zion-purple/30 text-white">
+                        <SelectValue placeholder="Sort by" />
+                      </SelectTrigger>
+                      <SelectContent className="bg-zion-blue-dark border-zion-purple/30">
+                        {sortOptions.map((option) => (
+                          <SelectItem key={option.id} value={option.id} className="text-white">
+                            {option.label}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
+                </div>
+              </div>
+
+              {/* Results Count */}
+              <div className="mb-6">
+                <p className="text-zion-slate-light">
+                  Showing {filteredServices.length} of {ENHANCED_SERVICES.length} services
+                </p>
+              </div>
+
+              {/* Filtered Services Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {filteredServices.map((service) => (
+                  <ServiceCard key={service.id} service={service} />
+                ))}
+              </div>
+
+              {filteredServices.length === 0 && (
+                <div className="text-center py-12">
+                  <div className="text-zion-slate-light text-lg mb-4">No services found matching your criteria</div>
+                  <Button 
+                    onClick={() => {
+                      setSearchQuery('');
+                      setSelectedCategory('all');
+                      setSelectedPricing('all');
+                      setSortBy('popularity');
+                    }}
+                    variant="outline"
+                    className="border-zion-purple/30 text-zion-cyan hover:bg-zion-purple/10 hover:border-zion-purple/50"
+                  >
+                    Clear Filters
+                  </Button>
+                </div>
+              )}
+            </TabsContent>
+          </Tabs>
+
+          {/* CTA Section */}
+          <div className="text-center mt-20">
+            <div className="bg-gradient-to-r from-zion-purple/20 to-zion-cyan/20 border border-zion-purple/30 rounded-2xl p-8 backdrop-blur-sm">
+              <h3 className="text-2xl font-bold text-white mb-4">
+                Need a Custom Solution?
+              </h3>
+              <p className="text-zion-slate-light mb-6 max-w-2xl mx-auto">
+                Can't find exactly what you're looking for? Our team of experts can create custom solutions 
+                tailored to your specific business needs and requirements.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button 
+                  size="lg" 
+                  className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white gap-3"
+                  onClick={() => window.open('https://ziontechgroup.com/contact', '_blank')}
+                >
+                  <ExternalLink className="h-4 w-4" />
+                  Contact Our Team
+                </Button>
+                <Button 
+                  size="lg" 
+                  variant="outline" 
+                  className="border-zion-purple/30 text-zion-cyan hover:bg-zion-purple/10 hover:border-zion-purple/50 gap-3"
+                  onClick={() => window.open('https://ziontechgroup.com/demo', '_blank')}
+                >
+                  <Play className="h-4 w-4" />
+                  Schedule Demo
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
-      )}
+      </div>
+    </SimpleFuturisticBackground>
+  );
+}
 
-      {/* All Services Grid */}
-      <div className="container mx-auto px-4 py-16">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="text-center mb-12"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            {t('services.all.title') || "All Services"}
-          </h2>
-          <p className="text-zion-slate-light text-lg">
-            {t('services.all.description') || `Explore our comprehensive collection of ${ENHANCED_SERVICES.length} innovative solutions`}
-          </p>
-        </motion.div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {sortedServices.map((service, index) => (
-            <motion.div
-              key={service.id}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.05 * index }}
-            >
-              <Card className="bg-white/5 backdrop-blur-sm border-white/10 hover:border-zion-cyan/30 transition-all duration-300 hover:shadow-xl">
-                <CardHeader className="pb-4">
-                  <div className="flex items-center justify-between mb-2">
-                    <Badge variant="secondary" className="bg-zion-blue/20 text-zion-blue-light border-zion-blue/30">
-                      {service.category}
-                    </Badge>
-                    <div className="flex items-center gap-1">
-                      <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                      <span className="text-white text-sm">{service.rating}</span>
-                    </div>
-                  </div>
-                  <CardTitle className="text-white text-lg">{service.title}</CardTitle>
-                  <CardDescription className="text-zion-slate-light text-sm line-clamp-2">
-                    {service.description}
-                  </CardDescription>
-                </CardHeader>
-                
-                <CardContent>
-                  <div className="space-y-3">
-                    <div className="flex items-center justify-between">
-                      <span className="text-xl font-bold text-white">
-                        {service.currency}{service.price.toLocaleString()}
-                      </span>
-                      <Badge variant="outline" className="border-zion-purple/30 text-zion-purple text-xs">
-                        {service.pricingModel}
-                      </Badge>
-                    </div>
-                    
-                    <div className="flex flex-wrap gap-1">
-                      {service.tags.slice(0, 2).map((tag) => (
-                        <Badge key={tag} variant="secondary" className="bg-white/5 text-zion-slate-light text-xs">
-                          {tag}
-                        </Badge>
-                      ))}
-                    </div>
-                    
-                    <Button variant="outline" className="w-full border-zion-cyan/30 text-zion-cyan hover:bg-zion-cyan/10">
-                      {t('services.cta.view_details') || "View Details"}
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
+interface ServiceCardProps {
+  service: EnhancedService;
+}
+
+function ServiceCard({ service }: ServiceCardProps) {
+  const formatPrice = (service: EnhancedService) => {
+    const { min, max, currency, pricingModel } = service.price;
+    if (pricingModel === 'hourly') {
+      return `${currency}${min}-${max}/hour`;
+    } else if (pricingModel === 'monthly') {
+      return `${currency}${min}-${max}/month`;
+    } else if (pricingModel === 'project') {
+      return `${currency}${min.toLocaleString()}-${max.toLocaleString()}`;
+    }
+    return `${currency}${min}-${max}`;
+  };
+
+  const getCategoryIcon = (category: string) => {
+    switch (category) {
+      case 'AI': return <Brain className="h-5 w-5 text-purple-400" />;
+      case 'IT': return <Settings className="h-5 w-5 text-blue-400" />;
+      case 'SAAS': return <Cloud className="h-5 w-5 text-cyan-400" />;
+      case 'Development': return <Code className="h-5 w-5 text-green-400" />;
+      case 'Consulting': return <Users className="h-5 w-5 text-orange-400" />;
+      case 'Automation': return <TrendingUp className="h-5 w-5 text-pink-400" />;
+      case 'Integration': return <BarChart3 className="h-5 w-5 text-yellow-400" />;
+      default: return <Zap className="h-5 w-5 text-gray-400" />;
+    }
+  };
+
+  return (
+    <Card className="group overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-zion-purple/20 hover:border-zion-purple/50 bg-zion-blue-dark/30 border border-zion-blue-light/20 backdrop-blur-sm">
+      <div className="relative">
+        <img 
+          src={service.image} 
+          alt={service.title}
+          className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+        <div className="absolute top-4 left-4 flex gap-2">
+          {service.isPopular && (
+            <Badge className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white border-0">
+              <Star className="h-3 w-3 mr-1" />
+              Popular
+            </Badge>
+          )}
+          {service.isNew && (
+            <Badge className="bg-gradient-to-r from-green-500 to-emerald-500 text-white border-0">
+              <Zap className="h-3 w-3 mr-1" />
+              New
+            </Badge>
+          )}
+          {service.isPremium && (
+            <Badge className="bg-gradient-to-r from-purple-500 to-pink-500 text-white border-0">
+              <Shield className="h-3 w-3 mr-1" />
+              Premium
+            </Badge>
+          )}
+        </div>
+        <div className="absolute top-4 right-4">
+          {getCategoryIcon(service.category)}
         </div>
       </div>
 
-      {/* Contact CTA */}
-      <div className="bg-gradient-to-r from-zion-purple to-zion-purple-dark">
-        <div className="container mx-auto px-4 py-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="text-center text-white"
+      <CardHeader className="pb-3">
+        <div className="flex items-start justify-between mb-2">
+          <CardTitle className="text-lg font-semibold text-white group-hover:text-zion-cyan transition-colors">
+            {service.title}
+          </CardTitle>
+        </div>
+        <CardDescription className="text-zion-slate-light line-clamp-2">
+          {service.description}
+        </CardDescription>
+      </CardHeader>
+
+      <CardContent className="space-y-4">
+        {/* Price and Rating */}
+        <div className="flex items-center justify-between">
+          <div className="text-lg font-bold text-zion-cyan">
+            {formatPrice(service)}
+          </div>
+          <div className="flex items-center gap-1">
+            <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+            <span className="text-sm text-white">{service.rating}</span>
+            <span className="text-xs text-zion-slate-light">({service.reviewCount})</span>
+          </div>
+        </div>
+
+        {/* Market Price Comparison */}
+        <div className="text-xs text-zion-slate-light bg-zion-blue-dark/50 rounded px-2 py-1">
+          Market Average: {service.averageMarketPrice}
+        </div>
+
+        {/* Key Benefits */}
+        <div className="space-y-2">
+          <h4 className="text-sm font-medium text-white">Key Benefits:</h4>
+          <ul className="space-y-1">
+            {service.benefits.slice(0, 3).map((benefit, index) => (
+              <li key={index} className="text-xs text-zion-slate-light flex items-start gap-2">
+                <CheckCircle className="w-3 h-3 text-zion-cyan mt-0.5 flex-shrink-0" />
+                {benefit}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Delivery Time */}
+        <div className="flex items-center gap-2 text-xs text-zion-slate-light">
+          <Clock className="h-3 w-3" />
+          {service.deliveryTime}
+        </div>
+
+        {/* Action Buttons */}
+        <div className="flex gap-2 pt-2">
+          <Button 
+            size="sm" 
+            className="flex-1 bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white gap-2"
+            onClick={() => window.open(service.contactLink, '_blank')}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              {t('services.contact.title') || "Ready to Get Started?"}
-            </h2>
-            <p className="text-xl text-zion-slate-light mb-8 max-w-2xl mx-auto">
-              {t('services.contact.description') || "Let's discuss how our innovative solutions can transform your business. Get in touch with our experts today."}
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-zion-cyan hover:bg-zion-cyan/90 text-white">
-                <Phone className="h-5 w-5 mr-2" />
-                {t('services.contact.call') || "Call Us"}
-              </Button>
-              <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10">
-                <Mail className="h-5 w-5 mr-2" />
-                {t('services.contact.email') || "Send Email"}
-              </Button>
-            </div>
-          </motion.div>
+            <ExternalLink className="h-3 w-3" />
+            Get Quote
+          </Button>
+          {service.demoLink && (
+            <Button 
+              size="sm" 
+              variant="outline" 
+              className="border-zion-purple/30 text-zion-cyan hover:bg-zion-purple/10 hover:border-zion-purple/50 gap-2"
+              onClick={() => window.open(service.demoLink, '_blank')}
+            >
+              <Play className="h-3 w-3" />
+              Demo
+            </Button>
+          )}
         </div>
-      </div>
-    </div>
+      </CardContent>
+    </Card>
   );
 }

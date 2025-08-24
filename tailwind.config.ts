@@ -94,32 +94,28 @@ const config: Config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
-        "float-slow": {
-          "0%, 100%": { transform: "translateY(0px) translateX(0px)" },
-          "33%": { transform: "translateY(-20px) translateX(10px)" },
-          "66%": { transform: "translateY(-10px) translateX(-15px)" },
+        "spin-reverse": {
+          from: { transform: "rotate(360deg)" },
+          to: { transform: "rotate(0deg)" },
         },
-        "float-medium": {
-          "0%, 100%": { transform: "translateY(0px) translateX(0px)" },
-          "50%": { transform: "translateY(-15px) translateX(20px)" },
+        "float": {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-20px)" },
         },
-        "float-fast": {
-          "0%, 100%": { transform: "translateY(0px) translateX(0px)" },
-          "25%": { transform: "translateY(-25px) translateX(-10px)" },
-          "75%": { transform: "translateY(-5px) translateX(15px)" },
-        },
-        "fade-in-up": {
-          "0%": { opacity: "0", transform: "translateY(30px)" },
-          "100%": { opacity: "1", transform: "translateY(0)" },
+        "glow": {
+          "0%": { boxShadow: "0 0 5px #8c15e9, 0 0 10px #8c15e9, 0 0 15px #8c15e9" },
+          "100%": { boxShadow: "0 0 10px #8c15e9, 0 0 20px #8c15e9, 0 0 30px #8c15e9" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "float-slow": "float-slow 6s ease-in-out infinite",
-        "float-medium": "float-medium 4s ease-in-out infinite",
-        "float-fast": "float-fast 3s ease-in-out infinite",
-        "fade-in-up": "fade-in-up 0.8s ease-out forwards",
+        "spin-slow": "spin 3s linear infinite",
+        "spin-reverse": "spin-reverse 4s linear infinite",
+        "bounce-slow": "bounce 2s infinite",
+        "pulse-slow": "pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        "float": "float 6s ease-in-out infinite",
+        "glow": "glow 2s ease-in-out infinite alternate",
       },
     },
   },

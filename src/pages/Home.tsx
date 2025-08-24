@@ -1,33 +1,45 @@
 
 import React from 'react';
-import { motion } from 'framer-motion';
+import { CategoriesSection } from "@/components/CategoriesSection";
+import { BenefitsSection } from "@/components/BenefitsSection";
+import { HowItWorksSection } from "@/components/HowItWorksSection";
+import { NewsletterSection } from "@/components/NewsletterSection";
+import { FeaturedListingsSection } from "@/components/FeaturedListingsSection";
+import { SEO } from "@/components/SEO";
+import { EnhancedHeroSection } from "@/components/home/EnhancedHeroSection";
+import { QuickAccess } from "@/components/home/QuickAccess";
+import { FeatureCTAs } from "@/components/home/FeatureCTAs";
+import { FeatureHighlights } from "@/components/home/FeatureHighlights";
+import { ITServiceRequestHero } from "@/components/home/ITServiceRequestHero";
+import { EnhancedServicesShowcase } from "@/components/home/EnhancedServicesShowcase";
 
-export function Home() {
+export default function Home() {
   return (
-    <div className="min-h-screen bg-zion-blue-dark text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-center"
-        >
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-zion-cyan via-zion-purple to-zion-cyan bg-clip-text text-transparent">
-            Zion Tech Group
-          </h1>
-          <p className="text-xl md:text-2xl text-zion-slate-light mb-8 max-w-3xl mx-auto">
-            Pioneering the future of technology with revolutionary AI consciousness, 
-            quantum computing, and autonomous solutions that transform businesses worldwide.
-          </p>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-gradient-to-r from-zion-cyan to-zion-purple text-white px-8 py-4 rounded-lg text-lg font-semibold hover:shadow-xl transition-all duration-300"
-          >
-            Get Started
-          </motion.button>
-        </motion.div>
-      </div>
+    <div className="min-h-screen bg-background">
+      <SEO 
+        title="Zion Tech Group - Premier Tech & AI Marketplace" 
+        description="Discover cutting-edge AI services, enterprise IT solutions, and innovative SaaS platforms. Connect with top talent and transform your business with next-generation technology."
+        keywords="AI services, IT solutions, SaaS platforms, technology marketplace, enterprise solutions, AI consulting, cloud services, cybersecurity, digital transformation"
+        canonical="https://ziontechgroup.com/"
+      />
+
+      <ITServiceRequestHero />
+
+      <EnhancedHeroSection />
+      
+      <QuickAccess />
+      
+      <FeatureCTAs />
+      
+      <FeatureHighlights />
+      
+      <EnhancedServicesShowcase />
+      
+      <CategoriesSection />
+      <BenefitsSection />
+      <HowItWorksSection />
+      <FeaturedListingsSection />
+      <NewsletterSection />
     </div>
   );
 }
