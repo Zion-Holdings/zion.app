@@ -1,0 +1,821 @@
+[2025-08-24 01:30:10] 🔄 Starting efficient batch processing...
+[2025-08-24 01:30:10] 📊 Batch size: 200
+[2025-08-24 01:30:10] 🔄 Starting batch 1...
+[2025-08-24 01:30:10] 🚀 Processing batch starting from index 0...
+[2025-08-24 01:30:10] 📊 Processing 200 branches
+[2025-08-24 01:30:10] 📋 Processing 1: cursor/add-2030q1-services-ui-8deb1aee36d
+[2025-08-24 01:30:11] 🔄 Merging cursor/add-2030q1-services-ui-8deb1aee36d...
+[2025-08-24 01:30:11] ✅ Successfully merged cursor/add-2030q1-services-ui-8deb1aee36d
+[2025-08-24 01:30:12] ✅ Successfully processed cursor/add-2030q1-services-ui-8deb1aee36d
+[2025-08-24 01:30:12] 📋 Processing 2: cursor/add-and-advertise-new-services-then-build-0357
+[2025-08-24 01:30:12] 🔄 Merging cursor/add-and-advertise-new-services-then-build-0357...
+[2025-08-24 01:30:13] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-0357
+[2025-08-24 01:30:13] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-0357
+[2025-08-24 01:30:13] 📋 Processing 3: cursor/add-and-advertise-new-services-then-build-03b6
+[2025-08-24 01:30:13] 🔄 Merging cursor/add-and-advertise-new-services-then-build-03b6...
+[2025-08-24 01:30:14] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-03b6
+[2025-08-24 01:30:14] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-03b6
+[2025-08-24 01:30:14] 📋 Processing 4: cursor/add-and-advertise-new-services-then-build-06aa
+[2025-08-24 01:30:14] 🔄 Merging cursor/add-and-advertise-new-services-then-build-06aa...
+[2025-08-24 01:30:14] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-06aa
+[2025-08-24 01:30:15] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-06aa
+[2025-08-24 01:30:15] 📋 Processing 5: cursor/add-and-advertise-new-services-then-build-0756
+[2025-08-24 01:30:15] 🔄 Merging cursor/add-and-advertise-new-services-then-build-0756...
+[2025-08-24 01:30:16] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-0756
+[2025-08-24 01:30:16] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-0756
+[2025-08-24 01:30:16] 📋 Processing 6: cursor/add-and-advertise-new-services-then-build-0c04
+[2025-08-24 01:30:16] 🔄 Merging cursor/add-and-advertise-new-services-then-build-0c04...
+[2025-08-24 01:30:17] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-0c04
+[2025-08-24 01:30:17] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-0c04
+[2025-08-24 01:30:17] 📋 Processing 7: cursor/add-and-advertise-new-services-then-build-0cca
+[2025-08-24 01:30:18] 🔄 Merging cursor/add-and-advertise-new-services-then-build-0cca...
+[2025-08-24 01:30:18] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-0cca
+[2025-08-24 01:30:18] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-0cca
+[2025-08-24 01:30:18] 📋 Processing 8: cursor/add-and-advertise-new-services-then-build-174e
+[2025-08-24 01:30:19] 🔄 Merging cursor/add-and-advertise-new-services-then-build-174e...
+[2025-08-24 01:30:19] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-174e
+[2025-08-24 01:30:19] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-174e
+[2025-08-24 01:30:19] 📋 Processing 9: cursor/add-and-advertise-new-services-then-build-17cc
+[2025-08-24 01:30:20] 🔄 Merging cursor/add-and-advertise-new-services-then-build-17cc...
+[2025-08-24 01:30:20] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-17cc
+[2025-08-24 01:30:20] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-17cc
+[2025-08-24 01:30:20] 📋 Processing 10: cursor/add-and-advertise-new-services-then-build-192f
+[2025-08-24 01:30:21] 🔄 Merging cursor/add-and-advertise-new-services-then-build-192f...
+[2025-08-24 01:30:21] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-192f
+[2025-08-24 01:30:21] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-192f
+[2025-08-24 01:30:21] 📋 Processing 11: cursor/add-and-advertise-new-services-then-build-1d5b
+[2025-08-24 01:30:22] 🔄 Merging cursor/add-and-advertise-new-services-then-build-1d5b...
+[2025-08-24 01:30:22] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-1d5b
+[2025-08-24 01:30:22] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-1d5b
+[2025-08-24 01:30:22] 📋 Processing 12: cursor/add-and-advertise-new-services-then-build-21f8
+[2025-08-24 01:30:23] 🔄 Merging cursor/add-and-advertise-new-services-then-build-21f8...
+[2025-08-24 01:30:23] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-21f8
+[2025-08-24 01:30:23] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-21f8
+[2025-08-24 01:30:23] 📋 Processing 13: cursor/add-and-advertise-new-services-then-build-2b91
+[2025-08-24 01:30:24] 🔄 Merging cursor/add-and-advertise-new-services-then-build-2b91...
+[2025-08-24 01:30:24] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-2b91
+[2025-08-24 01:30:24] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-2b91
+[2025-08-24 01:30:24] 📋 Processing 14: cursor/add-and-advertise-new-services-then-build-2c85
+[2025-08-24 01:30:25] 🔄 Merging cursor/add-and-advertise-new-services-then-build-2c85...
+[2025-08-24 01:30:25] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-2c85
+[2025-08-24 01:30:25] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-2c85
+[2025-08-24 01:30:25] 📋 Processing 15: cursor/add-and-advertise-new-services-then-build-336c
+[2025-08-24 01:30:25] 🔄 Merging cursor/add-and-advertise-new-services-then-build-336c...
+[2025-08-24 01:30:26] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-336c
+[2025-08-24 01:30:26] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-336c
+[2025-08-24 01:30:26] 📋 Processing 16: cursor/add-and-advertise-new-services-then-build-359a
+[2025-08-24 01:30:26] 🔄 Merging cursor/add-and-advertise-new-services-then-build-359a...
+[2025-08-24 01:30:27] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-359a
+[2025-08-24 01:30:27] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-359a
+[2025-08-24 01:30:27] 📋 Processing 17: cursor/add-and-advertise-new-services-then-build-39d5
+[2025-08-24 01:30:27] 🔄 Merging cursor/add-and-advertise-new-services-then-build-39d5...
+[2025-08-24 01:30:28] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-39d5
+[2025-08-24 01:30:28] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-39d5
+[2025-08-24 01:30:28] 📋 Processing 18: cursor/add-and-advertise-new-services-then-build-3ac9
+[2025-08-24 01:30:28] 🔄 Merging cursor/add-and-advertise-new-services-then-build-3ac9...
+[2025-08-24 01:30:29] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-3ac9
+[2025-08-24 01:30:29] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-3ac9
+[2025-08-24 01:30:29] 📋 Processing 19: cursor/add-and-advertise-new-services-then-build-3bf4
+[2025-08-24 01:30:30] 🔄 Merging cursor/add-and-advertise-new-services-then-build-3bf4...
+[2025-08-24 01:30:30] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-3bf4
+[2025-08-24 01:30:30] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-3bf4
+[2025-08-24 01:30:30] 📋 Processing 20: cursor/add-and-advertise-new-services-then-build-3f02
+[2025-08-24 01:30:31] 🔄 Merging cursor/add-and-advertise-new-services-then-build-3f02...
+[2025-08-24 01:30:31] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-3f02
+[2025-08-24 01:30:31] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-3f02
+[2025-08-24 01:30:31] 📋 Processing 21: cursor/add-and-advertise-new-services-then-build-3f57
+[2025-08-24 01:30:32] 🔄 Merging cursor/add-and-advertise-new-services-then-build-3f57...
+[2025-08-24 01:30:32] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-3f57
+[2025-08-24 01:30:33] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-3f57
+[2025-08-24 01:30:33] 📋 Processing 22: cursor/add-and-advertise-new-services-then-build-4074
+[2025-08-24 01:30:33] 🔄 Merging cursor/add-and-advertise-new-services-then-build-4074...
+[2025-08-24 01:30:33] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-4074
+[2025-08-24 01:30:34] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-4074
+[2025-08-24 01:30:34] 📋 Processing 23: cursor/add-and-advertise-new-services-then-build-4798
+[2025-08-24 01:30:34] 🔄 Merging cursor/add-and-advertise-new-services-then-build-4798...
+[2025-08-24 01:30:34] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-4798
+[2025-08-24 01:30:35] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-4798
+[2025-08-24 01:30:35] 📋 Processing 24: cursor/add-and-advertise-new-services-then-build-4941
+[2025-08-24 01:30:35] 🔄 Merging cursor/add-and-advertise-new-services-then-build-4941...
+[2025-08-24 01:30:35] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-4941
+[2025-08-24 01:30:36] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-4941
+[2025-08-24 01:30:36] 📋 Processing 25: cursor/add-and-advertise-new-services-then-build-49c1
+[2025-08-24 01:30:36] 🔄 Merging cursor/add-and-advertise-new-services-then-build-49c1...
+[2025-08-24 01:30:36] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-49c1
+[2025-08-24 01:30:36] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-49c1
+[2025-08-24 01:30:36] 📋 Processing 26: cursor/add-and-advertise-new-services-then-build-4e03
+[2025-08-24 01:30:37] 🔄 Merging cursor/add-and-advertise-new-services-then-build-4e03...
+[2025-08-24 01:30:37] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-4e03
+[2025-08-24 01:30:37] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-4e03
+[2025-08-24 01:30:37] 📋 Processing 27: cursor/add-and-advertise-new-services-then-build-5035
+[2025-08-24 01:30:38] 🔄 Merging cursor/add-and-advertise-new-services-then-build-5035...
+[2025-08-24 01:30:38] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-5035
+[2025-08-24 01:30:38] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-5035
+[2025-08-24 01:30:38] 📋 Processing 28: cursor/add-and-advertise-new-services-then-build-506a
+[2025-08-24 01:30:39] 🔄 Merging cursor/add-and-advertise-new-services-then-build-506a...
+[2025-08-24 01:30:39] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-506a
+[2025-08-24 01:30:39] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-506a
+[2025-08-24 01:30:39] 📋 Processing 29: cursor/add-and-advertise-new-services-then-build-5511
+[2025-08-24 01:30:40] 🔄 Merging cursor/add-and-advertise-new-services-then-build-5511...
+[2025-08-24 01:30:40] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-5511
+[2025-08-24 01:30:40] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-5511
+[2025-08-24 01:30:40] 📋 Processing 30: cursor/add-and-advertise-new-services-then-build-5a0b
+[2025-08-24 01:30:41] 🔄 Merging cursor/add-and-advertise-new-services-then-build-5a0b...
+[2025-08-24 01:30:41] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-5a0b
+[2025-08-24 01:30:41] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-5a0b
+[2025-08-24 01:30:41] 📋 Processing 31: cursor/add-and-advertise-new-services-then-build-5b39
+[2025-08-24 01:30:41] 🔄 Merging cursor/add-and-advertise-new-services-then-build-5b39...
+[2025-08-24 01:30:42] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-5b39
+[2025-08-24 01:30:42] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-5b39
+[2025-08-24 01:30:42] 📋 Processing 32: cursor/add-and-advertise-new-services-then-build-6510
+[2025-08-24 01:30:42] 🔄 Merging cursor/add-and-advertise-new-services-then-build-6510...
+[2025-08-24 01:30:43] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-6510
+[2025-08-24 01:30:43] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-6510
+[2025-08-24 01:30:43] 📋 Processing 33: cursor/add-and-advertise-new-services-then-build-6afb
+[2025-08-24 01:30:43] 🔄 Merging cursor/add-and-advertise-new-services-then-build-6afb...
+[2025-08-24 01:30:44] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-6afb
+[2025-08-24 01:30:44] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-6afb
+[2025-08-24 01:30:44] 📋 Processing 34: cursor/add-and-advertise-new-services-then-build-6d14
+[2025-08-24 01:30:45] 🔄 Merging cursor/add-and-advertise-new-services-then-build-6d14...
+[2025-08-24 01:30:45] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-6d14
+[2025-08-24 01:30:45] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-6d14
+[2025-08-24 01:30:45] 📋 Processing 35: cursor/add-and-advertise-new-services-then-build-7152
+[2025-08-24 01:30:46] 🔄 Merging cursor/add-and-advertise-new-services-then-build-7152...
+[2025-08-24 01:30:46] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-7152
+[2025-08-24 01:30:46] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-7152
+[2025-08-24 01:30:46] 📋 Processing 36: cursor/add-and-advertise-new-services-then-build-7683
+[2025-08-24 01:30:47] 🔄 Merging cursor/add-and-advertise-new-services-then-build-7683...
+[2025-08-24 01:30:47] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-7683
+[2025-08-24 01:30:48] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-7683
+[2025-08-24 01:30:48] 📋 Processing 37: cursor/add-and-advertise-new-services-then-build-7aec
+[2025-08-24 01:30:48] 🔄 Merging cursor/add-and-advertise-new-services-then-build-7aec...
+[2025-08-24 01:30:48] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-7aec
+[2025-08-24 01:30:48] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-7aec
+[2025-08-24 01:30:48] 📋 Processing 38: cursor/add-and-advertise-new-services-then-build-7c2e
+[2025-08-24 01:30:49] 🔄 Merging cursor/add-and-advertise-new-services-then-build-7c2e...
+[2025-08-24 01:30:49] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-7c2e
+[2025-08-24 01:30:49] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-7c2e
+[2025-08-24 01:30:49] 📋 Processing 39: cursor/add-and-advertise-new-services-then-build-7fe9
+[2025-08-24 01:30:50] 🔄 Merging cursor/add-and-advertise-new-services-then-build-7fe9...
+[2025-08-24 01:30:50] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-7fe9
+[2025-08-24 01:30:50] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-7fe9
+[2025-08-24 01:30:50] 📋 Processing 40: cursor/add-and-advertise-new-services-then-build-8699
+[2025-08-24 01:30:51] 🔄 Merging cursor/add-and-advertise-new-services-then-build-8699...
+[2025-08-24 01:30:51] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-8699
+[2025-08-24 01:30:51] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-8699
+[2025-08-24 01:30:51] 📋 Processing 41: cursor/add-and-advertise-new-services-then-build-86e9
+[2025-08-24 01:30:52] 🔄 Merging cursor/add-and-advertise-new-services-then-build-86e9...
+[2025-08-24 01:30:52] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-86e9
+[2025-08-24 01:30:52] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-86e9
+[2025-08-24 01:30:52] 📋 Processing 42: cursor/add-and-advertise-new-services-then-build-8c77
+[2025-08-24 01:30:52] 🔄 Merging cursor/add-and-advertise-new-services-then-build-8c77...
+[2025-08-24 01:30:53] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-8c77
+[2025-08-24 01:30:53] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-8c77
+[2025-08-24 01:30:53] 📋 Processing 43: cursor/add-and-advertise-new-services-then-build-98f2
+[2025-08-24 01:30:53] 🔄 Merging cursor/add-and-advertise-new-services-then-build-98f2...
+[2025-08-24 01:30:54] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-98f2
+[2025-08-24 01:30:54] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-98f2
+[2025-08-24 01:30:54] 📋 Processing 44: cursor/add-and-advertise-new-services-then-build-99f7
+[2025-08-24 01:30:54] 🔄 Merging cursor/add-and-advertise-new-services-then-build-99f7...
+[2025-08-24 01:30:55] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-99f7
+[2025-08-24 01:30:55] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-99f7
+[2025-08-24 01:30:55] 📋 Processing 45: cursor/add-and-advertise-new-services-then-build-9c6d
+[2025-08-24 01:30:56] 🔄 Merging cursor/add-and-advertise-new-services-then-build-9c6d...
+[2025-08-24 01:30:56] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-9c6d
+[2025-08-24 01:30:56] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-9c6d
+[2025-08-24 01:30:56] 📋 Processing 46: cursor/add-and-advertise-new-services-then-build-9d8e
+[2025-08-24 01:30:57] 🔄 Merging cursor/add-and-advertise-new-services-then-build-9d8e...
+[2025-08-24 01:30:57] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-9d8e
+[2025-08-24 01:30:57] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-9d8e
+[2025-08-24 01:30:57] 📋 Processing 47: cursor/add-and-advertise-new-services-then-build-a284
+[2025-08-24 01:30:58] 🔄 Merging cursor/add-and-advertise-new-services-then-build-a284...
+[2025-08-24 01:30:58] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-a284
+[2025-08-24 01:30:58] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-a284
+[2025-08-24 01:30:58] 📋 Processing 48: cursor/add-and-advertise-new-services-then-build-a421
+[2025-08-24 01:30:58] 🔄 Merging cursor/add-and-advertise-new-services-then-build-a421...
+[2025-08-24 01:30:59] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-a421
+[2025-08-24 01:30:59] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-a421
+[2025-08-24 01:30:59] 📋 Processing 49: cursor/add-and-advertise-new-services-then-build-a930
+[2025-08-24 01:30:59] 🔄 Merging cursor/add-and-advertise-new-services-then-build-a930...
+[2025-08-24 01:31:00] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-a930
+[2025-08-24 01:31:00] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-a930
+[2025-08-24 01:31:00] 📋 Processing 50: cursor/add-and-advertise-new-services-then-build-a975
+[2025-08-24 01:31:00] 🔄 Merging cursor/add-and-advertise-new-services-then-build-a975...
+[2025-08-24 01:31:01] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-a975
+[2025-08-24 01:31:01] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-a975
+[2025-08-24 01:31:01] 📊 Progress: 50 successful, 0 failed, 0 conflicts resolved
+[2025-08-24 01:31:01] 💾 Pushing intermediate changes...
+[2025-08-24 01:31:02] ⚠️  Failed to push, continuing locally
+[2025-08-24 01:31:02] 📋 Processing 51: cursor/add-and-advertise-new-services-then-build-ab61
+[2025-08-24 01:31:02] 🔄 Merging cursor/add-and-advertise-new-services-then-build-ab61...
+[2025-08-24 01:31:02] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-ab61
+[2025-08-24 01:31:03] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-ab61
+[2025-08-24 01:31:03] 📋 Processing 52: cursor/add-and-advertise-new-services-then-build-b17c
+[2025-08-24 01:31:03] 🔄 Merging cursor/add-and-advertise-new-services-then-build-b17c...
+[2025-08-24 01:31:03] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-b17c
+[2025-08-24 01:31:04] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-b17c
+[2025-08-24 01:31:04] 📋 Processing 53: cursor/add-and-advertise-new-services-then-build-b3c7
+[2025-08-24 01:31:04] 🔄 Merging cursor/add-and-advertise-new-services-then-build-b3c7...
+[2025-08-24 01:31:05] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-b3c7
+[2025-08-24 01:31:05] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-b3c7
+[2025-08-24 01:31:05] 📋 Processing 54: cursor/add-and-advertise-new-services-then-build-b766
+[2025-08-24 01:31:05] 🔄 Merging cursor/add-and-advertise-new-services-then-build-b766...
+[2025-08-24 01:31:05] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-b766
+[2025-08-24 01:31:06] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-b766
+[2025-08-24 01:31:06] 📋 Processing 55: cursor/add-and-advertise-new-services-then-build-b89c
+[2025-08-24 01:31:06] 🔄 Merging cursor/add-and-advertise-new-services-then-build-b89c...
+[2025-08-24 01:31:06] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-b89c
+[2025-08-24 01:31:07] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-b89c
+[2025-08-24 01:31:07] 📋 Processing 56: cursor/add-and-advertise-new-services-then-build-bb33
+[2025-08-24 01:31:07] 🔄 Merging cursor/add-and-advertise-new-services-then-build-bb33...
+[2025-08-24 01:31:08] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-bb33
+[2025-08-24 01:31:08] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-bb33
+[2025-08-24 01:31:08] 📋 Processing 57: cursor/add-and-advertise-new-services-then-build-bdcb
+[2025-08-24 01:31:08] 🔄 Merging cursor/add-and-advertise-new-services-then-build-bdcb...
+[2025-08-24 01:31:09] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-bdcb
+[2025-08-24 01:31:09] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-bdcb
+[2025-08-24 01:31:09] 📋 Processing 58: cursor/add-and-advertise-new-services-then-build-c44e
+[2025-08-24 01:31:09] 🔄 Merging cursor/add-and-advertise-new-services-then-build-c44e...
+[2025-08-24 01:31:09] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-c44e
+[2025-08-24 01:31:10] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-c44e
+[2025-08-24 01:31:10] 📋 Processing 59: cursor/add-and-advertise-new-services-then-build-c4de
+[2025-08-24 01:31:10] 🔄 Merging cursor/add-and-advertise-new-services-then-build-c4de...
+[2025-08-24 01:31:10] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-c4de
+[2025-08-24 01:31:11] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-c4de
+[2025-08-24 01:31:11] 📋 Processing 60: cursor/add-and-advertise-new-services-then-build-d192
+[2025-08-24 01:31:11] 🔄 Merging cursor/add-and-advertise-new-services-then-build-d192...
+[2025-08-24 01:31:11] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-d192
+[2025-08-24 01:31:12] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-d192
+[2025-08-24 01:31:12] 📋 Processing 61: cursor/add-and-advertise-new-services-then-build-d68c
+[2025-08-24 01:31:12] 🔄 Merging cursor/add-and-advertise-new-services-then-build-d68c...
+[2025-08-24 01:31:12] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-d68c
+[2025-08-24 01:31:13] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-d68c
+[2025-08-24 01:31:13] 📋 Processing 62: cursor/add-and-advertise-new-services-then-build-da38
+[2025-08-24 01:31:13] 🔄 Merging cursor/add-and-advertise-new-services-then-build-da38...
+[2025-08-24 01:31:13] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-da38
+[2025-08-24 01:31:14] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-da38
+[2025-08-24 01:31:14] 📋 Processing 63: cursor/add-and-advertise-new-services-then-build-e1f5
+[2025-08-24 01:31:14] 🔄 Merging cursor/add-and-advertise-new-services-then-build-e1f5...
+[2025-08-24 01:31:14] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-e1f5
+[2025-08-24 01:31:15] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-e1f5
+[2025-08-24 01:31:15] 📋 Processing 64: cursor/add-and-advertise-new-services-then-build-e6ba
+[2025-08-24 01:31:15] 🔄 Merging cursor/add-and-advertise-new-services-then-build-e6ba...
+[2025-08-24 01:31:15] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-e6ba
+[2025-08-24 01:31:16] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-e6ba
+[2025-08-24 01:31:16] 📋 Processing 65: cursor/add-and-advertise-new-services-then-build-e8d4
+[2025-08-24 01:31:16] 🔄 Merging cursor/add-and-advertise-new-services-then-build-e8d4...
+[2025-08-24 01:31:16] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-e8d4
+[2025-08-24 01:31:17] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-e8d4
+[2025-08-24 01:31:17] 📋 Processing 66: cursor/add-and-advertise-new-services-then-build-ea8f
+[2025-08-24 01:31:17] 🔄 Merging cursor/add-and-advertise-new-services-then-build-ea8f...
+[2025-08-24 01:31:17] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-ea8f
+[2025-08-24 01:31:18] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-ea8f
+[2025-08-24 01:31:18] 📋 Processing 67: cursor/add-and-advertise-new-services-then-build-ec85
+[2025-08-24 01:31:18] 🔄 Merging cursor/add-and-advertise-new-services-then-build-ec85...
+[2025-08-24 01:31:18] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-ec85
+[2025-08-24 01:31:19] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-ec85
+[2025-08-24 01:31:19] 📋 Processing 68: cursor/add-and-advertise-new-services-then-build-ed33
+[2025-08-24 01:31:19] 🔄 Merging cursor/add-and-advertise-new-services-then-build-ed33...
+[2025-08-24 01:31:19] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-ed33
+[2025-08-24 01:31:20] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-ed33
+[2025-08-24 01:31:20] 📋 Processing 69: cursor/add-and-advertise-new-services-then-build-ef5a
+[2025-08-24 01:31:20] 🔄 Merging cursor/add-and-advertise-new-services-then-build-ef5a...
+[2025-08-24 01:31:20] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-ef5a
+[2025-08-24 01:31:21] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-ef5a
+[2025-08-24 01:31:21] 📋 Processing 70: cursor/add-and-advertise-new-services-then-build-f13c
+[2025-08-24 01:31:21] 🔄 Merging cursor/add-and-advertise-new-services-then-build-f13c...
+[2025-08-24 01:31:21] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-f13c
+[2025-08-24 01:31:21] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-f13c
+[2025-08-24 01:31:21] 📋 Processing 71: cursor/add-and-advertise-new-services-then-build-f199
+[2025-08-24 01:31:22] 🔄 Merging cursor/add-and-advertise-new-services-then-build-f199...
+[2025-08-24 01:31:22] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-f199
+[2025-08-24 01:31:22] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-f199
+[2025-08-24 01:31:22] 📋 Processing 72: cursor/add-and-advertise-new-services-then-build-f35d
+[2025-08-24 01:31:23] 🔄 Merging cursor/add-and-advertise-new-services-then-build-f35d...
+[2025-08-24 01:31:23] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-f35d
+[2025-08-24 01:31:23] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-f35d
+[2025-08-24 01:31:23] 📋 Processing 73: cursor/add-and-advertise-new-services-then-build-ff3f
+[2025-08-24 01:31:24] 🔄 Merging cursor/add-and-advertise-new-services-then-build-ff3f...
+[2025-08-24 01:31:24] ✅ Successfully merged cursor/add-and-advertise-new-services-then-build-ff3f
+[2025-08-24 01:31:24] ✅ Successfully processed cursor/add-and-advertise-new-services-then-build-ff3f
+[2025-08-24 01:31:24] 📋 Processing 74: cursor/add-context-and-interaction-to-updates-4760
+[2025-08-24 01:31:24] 🔄 Merging cursor/add-context-and-interaction-to-updates-4760...
+[2025-08-24 01:31:25] ✅ Successfully merged cursor/add-context-and-interaction-to-updates-4760
+[2025-08-24 01:31:26] ✅ Successfully processed cursor/add-context-and-interaction-to-updates-4760
+[2025-08-24 01:31:26] 📋 Processing 75: cursor/add-lateral-margins-for-zoom-animation-0c88
+[2025-08-24 01:31:26] 🔄 Merging cursor/add-lateral-margins-for-zoom-animation-0c88...
+[2025-08-24 01:31:26] ✅ Successfully merged cursor/add-lateral-margins-for-zoom-animation-0c88
+[2025-08-24 01:31:26] ✅ Successfully processed cursor/add-lateral-margins-for-zoom-animation-0c88
+[2025-08-24 01:31:26] 📋 Processing 76: cursor/add-more-project-content-0e0b
+[2025-08-24 01:31:27] 🔄 Merging cursor/add-more-project-content-0e0b...
+[2025-08-24 01:31:27] ✅ Successfully merged cursor/add-more-project-content-0e0b
+[2025-08-24 01:31:27] ✅ Successfully processed cursor/add-more-project-content-0e0b
+[2025-08-24 01:31:27] 📋 Processing 77: cursor/add-more-project-content-1001
+[2025-08-24 01:31:28] 🔄 Merging cursor/add-more-project-content-1001...
+[2025-08-24 01:31:28] ✅ Successfully merged cursor/add-more-project-content-1001
+[2025-08-24 01:31:28] ✅ Successfully processed cursor/add-more-project-content-1001
+[2025-08-24 01:31:28] 📋 Processing 78: cursor/add-more-project-content-1b70
+[2025-08-24 01:31:29] 🔄 Merging cursor/add-more-project-content-1b70...
+[2025-08-24 01:31:29] ✅ Successfully merged cursor/add-more-project-content-1b70
+[2025-08-24 01:31:29] ✅ Successfully processed cursor/add-more-project-content-1b70
+[2025-08-24 01:31:29] 📋 Processing 79: cursor/add-more-project-content-1e50
+[2025-08-24 01:31:30] 🔄 Merging cursor/add-more-project-content-1e50...
+[2025-08-24 01:31:30] ✅ Successfully merged cursor/add-more-project-content-1e50
+[2025-08-24 01:31:30] ✅ Successfully processed cursor/add-more-project-content-1e50
+[2025-08-24 01:31:30] 📋 Processing 80: cursor/add-more-project-content-2d2a
+[2025-08-24 01:31:30] 🔄 Merging cursor/add-more-project-content-2d2a...
+[2025-08-24 01:31:31] ✅ Successfully merged cursor/add-more-project-content-2d2a
+[2025-08-24 01:31:31] ✅ Successfully processed cursor/add-more-project-content-2d2a
+[2025-08-24 01:31:31] 📋 Processing 81: cursor/add-more-project-content-3422
+[2025-08-24 01:31:31] 🔄 Merging cursor/add-more-project-content-3422...
+[2025-08-24 01:31:32] ✅ Successfully merged cursor/add-more-project-content-3422
+[2025-08-24 01:31:32] ✅ Successfully processed cursor/add-more-project-content-3422
+[2025-08-24 01:31:32] 📋 Processing 82: cursor/add-more-project-content-343b
+[2025-08-24 01:31:32] 🔄 Merging cursor/add-more-project-content-343b...
+[2025-08-24 01:31:33] ✅ Successfully merged cursor/add-more-project-content-343b
+[2025-08-24 01:31:33] ✅ Successfully processed cursor/add-more-project-content-343b
+[2025-08-24 01:31:33] 📋 Processing 83: cursor/add-more-project-content-3d4b
+[2025-08-24 01:31:33] 🔄 Merging cursor/add-more-project-content-3d4b...
+[2025-08-24 01:31:34] ✅ Successfully merged cursor/add-more-project-content-3d4b
+[2025-08-24 01:31:34] ✅ Successfully processed cursor/add-more-project-content-3d4b
+[2025-08-24 01:31:34] 📋 Processing 84: cursor/add-more-project-content-43d6
+[2025-08-24 01:31:34] 🔄 Merging cursor/add-more-project-content-43d6...
+[2025-08-24 01:31:35] ✅ Successfully merged cursor/add-more-project-content-43d6
+[2025-08-24 01:31:35] ✅ Successfully processed cursor/add-more-project-content-43d6
+[2025-08-24 01:31:35] 📋 Processing 85: cursor/add-more-project-content-4ab0
+[2025-08-24 01:31:35] 🔄 Merging cursor/add-more-project-content-4ab0...
+[2025-08-24 01:31:36] ✅ Successfully merged cursor/add-more-project-content-4ab0
+[2025-08-24 01:31:36] ✅ Successfully processed cursor/add-more-project-content-4ab0
+[2025-08-24 01:31:36] 📋 Processing 86: cursor/add-more-project-content-4f94
+[2025-08-24 01:31:36] 🔄 Merging cursor/add-more-project-content-4f94...
+[2025-08-24 01:31:37] ✅ Successfully merged cursor/add-more-project-content-4f94
+[2025-08-24 01:31:37] ✅ Successfully processed cursor/add-more-project-content-4f94
+[2025-08-24 01:31:37] 📋 Processing 87: cursor/add-more-project-content-56da
+[2025-08-24 01:31:37] 🔄 Merging cursor/add-more-project-content-56da...
+[2025-08-24 01:31:38] ✅ Successfully merged cursor/add-more-project-content-56da
+[2025-08-24 01:31:38] ✅ Successfully processed cursor/add-more-project-content-56da
+[2025-08-24 01:31:38] 📋 Processing 88: cursor/add-more-project-content-5956
+[2025-08-24 01:31:38] 🔄 Merging cursor/add-more-project-content-5956...
+[2025-08-24 01:31:38] ✅ Successfully merged cursor/add-more-project-content-5956
+[2025-08-24 01:31:39] ✅ Successfully processed cursor/add-more-project-content-5956
+[2025-08-24 01:31:39] 📋 Processing 89: cursor/add-more-project-content-5fae
+[2025-08-24 01:31:39] 🔄 Merging cursor/add-more-project-content-5fae...
+[2025-08-24 01:31:39] ✅ Successfully merged cursor/add-more-project-content-5fae
+[2025-08-24 01:31:40] ✅ Successfully processed cursor/add-more-project-content-5fae
+[2025-08-24 01:31:40] 📋 Processing 90: cursor/add-more-project-content-68ea
+[2025-08-24 01:31:40] 🔄 Merging cursor/add-more-project-content-68ea...
+[2025-08-24 01:31:40] ✅ Successfully merged cursor/add-more-project-content-68ea
+[2025-08-24 01:31:41] ✅ Successfully processed cursor/add-more-project-content-68ea
+[2025-08-24 01:31:41] 📋 Processing 91: cursor/add-more-project-content-6db1
+[2025-08-24 01:31:41] 🔄 Merging cursor/add-more-project-content-6db1...
+[2025-08-24 01:31:41] ✅ Successfully merged cursor/add-more-project-content-6db1
+[2025-08-24 01:31:42] ✅ Successfully processed cursor/add-more-project-content-6db1
+[2025-08-24 01:31:42] 📋 Processing 92: cursor/add-more-project-content-715e
+[2025-08-24 01:31:42] 🔄 Merging cursor/add-more-project-content-715e...
+[2025-08-24 01:31:42] ✅ Successfully merged cursor/add-more-project-content-715e
+[2025-08-24 01:31:43] ✅ Successfully processed cursor/add-more-project-content-715e
+[2025-08-24 01:31:43] 📋 Processing 93: cursor/add-more-project-content-783a
+[2025-08-24 01:31:43] 🔄 Merging cursor/add-more-project-content-783a...
+[2025-08-24 01:31:43] ✅ Successfully merged cursor/add-more-project-content-783a
+[2025-08-24 01:31:44] ✅ Successfully processed cursor/add-more-project-content-783a
+[2025-08-24 01:31:44] 📋 Processing 94: cursor/add-more-project-content-8277
+[2025-08-24 01:31:44] 🔄 Merging cursor/add-more-project-content-8277...
+[2025-08-24 01:31:44] ✅ Successfully merged cursor/add-more-project-content-8277
+[2025-08-24 01:31:44] ✅ Successfully processed cursor/add-more-project-content-8277
+[2025-08-24 01:31:44] 📋 Processing 95: cursor/add-more-project-content-a286
+[2025-08-24 01:31:45] 🔄 Merging cursor/add-more-project-content-a286...
+[2025-08-24 01:31:45] ✅ Successfully merged cursor/add-more-project-content-a286
+[2025-08-24 01:31:45] ✅ Successfully processed cursor/add-more-project-content-a286
+[2025-08-24 01:31:45] 📋 Processing 96: cursor/add-more-project-content-a592
+[2025-08-24 01:31:46] 🔄 Merging cursor/add-more-project-content-a592...
+[2025-08-24 01:31:46] ✅ Successfully merged cursor/add-more-project-content-a592
+[2025-08-24 01:31:46] ✅ Successfully processed cursor/add-more-project-content-a592
+[2025-08-24 01:31:46] 📋 Processing 97: cursor/add-more-project-content-aa12
+[2025-08-24 01:31:47] 🔄 Merging cursor/add-more-project-content-aa12...
+[2025-08-24 01:31:47] ✅ Successfully merged cursor/add-more-project-content-aa12
+[2025-08-24 01:31:47] ✅ Successfully processed cursor/add-more-project-content-aa12
+[2025-08-24 01:31:47] 📋 Processing 98: cursor/add-more-project-content-decc
+[2025-08-24 01:31:48] 🔄 Merging cursor/add-more-project-content-decc...
+[2025-08-24 01:31:48] ✅ Successfully merged cursor/add-more-project-content-decc
+[2025-08-24 01:31:48] ✅ Successfully processed cursor/add-more-project-content-decc
+[2025-08-24 01:31:48] 📋 Processing 99: cursor/add-more-project-content-e6bb
+[2025-08-24 01:31:49] 🔄 Merging cursor/add-more-project-content-e6bb...
+[2025-08-24 01:31:49] ✅ Successfully merged cursor/add-more-project-content-e6bb
+[2025-08-24 01:31:49] ✅ Successfully processed cursor/add-more-project-content-e6bb
+[2025-08-24 01:31:49] 📋 Processing 100: cursor/add-more-project-content-ed00
+[2025-08-24 01:31:50] 🔄 Merging cursor/add-more-project-content-ed00...
+[2025-08-24 01:31:50] ✅ Successfully merged cursor/add-more-project-content-ed00
+[2025-08-24 01:31:50] ✅ Successfully processed cursor/add-more-project-content-ed00
+[2025-08-24 01:31:50] 📊 Progress: 100 successful, 0 failed, 0 conflicts resolved
+[2025-08-24 01:31:50] 💾 Pushing intermediate changes...
+[2025-08-24 01:31:51] ⚠️  Failed to push, continuing locally
+[2025-08-24 01:31:51] 📋 Processing 101: cursor/add-services-pricing-q4-2029
+[2025-08-24 01:31:51] 🔄 Merging cursor/add-services-pricing-q4-2029...
+[2025-08-24 01:31:52] ✅ Successfully merged cursor/add-services-pricing-q4-2029
+[2025-08-24 01:31:52] ✅ Successfully processed cursor/add-services-pricing-q4-2029
+[2025-08-24 01:31:52] 📋 Processing 102: cursor/adjust-app-visibility-with-gradients-and-transparency-02c2
+[2025-08-24 01:31:53] 🔄 Merging cursor/adjust-app-visibility-with-gradients-and-transparency-02c2...
+[2025-08-24 01:31:53] ✅ Successfully merged cursor/adjust-app-visibility-with-gradients-and-transparency-02c2
+[2025-08-24 01:31:53] ✅ Successfully processed cursor/adjust-app-visibility-with-gradients-and-transparency-02c2
+[2025-08-24 01:31:53] 📋 Processing 103: cursor/agent-enhancement-and-main-branch-integration-4c76
+[2025-08-24 01:31:54] 🔄 Merging cursor/agent-enhancement-and-main-branch-integration-4c76...
+[2025-08-24 01:31:54] ✅ Successfully merged cursor/agent-enhancement-and-main-branch-integration-4c76
+[2025-08-24 01:31:54] ✅ Successfully processed cursor/agent-enhancement-and-main-branch-integration-4c76
+[2025-08-24 01:31:54] 📋 Processing 104: cursor/agent-enhancement-and-main-branch-integration-7066
+[2025-08-24 01:31:55] 🔄 Merging cursor/agent-enhancement-and-main-branch-integration-7066...
+[2025-08-24 01:31:55] ✅ Successfully merged cursor/agent-enhancement-and-main-branch-integration-7066
+[2025-08-24 01:31:55] ✅ Successfully processed cursor/agent-enhancement-and-main-branch-integration-7066
+[2025-08-24 01:31:55] 📋 Processing 105: cursor/agents-factory-setup
+[2025-08-24 01:31:56] 🔄 Merging cursor/agents-factory-setup...
+[2025-08-24 01:31:56] ✅ Successfully merged cursor/agents-factory-setup
+[2025-08-24 01:31:56] ✅ Successfully processed cursor/agents-factory-setup
+[2025-08-24 01:31:56] 📋 Processing 106: cursor/analyze-and-improve-ziontechgroup-website-and-repository-03f9
+[2025-08-24 01:31:57] 🔄 Merging cursor/analyze-and-improve-ziontechgroup-website-and-repository-03f9...
+[2025-08-24 01:31:57] ✅ Successfully merged cursor/analyze-and-improve-ziontechgroup-website-and-repository-03f9
+[2025-08-24 01:31:58] ✅ Successfully processed cursor/analyze-and-improve-ziontechgroup-website-and-repository-03f9
+[2025-08-24 01:31:58] 📋 Processing 107: cursor/analyze-and-improve-ziontechgroup-website-and-repository-70ca
+[2025-08-24 01:31:58] 🔄 Merging cursor/analyze-and-improve-ziontechgroup-website-and-repository-70ca...
+[2025-08-24 01:31:58] ✅ Successfully merged cursor/analyze-and-improve-ziontechgroup-website-and-repository-70ca
+[2025-08-24 01:31:59] ✅ Successfully processed cursor/analyze-and-improve-ziontechgroup-website-and-repository-70ca
+[2025-08-24 01:31:59] 📋 Processing 108: cursor/analyze-and-improve-ziontechgroup-website-and-repository-adfc
+[2025-08-24 01:31:59] 🔄 Merging cursor/analyze-and-improve-ziontechgroup-website-and-repository-adfc...
+[2025-08-24 01:32:00] ✅ Successfully merged cursor/analyze-and-improve-ziontechgroup-website-and-repository-adfc
+[2025-08-24 01:32:00] ✅ Successfully processed cursor/analyze-and-improve-ziontechgroup-website-and-repository-adfc
+[2025-08-24 01:32:00] 📋 Processing 109: cursor/analyze-and-improve-ziontechgroup-website-and-repository-c253
+[2025-08-24 01:32:00] 🔄 Merging cursor/analyze-and-improve-ziontechgroup-website-and-repository-c253...
+[2025-08-24 01:32:01] ✅ Successfully merged cursor/analyze-and-improve-ziontechgroup-website-and-repository-c253
+[2025-08-24 01:32:01] ✅ Successfully processed cursor/analyze-and-improve-ziontechgroup-website-and-repository-c253
+[2025-08-24 01:32:01] 📋 Processing 110: cursor/analyze-and-improve-ziontechgroup-website-and-repository-e819
+[2025-08-24 01:32:01] 🔄 Merging cursor/analyze-and-improve-ziontechgroup-website-and-repository-e819...
+[2025-08-24 01:32:02] ✅ Successfully merged cursor/analyze-and-improve-ziontechgroup-website-and-repository-e819
+[2025-08-24 01:32:02] ✅ Successfully processed cursor/analyze-and-improve-ziontechgroup-website-and-repository-e819
+[2025-08-24 01:32:02] 📋 Processing 111: cursor/analyze-app-for-improvement-suggestions-cd5e
+[2025-08-24 01:32:02] 🔄 Merging cursor/analyze-app-for-improvement-suggestions-cd5e...
+[2025-08-24 01:32:03] ✅ Successfully merged cursor/analyze-app-for-improvement-suggestions-cd5e
+[2025-08-24 01:32:03] ✅ Successfully processed cursor/analyze-app-for-improvement-suggestions-cd5e
+[2025-08-24 01:32:03] 📋 Processing 112: cursor/analyze-improve-and-deploy-application-02e7
+[2025-08-24 01:32:03] 🔄 Merging cursor/analyze-improve-and-deploy-application-02e7...
+[2025-08-24 01:32:04] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-02e7
+[2025-08-24 01:32:04] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-02e7
+[2025-08-24 01:32:04] 📋 Processing 113: cursor/analyze-improve-and-deploy-application-058d
+[2025-08-24 01:32:04] 🔄 Merging cursor/analyze-improve-and-deploy-application-058d...
+[2025-08-24 01:32:05] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-058d
+[2025-08-24 01:32:05] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-058d
+[2025-08-24 01:32:05] 📋 Processing 114: cursor/analyze-improve-and-deploy-application-06b1
+[2025-08-24 01:32:05] 🔄 Merging cursor/analyze-improve-and-deploy-application-06b1...
+[2025-08-24 01:32:06] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-06b1
+[2025-08-24 01:32:06] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-06b1
+[2025-08-24 01:32:06] 📋 Processing 115: cursor/analyze-improve-and-deploy-application-06e9
+[2025-08-24 01:32:06] 🔄 Merging cursor/analyze-improve-and-deploy-application-06e9...
+[2025-08-24 01:32:07] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-06e9
+[2025-08-24 01:32:07] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-06e9
+[2025-08-24 01:32:07] 📋 Processing 116: cursor/analyze-improve-and-deploy-application-07c1
+[2025-08-24 01:32:08] 🔄 Merging cursor/analyze-improve-and-deploy-application-07c1...
+[2025-08-24 01:32:08] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-07c1
+[2025-08-24 01:32:08] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-07c1
+[2025-08-24 01:32:08] 📋 Processing 117: cursor/analyze-improve-and-deploy-application-0801
+[2025-08-24 01:32:09] 🔄 Merging cursor/analyze-improve-and-deploy-application-0801...
+[2025-08-24 01:32:09] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-0801
+[2025-08-24 01:32:09] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-0801
+[2025-08-24 01:32:09] 📋 Processing 118: cursor/analyze-improve-and-deploy-application-0944
+[2025-08-24 01:32:10] 🔄 Merging cursor/analyze-improve-and-deploy-application-0944...
+[2025-08-24 01:32:10] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-0944
+[2025-08-24 01:32:11] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-0944
+[2025-08-24 01:32:11] 📋 Processing 119: cursor/analyze-improve-and-deploy-application-09a0
+[2025-08-24 01:32:11] 🔄 Merging cursor/analyze-improve-and-deploy-application-09a0...
+[2025-08-24 01:32:11] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-09a0
+[2025-08-24 01:32:12] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-09a0
+[2025-08-24 01:32:12] 📋 Processing 120: cursor/analyze-improve-and-deploy-application-0c1b
+[2025-08-24 01:32:12] 🔄 Merging cursor/analyze-improve-and-deploy-application-0c1b...
+[2025-08-24 01:32:12] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-0c1b
+[2025-08-24 01:32:13] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-0c1b
+[2025-08-24 01:32:13] 📋 Processing 121: cursor/analyze-improve-and-deploy-application-0f2d
+[2025-08-24 01:32:13] 🔄 Merging cursor/analyze-improve-and-deploy-application-0f2d...
+[2025-08-24 01:32:13] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-0f2d
+[2025-08-24 01:32:14] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-0f2d
+[2025-08-24 01:32:14] 📋 Processing 122: cursor/analyze-improve-and-deploy-application-1032
+[2025-08-24 01:32:14] 🔄 Merging cursor/analyze-improve-and-deploy-application-1032...
+[2025-08-24 01:32:14] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-1032
+[2025-08-24 01:32:15] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-1032
+[2025-08-24 01:32:15] 📋 Processing 123: cursor/analyze-improve-and-deploy-application-10d2
+[2025-08-24 01:32:15] 🔄 Merging cursor/analyze-improve-and-deploy-application-10d2...
+[2025-08-24 01:32:15] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-10d2
+[2025-08-24 01:32:15] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-10d2
+[2025-08-24 01:32:15] 📋 Processing 124: cursor/analyze-improve-and-deploy-application-1133
+[2025-08-24 01:32:16] 🔄 Merging cursor/analyze-improve-and-deploy-application-1133...
+[2025-08-24 01:32:16] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-1133
+[2025-08-24 01:32:16] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-1133
+[2025-08-24 01:32:16] 📋 Processing 125: cursor/analyze-improve-and-deploy-application-1277
+[2025-08-24 01:32:17] 🔄 Merging cursor/analyze-improve-and-deploy-application-1277...
+[2025-08-24 01:32:17] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-1277
+[2025-08-24 01:32:17] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-1277
+[2025-08-24 01:32:17] 📋 Processing 126: cursor/analyze-improve-and-deploy-application-12ce
+[2025-08-24 01:32:18] 🔄 Merging cursor/analyze-improve-and-deploy-application-12ce...
+[2025-08-24 01:32:18] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-12ce
+[2025-08-24 01:32:18] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-12ce
+[2025-08-24 01:32:18] 📋 Processing 127: cursor/analyze-improve-and-deploy-application-1363
+[2025-08-24 01:32:19] 🔄 Merging cursor/analyze-improve-and-deploy-application-1363...
+[2025-08-24 01:32:19] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-1363
+[2025-08-24 01:32:20] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-1363
+[2025-08-24 01:32:20] 📋 Processing 128: cursor/analyze-improve-and-deploy-application-17ce
+[2025-08-24 01:32:20] 🔄 Merging cursor/analyze-improve-and-deploy-application-17ce...
+[2025-08-24 01:32:20] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-17ce
+[2025-08-24 01:32:21] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-17ce
+[2025-08-24 01:32:21] 📋 Processing 129: cursor/analyze-improve-and-deploy-application-17e5
+[2025-08-24 01:32:21] 🔄 Merging cursor/analyze-improve-and-deploy-application-17e5...
+[2025-08-24 01:32:21] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-17e5
+[2025-08-24 01:32:22] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-17e5
+[2025-08-24 01:32:22] 📋 Processing 130: cursor/analyze-improve-and-deploy-application-18d2
+[2025-08-24 01:32:22] 🔄 Merging cursor/analyze-improve-and-deploy-application-18d2...
+[2025-08-24 01:32:22] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-18d2
+[2025-08-24 01:32:23] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-18d2
+[2025-08-24 01:32:23] 📋 Processing 131: cursor/analyze-improve-and-deploy-application-1a50
+[2025-08-24 01:32:23] 🔄 Merging cursor/analyze-improve-and-deploy-application-1a50...
+[2025-08-24 01:32:23] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-1a50
+[2025-08-24 01:32:24] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-1a50
+[2025-08-24 01:32:24] 📋 Processing 132: cursor/analyze-improve-and-deploy-application-1b99
+[2025-08-24 01:32:24] 🔄 Merging cursor/analyze-improve-and-deploy-application-1b99...
+[2025-08-24 01:32:24] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-1b99
+[2025-08-24 01:32:25] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-1b99
+[2025-08-24 01:32:25] 📋 Processing 133: cursor/analyze-improve-and-deploy-application-1ca5
+[2025-08-24 01:32:25] 🔄 Merging cursor/analyze-improve-and-deploy-application-1ca5...
+[2025-08-24 01:32:26] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-1ca5
+[2025-08-24 01:32:26] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-1ca5
+[2025-08-24 01:32:26] 📋 Processing 134: cursor/analyze-improve-and-deploy-application-1ea3
+[2025-08-24 01:32:26] 🔄 Merging cursor/analyze-improve-and-deploy-application-1ea3...
+[2025-08-24 01:32:27] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-1ea3
+[2025-08-24 01:32:27] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-1ea3
+[2025-08-24 01:32:27] 📋 Processing 135: cursor/analyze-improve-and-deploy-application-2157
+[2025-08-24 01:32:27] 🔄 Merging cursor/analyze-improve-and-deploy-application-2157...
+[2025-08-24 01:32:28] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-2157
+[2025-08-24 01:32:28] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-2157
+[2025-08-24 01:32:28] 📋 Processing 136: cursor/analyze-improve-and-deploy-application-242c
+[2025-08-24 01:32:28] 🔄 Merging cursor/analyze-improve-and-deploy-application-242c...
+[2025-08-24 01:32:29] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-242c
+[2025-08-24 01:32:29] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-242c
+[2025-08-24 01:32:29] 📋 Processing 137: cursor/analyze-improve-and-deploy-application-27ff
+[2025-08-24 01:32:29] 🔄 Merging cursor/analyze-improve-and-deploy-application-27ff...
+[2025-08-24 01:32:30] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-27ff
+[2025-08-24 01:32:30] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-27ff
+[2025-08-24 01:32:30] 📋 Processing 138: cursor/analyze-improve-and-deploy-application-2827
+[2025-08-24 01:32:31] 🔄 Merging cursor/analyze-improve-and-deploy-application-2827...
+[2025-08-24 01:32:31] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-2827
+[2025-08-24 01:32:31] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-2827
+[2025-08-24 01:32:31] 📋 Processing 139: cursor/analyze-improve-and-deploy-application-2f79
+[2025-08-24 01:32:32] 🔄 Merging cursor/analyze-improve-and-deploy-application-2f79...
+[2025-08-24 01:32:32] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-2f79
+[2025-08-24 01:32:33] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-2f79
+[2025-08-24 01:32:33] 📋 Processing 140: cursor/analyze-improve-and-deploy-application-2f8d
+[2025-08-24 01:32:33] 🔄 Merging cursor/analyze-improve-and-deploy-application-2f8d...
+[2025-08-24 01:32:33] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-2f8d
+[2025-08-24 01:32:34] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-2f8d
+[2025-08-24 01:32:34] 📋 Processing 141: cursor/analyze-improve-and-deploy-application-2ffe
+[2025-08-24 01:32:34] 🔄 Merging cursor/analyze-improve-and-deploy-application-2ffe...
+[2025-08-24 01:32:35] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-2ffe
+[2025-08-24 01:32:35] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-2ffe
+[2025-08-24 01:32:35] 📋 Processing 142: cursor/analyze-improve-and-deploy-application-34ad
+[2025-08-24 01:32:35] 🔄 Merging cursor/analyze-improve-and-deploy-application-34ad...
+[2025-08-24 01:32:36] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-34ad
+[2025-08-24 01:32:36] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-34ad
+[2025-08-24 01:32:36] 📋 Processing 143: cursor/analyze-improve-and-deploy-application-3555
+[2025-08-24 01:32:36] 🔄 Merging cursor/analyze-improve-and-deploy-application-3555...
+[2025-08-24 01:32:37] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-3555
+[2025-08-24 01:32:37] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-3555
+[2025-08-24 01:32:37] 📋 Processing 144: cursor/analyze-improve-and-deploy-application-35fe
+[2025-08-24 01:32:37] 🔄 Merging cursor/analyze-improve-and-deploy-application-35fe...
+[2025-08-24 01:32:38] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-35fe
+[2025-08-24 01:32:38] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-35fe
+[2025-08-24 01:32:38] 📋 Processing 145: cursor/analyze-improve-and-deploy-application-36d0
+[2025-08-24 01:32:39] 🔄 Merging cursor/analyze-improve-and-deploy-application-36d0...
+[2025-08-24 01:32:39] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-36d0
+[2025-08-24 01:32:39] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-36d0
+[2025-08-24 01:32:39] 📋 Processing 146: cursor/analyze-improve-and-deploy-application-36f1
+[2025-08-24 01:32:40] 🔄 Merging cursor/analyze-improve-and-deploy-application-36f1...
+[2025-08-24 01:32:40] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-36f1
+[2025-08-24 01:32:41] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-36f1
+[2025-08-24 01:32:41] 📋 Processing 147: cursor/analyze-improve-and-deploy-application-37dd
+[2025-08-24 01:32:41] 🔄 Merging cursor/analyze-improve-and-deploy-application-37dd...
+[2025-08-24 01:32:41] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-37dd
+[2025-08-24 01:32:42] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-37dd
+[2025-08-24 01:32:42] 📋 Processing 148: cursor/analyze-improve-and-deploy-application-4852
+[2025-08-24 01:32:42] 🔄 Merging cursor/analyze-improve-and-deploy-application-4852...
+[2025-08-24 01:32:43] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-4852
+[2025-08-24 01:32:43] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-4852
+[2025-08-24 01:32:43] 📋 Processing 149: cursor/analyze-improve-and-deploy-application-4b02
+[2025-08-24 01:32:43] 🔄 Merging cursor/analyze-improve-and-deploy-application-4b02...
+[2025-08-24 01:32:44] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-4b02
+[2025-08-24 01:32:44] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-4b02
+[2025-08-24 01:32:44] 📋 Processing 150: cursor/analyze-improve-and-deploy-application-4b5b
+[2025-08-24 01:32:44] 🔄 Merging cursor/analyze-improve-and-deploy-application-4b5b...
+[2025-08-24 01:32:45] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-4b5b
+[2025-08-24 01:32:45] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-4b5b
+[2025-08-24 01:32:45] 📊 Progress: 150 successful, 0 failed, 0 conflicts resolved
+[2025-08-24 01:32:45] 💾 Pushing intermediate changes...
+[2025-08-24 01:32:46] ⚠️  Failed to push, continuing locally
+[2025-08-24 01:32:46] 📋 Processing 151: cursor/analyze-improve-and-deploy-application-4dbb
+[2025-08-24 01:32:46] 🔄 Merging cursor/analyze-improve-and-deploy-application-4dbb...
+[2025-08-24 01:32:47] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-4dbb
+[2025-08-24 01:32:47] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-4dbb
+[2025-08-24 01:32:47] 📋 Processing 152: cursor/analyze-improve-and-deploy-application-5389
+[2025-08-24 01:32:47] 🔄 Merging cursor/analyze-improve-and-deploy-application-5389...
+[2025-08-24 01:32:48] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-5389
+[2025-08-24 01:32:48] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-5389
+[2025-08-24 01:32:48] 📋 Processing 153: cursor/analyze-improve-and-deploy-application-5973
+[2025-08-24 01:32:48] 🔄 Merging cursor/analyze-improve-and-deploy-application-5973...
+[2025-08-24 01:32:49] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-5973
+[2025-08-24 01:32:49] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-5973
+[2025-08-24 01:32:49] 📋 Processing 154: cursor/analyze-improve-and-deploy-application-5b25
+[2025-08-24 01:32:50] 🔄 Merging cursor/analyze-improve-and-deploy-application-5b25...
+[2025-08-24 01:32:50] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-5b25
+[2025-08-24 01:32:50] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-5b25
+[2025-08-24 01:32:50] 📋 Processing 155: cursor/analyze-improve-and-deploy-application-5fcc
+[2025-08-24 01:32:51] 🔄 Merging cursor/analyze-improve-and-deploy-application-5fcc...
+[2025-08-24 01:32:51] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-5fcc
+[2025-08-24 01:32:52] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-5fcc
+[2025-08-24 01:32:52] 📋 Processing 156: cursor/analyze-improve-and-deploy-application-609a
+[2025-08-24 01:32:52] 🔄 Merging cursor/analyze-improve-and-deploy-application-609a...
+[2025-08-24 01:32:52] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-609a
+[2025-08-24 01:32:53] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-609a
+[2025-08-24 01:32:53] 📋 Processing 157: cursor/analyze-improve-and-deploy-application-616f
+[2025-08-24 01:32:53] 🔄 Merging cursor/analyze-improve-and-deploy-application-616f...
+[2025-08-24 01:32:54] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-616f
+[2025-08-24 01:32:54] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-616f
+[2025-08-24 01:32:54] 📋 Processing 158: cursor/analyze-improve-and-deploy-application-64bc
+[2025-08-24 01:32:54] 🔄 Merging cursor/analyze-improve-and-deploy-application-64bc...
+[2025-08-24 01:32:55] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-64bc
+[2025-08-24 01:32:55] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-64bc
+[2025-08-24 01:32:55] 📋 Processing 159: cursor/analyze-improve-and-deploy-application-65a3
+[2025-08-24 01:32:55] 🔄 Merging cursor/analyze-improve-and-deploy-application-65a3...
+[2025-08-24 01:32:56] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-65a3
+[2025-08-24 01:32:56] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-65a3
+[2025-08-24 01:32:56] 📋 Processing 160: cursor/analyze-improve-and-deploy-application-6910
+[2025-08-24 01:32:56] 🔄 Merging cursor/analyze-improve-and-deploy-application-6910...
+[2025-08-24 01:32:57] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-6910
+[2025-08-24 01:32:57] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-6910
+[2025-08-24 01:32:57] 📋 Processing 161: cursor/analyze-improve-and-deploy-application-693a
+[2025-08-24 01:32:58] 🔄 Merging cursor/analyze-improve-and-deploy-application-693a...
+[2025-08-24 01:32:58] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-693a
+[2025-08-24 01:32:58] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-693a
+[2025-08-24 01:32:58] 📋 Processing 162: cursor/analyze-improve-and-deploy-application-6956
+[2025-08-24 01:32:59] 🔄 Merging cursor/analyze-improve-and-deploy-application-6956...
+[2025-08-24 01:32:59] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-6956
+[2025-08-24 01:33:00] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-6956
+[2025-08-24 01:33:00] 📋 Processing 163: cursor/analyze-improve-and-deploy-application-6e6d
+[2025-08-24 01:33:00] 🔄 Merging cursor/analyze-improve-and-deploy-application-6e6d...
+[2025-08-24 01:33:00] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-6e6d
+[2025-08-24 01:33:01] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-6e6d
+[2025-08-24 01:33:01] 📋 Processing 164: cursor/analyze-improve-and-deploy-application-7071
+[2025-08-24 01:33:01] 🔄 Merging cursor/analyze-improve-and-deploy-application-7071...
+[2025-08-24 01:33:02] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-7071
+[2025-08-24 01:33:02] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-7071
+[2025-08-24 01:33:02] 📋 Processing 165: cursor/analyze-improve-and-deploy-application-71be
+[2025-08-24 01:33:02] 🔄 Merging cursor/analyze-improve-and-deploy-application-71be...
+[2025-08-24 01:33:03] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-71be
+[2025-08-24 01:33:03] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-71be
+[2025-08-24 01:33:03] 📋 Processing 166: cursor/analyze-improve-and-deploy-application-7797
+[2025-08-24 01:33:03] 🔄 Merging cursor/analyze-improve-and-deploy-application-7797...
+[2025-08-24 01:33:04] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-7797
+[2025-08-24 01:33:04] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-7797
+[2025-08-24 01:33:04] 📋 Processing 167: cursor/analyze-improve-and-deploy-application-7eea
+[2025-08-24 01:33:04] 🔄 Merging cursor/analyze-improve-and-deploy-application-7eea...
+[2025-08-24 01:33:05] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-7eea
+[2025-08-24 01:33:05] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-7eea
+[2025-08-24 01:33:05] 📋 Processing 168: cursor/analyze-improve-and-deploy-application-8046
+[2025-08-24 01:33:05] 🔄 Merging cursor/analyze-improve-and-deploy-application-8046...
+[2025-08-24 01:33:06] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-8046
+[2025-08-24 01:33:06] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-8046
+[2025-08-24 01:33:06] 📋 Processing 169: cursor/analyze-improve-and-deploy-application-82b7
+[2025-08-24 01:33:07] 🔄 Merging cursor/analyze-improve-and-deploy-application-82b7...
+[2025-08-24 01:33:07] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-82b7
+[2025-08-24 01:33:07] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-82b7
+[2025-08-24 01:33:07] 📋 Processing 170: cursor/analyze-improve-and-deploy-application-84ee
+[2025-08-24 01:33:08] 🔄 Merging cursor/analyze-improve-and-deploy-application-84ee...
+[2025-08-24 01:33:08] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-84ee
+[2025-08-24 01:33:09] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-84ee
+[2025-08-24 01:33:09] 📋 Processing 171: cursor/analyze-improve-and-deploy-application-85e9
+[2025-08-24 01:33:09] 🔄 Merging cursor/analyze-improve-and-deploy-application-85e9...
+[2025-08-24 01:33:09] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-85e9
+[2025-08-24 01:33:10] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-85e9
+[2025-08-24 01:33:10] 📋 Processing 172: cursor/analyze-improve-and-deploy-application-868b
+[2025-08-24 01:33:10] 🔄 Merging cursor/analyze-improve-and-deploy-application-868b...
+[2025-08-24 01:33:11] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-868b
+[2025-08-24 01:33:11] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-868b
+[2025-08-24 01:33:11] 📋 Processing 173: cursor/analyze-improve-and-deploy-application-86a1
+[2025-08-24 01:33:11] 🔄 Merging cursor/analyze-improve-and-deploy-application-86a1...
+[2025-08-24 01:33:12] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-86a1
+[2025-08-24 01:33:12] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-86a1
+[2025-08-24 01:33:12] 📋 Processing 174: cursor/analyze-improve-and-deploy-application-86a2
+[2025-08-24 01:33:12] 🔄 Merging cursor/analyze-improve-and-deploy-application-86a2...
+[2025-08-24 01:33:13] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-86a2
+[2025-08-24 01:33:13] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-86a2
+[2025-08-24 01:33:13] 📋 Processing 175: cursor/analyze-improve-and-deploy-application-8b8b
+[2025-08-24 01:33:13] 🔄 Merging cursor/analyze-improve-and-deploy-application-8b8b...
+[2025-08-24 01:33:14] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-8b8b
+[2025-08-24 01:33:14] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-8b8b
+[2025-08-24 01:33:14] 📋 Processing 176: cursor/analyze-improve-and-deploy-application-8e8b
+[2025-08-24 01:33:15] 🔄 Merging cursor/analyze-improve-and-deploy-application-8e8b...
+[2025-08-24 01:33:15] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-8e8b
+[2025-08-24 01:33:15] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-8e8b
+[2025-08-24 01:33:15] 📋 Processing 177: cursor/analyze-improve-and-deploy-application-8ebe
+[2025-08-24 01:33:16] 🔄 Merging cursor/analyze-improve-and-deploy-application-8ebe...
+[2025-08-24 01:33:16] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-8ebe
+[2025-08-24 01:33:17] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-8ebe
+[2025-08-24 01:33:17] 📋 Processing 178: cursor/analyze-improve-and-deploy-application-8faa
+[2025-08-24 01:33:17] 🔄 Merging cursor/analyze-improve-and-deploy-application-8faa...
+[2025-08-24 01:33:17] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-8faa
+[2025-08-24 01:33:18] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-8faa
+[2025-08-24 01:33:18] 📋 Processing 179: cursor/analyze-improve-and-deploy-application-97dd
+[2025-08-24 01:33:18] 🔄 Merging cursor/analyze-improve-and-deploy-application-97dd...
+[2025-08-24 01:33:19] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-97dd
+[2025-08-24 01:33:19] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-97dd
+[2025-08-24 01:33:19] 📋 Processing 180: cursor/analyze-improve-and-deploy-application-9a74
+[2025-08-24 01:33:19] 🔄 Merging cursor/analyze-improve-and-deploy-application-9a74...
+[2025-08-24 01:33:20] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-9a74
+[2025-08-24 01:33:20] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-9a74
+[2025-08-24 01:33:20] 📋 Processing 181: cursor/analyze-improve-and-deploy-application-9cbf
+[2025-08-24 01:33:20] 🔄 Merging cursor/analyze-improve-and-deploy-application-9cbf...
+[2025-08-24 01:33:21] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-9cbf
+[2025-08-24 01:33:21] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-9cbf
+[2025-08-24 01:33:21] 📋 Processing 182: cursor/analyze-improve-and-deploy-application-9f45
+[2025-08-24 01:33:21] 🔄 Merging cursor/analyze-improve-and-deploy-application-9f45...
+[2025-08-24 01:33:22] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-9f45
+[2025-08-24 01:33:22] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-9f45
+[2025-08-24 01:33:22] 📋 Processing 183: cursor/analyze-improve-and-deploy-application-a07b
+[2025-08-24 01:33:23] 🔄 Merging cursor/analyze-improve-and-deploy-application-a07b...
+[2025-08-24 01:33:23] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-a07b
+[2025-08-24 01:33:23] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-a07b
+[2025-08-24 01:33:23] 📋 Processing 184: cursor/analyze-improve-and-deploy-application-a21b
+[2025-08-24 01:33:24] 🔄 Merging cursor/analyze-improve-and-deploy-application-a21b...
+[2025-08-24 01:33:24] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-a21b
+[2025-08-24 01:33:24] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-a21b
+[2025-08-24 01:33:24] 📋 Processing 185: cursor/analyze-improve-and-deploy-application-a515
+[2025-08-24 01:33:25] 🔄 Merging cursor/analyze-improve-and-deploy-application-a515...
+[2025-08-24 01:33:25] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-a515
+[2025-08-24 01:33:26] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-a515
+[2025-08-24 01:33:26] 📋 Processing 186: cursor/analyze-improve-and-deploy-application-a909
+[2025-08-24 01:33:26] 🔄 Merging cursor/analyze-improve-and-deploy-application-a909...
+[2025-08-24 01:33:27] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-a909
+[2025-08-24 01:33:27] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-a909
+[2025-08-24 01:33:27] 📋 Processing 187: cursor/analyze-improve-and-deploy-application-a956
+[2025-08-24 01:33:27] 🔄 Merging cursor/analyze-improve-and-deploy-application-a956...
+[2025-08-24 01:33:28] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-a956
+[2025-08-24 01:33:28] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-a956
+[2025-08-24 01:33:28] 📋 Processing 188: cursor/analyze-improve-and-deploy-application-a9ae
+[2025-08-24 01:33:28] 🔄 Merging cursor/analyze-improve-and-deploy-application-a9ae...
+[2025-08-24 01:33:29] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-a9ae
+[2025-08-24 01:33:29] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-a9ae
+[2025-08-24 01:33:29] 📋 Processing 189: cursor/analyze-improve-and-deploy-application-b373
+[2025-08-24 01:33:29] 🔄 Merging cursor/analyze-improve-and-deploy-application-b373...
+[2025-08-24 01:33:30] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-b373
+[2025-08-24 01:33:30] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-b373
+[2025-08-24 01:33:30] 📋 Processing 190: cursor/analyze-improve-and-deploy-application-b79e
+[2025-08-24 01:33:30] 🔄 Merging cursor/analyze-improve-and-deploy-application-b79e...
+[2025-08-24 01:33:31] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-b79e
+[2025-08-24 01:33:31] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-b79e
+[2025-08-24 01:33:31] 📋 Processing 191: cursor/analyze-improve-and-deploy-application-bac0
+[2025-08-24 01:33:32] 🔄 Merging cursor/analyze-improve-and-deploy-application-bac0...
+[2025-08-24 01:33:32] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-bac0
+[2025-08-24 01:33:32] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-bac0
+[2025-08-24 01:33:32] 📋 Processing 192: cursor/analyze-improve-and-deploy-application-c321
+[2025-08-24 01:33:33] 🔄 Merging cursor/analyze-improve-and-deploy-application-c321...
+[2025-08-24 01:33:33] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-c321
+[2025-08-24 01:33:34] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-c321
+[2025-08-24 01:33:34] 📋 Processing 193: cursor/analyze-improve-and-deploy-application-c75d
+[2025-08-24 01:33:34] 🔄 Merging cursor/analyze-improve-and-deploy-application-c75d...
+[2025-08-24 01:33:34] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-c75d
+[2025-08-24 01:33:35] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-c75d
+[2025-08-24 01:33:35] 📋 Processing 194: cursor/analyze-improve-and-deploy-application-cd36
+[2025-08-24 01:33:35] 🔄 Merging cursor/analyze-improve-and-deploy-application-cd36...
+[2025-08-24 01:33:36] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-cd36
+[2025-08-24 01:33:36] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-cd36
+[2025-08-24 01:33:36] 📋 Processing 195: cursor/analyze-improve-and-deploy-application-cdb7
+[2025-08-24 01:33:36] 🔄 Merging cursor/analyze-improve-and-deploy-application-cdb7...
+[2025-08-24 01:33:37] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-cdb7
+[2025-08-24 01:33:37] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-cdb7
+[2025-08-24 01:33:37] 📋 Processing 196: cursor/analyze-improve-and-deploy-application-d02e
+[2025-08-24 01:33:37] 🔄 Merging cursor/analyze-improve-and-deploy-application-d02e...
+[2025-08-24 01:33:38] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-d02e
+[2025-08-24 01:33:38] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-d02e
+[2025-08-24 01:33:38] 📋 Processing 197: cursor/analyze-improve-and-deploy-application-d1de
+[2025-08-24 01:33:38] 🔄 Merging cursor/analyze-improve-and-deploy-application-d1de...
+[2025-08-24 01:33:39] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-d1de
+[2025-08-24 01:33:39] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-d1de
+[2025-08-24 01:33:39] 📋 Processing 198: cursor/analyze-improve-and-deploy-application-d413
+[2025-08-24 01:33:39] 🔄 Merging cursor/analyze-improve-and-deploy-application-d413...
+[2025-08-24 01:33:40] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-d413
+[2025-08-24 01:33:40] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-d413
+[2025-08-24 01:33:40] 📋 Processing 199: cursor/analyze-improve-and-deploy-application-d56f
+[2025-08-24 01:33:41] 🔄 Merging cursor/analyze-improve-and-deploy-application-d56f...
+[2025-08-24 01:33:41] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-d56f
+[2025-08-24 01:33:41] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-d56f
+[2025-08-24 01:33:41] 📋 Processing 200: cursor/analyze-improve-and-deploy-application-d86e
+[2025-08-24 01:33:42] 🔄 Merging cursor/analyze-improve-and-deploy-application-d86e...
+[2025-08-24 01:33:42] ✅ Successfully merged cursor/analyze-improve-and-deploy-application-d86e
+[2025-08-24 01:33:43] ✅ Successfully processed cursor/analyze-improve-and-deploy-application-d86e
+[2025-08-24 01:33:43] 📊 Progress: 200 successful, 0 failed, 0 conflicts resolved
+[2025-08-24 01:33:43] 💾 Pushing intermediate changes...
+[2025-08-24 01:33:43] ⚠️  Failed to push, continuing locally
+[2025-08-24 01:33:43] 💾 Pushing final changes for this batch...
+[2025-08-24 01:33:44] ⚠️  Failed to push batch changes
+[2025-08-24 01:33:44] ✅ Batch 1 completed
+[2025-08-24 01:33:44] 📊 Remaining branches: 2403
