@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import EnhancedLayout from '../components/layout/EnhancedLayout';
 import EnhancedHero from '../components/EnhancedHero';
 import EnhancedServicesShowcase from '../components/EnhancedServicesShowcase';
-import AdvancedTestimonials from '../components/AdvancedTestimonials';
+import EnhancedTestimonials from '../components/EnhancedTestimonials';
 import AdvancedContactForm from '../components/AdvancedContactForm';
 import AdvancedStats from '../components/AdvancedStats';
 import AdvancedFeaturesShowcase from '../components/AdvancedFeaturesShowcase';
@@ -247,8 +247,8 @@ const Home: NextPage = () => {
           </div>
         </section>
 
-        {/* Advanced Testimonials Section */}
-        <AdvancedTestimonials />
+        {/* Enhanced Testimonials Section */}
+        <EnhancedTestimonials />
 
         {/* Advanced Team Showcase */}
         <AdvancedTeamShowcase />
