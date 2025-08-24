@@ -5,6 +5,11 @@ import { MessageSquare } from 'lucide-react';
 import PostCard from '@/components/community/PostCard';
 import { EmptyState } from '@/components/ui/empty-state';
 import type { ForumPost } from '@/types/community';
+import { fetchPostsByCategory } from '@/services/forumPostService';
+import {logErrorToProduction} from '@/utils/productionLogger';
+
+
+const POSTS_PER_PAGE = 20; // Or any other limit you prefer
 
 const POSTS_QUERY = `
   query Posts($slug: String!, $cursor: String) {

@@ -288,12 +288,3 @@ class ProtectedEndpointViewTests(APITestCase):
     # For now, a comment suffices.
     # test_throttling_applied(self):
     #   ... (would require multiple rapid requests and checking for 429)
-
-```python
-# Note on Throttling:
-# The `ProtectedEndpointViewTests` implicitly test that the throttling mechanism is in place
-# by virtue of the view being accessible. However, specific rate limit testing (e.g., ensuring
-# a 429 response after N requests) is not implemented here due to its complexity involving
-# timing and potentially mocking cache. The `UserRateThrottle` and `AnonRateThrottle`
-# (or custom ones) would be active on the `protected_endpoint` view.
-```

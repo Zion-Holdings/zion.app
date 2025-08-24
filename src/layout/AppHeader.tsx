@@ -4,21 +4,17 @@ import { useMessaging } from '@/context/MessagingContext';
 import { MainNavigation } from './MainNavigation';
 import { Logo } from '@/components/header/Logo';
 import { LanguageSelector } from '@/components/header/LanguageSelector';
+import { CurrencySelector } from '@/components/header/CurrencySelector';
 import { useTranslation } from 'react-i18next';
 import { Menu, X } from 'lucide-react';
 import { MobileMenu } from '@/components/header/MobileMenu';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { MobileBottomNav } from '@/components/header/MobileBottomNav';
-import { PointsBadge } from '@/components/loyalty/PointsBadge';
-import { useAuth } from '@/hooks/useAuth';
 
 export function AppHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const isMobile = useIsMobile();
   const { t } = useTranslation();
-  const { user } = useAuth();
-  const firstName =
-    user?.displayName?.split(' ')[0] || user?.name?.split(' ')[0];
   
   // Try to access the messaging context, but provide a fallback value if it's not available
   let unreadCount = 0;
@@ -55,16 +51,8 @@ export function AppHeader() {
             </button>
           </div>
 
-          <PointsBadge />
+          <CurrencySelector />
           <LanguageSelector />
-          {user && (
-            <span
-              className="hidden sm:block ml-4 text-sm text-white"
-              data-testid="header-greeting"
-            >
-              {`Hello, ${firstName}!`}
-            </span>
-          )}
         </div>
       </header>
       
