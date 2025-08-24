@@ -76,22 +76,6 @@ const config: Config = {
           light: "#451582",
           dark: "#000000",
         },
-        // Additional colors for enhanced components
-        "zion-green": {
-          DEFAULT: "#10b981",
-          light: "#34d399",
-          dark: "#059669",
-        },
-        "zion-orange": {
-          DEFAULT: "#f59e0b",
-          light: "#fbbf24",
-          dark: "#d97706",
-        },
-        "zion-pink": {
-          DEFAULT: "#ec4899",
-          light: "#f472b6",
-          dark: "#db2777",
-        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -110,36 +94,32 @@ const config: Config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
-        "fade-in-up": {
-          "0%": {
-            opacity: "0",
-            transform: "translateY(30px)",
-          },
-          "100%": {
-            opacity: "1",
-            transform: "translateY(0)",
-          },
+        "float-slow": {
+          "0%, 100%": { transform: "translateY(0px) translateX(0px)" },
+          "33%": { transform: "translateY(-20px) translateX(10px)" },
+          "66%": { transform: "translateY(-10px) translateX(-15px)" },
         },
-        "float": {
-          "0%, 100%": {
-            transform: "translateY(0px)",
-          },
-          "50%": {
-            transform: "translateY(-20px)",
-          },
+        "float-medium": {
+          "0%, 100%": { transform: "translateY(0px) translateX(0px)" },
+          "50%": { transform: "translateY(-15px) translateX(20px)" },
+        },
+        "float-fast": {
+          "0%, 100%": { transform: "translateY(0px) translateX(0px)" },
+          "25%": { transform: "translateY(-25px) translateX(-10px)" },
+          "75%": { transform: "translateY(-5px) translateX(15px)" },
+        },
+        "fade-in-up": {
+          "0%": { opacity: "0", transform: "translateY(30px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "float-slow": "float-slow 6s ease-in-out infinite",
+        "float-medium": "float-medium 4s ease-in-out infinite",
+        "float-fast": "float-fast 3s ease-in-out infinite",
         "fade-in-up": "fade-in-up 0.8s ease-out forwards",
-        "float": "float 6s ease-in-out infinite",
-      },
-      animationDelay: {
-        "200": "200ms",
-        "400": "400ms",
-        "600": "600ms",
-        "800": "800ms",
       },
     },
   },
