@@ -34,6 +34,7 @@ const Login = React.lazy(() => import('./pages/Login'));
 const Signup = React.lazy(() => import('./pages/Signup'));
 const ITOnsiteServicesPage = React.lazy(() => import('./pages/ITOnsiteServicesPage'));
 const OpenAppRedirect = React.lazy(() => import('./pages/OpenAppRedirect'));
+const ThemeTest = React.lazy(() => import('./pages/ThemeTest'));
 const ContactPage = React.lazy(() => import('./pages/Contact'));
 
 const baseRoutes = [
@@ -52,6 +53,16 @@ const baseRoutes = [
   { path: '/open-app', element: <OpenAppRedirect /> },
   { path: '/community', element: <CommunityPage /> },
   { path: '/contact', element: <ContactPage /> },
+<<<<<<< HEAD:src_backup/App.tsx
+=======
+  { path: '/partners', element: <PartnersPage /> },
+  { path: '/zion-hire-ai', element: <ZionHireAI /> },
+  { path: '/hire-ai', element: <ZionHireAI /> },
+  { path: '/request-quote', element: <RequestQuotePage /> },
+  { path: '/blog', element: <Blog /> },
+  { path: '/blog/:slug', element: <BlogPost /> },
+  { path: '/theme-test', element: <ThemeTest /> },
+>>>>>>> origin/by9dba-codex/implement-light/dark-theme-with-persistence:src/App.tsx
 ];
 
 const App = () => {

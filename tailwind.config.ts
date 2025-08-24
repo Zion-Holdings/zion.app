@@ -1,5 +1,6 @@
 import { Config } from tailwindcss';import { fontFamily } from tailwindcss/defaultTheme';import plugin from tailwindcss/plugin';import animatePlugin from tailwindcss-animate';;
 const config: Config = {
+<<<<<<< HEAD
   darkMode: ['class'],  content: [
     ./pages/**/*.{ts,tsx},./components/**/*.{ts,tsx},./app/**/*.{ts,tsx},./src/**/*.{ts,tsx},  ],
   safelist: ['border-border'],  // Disable problematic selectors during build
@@ -7,6 +8,16 @@ const config: Config = {
     // Keep :has() support but with proper configuration
     container: true
   },
+=======
+  darkMode: "class",
+  content: [
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
+  safelist: ['border-border'],
+>>>>>>> origin/by9dba-codex/implement-light/dark-theme-with-persistence
   theme: {
     container: {
       center: true,
