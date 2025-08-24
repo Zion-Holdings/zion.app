@@ -7,6 +7,8 @@ import { useScrollToTop } from "./hooks";
 import { WhitelabelProvider } from "./context/WhitelabelContext";
 import { Toaster } from "./components/ui/toaster";
 import { Toaster as SonnerToaster } from "./components/ui/sonner";
+import { PageLoader } from "./components/ui/LoadingSpinner";
+import { FloatingCTA } from "./components/FloatingCTA";
 import {
   AuthRoutes,
   DashboardRoutes,
@@ -20,6 +22,8 @@ import {
   CommunityRoutes,
   DeveloperRoutes
 } from './routes';
+
+// Lazy load pages with better error boundaries
 const Home = React.lazy(() => import('./pages/Home'));
 const AIMatcherPage = React.lazy(() => import('./pages/AIMatcher'));
 const TalentDirectory = React.lazy(() => import('./pages/TalentDirectory'));
@@ -67,13 +71,56 @@ const baseRoutes = [
   { path: '/blog/:slug', element: <BlogPost /> },
 ];
 
+// Error boundary component for better error handling
+class ErrorBoundary extends React.Component<
+  { children: React.ReactNode },
+  { hasError: boolean; error?: Error }
+> {
+  constructor(props: { children: React.ReactNode }) {
+    super(props);
+    this.state = { hasError: false };
+  }
+
+  static getDerivedStateFromError(error: Error) {
+    return { hasError: true, error };
+  }
+
+  componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
+    console.error('Error caught by boundary:', error, errorInfo);
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div className="min-h-screen flex items-center justify-center bg-background">
+          <div className="text-center space-y-4">
+            <h1 className="text-2xl font-bold text-destructive">Something went wrong</h1>
+            <p className="text-muted-foreground">
+              We're sorry, but something unexpected happened. Please try refreshing the page.
+            </p>
+            <button
+              onClick={() => window.location.reload()}
+              className="px-4 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90"
+            >
+              Refresh Page
+            </button>
+          </div>
+        </div>
+      );
+    }
+
+    return this.props.children;
+  }
+}
+
 const App = () => {
   // Ensure each navigation starts at the top of the page
   useScrollToTop();
+  
   return (
     <WhitelabelProvider>
       <ThemeProvider defaultTheme="dark">
-        <Suspense fallback={<div className="p-4 text-center">Loading...</div>}>
+        <Suspense fallback={<PageLoader />}>
           <Routes>
             {baseRoutes.map(({ path, element }) => (
               <Route key={path} path={path} element={element} />
@@ -91,6 +138,9 @@ const App = () => {
             <Route path="*" element={<ErrorRoutes />} />
           </Routes>
         </Suspense>
+        
+        {/* Global Components */}
+        <FloatingCTA />
         <Toaster />
         <SonnerToaster position="top-right" />
       </ThemeProvider>

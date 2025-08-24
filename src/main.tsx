@@ -48,7 +48,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
                     <AppLayout>
                       <App />
                     </AppLayout>
-                    <LanguageDetectionPopup />
+                      <LanguageDetectionPopup />
                   </LanguageProvider>
                 </AnalyticsProvider>
               </NotificationProvider>
