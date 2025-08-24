@@ -4,8 +4,13 @@ import React, { useState, useEffect, useCallback, useRef, FocusEvent } from 'rea
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Eye, EyeOff, Volume2, VolumeX, FileText, 
+<<<<<<< HEAD
+  Circle, Plus, RotateCcw,
+  Settings, X, Sun, Moon
+=======
   Settings, X, Sun, Moon,
   RotateCcw
+>>>>>>> origin/cursor/website-audit-and-enhancement-8a0c
 } from 'lucide-react';
 
 interface AccessibilitySettings {
@@ -16,6 +21,10 @@ interface AccessibilitySettings {
   fontSize: number;
   lineSpacing: number;
   colorBlindMode: 'none' | 'protanopia' | 'deuteranopia' | 'tritanopia';
+<<<<<<< HEAD
+  speechRate: number;
+=======
+>>>>>>> origin/cursor/website-audit-and-enhancement-8a0c
   keyboardNavigation: boolean;
   screenReader: boolean;
   focusIndicators: boolean;
@@ -36,9 +45,16 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({ children 
     fontSize: 16,
     lineSpacing: 1.5,
     colorBlindMode: 'none',
+<<<<<<< HEAD
+    speechRate: 1,
+    keyboardNavigation: false,
+    screenReader: false,
+    focusIndicators: false,
+=======
     keyboardNavigation: false,
     screenReader: false,
     focusIndicators: false
+>>>>>>> origin/cursor/website-audit-and-enhancement-8a0c
   });
 
   const updateSettings = (updater: (prev: AccessibilitySettings) => AccessibilitySettings) => {
@@ -49,7 +65,11 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({ children 
   const [isPanelOpen, setIsPanelOpen] = useState(false);
   const [isKeyboardNavigation, setIsKeyboardNavigation] = useState(false);
   const [isReading, setIsReading] = useState(false);
+<<<<<<< HEAD
+  const [announcements, setAnnouncements] = useState<string[]>([]);
+=======
   const [speechRate, setSpeechRate] = useState(1.0);
+>>>>>>> origin/cursor/website-audit-and-enhancement-8a0c
   
   const focusRef = useRef<HTMLDivElement>(null);
   const announcementRef = useRef<HTMLDivElement>(null);
@@ -247,25 +267,45 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({ children 
 
   // Highlighter mode
   const toggleHighlighter = () => {
+<<<<<<< HEAD
+    updateSettings((prev: AccessibilitySettings) => ({ ...prev, highlighter: !prev.highlighter }));
+=======
     setSettings({ ...settings, highlighter: !settings.highlighter });
+>>>>>>> origin/cursor/website-audit-and-enhancement-8a0c
   };
 
   // Font size controls
   const increaseFontSize = () => {
+<<<<<<< HEAD
+    updateSettings((prev: AccessibilitySettings) => ({ ...prev, fontSize: Math.min(prev.fontSize + 2, 24) }));
+  };
+
+  const decreaseFontSize = () => {
+    updateSettings((prev: AccessibilitySettings) => ({ ...prev, fontSize: Math.max(prev.fontSize - 2, 12) }));
+=======
     setSettings({ ...settings, fontSize: Math.min(settings.fontSize + 2, 24) });
   };
 
   const decreaseFontSize = () => {
     setSettings({ ...settings, fontSize: Math.max(settings.fontSize - 2, 12) });
+>>>>>>> origin/cursor/website-audit-and-enhancement-8a0c
   };
 
   // Line spacing controls
   const increaseLineSpacing = () => {
+<<<<<<< HEAD
+    updateSettings((prev: AccessibilitySettings) => ({ ...prev, lineSpacing: Math.min(prev.lineSpacing + 0.1, 2.5) }));
+  };
+
+  const decreaseLineSpacing = () => {
+    updateSettings((prev: AccessibilitySettings) => ({ ...prev, lineSpacing: Math.max(prev.lineSpacing - 0.1, 1.0) }));
+=======
     setSettings({ ...settings, lineSpacing: Math.min(settings.lineSpacing + 0.1, 2.5) });
   };
 
   const decreaseLineSpacing = () => {
     setSettings({ ...settings, lineSpacing: Math.max(settings.lineSpacing - 0.1, 1.0) });
+>>>>>>> origin/cursor/website-audit-and-enhancement-8a0c
   };
 
   // Reset all settings
@@ -278,10 +318,18 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({ children 
       fontSize: 16,
       lineSpacing: 1.5,
       colorBlindMode: 'none',
+<<<<<<< HEAD
+      speechRate: 1,
+      keyboardNavigation: false,
+      screenReader: false,
+      focusIndicators: false,
+    }));
+=======
       keyboardNavigation: false,
       screenReader: false,
       focusIndicators: false
     });
+>>>>>>> origin/cursor/website-audit-and-enhancement-8a0c
   };
 
   return (
@@ -295,6 +343,25 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({ children 
         aria-label="Accessibility options"
         aria-expanded={isVisible}
       >
+<<<<<<< HEAD
+        <Eye className="w-6 h-6" />
+      </motion.button>
+
+      {/* Accessibility Panel */}
+      {isVisible && (
+        <motion.div
+          initial={{ opacity: 0, y: 20, scale: 0.95 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          exit={{ opacity: 0, y: 20, scale: 0.95 }}
+          className="fixed bottom-20 right-4 z-50 w-80 bg-gray-900/95 backdrop-blur-md border border-gray-700/50 rounded-xl shadow-2xl shadow-black/50 overflow-hidden"
+          ref={focusRef}
+        >
+          {/* Header */}
+          <div className="flex items-center justify-between p-4 border-b border-gray-700/50">
+            <div className="flex items-center space-x-2">
+              <Eye className="w-5 h-5 text-purple-400" />
+              <span className="text-white font-semibold">Accessibility</span>
+=======
                     <Settings className="w-6 h-6" />
       </motion.button>
 
@@ -330,6 +397,7 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({ children 
                   <X className="w-4 h-4" />
                 </button>
               </div>
+>>>>>>> origin/cursor/website-audit-and-enhancement-8a0c
             </div>
             <div className="flex items-center space-x-2">
               <button
@@ -340,6 +408,13 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({ children 
                 <Settings className="w-4 h-4" />
               </button>
               <button
+<<<<<<< HEAD
+                onClick={() => setIsVisible(false)}
+                className="p-1 text-gray-400 hover:text-white transition-colors duration-200"
+                aria-label="Close"
+              >
+                <X className="w-4 h-4" />
+=======
                 onClick={() => setSettings({ ...settings, highContrast: !settings.highContrast })}
                 className={`w-full flex items-center justify-between p-3 rounded-lg transition-all duration-200 ${
                   settings.highContrast 
@@ -393,10 +468,68 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({ children 
                 <div className={`w-4 h-4 rounded border-2 ${
                   settings.reducedMotion ? 'bg-green-400 border-green-400' : 'border-gray-500'
                 }`} />
+>>>>>>> origin/cursor/website-audit-and-enhancement-8a0c
               </button>
             </div>
           </div>
 
+<<<<<<< HEAD
+          {/* Quick Actions */}
+          <div className="p-4 space-y-3">
+            {/* Screen Reader */}
+            <button
+              onClick={toggleScreenReader}
+              className={`w-full flex items-center justify-between p-3 rounded-lg transition-all duration-200 ${
+                isReading 
+                  ? 'bg-red-500/20 border border-red-500/50 text-red-400' 
+                  : 'bg-gray-800/50 border border-gray-700/50 text-gray-300 hover:bg-gray-700/50'
+              }`}
+              aria-label={isReading ? 'Stop reading' : 'Start reading'}
+            >
+              <span className="flex items-center space-x-2">
+                {isReading ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}
+                <span>{isReading ? 'Stop Reading' : 'Screen Reader'}</span>
+              </span>
+            </button>
+
+            {/* High Contrast Toggle */}
+            <button
+              onClick={() => updateSettings(prev => ({ ...prev, highContrast: !prev.highContrast }))}
+              className={`w-full flex items-center justify-between p-3 rounded-lg transition-all duration-200 ${
+                settings.highContrast 
+                  ? 'bg-yellow-500/20 border border-yellow-500/50 text-yellow-400' 
+                  : 'bg-gray-800/50 border border-gray-700/50 text-gray-300 hover:bg-gray-700/50'
+              }`}
+              aria-label="Toggle high contrast"
+            >
+              <span className="flex items-center space-x-2">
+                <Circle className="w-4 h-4" />
+                <span>High Contrast</span>
+              </span>
+              <div className={`w-4 h-4 rounded border-2 ${
+                settings.highContrast ? 'bg-yellow-400 border-yellow-400' : 'border-gray-500'
+              }`} />
+            </button>
+
+            {/* Large Text Toggle */}
+            <button
+              onClick={() => updateSettings(prev => ({ ...prev, largeText: !prev.largeText }))}
+              className={`w-full flex items-center justify-between p-3 rounded-lg transition-all duration-200 ${
+                settings.largeText 
+                  ? 'bg-blue-500/20 border border-blue-500/50 text-blue-400' 
+                  : 'bg-gray-800/50 border border-gray-700/50 text-gray-300 hover:bg-gray-700/50'
+              }`}
+              aria-label="Toggle large text"
+            >
+              <span className="flex items-center space-x-2">
+                <FileText className="w-4 h-4" />
+                <span>Large Text</span>
+              </span>
+              <div className={`w-4 h-4 rounded border-2 ${
+                settings.largeText ? 'bg-blue-400 border-blue-400' : 'border-gray-500'
+              }`} />
+            </button>
+=======
             {/* Settings Panel */}
             <AnimatePresence>
               {isOpen && (
@@ -466,6 +599,7 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({ children 
                         <option value="tritanopia">Tritanopia (Blue-Blind)</option>
                       </select>
                     </div>
+>>>>>>> origin/cursor/website-audit-and-enhancement-8a0c
 
             {/* Reduced Motion Toggle */}
             <button
@@ -600,5 +734,9 @@ export default AccessibilityEnhancer;
 // Simple placeholder component
 import React from 'react';
 
+<<<<<<< HEAD
+// Export the main provider component as default
+=======
 // Export the main component as default
+>>>>>>> origin/cursor/website-audit-and-enhancement-8a0c
 export default AccessibilityEnhancer;

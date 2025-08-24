@@ -1,4 +1,18 @@
 const path = require('path');
+<<<<<<< HEAD
+
+const nextConfig = {
+  // assetPrefix: process.env.NODE_ENV === 'production' ? 'https://ziontechgroup.com' : '',
+  poweredByHeader: false,
+  trailingSlash: false,
+  reactStrictMode: true,
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  images: {
+    domains: ["localhost"],
+    unoptimized: true,
+=======
 const os = require('os');
 
 const nextConfig = {
@@ -20,6 +34,7 @@ const nextConfig = {
     NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000',
     NEXT_PUBLIC_SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL,
     NEXT_PUBLIC_SUPABASE_ANON_KEY: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
+>>>>>>> origin/cursor/website-audit-and-enhancement-8a0c
   },
 
   compiler: {
@@ -72,6 +87,9 @@ const nextConfig = {
       },
     });
 
+<<<<<<< HEAD
+    // Polyfills for Node.js APIs
+=======
     // COMPREHENSIVE ESM FIX for Next.js 15 + React 19
     // Handle formik and lodash ESM issues with multiple strategies
     config.resolve.alias = {
@@ -126,6 +144,7 @@ const nextConfig = {
     }
 
     // Add polyfills for Node.js APIs
+>>>>>>> origin/cursor/website-audit-and-enhancement-8a0c
     config.resolve.fallback = {
       ...config.resolve.fallback,
       fs: false,

@@ -1,9 +1,15 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
+<<<<<<< HEAD
+  BarChart3, Users, Eye, Circle, 
+  Clock, TrendingUp, TrendingDown, 
+  Plus, Zap, Star, Filter,
+=======
   BarChart3, Users, Eye, 
   Clock, TrendingUp, TrendingDown, 
   Zap, Filter,
+>>>>>>> origin/cursor/website-audit-and-enhancement-8a0c
   Download, Share2, RefreshCw, X, AlertTriangle
 } from 'lucide-react';
 
@@ -482,7 +488,11 @@ const Analytics: React.FC<AnalyticsProps> = ({
                       <MetricCard
                         title="Conversion Rate"
                         value={`${data.conversionRate}%`}
+<<<<<<< HEAD
+                        icon={<Star className="w-6 h-6" />}
+=======
                         icon={<BarChart3 className="w-6 h-6" />}
+>>>>>>> origin/cursor/website-audit-and-enhancement-8a0c
                         trend="up"
                         trendValue="+1.8%"
                         color="purple"
@@ -494,7 +504,11 @@ const Analytics: React.FC<AnalyticsProps> = ({
                       {/* Top Pages */}
                       <div className="bg-gray-800/50 border border-gray-700/50 rounded-xl p-6">
                         <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+<<<<<<< HEAD
+                          <Star className="w-5 h-5 text-blue-400" />
+=======
                           <BarChart3 className="w-5 h-5 text-blue-400" />
+>>>>>>> origin/cursor/website-audit-and-enhancement-8a0c
                           Top Pages
                         </h3>
                         <div className="space-y-3">
@@ -516,7 +530,11 @@ const Analytics: React.FC<AnalyticsProps> = ({
                       {/* User Behavior */}
                       <div className="bg-gray-800/50 border border-gray-700/50 rounded-xl p-6">
                         <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+<<<<<<< HEAD
+                          <Circle className="w-5 h-5 text-green-400" />
+=======
                           <Eye className="w-5 h-5 text-green-400" />
+>>>>>>> origin/cursor/website-audit-and-enhancement-8a0c
                           User Behavior
                         </h3>
                         <div className="space-y-3">

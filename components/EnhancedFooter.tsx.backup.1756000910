@@ -10,6 +10,76 @@ import {
 export default function EnhancedFooter() {
   const currentYear = new Date().getFullYear();
 
+<<<<<<< HEAD
+  const serviceCategories = [
+    {
+      title: 'AI & Analytics',
+      services: [
+        { name: 'AI Business Intelligence', href: 'https://ziontechgroup.com/ai-business-intelligence' },
+        { name: 'AI Customer Experience', href: 'https://ziontechgroup.com/ai-customer-experience' },
+        { name: 'AI Supply Chain Optimization', href: 'https://ziontechgroup.com/ai-supply-chain' },
+        { name: 'AI Legal Document Automation', href: 'https://ziontechgroup.com/ai-legal-automation' }
+      ]
+    },
+    {
+      title: 'AI & Healthcare',
+      services: [
+        { name: 'AI Healthcare Analytics', href: 'https://ziontechgroup.com/ai-healthcare-analytics' },
+        { name: 'Patient Outcome Prediction', href: 'https://ziontechgroup.com/ai-healthcare-analytics' },
+        { name: 'Treatment Optimization', href: 'https://ziontechgroup.com/ai-healthcare-analytics' },
+        { name: 'Population Health Insights', href: 'https://ziontechgroup.com/ai-healthcare-analytics' }
+      ]
+    },
+    {
+      title: 'Cybersecurity & Quantum',
+      services: [
+        { name: 'Quantum Cybersecurity', href: 'https://ziontechgroup.com/quantum-cybersecurity' },
+        { name: 'Quantum AI Research', href: 'https://ziontechgroup.com/quantum-ai-research' },
+        { name: 'Quantum Financial Modeling', href: 'https://ziontechgroup.com/quantum-financial-modeling' },
+        { name: 'Quantum Machine Learning', href: 'https://ziontechgroup.com/quantum-machine-learning' }
+      ]
+    },
+    {
+      title: 'Edge Computing & IoT',
+      services: [
+        { name: 'Edge Computing Orchestration', href: 'https://ziontechgroup.com/edge-computing-orchestration' },
+        { name: 'Edge AI Video Processing', href: 'https://ziontechgroup.com/edge-ai-video-processing' },
+        { name: 'IoT Device Management', href: 'https://ziontechgroup.com/iot-device-management' },
+        { name: 'Real-time Analytics', href: 'https://ziontechgroup.com/real-time-analytics' }
+      ]
+    },
+    {
+      title: 'AI & Robotics',
+      services: [
+        { name: 'Autonomous Supply Chain Robotics', href: 'https://ziontechgroup.com/autonomous-supply-chain-robotics' },
+        { name: 'Warehouse Automation', href: 'https://ziontechgroup.com/autonomous-supply-chain-robotics' },
+        { name: 'AI-Powered Route Optimization', href: 'https://ziontechgroup.com/autonomous-supply-chain-robotics' },
+        { name: 'Multi-Robot Coordination', href: 'https://ziontechgroup.com/autonomous-supply-chain-robotics' }
+      ]
+    }
+  ];
+
+  const companyInfo = [
+    { icon: Phone, text: '+1 302 464 0950', href: 'tel:+13024640950' },
+    { icon: Mail, text: 'kleber@ziontechgroup.com', href: 'mailto:kleber@ziontechgroup.com' },
+    { icon: MapPin, text: '364 E Main St STE 1008 Middletown DE 19709', href: '#' },
+    { icon: Globe, text: 'https://ziontechgroup.com', href: 'https://ziontechgroup.com' }
+  ];
+
+  const socialLinks = [
+    { name: 'Twitter', icon: Twitter, href: 'https://twitter.com/ziontechgroup' },
+    { name: 'LinkedIn', icon: Linkedin, href: 'https://linkedin.com/company/ziontechgroup' },
+    { name: 'GitHub', icon: Github, href: 'https://github.com/ziontechgroup' },
+    { name: 'Facebook', icon: Facebook, href: 'https://facebook.com/ziontechgroup' },
+    { name: 'Instagram', icon: Instagram, href: 'https://instagram.com/ziontechgroup' }
+  ];
+
+  const stats = [
+    { number: '500+', label: 'Projects Delivered', icon: CheckCircle },
+    { number: '50+', label: 'Enterprise Clients', icon: Users },
+    { number: '99.9%', label: 'Uptime Guarantee', icon: Shield },
+    { number: '4.9/5', label: 'Customer Rating', icon: Star }
+=======
   const services = [
     { name: 'AI & Machine Learning', href: '/micro-saas' },
     { name: 'Quantum Computing', href: '/micro-saas' },
@@ -42,6 +112,7 @@ export default function EnhancedFooter() {
     { name: 'Twitter', href: 'https://twitter.com', icon: Twitter },
     { name: 'LinkedIn', href: 'https://linkedin.com', icon: Linkedin },
     { name: 'GitHub', href: 'https://github.com/Zion-Holdings', icon: Github }
+>>>>>>> origin/cursor/website-audit-and-enhancement-8a0c
   ];
 
   return (

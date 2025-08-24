@@ -54,7 +54,12 @@ const AIChatbot: React.FC<AIChatbotProps> = ({ className = "" }) => {
       "Great question! Our pricing is competitive and we offer flexible plans to meet your specific needs. Let me get you in touch with our sales team."
     ];
     
+<<<<<<< HEAD:src/components/AIChatbot.tsx
+    const randomIndex = Math.floor(Math.random() * responses.length);
+    const randomResponse = responses[randomIndex]!;
+=======
     const randomResponse = responses[Math.floor(Math.random() * responses.length)] || responses[0];
+>>>>>>> origin/cursor/website-audit-and-enhancement-8a0c:components/AIChatbot.tsx
     
     // Add some context-aware responses
     let finalResponse: string = randomResponse;
@@ -79,7 +84,11 @@ const AIChatbot: React.FC<AIChatbotProps> = ({ className = "" }) => {
       timestamp: new Date()
     };
 
+<<<<<<< HEAD:src/components/AIChatbot.tsx
+    setMessages((prev: ChatMessage[]) => [...prev, userMessage]);
+=======
     setMessages([...messages, userMessage]);
+>>>>>>> origin/cursor/website-audit-and-enhancement-8a0c:components/AIChatbot.tsx
     setInputValue('');
     
     // Generate AI response
@@ -92,7 +101,11 @@ const AIChatbot: React.FC<AIChatbotProps> = ({ className = "" }) => {
       timestamp: new Date()
     };
 
+<<<<<<< HEAD:src/components/AIChatbot.tsx
+    setMessages((prev: ChatMessage[]) => [...prev, botMessage]);
+=======
     setMessages([...messages, botMessage]);
+>>>>>>> origin/cursor/website-audit-and-enhancement-8a0c:components/AIChatbot.tsx
     setIsTyping(false);
   };
 
