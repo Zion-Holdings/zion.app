@@ -85,6 +85,8 @@
   "exclude": [
     "node_modules",
     "zion.app/recovered-content/**",
-    "**/*.disabled/**"
+    "**/*.disabled/**",
+    "__tests__.disabled/**",
+    "plugins.disabled/**"
   ]
 }
