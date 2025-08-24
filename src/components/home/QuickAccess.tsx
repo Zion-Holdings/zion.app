@@ -19,44 +19,44 @@ export function QuickAccess() {
     {
       title: t('home.tool_ai_matcher'),
       description: t('home.tool_ai_matcher_desc'),
-      icon: <Search className="h-8 w-8 text-zion-cyan" />,
+      icon: <Search className="h-6 w-6 text-zion-cyan" />,
       link: "/match",
-      gradient: "from-zion-cyan to-zion-cyan-light"
+      color: "from-zion-cyan to-zion-cyan-dark"
     },
     {
       title: t('home.tool_talent'),
       description: t('home.tool_talent_desc'),
-      icon: <Users className="h-8 w-8 text-zion-purple" />,
+      icon: <Users className="h-6 w-6 text-zion-purple" />,
       link: "/talent",
-      gradient: "from-zion-purple to-zion-purple-light"
+      color: "from-zion-purple to-zion-purple-dark"
     },
     {
       title: t('home.tool_services'),
       description: t('home.tool_services_desc'),
-      icon: <Briefcase className="h-8 w-8 text-zion-cyan" />,
+      icon: <Briefcase className="h-6 w-6 text-zion-cyan" />,
       link: "/services",
-      gradient: "from-zion-cyan to-zion-cyan-light"
+      color: "from-zion-cyan to-zion-cyan-dark"
     },
     {
       title: t('home.tool_equipment'),
       description: t('home.tool_equipment_desc'),
-      icon: <Settings className="h-8 w-8 text-zion-purple" />,
+      icon: <Settings className="h-6 w-6 text-zion-purple" />,
       link: "/equipment",
-      gradient: "from-zion-purple to-zion-purple-light"
+      color: "from-zion-purple to-zion-purple-dark"
     },
     {
-      title: "nav.community",
+      title: t('nav.community'),
       description: t('home.tool_chat_desc'),
-      icon: <MessageSquare className="h-8 w-8 text-zion-cyan" />,
+      icon: <MessageSquare className="h-6 w-6 text-zion-cyan" />,
       link: "/community",
-      gradient: "from-zion-cyan to-zion-cyan-light"
+      color: "from-zion-cyan to-zion-cyan-dark"
     },
     {
       title: "Mobile App",
       description: "Zion on the go",
-      icon: <Smartphone className="h-8 w-8 text-zion-purple" />,
+      icon: <Smartphone className="h-6 w-6 text-zion-purple" />,
       link: "/mobile-launch",
-      gradient: "from-zion-purple to-zion-purple-light"
+      color: "from-zion-purple to-zion-purple-dark"
     }
   ];
 
@@ -72,10 +72,10 @@ export function QuickAccess() {
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20, scale: 0.95 },
+    hidden: { y: 20, opacity: 0, scale: 0.9 },
     visible: {
-      opacity: 1,
       y: 0,
+      opacity: 1,
       scale: 1,
       transition: {
         duration: 0.5,
@@ -85,28 +85,20 @@ export function QuickAccess() {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-slate-dark relative overflow-hidden">
-      {/* Background pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 1px 1px, rgba(255,255,255,0.2) 1px, transparent 0)`,
-          backgroundSize: '50px 50px'
-        }}></div>
-      </div>
-      
-      <div className="container mx-auto px-4 relative z-10">
+    <section className="py-16 bg-gradient-to-b from-zion-blue-dark to-zion-blue">
+      <div className="container mx-auto px-4">
         <motion.div 
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 30 }}
+          className="text-center mb-12"
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-zion-cyan via-zion-purple-light to-zion-purple bg-clip-text text-transparent mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-zion-cyan via-zion-purple-light to-zion-purple bg-clip-text text-transparent mb-4">
             Quick Access
           </h2>
-          <p className="text-zion-slate-light text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed">
-            Jump directly to our most popular features and start exploring the future of tech
+          <p className="text-zion-slate-light text-lg max-w-2xl mx-auto">
+            Jump directly to our most popular features and tools
           </p>
         </motion.div>
         
@@ -118,24 +110,48 @@ export function QuickAccess() {
           viewport={{ once: true }}
         >
           {quickLinks.map((link, index) => (
-            <motion.div key={index} variants={itemVariants}>
+            <motion.div
+              key={index}
+              variants={itemVariants}
+              whileHover={{ 
+                y: -8, 
+                scale: 1.05,
+                transition: { duration: 0.2 }
+              }}
+              whileTap={{ scale: 0.95 }}
+            >
               <Link 
                 to={link.link} 
-                className="group bg-gradient-to-br from-zion-blue/20 via-zion-blue/10 to-zion-purple/20 border border-zion-blue-light/20 hover:border-zion-purple/50 rounded-2xl p-6 transition-all duration-500 flex flex-col items-center text-center h-full backdrop-blur-sm hover:backdrop-blur-md hover:bg-gradient-to-br hover:from-zion-blue/30 hover:via-zion-blue/20 hover:to-zion-purple/30 transform hover:scale-105 hover:shadow-2xl hover:shadow-zion-purple/20"
+                className="group block bg-gradient-to-br from-zion-blue to-zion-blue-dark border border-zion-blue-light/30 hover:border-zion-purple/50 rounded-xl p-6 transition-all duration-300 flex flex-col items-center text-center h-full relative overflow-hidden"
               >
-                <div className={`bg-gradient-to-br ${link.gradient} rounded-2xl w-16 h-16 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
-                  {link.icon}
+                {/* Background gradient overlay on hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-zion-purple/10 to-zion-cyan/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl" />
+                
+                {/* Icon container with enhanced styling */}
+                <div className="relative z-10 bg-gradient-to-br from-zion-blue-dark to-zion-blue rounded-full w-16 h-16 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                  <div className="group-hover:scale-110 transition-transform duration-300">
+                    {link.icon}
+                  </div>
                 </div>
-                <h3 className="text-white font-semibold mb-2 text-lg group-hover:text-zion-cyan transition-colors duration-300">
-                  {link.title}
-                </h3>
-                <p className="text-zion-slate-light text-sm mb-4 leading-relaxed flex-grow">
-                  {link.description}
-                </p>
-                <div className="flex items-center text-zion-cyan text-sm font-medium group-hover:text-zion-cyan-light transition-colors duration-300">
-                  <span>{t('general.explore')}</span>
-                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
+                
+                {/* Content */}
+                <div className="relative z-10 flex-1 flex flex-col">
+                  <h3 className="text-white font-semibold mb-2 text-sm leading-tight group-hover:text-zion-cyan transition-colors duration-300">
+                    {link.title}
+                  </h3>
+                  <p className="text-zion-slate-light text-xs mb-4 leading-relaxed flex-1">
+                    {link.description}
+                  </p>
+                  
+                  {/* Enhanced explore button */}
+                  <div className="flex items-center justify-center text-zion-cyan text-xs mt-auto group-hover:text-white transition-colors duration-300">
+                    <span className="font-medium">{t('general.explore')}</span>
+                    <ArrowRight className="ml-1 h-3 w-3 group-hover:translate-x-1 transition-transform duration-300" />
+                  </div>
                 </div>
+                
+                {/* Subtle border glow effect */}
+                <div className="absolute inset-0 rounded-xl border border-transparent group-hover:border-zion-purple/30 transition-all duration-300" />
               </Link>
             </motion.div>
           ))}

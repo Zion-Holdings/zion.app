@@ -7,9 +7,9 @@ import { useScrollToTop } from "./hooks";
 import { WhitelabelProvider } from "./context/WhitelabelContext";
 import { Toaster } from "./components/ui/toaster";
 import { Toaster as SonnerToaster } from "./components/ui/sonner";
+import { ScrollToTop } from "./components/ui/scroll-to-top";
 import { ErrorBoundary } from "./components/ErrorBoundary";
-import { PageLoading } from "./components/ui/loading";
-import { AccessibilityEnhancer } from "./components/AccessibilityEnhancer";
+import { AccessibilityMenu } from "./components/ui/accessibility-menu";
 import {
   AuthRoutes,
   DashboardRoutes,
@@ -77,7 +77,7 @@ const App = () => {
     <ErrorBoundary>
       <WhitelabelProvider>
         <ThemeProvider defaultTheme="dark">
-          <Suspense fallback={<PageLoading />}>
+          <Suspense fallback={<div className="p-4 text-center">Loading...</div>}>
             <Routes>
               {baseRoutes.map(({ path, element }) => (
                 <Route key={path} path={path} element={element} />
@@ -95,9 +95,10 @@ const App = () => {
               <Route path="*" element={<ErrorRoutes />} />
             </Routes>
           </Suspense>
+          <ScrollToTop />
+          <AccessibilityMenu />
           <Toaster />
           <SonnerToaster position="top-right" />
-          <AccessibilityEnhancer />
         </ThemeProvider>
       </WhitelabelProvider>
     </ErrorBoundary>
