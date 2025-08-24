@@ -1,8 +1,8 @@
-export default function VerifyPage() {
+export default function Verify() {
   return (
-    <div className="max-w-md">
-      <h1 className="text-xl font-semibold mb-2">Verify Email</h1>
-      <p className="opacity-80">Please check your inbox for a verification link.</p>
+    <div className="space-y-2">
+      <h1 className="text-xl font-semibold">Verify</h1>
+      <p className="text-gray-600 dark:text-gray-400">Check your email for a verification link.</p>
     </div>
   );
 }

@@ -1,8 +1,8 @@
-export default function AutomationIndexPage() {
+export default function AutomationIndex() {
   return (
-    <div>
-      <h1 className="text-xl font-semibold mb-2">Automation</h1>
-      <p className="opacity-80">Automation dashboard coming soon.</p>
+    <div className="space-y-2">
+      <h1 className="text-xl font-semibold">Automation</h1>
+      <p className="text-gray-600 dark:text-gray-400">Manage automation modules.</p>
     </div>
   );
 }

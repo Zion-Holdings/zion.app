@@ -1,8 +1,8 @@
-export default function AuthIndexPage() {
+export default function AuthIndex() {
   return (
-    <div>
-      <h1 className="text-xl font-semibold mb-2">Auth</h1>
-      <p className="opacity-80">Sign in, sign up, and account actions coming soon.</p>
+    <div className="space-y-2">
+      <h1 className="text-xl font-semibold">Auth</h1>
+      <p className="text-gray-600 dark:text-gray-400">Sign in to continue.</p>
     </div>
   );
 }

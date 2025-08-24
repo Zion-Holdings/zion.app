@@ -1,8 +1,8 @@
-export default function AdminAutomationStatusPage() {
+export default function AdminAutomationStatus() {
   return (
-    <div>
-      <h1 className="text-xl font-semibold mb-2">Automation Status</h1>
-      <p className="opacity-80">Admin automation status overview coming soon.</p>
+    <div className="space-y-2">
+      <h1 className="text-xl font-semibold">Admin Automation Status</h1>
+      <p className="text-gray-600 dark:text-gray-400">System is operational.</p>
     </div>
   );
 }

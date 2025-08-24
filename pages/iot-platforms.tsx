@@ -1,8 +1,8 @@
-export default function IoTPlatformsPage() {
+export default function IotPlatforms() {
   return (
-    <div>
-      <h1 className="text-xl font-semibold mb-2">IoT Platforms</h1>
-      <p className="opacity-80">Content coming soon.</p>
+    <div className="space-y-2">
+      <h1 className="text-2xl font-bold">IoT Platforms</h1>
+      <p className="text-gray-600 dark:text-gray-400">Zion integrations for IoT ecosystems.</p>
     </div>
   );
 }

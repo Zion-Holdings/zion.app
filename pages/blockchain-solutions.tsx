@@ -1,8 +1,8 @@
-export default function BlockchainSolutionsPage() {
+export default function BlockchainSolutions() {
   return (
-    <div>
-      <h1 className="text-xl font-semibold mb-2">Blockchain Solutions</h1>
-      <p className="opacity-80">Content coming soon.</p>
+    <div className="space-y-2">
+      <h1 className="text-2xl font-bold">Blockchain Solutions</h1>
+      <p className="text-gray-600 dark:text-gray-400">Explore Zion blockchain modules.</p>
     </div>
   );
 }
