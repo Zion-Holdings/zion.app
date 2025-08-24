@@ -112,7 +112,7 @@ const results = await Promise.allSettled(analysis);
 
     try {
       // Run ESLint analysis
-      const lintOutput = execSync('npm run lint -- --format='json', {
+      const lintOutput = execSync('npm run lint -- --format=json', {
         stdio: 'pipe',
       }).toString()
 const lintResults = JSON.parse(lintOutput);
@@ -317,77 +317,6 @@ const auditResults = JSON.parse(auditOutput);
       } catch (error) {
         logger.error('❌ Error in optimization cycle:', error);
       }
-
-      
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = setTimeout(optimizationLoop,                                                this.config.optimizationInterval);
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
 // Store timeoutId for cleanup if needed
 ;
 // Store timeoutId for cleanup if needed

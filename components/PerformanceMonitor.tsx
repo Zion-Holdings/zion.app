@@ -153,12 +153,6 @@ const PerformanceMonitor: React.FC<PerformanceMonitorProps> = ({
   };
 
   const formatTime = (ms: number): string => {
-    if (ms < 1000) return `${Math.round(ms)}ms`;
-    return `${(ms / 1000).toFixed(2)}s`;
-  };
-
-  // Format time values
-  const formatTime = (ms: number): string => {
     if (ms === 0) return 'N/A';
     if (ms < 1000) return `${Math.round(ms)}ms`;
     return `${(ms / 1000).toFixed(2)}s`;

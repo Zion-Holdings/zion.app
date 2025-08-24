@@ -42,8 +42,8 @@ class AggressiveSyntaxFixer {
 
         try {
             // Get all TypeScript and JavaScript files
-            const files = await glob('src/**/*.{ts,tsx,js,jsx}, {
-                ignore: ['node_modules/**', .next/**', dist/**', build/**']
+            const files = await glob('src/**/*.{ts,tsx,js,jsx}', {
+                ignore: ['node_modules/**', '.next/**', 'dist/**', 'build/**']
             });
 
             this.log(`📁 Found ${files.length} files to check`);
@@ -118,10 +118,10 @@ class AggressiveSyntaxFixer {
         const dirName = path.dirname(filePath);
         
         // Convert invalid characters to valid ones
-        const validFileName = fileName.replace(/[^a-zA-Z0-9_$]/g, _');
+        const validFileName = fileName.replace(/[^a-zA-Z0-9_$]/g, '_');
         
-        if (ext === .tsx' || ext === .jsx') {
-            return `import React from react';
+        if (ext === '.tsx' || ext === '.jsx') {
+            return `import React from 'react';
 
 default function ${validFileName}() {
   return (
@@ -131,12 +131,12 @@ default function ${validFileName}() {
     </div>
   )
 }`;
-        } else if (ext === .ts') {
+        } else if (ext === '.ts') {
             return `// ${validFileName} module placeholder
 const ${validFileName} = {
   // TODO: Implement ${validFileName} functionality
 }`
-        } else if (ext === .js') {
+        } else if (ext === '.js') {
             return `// ${validFileName} module placeholder
 const ${validFileName} = {
   // TODO: Implement ${validFileName} functionality
@@ -159,7 +159,7 @@ const ${validFileName} = {}`
             }
         };
 
-        const reportPath = path.join(this.projectRoot, automation', reports', `aggressive-syntax-fix-${Date.now()}.json`);
+        const reportPath = path.join(this.projectRoot, 'automation', 'reports', `aggressive-syntax-fix-${Date.now()}.json`);
         fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
 
         return report;

@@ -1,21 +1,31 @@
-import React, { useEffect, useCallback } from 'react';
+import React, { useEffect, useRef } from 'react';
 
-// Browser API types are declared globally in PerformanceOptimizer.tsx
-
-const AnalyticsTracker: React.FC = () => {
-  const router = useRouter();
-
-// Performance entry types for Core Web Vitals
+// Performance entry types
 interface PerformanceEventTiming extends PerformanceEntry {
   processingStart: number;
   processingEnd: number;
-  target?: any | null;
+  target?: any;
 }
 
-const AnalyticsTracker: React.FC<AnalyticsTrackerProps> = ({
-  pageTitle,
-  pagePath,
-  customEvents = []
+interface LayoutShift extends PerformanceEntry {
+  value: number;
+  sources?: LayoutShiftSource[];
+}
+
+interface LayoutShiftSource {
+  node?: any;
+  currentRect?: any;
+  previousRect?: any;
+}
+
+interface AnalyticsTrackerProps {
+  trackingId?: string;
+  enableTracking?: boolean;
+}
+
+const AnalyticsTracker: React.FC<AnalyticsTrackerProps> = ({ 
+  trackingId = 'G-XXXXXXXXXX', 
+  enableTracking = true 
 }) => {
   // Track page view
   const trackPageView = useCallback((title: string, path: string) => {
@@ -354,24 +364,6 @@ const AnalyticsTracker: React.FC<AnalyticsTrackerProps> = ({
 
   // This component doesn't render anything visible
   return null;
-};
-
-// Performance entry types
-interface PerformanceEventTiming extends PerformanceEntry {
-  processingStart: number;
-  processingEnd: number;
-  target?: any;
-}
-
-interface LayoutShift extends PerformanceEntry {
-  value: number;
-  sources?: LayoutShiftSource[];
-}
-
-interface LayoutShiftSource {
-  node?: any;
-  currentRect?: any;
-  previousRect?: any;
 }
 
 // gtag is declared globally in PerformanceOptimizer.tsx

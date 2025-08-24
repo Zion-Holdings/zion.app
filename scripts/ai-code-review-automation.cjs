@@ -544,55 +544,6 @@ Provide suggestions in JSON format:
     `;
     
     // Simulate AI response
-    await new Promise(resolve => 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = setTimeout(resolve,                                                2000);
-// Store timeoutId for cleanup if needed
 ;
 // Store timeoutId for cleanup if needed
 ;
@@ -665,31 +616,6 @@ const timeoutId = setTimeout(resolve,                                           
 // Store timeoutId for cleanup if needed
 ;
 // Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-);
-    
-    return [
-      {
-        type: 'improvement',
         severity: 'medium',
         message: 'Consider extracting this function for better reusability',
         line: 10,
