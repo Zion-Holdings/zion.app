@@ -1,0 +1,212 @@
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { 
+  Menu, X, ChevronDown, Globe, Phone, Mail, MapPin,
+  Brain, Shield, Rocket, Cpu, Database, Atom
+} from 'lucide-react';
+
+export default function EnhancedNavigation() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const navigationItems = [
+    {
+      name: 'Services',
+      href: '#services',
+      dropdown: [
+        { name: 'AI & Analytics', href: 'https://ziontechgroup.com/ai-business-intelligence', icon: Brain },
+        { name: 'Cybersecurity', href: 'https://ziontechgroup.com/quantum-cybersecurity', icon: Shield },
+        { name: 'Edge Computing', href: 'https://ziontechgroup.com/edge-computing-orchestration', icon: Cpu },
+        { name: 'Space Technology', href: 'https://ziontechgroup.com/space-technology', icon: Rocket },
+        { name: 'Quantum AI', href: 'https://ziontechgroup.com/quantum-ai-research', icon: Atom },
+        { name: 'All Services', href: '/comprehensive-2025-services-showcase', icon: Database }
+      ]
+    },
+    { name: 'Pricing', href: '/pricing-2025' },
+    { name: 'About', href: '#about' },
+    { name: 'Contact', href: '#contact' }
+  ];
+
+  return (
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      isScrolled 
+        ? 'bg-slate-900/95 backdrop-blur-md border-b border-white/10' 
+        : 'bg-transparent'
+    }`}>
+      {/* Top Contact Bar */}
+      <div className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white py-2">
+        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between text-sm">
+          <div className="flex items-center space-x-6">
+            <a href="tel:+13024640950" className="flex items-center space-x-2 hover:text-blue-100 transition-colors">
+              <Phone className="w-4 h-4" />
+              <span>+1 302 464 0950</span>
+            </a>
+            <a href="mailto:kleber@ziontechgroup.com" className="flex items-center space-x-2 hover:text-blue-100 transition-colors">
+              <Mail className="w-4 h-4" />
+              <span>kleber@ziontechgroup.com</span>
+            </a>
+          </div>
+          <div className="flex items-center space-x-2">
+            <Globe className="w-4 h-4" />
+            <span>Middletown, DE</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Navigation */}
+      <div className="max-w-7xl mx-auto px-6 py-4">
+        <div className="flex items-center justify-between">
+          {/* Logo */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            className="flex items-center space-x-3"
+          >
+            <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-lg flex items-center justify-center">
+              <Brain className="w-6 h-6 text-white" />
+            </div>
+            <span className="text-2xl font-bold bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent">
+              Zion Tech Group
+            </span>
+          </motion.div>
+
+          {/* Desktop Navigation */}
+          <div className="hidden lg:flex items-center space-x-8">
+            {navigationItems.map((item) => (
+              <div key={item.name} className="relative group">
+                {item.dropdown ? (
+                  <button
+                    onMouseEnter={() => setActiveDropdown(item.name)}
+                    onMouseLeave={() => setActiveDropdown(null)}
+                    className="flex items-center space-x-1 text-white/80 hover:text-white transition-colors py-2"
+                  >
+                    <span>{item.name}</span>
+                    <ChevronDown className="w-4 h-4" />
+                  </button>
+                ) : (
+                  <a
+                    href={item.href}
+                    className="text-white/80 hover:text-white transition-colors py-2"
+                  >
+                    {item.name}
+                  </a>
+                )}
+
+                {/* Dropdown Menu */}
+                {item.dropdown && activeDropdown === item.name && (
+                  <div
+                    onMouseEnter={() => setActiveDropdown(item.name)}
+                    onMouseLeave={() => setActiveDropdown(null)}
+                    className="absolute top-full left-0 mt-2 w-64 bg-slate-800/95 backdrop-blur-md rounded-lg shadow-2xl border border-white/10 overflow-hidden"
+                  >
+                    {item.dropdown.map((dropdownItem) => (
+                      <a
+                        key={dropdownItem.name}
+                        href={dropdownItem.href}
+                        className="flex items-center space-x-3 px-4 py-3 text-white/80 hover:text-white hover:bg-white/5 transition-all duration-200"
+                      >
+                        <dropdownItem.icon className="w-5 h-5 text-blue-400" />
+                        <span>{dropdownItem.name}</span>
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+
+          {/* CTA Button */}
+          <div className="hidden lg:block">
+            <a
+              href="mailto:kleber@ziontechgroup.com"
+              className="px-6 py-2 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 rounded-full text-white font-semibold transition-all duration-300 transform hover:scale-105"
+            >
+              Get Started
+            </a>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="lg:hidden text-white p-2"
+          >
+            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Navigation */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            className="lg:hidden bg-slate-900/95 backdrop-blur-md border-t border-white/10"
+          >
+            <div className="px-6 py-4 space-y-4">
+              {navigationItems.map((item) => (
+                <div key={item.name}>
+                  {item.dropdown ? (
+                    <div>
+                      <button
+                        onClick={() => setActiveDropdown(activeDropdown === item.name ? null : item.name)}
+                        className="flex items-center justify-between w-full text-white/80 hover:text-white transition-colors py-2"
+                      >
+                        <span>{item.name}</span>
+                        <ChevronDown className={`w-4 h-4 transition-transform ${
+                          activeDropdown === item.name ? 'rotate-180' : ''
+                        }`} />
+                      </button>
+                      {activeDropdown === item.name && (
+                        <div className="ml-4 mt-2 space-y-2">
+                          {item.dropdown.map((dropdownItem) => (
+                            <a
+                              key={dropdownItem.name}
+                              href={dropdownItem.href}
+                              className="flex items-center space-x-3 text-white/60 hover:text-white transition-colors py-2"
+                            >
+                              <dropdownItem.icon className="w-4 h-4 text-blue-400" />
+                              <span>{dropdownItem.name}</span>
+                            </a>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  ) : (
+                    <a
+                      href={item.href}
+                      className="block text-white/80 hover:text-white transition-colors py-2"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {item.name}
+                    </a>
+                  )}
+                </div>
+              ))}
+              <div className="pt-4">
+                <a
+                  href="mailto:kleber@ziontechgroup.com"
+                  className="block w-full text-center px-6 py-3 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 rounded-full text-white font-semibold transition-all duration-300"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Get Started
+                </a>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </nav>
+  );
+}

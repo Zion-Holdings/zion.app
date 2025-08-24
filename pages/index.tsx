@@ -86,40 +86,40 @@ export default function HomePage() {
       features: ["Quantum-resistant encryption", "AI threat detection", "Zero-trust architecture"]
     },
     {
-      title: "AI Customer Experience",
-      description: "Deliver personalized customer experiences at scale with AI",
-      icon: Users,
-      color: "from-green-500 to-teal-500",
-      link: "https://ziontechgroup.com/ai-customer-experience",
-      price: "$399/month",
-      features: ["Customer journey mapping", "AI personalization", "Sentiment analysis"]
-    },
-    {
-      title: "Edge Computing Orchestration",
-      description: "Deploy and manage applications at the edge with intelligent orchestration",
-      icon: Network,
-      color: "from-purple-500 to-pink-500",
-      link: "https://ziontechgroup.com/edge-computing-orchestration",
-      price: "$349/month",
-      features: ["Edge node management", "IoT device management", "Real-time monitoring"]
-    },
-    {
-      title: "Space Technology Innovation",
-      description: "Accelerate space exploration with cutting-edge technology solutions",
-      icon: Rocket,
-      color: "from-violet-500 to-purple-500",
-      link: "https://ziontechgroup.com/space-technology",
-      price: "$2,499/month",
-      features: ["Satellite management", "AI mission planning", "Quantum communication"]
-    },
-    {
-      title: "Neural Interface Development",
-      description: "Build the future of human-computer interaction with neural interfaces",
+      title: "AI Healthcare Analytics",
+      description: "Transform healthcare data into actionable insights with AI-powered analytics",
       icon: Brain,
-      color: "from-pink-500 to-rose-500",
-      link: "https://ziontechgroup.com/neural-interface",
-      price: "$899/month",
-      features: ["BCI development tools", "Neural signal processing", "AI pattern recognition"]
+      color: "from-emerald-500 to-green-500",
+      link: "https://ziontechgroup.com/ai-healthcare-analytics",
+      price: "$699/month",
+      features: ["Patient outcome prediction", "Treatment optimization", "Population health insights"]
+    },
+    {
+      title: "Quantum Financial Modeling",
+      description: "Revolutionize financial modeling with quantum computing and AI",
+      icon: Atom,
+      color: "from-yellow-500 to-orange-500",
+      link: "https://ziontechgroup.com/quantum-financial-modeling",
+      price: "$1,599/month",
+      features: ["Quantum portfolio optimization", "AI market prediction", "Risk assessment"]
+    },
+    {
+      title: "Edge AI Video Processing",
+      description: "Process video in real-time with AI at the edge",
+      icon: Cpu,
+      color: "from-red-500 to-pink-500",
+      link: "https://ziontechgroup.com/edge-ai-video-processing",
+      price: "$449/month",
+      features: ["Real-time analytics", "Object detection", "Low-latency processing"]
+    },
+    {
+      title: "Autonomous Supply Chain Robotics",
+      description: "Revolutionize logistics with AI-powered autonomous robotics",
+      icon: Rocket,
+      color: "from-gray-500 to-slate-500",
+      link: "https://ziontechgroup.com/autonomous-supply-chain-robotics",
+      price: "$1,299/month",
+      features: ["Warehouse automation", "Route optimization", "Multi-robot coordination"]
     }
   ];
 

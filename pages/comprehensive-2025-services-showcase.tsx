@@ -19,7 +19,12 @@ export default function Comprehensive2025ServicesShowcase() {
 
   const categories = [
     { id: 'all', name: 'All Services', count: innovative2025MicroSaasExpansionV3.length },
-    { id: 'AI & Analytics', name: 'AI & Analytics', count: innovative2025MicroSaasExpansionV3.filter(s => s.category.includes('AI')).length },
+    { id: 'AI & Analytics', name: 'AI & Analytics', count: innovative2025MicroSaasExpansionV3.filter(s => s.category.includes('AI') && !s.category.includes('Healthcare') && !s.category.includes('HR') && !s.category.includes('Content') && !s.category.includes('Energy')).length },
+    { id: 'AI & Healthcare', name: 'AI & Healthcare', count: innovative2025MicroSaasExpansionV3.filter(s => s.category.includes('Healthcare')).length },
+    { id: 'AI & HR Tech', name: 'AI & HR Tech', count: innovative2025MicroSaasExpansionV3.filter(s => s.category.includes('HR')).length },
+    { id: 'AI & Content Creation', name: 'AI & Content Creation', count: innovative2025MicroSaasExpansionV3.filter(s => s.category.includes('Content')).length },
+    { id: 'AI & Energy', name: 'AI & Energy', count: innovative2025MicroSaasExpansionV3.filter(s => s.category.includes('Energy')).length },
+    { id: 'AI & Robotics', name: 'AI & Robotics', count: innovative2025MicroSaasExpansionV3.filter(s => s.category.includes('Robotics')).length },
     { id: 'Cybersecurity & Quantum', name: 'Cybersecurity & Quantum', count: innovative2025MicroSaasExpansionV3.filter(s => s.category.includes('Cybersecurity') || s.category.includes('Quantum')).length },
     { id: 'Edge Computing & IoT', name: 'Edge Computing & IoT', count: innovative2025MicroSaasExpansionV3.filter(s => s.category.includes('Edge') || s.category.includes('IoT')).length },
     { id: 'Space Technology & Innovation', name: 'Space Technology & Innovation', count: innovative2025MicroSaasExpansionV3.filter(s => s.category.includes('Space')).length },
