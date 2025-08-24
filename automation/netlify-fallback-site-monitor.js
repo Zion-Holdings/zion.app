@@ -3,7 +3,7 @@
 // Netlify Function Fallback: site-monitor
 // This is a local fallback when the main function is unavailable
 
-exports.handler = async (event, context) => {
+exports.handler = async (_event, _context) => {
     console.log('site-monitor fallback executed locally');
     
     try {
