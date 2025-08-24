@@ -391,7 +391,7 @@ const ServicesPage = () => {
             Ready to Get Started?
           </h2>
           <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-            Let's discuss how our technology services can transform your business and drive 
+            Let&rsquo;s discuss how our technology services can transform your business and drive 
             innovation in your industry.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

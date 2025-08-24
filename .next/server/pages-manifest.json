@@ -1,1 +1,5 @@
-{"/_app":"pages/_app.js","/_error":"pages/_error.js","/_document":"pages/_document.js","/404":"pages/404.html","/comprehensive-2025-services-showcase":"pages/comprehensive-2025-services-showcase.html","/":"pages/index.html","/pricing-2025":"pages/pricing-2025.html"}
+{
+  "/_app": "pages/_app.js",
+  "/_error": "pages/_error.js",
+  "/_document": "pages/_document.js"
+}

@@ -340,7 +340,7 @@ const Home: NextPage = () => {
                 What Our Clients Say
               </h2>
               <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Don't just take our word for it. Here's what industry leaders have to say about 
+                Don&rsquo;t just take our word for it. Here&rsquo;s what industry leaders have to say about 
                 working with Zion Tech Group.
               </p>
             </div>
@@ -357,7 +357,7 @@ const Home: NextPage = () => {
                       <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
                     ))}
                   </div>
-                  <p className="text-gray-300 mb-6 leading-relaxed">"{testimonial.content}"</p>
+                  <p className="text-gray-300 mb-6 leading-relaxed">&ldquo;{testimonial.content}&rdquo;</p>
                   <div>
                     <div className="font-semibold text-white">{testimonial.name}</div>
                     <div className="text-gray-400 text-sm">{testimonial.role}</div>
@@ -375,7 +375,7 @@ const Home: NextPage = () => {
               Ready to Transform Your Business?
             </h2>
             <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-              Let's discuss how our technology solutions can drive growth, efficiency, and innovation 
+              Let&rsquo;s discuss how our technology solutions can drive growth, efficiency, and innovation 
               for your organization.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

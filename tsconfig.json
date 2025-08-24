@@ -75,7 +75,8 @@
     ],
     "jsx": "preserve",
     "noEmit": true,
-    "isolatedModules": true
+    "isolatedModules": true,
+    "forceConsistentCasingInFileNames": true
   },
   "include": [
     "next-env.d.ts",
@@ -84,6 +85,10 @@
   ],
   "exclude": [
     "node_modules",
-    "zion.app/recovered-content/**"
+    "zion.app/recovered-content/**",
+    "services.disabled.temp/**",
+    "src_backup/**",
+    "**/*.disabled",
+    "**/*.disabled/**"
   ]
 }
