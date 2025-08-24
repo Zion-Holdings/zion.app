@@ -1,42 +1,23 @@
-
-export interface ListingCategory {
+export interface ProductListing {
   id: string;
   name: string;
   description: string;
-  icon: string;
-}
-
-export interface ProductListing {
-  id: string;
-  title: string;
-  description: string;
   category: string;
-  subcategory?: string; // Adding optional subcategory field
-  price: number | null;
-  currency: string;
-  tags: string[];
-  author: {
-    name: string;
-    id: string;
-    avatarUrl?: string;
-    email?: string; // Added optional email property
-  };
-  images: string[];
-  createdAt: string;
-  rating?: number;
-  reviewCount?: number;
+  price: number;
+  rating: number;
+  image: string;
+  features: string[];
+  addons: string[];
   featured?: boolean;
-  aiScore?: number; // Added aiScore as optional property
-  location?: string; // Adding location property to fix TypeScript errors
-  availability?: string; // Adding availability property to fix TypeScript errors
+  location?: string;
+  availability?: string;
+  created_at?: string;
+  tags?: string[];
+  author?: string;
+  images?: string[];
+  review_count?: number;
+  ai_score?: number;
+  currency?: string;
+  monthly?: boolean;
+  billing_frequency?: string;
 }
-
-export interface ListingItem {
-  id: string;
-  title: string;
-  category: string;
-  image?: string;
-  description?: string;
-}
-
-export type ListingView = 'grid' | 'list';

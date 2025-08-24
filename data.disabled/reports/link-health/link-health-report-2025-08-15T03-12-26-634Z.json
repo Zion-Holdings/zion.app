@@ -1,0 +1,508 @@
+{
+  "generatedAt": "2025-08-15T03:12:26.634Z",
+  "summary": {
+    "totalLinks": 51,
+    "brokenLinks": 2,
+    "healthyLinks": 49,
+    "suggestions": 2
+  },
+  "brokenLinks": [
+    [
+      "https://formspree.io/f/xyyqzqyp",
+      {
+        "url": "https://formspree.io/f/xyyqzqyp",
+        "statusCode": 400,
+        "ok": false,
+        "finalUrl": "https://formspree.io/f/xyyqzqyp"
+      }
+    ],
+    [
+      "https://github.com/Zion-Holdings/zion",
+      {
+        "url": "https://github.com/Zion-Holdings/zion",
+        "statusCode": 404,
+        "ok": false,
+        "finalUrl": "https://github.com/Zion-Holdings/zion"
+      }
+    ]
+  ],
+  "suggestions": [
+    [
+      "https://formspree.io/f/xyyqzqyp",
+      {
+        "type": "unknown",
+        "suggestion": "Manual review required",
+        "priority": "low"
+      }
+    ],
+    [
+      "https://github.com/Zion-Holdings/zion",
+      {
+        "type": "unknown",
+        "suggestion": "Manual review required",
+        "priority": "low"
+      }
+    ]
+  ],
+  "allLinks": [
+    [
+      "https://techcrunch.com/2025/08/14/leaked-meta-ai-rules-show-chatbots-were-allowed-to-have-romantic-chats-with-kids/",
+      {
+        "url": "https://techcrunch.com/2025/08/14/leaked-meta-ai-rules-show-chatbots-were-allowed-to-have-romantic-chats-with-kids/",
+        "statusCode": 200,
+        "ok": true,
+        "finalUrl": "https://techcrunch.com/2025/08/14/leaked-meta-ai-rules-show-chatbots-were-allowed-to-have-romantic-chats-with-kids/"
+      }
+    ],
+    [
+      "https://techcrunch.com/2025/08/14/apples-blood-oxygen-monitoring-returns-to-its-latest-apple-watches/",
+      {
+        "url": "https://techcrunch.com/2025/08/14/apples-blood-oxygen-monitoring-returns-to-its-latest-apple-watches/",
+        "statusCode": 200,
+        "ok": true,
+        "finalUrl": "https://techcrunch.com/2025/08/14/apples-blood-oxygen-monitoring-returns-to-its-latest-apple-watches/"
+      }
+    ],
+    [
+      "https://techcrunch.com/2025/08/14/cohere-hires-long-time-meta-research-head-joelle-pineau-as-its-chief-ai-officer/",
+      {
+        "url": "https://techcrunch.com/2025/08/14/cohere-hires-long-time-meta-research-head-joelle-pineau-as-its-chief-ai-officer/",
+        "statusCode": 200,
+        "ok": true,
+        "finalUrl": "https://techcrunch.com/2025/08/14/cohere-hires-long-time-meta-research-head-joelle-pineau-as-its-chief-ai-officer/"
+      }
+    ],
+    [
+      "https://techcrunch.com/2025/08/14/buzzy-ai-startup-multiverse-creates-two-of-the-smallest-high-performing-models-ever/",
+      {
+        "url": "https://techcrunch.com/2025/08/14/buzzy-ai-startup-multiverse-creates-two-of-the-smallest-high-performing-models-ever/",
+        "statusCode": 200,
+        "ok": true,
+        "finalUrl": "https://techcrunch.com/2025/08/14/buzzy-ai-startup-multiverse-creates-two-of-the-smallest-high-performing-models-ever/"
+      }
+    ],
+    [
+      "https://techcrunch.com/2025/08/14/ai-translation-tech-palabra-gets-backing-from-reddit-co-founders-venture-firm/",
+      {
+        "url": "https://techcrunch.com/2025/08/14/ai-translation-tech-palabra-gets-backing-from-reddit-co-founders-venture-firm/",
+        "statusCode": 200,
+        "ok": true,
+        "finalUrl": "https://techcrunch.com/2025/08/14/ai-translation-tech-palabra-gets-backing-from-reddit-co-founders-venture-firm/"
+      }
+    ],
+    [
+      "https://techcrunch.com/2025/08/14/the-wait-is-almost-over-the-2025-startup-battlefield-200-list-drops-august-27/",
+      {
+        "url": "https://techcrunch.com/2025/08/14/the-wait-is-almost-over-the-2025-startup-battlefield-200-list-drops-august-27/",
+        "statusCode": 200,
+        "ok": true,
+        "finalUrl": "https://techcrunch.com/2025/08/14/the-wait-is-almost-over-the-2025-startup-battlefield-200-list-drops-august-27/"
+      }
+    ],
+    [
+      "https://ziontechgroup.com/front",
+      {
+        "url": "https://ziontechgroup.com/front",
+        "statusCode": 301,
+        "ok": true,
+        "finalUrl": "/"
+      }
+    ],
+    [
+      "https://techcrunch.com/2025/08/14/lovable-projects-1b-in-arr-within-next-12-months/",
+      {
+        "url": "https://techcrunch.com/2025/08/14/lovable-projects-1b-in-arr-within-next-12-months/",
+        "statusCode": 200,
+        "ok": true,
+        "finalUrl": "https://techcrunch.com/2025/08/14/lovable-projects-1b-in-arr-within-next-12-months/"
+      }
+    ],
+    [
+      "https://formspree.io/f/xyyqzqyp",
+      {
+        "url": "https://formspree.io/f/xyyqzqyp",
+        "statusCode": 400,
+        "ok": false,
+        "finalUrl": "https://formspree.io/f/xyyqzqyp"
+      }
+    ],
+    [
+      "https://techcrunch.com/2025/08/14/google-pushes-ai-into-flight-deals-as-antitrust-scrutiny-competition-heat-up/",
+      {
+        "url": "https://techcrunch.com/2025/08/14/google-pushes-ai-into-flight-deals-as-antitrust-scrutiny-competition-heat-up/",
+        "statusCode": 200,
+        "ok": true,
+        "finalUrl": "https://techcrunch.com/2025/08/14/google-pushes-ai-into-flight-deals-as-antitrust-scrutiny-competition-heat-up/"
+      }
+    ],
+    [
+      "https://techcrunch.com/2025/08/14/u-s-government-is-reportedly-in-discussions-to-take-stake-in-intel/",
+      {
+        "url": "https://techcrunch.com/2025/08/14/u-s-government-is-reportedly-in-discussions-to-take-stake-in-intel/",
+        "statusCode": 200,
+        "ok": true,
+        "finalUrl": "https://techcrunch.com/2025/08/14/u-s-government-is-reportedly-in-discussions-to-take-stake-in-intel/"
+      }
+    ],
+    [
+      "https://techcrunch.com/2025/08/14/bluesky-rolls-out-massive-revamp-to-policies-and-community-guidelines/",
+      {
+        "url": "https://techcrunch.com/2025/08/14/bluesky-rolls-out-massive-revamp-to-policies-and-community-guidelines/",
+        "statusCode": 200,
+        "ok": true,
+        "finalUrl": "https://techcrunch.com/2025/08/14/bluesky-rolls-out-massive-revamp-to-policies-and-community-guidelines/"
+      }
+    ],
+    [
+      "https://techcrunch.com/2025/08/14/norway-spy-chief-blames-russian-hackers-for-hijacking-dam/",
+      {
+        "url": "https://techcrunch.com/2025/08/14/norway-spy-chief-blames-russian-hackers-for-hijacking-dam/",
+        "statusCode": 200,
+        "ok": true,
+        "finalUrl": "https://techcrunch.com/2025/08/14/norway-spy-chief-blames-russian-hackers-for-hijacking-dam/"
+      }
+    ],
+    [
+      "https://techcrunch.com/2025/08/14/what-is-bluesky-everything-to-know-about-the-x-competitor/",
+      {
+        "url": "https://techcrunch.com/2025/08/14/what-is-bluesky-everything-to-know-about-the-x-competitor/",
+        "statusCode": 200,
+        "ok": true,
+        "finalUrl": "https://techcrunch.com/2025/08/14/what-is-bluesky-everything-to-know-about-the-x-competitor/"
+      }
+    ],
+    [
+      "https://techcrunch.com/2025/08/14/pixel-10-ai-capabilities-and-everything-else-we-expect-out-of-the-made-by-google-2025-event/",
+      {
+        "url": "https://techcrunch.com/2025/08/14/pixel-10-ai-capabilities-and-everything-else-we-expect-out-of-the-made-by-google-2025-event/",
+        "statusCode": 200,
+        "ok": true,
+        "finalUrl": "https://techcrunch.com/2025/08/14/pixel-10-ai-capabilities-and-everything-else-we-expect-out-of-the-made-by-google-2025-event/"
+      }
+    ],
+    [
+      "https://techcrunch.com/2025/08/14/cohere-hits-a-6-8b-valuation-as-investors-amd-nvidia-and-salesforce-double-down/",
+      {
+        "url": "https://techcrunch.com/2025/08/14/cohere-hits-a-6-8b-valuation-as-investors-amd-nvidia-and-salesforce-double-down/",
+        "statusCode": 200,
+        "ok": true,
+        "finalUrl": "https://techcrunch.com/2025/08/14/cohere-hits-a-6-8b-valuation-as-investors-amd-nvidia-and-salesforce-double-down/"
+      }
+    ],
+    [
+      "https://techcrunch.com/2025/08/14/iphone-17-the-thinnest-iphone-ever-and-everything-else-were-expecting-out-of-apples-hardware-event/",
+      {
+        "url": "https://techcrunch.com/2025/08/14/iphone-17-the-thinnest-iphone-ever-and-everything-else-were-expecting-out-of-apples-hardware-event/",
+        "statusCode": 200,
+        "ok": true,
+        "finalUrl": "https://techcrunch.com/2025/08/14/iphone-17-the-thinnest-iphone-ever-and-everything-else-were-expecting-out-of-apples-hardware-event/"
+      }
+    ],
+    [
+      "https://techcrunch.com/2025/08/14/kodak-denies-its-shutting-down-amid-media-reports-of-financial-struggles/",
+      {
+        "url": "https://techcrunch.com/2025/08/14/kodak-denies-its-shutting-down-amid-media-reports-of-financial-struggles/",
+        "statusCode": 200,
+        "ok": true,
+        "finalUrl": "https://techcrunch.com/2025/08/14/kodak-denies-its-shutting-down-amid-media-reports-of-financial-struggles/"
+      }
+    ],
+    [
+      "https://techcrunch.com/2025/08/14/chatgpt-everything-to-know-about-the-ai-chatbot/",
+      {
+        "url": "https://techcrunch.com/2025/08/14/chatgpt-everything-to-know-about-the-ai-chatbot/",
+        "statusCode": 200,
+        "ok": true,
+        "finalUrl": "https://techcrunch.com/2025/08/14/chatgpt-everything-to-know-about-the-ai-chatbot/"
+      }
+    ],
+    [
+      "https://techcrunch.com/2025/08/13/co-founder-of-elon-musks-xai-departs-the-company/",
+      {
+        "url": "https://techcrunch.com/2025/08/13/co-founder-of-elon-musks-xai-departs-the-company/",
+        "statusCode": 200,
+        "ok": true,
+        "finalUrl": "https://techcrunch.com/2025/08/13/co-founder-of-elon-musks-xai-departs-the-company/"
+      }
+    ],
+    [
+      "https://techcrunch.com/2025/08/10/security-flaws-in-a-carmakers-web-portal-let-one-hacker-remotely-unlock-cars-from-anywhere/",
+      {
+        "url": "https://techcrunch.com/2025/08/10/security-flaws-in-a-carmakers-web-portal-let-one-hacker-remotely-unlock-cars-from-anywhere/",
+        "statusCode": 200,
+        "ok": true,
+        "finalUrl": "https://techcrunch.com/2025/08/10/security-flaws-in-a-carmakers-web-portal-let-one-hacker-remotely-unlock-cars-from-anywhere/"
+      }
+    ],
+    [
+      "https://techcrunch.com/2025/08/10/the-hidden-cost-of-living-amid-mark-zuckerbergs-110m-compound/",
+      {
+        "url": "https://techcrunch.com/2025/08/10/the-hidden-cost-of-living-amid-mark-zuckerbergs-110m-compound/",
+        "statusCode": 200,
+        "ok": true,
+        "finalUrl": "https://techcrunch.com/2025/08/10/the-hidden-cost-of-living-amid-mark-zuckerbergs-110m-compound/"
+      }
+    ],
+    [
+      "https://ziontechgroup.com\\",
+      {
+        "url": "https://ziontechgroup.com\\",
+        "statusCode": 200,
+        "ok": true,
+        "finalUrl": "https://ziontechgroup.com\\"
+      }
+    ],
+    [
+      "https://www.theverge.com/pages/installer-newsletter-sign-up",
+      {
+        "url": "https://www.theverge.com/pages/installer-newsletter-sign-up",
+        "statusCode": 200,
+        "ok": true,
+        "finalUrl": "https://www.theverge.com/pages/installer-newsletter-sign-up"
+      }
+    ],
+    [
+      "https://ziontechgroup.com/main/front\\",
+      {
+        "url": "https://ziontechgroup.com/main/front\\",
+        "statusCode": 200,
+        "ok": true,
+        "finalUrl": "https://ziontechgroup.com/main/front\\"
+      }
+    ],
+    [
+      "https://ziontechgroup.com",
+      {
+        "url": "https://ziontechgroup.com",
+        "statusCode": 200,
+        "ok": true,
+        "finalUrl": "https://ziontechgroup.com"
+      }
+    ],
+    [
+      "https://ziontechgroup.com/main/front",
+      {
+        "url": "https://ziontechgroup.com/main/front",
+        "statusCode": 301,
+        "ok": true,
+        "finalUrl": "/main/front/"
+      }
+    ],
+    [
+      "https://github.com/Zion-Holdings/zion.app",
+      {
+        "url": "https://github.com/Zion-Holdings/zion.app",
+        "statusCode": 200,
+        "ok": true,
+        "finalUrl": "https://github.com/Zion-Holdings/zion.app"
+      }
+    ],
+    [
+      "https://ziontechgroup.com/landing\\",
+      {
+        "url": "https://ziontechgroup.com/landing\\",
+        "statusCode": 200,
+        "ok": true,
+        "finalUrl": "https://ziontechgroup.com/landing\\"
+      }
+    ],
+    [
+      "https://ziontechgroup.com/landing",
+      {
+        "url": "https://ziontechgroup.com/landing",
+        "statusCode": 301,
+        "ok": true,
+        "finalUrl": "/landing/"
+      }
+    ],
+    [
+      "https://ziontechgroup.com/services\\",
+      {
+        "url": "https://ziontechgroup.com/services\\",
+        "statusCode": 301,
+        "ok": true,
+        "finalUrl": "/main/front#capabilities"
+      }
+    ],
+    [
+      "https://ziontechgroup.com/automation\\",
+      {
+        "url": "https://ziontechgroup.com/automation\\",
+        "statusCode": 200,
+        "ok": true,
+        "finalUrl": "https://ziontechgroup.com/automation\\"
+      }
+    ],
+    [
+      "https://ziontechgroup.com/automation",
+      {
+        "url": "https://ziontechgroup.com/automation",
+        "statusCode": 301,
+        "ok": true,
+        "finalUrl": "/automation/"
+      }
+    ],
+    [
+      "https://ziontechgroup.com/services",
+      {
+        "url": "https://ziontechgroup.com/services",
+        "statusCode": 301,
+        "ok": true,
+        "finalUrl": "/main/front#capabilities"
+      }
+    ],
+    [
+      "https://ziontechgroup.com/explore\\",
+      {
+        "url": "https://ziontechgroup.com/explore\\",
+        "statusCode": 200,
+        "ok": true,
+        "finalUrl": "https://ziontechgroup.com/explore\\"
+      }
+    ],
+    [
+      "https://ziontechgroup.com/explore",
+      {
+        "url": "https://ziontechgroup.com/explore",
+        "statusCode": 301,
+        "ok": true,
+        "finalUrl": "/explore/"
+      }
+    ],
+    [
+      "https://ai.googleblog.com/2018/05/duplex-ai-system-for-natural-conversation.html",
+      {
+        "url": "https://ai.googleblog.com/2018/05/duplex-ai-system-for-natural-conversation.html",
+        "statusCode": 302,
+        "ok": true,
+        "finalUrl": "https://blog.research.google/2018/05/duplex-ai-system-for-natural-conversation.html"
+      }
+    ],
+    [
+      "https://www.wired.com/story/elon-musk-government-young-engineers/",
+      {
+        "url": "https://www.wired.com/story/elon-musk-government-young-engineers/",
+        "statusCode": 200,
+        "ok": true,
+        "finalUrl": "https://www.wired.com/story/elon-musk-government-young-engineers/"
+      }
+    ],
+    [
+      "https://about.fb.com/news/2024/07/open-source-ai-is-the-path-forward/",
+      {
+        "url": "https://about.fb.com/news/2024/07/open-source-ai-is-the-path-forward/",
+        "statusCode": 200,
+        "ok": true,
+        "finalUrl": "https://about.fb.com/news/2024/07/open-source-ai-is-the-path-forward/"
+      }
+    ],
+    [
+      "https://ian.sh/tsa",
+      {
+        "url": "https://ian.sh/tsa",
+        "statusCode": 200,
+        "ok": true,
+        "finalUrl": "https://ian.sh/tsa"
+      }
+    ],
+    [
+      "https://explore.zoom.us/en/terms/",
+      {
+        "url": "https://explore.zoom.us/en/terms/",
+        "statusCode": 301,
+        "ok": true,
+        "finalUrl": "https://www.zoom.com/en/trust/terms/"
+      }
+    ],
+    [
+      "https://www.foldnfly.com/",
+      {
+        "url": "https://www.foldnfly.com/",
+        "statusCode": 200,
+        "ok": true,
+        "finalUrl": "https://www.foldnfly.com/"
+      }
+    ],
+    [
+      "https://fly.io/blog/youre-all-nuts/",
+      {
+        "url": "https://fly.io/blog/youre-all-nuts/",
+        "statusCode": 200,
+        "ok": true,
+        "finalUrl": "https://fly.io/blog/youre-all-nuts/"
+      }
+    ],
+    [
+      "https://schema.org",
+      {
+        "url": "https://schema.org",
+        "statusCode": 200,
+        "ok": true,
+        "finalUrl": "https://schema.org"
+      }
+    ],
+    [
+      "http://www.w3.org/2000/svg",
+      {
+        "url": "http://www.w3.org/2000/svg",
+        "statusCode": 301,
+        "ok": true,
+        "finalUrl": "https://www.w3.org/2000/svg"
+      }
+    ],
+    [
+      "https://blog.hopefullyuseful.com/blog/advantage-air-ezone-tablet-diy-repair/",
+      {
+        "url": "https://blog.hopefullyuseful.com/blog/advantage-air-ezone-tablet-diy-repair/",
+        "statusCode": 200,
+        "ok": true,
+        "finalUrl": "https://blog.hopefullyuseful.com/blog/advantage-air-ezone-tablet-diy-repair/"
+      }
+    ],
+    [
+      "https://deepmind.google/technologies/gemini/",
+      {
+        "url": "https://deepmind.google/technologies/gemini/",
+        "statusCode": 301,
+        "ok": true,
+        "finalUrl": "/models/gemini/"
+      }
+    ],
+    [
+      "https://github.com/Zion-Holdings/zion",
+      {
+        "url": "https://github.com/Zion-Holdings/zion",
+        "statusCode": 404,
+        "ok": false,
+        "finalUrl": "https://github.com/Zion-Holdings/zion"
+      }
+    ],
+    [
+      "https://ciechanow.ski/airfoil/",
+      {
+        "url": "https://ciechanow.ski/airfoil/",
+        "statusCode": 200,
+        "ok": true,
+        "finalUrl": "https://ciechanow.ski/airfoil/"
+      }
+    ],
+    [
+      "https://www.instagram.com/ziontechgroup/",
+      {
+        "url": "https://www.instagram.com/ziontechgroup/",
+        "statusCode": 200,
+        "ok": true,
+        "finalUrl": "https://www.instagram.com/ziontechgroup/"
+      }
+    ],
+    [
+      "https://www.linkedin.com/company/zion-holdings/",
+      {
+        "url": "https://www.linkedin.com/company/zion-holdings/",
+        "statusCode": 200,
+        "ok": true,
+        "finalUrl": "https://www.linkedin.com/company/zion-holdings/"
+      }
+    ]
+  ]
+}

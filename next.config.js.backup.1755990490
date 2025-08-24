@@ -1,0 +1,32 @@
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+<<<<<<< HEAD
+	reactStrictMode: true,
+	swcMinify: true,
+	// Optimize images
+	images: {
+		unoptimized: true,
+	},
+	// Optimize bundle
+	compiler: {
+		removeConsole: process.env.NODE_ENV === 'production',
+	},
+=======
+  poweredByHeader: false,
+  trailingSlash: false,
+  reactStrictMode: true,
+  productionBrowserSourceMaps: false,
+  
+  // Environment configuration
+  env: {
+    NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000',
+    NEXT_PUBLIC_SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL,
+    NEXT_PUBLIC_SUPABASE_ANON_KEY: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
+  },
+
+module.exports = {
+  i18n,
+>>>>>>> 5e27e402e0b68b9c85b868b0fd8919518fd31198
+};
+
+module.exports = nextConfig;

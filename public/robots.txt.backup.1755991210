@@ -1,0 +1,37 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://ziontechgroup.com/sitemap.xml
+
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /automation/
+<<<<<<< HEAD
+
+# Allow important pages
+Allow: /services/
+Allow: /pricing/
+Allow: /about/
+Allow: /contact/
+Allow: /blog/
+Allow: /news/
+=======
+Disallow: /scripts/
+
+# Allow important pages
+Allow: /services/
+Allow: /solutions/
+Allow: /about/
+Allow: /contact/
+Allow: /blog/
+Allow: /case-studies/
+Allow: /webinars/
+>>>>>>> cd1ee3c44c95b58078a38d33c1abd7a77d8f4d5a
+
+# Crawl delay for better server performance
+Crawl-delay: 1
+

@@ -1,0 +1,348 @@
+// Export all micro SaaS services
+export { aiContentGeneratorService } from './aiContentGeneratorService';
+export { seoAutomationService } from './seoAutomationService';
+export { aiChatbotService } from './aiChatbotService';
+export { businessIntelligenceService } from './businessIntelligenceService';
+export { cloudCostOptimizerService } from './cloudCostOptimizerService';
+export { gitService } from './gitService';
+export { aiContentService } from './aiContentService';
+export { cloudCostService } from './cloudCostService';
+export { aiLegalService } from './aiLegalService';
+export { aiSalesService } from './aiSalesService';
+export { aiHrService } from './aiHrService';
+export { designSystemBuilderService } from './designSystemBuilderService';
+export { performanceMonitorService } from './performanceMonitorService';
+export { videoEditingService } from './videoEditingService';
+export { aiCodeReviewService } from './aiCodeReviewService';
+export { apiDocGeneratorService } from './apiDocGeneratorService';
+export { databasePerformanceMonitorService } from './databasePerformanceMonitorService';
+export { aiMarketResearchService } from './aiMarketResearchService';
+export { aiDataAnalyticsService } from './aiDataAnalyticsService';
+export { aiCybersecurityService } from './aiCybersecurityService';
+
+// Advanced futuristic micro SAAS services
+export { advancedFuturisticMicroSaasServices } from '../data/2025-advanced-futuristic-micro-saas-expansion';
+
+// Advanced IT infrastructure services
+export { advancedITInfrastructureServices } from '../data/2025-advanced-it-infrastructure-services';
+
+// Advanced AI automation services
+export { advancedAIAutomationServices } from '../data/2025-advanced-ai-automation-services';
+
+// Advanced AI & IT Services
+export { aiCybersecurityService } from './aiCybersecurityService';
+export { aiDevOpsService } from './aiDevOpsService';
+export { aiDataEngineeringService } from './aiDataEngineeringService';
+export { aiFintechService } from './aiFintechService';
+export { aiHealthcareService } from './aiHealthcareService';
+
+// Export types
+export type {
+  ContentTemplate,
+  GeneratedContent,
+  ContentAnalytics
+} from './aiContentGeneratorService';
+
+export type {
+  KeywordData,
+  OnPageOptimization,
+  TechnicalSEOAudit,
+  CompetitorAnalysis,
+  SEORanking
+} from './seoAutomationService';
+
+export type {
+  ChatMessage,
+  Conversation,
+  TrainingData,
+  ChatbotAnalytics,
+  ChatbotConfig
+} from './aiChatbotService';
+
+export type {
+  DataSource as BIDataSource,
+  Dashboard,
+  Widget,
+  Filter,
+  Report,
+  KPI
+} from './businessIntelligenceService';
+
+export type {
+  CloudResource,
+  CostOptimization,
+  CostAlert,
+  CostBudget,
+  CostReport,
+  ResourceRecommendation
+} from './cloudCostOptimizerService';
+
+export type {
+  GitFileStatus,
+  GitCommit,
+  GitBranch,
+  GitRemote,
+  GitStatus
+} from './gitService';
+
+export type {
+  ContentRequest,
+  ContentResponse,
+  ContentTemplate as ContentTemplateLegacy
+} from './aiContentService';
+
+export type {
+  CloudResource as CloudResourceLegacy,
+  CostAnalysis,
+  BudgetAlert,
+  OptimizationRecommendation
+} from './cloudCostService';
+
+export type {
+  LegalDocument,
+  ContractTemplate,
+  LegalReview,
+  ComplianceCheck as LegalComplianceCheck,
+  DocumentGenerationRequest
+} from './aiLegalService';
+
+export type {
+  Lead,
+  LeadInteraction,
+  SalesPipeline,
+  SalesForecast,
+  LeadScoringCriteria,
+  SalesAutomation
+} from './aiSalesService';
+
+export type {
+  Candidate,
+  JobPosting,
+  Employee,
+  PerformanceReview,
+  TrainingRecord,
+  Document,
+  RecruitmentMetrics
+} from './aiHrService';
+
+export type {
+  DesignToken,
+  DesignComponent,
+  ComponentVariant,
+  ComponentProp,
+  ComponentUsage,
+  DesignSystem
+} from './designSystemBuilderService';
+
+export type {
+  PerformanceMetric,
+  CoreWebVitals,
+  PerformanceAlert,
+  PerformanceReport,
+  ResourceTiming,
+  ErrorEvent
+} from './performanceMonitorService';
+
+export type {
+  VideoProject,
+  VideoResolution,
+  VideoFormat,
+  VideoClip,
+  VideoEffect,
+  VideoTimeline,
+  VideoTrack,
+  VideoExportOptions,
+  VideoAnalytics
+} from './videoEditingService';
+
+export type {
+  CodeReview,
+  CodeIssue,
+  CodeRecommendation,
+  CodeMetrics
+} from './aiCodeReviewService';
+
+export type {
+  APIDocumentation,
+  APIEndpoint,
+  APIParameter,
+  APIRequestBody,
+  APIContent,
+  APIResponse,
+  APIHeader,
+  APISchema,
+  APIExample,
+  ExampleRequest,
+  ExampleResponse,
+  RateLimit,
+  AuthenticationRequirement,
+  DocumentationConfig
+} from './apiDocGeneratorService';
+
+export type {
+  DatabaseConnection,
+  ConnectionMetrics,
+  QueryPerformance,
+  ExecutionPlan,
+  PlanNode,
+  QueryMetrics,
+  QueryRecommendation,
+  DatabaseMetrics,
+  DatabasePerformanceAlert,
+  IndexRecommendation
+} from './databasePerformanceMonitorService';
+
+export type {
+  MarketTrend,
+  CompetitorAnalysis as MarketCompetitorAnalysis,
+  MarketInsight,
+  MarketResearchRequest,
+  MarketResearchResponse
+} from './aiMarketResearchService';
+
+export type {
+  DataSource as AnalyticsDataSource,
+  DataQuery,
+  DataVisualization,
+  PredictiveModel,
+  AnalyticsInsight,
+  DataAnalyticsRequest,
+  DataAnalyticsResponse
+} from './aiDataAnalyticsService';
+
+export type {
+  SmartContract,
+  NFT,
+  NFTMetadata,
+  NFTAttribute,
+  DeFiPool,
+  BlockchainTransaction,
+  TransactionResult,
+  BlockchainStats,
+  WalletAnalytics,
+  NetworkStatus
+} from './blockchainService';
+
+<<<<<<< HEAD
+// Export new 2025 services
+export { advancedAIMLServices } from '../data/2025-advanced-ai-ml-services';
+export { advancedCybersecurityServices2025 } from '../data/2025-advanced-cybersecurity-services';
+export { advancedCloudDevOpsServices } from '../data/2025-advanced-cloud-devops-services';
+export { industrySpecificSolutions } from '../data/2025-industry-specific-solutions';
+export { emergingTechnologyServices } from '../data/2025-emerging-technology-services';
+
+// Export new 2025 advanced services
+export { advancedEdgeComputingServices } from '../data/2025-advanced-edge-computing-services';
+export { advancedIoTSmartCityServices } from '../data/2025-advanced-iot-smart-city-services';
+export { advancedFintechBlockchainServicesExpanded } from '../data/2025-advanced-fintech-blockchain-services-expanded';
+export { advancedHealthcareBiotechServices } from '../data/2025-advanced-healthcare-biotech-services';
+export { advancedSpaceAerospaceServices } from '../data/2025-advanced-space-aerospace-services';
+
+// Export new service types
+export type { AIMLService } from '../data/2025-advanced-ai-ml-services';
+export type { CybersecurityComplianceService } from '../data/2025-advanced-cybersecurity-compliance-services';
+export type { CloudDevOpsService } from '../data/2025-advanced-cloud-devops-services';
+export type { DataAnalyticsBIService } from '../data/2025-advanced-data-analytics-bi-services';
+export type { EnterpriseAutomationService } from '../data/2025-advanced-enterprise-automation-services';
+export type { FintechBlockchainService } from '../data/2025-advanced-fintech-blockchain-services';
+
+// Export new 2025 service types
+export type { EdgeComputingService } from '../data/2025-advanced-edge-computing-services';
+export type { IoTSmartCityService } from '../data/2025-advanced-iot-smart-city-services';
+export type { AdvancedFintechBlockchainService } from '../data/2025-advanced-fintech-blockchain-services-expanded';
+export type { HealthcareBiotechService } from '../data/2025-advanced-healthcare-biotech-services';
+export type { SpaceAerospaceService } from '../data/2025-advanced-space-aerospace-services';
+=======
+// Advanced AI & IT Service types
+export type {
+  SecurityThreat,
+  VulnerabilityAssessment,
+  SecurityIncident,
+  SecurityEvent,
+  SecurityPolicy,
+  SecurityRule,
+  ComplianceReport as SecurityComplianceReport,
+  ComplianceRequirement
+} from './aiCybersecurityService';
+
+export type {
+  PipelineConfig,
+  PipelineStage,
+  PipelineTrigger,
+  PerformanceThresholds,
+  InfrastructureConfig,
+  DeploymentMetrics,
+  CodeQualityReport,
+  SecurityScanResult,
+  Vulnerability,
+  ComplianceCheck,
+  MonitoringAlert
+} from './aiDevOpsService';
+
+export type {
+  DataPipeline,
+  DataSource,
+  DataDestination,
+  DataTransformation,
+  PipelineSchedule,
+  PipelineMetrics,
+  DataQualityMetrics,
+  DataQualityIssue,
+  CostMetrics,
+  ConnectionConfig,
+  DataSchema,
+  SchemaField,
+  SchemaIndex,
+  SchemaConstraint,
+  PartitioningStrategy,
+  ValidationRule,
+  DataCatalog,
+  Dataset,
+  DataLineage,
+  DatasetUsage,
+  QueryStats
+} from './aiDataEngineeringService';
+
+export type {
+  FinancialInstrument,
+  Portfolio,
+  PortfolioPosition,
+  RiskMetrics,
+  PerformancePoint,
+  RebalancingSchedule,
+  TradingSignal,
+  MarketAnalysis,
+  TechnicalIndicator,
+  FundamentalFactor,
+  AIInsight,
+  RiskAssessment,
+  RiskFactor as FintechRiskFactor,
+  StressTestResult,
+  ComplianceReport,
+  ComplianceViolation
+} from './aiFintechService';
+
+export type {
+  Patient,
+  MedicalRecord,
+  Medication,
+  VitalSigns,
+  RiskFactor,
+  InsuranceInfo,
+  EmergencyContact,
+  Diagnosis,
+  AIAnalysis,
+  DifferentialDiagnosis,
+  TreatmentPlan,
+  FollowUpSchedule,
+  FollowUpAppointment,
+  HealthAnalytics,
+  RiskAssessment as HealthRiskAssessment,
+  TrendAnalysis,
+  VitalSignsTrend,
+  MedicationTrend,
+  SymptomTrend,
+  HealthTrend,
+  PredictiveInsight
+} from './aiHealthcareService';
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-887a

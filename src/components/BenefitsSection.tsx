@@ -1,51 +1,66 @@
 
-import { GradientHeading } from "./GradientHeading";
-import { FeatureCard } from "./FeatureCard";
-import { Bot, Clock, Globe, TrendingDown } from "lucide-react";
-
-const benefits = [
-  {
-    title: "AI-Powered Matchmaking",
-    description: "Our advanced algorithms match your needs with the perfect service providers or products, saving you time and ensuring optimal results.",
-    icon: <Bot className="w-8 h-8" />,
-  },
-  {
-    title: "Global Availability",
-    description: "Access a worldwide network of tech talents, products, and services to find the best solutions regardless of geographic limitations.",
-    icon: <Globe className="w-8 h-8" />,
-  },
-  {
-    title: "24/7 Support",
-    description: "Our dedicated team is available around the clock to assist with any questions or issues you might encounter during your journey.",
-    icon: <Clock className="w-8 h-8" />,
-  },
-  {
-    title: "Cost Reduction",
-    description: "Eliminate middlemen and reduce costs by up to 40% through direct connections with service providers and product vendors.",
-    icon: <TrendingDown className="w-8 h-8" />,
-  },
-];
+import React from 'react';
+import { CheckCircle, Zap, Shield, Users, Globe, TrendingUp } from 'lucide-react';
 
 export function BenefitsSection() {
+  const benefits = [
+    {
+      icon: CheckCircle,
+      title: "Quality Assurance",
+      description: "All services and talent are verified and quality-checked"
+    },
+    {
+      icon: Zap,
+      title: "Fast Delivery",
+      description: "Quick turnaround times for all projects and services"
+    },
+    {
+      icon: Shield,
+      title: "Secure Platform",
+      description: "Enterprise-grade security for your business needs"
+    },
+    {
+      icon: Users,
+      title: "Expert Network",
+      description: "Access to top-tier tech professionals worldwide"
+    },
+    {
+      icon: Globe,
+      title: "Global Reach",
+      description: "Connect with talent and services from anywhere"
+    },
+    {
+      icon: TrendingUp,
+      title: "Scalable Solutions",
+      description: "Grow your business with flexible, scalable services"
+    }
+  ];
+
   return (
-    <section className="py-20 bg-zion-blue-light">
+    <section className="py-20 bg-zion-blue-dark">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <GradientHeading>Why Zion?</GradientHeading>
-          <p className="text-zion-slate-light text-lg mt-4 max-w-2xl mx-auto">
-            Experience the next generation of tech marketplace with features designed to maximize efficiency and value
+          <h2 className="text-4xl font-bold text-white mb-4">
+            Why Choose Zion Tech Group?
+          </h2>
+          <p className="text-xl text-zion-slate-light max-w-3xl mx-auto">
+            We provide the most comprehensive tech marketplace experience with unmatched quality, security, and innovation.
           </p>
         </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {benefits.map((benefit, index) => (
-            <FeatureCard
-              key={index}
-              title={benefit.title}
-              description={benefit.description}
-              icon={benefit.icon}
-              className="bg-zion-blue hover:bg-zion-blue-dark transition-all duration-300"
-            />
+            <div key={index} className="bg-zion-blue-light p-6 rounded-lg text-center hover:transform hover:scale-105 transition-all duration-300">
+              <div className="w-16 h-16 bg-zion-cyan rounded-full flex items-center justify-center mx-auto mb-4">
+                <benefit.icon className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-3">
+                {benefit.title}
+              </h3>
+              <p className="text-zion-slate-light">
+                {benefit.description}
+              </p>
+            </div>
           ))}
         </div>
       </div>

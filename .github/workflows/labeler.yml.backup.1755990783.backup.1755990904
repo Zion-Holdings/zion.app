@@ -1,0 +1,23 @@
+name: Pull Request Labeler
+
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  triage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/labeler@v5
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          configuration-path: .github/labeler.yml
+<<<<<<< HEAD
+          sync-labels: true
+=======
+          sync-labels: true
+>>>>>>> origin/cursor/automate-project-enhancement-and-merge-cac0

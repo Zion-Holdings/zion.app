@@ -1,10 +1,9 @@
-import { Config } from "tailwindcss";
-import { fontFamily } from "tailwindcss/defaultTheme";
-import plugin from "tailwindcss/plugin";
-import animatePlugin from "tailwindcss-animate";
+import type { Config } from 'tailwindcss';
+import defaultTheme from 'tailwindcss/defaultTheme';
+import plugin from 'tailwindcss/plugin';
 
 const config: Config = {
-  darkMode: ["class"],
+  darkMode: "class",
   content: [
     "./pages/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
@@ -13,97 +12,124 @@ const config: Config = {
   ],
   safelist: ['border-border'],
   theme: {
-    container: {
-      center: true,
-      padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
-    },
     extend: {
       colors: {
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
+        border: 'hsl(var(--border))',
+        input: 'hsl(var(--input))',
+        ring: 'hsl(var(--ring))',
+        background: 'hsl(var(--background))',
+        foreground: 'hsl(var(--foreground))',
         primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
+          DEFAULT: 'hsl(var(--primary))',
+          foreground: 'hsl(var(--primary-foreground))',
         },
         secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
+          DEFAULT: 'hsl(var(--secondary))',
+          foreground: 'hsl(var(--secondary-foreground))',
         },
         destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
+          DEFAULT: 'hsl(var(--destructive))',
+          foreground: 'hsl(var(--destructive-foreground))',
         },
         muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
+          DEFAULT: 'hsl(var(--muted))',
+          foreground: 'hsl(var(--muted-foreground))',
         },
         accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
+          DEFAULT: 'hsl(var(--accent))',
+          foreground: 'hsl(var(--accent-foreground))',
         },
         popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
+          DEFAULT: 'hsl(var(--card))',
+          foreground: 'hsl(var(--card-foreground))',
         },
         card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
+          DEFAULT: 'hsl(var(--card))',
+          foreground: 'hsl(var(--card-foreground))',
         },
-        // Custom Zion colors (updated palette)
+        // Custom Zion colors
         "zion-blue": {
-          DEFAULT: "#2e73ea",
-          light: "#8ab1f3",
-          dark: "#172d67",
+          DEFAULT: "#0a0f1f",
+          light: "#1e263b",
+          dark: "#090c1a",
         },
         "zion-purple": {
-          DEFAULT: "#8c15e9",
-          light: "#b971f2",
-          dark: "#530c8b",
+          DEFAULT: "#a855f7",
+          light: "#d8b4fe",
+          dark: "#9333ea",
         },
         "zion-cyan": {
-          DEFAULT: "#22ddd2",
-          light: "#7aeae4",
-          dark: "#14847e",
+          DEFAULT: "#00e5ff",
+          light: "#7df9ff",
+          dark: "#00c4cc",
         },
         "zion-slate": {
-          DEFAULT: "#17072b",
-          light: "#451582",
-          dark: "#000000",
+          DEFAULT: "#94A3B8",
+          light: "#CBD5E1",
+          dark: "#64748B",
         },
       },
       borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+        lg: 'var(--radius)',
+        md: 'calc(var(--radius) - 2px)',
+        sm: 'calc(var(--radius) - 4px)',
       },
       fontFamily: {
-        sans: ["var(--font-sans)", ...fontFamily.sans],
+        sans: ['var(--font-inter)', 'Inter Fallback', ...defaultTheme.fontFamily.sans],
+        heading: [
+          'var(--font-poppins)',
+          'Poppins Fallback',
+          ...defaultTheme.fontFamily.sans
+        ]
       },
       keyframes: {
-        "accordion-down": {
-          from: { height: "0" },
-          to: { height: "var(--radix-accordion-content-height)" },
+        'accordion-down': {
+          from: { height: '0' },
+          to: { height: 'var(--radix-accordion-content-height)' },
         },
-        "accordion-up": {
-          from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: "0" },
+        'accordion-up': {
+          from: { height: 'var(--radix-accordion-content-height)' },
+          to: { height: '0' },
         },
+        'gradient-x': {
+          '0%, 100%': {
+            'background-size': '200% 200%',
+            'background-position': 'left center'
+          },
+          '50%': {
+            'background-size': '200% 200%',
+            'background-position': 'right center'
+          },
+        },
+        'float': {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-20px)' },
+        },
+        'glow': {
+          '0%, 100%': { boxShadow: '0 0 20px rgba(0, 229, 255, 0.5)' },
+          '50%': { boxShadow: '0 0 40px rgba(0, 229, 255, 0.8)' },
+        },
+        'neon-pulse': {
+          '0%, 100%': { 
+            textShadow: '0 0 5px #00e5ff, 0 0 10px #00e5ff, 0 0 15px #00e5ff, 0 0 20px #00e5ff' 
+          },
+          '50%': { 
+            textShadow: '0 0 2px #00e5ff, 0 0 5px #00e5ff, 0 0 7px #00e5ff, 0 0 10px #00e5ff' 
+          },
+        }
       },
       animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
-      },
-    },
+        'accordion-down': 'accordion-down 0.2s ease-out',
+        'accordion-up': 'accordion-up 0.2s ease-out',
+        'gradient-x': 'gradient-x 15s ease infinite',
+        'float': 'float 6s ease-in-out infinite',
+        'glow': 'glow 2s ease-in-out infinite alternate',
+        'neon-pulse': 'neon-pulse 2s ease-in-out infinite alternate',
+      }
+    }
   },
   plugins: [
-    animatePlugin,
-    plugin(function({ addUtilities }) {
+    plugin(function ({ addUtilities }) {
       const newUtilities = {
         '.rtl': {
           direction: 'rtl',
@@ -112,11 +138,11 @@ const config: Config = {
         '.ltr': {
           direction: 'ltr',
           textAlign: 'left',
-        },
+        }
       };
       addUtilities(newUtilities);
-    }),
-  ],
+    })
+  ]
 };
 
 export default config;

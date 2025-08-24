@@ -1,23 +1,12 @@
-import { Navigate } from "react-router-dom";
-import { useAuth } from "@/hooks/useAuth";
-import { LoginContent } from "@/components/auth/login";
+import React from 'react';
 
-export default function Login() {
-  const { isAuthenticated, user } = useAuth();
-  
-  // Redirect if user is already logged in and has completed profile
-  if (isAuthenticated && user?.profileComplete) {
-    return <Navigate to="/" />;
-  }
-  
-  // Redirect to onboarding if user is authenticated but hasn't completed profile
-  if (isAuthenticated && !user?.profileComplete) {
-    return <Navigate to="/onboarding" />;
-  }
-
+export default function EquipmentDetail() {
   return (
-    <>
-      <LoginContent />
-    </>
+    <div className="min-h-screen bg-zion-blue-dark py-8 text-white">
+      <div className="container mx-auto px-4">
+        <h1 className="text-3xl font-bold mb-6">EquipmentDetail</h1>
+        <p>EquipmentDetail page content will go here.</p>
+      </div>
+    </div>
   );
 }

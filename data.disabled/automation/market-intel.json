@@ -1,0 +1,129 @@
+{
+  "generatedAt": "2025-08-09T02:23:10.804Z",
+  "sources": {
+    "hnFrontpage": [
+      "Try and",
+      "Inside OS/2 (1987)",
+      "MCP: An (Accidentally) Universal Plugin System",
+      "Adult sites are stashing exploit code inside svg files",
+      "Booting 5000 Erlangs on Ampere One 192-core",
+      "Hyprland – An independent, dynamic tiling Wayland compositor",
+      "Open Lovable",
+      "Writing simple tab-completions for Bash and Zsh",
+      "POML: Prompt Orchestration Markup Language",
+      "Abogen – Generate audiobooks from EPUBs, PDFs and text",
+      "Melonking Website",
+      "How I code with AI on a budget/free",
+      "Abusing Entra OAuth for fun and access to internal Microsoft applications",
+      "Curious about the training data of OpenAI's new GPT-OSS models? I was too",
+      "“The Hollow Men” at 100",
+      "Ch.at – a lightweight LLM chat service accessible through HTTP, SSH, DNS and API",
+      "Debian 13 “Trixie”",
+      "A CT scanner reveals surprises inside the 386 processor's ceramic package",
+      "The current state of LLM-driven development"
+    ],
+    "githubTrending": [
+      {
+        "repo": "umami-software/umami",
+        "desc": "Umami is a modern, privacy-focused alternative to Google Analytics.",
+        "lang": "TypeScript"
+      },
+      {
+        "repo": "libsdl-org/SDL",
+        "desc": "Simple Directmedia Layer",
+        "lang": "C"
+      },
+      {
+        "repo": "menloresearch/jan",
+        "desc": "Jan is an open source alternative to ChatGPT that runs 100% offline on your computer",
+        "lang": "TypeScript"
+      },
+      {
+        "repo": "nomic-ai/gpt4all",
+        "desc": "GPT4All: Run Local LLMs on Any Device. Open-source and available for commercial use.",
+        "lang": "C++"
+      },
+      {
+        "repo": "openai/codex",
+        "desc": "Lightweight coding agent that runs in your terminal",
+        "lang": "Rust"
+      },
+      {
+        "repo": "RSSNext/Folo",
+        "desc": "🧡 Follow everything in one place",
+        "lang": "TypeScript"
+      },
+      {
+        "repo": "polarsource/polar",
+        "desc": "An open source engine for your digital products. Sell SaaS and digital products in minutes.",
+        "lang": "Python"
+      },
+      {
+        "repo": "fastapi/full-stack-fastapi-template",
+        "desc": "Full stack, modern web application template. Using FastAPI, React, SQLModel, PostgreSQL, Docker, GitHub Actions, automatic HTTPS and more.",
+        "lang": "TypeScript"
+      },
+      {
+        "repo": "topjohnwu/Magisk",
+        "desc": "The Magic Mask for Android",
+        "lang": "Kotlin"
+      },
+      {
+        "repo": "idosal/git-mcp",
+        "desc": "Put an end to code hallucinations! GitMCP is a free, open-source, remote MCP server for any GitHub project",
+        "lang": "TypeScript"
+      },
+      {
+        "repo": "binhnguyennus/awesome-scalability",
+        "desc": "The Patterns of Scalable, Reliable, and Performant Large-Scale Systems",
+        "lang": ""
+      },
+      {
+        "repo": "openai/openai-node",
+        "desc": "Official JavaScript / TypeScript library for the OpenAI API",
+        "lang": "TypeScript"
+      },
+      {
+        "repo": "xiaoyaocz/dart_simple_live",
+        "desc": "简简单单的看直播",
+        "lang": "Dart"
+      }
+    ]
+  },
+  "insights": {
+    "keywordCounts": {
+      "ai": 2,
+      "ml": 1,
+      "llm": 2,
+      "rag": 0,
+      "openai": 1,
+      "langchain": 0,
+      "vector": 0,
+      "kubernetes": 0,
+      "terraform": 0,
+      "security": 0
+    },
+    "topLanguages": [
+      {
+        "lang": "TypeScript",
+        "count": 6
+      },
+      {
+        "lang": "C",
+        "count": 1
+      },
+      {
+        "lang": "C++",
+        "count": 1
+      },
+      {
+        "lang": "Rust",
+        "count": 1
+      },
+      {
+        "lang": "Python",
+        "count": 1
+      }
+    ]
+  }
+}

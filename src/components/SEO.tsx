@@ -1,54 +1,42 @@
-
-import { Helmet } from "react-helmet-async";
+import React from 'react';
 
 interface SEOProps {
-  title: string;
-  description: string;
+  title?: string;
+  description?: string;
   keywords?: string;
   ogImage?: string;
-  ogUrl?: string;
   canonical?: string;
-  noindex?: boolean;
 }
 
-export function SEO({
-  title,
-  description,
-  keywords,
-  // Default to the Google Drive image URL
-  ogImage = "https://drive.google.com/uc?export=view&id=0B0iuzhpa3pD7X0RzZ2lmclN3Ymc",
-  ogUrl,
-  canonical,
-  noindex,
+export function SEO({ 
+  title = 'Zion Tech Group - AI, IT, and Micro SAAS Solutions',
+  description = 'Discover innovative micro SAAS solutions, cutting-edge AI services, and professional IT solutions designed to transform your business',
+  keywords = 'AI services, IT solutions, micro SAAS, business automation, cybersecurity, cloud computing',
+  ogImage = '/og-image.jpg',
+  canonical = 'https://ziontechgroup.com'
 }: SEOProps) {
-  const siteTitle = "Zion - The Future of Tech & AI Marketplace";
-  const fullTitle = title ? `${title} | ${siteTitle}` : siteTitle;
-  
   return (
-    <Helmet>
-      <title>{fullTitle}</title>
+    <>
+      <title>{title}</title>
       <meta name="description" content={description} />
-      {keywords && <meta name="keywords" content={keywords} />}
+      <meta name="keywords" content={keywords} />
+      <meta name="robots" content="index, follow" />
       
-      {/* Open Graph / Facebook */}
-      <meta property="og:type" content="website" />
-      <meta property="og:title" content={fullTitle} />
+      {/* Open Graph */}
+      <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={ogImage} />
-      {ogUrl && <meta property="og:url" content={ogUrl} />}
+      <meta property="og:url" content={canonical} />
+      <meta property="og:type" content="website" />
       
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:site" content="@lovable_dev" />
-      <meta name="twitter:title" content={fullTitle} />
+      <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={ogImage} />
       
-      {/* Canonical URL */}
-      {canonical && <link rel="canonical" href={canonical} />}
-      
-      {/* No index directive for search engines if needed */}
-      {noindex && <meta name="robots" content="noindex" />}
-    </Helmet>
+      {/* Canonical */}
+      <link rel="canonical" href={canonical} />
+    </>
   );
 }
