@@ -1,0 +1,23 @@
+[0;34m[02:39:31][0m Fetching latest changes from remote...
+[0;34m[02:39:31][0m Finding cursor branches with new content...
+[0;34m[02:39:33][0m Branch cursor/add-context-and-interaction-to-updates-4760 has 1 new commits
+[0;34m[02:39:35][0m Found 1 cursor branches with new content to merge
+[0;34m[02:39:35][0m === Processing: cursor/add-context-and-interaction-to-updates-4760 ===
+[0;34m[02:39:35][0m Creating local branch cursor/add-context-and-interaction-to-updates-4760 from origin/cursor/add-context-and-interaction-to-updates-4760...
+[0;34m[02:39:37][0m Attempting to merge cursor/add-context-and-interaction-to-updates-4760 into main...
+[0;32m[SUCCESS][0m Successfully merged cursor/add-context-and-interaction-to-updates-4760 into main
+[0;34m[02:39:38][0m Deleting local branch cursor/add-context-and-interaction-to-updates-4760...
+[0;34m[02:39:39][0m Completed processing cursor/add-context-and-interaction-to-updates-4760
+---
+[0;34m[02:39:39][0m Pushing final changes to remote main...
+[0;31m[ERROR][0m Failed to push main branch
+[0;34m[02:39:39][0m === QUICK MERGE PROCESS COMPLETED ===
+[0;32m[SUCCESS][0m Successfully merged: 1 branches
+[0;34m[02:39:39][0m Total branches processed: 1
+[0;34m[02:39:39][0m Check the log file for details: quick-merge-20250824-023931.log
+[0;34m[02:39:39][0m Final git status:
+?? quick-merge-20250824-023914.log
+?? quick-merge-20250824-023931.log
+?? quick-merge-cursor-prs.sh
+?? targeted-merge-20250824-022327.log
+[0;34m[02:39:39][0m Quick merge process completed at Sun Aug 24 02:39:39 AM UTC 2025

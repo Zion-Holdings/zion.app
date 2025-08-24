@@ -1,100 +1,16 @@
 {
   "polyfillFiles": [
-    "static/chunks/polyfills-c67a75d1b6f99dc8.js"
+    "static/chunks/polyfills.js"
   ],
   "devFiles": [],
   "ampDevFiles": [],
   "lowPriorityFiles": [
-    "static/Dv6lMs57nBgMiex6u-_39/_buildManifest.js",
-    "static/Dv6lMs57nBgMiex6u-_39/_ssgManifest.js"
+    "static/development/_buildManifest.js",
+    "static/development/_ssgManifest.js"
   ],
   "rootMainFiles": [],
   "pages": {
-    "/": [
-      "static/chunks/webpack-fd8027ecb5121007.js",
-      "static/chunks/framework-84465b8d7b10076d.js",
-      "static/chunks/main-c32f18e86225c8bc.js",
-      "static/chunks/91-114879cc4b0bb650.js",
-      "static/chunks/883-c8e94436d339cbb2.js",
-      "static/chunks/193-63b6b1836e68233c.js",
-      "static/chunks/pages/index-69a834dbbf94fb68.js"
-    ],
-    "/_app": [
-      "static/chunks/webpack-fd8027ecb5121007.js",
-      "static/chunks/framework-84465b8d7b10076d.js",
-      "static/chunks/main-c32f18e86225c8bc.js",
-      "static/chunks/pages/_app-c8cb24f51d1578fe.js"
-    ],
-    "/_error": [
-      "static/chunks/webpack-fd8027ecb5121007.js",
-      "static/chunks/framework-84465b8d7b10076d.js",
-      "static/chunks/main-c32f18e86225c8bc.js",
-      "static/chunks/pages/_error-eb7174c530fe2175.js"
-    ],
-    "/about": [
-      "static/chunks/webpack-fd8027ecb5121007.js",
-      "static/chunks/framework-84465b8d7b10076d.js",
-      "static/chunks/main-c32f18e86225c8bc.js",
-      "static/chunks/883-c8e94436d339cbb2.js",
-      "static/chunks/pages/about-c5ecff754d9681fc.js"
-    ],
-    "/apple-touch-icon.png": [
-      "static/chunks/webpack-fd8027ecb5121007.js",
-      "static/chunks/framework-84465b8d7b10076d.js",
-      "static/chunks/main-c32f18e86225c8bc.js",
-      "static/chunks/91-114879cc4b0bb650.js",
-      "static/chunks/pages/apple-touch-icon.png-2cda9e83ad440a77.js"
-    ],
-    "/contact": [
-      "static/chunks/webpack-fd8027ecb5121007.js",
-      "static/chunks/framework-84465b8d7b10076d.js",
-      "static/chunks/main-c32f18e86225c8bc.js",
-      "static/chunks/91-114879cc4b0bb650.js",
-      "static/chunks/883-c8e94436d339cbb2.js",
-      "static/chunks/pages/contact-3d2eb3bc1c81f069.js"
-    ],
-    "/favicon.ico": [
-      "static/chunks/webpack-fd8027ecb5121007.js",
-      "static/chunks/framework-84465b8d7b10076d.js",
-      "static/chunks/main-c32f18e86225c8bc.js",
-      "static/chunks/91-114879cc4b0bb650.js",
-      "static/chunks/pages/favicon.ico-b6386ffbd3706474.js"
-    ],
-    "/offline": [
-      "static/chunks/webpack-fd8027ecb5121007.js",
-      "static/chunks/framework-84465b8d7b10076d.js",
-      "static/chunks/main-c32f18e86225c8bc.js",
-      "static/chunks/883-c8e94436d339cbb2.js",
-      "static/chunks/pages/offline-f5b1b07fa2ce92a3.js"
-    ],
-    "/reports/updates/update-2025-08-15-0457": [
-      "static/chunks/webpack-fd8027ecb5121007.js",
-      "static/chunks/framework-84465b8d7b10076d.js",
-      "static/chunks/main-c32f18e86225c8bc.js",
-      "static/chunks/91-114879cc4b0bb650.js",
-      "static/chunks/pages/reports/updates/update-2025-08-15-0457-dcc63cb145e1ad53.js"
-    ],
-    "/reports/updates/update-2025-08-15-0507": [
-      "static/chunks/webpack-fd8027ecb5121007.js",
-      "static/chunks/framework-84465b8d7b10076d.js",
-      "static/chunks/main-c32f18e86225c8bc.js",
-      "static/chunks/91-114879cc4b0bb650.js",
-      "static/chunks/pages/reports/updates/update-2025-08-15-0507-9edfcb8da77af3a7.js"
-    ],
-    "/reports/updates/update-2025-08-15-0508": [
-      "static/chunks/webpack-fd8027ecb5121007.js",
-      "static/chunks/framework-84465b8d7b10076d.js",
-      "static/chunks/main-c32f18e86225c8bc.js",
-      "static/chunks/91-114879cc4b0bb650.js",
-      "static/chunks/pages/reports/updates/update-2025-08-15-0508-61d8eaf5ae05fb67.js"
-    ],
-    "/www.google-analytics.com": [
-      "static/chunks/webpack-fd8027ecb5121007.js",
-      "static/chunks/framework-84465b8d7b10076d.js",
-      "static/chunks/main-c32f18e86225c8bc.js",
-      "static/chunks/91-114879cc4b0bb650.js",
-      "static/chunks/pages/www.google-analytics.com-b617c896e9cc1a6e.js"
-    ]
+    "/_app": []
   },
   "ampFirstPages": []
 }
