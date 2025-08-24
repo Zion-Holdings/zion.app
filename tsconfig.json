@@ -54,6 +54,11 @@
         "./types/*"
       ]
     },
+<<<<<<< HEAD
+=======
+    "typeRoots": ["./src/types"],
+
+>>>>>>> origin/bw06m0-codex/fix-typescript-errors-in-components
     /* Bundler mode */
     "moduleResolution": "node",
     "esModuleInterop": true,
@@ -77,6 +82,7 @@
     "noEmit": true,
     "isolatedModules": true
   },
+<<<<<<< HEAD
   "include": [
     "next-env.d.ts",
     "**/*.ts",
@@ -114,3 +120,8 @@
     "data/2025-innovative-hospitality-services.ts"
   ]
 }
+=======
+  "include": ["src", "src/types/offline-shims.d.ts"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}
+>>>>>>> origin/bw06m0-codex/fix-typescript-errors-in-components

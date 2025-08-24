@@ -32,10 +32,33 @@ const config: Config = {
         card: {
           DEFAULT: hsl(var(--card)),          foreground: hsl(var(--card-foreground)),        },
         // Custom Zion colors
+<<<<<<< HEAD
         zion-blue': {'          DEFAULT: #2e73ea',          light: #8ab1f3',          dark: #172d67',        },
         zion-purple': {'          DEFAULT: #a855f7',          light: #c084fc',          dark: #6b21a8',        },
         zion-cyan': {'          DEFAULT: #0d9488',          light: #7aeae4',          dark: #0f766e',        },
         zion-slate': {'          DEFAULT: #17072b',          light: #451582',          dark: #000000',        }
+=======
+        "zion-blue": {
+          DEFAULT: "#0a0f1f",
+          light: "#1e263b",
+          dark: "#090c1a",
+        },
+        "zion-purple": {
+          DEFAULT: "#a855f7",
+          light: "#d8b4fe",
+          dark: "#9333ea",
+        },
+        "zion-cyan": {
+          DEFAULT: "#00e5ff",
+          light: "#7df9ff",
+          dark: "#00c4cc",
+        },
+        "zion-slate": {
+          DEFAULT: "#94A3B8",
+          light: "#CBD5E1",
+          dark: "#64748B",
+        },
+>>>>>>> origin/bw06m0-codex/fix-typescript-errors-in-components
       },
       borderRadius: {
         lg: var(--radius),        md: calc(var(--radius) - 2px),        sm: calc(var(--radius) - 4px),      },
