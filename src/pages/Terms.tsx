@@ -9,7 +9,7 @@ export default function Terms() {
       <SEO
         title="Terms of Service"
         description="The terms and conditions for using the Zion platform."
-        canonical="https://app.ziontechgroup.com/terms"
+        canonical="https://ziontechgroup.com/terms"
       />
       <Header />
       <main className="min-h-screen bg-zion-blue pt-24 pb-20">

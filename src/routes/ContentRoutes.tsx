@@ -13,6 +13,8 @@ import SearchPage from "@/pages/SearchPage";
 import { SitemapPage } from "@/components/SitemapPage";
 import Sitemap from "@/pages/Sitemap";
 import Terms from "@/pages/Terms";
+import Cookies from "@/pages/Cookies";
+import ApiDocs from "@/pages/ApiDocs";
 import HelpCenterPage from "@/pages/HelpCenterPage";
 import AccountSettings from "@/pages/AccountSettings";
 import ProjectRoom from "@/pages/ProjectRoom";
@@ -47,6 +49,10 @@ const ContentRoutes = () => {
 
       {/* Legal Pages */}
       <Route path="/terms" element={<Terms />} />
+      <Route path="/cookies" element={<Cookies />} />
+      
+      {/* API Documentation */}
+      <Route path="/api-docs" element={<ApiDocs />} />
 
       {/* Account Settings */}
       <Route path="/settings/account" element={<AccountSettings />} />
