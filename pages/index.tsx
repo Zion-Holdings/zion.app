@@ -9,7 +9,7 @@ import {
 import EnhancedNavigation from '../components/EnhancedNavigation';
 import EnhancedFooter from '../components/EnhancedFooter';
 import EnhancedContactForm from '../components/EnhancedContactForm';
-import EnhancedServicesShowcase from '../components/EnhancedServicesShowcase';
+import ComprehensiveServicesShowcase from '../components/ComprehensiveServicesShowcase';
 import EnhancedTestimonialsSection from '../components/EnhancedTestimonialsSection';
 
 export default function HomePage() {
@@ -319,7 +319,7 @@ export default function HomePage() {
 
       {/* Enhanced Services Showcase */}
       <div id="services">
-        <EnhancedServicesShowcase />
+        <ComprehensiveServicesShowcase />
       </div>
 
       {/* Enhanced Testimonials Section */}

@@ -83,7 +83,6 @@ export const innovativeAIServicesEnhanced2025: InnovativeAIService[] = [
     competitors: ['No direct competitors - first mover advantage'],
     marketSize: '$15.5B emotional AI market',
     growthRate: '45% annual growth',
-    variant: 'ai-consciousness-enterprise',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -136,7 +135,6 @@ export const innovativeAIServicesEnhanced2025: InnovativeAIService[] = [
     competitors: ['IBM Quantum, Google Quantum, Microsoft Quantum - but we offer hybrid AI-Quantum solutions'],
     marketSize: '$8.5B quantum computing market',
     growthRate: '55% annual growth',
-    variant: 'ai-quantum-enterprise',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -189,7 +187,6 @@ export const innovativeAIServicesEnhanced2025: InnovativeAIService[] = [
     competitors: ['No direct competitors - revolutionary autonomous research capability'],
     marketSize: '$25.5B research and development market',
     growthRate: '18% annual growth',
-    variant: 'ai-research-enterprise',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -242,7 +239,6 @@ export const innovativeAIServicesEnhanced2025: InnovativeAIService[] = [
     competitors: ['Limited competition - specialized emotional AI training'],
     marketSize: '$12.5B emotional AI market',
     growthRate: '35% annual growth',
-    variant: 'ai-eq-training-enterprise',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -295,7 +291,7 @@ export const innovativeAIServicesEnhanced2025: InnovativeAIService[] = [
     competitors: ['PTC ThingWorx, Siemens Mindsphere, GE Predix, IBM Watson IoT'],
     marketSize: '$35.5B predictive maintenance market',
     growthRate: '25% annual growth',
-    variant: 'ai-maintenance-enterprise',
+
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -348,7 +344,7 @@ export const innovativeAIServicesEnhanced2025: InnovativeAIService[] = [
     competitors: ['Dynamic Yield, Optimizely, Adobe Target, Google Optimize'],
     marketSize: '$18.5B personalization market',
     growthRate: '22% annual growth',
-    variant: 'ai-personalization-enterprise',
+
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -401,7 +397,7 @@ export const innovativeAIServicesEnhanced2025: InnovativeAIService[] = [
     competitors: ['No direct competitors - revolutionary autonomous ecosystem management'],
     marketSize: '$45.5B AI management market',
     growthRate: '40% annual growth',
-    variant: 'ai-ecosystem-enterprise',
+
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -454,7 +450,7 @@ export const innovativeAIServicesEnhanced2025: InnovativeAIService[] = [
     competitors: ['Limited competition - specialized AI ethics and governance'],
     marketSize: '$8.5B AI governance market',
     growthRate: '30% annual growth',
-    variant: 'ai-ethics-enterprise',
+
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -507,7 +503,7 @@ export const innovativeAIServicesEnhanced2025: InnovativeAIService[] = [
     competitors: ['Canva, Adobe Creative Cloud, Figma, Midjourney, DALL-E'],
     marketSize: '$22.5B creative software market',
     growthRate: '20% annual growth',
-    variant: 'ai-creativity-enterprise',
+
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -560,7 +556,7 @@ export const innovativeAIServicesEnhanced2025: InnovativeAIService[] = [
     competitors: ['Coursera, Udemy, Khan Academy, Duolingo, Skillshare'],
     marketSize: '$28.5B online education market',
     growthRate: '25% annual growth',
-    variant: 'ai-education-enterprise',
+
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -613,7 +609,7 @@ export const innovativeAIServicesEnhanced2025: InnovativeAIService[] = [
     competitors: ['IBM Watson Health, Google Health, Microsoft Healthcare, Aidoc, Zebra Medical'],
     marketSize: '$45B AI healthcare market',
     growthRate: '140% annual growth',
-    variant: 'ai-healthcare-enterprise',
+
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -666,7 +662,7 @@ export const innovativeAIServicesEnhanced2025: InnovativeAIService[] = [
     competitors: ['Bloomberg Terminal, Thomson Reuters, RiskMetrics, MSCI, FactSet'],
     marketSize: '$35.5B financial intelligence market',
     growthRate: '24% annual growth',
-    variant: 'ai-finance-enterprise',
+
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -719,7 +715,7 @@ export const innovativeAIServicesEnhanced2025: InnovativeAIService[] = [
     competitors: ['Sustainability consulting firms, ESG platforms, Environmental management tools'],
     marketSize: '$18.5B sustainability market',
     growthRate: '160% annual growth',
-    variant: 'ai-sustainability-enterprise',
+
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -772,7 +768,7 @@ export const innovativeAIServicesEnhanced2025: InnovativeAIService[] = [
     competitors: ['Sentiment analysis tools, Emotion AI platforms, Customer service AI'],
     marketSize: '$12.5B emotional AI market',
     growthRate: '280% annual growth',
-    variant: 'ai-emotional-enterprise',
+
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -825,7 +821,7 @@ export const innovativeAIServicesEnhanced2025: InnovativeAIService[] = [
     competitors: ['DataRobot, H2O.ai, RapidMiner, KNIME'],
     marketSize: '$21.5B predictive analytics market',
     growthRate: '32% annual growth',
-    variant: 'ai-predictive-enterprise',
+
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -878,7 +874,7 @@ export const innovativeAIServicesEnhanced2025: InnovativeAIService[] = [
     competitors: ['Google Vision AI, AWS Rekognition, Azure Computer Vision, Clarifai'],
     marketSize: '$18.7B computer vision market',
     growthRate: '28% annual growth',
-    variant: 'ai-vision-enterprise',
+
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -931,7 +927,7 @@ export const innovativeAIServicesEnhanced2025: InnovativeAIService[] = [
     competitors: ['OpenAI API, Google Cloud NLP, Azure Language, spaCy'],
     marketSize: '$16.3B NLP market',
     growthRate: '25% annual growth',
-    variant: 'ai-nlp-enterprise',
+
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -984,7 +980,7 @@ export const innovativeAIServicesEnhanced2025: InnovativeAIService[] = [
     competitors: ['Amazon Personalize, Google Recommendations AI, Recombee, Algolia'],
     marketSize: '$12.8B recommendation engine market',
     growthRate: '30% annual growth',
-    variant: 'ai-recommendation-enterprise',
+
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -1037,7 +1033,7 @@ export const innovativeAIServicesEnhanced2025: InnovativeAIService[] = [
     competitors: ['Sift, Signifyd, Kount, Forter'],
     marketSize: '$22.5B fraud detection market',
     growthRate: '35% annual growth',
-    variant: 'ai-fraud-enterprise',
+
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -1090,7 +1086,7 @@ export const innovativeAIServicesEnhanced2025: InnovativeAIService[] = [
     competitors: ['SAP SCM, Oracle SCM, JDA Software, Manhattan Associates'],
     marketSize: '$18.9B supply chain management market',
     growthRate: '22% annual growth',
-    variant: 'ai-supply-chain-enterprise',
+
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -1143,7 +1139,7 @@ export const innovativeAIServicesEnhanced2025: InnovativeAIService[] = [
     competitors: ['Schneider Electric, Siemens, Honeywell, Johnson Controls'],
     marketSize: '$15.7B energy management market',
     growthRate: '28% annual growth',
-    variant: 'ai-energy-enterprise',
+
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -1196,7 +1192,7 @@ export const innovativeAIServicesEnhanced2025: InnovativeAIService[] = [
     competitors: ['Cognex, Keyence, Omron, SICK'],
     marketSize: '$12.3B quality control market',
     growthRate: '25% annual growth',
-    variant: 'ai-quality-control-enterprise',
+
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -1249,7 +1245,7 @@ export const innovativeAIServicesEnhanced2025: InnovativeAIService[] = [
     competitors: ['Segment, Mixpanel, Amplitude, Google Analytics'],
     marketSize: '$14.2B customer analytics market',
     growthRate: '26% annual growth',
-    variant: 'ai-segmentation-enterprise',
+
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -1302,7 +1298,7 @@ export const innovativeAIServicesEnhanced2025: InnovativeAIService[] = [
     competitors: ['IBM Quantum, Google Quantum AI, Rigetti, D-Wave'],
     marketSize: '$8.5B quantum computing market',
     growthRate: '25% annual growth',
-    variant: 'quantum-ai-enterprise',
+
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -1355,7 +1351,7 @@ export const innovativeAIServicesEnhanced2025: InnovativeAIService[] = [
     competitors: ['None - First to market'],
     marketSize: '$12B+ potential market',
     growthRate: '400%+ annual growth',
-    variant: 'ai-research',
+
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -1408,7 +1404,7 @@ export const innovativeAIServicesEnhanced2025: InnovativeAIService[] = [
     competitors: ['Mood Meter', 'Emotion AI', 'Empath', 'Affectiva'],
     marketSize: '$3.2B emotional intelligence market',
     growthRate: '22% annual growth',
-    variant: 'ai-training',
+
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -1461,7 +1457,7 @@ export const innovativeAIServicesEnhanced2025: InnovativeAIService[] = [
     competitors: ['Uptake', 'C3.ai', 'Predix', 'Mindsphere'],
     marketSize: '$7.8B predictive maintenance market',
     growthRate: '30% annual growth',
-    variant: 'ai-industrial',
+
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -1514,7 +1510,7 @@ export const innovativeAIServicesEnhanced2025: InnovativeAIService[] = [
     competitors: ['Dynamic Yield', 'Optimizely', 'Adobe Target', 'Google Optimize'],
     marketSize: '$4.2B content personalization market',
     growthRate: '25% annual growth',
-    variant: 'ai-content',
+
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -1567,7 +1563,7 @@ export const innovativeAIServicesEnhanced2025: InnovativeAIService[] = [
     competitors: ['None - First to market'],
     marketSize: '$15B+ potential market',
     growthRate: '500%+ annual growth',
-    variant: 'ai-autonomous',
+
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -1620,7 +1616,7 @@ export const innovativeAIServicesEnhanced2025: InnovativeAIService[] = [
     competitors: ['AI Fairness 360', 'What-If Tool', 'LIME', 'SHAP'],
     marketSize: '$2.8B AI ethics market',
     growthRate: '35% annual growth',
-    variant: 'ai-governance',
+
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -1673,7 +1669,7 @@ export const innovativeAIServicesEnhanced2025: InnovativeAIService[] = [
     competitors: ['Midjourney', 'DALL-E', 'Stable Diffusion', 'Jukebox'],
     marketSize: '$3.5B AI creative tools market',
     growthRate: '40% annual growth',
-    variant: 'ai-creative',
+
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
