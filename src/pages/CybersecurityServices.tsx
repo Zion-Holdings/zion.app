@@ -4,9 +4,9 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { SEO } from "@/components/SEO";
 import { 
-  PenTool, 
-  FileText, 
-  Brain, 
+  Shield, 
+  Lock, 
+  Eye, 
   Zap, 
   Target, 
   Users, 
@@ -15,118 +15,118 @@ import {
   CheckCircle,
   Star,
   Globe,
-  Shield,
-  Type,
-  Image,
-  Video,
-  Mic,
-  Palette,
-  ShoppingBag,
-  Mail
+  AlertTriangle,
+  Network,
+  Database,
+  Cloud,
+  Smartphone,
+  Server
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
-export default function AIContentGenerator() {
-  const features = [
+export default function CybersecurityServices() {
+  const services = [
     {
-      title: "AI Writing Assistant",
-      description: "Generate high-quality content for blogs, social media, and marketing campaigns",
-      icon: <PenTool className="h-6 w-6 text-zion-cyan" />
+      title: "Penetration Testing",
+      description: "Comprehensive security assessments to identify vulnerabilities in your systems",
+      icon: <Target className="h-6 w-6 text-zion-cyan" />,
+      price: "From $2,500"
     },
     {
-      title: "Multi-Format Support",
-      description: "Create content in various formats: text, images, videos, and audio",
-      icon: <FileText className="h-6 w-6 text-zion-purple" />
+      title: "Security Audits",
+      description: "Thorough review of your security policies, procedures, and infrastructure",
+      icon: <Eye className="h-6 w-6 text-zion-purple" />,
+      price: "From $1,800"
     },
     {
-      title: "Brand Voice Consistency",
-      description: "Maintain your brand's unique voice across all content pieces",
-      icon: <Type className="h-6 w-6 text-zion-blue" />
+      title: "Incident Response",
+      description: "24/7 emergency response team for security breaches and cyber attacks",
+      icon: <AlertTriangle className="h-6 w-6 text-zion-blue" />,
+      price: "From $5,000"
     },
     {
-      title: "SEO Optimization",
-      description: "AI-powered SEO suggestions to improve content visibility and ranking",
-      icon: <Target className="h-6 w-6 text-zion-cyan" />
+      title: "Security Training",
+      description: "Employee cybersecurity awareness and best practices training",
+      icon: <Users className="h-6 w-6 text-zion-cyan" />,
+      price: "From $500"
     }
   ];
 
-  const contentTypes = [
+  const securitySolutions = [
     {
-      title: "Blog Posts",
-      description: "Long-form articles and blog content",
-      icon: <FileText className="h-8 w-8 text-zion-cyan" />
+      title: "Network Security",
+      description: "Firewall configuration, intrusion detection, and network monitoring",
+      icon: <Network className="h-8 w-8 text-zion-cyan" />
     },
     {
-      title: "Social Media",
-      description: "Posts for all major social platforms",
-      icon: <Users className="h-8 w-8 text-zion-purple" />
+      title: "Endpoint Protection",
+      description: "Advanced antivirus, malware protection, and device security",
+      icon: <Smartphone className="h-8 w-8 text-zion-purple" />
     },
     {
-      title: "Marketing Copy",
-      description: "Ads, landing pages, and promotional content",
-      icon: <Target className="h-8 w-8 text-zion-blue" />
+      title: "Cloud Security",
+      description: "AWS, Azure, and Google Cloud security assessment and hardening",
+      icon: <Cloud className="h-8 w-8 text-zion-blue" />
     },
     {
-      title: "Product Descriptions",
-      description: "Compelling product and service descriptions",
-      icon: <ShoppingBag className="h-8 w-8 text-zion-cyan" />
+      title: "Data Protection",
+      description: "Encryption, backup security, and data loss prevention",
+      icon: <Database className="h-8 w-8 text-zion-cyan" />
     },
     {
-      title: "Email Campaigns",
-      description: "Newsletters and email marketing content",
-      icon: <Mail className="h-8 w-8 text-zion-purple" />
+      title: "Server Security",
+      description: "Server hardening, access control, and monitoring",
+      icon: <Server className="h-8 w-8 text-zion-purple" />
     },
     {
-      title: "Video Scripts",
-      description: "Scripts for video content and presentations",
-      icon: <Video className="h-8 w-8 text-zion-blue" />
+      title: "Compliance",
+      description: "GDPR, HIPAA, SOC 2, and industry-specific compliance",
+      icon: <Shield className="h-8 w-8 text-zion-blue" />
     }
   ];
 
   const pricingPlans = [
     {
-      name: "Starter",
-      price: "$49",
+      name: "Basic Security",
+      price: "$299",
       period: "/month",
-      description: "Perfect for individuals and small businesses",
+      description: "Essential cybersecurity for small businesses",
       features: [
-        "Up to 50 content pieces/month",
-        "Basic AI writing tools",
-        "Standard templates",
+        "Security assessment",
+        "Basic monitoring",
+        "Monthly reports",
         "Email support",
-        "Basic SEO suggestions"
+        "Security training"
       ],
       popular: false
     },
     {
-      name: "Professional",
-      price: "$149",
+      name: "Professional Security",
+      price: "$799",
       period: "/month",
-      description: "Advanced content creation for growing businesses",
+      description: "Comprehensive protection for growing businesses",
       features: [
-        "Up to 200 content pieces/month",
-        "Advanced AI writing tools",
-        "Custom templates",
+        "Full security audit",
+        "24/7 monitoring",
+        "Incident response",
         "Priority support",
-        "Advanced SEO optimization",
-        "Brand voice training",
-        "Multi-language support"
+        "Advanced training",
+        "Compliance assistance"
       ],
       popular: true
     },
     {
-      name: "Enterprise",
-      price: "$399",
+      name: "Enterprise Security",
+      price: "$1,999",
       period: "/month",
-      description: "Full-scale content creation for large organizations",
+      description: "Full-scale cybersecurity for large organizations",
       features: [
-        "Unlimited content pieces",
-        "Custom AI models",
+        "Custom security solutions",
+        "Dedicated security team",
+        "Advanced threat hunting",
         "White-label solutions",
-        "Dedicated support",
-        "Advanced analytics",
-        "API access",
-        "Custom integrations"
+        "Custom integrations",
+        "Executive reporting"
       ],
       popular: false
     }
@@ -134,32 +134,32 @@ export default function AIContentGenerator() {
 
   const testimonials = [
     {
-      name: "Jennifer Martinez",
-      role: "Marketing Director, GrowthBrand",
-      content: "Zion's AI Content Generator increased our content output by 300% while maintaining quality. Game-changer!",
+      name: "Michael Chen",
+      role: "CISO, FinTech Solutions",
+      content: "Zion's cybersecurity team helped us achieve SOC 2 compliance in record time. Their expertise is unmatched.",
       rating: 5
     },
     {
-      name: "David Kim",
-      role: "Content Creator, TechBlog",
-      content: "The AI writing assistant is incredibly intuitive. It understands context and generates engaging content.",
+      name: "Dr. Sarah Williams",
+      role: "IT Director, HealthCare Plus",
+      content: "The penetration testing revealed critical vulnerabilities we didn't know existed. Their thorough approach saved us.",
       rating: 5
     },
     {
-      name: "Lisa Thompson",
-      role: "CEO, StartupXYZ",
-      content: "We've saved countless hours on content creation. The ROI is immediate and substantial.",
+      name: "Robert Johnson",
+      role: "CEO, E-commerce Pro",
+      content: "24/7 incident response gives us peace of mind. Zion's team responds faster than any other provider we've used.",
       rating: 5
     }
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-zion-slate-dark via-zion-purple-dark to-zion-slate-dark">
+    <div className="min-h-screen bg-gradient-to-br from-zion-slate-dark via-zion-blue-dark to-zion-slate-dark">
       <SEO 
-        title="AI Content Generator - Zion Tech Group" 
-        description="Create engaging, high-quality content with AI-powered writing tools. Generate blogs, social media posts, and marketing copy instantly."
-        keywords="AI content generator, content creation, AI writing, marketing copy, Zion Tech Group"
-        canonical="https://ziontechgroup.com/ai-content-generator"
+        title="Cybersecurity Services - Zion Tech Group" 
+        description="Protect your business with comprehensive cybersecurity services including penetration testing, security audits, and incident response."
+        keywords="cybersecurity, penetration testing, security audit, incident response, Zion Tech Group"
+        canonical="https://ziontechgroup.com/cybersecurity-services"
       />
 
       {/* Hero Section */}
@@ -167,55 +167,58 @@ export default function AIContentGenerator() {
         <div className="absolute inset-0 bg-gradient-to-r from-zion-purple/20 via-zion-cyan/20 to-zion-blue/20 animate-pulse"></div>
         <div className="container mx-auto relative z-10 text-center">
           <Badge className="mb-6 bg-zion-cyan/20 text-zion-cyan border-zion-cyan/30">
-            ✍️ AI-Powered Content Creation
+            🛡️ Enterprise-Grade Security
           </Badge>
           <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-zion-cyan via-zion-purple to-zion-blue bg-clip-text text-transparent">
-            AI Content Generator
+            Cybersecurity Services
           </h1>
           <p className="text-xl md:text-2xl text-zion-slate-light mb-8 max-w-4xl mx-auto">
-            Transform your content creation with AI-powered writing tools. Generate engaging blogs, social media posts, 
-            marketing copy, and more in seconds. Maintain your brand voice while scaling your content production.
+            Protect your business from evolving cyber threats with our comprehensive security services. 
+            From penetration testing to incident response, we've got you covered 24/7.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white px-8 py-4 text-lg">
               <Link to="/contact">
-                Start Free Trial
+                Get Security Assessment
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="border-zion-cyan text-zion-cyan hover:bg-zion-cyan/10 px-8 py-4 text-lg">
               <Link to="/contact">
-                Try Demo
+                Emergency Response
               </Link>
             </Button>
           </div>
         </div>
       </section>
 
-      {/* Features Section */}
+      {/* Services Section */}
       <section className="py-20 px-4">
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-4">
-              Powerful Content Creation Features
+              Comprehensive Security Services
             </h2>
             <p className="text-xl text-zion-slate-light max-w-3xl mx-auto">
-              Our AI platform combines natural language processing with creative intelligence to deliver content that resonates with your audience.
+              Our expert cybersecurity team provides a full range of security services to protect your business assets and data.
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {features.map((feature, index) => (
+            {services.map((service, index) => (
               <Card key={index} className="bg-zion-slate-dark/50 border-zion-purple/20 hover:border-zion-purple/40 transition-all duration-300 hover:shadow-2xl hover:shadow-zion-purple/20">
                 <CardHeader className="text-center">
                   <div className="mx-auto mb-4 p-3 bg-zion-purple/10 rounded-full w-16 h-16 flex items-center justify-center">
-                    {feature.icon}
+                    {service.icon}
                   </div>
-                  <CardTitle className="text-white">{feature.title}</CardTitle>
+                  <CardTitle className="text-white">{service.title}</CardTitle>
+                  <CardDescription className="text-zion-cyan font-semibold">
+                    {service.price}
+                  </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <CardDescription className="text-zion-slate-light text-center">
-                    {feature.description}
+                    {service.description}
                   </CardDescription>
                 </CardContent>
               </Card>
@@ -224,30 +227,30 @@ export default function AIContentGenerator() {
         </div>
       </section>
 
-      {/* Content Types Section */}
+      {/* Security Solutions Section */}
       <section className="py-20 px-4 bg-zion-slate-dark/30">
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-4">
-              Create Any Type of Content
+              Security Solutions for Every Need
             </h2>
             <p className="text-xl text-zion-slate-light max-w-3xl mx-auto">
-              From blog posts to social media content, our AI handles all your content creation needs.
+              From network security to compliance, we provide comprehensive protection across all aspects of your infrastructure.
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {contentTypes.map((type, index) => (
+            {securitySolutions.map((solution, index) => (
               <Card key={index} className="bg-zion-slate-dark/50 border-zion-purple/20 hover:border-zion-purple/40 transition-all duration-300 hover:shadow-2xl hover:shadow-zion-purple/20 text-center">
                 <CardHeader>
                   <div className="mx-auto mb-4 p-3 bg-zion-purple/10 rounded-full w-20 h-20 flex items-center justify-center">
-                    {type.icon}
+                    {solution.icon}
                   </div>
-                  <CardTitle className="text-white">{type.title}</CardTitle>
+                  <CardTitle className="text-white">{solution.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <CardDescription className="text-zion-slate-light">
-                    {type.description}
+                    {solution.description}
                   </CardDescription>
                 </CardContent>
               </Card>
@@ -261,10 +264,10 @@ export default function AIContentGenerator() {
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-4">
-              Simple, Transparent Pricing
+              Flexible Security Plans
             </h2>
             <p className="text-xl text-zion-slate-light max-w-3xl mx-auto">
-              Choose the plan that fits your content creation needs. All plans include our core AI writing features.
+              Choose the security plan that fits your business needs. All plans include our core cybersecurity features.
             </p>
           </div>
           
@@ -312,10 +315,10 @@ export default function AIContentGenerator() {
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-4">
-              Trusted by Content Creators
+              Trusted by Security Leaders
             </h2>
             <p className="text-xl text-zion-slate-light max-w-3xl mx-auto">
-              See what our customers say about the transformative power of AI content generation.
+              See what our clients say about our cybersecurity expertise and commitment to protecting their businesses.
             </p>
           </div>
           
@@ -344,21 +347,21 @@ export default function AIContentGenerator() {
       <section className="py-20 px-4 bg-gradient-to-r from-zion-purple/20 via-zion-cyan/20 to-zion-blue/20">
         <div className="container mx-auto text-center">
           <h2 className="text-4xl font-bold text-white mb-6">
-            Ready to Transform Your Content Creation?
+            Ready to Secure Your Business?
           </h2>
           <p className="text-xl text-zion-slate-light mb-8 max-w-3xl mx-auto">
-            Join thousands of creators already using AI to scale their content production and engage their audience.
+            Don't wait until it's too late. Get expert cybersecurity protection today and sleep soundly knowing your business is secure.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white px-8 py-4 text-lg">
               <Link to="/contact">
-                Start Your Free Trial
+                Get Security Assessment
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="border-zion-cyan text-zion-cyan hover:bg-zion-cyan/10 px-8 py-4 text-lg">
               <Link to="/contact">
-                Contact Sales
+                Contact Security Team
               </Link>
             </Button>
           </div>

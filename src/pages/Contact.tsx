@@ -114,9 +114,15 @@ export default function Contact() {
 
   const offices = [
     {
-      name: "Zion Tech Group Headquarters",
-      address: "364 E Main St STE 1008, Middletown, DE 19709",
+      name: "Headquarters",
+      address: "364 E Main St STE 1008, Middletown DE 19709",
       phone: "+1 302 464 0950",
+      email: "kleber@ziontechgroup.com"
+    },
+    {
+      name: "East Coast Office",
+      address: "364 E Main St STE 1008, Middletown DE 19709",
+      phone: "+1 302 464 0950", 
       email: "kleber@ziontechgroup.com"
     }
   ];
@@ -127,7 +133,7 @@ export default function Contact() {
         title="Contact Zion - Get in Touch"
         description="Have questions or want to learn more? Contact the Zion team about our AI and tech marketplace platform."
         keywords="contact Zion, AI marketplace support, tech platform contact"
-        canonical="https://app.ziontechgroup.com/contact"
+        canonical="https://ziontechgroup.com/contact"
       />
       <main className="min-h-screen bg-zion-blue pt-24 pb-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -251,14 +257,14 @@ export default function Contact() {
               
               <div className="mt-8 bg-zion-blue-dark border border-zion-blue-light rounded-lg overflow-hidden">
                 <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12345.678901234567!2d-75.7167!3d39.4496!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c7a8b8b8b8b8b8%3A0x8b8b8b8b8b8b8b8b!2s364%20E%20Main%20St%2C%20Middletown%2C%20DE%2019709!5e0!3m2!1sen!2sus!4v1234567890!5m2!1sen!2sus" 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12615.297199052566!2d-122.41941455!3d37.7749295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858080b9b0a169%3A0x1ac94fe0532d9e81!2sSan%20Francisco%2C%20CA%2C%20USA!5e0!3m2!1sen!2suk!4v1651234567890!5m2!1sen!2suk" 
                   width="100%" 
                   height="300" 
                   style={{ border: 0 }} 
                   allowFullScreen={true} 
                   loading="lazy" 
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Zion Tech Group Office Location"
+                  title="Zion Office Locations"
                 ></iframe>
               </div>
               
@@ -302,7 +308,7 @@ export default function Contact() {
                 className="border-zion-cyan text-zion-cyan hover:bg-zion-cyan/10"
                 asChild
               >
-                <a href="mailto:kleber@ziontechgroup.com">
+                <a href="mailto:support@ziontechgroup.com">
                   <Mail className="mr-2 h-5 w-5" />
                   Email Support
                 </a>
