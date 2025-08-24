@@ -23,12 +23,9 @@ const ComprehensiveServicesPage = React.lazy(() => import('./pages/Comprehensive
 const ServiceDetailPage = React.lazy(() => import('./pages/ServiceDetailPage'));
 const PricingPage = React.lazy(() => import('./pages/PricingPage'));
 
-// Additional service pages
-const AIServicesPage = React.lazy(() => import('./pages/AIServicesPage'));
-const CybersecurityServicesPage = React.lazy(() => import('./pages/CybersecurityServicesPage'));
-const ServicesPricingPage = React.lazy(() => import('./pages/ServicesPricingPage'));
-const InnovativeServicesShowcase = React.lazy(() => import('./pages/InnovativeServicesShowcase'));
+// Additional service pages that exist
 const AdvancedTechServices = React.lazy(() => import('./pages/AdvancedTechServices'));
+const InnovativeServicesShowcase = React.lazy(() => import('./pages/InnovativeServicesShowcase'));
 
 const baseRoutes = [
   { path: '/', element: <Home /> },
@@ -44,10 +41,7 @@ const baseRoutes = [
   { path: '/comprehensive-services', element: <ComprehensiveServicesPage /> },
   { path: '/services/:id', element: <ServiceDetailPage /> },
   { path: '/pricing', element: <PricingPage /> },
-  // Additional service routes
-  { path: '/ai-services', element: <AIServicesPage /> },
-  { path: '/cybersecurity-services', element: <CybersecurityServicesPage /> },
-  { path: '/services-pricing', element: <ServicesPricingPage /> },
+  // Additional service routes that exist
   { path: '/innovative-services', element: <InnovativeServicesShowcase /> },
   { path: '/advanced-tech-services', element: <AdvancedTechServices /> },
 ];
