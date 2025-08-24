@@ -12,7 +12,7 @@ import { generateSearchSuggestions } from "@/data/marketplaceData";
 import { useNavigate } from "react-router-dom";
 import { Button } from '@/components/ui/button';
 import { Sparkles, Menu, X } from 'lucide-react';
-export function Header({ hideLogin = false, customLogo, customTheme }) {
+function Header({ hideLogin = false, customLogo, customTheme }) {
     const { user } = useAuth();
     const { isWhitelabel, primaryColor } = useWhitelabel();
     const navigate = useNavigate();
@@ -62,3 +62,4 @@ export function Header({ hideLogin = false, customLogo, customTheme }) {
                                     setIsMobileMenuOpen(false);
                                 }, searchSuggestions: searchSuggestions }) }), _jsxs("nav", { className: "space-y-2", children: [_jsx(Link, { to: "/", onClick: () => setIsMobileMenuOpen(false), className: "block px-4 py-3 text-white hover:bg-zion-purple/10 rounded-lg transition-colors", children: "Home" }), _jsx(Link, { to: "/micro-saas-services", onClick: () => setIsMobileMenuOpen(false), className: "block px-4 py-3 text-white hover:bg-zion-purple/10 rounded-lg transition-colors", children: _jsxs("div", { className: "flex items-center", children: [_jsx(Sparkles, { className: "w-4 h-4 mr-2 text-zion-cyan" }), "Micro SAAS Services"] }) }), _jsx(Link, { to: "/marketplace", onClick: () => setIsMobileMenuOpen(false), className: "block px-4 py-3 text-white hover:bg-zion-purple/10 rounded-lg transition-colors", children: "Marketplace" }), _jsx(Link, { to: "/talent", onClick: () => setIsMobileMenuOpen(false), className: "block px-4 py-3 text-white hover:bg-zion-purple/10 rounded-lg transition-colors", children: "Talent" }), _jsx(Link, { to: "/services", onClick: () => setIsMobileMenuOpen(false), className: "block px-4 py-3 text-white hover:bg-zion-purple/10 rounded-lg transition-colors", children: "Services" }), _jsx(Link, { to: "/equipment", onClick: () => setIsMobileMenuOpen(false), className: "block px-4 py-3 text-white hover:bg-zion-purple/10 rounded-lg transition-colors", children: "Equipment" }), _jsx(Link, { to: "/community", onClick: () => setIsMobileMenuOpen(false), className: "block px-4 py-3 text-white hover:bg-zion-purple/10 rounded-lg transition-colors", children: "Community" }), user && (_jsx(Link, { to: "/dashboard", onClick: () => setIsMobileMenuOpen(false), className: "block px-4 py-3 text-white hover:bg-zion-purple/10 rounded-lg transition-colors", children: "Dashboard" }))] }), _jsx("div", { className: "pt-4 border-t border-zion-purple/20", children: _jsxs("div", { className: "flex items-center gap-3", children: [_jsx(LanguageSelector, {}), !hideLogin && _jsx(UserMenu, {})] }) })] }) }))] }));
 }
+export default Header;

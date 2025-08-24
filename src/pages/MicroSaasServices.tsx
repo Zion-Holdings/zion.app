@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Header } from '@/components/Header';
-import { Footer } from '@/components/Footer';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 import { SEO } from '@/components/SEO';
 import { MICRO_SAAS_SERVICES, MicroSaasService } from '@/data/microSaasServices';
 import { Button } from '@/components/ui/button';

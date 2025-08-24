@@ -23,7 +23,7 @@ export interface HeaderProps {
   };
 }
 
-export function Header({ hideLogin = false, customLogo, customTheme }: HeaderProps) {
+function Header({ hideLogin = false, customLogo, customTheme }: HeaderProps) {
   const { user } = useAuth();
   const { isWhitelabel, primaryColor } = useWhitelabel();
   const navigate = useNavigate();
@@ -342,3 +342,5 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
     </header>
   );
 }
+
+export default Header;

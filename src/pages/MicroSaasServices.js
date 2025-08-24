@@ -1,7 +1,7 @@
 import { jsx as _jsx, jsxs as _jsxs, Fragment as _Fragment } from "react/jsx-runtime";
 import { useState } from 'react';
-import { Header } from '@/components/Header';
-import { Footer } from '@/components/Footer';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 import { SEO } from '@/components/SEO';
 import { MICRO_SAAS_SERVICES } from '@/data/microSaasServices';
 import { Button } from '@/components/ui/button';
