@@ -7,10 +7,8 @@ import { WhitelabelProvider } from "./context/WhitelabelContext";
 import { ToasterProvider } from "./components/Toaster";
 import { Sonner } from "./components/Sonner";
 
-// Lazy load pages
+// Lazy load pages that exist
 const Home = React.lazy(() => import('./pages/Home'));
-const AboutPage = React.lazy(() => import('./pages/About'));
-const Contact = React.lazy(() => import('./pages/Contact'));
 const Sitemap = React.lazy(() => import('./pages/Sitemap'));
 const Services = React.lazy(() => import('./pages/Services'));
 const AISolutionsPage = React.lazy(() => import('./pages/AISolutions'));
@@ -21,39 +19,33 @@ const HelpCenterPage = React.lazy(() => import('./pages/HelpCenter'));
 const CookiesPage = React.lazy(() => import('./pages/Cookies'));
 const AccessibilityPage = React.lazy(() => import('./pages/Accessibility'));
 
-// Our comprehensive services pages
+// Our comprehensive services pages that exist
+const ComprehensiveServicesPage = React.lazy(() => import('./pages/ComprehensiveServicesPage'));
 const ServiceDetailPage = React.lazy(() => import('./pages/ServiceDetailPage'));
 const PricingPage = React.lazy(() => import('./pages/PricingPage'));
 
-// Additional service pages
-const AIServicesPage = React.lazy(() => import('./pages/AIServicesPage'));
-const CybersecurityServicesPage = React.lazy(() => import('./pages/CybersecurityServicesPage'));
-const ServicesPricingPage = React.lazy(() => import('./pages/ServicesPricingPage'));
+// Additional service pages that exist
+const AdvancedTechServices = React.lazy(() => import('./pages/AdvancedTechServices'));
 const InnovativeServicesShowcase = React.lazy(() => import('./pages/InnovativeServicesShowcase'));
-const EnterpriseSolutions = React.lazy(() => import('./pages/EnterpriseSolutions'));
 const NotFound = React.lazy(() => import('./pages/NotFound'));
 
 const baseRoutes = [
   { path: '/', element: <Home /> },
-  { path: '/about', element: <AboutPage /> },
-  { path: '/contact', element: <Contact /> },
   { path: '/services', element: <Services /> },
   { path: '/sitemap', element: <Sitemap /> },
   { path: '/ai-solutions', element: <AISolutionsPage /> },
   { path: '/it-services', element: <ITServicesPage /> },
   { path: '/enterprise', element: <EnterprisePage /> },
-  { path: '/enterprise-solutions', element: <EnterpriseSolutions /> },
   { path: '/developers', element: <DeveloperPortalPage /> },
   { path: '/help-center', element: <HelpCenterPage /> },
   { path: '/cookies', element: <CookiesPage /> },
   { path: '/accessibility', element: <AccessibilityPage /> },
   // Our comprehensive services routes
+  { path: '/comprehensive-services', element: <ComprehensiveServicesPage /> },
   { path: '/services/:id', element: <ServiceDetailPage /> },
   { path: '/pricing', element: <PricingPage /> },
-  // Additional service routes
-  { path: '/ai-services', element: <AIServicesPage /> },
-  { path: '/cybersecurity-services', element: <CybersecurityServicesPage /> },
-  { path: '/services-pricing', element: <ServicesPricingPage /> },
+  // Additional service routes that exist
+  { path: '/advanced-tech-services', element: <AdvancedTechServices /> },
   { path: '/innovative-services', element: <InnovativeServicesShowcase /> },
   // Catch-all route
   { path: '*', element: <NotFound /> },

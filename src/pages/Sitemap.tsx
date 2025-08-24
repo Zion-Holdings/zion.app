@@ -1,15 +1,11 @@
 import React from 'react';
 import { SEO } from '../components/SEO';
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '../components/ui/card';
-import { Badge } from '../components/ui/badge';
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '../components/ui/card.js';
+import { Badge } from '../components/ui/badge.js';
 import { 
   Home, 
-  Users, 
-  Briefcase, 
-  Settings, 
   HelpCircle, 
   MessageCircle, 
-  Shield, 
   Zap, 
   Globe, 
   Database, 
