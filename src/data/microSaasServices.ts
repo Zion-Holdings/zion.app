@@ -1,654 +1,577 @@
-<<<<<<< HEAD
-import { ProductListing } from "../types/listings";
-
-// Simplified Micro SAAS Services for build
-export const MICRO_SAAS_SERVICES: ProductListing[] = [
-  {
-    id: "ai-crm-automation",
-    title: "AI-Powered CRM Automation Suite",
-    description: "Intelligent customer relationship management with automated lead scoring, sentiment analysis, and predictive customer behavior insights.",
-    category: "AI Business Solutions",
-    price: 299,
-    currency: "$",
-    pricingModel: "subscription",
-    features: ["AI Chat Support", "Lead Scoring", "Predictive Analytics", "Automated Follow-ups"],
-    tags: ["CRM Automation", "AI Chat Support", "Lead Scoring", "Predictive Analytics"],
-    images: ["https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&h=500"],
-    rating: 4.9,
-    reviewCount: 156,
-    availability: "immediate",
-    supportLevel: "premium",
-    author: {
-      name: "Zion Tech Group",
-      id: "ziontech",
-      avatarUrl: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=100&h=100",
-      email: "kleber@ziontechgroup.com"
-    },
-    createdAt: "2024-01-15T10:00:00.000Z",
-    updatedAt: "2024-01-15T10:00:00.000Z",
-    featured: true,
-    location: "Global",
-    aiScore: 96
-  }
-];
-
-export const MICRO_SAAS_CATEGORIES = [
-  { 
-    label: 'AI Business Solutions', 
-    value: 'ai-business-solutions',
-    description: 'AI-powered automation and optimization solutions'
-  }
-];
-
-export const CONTACT_INFO = {
-  mobile: "+1 302 464 0950",
-  email: "kleber@ziontechgroup.com",
-  address: "364 E Main St STE 1008, Middletown DE 19709",
-  website: "https://ziontechgroup.com"
-=======
 export interface MicroSaasService {
   id: string;
   title: string;
   description: string;
-  category: 'AI' | 'IT' | 'Development' | 'Analytics' | 'Security' | 'Automation' | 'Cloud' | 'Marketing' | 'Productivity' | 'Finance';
+  category: string;
   subcategory: string;
-  price: {
-    monthly: number;
-    yearly: number;
-    oneTime?: number;
-    currency: string;
-  };
+  price: number;
+  currency: string;
+  pricingModel: 'monthly' | 'yearly' | 'one-time' | 'usage-based';
   features: string[];
   benefits: string[];
   targetAudience: string[];
-  useCases: string[];
-  integration: string[];
-  pricingTier: 'Starter' | 'Professional' | 'Enterprise' | 'Custom';
+  marketPrice: string;
   website: string;
-  contactInfo: {
-    email: string;
-    phone: string;
-    address: string;
-  };
+  contactEmail: string;
+  tags: string[];
+  aiScore: number;
   rating: number;
   reviewCount: number;
-  launchDate: string;
-  status: 'Active' | 'Beta' | 'Coming Soon';
+  featured: boolean;
+  location: string;
+  availability: string;
+  author: {
+    name: string;
+    id: string;
+    avatarUrl?: string;
+    verified: boolean;
+  };
+  images: string[];
+  createdAt: string;
 }
 
 export const MICRO_SAAS_SERVICES: MicroSaasService[] = [
-  // AI Services
   {
-    id: 'ai-content-generator',
-    title: 'Zion AI Content Generator',
-    description: 'Advanced AI-powered content creation platform that generates high-quality articles, blog posts, social media content, and marketing copy in seconds.',
-    category: 'AI',
-    subcategory: 'Content Creation',
-    price: {
-      monthly: 29,
-      yearly: 290,
-      currency: '$'
-    },
+    id: "ai-chatbot-builder-pro",
+    title: "AI Chatbot Builder Pro",
+    description: "No-code AI chatbot creation platform with advanced NLP capabilities, multi-language support, and seamless integration with popular messaging platforms. Perfect for customer service automation and lead generation.",
+    category: "AI & Automation",
+    subcategory: "Chatbots",
+    price: 99,
+    currency: "USD",
+    pricingModel: "monthly",
     features: [
-      'Multi-language content generation',
-      'SEO-optimized writing',
-      'Brand voice customization',
-      'Plagiarism-free content',
-      'Bulk content creation',
-      'API access for developers'
+      "No-code chatbot builder",
+      "Advanced NLP processing",
+      "Multi-language support",
+      "Integration with Slack, Discord, WhatsApp",
+      "Analytics dashboard",
+      "Custom branding options"
     ],
     benefits: [
-      'Save 80% of content creation time',
-      'Improve SEO rankings with optimized content',
-      'Maintain consistent brand voice',
-      'Scale content production effortlessly'
+      "Reduce customer service costs by 60%",
+      "24/7 customer support availability",
+      "Instant response to common queries",
+      "Scalable customer interaction"
     ],
-    targetAudience: ['Content creators', 'Marketing teams', 'Small businesses', 'Agencies'],
-    useCases: [
-      'Blog post generation',
-      'Social media content',
-      'Email marketing campaigns',
-      'Product descriptions'
-    ],
-    integration: ['WordPress', 'Shopify', 'HubSpot', 'Mailchimp', 'REST API'],
-    pricingTier: 'Professional',
-    website: 'https://ziontechgroup.com/ai-content-generator',
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      address: '364 E Main St STE 1008 Middletown DE 19709'
-    },
+    targetAudience: ["E-commerce businesses", "Customer service teams", "Marketing agencies", "Startups"],
+    marketPrice: "$99-299/month",
+    website: "https://ziontechgroup.com/ai-chatbot-builder",
+    contactEmail: "kleber@ziontechgroup.com",
+    tags: ["AI", "Chatbot", "Automation", "Customer Service", "NLP"],
+    aiScore: 95,
     rating: 4.8,
-    reviewCount: 156,
-    launchDate: '2024-01-15',
-    status: 'Active'
+    reviewCount: 127,
+    featured: true,
+    location: "United States",
+    availability: "Available worldwide",
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      verified: true
+    },
+    images: ["/images/services/ai-chatbot-builder.jpg"],
+    createdAt: "2024-01-15"
   },
   {
-    id: 'ai-chatbot-builder',
-    title: 'Zion AI Chatbot Builder',
-    description: 'No-code AI chatbot creation platform that helps businesses build intelligent customer service bots in minutes without technical expertise.',
-    category: 'AI',
-    subcategory: 'Customer Service',
-    price: {
-      monthly: 49,
-      yearly: 490,
-      currency: '$'
-    },
+    id: "ai-content-generator-suite",
+    title: "AI Content Generator Suite",
+    description: "Comprehensive AI-powered content creation platform that generates high-quality blog posts, social media content, marketing copy, and product descriptions. Includes SEO optimization and plagiarism checking.",
+    category: "AI & Automation",
+    subcategory: "Content Creation",
+    price: 79,
+    currency: "USD",
+    pricingModel: "monthly",
     features: [
-      'Drag-and-drop interface',
-      'Multi-language support',
-      'Integration with major platforms',
-      'Analytics and insights',
-      'Custom branding options',
-      '24/7 customer support'
+      "AI-powered content generation",
+      "SEO optimization tools",
+      "Plagiarism checking",
+      "Multiple content formats",
+      "Brand voice customization",
+      "Content calendar management"
     ],
     benefits: [
-      'Reduce customer service costs by 60%',
-      'Provide instant responses 24/7',
-      'Improve customer satisfaction',
-      'Scale support operations easily'
+      "Save 80% of content creation time",
+      "Improve SEO rankings",
+      "Maintain consistent brand voice",
+      "Generate unlimited content"
     ],
-    targetAudience: ['E-commerce businesses', 'Service providers', 'Startups', 'Enterprise companies'],
-    useCases: [
-      'Customer support automation',
-      'Lead qualification',
-      'Appointment booking',
-      'FAQ handling'
-    ],
-    integration: ['Website', 'Facebook Messenger', 'WhatsApp', 'Slack', 'Discord'],
-    pricingTier: 'Professional',
-    website: 'https://ziontechgroup.com/ai-chatbot-builder',
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      address: '364 E Main St STE 1008 Middletown DE 19709'
-    },
+    targetAudience: ["Content marketers", "Bloggers", "Digital agencies", "E-commerce businesses"],
+    marketPrice: "$79-199/month",
+    website: "https://ziontechgroup.com/ai-content-generator",
+    contactEmail: "kleber@ziontechgroup.com",
+    tags: ["AI", "Content Creation", "SEO", "Marketing", "Automation"],
+    aiScore: 92,
     rating: 4.7,
     reviewCount: 89,
-    launchDate: '2024-02-01',
-    status: 'Active'
+    featured: true,
+    location: "United States",
+    availability: "Available worldwide",
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      verified: true
+    },
+    images: ["/images/services/ai-content-generator.jpg"],
+    createdAt: "2024-01-20"
   },
   {
-    id: 'ai-data-analytics',
-    title: 'Zion AI Data Analytics',
-    description: 'Intelligent data analysis platform that automatically discovers insights, generates reports, and provides actionable business intelligence.',
-    category: 'AI',
-    subcategory: 'Analytics',
-    price: {
-      monthly: 79,
-      yearly: 790,
-      currency: '$'
-    },
+    id: "ai-powered-business-intelligence",
+    title: "AI-Powered Business Intelligence",
+    description: "Advanced business intelligence platform that uses AI to analyze data, generate insights, and provide actionable recommendations. Includes predictive analytics, custom dashboards, and automated reporting.",
+    category: "AI & Analytics",
+    subcategory: "Business Intelligence",
+    price: 149,
+    currency: "USD",
+    pricingModel: "monthly",
     features: [
-      'Automated insight discovery',
-      'Natural language queries',
-      'Predictive analytics',
-      'Custom dashboard builder',
-      'Real-time data processing',
-      'Advanced visualization options'
+      "AI-powered data analysis",
+      "Predictive analytics",
+      "Custom dashboards",
+      "Automated reporting",
+      "Data visualization",
+      "Real-time insights"
     ],
     benefits: [
-      'Make data-driven decisions faster',
-      'Identify hidden business opportunities',
-      'Reduce manual reporting time',
-      'Improve forecasting accuracy'
+      "Make data-driven decisions faster",
+      "Identify hidden business opportunities",
+      "Reduce manual reporting time",
+      "Improve operational efficiency"
     ],
-    targetAudience: ['Data analysts', 'Business intelligence teams', 'Executives', 'Consultants'],
-    useCases: [
-      'Sales performance analysis',
-      'Customer behavior insights',
-      'Financial forecasting',
-      'Operational efficiency metrics'
-    ],
-    integration: ['Google Analytics', 'Salesforce', 'HubSpot', 'QuickBooks', 'Custom APIs'],
-    pricingTier: 'Professional',
-    website: 'https://ziontechgroup.com/ai-data-analytics',
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      address: '364 E Main St STE 1008 Middletown DE 19709'
-    },
+    targetAudience: ["Business analysts", "Executives", "Data scientists", "Operations managers"],
+    marketPrice: "$149-399/month",
+    website: "https://ziontechgroup.com/ai-business-intelligence",
+    contactEmail: "kleber@ziontechgroup.com",
+    tags: ["AI", "Business Intelligence", "Analytics", "Data", "Predictive"],
+    aiScore: 94,
     rating: 4.9,
-    reviewCount: 203,
-    launchDate: '2023-11-20',
-    status: 'Active'
-  },
-
-  // IT Services
-  {
-    id: 'cloud-migration-expert',
-    title: 'Zion Cloud Migration Expert',
-    description: 'Professional cloud migration services that help businesses seamlessly transition to AWS, Azure, or Google Cloud with zero downtime.',
-    category: 'IT',
-    subcategory: 'Cloud Services',
-    price: {
-      monthly: 0,
-      yearly: 0,
-      oneTime: 5000,
-      currency: '$'
-    },
-    features: [
-      'Comprehensive migration planning',
-      'Zero-downtime migration',
-      'Security and compliance review',
-      'Performance optimization',
-      'Post-migration support',
-      'Cost optimization strategies'
-    ],
-    benefits: [
-      'Reduce infrastructure costs by 30-50%',
-      'Improve scalability and flexibility',
-      'Enhanced security and compliance',
-      'Better disaster recovery'
-    ],
-    targetAudience: ['Medium businesses', 'Enterprise companies', 'Healthcare organizations', 'Financial services'],
-    useCases: [
-      'Legacy system modernization',
-      'Data center consolidation',
-      'Disaster recovery setup',
-      'Performance optimization'
-    ],
-    integration: ['AWS', 'Azure', 'Google Cloud', 'On-premises systems', 'Hybrid environments'],
-    pricingTier: 'Custom',
-    website: 'https://ziontechgroup.com/cloud-migration',
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      address: '364 E Main St STE 1008 Middletown DE 19709'
-    },
-    rating: 4.8,
-    reviewCount: 67,
-    launchDate: '2023-09-15',
-    status: 'Active'
-  },
-  {
-    id: 'cybersecurity-audit',
-    title: 'Zion Cybersecurity Audit',
-    description: 'Comprehensive security assessment and penetration testing services to identify vulnerabilities and protect your business from cyber threats.',
-    category: 'IT',
-    subcategory: 'Security',
-    price: {
-      monthly: 0,
-      yearly: 0,
-      oneTime: 3500,
-      currency: '$'
-    },
-    features: [
-      'Vulnerability assessment',
-      'Penetration testing',
-      'Security policy review',
-      'Compliance audit (SOC2, ISO27001)',
-      'Security awareness training',
-      'Incident response planning'
-    ],
-    benefits: [
-      'Protect against data breaches',
-      'Meet compliance requirements',
-      'Reduce security risks',
-      'Build customer trust'
-    ],
-    targetAudience: ['Financial services', 'Healthcare', 'E-commerce', 'SaaS companies', 'Government agencies'],
-    useCases: [
-      'Security compliance audits',
-      'Vulnerability assessment',
-      'Incident response preparation',
-      'Security training programs'
-    ],
-    integration: ['Existing security tools', 'SIEM systems', 'Firewalls', 'Endpoint protection'],
-    pricingTier: 'Custom',
-    website: 'https://ziontechgroup.com/cybersecurity-audit',
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      address: '364 E Main St STE 1008 Middletown DE 19709'
-    },
-    rating: 4.9,
-    reviewCount: 45,
-    launchDate: '2023-10-01',
-    status: 'Active'
-  },
-  {
-    id: 'it-infrastructure-management',
-    title: 'Zion IT Infrastructure Management',
-    description: '24/7 managed IT services that monitor, maintain, and optimize your technology infrastructure to ensure maximum uptime and performance.',
-    category: 'IT',
-    subcategory: 'Infrastructure',
-    price: {
-      monthly: 1500,
-      yearly: 15000,
-      currency: '$'
-    },
-    features: [
-      '24/7 monitoring and alerting',
-      'Proactive maintenance',
-      'Performance optimization',
-      'Backup and disaster recovery',
-      'Security updates and patches',
-      'Help desk support'
-    ],
-    benefits: [
-      '99.9% uptime guarantee',
-      'Reduce IT operational costs',
-      'Focus on core business activities',
-      'Access to expert IT professionals'
-    ],
-    targetAudience: ['Small businesses', 'Medium businesses', 'Healthcare', 'Legal firms', 'Manufacturing'],
-    useCases: [
-      'Network infrastructure management',
-      'Server and storage management',
-      'Cloud infrastructure monitoring',
-      'IT help desk services'
-    ],
-    integration: ['Existing IT systems', 'Monitoring tools', 'Backup solutions', 'Security platforms'],
-    pricingTier: 'Enterprise',
-    website: 'https://ziontechgroup.com/it-infrastructure-management',
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      address: '364 E Main St STE 1008 Middletown DE 19709'
-    },
-    rating: 4.7,
-    reviewCount: 123,
-    launchDate: '2023-08-01',
-    status: 'Active'
-  },
-
-  // Development Services
-  {
-    id: 'custom-software-development',
-    title: 'Zion Custom Software Development',
-    description: 'Tailored software solutions designed to solve your specific business challenges and streamline operations.',
-    category: 'Development',
-    subcategory: 'Custom Software',
-    price: {
-      monthly: 0,
-      yearly: 0,
-      oneTime: 15000,
-      currency: '$'
-    },
-    features: [
-      'Custom requirements analysis',
-      'Agile development methodology',
-      'Quality assurance testing',
-      'Deployment and training',
-      'Ongoing maintenance support',
-      'Documentation and user guides'
-    ],
-    benefits: [
-      'Streamline business processes',
-      'Improve operational efficiency',
-      'Gain competitive advantage',
-      'Reduce manual work and errors'
-    ],
-    targetAudience: ['Manufacturing', 'Healthcare', 'Finance', 'Education', 'Real estate'],
-    useCases: [
-      'Business process automation',
-      'Customer relationship management',
-      'Inventory management systems',
-      'Reporting and analytics platforms'
-    ],
-    integration: ['Existing business systems', 'Databases', 'APIs', 'Third-party services'],
-    pricingTier: 'Custom',
-    website: 'https://ziontechgroup.com/custom-software-development',
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      address: '364 E Main St STE 1008 Middletown DE 19709'
-    },
-    rating: 4.8,
-    reviewCount: 89,
-    launchDate: '2023-07-01',
-    status: 'Active'
-  },
-  {
-    id: 'web-app-development',
-    title: 'Zion Web App Development',
-    description: 'Modern, responsive web applications built with cutting-edge technologies to deliver exceptional user experiences.',
-    category: 'Development',
-    subcategory: 'Web Applications',
-    price: {
-      monthly: 0,
-      yearly: 0,
-      oneTime: 8000,
-      currency: '$'
-    },
-    features: [
-      'Responsive design for all devices',
-      'Modern frontend frameworks',
-      'Backend API development',
-      'Database design and optimization',
-      'Security implementation',
-      'Performance optimization'
-    ],
-    benefits: [
-      'Reach customers on any device',
-      'Improve user engagement',
-      'Scale with business growth',
-      'Reduce development time'
-    ],
-    targetAudience: ['Startups', 'Small businesses', 'E-commerce', 'Service providers', 'Educational institutions'],
-    useCases: [
-      'E-commerce platforms',
-      'Customer portals',
-      'Booking systems',
-      'Content management systems'
-    ],
-    integration: ['Payment gateways', 'Email services', 'Analytics tools', 'Social media'],
-    pricingTier: 'Professional',
-    website: 'https://ziontechgroup.com/web-app-development',
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      address: '364 E Main St STE 1008 Middletown DE 19709'
-    },
-    rating: 4.7,
     reviewCount: 156,
-    launchDate: '2023-06-01',
-    status: 'Active'
-  },
-
-  // Automation Services
-  {
-    id: 'business-process-automation',
-    title: 'Zion Business Process Automation',
-    description: 'Intelligent automation solutions that eliminate repetitive tasks and optimize workflows for maximum efficiency.',
-    category: 'Automation',
-    subcategory: 'Process Automation',
-    price: {
-      monthly: 99,
-      yearly: 990,
-      currency: '$'
+    featured: true,
+    location: "United States",
+    availability: "Available worldwide",
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      verified: true
     },
+    images: ["/images/services/ai-business-intelligence.jpg"],
+    createdAt: "2024-01-25"
+  },
+  {
+    id: "ai-code-assistant-pro",
+    title: "AI Code Assistant Pro",
+    description: "Intelligent coding companion that helps developers write, debug, and optimize code. Features include code completion, bug detection, performance optimization suggestions, and multi-language support.",
+    category: "AI & Development",
+    subcategory: "Code Assistance",
+    price: 29,
+    currency: "USD",
+    pricingModel: "monthly",
     features: [
-      'Workflow automation design',
-      'Integration with existing systems',
-      'Real-time monitoring and analytics',
-      'Custom automation rules',
-      'Mobile app access',
-      'API for custom integrations'
+      "AI-powered code completion",
+      "Bug detection and fixing",
+      "Performance optimization",
+      "Multi-language support",
+      "Code review assistance",
+      "Documentation generation"
     ],
     benefits: [
-      'Reduce manual work by 70%',
-      'Improve process accuracy',
-      'Faster task completion',
-      'Better employee satisfaction'
+      "Increase coding productivity by 40%",
+      "Reduce debugging time",
+      "Improve code quality",
+      "Learn best practices"
     ],
-    targetAudience: ['HR departments', 'Finance teams', 'Operations managers', 'Customer service teams'],
-    useCases: [
-      'Employee onboarding automation',
-      'Invoice processing',
-      'Customer support workflows',
-      'Data entry automation'
-    ],
-    integration: ['HRIS systems', 'Accounting software', 'CRM platforms', 'Email systems'],
-    pricingTier: 'Professional',
-    website: 'https://ziontechgroup.com/business-process-automation',
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      address: '364 E Main St STE 1008 Middletown DE 19709'
-    },
+    targetAudience: ["Software developers", "DevOps engineers", "Code reviewers", "Technical teams"],
+    marketPrice: "$29-99/month",
+    website: "https://ziontechgroup.com/ai-code-assistant",
+    contactEmail: "kleber@ziontechgroup.com",
+    tags: ["AI", "Code", "Development", "Productivity", "Debugging"],
+    aiScore: 91,
     rating: 4.6,
+    reviewCount: 203,
+    featured: false,
+    location: "United States",
+    availability: "Available worldwide",
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      verified: true
+    },
+    images: ["/images/services/ai-code-assistant.jpg"],
+    createdAt: "2024-02-01"
+  },
+  {
+    id: "ai-image-generator-studio",
+    title: "AI Image Generator Studio",
+    description: "Professional AI image creation platform that generates high-quality images for marketing, design, and content creation. Includes style customization, batch generation, and commercial licensing.",
+    category: "AI & Creative",
+    subcategory: "Image Generation",
+    price: 49,
+    currency: "USD",
+    pricingModel: "monthly",
+    features: [
+      "AI image generation",
+      "Style customization",
+      "Batch generation",
+      "Commercial licensing",
+      "High-resolution output",
+      "Multiple art styles"
+    ],
+    benefits: [
+      "Create unlimited custom images",
+      "Save on stock photo costs",
+      "Maintain brand consistency",
+      "Accelerate design workflows"
+    ],
+    targetAudience: ["Designers", "Marketers", "Content creators", "E-commerce businesses"],
+    marketPrice: "$49-149/month",
+    website: "https://ziontechgroup.com/ai-image-generator",
+    contactEmail: "kleber@ziontechgroup.com",
+    tags: ["AI", "Image Generation", "Design", "Creative", "Marketing"],
+    aiScore: 89,
+    rating: 4.5,
     reviewCount: 78,
-    launchDate: '2024-01-01',
-    status: 'Active'
-  },
-
-  // Marketing Services
-  {
-    id: 'ai-marketing-automation',
-    title: 'Zion AI Marketing Automation',
-    description: 'Intelligent marketing automation platform that personalizes customer experiences and optimizes campaigns for maximum ROI.',
-    category: 'Marketing',
-    subcategory: 'Automation',
-    price: {
-      monthly: 199,
-      yearly: 1990,
-      currency: '$'
+    featured: false,
+    location: "United States",
+    availability: "Available worldwide",
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      verified: true
     },
+    images: ["/images/services/ai-image-generator.jpg"],
+    createdAt: "2024-02-05"
+  },
+  {
+    id: "cloud-migration-suite",
+    title: "Cloud Migration Suite",
+    description: "Comprehensive cloud migration solution that helps businesses move their infrastructure to the cloud efficiently and securely. Includes assessment tools, migration planning, and post-migration optimization.",
+    category: "IT & Infrastructure",
+    subcategory: "Cloud Migration",
+    price: 299,
+    currency: "USD",
+    pricingModel: "monthly",
     features: [
-      'AI-powered personalization',
-      'Multi-channel campaign management',
-      'Behavioral targeting',
-      'A/B testing automation',
-      'Advanced analytics and reporting',
-      'CRM integration'
+      "Migration assessment tools",
+      "Automated migration scripts",
+      "Security compliance",
+      "Performance monitoring",
+      "Cost optimization",
+      "24/7 support"
     ],
     benefits: [
-      'Increase conversion rates by 40%',
-      'Reduce marketing costs',
-      'Improve customer lifetime value',
-      'Scale marketing efforts efficiently'
+      "Reduce migration risks by 70%",
+      "Cut cloud costs by 30%",
+      "Improve system performance",
+      "Ensure security compliance"
     ],
-    targetAudience: ['Marketing teams', 'E-commerce businesses', 'B2B companies', 'Agencies'],
-    useCases: [
-      'Email marketing campaigns',
-      'Social media automation',
-      'Lead nurturing sequences',
-      'Customer retention programs'
-    ],
-    integration: ['Shopify', 'WooCommerce', 'Salesforce', 'HubSpot', 'Mailchimp'],
-    pricingTier: 'Professional',
-    website: 'https://ziontechgroup.com/ai-marketing-automation',
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      address: '364 E Main St STE 1008 Middletown DE 19709'
-    },
-    rating: 4.8,
-    reviewCount: 234,
-    launchDate: '2023-12-01',
-    status: 'Active'
-  },
-
-  // Productivity Services
-  {
-    id: 'team-collaboration-platform',
-    title: 'Zion Team Collaboration Platform',
-    description: 'Comprehensive collaboration suite that brings teams together with project management, communication, and productivity tools.',
-    category: 'Productivity',
-    subcategory: 'Collaboration',
-    price: {
-      monthly: 15,
-      yearly: 150,
-      currency: '$'
-    },
-    features: [
-      'Project management tools',
-      'Real-time messaging',
-      'File sharing and storage',
-      'Video conferencing',
-      'Task tracking and automation',
-      'Mobile apps for all devices'
-    ],
-    benefits: [
-      'Improve team productivity by 35%',
-      'Reduce meeting time',
-      'Better project visibility',
-      'Enhanced team communication'
-    ],
-    targetAudience: ['Remote teams', 'Project managers', 'Creative agencies', 'Development teams'],
-    useCases: [
-      'Project collaboration',
-      'Remote team management',
-      'Client communication',
-      'Document collaboration'
-    ],
-    integration: ['Google Workspace', 'Microsoft 365', 'Slack', 'Zoom', 'Trello'],
-    pricingTier: 'Starter',
-    website: 'https://ziontechgroup.com/team-collaboration',
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      address: '364 E Main St STE 1008 Middletown DE 19709'
-    },
+    targetAudience: ["IT managers", "DevOps teams", "Enterprise businesses", "System administrators"],
+    marketPrice: "$299-799/month",
+    website: "https://ziontechgroup.com/cloud-migration-suite",
+    contactEmail: "kleber@ziontechgroup.com",
+    tags: ["Cloud", "Migration", "Infrastructure", "DevOps", "Security"],
+    aiScore: 88,
     rating: 4.7,
-    reviewCount: 189,
-    launchDate: '2024-02-15',
-    status: 'Active'
-  },
-
-  // Finance Services
-  {
-    id: 'ai-financial-advisor',
-    title: 'Zion AI Financial Advisor',
-    description: 'Intelligent financial planning and investment advisory platform that provides personalized financial guidance and portfolio management.',
-    category: 'Finance',
-    subcategory: 'Financial Planning',
-    price: {
-      monthly: 39,
-      yearly: 390,
-      currency: '$'
+    reviewCount: 145,
+    featured: false,
+    location: "United States",
+    availability: "Available worldwide",
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      verified: true
     },
+    images: ["/images/services/cloud-migration.jpg"],
+    createdAt: "2024-02-10"
+  },
+  {
+    id: "ai-cybersecurity-monitoring",
+    title: "AI Cybersecurity Monitoring",
+    description: "24/7 AI-powered cybersecurity monitoring and threat detection system. Provides real-time alerts, automated incident response, and comprehensive security reporting for enterprise-level protection.",
+    category: "IT & Security",
+    subcategory: "Cybersecurity",
+    price: 199,
+    currency: "USD",
+    pricingModel: "monthly",
     features: [
-      'AI-powered financial planning',
-      'Portfolio optimization',
-      'Risk assessment',
-      'Tax optimization strategies',
-      'Retirement planning tools',
-      'Real-time market analysis'
+      "24/7 threat monitoring",
+      "AI-powered threat detection",
+      "Automated incident response",
+      "Real-time alerts",
+      "Compliance reporting",
+      "Security analytics"
     ],
     benefits: [
-      'Optimize investment returns',
-      'Reduce financial risks',
-      'Plan for long-term goals',
-      'Save on taxes and fees'
+      "Detect threats 90% faster",
+      "Reduce security incidents by 60%",
+      "Ensure compliance requirements",
+      "Protect against zero-day attacks"
     ],
-    targetAudience: ['Individual investors', 'Small business owners', 'Retirees', 'Young professionals'],
-    useCases: [
-      'Investment portfolio management',
-      'Retirement planning',
-      'Tax optimization',
-      'Financial goal setting'
-    ],
-    integration: ['Banking accounts', 'Investment platforms', 'Tax software', 'Budgeting apps'],
-    pricingTier: 'Professional',
-    website: 'https://ziontechgroup.com/ai-financial-advisor',
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      address: '364 E Main St STE 1008 Middletown DE 19709'
-    },
+    targetAudience: ["Security teams", "IT managers", "Compliance officers", "Enterprise businesses"],
+    marketPrice: "$199-599/month",
+    website: "https://ziontechgroup.com/ai-cybersecurity",
+    contactEmail: "kleber@ziontechgroup.com",
+    tags: ["AI", "Cybersecurity", "Monitoring", "Threat Detection", "Compliance"],
+    aiScore: 96,
     rating: 4.9,
+    reviewCount: 234,
+    featured: true,
+    location: "United States",
+    availability: "Available worldwide",
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      verified: true
+    },
+    images: ["/images/services/ai-cybersecurity.jpg"],
+    createdAt: "2024-02-15"
+  },
+  {
+    id: "devops-automation-platform",
+    title: "DevOps Automation Platform",
+    description: "Complete DevOps automation platform that streamlines CI/CD pipelines, infrastructure management, and deployment processes. Includes monitoring, logging, and performance optimization tools.",
+    category: "IT & DevOps",
+    subcategory: "Automation",
+    price: 179,
+    currency: "USD",
+    pricingModel: "monthly",
+    features: [
+      "CI/CD pipeline automation",
+      "Infrastructure as code",
+      "Monitoring and alerting",
+      "Log management",
+      "Performance optimization",
+      "Multi-cloud support"
+    ],
+    benefits: [
+      "Deploy 10x faster",
+      "Reduce deployment errors by 80%",
+      "Improve team productivity",
+      "Lower infrastructure costs"
+    ],
+    targetAudience: ["DevOps engineers", "Software teams", "IT managers", "Startups"],
+    marketPrice: "$179-499/month",
+    website: "https://ziontechgroup.com/devops-automation",
+    contactEmail: "kleber@ziontechgroup.com",
+    tags: ["DevOps", "Automation", "CI/CD", "Infrastructure", "Monitoring"],
+    aiScore: 93,
+    rating: 4.8,
     reviewCount: 167,
-    launchDate: '2024-01-01',
-    status: 'Active'
+    featured: false,
+    location: "United States",
+    availability: "Available worldwide",
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      verified: true
+    },
+    images: ["/images/services/devops-automation.jpg"],
+    createdAt: "2024-02-20"
+  },
+  {
+    id: "enterprise-data-backup-recovery",
+    title: "Enterprise Data Backup & Recovery",
+    description: "Enterprise-grade data backup and recovery solution with zero data loss guarantee. Features automated backups, disaster recovery planning, and compliance with industry standards.",
+    category: "IT & Infrastructure",
+    subcategory: "Data Protection",
+    price: 129,
+    currency: "USD",
+    pricingModel: "monthly",
+    features: [
+      "Automated backup scheduling",
+      "Zero data loss guarantee",
+      "Disaster recovery planning",
+      "Compliance reporting",
+      "Cross-platform support",
+      "24/7 monitoring"
+    ],
+    benefits: [
+      "Ensure business continuity",
+      "Meet compliance requirements",
+      "Reduce recovery time by 90%",
+      "Protect against ransomware"
+    ],
+    targetAudience: ["IT managers", "Data administrators", "Compliance officers", "Enterprise businesses"],
+    marketPrice: "$129-399/month",
+    website: "https://ziontechgroup.com/data-backup-recovery",
+    contactEmail: "kleber@ziontechgroup.com",
+    tags: ["Backup", "Recovery", "Data Protection", "Compliance", "Disaster Recovery"],
+    aiScore: 87,
+    rating: 4.6,
+    reviewCount: 98,
+    featured: false,
+    location: "United States",
+    availability: "Available worldwide",
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      verified: true
+    },
+    images: ["/images/services/data-backup-recovery.jpg"],
+    createdAt: "2024-02-25"
+  },
+  {
+    id: "ai-customer-support-suite",
+    title: "AI Customer Support Suite",
+    description: "Intelligent customer support platform that automates ticket management, provides instant responses, and improves customer satisfaction. Includes sentiment analysis and performance analytics.",
+    category: "AI & Customer Service",
+    subcategory: "Support Automation",
+    price: 89,
+    currency: "USD",
+    pricingModel: "monthly",
+    features: [
+      "Automated ticket management",
+      "AI-powered responses",
+      "Sentiment analysis",
+      "Performance analytics",
+      "Multi-channel support",
+      "Knowledge base management"
+    ],
+    benefits: [
+      "Reduce response time by 80%",
+      "Improve customer satisfaction",
+      "Lower support costs by 50%",
+      "Scale support operations"
+    ],
+    targetAudience: ["Customer service teams", "Support managers", "E-commerce businesses", "SaaS companies"],
+    marketPrice: "$89-249/month",
+    website: "https://ziontechgroup.com/ai-customer-support",
+    contactEmail: "kleber@ziontechgroup.com",
+    tags: ["AI", "Customer Support", "Automation", "Analytics", "Service"],
+    aiScore: 90,
+    rating: 4.7,
+    reviewCount: 134,
+    featured: false,
+    location: "United States",
+    availability: "Available worldwide",
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      verified: true
+    },
+    images: ["/images/services/ai-customer-support.jpg"],
+    createdAt: "2024-03-01"
+  },
+  {
+    id: "ai-sales-automation-platform",
+    title: "AI Sales Automation Platform",
+    description: "Comprehensive sales automation platform that uses AI to identify leads, qualify prospects, and optimize sales processes. Includes CRM integration, pipeline management, and performance analytics.",
+    category: "AI & Sales",
+    subcategory: "Sales Automation",
+    price: 159,
+    currency: "USD",
+    pricingModel: "monthly",
+    features: [
+      "AI lead scoring",
+      "Prospect qualification",
+      "CRM integration",
+      "Pipeline management",
+      "Performance analytics",
+      "Sales forecasting"
+    ],
+    benefits: [
+      "Increase conversion rates by 40%",
+      "Reduce sales cycle time",
+      "Improve lead quality",
+      "Boost team productivity"
+    ],
+    targetAudience: ["Sales teams", "Sales managers", "Business development", "Startups"],
+    marketPrice: "$159-449/month",
+    website: "https://ziontechgroup.com/ai-sales-automation",
+    contactEmail: "kleber@ziontechgroup.com",
+    tags: ["AI", "Sales", "Automation", "CRM", "Lead Generation"],
+    aiScore: 93,
+    rating: 4.8,
+    reviewCount: 189,
+    featured: false,
+    location: "United States",
+    availability: "Available worldwide",
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      verified: true
+    },
+    images: ["/images/services/ai-sales-automation.jpg"],
+    createdAt: "2024-03-05"
+  },
+  {
+    id: "ai-hr-recruitment-suite",
+    title: "AI HR & Recruitment Suite",
+    description: "AI-powered HR and recruitment platform that streamlines hiring processes, improves candidate matching, and enhances employee management. Includes resume screening, interview scheduling, and performance tracking.",
+    category: "AI & HR",
+    subcategory: "Recruitment",
+    price: 119,
+    currency: "USD",
+    pricingModel: "monthly",
+    features: [
+      "AI resume screening",
+      "Candidate matching",
+      "Interview scheduling",
+      "Performance tracking",
+      "Employee analytics",
+      "Compliance management"
+    ],
+    benefits: [
+      "Reduce hiring time by 60%",
+      "Improve candidate quality",
+      "Lower recruitment costs",
+      "Enhance employee retention"
+    ],
+    targetAudience: ["HR teams", "Recruiters", "Hiring managers", "Growing companies"],
+    marketPrice: "$119-349/month",
+    website: "https://ziontechgroup.com/ai-hr-recruitment",
+    contactEmail: "kleber@ziontechgroup.com",
+    tags: ["AI", "HR", "Recruitment", "Hiring", "Employee Management"],
+    aiScore: 91,
+    rating: 4.6,
+    reviewCount: 112,
+    featured: false,
+    location: "United States",
+    availability: "Available worldwide",
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      verified: true
+    },
+    images: ["/images/services/ai-hr-recruitment.jpg"],
+    createdAt: "2024-03-10"
   }
 ];
 
-export const getServiceByCategory = (category: string) => {
+// Helper functions
+export function getFeaturedMicroSaasServices(): MicroSaasService[] {
+  return MICRO_SAAS_SERVICES.filter(service => service.featured);
+}
+
+export function getMicroSaasServicesByCategory(category: string): MicroSaasService[] {
   return MICRO_SAAS_SERVICES.filter(service => service.category === category);
-};
+}
 
-export const getServiceBySubcategory = (subcategory: string) => {
-  return MICRO_SAAS_SERVICES.filter(service => service.subcategory === subcategory);
-};
+export function getMicroSaasServicesByPricingModel(pricingModel: string): MicroSaasService[] {
+  return MICRO_SAAS_SERVICES.filter(service => service.pricingModel === pricingModel);
+}
 
-export const getServiceByPricingTier = (tier: string) => {
-  return MICRO_SAAS_SERVICES.filter(service => service.pricingTier === tier);
-};
+export function searchMicroSaasServices(query: string): MicroSaasService[] {
+  const lowercaseQuery = query.toLowerCase();
+  return MICRO_SAAS_SERVICES.filter(service =>
+    service.title.toLowerCase().includes(lowercaseQuery) ||
+    service.description.toLowerCase().includes(lowercaseQuery) ||
+    service.tags.some(tag => tag.toLowerCase().includes(lowercaseQuery)) ||
+    service.category.toLowerCase().includes(lowercaseQuery)
+  );
+}
 
-export const getFeaturedServices = () => {
-  return MICRO_SAAS_SERVICES.filter(service => service.rating >= 4.7).slice(0, 6);
->>>>>>> cursor/integrate-build-improve-and-re-verify-a776
-};
+export function getMicroSaasServicesByPriceRange(minPrice: number, maxPrice: number): MicroSaasService[] {
+  return MICRO_SAAS_SERVICES.filter(service => 
+    service.price >= minPrice && service.price <= maxPrice
+  );
+}
+
+export function getTopRatedMicroSaasServices(limit: number = 5): MicroSaasService[] {
+  return [...MICRO_SAAS_SERVICES]
+    .sort((a, b) => b.rating - a.rating)
+    .slice(0, limit);
+}
+
+export function getMicroSaasServicesByAIScore(minScore: number): MicroSaasService[] {
+  return MICRO_SAAS_SERVICES.filter(service => service.aiScore >= minScore);
+}

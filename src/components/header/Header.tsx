@@ -1,284 +1,254 @@
 
-<<<<<<< HEAD
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Menu, X, Search, Bell, User, Settings, LogOut, Sun, Moon, Zap } from 'lucide-react';
 import { useAuth } from '@/hooks/useAuth';
-import { useWhitelabel } from '@/context/WhitelabelContext';
-import { useNavigate } from "react-router-dom";
-import { Menu, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
-=======
-import React from 'react';
-import { Link } from 'react-router-dom';
+import { useTheme } from '@/hooks/useTheme';
 import { Logo } from './Logo';
 import { UserMenu } from './UserMenu';
-import { LanguageSelector } from './LanguageSelector';
-import { useAuth } from '@/hooks/useAuth';
-import { useWhitelabel } from '@/context/WhitelabelContext';
-import { EnhancedSearchInput } from "@/components/search/EnhancedSearchInput";
-import { generateSearchSuggestions } from "@/data/marketplaceData";
-import { useNavigate } from "react-router-dom";
-import { useState } from "react";
->>>>>>> cursor/integrate-build-improve-and-re-verify-a776
+import { MainNavigation } from '@/layout/MainNavigation';
 
-export interface HeaderProps {
-  hideLogin?: boolean;
+interface HeaderProps {
   customLogo?: string;
-  customTheme?: {
-    primaryColor: string;
-    backgroundColor: string;
-    textColor: string;
-  };
+  hideLogin?: boolean;
 }
 
-export function Header({ hideLogin = false, customLogo, customTheme }: HeaderProps) {
-  const { user } = useAuth();
-  const { isWhitelabel, primaryColor } = useWhitelabel();
-  const navigate = useNavigate();
-  const [query, setQuery] = useState("");
-<<<<<<< HEAD
+export function Header({ customLogo, hideLogin = false }: HeaderProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-=======
-  const searchSuggestions = generateSearchSuggestions();
->>>>>>> cursor/integrate-build-improve-and-re-verify-a776
-  
-  // If we have a white-label tenant and no specific customTheme is provided,
-  // use the tenant's primary color
-  const effectiveTheme = customTheme || (isWhitelabel ? {
-    primaryColor,
-    backgroundColor: '#000000', // Default dark background
-    textColor: '#ffffff', // Default light text
-  } : undefined);
-<<<<<<< HEAD
+  const { user, logout } = useAuth();
+  const { theme, toggleTheme } = useTheme();
+  const location = useLocation();
 
-  // Handle scroll effect
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 10);
     };
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-=======
->>>>>>> cursor/integrate-build-improve-and-re-verify-a776
-  
-  const headerStyle = effectiveTheme ? {
-    backgroundColor: effectiveTheme.backgroundColor,
-    color: effectiveTheme.textColor,
-    borderColor: `${effectiveTheme.primaryColor}20`
-  } : {};
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (query.trim()) {
-      navigate(`/search?q=${encodeURIComponent(query)}`);
-      setQuery("");
-    }
+  const headerStyle = {
+    background: isScrolled 
+      ? 'linear-gradient(135deg, rgba(10, 15, 31, 0.98) 0%, rgba(30, 38, 59, 0.98) 100%)'
+      : 'linear-gradient(135deg, rgba(10, 15, 31, 0.95) 0%, rgba(30, 38, 59, 0.95) 100%)',
+    backdropFilter: isScrolled ? 'blur(20px)' : 'blur(15px)',
+    borderBottom: isScrolled 
+      ? '1px solid rgba(0, 229, 255, 0.3)' 
+      : '1px solid rgba(0, 229, 255, 0.2)',
   };
-<<<<<<< HEAD
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
-  
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
+
   return (
-    <>
-      {/* Animated Background */}
-      <div className="fixed top-0 left-0 w-full h-20 bg-gradient-to-r from-zion-blue-dark via-zion-purple-dark to-zion-blue-dark opacity-90 z-40">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(139,113,242,0.1),transparent_50%)]"></div>
-        <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_30%,rgba(34,221,210,0.1)_50%,transparent_70%)] animate-pulse"></div>
-      </div>
+    <header
+      className="sticky top-0 z-50 w-full border-b border-zion-purple/20 bg-gradient-to-r from-zion-blue-dark/95 via-zion-slate-dark/95 to-zion-blue-dark/95 backdrop-blur-xl shadow-2xl shadow-zion-purple/10"
+      style={headerStyle}
+    >
+      {/* Animated background pattern */}
+      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMiI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-30" />
 
-      <header 
-        className={`sticky top-0 z-50 w-full transition-all duration-300 ${
-          isScrolled 
-            ? 'bg-zion-blue-dark/95 backdrop-blur-xl border-b border-zion-purple/30 shadow-2xl shadow-zion-purple/20' 
-            : 'bg-transparent'
-        }`}
-        style={headerStyle}
-      >
-        <div className="container flex h-20 items-center px-4 sm:px-6 relative">
-          {/* Neon Glow Effect */}
-          <div className="absolute inset-0 bg-gradient-to-r from-zion-cyan/5 via-zion-purple/5 to-zion-cyan/5 rounded-b-3xl"></div>
-          
-          {/* Logo */}
-          <div className="flex items-center">
-            <Link to="/" className="text-2xl font-bold text-white">
-              {customLogo || 'ZION TECH GROUP'}
-            </Link>
-          </div>
+      {/* Glowing border effect */}
+      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-zion-purple/10 to-transparent opacity-50" />
 
-          {/* Desktop Navigation */}
-          <div className="ml-6 flex-1 hidden lg:block">
-            <nav className="flex space-x-8">
-              <Link to="/" className="text-white hover:text-zion-cyan transition-colors">Home</Link>
-              <Link to="/marketplace" className="text-white hover:text-zion-cyan transition-colors">Marketplace</Link>
-              <Link to="/services" className="text-white hover:text-zion-cyan transition-colors">Services</Link>
-              <Link to="/talent" className="text-white hover:text-zion-cyan transition-colors">Talent</Link>
-              <Link to="/equipment" className="text-white hover:text-zion-cyan transition-colors">Equipment</Link>
-              <Link to="/community" className="text-white hover:text-zion-cyan transition-colors">Community</Link>
-            </nav>
-          </div>
+      <div className="container flex h-16 items-center px-4 sm:px-6 relative z-10">
+        <Logo customLogo={customLogo} customColor={theme?.primaryColor} />
 
-          {/* Search Bar */}
-          <form onSubmit={handleSubmit} className="hidden md:block w-80 mx-4 relative">
-            <div className="relative">
-              <input
-                type="text"
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search services..."
-                className="w-full px-4 py-2 bg-white/10 border border-zion-purple/30 rounded-lg text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-zion-cyan/50 focus:border-zion-cyan/50"
-              />
-              {/* Search Glow Effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-zion-cyan/20 to-zion-purple/20 rounded-lg blur-xl opacity-0 hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
-            </div>
-          </form>
-
-          {/* Desktop Actions */}
-          <div className="flex items-center gap-3 hidden md:flex">
-            {!hideLogin && (
-              <div className="flex items-center space-x-4">
-                <Link to="/login" className="text-white hover:text-zion-cyan transition-colors">Login</Link>
-                <Link to="/register" className="px-4 py-2 bg-zion-cyan text-black rounded-lg hover:bg-zion-cyan/80 transition-colors">Sign Up</Link>
-              </div>
-            )}
-          </div>
-
-          {/* Mobile Menu Button */}
-          <Button
-            variant="ghost"
-            size="sm"
-            className="lg:hidden text-white hover:bg-zion-purple/20 hover:text-zion-cyan transition-colors"
-            onClick={toggleMobileMenu}
-          >
-            {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </Button>
+        <div className="ml-6 flex-1">
+          <MainNavigation />
         </div>
 
-        {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <div className="lg:hidden absolute top-full left-0 w-full bg-zion-blue-dark/95 backdrop-blur-xl border-t border-zion-purple/30 shadow-2xl">
-            <div className="container px-4 py-6 space-y-4">
-              {/* Mobile Search */}
-              <form onSubmit={handleSubmit} className="w-full">
-                <input
-                  type="text"
-                  value={query}
-                  onChange={(e) => setQuery(e.target.value)}
-                  placeholder="Search services..."
-                  className="w-full px-4 py-2 bg-white/10 border border-zion-purple/30 rounded-lg text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-zion-cyan/50 focus:border-zion-cyan/50"
-                />
-              </form>
+        <div className="flex items-center gap-4">
+          {/* Search Button */}
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="p-2 text-zion-slate-light hover:text-zion-cyan transition-colors duration-200"
+            aria-label="Search"
+          >
+            <Search className="w-5 h-5" />
+          </motion.button>
 
-              {/* Mobile Navigation */}
+          {/* Theme Toggle */}
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={toggleTheme}
+            className="p-2 text-zion-slate-light hover:text-zion-cyan transition-colors duration-200"
+            aria-label="Toggle theme"
+          >
+            {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+          </motion.button>
+
+          {/* Notifications */}
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="p-2 text-zion-slate-light hover:text-zion-cyan transition-colors duration-200 relative"
+            aria-label="Notifications"
+          >
+            <Bell className="w-5 h-5" />
+            <span className="absolute -top-1 -right-1 w-3 h-3 bg-zion-cyan rounded-full animate-pulse"></span>
+          </motion.button>
+
+          {/* User Menu */}
+          {!hideLogin && <UserMenu />}
+
+          {/* Mobile Menu Button */}
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={toggleMobileMenu}
+            className="md:hidden p-2 text-zion-slate-light hover:text-zion-cyan transition-colors duration-200"
+            aria-label="Toggle mobile menu"
+          >
+            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </motion.button>
+        </div>
+      </div>
+
+      {/* Neon glow effect */}
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-zion-cyan to-transparent opacity-60" />
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
+            className="md:hidden bg-zion-blue-dark/95 backdrop-blur-xl border-t border-zion-purple/20 overflow-hidden"
+          >
+            <div className="container px-4 py-6 space-y-4">
+              {/* Mobile Navigation Links */}
               <nav className="space-y-2">
                 <Link
                   to="/"
-                  className="block px-4 py-3 text-white hover:bg-zion-purple/20 hover:text-zion-cyan rounded-lg transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={closeMobileMenu}
+                  className="block px-4 py-3 text-zion-slate-light hover:text-zion-cyan hover:bg-zion-purple/10 rounded-lg transition-all duration-200"
                 >
                   Home
                 </Link>
                 <Link
-                  to="/marketplace"
-                  className="block px-4 py-3 text-white hover:bg-zion-purple/20 hover:text-zion-cyan rounded-lg transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Marketplace
-                </Link>
-                <Link
                   to="/services"
-                  className="block px-4 py-3 text-white hover:bg-zion-purple/20 hover:text-zion-cyan rounded-lg transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={closeMobileMenu}
+                  className="block px-4 py-3 text-zion-slate-light hover:text-zion-cyan hover:bg-zion-purple/10 rounded-lg transition-all duration-200"
                 >
                   Services
                 </Link>
                 <Link
+                  to="/micro-saas-services"
+                  onClick={closeMobileMenu}
+                  className="block px-4 py-3 text-zion-slate-light hover:text-zion-cyan hover:bg-zion-purple/10 rounded-lg transition-all duration-200"
+                >
+                  Micro SAAS
+                </Link>
+                <Link
                   to="/talent"
-                  className="block px-4 py-3 text-white hover:bg-zion-purple/20 hover:text-zion-cyan rounded-lg transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={closeMobileMenu}
+                  className="block px-4 py-3 text-zion-slate-light hover:text-zion-cyan hover:bg-zion-purple/10 rounded-lg transition-all duration-200"
                 >
                   Talent
                 </Link>
                 <Link
                   to="/equipment"
-                  className="block px-4 py-3 text-white hover:bg-zion-purple/20 hover:text-zion-cyan transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={closeMobileMenu}
+                  className="block px-4 py-3 text-zion-slate-light hover:text-zion-cyan hover:bg-zion-purple/10 rounded-lg transition-all duration-200"
                 >
                   Equipment
                 </Link>
                 <Link
-                  to="/community"
-                  className="block px-4 py-3 text-white hover:bg-zion-purple/20 hover:text-zion-cyan rounded-lg transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  to="/about"
+                  onClick={closeMobileMenu}
+                  className="block px-4 py-3 text-zion-slate-light hover:text-zion-cyan hover:bg-zion-purple/10 rounded-lg transition-all duration-200"
                 >
-                  Community
+                  About
                 </Link>
-                {user && (
-                  <Link
-                    to="/dashboard"
-                    className="block px-4 py-3 text-white hover:bg-zion-purple/20 hover:text-zion-cyan rounded-lg transition-colors"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    Dashboard
-                  </Link>
-                )}
+                <Link
+                  to="/contact"
+                  onClick={closeMobileMenu}
+                  className="block px-4 py-3 text-zion-slate-light hover:text-zion-cyan hover:bg-zion-purple/10 rounded-lg transition-all duration-200"
+                >
+                  Contact
+                </Link>
               </nav>
 
-              {/* Mobile Actions */}
-              <div className="pt-4 border-t border-zion-purple/30">
-                {!hideLogin && (
-                  <div className="flex flex-col space-y-2">
-                    <Link to="/login" className="block px-4 py-3 text-white hover:bg-zion-purple/20 hover:text-zion-cyan rounded-lg transition-colors">Login</Link>
-                    <Link to="/register" className="block px-4 py-3 bg-zion-cyan text-black rounded-lg hover:bg-zion-cyan/80 transition-colors text-center">Sign Up</Link>
-                  </div>
-                )}
+              {/* Mobile User Actions */}
+              {user ? (
+                <div className="space-y-2 pt-4 border-t border-zion-purple/20">
+                  <Link
+                    to="/dashboard"
+                    onClick={closeMobileMenu}
+                    className="flex items-center gap-3 px-4 py-3 text-zion-slate-light hover:text-zion-cyan hover:bg-zion-purple/10 rounded-lg transition-all duration-200"
+                  >
+                    <User className="w-5 h-5" />
+                    Dashboard
+                  </Link>
+                  <Link
+                    to="/profile"
+                    onClick={closeMobileMenu}
+                    className="flex items-center gap-3 px-4 py-3 text-zion-slate-light hover:text-zion-cyan hover:bg-zion-purple/10 rounded-lg transition-all duration-200"
+                  >
+                    <Settings className="w-5 h-5" />
+                    Profile
+                  </Link>
+                  <button
+                    onClick={() => {
+                      logout();
+                      closeMobileMenu();
+                    }}
+                    className="flex items-center gap-3 w-full px-4 py-3 text-zion-slate-light hover:text-zion-cyan hover:bg-zion-purple/10 rounded-lg transition-all duration-200"
+                  >
+                    <LogOut className="w-5 h-5" />
+                    Logout
+                  </button>
+                </div>
+              ) : (
+                <div className="space-y-2 pt-4 border-t border-zion-purple/20">
+                  <Link
+                    to="/login"
+                    onClick={closeMobileMenu}
+                    className="flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-zion-purple to-zion-cyan text-white font-semibold rounded-lg hover:from-zion-purple-light hover:to-zion-cyan-light transition-all duration-200"
+                  >
+                    <Zap className="w-5 h-5" />
+                    Login
+                  </Link>
+                  <Link
+                    to="/signup"
+                    onClick={closeMobileMenu}
+                    className="flex items-center justify-center gap-2 px-4 py-3 border border-zion-cyan text-zion-cyan font-semibold rounded-lg hover:bg-zion-cyan hover:text-white transition-all duration-200"
+                  >
+                    <User className="w-5 h-5" />
+                    Sign Up
+                  </Link>
+                </div>
+              )}
+
+              {/* Contact Info */}
+              <div className="pt-4 border-t border-zion-purple/20 space-y-2 text-sm text-zion-slate-light">
+                <div className="px-4 py-2">
+                  <strong>Contact:</strong> +1 302 464 0950
+                </div>
+                <div className="px-4 py-2">
+                  <strong>Email:</strong> kleber@ziontechgroup.com
+                </div>
+                <div className="px-4 py-2">
+                  <strong>Address:</strong> 364 E Main St STE 1008, Middletown DE 19709
+                </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         )}
-      </header>
-    </>
-=======
-  
-  return (
-    <header 
-      className="sticky top-0 z-50 w-full border-b border-zion-purple/20 bg-zion-blue-dark/90 backdrop-blur-md shadow-2xl"
-      style={headerStyle}
-    >
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-0 left-1/4 w-1 h-1 bg-zion-cyan rounded-full animate-pulse"></div>
-        <div className="absolute top-2 right-1/3 w-1 h-1 bg-zion-purple rounded-full animate-pulse delay-1000"></div>
-        <div className="absolute top-4 left-1/2 w-1 h-1 bg-zion-blue rounded-full animate-pulse delay-2000"></div>
-      </div>
-      
-      <div className="container flex h-16 items-center px-4 sm:px-6 relative z-10">
-        <Logo customLogo={customLogo} customColor={effectiveTheme?.primaryColor} />
-
-        <div className="ml-6 flex-1">
-          {/* Navigation removed - using sidebar instead */}
-        </div>
-        <form onSubmit={handleSubmit} className="hidden md:block w-64 mx-4">
-          <EnhancedSearchInput
-            value={query}
-            onChange={setQuery}
-            onSelectSuggestion={(text) => {
-              navigate(`/search?q=${encodeURIComponent(text)}`);
-              setQuery("");
-            }}
-            searchSuggestions={searchSuggestions}
-          />
-        </form>
-
-        <div className="flex items-center gap-2">
-          <LanguageSelector />
-          {!hideLogin && <UserMenu />}
-        </div>
-      </div>
+      </AnimatePresence>
     </header>
->>>>>>> cursor/integrate-build-improve-and-re-verify-a776
   );
 }
