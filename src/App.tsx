@@ -5,6 +5,7 @@ import { Footer } from './components/Footer';
 import { Sidebar } from './components/Sidebar';
 import { AccessibilityControls } from './components/AccessibilityControls';
 import { PerformanceDashboard } from './components/PerformanceDashboard';
+import { AnalyticsDashboard } from './components/AnalyticsDashboard';
 import './App.css';
 
 // Enhanced lazy loading with preloading hints
@@ -92,11 +93,19 @@ const App = () => {
           {/* Enhanced Accessibility Controls */}
           <AccessibilityControls position="bottom-right" />
           
-          {/* Performance Dashboard (Development Mode) */}
+          {/* Development Dashboards */}
           {process.env.NODE_ENV === 'development' && (
-            <div className="fixed top-4 left-4 z-40">
-              <PerformanceDashboard />
-            </div>
+            <>
+              {/* Performance Dashboard */}
+              <div className="fixed top-4 left-4 z-40">
+                <PerformanceDashboard />
+              </div>
+              
+              {/* Analytics Dashboard */}
+              <div className="fixed top-4 right-4 z-40">
+                <AnalyticsDashboard />
+              </div>
+            </>
           )}
         </div>
       </Router>
