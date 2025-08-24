@@ -1,0 +1,186 @@
+{
+  "generatedAt": "2025-08-11T23:25:17.391Z",
+  "nodes": [
+    "/.netlify/functions/alt-text-indexer-runner",
+    "/.netlify/functions/auto-scheduler",
+    "/.netlify/functions/broken-image-scanner",
+    "/.netlify/functions/content-registry-runner",
+    "/.netlify/functions/continuous-orchestrator",
+    "/.netlify/functions/docs-index-runner",
+    "/.netlify/functions/fast-front-promoter",
+    "/.netlify/functions/fast-orchestrator",
+    "/.netlify/functions/features-capabilities-benefits-advertiser",
+    "/.netlify/functions/front-enhancer",
+    "/.netlify/functions/front-visionary-expander",
+    "/.netlify/functions/home-visionary-expander",
+    "/.netlify/functions/hyper-front-index-accelerator",
+    "/.netlify/functions/innovation-lab",
+    "/.netlify/functions/internal-link-graph-runner",
+    "/.netlify/functions/marketing-and-features-promo",
+    "/.netlify/functions/netlify-auto-healer-runner",
+    "/.netlify/functions/robots-enhancer-runner",
+    "/.netlify/functions/schedule-content-index",
+    "/.netlify/functions/schedule-homepage",
+    "/.netlify/functions/schedule-knowledge-graph",
+    "/.netlify/functions/schedule-site-health",
+    "/automation",
+    "/front",
+    "/index",
+    "/main/front",
+    "/newsroom",
+    "/reports/ai-trends",
+    "/reports/seo",
+    "/site-health"
+  ],
+  "edges": [
+    {
+      "from": "/automation",
+      "to": "/.netlify/functions/schedule-homepage"
+    },
+    {
+      "from": "/automation",
+      "to": "/.netlify/functions/schedule-site-health"
+    },
+    {
+      "from": "/automation",
+      "to": "/.netlify/functions/schedule-content-index"
+    },
+    {
+      "from": "/automation",
+      "to": "/.netlify/functions/schedule-knowledge-graph"
+    },
+    {
+      "from": "/automation",
+      "to": "/.netlify/functions/front-enhancer"
+    },
+    {
+      "from": "/automation",
+      "to": "/.netlify/functions/fast-front-promoter"
+    },
+    {
+      "from": "/automation",
+      "to": "/.netlify/functions/marketing-and-features-promo"
+    },
+    {
+      "from": "/automation",
+      "to": "/.netlify/functions/fast-orchestrator"
+    },
+    {
+      "from": "/automation",
+      "to": "/.netlify/functions/continuous-orchestrator"
+    },
+    {
+      "from": "/automation",
+      "to": "/.netlify/functions/features-capabilities-benefits-advertiser"
+    },
+    {
+      "from": "/automation",
+      "to": "/.netlify/functions/hyper-front-index-accelerator"
+    },
+    {
+      "from": "/automation",
+      "to": "/.netlify/functions/innovation-lab"
+    },
+    {
+      "from": "/automation",
+      "to": "/.netlify/functions/auto-scheduler"
+    },
+    {
+      "from": "/automation",
+      "to": "/.netlify/functions/broken-image-scanner"
+    },
+    {
+      "from": "/index",
+      "to": "/main/front"
+    },
+    {
+      "from": "/index",
+      "to": "/automation"
+    },
+    {
+      "from": "/index",
+      "to": "/newsroom"
+    },
+    {
+      "from": "/index",
+      "to": "/site-health"
+    },
+    {
+      "from": "/index",
+      "to": "/.netlify/functions/front-enhancer"
+    },
+    {
+      "from": "/index",
+      "to": "/.netlify/functions/netlify-auto-healer-runner"
+    },
+    {
+      "from": "/index",
+      "to": "/.netlify/functions/docs-index-runner"
+    },
+    {
+      "from": "/index",
+      "to": "/.netlify/functions/front-visionary-expander"
+    },
+    {
+      "from": "/index",
+      "to": "/.netlify/functions/home-visionary-expander"
+    },
+    {
+      "from": "/index",
+      "to": "/.netlify/functions/continuous-orchestrator"
+    },
+    {
+      "from": "/main/front",
+      "to": "/automation"
+    },
+    {
+      "from": "/main/front",
+      "to": "/site-health"
+    },
+    {
+      "from": "/main/front",
+      "to": "/reports/seo"
+    },
+    {
+      "from": "/main/front",
+      "to": "/reports/ai-trends"
+    },
+    {
+      "from": "/main/front",
+      "to": "/newsroom"
+    },
+    {
+      "from": "/main/front",
+      "to": "/.netlify/functions/front-enhancer"
+    },
+    {
+      "from": "/main/front",
+      "to": "/.netlify/functions/internal-link-graph-runner"
+    },
+    {
+      "from": "/main/front",
+      "to": "/.netlify/functions/robots-enhancer-runner"
+    },
+    {
+      "from": "/main/front",
+      "to": "/.netlify/functions/alt-text-indexer-runner"
+    },
+    {
+      "from": "/main/front",
+      "to": "/.netlify/functions/content-registry-runner"
+    },
+    {
+      "from": "/main/front",
+      "to": "/front"
+    },
+    {
+      "from": "/main/front",
+      "to": "/.netlify/functions/docs-index-runner"
+    }
+  ],
+  "stats": {
+    "numNodes": 30,
+    "numEdges": 36,
+    "avgOutDegree": 1.2
+  }
+}

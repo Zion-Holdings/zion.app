@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Head from 'next/head';
+// Removed Next.js import - using React instead
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Clock, Send, CheckCircle } from 'lucide-react';
 
@@ -136,12 +136,6 @@ export default function ContactPage() {
 
   return (
     <>
-      <Head>
-        <title>Contact Us - Zion Tech Group</title>
-        <meta name="description" content="Get in touch with Zion Tech Group. We're here to help you transform your business with cutting-edge technology solutions." />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head>
-
       <main className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
         {/* Hero Section */}
         <section className="relative pt-32 pb-20 px-6">

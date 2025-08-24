@@ -37,7 +37,8 @@ import {
   Lock, 
   Clock, 
   Calendar,
-  Code
+  Code,
+  Heart
 } from 'lucide-react';
 
 interface NavigationItem {

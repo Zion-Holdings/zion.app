@@ -3,16 +3,6 @@ import defaultTheme from 'tailwindcss/defaultTheme';
 import plugin from 'tailwindcss/plugin';
 
 const config: Config = {
-<<<<<<< HEAD
-  darkMode: "class",
-  content: [
-    "./pages/**/*.{ts,tsx}",
-    "./components/**/*.{ts,tsx}",
-    "./app/**/*.{ts,tsx}",
-    "./src/**/*.{ts,tsx}",
-  ],
-  safelist: ['border-border'],
-=======
   darkMode: 'class',
   content: [
     './pages/**/*.{ts,tsx}',
@@ -20,7 +10,7 @@ const config: Config = {
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
   ],
->>>>>>> 6d7be8fce1d5e66d749ea8dd439e0663bfd83322
+  safelist: ['border-border'],
   theme: {
     extend: {
       colors: {
@@ -54,54 +44,30 @@ const config: Config = {
           foreground: 'hsl(var(--popover-foreground))',
         },
         card: {
-<<<<<<< HEAD
-          DEFAULT: hsl(var(--card)),          foreground: hsl(var(--card-foreground)),        },
-        // Custom Zion colors
-        "zion-blue": {
-          DEFAULT: "#0a0f1f",
-          light: "#1e263b",
-          dark: "#090c1a",
-        },
-        "zion-purple": {
-          DEFAULT: "#a855f7",
-          light: "#d8b4fe",
-          dark: "#9333ea",
-        },
-        "zion-cyan": {
-          DEFAULT: "#00e5ff",
-          light: "#7df9ff",
-          dark: "#00c4cc",
-        },
-        "zion-slate": {
-          DEFAULT: "#94A3B8",
-          light: "#CBD5E1",
-          dark: "#64748B",
-        },
-=======
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
         },
+        // Custom Zion colors
         'zion-blue': {
-          DEFAULT: '#2e73ea',
-          light: '#8ab1f3',
-          dark: '#172d67',
+          DEFAULT: '#0a0f1f',
+          light: '#1e263b',
+          dark: '#090c1a',
         },
         'zion-purple': {
           DEFAULT: '#a855f7',
-          light: '#c084fc',
-          dark: '#6b21a8',
+          light: '#d8b4fe',
+          dark: '#9333ea',
         },
         'zion-cyan': {
-          DEFAULT: '#0d9488',
-          light: '#7aeae4',
-          dark: '#0f766e',
+          DEFAULT: '#00e5ff',
+          light: '#7df9ff',
+          dark: '#00c4cc',
         },
         'zion-slate': {
-          DEFAULT: '#17072b',
-          light: '#451582',
-          dark: '#000000',
+          DEFAULT: '#94A3B8',
+          light: '#CBD5E1',
+          dark: '#64748B',
         }
->>>>>>> 6d7be8fce1d5e66d749ea8dd439e0663bfd83322
       },
       borderRadius: {
         lg: 'var(--radius)',

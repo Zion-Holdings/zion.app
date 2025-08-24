@@ -1,5 +1,5 @@
 import React from 'react';
-import Head from 'next/head';
+// Removed Next.js import - using React instead
 import { motion } from 'framer-motion';
 import { 
   Brain, 
@@ -151,12 +151,6 @@ export default function ServicesPage() {
 
   return (
     <>
-      <Head>
-        <title>Services - Zion Tech Group</title>
-        <meta name="description" content="Comprehensive technology services including AI, cloud infrastructure, cybersecurity, custom software, and digital transformation solutions." />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head>
-
       <main className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
         {/* Hero Section */}
         <section className="relative pt-32 pb-20 px-6">

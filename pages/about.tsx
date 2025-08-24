@@ -1,5 +1,5 @@
 import React from 'react';
-import Head from 'next/head';
+// Removed Next.js import - using React instead
 import { motion } from 'framer-motion';
 import { Users, Award, Globe, Zap, Shield, Target, CheckCircle, ArrowRight } from 'lucide-react';
 
@@ -75,12 +75,6 @@ export default function AboutPage() {
 
   return (
     <>
-      <Head>
-        <title>About Us - Zion Tech Group</title>
-        <meta name="description" content="Learn about Zion Tech Group's mission to transform businesses through cutting-edge technology solutions and innovation." />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head>
-
       <main className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
         {/* Hero Section */}
         <section className="relative pt-32 pb-20 px-6">

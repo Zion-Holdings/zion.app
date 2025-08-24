@@ -1,77 +1,36 @@
 {
   "compilerOptions": {
-    "target": "ES2017",
+    "target": "ES2020",
     "useDefineForClassFields": true,
-    "lib": [
-      "ES2024",
-      "DOM",
-      "DOM.Iterable",
-      "WebWorker",
-      "WebWorker.Iterable"
-    ],
-    "module": "esnext",
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
     "skipLibCheck": true,
-    "importHelpers": false,
-    "noEmitHelpers": false,
-    "baseUrl": ".",
-    "paths": {
-      "@/*": [
-        "./*"
-      ],
-      "@/pages/*": [
-        "./pages/*"
-      ],
-      "@/components/*": [
-        "./components/*"
-      ],
-      "@/types/*": [
-        "./types/*"
-      ],
-      "@/utils/*": [
-        "./utils/*"
-      ],
-      "@/services/*": [
-        "./services/*"
-      ],
-      "@/styles/*": [
-        "./styles/*"
-      ]
-    },
-    /* Bundler mode */
     "moduleResolution": "bundler",
-    "esModuleInterop": true,
+    "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
     "strict": false,
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedIndexedAccess": false,
-    "noImplicitReturns": false,
-    "allowJs": true,
-    "incremental": true,
-    "typeRoots": [
-      "./node_modules/@types",
-      "./types"
-    ],
-    "types": [
-      "node"
-    ],
-    "jsx": "preserve",
-    "noEmit": true,
-    "isolatedModules": true,
-    "forceConsistentCasingInFileNames": true
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
   },
   "include": [
-    "next-env.d.ts",
-    "pages/**/*.ts",
-    "pages/**/*.tsx",
-    "components/**/*.ts",
-    "components/**/*.tsx",
-    "types/**/*.ts",
-    "types/**/*.d.ts",
-    "utils/**/*.ts",
-    "services/**/*.ts",
-    "styles/**/*.css"
+    "src/main.tsx",
+    "src/pages/Home.tsx",
+    "src/index.css",
+    "pages/about.tsx",
+    "pages/services.tsx",
+    "pages/contact.tsx",
+    "pages/careers.tsx",
+    "pages/privacy.tsx",
+    "components/layout/UltraFuturisticNavigation2045.tsx",
+    "components/layout/UltraFuturisticFooter2045.tsx"
   ],
   "exclude": [
     "node_modules",
@@ -91,6 +50,32 @@
     "test.disabled/**",
     "services.disabled.temp/**",
     "data.temp/**",
-    "src_backup/**"
+    "src_backup/**",
+    "components/backgrounds/**",
+    "components/layout/Enhanced*.tsx",
+    "components/layout/Footer.tsx",
+    "components/layout/Header.tsx",
+    "components/layout/Layout.tsx",
+    "components/layout/UltraAdvanced*.tsx",
+    "components/layout/UltraFuturisticFooter20*.tsx",
+    "components/layout/UltraFuturisticNavigation20*.tsx",
+    "components/layout/UltraFuturisticLayout*.tsx",
+    "components/ui/UltraFuturisticBackground*.tsx",
+    "components/Homepage*.tsx",
+    "components/LoadingSpinner.tsx",
+    "components/MobileOptimizer.tsx",
+    "components/PerformanceMonitor.tsx",
+    "components/PerformanceOptimizer.tsx",
+    "components/SEO.tsx",
+    "src/pages/**/*.tsx",
+    "src/components/**/*.tsx",
+    "src/hooks/**/*.ts",
+    "src/store/**/*.ts",
+    "src/layout/**/*.tsx",
+    "src/data/**/*.ts",
+    "src/context/**/*.tsx",
+    "src/integrations/**/*.ts",
+    "src/types/**/*.ts",
+    "src/utils/**/*.ts"
   ]
 }
