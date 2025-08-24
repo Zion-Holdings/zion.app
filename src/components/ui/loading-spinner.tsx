@@ -11,68 +11,20 @@ interface LoadingSpinnerProps {
   showText?: boolean;
 }
 
-export function LoadingSpinner({
-  size = 'md',
-  color = 'primary',
-  customColor,
-  text = 'Loading...',
-  className,
-  showText = false
-}: LoadingSpinnerProps) {
+export const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({ 
+  size = 'md', 
+  className = '' 
+}) => {
   const sizeClasses = {
     sm: 'w-4 h-4',
     md: 'w-8 h-8',
-    lg: 'w-12 h-12',
-    xl: 'w-16 h-16'
+    lg: 'w-12 h-12'
   };
-
-  const colorClasses = {
-    primary: 'border-zion-purple border-t-transparent',
-    secondary: 'border-zion-cyan border-t-transparent',
-    white: 'border-white border-t-transparent',
-    custom: ''
-  };
-
-  const textSizes = {
-    sm: 'text-xs',
-    md: 'text-sm',
-    lg: 'text-base',
-    xl: 'text-lg'
-  };
-
-  const spinnerColor = customColor || (color === 'custom' ? undefined : undefined);
 
   return (
-    <div className={cn('flex flex-col items-center justify-center', className)}>
-      <motion.div
-        className={cn(
-          'rounded-full border-2 animate-spin',
-          sizeClasses[size],
-          color === 'custom' ? '' : colorClasses[color]
-        )}
-        style={spinnerColor ? { borderColor: spinnerColor, borderTopColor: 'transparent' } : undefined}
-        role="status"
-        aria-label="Loading"
-      >
-        <span className="sr-only">{text}</span>
-      </motion.div>
-      
-      {showText && (
-        <motion.p
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-          className={cn(
-            'mt-3 text-zion-slate-light font-medium',
-            textSizes[size]
-          )}
-        >
-          {text}
-        </motion.p>
-      )}
-    </div>
+    <div className={`animate-spin rounded-full border-2 border-gray-300 border-t-blue-600 ${sizeClasses[size]} ${className}`} />
   );
-}
+};
 
 // Pulse loading variant
 export function LoadingPulse({
@@ -147,18 +99,24 @@ export function LoadingSkeleton({
   );
 }
 
-// Page loading overlay
-export const LoadingOverlay: React.FC<LoadingOverlayProps> = ({ 
-  text = "Loading...", 
-  showSpinner = true 
+interface LoadingOverlayProps {
+  isLoading: boolean;
+  children: React.ReactNode;
+  className?: string;
+}
+
+export const LoadingOverlay: React.FC<LoadingOverlayProps> = ({
+  isLoading,
+  children,
+  className = ''
 }) => {
+  if (!isLoading) return <>{children}</>;
+
   return (
-    <div className="loading-overlay">
-      <div className="text-center">
-        {showSpinner && (
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-white mx-auto mb-4"></div>
-        )}
-        <p className="text-lg">{text}</p>
+    <div className={`relative ${className}`}>
+      {children}
+      <div className="absolute inset-0 bg-white bg-opacity-75 flex items-center justify-center">
+        <LoadingSpinner size="lg" />
       </div>
     </div>
   );
