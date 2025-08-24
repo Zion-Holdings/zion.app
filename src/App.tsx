@@ -31,6 +31,7 @@ const Analytics = React.lazy(() => import('./pages/Analytics'));
 const MobileLaunchPage = React.lazy(() => import('./pages/MobileLaunchPage'));
 const CommunityPage = React.lazy(() => import('./pages/CommunityPage'));
 const Categories = React.lazy(() => import('./pages/Categories'));
+const CategoryDetail = React.lazy(() => import('./pages/CategoryDetail'));
 const Blog = React.lazy(() => import('./pages/Blog'));
 const BlogPost = React.lazy(() => import('./pages/BlogPost'));
 const PartnersPage = React.lazy(() => import('./pages/Partners'));
@@ -41,6 +42,13 @@ const OpenAppRedirect = React.lazy(() => import('./pages/OpenAppRedirect'));
 const ContactPage = React.lazy(() => import('./pages/Contact'));
 const ZionHireAI = React.lazy(() => import('./pages/ZionHireAI'));
 const RequestQuotePage = React.lazy(() => import('./pages/RequestQuote'));
+const About = React.lazy(() => import('./pages/About'));
+const Careers = React.lazy(() => import('./pages/Careers'));
+const FAQ = React.lazy(() => import('./pages/FAQ'));
+const GreenIT = React.lazy(() => import('./pages/GreenIT'));
+const Privacy = React.lazy(() => import('./pages/Privacy'));
+const Terms = React.lazy(() => import('./pages/Terms'));
+const Sitemap = React.lazy(() => import('./pages/Sitemap'));
 
 const baseRoutes = [
   { path: '/', element: <Home /> },
@@ -52,6 +60,7 @@ const baseRoutes = [
   { path: '/services', element: <ServicesPage /> },
   { path: '/it-onsite-services', element: <ITOnsiteServicesPage /> },
   { path: '/categories', element: <Categories /> },
+  { path: '/categories/:slug', element: <CategoryDetail /> },
   { path: '/equipment', element: <EquipmentPage /> },
   { path: '/equipment/:id', element: <EquipmentDetail /> },
   { path: '/analytics', element: <Analytics /> },
@@ -65,6 +74,13 @@ const baseRoutes = [
   { path: '/request-quote', element: <RequestQuotePage /> },
   { path: '/blog', element: <Blog /> },
   { path: '/blog/:slug', element: <BlogPost /> },
+  { path: '/about', element: <About /> },
+  { path: '/careers', element: <Careers /> },
+  { path: '/faq', element: <FAQ /> },
+  { path: '/green-it', element: <GreenIT /> },
+  { path: '/privacy', element: <Privacy /> },
+  { path: '/terms', element: <Terms /> },
+  { path: '/sitemap', element: <Sitemap /> },
 ];
 
 const App = () => {
