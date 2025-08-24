@@ -4,7 +4,7 @@ import '../styles/enhanced-design-system.css';
 import '../styles/modern-design-system.css';
 import '../styles/globals.css';
 
-export default function MyApp({ Component, pageProps }: AppProps) {
+export default function ZionApp({ Component, pageProps }: AppProps) {
   return (
     <EnhancedLayout>
       <Component {...pageProps} />

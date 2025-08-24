@@ -1,1 +1,1 @@
-export default function Page() { return null; }
+export default function ChatCybersecurity() { return <div>Placeholder</div>; }

@@ -1,1 +1,1 @@
-export default function Page() { return null; }
+export default function ChatEmergingTech() { return <div>Placeholder</div>; }
