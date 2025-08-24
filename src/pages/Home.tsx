@@ -2,6 +2,8 @@
 
 import EnhancedHero from '../components/EnhancedHero';
 import EnhancedServicesShowcase from '../components/EnhancedServicesShowcase';
+import ModernTestimonials from '../components/ModernTestimonials';
+import FeaturesShowcase from '../components/FeaturesShowcase';
 import { motion } from 'framer-motion';
 import { Users, Globe, Award, Clock } from 'lucide-react';
 
@@ -24,7 +26,7 @@ export default function Home() {
       {/* Why Choose Us Section */}
       <section className="py-24 bg-zion-slate-dark">
         <div className="container mx-auto px-4">
-          <motion.div 
+          <motion.div
             className="text-center mb-16"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -60,6 +62,12 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Features Showcase */}
+      <FeaturesShowcase />
+
+      {/* Modern Testimonials */}
+      <ModernTestimonials />
 
       {/* CTA Section */}
       <section className="py-24 bg-gradient-to-r from-zion-cyan to-zion-purple">
