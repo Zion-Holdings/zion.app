@@ -268,7 +268,7 @@ export const innovativeAIAutomationServices: InnovativeAIAutomationService[] = [
     competitors: ['HubSpot, Marketo, Pardot, ActiveCampaign, ConvertKit'],
     marketSize: '$35B marketing automation market',
     growthRate: '24% annual growth',
-    variant: 'ai-futuristic',
+    variant: 'ai-marketing',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -310,6 +310,7 @@ export const innovativeAIAutomationServices: InnovativeAIAutomationService[] = [
     link: 'https://ziontechgroup.com/autonomous-data-analytics',
     marketPosition: 'Competes with Tableau ($70/month), Power BI ($9.99/month), Looker ($5,000/month). Our advantage: AI automation, natural language queries, and autonomous insights.',
     targetAudience: 'Data analysts, Business intelligence teams, Executives, Marketing teams, Sales teams',
+=======
     icon: '🛡️',
     color: 'from-red-600 to-pink-700',
     textColor: 'text-red-400',
@@ -327,13 +328,14 @@ export const innovativeAIAutomationServices: InnovativeAIAutomationService[] = [
     competitors: ['Tableau, Power BI, Looker, Qlik, Domo'],
     marketSize: '$30B business intelligence market',
     growthRate: '26% annual growth',
-    variant: 'ai-futuristic',
+    variant: 'ai-analytics',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
       address: '364 E Main St STE 1008 Middletown DE 19709',
       website: 'https://ziontechgroup.com'
     },
+=======
     technology: ['Python, TensorFlow, OpenAI, Elasticsearch, Redis, PostgreSQL'],
     integrations: ['SIEM systems, Firewalls, IDS/IPS, Vulnerability scanners'],
     useCases: ['Security monitoring, Threat detection, Incident response, Compliance management'],
@@ -365,7 +367,7 @@ export const innovativeAIAutomationServices: InnovativeAIAutomationService[] = [
     competitors: ['Workday, BambooHR, ADP, Paychex, Gusto'],
     marketSize: '$20B HR software market',
     growthRate: '20% annual growth',
-    variant: 'ai-futuristic',
+    variant: 'ai-hr',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -378,5 +380,6 @@ export const innovativeAIAutomationServices: InnovativeAIAutomationService[] = [
     customers: 189,
     rating: 4.7,
     reviews: 95
+=======
   }
 ];
