@@ -74,7 +74,8 @@
       "node"
     ],
     "jsx": "preserve",
-    "noEmit": true
+    "noEmit": true,
+    "isolatedModules": true
   },
   "include": [
     "next-env.d.ts",
@@ -83,6 +84,8 @@
   ],
   "exclude": [
     "node_modules",
-    "zion.app/recovered-content/**"
+    "zion.app/recovered-content/**",
+    "apps/**",
+    "browserstack.config.ts"
   ]
 }

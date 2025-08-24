@@ -14,44 +14,37 @@ const EnhancedFooter: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   const services = [
-    { name: 'AI & Machine Learning', href: '/services/ai-ml' },
-    { name: 'Quantum Computing', href: '/services/quantum' },
-    { name: 'Cybersecurity', href: '/services/cybersecurity' },
-    { name: 'Cloud Infrastructure', href: '/services/cloud' },
-    { name: 'Data Analytics', href: '/services/analytics' },
-    { name: 'Digital Transformation', href: '/services/transformation' }
+    { name: 'AI & Machine Learning', href: '/micro-saas' },
+    { name: 'Quantum Computing', href: '/micro-saas' },
+    { name: 'Cybersecurity', href: '/micro-saas' },
+    { name: 'Cloud Infrastructure', href: '/micro-saas' },
+    { name: 'Data Analytics', href: '/micro-saas' },
+    { name: 'Digital Transformation', href: '/micro-saas' }
   ];
 
   const company = [
     { name: 'About Us', href: '/about' },
-    { name: 'Our Team', href: '/team' },
-    { name: 'Careers', href: '/careers' },
-    { name: 'News & Press', href: '/news' },
     { name: 'Partners', href: '/partners' },
+    { name: 'Careers', href: '/careers' },
     { name: 'Contact', href: '/contact' }
   ];
 
   const resources = [
     { name: 'Blog', href: '/blog' },
-    { name: 'Case Studies', href: '/case-studies' },
-    { name: 'Whitepapers', href: '/whitepapers' },
-    { name: 'Documentation', href: '/docs' },
-    { name: 'API Reference', href: '/api' },
-    { name: 'Support', href: '/support' }
+    { name: 'Services', href: '/micro-saas' },
+    { name: 'Pricing', href: '/market-pricing' }
   ];
 
   const legal = [
     { name: 'Privacy Policy', href: '/privacy' },
     { name: 'Terms of Service', href: '/terms' },
-    { name: 'Cookie Policy', href: '/cookies' },
-    { name: 'Security', href: '/security' },
-    { name: 'Compliance', href: '/compliance' }
+    { name: 'Cookie Policy', href: '/cookies' }
   ];
 
   const socialLinks = [
-    { name: 'Twitter', href: 'https://twitter.com/ziontechgroup', icon: Twitter },
-    { name: 'LinkedIn', href: 'https://linkedin.com/company/ziontechgroup', icon: Linkedin },
-    { name: 'GitHub', href: 'https://github.com/ziontechgroup', icon: Github }
+    { name: 'Twitter', href: 'https://twitter.com', icon: Twitter },
+    { name: 'LinkedIn', href: 'https://linkedin.com', icon: Linkedin },
+    { name: 'GitHub', href: 'https://github.com/Zion-Holdings', icon: Github }
   ];
 
   return (

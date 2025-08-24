@@ -1,0 +1,212 @@
+import React from 'react';
+import Head from 'next/head';
+import { motion } from 'framer-motion';
+import { FileText, CheckCircle, AlertTriangle, Shield, Users, Clock } from 'lucide-react';
+import EnhancedNavigation from '../components/EnhancedNavigation';
+import EnhancedFooter from '../components/EnhancedFooter';
+
+export default function TermsPage() {
+  const termsSections = [
+    {
+      title: "Acceptance of Terms",
+      content: "By accessing and using Zion Tech Group's services, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services."
+    },
+    {
+      title: "Service Description",
+      content: "Zion Tech Group provides AI, quantum computing, and autonomous technology solutions. Our services include but are not limited to AI development, quantum computing platforms, and technology consulting."
+    },
+    {
+      title: "User Responsibilities",
+      content: "Users are responsible for maintaining the confidentiality of their account information, using our services in compliance with applicable laws, and not engaging in any activities that could harm our systems or other users."
+    },
+    {
+      title: "Intellectual Property",
+      content: "All content, features, and functionality of our services are owned by Zion Tech Group and are protected by international copyright, trademark, and other intellectual property laws."
+    },
+    {
+      title: "Privacy and Data",
+      content: "Your privacy is important to us. Please review our Privacy Policy to understand how we collect, use, and protect your information."
+    },
+    {
+      title: "Service Availability",
+      content: "We strive to maintain high service availability but cannot guarantee uninterrupted access. We reserve the right to modify, suspend, or discontinue services with reasonable notice."
+    },
+    {
+      title: "Limitation of Liability",
+      content: "Zion Tech Group shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of our services."
+    },
+    {
+      title: "Termination",
+      content: "We may terminate or suspend your access to our services at any time, with or without cause, with reasonable notice."
+    },
+    {
+      title: "Governing Law",
+      content: "These terms are governed by the laws of the United States and the State of Delaware, without regard to conflict of law principles."
+    },
+    {
+      title: "Changes to Terms",
+      content: "We reserve the right to modify these terms at any time. Continued use of our services after changes constitutes acceptance of the new terms."
+    }
+  ];
+
+  const keyPoints = [
+    "Clear service descriptions and user expectations",
+    "Protection of intellectual property rights",
+    "User privacy and data security",
+    "Service availability and limitations",
+    "Liability limitations and dispute resolution",
+    "Terms modification and termination rights"
+  ];
+
+  return (
+    <>
+      <Head>
+        <title>Terms of Service - Zion Tech Group</title>
+        <meta name="description" content="Read Zion Tech Group's Terms of Service. Understand the terms and conditions for using our AI and quantum computing services." />
+        <meta name="keywords" content="terms of service, Zion Tech Group, legal terms, service agreement" />
+        <meta property="og:title" content="Terms of Service - Zion Tech Group" />
+        <meta property="og:description" content="Terms and conditions for using our services." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://ziontechgroup.com/terms" />
+      </Head>
+
+      <EnhancedNavigation />
+
+      <main className="min-h-screen bg-slate-900 text-white">
+        {/* Hero Section */}
+        <section className="pt-32 pb-20 px-6">
+          <div className="max-w-7xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-white via-blue-100 to-cyan-100 bg-clip-text text-transparent mb-6">
+                Terms of Service
+              </h1>
+              <p className="text-xl md:text-2xl text-white/80 max-w-4xl mx-auto leading-relaxed">
+                Please read these terms carefully before using our services. 
+                By using our services, you agree to be bound by these terms.
+              </p>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Key Points */}
+        <section className="py-20 px-6 bg-slate-800/50">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent">
+                Key Points
+              </h2>
+              <p className="text-xl text-white/70 max-w-3xl mx-auto">
+                Important aspects of our terms and conditions
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {keyPoints.map((point, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="flex items-start gap-3 p-4 rounded-xl bg-slate-700/50 border border-white/10"
+                >
+                  <CheckCircle className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
+                  <span className="text-white/90">{point}</span>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Terms Sections */}
+        <section className="py-20 px-6">
+          <div className="max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent">
+                Terms of Service
+              </h2>
+              <p className="text-xl text-white/70 max-w-3xl mx-auto">
+                Last updated: January 2025
+              </p>
+            </motion.div>
+
+            <div className="space-y-8">
+              {termsSections.map((section, index) => (
+                <motion.div
+                  key={section.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="group"
+                >
+                  <div className="p-8 rounded-2xl bg-slate-800/50 border border-white/10 hover:border-blue-500/50 transition-all duration-300 hover:bg-slate-800/70">
+                    <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-blue-400 transition-colors duration-300">
+                      {section.title}
+                    </h3>
+                    <p className="text-white/80 leading-relaxed">{section.content}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Important Notice */}
+        <section className="py-20 px-6 bg-gradient-to-r from-orange-600/20 to-red-600/20">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center mx-auto mb-6">
+                <AlertTriangle className="w-10 h-10 text-white" />
+              </div>
+              <h2 className="text-4xl font-bold mb-6 text-white">
+                Important Notice
+              </h2>
+              <p className="text-xl text-white/80 mb-8 leading-relaxed">
+                These terms constitute a legally binding agreement between you and Zion Tech Group. 
+                If you have any questions about these terms, please contact our legal team before using our services.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href="/contact"
+                  className="px-8 py-4 bg-gradient-to-r from-orange-600 to-red-600 text-white font-semibold rounded-xl hover:from-orange-700 hover:to-red-700 transition-all duration-300 transform hover:scale-105"
+                >
+                  Contact Legal Team
+                </a>
+                <a
+                  href="/privacy"
+                  className="px-8 py-4 border border-white/20 text-white font-semibold rounded-xl hover:bg-white/10 transition-all duration-300"
+                >
+                  Privacy Policy
+                </a>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+      </main>
+
+      <EnhancedFooter />
+    </>
+  );
+}

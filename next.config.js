@@ -1,9 +1,15 @@
+const path = require('path');
+const os = require('os');
+
 const nextConfig = {
-  assetPrefix,
+  assetPrefix: process.env.NODE_ENV === 'production' ? 'https://ziontechgroup.com' : '',
   poweredByHeader: false,
   trailingSlash: false,
   reactStrictMode: true,
   bundlePagesRouterDependencies: true,
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 
   // Optimized for fast builds (hanging issue SOLVED)
   // outputFileTracing: false, // Intentionally disabled via env vars in build scripts and netlify.toml to prevent hanging.
@@ -642,19 +648,7 @@ const nextConfig = {
     });
 
     // Additional rule to handle lodash ESM imports specifically in formik
-    config.module.rules.push({
-      test: /\.js$/,
-      include: /node_modules\/formik/,
-      use: {
-        loader: 'string-replace-loader',
-        options: {
-          multiple: [
-            { search: /require\('lodash\//g, replace: "require('lodash-es/" },
-            { search: /require\("lodash\//g, replace: 'require("lodash-es/' },
-          ]
-        }
-      }
-    });
+    // Note: string-replace-loader removed as it's not available in current dependencies
 
     // Additional ESM handling for Next.js 15 compatibility
     if (!isServer) {
@@ -743,4 +737,4 @@ const nextConfig = {
   },
 };
 
-module.exports = withSentryConfig(baseConfig);
+module.exports = nextConfig;

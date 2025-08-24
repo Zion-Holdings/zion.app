@@ -1,9 +1,7 @@
 import React, { useEffect, useCallback } from 'react';
+import { useRouter } from 'next/router';
 
 // Browser API types are declared globally in PerformanceOptimizer.tsx
-
-const AnalyticsTracker: React.FC = () => {
-  const router = useRouter();
 
 // Performance entry types for Core Web Vitals
 interface PerformanceEventTiming extends PerformanceEntry {
@@ -12,11 +10,44 @@ interface PerformanceEventTiming extends PerformanceEntry {
   target?: any | null;
 }
 
+interface AnalyticsTrackerProps {
+  pageTitle?: string;
+  pagePath?: string;
+  customEvents?: Array<{ action: string; parameters: Record<string, unknown> }>;
+}
+
 const AnalyticsTracker: React.FC<AnalyticsTrackerProps> = ({
   pageTitle,
   pagePath,
   customEvents = []
 }) => {
+  const router = useRouter();
+  const trackingId = Math.random().toString(36).substr(2, 9);
+  const enableTracking = true;
+
+  // Track metrics
+  const trackMetric = useCallback((name: string, value: number) => {
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'custom_metric', {
+        metric_name: name,
+        metric_value: value,
+        page_location: window.location.href
+      });
+    }
+  }, []);
+
+  // Track viewport
+  const trackViewport = useCallback(() => {
+    trackMetric('ViewportWidth', window.innerWidth);
+    trackMetric('ViewportHeight', window.innerHeight);
+  }, [trackMetric]);
+
+  // Track interaction
+  const trackInteraction = useCallback((event: Event) => {
+    const target = event.target as HTMLElement;
+    trackMetric('UserInteraction', 1);
+  }, [trackMetric]);
+
   // Track page view
   const trackPageView = useCallback((title: string, path: string) => {
     if (typeof window !== 'undefined') {
@@ -236,6 +267,26 @@ const AnalyticsTracker: React.FC<AnalyticsTrackerProps> = ({
     };
   }, []);
 
+  // Main useEffect for initialization
+  useEffect(() => {
+    if (!enableTracking) return;
+
+    // Initialize analytics
+    trackPageView(pageTitle || document.title, pagePath || window.location.pathname);
+
+    // Track route changes
+    const handleRouteChange = () => {
+      trackPageView(pageTitle || document.title, pagePath || window.location.pathname);
+    };
+
+    router.events.on('routeChangeComplete', handleRouteChange);
+
+    // Cleanup
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange);
+    };
+  }, [trackPageView, pageTitle, pagePath, router.events, enableTracking]);
+
   // Track custom events
   const trackCustomEvent = useCallback((eventName: string, parameters?: Record<string, unknown>) => {
     if (typeof window !== 'undefined') {
@@ -303,11 +354,11 @@ const AnalyticsTracker: React.FC<AnalyticsTrackerProps> = ({
     };
 
     // Initialize tracking
-    trackPageView();
+    trackPageView(pageTitle || document.title, pagePath || window.location.pathname);
 
     // Track route changes
     const handleRouteChange = () => {
-      trackPageView();
+      trackPageView(pageTitle || document.title, pagePath || window.location.pathname);
     };
 
     // Add event listeners for user interactions

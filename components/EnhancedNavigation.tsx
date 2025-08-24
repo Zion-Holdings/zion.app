@@ -21,17 +21,18 @@ const EnhancedNavigation: React.FC = () => {
   }, []);
 
   const services = [
-    { name: 'All Services', href: '/comprehensive-2025-services-showcase', icon: Globe, description: 'Complete collection of innovative services' },
-    { name: 'AI Business Intelligence', href: 'https://ziontechgroup.com/ai-business-intelligence', icon: Brain, description: 'AI-powered analytics and insights' },
-    { name: 'Quantum Cybersecurity', href: 'https://ziontechgroup.com/quantum-cybersecurity', icon: Shield, description: 'Quantum-resistant security solutions' },
-    { name: 'Edge Computing', href: 'https://ziontechgroup.com/edge-computing-orchestration', icon: Cpu, description: 'Edge orchestration and IoT management' },
-    { name: 'Space Technology', href: 'https://ziontechgroup.com/space-technology', icon: Rocket, description: 'Space exploration and satellite tech' },
-    { name: 'Pricing', href: '/pricing-2025', icon: Award, description: 'Transparent pricing for all services' }
+    { name: 'All Services', href: '/micro-saas', icon: Globe, description: 'Complete collection of innovative services' },
+    { name: 'AI Business Intelligence', href: '/micro-saas', icon: Brain, description: 'AI-powered analytics and insights' },
+    { name: 'Quantum Cybersecurity', href: '/micro-saas', icon: Shield, description: 'Quantum-resistant security solutions' },
+    { name: 'Edge Computing', href: '/micro-saas', icon: Cpu, description: 'Edge orchestration and IoT management' },
+    { name: 'Space Technology', href: '/micro-saas', icon: Rocket, description: 'Space exploration and satellite tech' },
+    { name: 'Pricing', href: '/market-pricing', icon: Award, description: 'Transparent pricing for all services' }
   ];
 
   const company = [
     { name: 'About Us', href: '/about', icon: Users, description: 'Learn about our mission and team' },
-    { name: 'Our Work', href: '/portfolio', icon: Award, description: 'See our latest projects and achievements' },
+    { name: 'Partners', href: '/partners', icon: Award, description: 'Strategic partnerships and collaborations' },
+    { name: 'Careers', href: '/careers', icon: Award, description: 'Join our team of innovators' },
     { name: 'Blog & Insights', href: '/blog', icon: BookOpen, description: 'Stay updated with industry trends' },
     { name: 'Contact', href: '/contact', icon: Phone, description: 'Get in touch with our experts' }
   ];
