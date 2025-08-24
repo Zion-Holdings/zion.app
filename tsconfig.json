@@ -87,6 +87,7 @@
     "node_modules",
     "zion.app/recovered-content/**",
     "services.disabled.temp/**",
+    "data.temp/**",
     "src_backup/**",
     "**/*.disabled",
     "**/*.disabled/**"
