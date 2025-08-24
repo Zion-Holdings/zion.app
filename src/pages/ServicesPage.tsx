@@ -4,8 +4,9 @@ import { ProductListing } from "@/types/listings";
 import { TrustedBySection } from "@/components/TrustedBySection";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Globe } from "lucide-react";
+import { Globe, ArrowRight, TrendingUp } from "lucide-react";
 import { useEffect, useState } from "react";
+import { EXPANDED_SERVICES } from "@/data/expandedServices";
 
 // Sample service listings
 const SERVICE_LISTINGS: ProductListing[] = [
@@ -222,7 +223,7 @@ const SERVICE_FILTERS = [
 ];
 
 export default function ServicesPage() {
-  const [listings, setListings] = useState<ProductListing[]>(SERVICE_LISTINGS);
+  const [listings, setListings] = useState<ProductListing[]>([...SERVICE_LISTINGS, ...EXPANDED_SERVICES]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -242,6 +243,18 @@ export default function ServicesPage() {
               <Button variant="outline" className="border-zion-purple text-zion-cyan hover:bg-zion-purple/10">
                 <Globe className="h-4 w-4 mr-2" />
                 Global IT Onsite Services
+              </Button>
+            </Link>
+            <Link to="/comprehensive-services">
+              <Button variant="outline" className="border-zion-purple text-zion-cyan hover:bg-zion-purple/10">
+                <ArrowRight className="h-4 w-4 mr-2" />
+                View All Services
+              </Button>
+            </Link>
+            <Link to="/pricing-guide">
+              <Button variant="outline" className="border-zion-purple text-zion-cyan hover:bg-zion-purple/10">
+                <TrendingUp className="h-4 w-4 mr-2" />
+                Pricing Guide
               </Button>
             </Link>
             <Link to="/request-quote">
