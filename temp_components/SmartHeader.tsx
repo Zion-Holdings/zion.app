@@ -221,7 +221,7 @@ export default function SmartHeader() {
                 </span>
               </Link>
               <span className="hidden text-xs text-white/60 sm:inline">
-                Autonomous Cloud Automations
+                AI-powered cloud automation & deployment
               </span>
             </div>
 

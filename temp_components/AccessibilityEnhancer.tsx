@@ -39,13 +39,14 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({ children 
   
   const focusRef = useRef<HTMLDivElement>(null);
   const announcementRef = useRef<HTMLDivElement>(null);
+  const settingsRef = useRef<HTMLDivElement>(null);
 
   // Apply accessibility settings to the document
-  useEffect(() => {
+  const applySettings = (newSettings: AccessibilitySettings) => {
     const root = document.documentElement;
     
     // High contrast
-    if (settings.highContrast) {
+    if (newSettings.highContrast) {
       root.style.setProperty('--text-color', '#ffffff');
       root.style.setProperty('--bg-color', '#000000');
       root.style.setProperty('--accent-color', '#ffff00');
@@ -56,36 +57,40 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({ children 
     }
 
     // Large text
-    if (settings.largeText) {
+    if (newSettings.largeText) {
       root.style.fontSize = '18px';
     } else {
       root.style.fontSize = '16px';
     }
 
     // Reduced motion
-    if (settings.reducedMotion) {
+    if (newSettings.reducedMotion) {
       root.style.setProperty('--reduced-motion', 'reduce');
     } else {
       root.style.removeProperty('--reduced-motion');
     }
 
     // Font size
-    root.style.setProperty('--font-size', `${settings.fontSize}px`);
+    root.style.setProperty('--font-size', `${newSettings.fontSize}px`);
     
     // Line spacing
-    root.style.setProperty('--line-spacing', settings.lineSpacing.toString());
+    root.style.setProperty('--line-spacing', newSettings.lineSpacing.toString());
 
     // Color blind modes
-    if (settings.colorBlindMode !== 'none') {
+    if (newSettings.colorBlindMode !== 'none') {
       const filters = {
         protanopia: 'url(#protanopia)',
         deuteranopia: 'url(#deuteranopia)',
         tritanopia: 'url(#tritanopia)'
       };
-      root.style.filter = filters[settings.colorBlindMode];
+      root.style.filter = filters[newSettings.colorBlindMode];
     } else {
       root.style.filter = 'none';
     }
+  };
+
+  useEffect(() => {
+    applySettings(settings);
   }, [settings]);
 
   // Handle click outside to close settings
@@ -135,7 +140,7 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({ children 
         speakText(text.substring(0, 500) + '...'); // Limit text length
       }
     }
-  }, [applySettings]);
+  };
 
   // Focus management
   const handleFocusChange = useCallback((e: FocusEvent<Element>) => {
@@ -175,10 +180,7 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({ children 
     }, 5000);
   }, []);
 
-  // Auto-optimize accessibility
-  useEffect(() => {
-    applySettings(settings);
-  }, [settings, applySettings]);
+
 
   // Keyboard navigation enhancement
   useEffect(() => {
