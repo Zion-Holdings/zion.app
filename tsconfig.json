@@ -2,15 +2,7 @@
   "compilerOptions": {
     "target": "ES2020",
     "useDefineForClassFields": true,
-<<<<<<< HEAD
-    "lib": [
-      "ES2020",
-      "DOM",
-      "DOM.Iterable"
-    ],
-=======
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
->>>>>>> 516e4ee3bcbb9d3b0209b707c6b86a34fb0cacec
     "module": "ESNext",
     "skipLibCheck": true,
     "moduleResolution": "bundler",
@@ -25,9 +17,18 @@
     "noFallthroughCasesInSwitch": true,
     "baseUrl": ".",
     "paths": {
-<<<<<<< HEAD
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@/pages/*": ["./src/pages/*"],
+      "@/components/*": ["./src/components/*"],
+      "@/types/*": ["./src/types/*"],
+      "@/utils/*": ["./src/utils/*"],
+      "@/services/*": ["./src/services/*"],
+      "@/styles/*": ["./src/styles/*"],
+      "@/lib/*": ["./src/lib/*"],
+      "@/data/*": ["./src/data/*"]
     },
+    "allowJs": true,
+    "incremental": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
@@ -35,39 +36,6 @@
     "noImplicitReturns": false,
     "noImplicitThis": false,
     "strictNullChecks": false
-=======
-      "@/*": [
-        "./src/*"
-      ],
-      "@/pages/*": [
-        "./src/pages/*"
-      ],
-      "@/components/*": [
-        "./src/components/*"
-      ],
-      "@/types/*": [
-        "./src/types/*"
-      ],
-      "@/utils/*": [
-        "./src/utils/*"
-      ],
-      "@/services/*": [
-        "./src/services/*"
-      ],
-      "@/styles/*": [
-        "./src/styles/*"
-      ],
-      "@/lib/*": [
-        "./src/lib/*"
-      ],
-      "@/data/*": [
-        "./src/data/*"
-      ]
-    },
-    "allowJs": true,
-    "incremental": true,
-    "esModuleInterop": true
->>>>>>> 516e4ee3bcbb9d3b0209b707c6b86a34fb0cacec
   },
   "include": [
     "src/main.tsx",
@@ -92,9 +60,16 @@
     "src/components/home/FeatureCTAs.tsx",
     "src/components/home/HomePageSkeleton.tsx",
     "src/components/ui/data-visualization.tsx",
-    "src/data/enhancedServicesData.ts",
-    "src/data/microSaasServices.ts",
-    "src/hooks/useBlockchainWeb3.ts",
-    "src/pages/HomePage.tsx"
+    "src/components/ui/Futuristic*",
+    "src/components/ui/loading-spinner.tsx",
+    "src/components/home/QuickAccess.tsx",
+    "src/components/home/FeatureHighlights.tsx",
+    "src/components/home/ITServiceRequestHero.tsx",
+    "src/components/SEO.tsx",
+    "src/pages/talent/**/*",
+    "dist/**/*",
+    "build/**/*",
+    "coverage/**/*",
+    "*.log"
   ]
 }

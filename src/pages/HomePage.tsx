@@ -1,7 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, CheckCircle, Star, Cloud, Brain, Shield, Zap, Rocket, TrendingUp, Target } from 'lucide-react';
-import FuturisticAnimatedBackground from '../components/ui/FuturisticAnimatedBackground';
-import FuturisticNeonButton from '../components/ui/FuturisticNeonButton';
+import { ArrowRight, CheckCircle, Star, Cloud, Brain, Shield, Zap, TrendingUp, Target } from 'lucide-react';
 import { ENHANCED_SERVICES_DATA, MARKET_ANALYSIS } from '../data/enhancedServicesData';
 
 export default function HomePage() {
@@ -52,7 +50,12 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 relative overflow-hidden">
-      <FuturisticAnimatedBackground variant="cyberpunk" intensity="medium" className="absolute inset-0 -z-10" />
+      {/* Animated Background */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/20 to-cyan-900/20"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(139,113,242,0.1),transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_30%,rgba(34,221,210,0.1)_50%,transparent_70%)] animate-pulse"></div>
+      </div>
       
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 px-6">
@@ -84,26 +87,19 @@ export default function HomePage() {
               ))}
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <FuturisticNeonButton
-                variant="primary"
-                size="lg"
-                glowIntensity="high"
+              <button
                 onClick={() => window.location.href = '/services'}
-                className="mx-auto sm:mx-0"
+                className="mx-auto sm:mx-0 px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
               >
                 Explore Services
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </FuturisticNeonButton>
-              <FuturisticNeonButton
-                variant="secondary"
-                size="lg"
-                glowIntensity="medium"
+                <ArrowRight className="w-5 h-5 ml-2 inline" />
+              </button>
+              <button
                 onClick={() => window.location.href = '/contact'}
-                className="mx-auto sm:mx-0"
+                className="mx-auto sm:mx-0 px-8 py-4 bg-transparent border-2 border-cyan-400 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-400 hover:text-black transition-all duration-300"
               >
-                Get Started Today
-                <Rocket className="w-5 h-5 ml-2" />
-              </FuturisticNeonButton>
+                Get Started
+              </button>
             </div>
           </motion.div>
         </div>
@@ -181,7 +177,7 @@ export default function HomePage() {
                 className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-purple-400/30 transition-all duration-300 group"
               >
                 <div className="flex items-center justify-between mb-4">
-                  <div className="text-2xl">{service.images[0]}</div>
+                  <div className="text-2xl">{service.images?.[0] || '🚀'}</div>
                   <div className="flex items-center gap-2">
                     <Star className="w-4 h-4 text-yellow-400 fill-current" />
                     <span className="text-white/80 text-sm">{service.rating}</span>
@@ -206,28 +202,24 @@ export default function HomePage() {
                     AI Score: {service.aiScore}%
                   </div>
                 </div>
-                <FuturisticNeonButton
-                  variant="primary"
-                  size="sm"
-                  fullWidth
+                <button
                   onClick={() => window.location.href = `/services#${service.id}`}
+                  className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                 >
                   Learn More
-                </FuturisticNeonButton>
+                </button>
               </motion.div>
             ))}
           </div>
           
           <div className="text-center mt-12">
-            <FuturisticNeonButton
-              variant="secondary"
-              size="lg"
-              glowIntensity="high"
+            <button
               onClick={() => window.location.href = '/services'}
+              className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
             >
               View All Services
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </FuturisticNeonButton>
+              <ArrowRight className="w-5 h-5 ml-2 inline" />
+            </button>
           </div>
         </div>
       </section>
@@ -264,9 +256,9 @@ export default function HomePage() {
                 Average market prices across service categories
               </p>
               <ul className="space-y-2 text-sm text-white/60">
-                <li>• AI & Automation: {MARKET_ANALYSIS.averagePrices["AI & Automation"]}</li>
-                <li>• Cloud & Infrastructure: {MARKET_ANALYSIS.averagePrices["Cloud & Infrastructure"]}</li>
-                <li>• Cybersecurity: {MARKET_ANALYSIS.averagePrices["Cybersecurity"]}</li>
+                <li>• AI & Automation: $8,000 - $15,000</li>
+                <li>• Cloud & Infrastructure: $15,000 - $30,000</li>
+                <li>• Cybersecurity: $18,000 - $35,000</li>
               </ul>
             </motion.div>
             
@@ -285,9 +277,9 @@ export default function HomePage() {
                 Key market trends and growth indicators
               </p>
               <ul className="space-y-2 text-sm text-white/60">
-                <li>• {MARKET_ANALYSIS.marketTrends[0]}</li>
-                <li>• {MARKET_ANALYSIS.marketTrends[1]}</li>
-                <li>• {MARKET_ANALYSIS.marketTrends[2]}</li>
+                <li>• {MARKET_ANALYSIS.keyTrends[0]}</li>
+                <li>• {MARKET_ANALYSIS.keyTrends[1]}</li>
+                <li>• {MARKET_ANALYSIS.keyTrends[2]}</li>
               </ul>
             </motion.div>
             
@@ -306,9 +298,9 @@ export default function HomePage() {
                 Our key differentiators in the market
               </p>
               <ul className="space-y-2 text-sm text-white/60">
-                <li>• {MARKET_ANALYSIS.competitiveAdvantages[0]}</li>
-                <li>• {MARKET_ANALYSIS.competitiveAdvantages[1]}</li>
-                <li>• {MARKET_ANALYSIS.competitiveAdvantages[2]}</li>
+                <li>• AI-first approach with proven results</li>
+                <li>• Enterprise-grade security and compliance</li>
+                <li>• Scalable architecture for growth</li>
               </ul>
             </motion.div>
           </div>
@@ -363,24 +355,19 @@ export default function HomePage() {
               Join hundreds of companies that have already revolutionized their operations with our cutting-edge technology solutions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <FuturisticNeonButton
-                variant="primary"
-                size="lg"
-                glowIntensity="high"
+              <button
                 onClick={() => window.location.href = '/services'}
+                className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
               >
                 Explore Services
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </FuturisticNeonButton>
-              <FuturisticNeonButton
-                variant="secondary"
-                size="lg"
-                glowIntensity="medium"
+                <ArrowRight className="w-5 h-5 ml-2 inline" />
+              </button>
+              <button
                 onClick={() => window.location.href = '/contact'}
+                className="px-8 py-4 bg-transparent border-2 border-cyan-400 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-400 hover:text-black transition-all duration-300"
               >
-                Get Started Today
-                <Rocket className="w-5 h-5 ml-2" />
-              </FuturisticNeonButton>
+                Get Started
+              </button>
             </div>
           </motion.div>
         </div>

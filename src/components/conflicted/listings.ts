@@ -8,21 +8,7 @@ export interface ProductListing {
   pricingModel: 'one-time' | 'subscription' | 'usage-based' | 'custom';
   features: string[];
   tags: string[];
-<<<<<<< HEAD
-  author: {
-    name: string;
-    id: string;
-    avatarUrl: string;
-  };
-  images: string[];
-  createdAt: string;
-  rating: number;
-  reviewCount: number;
-  featured?: boolean;
-  location: string;
-  availability: string;
-  aiScore: number;
-=======
+
   images?: string[];
   rating?: number;
   reviewCount?: number;
@@ -50,5 +36,4 @@ export interface ProductListing {
   popular?: boolean;
   new?: boolean;
   aiScore?: number;
->>>>>>> a4b0ef56a21d1919a0e2729e4ba64fbc8c4b3f44
 }
