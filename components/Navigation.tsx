@@ -22,6 +22,7 @@ const Navigation = () => {
     { name: 'Services', href: '/services', icon: '🚀' },
     { name: 'Products', href: '/products', icon: '💎' },
     { name: 'Case Studies', href: '/case-studies', icon: '📊' },
+    { name: 'Testimonials', href: '/testimonials', icon: '⭐' },
     { name: 'Blog', href: '/blog', icon: '📝' },
     { name: 'Contact', href: '/contact', icon: '📞' }
   ];
