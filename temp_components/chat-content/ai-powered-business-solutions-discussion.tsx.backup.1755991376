@@ -1,7 +1,0 @@
-<<<<<<< HEAD
-export default function ChatContentPage() {
-  return <div className="py-10">Chat Content</div>;
-}
-=======
-export default function AiBusinessSolutionsChat() { return <div className="py-12">AI-powered business solutions discussion.</div>; }
->>>>>>> origin/cursor/build-talent-profiles-and-hire-workflow-bea7
