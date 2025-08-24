@@ -3,7 +3,7 @@ import { Header } from '../components/header/Header';
 import { Footer } from '../components/Footer';
 import { Helmet } from 'react-helmet-async';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Home, Zap, Info, Phone, Search, Globe, Users, Award, Rocket, Shield, Brain, Cloud, Code, BarChart3, Lock, Database, Target, TrendingUp, CheckCircle, ArrowRight, Mail } from 'lucide-react';
+import { X, Home, Zap, Info, Phone, Search, Globe, Rocket, Shield, Brain, Cloud, Code, Lock, Database, Target, ArrowRight, Mail } from 'lucide-react';
 
 interface LayoutProps {
   children: React.ReactNode;

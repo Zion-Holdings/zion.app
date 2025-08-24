@@ -75,7 +75,6 @@ html {
                  0 0 10px rgba(0, 212, 255, 0.6),
                  0 0 15px rgba(0, 212, 255, 0.4);
   }
-<<<<<<< HEAD
   50% { 
     text-shadow: 0 0 10px rgba(0, 212, 255, 1),
                  0 0 20px rgba(0, 212, 255, 0.8),
@@ -87,7 +86,6 @@ html {
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-10px); }
 }
-=======
 
   .dark {
     --background: 0 0% 7%;
@@ -173,7 +171,6 @@ html {
   * {
     @apply border-zinc-200 dark:border-zinc-800;
   }
->>>>>>> 181cfac2212680d9635253bde265173d9d08eca1
 
 @keyframes shimmer {
   0% { background-position: -200% 0; }
@@ -649,7 +646,6 @@ html {
   }
   
   body {
-<<<<<<< HEAD
     background: white !important;
     color: black !important;
   }
@@ -677,7 +673,6 @@ html {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
-=======
     @apply bg-zinc-50 dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100 font-sans;
   }
 
@@ -1203,9 +1198,6 @@ html {
 
   .heading-responsive {
     @apply text-2xl sm:text-3xl lg:text-4xl xl:text-5xl;
-=======
-    @apply bg-background text-foreground;
->>>>>>> 181cfac2212680d9635253bde265173d9d08eca1
   }
 }
 

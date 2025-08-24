@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { motion } from 'framer-motion';
+import { Phone, Mail, MapPin, Clock, Users, Award, Globe, Zap, Brain, Shield, Cloud, Code, BarChart3, Rocket, CheckCircle, MessageSquare, Send, MapPin as MapPinIcon } from 'lucide-react';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -16,8 +17,6 @@ export default function Contact() {
     subject?: string;
     message?: string;
   }>({});
-
-  const [isChatOpen, setIsChatOpen] = useState(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
