@@ -16,7 +16,8 @@ import {
   BookOpen,
   Code,
   Building,
-  Clock
+  Clock,
+  Sparkles
 } from "lucide-react";
 
 export function FeatureCTAs() {
@@ -101,6 +102,14 @@ export function FeatureCTAs() {
       link: "/zion-hire-ai",
       badge: "Premium",
       details: "Automate screening, improve candidate matching, and enhance the hiring experience with our AI recruiting solution."
+    },
+    {
+      title: "Micro SAAS Services",
+      description: "Comprehensive suite of micro SAAS solutions for AI, IT, development, analytics, security, and automation.",
+      icon: <Sparkles className="h-10 w-10 p-2 rounded-md bg-gradient-to-r from-zion-purple to-zion-cyan text-white" />,
+      link: "/micro-saas-services",
+      badge: "New",
+      details: "Transform your business with our cutting-edge micro SAAS solutions designed to solve specific challenges and drive growth."
     }
   ];
 
