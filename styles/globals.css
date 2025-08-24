@@ -2,8 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Import Modern Design System */
-@import './modern-design-system.css';
+/* Modern Design System styles integrated */
 
 /* Enhanced Futuristic Design System with Superior Contrast */
 :root {

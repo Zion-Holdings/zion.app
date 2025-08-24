@@ -1,1 +1,18 @@
-{"/_app":"pages/_app.js","/_error":"pages/_error.js","/_document":"pages/_document.js","/404":"pages/404.html","/comprehensive-2025-services-showcase":"pages/comprehensive-2025-services-showcase.html","/":"pages/index.html","/pricing-2025":"pages/pricing-2025.html"}
+{
+  "/_app": "pages/_app.js",
+  "/_error": "pages/_error.js",
+  "/_document": "pages/_document.js",
+  "/about": "pages/about.js",
+  "/careers": "pages/careers.js",
+  "/contact": "pages/contact.js",
+  "/cookies": "pages/cookies.js",
+  "/favicon.ico": "pages/favicon.ico.js",
+  "/": "pages/index.js",
+  "/privacy": "pages/privacy.js",
+  "/reports/updates/update-2025-08-15-0457": "pages/reports/updates/update-2025-08-15-0457.js",
+  "/reports/updates/update-2025-08-15-0507": "pages/reports/updates/update-2025-08-15-0507.js",
+  "/reports/updates/update-2025-08-15-0508": "pages/reports/updates/update-2025-08-15-0508.js",
+  "/services": "pages/services.js",
+  "/terms": "pages/terms.js",
+  "/sitemap.xml": "pages/sitemap.xml.js"
+}
