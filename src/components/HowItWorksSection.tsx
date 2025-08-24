@@ -1,247 +1,140 @@
-
-import { GradientHeading } from "./GradientHeading";
-import { Check, Handshake, Search, Send, ArrowRight } from "lucide-react";
-import { motion } from "framer-motion";
-import { useState } from "react";
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Search, Users, FileText, Rocket, CheckCircle } from 'lucide-react';
 
 const steps = [
   {
-    title: "Post",
-    description: "Publish your service, job, or equipment in minutes with our AI-powered form.",
-    icon: Send,
-    color: "from-zion-purple to-zion-purple-dark",
-    delay: 0,
-    features: ["AI-powered forms", "Quick setup", "Smart suggestions"]
+    icon: <Search className="w-8 h-8" />,
+    title: "Discover",
+    description: "Browse our comprehensive catalog of services, talent, and solutions",
+    color: "from-zion-cyan to-zion-cyan-dark"
   },
   {
-    title: "Match",
-    description: "Our AI automatically matches your needs with the perfect providers or opportunities.",
-    icon: Search,
-    color: "from-zion-cyan to-zion-blue",
-    delay: 0.2,
-    features: ["Smart algorithms", "Instant results", "Quality filtering"]
+    icon: <Users className="w-8 h-8" />,
+    title: "Connect",
+    description: "Get matched with the perfect team or service for your project",
+    color: "from-zion-purple to-zion-purple-dark"
   },
   {
-    title: "Hire/Buy",
-    description: "Connect directly with matched providers and complete your transaction securely.",
-    icon: Handshake,
-    color: "from-zion-blue to-zion-cyan",
-    delay: 0.4,
-    features: ["Secure payments", "Direct contact", "Escrow protection"]
+    icon: <FileText className="w-8 h-8" />,
+    title: "Plan",
+    description: "Collaborate on project requirements, timeline, and deliverables",
+    color: "from-zion-blue to-zion-blue-dark"
   },
   {
-    title: "Done",
-    description: "Enjoy hassle-free delivery and support for your technology solutions.",
-    icon: Check,
-    color: "from-zion-purple-light to-zion-cyan",
-    delay: 0.6,
-    features: ["Quality assurance", "Ongoing support", "Success tracking"]
+    icon: <Rocket className="w-8 h-8" />,
+    title: "Execute",
+    description: "Watch your vision come to life with our expert execution",
+    color: "from-green-500 to-emerald-600"
   },
+  {
+    icon: <CheckCircle className="w-8 h-8" />,
+    title: "Deliver",
+    description: "Receive your completed project with ongoing support and maintenance",
+    color: "from-orange-500 to-red-600"
+  }
 ];
 
 export function HowItWorksSection() {
-  const [activeStep, setActiveStep] = useState<number | null>(null);
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        duration: 1,
-        staggerChildren: 0.3,
-      },
-    },
+        staggerChildren: 0.2,
+        delayChildren: 0.1
+      }
+    }
   };
 
-  const stepVariants = {
-    hidden: { opacity: 0, y: 50, scale: 0.9 },
+  const itemVariants = {
+    hidden: { y: 30, opacity: 0 },
     visible: {
-      opacity: 1,
       y: 0,
-      scale: 1,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut",
-      },
-    },
-    hover: {
-      y: -10,
-      scale: 1.05,
-      transition: {
-        duration: 0.3,
-        ease: "easeOut",
-      },
-    },
-  };
-
-  const titleVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
       opacity: 1,
-      y: 0,
       transition: {
         duration: 0.6,
-        ease: "easeOut",
-      },
-    },
-  };
-
-  const iconVariants = {
-    hover: {
-      scale: 1.1,
-      rotate: 5,
-      transition: {
-        duration: 0.3,
-        ease: "easeOut",
-      },
-    },
+        ease: "easeOut"
+      }
+    }
   };
 
   return (
-    <section 
-      className="py-20 bg-zion-blue relative overflow-hidden"
-      aria-labelledby="how-it-works-heading"
-    >
-      {/* Background decoration */}
+    <section className="py-20 bg-gradient-to-br from-zion-blue via-zion-slate-dark to-zion-blue-dark relative overflow-hidden">
+      {/* Background pattern */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-gradient-to-br from-zion-purple to-transparent rounded-full blur-2xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-32 h-32 bg-gradient-to-tl from-zion-cyan to-transparent rounded-full blur-2xl" />
+        <div className="absolute inset-0" style={{
+          backgroundImage: `radial-gradient(circle at 50% 50%, currentColor 1px, transparent 1px)`,
+          backgroundSize: '40px 40px'
+        }} />
       </div>
-
+      
       <div className="container mx-auto px-4 relative z-10">
         <motion.div 
           className="text-center mb-16"
-          variants={titleVariants}
-          initial="hidden"
-          whileInView="visible"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
         >
-          <GradientHeading id="how-it-works-heading">How It Works</GradientHeading>
-          <p className="text-zion-slate-light text-lg mt-4 max-w-2xl mx-auto leading-relaxed">
-            A simple four-step process to connect technology providers with clients
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            How It <span className="bg-gradient-to-r from-zion-cyan to-zion-purple bg-clip-text text-transparent">Works</span>
+          </h2>
+          <p className="text-zion-slate-light text-lg max-w-3xl mx-auto">
+            Our streamlined process ensures your project success from concept to completion
           </p>
         </motion.div>
-
+        
         <motion.div 
           className="relative"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true }}
         >
-          {/* Enhanced timeline line */}
-          <div className="absolute left-4 md:left-1/2 top-0 h-full w-1 bg-gradient-to-b from-zion-purple via-zion-cyan to-zion-purple-light transform -translate-x-1/2 md:block hidden">
-            {/* Timeline dots */}
-            {steps.map((_, index) => (
-              <motion.div
-                key={index}
-                className="absolute w-4 h-4 bg-zion-blue border-2 border-zion-purple rounded-full transform -translate-x-1/2"
-                style={{ top: `${(index / (steps.length - 1)) * 100}%` }}
-                initial={{ scale: 0 }}
-                whileInView={{ scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.2, duration: 0.5 }}
-              />
-            ))}
-          </div>
+          {/* Connection line */}
+          <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-zion-cyan via-zion-purple to-zion-blue transform -translate-y-1/2 hidden lg:block" />
           
-          <div className="space-y-16 md:space-y-0">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
             {steps.map((step, index) => (
-              <motion.div 
-                key={step.title}
-                className={`flex flex-col md:flex-row items-center ${
-                  index % 2 === 0 ? "md:flex-row-reverse" : ""
-                } relative`}
-                variants={stepVariants}
-                whileHover="hover"
-                onHoverStart={() => setActiveStep(index)}
-                onHoverEnd={() => setActiveStep(null)}
-              >
-                <div className="md:w-1/2 mb-8 md:mb-0 md:px-12 text-center md:text-right">
-                  {index % 2 === 0 ? (
-                    <motion.div
-                      initial={{ opacity: 0, x: 20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: step.delay + 0.3, duration: 0.6 }}
-                    >
-                      <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-zion-cyan transition-colors duration-300">
-                        {step.title}
-                      </h3>
-                      <p className="text-zion-slate-light mb-4 leading-relaxed">
-                        {step.description}
-                      </p>
-                      
-                      {/* Feature highlights */}
-                      <div className="space-y-2">
-                        {step.features.map((feature, featureIndex) => (
-                          <div key={featureIndex} className="flex items-center gap-2 text-sm justify-center md:justify-end">
-                            <div className="w-2 h-2 bg-zion-cyan rounded-full" />
-                            <span className="text-zion-slate-light/80">{feature}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </motion.div>
-                  ) : null}
-                </div>
-                
-                <motion.div 
-                  className="relative z-10 flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-zion-blue-light to-zion-blue border-2 border-zion-purple mx-4 md:mx-0 shadow-lg group-hover:shadow-xl transition-all duration-300"
-                  variants={iconVariants}
-                  whileHover="hover"
-                >
-                  <step.icon className="w-8 h-8 text-zion-cyan" />
-                  
+              <motion.div key={index} variants={itemVariants} className="relative">
+                <div className="text-center">
                   {/* Step number */}
-                  <div className="absolute -top-2 -right-2 w-6 h-6 bg-zion-purple text-white text-xs rounded-full flex items-center justify-center font-bold">
+                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-zion-slate-dark border-2 border-zion-blue-light text-white font-bold text-lg mb-4 relative z-10">
                     {index + 1}
                   </div>
-                </motion.div>
-
-                <div className="md:w-1/2 md:px-12 text-center md:text-left">
-                  {index % 2 !== 0 ? (
-                    <motion.div
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: step.delay + 0.3, duration: 0.6 }}
-                    >
-                      <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-zion-cyan transition-colors duration-300">
-                        {step.title}
-                      </h3>
-                      <p className="text-zion-slate-light mb-4 leading-relaxed">
-                        {step.description}
-                      </p>
-                      
-                      {/* Feature highlights */}
-                      <div className="space-y-2">
-                        {step.features.map((feature, featureIndex) => (
-                          <div key={featureIndex} className="flex items-center gap-2 text-sm justify-center md:justify-start">
-                            <div className="w-2 h-2 bg-zion-cyan rounded-full" />
-                            <span className="text-zion-slate-light/80">{feature}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </motion.div>
-                  ) : null}
+                  
+                  {/* Icon */}
+                  <div className={`inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br ${step.color} mb-6 shadow-lg`}>
+                    <div className="text-white">
+                      {step.icon}
+                    </div>
+                  </div>
+                  
+                  <h3 className="text-xl font-semibold text-white mb-3">
+                    {step.title}
+                  </h3>
+                  <p className="text-zion-slate-light leading-relaxed text-sm">
+                    {step.description}
+                  </p>
                 </div>
               </motion.div>
             ))}
           </div>
         </motion.div>
-
-        {/* Call to action */}
+        
+        {/* Bottom CTA */}
         <motion.div 
           className="text-center mt-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 1 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
         >
-          <div className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-zion-purple to-zion-purple-dark text-white rounded-full hover:from-zion-purple-light hover:to-zion-purple transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
-            <span className="font-medium">Ready to get started?</span>
-            <ArrowRight className="w-5 h-5" />
-          </div>
+          <button className="inline-flex items-center gap-3 bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+            Get Started Today
+            <Rocket className="w-5 h-5" />
+          </button>
         </motion.div>
       </div>
     </section>

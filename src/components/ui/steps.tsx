@@ -1,56 +1,58 @@
-import * as React from "react"
-import { Check } from "lucide-react"
-
-import { cn } from "@/lib/utils"
+import React from 'react';
+import { cn } from '@/lib/utils';
 
 interface StepsProps {
-  currentStep: number
-  steps: string[]
-  className?: string
-}
-
-const Steps: React.FC<StepsProps> = ({ currentStep, steps, className }) => {
-  return (
-    <div className={cn("flex items-center justify-center space-x-4", className)}>
-      {steps.map((step, index) => (
-        <div key={index} className="flex items-center">
-          <div
-            className={cn(
-              "flex h-8 w-8 items-center justify-center rounded-full border-2 text-sm font-medium",
-              index < currentStep
-                ? "border-zion-cyan bg-zion-cyan text-white"
-                : index === currentStep
-                ? "border-zion-cyan bg-white text-zion-cyan"
-                : "border-gray-300 bg-white text-gray-500"
-            )}
-          >
-            {index < currentStep ? (
-              <Check className="h-4 w-4" />
-            ) : (
-              index + 1
-            )}
-          </div>
-          {index < steps.length - 1 && (
-            <div
-              className={cn(
-                "h-0.5 w-8",
-                index < currentStep ? "bg-zion-cyan" : "bg-gray-300"
-              )}
-            />
-          )}
-        </div>
-      ))}
-    </div>
-  )
+  children: React.ReactNode;
+  className?: string;
+  currentStep?: number;
 }
 
 interface StepProps {
-  children: React.ReactNode
-  className?: string
+  children: React.ReactNode;
+  className?: string;
+  isActive?: boolean;
+  isCompleted?: boolean;
+  status?: string;
+  label?: string;
+  description?: string;
 }
 
-const Step: React.FC<StepProps> = ({ children, className }) => {
-  return <div className={cn("", className)}>{children}</div>
-}
+export const Steps: React.FC<StepsProps> = ({ children, className, currentStep = 0 }) => {
+  return (
+    <div className={cn("flex items-center space-x-2", className)}>
+      {React.Children.map(children, (child, index) => {
+        if (React.isValidElement(child)) {
+          return React.cloneElement(child, {
+            isActive: index === currentStep,
+            isCompleted: index < currentStep,
+          });
+        }
+        return child;
+      })}
+    </div>
+  );
+};
 
-export { Steps, Step }
+export const Step: React.FC<StepProps> = ({ children, className, isActive, isCompleted }) => {
+  return (
+    <div
+      className={cn(
+        "flex items-center space-x-2",
+        isActive && "text-primary",
+        isCompleted && "text-green-600",
+        className
+      )}
+    >
+      <div
+        className={cn(
+          "flex h-8 w-8 items-center justify-center rounded-full border-2 text-sm font-medium",
+          isActive && "border-primary bg-primary text-white",
+          isCompleted && "border-green-600 bg-green-600 text-white",
+          !isActive && !isCompleted && "border-gray-300 text-gray-500"
+        )}
+      >
+        {isCompleted ? "✓" : children}
+      </div>
+    </div>
+  );
+};
