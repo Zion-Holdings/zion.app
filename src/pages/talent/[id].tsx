@@ -39,7 +39,7 @@ export default function TalentProfilePage() {
   }, [id]);
 
   if (loading) return <ProfileLoadingState />;
-  if (error || !profile) return <ProfileErrorState error={error} />;
+  if (error || !profile) return <ProfileErrorState error={error || 'Profile not found'} />;
 
   return (
     <>
