@@ -6,7 +6,7 @@ import { emergingTechServices2026 } from '../data/2026-emerging-tech-services';
 import { 
   Search, Filter, Star, Users, TrendingUp, 
   Clock, Zap, Shield, Cloud, Brain, 
-  Database, Globe, Robot, Cube, Sparkles
+  Database, Globe, Cpu, Box, Sparkles
 } from 'lucide-react';
 
 interface Service {
@@ -157,12 +157,12 @@ const ComprehensiveServicesShowcase2026: React.FC = () => {
       'IT Service Management': <Users className="w-5 h-5" />,
       'Backup & Disaster Recovery': <Cloud className="w-5 h-5" />,
       'Quantum Computing & AI': <Brain className="w-5 h-5" />,
-      'Blockchain & Web3': <Cube className="w-5 h-5" />,
+      'Blockchain & Web3': <Box className="w-5 h-5" />,
       'Internet of Things (IoT)': <Zap className="w-5 h-5" />,
       'Edge Computing & 5G': <Globe className="w-5 h-5" />,
-      'AR/VR & Immersive Technology': <Cube className="w-5 h-5" />,
-      'Robotics & Automation': <Robot className="w-5 h-5" />,
-      'Digital Twin & Simulation': <Cube className="w-5 h-5" />
+      'AR/VR & Immersive Technology': <Box className="w-5 h-5" />,
+      'Robotics & Automation': <Cpu className="w-5 h-5" />,
+      'Digital Twin & Simulation': <Box className="w-5 h-5" />
     };
     return iconMap[category] || <Sparkles className="w-5 h-5" />;
   };
