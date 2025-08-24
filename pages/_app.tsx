@@ -1,11 +1,11 @@
-import type { AppProps } from 'next/app'
-import '../styles/globals.css'
-import EnhancedLayout from '../components/layout/EnhancedLayout'
+import EnhancedLayout from '../components/layout/EnhancedLayout';
+import '../styles/enhanced-design-system.css';
+import '../styles/modern-design-system.css';
+import '../styles/globals.css';
+import type { AppProps } from 'next/app';
 
-export default function App({ Component, pageProps }: AppProps) {
-  return (
-    <EnhancedLayout>
-      <Component {...pageProps} />
-    </EnhancedLayout>
-  )
+function MyApp({ Component, pageProps }: AppProps) {
+  return <Component {...pageProps} />;
 }
+
+export default MyApp;
