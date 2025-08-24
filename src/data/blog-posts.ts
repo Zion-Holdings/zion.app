@@ -11,8 +11,9 @@ export const BLOG_POSTS: BlogPost[] = [
       avatar: '/avatars/zion-team.jpg'
     },
     publishedAt: '2024-01-15T10:00:00Z',
-    readTime: '2 min read',
-    tags: ['welcome', 'introduction']
+    readTime: 2,
+    tags: ['welcome', 'introduction'],
+    image: '/images/blog-placeholder.jpg'
   },
   {
     id: '2',
@@ -24,8 +25,9 @@ export const BLOG_POSTS: BlogPost[] = [
       avatar: '/avatars/ai-expert.jpg'
     },
     publishedAt: '2024-01-14T15:30:00Z',
-    readTime: '5 min read',
-    tags: ['AI', 'business', 'technology']
+    readTime: 5,
+    tags: ['AI', 'business', 'technology'],
+    image: '/images/blog-placeholder.jpg'
   }
 ];
 
@@ -49,9 +51,10 @@ export const generateRandomBlogPost = (): BlogPost => {
     title: titles[Math.floor(Math.random() * titles.length)],
     content: 'This is a sample blog post content that demonstrates our platform capabilities...',
     excerpt: 'This is a sample blog post excerpt...',
-    author: authors[Math.floor(Math.random() * authors.length)],
+    author: authors[Math.floor(Math.random() * titles.length)],
     publishedAt: new Date().toISOString(),
-    readTime: `${Math.floor(Math.random() * 10) + 1} min read`,
-    tags: ['sample', 'technology', 'innovation']
+    readTime: Math.floor(Math.random() * 10) + 1,
+    tags: ['sample', 'technology', 'innovation'],
+    image: '/images/blog-placeholder.jpg'
   };
 };

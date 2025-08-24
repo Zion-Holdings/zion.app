@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { createContext, useContext, useState, useCallback } from 'react';
 
 interface WhitelabelConfig {
   companyName: string;
@@ -22,16 +22,16 @@ const defaultConfig: WhitelabelConfig = {
   theme: 'auto'
 };
 
-const WhitelabelContext = React.createContext<WhitelabelContextType | undefined>(undefined);
+const WhitelabelContext = createContext<WhitelabelContextType | undefined>(undefined);
 
 export const WhitelabelProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [config, setConfig] = React.useState<WhitelabelConfig>(defaultConfig);
+  const [config, setConfig] = useState<WhitelabelConfig>(defaultConfig);
 
-  const updateConfig = React.useCallback((newConfig: Partial<WhitelabelConfig>) => {
+  const updateConfig = useCallback((newConfig: Partial<WhitelabelConfig>) => {
     setConfig(prev => ({ ...prev, ...newConfig }));
   }, []);
 
-  const resetConfig = React.useCallback(() => {
+  const resetConfig = useCallback(() => {
     setConfig(defaultConfig);
   }, []);
 
@@ -49,7 +49,7 @@ export const WhitelabelProvider: React.FC<{ children: React.ReactNode }> = ({ ch
 };
 
 export const useWhitelabel = (): WhitelabelContextType => {
-  const context = React.useContext(WhitelabelContext);
+  const context = useContext(WhitelabelContext);
   if (context === undefined) {
     throw new Error('useWhitelabel must be used within a WhitelabelProvider');
   }
