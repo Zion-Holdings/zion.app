@@ -94,7 +94,7 @@ export default function ServicesComparisonPage() {
           <div className="space-y-6">
             {popularServices.map((service) => (
               <div key={service.id} className="border border-gray-200 rounded-lg p-6">
-                <h3 className="text-xl font-semibold mb-4">{service.title}</h3>
+                <h3 className="text-xl font-semibold mb-4">{service.name}</h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <div className="text-center p-4 bg-green-50 border border-green-200 rounded-lg">
                     <h4 className="font-semibold text-green-800 mb-2">Zion Tech Group</h4>

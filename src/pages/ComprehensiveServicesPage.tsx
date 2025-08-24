@@ -9,7 +9,7 @@ export default function ComprehensiveServicesPage() {
 
   const filteredServices = useMemo(() => {
     return COMPREHENSIVE_SERVICES.filter(service => {
-      const matchesSearch = service.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      const matchesSearch = service.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
                            service.description.toLowerCase().includes(searchTerm.toLowerCase());
       const matchesCategory = !selectedCategory || service.category === selectedCategory;
       const matchesPrice = !priceRange || 
@@ -94,7 +94,7 @@ export default function ComprehensiveServicesPage() {
                   )}
                 </div>
                 
-                <h3 className="text-lg font-semibold mb-2">{service.title}</h3>
+                <h3 className="text-lg font-semibold mb-2">{service.name}</h3>
                 <p className="text-gray-600 text-sm mb-4">{service.description}</p>
                 
                 <div className="flex flex-wrap gap-2 mb-4">
@@ -168,10 +168,10 @@ export default function ComprehensiveServicesPage() {
               <div key={index} className="text-center p-6 border border-gray-200 rounded-lg">
                 <h3 className="text-lg font-semibold mb-2">{addon.name}</h3>
                 <p className="text-gray-600 text-sm mb-4">{addon.description}</p>
-                <div className="text-xl font-bold text-green-600 mb-2">
-                  ${addon.price}
+                <div className="flex items-center justify-between">
+                  <div className="text-sm text-gray-500">{addon.category}</div>
+                  <div className="text-sm text-gray-500">${addon.price}</div>
                 </div>
-                <div className="text-sm text-gray-500">{addon.billing_frequency}</div>
               </div>
             ))}
           </div>
