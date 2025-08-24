@@ -6,7 +6,8 @@ import { HowItWorksSection } from "@/components/HowItWorksSection";
 import { NewsletterSection } from "@/components/NewsletterSection";
 import { FeaturedListingsSection } from "@/components/FeaturedListingsSection";
 import { SEO } from "@/components/SEO";
-import { HeroSection } from "@/components/HeroSection";
+import { FuturisticHero } from "@/components/home/FuturisticHero";
+import { EnhancedServicesShowcase } from "@/components/home/EnhancedServicesShowcase";
 import { QuickAccess } from "@/components/home/QuickAccess";
 import { FeatureCTAs } from "@/components/home/FeatureCTAs";
 import { FeatureHighlights } from "@/components/home/FeatureHighlights";
@@ -17,15 +18,15 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background">
       <SEO 
-        title="Zion - The Tech & AI Marketplace" 
-        description="Discover top AI and tech talent, services, and equipment in one place."
-        keywords="AI, technology, marketplace, services, talent"
-        canonical="https://app.ziontechgroup.com/"
+        title="Zion Tech Group - The Future of Tech Solutions" 
+        description="Discover cutting-edge AI services, innovative IT solutions, and transformative business tools. Zion Tech Group - Where innovation meets excellence."
+        keywords="AI services, IT solutions, business automation, cloud services, cybersecurity, micro SAAS, Zion Tech Group"
+        canonical="https://ziontechgroup.com/"
       />
 
-      <ITServiceRequestHero />
+      <FuturisticHero />
 
-      <HeroSection />
+      <EnhancedServicesShowcase />
       
       <QuickAccess />
       

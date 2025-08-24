@@ -2,12 +2,13 @@ export interface MicroSaasService {
   id: string;
   title: string;
   description: string;
-  category: 'AI Services' | 'IT Services' | 'Micro SAAS' | 'Development' | 'Analytics' | 'Security' | 'Automation';
+  category: string;
+  subcategory: string;
   price: {
     monthly: number;
     yearly: number;
-    oneTime?: number;
     currency: string;
+    pricingModel: 'subscription' | 'usage' | 'one-time' | 'enterprise';
   };
   features: string[];
   benefits: string[];
@@ -15,736 +16,505 @@ export interface MicroSaasService {
   targetAudience: string[];
   integration: string[];
   support: string[];
-  link: string;
-  badge?: 'Popular' | 'New' | 'Featured' | 'Premium' | 'Enterprise';
+  website: string;
+  contact: {
+    email: string;
+    phone: string;
+    address: string;
+  };
   rating: number;
   reviewCount: number;
-  aiScore: number;
+  launchDate: string;
+  status: 'live' | 'beta' | 'coming-soon';
+  tags: string[];
   image: string;
-  author: {
-    name: string;
-    id: string;
-    avatarUrl?: string;
-  };
+  demoUrl?: string;
+  documentationUrl?: string;
 }
 
 export const MICRO_SAAS_SERVICES: MicroSaasService[] = [
-  // AI Services
+  // AI & Machine Learning Services
   {
-    id: "ai-content-generator",
-    title: "AI Content Generator Pro",
-    description: "Advanced AI-powered content creation platform for blogs, social media, marketing copy, and technical documentation with SEO optimization.",
-    category: "AI Services",
+    id: 'ai-content-generator',
+    title: 'Zion AI Content Studio',
+    description: 'AI-powered content generation platform for marketing, blogs, and social media with advanced customization and brand voice training.',
+    category: 'AI Services',
+    subcategory: 'Content Generation',
     price: {
       monthly: 49,
       yearly: 490,
-      currency: "$"
+      currency: '$',
+      pricingModel: 'subscription'
     },
     features: [
-      "GPT-4 powered content generation",
-      "SEO optimization suggestions",
-      "Multi-language support (50+ languages)",
-      "Content templates library",
-      "Plagiarism detection",
-      "Brand voice customization",
-      "Content calendar management",
-      "Analytics and performance tracking"
+      'AI-powered content generation',
+      'Brand voice customization',
+      'Multi-language support',
+      'SEO optimization',
+      'Content calendar management',
+      'Plagiarism detection',
+      'Team collaboration tools',
+      'Analytics and performance tracking'
     ],
     benefits: [
-      "10x faster content creation",
-      "SEO-optimized content that ranks",
-      "Consistent brand voice across all content",
-      "Reduce content creation costs by 70%",
-      "24/7 content generation capability"
+      'Save 80% time on content creation',
+      'Improve SEO rankings with AI-optimized content',
+      'Maintain consistent brand voice across all channels',
+      'Scale content production without hiring more writers'
     ],
     useCases: [
-      "Marketing agencies",
-      "E-commerce businesses",
-      "Content creators",
-      "Startups",
-      "Enterprise marketing teams"
+      'Marketing agencies',
+      'E-commerce businesses',
+      'Content creators',
+      'Small to medium businesses',
+      'Startups'
     ],
-    targetAudience: ["Marketing professionals", "Content creators", "Business owners", "Agencies"],
-    integration: ["WordPress", "Shopify", "HubSpot", "Mailchimp", "Social media platforms"],
-    support: ["24/7 live chat", "Email support", "Video tutorials", "Community forum"],
-    link: "https://ziontechgroup.com/ai-content-generator",
-    badge: "Popular",
-    rating: 4.9,
-    reviewCount: 1247,
-    aiScore: 96,
-    image: "https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=800&h=500",
-    author: {
-      name: "Zion AI Labs",
-      id: "zion-ai-labs",
-      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
-    }
+    targetAudience: ['Marketing teams', 'Content creators', 'Business owners', 'Agencies'],
+    integration: ['WordPress', 'Shopify', 'HubSpot', 'Mailchimp', 'Social media platforms'],
+    support: ['24/7 chat support', 'Email support', 'Video tutorials', 'Live webinars'],
+    website: 'https://ziontechgroup.com/ai-content-studio',
+    contact: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      address: '364 E Main St STE 1008 Middletown DE 19709'
+    },
+    rating: 4.8,
+    reviewCount: 156,
+    launchDate: '2024-01-15',
+    status: 'live',
+    tags: ['AI', 'Content Generation', 'Marketing', 'SEO', 'Automation'],
+    image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&h=500'
   },
   {
-    id: "ai-chatbot-builder",
-    title: "AI Chatbot Builder Suite",
-    description: "No-code AI chatbot creation platform with advanced NLP, multi-channel deployment, and analytics dashboard for customer support automation.",
-    category: "AI Services",
+    id: 'ai-chatbot-platform',
+    title: 'Zion AI Chatbot Builder',
+    description: 'No-code AI chatbot creation platform with advanced NLP, multi-language support, and seamless integration capabilities.',
+    category: 'AI Services',
+    subcategory: 'Chatbots',
     price: {
       monthly: 79,
       yearly: 790,
-      currency: "$"
+      currency: '$',
+      pricingModel: 'subscription'
     },
     features: [
-      "Drag-and-drop chatbot builder",
-      "Advanced NLP and intent recognition",
-      "Multi-language support",
-      "Integration with CRM systems",
-      "Analytics and conversation insights",
-      "Custom branding options",
-      "API access for developers",
-      "Multi-channel deployment (Web, WhatsApp, Facebook)"
+      'No-code chatbot builder',
+      'Advanced NLP processing',
+      'Multi-language support',
+      'Custom integrations',
+      'Analytics dashboard',
+      'A/B testing',
+      'Voice recognition',
+      'Sentiment analysis'
     ],
     benefits: [
-      "Reduce customer support costs by 60%",
-      "24/7 customer service availability",
-      "Instant response to common queries",
-      "Scalable customer support solution",
-      "Improved customer satisfaction scores"
+      'Reduce customer support costs by 60%',
+      'Provide 24/7 customer service',
+      'Improve customer satisfaction scores',
+      'Scale support operations efficiently'
     ],
     useCases: [
-      "E-commerce customer support",
-      "Lead qualification",
-      "Appointment booking",
-      "FAQ automation",
-      "Customer onboarding"
+      'Customer support',
+      'Lead generation',
+      'E-commerce assistance',
+      'Appointment booking',
+      'FAQ automation'
     ],
-    targetAudience: ["Customer support teams", "E-commerce businesses", "Service providers", "Startups"],
-    integration: ["Shopify", "WooCommerce", "Zendesk", "Salesforce", "HubSpot"],
-    support: ["Live chat support", "Video tutorials", "Documentation", "Community forum"],
-    link: "https://ziontechgroup.com/ai-chatbot-builder",
-    badge: "New",
-    rating: 4.8,
-    reviewCount: 892,
-    aiScore: 94,
-    image: "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&h=500",
-    author: {
-      name: "Zion Conversational AI",
-      id: "zion-conversational-ai",
-      avatarUrl: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=100&h=100"
-    }
+    targetAudience: ['Customer service teams', 'E-commerce businesses', 'Service providers', 'Startups'],
+    integration: ['Website', 'Facebook Messenger', 'WhatsApp', 'Slack', 'CRM systems'],
+    support: ['Priority support', 'Implementation assistance', 'Training sessions', 'Custom development'],
+    website: 'https://ziontechgroup.com/ai-chatbot',
+    contact: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      address: '364 E Main St STE 1008 Middletown DE 19709'
+    },
+    rating: 4.9,
+    reviewCount: 89,
+    launchDate: '2024-02-01',
+    status: 'live',
+    tags: ['AI', 'Chatbots', 'Customer Service', 'Automation', 'NLP'],
+    image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&h=500'
   },
   {
-    id: "ai-data-analytics",
-    title: "AI-Powered Business Analytics",
-    description: "Intelligent data analytics platform that uses machine learning to uncover insights, predict trends, and provide actionable business recommendations.",
-    category: "AI Services",
+    id: 'ai-data-analytics',
+    title: 'Zion AI Data Insights',
+    description: 'Intelligent data analytics platform that transforms raw data into actionable business insights using AI and machine learning.',
+    category: 'AI Services',
+    subcategory: 'Data Analytics',
     price: {
       monthly: 99,
       yearly: 990,
-      currency: "$"
+      currency: '$',
+      pricingModel: 'subscription'
     },
     features: [
-      "Automated data insights generation",
-      "Predictive analytics and forecasting",
-      "Natural language query interface",
-      "Real-time dashboard creation",
-      "Data visualization tools",
-      "Automated reporting",
-      "Anomaly detection",
-      "Custom ML model training"
+      'AI-powered data processing',
+      'Predictive analytics',
+      'Real-time dashboards',
+      'Custom reporting',
+      'Data visualization',
+      'Automated insights',
+      'Data integration',
+      'Advanced forecasting'
     ],
     benefits: [
-      "Make data-driven decisions faster",
-      "Identify hidden business opportunities",
-      "Predict market trends and customer behavior",
-      "Automate routine data analysis tasks",
-      "Improve business performance by 25%"
+      'Make data-driven decisions faster',
+      'Identify hidden business opportunities',
+      'Predict market trends and customer behavior',
+      'Optimize business operations with AI insights'
     ],
     useCases: [
-      "Sales forecasting",
-      "Customer behavior analysis",
-      "Inventory optimization",
-      "Risk assessment",
-      "Performance monitoring"
+      'Business intelligence',
+      'Sales forecasting',
+      'Customer behavior analysis',
+      'Operational optimization',
+      'Risk assessment'
     ],
-    targetAudience: ["Data analysts", "Business intelligence teams", "Executives", "Marketing teams"],
-    integration: ["Google Analytics", "Salesforce", "HubSpot", "Excel", "Database systems"],
-    support: ["Dedicated account manager", "Training sessions", "24/7 support", "Custom implementation"],
-    link: "https://ziontechgroup.com/ai-analytics",
-    badge: "Featured",
-    rating: 4.9,
-    reviewCount: 1567,
-    aiScore: 97,
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&h=500",
-    author: {
-      name: "Zion Data Intelligence",
-      id: "zion-data-intelligence",
-      avatarUrl: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=100&h=100"
-    }
-  },
-
-  // IT Services
-  {
-    id: "cloud-migration-expert",
-    title: "Cloud Migration & Optimization Expert",
-    description: "Professional cloud migration services with AWS, Azure, and Google Cloud expertise. Includes cost optimization, security implementation, and performance tuning.",
-    category: "IT Services",
-    price: {
-      monthly: 0,
-      yearly: 0,
-      oneTime: 5000,
-      currency: "$"
+    targetAudience: ['Data analysts', 'Business intelligence teams', 'Executives', 'Marketing teams'],
+    integration: ['Excel', 'Google Analytics', 'Salesforce', 'HubSpot', 'Database systems'],
+    support: ['Data migration assistance', 'Custom dashboard creation', 'Training programs', 'Dedicated account manager'],
+    website: 'https://ziontechgroup.com/ai-analytics',
+    contact: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      address: '364 E Main St STE 1008 Middletown DE 19709'
     },
-    features: [
-      "Cloud architecture design",
-      "Data migration planning",
-      "Security and compliance setup",
-      "Cost optimization strategies",
-      "Performance monitoring",
-      "Disaster recovery planning",
-      "24/7 support during migration",
-      "Post-migration optimization"
-    ],
-    benefits: [
-      "Reduce infrastructure costs by 40%",
-      "Improve system reliability and uptime",
-      "Enhanced security and compliance",
-      "Scalable infrastructure for growth",
-      "Expert guidance throughout the process"
-    ],
-    useCases: [
-      "Legacy system modernization",
-      "Cost reduction initiatives",
-      "Security improvements",
-      "Scalability requirements",
-      "Compliance needs"
-    ],
-    targetAudience: ["IT managers", "CTOs", "Business owners", "Enterprise companies"],
-    integration: ["AWS", "Azure", "Google Cloud", "On-premise systems", "Hybrid environments"],
-    support: ["Dedicated project manager", "24/7 emergency support", "Training sessions", "Documentation"],
-    link: "https://ziontechgroup.com/cloud-migration",
-    badge: "Premium",
-    rating: 4.9,
-    reviewCount: 234,
-    aiScore: 95,
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&h=500",
-    author: {
-      name: "Zion Cloud Solutions",
-      id: "zion-cloud-solutions",
-      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
-    }
-  },
-  {
-    id: "cybersecurity-audit",
-    title: "Comprehensive Cybersecurity Audit",
-    description: "Full security assessment including penetration testing, vulnerability scanning, compliance review, and security roadmap development for your organization.",
-    category: "IT Services",
-    price: {
-      monthly: 0,
-      yearly: 0,
-      oneTime: 3500,
-      currency: "$"
-    },
-    features: [
-      "Vulnerability assessment",
-      "Penetration testing",
-      "Security policy review",
-      "Compliance audit (GDPR, HIPAA, SOC2)",
-      "Security awareness training",
-      "Incident response planning",
-      "Security roadmap development",
-      "Ongoing security monitoring"
-    ],
-    benefits: [
-      "Identify and fix security vulnerabilities",
-      "Meet compliance requirements",
-      "Protect against cyber threats",
-      "Build customer trust",
-      "Reduce security incident risks"
-    ],
-    useCases: [
-      "Compliance requirements",
-      "Security improvements",
-      "Customer trust building",
-      "Risk assessment",
-      "Insurance requirements"
-    ],
-    targetAudience: ["Security officers", "IT managers", "Compliance teams", "Business owners"],
-    integration: ["Existing security tools", "Compliance frameworks", "Incident response systems"],
-    support: ["Security experts", "Compliance specialists", "24/7 incident response", "Training materials"],
-    link: "https://ziontechgroup.com/cybersecurity-audit",
-    badge: "Enterprise",
-    rating: 4.8,
-    reviewCount: 189,
-    aiScore: 93,
-    image: "https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=800&h=500",
-    author: {
-      name: "Zion Security",
-      id: "zion-security",
-      avatarUrl: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=100&h=100"
-    }
-  },
-  {
-    id: "it-onsite-support",
-    title: "Global IT Onsite Support",
-    description: "Worldwide IT support services with certified technicians available on-site within 4 hours. Covers hardware, software, networking, and emergency IT issues.",
-    category: "IT Services",
-    price: {
-      monthly: 299,
-      yearly: 2990,
-      currency: "$"
-    },
-    features: [
-      "4-hour response time guarantee",
-      "Certified IT technicians",
-      "Hardware and software support",
-      "Network troubleshooting",
-      "Emergency IT support",
-      "Preventive maintenance",
-      "Remote support included",
-      "Global coverage (150+ countries)"
-    ],
-    benefits: [
-      "Minimize downtime with fast response",
-      "Expert technicians at your location",
-      "Comprehensive IT support coverage",
-      "Preventive maintenance reduces issues",
-      "Global support network"
-    ],
-    useCases: [
-      "Office IT support",
-      "Event IT support",
-      "Emergency IT issues",
-      "Hardware installation",
-      "Network setup and maintenance"
-    ],
-    targetAudience: ["Businesses with multiple locations", "Event organizers", "Remote offices", "Emergency IT needs"],
-    integration: ["Existing IT infrastructure", "Support ticketing systems", "Monitoring tools"],
-    support: ["24/7 emergency hotline", "Dedicated account manager", "Online support portal", "Mobile app"],
-    link: "https://ziontechgroup.com/it-onsite-support",
-    badge: "Popular",
-    rating: 4.9,
-    reviewCount: 567,
-    aiScore: 91,
-    image: "https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?auto=format&fit=crop&w=800&h=500",
-    author: {
-      name: "Zion Global IT Support",
-      id: "zion-global-it-support",
-      avatarUrl: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=100&h=100"
-    }
-  },
-
-  // Micro SAAS
-  {
-    id: "project-management-saas",
-    title: "Zion Project Management Suite",
-    description: "All-in-one project management platform with AI-powered task prioritization, team collaboration, time tracking, and resource management for modern teams.",
-    category: "Micro SAAS",
-    price: {
-      monthly: 29,
-      yearly: 290,
-      currency: "$"
-    },
-    features: [
-      "AI-powered task prioritization",
-      "Real-time team collaboration",
-      "Time tracking and reporting",
-      "Resource allocation",
-      "Gantt charts and timelines",
-      "File sharing and storage",
-      "Mobile apps (iOS/Android)",
-      "API and integrations"
-    ],
-    benefits: [
-      "Increase team productivity by 30%",
-      "Better project visibility and control",
-      "Automated task prioritization",
-      "Improved team collaboration",
-      "Data-driven project insights"
-    ],
-    useCases: [
-      "Software development teams",
-      "Marketing agencies",
-      "Construction projects",
-      "Event planning",
-      "Research projects"
-    ],
-    targetAudience: ["Project managers", "Team leaders", "Small businesses", "Remote teams"],
-    integration: ["Slack", "Microsoft Teams", "Google Workspace", "GitHub", "Jira"],
-    support: ["Live chat support", "Video tutorials", "Knowledge base", "Community forum"],
-    link: "https://ziontechgroup.com/project-management",
-    badge: "New",
     rating: 4.7,
-    reviewCount: 743,
-    aiScore: 89,
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&h=500",
-    author: {
-      name: "Zion Productivity",
-      id: "zion-productivity",
-      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
-    }
-  },
-  {
-    id: "invoicing-automation",
-    title: "Smart Invoicing & Billing Automation",
-    description: "Automated invoicing system with AI-powered expense categorization, payment tracking, tax calculations, and financial reporting for businesses.",
-    category: "Micro SAAS",
-    price: {
-      monthly: 19,
-      yearly: 190,
-      currency: "$"
-    },
-    features: [
-      "Automated invoice generation",
-      "AI expense categorization",
-      "Payment tracking and reminders",
-      "Tax calculations and compliance",
-      "Financial reporting dashboard",
-      "Multi-currency support",
-      "Integration with accounting software",
-      "Mobile app for expense tracking"
-    ],
-    benefits: [
-      "Save 10+ hours per month on invoicing",
-      "Reduce payment delays by 40%",
-      "Automated compliance and tax calculations",
-      "Better cash flow management",
-      "Professional invoice presentation"
-    ],
-    useCases: [
-      "Freelancers and consultants",
-      "Small businesses",
-      "Service providers",
-      "E-commerce businesses",
-      "Professional services"
-    ],
-    targetAudience: ["Freelancers", "Small business owners", "Accountants", "Service providers"],
-    integration: ["QuickBooks", "Xero", "Stripe", "PayPal", "Bank accounts"],
-    support: ["Email support", "Video tutorials", "Knowledge base", "Community forum"],
-    link: "https://ziontechgroup.com/smart-invoicing",
-    badge: "Popular",
-    rating: 4.8,
-    reviewCount: 892,
-    aiScore: 92,
-    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&h=500",
-    author: {
-      name: "Zion Financial Solutions",
-      id: "zion-financial-solutions",
-      avatarUrl: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=100&h=100"
-    }
-  },
-  {
-    id: "customer-support-saas",
-    title: "AI-Powered Customer Support Hub",
-    description: "Intelligent customer support platform with AI chatbots, ticket management, knowledge base, and analytics to deliver exceptional customer experiences.",
-    category: "Micro SAAS",
-    price: {
-      monthly: 39,
-      yearly: 390,
-      currency: "$"
-    },
-    features: [
-      "AI-powered chatbot support",
-      "Ticket management system",
-      "Knowledge base creation",
-      "Customer satisfaction surveys",
-      "Performance analytics",
-      "Multi-channel support",
-      "Team collaboration tools",
-      "Automated workflows"
-    ],
-    benefits: [
-      "Reduce support costs by 50%",
-      "Improve customer satisfaction scores",
-      "Faster response times",
-      "Better support team productivity",
-      "Data-driven support insights"
-    ],
-    useCases: [
-      "E-commerce customer support",
-      "SaaS product support",
-      "Service business support",
-      "Internal IT support",
-      "Help desk operations"
-    ],
-    targetAudience: ["Customer support teams", "E-commerce businesses", "SaaS companies", "Service providers"],
-    integration: ["Shopify", "WooCommerce", "Zendesk", "Slack", "Email systems"],
-    support: ["Live chat support", "Video tutorials", "Documentation", "Community forum"],
-    link: "https://ziontechgroup.com/customer-support-hub",
-    badge: "Featured",
-    rating: 4.9,
-    reviewCount: 1123,
-    aiScore: 94,
-    image: "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&h=500",
-    author: {
-      name: "Zion Customer Experience",
-      id: "zion-customer-experience",
-      avatarUrl: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=100&h=100"
-    }
+    reviewCount: 203,
+    launchDate: '2023-11-20',
+    status: 'live',
+    tags: ['AI', 'Data Analytics', 'Business Intelligence', 'Predictive Analytics', 'Machine Learning'],
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&h=500'
   },
 
-  // Development Services
+  // IT Infrastructure Services
   {
-    id: "web-app-development",
-    title: "Custom Web Application Development",
-    description: "Full-stack web application development with modern technologies, responsive design, and scalable architecture for your business needs.",
-    category: "Development",
-    price: {
-      monthly: 0,
-      yearly: 0,
-      oneTime: 8000,
-      currency: "$"
-    },
-    features: [
-      "Custom web application design",
-      "Responsive and mobile-first design",
-      "Database design and optimization",
-      "API development and integration",
-      "Security implementation",
-      "Performance optimization",
-      "Testing and quality assurance",
-      "Deployment and hosting setup"
-    ],
-    benefits: [
-      "Custom solution for your specific needs",
-      "Scalable architecture for growth",
-      "Modern technology stack",
-      "Professional design and user experience",
-      "Ongoing support and maintenance"
-    ],
-    useCases: [
-      "Business process automation",
-      "Customer portals",
-      "E-commerce platforms",
-      "Internal tools and dashboards",
-      "Data management systems"
-    ],
-    targetAudience: ["Business owners", "Startups", "Enterprises", "Non-profits"],
-    integration: ["Existing business systems", "Third-party APIs", "Payment gateways", "Analytics tools"],
-    support: ["Project manager", "Development team", "Testing and QA", "Post-launch support"],
-    link: "https://ziontechgroup.com/web-app-development",
-    badge: "Premium",
-    rating: 4.9,
-    reviewCount: 156,
-    aiScore: 96,
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&h=500",
-    author: {
-      name: "Zion Development Studio",
-      id: "zion-development-studio",
-      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
-    }
-  },
-  {
-    id: "mobile-app-development",
-    title: "Cross-Platform Mobile App Development",
-    description: "Native-quality mobile applications for iOS and Android using React Native, with custom design, backend integration, and app store deployment.",
-    category: "Development",
-    price: {
-      monthly: 0,
-      yearly: 0,
-      oneTime: 12000,
-      currency: "$"
-    },
-    features: [
-      "Cross-platform mobile app development",
-      "Custom UI/UX design",
-      "Backend API development",
-      "Database design and optimization",
-      "Push notifications",
-      "Analytics and tracking",
-      "App store optimization",
-      "Testing and quality assurance"
-    ],
-    benefits: [
-      "Single codebase for both platforms",
-      "Faster time to market",
-      "Cost-effective development",
-      "Native performance",
-      "Easy maintenance and updates"
-    ],
-    useCases: [
-      "Business mobile apps",
-      "E-commerce mobile apps",
-      "Social networking apps",
-      "Utility and productivity apps",
-      "Entertainment apps"
-    ],
-    targetAudience: ["Businesses", "Startups", "Entrepreneurs", "Enterprises"],
-    integration: ["Backend systems", "Payment gateways", "Social media", "Analytics platforms"],
-    support: ["Project manager", "Development team", "Design team", "App store submission"],
-    link: "https://ziontechgroup.com/mobile-app-development",
-    badge: "Featured",
-    rating: 4.8,
-    reviewCount: 234,
-    aiScore: 93,
-    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&h=500",
-    author: {
-      name: "Zion Mobile Studio",
-      id: "zion-mobile-studio",
-      avatarUrl: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=100&h=100"
-    }
-  },
-
-  // Analytics Services
-  {
-    id: "business-intelligence",
-    title: "Business Intelligence & Reporting Dashboard",
-    description: "Comprehensive BI solution with interactive dashboards, automated reporting, data visualization, and KPI tracking for data-driven decision making.",
-    category: "Analytics",
+    id: 'cloud-optimization',
+    title: 'Zion Cloud Optimizer',
+    description: 'Intelligent cloud cost optimization and performance monitoring platform that reduces cloud spending by up to 40%.',
+    category: 'IT Services',
+    subcategory: 'Cloud Management',
     price: {
       monthly: 149,
       yearly: 1490,
-      currency: "$"
+      currency: '$',
+      pricingModel: 'usage'
     },
     features: [
-      "Interactive dashboard creation",
-      "Automated report generation",
-      "Data visualization tools",
-      "KPI tracking and alerts",
-      "Data integration from multiple sources",
-      "Real-time data updates",
-      "Custom metrics and calculations",
-      "Mobile-responsive design"
+      'Automated cost optimization',
+      'Performance monitoring',
+      'Resource scaling',
+      'Cost forecasting',
+      'Multi-cloud management',
+      'Security compliance',
+      'Backup automation',
+      'Disaster recovery'
     ],
     benefits: [
-      "Make data-driven decisions faster",
-      "Identify business opportunities",
-      "Improve operational efficiency",
-      "Better resource allocation",
-      "Competitive advantage through insights"
+      'Reduce cloud costs by 40%',
+      'Improve application performance',
+      'Ensure security compliance',
+      'Automate resource management'
     ],
     useCases: [
-      "Sales performance tracking",
-      "Financial reporting",
-      "Operations monitoring",
-      "Customer analytics",
-      "Marketing performance analysis"
+      'Cloud cost management',
+      'Performance optimization',
+      'Security compliance',
+      'Resource planning',
+      'Disaster recovery'
     ],
-    targetAudience: ["Business analysts", "Executives", "Department managers", "Data teams"],
-    integration: ["CRM systems", "ERP systems", "Marketing platforms", "Database systems", "Cloud services"],
-    support: ["Dedicated BI consultant", "Training sessions", "Custom dashboard design", "24/7 support"],
-    link: "https://ziontechgroup.com/business-intelligence",
-    badge: "Enterprise",
+    targetAudience: ['DevOps teams', 'Cloud architects', 'IT managers', 'Startups', 'Enterprise companies'],
+    integration: ['AWS', 'Azure', 'Google Cloud', 'Kubernetes', 'Docker'],
+    support: ['24/7 monitoring', 'Emergency response', 'Performance optimization', 'Cost analysis reports'],
+    website: 'https://ziontechgroup.com/cloud-optimizer',
+    contact: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      address: '364 E Main St STE 1008 Middletown DE 19709'
+    },
+    rating: 4.8,
+    reviewCount: 127,
+    launchDate: '2024-01-10',
+    status: 'live',
+    tags: ['Cloud', 'Cost Optimization', 'Performance', 'DevOps', 'Security'],
+    image: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=800&h=500'
+  },
+  {
+    id: 'cybersecurity-suite',
+    title: 'Zion CyberShield',
+    description: 'Comprehensive cybersecurity platform with threat detection, vulnerability assessment, and automated incident response.',
+    category: 'IT Services',
+    subcategory: 'Cybersecurity',
+    price: {
+      monthly: 199,
+      yearly: 1990,
+      currency: '$',
+      pricingModel: 'subscription'
+    },
+    features: [
+      'Real-time threat detection',
+      'Vulnerability scanning',
+      'Automated incident response',
+      'Security compliance reporting',
+      'Employee security training',
+      'Dark web monitoring',
+      'Penetration testing',
+      'Security awareness dashboard'
+    ],
+    benefits: [
+      'Protect against 99.9% of cyber threats',
+      'Meet compliance requirements automatically',
+      'Reduce security incidents by 80%',
+      'Improve security awareness across organization'
+    ],
+    useCases: [
+      'Threat protection',
+      'Compliance management',
+      'Incident response',
+      'Security training',
+      'Risk assessment'
+    ],
+    targetAudience: ['Security teams', 'IT managers', 'Compliance officers', 'Small businesses', 'Enterprise companies'],
+    integration: ['SIEM systems', 'Firewalls', 'Endpoint protection', 'Active Directory', 'Cloud platforms'],
+    support: ['24/7 security monitoring', 'Incident response team', 'Compliance consulting', 'Security training'],
+    website: 'https://ziontechgroup.com/cybershield',
+    contact: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      address: '364 E Main St STE 1008 Middletown DE 19709'
+    },
     rating: 4.9,
-    reviewCount: 445,
-    aiScore: 95,
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&h=500",
-    author: {
-      name: "Zion Business Intelligence",
-      id: "zion-business-intelligence",
-      avatarUrl: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=100&h=100"
-    }
+    reviewCount: 94,
+    launchDate: '2023-12-15',
+    status: 'live',
+    tags: ['Cybersecurity', 'Threat Detection', 'Compliance', 'Incident Response', 'Security Training'],
+    image: 'https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=800&h=500'
   },
 
-  // Security Services
+  // Innovation & Emerging Tech
   {
-    id: "managed-security",
-    title: "Managed Security Operations Center (SOC)",
-    description: "24/7 security monitoring, threat detection, incident response, and security management for comprehensive protection of your digital assets.",
-    category: "Security",
+    id: 'blockchain-solutions',
+    title: 'Zion Blockchain Studio',
+    description: 'Enterprise blockchain development platform for creating secure, scalable decentralized applications and smart contracts.',
+    category: 'Innovation',
+    subcategory: 'Blockchain',
     price: {
       monthly: 299,
       yearly: 2990,
-      currency: "$"
+      currency: '$',
+      pricingModel: 'enterprise'
     },
     features: [
-      "24/7 security monitoring",
-      "Threat detection and response",
-      "Vulnerability management",
-      "Security incident handling",
-      "Compliance reporting",
-      "Security awareness training",
-      "Regular security assessments",
-      "Emergency response team"
+      'Smart contract development',
+      'DApp creation tools',
+      'Blockchain infrastructure',
+      'Token development',
+      'DeFi protocol integration',
+      'Cross-chain solutions',
+      'Security auditing',
+      'Performance optimization'
     ],
     benefits: [
-      "Proactive threat detection",
-      "Reduced security incident response time",
-      "Expert security team on standby",
-      "Compliance with security standards",
-      "Peace of mind for business owners"
+      'Build secure blockchain applications',
+      'Reduce development time by 60%',
+      'Ensure compliance with regulations',
+      'Scale blockchain infrastructure efficiently'
     ],
     useCases: [
-      "Financial institutions",
-      "Healthcare organizations",
-      "E-commerce businesses",
-      "Technology companies",
-      "Government contractors"
+      'Supply chain tracking',
+      'Digital identity management',
+      'Decentralized finance',
+      'NFT marketplaces',
+      'Voting systems'
     ],
-    targetAudience: ["CISOs", "IT security teams", "Compliance officers", "Business owners"],
-    integration: ["Existing security tools", "SIEM systems", "Firewalls", "Endpoint protection", "Cloud services"],
-    support: ["Dedicated security analyst", "24/7 emergency response", "Monthly security reports", "Training sessions"],
-    link: "https://ziontechgroup.com/managed-soc",
-    badge: "Premium",
-    rating: 4.9,
-    reviewCount: 234,
-    aiScore: 97,
-    image: "https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=800&h=500",
-    author: {
-      name: "Zion Security Operations",
-      id: "zion-security-operations",
-      avatarUrl: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=100&100"
-    }
+    targetAudience: ['Blockchain developers', 'Enterprises', 'Financial institutions', 'Startups', 'Government agencies'],
+    integration: ['Ethereum', 'Polygon', 'Solana', 'Hyperledger', 'Traditional systems'],
+    support: ['Custom development', 'Security auditing', 'Compliance consulting', 'Technical training'],
+    website: 'https://ziontechgroup.com/blockchain-studio',
+    contact: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      address: '364 E Main St STE 1008 Middletown DE 19709'
+    },
+    rating: 4.6,
+    reviewCount: 67,
+    launchDate: '2024-02-15',
+    status: 'beta',
+    tags: ['Blockchain', 'Smart Contracts', 'DeFi', 'DApps', 'Innovation'],
+    image: 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=800&h=500'
+  },
+  {
+    id: 'iot-platform',
+    title: 'Zion IoT Hub',
+    description: 'Comprehensive IoT platform for connecting, managing, and analyzing data from smart devices and sensors.',
+    category: 'Innovation',
+    subcategory: 'Internet of Things',
+    price: {
+      monthly: 179,
+      yearly: 1790,
+      currency: '$',
+      pricingModel: 'usage'
+    },
+    features: [
+      'Device management',
+      'Real-time data collection',
+      'Edge computing',
+      'Predictive maintenance',
+      'Data visualization',
+      'API integration',
+      'Security protocols',
+      'Scalable infrastructure'
+    ],
+    benefits: [
+      'Connect unlimited IoT devices',
+      'Reduce operational costs by 30%',
+      'Improve predictive maintenance',
+      'Gain real-time insights from sensors'
+    ],
+    useCases: [
+      'Smart cities',
+      'Industrial IoT',
+      'Smart homes',
+      'Healthcare monitoring',
+      'Environmental monitoring'
+    ],
+    targetAudience: ['IoT developers', 'Manufacturing companies', 'Smart city planners', 'Healthcare providers', 'Utilities'],
+    integration: ['MQTT', 'HTTP', 'CoAP', 'Cloud platforms', 'Enterprise systems'],
+    support: ['Device onboarding', 'Custom protocol development', 'Performance optimization', '24/7 monitoring'],
+    website: 'https://ziontechgroup.com/iot-hub',
+    contact: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      address: '364 E Main St STE 1008 Middletown DE 19709'
+    },
+    rating: 4.7,
+    reviewCount: 83,
+    launchDate: '2024-01-20',
+    status: 'live',
+    tags: ['IoT', 'Edge Computing', 'Predictive Maintenance', 'Smart Devices', 'Data Analytics'],
+    image: 'https://images.unsplash.com/photo-1518709268805-4e9042af2176?auto=format&fit=crop&w=800&h=500'
   },
 
-  // Automation Services
+  // Business Solutions
   {
-    id: "business-process-automation",
-    title: "Business Process Automation Platform",
-    description: "Intelligent automation platform that streamlines workflows, reduces manual tasks, and improves operational efficiency across your organization.",
-    category: "Automation",
+    id: 'workflow-automation',
+    title: 'Zion Workflow Engine',
+    description: 'Powerful workflow automation platform that streamlines business processes and eliminates manual tasks.',
+    category: 'Business Solutions',
+    subcategory: 'Automation',
     price: {
       monthly: 89,
       yearly: 890,
-      currency: "$"
+      currency: '$',
+      pricingModel: 'subscription'
     },
     features: [
-      "Workflow automation builder",
-      "RPA (Robotic Process Automation)",
-      "Document processing automation",
-      "Integration with business systems",
-      "Process analytics and optimization",
-      "Custom automation scripts",
-      "Scheduled task automation",
-      "Error handling and notifications"
+      'Visual workflow builder',
+      'Process automation',
+      'Integration connectors',
+      'Approval workflows',
+      'Task management',
+      'Performance analytics',
+      'Mobile app',
+      'Custom forms'
     ],
     benefits: [
-      "Reduce manual work by 70%",
-      "Improve process accuracy",
-      "Faster task completion",
-      "Better resource utilization",
-      "Scalable automation solutions"
+      'Automate repetitive tasks',
+      'Improve process efficiency by 70%',
+      'Reduce human errors',
+      'Track process performance in real-time'
     ],
     useCases: [
-      "Invoice processing",
-      "Customer onboarding",
-      "Data entry automation",
-      "Report generation",
-      "Email marketing automation"
+      'HR processes',
+      'Sales workflows',
+      'Customer onboarding',
+      'Invoice processing',
+      'Project management'
     ],
-    targetAudience: ["Operations managers", "Process improvement teams", "Business analysts", "IT teams"],
-    integration: ["ERP systems", "CRM platforms", "Email systems", "Document management", "Cloud services"],
-    support: ["Automation consultants", "Training programs", "Custom automation development", "24/7 support"],
-    link: "https://ziontechgroup.com/business-automation",
-    badge: "New",
+    targetAudience: ['Business analysts', 'Operations managers', 'HR teams', 'Sales teams', 'Small businesses'],
+    integration: ['CRM systems', 'ERP platforms', 'Email services', 'Document management', 'Payment gateways'],
+    support: ['Process consulting', 'Workflow design', 'Integration assistance', 'Training programs'],
+    website: 'https://ziontechgroup.com/workflow-engine',
+    contact: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      address: '364 E Main St STE 1008 Middletown DE 19709'
+    },
     rating: 4.8,
-    reviewCount: 567,
-    aiScore: 92,
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&h=500",
-    author: {
-      name: "Zion Automation Solutions",
-      id: "zion-automation-solutions",
-      avatarUrl: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=100&h=100"
-    }
+    reviewCount: 142,
+    launchDate: '2023-10-15',
+    status: 'live',
+    tags: ['Workflow Automation', 'Business Process', 'Productivity', 'Integration', 'Analytics'],
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&h=500'
+  },
+  {
+    id: 'customer-experience',
+    title: 'Zion CX Platform',
+    description: 'All-in-one customer experience platform that helps businesses understand, engage, and delight their customers.',
+    category: 'Business Solutions',
+    subcategory: 'Customer Experience',
+    price: {
+      monthly: 129,
+      yearly: 1290,
+      currency: '$',
+      pricingModel: 'subscription'
+    },
+    features: [
+      'Customer journey mapping',
+      'Feedback collection',
+      'Sentiment analysis',
+      'Personalization engine',
+      'Omnichannel support',
+      'Customer analytics',
+      'Loyalty programs',
+      'A/B testing'
+    ],
+    benefits: [
+      'Increase customer satisfaction by 40%',
+      'Improve customer retention',
+      'Personalize customer interactions',
+      'Optimize customer journey'
+    ],
+    useCases: [
+      'Customer feedback management',
+      'Personalization strategies',
+      'Customer support optimization',
+      'Loyalty program management',
+      'Customer journey optimization'
+    ],
+    targetAudience: ['Customer success teams', 'Marketing teams', 'Product managers', 'E-commerce businesses', 'Service providers'],
+    integration: ['CRM systems', 'Email platforms', 'Social media', 'Website analytics', 'Support tools'],
+    support: ['Customer journey consulting', 'Implementation assistance', 'Best practices training', 'Performance optimization'],
+    website: 'https://ziontechgroup.com/cx-platform',
+    contact: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      address: '364 E Main St STE 1008 Middletown DE 19709'
+    },
+    rating: 4.9,
+    reviewCount: 178,
+    launchDate: '2023-09-20',
+    status: 'live',
+    tags: ['Customer Experience', 'Personalization', 'Analytics', 'Feedback', 'Loyalty'],
+    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&h=500'
   }
 ];
 
-export const getServiceByCategory = (category: string) => {
+export const getServicesByCategory = (category: string) => {
   return MICRO_SAAS_SERVICES.filter(service => service.category === category);
 };
 
-export const getFeaturedServices = () => {
-  return MICRO_SAAS_SERVICES.filter(service => service.badge === 'Popular' || service.badge === 'Featured');
+export const getServicesBySubcategory = (subcategory: string) => {
+  return MICRO_SAAS_SERVICES.filter(service => service.subcategory === subcategory);
 };
 
-export const getServicesByPriceRange = (minPrice: number, maxPrice: number) => {
-  return MICRO_SAAS_SERVICES.filter(service => {
-    const monthlyPrice = service.price.monthly || service.price.oneTime || 0;
-    return monthlyPrice >= minPrice && monthlyPrice <= maxPrice;
-  });
+export const getServiceById = (id: string) => {
+  return MICRO_SAAS_SERVICES.find(service => service.id === id);
+};
+
+export const getPopularServices = (limit: number = 6) => {
+  return MICRO_SAAS_SERVICES
+    .sort((a, b) => b.rating - a.rating)
+    .slice(0, limit);
 };
