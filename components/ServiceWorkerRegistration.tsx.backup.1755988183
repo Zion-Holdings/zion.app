@@ -1,0 +1,358 @@
+import React, { useEffect, useState } from 'react';
+<<<<<<< HEAD
+import { motion, AnimatePresence } from 'framer-motion';
+import { Download, X, RefreshCw } from 'lucide-react';
+
+// Declare the ServiceWorker types for TypeScript
+declare global {
+  interface ServiceWorkerRegistration {
+    waiting: ServiceWorker | null;
+    installing: ServiceWorker | null;
+  }
+  
+  interface ServiceWorker {
+    state: string;
+    postMessage: (message: { type: string }) => void;
+  }
+  
+  interface Navigator {
+    serviceWorker: {
+      register: (script: string) => Promise<ServiceWorkerRegistration>;
+      addEventListener: (type: string, listener: (event: any) => void) => void;
+      controller: ServiceWorker | null;
+    };
+  }
+}
+
+const ServiceWorkerRegistration: React.FC = () => {
+  const [isUpdateAvailable, setIsUpdateAvailable] = useState(false);
+  const [isInstalling, setIsInstalling] = useState(false);
+  const [registration, setRegistration] = useState<ServiceWorkerRegistration | null>(null);
+
+  useEffect(() => {
+    if ('serviceWorker' in navigator) {
+=======
+
+interface ServiceWorkerRegistrationProps {
+  onUpdateAvailable?: () => void;
+  onUpdateInstalled?: () => void;
+}
+
+const ServiceWorkerRegistration: React.FC<ServiceWorkerRegistrationProps> = ({
+  onUpdateAvailable,
+  onUpdateInstalled
+}) => {
+  const [isUpdateAvailable, setIsUpdateAvailable] = useState(false);
+  const [isUpdateInstalled, setIsUpdateInstalled] = useState(false);
+  const [registration, setRegistration] = useState<ServiceWorkerRegistration | null>(null);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined' && 'serviceWorker' in navigator) {
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-1b0a
+      registerServiceWorker();
+    }
+  }, []);
+
+  const registerServiceWorker = async () => {
+    try {
+<<<<<<< HEAD
+      const swRegistration = await navigator.serviceWorker.register('/sw.js');
+      setRegistration(swRegistration);
+
+      // Check for updates
+=======
+      const swRegistration = await navigator.serviceWorker.register('/sw.js', {
+        scope: '/'
+      });
+
+      setRegistration(swRegistration);
+
+      // Handle updates
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-1b0a
+      swRegistration.addEventListener('updatefound', () => {
+        const newWorker = swRegistration.installing;
+        if (newWorker) {
+          newWorker.addEventListener('statechange', () => {
+            if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+              setIsUpdateAvailable(true);
+<<<<<<< HEAD
+=======
+              onUpdateAvailable?.();
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-1b0a
+            }
+          });
+        }
+      });
+
+<<<<<<< HEAD
+      // Handle service worker updates
+      navigator.serviceWorker.addEventListener('controllerchange', () => {
+        window.location.reload();
+      });
+
+      // Listen for messages from service worker
+      navigator.serviceWorker.addEventListener('message', (event) => {
+        if (event.data && event.data.type === 'BACKGROUND_SYNC_COMPLETE') {
+          // Background sync completed
+        }
+      });
+
+    } catch {
+      // Service Worker registration failed
+=======
+      // Handle successful installation
+      navigator.serviceWorker.addEventListener('controllerchange', () => {
+        setIsUpdateInstalled(true);
+        onUpdateInstalled?.();
+      });
+
+      // Handle service worker messages
+      navigator.serviceWorker.addEventListener('message', (event) => {
+        if (event.data && event.data.type === 'CACHE_UPDATED') {
+          console.log('Cache updated:', event.data.payload);
+        }
+      });
+
+      console.log('Service Worker registered successfully:', swRegistration);
+    } catch (error) {
+      console.error('Service Worker registration failed:', error);
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-1b0a
+    }
+  };
+
+  const updateServiceWorker = async () => {
+    if (registration && registration.waiting) {
+<<<<<<< HEAD
+      setIsInstalling(true);
+      
+      // Send message to waiting service worker to skip waiting
+      registration.waiting.postMessage({ type: 'SKIP_WAITING' });
+      
+      // Wait a bit for the update to take effect
+      setTimeout(() => {
+        setIsInstalling(false);
+        setIsUpdateAvailable(false);
+      }, 2000);
+    }
+  };
+
+  const dismissUpdate = () => {
+    setIsUpdateAvailable(false);
+  };
+
+  if (!isUpdateAvailable) {
+    return null;
+  }
+
+  return (
+    <AnimatePresence>
+      <motion.div
+        initial={{ opacity: 0, y: 50, scale: 0.9 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        exit={{ opacity: 0, y: 50, scale: 0.9 }}
+        transition={{ duration: 0.3, ease: "easeOut" }}
+        className="fixed bottom-6 left-6 z-50 max-w-sm"
+      >
+        <div className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white p-4 rounded-2xl shadow-2xl border border-cyan-400/30 backdrop-blur-sm">
+          <div className="flex items-start gap-3">
+            <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0">
+              <Download className="w-5 h-5" />
+            </div>
+            
+            <div className="flex-1 min-w-0">
+              <h3 className="font-semibold text-sm mb-1">
+                Update Available
+              </h3>
+              <p className="text-xs text-cyan-100 mb-3">
+                A new version of Zion Tech Group is available with improved performance and features.
+              </p>
+              
+              <div className="flex gap-2">
+                <button
+                  onClick={updateServiceWorker}
+                  disabled={isInstalling}
+                  className="flex items-center gap-2 px-3 py-2 bg-white/20 hover:bg-white/30 rounded-lg text-xs font-medium transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {isInstalling ? (
+                    <>
+                      <RefreshCw className="w-3 h-3 animate-spin" />
+                      Updating...
+                    </>
+                  ) : (
+                    <>
+                      <Download className="w-3 h-3" />
+                      Update Now
+                    </>
+                  )}
+                </button>
+                
+                <button
+                  onClick={dismissUpdate}
+                  className="px-3 py-2 bg-white/10 hover:bg-white/20 rounded-lg text-xs font-medium transition-all duration-200"
+                >
+                  Later
+                </button>
+              </div>
+            </div>
+            
+            <button
+              onClick={dismissUpdate}
+              className="w-6 h-6 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-all duration-200 flex-shrink-0"
+            >
+              <X className="w-3 h-3" />
+            </button>
+          </div>
+        </div>
+      </motion.div>
+    </AnimatePresence>
+=======
+      registration.waiting.postMessage({ type: 'SKIP_WAITING' });
+      setIsUpdateAvailable(false);
+    }
+  };
+
+  const checkForUpdates = async () => {
+    if (registration) {
+      await registration.update();
+    }
+  };
+
+  // Request notification permission
+  const requestNotificationPermission = async () => {
+    if ('Notification' in window && Notification.permission === 'default') {
+      const permission = await Notification.requestPermission();
+      if (permission === 'granted') {
+        console.log('Notification permission granted');
+      }
+    }
+  };
+
+  // Send push notification (for testing)
+  const sendTestNotification = async () => {
+    if ('serviceWorker' in navigator && 'PushManager' in window) {
+      try {
+        const registration = await navigator.serviceWorker.ready;
+        await registration.showNotification('Zion Tech Group', {
+          body: 'Welcome to the future of technology!',
+          icon: '/images/zion-tech-group-logo.png',
+          badge: '/images/badge.png',
+          tag: 'welcome-notification'
+        });
+      } catch (error) {
+        console.error('Failed to send notification:', error);
+      }
+    }
+  };
+
+  // Background sync registration
+  const registerBackgroundSync = async () => {
+    if ('serviceWorker' in navigator && 'SyncManager' in window) {
+      try {
+        const registration = await navigator.serviceWorker.ready;
+        await registration.sync.register('background-sync');
+        console.log('Background sync registered');
+      } catch (error) {
+        console.error('Background sync registration failed:', error);
+      }
+    }
+  };
+
+  return (
+    <>
+      {/* Update notification */}
+      {isUpdateAvailable && (
+        <div className="fixed bottom-4 right-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white p-4 rounded-lg shadow-lg z-50 max-w-sm">
+          <div className="flex items-center justify-between">
+            <div>
+              <h4 className="font-semibold">Update Available</h4>
+              <p className="text-sm opacity-90">A new version is ready to install</p>
+            </div>
+            <button
+              onClick={updateServiceWorker}
+              className="bg-white text-blue-600 px-3 py-1 rounded text-sm font-medium hover:bg-gray-100 transition-colors"
+            >
+              Update
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* Update installed notification */}
+      {isUpdateInstalled && (
+        <div className="fixed bottom-4 right-4 bg-gradient-to-r from-green-600 to-emerald-600 text-white p-4 rounded-lg shadow-lg z-50 max-w-sm">
+          <div className="flex items-center justify-between">
+            <div>
+              <h4 className="font-semibold">Update Installed</h4>
+              <p className="text-sm opacity-90">New version is now active</p>
+            </div>
+            <button
+              onClick={() => setIsUpdateInstalled(false)}
+              className="bg-white text-green-600 px-3 py-1 rounded text-sm font-medium hover:bg-gray-100 transition-colors"
+            >
+              Dismiss
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* PWA Install Prompt (hidden by default) */}
+      <div id="pwa-install-prompt" className="hidden">
+        <div className="fixed bottom-4 left-4 right-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white p-4 rounded-lg shadow-lg z-50">
+          <div className="flex items-center justify-between">
+            <div>
+              <h4 className="font-semibold">Install Zion Tech Group</h4>
+              <p className="text-sm opacity-90">Add to home screen for quick access</p>
+            </div>
+            <div className="flex gap-2">
+              <button
+                id="pwa-install-accept"
+                className="bg-white text-purple-600 px-4 py-2 rounded font-medium hover:bg-gray-100 transition-colors"
+              >
+                Install
+              </button>
+              <button
+                id="pwa-install-dismiss"
+                className="bg-transparent border border-white text-white px-4 py-2 rounded font-medium hover:bg-white hover:text-purple-600 transition-colors"
+              >
+                Dismiss
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Service Worker Status (for development) */}
+      {process.env.NODE_ENV === 'development' && (
+        <div className="fixed top-4 right-4 bg-gray-800 text-white p-3 rounded-lg shadow-lg z-50 text-sm">
+          <div className="flex items-center gap-2 mb-2">
+            <div className={`w-2 h-2 rounded-full ${registration ? 'bg-green-400' : 'bg-red-400'}`}></div>
+            <span>SW: {registration ? 'Active' : 'Inactive'}</span>
+          </div>
+          <div className="flex gap-2">
+            <button
+              onClick={checkForUpdates}
+              className="bg-blue-600 hover:bg-blue-700 px-2 py-1 rounded text-xs transition-colors"
+            >
+              Check Updates
+            </button>
+            <button
+              onClick={requestNotificationPermission}
+              className="bg-green-600 hover:bg-green-700 px-2 py-1 rounded text-xs transition-colors"
+            >
+              Notifications
+            </button>
+            <button
+              onClick={sendTestNotification}
+              className="bg-purple-600 hover:bg-purple-700 px-2 py-1 rounded text-xs transition-colors"
+            >
+              Test Notif
+            </button>
+          </div>
+        </div>
+      )}
+    </>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-1b0a
+  );
+};
+
+export default ServiceWorkerRegistration;

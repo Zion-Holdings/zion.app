@@ -1,0 +1,25 @@
+name: Spell Check
+
+on:
+  pull_request:
+  push:
+    branches: [ main ]
+  schedule:
+    - cron: '0 3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  cspell:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run cspell
+        uses: streetsidesoftware/cspell-action@v6
+        with:
+          files: |
+            **/*
+          config: cspell.json
+          incremental_files_only: false
