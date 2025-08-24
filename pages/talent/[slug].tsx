@@ -1,18 +1,24 @@
+import type { NextPage } from 'next';
 import Head from 'next/head';
-import type { GetServerSideProps } from 'next';
+import { useRouter } from 'next/router';
 
-export const getServerSideProps: GetServerSideProps = async () => {
-  return { props: {} };
+const TalentDetailPage: NextPage = () => {
+  const router = useRouter();
+  const { slug } = router.query as { slug?: string };
+
+  return (
+    <div>
+      <Head>
+        <title>{slug ? `${slug} - Talent` : 'Talent'} - Zion Tech Solutions</title>
+        <meta name="description" content="Talent profile" />
+      </Head>
+      
+      <main>
+        <h1>Talent: {slug ?? '...'}</h1>
+        <p>This page is under construction.</p>
+      </main>
+    </div>
+  );
 };
 
-export default function TalentProfilePage() {
-  return (
-    <>
-      <Head><title>Talent Profile - Zion</title></Head>
-      <div className="py-12">
-        <h1 className="text-3xl font-bold">Talent Profile</h1>
-        <p className="mt-2 text-gray-600">Coming soon.</p>
-      </div>
-    </>
-  );
-}
+export default TalentDetailPage;

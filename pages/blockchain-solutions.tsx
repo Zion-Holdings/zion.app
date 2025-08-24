@@ -1,13 +1,20 @@
+import type { NextPage } from 'next';
 import Head from 'next/head';
 
-export default function BlockchainSolutionsPage() {
+const BlockchainSolutions: NextPage = () => {
   return (
-    <>
-      <Head><title>Blockchain Solutions - Zion</title></Head>
-      <div className="py-12">
-        <h1 className="text-3xl font-bold">Blockchain Solutions</h1>
-        <p className="mt-2 text-gray-600">Coming soon.</p>
-      </div>
-    </>
+    <div>
+      <Head>
+        <title>BlockchainSolutions - Zion Tech Solutions</title>
+        <meta name="description" content="BlockchainSolutions page" />
+      </Head>
+      
+      <main>
+        <h1>BlockchainSolutions</h1>
+        <p>This page is under construction.</p>
+      </main>
+    </div>
   );
-}
+};
+
+export default BlockchainSolutions;
