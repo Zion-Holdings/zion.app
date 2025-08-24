@@ -1,32 +1,24 @@
 import React, { useState } from 'react';
-import { Globe } from 'lucide-react';
-import { Button } from '@/components/ui/Button';
+import { Button } from '@/components/ui/button';
+import { useLanguage } from '@/context/LanguageContext';
+import { ChevronDown, Globe } from 'lucide-react';
 
-export function LanguageSelector() {
+const LANGUAGES = [
+  { code: 'en', name: 'English', flag: '🇺🇸' },
+  { code: 'es', name: 'Español', flag: '🇪🇸' },
+  { code: 'fr', name: 'Français', flag: '🇫🇷' },
+  { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
+  { code: 'pt', name: 'Português', flag: '🇵🇹' },
+  { code: 'zh', name: '中文', flag: '🇨🇳' },
+  { code: 'ja', name: '日本語', flag: '🇯🇵' },
+  { code: 'ko', name: '한국어', flag: '🇰🇷' },
+];
+
+export const LanguageSelector: React.FC = () => {
+  const { language, setLanguage } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
-  const [currentLanguage, setCurrentLanguage] = useState('EN');
 
-  const languages = [
-    { code: 'EN', name: 'English', flag: '🇺🇸' },
-    { code: 'ES', name: 'Español', flag: '🇪🇸' },
-    { code: 'FR', name: 'Français', flag: '🇫🇷' },
-    { code: 'DE', name: 'Deutsch', flag: '🇩🇪' },
-    { code: 'IT', name: 'Italiano', flag: '🇮🇹' },
-    { code: 'PT', name: 'Português', flag: '🇵🇹' },
-    { code: 'RU', name: 'Русский', flag: '🇷🇺' },
-    { code: 'ZH', name: '中文', flag: '🇨🇳' },
-    { code: 'JA', name: '日本語', flag: '🇯🇵' },
-    { code: 'KO', name: '한국어', flag: '🇰🇷' },
-  ];
-
-  const handleLanguageChange = (languageCode: string) => {
-    setCurrentLanguage(languageCode);
-    setIsOpen(false);
-    // Here you would typically call a function to change the app's language
-    console.log(`Language changed to: ${languageCode}`);
-  };
-
-  const currentLang = languages.find(lang => lang.code === currentLanguage);
+  const currentLanguage = LANGUAGES.find(lang => lang.code === language) || LANGUAGES[0];
 
   return (
     <div className="relative">
@@ -34,33 +26,36 @@ export function LanguageSelector() {
         variant="ghost"
         size="sm"
         onClick={() => setIsOpen(!isOpen)}
-        className="text-zion-cyan hover:bg-zion-cyan/10"
-        aria-expanded={isOpen}
-        aria-label="Language selector"
+        className="flex items-center space-x-2"
       >
-        <Globe className="w-4 h-4 mr-2" />
-        {currentLang?.flag} {currentLang?.code}
+        <Globe className="w-4 h-4" />
+        <span className="hidden md:block">{currentLanguage.flag}</span>
+        <span className="hidden lg:block">{currentLanguage.name}</span>
+        <ChevronDown className="w-4 h-4" />
       </Button>
 
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-48 bg-zion-blue-dark border border-zion-blue-light rounded-lg shadow-lg py-2 z-50 max-h-64 overflow-y-auto">
-          {languages.map((language) => (
+        <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50 border">
+          {LANGUAGES.map((lang) => (
             <button
-              key={language.code}
-              onClick={() => handleLanguageChange(language.code)}
-              className={`flex items-center w-full px-4 py-2 text-left transition-colors ${
-                language.code === currentLanguage
-                  ? 'bg-zion-blue text-white'
-                  : 'text-zion-slate-light hover:bg-zion-blue hover:text-white'
+              key={lang.code}
+              onClick={() => {
+                setLanguage(lang.code as any);
+                setIsOpen(false);
+              }}
+              className={`w-full text-left px-4 py-2 text-sm hover:bg-gray-100 flex items-center space-x-3 ${
+                language === lang.code ? 'bg-blue-50 text-blue-600' : 'text-gray-700'
               }`}
             >
-              <span className="mr-3">{language.flag}</span>
-              <span className="mr-2">{language.code}</span>
-              <span className="text-sm">{language.name}</span>
+              <span className="text-lg">{lang.flag}</span>
+              <span>{lang.name}</span>
+              {language === lang.code && (
+                <span className="ml-auto text-blue-600">✓</span>
+              )}
             </button>
           ))}
         </div>
       )}
     </div>
   );
-}
+};

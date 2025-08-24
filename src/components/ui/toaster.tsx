@@ -1,11 +1,13 @@
 import React from 'react';
 
-<<<<<<< HEAD
-export const Toaster = () => {
-  return <div id="toaster" />;
-};
-=======
-export function Toaster() {
-  return <div className="toaster-container"></div>;
+interface ToasterProps {
+  children?: React.ReactNode;
 }
->>>>>>> d0d58136d327183e53cdbb308d5ed67246f24274
+
+export const Toaster: React.FC<ToasterProps> = ({ children }) => {
+  return (
+    <div className="fixed top-4 right-4 z-50">
+      {children}
+    </div>
+  );
+};

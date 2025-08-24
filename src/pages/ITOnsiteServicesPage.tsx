@@ -1,52 +1,33 @@
 import React from 'react';
-<<<<<<< HEAD
-import { Header } from '@/components/header/Header';
-import { Footer } from '@/components/Footer';
 import { SEO } from '@/components/SEO';
-import { GradientHeading } from '@/components/GradientHeading';
 
-export default function ITOnsiteServicesPage() {
+const ITOnsiteServicesPage: React.FC = () => {
   return (
     <>
-      <SEO
-        title="IT On-Site Services - Zion Tech Group"
-        description="Professional on-site IT services for businesses and organizations."
+      <SEO 
+        title="IT Onsite Services - Zion Tech Group"
+        description="Professional IT services delivered on-site"
         canonical="https://ziontechgroup.com/it-onsite-services"
       />
-      <Header />
-      <main className="min-h-screen bg-zion-blue">
-        <div className="container mx-auto px-4 py-20">
-          <div className="text-center mb-16">
-            <GradientHeading>IT On-Site Services</GradientHeading>
-            <p className="text-xl text-zion-slate-light mt-6 max-w-3xl mx-auto">
-              Professional on-site IT services to keep your business running smoothly.
+      <div className="min-h-screen bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-slate-dark">
+        <div className="container mx-auto px-4 py-16">
+          <div className="text-center">
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+              IT Onsite Services
+            </h1>
+            <p className="text-xl text-zion-slate-light mb-8">
+              Professional IT services delivered on-site
             </p>
-          </div>
-          
-          <div className="max-w-6xl mx-auto">
-            <div className="bg-zion-blue-light rounded-lg p-8 border border-zion-blue-lighter">
-              <h2 className="text-2xl font-bold text-white mb-6">Coming Soon</h2>
-              <p className="text-zion-slate-light mb-6">
-                Our on-site IT services are currently under development.
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-8 max-w-2xl mx-auto">
+              <p className="text-white">
+                Our IT onsite services page is coming soon. You'll be able to learn about our professional IT services that we deliver directly at your location.
               </p>
             </div>
           </div>
         </div>
-      </main>
-      <Footer />
+      </div>
     </>
   );
-}
-=======
+};
 
-export default function EquipmentDetail() {
-  return (
-    <div className="min-h-screen bg-zion-blue-dark py-8 text-white">
-      <div className="container mx-auto px-4">
-        <h1 className="text-3xl font-bold mb-6">EquipmentDetail</h1>
-        <p>EquipmentDetail page content will go here.</p>
-      </div>
-    </div>
-  );
-}
->>>>>>> b0227f6a3f6a80df96e210611ae67bdcdc943ae0
+export default ITOnsiteServicesPage;

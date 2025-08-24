@@ -1,74 +1,57 @@
-<<<<<<< HEAD
-import React, { createContext, useContext, useState, ReactNode } from 'react';
-=======
-import React, { createContext, useContext, ReactNode } from 'react';
->>>>>>> b0227f6a3f6a80df96e210611ae67bdcdc943ae0
+import React, { createContext, useContext, useState, useCallback } from 'react';
+
+interface WhitelabelConfig {
+  companyName: string;
+  logo: string;
+  primaryColor: string;
+  secondaryColor: string;
+  theme: 'light' | 'dark' | 'auto';
+}
 
 interface WhitelabelContextType {
-  isWhitelabel: boolean;
-  primaryColor: string;
-<<<<<<< HEAD
-  setPrimaryColor: (color: string) => void;
-  brandName: string;
-  setBrandName: (name: string) => void;
-  logo: string;
-  setLogo: (logo: string) => void;
+  config: WhitelabelConfig;
+  updateConfig: (newConfig: Partial<WhitelabelConfig>) => void;
+  resetConfig: () => void;
 }
+
+const defaultConfig: WhitelabelConfig = {
+  companyName: 'Zion Tech Group',
+  logo: '/logo.svg',
+  primaryColor: '#3B82F6',
+  secondaryColor: '#1E40AF',
+  theme: 'auto'
+};
 
 const WhitelabelContext = createContext<WhitelabelContextType | undefined>(undefined);
-=======
-}
 
-const WhitelabelContext = createContext<WhitelabelContextType>({
-  isWhitelabel: false,
-  primaryColor: '#8c15e9'
-});
->>>>>>> b0227f6a3f6a80df96e210611ae67bdcdc943ae0
+export const WhitelabelProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const [config, setConfig] = useState<WhitelabelConfig>(defaultConfig);
 
-interface WhitelabelProviderProps {
-  children: ReactNode;
-}
+  const updateConfig = useCallback((newConfig: Partial<WhitelabelConfig>) => {
+    setConfig(prev => ({ ...prev, ...newConfig }));
+  }, []);
 
-export function WhitelabelProvider({ children }: WhitelabelProviderProps) {
-<<<<<<< HEAD
-  const [isWhitelabel] = useState(false); // Set to true for white-label instances
-  const [primaryColor, setPrimaryColor] = useState('#8B5CF6'); // Default Zion purple
-  const [brandName, setBrandName] = useState('Zion Tech Group');
-  const [logo, setLogo] = useState('');
+  const resetConfig = useCallback(() => {
+    setConfig(defaultConfig);
+  }, []);
 
   const value: WhitelabelContextType = {
-    isWhitelabel,
-    primaryColor,
-    setPrimaryColor,
-    brandName,
-    setBrandName,
-    logo,
-    setLogo,
+    config,
+    updateConfig,
+    resetConfig
   };
 
   return (
     <WhitelabelContext.Provider value={value}>
-=======
-  return (
-    <WhitelabelContext.Provider value={{
-      isWhitelabel: false,
-      primaryColor: '#8c15e9'
-    }}>
->>>>>>> b0227f6a3f6a80df96e210611ae67bdcdc943ae0
       {children}
     </WhitelabelContext.Provider>
   );
-}
+};
 
-<<<<<<< HEAD
-export function useWhitelabel(): WhitelabelContextType {
+export const useWhitelabel = (): WhitelabelContextType => {
   const context = useContext(WhitelabelContext);
   if (context === undefined) {
     throw new Error('useWhitelabel must be used within a WhitelabelProvider');
   }
   return context;
-=======
-export function useWhitelabel() {
-  return useContext(WhitelabelContext);
->>>>>>> b0227f6a3f6a80df96e210611ae67bdcdc943ae0
-}
+};

@@ -1,47 +1,44 @@
-import { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 
-interface Toast {
+export interface ToastOptions {
   id: string;
   title: string;
   description?: string;
-  type: 'success' | 'error' | 'warning' | 'info';
+  type?: 'success' | 'error' | 'warning' | 'info';
   duration?: number;
 }
 
 export const useToast = () => {
-  const [toasts, setToasts] = useState<Toast[]>([]);
+  const [toasts, setToasts] = useState<ToastOptions[]>([]);
 
-  const addToast = (toast: Omit<Toast, 'id'>) => {
-    const id = Math.random().toString(36).substr(2, 9);
-    const newToast = { ...toast, id };
-    
+  const toast = useCallback((options: Omit<ToastOptions, 'id'>) => {
+    const newToast: ToastOptions = {
+      id: Math.random().toString(36).substr(2, 9),
+      duration: 5000,
+      ...options,
+    };
+
     setToasts(prev => [...prev, newToast]);
 
-    // Auto-remove toast after duration
-    const duration = toast.duration || 5000;
-    setTimeout(() => {
-      removeToast(id);
-    }, duration);
-  };
+    if (newToast.duration) {
+      setTimeout(() => {
+        setToasts(prev => prev.filter(t => t !== newToast));
+      }, newToast.duration);
+    }
+  }, []);
 
-  const removeToast = (id: string) => {
-    setToasts(prev => prev.filter(toast => toast.id !== id));
-  };
+  const dismiss = useCallback((toastToDismiss: ToastOptions) => {
+    setToasts(prev => prev.filter(t => t !== toastToDismiss));
+  }, []);
 
-  const toast = {
-    success: (title: string, description?: string) => 
-      addToast({ title, description, type: 'success' }),
-    error: (title: string, description?: string) => 
-      addToast({ title, description, type: 'error' }),
-    warning: (title: string, description?: string) => 
-      addToast({ title, description, type: 'warning' }),
-    info: (title: string, description?: string) => 
-      addToast({ title, description, type: 'info' }),
-  };
+  const dismissAll = useCallback(() => {
+    setToasts([]);
+  }, []);
 
   return {
     toasts,
     toast,
-    removeToast,
+    dismiss,
+    dismissAll,
   };
 };

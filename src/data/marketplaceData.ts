@@ -1,69 +1,77 @@
-<<<<<<< HEAD
 export interface SearchSuggestion {
   id: string;
   text: string;
-  type: 'talent' | 'service' | 'equipment' | 'category';
+  type: 'recent' | 'trending' | 'suggestion';
+  category?: string;
+  tags?: string[];
 }
 
-export const generateSearchSuggestions = (): SearchSuggestion[] => {
+export const generateSearchSuggestions = (query: string): SearchSuggestion[] => {
+  const suggestions: SearchSuggestion[] = [
+    {
+      id: '1',
+      text: 'AI CRM System',
+      type: 'trending',
+      category: 'AI Solutions',
+      tags: ['CRM', 'AI', 'Business'],
+    },
+    {
+      id: '2',
+      text: 'Cloud Infrastructure Setup',
+      type: 'trending',
+      category: 'Cloud Services',
+      tags: ['AWS', 'Azure', 'DevOps'],
+    },
+    {
+      id: '3',
+      text: 'E-commerce Platform',
+      type: 'trending',
+      category: 'Web Development',
+      tags: ['React', 'Node.js', 'E-commerce'],
+    },
+    {
+      id: '4',
+      text: 'Cybersecurity Audit',
+      type: 'trending',
+      category: 'Security',
+      tags: ['Security', 'Audit', 'Compliance'],
+    },
+    {
+      id: '5',
+      text: 'Data Analytics Dashboard',
+      type: 'trending',
+      category: 'Analytics',
+      tags: ['Data', 'Analytics', 'Dashboard'],
+    },
+  ];
+
+  // Filter suggestions based on query
+  if (query.trim()) {
+    const lowercaseQuery = query.toLowerCase();
+    return suggestions.filter(suggestion =>
+      suggestion.text.toLowerCase().includes(lowercaseQuery) ||
+      suggestion.category?.toLowerCase().includes(lowercaseQuery) ||
+      suggestion.tags?.some(tag => tag.toLowerCase().includes(lowercaseQuery))
+    );
+  }
+
+  return suggestions;
+};
+
+export const getRecentSearches = (): SearchSuggestion[] => {
   return [
-    // Talent suggestions
-    { id: 't1', text: 'AI Engineers', type: 'talent' },
-    { id: 't2', text: 'Data Scientists', type: 'talent' },
-    { id: 't3', text: 'Full Stack Developers', type: 'talent' },
-    { id: 't4', text: 'DevOps Engineers', type: 'talent' },
-    { id: 't5', text: 'UI/UX Designers', type: 'talent' },
-    { id: 't6', text: 'Product Managers', type: 'talent' },
-    { id: 't7', text: 'Machine Learning Specialists', type: 'talent' },
-    { id: 't8', text: 'Cybersecurity Experts', type: 'talent' },
-    
-    // Service suggestions
-    { id: 's1', text: 'AI Development', type: 'service' },
-    { id: 's2', text: 'Cloud Migration', type: 'service' },
-    { id: 's3', text: 'Data Analytics', type: 'service' },
-    { id: 's4', text: 'Web Development', type: 'service' },
-    { id: 's5', text: 'Mobile App Development', type: 'service' },
-    { id: 's6', text: 'IT Consulting', type: 'service' },
-    { id: 's7', text: 'Cybersecurity Services', type: 'service' },
-    { id: 's8', text: 'Digital Transformation', type: 'service' },
-    
-    // Equipment suggestions
-    { id: 'e1', text: 'High-Performance Servers', type: 'equipment' },
-    { id: 'e2', text: 'AI Workstations', type: 'equipment' },
-    { id: 'e3', text: 'Network Equipment', type: 'equipment' },
-    { id: 'e4', text: 'Storage Solutions', type: 'equipment' },
-    { id: 'e5', text: 'Security Appliances', type: 'equipment' },
-    { id: 'e6', text: 'Cloud Infrastructure', type: 'equipment' },
-    
-    // Category suggestions
-    { id: 'c1', text: 'Artificial Intelligence', type: 'category' },
-    { id: 'c2', text: 'Cloud Computing', type: 'category' },
-    { id: 'c3', text: 'Cybersecurity', type: 'category' },
-    { id: 'c4', text: 'Data Science', type: 'category' },
-    { id: 'c5', text: 'Web Development', type: 'category' },
-    { id: 'c6', text: 'Mobile Development', type: 'category' },
-    { id: 'c7', text: 'DevOps', type: 'category' },
-    { id: 'c8', text: 'Blockchain', type: 'category' },
+    { id: 'recent1', text: 'AI CRM System', type: 'recent' },
+    { id: 'recent2', text: 'Cloud setup help', type: 'recent' },
+    { id: 'recent3', text: 'Pricing information', type: 'recent' },
+    { id: 'recent4', text: 'API documentation', type: 'recent' },
   ];
-=======
-export const generateSearchSuggestions = (query: string): string[] => {
-  const suggestions = [
-    'AI Services',
-    'Cybersecurity',
-    'Cloud Migration',
-    'Web Development',
-    'Mobile Apps',
-    'Data Analytics',
-    'Blockchain',
-    'IT Consulting'
+};
+
+export const getTrendingSearches = (): SearchSuggestion[] => {
+  return [
+    { id: 'trend1', text: 'AI-powered solutions', type: 'trending', category: 'AI' },
+    { id: 'trend2', text: 'Cloud migration', type: 'trending', category: 'Cloud' },
+    { id: 'trend3', text: 'Digital transformation', type: 'trending', category: 'Consulting' },
+    { id: 'trend4', text: 'Cybersecurity services', type: 'trending', category: 'Security' },
   ];
-  
-  if (!query) return suggestions.slice(0, 5);
-  
-  return suggestions
-    .filter(suggestion => 
-      suggestion.toLowerCase().includes(query.toLowerCase())
-    )
-    .slice(0, 5);
->>>>>>> b0227f6a3f6a80df96e210611ae67bdcdc943ae0
 };

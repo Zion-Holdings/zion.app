@@ -1,56 +1,46 @@
+import React from 'react';
+import { Card, CardContent, CardHeader } from '@/components/ui/card';
 
-import React from "react";
-import { motion } from "framer-motion";
-import { LoadingSpinner } from "@/components/ui/loading-spinner";
-
-export function ProfileLoadingState() {
+export const ProfileLoadingState: React.FC = () => {
   return (
-    <motion.div 
-      className="min-h-screen bg-gradient-to-br from-zion-blue via-zion-blue-dark to-zion-purple/20 flex justify-center items-center p-4"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
-    >
-      <div className="text-center">
-        <LoadingSpinner size="xl" color="primary" text="Loading profile..." />
-        
-        <motion.div
-          className="mt-8 text-zion-slate-light"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.5 }}
-        >
-          <p className="text-lg font-medium mb-2">Preparing your experience</p>
-          <p className="text-sm opacity-80">This will only take a moment...</p>
-        </motion.div>
-
-        {/* Loading progress dots */}
-        <motion.div
-          className="mt-6"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.6, duration: 0.5 }}
-        >
-          <div className="flex justify-center space-x-2">
-            {[0, 1, 2].map((index) => (
-              <motion.div
-                key={index}
-                className="w-2 h-2 bg-zion-cyan rounded-full"
-                animate={{
-                  scale: [1, 1.2, 1],
-                  opacity: [0.5, 1, 0.5]
-                }}
-                transition={{
-                  duration: 1.5,
-                  repeat: Infinity,
-                  delay: index * 0.2,
-                  ease: "easeInOut"
-                }}
-              />
-            ))}
+    <div className="max-w-4xl mx-auto px-4 py-8">
+      <Card>
+        <CardHeader>
+          <div className="flex items-center space-x-4">
+            <div className="w-20 h-20 bg-gray-200 rounded-full animate-pulse"></div>
+            <div className="space-y-2">
+              <div className="h-6 bg-gray-200 rounded w-48 animate-pulse"></div>
+              <div className="h-4 bg-gray-200 rounded w-32 animate-pulse"></div>
+            </div>
           </div>
-        </motion.div>
-      </div>
-    </motion.div>
+        </CardHeader>
+        <CardContent className="space-y-6">
+          <div className="space-y-2">
+            <div className="h-4 bg-gray-200 rounded w-full animate-pulse"></div>
+            <div className="h-4 bg-gray-200 rounded w-3/4 animate-pulse"></div>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="space-y-3">
+              <div className="h-4 bg-gray-200 rounded w-24 animate-pulse"></div>
+              <div className="h-4 bg-gray-200 rounded w-full animate-pulse"></div>
+            </div>
+            <div className="space-y-3">
+              <div className="h-4 bg-gray-200 rounded w-24 animate-pulse"></div>
+              <div className="h-4 bg-gray-200 rounded w-full animate-pulse"></div>
+            </div>
+          </div>
+          
+          <div className="space-y-3">
+            <div className="h-4 bg-gray-200 rounded w-24 animate-pulse"></div>
+            <div className="flex flex-wrap gap-2">
+              {[...Array(6)].map((_, i) => (
+                <div key={i} className="h-6 bg-gray-200 rounded w-20 animate-pulse"></div>
+              ))}
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+    </div>
   );
-}
+};

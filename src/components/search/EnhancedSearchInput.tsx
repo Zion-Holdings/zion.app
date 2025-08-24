@@ -1,123 +1,165 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { Search, X } from 'lucide-react';
-import { Input } from '@/components/ui/Input';
+import React, { useState, useEffect, useRef } from 'react';
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
+import { Search, X, TrendingUp, Clock } from 'lucide-react';
 
 interface SearchSuggestion {
   id: string;
   text: string;
-  type: 'talent' | 'service' | 'equipment' | 'category';
+  type: 'recent' | 'trending' | 'suggestion';
+  category?: string;
 }
 
 interface EnhancedSearchInputProps {
-  value: string;
-  onChange: (value: string) => void;
-  onSelectSuggestion: (suggestion: string) => void;
-  searchSuggestions: SearchSuggestion[];
   placeholder?: string;
-  className?: string;
+  onSearch?: (query: string) => void;
+  suggestions?: SearchSuggestion[];
 }
 
-export function EnhancedSearchInput({
-  value,
-  onChange,
-  onSelectSuggestion,
-  searchSuggestions,
-  placeholder = "Search...",
-  className = ""
-}: EnhancedSearchInputProps) {
-  const [isOpen, setIsOpen] = useState(false);
-  const [filteredSuggestions, setFilteredSuggestions] = useState<SearchSuggestion[]>([]);
-  const wrapperRef = useRef<HTMLDivElement>(null);
+export const EnhancedSearchInput: React.FC<EnhancedSearchInputProps> = ({
+  placeholder = "Search for services, solutions, or help...",
+  onSearch,
+  suggestions = [],
+}) => {
+  const [query, setQuery] = useState('');
+  const [isFocused, setIsFocused] = useState(false);
+  const [showSuggestions, setShowSuggestions] = useState(false);
+  const inputRef = useRef<HTMLInputElement>(null);
+  const suggestionsRef = useRef<HTMLDivElement>(null);
+
+  // Mock suggestions
+  const mockSuggestions: SearchSuggestion[] = [
+    { id: '1', text: 'AI CRM System', type: 'trending', category: 'AI Solutions' },
+    { id: '2', text: 'Cloud Infrastructure', type: 'trending', category: 'Cloud Services' },
+    { id: '3', text: 'Web Development', type: 'trending', category: 'Development' },
+    { id: '4', text: 'AI CRM System', type: 'recent' },
+    { id: '5', text: 'Cloud setup help', type: 'recent' },
+    { id: '6', text: 'Pricing information', type: 'recent' },
+  ];
+
+  const allSuggestions = [...mockSuggestions, ...suggestions];
 
   useEffect(() => {
-    if (value.trim()) {
-      const filtered = searchSuggestions.filter(suggestion =>
-        suggestion.text.toLowerCase().includes(value.toLowerCase())
-      ).slice(0, 5);
-      setFilteredSuggestions(filtered);
-      setIsOpen(filtered.length > 0);
-    } else {
-      setFilteredSuggestions([]);
-      setIsOpen(false);
-    }
-  }, [value, searchSuggestions]);
-
-  useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (wrapperRef.current && !wrapperRef.current.contains(event.target as Node)) {
-        setIsOpen(false);
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        suggestionsRef.current &&
+        !suggestionsRef.current.contains(event.target as Node) &&
+        inputRef.current &&
+        !inputRef.current.contains(event.target as Node)
+      ) {
+        setShowSuggestions(false);
       }
-    }
+    };
 
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
+  const handleSearch = () => {
+    if (query.trim()) {
+      onSearch?.(query.trim());
+      setShowSuggestions(false);
+    }
+  };
+
+  const handleKeyPress = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter') {
+      handleSearch();
+    }
+  };
+
   const handleSuggestionClick = (suggestion: SearchSuggestion) => {
-    onSelectSuggestion(suggestion.text);
-    setIsOpen(false);
+    setQuery(suggestion.text);
+    onSearch?.(suggestion.text);
+    setShowSuggestions(false);
   };
 
-  const handleClear = () => {
-    onChange('');
-    setIsOpen(false);
+  const clearSearch = () => {
+    setQuery('');
+    inputRef.current?.focus();
   };
 
-  const getTypeIcon = (type: string) => {
+  const getSuggestionIcon = (type: string) => {
     switch (type) {
-      case 'talent':
-        return '👤';
-      case 'service':
-        return '🔧';
-      case 'equipment':
-        return '💻';
-      case 'category':
-        return '📁';
+      case 'trending':
+        return <TrendingUp className="w-4 h-4 text-orange-500" />;
+      case 'recent':
+        return <Clock className="w-4 h-4 text-blue-500" />;
       default:
-        return '🔍';
+        return <Search className="w-4 h-4 text-gray-400" />;
     }
   };
 
   return (
-    <div ref={wrapperRef} className={`relative ${className}`}>
+    <div className="relative w-full max-w-2xl">
       <div className="relative">
-        <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-zion-slate-light" />
+        <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
         <Input
+          ref={inputRef}
           type="text"
-          value={value}
-          onChange={(e) => onChange(e.target.value)}
+          value={query}
+          onChange={(e) => {
+            setQuery(e.target.value);
+            setShowSuggestions(e.target.value.length > 0);
+          }}
+          onFocus={() => {
+            setIsFocused(true);
+            if (query.length > 0) {
+              setShowSuggestions(true);
+            }
+          }}
+          onBlur={() => setIsFocused(false)}
+          onKeyPress={handleKeyPress}
           placeholder={placeholder}
-          className="pl-10 pr-10 bg-zion-blue border-zion-blue-light text-white placeholder:text-zion-slate-light focus:border-zion-cyan"
-          onFocus={() => value.trim() && filteredSuggestions.length > 0 && setIsOpen(true)}
+          className="pl-10 pr-20 py-3 text-base border-2 focus:border-blue-500 focus:ring-blue-500"
         />
-        {value && (
-          <button
-            onClick={handleClear}
-            className="absolute right-3 top-1/2 transform -translate-y-1/2 text-zion-slate-light hover:text-white transition-colors"
-            aria-label="Clear search"
+        
+        {query && (
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={clearSearch}
+            className="absolute right-16 top-1/2 transform -translate-y-1/2 h-8 w-8 p-0 hover:bg-gray-100"
           >
-            <X className="h-4 w-4" />
-          </button>
+            <X className="w-4 h-4" />
+          </Button>
         )}
+        
+        <Button
+          onClick={handleSearch}
+          disabled={!query.trim()}
+          className="absolute right-2 top-1/2 transform -translate-y-1/2 h-8 px-4 bg-blue-600 hover:bg-blue-700 text-white"
+        >
+          Search
+        </Button>
       </div>
 
-      {isOpen && filteredSuggestions.length > 0 && (
-        <div className="absolute top-full left-0 right-0 mt-1 bg-zion-blue-dark border border-zion-blue-light rounded-lg shadow-lg z-50 max-h-64 overflow-y-auto">
-          {filteredSuggestions.map((suggestion) => (
-            <button
-              key={suggestion.id}
-              onClick={() => handleSuggestionClick(suggestion)}
-              className="flex items-center w-full px-4 py-3 text-left hover:bg-zion-blue transition-colors"
-            >
-              <span className="mr-3 text-lg">{getTypeIcon(suggestion.type)}</span>
-              <div className="flex-1">
-                <div className="text-white font-medium">{suggestion.text}</div>
-                <div className="text-zion-slate-light text-sm capitalize">{suggestion.type}</div>
-              </div>
-            </button>
-          ))}
+      {showSuggestions && allSuggestions.length > 0 && (
+        <div
+          ref={suggestionsRef}
+          className="absolute top-full left-0 right-0 mt-1 bg-white border border-gray-200 rounded-lg shadow-lg z-50 max-h-96 overflow-y-auto"
+        >
+          <div className="p-2">
+            {allSuggestions.map((suggestion) => (
+              <button
+                key={suggestion.id}
+                onClick={() => handleSuggestionClick(suggestion)}
+                className="w-full text-left p-3 hover:bg-gray-50 rounded-md flex items-center space-x-3 group"
+              >
+                {getSuggestionIcon(suggestion.type)}
+                <div className="flex-1">
+                  <div className="font-medium text-gray-900 group-hover:text-blue-600">
+                    {suggestion.text}
+                  </div>
+                  {suggestion.category && (
+                    <div className="text-sm text-gray-500">{suggestion.category}</div>
+                  )}
+                </div>
+              </button>
+            ))}
+          </div>
         </div>
       )}
     </div>
   );
-}
+};
