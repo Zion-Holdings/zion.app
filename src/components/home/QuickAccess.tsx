@@ -34,6 +34,12 @@ export function QuickAccess() {
       link: "/services"
     },
     {
+      title: "All Services",
+      description: "Complete portfolio of IT & AI solutions",
+      icon: <Briefcase className="h-6 w-6 text-zion-purple" />,
+      link: "/comprehensive-services"
+    },
+    {
       title: t('home.tool_equipment'),
       description: t('home.tool_equipment_desc'),
       icon: <Settings className="h-6 w-6 text-zion-purple" />,
