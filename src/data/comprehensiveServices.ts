@@ -6,42 +6,56 @@ export const SERVICE_CATEGORIES = [
     name: "AI Services",
     description: "Cutting-edge artificial intelligence solutions for business automation and decision making",
     icon: "🤖",
-    count: 7
+    count: 10
   },
   {
     id: "micro-saas",
     name: "Micro SAAS",
     description: "Scalable software-as-a-service solutions for business growth and efficiency",
     icon: "💻",
-    count: 7
+    count: 10
   },
   {
     id: "it-services",
     name: "IT Services",
     description: "Comprehensive IT infrastructure and management services",
     icon: "🔧",
-    count: 7
+    count: 10
   },
   {
     id: "blockchain-web3",
     name: "Blockchain & Web3",
     description: "Next-generation blockchain and decentralized web solutions",
     icon: "⛓️",
-    count: 3
+    count: 5
   },
   {
     id: "iot-hardware",
-    name: "IoT & Hardware",
+    name: "IoT & Edge Computing",
     description: "Internet of Things and hardware integration solutions",
     icon: "📡",
-    count: 3
+    count: 5
   },
   {
     id: "emerging-tech",
     name: "Emerging Tech",
     description: "Cutting-edge technologies shaping the future of business",
     icon: "🚀",
-    count: 3
+    count: 5
+  },
+  {
+    id: "cybersecurity",
+    name: "Cybersecurity Services",
+    description: "Advanced security solutions for modern digital environments",
+    icon: "🛡️",
+    count: 2
+  },
+  {
+    id: "data-analytics",
+    name: "Data Science & Analytics",
+    description: "Comprehensive data solutions for insights and decision making",
+    icon: "📊",
+    count: 2
   }
 ];
 
@@ -365,7 +379,7 @@ export const COMPREHENSIVE_SERVICES: ProductListing[] = [
     id: "iot-1",
     name: "IoT Platform Development",
     description: "Scalable IoT platform with device management, real-time monitoring, data analytics, and mobile app integration.",
-    category: "IoT & Hardware",
+    category: "IoT & Edge Computing",
     price: 5999,
     rating: 4.8,
     image: "/images/iot-platform.jpg",
@@ -382,7 +396,7 @@ export const COMPREHENSIVE_SERVICES: ProductListing[] = [
     id: "iot-2",
     name: "Smart Home Automation",
     description: "Complete smart home automation system with IoT devices, voice control, and intelligent scheduling.",
-    category: "IoT & Hardware",
+    category: "IoT & Edge Computing",
     price: 2499,
     rating: 4.6,
     image: "/images/smart-home.jpg",
@@ -399,7 +413,7 @@ export const COMPREHENSIVE_SERVICES: ProductListing[] = [
     id: "iot-3",
     name: "Industrial IoT Solutions",
     description: "Industrial IoT solutions for manufacturing, logistics, and supply chain optimization with predictive analytics.",
-    category: "IoT & Hardware",
+    category: "IoT & Edge Computing",
     price: 7999,
     rating: 4.9,
     image: "/images/industrial-iot.jpg",
@@ -572,6 +586,345 @@ export const COMPREHENSIVE_SERVICES: ProductListing[] = [
       "Post-migration support"
     ],
     addons: ["24-7-support", "disaster-recovery", "custom-automation"]
+  },
+
+  // Additional AI Services
+  {
+    id: "ai-8",
+    name: "AI-Powered Supply Chain Optimization",
+    description: "Intelligent supply chain management using AI to predict demand, optimize inventory, and reduce costs",
+    category: "AI Services",
+    price: 4499,
+    rating: 4.8,
+    image: "/images/ai-supply-chain.jpg",
+    features: [
+      "Demand forecasting",
+      "Inventory optimization",
+      "Route optimization",
+      "Supplier risk assessment",
+      "Real-time monitoring"
+    ],
+    addons: ["custom-model", "data-connector", "custom-alerts"]
+  },
+  {
+    id: "ai-9",
+    name: "AI-Driven Financial Analysis",
+    description: "Advanced financial analysis platform using machine learning for risk assessment, fraud detection, and investment insights",
+    category: "AI Services",
+    price: 5999,
+    rating: 4.9,
+    image: "/images/ai-financial-analysis.jpg",
+    features: [
+      "Risk assessment models",
+      "Fraud detection",
+      "Investment recommendations",
+      "Market trend analysis",
+      "Regulatory compliance"
+    ],
+    addons: ["custom-model", "api-access", "security-audit"]
+  },
+  {
+    id: "ai-10",
+    name: "AI-Powered Healthcare Diagnostics",
+    description: "Medical imaging analysis and diagnostic support using advanced AI algorithms for improved accuracy",
+    category: "AI Services",
+    price: 7999,
+    rating: 4.9,
+    image: "/images/ai-healthcare.jpg",
+    features: [
+      "Medical image analysis",
+      "Diagnostic support",
+      "Patient data analysis",
+      "Treatment recommendations",
+      "HIPAA compliance"
+    ],
+    addons: ["custom-model", "api-access", "security-audit"]
+  },
+
+  // Additional Micro SAAS Services
+  {
+    id: "micro-8",
+    name: "AI-Powered Inventory Management",
+    description: "Intelligent inventory management system with predictive analytics and automated reordering",
+    category: "Micro SAAS",
+    price: 399,
+    rating: 4.7,
+    image: "/images/ai-inventory.jpg",
+    features: [
+      "Predictive analytics",
+      "Automated reordering",
+      "Multi-location support",
+      "Barcode scanning",
+      "Real-time tracking"
+    ],
+    addons: ["advanced-analytics", "custom-workflows", "mobile-app"]
+  },
+  {
+    id: "micro-9",
+    name: "Smart Accounting & Bookkeeping",
+    description: "AI-powered accounting platform with automated categorization, expense tracking, and financial reporting",
+    category: "Micro SAAS",
+    price: 249,
+    rating: 4.8,
+    image: "/images/smart-accounting.jpg",
+    features: [
+      "Automated categorization",
+      "Expense tracking",
+      "Financial reporting",
+      "Tax preparation",
+      "Multi-currency support"
+    ],
+    addons: ["custom-templates", "crm-integration", "advanced-analytics"]
+  },
+  {
+    id: "micro-10",
+    name: "AI-Powered Sales Forecasting",
+    description: "Intelligent sales forecasting platform using machine learning to predict revenue and optimize sales strategies",
+    category: "Micro SAAS",
+    price: 199,
+    rating: 4.6,
+    image: "/images/ai-sales-forecasting.jpg",
+    features: [
+      "Revenue prediction",
+      "Sales trend analysis",
+      "Lead scoring",
+      "Performance metrics",
+      "Custom dashboards"
+    ],
+    addons: ["custom-workflows", "crm-integration", "advanced-analytics"]
+  },
+
+  // Additional IT Services
+  {
+    id: "it-8",
+    name: "Cloud-Native Application Development",
+    description: "Modern cloud-native application development using microservices, containers, and serverless architecture",
+    category: "IT Services",
+    price: 3999,
+    rating: 4.8,
+    image: "/images/cloud-native-dev.jpg",
+    features: [
+      "Microservices architecture",
+      "Container orchestration",
+      "Serverless functions",
+      "CI/CD pipelines",
+      "Cloud optimization"
+    ],
+    addons: ["24-7-support", "custom-automation", "performance-tuning"]
+  },
+  {
+    id: "it-9",
+    name: "Zero-Trust Security Implementation",
+    description: "Comprehensive zero-trust security framework implementation for modern enterprise environments",
+    category: "IT Services",
+    price: 5999,
+    rating: 4.9,
+    image: "/images/zero-trust-security.jpg",
+    features: [
+      "Identity verification",
+      "Network segmentation",
+      "Access control",
+      "Threat detection",
+      "Security monitoring"
+    ],
+    addons: ["security-audit", "incident-response", "24-7-support"]
+  },
+  {
+    id: "it-10",
+    name: "AI-Powered IT Operations",
+    description: "Intelligent IT operations using AI for proactive monitoring, incident prediction, and automated resolution",
+    category: "IT Services",
+    price: 3499,
+    rating: 4.8,
+    image: "/images/ai-it-ops.jpg",
+    features: [
+      "Proactive monitoring",
+      "Incident prediction",
+      "Automated resolution",
+      "Performance optimization",
+      "Root cause analysis"
+    ],
+    addons: ["24-7-support", "custom-automation", "performance-tuning"]
+  },
+
+  // Additional Blockchain & Web3 Services
+  {
+    id: "bc-4",
+    name: "DeFi Protocol Development",
+    description: "Custom DeFi protocol development for lending, borrowing, and yield farming applications",
+    category: "Blockchain & Web3",
+    price: 8999,
+    rating: 4.9,
+    image: "/images/defi-protocol.jpg",
+    features: [
+      "Smart contract development",
+      "Protocol design",
+      "Security auditing",
+      "Frontend development",
+      "Testing and deployment"
+    ],
+    addons: ["security-audit", "deployment-support", "ongoing-maintenance"]
+  },
+  {
+    id: "bc-5",
+    name: "Web3 Identity Solutions",
+    description: "Decentralized identity management solutions using blockchain for secure and privacy-preserving authentication",
+    category: "Blockchain & Web3",
+    price: 3999,
+    rating: 4.7,
+    image: "/images/web3-identity.jpg",
+    features: [
+      "DID implementation",
+      "Verifiable credentials",
+      "Privacy protection",
+      "Cross-platform integration",
+      "Compliance support"
+    ],
+    addons: ["custom-audit", "deployment-support", "ongoing-maintenance"]
+  },
+
+  // Additional IoT & Edge Computing Services
+  {
+    id: "iot-4",
+    name: "Industrial IoT Platform",
+    description: "Comprehensive industrial IoT platform for manufacturing, energy, and logistics optimization",
+    category: "IoT & Edge Computing",
+    price: 5999,
+    rating: 4.8,
+    image: "/images/industrial-iot.jpg",
+    features: [
+      "Sensor integration",
+      "Real-time monitoring",
+      "Predictive maintenance",
+      "Energy optimization",
+      "Safety monitoring"
+    ],
+    addons: ["custom-hardware", "edge-computing", "ai-integration"]
+  },
+  {
+    id: "iot-5",
+    name: "Smart Building Solutions",
+    description: "Intelligent building management systems for energy efficiency, security, and occupant comfort",
+    category: "IoT & Edge Computing",
+    price: 4499,
+    rating: 4.7,
+    image: "/images/smart-building.jpg",
+    features: [
+      "Energy management",
+      "Security systems",
+      "Climate control",
+      "Occupancy tracking",
+      "Predictive maintenance"
+    ],
+    addons: ["custom-hardware", "edge-computing", "ai-integration"]
+  },
+
+  // Additional Emerging Technologies
+  {
+    id: "et-4",
+    name: "AI-Powered Robotics",
+    description: "Intelligent robotics solutions for automation, manufacturing, and service applications",
+    category: "Emerging Technologies",
+    price: 12999,
+    rating: 4.8,
+    image: "/images/ai-robotics.jpg",
+    features: [
+      "Robot programming",
+      "AI integration",
+      "Safety systems",
+      "Performance optimization",
+      "Maintenance support"
+    ],
+    addons: ["custom-algorithms", "hardware-access", "performance-tuning"]
+  },
+  {
+    id: "et-5",
+    name: "Edge AI Computing",
+    description: "Edge computing solutions with integrated AI for real-time processing and decision making",
+    category: "Emerging Technologies",
+    price: 6999,
+    rating: 4.9,
+    image: "/images/edge-ai.jpg",
+    features: [
+      "Edge AI deployment",
+      "Real-time processing",
+      "Low-latency inference",
+      "Resource optimization",
+      "Scalable architecture"
+    ],
+    addons: ["custom-algorithms", "hardware-access", "performance-tuning"]
+  },
+
+  // New Category: Cybersecurity Services
+  {
+    id: "cyber-1",
+    name: "Advanced Threat Detection",
+    description: "Next-generation threat detection using AI and machine learning for proactive cybersecurity",
+    category: "Cybersecurity Services",
+    price: 3999,
+    rating: 4.9,
+    image: "/images/threat-detection.jpg",
+    features: [
+      "AI-powered detection",
+      "Behavioral analysis",
+      "Threat intelligence",
+      "Real-time alerts",
+      "Incident response"
+    ],
+    addons: ["security-audit", "incident-response", "24-7-support"]
+  },
+  {
+    id: "cyber-2",
+    name: "Cloud Security Assessment",
+    description: "Comprehensive cloud security assessment and compliance for multi-cloud environments",
+    category: "Cybersecurity Services",
+    price: 2999,
+    rating: 4.8,
+    image: "/images/cloud-security.jpg",
+    features: [
+      "Multi-cloud security",
+      "Compliance auditing",
+      "Vulnerability assessment",
+      "Security architecture",
+      "Best practices"
+    ],
+    addons: ["security-audit", "incident-response", "24-7-support"]
+  },
+
+  // New Category: Data Science & Analytics
+  {
+    id: "data-1",
+    name: "Big Data Analytics Platform",
+    description: "Enterprise-grade big data analytics platform for processing and analyzing large-scale datasets",
+    category: "Data Science & Analytics",
+    price: 4999,
+    rating: 4.8,
+    image: "/images/big-data.jpg",
+    features: [
+      "Data processing",
+      "Real-time analytics",
+      "Machine learning",
+      "Data visualization",
+      "Scalable architecture"
+    ],
+    addons: ["custom-model", "data-connector", "api-access"]
+  },
+  {
+    id: "data-2",
+    name: "Data Lake Implementation",
+    description: "Modern data lake architecture for centralized data storage, processing, and analytics",
+    category: "Data Science & Analytics",
+    price: 3499,
+    rating: 4.7,
+    image: "/images/data-lake.jpg",
+    features: [
+      "Data ingestion",
+      "Storage optimization",
+      "Processing pipelines",
+      "Governance framework",
+      "Security controls"
+    ],
+    addons: ["data-migration", "custom-automation", "24-7-support"]
   }
 ];
 
@@ -737,21 +1090,21 @@ export const SERVICE_ADDONS = [
     name: "Custom Hardware Development",
     description: "Development of custom IoT hardware for specific use cases",
     price: 2999,
-    category: "IoT & Hardware"
+    category: "IoT & Edge Computing"
   },
   {
     id: "edge-computing",
     name: "Edge Computing Implementation",
     description: "Edge computing solutions for real-time processing and reduced latency",
     price: 1499,
-    category: "IoT & Hardware"
+    category: "IoT & Edge Computing"
   },
   {
     id: "ai-integration",
     name: "AI Integration",
     description: "Integration of AI capabilities into IoT devices and platforms",
     price: 999,
-    category: "IoT & Hardware"
+    category: "IoT & Edge Computing"
   },
 
   // Emerging Tech Addons
@@ -811,6 +1164,64 @@ export const SERVICE_ADDONS = [
     name: "Strategic Technology Consulting",
     description: "Expert consultation on technology strategy and digital transformation",
     price: 299,
+    category: "All Services"
+  },
+
+  // Additional Addon Services
+  {
+    id: "ai-optimization",
+    name: "AI Model Optimization",
+    description: "Performance optimization and fine-tuning of existing AI models for better accuracy and efficiency",
+    price: 1799,
+    category: "AI Services"
+  },
+  {
+    id: "data-quality",
+    name: "Data Quality Assessment",
+    description: "Comprehensive data quality assessment and improvement recommendations",
+    price: 799,
+    category: "Data Science & Analytics"
+  },
+  {
+    id: "performance-monitoring",
+    name: "Advanced Performance Monitoring",
+    description: "Real-time performance monitoring and alerting for critical systems",
+    price: 599,
+    category: "IT Services"
+  },
+  {
+    id: "compliance-framework",
+    name: "Compliance Framework Setup",
+    description: "Setup and implementation of industry-specific compliance frameworks",
+    price: 2499,
+    category: "Cybersecurity Services"
+  },
+  {
+    id: "integration-support",
+    name: "Third-Party Integration Support",
+    description: "Expert support for integrating with popular third-party platforms and APIs",
+    price: 899,
+    category: "Micro SAAS"
+  },
+  {
+    id: "training-workshops",
+    name: "Technology Training Workshops",
+    description: "Custom training workshops for teams on new technologies and best practices",
+    price: 1499,
+    category: "All Services"
+  },
+  {
+    id: "disaster-recovery-planning",
+    name: "Disaster Recovery Planning",
+    description: "Comprehensive disaster recovery planning and testing services",
+    price: 1999,
+    category: "IT Services"
+  },
+  {
+    id: "vendor-selection",
+    name: "Technology Vendor Selection",
+    description: "Expert guidance in selecting the right technology vendors and solutions",
+    price: 799,
     category: "All Services"
   }
 ];
