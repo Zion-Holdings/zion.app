@@ -4,7 +4,7 @@ import {
   Star, Clock, Users, TrendingUp, CheckCircle, ExternalLink, 
   ChevronRight, Shield, Zap, Globe, Rocket, Brain, Atom
 } from 'lucide-react';
-import { enhancedMicroSaasServices } from '../data/enhanced-micro-saas-services-2025';
+import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
 
 export default function EnhancedServicesShowcase() {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -23,8 +23,8 @@ export default function EnhancedServicesShowcase() {
   ];
 
   const filteredServices = selectedCategory === 'all' 
-    ? enhancedMicroSaasServices 
-    : enhancedMicroSaasServices.filter(service => service.category === selectedCategory);
+    ? enhancedRealMicroSaasServices 
+    : enhancedRealMicroSaasServices.filter(service => service.category === selectedCategory);
 
   const getCategoryIcon = (category: string) => {
     const categoryData = categories.find(cat => cat.id === category);
@@ -158,12 +158,12 @@ export default function EnhancedServicesShowcase() {
 
                   {/* Benefits */}
                   <div className="mb-6">
-                    <h4 className="text-sm font-semibold text-white mb-3">Key Benefits:</h4>
+                    <h4 className="text-sm font-semibold text-white mb-3">Key Features:</h4>
                     <div className="space-y-2">
-                      {service.benefits.slice(0, 2).map((benefit, idx) => (
+                      {service.features.slice(0, 2).map((feature, idx) => (
                         <div key={idx} className="flex items-center gap-2 text-xs text-white/70">
                           <TrendingUp className="w-3 h-3 text-blue-400" />
-                          {benefit}
+                          {feature}
                         </div>
                       ))}
                     </div>
@@ -272,7 +272,7 @@ export default function EnhancedServicesShowcase() {
               onClick={(e) => e.stopPropagation()}
             >
               {(() => {
-                const service = enhancedMicroSaasServices.find(s => s.id === selectedService);
+                const service = enhancedRealMicroSaasServices.find(s => s.id === selectedService);
                 if (!service) return null;
 
                 return (
@@ -301,24 +301,24 @@ export default function EnhancedServicesShowcase() {
                         <p className="text-white/80 leading-relaxed mb-6">{service.description}</p>
                         
                         <div className="mb-6">
-                          <h4 className="text-lg font-semibold text-white mb-3">Key Benefits</h4>
+                          <h4 className="text-lg font-semibold text-white mb-3">Key Features</h4>
                           <div className="space-y-2">
-                            {service.benefits.map((benefit, idx) => (
+                            {service.features.map((feature, idx) => (
                               <div key={idx} className="flex items-center gap-2 text-white/70">
                                 <CheckCircle className="w-4 h-4 text-green-400" />
-                                {benefit}
+                                {feature}
                               </div>
                             ))}
                           </div>
                         </div>
 
                         <div className="mb-6">
-                          <h4 className="text-lg font-semibold text-white mb-3">Capabilities</h4>
+                          <h4 className="text-lg font-semibold text-white mb-3">Use Cases</h4>
                           <div className="space-y-2">
-                            {service.capabilities.map((capability, idx) => (
+                            {service.useCases.map((useCase, idx) => (
                               <div key={idx} className="flex items-center gap-2 text-white/70">
                                 <Zap className="w-4 h-4 text-blue-400" />
-                                {capability}
+                                {useCase}
                               </div>
                             ))}
                           </div>
