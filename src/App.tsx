@@ -7,6 +7,7 @@ import { useScrollToTop } from "./hooks";
 import { WhitelabelProvider } from "./context/WhitelabelContext";
 import { Toaster } from "./components/ui/toaster";
 import { Toaster as SonnerToaster } from "./components/ui/sonner";
+import { Footer } from "./components/Footer";
 import {
   AuthRoutes,
   DashboardRoutes,
@@ -91,6 +92,7 @@ const App = () => {
             <Route path="*" element={<ErrorRoutes />} />
           </Routes>
         </Suspense>
+        <Footer />
         <Toaster />
         <SonnerToaster position="top-right" />
       </ThemeProvider>
