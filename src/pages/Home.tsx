@@ -13,6 +13,7 @@ import { FeatureHighlights } from "@/components/home/FeatureHighlights";
 import { ITServiceRequestHero } from "@/components/home/ITServiceRequestHero";
 import { FloatingCTA } from "@/components/FloatingCTA";
 import { PricingSection } from "@/components/PricingSection";
+import { TechSolutionsSection } from "@/components/TechSolutionsSection";
 
 export default function Home() {
   return (
@@ -31,6 +32,7 @@ export default function Home() {
       <CategoriesSection />
       <BenefitsSection />
       <HowItWorksSection />
+      <TechSolutionsSection />
       <PricingSection />
       <FeaturedListingsSection />
       <NewsletterSection />
