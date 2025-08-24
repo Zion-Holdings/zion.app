@@ -45,6 +45,14 @@ export function FeatureCTAs() {
       details: "From on-demand IT support to specialized AI development, our marketplace offers verified services with transparent pricing and reviews."
     },
     {
+      title: "Comprehensive Solutions",
+      description: "Access our full portfolio of 30+ micro SAAS services, AI solutions, and enterprise-grade IT services.",
+      icon: <Building className="h-10 w-10 p-2 rounded-md bg-indigo-100 text-indigo-700" />,
+      link: "/comprehensive-services",
+      badge: "Featured",
+      details: "From AI chatbots to blockchain solutions, IoT platforms to cybersecurity suites - discover our complete range of innovative technology services."
+    },
+    {
       title: "Equipment Catalog",
       description: "Find specialized hardware and tech equipment for AI development and research.",
       icon: <Settings className="h-10 w-10 p-2 rounded-md bg-amber-100 text-amber-700" />,
