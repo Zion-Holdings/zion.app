@@ -90,6 +90,12 @@ export function CategoriesSection({ showTitle = true }: CategoriesSectionProps) 
                 {service.title}
               </Link>
             ))}
+            <Link 
+              to="/comprehensive-services"
+              className="px-6 py-3 bg-zion-purple hover:bg-zion-purple-dark border border-zion-purple/50 hover:border-zion-purple text-white transition-all duration-300"
+            >
+              View All Services
+            </Link>
           </div>
         </div>
         
