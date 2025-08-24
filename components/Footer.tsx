@@ -6,9 +6,9 @@ const Footer = () => {
   const footerLinks = {
     company: [
       { name: 'About Us', href: '/about' },
-      { name: 'Our Team', href: '/about#team' },
-      { name: 'Careers', href: '/careers' },
-      { name: 'Press', href: '/press' }
+      { name: 'Case Studies', href: '/case-studies' },
+      { name: 'Blog', href: '/blog' },
+      { name: 'Careers', href: '/careers' }
     ],
     services: [
       { name: 'AI Solutions', href: '/services?category=AI%20%26%20Machine%20Learning' },
