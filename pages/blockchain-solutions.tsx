@@ -1,7 +1,9 @@
+import EnhancedLayout from '../components/layout/EnhancedLayout';
+
 export default function BlockchainSolutions() {
   return (
-    <div>
+    <EnhancedLayout>
       <h1 className="text-2xl font-semibold">Blockchain Solutions</h1>
-    </div>
+    </EnhancedLayout>
   );
 }

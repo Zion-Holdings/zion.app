@@ -1,7 +1,9 @@
-export default function AuthIndex() {
+import EnhancedLayout from '../../components/layout/EnhancedLayout';
+
+export default function Auth() {
   return (
-    <div>
-      <h1 className="text-2xl font-semibold">Sign In</h1>
-    </div>
+    <EnhancedLayout>
+      <h1 className="text-2xl font-semibold">Auth</h1>
+    </EnhancedLayout>
   );
 }

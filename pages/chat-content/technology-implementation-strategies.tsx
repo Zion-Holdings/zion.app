@@ -1,1 +1,1 @@
-export default function Page() { return <div>Technology Implementation Strategies</div>; }
+export default function ChatContent(){return null;}

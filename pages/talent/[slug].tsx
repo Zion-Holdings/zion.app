@@ -1,11 +1,9 @@
-import { useRouter } from 'next/router';
+import EnhancedLayout from '../../components/layout/EnhancedLayout';
 
 export default function TalentDetail() {
-  const { query } = useRouter();
-  const slug = query.slug as string;
   return (
-    <div>
-      <h1 className="text-2xl font-semibold">Talent: {slug}</h1>
-    </div>
+    <EnhancedLayout>
+      <h1 className="text-2xl font-semibold">Talent Detail</h1>
+    </EnhancedLayout>
   );
 }

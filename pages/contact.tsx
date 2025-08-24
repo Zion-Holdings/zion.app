@@ -1,8 +1,9 @@
+import EnhancedLayout from '../components/layout/EnhancedLayout';
+
 export default function Contact() {
   return (
-    <div className="space-y-2">
+    <EnhancedLayout>
       <h1 className="text-2xl font-semibold">Contact</h1>
-      <p>Email us at support@zion.ai</p>
-    </div>
+    </EnhancedLayout>
   );
 }

@@ -13,7 +13,7 @@ const CloudMigrationServicesChat: NextPage = () => {
       <main>
         <h1>CloudMigrationServicesChat</h1>
         <p>Service details coming soon...</p>
-        <a href="/services">Back to Services</a>
+        <Link href="/services"><a>Back to Services</a></Link>
       </main>
     </div>
   );

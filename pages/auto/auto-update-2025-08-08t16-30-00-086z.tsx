@@ -1,1 +1,1 @@
-export default function Page() { return <div>Auto Page</div>; }
+export default function AutoPage(){return null;}

@@ -1,1 +1,1 @@
-export default function Page() { return <div>Sustainable Technology Practices</div>; }
+export default function ChatContent(){return null;}
