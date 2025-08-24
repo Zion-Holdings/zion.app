@@ -7,6 +7,7 @@ const Header = () => {
 
   const navigation = [
     { name: 'Home', path: '/', current: location.pathname === '/' },
+    { name: 'Services', path: '/services', current: location.pathname === '/services' },
     { name: 'About', path: '/about', current: location.pathname === '/about' },
     { name: 'Contact', path: '/contact', current: location.pathname === '/contact' },
   ];
