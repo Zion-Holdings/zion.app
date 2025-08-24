@@ -1,86 +1,102 @@
-const fs = require('fs');
-const path = require('path');
-const { spawnSync } = require('child_process');
+exports.config = { schedule: '*/15 * * * *' };
 
-function escapeHtml(str) {
-  return String(str)
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#39;');
-}
+exports.handler = async function () {
+  const baseUrl = (process.env.SITE_URL || process.env.URL || process.env.DEPLOY_PRIME_URL || '').replace(/\/$/, '');
+  const githubToken = process.env.GITHUB_TOKEN || '';
+  const githubRepo = process.env.GITHUB_REPO || 'Zion-Holdings/zion.app';
+  const githubBranch = process.env.GIT_BRANCH || 'main';
 
-function listFiles(dir, exts = [/\.(md|mdx|tsx|ts|jsx|js)$/i]) {
-  const out = [];
-  if (!fs.existsSync(dir)) return out;
-  const entries = fs.readdirSync(dir, { withFileTypes: true });
-  for (const entry of entries) {
-    const full = path.join(dir, entry.name);
-    if (entry.isDirectory()) out.push(...listFiles(full, exts));
-    else if (exts.some((re) => re.test(entry.name))) out.push(full);
+  function log(msg) { console.log(`[content-freshness] ${msg}`); }
+
+  async function fetchText(url) {
+    try {
+      const r = await fetch(url, { redirect: 'follow' });
+      if (!r.ok) return { ok: false, status: r.status, text: '' };
+      const text = await r.text();
+      return { ok: true, status: r.status, text };
+    } catch (e) {
+      return { ok: false, status: 0, text: '', error: String(e) };
+    }
   }
-  return out;
-}
 
-function ensureDir(dir) { if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true }); }
+  function parseSitemap(xml) {
+    const entries = [];
+    const locs = [...xml.matchAll(/<url>([\s\S]*?)<\/url>/g)];
+    for (const m of locs) {
+      const block = m[1];
+      const loc = (block.match(/<loc>(.*?)<\/loc>/) || [])[1];
+      const lastmod = (block.match(/<lastmod>(.*?)<\/lastmod>/) || [])[1];
+      if (loc) entries.push({ loc: loc.trim(), lastmod: lastmod ? lastmod.trim() : null });
+      if (entries.length >= 1000) break;
+    }
+    return entries;
+  }
 
-exports.handler = async () => {
-  const rootDir = path.resolve(__dirname, '..', '..');
-  const targets = ['pages', 'components', 'docs'].map((d) => path.join(rootDir, d));
-  const files = targets.flatMap((d) => listFiles(d));
+  async function commitFile(path, content, message) {
+    if (!githubToken) return { ok: false, status: 0, error: 'No GITHUB_TOKEN provided' };
+    const headers = {
+      Authorization: `token ${githubToken}`,
+      'Content-Type': 'application/json',
+      'User-Agent': 'netlify-content-freshness'
+    };
+    let sha;
+    try {
+      const getRes = await fetch(`https://api.github.com/repos/${githubRepo}/contents/${encodeURIComponent(path)}?ref=${encodeURIComponent(githubBranch)}`, { headers });
+      if (getRes.ok) { const json = await getRes.json(); sha = json.sha; }
+    } catch {}
+    const body = { message, content: Buffer.from(content).toString('base64'), branch: githubBranch, sha };
+    const putRes = await fetch(`https://api.github.com/repos/${githubRepo}/contents/${encodeURIComponent(path)}`, { method: 'PUT', headers, body: JSON.stringify(body) });
+    const ok = putRes.ok; const status = putRes.status; let error;
+    if (!ok) { try { error = await putRes.text(); } catch (e) { error = String(e); } }
+    return { ok, status, error };
+  }
 
-  const now = Date.now();
-  const entries = files.map((f) => {
-    const st = fs.statSync(f);
-    const ageDays = Math.round((now - st.mtimeMs) / (1000 * 60 * 60 * 24));
-    return { file: path.relative(rootDir, f), mtime: st.mtime.toISOString?.() || new Date(st.mtimeMs).toISOString(), ageDays };
-  }).sort((a,b) => b.ageDays - a.ageDays);
+  try {
+    if (!baseUrl) return { statusCode: 200, body: JSON.stringify({ ok: false, error: 'No base URL' }) };
+    const site = await fetchText(`${baseUrl}/sitemap.xml`);
+    if (!site.ok) return { statusCode: 200, body: JSON.stringify({ ok: false, error: 'No sitemap', status: site.status }) };
+    const items = parseSitemap(site.text);
+    const now = Date.now();
+    const analyzed = items.map((it) => {
+      let daysOld = null;
+      if (it.lastmod) {
+        const t = Date.parse(it.lastmod);
+        if (!Number.isNaN(t)) daysOld = Math.round((now - t) / (1000 * 60 * 60 * 24));
+      }
+      return { url: it.loc, lastmod: it.lastmod, daysOld };
+    });
+    analyzed.sort((a, b) => (b.daysOld || 0) - (a.daysOld || 0));
 
-  const summary = {
-    generatedAt: new Date().toISOString(),
-    totalFiles: entries.length,
-    staleThresholdDays: 60,
-    staleFiles: entries.filter(e => e.ageDays >= 60).slice(0, 300),
-    newestFiles: entries.slice(-50).reverse()
-  };
+    const summary = {
+      generatedAt: new Date().toISOString(),
+      baseUrl,
+      totals: { pages: analyzed.length, withoutLastmod: analyzed.filter(x => x.lastmod == null).length },
+      topStale: analyzed.slice(0, 50),
+    };
 
-  const reportDir = path.join(rootDir, 'public', 'reports', 'content-freshness');
-  ensureDir(reportDir);
-  fs.writeFileSync(path.join(reportDir, 'latest.json'), JSON.stringify(summary, null, 2));
-  const ts = new Date().toISOString().replace(/[:.]/g, '-');
-  fs.writeFileSync(path.join(reportDir, `content-freshness-${ts}.json`), JSON.stringify(summary, null, 2));
+    const jsonPath = 'automation/reports/content-freshness.json';
+    const mdPath = 'docs/content-freshness.md';
+    const jsonContent = JSON.stringify({ ...summary, all: analyzed }, null, 2);
+    const mdLines = [
+      `# Content Freshness Report`,
+      `Generated: ${summary.generatedAt}`,
+      `Base URL: ${baseUrl}`,
+      '',
+      `Pages: ${summary.totals.pages}`,
+      `Without <lastmod>: ${summary.totals.withoutLastmod}`,
+      '',
+      '## Top 50 Stale Pages',
+      ...summary.topStale.map(r => `- ${r.url} — ${r.daysOld == null ? 'unknown age' : r.daysOld + ' days old'}`)
+    ];
+    const msg = `chore(report): content freshness (${new Date().toISOString()})`;
+    const [jsonRes, mdRes] = await Promise.all([
+      commitFile(jsonPath, jsonContent, msg),
+      commitFile(mdPath, mdLines.join('\n'), msg),
+    ]);
 
-  const renderRows = (arr) => arr.slice(0, 200).map((x) => (
-    '<tr>' +
-      '<td>' + String(x.ageDays) + '</td>' +
-      '<td><code>' + escapeHtml(x.file) + '</code></td>' +
-      '<td>' + escapeHtml(x.mtime) + '</td>' +
-    '</tr>'
-  )).join('');
-
-  const staleTable = '<table><tr><th>Age (days)</th><th>File</th><th>Updated</th></tr>' + renderRows(summary.staleFiles) + '</table>';
-  const newestTable = '<table><tr><th>Age (days)</th><th>File</th><th>Updated</th></tr>' + renderRows(summary.newestFiles) + '</table>';
-
-  const htmlIndex = [
-    '<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>',
-    '<title>Content Freshness</title>',
-    '<style>body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Helvetica,Arial,sans-serif;background:#0b1220;color:#fff;padding:24px}a{color:#67e8f9}code,pre{background:#111827;border:1px solid #1f2937;border-radius:8px;padding:12px;display:block;white-space:pre-wrap}h1{margin:0 0 12px;font-size:24px}h2{margin:24px 0 8px;font-size:18px}table{border-collapse:collapse;width:100%}td,th{border:1px solid #1f2937;padding:8px}</style></head><body>',
-    '<h1>Content Freshness</h1>',
-    '<p>Latest JSON: <a href="./latest.json">latest.json</a></p>',
-    '<div>Total files: ' + String(summary.totalFiles) + '</div>',
-    '<div>Stale threshold: ' + String(summary.staleThresholdDays) + ' days</div>',
-    '<div>Stale count: ' + String(summary.staleFiles.length) + '</div>',
-    '<h2>Most Stale (&gt;= 60d)</h2>',
-    staleTable,
-    '<h2>Newest Files</h2>',
-    newestTable,
-    '</body></html>'
-  ].join('');
-  fs.writeFileSync(path.join(reportDir, 'index.html'), htmlIndex);
-
-  // git sync
-  spawnSync('node', [path.join(rootDir, 'automation', 'advanced-git-sync.cjs')], { stdio: 'inherit' });
-
-  return { statusCode: 200, body: JSON.stringify({ ok: true, task: 'content-freshness-runner', files: entries.length }) };
+    return { statusCode: 200, body: JSON.stringify({ ok: true, totals: summary.totals, jsonRes, mdRes }) };
+  } catch (e) {
+    log(String(e));
+    return { statusCode: 500, body: JSON.stringify({ ok: false, error: String(e) }) };
+  }
 };
