@@ -4,7 +4,7 @@ import {
   Star, Clock, Users, TrendingUp, CheckCircle, ExternalLink, 
   ChevronRight, Shield, Zap, Globe, Rocket, Brain, Atom
 } from 'lucide-react';
-import { enhancedMicroSaasServices } from '../data/enhanced-micro-saas-services-2025';
+import { enhancedMicroSaasServices } from '../data/enhanced-micro-saas-services';
 
 export default function EnhancedServicesShowcase() {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -138,7 +138,7 @@ export default function EnhancedServicesShowcase() {
                       </span>
                       <span className="flex items-center gap-1">
                         <Users className="w-3 h-3" />
-                        {service.customers} customers
+                        {service.trialDays} days trial
                       </span>
                     </div>
                   </div>
@@ -160,7 +160,7 @@ export default function EnhancedServicesShowcase() {
                   <div className="mb-6">
                     <h4 className="text-sm font-semibold text-white mb-3">Key Benefits:</h4>
                     <div className="space-y-2">
-                      {service.benefits.slice(0, 2).map((benefit, idx) => (
+                      {service.features.slice(0, 2).map((benefit, idx) => (
                         <div key={idx} className="flex items-center gap-2 text-xs text-white/70">
                           <TrendingUp className="w-3 h-3 text-blue-400" />
                           {benefit}
@@ -303,7 +303,7 @@ export default function EnhancedServicesShowcase() {
                         <div className="mb-6">
                           <h4 className="text-lg font-semibold text-white mb-3">Key Benefits</h4>
                           <div className="space-y-2">
-                            {service.benefits.map((benefit, idx) => (
+                            {service.features.map((benefit, idx) => (
                               <div key={idx} className="flex items-center gap-2 text-white/70">
                                 <CheckCircle className="w-4 h-4 text-green-400" />
                                 {benefit}
@@ -315,7 +315,7 @@ export default function EnhancedServicesShowcase() {
                         <div className="mb-6">
                           <h4 className="text-lg font-semibold text-white mb-3">Capabilities</h4>
                           <div className="space-y-2">
-                            {service.capabilities.map((capability, idx) => (
+                            {service.features.map((capability, idx) => (
                               <div key={idx} className="flex items-center gap-2 text-white/70">
                                 <Zap className="w-4 h-4 text-blue-400" />
                                 {capability}
@@ -340,7 +340,7 @@ export default function EnhancedServicesShowcase() {
                             </div>
                             <div className="flex justify-between">
                               <span>Current Customers:</span>
-                              <span>{service.customers}</span>
+                              <span>{service.trialDays}</span>
                             </div>
                             <div className="flex justify-between">
                               <span>Rating:</span>

@@ -1,4 +1,4 @@
-import { MicroSaasService } from './enhanced-real-micro-saas-services';
+import { EnhancedMicroSaasService } from './enhanced-micro-saas-services';
 
 const contact = {
 	mobile: '+1 302 464 0950',
@@ -7,7 +7,7 @@ const contact = {
 	website: 'https://ziontechgroup.com'
 };
 
-export const enterpriseITSolutions: MicroSaasService[] = [
+export const enterpriseITSolutions: EnhancedMicroSaasService[] = [
 	{
 		id: 'enterprise-sso-scim-accelerator-2034',
 		name: 'Enterprise SSO + SCIM Accelerator',
