@@ -41,6 +41,10 @@ const OpenAppRedirect = React.lazy(() => import('./pages/OpenAppRedirect'));
 const ContactPage = React.lazy(() => import('./pages/Contact'));
 const ZionHireAI = React.lazy(() => import('./pages/ZionHireAI'));
 const RequestQuotePage = React.lazy(() => import('./pages/RequestQuote'));
+const AIAnalyticsDashboard = React.lazy(() => import('./pages/AIAnalyticsDashboard'));
+const AIContentGenerator = React.lazy(() => import('./pages/AIContentGenerator'));
+const CybersecurityServices = React.lazy(() => import('./pages/CybersecurityServices'));
+const CloudMigrationServices = React.lazy(() => import('./pages/CloudMigrationServices'));
 
 const baseRoutes = [
   { path: '/', element: <Home /> },
@@ -63,6 +67,10 @@ const baseRoutes = [
   { path: '/zion-hire-ai', element: <ZionHireAI /> },
   { path: '/hire-ai', element: <ZionHireAI /> },
   { path: '/request-quote', element: <RequestQuotePage /> },
+  { path: '/ai-analytics-dashboard', element: <AIAnalyticsDashboard /> },
+  { path: '/ai-content-generator', element: <AIContentGenerator /> },
+  { path: '/cybersecurity-services', element: <CybersecurityServices /> },
+  { path: '/cloud-migration-services', element: <CloudMigrationServices /> },
   { path: '/blog', element: <Blog /> },
   { path: '/blog/:slug', element: <BlogPost /> },
 ];

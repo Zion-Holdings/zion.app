@@ -16,8 +16,13 @@ import {
   BookOpen,
   Code,
   Building,
-  Clock
+  Clock,
+  BarChart3,
+  PenTool,
+  Shield,
+  Cloud
 } from "lucide-react";
+import { AnimatedBackground, NeonBorder } from "@/components/ui/AnimatedBackground";
 
 export function FeatureCTAs() {
   const features = [
@@ -101,12 +106,45 @@ export function FeatureCTAs() {
       link: "/zion-hire-ai",
       badge: "Premium",
       details: "Automate screening, improve candidate matching, and enhance the hiring experience with our AI recruiting solution."
+    },
+    {
+      title: "AI Analytics Dashboard",
+      description: "Transform your business data into actionable intelligence with AI-powered analytics and insights.",
+      icon: <BarChart3 className="h-10 w-10 p-2 rounded-md bg-emerald-100 text-emerald-700" />,
+      link: "/ai-analytics-dashboard",
+      badge: "New",
+      details: "Get real-time insights, predictive analytics, and custom dashboards to drive data-driven business decisions."
+    },
+    {
+      title: "AI Content Generator",
+      description: "Create engaging content with AI-powered writing tools for blogs, social media, and marketing.",
+      icon: <PenTool className="h-10 w-10 p-2 rounded-md bg-pink-100 text-pink-700" />,
+      link: "/ai-content-generator",
+      badge: "Featured",
+      details: "Generate high-quality content in seconds while maintaining your brand voice and SEO optimization."
+    },
+    {
+      title: "Cybersecurity Services",
+      description: "Comprehensive security solutions including penetration testing, audits, and incident response.",
+      icon: <Shield className="h-10 w-10 p-2 rounded-md bg-red-100 text-red-700" />,
+      link: "/cybersecurity-services",
+      badge: "Secure",
+      details: "Protect your business with enterprise-grade cybersecurity services and 24/7 threat monitoring."
+    },
+    {
+      title: "Cloud Migration Services",
+      description: "Expert cloud migration to AWS, Azure, and Google Cloud with zero downtime guarantee.",
+      icon: <Cloud className="h-10 w-10 p-2 rounded-md bg-blue-100 text-blue-700" />,
+      link: "/cloud-migration-services",
+      badge: "Cloud",
+      details: "Seamless migration to the cloud with cost optimization, security, and performance improvements."
     }
   ];
 
   return (
-    <section className="py-16 bg-gradient-to-b from-background to-background/90">
-      <div className="container mx-auto px-4">
+    <section className="relative py-16 bg-gradient-to-b from-background to-background/90">
+      <AnimatedBackground variant="section" />
+      <div className="container mx-auto px-4 relative z-10">
         <div className="mb-12 text-center">
           <h2 className="text-3xl font-bold tracking-tight mb-3">Discover Zion's Powerful Features</h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
@@ -114,9 +152,10 @@ export function FeatureCTAs() {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {features.map((feature, index) => (
-            <Card key={index} className="overflow-hidden transition-all duration-300 hover:shadow-lg hover:border-primary/50">
+            <Card key={index} className="relative overflow-hidden transition-all duration-300 hover:shadow-lg hover:border-primary/50 group">
+              <AnimatedBackground variant="card" className="opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <CardHeader className="pb-2">
                 <div className="flex justify-between items-start">
                   {feature.icon}
