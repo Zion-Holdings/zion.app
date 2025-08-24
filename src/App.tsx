@@ -55,6 +55,17 @@ const Navigation = () => {
               Home
             </Link>
             
+            <Link
+              to="/about"
+              className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
+                isActive('/about') 
+                  ? 'text-cyan-400 bg-white/20 shadow-lg' 
+                  : 'text-blue-100 hover:text-white hover:bg-white/10'
+              }`}
+            >
+              About
+            </Link>
+            
             {/* Services Dropdown */}
             <div className="relative group">
               <button className="px-3 py-2 rounded-md text-sm font-medium text-blue-100 hover:text-white hover:bg-white/10 transition-all duration-200 flex items-center gap-1">
@@ -139,6 +150,18 @@ const Navigation = () => {
             </Link>
             
             <Link
+              to="/about"
+              onClick={closeMobileMenu}
+              className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
+                isActive('/about') 
+                  ? 'text-cyan-400 bg-white/20' 
+                  : 'text-blue-100 hover:text-white hover:bg-white/10'
+              }`}
+            >
+              About
+            </Link>
+            
+            <Link
               to="/services"
               onClick={closeMobileMenu}
               className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
@@ -203,6 +226,7 @@ const Navigation = () => {
 
 // Only import components that exist
 const Home = React.lazy(() => import('./pages/Home'));
+const AboutPage = React.lazy(() => import('./pages/About'));
 const ContactPage = React.lazy(() => import('./pages/Contact'));
 const FAQPage = React.lazy(() => import('./pages/FAQ'));
 const HelpCenterPage = React.lazy(() => import('./pages/HelpCenter'));
@@ -227,6 +251,7 @@ const NotFoundPage = React.lazy(() => import('./pages/NotFound'));
 
 const baseRoutes = [
   { path: '/', element: <Home /> },
+  { path: '/about', element: <AboutPage /> },
   { path: '/contact', element: <ContactPage /> },
   { path: '/faq', element: <FAQPage /> },
   { path: '/help-center', element: <HelpCenterPage /> },
