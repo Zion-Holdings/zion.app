@@ -1,4 +1,5 @@
-<<<<<<< HEAD
+import React from 'react';
+
 export default function About() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-zion-blue via-zion-blue-dark to-zion-slate-dark">
@@ -98,71 +99,36 @@ export default function About() {
           <div className="bg-white/10 backdrop-blur-sm rounded-lg p-8 mb-16 border border-white/20">
             <h2 className="text-3xl font-bold text-white mb-8 text-center">Our Team</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="text-center">
-                <div className="bg-zion-cyan rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-4">
-                  <span className="text-3xl">👨‍💼</span>
-                </div>
-                <h3 className="text-xl font-semibold text-white mb-2">Leadership Team</h3>
-                <p className="text-zion-slate-light text-sm">
-                  Experienced executives with decades of combined experience in 
-                  technology, business, and innovation.
+              <div>
+                <h3 className="text-xl font-semibold text-white mb-4">Leadership</h3>
+                <p className="text-zion-slate-light mb-6">
+                  Our leadership team brings decades of combined experience in technology, 
+                  business, and innovation. We're committed to driving growth and success 
+                  for our clients and partners.
                 </p>
               </div>
               
-              <div className="text-center">
-                <div className="bg-zion-purple rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-4">
-                  <span className="text-3xl">👨‍💻</span>
-                </div>
-                <h3 className="text-xl font-semibold text-white mb-2">Technical Experts</h3>
-                <p className="text-zion-slate-light text-sm">
-                  Skilled engineers, developers, and architects specializing in 
-                  cutting-edge technologies and best practices.
+              <div>
+                <h3 className="text-xl font-semibold text-white mb-4">Expertise</h3>
+                <p className="text-zion-slate-light">
+                  Our team consists of certified professionals in cloud computing, 
+                  cybersecurity, AI/ML, and enterprise architecture, ensuring the 
+                  highest quality solutions for our clients.
                 </p>
               </div>
             </div>
           </div>
           
-          {/* Contact Section */}
+          {/* Contact Information */}
           <div className="text-center">
-            <h2 className="text-3xl font-bold text-white mb-6">Ready to Work Together?</h2>
-            <p className="text-zion-slate-light mb-8 max-w-2xl mx-auto">
-              Let's discuss how Zion Tech Group can help transform your business 
-              with innovative technology solutions.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a 
-                href="mailto:kleber@ziontechgroup.com" 
-                className="bg-zion-cyan hover:bg-zion-cyan-dark text-white px-8 py-3 rounded-lg font-semibold transition-colors"
-              >
-                Get in Touch
-              </a>
-              <a 
-                href="https://ziontechgroup.com" 
-                className="bg-zion-purple hover:bg-zion-purple-dark text-white px-8 py-3 rounded-lg font-semibold transition-colors"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Visit Website
-              </a>
+            <h2 className="text-3xl font-bold text-white mb-6">Get In Touch</h2>
+            <div className="space-y-4 text-zion-slate-light">
+              <p><strong>Mobile:</strong> +1 302 464 0950</p>
+              <p><strong>Email:</strong> kleber@ziontechgroup.com</p>
+              <p><strong>Address:</strong> 364 E Main St STE 1008 Middletown DE 19709</p>
             </div>
           </div>
         </div>
-=======
-
-import React from 'react';
-
-export default function About() {
-  return (
-    <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 py-16">
-        <h1 className="text-4xl font-bold text-zion-blue mb-8">About Zion Tech Group</h1>
-        <p className="text-lg text-zion-slate-light mb-6">
-          Zion Tech Group is a leading technology marketplace that connects businesses with top-tier AI and tech talent.
-        </p>
-        <p className="text-lg text-zion-slate-light">
-          Our mission is to accelerate digital transformation by providing access to the best technology professionals and services.
-        </p>
->>>>>>> dd620ef4409d707a58974776442fbda9c1819828
       </div>
     </div>
   );

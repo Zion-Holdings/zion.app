@@ -192,8 +192,6 @@
   a {
     color: black !important;
     text-decoration: underline !important;
-
-<<<<<<< HEAD
   }
 
   /* Accessibility features */
@@ -252,7 +250,5 @@
   .high-contrast *:focus-visible {
     outline: 3px solid white;
     outline-offset: 2px;
-=======
->>>>>>> 08097bf6eda122747048d9ca1b875b6b63cfa6c0
   }
 }
