@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { ProfileLoadingState } from '@/components/profile/ProfileLoadingState';
 import type { TalentProfile as TalentProfileType } from '@/types/talent';
 import { ProfileErrorState } from '@/components/profile/ProfileErrorState';
+import NotFound from '@/pages/NotFound';
 
 interface TalentProfileWithSocial extends TalentProfileType {
   social?: Record<string, string>;
@@ -43,11 +44,7 @@ const TalentProfilePage: React.FC = () => {
   }, [id]);
 
   if (loading) return <ProfileLoadingState />;
-  if (error || !profile) {
-    // Redirect to 404 page or show error state
-    navigate('/404', { replace: true });
-    return null;
-  }
+  if (error || !profile) return <NotFound />;
 
   return (
     <main className="min-h-screen bg-zion-blue py-8 text-white">
