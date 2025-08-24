@@ -1,10 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
-import About from './pages/About';
-import Contact from './pages/Contact';
 import NotFound from './pages/NotFound';
+import MicroSaasServices from './pages/MicroSaasServices';
 
+<<<<<<< HEAD
 // Lazy load pages with better error handling
 const ComprehensiveServicesPage = React.lazy(() => import('./pages/ComprehensiveServicesPage'));
 const ServiceDetailPage = React.lazy(() => import('./pages/ServiceDetailPage'));
@@ -51,5 +51,18 @@ function App() {
     </ErrorBoundary>
   );
 }
+=======
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/micro-saas-services" element={<MicroSaasServices />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </Router>
+  );
+}
+>>>>>>> f2b2fbcfb4f353ea65468110a1b8ef64d9d7cf73
 
 export default App;

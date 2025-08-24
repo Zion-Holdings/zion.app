@@ -1,65 +1,51 @@
 
-import { GradientHeading } from "./GradientHeading";
-import { Link } from "react-router-dom";
-import { Briefcase, HardDrive, Lightbulb, Users, Zap, Shield, Cloud, Database, TrendingUp, ArrowRight } from "lucide-react";
-import Cpu from "lucide-react/dist/esm/icons/cpu";
-import { Link as LinkIcon } from "lucide-react";
-import { motion } from "framer-motion";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { 
+  Users, 
+  Briefcase, 
+  Settings, 
+  Code, 
+  Globe, 
+  Zap, 
+  Shield,
+  LinkIcon,
+  Brain,
+  Rocket,
+  Target,
+  Star
+} from 'lucide-react';
+import { GradientHeading } from './GradientHeading';
 
 const categories = [
   {
-    title: "Services",
-    description: "On-demand IT support, consulting, development, and more",
-    icon: <Briefcase className="w-10 h-10" />,
-    link: "/services",
-    color: "from-purple-500 to-indigo-600",
-    gradient: "from-zion-purple to-zion-purple-dark",
-    features: ["24/7 Support", "Expert Teams", "Custom Solutions"]
+    title: "AI & Machine Learning",
+    description: "Cutting-edge artificial intelligence solutions",
+    icon: <Brain className="w-8 h-8" />,
+    color: "from-zion-purple to-zion-purple-dark",
+    link: "/ai-services",
+    features: ["Neural Networks", "Computer Vision", "NLP", "Predictive Analytics"]
   },
   {
-    title: "Talents",
-    description: "Connect with AI experts, developers, and tech specialists",
-    icon: <Users className="w-10 h-10" />,
-    link: "/talent",
-    color: "from-cyan-500 to-blue-600",
-    gradient: "from-zion-cyan to-zion-cyan-dark",
-    features: ["AI Experts", "Global Network", "Verified Profiles"]
+    title: "Web Development",
+    description: "Modern web applications and platforms",
+    icon: <Code className="w-8 h-8" />,
+    color: "from-zion-cyan to-zion-cyan-dark",
+    link: "/expanded-services?category=web-development",
+    features: ["React", "Node.js", "Full-Stack", "Progressive Web Apps"]
   },
   {
-    title: "Equipment",
-    description: "Rent or buy specialized hardware, servers, and devices",
-    icon: <HardDrive className="w-10 h-10" />,
-    link: "/equipment",
-    color: "from-amber-500 to-orange-600",
-    gradient: "from-amber-400 to-orange-500",
-    features: ["High-End Hardware", "Flexible Rental", "Quick Delivery"]
-  },
-  {
-    title: "Innovation",
-    description: "Discover cutting-edge solutions and tech breakthroughs",
-    icon: <Lightbulb className="w-10 h-10" />,
-    link: "/category/innovation",
-    color: "from-emerald-500 to-green-600",
-    gradient: "from-emerald-400 to-green-500",
-    features: ["Latest Tech", "Research Labs", "Startup Solutions"]
-  },
-];
-
-const specialServices = [
-  {
-    title: "IT Onsite Services",
-    link: "/it-onsite-services"
-  },
-  {
-    title: "AI & Automation",
-    link: "/expanded-services?category=ai-automation"
-  },
-  {
-    title: "Cybersecurity",
-    link: "/expanded-services?category=cybersecurity"
+    title: "Mobile Development",
+    description: "iOS and Android applications",
+    icon: <Globe className="w-8 h-8" />,
+    color: "from-zion-blue to-zion-blue-dark",
+    link: "/expanded-services?category=mobile-development",
+    features: ["Native Apps", "Cross-Platform", "UI/UX", "App Store Optimization"]
   },
   {
     title: "Cloud & DevOps",
+<<<<<<< HEAD
     link: "/expanded-services?category=cloud-devops"
   },
   {
@@ -104,51 +90,45 @@ const serviceCategories = [
   {
     title: "AI & Automation",
     description: "Intelligent automation and AI solutions",
+=======
+    description: "Infrastructure and deployment solutions",
+>>>>>>> f2b2fbcfb4f353ea65468110a1b8ef64d9d7cf73
     icon: <Zap className="w-8 h-8" />,
-    color: "from-purple-500 to-indigo-600",
-    link: "/expanded-services?category=ai-automation"
+    color: "from-green-500 to-emerald-600",
+    link: "/expanded-services?category=cloud-devops",
+    features: ["AWS", "Docker", "Kubernetes", "CI/CD"]
   },
   {
     title: "Cybersecurity",
-    description: "Advanced security and compliance",
+    description: "Protection and security services",
     icon: <Shield className="w-8 h-8" />,
     color: "from-red-500 to-pink-600",
-    link: "/expanded-services?category=cybersecurity"
+    link: "/expanded-services?category=cybersecurity",
+    features: ["Penetration Testing", "Security Audits", "Incident Response", "Compliance"]
   },
   {
-    title: "Cloud & DevOps",
-    description: "Cloud migration and automation",
-    icon: <Cloud className="w-8 h-8" />,
-    color: "from-blue-500 to-cyan-600",
-    link: "/expanded-services?category=cloud-devops"
-  },
-  {
-    title: "Data & Analytics",
-    description: "Business intelligence and governance",
-    icon: <Database className="w-8 h-8" />,
-    color: "from-green-500 to-emerald-600",
-    link: "/expanded-services?category=data-analytics"
-  },
-  {
-    title: "Digital Transformation",
-    description: "Strategy and modernization",
-    icon: <TrendingUp className="w-8 h-8" />,
-    color: "from-orange-500 to-yellow-600",
-    link: "/expanded-services?category=digital-transformation"
-  },
-  {
-    title: "IoT & Edge",
-    description: "Connected solutions and edge computing",
-    icon: <Cpu className="w-8 h-8" />,
-    color: "from-indigo-500 to-purple-600",
-    link: "/expanded-services?category=iot-edge"
+    title: "Data Science",
+    description: "Analytics and insights solutions",
+    icon: <Target className="w-8 h-8" />,
+    color: "from-orange-500 to-red-600",
+    link: "/expanded-services?category=data-science",
+    features: ["Big Data", "Business Intelligence", "Data Visualization", "Statistical Analysis"]
   },
   {
     title: "Blockchain & Web3",
     description: "Decentralized solutions and smart contracts",
     icon: <LinkIcon className="w-8 h-8" />,
     color: "from-teal-500 to-blue-600",
-    link: "/expanded-services?category=blockchain-web3"
+    link: "/expanded-services?category=blockchain-web3",
+    features: ["Smart Contracts", "DeFi", "NFTs", "DApps"]
+  },
+  {
+    title: "Enterprise Solutions",
+    description: "Large-scale business applications",
+    icon: <Briefcase className="w-8 h-8" />,
+    color: "from-indigo-500 to-purple-600",
+    link: "/expanded-services?category=enterprise",
+    features: ["ERP Systems", "CRM", "Workflow Automation", "Integration"]
   }
 ];
 
@@ -233,81 +213,39 @@ export function CategoriesSection({ showTitle = true }: CategoriesSectionProps) 
                   <ul className="space-y-2 mb-4">
                     {category.features.map((feature, idx) => (
                       <li key={idx} className="flex items-center gap-2 text-sm text-zion-cyan/70">
-                        <div className="w-3 h-3 bg-zion-cyan rounded-full" />
-                        <span>{feature}</span>
+                        <Star className="w-3 h-3 text-zion-cyan" />
+                        {feature}
                       </li>
                     ))}
                   </ul>
                   
-                  {/* Arrow indicator */}
+                  {/* CTA */}
                   <div className="flex items-center justify-between">
-                    <span className="text-zion-cyan text-sm font-medium">Learn More</span>
-                    <ArrowRight className="w-4 h-4 text-zion-cyan group-hover:translate-x-1 transition-transform duration-300" />
+                    <span className="text-zion-cyan text-sm font-medium">Explore</span>
+                    <div className="w-8 h-8 rounded-full bg-zion-cyan/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <Rocket className="w-4 h-4 text-zion-cyan" />
+                    </div>
                   </div>
                 </div>
               </Link>
             </motion.div>
           ))}
         </motion.div>
-
-        {/* Service Categories */}
-        <div className="mb-12">
-          <h3 className="text-center text-2xl font-bold text-white mb-8">Professional Service Categories</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-            {serviceCategories.map((category) => (
-              <Link 
-                key={category.title}
-                to={category.link}
-                className="group block"
-              >
-                <div className="rounded-lg overflow-hidden h-full border border-zion-blue-light bg-zion-blue-dark p-4 transition-all duration-300 hover:border-zion-purple/50 hover:translate-y-[-2px]">
-                  <div className={`rounded-full w-12 h-12 bg-gradient-to-br ${category.color} flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300`}>
-                    <div className="text-white">
-                      {category.icon}
-                    </div>
-                  </div>
-                  <h4 className="text-white text-sm font-bold mb-1">{category.title}</h4>
-                  <p className="text-zion-slate-light text-xs">{category.description}</p>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
         
+        {/* Bottom CTA */}
         <motion.div 
-          className="mt-12"
+          className="text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
         >
-          <h3 className="text-center text-xl font-bold text-white mb-6">Featured Services</h3>
-          <div className="flex flex-wrap justify-center gap-4">
-            {specialServices.map((service) => (
-              <Link 
-                key={service.title}
-                to={service.link}
-                className="group relative px-6 py-3 bg-gradient-to-r from-zion-blue-light to-zion-purple/30 hover:from-zion-purple/40 hover:to-zion-purple/60 border border-zion-purple/20 hover:border-zion-purple/50 rounded-full text-zion-cyan transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-zion-purple/25"
-              >
-                {service.title}
-              </Link>
-            ))}
-          </div>
-        </motion.div>
-        
-        <motion.div 
-          className="mt-12 flex justify-center"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-        >
-          <Link 
-            to="/expanded-services" 
-            className="group inline-flex items-center gap-2 text-zion-cyan border-b-2 border-zion-cyan hover:border-zion-cyan-dark transition-colors duration-300 text-lg font-medium"
+          <Link
+            to="/comprehensive-services"
+            className="inline-flex items-center gap-3 bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
           >
             View All Services
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+            <Rocket className="w-5 h-5" />
           </Link>
         </motion.div>
       </div>
