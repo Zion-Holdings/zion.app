@@ -2,6 +2,7 @@
 import { DynamicListingPage } from "@/components/DynamicListingPage";
 import { ProductListing } from "@/types/listings";
 import { TrustedBySection } from "@/components/TrustedBySection";
+import { ServicesOverview } from "@/components/services/ServicesOverview";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Globe } from "lucide-react";
@@ -260,6 +261,7 @@ export default function ServicesPage() {
         categoryFilters={SERVICE_FILTERS}
         initialPrice={{ min: 3000, max: 10000 }}
       />
+      <ServicesOverview />
       <TrustedBySection />
     </>
   );
