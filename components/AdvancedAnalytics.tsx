@@ -83,6 +83,11 @@ const AdvancedAnalytics: React.FC = () => {
   const currentData = analyticsData[analyticsData.length - 1];
   const previousData = analyticsData[analyticsData.length - 2];
   
+  // Guard clause to ensure data exists
+  if (!currentData || !previousData) {
+    return null;
+  }
+  
   const calculateChange = (current: number, previous: number): { value: number; isPositive: boolean } => {
     const change = ((current - previous) / previous) * 100;
     return { value: Math.abs(change), isPositive: change >= 0 };
