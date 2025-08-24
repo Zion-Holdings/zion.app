@@ -1,46 +1,37 @@
-import React from 'react';
+import type { NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
-import UltraFuturisticBackground from '../../components/ui/UltraFuturisticBackground';
-import Card from '../../components/ui/Card';
 
-const posts = [
-  { slug: 'ai-automation-trends-2025', title: 'AI Automation Trends 2025', excerpt: 'What forward-leaning teams ship next with agents, RAG, and guardrails.' },
-  { slug: 'cloud-native-automation', title: 'Cloud-Native Automation', excerpt: 'GitOps, SLOs, and platform engineering patterns that scale.' },
-  { slug: 'future-of-work', title: 'Future of Work', excerpt: 'Autonomous agents, copilots, and the new operating model.' },
-  { slug: 'performance-optimization', title: 'Performance Optimization', excerpt: 'Web vitals, RUM, and release health for conversion lifts.' },
-  { slug: 'ai-ethics-automation', title: 'AI Ethics & Automation', excerpt: 'Responsible AI with evaluations, safety baselines, and governance.' },
-  { slug: 'autonomous-content-generation', title: 'Autonomous Content Generation', excerpt: 'Ship content faster with quality and factuality checks.' },
-];
-
-export default function BlogIndexPage() {
+const Index: NextPage = () => {
   return (
-    <UltraFuturisticBackground  intensity="medium">
+    <div>
       <Head>
-        <title>Blog | Zion Tech Group</title>
-        <meta name="description" content="Insights on AI, cloud, automation, and platform engineering." />
-        <link rel="canonical" href="https://ziontechgroup.com/blog" />
+        <title>Blog - Zion Tech Solutions</title>
+        <meta name="description" content="Latest articles and insights from Zion Tech Solutions" />
       </Head>
-
-      <div className="container mx-auto px-4 py-16">
-        <div className="text-center mb-10">
-          <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-4">
-            Insights & Guides
-          </h1>
-          <p className="text-gray-300 text-lg max-w-2xl mx-auto">Practical playbooks and deep dives on AI, cloud, and modern software delivery.</p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {posts.map((p) => (
-            <div key={p.slug} className="p-6 bg-black/40 border border-gray-700/50 hover:border-cyan-500/40 transition-colors p-6 bg-black/40 border border-gray-700/50 rounded-lg backdrop-blur-sm">
-              <h2 className="text-white text-xl font-semibold mb-2">{p.title}</h2>
-              <p className="text-gray-400 mb-4">{p.excerpt}</p>
-              <Link href={`/blog/${p.slug}`} className="text-cyan-400 hover:text-white font-medium">Read →</Link>
-            </div>
-          ))}
-        </div>
-      </div>
-    </UltraFuturisticBackground>
+      <main>
+        <h1>Blog</h1>
+        <p>Browse our latest posts:</p>
+        <ul>
+          <li><Link href="/blog/5g-technology-and-its-impact-on-iot-chat"><a>5gTechnologyAndItsImpactOnIotChat</a></Link></li>
+          <li><Link href="/blog/ai-powered-marketplaces-the-future-of-digital-commerce-chat"><a>AiPoweredMarketplacesTheFutureOfDigitalCommerceChat</a></Link></li>
+          <li><Link href="/blog/api-first-development-building-scalable-systems-chat"><a>ApiFirstDevelopmentBuildingScalableSystemsChat</a></Link></li>
+          <li><Link href="/blog/augmented-reality-in-enterprise-applications-chat"><a>AugmentedRealityInEnterpriseApplicationsChat</a></Link></li>
+          <li><Link href="/blog/blockchain-technology-in-modern-business-solutions-chat"><a>BlockchainTechnologyInModernBusinessSolutionsChat</a></Link></li>
+          <li><Link href="/blog/cloud-native-architecture-best-practices-chat"><a>CloudNativeArchitectureBestPracticesChat</a></Link></li>
+          <li><Link href="/blog/cybersecurity-trends-for-2024-and-beyond-chat"><a>CybersecurityTrendsFor2024AndBeyondChat</a></Link></li>
+          <li><Link href="/blog/data-analytics-in-digital-transformation-chat"><a>DataAnalyticsInDigitalTransformationChat</a></Link></li>
+          <li><Link href="/blog/devops-automation-strategies-for-modern-teams-chat"><a>DevopsAutomationStrategiesForModernTeamsChat</a></Link></li>
+          <li><Link href="/blog/digital-twins-revolutionizing-industry-4-0-chat"><a>DigitalTwinsRevolutionizingIndustry40Chat</a></Link></li>
+          <li><Link href="/blog/machine-learning-applications-in-enterprise-software-chat"><a>MachineLearningApplicationsInEnterpriseSoftwareChat</a></Link></li>
+          <li><Link href="/blog/microservices-architecture-benefits-and-challenges-chat"><a>MicroservicesArchitectureBenefitsAndChallengesChat</a></Link></li>
+          <li><Link href="/blog/quantum-computing-implications-for-business-chat"><a>QuantumComputingImplicationsForBusinessChat</a></Link></li>
+          <li><Link href="/blog/sustainable-technology-green-computing-solutions-chat"><a>SustainableTechnologyGreenComputingSolutionsChat</a></Link></li>
+          <li><Link href="/blog/the-rise-of-edge-computing-in-iot-applications-chat"><a>TheRiseOfEdgeComputingInIotApplicationsChat</a></Link></li>
+        </ul>
+      </main>
+    </div>
   );
-}
+};
 
+export default Index;
