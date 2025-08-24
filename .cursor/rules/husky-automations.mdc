@@ -1,0 +1,11 @@
+## Husky & Automation Guidelines
+
+- Keep `.husky/` hooks minimal, fast, and deterministic
+- Enforce Conventional Commits via `commitlint` in `commit-msg`
+- Run `lint-staged` in `pre-commit` to auto-fix staged files
+- Prefer type-check in `pre-commit` for safety; keep `pre-push` lean
+- Ensure `package.json` has `prepare: husky install`
+- Maintain CI equivalents (ESLint, type-check, build, and commitlint)
+- Provide a `scripts/husky-health-check.sh` to verify and auto-heal common issues
+- Provide a cron wrapper `automation/husky-health-cron.sh` to run checks periodically outside Cursor
+- Hooks and scripts must be non-interactive and fail clearly

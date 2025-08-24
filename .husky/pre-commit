@@ -1,7 +1,29 @@
+#!/usr/bin/env sh
+set -e
+
 echo "🔍 Running pre-commit checks..."
 
-# Temporarily disabled for development - will re-enable after major issues are resolved
-echo "⚠️ Pre-commit checks temporarily disabled for development"
-echo "✅ Proceeding with commit..."
+# Run lint-staged to format/lint staged files
+if [ -x "./node_modules/.bin/lint-staged" ]; then
+  npm run -s lint:staged || {
+    echo "❌ lint-staged failed. Please fix issues before committing."
+    exit 1
+  }
+else
+  echo "ℹ️  Skipping lint-staged (not installed). Run 'npm install' to enable."
+fi
 
-echo "🎉 Pre-commit checks bypassed!"
+# Skip type-check if tsc is not available locally
+if [ -x "./node_modules/.bin/tsc" ]; then
+  npm run -s type-check || {
+    echo "❌ TypeScript type check failed. Please fix issues before committing."
+    exit 1
+  }
+else
+  echo "ℹ️  Skipping type-check (tsc not found). Run 'npm install' to enable."
+fi
+
+# Deletion guard to preserve files unless explicitly allowed
+sh ./scripts/prevent-deletion.sh
+
+echo "✅ Pre-commit checks passed"
