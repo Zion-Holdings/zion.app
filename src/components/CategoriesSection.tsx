@@ -36,20 +36,24 @@ const categories = [
 
 const specialServices = [
   {
-    title: "View All Services",
-    link: "/expanded-services"
-  },
-  {
-    title: "Pricing Guide",
-    link: "/pricing-guide"
-  },
-  {
     title: "IT Onsite Services",
     link: "/it-onsite-services"
   },
   {
-    title: "Comprehensive Services",
-    link: "/comprehensive-services"
+    title: "All Services",
+    link: "/all-services"
+  },
+  {
+    title: "Expanded Services",
+    link: "/expanded-services"
+  },
+  {
+    title: "Service Comparison",
+    link: "/service-comparison"
+  },
+  {
+    title: "Cost Calculator",
+    link: "/service-calculator"
   }
 ];
 
@@ -102,12 +106,6 @@ export function CategoriesSection({ showTitle = true }: CategoriesSectionProps) 
                 {service.title}
               </Link>
             ))}
-            <Link 
-              to="/comprehensive-services"
-              className="px-6 py-3 bg-zion-purple hover:bg-zion-purple-dark border border-zion-purple/50 hover:border-zion-purple text-white transition-all duration-300"
-            >
-              View All Services
-            </Link>
           </div>
         </div>
         
