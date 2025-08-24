@@ -227,6 +227,8 @@ const resources = [
 ];
 
 
+<<<<<<< HEAD
+=======
 const supportLinks = [
   { name: 'Contact Support', href: '/support', description: 'Get help from our team' },
   { name: 'Documentation', href: '/docs', description: 'Technical guides' },
@@ -235,6 +237,7 @@ const supportLinks = [
   { name: 'Training', href: '/training', description: 'Learn our platforms' },
   { name: 'Community', href: '/community', description: 'Connect with users' }
 ];
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-732a
 
   const toggleSection = (title: string) => {
     const newExpanded = new Set(expandedSections);
