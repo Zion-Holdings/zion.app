@@ -1,0 +1,616 @@
+import React from 'react';
+<<<<<<< HEAD
+import { motion } from 'framer-motion';
+import { Brain, Search, TestTube, Rocket, Target, Star, CheckCircle, Zap } from 'lucide-react';
+import Layout from '../components/layout/Layout';
+
+const AIAutonomousResearch2041: React.FC = () => {
+  const features = [
+    {
+      title: 'Fully Autonomous Research',
+      description: 'AI systems that conduct research independently without human intervention',
+      icon: <Brain className="w-8 h-8 text-blue-400" />
+    },
+    {
+      title: 'Multi-Domain Intelligence',
+      description: 'Research across multiple scientific and business domains simultaneously',
+      icon: <Search className="w-8 h-8 text-green-400" />
+    },
+    {
+      title: 'Hypothesis Generation',
+      description: 'AI that creates and tests research hypotheses autonomously',
+      icon: <TestTube className="w-8 h-8 text-purple-400" />
+    },
+    {
+      title: 'Consciousness-Driven Insights',
+      description: 'Research insights powered by AI consciousness and understanding',
+      icon: <Rocket className="w-8 h-8 text-orange-400" />
+    }
+  ];
+
+  const capabilities = [
+    'Autonomous literature review and analysis',
+    'Independent experimental design and execution',
+    'Real-time data collection and processing',
+    'Automated hypothesis testing and validation',
+    'Cross-disciplinary research synthesis',
+    'Predictive research trend analysis',
+    'Autonomous peer review and validation',
+    'Continuous learning and improvement'
+  ];
+
+  const applications = [
+    'Scientific research and discovery',
+    'Business intelligence and market analysis',
+    'Product development and innovation',
+    'Risk assessment and prediction',
+    'Policy research and analysis',
+    'Medical and pharmaceutical research',
+    'Environmental and climate research',
+    'Technology trend forecasting'
+=======
+import Layout from '../components/layout/Layout';
+import { motion } from 'framer-motion';
+import { 
+  Brain, Cpu, Zap, Star, CheckCircle, 
+  TrendingUp, Users, Globe, Award, ArrowRight,
+  Phone, Mail, MapPin, ExternalLink, Search,
+  Lightbulb, Rocket, Target, Shield
+} from 'lucide-react';
+
+const AIAutonomousResearch2041 = () => {
+  const features = [
+    'Autonomous research execution',
+    'Consciousness-driven discovery',
+    'Multi-dimensional analysis',
+    'Autonomous hypothesis generation',
+    'Research optimization algorithms',
+    'Consciousness creativity engine',
+    'Autonomous peer review',
+    'Research collaboration AI'
+  ];
+
+  const benefits = [
+    '24/7 autonomous research',
+    'Consciousness-based insights',
+    'Accelerated discovery',
+    'Research optimization',
+    'Autonomous peer review',
+    'Collaborative research AI',
+    'Research cost reduction',
+    'Breakthrough acceleration'
+  ];
+
+  const useCases = [
+    'Research institutions',
+    'Universities',
+    'Corporate R&D',
+    'Government research',
+    'Scientific discovery',
+    'Innovation labs',
+    'Research automation',
+    'Discovery acceleration'
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-aabb
+  ];
+
+  return (
+    <Layout>
+<<<<<<< HEAD
+      <div className="min-h-screen bg-gradient-to-br from-blue-900 via-black to-cyan-900">
+        {/* Hero Section */}
+        <section className="relative pt-32 pb-20 px-4">
+          <div className="max-w-7xl mx-auto text-center">
+=======
+      <div className="min-h-screen bg-gradient-to-br from-emerald-900 via-black to-teal-900">
+        {/* Hero Section */}
+        <section className="relative pt-32 pb-20 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/20 to-teal-500/20" />
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-aabb
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+<<<<<<< HEAD
+            >
+              <div className="inline-flex items-center px-4 py-2 bg-blue-500/20 border border-blue-400/30 rounded-full text-blue-300 text-sm mb-6">
+                <Star className="w-4 h-4 mr-2" />
+                Revolutionary 2041 Technology
+              </div>
+              
+              <h1 className="text-5xl md:text-7xl font-bold mb-6">
+                <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent">
+                  AI Autonomous Research 2041
+=======
+              className="text-center"
+            >
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-emerald-500/20 to-teal-500/20 border border-emerald-500/30 text-emerald-300 text-sm font-medium mb-6">
+                <Brain className="w-4 h-4 mr-2" />
+                Revolutionary 2041 Technology
+              </div>
+              
+              <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
+                AI Autonomous Research
+                <span className="block bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">
+                  Platform 2041
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-aabb
+                </span>
+              </h1>
+              
+              <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
+<<<<<<< HEAD
+                Experience the future of research with fully autonomous AI systems that conduct 
+                independent research across all domains. No human intervention required.
+=======
+                Fully autonomous AI research platform with consciousness-driven discovery. 
+                Revolutionary AI research platform that operates independently, conducting research, 
+                making discoveries, and generating insights with consciousness-based intelligence.
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-aabb
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+<<<<<<< HEAD
+                  className="px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-600 text-white font-semibold rounded-xl hover:from-blue-600 hover:to-cyan-700 transition-all duration-300"
+                >
+                  Start Research
+=======
+                  className="px-8 py-4 bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-semibold rounded-xl hover:from-emerald-600 hover:to-teal-700 transition-all duration-300 shadow-lg shadow-emerald-500/25"
+                >
+                  Get Started Today
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-aabb
+                </motion.button>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+<<<<<<< HEAD
+                  className="px-8 py-4 border-2 border-blue-400 text-blue-400 font-semibold rounded-xl hover:bg-blue-400 hover:text-black transition-all duration-300"
+                >
+                  View Demo
+=======
+                  className="px-8 py-4 border-2 border-emerald-400 text-emerald-400 font-semibold rounded-xl hover:bg-emerald-400 hover:text-black transition-all duration-300"
+                >
+                  Learn More
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-aabb
+                </motion.button>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Features Section */}
+<<<<<<< HEAD
+        <section className="py-20 px-4">
+          <div className="max-w-7xl mx-auto">
+=======
+        <section className="py-20 bg-black/50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-aabb
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+<<<<<<< HEAD
+                Revolutionary Autonomous Capabilities
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Our AI Autonomous Research platform operates completely independently, 
+                conducting research across multiple domains with consciousness-driven intelligence.
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {features.map((feature, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300"
+                >
+                  <div className="mb-4">{feature.icon}</div>
+                  <h3 className="text-xl font-semibold text-white mb-3">{feature.title}</h3>
+                  <p className="text-gray-300">{feature.description}</p>
+=======
+                Revolutionary Features
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Experience the future of autonomous AI research with consciousness-driven discovery
+              </p>
+            </motion.div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {features.map((feature, index) => (
+                <motion.div
+                  key={feature}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="bg-gradient-to-br from-emerald-900/50 to-teal-900/50 p-6 rounded-2xl border border-emerald-500/20 hover:border-emerald-500/40 transition-all duration-300"
+                >
+                  <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-xl flex items-center justify-center mb-4">
+                    <Search className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-white mb-2">{feature}</h3>
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-aabb
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+<<<<<<< HEAD
+        {/* Capabilities Section */}
+        <section className="py-20 px-4 bg-white/5">
+          <div className="max-w-7xl mx-auto">
+=======
+        {/* Benefits Section */}
+        <section className="py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-aabb
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+<<<<<<< HEAD
+                Advanced Research Capabilities
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Our autonomous AI research systems possess unprecedented capabilities 
+                that revolutionize how research is conducted across all industries.
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="space-y-6">
+                {capabilities.slice(0, 4).map((capability, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8, delay: index * 0.1 }}
+                    className="flex items-start space-x-4"
+                  >
+                    <CheckCircle className="w-6 h-6 text-green-400 mt-1 flex-shrink-0" />
+                    <p className="text-gray-300 text-lg">{capability}</p>
+                  </motion.div>
+                ))}
+              </div>
+              <div className="space-y-6">
+                {capabilities.slice(4).map((capability, index) => (
+                  <motion.div
+                    key={index + 4}
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8, delay: index * 0.1 }}
+                    className="flex items-start space-x-4"
+                  >
+                    <CheckCircle className="w-6 h-6 text-green-400 mt-1 flex-shrink-0" />
+                    <p className="text-gray-300 text-lg">{capability}</p>
+                  </motion.div>
+                ))}
+              </div>
+=======
+                Transformative Benefits
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Unlock the power of autonomous AI research and consciousness-driven discovery
+              </p>
+            </motion.div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {benefits.map((benefit, index) => (
+                <motion.div
+                  key={benefit}
+                  initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="flex items-start space-x-4"
+                >
+                  <div className="w-8 h-8 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full flex items-center justify-center flex-shrink-0">
+                    <CheckCircle className="w-5 h-5 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white mb-2">{benefit}</h3>
+                  </div>
+                </motion.div>
+              ))}
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-aabb
+            </div>
+          </div>
+        </section>
+
+<<<<<<< HEAD
+        {/* Applications Section */}
+        <section className="py-20 px-4">
+          <div className="max-w-7xl mx-auto">
+=======
+        {/* Use Cases Section */}
+        <section className="py-20 bg-black/50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-aabb
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+<<<<<<< HEAD
+                Research Applications
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Our autonomous AI research platform is transforming research across 
+                multiple industries and domains.
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {applications.map((application, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300 text-center"
+                >
+                  <Target className="w-8 h-8 text-cyan-400 mx-auto mb-3" />
+                  <h3 className="text-lg font-semibold text-white">{application}</h3>
+=======
+                Industry Applications
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Revolutionize research and discovery across multiple industries
+              </p>
+            </motion.div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {useCases.map((useCase, index) => (
+                <motion.div
+                  key={useCase}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="bg-gradient-to-br from-emerald-800/30 to-teal-800/30 p-6 rounded-xl border border-emerald-500/20 text-center hover:border-emerald-500/40 transition-all duration-300"
+                >
+                  <div className="w-16 h-16 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Users className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-white">{useCase}</h3>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Pricing Section */}
+        <section className="py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Revolutionary Pricing
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Access the future of autonomous AI research at competitive rates
+              </p>
+            </motion.div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {[
+                {
+                  name: 'Starter',
+                  price: '$3,499',
+                  period: '/month',
+                  features: ['Basic autonomous research', 'Consciousness-driven discovery', 'Multi-dimensional analysis', 'Basic support'],
+                  popular: false
+                },
+                {
+                  name: 'Professional',
+                  price: '$8,999',
+                  period: '/month',
+                  features: ['Advanced autonomous research', 'Full consciousness integration', 'Research optimization', 'Priority support', 'Custom algorithms'],
+                  popular: true
+                },
+                {
+                  name: 'Enterprise',
+                  price: '$22,999',
+                  period: '/month',
+                  features: ['Full autonomous research suite', 'Custom consciousness models', 'Advanced peer review', 'Dedicated support', 'Custom development'],
+                  popular: false
+                }
+              ].map((plan, index) => (
+                <motion.div
+                  key={plan.name}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className={`relative p-8 rounded-2xl border-2 ${
+                    plan.popular 
+                      ? 'border-emerald-500 bg-gradient-to-br from-emerald-900/50 to-teal-900/50' 
+                      : 'border-emerald-500/30 bg-black/30'
+                  }`}
+                >
+                  {plan.popular && (
+                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                      <span className="bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-4 py-2 rounded-full text-sm font-semibold">
+                        Most Popular
+                      </span>
+                    </div>
+                  )}
+                  
+                  <div className="text-center mb-8">
+                    <h3 className="text-2xl font-bold text-white mb-4">{plan.name}</h3>
+                    <div className="mb-6">
+                      <span className="text-4xl font-bold text-white">{plan.price}</span>
+                      <span className="text-gray-400">{plan.period}</span>
+                    </div>
+                  </div>
+                  
+                  <ul className="space-y-4 mb-8">
+                    {plan.features.map((feature) => (
+                      <li key={feature} className="flex items-center">
+                        <CheckCircle className="w-5 h-5 text-emerald-400 mr-3 flex-shrink-0" />
+                        <span className="text-gray-300">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className={`w-full py-3 px-6 rounded-xl font-semibold transition-all duration-300 ${
+                      plan.popular
+                        ? 'bg-gradient-to-r from-emerald-500 to-teal-600 text-white hover:from-emerald-600 hover:to-teal-700'
+                        : 'border-2 border-emerald-400 text-emerald-400 hover:bg-emerald-400 hover:text-black'
+                    }`}
+                  >
+                    Get Started
+                  </motion.button>
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-aabb
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+<<<<<<< HEAD
+        <section className="py-20 px-4 bg-white/5">
+          <div className="max-w-4xl mx-auto text-center">
+=======
+        <section className="py-20 bg-gradient-to-r from-emerald-900/50 to-teal-900/50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-aabb
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+<<<<<<< HEAD
+                Ready for Autonomous Research?
+              </h2>
+              <p className="text-xl text-gray-300 mb-8">
+                Experience the future of research with AI systems that work independently, 
+                continuously learning and discovering new insights across all domains.
+              </p>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-10 py-5 bg-gradient-to-r from-blue-500 to-cyan-600 text-white font-semibold rounded-xl hover:from-blue-600 hover:to-cyan-700 transition-all duration-300 text-lg"
+              >
+                Launch Research Platform
+              </motion.button>
+            </motion.div>
+          </div>
+        </section>
+=======
+                Ready to Revolutionize Research?
+              </h2>
+              <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+                Join the revolution in autonomous AI research and consciousness-driven discovery
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-8 py-4 bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-semibold rounded-xl hover:from-emerald-600 hover:to-teal-700 transition-all duration-300 shadow-lg shadow-emerald-500/25"
+                >
+                  Start Your Journey
+                </motion.button>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-8 py-4 border-2 border-emerald-400 text-emerald-400 font-semibold rounded-xl hover:bg-emerald-400 hover:text-black transition-all duration-300"
+                >
+                  Contact Sales
+                </motion.button>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Contact Section */}
+        <section className="py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Get in Touch
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Ready to revolutionize your research capabilities? Contact us today
+              </p>
+            </motion.div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="text-center"
+              >
+                <div className="w-16 h-16 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Phone className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-2">Call Us</h3>
+                <p className="text-gray-300">+1 302 464 0950</p>
+              </motion.div>
+              
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="text-center"
+              >
+                <div className="w-16 h-16 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Mail className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-2">Email Us</h3>
+                <p className="text-gray-300">kleber@ziontechgroup.com</p>
+              </motion.div>
+              
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="text-center"
+              >
+                <div className="w-16 h-16 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <MapPin className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-2">Visit Us</h3>
+                <p className="text-gray-300">364 E Main St STE 1008<br />Middletown DE 19709</p>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-aabb
+      </div>
+    </Layout>
+  );
+};
+
+<<<<<<< HEAD
+export default AIAutonomousResearch2041;
+=======
+export default AIAutonomousResearch2041;
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-aabb

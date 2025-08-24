@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  {{SERVICE_NAME}}:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - ENVIRONMENT=production
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped

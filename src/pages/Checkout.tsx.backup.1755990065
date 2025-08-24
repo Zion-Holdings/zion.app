@@ -1,0 +1,266 @@
+<<<<<<< HEAD
+import React, { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useForm } from 'react-hook-form';
+import { safeStorage } from '@/utils/safeStorage';
+import { Button } from '@/components/ui/button';
+import { useNavigate } from 'react-router-dom';
+import { getStripe } from '@/utils/getStripe';
+import { CheckoutShippingOptions, ShippingRate } from '@/components/CheckoutShippingOptions';
+import {
+  Form,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormControl,
+  FormMessage,
+} from '@/components/ui/form';
+
+interface CartItem {
+  id: string;
+  name: string;
+  email: string;
+  address: string;
+  city: string;
+  country: string;
+}
+
+export default function CheckoutPage() {
+  const navigate = useNavigate();
+  const { t } = useTranslation();
+  const [items, setItems] = useState<CartItem[]>([]);
+  const form = useForm<CheckoutForm>({ defaultValues: { name: '', email: '', address: '', city: '', country: '' } });
+  const watchAddr = form.watch(['name', 'address', 'city', 'country']);
+
+  useEffect(() => {
+    fireEvent('checkout_start', {
+      item_count: items.length,
+      total: items.reduce((sum, i) => sum + i.price * i.quantity, 0)
+    });
+  }, []);
+
+  const form = useForm<CheckoutFormData>({
+    resolver: zodResolver(checkoutSchema),
+    defaultValues: {
+      name: user?.name || user?.displayName || '',
+      email: user?.email || '',
+      address: '',
+      city: '',
+      country: ''
+    }
+  });
+
+  const subtotal = items.reduce((sum, i) => sum + i.price * i.quantity, 0);
+  const tax = subtotal * 0.08; // 8% tax estimate
+  const shipping = subtotal > 100 ? 0 : 15; // Free shipping over $100
+  const total = subtotal + tax + shipping;
+
+  const handleCheckout = async (data: CheckoutFormData) => {
+    if (!items.length) {
+      toast({
+        title: 'Cart is empty',
+        description: 'Please add items to your cart before checkout.',
+        variant: 'destructive',
+      });
+      return;
+    }
+
+    const stored = safeStorage.getItem('cart');
+    if (stored) {
+      try {
+        setItems(JSON.parse(stored) as CartItem[]);
+      } catch {
+        setItems([]);
+      }
+    }
+  }, [searchParams]);
+
+  const subtotal = items.reduce((sum, i) => sum + i.price * i.quantity, 0);
+  const [shippingRate, setShippingRate] = useState<ShippingRate | null>(null);
+  const total = subtotal + (shippingRate ? parseFloat(shippingRate.rate) : 0) + (shippingRate?.tax ? parseFloat(shippingRate.tax) : 0);
+
+  const onSubmit = async (data: CheckoutForm) => {
+    try {
+      const response = await apiClient('/api/checkout_sessions', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ amount: total }),
+      });
+
+      const responseData = await response.json();
+      logDev('Checkout session created:', responseData);
+
+      if (!response.ok) {
+        throw new Error(responseData.error || `HTTP ${response.status}: Failed to create checkout session`);
+      }
+
+      if (!responseData.url) {
+        throw new Error('No checkout URL received from server');
+      }
+
+      window.location.href = responseData.url;
+    } catch (err) {
+      logDevError('Checkout error:', err);
+      let message = 'Failed to process checkout. Please try again.';
+      if (err && typeof err === 'object' && 'message' in err && typeof (err as { message?: unknown }).message === 'string') {
+        message = (err as { message: string }).message;
+      }
+      fireEvent('checkout_error', { message });
+      toast({
+        title: 'Checkout failed',
+        description: message,
+        variant: 'destructive',
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  // Show empty cart message if no items
+  if (items.length === 0) {
+    return (
+      <div className="max-w-2xl mx-auto p-6 text-center">
+        <BreadcrumbJsonLd breadcrumbs={breadcrumbs} />
+        <Breadcrumb className="mb-4 text-sm text-muted-foreground" >
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink asChild>
+                <Link href="/">Home</Link>
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbLink asChild aria-current="page">
+                <span>Checkout</span>
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
+        <h1 className="text-2xl font-bold mb-4">Your cart is empty</h1>
+        <p className="text-gray-600 mb-6">Add some items to your cart to continue with checkout.</p>
+        <Button onClick={() => router.push('/marketplace')}>
+          Continue Shopping
+        </Button>
+      </div>
+    );
+  }
+
+  return (
+    <div className="container max-w-2xl py-10">
+      <h1 className="text-3xl font-bold mb-6">{t('checkout.title')}</h1>
+      <div className="grid gap-6">
+        <Form {...form}>
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+            <FormField name="name" control={form.control} render={({ field }) => (
+              <FormItem>
+                <FormLabel>{t('checkout.name')}</FormLabel>
+                <FormControl>
+                  <Input {...field} placeholder="Enter your full name" autoComplete="name" />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          
+          <FormField
+            control={form.control}
+            name="email"
+            render={({ field }: { field: ControllerRenderProps<CheckoutFormData, 'email'> }) => (
+              <FormItem>
+                <FormLabel>{t('checkout.email')}</FormLabel>
+                <FormControl>
+                  <Input {...field} type="email" placeholder="Enter your email" autoComplete="email" />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          
+          <FormField
+            control={form.control}
+            name="address"
+            render={({ field }: { field: ControllerRenderProps<CheckoutFormData, 'address'> }) => (
+              <FormItem>
+                <FormLabel>{t('checkout.address')}</FormLabel>
+                <FormControl>
+                  <Input {...field} placeholder="Enter your address" autoComplete="street-address" />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          
+          <FormField
+            control={form.control}
+            name="city"
+            render={({ field }: { field: ControllerRenderProps<CheckoutFormData, 'city'> }) => (
+              <FormItem>
+                <FormLabel>{t('checkout.city')}</FormLabel>
+                <FormControl>
+                  <Input {...field} placeholder="Enter your city" autoComplete="address-level2" />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          
+          <FormField
+            control={form.control}
+            name="country"
+            render={({ field }: { field: ControllerRenderProps<CheckoutFormData, 'country'> }) => (
+              <FormItem>
+                <FormLabel>{t('checkout.country')}</FormLabel>
+                <FormControl>
+                  <Input {...field} placeholder="Enter your country" autoComplete="country-name" />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )} />
+            <CheckoutShippingOptions
+              toAddress={{
+                name: watchAddr[0],
+                address: watchAddr[1],
+                city: watchAddr[2],
+                country: watchAddr[3],
+              }}
+              onSelect={setShippingRate}
+            />
+            <div className="border-t pt-4">
+              <div className="flex justify-between font-semibold mb-4">
+                <span>{t('checkout.subtotal')}</span>
+                <span>${subtotal.toFixed(2)}</span>
+              </div>
+              {shippingRate && (
+                <div className="flex justify-between font-semibold mb-4">
+                  <span>Shipping</span>
+                  <span>{parseFloat(shippingRate.rate).toFixed(2)} {shippingRate.currency}</span>
+                </div>
+              )}
+              {shippingRate?.tax && (
+                <div className="flex justify-between font-semibold mb-4">
+                  <span>Duties &amp; Taxes</span>
+                  <span>{parseFloat(shippingRate.tax).toFixed(2)} {shippingRate.currency}</span>
+                </div>
+              )}
+              <div className="flex justify-between font-semibold mb-4">
+                <span>Total</span>
+                <span>{total.toFixed(2)}</span>
+              </div>
+              <Button className="w-full" type="submit">
+                {t('checkout.pay')}
+              </Button>
+            </div>
+          </form>
+        </Form>
+      </div>
+=======
+import React from 'react';
+export function Checkout() {
+  return (
+    <div>
+      <h1>Component</h1>
+      <p>Component placeholder</p>
+>>>>>>> origin/automation-error-fixes
+    </div>
+  );
+}
