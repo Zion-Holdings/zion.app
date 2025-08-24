@@ -1,20 +1,11 @@
-import type { NextPage } from 'next';
-import Head from 'next/head';
+import React from 'react';
+import EnhancedLayout from '../../components/layout/EnhancedLayout';
 
-const CloudComputingStrategies: NextPage = () => {
+export default function CloudComputingStrategiesPage() {
   return (
-    <div>
-      <Head>
-        <title>CloudComputingStrategies - Zion Tech Solutions</title>
-        <meta name="description" content="CloudComputingStrategies page" />
-      </Head>
-      
-      <main>
-        <h1>CloudComputingStrategies</h1>
-        <p>This page is under construction.</p>
-      </main>
-    </div>
+    <EnhancedLayout>
+      <h1 className="text-2xl font-semibold">Cloud Computing Strategies</h1>
+      <p className="text-gray-600">Content coming soon.</p>
+    </EnhancedLayout>
   );
-};
-
-export default CloudComputingStrategies;
+}

@@ -1,20 +1,11 @@
-import type { NextPage } from 'next';
-import Head from 'next/head';
+import React from 'react';
+import EnhancedLayout from '../components/layout/EnhancedLayout';
 
-const BlockchainSolutions: NextPage = () => {
+export default function BlockchainSolutionsPage() {
   return (
-    <div>
-      <Head>
-        <title>BlockchainSolutions - Zion Tech Solutions</title>
-        <meta name="description" content="BlockchainSolutions page" />
-      </Head>
-      
-      <main>
-        <h1>BlockchainSolutions</h1>
-        <p>This page is under construction.</p>
-      </main>
-    </div>
+    <EnhancedLayout>
+      <h1 className="text-2xl font-semibold">Blockchain Solutions</h1>
+      <p className="text-gray-600">Content coming soon.</p>
+    </EnhancedLayout>
   );
-};
-
-export default BlockchainSolutions;
+}

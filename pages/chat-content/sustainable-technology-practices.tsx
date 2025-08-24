@@ -1,20 +1,11 @@
-import type { NextPage } from 'next';
-import Head from 'next/head';
+import React from 'react';
+import EnhancedLayout from '../../components/layout/EnhancedLayout';
 
-const SustainableTechnologyPractices: NextPage = () => {
+export default function SustainableTechnologyPracticesPage() {
   return (
-    <div>
-      <Head>
-        <title>SustainableTechnologyPractices - Zion Tech Solutions</title>
-        <meta name="description" content="SustainableTechnologyPractices page" />
-      </Head>
-      
-      <main>
-        <h1>SustainableTechnologyPractices</h1>
-        <p>This page is under construction.</p>
-      </main>
-    </div>
+    <EnhancedLayout>
+      <h1 className="text-2xl font-semibold">Sustainable Technology Practices</h1>
+      <p className="text-gray-600">Content coming soon.</p>
+    </EnhancedLayout>
   );
-};
-
-export default SustainableTechnologyPractices;
+}

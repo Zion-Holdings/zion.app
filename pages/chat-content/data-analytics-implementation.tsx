@@ -1,20 +1,11 @@
-import type { NextPage } from 'next';
-import Head from 'next/head';
+import React from 'react';
+import EnhancedLayout from '../../components/layout/EnhancedLayout';
 
-const DataAnalyticsImplementation: NextPage = () => {
+export default function DataAnalyticsImplementationPage() {
   return (
-    <div>
-      <Head>
-        <title>DataAnalyticsImplementation - Zion Tech Solutions</title>
-        <meta name="description" content="DataAnalyticsImplementation page" />
-      </Head>
-      
-      <main>
-        <h1>DataAnalyticsImplementation</h1>
-        <p>This page is under construction.</p>
-      </main>
-    </div>
+    <EnhancedLayout>
+      <h1 className="text-2xl font-semibold">Data Analytics Implementation</h1>
+      <p className="text-gray-600">Content coming soon.</p>
+    </EnhancedLayout>
   );
-};
-
-export default DataAnalyticsImplementation;
+}

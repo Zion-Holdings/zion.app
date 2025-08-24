@@ -1,20 +1,11 @@
-import type { NextPage } from 'next';
-import Head from 'next/head';
+import React from 'react';
+import EnhancedLayout from '../../components/layout/EnhancedLayout';
 
-const CybersecurityBestPractices: NextPage = () => {
+export default function CybersecurityBestPracticesPage() {
   return (
-    <div>
-      <Head>
-        <title>CybersecurityBestPractices - Zion Tech Solutions</title>
-        <meta name="description" content="CybersecurityBestPractices page" />
-      </Head>
-      
-      <main>
-        <h1>CybersecurityBestPractices</h1>
-        <p>This page is under construction.</p>
-      </main>
-    </div>
+    <EnhancedLayout>
+      <h1 className="text-2xl font-semibold">Cybersecurity Best Practices</h1>
+      <p className="text-gray-600">Content coming soon.</p>
+    </EnhancedLayout>
   );
-};
-
-export default CybersecurityBestPractices;
+}

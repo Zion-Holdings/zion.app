@@ -1,46 +1,84 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import nodemailer from 'nodemailer';
 import crypto from 'crypto';
-import { getProposal, updateProposalMeta, updateArtifacts } from '../../../utils/data/proposals';
 
-async function submitByEmail(to: string, subject: string, text: string, attachments: any[] = []) {
-  const host = process.env.EMAIL_HOST;
-  const port = Number(process.env.EMAIL_PORT || 587);
-  const user = process.env.EMAIL_USER;
-  const pass = process.env.EMAIL_PASS;
-  const from = process.env.EMAIL_FROM || user;
-  if (!host || !user || !pass) throw new Error('Email not configured');
-  const transporter = nodemailer.createTransport({ host, port, secure: port === 465, auth: { user, pass } });
-  await transporter.sendMail({ from, to, subject, text, attachments });
+async function signContent(payload: string) {
+  try {
+    const { ethers } = await import('ethers');
+    const pk = process.env.DAO_SIGNER_PRIVATE_KEY;
+    if (!pk) return { signature: null, address: null };
+    const wallet = new ethers.Wallet(pk);
+    const hash = ethers.utils.hashMessage(payload);
+    const signature = await wallet.signMessage(payload);
+    return { signature, address: wallet.address, hash };
+  } catch {
+    return { signature: null, address: null };
+  }
+}
+
+async function ipfsUpload(content: any) {
+  try {
+    const { create } = await import('ipfs-http-client');
+    const url = process.env.IPFS_API_URL || 'https://ipfs.infura.io:5001/api/v0';
+    const token = process.env.IPFS_API_TOKEN;
+    const client = token ? create({ url, headers: { Authorization: `Basic ${token}` } as any }) : create({ url });
+    const { cid } = await client.add(JSON.stringify(content));
+    return cid.toString();
+  } catch {
+    return null;
+  }
+}
+
+async function sendEmail(subject: string, text: string, attachments: any[]) {
+  try {
+    const nodemailer = (await import('nodemailer')).default;
+    const host = process.env.SMTP_HOST;
+    const port = Number(process.env.SMTP_PORT || 587);
+    const user = process.env.SMTP_USER;
+    const pass = process.env.SMTP_PASS;
+    const to = process.env.SUBMISSION_TO_EMAIL; // e.g., un.dp@gateway.org
+    const from = process.env.SUBMISSION_FROM_EMAIL || user;
+    if (!host || !user || !pass || !to) return { queued: false, error: 'Email not configured' };
+    const transporter = nodemailer.createTransport({ host, port, secure: port === 465, auth: { user, pass } });
+    await transporter.sendMail({ from, to, subject, text, attachments });
+    return { queued: true };
+  } catch (e: any) {
+    return { queued: false, error: e?.message || 'Email error' };
+  }
 }
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
+  const { markdown, json, meta } = req.body || {};
+  const payload = JSON.stringify({ markdown, json, meta });
+
+  const signature = await signContent(payload);
+  const ipfsCid = await ipfsUpload({ markdown, json, meta, signature });
+
+  const emailResult = await sendEmail(
+    `Zion DAO Proposal: ${json?.title || meta?.targetInstitution || 'International Proposal'}`,
+    markdown || 'Attached proposal',
+    [
+      { filename: 'proposal.md', content: markdown || '' },
+      { filename: 'proposal.json', content: JSON.stringify(json || {}, null, 2) },
+    ]
+  );
+
+  // Persist minimal index for transparency page (via proposals index route)
   try {
-    const { id, channels = ['email'], emailTo, delegateNote } = req.body || {};
-    if (!id) return res.status(400).json({ error: 'id is required' });
-    const meta = getProposal(id);
-    if (!meta) return res.status(404).json({ error: 'Proposal not found' });
+    const save = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || ''}/api/proposals`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        id: crypto.randomUUID(),
+        title: json?.title || `Zion x ${meta?.targetInstitution}`,
+        targetInstitution: meta?.targetInstitution || 'UN',
+        regionalScope: meta?.regionalScope || 'Global',
+        type: meta?.type || 'Workforce Dev',
+        status: 'Submitted',
+      }),
+    } as any);
+    await save.json().catch(() => null);
+  } catch {}
 
-    // Email submission
-    if (channels.includes('email')) {
-      const to = emailTo || process.env.UN_GATEWAY_EMAIL || 'example@un.org';
-      const subject = `[Proposal] ${meta.title} - ${meta.targetInstitution}`;
-      const text = `Please find the proposal attached.\n\nTitle: ${meta.title}\nTarget: ${meta.targetInstitution}\nType: ${meta.type}\nRegion: ${meta.regionalScope}\nBudget/Resolution: ${meta.budgetOrResolution}\n\nDAO Governance: See document.\n\nDelegate Note: ${delegateNote || 'N/A'}`;
-      await submitByEmail(to, subject, text);
-    }
-
-    // ENS record hash (default: compute and store hash only)
-    let ensRecordHash: string | undefined;
-    try {
-      const hash = crypto.createHash('sha256').update(JSON.stringify(meta)).digest('hex');
-      ensRecordHash = `0x${hash}`;
-      updateArtifacts(id, { ensRecordHash });
-    } catch {}
-
-    const updated = updateProposalMeta(id, (m) => ({ ...m, status: 'Submitted' }));
-    return res.status(200).json({ meta: updated });
-  } catch (error: any) {
-    return res.status(500).json({ error: error?.message || 'Submission failed' });
-  }
+  res.status(200).json({ status: emailResult.queued ? 'submitted' : 'generated', ipfsCid, signature });
 }

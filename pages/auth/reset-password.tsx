@@ -1,20 +1,11 @@
-import type { NextPage } from 'next';
-import Head from 'next/head';
+import React from 'react';
+import EnhancedLayout from '../../components/layout/EnhancedLayout';
 
-const ResetPassword: NextPage = () => {
+export default function ResetPasswordPage() {
   return (
-    <div>
-      <Head>
-        <title>ResetPassword - Zion Tech Solutions</title>
-        <meta name="description" content="ResetPassword page" />
-      </Head>
-      
-      <main>
-        <h1>ResetPassword</h1>
-        <p>This page is under construction.</p>
-      </main>
-    </div>
+    <EnhancedLayout>
+      <h1 className="text-2xl font-semibold">Reset Password</h1>
+      <p className="text-gray-600">Flow coming soon.</p>
+    </EnhancedLayout>
   );
-};
-
-export default ResetPassword;
+}
