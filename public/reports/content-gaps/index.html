@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Content Gaps Report</title>
+  <style>
+    body { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial; background:#0b1220; color:#fff; margin:0; }
+    .container { max-width: 1000px; margin: 0 auto; padding: 24px; }
+    .card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 16px; margin-bottom: 12px; }
+    .badge { display:inline-block; background: rgba(56,189,248,.2); color:#67e8f9; border:1px solid rgba(56,189,248,.35); padding:2px 8px; border-radius:999px; font-size:12px; }
+    table { width:100%; border-collapse: collapse; }
+    th, td { border-bottom: 1px solid rgba(255,255,255,0.1); padding: 8px; text-align: left; }
+    a { color: #67e8f9; }
+    .chip { display:inline-block; margin-right:6px; margin-bottom:6px; padding:3px 8px; border-radius:999px; background: rgba(244,114,182,.2); color:#f472b6; border:1px solid rgba(244,114,182,.35); font-size:12px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Content Gaps <span id="meta" class="badge"></span></h1>
+    <div id="summary" class="card"></div>
+    <div id="list"></div>
+  </div>
+  <script>
+    async function load() {
+      const res = await fetch('/automation/content-gaps.json');
+      const data = await res.json();
+      document.getElementById('meta').textContent = new Date(data.generatedAt).toLocaleString();
+      document.getElementById('summary').textContent = `Total pages scanned: ${data.totalPages}`;
+      const list = document.getElementById('list');
+      data.pages.forEach((p) => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        const h = document.createElement('h3');
+        h.textContent = p.route;
+        card.appendChild(h);
+        const meta = document.createElement('div');
+        meta.textContent = `Words: ${p.words} • Meta Description: ${p.hasMetaDescription ? 'Yes' : 'No'}`;
+        card.appendChild(meta);
+        const sug = document.createElement('div');
+        (p.suggestions || []).forEach((s) => {
+          const span = document.createElement('span');
+          span.className = 'chip';
+          span.textContent = s;
+          sug.appendChild(span);
+        });
+        card.appendChild(sug);
+        list.appendChild(card);
+      });
+    }
+    load().catch(console.error);
+  </script>
+</body>
+</html>
