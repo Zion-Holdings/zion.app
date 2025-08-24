@@ -1,11 +1,2 @@
 import React from 'react';
-export default function Page() {
-  return (
-    <main className="min-h-screen bg-black text-zinc-100 p-8">
-      <section className="prose prose-invert max-w-3xl mx-auto">
-        <h1>chat-content technology-implementation-strategies</h1>
-        <p>Auto-healed placeholder. Replace with real content.</p>
-      </section>
-    </main>
-  );
-}
+export default function TechImplementation(){return <div className="p-6 text-high-contrast">Technology Implementation Strategies</div>;}

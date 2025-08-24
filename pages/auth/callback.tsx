@@ -1,11 +1,2 @@
 import React from 'react';
-export default function Page() {
-  return (
-    <main className="min-h-screen bg-black text-zinc-100 p-8">
-      <section className="prose prose-invert max-w-3xl mx-auto">
-        <h1>auth callback</h1>
-        <p>Auto-healed placeholder. Replace with real content.</p>
-      </section>
-    </main>
-  );
-}
+export default function AuthCallback(){return <div className="p-6 text-high-contrast">Auth Callback</div>;}
