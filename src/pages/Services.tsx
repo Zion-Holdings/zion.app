@@ -1,21 +1,20 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { COMPREHENSIVE_SERVICES } from '../data/comprehensiveServices';
-import { ENHANCED_SERVICES } from '../data/enhancedServices';
 
 export function Services() {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [searchTerm, setSearchTerm] = useState<string>('');
 
-  const allServices = [...COMPREHENSIVE_SERVICES, ...ENHANCED_SERVICES];
+  const allServices = [...COMPREHENSIVE_SERVICES];
   
   const categories = ['all', ...Array.from(new Set(allServices.map(service => service.category)))];
   
   const filteredServices = allServices.filter(service => {
     const matchesCategory = selectedCategory === 'all' || service.category === selectedCategory;
-    const matchesSearch = service.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    const matchesSearch = service.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          service.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         service.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
+                         (service.tags && service.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase())));
     return matchesCategory && matchesSearch;
   });
 
@@ -130,7 +129,7 @@ export function Services() {
               {/* Service Card Header */}
               <div className="mb-4">
                 <h3 className="text-xl font-bold text-zion-cyan mb-2 group-hover:text-neon-green transition-colors">
-                  {service.title}
+                  {service.name}
                 </h3>
                 <div className="flex items-center gap-2 mb-3">
                   <span className="px-3 py-1 bg-zion-purple/20 text-zion-purple text-sm rounded-full border border-zion-purple/30">
@@ -254,3 +253,5 @@ export function Services() {
     </div>
   );
 }
+
+export default Services;
