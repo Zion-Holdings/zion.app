@@ -8,7 +8,7 @@ function runNode(relativePath, args = []) {
 }
 
 exports.config = {
-  schedule: '0 * * * *',
+  schedule: '10 */4 * * *',
 };
 
 exports.handler = async () => {
@@ -22,7 +22,9 @@ exports.handler = async () => {
     return status;
   }
 
-  step('repo-knowledge-graph', 'automation/repo-knowledge-graph.cjs');
+  step('repo-radar-metrics', 'automation/repo-radar-metrics.cjs');
+  step('ai-changelog-generator', 'automation/ai-changelog-generator.cjs');
+  step('changelog-generator', 'automation/changelog-generator.cjs');
   step('git:sync', 'automation/advanced-git-sync.cjs');
 
   return { statusCode: 200, headers: { 'content-type': 'text/plain' }, body: logs.join('\n') };
