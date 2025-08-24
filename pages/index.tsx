@@ -1,9 +1,9 @@
 import type { NextPage } from 'next';
-import Head from 'next/head';
 import Link from 'next/link';
 import { ArrowRight, CheckCircle, Star, Users, Code, Cloud, Brain, Shield, Zap, Globe } from 'lucide-react';
 import { useState, useEffect } from 'react';
-import AdvancedHero from '../components/AdvancedHero';
+import EnhancedLayout from '../components/layout/EnhancedLayout';
+import EnhancedHero from '../components/EnhancedHero';
 import AdvancedServicesShowcase from '../components/AdvancedServicesShowcase';
 import AdvancedTestimonials from '../components/AdvancedTestimonials';
 import AdvancedContactForm from '../components/AdvancedContactForm';
@@ -149,48 +149,14 @@ const Home: NextPage = () => {
   };
 
   return (
-    <>
-      <Head>
-        <title>Zion Tech Group - Leading AI & Technology Solutions | Delaware Tech Company</title>
-        <meta name="description" content="Transform your business with Zion Tech Group's cutting-edge AI development, cloud architecture, and digital transformation services. Delaware-based technology experts delivering innovative solutions worldwide." />
-        <meta name="keywords" content="AI development, cloud architecture, web development, cybersecurity, IoT platforms, digital transformation, technology consulting, Delaware tech company" />
-        <meta name="author" content="Zion Tech Group" />
-        <meta name="robots" content="index,follow" />
-        <link rel="canonical" href="https://ziontechgroup.com" />
-        {/* Open Graph / Facebook */}
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://ziontechgroup.com" />
-        <meta property="og:title" content="Zion Tech Group - Leading AI & Technology Solutions" />
-        <meta property="og:description" content="Transform your business with cutting-edge AI development, cloud architecture, and digital transformation services." />
-        <meta property="og:image" content="https://ziontechgroup.com/og-image.png" />
-        <meta property="og:site_name" content="Zion Tech Group" />
-        {/* Twitter */}
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://ziontechgroup.com" />
-        <meta property="twitter:title" content="Zion Tech Group - Leading AI & Technology Solutions" />
-        <meta property="twitter:description" content="Transform your business with cutting-edge AI development, cloud architecture, and digital transformation services." />
-        <meta property="twitter:image" content="https://ziontechgroup.com/og-image.png" />
-        {/* Structured Data */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-        />
-        {/* Additional Meta Tags */}
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#000000" />
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        {/* Performance Optimizations */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="dns-prefetch" href="//www.google-analytics.com" />
-      </Head>
-
+    <EnhancedLayout
+      title="Zion Tech Group - Leading AI & Technology Solutions | Delaware Tech Company"
+      description="Transform your business with Zion Tech Group's cutting-edge AI development, cloud architecture, and digital transformation services. Delaware-based technology experts delivering innovative solutions worldwide."
+      keywords="AI development, cloud architecture, web development, cybersecurity, IoT platforms, digital transformation, technology consulting, Delaware tech company"
+    >
       <main className={`min-h-screen transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
-        {/* Advanced Hero Section */}
-        <AdvancedHero
+        {/* Enhanced Hero Section */}
+        <EnhancedHero
           title="Pioneering the Future of Technology"
           subtitle="Leading Technology Solutions"
           description="Partner with Zion Tech Group to unlock the power of AI, cloud computing, and digital innovation. We deliver cutting-edge solutions that drive growth, efficiency, and competitive advantage for businesses worldwide."
@@ -377,7 +343,7 @@ const Home: NextPage = () => {
         {/* Advanced Contact Form Section */}
         <AdvancedContactForm />
       </main>
-    </>
+    </EnhancedLayout>
   );
 };
 
