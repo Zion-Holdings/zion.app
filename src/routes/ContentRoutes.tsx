@@ -13,7 +13,8 @@ import SearchPage from "@/pages/SearchPage";
 import { SitemapPage } from "@/components/SitemapPage";
 import Sitemap from "@/pages/Sitemap";
 import Terms from "@/pages/Terms";
-import HelpCenterPage from "@/pages/HelpCenterPage";
+import HelpCenter from "@/pages/HelpCenter";
+import Cookies from "@/pages/Cookies";
 import AccountSettings from "@/pages/AccountSettings";
 import ProjectRoom from "@/pages/ProjectRoom";
 import VideoCall from "@/pages/VideoCall";
@@ -29,8 +30,11 @@ const ContentRoutes = () => {
       <Route path="/privacy" element={<Privacy />} />
       
       {/* Help Center Routes */}
-      <Route path="/help" element={<HelpCenterPage />} />
-      <Route path="/support" element={<HelpCenterPage />} />
+      <Route path="/help" element={<HelpCenter />} />
+      <Route path="/support" element={<HelpCenter />} />
+      
+      {/* Cookie Policy */}
+      <Route path="/cookies" element={<Cookies />} />
       
       {/* Blog Routes */}
       <Route path="/blog" element={<Blog />} />
