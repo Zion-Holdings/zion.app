@@ -1,8 +1,8 @@
-name: Sitemap Daily
+name: Search Index Daily
 
 on:
   schedule:
-    - cron: "0 1 * * *"
+    - cron: "0 2 * * *"
   push:
     branches: [ main ]
     paths:
@@ -11,7 +11,7 @@ on:
   workflow_dispatch: {}
 
 jobs:
-  sitemap:
+  search_index:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -21,10 +21,10 @@ jobs:
         with:
           node-version: '20'
       - run: npm ci
-      - name: Generate sitemap
-        run: npm run sitemap
-      - name: Commit sitemap
+      - name: Generate search index
+        run: node scripts/generate-search-index.mjs
+      - name: Commit search index
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: 'chore(seo): update sitemap.xml'
-          file_pattern: public/sitemap.xml
+          commit_message: 'chore(search): update search-index.json'
+          file_pattern: public/search-index.json
