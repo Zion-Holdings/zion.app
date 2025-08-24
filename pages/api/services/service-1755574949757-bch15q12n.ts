@@ -1,14 +1,22 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
+import React from 'react';
+import Head from 'next/head';
 
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method === 'GET') {
-    res.status(200).json({
-      service: {"id":"service-1755574949757-bch15q12n","category":"Machine Learning","template":"dataService","title":"Data Machine Learning Platform","description":"Comprehensive Machine Learning platform for modern data-driven organizations","features":["Real-time data streaming","Advanced analytics and ML","Data governance and compliance","Multi-cloud support","Enterprise integration"],"pricing":[{"plan":"Developer","price":"$79/month","features":["Core platform","Documentation","Community support"]},{"plan":"Business","price":"$299/month","features":["Full platform","Technical support","Custom connectors"]},{"plan":"Enterprise","price":"Custom","features":["Full customization","Dedicated support","On-premise option"]}],"createdAt":"2025-08-19T03:42:29.757Z","status":"active","metadata":{"generatedBy":"ultra-fast-service-generator","version":"1.0.0","priority":"high"}},
-      timestamp: new Date().toISOString(),
-      status: 'active'
-    });
-  } else {
-    res.setHeader('Allow', ['GET']);
-    res.status(405).end(`Method ${req.method} Not Allowed`);
-  }
+export default function Service1755574949757Bch15q12nPage() {
+  return (
+    <>
+      <Head>
+        <title>Service 1755574949757 Bch15q12n - Zion Tech Group</title>
+        <meta name="description" content="service 1755574949757 bch15q12n page" />
+      </Head>
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold mb-6">Service 1755574949757 Bch15q12n</h1>
+        <p className="text-lg mb-4">This page is under construction.</p>
+        <div className="mt-4">
+          <a href="/" className="text-blue-600 hover:underline">
+            ← Back to Home
+          </a>
+        </div>
+      </div>
+    </>
+  );
 }

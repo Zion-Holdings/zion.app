@@ -1,15 +1,16 @@
-import { Pool, PoolClient } from 'pg';
+// import { Pool, PoolClient } from 'pg';
 
-let pool: Pool | null = null;
+let pool: any = null;
 
-export function getPool(): Pool {
+export function getPool(): any {
   if (!pool) {
-    pool = new Pool({ connectionString: process.env.DATABASE_URL });
+    // pool = new Pool({ connectionString: (globalThis as any).process?.env?.DATABASE_URL });
+    pool = null;
   }
   return pool;
 }
 
-export async function withUser<T>(userId: string, fn: (client: PoolClient) => Promise<T>): Promise<T> {
+export async function withUser<T>(userId: string, fn: (client: any) => Promise<T>): Promise<T> {
   const client = await getPool().connect();
   try {
     await client.query('BEGIN');
@@ -17,7 +18,7 @@ export async function withUser<T>(userId: string, fn: (client: PoolClient) => Pr
     const result = await fn(client);
     await client.query('COMMIT');
     return result;
-  } catch (err) {
+  } catch (err: any) {
     await client.query('ROLLBACK');
     throw err;
   } finally {

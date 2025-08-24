@@ -1,22 +1,22 @@
-import type { NextPage } from 'next';
+import React from 'react';
 import Head from 'next/head';
-import Link from 'next/link';
 
-const MobileAppDevelopmentChat: NextPage = () => {
+export default function MobileAppDevelopmentChatPage() {
   return (
-    <div>
+    <>
       <Head>
-        <title>MobileAppDevelopmentChat - Zion Tech Solutions</title>
-        <meta name="description" content="MobileAppDevelopmentChat service" />
+        <title>Mobile App Development Chat - Zion Tech Group</title>
+        <meta name="description" content="mobile app development chat page" />
       </Head>
-      
-      <main>
-        <h1>MobileAppDevelopmentChat</h1>
-        <p>Service details coming soon...</p>
-        <a href="/services">Back to Services</a>
-      </main>
-    </div>
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold mb-6">Mobile App Development Chat</h1>
+        <p className="text-lg mb-4">This page is under construction.</p>
+        <div className="mt-4">
+          <a href="/" className="text-blue-600 hover:underline">
+            ← Back to Home
+          </a>
+        </div>
+      </div>
+    </>
   );
-};
-
-export default MobileAppDevelopmentChat;
+}

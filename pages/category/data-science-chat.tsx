@@ -1,22 +1,22 @@
-import type { NextPage } from 'next';
+import React from 'react';
 import Head from 'next/head';
-import Link from 'next/link';
 
-const DataScienceChat: NextPage = () => {
+export default function DataScienceChatPage() {
   return (
-    <div>
+    <>
       <Head>
-        <title>DataScienceChat - Zion Tech Solutions</title>
-        <meta name="description" content="DataScienceChat blog post" />
+        <title>Data Science Chat - Zion Tech Group</title>
+        <meta name="description" content="data science chat page" />
       </Head>
-      
-      <main>
-        <h1>DataScienceChat</h1>
-        <p>Blog content coming soon...</p>
-        <a href="/blog">Back to Blog</a>
-      </main>
-    </div>
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold mb-6">Data Science Chat</h1>
+        <p className="text-lg mb-4">This page is under construction.</p>
+        <div className="mt-4">
+          <a href="/" className="text-blue-600 hover:underline">
+            ← Back to Home
+          </a>
+        </div>
+      </div>
+    </>
   );
-};
-
-export default DataScienceChat;
+}

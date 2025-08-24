@@ -1,7 +1,22 @@
 import React from 'react';
 import Head from 'next/head';
+
+export default function ZionGlobal2025Page() {
   return (
     <>
-      <Head><title>zion-global-2025 - Zion App</title><meta name="description" content="zion-global-2025 page" /></Head><div className="container mx-auto px-4 py-8"><h1 className="text-3xl font-bold mb-6">zion-global-2025</h1><p className="text-lg mb-4">This page is under construction.</p><div className="mt-4"><a href="/" className="text-blue-600 hover:underline">;
-            ← Back to Home</a></div></div></>;
+      <Head>
+        <title>Zion Global 2025 - Zion Tech Group</title>
+        <meta name="description" content="zion global 2025 page" />
+      </Head>
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold mb-6">Zion Global 2025</h1>
+        <p className="text-lg mb-4">This page is under construction.</p>
+        <div className="mt-4">
+          <a href="/" className="text-blue-600 hover:underline">
+            ← Back to Home
+          </a>
+        </div>
+      </div>
+    </>
   );
+}

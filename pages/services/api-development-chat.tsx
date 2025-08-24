@@ -1,22 +1,22 @@
-import type { NextPage } from 'next';
+import React from 'react';
 import Head from 'next/head';
-import Link from 'next/link';
 
-const ApiDevelopmentChat: NextPage = () => {
+export default function ApiDevelopmentChatPage() {
   return (
-    <div>
+    <>
       <Head>
-        <title>ApiDevelopmentChat - Zion Tech Solutions</title>
-        <meta name="description" content="ApiDevelopmentChat service" />
+        <title>Api Development Chat - Zion Tech Group</title>
+        <meta name="description" content="api development chat page" />
       </Head>
-      
-      <main>
-        <h1>ApiDevelopmentChat</h1>
-        <p>Service details coming soon...</p>
-        <a href="/services">Back to Services</a>
-      </main>
-    </div>
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold mb-6">Api Development Chat</h1>
+        <p className="text-lg mb-4">This page is under construction.</p>
+        <div className="mt-4">
+          <a href="/" className="text-blue-600 hover:underline">
+            ← Back to Home
+          </a>
+        </div>
+      </div>
+    </>
   );
-};
-
-export default ApiDevelopmentChat;
+}

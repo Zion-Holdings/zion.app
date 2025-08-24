@@ -1,21 +1,22 @@
 import React from 'react';
-import Homepage2041 from '../components/Homepage2041';
-import SEOOptimizer from '../components/SEOOptimizer';
-import AnalyticsTracker from '../components/AnalyticsTracker';
-import ErrorBoundary from '../components/ErrorBoundary';
-import PerformanceMonitor from '../components/PerformanceMonitor';
-import AccessibilityEnhancer from '../components/AccessibilityEnhancer';
+import Head from 'next/head';
 
-const HomePage2041: React.FC = () => {
+export default function Index2041Page() {
   return (
-    <ErrorBoundary>
-      <SEOOptimizer />
-      <AnalyticsTracker />
-      <Homepage2041 />
-      <PerformanceMonitor />
-      <AccessibilityEnhancer />
-    </ErrorBoundary>
+    <>
+      <Head>
+        <title>Index 2041 - Zion Tech Group</title>
+        <meta name="description" content="index 2041 page" />
+      </Head>
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold mb-6">Index 2041</h1>
+        <p className="text-lg mb-4">This page is under construction.</p>
+        <div className="mt-4">
+          <a href="/" className="text-blue-600 hover:underline">
+            ← Back to Home
+          </a>
+        </div>
+      </div>
+    </>
   );
-};
-
-export default HomePage2041;
+}

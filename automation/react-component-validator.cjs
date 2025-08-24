@@ -169,6 +169,10 @@ function generateReport(results) {
 }
 
 function generateHTMLReport(summary, results) {
+  const criticalIssues = results.filter(r => r.hasCriticalIssues);
+  const warnings = results.filter(r => !r.hasCriticalIssues && r.issues.length > 0);
+  const healthy = results.filter(r => r.issues.length === 0);
+  
   const html = [];
   html.push('<!doctype html><meta charset="utf-8"/><title>React Component Validation Report</title>');
   html.push('<style>');

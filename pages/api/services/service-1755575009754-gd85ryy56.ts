@@ -1,14 +1,22 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
+import React from 'react';
+import Head from 'next/head';
 
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method === 'GET') {
-    res.status(200).json({
-      service: {"id":"service-1755575009754-gd85ryy56","category":"Digital Transformation","template":"aiService","title":"AI-Powered Digital Transformation Service","description":"Advanced Digital Transformation solution powered by cutting-edge artificial intelligence","features":["Intelligent automation and optimization","Real-time data processing and analysis","Scalable cloud infrastructure","Advanced security and compliance","24/7 monitoring and support"],"pricing":[{"plan":"Starter","price":"$99/month","features":["Basic features","Email support"]},{"plan":"Professional","price":"$299/month","features":["Advanced features","Priority support","Custom integrations"]},{"plan":"Enterprise","price":"Custom","features":["Full customization","Dedicated support","SLA guarantee"]}],"createdAt":"2025-08-19T03:43:29.754Z","status":"active","metadata":{"generatedBy":"ultra-fast-service-generator","version":"1.0.0","priority":"high"}},
-      timestamp: new Date().toISOString(),
-      status: 'active'
-    });
-  } else {
-    res.setHeader('Allow', ['GET']);
-    res.status(405).end(`Method ${req.method} Not Allowed`);
-  }
+export default function Service1755575009754Gd85ryy56Page() {
+  return (
+    <>
+      <Head>
+        <title>Service 1755575009754 Gd85ryy56 - Zion Tech Group</title>
+        <meta name="description" content="service 1755575009754 gd85ryy56 page" />
+      </Head>
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold mb-6">Service 1755575009754 Gd85ryy56</h1>
+        <p className="text-lg mb-4">This page is under construction.</p>
+        <div className="mt-4">
+          <a href="/" className="text-blue-600 hover:underline">
+            ← Back to Home
+          </a>
+        </div>
+      </div>
+    </>
+  );
 }

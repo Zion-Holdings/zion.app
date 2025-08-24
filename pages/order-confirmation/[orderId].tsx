@@ -1,8 +1,22 @@
 import React from 'react';
 import Head from 'next/head';
+
+export default function [orderId]Page() {
   return (
     <>
-      <Head><title>order-confirmation/[orderId] - Zion App</title><meta name="description" content="order-confirmation/[orderId] page" /></Head><div className="container mx-auto px-4 py-8"><h1 className="text-3xl font-bold mb-6">;
-          order-confirmation/[orderId]</h1><p className="text-lg mb-4">This page is under construction.</p><div className="mt-4"><a href="/" className="text-blue-600 hover:underline">;
-            ← Back to Home</a></div></div></>;
+      <Head>
+        <title>[OrderId] - Zion Tech Group</title>
+        <meta name="description" content="[orderId] page" />
+      </Head>
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold mb-6">[OrderId]</h1>
+        <p className="text-lg mb-4">This page is under construction.</p>
+        <div className="mt-4">
+          <a href="/" className="text-blue-600 hover:underline">
+            ← Back to Home
+          </a>
+        </div>
+      </div>
+    </>
   );
+}

@@ -1,22 +1,22 @@
-import type { NextPage } from 'next';
+import React from 'react';
 import Head from 'next/head';
-import Link from 'next/link';
 
-const UiUxDesignChat: NextPage = () => {
+export default function UiUxDesignChatPage() {
   return (
-    <div>
+    <>
       <Head>
-        <title>UiUxDesignChat - Zion Tech Solutions</title>
-        <meta name="description" content="UiUxDesignChat blog post" />
+        <title>Ui Ux Design Chat - Zion Tech Group</title>
+        <meta name="description" content="ui ux design chat page" />
       </Head>
-      
-      <main>
-        <h1>UiUxDesignChat</h1>
-        <p>Blog content coming soon...</p>
-        <a href="/blog">Back to Blog</a>
-      </main>
-    </div>
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold mb-6">Ui Ux Design Chat</h1>
+        <p className="text-lg mb-4">This page is under construction.</p>
+        <div className="mt-4">
+          <a href="/" className="text-blue-600 hover:underline">
+            ← Back to Home
+          </a>
+        </div>
+      </div>
+    </>
   );
-};
-
-export default UiUxDesignChat;
+}

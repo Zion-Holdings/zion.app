@@ -1,18 +1,22 @@
 import React from 'react';
-import Layout from '../components/layout/Layout';
-import InteractivePricingCalculator from '../components/InteractivePricingCalculator';
-import ErrorBoundary from '../components/ErrorBoundary';
+import Head from 'next/head';
 
-const PricingCalculatorPage: React.FC = () => {
+export default function PricingCalculatorPage() {
   return (
-    <ErrorBoundary>
-      <Layout>
-        <div className="min-h-screen bg-black text-white pt-20">
-          <InteractivePricingCalculator />
+    <>
+      <Head>
+        <title>Pricing Calculator - Zion Tech Group</title>
+        <meta name="description" content="pricing calculator page" />
+      </Head>
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold mb-6">Pricing Calculator</h1>
+        <p className="text-lg mb-4">This page is under construction.</p>
+        <div className="mt-4">
+          <a href="/" className="text-blue-600 hover:underline">
+            ← Back to Home
+          </a>
         </div>
-      </Layout>
-    </ErrorBoundary>
+      </div>
+    </>
   );
-};
-
-export default PricingCalculatorPage;
+}

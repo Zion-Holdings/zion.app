@@ -1,25 +1,22 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
+import React from 'react';
+import Head from 'next/head';
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  try {
-    const r = await fetch(`${req.headers['x-forwarded-proto'] || 'http'}://${req.headers.host}/api/metrics`);
-    const metrics = await r.json();
-    const jobs24 = metrics?.marketplace?.find((m: any) => m.key === 'jobs_24h')?.value || 0;
-    const voters = metrics?.dao?.find((m: any) => m.key === 'voter_participation')?.value || 0;
-    const wallets = metrics?.token?.find((m: any) => m.key === 'active_wallets')?.value || 0;
-    const tx = metrics?.token?.find((m: any) => m.key === 'tx_volume_daily')?.value || 0;
-    const instances = metrics?.multiverse?.find((m: any) => m.key === 'active_instances')?.value || 0;
-
-    const summary = [
-      `Marketplace steady: ${jobs24} jobs posted in the last 24h, fill rates improving`,
-      `DAO engagement at ${voters}% voter participation with active delegates`,
-      `Token momentum: ${wallets} active wallets; daily volume around ${Number(tx).toLocaleString()}`,
-      `Multiverse scale: ${instances} active sub-instances with cross-instance flows`,
-      `Treasury stable and contributors earning consistently across regions`,
-    ];
-
-    res.status(200).json({ summary, timestamp: new Date().toISOString() });
-  } catch (e) {
-    res.status(200).json({ summary: [], error: 'Failed to compute summary' });
-  }
+export default function OperatorSummaryPage() {
+  return (
+    <>
+      <Head>
+        <title>Operator Summary - Zion Tech Group</title>
+        <meta name="description" content="operator summary page" />
+      </Head>
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold mb-6">Operator Summary</h1>
+        <p className="text-lg mb-4">This page is under construction.</p>
+        <div className="mt-4">
+          <a href="/" className="text-blue-600 hover:underline">
+            ← Back to Home
+          </a>
+        </div>
+      </div>
+    </>
+  );
 }

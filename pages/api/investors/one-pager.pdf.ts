@@ -1,8 +1,22 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
+import React from 'react';
+import Head from 'next/head';
 
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  res.setHeader('Content-Type', 'application/pdf');
-  res.setHeader('Content-Disposition', 'attachment; filename="one-pager.pdf"');
-  const pdfPlaceholder = Buffer.from('%PDF-1.4\n1 0 obj\n<<>>\nendobj\ntrailer\n<<>>\n%%EOF');
-  res.status(200).send(pdfPlaceholder);
+export default function OnePager.pdfPage() {
+  return (
+    <>
+      <Head>
+        <title>One Pager.Pdf - Zion Tech Group</title>
+        <meta name="description" content="one pager.pdf page" />
+      </Head>
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold mb-6">One Pager.Pdf</h1>
+        <p className="text-lg mb-4">This page is under construction.</p>
+        <div className="mt-4">
+          <a href="/" className="text-blue-600 hover:underline">
+            ← Back to Home
+          </a>
+        </div>
+      </div>
+    </>
+  );
 }

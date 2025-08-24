@@ -1,7 +1,22 @@
 import React from 'react';
 import Head from 'next/head';
+
+export default function ProjectMilestonesPage() {
   return (
     <>
-      <Head><title>project-milestones - Zion App</title><meta name="description" content="project-milestones page" /></Head><div className="container mx-auto px-4 py-8"><h1 className="text-3xl font-bold mb-6">project-milestones</h1><p className="text-lg mb-4">This page is under construction.</p><div className="mt-4"><a href="/" className="text-blue-600 hover:underline">;
-            ← Back to Home</a></div></div></>;
+      <Head>
+        <title>Project Milestones - Zion Tech Group</title>
+        <meta name="description" content="project milestones page" />
+      </Head>
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold mb-6">Project Milestones</h1>
+        <p className="text-lg mb-4">This page is under construction.</p>
+        <div className="mt-4">
+          <a href="/" className="text-blue-600 hover:underline">
+            ← Back to Home
+          </a>
+        </div>
+      </div>
+    </>
   );
+}

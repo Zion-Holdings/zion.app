@@ -1,22 +1,22 @@
-import type { NextPage } from 'next';
+import React from 'react';
 import Head from 'next/head';
-import Link from 'next/link';
 
-const DatabaseDesignChat: NextPage = () => {
+export default function DatabaseDesignChatPage() {
   return (
-    <div>
+    <>
       <Head>
-        <title>DatabaseDesignChat - Zion Tech Solutions</title>
-        <meta name="description" content="DatabaseDesignChat service" />
+        <title>Database Design Chat - Zion Tech Group</title>
+        <meta name="description" content="database design chat page" />
       </Head>
-      
-      <main>
-        <h1>DatabaseDesignChat</h1>
-        <p>Service details coming soon...</p>
-        <a href="/services">Back to Services</a>
-      </main>
-    </div>
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold mb-6">Database Design Chat</h1>
+        <p className="text-lg mb-4">This page is under construction.</p>
+        <div className="mt-4">
+          <a href="/" className="text-blue-600 hover:underline">
+            ← Back to Home
+          </a>
+        </div>
+      </div>
+    </>
   );
-};
-
-export default DatabaseDesignChat;
+}

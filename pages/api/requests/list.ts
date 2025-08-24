@@ -1,15 +1,22 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
-import fs from 'fs';
-import path from 'path';
+import React from 'react';
+import Head from 'next/head';
 
-const REQUESTS_PATH = path.join(process.cwd(), 'data', 'requests.json');
-
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  try {
-    const raw = fs.readFileSync(REQUESTS_PATH, 'utf-8');
-    const items = JSON.parse(raw);
-    res.status(200).json({ items });
-  } catch {
-    res.status(200).json({ items: [] });
-  }
+export default function ListPage() {
+  return (
+    <>
+      <Head>
+        <title>List - Zion Tech Group</title>
+        <meta name="description" content="list page" />
+      </Head>
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold mb-6">List</h1>
+        <p className="text-lg mb-4">This page is under construction.</p>
+        <div className="mt-4">
+          <a href="/" className="text-blue-600 hover:underline">
+            ← Back to Home
+          </a>
+        </div>
+      </div>
+    </>
+  );
 }

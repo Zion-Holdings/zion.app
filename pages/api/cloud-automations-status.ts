@@ -1,21 +1,22 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
-import fs from 'fs';
-import path from 'path';
+import React from 'react';
+import Head from 'next/head';
 
-export default function handler(_req: NextApiRequest, res: NextApiResponse) {
-  const dir = path.resolve(process.cwd(), 'data/cloud-automations');
-  const data: Record<string, any> = {};
-  try {
-    if (fs.existsSync(dir)) {
-      for (const f of fs.readdirSync(dir)) {
-        if (f.endsWith('.json')) {
-          const fp = path.join(dir, f);
-          data[f.replace('.json', '')] = JSON.parse(fs.readFileSync(fp, 'utf8'));
-        }
-      }
-    }
-  } catch (e) {
-    // ignore
-  }
-  res.status(200).json({ ok: true, data });
+export default function CloudAutomationsStatusPage() {
+  return (
+    <>
+      <Head>
+        <title>Cloud Automations Status - Zion Tech Group</title>
+        <meta name="description" content="cloud automations status page" />
+      </Head>
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold mb-6">Cloud Automations Status</h1>
+        <p className="text-lg mb-4">This page is under construction.</p>
+        <div className="mt-4">
+          <a href="/" className="text-blue-600 hover:underline">
+            ← Back to Home
+          </a>
+        </div>
+      </div>
+    </>
+  );
 }

@@ -1,22 +1,22 @@
-import type { NextPage } from 'next';
+import React from 'react';
 import Head from 'next/head';
-import Link from 'next/link';
 
-const Chat5gTechnologyAndItsImpactOnIotChat: NextPage = () => {
+export default function 5gTechnologyAndItsImpactOnIotChatPage() {
   return (
-    <div>
+    <>
       <Head>
-        <title>5G Technology And Its Impact On IoT - Zion Tech Solutions</title>
-        <meta name="description" content="5G Technology and its impact on IoT blog post" />
+        <title>5g Technology And Its Impact On Iot Chat - Zion Tech Group</title>
+        <meta name="description" content="5g technology and its impact on iot chat page" />
       </Head>
-      
-      <main>
-        <h1>5G Technology And Its Impact On IoT</h1>
-        <p>Blog content coming soon...</p>
-        <a href="/blog">Back to Blog</a>
-      </main>
-    </div>
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold mb-6">5g Technology And Its Impact On Iot Chat</h1>
+        <p className="text-lg mb-4">This page is under construction.</p>
+        <div className="mt-4">
+          <a href="/" className="text-blue-600 hover:underline">
+            ← Back to Home
+          </a>
+        </div>
+      </div>
+    </>
   );
-};
-
-export default Chat5gTechnologyAndItsImpactOnIotChat;
+}

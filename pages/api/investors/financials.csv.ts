@@ -1,13 +1,22 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
+import React from 'react';
+import Head from 'next/head';
 
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  res.setHeader('Content-Type', 'text/csv');
-  res.setHeader('Content-Disposition', 'attachment; filename="financials.csv"');
-  const rows = [
-    ['month','mrr','burn','gmv'],
-    ['2025-05','82000','-60000','1100000'],
-    ['2025-06','86400','-62000','1200000'],
-  ];
-  const csv = rows.map(r => r.join(',')).join('\n');
-  res.status(200).send(csv);
+export default function Financials.csvPage() {
+  return (
+    <>
+      <Head>
+        <title>Financials.Csv - Zion Tech Group</title>
+        <meta name="description" content="financials.csv page" />
+      </Head>
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold mb-6">Financials.Csv</h1>
+        <p className="text-lg mb-4">This page is under construction.</p>
+        <div className="mt-4">
+          <a href="/" className="text-blue-600 hover:underline">
+            ← Back to Home
+          </a>
+        </div>
+      </div>
+    </>
+  );
 }

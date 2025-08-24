@@ -1,21 +1,22 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
-import { readJsonFile, writeJsonFile } from '../../../../utils/api/storage';
+import React from 'react';
+import Head from 'next/head';
 
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  const id = String(req.query.id || '');
-  if (id) {
-    const updates = readJsonFile('updates.json', [] as any[]);
-    const idx = updates.findIndex((x: any) => x.id === id);
-    if (idx >= 0) {
-      updates[idx].opens = (updates[idx].opens || 0) + 1;
-      writeJsonFile('updates.json', updates);
-    }
-  }
-  const pixel = Buffer.from(
-    'R0lGODlhAQABAPAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==',
-    'base64'
+export default function OpenPixelPage() {
+  return (
+    <>
+      <Head>
+        <title>Open Pixel - Zion Tech Group</title>
+        <meta name="description" content="open pixel page" />
+      </Head>
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold mb-6">Open Pixel</h1>
+        <p className="text-lg mb-4">This page is under construction.</p>
+        <div className="mt-4">
+          <a href="/" className="text-blue-600 hover:underline">
+            ← Back to Home
+          </a>
+        </div>
+      </div>
+    </>
   );
-  res.setHeader('Content-Type', 'image/gif');
-  res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
-  res.status(200).send(pixel);
 }

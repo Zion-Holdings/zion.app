@@ -20,11 +20,12 @@ const AIChatbot: React.FC<AIChatbotProps> = ({ className = "" }) => {
   const [messages, setMessages] = useState<ChatMessage[]>([
     {
       id: '1',
-      type: 'bot',
+      type: 'bot' as const,
       content: 'Hello! I\'m Zion AI, your intelligent assistant. How can I help you today? I can help with:\n\n• AI & Quantum Computing Services\n• Business Solutions\n• Technical Support\n• Pricing Information\n• Service Comparisons',
       timestamp: new Date()
     }
   ]);
+  const setMessagesTyped = setMessages as React.Dispatch<React.SetStateAction<ChatMessage[]>>;
   const [inputValue, setInputValue] = useState('');
   const [isTyping, setIsTyping] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
@@ -79,20 +80,23 @@ const AIChatbot: React.FC<AIChatbotProps> = ({ className = "" }) => {
       timestamp: new Date()
     };
 
-    setMessages(prev => [...prev, userMessage]);
+    setMessagesTyped((prev: ChatMessage[]) => [...prev, userMessage]);
     setInputValue('');
     
     // Generate AI response
     const aiResponse = await generateAIResponse(userMessage.content);
     
-    const botMessage: ChatMessage = {
-      id: (Date.now() + 1).toString(),
-      type: 'bot',
-      content: aiResponse,
-      timestamp: new Date()
-    };
-
-    setMessages(prev => [...prev, botMessage]);
+    if (aiResponse) {
+      const botMessage: ChatMessage = {
+        id: (Date.now() + 1).toString(),
+        type: 'bot',
+        content: aiResponse,
+        timestamp: new Date()
+      };
+      
+            setMessagesTyped((prev: ChatMessage[]) => [...prev, botMessage]);
+    }
+    
     setIsTyping(false);
   };
 

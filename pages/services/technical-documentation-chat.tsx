@@ -1,22 +1,22 @@
-import type { NextPage } from 'next';
+import React from 'react';
 import Head from 'next/head';
-import Link from 'next/link';
 
-const TechnicalDocumentationChat: NextPage = () => {
+export default function TechnicalDocumentationChatPage() {
   return (
-    <div>
+    <>
       <Head>
-        <title>TechnicalDocumentationChat - Zion Tech Solutions</title>
-        <meta name="description" content="TechnicalDocumentationChat service" />
+        <title>Technical Documentation Chat - Zion Tech Group</title>
+        <meta name="description" content="technical documentation chat page" />
       </Head>
-      
-      <main>
-        <h1>TechnicalDocumentationChat</h1>
-        <p>Service details coming soon...</p>
-        <a href="/services">Back to Services</a>
-      </main>
-    </div>
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold mb-6">Technical Documentation Chat</h1>
+        <p className="text-lg mb-4">This page is under construction.</p>
+        <div className="mt-4">
+          <a href="/" className="text-blue-600 hover:underline">
+            ← Back to Home
+          </a>
+        </div>
+      </div>
+    </>
   );
-};
-
-export default TechnicalDocumentationChat;
+}
