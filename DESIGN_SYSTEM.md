@@ -1,162 +1,124 @@
 # Zion Tech Group - Design System
 
 ## Overview
-
-This document outlines the comprehensive design system for the Zion Tech Group website, featuring beautiful animated backgrounds, modern UI components, and professional design elements.
+This document outlines the comprehensive design system for Zion Tech Group's website, featuring beautiful animations, modern UI components, and professional aesthetics.
 
 ## Design Principles
 
-- **Modern & Professional**: Clean, sophisticated design that reflects our tech company identity
-- **Animated & Engaging**: Subtle animations and transitions that enhance user experience
-- **Accessible**: High contrast and readable typography for all users
-- **Responsive**: Mobile-first design that works seamlessly across all devices
-- **Performance**: Optimized animations and effects that don't impact page performance
+### 1. Modern & Professional
+- Clean, minimalist design with sophisticated color schemes
+- Professional typography using Inter font family
+- Consistent spacing and layout systems
+
+### 2. Interactive & Engaging
+- Smooth animations and transitions
+- Hover effects and micro-interactions
+- Responsive design for all devices
+
+### 3. Tech-Focused Aesthetics
+- Dark theme with vibrant accent colors
+- Glass morphism effects
+- Particle animations and floating elements
 
 ## Color Palette
 
 ### Primary Colors
-- **Cyan**: `#06b6d4` - Primary brand color, used for CTAs and highlights
-- **Blue**: `#3b82f6` - Secondary brand color, used for gradients and accents
-- **Purple**: `#8b5cf6` - Tertiary color, used for special elements and highlights
-- **Pink**: `#ec4899` - Accent color, used for special features and highlights
+- **Cyan**: `#06b6d4` - Primary brand color
+- **Blue**: `#3b82f6` - Secondary brand color
+- **Purple**: `#8b5cf6` - Accent color
+- **Pink**: `#ec4899` - Highlight color
 
 ### Background Colors
-- **Dark Slate**: `#0f172a` - Primary background color
-- **Slate**: `#1e293b` - Secondary background color
-- **Light Slate**: `#334155` - Tertiary background color
+- **Primary Background**: `#0f172a` (slate-950)
+- **Secondary Background**: `#1e293b` (slate-800)
+- **Glass Background**: `rgba(255, 255, 255, 0.1)`
 
 ### Text Colors
-- **White**: `#ffffff` - Primary text color
-- **White/80**: `rgba(255, 255, 255, 0.8)` - Secondary text color
-- **White/70**: `rgba(255, 255, 255, 0.7)` - Tertiary text color
-- **White/60**: `rgba(255, 255, 255, 0.6)` - Muted text color
+- **Primary Text**: `#ffffff` (white)
+- **Secondary Text**: `rgba(255, 255, 255, 0.8)`
+- **Muted Text**: `rgba(255, 255, 255, 0.6)`
 
 ## Typography
 
-### Font Family
-- **Primary**: Inter - Modern, readable sans-serif for body text and headings
-- **Monospace**: JetBrains Mono - For technical content and code snippets
-
-### Font Weights
-- **Light**: 300
-- **Regular**: 400
-- **Medium**: 500
-- **Semibold**: 600
-- **Bold**: 700
-- **Extrabold**: 800
-- **Black**: 900
+### Font Families
+- **Primary**: Inter (300-900 weights)
+- **Monospace**: JetBrains Mono (400-600 weights)
 
 ### Font Sizes
-- **Hero**: 5xl (3rem) to 8xl (6rem)
-- **Headings**: 2xl (1.5rem) to 6xl (3.75rem)
-- **Body**: Base (1rem) to xl (1.25rem)
-- **Small**: xs (0.75rem) to sm (0.875rem)
+- **Hero Title**: `text-7xl` to `text-8xl`
+- **Section Headings**: `text-4xl` to `text-6xl`
+- **Subheadings**: `text-xl` to `text-3xl`
+- **Body Text**: `text-base` to `text-lg`
+- **Small Text**: `text-sm` to `text-xs`
 
 ## Component Library
 
 ### 1. AnimatedBackground
-- **Purpose**: Creates an engaging animated canvas background
-- **Features**: 
-  - Floating particles with connecting lines
-  - Gradient orbs with pulsing effects
-  - Geometric shapes with rotation animations
-  - Responsive canvas sizing
+- Canvas-based particle system
+- Floating geometric shapes
+- Dynamic gradient orbs
+- Responsive to window resizing
 
 ### 2. Navigation
-- **Purpose**: Main site navigation with glass morphism effects
-- **Features**:
-  - Transparent to solid background on scroll
-  - Mobile-responsive hamburger menu
-  - Active state indicators
-  - Smooth hover animations
+- Fixed positioning with scroll effects
+- Glass morphism design
+- Mobile-responsive hamburger menu
+- Active state indicators
 
 ### 3. HeroSection
-- **Purpose**: Main landing section with compelling messaging
-- **Features**:
-  - Gradient text animations
-  - Floating background elements
-  - Call-to-action buttons
-  - Statistics display
-  - Scroll indicator
+- Full-screen hero with animated text
+- Floating tech icons
+- Statistics display
+- Call-to-action buttons
 
 ### 4. FeaturesSection
-- **Purpose**: Showcase company services and capabilities
-- **Features**:
-  - Grid layout with hover effects
-  - Icon-based service cards
-  - Gradient backgrounds
-  - Smooth transitions
+- Interactive feature cards
+- Hover animations
+- Gradient icons with glow effects
+- Responsive grid layout
 
-### 5. ContentCard
-- **Purpose**: Consistent content presentation across the site
-- **Features**:
-  - Glass morphism design
-  - Hover lift effects
-  - Category badges
-  - Date stamps
-  - Icon integration
-
-### 6. Footer
-- **Purpose**: Site footer with comprehensive information
-- **Features**:
-  - Multi-column layout
-  - Newsletter signup
-  - Social media links
-  - Floating decorative elements
-
-### 7. LoadingSpinner
-- **Purpose**: Loading state indicator
-- **Features**:
-  - Animated spinner with orbiting elements
-  - Branded loading text
-  - Smooth animations
-
-### 8. ScrollToTop
-- **Purpose**: Easy navigation back to top
-- **Features**:
-  - Appears after scrolling
-  - Smooth scroll behavior
-  - Hover animations
+### 5. Footer
+- Comprehensive link organization
+- Newsletter signup
+- Social media links
+- Floating decorative elements
 
 ## Animation System
 
+### Transition Durations
+- **Fast**: `duration-200` (200ms)
+- **Normal**: `duration-300` (300ms)
+- **Slow**: `duration-500` (500ms)
+
 ### Animation Types
-- **Fade In**: Smooth opacity transitions with slight movement
-- **Slide Up**: Content slides up from below
-- **Slide In**: Content slides in from left/right
-- **Scale In**: Content scales up from smaller size
-- **Float**: Gentle up/down floating motion
-- **Pulse**: Subtle opacity pulsing
-- **Bounce**: Playful bouncing animations
+- **Fade In**: `fade-in` class
+- **Slide Up**: `slide-up` class
+- **Scale In**: `scale-in` class
+- **Float**: `float` class
+- **Pulse**: `pulse-slow` class
 
-### Animation Timing
-- **Fast**: 200ms - Quick interactions
-- **Medium**: 300ms - Standard transitions
-- **Slow**: 500ms - Major state changes
-- **Very Slow**: 800ms - Hero animations
+### Hover Effects
+- **Lift**: `hover-lift` class
+- **Tilt**: `tilt-on-hover` class
+- **Scale**: `hover:scale-105`
+- **Glow**: Various glow classes
 
-### Easing Functions
-- **Standard**: `cubic-bezier(0.4, 0, 0.2, 1)`
-- **Bounce**: `cubic-bezier(0.68, -0.55, 0.265, 1.55)`
-- **Elastic**: `cubic-bezier(0.175, 0.885, 0.32, 1.275)`
+## Layout System
 
-## Effects & Styles
+### Container Sizes
+- **Small**: `max-w-4xl`
+- **Medium**: `max-w-6xl`
+- **Large**: `max-w-7xl`
 
-### Glass Morphism
-- **Background**: `rgba(255, 255, 255, 0.1)`
-- **Backdrop Filter**: `blur(20px)`
-- **Border**: `1px solid rgba(255, 255, 255, 0.2)`
+### Spacing Scale
+- **Section Padding**: `py-24`
+- **Component Spacing**: `mb-16`, `mb-8`, `mb-6`
+- **Grid Gaps**: `gap-8`, `gap-6`, `gap-4`
 
-### Gradients
-- **Primary**: `from-cyan-500 to-blue-600`
-- **Secondary**: `from-purple-500 to-pink-600`
-- **Accent**: `from-pink-500 to-rose-600`
-
-### Shadows
-- **Light**: `0 4px 6px rgba(0, 0, 0, 0.1)`
-- **Medium**: `0 10px 15px rgba(0, 0, 0, 0.2)`
-- **Heavy**: `0 20px 40px rgba(0, 0, 0, 0.3)`
-- **Glow**: `0 0 20px rgba(6, 182, 212, 0.3)`
+### Grid Systems
+- **Mobile**: Single column
+- **Tablet**: Two columns
+- **Desktop**: Three or more columns
 
 ## Responsive Design
 
@@ -169,38 +131,35 @@ This document outlines the comprehensive design system for the Zion Tech Group w
 - Base styles for mobile
 - Progressive enhancement for larger screens
 - Touch-friendly interactions
-- Optimized navigation for small screens
 
-## Performance Considerations
+## Accessibility Features
 
-### Animation Optimization
-- Use `transform` and `opacity` for animations
-- Avoid animating `width`, `height`, and `margin`
-- Use `will-change` sparingly
-- Implement `requestAnimationFrame` for complex animations
-
-### Image Optimization
-- Use WebP format when possible
-- Implement lazy loading
-- Optimize SVG icons
-- Compress images appropriately
-
-## Accessibility
-
-### Color Contrast
-- Minimum 4.5:1 ratio for normal text
-- Minimum 3:1 ratio for large text
-- High contrast mode support
-
-### Keyboard Navigation
-- All interactive elements are keyboard accessible
-- Focus indicators are clearly visible
+### Focus Management
+- Visible focus indicators
 - Logical tab order
+- Keyboard navigation support
 
 ### Screen Reader Support
 - Semantic HTML structure
-- Proper ARIA labels
-- Descriptive alt text for images
+- ARIA labels where needed
+- Alt text for images
+
+### Color Contrast
+- WCAG AA compliant color combinations
+- High contrast text on backgrounds
+- Alternative color schemes for accessibility
+
+## Performance Optimizations
+
+### Animation Performance
+- CSS transforms for smooth animations
+- Hardware acceleration where possible
+- Reduced motion support
+
+### Asset Optimization
+- Optimized images and icons
+- Minimal JavaScript dependencies
+- Efficient CSS delivery
 
 ## Browser Support
 
@@ -212,43 +171,43 @@ This document outlines the comprehensive design system for the Zion Tech Group w
 
 ### Fallbacks
 - Graceful degradation for older browsers
-- CSS custom properties with fallbacks
-- JavaScript feature detection
+- Progressive enhancement
+- Feature detection for advanced features
 
-## Implementation Guidelines
+## Usage Guidelines
 
-### CSS Classes
-- Use utility classes from Tailwind CSS
-- Custom classes for specific components
-- Consistent naming conventions
-- Modular CSS structure
+### Component Implementation
+1. Import required components
+2. Use consistent prop patterns
+3. Maintain accessibility standards
+4. Test across different devices
 
-### JavaScript
-- React hooks for state management
-- Event listeners with proper cleanup
-- Performance monitoring
-- Error boundaries
+### Customization
+1. Use CSS custom properties for theming
+2. Extend existing components rather than creating new ones
+3. Follow established naming conventions
+4. Document any custom modifications
 
-### Component Structure
-- Single responsibility principle
-- Props interface definitions
-- Default prop values
-- Error handling
+### Best Practices
+1. Maintain consistent spacing
+2. Use semantic HTML elements
+3. Implement proper error handling
+4. Test user interactions thoroughly
 
 ## Future Enhancements
 
 ### Planned Features
 - Dark/Light theme toggle
 - Advanced animation controls
-- Performance monitoring dashboard
-- A/B testing framework
+- Component playground
+- Design token system
 
 ### Scalability
-- Component library expansion
-- Design token system
-- Automated testing
-- Documentation updates
+- Component composition patterns
+- Reusable animation hooks
+- Modular CSS architecture
+- Performance monitoring tools
 
 ---
 
-This design system ensures consistency, maintainability, and scalability across the Zion Tech Group website while providing an engaging and professional user experience.
+*This design system is continuously evolving. For questions or contributions, please refer to the project documentation or contact the development team.*
