@@ -698,3 +698,8 @@
 [2025-08-23T22:23:30.351Z]    Failed: 0
 [2025-08-23T22:23:30.351Z]    Build status: ✅ READY
 [2025-08-23T22:23:30.351Z] ✅ All pre-build health checks passed
+[2025-08-24T01:32:28.140Z] 🔍 Starting pre-build health checks...
+[2025-08-24T01:32:28.140Z]   Running: Page Structure Validation
+[2025-08-24T01:32:28.460Z]     ❌ Page Structure Validation: FAIL - 402 critical issues found in pages
+[2025-08-24T01:32:28.461Z] 🚨 Critical check failed: Page Structure Validation
+[2025-08-24T01:32:28.461Z] ❌ Pre-build health check failed: 402 critical issues found in pages
