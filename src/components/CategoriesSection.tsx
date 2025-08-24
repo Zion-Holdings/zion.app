@@ -51,36 +51,36 @@ interface CategoriesSectionProps {
   showTitle?: boolean;
 }
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.2
+    }
+  }
+};
+
+const itemVariants = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut"
+    }
+  }
+};
+
 export function CategoriesSection({ showTitle = true }: CategoriesSectionProps) {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.5,
-        ease: "easeOut"
-      }
-    }
-  };
-
   return (
-    <section className="py-20 bg-gradient-to-br from-zion-blue via-zion-blue-dark to-zion-slate-dark relative overflow-hidden">
+    <section className="py-20 bg-zion-blue relative overflow-hidden">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 25% 25%, currentColor 1px, transparent 1px)`,
+          backgroundImage: `radial-gradient(circle at 25% 25%, #8ab1f3 2px, transparent 2px)`,
           backgroundSize: '50px 50px'
         }}></div>
       </div>
@@ -89,7 +89,7 @@ export function CategoriesSection({ showTitle = true }: CategoriesSectionProps) 
         {showTitle && (
           <motion.div 
             className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
@@ -109,32 +109,45 @@ export function CategoriesSection({ showTitle = true }: CategoriesSectionProps) 
           viewport={{ once: true }}
         >
           {categories.map((category, index) => (
-            <motion.div
-              key={category.title}
-              variants={itemVariants}
-              whileHover={{ 
-                y: -8,
-                transition: { duration: 0.2 }
-              }}
-            >
-              <Link to={category.link} className="group block h-full">
-                <div className="rounded-xl overflow-hidden h-full border border-zion-blue-light/30 bg-gradient-to-br from-zion-blue-dark/80 to-zion-slate-dark/80 backdrop-blur-sm p-6 transition-all duration-300 hover:border-zion-purple/50 hover:shadow-2xl hover:shadow-zion-purple/20">
-                  <div className={`rounded-full w-16 h-16 bg-gradient-to-br ${category.gradient} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
-                    <div className="text-white">
-                      {category.icon}
+            <motion.div key={category.title} variants={itemVariants}>
+              <Link to={category.link} className="group block">
+                <motion.div 
+                  className="rounded-xl overflow-hidden h-full border border-zion-blue-light bg-zion-blue-dark p-6 transition-all duration-300 hover:border-zion-purple/50 relative"
+                  whileHover={{ 
+                    y: -8,
+                    scale: 1.02,
+                    transition: { duration: 0.3 }
+                  }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  {/* Hover effect overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-zion-purple/5 to-zion-cyan/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  
+                  <div className="relative z-10">
+                    <motion.div 
+                      className={`rounded-full w-16 h-16 bg-gradient-to-br ${category.gradient} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}
+                      whileHover={{ rotate: 5 }}
+                    >
+                      <div className="text-white">
+                        {category.icon}
+                      </div>
+                    </motion.div>
+                    
+                    <h3 className="text-white text-xl font-bold mb-3 group-hover:text-zion-cyan transition-colors duration-300">
+                      {category.title}
+                    </h3>
+                    
+                    <p className="text-zion-slate-light mb-4 leading-relaxed">
+                      {category.description}
+                    </p>
+                    
+                    {/* Arrow indicator */}
+                    <div className="flex items-center text-zion-cyan opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-0 group-hover:translate-x-1">
+                      <ArrowRight className="w-4 h-4" />
+                      <span className="text-sm font-medium ml-1">Explore</span>
                     </div>
                   </div>
-                  <h3 className="text-white text-xl font-bold mb-3 group-hover:text-zion-cyan transition-colors">
-                    {category.title}
-                  </h3>
-                  <p className="text-zion-slate-light group-hover:text-zion-slate-light/80 transition-colors mb-4">
-                    {category.description}
-                  </p>
-                  <div className="flex items-center text-zion-cyan opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <span className="text-sm font-medium">Learn more</span>
-                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                  </div>
-                </div>
+                </motion.div>
               </Link>
             </motion.div>
           ))}
@@ -150,16 +163,19 @@ export function CategoriesSection({ showTitle = true }: CategoriesSectionProps) 
           <h3 className="text-center text-xl font-bold text-white mb-6">Featured Services</h3>
           <div className="flex flex-wrap justify-center gap-4">
             {specialServices.map((service) => (
-              <Link 
+              <motion.div
                 key={service.title}
-                to={service.link}
-                className="group px-6 py-3 bg-gradient-to-r from-zion-blue-light to-zion-cyan hover:from-zion-cyan hover:to-zion-blue-light border border-zion-purple/20 hover:border-zion-purple/50 rounded-full text-zion-slate-dark font-medium transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-zion-cyan/25"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
-                <span className="flex items-center gap-2">
+                <Link 
+                  to={service.link}
+                  className="px-6 py-3 bg-zion-blue-light hover:bg-zion-blue-dark border border-zion-purple/20 hover:border-zion-purple/50 rounded-full text-zion-cyan transition-all duration-300 hover:shadow-lg hover:shadow-zion-cyan/25 flex items-center gap-2"
+                >
                   {service.title}
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </span>
-              </Link>
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </motion.div>
             ))}
           </div>
         </motion.div>
@@ -173,10 +189,10 @@ export function CategoriesSection({ showTitle = true }: CategoriesSectionProps) 
         >
           <Link 
             to="/categories" 
-            className="group inline-flex items-center gap-2 text-zion-cyan border-b-2 border-zion-cyan hover:border-zion-cyan-dark transition-colors font-medium text-lg"
+            className="text-zion-cyan border-b border-zion-cyan hover:border-zion-cyan-dark transition-colors duration-300 hover:text-zion-cyan-light flex items-center gap-2 group"
           >
             View All Categories
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
           </Link>
         </motion.div>
       </div>
