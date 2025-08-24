@@ -84,7 +84,8 @@ export default function DigitalTransformationPage() {
         <meta property="og:title" content="Digital Transformation Services — Zion Tech Group" />
         <meta property="og:description" content="Transform your organization with our digital transformation services." />
         <link rel="canonical" href="https://ziontechgroup.com/services/transformation" />
-      </Head>
+      
+        <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","headline":"Digital Transformation Services — Zion Tech Group","url":"https://ziontechgroup.com/services/transformation","isPartOf":{"@type":"WebSite","name":"Zion Tech Group","url":"https://ziontechgroup.com"}}</script></Head>
 
       <EnhancedNavigation />
 

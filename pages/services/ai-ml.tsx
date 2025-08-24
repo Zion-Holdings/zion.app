@@ -84,7 +84,8 @@ export default function AIMachineLearningPage() {
         <meta property="og:title" content="AI & Machine Learning Services — Zion Tech Group" />
         <meta property="og:description" content="Transform your business with cutting-edge AI and machine learning solutions." />
         <link rel="canonical" href="https://ziontechgroup.com/services/ai-ml" />
-      </Head>
+      
+        <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","headline":"AI & Machine Learning Services — Zion Tech Group","url":"https://ziontechgroup.com/services/ai-ml","isPartOf":{"@type":"WebSite","name":"Zion Tech Group","url":"https://ziontechgroup.com"}}</script></Head>
 
       <EnhancedNavigation />
 

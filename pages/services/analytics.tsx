@@ -84,7 +84,8 @@ export default function DataAnalyticsPage() {
         <meta property="og:title" content="Data Analytics Services — Zion Tech Group" />
         <meta property="og:description" content="Transform your data into actionable insights with our analytics solutions." />
         <link rel="canonical" href="https://ziontechgroup.com/services/analytics" />
-      </Head>
+      
+        <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","headline":"Data Analytics Services — Zion Tech Group","url":"https://ziontechgroup.com/services/analytics","isPartOf":{"@type":"WebSite","name":"Zion Tech Group","url":"https://ziontechgroup.com"}}</script></Head>
 
       <EnhancedNavigation />
 

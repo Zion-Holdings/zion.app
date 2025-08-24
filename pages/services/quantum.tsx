@@ -84,7 +84,8 @@ export default function QuantumComputingPage() {
         <meta property="og:title" content="Quantum Computing Services — Zion Tech Group" />
         <meta property="og:description" content="Unlock the future of computing with our quantum computing solutions." />
         <link rel="canonical" href="https://ziontechgroup.com/services/quantum" />
-      </Head>
+      
+        <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","headline":"Quantum Computing Services — Zion Tech Group","url":"https://ziontechgroup.com/services/quantum","isPartOf":{"@type":"WebSite","name":"Zion Tech Group","url":"https://ziontechgroup.com"}}</script></Head>
 
       <EnhancedNavigation />
 

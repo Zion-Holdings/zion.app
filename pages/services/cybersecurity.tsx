@@ -84,7 +84,8 @@ export default function CybersecurityPage() {
         <meta property="og:title" content="Cybersecurity Services — Zion Tech Group" />
         <meta property="og:description" content="Protect your digital assets with our comprehensive cybersecurity solutions." />
         <link rel="canonical" href="https://ziontechgroup.com/services/cybersecurity" />
-      </Head>
+      
+        <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","headline":"Cybersecurity Services — Zion Tech Group","url":"https://ziontechgroup.com/services/cybersecurity","isPartOf":{"@type":"WebSite","name":"Zion Tech Group","url":"https://ziontechgroup.com"}}</script></Head>
 
       <EnhancedNavigation />
 

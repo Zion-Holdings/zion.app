@@ -1,0 +1,8 @@
+[2025-08-24T00:54:20.562Z] Injected JSON-LD into pages/index.tsx
+[2025-08-24T00:54:20.566Z] Injected JSON-LD into pages/services/ai-ml.tsx
+[2025-08-24T00:54:20.567Z] Injected JSON-LD into pages/services/analytics.tsx
+[2025-08-24T00:54:20.567Z] Injected JSON-LD into pages/services/cloud.tsx
+[2025-08-24T00:54:20.567Z] Injected JSON-LD into pages/services/cybersecurity.tsx
+[2025-08-24T00:54:20.568Z] Injected JSON-LD into pages/services/quantum.tsx
+[2025-08-24T00:54:20.568Z] Injected JSON-LD into pages/services/transformation.tsx
+[2025-08-24T00:54:20.568Z] Done. Modified 7 file(s).

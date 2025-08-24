@@ -84,7 +84,8 @@ export default function CloudInfrastructurePage() {
         <meta property="og:title" content="Cloud Infrastructure Services — Zion Tech Group" />
         <meta property="og:description" content="Transform your infrastructure with our cloud solutions." />
         <link rel="canonical" href="https://ziontechgroup.com/services/cloud" />
-      </Head>
+      
+        <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","headline":"Cloud Infrastructure Services — Zion Tech Group","url":"https://ziontechgroup.com/services/cloud","isPartOf":{"@type":"WebSite","name":"Zion Tech Group","url":"https://ziontechgroup.com"}}</script></Head>
 
       <EnhancedNavigation />
 
