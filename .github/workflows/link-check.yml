@@ -1,0 +1,54 @@
+name: Link Check
+
+on:
+  pull_request:
+  schedule:
+    - cron: '15 2 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  lychee:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Run lychee link checker
+        id: lychee
+        uses: lycheeverse/lychee-action@v1
+        with:
+          args: --verbose --no-progress --exclude-mail --format markdown --output ./lychee/out.md .
+      - name: Upload report artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lychee-report
+          path: ./lychee/out.md
+      - name: Update link-check badge
+        run: |
+          node - <<'NODE'
+          import { promises as fs } from 'node:fs';
+          const failed = process.env.LYCHEE_EXIT_CODE === '2';
+          const badge = { schemaVersion: 1, label: 'links', message: failed ? 'broken' : 'ok', color: failed ? 'red' : 'brightgreen' };
+          await fs.mkdir('badges', { recursive: true });
+          await fs.writeFile('badges/links.json', JSON.stringify(badge), 'utf8');
+          console.log('Wrote badges/links.json');
+          NODE
+        env:
+          LYCHEE_EXIT_CODE: ${{ steps.lychee.outputs.exit_code || 0 }}
+      - name: Commit link-check badge
+        if: ${{ github.ref == 'refs/heads/main' }}
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'chore(badge): update link-check badge'
+          file_pattern: badges/links.json
+      - name: Create issue on failure (scheduled only)
+        if: failure() && github.event_name == 'schedule'
+        uses: peter-evans/create-issue-from-file@v5
+        with:
+          title: 'Broken links detected'
+          content-filepath: ./lychee/out.md
+          labels: 'automation, bug'

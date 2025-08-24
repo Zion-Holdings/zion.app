@@ -1,0 +1,59 @@
+{
+  "summary": {
+    "totalChecks": 6,
+    "passedChecks": 5,
+    "failedChecks": 1,
+    "criticalFailures": 0,
+    "canBuild": true,
+<<<<<<< HEAD
+    "timestamp": "2025-08-19T18:52:46.389Z"
+=======
+    "timestamp": "2025-08-20T12:26:14.200Z"
+>>>>>>> origin/cursor/bc-37e0a79f-43c4-4216-bd12-ddf1b3362bec-8633
+  },
+  "results": [
+    {
+      "name": "Page Structure Validation",
+      "status": "PASS",
+<<<<<<< HEAD
+      "result": "All 1 pages are properly structured",
+=======
+      "result": "All 23 pages are properly structured",
+>>>>>>> origin/cursor/bc-37e0a79f-43c4-4216-bd12-ddf1b3362bec-8633
+      "critical": true
+    },
+    {
+      "name": "Dependencies Check",
+      "status": "PASS",
+      "result": "All dependencies are properly installed",
+      "critical": true
+    },
+    {
+      "name": "Next.js Configuration",
+      "status": "PASS",
+      "result": "Next.js configuration is valid",
+      "critical": true
+    },
+    {
+      "name": "Environment Variables",
+      "status": "FAIL",
+      "error": "Missing environment variables: NODE_VERSION, NODE_OPTIONS",
+      "critical": false
+    },
+    {
+      "name": "File Permissions",
+      "status": "PASS",
+      "result": "All critical directories have proper permissions",
+      "critical": false
+    },
+    {
+      "name": "Build Artifacts",
+      "status": "PASS",
+      "result": "Build artifacts can be properly managed",
+      "critical": false
+    }
+  ],
+  "recommendations": [
+    "Verify all required environment variables are set"
+  ]
+}
