@@ -1,4 +1,13 @@
 import React, { useState, useEffect } from 'react';
+<<<<<<< HEAD
+import { motion, AnimatePresence } from 'framer-motion';
+import { 
+  Menu, X, ChevronDown, Globe, Phone, Mail, MapPin,
+  Brain, Shield, Rocket, Cpu, Database, Atom
+} from 'lucide-react';
+
+export default function EnhancedNavigation() {
+=======
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
@@ -7,6 +16,7 @@ import {
 } from 'lucide-react';
 
 const EnhancedNavigation: React.FC = () => {
+>>>>>>> origin/cursor/website-audit-and-enhancement-4d26
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
@@ -15,12 +25,23 @@ const EnhancedNavigation: React.FC = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
+<<<<<<< HEAD
+=======
 
+>>>>>>> origin/cursor/website-audit-and-enhancement-4d26
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const services = [
+<<<<<<< HEAD
+    { name: 'All Services', href: '/micro-saas', icon: Globe, description: 'Complete collection of innovative services' },
+    { name: 'AI Business Intelligence', href: '/micro-saas', icon: Brain, description: 'AI-powered analytics and insights' },
+    { name: 'Quantum Cybersecurity', href: '/micro-saas', icon: Shield, description: 'Quantum-resistant security solutions' },
+    { name: 'Edge Computing', href: '/micro-saas', icon: Cpu, description: 'Edge orchestration and IoT management' },
+    { name: 'Space Technology', href: '/micro-saas', icon: Rocket, description: 'Space exploration and satellite tech' },
+    { name: 'Pricing', href: '/market-pricing', icon: Award, description: 'Transparent pricing for all services' }
+=======
     { name: 'All Services', href: '/comprehensive-2025-services-showcase', icon: Globe, description: 'Complete collection of innovative services' },
     { name: 'AI Business Intelligence', href: '/ai-business-intelligence', icon: Brain, description: 'AI-powered analytics and insights' },
     { name: 'Quantum Cybersecurity', href: '/quantum-cybersecurity', icon: Shield, description: 'Quantum-resistant security solutions' },
@@ -28,11 +49,17 @@ const EnhancedNavigation: React.FC = () => {
     { name: 'Space Technology', href: '/space-technology', icon: Rocket, description: 'Space exploration and satellite tech' },
     { name: 'AI Research Assistant', href: '/ai-autonomous-research-assistant', icon: Brain, description: 'Autonomous AI research platform' },
     { name: 'Pricing', href: '/pricing-2025', icon: Award, description: 'Transparent pricing for all services' }
+>>>>>>> origin/cursor/website-audit-and-enhancement-4d26
   ];
 
   const company = [
     { name: 'About Us', href: '/about', icon: Users, description: 'Learn about our mission and team' },
+<<<<<<< HEAD
+    { name: 'Partners', href: '/partners', icon: Award, description: 'Strategic partnerships and collaborations' },
+    { name: 'Careers', href: '/careers', icon: Award, description: 'Join our team of innovators' },
+=======
     { name: 'Our Work', href: '/portfolio', icon: Award, description: 'See our latest projects and achievements' },
+>>>>>>> origin/cursor/website-audit-and-enhancement-4d26
     { name: 'Blog & Insights', href: '/blog', icon: BookOpen, description: 'Stay updated with industry trends' },
     { name: 'Contact', href: '/contact', icon: Phone, description: 'Get in touch with our experts' }
   ];
@@ -49,6 +76,92 @@ const EnhancedNavigation: React.FC = () => {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled 
+<<<<<<< HEAD
+        ? 'bg-slate-900/95 backdrop-blur-md border-b border-white/10' 
+        : 'bg-transparent'
+    }`}>
+      {/* Top Contact Bar */}
+      <div className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white py-2">
+        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between text-sm">
+          <div className="flex items-center space-x-6">
+            <a href="tel:+13024640950" className="flex items-center space-x-2 hover:text-blue-100 transition-colors">
+              <Phone className="w-4 h-4" />
+              <span>+1 302 464 0950</span>
+            </a>
+            <a href="mailto:kleber@ziontechgroup.com" className="flex items-center space-x-2 hover:text-blue-100 transition-colors">
+              <Mail className="w-4 h-4" />
+              <span>kleber@ziontechgroup.com</span>
+            </a>
+          </div>
+          <div className="flex items-center space-x-2">
+            <Globe className="w-4 h-4" />
+            <span>Middletown, DE</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Navigation */}
+      <div className="max-w-7xl mx-auto px-6 py-4">
+        <div className="flex items-center justify-between">
+          {/* Logo */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            className="flex items-center space-x-3"
+          >
+            <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-lg flex items-center justify-center">
+              <Brain className="w-6 h-6 text-white" />
+            </div>
+            <span className="text-2xl font-bold bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent">
+              Zion Tech Group
+            </span>
+          </motion.div>
+
+          {/* Desktop Navigation */}
+          <div className="hidden lg:flex items-center space-x-8">
+            {navigationItems.map((item) => (
+              <div key={item.name} className="relative group">
+                {item.dropdown ? (
+                  <button
+                    onMouseEnter={() => setActiveDropdown(item.name)}
+                    onMouseLeave={() => setActiveDropdown(null)}
+                    className="flex items-center space-x-1 text-white/80 hover:text-white transition-colors py-2"
+                  >
+                    <span>{item.name}</span>
+                    <ChevronDown className="w-4 h-4" />
+                  </button>
+                ) : (
+                  <a
+                    href={item.href}
+                    className="text-white/80 hover:text-white transition-colors py-2"
+                  >
+                    {item.name}
+                  </a>
+                )}
+
+                {/* Dropdown Menu */}
+                {item.dropdown && activeDropdown === item.name && (
+                  <div
+                    onMouseEnter={() => setActiveDropdown(item.name)}
+                    onMouseLeave={() => setActiveDropdown(null)}
+                    className="absolute top-full left-0 mt-2 w-64 bg-slate-800/95 backdrop-blur-md rounded-lg shadow-2xl border border-white/10 overflow-hidden"
+                  >
+                    {item.dropdown.map((dropdownItem) => (
+                      <a
+                        key={dropdownItem.name}
+                        href={dropdownItem.href}
+                        className="flex items-center space-x-3 px-4 py-3 text-white/80 hover:text-white hover:bg-white/5 transition-all duration-200"
+                      >
+                        <dropdownItem.icon className="w-5 h-5 text-blue-400" />
+                        <span>{dropdownItem.name}</span>
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+=======
         ? 'bg-slate-900/95 backdrop-blur-xl border-b border-white/10 shadow-2xl' 
         : 'bg-transparent'
     }`}>
@@ -174,16 +287,26 @@ const EnhancedNavigation: React.FC = () => {
             <Link href="/contact" className="text-white/80 hover:text-white transition-colors duration-200">
               Contact
             </Link>
+>>>>>>> origin/cursor/website-audit-and-enhancement-4d26
           </div>
 
           {/* CTA Button */}
           <div className="hidden lg:block">
+<<<<<<< HEAD
+            <a
+              href="mailto:kleber@ziontechgroup.com"
+              className="px-6 py-2 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 rounded-full text-white font-semibold transition-all duration-300 transform hover:scale-105"
+            >
+              Get Started
+            </a>
+=======
             <Link
               href="/contact"
               className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-6 py-3 rounded-xl font-medium transition-all duration-200 transform hover:scale-105 hover:shadow-lg"
             >
               Get Started
             </Link>
+>>>>>>> origin/cursor/website-audit-and-enhancement-4d26
           </div>
 
           {/* Mobile Menu Button */}
@@ -196,13 +319,69 @@ const EnhancedNavigation: React.FC = () => {
         </div>
       </div>
 
+<<<<<<< HEAD
+      {/* Mobile Navigation */}
+=======
       {/* Mobile Menu */}
+>>>>>>> origin/cursor/website-audit-and-enhancement-4d26
       <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
+<<<<<<< HEAD
+            className="lg:hidden bg-slate-900/95 backdrop-blur-md border-t border-white/10"
+          >
+            <div className="px-6 py-4 space-y-4">
+              {navigationItems.map((item) => (
+                <div key={item.name}>
+                  {item.dropdown ? (
+                    <div>
+                      <button
+                        onClick={() => setActiveDropdown(activeDropdown === item.name ? null : item.name)}
+                        className="flex items-center justify-between w-full text-white/80 hover:text-white transition-colors py-2"
+                      >
+                        <span>{item.name}</span>
+                        <ChevronDown className={`w-4 h-4 transition-transform ${
+                          activeDropdown === item.name ? 'rotate-180' : ''
+                        }`} />
+                      </button>
+                      {activeDropdown === item.name && (
+                        <div className="ml-4 mt-2 space-y-2">
+                          {item.dropdown.map((dropdownItem) => (
+                            <a
+                              key={dropdownItem.name}
+                              href={dropdownItem.href}
+                              className="flex items-center space-x-3 text-white/60 hover:text-white transition-colors py-2"
+                            >
+                              <dropdownItem.icon className="w-4 h-4 text-blue-400" />
+                              <span>{dropdownItem.name}</span>
+                            </a>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  ) : (
+                    <a
+                      href={item.href}
+                      className="block text-white/80 hover:text-white transition-colors py-2"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {item.name}
+                    </a>
+                  )}
+                </div>
+              ))}
+              <div className="pt-4">
+                <a
+                  href="mailto:kleber@ziontechgroup.com"
+                  className="block w-full text-center px-6 py-3 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 rounded-full text-white font-semibold transition-all duration-300"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Get Started
+                </a>
+=======
             transition={{ duration: 0.3 }}
             className="lg:hidden bg-slate-900/95 backdrop-blur-xl border-t border-white/10"
           >
@@ -268,6 +447,7 @@ const EnhancedNavigation: React.FC = () => {
                 >
                   Get Started
                 </Link>
+>>>>>>> origin/cursor/website-audit-and-enhancement-4d26
               </div>
             </div>
           </motion.div>
@@ -275,6 +455,10 @@ const EnhancedNavigation: React.FC = () => {
       </AnimatePresence>
     </nav>
   );
+<<<<<<< HEAD
+}
+=======
 };
 
 export default EnhancedNavigation;
+>>>>>>> origin/cursor/website-audit-and-enhancement-4d26

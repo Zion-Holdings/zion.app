@@ -8,6 +8,24 @@ import {
 import EnhancedNavigation from '../components/EnhancedNavigation';
 import EnhancedFooter from '../components/EnhancedFooter';
 
+<<<<<<< HEAD:temp_conflicts/pages/pricing-2025.tsx
+export default function Pricing2025() {
+  const [selectedCategory, setSelectedCategory] = useState('all');
+  const [billingCycle, setBillingCycle] = useState<'monthly' | 'annual'>('monthly');
+
+  const categories = [
+    { id: 'all', name: 'All Services', icon: '🚀' },
+    { id: 'AI & Analytics', name: 'AI & Analytics', icon: '🧠' },
+    { id: 'AI & Healthcare', name: 'AI & Healthcare', icon: '🏥' },
+    { id: 'AI & HR Tech', name: 'AI & HR Tech', icon: '👥' },
+    { id: 'AI & Content Creation', name: 'AI & Content Creation', icon: '✍️' },
+    { id: 'AI & Energy', name: 'AI & Energy', icon: '⚡' },
+    { id: 'AI & Robotics', name: 'AI & Robotics', icon: '🤖' },
+    { id: 'Cybersecurity & Quantum', name: 'Cybersecurity & Quantum', icon: '🔒' },
+    { id: 'Edge Computing & IoT', name: 'Edge Computing & IoT', icon: '🌐' },
+    { id: 'Space Technology & Innovation', name: 'Space Technology & Innovation', icon: '🚀' },
+    { id: 'Neural Technology & BCI', name: 'Neural Technology & BCI', icon: '🧬' }
+=======
 export default function PricingPage() {
   const plans = [
     {
@@ -62,6 +80,7 @@ export default function PricingPage() {
       popular: false,
       color: "from-green-500 to-emerald-500"
     }
+>>>>>>> origin/cursor/website-audit-and-enhancement-4d26:pages/pricing-2025.tsx
   ];
 
   const addOns = [
