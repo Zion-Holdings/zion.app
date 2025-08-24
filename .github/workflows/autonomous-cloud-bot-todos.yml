@@ -1,0 +1,35 @@
+name: Autonomous Cloud Bot (TODO Issues)
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '19 1 * * *'
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: cloud-autobot-todos
+  cancel-in-progress: false
+
+jobs:
+  run-todos:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - run: npm ci --ignore-scripts
+      - name: Create TODO issues
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GIT_AUTHOR_NAME: zion-autobot
+          GIT_AUTHOR_EMAIL: autobot@users.noreply.github.com
+        run: node automation/scan-todos.cjs
