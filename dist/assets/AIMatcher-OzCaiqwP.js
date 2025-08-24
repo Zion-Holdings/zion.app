@@ -1,1 +1,0 @@
-import{j as e}from"./index-BtTudPYL.js";function a(){return e.jsx("div",{className:"min-h-screen bg-zion-blue-dark py-8 text-white",children:e.jsxs("div",{className:"container mx-auto px-4",children:[e.jsx("h1",{className:"text-3xl font-bold mb-6",children:"AI Matcher"}),e.jsx("p",{children:"AI Matcher page content will go here."})]})})}export{a as default};

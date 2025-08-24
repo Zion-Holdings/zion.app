@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { FuturisticBackground } from '../components/FuturisticBackground';
+import { QuantumMatrixBackground } from '../components/QuantumMatrixBackground';
 import { ServiceShowcase } from '../components/ServiceShowcase';
 import { MICRO_SAAS_SERVICES } from '../data/microSaasServices';
 
@@ -9,7 +9,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 text-white relative overflow-hidden">
-      <FuturisticBackground />
+      <QuantumMatrixBackground />
       
       {/* Hero Section */}
       <div className="relative z-10 pt-20 pb-16">

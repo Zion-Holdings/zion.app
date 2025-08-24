@@ -630,6 +630,374 @@ export const MICRO_SAAS_SERVICES: MicroSaasService[] = [
     location: "Global",
     availability: "3-4 Weeks",
     createdAt: "2024-01-29T10:30:00.000Z"
+  },
+
+  // Additional AI Services
+  {
+    id: "ai-predictive-analytics",
+    title: "AI Predictive Analytics Platform",
+    description: "Advanced machine learning platform for predictive analytics, forecasting, and business intelligence with real-time data processing.",
+    category: "AI Services",
+    price: 450,
+    currency: "$",
+    pricingModel: "monthly",
+    features: [
+      "Real-time Data Processing",
+      "Machine Learning Models",
+      "Predictive Forecasting",
+      "Custom Algorithm Development",
+      "Data Visualization",
+      "API Integration",
+      "Model Training & Optimization"
+    ],
+    benefits: [
+      "Predict market trends with 85% accuracy",
+      "Reduce forecasting errors by 60%",
+      "Real-time business insights",
+      "Data-driven decision making"
+    ],
+    marketPrice: "Starting from $450/month (Industry average: $800-1,500/month)",
+    contactLink: "https://ziontechgroup.com/contact",
+    tags: ["Predictive Analytics", "Machine Learning", "Business Intelligence", "Forecasting"],
+    author: {
+      name: "Zion AI Analytics",
+      id: "zion-ai-analytics",
+      avatarUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=100&h=100"
+    },
+    images: ["https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&h=500"],
+    rating: 4.9,
+    reviewCount: 203,
+    aiScore: 98,
+    featured: true,
+    location: "Global",
+    availability: "Immediate",
+    createdAt: "2024-02-10T09:15:00.000Z"
+  },
+
+  {
+    id: "ai-voice-assistant",
+    title: "AI Voice Assistant Development",
+    description: "Custom AI voice assistant development for businesses with natural language processing, multi-language support, and integration capabilities.",
+    category: "AI Services",
+    price: 2500,
+    currency: "$",
+    pricingModel: "one-time",
+    features: [
+      "Custom Voice Recognition",
+      "Natural Language Processing",
+      "Multi-language Support",
+      "Integration APIs",
+      "Custom Wake Words",
+      "Analytics Dashboard",
+      "Ongoing Maintenance"
+    ],
+    benefits: [
+      "Improve customer interaction",
+      "Reduce call center costs",
+      "24/7 voice support",
+      "Multilingual capabilities"
+    ],
+    marketPrice: "Starting from $2,500 (Industry average: $5,000-15,000)",
+    contactLink: "https://ziontechgroup.com/contact",
+    tags: ["Voice Assistant", "NLP", "Voice Recognition", "AI Integration"],
+    author: {
+      name: "Zion Voice AI",
+      id: "zion-voice-ai",
+      avatarUrl: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=100&h=100"
+    },
+    images: ["https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&h=500"],
+    rating: 4.7,
+    reviewCount: 89,
+    aiScore: 92,
+    location: "Global",
+    availability: "4-6 Weeks",
+    createdAt: "2024-02-12T14:20:00.000Z"
+  },
+
+  // Additional IT Services
+  {
+    id: "network-security-audit",
+    title: "Network Security Audit & Assessment",
+    description: "Comprehensive network security audit including vulnerability assessment, penetration testing, and security recommendations.",
+    category: "Security",
+    price: 1800,
+    currency: "$",
+    pricingModel: "one-time",
+    features: [
+      "Vulnerability Assessment",
+      "Penetration Testing",
+      "Security Policy Review",
+      "Compliance Check",
+      "Risk Assessment",
+      "Security Report",
+      "Remediation Plan"
+    ],
+    benefits: [
+      "Identify security vulnerabilities",
+      "Ensure compliance",
+      "Protect against threats",
+      "Improve security posture"
+    ],
+    marketPrice: "Starting from $1,800 (Industry average: $3,000-8,000)",
+    contactLink: "https://ziontechgroup.com/contact",
+    tags: ["Network Security", "Vulnerability Assessment", "Penetration Testing", "Compliance"],
+    author: {
+      name: "Zion Security",
+      id: "zion-security",
+      avatarUrl: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=100&h=100"
+    },
+    images: ["https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=800&h=500"],
+    rating: 4.8,
+    reviewCount: 134,
+    aiScore: 91,
+    featured: true,
+    location: "Global",
+    availability: "2-3 Weeks",
+    createdAt: "2024-02-15T11:30:00.000Z"
+  },
+
+  {
+    id: "data-backup-recovery",
+    title: "Data Backup & Disaster Recovery",
+    description: "Comprehensive data backup solutions with disaster recovery planning, automated backups, and rapid recovery capabilities.",
+    category: "IT Services",
+    price: 150,
+    currency: "$",
+    pricingModel: "monthly",
+    features: [
+      "Automated Backups",
+      "Cloud Storage",
+      "Disaster Recovery Plan",
+      "Data Encryption",
+      "Recovery Testing",
+      "24/7 Monitoring",
+      "Compliance Support"
+    ],
+    benefits: [
+      "Protect critical data",
+      "Minimize downtime",
+      "Ensure business continuity",
+      "Meet compliance requirements"
+    ],
+    marketPrice: "Starting from $150/month (Industry average: $300-800/month)",
+    contactLink: "https://ziontechgroup.com/contact",
+    tags: ["Data Backup", "Disaster Recovery", "Cloud Storage", "Business Continuity"],
+    author: {
+      name: "Zion Data Protection",
+      id: "zion-data-protection",
+      avatarUrl: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=100&h=100"
+    },
+    images: ["https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&h=500"],
+    rating: 4.9,
+    reviewCount: 267,
+    aiScore: 88,
+    location: "Global",
+    availability: "Immediate",
+    createdAt: "2024-02-18T08:45:00.000Z"
+  },
+
+  // Additional Micro SAAS
+  {
+    id: "inventory-management-saas",
+    title: "Smart Inventory Management System",
+    description: "AI-powered inventory management platform with demand forecasting, automated reordering, and real-time tracking capabilities.",
+    category: "Micro SAAS",
+    price: 89,
+    currency: "$",
+    pricingModel: "monthly",
+    features: [
+      "Real-time Inventory Tracking",
+      "Demand Forecasting",
+      "Automated Reordering",
+      "Multi-location Support",
+      "Barcode Scanning",
+      "Analytics Dashboard",
+      "Mobile App Access"
+    ],
+    benefits: [
+      "Reduce inventory costs by 25%",
+      "Prevent stockouts",
+      "Improve cash flow",
+      "Streamline operations"
+    ],
+    marketPrice: "Starting from $89/month (Industry average: $150-400/month)",
+    contactLink: "https://ziontechgroup.com/contact",
+    tags: ["Inventory Management", "Demand Forecasting", "Automation", "Supply Chain"],
+    author: {
+      name: "Zion Inventory Solutions",
+      id: "zion-inventory",
+      avatarUrl: "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=c4&w=100&h=100"
+    },
+    images: ["https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=800&h=500"],
+    rating: 4.7,
+    reviewCount: 189,
+    aiScore: 87,
+    location: "Global",
+    availability: "Immediate",
+    createdAt: "2024-02-20T13:15:00.000Z"
+  },
+
+  {
+    id: "crm-saas",
+    title: "Customer Relationship Management Suite",
+    description: "Comprehensive CRM platform with lead management, sales tracking, customer analytics, and marketing automation tools.",
+    category: "Micro SAAS",
+    price: 129,
+    currency: "$",
+    pricingModel: "monthly",
+    features: [
+      "Lead Management",
+      "Sales Pipeline Tracking",
+      "Customer Analytics",
+      "Marketing Automation",
+      "Email Campaigns",
+      "Mobile App",
+      "API Integration"
+    ],
+    benefits: [
+      "Increase sales by 30%",
+      "Improve customer retention",
+      "Streamline sales process",
+      "Better customer insights"
+    ],
+    marketPrice: "Starting from $129/month (Industry average: $200-500/month)",
+    contactLink: "https://ziontechgroup.com/contact",
+    tags: ["CRM", "Lead Management", "Sales Tracking", "Marketing Automation"],
+    author: {
+      name: "Zion CRM Solutions",
+      id: "zion-crm",
+      avatarUrl: "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=100&h=100"
+    },
+    images: ["https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&h=100"],
+    rating: 4.8,
+    reviewCount: 312,
+    aiScore: 89,
+    featured: true,
+    location: "Global",
+    availability: "Immediate",
+    createdAt: "2024-02-22T10:30:00.000Z"
+  },
+
+  // Additional Development Services
+  {
+    id: "mobile-app-development",
+    title: "Cross-Platform Mobile App Development",
+    description: "Native and cross-platform mobile app development for iOS and Android with modern frameworks and cloud integration.",
+    category: "Development",
+    price: 8500,
+    currency: "$",
+    pricingModel: "one-time",
+    features: [
+      "Cross-platform Development",
+      "Native Performance",
+      "Cloud Integration",
+      "Push Notifications",
+      "Analytics Integration",
+      "App Store Submission",
+      "Post-launch Support"
+    ],
+    benefits: [
+      "Reach both iOS and Android users",
+      "Faster development time",
+      "Cost-effective solution",
+      "Maintainable codebase"
+    ],
+    marketPrice: "Starting from $8,500 (Industry average: $15,000-50,000)",
+    contactLink: "https://ziontechgroup.com/contact",
+    tags: ["Mobile Development", "Cross-platform", "iOS", "Android", "React Native"],
+    author: {
+      name: "Zion Mobile Development",
+      id: "zion-mobile-dev",
+      avatarUrl: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=100&h=100"
+    },
+    images: ["https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&h=500"],
+    rating: 4.9,
+    reviewCount: 178,
+    aiScore: 93,
+    location: "Global",
+    availability: "8-12 Weeks",
+    createdAt: "2024-02-25T15:45:00.000Z"
+  },
+
+  {
+    id: "ecommerce-platform",
+    title: "Custom E-commerce Platform Development",
+    description: "Full-featured e-commerce platform with payment processing, inventory management, and advanced analytics capabilities.",
+    category: "Development",
+    price: 12000,
+    currency: "$",
+    pricingModel: "one-time",
+    features: [
+      "Custom Design",
+      "Payment Integration",
+      "Inventory Management",
+      "Order Processing",
+      "Customer Accounts",
+      "Analytics Dashboard",
+      "Mobile Responsive"
+    ],
+    benefits: [
+      "Unique brand experience",
+      "Full control over features",
+      "Scalable architecture",
+      "Custom integrations"
+    ],
+    marketPrice: "Starting from $12,000 (Industry average: $25,000-75,000)",
+    contactLink: "https://ziontechgroup.com/contact",
+    tags: ["E-commerce", "Web Development", "Payment Processing", "Inventory Management"],
+    author: {
+      name: "Zion E-commerce",
+      id: "zion-ecommerce",
+      avatarUrl: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=100&h=100"
+    },
+    images: ["https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&h=500"],
+    rating: 4.8,
+    reviewCount: 145,
+    aiScore: 90,
+    location: "Global",
+    availability: "10-14 Weeks",
+    createdAt: "2024-02-28T12:00:00.000Z"
+  },
+
+  // Additional Analytics Services
+  {
+    id: "real-time-analytics",
+    title: "Real-time Business Analytics Dashboard",
+    description: "Real-time analytics platform with customizable dashboards, KPI tracking, and automated reporting for business intelligence.",
+    category: "Analytics",
+    price: 299,
+    currency: "$",
+    pricingModel: "monthly",
+    features: [
+      "Real-time Data Processing",
+      "Custom Dashboards",
+      "KPI Tracking",
+      "Automated Reports",
+      "Data Export",
+      "API Integration",
+      "Mobile Access"
+    ],
+    benefits: [
+      "Real-time business insights",
+      "Data-driven decisions",
+      "Automated reporting",
+      "Improved performance tracking"
+    ],
+    marketPrice: "Starting from $299/month (Industry average: $500-1,200/month)",
+    contactLink: "https://ziontechgroup.com/contact",
+    tags: ["Real-time Analytics", "Business Intelligence", "KPI Tracking", "Dashboard"],
+    author: {
+      name: "Zion Analytics",
+      id: "zion-analytics",
+      avatarUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=100&h=100"
+    },
+    images: ["https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&h=500"],
+    rating: 4.7,
+    reviewCount: 223,
+    aiScore: 88,
+    location: "Global",
+    availability: "Immediate",
+    createdAt: "2024-03-01T09:30:00.000Z"
   }
 ];
 
