@@ -6,6 +6,7 @@ import { useScrollToTop } from "./hooks/useScrollToTop";
 import { WhitelabelProvider } from "./context/WhitelabelContext";
 import { ToasterProvider } from "./components/Toaster";
 import { Sonner } from "./components/Sonner";
+import { Sidebar } from "./components/Sidebar";
 
 // Lazy load pages
 const Home = React.lazy(() => import('./pages/Home'));
@@ -83,13 +84,16 @@ function App() {
       <WhitelabelProvider>
         <ThemeProvider>
           <Router>
-            <Suspense fallback={<EnhancedSuspenseFallback />}>
-              <Routes>
-                {baseRoutes.map(({ path, element }) => (
-                  <Route key={path} path={path} element={element} />
-                ))}
-              </Routes>
-            </Suspense>
+            <Sidebar />
+            <div className="ml-64">
+              <Suspense fallback={<EnhancedSuspenseFallback />}>
+                <Routes>
+                  {baseRoutes.map(({ path, element }) => (
+                    <Route key={path} path={path} element={element} />
+                  ))}
+                </Routes>
+              </Suspense>
+            </div>
             <ToasterProvider>
               <Sonner />
             </ToasterProvider>
