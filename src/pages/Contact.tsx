@@ -1,11 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import { Mail, Phone, MapPin, MessageSquare, Bot, ArrowRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { useToast } from '@/hooks/use-toast';
+import { z } from 'zod';
 
-export default function Contact() {
+export default function ContactPage() {
+  const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     subject: "",
-    message: ""
+    message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errors, setErrors] = useState<{
@@ -115,7 +123,6 @@ export default function Contact() {
     }
   ];
 
->>>>>>> 1190166b600d0883f3d21629581161b11801bcbf
   return (
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-16">
