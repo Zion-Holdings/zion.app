@@ -60,7 +60,7 @@ interface Service {
 }
 
 interface EnhancedServiceShowcaseProps {
-  services: Service[];
+  services: any[];
   title?: string;
   subtitle?: string;
   showStats?: boolean;
@@ -75,51 +75,38 @@ const EnhancedServiceShowcase: React.FC<EnhancedServiceShowcaseProps> = ({
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [searchTerm, setSearchTerm] = useState('');
 
-  const allServices = [
-    ...innovativeAIServices,
-    ...quantumSpaceServices,
-    ...enterpriseITServices,
-    ...enhancedRealMicroSaasServices,
-    ...nextGenerationAIServices,
-    ...emergingTechnologyServices,
-    ...comprehensiveITSolutions,
-    ...marketValidatedServices,
-    ...newRealInnovations,
-    ...realMarketServices,
-    ...realOperationalServices,
-    ...realVerifiedServices
-  ];
-
-  const categories = [
-    { id: 'all', name: 'All Services', icon: '🚀', count: allServices.length },
-    { id: 'ai', name: 'AI & Machine Learning', icon: '🧠', count: innovativeAIServices.length + nextGenerationAIServices.length },
-    { id: 'quantum', name: 'Quantum Computing', icon: '⚛️', count: quantumSpaceServices.filter(s => s.name.toLowerCase().includes('quantum')).length },
-    { id: 'space', name: 'Space Technology', icon: '🚀', count: quantumSpaceServices.filter(s => s.name.toLowerCase().includes('space')).length },
-    { id: 'enterprise', name: 'Enterprise IT', icon: '🏢', count: enterpriseITServices.length + comprehensiveITSolutions.length },
-    { id: 'saas', name: 'Micro SaaS', icon: '💻', count: enhancedRealMicroSaasServices.length },
-    { id: 'emerging', name: 'Emerging Tech', icon: '🌟', count: emergingTechnologyServices.length }
-  ];
-
-  const filteredServices = allServices.filter(service => {
-    const categoryValue = (service.category || '').toLowerCase();
-    const nameValue = (service.name || '').toLowerCase();
-
-    const matchesCategory =
-      selectedCategory === 'all' ||
-      (selectedCategory === 'ai' && (categoryValue.includes('ai') || categoryValue.includes('machine learning'))) ||
-      (selectedCategory === 'quantum' && (nameValue.includes('quantum') || categoryValue.includes('quantum'))) ||
-      (selectedCategory === 'space' && (nameValue.includes('space') || categoryValue.includes('space'))) ||
-      (selectedCategory === 'enterprise' && (categoryValue.includes('enterprise') || categoryValue.includes('it') || categoryValue.includes('cloud') || categoryValue.includes('security'))) ||
-      (selectedCategory === 'saas' && categoryValue.includes('micro saas')) ||
-      (selectedCategory === 'emerging' && categoryValue.includes('emerging'));
-
-    const matchesSearch =
-      nameValue.includes(searchTerm.toLowerCase()) ||
-      (service.description || '').toLowerCase().includes(searchTerm.toLowerCase()) ||
-      categoryValue.includes(searchTerm.toLowerCase());
-
-    return matchesCategory && matchesSearch;
-  });
+  // Get unique categories
+  const categories = ['All', ...Array.from(new Set(services.map(s => {
+    if (typeof s.category === 'string') {
+      return s.category.split('&')[0].trim();
+    }
+    return 'Other';
+  })))];
+  
+  // Filter and sort services
+  const filteredServices = services
+    .filter(service => {
+      if (selectedCategory === 'All') return true;
+      if (typeof service.category === 'string') {
+        return service.category.includes(selectedCategory);
+      }
+      return false;
+    })
+    .sort((a, b) => {
+      switch (sortBy) {
+        case 'popular':
+          return b.popular ? 1 : -1;
+        case 'price':
+          return parseFloat(a.price.replace(/[^0-9.]/g, '')) - parseFloat(b.price.replace(/[^0-9.]/g, ''));
+        case 'rating':
+          return b.rating - a.rating;
+        case 'newest':
+          return new Date(b.launchDate).getTime() - new Date(a.launchDate).getTime();
+        default:
+          return 0;
+      }
+    })
+    .slice(0, maxServices);
 
   const containerVariants = {
     hidden: { opacity: 0 },

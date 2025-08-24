@@ -12,7 +12,19 @@ export default function ServicesAdvertisingPage() {
 			<div className="max-w-6xl mx-auto space-y-10">
 				<h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Services Advertising</h1>
 
-				{/* Original sections */}
+  const benefits = [
+    '1000% ROI target with measurable KPIs',
+    'Transparent pricing with market references',
+    'Fast onboarding with templates and playbooks',
+    'Enterprise-grade security and compliance',
+    '24/7 support with SLAs',
+    'Proven architectures and reference implementations',
+    'No long-term lock-in; cancel anytime',
+    'SOC 2-aligned processes and data handling',
+    'Flexible deployment: SaaS or self-hosted options'
+  ];
+
+				{/* New: Core micro SaaS and AI additions */}
 				<section className="space-y-6">
 					<h2 className="text-2xl font-semibold text-white">AI Social Media Manager</h2>
 					<p className="text-slate-300">Generate, schedule, and optimize multi-platform posts with best-time recommendations and analytics.</p>
@@ -43,15 +55,58 @@ export default function ServicesAdvertisingPage() {
 					</ul>
 				</section>
 
-				<section className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">Subscription Manager Hub</h2>
-					<p className="text-slate-300">Track subscriptions, detect renewals from receipts, and get savings recommendations.</p>
-					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical budget: $5–$15/mo</li>
-						<li>References: {ext('https://www.rocketmoney.com/pricing')}</li>
-						<li>Try: <a href="/services/subscription-manager-hub" className="text-cyan-400 underline">ziontechgroup.com/services/subscription-manager-hub</a></li>
-					</ul>
-				</section>
+      <div className="min-h-screen pt-24 pb-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto space-y-12">
+          <header className="text-center">
+            <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-4">
+              Services That Ship Outcomes
+            </h1>
+            <p className="text-gray-300 text-lg">AI platforms, enterprise IT solutions, and real micro SaaS accelerators.</p>
+            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Button href="/contact" className="px-8 py-4 bg-gradient-to-r from-cyan-600 to-blue-700 text-white">
+                Talk to Sales <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+              <Button href="/market-pricing" variant="outline" className="px-8 py-4 border border-gray-600 text-gray-200">
+                View Market Pricing <ExternalLink className="w-5 h-5 ml-2" />
+              </Button>
+            </div>
+          </header>
+
+          <section>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">New Real Micro SaaS</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[ 
+                { name: 'API Security Scanner', price: '$299/mo', href: '/services/api-security-scanner', points: ['OWASP Top 10', 'CI/CD checks', 'PII detection'] },
+                { name: 'Email DMARC Analyzer', price: '$99/mo', href: '/services/email-dmarc-analyzer', points: ['DMARC/SPF/DKIM', 'BIMI readiness', 'Weekly reports'] },
+                { name: 'Browser Performance Monitor', price: '$149/mo', href: '/services/browser-performance-monitor', points: ['RUM + Synthetic', 'Core Web Vitals', 'Alerts'] },
+                { name: 'Cloud Cost Optimizer', price: '$399/mo', href: '/services/cloud-cost-optimizer', points: ['Anomalies', 'Rightsizing', 'Budgets'] },
+                { name: 'API Observability Starter', price: '$149/mo', href: '/services/api-observability-starter', points: ['Traces', 'SLOs', 'Deps map'] }
+              ].map((o) => (
+                <a key={o.name} href={o.href} className="block p-6 rounded-2xl bg-black/40 border border-gray-700/60 hover:border-cyan-500/40">
+                  <div className="text-sm text-gray-400 mb-1">From</div>
+                  <div className="text-2xl font-bold text-white">{o.price}</div>
+                  <div className="text-gray-200 mt-2 mb-3">{o.name}</div>
+                  <ul className="text-sm text-gray-300 space-y-1 list-disc list-inside">
+                    {o.points.map((p) => (<li key={p}>{p}</li>))}
+                  </ul>
+                </a>
+              ))}
+            </div>
+          </section>
+
+          <section>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">Why Zion Tech Group</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {benefits.map((b) => (
+                <div key={b} className="p-6 rounded-2xl bg-black/40 border border-gray-700/60">
+                  <div className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-emerald-400 mt-1" />
+                    <p className="text-gray-200">{b}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
 
 				<section className="space-y-6">
 					<h2 className="text-2xl font-semibold text-white">Browser Automation Cloud</h2>

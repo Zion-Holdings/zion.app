@@ -12,6 +12,8 @@ import {
   Music, Film, BookOpenCheck, Building, MessageCircle, 
   Sparkles, ArrowRight, CheckCircle, Star, Globe, Briefcase, BarChart3
 } from 'lucide-react';
+import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
+import { expandedMicroSaasServices } from '../data/expanded-micro-saas-services';
 
 const Solutions: NextPage = () => {
   const industrySolutions = [
@@ -147,7 +149,7 @@ const Solutions: NextPage = () => {
   ];
 
   return (
-    <UltraFuturisticBackground>
+    <UltraAdvancedFuturisticBackground>
       <div className="min-h-screen">
         <Head>
           <title>Solutions - Zion Tech Group | Revolutionary AI, Quantum Computing & Emerging Technology Solutions</title>
@@ -354,8 +356,8 @@ const Solutions: NextPage = () => {
             </motion.div>
           </div>
         </section>
-      </main>
-    </Layout>
+      </div>
+    </UltraAdvancedFuturisticBackground>
   );
 };
 

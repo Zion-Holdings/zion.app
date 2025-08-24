@@ -42,21 +42,58 @@ interface Service {
   customers: number;
   rating: number;
   reviews: number;
-  innovationLevel: 'Revolutionary' | 'Breakthrough' | 'Advanced' | 'Emerging';
-  patentStatus: 'Patented' | 'Patent Pending' | 'Trade Secret' | 'Open Source';
+  innovationLevel?: 'Revolutionary' | 'Breakthrough' | 'Advanced' | 'Emerging';
+  patentStatus?: 'Patented' | 'Patent Pending' | 'Trade Secret' | 'Open Source';
   aiCapabilities?: string[];
   spaceCapabilities?: string[];
-  quantumCapabilities?: string[];
-  iotCapabilities?: string[];
-  edgeCapabilities?: string[];
-  securityCapabilities?: string[];
-  blockchainCapabilities?: string[];
-  marketDisruption: string;
+  marketDisruption?: string;
   variant: string;
 }
 
+// Union type to accept both Service and new service types
+type AnyService = Service | {
+  id: string;
+  name: string;
+  tagline: string;
+  price: string;
+  period: string;
+  description: string;
+  features: string[];
+  popular: boolean;
+  icon: string;
+  color: string;
+  textColor: string;
+  link: string;
+  marketPosition: string;
+  targetAudience: string;
+  trialDays: number;
+  setupTime: string;
+  category: string;
+  realService: boolean;
+  technology: string[];
+  integrations: string[];
+  useCases: string[];
+  roi: string;
+  competitors: string[];
+  marketSize: string;
+  growthRate: string;
+  variant: string;
+  contactInfo: {
+    mobile: string;
+    email: string;
+    address: string;
+    website: string;
+  };
+  realImplementation: boolean;
+  implementationDetails: string;
+  launchDate: string;
+  customers: number;
+  rating: number;
+  reviews: number;
+};
+
 interface UltraFuturistic2029ServiceShowcaseProps {
-  services: Service[];
+  services: AnyService[];
   title?: string;
   subtitle?: string;
   maxServices?: number;
@@ -146,6 +183,8 @@ const UltraFuturistic2029ServiceShowcase: React.FC<UltraFuturistic2029ServiceSho
           const aLevel = (a as any).innovationLevel || 'Advanced';
           const bLevel = (b as any).innovationLevel || 'Advanced';
           const innovationOrder = { 'Revolutionary': 4, 'Breakthrough': 3, 'Advanced': 2, 'Emerging': 1 };
+          const aLevel = (a as any).innovationLevel || 'Advanced';
+          const bLevel = (b as any).innovationLevel || 'Advanced';
           return (innovationOrder[bLevel] || 0) - (innovationOrder[aLevel] || 0);
         case 'price':
           return parseFloat(a.price.replace(/[^0-9.]/g, '')) - parseFloat(b.price.replace(/[^0-9.]/g, ''));
@@ -390,22 +429,27 @@ const UltraFuturistic2029ServiceShowcase: React.FC<UltraFuturistic2029ServiceSho
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-center mt-20"
         >
-          <div className="bg-gradient-to-r from-cyan-500/10 via-purple-500/10 to-pink-500/10 rounded-2xl p-8 border border-cyan-500/20">
-            <h3 className="text-3xl font-bold text-white mb-4">
-              Ready to Transform Your Business?
-            </h3>
-            <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-              Join the future of technology with our cutting-edge services. 
-              Get in touch to discuss how we can revolutionize your operations.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-3 bg-gradient-to-r from-cyan-500 to-purple-500 text-white rounded-xl font-medium hover:from-cyan-600 hover:to-purple-600 transition-all transform hover:scale-105">
-                Schedule a Demo
-              </button>
-              <button className="px-8 py-3 bg-transparent border border-cyan-500 text-cyan-400 rounded-xl font-medium hover:bg-cyan-500/10 transition-all">
-                Contact Sales
-              </button>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            {[
+              { label: 'Revolutionary Services', value: services.filter(s => (s as any).innovationLevel === 'Revolutionary').length, icon: Rocket, color: 'from-purple-500 to-pink-500' },
+              { label: 'Patent Pending', value: services.filter(s => (s as any).patentStatus === 'Patent Pending').length, icon: Shield, color: 'from-blue-500 to-cyan-500' },
+              { label: 'Total Customers', value: services.reduce((sum, s) => sum + s.customers, 0), icon: Star, color: 'from-yellow-500 to-orange-500' },
+              { label: 'Average Rating', value: (services.reduce((sum, s) => sum + s.rating, 0) / services.length).toFixed(1), icon: TrendingUp, color: 'from-green-500 to-teal-500' }
+            ].map((stat, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="text-center"
+              >
+                <div className={`w-16 h-16 bg-gradient-to-br ${stat.color} rounded-2xl flex items-center justify-center mx-auto mb-4`}>
+                  <stat.icon className="w-8 h-8 text-white" />
+                </div>
+                <div className="text-3xl font-bold text-white mb-2">{stat.value}</div>
+                <div className="text-gray-400">{stat.label}</div>
+              </motion.div>
+            ))}
           </div>
         </motion.div>
       </div>

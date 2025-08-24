@@ -11,87 +11,43 @@
 [[plugins]]
   package = "netlify-plugin-cloudinary"
 
-# Autonomous scheduled functions
-[[scheduled.functions]]
-  function = "auto_repo_sync"
-  cron = "*/15 * * * *"
+# Static redirects for exported site
+[[redirects]]
+  from = "/ai-customer-success-platform"
+  to = "/services/ai-customer-success-platform/"
+  status = 301
 
-[[scheduled.functions]]
-  function = "link_health"
-  cron = "*/30 * * * *"
+[[redirects]]
+  from = "/ai-sales-intelligence-platform"
+  to = "/services/ai-sales-intelligence-platform/"
+  status = 301
 
-[[scheduled.functions]]
-  function = "promo_rotator"
-  cron = "*/30 * * * *"
+[[redirects]]
+  from = "/ai-financial-planning-platform"
+  to = "/services/ai-financial-planning-platform/"
+  status = 301
 
-[[scheduled.functions]]
-  function = "site_index"
-  cron = "@hourly"
+[[redirects]]
+  from = "/ai-powered-decision-engine"
+  to = "/services/ai-powered-decision-engine/"
+  status = 301
 
-[[scheduled.functions]]
-  function = "seo_audit"
-  cron = "0 2 * * *"
+[[redirects]]
+  from = "/intelligent-content-automation-platform"
+  to = "/services/intelligent-content-automation-platform/"
+  status = 301
 
-[[scheduled.functions]]
-  function = "daily_status_report"
-  cron = "0 3 * * *"
+[[redirects]]
+  from = "/intelligent-hr-analytics-platform"
+  to = "/services/intelligent-hr-analytics-platform/"
+  status = 301
 
-[[scheduled.functions]]
-  function = "issue_link_health"
-  cron = "15 3 * * *"
+[[redirects]]
+  from = "/smart-crm-intelligence-suite"
+  to = "/services/smart-crm-intelligence-suite/"
+  status = 301
 
-[[scheduled.functions]]
-  function = "pagespeed_audit"
-  cron = "0 * * * *"
-
-[[scheduled.functions]]
-  function = "security_headers_audit"
-  cron = "0 * * * *"
-
-[[scheduled.functions]]
-  function = "stale_content_issues"
-  cron = "0 4 * * *"
-
-[[scheduled.functions]]
-  function = "sitemap_from_index"
-  cron = "0 */6 * * *"
-
-[[scheduled.functions]]
-  function = "og_meta_audit"
-  cron = "*/45 * * * *"
-
-[[scheduled.functions]]
-  function = "rss_generator"
-  cron = "0 */12 * * *"
-
-[[scheduled.functions]]
-  function = "broken_image_checker"
-  cron = "*/45 * * * *"
-
-[[scheduled.functions]]
-  function = "commit_changelog"
-  cron = "0 */6 * * *"
-
-[[scheduled.functions]]
-  function = "deep_link_health_from_index"
-  cron = "*/30 * * * *"
-
-[[scheduled.functions]]
-  function = "sitemap_submitter"
-  cron = "0 */6 * * *"
-
-[[scheduled.functions]]
-  function = "osv_dependency_audit"
-  cron = "0 5 * * *"
-
-[[scheduled.functions]]
-  function = "external_link_audit"
-  cron = "0 */6 * * *"
-
-[[scheduled.functions]]
-  function = "automation_summary"
-  cron = "*/30 * * * *"
-
-[[scheduled.functions]]
-  function = "readme_badges_updater"
-  cron = "0 */6 * * *" 
+[[redirects]]
+  from = "/affiliate-attribution-suite"
+  to = "/services/affiliate-attribution-suite/"
+  status = 301

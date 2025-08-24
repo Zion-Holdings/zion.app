@@ -8,7 +8,175 @@ import {
   ArrowRight, Star, TrendingUp, Users, Award
 } from 'lucide-react';
 
-const EnhancedFooter: React.FC = () => {
+const contactInfo = {
+  mobile: '+1 302 464 0950',
+  email: 'kleber@ziontechgroup.com',
+  address: '364 E Main St STE 1008 Middletown DE 19709',
+  website: 'https://ziontechgroup.com'
+};
+
+const serviceCategories = [
+  {
+    name: 'AI & Consciousness',
+    icon: Brain,
+    color: 'from-violet-500 to-purple-600',
+    services: [
+      { name: 'AI Content Factory Pro', href: '/ai-content-factory-pro' },
+      { name: 'AI Autonomous Decision Engine', href: '/ai-autonomous-decision-engine' },
+      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2029' },
+      { name: 'Quantum AI Fusion', href: '/quantum-ai-fusion' }
+    ]
+  },
+  {
+    name: 'Financial Technology',
+    icon: DollarSign,
+    color: 'from-green-500 to-emerald-600',
+    services: [
+      { name: 'Neural Finance AI', href: '/neural-finance-ai' },
+      { name: 'Quantum CRM Suite', href: '/quantum-crm-suite' },
+      { name: 'AI Financial Intelligence', href: '/ai-financial-intelligence' },
+      { name: 'Quantum Risk Financial Manager', href: '/quantum-risk-financial-manager' }
+    ]
+  },
+  {
+    name: 'Healthcare & Biotech',
+    icon: Microscope,
+    color: 'from-red-500 to-pink-600',
+    services: [
+      { name: 'AI Healthcare Diagnostics Pro', href: '/ai-healthcare-diagnostics-pro' },
+      { name: 'Biotech AI Research Platform', href: '/biotech-ai-research-platform' },
+      { name: 'AI Healthcare Diagnostics', href: '/ai-healthcare-diagnostics' },
+      { name: 'Biotech AI', href: '/biotech-ai' }
+    ]
+  },
+  {
+    name: 'Education & Learning',
+    icon: Users,
+    color: 'from-yellow-500 to-orange-600',
+    services: [
+      { name: 'AI Education Platform Pro', href: '/ai-education-platform-pro' },
+      { name: 'AI Education Platform', href: '/ai-education-platform' }
+    ]
+  },
+  {
+    name: 'Energy & Sustainability',
+    icon: Zap,
+    color: 'from-orange-500 to-red-600',
+    services: [
+      { name: 'Quantum Energy Optimization', href: '/quantum-energy-optimization' },
+      { name: 'AI Sustainability Platform', href: '/ai-sustainability-platform' }
+    ]
+  },
+  {
+    name: 'Robotics & Automation',
+    icon: Rocket,
+    color: 'from-pink-500 to-purple-600',
+    services: [
+      { name: 'AI Autonomous Robotics Platform', href: '/ai-autonomous-robotics-platform' },
+      { name: 'Industrial Automation AI', href: '/industrial-automation-ai' }
+    ]
+  },
+  {
+    name: 'Supply Chain & Logistics',
+    icon: Network,
+    color: 'from-indigo-500 to-blue-600',
+    services: [
+      { name: 'Quantum Supply Chain Optimizer', href: '/quantum-supply-chain-optimizer' },
+      { name: 'AI Logistics Platform', href: '/ai-logistics-platform' }
+    ]
+  },
+  {
+    name: 'Quantum & Emerging Tech',
+    icon: Atom,
+    color: 'from-indigo-500 to-blue-600',
+    services: [
+      { name: 'Quantum Cybersecurity Platform', href: '/quantum-cybersecurity-platform' },
+      { name: 'Space Mining Platform', href: '/space-mining-platform' },
+      { name: 'Quantum Bio-Computing', href: '/quantum-bio-computing' },
+      { name: 'Brain-Computer Interface', href: '/brain-computer-interface' }
+    ]
+  },
+  {
+    name: 'Enterprise IT',
+    icon: Shield,
+    color: 'from-blue-500 to-cyan-600',
+    services: [
+      { name: 'Quantum Cloud Infrastructure', href: '/quantum-cloud-infrastructure' },
+      { name: 'Edge Computing Orchestrator', href: '/edge-computing-orchestration' },
+      { name: 'Zero Trust Security Platform', href: '/zero-trust-network-architecture' },
+      { name: 'Blockchain Enterprise Platform', href: '/blockchain-infrastructure-platform' }
+    ]
+  },
+  {
+    name: 'Space & Metaverse',
+    icon: Star,
+    color: 'from-purple-500 to-pink-600',
+    services: [
+      { name: 'Space Technology AI Platform', href: '/space-technology-ai-platform' },
+      { name: 'Metaverse Development Studio Pro', href: '/metaverse-development-studio-pro' },
+      { name: 'Virtual Event Hologram Platform', href: '/virtual-event-hologram-platform' },
+      { name: 'Space Colonization Services', href: '/space-colonization-services' }
+    ]
+  },
+  {
+    name: 'Content & Marketing',
+    icon: Palette,
+    color: 'from-pink-500 to-rose-600',
+    services: [
+      { name: 'AI Creativity Studio', href: '/ai-creativity-studio' },
+      { name: 'Marketing AI Platform', href: '/marketing-ai-platform' }
+    ]
+  },
+  {
+    name: 'Sales & CRM',
+    icon: BarChart3,
+    color: 'from-emerald-500 to-teal-600',
+    services: [
+      { name: 'AI Sales Automation', href: '/ai-sales-automation' },
+      { name: 'Customer Intelligence Platform', href: '/customer-intelligence-platform' }
+    ]
+  },
+  {
+    name: 'Cybersecurity',
+    icon: ShieldCheck,
+    color: 'from-red-500 to-orange-600',
+    services: [
+      { name: 'Zero Trust Security Platform', href: '/zero-trust-network-architecture' },
+      { name: 'AI Threat Detection', href: '/ai-threat-detection' }
+    ]
+  }
+];
+
+const companyLinks = [
+  { name: 'About Us', href: '/about' },
+  { name: 'Careers', href: '/careers' },
+  { name: 'News', href: '/news' },
+  { name: 'Case Studies', href: '/case-studies' },
+  { name: 'Blog', href: '/blog' },
+  { name: 'Resources', href: '/resources' },
+  { name: 'Services Advertising', href: '/services-advertising' },
+  { name: 'Market Pricing', href: '/market-pricing' }
+];
+
+const supportLinks = [
+  { name: 'Contact Support', href: '/contact' },
+  { name: 'Documentation', href: '/docs' },
+  { name: 'API Reference', href: '/api-documentation-generator' },
+  { name: 'Status Page', href: '/status-pages-slo' },
+  { name: 'VAPT Services', href: '/vulnerability-assessment-penetration-testing' },
+  { name: 'Mobile Device Management (MDM)', href: '/mobile-device-management' },
+  { name: 'Security', href: '/security' },
+  { name: 'Privacy Policy', href: '/privacy' }
+];
+
+const socialLinks = [
+  { name: 'LinkedIn', href: 'https://www.linkedin.com/company/ziontechgroup', icon: Linkedin },
+  { name: 'GitHub', href: 'https://github.com/Zion-Holdings', icon: Github },
+  { name: 'Instagram', href: 'https://www.instagram.com/ziontechgroup', icon: Instagram },
+  { name: 'YouTube', href: 'https://www.youtube.com/@ziontechgroup', icon: Youtube }
+];
+
+export default function EnhancedFooter() {
   const currentYear = new Date().getFullYear();
 
   const contactInfo = {

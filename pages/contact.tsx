@@ -2,9 +2,6 @@
 =======
 import React, { useState } from 'react';
 import Head from 'next/head';
-import React from 'react';
-import SEO from '../components/SEO';
-=======
 import { 
     <Layout
       title="Contact Us - Zion Tech Group"
@@ -30,6 +27,12 @@ const ContactPage: React.FC = () => {
 } from 'lucide-react';
 import SmartHeader from '../components/SmartHeader';
 import SmartFooter from '../components/SmartFooter';
+=======
+import { Check, Star, Zap, Shield, Users, Globe, ArrowRight, ExternalLink, TrendingUp, Clock, Target, Building, Rocket, Award, DollarSign, ChartBar, Lock, Cpu, Database, Cloud, Smartphone, Palette, Search, MessageSquare, FileText, Calendar, CreditCard, BarChart3, Settings, Zap as ZapIcon, Code, BookOpen, Activity, Database as DatabaseIcon, Play, Mail, Phone, MapPin, Filter, Grid, List, ChevronDown, ChevronUp, Sparkles, FlaskConical, Dna, Car, Leaf, Factory, Truck, Microscope, GraduationCap, ShieldCheck, Brain, Atom, Globe2, Bot, ChevronRight, Crown, Infinity, Zap as ZapIcon2, Shield as ShieldIcon, Users as UsersIcon, Globe as GlobeIcon, Cpu as CpuIcon, Database as DatabaseIcon2, Cloud as CloudIcon, Smartphone as SmartphoneIcon, Palette as PaletteIcon, Search as SearchIcon, MessageSquare as MessageSquareIcon, FileText as FileTextIcon, Calendar as CalendarIcon, CreditCard as CreditCardIcon, BarChart3 as BarChart3Icon, Settings as SettingsIcon, Zap as ZapIcon3, Code as CodeIcon, BookOpen as BookOpenIcon, Activity as ActivityIcon, Database as DatabaseIcon3, Play as PlayIcon, Mail as MailIcon, Phone as PhoneIcon, MapPin as MapPinIcon, Filter as FilterIcon, Grid as GridIcon, List as ListIcon, ChevronDown as ChevronDownIcon, ChevronUp as ChevronUpIcon, Sparkles as SparklesIcon, FlaskConical as FlaskConicalIcon, Dna as DnaIcon, Car as CarIcon, Leaf as LeafIcon, Factory as FactoryIcon, Truck as TruckIcon, Microscope as MicroscopeIcon, GraduationCap as GraduationCapIcon, ShieldCheck as ShieldCheckIcon, Brain as BrainIcon, Atom as AtomIcon, Globe2 as Globe2Icon, Bot as BotIcon, ChevronRight as ChevronRightIcon, Send, User, Building2, MessageCircle, Clock as ClockIcon, Globe as GlobeIcon2, Shield as ShieldIcon2, Zap as ZapIcon4, Users as UsersIcon2, Rocket as RocketIcon2, Award as AwardIcon2, TrendingUp as TrendingUpIcon2, CheckCircle, AlertCircle, Info } from 'lucide-react';
+import Button from '../components/ui/Button';
+import Card from '../components/ui/Card';
+import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
+import UltraFuturisticCard from '../components/ui/UltraFuturisticCard';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -189,7 +192,7 @@ export default function ContactPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white">
+    <UltraAdvancedFuturisticBackground>
       <Head>
         <title>Contact Us | Zion Tech Group</title>
         <meta name="description" content="Get in touch with Zion Tech Group for AI, quantum computing, and technology solutions. Contact us for consultations, quotes, and support." />
@@ -635,255 +638,46 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="company" className="block text-white font-medium mb-2">
-                      Company Name
-                    </label>
-                    <input
-                      type="text"
-                      id="company"
-                      name="company"
-                      value={formData.company}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/40 focus:outline-none focus:border-cyan-400/50 focus:bg-white/15 transition-all"
-                      placeholder="Enter your company name"
-                    />
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="phone" className="block text-white font-medium mb-2">
-                      Phone Number
-                    </label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/40 focus:outline-none focus:border-cyan-400/50 focus:bg-white/15 transition-all"
-                      placeholder="Enter your phone number"
-                    />
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="service" className="block text-white font-medium mb-2">
-                      Service of Interest *
-                    </label>
-                    <select
-                      id="service"
-                      name="service"
-                      value={formData.service}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:border-cyan-400/50 focus:bg-white/15 transition-all"
-                    >
-                      <option value="">Select a service</option>
-                      {services.map((service) => (
-                        <option key={service} value={service} className="bg-slate-800 text-white">
-                          {service}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="budget" className="block text-white font-medium mb-2">
-                      Budget Range
-                    </label>
-                    <select
-                      id="budget"
-                      name="budget"
-                      value={formData.budget}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:border-cyan-400/50 focus:bg-white/15 transition-all"
-                    >
-                      <option value="">Select budget range</option>
-                      {budgets.map((budget) => (
-                        <option key={budget} value={budget} className="bg-slate-800 text-white">
-                          {budget}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-                </div>
-
-                <div>
-                  <label htmlFor="timeline" className="block text-white font-medium mb-2">
-                    Project Timeline
-                  </label>
-                  <select
-                    id="timeline"
-                    name="timeline"
-                    value={formData.timeline}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:border-cyan-400/50 focus:bg-white/15 transition-all"
-                  >
-                    <option value="">Select timeline</option>
-                    {timelines.map((timeline) => (
-                      <option key={timeline} value={timeline} className="bg-slate-800 text-white">
-                        {timeline}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-white font-medium mb-2">
-                    Project Details *
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    required
-                    rows={6}
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/40 focus:outline-none focus:border-cyan-400/50 focus:bg-white/15 transition-all resize-none"
-                    placeholder="Tell us about your project, goals, and requirements..."
-                  />
-                </div>
-
-                <div className="text-center">
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 disabled:from-gray-500 disabled:to-gray-600 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl disabled:transform-none disabled:cursor-not-allowed flex items-center justify-center gap-2 mx-auto"
-                  >
-                    {isSubmitting ? (
-                      <>
-                        <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                        Sending Message...
-                      </>
-                    ) : (
-                      <>
-                        Send Message
-                        <Send className="w-5 h-5" />
-                      </>
-                    )}
-                  </button>
-                </div>
-              </form>
-            </motion.div>
-          )}
-        </div>
-      </section>
-
-      {/* Why Choose Us */}
-      <section className="py-20 px-6">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent">
-              Why Choose Zion Tech Group?
-            </h2>
-            <p className="text-xl text-white/70 max-w-3xl mx-auto">
-              We're not just another technology company. We're your innovation partner.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                icon: Building,
-                title: 'Enterprise Expertise',
-                description: 'Over 50 enterprise clients trust us with their most critical technology initiatives.',
-                color: 'from-blue-500 to-cyan-500'
-              },
-              {
-                icon: Clock,
-                title: '24/7 Support',
-                description: 'Round-the-clock support and monitoring to ensure your systems never fail.',
-                color: 'from-green-500 to-emerald-500'
-              },
-              {
-                icon: Users,
-                title: 'Expert Team',
-                description: 'World-class engineers and researchers with deep expertise in AI and quantum technologies.',
-                color: 'from-purple-500 to-pink-500'
-              },
-              {
-                icon: MessageSquare,
-                title: 'Fast Response',
-                description: 'Get a response within 2 hours and start your project within days, not months.',
-                color: 'from-orange-500 to-red-500'
-              },
-              {
-                icon: Calendar,
-                title: 'Flexible Engagement',
-                description: 'Choose from project-based, ongoing support, or full-service managed solutions.',
-                color: 'from-indigo-500 to-purple-500'
-              },
-              {
-                icon: Globe,
-                title: 'Global Reach',
-                description: 'Serving clients worldwide with local expertise and global capabilities.',
-                color: 'from-emerald-500 to-teal-500'
-              }
-            ].map((feature, index) => (
-              <motion.div
-                key={feature.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="group p-6 rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-xl hover:border-cyan-400/30 transition-all duration-300"
-              >
-                <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${feature.color} p-4 mb-4 flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                  <feature.icon className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-3">{feature.title}</h3>
-                <p className="text-white/70 text-sm leading-relaxed">{feature.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 px-6 bg-gradient-to-r from-white/5 to-white/10">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent">
+        {/* CTA Section */}
+        <div className="text-center">
+          <UltraFuturisticCard variant="quantum-holographic-advanced" className="p-12">
+            <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
               Ready to Get Started?
             </h2>
-            <p className="text-xl text-white/70 mb-8 max-w-2xl mx-auto">
-              Don't wait to transform your business. Contact us today and let's build something extraordinary together.
+            <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+              Don't wait to transform your business with revolutionary AI & quantum computing technology. 
+              Contact us today and get your free consultation.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+              <Button
                 href="tel:+13024640950"
-                className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl"
+                variant="primary"
+                size="lg"
+                className="text-lg px-8 py-4"
               >
                 Call Now
-                <Phone className="w-5 h-5 ml-2" />
-              </a>
-              <a
-                href="mailto:kleber@ziontechgroup.com"
-                className="px-8 py-4 border border-white/20 hover:border-white/40 rounded-full font-semibold text-lg transition-all duration-300 backdrop-blur-sm bg-white/5 hover:bg-white/10"
+                <Phone className="ml-2 w-5 h-5" />
+              </Button>
+              <Button
+                href={`mailto:${contactInfo.email}`}
+                variant="secondary"
+                size="lg"
+                className="text-lg px-8 py-4"
               >
                 Send Email
-                <Mail className="w-5 h-5 ml-2" />
-              </a>
+                <Mail className="ml-2 w-5 h-5" />
+              </Button>
             </div>
-          </motion.div>
+            
+            <div className="text-sm text-gray-400">
+              <p>✓ Free Consultation • ✓ 24/7 Support • ✓ &lt; 2 Hour Response • ✓ Expert Engineers</p>
+              <p className="mt-2">✓ Global Infrastructure • ✓ Enterprise Security • ✓ Custom Solutions • ✓ Ongoing Support</p>
+            </div>
+          </UltraFuturisticCard>
         </div>
-      </section>
-
-      <SmartFooter />
-    </div>
+      </div>
+    </UltraAdvancedFuturisticBackground>
   );
 };
 

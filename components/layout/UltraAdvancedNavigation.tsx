@@ -20,10 +20,33 @@ const serviceCategories = [
     title: 'Revolutionary 2026 AI',
     icon: Brain,
     services: [
-      { name: 'AI Predictive Business Intelligence', href: '/ai-predictive-business-intelligence', description: 'Predict market trends with 95% accuracy', price: '$1,299/month' },
-      { name: 'Autonomous AI Healthcare Diagnostics', href: '/autonomous-ai-healthcare-diagnostics', description: 'AI-powered medical diagnostics with 99.2% accuracy', price: '$3,999/month' },
-      { name: 'AI Autonomous Manufacturing', href: '/ai-autonomous-manufacturing-platform', description: 'Fully autonomous manufacturing with AI optimization', price: '$4,999/month' },
-      { name: 'AI Metaverse Development', href: '/ai-metaverse-development-platform', description: 'Create immersive metaverse experiences with AI', price: '$2,499/month' }
+      { name: 'AI Consciousness Simulator Pro', href: '/ai-consciousness-simulator-pro', description: 'Simulate human-like consciousness in AI systems', price: '$4,999/month' },
+      { name: 'Quantum AI Hybrid Computing', href: '/quantum-ai-hybrid-computing', description: 'Hybrid AI-Quantum computing for complex problem solving', price: '$7,999/month' },
+      { name: 'AI Multimodal Fusion Platform', href: '/ai-multimodal-fusion-platform', description: 'Unified AI platform for text, image, audio, and video processing', price: '$2,999/month' },
+      { name: 'AI Autonomous Decision Engine', href: '/ai-autonomous-decision-engine', description: 'AI system that makes complex decisions autonomously', price: '$5,999/month' },
+      { name: 'AI Emotional Intelligence Platform', href: '/ai-emotional-intelligence-platform', description: 'Advanced AI with human-like emotional understanding', price: '$3,999/month' }
+    ]
+  },
+  {
+    title: 'Revolutionary 2026 IT',
+    icon: Cpu,
+    services: [
+      { name: 'Neuromorphic Computing Platform', href: '/neuromorphic-computing-platform', description: 'Brain-inspired computing for next-generation AI', price: '$12,999/month' },
+      { name: 'DNA Computing Platform', href: '/dna-computing-platform', description: 'Molecular computing for complex problem solving', price: '$15,999/month' },
+      { name: 'Photonic Computing Platform', href: '/photonic-computing-platform', description: 'Light-speed computing with photonic processors', price: '$9,999/month' },
+      { name: 'Holographic Computing Platform', href: '/holographic-computing-platform', description: '3D holographic computing and visualization', price: '$6,999/month' },
+      { name: 'Quantum Internet Platform', href: '/quantum-internet-platform', description: 'Ultra-secure quantum communication network', price: '$8,999/month' }
+    ]
+  },
+  {
+    title: 'Revolutionary 2026 Micro SaaS',
+    icon: Zap,
+    services: [
+      { name: 'AI Business Intelligence Pro', href: '/ai-business-intelligence-pro', description: 'Transform data into actionable insights with AI', price: '$299/month' },
+      { name: 'AI Customer Service Automation', href: '/ai-customer-service-automation', description: 'Automate customer support with intelligent AI agents', price: '$199/month' },
+      { name: 'AI Marketing Automation Suite', href: '/ai-marketing-automation-suite', description: 'Intelligent marketing automation powered by AI', price: '$399/month' },
+      { name: 'AI Sales Intelligence Platform', href: '/ai-sales-intelligence-platform', description: 'Boost sales performance with AI-powered insights', price: '$249/month' },
+      { name: 'AI HR Recruitment Automation', href: '/ai-hr-recruitment-automation', description: 'Streamline hiring with intelligent AI automation', price: '$179/month' }
     ]
   },
   {
@@ -34,26 +57,6 @@ const serviceCategories = [
       { name: 'Quantum Internet Security Platform', href: '/quantum-internet-security-platform', description: 'Unbreakable quantum encryption for internet', price: '$1,999/month' },
       { name: 'Quantum Space Mining Platform', href: '/quantum-space-mining-platform', description: 'Revolutionary space resource exploration', price: '$8,999/month' },
       { name: 'Quantum Blockchain Infrastructure', href: '/quantum-blockchain-infrastructure', description: 'Quantum-secure blockchain for finance', price: '$1,799/month' }
-    ]
-  },
-  {
-    title: '2026 IT Services',
-    icon: Shield,
-    services: [
-      { name: 'Advanced Cybersecurity Suite', href: '/advanced-cybersecurity-suite', description: 'Next-generation cybersecurity protection for modern businesses', price: '$799/month' },
-      { name: 'Cloud Migration & Optimization', href: '/cloud-migration-optimization', description: 'Seamless cloud migration with intelligent optimization', price: '$1,299/month' },
-      { name: 'DevOps & CI/CD Automation', href: '/devops-cicd-automation', description: 'Accelerate software delivery with intelligent automation', price: '$599/month' },
-      { name: 'Data Analytics & Business Intelligence', href: '/data-analytics-business-intelligence', description: 'Transform data into actionable business insights', price: '$899/month' }
-    ]
-  },
-  {
-    title: '2026 Micro SaaS',
-    icon: Zap,
-    services: [
-      { name: 'AI Business Intelligence Pro', href: '/ai-business-intelligence-pro', description: 'Transform data into actionable insights with AI', price: '$299/month' },
-      { name: 'AI Customer Service Automation', href: '/ai-customer-service-automation', description: 'Automate customer support with intelligent AI agents', price: '$199/month' },
-      { name: 'AI Marketing Automation Suite', href: '/ai-marketing-automation-suite', description: 'Intelligent marketing automation powered by AI', price: '$399/month' },
-      { name: 'AI Sales Intelligence Platform', href: '/ai-sales-intelligence-platform', description: 'Boost sales performance with AI-powered insights', price: '$249/month' }
     ]
   },
   {
@@ -102,6 +105,8 @@ const companyLinks = [
   { name: 'About Us', href: '/about' },
   { name: 'Revolutionary 2026', href: '/revolutionary-2026-services' },
   { name: '2026 Services', href: '/2026-services-showcase' },
+  { name: 'Enterprise Solutions', href: '/enterprise-solutions-showcase' },
+  { name: 'Innovative Micro SAAS', href: '/micro-saas' },
   { name: 'All Services', href: '/services' },
   { name: 'Market Pricing', href: '/market-pricing-2026' },
   { name: 'News', href: '/news' },

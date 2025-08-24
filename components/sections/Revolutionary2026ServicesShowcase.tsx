@@ -1,20 +1,164 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Star, TrendingUp, Zap, Brain, Shield, Globe, Rocket } from 'lucide-react';
-import { revolutionary2026AIServices } from '../../data/revolutionary-2026-ai-services';
-import { revolutionary2026ITServices } from '../../data/revolutionary-2026-it-services';
-import { revolutionary2026EmergingTechServices } from '../../data/revolutionary-2026-emerging-tech';
-import { revolutionary2026MicroSaasServices } from '../../data/revolutionary-2026-micro-saas';
+import { ChevronDown, Star, TrendingUp, Zap, Brain, Cpu, Shield, Rocket, Globe, Database, Lock, Cloud, Atom, Sparkles, Target, Users, Eye, Heart, Code, Palette, Search, Mail, MessageCircle, Calendar, BarChart3, Lightbulb, Globe2, Satellite, Microscope, Flask, ShieldCheck, Zap as ZapIcon, Cpu as CpuIcon, Brain as BrainIcon, Rocket as RocketIcon, Star as StarIcon, TrendingUp as TrendingUpIcon } from 'lucide-react';
+import UltraFuturisticServiceCard from '../ui/UltraFuturisticServiceCard';
 
-export default function Revolutionary2026ServicesShowcase() {
-  const allRevolutionaryServices = [
-    ...revolutionary2026AIServices,
-    ...revolutionary2026ITServices,
-    ...revolutionary2026EmergingTechServices,
-    ...revolutionary2026MicroSaasServices
-  ];
+interface Service {
+  id: string;
+  name: string;
+  tagline: string;
+  price: string;
+  period: string;
+  description: string;
+  features: string[];
+  popular: boolean;
+  icon: string;
+  color: string;
+  textColor: string;
+  link: string;
+  marketPosition: string;
+  targetAudience: string;
+  trialDays: number;
+  setupTime: string;
+  category: string;
+  realService: boolean;
+  technology: string[];
+  integrations: string[];
+  useCases: string[];
+  roi: string;
+  competitors: string[];
+  marketSize: string;
+  growthRate: string;
+  variant: string;
+  contactInfo: {
+    mobile: string;
+    email: string;
+    address: string;
+    website: string;
+  };
+  realImplementation: boolean;
+  implementationDetails: string;
+  launchDate: string;
+  customers: number;
+  rating: number;
+  reviews: number;
+}
 
-  const featuredServices = allRevolutionaryServices.filter(service => service.popular).slice(0, 8);
+interface Revolutionary2026ServicesShowcaseProps {
+  services: Service[];
+  title?: string;
+  subtitle?: string;
+  maxServices?: number;
+}
+
+const categoryIcons: { [key: string]: React.ComponentType<any> } = {
+  'AI Consciousness & Ethics': BrainIcon,
+  'AI Multimodal': Eye,
+  'AI Autonomous Systems': Target,
+  'AI Quantum Computing': Atom,
+  'AI Emotional Intelligence': Heart,
+  'AI Creative': Palette,
+  'AI Predictive Analytics': BarChart3,
+  'AI Quantum ML': CpuIcon,
+  'AI Research': Microscope,
+  'Zero Trust Security': ShieldCheck,
+  'Edge Computing': Globe,
+  '5G Networks': Satellite,
+  'Quantum Computing': Atom,
+  'Autonomous IT': ZapIcon,
+  'Neuromorphic Computing': BrainIcon,
+  'DNA Computing': Flask,
+  'Photonic Computing': Lightbulb,
+  'Holographic Technology': Eye,
+  'AI Branding': Palette,
+  'Holographic Events': Eye,
+  'AI Transcription': MessageCircle,
+  'AI Mental Health': Heart,
+  'AI Personalization': Target,
+  'AI Customer Experience': Users,
+  'AI Social Media': Globe2,
+  'AI Email Marketing': Mail,
+  'AI SEO': Search,
+  'Space Technology': RocketIcon,
+  'Space Safety': Shield,
+  'Quantum Space': Atom,
+  'Space Weather': StarIcon,
+  'Autonomous Space': Target,
+  'Space Tourism': Users,
+  'Space Agriculture': Globe,
+  'Space Energy': ZapIcon,
+  'Space Research': Microscope
+};
+
+const categoryColors: { [key: string]: string } = {
+  'AI Consciousness & Ethics': 'from-indigo-500 to-purple-600',
+  'AI Multimodal': 'from-blue-500 to-cyan-600',
+  'AI Autonomous Systems': 'from-green-500 to-emerald-600',
+  'AI Quantum Computing': 'from-purple-500 to-pink-600',
+  'AI Emotional Intelligence': 'from-pink-500 to-rose-600',
+  'AI Creative': 'from-yellow-500 to-orange-600',
+  'AI Predictive Analytics': 'from-indigo-500 to-blue-600',
+  'AI Quantum ML': 'from-purple-500 to-indigo-600',
+  'AI Research': 'from-teal-500 to-green-600',
+  'Zero Trust Security': 'from-red-500 to-pink-600',
+  'Edge Computing': 'from-blue-500 to-cyan-600',
+  '5G Networks': 'from-green-500 to-emerald-600',
+  'Quantum Computing': 'from-purple-500 to-pink-600',
+  'Autonomous IT': 'from-blue-500 to-indigo-600',
+  'Neuromorphic Computing': 'from-indigo-500 to-purple-600',
+  'DNA Computing': 'from-green-500 to-teal-600',
+  'Photonic Computing': 'from-yellow-500 to-orange-600',
+  'Holographic Technology': 'from-pink-500 to-rose-600',
+  'AI Branding': 'from-purple-500 to-pink-600',
+  'Holographic Events': 'from-pink-500 to-rose-600',
+  'AI Transcription': 'from-blue-500 to-cyan-600',
+  'AI Mental Health': 'from-green-500 to-emerald-600',
+  'AI Personalization': 'from-indigo-500 to-purple-600',
+  'AI Customer Experience': 'from-teal-500 to-green-600',
+  'AI Social Media': 'from-blue-500 to-indigo-600',
+  'AI Email Marketing': 'from-orange-500 to-red-600',
+  'AI SEO': 'from-green-500 to-teal-600',
+  'Space Technology': 'from-purple-500 to-indigo-600',
+  'Space Safety': 'from-blue-500 to-cyan-600',
+  'Quantum Space': 'from-green-500 to-emerald-600',
+  'Space Weather': 'from-yellow-500 to-orange-600',
+  'Autonomous Space': 'from-indigo-500 to-purple-600',
+  'Space Tourism': 'from-pink-500 to-rose-600',
+  'Space Agriculture': 'from-green-500 to-teal-600',
+  'Space Energy': 'from-yellow-500 to-orange-600',
+  'Space Research': 'from-indigo-500 to-blue-600'
+};
+
+export default function Revolutionary2026ServicesShowcase({
+  services,
+  title = "Revolutionary 2026 Services",
+  subtitle = "Experience the future of technology with our cutting-edge AI, quantum, and space solutions",
+  maxServices = 12
+}: Revolutionary2026ServicesShowcaseProps) {
+  const [selectedCategory, setSelectedCategory] = useState<string>('All');
+  const [sortBy, setSortBy] = useState<'popular' | 'price' | 'rating' | 'newest'>('popular');
+
+  // Get unique categories
+  const categories = ['All', ...Array.from(new Set(services.map(s => s.category)))];
+
+  // Filter and sort services
+  const filteredServices = services
+    .filter(service => selectedCategory === 'All' || service.category === selectedCategory)
+    .sort((a, b) => {
+      switch (sortBy) {
+        case 'popular':
+          return b.popular ? 1 : -1;
+        case 'price':
+          return parseFloat(a.price.replace('$', '').replace(',', '')) - parseFloat(b.price.replace('$', '').replace(',', ''));
+        case 'rating':
+          return b.rating - a.rating;
+        case 'newest':
+          return new Date(b.launchDate).getTime() - new Date(a.launchDate).getTime();
+        default:
+          return 0;
+      }
+    })
+    .slice(0, maxServices);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -24,26 +168,13 @@ export default function Revolutionary2026ServicesShowcase() {
         staggerChildren: 0.1
       }
     }
-  ];
+  };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20, scale: 0.95 },
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
-      scale: 1,
-      transition: {
-        duration: 0.5,
-        ease: "easeOut"
-      }
-    }
-  };
-
-  const statsVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: {
-      opacity: 1,
-      scale: 1,
       transition: {
         duration: 0.6,
         ease: "easeOut"
@@ -52,196 +183,158 @@ export default function Revolutionary2026ServicesShowcase() {
   };
 
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-      {/* Futuristic Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(56,189,248,0.1),transparent_50%)]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(168,85,247,0.1),transparent_50%)]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(236,72,153,0.1),transparent_50%)]"></div>
-      </div>
-
-      <div className="max-w-7xl mx-auto relative z-10">
+    <section className="relative z-10 py-20 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-20"
+          viewport={{ once: true }}
+          className="text-center mb-16"
         >
-          <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
-            <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-              2026 Revolutionary Services
-            </span>
-          </h2>
-          <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-            Experience the future with our cutting-edge AI, quantum computing, and emerging technology services designed to transform your business
-          </p>
+          <motion.h2
+            className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-6"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            {title}
+          </motion.h2>
+          <motion.p
+            className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            {subtitle}
+          </motion.p>
+          
+          {/* Stats */}
+          <motion.div
+            className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+          >
+            <div className="text-center">
+              <div className="text-3xl md:text-4xl font-bold text-cyan-400 mb-2">
+                {services.length}+
+              </div>
+              <div className="text-gray-400">Revolutionary Services</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl md:text-4xl font-bold text-purple-400 mb-2">
+                2026
+              </div>
+              <div className="text-gray-400">Future Technology</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl md:text-4xl font-bold text-pink-400 mb-2">
+                1000%
+              </div>
+              <div className="text-gray-400">ROI Guarantee</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl md:text-4xl font-bold text-green-400 mb-2">
+                24/7
+              </div>
+              <div className="text-gray-400">Expert Support</div>
+            </div>
+          </motion.div>
+        </motion.div>
 
-          {/* Service Statistics */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
-            <div className="text-center">
-              <div className="text-3xl font-bold text-purple-400">{aiAutonomousServices2026.length}</div>
-              <div className="text-gray-400 text-sm">AI Autonomous Services</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-cyan-400">{quantumSpaceTechServices2026.length}</div>
-              <div className="text-gray-400 text-sm">Quantum Space Tech</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-pink-400">{metaverseDigitalRealityServices2026.length}</div>
-              <div className="text-gray-400 text-sm">Metaverse Services</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-green-400">∞</div>
-              <div className="text-gray-400 text-sm">Possibilities</div>
-            </div>
+        {/* Filters */}
+        <motion.div
+          className="flex flex-col sm:flex-row gap-4 mb-12 justify-between items-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.8 }}
+        >
+          {/* Category Filter */}
+          <div className="flex flex-wrap gap-2">
+            {categories.map((category) => (
+              <button
+                key={category}
+                onClick={() => setSelectedCategory(category)}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                  selectedCategory === category
+                    ? 'bg-gradient-to-r from-cyan-500 to-purple-600 text-white shadow-lg shadow-cyan-500/25'
+                    : 'bg-gray-800/50 text-gray-300 hover:bg-gray-700/50 hover:text-white'
+                }`}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
+
+          {/* Sort Options */}
+          <div className="flex items-center gap-2">
+            <span className="text-gray-400 text-sm">Sort by:</span>
+            <select
+              value={sortBy}
+              onChange={(e) => setSortBy(e.target.value as any)}
+              className="bg-gray-800/50 text-white px-3 py-2 rounded-lg border border-gray-600 focus:border-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-500/25"
+            >
+              <option value="popular">Most Popular</option>
+              <option value="price">Price</option>
+              <option value="rating">Rating</option>
+              <option value="newest">Newest</option>
+            </select>
           </div>
         </motion.div>
 
-        {/* Service Statistics */}
+        {/* Services Grid */}
         <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20"
+          viewport={{ once: true }}
         >
-          <motion.div variants={statsVariants} className="text-center group">
-            <div className="w-20 h-20 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-              <Brain className="w-10 h-10 text-white" />
-            </div>
-            <h3 className="text-3xl font-bold text-white mb-2">{revolutionary2026AIServices.length}+</h3>
-            <p className="text-cyan-300 font-medium">AI Services</p>
-          </motion.div>
-
-          <motion.div variants={statsVariants} className="text-center group">
-            <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-              <Shield className="w-10 h-10 text-white" />
-            </div>
-            <h3 className="text-3xl font-bold text-white mb-2">{revolutionary2026ITServices.length}+</h3>
-            <p className="text-purple-300 font-medium">IT Solutions</p>
-          </motion.div>
-
-          <motion.div variants={statsVariants} className="text-center group">
-            <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-              <Globe className="w-10 h-10 text-white" />
-            </div>
-            <h3 className="text-3xl font-bold text-white mb-2">{revolutionary2026EmergingTechServices.length}+</h3>
-            <p className="text-green-300 font-medium">Emerging Tech</p>
-          </motion.div>
-
-          <motion.div variants={statsVariants} className="text-center group">
-            <div className="w-20 h-20 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-              <Rocket className="w-10 h-10 text-white" />
-            </div>
-            <h3 className="text-3xl font-bold text-white mb-2">{revolutionary2026MicroSaasServices.length}+</h3>
-            <p className="text-yellow-300 font-medium">Micro SAAS</p>
-          </motion.div>
-        </motion.div>
-
-        {/* Featured Services Grid */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20"
-        >
-          {featuredServices.map((service, index) => (
+          {filteredServices.map((service, index) => (
             <motion.div
               key={service.id}
               variants={itemVariants}
-              className="group relative"
+              className="group"
             >
-              {/* Glow Effect */}
-              <div className={`absolute inset-0 bg-gradient-to-r ${service.color} opacity-20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500`}></div>
-              
-              {/* Service Card */}
-              <div className="relative bg-black/40 backdrop-blur-xl border border-gray-700/50 rounded-2xl p-6 hover:border-cyan-500/40 transition-all duration-300 h-full">
-                {/* Service Icon and Header */}
-                <div className="flex items-center space-x-3 mb-4">
-                  <div className={`w-12 h-12 bg-gradient-to-br ${service.color} rounded-xl flex items-center justify-center`}>
-                    <span className="text-2xl">{service.icon}</span>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-white group-hover:text-cyan-400 transition-colors duration-300">
-                      {service.name}
-                    </h3>
-                    <p className="text-gray-400 text-sm">{service.category}</p>
-                  </div>
-                </div>
-
-                {/* Description */}
-                <p className="text-gray-300 text-sm mb-4 leading-relaxed line-clamp-3">
-                  {service.description}
-                </p>
-
-                {/* Key Features */}
-                <div className="mb-4">
-                  <ul className="space-y-1">
-                    {service.features.slice(0, 2).map((feature, idx) => (
-                      <li key={idx} className="flex items-center text-gray-400 text-xs">
-                        <Star className="w-3 h-3 text-cyan-400 mr-2 flex-shrink-0" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Price and Action */}
-                <div className="flex items-center justify-between mt-auto">
-                  <div>
-                    <span className="text-2xl font-bold text-cyan-400">{service.price}</span>
-                    <span className="text-gray-400 text-sm">{service.period}</span>
-                  </div>
-                  <a
-                    href={service.link}
-                    className="inline-flex items-center text-cyan-400 hover:text-cyan-300 transition-colors text-sm font-medium group-hover:translate-x-1 transition-transform duration-200"
-                  >
-                    Learn More <ArrowRight className="w-4 h-4 ml-1" />
-                  </a>
-                </div>
-
-                {/* Popular Badge */}
-                {service.popular && (
-                  <div className="absolute top-4 right-4">
-                    <div className="inline-flex items-center gap-1 px-3 py-1 bg-gradient-to-r from-yellow-500 to-orange-500 text-black text-xs font-semibold rounded-full">
-                      <Star className="w-3 h-3" />
-                      Popular
-                    </div>
-                  </div>
-                )}
-              </div>
+              <UltraFuturisticServiceCard
+                service={service}
+                index={index}
+                showAdvancedFeatures={true}
+                enableHoverEffects={true}
+                enableAnimations={true}
+              />
             </motion.div>
           ))}
         </motion.div>
 
-        {/* CTA Section */}
+        {/* Call to Action */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          className="text-center mt-16"
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-center"
+          transition={{ duration: 0.8, delay: 1.0 }}
         >
-          <div className="bg-gradient-to-r from-cyan-900/20 via-purple-900/20 to-pink-900/20 border border-cyan-500/20 rounded-2xl p-8">
-            <h3 className="text-2xl font-bold text-white mb-4">Ready to Transform Your Business?</h3>
+          <div className="bg-gradient-to-r from-gray-900/50 to-gray-800/50 backdrop-blur-xl rounded-2xl p-8 border border-gray-700/50">
+            <h3 className="text-3xl font-bold text-white mb-4">
+              Ready to Experience the Future?
+            </h3>
             <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-              Join thousands of businesses already leveraging our revolutionary 2026 services to achieve unprecedented growth and innovation.
+              Join thousands of forward-thinking companies already leveraging our revolutionary 2026 services. 
+              Get started today and achieve unprecedented ROI with cutting-edge technology.
             </p>
-            
-            <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-              <a
-                href="/services/"
-                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-xl shadow-lg shadow-cyan-500/25 hover:shadow-xl hover:shadow-cyan-500/40 transition-all duration-200"
-              >
-                <Rocket className="w-5 h-5 mr-2" />
-                View All Services
-              </a>
-              <a
-                href="/contact/"
-                className="inline-flex items-center px-8 py-4 border-2 border-cyan-500/50 text-cyan-400 font-semibold rounded-xl hover:bg-cyan-500/10 transition-all duration-200"
-              >
-                <Shield className="w-5 h-5 mr-2" />
-                Get Started
-              </a>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cyan-500/25">
+                Start Free Trial
+              </button>
+              <button className="px-8 py-4 border-2 border-cyan-500 text-cyan-400 font-semibold rounded-xl hover:bg-cyan-500 hover:text-white transition-all duration-300 transform hover:scale-105">
+                Schedule Demo
+              </button>
+            </div>
+            <div className="mt-6 text-sm text-gray-400">
+              Contact us: <span className="text-cyan-400">+1 302 464 0950</span> | 
+              <span className="text-cyan-400"> kleber@ziontechgroup.com</span>
             </div>
           </div>
         </motion.div>

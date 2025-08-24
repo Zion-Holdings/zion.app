@@ -1,10 +1,7 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Search, Filter, ArrowRight, Star, CheckCircle } from 'lucide-react';
-import Layout from '../../components/layout/Layout';
-import SEO from '../../components/SEO';
-import UltraFuturisticBackground from '../../components/ui/UltraFuturisticBackground';
-import UltraFuturisticServiceCard2026 from '../../components/ui/UltraFuturisticServiceCard2026';
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import UltraAdvancedFuturisticBackground from '../../components/ui/UltraAdvancedFuturisticBackground';
+import Card from '../../components/ui/Card';
 import Link from 'next/link';
 import { enhancedRealMicroSaasServices } from '../../data/enhanced-real-micro-saas-services';
 import { additionalEnhancedServices } from '../../data/additional-real-services';
@@ -17,25 +14,15 @@ import { marketValidatedServices } from '../../data/market-validated-services';
 import { moreRealServices2025 } from '../../data/more-real-services-2025';
 import { realOperationalServices } from '../../data/real-operational-services';
 import { verified2025Additions } from '../../data/verified-2025-additions';
-import { realServicesQ12025 } from '../../data/real-services-q1-2025';
+import { realServicesQ12025 } from '../../data/real-services-q1-2025'
 import { realEnterpriseServices2025 } from '../../data/real-enterprise-services-2025';
 import { realMarketAugmentations2025 } from '../../data/real-market-augmentations-2025';
+import { verifiedRealServices2025Batch2 } from '../../data/verified-real-services-2025-batch2';
 import { additionalLiveServices2025 } from '../../data/additional-live-services-2025';
 import { real2025Q2Additions } from '../../data/real-2025-q2-additions';
 import { augmentedServicesBatch3 } from '../../data/real-augmented-services-2025-batch3';
 import { realServicesQ22025 } from '../../data/real-services-q2-2025';
-import { realServicesQ32025 } from '../../data/real-services-q3-2025';
-import { realQ4Services2025 } from '../../data/real-2025-q4-additions';
-import { real2025Q4Additions } from '../../data/real-2025-q4-additions';
-import { realMarketServicesExtended } from '../../data/real-market-services-extended';
-import { real2026Q1Additions } from '../../data/real-2026-q1-additions';
-import { added2026Q2Services } from '../../data/added-2026-q2-services';
-import { real2026Q3Additions } from '../../data/real-2026-q3-additions';
-import { real2026Q4Additions } from '../../data/real-2026-q4-additions';
-import { real2026Q4NewServices } from '../../data/real-2026-q4-new-services';
-import { real2027Q1Additions } from '../../data/real-2027-q1-additions';
-import { real2027Q2Additions } from '../../data/real-2027-q2-additions';
-import { cursorAddedServices } from '../../data/cursor-added-services';
+import { real2025Q3Additions } from '../../data/real-2025-q3-additions';
 
 // Define a common service interface
 interface Service {
@@ -126,7 +113,6 @@ export default function ServicesIndexPage() {
       newlyAddedServices as unknown[],
       curatedMarketServices as unknown[],
       realMarketServices as unknown[],
-      realMarketServicesExtended as unknown[],
       new2025Services as unknown[],
       marketValidatedServices as unknown[],
       moreRealServices2025 as unknown[],
@@ -134,28 +120,13 @@ export default function ServicesIndexPage() {
       verified2025Additions as unknown[],
       realServicesQ12025 as unknown[],
       realEnterpriseServices2025 as unknown[],
-      innovative2037CuttingEdgeServices as unknown[],
-      innovative2037EnterpriseSolutions as unknown[],
       realMarketAugmentations2025 as unknown[],
       verifiedRealServices2025Batch2 as unknown[],
-      real2037CuttingEdgeServices as unknown[],
-      real2037ITServices as unknown[],
-      real2037AIServices as unknown[],
       additionalLiveServices2025 as unknown[],
       real2025Q2Additions as unknown[],
       augmentedServicesBatch3 as unknown[],
       realServicesQ22025 as unknown[],
-      realServicesQ32025 as unknown[],
-      realQ4Services2025 as unknown[],
-      real2025Q4Additions as unknown[],
-      real2026Q1Additions as unknown[],
-      added2026Q2Services as unknown[],
-      real2026Q3Additions as unknown[],
-      real2026Q4Additions as unknown[],
-      real2026Q4NewServices as unknown[],
-      real2027Q1Additions as unknown[],
-      real2027Q2Additions as unknown[],
-      cursorAddedServices as unknown[]
+      real2025Q3Additions as unknown[]
     );
     return acc;
   }, {} as Record<string, Service[]>);
@@ -165,66 +136,24 @@ export default function ServicesIndexPage() {
 
 
   return (
-    <Layout>
-      <SEO 
-        title="Services - Zion Tech Group"
-        description="Discover our comprehensive suite of cutting-edge technology solutions including AI, Quantum Computing, Space Technology, and more."
-        keywords={["AI services", "quantum computing", "space technology", "metaverse", "cybersecurity", "IT services", "micro SAAS"]}
-      />
-
-      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
-        {/* Hero Section */}
-        <section className="relative py-20 px-4 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-purple-500/10 to-blue-500/10"></div>
-          <div className="container mx-auto max-w-6xl relative z-10">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center"
-            >
-              <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-400 bg-clip-text text-transparent mb-6">
-                Our Services
-              </h1>
-              <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                Discover our comprehensive range of cutting-edge technology services designed to transform your business and drive innovation.
-              </p>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Search and Filter */}
-        <section className="py-10 px-4">
-          <div className="container mx-auto max-w-6xl">
-            <div className="flex flex-col lg:flex-row gap-6 mb-8">
-              {/* Search */}
-              <div className="flex-1 relative">
-                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
-                <input
-                  type="text"
-                  placeholder="Search services..."
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full pl-12 pr-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/50"
-                />
-              </div>
-
-              {/* Category Filter */}
-              <div className="flex gap-2 flex-wrap">
-                {categories.map((category) => (
-                  <button
-                    key={category}
-                    onClick={() => setSelectedCategory(category)}
-                    className={`px-4 py-2 rounded-lg transition-all duration-300 ${
-                      selectedCategory === category
-                        ? 'bg-cyan-500 text-white'
-                        : 'bg-gray-800/50 text-gray-300 hover:bg-gray-700/50'
-                    }`}
-                  >
-                    {category}
-                  </button>
-                ))}
-              </div>
+    <UltraAdvancedFuturisticBackground>
+      <Head>
+        <title>Zion AI Marketplace - Services</title>
+        <meta name="description" content="Discover curated IT services. Request quotes with AI-assisted summaries." />
+      </Head>
+      <div className="relative">
+        <div className="absolute -z-10 -top-40 -left-40 w-96 h-96 rounded-full blur-3xl opacity-40 bg-gradient-to-tr from-cyan-400 via-blue-500 to-purple-500" />
+        <div className="flex flex-col sm:flex-row gap-6">
+          <MarketplaceFilters availableCategories={availableCategories} value={filters} onChange={setFilters} />
+          <div className="flex-1">
+            <div className="mb-4 flex items-center justify-between">
+              <h1 className="text-2xl font-semibold text-white">Services</h1>
+              <div className="text-sm text-white/70">{filtered.length} results</div>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {filtered.map((service) => (
+                <EnhancedMarketplaceCard key={service.slug || service.id} service={service} onRequestQuote={handleRequestQuote} />
+              ))}
             </div>
           </div>
         </section>
@@ -564,6 +493,16 @@ export default function ServicesIndexPage() {
           </div>
         </section>
       </div>
-    </Layout>
+    </UltraAdvancedFuturisticBackground>
+  );
+}
+
+      <QuoteRequestModal
+        open={modalOpen}
+        onClose={() => setModalOpen(false)}
+        service={selected}
+        onSubmit={handleSubmit}
+      />
+    </div>
   );
 }

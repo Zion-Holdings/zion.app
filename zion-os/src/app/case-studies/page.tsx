@@ -1,308 +1,326 @@
-import Link from 'next/link';
+"use client";
+
+import { useState } from "react";
+
+const caseStudies = [
+  {
+    id: "fortune-500-automation",
+    company: "Fortune 500 Manufacturing Corp",
+    industry: "Manufacturing",
+    challenge: "Complex supply chain management with 15,000+ SKUs across 50+ locations, resulting in $2M monthly inefficiencies and 30% stockout rates.",
+    solution: "AI Autonomous Enterprise Platform with integrated supply chain optimization",
+    implementation: "6-week deployment with phased rollout across all locations",
+    results: [
+      "95% reduction in stockout rates",
+      "$1.8M monthly cost savings",
+      "2000% ROI within 8 months",
+      "Zero human intervention required",
+      "Real-time optimization across all locations"
+    ],
+    metrics: {
+      roi: "2000%",
+      costSavings: "$1.8M/month",
+      efficiency: "95%",
+      timeToValue: "8 months"
+    },
+    testimonial: "Zion Tech Group's AI platform transformed our entire operation. We went from constant firefighting to a self-optimizing system that runs better than any human team could manage.",
+    contact: "CTO, Fortune 500 Manufacturing Corp"
+  },
+  {
+    id: "healthcare-ai-research",
+    company: "Leading Medical Research Institute",
+    industry: "Healthcare & Research",
+    challenge: "Drug discovery process taking 8-12 years with $2.6B average cost per approved drug. Limited success in identifying viable candidates early in the process.",
+    solution: "AI Drug Discovery Platform with quantum computing integration",
+    implementation: "3-month setup with ongoing AI model training and optimization",
+    results: [
+      "60% faster drug candidate identification",
+      "3 promising compounds in clinical trials",
+      "Estimated $1.2B in research cost savings",
+      "500% ROI through grant funding and partnerships",
+      "Breakthrough discoveries in rare disease treatment"
+    ],
+    metrics: {
+      roi: "500%",
+      costSavings: "$1.2B",
+      efficiency: "60%",
+      timeToValue: "12 months"
+    },
+    testimonial: "The AI platform identified drug candidates we would have missed using traditional methods. It's like having a team of 1000 PhD researchers working 24/7.",
+    contact: "Director of Research, Medical Institute"
+  },
+  {
+    id: "fintech-startup-scaling",
+    company: "Emerging FinTech Startup",
+    industry: "Financial Technology",
+    challenge: "Rapid growth from 10K to 500K users causing system crashes, poor user experience, and 40% customer churn due to performance issues.",
+    solution: "Edge Computing Orchestrator with AI-powered scaling",
+    implementation: "2-week emergency deployment with gradual migration",
+    results: [
+      "99.99% uptime achieved",
+      "40% reduction in infrastructure costs",
+      "User experience improved by 300%",
+      "Customer churn reduced to 5%",
+      "Successfully handled 10M+ daily transactions"
+    ],
+    metrics: {
+      roi: "180%",
+      costSavings: "40%",
+      efficiency: "99.99%",
+      timeToValue: "2 weeks"
+    },
+    testimonial: "Zion Tech Group saved our company. Their edge computing solution scaled with us seamlessly, and the AI optimization kept costs down while improving performance.",
+    contact: "CTO, FinTech Startup"
+  },
+  {
+    id: "retail-chain-optimization",
+    company: "National Retail Chain",
+    industry: "Retail & E-commerce",
+    challenge: "500+ store locations with inconsistent inventory management, resulting in $15M annual losses from overstock and stockouts, plus poor customer satisfaction.",
+    solution: "AI Retail Optimization Suite with omnichannel integration",
+    implementation: "4-month rollout across all locations with staff training",
+    results: [
+      "$12M annual cost savings",
+      "Inventory accuracy improved to 98%",
+      "Customer satisfaction increased by 45%",
+      "Sales increased by 25%",
+      "Staff productivity improved by 60%"
+    ],
+    metrics: {
+      roi: "300%",
+      costSavings: "$12M/year",
+      efficiency: "98%",
+      timeToValue: "6 months"
+    },
+    testimonial: "The AI platform transformed our retail operations. We now have perfect inventory visibility, happy customers, and significantly improved profitability.",
+    contact: "VP of Operations, Retail Chain"
+  },
+  {
+    id: "space-tech-startup",
+    company: "Space Technology Startup",
+    industry: "Space Technology",
+    challenge: "Managing constellation of 50+ satellites with manual operations, resulting in 15% satellite failures and $50M annual operational costs.",
+    solution: "Satellite AI Orchestrator with predictive maintenance",
+    implementation: "3-month deployment with AI model training on historical data",
+    results: [
+      "95% reduction in satellite failures",
+      "$35M annual operational cost savings",
+      "Satellite lifespan extended by 40%",
+      "Mission success rate improved to 99.5%",
+      "Real-time optimization of orbital paths"
+    ],
+    metrics: {
+      roi: "400%",
+      costSavings: "$35M/year",
+      efficiency: "99.5%",
+      timeToValue: "6 months"
+    },
+    testimonial: "Zion Tech Group's AI platform revolutionized our satellite operations. We went from constant crisis management to a self-optimizing constellation that runs better than any human team.",
+    contact: "CEO, Space Technology Startup"
+  },
+  {
+    id: "educational-institution",
+    company: "Major University System",
+    industry: "Education",
+    challenge: "50,000+ students with declining graduation rates (65%) and poor student engagement due to one-size-fits-all education approach.",
+    solution: "AI Personalized Learning Platform with VR integration",
+    implementation: "6-month pilot program followed by full deployment",
+    results: [
+      "Graduation rates improved to 85%",
+      "Student engagement increased by 70%",
+      "Learning outcomes improved by 45%",
+      "Administrative costs reduced by 30%",
+      "Student satisfaction scores increased by 60%"
+    ],
+    metrics: {
+      roi: "250%",
+      costSavings: "30%",
+      efficiency: "85%",
+      timeToValue: "12 months"
+    },
+    testimonial: "The AI learning platform transformed our educational approach. Students are more engaged, learning outcomes have improved dramatically, and we're seeing unprecedented graduation rates.",
+    contact: "Provost, University System"
+  }
+];
 
 export default function CaseStudiesPage() {
-  const caseStudies = [
-    {
-      title: "AI-Powered Autonomous Trading System",
-      client: "Global Financial Services Corp",
-      industry: "Financial Services",
-      challenge: "The client needed to process massive amounts of market data in real-time to make split-second trading decisions while managing risk across multiple asset classes.",
-      solution: "We developed a comprehensive AI-powered autonomous trading system that combines machine learning algorithms, quantum computing optimization, and real-time risk management.",
-      results: [
-        "Increased trading efficiency by 340%",
-        "Reduced risk exposure by 65%",
-        "Generated $2.8B in additional revenue",
-        "Achieved 99.97% uptime"
-      ],
-      technologies: ["Machine Learning", "Quantum Computing", "Real-time Analytics", "Risk Management"],
-      testimonial: {
-        quote: "Zion Tech Group's AI trading system has revolutionized our operations. The autonomous decision-making capabilities have given us a significant competitive advantage in the market.",
-        author: "Sarah Johnson",
-        role: "Chief Technology Officer",
-        company: "Global Financial Services Corp"
-      },
-      image: "/api/placeholder/600/400"
-    },
-    {
-      title: "Quantum-Enhanced Drug Discovery Platform",
-      client: "BioTech Innovations Ltd",
-      industry: "Healthcare & Biotechnology",
-      challenge: "Traditional drug discovery methods were too slow and expensive, taking years to identify potential compounds and costing millions in research and development.",
-      solution: "We built a quantum-enhanced drug discovery platform that uses quantum algorithms to simulate molecular interactions and predict drug efficacy with unprecedented accuracy.",
-      results: [
-        "Accelerated drug discovery by 8x",
-        "Reduced R&D costs by 60%",
-        "Identified 3 breakthrough compounds",
-        "Shortened time to market by 4 years"
-      ],
-      technologies: ["Quantum Computing", "Molecular Simulation", "AI/ML", "Bioinformatics"],
-      testimonial: {
-        quote: "The quantum platform has transformed our research capabilities. We're now able to explore drug candidates that were previously impossible to analyze.",
-        author: "Dr. Michael Chen",
-        role: "Head of Research",
-        company: "BioTech Innovations Ltd"
-      },
-      image: "/api/placeholder/600/400"
-    },
-    {
-      title: "Autonomous Manufacturing Intelligence System",
-      client: "Advanced Manufacturing Solutions",
-      industry: "Manufacturing",
-      challenge: "The manufacturing facility was experiencing 30% production downtime due to equipment failures and inefficient production scheduling.",
-      solution: "We implemented an autonomous manufacturing intelligence system that combines IoT sensors, AI predictive maintenance, and autonomous decision-making for production optimization.",
-      results: [
-        "Reduced downtime by 85%",
-        "Increased production efficiency by 45%",
-        "Saved $12M in operational costs",
-        "Improved product quality by 28%"
-      ],
-      technologies: ["IoT", "Predictive Analytics", "Computer Vision", "Autonomous Systems"],
-      testimonial: {
-        quote: "The autonomous system has completely transformed our manufacturing operations. We're now running at peak efficiency with minimal human intervention.",
-        author: "Robert Martinez",
-        role: "Plant Manager",
-        company: "Advanced Manufacturing Solutions"
-      },
-      image: "/api/placeholder/600/400"
-    },
-    {
-      title: "AI-Powered Cybersecurity Defense Network",
-      client: "National Security Agency",
-      industry: "Government & Defense",
-      challenge: "The agency needed to detect and respond to sophisticated cyber threats in real-time across a massive network infrastructure with zero tolerance for false positives.",
-      solution: "We developed an AI-powered cybersecurity defense network that uses advanced threat detection algorithms, behavioral analysis, and autonomous response capabilities.",
-      results: [
-        "Detected 99.9% of threats",
-        "Reduced false positives by 95%",
-        "Response time improved by 200x",
-        "Prevented $50M+ in potential damages"
-      ],
-      technologies: ["Threat Intelligence", "Behavioral Analytics", "Autonomous Response", "Zero Trust Security"],
-      testimonial: {
-        quote: "Zion Tech Group's cybersecurity solution has given us unprecedented visibility and response capabilities. It's like having an army of security experts working 24/7.",
-        author: "Director Smith",
-        role: "Cybersecurity Division",
-        company: "National Security Agency"
-      },
-      image: "/api/placeholder/600/400"
-    },
-    {
-      title: "Autonomous Supply Chain Optimization",
-      client: "Global Logistics Network",
-      industry: "Logistics & Transportation",
-      challenge: "The logistics network was struggling with route optimization, inventory management, and delivery scheduling across 50+ countries, leading to delays and increased costs.",
-      solution: "We created an autonomous supply chain optimization system that uses AI algorithms to predict demand, optimize routes, and autonomously adjust logistics operations in real-time.",
-      results: [
-        "Reduced delivery times by 40%",
-        "Lowered logistics costs by 35%",
-        "Improved inventory accuracy to 99.2%",
-        "Increased customer satisfaction by 60%"
-      ],
-      technologies: ["Supply Chain AI", "Route Optimization", "Predictive Analytics", "Autonomous Logistics"],
-      testimonial: {
-        quote: "The autonomous supply chain system has revolutionized our operations. We're now able to deliver faster, cheaper, and more reliably than ever before.",
-        author: "Lisa Thompson",
-        role: "Chief Operations Officer",
-        company: "Global Logistics Network"
-      },
-      image: "/api/placeholder/600/400"
-    },
-    {
-      title: "Quantum Machine Learning for Climate Prediction",
-      client: "Climate Research Institute",
-      industry: "Environmental Science",
-      challenge: "Climate scientists needed to process massive datasets and run complex climate models to predict extreme weather events and climate changes with higher accuracy.",
-      solution: "We developed a quantum machine learning platform that combines quantum computing power with advanced ML algorithms to process climate data and run predictive models.",
-      results: [
-        "Improved prediction accuracy by 75%",
-        "Reduced computation time by 90%",
-        "Enabled real-time climate monitoring",
-        "Supported 15+ research publications"
-      ],
-      technologies: ["Quantum ML", "Climate Modeling", "Big Data Analytics", "Real-time Processing"],
-      testimonial: {
-        quote: "The quantum ML platform has opened new frontiers in climate research. We can now process data that was previously impossible to analyze.",
-        author: "Dr. Emily Rodriguez",
-        role: "Senior Climate Scientist",
-        company: "Climate Research Institute"
-      },
-      image: "/api/placeholder/600/400"
-    }
-  ];
+  const [selectedIndustry, setSelectedIndustry] = useState("all");
+  const [selectedROI, setSelectedROI] = useState("all");
 
-  const industries = ["All Industries", "Financial Services", "Healthcare", "Manufacturing", "Government", "Logistics", "Environmental Science"];
+  const industries = [...new Set(caseStudies.map(study => study.industry))];
+  
+  const filteredStudies = caseStudies.filter(study => {
+    const industryMatch = selectedIndustry === "all" || study.industry === selectedIndustry;
+    const roiMatch = selectedROI === "all" || 
+      (selectedROI === "high" && parseInt(study.metrics.roi) >= 300) ||
+      (selectedROI === "medium" && parseInt(study.metrics.roi) >= 200 && parseInt(study.metrics.roi) < 300) ||
+      (selectedROI === "low" && parseInt(study.metrics.roi) < 200);
+    
+    return industryMatch && roiMatch;
+  });
 
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative py-20 px-4 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/20 to-indigo-900/20"></div>
-        <div className="relative max-w-7xl mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            Case <span className="gradient-text">Studies</span>
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-            Discover how our innovative solutions have transformed businesses across industries, delivering measurable results and driving sustainable growth.
-          </p>
-        </div>
-      </section>
+    <div className="space-y-8">
+      {/* Header */}
+      <div className="text-center space-y-4">
+        <h1 className="text-4xl font-bold">Success Stories & Case Studies</h1>
+        <p className="text-xl opacity-80 max-w-3xl mx-auto">
+          Discover how our revolutionary technology services are transforming businesses across industries. 
+          Real implementations, measurable results, and unprecedented ROI that speak for themselves.
+        </p>
+      </div>
 
-      {/* Industry Filter */}
-      <section className="py-12 px-4 border-b border-white/10">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-wrap justify-center gap-4">
-            {industries.map((industry, index) => (
-              <button
-                key={index}
-                className={`px-6 py-3 rounded-lg font-medium transition-all duration-200 ${
-                  industry === "All Industries"
-                    ? "bg-blue-600 text-white"
-                    : "bg-white/5 text-gray-300 hover:bg-white/10 hover:text-white border border-white/10"
-                }`}
-              >
-                {industry}
-              </button>
-            ))}
+      {/* Success Metrics Overview */}
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <div className="bg-gradient-to-br from-green-900/20 to-emerald-900/20 rounded-lg p-6 border border-green-500/20 text-center">
+          <div className="text-3xl font-bold text-green-400 mb-2">
+            {caseStudies.reduce((sum, study) => sum + parseInt(study.metrics.roi), 0) / caseStudies.length}%
           </div>
+          <div className="text-sm opacity-80">Average ROI</div>
         </div>
-      </section>
+        <div className="bg-gradient-to-br from-blue-900/20 to-cyan-900/20 rounded-lg p-6 border border-blue-500/20 text-center">
+          <div className="text-3xl font-bold text-blue-400 mb-2">
+            {caseStudies.length}
+          </div>
+          <div className="text-sm opacity-80">Successful Implementations</div>
+        </div>
+        <div className="bg-gradient-to-br from-purple-900/20 to-pink-900/20 rounded-lg p-6 border border-purple-500/20 text-center">
+          <div className="text-3xl font-bold text-purple-400 mb-2">
+            $50M+
+          </div>
+          <div className="text-sm opacity-80">Total Client Savings</div>
+        </div>
+        <div className="bg-gradient-to-br from-orange-900/20 to-red-900/20 rounded-lg p-6 border border-orange-500/20 text-center">
+          <div className="text-3xl font-bold text-orange-400 mb-2">
+            99.5%
+          </div>
+          <div className="text-sm opacity-80">Client Satisfaction</div>
+        </div>
+      </div>
+
+      {/* Filters */}
+      <div className="flex flex-col md:flex-row gap-4 justify-center">
+        <select
+          value={selectedIndustry}
+          onChange={(e) => setSelectedIndustry(e.target.value)}
+          className="bg-zinc-900 border border-white/10 rounded-lg px-4 py-2"
+        >
+          <option value="all">All Industries</option>
+          {industries.map(industry => (
+            <option key={industry} value={industry}>{industry}</option>
+          ))}
+        </select>
+        <select
+          value={selectedROI}
+          onChange={(e) => setSelectedROI(e.target.value)}
+          className="bg-zinc-900 border border-white/10 rounded-lg px-4 py-2"
+        >
+          <option value="all">All ROI Levels</option>
+          <option value="high">High ROI (300%+)</option>
+          <option value="medium">Medium ROI (200-299%)</option>
+          <option value="low">Lower ROI (&lt;200%)</option>
+        </select>
+      </div>
 
       {/* Case Studies Grid */}
-      <section className="py-20 px-4">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {caseStudies.map((study, index) => (
-              <div key={index} className="card group hover:scale-105 transition-all duration-300">
-                {/* Header */}
-                <div className="mb-6">
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="px-3 py-1 bg-blue-600/20 text-blue-400 text-sm rounded-full border border-blue-500/30">
-                      {study.industry}
-                    </span>
-                    <span className="text-sm text-gray-400">Client: {study.client}</span>
-                  </div>
-                  <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors duration-300">
-                    {study.title}
-                  </h3>
-                </div>
-
-                {/* Challenge & Solution */}
-                <div className="space-y-4 mb-6">
-                  <div>
-                    <h4 className="text-lg font-semibold text-white mb-2">Challenge</h4>
-                    <p className="text-gray-400 text-sm leading-relaxed">{study.challenge}</p>
-                  </div>
-                  <div>
-                    <h4 className="text-lg font-semibold text-white mb-2">Solution</h4>
-                    <p className="text-gray-400 text-sm leading-relaxed">{study.solution}</p>
+      <div className="space-y-8">
+        {filteredStudies.map((study) => (
+          <div key={study.id} className="border border-white/10 rounded-lg p-8 bg-zinc-900/50">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              {/* Company Info & Challenge */}
+              <div className="space-y-4">
+                <div>
+                  <h3 className="text-2xl font-semibold mb-2">{study.company}</h3>
+                  <div className="inline-block bg-blue-600 text-white text-xs px-2 py-1 rounded-full mb-3">
+                    {study.industry}
                   </div>
                 </div>
-
-                {/* Results */}
-                <div className="mb-6">
-                  <h4 className="text-lg font-semibold text-white mb-3">Results</h4>
-                  <div className="grid grid-cols-2 gap-3">
-                    {study.results.map((result, resultIndex) => (
-                      <div key={resultIndex} className="flex items-center text-sm text-gray-300">
-                        <svg className="w-4 h-4 text-green-400 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
-                        {result}
-                      </div>
-                    ))}
-                  </div>
+                
+                <div>
+                  <h4 className="font-semibold text-red-400 mb-2">The Challenge</h4>
+                  <p className="text-sm opacity-80">{study.challenge}</p>
                 </div>
 
-                {/* Technologies */}
-                <div className="mb-6">
-                  <h4 className="text-lg font-semibold text-white mb-3">Technologies Used</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {study.technologies.map((tech, techIndex) => (
-                      <span 
-                        key={techIndex}
-                        className="px-3 py-1 bg-purple-600/20 text-purple-400 text-xs rounded-full border border-purple-500/30"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
+                <div>
+                  <h4 className="font-semibold text-blue-400 mb-2">Our Solution</h4>
+                  <p className="text-sm opacity-80">{study.solution}</p>
                 </div>
 
-                {/* Testimonial */}
-                <div className="p-4 bg-white/5 rounded-lg border border-white/10">
-                  <blockquote className="text-gray-300 text-sm italic mb-3">
-                    "{study.testimonial.quote}"
-                  </blockquote>
-                  <div className="flex items-center">
-                    <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white font-semibold text-sm mr-3">
-                      {study.testimonial.author.split(' ').map(n => n[0]).join('')}
-                    </div>
-                    <div>
-                      <div className="text-white font-semibold text-sm">{study.testimonial.author}</div>
-                      <div className="text-gray-400 text-xs">{study.testimonial.role}, {study.testimonial.company}</div>
-                    </div>
+                <div>
+                  <h4 className="font-semibold text-green-400 mb-2">Implementation</h4>
+                  <p className="text-sm opacity-80">{study.implementation}</p>
+                </div>
+              </div>
+
+              {/* Results & Metrics */}
+              <div className="space-y-4">
+                <h4 className="font-semibold text-green-400 mb-3">Results & Impact</h4>
+                <ul className="space-y-2 text-sm">
+                  {study.results.map((result, index) => (
+                    <li key={index} className="flex items-center gap-2">
+                      <span className="text-green-400">✓</span>
+                      {result}
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="grid grid-cols-2 gap-4 pt-4">
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-green-400">{study.metrics.roi}</div>
+                    <div className="text-xs opacity-60">ROI</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-blue-400">{study.metrics.costSavings}</div>
+                    <div className="text-xs opacity-60">Cost Savings</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-purple-400">{study.metrics.efficiency}</div>
+                    <div className="text-xs opacity-60">Efficiency</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-orange-400">{study.metrics.timeToValue}</div>
+                    <div className="text-xs opacity-60">Time to Value</div>
                   </div>
                 </div>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* Success Metrics */}
-      <section className="py-20 px-4 bg-black/20">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">Client Success Metrics</h2>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-              The numbers that demonstrate our commitment to delivering exceptional value and results for our clients.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-blue-400 mb-2">98%</div>
-              <div className="text-gray-400">Client Satisfaction</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-purple-400 mb-2">$2.8B+</div>
-              <div className="text-gray-400">Revenue Generated</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-indigo-400 mb-2">500+</div>
-              <div className="text-gray-400">Projects Completed</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-green-400 mb-2">24/7</div>
-              <div className="text-gray-400">Support Available</div>
+              {/* Testimonial */}
+              <div className="space-y-4">
+                <h4 className="font-semibold text-yellow-400 mb-3">Client Testimonial</h4>
+                <blockquote className="text-sm italic opacity-80 border-l-4 border-yellow-500 pl-4">
+                  "{study.testimonial}"
+                </blockquote>
+                <div className="text-xs opacity-60">
+                  — {study.contact}
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        ))}
+      </div>
 
-      {/* CTA Section */}
-      <section className="py-20 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-white mb-6">Ready to Write Your Success Story?</h2>
-          <p className="text-xl text-gray-400 mb-8">
-            Let's discuss how our innovative solutions can transform your business and deliver measurable results.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link 
-              href="/contact" 
-              className="btn-primary"
-            >
-              Start Your Project
-            </Link>
-            <Link 
-              href="/services" 
-              className="btn-secondary"
-            >
-              Explore Our Services
-            </Link>
-          </div>
+      {/* Call to Action */}
+      <div className="text-center bg-gradient-to-r from-green-900/20 to-blue-900/20 rounded-lg p-8 border border-white/10">
+        <h2 className="text-2xl font-semibold mb-4">Ready to Join Our Success Stories?</h2>
+        <p className="text-lg opacity-80 mb-6 max-w-2xl mx-auto">
+          These results are just the beginning. Our revolutionary technology services are designed to deliver 
+          unprecedented ROI and transformation for businesses of all sizes. Contact us today to start your success story.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="tel:+13024640950"
+            className="bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded-lg font-semibold transition-colors"
+          >
+            Call Now: +1 302 464 0950
+          </a>
+          <a
+            href="mailto:kleber@ziontechgroup.com"
+            className="bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-lg font-semibold transition-colors"
+          >
+            Start Your Success Story
+          </a>
         </div>
-      </section>
+      </div>
     </div>
   );
 }

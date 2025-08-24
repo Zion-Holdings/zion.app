@@ -1,148 +1,152 @@
 import React, { useState } from 'react';
-import UltraFuturisticNavigation2035 from './UltraFuturisticNavigation2035';
-import UltraFuturisticFooter2035 from './UltraFuturisticFooter2035';
-import EnhancedSidebar2025 from './EnhancedSidebar2025';
-import UltraAdvancedFuturisticBackground2035 from './UltraAdvancedFuturisticBackground2035';
-import TopContactBar from './TopContactBar';
-import Head from 'next/head';
+      {/* Top Contact Bar */}
+      <TopContactBar />
+      
+      {/* Navigation */}
+      <EnhancedNavigation2025 />
+      
+      {/* Sidebar */}
+      <EnhancedSidebar2025 />
+      
+      {/* Main Content */}
+      <main className="relative z-10 pt-32 lg:pt-36 lg:ml-80">
+        <div className="min-h-screen">
+          {children}
+        </div>
+      </main>
+      
+      {/* Footer */}
+      <UltraFuturisticFooter2034 />
+      
+      {/* Floating Elements */}
+      <div className="fixed top-20 left-10 w-2 h-2 bg-cyan-400 rounded-full animate-pulse z-50"></div>
+      <div className="fixed top-40 right-20 w-1 h-1 bg-blue-400 rounded-full animate-pulse delay-1000 z-50"></div>
+      <div className="fixed bottom-40 left-20 w-1.5 h-1.5 bg-purple-400 rounded-full animate-pulse delay-2000 z-50"></div>
+      <div className="fixed bottom-20 right-10 w-1 h-1 bg-green-400 rounded-full animate-pulse delay-3000 z-50"></div>
+      
+      {/* Mobile Sidebar Toggle */}
+      <button
+        onClick={() => setSidebarOpen(!sidebarOpen)}
+        className="fixed bottom-6 left-6 z-50 lg:hidden w-14 h-14 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full shadow-lg shadow-cyan-500/25 flex items-center justify-center text-white hover:scale-110 transition-all duration-300"
+      >
+        <svg
+          className="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+      </button>
+      
+      {/* Mobile Sidebar Overlay */}
+      {sidebarOpen && (
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 lg:hidden" onClick={() => setSidebarOpen(false)}>
+          <motion.div
+            initial={{ x: '-100%' }}
+            animate={{ x: 0 }}
+            exit={{ x: '-100%' }}
+            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+            className="absolute left-0 top-0 h-full w-80 bg-black/95 backdrop-blur-xl border-r border-cyan-500/20 shadow-2xl shadow-cyan-500/20 overflow-y-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="p-4">
+              <div className="flex items-center justify-between mb-6">
+                <div className="flex items-center space-x-3">
+                  <div className="w-10 h-10 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h2 className="text-lg font-bold text-white">Zion Tech Group</h2>
+                    <p className="text-xs text-gray-400">Navigation</p>
+                  </div>
+                </div>
+                <button
+                  onClick={() => setSidebarOpen(false)}
+                  className="p-2 text-gray-400 hover:text-white transition-colors duration-200"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+              
+              {/* Mobile Navigation Content */}
+              <div className="space-y-4">
+                <div className="space-y-2">
+                  <h3 className="text-sm font-semibold text-gray-300 px-3">Main Navigation</h3>
+                  <div className="space-y-1">
+                    <a href="/" className="block px-3 py-2 text-sm text-gray-400 hover:text-cyan-400 hover:bg-cyan-500/10 rounded transition-colors duration-200">
+                      Home
+                    </a>
+                    <a href="/comprehensive-services-showcase-2025" className="block px-3 py-2 text-sm text-gray-400 hover:text-cyan-400 hover:bg-cyan-500/10 rounded transition-colors duration-200">
+                      All Services
+                    </a>
+                    <a href="/pricing" className="block px-3 py-2 text-sm text-gray-400 hover:text-cyan-400 hover:bg-cyan-500/10 rounded transition-colors duration-200">
+                      Pricing
+                    </a>
+                    <a href="/contact" className="block px-3 py-2 text-sm text-gray-400 hover:text-cyan-400 hover:bg-cyan-500/10 rounded transition-colors duration-200">
+                      Contact
+                    </a>
+                  </div>
+                </div>
+                
+                <div className="space-y-2">
+                  <h3 className="text-sm font-semibold text-gray-300 px-3">Quick Services</h3>
+                  <div className="space-y-1">
+                    <a href="/ai-consciousness-evolution-platform" className="block px-3 py-2 text-sm text-gray-400 hover:text-cyan-400 hover:bg-cyan-500/10 rounded transition-colors duration-200">
+                      AI Consciousness Evolution
+                    </a>
+                    <a href="/quantum-computing-as-a-service" className="block px-3 py-2 text-sm text-gray-400 hover:text-cyan-400 hover:bg-cyan-500/10 rounded transition-colors duration-200">
+                      Quantum Computing
+                    </a>
+                    <a href="/zero-trust-security-architecture" className="block px-3 py-2 text-sm text-gray-400 hover:text-cyan-400 hover:bg-cyan-500/10 rounded transition-colors duration-200">
+                      Zero Trust Security
+                    </a>
+                    <a href="/ai-business-intelligence-suite" className="block px-3 py-2 text-sm text-gray-400 hover:text-cyan-400 hover:bg-cyan-500/10 rounded transition-colors duration-200">
+                      AI Business Intelligence
+                    </a>
+                  </div>
+                </div>
+                
+                {/* CTA */}
+                <div className="pt-4 border-t border-gray-800">
+                  <a
+                    href="/contact"
+                    className="block w-full text-center px-4 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-medium rounded-lg transition-all duration-300"
+                    onClick={() => setSidebarOpen(false)}
+                  >
+                    Get Started Today
+                  </a>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      )}
+    </div>
+  );
+}
+=======
+import EnhancedNavigation2025 from './EnhancedNavigation2025';
 
 interface LayoutProps {
   children: React.ReactNode;
-  seo?: {
-    title?: string;
-    description?: string;
-    keywords?: string;
-    canonicalUrl?: string;
-    ogImage?: string;
-  };
 }
 
-export default function Layout({ children, seo }: LayoutProps) {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [showEnhancements, setShowEnhancements] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-
-  const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === 'Escape' && sidebarOpen) {
-      setSidebarOpen(false);
-    }
-  };
-
-  const title = seo?.title || 'Zion Tech Group - Revolutionary Technology Solutions';
-  const description = seo?.description || 'Leading provider of innovative AI, quantum computing, and enterprise technology solutions. Transform your business with cutting-edge innovations.';
-  const keywords = seo?.keywords || 'AI, quantum computing, enterprise technology, innovation, Zion Tech Group';
-  const canonicalUrl = seo?.canonicalUrl;
-  const ogImage = seo?.ogImage || 'https://ziontechgroup.com/og-image.jpg';
-
-  return (
-    <div 
-      className="min-h-screen bg-black text-white relative overflow-x-hidden"
-      onKeyDown={handleKeyDown}
-      role="application"
-      aria-label="Zion Tech Group Application"
-    >
-      <Head>
-        <title>{title}</title>
-        <meta name="description" content={description} />
-        <meta name="keywords" content={keywords} />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta charSet="utf-8" />
-        <meta name="robots" content="index, follow" />
-        <meta name="author" content="Zion Tech Group" />
-        <meta name="theme-color" content="#06b6d4" />
-        
-        {/* Canonical URL */}
-        {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
-        
-        {/* PWA Manifest */}
-        <link rel="manifest" href="/manifest.json" />
-        <meta name="msapplication-TileColor" content="#06b6d4" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        <meta name="apple-mobile-web-app-title" content="Zion Tech Group" />
-        
-        {/* Favicons */}
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        
-        {/* Open Graph Meta Tags */}
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={description} />
-        <meta property="og:image" content={ogImage} />
-        <meta property="og:url" content={canonicalUrl || "https://ziontechgroup.com"} />
-        <meta property="og:site_name" content="Zion Tech Group" />
-        <meta property="og:locale" content="en_US" />
-        
-        {/* Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content={ogImage} />
-        <meta name="twitter:site" content="@ziontechgroup" />
-        
-        {/* Additional SEO Meta Tags */}
-        <meta name="application-name" content="Zion Tech Group" />
-        <meta name="mobile-web-app-capable" content="yes" />
-        <meta name="format-detection" content="telephone=no" />
-        
-        {/* Preload Critical Resources */}
-        <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
-        <link rel="preload" href="/_next/static/css/app.css" as="style" />
-        
-        {/* DNS Prefetch */}
-        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-        <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
-        
-        {/* Security Headers */}
-        <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
-        <meta httpEquiv="X-Frame-Options" content="DENY" />
-        <meta httpEquiv="X-XSS-Protection" content="1; mode=block" />
-        <meta httpEquiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
-        
-        {/* Structured Data */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              "name": "Zion Tech Group",
-              "url": "https://ziontechgroup.com",
-              "logo": "https://ziontechgroup.com/logo.png",
-              "description": description,
-              "foundingDate": "2024",
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "364 E Main St STE 1008",
-                "addressLocality": "Middletown",
-                "addressRegion": "DE",
-                "postalCode": "19709",
-                "addressCountry": "US"
-              },
-              "contactPoint": {
-                "@type": "ContactPoint",
-                "telephone": "+1-302-464-0950",
-                "contactType": "customer service",
-                "email": "kleber@ziontechgroup.com"
-              }
-            })
-          }}
-        />
-      </Head>
-
-export default function Layout({ children, seo }: LayoutProps) {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [showEnhancements, setShowEnhancements] = useState(false);
-
+export default function Layout({ children }: LayoutProps) {
   return (
     <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
+      {/* Skip to content link for accessibility */}
+      <a href="#main" className="skip-link">Skip to main content</a>
       {/* Futuristic Background */}
-      <UltraAdvancedFuturisticBackground2035 />
-      
-=======
       {/* Skip to content link for accessibility */}
       <a 
         href="#main" 
@@ -234,6 +238,32 @@ export default function Layout({ children, seo }: LayoutProps) {
           />
         </svg>
       </motion.button>
+=======
+      <UltraFuturisticBackground2035>
+        {/* Layout Structure */}
+        <div className="relative z-10">
+          {/* Top Contact Bar */}
+          <TopContactBar />
+          
+          {/* Navigation */}
+          <UltraFuturisticNavigation2035 />
+          
+          {/* Sidebar and Main Content */}
+          <div className="flex">
+            <EnhancedSidebar2025 
+              isOpen={sidebarOpen} 
+              onClose={() => setSidebarOpen(false)} 
+            />
+            
+            <main id="main" role="main" className="flex-1 pt-24 lg:pt-28">
+              {children}
+            </main>
+          </div>
+          
+          {/* Footer */}
+          <UltraFuturisticFooter2035 />
+        </div>
+      </UltraFuturisticBackground2035>
     </div>
   );
 }

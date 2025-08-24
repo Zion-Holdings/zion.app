@@ -5,8 +5,7 @@ import {
   Users, Rocket, Brain, Atom, Shield, Cloud, 
   ArrowRight, MapPin, Clock, DollarSign, Star, Zap
 } from 'lucide-react';
-import EnhancedNavigation from '../components/EnhancedNavigation';
-import EnhancedFooter from '../components/EnhancedFooter';
+import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
 
 export default function CareersPage() {
   const openPositions = [
@@ -148,14 +147,12 @@ export default function CareersPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white">
-      <Head>
-        <title>Careers - Zion Tech Group</title>
-        <meta name="description" content="Join Zion Tech Group and work on cutting-edge technology solutions. Explore career opportunities in AI, quantum computing, cybersecurity, and more." />
-        <meta property="og:title" content="Careers - Zion Tech Group" />
-        <meta property="og:description" content="Join our team and work on cutting-edge technology solutions." />
-        <link rel="canonical" href="https://ziontechgroup.com/careers" />
-      </Head>
+    <UltraAdvancedFuturisticBackground>
+      <div className="min-h-screen">
+        <Head>
+          <title>Careers - Zion Tech Group | Join Our Revolutionary Technology Team</title>
+          <meta name="description" content="Join Zion Tech Group's team of innovators. Explore career opportunities in AI, quantum computing, and emerging technologies. Remote work, competitive benefits, and cutting-edge projects." />
+        </Head>
 
       <EnhancedNavigation />
 
@@ -349,9 +346,12 @@ export default function CareersPage() {
                 Contact Recruiting
               </button>
             </div>
-          </motion.div>
-        </div>
-      </section>
+          </div>
+        </motion.div>
+      </div>
+    </UltraAdvancedFuturisticBackground>
+  );
+};
 
       <EnhancedFooter />
     </div>
