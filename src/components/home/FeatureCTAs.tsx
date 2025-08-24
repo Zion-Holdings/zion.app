@@ -16,7 +16,13 @@ import {
   BookOpen,
   Code,
   Building,
-  Clock
+  Clock,
+  Shield,
+  Cloud,
+  Heart,
+  DollarSign,
+  GraduationCap,
+  Globe
 } from "lucide-react";
 
 export function FeatureCTAs() {
@@ -93,6 +99,63 @@ export function FeatureCTAs() {
       icon: <Calendar className="h-10 w-10 p-2 rounded-md bg-red-100 text-red-700" />,
       link: "/dashboard/projects",
       details: "Our intuitive project management tools help you track progress, manage deliverables, and ensure timely completion."
+    },
+    {
+      title: "Zion Hire AI",
+      description: "AI-powered recruiting assistant to streamline your hiring process and find better matches.",
+      icon: <Clock className="h-10 w-10 p-2 rounded-md bg-violet-100 text-violet-700" />,
+      link: "/zion-hire-ai",
+      details: "Our AI recruiting platform uses advanced algorithms to match the best candidates with your job requirements, reducing hiring time by 70%."
+    },
+    {
+      title: "AI Process Automation",
+      description: "End-to-end automation solutions for business processes using cutting-edge AI technology.",
+      icon: <Zap className="h-10 w-10 p-2 rounded-md bg-yellow-100 text-yellow-700" />,
+      link: "/comprehensive-services",
+      badge: "Hot",
+      details: "Transform your business operations with AI-powered automation that reduces manual work by 80% and increases efficiency across all departments."
+    },
+    {
+      title: "Cybersecurity Solutions",
+      description: "Advanced threat detection and protection systems powered by machine learning.",
+      icon: <Shield className="h-10 w-10 p-2 rounded-md bg-red-100 text-red-700" />,
+      link: "/comprehensive-services",
+      details: "Protect your business with next-generation cybersecurity that detects and prevents threats in real-time with 99.5% accuracy."
+    },
+    {
+      title: "Cloud & Edge Computing",
+      description: "Multi-cloud orchestration and edge computing solutions for modern infrastructure.",
+      icon: <Cloud className="h-10 w-10 p-2 rounded-md bg-blue-100 text-blue-700" />,
+      link: "/comprehensive-services",
+      details: "Optimize your cloud costs by 25-40% with our intelligent multi-cloud management platform and edge computing solutions."
+    },
+    {
+      title: "Healthcare Technology",
+      description: "AI-powered healthcare solutions with HIPAA compliance and diagnostic assistance.",
+      icon: <Heart className="h-10 w-10 p-2 rounded-md bg-pink-100 text-pink-700" />,
+      link: "/comprehensive-services",
+      details: "Revolutionize healthcare delivery with our AI platform featuring diagnostic assistance, patient monitoring, and telemedicine solutions."
+    },
+    {
+      title: "Financial Technology",
+      description: "Advanced fintech solutions including AI trading platforms and fraud detection systems.",
+      icon: <DollarSign className="h-10 w-10 p-2 rounded-md bg-green-100 text-green-700" />,
+      link: "/comprehensive-services",
+      details: "Stay ahead in the financial sector with our algorithmic trading platform and AI-powered fraud detection that achieves 99.5% accuracy."
+    },
+    {
+      title: "Education Technology",
+      description: "Adaptive learning platforms and virtual classroom solutions for modern education.",
+      icon: <GraduationCap className="h-10 w-10 p-2 rounded-md bg-indigo-100 text-indigo-700" />,
+      link: "/comprehensive-services",
+      details: "Transform education with AI-powered adaptive learning that personalizes content based on student performance and learning styles."
+    },
+    {
+      title: "IoT & Smart Solutions",
+      description: "Enterprise IoT platforms and smart building management systems.",
+      icon: <Globe className="h-10 w-10 p-2 rounded-md bg-teal-100 text-teal-700" />,
+      link: "/comprehensive-services",
+      details: "Build the future with our scalable IoT platform supporting 100,000+ devices and intelligent building automation systems."
     },
     {
       title: "Zion Hire AI",
