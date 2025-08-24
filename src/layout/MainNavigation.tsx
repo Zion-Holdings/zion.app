@@ -6,13 +6,13 @@ import { useState } from "react";
 
 export function MainNavigation() {
   const location = useLocation();
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
+  const [isHelpDropdownOpen, setIsHelpDropdownOpen] = useState(false);
 
   const baseLinks = [
     { key: 'home', href: '/', name: 'Home' },
     { key: 'about', href: '/about', name: 'About' },
-    { key: 'services', href: '/services', name: 'Services' },
-    { key: 'help', href: '/help', name: 'Help' }
+    { key: 'contact', href: '/contact', name: 'Contact' }
   ];
 
   return (
@@ -34,43 +34,69 @@ export function MainNavigation() {
           </li>
         ))}
         
+        {/* Services Dropdown */}
         <li className="relative">
           <button
-            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+            onClick={() => {
+              setIsServicesDropdownOpen(!isServicesDropdownOpen);
+              setIsHelpDropdownOpen(false);
+            }}
             className={cn(
               "inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-colors",
-              location.pathname.startsWith('/marketplace') || location.pathname.startsWith('/categories')
+              location.pathname.startsWith('/ai-services') || 
+              location.pathname.startsWith('/cybersecurity') || 
+              location.pathname.startsWith('/expanded-services') ||
+              location.pathname.startsWith('/green-it') ||
+              location.pathname.startsWith('/comprehensive-services')
                 ? "bg-zion-purple/20 text-zion-cyan"
                 : "text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
             )}
           >
-            Marketplace
+            Services
             <ChevronDown className="ml-1 h-4 w-4" />
           </button>
-          {isDropdownOpen && (
-            <div className="absolute top-full left-0 mt-1 w-48 bg-zion-blue-dark border border-zion-purple/20 rounded-md shadow-lg z-50">
+          {isServicesDropdownOpen && (
+            <div className="absolute top-full left-0 mt-1 w-56 bg-zion-blue-dark border border-zion-purple/20 rounded-md shadow-lg z-50">
               <div className="py-2">
-                <Link to="/ai-services" className="block px-4 py-2 text-sm text-white hover:bg-zion-purple/10 hover:text-zion-cyan" onClick={() => setIsDropdownOpen(false)}>AI Services</Link>
-                <Link to="/cybersecurity" className="block px-4 py-2 text-sm text-white hover:bg-zion-purple/10 hover:text-zion-cyan" onClick={() => setIsDropdownOpen(false)}>Cybersecurity</Link>
-                <Link to="/expanded-services" className="block px-4 py-2 text-sm text-white hover:bg-zion-purple/10 hover:text-zion-cyan" onClick={() => setIsDropdownOpen(false)}>IT Services</Link>
-                <Link to="/green-it" className="block px-4 py-2 text-sm text-white hover:bg-zion-purple/10 hover:text-zion-cyan" onClick={() => setIsDropdownOpen(false)}>Green IT</Link>
+                <Link to="/ai-services" className="block px-4 py-2 text-sm text-white hover:bg-zion-purple/10 hover:text-zion-cyan" onClick={() => setIsServicesDropdownOpen(false)}>AI Services</Link>
+                <Link to="/cybersecurity" className="block px-4 py-2 text-sm text-white hover:bg-zion-purple/10 hover:text-zion-cyan" onClick={() => setIsServicesDropdownOpen(false)}>Cybersecurity</Link>
+                <Link to="/expanded-services" className="block px-4 py-2 text-sm text-white hover:bg-zion-purple/10 hover:text-zion-cyan" onClick={() => setIsServicesDropdownOpen(false)}>IT Services</Link>
+                <Link to="/green-it" className="block px-4 py-2 text-sm text-white hover:bg-zion-purple/10 hover:text-zion-cyan" onClick={() => setIsServicesDropdownOpen(false)}>Green IT</Link>
+                <Link to="/comprehensive-services" className="block px-4 py-2 text-sm text-white hover:bg-zion-purple/10 hover:text-zion-cyan" onClick={() => setIsServicesDropdownOpen(false)}>Comprehensive Services</Link>
+                <Link to="/services-comparison" className="block px-4 py-2 text-sm text-white hover:bg-zion-purple/10 hover:text-zion-cyan" onClick={() => setIsServicesDropdownOpen(false)}>Compare Services</Link>
               </div>
             </div>
           )}
         </li>
-        
-        <li>
-          <Link
-            to="/contact"
+
+        {/* Help Dropdown */}
+        <li className="relative">
+          <button
+            onClick={() => {
+              setIsHelpDropdownOpen(!isHelpDropdownOpen);
+              setIsServicesDropdownOpen(false);
+            }}
             className={cn(
               "inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-colors",
-              location.pathname === '/contact'
+              location.pathname.startsWith('/help') || 
+              location.pathname.startsWith('/faq') || 
+              location.pathname.startsWith('/request-quote')
                 ? "bg-zion-purple/20 text-zion-cyan"
                 : "text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
             )}
           >
-            Contact
-          </Link>
+            Help
+            <ChevronDown className="ml-1 h-4 w-4" />
+          </button>
+          {isHelpDropdownOpen && (
+            <div className="absolute top-full left-0 mt-1 w-48 bg-zion-blue-dark border border-zion-purple/20 rounded-md shadow-lg z-50">
+              <div className="py-2">
+                <Link to="/help" className="block px-4 py-2 text-sm text-white hover:bg-zion-purple/10 hover:text-zion-cyan" onClick={() => setIsHelpDropdownOpen(false)}>Help Center</Link>
+                <Link to="/faq" className="block px-4 py-2 text-sm text-white hover:bg-zion-purple/10 hover:text-zion-cyan" onClick={() => setIsHelpDropdownOpen(false)}>FAQ</Link>
+                <Link to="/request-quote" className="block px-4 py-2 text-sm text-white hover:bg-zion-purple/10 hover:text-zion-cyan" onClick={() => setIsHelpDropdownOpen(false)}>Request Quote</Link>
+              </div>
+            </div>
+          )}
         </li>
       </ul>
     </nav>

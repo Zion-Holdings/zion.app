@@ -16,6 +16,9 @@ import GreenIT from './pages/GreenIT';
 import Privacy from './pages/Privacy';
 import Sitemap from './pages/Sitemap';
 import Terms from './pages/Terms';
+import HelpCenter from './pages/HelpCenter';
+import FAQ from './pages/FAQ';
+import RequestQuote from './pages/RequestQuote';
 import NotFound from './pages/NotFound';
 
 function App() {
@@ -38,6 +41,9 @@ function App() {
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/sitemap" element={<Sitemap />} />
             <Route path="/terms" element={<Terms />} />
+            <Route path="/help" element={<HelpCenter />} />
+            <Route path="/faq" element={<FAQ />} />
+            <Route path="/request-quote" element={<RequestQuote />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>

@@ -1,37 +1,50 @@
 import React from 'react';
+import { cn } from '@/lib/utils';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'default' | 'outline' | 'ghost';
-  size?: 'sm' | 'md' | 'lg';
-  children: React.ReactNode;
+  variant?: 'default' | 'destructive' | 'outline' | 'secondary' | 'ghost' | 'link';
+  size?: 'default' | 'sm' | 'lg' | 'xl' | 'icon';
+  asChild?: boolean;
 }
 
 export function Button({ 
   variant = 'default', 
-  size = 'md', 
-  children, 
+  size = 'default', 
+  asChild = false,
   className = '', 
   ...props 
 }: ButtonProps) {
-  const baseClasses = 'inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none';
+  const baseClasses = 'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50';
   
   const variantClasses = {
-    default: 'bg-zion-cyan text-white hover:bg-zion-cyan/90',
+    default: 'bg-zion-cyan text-white hover:bg-zion-cyan-dark',
+    destructive: 'bg-destructive text-destructive-foreground hover:bg-destructive/90',
     outline: 'border border-zion-cyan text-zion-cyan hover:bg-zion-cyan hover:text-white',
-    ghost: 'text-zion-cyan hover:bg-zion-cyan/10'
+    secondary: 'bg-zion-purple/20 text-zion-cyan hover:bg-zion-purple/30',
+    ghost: 'text-zion-cyan hover:bg-zion-cyan/10',
+    link: 'text-zion-cyan underline-offset-4 hover:underline'
   };
   
   const sizeClasses = {
-    sm: 'h-8 px-3 text-sm',
-    md: 'h-10 px-4 py-2',
-    lg: 'h-12 px-8 text-lg'
+    default: 'h-10 px-4 py-2',
+    sm: 'h-9 rounded-md px-3',
+    lg: 'h-11 rounded-md px-8',
+    xl: 'h-12 rounded-md px-8 text-lg',
+    icon: 'h-10 w-10'
   };
   
-  const classes = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`;
+  const classes = cn(baseClasses, variantClasses[variant], sizeClasses[size], className);
+  
+  if (asChild) {
+    // For asChild, we need to clone the child and pass our props
+    const child = React.Children.only(props.children) as React.ReactElement;
+    return React.cloneElement(child, {
+      className: cn(classes, child.props.className),
+      ...props
+    });
+  }
   
   return (
-    <button className={classes} {...props}>
-      {children}
-    </button>
+    <button className={classes} {...props} />
   );
 }
