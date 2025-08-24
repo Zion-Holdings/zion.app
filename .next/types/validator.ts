@@ -41,12 +41,6 @@ type ApiRouteConfig = {
 
 
 
-// Validate ../../pages/2025-advanced-emerging-tech-showcase.tsx
-{
-  const handler = {} as typeof import("../../pages/2025-advanced-emerging-tech-showcase.js")
-  handler satisfies PagesPageConfig
-}
-
 // Validate ../../pages/2025-advanced-futuristic-services-showcase.tsx
 {
   const handler = {} as typeof import("../../pages/2025-advanced-futuristic-services-showcase.js")
