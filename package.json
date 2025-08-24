@@ -49,7 +49,7 @@
     "postbuild": "node automation/footer-injector.cjs || true",
     "lint": "eslint .",
     "type-check": "tsc --noEmit",
-    "prepare": "git config core.hooksPath .husky || true",
+    "prepare": "husky",
     "fix:all": "npm run lint -- --fix || true",
     "build:heal": "npm run build || (npm run fix:all && npm run search:index || true && npm run build)",
     "ci:heal": "npm run fix:all && (npm run type-check || true) && npm run build:heal",

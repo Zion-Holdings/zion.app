@@ -200,6 +200,11 @@ function generateHTMLReport(summary, results) {
   html.push(`<p><strong style="color:#22c55e">${summary.healthy}</strong> healthy files</p>`);
   html.push(`</div>`);
   
+  // Filter results by category
+  const criticalIssues = results.filter(r => r.hasCriticalIssues);
+  const warnings = results.filter(r => !r.hasCriticalIssues && r.issues.length > 0);
+  const healthy = results.filter(r => !r.hasCriticalIssues && r.issues.length === 0);
+  
   // Critical issues first
   if (criticalIssues.length > 0) {
     html.push(`<h2 style="color:#ef4444">🚨 Critical Issues (${criticalIssues.length})</h2>`);
