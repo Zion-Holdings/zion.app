@@ -9,12 +9,6 @@ interface SEOProps {
   ogUrl?: string;
   canonical?: string;
   noindex?: boolean;
-  type?: string;
-  publishedTime?: string;
-  modifiedTime?: string;
-  author?: string;
-  section?: string;
-  tags?: string[];
 }
 
 export function SEO({
@@ -26,26 +20,18 @@ export function SEO({
   ogUrl,
   canonical,
   noindex,
-  type = "website",
-  publishedTime,
-  modifiedTime,
-  author,
-  section,
-  tags,
 }: SEOProps) {
   const siteTitle = "Zion - The Future of Tech & AI Marketplace";
   const fullTitle = title ? `${title} | ${siteTitle}` : siteTitle;
-  const siteUrl = "https://ziontechgroup.com";
-  const fullCanonical = canonical || `${siteUrl}${window.location.pathname}`;
   
-  // Structured data for organization
-  const organizationSchema = {
+  // Structured data for better SEO
+  const structuredData = {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Zion Tech Group",
-    "url": siteUrl,
+    "url": "https://ziontechgroup.com",
     "logo": "https://ziontechgroup.com/logo.png",
-    "description": "The world's first free marketplace dedicated to high-tech and artificial intelligence",
+    "description": "The leading tech and AI marketplace connecting businesses with top talent, services, and equipment",
     "sameAs": [
       "https://twitter.com/ziontechgroup",
       "https://linkedin.com/company/ziontechgroup",
@@ -55,58 +41,12 @@ export function SEO({
       "@type": "ContactPoint",
       "telephone": "+1-800-ZION-TECH",
       "contactType": "customer service",
-      "availableLanguage": ["English", "Spanish", "Portuguese", "Arabic"]
+      "availableLanguage": "English"
     },
     "address": {
       "@type": "PostalAddress",
-      "addressCountry": "Global",
-      "addressLocality": "Worldwide"
+      "addressCountry": "US"
     }
-  };
-
-  // Structured data for website
-  const websiteSchema = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Zion Tech & AI Marketplace",
-    "url": siteUrl,
-    "description": "Discover top AI and tech talent, services, and equipment in one place",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": `${siteUrl}/search?q={search_term_string}`,
-      "query-input": "required name=search_term_string"
-    }
-  };
-
-  // Structured data for the specific page
-  const pageSchema = {
-    "@context": "https://schema.org",
-    "@type": type === "article" ? "Article" : "WebPage",
-    "headline": fullTitle,
-    "description": description,
-    "url": fullCanonical,
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": fullCanonical
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Zion Tech Group",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://ziontechgroup.com/logo.png"
-      }
-    },
-    ...(type === "article" && {
-      "author": {
-        "@type": "Person",
-        "name": author || "Zion Tech Group"
-      },
-      "datePublished": publishedTime,
-      "dateModified": modifiedTime,
-      "articleSection": section,
-      "keywords": tags?.join(", ")
-    })
   };
   
   return (
@@ -117,26 +57,19 @@ export function SEO({
       
       {/* Enhanced meta tags */}
       <meta name="author" content="Zion Tech Group" />
-      <meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow"} />
-      <meta name="language" content="English" />
-      <meta name="revisit-after" content="7 days" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="theme-color" content="#2e73ea" />
+      <meta name="msapplication-TileColor" content="#2e73ea" />
       
       {/* Open Graph / Facebook */}
-      <meta property="og:type" content={type} />
+      <meta property="og:type" content="website" />
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={ogImage} />
-      <meta property="og:url" content={fullCanonical} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
       <meta property="og:site_name" content="Zion Tech Group" />
-      <meta property="og:locale" content="en_US" />
-      {publishedTime && <meta property="article:published_time" content={publishedTime} />}
-      {modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
-      {author && <meta property="article:author" content={author} />}
-      {section && <meta property="article:section" content={section} />}
-      {tags && tags.map((tag, index) => (
-        <meta key={index} property="article:tag" content={tag} />
-      ))}
+      {ogUrl && <meta property="og:url" content={ogUrl} />}
       
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
@@ -147,27 +80,14 @@ export function SEO({
       <meta name="twitter:image" content={ogImage} />
       
       {/* Canonical URL */}
-      <link rel="canonical" href={fullCanonical} />
+      {canonical && <link rel="canonical" href={canonical} />}
       
-      {/* Additional SEO links */}
-      <link rel="alternate" hrefLang="en" href={fullCanonical} />
-      <link rel="alternate" hrefLang="es" href={`https://es.ziontechgroup.com${window.location.pathname}`} />
-      <link rel="alternate" hrefLang="pt" href={`https://pt.ziontechgroup.com${window.location.pathname}`} />
-      <link rel="alternate" hrefLang="ar" href={`https://ar.ziontechgroup.com${window.location.pathname}`} />
+      {/* No index directive for search engines if needed */}
+      {noindex && <meta name="robots" content="noindex" />}
       
-      {/* Preconnect to external domains for performance */}
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-      
-      {/* Structured Data */}
+      {/* Structured data */}
       <script type="application/ld+json">
-        {JSON.stringify(organizationSchema)}
-      </script>
-      <script type="application/ld+json">
-        {JSON.stringify(websiteSchema)}
-      </script>
-      <script type="application/ld+json">
-        {JSON.stringify(pageSchema)}
+        {JSON.stringify(structuredData)}
       </script>
     </Helmet>
   );
