@@ -1,0 +1,83 @@
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+<<<<<<< HEAD
+  // Enable static export for Next.js 14
+=======
+>>>>>>> origin/cursor/bc-fb46ff41-f41c-4a05-88f2-2122b9c9c4ce-81c6
+  output: 'export',
+  trailingSlash: true,
+  productionBrowserSourceMaps: false,
+  images: { unoptimized: true },
+  // Note: redirects() removed as it's incompatible with output: 'export'
+  // Use Netlify _redirects file instead for redirects
+  eslint: { ignoreDuringBuilds: true },
+  typescript: { ignoreBuildErrors: true },
+  
+  // Enable build caching for faster rebuilds
+  experimental: {
+    isrMemoryCacheSize: 0,
+    // Enable build caching
+    buildCache: true,
+  },
+  
+  // Generate build ID for caching
+  generateBuildId: async () => {
+    return 'build-' + Date.now();
+  },
+  
+  // Optimize build performance
+  swcMinify: true,
+  compress: true,
+  
+  // Enable webpack caching
+  webpack: (config, { dev, isServer }) => {
+    if (!dev && !isServer) {
+      config.cache = {
+        type: 'filesystem',
+        buildDependencies: {
+          config: [__filename],
+        },
+      };
+    }
+    return config;
+  },
+};
+
+  // Enhanced compress
+  compress: true,
+
+  // Enhanced devIndicators
+  devIndicators: {
+    buildActivity: true,
+    buildActivityPosition: 'bottom-right',
+  },
+
+  // Enhanced onDemandEntries
+  onDemandEntries: {
+    maxInactiveAge: 25 * 1000,
+    pagesBufferLength: 2,
+  },
+
+  // Enhanced pageExtensions
+  pageExtensions: ['tsx', 'ts', 'jsx', 'js'],
+
+  // Enhanced typescript
+  typescript: {
+    ignoreBuildErrors: false,
+  },
+
+  // Enhanced eslint
+  eslint: {
+    ignoreDuringBuilds: false,
+  },
+
+  // Enhanced swcMinify
+  swcMinify: true,
+
+  // Enhanced modularizeImports
+  modularizeImports: {
+    'lucide-react': {
+      transform: 'lucide-react/dist/esm/icons/{{kebabCase}}',
+    },
+  },
+};

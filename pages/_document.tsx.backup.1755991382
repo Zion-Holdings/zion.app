@@ -1,0 +1,56 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+import Document, { Html, Head, Main, NextScript } from 'next/document'
+=======
+import Document, { Html, Head, Main, NextScript } from 'next/document';
+>>>>>>> 5f48a381108fa3a8a43c189dd4b043133ce9307e
+
+export default class MyDocument extends Document {
+  render() {
+    return (
+<<<<<<< HEAD
+      <Html>
+=======
+      <Html lang="en">
+>>>>>>> 5f48a381108fa3a8a43c189dd4b043133ce9307e
+        <Head />
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+<<<<<<< HEAD
+    )
+  }
+}
+=======
+import type { NextPage } from 'next';
+import Head from 'next/head';
+
+const _document: NextPage = () => {
+  return (
+    <div>
+      <Head>
+        <title>_document - Zion Tech Solutions</title>
+        <meta name="description" content="_document page" />
+      </Head>
+      
+      <main>
+        <h1>_document</h1>
+        <p>This page is under construction.</p>
+      </main>
+    </div>
+  );
+};
+
+export default _document;
+>>>>>>> origin/cursor/deploy-offworld-zion-os-on-ipfs-and-orbitdb-92ee
+=======
+    );
+  }
+<<<<<<< HEAD
+}
+=======
+}
+>>>>>>> origin/cursor/build-zion-ai-api-developer-documentation-hub-2aa3
+>>>>>>> 5f48a381108fa3a8a43c189dd4b043133ce9307e

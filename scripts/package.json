@@ -1,11 +1,21 @@
-
 {
-  "name": "icon-scripts",
+  "name": "codex-scripts",
   "version": "1.0.0",
   "description": "Helper scripts for the project",
   "type": "module",
   "private": true,
+  "type": "module",
   "dependencies": {
-    "glob": "^7.2.0"
+    "@octokit/rest": "^20.0.0",
+    "axios": "^1.6.0",
+    "glob": "^7.2.0",
+    "os-utils": "^0.0.14",
+    "tail": "^2.2.6"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
   }
 }

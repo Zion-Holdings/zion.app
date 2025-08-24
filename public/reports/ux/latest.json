@@ -1,0 +1,84 @@
+{
+  "generatedAt": "2025-08-11T23:30:11.467Z",
+  "files": [
+    {
+      "path": "/workspace/pages/automation/index.tsx",
+      "issues": []
+    },
+    {
+      "path": "/workspace/pages/front/index.tsx",
+      "issues": [
+        {
+          "type": "heading",
+          "severity": "warn",
+          "message": "Missing <h1> heading"
+        },
+        {
+          "type": "seo",
+          "severity": "info",
+          "message": "Missing meta description"
+        }
+      ]
+    },
+    {
+      "path": "/workspace/pages/index.tsx",
+      "issues": []
+    },
+    {
+      "path": "/workspace/pages/main/front/index.tsx",
+      "issues": []
+    },
+    {
+      "path": "/workspace/pages/newsroom.tsx",
+      "issues": []
+    },
+    {
+      "path": "/workspace/pages/reports/ai-trends.tsx",
+      "issues": [
+        {
+          "type": "heading",
+          "severity": "warn",
+          "message": "Missing <h1> heading"
+        },
+        {
+          "type": "seo",
+          "severity": "info",
+          "message": "Missing meta description"
+        }
+      ]
+    },
+    {
+      "path": "/workspace/pages/reports/seo.tsx",
+      "issues": [
+        {
+          "type": "heading",
+          "severity": "warn",
+          "message": "Missing <h1> heading"
+        },
+        {
+          "type": "seo",
+          "severity": "info",
+          "message": "Missing meta description"
+        }
+      ]
+    },
+    {
+      "path": "/workspace/pages/site-health.tsx",
+      "issues": [
+        {
+          "type": "seo",
+          "severity": "info",
+          "message": "Missing meta description"
+        }
+      ]
+    }
+  ],
+  "totals": {
+    "filesScanned": 8,
+    "issues": 7,
+    "bySeverity": {
+      "warn": 3,
+      "info": 4
+    }
+  }
+}
