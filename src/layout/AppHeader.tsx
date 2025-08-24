@@ -9,7 +9,11 @@ import { MobileMenu } from '@/components/header/MobileMenu';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { MobileBottomNav } from '@/components/header/MobileBottomNav';
 
-export function AppHeader() {
+interface AppHeaderProps {
+  onSidebarToggle?: () => void;
+}
+
+export function AppHeader({ onSidebarToggle }: AppHeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const isMobile = useIsMobile();
   
@@ -26,6 +30,16 @@ export function AppHeader() {
     <>
       <header className="sticky top-0 z-50 w-full border-b border-zion-purple/20 bg-zion-blue-dark/90 backdrop-blur-md">
         <div className="container flex h-16 items-center px-4 sm:px-6">
+          {/* Sidebar Toggle for Mobile */}
+          <div className="lg:hidden mr-3">
+            <button
+              onClick={onSidebarToggle}
+              className="p-2 rounded-md text-zion-slate-light hover:text-white hover:bg-zion-purple/10"
+            >
+              <Menu className="h-5 w-5" />
+            </button>
+          </div>
+          
           <Logo />
           <div className="ml-6 flex-1 hidden md:block">
             <MainNavigation unreadCount={unreadCount} />
