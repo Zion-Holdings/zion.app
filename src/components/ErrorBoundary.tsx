@@ -1,179 +1,146 @@
 import React, { useState, useEffect } from 'react';
-import { Button } from "@/components/ui/button";
-import { AlertTriangle, RefreshCw, Home, Mail } from "lucide-react";
+import { motion } from 'framer-motion';
+import { AlertTriangle, RefreshCw, Home, ArrowLeft } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 interface ErrorBoundaryProps {
   children: React.ReactNode;
   fallback?: React.ReactNode;
 }
 
-interface ErrorState {
-  hasError: boolean;
-  error?: Error;
-  errorInfo?: any;
-}
-
 export function ErrorBoundary({ children, fallback }: ErrorBoundaryProps) {
-  const [errorState, setErrorState] = useState<ErrorState>({ hasError: false });
+  const [hasError, setHasError] = useState(false);
+  const [error, setError] = useState<Error | null>(null);
+  const [errorInfo, setErrorInfo] = useState<React.ErrorInfo | null>(null);
 
   useEffect(() => {
-    const handleError = (error: Error, errorInfo: any) => {
-      console.error('ErrorBoundary caught an error:', error, errorInfo);
-      setErrorState({
-        hasError: true,
-        error,
-        errorInfo
-      });
-
-      // Log error to monitoring service
-      logErrorToService(error, errorInfo);
+    const handleError = (error: Error, errorInfo: React.ErrorInfo) => {
+      console.error('Error caught by boundary:', error, errorInfo);
+      setError(error);
+      setErrorInfo(errorInfo);
+      setHasError(true);
     };
 
     // Add global error handler
     window.addEventListener('error', (event) => {
-      handleError(event.error || new Error(event.message), { componentStack: event.filename });
+      handleError(event.error, { componentStack: event.error?.stack || '' });
     });
 
     // Add unhandled rejection handler
     window.addEventListener('unhandledrejection', (event) => {
-      handleError(new Error(event.reason), { componentStack: 'Unhandled Promise Rejection' });
+      handleError(new Error(event.reason), { componentStack: '' });
     });
 
     return () => {
-      window.removeEventListener('error', handleError as any);
-      window.removeEventListener('unhandledrejection', handleError as any);
+      window.removeEventListener('error', () => {});
+      window.removeEventListener('unhandledrejection', () => {});
     };
   }, []);
 
-  const logErrorToService = (error: Error, errorInfo: any) => {
-    // In production, you would send this to your error monitoring service
-    // Example: Sentry, LogRocket, etc.
-    if (process.env.NODE_ENV === 'production') {
-      // Send to error monitoring service
-      console.log('Sending error to monitoring service:', { error, errorInfo });
-    }
-  };
-
   const handleRetry = () => {
-    setErrorState({ hasError: false, error: undefined, errorInfo: undefined });
+    setHasError(false);
+    setError(null);
+    setErrorInfo(null);
   };
 
-  const handleGoHome = () => {
-    window.location.href = '/';
-  };
-
-  const handleReportIssue = () => {
-    const subject = encodeURIComponent('Error Report - Zion Tech Group');
-    const body = encodeURIComponent(`
-Error Details:
-${errorState.error?.message || 'Unknown error'}
-
-Stack Trace:
-${errorState.error?.stack || 'No stack trace available'}
-
-Component Stack:
-${errorState.errorInfo?.componentStack || 'No component stack available'}
-
-User Agent:
-${navigator.userAgent}
-
-URL:
-${window.location.href}
-
-Please describe what you were doing when this error occurred:
-    `);
-    
-    window.location.href = `mailto:support@ziontechgroup.com?subject=${subject}&body=${body}`;
-  };
-
-  if (errorState.hasError) {
+  if (hasError) {
     if (fallback) {
       return <>{fallback}</>;
     }
 
     return (
-      <div className="min-h-screen bg-background flex items-center justify-center p-4">
-        <div className="max-w-md w-full text-center space-y-6">
+      <div className="min-h-screen bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-purple flex items-center justify-center p-4">
+        <motion.div
+          className="max-w-md w-full bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center"
+          initial={{ opacity: 0, scale: 0.9, y: 20 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
           {/* Error Icon */}
-          <div className="mx-auto w-16 h-16 bg-red-500/10 rounded-full flex items-center justify-center">
-            <AlertTriangle className="w-8 h-8 text-red-500" />
-          </div>
+          <motion.div
+            className="w-20 h-20 bg-red-500/20 rounded-full flex items-center justify-center mx-auto mb-6"
+            animate={{ 
+              scale: [1, 1.1, 1],
+              rotate: [0, 5, -5, 0]
+            }}
+            transition={{ 
+              duration: 2,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          >
+            <AlertTriangle className="h-10 w-10 text-red-400" />
+          </motion.div>
 
           {/* Error Message */}
-          <div className="space-y-2">
-            <h1 className="text-2xl font-bold text-foreground">
-              Oops! Something went wrong
-            </h1>
-            <p className="text-muted-foreground">
-              We're sorry, but something unexpected happened. Our team has been notified and is working to fix this issue.
-            </p>
-          </div>
+          <h1 className="text-2xl font-bold text-white mb-4">
+            Oops! Something went wrong
+          </h1>
+          
+          <p className="text-zion-slate-light mb-6 leading-relaxed">
+            We encountered an unexpected error. Don't worry, our team has been notified and is working to fix it.
+          </p>
 
-          {/* Error Details (Development Only) */}
-          {process.env.NODE_ENV === 'development' && errorState.error && (
-            <details className="text-left bg-muted p-4 rounded-lg">
-              <summary className="cursor-pointer font-medium text-sm mb-2">
-                Error Details (Development)
-              </summary>
-              <div className="text-xs space-y-2">
-                <div>
-                  <strong>Message:</strong> {errorState.error.message}
-                </div>
-                {errorState.error.stack && (
+          {/* Error Details (Development only) */}
+          {process.env.NODE_ENV === 'development' && error && (
+            <motion.div
+              className="bg-black/20 rounded-lg p-4 mb-6 text-left"
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              transition={{ delay: 0.3 }}
+            >
+              <details className="text-xs text-zion-slate-light">
+                <summary className="cursor-pointer text-zion-cyan hover:text-zion-cyan-light mb-2">
+                  Error Details
+                </summary>
+                <div className="space-y-2">
                   <div>
-                    <strong>Stack:</strong>
-                    <pre className="whitespace-pre-wrap mt-1 bg-background p-2 rounded text-xs">
-                      {errorState.error.stack}
-                    </pre>
+                    <strong>Error:</strong> {error.message}
                   </div>
-                )}
-              </div>
-            </details>
+                  {errorInfo && (
+                    <div>
+                      <strong>Stack:</strong>
+                      <pre className="mt-2 text-xs overflow-x-auto">
+                        {errorInfo.componentStack}
+                      </pre>
+                    </div>
+                  )}
+                </div>
+              </details>
+            </motion.div>
           )}
 
           {/* Action Buttons */}
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Button
+          <div className="flex flex-col sm:flex-row gap-3">
+            <motion.button
               onClick={handleRetry}
-              className="flex items-center gap-2"
-              variant="default"
+              className="flex-1 bg-gradient-to-r from-zion-cyan to-zion-purple text-white px-6 py-3 rounded-lg font-medium hover:from-zion-cyan-light hover:to-zion-purple-light transition-all duration-300 flex items-center justify-center gap-2"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
             >
-              <RefreshCw className="w-4 h-4" />
+              <RefreshCw className="h-4 w-4" />
               Try Again
-            </Button>
+            </motion.button>
             
-            <Button
-              onClick={handleGoHome}
-              variant="outline"
-              className="flex items-center gap-2"
+            <Link
+              to="/"
+              className="flex-1 bg-white/10 text-white px-6 py-3 rounded-lg font-medium hover:bg-white/20 transition-all duration-300 flex items-center justify-center gap-2 border border-white/20"
             >
-              <Home className="w-4 h-4" />
+              <Home className="h-4 w-4" />
               Go Home
-            </Button>
+            </Link>
           </div>
 
-          {/* Report Issue */}
-          <div className="pt-4 border-t border-border">
-            <p className="text-sm text-muted-foreground mb-3">
-              Still having issues?
-            </p>
-            <Button
-              onClick={handleReportIssue}
-              variant="ghost"
-              size="sm"
-              className="flex items-center gap-2 mx-auto"
-            >
-              <Mail className="w-4 h-4" />
-              Report Issue
-            </Button>
-          </div>
-
-          {/* Contact Information */}
-          <div className="text-xs text-muted-foreground">
-            <p>Need immediate help? Contact our support team:</p>
-            <p className="font-medium">support@ziontechgroup.com</p>
-          </div>
-        </div>
+          {/* Back Button */}
+          <motion.button
+            onClick={() => window.history.back()}
+            className="mt-4 text-zion-cyan hover:text-zion-cyan-light transition-colors duration-300 flex items-center justify-center gap-2 mx-auto text-sm"
+            whileHover={{ x: -2 }}
+          >
+            <ArrowLeft className="h-4 w-4" />
+            Go Back
+          </motion.button>
+        </motion.div>
       </div>
     );
   }
@@ -181,48 +148,18 @@ Please describe what you were doing when this error occurred:
   return <>{children}</>;
 }
 
-// Hook for functional components to handle errors
+// Hook for functional components
 export function useErrorHandler() {
-  return (error: Error, errorInfo?: any) => {
-    console.error('Error caught by useErrorHandler:', error, errorInfo);
-    
-    // Log to monitoring service
-    if (process.env.NODE_ENV === 'production') {
-      // Send to error monitoring service
-      console.log('Sending error to monitoring service:', { error, errorInfo });
-    }
-  };
-}
+  const [error, setError] = useState<Error | null>(null);
 
-// Simple error display component
-export function ErrorDisplay({ 
-  error, 
-  onRetry, 
-  className 
-}: { 
-  error: Error; 
-  onRetry?: () => void;
-  className?: string;
-}) {
-  return (
-    <div className={`p-4 border border-red-200 bg-red-50 rounded-lg ${className || ''}`}>
-      <div className="flex items-start gap-3">
-        <AlertTriangle className="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" />
-        <div className="flex-1">
-          <h3 className="font-medium text-red-800">Something went wrong</h3>
-          <p className="text-sm text-red-700 mt-1">{error.message}</p>
-          {onRetry && (
-            <Button
-              onClick={onRetry}
-              variant="outline"
-              size="sm"
-              className="mt-3"
-            >
-              Try Again
-            </Button>
-          )}
-        </div>
-      </div>
-    </div>
-  );
+  const handleError = React.useCallback((error: Error) => {
+    console.error('Error caught by hook:', error);
+    setError(error);
+  }, []);
+
+  const clearError = React.useCallback(() => {
+    setError(null);
+  }, []);
+
+  return { error, handleError, clearError };
 }
