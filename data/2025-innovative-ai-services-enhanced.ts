@@ -1,3 +1,5 @@
+import { ServiceVariant } from '../types/service-variants';
+
 export interface InnovativeAIService {
   id: string;
   name: string;
@@ -24,6 +26,7 @@ export interface InnovativeAIService {
   competitors: string[];
   marketSize: string;
   growthRate: string;
+  variant: ServiceVariant;
   contactInfo: {
     mobile: string;
     email: string;
