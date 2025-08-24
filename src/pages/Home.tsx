@@ -1,12 +1,12 @@
 
 import React from 'react';
-import { CategoriesSection } from "@/components/CategoriesSection";
+import { EnhancedCategoriesSection } from "@/components/EnhancedCategoriesSection";
 import { BenefitsSection } from "@/components/BenefitsSection";
 import { HowItWorksSection } from "@/components/HowItWorksSection";
 import { NewsletterSection } from "@/components/NewsletterSection";
 import { FeaturedListingsSection } from "@/components/FeaturedListingsSection";
 import { SEO } from "@/components/SEO";
-import { HeroSection } from "@/components/HeroSection";
+import { EnhancedHeroSection } from "@/components/home/EnhancedHeroSection";
 import { QuickAccess } from "@/components/home/QuickAccess";
 import { FeatureCTAs } from "@/components/home/FeatureCTAs";
 import { FeatureHighlights } from "@/components/home/FeatureHighlights";
@@ -17,15 +17,15 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background">
       <SEO 
-        title="Zion - The Tech & AI Marketplace" 
-        description="Discover top AI and tech talent, services, and equipment in one place."
-        keywords="AI, technology, marketplace, services, talent"
-        canonical="https://app.ziontechgroup.com/"
+        title="Zion Tech Group - The Tech & AI Marketplace" 
+        description="Discover top AI and tech talent, services, and equipment in one place. Transform your business with cutting-edge AI services, IT solutions, and intelligent automation tools."
+        keywords="AI, technology, marketplace, services, talent, micro SAAS, IT consulting, business automation, cloud migration, cybersecurity, data analytics"
+        canonical="https://ziontechgroup.com/"
       />
 
       <ITServiceRequestHero />
 
-      <HeroSection />
+      <EnhancedHeroSection />
       
       <QuickAccess />
       
@@ -35,7 +35,7 @@ export default function Home() {
       
       <FeatureHighlights />
       
-      <CategoriesSection />
+      <EnhancedCategoriesSection />
       <BenefitsSection />
       <HowItWorksSection />
       <FeaturedListingsSection />
