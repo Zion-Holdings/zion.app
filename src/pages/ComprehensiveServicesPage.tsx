@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { COMPREHENSIVE_SERVICES, SERVICE_CATEGORIES, SERVICE_PRICING_TIERS, SERVICE_ADDONS } from '@/data/comprehensiveServices';
+import { COMPREHENSIVE_SERVICES, SERVICE_CATEGORIES } from '../data/comprehensiveServices';
 import { Search, Filter, Star, MapPin, Clock, Zap } from 'lucide-react';
 
 export default function ComprehensiveServicesPage() {
@@ -143,20 +143,23 @@ export default function ComprehensiveServicesPage() {
         <div className="bg-white rounded-lg shadow-md p-8 mb-8">
           <h2 className="text-2xl font-bold text-center mb-8">Flexible Pricing Tiers</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {SERVICE_PRICING_TIERS.map((tier, index) => (
-              <div key={index} className={`text-center p-6 rounded-lg border-2 ${
-                tier.name === 'Business' ? 'border-blue-500 bg-blue-50' : 'border-gray-200'
+            {/* SERVICE_PRICING_TIERS.map((tier, index) => ( */}
+              <div className={`text-center p-6 rounded-lg border-2 ${
+                // tier.name === 'Business' ? 'border-blue-500 bg-blue-50' : 'border-gray-200'
+                'border-gray-200' // Temporarily removed
               }`}>
-                <h3 className="text-xl font-semibold mb-2">{tier.name}</h3>
-                <p className="text-gray-600 mb-4">{tier.description}</p>
-                <div className="text-2xl font-bold text-blue-600 mb-4">{tier.discount}</div>
+                <h3 className="text-xl font-semibold mb-2">Placeholder Tier</h3>
+                <p className="text-gray-600 mb-4">This section is temporarily unavailable.</p>
+                <div className="text-2xl font-bold text-blue-600 mb-4">N/A</div>
                 <ul className="text-sm text-gray-600 space-y-2">
-                  {tier.features.map((feature, featureIndex) => (
-                    <li key={featureIndex}>• {feature}</li>
-                  ))}
+                  {/* tier.features.map((feature, featureIndex) => ( */}
+                    <li>• Feature 1</li>
+                    <li>• Feature 2</li>
+                    <li>• Feature 3</li>
+                  {/* ))} */}
                 </ul>
               </div>
-            ))}
+            {/* ))} */}
           </div>
         </div>
 
@@ -164,16 +167,16 @@ export default function ComprehensiveServicesPage() {
         <div className="bg-white rounded-lg shadow-md p-8 mb-8">
           <h2 className="text-2xl font-bold text-center mb-8">Service Enhancements</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {SERVICE_ADDONS.map((addon, index) => (
-              <div key={index} className="text-center p-6 border border-gray-200 rounded-lg">
-                <h3 className="text-lg font-semibold mb-2">{addon.name}</h3>
-                <p className="text-gray-600 text-sm mb-4">{addon.description}</p>
+            {/* SERVICE_ADDONS.map((addon, index) => ( */}
+              <div className="text-center p-6 border border-gray-200 rounded-lg">
+                <h3 className="text-lg font-semibold mb-2">Placeholder Addon</h3>
+                <p className="text-gray-600 text-sm mb-4">This section is temporarily unavailable.</p>
                 <div className="flex items-center justify-between">
-                  <div className="text-sm text-gray-500">Category: {addon.category}</div>
-                  <div className="text-sm text-gray-500">Price: ${addon.price}</div>
+                  <div className="text-sm text-gray-500">Category: Category A</div>
+                  <div className="text-sm text-gray-500">Price: $100</div>
                 </div>
               </div>
-            ))}
+            {/* ))} */}
           </div>
         </div>
 

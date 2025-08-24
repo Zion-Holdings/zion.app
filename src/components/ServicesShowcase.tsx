@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { SERVICE_CATEGORIES, COMPREHENSIVE_SERVICES, SERVICE_ADDONS } from '@/data/comprehensiveServices';
+import { SERVICE_CATEGORIES, COMPREHENSIVE_SERVICES } from '../data/comprehensiveServices';
 
 export function ServicesShowcase() {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
@@ -158,18 +158,37 @@ export function ServicesShowcase() {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {SERVICE_ADDONS.slice(0, 9).map(addon => (
-              <div key={addon.id} className="border border-gray-200 rounded-lg p-4 hover:border-blue-300 transition-colors">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm font-medium text-blue-600 bg-blue-50 px-2 py-1 rounded">
-                    {addon.category}
-                  </span>
-                  <span className="text-lg font-bold text-gray-900">${addon.price}</span>
-                </div>
-                <h4 className="font-semibold text-gray-900 mb-2">{addon.name}</h4>
-                <p className="text-sm text-gray-600">{addon.description}</p>
+            {/* Temporarily disabled SERVICE_ADDONS display */}
+            <div className="border border-gray-200 rounded-lg p-4 hover:border-blue-300 transition-colors">
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-sm font-medium text-blue-600 bg-blue-50 px-2 py-1 rounded">
+                  AI Services
+                </span>
+                <span className="text-lg font-bold text-gray-900">$1499</span>
               </div>
-            ))}
+              <h4 className="font-semibold text-gray-900 mb-2">Custom AI Model Training</h4>
+              <p className="text-sm text-gray-600">Train custom AI models on your specific data for improved accuracy and relevance</p>
+            </div>
+            <div className="border border-gray-200 rounded-lg p-4 hover:border-blue-300 transition-colors">
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-sm font-medium text-blue-600 bg-blue-50 px-2 py-1 rounded">
+                  IT Services
+                </span>
+                <span className="text-lg font-bold text-gray-900">$499</span>
+              </div>
+              <h4 className="font-semibold text-gray-900 mb-2">24/7 Technical Support</h4>
+              <p className="text-sm text-gray-600">Round-the-clock technical support and monitoring services</p>
+            </div>
+            <div className="border border-gray-200 rounded-lg p-4 hover:border-blue-300 transition-colors">
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-sm font-medium text-blue-600 bg-blue-50 px-2 py-1 rounded">
+                  Micro SAAS
+                </span>
+                <span className="text-lg font-bold text-gray-900">$299</span>
+              </div>
+              <h4 className="font-semibold text-gray-900 mb-2">Mobile App Development</h4>
+              <p className="text-sm text-gray-600">Native mobile applications for iOS and Android platforms</p>
+            </div>
           </div>
         </div>
 
