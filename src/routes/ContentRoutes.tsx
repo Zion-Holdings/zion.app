@@ -9,6 +9,7 @@ import Blog from "@/pages/Blog";
 import BlogPost from "@/pages/BlogPost";
 import GreenIT from "@/pages/GreenIT";
 import Careers from "@/pages/Careers";
+import FAQ from "@/pages/FAQ";
 import SearchPage from "@/pages/SearchPage";
 import { SitemapPage } from "@/components/SitemapPage";
 import Sitemap from "@/pages/Sitemap";
@@ -47,6 +48,9 @@ const ContentRoutes = () => {
 
       {/* Legal Pages */}
       <Route path="/terms" element={<Terms />} />
+      
+      {/* FAQ Page */}
+      <Route path="/faq" element={<FAQ />} />
 
       {/* Account Settings */}
       <Route path="/settings/account" element={<AccountSettings />} />
