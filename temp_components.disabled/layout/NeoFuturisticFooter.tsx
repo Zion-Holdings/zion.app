@@ -149,12 +149,12 @@ export default function NeoFuturisticFooter() {
   ];
 
   const socialLinks = [
-    { name: 'Facebook', href: 'https://www.facebook.com/ziontechgroup', icon: <Facebook className="w-5 h-5" /> },
-    { name: 'Twitter', href: 'https://twitter.com/ziontechgroup', icon: <Twitter className="w-5 h-5" /> },
-    { name: 'LinkedIn', href: 'https://www.linkedin.com/company/ziontechgroup', icon: <Linkedin className="w-5 h-5" /> },
-    { name: 'Instagram', href: 'https://www.instagram.com/ziontechgroup', icon: <Instagram className="w-5 h-5" /> },
-    { name: 'YouTube', href: 'https://www.youtube.com/@ziontechgroup', icon: <Youtube className="w-5 h-5" /> },
-    { name: 'GitHub', href: 'https://github.com/ziontechgroup', icon: <Github className="w-5 h-5" /> }
+    { name: 'Facebook', href: 'https://ziontechgroup.com', icon: <Facebook className="w-5 h-5" /> },
+    { name: 'Twitter', href: 'https://ziontechgroup.com', icon: <Twitter className="w-5 h-5" /> },
+    { name: 'LinkedIn', href: 'https://ziontechgroup.com', icon: <Linkedin className="w-5 h-5" /> },
+    { name: 'Instagram', href: 'https://ziontechgroup.com', icon: <Instagram className="w-5 h-5" /> },
+    { name: 'YouTube', href: 'https://ziontechgroup.com', icon: <Youtube className="w-5 h-5" /> },
+    { name: 'GitHub', href: 'https://ziontechgroup.com', icon: <Github className="w-5 h-5" /> }
   ];
 
   const stats = [

@@ -7,7 +7,6 @@ import { useScrollToTop } from "./hooks";
 import { WhitelabelProvider } from "./context/WhitelabelContext";
 import { Toaster } from "./components/ui/toaster";
 import { Toaster as SonnerToaster } from "./components/ui/sonner";
-import { PageLoader } from "./components/ui/loading-spinner";
 import {
   AuthRoutes,
   DashboardRoutes,
@@ -21,29 +20,27 @@ import {
   CommunityRoutes,
   DeveloperRoutes
 } from './routes';
-
-// Lazy load pages with proper error boundaries
-const Home = React.lazy(() => import('./pages/Home').catch(() => ({ default: () => <div>Error loading page</div> })));
-const AIMatcherPage = React.lazy(() => import('./pages/AIMatcher').catch(() => ({ default: () => <div>Error loading page</div> })));
-const TalentDirectory = React.lazy(() => import('./pages/TalentDirectory').catch(() => ({ default: () => <div>Error loading page</div> })));
-const TalentsPage = React.lazy(() => import('./pages/TalentsPage').catch(() => ({ default: () => <div>Error loading page</div> })));
-const ServicesPage = React.lazy(() => import('./pages/ServicesPage').catch(() => ({ default: () => <div>Error loading page</div> })));
-const EquipmentPage = React.lazy(() => import('./pages/EquipmentPage').catch(() => ({ default: () => <div>Error loading page</div> })));
-const EquipmentDetail = React.lazy(() => import('./pages/EquipmentDetail').catch(() => ({ default: () => <div>Error loading page</div> })));
-const Analytics = React.lazy(() => import('./pages/Analytics').catch(() => ({ default: () => <div>Error loading page</div> })));
-const MobileLaunchPage = React.lazy(() => import('./pages/MobileLaunchPage').catch(() => ({ default: () => <div>Error loading page</div> })));
-const CommunityPage = React.lazy(() => import('./pages/CommunityPage').catch(() => ({ default: () => <div>Error loading page</div> })));
-const Categories = React.lazy(() => import('./pages/Categories').catch(() => ({ default: () => <div>Error loading page</div> })));
-const Blog = React.lazy(() => import('./pages/Blog').catch(() => ({ default: () => <div>Error loading page</div> })));
-const BlogPost = React.lazy(() => import('./pages/BlogPost').catch(() => ({ default: () => <div>Error loading page</div> })));
-const PartnersPage = React.lazy(() => import('./pages/Partners').catch(() => ({ default: () => <div>Error loading page</div> })));
-const Login = React.lazy(() => import('./pages/Login').catch(() => ({ default: () => <div>Error loading page</div> })));
-const Signup = React.lazy(() => import('./pages/Signup').catch(() => ({ default: () => <div>Error loading page</div> })));
-const ITOnsiteServicesPage = React.lazy(() => import('./pages/ITOnsiteServicesPage').catch(() => ({ default: () => <div>Error loading page</div> })));
-const OpenAppRedirect = React.lazy(() => import('./pages/OpenAppRedirect').catch(() => ({ default: () => <div>Error loading page</div> })));
-const ContactPage = React.lazy(() => import('./pages/Contact').catch(() => ({ default: () => <div>Error loading page</div> })));
-const ZionHireAI = React.lazy(() => import('./pages/ZionHireAI').catch(() => ({ default: () => <div>Error loading page</div> })));
-const RequestQuotePage = React.lazy(() => import('./pages/RequestQuote').catch(() => ({ default: () => <div>Error loading page</div> })));
+const Home = React.lazy(() => import('./pages/Home'));
+const AIMatcherPage = React.lazy(() => import('./pages/AIMatcher'));
+const TalentDirectory = React.lazy(() => import('./pages/TalentDirectory'));
+const TalentsPage = React.lazy(() => import('./pages/TalentsPage'));
+const ServicesPage = React.lazy(() => import('./pages/ServicesPage'));
+const EquipmentPage = React.lazy(() => import('./pages/EquipmentPage'));
+const Analytics = React.lazy(() => import('./pages/Analytics'));
+const MobileLaunchPage = React.lazy(() => import('./pages/MobileLaunchPage'));
+const CommunityPage = React.lazy(() => import('./pages/CommunityPage'));
+const Categories = React.lazy(() => import('./pages/Categories'));
+const Blog = React.lazy(() => import('./pages/Blog'));
+const BlogPost = React.lazy(() => import('./pages/BlogPost'));
+const PartnersPage = React.lazy(() => import('./pages/Partners'));
+const Login = React.lazy(() => import('./pages/Login'));
+const Signup = React.lazy(() => import('./pages/Signup'));
+const ITOnsiteServicesPage = React.lazy(() => import('./pages/ITOnsiteServicesPage'));
+const OpenAppRedirect = React.lazy(() => import('./pages/OpenAppRedirect'));
+const ContactPage = React.lazy(() => import('./pages/Contact'));
+const ZionHireAI = React.lazy(() => import('./pages/ZionHireAI'));
+const RequestQuotePage = React.lazy(() => import('./pages/RequestQuote'));
+const EquipmentDetail = React.lazy(() => import('./pages/EquipmentDetail'));
 
 const baseRoutes = [
   { path: '/', element: <Home /> },
@@ -76,7 +73,7 @@ const App = () => {
   return (
     <WhitelabelProvider>
       <ThemeProvider defaultTheme="dark">
-        <Suspense fallback={<PageLoader />}>
+        <Suspense fallback={<div className="p-4 text-center">Loading...</div>}>
           <Routes>
             {baseRoutes.map(({ path, element }) => (
               <Route key={path} path={path} element={element} />

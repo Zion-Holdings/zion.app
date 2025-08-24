@@ -1,5 +1,25 @@
 import React from 'react';
-  const featuredNews = [
+import Head from 'next/head';
+import { motion } from 'framer-motion';
+import { 
+  Newspaper, 
+  Calendar, 
+  User, 
+  Tag, 
+  ArrowRight, 
+  ExternalLink,
+  TrendingUp,
+  Award,
+  Rocket,
+  Globe,
+  Brain,
+  Atom,
+  Zap
+} from 'lucide-react';
+import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
+
+const NewsPage: React.FC = () => {
+  const newsArticles = [
     {
       title: 'Zion Tech Group Launches Revolutionary AI Consciousness Platform',
       excerpt: 'Breakthrough technology that brings emotional intelligence and self-awareness to artificial intelligence systems.',
@@ -54,7 +74,7 @@ import React from 'react';
 import Link from 'next/link';
 =======
   return (
-    <UltraFuturisticBackground>
+    <UltraAdvancedFuturisticBackground>
       <div className="min-h-screen">
         <Head>
           <title>News & Updates - Zion Tech Group | Latest Technology Insights & Company Updates</title>
@@ -1375,8 +1395,6 @@ export default function News() {
           </div>
         </section>
       </div>
-    </Layout>
-=======
       {/* CTA Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
@@ -1412,6 +1430,8 @@ export default function News() {
         </div>
       </section>
     </div>
+=======
+    </UltraAdvancedFuturisticBackground>
   );
 }
 =======

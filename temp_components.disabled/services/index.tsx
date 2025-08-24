@@ -1,8 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import React from 'react';
-import SEO from '../../components/SEO';
-import UltraFuturisticBackground from '../../components/ui/UltraFuturisticBackground';
+import UltraAdvancedFuturisticBackground from '../../components/ui/UltraAdvancedFuturisticBackground';
 import Card from '../../components/ui/Card';
 import Link from 'next/link';
 import { enhancedRealMicroSaasServices } from '../../data/enhanced-real-micro-saas-services';
@@ -17,7 +15,14 @@ import { moreRealServices2025 } from '../../data/more-real-services-2025';
 import { realOperationalServices } from '../../data/real-operational-services';
 import { verified2025Additions } from '../../data/verified-2025-additions';
 import { realServicesQ12025 } from '../../data/real-services-q1-2025'
-import { newVerifiedServicesQ22025 } from '../../data/real-verified-services-q2-2025'
+import { realEnterpriseServices2025 } from '../../data/real-enterprise-services-2025';
+import { realMarketAugmentations2025 } from '../../data/real-market-augmentations-2025';
+import { verifiedRealServices2025Batch2 } from '../../data/verified-real-services-2025-batch2';
+import { additionalLiveServices2025 } from '../../data/additional-live-services-2025';
+import { real2025Q2Additions } from '../../data/real-2025-q2-additions';
+import { augmentedServicesBatch3 } from '../../data/real-augmented-services-2025-batch3';
+import { realServicesQ22025 } from '../../data/real-services-q2-2025';
+import { real2025Q3Additions } from '../../data/real-2025-q3-additions';
 
 const mapLocalToServiceItem = (item: any): ServiceItem => ({
   slug: item.slug,
@@ -39,18 +44,25 @@ const ServicesPage: NextPage = () => {
 export default function ServicesIndexPage() {
   const all = (enhancedRealMicroSaasServices as unknown[])
     .concat(
-      extraServices as any[],
-      additionalEnhancedServices as any[],
-      newlyAddedServices as any[],
-      curatedMarketServices as any[],
-      realMarketServices as any[],
-      new2025Services as any[],
-      marketValidatedServices as any[],
-      moreRealServices2025 as any[],
-      realOperationalServices as any[],
-      verified2025Additions as any[],
-      realServicesQ12025 as any[],
-      newVerifiedServicesQ22025 as any[]
+      extraServices as unknown[],
+      additionalEnhancedServices as unknown[],
+      newlyAddedServices as unknown[],
+      curatedMarketServices as unknown[],
+      realMarketServices as unknown[],
+      new2025Services as unknown[],
+      marketValidatedServices as unknown[],
+      moreRealServices2025 as unknown[],
+      realOperationalServices as unknown[],
+      verified2025Additions as unknown[],
+      realServicesQ12025 as unknown[],
+      realEnterpriseServices2025 as unknown[],
+      realMarketAugmentations2025 as unknown[],
+      verifiedRealServices2025Batch2 as unknown[],
+      additionalLiveServices2025 as unknown[],
+      real2025Q2Additions as unknown[],
+      augmentedServicesBatch3 as unknown[],
+      realServicesQ22025 as unknown[],
+      real2025Q3Additions as unknown[]
     );
   const byCategory: Record<string, unknown[]> = {};
   for (const c of categories) byCategory[c] = [];
@@ -124,7 +136,7 @@ export default function ServicesIndexPage() {
   };
 
   return (
-    <UltraFuturisticBackground variant="quantum" intensity={1.5}>
+    <UltraAdvancedFuturisticBackground>
       <Head>
         <title>Zion AI Marketplace - Services</title>
         <meta name="description" content="Discover curated IT services. Request quotes with AI-assisted summaries." />
@@ -146,6 +158,9 @@ export default function ServicesIndexPage() {
           </div>
         </div>
       </div>
+    </UltraAdvancedFuturisticBackground>
+  );
+}
 
       <QuoteRequestModal
         open={modalOpen}
