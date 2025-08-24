@@ -170,7 +170,7 @@ export default function Home() {
             </div>
 
             {/* Contact Information Banner */}
-            <div className="bg-gradient-to-r from-zion-purple/20 to-zion-cyan/20 border border-zion-purple/30 rounded-2xl p-8 mb-20">
+            <div className="bg-gradient-to-r from-zion-blue-dark/20 to-zion-cyan/20 border border-zion-blue-light/30 rounded-2xl p-8 mb-20">
               <div className="text-center mb-8">
                 <h3 className="text-2xl font-bold text-white mb-4">Ready to Get Started?</h3>
                 <p className="text-zion-slate-light max-w-2xl mx-auto">
@@ -225,5 +225,25 @@ export default function Home() {
         </div>
       </SimpleFuturisticBackground>
     </>
+=======
+      <HeroSection />
+      
+      <QuickAccess />
+      
+      <FeatureCTAs />
+      
+      <FeatureHighlights />
+      
+      <TrustIndicators />
+      
+      <SecurityHeaders />
+      
+      <CategoriesSection />
+      <BenefitsSection />
+      <HowItWorksSection />
+      <FeaturedListingsSection />
+      <NewsletterSection />
+    </div>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-9715
   );
 }
