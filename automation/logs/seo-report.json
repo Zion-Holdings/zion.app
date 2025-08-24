@@ -1,0 +1,41 @@
+{
+  "timestamp": "2025-08-23T23:59:59.120Z",
+  "issues": [
+    {
+      "file": "/home/runner/work/zion.app/zion.app/pages/404.tsx",
+      "issues": [
+        "missing-title",
+        "missing-description",
+        "missing-og",
+        "missing-structured-data"
+      ]
+    },
+    {
+      "file": "/home/runner/work/zion.app/zion.app/pages/_app.tsx",
+      "issues": [
+        "missing-title",
+        "missing-description",
+        "missing-og",
+        "missing-structured-data"
+      ]
+    },
+    {
+      "file": "/home/runner/work/zion.app/zion.app/pages/_document.tsx",
+      "issues": [
+        "missing-title",
+        "missing-description",
+        "missing-og",
+        "missing-structured-data"
+      ]
+    },
+    {
+      "file": "/home/runner/work/zion.app/zion.app/pages/index.tsx",
+      "issues": [
+        "missing-title",
+        "missing-description",
+        "missing-og",
+        "missing-structured-data"
+      ]
+    }
+  ]
+}
