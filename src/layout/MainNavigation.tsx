@@ -39,6 +39,11 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
       matches: (path: string) => path === '/'
     },
     {
+      key: 'services',
+      href: '/comprehensive-services',
+      matches: (path: string) => path.startsWith('/comprehensive-services') || path.startsWith('/services')
+    },
+    {
       key: 'marketplace',
       href: '/marketplace',
       matches: (path: string) => path.startsWith('/marketplace')

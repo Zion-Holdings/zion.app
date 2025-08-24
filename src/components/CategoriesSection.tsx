@@ -1,22 +1,22 @@
 
 import { GradientHeading } from "./GradientHeading";
 import { Link } from "react-router-dom";
-import { Briefcase, HardDrive, Lightbulb, Users } from "lucide-react";
+import { Briefcase, HardDrive, Lightbulb, Users, Brain } from "lucide-react";
 
 const categories = [
   {
-    title: "Services",
-    description: "On-demand IT support, consulting, development, and more",
+    title: "Comprehensive Services",
+    description: "Micro SAAS, IT services, and AI solutions",
     icon: <Briefcase className="w-10 h-10" />,
-    link: "/services",
+    link: "/comprehensive-services",
     color: "from-purple-500 to-indigo-600",
   },
   {
-    title: "Micro SAAS",
-    description: "AI-powered tools, IT services, and business automation solutions",
-    icon: <Briefcase className="w-10 h-10" />,
-    link: "/micro-saas-services",
-    color: "from-emerald-500 to-green-600",
+    title: "AI Solutions",
+    description: "Cutting-edge AI and machine learning services",
+    icon: <Brain className="w-10 h-10" />,
+    link: "/comprehensive-services",
+    color: "from-pink-500 to-rose-600",
   },
   {
     title: "Talents",
@@ -32,19 +32,24 @@ const categories = [
     link: "/equipment",
     color: "from-amber-500 to-orange-600",
   },
-  {
-    title: "Innovation",
-    description: "Discover cutting-edge solutions and tech breakthroughs",
-    icon: <Lightbulb className="w-10 h-10" />,
-    link: "/category/innovation",
-    color: "from-emerald-500 to-green-600",
-  },
 ];
 
 const specialServices = [
   {
     title: "IT Onsite Services",
     link: "/it-onsite-services"
+  },
+  {
+    title: "AI Development",
+    link: "/comprehensive-services"
+  },
+  {
+    title: "Cloud Migration",
+    link: "/comprehensive-services"
+  },
+  {
+    title: "Cybersecurity",
+    link: "/comprehensive-services"
   }
 ];
 
@@ -54,36 +59,32 @@ interface CategoriesSectionProps {
 
 export function CategoriesSection({ showTitle = true }: CategoriesSectionProps) {
   return (
-    <section className="py-20 relative overflow-hidden">
-      {/* Futuristic Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-zion-blue via-zion-slate to-zion-purple-dark"></div>
-      <div className="absolute inset-0 cyber-grid opacity-10"></div>
-      
-      <div className="container mx-auto px-4 relative z-10">
+    <section className="py-20 bg-zion-blue">
+      <div className="container mx-auto px-4">
         {showTitle && (
           <div className="text-center mb-16">
-            <GradientHeading className="text-4xl md:text-5xl">Explore Categories</GradientHeading>
-            <p className="text-zion-cyan text-xl mt-4 max-w-3xl mx-auto">
+            <GradientHeading>Explore Categories</GradientHeading>
+            <p className="text-zion-slate-light text-lg mt-4 max-w-2xl mx-auto">
               Discover our comprehensive ecosystem of tech services, talent, equipment, and innovation
             </p>
           </div>
         )}
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {categories.map((category) => (
             <Link 
               key={category.title} 
               to={category.link} 
               className="group block"
             >
-              <div className="rounded-lg overflow-hidden h-full border border-zion-blue-light bg-zion-blue-dark/80 backdrop-blur-md p-6 transition-all duration-300 hover:border-zion-purple/50 hover:translate-y-[-5px] hover:bg-white/10 hover:scale-105 group-hover:shadow-2xl group-hover:shadow-zion-purple/20">
-                <div className={`rounded-full w-16 h-16 bg-gradient-to-br ${category.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+              <div className="rounded-lg overflow-hidden h-full border border-zion-blue-light bg-zion-blue-dark p-6 transition-all duration-300 hover:border-zion-purple/50 hover:translate-y-[-5px]">
+                <div className={`rounded-full w-16 h-16 bg-gradient-to-br ${category.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
                   <div className="text-white">
                     {category.icon}
                   </div>
                 </div>
-                <h3 className="text-white text-xl font-bold mb-2 group-hover:text-zion-cyan transition-colors">{category.title}</h3>
-                <p className="text-zion-slate-light group-hover:text-zion-cyan/80 transition-colors">{category.description}</p>
+                <h3 className="text-white text-xl font-bold mb-2">{category.title}</h3>
+                <p className="text-zion-slate-light">{category.description}</p>
               </div>
             </Link>
           ))}
