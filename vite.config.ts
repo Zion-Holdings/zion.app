@@ -29,5 +29,25 @@ export default defineConfig({
     alias: {
       '@': path.resolve(__dirname, './src')
     }
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom', 'react-router-dom'],
+          utils: ['clsx', 'tailwind-merge', 'class-variance-authority', 'framer-motion', 'lucide-react'],
+          forms: ['react-hook-form', '@hookform/resolvers', 'zod'],
+          charts: ['recharts'],
+          pdf: ['jspdf', 'jspdf-autotable'],
+          i18n: ['i18next', 'react-i18next', 'i18next-browser-languagedetector']
+        }
+      }
+    },
+    chunkSizeWarningLimit: 1000,
+    sourcemap: false,
+    minify: 'esbuild'
+  },
+  optimizeDeps: {
+    include: ['react', 'react-dom', 'react-router-dom']
   }
 })
