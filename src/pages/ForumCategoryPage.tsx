@@ -26,6 +26,7 @@ const categoriesInfo: Record<string, ForumCategoryInfo> = {
     id: "getting-hired",
     name: "Getting Hired",
     description: "Tips, strategies, and questions about getting hired on the platform.",
+    postCount: 45,
     adminOnly: false,
     icon: "Briefcase"
   },
@@ -33,6 +34,7 @@ const categoriesInfo: Record<string, ForumCategoryInfo> = {
     id: "project-help",
     name: "Project Help",
     description: "Get help with your ongoing projects and collaboration.",
+    postCount: 67,
     adminOnly: false,
     icon: "MessageSquare"
   },
@@ -40,6 +42,7 @@ const categoriesInfo: Record<string, ForumCategoryInfo> = {
     id: "ai-tools",
     name: "AI Tools Discussion",
     description: "Discuss AI tools, frameworks, and best practices.",
+    postCount: 89,
     adminOnly: false,
     icon: "Code"
   },
@@ -47,6 +50,7 @@ const categoriesInfo: Record<string, ForumCategoryInfo> = {
     id: "feedback",
     name: "Feedback & Feature Requests",
     description: "Share your feedback and suggest new features.",
+    postCount: 23,
     adminOnly: false,
     icon: "FileText"
   },
@@ -54,6 +58,7 @@ const categoriesInfo: Record<string, ForumCategoryInfo> = {
     id: "announcements",
     name: "Announcements",
     description: "Official announcements from the Zion team.",
+    postCount: 12,
     adminOnly: true,
     icon: "Megaphone"
   }
@@ -81,11 +86,10 @@ function CategoryContent({
 }) {
   const [searchQuery, setSearchQuery] = useState("");
   const {
-    data: posts = [],
-    isPending: loading,
-    error,
+    posts = [],
+    loading,
   } = usePostsByCategory(categoryId);
-  const errorMessage = error instanceof Error ? error.message : null;
+  const errorMessage = null;
 
   const filteredPosts = searchQuery
     ? posts.filter((post) =>

@@ -8,7 +8,7 @@ interface AvatarProps {
 
 interface AvatarImageProps {
   src: string;
-  alt: string;
+  alt?: string;
   className?: string;
 }
 
@@ -17,28 +17,28 @@ interface AvatarFallbackProps {
   className?: string;
 }
 
-export const Avatar: React.FC<AvatarProps> = ({ children, className }) => {
+export function Avatar({ children, className = '' }: AvatarProps) {
   return (
-    <div className={cn("relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full", className)}>
+    <div className={`relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full ${className}`}>
       {children}
     </div>
   );
-};
+}
 
-export const AvatarImage: React.FC<AvatarImageProps> = ({ src, alt, className }) => {
+export function AvatarImage({ src, alt = '', className = '' }: AvatarImageProps) {
   return (
     <img
       src={src}
       alt={alt}
-      className={cn("aspect-square h-full w-full", className)}
+      className={`aspect-square h-full w-full ${className}`}
     />
   );
-};
+}
 
-export const AvatarFallback: React.FC<AvatarFallbackProps> = ({ children, className }) => {
+export function AvatarFallback({ children, className = '' }: AvatarFallbackProps) {
   return (
-    <div className={cn("flex h-full w-full items-center justify-center rounded-full bg-muted", className)}>
+    <div className={`flex h-full w-full items-center justify-center rounded-full bg-zion-slate ${className}`}>
       {children}
     </div>
   );
-};
+}
