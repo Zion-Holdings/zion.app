@@ -65,37 +65,44 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <div className="bg-gradient-to-br from-zion-slate-dark via-zion-slate to-zion-blue-dark text-white py-20">
-        <div className="container mx-auto px-4 text-center">
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-zion-purple/20 to-zion-cyan/20 border border-zion-purple/30 rounded-full px-4 py-2 mb-6">
+      <div className="relative bg-gradient-to-br from-zion-slate-dark via-zion-slate to-zion-blue-dark text-white py-24 lg:py-32 overflow-hidden">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-zion-cyan/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-zion-purple/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-zion-cyan/5 rounded-full blur-3xl animate-pulse delay-500"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-zion-purple/20 to-zion-cyan/20 border border-zion-purple/30 rounded-full px-4 py-2 mb-8">
             <Sparkles className="h-4 w-4 text-zion-cyan" />
             <span className="text-zion-cyan text-sm font-medium">Innovation at Your Fingertips</span>
           </div>
           
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-8 leading-tight">
             Transform Your Business with
-            <span className="bg-gradient-to-r from-zion-cyan via-zion-purple-light to-zion-purple bg-clip-text text-transparent">
-              {" "}AI-Powered Solutions
+            <span className="block bg-gradient-to-r from-zion-cyan via-zion-purple-light to-zion-purple bg-clip-text text-transparent">
+              AI-Powered Solutions
             </span>
           </h1>
           
-          <p className="text-xl text-zion-slate-light max-w-3xl mx-auto mb-8 leading-relaxed">
+          <p className="text-lg md:text-xl lg:text-2xl text-zion-slate-light max-w-4xl mx-auto mb-10 leading-relaxed">
             Discover our comprehensive suite of AI services, IT solutions, and micro SAAS platforms 
             designed to accelerate your business growth and digital transformation.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link
               to="/all-services"
-              className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-zion-purple to-zion-cyan text-white font-semibold rounded-xl hover:from-zion-purple-light hover:to-zion-cyan-light transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-zion-cyan/30"
+              className="group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-zion-purple to-zion-cyan text-white font-semibold rounded-xl hover:from-zion-purple-light hover:to-zion-cyan-light transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-zion-cyan/30 transform"
             >
-              <Sparkles className="h-5 w-5" />
+              <Sparkles className="h-5 w-5 group-hover:rotate-12 transition-transform duration-300" />
               Explore Services
-              <ArrowRight className="h-5 w-5" />
+              <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
             </Link>
             <Link
               to="/contact"
-              className="inline-flex items-center gap-3 px-8 py-4 border border-zion-cyan text-zion-cyan font-semibold rounded-xl hover:bg-zion-cyan hover:text-white transition-all duration-300"
+              className="group inline-flex items-center gap-3 px-8 py-4 border-2 border-zion-cyan text-zion-cyan font-semibold rounded-xl hover:bg-zion-cyan hover:text-white transition-all duration-300 hover:scale-105"
             >
               Get Free Quote
             </Link>
@@ -104,18 +111,18 @@ export default function Home() {
       </div>
 
       {/* Stats Section */}
-      <div className="py-16 bg-white dark:bg-slate-800">
+      <div className="py-20 bg-white dark:bg-slate-800">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
             {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-zion-cyan to-zion-purple rounded-full flex items-center justify-center mx-auto mb-4">
-                  <stat.icon className="h-8 w-8 text-white" />
+              <div key={index} className="text-center group">
+                <div className="w-20 h-20 bg-gradient-to-br from-zion-cyan to-zion-purple rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-zion-cyan/25">
+                  <stat.icon className="h-10 w-10 text-white" />
                 </div>
-                <div className="text-3xl font-bold text-slate-900 dark:text-white mb-2">
+                <div className="text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-zion-cyan transition-colors duration-300">
                   {stat.value}
                 </div>
-                <div className="text-slate-600 dark:text-slate-400">
+                <div className="text-lg text-slate-600 dark:text-slate-400 font-medium">
                   {stat.label}
                 </div>
               </div>
@@ -125,29 +132,31 @@ export default function Home() {
       </div>
 
       {/* Services Section */}
-      <div className="py-16">
+      <div className="py-20 bg-slate-50 dark:bg-slate-900">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-6">
+          <div className="text-center mb-20">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-8">
               Our Featured Services
             </h2>
-            <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+            <p className="text-lg lg:text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
               From AI-powered content generation to enterprise cybersecurity, we have solutions 
               for every business need and budget.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="group bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden hover:shadow-xl hover:border-zion-cyan/50 transition-all duration-300"
+                className="group bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden hover:shadow-2xl hover:border-zion-cyan/50 transition-all duration-500 hover:-translate-y-2"
               >
-                <div className="p-6">
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="flex items-center gap-3">
-                      {feature.icon}
-                      <span className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium ${
+                <div className="p-8">
+                  <div className="flex items-start justify-between mb-6">
+                    <div className="flex items-center gap-4">
+                      <div className="group-hover:scale-110 transition-transform duration-300">
+                        {feature.icon}
+                      </div>
+                      <span className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium ${
                         feature.badge === 'New' ? 'bg-green-100 text-green-800' :
                         feature.badge === 'Featured' ? 'bg-blue-100 text-blue-800' :
                         feature.badge === 'Popular' ? 'bg-purple-100 text-purple-800' :
@@ -160,15 +169,15 @@ export default function Home() {
                     </div>
                   </div>
                   
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-zion-cyan transition-colors">
+                  <h3 className="text-xl lg:text-2xl font-bold text-slate-900 dark:text-white mb-4 group-hover:text-zion-cyan transition-colors duration-300">
                     {feature.title}
                   </h3>
                   
-                  <p className="text-slate-600 dark:text-slate-400 mb-4 leading-relaxed">
+                  <p className="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
                     {feature.description}
                   </p>
                   
-                  <p className="text-sm text-slate-500 dark:text-slate-500 mb-6">
+                  <p className="text-sm text-slate-500 dark:text-slate-500 mb-8 leading-relaxed">
                     {feature.details}
                   </p>
                   
@@ -177,58 +186,64 @@ export default function Home() {
                     className="inline-flex items-center gap-2 text-zion-cyan hover:text-zion-cyan-dark font-medium transition-colors group-hover:gap-3"
                   >
                     Learn More
-                    <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
                   </Link>
                 </div>
               </div>
             ))}
           </div>
           
-          <div className="text-center mt-12">
+          <div className="text-center mt-16">
             <Link
               to="/all-services"
-              className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-zion-purple to-zion-cyan text-white font-semibold rounded-xl hover:from-zion-purple-light hover:to-zion-cyan-light transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-zion-cyan/30"
+              className="group inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-zion-purple to-zion-cyan text-white font-semibold rounded-xl hover:from-zion-purple-light hover:to-zion-cyan-light transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-zion-cyan/30 text-lg"
             >
-              <Sparkles className="h-5 w-5" />
+              <Sparkles className="h-6 w-6 group-hover:rotate-12 transition-transform duration-300" />
               View All Services
-              <ArrowRight className="h-5 w-5" />
+              <ArrowRight className="h-6 w-6 group-hover:translate-x-1 transition-transform duration-300" />
             </Link>
           </div>
         </div>
       </div>
 
       {/* CTA Section */}
-      <div className="py-16 bg-gradient-to-r from-zion-purple/20 to-zion-cyan/20 border-t border-zion-purple/30">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-white mb-6">
+      <div className="py-20 bg-gradient-to-r from-zion-purple/20 to-zion-cyan/20 border-t border-zion-purple/30 relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-zion-cyan/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-0 left-0 w-64 h-64 bg-zion-purple/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-8">
             Ready to Transform Your Business?
           </h2>
-          <p className="text-xl text-zion-slate-light max-w-2xl mx-auto mb-8">
+          <p className="text-lg md:text-xl lg:text-2xl text-slate-700 dark:text-slate-300 max-w-3xl mx-auto mb-10 leading-relaxed">
             Let's discuss how our innovative solutions can drive growth, efficiency, 
             and competitive advantage for your organization.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
             <Link
               to="/contact"
-              className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-zion-purple to-zion-cyan text-white font-semibold rounded-xl hover:from-zion-purple-light hover:to-zion-cyan-light transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-zion-cyan/30"
+              className="group inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-zion-purple to-zion-cyan text-white font-semibold rounded-xl hover:from-zion-purple-light hover:to-zion-cyan-light transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-zion-cyan/30 text-lg"
             >
-              <Sparkles className="h-5 w-5" />
+              <Sparkles className="h-6 w-6 group-hover:rotate-12 transition-transform duration-300" />
               Get Started Today
-              <ArrowRight className="h-5 w-5" />
+              <ArrowRight className="h-6 w-6 group-hover:translate-x-1 transition-transform duration-300" />
             </Link>
             <a
               href="tel:+13024640950"
-              className="inline-flex items-center gap-3 px-8 py-4 border border-zion-cyan text-zion-cyan font-semibold rounded-xl hover:bg-zion-cyan hover:text-white transition-all duration-300"
+              className="group inline-flex items-center gap-3 px-10 py-5 border-2 border-zion-cyan text-zion-cyan font-semibold rounded-xl hover:bg-zion-cyan hover:text-white transition-all duration-300 hover:scale-105 text-lg"
             >
               Call +1 302 464 0950
             </a>
           </div>
           
-          <div className="mt-8 text-zion-slate-light">
-            <p>📍 364 E Main St STE 1008, Middletown DE 19709</p>
-            <p>✉️ kleber@ziontechgroup.com</p>
-            <p>🌐 <a href="https://ziontechgroup.com" className="text-zion-cyan hover:underline">ziontechgroup.com</a></p>
+          <div className="mt-12 text-slate-700 dark:text-slate-300 space-y-2">
+            <p className="text-lg">📍 364 E Main St STE 1008, Middletown DE 19709</p>
+            <p className="text-lg">✉️ kleber@ziontechgroup.com</p>
+            <p className="text-lg">🌐 <a href="https://ziontechgroup.com" className="text-zion-cyan hover:underline font-medium">ziontechgroup.com</a></p>
           </div>
         </div>
       </div>
