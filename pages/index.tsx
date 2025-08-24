@@ -32,6 +32,7 @@ import FinalIntegrationHub from '../components/FinalIntegrationHub';
 import EnhancedPerformanceMetrics from '../components/EnhancedPerformanceMetrics';
 import EnhancedSecurityDashboard from '../components/EnhancedSecurityDashboard';
 import AdvancedDataVisualization from '../components/AdvancedDataVisualization';
+import AdvancedNotificationCenter from '../components/AdvancedNotificationCenter';
 
 export default function HomePage() {
   const [_isMenuOpen, _setIsMenuOpen] = useState(false);
@@ -149,6 +150,16 @@ export default function HomePage() {
           }}
         />
       </Head>
+
+      {/* Advanced Notification Center */}
+      <AdvancedNotificationCenter 
+        maxNotifications={100}
+        autoDismiss={true}
+        dismissDelay={8000}
+        showUnreadCount={true}
+        enableSound={true}
+        position="top-right"
+      />
 
       {/* Hero Section */}
       <section className="relative overflow-hidden" aria-label="Hero">
