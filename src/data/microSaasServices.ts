@@ -1,229 +1,578 @@
-import { ProductListing } from "@/types/listings";
+export interface MicroSaasService {
+  id: string;
+  title: string;
+  description: string;
+  category: 'AI' | 'IT' | 'Development' | 'Business' | 'Security' | 'Analytics' | 'Automation' | 'Integration';
+  features: string[];
+  benefits: string[];
+  pricing: {
+    monthly: number;
+    yearly: number;
+    currency: string;
+    custom?: string;
+  };
+  marketPrice: {
+    min: number;
+    max: number;
+    currency: string;
+  };
+  website: string;
+  contact: {
+    email: string;
+    phone: string;
+    address: string;
+  };
+  tags: string[];
+  icon: string;
+  isPopular?: boolean;
+  isNew?: boolean;
+}
 
-export const MICRO_SAAS_SERVICES: ProductListing[] = [
+export const MICRO_SAAS_SERVICES: MicroSaasService[] = [
+  // AI Services
   {
-    id: "ai-crm-001",
-    title: "AI-Powered CRM System",
-    description: "Intelligent customer relationship management with predictive analytics, automated lead scoring, and personalized customer insights. Features include smart email campaigns, sales forecasting, and customer behavior analysis.",
-    price: "$299",
-    category: "AI Business Solutions",
-    images: ["https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800"],
-    rating: 4.8,
-    reviewCount: 127,
-    aiScore: 95,
-    link: "https://ziontechgroup.com"
+    id: 'ai-content-generator',
+    title: 'Zion AI Content Generator',
+    description: 'Advanced AI-powered content creation platform for blogs, social media, and marketing materials with industry-specific templates and SEO optimization.',
+    category: 'AI',
+    features: [
+      'Multi-language content generation',
+      'SEO-optimized writing',
+      'Industry-specific templates',
+      'Plagiarism detection',
+      'Content scheduling',
+      'Performance analytics',
+      'Team collaboration tools',
+      'API integration'
+    ],
+    benefits: [
+      'Save 80% of content creation time',
+      'Improve SEO rankings by 40%',
+      'Increase engagement by 60%',
+      'Reduce content costs by 70%',
+      '24/7 content generation capability',
+      'Consistent brand voice across all content'
+    ],
+    pricing: {
+      monthly: 49,
+      yearly: 490,
+      currency: 'USD',
+      custom: 'Enterprise plans available'
+    },
+    marketPrice: {
+      min: 29,
+      max: 199,
+      currency: 'USD'
+    },
+    website: 'https://ziontechgroup.com/ai-content-generator',
+    contact: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      address: '364 E Main St STE 1008 Middletown DE 19709'
+    },
+    tags: ['AI Writing', 'Content Marketing', 'SEO', 'Automation'],
+    icon: '🤖',
+    isPopular: true
   },
   {
-    id: "supply-chain-002",
-    title: "Smart Supply Chain Optimizer",
-    description: "End-to-end supply chain management with AI-driven demand forecasting, inventory optimization, and real-time tracking. Includes supplier management, cost analysis, and risk assessment tools.",
-    price: "$199",
-    category: "AI Business Solutions",
-    images: ["https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800"],
-    rating: 4.6,
-    reviewCount: 89,
-    aiScore: 92,
-    link: "https://ziontechgroup.com"
+    id: 'ai-chatbot-builder',
+    title: 'Zion AI Chatbot Builder',
+    description: 'No-code AI chatbot creation platform with natural language processing, multi-channel deployment, and advanced analytics for customer support automation.',
+    category: 'AI',
+    features: [
+      'Drag-and-drop chatbot builder',
+      'Natural language processing',
+      'Multi-language support',
+      'Integration with CRM systems',
+      'Advanced analytics dashboard',
+      'Custom branding options',
+      'API and webhook support',
+      '24/7 customer support'
+    ],
+    benefits: [
+      'Reduce customer support costs by 50%',
+      'Improve response time to under 1 second',
+      'Handle 1000+ conversations simultaneously',
+      'Increase customer satisfaction by 35%',
+      '24/7 availability without human intervention',
+      'Scalable solution for growing businesses'
+    ],
+    pricing: {
+      monthly: 79,
+      yearly: 790,
+      currency: 'USD',
+      custom: 'Custom enterprise solutions'
+    },
+    marketPrice: {
+      min: 49,
+      max: 299,
+      currency: 'USD'
+    },
+    website: 'https://ziontechgroup.com/ai-chatbot',
+    contact: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      address: '364 E Main St STE 1008 Middletown DE 19709'
+    },
+    tags: ['Chatbot', 'Customer Support', 'AI', 'Automation'],
+    icon: '💬',
+    isNew: true
   },
   {
-    id: "ai-marketing-003",
-    title: "AI Marketing Automation Suite",
-    description: "Comprehensive marketing automation platform with intelligent audience segmentation, personalized content generation, and performance optimization. Features A/B testing, ROI tracking, and multi-channel campaign management.",
-    price: "$399",
-    category: "AI Business Solutions",
-    images: ["https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800"],
-    rating: 4.9,
-    reviewCount: 156,
-    aiScore: 94,
-    link: "https://ziontechgroup.com"
+    id: 'ai-data-analytics',
+    title: 'Zion AI Data Analytics',
+    description: 'Intelligent data analysis platform that uses machine learning to uncover insights, predict trends, and generate actionable business intelligence reports.',
+    category: 'AI',
+    features: [
+      'Predictive analytics',
+      'Real-time data processing',
+      'Custom dashboard creation',
+      'Automated report generation',
+      'Data visualization tools',
+      'Machine learning models',
+      'API integrations',
+      'Advanced security protocols'
+    ],
+    benefits: [
+      'Identify business opportunities 30% faster',
+      'Reduce data analysis time by 75%',
+      'Improve decision accuracy by 45%',
+      'Predict market trends with 85% accuracy',
+      'Automated insights delivery',
+      'Scalable for enterprise data volumes'
+    ],
+    pricing: {
+      monthly: 99,
+      yearly: 990,
+      currency: 'USD',
+      custom: 'Volume-based pricing available'
+    },
+    marketPrice: {
+      min: 79,
+      max: 399,
+      currency: 'USD'
+    },
+    website: 'https://ziontechgroup.com/ai-analytics',
+    contact: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      address: '364 E Main St STE 1008 Middletown DE 19709'
+    },
+    tags: ['Data Analytics', 'Machine Learning', 'Business Intelligence', 'Predictive Analytics'],
+    icon: '📊'
+  },
+
+  // IT Services
+  {
+    id: 'cloud-migration-suite',
+    title: 'Zion Cloud Migration Suite',
+    description: 'Comprehensive cloud migration platform with automated assessment, planning, and execution tools for seamless transition to AWS, Azure, or Google Cloud.',
+    category: 'IT',
+    features: [
+      'Automated infrastructure assessment',
+      'Migration planning tools',
+      'Cost optimization analysis',
+      'Security compliance checks',
+      'Performance monitoring',
+      'Rollback capabilities',
+      'Multi-cloud support',
+      'Expert consultation included'
+    ],
+    benefits: [
+      'Reduce migration time by 60%',
+      'Cut cloud costs by 25-40%',
+      'Minimize downtime during migration',
+      'Ensure security compliance',
+      'Optimize performance automatically',
+      'Reduce migration risks by 80%'
+    ],
+    pricing: {
+      monthly: 149,
+      yearly: 1490,
+      currency: 'USD',
+      custom: 'Project-based pricing available'
+    },
+    marketPrice: {
+      min: 99,
+      max: 599,
+      currency: 'USD'
+    },
+    website: 'https://ziontechgroup.com/cloud-migration',
+    contact: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      address: '364 E Main St STE 1008 Middletown DE 19709'
+    },
+    tags: ['Cloud Migration', 'AWS', 'Azure', 'DevOps', 'Infrastructure'],
+    icon: '☁️',
+    isPopular: true
   },
   {
-    id: "cloud-infra-004",
-    title: "Cloud Infrastructure Manager",
-    description: "Enterprise-grade cloud infrastructure management with automated scaling, cost optimization, and security monitoring. Includes multi-cloud support, backup solutions, and disaster recovery planning.",
-    price: "$149",
-    category: "IT Infrastructure",
-    images: ["https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800"],
-    rating: 4.7,
-    reviewCount: 203,
-    aiScore: 88,
-    link: "https://ziontechgroup.com"
+    id: 'cybersecurity-monitor',
+    title: 'Zion Cybersecurity Monitor',
+    description: 'Advanced threat detection and response platform with real-time monitoring, automated incident response, and compliance reporting for comprehensive security.',
+    category: 'Security',
+    features: [
+      'Real-time threat detection',
+      'Automated incident response',
+      'Vulnerability scanning',
+      'Compliance reporting',
+      'Security analytics dashboard',
+      'Integration with SIEM systems',
+      '24/7 security monitoring',
+      'Expert security team support'
+    ],
+    benefits: [
+      'Detect threats 90% faster than traditional methods',
+      'Reduce false positives by 70%',
+      'Automate 80% of security responses',
+      'Ensure compliance with industry standards',
+      'Reduce security incident costs by 60%',
+      'Provide 24/7 security coverage'
+    ],
+    pricing: {
+      monthly: 199,
+      yearly: 1990,
+      currency: 'USD',
+      custom: 'Enterprise security packages'
+    },
+    marketPrice: {
+      min: 149,
+      max: 799,
+      currency: 'USD'
+    },
+    website: 'https://ziontechgroup.com/cybersecurity',
+    contact: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      address: '364 E Main St STE 1008 Middletown DE 19709'
+    },
+    tags: ['Cybersecurity', 'Threat Detection', 'Compliance', 'Incident Response'],
+    icon: '🔒'
   },
   {
-    id: "data-analytics-005",
-    title: "Advanced Data Analytics Platform",
-    description: "Powerful data analytics and business intelligence platform with real-time dashboards, predictive modeling, and automated reporting. Features data visualization, statistical analysis, and machine learning capabilities.",
-    price: "$249",
-    category: "Data Analytics",
-    images: ["https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800"],
-    rating: 4.8,
-    reviewCount: 178,
-    aiScore: 91,
-    link: "https://ziontechgroup.com"
+    id: 'it-automation-platform',
+    title: 'Zion IT Automation Platform',
+    description: 'Comprehensive IT automation solution for infrastructure management, deployment automation, and operational efficiency with low-code workflow builder.',
+    category: 'IT',
+    features: [
+      'Low-code workflow automation',
+      'Infrastructure as code',
+      'Deployment automation',
+      'Monitoring and alerting',
+      'Cost optimization',
+      'Multi-cloud management',
+      'API integrations',
+      'Custom automation templates'
+    ],
+    benefits: [
+      'Reduce manual IT tasks by 80%',
+      'Improve deployment speed by 10x',
+      'Reduce human errors by 90%',
+      'Cut operational costs by 40%',
+      'Increase system reliability by 99.9%',
+      'Enable 24/7 automated operations'
+    ],
+    pricing: {
+      monthly: 129,
+      yearly: 1290,
+      currency: 'USD',
+      custom: 'Custom automation solutions'
+    },
+    marketPrice: {
+      min: 89,
+      max: 499,
+      currency: 'USD'
+    },
+    website: 'https://ziontechgroup.com/it-automation',
+    contact: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      address: '364 E Main St STE 1008 Middletown DE 19709'
+    },
+    tags: ['IT Automation', 'DevOps', 'Infrastructure', 'Workflow Automation'],
+    icon: '⚙️'
+  },
+
+  // Development Services
+  {
+    id: 'api-gateway-manager',
+    title: 'Zion API Gateway Manager',
+    description: 'Enterprise-grade API management platform with rate limiting, authentication, monitoring, and analytics for building scalable microservices architecture.',
+    category: 'Development',
+    features: [
+      'API gateway management',
+      'Rate limiting and throttling',
+      'Authentication and authorization',
+      'API versioning',
+      'Performance monitoring',
+      'Developer portal',
+      'API analytics dashboard',
+      'Webhook management'
+    ],
+    benefits: [
+      'Reduce API development time by 50%',
+      'Improve API performance by 40%',
+      'Enhance security with built-in protection',
+      'Scale APIs automatically',
+      'Provide developer self-service',
+      'Monitor API usage and performance'
+    ],
+    pricing: {
+      monthly: 89,
+      yearly: 890,
+      currency: 'USD',
+      custom: 'Enterprise API solutions'
+    },
+    marketPrice: {
+      min: 59,
+      max: 299,
+      currency: 'USD'
+    },
+    website: 'https://ziontechgroup.com/api-gateway',
+    contact: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      address: '364 E Main St STE 1008 Middletown DE 19709'
+    },
+    tags: ['API Management', 'Microservices', 'Developer Tools', 'API Gateway'],
+    icon: '🔌'
   },
   {
-    id: "ai-dev-006",
-    title: "AI Development Framework",
-    description: "Complete AI development toolkit with pre-trained models, custom algorithm development, and deployment automation. Includes model training, testing frameworks, and production deployment tools.",
-    price: "$599",
-    category: "AI Development",
-    images: ["https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800"],
-    rating: 4.9,
-    reviewCount: 234,
-    aiScore: 96,
-    link: "https://ziontechgroup.com"
+    id: 'code-quality-analyzer',
+    title: 'Zion Code Quality Analyzer',
+    description: 'Advanced code analysis platform that automatically reviews code quality, identifies bugs, suggests improvements, and maintains coding standards across teams.',
+    category: 'Development',
+    features: [
+      'Automated code review',
+      'Bug detection and prevention',
+      'Code quality scoring',
+      'Security vulnerability scanning',
+      'Performance optimization suggestions',
+      'Team collaboration tools',
+      'Integration with CI/CD',
+      'Custom rule configuration'
+    ],
+    benefits: [
+      'Reduce bugs in production by 60%',
+      'Improve code quality by 40%',
+      'Speed up code reviews by 80%',
+      'Enhance team productivity by 30%',
+      'Maintain consistent coding standards',
+      'Prevent security vulnerabilities early'
+    ],
+    pricing: {
+      monthly: 69,
+      yearly: 690,
+      currency: 'USD',
+      custom: 'Team and enterprise plans'
+    },
+    marketPrice: {
+      min: 39,
+      max: 199,
+      currency: 'USD'
+    },
+    website: 'https://ziontechgroup.com/code-quality',
+    contact: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      address: '364 E Main St STE 1008 Middletown DE 19709'
+    },
+    tags: ['Code Quality', 'Code Review', 'Bug Detection', 'Development Tools'],
+    icon: '🔍'
+  },
+
+  // Business Services
+  {
+    id: 'business-process-automation',
+    title: 'Zion Business Process Automation',
+    description: 'End-to-end business process automation platform that streamlines workflows, reduces manual tasks, and improves operational efficiency across organizations.',
+    category: 'Business',
+    features: [
+      'Visual workflow designer',
+      'Process mapping and optimization',
+      'Document automation',
+      'Approval workflows',
+      'Integration with business systems',
+      'Performance analytics',
+      'Mobile app support',
+      'Custom business rules'
+    ],
+    benefits: [
+      'Reduce process time by 70%',
+      'Eliminate manual errors by 90%',
+      'Improve employee productivity by 50%',
+      'Reduce operational costs by 40%',
+      'Ensure process compliance',
+      'Enable remote work capabilities'
+    ],
+    pricing: {
+      monthly: 119,
+      yearly: 1190,
+      currency: 'USD',
+      custom: 'Custom automation solutions'
+    },
+    marketPrice: {
+      min: 79,
+      max: 399,
+      currency: 'USD'
+    },
+    website: 'https://ziontechgroup.com/business-automation',
+    contact: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      address: '364 E Main St STE 1008 Middletown DE 19709'
+    },
+    tags: ['Business Automation', 'Workflow Management', 'Process Optimization', 'Digital Transformation'],
+    icon: '🏢'
   },
   {
-    id: "fintech-007",
-    title: "FinTech Payment Gateway",
-    description: "Secure and scalable payment processing solution with fraud detection, multi-currency support, and compliance management. Features real-time transaction monitoring, automated reconciliation, and API integration.",
-    price: "$349",
-    category: "FinTech",
-    images: ["https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800"],
-    rating: 4.7,
-    reviewCount: 145,
-    aiScore: 89,
-    link: "https://ziontechgroup.com"
+    id: 'customer-relationship-manager',
+    title: 'Zion CRM Pro',
+    description: 'Intelligent customer relationship management platform with AI-powered insights, automation, and analytics for building stronger customer relationships.',
+    category: 'Business',
+    features: [
+      'Contact and lead management',
+      'Sales pipeline tracking',
+      'Email marketing automation',
+      'Customer analytics',
+      'AI-powered insights',
+      'Mobile CRM app',
+      'Integration capabilities',
+      'Custom reporting'
+    ],
+    benefits: [
+      'Increase sales by 30%',
+      'Improve customer retention by 25%',
+      'Reduce sales cycle time by 40%',
+      'Enhance customer satisfaction',
+      'Automate repetitive tasks',
+      'Gain actionable customer insights'
+    ],
+    pricing: {
+      monthly: 79,
+      yearly: 790,
+      currency: 'USD',
+      custom: 'Enterprise CRM solutions'
+    },
+    marketPrice: {
+      min: 49,
+      max: 299,
+      currency: 'USD'
+    },
+    website: 'https://ziontechgroup.com/crm-pro',
+    contact: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      address: '364 E Main St STE 1008 Middletown DE 19709'
+    },
+    tags: ['CRM', 'Sales Management', 'Customer Analytics', 'Marketing Automation'],
+    icon: '👥'
   },
+
+  // Analytics Services
   {
-    id: "healthtech-008",
-    title: "Healthcare Analytics Platform",
-    description: "Comprehensive healthcare data analytics platform with patient monitoring, predictive diagnostics, and treatment optimization. Includes HIPAA compliance, clinical decision support, and population health management.",
-    price: "$279",
-    category: "HealthTech",
-    images: ["https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800"],
-    rating: 4.8,
-    reviewCount: 167,
-    aiScore: 93,
-    link: "https://ziontechgroup.com"
+    id: 'real-time-analytics-dashboard',
+    title: 'Zion Real-Time Analytics Dashboard',
+    description: 'Live analytics platform that provides real-time insights into business performance, user behavior, and operational metrics with customizable dashboards.',
+    category: 'Analytics',
+    features: [
+      'Real-time data streaming',
+      'Custom dashboard builder',
+      'Interactive visualizations',
+      'Alert and notification system',
+      'Data export capabilities',
+      'Multi-user access control',
+      'API for custom integrations',
+      'Mobile-responsive design'
+    ],
+    benefits: [
+      'Make data-driven decisions instantly',
+      'Identify trends in real-time',
+      'Respond to issues immediately',
+      'Improve operational efficiency',
+      'Enhance customer experience',
+      'Optimize business performance'
+    ],
+    pricing: {
+      monthly: 89,
+      yearly: 890,
+      currency: 'USD',
+      custom: 'Custom analytics solutions'
+    },
+    marketPrice: {
+      min: 59,
+      max: 299,
+      currency: 'USD'
+    },
+    website: 'https://ziontechgroup.com/real-time-analytics',
+    contact: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      address: '364 E Main St STE 1008 Middletown DE 19709'
+    },
+    tags: ['Real-Time Analytics', 'Business Intelligence', 'Data Visualization', 'Performance Monitoring'],
+    icon: '📈'
   },
+
+  // Integration Services
   {
-    id: "ecommerce-009",
-    title: "E-commerce Optimization Suite",
-    description: "AI-powered e-commerce optimization with personalized recommendations, dynamic pricing, and inventory management. Features customer behavior analysis, conversion optimization, and multi-platform integration.",
-    price: "$799",
-    category: "E-commerce",
-    images: ["https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800"],
-    rating: 4.9,
-    reviewCount: 198,
-    aiScore: 94,
-    link: "https://ziontechgroup.com"
-  },
-  {
-    id: "edtech-010",
-    title: "Educational Technology Platform",
-    description: "Comprehensive learning management system with adaptive learning paths, progress tracking, and content creation tools. Includes virtual classrooms, assessment engines, and student analytics.",
-    price: "$199",
-    category: "EdTech",
-    images: ["https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800"],
-    rating: 4.6,
-    reviewCount: 134,
-    aiScore: 87,
-    link: "https://ziontechgroup.com"
-  },
-  {
-    id: "cybersecurity-011",
-    title: "AI Cybersecurity Suite",
-    description: "Advanced cybersecurity platform with threat detection, vulnerability assessment, and automated incident response. Features behavioral analysis, real-time monitoring, and compliance reporting.",
-    price: "$179",
-    category: "Cybersecurity",
-    images: ["https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800"],
-    rating: 4.8,
-    reviewCount: 189,
-    aiScore: 92,
-    link: "https://ziontechgroup.com"
-  },
-  {
-    id: "iot-platform-012",
-    title: "IoT Management Platform",
-    description: "Comprehensive IoT device management with real-time monitoring, data collection, and automated control systems. Includes device provisioning, security management, and analytics dashboards.",
-    price: "$449",
-    category: "IoT Solutions",
-    images: ["https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800"],
-    rating: 4.7,
-    reviewCount: 156,
-    aiScore: 90,
-    link: "https://ziontechgroup.com"
-  },
-  {
-    id: "blockchain-013",
-    title: "Blockchain Development Kit",
-    description: "Complete blockchain development toolkit with smart contract templates, deployment tools, and monitoring solutions. Features multi-chain support, security auditing, and performance optimization.",
-    price: "$899",
-    category: "Blockchain",
-    images: ["https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800"],
-    rating: 4.9,
-    reviewCount: 267,
-    aiScore: 95,
-    link: "https://ziontechgroup.com"
-  },
-  {
-    id: "api-gateway-014",
-    title: "API Gateway & Management",
-    description: "Enterprise API gateway with rate limiting, authentication, and monitoring capabilities. Includes API documentation, testing tools, and performance analytics for seamless integration.",
-    price: "$329",
-    category: "API Management",
-    images: ["https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800"],
-    rating: 4.6,
-    reviewCount: 123,
-    aiScore: 88,
-    link: "https://ziontechgroup.com"
-  },
-  {
-    id: "workflow-automation-015",
-    title: "Workflow Automation Engine",
-    description: "Intelligent workflow automation with process optimization, task scheduling, and performance analytics. Features visual workflow designer, integration connectors, and real-time monitoring.",
-    price: "$249",
-    category: "Business Process",
-    images: ["https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800"],
-    rating: 4.7,
-    reviewCount: 178,
-    aiScore: 91,
-    link: "https://ziontechgroup.com"
+    id: 'enterprise-integration-hub',
+    title: 'Zion Enterprise Integration Hub',
+    description: 'Comprehensive integration platform that connects all business systems, applications, and data sources for seamless data flow and process automation.',
+    category: 'Integration',
+    features: [
+      'Pre-built connectors for 500+ applications',
+      'Custom API development',
+      'Data transformation tools',
+      'Workflow automation',
+      'Real-time synchronization',
+      'Error handling and monitoring',
+      'Security and compliance',
+      'Scalable architecture'
+    ],
+    benefits: [
+      'Connect all business systems seamlessly',
+      'Eliminate data silos',
+      'Automate data synchronization',
+      'Reduce integration costs by 60%',
+      'Improve data accuracy by 95%',
+      'Enable real-time business operations'
+    ],
+    pricing: {
+      monthly: 159,
+      yearly: 1590,
+      currency: 'USD',
+      custom: 'Enterprise integration solutions'
+    },
+    marketPrice: {
+      min: 99,
+      max: 599,
+      currency: 'USD'
+    },
+    website: 'https://ziontechgroup.com/integration-hub',
+    contact: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      address: '364 E Main St STE 1008 Middletown DE 19709'
+    },
+    tags: ['System Integration', 'API Development', 'Data Synchronization', 'Workflow Automation'],
+    icon: '🔗'
   }
 ];
 
-export const MICRO_SAAS_CATEGORIES = [
-  { label: 'AI Business Solutions', value: 'ai-business-solutions' },
-  { label: 'IT Infrastructure', value: 'it-infrastructure' },
-  { label: 'Data Analytics', value: 'data-analytics' },
-  { label: 'AI Development', value: 'ai-development' },
-  { label: 'FinTech', value: 'fintech' },
-  { label: 'HealthTech', value: 'healthtech' },
-  { label: 'E-commerce', value: 'e-commerce' },
-  { label: 'EdTech', value: 'edtech' },
-  { label: 'Cybersecurity', value: 'cybersecurity' },
-  { label: 'IoT Solutions', value: 'iot-solutions' },
-  { label: 'Blockchain', value: 'blockchain' },
-  { label: 'API Management', value: 'api-management' },
-  { label: 'Business Process', value: 'business-process' }
-];
-
-export const MICRO_SAAS_SUBCATEGORIES = {
-  'ai-business-solutions': ['CRM & Sales', 'Supply Chain', 'Marketing'],
-  'it-infrastructure': ['Cloud Management', 'Server Administration', 'Network Security'],
-  'data-analytics': ['Business Intelligence', 'Predictive Analytics', 'Data Visualization'],
-  'ai-development': ['Machine Learning', 'Natural Language Processing', 'Computer Vision'],
-  'fintech': ['Payment Processing', 'Risk Management', 'Financial Analytics'],
-  'healthtech': ['Patient Management', 'Clinical Analytics', 'Telemedicine'],
-  'e-commerce': ['Platform Optimization', 'Customer Analytics', 'Inventory Management'],
-  'edtech': ['Learning Management', 'Student Analytics', 'Content Creation'],
-  'cybersecurity': ['Threat Detection', 'Vulnerability Assessment', 'Incident Response'],
-  'iot-solutions': ['Device Management', 'Data Collection', 'Control Systems'],
-  'blockchain': ['Smart Contracts', 'DeFi Solutions', 'Supply Chain Tracking'],
-  'api-management': ['Gateway Services', 'Documentation', 'Monitoring'],
-  'business-process': ['Workflow Automation', 'Process Optimization', 'Performance Analytics']
+export const getServiceByCategory = (category: string) => {
+  return MICRO_SAAS_SERVICES.filter(service => service.category.toLowerCase() === category.toLowerCase());
 };
 
-export const PRICING_TIERS = {
-  basic: { name: 'Basic', multiplier: 1 },
-  professional: { name: 'Professional', multiplier: 1.5 },
-  enterprise: { name: 'Enterprise', multiplier: 2.5 }
+export const getPopularServices = () => {
+  return MICRO_SAAS_SERVICES.filter(service => service.isPopular);
 };
 
-export const CONTACT_INFO = {
-  mobile: "+1 302 464 0950",
-  email: "kleber@ziontechgroup.com",
-  address: "364 E Main St STE 1008 Middletown DE 19709",
-  website: "https://ziontechgroup.com"
+export const getNewServices = () => {
+  return MICRO_SAAS_SERVICES.filter(service => service.isNew);
+};
+
+export const getServiceById = (id: string) => {
+  return MICRO_SAAS_SERVICES.find(service => service.id === id);
 };
