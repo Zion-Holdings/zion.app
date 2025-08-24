@@ -1,0 +1,16 @@
+import React from 'react';
+
+<<<<<<< HEAD
+type AuthLayoutProps = {
+  children?: React.ReactNode;
+};
+
+export default function AuthLayout({ children }: AuthLayoutProps) {
+  return <div className="min-h-screen grid place-items-center">{children}</div>;
+=======
+export type AuthLayoutProps = { children: React.ReactNode };
+
+export default function AuthLayout({ children }: AuthLayoutProps) {
+  return <div className="min-h-screen flex items-center justify-center">{children}</div>;
+>>>>>>> origin/cursor/build-zion-ai-talent-profile-system-f64e
+}

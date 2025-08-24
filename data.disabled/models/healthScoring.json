@@ -1,0 +1,14 @@
+{
+  "type": "health-scoring",
+  "weights": {
+    "linkAge": -0.1,
+    "failureRate": -0.5,
+    "responseTime": -0.2,
+    "domainReliability": 0.4,
+    "contentType": 0.1,
+    "updateFrequency": 0.1
+  },
+  "bias": 70,
+  "scale": 30,
+  "accuracy": 0.9425287356321839
+}

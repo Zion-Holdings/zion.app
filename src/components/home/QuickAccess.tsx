@@ -1,90 +1,40 @@
+import React from 'react';
 
-import React from "react";
-import { Link } from "react-router-dom";
-import { useTranslation } from "react-i18next";
-import { 
-  ArrowRight, 
-  Search, 
-  Users, 
-  Briefcase, 
-  Settings, 
-  MessageSquare, 
-  Smartphone 
-} from "lucide-react";
-
-export function QuickAccess() {
-  const { t } = useTranslation();
-  const quickLinks = [
-    {
-      title: t('home.tool_ai_matcher'),
-      description: t('home.tool_ai_matcher_desc'),
-      icon: <Search className="h-6 w-6 text-zion-cyan" />,
-      link: "/match"
-    },
-    {
-      title: t('home.tool_talent'),
-      description: t('home.tool_talent_desc'),
-      icon: <Users className="h-6 w-6 text-zion-purple" />,
-      link: "/talent"
-    },
-    {
-      title: t('home.tool_services'),
-      description: t('home.tool_services_desc'),
-      icon: <Briefcase className="h-6 w-6 text-zion-cyan" />,
-      link: "/services"
-    },
-    {
-      title: t('home.tool_equipment'),
-      description: t('home.tool_equipment_desc'),
-      icon: <Settings className="h-6 w-6 text-zion-purple" />,
-      link: "/equipment"
-    },
-    {
-      title: t('nav.community'),
-      description: t('home.tool_chat_desc'),
-      icon: <MessageSquare className="h-6 w-6 text-zion-cyan" />,
-      link: "/community"
-    },
-    {
-      title: "Mobile App",
-      description: "Zion on the go",
-      icon: <Smartphone className="h-6 w-6 text-zion-purple" />,
-      link: "/mobile-launch"
-    }
-  ];
-
+export const QuickAccess: React.FC = () => {
   return (
-    <section className="py-12 bg-zion-blue-dark">
+    <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-8">
-          <h2 className="text-2xl font-bold bg-gradient-to-r from-zion-cyan via-zion-purple-light to-zion-purple bg-clip-text text-transparent mb-2">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">
             Quick Access
           </h2>
-          <p className="text-zion-slate-light text-lg">
-            Jump directly to our most popular features
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Get started quickly with our most popular services and solutions
           </p>
         </div>
-        
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-6xl mx-auto">
-          {quickLinks.map((link, index) => (
-            <Link 
-              key={index} 
-              to={link.link} 
-              className="bg-zion-blue border border-zion-blue-light hover:border-zion-purple/50 rounded-lg p-4 transition-all duration-300 flex flex-col items-center text-center"
-            >
-              <div className="bg-zion-blue-dark rounded-full w-12 h-12 flex items-center justify-center mb-3">
-                {link.icon}
-              </div>
-              <h3 className="text-white font-medium mb-1">{link.title}</h3>
-              <p className="text-zion-slate-light text-xs mb-2">{link.description}</p>
-              <div className="flex items-center text-zion-cyan text-xs mt-auto">
-                <span>{t('general.explore')}</span>
-                <ArrowRight className="ml-1 h-3 w-3" />
-              </div>
-            </Link>
-          ))}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="text-center p-6 bg-gray-50 rounded-lg hover:bg-zion-purple hover:text-white transition-colors cursor-pointer">
+            <div className="text-3xl mb-4">🤖</div>
+            <h3 className="font-semibold mb-2">AI Services</h3>
+            <p className="text-sm">Chatbots, ML, Analytics</p>
+          </div>
+          <div className="text-center p-6 bg-gray-50 rounded-lg hover:bg-zion-purple hover:text-white transition-colors cursor-pointer">
+            <div className="text-3xl mb-4">☁️</div>
+            <h3 className="font-semibold mb-2">Cloud Solutions</h3>
+            <p className="text-sm">Migration, DevOps, Security</p>
+          </div>
+          <div className="text-center p-6 bg-gray-50 rounded-lg hover:bg-zion-purple hover:text-white transition-colors cursor-pointer">
+            <div className="text-3xl mb-4">💻</div>
+            <h3 className="font-semibold mb-2">IT Services</h3>
+            <p className="text-sm">Support, Maintenance, Consulting</p>
+          </div>
+          <div className="text-center p-6 bg-gray-50 rounded-lg hover:bg-zion-purple hover:text-white transition-colors cursor-pointer">
+            <div className="text-3xl mb-4">🚀</div>
+            <h3 className="font-semibold mb-2">Startup Solutions</h3>
+            <p className="text-sm">MVP, Growth, Scaling</p>
+          </div>
         </div>
       </div>
     </section>
   );
-}
+};

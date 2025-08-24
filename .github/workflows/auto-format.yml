@@ -1,0 +1,28 @@
+name: Auto Format
+
+on:
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  format:
+    # Only commit back for PRs from the same repository (not forks)
+    if: ${{ github.event_name == 'workflow_dispatch' || (github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository) }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Run Prettier
+        run: npx --yes prettier@3.3.3 --write "**/*.{js,css,html,json,md,yml,yaml}"
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore(format): apply Prettier"
+          branch: ${{ github.head_ref || github.ref_name }}

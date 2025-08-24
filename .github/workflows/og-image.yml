@@ -1,0 +1,30 @@
+name: Generate OG Image
+
+on:
+  push:
+    branches: [ main ]
+  schedule:
+    - cron: '0 1 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  og:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Generate image
+        env:
+          OG_NAME: Jordan Lee
+          OG_TITLE: Senior AI/ML Engineer
+        run: node scripts/generate-og.mjs
+      - name: Commit image
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'chore(og): update og-image.svg'
+          file_pattern: og-image.svg

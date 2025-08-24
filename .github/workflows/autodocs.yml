@@ -1,0 +1,41 @@
+name: Autodocs Generator
+
+on:
+  schedule:
+    - cron: '19 5 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  autodocs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+          cache: npm
+      - name: Install deps
+        run: npm ci
+      - name: Generate autodocs
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: node automation/autodocs.cjs
+      - name: Create Pull Request
+        id: cpr
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: 'chore(docs): update autodocs'
+          title: 'chore(docs): update autodocs'
+          body: 'Automated documentation summaries generated from code.'
+          branch: automation/autodocs
+          delete-branch: true
+          labels: automation, docs

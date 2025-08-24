@@ -24,8 +24,6 @@ import {
 import { HireNowCTA } from "@/components/profile/HireNowCTA";
 
 export default function ProfileDetail() {
-  // useParams is typed as `any` in this environment due to missing type
-  // definitions, so avoid passing a type argument to prevent TS2347.
   const { profileId } = useParams();
   const [profileData, setProfileData] = useState<any>(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -268,40 +266,19 @@ export default function ProfileDetail() {
               <h3 className="text-xl font-bold mb-4">Social</h3>
               <div className="flex flex-col space-y-3">
                 {profileData.github_url && (
-                  <a
-                    href={profileData.github_url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-zion-slate-light hover:text-zion-cyan"
-                    aria-label="GitHub"
-                    title="GitHub"
-                  >
+                  <a href={profileData.github_url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-zion-slate-light hover:text-zion-cyan">
                     <Github className="h-4 w-4" />
                     GitHub
                   </a>
                 )}
                 {profileData.twitter_url && (
-                  <a
-                    href={profileData.twitter_url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-zion-slate-light hover:text-zion-cyan"
-                    aria-label="Twitter"
-                    title="Twitter"
-                  >
+                  <a href={profileData.twitter_url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-zion-slate-light hover:text-zion-cyan">
                     <Twitter className="h-4 w-4" />
                     Twitter
                   </a>
                 )}
                 {profileData.linkedin_url && (
-                  <a
-                    href={profileData.linkedin_url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-zion-slate-light hover:text-zion-cyan"
-                    aria-label="LinkedIn"
-                    title="LinkedIn"
-                  >
+                  <a href={profileData.linkedin_url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-zion-slate-light hover:text-zion-cyan">
                     <Linkedin className="h-4 w-4" />
                     LinkedIn
                   </a>

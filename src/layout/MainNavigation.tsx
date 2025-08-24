@@ -29,9 +29,9 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
       matches: (path: string) => path.startsWith('/marketplace')
     },
     {
-      key: 'categories',
-      href: '/categories',
-      matches: (path: string) => path.startsWith('/categories')
+      key: 'services',
+      href: '/services',
+      matches: (path: string) => path.startsWith('/services') || path.startsWith('/it-onsite-services')
     },
     {
       key: 'talent',
@@ -41,12 +41,17 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
     {
       key: 'equipment',
       href: '/equipment',
-      matches: (path: string) => path.startsWith('/equipment')
+      matches: (path:string) => path.startsWith('/equipment')
     },
     {
       key: 'community',
       href: '/community',
       matches: (path: string) => path.startsWith('/community') || path.startsWith('/forum')
+    },
+    {
+      key: 'about',
+      href: '/about',
+      matches: (path: string) => path === '/about'
     }
   ];
 
