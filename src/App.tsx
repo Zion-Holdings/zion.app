@@ -2,15 +2,18 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Layout } from './layout/Layout';
 import { Home } from './pages/Home';
+import Services from './pages/Services';
+import About from './pages/About';
+import Contact from './pages/Contact';
 
 function App() {
   return (
     <Layout>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/services" element={<div className="min-h-screen bg-zion-blue-dark text-white flex items-center justify-center"><h1 className="text-4xl">Services Page</h1></div>} />
-        <Route path="/about" element={<div className="min-h-screen bg-zion-blue-dark text-white flex items-center justify-center"><h1 className="text-4xl">About Page</h1></div>} />
-        <Route path="/contact" element={<div className="min-h-screen bg-zion-blue-dark text-white flex items-center justify-center"><h1 className="text-4xl">Contact Page</h1></div>} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
     </Layout>
   );
