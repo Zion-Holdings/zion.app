@@ -89,6 +89,10 @@
     "data/temp_backup/**",
     "**/*.disabled",
     "hooks/**",
-    "dev-utils/**"
+    "dev-utils/**",
+    "__tests__/**",
+    "**/*.test.*",
+    "**/*.spec.*",
+    "plugins/**"
   ]
 }

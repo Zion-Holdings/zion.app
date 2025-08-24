@@ -33,6 +33,7 @@ var external_lucide_react_ = __webpack_require__(2423);
 const Header = ()=>{
     const { 0: isMenuOpen , 1: setIsMenuOpen  } = (0,external_react_.useState)(false);
     const { 0: isServicesOpen , 1: setIsServicesOpen  } = (0,external_react_.useState)(false);
+    const servicesRef = (0,external_react_.useRef)(null);
     const services = [
         {
             name: "AI Development",
@@ -65,8 +66,30 @@ const Header = ()=>{
             description: "Modern web applications"
         }, 
     ];
+    // Close dropdowns when clicking outside
+    (0,external_react_.useEffect)(()=>{
+        const handleClickOutside = (event)=>{
+            if (servicesRef.current && !servicesRef.current.contains(event.target)) {
+                setIsServicesOpen(false);
+            }
+        };
+        document.addEventListener("mousedown", handleClickOutside);
+        return ()=>document.removeEventListener("mousedown", handleClickOutside);
+    }, []);
+    // Handle escape key
+    (0,external_react_.useEffect)(()=>{
+        const handleEscapeKey = (event)=>{
+            if (event.key === "Escape") {
+                setIsServicesOpen(false);
+                setIsMenuOpen(false);
+            }
+        };
+        document.addEventListener("keydown", handleEscapeKey);
+        return ()=>document.removeEventListener("keydown", handleEscapeKey);
+    }, []);
     return /*#__PURE__*/ jsx_runtime_.jsx("header", {
         className: "fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-white/10",
+        role: "banner",
         children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
             className: "container mx-auto px-4",
             children: [
@@ -75,6 +98,7 @@ const Header = ()=>{
                     children: [
                         /*#__PURE__*/ jsx_runtime_.jsx((link_default()), {
                             href: "/",
+                            "aria-label": "Zion Tech Group - Homepage",
                             children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
                                 className: "flex items-center space-x-2",
                                 children: [
@@ -94,126 +118,157 @@ const Header = ()=>{
                         }),
                         /*#__PURE__*/ (0,jsx_runtime_.jsxs)("nav", {
                             className: "hidden md:flex items-center space-x-8",
+                            role: "navigation",
+                            "aria-label": "Main navigation",
                             children: [
                                 /*#__PURE__*/ jsx_runtime_.jsx((link_default()), {
                                     href: "/",
-                                    className: "text-white/80 hover:text-white transition-colors",
+                                    className: "text-white/80 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-black rounded-md px-2 py-1",
+                                    "aria-label": "Home page",
                                     children: "Home"
                                 }),
                                 /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
                                     className: "relative group",
+                                    ref: servicesRef,
                                     children: [
                                         /*#__PURE__*/ (0,jsx_runtime_.jsxs)("button", {
-                                            className: "flex items-center text-white/80 hover:text-white transition-colors",
-                                            onMouseEnter: ()=>setIsServicesOpen(true),
-                                            onMouseLeave: ()=>setIsServicesOpen(false),
+                                            className: "flex items-center text-white/80 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-black rounded-md px-2 py-1",
+                                            onClick: ()=>setIsServicesOpen(!isServicesOpen),
+                                            onKeyDown: (e)=>{
+                                                if (e.key === "Enter" || e.key === " ") {
+                                                    e.preventDefault();
+                                                    setIsServicesOpen(!isServicesOpen);
+                                                }
+                                            },
+                                            "aria-expanded": isServicesOpen,
+                                            "aria-haspopup": "true",
+                                            "aria-label": "Services menu",
                                             children: [
-                                                "Services",
+                                                /*#__PURE__*/ jsx_runtime_.jsx("span", {
+                                                    children: "Services"
+                                                }),
                                                 /*#__PURE__*/ jsx_runtime_.jsx(external_lucide_react_.ChevronDown, {
-                                                    className: "ml-1 w-4 h-4"
+                                                    className: `ml-1 h-4 w-4 transition-transform ${isServicesOpen ? "rotate-180" : ""}`,
+                                                    "aria-hidden": "true"
                                                 })
                                             ]
                                         }),
-                                        /*#__PURE__*/ jsx_runtime_.jsx("div", {
-                                            className: `absolute top-full left-0 mt-2 w-80 bg-black/90 backdrop-blur-md border border-white/20 rounded-lg shadow-xl transition-all duration-300 ${isServicesOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-2"}`,
-                                            onMouseEnter: ()=>setIsServicesOpen(true),
-                                            onMouseLeave: ()=>setIsServicesOpen(false),
-                                            children: /*#__PURE__*/ jsx_runtime_.jsx("div", {
-                                                className: "p-4",
-                                                children: /*#__PURE__*/ jsx_runtime_.jsx("div", {
-                                                    className: "grid grid-cols-1 gap-3",
-                                                    children: services.map((service)=>/*#__PURE__*/ jsx_runtime_.jsx((link_default()), {
-                                                            href: service.href,
-                                                            className: "block p-3 rounded-lg hover:bg-white/10 transition-colors group",
-                                                            children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
-                                                                children: [
-                                                                    /*#__PURE__*/ jsx_runtime_.jsx("div", {
-                                                                        className: "font-medium text-white group-hover:text-blue-400 transition-colors",
-                                                                        children: service.name
-                                                                    }),
-                                                                    /*#__PURE__*/ jsx_runtime_.jsx("div", {
-                                                                        className: "text-sm text-white/60 group-hover:text-white/80 transition-colors",
-                                                                        children: service.description
-                                                                    })
-                                                                ]
-                                                            })
-                                                        }, service.name))
-                                                })
-                                            })
+                                        isServicesOpen && /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                                            className: "absolute top-full left-0 mt-2 w-80 bg-gray-900 border border-gray-700 rounded-lg shadow-xl py-2 animate-in fade-in-0 zoom-in-95 duration-200",
+                                            role: "menu",
+                                            "aria-label": "Services submenu",
+                                            children: services.map((service, index)=>/*#__PURE__*/ (0,jsx_runtime_.jsxs)((link_default()), {
+                                                    href: service.href,
+                                                    className: "block px-4 py-3 text-white hover:bg-gray-800 transition-colors focus:outline-none focus:bg-gray-800",
+                                                    role: "menuitem",
+                                                    tabIndex: isServicesOpen ? 0 : -1,
+                                                    onClick: ()=>setIsServicesOpen(false),
+                                                    children: [
+                                                        /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                                                            className: "font-medium",
+                                                            children: service.name
+                                                        }),
+                                                        /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                                                            className: "text-sm text-gray-400 mt-1",
+                                                            children: service.description
+                                                        })
+                                                    ]
+                                                }, service.href))
                                         })
                                     ]
                                 }),
                                 /*#__PURE__*/ jsx_runtime_.jsx((link_default()), {
                                     href: "/about",
-                                    className: "text-white/80 hover:text-white transition-colors",
+                                    className: "text-white/80 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-black rounded-md px-2 py-1",
+                                    "aria-label": "About us page",
                                     children: "About"
                                 }),
                                 /*#__PURE__*/ jsx_runtime_.jsx((link_default()), {
                                     href: "/contact",
-                                    className: "text-white/80 hover:text-white transition-colors",
+                                    className: "text-white/80 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-black rounded-md px-2 py-1",
+                                    "aria-label": "Contact us page",
                                     children: "Contact"
                                 }),
                                 /*#__PURE__*/ jsx_runtime_.jsx((link_default()), {
                                     href: "/contact",
-                                    className: "bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-lg font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25",
+                                    className: "bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-lg font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-black",
+                                    "aria-label": "Get started with your project",
                                     children: "Get Started"
                                 })
                             ]
                         }),
                         /*#__PURE__*/ jsx_runtime_.jsx("button", {
-                            className: "md:hidden text-white p-2",
+                            className: "md:hidden text-white hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-black rounded-md p-2",
                             onClick: ()=>setIsMenuOpen(!isMenuOpen),
+                            "aria-expanded": isMenuOpen,
+                            "aria-controls": "mobile-menu",
+                            "aria-label": isMenuOpen ? "Close mobile menu" : "Open mobile menu",
                             children: isMenuOpen ? /*#__PURE__*/ jsx_runtime_.jsx(external_lucide_react_.X, {
-                                className: "w-6 h-6"
+                                className: "h-6 w-6",
+                                "aria-hidden": "true"
                             }) : /*#__PURE__*/ jsx_runtime_.jsx(external_lucide_react_.Menu, {
-                                className: "w-6 h-6"
+                                className: "h-6 w-6",
+                                "aria-hidden": "true"
                             })
                         })
                     ]
                 }),
-                /*#__PURE__*/ jsx_runtime_.jsx("div", {
-                    className: `md:hidden transition-all duration-300 ${isMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0 overflow-hidden"}`,
+                isMenuOpen && /*#__PURE__*/ jsx_runtime_.jsx("nav", {
+                    id: "mobile-menu",
+                    className: "md:hidden bg-gray-900 border-t border-gray-700 py-4 animate-in slide-in-from-top-5 duration-200",
+                    role: "navigation",
+                    "aria-label": "Mobile navigation",
                     children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
-                        className: "py-4 space-y-4 border-t border-white/10",
+                        className: "flex flex-col space-y-2",
                         children: [
                             /*#__PURE__*/ jsx_runtime_.jsx((link_default()), {
                                 href: "/",
-                                className: "block text-white/80 hover:text-white transition-colors",
+                                className: "text-white hover:bg-gray-800 px-4 py-2 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900",
                                 onClick: ()=>setIsMenuOpen(false),
+                                "aria-label": "Home page",
                                 children: "Home"
                             }),
                             /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
-                                className: "space-y-2",
+                                className: "px-4 py-2",
                                 children: [
                                     /*#__PURE__*/ jsx_runtime_.jsx("div", {
-                                        className: "text-white/60 text-sm font-medium",
+                                        className: "text-white font-medium mb-2",
                                         children: "Services"
                                     }),
-                                    services.map((service)=>/*#__PURE__*/ jsx_runtime_.jsx((link_default()), {
-                                            href: service.href,
-                                            className: "block pl-4 text-white/80 hover:text-white transition-colors",
-                                            onClick: ()=>setIsMenuOpen(false),
-                                            children: service.name
-                                        }, service.name))
+                                    /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                                        className: "pl-4 space-y-1",
+                                        children: services.map((service)=>/*#__PURE__*/ jsx_runtime_.jsx((link_default()), {
+                                                href: service.href,
+                                                className: "block text-gray-300 hover:text-white hover:bg-gray-800 px-2 py-1 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900",
+                                                onClick: ()=>setIsMenuOpen(false),
+                                                children: service.name
+                                            }, service.href))
+                                    })
                                 ]
                             }),
                             /*#__PURE__*/ jsx_runtime_.jsx((link_default()), {
                                 href: "/about",
-                                className: "block text-white/80 hover:text-white transition-colors",
+                                className: "text-white hover:bg-gray-800 px-4 py-2 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900",
                                 onClick: ()=>setIsMenuOpen(false),
+                                "aria-label": "About us page",
                                 children: "About"
                             }),
                             /*#__PURE__*/ jsx_runtime_.jsx((link_default()), {
                                 href: "/contact",
-                                className: "block text-white/80 hover:text-white transition-colors",
+                                className: "text-white hover:bg-gray-800 px-4 py-2 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900",
                                 onClick: ()=>setIsMenuOpen(false),
+                                "aria-label": "Contact us page",
                                 children: "Contact"
                             }),
-                            /*#__PURE__*/ jsx_runtime_.jsx((link_default()), {
-                                href: "/contact",
-                                className: "block bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-lg font-medium text-center hover:from-blue-700 hover:to-purple-700 transition-all duration-300",
-                                onClick: ()=>setIsMenuOpen(false),
-                                children: "Get Started"
+                            /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                                className: "px-4 pt-2",
+                                children: /*#__PURE__*/ jsx_runtime_.jsx((link_default()), {
+                                    href: "/contact",
+                                    className: "block bg-gradient-to-r from-blue-600 to-purple-600 text-white text-center px-6 py-3 rounded-lg font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900",
+                                    onClick: ()=>setIsMenuOpen(false),
+                                    "aria-label": "Get started with your project",
+                                    children: "Get Started"
+                                })
                             })
                         ]
                     })
