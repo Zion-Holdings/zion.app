@@ -1,5 +1,7 @@
+const os = require('os');
+const path = require('path');
+
 const nextConfig = {
-  assetPrefix,
   poweredByHeader: false,
   trailingSlash: false,
   reactStrictMode: true,
@@ -743,4 +745,4 @@ const nextConfig = {
   },
 };
 
-module.exports = withSentryConfig(baseConfig);
+module.exports = nextConfig;

@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useCallback, useMemo } from 'react';
+import Link from 'next/link';
 import Layout from './layout/Layout';
 import { motion } from 'framer-motion';
 import { 
@@ -298,7 +299,7 @@ const OptimizedHomepage: React.FC = () => {
                 </h2>
                 <p className="text-xl text-gray-300 max-w-3xl mx-auto">
                   Experience the future with our cutting-edge AI consciousness, quantum computing, 
-                  and autonomous solutions that redefine what's possible.
+                  and autonomous solutions that redefine what&apos;s possible.
                 </p>
               </motion.div>
 
@@ -452,7 +453,7 @@ const OptimizedHomepage: React.FC = () => {
                 viewport={{ once: true }}
                 className="text-center mt-12"
               >
-                <a
+                <Link
                   href="/services"
                   className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-600 text-white font-semibold rounded-full text-lg transition-all duration-300 hover:from-purple-600 hover:to-pink-700 hover:scale-105 hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-purple-500/50 focus:ring-offset-2 focus:ring-offset-black"
                   aria-label="View all services"
@@ -461,7 +462,7 @@ const OptimizedHomepage: React.FC = () => {
                     View All Services
                     <ExternalLink className="w-5 h-5" />
                   </span>
-                </a>
+                </Link>
               </motion.div>
             </div>
           </section>
@@ -494,13 +495,13 @@ const OptimizedHomepage: React.FC = () => {
                     </span>
                   </button>
                   
-                  <a
+                  <Link
                     href="/contact"
                     className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-full text-lg transition-all duration-300 hover:bg-cyan-400 hover:text-black hover:scale-105 focus:outline-none focus:ring-4 focus:ring-cyan-400/50 focus:ring-offset-2 focus:ring-offset-black"
                     aria-label="Contact our team"
                   >
                     Contact Us
-                  </a>
+                  </Link>
                 </div>
               </motion.div>
             </div>

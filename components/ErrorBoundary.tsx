@@ -3,7 +3,8 @@ import { motion } from 'framer-motion';
 import { 
   AlertTriangle, RefreshCw, Bug, 
   Home, ArrowLeft, Info,
-  FileText, Terminal, Shield
+  FileText, Terminal, Shield,
+  Mail, Phone
 } from 'lucide-react';
 import { AnimatePresence } from 'framer-motion';
 
@@ -207,7 +208,7 @@ class ErrorBoundary extends Component<Props, State> {
             </h1>
             
             <p className="text-lg text-gray-300 mb-8 leading-relaxed">
-              We're sorry, but something unexpected happened. Our team has been notified and is working to fix this issue.
+              We&apos;re sorry, but something unexpected happened. Our team has been notified and is working to fix this issue.
             </p>
 
             {/* Error Details (Development Only) */}
