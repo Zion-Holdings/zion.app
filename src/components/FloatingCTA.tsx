@@ -1,91 +1,28 @@
 
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Button } from '@/components/ui/button';
-import { 
-  MessageCircle, 
-  Search, 
-  Users, 
-  Zap, 
-  X,
-  ChevronUp,
-  ChevronDown
-} from 'lucide-react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { X, MessageCircle, ChevronUp, Zap } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 
 export function FloatingCTA() {
-  const [isExpanded, setIsExpanded] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      setIsVisible(scrollY > 300);
-    };
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 3000);
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => clearTimeout(timer);
   }, []);
 
-  const quickActions = [
-    {
-      icon: <Search className="h-5 w-5" />,
-      label: 'Find Talent',
-      link: '/talent',
-      color: 'bg-blue-500 hover:bg-blue-600'
-    },
-    {
-      icon: <Zap className="h-5 w-5" />,
-      label: 'Services',
-      link: '/services',
-      color: 'bg-purple-500 hover:bg-purple-600'
-    },
-    {
-      icon: <Users className="h-5 w-5" />,
-      label: 'Community',
-      link: '/community',
-      color: 'bg-green-500 hover:bg-green-600'
-    },
-    {
-      icon: <MessageCircle className="h-5 w-5" />,
-      label: 'Support',
-      link: '/contact',
-      color: 'bg-orange-500 hover:bg-orange-600'
-    }
-  ];
-
-  const containerVariants = {
-    hidden: { scale: 0, opacity: 0 },
-    visible: { 
-      scale: 1, 
-      opacity: 1,
-      transition: {
-        type: "spring",
-        stiffness: 260,
-        damping: 20
-      }
-    },
-    exit: { 
-      scale: 0, 
-      opacity: 0,
-      transition: {
-        duration: 0.2
-      }
-    }
+  const handleClose = () => {
+    setIsVisible(false);
   };
 
-  const actionVariants = {
-    hidden: { x: 20, opacity: 0 },
-    visible: (i: number) => ({
-      x: 0,
-      opacity: 1,
-      transition: {
-        delay: i * 0.1,
-        duration: 0.3,
-        ease: "easeOut"
-      }
-    }),
-    exit: { x: 20, opacity: 0 }
+  const handleExpand = () => {
+    setIsExpanded(!isExpanded);
   };
 
   if (!isVisible) return null;
@@ -93,106 +30,90 @@ export function FloatingCTA() {
   return (
     <AnimatePresence>
       <motion.div
+        initial={{ opacity: 0, scale: 0.8, y: 100 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        exit={{ opacity: 0, scale: 0.8, y: 100 }}
+        transition={{ duration: 0.3, ease: "easeOut" }}
         className="fixed bottom-6 right-6 z-50"
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-        exit="exit"
       >
-        <div className="relative">
-          {/* Quick Actions */}
-          <AnimatePresence>
-            {isExpanded && (
-              <motion.div
-                className="absolute bottom-16 right-0 mb-2 space-y-2"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 10 }}
-                transition={{ duration: 0.2 }}
-              >
-                {quickActions.map((action, index) => (
-                  <motion.div
-                    key={action.label}
-                    custom={index}
-                    variants={actionVariants}
-                    initial="hidden"
-                    animate="visible"
-                    exit="exit"
-                    className="flex items-center gap-3"
-                  >
-                    <Link
-                      to={action.link}
-                      className={`${action.color} text-white p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110`}
-                      aria-label={action.label}
-                    >
-                      {action.icon}
-                    </Link>
-                    <motion.span
-                      className="bg-white text-gray-800 px-3 py-2 rounded-lg shadow-lg whitespace-nowrap text-sm font-medium"
-                      initial={{ opacity: 0, x: -10 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: index * 0.1 + 0.2 }}
-                    >
-                      {action.label}
-                    </motion.span>
-                  </motion.div>
-                ))}
-              </motion.div>
-            )}
-          </AnimatePresence>
-
-          {/* Main Floating Button */}
-          <motion.div
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            className="relative"
-          >
-            <Button
-              onClick={() => setIsExpanded(!isExpanded)}
-              className="w-14 h-14 rounded-full bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple shadow-lg hover:shadow-xl transition-all duration-300"
-              aria-label={isExpanded ? "Close quick actions" : "Open quick actions"}
-              aria-expanded={isExpanded}
+        <AnimatePresence mode="wait">
+          {isExpanded ? (
+            <motion.div
+              key="expanded"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.8 }}
+              transition={{ duration: 0.2 }}
+              className="bg-gradient-to-br from-zion-purple to-zion-purple-dark border border-zion-purple-light/30 rounded-2xl p-6 shadow-2xl shadow-zion-purple/25 backdrop-blur-sm"
             >
-              <AnimatePresence mode="wait">
-                {isExpanded ? (
-                  <motion.div
-                    key="close"
-                    initial={{ rotate: -90, opacity: 0 }}
-                    animate={{ rotate: 0, opacity: 1 }}
-                    exit={{ rotate: 90, opacity: 0 }}
-                    transition={{ duration: 0.2 }}
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-white font-bold text-lg">Need Help?</h3>
+                <button
+                  onClick={handleClose}
+                  className="text-zion-slate-light hover:text-white transition-colors"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+              
+              <p className="text-zion-slate-light mb-4 text-sm">
+                Get instant support or explore our marketplace
+              </p>
+              
+              <div className="space-y-3">
+                <Link to="/contact">
+                  <Button 
+                    className="w-full bg-zion-cyan hover:bg-zion-cyan-light text-zion-blue-dark font-medium transition-all duration-300 hover:scale-105"
+                    size="sm"
                   >
-                    <X className="h-6 w-6" />
-                  </motion.div>
-                ) : (
-                  <motion.div
-                    key="expand"
-                    initial={{ rotate: 90, opacity: 0 }}
-                    animate={{ rotate: 0, opacity: 1 }}
-                    exit={{ rotate: -90, opacity: 0 }}
-                    transition={{ duration: 0.2 }}
+                    <MessageCircle className="w-4 h-4 mr-2" />
+                    Contact Support
+                  </Button>
+                </Link>
+                
+                <Link to="/marketplace">
+                  <Button 
+                    variant="outline" 
+                    className="w-full border-zion-cyan text-zion-cyan hover:bg-zion-cyan hover:text-zion-blue-dark font-medium transition-all duration-300 hover:scale-105"
+                    size="sm"
                   >
-                    <ChevronUp className="h-6 w-6" />
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </Button>
-          </motion.div>
-
-          {/* Pulse Effect */}
-          <motion.div
-            className="absolute inset-0 w-14 h-14 rounded-full bg-zion-purple/30"
-            animate={{
-              scale: [1, 1.2, 1],
-              opacity: [0.5, 0, 0.5]
-            }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-          />
-        </div>
+                    <Zap className="w-4 h-4 mr-2" />
+                    Explore Marketplace
+                  </Button>
+                </Link>
+              </div>
+              
+              <button
+                onClick={handleExpand}
+                className="absolute -top-3 left-1/2 transform -translate-x-1/2 w-6 h-6 bg-zion-purple rounded-full flex items-center justify-center hover:bg-zion-purple-light transition-colors"
+              >
+                <ChevronUp className="w-3 h-3 text-white" />
+              </button>
+            </motion.div>
+          ) : (
+            <motion.div
+              key="collapsed"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.8 }}
+              transition={{ duration: 0.2 }}
+              className="relative"
+            >
+              <button
+                onClick={handleExpand}
+                className="w-16 h-16 bg-gradient-to-br from-zion-purple to-zion-purple-dark rounded-full shadow-2xl shadow-zion-purple/25 hover:shadow-zion-purple/40 transition-all duration-300 hover:scale-110 flex items-center justify-center border-2 border-zion-purple-light/30"
+              >
+                <MessageCircle className="w-7 h-7 text-white" />
+              </button>
+              
+              {/* Pulse animation */}
+              <div className="absolute inset-0 w-16 h-16 bg-zion-purple rounded-full animate-ping opacity-20"></div>
+              
+              {/* Notification dot */}
+              <div className="absolute -top-1 -right-1 w-4 h-4 bg-zion-cyan rounded-full border-2 border-zion-blue-dark animate-pulse"></div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </motion.div>
     </AnimatePresence>
   );
