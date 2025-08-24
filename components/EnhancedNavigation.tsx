@@ -44,6 +44,7 @@ export default function EnhancedNavigation() {
       ]
     },
     { name: 'About', href: '/about', icon: Users },
+    { name: 'Portfolio', href: '/portfolio', icon: Users },
     { name: 'Contact', href: 'mailto:kleber@ziontechgroup.com', icon: Users }
   ];
 

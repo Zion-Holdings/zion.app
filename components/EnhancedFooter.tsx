@@ -40,22 +40,22 @@ export default function EnhancedFooter() {
       title: 'Company',
       items: [
         { name: 'About Us', href: '/about' },
-        { name: 'Our Team', href: '/team' },
-        { name: 'Careers', href: '/careers' },
-        { name: 'News & Updates', href: '/news' },
-        { name: 'Case Studies', href: '/case-studies' },
-        { name: 'Partnerships', href: '/partnerships' }
+        { name: 'Our Team', href: '/about#team' },
+        { name: 'Portfolio', href: '/portfolio' },
+        { name: 'Services', href: '/#services' },
+        { name: 'Solutions', href: '/solutions' },
+        { name: 'Contact', href: 'mailto:kleber@ziontechgroup.com' }
       ]
     },
     {
       title: 'Resources',
       items: [
-        { name: 'Documentation', href: '/docs' },
-        { name: 'API Reference', href: '/api' },
-        { name: 'Blog', href: '/blog' },
+        { name: 'Portfolio', href: '/portfolio' },
+        { name: 'Pricing', href: '/pricing-2025' },
+        { name: 'Services Showcase', href: '/comprehensive-2025-services-showcase' },
         { name: 'Whitepapers', href: '/whitepapers' },
-        { name: 'Webinars', href: '/webinars' },
-        { name: 'Support Center', href: '/support' }
+        { name: 'Contact', href: 'mailto:kleber@ziontechgroup.com' },
+        { name: 'About', href: '/about' }
       ]
     }
   ];
@@ -63,13 +63,13 @@ export default function EnhancedFooter() {
   const socialLinks = [
     { name: 'Twitter', href: 'https://twitter.com/ziontechgroup', icon: Twitter },
     { name: 'LinkedIn', href: 'https://linkedin.com/company/ziontechgroup', icon: Linkedin },
-    { name: 'GitHub', href: 'https://github.com/ziontechgroup', icon: Github },
+    { name: 'GitHub', href: 'https://github.com/Zion-Holdings', icon: Github },
     { name: 'Website', href: 'https://ziontechgroup.com', icon: Globe }
   ];
 
   const contactInfo = [
     { icon: Mail, text: 'kleber@ziontechgroup.com', href: 'mailto:kleber@ziontechgroup.com' },
-    { icon: Phone, text: '+1 (555) 123-4567', href: 'tel:+15551234567' },
+    { icon: Phone, text: '+1 (302) 464-0950', href: 'tel:+13024640950' },
     { icon: MapPin, text: 'Global Operations', href: '#location' }
   ];
 
