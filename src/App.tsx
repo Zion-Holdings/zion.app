@@ -61,6 +61,7 @@ function App() {
     { name: 'Blockchain & Web3', icon: '⛓️' }
   ]
 
+
   return (
     <>
       <SEO
@@ -231,4 +232,5 @@ function App() {
 }
 
 export default App
+
 
