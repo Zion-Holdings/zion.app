@@ -1,344 +1,85 @@
 
-import { Button } from "@/components/ui/button";
-import GradientHeading from "@/components/GradientHeading";
-import { Link } from "react-router-dom";
-import { useTranslation } from "react-i18next";
-import { motion } from "framer-motion";
-import { Users, Zap, Sparkles, ArrowRight } from "lucide-react";
+import React from 'react';
+import { Button } from './ui/button';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
 
-export function HeroSection() {
-  const { t } = useTranslation();
-  
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-<<<<<<< HEAD
-        staggerChildren: 0.3,
-        delayChildren: 0.2
-=======
-        staggerChildren: 0.2,
-        delayChildren: 0.1
->>>>>>> 516e4ee3bcbb9d3b0209b707c6b86a34fb0cacec
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-<<<<<<< HEAD
-        duration: 0.6,
-        ease: "easeOut"
-      }
-    }
-  };
-
-  const particleVariants = {
-    animate: {
-      y: [0, -20, 0],
-      x: [0, 10, 0],
-      scale: [1, 1.2, 1],
-      opacity: [0.3, 0.8, 0.3],
-      transition: {
-        duration: 4,
-        repeat: Infinity,
-        ease: "easeInOut"
-=======
-        duration: 0.6
->>>>>>> 516e4ee3bcbb9d3b0209b707c6b86a34fb0cacec
-      }
-    }
-  };
-
+export const HeroSection: React.FC = () => {
   return (
-<<<<<<< HEAD
-    <section className="relative overflow-hidden py-20 md:py-32 min-h-screen flex items-center">
-      {/* Enhanced background gradient effect */}
-      <div className="absolute inset-0 bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-purple opacity-90"></div>
-      
-      {/* Animated mesh gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-zion-cyan/20 via-transparent to-zion-purple-light/20"></div>
-=======
-    <section className="relative overflow-hidden py-20 md:py-32" role="banner" aria-labelledby="hero-title">
-      {/* Background gradient effect */}
-      <div className="absolute inset-0 bg-gradient-to-b from-zion-blue-dark via-zion-blue to-zion-blue-light opacity-80"></div>
->>>>>>> 516e4ee3bcbb9d3b0209b707c6b86a34fb0cacec
-      
-      {/* Enhanced animated floating particles */}
+    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-black via-gray-900 to-blue-900 overflow-hidden">
+      {/* Animated Background */}
       <div className="absolute inset-0">
-        <motion.div 
-          className="absolute top-1/4 left-1/4 w-2 h-2 rounded-full bg-zion-purple-light opacity-40"
-          animate={{
-            y: [0, -20, 0],
-            opacity: [0.3, 0.8, 0.3]
-          }}
-          transition={{
-            duration: 3,
-            repeat: Infinity
-          }}
-        />
-        <motion.div 
-          className="absolute top-1/3 right-1/3 w-3 h-3 rounded-full bg-zion-cyan opacity-30"
-          animate={{
-            y: [0, -20, 0],
-            opacity: [0.3, 0.8, 0.3]
-          }}
-          transition={{
-            duration: 3,
-            repeat: Infinity,
-            delay: 1
-          }}
-        />
-        <motion.div 
-<<<<<<< HEAD
-          className="absolute bottom-1/4 left-1/2 w-2 h-2 rounded-full bg-zion-purple opacity-60"
-          variants={particleVariants}
-          animate="animate"
-          style={{ animationDelay: "2s" }}
-        />
-        <motion.div 
-          className="absolute top-1/2 right-1/4 w-5 h-5 rounded-full bg-zion-cyan-light opacity-30"
-          variants={particleVariants}
-          animate="animate"
-          style={{ animationDelay: "3s" }}
-        />
-        <motion.div 
-          className="absolute top-3/4 left-1/3 w-2 h-2 rounded-full bg-zion-purple-light opacity-40"
-          variants={particleVariants}
-          animate="animate"
-          style={{ animationDelay: "4s" }}
-=======
-          className="absolute bottom-1/4 left-1/2 w-2 h-2 rounded-full bg-zion-purple opacity-40"
-          animate={{
-            y: [0, -20, 0],
-            opacity: [0.3, 0.8, 0.3]
-          }}
-          transition={{
-            duration: 3,
-            repeat: Infinity,
-            delay: 2
-          }}
-        />
-        <motion.div 
-          className="absolute top-1/2 right-1/4 w-4 h-4 rounded-full bg-zion-cyan-light opacity-20"
-          animate={{
-            y: [0, -20, 0],
-            opacity: [0.3, 0.8, 0.3]
-          }}
-          transition={{
-            duration: 3,
-            repeat: Infinity,
-            delay: 0.5
-          }}
->>>>>>> 516e4ee3bcbb9d3b0209b707c6b86a34fb0cacec
-        />
-
+        <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 animate-pulse"></div>
+        <div className="absolute top-0 left-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl animate-bounce"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-bounce" style={{ animationDelay: '1s' }}></div>
       </div>
 
-<<<<<<< HEAD
-      {/* Floating feature highlights */}
-      <motion.div 
-        className="absolute top-1/4 right-1/6 hidden lg:block"
-        initial={{ x: 100, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ delay: 1, duration: 0.8 }}
-      >
-        <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/20">
-          <div className="flex items-center gap-3 text-white">
-            <Users className="w-5 h-5 text-zion-cyan" />
-            <span className="text-sm font-medium">10K+ Talents</span>
-          </div>
-        </div>
-      </motion.div>
-
-      <motion.div 
-        className="absolute bottom-1/4 left-1/6 hidden lg:block"
-        initial={{ x: -100, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ delay: 1.2, duration: 0.8 }}
-      >
-        <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/20">
-          <div className="flex items-center gap-3 text-white">
-            <Zap className="w-5 h-5 text-zion-purple" />
-            <span className="text-sm font-medium">AI-Powered</span>
-          </div>
-        </div>
-      </motion.div>
-
-=======
->>>>>>> 516e4ee3bcbb9d3b0209b707c6b86a34fb0cacec
-      {/* Floating geometric shapes */}
-      <motion.div 
-        className="absolute top-20 right-20 w-32 h-32 border border-zion-cyan/30 rounded-lg rotate-45"
-        animate={{ rotate: [45, 405], opacity: [0.3, 0.6, 0.3] }}
-        transition={{ duration: 20, repeat: Infinity }}
-      />
-      <motion.div 
-        className="absolute bottom-20 left-20 w-24 h-24 border border-zion-purple/30 rounded-full"
-        animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.6, 0.3] }}
-        transition={{ duration: 15, repeat: Infinity }}
-      />
-      
-      <motion.div 
-        className="container relative z-10 px-4 mx-auto text-center"
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-      >
-        <motion.div variants={itemVariants} className="mb-6">
-          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md rounded-full px-4 py-2 border border-white/20 mb-6">
-            <Sparkles className="w-4 h-4 text-zion-cyan" />
-            <span className="text-sm text-white font-medium">AI-Powered Tech Marketplace</span>
-          </div>
-        </motion.div>
-
-        <motion.div variants={itemVariants}>
-          <GradientHeading 
-            className="mb-6 text-5xl md:text-7xl font-bold"
-          >
-            {t('home.hero_title')}
-          </GradientHeading>
-        </motion.div>
-
-        <motion.div variants={itemVariants}>
-          <p className="text-xl md:text-2xl text-zion-slate-light mb-10 max-w-4xl mx-auto leading-relaxed">
-            {t('home.hero_subtitle')}
+      {/* Main Content */}
+      <div className="relative z-10 text-center px-4 max-w-6xl mx-auto">
+        <div className="mb-8">
+          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+            <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+              Zion Tech Group
+            </span>
+          </h1>
+          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+            Pioneering the future of technology with cutting-edge AI solutions, 
+            revolutionary micro-SaaS platforms, and comprehensive IT services.
           </p>
-        </motion.div>
+        </div>
 
-<<<<<<< HEAD
-        <motion.div variants={itemVariants} className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+        {/* CTA Buttons */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+          <Button 
+            size="lg" 
+            className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white px-8 py-4 text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
           >
-            <Button
-              className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-lg py-6 px-8 shadow-2xl hover:shadow-zion-purple/25 transition-all duration-300 transform hover:scale-105"
-              size="lg"
-              asChild
-            >
-              <Link
-                to="/signup"
-                role="button"
-                aria-label={t('auth.signup')}
-                tabIndex={0}
-                data-testid="hero-signup-btn"
-              >
-                {t('auth.signup')}
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Link>
-            </Button>
-          </motion.div>
-          
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <Link
-              id="browse-marketplace"
-              to="/marketplace"
-              className="group border-2 border-zion-cyan text-zion-cyan hover:bg-zion-cyan hover:text-zion-blue-dark active:bg-zion-cyan-light text-lg py-6 px-8 rounded-md inline-flex items-center justify-center transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-zion-cyan/25"
-            >
-              {t('home.browse_marketplace')}
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-=======
-        <motion.div 
-          className="flex flex-col sm:flex-row justify-center gap-4"
-          variants={itemVariants}
-        >
-          <Button
-            className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-lg py-6 px-8 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
-            size="lg"
-            asChild
-          >
-            <Link
-              to="/signup"
-              role="button"
-              aria-label={t('auth.signup')}
-              tabIndex={0}
-              data-testid="hero-signup-btn"
-            >
-              {t('auth.signup')}
->>>>>>> 516e4ee3bcbb9d3b0209b707c6b86a34fb0cacec
-            </Link>
+            Explore Services
           </Button>
-          <Link
-            id="browse-marketplace"
-            to="/marketplace"
-            className="border-2 border-zion-cyan text-zion-cyan hover:bg-zion-cyan hover:text-zion-blue-dark active:bg-zion-cyan-light text-lg py-6 px-8 rounded-md inline-flex items-center justify-center transition-all duration-300 hover:shadow-lg transform hover:scale-105"
-            role="button"
-            aria-label={t('home.browse_marketplace')}
+          <Button 
+            variant="outline" 
+            size="lg" 
+            className="border-2 border-white/30 text-white hover:bg-white/10 px-8 py-4 text-lg font-semibold rounded-full backdrop-blur-sm transition-all duration-300"
           >
-            {t('home.browse_marketplace')}
-          </Link>
-        </motion.div>
+            Get Started
+          </Button>
+        </div>
 
-        {/* Trust indicators */}
-<<<<<<< HEAD
-        <motion.div 
-          variants={itemVariants}
-          className="flex flex-wrap justify-center items-center gap-6 text-zion-slate-light text-sm mb-8"
-        >
-          <div className="flex items-center gap-2">
-            <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-            <span>Secure & Verified</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
-            <span>24/7 Support</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
-            <span>AI-Powered Matching</span>
-          </div>
-        </motion.div>
+        {/* Feature Cards */}
+        <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          <Card className="bg-white/10 backdrop-blur-md border-white/20 text-white">
+            <CardHeader>
+              <CardTitle className="text-cyan-400">AI-Powered Solutions</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <CardDescription className="text-gray-300">
+                Advanced machine learning and automation for your business needs
+              </CardDescription>
+            </CardContent>
+          </Card>
 
-        {/* Additional CTA section */}
-=======
->>>>>>> 516e4ee3bcbb9d3b0209b707c6b86a34fb0cacec
-        <motion.div 
-          className="mt-12 flex flex-wrap justify-center items-center gap-6 text-zion-slate-light/70"
-          variants={itemVariants}
-        >
-          <div className="flex items-center gap-2">
-            <div className="w-2 h-2 bg-zion-cyan rounded-full"></div>
-            <span className="text-sm">AI-Powered Matching</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <div className="w-2 h-2 bg-zion-purple rounded-full"></div>
-            <span className="text-sm">Verified Professionals</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <div className="w-2 h-2 bg-zion-blue rounded-full"></div>
-            <span className="text-sm">Secure Platform</span>
-          </div>
-        </motion.div>
-<<<<<<< HEAD
-      </motion.div>
+          <Card className="bg-white/10 backdrop-blur-md border-white/20 text-white">
+            <CardHeader>
+              <CardTitle className="text-purple-400">Micro-SaaS Platforms</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <CardDescription className="text-gray-300">
+                Scalable software solutions that grow with your business
+              </CardDescription>
+            </CardContent>
+          </Card>
 
-      {/* Floating CTA Button */}
-      <motion.div
-        className="fixed bottom-6 right-6 z-50 lg:hidden"
-        initial={{ scale: 0, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ delay: 2, duration: 0.5 }}
-      >
-        <Button
-          asChild
-          className="rounded-full w-14 h-14 p-0 bg-gradient-to-r from-zion-purple to-zion-cyan shadow-2xl hover:shadow-zion-purple/50 transition-all duration-300"
-        >
-          <Link to="/marketplace" aria-label="Browse Marketplace">
-            <ArrowRight className="w-6 h-6" />
-          </Link>
-        </Button>
-=======
->>>>>>> 516e4ee3bcbb9d3b0209b707c6b86a34fb0cacec
-      </motion.div>
+          <Card className="bg-white/10 backdrop-blur-md border-white/20 text-white">
+            <CardHeader>
+              <CardTitle className="text-blue-400">24/7 IT Support</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <CardDescription className="text-gray-300">
+                Round-the-clock technical support and infrastructure management
+              </CardDescription>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
     </section>
   );
-}
+};

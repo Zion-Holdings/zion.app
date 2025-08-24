@@ -1,28 +1,16 @@
 import React from 'react';
-import { Toast, ToastClose, ToastDescription, ToastTitle, ToastViewport } from './toast';
-import { useToast } from './use-toast';
 
-export function Toaster() {
-<<<<<<< HEAD
-  const { toasts } = useToast();
-
-  return (
-    <ToastViewport>
-      {toasts.map((toast, index) => (
-        <Toast key={index}>
-          <div className="grid gap-1">
-            {toast.title && <ToastTitle>{toast.title}</ToastTitle>}
-            {toast.description && (
-              <ToastDescription>{toast.description}</ToastDescription>
-            )}
-          </div>
-          {toast.action}
-          <ToastClose>×</ToastClose>
-        </Toast>
-      ))}
-    </ToastViewport>
-  );
-=======
-  return <div className="toaster-container"></div>;
->>>>>>> 516e4ee3bcbb9d3b0209b707c6b86a34fb0cacec
+interface ToasterProps {
+  children: React.ReactNode;
+  className?: string;
 }
+
+const Toaster: React.FC<ToasterProps> = ({ children, className = '' }) => {
+  return (
+    <div className={`fixed top-0 z-[100] flex max-h-screen w-full flex-col-reverse p-4 sm:bottom-0 sm:right-0 sm:top-auto sm:flex-col md:max-w-[420px] ${className}`}>
+      {children}
+    </div>
+  );
+};
+
+export { Toaster };
