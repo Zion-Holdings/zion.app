@@ -58,43 +58,6 @@ export default function MicroSaasPage() {
       bgColor: 'from-rose-500/10 to-rose-500/10'
     }
   ];
-<<<<<<< HEAD
-
-  // Filter and sort services
-  let filteredServices = selectedCategory === 'all' || selectedCategory === 'All'
-    ? enhancedRealMicroSaasServices 
-    : getServicesByCategory(selectedCategory);
-
-  // Apply search filter
-  if (searchQuery) {
-    filteredServices = filteredServices.filter(service =>
-      service.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      service.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      service.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      service.technology.some(tech => tech.toLowerCase().includes(searchQuery.toLowerCase()))
-    );
-  }
-
-  // Apply sorting
-  filteredServices.sort((a, b) => {
-    switch (sortBy) {
-      case 'name':
-        return a.name.localeCompare(b.name);
-      case 'price':
-        return parseFloat(a.price.replace('$', '').replace(',', '')) - parseFloat(b.price.replace('$', '').replace(',', ''));
-      case 'rating':
-        return b.rating - a.rating;
-      case 'innovation': {
-        // Sort by realImplementation first, then by popularity
-        if (a.realImplementation && !b.realImplementation) return -1;
-        if (!a.realImplementation && b.realImplementation) return 1;
-        if (a.popular && !b.popular) return -1;
-        if (!a.popular && b.popular) return 1;
-        return 0;
-      }
-      default:
-        return 0;
-=======
   
   const microSaasServices = [
     {
@@ -881,15 +844,9 @@ export default function MicroSaasPage() {
       setupTime: '35 minutes',
       category: 'Real Estate & Property',
       realService: true
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-b289
     }
   });
 
-<<<<<<< HEAD
-  const revolutionaryServices = enhancedRealMicroSaasServices.filter(service => 
-    service.realImplementation && service.popular
-  );
-=======
   const categories = [
     'All',
     'Content & Marketing',
@@ -913,7 +870,6 @@ export default function MicroSaasPage() {
     'Education & Training',
     'Real Estate & Property'
   ];
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-b289
 
   const contactInfo = {
     mobile: '+1 302 464 0950',
@@ -1016,15 +972,6 @@ export default function MicroSaasPage() {
   const categoryStats = getCategoryStats();
 
   return (
-<<<<<<< HEAD
-    <UltraAdvancedFuturisticBackground intensity="high">
-      <Head>
-        <title>Micro SAAS Services - Zion Tech Group | Revolutionary Business Solutions</title>
-        <meta name="description" content="Discover 150+ revolutionary micro SAAS services powered by quantum AI, autonomous systems, and cutting-edge technology. Transform your business with 500%+ ROI." />
-        <meta name="keywords" content="micro saas, quantum AI, autonomous systems, business solutions, zion tech group" />
-        <meta property="og:title" content="Micro SAAS Services - Zion Tech Group" />
-        <meta property="og:description" content="150+ revolutionary micro SAAS services with 500%+ ROI. Quantum AI, autonomous systems, and cutting-edge technology." />
-=======
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 relative overflow-hidden">
       {/* Animated background */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(120,119,198,0.1),transparent_50%)]" />
@@ -1036,7 +983,6 @@ export default function MicroSaasPage() {
         <meta name="keywords" content="micro SaaS, AI services, cloud optimization, content generation, business automation, software as a service" />
         <meta property="og:title" content="Real Micro SaaS Services | Zion Tech Group" />
         <meta property="og:description" content="48+ real micro SaaS services with immediate value delivery. Start your free trial today." />
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-b289
         <meta property="og:url" content="https://ziontechgroup.com/micro-saas" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://ziontechgroup.com/micro-saas" />
@@ -1047,63 +993,6 @@ export default function MicroSaasPage() {
         <meta name="twitter:description" content="200+ revolutionary AI-powered micro SaaS services transforming industries with quantum computing, space tech, and autonomous systems." />
       </Head>
 
-<<<<<<< HEAD
-      <div className="min-h-screen bg-black/90 text-white">
-        {/* Hero Section */}
-        <section className="relative py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              {/* Futuristic Logo/Brand */}
-              <div className="mb-8">
-                <motion.div
-                  initial={{ scale: 0.8, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  transition={{ duration: 1, delay: 0.2 }}
-                  className="inline-flex items-center justify-center w-24 h-24 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 rounded-full mb-4"
-                >
-                  <Cpu className="w-12 h-12 text-white" />
-                </motion.div>
-                <motion.h2
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.4 }}
-                  className="text-2xl font-bold text-cyan-400 mb-2"
-                >
-                  MICRO SAAS SERVICES
-                </motion.h2>
-                <motion.p
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.6 }}
-                  className="text-lg text-purple-400"
-                >
-                  Revolutionary Business Solutions
-                </motion.p>
-              </div>
-
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.8 }}
-                className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-6"
-              >
-                150+ Revolutionary Micro SAAS Services
-              </motion.h1>
-              
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 1.0 }}
-                className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto"
-              >
-                Transform your business with cutting-edge micro SAAS solutions powered by quantum AI, autonomous systems, and breakthrough technology. 
-                Achieve unprecedented ROI and competitive advantages.
-              </motion.p>
-=======
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 text-white">
         <div className="absolute inset-0 bg-black/20"></div>
@@ -1165,7 +1054,6 @@ export default function MicroSaasPage() {
           </div>
         </div>
       </section>
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-b289
 
               {/* Enhanced Contact Information Banner */}
               <motion.div

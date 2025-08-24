@@ -1,16 +1,8 @@
-<<<<<<< HEAD
-import React from 'react';
-
-export default function ContactPage() {
-  return <div>Contact Zion</div>;
-}
-=======
 export default function Contact(){
   return <div style={{padding:20}}>Contact</div>
 }
 =======
 =======
->>>>>>> origin/cursor/deploy-zion-brain-ai-system-5783
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
@@ -30,8 +22,4 @@ const Contact: NextPage = () => {
   );
 };
 
-<<<<<<< HEAD
 export default Contact;
-=======
-export default Contact;
->>>>>>> origin/cursor/deploy-zion-brain-ai-system-5783

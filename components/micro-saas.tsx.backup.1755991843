@@ -56,8 +56,6 @@ export default function MicroSaasPage() {
       description: 'Specialized tools that do one thing exceptionally well, without enterprise complexity.',
       color: 'from-rose-500 to-pink-600',
       bgColor: 'from-rose-500/10 to-pink-500/10'
-<<<<<<< HEAD
-=======
     }
   ];
 
@@ -106,7 +104,6 @@ export default function MicroSaasPage() {
       features: ['Quantum AI asteroid analysis', 'Satellite constellation management', 'Autonomous mining robotics'],
       link: 'https://ziontechgroup.com/quantum-space-mining',
       color: 'from-indigo-500 to-purple-600'
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-dc1e
     }
   ];
   

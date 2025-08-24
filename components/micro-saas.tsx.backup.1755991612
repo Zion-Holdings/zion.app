@@ -686,11 +686,7 @@ export default function MicroSaasPage() {
     : microSaasServices.filter(service => service.category === selectedCategory);
 
   return (
-<<<<<<< HEAD
-    		<QuantumHolographicMatrixBackground intensity={1.5}>
-=======
     <QuantumHolographicMatrixBackground intensity={1.5}>
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-465f
       <Head>
         <title>Real Micro SaaS Services - Zion Tech Group</title>
         <meta name="description" content="Discover 28+ real, fully functional micro SaaS services built with modern technology. AI-powered tools for content, marketing, development, and business automation." />

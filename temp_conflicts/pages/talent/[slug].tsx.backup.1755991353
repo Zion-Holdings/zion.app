@@ -1,28 +1,13 @@
 import type { NextPage } from 'next';
-<<<<<<< HEAD
-import { useRouter } from 'next/router';
-=======
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import EnhancedLayout from '@/components/layout/EnhancedLayout';
 import { TALENT_PROFILES } from '@/data/talent';
->>>>>>> origin/cursor/create-dynamic-listing-pages-with-filters-fc72
 
 const TalentDetail: NextPage = () => {
   const router = useRouter();
   const { slug } = router.query as { slug?: string };
-<<<<<<< HEAD
-  return (
-    <div>
-      <h1 className="text-2xl font-semibold mb-2">Talent: {slug}</h1>
-      <p className="text-gray-700 dark:text-gray-300">Profile details for {slug}.</p>
-    </div>
-  );
-};
-
-export default TalentDetail;
-=======
   const talent = TALENT_PROFILES.find((t) => t.slug === slug);
 
   if (!talent) {
@@ -72,4 +57,3 @@ export default TalentDetail;
 };
 
 export default TalentDetail;
->>>>>>> origin/cursor/create-dynamic-listing-pages-with-filters-fc72

@@ -7,17 +7,6 @@ import {
   ShieldCheck, Star, Users, Globe, Target
 } from 'lucide-react';
 import Button from '../components/ui/Button';
-<<<<<<< HEAD
-import UltraAdvancedQuantumBackground from '../components/ui/UltraAdvancedQuantumBackground';
-import UltraFuturisticServiceCard from '../components/ui/UltraFuturisticServiceCard';
-import UltraFuturisticNavigation from '../components/layout/UltraFuturisticNavigation';
-import ServiceAds from '../components/sections/ServiceAds';
-import Card from '../components/ui/Card';
-import { motion } from 'framer-motion';
-import { enhancedMicroSaasServices } from '../data/enhanced-micro-saas-services';
-import EnhancedFuturisticBackground from '../components/ui/EnhancedFuturisticBackground';
-import EnhancedFuturisticCard from '../components/ui/EnhancedFuturisticCard';
-=======
 import EnhancedFuturisticBackground from '../components/ui/EnhancedFuturisticBackground';
 import EnhancedFuturisticCard from '../components/ui/EnhancedFuturisticCard';
 import QuantumHolographicBackground from '../components/ui/QuantumHolographicBackground';
@@ -26,7 +15,6 @@ import EnhancedServicesShowcase from '../components/sections/EnhancedServicesSho
 import { Cloud, Bot, RefreshCw, Zap, Shield, BarChart3, ArrowRight, Check, ExternalLink, Star, Users, Globe, Lock, Rocket, Cpu, Database, TrendingUp, Clock, Target, Building, Award, DollarSign, ChartBar, Code, BookOpen, Activity, Smartphone, Palette, Search, MessageSquare, FileText, Calendar, CreditCard, Settings, BookOpen as BookOpenIcon, Activity as ActivityIcon, Database as DatabaseIcon, Play, Mail, Phone, MapPin, Sparkles, Atom, Brain, Eye, Shield as ShieldIcon, Zap as ZapIcon, Globe as GlobeIcon, Cpu as CpuIcon, Cloud as CloudIcon, Bot as BotIcon, Lock as LockIcon, BarChart3 as BarChart3Icon, TrendingUp as TrendingUpIcon, Users as UsersIcon, Award as AwardIcon, Star as StarIcon, Check as CheckIcon, ArrowRight as ArrowRightIcon, ExternalLink as ExternalLinkIcon, Phone as PhoneIcon, Mail as MailIcon, MapPin as MapPinIcon, Trophy, FlaskConical, Dna, Car, Leaf, Factory, Truck, Microscope, GraduationCap, ShieldCheck, ChevronRight, ChevronDown, Menu, X, ArrowUpRight, Sparkle, Zap as ZapIcon2, Brain as BrainIcon, Cpu as CpuIcon2, Database as DatabaseIcon2, Globe as GlobeIcon2, Shield as ShieldIcon2, Users as UsersIcon2, TrendingUp as TrendingUpIcon2, Award as AwardIcon2, Star as StarIcon2, Check as CheckIcon2, ArrowRight as ArrowRightIcon2, ExternalLink as ExternalLinkIcon2, Phone as PhoneIcon2, Mail as MailIcon2, MapPin as MapPinIcon2 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { realMicroSaasServices } from '../data/real-micro-saas-services-enhanced';
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-7c3d
 
 export default function HomePage() {
   const heroStats = [
@@ -305,10 +293,6 @@ export default function HomePage() {
     },
   ];
 
-<<<<<<< HEAD
-  // Get popular services for showcase
-  const popularServices = enhancedMicroSaasServices.filter(service => service.popular).slice(0, 6);
-=======
   const marketMetrics = [
     {
       metric: '$1.5B',
@@ -404,7 +388,6 @@ export default function HomePage() {
       icon: <ExternalLink className="w-5 h-5" />
     }
   };
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-7c3d
 
   return (
     <EnhancedFuturisticBackground>
@@ -594,16 +577,6 @@ export default function HomePage() {
         ]}
       />
 
-<<<<<<< HEAD
-      <div className="min-h-screen">
-        {/* Hero Section */}
-        <section className="relative py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-=======
       {/* Enhanced Futuristic Background */}
       <QuantumHolographicBackground>
         <div className="min-h-screen">
@@ -948,7 +921,6 @@ export default function HomePage() {
               variant="secondary"
               size="lg"
               className="group"
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-7c3d
             >
               <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
                 <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">

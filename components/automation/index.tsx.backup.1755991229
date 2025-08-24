@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-export default function AutomationPage() {
-  return <div className="py-10">Automation Dashboard Placeholder</div>;
-}
-=======
 import Link from 'next/link';
 
 export default function AutomationsIndex() {
@@ -21,4 +16,3 @@ export default function AutomationsIndex() {
     </div>
   );
 }
->>>>>>> origin/cursor/build-talent-marketplace-platform-793e

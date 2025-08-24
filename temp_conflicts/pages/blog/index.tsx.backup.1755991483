@@ -11,29 +11,6 @@ type Props = { posts: BlogPost[]; authors: string[]; topics: string[]; tags: str
 
 const BlogHome: NextPage<Props> = ({ posts, authors, topics, tags }) => {
   const [filters, setFilters] = useState<{ author?: string; topic?: string; tag?: string }>({});
-<<<<<<< HEAD
-
-  const filtered = useMemo(() => {
-    return posts.filter((p) => {
-      if (filters.author && p.author !== filters.author) return false;
-      if (filters.topic && !p.topics.includes(filters.topic)) return false;
-      if (filters.tag && !p.tags.includes(filters.tag)) return false;
-      return true;
-    });
-  }, [posts, filters]);
-
-  const hero = filtered[0];
-  const rest = filtered.slice(1);
-
-export default function BlogIndex() {
-  return (
-    <div className="space-y-2">
-      <h1 className="text-3xl font-bold">Blog</h1>
-      <p className="text-gray-600 dark:text-gray-300">Thoughts on AI, autonomy, and product engineering.</p>
-    </div>
-  );
-}
-=======
 
   const filtered = useMemo(() => {
     return posts.filter((p) => {
@@ -127,4 +104,3 @@ export const getServerSideProps: GetServerSideProps = async () => {
 };
 
 export default BlogHome;
->>>>>>> 5f48a381108fa3a8a43c189dd4b043133ce9307e

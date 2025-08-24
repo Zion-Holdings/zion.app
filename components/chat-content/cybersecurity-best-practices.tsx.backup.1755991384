@@ -17,8 +17,4 @@ const CybersecurityBestPractices: NextPage = () => {
   );
 };
 
-<<<<<<< HEAD
 export default CybersecurityBestPractices;
-=======
-export default CybersecurityBestPractices;
->>>>>>> origin/cursor/deploy-zion-brain-ai-system-5783

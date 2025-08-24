@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-export default function AutomationIndex() { return <div>Automation</div>; }
-=======
 import type { NextPage } from 'next';
 
 const AutomationIndex: NextPage = () => (
@@ -11,4 +8,3 @@ const AutomationIndex: NextPage = () => (
 );
 
 export default AutomationIndex;
->>>>>>> origin/cursor/create-and-automate-service-index-page-b746

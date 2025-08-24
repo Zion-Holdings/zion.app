@@ -8,11 +8,7 @@ class MyDocument extends Document {
 
   render() {
     return (
-<<<<<<< HEAD
-      <Html>
-=======
       <Html lang="en">
->>>>>>> origin/cursor/deploy-zion-omnichain-bridge-and-depin-integration-3253
         <Head />
         <body>
           <Main />
@@ -23,8 +19,4 @@ class MyDocument extends Document {
   }
 }
 
-<<<<<<< HEAD
 export default MyDocument;
-=======
-export default MyDocument;
->>>>>>> origin/cursor/deploy-zion-omnichain-bridge-and-depin-integration-3253

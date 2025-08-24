@@ -242,16 +242,6 @@ export default function ServicesPage() {
           {/* Key Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12 max-w-4xl mx-auto">
             {[
-<<<<<<< HEAD
-              { number: '500+', label: 'Services', icon: Rocket, color: 'text-cyan-400' },
-              { number: '21', label: 'Day Trials', icon: Clock, color: 'text-purple-400' },
-              { number: '99.9%', label: 'Uptime', icon: Shield, color: 'text-green-400' },
-              { number: '24/7', label: 'Support', icon: Users, color: 'text-pink-400' }
-            ].map((stat, index) => (
-              <div key={stat.label} className="text-center">
-                <div className={`w-12 h-12 mx-auto mb-3 rounded-xl bg-gradient-to-br from-slate-800 to-slate-700 flex items-center justify-center`}>
-                  <stat.icon className={`w-6 h-6 ${stat.color}`} />
-=======
               {
                 title: '💸 Cloud Cost Optimizer Pro',
                 desc: 'Rightsizing, off-hours and anomaly detection with IaC outputs.',
@@ -290,7 +280,6 @@ export default function ServicesPage() {
                     </div>
                   </div>
                   <Button href={ad.link} className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-5 py-3 rounded-lg font-semibold">View Details</Button>
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-25d8
                 </div>
                 <div className={`text-2xl font-bold ${stat.color} mb-1`}>{stat.number}</div>
                 <div className="text-gray-400 text-sm">{stat.label}</div>

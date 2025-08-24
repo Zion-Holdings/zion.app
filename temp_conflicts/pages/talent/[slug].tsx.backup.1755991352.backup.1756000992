@@ -1,7 +1,4 @@
 import { useRouter } from 'next/router';
-<<<<<<< HEAD
-export default function TalentDetail() { const { query } = useRouter(); return <main className="p-10"><h1 className="text-2xl font-bold">Talent: {String(query.slug || '')}</h1></main>; }
-=======
 
 export default function TalentDetailPage() {
   const router = useRouter();
@@ -13,4 +10,3 @@ export default function TalentDetailPage() {
     </div>
   );
 }
->>>>>>> origin/cursor/build-zion-ai-marketplace-chat-assistant-9918

@@ -73,25 +73,6 @@ export default function AIAutomationTrends2025Page() {
       
       <div className="min-h-screen bg-gradient-to-br from-indigo-950 via-purple-950 to-slate-950 text-white">
         <main className="container mx-auto px-6 py-12">
-<<<<<<< HEAD
-          <nav className="mb-8">
-            <Link href="/blog" className="text-cyan-400 hover:text-cyan-300 transition-colors">
-              ← Back to Blog
-            </Link>
-          </nav>
-
-          <article className="max-w-4xl mx-auto">
-            <header className="text-center mb-12">
-              <h1 className="text-4xl font-extrabold mb-6 bg-gradient-to-r from-cyan-400 to-fuchsia-400 bg-clip-text text-transparent">
-                AI Automation Trends 2025: Shaping the Future of Business
-              </h1>
-              <div className="flex items-center justify-center gap-4 text-white/60 text-sm">
-                <span>Published: January 2025</span>
-                <span>•</span>
-                <span>8 min read</span>
-                <span>•</span>
-                <span>AI & Automation</span>
-=======
           <div className="max-w-4xl mx-auto">
             <nav className="mb-8">
               <Link href="/blog" className="text-cyan-400 hover:text-cyan-300 transition-colors">
@@ -231,7 +212,6 @@ export default function AIAutomationTrends2025Page() {
                 <a href="mailto:?subject=Interesting%20Read%20from%20Zion%20Tech&body=Check%20out%20this%20article:%20https://ziontechgroup.com/blog/ai-automation-trends-2025" className="px-4 py-2 bg-green-600 hover:bg-green-700 rounded-lg text-white transition-colors">
                   Email
                 </a>
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-5446
               </div>
             </header>
 

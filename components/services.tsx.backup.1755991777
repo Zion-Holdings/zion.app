@@ -3,14 +3,8 @@ import Head from 'next/head';
 import { Check, Star, Zap, Shield, Users, Globe, ArrowRight, ExternalLink, TrendingUp, Clock, Target, Building, Rocket, Award, DollarSign, ChartBar, Lock, Cpu, Database, Cloud, Smartphone, Palette, Search, MessageSquare, FileText, Calendar, CreditCard, BarChart3, Settings, Zap as ZapIcon, Code, BookOpen, Activity, Database as DatabaseIcon, Play, Mail, Phone, MapPin, Filter, Grid, List, ChevronDown, ChevronUp, Sparkles, Filter as FilterIcon } from 'lucide-react';
 import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
-<<<<<<< HEAD
-import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
-import { enhancedRealMicroSaasServices, serviceCategories, getServicesByCategory, getPopularServices, getServicesByPriceRange } from '../data/enhanced-real-micro-saas-services';
-import { motion } from 'framer-motion';
-=======
 import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackground';
 import { enhancedMicroSaasServices, serviceCategories, getServicesByCategory, getPopularServices, getServicesByPriceRange } from '../data/enhanced-micro-saas-services';
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-9ec4
 
 export default function ServicesPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -38,11 +32,7 @@ export default function ServicesPage() {
   const allServices = [...expandedMicroSaasServices, ...innovativeServices];
 
   // Filter and sort services
-<<<<<<< HEAD
-  let filteredServices = allServices;
-=======
   let filteredServices = enhancedMicroSaasServices;
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-9ec4
 
   // Category filter
   if (selectedCategory !== 'All') {
@@ -298,18 +288,6 @@ export default function ServicesPage() {
   ];
 
   return (
-<<<<<<< HEAD
-    <AdvancedFuturisticBackground theme="quantum" intensity="high">
-      <Head>
-        <title>Innovative Micro SAAS Services | Zion Tech Group</title>
-        <meta name="description" content="Discover our cutting-edge micro SAAS services including AI, quantum computing, blockchain, and more. Real implementations with 1500%+ average ROI." />
-        <meta name="keywords" content="micro SAAS, AI services, quantum computing, blockchain, fintech, healthcare AI, supply chain optimization" />
-        <meta property="og:title" content="Innovative Micro SAAS Services | Zion Tech Group" />
-        <meta property="og:description" content="Cutting-edge micro SAAS services with real implementations and proven ROI." />
-        <meta property="og:url" content="https://ziontechgroup.com/services" />
-        <meta property="og:type" content="website" />
-      </Head>
-=======
     <UltraFuturisticBackground variant="neural" intensity="high">
       <div className="min-h-screen">
         <Head>
@@ -323,7 +301,6 @@ export default function ServicesPage() {
           <meta property="og:type" content="website" />
           <link rel="canonical" href="https://ziontechgroup.com/services" />
         </Head>
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-9ec4
 
       <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
         {/* Hero Section */}
@@ -932,23 +909,11 @@ export default function ServicesPage() {
         </div>
       </section>
 
-<<<<<<< HEAD
-      {/* Services Grid/List */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center mb-8">
-            <h2 className="text-3xl font-bold text-white">
-              {filteredServices.length} Services Found
-            </h2>
-            <div className="text-gray-400">
-              Showing {filteredServices.length} of {enhancedRealMicroSaasServices.length} total services
-=======
             {/* Results Count */}
             <div className="text-center mb-8">
               <p className="text-gray-300">
                 Showing <span className="text-cyan-400 font-semibold">{filteredServices.length}</span> of {enhancedMicroSaasServices.length} services
               </p>
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-9ec4
             </div>
           ) : (
             <div className={`grid gap-8 ${
@@ -1417,10 +1382,6 @@ export default function ServicesPage() {
     </div>
 =======
       </div>
-<<<<<<< HEAD
-    </AdvancedFuturisticBackground>
-=======
     </UltraFuturisticBackground>
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-9ec4
   );
 }

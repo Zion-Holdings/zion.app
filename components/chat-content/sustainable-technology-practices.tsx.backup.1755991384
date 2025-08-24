@@ -17,8 +17,4 @@ const SustainableTechnologyPractices: NextPage = () => {
   );
 };
 
-<<<<<<< HEAD
 export default SustainableTechnologyPractices;
-=======
-export default SustainableTechnologyPractices;
->>>>>>> origin/cursor/deploy-zion-brain-ai-system-5783

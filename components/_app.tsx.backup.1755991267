@@ -3,10 +3,7 @@ import EnhancedLayout from '../components/layout/EnhancedLayout';
 import '../styles/globals.css';
 import '../styles/enhanced-design-system.css';
 import '../styles/modern-design-system.css';
-<<<<<<< HEAD
-=======
 import '../styles/globals.css';
->>>>>>> origin/cursor/build-zion-ai-talent-profile-system-f64e
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (

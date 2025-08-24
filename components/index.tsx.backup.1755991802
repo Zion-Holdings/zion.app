@@ -350,8 +350,6 @@ export default function HomePage() {
     website: 'https://ziontechgroup.com'
   };
 
-<<<<<<< HEAD
-=======
   // Enhanced service advertising content with real market data and competitive advantages
   const serviceHighlights = [
     {
@@ -509,7 +507,6 @@ export default function HomePage() {
     service.realImplementation && service.popular
   ).slice(0, 6);
 
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-b637
   return (
     <UltraAdvancedFuturisticBackground intensity="high">
       <Head>

@@ -17,8 +17,4 @@ const AutomationStatus: NextPage = () => {
   );
 };
 
-<<<<<<< HEAD
 export default AutomationStatus;
-=======
-export default AutomationStatus;
->>>>>>> origin/cursor/deploy-zion-brain-ai-system-5783

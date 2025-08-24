@@ -3,19 +3,8 @@ import Head from 'next/head';
 import { Check, Star, Zap, Shield, Users, Globe, ArrowRight, ExternalLink, TrendingUp, Clock, Target, Building, Rocket, Award, DollarSign, ChartBar, Lock, Cpu, Database, Cloud, Smartphone, Palette, Search, MessageSquare, FileText, Calendar, CreditCard, BarChart3, Settings, Zap as ZapIcon, Code, BookOpen, Activity, Database as DatabaseIcon, Play, Mail, Phone, MapPin, Filter, Grid, List, ChevronDown, ChevronUp, Sparkles, Filter as FilterIcon } from 'lucide-react';
 import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
-<<<<<<< HEAD
-import EnhancedFuturisticBackground from '../components/ui/EnhancedFuturisticBackground';
-import EnhancedFuturisticCard from '../components/ui/EnhancedFuturisticCard';
-import QuantumHolographicBackground from '../components/ui/QuantumHolographicBackground';
-import QuantumHolographicCard from '../components/ui/QuantumHolographicCard';
-import AdvancedFuturisticBackground from '../components/ui/AdvancedFuturisticBackground';
-import AdvancedFuturisticCard from '../components/ui/AdvancedFuturisticCard';
-import { expandedMicroSaasServices, serviceCategories, getServicesByCategory, getPopularServices, getServicesByPriceRange } from '../data/expanded-micro-saas-services';
-import { innovativeServices, getInnovativeServicesByCategory, getPopularInnovativeServices, getInnovativeServicesByPriceRange } from '../data/innovative-services';
-=======
 import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
 import { enhancedRealMicroSaasServices, serviceCategories, getServicesByCategory, getPopularServices, getServicesByPriceRange } from '../data/enhanced-real-micro-saas-services';
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-9967
 import { motion } from 'framer-motion';
 
 export default function ServicesPage() {
@@ -122,8 +111,6 @@ export default function ServicesPage() {
     website: 'https://ziontechgroup.com'
   };
 
-<<<<<<< HEAD
-=======
   // Enhanced service advertising content with comprehensive market data
   const serviceHighlights = [
     {
@@ -252,7 +239,6 @@ export default function ServicesPage() {
     }
   ];
 
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-9967
   const popularServices = getPopularServices();
   const popularInnovativeServices = getPopularInnovativeServices();
 
@@ -931,8 +917,6 @@ export default function ServicesPage() {
             <div className="text-gray-400">
               Showing {filteredServices.length} of {enhancedRealMicroSaasServices.length} total services
             </div>
-<<<<<<< HEAD
-=======
           ) : (
             <div className={`grid gap-8 ${
               viewMode === 'grid' 
@@ -1393,7 +1377,6 @@ export default function ServicesPage() {
                 </p>
               </div>
             </motion.div>
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-9967
           </div>
         </section>
         </div>

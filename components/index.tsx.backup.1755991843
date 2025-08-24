@@ -37,12 +37,6 @@ export default function HomePage() {
     website: 'https://ziontechgroup.com'
   };
 
-<<<<<<< HEAD
-  // Get featured services for homepage
-  const featuredServices = enhancedRealMicroSaasServices
-    .filter(service => service.popular)
-    .slice(0, 8);
-=======
   // Enhanced hero section with better advertising
   const heroContent = {
     title: "The Future of Micro SaaS is Here",
@@ -161,7 +155,6 @@ export default function HomePage() {
       color: 'from-cyan-500 to-blue-600'
     }
   ];
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-dc1e
 
   const revolutionaryServices = [
     {

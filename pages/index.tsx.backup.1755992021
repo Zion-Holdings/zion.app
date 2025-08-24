@@ -240,9 +240,6 @@ export default function HomePage() {
         columns={2}
       />
 
-<<<<<<< HEAD
-      {/* Use Cases */}
-=======
       {/* Micro SaaS Services */}
       <section className="py-24 bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -327,7 +324,6 @@ export default function HomePage() {
       </section>
 
       {/* Technology Stack */}
->>>>>>> origin/cursor/enhance-app-with-micro-saas-and-advertising-c308
       <section className="py-24 bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">

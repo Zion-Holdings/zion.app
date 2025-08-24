@@ -138,25 +138,12 @@ export default function Careers() {
     : jobOpenings.filter(job => job.department === selectedDepartment);
 
   return (
-<<<<<<< HEAD
-    <Layout>
-      <Head>
-        <title>Careers - Zion Tech Group | Join Our Team</title>
-        <meta name="description" content="Join Zion Tech Group and be part of a team revolutionizing technology. Explore career opportunities in AI, quantum computing, and space technology." />
-        <meta name="keywords" content="careers, jobs, Zion Tech Group, technology careers, AI jobs, quantum computing jobs" />
-        <meta property="og:title" content="Careers - Zion Tech Group" />
-        <meta property="og:description" content="Join our team and help revolutionize technology." />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://ziontechgroup.com/careers" />
-      </Head>
-=======
     <UltraFuturisticBackground>
       <div className="min-h-screen">
         <Head>
           <title>Careers - Zion Tech Group | Join Our Revolutionary Technology Team</title>
           <meta name="description" content="Join Zion Tech Group's team of innovators. Explore career opportunities in AI, quantum computing, and emerging technologies. Remote work, competitive benefits, and cutting-edge projects." />
         </Head>
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-1849
 
       <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
         {/* Hero Section */}

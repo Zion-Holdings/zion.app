@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-export default function NotFound() { return null; }
-=======
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
@@ -21,4 +18,3 @@ const Custom404: NextPage = () => {
 };
 
 export default Custom404;
->>>>>>> origin/cursor/deploy-zion-token-economy-simulator-07d9

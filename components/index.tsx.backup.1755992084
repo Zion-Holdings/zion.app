@@ -8,18 +8,6 @@ import {
   Star, ChevronRight, ChevronDown, Menu, X
 } from 'lucide-react';
 import Button from '../components/ui/Button';
-<<<<<<< HEAD
-import UltraAdvancedQuantumBackground from '../components/ui/UltraAdvancedQuantumBackground';
-import UltraFuturisticServiceCard from '../components/ui/UltraFuturisticServiceCard';
-import ServiceAds from '../components/sections/ServiceAds';
-import Card from '../components/ui/Card';
-import { motion } from 'framer-motion';
-import { innovativeRealMicroSaasServices2025 } from '../data/2025-innovative-real-micro-saas-services';
-import { innovativeAIServicesEnhanced2025 } from '../data/2025-innovative-ai-services-enhanced';
-import { innovativeITServicesEnhanced2025 } from '../data/2025-innovative-it-services-enhanced';
-import { emergingTechServicesEnhanced2025 } from '../data/2025-emerging-tech-services-enhanced';
-import { ultimateFuturisticServices2025 } from '../data/2025-ultimate-futuristic-services';
-=======
 import UltraQuantumHolographicBackground from '../components/ui/UltraQuantumHolographicBackground';
 import UltraAdvancedNavigation from '../components/layout/UltraAdvancedNavigation';
 import UltraAdvancedNavigation2026 from '../components/layout/UltraAdvancedNavigation2026';
@@ -84,7 +72,6 @@ import { revolutionary2027ITServices } from '../data/revolutionary-2027-it-servi
 import { revolutionary2027MicroSaasServices } from '../data/revolutionary-2027-micro-saas';
 import { futuristic2028Services } from '../data/2028-futuristic-innovations';
 import { emergingTech2028Services } from '../data/2028-emerging-tech-services';
->>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-1bb4
 
 export default function HomePage() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -233,14 +220,8 @@ export default function HomePage() {
     ...revolutionary2027AIServices,
     ...revolutionary2027ITServices,
     ...revolutionary2027MicroSaasServices,
-<<<<<<< HEAD
-    ...cuttingEdge2029Services,
-    ...emergingTech2029Services,
-    ...microSaas2029Services
-=======
     ...futuristic2028Services,
     ...emergingTech2028Services
->>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-1bb4
   ];
 
   // Get unique services by ID to avoid duplicates
@@ -293,11 +274,7 @@ export default function HomePage() {
 
               <UltraFuturisticBackground2029>
         {/* Ultra Advanced Navigation */}
-<<<<<<< HEAD
-        <UltraFuturisticNavigation2029 />
-=======
         <UltraFuturisticNavigation2028 />
->>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-1bb4
 
                   {/* Ultra Futuristic Hero Section 2029 */}
           <UltraFuturisticHero2029 />

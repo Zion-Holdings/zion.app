@@ -1,6 +1,4 @@
 import { useRouter } from 'next/router';
-<<<<<<< HEAD
-=======
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -25,15 +23,10 @@ function useFavorites() {
   };
   return { favorites, toggle };
 }
->>>>>>> origin/cursor/build-talent-marketplace-platform-793e
 
 export default function TalentProfilePage() {
   const router = useRouter();
   const { slug } = router.query as { slug?: string };
-<<<<<<< HEAD
-  return <div className="py-10">Talent Profile: {slug}</div>;
-}
-=======
   const profile: TalentProfile | undefined = useMemo(
     () => TALENT_PROFILES.find((t) => t.slug === slug),
     [slug]
@@ -112,4 +105,3 @@ export default function TalentProfilePage() {
     </div>
   );
 }
->>>>>>> origin/cursor/build-talent-marketplace-platform-793e

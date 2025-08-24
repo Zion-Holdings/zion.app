@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-export default About;
-=======
 export default function About() {
   return (
     <div className="space-y-2">
@@ -13,4 +10,3 @@ export default function About() {
 export default function About() {
   return <div>About Zion</div>;
 }
->>>>>>> origin/cursor/develop-zion-trust-scoring-engine-7911

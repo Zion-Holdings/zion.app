@@ -17,8 +17,4 @@ const AutoUpdate20250808t161020249z: NextPage = () => {
   );
 };
 
-<<<<<<< HEAD
 export default AutoUpdate20250808t161020249z;
-=======
-export default AutoUpdate20250808t161020249z;
->>>>>>> origin/cursor/deploy-zion-brain-ai-system-5783

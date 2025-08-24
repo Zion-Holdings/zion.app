@@ -136,22 +136,6 @@ export default function HomePage() {
         <section className="mx-auto max-w-7xl px-6 pb-20">
           <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Automation Engine — New Tools</h2>
           <p className="mx-auto mt-2 max-w-3xl text-center text-sm text-white/70">Now powered by scheduled cloud functions — no GitHub Actions required. Live homepage promos, health checks, and link integrity run automatically.</p>
-<<<<<<< HEAD
-          <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {[
-              { title: 'Autonomous Meta Orchestrator (1m)', desc: 'Triggers prioritized cloud functions and commits a heartbeat to main every minute.', href: '/.netlify/functions/autonomous-meta-orchestrator' },
-              { title: 'Intelligent Meta Orchestrator', desc: 'Prioritized meta‑agent that triggers and syncs other functions autonomously.', href: '/.netlify/functions/intelligent-meta-orchestrator' },
-              { title: 'Trigger All + Commit (1m)', desc: 'Invokes all cloud functions with concurrency and commits a build stamp.', href: '/.netlify/functions/trigger-all-and-commit' },
-              { title: 'Frontpage Enhancer', desc: 'Auto‑advertises features and refreshes homepage content hourly.', href: '/.netlify/functions/frontpage-enhancer' },
-              { title: 'Link & Health Scheduler', desc: 'Runs link checks, health scans, and sitemap updates every 6h.', href: '/.netlify/functions/link-and-health-scheduler' },
-              { title: 'Marketing & Features Promo', desc: 'Regenerates homepage promos and deep links every 2h.', href: '/.netlify/functions/marketing-and-features-promo' },
-              { title: 'Front Enhancer (fast)', desc: 'Runs front improvements every 10 minutes.', href: '/.netlify/functions/front-enhancer' },
-              { title: 'Homepage Advertiser', desc: 'Pushes fresh highlights every 15 minutes.', href: '/.netlify/functions/homepage_advertiser' },
-              { title: 'Cloud Orchestrator', desc: 'Coordinates broader agents on a 4h cadence.', href: '/.netlify/functions/cloud_orchestrator' },
-              { title: 'Fast Orchestrator (1m)', desc: 'Continuously refreshes front + homepage and commits to main every minute.', href: '/.netlify/functions/fast-orchestrator' },
-              { title: 'Continuous Orchestrator (5m)', desc: 'Runs a lightweight pipeline including sitemap and UI futurizer.', href: '/.netlify/functions/continuous-orchestrator' },
-              { title: 'Front Maximizer', desc: 'High‑frequency auto‑advertising and futurizing every 5m.', href: '/.netlify/functions/front-maximizer' },
-=======
                        <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
              {[
                { title: 'Frontpage Enhancer', desc: 'Auto‑advertises features and refreshes homepage content hourly.', href: '/.netlify/functions/frontpage-enhancer' },
@@ -163,7 +147,6 @@ export default function HomePage() {
                { title: 'Fast Orchestrator (1m)', desc: 'Continuously refreshes front + homepage and commits to main every minute.', href: '/.netlify/functions/fast-orchestrator' },
                { title: 'Continuous Orchestrator (5m)', desc: 'Runs a lightweight pipeline including sitemap and UI futurizer.', href: '/.netlify/functions/continuous-orchestrator' },
                { title: 'Front Maximizer', desc: 'High‑frequency auto‑advertising and futurizing every 5m.', href: '/.netlify/functions/front-maximizer' },
->>>>>>> origin/cursor/develop-autonomous-cloud-agents-for-automation-orchestration-2dcc
                { title: 'Continuous Front Runner', desc: 'Ultra‑fast subset runner every 3m.', href: '/.netlify/functions/continuous-front-runner' },
                { title: 'README Advertiser', desc: 'Refresh README and docs indexes every 6h.', href: '/.netlify/functions/readme-advertiser' },
                { title: 'Features/Capabilities/Benefits Advertiser (2m)', desc: 'Continuously advertises new features with deep links on the front pages.', href: '/.netlify/functions/features-capabilities-benefits-advertiser' },
@@ -198,18 +181,6 @@ export default function HomePage() {
                { title: 'Auto Discovery Runner', desc: 'Discovers new automation opportunities and seeds factories.', href: '/.netlify/functions/auto-discovery-runner' },
                { title: 'Topic Cluster Builder', desc: 'Discovers content/code topic clusters and publishes reports.', href: '/.netlify/functions/topic-cluster-builder-runner' },
                { title: 'Code Smell Audit', desc: 'Heuristic code smell scan with lint-style reports in public.', href: '/.netlify/functions/code-smell-audit-runner' },
-<<<<<<< HEAD
-                              { title: 'Duplicate Media Finder', desc: 'Detects duplicate images by content hash and reports.', href: '/.netlify/functions/duplicate-media-finder-runner' }
-             ].map((tool) => (
-              <a key={tool.title} href={tool.href} className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
-                <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
-                <h3 className="text-lg font-semibold">{tool.title}</h3>
-                <p className="mt-1 text-sm text-white/75">{tool.desc}</p>
-                <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>↗</span></div>
-              </a>
-            ))}
-          </div>
-=======
                { title: 'Duplicate Media Finder', desc: 'Detects duplicate images by content hash and reports.', href: '/.netlify/functions/duplicate-media-finder-runner' },
                { title: 'Autonomous Master Orchestrator (1m)', desc: 'Triggers agents, runs all functions, and syncs to main every minute.', href: '/.netlify/functions/autonomous-master-orchestrator' }
              ].map((tool) => (
@@ -221,7 +192,6 @@ export default function HomePage() {
                </a>
              ))}
            </div>
->>>>>>> origin/cursor/develop-autonomous-cloud-agents-for-automation-orchestration-2dcc
         </section>
 
         {/* New: Autonomous Automations */}

@@ -117,8 +117,6 @@ import {
   Package, Bot, Car, Building2, Monitor, Cpu, 
   Zap, Atom, Database, Cloud, Lock, Code
 } from 'lucide-react';
-<<<<<<< HEAD
-=======
 
 // Import our new service data
 import { enterpriseITSolutions } from '../data/2034-enterprise-it-solutions';
@@ -130,7 +128,6 @@ import { newServices2026 } from '../data/2026-new-services';
 
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
->>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-13fb
 import { innovativeAIServices } from '../data/innovative-ai-services';
 import { quantumSpaceServices } from '../data/quantum-space-services';
 import { enterpriseITServices } from '../data/enterprise-it-services';
@@ -212,36 +209,6 @@ export default function ServicesPage() {
     ...nextGenAI2026ServicesV3
   ];
 
-<<<<<<< HEAD
-  const marketAnalysis = [
-    {
-      category: 'Social Media Tools',
-      marketSize: '$23.4B',
-      growthRate: '13.2%',
-      keyPlayers: 'Hootsuite, Buffer, Sprout Social',
-      ourAdvantage: 'AI-powered insights, competitive pricing, easy integration'
-    },
-    {
-      category: 'SEO Tools',
-      marketSize: '$1.2B',
-      growthRate: '18.7%',
-      keyPlayers: 'Clearscope, MarketMuse, Surfer SEO',
-      ourAdvantage: 'Real-time optimization, AI suggestions, comprehensive reporting'
-    },
-    {
-      category: 'Email Marketing',
-      marketSize: '$7.5B',
-      growthRate: '15.3%',
-      keyPlayers: 'Mailchimp, ConvertKit, ActiveCampaign',
-      ourAdvantage: 'AI segmentation, automation workflows, advanced analytics'
-    },
-    {
-      category: 'Survey Platforms',
-      marketSize: '$3.2B',
-      growthRate: '12.8%',
-      keyPlayers: 'SurveyMonkey, Typeform, Qualtrics',
-      ourAdvantage: 'AI sentiment analysis, automated workflows, competitive pricing'
-=======
 // Helper function to get service features
 const getServiceFeatures = (service: any) => {
   if (service.features) return service.features;
@@ -396,7 +363,6 @@ export default function Services() {
         return (((b as any).rating || 0) as number) - (((a as any).rating || 0) as number);
       default:
         return 0;
->>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-13fb
     }
   ];
 

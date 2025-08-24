@@ -119,26 +119,6 @@ export default function HomePage() {
       contactInfo: contactInfo
     },
     {
-<<<<<<< HEAD
-      name: 'IoT Smart City Platform',
-      description: 'Transform cities with intelligent IoT solutions',
-      price: '$299/month',
-      category: 'IoT & Smart Cities',
-      icon: '🏙️',
-      color: 'from-teal-500 to-cyan-600',
-      link: 'https://ziontechgroup.com/iot-smart-city-platform',
-      contactInfo: contactInfo
-    },
-    {
-      name: 'Autonomous AI Agents',
-      description: 'Self-learning AI agents for business automation',
-      price: '$399/month',
-      category: 'Emerging Technologies',
-      icon: '🤖',
-      color: 'from-cyan-600 to-blue-600',
-      link: 'https://ziontechgroup.com/autonomous-ai-agents',
-      contactInfo: contactInfo
-=======
       title: '🌍 Quantum AI Climate Prediction Platform',
       icon: '🌍',
       description: 'Breakthrough quantum AI platform that predicts climate patterns with unprecedented accuracy. Achieve 1500% ROI through improved climate insights and planning.',
@@ -197,7 +177,6 @@ export default function HomePage() {
       marketData: '$18B legal AI market, 320% annual growth',
       competitors: 'LexisNexis ($200+/month), Westlaw ($200+/month), Thomson Reuters ($300+/month)',
       savings: 'Save 80% vs. competitors'
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-98d9
     }
   ];
 
@@ -216,15 +195,6 @@ export default function HomePage() {
           <link rel="canonical" href="https://ziontechgroup.com" />
         </Head>
 
-<<<<<<< HEAD
-      {/* Sticky contact micro-bar */}
-      <div className="fixed top-20 left-0 right-0 z-40">
-        <div className="mx-auto max-w-7xl px-4">
-          <div className="rounded-xl border border-cyan-500/20 bg-black/40 backdrop-blur-md px-4 py-2 text-xs text-gray-300 hidden md:flex items-center justify-center gap-6">
-            <div className="flex items-center gap-2"><Phone className="w-4 h-4 text-cyan-400" /><span>{contactInfo.mobile}</span></div>
-            <div className="flex items-center gap-2"><Mail className="w-4 h-4 text-purple-400" /><span>{contactInfo.email}</span></div>
-            <div className="flex items-center gap-2"><MapPin className="w-4 h-4 text-green-400" /><span className="truncate">{contactInfo.address}</span></div>
-=======
       <div className="min-h-screen bg-black/90 text-white">
         {/* Hero Section */}
         <section className="relative py-20 px-4 sm:px-6 lg:px-8">
@@ -349,7 +319,6 @@ export default function HomePage() {
                 </motion.div>
               </div>
             </motion.div>
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-98d9
           </div>
         </div>
       </div>

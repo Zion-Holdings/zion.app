@@ -1,22 +1,8 @@
-<<<<<<< HEAD
-import type { AppProps } from 'next/app';
-=======
 import React from 'react';
 import SiteLayout from '../components/layout/Layout';
->>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-1c54
 import '../styles/globals.css';
 import Navigation from '../components/layout/Navigation';
 
-<<<<<<< HEAD
-export default function MyApp({ Component, pageProps }: AppProps) {
-  return (
-    <>
-      <Navigation />
-      <Component {...pageProps} />
-    </>
-  );
-}
-=======
 export default function App({ Component, pageProps }: any) {
 	return (
 		<SiteLayout>
@@ -24,4 +10,3 @@ export default function App({ Component, pageProps }: any) {
 		</SiteLayout>
 	);
 }
->>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-1c54

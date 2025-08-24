@@ -1,56 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-<<<<<<< HEAD
-import { CheckCircle, ArrowRight, Star, TrendingUp, Phone, Zap, DollarSign, Shield, Mail, MapPin, Rocket, Brain, Sparkles, Atom, Dna, Users, Globe } from 'lucide-react';
-import Layout from '../components/layout/Layout';
-import { motion } from 'framer-motion';
-import { realMicroSaasServices2025 } from '../data/2025-real-micro-saas-services';
-import { innovativeAIServices2025 } from '../data/2025-innovative-ai-services';
-import { innovativeITServices2025 } from '../data/2025-innovative-it-services';
-import { emergingTechServices2025 } from '../data/2025-emerging-tech-services';
-
-const contactInfo = {
-  mobile: '+1 302 464 0950',
-  email: 'kleber@ziontechgroup.com',
-  address: '364 E Main St STE 1008 Middletown DE 19709',
-  website: 'https://ziontechgroup.com'
-};
-
-const heroFeatures = [
-  {
-    icon: Brain,
-    title: 'AI & Consciousness',
-    description: 'Revolutionary AI consciousness and emotional intelligence platforms',
-    color: 'from-violet-500 to-purple-600'
-  },
-  {
-    icon: Atom,
-    title: 'Quantum & Emerging Tech',
-    description: 'Next-generation quantum computing and space technology solutions',
-    color: 'from-indigo-500 to-blue-600'
-  },
-  {
-    icon: Shield,
-    title: 'Enterprise IT',
-    description: 'Cutting-edge enterprise infrastructure and security solutions',
-    color: 'from-blue-500 to-cyan-600'
-  },
-  {
-    icon: Rocket,
-    title: 'Micro SAAS',
-    description: 'Innovative micro SAAS solutions for modern businesses',
-    color: 'from-teal-500 to-emerald-600'
-  }
-];
-
-const stats = [
-  { number: '60+', label: 'Services', icon: Star, color: 'text-cyan-400' },
-  { number: '1000+', label: 'Companies Served', icon: Users, color: 'text-purple-400' },
-  { number: '99.9%', label: 'Uptime', icon: Shield, color: 'text-green-400' },
-  { number: '24/7', label: 'Support', icon: Zap, color: 'text-pink-400' }
-];
-=======
 import { CheckCircle, ArrowRight, Star, TrendingUp, Phone, Zap, DollarSign, Shield, Mail, MapPin, Rocket, Brain, Sparkles } from 'lucide-react';
 import Button from '../components/ui/Button';
 import UltraFuturisticBackground2029 from '../components/backgrounds/UltraFuturisticBackground2029';
@@ -125,7 +75,6 @@ import { cuttingEdge2029Services } from '../data/2029-cutting-edge-innovations';
 import { emergingTechServices2029 } from '../data/2029-emerging-tech-services';
 import { practicalBusinessSolutions2029 } from '../data/2029-practical-business-solutions';
 import { ultimateMicroSaasServices } from '../data/ultimate-micro-saas-services';
->>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-2b24
 
 export default function HomePage() {
   const contactInfo = {
@@ -159,14 +108,11 @@ export default function HomePage() {
     ...emergingTechServices2025,
     ...revolutionary2025Services,
     ...nextGenInnovations2025,
-<<<<<<< HEAD
-=======
     ...futuristic2028Services,
     ...emergingTech2028Services,
     ...cuttingEdge2029Services,
     ...emergingTechServices2029,
     ...practicalBusinessSolutions2029,
->>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-2b24
     ...innovative2026Services,
     ...emergingTech2026Services,
     ...enterpriseIT2026Services,
@@ -197,14 +143,7 @@ export default function HomePage() {
     ...revolutionary2027MicroSaasServices,
     ...cuttingEdge2028MicroSaas,
     ...practicalBusinessSolutions2028,
-<<<<<<< HEAD
-    ...futuristic2028Services,
-    ...emergingTech2028Services,
-    ...cuttingEdgeInnovations2029,
-    ...futuristicAIServices2029,
-=======
     ...cuttingEdge2029Services,
->>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-2b24
     ...emergingTechServices2029,
     ...enterpriseITServices2029,
     ...innovativeMicroSaas2029,
@@ -297,39 +236,6 @@ export default function HomePage() {
         </script>
       </Head>
 
-<<<<<<< HEAD
-      <UltraFuturisticNavigation2029 />
-
-      <main className="relative z-10">
-        {/* Hero Section with Enhanced Futuristic Design */}
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-          <div className="absolute inset-0">
-            {/* Animated Background Elements */}
-            <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black">
-              <div className="absolute inset-0 opacity-20">
-                <div className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
-                <div className="absolute bottom-20 right-20 w-96 h-96 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-full blur-3xl animate-pulse delay-2000"></div>
-              </div>
-              
-              {/* Floating Particles */}
-              <div className="absolute inset-0">
-                {[...Array(50)].map((_, i) => (
-                  <div
-                    key={i}
-                    className="absolute w-1 h-1 bg-cyan-400 rounded-full opacity-30 animate-float"
-                    style={{
-                      left: `${Math.random() * 100}%`,
-                      top: `${Math.random() * 100}%`,
-                      animationDelay: `${Math.random() * 5}s`,
-                      animationDuration: `${3 + Math.random() * 4}s`
-                    }}
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-=======
       {/* Background */}
       <UltraFuturisticBackground2029 />
       
@@ -338,7 +244,6 @@ export default function HomePage() {
 
       {/* Hero Section */}
       <UltraFuturisticHero2029 />
->>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-2b24
 
       {/* Services Preview */}
       <section className="py-20 bg-black">
@@ -536,10 +441,6 @@ export default function HomePage() {
         {/* Revolutionary 2026 Services Showcase */}
         <Revolutionary2026ServiceShowcase />
 
-<<<<<<< HEAD
-        {/* Enhanced 2026 Services Showcase V2 */}
-        <Enhanced2026ServicesShowcaseV2 />
-=======
         {/* 2029 Ultra-Futuristic Service Showcase */}
         <UltraFuturistic2029ServiceShowcase
           services={[...cuttingEdge2029Services, ...emergingTechServices2029, ...practicalBusinessSolutions2029]}
@@ -547,7 +448,6 @@ export default function HomePage() {
           subtitle="Experience the future of technology with our revolutionary 2029 services"
           maxServices={10}
         />
->>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-2b24
 
         {/* Latest Innovations Showcase */}
         <section className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
@@ -778,13 +678,8 @@ export default function HomePage() {
             </motion.div>
           </div>
         </section>
-<<<<<<< HEAD
-      </main>
-
-=======
       
       {/* Footer */}
->>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-2b24
       <UltraFuturisticFooter2029 />
     </UltraFuturisticBackground2029>
   );

@@ -283,21 +283,6 @@ export default function HomePage() {
   );
 
   return (
-<<<<<<< HEAD
-    <EnhancedFuturisticBackground variant="neural-quantum" intensity="high">
-      <div className="min-h-screen">
-        <Head>
-          <title>Zion Tech Group - Revolutionary AI, Quantum Computing & Emerging Technology Solutions</title>
-          <meta name="description" content="Transform your business with Zion Tech Group's cutting-edge micro SaaS services. AI, quantum computing, blockchain, metaverse, and emerging technology solutions with 99.9% uptime guarantee." />
-          <meta name="keywords" content="AI services, quantum computing, blockchain, metaverse, IoT, cybersecurity, micro SaaS, business automation, emerging technologies" />
-          <meta name="author" content="Zion Tech Group" />
-          <meta property="og:title" content="Zion Tech Group - Revolutionary Technology Solutions" />
-          <meta property="og:description" content="Cutting-edge AI, quantum computing, and emerging technology solutions for modern businesses." />
-          <meta property="og:url" content="https://ziontechgroup.com" />
-          <meta property="og:type" content="website" />
-          <link rel="canonical" href="https://ziontechgroup.com" />
-        </Head>
-=======
     <UltraFuturisticMatrixBackground>
       <Head>
         <title>Zion Tech Group - Revolutionary AI & Quantum Computing Solutions</title>
@@ -377,7 +362,6 @@ export default function HomePage() {
           }
         ]}
       />
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-2ac3
 
       <ServiceAds
         heading="Security & Compliance Automation"

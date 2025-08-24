@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-export default function BlockchainSolutions() { return null; }
-=======
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
@@ -21,4 +18,3 @@ const BlockchainSolutions: NextPage = () => {
 };
 
 export default BlockchainSolutions;
->>>>>>> origin/cursor/deploy-zion-token-economy-simulator-07d9

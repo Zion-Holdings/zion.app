@@ -17,8 +17,4 @@ const InnovationInEnterpriseTechnology: NextPage = () => {
   );
 };
 
-<<<<<<< HEAD
 export default InnovationInEnterpriseTechnology;
-=======
-export default InnovationInEnterpriseTechnology;
->>>>>>> origin/cursor/deploy-zion-brain-ai-system-5783

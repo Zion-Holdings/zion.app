@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-export default function AutomationStatus() { return null; }
-=======
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
@@ -21,4 +18,3 @@ const AutomationStatus: NextPage = () => {
 };
 
 export default AutomationStatus;
->>>>>>> origin/cursor/deploy-zion-token-economy-simulator-07d9

@@ -1,16 +1,3 @@
-<<<<<<< HEAD
-import React from "react";
-<<<<<<< HEAD
-
-export default function AuthCallbackPage() {
-  return (
-    <main className="p-6">
-      <h1 className="text-2xl font-bold">Auth Callback</h1>
-      <p className="text-gray-600">Processing authentication...</p>
-    </main>
-  );
-}
-=======
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
@@ -31,7 +18,6 @@ const Callback: NextPage = () => {
 };
 
 export default Callback;
->>>>>>> origin/cursor/create-responsive-talent-onboarding-form-e178
 =======
 import Head from "next/head";
 
@@ -52,5 +38,3 @@ const Page: React.FC = () => {
 export default Page;
 =======
 export default function Callback() { return null; }
->>>>>>> origin/cursor/build-partner-integration-portal-and-api-da2c
->>>>>>> 5f48a381108fa3a8a43c189dd4b043133ce9307e

@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-export default function Page(){return null}
-=======
 import React from 'react';
 
 export default function TechnologyImplementationStrategiesPage() {
@@ -11,4 +8,3 @@ export default function TechnologyImplementationStrategiesPage() {
     </div>
   );
 }
->>>>>>> 5f48a381108fa3a8a43c189dd4b043133ce9307e

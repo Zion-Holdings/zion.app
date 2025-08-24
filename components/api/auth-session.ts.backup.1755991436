@@ -2,10 +2,6 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import { getSessionFromReq, isInternalAgentRequest } from '../../../utils/adminAuth';
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
-<<<<<<< HEAD:pages/api/auth-session.ts
-  // TODO: Replace with real auth integration (e.g., Supabase)
-  res.status(200).json({ authenticated: true, user: { role: 'founder' } });
-=======
   const session = getSessionFromReq(req);
   const internal = isInternalAgentRequest(req);
   if (!session && !internal) {
@@ -13,5 +9,4 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     return;
   }
   res.status(200).json({ message: 'OK' });
->>>>>>> origin/cursor/develop-self-managing-ai-admin-section-f647:pages/api/admin/automation-status.ts
 }

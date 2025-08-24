@@ -95,18 +95,6 @@ export default function ServicesPage() {
     website: 'https://ziontechgroup.com'
   };
 
-<<<<<<< HEAD
-  const advertisingContent = {
-    headline: "500+ Revolutionary Micro SaaS Services",
-    subheadline: "Transform Your Business with Cutting-Edge AI, Quantum Computing & Autonomous Systems",
-    benefits: [
-      "🚀 First-to-Market Solutions",
-      "💎 Industry-Leading Technology", 
-      "🌍 Global Deployment",
-      "💰 Competitive Pricing",
-      "⚡ Lightning-Fast Setup",
-      "🛡️ Enterprise Security"
-=======
   const popularServices = getPopularServices();
 
   // Enhanced service categories with better descriptions
@@ -197,7 +185,6 @@ export default function ServicesPage() {
       "🧬 AI-Powered Drug Discovery",
       "💰 Quantum Financial Optimization",
       "🚀 Space Exploration AI Platform"
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-2d92
     ],
     marketPosition: "Zion Tech Group leads the global micro SaaS revolution with patent-pending quantum AI and autonomous systems.",
     pricing: "Services range from $49/month to $5,999/month with 30-day free trials and comprehensive support.",
@@ -222,11 +209,7 @@ export default function ServicesPage() {
   };
 
   return (
-<<<<<<< HEAD
-    <div>
-=======
     <UltraFuturisticBackground variant="holographic">
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-2d92
       <Head>
         <title>Micro SaaS Services - Zion Tech Group | AI, Quantum Computing & Emerging Tech</title>
         <meta name="description" content="Explore 500+ revolutionary micro SaaS services from Zion Tech Group. AI, quantum computing, autonomous systems, blockchain, and emerging technology solutions." />
@@ -366,37 +349,6 @@ export default function ServicesPage() {
                 </p>
               </div>
 
-<<<<<<< HEAD
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {getPopularServices().map((service, index) => (
-                  <motion.div
-                    key={service.id}
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                  >
-                    <UltraFuturisticCard
-                      variant={getVariantForCategory(service.category)}
-                      className="h-full"
-                      glowIntensity="high"
-                      animationSpeed="normal"
-                    >
-                      <div className="flex items-start justify-between mb-4">
-                        <div className="flex items-center gap-3">
-                          <div className="p-3 rounded-xl bg-white/10 backdrop-blur-sm">
-                            <span className="text-2xl">{service.icon}</span>
-                          </div>
-                          <div>
-                            <h3 className="text-xl font-bold text-white mb-1">{service.name}</h3>
-                            <div className="text-lg font-bold text-cyan-400">{service.price}{service.period}</div>
-                          </div>
-                        </div>
-                        <div className="px-3 py-1 bg-gradient-to-r from-yellow-400 to-orange-500 text-black text-sm font-bold rounded-full">
-                          <Star className="w-4 h-4 inline mr-1" />
-                          Popular
-                        </div>
-=======
           {viewMode === 'grid' ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredServices.map((service, index) => (
@@ -475,7 +427,6 @@ export default function ServicesPage() {
                       <div>
                         <h3 className="text-xl font-bold text-white">{service.name}</h3>
                         <p className="text-sm text-gray-400">{service.category}</p>
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-2d92
                       </div>
 
                       <p className="text-gray-300 mb-4 leading-relaxed">{service.description}</p>

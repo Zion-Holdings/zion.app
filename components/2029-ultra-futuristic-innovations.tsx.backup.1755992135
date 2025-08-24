@@ -6,13 +6,8 @@ import UltraFuturisticBackground2029 from '../components/backgrounds/UltraFuturi
 import UltraFuturisticNavigation2029 from '../components/layout/UltraFuturisticNavigation2029';
 import UltraFuturisticFooter2029 from '../components/layout/UltraFuturisticFooter2029';
 import UltraFuturistic2029ServiceShowcase from '../components/sections/UltraFuturistic2029ServiceShowcase';
-<<<<<<< HEAD
-import { cuttingEdgeInnovations2029 } from '../data/2029-cutting-edge-innovations';
-import { spaceColonization2029Services } from '../data/2029-space-colonization-services';
-=======
 import { cuttingEdge2029Services } from '../data/2029-cutting-edge-innovations';
 import { ultimateMicroSaasServices } from '../data/ultimate-micro-saas-services';
->>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-2b24
 
 export default function UltraFuturistic2029InnovationsPage() {
   const contactInfo = {
@@ -37,16 +32,9 @@ export default function UltraFuturistic2029InnovationsPage() {
         <link rel="canonical" href="https://ziontechgroup.com/2029-ultra-futuristic-innovations" />
       </Head>
 
-<<<<<<< HEAD
-      {/* Futuristic Background */}
-      <UltraFuturisticBackground2029>
-        <div>
-
-=======
       {/* Background */}
       <UltraFuturisticBackground2029 />
       
->>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-2b24
       {/* Navigation */}
       <UltraFuturisticNavigation2029 />
 
@@ -146,22 +134,14 @@ export default function UltraFuturistic2029InnovationsPage() {
                   description: 'Automated space exploration, colonization, and resource extraction systems',
                   icon: Rocket,
                   color: 'from-red-600 to-orange-600',
-<<<<<<< HEAD
-                  services: spaceColonization2029Services.filter(s => s.category.includes('Colonization') || s.category.includes('Mining'))
-=======
                   services: cuttingEdge2029Services.filter(s => s.category.includes('Space') || s.category.includes('Time'))
->>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-2b24
                 },
                 {
                   title: '🏠 Space Architecture & Energy',
                   description: 'Advanced habitat design and space-based energy harvesting platforms',
                   icon: Globe,
                   color: 'from-green-600 to-teal-600',
-<<<<<<< HEAD
-                  services: spaceColonization2029Services.filter(s => s.category.includes('Architecture') || s.category.includes('Energy'))
-=======
                   services: cuttingEdge2029Services.filter(s => s.category.includes('Architecture') || s.category.includes('Energy'))
->>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-2b24
                 },
                 {
                   title: '👁️ AI Reality Augmentation',
@@ -297,14 +277,6 @@ export default function UltraFuturistic2029InnovationsPage() {
 
         {/* Footer */}
         <UltraFuturisticFooter2029 />
-<<<<<<< HEAD
-        </div>
-      </UltraFuturisticBackground2029>
-      </>
-    );
-  }
-=======
     </>
   );
 }
->>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-2b24

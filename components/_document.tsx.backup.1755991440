@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-import Document, { Html, Head, Main, NextScript } from 'next/document';
-
-class MyDocument extends Document {
-=======
 import Document, { Html, Head, Main, NextScript, DocumentContext, DocumentInitialProps } from 'next/document';
 
 export default class MyDocument extends Document {
@@ -11,7 +6,6 @@ export default class MyDocument extends Document {
     return { ...initialProps };
     }
 
->>>>>>> origin/cursor/develop-zion-trust-scoring-engine-7911
   render() {
     return (
       <Html lang="en">
@@ -23,10 +17,4 @@ export default class MyDocument extends Document {
       </Html>
     );
   }
-<<<<<<< HEAD
 }
-
-export default MyDocument;
-=======
-}
->>>>>>> origin/cursor/develop-zion-trust-scoring-engine-7911

@@ -1,15 +1,4 @@
 import type { NextPage } from 'next';
-<<<<<<< HEAD
-
-const ProductsIndex: NextPage = () => (
-  <div>
-    <h1 className="text-2xl font-semibold mb-2">Products</h1>
-    <p className="text-gray-700 dark:text-gray-300">Browse available products.</p>
-  </div>
-);
-
-export default ProductsIndex;
-=======
 import Head from 'next/head';
 import { useMemo, useState } from 'react';
 import EnhancedLayout from '@/components/layout/EnhancedLayout';
@@ -75,4 +64,3 @@ const EquipmentIndex: NextPage = () => {
 };
 
 export default EquipmentIndex;
->>>>>>> origin/cursor/create-dynamic-listing-pages-with-filters-fc72

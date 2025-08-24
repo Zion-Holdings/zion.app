@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 import React from 'react';
 
 export default function ContactPage() {
@@ -32,4 +30,3 @@ export default function ContactPage() {
     </div>
   );
 }
->>>>>>> origin/cursor/build-zion-ai-talent-directory-page-f450

@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-export default function ChatContent9() { return <div className="py-10 text-white">Content coming soon.</div>; }
-=======
 import React from 'react';
 
 export default function SustainableTechnologyPracticesPage() {
@@ -11,4 +8,3 @@ export default function SustainableTechnologyPracticesPage() {
     </div>
   );
 }
->>>>>>> origin/cursor/build-zion-ai-notification-center-5a66

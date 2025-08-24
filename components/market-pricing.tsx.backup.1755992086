@@ -211,19 +211,6 @@ export default function MarketPricing() {
               </ul>
               <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $50–$800/month depending on test volume and team size.</div>
             </div>
-<<<<<<< HEAD
-
-            <div className="bg-black/30 rounded-2xl border border-cyan-500/30 p-6">
-              <h2 className="text-2xl font-semibold mb-2">AI Guardrails & Safety</h2>
-              <ul className="list-disc list-inside text-slate-300 space-y-1">
-                				                <li>OpenAI Safety: <a className="text-cyan-400 underline" href={`https://openai.com/safety`} target="_blank" rel="noopener noreferrer">openai.com/safety</a></li>
-                <li>Anthropic RAI: <a className="text-cyan-400 underline" href={`https://www.anthropic.com/news`} target="_blank" rel="noopener noreferrer">anthropic.com/news</a> (policy updates)</li>
-                <li>Guardrails libraries: <a className="text-cyan-400 underline" href={`https://github.com/guardrails-ai/guardrails`} target="_blank" rel="noopener noreferrer">github.com/guardrails-ai/guardrails</a></li>
-              </ul>
-              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $0–$500/month for hosted tools; internal policies recommended.</div>
-            </div>
-=======
->>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-1c54
             <div className="bg-black/30 rounded-2xl border border-cyan-500/30 p-6">
               <h2 className="text-2xl font-semibold mb-2">LLM & AI Platforms</h2>
               <ul className="list-disc list-inside text-slate-300 space-y-1">
@@ -271,20 +258,6 @@ export default function MarketPricing() {
               <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $200–$10,000/month depending on traffic and workloads.</div>
             </div>
 
-<<<<<<< HEAD
-            <div className="bg-black/30 rounded-2xl border border-rose-500/30 p-6">
-              <h2 className="text-2xl font-semibold mb-2">PDF & Document Generation</h2>
-              <ul className="list-disc list-inside text-slate-300 space-y-1">
-                <li>DocRaptor pricing: <a className="text-cyan-400 underline" href={`https://docraptor.com`} target="_blank" rel="noopener noreferrer">docraptor.com</a></li>
-                <li>PDFMonkey pricing: <a className="text-cyan-400 underline" href={`https://www.pdfmonkey.io/pricing`} target="_blank" rel="noopener noreferrer">pdfmonkey.io/pricing</a></li>
-                <li>CloudConvert: <a className="text-cyan-400 underline" href={`https://cloudconvert.com/pricing`} target="_blank" rel="noopener noreferrer">cloudconvert.com/pricing</a></li>
-                <li>Gotenberg (self-hosted): <a className="text-cyan-400 underline" href={`https://gotenberg.dev`} target="_blank" rel="noopener noreferrer">gotenberg.dev</a></li>
-              </ul>
-              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $15–$200/month depending on volume and features.</div>
-            </div>
-
-=======
->>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-1c54
             <div className="bg-black/30 rounded-2xl border border-pink-500/30 p-6">
               <h2 className="text-2xl font-semibold mb-2">Contact Center & Voice AI</h2>
               <ul className="list-disc list-inside text-slate-300 space-y-1">
@@ -295,29 +268,6 @@ export default function MarketPricing() {
               <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $50–$1,500/month by minutes, languages, and concurrency.</div>
             </div>
 
-<<<<<<< HEAD
-            <div className="bg-black/30 rounded-2xl border border-amber-500/30 p-6">
-              <h2 className="text-2xl font-semibold mb-2">Kubernetes & FinOps</h2>
-              <ul className="list-disc list-inside text-slate-300 space-y-1">
-                <li>Kubecost pricing: <a className="text-cyan-400 underline" href={`https://www.kubecost.com/pricing`} target="_blank" rel="noopener noreferrer">kubecost.com/pricing</a></li>
-                <li>CloudZero pricing: <a className="text-cyan-400 underline" href={`https://www.cloudzero.com/pricing`} target="_blank" rel="noopener noreferrer">cloudzero.com/pricing</a></li>
-                <li>Finout pricing: <a className="text-cyan-400 underline" href={`https://www.finout.io/pricing`} target="_blank" rel="noopener noreferrer">finout.io/pricing</a></li>
-              </ul>
-              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $99–$2,000/month based on clusters and spend.</div>
-            </div>
-
-            <div className="bg-black/30 rounded-2xl border border-emerald-500/30 p-6">
-              <h2 className="text-2xl font-semibold mb-2">Identity & Access</h2>
-              <ul className="list-disc list-inside text-slate-300 space-y-1">
-                <li>Auth0 pricing: <a className="text-cyan-400 underline" href={`https://auth0.com/pricing`} target="_blank" rel="noopener noreferrer">auth0.com/pricing</a></li>
-                <li>Okta pricing: <a className="text-cyan-400 underline" href={`https://www.okta.com/pricing/`} target="_blank" rel="noopener noreferrer">okta.com/pricing</a></li>
-                <li>Azure AD pricing: <a className="text-cyan-400 underline" href={`https://azure.microsoft.com/pricing/details/active-directory/`} target="_blank" rel="noopener noreferrer">azure.microsoft.com/pricing/details/active-directory</a></li>
-              </ul>
-              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $50–$1,000/month by MAUs and features.</div>
-            </div>
-
-=======
->>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-1c54
             <div className="bg-black/30 rounded-2xl border border-cyan-500/30 p-6">
               <h2 className="text-2xl font-semibold mb-2">Email Deliverability & Warmup</h2>
               <ul className="list-disc list-inside text-slate-300 space-y-1">

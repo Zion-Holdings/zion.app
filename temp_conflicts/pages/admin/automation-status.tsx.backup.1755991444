@@ -1,7 +1,1 @@
-<<<<<<< HEAD
-export default function AdminAutomationStatus() {
-  return <div>Admin Automation Status</div>;
-}
-=======
 export default function Page(){return null}
->>>>>>> origin/cursor/enable-vendor-agency-marketplace-operations-5a51

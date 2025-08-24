@@ -1,26 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-import type { NextPage } from 'next';
-import Head from 'next/head';
-
-const EmergingTechnologyTrends: NextPage = () => {
-  return (
-    <div>
-      <Head>
-        <title>EmergingTechnologyTrends - Zion Tech Solutions</title>
-        <meta name="description" content="EmergingTechnologyTrends page" />
-      </Head>
-      
-      <main>
-        <h1>EmergingTechnologyTrends</h1>
-        <p>This page is under construction.</p>
-      </main>
-    </div>
-  );
-};
-
-export default EmergingTechnologyTrends;
-=======
 export default function EmergingTechnologyTrends() {
   return (
     <div className="space-y-2">
@@ -29,7 +6,6 @@ export default function EmergingTechnologyTrends() {
     </div>
   );
 }
->>>>>>> origin/cursor/design-zion-ai-marketplace-mobile-app-ui-348a
 =======
 export default function EmergingTechnologyTrendsPage() {
   return (
@@ -41,5 +17,3 @@ export default function EmergingTechnologyTrendsPage() {
 }
 =======
 export default function ChatContent8() { return <div className="py-10 text-white">Content coming soon.</div>; }
->>>>>>> origin/cursor/build-zion-ai-marketplace-service-listing-9ebf
->>>>>>> 5f48a381108fa3a8a43c189dd4b043133ce9307e

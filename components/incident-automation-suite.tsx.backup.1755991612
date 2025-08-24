@@ -10,11 +10,7 @@ export default function IncidentAutomationSuitePage() {
   if (!service) return null;
 
   return (
-<<<<<<< HEAD
-    <UltraFuturisticBackground variant="holographic" intensity="high">
-=======
     <UltraFuturisticBackground variant="quantum" intensity={1.5}>
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-465f
       <Head>
         <title>{service.name} - Zion Tech Group</title>
         <meta name="description" content={service.description} />
