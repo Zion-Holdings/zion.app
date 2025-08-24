@@ -3,16 +3,6 @@ import defaultTheme from 'tailwindcss/defaultTheme';
 import plugin from 'tailwindcss/plugin';
 
 const config: Config = {
-<<<<<<< HEAD
-  darkMode: "class",
-  content: [
-    "./pages/**/*.{ts,tsx}",
-    "./components/**/*.{ts,tsx}",
-    "./app/**/*.{ts,tsx}",
-    "./src/**/*.{ts,tsx}",
-  ],
-  safelist: ['border-border'],
-=======
   darkMode: 'class',
   content: [
     './pages/**/*.{ts,tsx}',
@@ -20,7 +10,7 @@ const config: Config = {
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
   ],
->>>>>>> 6d7be8fce1d5e66d749ea8dd439e0663bfd83322
+  safelist: ['border-border'],
   theme: {
     extend: {
       colors: {
@@ -54,54 +44,64 @@ const config: Config = {
           foreground: 'hsl(var(--popover-foreground))',
         },
         card: {
-<<<<<<< HEAD
-          DEFAULT: hsl(var(--card)),          foreground: hsl(var(--card-foreground)),        },
-        // Custom Zion colors
-        "zion-blue": {
-          DEFAULT: "#0a0f1f",
-          light: "#1e263b",
-          dark: "#090c1a",
-        },
-        "zion-purple": {
-          DEFAULT: "#a855f7",
-          light: "#d8b4fe",
-          dark: "#9333ea",
-        },
-        "zion-cyan": {
-          DEFAULT: "#00e5ff",
-          light: "#7df9ff",
-          dark: "#00c4cc",
-        },
-        "zion-slate": {
-          DEFAULT: "#94A3B8",
-          light: "#CBD5E1",
-          dark: "#64748B",
-        },
-=======
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
         },
+        // Custom Zion colors
         'zion-blue': {
-          DEFAULT: '#2e73ea',
-          light: '#8ab1f3',
-          dark: '#172d67',
+          DEFAULT: '#0a0f1f',
+          light: '#1e263b',
+          dark: '#090c1a',
         },
         'zion-purple': {
           DEFAULT: '#a855f7',
-          light: '#c084fc',
-          dark: '#6b21a8',
+          light: '#d8b4fe',
+          dark: '#9333ea',
         },
         'zion-cyan': {
-          DEFAULT: '#0d9488',
-          light: '#7aeae4',
-          dark: '#0f766e',
+          DEFAULT: '#00e5ff',
+          light: '#7df9ff',
+          dark: '#00c4cc',
         },
-        'zion-slate': {
-          DEFAULT: '#17072b',
-          light: '#451582',
-          dark: '#000000',
+                'zion-slate': {
+          DEFAULT: '#94A3B8',
+          light: '#CBD5E1',
+          dark: '#64748B',
+        },
+        light: '#451582',
+        dark: '#000000',
+      },
+      animation: {
+        'spin-reverse': 'spin-reverse 1s linear infinite',
+        'float': 'float 6s ease-in-out infinite',
+        'float-delayed': 'float 6s ease-in-out infinite 2s',
+        'float-slow': 'float 8s ease-in-out infinite 4s',
+        'glow': 'glow 2s ease-in-out infinite alternate',
+        'spin-slow': 'spin 20s linear infinite',
+        'accordion-down': 'accordion-down 0.2s ease-out',
+        'accordion-up': 'accordion-up 0.2s ease-out',
+      },
+      keyframes: {
+        'spin-reverse': {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(-360deg)' },
+        },
+        'float': {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-20px)' },
+        },
+        'glow': {
+          '0%': { boxShadow: '0 0 5px rgba(59, 130, 246, 0.5)' },
+          '100%': { boxShadow: '0 0 20px rgba(59, 130, 246, 0.8), 0 0 30px rgba(59, 130, 246, 0.6)' },
+        },
+        'accordion-down': {
+          from: { height: '0' },
+          to: { height: 'var(--radix-accordion-content-height)' },
+        },
+        'accordion-up': {
+          from: { height: 'var(--radix-accordion-content-height)' },
+          to: { height: '0' },
         }
->>>>>>> 6d7be8fce1d5e66d749ea8dd439e0663bfd83322
       },
       borderRadius: {
         lg: 'var(--radius)',
@@ -115,21 +115,7 @@ const config: Config = {
           'Poppins Fallback',
           ...defaultTheme.fontFamily.sans
         ]
-      },
-      keyframes: {
-        'accordion-down': {
-          from: { height: '0' },
-          to: { height: 'var(--radix-accordion-content-height)' },
-        },
-        'accordion-up': {
-          from: { height: 'var(--radix-accordion-content-height)' },
-          to: { height: '0' },
-        }
-      },
-      animation: {
-        'accordion-down': 'accordion-down 0.2s ease-out',
-        'accordion-up': 'accordion-up 0.2s ease-out',
-      }
+
     }
   },
   plugins: [

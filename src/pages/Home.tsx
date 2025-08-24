@@ -138,7 +138,7 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-8">
               Our Featured Services
             </h2>
-            <p className="text-lg lg:text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg lg:text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto">
               From AI-powered content generation to enterprise cybersecurity, we have solutions 
               for every business need and budget.
             </p>
@@ -226,7 +226,7 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
             <Link
               to="/contact"
-              className="group inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-zion-purple to-zion-cyan text-white font-semibold rounded-xl hover:from-zion-purple-light hover:to-zion-cyan-light transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-zion-cyan/30 text-lg"
+              className="group inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-zion-cyan to-zion-purple text-white font-semibold rounded-xl hover:from-zion-cyan-light hover:to-zion-purple-light transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-zion-cyan/30 text-lg"
             >
               <Sparkles className="h-6 w-6 group-hover:rotate-12 transition-transform duration-300" />
               Get Started Today
