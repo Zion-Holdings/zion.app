@@ -1,6 +1,4 @@
 
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { GradientHeading } from "@/components/GradientHeading";
 
@@ -11,9 +9,8 @@ export default function About() {
         title="About Zion - The Future of AI & Tech Marketplace" 
         description="Learn about Zion's mission to create the first free marketplace dedicated to high-tech and artificial intelligence." 
         keywords="about Zion, AI marketplace, tech platform, mission, vision, team"
-        canonical="https://app.ziontechgroup.com/about"
+        canonical="https://ziontechgroup.com/about"
       />
-      <Header />
       <main className="min-h-screen bg-zion-blue pt-24 pb-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -104,19 +101,40 @@ export default function About() {
               <div className="bg-zion-blue-dark p-8 rounded-lg border border-zion-blue-light">
                 <div className="bg-zion-blue inline-flex p-4 rounded-full mb-4">
                   <svg className="w-8 h-8 text-zion-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">Trust</h3>
+                <h3 className="text-xl font-bold text-white mb-3">Excellence</h3>
                 <p className="text-zion-slate-light">
-                  We maintain the highest standards of integrity, transparency, and ethical practices in everything we do.
+                  We strive for excellence in everything we do, from platform performance to user experience and support.
                 </p>
               </div>
             </div>
           </div>
+          
+          <div className="text-center">
+            <h2 className="text-3xl font-bold text-white mb-8">Join Our Mission</h2>
+            <p className="text-zion-slate-light text-xl mb-8 max-w-3xl mx-auto">
+              Whether you're a talented AI specialist, an innovative company, or someone passionate about 
+              the future of technology, Zion is the place for you.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a 
+                href="/talent" 
+                className="inline-flex items-center justify-center px-8 py-3 bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white font-semibold rounded-lg transition-all duration-200 transform hover:scale-105"
+              >
+                Explore Talent
+              </a>
+              <a 
+                href="/services" 
+                className="inline-flex items-center justify-center px-8 py-3 bg-zion-blue-dark border border-zion-purple text-zion-cyan hover:bg-zion-purple/10 font-semibold rounded-lg transition-all duration-200"
+              >
+                Discover Services
+              </a>
+            </div>
+          </div>
         </div>
       </main>
-      <Footer />
     </>
   );
 }

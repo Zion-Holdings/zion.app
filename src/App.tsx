@@ -7,6 +7,7 @@ import { useScrollToTop } from "./hooks";
 import { WhitelabelProvider } from "./context/WhitelabelContext";
 import { Toaster } from "./components/ui/toaster";
 import { Toaster as SonnerToaster } from "./components/ui/sonner";
+import { AppLayout } from "./layout/AppLayout";
 import {
   AuthRoutes,
   DashboardRoutes,
@@ -41,9 +42,19 @@ const OpenAppRedirect = React.lazy(() => import('./pages/OpenAppRedirect'));
 const ContactPage = React.lazy(() => import('./pages/Contact'));
 const ZionHireAI = React.lazy(() => import('./pages/ZionHireAI'));
 const RequestQuotePage = React.lazy(() => import('./pages/RequestQuote'));
+const AboutPage = React.lazy(() => import('./pages/About'));
+const MarketplacePage = React.lazy(() => import('./pages/Marketplace'));
+const CareersPage = React.lazy(() => import('./pages/Careers'));
+const GreenITPage = React.lazy(() => import('./pages/GreenIT'));
+const SitemapPage = React.lazy(() => import('./pages/Sitemap'));
+const PrivacyPage = React.lazy(() => import('./pages/Privacy'));
+const TermsPage = React.lazy(() => import('./pages/Terms'));
+const FAQPage = React.lazy(() => import('./pages/FAQ'));
 
 const baseRoutes = [
   { path: '/', element: <Home /> },
+  { path: '/about', element: <AboutPage /> },
+  { path: '/marketplace', element: <MarketplacePage /> },
   { path: '/match', element: <AIMatcherPage /> },
   { path: '/login', element: <Login /> },
   { path: '/signup', element: <Signup /> },
@@ -65,6 +76,12 @@ const baseRoutes = [
   { path: '/request-quote', element: <RequestQuotePage /> },
   { path: '/blog', element: <Blog /> },
   { path: '/blog/:slug', element: <BlogPost /> },
+  { path: '/careers', element: <CareersPage /> },
+  { path: '/green-it', element: <GreenITPage /> },
+  { path: '/sitemap', element: <SitemapPage /> },
+  { path: '/privacy', element: <PrivacyPage /> },
+  { path: '/terms', element: <TermsPage /> },
+  { path: '/faq', element: <FAQPage /> },
 ];
 
 const App = () => {
@@ -75,9 +92,11 @@ const App = () => {
       <ThemeProvider defaultTheme="dark">
         <Suspense fallback={<div className="p-4 text-center">Loading...</div>}>
           <Routes>
-            {baseRoutes.map(({ path, element }) => (
-              <Route key={path} path={path} element={element} />
-            ))}
+            <Route path="/" element={<AppLayout />}>
+              {baseRoutes.map(({ path, element }) => (
+                <Route key={path} path={path} element={element} />
+              ))}
+            </Route>
             <Route path="/auth/*" element={<AuthRoutes />} />
             <Route path="/dashboard/*" element={<DashboardRoutes />} />
             <Route path="/marketplace/*" element={<MarketplaceRoutes />} />
