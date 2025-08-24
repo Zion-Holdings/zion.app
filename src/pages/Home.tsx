@@ -14,6 +14,7 @@ import { ITServiceRequestHero } from "@/components/home/ITServiceRequestHero";
 import { FloatingCTA } from "@/components/FloatingCTA";
 import { PricingSection } from "@/components/PricingSection";
 import { TechSolutionsSection } from "@/components/TechSolutionsSection";
+import { CaseStudiesSection } from "@/components/CaseStudiesSection";
 
 export default function Home() {
   return (
@@ -33,6 +34,7 @@ export default function Home() {
       <BenefitsSection />
       <HowItWorksSection />
       <TechSolutionsSection />
+      <CaseStudiesSection />
       <PricingSection />
       <FeaturedListingsSection />
       <NewsletterSection />
