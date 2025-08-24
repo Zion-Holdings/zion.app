@@ -6,6 +6,14 @@ import { HeroSection } from "@/components/HeroSection";
 import { SEO } from "@/components/SEO";
 import { FloatingActionButton } from "@/components/ui/floating-action-button";
 import { MessageCircle, Phone, Mail, HelpCircle } from "lucide-react";
+import { QuickAccess } from "@/components/home/QuickAccess";
+import { FeatureCTAs } from "@/components/home/FeatureCTAs";
+import { FeatureHighlights } from "@/components/home/FeatureHighlights";
+import { ITServiceRequestHero } from "@/components/home/ITServiceRequestHero";
+import { MicroSaasServicesSection } from "@/components/home/MicroSaasServicesSection";
+import { HowItWorksSection } from "@/components/HowItWorksSection";
+import { FeaturedListingsSection } from "@/components/FeaturedListingsSection";
+import { NewsletterSection } from "@/components/NewsletterSection";
 
 export default function Home() {
   const handleChatSupport = () => {
@@ -37,11 +45,25 @@ export default function Home() {
         canonical="https://ziontechgroup.com/"
       />
 
+      <ITServiceRequestHero />
+
       <HeroSection />
+      
+      <QuickAccess />
+      
+      <FeatureCTAs />
+      
+      <MicroSaasServicesSection />
+      
+      <FeatureHighlights />
       
       <CategoriesSection />
       
       <BenefitsSection />
+
+      <HowItWorksSection />
+      <FeaturedListingsSection />
+      <NewsletterSection />
 
       {/* Floating Action Button for Support */}
       <FloatingActionButton

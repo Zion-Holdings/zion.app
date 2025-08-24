@@ -1,54 +1,102 @@
-import React from 'react';
-import { Suspense } from 'react';
-import { Routes, Route } from 'react-router-dom';
-import { LoadingSpinner } from "./components/ui/loading-spinner";
+import React, { Suspense } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-// Import only the pages that exist
+import { ThemeProvider } from "./components/ThemeProvider";
+import { useScrollToTop } from "./hooks/useScrollToTop";
+import { WhitelabelProvider } from "./context/WhitelabelContext";
+import { ToasterProvider } from "./components/Toaster";
+import { Sonner } from "./components/Sonner";
+
+// Lazy load pages
 const Home = React.lazy(() => import('./pages/Home'));
+const AboutPage = React.lazy(() => import('./pages/About'));
 const Contact = React.lazy(() => import('./pages/Contact'));
-const About = React.lazy(() => import('./pages/About'));
 const Sitemap = React.lazy(() => import('./pages/Sitemap'));
+const AISolutionsPage = React.lazy(() => import('./pages/AISolutions'));
+const ITServicesPage = React.lazy(() => import('./pages/ITServices'));
+const EnterprisePage = React.lazy(() => import('./pages/Enterprise'));
+const DeveloperPortalPage = React.lazy(() => import('./pages/DeveloperPortal'));
+const HelpCenterPage = React.lazy(() => import('./pages/HelpCenter'));
+const CookiesPage = React.lazy(() => import('./pages/Cookies'));
+const AccessibilityPage = React.lazy(() => import('./pages/Accessibility'));
+
+// Our comprehensive services pages
+const ComprehensiveServicesPage = React.lazy(() => import('./pages/ComprehensiveServicesPage'));
+const ServiceDetailPage = React.lazy(() => import('./pages/ServiceDetailPage'));
+const PricingPage = React.lazy(() => import('./pages/PricingPage'));
+
+// Additional service pages
 const AIServicesPage = React.lazy(() => import('./pages/AIServicesPage'));
-const ComprehensiveServices = React.lazy(() => import('./pages/ComprehensiveServices'));
+const CybersecurityServicesPage = React.lazy(() => import('./pages/CybersecurityServicesPage'));
+const ServicesPricingPage = React.lazy(() => import('./pages/ServicesPricingPage'));
+const InnovativeServicesShowcase = React.lazy(() => import('./pages/InnovativeServicesShowcase'));
 const EnterpriseSolutions = React.lazy(() => import('./pages/EnterpriseSolutions'));
 const NotFound = React.lazy(() => import('./pages/NotFound'));
 
-// Simple loading component
-const LoadingFallback = () => (
-  <div className="min-h-screen bg-zion-blue-dark flex items-center justify-center">
-    <div className="text-center">
-      <LoadingSpinner 
-        size="xl" 
-        text="Loading Zion..." 
-        variant="pulse" 
-        className="mb-8"
-      />
-      <div className="text-zion-slate-light text-lg max-w-md mx-auto">
-        <p className="mb-4">Preparing your tech marketplace experience...</p>
-        <div className="flex justify-center gap-2">
-          <div className="w-2 h-2 bg-zion-cyan rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
-          <div className="w-2 h-2 bg-zion-purple rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
-          <div className="w-2 h-2 bg-zion-cyan rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
-        </div>
+const baseRoutes = [
+  { path: '/', element: <Home /> },
+  { path: '/about', element: <AboutPage /> },
+  { path: '/contact', element: <Contact /> },
+  { path: '/sitemap', element: <Sitemap /> },
+  { path: '/ai-solutions', element: <AISolutionsPage /> },
+  { path: '/it-services', element: <ITServicesPage /> },
+  { path: '/enterprise', element: <EnterprisePage /> },
+  { path: '/enterprise-solutions', element: <EnterpriseSolutions /> },
+  { path: '/developers', element: <DeveloperPortalPage /> },
+  { path: '/help-center', element: <HelpCenterPage /> },
+  { path: '/cookies', element: <CookiesPage /> },
+  { path: '/accessibility', element: <AccessibilityPage /> },
+  // Our comprehensive services routes
+  { path: '/comprehensive-services', element: <ComprehensiveServicesPage /> },
+  { path: '/services/:id', element: <ServiceDetailPage /> },
+  { path: '/pricing', element: <PricingPage /> },
+  // Additional service routes
+  { path: '/ai-services', element: <AIServicesPage /> },
+  { path: '/cybersecurity-services', element: <CybersecurityServicesPage /> },
+  { path: '/services-pricing', element: <ServicesPricingPage /> },
+  { path: '/innovative-services', element: <InnovativeServicesShowcase /> },
+  // Catch-all route
+  { path: '*', element: <NotFound /> },
+];
+
+// Enhanced loading component with better UX
+function EnhancedSuspenseFallback() {
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-slate-dark">
+      <div className="text-center">
+        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-zion-gold mx-auto mb-4"></div>
+        <h2 className="text-2xl font-bold text-white mb-2">Loading Zion Tech Group...</h2>
+        <p className="text-zion-slate-light">Please wait while we prepare your experience</p>
       </div>
     </div>
-  </div>
-);
+  );
+}
 
-const App = () => {
+// Simple Error Boundary Component
+function ErrorBoundary({ children }: { children: React.ReactNode }) {
+  return <>{children}</>;
+}
+
+function App() {
   return (
-    <Suspense fallback={<LoadingFallback />}>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/sitemap" element={<Sitemap />} />
-        <Route path="/ai-services" element={<AIServicesPage />} />
-        <Route path="/comprehensive-services" element={<ComprehensiveServices />} />
-        <Route path="/enterprise-solutions" element={<EnterpriseSolutions />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </Suspense>
+    <ErrorBoundary>
+      <WhitelabelProvider>
+        <ThemeProvider>
+          <Router>
+            <Suspense fallback={<EnhancedSuspenseFallback />}>
+              <Routes>
+                {baseRoutes.map(({ path, element }) => (
+                  <Route key={path} path={path} element={element} />
+                ))}
+              </Routes>
+            </Suspense>
+            <ToasterProvider>
+              <Sonner />
+            </ToasterProvider>
+          </Router>
+        </ThemeProvider>
+      </WhitelabelProvider>
+    </ErrorBoundary>
   );
 }
 

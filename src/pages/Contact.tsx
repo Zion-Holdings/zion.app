@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { z } from 'zod';
+import { toast } from 'sonner';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -29,56 +30,70 @@ export default function Contact() {
   };
 
   const validateForm = () => {
-    const newErrors: typeof errors = {};
-    
-    if (!formData.name.trim()) {
-      newErrors.name = "Name is required";
+    const schema = z.object({
+      name: z.string().min(2, "Name must be at least 2 characters"),
+      email: z.string().email("Invalid email address"),
+      subject: z.string().min(2, "Subject must be at least 2 characters"),
+      message: z.string().min(10, "Message must be at least 10 characters"),
+    });
+
+    const result = schema.safeParse(formData);
+    if (!result.success) {
+      const fieldErrors: Record<string, string> = {};
+      for (const err of result.error.errors) {
+        if (err.path[0]) {
+          fieldErrors[err.path[0] as string] = err.message;
+        }
+      }
+      setErrors(fieldErrors);
+      toast.error(result.error.errors[0].message);
+      return false;
     }
     
-    if (!formData.email.trim()) {
-      newErrors.email = "Email is required";
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = "Invalid email format";
-    }
-    
-    if (!formData.subject.trim()) {
-      newErrors.subject = "Subject is required";
-    }
-    
-    if (!formData.message.trim()) {
-      newErrors.message = "Message is required";
-    } else if (formData.message.length < 10) {
-      newErrors.message = "Message must be at least 10 characters";
-    }
-    
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
+    return true;
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!validateForm()) {
       return;
     }
     
     setIsSubmitting(true);
-    
+
+    setTimeout(() => {
+      setIsSubmitting(false);
+      toast.success("We've received your message and will get back to you soon.");
+
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+      setErrors({});
+    }, 1500);
+  };
+
+  // Handle sending messages to the AI chat assistant
+  const handleSendMessage = async (message: string): Promise<void> => {
     try {
       // Simulate form submission
       await new Promise(resolve => setTimeout(resolve, 1000));
       
       // Show success message
-      alert("Message sent successfully! We'll get back to you soon.");
+      toast.success("Message sent successfully! We'll get back to you soon.");
       
       // Reset form
       setFormData({ name: '', email: '', subject: '', message: '' });
       setErrors({});
       
     } catch (error) {
-      alert("Failed to send message. Please try again.");
-    } finally {
-      setIsSubmitting(false);
+      console.error("Error in AI chat:", error);
+      toast.error("There was an error communicating with our AI assistant. Please try again.");
+      return Promise.resolve();
     }
   };
 
@@ -170,7 +185,7 @@ export default function Contact() {
 
         {/* Office Information */}
         <div className="mt-16">
-          <h2 className="text-2xl font-bold text-zion-blue mb-8">Our Offices</h2>
+          <h2 className="text-4xl font-bold text-zion-blue mb-8">Our Offices</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {offices.map((office, index) => (
               <div key={index} className="bg-zion-blue-dark p-6 rounded-lg">
