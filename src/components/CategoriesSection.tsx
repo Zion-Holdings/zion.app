@@ -12,6 +12,13 @@ const categories = [
     color: "from-purple-500 to-indigo-600",
   },
   {
+    title: "Micro SAAS",
+    description: "Innovative AI-powered business solutions and automation tools",
+    icon: <Lightbulb className="w-10 h-10" />,
+    link: "/micro-saas-services",
+    color: "from-emerald-500 to-green-600",
+  },
+  {
     title: "Talents",
     description: "Connect with AI experts, developers, and tech specialists",
     icon: <Users className="w-10 h-10" />,
@@ -24,13 +31,6 @@ const categories = [
     icon: <HardDrive className="w-10 h-10" />,
     link: "/equipment",
     color: "from-amber-500 to-orange-600",
-  },
-  {
-    title: "Innovation",
-    description: "Discover cutting-edge solutions and tech breakthroughs",
-    icon: <Lightbulb className="w-10 h-10" />,
-    link: "/category/innovation",
-    color: "from-emerald-500 to-green-600",
   },
 ];
 
