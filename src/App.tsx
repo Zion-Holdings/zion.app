@@ -2,6 +2,7 @@ import React from 'react';
 import { Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
+import { Header } from './components/Header';
 
 // Import only the existing pages
 const Home = React.lazy(() => import('./pages/Home'));
@@ -32,6 +33,7 @@ const baseRoutes = [
 const App = () => {
   return (
     <div className="min-h-screen bg-background">
+      <Header />
       <Suspense fallback={<div className="p-4 text-center">Loading...</div>}>
         <Routes>
           {baseRoutes.map(({ path, element }) => (

@@ -1,4 +1,4 @@
-import{c as o}from"./trending-up-D-T5Cmp8.js";/**
+import{c as o}from"./index-SMEhw1ma.js";/**
  * @license lucide-react v0.323.0 - ISC
  *
  * This source code is licensed under the ISC license.
