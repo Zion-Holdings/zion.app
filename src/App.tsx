@@ -8,17 +8,44 @@ import { Toaster as SonnerToaster } from "./components/ui/sonner";
 import { PageLoader } from "./components/ui/LoadingSpinner";
 import { FloatingCTA } from "./components/FloatingCTA";
 
-// Import pages directly instead of using lazy loading for now
-import Home from './pages/Home';
-import About from './pages/About';
-import GreenIT from './pages/GreenIT';
-import Careers from './pages/Careers';
-import Sitemap from './pages/Sitemap';
-import Privacy from './pages/Privacy';
-import Terms from './pages/Terms';
-import HelpCenter from './pages/HelpCenter';
-import ContactPage from './pages/Contact';
-import MicroSaasServices from './pages/MicroSaasServices';
+// Lazy load pages with better error handling
+const Home = React.lazy(() => import('./pages/Home'));
+const AIMatcherPage = React.lazy(() => import('./pages/AIMatcher'));
+const TalentDirectory = React.lazy(() => import('./pages/TalentDirectory'));
+const TalentsPage = React.lazy(() => import('./pages/TalentsPage'));
+const ServicesPage = React.lazy(() => import('./pages/ServicesPage'));
+const ServicesShowcase = React.lazy(() => import('./pages/ServicesShowcase'));
+const PricingPage = React.lazy(() => import('./pages/PricingPage'));
+const ServicesComparison = React.lazy(() => import('./pages/ServicesComparison'));
+const EquipmentPage = React.lazy(() => import('./pages/EquipmentPage'));
+const EquipmentDetail = React.lazy(() => import('./pages/EquipmentDetail'));
+const Analytics = React.lazy(() => import('./pages/Analytics'));
+const MobileLaunchPage = React.lazy(() => import('./pages/MobileLaunchPage'));
+const CommunityPage = React.lazy(() => import('./pages/CommunityPage'));
+const Categories = React.lazy(() => import('./pages/Categories'));
+const Blog = React.lazy(() => import('./pages/Blog'));
+const BlogPost = React.lazy(() => import('./pages/BlogPost'));
+const PartnersPage = React.lazy(() => import('./pages/Partners'));
+const Login = React.lazy(() => import('./pages/Login'));
+const Signup = React.lazy(() => import('./pages/Signup'));
+const ITOnsiteServicesPage = React.lazy(() => import('./pages/ITOnsiteServicesPage'));
+const OpenAppRedirect = React.lazy(() => import('./pages/OpenAppRedirect'));
+const ContactPage = React.lazy(() => import('./pages/Contact'));
+const ZionHireAI = React.lazy(() => import('./pages/ZionHireAI'));
+const RequestQuotePage = React.lazy(() => import('./pages/RequestQuote'));
+const About = React.lazy(() => import('./pages/About'));
+const GreenIT = React.lazy(() => import('./pages/GreenIT'));
+const Careers = React.lazy(() => import('./pages/Careers'));
+const Sitemap = React.lazy(() => import('./pages/Sitemap'));
+const Privacy = React.lazy(() => import('./pages/Privacy'));
+const Terms = React.lazy(() => import('./pages/Terms'));
+const HelpCenter = React.lazy(() => import('./pages/HelpCenterPage'));
+const ApiDocs = React.lazy(() => import('./pages/ApiDocsHub'));
+const DeveloperPortal = React.lazy(() => import('./pages/DeveloperPortal'));
+const ComprehensiveServicesPage = React.lazy(() => import('./pages/ComprehensiveServicesPage'));
+const AIServicesShowcase = React.lazy(() => import('./pages/AIServicesShowcase'));
+const MicroSAASShowcase = React.lazy(() => import('./pages/MicroSAASShowcase'));
+const MicroSaasServices = React.lazy(() => import('./pages/MicroSaasServices'));
 
 const baseRoutes = [
   { path: '/', element: <Home /> },
@@ -29,6 +56,26 @@ const baseRoutes = [
   { path: '/privacy', element: <Privacy /> },
   { path: '/terms', element: <Terms /> },
   { path: '/help', element: <HelpCenter /> },
+  { path: '/api-docs', element: <ApiDocs /> },
+  { path: '/developers', element: <DeveloperPortal /> },
+  { path: '/ai-matcher', element: <AIMatcherPage /> },
+  { path: '/match', element: <AIMatcherPage /> },
+  { path: '/login', element: <Login /> },
+  { path: '/signup', element: <Signup /> },
+  { path: '/talent', element: <TalentDirectory /> },
+  { path: '/talents', element: <TalentsPage /> },
+  { path: '/services', element: <ServicesPage /> },
+  { path: '/services-showcase', element: <ServicesShowcase /> },
+  { path: '/pricing', element: <PricingPage /> },
+  { path: '/services-comparison', element: <ServicesComparison /> },
+  { path: '/it-onsite-services', element: <ITOnsiteServicesPage /> },
+  { path: '/categories', element: <Categories /> },
+  { path: '/equipment', element: <EquipmentPage /> },
+  { path: '/equipment/:id', element: <EquipmentDetail /> },
+  { path: '/analytics', element: <Analytics /> },
+  { path: '/mobile-launch', element: <MobileLaunchPage /> },
+  { path: '/open-app', element: <OpenAppRedirect /> },
+  { path: '/community', element: <CommunityPage /> },
   { path: '/contact', element: <ContactPage /> },
   { path: '/micro-saas-services', element: <MicroSaasServices /> },
 ];
