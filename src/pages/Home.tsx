@@ -1,7 +1,7 @@
 
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Star, Users, Award, Globe, Zap, Brain, Shield, Cloud, Code, BarChart3, Rocket, CheckCircle, Play, Target, Clock, DollarSign, ShieldCheck, Mail, Phone, MapPin, Cpu, Database, Lock, Wifi, Video, Api, CpuIcon, Fingerprint, Globe2, Atom, Server, Bot, Palette, BarChart, ZapIcon, Mic, Eye } from 'lucide-react';
+import { ArrowRight, Star, Users, Award, Globe, Zap, Brain, Shield, Cloud, Code, BarChart3, Rocket, CheckCircle, Play, Target, Clock, DollarSign, ShieldCheck, Mail, Phone, MapPin, Cpu, Wifi, Video, CpuIcon, Fingerprint, Globe2, Atom, Server, Bot, Mic, Eye, Network } from 'lucide-react';
 import { FuturisticBackground } from '../components/ui/FuturisticBackground';
 
 export function Home() {
@@ -12,7 +12,8 @@ export function Home() {
       description: "Transform your data into actionable insights with our advanced AI algorithms",
       icon: Brain,
       color: "from-zion-cyan to-zion-purple",
-      features: ["Real-time processing", "Predictive analytics", "Custom dashboards"]
+      features: ["Real-time processing", "Predictive analytics", "Custom dashboards"],
+      price: "$199/month"
     },
     {
       id: 2,
@@ -20,7 +21,8 @@ export function Home() {
       description: "Protect your business with enterprise-grade security infrastructure",
       icon: Shield,
       color: "from-zion-cyan to-zion-purple",
-      features: ["24/7 monitoring", "Threat detection", "Compliance ready"]
+      features: ["24/7 monitoring", "Threat detection", "Compliance ready"],
+      price: "$299/month"
     },
     {
       id: 3,
@@ -28,7 +30,8 @@ export function Home() {
       description: "Seamlessly migrate to the cloud with zero downtime",
       icon: Cloud,
       color: "from-zion-cyan to-zion-purple",
-      features: ["Automated migration", "Cost optimization", "Performance tuning"]
+      features: ["Automated migration", "Cost optimization", "Performance tuning"],
+      price: "$399/month"
     }
   ];
 
@@ -145,7 +148,7 @@ export function Home() {
       id: 1,
       title: "API Gateway",
       description: "Enterprise-grade API management and gateway solution",
-      icon: Api,
+      icon: Network,
       price: "$129/month",
       features: ["Rate limiting", "Authentication", "Analytics", "Documentation"],
       color: "from-zion-purple to-zion-cyan"
@@ -342,7 +345,9 @@ export function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-blue-light text-white relative overflow-hidden">
       {/* Futuristic Animated Background */}
-      <FuturisticBackground />
+      <FuturisticBackground>
+        <div></div>
+      </FuturisticBackground>
       
       {/* Additional Animated Background Elements */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
