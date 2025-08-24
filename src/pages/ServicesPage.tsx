@@ -4,8 +4,9 @@ import { ProductListing } from "@/types/listings";
 import { TrustedBySection } from "@/components/TrustedBySection";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Globe } from "lucide-react";
+import { Globe, ArrowRight, Star, Clock, Users } from "lucide-react";
 import { useEffect, useState } from "react";
+import { EXPANDED_SERVICES, CONTACT_INFO } from "@/data/expandedServices";
 
 // Sample service listings
 const SERVICE_LISTINGS: ProductListing[] = [
@@ -261,6 +262,106 @@ export default function ServicesPage() {
         initialPrice={{ min: 3000, max: 10000 }}
       />
       <TrustedBySection />
+      
+      {/* Comprehensive Services Section */}
+      <section className="py-20 bg-gradient-to-r from-blue-50 to-indigo-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              Discover Our Complete Service Portfolio
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+              From AI development to digital transformation, we offer comprehensive solutions for every business need
+            </p>
+            <Button asChild size="lg" className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700">
+              <Link to="/comprehensive-services">
+                View All Services
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Link>
+            </Button>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            {EXPANDED_SERVICES.slice(0, 6).map(service => (
+              <div key={service.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                <div className="relative">
+                  <img
+                    src={service.images[0]}
+                    alt={service.title}
+                    className="w-full h-48 object-cover"
+                  />
+                  {service.featured && (
+                    <div className="absolute top-4 right-4 bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                      Featured
+                    </div>
+                  )}
+                  <div className="absolute top-4 left-4 flex items-center gap-1 bg-black/70 text-white px-2 py-1 rounded text-sm">
+                    <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                    <span>{service.rating}</span>
+                    <span className="text-gray-300">({service.reviewCount})</span>
+                  </div>
+                </div>
+                
+                <div className="p-6">
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="text-sm font-medium text-blue-600 bg-blue-50 px-3 py-1 rounded-full">
+                      {service.category}
+                    </span>
+                    {service.aiScore && (
+                      <span className="text-sm font-medium text-green-600 bg-green-50 px-3 py-1 rounded-full">
+                        AI Score: {service.aiScore}
+                      </span>
+                    )}
+                  </div>
+                  
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">{service.title}</h3>
+                  <p className="text-gray-600 mb-4 line-clamp-3">{service.description}</p>
+                  
+                  <div className="flex items-center gap-4 text-sm text-gray-500 mb-4">
+                    <div className="flex items-center gap-1">
+                      <Clock className="w-4 h-4" />
+                      <span>{service.availability}</span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <Users className="w-4 h-4" />
+                      <span>{service.author.name}</span>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center justify-between">
+                    <div className="text-2xl font-bold text-blue-600">
+                      {service.price ? `$${service.price.toLocaleString()}` : 'Contact Us'}
+                    </div>
+                    <Button asChild size="sm" className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700">
+                      <a href={`mailto:${CONTACT_INFO.email}?subject=Inquiry about ${service.title}`}>
+                        Get Quote
+                      </a>
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          
+          <div className="text-center">
+            <p className="text-gray-600 mb-4">
+              Need a custom solution? Our team is ready to help you achieve your business goals.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button asChild variant="outline" size="lg">
+                <a href={`mailto:${CONTACT_INFO.email}?subject=Custom Service Inquiry`}>
+                  Discuss Custom Solution
+                </a>
+              </Button>
+              <Button asChild size="lg" className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700">
+                <a href={`tel:${CONTACT_INFO.mobile}`}>
+                  Call {CONTACT_INFO.mobile}
+                </a>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

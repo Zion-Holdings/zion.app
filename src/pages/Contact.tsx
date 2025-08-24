@@ -115,15 +115,15 @@ export default function Contact() {
   const offices = [
     {
       name: "Headquarters",
-      address: "123 Tech Avenue, San Francisco, CA 94105",
+      address: "364 E Main St STE 1008 Middletown DE 19709",
       phone: "+1 302 464 0950",
-      email: "commercial@ziontechgroup.com"
+      email: "kleber@ziontechgroup.com"
     },
     {
-      name: "East Coast Office",
-      address: "456 Innovation Street, New York, NY 10001",
+      name: "Support Office",
+      address: "364 E Main St STE 1008 Middletown DE 19709",
       phone: "+1 302 464 0950", 
-      email: "commercial@ziontechgroup.com"
+      email: "support@ziontechgroup.com"
     }
   ];
 
@@ -133,7 +133,7 @@ export default function Contact() {
         title="Contact Zion - Get in Touch"
         description="Have questions or want to learn more? Contact the Zion team about our AI and tech marketplace platform."
         keywords="contact Zion, AI marketplace support, tech platform contact"
-        canonical="https://app.ziontechgroup.com/contact"
+        canonical="https://ziontechgroup.com/contact"
       />
       <main className="min-h-screen bg-zion-blue pt-24 pb-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
