@@ -7,35 +7,47 @@ export default function Home() {
   const featuredServices = [
     {
       id: 1,
-      title: "AI-Powered Analytics",
-      description: "Transform your data into actionable insights with our advanced AI algorithms",
+      title: "AI Content Generator Pro",
+      description: "Advanced AI-powered content creation platform for blogs, social media, and marketing copy with SEO optimization",
       icon: Brain,
       color: "from-zion-cyan to-zion-purple",
-      features: ["Real-time processing", "Predictive analytics", "Custom dashboards"]
+      features: ["GPT-4 powered generation", "SEO optimization", "Multi-language support", "Brand voice customization"],
+      link: "/services"
     },
     {
       id: 2,
-      title: "Cybersecurity Solutions",
-      description: "Protect your business with enterprise-grade security infrastructure",
+      title: "Enterprise Cybersecurity Suite",
+      description: "Comprehensive cybersecurity solution with threat detection, vulnerability assessment, and 24/7 security monitoring",
       icon: Shield,
       color: "from-zion-purple to-zion-cyan",
-      features: ["24/7 monitoring", "Threat detection", "Compliance ready"]
+      features: ["Real-time threat detection", "Compliance reporting", "Incident response", "Security training"],
+      link: "/services"
     },
     {
       id: 3,
-      title: "Cloud Migration",
-      description: "Seamlessly migrate to the cloud with zero downtime",
-      icon: Cloud,
+      title: "Smart CRM Solution",
+      description: "AI-powered customer relationship management with lead tracking, sales automation, and customer analytics",
+      icon: Users,
       color: "from-zion-cyan to-zion-purple",
-      features: ["Automated migration", "Cost optimization", "Performance tuning"]
+      features: ["Lead management", "Sales automation", "Customer analytics", "Team collaboration"],
+      link: "/services"
+    },
+    {
+      id: 4,
+      title: "Workflow Automation Platform",
+      description: "No-code workflow automation that streamlines business processes and eliminates manual tasks",
+      icon: Zap,
+      color: "from-zion-purple to-zion-cyan",
+      features: ["Drag-and-drop builder", "API integrations", "Approval workflows", "Process analytics"],
+      link: "/services"
     }
   ];
 
   const stats = [
-    { icon: Users, value: "500+", label: "Happy Clients", color: "text-zion-cyan" },
-    { icon: Award, value: "50+", label: "Awards Won", color: "text-zion-purple" },
-    { icon: Globe, value: "25+", label: "Countries Served", color: "text-zion-cyan" },
-    { icon: Zap, value: "99.9%", label: "Uptime", color: "text-zion-purple" }
+    { icon: Users, value: "1000+", label: "Happy Clients", color: "text-zion-cyan" },
+    { icon: Award, value: "20+", label: "Service Categories", color: "text-zion-purple" },
+    { icon: Globe, value: "50+", label: "Countries Served", color: "text-zion-cyan" },
+    { icon: Zap, value: "96%", label: "Average AI Score", color: "text-zion-purple" }
   ];
 
   const features = [
@@ -304,6 +316,73 @@ export default function Home() {
           </motion.div>
         </section>
 
+        {/* Service Categories Showcase */}
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-zion-cyan to-zion-purple bg-clip-text text-transparent">
+              Comprehensive Service Portfolio
+            </h2>
+            <p className="text-xl text-zion-slate-light max-w-4xl mx-auto">
+              From AI-powered solutions to enterprise IT services, we cover every aspect of modern business technology
+            </p>
+          </motion.div>
+
+          <motion.div 
+            className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6 mb-12"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            {[
+              { name: "AI Services", icon: "🤖", count: "4", color: "from-zion-cyan to-zion-purple" },
+              { name: "IT Services", icon: "💻", count: "4", color: "from-zion-purple to-zion-cyan" },
+              { name: "Micro SaaS", icon: "🚀", count: "4", color: "from-zion-cyan to-zion-purple" },
+              { name: "Development", icon: "⚡", count: "2", color: "from-zion-purple to-zion-cyan" },
+              { name: "Analytics", icon: "📊", count: "1", color: "from-zion-cyan to-zion-purple" },
+              { name: "Security", icon: "🛡️", count: "1", color: "from-zion-purple to-zion-cyan" },
+              { name: "Automation", icon: "⚙️", count: "1", color: "from-zion-cyan to-zion-purple" },
+              { name: "Cloud", icon: "☁️", count: "1", color: "from-zion-purple to-zion-cyan" },
+              { name: "Blockchain", icon: "🔗", count: "1", color: "from-zion-cyan to-zion-purple" },
+              { name: "IoT", icon: "🌐", count: "1", color: "from-zion-purple to-zion-cyan" }
+            ].map((category, index) => (
+              <motion.div 
+                key={index} 
+                variants={itemVariants}
+                className="text-center group cursor-pointer"
+              >
+                <div className={`w-20 h-20 bg-gradient-to-r ${category.color} rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                  <span className="text-3xl">{category.icon}</span>
+                </div>
+                <h3 className="text-sm font-semibold text-white mb-2">{category.name}</h3>
+                <p className="text-zion-slate-light text-xs">{category.count} services</p>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          <motion.div 
+            className="text-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <Link
+              to="/services"
+              className="inline-flex items-center space-x-2 px-8 py-4 bg-gradient-to-r from-zion-cyan to-zion-purple text-white rounded-xl font-semibold text-lg hover:shadow-2xl hover:shadow-zion-cyan/25 transition-all duration-300 transform hover:scale-105"
+            >
+              <span>Explore All Services</span>
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+          </motion.div>
+        </section>
+
         {/* Features Section */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
           <motion.div 
@@ -381,6 +460,138 @@ export default function Home() {
                 <p className="text-zion-slate-light text-sm leading-relaxed">{item.description}</p>
               </motion.div>
             ))}
+          </motion.div>
+        </section>
+
+        {/* Pricing Comparison */}
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-zion-cyan to-zion-purple bg-clip-text text-transparent">
+              Competitive Pricing & Value
+            </h2>
+            <p className="text-xl text-zion-slate-light max-w-4xl mx-auto">
+              Get enterprise-grade solutions at startup-friendly prices. Our transparent pricing ensures you know exactly what you're paying for.
+            </p>
+          </motion.div>
+
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <motion.div 
+              variants={itemVariants}
+              className="bg-zion-blue-light/10 backdrop-blur-md border border-zion-purple/20 rounded-2xl p-8 text-center"
+            >
+              <div className="text-5xl mb-4">🚀</div>
+              <h3 className="text-2xl font-bold text-white mb-4">Micro SaaS Solutions</h3>
+              <div className="text-3xl font-bold text-zion-cyan mb-2">$29 - $79</div>
+              <div className="text-zion-slate-light mb-4">per month</div>
+              <ul className="text-left space-y-2 mb-6">
+                <li className="flex items-center text-zion-slate-light">
+                  <CheckCircle className="w-4 h-4 text-zion-cyan mr-2" />
+                  <span className="text-sm">CRM & Sales Tools</span>
+                </li>
+                <li className="flex items-center text-zion-slate-light">
+                  <CheckCircle className="w-4 h-4 text-zion-cyan mr-2" />
+                  <span className="text-sm">Project Management</span>
+                </li>
+                <li className="flex items-center text-zion-slate-light">
+                  <CheckCircle className="w-4 h-4 text-zion-cyan mr-2" />
+                  <span className="text-sm">Inventory Management</span>
+                </li>
+                <li className="flex items-center text-zion-slate-light">
+                  <CheckCircle className="w-4 h-4 text-zion-cyan mr-2" />
+                  <span className="text-sm">Accounting Software</span>
+                </li>
+              </ul>
+            </motion.div>
+
+            <motion.div 
+              variants={itemVariants}
+              className="bg-gradient-to-br from-zion-cyan/20 to-zion-purple/20 backdrop-blur-md border border-zion-cyan/30 rounded-2xl p-8 text-center transform scale-105"
+            >
+              <div className="text-5xl mb-4">🤖</div>
+              <h3 className="text-2xl font-bold text-white mb-4">AI & IT Services</h3>
+              <div className="text-3xl font-bold text-zion-cyan mb-2">$79 - $299</div>
+              <div className="text-zion-slate-light mb-4">per month</div>
+              <ul className="text-left space-y-2 mb-6">
+                <li className="flex items-center text-zion-slate-light">
+                  <CheckCircle className="w-4 h-4 text-zion-cyan mr-2" />
+                  <span className="text-sm">AI Content Generation</span>
+                </li>
+                <li className="flex items-center text-zion-slate-light">
+                  <CheckCircle className="w-4 h-4 text-zion-cyan mr-2" />
+                  <span className="text-sm">Cybersecurity Suite</span>
+                </li>
+                <li className="flex items-center text-zion-slate-light">
+                  <CheckCircle className="w-4 h-4 text-zion-cyan mr-2" />
+                  <span className="text-sm">Cloud Migration</span>
+                </li>
+                <li className="flex items-center text-zion-slate-light">
+                  <CheckCircle className="w-4 h-4 text-zion-cyan mr-2" />
+                  <span className="text-sm">Data Analytics</span>
+                </li>
+              </ul>
+              <div className="px-4 py-2 bg-zion-cyan/20 text-zion-cyan text-sm font-medium rounded-full border border-zion-cyan/30">
+                Most Popular
+              </div>
+            </motion.div>
+
+            <motion.div 
+              variants={itemVariants}
+              className="bg-zion-blue-light/10 backdrop-blur-md border border-zion-purple/20 rounded-2xl p-8 text-center"
+            >
+              <div className="text-5xl mb-4">🏢</div>
+              <h3 className="text-2xl font-bold text-white mb-4">Enterprise Solutions</h3>
+              <div className="text-3xl font-bold text-zion-cyan mb-2">Custom Pricing</div>
+              <div className="text-zion-slate-light mb-4">one-time or monthly</div>
+              <ul className="text-left space-y-2 mb-6">
+                <li className="flex items-center text-zion-slate-light">
+                  <CheckCircle className="w-4 h-4 text-zion-cyan mr-2" />
+                  <span className="text-sm">Custom Development</span>
+                </li>
+                <li className="flex items-center text-zion-slate-light">
+                  <CheckCircle className="w-4 h-4 text-zion-cyan mr-2" />
+                  <span className="text-sm">Blockchain Solutions</span>
+                </li>
+                <li className="flex items-center text-zion-slate-light">
+                  <CheckCircle className="w-4 h-4 text-zion-cyan mr-2" />
+                  <span className="text-sm">IoT Integration</span>
+                </li>
+                <li className="flex items-center text-zion-slate-light">
+                  <CheckCircle className="w-4 h-4 text-zion-cyan mr-2" />
+                  <span className="text-sm">Dedicated Support</span>
+                </li>
+              </ul>
+            </motion.div>
+          </motion.div>
+
+          <motion.div 
+            className="text-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <p className="text-zion-slate-light mb-6">
+              All plans include 24/7 support, regular updates, and a 30-day money-back guarantee
+            </p>
+            <Link
+              to="/contact"
+              className="inline-flex items-center space-x-2 px-8 py-4 bg-gradient-to-r from-zion-cyan to-zion-purple text-white rounded-xl font-semibold text-lg hover:shadow-2xl hover:shadow-zion-cyan/25 transition-all duration-300 transform hover:scale-105"
+            >
+              <span>Get Custom Quote</span>
+              <ArrowRight className="w-5 h-5" />
+            </Link>
           </motion.div>
         </section>
 
