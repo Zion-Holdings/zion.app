@@ -1,54 +1,46 @@
-import React from 'react';
-<<<<<<< HEAD
-import { LucideIcon } from 'lucide-react';
 
-interface FeatureCardProps {
-  icon: LucideIcon;
-  title: string;
-  description: string;
-  className?: string;
-}
-
-export function FeatureCard({ icon: Icon, title, description, className = '' }: FeatureCardProps) {
-  return (
-    <div className={`bg-zion-blue-light rounded-lg p-6 border border-zion-blue-lighter ${className}`}>
-      <div className="w-12 h-12 bg-zion-cyan/20 rounded-lg flex items-center justify-center mb-4">
-        <Icon className="h-6 w-6 text-zion-cyan" />
-      </div>
-      <h3 className="text-lg font-semibold text-white mb-2">{title}</h3>
-      <p className="text-zion-slate-light text-sm">{description}</p>
-    </div>
-  );
-}
-=======
+import { cn } from "@/lib/utils";
+import React from "react";
 
 interface FeatureCardProps {
   title: string;
   description: string;
-  icon?: React.ReactNode;
+  icon: React.ReactNode;
   className?: string;
+  key?: string | number;
+  gradient?: string;
 }
 
-export const FeatureCard: React.FC<FeatureCardProps> = ({
-  title,
-  description,
-  icon,
-  className = ''
-}) => {
+export function FeatureCard({ title, description, icon, className, gradient }: FeatureCardProps) {
   return (
-    <div className={`bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 ${className}`}>
-      {icon && (
-        <div className="text-3xl text-blue-600 dark:text-blue-400 mb-4">
+    <div className={cn(
+      "flex items-start p-6 rounded-lg border border-zion-purple/20 hover:border-zion-purple/50 transition-all duration-300 relative overflow-hidden group",
+      className
+    )}>
+      {/* Gradient background overlay on hover */}
+      {gradient && (
+        <div className={cn(
+          "absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-10 transition-opacity duration-300",
+          gradient
+        )} />
+      )}
+      
+      <div className="relative z-10 flex items-start w-full">
+        <div className={cn(
+          "mr-4 text-zion-cyan p-3 rounded-lg bg-zion-blue-dark/50 group-hover:bg-zion-blue-dark/80 transition-all duration-300",
+          gradient && "group-hover:bg-white/10"
+        )}>
           {icon}
         </div>
-      )}
-      <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
-        {title}
-      </h3>
-      <p className="text-gray-600 dark:text-gray-300">
-        {description}
-      </p>
+        <div className="flex-1">
+          <h3 className="text-lg font-bold mb-3 text-white group-hover:text-zion-cyan transition-colors duration-300">
+            {title}
+          </h3>
+          <p className="text-zion-slate-light leading-relaxed group-hover:text-zion-slate-light/90 transition-colors duration-300">
+            {description}
+          </p>
+        </div>
+      </div>
     </div>
   );
-};
->>>>>>> b0227f6a3f6a80df96e210611ae67bdcdc943ae0
+}
