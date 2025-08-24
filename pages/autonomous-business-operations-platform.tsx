@@ -1,121 +1,164 @@
 import React from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { Rocket, Brain, Cpu, Database, Network, Zap, Target, Shield, Users, BarChart3 } from 'lucide-react';
-import EnhancedNavigation from '../components/EnhancedNavigation';
-import EnhancedFooter from '../components/EnhancedFooter';
-import EnhancedContactForm from '../components/EnhancedContactForm';
+import { 
+  Bot, Brain, Cpu, Zap, Shield, Globe, 
+  Rocket, Target, TrendingUp, Users, CheckCircle,
+  ArrowRight, Star, Award, Clock, DollarSign,
+  Building2, Gauge, BarChart3, Settings, Workflow
+} from 'lucide-react';
 
-export default function AutonomousBusinessOperationsPlatform() {
+const AutonomousBusinessOperationsPlatform = () => {
   const features = [
     {
-      icon: Rocket,
-      title: "Autonomous Operations",
-      description: "AI-powered business processes that run independently and optimize themselves",
-      color: "from-red-500 to-orange-500"
+      icon: Bot,
+      title: "AI Autonomous Management",
+      description: "Fully autonomous business operations with intelligent decision-making",
+      color: "from-blue-500 to-cyan-500"
     },
     {
       icon: Brain,
-      title: "Intelligent Decision Making",
-      description: "Advanced AI algorithms that make business decisions in real-time",
+      title: "Cognitive Business Intelligence",
+      description: "Advanced AI that understands and optimizes your business processes",
       color: "from-purple-500 to-pink-500"
     },
     {
-      icon: Cpu,
-      title: "Process Automation",
-      description: "End-to-end automation of complex business workflows and operations",
+      icon: Workflow,
+      title: "Automated Workflows",
+      description: "Seamless automation of complex business processes and operations",
       color: "from-emerald-500 to-teal-500"
     },
     {
-      icon: Database,
-      title: "Data Intelligence",
-      description: "Real-time data analysis and insights for operational optimization",
-      color: "from-blue-500 to-cyan-500"
+      icon: Shield,
+      title: "Intelligent Security",
+      description: "AI-powered security monitoring and threat prevention",
+      color: "from-red-500 to-orange-500"
+    }
+  ];
+
+  const capabilities = [
+    "24/7 autonomous operation",
+    "Real-time decision making",
+    "Predictive analytics",
+    "Process optimization",
+    "Resource management",
+    "Performance monitoring",
+    "Risk assessment",
+    "Compliance automation"
+  ];
+
+  const industries = [
+    {
+      title: "Manufacturing",
+      description: "Automated production lines, quality control, and supply chain management"
+    },
+    {
+      title: "Healthcare",
+      description: "Patient care automation, medical device management, and administrative tasks"
+    },
+    {
+      title: "Finance",
+      description: "Automated trading, risk management, and compliance monitoring"
+    },
+    {
+      title: "Retail",
+      description: "Inventory management, customer service, and sales optimization"
     }
   ];
 
   const benefits = [
     {
-      icon: Zap,
-      title: "24/7 Operations",
-      description: "Continuous business operations without human intervention"
+      icon: TrendingUp,
+      title: "Increased Efficiency",
+      value: "300%",
+      description: "Boost in operational efficiency"
     },
     {
-      icon: Target,
-      title: "Efficiency Boost",
-      description: "Up to 300% improvement in operational efficiency"
+      icon: DollarSign,
+      title: "Cost Reduction",
+      value: "40%",
+      description: "Reduction in operational costs"
     },
     {
-      icon: Shield,
-      title: "Risk Mitigation",
-      description: "AI-powered risk assessment and prevention"
+      icon: Clock,
+      title: "Time Savings",
+      value: "80%",
+      description: "Faster decision making"
     },
     {
       icon: Users,
-      title: "Team Empowerment",
-      description: "Human teams focus on strategic decisions while AI handles operations"
+      title: "Team Productivity",
+      value: "250%",
+      description: "Increase in team productivity"
     }
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-red-900 to-orange-900">
+    <>
       <Head>
         <title>Autonomous Business Operations Platform - Zion Tech Group</title>
-        <meta name="description" content="Revolutionary AI-powered platform for autonomous business operations, intelligent decision making, and process automation." />
-        <meta name="keywords" content="autonomous operations, business automation, AI decision making, process optimization, business intelligence" />
+        <meta name="description" content="Revolutionary AI-powered autonomous business operations platform that manages your entire business with intelligent automation and decision-making capabilities." />
+        <meta name="keywords" content="autonomous business, AI automation, business operations, intelligent automation, process optimization" />
         <meta property="og:title" content="Autonomous Business Operations Platform - Zion Tech Group" />
-        <meta property="og:description" content="Revolutionary AI-powered platform for autonomous business operations and intelligent decision making." />
+        <meta property="og:description" content="Revolutionary AI-powered autonomous business operations platform." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://ziontechgroup.com/autonomous-business-operations-platform" />
-        <link rel="canonical" href="https://ziontechgroup.com/autonomous-business-operations-platform" />
       </Head>
 
-      <EnhancedNavigation />
-
-      <main className="pt-20">
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
         {/* Hero Section */}
-        <section className="relative overflow-hidden py-20 px-4">
-          <div className="max-w-7xl mx-auto text-center">
+        <section className="relative overflow-hidden py-20 px-4 sm:px-6 lg:px-8">
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-cyan-600/20"></div>
+          <div className="relative max-w-7xl mx-auto text-center">
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
+              <div className="flex justify-center mb-6">
+                <div className="p-3 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full">
+                  <Bot className="w-8 h-8 text-white" />
+                </div>
+              </div>
+              <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
                 Autonomous Business
-                <span className="block bg-gradient-to-r from-red-400 to-orange-400 bg-clip-text text-transparent">
+                <span className="block bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
                   Operations Platform
                 </span>
               </h1>
-              <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
-                Transform your business with AI-powered autonomous operations that run 24/7,
-                make intelligent decisions, and continuously optimize performance.
+              <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+                Transform your business with AI-powered autonomous operations that work 24/7, 
+                making intelligent decisions and optimizing every aspect of your business.
               </p>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-gradient-to-r from-red-500 to-orange-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl transition-all duration-300"
-              >
-                Start Automation Journey
-              </motion.button>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link href="/contact" className="inline-flex items-center px-8 py-3 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold rounded-lg hover:from-blue-600 hover:to-cyan-600 transition-all duration-200">
+                  Start Automation
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Link>
+                <Link href="/services" className="inline-flex items-center px-8 py-3 border border-blue-500 text-blue-400 font-semibold rounded-lg hover:bg-blue-500 hover:text-white transition-all duration-200">
+                  Learn More
+                </Link>
+              </div>
             </motion.div>
           </div>
         </section>
 
         {/* Features Section */}
-        <section className="py-20 px-4">
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Platform Features
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                Revolutionary Features
               </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Comprehensive autonomous business operations powered by cutting-edge AI
+              <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+                Experience the future of business automation with our cutting-edge platform
               </p>
             </motion.div>
 
@@ -123,16 +166,53 @@ export default function AutonomousBusinessOperationsPlatform() {
               {features.map((feature, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 30 }}
+                  initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20 hover:border-white/40 transition-all duration-300"
+                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 p-6 rounded-xl border border-slate-700/50 hover:border-blue-500/50 transition-all duration-300"
                 >
-                  <div className={`w-16 h-16 rounded-full bg-gradient-to-r ${feature.color} flex items-center justify-center mb-4 mx-auto`}>
-                    <feature.icon className="w-8 h-8 text-white" />
+                  <div className={`inline-flex p-3 bg-gradient-to-r ${feature.color} rounded-lg mb-4`}>
+                    <feature.icon className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="text-xl font-semibold text-white mb-3">{feature.title}</h3>
-                  <p className="text-gray-300">{feature.description}</p>
+                  <p className="text-gray-400">{feature.description}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Capabilities Section */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-slate-800/50 to-slate-900/50">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                Advanced Capabilities
+              </h2>
+              <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+                Comprehensive automation capabilities that transform your business operations
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {capabilities.map((capability, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="flex items-center space-x-3"
+                >
+                  <CheckCircle className="w-6 h-6 text-blue-400 flex-shrink-0" />
+                  <span className="text-gray-300">{capability}</span>
                 </motion.div>
               ))}
             </div>
@@ -140,19 +220,20 @@ export default function AutonomousBusinessOperationsPlatform() {
         </section>
 
         {/* Benefits Section */}
-        <section className="py-20 px-4 bg-white/5">
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Business Benefits
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                Measurable Results
               </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Transform your business operations with autonomous AI capabilities
+              <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+                See the real impact of autonomous operations on your business
               </p>
             </motion.div>
 
@@ -160,16 +241,56 @@ export default function AutonomousBusinessOperationsPlatform() {
               {benefits.map((benefit, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 30 }}
+                  initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20 hover:border-white/40 transition-all duration-300"
+                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="text-center"
                 >
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-r from-yellow-500 to-orange-500 flex items-center justify-center mb-4 mx-auto">
-                    <benefit.icon className="w-8 h-8 text-white" />
+                  <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 p-6 rounded-xl border border-slate-700/50">
+                    <div className="inline-flex p-3 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg mb-4">
+                      <benefit.icon className="w-8 h-8 text-white" />
+                    </div>
+                    <div className="text-3xl font-bold text-blue-400 mb-2">{benefit.value}</div>
+                    <h3 className="text-lg font-semibold text-white mb-2">{benefit.title}</h3>
+                    <p className="text-gray-400 text-sm">{benefit.description}</p>
                   </div>
-                  <h3 className="text-xl font-semibold text-white mb-3">{benefit.title}</h3>
-                  <p className="text-gray-300">{benefit.description}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Industries Section */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-slate-800/50 to-slate-900/50">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                Industry Applications
+              </h2>
+              <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+                Transform operations across diverse industries with autonomous automation
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {industries.map((industry, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 p-8 rounded-xl border border-slate-700/50"
+                >
+                  <h3 className="text-2xl font-semibold text-white mb-4">{industry.title}</h3>
+                  <p className="text-gray-400 text-lg">{industry.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -177,26 +298,35 @@ export default function AutonomousBusinessOperationsPlatform() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 px-4">
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
             >
-              <h2 className="text-4xl font-bold text-white mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
                 Ready to Automate Your Business?
               </h2>
-              <p className="text-xl text-gray-300 mb-8">
-                Join the future of autonomous business operations
+              <p className="text-xl text-gray-400 mb-8">
+                Join the autonomous business revolution and transform your operations today
               </p>
-              <EnhancedContactForm />
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link href="/contact" className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold rounded-lg hover:from-blue-600 hover:to-cyan-600 transition-all duration-200 text-lg">
+                  Start Automation
+                  <Bot className="ml-2 w-6 h-6" />
+                </Link>
+                <Link href="/services" className="inline-flex items-center px-8 py-4 border border-blue-500 text-blue-400 font-semibold rounded-lg hover:bg-blue-500 hover:text-white transition-all duration-200 text-lg">
+                  Explore All Services
+                </Link>
+              </div>
             </motion.div>
           </div>
         </section>
-      </main>
-
-      <EnhancedFooter />
-    </div>
+      </div>
+    </>
   );
-}
+};
+
+export default AutonomousBusinessOperationsPlatform;

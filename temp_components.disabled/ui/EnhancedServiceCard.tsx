@@ -1,338 +1,256 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  Brain, 
-  ArrowRight, 
-  ExternalLink, 
-  CheckCircle, 
-  Zap, 
-  Star, 
-  TrendingUp, 
-  Users, 
-  Award,
-  Clock,
-  Shield,
-  Rocket,
-  Globe,
-  Cpu,
-  Atom,
-  Target
-} from 'lucide-react';
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Star, ExternalLink, ArrowRight, TrendingUp, Users, Clock, Shield, Zap } from 'lucide-react';
 
-interface ServiceFeature {
-  name: string;
-  description?: string;
-  icon?: React.ReactNode;
+interface EnhancedServiceCardProps {
+  service: {
+    id: string;
+    name: string;
+    tagline: string;
+    price: string;
+    period: string;
+    description: string;
+    features: string[];
+    popular: boolean;
+    icon: string;
+    color: string;
+    textColor: string;
+    link: string;
+    marketPosition: string;
+    targetAudience: string;
+    trialDays: number;
+    setupTime: string;
+    category: string;
+    realService: boolean;
+    technology: string[];
+    integrations: string[];
+    useCases: string[];
+    roi: string;
+    competitors: string[];
+    marketSize: string;
+    growthRate: string;
+    variant: string;
+    contactInfo: {
+      mobile: string;
+      email: string;
+      address: string;
+      website: string;
+    };
+    realImplementation: boolean;
+    implementationDetails: string;
+    launchDate: string;
+    customers: number;
+    rating: number;
+    reviews: number;
+  };
 }
 
-interface ServiceBenefit {
-  name: string;
-  impact: string;
-  icon?: React.ReactNode;
-}
-
-interface ServicePricing {
-  starter: string;
-  professional: string;
-  enterprise: string;
-  custom: string;
-}
-
-interface ServiceCardProps {
-  id: string;
-  name: string;
-  tagline: string;
-  description: string;
-  category: string;
-  type: string;
-  pricing: ServicePricing;
-  features: string[];
-  benefits: string[];
-  useCases: string[];
-  marketSize: string;
-  targetAudience: string;
-  competitiveAdvantage: string;
-  slug: string;
-  featured?: boolean;
-  priority?: 'high' | 'medium' | 'low';
-  technology?: string[];
-  compliance?: string[];
-  onCardClick?: (service: any) => void;
-}
-
-const getCategoryIcon = (category: string) => {
-  const categoryLower = category.toLowerCase();
-  if (categoryLower.includes('ai') || categoryLower.includes('machine learning')) return Brain;
-  if (categoryLower.includes('quantum')) return Atom;
-  if (categoryLower.includes('security') || categoryLower.includes('cyber')) return Shield;
-  if (categoryLower.includes('space')) return Rocket;
-  if (categoryLower.includes('business')) return Target;
-  if (categoryLower.includes('it') || categoryLower.includes('infrastructure')) return Cpu;
-  if (categoryLower.includes('global') || categoryLower.includes('worldwide')) return Globe;
-  return Star;
-};
-
-const getPriorityColor = (priority: string) => {
-  switch (priority) {
-    case 'high': return 'from-red-500 to-orange-500';
-    case 'medium': return 'from-yellow-500 to-orange-500';
-    case 'low': return 'from-green-500 to-teal-500';
-    default: return 'from-cyan-500 to-purple-500';
-  }
-};
-
-const getPriorityLabel = (priority: string) => {
-  switch (priority) {
-    case 'high': return 'High Priority';
-    case 'medium': return 'Medium Priority';
-    case 'low': return 'Low Priority';
-    default: return 'Standard';
-  }
-};
-
-const EnhancedServiceCard: React.FC<ServiceCardProps> = ({
-  id,
-  name,
-  tagline,
-  description,
-  category,
-  type,
-  pricing,
-  features,
-  benefits,
-  useCases,
-  marketSize,
-  targetAudience,
-  competitiveAdvantage,
-  slug,
-  featured = false,
-  priority = 'medium',
-  technology = [],
-  compliance = [],
-  onCardClick
-}) => {
-  const [isHovered, setIsHovered] = useState(false);
-  const [showDetails, setShowDetails] = useState(false);
-  
-  const CategoryIcon = getCategoryIcon(category);
-  const priorityColor = getPriorityColor(priority);
-  const priorityLabel = getPriorityLabel(priority);
-
-  const handleCardClick = () => {
-    if (onCardClick) {
-      onCardClick({ id, name, slug, category, type });
+const EnhancedServiceCard: React.FC<EnhancedServiceCardProps> = ({ service }) => {
+  const cardVariants = {
+    hidden: { opacity: 0, y: 20, scale: 0.95 },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      scale: 1,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut" as const
+      }
+    },
+    hover: {
+      y: -8,
+      scale: 1.02,
+      transition: {
+        duration: 0.3,
+        ease: "easeOut" as const
+      }
     }
   };
 
-  const handleLearnMore = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    window.location.href = slug;
+  const iconVariants = {
+    hidden: { rotate: -180, scale: 0 },
+    visible: { 
+      rotate: 0, 
+      scale: 1,
+      transition: {
+        duration: 0.6,
+        ease: "backOut" as const
+      }
+    },
+    hover: {
+      rotate: 360,
+      scale: 1.1,
+      transition: {
+        duration: 0.6,
+        ease: "easeInOut" as const
+      }
+    }
   };
 
   return (
     <motion.div
-      layout
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -20 }}
-      whileHover={{ y: -5 }}
-      onHoverStart={() => setIsHovered(true)}
-      onHoverEnd={() => setIsHovered(false)}
-      onClick={handleCardClick}
-      className="group relative bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-xl border border-white/10 rounded-2xl p-6 h-full transition-all duration-500 hover:border-cyan-400/50 hover:shadow-2xl hover:shadow-cyan-500/25 cursor-pointer overflow-hidden"
+      className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-xl"
+      variants={cardVariants}
+      initial="hidden"
+      whileInView="visible"
+      whileHover="hover"
+      viewport={{ once: true }}
     >
-      {/* Background Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      {/* Background Glow */}
+      <div 
+        className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
+        style={{
+          background: `linear-gradient(135deg, ${service.color.replace('from-', '').replace('to-', '').split(' ').map(c => `var(--tw-${c.split('-')[0]}-${c.split('-')[1]})`).join(', ')})`
+        }}
+      />
       
-      {/* Priority Badge */}
-      <div className="absolute top-4 right-4 z-10">
-        <div className={`text-xs bg-gradient-to-r ${priorityColor} text-white px-3 py-1 rounded-full font-medium shadow-lg`}>
-          {priorityLabel}
-        </div>
-      </div>
-
-      {/* Featured Badge */}
-      {featured && (
-        <div className="absolute top-4 left-4 z-10">
-          <div className="text-xs bg-gradient-to-r from-yellow-500 to-orange-500 text-white px-3 py-1 rounded-full font-medium shadow-lg flex items-center gap-1">
-            <Star className="w-3 h-3" />
-            Featured
-          </div>
-        </div>
-      )}
-
-      {/* Header Section */}
-      <div className="relative z-10 mb-6">
-        <div className="flex items-start justify-between mb-4">
-          <div className={`w-12 h-12 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-xl flex items-center justify-center shadow-lg`}>
-            <CategoryIcon className="w-6 h-6 text-white" />
-          </div>
-          <div className="text-xs bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-3 py-1 rounded-full font-medium">
-            {type}
-          </div>
-        </div>
-        
-        <h3 className="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors duration-300 line-clamp-2">
-          {name}
-        </h3>
-        
-        <p className="text-sm text-cyan-400 font-medium mb-2">
-          {tagline}
-        </p>
-        
-        <p className="text-white/70 text-sm leading-relaxed line-clamp-3">
-          {description}
-        </p>
-      </div>
-
-      {/* Quick Stats */}
-      <div className="relative z-10 mb-6">
-        <div className="grid grid-cols-2 gap-3">
-          <div className="flex items-center gap-2 text-xs text-white/70">
-            <Users className="w-3 h-3 text-cyan-400" />
-            <span className="truncate">{targetAudience.split(',')[0]}</span>
-          </div>
-          <div className="flex items-center gap-2 text-xs text-white/70">
-            <TrendingUp className="w-3 h-3 text-yellow-400" />
-            <span className="truncate">{marketSize}</span>
-          </div>
-        </div>
-      </div>
-
-      {/* Features Preview */}
-      <div className="relative z-10 mb-6">
-        <h4 className="text-sm font-semibold text-white/90 mb-3 flex items-center gap-2">
-          <CheckCircle className="w-4 h-4 text-cyan-400" />
-          Key Features
-        </h4>
-        <div className="space-y-2">
-          {features.slice(0, 3).map((feature, index) => (
-            <div key={index} className="flex items-center gap-2 text-sm text-white/70">
-              <div className="w-1.5 h-1.5 bg-cyan-400 rounded-full flex-shrink-0" />
-              <span className="truncate">{feature}</span>
-            </div>
-          ))}
-          {features.length > 3 && (
-            <div className="text-xs text-cyan-400">
-              +{features.length - 3} more features
-            </div>
-          )}
-        </div>
-      </div>
-
-      {/* Benefits Preview */}
-      <div className="relative z-10 mb-6">
-        <h4 className="text-sm font-semibold text-white/90 mb-3 flex items-center gap-2">
-          <Zap className="w-4 h-4 text-yellow-400" />
-          Key Benefits
-        </h4>
-        <div className="space-y-2">
-          {benefits.slice(0, 2).map((benefit, index) => (
-            <div key={index} className="flex items-center gap-2 text-sm text-white/70">
-              <div className="w-1.5 h-1.5 bg-yellow-400 rounded-full flex-shrink-0" />
-              <span className="truncate">{benefit}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Technology & Compliance Tags */}
-      {(technology.length > 0 || compliance.length > 0) && (
-        <div className="relative z-10 mb-6">
-          <div className="flex flex-wrap gap-2">
-            {technology.slice(0, 3).map((tech, index) => (
-              <span key={index} className="text-xs bg-blue-500/20 text-blue-400 px-2 py-1 rounded-full">
-                {tech}
-              </span>
-            ))}
-            {compliance.slice(0, 2).map((comp, index) => (
-              <span key={index} className="text-xs bg-green-500/20 text-green-400 px-2 py-1 rounded-full">
-                {comp}
-              </span>
-            ))}
-          </div>
-        </div>
-      )}
-
-      {/* Pricing & CTA */}
-      <div className="relative z-10 mt-auto">
-        <div className="flex items-center justify-between mb-4">
-          <div className="text-2xl font-bold text-cyan-400">
-            {pricing.starter}
-          </div>
-          <div className="text-xs text-white/50">
-            Starting from
-          </div>
-        </div>
-        
-        <div className="flex gap-2">
-          <button
-            onClick={handleLearnMore}
-            className="flex-1 group/btn relative px-4 py-3 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border border-cyan-400/30 text-cyan-400 font-medium rounded-xl transition-all duration-300 hover:from-cyan-500/30 hover:to-purple-500/30 hover:border-cyan-400/50 hover:scale-105"
+      {/* Popular Badge */}
+      {service.popular && (
+        <div className="absolute top-4 right-4 z-10">
+          <motion.div
+            className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1"
+            initial={{ scale: 0, rotate: -180 }}
+            animate={{ scale: 1, rotate: 0 }}
+            transition={{ delay: 0.2, duration: 0.5 }}
           >
-            <span className="flex items-center justify-center gap-2">
-              Learn More
-              <ExternalLink className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
-            </span>
-          </button>
+            <Star className="w-3 h-3 fill-current" />
+            POPULAR
+          </motion.div>
+        </div>
+      )}
+
+      {/* Card Content */}
+      <div className="relative p-6">
+        {/* Header */}
+        <div className="flex items-start justify-between mb-4">
+          <motion.div
+            className={`text-4xl ${service.textColor}`}
+            variants={iconVariants}
+            initial="hidden"
+            animate="visible"
+            whileHover="hover"
+          >
+            {service.icon}
+          </motion.div>
           
-          <button
-            onClick={handleLearnMore}
-            className="px-4 py-3 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-medium rounded-xl transition-all duration-300 hover:from-cyan-600 hover:to-purple-600 hover:scale-105"
+          <div className="text-right">
+            <div className="text-2xl font-bold text-white">{service.price}</div>
+            <div className="text-sm text-gray-400">{service.period}</div>
+          </div>
+        </div>
+
+        {/* Title & Tagline */}
+        <h3 className="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors duration-300">
+          {service.name}
+        </h3>
+        <p className="text-gray-300 text-sm mb-4 leading-relaxed">
+          {service.tagline}
+        </p>
+
+        {/* Description */}
+        <p className="text-gray-400 text-sm mb-6 leading-relaxed line-clamp-3">
+          {service.description}
+        </p>
+
+        {/* Key Metrics */}
+        <div className="grid grid-cols-2 gap-4 mb-6">
+          <div className="text-center p-3 bg-white/5 rounded-lg border border-white/10">
+            <div className="text-cyan-400 text-lg font-bold">{service.customers}+</div>
+            <div className="text-xs text-gray-400">Customers</div>
+          </div>
+          <div className="text-center p-3 bg-white/5 rounded-lg border border-white/10">
+            <div className="text-purple-400 text-lg font-bold">{service.rating}</div>
+            <div className="text-xs text-gray-400">Rating</div>
+          </div>
+        </div>
+
+        {/* Features Preview */}
+        <div className="mb-6">
+          <h4 className="text-sm font-semibold text-white mb-3 flex items-center gap-2">
+            <Zap className="w-4 h-4 text-yellow-400" />
+            Key Features
+          </h4>
+          <div className="space-y-2">
+            {service.features.slice(0, 3).map((feature, index) => (
+              <motion.div
+                key={index}
+                className="flex items-center gap-2 text-sm text-gray-300"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.1 * index }}
+              >
+                <div className="w-1.5 h-1.5 bg-cyan-400 rounded-full" />
+                {feature}
+              </motion.div>
+            ))}
+            {service.features.length > 3 && (
+              <div className="text-xs text-gray-500 mt-2">
+                +{service.features.length - 3} more features
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* Market Info */}
+        <div className="mb-6 p-4 bg-gradient-to-r from-white/5 to-white/10 rounded-lg border border-white/10">
+          <div className="flex items-center justify-between mb-2">
+            <span className="text-xs font-semibold text-white">Market Size</span>
+            <span className="text-xs text-cyan-400">{service.marketSize}</span>
+          </div>
+          <div className="flex items-center justify-between mb-2">
+            <span className="text-xs font-semibold text-white">Growth Rate</span>
+            <span className="text-xs text-green-400">{service.growthRate}</span>
+          </div>
+          <div className="flex items-center justify-between">
+            <span className="text-xs font-semibold text-white">ROI</span>
+            <span className="text-xs text-yellow-400">{service.roi}</span>
+          </div>
+        </div>
+
+        {/* Trial & Setup Info */}
+        <div className="flex items-center justify-between mb-6 text-sm">
+          <div className="flex items-center gap-2 text-gray-400">
+            <Clock className="w-4 h-4" />
+            {service.trialDays} day trial
+          </div>
+          <div className="flex items-center gap-2 text-gray-400">
+            <Shield className="w-4 h-4" />
+            {service.setupTime}
+          </div>
+        </div>
+
+        {/* Action Buttons */}
+        <div className="flex gap-3">
+          <motion.a
+            href={service.link}
+            className="flex-1 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-semibold py-3 px-4 rounded-lg text-center transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <ExternalLink className="w-4 h-4" />
+            Learn More
+          </motion.a>
+          
+          <motion.a
+            href={`mailto:${service.contactInfo.email}?subject=Inquiry about ${service.name}`}
+            className="bg-white/10 hover:bg-white/20 text-white font-semibold py-3 px-4 rounded-lg transition-all duration-300 border border-white/20 hover:border-white/40 flex items-center justify-center"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
             <ArrowRight className="w-4 h-4" />
-          </button>
+          </motion.a>
+        </div>
+
+        {/* Contact Info */}
+        <div className="mt-4 pt-4 border-t border-white/10">
+          <div className="text-xs text-gray-500 text-center">
+            Contact: {service.contactInfo.email}
+          </div>
         </div>
       </div>
 
-      {/* Hover Effect Overlay */}
-      <motion.div
-        className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-purple-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
-        initial={false}
-        animate={{ opacity: isHovered ? 1 : 0 }}
-      />
-
-      {/* Expandable Details */}
-      <AnimatePresence>
-        {showDetails && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="mt-6 pt-6 border-t border-white/10"
-          >
-            <div className="space-y-4">
-              <div>
-                <h5 className="text-sm font-semibold text-white/90 mb-2">Use Cases</h5>
-                <div className="flex flex-wrap gap-2">
-                  {useCases.slice(0, 4).map((useCase, index) => (
-                    <span key={index} className="text-xs bg-white/10 text-white/70 px-2 py-1 rounded-full">
-                      {useCase}
-                    </span>
-                  ))}
-                </div>
-              </div>
-              
-              <div>
-                <h5 className="text-sm font-semibold text-white/90 mb-2">Competitive Advantage</h5>
-                <p className="text-sm text-white/70">{competitiveAdvantage}</p>
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      {/* Expand/Collapse Button */}
-      <button
-        onClick={(e) => {
-          e.stopPropagation();
-          setShowDetails(!showDetails);
-        }}
-        className="absolute bottom-4 right-4 text-xs text-white/50 hover:text-white transition-colors duration-200"
-      >
-        {showDetails ? 'Show Less' : 'Show More'}
-      </button>
+      {/* Hover Effect Border */}
+      <div className="absolute inset-0 rounded-2xl border-2 border-transparent bg-gradient-to-r from-cyan-500/20 via-purple-500/20 to-pink-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
     </motion.div>
   );
 };

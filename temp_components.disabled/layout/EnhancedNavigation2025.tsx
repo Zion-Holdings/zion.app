@@ -24,6 +24,7 @@ const navigationItems = [
     children: [
       { name: '2025 Innovative Services', href: '/2025-innovative-services-showcase', description: 'Latest innovative services portfolio' },
       { name: 'View All Services', href: '/comprehensive-services-showcase-2025', description: 'Complete services portfolio' },
+      { name: 'Cutting-Edge 2025', href: '/cutting-edge-services-2025', description: 'Latest revolutionary services', badge: 'New' },
       { name: 'Service Categories', href: '/comprehensive-services-showcase-2025#categories', description: 'Browse by category' },
       { name: 'Pricing Comparison', href: '/comprehensive-services-showcase-2025#pricing', description: 'Compare service costs' },
       { name: 'Service Search', href: '/comprehensive-services-showcase-2025#search', description: 'Find specific services' },
@@ -139,6 +140,11 @@ const navigationItems = [
     icon: <Cpu className="w-5 h-5" />,
     description: 'Enterprise solutions and infrastructure',
     children: [
+      { name: 'Quantum-Secure Cloud', href: '/quantum-secure-cloud-infrastructure', description: 'Future-proof cloud security' },
+      { name: 'Autonomous IT Operations', href: '/autonomous-it-operations-center', description: 'Self-healing IT infrastructure' },
+      { name: 'Edge Computing Orchestration', href: '/edge-computing-orchestration', description: 'Edge processing optimization' },
+      { name: 'Blockchain Infrastructure', href: '/blockchain-infrastructure-platform', description: 'Enterprise blockchain solutions' },
+      { name: 'AI-Powered DevOps', href: '/ai-powered-devops-platform', description: 'Intelligent development automation' },
       { name: 'Quantum Cloud Infrastructure', href: '/quantum-cloud-infrastructure-platform', description: 'Quantum-enhanced cloud computing' },
       { name: 'Edge Computing Orchestrator', href: '/edge-computing-orchestration', description: 'Edge processing optimization' },
       { name: 'Blockchain Enterprise Platform', href: '/blockchain-infrastructure-platform', description: 'Enterprise blockchain solutions' },

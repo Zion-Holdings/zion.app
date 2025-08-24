@@ -99,17 +99,19 @@ const sidebarItems: SidebarItem[] = [
     name: 'Enterprise IT',
     href: '/enterprise-it',
     icon: <Shield className="w-5 h-5" />,
-    description: 'Enterprise solutions and infrastructure',
-    children: [
-      { name: 'Quantum-Secure Cloud', href: '/quantum-secure-cloud-infrastructure', description: 'Future-proof cloud security' },
-      { name: 'Zero Trust Architecture', href: '/zero-trust-network-architecture', description: 'Advanced network security' },
-      { name: 'Autonomous DevOps', href: '/autonomous-devops-orchestrator', description: 'AI-powered infrastructure' },
-      { name: 'Edge Computing', href: '/edge-computing-orchestration-platform', description: 'Distributed computing optimization' },
-      { name: 'AI Cybersecurity', href: '/ai-powered-cybersecurity-platform', description: 'Intelligent threat detection' },
-      { name: 'Blockchain Infrastructure', href: '/blockchain-infrastructure-platform', description: 'Enterprise blockchain solutions' },
-      { name: 'IoT Security Management', href: '/iot-security-management-platform', description: 'Connected device security' },
-      { name: 'Data Privacy Management', href: '/data-privacy-management-platform', description: 'Compliance and privacy' },
-      { name: 'Cloud Cost Optimization', href: '/cloud-cost-optimization-platform', description: 'AI-powered cost reduction' }
+    color: 'text-blue-400',
+    items: [
+      { name: 'Quantum-Secure Cloud', href: '/quantum-secure-cloud-infrastructure', badge: 'New' },
+      { name: 'Autonomous IT Operations', href: '/autonomous-it-operations-center', badge: 'New' },
+      { name: 'Edge Computing Orchestration', href: '/edge-computing-orchestration', badge: 'New' },
+      { name: 'Blockchain Infrastructure', href: '/blockchain-infrastructure-platform', badge: 'New' },
+      { name: 'AI-Powered DevOps', href: '/ai-powered-devops-platform', badge: 'New' },
+      { name: 'Quantum Cloud Infrastructure', href: '/quantum-cloud-infrastructure-platform' },
+      { name: 'Zero Trust Security', href: '/zero-trust-security-platform' },
+      { name: 'Quantum Networking', href: '/quantum-networking' },
+      { name: 'Quantum Data Center', href: '/quantum-data-center' },
+      { name: 'Quantum Cybersecurity', href: '/quantum-cybersecurity' },
+      { name: 'Quantum Cloud Migration', href: '/quantum-cloud-migration' }
     ]
   },
   {
@@ -227,6 +229,14 @@ const resources = [
 ];
 
 
+const supportLinks = [
+  { name: 'Contact Support', href: '/support', description: 'Get help from our team' },
+  { name: 'Documentation', href: '/docs', description: 'Technical guides' },
+  { name: 'API Reference', href: '/api-documentation', description: 'Developer documentation' },
+  { name: 'Status Page', href: '/status', description: 'Service status' },
+  { name: 'Training', href: '/training', description: 'Learn our platforms' },
+  { name: 'Community', href: '/community', description: 'Connect with users' }
+];
 
   const toggleSection = (title: string) => {
     const newExpanded = new Set(expandedSections);

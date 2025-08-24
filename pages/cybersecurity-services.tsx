@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { 
   Shield, Lock, Eye, AlertTriangle, Cpu, Globe, Cloud, 
   CheckCircle, ArrowRight, Star, Clock, Target,
-  Zap, Users, BarChart3, Settings, Server
+  Zap, Users, BarChart3, Settings, Database
 } from 'lucide-react';
 import Layout from '../components/layout/Layout';
 import { advancedCybersecurityServices2025 } from '../data/2025-advanced-cybersecurity-services';
@@ -37,48 +37,48 @@ const serviceHighlights = [
     description: 'Secure your cloud infrastructure with comprehensive posture management',
     icon: Cloud,
     color: 'from-blue-500 to-cyan-600',
-    features: ['Multi-cloud support', 'Continuous compliance', 'Automated remediation', 'Risk management']
+    features: ['Multi-cloud monitoring', 'Compliance automation', 'Risk management', 'Security analytics']
   },
   {
     title: 'DevSecOps Security',
     description: 'Integrate security into your DevOps pipeline seamlessly',
     icon: Cpu,
     color: 'from-green-500 to-emerald-600',
-    features: ['CI/CD integration', 'Automated testing', 'Vulnerability scanning', 'Compliance automation']
+    features: ['Automated testing', 'Vulnerability scanning', 'Compliance automation', 'Security metrics']
   },
   {
     title: 'IoT Security Platform',
     description: 'Secure your IoT ecosystem with comprehensive protection',
-    icon: Server,
+    icon: Globe,
     color: 'from-purple-500 to-violet-600',
-    features: ['Device authentication', 'Network monitoring', 'Threat detection', 'Secure updates']
+    features: ['Device authentication', 'Network monitoring', 'Threat detection', 'Automated response']
   }
 ];
 
 const benefits = [
   {
-    title: '99.9% Threat Detection',
-    description: 'Advanced AI algorithms detect threats before they impact your business',
+    title: '99.99% Threat Detection',
+    description: 'Advanced AI algorithms detect threats before they become incidents',
     icon: Shield,
     color: 'text-red-400'
-  },
-  {
-    title: '450% ROI Improvement',
-    description: 'Significant returns through reduced security incidents and compliance costs',
-    icon: BarChart3,
-    color: 'text-blue-400'
-  },
-  {
-    title: '24/7 Security Monitoring',
-    description: 'Round-the-clock protection with automated incident response',
-    icon: Clock,
-    color: 'text-purple-400'
   },
   {
     title: 'Zero False Positives',
     description: 'AI-powered analysis eliminates false alarms and alert fatigue',
     icon: CheckCircle,
     color: 'text-green-400'
+  },
+  {
+    title: '24/7 Security Monitoring',
+    description: 'Round-the-clock protection with automated incident response',
+    icon: Clock,
+    color: 'text-blue-400'
+  },
+  {
+    title: 'Compliance Automation',
+    description: 'Automated compliance reporting and audit preparation',
+    icon: BarChart3,
+    color: 'text-purple-400'
   }
 ];
 
@@ -87,7 +87,7 @@ export default function CybersecurityServices() {
     <Layout>
       <Head>
         <title>Cybersecurity Services - Zion Tech Group | Next-Generation Security Solutions</title>
-        <meta name="description" content="Protect your business with our advanced cybersecurity services. Zero trust security, AI threat intelligence, cloud security posture, and comprehensive protection for modern enterprises." />
+        <meta name="description" content="Protect your business with our advanced cybersecurity services. Zero trust security, AI threat intelligence, cloud security posture, and comprehensive protection solutions." />
         <meta name="keywords" content="cybersecurity, zero trust security, AI threat intelligence, cloud security, DevSecOps, IoT security, Zion Tech Group" />
         <meta name="author" content="Zion Tech Group" />
         <meta name="robots" content="index, follow" />
@@ -185,7 +185,7 @@ export default function CybersecurityServices() {
               Cybersecurity <span className="bg-gradient-to-r from-red-400 to-pink-400 bg-clip-text text-transparent">Services</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Comprehensive security solutions that protect your business from modern cyber threats
+              Comprehensive security solutions that protect your digital assets and ensure business continuity
             </p>
           </motion.div>
           
@@ -328,7 +328,7 @@ export default function CybersecurityServices() {
               Why Choose <span className="bg-gradient-to-r from-red-400 to-pink-400 bg-clip-text text-transparent">Our Security</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Advanced protection that keeps your business secure and compliant
+              Advanced protection that keeps your business safe and compliant
             </p>
           </motion.div>
           
@@ -368,8 +368,8 @@ export default function CybersecurityServices() {
               Ready to <span className="bg-gradient-to-r from-red-400 to-pink-400 bg-clip-text text-transparent">Secure</span> Your Business?
             </h2>
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              Join thousands of companies already protected by our advanced cybersecurity solutions. 
-              Get started today and experience enterprise-grade security.
+              Don't wait for a breach to happen. Protect your business today with our advanced cybersecurity solutions 
+              and stay one step ahead of evolving threats.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -394,12 +394,12 @@ export default function CybersecurityServices() {
                 <div className="text-gray-300">Security Monitoring</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-red-400 mb-2">99.9%</div>
+                <div className="text-3xl font-bold text-red-400 mb-2">99.99%</div>
                 <div className="text-gray-300">Threat Detection</div>
               </div>
               <div>
                 <div className="text-3xl font-bold text-red-400 mb-2">450%</div>
-                <div className="text-gray-300">Average ROI</div>
+                <div className="text-gray-300">ROI Improvement</div>
               </div>
             </div>
           </motion.div>

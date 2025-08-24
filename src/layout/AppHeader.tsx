@@ -1,151 +1,142 @@
-
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useMessaging } from '@/context/MessagingContext';
-import { MainNavigation } from './MainNavigation';
+import Link from 'next/link';
+import { ResponsiveNavigation } from '@/components/navigation/ResponsiveNavigation';
 import { Logo } from '@/components/header/Logo';
-import { ModeToggle } from '@/components/ModeToggle';
-import { Menu, X } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import { Menu, X } from 'lucide-react'
 import { MobileMenu } from '@/components/header/MobileMenu';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { MobileBottomNav } from '@/components/header/MobileBottomNav';
-import { motion, AnimatePresence } from 'framer-motion';
+import { PointsBadge } from '@/components/loyalty/PointsBadge';
+import { LoginModal } from '@/components/auth/LoginModal';
+import { useAuth } from '@/hooks/useAuth';
+import { UserMenu } from '@/components/header/UserMenu';
+import { useSelector } from 'react-redux';
+import type { RootState } from '@/store';
+import { cn } from '@/lib/utils'; // Import cn utility
+import { useRouter } from 'next/router';
 
 export function AppHeader() {
+
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [loginOpen, setLoginOpen] = useState(false);
   const isMobile = useIsMobile();
-  
-  // Try to access the messaging context, but provide a fallback value if it's not available
-  let unreadCount = 0;
-  try {
-    const { unreadCount: count } = useMessaging();
-    unreadCount = count;
-  } catch (error) {
-    console.warn('Messaging context not available');
-  }
+  const { t } = useTranslation();
+  const { user } = useAuth();
+  const isLoggedIn = useSelector((state: RootState) => state.auth.isLoggedIn);
+  const router = useRouter();
+  const showTagline = router.pathname === '/';
 
-  const menuVariants = {
-    closed: {
-      opacity: 0,
-      x: "100%",
-      transition: {
-        duration: 0.3,
-        ease: "easeInOut"
-      }
-    },
-    open: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        duration: 0.3,
-        ease: "easeInOut"
-      }
-    }
-  };
+  // Messaging context (unread message count)
+  const { unreadCount } = useMessaging();
 
-  const backdropVariants = {
-    closed: {
-      opacity: 0,
-      transition: {
-        duration: 0.2
-      }
-    },
-    open: {
-      opacity: 1,
-      transition: {
-        duration: 0.2
-      }
-    }
+  const openLoginModal = (returnToPath?: string) => {
+    // The actual returnToPath is set in the URL by the child components (ResponsiveNavigation, MobileMenu)
+    // using router.push with shallow:true before this function is called.
+    // This function's main job is just to open the modal.
+    // If a returnToPath is passed, we could potentially use it for other logic here if needed in the future.
+    setLoginOpen(true);
   };
   
   return (
     <>
-      <motion.header 
-        className="sticky top-0 z-50 w-full border-b border-zion-purple/20 bg-zion-blue-dark/95 backdrop-blur-md"
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
+      <header
+        style={{ "--nav-height": "64px" } as React.CSSProperties}
+        className={cn(
+          "sticky top-0 z-50 w-full border-b border-border bg-background/90 backdrop-blur-md text-foreground",
+          { "bg-red-500": mobileMenuOpen }
+        )}
       >
         <div className="container flex h-16 items-center px-4 sm:px-6">
           <Logo />
+          {showTagline && (
+            <span className="ml-4 hidden text-sm text-muted-foreground md:inline">
+              {t('home.header_tagline')}
+            </span>
+          )}
           <div className="ml-6 flex-1 hidden md:block">
-            <MainNavigation unreadCount={unreadCount} />
+            <nav role="navigation" aria-label="Main navigation">
+              <ResponsiveNavigation openLoginModal={openLoginModal} />
+            </nav>
           </div>
           
           {/* Mobile menu button */}
           <div className="md:hidden ml-auto mr-4">
-            <motion.button
+            <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="inline-flex items-center justify-center rounded-md p-2 text-white/70 hover:text-white hover:bg-zion-purple/10 focus:outline-none focus:ring-2 focus:ring-zion-purple/50 transition-all duration-200"
+              className="inline-flex items-center justify-center rounded-md p-2 text-foreground/70 hover:text-foreground hover:bg-primary/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               aria-expanded={mobileMenuOpen}
-              aria-label="Toggle mobile menu"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              aria-label={t('general.toggle_mobile_menu')}
             >
-              <span className="sr-only">Open main menu</span>
-              <AnimatePresence mode="wait">
-                {mobileMenuOpen ? (
-                  <motion.div
-                    key="close"
-                    initial={{ rotate: -90, opacity: 0 }}
-                    animate={{ rotate: 0, opacity: 1 }}
-                    exit={{ rotate: 90, opacity: 0 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <X className="block h-6 w-6" aria-hidden="true" />
-                  </motion.div>
-                ) : (
-                  <motion.div
-                    key="menu"
-                    initial={{ rotate: 90, opacity: 0 }}
-                    animate={{ rotate: 0, opacity: 1 }}
-                    exit={{ rotate: -90, opacity: 0 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <Menu className="block h-6 w-6" aria-hidden="true" />
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </motion.button>
+              <span className="sr-only">{t('general.open_main_menu')}</span>
+              {mobileMenuOpen ? (
+                <X className="block h-6 w-6" aria-hidden="true" />
+              ) : (
+                <Menu className="block h-6 w-6" aria-hidden="true" />
+              )}
+            </button>
           </div>
-          
-          <ModeToggle />
+
+          <PointsBadge />
+          {!isLoggedIn && (
+            <div className="ml-4 relative z-10 flex items-center">
+              <Link
+                href="/auth/login"
+                className="text-sm font-medium text-foreground/70 hover:text-foreground"
+                aria-label={t('auth.login')}
+                data-testid="login-link"
+                onClick={(e) => {
+                  e.preventDefault();
+                  // For the main login link, we might not have a specific returnTo beyond current page,
+                  // or we could default to dashboard.
+                  // For consistency with how sub-menus now set it:
+                  router.push({ pathname: '/auth/login', query: { returnTo: router.asPath } }, undefined, { shallow: true });
+                  openLoginModal(router.asPath);
+                }}
+              >
+                {t('auth.login')}
+              </Link>
+              <Link
+                href="/signup"
+                className="ml-2 text-sm font-medium text-foreground/70 hover:text-foreground"
+                aria-label={t('auth.signup')}
+                data-testid="signup-nav-link"
+              >
+                {t('auth.signup')}
+              </Link>
+            </div>
+          )}
+          {/* User avatar menu */}
+          {isLoggedIn && (
+            <div className="ml-4">
+              <UserMenu />
+            </div>
+          )}
         </div>
-      </motion.header>
+      </header>
       
-      {/* Enhanced mobile menu with animations */}
-      <AnimatePresence>
-        {mobileMenuOpen && (
-          <div className="md:hidden fixed inset-0 z-40 pt-16">
-            {/* Backdrop */}
-            <motion.div 
-              className="absolute inset-0 bg-black/60 backdrop-blur-sm"
-              variants={backdropVariants}
-              initial="closed"
-              animate="open"
-              exit="closed"
-              onClick={() => setMobileMenuOpen(false)}
-              aria-hidden="true"
+      {/* Mobile menu - positioned outside of header to prevent overlap issues */}
+      {mobileMenuOpen && (
+        <div className="md:hidden fixed inset-0 z-60 pt-16">
+          <div 
+            className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+            onClick={() => setMobileMenuOpen(false)}
+            aria-hidden="true"
+          />
+          <div className="relative bg-background border-t border-border h-auto max-h-[calc(100vh-4rem)] overflow-y-auto">
+            <MobileMenu 
+              unreadCount={unreadCount} 
+              onClose={() => setMobileMenuOpen(false)}
+              openLoginModal={openLoginModal}
             />
-            
-            {/* Menu content */}
-            <motion.div 
-              className="relative bg-zion-blue-dark border-t border-zion-purple/20 h-auto max-h-[calc(100vh-4rem)] overflow-y-auto"
-              variants={menuVariants}
-              initial="closed"
-              animate="open"
-              exit="closed"
-            >
-              <MobileMenu 
-                unreadCount={unreadCount} 
-                onClose={() => setMobileMenuOpen(false)} 
-              />
-            </motion.div>
           </div>
-        )}
-      </AnimatePresence>
+        </div>
+      )}
 
       {/* Mobile Bottom Navigation */}
       {isMobile && <MobileBottomNav unreadCount={unreadCount} />}
+      <LoginModal isOpen={loginOpen} onOpenChange={setLoginOpen} />
     </>
   );
 }

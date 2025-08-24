@@ -14,7 +14,7 @@ export interface AdvancedAIAutomationService {
   textColor: string;
   link: string;
   marketPosition: string;
-  targetAudience: string;
+  targetAudience: string[];
   trialDays: number;
   setupTime: string;
   category: string;

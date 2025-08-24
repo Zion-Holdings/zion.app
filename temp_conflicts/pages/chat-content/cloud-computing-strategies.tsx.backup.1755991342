@@ -1,0 +1,1 @@
+export default function ChatContentCloud() { return <main className="p-10"><h1 className="text-2xl font-bold">Cloud Computing Strategies</h1></main>; }

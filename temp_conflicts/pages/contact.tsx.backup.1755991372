@@ -1,0 +1,28 @@
+export default function Contact() {
+  return (
+    <div className="py-10">
+      <h1 className="text-2xl font-bold">Contact</h1>
+      <p className="mt-2 text-gray-600 dark:text-gray-300">Reach us at hello@zion.app</p>
+=======
+export default Contact;
+=======
+export default function ContactPage() {
+  return (
+    <div className="py-8">
+      <h1 className="text-xl font-semibold mb-2">Contact</h1>
+      <p className="text-gray-600 dark:text-gray-300">Reach us at contact@zion.ai</p>
+    </div>
+  );
+}
+=======
+export default function Contact() { return <div className="p-8">Contact</div>; }
+=======
+import React from 'react';
+
+export default function ContactPage() {
+  return <div>Contact Zion</div>;
+}
+=======
+export default function Contact(){
+  return <div style={{padding:20}}>Contact</div>
+}

@@ -1,0 +1,32 @@
+import type { AppProps } from 'next/app';
+<<<<<<< HEAD
+import EnhancedLayout from '../components/layout/EnhancedLayout';
+import '../styles/enhanced-design-system.css';
+import '../styles/modern-design-system.css';
+<<<<<<< HEAD
+=======
+import '../styles/globals.css';
+>>>>>>> origin/cursor/build-zion-s-modular-org-chart-builder-7425
+=======
+<<<<<<< HEAD
+import '../styles/globals.css';
+
+export default function App({ Component, pageProps }: AppProps) {
+  return <Component {...pageProps} />;
+=======
+import EnhancedLayout from '../components/layout/EnhancedLayout';
+import '../styles/enhanced-design-system.css';
+import '../styles/modern-design-system.css';
+>>>>>>> 5fe4d4a516412daaecc6e2e3437df4b5fdac83d3
+
+export default function MyApp({ Component, pageProps }: AppProps) {
+  return (
+    <EnhancedLayout>
+      <Component {...pageProps} />
+    </EnhancedLayout>
+  );
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cursor/build-zion-ai-api-developer-documentation-hub-2aa3
+>>>>>>> 5fe4d4a516412daaecc6e2e3437df4b5fdac83d3
+}

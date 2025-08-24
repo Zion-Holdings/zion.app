@@ -1,0 +1,29 @@
+User-agent: *
+Allow: /
+
+<<<<<<< HEAD
+=======
+# Sitemap
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-1e9c
+Sitemap: https://ziontechgroup.com/sitemap.xml
+
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /private/
+<<<<<<< HEAD
+=======
+
+# Allow important pages
+Allow: /
+Allow: /docs/
+Allow: /contact/
+Allow: /privacy/
+Allow: /terms/
+Allow: /community/
+Allow: /multiverse/
+
+# Crawl delay
+Crawl-delay: 1
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-1e9c

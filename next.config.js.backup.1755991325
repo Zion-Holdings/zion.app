@@ -1,4 +1,5 @@
 const nextConfig = {
+=======
   assetPrefix,
   poweredByHeader: false,
   trailingSlash: false,
@@ -237,6 +238,7 @@ const nextConfig = {
     'remark-parse',
     'remark-rehype',
     'formik',
+=======
     'lodash',
     'lodash-es',
     'lodash/isPlainObject',
@@ -899,12 +901,6 @@ const nextConfig = {
   },
   async rewrites() {
     return [
-<<<<<<< HEAD
-      {
-        source: '/docs/zion-protocol.pdf',
-        destination: '/api/zion-whitepaper-pdf?edition=full',
-      },
-=======
       { source: '/main', destination: '/', permanent: true },
       { source: '/front', destination: '/', permanent: true },
       { source: '/front/index', destination: '/', permanent: true },
@@ -963,7 +959,6 @@ const nextConfig = {
       { source: '/Zion-Holdings/zion.app/issues', destination: '/', permanent: true },
       { source: '/Zion-Holdings/zion.app/tree/main/automation', destination: '/', permanent: true },
       { source: '/Zion-Holdings/zion.app/tree/main/docs', destination: '/', permanent: true }
->>>>>>> origin/cursor/crawl-and-fix-site-links-and-pages-1131
     ];
   },
   

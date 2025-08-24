@@ -1,0 +1,62 @@
+<<<<<<< HEAD
+import type { AppProps } from 'next/app';
+<<<<<<< HEAD
+import EnhancedLayout from '../components/layout/EnhancedLayout';
+import '../styles/globals.css';
+import '../styles/enhanced-design-system.css';
+import '../styles/modern-design-system.css';
+import '../styles/globals.css';
+
+export default function MyApp({ Component, pageProps }: AppProps) {
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 5f48a381108fa3a8a43c189dd4b043133ce9307e
+import type { AppProps } from 'next/app';
+import EnhancedLayout from '../components/layout/EnhancedLayout';
+import '../styles/enhanced-design-system.css';
+import '../styles/modern-design-system.css';
+
+<<<<<<< HEAD
+export default function MyApp({ Component, pageProps }: AppProps) {
+=======
+import type { AppProps } from 'next/app'
+import EnhancedLayout from '../components/layout/EnhancedLayout'
+import '../styles/enhanced-design-system.css'
+import '../styles/modern-design-system.css'
+
+export default function App({ Component, pageProps }: AppProps){
+>>>>>>> origin/cursor/deploy-anonymous-zk-voting-for-dao-e4d6
+=======
+<<<<<<< HEAD
+export default function MyApp({ Component, pageProps }: AppProps) {
+=======
+export default function App({ Component, pageProps }: AppProps) {
+>>>>>>> origin/cursor/build-talent-marketplace-platform-793e
+>>>>>>> 5f48a381108fa3a8a43c189dd4b043133ce9307e
+>>>>>>> 5fe4d4a516412daaecc6e2e3437df4b5fdac83d3
+  return (
+    <EnhancedLayout>
+      <Component {...pageProps} />
+    </EnhancedLayout>
+<<<<<<< HEAD
+  );
+=======
+import '../styles/globals.css';
+
+export default function MyApp({ Component, pageProps }: AppProps) {
+  return <Component {...pageProps} />;
+>>>>>>> origin/cursor/build-zion-ipo-readiness-portal-e565
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+  );
+=======
+  )
+>>>>>>> origin/cursor/deploy-anonymous-zk-voting-for-dao-e4d6
+=======
+  );
+>>>>>>> 5f48a381108fa3a8a43c189dd4b043133ce9307e
+>>>>>>> 5fe4d4a516412daaecc6e2e3437df4b5fdac83d3
+}

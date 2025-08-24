@@ -2,17 +2,17 @@ name: Ultimate Redundancy Automation
 
 on:
   schedule:
-    - cron: '*/30 * * * *'  # Every 30 minutes
+    - cron: '*/30 * * * *' # Every 30 minutes
   workflow_dispatch:
   push:
-    branches: [ main, develop ]
+    branches: [main, develop]
     paths:
       - 'automation/**'
       - '.github/workflows/**'
       - 'ecosystem*.cjs'
       - 'package.json'
   pull_request:
-    branches: [ main, develop ]
+    branches: [main, develop]
     paths:
       - 'automation/**'
       - '.github/workflows/**'
@@ -32,7 +32,7 @@ jobs:
     name: System Health Check
     runs-on: ubuntu-latest
     timeout-minutes: 10
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -51,14 +51,14 @@ jobs:
       - name: Validate automation scripts
         run: |
           echo "Validating automation scripts..."
-          
+
           # Check if critical automation files exist
           required_files=(
             "automation/ultimate-redundancy-master.cjs"
             "automation/start-ultimate-redundancy.sh"
             "ecosystem.ultimate-redundancy.cjs"
           )
-          
+
           for file in "${required_files[@]}"; do
             if [ -f "$file" ]; then
               echo "✓ $file exists"
@@ -67,7 +67,7 @@ jobs:
               exit 1
             fi
           done
-          
+
           # Validate Node.js scripts
           echo "Validating Node.js scripts..."
           node -c automation/ultimate-redundancy-master.cjs
@@ -76,14 +76,14 @@ jobs:
       - name: Check PM2 ecosystem files
         run: |
           echo "Checking PM2 ecosystem files..."
-          
+
           ecosystem_files=(
             "ecosystem.pm2.cjs"
             "ecosystem.redundancy.cjs"
             "ecosystem.comprehensive-redundancy.cjs"
             "ecosystem.ultimate-redundancy.cjs"
           )
-          
+
           for file in "${ecosystem_files[@]}"; do
             if [ -f "$file" ]; then
               echo "✓ $file exists"
@@ -97,14 +97,14 @@ jobs:
       - name: Check GitHub Actions workflows
         run: |
           echo "Checking GitHub Actions workflows..."
-          
+
           workflow_files=(
             ".github/workflows/marketing-sync.yml"
             ".github/workflows/sync-health.yml"
             ".github/workflows/marketing-sync-backup.yml"
             ".github/workflows/sync-health-backup.yml"
           )
-          
+
           for file in "${workflow_files[@]}"; do
             if [ -f "$file" ]; then
               echo "✓ $file exists"
@@ -116,7 +116,7 @@ jobs:
       - name: Check Netlify Functions
         run: |
           echo "Checking Netlify Functions..."
-          
+
           if [ -f "netlify/functions/functions-manifest.json" ]; then
             echo "✓ Functions manifest exists"
             function_count=$(node -e "
@@ -138,7 +138,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: health-check
     timeout-minutes: 15
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -158,7 +158,7 @@ jobs:
       - name: Validate PM2 ecosystem
         run: |
           echo "Validating PM2 ecosystem configuration..."
-          
+
           # Test ecosystem file loading
           if [ -f "ecosystem.ultimate-redundancy.cjs" ]; then
             echo "Testing ultimate redundancy ecosystem..."
@@ -187,7 +187,7 @@ jobs:
       - name: Test PM2 startup simulation
         run: |
           echo "Testing PM2 startup simulation..."
-          
+
           # Create a test ecosystem with minimal configuration
           cat > test-ecosystem.cjs << 'EOF'
           module.exports = {
@@ -199,10 +199,10 @@ jobs:
             }]
           };
           EOF
-          
+
           # Test PM2 with test ecosystem
           pm2 start test-ecosystem.cjs --no-daemon || echo "PM2 test completed"
-          
+
           # Cleanup
           pm2 delete test-app 2>/dev/null || true
           rm -f test-ecosystem.cjs
@@ -213,7 +213,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: health-check
     timeout-minutes: 10
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -221,7 +221,7 @@ jobs:
       - name: Validate workflow files
         run: |
           echo "Validating GitHub Actions workflow files..."
-          
+
           workflows_dir=".github/workflows"
           if [ -d "$workflows_dir" ]; then
             workflow_files=$(find "$workflows_dir" -name "*.yml" -o -name "*.yaml")
@@ -253,12 +253,12 @@ jobs:
       - name: Check backup workflows
         run: |
           echo "Checking backup workflow availability..."
-          
+
           backup_workflows=(
             ".github/workflows/marketing-sync-backup.yml"
             ".github/workflows/sync-health-backup.yml"
           )
-          
+
           backup_count=0
           for workflow in "${backup_workflows[@]}"; do
             if [ -f "$workflow" ]; then
@@ -268,9 +268,9 @@ jobs:
               echo "⚠ $workflow not found"
             fi
           done
-          
+
           echo "Backup workflows available: $backup_count/${#backup_workflows[@]}"
-          
+
           if [ $backup_count -eq 0 ]; then
             echo "⚠ No backup workflows found - redundancy may be limited"
           fi
@@ -281,7 +281,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: health-check
     timeout-minutes: 10
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -298,7 +298,7 @@ jobs:
       - name: Check Netlify Functions structure
         run: |
           echo "Checking Netlify Functions structure..."
-          
+
           if [ -d "netlify" ]; then
             echo "✓ Netlify directory exists"
             
@@ -338,7 +338,7 @@ jobs:
       - name: Test manifest generation
         run: |
           echo "Testing manifest generation..."
-          
+
           if [ -f "scripts/generate-netlify-functions-manifest.cjs" ]; then
             echo "✓ Manifest generation script exists"
             
@@ -356,9 +356,15 @@ jobs:
   ultimate-redundancy-test:
     name: Ultimate Redundancy System Test
     runs-on: ubuntu-latest
-    needs: [health-check, pm2-redundancy, github-actions-redundancy, netlify-functions-redundancy]
+    needs:
+      [
+        health-check,
+        pm2-redundancy,
+        github-actions-redundancy,
+        netlify-functions-redundancy,
+      ]
     timeout-minutes: 20
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -375,7 +381,7 @@ jobs:
       - name: Test ultimate redundancy master
         run: |
           echo "Testing ultimate redundancy master system..."
-          
+
           if [ -f "automation/ultimate-redundancy-master.cjs" ]; then
             echo "✓ Master script exists"
             
@@ -405,7 +411,7 @@ jobs:
       - name: Test startup script
         run: |
           echo "Testing startup script..."
-          
+
           if [ -f "automation/start-ultimate-redundancy.sh" ]; then
             echo "✓ Startup script exists"
             
@@ -426,50 +432,50 @@ jobs:
       - name: Generate redundancy report
         run: |
           echo "Generating redundancy report..."
-          
+
           cat > redundancy-report.md << 'EOF'
           # Ultimate Redundancy System Report
-          
+
           Generated: $(date)
-          
+
           ## System Status
-          
+
           ### PM2 Redundancy
           - Ecosystem files: Available
           - Process monitoring: Configured
           - Auto-recovery: Enabled
-          
+
           ### GitHub Actions Redundancy
           - Workflow files: Available
           - Backup workflows: Available
           - Auto-trigger: Configured
-          
+
           ### Netlify Functions Redundancy
           - Functions directory: Available
           - Manifest generation: Available
           - Auto-regeneration: Configured
-          
+
           ### Ultimate Redundancy Master
           - Master system: Available
           - Startup script: Available
           - Health monitoring: Configured
-          
+
           ## Recommendations
-          
+
           1. Monitor system logs regularly
           2. Test failover scenarios
           3. Update backup workflows as needed
           4. Verify Netlify function deployments
-          
+
           EOF
-          
+
           echo "✓ Redundancy report generated"
 
       - name: Commit redundancy report
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          
+
           if [ -n "$(git status --porcelain)" ]; then
             git add redundancy-report.md
             git commit -m "chore(redundancy): update redundancy system report [skip ci]"
@@ -483,9 +489,16 @@ jobs:
   final-status:
     name: Final Status Check
     runs-on: ubuntu-latest
-    needs: [health-check, pm2-redundancy, github-actions-redundancy, netlify-functions-redundancy, ultimate-redundancy-test]
+    needs:
+      [
+        health-check,
+        pm2-redundancy,
+        github-actions-redundancy,
+        netlify-functions-redundancy,
+        ultimate-redundancy-test,
+      ]
     timeout-minutes: 5
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4

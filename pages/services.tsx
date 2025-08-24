@@ -29,8 +29,11 @@ import { realServicesQ12025 } from '../data/real-services-q1-2025';
 import { realEnterpriseServices2025 } from '../data/real-enterprise-services-2025';
 import { realMarketAugmentations2025 } from '../data/real-market-augmentations-2025';
 import { innovative2026MicroSaasServicesV2 } from '../data/innovative-2026-micro-saas-v2';
+import { innovative2026MicroSaasServicesV4 } from '../data/innovative-2026-micro-saas-v4';
 import { emergingTech2026ServicesV2 } from '../data/emerging-tech-2026-services-v2';
+import { emergingTech2026ServicesV4 } from '../data/emerging-tech-2026-services-v4';
 import { enterpriseIT2026ServicesV2 } from '../data/enterprise-it-2026-services-v2';
+import { enterpriseIT2026ServicesV4 } from '../data/enterprise-it-2026-services-v4';
 import { aiAutonomousServices2026 } from '../data/2026-ai-autonomous-services';
 import { quantumSpaceTechServices2026 } from '../data/2026-quantum-space-tech-services';
 import { metaverseDigitalRealityServices2026 } from '../data/2026-metaverse-digital-reality-services';
@@ -43,8 +46,8 @@ import { innovative2026AIServicesV4 } from '../data/innovative-2026-ai-services-
 
 export default function ServicesPage() {
   const [searchTerm, setSearchTerm] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('All');
-  const [sortBy, setSortBy] = useState('name');
+  const [selectedCategory, setSelectedCategory] = useState('all');
+  const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
 
   // Combine all services
   const allServices = [
@@ -90,8 +93,11 @@ export default function ServicesPage() {
     ...emergingTech2025Services,
     ...realMarketAugmentations2025,
     ...innovative2026MicroSaasServicesV2,
+    ...innovative2026MicroSaasServicesV4,
     ...emergingTech2026ServicesV2,
+    ...emergingTech2026ServicesV4,
     ...enterpriseIT2026ServicesV2,
+    ...enterpriseIT2026ServicesV4,
     ...aiAutonomousServices2026,
     ...quantumSpaceTechServices2026,
     ...metaverseDigitalRealityServices2026,
@@ -135,8 +141,159 @@ import { innovativeMicroSaasServices } from '../data/innovative-micro-saas-servi
 import { advancedAIServices } from '../data/advanced-ai-services';
 import { blockchainEmergingTechServices } from '../data/blockchain-emerging-tech-services';
 
-export default function ServicesPage() {
-  const [searchTerm, setSearchTerm] = useState('');
+// Import our new service data
+import { enterpriseITSolutions } from '../data/2034-enterprise-it-solutions';
+import { innovativeMicroSaasSolutions } from '../data/2034-innovative-micro-saas-solutions';
+import { cuttingEdgeAIServices } from '../data/2034-cutting-edge-ai-services';
+import { real2026Q2Services } from '../data/real-2026-q2-services';
+
+// Import existing service data
+import { realMicroSaasServices2025 } from '../data/2025-real-micro-saas-services';
+import { innovativeAIServices2025 } from '../data/2025-innovative-ai-services';
+import { innovativeITServices2025 } from '../data/2025-innovative-it-services';
+import { emergingTechServices2025 } from '../data/2025-emerging-tech-services';
+import { newRealServices2026 } from '../data/2025-2026-new-real-services';
+import { additionalRealMicroSaas2026 } from '../data/2026-additional-real-micro-saas';
+
+// Helper function to get service category
+const getServiceCategory = (service: any) => {
+  if (service.category) return service.category;
+  if (service.type) return service.type;
+  return 'Other';
+};
+
+// Helper function to get service pricing
+const getServicePricing = (service: any) => {
+  if (service.pricing?.starter) return service.pricing.starter;
+  if (service.pricing?.monthly) return `$${service.pricing.monthly}/month`;
+  if (service.price?.monthly) return `$${service.price.monthly}/month`;
+  return 'Contact for pricing';
+};
+
+// Helper function to get service features
+const getServiceFeatures = (service: any) => {
+  if (service.features) return service.features;
+  if (service.keyFeatures) return service.keyFeatures;
+  return [];
+};
+
+// Helper function to get service description
+const getServiceDescription = (service: any) => {
+  if (service.description) return service.description;
+  if (service.tagline) return service.tagline;
+  return 'No description available';
+};
+
+// Helper function to get service launch date
+const getServiceLaunchDate = (service: any) => {
+  return service.launchDate || service.releasedAt || service.updatedAt || '2020-01-01';
+};
+
+// Helper function to get service rating
+const getServiceRating = (service: any) => {
+  return service.rating || 0;
+};
+
+// Create unified services array
+const allServices = [
+  ...enterpriseITSolutions,
+  ...innovativeMicroSaasSolutions,
+  ...cuttingEdgeAIServices,
+  ...realMicroSaasServices2025,
+  ...innovativeAIServices2025,
+  ...innovativeITServices2025,
+  ...emergingTechServices2025,
+  ...newRealServices2026,
+  ...additionalRealMicroSaas2026
+];
+
+const categories = [
+  {
+    id: 'all',
+    name: 'All Services',
+    icon: <Grid className="w-6 h-6" />,
+    color: 'from-gray-500 to-slate-500',
+    description: 'Complete portfolio of all services'
+  },
+  {
+    id: 'enterprise-it',
+    name: 'Enterprise IT',
+    icon: <Building className="w-6 h-6" />,
+    color: 'from-blue-500 to-purple-500',
+    description: 'Enterprise solutions and infrastructure'
+  },
+  {
+    id: 'ai-consciousness',
+    name: 'AI & Consciousness',
+    icon: <Brain className="w-6 h-6" />,
+    color: 'from-cyan-500 to-blue-500',
+    description: 'Revolutionary AI consciousness and emotional intelligence'
+  },
+  {
+    id: 'quantum-emerging',
+    name: 'Quantum & Emerging Tech',
+    icon: <Atom className="w-6 h-6" />,
+    color: 'from-purple-500 to-pink-500',
+    description: 'Quantum computing and breakthrough technologies'
+  },
+  {
+    id: 'space-metaverse',
+    name: 'Space & Metaverse',
+    icon: <Rocket className="w-6 h-6" />,
+    color: 'from-pink-500 to-rose-500',
+    description: 'Space exploration and virtual worlds'
+  },
+  {
+    id: 'micro-saas',
+    name: 'Micro SAAS',
+    icon: <Target className="w-6 h-6" />,
+    color: 'from-orange-500 to-red-500',
+    description: 'Innovative business solutions'
+  },
+  {
+    id: 'creative-media',
+    name: 'Creative & Media',
+    icon: <Palette className="w-6 h-6" />,
+    color: 'from-indigo-500 to-purple-500',
+    description: 'AI-powered creative solutions'
+  },
+  {
+    id: 'healthcare',
+    name: 'Healthcare & Life Sciences',
+    icon: <Heart className="w-6 h-6" />,
+    color: 'from-blue-500 to-cyan-500',
+    description: 'Healthcare and biotech solutions'
+  },
+  {
+    id: 'logistics',
+    name: 'Logistics & Supply Chain',
+    icon: <Truck className="w-6 h-6" />,
+    color: 'from-green-500 to-emerald-500',
+    description: 'Supply chain, logistics, and automation'
+  },
+  {
+    id: 'education',
+    name: 'Education & Training',
+    icon: <GraduationCap className="w-6 h-6" />,
+    color: 'from-yellow-500 to-amber-500',
+    description: 'Education platforms and training'
+  }
+];
+
+const sortOptions = [
+  { value: 'name', label: 'Name A-Z' },
+  { value: 'price-low', label: 'Price: Low to High' },
+  { value: 'price-high', label: 'Price: High to Low' },
+  { value: 'popular', label: 'Most Popular' },
+  { value: 'newest', label: 'Newest First' },
+  { value: 'rating', label: 'Highest Rated' }
+];
+
+import { useRouter } from 'next/router';
+
+export default function Services() {
+  const router = useRouter();
+  const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [sortBy, setSortBy] = useState<'name' | 'price' | 'rating' | 'popularity'>('popularity');
@@ -151,42 +308,96 @@ export default function ServicesPage() {
     ...blockchainEmergingTechServices
   ], []);
 
-  // Get unique categories
-  const categories = useMemo(() => {
-    const cats = [...new Set(allServices.map(service => service.category))];
-    return ['all', ...cats.sort()];
-  }, [allServices]);
-
-  const categories = [
-    { id: 'all', name: 'All Services', icon: '🚀', count: allServices.length },
-    { id: 'ai', name: 'AI & Machine Learning', icon: '🧠', count: innovativeAIServices.length + nextGenAIServices.length },
-    { id: 'quantum', name: 'Quantum & Space', icon: '⚛️', count: quantumSpaceServices.length },
-    { id: 'enterprise', name: 'Enterprise IT', icon: '🏢', count: enterpriseITServices.length + comprehensiveEnterpriseITServices.length },
-    { id: 'micro-saas', name: 'Micro SaaS', icon: '💻', count: enhancedRealMicroSaasServices.length + innovativeMicroSaasSolutions.length }
-  ];
-
-  // Get all categories
-  const categories = ['All', ...Array.from(new Set(uniqueServices.map(s => 
-    Array.isArray(s.category) ? s.category[0] : s.category
-  )))];
-
-  // Filter and sort services
-  const filteredServices = useMemo(() => {
-    let filtered = allServices;
-
-    // Filter by search term
-    if (searchTerm) {
-      filtered = filtered.filter(service =>
-        service.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        service.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        service.tagline.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        service.category.toLowerCase().includes(searchTerm.toLowerCase())
-      );
+  // Sort services
+  const sortedServices = [...filteredServices].sort((a, b) => {
+    switch (sortBy) {
+      case 'name':
+        return a.name.localeCompare(b.name);
+      case 'price-low':
+        return (parseInt(getServicePricing(a).replace(/[^0-9]/g, '')) || 0) - 
+               (parseInt(getServicePricing(b).replace(/[^0-9]/g, '')) || 0);
+      case 'price-high':
+        return (parseInt(getServicePricing(b).replace(/[^0-9]/g, '')) || 0) - 
+               (parseInt(getServicePricing(a).replace(/[^0-9]/g, '')) || 0);
+      case 'newest':
+        return new Date(getServiceLaunchDate(b)).getTime() - 
+               new Date(getServiceLaunchDate(a)).getTime();
+      case 'rating':
+        return getServiceRating(b) - getServiceRating(a);
+      default:
+        return 0;
     }
 
-    // Filter by category
-    if (selectedCategory !== 'all') {
-      filtered = filtered.filter(service => service.category === selectedCategory);
+  // Pagination helpers
+  const totalPages = Math.max(1, Math.ceil(sortedServices.length / pageSize));
+  const currentPageClamped = Math.min(currentPage, totalPages);
+  const paginatedServices = sortedServices.slice(
+    (currentPageClamped - 1) * pageSize,
+    currentPageClamped * pageSize
+  );
+
+  // Reset to first page when filters/sort change
+  React.useEffect(() => {
+    setCurrentPage(1);
+  }, [searchQuery, selectedCategory, sortBy]);
+
+  React.useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const q = (router.query.q as string) || '';
+    const filter = (router.query.filter as string) || (router.query.category as string) || '';
+    const sort = (router.query.sort as string) || '';
+
+    if (q) setSearchQuery(q);
+    if (sort) setSortBy(sort);
+
+    if (filter) {
+      // accept id or category name
+      const byId = categories.find(c => c.id.toLowerCase() === filter.toLowerCase());
+      if (byId) {
+        setSelectedCategory(byId.id);
+      } else {
+        const byName = categories.find(c => c.name.toLowerCase() === decodeURIComponent(filter.toLowerCase()));
+        if (byName) setSelectedCategory(byName.id);
+      }
+    }
+  }, [router.query.q, router.query.filter, router.query.category, router.query.sort]);
+
+  const getCategoryIcon = (category: string) => {
+    switch (category.toLowerCase()) {
+      case 'enterprise it':
+      case 'enterprise security':
+      case 'devops & automation':
+      case 'data & analytics':
+      case 'cloud services':
+      case 'cybersecurity':
+        return <Building className="w-6 h-6 text-blue-400" />;
+      case 'ai & consciousness':
+      case 'ai services':
+      case 'artificial intelligence':
+        return <Brain className="w-6 h-6 text-cyan-400" />;
+      case 'quantum':
+      case 'quantum & emerging tech':
+        return <Atom className="w-6 h-6 text-purple-400" />;
+      case 'space':
+      case 'space & metaverse':
+        return <Rocket className="w-6 h-6 text-pink-400" />;
+      case 'micro saas':
+      case 'micro saas solutions':
+        return <Target className="w-6 h-6 text-orange-400" />;
+      case 'creative':
+      case 'creative & media':
+        return <Palette className="w-6 h-6 text-indigo-400" />;
+      case 'healthcare':
+      case 'healthcare & biotech':
+        return <Heart className="w-6 h-6 text-red-400" />;
+      case 'transportation':
+      case 'transportation & logistics':
+        return <Truck className="w-6 h-6 text-blue-400" />;
+      case 'education':
+      case 'education & research':
+        return <GraduationCap className="w-6 h-6 text-yellow-400" />;
+      default:
+        return <Shield className="w-6 h-6 text-gray-400" />;
     }
 
     // Sort services
@@ -217,6 +428,23 @@ export default function ServicesPage() {
     website: 'https://ziontechgroup.com'
   };
 
+  const filteredServices = activeCategory === 'all' 
+    ? allServices 
+    : allServices.filter(service => service.category === activeCategory);
+
+  const stats = [
+    { number: '500+', label: 'Services Delivered', icon: CheckCircle, color: 'text-cyan-400' },
+    { number: '99.9%', label: 'Uptime Guarantee', icon: Shield, color: 'text-green-400' },
+    { number: '24/7', label: 'Global Support', icon: Clock, color: 'text-purple-400' },
+    { number: '2500%', label: 'Average ROI', icon: TrendingUp, color: 'text-yellow-400' }
+  ];
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {microServices.map((service, index) => (
+              <Card
+                key={index}
+                className="card-hover group border-gradient-blue cursor-pointer"
+=======
   return (
     <div className="min-h-screen bg-black text-white">
       <Head>
@@ -375,6 +603,127 @@ export default function ServicesPage() {
                 <motion.div
                   key={service.id}
                   initial={{ opacity: 0, y: 20 }}
+
+      <EnhancedFooter />
+    </>
+=======
+      {/* Services Grid */}
+      <section className="px-6 pb-20">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-8">
+            <h2 className="text-3xl font-bold text-white mb-2">
+              {filteredServices.length} Services Available
+            </h2>
+            <p className="text-white/60">
+              {selectedCategory !== 'all' && `Showing ${categories.find(c => c.id === selectedCategory)?.name} services`}
+            </p>
+          </div>
+
+          <AnimatePresence mode="wait">
+            {filteredServices.length === 0 ? (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="text-center py-20"
+              >
+                <div className="w-24 h-24 mx-auto mb-6 rounded-full bg-white/10 flex items-center justify-center">
+                  <Search className="w-12 h-12 text-white/40" />
+                </div>
+                <h3 className="text-2xl font-semibold text-white mb-2">No services found</h3>
+                <p className="text-white/60 mb-6">
+                  Try adjusting your search terms or category filter
+                </p>
+                <button
+                  onClick={() => {
+                    setSearchTerm('');
+                    setSelectedCategory('all');
+                  }}
+                  className="px-6 py-3 bg-cyan-500 hover:bg-cyan-600 rounded-lg font-medium transition-colors"
+                >
+                  Clear Filters
+                </button>
+              </motion.div>
+            ) : (
+              <div className={viewMode === 'grid' ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8' : 'space-y-6'}>
+                {filteredServices.map((service, index) => (
+                  <motion.div
+                    key={service.id}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    className={`group relative ${
+                      viewMode === 'grid' 
+                        ? 'p-8 rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-xl hover:border-cyan-400/30 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl'
+                        : 'p-6 rounded-xl border border-white/10 bg-white/5 hover:border-cyan-400/30 transition-all duration-300'
+                    }`}
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-br from-white/0 via-cyan-400/5 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
+                    <div className="relative z-10">
+                      <div className="flex items-start justify-between mb-4">
+                        <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-500 p-4 flex items-center justify-center">
+                          <service.icon className="w-8 h-8 text-white" />
+                        </div>
+                        <span className={`px-3 py-1 rounded-full text-xs font-medium ${
+                          service.status === 'active' ? 'bg-green-500/20 text-green-300' :
+                          service.status === 'beta' ? 'bg-yellow-500/20 text-yellow-300' :
+                          'bg-blue-500/20 text-blue-300'
+                        }`}>
+                          {service.status}
+                        </span>
+                      </div>
+                      
+                      <h3 className="text-xl font-bold mb-3 text-white">{service.title}</h3>
+                      <p className="text-white/70 leading-relaxed mb-4">{service.description}</p>
+                      
+                      {/* Price */}
+                      <div className="mb-4">
+                        <span className="text-2xl font-bold text-cyan-400">{service.price}</span>
+                      </div>
+                      
+                      {/* Features */}
+                      <div className="mb-6">
+                        <h4 className="text-white font-semibold mb-3 text-sm">Key Features:</h4>
+                        <div className="space-y-2">
+                          {service.features.map((feature, idx) => (
+                            <div key={idx} className="flex items-center gap-2 text-sm text-white/70">
+                              <CheckCircle className="w-4 h-4 text-cyan-400 flex-shrink-0" />
+                              <span>{feature}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-center justify-between">
+                        <a
+                          href={service.link}
+                          className="flex items-center text-cyan-400 group-hover:text-cyan-300 transition-colors duration-300"
+                        >
+                          <span className="text-sm font-medium">Learn More</span>
+                          <ExternalLink className="w-4 h-4 ml-2" />
+                        </a>
+                        <a
+                          href="mailto:kleber@ziontechgroup.com"
+                          className="px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 rounded-lg text-white text-sm font-medium transition-all duration-300 transform hover:scale-105"
+                        >
+                          Get Quote
+                        </a>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            )}
+          </AnimatePresence>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 px-6 bg-gradient-to-r from-white/5 to-white/10">
+        <div className="max-w-4xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+=======
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.05 }}
                 >
@@ -633,4 +982,6 @@ export default function ServicesPage() {
       </section>
     </div>
   );
-}
+};
+
+export default ServicesPage;

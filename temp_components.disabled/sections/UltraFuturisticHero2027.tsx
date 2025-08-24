@@ -114,7 +114,7 @@ export default function UltraFuturisticHero2027() {
           >
             <Link
               href="/2027-services-showcase"
-              className="group px-10 py-5 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold text-xl rounded-2xl hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-2xl shadow-cyan-500/25 flex items-center justify-center space-x-3"
+              className="group px-10 py-5 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold text-xl rounded-2xl hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 transform hover:shadow-xl hover:shadow-cyan-500/30 shadow-2xl shadow-cyan-500/25 flex items-center justify-center space-x-3"
             >
               <Rocket className="w-6 h-6 group-hover:rotate-12 transition-transform duration-300" />
               <span>Explore 2027 Services</span>
@@ -123,7 +123,7 @@ export default function UltraFuturisticHero2027() {
             
             <Link
               href="/contact"
-              className="px-10 py-5 border-2 border-cyan-500/50 text-cyan-400 font-bold text-xl rounded-2xl hover:bg-cyan-500/10 hover:border-cyan-400 transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-3"
+              className="px-10 py-5 border-2 border-cyan-500/50 text-cyan-400 font-bold text-xl rounded-2xl hover:bg-cyan-500/10 hover:border-cyan-400 transition-all duration-300 transform hover:shadow-xl hover:shadow-cyan-500/30 flex items-center justify-center space-x-3"
             >
               <Sparkles className="w-6 h-6" />
               <span>Start Your Journey</span>
@@ -145,8 +145,8 @@ export default function UltraFuturisticHero2027() {
                 transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
                 className="group"
               >
-                <div className="bg-black/40 backdrop-blur-xl border border-cyan-500/30 rounded-2xl p-6 hover:border-cyan-400/50 transition-all duration-300 transform hover:scale-105">
-                  <div className={`w-16 h-16 bg-gradient-to-r ${feature.color} rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                <div className="bg-black/40 backdrop-blur-xl border border-cyan-500/30 rounded-2xl p-6 hover:border-cyan-400/50 transition-all duration-300 transform hover:shadow-xl hover:shadow-cyan-500/30">
+                  <div className={`w-16 h-16 bg-gradient-to-r ${feature.color} rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:shadow-lg hover:shadow-cyan-400/40 transition-transform duration-300`}>
                     <feature.icon className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-white font-semibold text-center group-hover:text-cyan-400 transition-colors duration-300">
@@ -172,14 +172,14 @@ export default function UltraFuturisticHero2027() {
                 transition={{ duration: 0.5, delay: 1.2 + index * 0.1 }}
                 className="text-center group"
               >
-                <div className={`text-4xl md:text-5xl font-bold mb-2 group-hover:scale-110 transition-transform duration-300 ${stat.color}`}>
+                <div className={`text-4xl md:text-5xl font-bold mb-2 group-hover:shadow-lg hover:shadow-cyan-400/40 transition-transform duration-300 ${stat.color}`}>
                   {stat.number}
                 </div>
                 <div className="text-cyan-300 font-medium group-hover:text-cyan-400 transition-colors duration-300">
                   {stat.label}
                 </div>
                 <div className="flex justify-center mt-2">
-                  <stat.icon className={`w-5 h-5 ${stat.color} group-hover:scale-110 transition-transform duration-300`} />
+                  <stat.icon className={`w-5 h-5 ${stat.color} group-hover:shadow-lg hover:shadow-cyan-400/40 transition-transform duration-300`} />
                 </div>
               </motion.div>
             ))}

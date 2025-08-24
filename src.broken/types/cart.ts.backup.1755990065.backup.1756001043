@@ -1,0 +1,29 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+export interface CartItem {
+  id: string;
+  name: string;
+  price: number;
+  quantity: number;
+}
+
+export interface CartContextType {
+  items: CartItem[];
+  dispatch: React.Dispatch<CartAction>;
+}
+
+export type CartAction =
+  | { type: 'ADD_ITEM'; payload: CartItem }
+  | { type: 'REMOVE_ITEM'; payload: string }
+  | { type: 'CLEAR_CART' };
+=======
+>>>>>>> origin/cursor/website-audit-and-enhancement-63e3
+// Type definitions for cart;
+interface cart {;
+  // TODO: Add proper type definitions;
+};
+<<<<<<< HEAD
+=======
+>>>>>>> origin/automation-error-fixes
+>>>>>>> origin/cursor/website-audit-and-enhancement-63e3

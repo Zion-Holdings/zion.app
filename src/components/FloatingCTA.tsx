@@ -1,150 +1,63 @@
 
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { MessageCircle, X, ChevronUp, Phone, Mail, MessageSquare } from "lucide-react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
+import { useState, useEffect } from "react";
+import { X } from 'lucide-react'
 
 export function FloatingCTA() {
-  const [isExpanded, setIsExpanded] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const [isClosed, setIsClosed] = useState(false);
 
-  const toggleExpanded = () => {
-    setIsExpanded(!isExpanded);
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const threshold = 600; // Show CTA after scrolling 600px
+
+      if (scrollPosition > threshold && !isClosed) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [isClosed]);
+
+  const handleClose = () => {
+    setIsClosed(true);
+    setIsVisible(false);
   };
 
-  const quickActions = [
-    {
-      icon: <Phone className="w-5 h-5" />,
-      label: "Call Support",
-      action: "tel:+1-800-ZION-TECH",
-      color: "bg-zion-cyan hover:bg-zion-cyan-light"
-    },
-    {
-      icon: <Mail className="w-5 h-5" />,
-      label: "Email Us",
-      action: "mailto:support@ziontechgroup.com",
-      color: "bg-zion-purple hover:bg-zion-purple-light"
-    },
-    {
-      icon: <MessageSquare className="w-5 h-5" />,
-      label: "Live Chat",
-      action: "/contact",
-      color: "bg-zion-blue hover:bg-zion-blue-light"
-    }
-  ];
+  if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-6 right-6 z-50">
-      <AnimatePresence>
-        {isExpanded && (
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.8, y: 20 }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
-            className="absolute bottom-16 right-0 mb-4"
+    <div className="fixed bottom-6 left-0 right-0 mx-auto max-w-md px-4 z-50 animate-fade-in">
+      <div className="bg-gradient-to-r from-zion-blue-dark to-zion-blue p-4 rounded-lg border border-zion-purple shadow-lg flex items-center justify-between">
+        <div className="mr-4">
+          <p className="text-white font-medium">Ready to explore Zion?</p>
+          <p className="text-zion-slate-light text-sm">Register today to access all features!</p>
+        </div>
+        <div className="flex items-center gap-2">
+          <Button 
+            variant="default" 
+            size="sm" 
+            className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple whitespace-nowrap"
+            asChild
           >
-            <div className="bg-zion-blue-dark border border-zion-blue-light rounded-2xl p-4 shadow-2xl backdrop-blur-sm">
-              <div className="text-center mb-4">
-                <h3 className="text-white font-semibold mb-2">Need Help?</h3>
-                <p className="text-zion-slate-light text-sm">We're here to assist you</p>
-              </div>
-              
-              <div className="space-y-3">
-                {quickActions.map((action, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.1 }}
-                  >
-                    {action.action.startsWith('http') || action.action.startsWith('/') ? (
-                      <Link to={action.action}>
-                        <Button
-                          className={`w-full ${action.color} text-white border-0 hover:shadow-lg transition-all duration-300`}
-                          size="sm"
-                        >
-                          <span className="flex items-center gap-2">
-                            {action.icon}
-                            {action.label}
-                          </span>
-                        </Button>
-                      </Link>
-                    ) : (
-                      <a href={action.action}>
-                        <Button
-                          className={`w-full ${action.color} text-white border-0 hover:shadow-lg transition-all duration-300`}
-                          size="sm"
-                        >
-                          <span className="flex items-center gap-2">
-                            {action.icon}
-                            {action.label}
-                          </span>
-                        </Button>
-                      </a>
-                    )}
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      {/* Main floating button */}
-      <motion.div
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-        transition={{ duration: 0.2 }}
-      >
-        <Button
-          onClick={toggleExpanded}
-          className={`w-14 h-14 rounded-full shadow-2xl border-0 transition-all duration-300 ${
-            isExpanded 
-              ? 'bg-zion-purple hover:bg-zion-purple-light' 
-              : 'bg-gradient-to-r from-zion-cyan to-zion-purple hover:from-zion-cyan-light hover:to-zion-purple-light'
-          }`}
-        >
-          <AnimatePresence mode="wait">
-            {isExpanded ? (
-              <motion.div
-                key="close"
-                initial={{ rotate: -90, opacity: 0 }}
-                animate={{ rotate: 0, opacity: 1 }}
-                exit={{ rotate: 90, opacity: 0 }}
-                transition={{ duration: 0.2 }}
-              >
-                <X className="w-6 h-6 text-white" />
-              </motion.div>
-            ) : (
-              <motion.div
-                key="message"
-                initial={{ rotate: 90, opacity: 0 }}
-                animate={{ rotate: 0, opacity: 1 }}
-                exit={{ rotate: -90, opacity: 0 }}
-                transition={{ duration: 0.2 }}
-              >
-                <MessageCircle className="w-6 h-6 text-white" />
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </Button>
-      </motion.div>
-
-      {/* Scroll to top button */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5 }}
-        className="mt-4"
-      >
-        <Button
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="w-14 h-14 rounded-full bg-zion-blue-dark border border-zion-blue-light hover:bg-zion-blue hover:border-zion-cyan shadow-lg transition-all duration-300"
-        >
-          <ChevronUp className="w-6 h-6 text-zion-cyan" />
-        </Button>
-      </motion.div>
+            <Link href="/signup">Register Now</Link>
+          </Button>
+          <button 
+            onClick={handleClose}
+            className="text-zion-slate hover:text-white p-1"
+            aria-label="Close"
+          >
+            <X className="w-5 h-5" />
+          </button>
+        </div>
+      </div>
     </div>
   );
 }

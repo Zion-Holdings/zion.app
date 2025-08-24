@@ -1,7 +1,5 @@
 module.exports = {
-  extends: [
-    "next/core-web-vitals"
-  ],
+  extends: ['next/core-web-vitals'],
   rules: {
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
@@ -25,20 +23,6 @@ module.exports = {
     'automation/',
     'netlify/',
     'src/',
-    'zion-os/',
-    'zion_academy/',
-    'packages/',
-    'apps/',
-    'generated-services/',
-    'monitoring/',
-    'wiki/',
-    'zion.app/',
-    'backups/',
-    'typechain-types/',
-    'zion-website-analysis.json',
-    '*.backup.*',
-    '*.log',
-    '*.txt',
-    '*.md'
+    'apps/'
   ]
 };

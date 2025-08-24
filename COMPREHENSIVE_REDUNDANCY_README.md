@@ -10,23 +10,23 @@ The comprehensive redundancy system ensures that your automation infrastructure 
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│                Comprehensive Redundancy System                  │
-│                         (Master Layer)                         │
+│ Comprehensive Redundancy System │
+│ (Master Layer) │
 └─────────────────────┬───────────────────────────────────────────┘
-                      │
-    ┌─────────────────┼─────────────────┐
-    │                 │                 │
-┌───▼────┐    ┌──────▼──────┐    ┌─────▼─────┐
-│ PM2    │    │ GitHub      │    │ Netlify   │
-│Redundancy│  │ Actions     │    │ Functions │
-│Manager  │   │ Redundancy  │    │Redundancy │
-└────────┘    └─────────────┘    └───────────┘
-                      │
-              ┌───────▼──────┐
-              │ Master      │
-              │ Redundancy  │
-              │ Orchestrator│
-              └──────────────┘
+ │
+ ┌─────────────────┼─────────────────┐
+ │ │ │
+┌───▼────┐ ┌──────▼──────┐ ┌─────▼─────┐
+│ PM2 │ │ GitHub │ │ Netlify │
+│Redundancy│ │ Actions │ │ Functions │
+│Manager │ │ Redundancy │ │Redundancy │
+└────────┘ └─────────────┘ └───────────┘
+ │
+ ┌───────▼──────┐
+ │ Master │
+ │ Redundancy │
+ │ Orchestrator│
+ └──────────────┘
 ```
 
 ## 🔧 PM2 Redundancy System
@@ -171,24 +171,24 @@ The Netlify functions redundancy system manages backup functions for all automat
 ### Quick Start
 
 1. **Clone and navigate to the repository**:
-   ```bash
-   cd /workspace
-   ```
+ ```bash
+ cd /workspace
+ ```
 
 2. **Make scripts executable**:
-   ```bash
-   chmod +x start-comprehensive-redundancy.sh
-   ```
+ ```bash
+ chmod +x start-comprehensive-redundancy.sh
+ ```
 
 3. **Start the redundancy system**:
-   ```bash
-   ./start-comprehensive-redundancy.sh
-   ```
+ ```bash
+ ./start-comprehensive-redundancy.sh
+ ```
 
 4. **Monitor system health**:
-   ```bash
-   pm2 monit
-   ```
+ ```bash
+ pm2 monit
+ ```
 
 ### Manual Management
 
@@ -229,10 +229,10 @@ AUTO_SYNC_GC=0
 REDUNDANCY_MODE=backup
 
 # GitHub Configuration
-GITHUB_TOKEN=your_github_token  # For workflow triggering
+GITHUB_TOKEN=your_github_token # For workflow triggering
 
 # Netlify Configuration
-NETLIFY_TOKEN=your_netlify_token  # For function deployment
+NETLIFY_TOKEN=your_netlify_token # For function deployment
 ```
 
 ### Logging
@@ -274,21 +274,21 @@ cat netlify/functions/functions-manifest.json
 ### Emergency Procedures
 
 1. **Force Stop All**:
-   ```bash
-   pm2 stop all
-   pm2 delete all
-   ```
+ ```bash
+ pm2 stop all
+ pm2 delete all
+ ```
 
 2. **Emergency Recovery**:
-   ```bash
-   ./start-comprehensive-redundancy.sh
-   ```
+ ```bash
+ ./start-comprehensive-redundancy.sh
+ ```
 
 3. **Clean Restart**:
-   ```bash
-   pm2 kill
-   ./start-comprehensive-redundancy.sh
-   ```
+ ```bash
+ pm2 kill
+ ./start-comprehensive-redundancy.sh
+ ```
 
 ## 📈 Performance Considerations
 
@@ -356,24 +356,24 @@ manager.healthCheckInterval = 300000; // 5 minutes
 ## 🎯 Next Steps
 
 1. **Start the redundancy system**:
-   ```bash
-   ./start-comprehensive-redundancy.sh
-   ```
+ ```bash
+ ./start-comprehensive-redundancy.sh
+ ```
 
 2. **Monitor system health**:
-   ```bash
-   pm2 monit
-   ```
+ ```bash
+ pm2 monit
+ ```
 
 3. **Test failover scenarios**:
-   - Stop primary PM2 processes
-   - Disable GitHub Actions workflows
-   - Verify backup systems take over
+- Stop primary PM2 processes
+- Disable GitHub Actions workflows
+- Verify backup systems take over
 
 4. **Schedule regular health checks**:
-   - Set up cron jobs for monitoring
-   - Configure alerts for critical issues
-   - Review health reports regularly
+- Set up cron jobs for monitoring
+- Configure alerts for critical issues
+- Review health reports regularly
 
 ## 📄 License
 
@@ -391,7 +391,6 @@ To contribute to the redundancy system:
 ---
 
 ## 🚨 Important Notes
-
 - **Backup Frequency**: Backup systems run less frequently to avoid conflicts
 - **Resource Usage**: Monitor system resources during redundancy operations
 - **Testing**: Test failover scenarios in a safe environment first

@@ -1,0 +1,48 @@
+import React from 'react';
+export function LanguageDetectionPopup() {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  const [open, setOpen] = useState(false);
+  const { t } = useTranslation();
+  const { changeLanguage, currentLanguage, supportedLanguages } = useLanguage() as LanguageContextType;
+  const [detectedLanguage, setDetectedLanguage] = useState<SupportedLanguage | null>(null);
+
+  useEffect(() => {
+    // Check if this is first visit
+    const hasVisited = safeStorage.getItem('zion_has_visited');
+    if (hasVisited) return;
+
+    // Mark as visited
+    safeStorage.setItem('zion_has_visited', 'true');
+    
+    // Get browser language
+    const browserLang = navigator.language as SupportedLanguage;
+    
+    // Check if browser language is supported and different from current language
+    const isSupported = supportedLanguages.some(lang => lang.code === browserLang);
+    if (isSupported && browserLang !== currentLanguage) {
+      setDetectedLanguage(browserLang);
+      setOpen(true);
+    }
+  }, []);
+
+  if (!detectedLanguage) return null;
+
+  const languageName = supportedLanguages.find(lang => lang.code === detectedLanguage)?.name || detectedLanguage;
+
+  const handleAccept = async () => {
+    await changeLanguage(detectedLanguage);
+    setOpen(false);
+  };
+
+=======
+>>>>>>> origin/automation-error-fixes
+>>>>>>> origin/cursor/website-audit-and-enhancement-63e3
+  return (
+    <div>
+      <h1>Component</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

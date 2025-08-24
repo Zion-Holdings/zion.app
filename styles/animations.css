@@ -1,0 +1,280 @@
+/* Futuristic Animations & Neon Effects */
+
+/* Animated Background Gradients */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes neonGlow {
+  0%, 100% {
+    box-shadow: 
+      0 0 5px currentColor,
+      0 0 10px currentColor,
+      0 0 15px currentColor,
+      0 0 20px currentColor;
+  }
+  50% {
+    box-shadow: 
+      0 0 10px currentColor,
+      0 0 20px currentColor,
+      0 0 30px currentColor,
+      0 0 40px currentColor;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+@keyframes matrix {
+  0% {
+    opacity: 1;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(100vh);
+  }
+}
+
+/* Utility Classes */
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradientShift 3s ease infinite;
+}
+
+.animate-neon {
+  animation: neonGlow 2s ease-in-out infinite alternate;
+}
+
+.animate-pulse-slow {
+  animation: pulse 3s ease-in-out infinite;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.6s ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.6s ease-out;
+}
+
+.animate-slide-in-up {
+  animation: slideInUp 0.6s ease-out;
+}
+
+.animate-fade-in-scale {
+  animation: fadeInScale 0.6s ease-out;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-glitch {
+  animation: glitch 0.3s linear infinite;
+}
+
+.animate-matrix {
+  animation: matrix 2s linear infinite;
+}
+
+/* Hover Effects */
+.hover-neon:hover {
+  animation: neonGlow 0.3s ease-in-out;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease;
+}
+
+/* Responsive Animation Delays */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+
+/* Neon Text Effects */
+.text-neon-blue {
+  color: #00f5ff;
+  text-shadow: 
+    0 0 5px #00f5ff,
+    0 0 10px #00f5ff,
+    0 0 15px #00f5ff,
+    0 0 20px #00f5ff;
+}
+
+.text-neon-purple {
+  color: #bf00ff;
+  text-shadow: 
+    0 0 5px #bf00ff,
+    0 0 10px #bf00ff,
+    0 0 15px #bf00ff,
+    0 0 20px #bf00ff;
+}
+
+.text-neon-green {
+  color: #39ff14;
+  text-shadow: 
+    0 0 5px #39ff14,
+    0 0 10px #39ff14,
+    0 0 15px #39ff14,
+    0 0 20px #39ff14;
+}
+
+/* Futuristic Box Shadows */
+.shadow-neon-blue {
+  box-shadow: 
+    0 0 10px rgba(0, 245, 255, 0.3),
+    0 0 20px rgba(0, 245, 255, 0.2),
+    0 0 30px rgba(0, 245, 255, 0.1);
+}
+
+.shadow-neon-purple {
+  box-shadow: 
+    0 0 10px rgba(191, 0, 255, 0.3),
+    0 0 20px rgba(191, 0, 255, 0.2),
+    0 0 30px rgba(191, 0, 255, 0.1);
+}
+
+.shadow-neon-green {
+  box-shadow: 
+    0 0 10px rgba(57, 255, 20, 0.3),
+    0 0 20px rgba(57, 255, 20, 0.2),
+    0 0 30px rgba(57, 255, 20, 0.1);
+}
+
+/* Loading Animations */
+.loading-dots {
+  display: inline-block;
+}
+
+.loading-dots::after {
+  content: '';
+  animation: dots 1.5s linear infinite;
+}
+
+@keyframes dots {
+  0%, 20% { content: ''; }
+  40% { content: '.'; }
+  60% { content: '..'; }
+  80%, 100% { content: '...'; }
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 640px) {
+  .animate-slide-in-left,
+  .animate-slide-in-right {
+    animation: slideInUp 0.6s ease-out;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-gradient,
+  .animate-neon,
+  .animate-pulse-slow,
+  .animate-float,
+  .animate-glitch,
+  .animate-matrix {
+    animation: none;
+  }
+  
+  .hover-scale:hover,
+  .hover-lift:hover {
+    transform: none;
+  }
+}

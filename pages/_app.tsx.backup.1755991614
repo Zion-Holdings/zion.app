@@ -1,0 +1,33 @@
+<<<<<<< HEAD
+// CRITICAL: Import immediate process polyfill FIRST to prevent process.env errors
+import '../src/utils/immediate-process-polyfill';
+=======
+import type { AppProps } from 'next/app';
+import React, { useRef } from 'react';
+import '../styles/globals.css';
+import { SEOContext } from '../components/SEOContext';
+import DefaultSEO from '../components/DefaultSEO';
+import Analytics from '../components/Analytics';
+import Layout from '../components/layout/Layout';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-d088
+
+export default function App({ Component, pageProps }: AppProps) {
+	const renderedRef = useRef(false);
+	return (
+		<SEOContext.Provider value={{ renderedRef }}>
+			<DefaultSEO />
+			<Analytics />
+<<<<<<< HEAD
+			<a href="#main-content" className="skip-link">Skip to content</a>
+			<Layout>
+				<main id="main-content">
+					<Component {...pageProps} />
+				</main>
+=======
+			<Layout>
+				<Component {...pageProps} />
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-d088
+			</Layout>
+		</SEOContext.Provider>
+	);
+}

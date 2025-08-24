@@ -1,0 +1,8 @@
+{
+  "/_app": "pages/_app.js",
+  "/_error": "pages/_error.js",
+  "/_document": "pages/_document.js",
+  "/contact": "pages/contact.js",
+  "/zion-tech-group": "pages/zion-tech-group.js",
+  "/": "pages/index.js"
+}

@@ -1,9 +1,9 @@
 
 import { SEO } from "@/components/SEO";
 import { GradientHeading } from "@/components/GradientHeading";
-import { Button } from "@/components/ui/Button";
-import { Leaf, Server, Cloud } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { Leaf, Server, Cloud } from 'lucide-react'
+import Link from "next/link";
 
 export default function GreenIT() {
   const greenITSolutions = [
@@ -30,7 +30,7 @@ export default function GreenIT() {
         title="Green IT Solutions - Sustainable Technology"
         description="Explore eco-friendly IT solutions and sustainable technology practices that reduce environmental impact while maintaining performance." 
         keywords="green IT, sustainable technology, eco-friendly computing, energy efficient hardware"
-        canonical="https://ziontechgroup.com/green-it"
+        canonical="https://app.ziontechgroup.com/marketplace/category/green-it"
       />
       <main className="min-h-screen bg-zion-blue pt-24 pb-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -61,11 +61,11 @@ export default function GreenIT() {
                     </Button>
                   </div>
                 </div>
-                <div className="rounded-lg overflow-hidden">
-                  <img 
-                    src="https://images.unsplash.com/photo-1473876637954-4b493d59fd97?auto=format&fit=crop&w=800&h=600" 
-                    alt="Green IT sustainability" 
-                    className="object-cover w-full h-full"
+                <div className="rounded-lg overflow-hidden relative w-full h-full">
+                  <img
+                    src="https://images.unsplash.com/photo-1473876637954-4b493d59fd97?auto=format&fit=crop&w=800&h=600&q=80"
+                    alt="Green IT sustainability"
+                    className="object-cover"
                   />
                 </div>
               </div>
@@ -120,7 +120,7 @@ export default function GreenIT() {
               Connect with our experts to discuss how we can help you build a more sustainable IT infrastructure.
             </p>
             <Button className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple" asChild>
-              <Link to="/contact">Contact Our Team</Link>
+              <Link href="/contact">Contact Our Team</Link>
             </Button>
           </div>
         </div>

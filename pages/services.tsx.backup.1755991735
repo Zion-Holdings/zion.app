@@ -1,0 +1,917 @@
+import React from 'react';
+import Head from 'next/head';
+import Link from 'next/link';
+import { Check, Star, Zap, Shield, Users, Globe, ArrowRight, ExternalLink, TrendingUp, Clock, Target, Building, Rocket, Award, DollarSign, ChartBar, Lock, Cpu, Database, Cloud, Smartphone, Palette, Search, MessageSquare, FileText, Calendar, CreditCard, BarChart3, Settings, Zap as ZapIcon, Code, BookOpen, Activity, Database as DatabaseIcon, Play, Mail, Phone, MapPin, Filter, Grid, List, ChevronDown, ChevronUp, Sparkles, FlaskConical, Dna, Car, Leaf, Factory, Truck, Microscope, GraduationCap, ShieldCheck, Brain, Atom, Globe2, Bot, ChevronRight } from 'lucide-react';
+import Button from '../components/ui/Button';
+import QuantumCard from '../components/ui/QuantumCard';
+import QuantumNeuralBackground from '../components/ui/QuantumNeuralBackground';
+import { expandedMicroSaasServices, serviceCategories, getServicesByCategory, getPopularServices, getServicesByPriceRange } from '../data/expanded-micro-saas-services';
+=======
+import Card from '../components/ui/Card';
+<<<<<<< HEAD
+import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackground';
+import { enhancedMicroSaasServices, serviceCategories, getServicesByCategory, getPopularServices, getServicesByPriceRange } from '../data/enhanced-micro-saas-services';
+=======
+import { motion } from 'framer-motion';
+import { enhancedRealMicroSaasServices, serviceCategories } from '../data/enhanced-real-micro-saas-services';
+import { extraServices } from '../data/extra-services';
+import { additionalEnhancedServices } from '../data/additional-real-services';
+import { innovativeNewServices } from '../data/innovative-new-services';
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-4d3b
+
+export default function ServicesPage() {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('all');
+  const [sortBy, setSortBy] = useState('name');
+  const [showFilters, setShowFilters] = useState(false);
+  const [selectedService, setSelectedService] = useState<string | null>(null);
+
+  // Get unique categories
+  const categories = useMemo(() => {
+    const cats = ['all', ...new Set(enhancedRealMicroSaasServices.map(s => s.category))];
+    return cats.sort();
+  }, []);
+
+  // Filter and sort services
+  let filteredServices = enhancedMicroSaasServices;
+
+    // Apply search filter
+    if (searchTerm) {
+      filtered = filtered.filter(service =>
+        service.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        service.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        service.category.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+    }
+
+    // Apply category filter
+    if (selectedCategory !== 'all') {
+      filtered = filtered.filter(service => service.category === selectedCategory);
+    }
+
+    // Apply sorting
+    filtered.sort((a, b) => {
+      switch (sortBy) {
+        case 'name':
+          return a.name.localeCompare(b.name);
+        case 'price':
+          return parseFloat(a.price.replace('$', '').replace(',', '')) - parseFloat(b.price.replace('$', '').replace(',', ''));
+        case 'popularity':
+          return (b.popular ? 1 : 0) - (a.popular ? 1 : 0);
+        case 'category':
+          return a.category.localeCompare(b.category);
+        case 'roi': {
+          const aRoi = parseFloat(a.roi.match(/\d+/)?.[0] || '0');
+          const bRoi = parseFloat(b.roi.match(/\d+/)?.[0] || '0');
+          return bRoi - aRoi;
+        }
+        default:
+          return a.name.localeCompare(b.name);
+      }
+    });
+
+    return filtered;
+  }, [searchTerm, selectedCategory, sortBy]);
+
+  // Get popular services
+  const getPopularServices = () => {
+    return enhancedRealMicroSaasServices.filter(service => service.popular).slice(0, 6);
+  };
+
+  const contactInfo = {
+    mobile: '+1 302 464 0950',
+    email: 'kleber@ziontechgroup.com',
+    address: '364 E Main St STE 1008 Middletown DE 19709',
+    website: 'https://ziontechgroup.com'
+  };
+
+  // Enhanced service advertising content with comprehensive market data
+  const serviceHighlights = [
+    {
+      title: '🧠 Quantum AI Cognitive Platform',
+      description: 'World\'s first quantum-enhanced AI with human-like reasoning capabilities. Achieve breakthrough discoveries with 1000% ROI within 6 months.',
+      price: '$299/month',
+      features: ['Quantum neural networks with 1000+ qubits', 'Human-like reasoning and problem-solving', 'Real-time quantum simulation', 'Advanced research collaboration tools'],
+      link: 'https://ziontechgroup.com/quantum-ai-cognitive',
+      color: 'from-purple-600 to-indigo-700',
+      marketPosition: 'First-to-market quantum AI platform. No direct competitors yet. Traditional AI platforms cost $2000+/month with limited capabilities.',
+      marketData: '$15B quantum computing market, 500% annual growth',
+      savings: 'Save 85% vs. competitors',
+      contactInfo: 'Contact: +1 302 464 0950 | kleber@ziontechgroup.com'
+    },
+    {
+      title: '🏭 Autonomous Manufacturing AI Platform',
+      description: 'Self-learning manufacturing systems achieving zero downtime and 400% ROI within 6 months. Industry 4.0 revolution.',
+      price: '$199/month',
+      features: ['Predictive maintenance with 99.9% accuracy', 'Real-time quality control automation', 'Supply chain intelligence and optimization', 'Energy consumption optimization'],
+      link: 'https://ziontechgroup.com/autonomous-manufacturing',
+      color: 'from-orange-500 to-red-600',
+      marketPosition: 'Leading autonomous manufacturing platform. Competes with Siemens MindSphere ($500+/month) and PTC ThingWorx ($300+/month).',
+      marketData: '$12.3B industrial AI market, 320% annual growth',
+      savings: 'Save 60% vs. competitors',
+      contactInfo: 'Contact: +1 302 464 0950 | kleber@ziontechgroup.com'
+    },
+    {
+      title: '🔒 Quantum Cybersecurity Suite',
+      description: 'Post-quantum era security with AI threat detection. Future-proof your infrastructure with 300% ROI within 4 months.',
+      price: '$159/month',
+      features: ['Quantum-resistant encryption algorithms', 'AI-powered threat detection and response', 'Zero-trust architecture implementation', 'Real-time security monitoring'],
+      link: 'https://ziontechgroup.com/quantum-cybersecurity',
+      color: 'from-red-500 to-pink-600',
+      marketPosition: 'Leading quantum cybersecurity platform. Competes with CrowdStrike ($8.99/user/month), Palo Alto Networks ($50+/user/month), and SentinelOne ($4.99/user/month).',
+      marketData: '$6.8B quantum security market, 380% annual growth',
+      savings: 'Save 70% vs. competitors',
+      contactInfo: 'Contact: +1 302 464 0950 | kleber@ziontechgroup.com'
+    },
+    {
+      title: '⚖️ AI Legal Assistant Pro',
+      description: 'Revolutionary AI legal assistant with 99.2% accuracy. Reduce legal costs by 70% and accelerate document review.',
+      price: '$89/month',
+      features: ['Contract analysis and risk assessment', 'Legal research automation', 'Document comparison and redlining', 'Regulatory compliance monitoring'],
+      link: 'https://ziontechgroup.com/ai-legal-assistant',
+      color: 'from-blue-500 to-indigo-600',
+      marketPosition: 'Leading AI legal platform. Competes with LexisNexis ($200+/month) and Westlaw ($300+/month).',
+      marketData: '$8.2B legal tech market, 280% annual growth',
+      savings: 'Save 70% vs. competitors',
+      contactInfo: 'Contact: +1 302 464 0950 | kleber@ziontechgroup.com'
+    },
+    {
+      title: '🔐 Blockchain Identity Verification',
+      description: 'Decentralized identity verification with zero-knowledge proofs. Verify identities without sharing personal data.',
+      price: '$45/month',
+      features: ['Zero-knowledge proof verification', 'Decentralized identity management', 'Multi-factor authentication', 'Cross-border verification'],
+      link: 'https://ziontechgroup.com/blockchain-identity',
+      color: 'from-emerald-500 to-teal-600',
+      marketPosition: 'Privacy-first identity platform. Competes with Onfido ($2.99/verification) and Jumio ($3.99/verification).',
+      marketData: '$15.7B identity verification market, 320% annual growth',
+      savings: 'Save 60% vs. competitors',
+      contactInfo: 'Contact: +1 302 464 0950 | kleber@ziontechgroup.com'
+    },
+    {
+      title: '👥 AI HR Recruitment Platform',
+      description: 'AI-powered talent acquisition and employee management. Reduce hiring time by 80% and improve candidate quality.',
+      price: '$67/month',
+      features: ['AI-powered candidate screening', 'Resume parsing and analysis', 'Skill matching algorithms', 'Interview scheduling automation'],
+      link: 'https://ziontechgroup.com/ai-hr-recruitment',
+      color: 'from-purple-500 to-pink-600',
+      marketPosition: 'Leading AI HR platform. Competes with Workday ($99/user/month) and BambooHR ($6.19/employee/month).',
+      marketData: '$22.4B HR tech market, 250% annual growth',
+      savings: 'Save 40% vs. competitors',
+      contactInfo: 'Contact: +1 302 464 0950 | kleber@ziontechgroup.com'
+    },
+    {
+      title: '🚀 Space Technology Platform',
+      description: 'Cutting-edge space exploration and satellite management tools. Achieve 500% ROI within 8 months through improved operations.',
+      price: '$399/month',
+      features: ['Satellite mission management and planning', 'Space data analytics and visualization', 'Orbital optimization algorithms', 'Space debris tracking and avoidance'],
+      link: 'https://ziontechgroup.com/space-technology',
+      color: 'from-blue-500 to-indigo-600',
+      marketPosition: 'Innovative space technology platform. Competes with Maxar ($500+/month), Planet Labs ($400+/month), and DigitalGlobe ($600+/month).',
+      marketData: '$4.2B space technology market, 280% annual growth',
+      savings: 'Save 20% vs. competitors',
+      contactInfo: 'Contact: +1 302 464 0950 | kleber@ziontechgroup.com'
+    },
+    {
+      title: '🧬 Biotech AI Platform',
+      description: 'AI-powered drug discovery and biotech research. Accelerate research with 800% ROI within 12 months.',
+      price: '$599/month',
+      features: ['AI-powered drug discovery algorithms', 'Protein folding prediction with 99.2% accuracy', 'Genomic data analysis and interpretation', 'Clinical trial optimization'],
+      link: 'https://ziontechgroup.com/biotech-ai',
+      color: 'from-emerald-500 to-teal-600',
+      marketPosition: 'Leading biotech AI platform. Competes with Insitro ($1000+/month), Atomwise ($800+/month), and BenevolentAI ($1200+/month).',
+      marketData: '$8.5B biotech AI market, 420% annual growth',
+      savings: 'Save 40% vs. competitors',
+      contactInfo: 'Contact: +1 302 464 0950 | kleber@ziontechgroup.com'
+    }
+  ];
+
+  // Enhanced competitive advantages
+  const competitiveAdvantages = [
+    {
+      icon: '⚡',
+      title: 'Lightning Fast Setup',
+      description: 'Get started in minutes, not weeks. Our services are designed for immediate value delivery.',
+      color: 'from-yellow-500 to-orange-600'
+    },
+    {
+      icon: '💰',
+      title: 'Transparent Pricing',
+      description: 'No hidden fees, no enterprise sales calls. Simple monthly pricing that scales.',
+      color: 'from-green-500 to-emerald-600'
+    },
+    {
+      icon: '🔒',
+      title: 'Enterprise Security',
+      description: 'Bank-level security, SOC 2 compliance, and 99.9% uptime guarantee.',
+      color: 'from-blue-500 to-indigo-600'
+    },
+    {
+      icon: '📊',
+      title: 'Proven ROI',
+      description: 'Each service delivers measurable ROI within months. 300-1000% returns reported.',
+      color: 'from-purple-500 to-violet-600'
+    }
+  ];
+
+  const popularServices = getPopularServices();
+
+  // Enhanced service categories with better descriptions and market positioning
+  const enhancedCategories = [
+    {
+      name: 'Quantum Computing & AI',
+      description: 'Revolutionary quantum AI solutions with unprecedented computing power',
+      icon: <Brain className="w-6 h-6" />,
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Quantum Computing & AI' || s.category === 'AI & Machine Learning').length,
+      marketSize: '$8.5B',
+      growthRate: '450% annually',
+      featuredServices: ['Quantum AI Cognitive Platform', 'Quantum Finance Platform', 'Quantum Cybersecurity Suite'],
+      opportunity: 'First-mover advantage in quantum computing commercialization',
+      competitors: 'IBM Quantum, Google Quantum AI, Microsoft Azure Quantum'
+    },
+    {
+      name: 'Autonomous Systems & Robotics',
+      description: 'Next-generation autonomous manufacturing and robotics platforms',
+      icon: <Factory className="w-6 h-6" />,
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Manufacturing & Industry 4.0' || s.category === 'Robotics & Automation').length,
+      marketSize: '$12.3B',
+      growthRate: '320% annually',
+      featuredServices: ['Autonomous Manufacturing Platform', 'Autonomous Logistics Platform', 'Autonomous Robotics Platform'],
+      opportunity: 'Industry 4.0 transformation accelerating globally',
+      competitors: 'Siemens Mindsphere, PTC ThingWorx, GE Digital'
+    },
+    {
+      name: 'Healthcare & Biotechnology',
+      description: 'AI-powered biomedical research and drug discovery platforms',
+      icon: <FlaskConical className="w-6 h-6" />,
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Healthcare & Biotechnology').length,
+      marketSize: '$3.2B',
+      growthRate: '200% annually',
+      featuredServices: ['Biomedical AI Platform', 'AI Healthcare Analytics', 'Personalized Medicine AI'],
+      opportunity: 'AI revolutionizing drug discovery and personalized medicine',
+      competitors: 'Insitro, Atomwise, BenevolentAI'
+    },
+    {
+      name: 'Space Technology',
+      description: 'Commercial space technology and satellite management solutions',
+      icon: <Rocket className="w-6 h-6" />,
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Space Technology').length,
+      marketSize: '$4.2B',
+      growthRate: '290% annually',
+      featuredServices: ['Space Technology Platform', 'Satellite Management', 'Space Data Analytics'],
+      opportunity: 'Commercial space sector expanding rapidly',
+      competitors: 'Maxar Technologies, Planet Labs, BlackSky'
+    },
+    {
+      name: 'Metaverse & Virtual Reality',
+      description: 'Immersive 3D experiences and virtual world development',
+      icon: <Globe className="w-6 h-6" />,
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Metaverse & Virtual Reality').length,
+      marketSize: '$3.6B',
+      growthRate: '400% annual growth',
+      featuredServices: ['Metaverse Development Platform', 'VR/AR Solutions', '3D World Building'],
+      opportunity: 'Virtual experiences becoming mainstream',
+      competitors: 'Unity Technologies, Epic Games, Roblox'
+    },
+    {
+      name: 'Financial Technology',
+      description: 'Quantum-powered financial optimization and trading platforms',
+      icon: <DollarSign className="w-6 h-6" />,
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Financial Technology').length,
+      marketSize: '$8.5B',
+      growthRate: '450% annually',
+      featuredServices: ['Quantum Finance Platform', 'AI Trading Platform', 'Risk Management AI'],
+      opportunity: 'First-mover advantage in quantum financial optimization',
+      competitors: 'Bloomberg, Refinitiv, FactSet'
+    },
+    {
+      name: 'Cybersecurity & Privacy',
+      description: 'Quantum-resistant security for the post-quantum era',
+      icon: <Shield className="w-6 h-6" />,
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Cybersecurity & Privacy').length,
+      marketSize: '$6.8B',
+      growthRate: '380% annually',
+      featuredServices: ['Quantum Cybersecurity Suite', 'AI Threat Detection', 'Zero-Trust Security'],
+      opportunity: 'Post-quantum security becoming critical',
+      competitors: 'Palo Alto Networks, CrowdStrike, SentinelOne'
+    },
+    {
+      name: 'Logistics & Supply Chain',
+      description: 'AI-powered supply chain automation and optimization',
+      icon: <Truck className="w-6 h-6" />,
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Logistics & Supply Chain').length,
+      marketSize: '$15.6B',
+      growthRate: '280% annually',
+      featuredServices: ['Autonomous Logistics Platform', 'Supply Chain AI', 'Route Optimization'],
+      opportunity: 'Global supply chain optimization demand',
+      competitors: 'Flexport, Convoy, Transfix'
+    },
+    {
+      name: 'Energy & Sustainability',
+      description: 'Quantum computing for energy efficiency and smart grid management',
+      icon: <Zap className="w-6 h-6" />,
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Energy & Sustainability').length,
+      marketSize: '$7.8B',
+      growthRate: '320% annually',
+      featuredServices: ['Quantum Energy Optimization', 'Smart Grid AI', 'Renewable Energy Management'],
+      opportunity: 'Smart grid transformation and renewable energy integration',
+      competitors: 'Schneider Electric, Siemens, GE Digital'
+    },
+    {
+      name: 'Education & Training',
+      description: 'Learn quantum computing and AI from experts',
+      icon: <GraduationCap className="w-6 h-6" />,
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Education & Training').length,
+      marketSize: '$2.8B',
+      growthRate: '180% annually',
+      featuredServices: ['Quantum Education Platform', 'AI Learning Paths', 'Interactive Simulators'],
+      opportunity: 'Growing demand for quantum and AI education',
+      competitors: 'Coursera, edX, Udacity'
+    }
+  ];
+
+  // Enhanced service showcase with better advertising
+  const enhancedServiceShowcase = [
+    {
+      title: 'Revolutionary Quantum AI Platform',
+      description: 'The world\'s first commercially available quantum AI platform that combines quantum computing with advanced machine learning.',
+      price: '$2,999/month',
+      features: ['Quantum-classical hybrid algorithms', 'Real-time quantum error correction', 'Advanced quantum neural networks'],
+      marketSize: '$8.5B',
+      growthRate: '450% annually',
+      competitors: 'IBM Quantum, Google Quantum AI, Microsoft Azure Quantum',
+      ourAdvantage: 'First commercial quantum AI platform with comprehensive AI integration',
+      roi: '1000%+ ROI through breakthrough discoveries',
+      link: 'https://ziontechgroup.com/quantum-ai-platform'
+    },
+    {
+      title: 'Autonomous Manufacturing Platform',
+      description: 'Revolutionary autonomous manufacturing platform that combines AI, robotics, and IoT to create fully automated production lines.',
+      price: '$1,499/month',
+      features: ['AI-powered production optimization', 'Autonomous robotic assembly lines', 'Predictive maintenance systems'],
+      marketSize: '$12.3B',
+      growthRate: '320% annually',
+      competitors: 'Siemens Mindsphere, PTC ThingWorx, GE Digital',
+      ourAdvantage: 'Full autonomy and AI integration',
+      roi: '500% ROI within 12 months',
+      link: 'https://ziontechgroup.com/autonomous-manufacturing'
+    },
+    {
+      title: 'Quantum Cybersecurity Suite',
+      description: 'Advanced cybersecurity suite that uses quantum-resistant algorithms and AI to protect against current and future threats.',
+      price: '$899/month',
+      features: ['Quantum-resistant encryption algorithms', 'AI-powered threat detection', 'Quantum key distribution'],
+      marketSize: '$6.8B',
+      growthRate: '380% annually',
+      competitors: 'Palo Alto Networks, CrowdStrike, SentinelOne',
+      ourAdvantage: 'Quantum-resistant algorithms and AI integration',
+      roi: '400% ROI within 6 months',
+      link: 'https://ziontechgroup.com/quantum-cybersecurity'
+    }
+  ];
+
+  // Enhanced hero section with better advertising
+  const heroSection = {
+    title: "500+ Revolutionary Micro SaaS Services",
+    subtitle: "Real, Innovative, AI-Powered Solutions That Actually Work",
+    description: "Transform your business with cutting-edge micro SaaS services. From Quantum AI to Autonomous Factories, we deliver real results with proven ROI. No mock services, no empty promises - just innovative technology that drives growth.",
+    highlights: [
+      "🚀 First-to-Market Quantum AI Solutions",
+      "🏭 Industry 4.0 Autonomous Manufacturing", 
+      "🛡️ Quantum-Resistant Cybersecurity",
+      "🧬 AI-Powered Drug Discovery",
+      "💰 Quantum Financial Optimization",
+      "🚀 Space Exploration AI Platform"
+    ],
+    marketPosition: "Zion Tech Group leads the global micro SaaS revolution with patent-pending quantum AI and autonomous systems.",
+    pricing: "Services range from $49/month to $5,999/month with 30-day free trials and comprehensive support.",
+    contactCTA: "Ready to revolutionize your business? Contact our expert team today!"
+  };
+
+  const getVariantForCategory = (category: string) => {
+    const categoryVariants: { [key: string]: any } = {
+      'AI & Content Creation': 'quantum',
+      'Quantum Computing & AI': 'quantum',
+      'Autonomous Systems': 'neural',
+      'Healthcare & Biotechnology': 'holographic',
+      'Blockchain & Web3': 'cyberpunk',
+      'Cybersecurity': 'quantum',
+      'Logistics & Transportation': 'neural',
+      'Financial Technology': 'quantum-holographic',
+      'Legal Technology': 'cyberpunk',
+      'Environmental Technology': 'holographic',
+      'Energy & Sustainability': 'neural'
+    };
+    return categoryVariants[category] || 'default';
+  };
+
+  return (
+    <UltraFuturisticBackground variant="neural" intensity="high">
+      <div className="min-h-screen">
+        <Head>
+          <title>Complete Services Portfolio | Zion Tech Group - AI, Quantum, Blockchain & More</title>
+          <meta name="description" content="Explore our complete portfolio of 100+ micro SaaS services. AI solutions, quantum computing, blockchain, cybersecurity, IoT, and emerging technologies." />
+          <meta name="keywords" content="AI services, quantum computing, blockchain, cybersecurity, data analytics, IoT platform, AR/VR, edge computing, micro SaaS, business automation" />
+          <meta name="author" content="Zion Tech Group" />
+          <meta property="og:title" content="Complete Services Portfolio | Zion Tech Group" />
+          <meta property="og:description" content="Comprehensive technology services portfolio with AI, quantum, blockchain, and emerging technology solutions." />
+          <meta property="og:url" content="https://ziontechgroup.com/services" />
+          <meta property="og:type" content="website" />
+          <link rel="canonical" href="https://ziontechgroup.com/services" />
+        </Head>
+
+        {/* Hero Section */}
+        <section className="relative py-20 overflow-hidden">
+          <div className="container mx-auto px-4 text-center">
+            <div className="max-w-4xl mx-auto">
+              <h1 className="text-5xl md:text-7xl font-bold mb-6 futuristic-glow">
+                <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                  Complete Services Portfolio
+                </span>
+              </h1>
+              <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
+                Discover 100+ cutting-edge micro SaaS services across AI, quantum computing, blockchain, cybersecurity, IoT, and emerging technologies. 
+                Each service is built for immediate business impact with measurable ROI.
+              </p>
+              
+              {/* Service Count Stats */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+                <div className="text-center">
+                  <div className="text-3xl md:text-4xl font-bold text-cyan-400 mb-2">
+                    {expandedMicroSaasServices.length}+
+                  </div>
+                  <div className="text-gray-400 text-sm md:text-base">Total Services</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl md:text-4xl font-bold text-purple-400 mb-2">
+                    {serviceCategories.length - 1}
+                  </div>
+                  <div className="text-gray-400 text-sm md:text-base">Categories</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl md:text-4xl font-bold text-green-400 mb-2">
+                    {popularServices.length}
+                  </div>
+                  <div className="text-gray-400 text-sm md:text-base">Popular Services</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl md:text-4xl font-bold text-orange-400 mb-2">
+                    14 Days
+                  </div>
+                  <div className="text-gray-400 text-sm md:text-base">Free Trial</div>
+                </div>
+              </div>
+
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+                <Button
+                  href="/contact"
+                  variant="primary"
+                  size="lg"
+                  className="text-lg px-8 py-4"
+                >
+                  Start Free Trial
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+                <Button
+                  href="/pricing"
+                  variant="secondary"
+                  size="lg"
+                  className="text-lg px-8 py-4"
+                >
+                  View Pricing
+                  <ExternalLink className="ml-2 w-5 h-5" />
+                </Button>
+              </div>
+
+              {/* Contact Info */}
+              <div className="bg-black/20 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/50 max-w-2xl mx-auto">
+                <h3 className="text-xl font-semibold text-white mb-4">Need Help Choosing?</h3>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+                  <div className="flex items-center justify-center">
+                    <Phone className="w-4 h-4 text-cyan-400 mr-2" />
+                    <span className="text-gray-300">{contactInfo.mobile}</span>
+                  </div>
+                  <div className="flex items-center justify-center">
+                    <Mail className="w-4 h-4 text-purple-400 mr-2" />
+                    <span className="text-gray-300">{contactInfo.email}</span>
+                  </div>
+                  <div className="flex items-center justify-center">
+                    <MapPin className="w-4 h-4 text-green-400 mr-2" />
+                    <span className="text-gray-300">{contactInfo.address}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Filters and Search */}
+        <section className="py-8 bg-black/20">
+          <div className="container mx-auto px-4">
+            <div className="flex flex-col lg:flex-row gap-6 items-center justify-between">
+              {/* Search */}
+              <div className="relative flex-1 max-w-md">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                <input
+                  type="text"
+                  placeholder="Search services..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full pl-10 pr-4 py-3 bg-white/10 border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
+                />
+              </div>
+
+              {/* Category Filter */}
+              <div className="flex flex-wrap gap-4">
+                <select
+                  value={selectedCategory}
+                  onChange={(e) => setSelectedCategory(e.target.value)}
+                  className="px-4 py-3 bg-white/10 border border-gray-600 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
+                >
+                  {serviceCategories.map((category) => (
+                    <option key={category} value={category} className="bg-gray-800 text-white">
+                      {category}
+                    </option>
+                  ))}
+                </select>
+
+                {/* Price Range Filter */}
+                <select
+                  value={priceRange}
+                  onChange={(e) => setPriceRange(e.target.value)}
+                  className="px-4 py-3 bg-white/10 border border-gray-600 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
+                >
+                  {priceRanges.map((range) => (
+                    <option key={range.value} value={range.value} className="bg-gray-800 text-white">
+                      {range.label}
+                    </option>
+                  ))}
+                </select>
+
+                {/* Sort Options */}
+                <select
+                  value={sortBy}
+                  onChange={(e) => setSortBy(e.target.value)}
+                  className="px-4 py-3 bg-white/10 border border-gray-600 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
+                >
+                  {sortOptions.map((option) => (
+                    <option key={option.value} value={option.value} className="bg-gray-800 text-white">
+                      {option.value === 'name' ? 'Name A-Z' : option.label}
+                    </option>
+                  ))}
+                </select>
+
+                {/* View Mode Toggle */}
+                <div className="flex bg-white/10 rounded-xl p-1 border border-gray-600">
+                  <button
+                    onClick={() => setViewMode('grid')}
+                    className={`p-2 rounded-lg transition-colors ${
+                      viewMode === 'grid' ? 'bg-cyan-500 text-white' : 'text-gray-400 hover:text-white'
+                    }`}
+                  >
+                    <Grid className="w-5 h-5" />
+                  </button>
+                  <button
+                    onClick={() => setViewMode('list')}
+                    className={`p-2 rounded-lg transition-colors ${
+                      viewMode === 'list' ? 'bg-cyan-500 text-white' : 'text-gray-400 hover:text-white'
+                    }`}
+                  >
+                    <List className="w-5 h-5" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+<<<<<<< HEAD
+        {/* Services Grid */}
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            {/* Results Count */}
+            <div className="flex justify-between items-center mb-8">
+              <p className="text-gray-300">
+                Showing {filteredServices.length} of {expandedMicroSaasServices.length} services
+              </p>
+              {selectedCategory !== 'All' && (
+                <Button
+                  onClick={() => setSelectedCategory('All')}
+                  variant="secondary"
+                  size="sm"
+                >
+                  Clear Filters
+                </Button>
+              )}
+=======
+      {/* Market Benchmarks */}
+      <section className="py-6 px-4">
+        <div className="container mx-auto">
+          <Card className="bg-gray-900/60 border border-gray-700/50">
+            <div className="p-6 grid grid-cols-1 md:grid-cols-4 gap-6 text-sm text-gray-300">
+              <div>
+                <div className="text-white font-semibold mb-1">Average SMB Pricing</div>
+                <div>AI Phone Agent: $249/mo</div>
+                <div>LLM Gateway: $129/mo</div>
+                <div>API Observability: $129/mo</div>
+              </div>
+              <div>
+                <div className="text-white font-semibold mb-1">Platform Engineering</div>
+                <div>Cloud Landing Zone: $349/mo</div>
+                <div>SSO-in-a-Box: $159/mo</div>
+                <div>Managed Postgres HA: $199/mo</div>
+              </div>
+              <div>
+                <div className="text-white font-semibold mb-1">Data & Analytics</div>
+                <div>DB Performance Monitor: $79/mo</div>
+                <div>Data Observability: $159/mo</div>
+                <div>API Docs Generator: $49/mo</div>
+              </div>
+              <div>
+                <div className="text-white font-semibold mb-1">Contact</div>
+                <div className="flex items-center gap-2"><Phone className="w-4 h-4 text-cyan-400" /> {contactInfo.mobile}</div>
+                <div className="flex items-center gap-2"><Mail className="w-4 h-4 text-purple-400" /> {contactInfo.email}</div>
+                <div className="flex items-start gap-2"><MapPin className="w-4 h-4 text-emerald-400 mt-0.5" /> <span className="text-xs">{contactInfo.address}</span></div>
+              </div>
+            </div>
+          </Card>
+        </div>
+      </section>
+
+      {/* Innovative Services Section */}
+      <section className="py-16 px-4">
+        <div className="container mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-6">
+              🚀 Revolutionary Innovative Services
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Experience the future of technology with our cutting-edge quantum AI, neural interfaces, and revolutionary solutions.
+            </p>
+          </motion.div>
+          
+                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+              {innovativeNewServices.slice(0, 3).map((service, index) => (
+                <motion.div
+                  key={service.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  <Card className="h-full bg-gradient-to-br from-gray-900/80 to-black/90 border border-gray-700/50 backdrop-blur-xl">
+                    <div className="p-6 space-y-4">
+                      <div className="flex items-center space-x-3 mb-3">
+                        <div className="text-3xl">{service.icon}</div>
+                        <div>
+                          <h3 className="text-lg font-bold text-white">{service.name}</h3>
+                          <p className="text-sm text-gray-400">{service.tagline}</p>
+                        </div>
+                      </div>
+                      
+                      <p className="text-gray-300 text-sm leading-relaxed">{service.description}</p>
+                      
+                      <div className="text-xl font-bold text-white">
+                        {service.price}<span className="text-gray-400 text-sm">{service.period}</span>
+                      </div>
+                      
+                      <div className="space-y-2">
+                        <h4 className="text-sm font-semibold text-cyan-400">Key Features:</h4>
+                        <ul className="space-y-1">
+                          {service.features.slice(0, 3).map((feature, featureIndex) => (
+                            <li key={featureIndex} className="flex items-center space-x-2 text-xs text-gray-300">
+                              <Check className="w-3 h-3 text-green-400 flex-shrink-0" />
+                              <span>{feature}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      
+                      <div className="bg-gray-800/50 rounded-lg p-3 border border-gray-700/50">
+                        <div className="grid grid-cols-1 gap-2 text-xs">
+                          <div>
+                            <span className="text-cyan-400 font-semibold">Market:</span>
+                            <p className="text-gray-300">{service.marketSize}</p>
+                          </div>
+                          <div>
+                            <span className="text-green-400 font-semibold">ROI:</span>
+                            <p className="text-gray-300">{service.roi}</p>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div className="flex space-x-2">
+                        <Button
+                          href={service.link}
+                          className="flex-1 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white py-2 px-3 rounded-lg text-sm font-semibold transition-all duration-300"
+                        >
+                          <span>Learn More</span>
+                          <ArrowRight className="w-4 h-4 ml-1" />
+                        </Button>
+                        <Button
+                          href="/contact"
+                          variant="outline"
+                          className="px-3 py-2 border border-gray-600 text-gray-300 rounded-lg text-sm hover:border-cyan-500 hover:text-cyan-400 transition-all duration-300"
+                        >
+                          Contact
+                        </Button>
+                      </div>
+                    </div>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
+          
+          <div className="text-center">
+            <Button
+              href="/innovative-services"
+              className="bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-2xl hover:shadow-purple-500/25 transition-all duration-300"
+            >
+              <span>View All Innovative Services</span>
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Results */}
+      <section className="py-10 px-4">
+        <div className="container mx-auto">
+          <div className="mb-6 text-gray-300">Showing <span className="text-white font-semibold">{filteredServices.length}</span> of <span className="text-white font-semibold">{allServices.length}</span> services</div>
+
+          {viewMode === 'grid' ? (
+            <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+              {filteredServices.map((service, index) => (
+                <motion.div key={service.id} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: index * 0.05 }} viewport={{ once: true }}>
+                  <UltraFuturisticServiceCard service={service} />
+                </motion.div>
+              ))}
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-4d3b
+            </div>
+          ) : (
+                        <div className={`grid gap-8 ${
+                viewMode === 'grid' 
+                ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3' 
+                : 'grid-cols-1'
+            }`}>
+              {filteredServices.map((service) => (
+                <QuantumCard
+                  key={service.id}
+                  variant={service.category.includes('Quantum') ? 'quantum' : 
+                          service.category.includes('AI') ? 'neural' : 
+                          service.category.includes('Blockchain') ? 'holographic' : 'cyberpunk'}
+                  intensity="medium"
+                  className="h-full cursor-pointer"
+                  onClick={() => window.open(service.link, '_blank')}
+                >
+                  <UltraAdvancedFuturisticCard
+                    title={service.name}
+                    description={service.description}
+                    price={`${service.price}${service.period}`}
+                    features={service.features}
+                    link={service.link}
+                    color={service.color}
+                    marketData={`${service.marketSize}, ${service.growthRate}`}
+                    competitors={service.competitors.join(', ')}
+                    savings={`Save ${service.roi.match(/(\d+)%/)?.[1] || '50'}% vs. competitors`}
+                    contactInfo={`Contact: ${service.contactInfo.mobile} | ${service.contactInfo.email}`}
+                    icon={service.icon}
+                    variant={service.variant as any}
+                  />
+                </motion.div>
+              ))}
+            </div>
+          </section>
+
+            {/* No Results */}
+            {filteredServices.length === 0 && (
+              <div className="text-center py-16">
+                <div className="text-6xl mb-4">🔍</div>
+                <h3 className="text-2xl font-bold text-white mb-2">No services found</h3>
+                <p className="text-gray-400 mb-6">
+                  Try adjusting your search criteria or filters
+                </p>
+                <Button
+                  onClick={() => {
+                    setSearchQuery('');
+                    setSelectedCategory('All');
+                    setPriceRange('All');
+                  }}
+                  variant="primary"
+                >
+                  Clear All Filters
+                </Button>
+              </div>
+            )}
+          </div>
+        </section>
+
+        {/* Popular Services Section */}
+        <section className="py-20 bg-black/20">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                <span className="bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
+                  Most Popular Services
+                </span>
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                These are our most requested and highest-rated services based on customer feedback and usage.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {popularServices.slice(0, 6).map((service) => (
+                <QuantumCard
+                  key={service.id}
+                  variant="quantum"
+                  intensity="high"
+                  className="h-full cursor-pointer"
+                  onClick={() => window.open(service.link, '_blank')}
+                >
+                  <UltraAdvancedFuturisticCard
+                    title={service.name}
+                    description={service.description}
+                    price={`${service.price}${service.period}`}
+                    features={service.features}
+                    link={service.link}
+                    color={service.color}
+                    marketData={`${service.marketSize}, ${service.growthRate}`}
+                    competitors={service.competitors.join(', ')}
+                    savings={`Save ${service.roi.match(/(\d+)%/)?.[1] || '50'}% vs. competitors`}
+                    contactInfo={`Contact: ${service.contactInfo.mobile} | ${service.contactInfo.email}`}
+                    icon={service.icon}
+                    variant={service.variant as any}
+                  />
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-20">
+          <div className="container mx-auto px-4 text-center">
+            <QuantumCard variant="holographic" intensity="high" className="max-w-4xl mx-auto">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Ready to Transform Your Business?
+              </h2>
+              <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                Start your 14-day free trial today and experience the power of our micro SaaS services.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <Button
+                  href="/contact"
+                  variant="primary"
+                  size="lg"
+                  className="text-lg px-8 py-4"
+                >
+                  Start Free Trial
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+                <Button
+                  href="/pricing"
+                  variant="secondary"
+                  size="lg"
+                  className="text-lg px-8 py-4"
+                >
+                  View Pricing
+                  <ExternalLink className="ml-2 w-5 h-5" />
+                </Button>
+              </div>
+              <div className="mt-8 text-sm text-gray-400">
+                <p>No credit card required • 24/7 support • Cancel anytime</p>
+              </div>
+            </QuantumCard>
+          </div>
+        </section>
+      </div>
+    </UltraFuturisticBackground>
+  );
+}
+=======
+import Head from 'next/head';
+import Link from 'next/link';
+
+export default function Placeholder() {
+  return (
+    <main className="min-h-screen p-8">
+      <Head>
+        <title>Services - Placeholder</title>
+        <meta name="robots" content="noindex" />
+      </Head>
+      <div className="max-w-3xl mx-auto">
+        <h1 className="text-2xl font-semibold mb-2">Services</h1>
+        <p className="text-gray-600 mb-6">Auto-generated placeholder for missing route: <code>/services</code>.</p>
+        <Link href="/"><a className="text-blue-600 hover:underline">Back to Home</a></Link>
+      </div>
+    </main>
+  );
+}
+=======
