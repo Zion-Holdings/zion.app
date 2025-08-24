@@ -42,6 +42,14 @@ const specialServices = [
   {
     title: "Micro SAAS Services",
     link: "/micro-saas-services"
+  },
+  {
+    title: "Enhanced Tech Services",
+    link: "/enhanced-services"
+  },
+  {
+    title: "Service Comparison",
+    link: "/service-comparison"
   }
 ];
 

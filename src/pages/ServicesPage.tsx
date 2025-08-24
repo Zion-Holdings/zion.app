@@ -2,9 +2,10 @@
 import { DynamicListingPage } from "@/components/DynamicListingPage";
 import { ProductListing } from "@/types/listings";
 import { TrustedBySection } from "@/components/TrustedBySection";
+import { ComprehensiveServicesShowcase } from "@/components/ComprehensiveServicesShowcase";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Globe, Zap, Brain } from "lucide-react";
+import { Globe, Zap, Brain, Phone, Mail, MapPin, Clock, Users, CheckCircle } from "lucide-react";
 import { useEffect, useState } from "react";
 import { MICRO_SAAS_SERVICES } from "@/data/microSaasServices";
 
@@ -113,7 +114,7 @@ const SERVICE_LISTINGS: ProductListing[] = [
     author: {
       name: "AI Future Consulting",
       id: "ai-future",
-      avatarUrl: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=100&h=100",
+      avatarUrl: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&h=100",
     },
     images: ["https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&h=500"],
     createdAt: "2024-02-02T10:30:00.000Z",
@@ -235,10 +236,54 @@ export default function ServicesPage() {
 
   return (
     <>
-      <div className="bg-zion-blue-dark py-4 px-4 md:px-8 mb-6 border-b border-zion-blue-light">
-        <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-          <h2 className="text-white text-lg font-medium">Featured Services</h2>
-          <div className="flex flex-wrap gap-2">
+      {/* Hero Section */}
+      <div className="bg-zion-blue-dark py-16 px-4 md:px-8 border-b border-zion-blue-light">
+        <div className="container mx-auto text-center">
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+            Professional <span className="text-transparent bg-clip-text bg-gradient-to-r from-zion-cyan to-zion-purple">Technology Services</span>
+          </h1>
+          <p className="text-zion-slate-light text-lg md:text-xl max-w-3xl mx-auto mb-8">
+            Transform your business with our comprehensive suite of AI, cybersecurity, cloud, and digital transformation services. 
+            Expert solutions tailored to drive innovation and growth.
+          </p>
+          
+          {/* Contact Information */}
+          <div className="bg-zion-blue-light/10 rounded-lg p-6 max-w-4xl mx-auto border border-zion-blue-light/20">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="flex items-center justify-center gap-3 text-zion-cyan">
+                <Phone className="h-5 w-5" />
+                <div className="text-left">
+                  <div className="text-white font-semibold">Call Us</div>
+                  <a href="tel:+13024640950" className="text-zion-cyan hover:text-zion-cyan-light">
+                    +1 302 464 0950
+                  </a>
+                </div>
+              </div>
+              <div className="flex items-center justify-center gap-3 text-zion-cyan">
+                <Mail className="h-5 w-5" />
+                <div className="text-left">
+                  <div className="text-white font-semibold">Email Us</div>
+                  <a href="mailto:kleber@ziontechgroup.com" className="text-zion-cyan hover:text-zion-cyan-light">
+                    kleber@ziontechgroup.com
+                  </a>
+                </div>
+              </div>
+              <div className="flex items-center justify-center gap-3 text-zion-cyan">
+                <MapPin className="h-5 w-5" />
+                <div className="text-left">
+                  <div className="text-white font-semibold">Visit Us</div>
+                  <a href="https://ziontechgroup.com" target="_blank" rel="noopener noreferrer" className="text-zion-cyan hover:text-zion-cyan-light">
+                    ziontechgroup.com
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div className="mt-4 text-zion-slate-light text-sm">
+              Address: 364 E Main St STE 1008, Middletown DE 19709
+            </div>
+          </div>
+
+          <div className="flex flex-wrap justify-center gap-4 mt-8">
             <Link to="/it-onsite-services">
               <Button variant="outline" className="border-zion-purple text-zion-cyan hover:bg-zion-purple/10">
                 <Globe className="h-4 w-4 mr-2" />
@@ -259,14 +304,33 @@ export default function ServicesPage() {
           </div>
         </div>
       </div>
-      <DynamicListingPage 
-        title="IT & AI Services"
-        description="Find expert technology service providers for your business needs, from AI development to infrastructure management."
-        categorySlug="services"
-        listings={listings}
-        categoryFilters={SERVICE_FILTERS}
-        initialPrice={{ min: 3000, max: 10000 }}
-      />
+
+      {/* Comprehensive Services Showcase */}
+      <ComprehensiveServicesShowcase />
+
+      {/* Marketplace Services */}
+      <div className="py-20 bg-zion-blue">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              Marketplace <span className="text-transparent bg-clip-text bg-gradient-to-r from-zion-cyan to-zion-purple">Services</span>
+            </h2>
+            <p className="text-zion-slate-light text-lg max-w-2xl mx-auto">
+              Discover additional services from our verified partners and technology experts in the marketplace
+            </p>
+          </div>
+          
+          <DynamicListingPage 
+            title="Marketplace Services"
+            description="Find expert technology service providers for your business needs, from AI development to infrastructure management."
+            categorySlug="services"
+            listings={listings}
+            categoryFilters={SERVICE_FILTERS}
+            initialPrice={{ min: 3000, max: 10000 }}
+          />
+        </div>
+      </div>
+
       <TrustedBySection />
     </>
   );

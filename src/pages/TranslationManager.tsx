@@ -23,10 +23,10 @@ export default function TranslationManager() {
   
   const [selectedNamespace, setSelectedNamespace] = useState("translation");
   const [searchQuery, setSearchQuery] = useState("");
-  const [translations, setTranslations] = useState<Record<string, any>>({});
-  const [filteredKeys, setFilteredKeys] = useState<string[]>([]);
-  const [editingKey, setEditingKey] = useState<string | null>(null);
-  const [editedTranslations, setEditedTranslations] = useState<Record<string, Record<SupportedLanguage, string>>>({});
+  const [translations, setTranslations] = useState({} as Record<string, any>);
+  const [filteredKeys, setFilteredKeys] = useState([] as string[]);
+  const [editingKey, setEditingKey] = useState(null as string | null);
+  const [editedTranslations, setEditedTranslations] = useState({} as Record<string, Record<SupportedLanguage, string>>);
   const [isSaving, setIsSaving] = useState(false);
   
   // Simulated translation data - in a real app, this would come from your backend

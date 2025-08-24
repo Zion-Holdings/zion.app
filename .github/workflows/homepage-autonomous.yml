@@ -1,0 +1,47 @@
+name: Homepage Autonomous Updater
+
+on:
+  schedule:
+    - cron: '*/10 * * * *' # every 10 minutes
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  homepage:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Analyze homepage features
+        run: node automation/homepage-features-analyzer.cjs | cat
+
+      - name: Apply homepage updates
+        run: node automation/homepage-features-applier.cjs | cat
+
+      - name: Commit and push changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node automation/cloud-auto-commit.cjs | cat
+
+      - name: Upload updater artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: homepage-updater-artifacts
+          path: |
+            data/reports/homepage/**/*
+            automation/logs/**/*
+          if-no-files-found: ignore

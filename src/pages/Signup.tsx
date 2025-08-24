@@ -1,19 +1,15 @@
 
 import { useState } from "react";
-import { Link, Navigate, useNavigate } from "react-router-dom";
-import { useForm, type UseFormReturn } from "react-hook-form";
+import { Link, Navigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
-import { User, Mail, Lock, Eye, EyeOff, Facebook, Twitter, Loader2 } from "lucide-react";
+import * as z from "zod";
+import { User, Mail, Lock, Eye, EyeOff, Facebook, Twitter } from "lucide-react";
 
 import { useAuth } from "@/hooks/useAuth";
-import { register } from "@/services/auth";
-import { toast } from "@/hooks/use-toast";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Alert, AlertDescription } from "@/components/ui/alert";
-import { PasswordStrengthMeter } from "@/components/PasswordStrengthMeter";
 import {
   Form,
   FormControl,
@@ -22,6 +18,8 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 
 // Form validation schema
 const signupSchema = z
@@ -43,17 +41,14 @@ const signupSchema = z
     path: ["confirmPassword"],
   });
 
-type SignupFormValues = z.infer<typeof signupSchema>;
+type SignupFormValues = any;
 
 export default function Signup() {
-  const { loginWithGoogle, loginWithFacebook, loginWithTwitter, isAuthenticated, user } = useAuth();
-  const navigate = useNavigate();
+  const { signup, loginWithGoogle, loginWithFacebook, loginWithTwitter, isLoading, isAuthenticated, user } = useAuth();
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-  // Track confirm password locally to prevent it from clearing on blur
-  const [confirmPasswordValue, setConfirmPasswordValue] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
-
+  
   // Initialize react-hook-form
   const form = useForm({
     resolver: zodResolver(signupSchema),
@@ -64,51 +59,17 @@ export default function Signup() {
       confirmPassword: "",
       termsAccepted: false,
     },
-  }) as UseFormReturn<SignupFormValues>;
-
-  const passwordValue = form.watch("password");
+  });
 
   // Form submission handler
   const onSubmit = async (data: SignupFormValues) => {
     if (isSubmitting) return; // Prevent multiple submissions
-
-    if (data.password !== data.confirmPassword) {
-      toast.error("Passwords do not match");
-      return;
-    }
-
-    console.log("register form data", data);
-
+    
     setIsSubmitting(true);
     try {
-      const { res, data: resData } = await register(
-        data.displayName,
-        data.email,
-        data.password
-      );
-      if (res.status !== 201) {
-        throw new Error(resData?.message || "Registration failed");
-      }
-
-      if (resData?.token) {
-        localStorage.setItem("token", resData.token);
-      }
-
-      toast.success("Account created");
-      navigate("/dashboard");
-    } catch (err: any) {
-      const message = err?.message ?? "Registration failed";
-      form.setError("root", { message });
-      toast.error(message);
+      await signup(data.email, data.password, data.displayName);
     } finally {
       setIsSubmitting(false);
-    }
-  };
-
-  const onInvalid = (errors: any) => {
-    const firstError = Object.keys(errors)[0] as keyof SignupFormValues;
-    if (firstError) {
-      form.setFocus(firstError);
     }
   };
 
@@ -124,6 +85,7 @@ export default function Signup() {
 
   return (
     <>
+      <Header />
       <div className="flex min-h-screen bg-zion-blue">
         <div className="flex-1 flex flex-col justify-center px-4 py-12 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
           <div className="mx-auto w-full max-w-sm lg:w-96">
@@ -141,12 +103,7 @@ export default function Signup() {
 
             <div className="bg-zion-blue-dark rounded-lg p-6">
               <Form {...form}>
-                {form.formState.errors.root && (
-                  <Alert variant="destructive" className="mb-4">
-                    <AlertDescription>{form.formState.errors.root.message}</AlertDescription>
-                  </Alert>
-                )}
-                <form onSubmit={form.handleSubmit(onSubmit, onInvalid)} className="space-y-6" noValidate>
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6" noValidate>
                   <FormField
                     control={form.control}
                     name="displayName"
@@ -157,8 +114,6 @@ export default function Signup() {
                           <div className="relative">
                             <Input
                               placeholder="John Doe"
-                              aria-label="Full name"
-                              aria-invalid={!!form.formState.errors.displayName}
                               className="bg-zion-blue pl-10 text-white placeholder:text-zion-slate border-zion-blue-light focus:border-zion-purple"
                               {...field}
                               aria-autocomplete="none"
@@ -182,8 +137,6 @@ export default function Signup() {
                           <div className="relative">
                             <Input
                               placeholder="you@example.com"
-                              aria-label="Email address"
-                              aria-invalid={!!form.formState.errors.email}
                               className="bg-zion-blue pl-10 text-white placeholder:text-zion-slate border-zion-blue-light focus:border-zion-purple"
                               {...field}
                               autoComplete="off"
@@ -208,9 +161,7 @@ export default function Signup() {
                           <div className="relative">
                             <Input
                               type={showPassword ? "text" : "password"}
-                              placeholder="Enter password"
-                              aria-label="Password"
-                              aria-invalid={!!form.formState.errors.password}
+                              placeholder="••••••••"
                               className="bg-zion-blue pl-10 text-white border-zion-blue-light focus:border-zion-purple"
                               {...field}
                               autoComplete="new-password"
@@ -249,19 +200,9 @@ export default function Signup() {
                           <div className="relative">
                             <Input
                               type={showConfirmPassword ? "text" : "password"}
-                              placeholder="Enter password"
-                              aria-label="Confirm password"
-                              aria-invalid={!!form.formState.errors.confirmPassword}
+                              placeholder="••••••••"
                               className="bg-zion-blue pl-10 text-white border-zion-blue-light focus:border-zion-purple"
-                              value={confirmPasswordValue}
-                              onChange={(e) => {
-                                field.onChange(e)
-                                setConfirmPasswordValue(e.target.value)
-                              }}
-                              onBlur={(e) => {
-                                field.onBlur()
-                                setConfirmPasswordValue(e.target.value)
-                              }}
+                              {...field}
                               autoComplete="new-password"
                             />
                             <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-zion-slate h-4 w-4" />
@@ -287,8 +228,6 @@ export default function Signup() {
                       </FormItem>
                     )}
                   />
-
-                  <PasswordStrengthMeter password={passwordValue} />
 
                   <FormField
                     control={form.control}
@@ -322,16 +261,9 @@ export default function Signup() {
                   <Button
                     type="submit"
                     className="w-full bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white"
-                    disabled={isSubmitting}
+                    disabled={isLoading || isSubmitting}
                   >
-                    {isSubmitting ? (
-                      <>
-                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                        Creating Account...
-                      </>
-                    ) : (
-                      "Create Account"
-                    )}
+                    {isLoading ? "Creating Account..." : "Create Account"}
                   </Button>
                 </form>
               </Form>
@@ -352,7 +284,7 @@ export default function Signup() {
                     variant="outline"
                     className="w-full border border-zion-blue-light bg-zion-blue-dark text-white hover:bg-zion-blue hover:text-zion-cyan"
                     onClick={() => loginWithGoogle()}
-                    disabled={isSubmitting}
+                    disabled={isLoading || isSubmitting}
                   >
                     <span className="sr-only">Sign in with Google</span>
                     <svg className="h-5 w-5" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
@@ -367,7 +299,7 @@ export default function Signup() {
                     variant="outline"
                     className="w-full border border-zion-blue-light bg-zion-blue-dark text-white hover:bg-zion-blue hover:text-zion-cyan"
                     onClick={() => loginWithFacebook()}
-                    disabled={isSubmitting}
+                    disabled={isLoading || isSubmitting}
                   >
                     <span className="sr-only">Sign in with Facebook</span>
                     <Facebook className="h-5 w-5" />
@@ -377,7 +309,7 @@ export default function Signup() {
                     variant="outline"
                     className="w-full border border-zion-blue-light bg-zion-blue-dark text-white hover:bg-zion-blue hover:text-zion-cyan"
                     onClick={() => loginWithTwitter()}
-                    disabled={isSubmitting}
+                    disabled={isLoading || isSubmitting}
                   >
                     <span className="sr-only">Sign in with Twitter</span>
                     <Twitter className="h-5 w-5" />
@@ -400,6 +332,7 @@ export default function Signup() {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }
