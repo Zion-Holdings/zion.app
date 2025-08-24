@@ -3,65 +3,55 @@ import { Star, Quote } from 'lucide-react';
 
 const testimonials = [
   {
-    name: "Sarah Chen",
+    name: "Sarah Johnson",
     role: "CTO at TechFlow",
     company: "TechFlow Inc.",
-    content: "Zion has revolutionized how we source tech talent. The AI matching system found us the perfect developer in under 24 hours. Incredible platform!",
+    content: "Zion has revolutionized how we source tech talent. The AI matching is incredibly accurate and has saved us countless hours.",
     rating: 5,
-    avatar: "SC"
+    avatar: "SJ"
   },
   {
-    name: "Marcus Rodriguez",
-    role: "Senior Developer",
-    company: "Freelance",
-    content: "As a developer, Zion has opened up amazing opportunities. The platform is intuitive, payments are reliable, and the community is supportive.",
+    name: "Michael Chen",
+    role: "Lead Developer",
+    company: "InnovateCorp",
+    content: "The quality of services and equipment available on Zion is outstanding. It's become our go-to platform for all tech needs.",
     rating: 5,
-    avatar: "MR"
+    avatar: "MC"
   },
   {
-    name: "Dr. Emily Watson",
-    role: "AI Research Lead",
-    company: "InnovateAI",
-    content: "The quality of AI services on Zion is outstanding. We've found specialized expertise that would have been impossible to source otherwise.",
-    rating: 5,
-    avatar: "EW"
-  },
-  {
-    name: "James Thompson",
+    name: "Emily Rodriguez",
     role: "IT Director",
-    company: "GlobalCorp",
-    content: "Zion's equipment rental service saved us thousands on hardware costs. Professional service and excellent support throughout.",
+    company: "Global Solutions",
+    content: "Zion's marketplace has everything we need in one place. The customer support is exceptional and always available.",
     rating: 5,
-    avatar: "JT"
+    avatar: "ER"
   }
 ];
 
 export function TestimonialsSection() {
   return (
-    <section className="py-20 bg-gradient-to-br from-zion-blue-light to-zion-blue relative overflow-hidden">
-      {/* Background decorative elements */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-20 right-20 w-64 h-64 bg-zion-purple rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 left-20 w-48 h-48 bg-zion-cyan rounded-full blur-3xl"></div>
-      </div>
-      
-      <div className="container mx-auto px-4 relative z-10">
+    <section className="py-20 bg-zion-blue-dark">
+      <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             What Our Users Say
           </h2>
-          <p className="text-zion-slate-light text-xl max-w-2xl mx-auto">
-            Join thousands of satisfied professionals and businesses who trust Zion
+          <p className="text-zion-slate-light text-lg max-w-2xl mx-auto">
+            Join thousands of satisfied professionals who trust Zion for their technology needs
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {testimonials.map((testimonial, index) => (
-            <div
-              key={testimonial.name}
-              className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 transform hover:scale-105 transition-all duration-500 hover:bg-white/20"
-              style={{ animationDelay: `${index * 100}ms` }}
+            <div 
+              key={index}
+              className="bg-zion-blue border border-zion-blue-light rounded-xl p-6 hover:border-zion-purple/50 transition-all duration-300 hover:transform hover:scale-105 group"
             >
+              {/* Quote icon */}
+              <div className="mb-4">
+                <Quote className="w-8 h-8 text-zion-cyan opacity-60" />
+              </div>
+              
               {/* Rating */}
               <div className="flex items-center mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
@@ -69,13 +59,10 @@ export function TestimonialsSection() {
                 ))}
               </div>
               
-              {/* Quote */}
-              <div className="mb-6">
-                <Quote className="w-8 h-8 text-zion-cyan mb-3 opacity-60" />
-                <p className="text-white/90 text-sm leading-relaxed">
-                  "{testimonial.content}"
-                </p>
-              </div>
+              {/* Content */}
+              <p className="text-zion-slate-light mb-6 leading-relaxed">
+                "{testimonial.content}"
+              </p>
               
               {/* Author */}
               <div className="flex items-center">
@@ -83,15 +70,9 @@ export function TestimonialsSection() {
                   {testimonial.avatar}
                 </div>
                 <div>
-                  <h4 className="text-white font-semibold text-sm">
-                    {testimonial.name}
-                  </h4>
-                  <p className="text-zion-slate-light text-xs">
-                    {testimonial.role}
-                  </p>
-                  <p className="text-zion-cyan text-xs font-medium">
-                    {testimonial.company}
-                  </p>
+                  <div className="text-white font-semibold">{testimonial.name}</div>
+                  <div className="text-zion-slate-light text-sm">{testimonial.role}</div>
+                  <div className="text-zion-cyan text-sm">{testimonial.company}</div>
                 </div>
               </div>
             </div>
@@ -100,20 +81,20 @@ export function TestimonialsSection() {
         
         {/* Trust indicators */}
         <div className="text-center mt-16">
-          <div className="inline-flex items-center gap-6 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-8 py-4">
-            <div className="flex items-center gap-2">
+          <div className="inline-flex items-center space-x-6 bg-zion-blue/50 backdrop-blur-sm border border-zion-cyan/20 rounded-full px-8 py-4">
+            <div className="flex items-center space-x-2">
               <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-              <span className="text-white text-sm">Verified Reviews</span>
+              <span className="text-zion-cyan text-sm font-medium">Verified Reviews</span>
             </div>
-            <div className="w-px h-6 bg-white/20"></div>
-            <div className="flex items-center gap-2">
+            <div className="w-px h-4 bg-zion-cyan/30"></div>
+            <div className="flex items-center space-x-2">
               <div className="w-3 h-3 bg-blue-400 rounded-full animate-pulse"></div>
-              <span className="text-white text-sm">Real Users</span>
+              <span className="text-zion-cyan text-sm font-medium">Real Users</span>
             </div>
-            <div className="w-px h-6 bg-white/20"></div>
-            <div className="flex items-center gap-2">
+            <div className="w-px h-4 bg-zion-cyan/30"></div>
+            <div className="flex items-center space-x-2">
               <div className="w-3 h-3 bg-purple-400 rounded-full animate-pulse"></div>
-              <span className="text-white text-sm">24/7 Support</span>
+              <span className="text-zion-cyan text-sm font-medium">Recent Feedback</span>
             </div>
           </div>
         </div>
