@@ -1,311 +1,542 @@
-import React from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Link } from 'react-router-dom';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { 
   Brain, 
-  Bot, 
-  BarChart3, 
-  Code, 
-  MessageSquare, 
   Zap, 
+  TrendingUp, 
   Shield, 
+  Users, 
+  BarChart3, 
+  Network, 
+  Smartphone,
   Globe,
-  Database,
-  Server,
-  Eye,
-  TrendingUp,
-  Users,
-  Lock,
-  Palette,
-  Search,
-  FileText,
-  Video,
-  Music,
-  Camera
+  Phone,
+  Mail,
+  MapPin,
+  Star,
+  CheckCircle,
+  ArrowRight,
+  ExternalLink,
+  Lightbulb,
+  Award,
+  Clock,
+  DollarSign,
+  PieChart
 } from 'lucide-react';
-import { SEO } from '@/components/SEO';
+import { ENHANCED_SERVICES } from '@/data/enhancedServices';
 
-const AI_SERVICES = [
-  {
-    id: 'ai-development',
-    title: 'AI Development & Integration',
-    description: 'Custom AI solutions development, model training, and system integration',
-    icon: <Brain className="h-8 w-8 text-blue-500" />,
-    features: ['Custom ML Models', 'API Integration', 'Model Training', 'Performance Optimization'],
-    pricing: { starting: '$5,000', average: '$15,000', enterprise: '$50,000+' },
-    category: 'Development',
-    badge: 'Popular',
-    link: '/services/ai-development'
-  },
-  {
-    id: 'ai-automation',
-    title: 'AI Process Automation',
-    description: 'Intelligent automation for business processes and workflows',
-    icon: <Bot className="h-8 w-8 text-green-500" />,
-    features: ['Workflow Automation', 'Document Processing', 'Customer Service Bots', 'Process Optimization'],
-    pricing: { starting: '$3,000', average: '$12,000', enterprise: '$35,000+' },
-    category: 'Automation',
-    badge: 'Trending',
-    link: '/services/ai-automation'
-  },
-  {
-    id: 'ai-analytics',
-    title: 'AI-Powered Analytics',
-    description: 'Advanced analytics and business intelligence with AI insights',
-    icon: <BarChart3 className="h-8 w-8 text-purple-500" />,
-    features: ['Predictive Analytics', 'Data Visualization', 'Business Intelligence', 'Real-time Insights'],
-    pricing: { starting: '$4,500', average: '$18,000', enterprise: '$45,000+' },
-    category: 'Analytics',
-    badge: 'Featured',
-    link: '/services/ai-analytics'
-  },
-  {
-    id: 'ai-chatbots',
-    title: 'Intelligent Chatbots',
-    description: 'AI-powered conversational agents for customer engagement',
-    icon: <MessageSquare className="h-8 w-8 text-cyan-500" />,
-    features: ['Natural Language Processing', 'Multi-language Support', 'Integration APIs', 'Analytics Dashboard'],
-    pricing: { starting: '$2,500', average: '$8,000', enterprise: '$25,000+' },
-    category: 'Communication',
-    badge: 'Best Value',
-    link: '/services/ai-chatbots'
-  },
-  {
-    id: 'ai-security',
-    title: 'AI Cybersecurity',
-    description: 'Intelligent threat detection and security automation',
-    icon: <Shield className="h-8 w-8 text-red-500" />,
-    features: ['Threat Detection', 'Behavioral Analysis', 'Automated Response', 'Security Monitoring'],
-    pricing: { starting: '$6,000', average: '$20,000', enterprise: '$60,000+' },
-    category: 'Security',
-    badge: 'Critical',
-    link: '/services/ai-security'
-  },
-  {
-    id: 'ai-content-generation',
-    title: 'AI Content Generation',
-    description: 'Automated content creation for marketing and communication',
-    icon: <FileText className="h-8 w-8 text-orange-500" />,
-    features: ['Blog Writing', 'Social Media Content', 'Email Campaigns', 'SEO Optimization'],
-    pricing: { starting: '$1,500', average: '$6,000', enterprise: '$20,000+' },
-    category: 'Content',
-    badge: 'New',
-    link: '/services/ai-content-generation'
-  },
-  {
-    id: 'ai-video-processing',
-    title: 'AI Video Processing',
-    description: 'Intelligent video editing, analysis, and enhancement',
-    icon: <Video className="h-8 w-8 text-pink-500" />,
-    features: ['Video Enhancement', 'Object Detection', 'Auto-editing', 'Content Moderation'],
-    pricing: { starting: '$3,500', average: '$14,000', enterprise: '$40,000+' },
-    category: 'Media',
-    badge: 'Innovative',
-    link: '/services/ai-video-processing'
-  },
-  {
-    id: 'ai-data-processing',
-    title: 'AI Data Processing',
-    description: 'Intelligent data cleaning, transformation, and enrichment',
-    icon: <Database className="h-8 w-8 text-indigo-500" />,
-    features: ['Data Cleaning', 'ETL Pipelines', 'Data Enrichment', 'Quality Assurance'],
-    pricing: { starting: '$4,000', average: '$16,000', enterprise: '$45,000+' },
-    category: 'Data',
-    badge: 'Essential',
-    link: '/services/ai-data-processing'
-  },
-  {
-    id: 'ai-recommendation-engines',
-    title: 'AI Recommendation Systems',
-    description: 'Personalized recommendation engines for products and content',
-    icon: <TrendingUp className="h-8 w-8 text-emerald-500" />,
-    features: ['Personalization', 'A/B Testing', 'Performance Analytics', 'Multi-channel Support'],
-    pricing: { starting: '$5,500', average: '$22,000', enterprise: '$55,000+' },
-    category: 'Personalization',
-    badge: 'Premium',
-    link: '/services/ai-recommendation-engines'
-  },
-  {
-    id: 'ai-computer-vision',
-    title: 'AI Computer Vision',
-    description: 'Advanced image and video analysis capabilities',
-    icon: <Eye className="h-8 w-8 text-teal-500" />,
-    features: ['Object Detection', 'Image Classification', 'Facial Recognition', 'Quality Inspection'],
-    pricing: { starting: '$7,000', average: '$25,000', enterprise: '$70,000+' },
-    category: 'Vision',
-    badge: 'Advanced',
-    link: '/services/ai-computer-vision'
-  },
-  {
-    id: 'ai-nlp-services',
-    title: 'AI Natural Language Processing',
-    description: 'Text analysis, translation, and language understanding',
-    icon: <Search className="h-8 w-8 text-yellow-500" />,
-    features: ['Text Analysis', 'Language Translation', 'Sentiment Analysis', 'Entity Extraction'],
-    pricing: { starting: '$4,500', average: '$18,000', enterprise: '$50,000+' },
-    category: 'Language',
-    badge: 'Popular',
-    link: '/services/ai-nlp-services'
-  },
-  {
-    id: 'ai-iot-solutions',
-    title: 'AI IoT Solutions',
-    description: 'Intelligent Internet of Things integration and management',
-    icon: <Server className="h-8 w-8 text-gray-500" />,
-    features: ['Device Management', 'Predictive Maintenance', 'Data Analytics', 'Edge Computing'],
-    pricing: { starting: '$8,000', average: '$30,000', enterprise: '$80,000+' },
-    category: 'IoT',
-    badge: 'Enterprise',
-    link: '/services/ai-iot-solutions'
-  }
-];
-
-const AI_SERVICE_CATEGORIES = [
-  { name: 'Development', count: 3, color: 'bg-blue-500' },
-  { name: 'Automation', count: 2, color: 'bg-green-500' },
-  { name: 'Analytics', count: 2, color: 'bg-purple-500' },
-  { name: 'Security', count: 1, color: 'bg-red-500' },
-  { name: 'Content', count: 2, color: 'bg-orange-500' },
-  { name: 'Media', count: 1, color: 'bg-pink-500' },
-  { name: 'Data', count: 2, color: 'bg-indigo-500' },
-  { name: 'Vision', count: 1, color: 'bg-teal-500' },
-  { name: 'Language', count: 1, color: 'bg-yellow-500' },
-  { name: 'IoT', count: 1, color: 'bg-gray-500' }
-];
+// Filter AI services
+const AI_SERVICES = ENHANCED_SERVICES.filter(service => 
+  service.category.includes('AI') || 
+  service.category.includes('Machine Learning') ||
+  service.category.includes('Automation')
+);
 
 export default function AIServicesPage() {
+  const [selectedTab, setSelectedTab] = useState('overview');
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-zion-blue-dark via-zion-slate to-zion-purple-dark">
-      <SEO 
-        title="AI Services & Solutions - Zion Tech Group" 
-        description="Comprehensive AI services including development, automation, analytics, chatbots, security, and more. Expert AI solutions for businesses."
-        keywords="AI services, artificial intelligence, machine learning, AI development, AI automation, AI analytics, AI chatbots, AI security"
-        canonical="https://ziontechgroup.com/ai-services"
-      />
-
+    <div className="min-h-screen bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-purple-dark">
       {/* Hero Section */}
-      <div className="relative overflow-hidden bg-gradient-to-r from-zion-blue-dark to-zion-purple-dark py-20">
+      <div className="relative overflow-hidden">
         <div className="absolute inset-0 bg-black/20"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20"></div>
-        <div className="relative container mx-auto px-4 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-            AI Services & Solutions
-          </h1>
-          <p className="text-xl text-zion-cyan max-w-3xl mx-auto mb-8">
-            Transform your business with cutting-edge artificial intelligence services. 
-            From development to deployment, we provide comprehensive AI solutions.
+        <div className="relative z-10 container mx-auto px-4 py-20 text-center text-white">
+          <div className="flex items-center justify-center mb-6">
+            <Brain className="h-16 w-16 text-zion-cyan mr-4" />
+            <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-zion-cyan to-zion-purple bg-clip-text text-transparent">
+              AI Services
+            </h1>
+          </div>
+          <p className="text-xl md:text-2xl mb-8 text-zion-cyan-light max-w-4xl mx-auto">
+            Transform Your Business with Cutting-Edge Artificial Intelligence Solutions
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Button asChild size="lg" className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple">
-              <Link to="/request-quote">Get AI Quote</Link>
-            </Button>
-            <Button asChild size="lg" variant="outline" className="border-zion-cyan text-zion-cyan hover:bg-zion-cyan/10">
-              <Link to="/contact">Consult with Experts</Link>
-            </Button>
-          </div>
-        </div>
-      </div>
-
-      {/* Categories Overview */}
-      <div className="py-16 bg-zion-slate/50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-white text-center mb-12">AI Service Categories</h2>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-            {AI_SERVICE_CATEGORIES.map((category) => (
-              <div key={category.name} className="text-center">
-                <div className={`w-16 h-16 ${category.color} rounded-full mx-auto mb-3 flex items-center justify-center`}>
-                  <span className="text-white font-bold text-lg">{category.count}</span>
-                </div>
-                <p className="text-zion-cyan font-medium">{category.name}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* AI Services Grid */}
-      <div className="py-20 bg-zion-slate">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">Comprehensive AI Solutions</h2>
-            <p className="text-xl text-zion-cyan max-w-3xl mx-auto">
-              Choose from our extensive range of AI services designed to meet your business needs
-            </p>
-          </div>
+          <p className="text-lg text-zion-cyan-light mb-12 max-w-3xl mx-auto">
+            From process automation to predictive analytics, our AI services deliver measurable results and competitive advantages.
+          </p>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {AI_SERVICES.map((service) => (
-              <Card key={service.id} className="bg-zion-blue-dark/50 border-zion-purple/20 hover:border-zion-purple/50 transition-all duration-300 hover:shadow-2xl hover:shadow-zion-purple/20">
-                <CardHeader className="pb-4">
-                  <div className="flex justify-between items-start mb-3">
-                    {service.icon}
-                    {service.badge && (
-                      <Badge variant="secondary" className="bg-zion-purple/20 text-zion-cyan border-zion-purple/30">
-                        {service.badge}
-                      </Badge>
-                    )}
-                  </div>
-                  <CardTitle className="text-xl text-white">{service.title}</CardTitle>
-                  <CardDescription className="text-zion-cyan/80">{service.description}</CardDescription>
-                </CardHeader>
-                
-                <CardContent className="space-y-4">
-                  <div>
-                    <h4 className="text-white font-semibold mb-2">Key Features:</h4>
-                    <ul className="space-y-1">
-                      {service.features.map((feature, index) => (
-                        <li key={index} className="text-sm text-zion-cyan/70 flex items-center">
-                          <span className="w-2 h-2 bg-zion-cyan rounded-full mr-2"></span>
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  
-                  <div>
-                    <h4 className="text-white font-semibold mb-2">Pricing:</h4>
-                    <div className="text-sm text-zion-cyan/70 space-y-1">
-                      <p>Starting: {service.pricing.starting}</p>
-                      <p>Average: {service.pricing.average}</p>
-                      <p>Enterprise: {service.pricing.enterprise}</p>
-                    </div>
-                  </div>
-                  
-                  <div className="pt-4">
-                    <Button asChild className="w-full bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple">
-                      <Link to={service.link}>Learn More</Link>
-                    </Button>
-                  </div>
+          {/* Contact CTA */}
+          <div className="flex flex-wrap justify-center gap-4 mb-12">
+            <Button size="lg" className="bg-zion-purple hover:bg-zion-purple-dark text-white px-8 py-3">
+              <Phone className="mr-2 h-5 w-5" />
+              +1 302 464 0950
+            </Button>
+            <Button size="lg" variant="outline" className="border-zion-cyan text-zion-cyan hover:bg-zion-cyan/10 px-8 py-3">
+              <Mail className="mr-2 h-5 w-5" />
+              kleber@ziontechgroup.com
+            </Button>
+          </div>
+
+          {/* AI Stats */}
+          <div className="grid md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+            <div className="text-center">
+              <div className="text-3xl font-bold text-zion-cyan mb-2">95%</div>
+              <div className="text-zion-cyan-light">Accuracy Rate</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-zion-cyan mb-2">24/7</div>
+              <div className="text-zion-cyan-light">Operation</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-zion-cyan mb-2">80%</div>
+              <div className="text-zion-cyan-light">Cost Reduction</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-zion-cyan mb-2">300%</div>
+              <div className="text-zion-cyan-light">ROI Average</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Content */}
+      <div className="container mx-auto px-4 py-16">
+        <Tabs value={selectedTab} onValueChange={setSelectedTab} className="w-full">
+          <TabsList className="grid w-full grid-cols-4 mb-12 bg-white/10 backdrop-blur-sm">
+            <TabsTrigger value="overview" className="text-zion-cyan-light data-[state=active]:text-white data-[state=active]:bg-zion-purple">
+              Overview
+            </TabsTrigger>
+            <TabsTrigger value="services" className="text-zion-cyan-light data-[state=active]:text-white data-[state=active]:bg-zion-purple">
+              Services
+            </TabsTrigger>
+            <TabsTrigger value="use-cases" className="text-zion-cyan-light data-[state=active]:text-white data-[state=active]:bg-zion-purple">
+              Use Cases
+            </TabsTrigger>
+            <TabsTrigger value="pricing" className="text-zion-cyan-light data-[state=active]:text-white data-[state=active]:bg-zion-purple">
+              Pricing
+            </TabsTrigger>
+          </TabsList>
+
+          {/* Overview Tab */}
+          <TabsContent value="overview" className="space-y-12">
+            <div className="text-center">
+              <h2 className="text-4xl font-bold text-white mb-6">Why AI Matters for Your Business</h2>
+              <p className="text-xl text-zion-cyan-light max-w-3xl mx-auto">
+                Artificial Intelligence is no longer a luxury—it's a necessity for businesses that want to stay competitive in today's digital economy.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              <Card className="bg-white/10 backdrop-blur-sm border-zion-cyan/30 text-center">
+                <CardContent className="p-8">
+                  <Zap className="h-16 w-16 mx-auto mb-4 text-zion-cyan" />
+                  <h3 className="text-2xl font-bold text-white mb-4">Automation & Efficiency</h3>
+                  <p className="text-zion-cyan-light">
+                    Automate repetitive tasks, reduce manual errors, and increase operational efficiency by up to 80%.
+                  </p>
                 </CardContent>
               </Card>
-            ))}
-          </div>
-        </div>
+
+              <Card className="bg-white/10 backdrop-blur-sm border-zion-cyan/30 text-center">
+                <CardContent className="p-8">
+                  <TrendingUp className="h-16 w-16 mx-auto mb-4 text-zion-cyan" />
+                  <h3 className="text-2xl font-bold text-white mb-4">Data-Driven Insights</h3>
+                  <p className="text-zion-cyan-light">
+                    Transform raw data into actionable insights that drive better decision-making and strategic planning.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-white/10 backdrop-blur-sm border-zion-cyan/30 text-center">
+                <CardContent className="p-8">
+                  <Users className="h-16 w-16 mx-auto mb-4 text-zion-cyan" />
+                  <h3 className="text-2xl font-bold text-white mb-4">Customer Experience</h3>
+                  <p className="text-zion-cyan-light">
+                    Deliver personalized experiences, predict customer needs, and increase satisfaction and retention rates.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* AI Capabilities */}
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8">
+              <h3 className="text-3xl font-bold text-white mb-8 text-center">Our AI Capabilities</h3>
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="text-center">
+                  <Brain className="h-12 w-12 mx-auto mb-3 text-zion-cyan" />
+                  <h4 className="font-semibold text-white mb-2">Machine Learning</h4>
+                  <p className="text-sm text-zion-cyan-light">Custom ML models for your specific needs</p>
+                </div>
+                <div className="text-center">
+                  <Network className="h-12 w-12 mx-auto mb-3 text-zion-cyan" />
+                  <h4 className="font-semibold text-white mb-2">Neural Networks</h4>
+                  <p className="text-sm text-zion-cyan-light">Deep learning for complex pattern recognition</p>
+                </div>
+                <div className="text-center">
+                  <BarChart3 className="h-12 w-12 mx-auto mb-3 text-zion-cyan" />
+                  <h4 className="font-semibold text-white mb-2">Predictive Analytics</h4>
+                  <p className="text-sm text-zion-cyan-light">Forecast trends and behaviors</p>
+                </div>
+                <div className="text-center">
+                  <Smartphone className="h-12 w-12 mx-auto mb-3 text-zion-cyan" />
+                  <h4 className="font-semibold text-white mb-2">Natural Language Processing</h4>
+                  <p className="text-sm text-zion-cyan-light">Understand and process human language</p>
+                </div>
+              </div>
+            </div>
+          </TabsContent>
+
+          {/* Services Tab */}
+          <TabsContent value="services" className="space-y-12">
+            <div className="text-center">
+              <h2 className="text-4xl font-bold text-white mb-6">AI Service Portfolio</h2>
+              <p className="text-xl text-zion-cyan-light max-w-3xl mx-auto">
+                Comprehensive AI solutions designed to address your specific business challenges and opportunities.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              {AI_SERVICES.map((service) => (
+                <AIServiceCard key={service.id} service={service} />
+              ))}
+            </div>
+          </TabsContent>
+
+          {/* Use Cases Tab */}
+          <TabsContent value="use-cases" className="space-y-12">
+            <div className="text-center">
+              <h2 className="text-4xl font-bold text-white mb-6">Real-World AI Applications</h2>
+              <p className="text-xl text-zion-cyan-light max-w-3xl mx-auto">
+                Discover how AI is transforming industries and creating new opportunities for businesses like yours.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <UseCaseCard
+                icon={<BarChart3 className="h-8 w-8" />}
+                title="Financial Services"
+                description="Fraud detection, risk assessment, algorithmic trading, and personalized financial advice."
+                examples={["Credit scoring", "Market prediction", "Compliance automation"]}
+              />
+              <UseCaseCard
+                icon={<Users className="h-8 w-8" />}
+                title="Healthcare"
+                description="Medical diagnosis, drug discovery, patient monitoring, and treatment optimization."
+                examples={["Disease prediction", "Medical imaging", "Drug development"]}
+              />
+              <UseCaseCard
+                icon={<Globe className="h-8 w-8" />}
+                title="Retail & E-commerce"
+                description="Customer segmentation, demand forecasting, inventory optimization, and personalized marketing."
+                examples={["Recommendation engines", "Price optimization", "Supply chain management"]}
+              />
+              <UseCaseCard
+                icon={<Shield className="h-8 w-8" />}
+                title="Cybersecurity"
+                description="Threat detection, anomaly identification, and automated response systems."
+                examples={["Intrusion detection", "Malware analysis", "Behavioral analysis"]}
+              />
+              <UseCaseCard
+                icon={<TrendingUp className="h-8 w-8" />}
+                title="Manufacturing"
+                description="Predictive maintenance, quality control, supply chain optimization, and process automation."
+                examples={["Equipment monitoring", "Quality assurance", "Production planning"]}
+              />
+              <UseCaseCard
+                icon={<Lightbulb className="h-8 w-8" />}
+                title="Research & Development"
+                description="Data analysis, pattern recognition, hypothesis generation, and experimental design."
+                examples={["Literature review", "Data mining", "Simulation modeling"]}
+              />
+            </div>
+          </TabsContent>
+
+          {/* Pricing Tab */}
+          <TabsContent value="pricing" className="space-y-12">
+            <div className="text-center">
+              <h2 className="text-4xl font-bold text-white mb-6">AI Service Pricing</h2>
+              <p className="text-xl text-zion-cyan-light max-w-3xl mx-auto">
+                Transparent pricing for our AI services with flexible options to fit your budget and requirements.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              <PricingCard
+                title="Starter AI Package"
+                price="$2,999"
+                description="Perfect for small businesses starting their AI journey"
+                features={[
+                  "Basic AI integration",
+                  "Process automation",
+                  "Data analysis tools",
+                  "5 hours of consultation",
+                  "Email support"
+                ]}
+                popular={false}
+              />
+              <PricingCard
+                title="Professional AI Suite"
+                price="$7,999"
+                description="Comprehensive AI solution for growing businesses"
+                features={[
+                  "Advanced AI models",
+                  "Custom automation",
+                  "Predictive analytics",
+                  "20 hours of consultation",
+                  "Priority support",
+                  "Training & documentation"
+                ]}
+                popular={true}
+              />
+              <PricingCard
+                title="Enterprise AI Platform"
+                price="$19,999"
+                description="Full-scale AI transformation for large organizations"
+                features={[
+                  "Custom AI development",
+                  "Full automation suite",
+                  "Advanced analytics",
+                  "Unlimited consultation",
+                  "24/7 dedicated support",
+                  "Custom training programs",
+                  "Ongoing optimization"
+                ]}
+                popular={false}
+              />
+            </div>
+
+            {/* ROI Calculator */}
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8">
+              <h3 className="text-3xl font-bold text-white mb-8 text-center">ROI Calculator</h3>
+              <div className="grid md:grid-cols-2 gap-8">
+                <div>
+                  <h4 className="text-xl font-semibold text-white mb-4">Investment Benefits</h4>
+                  <div className="space-y-3">
+                    <div className="flex justify-between">
+                      <span className="text-zion-cyan-light">Cost Reduction:</span>
+                      <span className="text-white font-semibold">20-40%</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-zion-cyan-light">Efficiency Gain:</span>
+                      <span className="text-white font-semibold">60-80%</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-zion-cyan-light">Revenue Increase:</span>
+                      <span className="text-white font-semibold">15-30%</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-zion-cyan-light">Time Savings:</span>
+                      <span className="text-white font-semibold">40-60%</span>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h4 className="text-xl font-semibold text-white mb-4">Expected Returns</h4>
+                  <div className="space-y-3">
+                    <div className="flex justify-between">
+                      <span className="text-zion-cyan-light">Payback Period:</span>
+                      <span className="text-white font-semibold">6-12 months</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-zion-cyan-light">3-Year ROI:</span>
+                      <span className="text-white font-semibold">300-500%</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-zion-cyan-light">Risk Reduction:</span>
+                      <span className="text-white font-semibold">50-70%</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-zion-cyan-light">Competitive Advantage:</span>
+                      <span className="text-white font-semibold">Significant</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </TabsContent>
+        </Tabs>
       </div>
 
       {/* CTA Section */}
-      <div className="py-20 bg-gradient-to-r from-zion-purple-dark to-zion-blue-dark">
+      <div className="bg-gradient-to-r from-zion-purple to-zion-purple-dark py-16">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold text-white mb-6">Ready to Transform Your Business with AI?</h2>
-          <p className="text-xl text-zion-cyan mb-8 max-w-2xl mx-auto">
-            Our AI experts are ready to help you implement cutting-edge solutions that drive growth and innovation.
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            Ready to Harness the Power of AI?
+          </h2>
+          <p className="text-xl text-zion-cyan-light mb-8 max-w-3xl mx-auto">
+            Let's discuss how AI can transform your business operations and drive unprecedented growth.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Button asChild size="lg" className="bg-gradient-to-r from-zion-cyan to-zion-cyan-dark hover:from-zion-cyan-light hover:to-zion-cyan text-zion-slate">
-              <Link to="/request-quote">Request Free Consultation</Link>
+            <Button size="lg" className="bg-white text-zion-purple hover:bg-zion-cyan px-8 py-3">
+              <Brain className="mr-2 h-5 w-5" />
+              Start AI Assessment
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
-              <Link to="/contact">Contact Our Team</Link>
+            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 px-8 py-3">
+              <Phone className="mr-2 h-5 w-5" />
+              Schedule Demo
             </Button>
           </div>
-          <div className="mt-8 text-zion-cyan">
-            <p>Mobile: +1 302 464 0950 | Email: kleber@ziontechgroup.com</p>
-            <p>Address: 364 E Main St STE 1008 Middletown DE 19709</p>
+        </div>
+      </div>
+
+      {/* Contact Section */}
+      <div className="bg-zion-blue-dark py-16">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-white mb-6">Get in Touch</h2>
+            <p className="text-xl text-zion-cyan-light max-w-3xl mx-auto">
+              Ready to explore AI solutions for your business? Contact our experts today.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            <div className="text-center">
+              <Phone className="h-12 w-12 mx-auto mb-4 text-zion-cyan" />
+              <h3 className="text-xl font-semibold text-white mb-2">Call Us</h3>
+              <p className="text-zion-cyan-light">+1 302 464 0950</p>
+              <p className="text-sm text-zion-cyan-light">Mon-Fri 9AM-6PM EST</p>
+            </div>
+            <div className="text-center">
+              <Mail className="h-12 w-12 mx-auto mb-4 text-zion-cyan" />
+              <h3 className="text-xl font-semibold text-white mb-2">Email Us</h3>
+              <p className="text-zion-cyan-light">kleber@ziontechgroup.com</p>
+              <p className="text-sm text-zion-cyan-light">24/7 Response</p>
+            </div>
+            <div className="text-center">
+              <MapPin className="h-12 w-12 mx-auto mb-4 text-zion-cyan" />
+              <h3 className="text-xl font-semibold text-white mb-2">Visit Us</h3>
+              <p className="text-zion-cyan-light">364 E Main St STE 1008</p>
+              <p className="text-sm text-zion-cyan-light">Middletown DE 19709</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
+  );
+}
+
+// AI Service Card Component
+function AIServiceCard({ service }: { service: any }) {
+  return (
+    <Card className="bg-white/10 backdrop-blur-sm border-zion-cyan/30 hover:border-zion-cyan/60 transition-all duration-300">
+      <CardHeader>
+        <div className="flex items-start justify-between mb-2">
+          <Badge variant="secondary" className="bg-zion-purple/20 text-zion-purple border-zion-purple/30">
+            {service.category}
+          </Badge>
+          {service.featured && (
+            <Badge variant="secondary" className="bg-yellow-500/20 text-yellow-400 border-yellow-500/30">
+              Featured
+            </Badge>
+          )}
+        </div>
+        <CardTitle className="text-xl text-white mb-2">{service.title}</CardTitle>
+        <CardDescription className="text-zion-cyan-light">
+          {service.description}
+        </CardDescription>
+      </CardHeader>
+      <CardContent>
+        <div className="space-y-4">
+          <div className="flex items-center justify-between">
+            <div className="text-2xl font-bold text-zion-cyan">
+              {service.currency}{service.price?.toLocaleString()}
+            </div>
+            <div className="flex items-center gap-1">
+              <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+              <span className="text-white">{service.rating}</span>
+              <span className="text-zion-cyan-light">({service.reviewCount})</span>
+            </div>
+          </div>
+          
+          <div className="flex items-center justify-between">
+            <span className="text-zion-cyan-light">AI Score:</span>
+            <div className="flex items-center gap-2">
+              <div className="w-16 bg-zion-blue-light rounded-full h-2">
+                <div 
+                  className="bg-gradient-to-r from-zion-cyan to-zion-purple h-2 rounded-full" 
+                  style={{ width: `${service.aiScore}%` }}
+                ></div>
+              </div>
+              <span className="text-zion-cyan font-semibold">{service.aiScore}%</span>
+            </div>
+          </div>
+
+          <div className="flex flex-wrap gap-2">
+            {service.tags.slice(0, 3).map((tag: string) => (
+              <Badge key={tag} variant="outline" className="text-xs border-zion-cyan/30 text-zion-cyan-light">
+                {tag}
+              </Badge>
+            ))}
+          </div>
+
+          <Button className="w-full bg-zion-purple hover:bg-zion-purple-dark text-white">
+            Learn More
+          </Button>
+        </div>
+      </CardContent>
+    </Card>
+  );
+}
+
+// Use Case Card Component
+function UseCaseCard({ icon, title, description, examples }: { 
+  icon: React.ReactNode, 
+  title: string, 
+  description: string, 
+  examples: string[] 
+}) {
+  return (
+    <Card className="bg-white/10 backdrop-blur-sm border-zion-cyan/30 hover:border-zion-cyan/60 transition-all duration-300">
+      <CardHeader className="text-center">
+        <div className="mx-auto mb-4 text-zion-cyan">
+          {icon}
+        </div>
+        <CardTitle className="text-xl text-white">{title}</CardTitle>
+        <CardDescription className="text-zion-cyan-light">
+          {description}
+        </CardDescription>
+      </CardHeader>
+      <CardContent>
+        <div className="space-y-2">
+          <h4 className="font-semibold text-white mb-3">Examples:</h4>
+          {examples.map((example, index) => (
+            <div key={index} className="flex items-center gap-2">
+              <CheckCircle className="h-4 w-4 text-green-400" />
+              <span className="text-sm text-zion-cyan-light">{example}</span>
+            </div>
+          ))}
+        </div>
+      </CardContent>
+    </Card>
+  );
+}
+
+// Pricing Card Component
+function PricingCard({ title, price, description, features, popular }: {
+  title: string;
+  price: string;
+  description: string;
+  features: string[];
+  popular: boolean;
+}) {
+  return (
+    <Card className={`relative ${popular ? 'border-zion-cyan border-2' : 'border-zion-cyan/30'} bg-white/10 backdrop-blur-sm hover:border-zion-cyan/60 transition-all duration-300`}>
+      {popular && (
+        <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+          <Badge className="bg-zion-cyan text-white px-4 py-1">Most Popular</Badge>
+        </div>
+      )}
+      <CardHeader className="text-center pt-8">
+        <CardTitle className="text-2xl text-white">{title}</CardTitle>
+        <CardDescription className="text-zion-cyan-light">{description}</CardDescription>
+        <div className="text-4xl font-bold text-zion-cyan mt-4">{price}</div>
+      </CardHeader>
+      <CardContent>
+        <div className="space-y-3">
+          {features.map((feature, index) => (
+            <div key={index} className="flex items-center gap-2">
+              <CheckCircle className="h-4 w-4 text-green-400" />
+              <span className="text-zion-cyan-light">{feature}</span>
+            </div>
+          ))}
+        </div>
+        <Button className="w-full mt-6 bg-zion-purple hover:bg-zion-purple-dark text-white">
+          Get Started
+        </Button>
+      </CardContent>
+    </Card>
   );
 }
