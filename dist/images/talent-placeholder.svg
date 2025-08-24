@@ -1,4 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+<<<<<<<< HEAD:dist/images/talent-placeholder.svg
   <rect width="800" height="600" fill="#eee" />
   <text x="400" y="300" font-size="48" text-anchor="middle" fill="#666" font-family="Arial, sans-serif">Talent</text>
+========
+  <rect width="800" height="600" fill="#444" />
+  <text x="400" y="300" font-size="48" text-anchor="middle" fill="#fff" font-family="Arial, sans-serif">Blog</text>
+>>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-420a:dist/images/blog-placeholder.svg
 </svg>

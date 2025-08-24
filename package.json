@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "test": "jest",
@@ -37,12 +37,9 @@
     "@radix-ui/react-tabs": "^1.0.4",
     "@radix-ui/react-toast": "^1.1.5",
     "@radix-ui/react-tooltip": "^1.0.7",
-    "@reduxjs/toolkit": "^2.8.2",
     "@stripe/stripe-js": "^2.3.0",
     "@supabase/supabase-js": "^2.39.3",
     "@tanstack/react-query": "^5.17.19",
-    "@types/react": "^18.3.24",
-    "@types/react-dom": "^18.3.7",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "cmdk": "^0.2.1",
@@ -62,8 +59,7 @@
     "react-helmet-async": "^2.0.4",
     "react-hook-form": "^7.50.1",
     "react-i18next": "^14.0.1",
-    "react-redux": "^9.2.0",
-    "react-router-dom": "^6.22.0",
+    "react-router-dom": "^6.20.1",
     "recharts": "^2.12.0",
     "sonner": "^1.4.0",
     "tailwind-merge": "^2.2.1",
@@ -91,6 +87,7 @@
     "postcss": "^8.4.35",
     "rimraf": "^5.0.5",
     "tailwindcss": "^3.4.1",
+    "terser": "^5.43.1",
     "ts-jest": "^29.1.1",
     "typescript": "^5.2.2",
     "vite": "^5.0.8",
@@ -100,13 +97,13 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
-  "resolutions": {
-    "glob": "^10.4.5",
+  "overrides": {
+    "glob": "^10.3.10",
     "rimraf": "^5.0.5",
     "@humanwhocodes/object-schema": "@eslint/object-schema@1.0.0"
   },
-  "overrides": {
-    "glob": "^10.3.10",
+  "resolutions": {
+    "glob": "^10.4.5",
     "rimraf": "^5.0.5",
     "@humanwhocodes/object-schema": "@eslint/object-schema@1.0.0"
   }

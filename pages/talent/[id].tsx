@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from 'react';
+<<<<<<< HEAD
 import { useParams, useNavigate } from 'react-router-dom';
+=======
+import { useParams } from 'react-router-dom';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-420a
 import { ProfileLoadingState } from '@/components/profile/ProfileLoadingState';
 import type { TalentProfile as TalentProfileType } from '@/types/talent';
 import { ProfileErrorState } from '@/components/profile/ProfileErrorState';
@@ -8,9 +12,26 @@ interface TalentProfileWithSocial extends TalentProfileType {
   social?: Record<string, string>;
 }
 
+<<<<<<< HEAD
 const TalentProfilePage: React.FC = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+=======
+// Simple error component for 404
+const ErrorPage: React.FC<{ statusCode: number }> = ({ statusCode }) => (
+  <div className="min-h-screen bg-zion-blue flex items-center justify-center text-white">
+    <div className="text-center">
+      <h1 className="text-6xl font-bold text-zion-purple mb-4">{statusCode}</h1>
+      <p className="text-xl text-zion-slate-light">
+        {statusCode === 404 ? 'Page not found' : 'Something went wrong'}
+      </p>
+    </div>
+  </div>
+);
+
+const TalentProfilePage: React.FC = () => {
+  const { id } = useParams();
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-420a
   const [profile, setProfile] = useState<TalentProfileWithSocial | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -43,7 +64,11 @@ const TalentProfilePage: React.FC = () => {
   }, [id]);
 
   if (loading) return <ProfileLoadingState />;
+<<<<<<< HEAD
   if (error || !profile) return <ProfileErrorState error={error} />;
+=======
+  if (error || !profile) return <ErrorPage statusCode={404} />;
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-420a
 
   return (
     <main className="min-h-screen bg-zion-blue py-8 text-white">
