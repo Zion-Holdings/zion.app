@@ -3,7 +3,8 @@ import { GradientHeading } from "@/components/GradientHeading";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useNavigate } from "react-router-dom";
-import { Globe, Clock, Shield, MapPin, ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
+import { MapPin, Clock, Globe, ArrowRight, Shield, Zap } from "lucide-react";
 
 export function ITServiceRequestHero() {
   const [location, setLocation] = useState("");
@@ -16,102 +17,159 @@ export function ITServiceRequestHero() {
     }
   };
 
+  const containerVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5 }
+    }
+  };
+
   return (
-    <section className="bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-blue-light py-20 md:py-28 border-b border-zion-purple/20 relative overflow-hidden">
-      {/* Background pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-        }} />
+    <section className="relative bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-purple py-20 md:py-28 border-b border-zion-purple/20 overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-10 left-10 w-32 h-32 bg-zion-cyan/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-10 right-10 w-40 h-40 bg-zion-purple/10 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-zion-blue/5 rounded-full blur-3xl"></div>
       </div>
 
-      <div className="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
-        <div className="space-y-6">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="p-2 bg-zion-purple/20 rounded-lg">
-              <Globe className="w-6 h-6 text-zion-purple" />
-            </div>
-            <span className="text-zion-cyan-light font-medium">Global IT Services</span>
-          </div>
-          
-          <GradientHeading className="text-4xl md:text-6xl leading-tight">
-            Professional IT Support
-            <span className="block text-3xl md:text-4xl mt-2 text-zion-cyan-light">
-              Available Worldwide
-            </span>
-          </GradientHeading>
-          
-          <p className="text-xl text-zion-slate-light leading-relaxed max-w-lg">
-            Get expert IT technicians dispatched to your location within hours. 
-            From emergency repairs to system upgrades, we provide comprehensive 
-            technical support anywhere in the world.
-          </p>
-
-          {/* Service highlights */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
-            <div className="flex items-center gap-3">
-              <Clock className="w-5 h-5 text-zion-cyan" />
-              <span className="text-zion-slate-light">24/7 Availability</span>
-            </div>
-            <div className="flex items-center gap-3">
-              <Shield className="w-5 h-5 text-zion-purple" />
-              <span className="text-zion-slate-light">Certified Technicians</span>
-            </div>
-            <div className="flex items-center gap-3">
-              <Globe className="w-5 h-5 text-zion-cyan-light" />
-              <span className="text-zion-slate-light">150+ Countries</span>
-            </div>
-            <div className="flex items-center gap-3">
-              <MapPin className="w-5 h-5 text-zion-purple-light" />
-              <span className="text-zion-slate-light">Same-Day Dispatch</span>
-            </div>
-          </div>
-        </div>
-
-        <div className="bg-zion-blue-light/10 backdrop-blur-sm p-8 rounded-2xl shadow-2xl border border-zion-purple/20">
-          <div className="text-center mb-6">
-            <h3 className="text-2xl font-bold text-white mb-2">Request Service Now</h3>
-            <p className="text-zion-slate-light">Get a technician dispatched to your location</p>
-          </div>
-          
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="space-y-2">
-              <label htmlFor="location" className="block text-sm font-medium text-zion-slate-light">
-                Service Location
-              </label>
-              <Input
-                id="location"
-                value={location}
-                onChange={(e) => setLocation(e.target.value)}
-                placeholder="Enter city, country, or address"
-                className="bg-zion-blue-dark/50 border-zion-blue-light focus:border-zion-purple focus:ring-zion-purple text-white placeholder-zion-slate-light h-12 text-lg"
-                required
-              />
+      <motion.div 
+        className="container mx-auto px-4 relative z-10"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          {/* Left content */}
+          <motion.div variants={itemVariants} className="text-white">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="p-2 bg-zion-cyan/20 rounded-lg">
+                <Zap className="w-6 h-6 text-zion-cyan" />
+              </div>
+              <span className="text-zion-cyan font-semibold text-sm uppercase tracking-wider">
+                Global IT Services
+              </span>
             </div>
             
-            <Button 
-              type="submit" 
-              className="w-full bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-lg py-6 h-14 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-            >
-              <span className="flex items-center gap-2">
-                Request Service
-                <ArrowRight className="w-5 h-5" />
-              </span>
-            </Button>
-          </form>
-          
-          <div className="text-center mt-6">
-            <p className="text-xs text-zion-slate-light">
-              <Clock className="w-3 h-3 inline mr-1" />
-              Available worldwide, 24 hours a day
+            <GradientHeading className="mb-6 text-4xl md:text-5xl lg:text-6xl leading-tight">
+              24x7 Global IT Onsite Services
+            </GradientHeading>
+            
+            <p className="text-lg md:text-xl text-zion-slate-light mb-8 max-w-lg leading-relaxed">
+              Request professional technicians anywhere in the world, anytime you need them. 
+              Fast, reliable, and secure IT solutions for your business.
             </p>
-            <p className="text-xs text-zion-slate-light mt-1">
-              <Shield className="w-3 h-3 inline mr-1" />
-              All technicians are certified and insured
-            </p>
-          </div>
+
+            {/* Feature highlights */}
+            <div className="space-y-4 mb-8">
+              <div className="flex items-center gap-3">
+                <div className="w-2 h-2 bg-zion-cyan rounded-full"></div>
+                <span className="text-zion-cyan-light">Available 24/7 worldwide</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="w-2 h-2 bg-zion-purple rounded-full"></div>
+                <span className="text-zion-purple-light">Certified technicians</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="w-2 h-2 bg-zion-blue rounded-full"></div>
+                <span className="text-zion-blue-light">Same-day response guarantee</span>
+              </div>
+            </div>
+
+            {/* Stats */}
+            <div className="grid grid-cols-3 gap-6 pt-6 border-t border-white/10">
+              <div className="text-center">
+                <div className="text-2xl font-bold text-zion-cyan">150+</div>
+                <div className="text-sm text-zion-slate-light">Countries</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-zion-purple">24/7</div>
+                <div className="text-sm text-zion-slate-light">Support</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-zion-blue">15min</div>
+                <div className="text-sm text-zion-slate-light">Response</div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Right form */}
+          <motion.div variants={itemVariants} className="relative">
+            <div className="relative">
+              {/* Glassmorphism form container */}
+              <div className="backdrop-blur-xl bg-white/10 border border-white/20 rounded-2xl p-8 shadow-2xl">
+                <div className="text-center mb-6">
+                  <div className="w-16 h-16 bg-zion-cyan/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <MapPin className="w-8 h-8 text-zion-cyan" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-2">Request Service</h3>
+                  <p className="text-zion-slate-light">Enter your location to get started</p>
+                </div>
+
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="relative">
+                    <Input
+                      value={location}
+                      onChange={(e) => setLocation(e.target.value)}
+                      placeholder="Enter service location (e.g., New York, NY)"
+                      className="w-full bg-white/10 border-white/30 focus:border-zion-cyan focus:ring-zion-cyan text-white placeholder-zion-slate-light rounded-xl py-4 px-4 text-lg backdrop-blur-sm"
+                      required
+                    />
+                    <MapPin className="absolute right-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-zion-cyan/50" />
+                  </div>
+
+                  <Button 
+                    type="submit" 
+                    className="w-full bg-gradient-to-r from-zion-cyan to-zion-blue hover:from-zion-cyan-light hover:to-zion-blue-light text-lg py-4 rounded-xl shadow-lg hover:shadow-zion-cyan/25 transition-all duration-300 transform hover:scale-105 group"
+                  >
+                    <span className="flex items-center gap-2">
+                      Request Service Now
+                      <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
+                    </span>
+                  </Button>
+                </form>
+
+                {/* Trust indicators */}
+                <div className="mt-6 pt-6 border-t border-white/10">
+                  <div className="flex items-center justify-center gap-4 text-xs text-zion-slate-light">
+                    <div className="flex items-center gap-1">
+                      <Shield className="w-3 h-3 text-zion-cyan" />
+                      <span>Secure</span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <Clock className="w-3 h-3 text-zion-purple" />
+                      <span>Fast</span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <Globe className="w-3 h-3 text-zion-blue" />
+                      <span>Global</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Floating elements */}
+              <div className="absolute -top-4 -right-4 w-8 h-8 bg-zion-cyan/30 rounded-full animate-pulse"></div>
+              <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-zion-purple/30 rounded-full animate-pulse" style={{ animationDelay: "1s" }}></div>
+            </div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }
