@@ -6,7 +6,7 @@ import EnhancedLayout from '../components/layout/EnhancedLayout';
 import EnhancedHero from '../components/EnhancedHero';
 import EnhancedServicesShowcase from '../components/EnhancedServicesShowcase';
 import EnhancedTestimonials from '../components/EnhancedTestimonials';
-import AdvancedContactForm from '../components/AdvancedContactForm';
+import EnhancedContactForm from '../components/EnhancedContactForm';
 import AdvancedStats from '../components/AdvancedStats';
 import AdvancedFeaturesShowcase from '../components/AdvancedFeaturesShowcase';
 import AdvancedPricing from '../components/AdvancedPricing';
@@ -340,8 +340,8 @@ const Home: NextPage = () => {
         {/* Advanced Newsletter Section */}
         <AdvancedNewsletter />
 
-        {/* Advanced Contact Form Section */}
-        <AdvancedContactForm />
+        {/* Enhanced Contact Form Section */}
+        <EnhancedContactForm />
       </main>
     </EnhancedLayout>
   );
