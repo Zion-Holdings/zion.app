@@ -1,18 +1,12 @@
 import type { NextPage } from 'next';
+import Head from 'next/head';
 import Link from 'next/link';
-import Seo from '../../components/seo/Seo';
 
-const Index: NextPage = () => {
+export default function BlogIndex() {
   return (
-    <div>
-      <Seo title="Blog" description="Insights on AI, DevOps, and engineering from Zion." openGraph={{ title: 'Blog', description: 'Insights on AI, DevOps, and engineering from Zion.' }} />
-      <main>
-        <h1>Blog</h1>
-        <p>Blog content coming soon...</p>
-        <Link href="/blog">Back to Blog</Link>
-      </main>
+    <div className="space-y-2">
+      <h1 className="text-2xl font-semibold">Blog</h1>
+      <p>Articles coming soon.</p>
     </div>
   );
-};
-
-export default Index;
+}

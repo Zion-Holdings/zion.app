@@ -1,11 +1,8 @@
-import React from 'react';
-import EnhancedLayout from '../components/layout/EnhancedLayout';
-
-export default function IoTPlatformsPage() {
+export default function IotPlatforms() {
   return (
-    <EnhancedLayout>
+    <div className="space-y-2">
       <h1 className="text-2xl font-semibold">IoT Platforms</h1>
-      <p className="text-gray-600">Content coming soon.</p>
-    </EnhancedLayout>
+      <p>Overview of IoT platform integrations.</p>
+    </div>
   );
 }

@@ -1,11 +1,8 @@
-import React from 'react';
-import EnhancedLayout from '../../components/layout/EnhancedLayout';
-
-export default function ResetPasswordPage() {
+export default function ResetPassword() {
   return (
-    <EnhancedLayout>
+    <div className="space-y-2">
       <h1 className="text-2xl font-semibold">Reset Password</h1>
-      <p className="text-gray-600">Flow coming soon.</p>
-    </EnhancedLayout>
+      <p>Set your new password.</p>
+    </div>
   );
 }

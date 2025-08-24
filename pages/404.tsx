@@ -1,11 +1,8 @@
-import React from 'react';
-import EnhancedLayout from '../components/layout/EnhancedLayout';
-
-export default function NotFoundPage() {
+export default function NotFound() {
   return (
-    <EnhancedLayout>
+    <div className="space-y-2">
       <h1 className="text-2xl font-semibold">404</h1>
-      <p className="text-gray-600">Page not found.</p>
-    </EnhancedLayout>
+      <p>Page not found.</p>
+    </div>
   );
 }

@@ -1,11 +1,8 @@
-import React from 'react';
-import EnhancedLayout from '../components/layout/EnhancedLayout';
-
-export default function BlockchainSolutionsPage() {
+export default function BlockchainSolutions() {
   return (
-    <EnhancedLayout>
+    <div className="space-y-2">
       <h1 className="text-2xl font-semibold">Blockchain Solutions</h1>
-      <p className="text-gray-600">Content coming soon.</p>
-    </EnhancedLayout>
+      <p>Decentralized offerings overview.</p>
+    </div>
   );
 }
