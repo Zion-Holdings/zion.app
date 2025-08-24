@@ -1,0 +1,8 @@
+{
+  "accessToken": "jwt_mock_access_token_for_login",
+  "refreshToken": "mock_refresh_token",
+  "user": {
+    "id": "mock_user_id_1",
+    "email": "test_user@example.com"
+  }
+}

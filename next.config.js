@@ -2,12 +2,16 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  
+  // Image optimization
   images: {
-    domains: ["localhost"],
+    domains: ['ziontechgroup.com'],
     unoptimized: true,
   },
+
+  // Compiler optimizations
   compiler: {
-    removeConsole: process.env.NODE_ENV === "production",
+    removeConsole: process.env.NODE_ENV === 'production',
   },
 };
 

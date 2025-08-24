@@ -8,258 +8,307 @@ const DYNAMIC_CACHE = 'zion-dynamic-v1.0.0';
 // Files to cache immediately
 const STATIC_FILES = [
   '/',
+  '/about',
+  '/contact',
   '/offline',
   '/manifest.json',
   '/favicon.ico',
-  '/apple-touch-icon.png'
+  '/icons/icon-192x192.png',
+  '/icons/icon-512x512.png'
 ];
 
-// API endpoints to cache (commented out for now)
-// const API_CACHE = [
-//   '/api/analytics',
-//   '/api/error-reporting'
-// ];
+// API routes to cache
+const API_ROUTES = [
+  '/api/health',
+  '/api/analytics/performance',
+  '/api/analytics/error'
+];
 
 // Install event - cache static files
 self.addEventListener('install', (event) => {
+  console.log('[SW] Installing service worker...');
+  
   event.waitUntil(
-    caches.open(CACHE_NAME)
+    caches.open(STATIC_CACHE)
       .then((cache) => {
-        console.log('Caching static files');
+        console.log('[SW] Caching static files');
         return cache.addAll(STATIC_FILES);
       })
       .then(() => {
-        console.log('Static files cached successfully');
+        console.log('[SW] Static files cached successfully');
         return self.skipWaiting();
       })
       .catch((error) => {
-        console.error('Failed to cache static files:', error);
+        console.error('[SW] Failed to cache static files:', error);
       })
-  );
-});
-
-// Fetch event - serve from cache when offline
-self.addEventListener('fetch', (event) => {
-  event.respondWith(
-    caches.match(event.request)
-      .then((response) => {
-        // Return cached version or fetch from network
-        if (response) {
-          return response;
-        }
-        return fetch(event.request);
-      }
-    )
   );
 });
 
 // Activate event - clean up old caches
 self.addEventListener('activate', (event) => {
+  console.log('[SW] Activating service worker...');
+  
   event.waitUntil(
     caches.keys()
       .then((cacheNames) => {
         return Promise.all(
           cacheNames.map((cacheName) => {
             if (cacheName !== STATIC_CACHE && cacheName !== DYNAMIC_CACHE) {
-              console.log('Deleting old cache:', cacheName);
+              console.log('[SW] Deleting old cache:', cacheName);
               return caches.delete(cacheName);
             }
           })
         );
       })
       .then(() => {
-        console.log('Service worker activated');
+        console.log('[SW] Service worker activated');
         return self.clients.claim();
       })
   );
 });
 
-// Fetch event - implement caching strategies
+// Fetch event - handle network requests
 self.addEventListener('fetch', (event) => {
   const { request } = event;
   const url = new URL(request.url);
-
+  
   // Skip non-GET requests
   if (request.method !== 'GET') {
     return;
   }
-
-  // Skip chrome-extension and other non-http requests
-  if (!url.protocol.startsWith('http')) {
-    return;
-  }
-
+  
   // Handle different types of requests
-  if (url.pathname === '/') {
-    // Homepage - cache first strategy
-    event.respondWith(cacheFirst(request, STATIC_CACHE));
-  } else if (url.pathname.startsWith('/api/')) {
-    // API requests - network first strategy
-    event.respondWith(networkFirst(request, DYNAMIC_CACHE));
-  } else if (url.pathname.startsWith('/_next/') || url.pathname.startsWith('/static/')) {
-    // Static assets - cache first strategy
-    event.respondWith(cacheFirst(request, STATIC_CACHE));
-  } else if (url.pathname.startsWith('/images/') || url.pathname.startsWith('/icons/')) {
-    // Images - cache first strategy
-    event.respondWith(cacheFirst(request, STATIC_CACHE));
+  if (url.pathname.startsWith('/api/')) {
+    // API requests - network first with cache fallback
+    event.respondWith(handleApiRequest(request));
+  } else if (url.pathname.startsWith('/_next/')) {
+    // Next.js static assets - cache first
+    event.respondWith(handleStaticAsset(request));
+  } else if (url.pathname === '/' || url.pathname.startsWith('/about') || url.pathname.startsWith('/contact')) {
+    // Main pages - network first with cache fallback
+    event.respondWith(handlePageRequest(request));
   } else {
-    // Other pages - network first strategy
-    event.respondWith(networkFirst(request, DYNAMIC_CACHE));
+    // Other requests - cache first
+    event.respondWith(handleCacheFirst(request));
   }
 });
 
-// Cache First Strategy
-async function cacheFirst(request, cacheName) {
+// Handle API requests
+async function handleApiRequest(request) {
   try {
+    // Try network first
+    const networkResponse = await fetch(request);
+    
+    if (networkResponse.ok) {
+      // Cache successful responses
+      const cache = await caches.open(DYNAMIC_CACHE);
+      cache.put(request, networkResponse.clone());
+      return networkResponse;
+    }
+    
+    // If network fails, try cache
     const cachedResponse = await caches.match(request);
     if (cachedResponse) {
       return cachedResponse;
     }
     
-    const networkResponse = await fetch(request);
-    if (networkResponse.ok) {
-      const cache = await caches.open(cacheName);
-      cache.put(request, networkResponse.clone());
-    }
     return networkResponse;
   } catch (error) {
-    console.error('Cache first strategy failed:', error);
-    // Check if Response is available (it should be in service worker context)
-    if (typeof Response !== 'undefined') {
-      return new Response('Network error', { status: 503, statusText: 'Service Unavailable' });
+    console.log('[SW] Network failed for API request, trying cache:', request.url);
+    
+    // Try cache as fallback
+    const cachedResponse = await caches.match(request);
+    if (cachedResponse) {
+      return cachedResponse;
     }
-    // Fallback for older browsers
-    return { status: 503, statusText: 'Service Unavailable' };
+    
+    // Return offline response for API requests
+    return new Response(
+      JSON.stringify({ error: 'Offline', message: 'Service unavailable offline' }),
+      {
+        status: 503,
+        statusText: 'Service Unavailable',
+        headers: { 'Content-Type': 'application/json' }
+      }
+    );
   }
 }
 
-// Network First Strategy
-async function networkFirst(request, cacheName) {
+// Handle page requests
+async function handlePageRequest(request) {
   try {
+    // Try network first
     const networkResponse = await fetch(request);
-    if (networkResponse.ok) {
-      const cache = await caches.open(cacheName);
-      cache.put(request, networkResponse.clone());
-    }
-    return networkResponse;
-  } catch (error) {
-    console.error('Network first strategy failed:', error);
     
-    // Try to get from cache
+    if (networkResponse.ok) {
+      // Cache successful responses
+      const cache = await caches.open(DYNAMIC_CACHE);
+      cache.put(request, networkResponse.clone());
+      return networkResponse;
+    }
+    
+    // If network fails, try cache
     const cachedResponse = await caches.match(request);
     if (cachedResponse) {
       return cachedResponse;
     }
     
-    // Return offline page for HTML requests
-    if (request.headers.get('accept')?.includes('text/html')) {
-      return caches.match('/offline');
+    return networkResponse;
+  } catch (error) {
+    console.log('[SW] Network failed for page request, trying cache:', request.url);
+    
+    // Try cache as fallback
+    const cachedResponse = await caches.match(request);
+    if (cachedResponse) {
+      return cachedResponse;
     }
     
-    // Check if Response is available (it should be in service worker context)
-    if (typeof Response !== 'undefined') {
-      return new Response('Network error', { status: 503, statusText: 'Service Unavailable' });
+    // Return offline page
+    return caches.match('/offline');
+  }
+}
+
+// Handle static assets
+async function handleStaticAsset(request) {
+  const cachedResponse = await caches.match(request);
+  if (cachedResponse) {
+    return cachedResponse;
+  }
+  
+  try {
+    const networkResponse = await fetch(request);
+    if (networkResponse.ok) {
+      const cache = await caches.open(STATIC_CACHE);
+      cache.put(request, networkResponse.clone());
     }
-    // Fallback for older browsers
-    return { status: 503, statusText: 'Service Unavailable' };
+    return networkResponse;
+  } catch (error) {
+    console.error('[SW] Failed to fetch static asset:', request.url, error);
+    throw error;
+  }
+}
+
+// Handle cache-first strategy
+async function handleCacheFirst(request) {
+  const cachedResponse = await caches.match(request);
+  if (cachedResponse) {
+    return cachedResponse;
+  }
+  
+  try {
+    const networkResponse = await fetch(request);
+    if (networkResponse.ok) {
+      const cache = await caches.open(DYNAMIC_CACHE);
+      cache.put(request, networkResponse.clone());
+    }
+    return networkResponse;
+  } catch (error) {
+    console.error('[SW] Failed to fetch resource:', request.url, error);
+    throw error;
   }
 }
 
 // Background sync for offline actions
 self.addEventListener('sync', (event) => {
+  console.log('[SW] Background sync triggered:', event.tag);
+  
   if (event.tag === 'background-sync') {
     event.waitUntil(doBackgroundSync());
   }
 });
 
+// Handle background sync
 async function doBackgroundSync() {
   try {
-    // Perform background sync operations
-    console.log('Performing background sync');
+    // Get all clients
+    const clients = await self.clients.matchAll();
     
-    // Example: sync analytics data
-    const analyticsData = await getStoredAnalytics();
-    if (analyticsData.length > 0) {
-      await syncAnalytics(analyticsData);
-    }
-    
-    console.log('Background sync completed');
-  } catch (error) {
-    console.error('Background sync failed:', error);
-  }
-}
-
-// Get stored analytics data
-async function getStoredAnalytics() {
-  // This would typically get data from IndexedDB
-  return [];
-}
-
-// Sync analytics data
-async function syncAnalytics(data) {
-  try {
-    const response = await fetch('/api/analytics', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data)
+    // Notify clients about sync
+    clients.forEach((client) => {
+      client.postMessage({
+        type: 'BACKGROUND_SYNC',
+        message: 'Background sync completed'
+      });
     });
     
-    if (response.ok) {
-      console.log('Analytics synced successfully');
-    }
+    console.log('[SW] Background sync completed');
   } catch (error) {
-    console.error('Failed to sync analytics:', error);
+    console.error('[SW] Background sync failed:', error);
   }
 }
 
-// Push notification handling
+// Handle push notifications
 self.addEventListener('push', (event) => {
+  console.log('[SW] Push notification received:', event);
+  
   if (event.data) {
     const data = event.data.json();
+    
     const options = {
-      body: data.body,
+      body: data.body || 'New notification from Zion Tech Group',
       icon: '/icons/icon-192x192.png',
-      badge: '/icons/badge-72x72.png',
-      vibrate: [100, 50, 100],
-      data: {
-        dateOfArrival: Date.now(),
-        primaryKey: 1
-      },
-      actions: [
-        {
-          action: 'explore',
-          title: 'Explore',
-          icon: '/icons/checkmark.png'
-        },
-        {
-          action: 'close',
-          title: 'Close',
-          icon: '/icons/xmark.png'
-        }
-      ]
+      badge: '/icons/icon-72x72.png',
+      tag: data.tag || 'default',
+      data: data.data || {},
+      actions: data.actions || [],
+      requireInteraction: data.requireInteraction || false,
+      silent: data.silent || false
     };
-
+    
     event.waitUntil(
-      self.registration.showNotification(data.title, options)
+      self.registration.showNotification(data.title || 'Zion Tech Group', options)
     );
   }
 });
 
-// Notification click handling
+// Handle notification clicks
 self.addEventListener('notificationclick', (event) => {
+  console.log('[SW] Notification clicked:', event);
+  
   event.notification.close();
-
-      if (event.action === 'explore') {
-      event.waitUntil(
-        self.clients.openWindow('/')
-      );
-    }
+  
+  if (event.action) {
+    // Handle specific action
+    console.log('[SW] Action clicked:', event.action);
+  } else {
+    // Default click behavior
+    event.waitUntil(
+      self.clients.matchAll({ type: 'window' })
+        .then((clients) => {
+          if (clients.length > 0) {
+            // Focus existing window
+            return clients[0].focus();
+          } else {
+            // Open new window
+            return self.clients.openWindow('/');
+          }
+        })
+    );
+  }
 });
 
-// Message handling from main thread
+// Handle notification close
+self.addEventListener('notificationclose', (event) => {
+  console.log('[SW] Notification closed:', event);
+  
+  // Track notification close for analytics
+  event.waitUntil(
+    fetch('/api/analytics/notification', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        action: 'close',
+        notificationId: event.notification.tag,
+        timestamp: Date.now()
+      })
+    }).catch(console.error)
+  );
+});
+
+// Handle message events from main thread
 self.addEventListener('message', (event) => {
+  console.log('[SW] Message received:', event.data);
+  
   if (event.data && event.data.type === 'SKIP_WAITING') {
     self.skipWaiting();
   }
@@ -269,11 +318,52 @@ self.addEventListener('message', (event) => {
   }
 });
 
+// Periodic background sync (if supported)
+if ('periodicSync' in self.registration) {
+  self.addEventListener('periodicsync', (event) => {
+    console.log('[SW] Periodic sync triggered:', event.tag);
+    
+    if (event.tag === 'content-update') {
+      event.waitUntil(updateContent());
+    }
+  });
+}
+
+// Update content periodically
+async function updateContent() {
+  try {
+    // Check for content updates
+    const response = await fetch('/api/content/check-updates');
+    if (response.ok) {
+      const updates = await response.json();
+      
+      if (updates.hasUpdates) {
+        // Clear dynamic cache to force refresh
+        const cache = await caches.open(DYNAMIC_CACHE);
+        await cache.clear();
+        
+        // Notify clients
+        const clients = await self.clients.matchAll();
+        clients.forEach((client) => {
+          client.postMessage({
+            type: 'CONTENT_UPDATED',
+            message: 'New content available'
+          });
+        });
+      }
+    }
+  } catch (error) {
+    console.error('[SW] Failed to check for content updates:', error);
+  }
+}
+
 // Error handling
 self.addEventListener('error', (event) => {
-  console.error('Service worker error:', event.error);
+  console.error('[SW] Service worker error:', event.error);
 });
 
 self.addEventListener('unhandledrejection', (event) => {
-  console.error('Service worker unhandled rejection:', event.reason);
+  console.error('[SW] Unhandled promise rejection:', event.reason);
 });
+
+console.log('[SW] Service worker script loaded');

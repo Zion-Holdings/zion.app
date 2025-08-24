@@ -1,0 +1,35 @@
+const path = require('path');
+const { spawnSync } = require('child_process');
+
+function runNode(relPath, args = []) {
+  const abs = path.resolve(__dirname, '..', '..', relPath);
+  const res = spawnSync('node', [abs, ...args], { stdio: 'pipe', encoding: 'utf8' });
+  return { status: res.status || 0, stdout: res.stdout || '', stderr: res.stderr || '' };
+}
+
+exports.config = {
+<<<<<<< HEAD:netlify/functions/a11y-audit-runner.js
+  schedule: '17 */3 * * *', // every 3 hours, offset
+=======
+  schedule: '*/20 * * * *', // every 20 minutes
+>>>>>>> origin/cursor/automate-futuristic-front-page-enhancements-738d:netlify/functions/ui-enhancer.js
+};
+
+exports.handler = async () => {
+  const logs = [];
+  function logStep(name, fn) {
+    logs.push(`\n=== ${name} ===`);
+    const { status, stdout, stderr } = fn();
+    if (stdout) logs.push(stdout);
+    if (stderr) logs.push(stderr);
+    logs.push(`exit=${status}`);
+    return status;
+  }
+
+  process.env.CANONICAL_URL = process.env.CANONICAL_URL || process.env.SITE_URL || process.env.URL || 'https://ziontechgroup.com';
+
+  logStep('a11y:audit', () => runNode('automation/a11y-audit.cjs'));
+  logStep('git:sync', () => runNode('automation/advanced-git-sync.cjs'));
+
+  return { statusCode: 200, body: logs.join('\n') };
+};

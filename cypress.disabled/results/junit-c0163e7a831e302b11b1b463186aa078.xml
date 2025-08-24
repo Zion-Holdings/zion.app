@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="1.731" tests="1" failures="1">
+  <testsuite name="Root Suite" timestamp="2025-06-11T01:14:25" tests="0" file="cypress/e2e/temp_login_test.cy.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Temporary Login Test" timestamp="2025-06-11T01:14:25" tests="1" time="1.729" failures="1">
+    <testcase name="Temporary Login Test should successfully login via API" time="0.000" classname="should successfully login via API">
+      <failure message="`cy.request()` failed trying to load:
+
+http://localhost:3000/api/auth/login
+
+We attempted to make an http request to this URL but the request failed without a response.
+
+We received this error at the network level:
+
+  &gt; Error: connect ECONNREFUSED 127.0.0.1:3000
+
+-----------------------------------------------------------
+
+The request we sent was:
+
+Method: POST
+URL: http://localhost:3000/api/auth/login
+
+-----------------------------------------------------------
+
+Common situations why this would fail:
+  - you don&apos;t have internet access
+  - you forgot to run / boot your web server
+  - your web server isn&apos;t accessible
+  - you have weird network configuration settings on your computer
+
+https://on.cypress.io/request" type="CypressError"><![CDATA[CypressError: `cy.request()` failed trying to load:
+
+http://localhost:3000/api/auth/login
+
+We attempted to make an http request to this URL but the request failed without a response.
+
+We received this error at the network level:
+
+  > Error: connect ECONNREFUSED 127.0.0.1:3000
+
+-----------------------------------------------------------
+
+The request we sent was:
+
+Method: POST
+URL: http://localhost:3000/api/auth/login
+
+-----------------------------------------------------------
+
+Common situations why this would fail:
+  - you don't have internet access
+  - you forgot to run / boot your web server
+  - your web server isn't accessible
+  - you have weird network configuration settings on your computer
+
+https://on.cypress.io/request
+    at <unknown> (http://localhost:5174/__cypress/runner/cypress_runner.js:136350:70)
+    at tryCatcher (http://localhost:5174/__cypress/runner/cypress_runner.js:1777:23)
+    at <unknown> (http://localhost:5174/__cypress/runner/cypress_runner.js:4173:37)
+    at tryCatcher (http://localhost:5174/__cypress/runner/cypress_runner.js:1777:23)
+    at Promise._settlePromiseFromHandler (http://localhost:5174/__cypress/runner/cypress_runner.js:1489:31)
+    at Promise._settlePromise (http://localhost:5174/__cypress/runner/cypress_runner.js:1546:18)
+    at Promise._settlePromise0 (http://localhost:5174/__cypress/runner/cypress_runner.js:1591:10)
+    at Promise._settlePromises (http://localhost:5174/__cypress/runner/cypress_runner.js:1667:18)
+    at _drainQueueStep (http://localhost:5174/__cypress/runner/cypress_runner.js:2377:12)
+    at _drainQueue (http://localhost:5174/__cypress/runner/cypress_runner.js:2370:9)
+    at Async._drainQueues (http://localhost:5174/__cypress/runner/cypress_runner.js:2386:5)
+    at Async.drainQueues (http://localhost:5174/__cypress/runner/cypress_runner.js:2256:14)
+From Your Spec Code:
+    at Context.eval (webpack://project/./cypress/support/commands.js:2:5)
+    at wrapped (http://localhost:5174/__cypress/runner/cypress_runner.js:141516:43)
+
+From Node.js Internals:
+  RequestError: Error: connect ECONNREFUSED 127.0.0.1:3000
+      at new r (<embedded>:227:431697)
+      at ee.callback (<embedded>:227:437698)
+      at e.callback.s.callback [as _callback] (<embedded>:227:437144)
+      at s._callback.s.callback.s.callback (<embedded>:290:105750)
+      at ee.emit (node:events:518:28)
+      at ee.onRequestError (<embedded>:290:114692)
+      at ClientRequest.emit (node:events:530:35)
+      at emitErrorEvent (node:_http_client:101:11)
+      at Socket.socketErrorListener (node:_http_client:504:5)
+      at Socket.emit (node:events:518:28)
+      at emitErrorNT (node:internal/streams/destroy:169:8)
+      at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+      at process.processTicksAndRejections (node:internal/process/task_queues:82:21)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>

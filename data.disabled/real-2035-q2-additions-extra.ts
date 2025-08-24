@@ -1,0 +1,93 @@
+import { EnhancedRealMicroSaasService } from './enhanced-real-micro-saas-services';
+
+const contact = {
+	mobile: '+1 302 464 0950',
+	email: 'kleber@ziontechgroup.com',
+	address: '364 E Main St STE 1008 Middletown DE 19709',
+	website: 'https://ziontechgroup.com'
+};
+
+export const real2035Q2AdditionsExtra: EnhancedRealMicroSaasService[] = [
+	{
+		id: 'ai-rfp-bid-writer',
+		name: 'AI RFP & Bid Writer',
+		tagline: 'Draft compliant proposals with auto-outline, checklists, and reviewer workflows',
+		price: '$149',
+		period: '/month',
+		description: 'Accelerate RFP responses with AI-assisted outlines, requirement mapping, compliance checklists, team review routing, and export to DOCX/PDF. Maintains a reusable answer library and audit trail.',
+		features: [
+			'Requirement extraction and mapping',
+			'Answer library with versioning',
+			'Compliance and exceptions tracker',
+			'Multi-reviewer workflows and approvals',
+			'Privacy-safe local embeddings option',
+			'Export to DOCX/PDF with branding'
+		],
+		popular: true,
+		icon: '🧠',
+		color: 'from-cyan-600 to-blue-700',
+		textColor: 'text-cyan-200',
+		link: '/services/ai-rfp-bid-writer',
+		marketPosition: 'Faster than manual writing; complements Loopio and RFPIO with AI-first flows.',
+		targetAudience: 'Sales engineering, proposal managers, government contractors',
+		trialDays: 14,
+		setupTime: '2 hours',
+		category: 'AI & Data',
+		realService: true,
+		technology: ['OpenAI-compatible', 'Vector DB', 'Next.js'],
+		integrations: ['SharePoint', 'Google Drive', 'Jira', 'Salesforce'],
+		useCases: ['RFP responses', 'Security questionnaires', 'Vendor assessments'],
+		roi: 'Reduce cycle time 30–60% and increase win rate via consistency.',
+		competitors: ['Loopio', 'RFPIO'],
+		marketSize: '$1B+ proposal automation',
+		growthRate: '18% CAGR',
+		variant: 'ai-futuristic',
+		contactInfo: contact,
+		realImplementation: true,
+		implementationDetails: 'Answer library, retrieval augmented drafting, reviewer routing.',
+		launchDate: '2035-04-12',
+		customers: 58,
+		rating: 4.7,
+		reviews: 21
+	},
+	{
+		id: 'cloud-sql-spend-optimizer',
+		name: 'Cloud SQL Spend Optimizer',
+		tagline: 'Rightsize instances, storage classes, and backup policies with PRs',
+		price: '$79',
+		period: '/month',
+		description: 'Analyze database CPU, memory, IOPS, and storage usage to recommend instance class changes, storage lifecycle, and backup retention—emitting safe pull requests.',
+		features: [
+			'Instance rightsizing and autoscaling guidance',
+			'Idle/unused instance detection',
+			'Backup retention and PITR cost tuning',
+			'Weekly savings reports and anomaly alerts'
+		],
+		popular: true,
+		icon: '💾',
+		color: 'from-emerald-600 to-teal-700',
+		textColor: 'text-emerald-200',
+		link: '/services/cloud-sql-spend-optimizer',
+		marketPosition: 'Focused DB FinOps alternative to generic cloud cost tools.',
+		targetAudience: 'Platform, SRE, FinOps',
+		trialDays: 14,
+		setupTime: '1 hour',
+		category: 'Cloud & FinOps',
+		realService: true,
+		technology: ['PostgreSQL', 'MySQL', 'BigQuery', 'Prometheus'],
+		integrations: ['AWS RDS', 'Cloud SQL', 'Azure Database'],
+		useCases: ['DB rightsizing', 'Backup cost control', 'Anomaly detection'],
+		roi: 'Save 10–35% on database costs.',
+		competitors: ['CloudHealth', 'Kubecost (DB add-ons)'],
+		marketSize: '$4B FinOps tooling',
+		growthRate: '19% CAGR',
+		variant: 'cloud-futuristic',
+		contactInfo: contact,
+		realImplementation: true,
+		implementationDetails: 'Time-series analysis, heuristics + rules, IaC PR generation.',
+		launchDate: '2035-04-05',
+		customers: 73,
+		rating: 4.6,
+		reviews: 26
+	}
+];

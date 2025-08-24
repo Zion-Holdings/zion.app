@@ -1,7 +1,10 @@
 [build]
-  command = "npm ci && npm install react@18.3.1 react-dom@18.3.1 && npm run build"
-  publish = "out"
+  command = "pnpm install --frozen-lockfile && pnpm run build"
+  publish = ".next"
   functions = "netlify/functions"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
 
 [build.environment]
   NODE_OPTIONS = "--max-old-space-size=6144 --openssl-legacy-provider"

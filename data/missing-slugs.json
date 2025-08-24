@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+[]
+=======
 [
 =======
   "ai-autonomous-business-intelligence",
@@ -74,3 +77,4 @@
   "space-colonization-services",
   "space-mining-platform"
 ]
+>>>>>>> cursor/install-dependencies-with-lockfile-mismatch-a802

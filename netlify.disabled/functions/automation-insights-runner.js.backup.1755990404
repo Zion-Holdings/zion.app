@@ -1,0 +1,56 @@
+const path = require('path');
+const { spawnSync } = require('child_process');
+
+function runNode(relPath, args = []) {
+  const abs = path.resolve(__dirname, '..', '..', relPath);
+  const res = spawnSync('node', [abs, ...args], { stdio: 'pipe', encoding: 'utf8' });
+  return { status: res.status || 0, stdout: res.stdout || '', stderr: res.stderr || '' };
+}
+
+exports.config = {
+<<<<<<<< HEAD:netlify/functions/a11y-audit-runner.js.backup.1755991431
+  schedule: '*/20 * * * *', // every 20 minutes
+========
+  schedule: '*/2 * * * *',
+>>>>>>>> 5f48a381108fa3a8a43c189dd4b043133ce9307e:netlify/functions/automation-insights-runner.js.backup.1755990404
+};
+
+exports.handler = async () => {
+  const logs = [];
+  function logStep(name, fn) {
+    logs.push(`\n=== ${name} ===`);
+    const { status, stdout, stderr } = fn();
+    if (stdout) logs.push(stdout);
+    if (stderr) logs.push(stderr);
+    logs.push(`exit=${status}`);
+    return status;
+  }
+
+<<<<<<<< HEAD:netlify/functions/a11y-audit-runner.js.backup.1755991431
+  process.env.CANONICAL_URL = process.env.CANONICAL_URL || process.env.SITE_URL || process.env.URL || 'https://ziontechgroup.com';
+========
+<<<<<<< HEAD:netlify/functions/automation-insights-runner.js
+  logStep('automation:insights', () => runNode('automation/automation-insights-digest.cjs'));
+  logStep('git:sync', () => runNode('automation/advanced-git-sync.cjs'));
+=======
+  // Crawl external links and generate report
+  logStep('links:check', () => runNode('scripts/automations/check_links.cjs'));
+>>>>>>>> 5f48a381108fa3a8a43c189dd4b043133ce9307e:netlify/functions/automation-insights-runner.js.backup.1755990404
+
+<<<<<<< HEAD:netlify/functions/a11y-audit-runner.js
+  logStep('a11y:audit', () => runNode('automation/a11y-audit.cjs'));
+  logStep('git:sync', () => runNode('automation/advanced-git-sync.cjs'));
+=======
+  // If there are any local link fixers, run them (optional best-effort)
+  try {
+    logStep('links:fixer', () => runNode('automation/site-link-fixer.cjs'));
+  } catch (error) {
+    logs.push(`No site-link-fixer found or failed gracefully: ${String(error)}`);
+  }
+
+  // Commit and push any changes
+  logStep('git:sync', () => runNode('automation/git-sync.cjs'));
+>>>>>>> origin/cursor/develop-autonomous-cloud-agents-for-automation-orchestration-ded0:netlify/functions/link-crawler.js
+
+  return { statusCode: 200, body: logs.join('\n') };
+};

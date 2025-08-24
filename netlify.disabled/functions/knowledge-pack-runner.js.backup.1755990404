@@ -1,0 +1,112 @@
+const fs = require('fs');
+const path = require('path');
+const { spawnSync } = require('child_process');
+
+<<<<<<< HEAD
+function runGitSync() {
+  try {
+    const script = path.resolve(process.cwd(), 'automation', 'advanced-git-sync.cjs');
+    const res = spawnSync('node', [script], { stdio: 'pipe', encoding: 'utf8' });
+    return { status: res.status || 0 };
+  } catch (e) {
+    return { status: 1 };
+  }
+}
+
+function collectSummaries(dir, root) {
+  const items = [];
+  if (!fs.existsSync(dir)) return items;
+  const entries = fs.readdirSync(dir, { withFileTypes: true });
+  for (const e of entries) {
+    const p = path.join(dir, e.name);
+    if (e.isDirectory()) items.push(...collectSummaries(p, root));
+    else if (/\.(md|mdx|tsx|jsx)$/i.test(e.name)) {
+      const content = fs.readFileSync(p, 'utf8');
+      const titleMatch = content.match(/<title>([^<]+)<\/title>|export\s+const\s+title\s*=\s*['\"]([^'\"]+)['\"]/i);
+      const title = (titleMatch && (titleMatch[1] || titleMatch[2])) || path.basename(p);
+      items.push({ file: path.relative(root, p), title });
+    }
+  }
+  return items;
+}
+
+exports.handler = async () => {
+  const root = process.cwd();
+  const docsDir = path.join(root, 'docs');
+  const pagesDir = path.join(root, 'pages');
+  const pack = {
+    generatedAt: new Date().toISOString(),
+    docs: collectSummaries(docsDir, root),
+    pages: collectSummaries(pagesDir, root),
+  };
+  const outDir = path.join(root, 'data', 'reports');
+  fs.mkdirSync(outDir, { recursive: true });
+  fs.writeFileSync(path.join(outDir, 'knowledge-pack.json'), JSON.stringify(pack, null, 2));
+  const git = runGitSync();
+  return { statusCode: 200, body: JSON.stringify({ ok: true, git }) };
+};
+=======
+function countFiles(dir, exts) {
+  try {
+    const entries = fs.readdirSync(dir, { withFileTypes: true });
+    let count = 0;
+    for (const e of entries) {
+      const p = path.join(dir, e.name);
+      if (e.isDirectory()) count += countFiles(p, exts);
+      else if (!exts || exts.some(ext => e.name.endsWith(ext))) count++;
+    }
+    return count;
+  } catch (_) {
+    return 0;
+  }
+}
+
+function writeJson(filePath, data) {
+  fs.mkdirSync(path.dirname(filePath), { recursive: true });
+  fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
+}
+
+function runNode(relPath, args = []) {
+  const abs = path.resolve(__dirname, '..', '..', relPath);
+  const res = spawnSync('node', [abs, ...args], { stdio: 'pipe', encoding: 'utf8' });
+  return { status: res.status || 0, stdout: res.stdout || '', stderr: res.stderr || '' };
+}
+
+exports.config = {
+  schedule: '*/10 * * * *',
+};
+
+exports.handler = async () => {
+  const repoRoot = path.resolve(__dirname, '..', '..');
+  const now = new Date().toISOString();
+
+  const stats = {
+    generatedAt: now,
+    components: countFiles(path.join(repoRoot, 'components'), ['.tsx', '.ts', '.jsx', '.js']),
+    pages: countFiles(path.join(repoRoot, 'pages'), ['.tsx', '.ts', '.jsx', '.js', '.mdx', '.md']),
+    docs: countFiles(path.join(repoRoot, 'docs'), ['.md', '.mdx']),
+    publicAssets: countFiles(path.join(repoRoot, 'public'), undefined),
+  };
+
+  const pack = {
+    meta: { generatedAt: now, repo: 'zion.app' },
+    stats,
+    links: [
+      { title: 'Automation Hub', href: '/automation' },
+      { title: 'Site Health', href: '/site-health' },
+      { title: 'Newsroom', href: '/newsroom' }
+    ]
+  };
+
+  const outFile = path.join(repoRoot, 'public', 'knowledge-pack.json');
+  writeJson(outFile, pack);
+
+  const sync = runNode('automation/advanced-git-sync.cjs');
+  const logs = [];
+  if (sync.stdout) logs.push(sync.stdout);
+  if (sync.stderr) logs.push(sync.stderr);
+  logs.push(`git-sync exit=${sync.status}`);
+
+  return { statusCode: 200, headers: { 'content-type': 'application/json' }, body: JSON.stringify({ ok: true, generatedAt: now, stats }) };
+};
+>>>>>>> origin/cursor/develop-autonomous-cloud-agents-for-automation-orchestration-ded0

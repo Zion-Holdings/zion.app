@@ -1,0 +1,62 @@
+const path = require('path');
+const { spawnSync } = require('child_process');
+
+<<<<<<< HEAD
+function runNode(relPath, args = []) {
+  const abs = path.resolve(__dirname, '..', '..', relPath);
+=======
+function runNode(relativePath, args = []) {
+  const abs = path.resolve(__dirname, '..', '..', relativePath);
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-5f41
+  const res = spawnSync('node', [abs, ...args], { stdio: 'pipe', encoding: 'utf8' });
+  return { status: res.status || 0, stdout: res.stdout || '', stderr: res.stderr || '' };
+}
+
+<<<<<<< HEAD
+exports.handler = async () => {
+  const logs = [];
+  function logStep(name, fn) {
+=======
+exports.config = {
+  schedule: '*/30 * * * *',
+};
+
+exports.handler = async () => {
+  const logs = [];
+  const step = (name, fn) => {
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-5f41
+    logs.push(`\n=== ${name} ===`);
+    const { status, stdout, stderr } = fn();
+    if (stdout) logs.push(stdout);
+    if (stderr) logs.push(stderr);
+    logs.push(`exit=${status}`);
+    return status;
+<<<<<<< HEAD
+  }
+
+  // Ensure repo info
+  process.env.GIT_BRANCH = process.env.GIT_BRANCH || 'main';
+
+  // Run deps auto-upgrade
+  logStep('deps:auto-upgrade', () => runNode('automation/deps-auto-upgrade.cjs'));
+
+  // Sync key files back to GitHub
+  const filesToSync = [
+    'package.json',
+    'package-lock.json',
+    'automation/logs/deps-auto-upgrade.json'
+  ];
+
+  logStep('git:sync', () => runNode('automation/advanced-git-sync.cjs', filesToSync));
+
+  return { statusCode: 200, body: logs.join('\n') };
+};
+=======
+  };
+
+  step('deps:auto-upgrade', () => runNode('automation/deps-auto-upgrade.cjs'));
+  step('git:sync', () => runNode('automation/advanced-git-sync.cjs'));
+
+  return { statusCode: 200, body: logs.join('\n') };
+};
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-5f41

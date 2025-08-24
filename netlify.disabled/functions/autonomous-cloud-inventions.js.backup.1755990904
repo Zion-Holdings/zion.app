@@ -1,0 +1,41 @@
+const path = require('path');
+const { spawnSync } = require('child_process');
+
+function runNode(relPath, args = []) {
+  const abs = path.resolve(__dirname, '..', '..', relPath);
+  const res = spawnSync('node', [abs, ...args], { stdio: 'pipe', encoding: 'utf8' });
+  return { status: res.status || 0, stdout: res.stdout || '', stderr: res.stderr || '' };
+}
+
+exports.config = {
+<<<<<<<< HEAD:netlify/functions/autonomous-cloud-inventions.js
+  schedule: '*/2 * * * *',
+========
+<<<<<<< HEAD:netlify/functions/automation-insights-runner.js
+  schedule: '*/2 * * * *',
+=======
+  schedule: '*/20 * * * *', // every 20 minutes
+>>>>>>> origin/cursor/automate-futuristic-front-page-enhancements-738d:netlify/functions/ui-enhancer.js
+>>>>>>>> 0326d2d387e86183b2aa59d7ac94999b40abe001:netlify/functions/automation-insights-runner.js.backup.1755990686
+};
+
+exports.handler = async () => {
+  const logs = [];
+  function logStep(name, fn) {
+    logs.push(`\n=== ${name} ===`);
+    const { status, stdout, stderr } = fn();
+    if (stdout) logs.push(stdout);
+    if (stderr) logs.push(stderr);
+    logs.push(`exit=${status}`);
+    return status;
+  }
+
+<<<<<<<< HEAD:netlify/functions/autonomous-cloud-inventions.js
+  logStep('generate:autonomous-cloud-inventions', () => runNode('automation/autonomous-cloud-inventions.cjs'));
+========
+  logStep('automation:insights', () => runNode('automation/automation-insights-digest.cjs'));
+>>>>>>>> 0326d2d387e86183b2aa59d7ac94999b40abe001:netlify/functions/automation-insights-runner.js.backup.1755990686
+  logStep('git:sync', () => runNode('automation/advanced-git-sync.cjs'));
+
+  return { statusCode: 200, body: logs.join('\n') };
+};

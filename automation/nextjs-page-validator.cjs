@@ -33,8 +33,12 @@ function listFiles(root, exts) {
       const p = path.join(dir, e.name);
       if (e.isDirectory()) {
         if (e.name === 'node_modules' || e.name === '.git' || e.name === '.next' || e.name === 'out') continue;
+        // Skip API routes directory
+        if (e.name === 'api') continue;
         walk(p);
       } else if (exts.has(path.extname(e.name).toLowerCase())) {
+        // Skip API route files
+        if (p.includes('/api/')) continue;
         results.push(p);
       }
     }
