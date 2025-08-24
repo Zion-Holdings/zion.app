@@ -1,0 +1,33 @@
+name: Market Intelligence
+
+on:
+  schedule:
+    - cron: '30 6 * * *'
+  workflow_dispatch: {}
+
+jobs:
+  intel:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: dev
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm ci
+      - name: Generate report
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: node automation/market-intel.cjs
+      - name: Commit and push
+        run: |
+          git config user.email "intel-bot@zion.app"
+          git config user.name "Zion Intel Bot"
+          git add data/reports/market-intel/*.md || true
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(intel): daily market intelligence report"
+            git push origin dev
+          else
+            echo "No changes"
+          fi
