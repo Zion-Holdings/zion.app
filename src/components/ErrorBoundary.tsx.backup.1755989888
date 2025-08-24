@@ -1,0 +1,67 @@
+<<<<<<< HEAD
+import React from "react";
+import type { ReactNode } from "react";
+
+interface ErrorBoundaryProps {
+  fallback: ReactNode;
+}
+
+interface ErrorBoundaryState {
+  hasError: boolean;
+}
+
+export class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundaryState> {
+  constructor(props: ErrorBoundaryProps) {
+    super(props);
+    this.state = { hasError: false };
+  }
+
+  static getDerivedStateFromError() {
+    return { hasError: true };
+  }
+
+  componentDidCatch(error: unknown) {
+    console.error("ErrorBoundary caught an error", error);
+=======
+import React from 'react';
+import type { ReactNode, ErrorInfo } from 'react';
+import { toast } from 'react-hot-toast';
+
+interface Props {
+  children: ReactNode;
+}
+
+interface State {
+  hasError: boolean;
+}
+
+export class ErrorBoundary extends React.Component<Props, State> {
+  state: State = { hasError: false };
+
+  static getDerivedStateFromError(): State {
+    return { hasError: true };
+  }
+
+  componentDidCatch(error: Error, _errorInfo: ErrorInfo) {
+    toast.error(error.message || 'An unexpected error occurred');
+>>>>>>> origin/8arrdw-codex/centralize-fetch-error-handling
+  }
+
+  render() {
+    if (this.state.hasError) {
+<<<<<<< HEAD
+      return this.props.fallback;
+    }
+    return this.props.children;
+  }
+}
+
+export default ErrorBoundary;
+=======
+      return null;
+    }
+
+    return this.props.children;
+  }
+}
+>>>>>>> origin/8arrdw-codex/centralize-fetch-error-handling

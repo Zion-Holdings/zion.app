@@ -31,11 +31,11 @@ declare const globalThis: {
   };
 };
 
-// Mock App class that mimics the Slack Bolt SDK behavior
+type CommandHandler = (args: { command?: SlackCommand; ack: SlackAck; respond: SlackRespond }) => Promise<void>;
 class MockApp {
-  private commandHandlers: Record<string, Function> = {};
+  private commandHandlers: Record<string, CommandHandler> = {};
 
-  command(commandName: string, handler: Function) {
+  command(commandName: string, handler: CommandHandler) {
     this.commandHandlers[commandName] = handler;
     return this;
   }
@@ -62,9 +62,9 @@ async function askZionGPT(prompt: string): Promise<string> {
   return `AI response to: ${prompt}`;
 }
 
-app.command('/zion', async ({ command, ack, respond }: { command: SlackCommand, ack: SlackAck, respond: SlackRespond }) => {
+app.command('/zion', async ({ command, ack, respond }: { command?: SlackCommand, ack: SlackAck, respond: SlackRespond }) => {
   await ack();
-  const [action, ...args] = command.text.split(/\s+/);
+  const [action, ...args] = command?.text.split(/\s+/) || [];
 
   switch (action) {
     case 'post-job':
@@ -98,8 +98,9 @@ app.command('/zion-rollback', async ({ ack, respond }: { ack: SlackAck, respond:
   try {
     await switchNetlifySite();
     await respond('Rollback complete. DNS switched to the previous site.');
-  } catch (err: any) {
-    await respond(`Rollback failed: ${err.message}`);
+  } catch (err: unknown) {
+    const message = err instanceof Error ? err.message : String(err);
+    await respond(`Rollback failed: ${message}`);
   }
 });
 
@@ -111,5 +112,20 @@ app.command('/zion-rollback', async ({ ack, respond }: { ack: SlackAck, respond:
   const port = env.PORT ? Number(env.PORT) : 3000;
   await app.start(port);
 })();
+
+// Add this function either inside MockApp or as an exported function
+async function sendSlackAlert(message: string): Promise<void> {
+  // Safely log without direct console reference
+  const safeConsole = typeof globalThis !== 'undefined' ? globalThis.console : undefined;
+  if (safeConsole && safeConsole.log) {
+    safeConsole.log(`SLACK_ALERT: ${message}`);
+  }
+  // In a real scenario, this would use the Slack API to send a message
+  // For example: await app.client.chat.postMessage({ channel: '#alerts', text: message });
+  return Promise.resolve();
+}
+
+// Export it if it's standalone, or ensure it can be called
+export { sendSlackAlert }; // If standalone
 
 export default app;
