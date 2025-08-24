@@ -1,109 +1,79 @@
-exports.handler = async function(event, context) {
-  const githubRepo = process.env.GITHUB_REPO || 'Zion-Holdings/zion.app';
-  const githubBranch = process.env.GIT_BRANCH || 'main';
-  const githubToken = process.env.GITHUB_TOKEN || '';
-  const maxFilesToAnalyze = 200;
+exports.handler = async function() {
+  const fs = require('fs');
+  const path = require('path');
+  const { execSync } = require('child_process');
 
-  function log(message) { console.log(`[content-freshness] ${message}`); }
-
-  async function githubJson(url) {
-    const headers = { 'User-Agent': 'netlify-function', 'Accept': 'application/vnd.github+json' };
-    if (githubToken) headers.Authorization = `token ${githubToken}`;
-    const res = await fetch(url, { headers });
-    if (!res.ok) throw new Error(`${res.status} ${res.statusText} for ${url}`);
-    return res.json();
-  }
-
-  function daysBetween(a, b) {
-    const ms = Math.abs(new Date(a).getTime() - new Date(b).getTime());
-    return Math.round(ms / (1000 * 60 * 60 * 24));
-  }
-
-  async function listRepoTree() {
-    const url = `https://api.github.com/repos/${githubRepo}/git/trees/${encodeURIComponent(githubBranch)}?recursive=1`;
-    const data = await githubJson(url);
-    return (data.tree || []).filter(t => t.type === 'blob').map(t => t.path);
-  }
-
-  async function lastCommitDateForPath(path) {
-    const url = `https://api.github.com/repos/${githubRepo}/commits?path=${encodeURIComponent(path)}&sha=${encodeURIComponent(githubBranch)}&per_page=1`;
-    try {
-      const data = await githubJson(url);
-      const commit = Array.isArray(data) && data.length > 0 ? data[0] : null;
-      return commit ? commit.commit.committer.date : null;
-    } catch (e) {
-      return null;
-    }
-  }
-
-  async function commitJson(path, obj, message) {
-    if (!githubToken) {
-      return { ok: false, reason: 'No GITHUB_TOKEN provided; skipping commit', path };
-    }
-    const content = Buffer.from(JSON.stringify(obj, null, 2)).toString('base64');
-    const headers = {
-      Authorization: `token ${githubToken}`,
-      'Content-Type': 'application/json',
-      'User-Agent': 'netlify-function'
-    };
-    // Get current sha if exists
-    let sha;
-    try {
-      const getRes = await fetch(`https://api.github.com/repos/${githubRepo}/contents/${encodeURIComponent(path)}?ref=${encodeURIComponent(githubBranch)}`, { headers });
-      if (getRes.ok) {
-        const json = await getRes.json();
-        sha = json.sha;
+  function walkFiles(dir, exts, files = []) {
+    let entries = [];
+    try { entries = fs.readdirSync(dir, { withFileTypes: true }); } catch { return files; }
+    for (const e of entries) {
+      const full = path.join(dir, e.name);
+      if (e.isDirectory()) {
+        walkFiles(full, exts, files);
+      } else {
+        const ext = path.extname(e.name).toLowerCase();
+        if (!exts.size || exts.has(ext)) files.push(full);
       }
-    } catch {}
-    const body = { message, content, branch: githubBranch, sha };
-    const putRes = await fetch(`https://api.github.com/repos/${githubRepo}/contents/${encodeURIComponent(path)}`, { method: 'PUT', headers, body: JSON.stringify(body) });
-    const ok = putRes.ok;
-    let error;
-    if (!ok) {
-      try { error = await putRes.text(); } catch (e) { error = String(e); }
     }
-    return { ok, status: putRes.status, error, path };
+    return files;
+  }
+
+  function collectFreshness(rootDir) {
+    const targets = [
+      path.join(rootDir, 'pages'),
+      path.join(rootDir, 'docs'),
+      path.join(rootDir, 'components'),
+      path.join(rootDir, 'styles')
+    ];
+    const allowExts = new Set(['.md', '.mdx', '.tsx', '.ts', '.jsx', '.js', '.css']);
+    const now = Date.now();
+    const items = [];
+    for (const t of targets) {
+      const files = walkFiles(t, allowExts);
+      for (const f of files) {
+        try {
+          const st = fs.statSync(f);
+          const ageDays = Math.round((now - st.mtimeMs) / (1000 * 60 * 60 * 24));
+          items.push({ path: path.relative(rootDir, f), mtime: st.mtime.toISOString(), ageDays });
+        } catch {}
+      }
+    }
+    items.sort((a, b) => a.ageDays - b.ageDays);
+    const freshest = items.slice(0, 20);
+    const stalest = [...items].sort((a, b) => b.ageDays - a.ageDays).slice(0, 20);
+    const summary = {
+      generatedAt: new Date().toISOString(),
+      totalFiles: items.length,
+      freshest,
+      stalest,
+      stats: {
+        medianAgeDays: items.length ? items.map(i => i.ageDays).sort((a,b)=>a-b)[Math.floor(items.length/2)] : 0,
+        over90d: items.filter(i => i.ageDays >= 90).length,
+        over180d: items.filter(i => i.ageDays >= 180).length,
+      }
+    };
+    return summary;
   }
 
   try {
-    const allPaths = await listRepoTree();
-    const includeExt = new Set(['.tsx','.ts','.jsx','.js','.md','.mdx']);
-    const includeDirs = ['pages/','docs/','components/'];
+    const rootDir = path.resolve(__dirname, '..', '..');
+    const outDir = path.join(rootDir, 'public', 'automation');
+    fs.mkdirSync(outDir, { recursive: true });
+    const reportPath = path.join(outDir, 'content-freshness.json');
 
-    const candidatePaths = allPaths.filter(p => includeDirs.some(d => p.startsWith(d)) && includeExt.has(p.slice(p.lastIndexOf('.'))));
-    const limited = candidatePaths.slice(0, maxFilesToAnalyze);
+    const data = collectFreshness(rootDir);
+    fs.writeFileSync(reportPath, JSON.stringify(data, null, 2));
 
-    const nowIso = new Date().toISOString();
-    const results = [];
-    for (const filePath of limited) {
-      // eslint-disable-next-line no-await-in-loop
-      const lastDate = await lastCommitDateForPath(filePath);
-      const ageDays = lastDate ? daysBetween(nowIso, lastDate) : null;
-      results.push({ path: filePath, lastModified: lastDate, ageDays });
-    }
+    try {
+      execSync('git config user.name "zion-bot"', { cwd: rootDir, stdio: 'inherit' });
+      execSync('git config user.email "bot@zion.app"', { cwd: rootDir, stdio: 'inherit' });
+      execSync(`git add ${JSON.stringify(path.relative(rootDir, reportPath))}`, { cwd: rootDir, stdio: 'inherit', shell: true });
+      execSync('git commit -m "chore(content): update content freshness report [ci skip]" || true', { cwd: rootDir, stdio: 'inherit', shell: true });
+      execSync('git push origin main || true', { cwd: rootDir, stdio: 'inherit', shell: true });
+    } catch {}
 
-    results.sort((a, b) => (b.ageDays || 0) - (a.ageDays || 0));
-    const topStale = results.filter(r => typeof r.ageDays === 'number').slice(0, 50);
-
-    const report = {
-      generatedAt: nowIso,
-      repo: githubRepo,
-      branch: githubBranch,
-      analyzedFiles: limited.length,
-      totalCandidates: candidatePaths.length,
-      topStale,
-    };
-
-    const commitPath = 'public/automation/content-freshness.json';
-    const commitRes = await commitJson(commitPath, report, `report: content freshness (${nowIso})`);
-
-    return {
-      statusCode: 200,
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ ok: true, commit: commitRes, reportSummary: { analyzedFiles: report.analyzedFiles, topStaleCount: report.topStale.length } })
-    };
-  } catch (err) {
-    log(String(err));
-    return { statusCode: 500, body: JSON.stringify({ error: String(err) }) };
+    return { statusCode: 200, body: JSON.stringify({ ok: true, report: '/automation/content-freshness.json' }) };
+  } catch (e) {
+    return { statusCode: 200, body: JSON.stringify({ ok: false, error: String(e) }) };
   }
 };

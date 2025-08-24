@@ -1,83 +1,81 @@
-const cheerio = require('cheerio');
+exports.handler = async function() {
+  const fs = require('fs');
+  const path = require('path');
+  const { execSync } = require('child_process');
 
-exports.handler = async function(event, context) {
-  const baseUrl = (process.env.SITE_URL || process.env.URL || process.env.DEPLOY_PRIME_URL || '').replace(/\/$/, '');
-  const githubRepo = process.env.GITHUB_REPO || 'Zion-Holdings/zion.app';
-  const githubBranch = process.env.GIT_BRANCH || 'main';
-  const githubToken = process.env.GITHUB_TOKEN || '';
-
-  const maxPages = 60;
-
-  function log(message) { console.log(`[internal-link-graph] ${message}`); }
-
-  async function commitJson(path, obj, message) {
-    if (!githubToken) return { ok: false, reason: 'No GITHUB_TOKEN provided; skipping commit', path };
-    const content = Buffer.from(JSON.stringify(obj, null, 2)).toString('base64');
-    const headers = { Authorization: `token ${githubToken}`, 'Content-Type': 'application/json', 'User-Agent': 'netlify-function' };
-    let sha;
-    try {
-      const getRes = await fetch(`https://api.github.com/repos/${githubRepo}/contents/${encodeURIComponent(path)}?ref=${encodeURIComponent(githubBranch)}`, { headers });
-      if (getRes.ok) { const json = await getRes.json(); sha = json.sha; }
-    } catch {}
-    const body = { message, content, branch: githubBranch, sha };
-    const putRes = await fetch(`https://api.github.com/repos/${githubRepo}/contents/${encodeURIComponent(path)}`, { method: 'PUT', headers, body: JSON.stringify(body) });
-    const ok = putRes.ok;
-    let error; if (!ok) { try { error = await putRes.text(); } catch (e) { error = String(e); } }
-    return { ok, status: putRes.status, error, path };
+  function walkFiles(dir, patterns, acc = []) {
+    let entries = [];
+    try { entries = fs.readdirSync(dir, { withFileTypes: true }); } catch { return acc; }
+    for (const e of entries) {
+      const full = path.join(dir, e.name);
+      if (e.isDirectory()) {
+        walkFiles(full, patterns, acc);
+      } else {
+        if (patterns.some(p => p.test(e.name))) acc.push(full);
+      }
+    }
+    return acc;
   }
 
-  function normalizeUrl(href) {
-    try {
-      const u = new URL(href, baseUrl);
-      return u.origin + u.pathname.replace(/\/$/, '');
-    } catch { return null; }
+  function extractLinksFromContent(content) {
+    const links = new Set();
+    const hrefRegex = /href\s*=\s*"(\/[^"#\?\s]+)"/g;
+    const linkCompRegex = /<Link\s+href=\{?"(\/[^"#\?\s]+)"\}?/g;
+    let m;
+    while ((m = hrefRegex.exec(content)) !== null) links.add(m[1]);
+    while ((m = linkCompRegex.exec(content)) !== null) links.add(m[1]);
+    return Array.from(links);
   }
 
-  async function fetchHtml(url) {
-    const res = await fetch(url, { redirect: 'follow' });
-    if (!res.ok) throw new Error(`Fetch ${url} -> ${res.status}`);
-    return res.text();
-  }
-
-  function extractInternalLinks(html) {
-    const $ = cheerio.load(html);
-    const hrefs = new Set();
-    $('a[href]').each((_, el) => {
-      const href = $(el).attr('href');
-      const abs = normalizeUrl(href);
-      if (abs && abs.startsWith(baseUrl)) hrefs.add(abs);
-    });
-    return Array.from(hrefs);
-  }
-
-  try {
-    if (!baseUrl) return { statusCode: 400, body: JSON.stringify({ error: 'Base URL not detected' }) };
-
-    const start = baseUrl;
-    const queue = [start];
-    const visited = new Set();
+  function buildGraph(rootDir) {
+    const sourceRoots = [path.join(rootDir, 'pages'), path.join(rootDir, 'docs')];
+    const patterns = [/\.tsx?$/, /\.jsx?$/, /\.mdx?$/];
+    const nodes = new Set();
     const edges = [];
 
-    while (queue.length && visited.size < maxPages) {
-      const current = queue.shift();
-      if (!current || visited.has(current)) continue;
-      visited.add(current);
-      // eslint-disable-next-line no-await-in-loop
-      let html; try { html = await fetchHtml(current); } catch { continue; }
-      const links = extractInternalLinks(html);
-      for (const l of links) {
-        edges.push([current, l]);
-        if (!visited.has(l) && queue.length + visited.size < maxPages) queue.push(l);
+    for (const srcRoot of sourceRoots) {
+      const files = walkFiles(srcRoot, patterns);
+      for (const file of files) {
+        let content = '';
+        try { content = fs.readFileSync(file, 'utf8'); } catch { continue; }
+        const rel = path.relative(rootDir, file);
+        nodes.add(rel);
+        const links = extractLinksFromContent(content).filter(l => l.startsWith('/'));
+        for (const l of links) {
+          edges.push({ from: rel, to: l });
+        }
       }
     }
 
-    const nodes = Array.from(visited);
-    const graph = { generatedAt: new Date().toISOString(), nodes, edges };
+    const stats = {
+      nodeCount: nodes.size,
+      edgeCount: edges.length,
+      topTargets: Object.entries(edges.reduce((m,e)=>{m[e.to]=(m[e.to]||0)+1;return m;},{}))
+        .sort((a,b)=>b[1]-a[1]).slice(0,20).map(([target,count])=>({ target, count }))
+    };
 
-    const commitRes = await commitJson('public/automation/internal-link-graph.json', graph, `report: internal link graph (${graph.generatedAt})`);
-    return { statusCode: 200, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ok: true, nodes: nodes.length, edges: edges.length, commit: commitRes }) };
-  } catch (err) {
-    log(String(err));
-    return { statusCode: 500, body: JSON.stringify({ error: String(err) }) };
+    return { generatedAt: new Date().toISOString(), nodes: Array.from(nodes), edges, stats };
+  }
+
+  try {
+    const rootDir = path.resolve(__dirname, '..', '..');
+    const outDir = path.join(rootDir, 'public', 'automation');
+    fs.mkdirSync(outDir, { recursive: true });
+    const reportPath = path.join(outDir, 'internal-link-graph.json');
+
+    const graph = buildGraph(rootDir);
+    fs.writeFileSync(reportPath, JSON.stringify(graph, null, 2));
+
+    try {
+      execSync('git config user.name "zion-bot"', { cwd: rootDir, stdio: 'inherit' });
+      execSync('git config user.email "bot@zion.app"', { cwd: rootDir, stdio: 'inherit' });
+      execSync(`git add ${JSON.stringify(path.relative(rootDir, reportPath))}`, { cwd: rootDir, stdio: 'inherit', shell: true });
+      execSync('git commit -m "chore(links): update internal link graph [ci skip]" || true', { cwd: rootDir, stdio: 'inherit', shell: true });
+      execSync('git push origin main || true', { cwd: rootDir, stdio: 'inherit', shell: true });
+    } catch {}
+
+    return { statusCode: 200, body: JSON.stringify({ ok: true, report: '/automation/internal-link-graph.json' }) };
+  } catch (e) {
+    return { statusCode: 200, body: JSON.stringify({ ok: false, error: String(e) }) };
   }
 };
