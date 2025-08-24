@@ -2,9 +2,15 @@
   "/_not-found/page": "app/_not-found/page.js",
   "/api/deploy/route": "app/api/deploy/route.js",
   "/api/health/route": "app/api/health/route.js",
+  "/docs/page": "app/docs/page.js",
   "/multiverse/launch/page": "app/multiverse/launch/page.js",
   "/page": "app/page.js",
-  "/docs/page": "app/docs/page.js",
+  "/solutions/page": "app/solutions/page.js",
+  "/sitemap.xml/route": "app/sitemap.xml/route.js",
+  "/about/page": "app/about/page.js",
+  "/careers/page": "app/careers/page.js",
+  "/contact/page": "app/contact/page.js",
+  "/services/page": "app/services/page.js",
   "/admin/os-deploy/page": "app/admin/os-deploy/page.js",
   "/admin/instances/page": "app/admin/instances/page.js"
 }

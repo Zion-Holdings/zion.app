@@ -75,7 +75,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             <a href="/contact" className="text-sm opacity-80 hover:opacity-100">Contact</a>
           </div>
         </nav>
-<<<<<<< HEAD
         <main className="pt-20">
           {children}
         </main>
