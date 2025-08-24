@@ -1,40 +1,105 @@
-import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-import { useState, useEffect, useRef } from 'react';
+import { jsx as _jsx, jsxs as _jsxs, Fragment as _Fragment } from "react/jsx-runtime";
+import { useState, useRef, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Send, Bot, X, Minimize2, Maximize2, MessageCircle } from 'lucide-react';
+import { Button } from '../ui/button';
+import { Input } from '../ui/input';
 import { ChatMessage } from './ChatMessage';
-import { ChatInput } from './ChatInput';
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Button } from "@/components/ui/button";
-import { X } from "lucide-react";
-export function ChatAssistant({ isOpen, onClose, recipient, conversationId, initialMessages = [], onSendMessage, contextHeader }) {
-    const [messages, setMessages] = useState(initialMessages);
-    const messagesEndRef = useRef(null);
-    useEffect(() => {
-        if (initialMessages.length > 0) {
-            setMessages(initialMessages);
+const ChatAssistant = () => {
+    const [isOpen, setIsOpen] = useState(false);
+    const [isMinimized, setIsMinimized] = useState(false);
+    const [messages, setMessages] = useState([
+        {
+            id: '1',
+            text: 'Hello! I\'m your AI assistant. How can I help you today?',
+            sender: 'bot',
+            timestamp: new Date()
         }
-    }, [initialMessages]);
-    useEffect(() => {
-        scrollToBottom();
-    }, [messages]);
+    ]);
+    const [inputValue, setInputValue] = useState('');
+    const [isTyping, setIsTyping] = useState(false);
+    const messagesEndRef = useRef(null);
+    const inputRef = useRef(null);
     const scrollToBottom = () => {
         var _a;
         (_a = messagesEndRef.current) === null || _a === void 0 ? void 0 : _a.scrollIntoView({ behavior: 'smooth' });
     };
-    const handleSendMessage = async (message) => {
-        if (!message.trim())
+    useEffect(() => {
+        scrollToBottom();
+    }, [messages]);
+    useEffect(() => {
+        var _a;
+        if (isOpen && !isMinimized) {
+            (_a = inputRef.current) === null || _a === void 0 ? void 0 : _a.focus();
+        }
+    }, [isOpen, isMinimized]);
+    const handleSendMessage = async () => {
+        if (!inputValue.trim())
             return;
-        // Add user message to the chat
-        const newMessage = {
+        const userMessage = {
             id: Date.now().toString(),
-            role: 'user',
-            message,
+            text: inputValue,
+            sender: 'user',
             timestamp: new Date()
         };
-        setMessages((prev) => [...prev, newMessage]);
-        // Send message to recipient via the provided handler
-        await onSendMessage(message, conversationId);
+        setMessages(prev => [...prev, userMessage]);
+        setInputValue('');
+        setIsTyping(true);
+        // Simulate AI response
+        setTimeout(() => {
+            const botMessage = {
+                id: (Date.now() + 1).toString(),
+                text: generateAIResponse(inputValue),
+                sender: 'bot',
+                timestamp: new Date()
+            };
+            setMessages(prev => [...prev, botMessage]);
+            setIsTyping(false);
+        }, 1000 + Math.random() * 2000);
     };
-    if (!isOpen)
-        return null;
-    return (_jsx("div", { className: "fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4", children: _jsxs("div", { className: "w-full max-w-xl bg-zion-blue rounded-lg shadow-xl overflow-hidden flex flex-col max-h-[80vh]", children: [_jsxs("div", { className: "bg-zion-blue-dark p-3 flex items-center justify-between border-b border-zion-purple/20", children: [_jsxs("div", { className: "flex items-center space-x-3", children: [_jsxs(Avatar, { className: "h-10 w-10 border border-zion-purple/20", children: [_jsx(AvatarImage, { src: recipient.avatarUrl, alt: recipient.name }), _jsx(AvatarFallback, { className: "bg-zion-purple/20 text-white", children: recipient.name.charAt(0).toUpperCase() })] }), _jsxs("div", { children: [_jsx("div", { className: "font-medium text-white", children: recipient.name }), recipient.role && (_jsx("div", { className: "text-xs text-zion-slate", children: recipient.role }))] })] }), _jsx(Button, { variant: "ghost", size: "icon", className: "text-white hover:bg-zion-purple/10 rounded-full", onClick: onClose, children: _jsx(X, { className: "h-5 w-5" }) })] }), contextHeader && (_jsx("div", { className: "border-b border-zion-purple/20 bg-zion-blue-dark/50 p-3", children: contextHeader })), _jsxs("div", { className: "flex-1 overflow-y-auto p-4 space-y-4", children: [messages.length === 0 ? (_jsx("div", { className: "text-center text-zion-slate py-8", children: _jsxs("p", { children: ["Start a conversation with ", recipient.name] }) })) : (messages.map((msg) => (_jsx(ChatMessage, { role: msg.role, message: msg.message }, msg.id)))), _jsx("div", { ref: messagesEndRef })] }), _jsx("div", { className: "p-3 border-t border-zion-purple/20 bg-zion-blue-dark/30", children: _jsx(ChatInput, { onSend: handleSendMessage }) })] }) }));
-}
+    const generateAIResponse = (userInput) => {
+        const input = userInput.toLowerCase();
+        if (input.includes('hello') || input.includes('hi')) {
+            return 'Hello! How can I assist you with your business needs today?';
+        }
+        if (input.includes('service') || input.includes('help')) {
+            return 'I can help you with our AI services, cloud solutions, cybersecurity, and more. What specific area are you interested in?';
+        }
+        if (input.includes('price') || input.includes('cost')) {
+            return 'Our pricing varies based on your specific needs. Would you like me to connect you with our sales team for a personalized quote?';
+        }
+        if (input.includes('contact') || input.includes('phone') || input.includes('email')) {
+            return 'You can reach us at +1 (302) 464-0950 or kleber@ziontechgroup.com. I can also schedule a consultation for you.';
+        }
+        if (input.includes('ai') || input.includes('artificial intelligence')) {
+            return 'We offer cutting-edge AI solutions including machine learning platforms, predictive analytics, and intelligent automation. Would you like to learn more?';
+        }
+        if (input.includes('cloud') || input.includes('infrastructure')) {
+            return 'Our cloud infrastructure services include migration, optimization, and management. We work with AWS, Azure, and Google Cloud.';
+        }
+        if (input.includes('security') || input.includes('cyber')) {
+            return 'We provide comprehensive cybersecurity solutions including threat detection, vulnerability assessment, and incident response.';
+        }
+        return 'Thank you for your message. I\'d be happy to help you with that. Could you provide more details about what you\'re looking for?';
+    };
+    const handleKeyPress = (e) => {
+        if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault();
+            handleSendMessage();
+        }
+    };
+    const toggleChat = () => {
+        setIsOpen(!isOpen);
+        if (!isOpen) {
+            setIsMinimized(false);
+        }
+    };
+    const toggleMinimize = () => {
+        setIsMinimized(!isMinimized);
+    };
+    if (!isOpen) {
+        return (_jsx(motion.button, { onClick: toggleChat, className: "fixed bottom-6 right-6 w-16 h-16 bg-gradient-to-r from-zion-cyan to-zion-purple rounded-full shadow-lg hover:shadow-xl transition-all duration-300 z-50 flex items-center justify-center text-white", whileHover: { scale: 1.1 }, whileTap: { scale: 0.9 }, initial: { scale: 0 }, animate: { scale: 1 }, transition: { type: "spring", stiffness: 200 }, children: _jsx(MessageCircle, { className: "w-8 h-8" }) }));
+    }
+    return (_jsx(AnimatePresence, { children: _jsxs(motion.div, { className: "fixed bottom-6 right-6 w-96 bg-zion-blue-dark/95 backdrop-blur-lg border border-zion-blue-light/30 rounded-2xl shadow-2xl z-50 overflow-hidden", initial: { opacity: 0, scale: 0.8, y: 20 }, animate: { opacity: 1, scale: 1, y: 0 }, exit: { opacity: 0, scale: 0.8, y: 20 }, transition: { type: "spring", stiffness: 200, damping: 25 }, children: [_jsxs("div", { className: "bg-gradient-to-r from-zion-cyan to-zion-purple p-4 flex items-center justify-between", children: [_jsxs("div", { className: "flex items-center gap-3", children: [_jsx("div", { className: "w-8 h-8 bg-white/20 rounded-full flex items-center justify-center", children: _jsx(Bot, { className: "w-5 h-5 text-white" }) }), _jsxs("div", { children: [_jsx("h3", { className: "text-white font-semibold", children: "AI Assistant" }), _jsx("p", { className: "text-white/80 text-xs", children: "Zion Tech Group" })] })] }), _jsxs("div", { className: "flex items-center gap-2", children: [_jsx(Button, { variant: "ghost", size: "sm", onClick: toggleMinimize, className: "text-white hover:bg-white/20 p-1", children: isMinimized ? _jsx(Maximize2, { className: "w-4 h-4" }) : _jsx(Minimize2, { className: "w-4 h-4" }) }), _jsx(Button, { variant: "ghost", size: "sm", onClick: toggleChat, className: "text-white hover:bg-white/20 p-1", children: _jsx(X, { className: "w-4 h-4" }) })] })] }), !isMinimized && (_jsxs(_Fragment, { children: [_jsxs("div", { className: "h-80 overflow-y-auto p-4 space-y-4", children: [_jsx(AnimatePresence, { children: messages.map((message) => (_jsx(ChatMessage, { message: message }, message.id))) }), isTyping && (_jsxs(motion.div, { className: "flex gap-3", initial: { opacity: 0, y: 10 }, animate: { opacity: 1, y: 0 }, children: [_jsx("div", { className: "w-8 h-8 rounded-full bg-zion-cyan flex items-center justify-center flex-shrink-0", children: _jsx(Bot, { className: "w-5 h-5 text-white" }) }), _jsx("div", { className: "bg-zion-blue-dark/50 text-white px-4 py-3 rounded-2xl rounded-bl-md", children: _jsxs("div", { className: "flex gap-1", children: [_jsx("div", { className: "w-2 h-2 bg-zion-cyan rounded-full animate-bounce" }), _jsx("div", { className: "w-2 h-2 bg-zion-cyan rounded-full animate-bounce", style: { animationDelay: '0.1s' } }), _jsx("div", { className: "w-2 h-2 bg-zion-cyan rounded-full animate-bounce", style: { animationDelay: '0.2s' } })] }) })] })), _jsx("div", { ref: messagesEndRef })] }), _jsxs("div", { className: "p-4 border-t border-zion-blue-light/20", children: [_jsxs("div", { className: "flex gap-2", children: [_jsx(Input, { ref: inputRef, value: inputValue, onChange: (e) => setInputValue(e.target.value), onKeyPress: handleKeyPress, placeholder: "Type your message...", className: "flex-1 bg-zion-slate-dark/50 border-zion-blue-light/30 text-white placeholder-zion-slate-light focus:border-zion-cyan" }), _jsx(Button, { onClick: handleSendMessage, disabled: !inputValue.trim() || isTyping, className: "bg-zion-cyan hover:bg-zion-cyan-light text-white px-4", children: _jsx(Send, { className: "w-4 h-4" }) })] }), _jsx("p", { className: "text-xs text-zion-slate-light mt-2 text-center", children: "Ask me about our services, pricing, or schedule a consultation" })] })] }))] }) }));
+};
+export default ChatAssistant;

@@ -8,6 +8,8 @@ import { Toaster } from "./components/ui/toaster";
 import { Toaster as SonnerToaster } from "./components/ui/sonner";
 import { PageLoader } from "./components/ui/LoadingSpinner";
 import { FloatingCTA } from "./components/FloatingCTA";
+import MainNavigation from './components/MainNavigation';
+import ChatAssistant from './components/ChatAssistant/ChatAssistant';
 // Lazy load pages with better error handling
 const Home = React.lazy(() => import('./pages/Home'));
 const AIMatcherPage = React.lazy(() => import('./pages/AIMatcher'));
@@ -89,6 +91,6 @@ function ErrorBoundary({ children }) {
 const App = () => {
     // Ensure each navigation starts at the top of the page
     useScrollToTop();
-    return (_jsx(ErrorBoundary, { children: _jsxs(ThemeProvider, { defaultTheme: "dark", children: [_jsx(Routes, { children: baseRoutes.map(({ path, element }) => (_jsx(Route, { path: path, element: element }, path))) }), _jsx(FloatingCTA, {}), _jsx(Toaster, {}), _jsx(SonnerToaster, {})] }) }));
+    return (_jsx(ErrorBoundary, { children: _jsxs(ThemeProvider, { defaultTheme: "dark", children: [_jsx(MainNavigation, {}), _jsx(Routes, { children: baseRoutes.map(({ path, element }) => (_jsx(Route, { path: path, element: element }, path))) }), _jsx(ChatAssistant, {}), _jsx(FloatingCTA, {}), _jsx(Toaster, {}), _jsx(SonnerToaster, {})] }) }));
 };
 export default App;

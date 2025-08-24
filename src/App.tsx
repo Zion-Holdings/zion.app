@@ -7,6 +7,8 @@ import { Toaster } from "./components/ui/toaster";
 import { Toaster as SonnerToaster } from "./components/ui/sonner";
 import { PageLoader } from "./components/ui/LoadingSpinner";
 import { FloatingCTA } from "./components/FloatingCTA";
+import MainNavigation from './components/MainNavigation';
+import ChatAssistant from './components/ChatAssistant/ChatAssistant';
 
 // Lazy load pages with better error handling
 const Home = React.lazy(() => import('./pages/Home'));
@@ -101,6 +103,8 @@ const App = () => {
   return (
     <ErrorBoundary>
       <ThemeProvider defaultTheme="dark">
+        <MainNavigation />
+        
         <Routes>
           {baseRoutes.map(({ path, element }) => (
             <Route key={path} path={path} element={element} />
@@ -108,6 +112,7 @@ const App = () => {
         </Routes>
         
         {/* Global Components */}
+        <ChatAssistant />
         <FloatingCTA />
         <Toaster />
         <SonnerToaster />
