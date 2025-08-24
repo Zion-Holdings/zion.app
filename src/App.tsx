@@ -5,6 +5,7 @@ import { Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from "./components/ThemeProvider";
 import { WhitelabelProvider } from "./context/WhitelabelContext";
 import { Header } from "./components/Header";
+import { Sidebar } from "./components/Sidebar";
 import { Footer } from "./components/Footer";
 import { Toaster } from "./components/ui/toaster";
 import { Toaster as SonnerToaster } from "./components/ui/sonner";
@@ -29,7 +30,8 @@ function App() {
       <WhitelabelProvider>
         <div className="App">
           <Header />
-          <main>
+          <Sidebar />
+          <main className="ml-64">
             <Suspense fallback={<LoadingSpinner />}>
               <Routes>
                 <Route path="/" element={<Home />} />

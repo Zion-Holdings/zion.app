@@ -3,8 +3,22 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Star, Users, Award, Globe, Zap, Brain, Shield, Cloud, Code, BarChart3, Rocket, CheckCircle, Play, Target, Clock, DollarSign, ShieldCheck, Mail, Phone, MapPin, Cpu, Wifi, Video, CpuIcon, Fingerprint, Globe2, Atom, Server, Bot, Mic, Eye, Network } from 'lucide-react';
 import { FuturisticBackground } from '../components/ui/FuturisticBackground';
+import { useState, useEffect } from 'react';
 
 export function Home() {
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const currentProgress = (window.scrollY / totalHeight) * 100;
+      setScrollProgress(Math.min(currentProgress, 100));
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const featuredServices = [
     {
       id: 1,
@@ -358,6 +372,14 @@ export function Home() {
       </div>
 
       <div className="relative z-10">
+        {/* Scroll Progress Bar */}
+        <div className="fixed top-0 left-0 w-full h-1 bg-zion-blue-dark z-50">
+          <div 
+            className="h-full bg-gradient-to-r from-zion-cyan to-zion-purple transition-all duration-300"
+            style={{ width: `${scrollProgress}%` }}
+          ></div>
+        </div>
+
         {/* Contact Information Banner */}
         <section className="bg-gradient-to-r from-zion-cyan/20 to-zion-purple/20 border-b border-zion-cyan/30">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
@@ -914,6 +936,27 @@ export function Home() {
             ))}
           </motion.div>
         </section>
+
+        {/* Floating Action Button */}
+        <div className="fixed bottom-8 right-8 z-50">
+          <div className="flex flex-col space-y-4">
+            {/* Back to Top */}
+            <button
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              className="w-12 h-12 bg-gradient-to-r from-zion-cyan to-zion-purple rounded-full flex items-center justify-center text-white shadow-lg hover:shadow-2xl hover:shadow-zion-cyan/25 transition-all duration-300 hover:scale-110"
+            >
+              <ArrowRight className="w-5 h-5 transform rotate-[-90deg]" />
+            </button>
+            
+            {/* Contact Quick Access */}
+            <Link
+              to="/contact"
+              className="w-12 h-12 bg-gradient-to-r from-zion-purple to-zion-cyan rounded-full flex items-center justify-center text-white shadow-lg hover:shadow-2xl hover:shadow-zion-purple/25 transition-all duration-300 hover:scale-110"
+            >
+              <Mail className="w-5 h-5" />
+            </Link>
+          </div>
+        </div>
 
         {/* Call to Action */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
