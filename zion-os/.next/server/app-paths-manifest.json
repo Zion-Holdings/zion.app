@@ -1,1 +1,26 @@
-{}
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/about/page": "app/about/page.js",
+  "/ai-autonomous-systems/page": "app/ai-autonomous-systems/page.js",
+  "/ai-solutions/page": "app/ai-solutions/page.js",
+  "/api/deploy/route": "app/api/deploy/route.js",
+  "/api/health/route": "app/api/health/route.js",
+  "/case-studies/page": "app/case-studies/page.js",
+  "/contact/page": "app/contact/page.js",
+  "/docs/page": "app/docs/page.js",
+  "/news/page": "app/news/page.js",
+  "/page": "app/page.js",
+  "/quantum-neural-network-platform/page": "app/quantum-neural-network-platform/page.js",
+  "/services/page": "app/services/page.js",
+  "/research-development/page": "app/research-development/page.js",
+  "/solutions/page": "app/solutions/page.js",
+  "/cookies/page": "app/cookies/page.js",
+  "/privacy/page": "app/privacy/page.js",
+  "/blog/page": "app/blog/page.js",
+  "/quantum-computing/page": "app/quantum-computing/page.js",
+  "/sitemap/page": "app/sitemap/page.js",
+  "/terms/page": "app/terms/page.js",
+  "/careers/page": "app/careers/page.js",
+  "/resources/page": "app/resources/page.js",
+  "/team/page": "app/team/page.js"
+}
