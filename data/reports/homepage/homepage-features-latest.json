@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-10T18:41:34.639Z",
+  "timestamp": "2025-08-24T00:24:01.493Z",
   "features": [
     {
       "title": "Intelligent Orchestrator System",
@@ -142,100 +142,8 @@
   ],
   "scripts": [
     {
-      "key": "deps:cron:start",
-      "command": "bash automation/dependency-maintenance-cron.sh"
-    },
-    {
       "key": "start",
       "command": "next start"
-    },
-    {
-      "key": "autonomous",
-      "command": "node automation/launch-enhanced-autonomous-system.js"
-    },
-    {
-      "key": "autonomous:dev",
-      "command": "nodemon automation/launch-enhanced-autonomous-system.js"
-    },
-    {
-      "key": "autonomous:status",
-      "command": "node automation/launch-autonomous-systems-clean.js status"
-    },
-    {
-      "key": "linkedin:cron",
-      "command": "ts-node scripts/linkedin-automation.ts cron"
-    },
-    {
-      "key": "linkedin:start",
-      "command": "npm run linkedin:cron"
-    },
-    {
-      "key": "mcp:start",
-      "command": "node mcp-automation-system.js"
-    },
-    {
-      "key": "mcp:orchestrator",
-      "command": "node automation/mcp-integration-orchestrator.js"
-    },
-    {
-      "key": "mcp:setup-cron",
-      "command": "node automation/mcp-integration-orchestrator.js setup-cron"
-    },
-    {
-      "key": "google-docs:start",
-      "command": "node automation/launch-google-docs-automation.js"
-    },
-    {
-      "key": "automation:orchestrator",
-      "command": "node automation/intelligent-orchestrator.cjs continuous"
-    },
-    {
-      "key": "automation:restart",
-      "command": "node automation/restart-all-automation.js"
-    },
-    {
-      "key": "autonomous:start",
-      "command": "node automation/launch-autonomous-systems-clean.js start"
-    },
-    {
-      "key": "autonomous:stop",
-      "command": "node automation/launch-autonomous-systems-clean.js stop"
-    },
-    {
-      "key": "autonomous:restart",
-      "command": "node automation/launch-autonomous-systems-clean.js restart"
-    },
-    {
-      "key": "autonomous:factory",
-      "command": "node automation/autonomous-error-monitoring-factory.js"
-    },
-    {
-      "key": "autonomous:orchestrator",
-      "command": "node automation/autonomous-automation-orchestrator.js"
-    },
-    {
-      "key": "autonomous:cron",
-      "command": "bash automation/autonomous-error-cron-system.sh run"
-    },
-    {
-      "key": "autonomous:cron:start",
-      "command": "bash automation/autonomous-error-cron-system.sh start"
-    },
-    {
-      "key": "autonomous:cron:stop",
-      "command": "bash automation/autonomous-error-cron-system.sh stop"
-    },
-    {
-      "key": "autonomous:cron:status",
-      "command": "bash automation/autonomous-error-cron-system.sh status"
-    },
-    {
-      "key": "autonomous:cron:fix",
-      "command": "bash automation/autonomous-error-cron-system.sh fix"
-    },
-    {
-      "key": "autonomous:all",
-      "command": "npm run autonomous:start & npm run autonomous:cron:start"
     }
   ]
 }

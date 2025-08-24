@@ -1,7 +1,0 @@
-<<<<<<< HEAD
-export default function AutomationStatus() { return null; }
-=======
-export default function AutomationStatus() {
-  return <div className="py-10">Automation Status</div>;
-}
->>>>>>> origin/cursor/build-real-time-salary-benchmarking-tool-dea9
