@@ -8,11 +8,7 @@ import {
   Zap, 
   Users, 
   Globe, 
-  Lock, 
-  TrendingUp, 
-  Clock,
-  CheckCircle,
-  Star
+  TrendingUp
 } from "lucide-react";
 
 const features = [
@@ -84,7 +80,7 @@ const itemVariants = {
     opacity: 1,
     transition: {
       duration: 0.6,
-              ease: "easeOut" as const
+      ease: "easeOut" as const
     }
   }
 };
@@ -101,11 +97,10 @@ export function FeatureHighlights() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Why Choose <span className="text-transparent bg-clip-text bg-gradient-to-r from-zion-cyan to-zion-purple">Zion</span>?
+            Why Choose <span className="bg-gradient-to-r from-zion-cyan to-zion-purple bg-clip-text text-transparent">Zion</span>
           </h2>
-          <p className="text-zion-slate-light text-lg max-w-3xl mx-auto leading-relaxed">
-            Experience the future of tech talent matching with our cutting-edge platform designed to 
-            connect you with the best opportunities and professionals in the industry.
+          <p className="text-xl text-zion-slate-light max-w-3xl mx-auto">
+            Discover the key features that make Zion the leading platform for tech talent and services
           </p>
         </motion.div>
 
@@ -118,36 +113,38 @@ export function FeatureHighlights() {
         >
           {features.map((feature, index) => (
             <motion.div key={index} variants={itemVariants}>
-              <Card className="h-full bg-zion-blue-dark border-zion-blue-light hover:border-zion-purple/50 transition-all duration-300 hover:shadow-2xl hover:shadow-zion-purple/25 group">
+              <Card className="h-full bg-zion-blue-dark/50 border-zion-blue-light hover:border-zion-purple/50 transition-all duration-300 hover:shadow-2xl hover:shadow-zion-purple/20 hover:-translate-y-2">
                 <CardHeader className="pb-4">
-                  <div className="flex items-start justify-between mb-4">
-                    <div className={`rounded-full w-16 h-16 bg-gradient-to-br ${feature.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                  <div className="flex items-center justify-between mb-4">
+                    <div className={`w-16 h-16 bg-gradient-to-br ${feature.color} rounded-xl flex items-center justify-center shadow-lg`}>
                       <div className="text-white">
                         {feature.icon}
                       </div>
                     </div>
                     {feature.badge && (
-                      <Badge className="bg-zion-purple text-white border-0">
+                      <Badge className="bg-zion-purple text-white border-0 text-xs">
                         {feature.badge}
                       </Badge>
                     )}
                   </div>
-                  <CardTitle className="text-xl text-white group-hover:text-zion-cyan transition-colors duration-300">
+                  <CardTitle className="text-white text-xl font-bold mb-3 group-hover:text-zion-cyan transition-colors duration-300">
                     {feature.title}
                   </CardTitle>
-                  <CardDescription className="text-zion-slate-light leading-relaxed">
+                  <CardDescription className="text-zion-slate-light text-sm mb-4 leading-relaxed">
                     {feature.description}
                   </CardDescription>
                 </CardHeader>
+                
                 <CardContent>
-                  <ul className="space-y-2">
+                  {/* Benefits */}
+                  <div className="mb-4">
                     {feature.benefits.map((benefit, benefitIndex) => (
-                      <li key={benefitIndex} className="flex items-center gap-2 text-sm text-zion-slate-light">
-                        <CheckCircle className="w-4 h-4 text-zion-cyan flex-shrink-0" />
+                      <div key={benefitIndex} className="flex items-center gap-2 text-xs text-zion-slate-light mb-1">
+                        <div className="w-1.5 h-1.5 bg-zion-cyan rounded-full"></div>
                         <span>{benefit}</span>
-                      </li>
+                      </div>
                     ))}
-                  </ul>
+                  </div>
                 </CardContent>
               </Card>
             </motion.div>
@@ -162,40 +159,26 @@ export function FeatureHighlights() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <div className="bg-zion-blue border border-zion-blue-light rounded-2xl p-8 max-w-4xl mx-auto">
+          <div className="bg-zion-blue-dark border border-zion-blue-light rounded-2xl p-8 max-w-4xl mx-auto shadow-2xl">
             <h3 className="text-2xl font-bold text-white mb-6">
-              Trusted by Industry Leaders
+              Trusted by Leading Companies
             </h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-6">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               <div className="text-center">
                 <div className="text-3xl font-bold text-zion-cyan mb-2">10K+</div>
-                <div className="text-zion-slate-light">Active Talents</div>
+                <div className="text-zion-slate-light">Active Users</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-zion-purple mb-2">500+</div>
                 <div className="text-zion-slate-light">Companies</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-zion-cyan mb-2">98%</div>
-                <div className="text-zion-slate-light">Success Rate</div>
+                <div className="text-3xl font-bold text-zion-cyan mb-2">99.9%</div>
+                <div className="text-zion-slate-light">Uptime</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-zion-purple mb-2">24/7</div>
                 <div className="text-zion-slate-light">Support</div>
-              </div>
-            </div>
-            <div className="flex flex-wrap justify-center items-center gap-4 text-zion-slate-light">
-              <div className="flex items-center gap-2">
-                <Star className="w-5 h-5 text-yellow-400 fill-current" />
-                <span>4.9/5 Rating</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Lock className="w-5 h-5 text-green-400" />
-                <span>Enterprise Security</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Clock className="w-5 h-5 text-blue-400" />
-                <span>99.9% Uptime</span>
               </div>
             </div>
           </div>

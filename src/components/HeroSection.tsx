@@ -31,10 +31,9 @@ export function HeroSection() {
     }
   };
 
-  const particleVariants = {
-    animate: {
-      y: [0, -20, 0],
-      opacity: [0.3, 0.8, 0.3],
+  const floatingVariants = {
+    float: {
+      y: [-10, 10, -10],
       transition: {
         duration: 3,
         repeat: Infinity,
@@ -53,40 +52,43 @@ export function HeroSection() {
   };
 
   return (
-    <section className="relative overflow-hidden py-20 md:py-32 min-h-[80vh] flex items-center">
+    <section className="relative overflow-hidden py-20 md:py-32 min-h-screen flex items-center">
       {/* Enhanced background gradient effect */}
       <div className="absolute inset-0 bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-purple opacity-90"></div>
       
-      {/* Animated floating particles with enhanced effects */}
+      {/* Animated mesh gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-zion-cyan/20 via-transparent to-zion-purple/20 animate-pulse"></div>
+      
+      {/* Enhanced floating particles with better positioning */}
       <div className="absolute inset-0">
         <motion.div 
+          variants={floatingVariants}
+          animate="float"
           className="absolute top-1/4 left-1/4 w-3 h-3 rounded-full bg-zion-purple-light opacity-60"
-          variants={particleVariants}
-          animate="animate"
         />
         <motion.div 
-          className="absolute top-1/3 right-1/3 w-4 h-4 rounded-full bg-zion-cyan opacity-50"
-          variants={particleVariants}
-          animate="animate"
+          variants={floatingVariants}
+          animate="float"
           style={{ animationDelay: "1s" }}
+          className="absolute top-1/3 right-1/3 w-4 h-4 rounded-full bg-zion-cyan opacity-40"
         />
         <motion.div 
-          className="absolute bottom-1/4 left-1/2 w-2 h-2 rounded-full bg-zion-purple opacity-70"
-          variants={particleVariants}
-          animate="animate"
+          variants={floatingVariants}
+          animate="float"
           style={{ animationDelay: "2s" }}
+          className="absolute bottom-1/4 left-1/2 w-2 h-2 rounded-full bg-zion-purple opacity-50"
         />
         <motion.div 
-          className="absolute top-1/2 right-1/4 w-5 h-5 rounded-full bg-zion-cyan-light opacity-30"
-          variants={particleVariants}
-          animate="animate"
+          variants={floatingVariants}
+          animate="float"
           style={{ animationDelay: "0.5s" }}
+          className="absolute top-1/2 right-1/4 w-5 h-5 rounded-full bg-zion-cyan-light opacity-30"
         />
         <motion.div 
-          className="absolute top-3/4 left-1/6 w-2 h-2 rounded-full bg-zion-purple-light opacity-50"
-          variants={particleVariants}
-          animate="animate"
+          variants={floatingVariants}
+          animate="float"
           style={{ animationDelay: "1.5s" }}
+          className="absolute top-3/4 left-1/3 w-2 h-2 rounded-full bg-zion-purple-light opacity-40"
         />
       </div>
 

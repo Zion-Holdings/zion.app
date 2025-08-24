@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { Button } from '../ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../ui/card';
 import { Badge } from '../ui/badge';
-import { ENHANCED_SERVICES } from '../../data/enhancedServices';
 import { 
   Brain, 
   Shield, 
@@ -18,6 +17,52 @@ import {
   Clock,
   Globe
 } from 'lucide-react';
+
+// Mock data for enhanced services
+const ENHANCED_SERVICES = [
+  {
+    id: "ai-1",
+    title: "AI-Powered Business Intelligence",
+    description: "Advanced AI algorithms that transform your data into actionable business insights",
+    category: "AI & Machine Learning",
+    pricingModel: "subscription",
+    availability: "immediate",
+    rating: 4.9,
+    price: 2999,
+    features: ["Predictive analytics", "Natural language processing", "Real-time insights", "Custom dashboards"],
+    benefits: ["Increased efficiency", "Better decision making", "Cost reduction"],
+    tags: ["AI", "Analytics", "Business Intelligence"],
+    location: "Global"
+  },
+  {
+    id: "security-1",
+    title: "Enterprise Cybersecurity Suite",
+    description: "Comprehensive security solution protecting your business from modern threats",
+    category: "Cybersecurity",
+    pricingModel: "subscription",
+    availability: "immediate",
+    rating: 4.8,
+    price: 1999,
+    features: ["Threat detection", "24/7 monitoring", "Incident response", "Compliance reporting"],
+    benefits: ["Enhanced security", "Compliance assurance", "Risk mitigation"],
+    tags: ["Security", "Compliance", "Enterprise"],
+    location: "Global"
+  },
+  {
+    id: "cloud-1",
+    title: "Cloud Infrastructure Optimization",
+    description: "Optimize your cloud costs and performance with intelligent automation",
+    category: "Cloud & DevOps",
+    pricingModel: "usage-based",
+    availability: "within-week",
+    rating: 4.7,
+    price: 1499,
+    features: ["Cost optimization", "Performance monitoring", "Auto-scaling", "Security compliance"],
+    benefits: ["Cost savings", "Improved performance", "Scalability"],
+    tags: ["Cloud", "DevOps", "Optimization"],
+    location: "Global"
+  }
+];
 
 const EnhancedServicesOverview: React.FC = () => {
   // Get featured services (first 6)

@@ -100,6 +100,7 @@ const baseConfig = {
         /node_modules/,
         /components_backup/,
         /temp_components/,
+        /components\.disabled/,
         /\.backup\./,
         /\.disabled$/,
         /ai-automation-services\.tsx$/,

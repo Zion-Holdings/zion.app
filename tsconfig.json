@@ -1,96 +1,43 @@
 {
   "compilerOptions": {
-    "target": "ES2017",
+    "target": "ES2020",
     "useDefineForClassFields": true,
     "lib": [
-      "ES2024",
+      "ES2020",
       "DOM",
-      "DOM.Iterable",
-      "WebWorker",
-      "WebWorker.Iterable"
+      "DOM.Iterable"
     ],
-    "module": "esnext",
+    "module": "ESNext",
     "skipLibCheck": true,
-    "importHelpers": false,
-    "noEmitHelpers": false,
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "preserve",
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
     "baseUrl": ".",
     "paths": {
       "@/*": [
-        "./*"
-      ],
-      "@/pages/*": [
-        "./pages/*"
-      ],
-      "@/components/*": [
-        "./components/*"
-      ],
-      "@/types/*": [
-        "./types/*"
-      ],
-      "@/utils/*": [
-        "./utils/*"
-      ],
-      "@/services/*": [
-        "./services/*"
-      ],
-      "@/styles/*": [
-        "./styles/*"
+        "./src/*"
       ]
     },
-    /* Bundler mode */
-    "moduleResolution": "bundler",
-    "esModuleInterop": true,
-    "resolveJsonModule": true,
-    "strict": false,
-    "noUnusedLocals": false,
-    "noUnusedParameters": false,
-    "noFallthroughCasesInSwitch": true,
-    "noUncheckedIndexedAccess": false,
-    "noImplicitReturns": false,
     "allowJs": true,
     "incremental": true,
-    "typeRoots": [
-      "./node_modules/@types",
-      "./types"
-    ],
-    "types": [
-      "node"
-    ],
-    "jsx": "preserve",
-    "noEmit": true,
-    "isolatedModules": true,
-    "forceConsistentCasingInFileNames": true
+    "esModuleInterop": true
   },
   "include": [
-    "next-env.d.ts",
-    "pages/**/*.ts",
-    "pages/**/*.tsx",
-    "components/**/*.ts",
-    "components/**/*.tsx",
-    "types/**/*.ts",
-    "types/**/*.d.ts",
-    "utils/**/*.ts",
-    "services/**/*.ts",
-    "styles/**/*.css"
+    "src"
+  ],
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    }
   ],
   "exclude": [
-    "node_modules",
-    "zion.app/recovered-content/**",
-    "contracts/**",
-    "dao/**",
-    "zion-os/**",
-    "zion_academy/**",
-    "packages/**",
-    "monitoring/**",
-    "scripts/**",
-    "server/**",
-    "cypress/**",
-    "**/*.disabled/**",
-    "__tests__.disabled/**",
-    "plugins.disabled/**",
-    "test.disabled/**",
-    "services.disabled.temp/**",
-    "data.temp/**",
-    "src_backup/**"
+    "node_modules"
   ]
 }
