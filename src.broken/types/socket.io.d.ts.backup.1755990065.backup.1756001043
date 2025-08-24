@@ -1,0 +1,23 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+declare module 'socket.io' {
+  const anySocket: unknown;
+  export default anySocket;
+}
+
+declare module 'socket.io-client' {
+  export function io(...args: any[]): any;
+  const defaultExport: any;
+  export default defaultExport;
+}
+=======
+>>>>>>> origin/cursor/website-audit-and-enhancement-63e3
+// Type definitions for socket.io.d;
+export interface socket.io.d {;
+  // TODO: Add proper type definitions;
+}
+<<<<<<< HEAD
+=======
+>>>>>>> origin/automation-error-fixes
+>>>>>>> origin/cursor/website-audit-and-enhancement-63e3

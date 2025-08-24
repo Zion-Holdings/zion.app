@@ -1,0 +1,45 @@
+name: Automation Advertiser
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: '*/10 * * * *'
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  main:
+    name: Main Job
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+<<<<<<< HEAD
+      - name: Run workflow
+        run: echo "Workflow completed successfully"
+=======
+
+      - name: Promote and update front content
+        run: |
+          node automation/front-index-advertiser.cjs || true
+          node automation/front-index-directory-builder.cjs || true
+          node automation/front-index-auto-advertiser.cjs || true
+          node automation/front-actions-advertiser.cjs || true
+          node automation/homepage-updater.cjs || true
+          node scripts/generate-readme.js
+
+>>>>>>> 5f48a381108fa3a8a43c189dd4b043133ce9307e

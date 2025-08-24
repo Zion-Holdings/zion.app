@@ -1,0 +1,11 @@
+export default function AdminAutomationStatus() { return <div className="p-8">Admin Automation Status</div>; }
+=======
+import React from 'react';
+
+export default function AutomationStatusPage() {
+  return <div>Automation Status</div>;
+}
+=======
+export default function AutomationStatus(){
+  return <div style={{padding:20}}>Automation Status</div>
+}

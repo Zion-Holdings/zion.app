@@ -1,0 +1,1 @@
+export default function AutoUpdate_160755() { return <main className="p-10"><h1 className="text-2xl font-bold">Auto Update</h1></main>; }

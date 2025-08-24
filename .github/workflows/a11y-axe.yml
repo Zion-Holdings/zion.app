@@ -1,0 +1,69 @@
+name: Accessibility Audit
+
+on:
+  pull_request:
+  schedule:
+    - cron: '0 */12 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  axe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install deps
+        run: |
+          npm -y init -f >/dev/null 2>&1 || true
+          npm i -D @playwright/test@1.x axe-core axe-playwright http-server
+          npx playwright install --with-deps
+
+      - name: Start server
+        run: |
+          nohup npx http-server -p 8080 -c-1 . >/dev/null 2>&1 &
+          sleep 2
+
+      - name: Write axe test
+        run: |
+          mkdir -p tests
+          cat > tests/a11y.spec.ts << 'EOF'
+          import { test, expect } from '@playwright/test';
+          import { injectAxe, checkA11y } from 'axe-playwright';
+
+          test('homepage a11y', async ({ page }) => {
+            await page.goto('http://localhost:8080/');
+            await page.waitForLoadState('networkidle');
+            await injectAxe(page);
+            await checkA11y(page, undefined, {
+              detailedReport: true,
+              detailedReportOptions: { html: true },
+            });
+          });
+          EOF
+
+      - name: Run a11y test
+        run: npx playwright test --config=none --reporter=line
+
+      - name: Create issue on violations
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const title = `Accessibility issues detected (${new Date().toISOString()})`;
+            const body = `Automated axe-core audit reported issues. See workflow logs for details.`;
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title,
+              body,
+              labels: ['automated', 'accessibility']
+            });

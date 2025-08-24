@@ -1,0 +1,83 @@
+# Autonomous AI Link Health System Dockerfile
+FROM node:18-alpine
+
+# Set working directory
+WORKDIR /app
+
+# Install system dependencies
+RUN apk add --no-cache \
+    python3 \
+    make \
+    g++ \
+    git \
+    curl \
+    supervisor \
+    cronie
+
+# Copy package files
+COPY package*.json ./
+
+# Install dependencies
+RUN npm ci --only=production
+
+# Copy application code
+COPY . .
+
+# Create necessary directories
+RUN mkdir -p \
+    /app/logs \
+    /app/data/reports \
+    /app/data/models \
+    /app/automation/logs
+
+# Create autonomous system user
+RUN addgroup -g 1001 -S autonomous && \
+    adduser -S autonomous -u 1001
+
+# Set ownership
+RUN chown -R autonomous:autonomous /app
+
+# Switch to autonomous user
+USER autonomous
+
+# Create startup script
+RUN echo '#!/bin/sh' > /app/start-autonomous.sh && \
+    echo 'echo "Starting Autonomous AI System..."' >> /app/start-autonomous.sh && \
+    echo 'cd /app' >> /app/start-autonomous.sh && \
+    echo 'node automation/autonomous-system-manager.cjs start' >> /app/start-autonomous.sh && \
+    chmod +x /app/start-autonomous.sh
+
+# Create supervisor configuration
+RUN echo '[supervisord]' > /etc/supervisor/conf.d/autonomous.conf && \
+    echo 'nodaemon=true' >> /etc/supervisor/conf.d/autonomous.conf && \
+    echo 'user=autonomous' >> /etc/supervisor/conf.d/autonomous.conf && \
+    echo '' >> /etc/supervisor/conf.d/autonomous.conf && \
+    echo '[program:autonomous-ai-manager]' >> /etc/supervisor/conf.d/autonomous.conf && \
+    echo 'command=/app/start-autonomous.sh' >> /etc/supervisor/conf.d/autonomous.conf && \
+    echo 'directory=/app' >> /etc/supervisor/conf.d/autonomous.conf && \
+    echo 'user=autonomous' >> /etc/supervisor/conf.d/autonomous.conf && \
+    echo 'autostart=true' >> /etc/supervisor/conf.d/autonomous.conf && \
+    echo 'autorestart=true' >> /etc/supervisor/conf.d/autonomous.conf && \
+    echo 'startretries=3' >> /etc/supervisor/conf.d/autonomous.conf && \
+    echo 'stderr_logfile=/app/logs/autonomous-ai-manager.err.log' >> /etc/supervisor/conf.d/autonomous.conf && \
+    echo 'stdout_logfile=/app/logs/autonomous-ai-manager.out.log' >> /etc/supervisor/conf.d/autonomous.conf
+
+# Create cron jobs for autonomous maintenance
+RUN echo '0 2 * * * cd /app && npm run links:monitor >> /app/logs/cron.log 2>&1' > /var/spool/cron/crontabs/autonomous && \
+    echo '0 3 * * 0 cd /app && npm run links:enterprise >> /app/logs/cron.log 2>&1' >> /var/spool/cron/crontabs/autonomous && \
+    echo '0 */6 * * * cd /app && npm run links:analytics >> /app/logs/cron.log 2>&1' >> /var/spool/cron/crontabs/autonomous
+
+# Expose ports
+EXPOSE 3000
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
+    CMD curl -f http://localhost:3000/health || exit 1
+
+# Set environment variables
+ENV NODE_ENV=production
+ENV PORT=3000
+ENV AUTONOMOUS_MODE=true
+
+# Start supervisor
+CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/autonomous.conf"]

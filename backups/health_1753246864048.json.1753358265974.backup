@@ -1,0 +1,41 @@
+{
+  "timestamp": 1753246864048,
+  "modules": {
+    "codeAnalysis": {
+      "status": "healthy"
+    },
+    "performanceMonitor": {
+      "status": "healthy"
+    },
+    "securityScanner": {
+      "status": "healthy"
+    },
+    "dependencyManager": {
+      "status": "healthy"
+    },
+    "testRunner": {
+      "status": "healthy"
+    },
+    "deploymentManager": {
+      "status": "healthy"
+    },
+    "aiAssistant": {
+      "status": "healthy"
+    },
+    "webSearcher": {
+      "status": "healthy"
+    }
+  },
+  "system": {
+    "memory": {
+      "rss": 58331136,
+      "heapTotal": 10293248,
+      "heapUsed": 8963464,
+      "external": 3411665,
+      "arrayBuffers": 95928
+    },
+    "uptime": 1260.450026808,
+    "activeTasks": 0,
+    "queueLength": 2
+  }
+}

@@ -1,0 +1,86 @@
+
+class Script {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    console.log('Starting Script...');
+    
+    try {
+      <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.zion.app.automation</string>
+    
+    <key>ProgramArguments</key>
+    <array>
+        <string>/bin/bash</string>
+        <string>/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/start-autonomous.sh</string>
+    </array>
+    
+    <key>RunAtLoad</key>
+    <true/>
+    
+    <key>KeepAlive</key>
+    <true/>
+    
+    <key>StandardOutPath</key>
+    <string>/Users/miami2/Documents/GitHub/bolt.new.zion.app/logs/launchd.log</string>
+    
+    <key>StandardErrorPath</key>
+    <string>/Users/miami2/Documents/GitHub/bolt.new.zion.app/logs/launchd-error.log</string>
+    
+    <key>WorkingDirectory</key>
+    <string>/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation</string>
+    
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>NODE_ENV</key>
+        <string>production</string>
+        <key>BACKGROUND_MODE</key>
+        <string>true</string>
+        <key>AUTO_RESTART</key>
+        <string>true</string>
+        <key>IMPROVEMENT_PORT</key>
+        <string>3003</string>
+    </dict>
+    
+    <key>ProcessType</key>
+    <string>Background</string>
+    
+    <key>ThrottleInterval</key>
+    <integer>60</integer>
+    
+    <key>StartInterval</key>
+    <integer>300</integer>
+    
+    <key>ExitTimeOut</key>
+    <integer>30</integer>
+</dict>
+</plist>
+    } catch (error) {
+      console.error('Error in Script:', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    console.log('Stopping Script...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new Script();
+  script.start().catch(error => {
+    console.error('Failed to start Script:', error);
+    process.exit(1);
+  });
+}
+
+module.exports = Script;

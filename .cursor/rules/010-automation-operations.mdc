@@ -1,0 +1,12 @@
+---
+description: Automation operating principles and independence from Cursor
+globs: **/*
+---
+
+# Automation Operations
+
+- Always start, test, follow, and fix the automation scripts.
+- Create new scripts to automate recurring workflows.
+- Prefer schedulers (cron/systemd/node-cron) that run independent of Cursor.
+- Use this computer's tools as needed (terminal, Chrome) and install required software responsibly.
+- After changes, run build/lint checks and synchronize via git.

@@ -1,0 +1,69 @@
+name: Lore AutoGen
+
+on:
+  schedule:
+    - cron: '*/10 * * * *' # every 10 minutes
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: lore-autogen-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  generate-lore:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci --ignore-scripts
+
+      - name: Generate lore assets
+        run: node automation/lore-generator.cjs | cat
+
+      - name: Install pandoc
+        run: sudo apt-get update && sudo apt-get install -y pandoc
+
+      - name: Generate PDFs
+        run: |
+          if [ -f docs/lore/bible.md ]; then pandoc docs/lore/bible.md -o docs/lore/bible.pdf; fi
+          if [ -f docs/storyboards/zion-origin.md ]; then pandoc docs/storyboards/zion-origin.md -o docs/storyboards/zion-origin.pdf; fi
+
+      - name: Upload lore artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: zion-lore-assets
+          path: |
+            docs/lore/**
+            docs/storyboards/**
+            docs/prompts/**
+            docs/voiceovers/**
+            data/lore/**
+            data/language-packs/**
+            data/storyboards/**
+            public/nft/**
+          if-no-files-found: ignore
+
+      - name: Commit and push changes
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "chore(lore): auto-generate storyworld assets [skip ci]"
+            git push origin HEAD:main
+          else
+            echo "No changes to push"
+          fi

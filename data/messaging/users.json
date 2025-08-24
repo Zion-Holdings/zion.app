@@ -1,0 +1,5 @@
+[
+  { "id": "client-demo", "name": "Acme Client", "role": "client" },
+  { "id": "talent-demo", "name": "John Talent", "role": "talent" },
+  { "id": "admin-demo", "name": "Admin", "role": "admin" }
+]

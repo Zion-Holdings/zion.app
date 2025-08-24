@@ -1,0 +1,74 @@
+name: App Automation
+
+on:
+
+
+  schedule: - cron: '0 1 * * 1'  # Every Monday at 1 AM
+  workflow_dispatch:  # Manual trigger
+  push:
+
+    paths: - 'automation/orchestrator-config.json'
+      - 'automation/app-automation-orchestrator.cjs'
+
+
+concurrency:
+
+
+
+  group: "github.workflow-${{ github.ref }}"
+  cancel-in-progress: true
+
+jobs:
+
+
+  run-orchestrator: - name: Checkout code
+           
+        
+      - name: Setup Node.js
+
+        
+                
+          node-version: '20'
+          cache: 'npm'
+          
+      - name: Install dependencies
+
+          
+                
+        
+      - name: Run App Automation Orchestrator
+
+        
+                
+        
+      - name: Commit changes
+
+        
+                
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git diff --quiet && git diff --staged --quiet || git commit -m "🤖 Automated app improvements and agent updates"
+          
+      - name: Push changes
+
+          
+                
+          github_token: "${{ secrets.GITHUB_TOKEN }}"
+          branch: "${{ github.ref }}"
+
+  notify-completion:
+      - name: Notify completion
+
+                
+          echo "App Automation Orchestrator completed"
+          echo "Timestamp: $(date)"
+          echo "Status: "${{ needs.run-orchestrator.result }}""
+          
+      - name: Upload results
+
+          
+                
+          name: automation-results
+          path: automation/reports/
+          retention-days: 30

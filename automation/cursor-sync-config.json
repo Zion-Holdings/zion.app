@@ -1,0 +1,66 @@
+{
+  "enabled": true,
+  "autoCommit": true,
+  "autoPush": true,
+  "autoPull": true,
+  "branch": "main",
+  "commitMessageTemplate": "🔄 Auto-sync: {description} ({count} files) - {timestamp}",
+  "maxCommitSize": 50,
+  "enableLogging": true,
+  "syncInterval": 60000,
+  "maxRetries": 3,
+  "retryDelay": 5000,
+  "excludePatterns": [
+    "node_modules/**",
+    ".next/**",
+    "dist/**",
+    "build/**",
+    ".git/**",
+    "*.log",
+    "*.tmp",
+    "*.cache",
+    "coverage/**",
+    "cypress/videos/**",
+    "cypress/screenshots/**",
+    "playwright-logs/**",
+    "test-results/**",
+    "backups/**",
+    "temp/**",
+    "logs/**"
+  ],
+  "includePatterns": [
+    "src/**/*",
+    "pages/**/*",
+    "components/**/*",
+    "styles/**/*",
+    "public/**/*",
+    "automation/**/*",
+    "*.json",
+    "*.md",
+    "*.ts",
+    "*.tsx",
+    "*.js",
+    "*.jsx",
+    "*.css",
+    "*.scss",
+    "*.html",
+    "*.py",
+    "*.sh"
+  ],
+  "notifications": {
+    "enabled": true,
+    "slack": {
+      "enabled": false,
+      "webhook": ""
+    },
+    "email": {
+      "enabled": false,
+      "recipients": []
+    }
+  },
+  "monitoring": {
+    "enabled": true,
+    "healthCheckInterval": 300000,
+    "metricsCollection": true
+  }
+} 

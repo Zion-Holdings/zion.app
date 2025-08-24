@@ -1,0 +1,14 @@
+{
+  "summary": {
+=======
+    "totalFiles": 0,
+    "filesWithIssues": 0,
+    "totalIssues": 0,
+    "totalWarnings": 0,
+    "buildBreakingFiles": 0,
+    "canBuild": true
+  },
+  "results": [],
+  "buildBreakingFiles": [],
+  "generatedAt": "2025-08-19T23:56:17.090Z"
+}

@@ -1,0 +1,38 @@
+name: Agentic News (10-min)
+
+on:
+  schedule:
+    - cron: '*/10 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  agentic-news:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+          cache: 'npm'
+      - name: Install deps
+        run: npm ci
+      - name: Run Agentic News
+        run: node automation/agentic-news.cjs
+      - name: Commit and push if changed
+        run: |
+          if [ -n "$(git status --porcelain data/agentic-news.json)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add data/agentic-news.json
+            git commit -m "chore(automation): update Agentic News"
+            git push origin HEAD:main
+          else
+            echo "No changes to commit."
+          fi

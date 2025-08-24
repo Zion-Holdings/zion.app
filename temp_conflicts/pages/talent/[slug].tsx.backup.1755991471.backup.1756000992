@@ -1,0 +1,16 @@
+<<<<<<< HEAD
+import React from 'react';
+import { useRouter } from 'next/router';
+
+export default function TalentSlugPage() {
+  const router = useRouter();
+  const { slug } = router.query as { slug?: string };
+  return <div>Talent: {slug}</div>;
+}
+=======
+import { useRouter } from 'next/router'
+export default function TalentSlug(){
+  const { query } = useRouter()
+  return <div style={{padding:20}}>Talent: {String(query.slug||'')}</div>
+}
+>>>>>>> origin/cursor/deploy-anonymous-zk-voting-for-dao-e4d6

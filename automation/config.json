@@ -1,0 +1,15 @@
+{
+  "maxCommitSize": 50,
+  "commitMessageTemplate": "fix: {description}",
+  "branch": "main",
+  "autoPush": true,
+  "enableLogging": true,
+  "autoFixEnabled": true,
+  "performanceThreshold": 80,
+  "securityLevel": "high",
+  "dashboard": {
+    "enabled": true,
+    "port": 3001
+  },
+  "enableDashboard": true
+}

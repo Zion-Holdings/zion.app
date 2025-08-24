@@ -1,0 +1,29 @@
+{
+  "startTime": 1755626437361,
+  "lastUpdate": 1755626437361,
+  "healthScore": 100,
+  "pm2Status": "unknown",
+  "githubActionsStatus": "unknown",
+  "netlifyFunctionsStatus": "unknown",
+  "totalChecks": 0,
+  "successfulChecks": 0,
+  "failedChecks": 0,
+  "lastError": null,
+  "components": {
+    "pm2": {
+      "status": "unknown",
+      "lastCheck": 0,
+      "errors": []
+    },
+    "githubActions": {
+      "status": "unknown",
+      "lastCheck": 0,
+      "errors": []
+    },
+    "netlifyFunctions": {
+      "status": "unknown",
+      "lastCheck": 0,
+      "errors": []
+    }
+  }
+}

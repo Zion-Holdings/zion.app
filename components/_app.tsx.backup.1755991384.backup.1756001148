@@ -1,0 +1,24 @@
+<<<<<<< HEAD
+import type { AppProps } from 'next/app'
+import EnhancedLayout from '../components/layout/EnhancedLayout'
+import '../styles/enhanced-design-system.css'
+import '../styles/modern-design-system.css'
+
+export default function App({ Component, pageProps }: AppProps){
+=======
+import type { AppProps } from 'next/app';
+import EnhancedLayout from '../components/layout/EnhancedLayout';
+import '../styles/globals.css';
+
+export default function MyApp({ Component, pageProps }: AppProps) {
+>>>>>>> origin/cursor/deploy-zion-brain-ai-system-5783
+  return (
+    <EnhancedLayout>
+      <Component {...pageProps} />
+    </EnhancedLayout>
+<<<<<<< HEAD
+  )
+=======
+  );
+>>>>>>> origin/cursor/deploy-zion-brain-ai-system-5783
+}

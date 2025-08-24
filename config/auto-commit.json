@@ -1,0 +1,14 @@
+{
+  "enabled": true,
+  "commitMessage": "Auto-commit: {timestamp}",
+  "excludePatterns": [
+    "node_modules/**",
+    "logs/**",
+    "temp/**",
+    "*.log",
+    ".env.local",
+    ".env.production"
+  ],
+  "maxRetries": 3,
+  "retryDelay": 5000
+}

@@ -1,0 +1,40 @@
+name: Ensure Homepage
+
+on:
+  push:
+    branches: [ main ]
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  guard-homepage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Ensure homepage advertises automations
+        run: |
+          FILE=pages/index.tsx
+          grep -q "Lore AutoGen" "$FILE" || echo "Homepage missing Lore AutoGen card"
+          grep -q "Rapid Sync" "$FILE" || echo "Homepage missing Rapid Sync card"
+          grep -q "Quick Build Healer" "$FILE" || echo "Homepage missing Quick Build Healer card"
+          grep -q "Docs Indexer" "$FILE" || echo "Homepage missing Docs Indexer card"
+          grep -q "NFT Pack Generator" "$FILE" || echo "Homepage missing NFT Pack Generator card"
+
+      - name: Commit no-op if changes (placeholder)
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "chore(home): ensure homepage cards present [skip ci]" || true
+            git push origin HEAD:main || true
+          else
+            echo "Homepage already contains required cards"
+          fi

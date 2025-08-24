@@ -1,0 +1,43 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://ziontechgroup.com/sitemap.xml
+
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_next/
+<<<<<<< HEAD
+Disallow: /private/
+
+# Allow important pages
+Allow: /about/
+Allow: /services/
+Allow: /ai-services/
+Allow: /quantum-services/
+Allow: /enterprise-it/
+Allow: /cybersecurity/
+Allow: /research-development/
+Allow: /space-tech/
+Allow: /case-studies/
+Allow: /news/
+Allow: /events/
+Allow: /webinars/
+Allow: /white-papers/
+Allow: /contact/
+Allow: /zion-os/
+Allow: /docs/
+=======
+Disallow: /multiverse/
+
+# Allow important pages
+Allow: /services/
+Allow: /about/
+Allow: /contact/
+Allow: /news/
+Allow: /careers/
+
+# Crawl delay
+Crawl-delay: 1
+>>>>>>> origin/cursor/website-audit-and-enhancement-2d5c

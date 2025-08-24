@@ -1,0 +1,27 @@
+# Git Commands to Complete the Merge Process
+
+# 1. Check current status
+git status
+
+# 2. Add all changes
+git add .
+
+# 3. Commit any remaining changes
+git commit -m "Complete website audit and enhancement merge"
+
+# 4. Push the branch
+git push origin website-audit-and-enhancement-final
+
+# 5. Switch to main branch
+git checkout main
+
+# 6. Merge our branch into main
+git merge website-audit-and-enhancement-final
+
+# 7. Push to main
+git push origin main
+
+# Alternative: Create Pull Request on GitHub
+# 1. Push the branch first
+# 2. Go to GitHub and create a Pull Request
+# 3. Merge the PR through GitHub interface

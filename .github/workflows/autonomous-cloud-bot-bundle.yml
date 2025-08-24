@@ -1,0 +1,39 @@
+name: Autonomous Cloud Bot (Bundle Size)
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '7 3 * * 1'
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: cloud-autobot-bundle
+  cancel-in-progress: false
+
+jobs:
+  run-bundle:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - run: npm ci
+      - name: Audit bundle sizes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GIT_AUTHOR_NAME: zion-autobot
+          GIT_AUTHOR_EMAIL: autobot@users.noreply.github.com
+          GIT_COMMITTER_NAME: zion-autobot
+          GIT_COMMITTER_EMAIL: autobot@users.noreply.github.com
+          AUTOBOT_TASKS: |
+            images:audit
+        run: node automation/bundle-size-audit.cjs

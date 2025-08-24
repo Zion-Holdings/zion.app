@@ -1,0 +1,49 @@
+name: Automation Guardian Every 10 Minutes
+
+on:
+
+
+  schedule: - cron: '0 0 * * *'
+  workflow_dispatch: {}
+
+
+concurrency:
+
+
+
+  group: "github.workflow-${{ github.ref }}"
+  cancel-in-progress: true
+
+  contents: write
+
+jobs:
+
+
+  guardian: - name: Checkout
+           
+          fetch-depth: 0
+
+      - name: Setup Node.js
+
+
+                
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+
+
+                
+
+      - name: Run Automation Guardian (10m)
+
+
+                
+
+      - name: Upload guardian logs
+
+
+          
+          name: automation-guardian-logs
+          path: automation/logs/**/*
+          if-no-files-found: ignore

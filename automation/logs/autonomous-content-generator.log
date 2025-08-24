@@ -1,0 +1,3382 @@
+[2025-08-19T03:40:26.425Z] [INFO] Starting autonomous content generation...
+[2025-08-19T03:40:26.428Z] [INFO] Analyzing content gaps...
+[2025-08-19T03:40:27.331Z] [INFO] Raw output: [
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "dossiers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "insights: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "tutorials: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "whitepapers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  }
+]
+[2025-08-19T03:40:27.332Z] [INFO] Generating content for gap: content_quality - dossiers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:40:27.332Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:40:27.332Z] [INFO] Generating content for gap: content_quality - insights: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:40:27.332Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:40:27.333Z] [INFO] Generating content for gap: content_quality - tutorials: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:40:27.333Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:40:27.334Z] [INFO] Generating content for gap: content_quality - whitepapers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:40:27.334Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:40:27.334Z] [INFO] Updating site structure...
+[2025-08-19T03:40:27.335Z] [INFO] Site structure updated
+[2025-08-19T03:40:27.335Z] [INFO] Autonomous content generation completed successfully
+[2025-08-19T03:40:29.934Z] [INFO] Starting autonomous content generation...
+[2025-08-19T03:40:29.939Z] [INFO] Analyzing content gaps...
+[2025-08-19T03:40:31.084Z] [INFO] Raw output: [
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "dossiers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "insights: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "tutorials: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "whitepapers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  }
+]
+[2025-08-19T03:40:31.084Z] [INFO] Generating content for gap: content_quality - dossiers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:40:31.085Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:40:31.085Z] [INFO] Generating content for gap: content_quality - insights: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:40:31.085Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:40:31.086Z] [INFO] Generating content for gap: content_quality - tutorials: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:40:31.086Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:40:31.087Z] [INFO] Generating content for gap: content_quality - whitepapers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:40:31.087Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:40:31.087Z] [INFO] Updating site structure...
+[2025-08-19T03:40:31.088Z] [INFO] Site structure updated
+[2025-08-19T03:40:31.088Z] [INFO] Autonomous content generation completed successfully
+[2025-08-19T03:40:33.395Z] [INFO] Starting autonomous content generation...
+[2025-08-19T03:40:33.399Z] [INFO] Analyzing content gaps...
+[2025-08-19T03:40:34.329Z] [INFO] Raw output: [
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "dossiers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "insights: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "tutorials: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "whitepapers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  }
+]
+[2025-08-19T03:40:34.330Z] [INFO] Generating content for gap: content_quality - dossiers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:40:34.331Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:40:34.331Z] [INFO] Generating content for gap: content_quality - insights: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:40:34.331Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:40:34.331Z] [INFO] Generating content for gap: content_quality - tutorials: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:40:34.332Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:40:34.332Z] [INFO] Generating content for gap: content_quality - whitepapers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:40:34.333Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:40:34.333Z] [INFO] Updating site structure...
+[2025-08-19T03:40:34.333Z] [INFO] Site structure updated
+[2025-08-19T03:40:34.333Z] [INFO] Autonomous content generation completed successfully
+[2025-08-19T03:40:36.904Z] [INFO] Starting autonomous content generation...
+[2025-08-19T03:40:36.908Z] [INFO] Analyzing content gaps...
+[2025-08-19T03:40:38.013Z] [INFO] Raw output: [
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "dossiers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "insights: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "tutorials: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "whitepapers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  }
+]
+[2025-08-19T03:40:38.014Z] [INFO] Generating content for gap: content_quality - dossiers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:40:38.014Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:40:38.015Z] [INFO] Generating content for gap: content_quality - insights: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:40:38.015Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:40:38.016Z] [INFO] Generating content for gap: content_quality - tutorials: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:40:38.016Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:40:38.016Z] [INFO] Generating content for gap: content_quality - whitepapers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:40:38.017Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:40:38.017Z] [INFO] Updating site structure...
+[2025-08-19T03:40:38.017Z] [INFO] Site structure updated
+[2025-08-19T03:40:38.018Z] [INFO] Autonomous content generation completed successfully
+[2025-08-19T03:40:40.428Z] [INFO] Starting autonomous content generation...
+[2025-08-19T03:40:40.436Z] [INFO] Analyzing content gaps...
+[2025-08-19T03:40:42.070Z] [INFO] Raw output: [
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "dossiers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "insights: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "tutorials: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "whitepapers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  }
+]
+[2025-08-19T03:40:42.071Z] [INFO] Generating content for gap: content_quality - dossiers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:40:42.071Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:40:42.071Z] [INFO] Generating content for gap: content_quality - insights: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:40:42.072Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:40:42.076Z] [INFO] Generating content for gap: content_quality - tutorials: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:40:42.076Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:40:42.078Z] [INFO] Generating content for gap: content_quality - whitepapers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:40:42.078Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:40:42.078Z] [INFO] Updating site structure...
+[2025-08-19T03:40:42.079Z] [INFO] Site structure updated
+[2025-08-19T03:40:42.079Z] [INFO] Autonomous content generation completed successfully
+[2025-08-19T03:40:43.901Z] [INFO] Starting autonomous content generation...
+[2025-08-19T03:40:43.904Z] [INFO] Analyzing content gaps...
+[2025-08-19T03:40:45.090Z] [INFO] Raw output: [
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "dossiers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "insights: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "tutorials: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "whitepapers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  }
+]
+[2025-08-19T03:40:45.091Z] [INFO] Generating content for gap: content_quality - dossiers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:40:45.092Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:40:45.092Z] [INFO] Generating content for gap: content_quality - insights: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:40:45.092Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:40:45.093Z] [INFO] Generating content for gap: content_quality - tutorials: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:40:45.093Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:40:45.094Z] [INFO] Generating content for gap: content_quality - whitepapers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:40:45.094Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:40:45.094Z] [INFO] Updating site structure...
+[2025-08-19T03:40:45.094Z] [INFO] Site structure updated
+[2025-08-19T03:40:45.094Z] [INFO] Autonomous content generation completed successfully
+[2025-08-19T03:40:47.415Z] [INFO] Starting autonomous content generation...
+[2025-08-19T03:40:47.421Z] [INFO] Analyzing content gaps...
+[2025-08-19T03:40:48.501Z] [INFO] Raw output: [
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "dossiers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "insights: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "tutorials: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "whitepapers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  }
+]
+[2025-08-19T03:40:48.502Z] [INFO] Generating content for gap: content_quality - dossiers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:40:48.502Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:40:48.502Z] [INFO] Generating content for gap: content_quality - insights: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:40:48.503Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:40:48.503Z] [INFO] Generating content for gap: content_quality - tutorials: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:40:48.503Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:40:48.504Z] [INFO] Generating content for gap: content_quality - whitepapers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:40:48.504Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:40:48.505Z] [INFO] Updating site structure...
+[2025-08-19T03:40:48.505Z] [INFO] Site structure updated
+[2025-08-19T03:40:48.505Z] [INFO] Autonomous content generation completed successfully
+[2025-08-19T03:40:50.948Z] [INFO] Starting autonomous content generation...
+[2025-08-19T03:40:50.951Z] [INFO] Analyzing content gaps...
+[2025-08-19T03:40:52.297Z] [INFO] Raw output: [
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "dossiers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "insights: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "tutorials: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "whitepapers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  }
+]
+[2025-08-19T03:40:52.298Z] [INFO] Generating content for gap: content_quality - dossiers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:40:52.298Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:40:52.298Z] [INFO] Generating content for gap: content_quality - insights: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:40:52.299Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:40:52.299Z] [INFO] Generating content for gap: content_quality - tutorials: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:40:52.299Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:40:52.300Z] [INFO] Generating content for gap: content_quality - whitepapers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:40:52.300Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:40:52.301Z] [INFO] Updating site structure...
+[2025-08-19T03:40:52.301Z] [INFO] Site structure updated
+[2025-08-19T03:40:52.301Z] [INFO] Autonomous content generation completed successfully
+[2025-08-19T03:40:54.561Z] [INFO] Starting autonomous content generation...
+[2025-08-19T03:40:54.564Z] [INFO] Analyzing content gaps...
+[2025-08-19T03:40:55.936Z] [INFO] Raw output: [
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "dossiers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "insights: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "tutorials: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "whitepapers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  }
+]
+[2025-08-19T03:40:55.936Z] [INFO] Generating content for gap: content_quality - dossiers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:40:55.937Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:40:55.937Z] [INFO] Generating content for gap: content_quality - insights: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:40:55.937Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:40:55.938Z] [INFO] Generating content for gap: content_quality - tutorials: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:40:55.938Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:40:55.939Z] [INFO] Generating content for gap: content_quality - whitepapers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:40:55.939Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:40:55.940Z] [INFO] Updating site structure...
+[2025-08-19T03:40:55.940Z] [INFO] Site structure updated
+[2025-08-19T03:40:55.940Z] [INFO] Autonomous content generation completed successfully
+[2025-08-19T03:40:58.004Z] [INFO] Starting autonomous content generation...
+[2025-08-19T03:40:58.007Z] [INFO] Analyzing content gaps...
+[2025-08-19T03:40:59.236Z] [INFO] Raw output: [
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "dossiers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "insights: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "tutorials: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "whitepapers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  }
+]
+[2025-08-19T03:40:59.237Z] [INFO] Generating content for gap: content_quality - dossiers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:40:59.237Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:40:59.237Z] [INFO] Generating content for gap: content_quality - insights: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:40:59.238Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:40:59.238Z] [INFO] Generating content for gap: content_quality - tutorials: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:40:59.239Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:40:59.239Z] [INFO] Generating content for gap: content_quality - whitepapers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:40:59.239Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:40:59.240Z] [INFO] Updating site structure...
+[2025-08-19T03:40:59.240Z] [INFO] Site structure updated
+[2025-08-19T03:40:59.240Z] [INFO] Autonomous content generation completed successfully
+[2025-08-19T03:41:02.003Z] [INFO] Starting autonomous content generation...
+[2025-08-19T03:41:02.009Z] [INFO] Analyzing content gaps...
+[2025-08-19T03:41:03.988Z] [INFO] Raw output: [
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "dossiers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "insights: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "tutorials: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "whitepapers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  }
+]
+[2025-08-19T03:41:03.989Z] [INFO] Generating content for gap: content_quality - dossiers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:03.989Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:03.989Z] [INFO] Generating content for gap: content_quality - insights: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:03.989Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:03.990Z] [INFO] Generating content for gap: content_quality - tutorials: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:03.990Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:03.991Z] [INFO] Generating content for gap: content_quality - whitepapers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:03.991Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:03.992Z] [INFO] Updating site structure...
+[2025-08-19T03:41:03.992Z] [INFO] Site structure updated
+[2025-08-19T03:41:03.992Z] [INFO] Autonomous content generation completed successfully
+[2025-08-19T03:41:05.374Z] [INFO] Starting autonomous content generation...
+[2025-08-19T03:41:05.377Z] [INFO] Analyzing content gaps...
+[2025-08-19T03:41:07.084Z] [INFO] Raw output: [
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "dossiers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "insights: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "tutorials: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "whitepapers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  }
+]
+[2025-08-19T03:41:07.092Z] [INFO] Generating content for gap: content_quality - dossiers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:07.093Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:07.093Z] [INFO] Generating content for gap: content_quality - insights: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:07.094Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:07.094Z] [INFO] Generating content for gap: content_quality - tutorials: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:07.095Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:07.096Z] [INFO] Generating content for gap: content_quality - whitepapers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:07.096Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:07.096Z] [INFO] Updating site structure...
+[2025-08-19T03:41:07.103Z] [INFO] Site structure updated
+[2025-08-19T03:41:07.104Z] [INFO] Autonomous content generation completed successfully
+[2025-08-19T03:41:09.307Z] [INFO] Starting autonomous content generation...
+[2025-08-19T03:41:09.311Z] [INFO] Analyzing content gaps...
+[2025-08-19T03:41:11.136Z] [INFO] Raw output: [
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "dossiers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "innovations: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "insights: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "tutorials: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "whitepapers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  }
+]
+[2025-08-19T03:41:11.137Z] [INFO] Generating content for gap: content_quality - dossiers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:11.138Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:11.138Z] [INFO] Generating content for gap: content_quality - innovations: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:11.138Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:11.139Z] [INFO] Generating content for gap: content_quality - insights: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:11.139Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:11.140Z] [INFO] Generating content for gap: content_quality - tutorials: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:11.140Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:11.141Z] [INFO] Generating content for gap: content_quality - whitepapers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:11.141Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:11.141Z] [INFO] Updating site structure...
+[2025-08-19T03:41:11.141Z] [INFO] Site structure updated
+[2025-08-19T03:41:11.142Z] [INFO] Autonomous content generation completed successfully
+[2025-08-19T03:41:12.791Z] [INFO] Starting autonomous content generation...
+[2025-08-19T03:41:12.847Z] [INFO] Analyzing content gaps...
+[2025-08-19T03:41:15.053Z] [INFO] Raw output: [
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "dossiers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "innovations: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "insights: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "tutorials: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "whitepapers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  }
+]
+[2025-08-19T03:41:15.092Z] [INFO] Generating content for gap: content_quality - dossiers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:15.092Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:15.095Z] [INFO] Generating content for gap: content_quality - innovations: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:15.096Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:15.097Z] [INFO] Generating content for gap: content_quality - insights: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:15.109Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:15.110Z] [INFO] Generating content for gap: content_quality - tutorials: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:15.110Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:15.111Z] [INFO] Generating content for gap: content_quality - whitepapers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:15.111Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:15.112Z] [INFO] Updating site structure...
+[2025-08-19T03:41:15.113Z] [INFO] Site structure updated
+[2025-08-19T03:41:15.120Z] [INFO] Autonomous content generation completed successfully
+[2025-08-19T03:41:16.382Z] [INFO] Starting autonomous content generation...
+[2025-08-19T03:41:16.394Z] [INFO] Analyzing content gaps...
+[2025-08-19T03:41:18.026Z] [INFO] Raw output: [
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "dossiers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "innovations: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "insights: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "tutorials: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "whitepapers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  }
+]
+[2025-08-19T03:41:18.027Z] [INFO] Generating content for gap: content_quality - dossiers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:18.031Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:18.032Z] [INFO] Generating content for gap: content_quality - innovations: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:18.032Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:18.032Z] [INFO] Generating content for gap: content_quality - insights: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:18.033Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:18.033Z] [INFO] Generating content for gap: content_quality - tutorials: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:18.034Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:18.034Z] [INFO] Generating content for gap: content_quality - whitepapers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:18.034Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:18.035Z] [INFO] Updating site structure...
+[2025-08-19T03:41:18.035Z] [INFO] Site structure updated
+[2025-08-19T03:41:18.035Z] [INFO] Autonomous content generation completed successfully
+[2025-08-19T03:41:19.616Z] [INFO] Starting autonomous content generation...
+[2025-08-19T03:41:19.619Z] [INFO] Analyzing content gaps...
+[2025-08-19T03:41:20.573Z] [INFO] Raw output: [
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "dossiers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "innovations: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "insights: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "tutorials: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "whitepapers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  }
+]
+[2025-08-19T03:41:20.574Z] [INFO] Generating content for gap: content_quality - dossiers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:20.574Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:20.574Z] [INFO] Generating content for gap: content_quality - innovations: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:20.575Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:20.575Z] [INFO] Generating content for gap: content_quality - insights: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:20.575Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:20.576Z] [INFO] Generating content for gap: content_quality - tutorials: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:20.576Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:20.577Z] [INFO] Generating content for gap: content_quality - whitepapers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:20.577Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:20.579Z] [INFO] Updating site structure...
+[2025-08-19T03:41:20.579Z] [INFO] Site structure updated
+[2025-08-19T03:41:20.580Z] [INFO] Autonomous content generation completed successfully
+[2025-08-19T03:41:23.005Z] [INFO] Starting autonomous content generation...
+[2025-08-19T03:41:23.008Z] [INFO] Analyzing content gaps...
+[2025-08-19T03:41:24.202Z] [INFO] Raw output: [
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "dossiers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "innovations: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "insights: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "tutorials: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "whitepapers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  }
+]
+[2025-08-19T03:41:24.204Z] [INFO] Generating content for gap: content_quality - dossiers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:24.204Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:24.204Z] [INFO] Generating content for gap: content_quality - innovations: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:24.204Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:24.205Z] [INFO] Generating content for gap: content_quality - insights: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:24.205Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:24.206Z] [INFO] Generating content for gap: content_quality - tutorials: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:24.206Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:24.207Z] [INFO] Generating content for gap: content_quality - whitepapers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:24.207Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:24.207Z] [INFO] Updating site structure...
+[2025-08-19T03:41:24.207Z] [INFO] Site structure updated
+[2025-08-19T03:41:24.208Z] [INFO] Autonomous content generation completed successfully
+[2025-08-19T03:41:26.228Z] [INFO] Starting autonomous content generation...
+[2025-08-19T03:41:26.233Z] [INFO] Analyzing content gaps...
+[2025-08-19T03:41:27.088Z] [INFO] Raw output: [
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "dossiers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "innovations: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "insights: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "tutorials: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "whitepapers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  }
+]
+[2025-08-19T03:41:27.089Z] [INFO] Generating content for gap: content_quality - dossiers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:27.089Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:27.089Z] [INFO] Generating content for gap: content_quality - innovations: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:27.089Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:27.090Z] [INFO] Generating content for gap: content_quality - insights: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:27.090Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:27.091Z] [INFO] Generating content for gap: content_quality - tutorials: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:27.091Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:27.091Z] [INFO] Generating content for gap: content_quality - whitepapers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:27.092Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:27.092Z] [INFO] Updating site structure...
+[2025-08-19T03:41:27.092Z] [INFO] Site structure updated
+[2025-08-19T03:41:27.092Z] [INFO] Autonomous content generation completed successfully
+[2025-08-19T03:41:29.491Z] [INFO] Starting autonomous content generation...
+[2025-08-19T03:41:29.496Z] [INFO] Analyzing content gaps...
+[2025-08-19T03:41:30.923Z] [INFO] Raw output: [
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "dossiers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "innovations: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "insights: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "tutorials: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "whitepapers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  }
+]
+[2025-08-19T03:41:30.924Z] [INFO] Generating content for gap: content_quality - dossiers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:30.924Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:30.924Z] [INFO] Generating content for gap: content_quality - innovations: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:30.924Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:30.925Z] [INFO] Generating content for gap: content_quality - insights: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:30.925Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:30.926Z] [INFO] Generating content for gap: content_quality - tutorials: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:30.926Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:30.926Z] [INFO] Generating content for gap: content_quality - whitepapers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:30.927Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:30.927Z] [INFO] Updating site structure...
+[2025-08-19T03:41:30.927Z] [INFO] Site structure updated
+[2025-08-19T03:41:30.928Z] [INFO] Autonomous content generation completed successfully
+[2025-08-19T03:41:32.826Z] [INFO] Starting autonomous content generation...
+[2025-08-19T03:41:32.833Z] [INFO] Analyzing content gaps...
+[2025-08-19T03:41:34.569Z] [INFO] Starting autonomous content generation...
+[2025-08-19T03:41:34.576Z] [INFO] Analyzing content gaps...
+[2025-08-19T03:41:35.993Z] [INFO] Raw output: [
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "dossiers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "innovations: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "insights: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "tutorials: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "whitepapers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  }
+]
+[2025-08-19T03:41:35.993Z] [INFO] Generating content for gap: content_quality - dossiers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:35.994Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:35.994Z] [INFO] Generating content for gap: content_quality - innovations: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:35.994Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:35.995Z] [INFO] Generating content for gap: content_quality - insights: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:35.995Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:35.996Z] [INFO] Generating content for gap: content_quality - tutorials: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:35.996Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:35.996Z] [INFO] Generating content for gap: content_quality - whitepapers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:35.997Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:35.997Z] [INFO] Updating site structure...
+[2025-08-19T03:41:35.997Z] [INFO] Site structure updated
+[2025-08-19T03:41:35.997Z] [INFO] Autonomous content generation completed successfully
+[2025-08-19T03:41:38.061Z] [INFO] Starting autonomous content generation...
+[2025-08-19T03:41:38.069Z] [INFO] Analyzing content gaps...
+[2025-08-19T03:41:39.401Z] [INFO] Raw output: [
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "dossiers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "innovations: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "insights: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "tutorials: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "whitepapers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  }
+]
+[2025-08-19T03:41:39.402Z] [INFO] Generating content for gap: content_quality - dossiers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:39.402Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:39.402Z] [INFO] Generating content for gap: content_quality - innovations: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:39.403Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:39.403Z] [INFO] Generating content for gap: content_quality - insights: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:39.403Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:39.404Z] [INFO] Generating content for gap: content_quality - tutorials: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:39.404Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:39.405Z] [INFO] Generating content for gap: content_quality - whitepapers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:39.405Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:39.405Z] [INFO] Updating site structure...
+[2025-08-19T03:41:39.405Z] [INFO] Site structure updated
+[2025-08-19T03:41:39.406Z] [INFO] Autonomous content generation completed successfully
+[2025-08-19T03:41:41.620Z] [INFO] Starting autonomous content generation...
+[2025-08-19T03:41:41.623Z] [INFO] Analyzing content gaps...
+[2025-08-19T03:41:43.345Z] [INFO] Raw output: [
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "dossiers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "innovations: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "insights: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "tutorials: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "whitepapers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  }
+]
+[2025-08-19T03:41:43.345Z] [INFO] Generating content for gap: content_quality - dossiers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:43.346Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:43.346Z] [INFO] Generating content for gap: content_quality - innovations: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:43.346Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:43.347Z] [INFO] Generating content for gap: content_quality - insights: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:43.347Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:43.348Z] [INFO] Generating content for gap: content_quality - tutorials: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:43.348Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:43.348Z] [INFO] Generating content for gap: content_quality - whitepapers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:43.348Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:43.349Z] [INFO] Updating site structure...
+[2025-08-19T03:41:43.349Z] [INFO] Site structure updated
+[2025-08-19T03:41:43.349Z] [INFO] Autonomous content generation completed successfully
+[2025-08-19T03:41:44.914Z] [INFO] Starting autonomous content generation...
+[2025-08-19T03:41:44.955Z] [INFO] Analyzing content gaps...
+[2025-08-19T03:41:46.238Z] [INFO] Raw output: [
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "dossiers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "innovations: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "insights: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "tutorials: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "whitepapers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  }
+]
+[2025-08-19T03:41:46.253Z] [INFO] Generating content for gap: content_quality - dossiers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:46.254Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:46.255Z] [INFO] Generating content for gap: content_quality - innovations: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:46.255Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:46.257Z] [INFO] Generating content for gap: content_quality - insights: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:46.257Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:46.258Z] [INFO] Generating content for gap: content_quality - tutorials: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:46.258Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:46.259Z] [INFO] Generating content for gap: content_quality - whitepapers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:46.259Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:46.261Z] [INFO] Updating site structure...
+[2025-08-19T03:41:46.262Z] [INFO] Site structure updated
+[2025-08-19T03:41:46.262Z] [INFO] Autonomous content generation completed successfully
+[2025-08-19T03:41:48.553Z] [INFO] Starting autonomous content generation...
+[2025-08-19T03:41:48.580Z] [INFO] Analyzing content gaps...
+[2025-08-19T03:41:49.453Z] [INFO] Raw output: [
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "dossiers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "innovations: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "insights: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "tutorials: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "whitepapers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  }
+]
+[2025-08-19T03:41:49.457Z] [INFO] Generating content for gap: content_quality - dossiers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:49.463Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:49.468Z] [INFO] Generating content for gap: content_quality - innovations: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:49.473Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:49.473Z] [INFO] Generating content for gap: content_quality - insights: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:49.474Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:49.475Z] [INFO] Generating content for gap: content_quality - tutorials: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:49.475Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:49.475Z] [INFO] Generating content for gap: content_quality - whitepapers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:49.475Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:49.477Z] [INFO] Updating site structure...
+[2025-08-19T03:41:49.477Z] [INFO] Site structure updated
+[2025-08-19T03:41:49.479Z] [INFO] Autonomous content generation completed successfully
+[2025-08-19T03:41:52.169Z] [INFO] Starting autonomous content generation...
+[2025-08-19T03:41:52.179Z] [INFO] Analyzing content gaps...
+[2025-08-19T03:41:53.151Z] [INFO] Raw output: [
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "dossiers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "innovations: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "insights: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "tutorials: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "whitepapers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  }
+]
+[2025-08-19T03:41:53.152Z] [INFO] Generating content for gap: content_quality - dossiers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:53.152Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:53.153Z] [INFO] Generating content for gap: content_quality - innovations: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:53.153Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:53.153Z] [INFO] Generating content for gap: content_quality - insights: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:53.154Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:53.155Z] [INFO] Generating content for gap: content_quality - tutorials: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:53.155Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:53.155Z] [INFO] Generating content for gap: content_quality - whitepapers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:53.155Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:53.156Z] [INFO] Updating site structure...
+[2025-08-19T03:41:53.156Z] [INFO] Site structure updated
+[2025-08-19T03:41:53.156Z] [INFO] Autonomous content generation completed successfully
+[2025-08-19T03:41:56.066Z] [INFO] Starting autonomous content generation...
+[2025-08-19T03:41:56.114Z] [INFO] Analyzing content gaps...
+[2025-08-19T03:41:57.164Z] [INFO] Raw output: [
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "dossiers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "innovations: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "insights: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "tutorials: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "whitepapers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  }
+]
+[2025-08-19T03:41:57.165Z] [INFO] Generating content for gap: content_quality - dossiers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:57.166Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:57.166Z] [INFO] Generating content for gap: content_quality - innovations: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:57.166Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:57.167Z] [INFO] Generating content for gap: content_quality - insights: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:57.167Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:57.167Z] [INFO] Generating content for gap: content_quality - tutorials: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:57.168Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:57.168Z] [INFO] Generating content for gap: content_quality - whitepapers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:41:57.168Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:41:57.168Z] [INFO] Updating site structure...
+[2025-08-19T03:41:57.169Z] [INFO] Site structure updated
+[2025-08-19T03:41:57.169Z] [INFO] Autonomous content generation completed successfully
+[2025-08-19T03:41:59.500Z] [INFO] Starting autonomous content generation...
+[2025-08-19T03:41:59.506Z] [INFO] Analyzing content gaps...
+[2025-08-19T03:42:00.951Z] [INFO] Starting autonomous content generation...
+[2025-08-19T03:42:01.007Z] [INFO] Analyzing content gaps...
+[2025-08-19T03:42:02.556Z] [INFO] Raw output: [
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "dossiers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "innovations: 2 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "insights: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "tutorials: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "whitepapers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  }
+]
+[2025-08-19T03:42:03.033Z] [INFO] Generating content for gap: content_quality - dossiers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:03.435Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:03.921Z] [INFO] Generating content for gap: content_quality - innovations: 2 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:04.525Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:05.213Z] [INFO] Generating content for gap: content_quality - insights: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:05.859Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:06.423Z] [INFO] Generating content for gap: content_quality - tutorials: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:06.704Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:06.705Z] [INFO] Generating content for gap: content_quality - whitepapers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:06.705Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:06.705Z] [INFO] Updating site structure...
+[2025-08-19T03:42:06.705Z] [INFO] Site structure updated
+[2025-08-19T03:42:06.706Z] [INFO] Autonomous content generation completed successfully
+[2025-08-19T03:42:08.581Z] [INFO] Starting autonomous content generation...
+[2025-08-19T03:42:08.619Z] [INFO] Analyzing content gaps...
+[2025-08-19T03:42:10.222Z] [INFO] Raw output: [
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "dossiers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "innovations: 2 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "insights: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "tutorials: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "whitepapers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  }
+]
+[2025-08-19T03:42:10.223Z] [INFO] Generating content for gap: content_quality - dossiers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:10.223Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:10.223Z] [INFO] Generating content for gap: content_quality - innovations: 2 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:10.224Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:10.224Z] [INFO] Generating content for gap: content_quality - insights: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:10.224Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:10.225Z] [INFO] Generating content for gap: content_quality - tutorials: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:10.225Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:10.226Z] [INFO] Generating content for gap: content_quality - whitepapers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:10.226Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:10.226Z] [INFO] Updating site structure...
+[2025-08-19T03:42:10.226Z] [INFO] Site structure updated
+[2025-08-19T03:42:10.226Z] [INFO] Autonomous content generation completed successfully
+[2025-08-19T03:42:12.184Z] [INFO] Starting autonomous content generation...
+[2025-08-19T03:42:12.191Z] [INFO] Analyzing content gaps...
+[2025-08-19T03:42:13.408Z] [INFO] Raw output: [
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "dossiers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "innovations: 2 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "insights: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "tutorials: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "whitepapers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  }
+]
+[2025-08-19T03:42:13.409Z] [INFO] Generating content for gap: content_quality - dossiers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:13.409Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:13.410Z] [INFO] Generating content for gap: content_quality - innovations: 2 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:13.410Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:13.410Z] [INFO] Generating content for gap: content_quality - insights: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:13.410Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:13.411Z] [INFO] Generating content for gap: content_quality - tutorials: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:13.411Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:13.412Z] [INFO] Generating content for gap: content_quality - whitepapers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:13.412Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:13.412Z] [INFO] Updating site structure...
+[2025-08-19T03:42:13.412Z] [INFO] Site structure updated
+[2025-08-19T03:42:13.413Z] [INFO] Autonomous content generation completed successfully
+[2025-08-19T03:42:15.832Z] [INFO] Starting autonomous content generation...
+[2025-08-19T03:42:15.840Z] [INFO] Analyzing content gaps...
+[2025-08-19T03:42:16.748Z] [INFO] Raw output: [
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "dossiers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "innovations: 2 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "insights: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "tutorials: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "whitepapers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  }
+]
+[2025-08-19T03:42:16.749Z] [INFO] Generating content for gap: content_quality - dossiers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:16.749Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:16.750Z] [INFO] Generating content for gap: content_quality - innovations: 2 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:16.750Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:16.750Z] [INFO] Generating content for gap: content_quality - insights: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:16.751Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:16.752Z] [INFO] Generating content for gap: content_quality - tutorials: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:16.752Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:16.753Z] [INFO] Generating content for gap: content_quality - whitepapers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:16.753Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:16.753Z] [INFO] Updating site structure...
+[2025-08-19T03:42:16.753Z] [INFO] Site structure updated
+[2025-08-19T03:42:16.754Z] [INFO] Autonomous content generation completed successfully
+[2025-08-19T03:42:19.279Z] [INFO] Starting autonomous content generation...
+[2025-08-19T03:42:19.282Z] [INFO] Analyzing content gaps...
+[2025-08-19T03:42:20.224Z] [INFO] Raw output: [
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "dossiers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "innovations: 2 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "insights: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "tutorials: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "whitepapers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  }
+]
+[2025-08-19T03:42:20.225Z] [INFO] Generating content for gap: content_quality - dossiers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:20.225Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:20.226Z] [INFO] Generating content for gap: content_quality - innovations: 2 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:20.226Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:20.226Z] [INFO] Generating content for gap: content_quality - insights: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:20.227Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:20.228Z] [INFO] Generating content for gap: content_quality - tutorials: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:20.228Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:20.228Z] [INFO] Generating content for gap: content_quality - whitepapers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:20.228Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:20.229Z] [INFO] Updating site structure...
+[2025-08-19T03:42:20.229Z] [INFO] Site structure updated
+[2025-08-19T03:42:20.229Z] [INFO] Autonomous content generation completed successfully
+[2025-08-19T03:42:22.499Z] [INFO] Starting autonomous content generation...
+[2025-08-19T03:42:22.502Z] [INFO] Analyzing content gaps...
+[2025-08-19T03:42:23.389Z] [INFO] Raw output: [
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "dossiers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "innovations: 2 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "insights: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "tutorials: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "whitepapers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  }
+]
+[2025-08-19T03:42:23.390Z] [INFO] Generating content for gap: content_quality - dossiers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:23.390Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:23.391Z] [INFO] Generating content for gap: content_quality - innovations: 2 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:23.391Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:23.391Z] [INFO] Generating content for gap: content_quality - insights: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:23.392Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:23.392Z] [INFO] Generating content for gap: content_quality - tutorials: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:23.393Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:23.393Z] [INFO] Generating content for gap: content_quality - whitepapers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:23.393Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:23.394Z] [INFO] Updating site structure...
+[2025-08-19T03:42:23.394Z] [INFO] Site structure updated
+[2025-08-19T03:42:23.394Z] [INFO] Autonomous content generation completed successfully
+[2025-08-19T03:42:25.877Z] [INFO] Starting autonomous content generation...
+[2025-08-19T03:42:25.883Z] [INFO] Analyzing content gaps...
+[2025-08-19T03:42:26.687Z] [INFO] Raw output: [
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "dossiers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "innovations: 2 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "insights: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "tutorials: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "whitepapers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  }
+]
+[2025-08-19T03:42:26.688Z] [INFO] Generating content for gap: content_quality - dossiers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:26.688Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:26.688Z] [INFO] Generating content for gap: content_quality - innovations: 2 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:26.688Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:26.689Z] [INFO] Generating content for gap: content_quality - insights: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:26.689Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:26.690Z] [INFO] Generating content for gap: content_quality - tutorials: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:26.690Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:26.690Z] [INFO] Generating content for gap: content_quality - whitepapers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:26.690Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:26.691Z] [INFO] Updating site structure...
+[2025-08-19T03:42:26.691Z] [INFO] Site structure updated
+[2025-08-19T03:42:26.691Z] [INFO] Autonomous content generation completed successfully
+[2025-08-19T03:42:29.265Z] [INFO] Starting autonomous content generation...
+[2025-08-19T03:42:29.269Z] [INFO] Analyzing content gaps...
+[2025-08-19T03:42:29.990Z] [INFO] Raw output: [
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "dossiers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "innovations: 2 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "insights: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "tutorials: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "whitepapers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  }
+]
+[2025-08-19T03:42:29.991Z] [INFO] Generating content for gap: content_quality - dossiers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:29.991Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:29.992Z] [INFO] Generating content for gap: content_quality - innovations: 2 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:29.992Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:29.993Z] [INFO] Generating content for gap: content_quality - insights: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:29.993Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:29.994Z] [INFO] Generating content for gap: content_quality - tutorials: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:29.994Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:29.995Z] [INFO] Generating content for gap: content_quality - whitepapers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:29.995Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:29.995Z] [INFO] Updating site structure...
+[2025-08-19T03:42:29.996Z] [INFO] Site structure updated
+[2025-08-19T03:42:29.996Z] [INFO] Autonomous content generation completed successfully
+[2025-08-19T03:42:32.710Z] [INFO] Starting autonomous content generation...
+[2025-08-19T03:42:32.736Z] [INFO] Analyzing content gaps...
+[2025-08-19T03:42:33.489Z] [INFO] Raw output: [
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "dossiers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "innovations: 2 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "insights: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "tutorials: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "whitepapers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  }
+]
+[2025-08-19T03:42:33.490Z] [INFO] Generating content for gap: content_quality - dossiers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:33.491Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:33.491Z] [INFO] Generating content for gap: content_quality - innovations: 2 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:33.491Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:33.492Z] [INFO] Generating content for gap: content_quality - insights: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:33.493Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:33.494Z] [INFO] Generating content for gap: content_quality - tutorials: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:33.494Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:33.495Z] [INFO] Generating content for gap: content_quality - whitepapers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:33.495Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:33.495Z] [INFO] Updating site structure...
+[2025-08-19T03:42:33.496Z] [INFO] Site structure updated
+[2025-08-19T03:42:33.496Z] [INFO] Autonomous content generation completed successfully
+[2025-08-19T03:42:35.115Z] [INFO] Starting autonomous content generation...
+[2025-08-19T03:42:35.118Z] [INFO] Analyzing content gaps...
+[2025-08-19T03:42:36.925Z] [INFO] Raw output: [
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "dossiers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "innovations: 2 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "insights: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "tutorials: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "whitepapers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  }
+]
+[2025-08-19T03:42:36.926Z] [INFO] Generating content for gap: content_quality - dossiers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:36.926Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:36.926Z] [INFO] Generating content for gap: content_quality - innovations: 2 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:36.926Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:36.927Z] [INFO] Generating content for gap: content_quality - insights: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:36.927Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:36.928Z] [INFO] Generating content for gap: content_quality - tutorials: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:36.928Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:36.928Z] [INFO] Generating content for gap: content_quality - whitepapers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:36.928Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:36.929Z] [INFO] Updating site structure...
+[2025-08-19T03:42:36.929Z] [INFO] Site structure updated
+[2025-08-19T03:42:36.929Z] [INFO] Autonomous content generation completed successfully
+[2025-08-19T03:42:38.432Z] [INFO] Starting autonomous content generation...
+[2025-08-19T03:42:38.441Z] [INFO] Analyzing content gaps...
+[2025-08-19T03:42:39.909Z] [INFO] Raw output: [
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "dossiers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "innovations: 2 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "insights: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "tutorials: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "whitepapers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  }
+]
+[2025-08-19T03:42:39.910Z] [INFO] Generating content for gap: content_quality - dossiers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:39.910Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:39.911Z] [INFO] Generating content for gap: content_quality - innovations: 2 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:39.911Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:39.911Z] [INFO] Generating content for gap: content_quality - insights: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:39.912Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:39.912Z] [INFO] Generating content for gap: content_quality - tutorials: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:39.913Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:39.913Z] [INFO] Generating content for gap: content_quality - whitepapers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:39.913Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:39.914Z] [INFO] Updating site structure...
+[2025-08-19T03:42:39.914Z] [INFO] Site structure updated
+[2025-08-19T03:42:39.914Z] [INFO] Autonomous content generation completed successfully
+[2025-08-19T03:42:41.605Z] [INFO] Starting autonomous content generation...
+[2025-08-19T03:42:41.608Z] [INFO] Analyzing content gaps...
+[2025-08-19T03:42:43.055Z] [INFO] Raw output: [
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "dossiers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "innovations: 2 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "insights: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "tutorials: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "whitepapers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  }
+]
+[2025-08-19T03:42:43.058Z] [INFO] Generating content for gap: content_quality - dossiers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:43.059Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:43.059Z] [INFO] Generating content for gap: content_quality - innovations: 2 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:43.060Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:43.060Z] [INFO] Generating content for gap: content_quality - insights: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:43.060Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:43.061Z] [INFO] Generating content for gap: content_quality - tutorials: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:43.061Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:43.062Z] [INFO] Generating content for gap: content_quality - whitepapers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:43.062Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:43.062Z] [INFO] Updating site structure...
+[2025-08-19T03:42:43.063Z] [INFO] Site structure updated
+[2025-08-19T03:42:43.064Z] [INFO] Autonomous content generation completed successfully
+[2025-08-19T03:42:44.997Z] [INFO] Starting autonomous content generation...
+[2025-08-19T03:42:45.001Z] [INFO] Analyzing content gaps...
+[2025-08-19T03:42:46.394Z] [INFO] Raw output: [
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "dossiers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "innovations: 2 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "insights: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "tutorials: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "whitepapers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  }
+]
+[2025-08-19T03:42:46.395Z] [INFO] Generating content for gap: content_quality - dossiers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:46.395Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:46.395Z] [INFO] Generating content for gap: content_quality - innovations: 2 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:46.396Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:46.396Z] [INFO] Generating content for gap: content_quality - insights: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:46.396Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:46.397Z] [INFO] Generating content for gap: content_quality - tutorials: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:46.397Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:46.398Z] [INFO] Generating content for gap: content_quality - whitepapers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:46.398Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:46.398Z] [INFO] Updating site structure...
+[2025-08-19T03:42:46.398Z] [INFO] Site structure updated
+[2025-08-19T03:42:46.398Z] [INFO] Autonomous content generation completed successfully
+[2025-08-19T03:42:48.238Z] [INFO] Starting autonomous content generation...
+[2025-08-19T03:42:48.244Z] [INFO] Analyzing content gaps...
+[2025-08-19T03:42:49.700Z] [INFO] Raw output: [
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "dossiers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "innovations: 2 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "insights: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "tutorials: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "whitepapers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  }
+]
+[2025-08-19T03:42:49.701Z] [INFO] Generating content for gap: content_quality - dossiers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:49.701Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:49.701Z] [INFO] Generating content for gap: content_quality - innovations: 2 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:49.702Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:49.702Z] [INFO] Generating content for gap: content_quality - insights: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:49.702Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:49.703Z] [INFO] Generating content for gap: content_quality - tutorials: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:49.703Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:49.704Z] [INFO] Generating content for gap: content_quality - whitepapers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:49.704Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:49.704Z] [INFO] Updating site structure...
+[2025-08-19T03:42:49.704Z] [INFO] Site structure updated
+[2025-08-19T03:42:49.705Z] [INFO] Autonomous content generation completed successfully
+[2025-08-19T03:42:51.389Z] [INFO] Starting autonomous content generation...
+[2025-08-19T03:42:51.392Z] [INFO] Analyzing content gaps...
+[2025-08-19T03:42:52.033Z] [INFO] Raw output: [
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "dossiers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "innovations: 2 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "insights: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "tutorials: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "whitepapers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  }
+]
+[2025-08-19T03:42:52.034Z] [INFO] Generating content for gap: content_quality - dossiers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:52.034Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:52.035Z] [INFO] Generating content for gap: content_quality - innovations: 2 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:52.035Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:52.035Z] [INFO] Generating content for gap: content_quality - insights: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:52.036Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:52.036Z] [INFO] Generating content for gap: content_quality - tutorials: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:52.037Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:52.037Z] [INFO] Generating content for gap: content_quality - whitepapers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:52.037Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:52.038Z] [INFO] Updating site structure...
+[2025-08-19T03:42:52.038Z] [INFO] Site structure updated
+[2025-08-19T03:42:52.038Z] [INFO] Autonomous content generation completed successfully
+[2025-08-19T03:42:54.587Z] [INFO] Starting autonomous content generation...
+[2025-08-19T03:42:54.590Z] [INFO] Analyzing content gaps...
+[2025-08-19T03:42:55.314Z] [INFO] Raw output: [
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "dossiers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "innovations: 2 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "insights: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "tutorials: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "whitepapers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  }
+]
+[2025-08-19T03:42:55.355Z] [INFO] Generating content for gap: content_quality - dossiers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:55.355Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:55.355Z] [INFO] Generating content for gap: content_quality - innovations: 2 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:55.356Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:55.356Z] [INFO] Generating content for gap: content_quality - insights: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:55.356Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:55.357Z] [INFO] Generating content for gap: content_quality - tutorials: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:55.357Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:55.358Z] [INFO] Generating content for gap: content_quality - whitepapers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:55.358Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:55.358Z] [INFO] Updating site structure...
+[2025-08-19T03:42:55.358Z] [INFO] Site structure updated
+[2025-08-19T03:42:55.358Z] [INFO] Autonomous content generation completed successfully
+[2025-08-19T03:42:58.135Z] [INFO] Starting autonomous content generation...
+[2025-08-19T03:42:58.138Z] [INFO] Analyzing content gaps...
+[2025-08-19T03:42:59.815Z] [INFO] Raw output: [
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "dossiers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "innovations: 2 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "insights: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "tutorials: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "whitepapers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  }
+]
+[2025-08-19T03:42:59.816Z] [INFO] Generating content for gap: content_quality - dossiers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:59.816Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:59.816Z] [INFO] Generating content for gap: content_quality - innovations: 2 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:59.816Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:59.817Z] [INFO] Generating content for gap: content_quality - insights: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:59.817Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:59.818Z] [INFO] Generating content for gap: content_quality - tutorials: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:59.818Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:59.818Z] [INFO] Generating content for gap: content_quality - whitepapers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:42:59.819Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:42:59.819Z] [INFO] Updating site structure...
+[2025-08-19T03:42:59.819Z] [INFO] Site structure updated
+[2025-08-19T03:42:59.819Z] [INFO] Autonomous content generation completed successfully
+[2025-08-19T03:43:01.411Z] [INFO] Starting autonomous content generation...
+[2025-08-19T03:43:01.431Z] [INFO] Analyzing content gaps...
+[2025-08-19T03:43:02.603Z] [INFO] Raw output: [
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "dossiers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "innovations: 3 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "insights: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "tutorials: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "whitepapers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  }
+]
+[2025-08-19T03:43:02.604Z] [INFO] Generating content for gap: content_quality - dossiers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:02.604Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:02.604Z] [INFO] Generating content for gap: content_quality - innovations: 3 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:02.605Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:02.605Z] [INFO] Generating content for gap: content_quality - insights: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:02.605Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:02.606Z] [INFO] Generating content for gap: content_quality - tutorials: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:02.606Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:02.607Z] [INFO] Generating content for gap: content_quality - whitepapers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:02.607Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:02.607Z] [INFO] Updating site structure...
+[2025-08-19T03:43:02.607Z] [INFO] Site structure updated
+[2025-08-19T03:43:02.608Z] [INFO] Autonomous content generation completed successfully
+[2025-08-19T03:43:04.629Z] [INFO] Starting autonomous content generation...
+[2025-08-19T03:43:04.632Z] [INFO] Analyzing content gaps...
+[2025-08-19T03:43:05.846Z] [INFO] Raw output: [
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "dossiers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "innovations: 3 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "insights: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "tutorials: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "whitepapers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  }
+]
+[2025-08-19T03:43:05.847Z] [INFO] Generating content for gap: content_quality - dossiers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:05.847Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:05.852Z] [INFO] Generating content for gap: content_quality - innovations: 3 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:05.852Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:05.853Z] [INFO] Generating content for gap: content_quality - insights: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:05.855Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:05.856Z] [INFO] Generating content for gap: content_quality - tutorials: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:05.856Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:05.856Z] [INFO] Generating content for gap: content_quality - whitepapers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:05.857Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:05.857Z] [INFO] Updating site structure...
+[2025-08-19T03:43:05.857Z] [INFO] Site structure updated
+[2025-08-19T03:43:05.857Z] [INFO] Autonomous content generation completed successfully
+[2025-08-19T03:43:07.964Z] [INFO] Starting autonomous content generation...
+[2025-08-19T03:43:07.967Z] [INFO] Analyzing content gaps...
+[2025-08-19T03:43:09.015Z] [INFO] Raw output: [
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "dossiers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "innovations: 3 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "insights: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "tutorials: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "whitepapers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  }
+]
+[2025-08-19T03:43:09.018Z] [INFO] Generating content for gap: content_quality - dossiers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:09.019Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:09.020Z] [INFO] Generating content for gap: content_quality - innovations: 3 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:09.023Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:09.023Z] [INFO] Generating content for gap: content_quality - insights: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:09.023Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:09.024Z] [INFO] Generating content for gap: content_quality - tutorials: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:09.025Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:09.025Z] [INFO] Generating content for gap: content_quality - whitepapers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:09.025Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:09.025Z] [INFO] Updating site structure...
+[2025-08-19T03:43:09.026Z] [INFO] Site structure updated
+[2025-08-19T03:43:09.026Z] [INFO] Autonomous content generation completed successfully
+[2025-08-19T03:43:11.277Z] [INFO] Starting autonomous content generation...
+[2025-08-19T03:43:11.281Z] [INFO] Analyzing content gaps...
+[2025-08-19T03:43:12.132Z] [INFO] Raw output: [
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "dossiers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "innovations: 3 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "insights: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "tutorials: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "whitepapers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  }
+]
+[2025-08-19T03:43:12.133Z] [INFO] Generating content for gap: content_quality - dossiers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:12.134Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:12.136Z] [INFO] Generating content for gap: content_quality - innovations: 3 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:12.136Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:12.140Z] [INFO] Generating content for gap: content_quality - insights: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:12.140Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:12.141Z] [INFO] Generating content for gap: content_quality - tutorials: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:12.141Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:12.141Z] [INFO] Generating content for gap: content_quality - whitepapers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:12.149Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:12.150Z] [INFO] Updating site structure...
+[2025-08-19T03:43:12.150Z] [INFO] Site structure updated
+[2025-08-19T03:43:12.158Z] [INFO] Autonomous content generation completed successfully
+[2025-08-19T03:43:14.553Z] [INFO] Starting autonomous content generation...
+[2025-08-19T03:43:14.556Z] [INFO] Analyzing content gaps...
+[2025-08-19T03:43:15.213Z] [INFO] Raw output: [
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "dossiers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "innovations: 3 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "insights: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "tutorials: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "whitepapers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  }
+]
+[2025-08-19T03:43:15.214Z] [INFO] Generating content for gap: content_quality - dossiers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:15.214Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:15.215Z] [INFO] Generating content for gap: content_quality - innovations: 3 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:15.215Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:15.215Z] [INFO] Generating content for gap: content_quality - insights: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:15.215Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:15.216Z] [INFO] Generating content for gap: content_quality - tutorials: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:15.216Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:15.217Z] [INFO] Generating content for gap: content_quality - whitepapers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:15.217Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:15.217Z] [INFO] Updating site structure...
+[2025-08-19T03:43:15.217Z] [INFO] Site structure updated
+[2025-08-19T03:43:15.217Z] [INFO] Autonomous content generation completed successfully
+[2025-08-19T03:43:17.914Z] [INFO] Starting autonomous content generation...
+[2025-08-19T03:43:17.917Z] [INFO] Analyzing content gaps...
+[2025-08-19T03:43:18.700Z] [INFO] Raw output: [
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "dossiers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "innovations: 3 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "insights: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "tutorials: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "whitepapers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  }
+]
+[2025-08-19T03:43:18.701Z] [INFO] Generating content for gap: content_quality - dossiers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:18.702Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:18.702Z] [INFO] Generating content for gap: content_quality - innovations: 3 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:18.702Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:18.703Z] [INFO] Generating content for gap: content_quality - insights: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:18.703Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:18.704Z] [INFO] Generating content for gap: content_quality - tutorials: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:18.704Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:18.704Z] [INFO] Generating content for gap: content_quality - whitepapers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:18.705Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:18.705Z] [INFO] Updating site structure...
+[2025-08-19T03:43:18.705Z] [INFO] Site structure updated
+[2025-08-19T03:43:18.705Z] [INFO] Autonomous content generation completed successfully
+[2025-08-19T03:43:21.268Z] [INFO] Starting autonomous content generation...
+[2025-08-19T03:43:21.271Z] [INFO] Analyzing content gaps...
+[2025-08-19T03:43:21.931Z] [INFO] Raw output: [
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "dossiers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "innovations: 3 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "insights: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "tutorials: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "whitepapers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  }
+]
+[2025-08-19T03:43:21.932Z] [INFO] Generating content for gap: content_quality - dossiers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:21.932Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:21.932Z] [INFO] Generating content for gap: content_quality - innovations: 3 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:21.932Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:21.933Z] [INFO] Generating content for gap: content_quality - insights: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:21.933Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:21.934Z] [INFO] Generating content for gap: content_quality - tutorials: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:21.934Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:21.934Z] [INFO] Generating content for gap: content_quality - whitepapers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:21.935Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:21.935Z] [INFO] Updating site structure...
+[2025-08-19T03:43:21.935Z] [INFO] Site structure updated
+[2025-08-19T03:43:21.935Z] [INFO] Autonomous content generation completed successfully
+[2025-08-19T03:43:22.918Z] [INFO] Starting autonomous content generation...
+[2025-08-19T03:43:22.929Z] [INFO] Analyzing content gaps...
+[2025-08-19T03:43:24.654Z] [INFO] Raw output: [
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "dossiers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "innovations: 3 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "insights: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "tutorials: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "whitepapers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  }
+]
+[2025-08-19T03:43:24.654Z] [INFO] Generating content for gap: content_quality - dossiers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:24.655Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:24.655Z] [INFO] Generating content for gap: content_quality - innovations: 3 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:24.655Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:24.656Z] [INFO] Generating content for gap: content_quality - insights: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:24.656Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:24.657Z] [INFO] Generating content for gap: content_quality - tutorials: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:24.657Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:24.657Z] [INFO] Generating content for gap: content_quality - whitepapers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:24.657Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:24.658Z] [INFO] Updating site structure...
+[2025-08-19T03:43:24.658Z] [INFO] Site structure updated
+[2025-08-19T03:43:24.658Z] [INFO] Autonomous content generation completed successfully
+[2025-08-19T03:43:26.311Z] [INFO] Starting autonomous content generation...
+[2025-08-19T03:43:26.315Z] [INFO] Analyzing content gaps...
+[2025-08-19T03:43:27.994Z] [INFO] Raw output: [
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "dossiers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "innovations: 3 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "insights: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "tutorials: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "whitepapers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  }
+]
+[2025-08-19T03:43:27.995Z] [INFO] Generating content for gap: content_quality - dossiers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:27.995Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:27.995Z] [INFO] Generating content for gap: content_quality - innovations: 3 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:27.996Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:27.996Z] [INFO] Generating content for gap: content_quality - insights: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:27.996Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:27.997Z] [INFO] Generating content for gap: content_quality - tutorials: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:27.997Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:27.997Z] [INFO] Generating content for gap: content_quality - whitepapers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:27.998Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:27.998Z] [INFO] Updating site structure...
+[2025-08-19T03:43:27.998Z] [INFO] Site structure updated
+[2025-08-19T03:43:27.998Z] [INFO] Autonomous content generation completed successfully
+[2025-08-19T03:43:29.689Z] [INFO] Starting autonomous content generation...
+[2025-08-19T03:43:29.692Z] [INFO] Analyzing content gaps...
+[2025-08-19T03:43:30.806Z] [INFO] Raw output: [
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "dossiers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "innovations: 3 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "insights: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "tutorials: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "whitepapers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  }
+]
+[2025-08-19T03:43:30.807Z] [INFO] Generating content for gap: content_quality - dossiers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:30.808Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:30.808Z] [INFO] Generating content for gap: content_quality - innovations: 3 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:30.808Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:30.808Z] [INFO] Generating content for gap: content_quality - insights: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:30.809Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:30.809Z] [INFO] Generating content for gap: content_quality - tutorials: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:30.810Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:30.810Z] [INFO] Generating content for gap: content_quality - whitepapers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:30.810Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:30.810Z] [INFO] Updating site structure...
+[2025-08-19T03:43:30.811Z] [INFO] Site structure updated
+[2025-08-19T03:43:30.811Z] [INFO] Autonomous content generation completed successfully
+[2025-08-19T03:43:33.113Z] [INFO] Starting autonomous content generation...
+[2025-08-19T03:43:33.143Z] [INFO] Analyzing content gaps...
+[2025-08-19T03:43:34.177Z] [INFO] Raw output: [
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "dossiers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "innovations: 3 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "insights: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "tutorials: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "whitepapers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  }
+]
+[2025-08-19T03:43:34.178Z] [INFO] Generating content for gap: content_quality - dossiers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:34.179Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:34.179Z] [INFO] Generating content for gap: content_quality - innovations: 3 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:34.179Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:34.180Z] [INFO] Generating content for gap: content_quality - insights: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:34.180Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:34.181Z] [INFO] Generating content for gap: content_quality - tutorials: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:34.181Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:34.181Z] [INFO] Generating content for gap: content_quality - whitepapers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:34.182Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:34.182Z] [INFO] Updating site structure...
+[2025-08-19T03:43:34.182Z] [INFO] Site structure updated
+[2025-08-19T03:43:34.182Z] [INFO] Autonomous content generation completed successfully
+[2025-08-19T03:43:36.237Z] [INFO] Starting autonomous content generation...
+[2025-08-19T03:43:36.240Z] [INFO] Analyzing content gaps...
+[2025-08-19T03:43:37.207Z] [INFO] Raw output: [
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "dossiers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "innovations: 3 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "insights: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "tutorials: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "whitepapers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  }
+]
+[2025-08-19T03:43:37.208Z] [INFO] Generating content for gap: content_quality - dossiers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:37.208Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:37.209Z] [INFO] Generating content for gap: content_quality - innovations: 3 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:37.209Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:37.210Z] [INFO] Generating content for gap: content_quality - insights: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:37.211Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:37.212Z] [INFO] Generating content for gap: content_quality - tutorials: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:37.212Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:37.213Z] [INFO] Generating content for gap: content_quality - whitepapers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:37.213Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:37.213Z] [INFO] Updating site structure...
+[2025-08-19T03:43:37.214Z] [INFO] Site structure updated
+[2025-08-19T03:43:37.222Z] [INFO] Autonomous content generation completed successfully
+[2025-08-19T03:43:39.613Z] [INFO] Starting autonomous content generation...
+[2025-08-19T03:43:39.616Z] [INFO] Analyzing content gaps...
+[2025-08-19T03:43:40.623Z] [INFO] Raw output: [
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "dossiers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "innovations: 3 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "insights: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "tutorials: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "whitepapers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  }
+]
+[2025-08-19T03:43:40.624Z] [INFO] Generating content for gap: content_quality - dossiers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:40.624Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:40.625Z] [INFO] Generating content for gap: content_quality - innovations: 3 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:40.625Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:40.625Z] [INFO] Generating content for gap: content_quality - insights: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:40.626Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:40.626Z] [INFO] Generating content for gap: content_quality - tutorials: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:40.627Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:40.627Z] [INFO] Generating content for gap: content_quality - whitepapers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:40.627Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:40.627Z] [INFO] Updating site structure...
+[2025-08-19T03:43:40.628Z] [INFO] Site structure updated
+[2025-08-19T03:43:40.628Z] [INFO] Autonomous content generation completed successfully
+[2025-08-19T03:43:42.943Z] [INFO] Starting autonomous content generation...
+[2025-08-19T03:43:42.969Z] [INFO] Analyzing content gaps...
+[2025-08-19T03:43:43.772Z] [INFO] Raw output: [
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "dossiers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "innovations: 3 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "insights: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "tutorials: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "whitepapers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  }
+]
+[2025-08-19T03:43:43.773Z] [INFO] Generating content for gap: content_quality - dossiers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:43.773Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:43.774Z] [INFO] Generating content for gap: content_quality - innovations: 3 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:43.774Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:43.774Z] [INFO] Generating content for gap: content_quality - insights: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:43.775Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:43.775Z] [INFO] Generating content for gap: content_quality - tutorials: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:43.776Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:43.776Z] [INFO] Generating content for gap: content_quality - whitepapers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:43.776Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:43.776Z] [INFO] Updating site structure...
+[2025-08-19T03:43:43.777Z] [INFO] Site structure updated
+[2025-08-19T03:43:43.777Z] [INFO] Autonomous content generation completed successfully
+[2025-08-19T03:43:46.077Z] [INFO] Starting autonomous content generation...
+[2025-08-19T03:43:46.087Z] [INFO] Analyzing content gaps...
+[2025-08-19T03:43:47.063Z] [INFO] Raw output: [
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "dossiers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "innovations: 3 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "insights: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "tutorials: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "whitepapers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  }
+]
+[2025-08-19T03:43:47.064Z] [INFO] Generating content for gap: content_quality - dossiers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:47.064Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:47.065Z] [INFO] Generating content for gap: content_quality - innovations: 3 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:47.065Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:47.065Z] [INFO] Generating content for gap: content_quality - insights: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:47.066Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:47.066Z] [INFO] Generating content for gap: content_quality - tutorials: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:47.067Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:47.067Z] [INFO] Generating content for gap: content_quality - whitepapers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:47.067Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:47.068Z] [INFO] Updating site structure...
+[2025-08-19T03:43:47.068Z] [INFO] Site structure updated
+[2025-08-19T03:43:47.068Z] [INFO] Autonomous content generation completed successfully
+[2025-08-19T03:43:49.166Z] [INFO] Starting autonomous content generation...
+[2025-08-19T03:43:49.169Z] [INFO] Analyzing content gaps...
+[2025-08-19T03:43:50.978Z] [INFO] Raw output: [
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "dossiers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "innovations: 3 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "insights: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "tutorials: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "whitepapers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  }
+]
+[2025-08-19T03:43:50.979Z] [INFO] Generating content for gap: content_quality - dossiers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:50.980Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:50.980Z] [INFO] Generating content for gap: content_quality - innovations: 3 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:50.980Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:50.980Z] [INFO] Generating content for gap: content_quality - insights: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:50.981Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:50.981Z] [INFO] Generating content for gap: content_quality - tutorials: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:50.982Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:50.982Z] [INFO] Generating content for gap: content_quality - whitepapers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:50.982Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:50.983Z] [INFO] Updating site structure...
+[2025-08-19T03:43:50.983Z] [INFO] Site structure updated
+[2025-08-19T03:43:50.983Z] [INFO] Autonomous content generation completed successfully
+[2025-08-19T03:43:52.526Z] [INFO] Starting autonomous content generation...
+[2025-08-19T03:43:52.530Z] [INFO] Analyzing content gaps...
+[2025-08-19T03:43:54.067Z] [INFO] Raw output: [
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "dossiers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "innovations: 3 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "insights: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "tutorials: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "whitepapers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  }
+]
+[2025-08-19T03:43:54.068Z] [INFO] Generating content for gap: content_quality - dossiers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:54.068Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:54.068Z] [INFO] Generating content for gap: content_quality - innovations: 3 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:54.068Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:54.069Z] [INFO] Generating content for gap: content_quality - insights: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:54.069Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:54.070Z] [INFO] Generating content for gap: content_quality - tutorials: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:54.070Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:54.070Z] [INFO] Generating content for gap: content_quality - whitepapers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:54.071Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:54.071Z] [INFO] Updating site structure...
+[2025-08-19T03:43:54.071Z] [INFO] Site structure updated
+[2025-08-19T03:43:54.071Z] [INFO] Autonomous content generation completed successfully
+[2025-08-19T03:43:55.937Z] [INFO] Starting autonomous content generation...
+[2025-08-19T03:43:55.940Z] [INFO] Analyzing content gaps...
+[2025-08-19T03:43:57.655Z] [INFO] Raw output: [
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "dossiers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "innovations: 3 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "insights: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "tutorials: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "whitepapers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  }
+]
+[2025-08-19T03:43:57.656Z] [INFO] Generating content for gap: content_quality - dossiers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:57.658Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:57.658Z] [INFO] Generating content for gap: content_quality - innovations: 3 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:57.658Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:57.659Z] [INFO] Generating content for gap: content_quality - insights: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:57.659Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:57.660Z] [INFO] Generating content for gap: content_quality - tutorials: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:57.660Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:57.660Z] [INFO] Generating content for gap: content_quality - whitepapers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:43:57.662Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:43:57.662Z] [INFO] Updating site structure...
+[2025-08-19T03:43:57.662Z] [INFO] Site structure updated
+[2025-08-19T03:43:57.663Z] [INFO] Autonomous content generation completed successfully
+[2025-08-19T03:43:59.207Z] [INFO] Starting autonomous content generation...
+[2025-08-19T03:43:59.216Z] [INFO] Analyzing content gaps...
+[2025-08-19T03:44:00.800Z] [INFO] Raw output: [
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "dossiers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "innovations: 3 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "insights: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "tutorials: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "whitepapers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  }
+]
+[2025-08-19T03:44:00.801Z] [INFO] Generating content for gap: content_quality - dossiers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:44:00.801Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:44:00.801Z] [INFO] Generating content for gap: content_quality - innovations: 3 pages have insufficient content (<500 chars)
+[2025-08-19T03:44:00.802Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:44:00.802Z] [INFO] Generating content for gap: content_quality - insights: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:44:00.802Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:44:00.803Z] [INFO] Generating content for gap: content_quality - tutorials: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:44:00.803Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:44:00.803Z] [INFO] Generating content for gap: content_quality - whitepapers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:44:00.804Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:44:00.804Z] [INFO] Updating site structure...
+[2025-08-19T03:44:00.804Z] [INFO] Site structure updated
+[2025-08-19T03:44:00.804Z] [INFO] Autonomous content generation completed successfully
+[2025-08-19T03:44:02.713Z] [INFO] Starting autonomous content generation...
+[2025-08-19T03:44:02.717Z] [INFO] Analyzing content gaps...
+[2025-08-19T03:44:04.365Z] [INFO] Raw output: [
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "dossiers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "innovations: 4 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "insights: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "tutorials: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "whitepapers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  }
+]
+[2025-08-19T03:44:04.366Z] [INFO] Generating content for gap: content_quality - dossiers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:44:04.366Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:44:04.367Z] [INFO] Generating content for gap: content_quality - innovations: 4 pages have insufficient content (<500 chars)
+[2025-08-19T03:44:04.367Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:44:04.367Z] [INFO] Generating content for gap: content_quality - insights: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:44:04.368Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:44:04.368Z] [INFO] Generating content for gap: content_quality - tutorials: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:44:04.369Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:44:04.369Z] [INFO] Generating content for gap: content_quality - whitepapers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:44:04.369Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:44:04.369Z] [INFO] Updating site structure...
+[2025-08-19T03:44:04.369Z] [INFO] Site structure updated
+[2025-08-19T03:44:04.370Z] [INFO] Autonomous content generation completed successfully
+[2025-08-19T03:44:05.940Z] [INFO] Starting autonomous content generation...
+[2025-08-19T03:44:05.947Z] [INFO] Analyzing content gaps...
+[2025-08-19T03:44:06.834Z] [INFO] Raw output: [
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "dossiers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "innovations: 4 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "insights: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "tutorials: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "whitepapers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  }
+]
+[2025-08-19T03:44:06.835Z] [INFO] Generating content for gap: content_quality - dossiers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:44:06.836Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:44:06.836Z] [INFO] Generating content for gap: content_quality - innovations: 4 pages have insufficient content (<500 chars)
+[2025-08-19T03:44:06.836Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:44:06.837Z] [INFO] Generating content for gap: content_quality - insights: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:44:06.837Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:44:06.838Z] [INFO] Generating content for gap: content_quality - tutorials: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:44:06.838Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:44:06.838Z] [INFO] Generating content for gap: content_quality - whitepapers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:44:06.838Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:44:06.839Z] [INFO] Updating site structure...
+[2025-08-19T03:44:06.839Z] [INFO] Site structure updated
+[2025-08-19T03:44:06.839Z] [INFO] Autonomous content generation completed successfully
+[2025-08-19T03:44:09.161Z] [INFO] Starting autonomous content generation...
+[2025-08-19T03:44:09.165Z] [INFO] Analyzing content gaps...
+[2025-08-19T03:44:09.970Z] [INFO] Raw output: [
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "dossiers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "innovations: 4 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "insights: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "tutorials: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "whitepapers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  }
+]
+[2025-08-19T03:44:09.971Z] [INFO] Generating content for gap: content_quality - dossiers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:44:09.972Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:44:09.972Z] [INFO] Generating content for gap: content_quality - innovations: 4 pages have insufficient content (<500 chars)
+[2025-08-19T03:44:09.972Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:44:09.972Z] [INFO] Generating content for gap: content_quality - insights: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:44:09.973Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:44:09.973Z] [INFO] Generating content for gap: content_quality - tutorials: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:44:09.974Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:44:09.974Z] [INFO] Generating content for gap: content_quality - whitepapers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:44:09.974Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:44:09.974Z] [INFO] Updating site structure...
+[2025-08-19T03:44:09.975Z] [INFO] Site structure updated
+[2025-08-19T03:44:09.975Z] [INFO] Autonomous content generation completed successfully
+[2025-08-19T03:44:12.514Z] [INFO] Starting autonomous content generation...
+[2025-08-19T03:44:12.517Z] [INFO] Analyzing content gaps...
+[2025-08-19T03:44:13.213Z] [INFO] Raw output: [
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "dossiers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "innovations: 4 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "insights: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "tutorials: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "whitepapers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  }
+]
+[2025-08-19T03:44:13.214Z] [INFO] Generating content for gap: content_quality - dossiers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:44:13.214Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:44:13.214Z] [INFO] Generating content for gap: content_quality - innovations: 4 pages have insufficient content (<500 chars)
+[2025-08-19T03:44:13.215Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:44:13.215Z] [INFO] Generating content for gap: content_quality - insights: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:44:13.216Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:44:13.216Z] [INFO] Generating content for gap: content_quality - tutorials: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:44:13.217Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:44:13.217Z] [INFO] Generating content for gap: content_quality - whitepapers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:44:13.217Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:44:13.217Z] [INFO] Updating site structure...
+[2025-08-19T03:44:13.218Z] [INFO] Site structure updated
+[2025-08-19T03:44:13.218Z] [INFO] Autonomous content generation completed successfully
+[2025-08-19T03:44:15.790Z] [INFO] Starting autonomous content generation...
+[2025-08-19T03:44:15.792Z] [INFO] Analyzing content gaps...
+[2025-08-19T03:44:16.579Z] [INFO] Starting autonomous content generation...
+[2025-08-19T03:44:16.584Z] [INFO] Analyzing content gaps...
+[2025-08-19T03:44:18.439Z] [INFO] Raw output: [
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "dossiers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "innovations: 4 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "insights: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "tutorials: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  },
+  {
+    "type": "content_quality",
+    "priority": "medium",
+    "description": "whitepapers: 1 pages have insufficient content (<500 chars)",
+    "impact": "SEO and user engagement",
+    "solution": "Expand short content with more detailed information"
+  }
+]
+[2025-08-19T03:44:18.702Z] [INFO] Generating content for gap: content_quality - dossiers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:44:18.703Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:44:18.706Z] [INFO] Generating content for gap: content_quality - innovations: 4 pages have insufficient content (<500 chars)
+[2025-08-19T03:44:18.706Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:44:18.707Z] [INFO] Generating content for gap: content_quality - insights: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:44:18.707Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:44:18.708Z] [INFO] Generating content for gap: content_quality - tutorials: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:44:18.708Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:44:18.708Z] [INFO] Generating content for gap: content_quality - whitepapers: 1 pages have insufficient content (<500 chars)
+[2025-08-19T03:44:18.709Z] [WARN] Unknown gap type: content_quality
+[2025-08-19T03:44:18.709Z] [INFO] Updating site structure...
+[2025-08-19T03:44:18.710Z] [INFO] Site structure updated
+[2025-08-19T03:44:18.710Z] [INFO] Autonomous content generation completed successfully

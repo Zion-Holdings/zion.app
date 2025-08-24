@@ -1,0 +1,31 @@
+{
+  "ok": true,
+  "errors": [],
+  "warnings": [
+    "No upstream configured for current branch.",
+<<<<<<< HEAD
+    "Set upstream to origin/cursor/bc-37c9148a-8898-4045-b95f-8ca2f79cfa5c-9330."
+=======
+    "Set upstream to origin/cursor/build-ai-pricing-suggestion-engine-ea4e."
+>>>>>>> origin/cursor/build-ai-pricing-suggestion-engine-ea4e
+  ],
+  "checks": {
+    "user": {
+      "name": "Cursor Agent",
+      "email": "cursoragent@cursor.com"
+    },
+<<<<<<< HEAD
+    "origin": "origin\thttps://x-access-token:ghs_6BllxZH8uDKDNSxTCd1X7Te6kiLdMv25gI6t@github.com/Zion-Holdings/zion.app (fetch)\norigin\thttps://x-access-token:ghs_6BllxZH8uDKDNSxTCd1X7Te6kiLdMv25gI6t@github.com/Zion-Holdings/zion.app (push)",
+    "fsck": {
+      "status": 0,
+      "output": "dangling tree 9e71027b7b742f35647902679f88941aee5e1416\n"
+=======
+    "origin": "origin\thttps://x-access-token:ghs_DhwaPNUqmGTfRc6NzxlDldBixJAKan1LFxHx@github.com/Zion-Holdings/zion.app (fetch)\norigin\thttps://x-access-token:ghs_DhwaPNUqmGTfRc6NzxlDldBixJAKan1LFxHx@github.com/Zion-Holdings/zion.app (push)",
+    "fsck": {
+      "status": 0,
+      "output": "dangling tree 863341b6dd65d4f84fb20df61aa538086f80bcd6\n"
+>>>>>>> origin/cursor/build-ai-pricing-suggestion-engine-ea4e
+    },
+    "working": "clean"
+  }
+}

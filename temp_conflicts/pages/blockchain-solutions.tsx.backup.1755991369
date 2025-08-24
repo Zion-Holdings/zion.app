@@ -1,0 +1,16 @@
+export default function BlockchainSolutions(){return <div className="prose dark:prose-invert"><h1>Blockchain Solutions</h1><p>Coming soon.</p></div>}
+=======
+export default function BlockchainSolutionsPage() {
+  return (
+    <div className="py-8">
+      <h1 className="text-xl font-semibold mb-2">Blockchain Solutions</h1>
+      <p className="text-gray-600 dark:text-gray-300">Content coming soon.</p>
+    </div>
+  );
+}
+=======
+import React from 'react';
+
+export default function BlockchainSolutionsPage() {
+  return <div>Blockchain Solutions</div>;
+}

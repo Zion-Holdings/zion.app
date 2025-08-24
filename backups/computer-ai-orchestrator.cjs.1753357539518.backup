@@ -1,0 +1,700 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
+
+/**
+ * Computer AI Orchestrator
+ * 
+ * The master orchestrator that manages all infinite improvement systems
+ * and creates a true infinite improvement loop for the entire computer.
+ */
+
+const fs = require('fs').promises;
+const path = require('path');
+const { execSync, spawn } = require('child_process');
+const EventEmitter = require('events');
+
+class ComputerAIOrchestrator extends EventEmitter {
+  constructor() {
+    super();
+    
+    this.config = {
+      // Orchestration settings
+      orchestration: {
+        interval: 60 * 1000, // 1 minute
+        maxConcurrentSystems: 5,
+        autoRestart: true,
+        healthCheckInterval: 30 * 1000, // 30 seconds
+        loadBalancing: true
+      },
+      
+      // System configurations
+      systems: {
+        infiniteImprovement: {
+          enabled: true,
+          script: 'scripts/infinite-improvement-loop.cjs',
+          priority: 1,
+          autoRestart: true,
+          maxRestarts: 3
+        },
+        aiToolDiscovery: {
+          enabled: true,
+          script: 'scripts/ai-tool-discovery-engine.cjs',
+          priority: 2,
+          autoRestart: true,
+          maxRestarts: 3
+        },
+        computerEnhancement: {
+          enabled: true,
+          script: 'scripts/ai-powered-computer-enhancement.cjs',
+          priority: 3,
+          autoRestart: true,
+          maxRestarts: 3
+        },
+        aiCodeReview: {
+          enabled: true,
+          script: 'scripts/ai-code-review-automation.cjs',
+          priority: 4,
+          autoRestart: true,
+          maxRestarts: 3
+        },
+        performanceOptimization: {
+          enabled: true,
+          script: 'scripts/performance-optimization-automation.cjs',
+          priority: 5,
+          autoRestart: true,
+          maxRestarts: 3
+        },
+        securityMonitoring: {
+          enabled: true,
+          script: 'scripts/security-monitoring-automation.cjs',
+          priority: 6,
+          autoRestart: true,
+          maxRestarts: 3
+        },
+        uxEnhancement: {
+          enabled: true,
+          script: 'scripts/ux-enhancement-automation.cjs',
+          priority: 7,
+          autoRestart: true,
+          maxRestarts: 3
+        },
+        databaseHealth: {
+          enabled: true,
+          script: 'scripts/database-health-automation.cjs',
+          priority: 8,
+          autoRestart: true,
+          maxRestarts: 3
+        }
+      },
+      
+      // Paths
+      paths: {
+        projectRoot: process.cwd(),
+        logs: path.join(process.cwd(), 'logs'),
+        reports: path.join(process.cwd(), 'reports'),
+        orchestrator: path.join(process.cwd(), 'orchestrator')
+      }
+    };
+    
+    this.isRunning = false;
+    this.activeSystems = new Map();
+    this.systemStats = new Map();
+    this.healthChecks = new Map();
+    this.restartCounts = new Map();
+    this.stats = {
+      totalSystems: 0,
+      activeSystems: 0,
+      failedSystems: 0,
+      totalRestarts: 0,
+      lastOrchestration: null,
+      systemHealth: 100,
+      overallIntelligence: 0
+    };
+    
+    this.initializeDirectories();
+    this.initializeSystems();
+  }
+
+  async initializeDirectories() {
+    const dirs = [
+      this.config.paths.logs,
+      this.config.paths.reports,
+      this.config.paths.orchestrator
+    ];
+
+    for (const dir of dirs) {
+      try {
+        await fs.mkdir(dir, { recursive: true });
+      } catch (error) {
+        this.log('warn', `Failed to create directory ${dir}: ${error.message}`);
+      }
+    }
+  }
+
+  initializeSystems() {
+    for (const [systemName, systemConfig] of Object.entries(this.config.systems)) {
+      if (systemConfig.enabled) {
+        this.systemStats.set(systemName, {
+          status: 'stopped',
+          startTime: null,
+          lastHealthCheck: null,
+          restartCount: 0,
+          uptime: 0,
+          performance: 0
+        });
+        
+        this.restartCounts.set(systemName, 0);
+        this.stats.totalSystems++;
+      }
+    }
+  }
+
+  async start() {
+    if (this.isRunning) {
+      this.log('warn', 'Computer AI Orchestrator is already running');
+      return;
+    }
+
+    this.log('info', '🚀 Starting Computer AI Orchestrator...');
+    this.isRunning = true;
+
+    // Start all enabled systems
+    await this.startAllSystems();
+
+    // Start orchestration loop
+    this.startOrchestrationLoop();
+
+    // Start health monitoring
+    this.startHealthMonitoring();
+
+    // Start load balancing
+    if (this.config.orchestration.loadBalancing) {
+      this.startLoadBalancing();
+    }
+
+    this.log('info', '✅ Computer AI Orchestrator started successfully');
+    this.emit('started');
+  }
+
+  async stop() {
+    if (!this.isRunning) {
+      this.log('warn', 'Computer AI Orchestrator is not running');
+      return;
+    }
+
+    this.log('info', '🛑 Stopping Computer AI Orchestrator...');
+    this.isRunning = false;
+
+    // Stop all timers
+    if (this.orchestrationTimer) clearInterval(this.orchestrationTimer);
+    if (this.healthTimer) clearInterval(this.healthTimer);
+    if (this.loadBalancingTimer) clearInterval(this.loadBalancingTimer);
+
+    // Stop all systems
+    await this.stopAllSystems();
+
+    this.log('info', '✅ Computer AI Orchestrator stopped');
+    this.emit('stopped');
+  }
+
+  async startAllSystems() {
+    const systems = Object.entries(this.config.systems)
+      .filter(([_, config]) => config.enabled)
+      .sort((a, b) => a[1].priority - b[1].priority);
+
+    for (const [systemName, systemConfig] of systems) {
+      try {
+        await this.startSystem(systemName, systemConfig);
+        // Add delay between system starts to prevent resource conflicts
+        await this.sleep(2000);
+      } catch (error) {
+        this.log('error', `Failed to start system ${systemName}: ${error.message}`);
+      }
+    }
+  }
+
+  async startSystem(systemName, systemConfig) {
+    const scriptPath = path.join(this.config.paths.projectRoot, systemConfig.script);
+    
+    if (!await this.fileExists(scriptPath)) {
+      this.log('warn', `System script not found: ${scriptPath}`);
+      return;
+    }
+
+    const child = spawn('node', [scriptPath, 'start'], {
+      stdio: ['pipe', 'pipe', 'pipe'],
+      detached: false
+    });
+
+    child.stdout.on('data', (data) => {
+      this.log('info', `[${systemName}] ${data.toString().trim()}`);
+    });
+
+    child.stderr.on('data', (data) => {
+      this.log('error', `[${systemName}] ${data.toString().trim()}`);
+    });
+
+    child.on('close', (code) => {
+      this.log('info', `System ${systemName} stopped with code ${code}`);
+      this.handleSystemExit(systemName, code);
+    });
+
+    child.on('error', (error) => {
+      this.log('error', `System ${systemName} error: ${error.message}`);
+      this.handleSystemError(systemName, error);
+    });
+
+    this.activeSystems.set(systemName, {
+      process: child,
+      config: systemConfig,
+      startTime: Date.now()
+    });
+
+    const stats = this.systemStats.get(systemName);
+    stats.status = 'running';
+    stats.startTime = Date.now();
+    stats.lastHealthCheck = Date.now();
+
+    this.stats.activeSystems++;
+
+    this.log('info', `✅ Started system: ${systemName}`);
+  }
+
+  async stopAllSystems() {
+    for (const [systemName, system] of this.activeSystems) {
+      try {
+        system.process.kill('SIGTERM');
+        this.log('info', `Stopped system: ${systemName}`);
+      } catch (error) {
+        this.log('warn', `Failed to stop system ${systemName}: ${error.message}`);
+      }
+    }
+    this.activeSystems.clear();
+    this.stats.activeSystems = 0;
+  }
+
+  handleSystemExit(systemName, code) {
+    const stats = this.systemStats.get(systemName);
+    if (stats) {
+      stats.status = 'stopped';
+      stats.uptime = Date.now() - (stats.startTime || Date.now());
+    }
+
+    this.activeSystems.delete(systemName);
+    this.stats.activeSystems--;
+
+    // Auto-restart if enabled
+    const systemConfig = this.config.systems[systemName];
+    if (systemConfig && systemConfig.autoRestart && this.isRunning) {
+      const restartCount = this.restartCounts.get(systemName) || 0;
+      if (restartCount < systemConfig.maxRestarts) {
+        this.log('info', `Auto-restarting system ${systemName} (attempt ${restartCount + 1})`);
+        this.restartCounts.set(systemName, restartCount + 1);
+        this.stats.totalRestarts++;
+        
+        
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(async () => {
+          await this.startSystem(systemName,    systemConfig);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+        }, 5000); // Wait 5 seconds before restart
+      } else {
+        this.log('error', `System ${systemName} exceeded max restart attempts`);
+        this.stats.failedSystems++;
+      }
+    }
+  }
+
+  handleSystemError(systemName, error) {
+    this.log('error', `System ${systemName} encountered error: ${error.message}`);
+    this.handleSystemExit(systemName, 1);
+  }
+
+  startOrchestrationLoop() {
+    this.orchestrationTimer = setInterval(async () => {
+      if (this.isRunning) {
+        await this.performOrchestration();
+      }
+    }, this.config.orchestration.interval);
+  }
+
+  startHealthMonitoring() {
+    this.healthTimer = setInterval(async () => {
+      if (this.isRunning) {
+        await this.performHealthChecks();
+      }
+    }, this.config.orchestration.healthCheckInterval);
+  }
+
+  startLoadBalancing() {
+    this.loadBalancingTimer = setInterval(async () => {
+      if (this.isRunning) {
+        await this.performLoadBalancing();
+      }
+    }, 2 * 60 * 1000); // Every 2 minutes
+  }
+
+  async performOrchestration() {
+    try {
+      this.log('info', '🎼 Performing computer AI orchestration...');
+
+      // Check system statuses
+      await this.checkSystemStatuses();
+
+      // Optimize system performance
+      await this.optimizeSystemPerformance();
+
+      // Coordinate AI improvements
+      await this.coordinateAIImprovements();
+
+      // Generate orchestration report
+      await this.generateOrchestrationReport();
+
+      this.stats.lastOrchestration = Date.now();
+      this.log('info', '✅ Computer AI orchestration completed');
+
+    } catch (error) {
+      this.log('error', `Orchestration failed: ${error.message}`);
+    }
+  }
+
+  async checkSystemStatuses() {
+    for (const [systemName, system] of this.activeSystems) {
+      try {
+        const status = await this.getSystemStatus(systemName);
+        const stats = this.systemStats.get(systemName);
+        if (stats) {
+          stats.status = status.status;
+          stats.performance = status.performance;
+          stats.lastHealthCheck = Date.now();
+        }
+      } catch (error) {
+        this.log('warn', `Failed to check status for ${systemName}: ${error.message}`);
+      }
+    }
+  }
+
+  async getSystemStatus(systemName) {
+    try {
+      // Try to get status via HTTP if available
+      const response = await this.makeRequest(`http://localhost:3001/api/status`);
+      return JSON.parse(response);
+    } catch (error) {
+      // Fallback to process status
+      const system = this.activeSystems.get(systemName);
+      if (system && system.process.connected) {
+        return { status: 'running', performance: 85 };
+      } else {
+        return { status: 'stopped', performance: 0 };
+      }
+    }
+  }
+
+  async optimizeSystemPerformance() {
+    // Optimize system performance based on current load
+    const systemLoads = await this.getSystemLoads();
+    const averageLoad = systemLoads.reduce((sum, load) => sum + load, 0) / systemLoads.length;
+
+    if (averageLoad > 80) {
+      this.log('info', 'High system load detected, optimizing performance...');
+      // Implement performance optimization logic
+    }
+  }
+
+  async getSystemLoads() {
+    const loads = [];
+    for (const [systemName, system] of this.activeSystems) {
+      try {
+        const stats = this.systemStats.get(systemName);
+        loads.push(stats.performance || 0);
+      } catch (error) {
+        loads.push(0);
+      }
+    }
+    return loads;
+  }
+
+  async coordinateAIImprovements() {
+    // Coordinate AI improvements across all systems
+    this.log('info', '🤖 Coordinating AI improvements across all systems...');
+    
+    // Trigger AI improvements in priority order
+    const systems = Array.from(this.activeSystems.keys())
+      .sort((a, b) => this.config.systems[a].priority - this.config.systems[b].priority);
+
+    for (const systemName of systems) {
+      try {
+        await this.triggerAIImprovement(systemName);
+      } catch (error) {
+        this.log('warn', `Failed to trigger AI improvement for ${systemName}: ${error.message}`);
+      }
+    }
+  }
+
+  async triggerAIImprovement(systemName) {
+    // Trigger AI improvement for specific system
+    const system = this.activeSystems.get(systemName);
+    if (system) {
+      // Send improvement signal to system
+      this.log('info', `Triggering AI improvement for ${systemName}`);
+    }
+  }
+
+  async performHealthChecks() {
+    let healthySystems = 0;
+    let totalSystems = 0;
+
+    for (const [systemName, system] of this.activeSystems) {
+      try {
+        const health = await this.checkSystemHealth(systemName);
+        if (health.status === 'healthy') {
+          healthySystems++;
+        }
+        totalSystems++;
+      } catch (error) {
+        this.log('warn', `Health check failed for ${systemName}: ${error.message}`);
+      }
+    }
+
+    // Update overall system health
+    if (totalSystems > 0) {
+      this.stats.systemHealth = (healthySystems / totalSystems) * 100;
+    }
+
+    // Update overall intelligence
+    this.updateOverallIntelligence();
+  }
+
+  async checkSystemHealth(systemName) {
+    try {
+      const system = this.activeSystems.get(systemName);
+      if (system && system.process.connected) {
+        return { status: 'healthy', details: 'System is running normally' };
+      } else {
+        return { status: 'unhealthy', details: 'System is not responding' };
+      }
+    } catch (error) {
+      return { status: 'error', details: error.message };
+    }
+  }
+
+  updateOverallIntelligence() {
+    // Calculate overall intelligence based on system performance and health
+    let intelligence = 0;
+    let totalWeight = 0;
+
+    for (const [systemName, stats] of this.systemStats) {
+      if (stats.status === 'running') {
+        const weight = this.config.systems[systemName]?.priority || 1;
+        intelligence += (stats.performance || 0) * weight;
+        totalWeight += weight;
+      }
+    }
+
+    if (totalWeight > 0) {
+      this.stats.overallIntelligence = intelligence / totalWeight;
+    }
+  }
+
+  async performLoadBalancing() {
+    if (!this.config.orchestration.loadBalancing) return;
+
+    this.log('info', '⚖️ Performing load balancing...');
+
+    const systemLoads = await this.getSystemLoads();
+    const averageLoad = systemLoads.reduce((sum, load) => sum + load, 0) / systemLoads.length;
+
+    // If average load is too high, redistribute tasks
+    if (averageLoad > 85) {
+      this.log('info', 'High load detected, redistributing tasks...');
+      await this.redistributeTasks();
+    }
+  }
+
+  async redistributeTasks() {
+    // Implement task redistribution logic
+    this.log('info', 'Redistributing tasks across systems...');
+  }
+
+  async generateOrchestrationReport() {
+    const report = {
+      timestamp: Date.now(),
+      stats: this.stats,
+      systems: Object.fromEntries(this.systemStats),
+      activeSystems: Array.from(this.activeSystems.keys()),
+      summary: {
+        totalSystems: this.stats.totalSystems,
+        activeSystems: this.stats.activeSystems,
+        systemHealth: this.stats.systemHealth,
+        overallIntelligence: this.stats.overallIntelligence,
+        totalRestarts: this.stats.totalRestarts
+      }
+    };
+
+    const reportPath = path.join(this.config.paths.reports, `orchestration-${Date.now()}.json`);
+    await fs.writeFile(reportPath, JSON.stringify(report, null, 2));
+    
+    this.log('info', `Generated orchestration report: ${reportPath}`);
+    return report;
+  }
+
+  async makeRequest(url) {
+    return new Promise((resolve, reject) => {
+      const http = require('http');
+      const req = http.get(url, (res) => {
+        let data = '';
+        res.on('data', chunk => data += chunk);
+        res.on('end', () => resolve(data));
+      });
+      req.on('error', reject);
+      req.
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(5000,    ();
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+ => req.destroy());
+    });
+  }
+
+  async fileExists(filePath) {
+    try {
+      await fs.access(filePath);
+      return true;
+    } catch {
+      return false;
+    }
+  }
+
+  sleep(ms) {
+    return new Promise(resolve => 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(resolve,    ms);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+);
+  }
+
+  log(level, message) {
+    const timestamp = new Date().toISOString();
+    const logMessage = `[${timestamp}] [${level.toUpperCase()}] [ORCHESTRATOR] ${message}`;
+    
+    logger.info(logMessage);
+    
+    // Save to log file
+    const logPath = path.join(this.config.paths.logs, 'orchestrator.log');
+    fs.appendFile(logPath, logMessage + '\n').catch(() => {});
+  }
+
+  getStatus() {
+    return {
+      isRunning: this.isRunning,
+      stats: this.stats,
+      activeSystems: this.activeSystems.size,
+      systemHealth: this.stats.systemHealth,
+      overallIntelligence: this.stats.overallIntelligence,
+      lastOrchestration: this.stats.lastOrchestration
+    };
+  }
+
+  async listSystems() {
+    const systems = [];
+    
+    for (const [systemName, stats] of this.systemStats) {
+      const system = this.activeSystems.get(systemName);
+      systems.push({
+        name: systemName,
+        status: stats.status,
+        priority: this.config.systems[systemName]?.priority || 0,
+        uptime: stats.uptime,
+        performance: stats.performance,
+        restartCount: this.restartCounts.get(systemName) || 0,
+        isActive: !!system
+      });
+    }
+    
+    return systems.sort((a, b) => a.priority - b.priority);
+  }
+}
+
+// CLI Interface
+async function main() {
+  const orchestrator = new ComputerAIOrchestrator();
+  const command = process.argv[2];
+
+  switch (command) {
+    case 'start':
+      await orchestrator.start();
+      break;
+    case 'stop':
+      await orchestrator.stop();
+      break;
+    case 'status':
+      logger.info(JSON.stringify(orchestrator.getStatus(), null, 2));
+      break;
+    case 'list':
+      const systems = await orchestrator.listSystems();
+      logger.info(JSON.stringify(systems, null, 2));
+      break;
+    case 'restart':
+      await orchestrator.stop();
+      await new Promise(resolve => 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(resolve,    2000);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+);
+      await orchestrator.start();
+      break;
+    default:
+      logger.info('Usage: node computer-ai-orchestrator.cjs [start|stop|status|list|restart]');
+      break;
+  }
+}
+
+if (require.main === module) {
+  main().catch(error => {
+    logger.error('Computer AI Orchestrator failed:', error.message);
+    process.exit(1);
+  });
+}
+
+module.exports = ComputerAIOrchestrator; 

@@ -1,0 +1,11 @@
+{
+  "pages": [
+    {
+      "url": "https://example.com",
+      "status": 200,
+      "num_links_checked": 1,
+      "elapsed_ms": 23
+    }
+  ],
+  "broken": []
+}

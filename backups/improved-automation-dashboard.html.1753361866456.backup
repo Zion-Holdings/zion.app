@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zion App - Improved Automation Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .header p {
+            color: #7f8c8d;
+            text-align: center;
+            font-size: 1.1em;
+        }
+
+        .status-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 15px 25px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .status-indicator {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .status-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        .status-dot.online { background: #27ae60; }
+        .status-dot.offline { background: #e74c3c; }
+        .status-dot.connecting { background: #f39c12; }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #ecf0f1;
+        }
+
+        .card-title {
+            font-size: 1.4em;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .system-status {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .system-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #3498db;
+        }
+
+        .system-item.running { border-left-color: #27ae60; }
+        .system-item.stopped { border-left-color: #e74c3c; }
+        .system-item.error { border-left-color: #f39c12; }
+        .system-item.starting { border-left-color: #9b59b6; }
+
+        .system-info {
+            flex: 1;
+        }
+
+        .system-name {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .system-description {
+            font-size: 0.9em;
+            color: #7f8c8d;
+        }
+
+        .system-metrics {
+            text-align: right;
+            font-size: 0.85em;
+            color: #7f8c8d;
+        }
+
+        .system-actions {
+            display: flex;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.85em;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary { background: #3498db; color: white; }
+        .btn-success { background: #27ae60; color: white; }
+        .btn-warning { background: #f39c12; color: white; }
+        .btn-danger { background: #e74c3c; color: white; }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .logs-container {
+            max-height: 300px;
+            overflow-y: auto;
+            background: #2c3e50;
+            border-radius: 10px;
+            padding: 15px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85em;
+            line-height: 1.4;
+        }
+
+        .log-entry {
+            margin-bottom: 5px;
+            padding: 5px 0;
+            border-bottom: 1px solid #34495e;
+        }
+
+        .log-timestamp {
+            color: #95a5a6;
+        }
+
+        .log-level {
+            font-weight: bold;
+            margin: 0 8px;
+        }
+
+        .log-level.info { color: #3498db; }
+        .log-level.warn { color: #f39c12; }
+        .log-level.error { color: #e74c3c; }
+        .log-level.success { color: #27ae60; }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .metric-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .metric-value {
+            font-size: 2em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .metric-label {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        .refresh-btn {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: all 0.3s ease;
+        }
+
+        .refresh-btn:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #7f8c8d;
+        }
+
+        .error-message {
+            background: #e74c3c;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .status-bar {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .system-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            
+            .system-actions {
+                width: 100%;
+                justify-content: space-between;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🤖 Zion App Automation Dashboard</h1>
+            <p>Intelligent Automation Management & Monitoring System</p>
+        </div>
+
+        <div class="status-bar">
+            <div class="status-indicator">
+                <div class="status-dot" id="connectionStatus"></div>
+                <span id="connectionText">Connecting...</span>
+            </div>
+            <div>
+                <span id="lastUpdate">Last update: Never</span>
+                <button class="refresh-btn" onclick="refreshData()">🔄 Refresh</button>
+            </div>
+        </div>
+
+        <div id="errorContainer"></div>
+
+        <div class="grid">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">🚀 Automation Systems</h2>
+                </div>
+                <div class="system-status" id="systemsContainer">
+                    <div class="loading">Loading systems...</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">📊 System Metrics</h2>
+                </div>
+                <div class="metrics-grid" id="metricsContainer">
+                    <div class="metric-card">
+                        <div class="metric-value" id="totalSystems">-</div>
+                        <div class="metric-label">Total Systems</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value" id="runningSystems">-</div>
+                        <div class="metric-label">Running</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value" id="stoppedSystems">-</div>
+                        <div class="metric-label">Stopped</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value" id="errorSystems">-</div>
+                        <div class="metric-label">Errors</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h2 class="card-title">📝 System Logs</h2>
+            </div>
+            <div class="logs-container" id="logsContainer">
+                <div class="loading">Loading logs...</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+    <script>
+        class AutomationDashboard {
+            constructor() {
+                this.socket = null;
+                this.systems = {};
+                this.logs = [];
+                this.isConnected = false;
+                this.updateInterval = null;
+                
+                this.init();
+            }
+
+            init() {
+                this.connectWebSocket();
+                this.setupEventListeners();
+                this.startAutoRefresh();
+            }
+
+            connectWebSocket() {
+                try {
+                    this.socket = io('http://localhost:3008');
+                    
+                    this.socket.on('connect', () => {
+                        this.isConnected = true;
+                        this.updateConnectionStatus('online', 'Connected');
+                        this.requestStatus();
+                    });
+
+                    this.socket.on('disconnect', () => {
+                        this.isConnected = false;
+                        this.updateConnectionStatus('offline', 'Disconnected');
+                    });
+
+                    this.socket.on('status-update', (data) => {
+                        this.updateSystems(data);
+                    });
+
+                    this.socket.on('log-update', (data) => {
+                        this.addLog(data);
+                    });
+
+                } catch (error) {
+                    console.error('WebSocket connection failed:', error);
+                    this.updateConnectionStatus('offline', 'Connection Failed');
+                    this.loadFallbackData();
+                }
+            }
+
+            setupEventListeners() {
+                // Global refresh function
+                window.refreshData = () => this.requestStatus();
+            }
+
+            startAutoRefresh() {
+                this.updateInterval = setInterval(() => {
+                    if (this.isConnected) {
+                        this.requestStatus();
+                    }
+                }, 10000); // Refresh every 10 seconds
+            }
+
+            requestStatus() {
+                if (this.socket && this.isConnected) {
+                    this.socket.emit('get-status');
+                } else {
+                    this.loadFallbackData();
+                }
+            }
+
+            async loadFallbackData() {
+                try {
+                    const response = await fetch('http://localhost:3008/api/systems');
+                    if (response.ok) {
+                        const data = await response.json();
+                        this.updateSystems(data);
+                    }
+                } catch (error) {
+                    console.error('Failed to load fallback data:', error);
+                    this.showError('Unable to connect to automation systems');
+                }
+            }
+
+            updateConnectionStatus(status, text) {
+                const statusDot = document.getElementById('connectionStatus');
+                const statusText = document.getElementById('connectionText');
+                
+                statusDot.className = `status-dot ${status}`;
+                statusText.textContent = text;
+            }
+
+            updateSystems(systems) {
+                this.systems = systems;
+                this.renderSystems();
+                this.updateMetrics();
+                this.updateLastUpdate();
+            }
+
+            renderSystems() {
+                const container = document.getElementById('systemsContainer');
+                
+                if (Object.keys(this.systems).length === 0) {
+                    container.innerHTML = '<div class="loading">No systems available</div>';
+                    return;
+                }
+
+                container.innerHTML = Object.entries(this.systems).map(([name, system]) => `
+                    <div class="system-item ${system.status}">
+                        <div class="system-info">
+                            <div class="system-name">${system.name}</div>
+                            <div class="system-description">${system.description}</div>
+                            <div class="system-actions">
+                                <button class="btn btn-success" onclick="dashboard.startSystem('${name}')" ${system.status === 'running' ? 'disabled' : ''}>
+                                    ▶️ Start
+                                </button>
+                                <button class="btn btn-warning" onclick="dashboard.restartSystem('${name}')" ${system.status === 'stopped' ? 'disabled' : ''}>
+                                    🔄 Restart
+                                </button>
+                                <button class="btn btn-danger" onclick="dashboard.stopSystem('${name}')" ${system.status === 'stopped' ? 'disabled' : ''}>
+                                    ⏹️ Stop
+                                </button>
+                            </div>
+                        </div>
+                        <div class="system-metrics">
+                            <div>Status: ${system.status}</div>
+                            <div>Restarts: ${system.restarts}</div>
+                            <div>Uptime: ${this.formatUptime(system.uptime)}</div>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            updateMetrics() {
+                const total = Object.keys(this.systems).length;
+                const running = Object.values(this.systems).filter(s => s.status === 'running').length;
+                const stopped = Object.values(this.systems).filter(s => s.status === 'stopped').length;
+                const errors = Object.values(this.systems).filter(s => s.status === 'error').length;
+
+                document.getElementById('totalSystems').textContent = total;
+                document.getElementById('runningSystems').textContent = running;
+                document.getElementById('stoppedSystems').textContent = stopped;
+                document.getElementById('errorSystems').textContent = errors;
+            }
+
+            updateLastUpdate() {
+                const now = new Date();
+                document.getElementById('lastUpdate').textContent = `Last update: ${now.toLocaleTimeString()}`;
+            }
+
+            formatUptime(ms) {
+                if (!ms) return 'N/A';
+                
+                const seconds = Math.floor(ms / 1000);
+                const minutes = Math.floor(seconds / 60);
+                const hours = Math.floor(minutes / 60);
+                
+                if (hours > 0) {
+                    return `${hours}h ${minutes % 60}m`;
+                } else if (minutes > 0) {
+                    return `${minutes}m ${seconds % 60}s`;
+                } else {
+                    return `${seconds}s`;
+                }
+            }
+
+            async startSystem(name) {
+                try {
+                    const response = await fetch(`http://localhost:3008/api/systems/${name}/start`, {
+                        method: 'POST'
+                    });
+                    
+                    if (response.ok) {
+                        this.addLog({ level: 'success', message: `Started system: ${name}` });
+                        
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(() => this.requestStatus(),                          2000);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+                    } else {
+                        throw new Error('Failed to start system');
+                    }
+                } catch (error) {
+                    this.addLog({ level: 'error', message: `Failed to start ${name}: ${error.message}` });
+                }
+            }
+
+            async stopSystem(name) {
+                try {
+                    const response = await fetch(`http://localhost:3008/api/systems/${name}/stop`, {
+                        method: 'POST'
+                    });
+                    
+                    if (response.ok) {
+                        this.addLog({ level: 'success', message: `Stopped system: ${name}` });
+                        
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(() => this.requestStatus(),                          2000);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+                    } else {
+                        throw new Error('Failed to stop system');
+                    }
+                } catch (error) {
+                    this.addLog({ level: 'error', message: `Failed to stop ${name}: ${error.message}` });
+                }
+            }
+
+            async restartSystem(name) {
+                try {
+                    const response = await fetch(`http://localhost:3008/api/systems/${name}/restart`, {
+                        method: 'POST'
+                    });
+                    
+                    if (response.ok) {
+                        this.addLog({ level: 'success', message: `Restarted system: ${name}` });
+                        
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(() => this.requestStatus(),                          2000);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+                    } else {
+                        throw new Error('Failed to restart system');
+                    }
+                } catch (error) {
+                    this.addLog({ level: 'error', message: `Failed to restart ${name}: ${error.message}` });
+                }
+            }
+
+            addLog(logEntry) {
+                this.logs.push({
+                    timestamp: new Date(),
+                    level: logEntry.level || 'info',
+                    message: logEntry.message
+                });
+
+                // Keep only last 100 logs
+                if (this.logs.length > 100) {
+                    this.logs.shift();
+                }
+
+                this.renderLogs();
+            }
+
+            renderLogs() {
+                const container = document.getElementById('logsContainer');
+                
+                if (this.logs.length === 0) {
+                    container.innerHTML = '<div class="loading">No logs available</div>';
+                    return;
+                }
+
+                container.innerHTML = this.logs.map(log => `
+                    <div class="log-entry">
+                        <span class="log-timestamp">[${log.timestamp.toLocaleTimeString()}]</span>
+                        <span class="log-level ${log.level}">[${log.level.toUpperCase()}]</span>
+                        <span>${log.message}</span>
+                    </div>
+                `).join('');
+
+                // Auto-scroll to bottom
+                container.scrollTop = container.scrollHeight;
+            }
+
+            showError(message) {
+                const container = document.getElementById('errorContainer');
+                container.innerHTML = `<div class="error-message">❌ ${message}</div>`;
+                
+                
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(() => {
+                    container.innerHTML = '';
+                },                          5000);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+            }
+        }
+
+        // Initialize dashboard
+        const dashboard = new AutomationDashboard();
+    </script>
+</body>
+</html> 

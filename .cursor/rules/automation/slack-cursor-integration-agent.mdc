@@ -1,0 +1,256 @@
+# Slack-Cursor Integration Agent
+
+## Primary Responsibilities
+
+This agent specializes in:
+- **Slack Bot Development**: Enhancing slash commands, interactive messages, and workflows
+- **Cursor Agent Integration**: Improving AI agent triggers and responses
+- **Performance Monitoring**: Automating performance checks and alerts
+- **Automation Workflows**: Streamlining team collaboration and optimization processes
+- **System Integration**: Connecting different tools and services seamlessly
+
+## Automation System Architecture
+
+### Core Components
+- **Slack Bot** (`automation/slack/slack-bot.js`): Handles commands and interactions
+- **Performance Monitor** (`automation/performance/monitor.js`): Tracks metrics and sends alerts
+- **Main Orchestrator** (`automation/index.js`): Coordinates all components
+- **API Endpoints**: RESTful services for external integrations
+
+### Integration Points
+- Slack webhooks and slash commands
+- Cursor agent API calls
+- Performance threshold monitoring
+- Automated optimization triggers
+- Team notification workflows
+
+## Development Guidelines
+
+### Slack Bot Enhancement
+- **Command Structure**: Follow `/command [target] [options]` pattern
+- **Response Format**: Use Block Kit for rich interactive messages
+- **Error Handling**: Provide clear, actionable error messages
+- **Rate Limiting**: Respect Slack API limits and implement cooldowns
+
+### Cursor Agent Integration
+- **Rule-Based Triggers**: Use specific rules for different optimization types
+- **Context Awareness**: Pass relevant project context to agents
+- **Feedback Loop**: Implement progress updates and result reporting
+- **Error Recovery**: Handle agent failures gracefully
+
+### Performance Monitoring
+- **Metric Collection**: Gather comprehensive performance data
+- **Threshold Management**: Implement configurable alert thresholds
+- **Historical Tracking**: Store metrics for trend analysis
+- **Automated Actions**: Trigger optimizations based on performance degradation
+
+## Code Patterns
+
+### Slack Command Handler
+```javascript
+this.app.command('/optimize', async ({ command, ack, respond, client }) => {
+  await ack();
+  
+  const args = command.text.split(' ');
+  const target = args[0] || 'all';
+  
+  try {
+    await respond({
+      response_type: 'in_channel',
+      blocks: [
+        {
+          type: 'section',
+          text: {
+            type: 'mrkdwn',
+            text: `🚀 Starting optimization for: ${target}`
+          }
+        }
+      ]
+    });
+    
+    const result = await this.triggerOptimization(target);
+    await this.sendOptimizationResults(client, command.channel_id, result);
+  } catch (error) {
+    await respond({
+      text: `❌ Optimization failed: ${error.message}`,
+      response_type: 'ephemeral'
+    });
+  }
+});
+```
+
+### Performance Alert Pattern
+```javascript
+async sendAlert(alert) {
+  const alertKey = `${alert.type}_${alert.component}`;
+  const cooldownMinutes = parseInt(process.env.ALERT_COOLDOWN_MINUTES) || 15;
+  
+  // Check cooldown to prevent spam
+  if (this.alertCooldown.has(alertKey)) {
+    const lastAlert = this.alertCooldown.get(alertKey);
+    if (Date.now() - lastAlert < cooldownMinutes * 60 * 1000) {
+      return;
+    }
+  }
+  
+  await this.sendSlackAlert(alert);
+  
+  // Trigger auto-optimization for critical alerts
+  if (alert.severity === 'critical' && process.env.ENABLE_AUTO_OPTIMIZATION === 'true') {
+    await this.triggerAutoOptimization(alert);
+  }
+  
+  this.alertCooldown.set(alertKey, Date.now());
+}
+```
+
+### Cursor Agent API Integration
+```javascript
+async callCursorAgent(target, options) {
+  try {
+    const response = await axios.post(`${process.env.CURSOR_AGENT_ENDPOINT}/optimize`, {
+      project_id: process.env.CURSOR_PROJECT_ID,
+      target,
+      options,
+      rules: await this.getOptimizationRules()
+    }, {
+      headers: {
+        'Authorization': `Bearer ${process.env.CURSOR_API_KEY}`,
+        'Content-Type': 'application/json'
+      }
+    });
+    
+    return response.data;
+  } catch (error) {
+    throw new Error(`Cursor agent failed: ${error.message}`);
+  }
+}
+```
+
+## Enhancement Priorities
+
+### Immediate Improvements
+1. **Interactive Slack Components**: Add buttons, dropdowns, and modals
+2. **Real-time Monitoring**: Implement WebSocket connections for live updates
+3. **Better Error Handling**: Comprehensive error reporting and recovery
+4. **Configuration Management**: Dynamic threshold and setting updates
+
+### Advanced Features
+1. **AI-Powered Suggestions**: Use ML to predict optimization opportunities
+2. **Team Collaboration**: Multi-user optimization workflows
+3. **Integration Ecosystem**: Connect with more tools (GitHub, Datadog, etc.)
+4. **Automated Testing**: Self-testing automation system components
+
+## Configuration Management
+
+### Environment Variables
+- **Slack Configuration**: Bot tokens, webhook URLs, channel settings
+- **Cursor Integration**: API keys, project IDs, endpoint URLs
+- **Performance Thresholds**: Bundle size, load time, Core Web Vitals limits
+- **Feature Flags**: Enable/disable specific automation features
+
+### Dynamic Settings
+Allow runtime configuration changes through:
+- Slack commands (`/configure threshold 5MB`)
+- API endpoints (`POST /api/config`)
+- Environment variable updates
+- Configuration file modifications
+
+## Monitoring and Observability
+
+### System Health Checks
+- **Component Status**: Monitor all automation components
+- **API Connectivity**: Test external service connections
+- **Performance Impact**: Track automation system overhead
+- **Error Rates**: Monitor failure rates and response times
+
+### Logging Strategy
+- **Structured Logging**: Use consistent log format across components
+- **Log Levels**: Implement debug, info, warning, error levels
+- **Log Rotation**: Prevent log files from growing too large
+- **Centralized Logging**: Aggregate logs for analysis
+
+## Security Considerations
+
+### API Security
+- **Token Management**: Secure storage and rotation of API keys
+- **Request Validation**: Verify Slack request signatures
+- **Rate Limiting**: Prevent abuse and API exhaustion
+- **Access Control**: Restrict sensitive operations to authorized users
+
+### Data Protection
+- **Sensitive Information**: Avoid logging secrets or personal data
+- **Encryption**: Encrypt data in transit and at rest
+- **Audit Trails**: Log all significant system actions
+- **Compliance**: Follow security best practices and regulations
+
+## Testing Strategy
+
+### Unit Tests
+- Test individual component functions
+- Mock external API calls
+- Verify error handling paths
+- Test configuration management
+
+### Integration Tests
+- Test Slack bot command handling
+- Verify performance monitoring alerts
+- Test optimization trigger workflows
+- Validate API endpoint responses
+
+### End-to-End Tests
+- Complete optimization workflows
+- Real Slack command execution
+- Performance monitoring cycles
+- System health verification
+
+## Example Implementation
+
+<example>
+// Comprehensive Slack command with error handling and progress updates
+this.app.command('/optimize', async ({ command, ack, respond, client }) => {
+  await ack();
+  
+  try {
+    // Parse command arguments
+    const args = command.text.split(' ');
+    const target = args[0] || 'all';
+    const options = args.slice(1);
+    
+    // Send initial response
+    await respond({
+      response_type: 'in_channel',
+      blocks: [
+        {
+          type: 'section',
+          text: {
+            type: 'mrkdwn',
+            text: `🚀 *Starting optimization for: ${target}*\n\nInitiating Cursor agents...`
+          }
+        }
+      ]
+    });
+    
+    // Execute optimization
+    const result = await this.triggerOptimization(target, options);
+    
+    // Send detailed results
+    await this.sendOptimizationResults(client, command.channel_id, result);
+    
+  } catch (error) {
+    console.error('Optimization command error:', error);
+    await respond({
+      text: `❌ Optimization failed: ${error.message}`,
+      response_type: 'ephemeral'
+    });
+  }
+});
+</example>
+
+<example type="invalid">
+// Don't implement blocking operations in Slack command handlers
+// Don't expose sensitive information in error messages
+// Don't skip input validation and sanitization
+// Don't implement without proper error recovery
+// Don't create commands without proper documentation
+</example>

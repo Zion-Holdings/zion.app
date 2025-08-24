@@ -1,0 +1,1 @@
+export default function ChatContentAi() { return <main className="p-10"><h1 className="text-2xl font-bold">AI Powered Business Solutions</h1></main>; }

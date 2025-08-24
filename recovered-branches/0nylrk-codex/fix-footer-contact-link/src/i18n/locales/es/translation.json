@@ -1,0 +1,63 @@
+
+{
+  "general": {
+    "app_name": "Mercado de IA de Zion",
+    "loading": "Cargando...",
+    "search": "Buscar",
+    "select_language": "Seleccionar idioma",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "submit": "Enviar",
+    "yes": "Sí",
+    "no": "No",
+    "success": "Éxito",
+    "error": "Error"
+  },
+  "nav": {
+    "home": "Inicio",
+    "marketplace": "Mercado",
+    "categories": "Categorías",
+    "talent": "Talento",
+    "equipment": "Equipamiento",
+    "dashboard": "Panel",
+    "messages": "Mensajes",
+    "post_job": "Publicar Trabajo"
+  },
+  "auth": {
+    "login": "Iniciar Sesión",
+    "signup": "Registrarse",
+    "logout": "Cerrar Sesión",
+    "email": "Correo",
+    "password": "Contraseña",
+    "forgot_password": "¿Olvidó su contraseña?",
+    "remember_me": "Recordarme",
+    "login_success": "Sesión iniciada correctamente",
+    "logout_success": "Sesión cerrada correctamente"
+  },
+  "home": {
+    "hero_title": "El Futuro del Mercado de Tecnología e IA",
+    "hero_subtitle": "El primer mercado gratuito dedicado a la alta tecnología e inteligencia artificial",
+    "browse_marketplace": "Explorar Mercado",
+    "create_profile": "Crear Perfil",
+    "explore_tools": "Explorar Nuestras Herramientas",
+    "tools_description": "Todo lo que necesitas para conectarte con el ecosistema de IA y tecnología"
+  },
+  "jobs": {
+    "post_job_title": "Publicar un Trabajo",
+    "post_job_description": "Complete el formulario a continuación para publicar su trabajo y encontrar el talento perfecto",
+    "job_title": "Título del Trabajo",
+    "job_description": "Descripción del Trabajo",
+    "skills_required": "Habilidades Requeridas",
+    "budget": "Presupuesto",
+    "deadline": "Fecha Límite",
+    "job_posted": "Trabajo publicado correctamente"
+  },
+  "language": {
+    "en": "English",
+    "es": "Español",
+    "pt": "Português",
+    "ar": "العربية",
+    "language_changed": "Idioma cambiado a {{language}}",
+    "switch_to_detected": "¿Cambiar a {{language}}?"
+  }
+}

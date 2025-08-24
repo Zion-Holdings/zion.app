@@ -1,0 +1,12 @@
+{
+<<<<<<< HEAD
+  "timestamp": "2025-08-23T23:56:48.588Z",
+=======
+  "timestamp": "2025-08-24T00:54:20.649Z",
+>>>>>>> origin/cursor/website-audit-and-enhancement-d919
+  "issues": [],
+  "summary": {
+    "totalIssues": 0,
+    "severity": "CLEAN"
+  }
+}

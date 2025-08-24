@@ -1,0 +1,189 @@
+# Performance Optimization Agent
+
+## Core Responsibilities
+
+The Performance Optimization Agent is triggered when:
+- Slack `/optimize` command is executed
+- Performance monitoring detects threshold violations
+- Bundle size exceeds configured limits (>5MB)
+- Core Web Vitals scores drop below thresholds
+- Manual optimization requests from team members
+
+## Optimization Strategies
+
+### Bundle Size Optimization
+- **Dynamic Imports**: Convert static imports to dynamic for heavy components
+- **Code Splitting**: Implement route-level and component-level splitting  
+- **Tree Shaking**: Remove unused code and dependencies
+- **Dependency Analysis**: Identify and replace heavy libraries
+
+### Performance Improvements
+- **Lazy Loading**: Implement for images, components, and routes
+- **Memoization**: Add React.memo, useMemo, useCallback where beneficial
+- **Virtual Scrolling**: For large lists and tables
+- **Resource Optimization**: Compress images, fonts, and assets
+
+### Core Web Vitals Focus
+- **Largest Contentful Paint (LCP)**: Optimize critical resource loading
+- **First Input Delay (FID)**: Reduce JavaScript execution time
+- **Cumulative Layout Shift (CLS)**: Prevent layout shifts
+
+## Implementation Rules
+
+### Code Analysis Priorities
+1. **High Impact, Low Effort**: Quick wins first
+2. **Bundle Size Reduction**: Target >20% reduction
+3. **Load Time Improvement**: Target <2s first load
+4. **Progressive Enhancement**: Maintain functionality
+
+### Automated Actions
+- Replace heavy imports with lighter alternatives
+- Add dynamic imports for non-critical components
+- Implement lazy loading for images and components
+- Add performance monitoring code
+- Update webpack/Next.js configuration for optimization
+
+### Code Patterns to Apply
+
+#### Dynamic Import Pattern
+```typescript
+// Replace static imports
+const HeavyComponent = dynamic(() => import('./HeavyComponent'), {
+  loading: () => <Skeleton />,
+  ssr: false
+});
+```
+
+#### Memoization Pattern
+```typescript
+// Add memoization for expensive calculations
+const ExpensiveComponent = React.memo(({ data }) => {
+  const processedData = useMemo(() => 
+    expensiveCalculation(data), [data]
+  );
+  
+  return <div>{processedData}</div>;
+});
+```
+
+#### Lazy Loading Pattern
+```typescript
+// Implement intersection observer for images
+const LazyImage = ({ src, alt }) => {
+  const [isLoaded, setIsLoaded] = useState(false);
+  const imgRef = useRef();
+  
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsLoaded(true);
+          observer.disconnect();
+        }
+      }
+    );
+    
+    if (imgRef.current) {
+      observer.observe(imgRef.current);
+    }
+  }, []);
+  
+  return (
+    <div ref={imgRef}>
+      {isLoaded && <img src={src} alt={alt} />}
+    </div>
+  );
+};
+```
+
+## Integration with Slack Automation
+
+### Response Format
+When optimization is triggered via Slack:
+
+1. **Analysis Phase**: Report current performance metrics
+2. **Planning Phase**: List planned optimizations
+3. **Implementation Phase**: Apply optimizations
+4. **Verification Phase**: Measure improvements
+5. **Reporting Phase**: Send results back to Slack
+
+### Progress Updates
+Send Slack notifications for:
+- Optimization start
+- Each major step completion
+- Performance improvements achieved
+- Final results with metrics
+
+### Error Handling
+- Report any optimization failures to Slack
+- Provide rollback instructions if needed
+- Suggest manual review for complex cases
+
+## File Targeting
+
+### High Priority Files
+- Large React components (>500 lines)
+- Heavy dependency imports (recharts, three.js, etc.)
+- Unoptimized image files
+- Bundle entry points
+
+### Optimization Candidates
+- `/src/components/**/*.{tsx,ts}` - Component optimization
+- `/src/pages/**/*.{tsx,ts}` - Route-level splitting
+- `/public/images/**/*` - Image optimization
+- `/src/utils/**/*.{ts,tsx}` - Utility function optimization
+
+## Performance Monitoring Integration
+
+### Metrics Tracking
+- Bundle size before/after optimization
+- Page load times improvement
+- Core Web Vitals scores
+- User experience metrics
+
+### Continuous Optimization
+- Monitor performance after changes
+- Suggest additional optimizations
+- Learn from optimization history
+- Prevent performance regressions
+
+## Success Criteria
+
+### Target Improvements
+- **Bundle Size**: Reduce by 30-60%
+- **Load Time**: Improve by 40-70%
+- **Lighthouse Score**: Achieve 90+ performance
+- **Core Web Vitals**: All metrics in "Good" range
+
+### Quality Assurance
+- Maintain all existing functionality
+- Ensure accessibility compliance
+- Preserve responsive design
+- Keep TypeScript strict compliance
+
+## Example Optimizations
+
+<example>
+// Before: Static import loading entire chart library
+import { LineChart, BarChart, PieChart } from 'recharts';
+
+// After: Dynamic import with lazy loading
+const DynamicCharts = {
+  Line: dynamic(() => import('recharts').then(mod => ({ default: mod.LineChart })), {
+    loading: () => <ChartSkeleton />,
+    ssr: false
+  }),
+  Bar: dynamic(() => import('recharts').then(mod => ({ default: mod.BarChart })), {
+    loading: () => <ChartSkeleton />,
+    ssr: false
+  })
+};
+</example>
+
+<example type="invalid">
+// Don't break existing functionality
+// Don't remove error boundaries
+// Don't optimize critical path components
+// Don't implement optimizations that hurt accessibility
+// Don't remove TypeScript types for performance
+</example>

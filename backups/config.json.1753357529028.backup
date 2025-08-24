@@ -1,0 +1,33 @@
+{
+  "autonomousMode": true,
+  "autoFixEnabled": true,
+  "autoCommitEnabled": true,
+  "autoPushEnabled": true,
+  "maxRetries": 3,
+  "logLevel": "info",
+  "performance": {
+    "bundleSizeThreshold": 5242880,
+    "buildTimeThreshold": 60000,
+    "testTimeThreshold": 30000
+  },
+  "security": {
+    "scanSensitiveData": true,
+    "blockOnHighSeverity": true,
+    "excludePatterns": [
+      "node_modules/**",
+      ".git/**",
+      ".next/**",
+      "dist/**",
+      "build/**"
+    ]
+  },
+  "commit": {
+    "messageTemplate": "🤖 Autonomous improvement: {description}",
+    "maxFilesPerCommit": 10,
+    "minChangesForCommit": 1,
+    "branchProtection": {
+      "main": true,
+      "develop": true
+    }
+  }
+}

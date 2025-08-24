@@ -1,0 +1,47 @@
+{
+  "name": "intelligent-automation-system",
+  "version": "1.0.0",
+  "description": "A comprehensive, autonomous automation system for development workflows",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node test-system.js",
+    "dev": "node index.js --dry-run",
+    "dashboard": "node index.js --port 3001",
+    "help": "node index.js --help"
+  },
+  "keywords": [
+    "automation",
+    "autonomous",
+    "self-healing",
+    "monitoring",
+    "scheduling",
+    "anomaly-detection",
+    "development",
+    "ci-cd"
+  ],
+  "author": "Automation Team",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.10.0",
+    "dotenv": "^16.3.1",
+    "express": "^4.21.2",
+    "node-cron": "^3.0.3",
+    "socket.io": "^4.8.1",
+    "ws": "^8.14.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-org/intelligent-automation-system.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-org/intelligent-automation-system/issues"
+  },
+  "homepage": "https://github.com/your-org/intelligent-automation-system#readme"
+}

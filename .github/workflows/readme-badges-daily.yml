@@ -1,0 +1,29 @@
+name: README Badges Daily
+
+on:
+  schedule:
+    - cron: "0 4 * * *"
+  push:
+    branches: [ main ]
+    paths:
+      - 'public/automation-catalog.json'
+  workflow_dispatch: {}
+
+jobs:
+  readme:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm ci
+      - name: Update README badges
+        run: node scripts/update-readme-badges.mjs
+      - name: Commit README
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'docs: update README badges'
+          file_pattern: README.md

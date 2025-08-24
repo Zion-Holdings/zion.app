@@ -1,0 +1,102 @@
+<<<<<<< HEAD
+const fs = require('fs');
+const fse = require('fs-extra');
+const path = require('path');
+const glob = require('glob');
+
+function readFirstHeading(md) {
+  const m = md.match(/^#\s+(.+)$/m) || md.match(/^##\s+(.+)$/m);
+  return m ? m[1].trim() : 'Untitled Proposal';
+}
+
+(function run() {
+  const proposalsDir = path.resolve(__dirname, '..', 'data', 'reports', 'revenue-ideas', 'proposals');
+  const files = glob.sync('**/*.md', { cwd: proposalsDir, nodir: true });
+
+  const proposals = files.map((rel) => {
+    const abs = path.join(proposalsDir, rel);
+    const md = fs.readFileSync(abs, 'utf8');
+    const title = readFirstHeading(md) || path.basename(rel, '.md');
+    const slug = rel.replace(/\//g, '-').replace(/\.md$/i, '');
+    return { slug, title, relPath: `data/reports/revenue-ideas/proposals/${rel}` };
+  });
+
+  const outDir = path.resolve(__dirname, '..', 'public', 'reports', 'revenue-ideas');
+  fse.mkdirpSync(outDir);
+
+  const jsonPath = path.join(outDir, 'latest.json');
+  fs.writeFileSync(jsonPath, JSON.stringify({ generatedAt: new Date().toISOString(), proposals }, null, 2));
+
+  const htmlItems = proposals.map((p) => `
+    <li>
+      <a href="https://github.com/Zion-Holdings/zion.app/tree/main/${p.relPath}" target="_blank" rel="noopener">${p.title}</a>
+    </li>`).join('\n');
+  const html = `<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Revenue Ideas — Proposals</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body { font-family: ui-sans-serif, system-ui; background: #0b1220; color: #e6f0ff; padding: 24px; }
+    a { color: #7dd3fc; }
+  </style>
+</head>
+<body>
+  <h1>Revenue Ideas — Proposals</h1>
+  <p>Autonomously aggregated proposals from the revenue ideas agents.</p>
+  <ul>
+    ${htmlItems}
+  </ul>
+</body>
+</html>`;
+  fs.writeFileSync(path.join(outDir, 'index.html'), html);
+
+  console.log(`[revenue-ideas] Aggregated ${proposals.length} proposals.`);
+})();
+=======
+#!/usr/bin/env node
+
+const { spawnSync } = require('child_process');
+const fs = require('fs');
+const path = require('path');
+
+const LOG = path.join(__dirname, 'logs', 'revenue-ideas-orchestrator.log');
+if (!fs.existsSync(path.dirname(LOG))) fs.mkdirSync(path.dirname(LOG), { recursive: true });
+
+function log(m) { const line = `[${new Date().toISOString()}] ${m}\n`; console.log(m); fs.appendFileSync(LOG, line); }
+function run(cmd, args, opts = {}) {
+  log(`▶ ${cmd} ${args.join(' ')}`);
+  const res = spawnSync(cmd, args, { stdio: 'pipe', encoding: 'utf8', ...opts });
+  if (res.stdout) fs.appendFileSync(LOG, res.stdout);
+  if (res.stderr) fs.appendFileSync(LOG, res.stderr);
+}
+
+function executeAllIn(dir) {
+  if (!fs.existsSync(dir)) return;
+  const files = fs.readdirSync(dir).filter(f => f.endsWith('.cjs'));
+  for (const f of files) run('node', [path.join(dir, f)]);
+}
+
+function cycle() {
+  const analyzer = path.join(__dirname, 'revenue-ideas-analyzer.cjs');
+  const factory = path.join(__dirname, 'revenue-ideas-factory.cjs');
+  run('node', [analyzer]);
+  run('node', [factory]);
+  executeAllIn(path.join(__dirname, 'revenue-ideas-agents'));
+}
+
+function start(mode = 'continuous') {
+  log('🚀 Revenue ideas orchestrator started');
+  if (mode === 'continuous') {
+    const loop = () => { cycle(); setTimeout(loop, 12 * 60 * 60 * 1000); };
+    loop();
+  } else {
+    cycle();
+  }
+}
+
+if (require.main === module) start(process.argv[2] || 'continuous');
+
+module.exports = { start };
+>>>>>>> fc96978c78b07828f17a558ba097f8cec16c314d

@@ -1,0 +1,106 @@
+{
+  "updatedAt": "2025-08-10T15:03:40.554Z",
+  "totalFiles": 25,
+  "files": [
+    {
+      "file": "README.md",
+      "size": 1690
+    },
+    {
+      "file": "SUMMARY.md",
+      "size": 1344
+    },
+    {
+      "file": "api/auth.md",
+      "size": 437
+    },
+    {
+      "file": "api/jobs-and-talent.md",
+      "size": 510
+    },
+    {
+      "file": "api/messaging.md",
+      "size": 312
+    },
+    {
+      "file": "api/quotes-and-milestones.md",
+      "size": 462
+    },
+    {
+      "file": "api/token-balances-and-transfers.md",
+      "size": 368
+    },
+    {
+      "file": "api/voting.md",
+      "size": 417
+    },
+    {
+      "file": "architecture/dao-logic.md",
+      "size": 734
+    },
+    {
+      "file": "architecture/marketplace-engine.md",
+      "size": 716
+    },
+    {
+      "file": "architecture/multiverse-deployments.md",
+      "size": 591
+    },
+    {
+      "file": "architecture/token-economy.md",
+      "size": 877
+    },
+    {
+      "file": "architecture/ziongpt-core.md",
+      "size": 1114
+    },
+    {
+      "file": "developer-tools/contribution-guidelines.md",
+      "size": 484
+    },
+    {
+      "file": "developer-tools/figma-and-design-kit.md",
+      "size": 240
+    },
+    {
+      "file": "developer-tools/prompt-packs.md",
+      "size": 361
+    },
+    {
+      "file": "developer-tools/sdk-and-cli.md",
+      "size": 487
+    },
+    {
+      "file": "governance/delegate-structure.md",
+      "size": 355
+    },
+    {
+      "file": "governance/emergency-override.md",
+      "size": 226
+    },
+    {
+      "file": "governance/proposal-lifecycle.md",
+      "size": 510
+    },
+    {
+      "file": "governance/quorum-and-voting-rules.md",
+      "size": 614
+    },
+    {
+      "file": "governance/zion-token-role.md",
+      "size": 253
+    },
+    {
+      "file": "introduction/founders-vision.md",
+      "size": 751
+    },
+    {
+      "file": "introduction/supported-use-cases.md",
+      "size": 330
+    },
+    {
+      "file": "introduction/what-is-zion-os.md",
+      "size": 1011
+    }
+  ]
+}

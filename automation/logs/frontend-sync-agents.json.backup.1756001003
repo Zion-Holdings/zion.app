@@ -1,0 +1,12 @@
+{
+<<<<<<< HEAD
+  "timestamp": "2025-08-23T23:56:48.636Z",
+=======
+  "timestamp": "2025-08-24T00:54:20.699Z",
+>>>>>>> origin/cursor/website-audit-and-enhancement-d919
+  "created": [
+    "/home/runner/work/zion.app/zion.app/automation/frontend-sync-agents/sync_content_metadata.cjs",
+    "/home/runner/work/zion.app/zion.app/automation/frontend-sync-agents/sync_pages_components.cjs",
+    "/home/runner/work/zion.app/zion.app/automation/frontend-sync-agents/rebuild_sitemap.cjs"
+  ]
+}

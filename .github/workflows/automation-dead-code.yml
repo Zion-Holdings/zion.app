@@ -1,0 +1,40 @@
+name: Automation - Dead Code Report
+
+on:
+  schedule:
+    - cron: '15 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  dead-code:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+          cache: 'npm'
+      - name: Install deps
+        run: npm ci
+      - name: Build (ensure code compiles)
+        run: npm run build
+      - name: Run dead code reporter
+        run: npm run audit:dead-code
+      - name: Commit report
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: 'chore(dead-code): update dead code report'
+          title: 'chore(dead-code): update dead code report'
+          body: Generated dead code report under public/automation-reports
+          branch: automation/dead-code
+          delete-branch: true
+          labels: automation

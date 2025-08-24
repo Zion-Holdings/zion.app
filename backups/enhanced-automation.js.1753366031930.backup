@@ -1,0 +1,928 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
+
+/**
+ * Zion App - Enhanced Continuous Improvement Automation
+ * 
+ * This system integrates multiple AI tools for comprehensive app improvement:
+ * - Cursor AI for code analysis and suggestions
+ * - OpenAI GPT for complex problem solving
+ * - Claude for code review and optimization
+ * - Local AI models for real-time analysis
+ * - Automated testing and deployment
+ * - Performance monitoring and optimization
+ * - Security scanning and fixes
+ * - Code quality enhancement
+ */
+const fs = require('fs');
+const path = require('path');
+const { execSync } = require('child_process');
+
+class EnhancedAutomation {
+  constructor(config = {}) {
+    this.config = {
+      interval: 300000, // 5 minutes
+      logLevel: 'info',
+      ai: {
+        cursor: {
+          enabled: process.env.CURSOR_AI_ENABLED === 'true',
+          apiKey: process.env.CURSOR_API_KEY,
+          workspaceId: process.env.CURSOR_WORKSPACE_ID
+        },
+        openai: {
+          enabled: process.env.OPENAI_ENABLED === 'true',
+          apiKey: process.env.OPENAI_API_KEY,
+          model: process.env.OPENAI_MODEL || gpt-4-turbo-preview
+        },
+        claude: {
+          enabled: process.env.CLAUDE_ENABLED === 'true',
+          apiKey: process.env.CLAUDE_API_KEY,
+          model: process.env.CLAUDE_MODEL || claude-3-sonnet-20240229
+        },
+        local: {
+          enabled: process.env.LOCAL_AI_ENABLED === 'true',
+          endpoint: process.env.LOCAL_AI_ENDPOINT || http://localhost:11434',
+          model: process.env.LOCAL_AI_MODEL || codellama:7b
+        }
+      },
+      paths: {
+        projectRoot: process.cwd(),
+        logs: path.join(process.cwd(), logs'),
+        reports: path.join(process.cwd(), reports'),
+        temp: path.join(process.cwd(), temp')
+      }
+    };
+
+    this.isRunning = false;
+    this.taskQueue = [];
+    this.currentTask = null;
+    this.results = [];
+    this.improvementHistory = [];
+    this.errors = [];
+    this.performanceHistory = [];
+  }
+
+  async start() {
+    if (this.isRunning) {
+      logger.info('⚠️ Enhanced Automation is already running');
+      return;
+    }
+
+    logger.info('🚀 Starting Enhanced Automation System...');
+    
+    try {
+      await this.initialize();
+      this.startTaskProcessing();
+      this.startPerformanceTracking();
+      
+      this.isRunning = true;
+      
+      logger.info('✅ Enhanced Automation System started successfully');
+    } catch (error) {
+      logger.error('❌ Failed to start Enhanced Automation:', error);
+      throw error;
+    }
+  }
+
+  async initialize() {
+    // Create necessary directories
+    const dirs = ['logs', reports', temp'];
+    for (const dir of dirs) {
+      const dirPath = path.join(process.cwd(), dir);
+      if (!fs.existsSync(dirPath)) {
+        fs.mkdirSync(dirPath, { recursive: true });
+      }
+    }
+  }
+
+  async stop() {
+    if (!this.isRunning) {
+      logger.info('⚠️ Enhanced Automation is not running');
+      return;
+    }
+
+    logger.info('🛑 Stopping Enhanced Automation System...');
+    this.isRunning = false;
+    logger.info('✅ Enhanced Automation System stopped');
+  }
+
+  addTask(type, data = {}) {
+    const task = {
+      id: Date.now().toString(),
+      type,
+      data,
+      status: 'queued',
+      priority: this.getTaskPriority(type),
+      timestamp: new Date().toISOString()
+    };
+
+    this.taskQueue.push(task);
+    logger.info(`📋 Added task: ${type}`);
+  }
+
+  getTaskPriority(type) {
+    const priorities = {
+      quickScan': 1,
+      deepAnalysis': 2,
+      fullAudit': 3,
+      performanceCheck': 2,
+      securityScan': 3,
+      dependencyCheck': 1
+    };
+    return priorities[type] || 1;
+  }
+
+  startTaskProcessing() {
+    const processLoop = async () => {
+      if (!this.isRunning) return;
+      
+      if (this.taskQueue.length > 0 && !this.currentTask) {
+        const task = this.taskQueue.shift();
+        await this.processTask(task);
+      }
+      
+      
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(processLoop,                                       1000);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+    };
+    
+    processLoop();
+  }
+
+  async processTask(task) {
+    logger.info(`🔄 Processing task: ${task.type}`);
+    
+    this.currentTask = task;
+    task.status = processing';
+    task.startedAt = new Date().toISOString();
+    
+    try {
+      let result;
+      
+      switch (task.type) {
+        case quickScan':
+          result = await this.performQuickScan();
+          break;
+        case deepAnalysis':
+          result = await this.performDeepAnalysis();
+          break;
+        case fullAudit':
+          result = await this.performFullAudit();
+          break;
+        case performanceCheck':
+          result = await this.performPerformanceCheck();
+          break;
+        case securityScan':
+          result = await this.performSecurityScan();
+          break;
+        case dependencyCheck':
+          result = await this.performDependencyCheck();
+          break;
+        default:
+          throw new Error(`Unknown task type: ${task.type}`);
+      }
+      
+      task.status = completed';
+      task.result = result;
+      task.completedAt = new Date().toISOString();
+      
+      this.results.push(task);
+      
+      // Apply improvements if needed
+      await this.applyImprovements(task);
+      
+      logger.info(`✅ Task completed: ${task.type}`);
+      
+    } catch (error) {
+      logger.error(`❌ Task failed: ${task.type}`, error);
+      
+      task.status = failed';
+      task.error = error.message;
+      task.failedAt = new Date().toISOString();
+      
+      this.errors.push({
+        taskId: task.id,
+        type: task.type,
+        error: error.message,
+        timestamp: new Date().toISOString()
+      });
+    } finally {
+      this.currentTask = null;
+    }
+  }
+
+  async performQuickScan() {
+    logger.info('🔍 Performing quick scan...');
+    
+    const results = {
+      buildStatus: await this.checkBuildStatus(),
+      recentErrors: await this.getRecentErrors(),
+      dependencyStatus: await this.checkDependencyStatus(),
+      codeQuality: await this.analyzeCodeQuality()
+    };
+    
+    // Analyze with AI
+    const aiAnalysis = await this.analyzeWithAI('quickScan', results);
+    
+    return {
+      ...results,
+      aiAnalysis,
+      needsImprovement: this.needsImprovement(results)
+    };
+  }
+
+  async performDeepAnalysis() {
+    logger.info('🔍 Performing deep analysis...');
+    
+    const results = {
+      performance: await this.analyzePerformance(),
+      security: await this.analyzeSecurity(),
+      bundleAnalysis: await this.analyzeBundleSize(),
+      buildTime: await this.measureBuildTime()
+    };
+    
+    // Analyze with AI
+    const aiAnalysis = await this.analyzeWithAI('deepAnalysis', results);
+    
+    return {
+      ...results,
+      aiAnalysis,
+      needsImprovement: this.needsImprovement(results)
+    };
+  }
+
+  async performFullAudit() {
+    logger.info('🔍 Performing full audit...');
+    
+    const results = {
+      quickScan: await this.performQuickScan(),
+      deepAnalysis: await this.performDeepAnalysis(),
+      vulnerabilities: await this.checkVulnerabilities(),
+      outdatedPackages: await this.checkOutdatedPackages(),
+      unusedDependencies: await this.findUnusedDependencies(),
+      dependencySize: await this.analyzeDependencySize()
+    };
+    
+    // Analyze with AI
+    const aiAnalysis = await this.analyzeWithAI('fullAudit', results);
+    
+    return {
+      ...results,
+      aiAnalysis,
+      needsImprovement: this.needsImprovement(results)
+    };
+  }
+
+  async performPerformanceCheck() {
+    logger.info('⚡ Performing performance check...');
+    
+    const results = {
+      buildTime: await this.measureBuildTime(),
+      bundleSize: await this.analyzeBundleSize(),
+      memoryUsage: process.memoryUsage(),
+      cpuUsage: process.cpuUsage()
+    };
+    
+    // Check against thresholds
+    const issues = this.checkPerformanceThresholds(results);
+    
+    return {
+      ...results,
+      issues,
+      needsImprovement: issues.length > 0
+    };
+  }
+
+  async performSecurityScan() {
+    logger.info('🔒 Performing security scan...');
+    
+    const results = {
+      vulnerabilities: await this.checkVulnerabilities(),
+      outdatedPackages: await this.checkOutdatedPackages(),
+      auditResults: await this.runSecurityAudit()
+    };
+    
+    // Check against thresholds
+    const issues = this.checkSecurityThresholds(results);
+    
+    return {
+      ...results,
+      issues,
+      needsImprovement: issues.length > 0
+    };
+  }
+
+  async performDependencyCheck() {
+    logger.info('📦 Performing dependency check...');
+    
+    const results = {
+      outdated: await this.checkOutdatedPackages(),
+      unused: await this.findUnusedDependencies(),
+      size: await this.analyzeDependencySize()
+    };
+    
+    return {
+      ...results,
+      needsImprovement: Object.keys(results.outdated).length > 0
+    };
+  }
+
+  async analyzeWithAI(type, data) {
+    const analysis = {};
+    
+    try {
+      // Try Cursor AI first
+      if (this.config.ai.cursor.enabled) {
+        switch (type) {
+          case quickScan':
+            analysis.cursor = await this.cursorIntegration.analyzeCodeQuality();
+            break;
+          case deepAnalysis':
+            analysis.cursor = await this.cursorIntegration.analyzePerformance();
+            break;
+          case fullAudit':
+            analysis.cursor = await this.cursorIntegration.analyzeSecurity();
+            break;
+        }
+      }
+      
+      // Use AI Optimizer
+      try {
+        analysis.aiOptimizer = await this.aiOptimizer.analyzeWithAI(data);
+      } catch (error) {
+        logger.warn('AI Optimizer analysis failed:', error.message);
+      }
+      
+    } catch (error) {
+      logger.warn('AI analysis failed:', error.message);
+    }
+    
+    return analysis;
+  }
+
+  async applyImprovements(task) {
+    if (task.result?.needsImprovement || task.result?.aiAnalysis) {
+      // Generate improvement suggestions
+      const suggestions = await this.generateImprovementSuggestions(task);
+      
+      if (suggestions.length > 0) {
+        // Apply improvements
+        const results = await this.applyImprovements(suggestions);
+        
+        // Record improvement
+        this.improvementHistory.push({
+          taskId: task.id,
+          suggestions,
+          results,
+          timestamp: new Date().toISOString()
+        });
+      }
+    }
+  }
+
+  async generateImprovementSuggestions(task) {
+    const suggestions = [];
+    
+    // Get suggestions from Cursor AI
+    if (this.cursorIntegration.isConnected && task.result?.aiAnalysis?.cursor) {
+      try {
+        const cursorSuggestions = await this.cursorIntegration.getImprovementSuggestions(
+          task.result.aiAnalysis.cursor
+        );
+        suggestions.push(...cursorSuggestions);
+      } catch (error) {
+        logger.warn('Cursor AI suggestions failed:', error.message);
+      }
+    }
+    
+    // Get suggestions from AI Optimizer
+    if (task.result?.aiAnalysis?.aiOptimizer) {
+      try {
+        const aiSuggestions = await this.aiOptimizer.generateImplementationSuggestions({
+          type: task.type,
+          data: task.result.aiAnalysis.aiOptimizer
+        });
+        suggestions.push(...aiSuggestions);
+      } catch (error) {
+        logger.warn('AI Optimizer suggestions failed:', error.message);
+      }
+    }
+    
+    return suggestions;
+  }
+
+  async applyImprovements(suggestions) {
+    const results = [];
+    
+    for (const suggestion of suggestions) {
+      try {
+        let result;
+        
+        // Try Cursor AI first
+        if (this.cursorIntegration.isConnected) {
+          result = await this.cursorIntegration.applyCodeImprovements([suggestion]);
+        }
+        
+        // Fallback to AI Optimizer
+        if (!result || result.length === 0) {
+          result = await this.aiOptimizer.applySuggestion(suggestion);
+        }
+        
+        results.push({
+          suggestion,
+          success: true,
+          result
+        });
+        
+      } catch (error) {
+        results.push({
+          suggestion,
+          success: false,
+          error: error.message
+        });
+      }
+    }
+    
+    return results;
+  }
+
+  startPerformanceTracking() {
+    setInterval(() => {
+      this.recordPerformanceMetrics();
+    }, 60000); // Every minute
+  }
+
+  recordPerformanceMetrics() {
+    const metrics = {
+      timestamp: new Date().toISOString(),
+      memory: process.memoryUsage(),
+      cpu: process.cpuUsage(),
+      uptime: process.uptime()
+    };
+    
+    this.performanceHistory.push(metrics);
+    
+    // Keep only last 1000 entries
+    if (this.performanceHistory.length > 1000) {
+      this.performanceHistory = this.performanceHistory.slice(-1000);
+    }
+  }
+
+  async checkBuildStatus() {
+    try {
+      const startTime = Date.now();
+      execSync('npm run build', { stdio: 'pipe' });
+      const buildTime = Date.now() - startTime;
+      
+      return {
+        status: 'success',
+        buildTime,
+        timestamp: new Date().toISOString()
+      };
+    } catch (error) {
+      return {
+        status: 'failed',
+        error: error.message,
+        timestamp: new Date().toISOString()
+      };
+    }
+  }
+
+  async getRecentErrors() {
+    try {
+      const logFiles = fs.readdirSync(this.config.paths.logs)
+        .filter(file => file.endsWith('.log'))
+        .slice(-5);
+      const errors = [];
+      
+      for (const file of logFiles) {
+        const content = fs.readFileSync(path.join(this.config.paths.logs, file), utf8');
+        const errorLines = content.split('\n')
+          .filter(line => line.toLowerCase().includes('error') || line.toLowerCase().includes('exception'))
+          .slice(-10);
+        
+        errors.push(...errorLines);
+      }
+      
+      return errors;
+    } catch (error) {
+      return [];
+    }
+  }
+
+  async checkDependencyStatus() {
+    try {
+      const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));
+      const outdated = execSync('npm outdated --json', { stdio: 'pipe' }).toString();
+      
+      return {
+        totalDependencies: Object.keys({ ...packageJson.dependencies, ...packageJson.devDependencies }).length,
+        outdated: JSON.parse(outdated || {})
+      };
+    } catch (error) {
+      return { error: error.message };
+    }
+  }
+
+  async analyzeCodeQuality() {
+    try {
+      const lintResults = execSync('npm run lint -- --format json', { stdio: 'pipe' }).toString();
+      const testResults = execSync('npm run test -- --json --outputFile=test-results.json', { stdio: 'pipe' }).toString();
+      
+      return {
+        lint: JSON.parse(lintResults),
+        tests: JSON.parse(fs.readFileSync('test-results.json', 'utf8')),
+        timestamp: new Date().toISOString()
+      };
+    } catch (error) {
+      return { error: error.message };
+    }
+  }
+
+  async analyzePerformance() {
+    try {
+      const bundleOutput = execSync('npm run bundle: 'analyze', { stdio: 'pipe' }).toString();
+      
+      return {
+        bundleAnalysis: this.parseBundleAnalysis(bundleOutput),
+        buildTime: await this.measureBuildTime(),
+        memoryUsage: process.memoryUsage()
+      };
+    } catch (error) {
+      return { error: error.message };
+    }
+  }
+
+  async analyzeSecurity() {
+    try {
+      const auditOutput = execSync('npm audit --json', { stdio: 'pipe' }).toString();
+      
+      return {
+        audit: JSON.parse(auditOutput),
+        vulnerabilities: await this.checkVulnerabilities(),
+        timestamp: new Date().toISOString()
+      };
+    } catch (error) {
+      return { error: error.message };
+    }
+  }
+
+  async analyzeBundleSize() {
+    try {
+      const output = execSync('npm run bundle: 'report', { stdio: 'pipe' }).toString();
+      return this.parseBundleAnalysis(output);
+    } catch (error) {
+      return { error: error.message };
+    }
+  }
+
+  async measureBuildTime() {
+    try {
+      const startTime = Date.now();
+      execSync('npm run build', { stdio: 'pipe' });
+      return Date.now() - startTime;
+    } catch (error) {
+      return null;
+    }
+  }
+
+  async checkVulnerabilities() {
+    try {
+      const output = execSync('npm audit --json', { stdio: 'pipe' }).toString();
+      return JSON.parse(output);
+    } catch (error) {
+      return { error: error.message };
+    }
+  }
+
+  async checkOutdatedPackages() {
+    try {
+      const output = execSync('npm outdated --json', { stdio: 'pipe' }).toString();
+      return JSON.parse(output || {});
+    } catch (error) {
+      return { error: error.message };
+    }
+  }
+
+  async findUnusedDependencies() {
+    try {
+      const output = execSync('npx depcheck --json', { stdio: 'pipe' }).toString();
+      return JSON.parse(output);
+    } catch (error) {
+      return { error: error.message };
+    }
+  }
+
+  async analyzeDependencySize() {
+    try {
+      const output = execSync('npm run bundle: 'analyze', { stdio: 'pipe' }).toString();
+      return this.parseBundleAnalysis(output);
+    } catch (error) {
+      return { error: error.message };
+    }
+  }
+
+  parseBundleAnalysis(output) {
+    try {
+      const lines = output.split('\n');
+      const bundleInfo = {};
+      
+      for (const line of lines) {
+        if (line.includes('Bundle size:')) {
+          bundleInfo.size = line.split(':')[1].trim();
+        } else if (line.includes('Chunks:')) {
+          bundleInfo.chunks = parseInt(line.split(':')[1].trim());
+        }
+      }
+      
+      return bundleInfo;
+    } catch (error) {
+      return { error: error.message };
+    }
+  }
+
+  checkPerformanceThresholds(results) {
+    const issues = [];
+    
+    if (results.lighthouse?.performance < this.config.thresholds.performance.lighthouseScore) {
+      issues.push({
+        type: 'performance',
+        severity: 'high',
+        message: `Lighthouse performance score (${results.lighthouse.performance}) below threshold (${this.config.thresholds.performance.lighthouseScore})`
+      });
+    }
+    
+    if (results.buildTime > this.config.thresholds.performance.loadTime) {
+      issues.push({
+        type: 'performance',
+        severity: 'medium',
+        message: `Build time (${results.buildTime}ms) exceeds threshold (${this.config.thresholds.performance.loadTime}ms)`
+      });
+    }
+    
+    return issues;
+  }
+
+  checkSecurityThresholds(results) {
+    const issues = [];
+    
+    if (results.vulnerabilities?.metadata?.vulnerabilities > this.config.thresholds.security.vulnerabilities) {
+      issues.push({
+        type: 'security',
+        severity: 'critical',
+        message: `Found ${results.vulnerabilities.metadata.vulnerabilities} security vulnerabilities`
+      });
+    }
+    
+    const outdatedCount = Object.keys(results.outdatedPackages || {}).length;
+    if (outdatedCount > this.config.thresholds.security.outdatedPackages) {
+      issues.push({
+        type: 'security',
+        severity: 'medium',
+        message: `${outdatedCount} outdated packages found`
+      });
+    }
+    
+    return issues;
+  }
+
+  needsImprovement(results) {
+    // Check if any results indicate improvement is needed
+    return results.issues?.length > 0 || 
+           results.error || 
+           results.needsImprovement ||
+           false;
+  }
+
+  async runSecurityAudit() {
+    try {
+      const output = execSync('npm audit --json', { stdio: 'pipe' }).toString();
+      return JSON.parse(output);
+    } catch (error) {
+      return { error: error.message };
+    }
+  }
+
+  async generateReport() {
+    const status = {
+      isRunning: this.isRunning,
+      currentTask: this.currentTask,
+      queueLength: this.taskQueue.length,
+      totalResults: this.results.length,
+      totalImprovements: this.improvementHistory.length,
+      totalErrors: this.errors.length
+    };
+
+    // Save status to file
+    fs.writeFileSync(
+      path.join(this.config.paths.reports, 'system-status.json'),
+      JSON.stringify(status, null, 2)
+    );
+
+    const report = {
+      timestamp: new Date().toISOString(),
+      status,
+      summary: {
+        totalTasks: this.results.length,
+        successfulTasks: this.results.filter(r => r.status === 'completed').length,
+        failedTasks: this.results.filter(r => r.status === 'failed').length,
+        totalImprovements: this.improvementHistory.length,
+        totalErrors: this.errors.length
+      },
+      recentResults: this.results.slice(-10),
+      recentImprovements: this.improvementHistory.slice(-10),
+      recentErrors: this.errors.slice(-10),
+      recommendations: this.generateRecommendations()
+    };
+    
+    // Save report
+    const reportPath = path.join(this.config.paths.reports, `automation-report-${Date.now()}.json`);
+    fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
+    
+    return report;
+  }
+
+  generateRecommendations() {
+    const recommendations = [];
+    
+    if (this.calculateAverageMemory() > 100 * 1024 * 1024) { // 100MB
+      recommendations.push({
+        type: 'performance',
+        priority: 'high',
+        message: High memory usage detected. Consider optimizing memory usage.',
+        action: Review memory-intensive operations and implement memory optimization strategies.
+      });
+    }
+    
+    if (this.errors.length > 10) {
+      recommendations.push({
+        type: 'reliability',
+        priority: 'high',
+        message: High error rate detected. Review error handling and system stability.',
+        action: Investigate error patterns and improve error handling mechanisms.
+      });
+    }
+    
+    if (this.improvementHistory.length < 5) {
+      recommendations.push({
+        type: 'optimization',
+        priority: 'medium',
+        message: Low improvement activity. Consider more aggressive optimization strategies.',
+        action: Review optimization thresholds and increase automation frequency.
+      });
+    }
+    
+    return recommendations;
+  }
+
+  calculateAverageMemory() {
+    if (this.performanceHistory.length === 0) return 0;
+    const totalMemory = this.performanceHistory.reduce((sum, entry) => {
+      return sum + entry.memory.heapUsed;
+    }, 0);
+    return totalMemory / this.performanceHistory.length;
+  }
+
+  calculateAverageCPU() {
+    if (this.performanceHistory.length === 0) return 0;
+    const totalCPU = this.performanceHistory.reduce((sum, entry) => {
+      return sum + entry.cpu.user + entry.cpu.system;
+    }, 0);
+    return totalCPU / this.performanceHistory.length;
+  }
+}
+
+module.exports = EnhancedAutomation; 

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-25T08:03:12.937Z",
+  "summary": {
+    "totalSyncs": 0,
+    "successfulSyncs": 0,
+    "failedSyncs": 0,
+    "successRate": "0%",
+    "lastSync": null
+  },
+  "dailyStats": {
+    "2025-07-25": {
+      "syncs": 0,
+      "errors": 0,
+      "timestamp": "2025-07-25T08:03:12.920Z"
+    }
+  },
+  "recommendations": [
+    "Consider increasing retry attempts or adjusting sync interval",
+    "No recent syncs detected - check if automation is running"
+  ]
+}
