@@ -1,5 +1,5 @@
 import { FooterNewsletter } from "@/components/FooterNewsletter";
-import { Twitter, Linkedin, Facebook, Instagram, Github } from "lucide-react";
+import { Twitter, Linkedin, Facebook, Instagram, Github, Mail, Phone, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export function Footer() {
@@ -16,9 +16,27 @@ export function Footer() {
               Pioneering the future of technology with revolutionary AI consciousness, quantum computing, and autonomous solutions. 
               Offering 33+ specialized services across 12 categories to transform businesses worldwide.
             </p>
+            
+            {/* Contact Info */}
+            <div className="space-y-3 mb-6">
+              <div className="flex items-center gap-3 text-zion-slate-light">
+                <Mail className="w-4 h-4 text-zion-cyan" />
+                <span>kleber@ziontechgroup.com</span>
+              </div>
+              <div className="flex items-center gap-3 text-zion-slate-light">
+                <Phone className="w-4 h-4 text-zion-cyan" />
+                <span>+1 302 464 0950</span>
+              </div>
+              <div className="flex items-center gap-3 text-zion-slate-light">
+                <MapPin className="w-4 h-4 text-zion-cyan" />
+                <span>364 E Main St STE 1008 Middletown DE 19709</span>
+              </div>
+            </div>
+            
+            {/* Social Links */}
             <div className="flex space-x-4">
               <a
-                href="https://twitter.com/lovable_dev"
+                href="https://twitter.com/ziontechgroup"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-zion-slate-light hover:text-zion-cyan transition-colors"
@@ -28,7 +46,7 @@ export function Footer() {
                 <Twitter className="h-5 w-5" aria-label="Twitter" />
               </a>
               <a
-                href="https://www.linkedin.com/company/zion-marketplace"
+                href="https://www.linkedin.com/company/zion-tech-group"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-zion-slate-light hover:text-zion-cyan transition-colors"
@@ -38,7 +56,7 @@ export function Footer() {
                 <Linkedin className="h-5 w-5" aria-label="LinkedIn" />
               </a>
               <a
-                href="https://www.facebook.com/zionmarketplace"
+                href="https://www.facebook.com/ziontechgroup"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-zion-slate-light hover:text-zion-cyan transition-colors"
@@ -48,7 +66,7 @@ export function Footer() {
                 <Facebook className="h-5 w-5" aria-label="Facebook" />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://instagram.com/ziontechgroup"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-zion-slate-light hover:text-zion-cyan transition-colors"
@@ -58,7 +76,7 @@ export function Footer() {
                 <Instagram className="h-5 w-5" aria-label="Instagram" />
               </a>
               <a
-                href="https://github.com"
+                href="https://github.com/ziontechgroup"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-zion-slate-light hover:text-zion-cyan transition-colors"
@@ -96,6 +114,7 @@ export function Footer() {
             </ul>
           </div>
 
+          {/* Support & Resources */}
           <div>
             <h3 className="text-white font-semibold mb-4 text-lg">Support & Resources</h3>
             <ul className="space-y-3 mb-6">
@@ -139,7 +158,7 @@ export function Footer() {
             <div className="flex flex-wrap justify-center gap-8">
               <Link to="/privacy" className="text-zion-slate-light hover:text-zion-cyan text-sm transition-colors hover:scale-105 transform">Privacy Policy</Link>
               <Link to="/terms" className="text-zion-slate-light hover:text-zion-cyan text-sm transition-colors hover:scale-105 transform">Terms of Service</Link>
-              <Link to="/cookies" className="text-zion-slate-light hover:text-zion-cyan text-sm transition-colors hover:scale-105 transform">Cookie Policy</Link>
+              <Link to="/sitemap" className="text-zion-slate-light hover:text-zion-cyan text-sm transition-colors hover:scale-105 transform">Sitemap</Link>
               <Link to="/accessibility" className="text-zion-slate-light hover:text-zion-cyan text-sm transition-colors hover:scale-105 transform">Accessibility</Link>
             </div>
           </div>

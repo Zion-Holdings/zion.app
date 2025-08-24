@@ -2,8 +2,9 @@
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { useAuth } from "@/hooks/useAuth";
-import { MessageSquare } from "lucide-react";
+import { MessageSquare, ChevronDown } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { useState } from "react";
 
 interface MainNavigationProps {
   isAdmin?: boolean;
@@ -16,6 +17,7 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
   const isAuthenticated = !!user;
   const location = useLocation();
   const { t } = useTranslation();
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const baseLinks = [
     {
@@ -41,7 +43,7 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
     {
       key: 'equipment',
       href: '/equipment',
-      matches: (path:string) => path.startsWith('/equipment')
+      matches: (path: string) => path.startsWith('/equipment')
     },
     {
       key: 'community',
@@ -52,6 +54,11 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
       key: 'about',
       href: '/about',
       matches: (path: string) => path === '/about'
+    },
+    {
+      key: 'contact',
+      href: '/contact',
+      matches: (path: string) => path.startsWith('/contact')
     }
   ];
 
@@ -95,6 +102,62 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
             </Link>
           </li>
         ))}
+        
+        {/* More dropdown menu */}
+        <li className="relative">
+          <button
+            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+            className={cn(
+              "inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-colors",
+              "text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
+            )}
+          >
+            More
+            <ChevronDown className="ml-1 h-4 w-4" />
+          </button>
+          
+          {isDropdownOpen && (
+            <div className="absolute top-full left-0 mt-1 w-48 bg-zion-blue-dark border border-zion-purple/20 rounded-md shadow-lg z-50">
+              <div className="py-1">
+                <Link
+                  to="/blog"
+                  className="block px-4 py-2 text-sm text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
+                  onClick={() => setIsDropdownOpen(false)}
+                >
+                  Blog
+                </Link>
+                <Link
+                  to="/careers"
+                  className="block px-4 py-2 text-sm text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
+                  onClick={() => setIsDropdownOpen(false)}
+                >
+                  Careers
+                </Link>
+                <Link
+                  to="/partners"
+                  className="block px-4 py-2 text-sm text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
+                  onClick={() => setIsDropdownOpen(false)}
+                >
+                  Partners
+                </Link>
+                <Link
+                  to="/green-it"
+                  className="block px-4 py-2 text-sm text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
+                  onClick={() => setIsDropdownOpen(false)}
+                >
+                  Green IT
+                </Link>
+                <Link
+                  to="/help"
+                  className="block px-4 py-2 text-sm text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
+                  onClick={() => setIsDropdownOpen(false)}
+                >
+                  Help Center
+                </Link>
+              </div>
+            </div>
+          )}
+        </li>
         
         {/* Messages link with unread counter */}
         {isAuthenticated && (
