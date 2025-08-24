@@ -32,6 +32,21 @@ export default function AutomationHub() {
             <a className="text-cyan-300 underline" href="/.netlify/functions/schedule-knowledge-graph" target="_blank" rel="noopener">Trigger / View</a>
           </li>
           <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">SEO Audit Runner</h2>
+            <p className="text-white/70">Analyzes SEO and writes reports every 30 minutes.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/seo-audit-runner" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">AI Trends Radar</h2>
+            <p className="text-white/70">Fetches and summarizes AI trends periodically.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/ai-trends-radar-runner" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">UI Beautifier</h2>
+            <p className="text-white/70">Automatically improves UI polish and consistency.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/ui-beautifier-runner" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
             <h2 className="text-xl font-bold">Front Enhancer</h2>
             <p className="text-white/70">Curates and injects new frontpage promos periodically.</p>
             <a className="text-cyan-300 underline" href="/.netlify/functions/front-enhancer" target="_blank" rel="noopener">Trigger / View</a>
