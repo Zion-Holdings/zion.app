@@ -66,6 +66,15 @@ body {
   }
 }
 
+<<<<<<< HEAD
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+@keyframes slideInUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+=======
 @keyframes slideIn {
   from { 
     transform: translateX(-30px); 
@@ -86,6 +95,7 @@ body {
     transform: translateX(0); 
     opacity: 1; 
   }
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-2e5c
 }
 
 @keyframes pulse {
@@ -155,6 +165,44 @@ body {
   animation: glow 2s ease-in-out infinite;
 }
 
+<<<<<<< HEAD
+/* Hover Effects */
+.hover-lift {
+  transition: transform 0.2s ease-in-out;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+}
+
+.hover-scale {
+  transition: transform 0.2s ease-in-out;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+/* Custom components */
+.btn-primary {
+  @apply px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900 shadow-lg hover:shadow-xl;
+}
+
+.btn-secondary {
+  @apply px-6 py-3 bg-gray-700 hover:bg-gray-600 text-white font-semibold rounded-lg transition-all duration-200 border border-gray-600 hover:border-gray-500 shadow-lg hover:shadow-xl;
+}
+
+.btn-outline {
+  @apply px-6 py-3 bg-transparent hover:bg-white/10 text-white font-semibold rounded-lg transition-all duration-200 border border-white/20 hover:border-white/40;
+}
+
+.card {
+  @apply bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-200 hover:border-white/20 hover-lift;
+}
+
+.card-hover {
+  @apply bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 transition-all duration-300 hover:bg-white/10 hover:border-white/20 hover-lift hover-scale;
+=======
 /* Stagger animations for lists */
 .animate-stagger > * {
   opacity: 0;
@@ -187,6 +235,7 @@ body {
 
 .card-hover {
   @apply card hover:scale-105 hover:shadow-2xl;
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-2e5c
 }
 
 .input-field {
@@ -206,6 +255,16 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+<<<<<<< HEAD
+  transition: all 0.3s ease;
+}
+
+.gradient-text-hover:hover {
+  background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+=======
   background-size: 200% 200%;
   animation: gradient-shift 3s ease-in-out infinite;
 }
@@ -213,6 +272,7 @@ body {
 @keyframes gradient-shift {
   0%, 100% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-2e5c
 }
 
 .glass-effect {
@@ -221,6 +281,63 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+<<<<<<< HEAD
+.glass-effect-strong {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(30px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive utilities */
+@media (max-width: 640px) {
+  .mobile-hidden {
+    display: none;
+  }
+  
+  .mobile-text-center {
+    text-align: center;
+  }
+}
+
+@media (min-width: 641px) {
+  .desktop-hidden {
+    display: none;
+  }
+}
+
+/* Focus states for accessibility */
+.focus-visible:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Loading states */
+.loading {
+  position: relative;
+  overflow: hidden;
+}
+
+.loading::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+/* Custom scrollbar for Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) var(--bg);
+=======
 /* Performance optimizations */
 .will-change-transform {
   will-change: transform;
@@ -274,4 +391,5 @@ body {
     color: black !important;
     background: none !important;
   }
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-2e5c
 }

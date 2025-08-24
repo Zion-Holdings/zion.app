@@ -11,7 +11,20 @@ Disallow: /_next/
 Disallow: /private/
 
 # Allow important pages
+<<<<<<< HEAD
+Allow: /
+Allow: /docs/
+Allow: /contact/
+Allow: /privacy/
+Allow: /terms/
+Allow: /community/
+Allow: /multiverse/
+
+# Crawl delay
+Crawl-delay: 1
+=======
 Allow: /docs/
 Allow: /multiverse/
 Allow: /community/
 Allow: /contact/
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-2e5c
