@@ -1,7 +1,7 @@
 
 import { GradientHeading } from "./GradientHeading";
 import { Link } from "react-router-dom";
-import { Briefcase, HardDrive, Lightbulb, Users } from "lucide-react";
+import { Briefcase, HardDrive, Lightbulb, Users, ArrowRight, Star } from "lucide-react";
 import { motion } from "framer-motion";
 
 const categories = [
@@ -11,7 +11,8 @@ const categories = [
     icon: <Briefcase className="w-10 h-10" />,
     link: "/services",
     color: "from-purple-500 to-indigo-600",
-    delay: 0.1,
+    gradient: "from-zion-purple to-zion-purple-dark",
+    features: ["24/7 Support", "Expert Teams", "Custom Solutions"]
   },
   {
     title: "Talents",
@@ -19,7 +20,8 @@ const categories = [
     icon: <Users className="w-10 h-10" />,
     link: "/talent",
     color: "from-cyan-500 to-blue-600",
-    delay: 0.2,
+    gradient: "from-zion-cyan to-zion-cyan-dark",
+    features: ["AI Experts", "Global Network", "Verified Profiles"]
   },
   {
     title: "Equipment",
@@ -27,7 +29,8 @@ const categories = [
     icon: <HardDrive className="w-10 h-10" />,
     link: "/equipment",
     color: "from-amber-500 to-orange-600",
-    delay: 0.3,
+    gradient: "from-amber-400 to-orange-500",
+    features: ["High-End Hardware", "Flexible Rental", "Quick Delivery"]
   },
   {
     title: "Innovation",
@@ -35,18 +38,16 @@ const categories = [
     icon: <Lightbulb className="w-10 h-10" />,
     link: "/category/innovation",
     color: "from-emerald-500 to-green-600",
-    delay: 0.4,
+    gradient: "from-emerald-400 to-green-500",
+    features: ["Latest Tech", "Research Labs", "Startup Solutions"]
   },
 ];
 
 const specialServices = [
   {
     title: "IT Onsite Services",
-    link: "/it-onsite-services"
-  },
-  {
-    title: "Micro SAAS Services",
-    link: "/micro-saas-services"
+    link: "/it-onsite-services",
+    badge: "Popular"
   }
 ];
 
@@ -67,25 +68,25 @@ export function CategoriesSection({ showTitle = true }: CategoriesSectionProps) 
   };
 
   const itemVariants = {
-    hidden: { y: 30, opacity: 0 },
+    hidden: { y: 20, opacity: 0 },
     visible: {
       y: 0,
       opacity: 1,
       transition: {
-        duration: 0.6,
+        duration: 0.5,
         ease: "easeOut"
       }
     }
   };
 
   return (
-    <section className="py-20 bg-zion-blue relative overflow-hidden">
+    <section className="py-20 bg-gradient-to-br from-zion-blue via-zion-blue-dark to-zion-slate-dark relative overflow-hidden">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 25% 25%, rgba(34, 221, 210, 0.1) 0%, transparent 50%),
-                           radial-gradient(circle at 75% 75%, rgba(140, 21, 233, 0.1) 0%, transparent 50%)`
-        }}></div>
+          backgroundImage: `radial-gradient(circle at 25% 25%, currentColor 1px, transparent 1px)`,
+          backgroundSize: '50px 50px'
+        }} />
       </div>
       
       <div className="container mx-auto px-4 relative z-10">
@@ -94,8 +95,8 @@ export function CategoriesSection({ showTitle = true }: CategoriesSectionProps) 
             className="text-center mb-16"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
           >
             <GradientHeading>Explore Categories</GradientHeading>
             <p className="text-zion-slate-light text-lg mt-4 max-w-2xl mx-auto">
@@ -112,47 +113,37 @@ export function CategoriesSection({ showTitle = true }: CategoriesSectionProps) 
           viewport={{ once: true }}
         >
           {categories.map((category, index) => (
-            <motion.div
-              key={category.title}
-              variants={itemVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              transition={{ delay: category.delay }}
-            >
-              <Link 
-                to={category.link} 
-                className="group block"
-              >
-                <motion.div 
-                  className="rounded-xl overflow-hidden h-full border border-zion-blue-light bg-zion-blue-dark p-6 transition-all duration-300 hover:border-zion-purple/50 hover:shadow-2xl hover:shadow-zion-purple/20"
-                  whileHover={{ 
-                    y: -8,
-                    scale: 1.02,
-                    transition: { duration: 0.3 }
-                  }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  <motion.div 
-                    className={`rounded-full w-16 h-16 bg-gradient-to-br ${category.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
-                    whileHover={{ rotate: 5 }}
-                  >
+            <motion.div key={category.title} variants={itemVariants}>
+              <Link to={category.link} className="group block">
+                <div className="rounded-xl overflow-hidden h-full border border-zion-blue-light/30 bg-gradient-to-br from-zion-blue-dark/80 to-zion-blue-dark/40 backdrop-blur-sm p-6 transition-all duration-500 hover:border-zion-purple/50 hover:translate-y-[-8px] hover:shadow-2xl hover:shadow-zion-purple/20 group-hover:scale-[1.02]">
+                  <div className={`rounded-full w-16 h-16 bg-gradient-to-br ${category.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
                     <div className="text-white">
                       {category.icon}
                     </div>
-                  </motion.div>
-                  <h3 className="text-white text-xl font-bold mb-2 group-hover:text-zion-cyan transition-colors duration-300">
+                  </div>
+                  <h3 className="text-white text-xl font-bold mb-3 group-hover:text-zion-cyan transition-colors duration-300">
                     {category.title}
                   </h3>
-                  <p className="text-zion-slate-light group-hover:text-zion-slate-light/80 transition-colors duration-300">
+                  <p className="text-zion-slate-light mb-4 leading-relaxed">
                     {category.description}
                   </p>
                   
-                  {/* Hover indicator */}
-                  <div className="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="w-8 h-0.5 bg-gradient-to-r from-zion-cyan to-zion-purple rounded-full"></div>
+                  {/* Feature list */}
+                  <ul className="space-y-2 mb-4">
+                    {category.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-center gap-2 text-sm text-zion-cyan/70">
+                        <Star className="w-3 h-3 fill-current" />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  
+                  {/* Arrow indicator */}
+                  <div className="flex items-center justify-between">
+                    <span className="text-zion-cyan text-sm font-medium">Learn More</span>
+                    <ArrowRight className="w-4 h-4 text-zion-cyan group-hover:translate-x-1 transition-transform duration-300" />
                   </div>
-                </motion.div>
+                </div>
               </Link>
             </motion.div>
           ))}
@@ -162,24 +153,24 @@ export function CategoriesSection({ showTitle = true }: CategoriesSectionProps) 
           className="mt-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
           viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
         >
           <h3 className="text-center text-xl font-bold text-white mb-6">Featured Services</h3>
           <div className="flex flex-wrap justify-center gap-4">
             {specialServices.map((service) => (
-              <motion.div
+              <Link 
                 key={service.title}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                to={service.link}
+                className="group relative px-6 py-3 bg-gradient-to-r from-zion-blue-light to-zion-purple/30 hover:from-zion-purple/40 hover:to-zion-purple/60 border border-zion-purple/20 hover:border-zion-purple/50 rounded-full text-zion-cyan transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-zion-purple/25"
               >
-                <Link 
-                  to={service.link}
-                  className="px-6 py-3 bg-zion-blue-light hover:bg-zion-blue-dark border border-zion-purple/20 hover:border-zion-purple/50 rounded-full text-zion-cyan transition-all duration-300 hover:shadow-lg hover:shadow-zion-purple/25"
-                >
-                  {service.title}
-                </Link>
-              </motion.div>
+                {service.title}
+                {service.badge && (
+                  <span className="absolute -top-2 -right-2 bg-zion-cyan text-zion-blue-dark text-xs px-2 py-1 rounded-full font-bold">
+                    {service.badge}
+                  </span>
+                )}
+              </Link>
             ))}
           </div>
         </motion.div>
@@ -188,15 +179,15 @@ export function CategoriesSection({ showTitle = true }: CategoriesSectionProps) 
           className="mt-12 flex justify-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
           viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.6 }}
         >
           <Link 
             to="/categories" 
-            className="text-zion-cyan border-b border-zion-cyan hover:border-zion-cyan-dark transition-colors duration-300 hover:text-zion-cyan-light group"
+            className="group inline-flex items-center gap-2 text-zion-cyan border-b-2 border-zion-cyan hover:border-zion-cyan-dark transition-colors duration-300 text-lg font-medium"
           >
-            <span className="group-hover:mr-2 transition-all duration-300">View All Categories</span>
-            <span className="opacity-0 group-hover:opacity-100 transition-all duration-300"> →</span>
+            View All Categories
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
           </Link>
         </motion.div>
       </div>

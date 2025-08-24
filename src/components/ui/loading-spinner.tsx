@@ -4,20 +4,16 @@ import { cn } from '@/lib/utils';
 
 interface LoadingSpinnerProps {
   size?: 'sm' | 'md' | 'lg' | 'xl';
-  color?: 'primary' | 'secondary' | 'white' | 'custom';
-  customColor?: string;
-  text?: string;
   className?: string;
-  showText?: boolean;
+  text?: string;
+  variant?: 'default' | 'pulse' | 'dots' | 'bars';
 }
 
-export function LoadingSpinner({
-  size = 'md',
-  color = 'primary',
-  customColor,
-  text = 'Loading...',
-  className,
-  showText = false
+export function LoadingSpinner({ 
+  size = 'md', 
+  className, 
+  text,
+  variant = 'default' 
 }: LoadingSpinnerProps) {
   const sizeClasses = {
     sm: 'w-4 h-4',
@@ -26,46 +22,104 @@ export function LoadingSpinner({
     xl: 'w-16 h-16'
   };
 
-  const colorClasses = {
-    primary: 'border-zion-purple border-t-transparent',
-    secondary: 'border-zion-cyan border-t-transparent',
-    white: 'border-white border-t-transparent',
-    custom: ''
+  const textSizeClasses = {
+    sm: 'text-sm',
+    md: 'text-base',
+    lg: 'text-lg',
+    xl: 'text-xl'
   };
 
-  const textSizes = {
-    sm: 'text-xs',
-    md: 'text-sm',
-    lg: 'text-base',
-    xl: 'text-lg'
-  };
+  const renderSpinner = () => {
+    switch (variant) {
+      case 'pulse':
+        return (
+          <div className={cn("flex space-x-1", className)}>
+            {[0, 1, 2].map((i) => (
+              <motion.div
+                key={i}
+                className="w-2 h-2 bg-zion-cyan rounded-full"
+                animate={{
+                  scale: [1, 1.2, 1],
+                  opacity: [0.5, 1, 0.5]
+                }}
+                transition={{
+                  duration: 1.4,
+                  repeat: Infinity,
+                  delay: i * 0.2
+                }}
+              />
+            ))}
+          </div>
+        );
 
-  const spinnerColor = customColor || (color === 'custom' ? undefined : undefined);
+      case 'dots':
+        return (
+          <div className={cn("flex space-x-1", className)}>
+            {[0, 1, 2].map((i) => (
+              <motion.div
+                key={i}
+                className="w-2 h-2 bg-zion-purple rounded-full"
+                animate={{
+                  y: [0, -10, 0]
+                }}
+                transition={{
+                  duration: 0.6,
+                  repeat: Infinity,
+                  delay: i * 0.1
+                }}
+              />
+            ))}
+          </div>
+        );
+
+      case 'bars':
+        return (
+          <div className={cn("flex space-x-1", className)}>
+            {[0, 1, 2, 3].map((i) => (
+              <motion.div
+                key={i}
+                className="w-1 bg-zion-cyan rounded-full"
+                animate={{
+                  height: [20, 40, 20]
+                }}
+                transition={{
+                  duration: 1,
+                  repeat: Infinity,
+                  delay: i * 0.1
+                }}
+              />
+            ))}
+          </div>
+        );
+
+      default:
+        return (
+          <motion.div
+            className={cn(
+              "border-2 border-zion-cyan/30 border-t-zion-cyan rounded-full",
+              sizeClasses[size],
+              className
+            )}
+            animate={{ rotate: 360 }}
+            transition={{
+              duration: 1,
+              repeat: Infinity,
+              ease: "linear"
+            }}
+          />
+        );
+    }
+  };
 
   return (
-    <div className={cn('flex flex-col items-center justify-center', className)}>
-      <motion.div
-        className={cn(
-          'rounded-full border-2 animate-spin',
-          sizeClasses[size],
-          color === 'custom' ? '' : colorClasses[color]
-        )}
-        style={spinnerColor ? { borderColor: spinnerColor, borderTopColor: 'transparent' } : undefined}
-        role="status"
-        aria-label="Loading"
-      >
-        <span className="sr-only">{text}</span>
-      </motion.div>
-      
-      {showText && (
+    <div className="flex flex-col items-center justify-center space-y-4">
+      {renderSpinner()}
+      {text && (
         <motion.p
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
+          className={cn("text-zion-slate-light font-medium", textSizeClasses[size])}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
-          className={cn(
-            'mt-3 text-zion-slate-light font-medium',
-            textSizes[size]
-          )}
         >
           {text}
         </motion.p>
@@ -74,92 +128,68 @@ export function LoadingSpinner({
   );
 }
 
-// Pulse loading variant
-export function LoadingPulse({
-  size = 'md',
-  color = 'primary',
-  className
-}: Omit<LoadingSpinnerProps, 'text' | 'showText'>) {
-  const sizeClasses = {
-    sm: 'w-4 h-4',
-    md: 'w-8 h-8',
-    lg: 'w-12 h-12',
-    xl: 'w-16 h-16'
-  };
-
-  const colorClasses = {
-    primary: 'bg-zion-purple',
-    secondary: 'bg-zion-cyan',
-    white: 'bg-white',
-    custom: ''
-  };
-
-  return (
-    <motion.div
-      className={cn(
-        'rounded-full',
-        sizeClasses[size],
-        color === 'custom' ? '' : colorClasses[color],
-        className
-      )}
-      animate={{
-        scale: [1, 1.2, 1],
-        opacity: [0.5, 1, 0.5]
-      }}
-      transition={{
-        duration: 1.5,
-        repeat: Infinity,
-        ease: "easeInOut"
-      }}
-      role="status"
-      aria-label="Loading"
-    >
-      <span className="sr-only">Loading</span>
-    </motion.div>
-  );
-}
-
-// Skeleton loading variant
-export function LoadingSkeleton({
-  className,
-  lines = 3,
-  height = 'h-4'
-}: {
+// Page loading component
+export function PageLoader({ 
+  text = "Loading...",
+  className 
+}: { 
+  text?: string;
   className?: string;
-  lines?: number;
-  height?: string;
 }) {
   return (
-    <div className={cn('space-y-3', className)}>
-      {Array.from({ length: lines }).map((_, index) => (
-        <motion.div
-          key={index}
-          className={cn(
-            'bg-zion-slate-light/20 rounded animate-pulse',
-            height
-          )}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: index * 0.1 }}
-        />
-      ))}
-    </div>
-  );
-}
-
-// Page loading overlay
-export const LoadingOverlay: React.FC<LoadingOverlayProps> = ({ 
-  text = "Loading...", 
-  showSpinner = true 
-}) => {
-  return (
-    <div className="loading-overlay">
+    <div className={cn("min-h-screen flex items-center justify-center bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-slate-dark", className)}>
       <div className="text-center">
-        {showSpinner && (
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-white mx-auto mb-4"></div>
-        )}
-        <p className="text-lg">{text}</p>
+        <LoadingSpinner size="xl" variant="default" />
+        <motion.p
+          className="mt-6 text-xl text-zion-cyan font-medium"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 }}
+        >
+          {text}
+        </motion.p>
       </div>
     </div>
   );
-};
+}
+
+// Skeleton loader component
+export function Skeleton({ 
+  className,
+  count = 1 
+}: { 
+  className?: string;
+  count?: number;
+}) {
+  return (
+    <>
+      {Array.from({ length: count }).map((_, i) => (
+        <motion.div
+          key={i}
+          className={cn(
+            "bg-zion-blue-light/20 rounded-md animate-pulse",
+            className
+          )}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: i * 0.1 }}
+        />
+      ))}
+    </>
+  );
+}
+
+// Card skeleton
+export function CardSkeleton() {
+  return (
+    <div className="bg-zion-blue-dark/50 border border-zion-blue-light/30 rounded-xl p-6 space-y-4">
+      <Skeleton className="h-8 w-3/4" />
+      <Skeleton className="h-4 w-full" />
+      <Skeleton className="h-4 w-2/3" />
+      <div className="flex space-x-2">
+        <Skeleton className="h-6 w-16" />
+        <Skeleton className="h-6 w-20" />
+      </div>
+    </div>
+  );
+}
