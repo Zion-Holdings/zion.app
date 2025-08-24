@@ -48,6 +48,8 @@ const ComprehensiveServices = React.lazy(() => import('./pages/ComprehensiveServ
 const AIServicesPage = React.lazy(() => import('./pages/AIServicesPage'));
 const EnterpriseSolutions = React.lazy(() => import('./pages/EnterpriseSolutions'));
 const MicroSaasServicesPage = React.lazy(() => import('./pages/MicroSaasServices'));
+const ExpandedServicesPage = React.lazy(() => import('./pages/ExpandedServicesPage'));
+const ServicesPricingPage = React.lazy(() => import('./pages/ServicesPricingPage'));
 
 const baseRoutes = [
   { path: '/', element: <Home /> },
@@ -61,6 +63,8 @@ const baseRoutes = [
   { path: '/ai-services', element: <AIServicesPage /> },
   { path: '/enterprise-solutions', element: <EnterpriseSolutions /> },
   { path: '/micro-saas-services', element: <MicroSaasServicesPage /> },
+  { path: '/expanded-services', element: <ExpandedServicesPage /> },
+  { path: '/services-pricing', element: <ServicesPricingPage /> },
   { path: '/it-onsite-services', element: <ITOnsiteServicesPage /> },
   { path: '/categories', element: <Categories /> },
   { path: '/equipment', element: <EquipmentPage /> },
