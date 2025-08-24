@@ -1,16 +1,16 @@
-area:automation:
-  - 'automation/**'
-area:pages:
+docs:
+  - '**/*.md'
+
+frontend:
   - 'pages/**'
-area:components:
   - 'components/**'
-area:styles:
   - 'styles/**'
-area:docs:
-  - 'docs/**'
-area:data:
-  - 'data/**'
-area:workflows:
-  - '.github/**'
-type:security:
-  - 'automation/security-*.cjs'
+
+automation:
+  - 'automation/**'
+  - '.github/workflows/**'
+  - 'scripts/**'
+
+backend:
+  - 'pages/api/**'
+  - 'utils/**'

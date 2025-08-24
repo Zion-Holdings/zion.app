@@ -1,21 +1,21 @@
-name: Autonomous Sitemap Generator
+name: Autonomous Git Health
 
 on:
   schedule:
-    - cron: '0 1 * * 2,6'
+    - cron: '40 */6 * * *' # every 6 hours
   workflow_dispatch: {}
 
 permissions:
   contents: write
 
 concurrency:
-  group: autonomous-sitemap
+  group: autonomous-git-health
   cancel-in-progress: false
 
 jobs:
-  sitemap:
+  run:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -32,19 +32,19 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Generate sitemap
-        run: npm run sitemap || true
+      - name: Run git health
+        run: npm run git:health || true
 
-      - name: Commit and push sitemap (if any)
+      - name: Commit and push logs (if any)
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add public/sitemap.xml public/robots.txt || true
+          git add automation_logs/*.json || true
           if git diff --cached --quiet; then
-            echo "No sitemap changes."
+            echo "No health log changes."
           else
-            git commit -m "chore(sitemap): regenerate [skip ci]"
+            git commit -m "chore(git-health): update summary [skip ci]"
             git push origin HEAD:main
           fi

@@ -1,37 +1,56 @@
-import { useState } from 'react';
-import EnhancedCard from '../../components/ui/EnhancedCard';
-import EnhancedButton from '../../components/ui/EnhancedButton';
-import EnhancedLoading from '../../components/ui/EnhancedLoading';
-import { useToast } from '../../components/ui/NotificationSystem';
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import React, { useMemo, useState } from 'react';
+import AIAssistant from '../../components/ui/AIAssistant';
 
-export default function NewJobPage() {
-  const { notify } = useToast();
-  const [loading, setLoading] = useState(false);
+const NewJobPost: NextPage = () => {
+  const [role, setRole] = useState('DevOps Engineer');
+  const [experience, setExperience] = useState('3+ years');
+  const [skills, setSkills] = useState('Kubernetes, AWS');
+  const [timeline, setTimeline] = useState('Immediate');
+  const [description, setDescription] = useState('');
 
-  const onSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-      notify('Job posted! Invite talent to get responses.', 'success');
-    }, 800);
-  };
+  const operatorToken = process.env.NEXT_PUBLIC_OPERATOR_TOKEN;
+
+  const generateJobPrompt = useMemo(() => (
+    `Write a job description for a remote ${role} with ${experience} of experience in ${skills}. Include responsibilities, required skills, and preferred tools.\n\nReturn markdown only.`
+  ), [experience, role, skills]);
 
   return (
-    <div className="max-w-2xl mx-auto">
-      <EnhancedCard>
-        <h1 className="text-lg font-semibold mb-3">Post a Job</h1>
-        {loading ? (
-          <EnhancedLoading lines={6} />
-        ) : (
-          <form onSubmit={onSubmit} className="space-y-3">
-            <input className="w-full rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 px-3 py-2 text-sm" placeholder="Job title" required />
-            <input className="w-full rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 px-3 py-2 text-sm" placeholder="Location (Remote)" />
-            <textarea className="w-full rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 px-3 py-2 text-sm" rows={5} placeholder="Job description" />
-            <EnhancedButton type="submit" variant="primary">Publish</EnhancedButton>
-          </form>
-        )}
-      </EnhancedCard>
+    <div>
+      <Head>
+        <title>New Job Post - Zion AI Marketplace</title>
+      </Head>
+      <h1 className="text-2xl font-semibold mb-4">Create Job Post</h1>
+
+      <div className="grid gap-4 sm:grid-cols-2">
+        <label className="text-sm">Role Title
+          <input value={role} onChange={e => setRole(e.target.value)} className="mt-1 w-full rounded-md border p-2" />
+        </label>
+        <label className="text-sm">Required Experience
+          <input value={experience} onChange={e => setExperience(e.target.value)} className="mt-1 w-full rounded-md border p-2" />
+        </label>
+        <label className="text-sm sm:col-span-2">Required Skills
+          <input value={skills} onChange={e => setSkills(e.target.value)} className="mt-1 w-full rounded-md border p-2" />
+        </label>
+        <label className="text-sm sm:col-span-2">Timeline
+          <input value={timeline} onChange={e => setTimeline(e.target.value)} className="mt-1 w-full rounded-md border p-2" />
+        </label>
+      </div>
+
+      <div className="mt-6 flex items-center justify-between">
+        <h2 className="text-lg font-semibold">Job Description</h2>
+        <AIAssistant
+          buttonLabel="Generate Job Post"
+          title="Generate Job Description"
+          defaultPrompt={generateJobPrompt}
+          onAccept={setDescription}
+          authorizationToken={operatorToken}
+        />
+      </div>
+      <textarea value={description} onChange={e => setDescription(e.target.value)} rows={14} className="mt-2 w-full rounded-md border p-3" />
     </div>
   );
-}
+};
+
+export default NewJobPost;
