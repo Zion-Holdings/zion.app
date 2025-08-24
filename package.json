@@ -217,7 +217,8 @@
     "conflicts:watch": "watch -n 30 bash scripts/check-merge-conflicts.sh || true",
     "conflicts:cron:start": "bash automation/merge-conflict-cron.sh start",
     "conflicts:cron:stop": "bash automation/merge-conflict-cron.sh stop",
-    "conflicts:cron:status": "bash automation/merge-conflict-cron.sh status"
+    "conflicts:cron:status": "bash automation/merge-conflict-cron.sh status",
+    "generate:site-artifacts": "node scripts/generate-site-artifacts.cjs"
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
@@ -256,7 +257,8 @@
     "react": "^17.0.2",
     "react-datepicker": "^8.4.0",
     "react-dom": "^17.0.2",
-    "uuid": "^11.1.0"
+    "uuid": "^11.1.0",
+    "next-seo": "^5.15.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.8.1",
