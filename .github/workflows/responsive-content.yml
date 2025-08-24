@@ -1,22 +1,22 @@
-name: Responsive Content
+name: Responsive Content Orchestrator
 
 on:
   workflow_dispatch: {}
   schedule:
-    - cron: '*/10 * * * *'
-
-permissions:
-  contents: read
+    - cron: '0 0 * * *'
 
 concurrency:
-  group: responsive-content-${{ github.ref }}
+  group: "github.workflow-${{ github.ref }}"
   cancel-in-progress: true
+
+permissions:
+  contents: write
+  actions: read
 
 jobs:
   main:
     name: Main Job
     runs-on: ubuntu-latest
-    timeout-minutes: 20
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -31,8 +31,4 @@ jobs:
 
       - name: Install dependencies
         run: npm ci --no-audit --no-fund
-
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
 
