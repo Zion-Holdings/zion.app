@@ -38,6 +38,18 @@ const specialServices = [
   {
     title: "IT Onsite Services",
     link: "/it-onsite-services"
+  },
+  {
+    title: "Enterprise Solutions",
+    link: "/expanded-services"
+  },
+  {
+    title: "AI Services",
+    link: "/ai-services"
+  },
+  {
+    title: "Cybersecurity",
+    link: "/cybersecurity"
   }
 ];
 
