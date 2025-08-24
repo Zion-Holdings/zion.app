@@ -18,6 +18,13 @@ const ITInfrastructure = React.lazy(() => import('./pages/services/ITInfrastruct
 const MicroSAASSolutions = React.lazy(() => import('./pages/services/MicroSAASSolutions'));
 const IndustrySolutions = React.lazy(() => import('./pages/services/IndustrySolutions'));
 
+// Additional new service pages
+const AIServicesPage = React.lazy(() => import('./pages/AIServicesPage'));
+const ITServicesPage = React.lazy(() => import('./pages/ITServicesPage'));
+const DigitalMarketingServicesPage = React.lazy(() => import('./pages/DigitalMarketingServicesPage'));
+const BusinessSolutionsPage = React.lazy(() => import('./pages/BusinessSolutionsPage'));
+const ServicesOverviewPage = React.lazy(() => import('./pages/ServicesOverviewPage'));
+
 const baseRoutes = [
   { path: '/', element: <Home /> },
   { path: '/about', element: <About /> },
@@ -33,6 +40,13 @@ const baseRoutes = [
   { path: '/services/it-infrastructure', element: <ITInfrastructure /> },
   { path: '/services/micro-saas-solutions', element: <MicroSAASSolutions /> },
   { path: '/services/industry-solutions', element: <IndustrySolutions /> },
+  
+  // Additional new service routes
+  { path: '/ai-services', element: <AIServicesPage /> },
+  { path: '/it-services', element: <ITServicesPage /> },
+  { path: '/digital-marketing', element: <DigitalMarketingServicesPage /> },
+  { path: '/business-solutions', element: <BusinessSolutionsPage /> },
+  { path: '/services-overview', element: <ServicesOverviewPage /> },
 ];
 
 const App = () => {
