@@ -20,7 +20,7 @@
       ]
     },
     /* Bundler mode */
-    "moduleResolution": "bundler",
+    "moduleResolution": "node",
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "strict": false,
