@@ -1,24 +1,41 @@
 import React from 'react';
-import Head from 'next/head';
-  return (
+import type { GetStaticPaths, GetStaticProps } from 'next';
+import { MARKETPLACE_LISTINGS } from '@/data/marketplaceData';
+import type { ProductListing } from '@/types/listings';
 
-export default function [slug]Page() {
-  return (
-    <>
-              <Head>
-        <title>marketplace/listing/[slug] - Zion App</title>
-        <meta name="description" content="marketplace/listing/[slug] page" />
-              </Head>
-              <div className="container mx-auto px-4 py-8">
-        <h1 className="text-3xl font-bold mb-6">marketplace/listing/[slug]</h1>
-        <p className="text-lg mb-4">This page is under construction.</p>
-        <div className="mt-4">
-        <a href="/" className="text-blue-600 hover:underline">
-            ← Back to Home</a>
-              </div>
-              </div>
-        </>
-  );
-
-  );
+interface ListingProps {
+  listing: ProductListing | null;
 }
+
+const MarketplaceListing: React.FC<ListingProps> = ({ listing }) => {
+  if (!listing) {
+    return <div>Listing removed</div>;
+  }
+  return (
+    <main className="prose dark:prose-invert max-w-3xl mx-auto py-8">
+      <h1>{listing.title}</h1>
+      <p>{listing.description}</p>
+    </main>
+  );
+};
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const paths = MARKETPLACE_LISTINGS.map(l => ({ params: { slug: l.id } }));
+  return { paths, fallback: 'blocking' };
+};
+
+export const getStaticProps: GetStaticProps<ListingProps> = async ({ params }) => {
+  const slug = params?.slug as string;
+  const listing = MARKETPLACE_LISTINGS.find(l => l.id === slug) || null;
+  if (!listing) {
+    return {
+      redirect: {
+        destination: '/marketplace',
+        permanent: false,
+      },
+    };
+  }
+  return { props: { listing } };
+};
+
+export default MarketplaceListing;
