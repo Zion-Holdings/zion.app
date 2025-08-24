@@ -1,97 +1,138 @@
+#!/usr/bin/env node
+
 const fs = require('fs');
 const path = require('path');
-const glob = require('glob');
 
-function ensureDir(dirPath) {
-  if (!fs.existsSync(dirPath)) {
-    fs.mkdirSync(dirPath, { recursive: true });
-  }
-}
+const WORKSPACE_ROOT = path.join(__dirname, '..');
+const PUBLIC_DIR = path.join(WORKSPACE_ROOT, 'public');
+const REPORTS_DIR = path.join(PUBLIC_DIR, 'reports');
+const OUTPUT_JSON = path.join(REPORTS_DIR, 'unused-assets.json');
 
-function getAllAssetFiles(publicDir) {
-  const patterns = [
-    '**/*.{png,jpg,jpeg,gif,svg,webp,ico,mp4,webm,ogg,mp3,woff,woff2,ttf,otf}',
-  ];
-  const files = patterns.flatMap((p) => glob.sync(p, { cwd: publicDir, nodir: true }));
-  return files.map((rel) => ({
-    absolute: path.join(publicDir, rel),
-    relative: rel.replace(/\\/g, '/'),
-    sizeBytes: fs.statSync(path.join(publicDir, rel)).size,
-  }));
-}
+const IGNORE_DIRS = new Set([
+  'node_modules', '.git', '.next', 'out', '.husky', '.cursor'
+]);
 
-function getAllCodeFiles(rootDir) {
-  const include = [
-    'pages/**/*.{js,jsx,ts,tsx}',
-    'components/**/*.{js,jsx,ts,tsx}',
-    'styles/**/*.{css,scss}',
-    'public/**/*.{html,xml,json}',
-  ];
-  return include.flatMap((p) => glob.sync(p, { cwd: rootDir, nodir: true })).map((rel) => path.join(rootDir, rel));
-}
+const CODE_DIRS = [
+  path.join(WORKSPACE_ROOT, 'pages'),
+  path.join(WORKSPACE_ROOT, 'components'),
+  path.join(WORKSPACE_ROOT, 'styles'),
+  path.join(WORKSPACE_ROOT, 'automation'),
+  path.join(WORKSPACE_ROOT, 'netlify', 'functions'),
+  path.join(WORKSPACE_ROOT, 'scripts')
+];
 
-function isAssetReferenced(asset, codeFiles) {
-  const filename = path.basename(asset.relative);
-  const webPath = '/' + asset.relative.replace(/\\/g, '/');
-  // Common reference candidates: exact web path, filename only, or src="..."
-  const candidates = new Set([
-    filename,
-    webPath,
-    encodeURI(webPath),
-  ]);
-  for (const file of codeFiles) {
-    try {
-      const content = fs.readFileSync(file, 'utf8');
-      for (const cand of candidates) {
-        if (content.includes(cand)) return true;
+const CODE_EXTS = new Set(['.js', '.jsx', '.ts', '.tsx', '.json', '.md', '.mdx', '.cjs', '.mjs', '.css', '.scss']);
+
+function listFilesRecursively(startDir, filterFn) {
+  const results = [];
+  function walk(dir) {
+    let entries = [];
+    try { entries = fs.readdirSync(dir, { withFileTypes: true }); } catch { return; }
+    for (const entry of entries) {
+      if (IGNORE_DIRS.has(entry.name)) continue;
+      const abs = path.join(dir, entry.name);
+      if (entry.isDirectory()) {
+        walk(abs);
+      } else if (!filterFn || filterFn(abs)) {
+        results.push(abs);
       }
+    }
+  }
+  walk(startDir);
+  return results;
+}
+
+function getAllAssets() {
+  const assets = listFilesRecursively(PUBLIC_DIR, (p) => {
+    const rel = path.relative(PUBLIC_DIR, p).replace(/\\/g, '/');
+    if (!rel) return false;
+    if (rel === 'sitemap.xml' || rel === 'robots.txt') return false;
+    if (rel.startsWith('reports/')) return false; // keep reports out of scan
+    return true;
+  });
+  return assets;
+}
+
+function getAllCodeFiles() {
+  const files = [];
+  for (const dir of CODE_DIRS) {
+    files.push(...listFilesRecursively(dir, (p) => CODE_EXTS.has(path.extname(p))));
+  }
+  return files;
+}
+
+function buildCodeIndex(files) {
+  const MAX_FILE_SIZE = 512 * 1024; // 512KB guard per file
+  let concatenated = '';
+  for (const file of files) {
+    try {
+      const stat = fs.statSync(file);
+      if (stat.size > MAX_FILE_SIZE) continue;
+      const content = fs.readFileSync(file, 'utf8');
+      concatenated += `\n\n/* FILE:${path.relative(WORKSPACE_ROOT, file)} */\n` + content;
     } catch {}
+  }
+  return concatenated;
+}
+
+function isAssetReferenced(assetAbsPath, codeIndex) {
+  const relFromPublic = path.relative(PUBLIC_DIR, assetAbsPath).replace(/\\/g, '/');
+  const withLeadingSlash = '/' + relFromPublic;
+  const fileNameOnly = path.basename(assetAbsPath);
+
+  // Simple checks: full path with and without leading slash, and file name only
+  const candidates = [relFromPublic, withLeadingSlash, fileNameOnly];
+  for (const c of candidates) {
+    if (c && codeIndex.includes(c)) return true;
   }
   return false;
 }
 
-function main() {
-  const repoRoot = process.cwd();
-  const publicDir = path.join(repoRoot, 'public');
-  if (!fs.existsSync(publicDir)) {
-    console.log('No public directory found; skipping.');
-    return;
-  }
-  const reportDir = path.join(repoRoot, 'data', 'reports');
-  ensureDir(reportDir);
+function formatBytes(bytes) {
+  const sizes = ['B', 'KB', 'MB', 'GB'];
+  if (bytes === 0) return '0 B';
+  const i = Math.floor(Math.log(bytes) / Math.log(1024));
+  return `${(bytes / Math.pow(1024, i)).toFixed(2)} ${sizes[i]}`;
+}
 
-  const assets = getAllAssetFiles(publicDir);
-  const codeFiles = getAllCodeFiles(repoRoot);
+function main() {
+  const startedAt = new Date().toISOString();
+  const assets = getAllAssets();
+  const codeFiles = getAllCodeFiles();
+  const codeIndex = buildCodeIndex(codeFiles);
 
   const unused = [];
-  const referenced = [];
-
   for (const asset of assets) {
-    const ref = isAssetReferenced(asset, codeFiles);
-    (ref ? referenced : unused).push({
-      path: asset.relative,
-      sizeBytes: asset.sizeBytes,
-      sizeKb: Math.round(asset.sizeBytes / 10.24) / 100,
-    });
+    const referenced = isAssetReferenced(asset, codeIndex);
+    if (!referenced) {
+      let stat;
+      try { stat = fs.statSync(asset); } catch { stat = undefined; }
+      unused.push({
+        path: '/' + path.relative(PUBLIC_DIR, asset).replace(/\\/g, '/'),
+        sizeBytes: stat ? stat.size : null,
+        size: stat ? formatBytes(stat.size) : null,
+        modifiedAt: stat ? stat.mtime.toISOString() : null
+      });
+    }
   }
 
-  // Sort by size desc for quick wins
-  unused.sort((a, b) => b.sizeBytes - a.sizeBytes);
-
+  fs.mkdirSync(REPORTS_DIR, { recursive: true });
   const report = {
     generatedAt: new Date().toISOString(),
     totalAssets: assets.length,
-    referencedCount: referenced.length,
-    unusedCount: unused.length,
-    unusedAssets: unused,
-    topUnusedBySize: unused.slice(0, 50),
+    totalUnused: unused.length,
+    unused
   };
-
-  const outPath = path.join(reportDir, 'unused_assets.json');
-  fs.writeFileSync(outPath, JSON.stringify(report, null, 2));
-  console.log(`Wrote unused assets report: ${outPath}`);
+  fs.writeFileSync(OUTPUT_JSON, JSON.stringify(report, null, 2));
+  console.log(`Unused assets report written to ${path.relative(WORKSPACE_ROOT, OUTPUT_JSON)} with ${unused.length} items.`);
 }
 
 if (require.main === module) {
-  main();
+  try {
+    main();
+    process.exit(0);
+  } catch (err) {
+    console.error('unused-assets-scanner failed:', err && err.stack || String(err));
+    process.exit(1);
+  }
 }
