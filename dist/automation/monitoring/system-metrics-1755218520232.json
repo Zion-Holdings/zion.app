@@ -1,0 +1,176 @@
+{
+  "timestamp": "2025-08-15T00:42:00.106Z",
+  "system": {
+    "uptime": 2700.410009451,
+    "memory": {
+      "rss": 89948160,
+      "heapTotal": 20774912,
+      "heapUsed": 17078664,
+      "external": 3869746,
+      "arrayBuffers": 429000
+    },
+    "cpu": {
+      "user": 3894724,
+      "system": 1453020
+    },
+    "platform": "linux",
+    "nodeVersion": "v22.16.0"
+  },
+  "processes": [
+    {
+      "name": "ai-service-factory-web",
+      "status": "online",
+      "memory": 119427072,
+      "cpu": 0.1,
+      "uptime": 1755212929284,
+      "restarts": 2
+    },
+    {
+      "name": "ai-service-factory-automation",
+      "status": "online",
+      "memory": 65814528,
+      "cpu": 0.1,
+      "uptime": 1755218417810,
+      "restarts": 3
+    },
+    {
+      "name": "ai-service-factory-monitor",
+      "status": "online",
+      "memory": 73113600,
+      "cpu": 0.1,
+      "uptime": 1755218417813,
+      "restarts": 3
+    },
+    {
+      "name": "ai-service-factory-catalog",
+      "status": "online",
+      "memory": 72671232,
+      "cpu": 0.1,
+      "uptime": 1755218417815,
+      "restarts": 4
+    },
+    {
+      "name": "ai-service-factory-advanced-monitor",
+      "status": "online",
+      "memory": 82624512,
+      "cpu": 0.2,
+      "uptime": 1755217664951,
+      "restarts": 1
+    },
+    {
+      "name": "ai-service-factory-web-turbo",
+      "status": "online",
+      "memory": 110911488,
+      "cpu": 0.1,
+      "uptime": 1755214154556,
+      "restarts": 0
+    },
+    {
+      "name": "ai-service-factory-automation-turbo",
+      "status": "online",
+      "memory": 67158016,
+      "cpu": 0.1,
+      "uptime": 1755214154561,
+      "restarts": 0
+    },
+    {
+      "name": "ai-service-factory-web-turbo",
+      "status": "online",
+      "memory": 110350336,
+      "cpu": 0.1,
+      "uptime": 1755214154594,
+      "restarts": 0
+    },
+    {
+      "name": "ai-service-factory-automation-turbo",
+      "status": "online",
+      "memory": 67121152,
+      "cpu": 0.1,
+      "uptime": 1755214154599,
+      "restarts": 0
+    },
+    {
+      "name": "ai-service-factory-web-turbo",
+      "status": "online",
+      "memory": 110350336,
+      "cpu": 0.1,
+      "uptime": 1755214154644,
+      "restarts": 0
+    },
+    {
+      "name": "ai-service-factory-automation-turbo",
+      "status": "online",
+      "memory": 67407872,
+      "cpu": 0.1,
+      "uptime": 1755214154662,
+      "restarts": 0
+    },
+    {
+      "name": "ai-service-factory-web-turbo",
+      "status": "online",
+      "memory": 110665728,
+      "cpu": 0.2,
+      "uptime": 1755214154714,
+      "restarts": 0
+    },
+    {
+      "name": "ai-service-factory-automation-turbo",
+      "status": "online",
+      "memory": 67194880,
+      "cpu": 0.1,
+      "uptime": 1755214154720,
+      "restarts": 0
+    },
+    {
+      "name": "ai-service-factory-monitor-turbo",
+      "status": "online",
+      "memory": 74178560,
+      "cpu": 0.1,
+      "uptime": 1755214154811,
+      "restarts": 0
+    },
+    {
+      "name": "ai-service-factory-advanced-monitor-turbo",
+      "status": "online",
+      "memory": 89952256,
+      "cpu": 0.1,
+      "uptime": 1755214154837,
+      "restarts": 0
+    },
+    {
+      "name": "ai-service-factory-advanced-monitor-turbo",
+      "status": "online",
+      "memory": 91545600,
+      "cpu": 0.1,
+      "uptime": 1755214154950,
+      "restarts": 0
+    },
+    {
+      "name": "ai-service-factory-monitor-turbo",
+      "status": "online",
+      "memory": 73711616,
+      "cpu": 0.1,
+      "uptime": 1755214154976,
+      "restarts": 0
+    }
+  ],
+  "resources": {
+    "memory": {
+      "total": 16017,
+      "used": 2062,
+      "free": 2876,
+      "available": 13955
+    },
+    "disk": {
+      "total": "126G",
+      "used": "13G",
+      "available": "107G",
+      "usage": "11%"
+    },
+    "load": {
+      "1min": 0.6,
+      "5min": 0.27,
+      "15min": 0.1
+    }
+  }
+}

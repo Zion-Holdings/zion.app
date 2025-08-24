@@ -1,7 +1,19 @@
 
 import { GradientHeading } from "./GradientHeading";
 import { Link } from "react-router-dom";
-import { Briefcase, HardDrive, Lightbulb, Users, ArrowRight, Sparkles } from "lucide-react";
+import { 
+  Briefcase, 
+  HardDrive, 
+  Lightbulb, 
+  Users, 
+  ArrowRight, 
+  Sparkles,
+  Cloud,
+  Database,
+  TrendingUp,
+  Cpu,
+  LinkIcon
+} from "lucide-react";
 import { motion } from "framer-motion";
 
 const categories = [
@@ -54,7 +66,6 @@ const categories = [
 const specialServices = [
   {
     title: "IT Onsite Services",
-<<<<<<< HEAD
     link: "/it-onsite-services"
   },
   {
@@ -119,10 +130,6 @@ const specialServices = [
     icon: <LinkIcon className="w-8 h-8" />,
     color: "from-teal-500 to-blue-600",
     link: "/expanded-services?category=blockchain-web3"
-=======
-    link: "/it-onsite-services",
-    icon: <Sparkles className="w-4 h-4" />
->>>>>>> 00d51a7221a0391df0e2b7f12fcb54d7369c373b
   }
 ];
 
