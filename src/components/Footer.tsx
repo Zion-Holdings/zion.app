@@ -4,12 +4,21 @@ import { Link } from "react-router-dom";
 
 export function Footer() {
   return (
-    <footer className="bg-zion-blue-dark border-t border-zion-blue-light pt-12 pb-8">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+    <footer className="bg-zion-blue-dark border-t border-zion-blue-light pt-12 pb-8 relative overflow-hidden">
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-zion-cyan to-transparent opacity-50"></div>
+        <div className="absolute bottom-0 left-1/4 w-1 h-full bg-gradient-to-t from-transparent via-zion-purple to-transparent opacity-30"></div>
+        <div className="absolute bottom-0 right-1/4 w-1 h-full bg-gradient-to-t from-transparent via-zion-cyan to-transparent opacity-30"></div>
+        <div className="absolute top-1/2 left-0 w-32 h-32 bg-zion-cyan/5 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 right-0 w-32 h-32 bg-zion-purple/5 rounded-full blur-3xl"></div>
+      </div>
+      
+      <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
             <div className="mb-4">
-              <span className="text-2xl font-bold bg-gradient-to-r from-zion-cyan via-zion-purple-light to-zion-purple bg-clip-text text-transparent">ZION</span>
+              <span className="text-2xl font-bold bg-gradient-to-r from-zion-cyan via-zion-purple-light to-zion-purple bg-clip-text text-transparent neon-pulse">ZION</span>
             </div>
             <p className="text-zion-slate-light mb-4 max-w-xs">
               The world's first free marketplace dedicated to high-tech and artificial intelligence.
@@ -73,12 +82,11 @@ export function Footer() {
             <ul className="space-y-2">
               <li><Link to="/marketplace" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Products</Link></li>
               <li><Link to="/services" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Services</Link></li>
+              <li><Link to="/micro-saas-services" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Micro SAAS</Link></li>
               <li><Link to="/talent" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Talent</Link></li>
               <li><Link to="/equipment" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Equipment</Link></li>
               <li><Link to="/categories" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Categories</Link></li>
               <li><Link to="/green-it" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Green IT</Link></li>
-              <li><Link to="/ai-matcher" className="text-zion-slate-light hover:text-zion-cyan transition-colors">AI Matcher</Link></li>
-              <li><Link to="/request-quote" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Request Quote</Link></li>
             </ul>
           </div>
 
@@ -91,26 +99,6 @@ export function Footer() {
               <li><Link to="/careers" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Careers</Link></li>
               <li><Link to="/contact" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Contact</Link></li>
               <li><Link to="/sitemap" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Sitemap</Link></li>
-            </ul>
-          </div>
-
-          <div>
-<<<<<<< HEAD
-            <h3 className="text-white font-semibold mb-4 text-lg">Support & Resources</h3>
-            <ul className="space-y-2">
-              <li><Link to="/faq" className="text-zion-slate-light hover:text-zion-cyan transition-colors">FAQ</Link></li>
-              <li><Link to="/help" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Help Center</Link></li>
-              <li><Link to="/developers" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Developer Portal</Link></li>
-              <li><Link to="/api-docs" className="text-zion-slate-light hover:text-zion-cyan transition-colors">API Documentation</Link></li>
-=======
-            <h3 className="text-white font-semibold mb-4 text-lg">Resources</h3>
-            <ul className="space-y-2">
-              <li><Link to="/zion-hire-ai" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Zion Hire AI</Link></li>
-              <li><Link to="/community" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Community Forum</Link></li>
-              <li><Link to="/developers" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Developer API</Link></li>
-              <li><Link to="/enterprise" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Enterprise Solutions</Link></li>
-              <li><Link to="/mobile" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Mobile App</Link></li>
->>>>>>> cursor/website-audit-and-enhancement-d464
             </ul>
           </div>
 
