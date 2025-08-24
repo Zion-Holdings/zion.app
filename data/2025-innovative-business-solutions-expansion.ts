@@ -130,7 +130,7 @@ export const innovativeBusinessSolutionsExpansion2025: InnovativeBusinessSolutio
     competitors: ['Zapier, Microsoft Power Automate, Integromat, Automate.io, IFTTT'],
     marketSize: '$18B workflow automation market',
     growthRate: '28% annual growth',
-    variant: 'it-infrastructure',
+    variant: 'default',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
