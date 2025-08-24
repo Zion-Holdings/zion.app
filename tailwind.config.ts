@@ -1,6 +1,7 @@
 import type { Config } from 'tailwindcss';
 import defaultTheme from 'tailwindcss/defaultTheme';
 import plugin from 'tailwindcss/plugin';
+import lineClamp from '@tailwindcss/line-clamp';
 
 const config: Config = {
   darkMode: 'class',
@@ -119,6 +120,7 @@ const config: Config = {
     }
   },
   plugins: [
+    lineClamp,
     plugin(function ({ addUtilities }) {
       const newUtilities = {
         '.rtl': {
