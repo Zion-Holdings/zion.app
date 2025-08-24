@@ -1,87 +1,282 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { 
+  Volume2, VolumeX, Eye, Keyboard, 
+  MousePointer, Monitor
+} from 'lucide-react';
 
-interface AccessibilityEnhancerProps {
-  children: React.ReactNode;
-  role?: string;
-  'aria-label'?: string;
-  'aria-describedby'?: string;
-  'aria-expanded'?: boolean;
-  'aria-controls'?: string;
-  'aria-haspopup'?: boolean;
-  tabIndex?: number;
-  onKeyDown?: (event: React.KeyboardEvent) => void;
-  className?: string;
-  focusable?: boolean;
-  skipToContent?: boolean;
-}
-
-const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({
-  children,
-  role,
-  'aria-label': ariaLabel,
-  'aria-describedby': ariaDescribedby,
-  'aria-expanded': ariaExpanded,
-  'aria-controls': ariaControls,
-  'aria-haspopup': ariaHaspopup,
-  tabIndex,
-  onKeyDown,
-  className = '',
-  focusable = true,
-  skipToContent = false
-}) => {
-  const ref = useRef<HTMLDivElement>(null);
+export default function AccessibilityEnhancer() {
+  const [isVisible, setIsVisible] = useState(false);
+  const [isMuted, setIsMuted] = useState(false);
+  const [highContrast, setHighContrast] = useState(false);
+  const [largeText, setLargeText] = useState(false);
+  const [reducedMotion, setReducedMotion] = useState(false);
 
   useEffect(() => {
-    if (skipToContent && ref.current) {
-      ref.current.focus();
-    }
-  }, [skipToContent]);
+    // Check user preferences
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const prefersHighContrast = window.matchMedia('(prefers-contrast: high)').matches;
+    
+    setReducedMotion(prefersReducedMotion);
+    setHighContrast(prefersHighContrast);
 
-  const handleKeyDown = (event: React.KeyboardEvent) => {
-    // Handle common keyboard interactions
-    switch (event.key) {
-      case 'Enter':
-      case ' ':
-        if (role === 'button' || role === 'link') {
-          event.preventDefault();
-          // Trigger click event
-          const clickEvent = new MouseEvent('click', {
-            bubbles: true,
-            cancelable: true,
-            view: window
-          });
-          event.currentTarget.dispatchEvent(clickEvent);
-        }
-        break;
-      case 'Escape':
-        // Handle escape key for modals, dropdowns, etc.
-        if (onKeyDown) {
-          onKeyDown(event);
-        }
-        break;
-      default:
-        if (onKeyDown) {
-          onKeyDown(event);
-        }
+    // Apply accessibility settings
+    if (highContrast) {
+      document.documentElement.classList.add('high-contrast');
+    }
+    if (largeText) {
+      document.documentElement.classList.add('large-text');
+    }
+    if (reducedMotion) {
+      document.documentElement.classList.add('reduced-motion');
+    }
+  }, [highContrast, largeText, reducedMotion]);
+
+  const toggleMute = () => {
+    setIsMuted(!isMuted);
+    // Implement audio muting logic here
+  };
+
+  const toggleHighContrast = () => {
+    const newValue = !highContrast;
+    setHighContrast(newValue);
+    if (newValue) {
+      document.documentElement.classList.add('high-contrast');
+    } else {
+      document.documentElement.classList.remove('high-contrast');
+    }
+  };
+
+  const toggleLargeText = () => {
+    const newValue = !largeText;
+    setLargeText(newValue);
+    if (newValue) {
+      document.documentElement.classList.add('large-text');
+    } else {
+      document.documentElement.classList.remove('large-text');
+    }
+  };
+
+  const toggleReducedMotion = () => {
+    const newValue = !reducedMotion;
+    setReducedMotion(newValue);
+    if (newValue) {
+      document.documentElement.classList.add('reduced-motion');
+    } else {
+      document.documentElement.classList.remove('reduced-motion');
+    }
+  };
+
+  const focusFirstInteractive = () => {
+    const firstInteractive = document.querySelector(
+      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    ) as HTMLElement;
+    if (firstInteractive) {
+      firstInteractive.focus();
+    }
+  };
+
+  const focusMainContent = () => {
+    const main = document.querySelector('main') || document.querySelector('#main-content');
+    if (main) {
+      (main as HTMLElement).focus();
     }
   };
 
   return (
-    <div
-      ref={ref}
-      role={role}
-      aria-label={ariaLabel}
-      aria-describedby={ariaDescribedby}
-      aria-expanded={ariaExpanded}
-      aria-controls={ariaControls}
-      aria-haspopup={ariaHaspopup}
-      tabIndex={focusable ? tabIndex : -1}
-      onKeyDown={handleKeyDown}
-      className={className}
-    >
+    <>
+      {/* Skip Links */}
+      <div className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-50">
+        <a
+          href="#main-content"
+          className="block px-4 py-2 bg-blue-600 text-white rounded-lg shadow-lg"
+          onClick={focusMainContent}
+        >
+          Skip to main content
+        </a>
+        <a
+          href="#navigation"
+          className="block px-4 py-2 bg-blue-600 text-white rounded-lg shadow-lg mt-2"
+        >
+          Skip to navigation
+        </a>
+      </div>
+
+      {/* Accessibility Toolbar */}
+      <AnimatePresence>
+        {isVisible && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="fixed top-20 right-4 z-50 bg-slate-900/95 backdrop-blur-xl border border-white/10 rounded-xl p-4 shadow-2xl"
+            role="toolbar"
+            aria-label="Accessibility options"
+          >
+            <div className="space-y-3">
+              <button
+                onClick={toggleMute}
+                className="flex items-center gap-2 px-3 py-2 text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-colors duration-200 w-full"
+                aria-label={isMuted ? 'Unmute audio' : 'Mute audio'}
+              >
+                {isMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}
+                <span className="text-sm">{isMuted ? 'Unmute' : 'Mute'}</span>
+              </button>
+
+              <button
+                onClick={toggleHighContrast}
+                className={`flex items-center gap-2 px-3 py-2 rounded-lg transition-colors duration-200 w-full ${
+                  highContrast 
+                    ? 'text-white bg-cyan-500/20 border border-cyan-500/30' 
+                    : 'text-white/80 hover:text-white hover:bg-white/10'
+                }`}
+                aria-label={highContrast ? 'Disable high contrast' : 'Enable high contrast'}
+              >
+                <Eye className="w-4 h-4" />
+                <span className="text-sm">High Contrast</span>
+              </button>
+
+              <button
+                onClick={toggleLargeText}
+                className={`flex items-center gap-2 px-3 py-2 rounded-lg transition-colors duration-200 w-full ${
+                  largeText 
+                    ? 'text-white bg-cyan-500/20 border border-cyan-500/30' 
+                    : 'text-white/80 hover:text-white hover:bg-white/10'
+                }`}
+                aria-label={largeText ? 'Disable large text' : 'Enable large text'}
+              >
+                <Monitor className="w-4 h-4" />
+                <span className="text-sm">Large Text</span>
+              </button>
+
+              <button
+                onClick={toggleReducedMotion}
+                className={`flex items-center gap-2 px-3 py-2 rounded-lg transition-colors duration-200 w-full ${
+                  reducedMotion 
+                    ? 'text-white bg-cyan-500/20 border border-cyan-500/30' 
+                    : 'text-white/80 hover:text-white hover:bg-white/10'
+                }`}
+                aria-label={reducedMotion ? 'Disable reduced motion' : 'Enable reduced motion'}
+              >
+                <MousePointer className="w-4 h-4" />
+                <span className="text-sm">Reduced Motion</span>
+              </button>
+
+              <button
+                onClick={focusFirstInteractive}
+                className="flex items-center gap-2 px-3 py-2 text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-colors duration-200 w-full"
+                aria-label="Focus first interactive element"
+              >
+                <Keyboard className="w-4 h-4" />
+                <span className="text-sm">Focus First</span>
+              </button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Accessibility Toggle Button */}
+      <motion.button
+        onClick={() => setIsVisible(!isVisible)}
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        className="fixed top-20 right-4 z-40 w-12 h-12 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center"
+        aria-label="Toggle accessibility options"
+        aria-expanded={isVisible}
+        aria-controls="accessibility-toolbar"
+      >
+        <Eye className="w-5 h-5" />
+      </motion.button>
+
+      {/* Keyboard Navigation Instructions */}
+      <div className="sr-only">
+        <h2>Keyboard Navigation</h2>
+        <ul>
+          <li>Tab: Navigate between interactive elements</li>
+          <li>Enter/Space: Activate buttons and links</li>
+          <li>Arrow keys: Navigate within components</li>
+          <li>Escape: Close modals and dropdowns</li>
+          <li>Home: Go to top of page</li>
+          <li>End: Go to bottom of page</li>
+        </ul>
+      </div>
+    </>
+  );
+}
+
+// Focus trap for modals
+export function FocusTrap({ children, onEscape }: { children: React.ReactNode; onEscape?: () => void }) {
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && onEscape) {
+        onEscape();
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [onEscape]);
+
+  return <>{children}</>;
+}
+
+// Screen reader only text
+export function SrOnly({ children }: { children: React.ReactNode }) {
+  return <span className="sr-only">{children}</span>;
+}
+
+// Live region for announcements
+export function LiveRegion({ 
+  children, 
+  ariaLive = 'polite' 
+}: { 
+  children: React.ReactNode; 
+  ariaLive?: 'polite' | 'assertive' | 'off' 
+}) {
+  return (
+    <div aria-live={ariaLive} aria-atomic="true" className="sr-only">
       {children}
     </div>
   );
-};
+}
 
-export default AccessibilityEnhancer;
+// Skip to content link
+export function SkipToContent() {
+  return (
+    <a
+      href="#main-content"
+      className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-50 px-4 py-2 bg-blue-600 text-white rounded-lg shadow-lg"
+    >
+      Skip to main content
+    </a>
+  );
+}
+
+// Enhanced button with accessibility
+export function AccessibleButton({
+  children,
+  onClick,
+  className = "",
+  disabled = false,
+  ariaLabel,
+  ...props
+}: {
+  children: React.ReactNode;
+  onClick?: () => void;
+  className?: string;
+  disabled?: boolean;
+  ariaLabel?: string;
+  [key: string]: unknown;
+}) {
+  return (
+    <button
+      onClick={onClick}
+      disabled={disabled}
+      className={`focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-slate-900 ${className}`}
+      aria-label={ariaLabel}
+      {...props}
+    >
+      {children}
+    </button>
+  );
+}
