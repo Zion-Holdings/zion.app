@@ -12,7 +12,7 @@
       "static/chunks/fd9d1056-be48aeae6e94b8d1.js",
       "static/chunks/23-17d109591ec31f31.js",
       "static/chunks/main-app-924c9045949c844c.js",
-      "static/css/3c19cb60556ace45.css",
+      "static/css/6b0427a93b429524.css",
       "static/chunks/app/layout-17fd8ed90260e2ae.js"
     ],
     "/multiverse/launch/page": [
@@ -21,22 +21,24 @@
       "static/chunks/23-17d109591ec31f31.js",
       "static/chunks/main-app-924c9045949c844c.js",
       "static/chunks/772-7cf5cbb99bb72e66.js",
-      "static/chunks/381-f9e6191119cc5850.js",
-      "static/chunks/app/multiverse/launch/page-e68b871a7d4de06e.js"
+      "static/chunks/617-5d014d7b173061b6.js",
+      "static/chunks/app/multiverse/launch/page-47cfe89f0677f293.js"
     ],
     "/page": [
       "static/chunks/webpack-879f858537244e02.js",
       "static/chunks/fd9d1056-be48aeae6e94b8d1.js",
       "static/chunks/23-17d109591ec31f31.js",
       "static/chunks/main-app-924c9045949c844c.js",
-      "static/chunks/app/page-0e0a60d0d042ff33.js"
+      "static/chunks/app/page-76f085bbf1ae175a.js"
     ],
-    "/admin/instances/page": [
+    "/admin/os-deploy/page": [
       "static/chunks/webpack-879f858537244e02.js",
       "static/chunks/fd9d1056-be48aeae6e94b8d1.js",
       "static/chunks/23-17d109591ec31f31.js",
       "static/chunks/main-app-924c9045949c844c.js",
-      "static/chunks/app/admin/instances/page-4612614990b7e86b.js"
+      "static/chunks/772-7cf5cbb99bb72e66.js",
+      "static/chunks/617-5d014d7b173061b6.js",
+      "static/chunks/app/admin/os-deploy/page-a6fedc5f4f31ba63.js"
     ],
     "/admin/layout": [
       "static/chunks/webpack-879f858537244e02.js",
@@ -45,14 +47,12 @@
       "static/chunks/main-app-924c9045949c844c.js",
       "static/chunks/app/admin/layout-6991a364e694f370.js"
     ],
-    "/admin/os-deploy/page": [
+    "/admin/instances/page": [
       "static/chunks/webpack-879f858537244e02.js",
       "static/chunks/fd9d1056-be48aeae6e94b8d1.js",
       "static/chunks/23-17d109591ec31f31.js",
       "static/chunks/main-app-924c9045949c844c.js",
-      "static/chunks/772-7cf5cbb99bb72e66.js",
-      "static/chunks/381-f9e6191119cc5850.js",
-      "static/chunks/app/admin/os-deploy/page-ae70ccdc969fa243.js"
+      "static/chunks/app/admin/instances/page-4612614990b7e86b.js"
     ]
   }
 }
