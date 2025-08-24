@@ -1,0 +1,39 @@
+name: Accessibility Audit
+
+on:
+  schedule:
+    - cron: '0 4 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  a11y:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      - name: Install puppeteer and axe
+        run: |
+          sudo apt-get update && sudo apt-get install -y libnss3 libxss1 libasound2 fonts-liberation libatk-bridge2.0-0 libgtk-3-0
+          npm i --no-audit --no-fund puppeteer axe-puppeteer node-fetch
+      - name: Run a11y audit
+        run: node scripts/a11y-audit.cjs
+        env:
+          SITE_URL: https://ziontechgroup.netlify.app
+      - name: Commit a11y report
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add public/reports/a11y
+            git commit -m "chore(a11y): automated accessibility report"
+            git push
+          else
+            echo "No report changes to commit"
+          fi
