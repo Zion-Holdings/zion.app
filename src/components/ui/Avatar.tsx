@@ -1,5 +1,4 @@
 import React from 'react';
-import { cn } from '@/lib/utils';
 
 const Avatar = React.forwardRef<
   HTMLDivElement,
@@ -7,7 +6,7 @@ const Avatar = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn('relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full', className)}
+    className={`relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full ${className || ''}`}
     {...props}
   />
 ));
@@ -19,7 +18,7 @@ const AvatarImage = React.forwardRef<
 >(({ className, src, alt = '', ...props }, ref) => (
   <img
     ref={ref}
-    className={cn('aspect-square h-full w-full', className)}
+    className={`aspect-square h-full w-full ${className || ''}`}
     src={src}
     alt={alt}
     {...props}
@@ -33,10 +32,7 @@ const AvatarFallback = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn(
-      'flex h-full w-full items-center justify-center rounded-full bg-muted',
-      className
-    )}
+      className={`flex h-full w-full items-center justify-center rounded-full bg-zion-slate-light text-zion-slate-dark text-sm font-medium ${className || ''}`}
     {...props}
   />
 ));
