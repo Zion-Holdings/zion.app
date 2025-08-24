@@ -11,32 +11,35 @@ import { QuickAccess } from "@/components/home/QuickAccess";
 import { FeatureCTAs } from "@/components/home/FeatureCTAs";
 import { FeatureHighlights } from "@/components/home/FeatureHighlights";
 import { ITServiceRequestHero } from "@/components/home/ITServiceRequestHero";
+import { FuturisticBackground } from "@/components/FuturisticBackground";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background">
-      <SEO 
-        title="Zion - The Tech & AI Marketplace" 
-        description="Discover top AI and tech talent, services, and equipment in one place."
-        keywords="AI, technology, marketplace, services, talent"
-        canonical="https://app.ziontechgroup.com/"
-      />
+    <FuturisticBackground intensity="medium" showParticles={true} showGrid={true} showNeon={true}>
+      <div className="min-h-screen bg-background">
+        <SEO 
+          title="Zion Tech Group - AI-Powered Micro SAAS & IT Services Marketplace" 
+          description="Discover cutting-edge AI solutions, micro SAAS tools, enterprise IT services, and connect with top tech talent. Transform your business with Zion's comprehensive technology ecosystem."
+          keywords="AI services, micro SAAS, IT consulting, cloud migration, cybersecurity, AI development, tech talent, enterprise solutions"
+          canonical="https://ziontechgroup.com/"
+        />
 
-      <ITServiceRequestHero />
+        <ITServiceRequestHero />
 
-      <HeroSection />
-      
-      <QuickAccess />
-      
-      <FeatureCTAs />
-      
-      <FeatureHighlights />
-      
-      <CategoriesSection />
-      <BenefitsSection />
-      <HowItWorksSection />
-      <FeaturedListingsSection />
-      <NewsletterSection />
-    </div>
+        <HeroSection />
+        
+        <QuickAccess />
+        
+        <FeatureCTAs />
+        
+        <FeatureHighlights />
+        
+        <CategoriesSection />
+        <BenefitsSection />
+        <HowItWorksSection />
+        <FeaturedListingsSection />
+        <NewsletterSection />
+      </div>
+    </FuturisticBackground>
   );
 }
