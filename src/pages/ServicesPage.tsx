@@ -4,8 +4,9 @@ import { ProductListing } from "@/types/listings";
 import { TrustedBySection } from "@/components/TrustedBySection";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Globe } from "lucide-react";
+import { Globe, Zap, Shield, Cloud, Database, Target, Smartphone, Link as LinkIcon } from "lucide-react";
 import { useEffect, useState } from "react";
+import { FEATURED_SERVICES } from "@/data/expandedServices";
 
 // Sample service listings
 const SERVICE_LISTINGS: ProductListing[] = [
@@ -244,6 +245,12 @@ export default function ServicesPage() {
                 Global IT Onsite Services
               </Button>
             </Link>
+            <Link to="/expanded-services">
+              <Button variant="outline" className="border-zion-purple text-zion-cyan hover:bg-zion-purple/10">
+                <Zap className="h-4 w-4 mr-2" />
+                Enterprise Solutions
+              </Button>
+            </Link>
             <Link to="/request-quote">
               <Button className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white">
                 Request a Quote
@@ -252,6 +259,69 @@ export default function ServicesPage() {
           </div>
         </div>
       </div>
+
+      {/* Featured Enterprise Services Section */}
+      <div className="py-16 bg-white dark:bg-slate-900">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+              Featured Enterprise Solutions
+            </h2>
+            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              Discover our most popular enterprise technology services designed to transform your business operations.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            {FEATURED_SERVICES.slice(0, 3).map(service => (
+              <div key={service.id} className="bg-white dark:bg-slate-800 rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                <div className="flex items-center space-x-2 mb-3">
+                  {service.category === 'AI & Automation' && <Zap className="w-5 h-5 text-blue-500" />}
+                  {service.category === 'Cybersecurity' && <Shield className="w-5 h-5 text-red-500" />}
+                  {service.category === 'Cloud & DevOps' && <Cloud className="w-5 h-5 text-green-500" />}
+                  {service.category === 'Data & Analytics' && <Database className="w-5 h-5 text-purple-500" />}
+                  {service.category === 'Digital Transformation' && <Target className="w-5 h-5 text-indigo-500" />}
+                  {service.category === 'IoT & Edge Computing' && <Smartphone className="w-5 h-5 text-orange-500" />}
+                  {service.category === 'Blockchain & Web3' && <LinkIcon className="w-5 h-5 text-cyan-500" />}
+                  <span className="text-sm font-medium text-gray-600 dark:text-gray-300">{service.category}</span>
+                </div>
+                
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+                  {service.title}
+                </h3>
+                
+                <p className="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
+                  {service.description}
+                </p>
+                
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-2xl font-bold text-blue-600">
+                    ${service.price.toLocaleString()}
+                  </span>
+                  <span className="text-sm text-gray-500">
+                    {service.pricingModel.replace('-', ' ')}
+                  </span>
+                </div>
+                
+                <Button asChild className="w-full" size="sm">
+                  <Link to={`/service/${service.id}`}>
+                    Learn More
+                  </Link>
+                </Button>
+              </div>
+            ))}
+          </div>
+          
+          <div className="text-center">
+            <Button asChild size="lg" variant="outline">
+              <Link to="/expanded-services">
+                View All Enterprise Services
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </div>
+
       <DynamicListingPage 
         title="IT & AI Services"
         description="Find expert technology service providers for your business needs, from AI development to infrastructure management."
