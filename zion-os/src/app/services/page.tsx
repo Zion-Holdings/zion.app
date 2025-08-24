@@ -1,676 +1,297 @@
-"use client";
-
-import { useState } from "react";
-
-interface Service {
-  id: string;
-  name: string;
-  category: "AI Services" | "IT Services" | "Micro SAAS" | "Digital Economy";
-  description: string;
-  features: string[];
-  pricing: string;
-  startingPrice: number;
-  contactLink: string;
-  icon: string;
-  popular?: boolean;
-}
-
-const services: Service[] = [
-  // AI Services
-  {
-    id: "zion-gpt",
-    name: "ZionGPT Core",
-    category: "AI Services",
-    description: "Enterprise-grade AI assistant with custom knowledge base integration, multi-language support, and advanced reasoning capabilities.",
-    features: [
-      "Custom knowledge base training",
-      "Multi-language support (100+ languages)",
-      "Advanced reasoning and problem-solving",
-      "API integration and webhooks",
-      "Real-time learning and adaptation",
-      "Enterprise security and compliance"
-    ],
-    pricing: "Starting at $299/month",
-    startingPrice: 299,
-    contactLink: "mailto:kleber@ziontechgroup.com?subject=ZionGPT%20Core%20Inquiry",
-    icon: "🤖"
-  },
-  {
-    id: "resume-ai",
-    name: "Resume Builder + Proposal AI",
-    category: "AI Services",
-    description: "AI-powered resume creation and business proposal generation with industry-specific templates and optimization.",
-    features: [
-      "AI-powered content generation",
-      "Industry-specific templates",
-      "ATS optimization",
-      "Real-time collaboration",
-      "Export to multiple formats",
-      "Performance analytics"
-    ],
-    pricing: "Starting at $49/month",
-    startingPrice: 49,
-    contactLink: "mailto:kleber@ziontechgroup.com?subject=Resume%20AI%20Inquiry",
-    icon: "📝"
-  },
-  {
-    id: "ai-moderation",
-    name: "AI Content Moderation",
-    category: "AI Services",
-    description: "Automated content moderation system for platforms, ensuring compliance and maintaining community standards.",
-    features: [
-      "Real-time content analysis",
-      "Multi-language detection",
-      "Custom policy configuration",
-      "Bias detection and mitigation",
-      "Audit trails and reporting",
-      "API integration"
-    ],
-    pricing: "Starting at $199/month",
-    startingPrice: 199,
-    contactLink: "mailto:kleber@ziontechgroup.com?subject=AI%20Moderation%20Inquiry",
-    icon: "🛡️"
-  },
-  {
-    id: "ai-analytics",
-    name: "AI Business Intelligence",
-    category: "AI Services",
-    description: "Advanced analytics and business intelligence powered by AI, providing actionable insights and predictive modeling.",
-    features: [
-      "Predictive analytics",
-      "Natural language queries",
-      "Automated reporting",
-      "Real-time dashboards",
-      "Data visualization",
-      "Custom ML models"
-    ],
-    pricing: "Starting at $399/month",
-    startingPrice: 399,
-    contactLink: "mailto:kleber@ziontechgroup.com?subject=AI%20Analytics%20Inquiry",
-    icon: "📊"
-  },
-
-  // IT Services
-  {
-    id: "cloud-migration",
-    name: "Cloud Migration & DevOps",
-    category: "IT Services",
-    description: "End-to-end cloud migration services with DevOps implementation, ensuring smooth transitions and optimal performance.",
-    features: [
-      "Multi-cloud strategy planning",
-      "Infrastructure as Code (IaC)",
-      "CI/CD pipeline setup",
-      "Performance optimization",
-      "Security and compliance",
-      "24/7 monitoring and support"
-    ],
-    pricing: "Starting at $5,000",
-    startingPrice: 5000,
-    contactLink: "mailto:kleber@ziontechgroup.com?subject=Cloud%20Migration%20Inquiry",
-    icon: "☁️"
-  },
-  {
-    id: "cybersecurity",
-    name: "Cybersecurity & Compliance",
-    category: "IT Services",
-    description: "Comprehensive cybersecurity solutions including penetration testing, compliance audits, and security infrastructure setup.",
-    features: [
-      "Penetration testing",
-      "Security audits and assessments",
-      "Compliance frameworks (SOC2, ISO27001)",
-      "Incident response planning",
-      "Security awareness training",
-      "Ongoing monitoring and support"
-    ],
-    pricing: "Starting at $3,500",
-    startingPrice: 3500,
-    contactLink: "mailto:kleber@ziontechgroup.com?subject=Cybersecurity%20Inquiry",
-    icon: "🔒"
-  },
-  {
-    id: "network-infrastructure",
-    name: "Network Infrastructure",
-    category: "IT Services",
-    description: "Design, implementation, and maintenance of enterprise-grade network infrastructure and connectivity solutions.",
-    features: [
-      "Network design and planning",
-      "Hardware procurement and setup",
-      "Wireless network optimization",
-      "VPN and remote access",
-      "Network security implementation",
-      "Ongoing maintenance and support"
-    ],
-    pricing: "Starting at $2,500",
-    startingPrice: 2500,
-    contactLink: "mailto:kleber@ziontechgroup.com?subject=Network%20Infrastructure%20Inquiry",
-    icon: "🌐"
-  },
-  {
-    id: "it-consulting",
-    name: "IT Strategy & Consulting",
-    category: "IT Services",
-    description: "Strategic IT consulting services to help organizations align technology with business objectives and digital transformation goals.",
-    features: [
-      "Technology roadmap planning",
-      "Digital transformation strategy",
-      "Vendor selection and management",
-      "Cost optimization analysis",
-      "Risk assessment and mitigation",
-      "Change management support"
-    ],
-    pricing: "Starting at $150/hour",
-    startingPrice: 150,
-    contactLink: "mailto:kleber@ziontechgroup.com?subject=IT%20Consulting%20Inquiry",
-    icon: "💡"
-  },
-
-  // Micro SAAS
-  {
-    id: "marketplace-platform",
-    name: "Digital Marketplace Platform",
-    category: "Micro SAAS",
-    description: "White-label marketplace solution for jobs, talent, and projects with integrated payment processing and governance.",
-    features: [
-      "Custom branding and theming",
-      "Multi-currency support",
-      "Integrated payment gateways",
-      "User management and roles",
-      "Analytics and reporting",
-      "Mobile-responsive design"
-    ],
-    pricing: "Starting at $999/month",
-    startingPrice: 999,
-    contactLink: "mailto:kleber@ziontechgroup.com?subject=Marketplace%20Platform%20Inquiry",
-    icon: "🏪"
-  },
-  {
-    id: "token-system",
-    name: "Token Economy Platform",
-    category: "Micro SAAS",
-    description: "Complete token system with rewards, governance, and economic incentives for community engagement and loyalty.",
-    features: [
-      "Custom token creation",
-      "Reward distribution system",
-      "Governance voting mechanisms",
-      "Staking and liquidity pools",
-      "Multi-chain support",
-      "Analytics and reporting"
-    ],
-    pricing: "Starting at $799/month",
-    startingPrice: 799,
-    contactLink: "mailto:kleber@ziontechgroup.com?subject=Token%20System%20Inquiry",
-    icon: "🪙"
-  },
-  {
-    id: "kyc-aml",
-    name: "KYC/AML Verification System",
-    category: "Micro SAAS",
-    description: "Comprehensive identity verification and compliance system for financial services and regulated industries.",
-    features: [
-      "Document verification",
-      "Biometric authentication",
-      "Compliance reporting",
-      "Risk scoring",
-      "Multi-jurisdiction support",
-      "API integration"
-    ],
-    pricing: "Starting at $299/month",
-    startingPrice: 299,
-    contactLink: "mailto:kleber@ziontechgroup.com?subject=KYC%20AML%20Inquiry",
-    icon: "🆔"
-  },
-  {
-    id: "dao-platform",
-    name: "DAO Governance Platform",
-    category: "Micro SAAS",
-    description: "Complete DAO platform with proposal creation, voting mechanisms, and treasury management for decentralized organizations.",
-    features: [
-      "Proposal creation and management",
-      "Multiple voting mechanisms",
-      "Treasury management",
-      "Member onboarding",
-      "Governance analytics",
-      "Integration with major wallets"
-    ],
-    pricing: "Starting at $599/month",
-    startingPrice: 599,
-    contactLink: "mailto:kleber@ziontechgroup.com?subject=DAO%20Platform%20Inquiry",
-    icon: "🏛️"
-  },
-
-  // Digital Economy
-  {
-    id: "zion-os",
-    name: "Zion OS - Digital Economy Platform",
-    category: "Digital Economy",
-    description: "Complete sovereign digital economy platform with marketplace, governance, identity, and AI-powered tools.",
-    features: [
-      "One-click deployment",
-      "Custom vertical markets",
-      "Multi-language support",
-      "Regional customization",
-      "AI-powered tools",
-      "White-label solutions"
-    ],
-    pricing: "Starting at $1,999/month",
-    startingPrice: 1999,
-    contactLink: "mailto:kleber@ziontechgroup.com?subject=Zion%20OS%20Inquiry",
-    icon: "🚀",
-    popular: true
-  },
-  {
-    id: "incubator-grants",
-    name: "Incubator & Grants Platform",
-    category: "Digital Economy",
-    description: "Platform for managing startup incubators, grant programs, and funding distribution with transparent governance.",
-    features: [
-      "Application management",
-      "Review and scoring systems",
-      "Fund distribution tracking",
-      "Progress monitoring",
-      "Impact measurement",
-      "Reporting and analytics"
-    ],
-    pricing: "Starting at $899/month",
-    startingPrice: 899,
-    contactLink: "mailto:kleber@ziontechgroup.com?subject=Incubator%20Grants%20Inquiry",
-    icon: "🌱"
-  },
-  {
-    id: "academy-platform",
-    name: "Zion Academy Platform",
-    category: "Digital Economy",
-    description: "Comprehensive learning management system with AI-powered content creation, assessment, and certification.",
-    features: [
-      "AI content generation",
-      "Interactive assessments",
-      "Certification tracking",
-      "Learning analytics",
-      "Multi-format support",
-      "Mobile learning"
-    ],
-    pricing: "Starting at $399/month",
-    startingPrice: 399,
-    contactLink: "mailto:kleber@ziontechgroup.com?subject=Academy%20Platform%20Inquiry",
-    icon: "🎓"
-  },
-  {
-    id: "blockchain-identity",
-    name: "Blockchain Identity & Credentials",
-    category: "Digital Economy",
-    description: "Self-sovereign identity solution with verifiable credentials, zero-knowledge proofs, and cross-platform compatibility.",
-    features: [
-      "Self-sovereign identity",
-      "Verifiable credentials",
-      "Zero-knowledge proofs",
-      "Cross-platform compatibility",
-      "Privacy-preserving verification",
-      "Multi-chain support"
-    ],
-    pricing: "Starting at $699/month",
-    startingPrice: 699,
-    contactLink: "mailto:kleber@ziontechgroup.com?subject=Blockchain%20Identity%20Inquiry",
-    icon: "🆔"
-  },
-  {
-    id: "ai-legal-assistant",
-    name: "AI Legal Assistant",
-    category: "AI Services",
-    description: "Intelligent legal research, document analysis, and contract review powered by advanced AI and legal knowledge bases.",
-    features: [
-      "Legal research automation",
-      "Contract analysis and review",
-      "Compliance checking",
-      "Legal document generation",
-      "Case law research",
-      "Regulatory updates"
-    ],
-    pricing: "Starting at $599/month",
-    startingPrice: 599,
-    contactLink: "mailto:kleber@ziontechgroup.com?subject=AI%20Legal%20Assistant%20Inquiry",
-    icon: "⚖️"
-  },
-  {
-    id: "quantum-computing",
-    name: "Quantum Computing Solutions",
-    category: "AI Services",
-    description: "Quantum computing consulting, algorithm development, and hybrid quantum-classical solutions for complex optimization problems.",
-    features: [
-      "Quantum algorithm development",
-      "Hybrid quantum-classical solutions",
-      "Optimization problem solving",
-      "Quantum machine learning",
-      "Performance benchmarking",
-      "Expert consultation"
-    ],
-    pricing: "Starting at $2,999/month",
-    startingPrice: 2999,
-    contactLink: "mailto:kleber@ziontechgroup.com?subject=Quantum%20Computing%20Inquiry",
-    icon: "⚛️"
-  },
-  {
-    id: "edge-computing",
-    name: "Edge Computing Infrastructure",
-    category: "IT Services",
-    description: "Edge computing solutions for IoT, real-time processing, and distributed computing with low-latency performance.",
-    features: [
-      "Edge node deployment",
-      "Real-time data processing",
-      "IoT integration",
-      "Low-latency networking",
-      "Distributed computing",
-      "Edge AI deployment"
-    ],
-    pricing: "Starting at $1,500/month",
-    startingPrice: 1500,
-    contactLink: "mailto:kleber@ziontechgroup.com?subject=Edge%20Computing%20Inquiry",
-    icon: "🌐"
-  },
-  {
-    id: "metaverse-platform",
-    name: "Metaverse Development Platform",
-    category: "Digital Economy",
-    description: "Complete metaverse platform with 3D environments, virtual events, NFT integration, and social interaction tools.",
-    features: [
-      "3D environment creation",
-      "Virtual event hosting",
-      "NFT integration",
-      "Social interaction tools",
-      "Cross-platform compatibility",
-      "Custom avatars and assets"
-    ],
-    pricing: "Starting at $1,799/month",
-    startingPrice: 1799,
-    contactLink: "mailto:kleber@ziontechgroup.com?subject=Metaverse%20Platform%20Inquiry",
-    icon: "🌌"
-  },
-  {
-    id: "ai-healthcare",
-    name: "AI Healthcare Solutions",
-    category: "AI Services",
-    description: "AI-powered healthcare solutions including diagnostic assistance, patient monitoring, and medical research automation.",
-    features: [
-      "Medical image analysis",
-      "Patient data analytics",
-      "Diagnostic assistance",
-      "Drug discovery support",
-      "Clinical trial optimization",
-      "Healthcare compliance"
-    ],
-    pricing: "Starting at $899/month",
-    startingPrice: 899,
-    contactLink: "mailto:kleber@ziontechgroup.com?subject=AI%20Healthcare%20Inquiry",
-    icon: "🏥"
-  },
-  {
-    id: "fintech-platform",
-    name: "FinTech Platform Solutions",
-    category: "Micro SAAS",
-    description: "Complete financial technology platform with payment processing, lending, investment management, and regulatory compliance.",
-    features: [
-      "Payment processing",
-      "Lending automation",
-      "Investment management",
-      "Regulatory compliance",
-      "Risk assessment",
-      "Multi-currency support"
-    ],
-    pricing: "Starting at $1,299/month",
-    startingPrice: 1299,
-    contactLink: "mailto:kleber@ziontechgroup.com?subject=FinTech%20Platform%20Inquiry",
-    icon: "💰"
-  },
-  {
-    id: "supply-chain-ai",
-    name: "AI-Powered Supply Chain",
-    category: "AI Services",
-    description: "Intelligent supply chain optimization with demand forecasting, inventory management, and logistics automation.",
-    features: [
-      "Demand forecasting",
-      "Inventory optimization",
-      "Logistics automation",
-      "Supplier management",
-      "Risk assessment",
-      "Performance analytics"
-    ],
-    pricing: "Starting at $799/month",
-    startingPrice: 799,
-    contactLink: "mailto:kleber@ziontechgroup.com?subject=Supply%20Chain%20AI%20Inquiry",
-    icon: "📦"
-  },
-  {
-    id: "iot-platform",
-    name: "IoT Platform & Analytics",
-    category: "IT Services",
-    description: "Comprehensive IoT platform with device management, data collection, real-time analytics, and automation capabilities.",
-    features: [
-      "Device management",
-      "Data collection",
-      "Real-time analytics",
-      "Automation workflows",
-      "Security protocols",
-      "Scalable infrastructure"
-    ],
-    pricing: "Starting at $699/month",
-    startingPrice: 699,
-    contactLink: "mailto:kleber@ziontechgroup.com?subject=IoT%20Platform%20Inquiry",
-    icon: "🔌"
-  }
-];
-
-const categories = ["All", "AI Services", "IT Services", "Micro SAAS", "Digital Economy"];
-
 export default function ServicesPage() {
-  const [selectedCategory, setSelectedCategory] = useState("All");
-  const [searchTerm, setSearchTerm] = useState("");
-
-  const filteredServices = services.filter(service => {
-    const matchesCategory = selectedCategory === "All" || service.category === selectedCategory;
-    const matchesSearch = service.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         service.description.toLowerCase().includes(searchTerm.toLowerCase());
-    return matchesCategory && matchesSearch;
-  });
-
-  const sortedServices = filteredServices.sort((a, b) => a.startingPrice - b.startingPrice);
-
   return (
-    <div className="space-y-8">
-      {/* Header */}
-      <div className="text-center space-y-4">
-        <h1 className="text-4xl font-bold">Our Services & Solutions</h1>
-        <p className="text-xl opacity-80 max-w-3xl mx-auto">
-          Comprehensive micro SAAS, IT services, and AI solutions to power your digital transformation. 
-          From enterprise AI to complete digital economy platforms.
-        </p>
-      </div>
+    <div className="min-h-screen bg-white">
+      {/* Hero Section */}
+      <section className="bg-gradient-to-r from-green-600 to-blue-600 text-white py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            Our Services
+          </h1>
+          <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto">
+            Comprehensive technology solutions designed to accelerate your digital transformation and drive business growth.
+          </p>
+        </div>
+      </section>
 
-      {/* Contact Info */}
-      <div className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-lg p-6 border border-white/10">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
-          <div>
-            <div className="font-semibold text-blue-400">📱 Contact Us</div>
-            <div className="text-sm opacity-80">+1 302 464 0950</div>
+      {/* Services Overview */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Comprehensive Service Portfolio
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              From AI automation to cybersecurity, we provide end-to-end solutions for modern businesses
+            </p>
           </div>
-          <div>
-            <div className="font-semibold text-purple-400">✉️ Email</div>
-            <div className="text-sm opacity-80">kleber@ziontechgroup.com</div>
-          </div>
-          <div>
-            <div className="font-semibold text-green-400">📍 Location</div>
-            <div className="text-sm opacity-80">364 E Main St STE 1008<br />Middletown DE 19709</div>
-          </div>
-        </div>
-      </div>
 
-      {/* Service Category Navigation */}
-      <div className="space-y-6">
-        <div className="text-center">
-          <h2 className="text-2xl font-bold mb-4">Explore Our Service Categories</h2>
-          <p className="opacity-80">Click on a category to explore specialized solutions</p>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-          <a href="/services/ai-solutions" className="p-6 rounded-lg border border-white/10 bg-gradient-to-br from-blue-600/10 to-purple-600/10 hover:from-blue-600/20 hover:to-purple-600/20 transition-all text-center">
-            <div className="text-4xl mb-3">🤖</div>
-            <h3 className="font-semibold mb-2">AI Solutions</h3>
-            <p className="text-sm opacity-80">Advanced AI services and automation</p>
-          </a>
-          <a href="/services/it-solutions" className="p-6 rounded-lg border border-white/10 bg-gradient-to-br from-green-600/10 to-blue-600/10 hover:from-green-600/20 hover:to-blue-600/20 transition-all text-center">
-            <div className="text-4xl mb-3">💻</div>
-            <h3 className="font-semibold mb-2">IT Solutions</h3>
-            <p className="text-sm opacity-80">Enterprise IT and infrastructure</p>
-          </a>
-          <a href="/services/micro-saas" className="p-6 rounded-lg border border-white/10 bg-gradient-to-br from-purple-600/10 to-pink-600/10 hover:from-purple-600/20 hover:to-pink-600/20 transition-all text-center">
-            <div className="text-4xl mb-3">🚀</div>
-            <h3 className="font-semibold mb-2">Micro SAAS</h3>
-            <p className="text-sm opacity-80">Innovative software solutions</p>
-          </a>
-          <a href="/services" className="p-6 rounded-lg border border-white/10 bg-gradient-to-br from-orange-600/10 to-red-600/10 hover:from-orange-600/20 hover:to-red-600/20 transition-all text-center">
-            <div className="text-4xl mb-3">🌟</div>
-            <h3 className="font-semibold mb-2">All Services</h3>
-            <p className="text-sm opacity-80">Complete service overview</p>
-          </a>
-        </div>
-      </div>
-
-      {/* Filters */}
-      <div className="flex flex-col sm:flex-row gap-4 items-center justify-between">
-        <div className="flex gap-2 flex-wrap">
-          {categories.map(category => (
-            <button
-              key={category}
-              onClick={() => setSelectedCategory(category)}
-              className={`px-4 py-2 rounded-full text-sm transition-colors ${
-                selectedCategory === category
-                  ? "bg-blue-600 text-white"
-                  : "bg-white/10 text-white/80 hover:bg-white/20"
-              }`}
-            >
-              {category}
-            </button>
-          ))}
-        </div>
-        <input
-          type="text"
-          placeholder="Search services..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          className="px-4 py-2 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-blue-500"
-        />
-      </div>
-
-      {/* Services Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {sortedServices.map(service => (
-          <div
-            key={service.id}
-            className={`relative rounded-lg border p-6 transition-all hover:scale-105 ${
-              service.popular
-                ? "border-blue-500/50 bg-gradient-to-br from-blue-600/10 to-purple-600/10"
-                : "border-white/10 bg-white/5 hover:border-white/20"
-            }`}
-          >
-            {service.popular && (
-              <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-semibold">
-                  Most Popular
-                </span>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* AI & Automation Services */}
+            <div className="bg-gray-50 p-8 rounded-xl">
+              <div className="flex items-center mb-6">
+                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                  <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900">AI & Automation Services</h3>
               </div>
-            )}
-            
-            <div className="text-4xl mb-4">{service.icon}</div>
-            <div className="mb-2">
-              <span className="text-xs px-2 py-1 rounded-full bg-white/10 text-white/60">
-                {service.category}
-              </span>
-            </div>
-            <h3 className="text-xl font-semibold mb-2">{service.name}</h3>
-            <p className="text-sm opacity-80 mb-4">{service.description}</p>
-            
-            <div className="space-y-3 mb-4">
-              <div className="text-sm">
-                <span className="font-semibold text-blue-400">Key Features:</span>
-                <ul className="mt-2 space-y-1">
-                  {service.features.slice(0, 3).map((feature, index) => (
-                    <li key={index} className="flex items-center gap-2">
-                      <span className="text-green-400">✓</span>
-                      <span className="text-xs opacity-80">{feature}</span>
-                    </li>
-                  ))}
-                  {service.features.length > 3 && (
-                    <li className="text-xs opacity-60">+{service.features.length - 3} more features</li>
-                  )}
-                </ul>
-              </div>
-            </div>
-
-            <div className="border-t border-white/10 pt-4 space-y-3">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-blue-400">{service.pricing}</div>
-                <div className="text-xs opacity-60">Starting price</div>
-              </div>
-              
-              <a
-                href={service.contactLink}
-                className="w-full block text-center bg-gradient-to-r from-blue-600 to-purple-600 text-white py-2 px-4 rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all font-semibold"
-              >
-                Get Started
-              </a>
-              
-              <a
-                href={`https://ziontechgroup.com/services/${service.id}`}
-                className="w-full block text-center text-blue-400 hover:text-blue-300 text-sm underline"
-              >
+              <p className="text-gray-600 mb-6">
+                Transform your business operations with intelligent automation powered by cutting-edge AI technology.
+              </p>
+              <ul className="space-y-3 mb-6">
+                <li className="flex items-center">
+                  <svg className="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  Process Automation & Optimization
+                </li>
+                <li className="flex items-center">
+                  <svg className="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  Intelligent Decision Support Systems
+                </li>
+                <li className="flex items-center">
+                  <svg className="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  Machine Learning Model Development
+                </li>
+                <li className="flex items-center">
+                  <svg className="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  Predictive Analytics & Insights
+                </li>
+              </ul>
+              <a href="/advanced-ai-automation-services" className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium">
                 Learn More
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+
+            {/* Cybersecurity Services */}
+            <div className="bg-gray-50 p-8 rounded-xl">
+              <div className="flex items-center mb-6">
+                <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4">
+                  <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900">Cybersecurity Suite</h3>
+              </div>
+              <p className="text-gray-600 mb-6">
+                Protect your digital assets with enterprise-grade security solutions and compliance automation.
+              </p>
+              <ul className="space-y-3 mb-6">
+                <li className="flex items-center">
+                  <svg className="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  SOC2 Compliance Automation
+                </li>
+                <li className="flex items-center">
+                  <svg className="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  Threat Detection & Response
+                </li>
+                <li className="flex items-center">
+                  <svg className="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  Security Assessment & Auditing
+                </li>
+                <li className="flex items-center">
+                  <svg className="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  Incident Response & Recovery
+                </li>
+              </ul>
+              <a href="/advanced-cybersecurity-suite" className="inline-flex items-center text-green-600 hover:text-green-700 font-medium">
+                Learn More
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+
+            {/* IT Infrastructure Services */}
+            <div className="bg-gray-50 p-8 rounded-xl">
+              <div className="flex items-center mb-6">
+                <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mr-4">
+                  <svg className="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900">IT Infrastructure Services</h3>
+              </div>
+              <p className="text-gray-600 mb-6">
+                Build scalable, resilient IT infrastructure with AI-powered optimization and management.
+              </p>
+              <ul className="space-y-3 mb-6">
+                <li className="flex items-center">
+                  <svg className="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  Cloud Infrastructure Design
+                </li>
+                <li className="flex items-center">
+                  <svg className="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  AI-Powered Asset Management
+                </li>
+                <li className="flex items-center">
+                  <svg className="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  Performance Optimization
+                </li>
+                <li className="flex items-center">
+                  <svg className="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  24/7 Monitoring & Support
+                </li>
+              </ul>
+              <a href="/advanced-it-infrastructure-services" className="inline-flex items-center text-orange-600 hover:text-orange-700 font-medium">
+                Learn More
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+
+            {/* Research & Development */}
+            <div className="bg-gray-50 p-8 rounded-xl">
+              <div className="flex items-center mb-6">
+                <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mr-4">
+                  <svg className="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900">Research & Development</h3>
+              </div>
+              <p className="text-gray-600 mb-6">
+                Push the boundaries of technology with our cutting-edge research and development services.
+              </p>
+              <ul className="space-y-3 mb-6">
+                <li className="flex items-center">
+                  <svg className="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  Autonomous Research Assistants
+                </li>
+                <li className="flex items-center">
+                  <svg className="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  Quantum Computing Research
+                </li>
+                <li className="flex items-center">
+                  <svg className="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  AI Consciousness Evolution
+                </li>
+                <li className="flex items-center">
+                  <svg className="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  Emerging Technology Prototyping
+                </li>
+              </ul>
+              <a href="/ai-autonomous-research-assistant" className="inline-flex items-center text-red-600 hover:text-red-700 font-medium">
+                Learn More
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
               </a>
             </div>
           </div>
-        ))}
-      </div>
+        </div>
+      </section>
+
+      {/* Service Process */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Our Service Delivery Process
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              A proven methodology that ensures successful project delivery and maximum value for our clients
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="text-2xl font-bold text-blue-600">1</span>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Discovery & Analysis</h3>
+              <p className="text-gray-600">
+                We begin by understanding your business needs, current infrastructure, and strategic objectives.
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="text-2xl font-bold text-blue-600">2</span>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Solution Design</h3>
+              <p className="text-gray-600">
+                Our experts design a customized solution that addresses your specific requirements and challenges.
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="text-2xl font-bold text-blue-600">3</span>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Implementation</h3>
+              <p className="text-gray-600">
+                We execute the solution with precision, ensuring minimal disruption to your operations.
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="text-2xl font-bold text-blue-600">4</span>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Optimization & Support</h3>
+              <p className="text-gray-600">
+                Continuous monitoring, optimization, and support to ensure long-term success and ROI.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* CTA Section */}
-      <div className="text-center space-y-6 py-12 bg-gradient-to-r from-blue-600/10 to-purple-600/10 rounded-lg border border-white/10">
-        <h2 className="text-3xl font-bold">Ready to Transform Your Business?</h2>
-        <p className="text-xl opacity-80 max-w-2xl mx-auto">
-          Let's discuss how our services can help you achieve your digital transformation goals. 
-          Get in touch for a personalized consultation and custom solution.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a
-            href="mailto:kleber@ziontechgroup.com?subject=Service%20Consultation%20Request"
-            className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all font-semibold text-lg"
-          >
-            Schedule Consultation
-          </a>
-          <a
-            href="tel:+13024640950"
-            className="border border-white/20 text-white px-8 py-3 rounded-lg hover:bg-white/10 transition-all font-semibold text-lg"
-          >
-            Call Now: +1 302 464 0950
-          </a>
+      <section className="py-20 bg-blue-600 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Ready to Get Started?
+          </h2>
+          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+            Let's discuss how our services can transform your business and drive sustainable growth.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/contact" className="bg-white text-blue-600 px-8 py-3 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-colors">
+              Schedule a Consultation
+            </a>
+            <a href="/solutions" className="border-2 border-white text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
+              View Case Studies
+            </a>
+          </div>
         </div>
-      </div>
-
-      {/* Pricing Comparison */}
-      <div className="space-y-6">
-        <h2 className="text-3xl font-bold text-center">Service Pricing Overview</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          {categories.slice(1).map(category => {
-            const categoryServices = services.filter(s => s.category === category);
-            const avgPrice = categoryServices.reduce((sum, s) => sum + s.startingPrice, 0) / categoryServices.length;
-            const minPrice = Math.min(...categoryServices.map(s => s.startingPrice));
-            
-            return (
-              <div key={category} className="text-center p-4 rounded-lg bg-white/5 border border-white/10">
-                <h3 className="font-semibold mb-2">{category}</h3>
-                <div className="text-2xl font-bold text-blue-400">${Math.round(avgPrice)}</div>
-                <div className="text-sm opacity-60">Average starting price</div>
-                <div className="text-xs opacity-40 mt-1">From ${minPrice}/month</div>
-              </div>
-            );
-          })}
-        </div>
-      </div>
+      </section>
     </div>
   );
 }
