@@ -1,48 +1,63 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
+import { motion } from 'framer-motion';
 
-interface LoadingSpinnerProps extends React.HTMLAttributes<HTMLDivElement> {
+interface LoadingSpinnerProps {
   size?: 'sm' | 'md' | 'lg' | 'xl';
-  variant?: 'default' | 'dots' | 'pulse' | 'ring';
+  color?: 'primary' | 'secondary' | 'white' | 'custom';
+  customColor?: string;
+  className?: string;
   text?: string;
+  showText?: boolean;
 }
 
-export function LoadingSpinner({ 
-  size = 'md', 
-  variant = 'default', 
-  text,
+export function LoadingSpinner({
+  size = 'md',
+  color = 'primary',
+  customColor,
   className,
-  ...props 
+  text = 'Loading...',
+  showText = false
 }: LoadingSpinnerProps) {
   const sizeClasses = {
     sm: 'w-4 h-4',
-    md: 'w-8 h-8',
-    lg: 'w-12 h-12',
-    xl: 'w-16 h-16'
+    md: 'w-6 h-6',
+    lg: 'w-8 h-8',
+    xl: 'w-12 h-12'
   };
 
-  const renderSpinner = () => {
-    switch (variant) {
-      case 'dots':
-        return <LoadingDots className={cn(sizeClasses[size], className)} />;
-      case 'pulse':
-        return <LoadingPulse className={cn(sizeClasses[size], className)} />;
-      case 'ring':
-        return <LoadingRing className={cn(sizeClasses[size], className)} />;
-      default:
-        return <DefaultSpinner className={cn(sizeClasses[size], className)} />;
-    }
+  const colorClasses = {
+    primary: 'border-zion-purple',
+    secondary: 'border-zion-cyan',
+    white: 'border-white',
+    custom: ''
   };
+
+  const borderColor = customColor || colorClasses[color];
 
   return (
-    <div className="flex flex-col items-center justify-center space-y-4" {...props}>
-      {renderSpinner()}
-      {text && (
-        <motion.p 
-          className="text-sm text-muted-foreground text-center"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+    <div className={cn('flex flex-col items-center justify-center', className)}>
+      <motion.div
+        className={cn(
+          'border-2 border-t-transparent rounded-full animate-spin',
+          sizeClasses[size],
+          borderColor
+        )}
+        animate={{ rotate: 360 }}
+        transition={{
+          duration: 1,
+          repeat: Infinity,
+          ease: "linear"
+        }}
+        role="status"
+        aria-label="Loading"
+      />
+      
+      {showText && (
+        <motion.p
+          className="mt-3 text-sm text-zion-slate-light text-center"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
         >
           {text}
@@ -52,114 +67,63 @@ export function LoadingSpinner({
   );
 }
 
-function DefaultSpinner({ className }: { className?: string }) {
+// Skeleton loading component for content
+export function SkeletonLoader({
+  className,
+  lines = 3,
+  height = 'h-4'
+}: {
+  className?: string;
+  lines?: number;
+  height?: string;
+}) {
   return (
-    <motion.div
-      className={cn("border-2 border-muted border-t-primary rounded-full", className)}
-      animate={{ rotate: 360 }}
-      transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-    />
-  );
-}
-
-function LoadingDots({ className }: { className?: string }) {
-  return (
-    <div className={cn("flex space-x-1", className)}>
-      {[0, 1, 2].map((i) => (
+    <div className={cn('space-y-3', className)}>
+      {Array.from({ length: lines }).map((_, index) => (
         <motion.div
-          key={i}
-          className="w-2 h-2 bg-primary rounded-full"
-          animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.5, 1, 0.5]
-          }}
-          transition={{
-            duration: 1.4,
-            repeat: Infinity,
-            delay: i * 0.2
-          }}
+          key={index}
+          className={cn(
+            'bg-zion-slate-light/20 rounded animate-pulse',
+            height
+          )}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: index * 0.1 }}
         />
       ))}
     </div>
   );
 }
 
-function LoadingPulse({ className }: { className?: string }) {
+// Page loading component
+export function PageLoader({
+  text = 'Loading page...',
+  className
+}: {
+  text?: string;
+  className?: string;
+}) {
   return (
-    <motion.div
-      className={cn("bg-primary rounded-full", className)}
-      animate={{
-        scale: [1, 1.2, 1],
-        opacity: [1, 0.7, 1]
-      }}
-      transition={{
-        duration: 1.5,
-        repeat: Infinity,
-        ease: "easeInOut"
-      }}
-    />
-  );
-}
-
-function LoadingRing({ className }: { className?: string }) {
-  return (
-    <div className={cn("relative", className)}>
-      <motion.div
-        className="absolute inset-0 border-4 border-muted rounded-full"
-        animate={{ rotate: 360 }}
-        transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-      />
-      <motion.div
-        className="absolute inset-0 border-4 border-transparent border-t-primary rounded-full"
-        animate={{ rotate: -360 }}
-        transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
-      />
+    <div className={cn('min-h-screen flex items-center justify-center', className)}>
+      <div className="text-center">
+        <LoadingSpinner size="xl" color="primary" showText text={text} />
+      </div>
     </div>
   );
 }
 
-// Full page loader component
-export function PageLoader({ 
-  text = "Loading...", 
-  className = "min-h-screen",
-  ...props 
-}: LoadingSpinnerProps) {
+// Button loading state
+export function ButtonLoader({
+  size = 'sm',
+  className
+}: {
+  size?: 'sm' | 'md' | 'lg';
+  className?: string;
+}) {
   return (
-    <div className={cn("flex items-center justify-center", className)} {...props}>
-      <LoadingSpinner 
-        size="xl" 
-        variant="ring" 
-        text={text}
-        className="text-primary"
-      />
-    </div>
-  );
-}
-
-// Inline loader for buttons and small spaces
-export function InlineLoader({ className }: { className?: string }) {
-  return (
-    <LoadingSpinner 
-      size="sm" 
-      variant="dots" 
-      className={cn("text-current", className)} 
-    />
-  );
-}
-
-// Section loader for content areas
-export function SectionLoader({ 
-  text = "Loading content...", 
-  className = "py-20",
-  ...props 
-}: LoadingSpinnerProps) {
-  return (
-    <div className={cn("flex items-center justify-center", className)} {...props}>
-      <LoadingSpinner 
-        size="lg" 
-        variant="default" 
-        text={text}
-      />
+    <div className={cn('inline-flex items-center', className)}>
+      <LoadingSpinner size={size} color="white" />
+      <span className="ml-2">Loading...</span>
     </div>
   );
 }

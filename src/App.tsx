@@ -8,8 +8,7 @@ import { WhitelabelProvider } from "./context/WhitelabelContext";
 import { Toaster } from "./components/ui/toaster";
 import { Toaster as SonnerToaster } from "./components/ui/sonner";
 import { ErrorBoundary } from "./components/ErrorBoundary";
-import { PerformanceOptimizer } from "./components/PerformanceOptimizer";
-import { AccessibilityEnhancer } from "./components/AccessibilityEnhancer";
+import { PageLoader } from "./components/ui/LoadingSpinner";
 import {
   AuthRoutes,
   DashboardRoutes,
@@ -23,8 +22,6 @@ import {
   CommunityRoutes,
   DeveloperRoutes
 } from './routes';
-
-// Lazy load components with better error boundaries
 const Home = React.lazy(() => import('./pages/Home'));
 const AIMatcherPage = React.lazy(() => import('./pages/AIMatcher'));
 const TalentDirectory = React.lazy(() => import('./pages/TalentDirectory'));
@@ -72,17 +69,6 @@ const baseRoutes = [
   { path: '/blog/:slug', element: <BlogPost /> },
 ];
 
-// Enhanced loading component with skeleton
-const LoadingFallback = () => (
-  <div className="min-h-screen bg-background flex items-center justify-center">
-    <div className="text-center space-y-4">
-      <div className="w-16 h-16 border-4 border-zion-cyan border-t-transparent rounded-full animate-spin mx-auto"></div>
-      <p className="text-zion-cyan text-lg font-medium">Loading Zion...</p>
-      <p className="text-muted-foreground text-sm">Preparing your AI marketplace experience</p>
-    </div>
-  </div>
-);
-
 const App = () => {
   // Ensure each navigation starts at the top of the page
   useScrollToTop();
@@ -91,7 +77,7 @@ const App = () => {
     <ErrorBoundary>
       <WhitelabelProvider>
         <ThemeProvider defaultTheme="dark">
-          <Suspense fallback={<LoadingFallback />}>
+          <Suspense fallback={<PageLoader text="Loading Zion Tech Group..." />}>
             <Routes>
               {baseRoutes.map(({ path, element }) => (
                 <Route key={path} path={path} element={element} />
@@ -109,12 +95,6 @@ const App = () => {
               <Route path="*" element={<ErrorRoutes />} />
             </Routes>
           </Suspense>
-          
-          {/* Enhanced user experience components */}
-          <PerformanceOptimizer />
-          <AccessibilityEnhancer />
-          
-          {/* Toast notifications */}
           <Toaster />
           <SonnerToaster position="top-right" />
         </ThemeProvider>
