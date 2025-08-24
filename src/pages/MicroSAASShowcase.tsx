@@ -3,18 +3,18 @@ import { SEO } from '@/components/SEO';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Star, Clock, DollarSign, Users, ArrowRight, Sparkles, Brain, Zap, TrendingUp } from 'lucide-react';
+import { Star, Clock, DollarSign, Users, ArrowRight, Cloud, Zap, Shield, TrendingUp } from 'lucide-react';
 import { comprehensiveServices } from '@/data/comprehensiveServices';
 
-export default function AIServicesShowcase() {
-  const aiServices = comprehensiveServices.filter(service => service.category === "AI Services");
+export default function MicroSAASShowcase() {
+  const saasServices = comprehensiveServices.filter(service => service.category === "Micro SAAS");
 
   return (
     <div className="min-h-screen bg-background">
       <SEO 
-        title="AI Services - Zion Tech Group" 
-        description="Discover cutting-edge AI solutions including chatbots, content generation, and business intelligence analytics."
-        keywords="AI services, machine learning, chatbots, content generation, business intelligence, analytics"
+        title="Micro SAAS Solutions - Zion Tech Group" 
+        description="Discover innovative Software-as-a-Service solutions including inventory management, project management, and CRM systems."
+        keywords="Micro SAAS, software solutions, inventory management, project management, CRM, business software"
       />
 
       {/* Hero Section */}
@@ -27,48 +27,48 @@ export default function AIServicesShowcase() {
         
         <div className="container relative z-10 px-4 mx-auto text-center">
           <div className="flex items-center justify-center mb-6">
-            <Brain className="w-12 h-12 text-zion-purple mr-4" />
+            <Cloud className="w-12 h-12 text-zion-purple mr-4" />
             <h1 className="text-5xl md:text-7xl font-bold text-white">
-              AI Services
+              Micro SAAS Solutions
             </h1>
-            <Brain className="w-12 h-12 text-zion-purple ml-4" />
+            <Cloud className="w-12 h-12 text-zion-purple ml-4" />
           </div>
           <p className="text-xl md:text-2xl text-zion-slate-light mb-10 max-w-4xl mx-auto">
-            Transform your business with cutting-edge artificial intelligence solutions. 
-            From intelligent chatbots to predictive analytics, we deliver AI that drives real results.
+            Powerful, affordable software solutions designed for modern businesses. 
+            Streamline operations, boost productivity, and scale efficiently with our cloud-based platforms.
           </p>
           
           <div className="flex flex-wrap justify-center gap-4 mb-12">
             <div className="flex items-center space-x-2 bg-zion-purple/20 px-4 py-2 rounded-full border border-zion-purple/30">
               <Zap className="w-5 h-5 text-zion-purple" />
-              <span className="text-zion-purple font-medium">Machine Learning</span>
+              <span className="text-zion-purple font-medium">Cloud-Based</span>
             </div>
             <div className="flex items-center space-x-2 bg-zion-cyan/20 px-4 py-2 rounded-full border border-zion-cyan/30">
-              <TrendingUp className="w-5 h-5 text-zion-cyan" />
-              <span className="text-zion-cyan font-medium">Predictive Analytics</span>
+              <Shield className="w-5 h-5 text-zion-cyan" />
+              <span className="text-zion-cyan font-medium">Enterprise Security</span>
             </div>
             <div className="flex items-center space-x-2 bg-zion-purple/20 px-4 py-2 rounded-full border border-zion-purple/30">
-              <Sparkles className="w-5 h-5 text-zion-purple" />
-              <span className="text-zion-purple font-medium">Natural Language Processing</span>
+              <TrendingUp className="w-5 h-5 text-zion-purple" />
+              <span className="text-zion-purple font-medium">Scalable Growth</span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* AI Services Grid */}
+      {/* SAAS Services Grid */}
       <section className="py-20 bg-zion-blue-dark">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Our AI Solutions
+              Our SAAS Platforms
             </h2>
             <p className="text-xl text-zion-slate-light max-w-3xl mx-auto">
-              Each service is designed with enterprise-grade AI technology and proven methodologies to deliver measurable business impact.
+              Each platform is built with modern technology, designed for ease of use, and optimized for business growth.
             </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {aiServices.map((service) => (
+            {saasServices.map((service) => (
               <Card key={service.id} className="bg-zion-blue-light border-zion-purple/20 hover:border-zion-purple/40 transition-all duration-300 hover:scale-105 group">
                 <div className="relative overflow-hidden rounded-t-lg">
                   <img
@@ -83,7 +83,7 @@ export default function AIServicesShowcase() {
                   </div>
                   <div className="absolute bottom-4 left-4">
                     <Badge variant="secondary" className="bg-zion-blue-dark/80 text-zion-cyan">
-                      AI Score: {service.aiScore}
+                      {service.pricingModel === 'monthly' ? 'Monthly' : 'One-time'}
                     </Badge>
                   </div>
                 </div>
@@ -118,7 +118,7 @@ export default function AIServicesShowcase() {
 
                   {/* Features */}
                   <div className="mb-6">
-                    <h4 className="text-white font-semibold mb-3">Key Features:</h4>
+                    <h4 className="text-white font-semibold mb-3">Platform Features:</h4>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                       {service.features.map((feature, index) => (
                         <div key={index} className="flex items-center space-x-2">
@@ -154,11 +154,11 @@ export default function AIServicesShowcase() {
                     </div>
                   </div>
 
-                  {/* Delivery and Contact */}
+                  {/* Setup and Contact */}
                   <div className="flex items-center justify-between mb-6">
                     <div className="flex items-center space-x-2 text-zion-slate-light">
                       <Clock className="w-4 h-4" />
-                      <span>Delivery: {service.estimatedDelivery}</span>
+                      <span>Setup: {service.estimatedDelivery}</span>
                     </div>
                     <div className="flex items-center space-x-2 text-zion-slate-light">
                       <Users className="w-4 h-4" />
@@ -191,7 +191,7 @@ export default function AIServicesShowcase() {
                     asChild
                   >
                     <a href={`mailto:${service.contactInfo.email}?subject=Inquiry about ${service.title}`}>
-                      Get Quote
+                      Start Free Trial
                       <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                     </a>
                   </Button>
@@ -202,48 +202,99 @@ export default function AIServicesShowcase() {
         </div>
       </section>
 
-      {/* Why Choose Our AI Services */}
+      {/* Why Choose Our SAAS Solutions */}
       <section className="py-20 bg-zion-blue">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Why Choose Zion AI Services?
+              Why Choose Zion SAAS Solutions?
             </h2>
             <p className="text-xl text-zion-slate-light max-w-3xl mx-auto">
-              We combine cutting-edge technology with proven business strategies to deliver AI solutions that drive real results.
+              We deliver enterprise-grade software with the simplicity and affordability that growing businesses need.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
               <div className="w-20 h-20 bg-zion-purple/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Brain className="w-10 h-10 text-zion-purple" />
+                <Cloud className="w-10 h-10 text-zion-purple" />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4">Advanced AI Technology</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">Cloud-First Architecture</h3>
               <p className="text-zion-slate-light">
-                Built with state-of-the-art machine learning models and natural language processing capabilities.
+                Built for the cloud with 99.9% uptime, automatic backups, and seamless scalability.
               </p>
             </div>
             
             <div className="text-center">
               <div className="w-20 h-20 bg-zion-cyan/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                <TrendingUp className="w-10 h-10 text-zion-cyan" />
+                <Shield className="w-10 h-10 text-zion-cyan" />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4">Proven Results</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">Enterprise Security</h3>
               <p className="text-zion-slate-light">
-                Track record of delivering measurable business impact and ROI for our clients.
+                SOC 2 compliant with advanced encryption, role-based access, and audit trails.
               </p>
             </div>
             
             <div className="text-center">
               <div className="w-20 h-20 bg-zion-purple/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Zap className="w-10 h-10 text-zion-purple" />
+                <TrendingUp className="w-10 h-10 text-zion-purple" />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4">Rapid Implementation</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">Scalable Growth</h3>
               <p className="text-zion-slate-light">
-                Quick setup and deployment with ongoing support and optimization.
+                Start small and grow seamlessly with flexible pricing and feature expansion.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing Comparison */}
+      <section className="py-20 bg-zion-blue-dark">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Affordable Pricing
+            </h2>
+            <p className="text-xl text-zion-slate-light max-w-3xl mx-auto">
+              Transparent pricing with no hidden fees. Choose the plan that fits your business needs.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {saasServices.map((service) => (
+              <Card key={service.id} className="bg-zion-blue-light border-zion-purple/20 text-center">
+                <CardHeader className="pb-4">
+                  <CardTitle className="text-2xl text-white">{service.title}</CardTitle>
+                  <CardDescription className="text-zion-slate-light">
+                    {service.subcategory}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="pt-0">
+                  <div className="mb-6">
+                    <span className="text-4xl font-bold text-white">{service.currency}{service.price}</span>
+                    <span className="text-zion-slate-light ml-2">
+                      /{service.pricingModel === 'monthly' ? 'month' : 'project'}
+                    </span>
+                  </div>
+                  <ul className="space-y-3 mb-8 text-left">
+                    {service.features.slice(0, 4).map((feature, index) => (
+                      <li key={index} className="flex items-center space-x-2">
+                        <div className="w-2 h-2 bg-zion-purple rounded-full"></div>
+                        <span className="text-zion-slate-light text-sm">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <Button 
+                    className="w-full bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white"
+                    asChild
+                  >
+                    <a href={`mailto:${service.contactInfo.email}?subject=Inquiry about ${service.title}`}>
+                      Get Started
+                    </a>
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
