@@ -77,11 +77,12 @@ const config: Config = {
           dark: "#000000",
         },
         "zion-neon": {
-          purple: "#b91c5c",
-          cyan: "#06b6d4",
-          green: "#10b981",
-          pink: "#ec4899",
-          yellow: "#f59e0b",
+          cyan: "#22ddd2",
+          purple: "#8c15e9",
+          blue: "#2e73ea",
+          pink: "#ff0080",
+          green: "#00ff88",
+          yellow: "#ffff00",
         },
       },
       borderRadius: {
@@ -101,16 +102,35 @@ const config: Config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        "float": {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-20px)" },
+        },
+        "glow": {
+          "0%, 100%": { boxShadow: "0 0 20px rgba(34, 221, 210, 0.3)" },
+          "50%": { boxShadow: "0 0 40px rgba(34, 221, 210, 0.6)" },
+        },
+        "neon-pulse": {
+          "0%, 100%": { 
+            textShadow: "0 0 5px rgba(34, 221, 210, 0.5), 0 0 10px rgba(34, 221, 210, 0.3)" 
+          },
+          "50%": { 
+            textShadow: "0 0 20px rgba(34, 221, 210, 0.8), 0 0 30px rgba(34, 221, 210, 0.5)" 
+          },
+        },
+        "gradient-shift": {
+          "0%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
+          "100%": { backgroundPosition: "0% 50%" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "float": "float 6s ease-in-out infinite",
-        "glow": "glow 3s ease-in-out infinite",
+        "glow": "glow 2s ease-in-out infinite alternate",
         "neon-pulse": "neon-pulse 2s ease-in-out infinite",
         "gradient-shift": "gradient-shift 3s ease infinite",
-        "bounce-slow": "bounce 3s infinite",
-        "pulse-slow": "pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite",
       },
     },
   },

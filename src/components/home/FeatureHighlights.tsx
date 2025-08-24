@@ -12,18 +12,18 @@ interface FeatureHighlightsProps {
 export function FeatureHighlights({ className, style }: FeatureHighlightsProps) {
   const highlightsData = [
     {
-      title: "For Talent Seekers",
+      title: "Micro SAAS Solutions",
       features: [
-        "AI-powered talent matching based on your specific project requirements",
-        "Verified profiles with skills validation and credential checking",
-        "Transparent pricing and no hidden fees",
-        "Direct communication with potential candidates",
-        "Secure payment protection and dispute resolution",
-        "Post jobs and receive AI-matched applicants"
+        "AI-powered content generation and optimization tools",
+        "Advanced analytics and business intelligence platforms",
+        "Enterprise-grade cybersecurity and compliance solutions",
+        "Cloud cost optimization and resource management",
+        "Intelligent customer support and automation",
+        "Data backup, recovery, and disaster planning"
       ]
     },
     {
-      title: "For Talent & Service Providers",
+      title: "Talent & Service Providers",
       features: [
         "Create a professional profile showcasing your skills and experience",
         "Get matched with relevant projects that fit your expertise",
@@ -34,7 +34,7 @@ export function FeatureHighlights({ className, style }: FeatureHighlightsProps) 
       ]
     },
     {
-      title: "For Enterprise Clients",
+      title: "Enterprise & Business Clients",
       features: [
         "White-labeled talent portal with your company branding",
         "Dedicated account management and priority support",
