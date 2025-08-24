@@ -2,12 +2,13 @@ import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 import { motion } from 'framer-motion';
 import { 
-  ArrowRight, Brain, Shield, Rocket, 
-  CheckCircle, Users, ExternalLink
+  ArrowRight, Brain, Shield, Rocket, Users, CheckCircle, ExternalLink
 } from 'lucide-react';
 import EnhancedNavigation from '../components/EnhancedNavigation';
 import EnhancedFooter from '../components/EnhancedFooter';
 import EnhancedContactForm from '../components/EnhancedContactForm';
+import EnhancedServicesShowcase from '../components/EnhancedServicesShowcase';
+import EnhancedTestimonialsSection from '../components/EnhancedTestimonialsSection';
 
 export default function HomePage() {
   const [isVisible, setIsVisible] = useState(false);
@@ -15,8 +16,6 @@ export default function HomePage() {
   useEffect(() => {
     setIsVisible(true);
   }, []);
-
-
 
   const services = [
     {
@@ -130,13 +129,19 @@ export default function HomePage() {
               and digital transformation solutions that drive innovation and growth.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl flex items-center justify-center gap-2">
-                Get Started
+              <a
+                href="#services"
+                className="px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl flex items-center justify-center gap-2"
+              >
+                Explore Services
                 <ArrowRight className="w-5 h-5" />
-              </button>
-              <button className="px-8 py-4 border border-white/20 hover:border-white/40 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 backdrop-blur-sm bg-white/5 hover:bg-white/10">
-                Learn More
-              </button>
+              </a>
+              <a
+                href="mailto:kleber@ziontechgroup.com"
+                className="px-8 py-4 border border-white/20 hover:border-white/40 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 backdrop-blur-sm bg-white/5 hover:bg-white/10"
+              >
+                Schedule Consultation
+              </a>
             </div>
           </motion.div>
         </div>
@@ -263,39 +268,13 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent">
-              Ready to Transform Your Business?
-            </h2>
-            <p className="text-xl text-white/70 mb-8 max-w-2xl mx-auto">
-              Join the future of technology with Zion Tech Group. Let's build something extraordinary together.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="/comprehensive-2025-services-showcase"
-                className="px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl flex items-center justify-center gap-2"
-              >
-                Explore All Services
-                <ArrowRight className="w-5 h-5" />
-              </a>
-              <a
-                href="mailto:kleber@ziontechgroup.com"
-                className="px-8 py-4 border border-white/20 hover:border-white/40 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 backdrop-blur-sm bg-white/5 hover:bg-white/10"
-              >
-                Schedule Consultation
-              </a>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      {/* Enhanced Services Showcase */}
+      <div id="services">
+        <EnhancedServicesShowcase />
+      </div>
+
+      {/* Enhanced Testimonials Section */}
+      <EnhancedTestimonialsSection />
 
       {/* Latest Updates Section */}
       <section className="py-20 px-6">
@@ -358,7 +337,7 @@ export default function HomePage() {
               Ready to Get Started?
             </h2>
             <p className="text-xl text-white/70 max-w-3xl mx-auto">
-              Let's discuss your project and explore how our cutting-edge technology solutions can transform your business
+              Let&apos;s discuss your project and explore how our cutting-edge technology solutions can transform your business
             </p>
           </motion.div>
 
