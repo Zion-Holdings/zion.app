@@ -16,7 +16,11 @@ import {
   BookOpen,
   Code,
   Building,
-  Clock
+  Clock,
+  PenTool,
+  Link as LinkIcon,
+  Shield,
+  BarChart3
 } from "lucide-react";
 
 export function FeatureCTAs() {
@@ -101,6 +105,55 @@ export function FeatureCTAs() {
       link: "/zion-hire-ai",
       badge: "Premium",
       details: "Automate screening, improve candidate matching, and enhance the hiring experience with our AI recruiting solution."
+    },
+    // New innovative micro SAAS services
+    {
+      title: "AI Content Generation",
+      description: "Automated content creation for blogs, social media, and marketing using advanced language models.",
+      icon: <PenTool className="h-10 w-10 p-2 rounded-md bg-green-100 text-green-700" />,
+      link: "/ai-services",
+      badge: "AI-Powered",
+      details: "Generate high-quality, SEO-optimized content at scale with our AI writing platform that learns your brand voice."
+    },
+    {
+      title: "Smart Contract Development",
+      description: "Blockchain smart contract development and auditing for DeFi, NFTs, and enterprise solutions.",
+      icon: <LinkIcon className="h-10 w-10 p-2 rounded-md bg-orange-100 text-orange-700" />,
+      link: "/blockchain-services",
+      badge: "Blockchain",
+      details: "Build secure, audited smart contracts with our expert blockchain developers and comprehensive security testing."
+    },
+    {
+      title: "IoT Device Management",
+      description: "Complete IoT platform for device provisioning, monitoring, and data analytics.",
+      icon: <Settings className="h-10 w-10 p-2 rounded-md bg-blue-100 text-blue-700" />,
+      link: "/iot-services",
+      badge: "IoT",
+      details: "Manage your connected devices with our comprehensive IoT platform featuring real-time monitoring and predictive analytics."
+    },
+    {
+      title: "Zero-Trust Security",
+      description: "Implement zero-trust security architecture with identity verification and continuous monitoring.",
+      icon: <Shield className="h-10 w-10 p-2 rounded-md bg-red-100 text-red-700" />,
+      link: "/cybersecurity-services",
+      badge: "Security",
+      details: "Protect your business with modern zero-trust security that verifies every user and device before granting access."
+    },
+    {
+      title: "Predictive Analytics",
+      description: "Real-time business intelligence with predictive modeling for forecasting and trend analysis.",
+      icon: <BarChart3 className="h-10 w-10 p-2 rounded-md bg-purple-100 text-purple-700" />,
+      link: "/ai-services",
+      badge: "Analytics",
+      details: "Transform your data into actionable insights with our AI-powered predictive analytics platform."
+    },
+    {
+      title: "Edge Computing Platform",
+      description: "Distributed edge computing for real-time data processing and low-latency IoT applications.",
+      icon: <Zap className="h-10 w-10 p-2 rounded-md bg-cyan-100 text-cyan-700" />,
+      link: "/iot-services",
+      badge: "Edge",
+      details: "Process data closer to the source with our edge computing platform for faster response times and reduced latency."
     }
   ];
 
