@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Header } from '../components/header/Header';
 import { Footer } from '../components/Footer';
 import { Helmet } from 'react-helmet-async';
+import { motion, AnimatePresence } from 'framer-motion';
+import { X, Home, Zap, Info, Phone, Search, Globe, Users, Award, Rocket, Shield, Brain, Cloud, Code, BarChart3, Lock, Database, Target, TrendingUp, CheckCircle, ArrowRight, Mail } from 'lucide-react';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -28,6 +30,29 @@ export function Layout({ children, seo }: LayoutProps) {
       setSidebarOpen(false);
     }
   };
+
+  // Close sidebar on route change
+  useEffect(() => {
+    setSidebarOpen(false);
+  }, []);
+
+  const navigationItems = [
+    { path: '/', label: 'Home', icon: Home, description: 'Welcome to Zion Tech Group' },
+    { path: '/services', label: 'Services', icon: Zap, description: 'Our comprehensive service offerings' },
+    { path: '/about', label: 'About', icon: Info, description: 'Learn about our company and team' },
+    { path: '/contact', label: 'Contact', icon: Phone, description: 'Get in touch with us' }
+  ];
+
+  const serviceCategories = [
+    { icon: Brain, label: 'AI & Machine Learning', color: 'text-zion-cyan' },
+    { icon: Shield, label: 'Cybersecurity', color: 'text-zion-purple' },
+    { icon: Cloud, label: 'Cloud Computing', color: 'text-zion-cyan' },
+    { icon: Code, label: 'Web Development', color: 'text-zion-purple' },
+    { icon: Database, label: 'Data Analytics', color: 'text-zion-cyan' },
+    { icon: Rocket, label: 'DevOps & Automation', color: 'text-zion-purple' },
+    { icon: Lock, label: 'Blockchain', color: 'text-zion-cyan' },
+    { icon: Target, label: 'IoT Solutions', color: 'text-zion-purple' }
+  ];
 
   return (
     <div 
@@ -128,7 +153,7 @@ export function Layout({ children, seo }: LayoutProps) {
       </Helmet>
 
       {/* Header */}
-      <Header />
+      <Header onMenuToggle={() => setSidebarOpen(true)} />
 
       {/* Main Content */}
       <main className="flex-1 relative z-10">
@@ -139,48 +164,148 @@ export function Layout({ children, seo }: LayoutProps) {
       <Footer />
 
       {/* Sidebar Overlay */}
-      {sidebarOpen && (
-        <div 
-          className="fixed inset-0 bg-black/50 z-40 lg:hidden"
-          onClick={() => setSidebarOpen(false)}
-        />
-      )}
-
-      {/* Sidebar */}
-      <div
-        className={`fixed top-0 right-0 h-full w-80 bg-zion-blue-dark border-l border-zion-blue-light transform transition-transform duration-300 ease-in-out z-50 lg:translate-x-full ${
-          sidebarOpen ? 'translate-x-0' : 'translate-x-full'
-        }`}
-      >
-        <div className="flex items-center justify-between p-6 border-b border-zion-blue-light">
-          <h2 className="text-xl font-semibold text-white">Menu</h2>
-          <button
+      <AnimatePresence>
+        {sidebarOpen && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 lg:hidden"
             onClick={() => setSidebarOpen(false)}
-            className="text-zion-slate-light hover:text-white transition-colors"
+          />
+        )}
+      </AnimatePresence>
+
+      {/* Enhanced Sidebar */}
+      <AnimatePresence>
+        {sidebarOpen && (
+          <motion.div
+            initial={{ x: '100%' }}
+            animate={{ x: 0 }}
+            exit={{ x: '100%' }}
+            transition={{ type: "spring", damping: 25, stiffness: 200 }}
+            className="fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-gradient-to-b from-zion-blue-dark via-zion-blue to-zion-blue-dark border-l border-zion-cyan/30 shadow-2xl shadow-zion-cyan/20 z-50 overflow-hidden"
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-        </div>
-        
-        <nav className="p-6">
-          <div className="space-y-4">
-            <a href="/" className="block text-zion-slate-light hover:text-white transition-colors">
-              Home
-            </a>
-            <a href="/services" className="block text-zion-slate-light hover:text-white transition-colors">
-              Services
-            </a>
-            <a href="/about" className="block text-zion-slate-light hover:text-white transition-colors">
-              About
-            </a>
-            <a href="/contact" className="block text-zion-slate-light hover:text-white transition-colors">
-              Contact
-            </a>
-          </div>
-        </nav>
-      </div>
+            {/* Sidebar Header */}
+            <div className="flex items-center justify-between p-6 border-b border-zion-cyan/20 bg-zion-blue-dark/50">
+              <div className="flex items-center space-x-3">
+                <div className="w-8 h-8 bg-gradient-to-r from-zion-cyan to-zion-purple rounded-lg flex items-center justify-center">
+                  <Zap className="w-5 h-5 text-white" />
+                </div>
+                <h2 className="text-xl font-bold bg-gradient-to-r from-zion-cyan to-zion-purple bg-clip-text text-transparent">
+                  Zion Tech
+                </h2>
+              </div>
+              <button
+                onClick={() => setSidebarOpen(false)}
+                className="p-2 text-zion-slate-light hover:text-zion-cyan hover:bg-zion-cyan/10 rounded-lg transition-all duration-300"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+            
+            {/* Sidebar Content */}
+            <div className="h-full overflow-y-auto">
+              {/* Main Navigation */}
+              <div className="p-6">
+                <h3 className="text-sm font-semibold text-zion-slate-light uppercase tracking-wider mb-4">
+                  Navigation
+                </h3>
+                <nav className="space-y-2">
+                  {navigationItems.map((item) => (
+                    <a
+                      key={item.path}
+                      href={item.path}
+                      className="flex items-center space-x-3 px-4 py-3 rounded-lg text-zion-slate-light hover:text-zion-cyan hover:bg-zion-cyan/10 transition-all duration-300 group"
+                      onClick={() => setSidebarOpen(false)}
+                    >
+                      <item.icon className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
+                      <div>
+                        <div className="font-medium">{item.label}</div>
+                        <div className="text-xs text-zion-slate-light/70">{item.description}</div>
+                      </div>
+                      <ArrowRight className="w-4 h-4 ml-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    </a>
+                  ))}
+                </nav>
+              </div>
+
+              {/* Service Categories */}
+              <div className="px-6 pb-6">
+                <h3 className="text-sm font-semibold text-zion-slate-light uppercase tracking-wider mb-4">
+                  Service Categories
+                </h3>
+                <div className="grid grid-cols-2 gap-3">
+                  {serviceCategories.map((category, index) => (
+                    <div
+                      key={index}
+                      className="flex flex-col items-center p-3 rounded-lg bg-zion-blue-light/10 border border-zion-cyan/20 hover:border-zion-cyan/40 hover:bg-zion-cyan/10 transition-all duration-300 cursor-pointer group"
+                      onClick={() => {
+                        setSidebarOpen(false);
+                        window.location.href = '/services';
+                      }}
+                    >
+                      <category.icon className={`w-6 h-6 ${category.color} group-hover:scale-110 transition-transform duration-300`} />
+                      <span className="text-xs text-center mt-2 text-zion-slate-light group-hover:text-white transition-colors duration-300">
+                        {category.label}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Quick Actions */}
+              <div className="px-6 pb-6">
+                <h3 className="text-sm font-semibold text-zion-slate-light uppercase tracking-wider mb-4">
+                  Quick Actions
+                </h3>
+                <div className="space-y-2">
+                  <a
+                    href="/contact"
+                    className="flex items-center space-x-3 px-4 py-3 rounded-lg bg-gradient-to-r from-zion-cyan to-zion-purple text-white hover:shadow-lg hover:shadow-zion-cyan/25 transition-all duration-300 group"
+                    onClick={() => setSidebarOpen(false)}
+                  >
+                    <Phone className="w-5 h-5" />
+                    <span className="font-medium">Get Quote</span>
+                    <ArrowRight className="w-4 h-4 ml-auto group-hover:translate-x-1 transition-transform duration-300" />
+                  </a>
+                  <a
+                    href="/services"
+                    className="flex items-center space-x-3 px-4 py-3 rounded-lg border border-zion-cyan text-zion-cyan hover:bg-zion-cyan hover:text-white transition-all duration-300 group"
+                    onClick={() => setSidebarOpen(false)}
+                  >
+                    <Search className="w-5 h-5" />
+                    <span className="font-medium">Browse Services</span>
+                    <ArrowRight className="w-4 h-4 ml-auto group-hover:translate-x-1 transition-transform duration-300" />
+                  </a>
+                </div>
+              </div>
+
+              {/* Contact Info */}
+              <div className="px-6 pb-6 border-t border-zion-cyan/20 pt-6">
+                <h3 className="text-sm font-semibold text-zion-slate-light uppercase tracking-wider mb-4">
+                  Contact Info
+                </h3>
+                <div className="space-y-3 text-sm">
+                  <div className="flex items-center space-x-3 text-zion-slate-light">
+                    <Phone className="w-4 h-4 text-zion-cyan" />
+                    <span>+1 302 464 0950</span>
+                  </div>
+                  <div className="flex items-center space-x-3 text-zion-slate-light">
+                    <Mail className="w-4 h-4 text-zion-cyan" />
+                    <span>kleber@ziontechgroup.com</span>
+                  </div>
+                  <div className="flex items-center space-x-3 text-zion-slate-light">
+                    <Globe className="w-4 h-4 text-zion-cyan" />
+                    <span>Middletown, DE</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
