@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Menu, X, ChevronDown, ExternalLink, Globe, 
+  Menu, X, ChevronDown, Globe, 
   Brain, Shield, Rocket, Cpu, Database, Users
 } from 'lucide-react';
 

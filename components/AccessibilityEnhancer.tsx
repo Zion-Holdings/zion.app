@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Volume2, VolumeX, Eye, EyeOff, Keyboard, 
-  MousePointer, Smartphone, Monitor, SkipForward
+  Volume2, VolumeX, Eye, Keyboard, 
+  MousePointer, Monitor
 } from 'lucide-react';
 
 export default function AccessibilityEnhancer() {
@@ -266,7 +266,7 @@ export function AccessibleButton({
   className?: string;
   disabled?: boolean;
   ariaLabel?: string;
-  [key: string]: any;
+  [key: string]: unknown;
 }) {
   return (
     <button

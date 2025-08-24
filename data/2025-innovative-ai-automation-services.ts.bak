@@ -130,7 +130,7 @@ export const innovativeAIAutomationServices: InnovativeAIAutomationService[] = [
     competitors: ['Zendesk, Intercom, Freshdesk, Help Scout, Zoho Desk'],
     marketSize: '$15B customer service software market',
     growthRate: '22% annual growth',
-    variant: 'ai-automation',
+    variant: 'ai-autonomous',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',

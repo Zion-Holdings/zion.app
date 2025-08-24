@@ -46,12 +46,17 @@ export interface CuttingEdgeEnterpriseSolution {
 export const cuttingEdgeEnterpriseSolutions: CuttingEdgeEnterpriseSolution[] = [
   // ENTERPRISE SOLUTIONS
   {
-<<<<<<< HEAD
     id: 'ai-powered-enterprise-risk-management',
     name: 'AI-Powered Enterprise Risk Management',
     tagline: 'Intelligent risk assessment and mitigation for enterprise',
-    price: '$899',
-    period: '/month',
+    price: {
+      monthly: 899,
+      yearly: 8990,
+      currency: 'USD',
+      trialDays: 30,
+      setupTime: '2-3 weeks',
+      enterprise: 'Enterprise pricing available'
+    },
     description: 'Advanced AI platform that identifies, assesses, and mitigates enterprise risks in real-time, providing comprehensive risk intelligence and automated response capabilities.',
     features: [
       'Real-time risk monitoring',
@@ -68,42 +73,24 @@ export const cuttingEdgeEnterpriseSolutions: CuttingEdgeEnterpriseSolution[] = [
     popular: true,
     icon: '⚠️',
     color: 'from-orange-600 via-red-600 to-pink-600',
-    textColor: 'text-orange-400',
     link: 'https://ziontechgroup.com/ai-powered-enterprise-risk-management',
     marketPosition: 'Leading AI enterprise risk management platform with intelligent automation',
     targetAudience: 'Fortune 500 companies, Financial institutions, Healthcare organizations, Government agencies',
-    trialDays: 30,
-    setupTime: '2-3 weeks',
-    category: 'Enterprise AI',
-    realService: true,
-    technology: ['AI/ML, Machine Learning, Risk Analytics, Compliance, Automation'],
+    category: 'Enterprise Solutions',
     integrations: ['ERP systems, GRC platforms, Compliance tools, Security systems, Business intelligence tools'],
     useCases: ['Risk assessment, Compliance management, Incident response, Business continuity, Strategic planning'],
     roi: 'Reduce risk exposure by 60%. Improve compliance by 85%. Cut risk management costs by 40%.',
     competitors: ['MetricStream, ServiceNow, IBM OpenPages, RSA Archer, SAP GRC'],
     marketSize: '$12.8B enterprise risk management market',
     growthRate: '25% annual growth',
-    variant: 'ai-autonomous',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
       address: '364 E Main St STE 1008 Middletown DE 19709',
       website: 'https://ziontechgroup.com'
-=======
-    id: 'digital-transformation-accelerator',
-    name: 'Digital Transformation Accelerator',
-    tagline: 'Accelerate your digital transformation journey with proven methodologies and expert guidance',
-    description: 'Comprehensive digital transformation service that helps enterprises modernize their operations, adopt new technologies, and create competitive advantages in the digital economy.',
-    category: 'Enterprise Solutions',
-    price: {
-      monthly: 0,
-      yearly: 0,
-      currency: 'USD',
-      trialDays: 0,
-      setupTime: '8-16 weeks',
-      enterprise: 'Project-based pricing: $50,000 - $500,000'
->>>>>>> origin/main
     },
+    customers: 67,
+    rating: 4.8,
     features: [
       'Digital maturity assessment',
       'Transformation roadmap development',
@@ -153,17 +140,20 @@ export const cuttingEdgeEnterpriseSolutions: CuttingEdgeEnterpriseSolution[] = [
     color: 'from-purple-500 to-indigo-600',
     popular: true,
     launchDate: '2025-01-15',
-    customers: 28,
-    rating: 4.9,
-<<<<<<< HEAD
     reviews: 42
   },
   {
     id: 'autonomous-business-process-optimization',
     name: 'Autonomous Business Process Optimization',
     tagline: 'AI-powered business process automation and optimization',
-    price: '$699',
-    period: '/month',
+    price: {
+      monthly: 699,
+      yearly: 6990,
+      currency: 'USD',
+      trialDays: 21,
+      setupTime: '2-3 weeks',
+      enterprise: 'Enterprise pricing available'
+    },
     description: 'Intelligent platform that autonomously analyzes, optimizes, and automates business processes using AI, improving efficiency by up to 70% and reducing operational costs.',
     features: [
       'Process analysis AI',
@@ -183,7 +173,7 @@ export const cuttingEdgeEnterpriseSolutions: CuttingEdgeEnterpriseSolution[] = [
     textColor: 'text-blue-400',
     link: 'https://ziontechgroup.com/autonomous-business-process-optimization',
     marketPosition: 'Leading autonomous business process optimization platform with AI intelligence',
-    targetAudience: 'Large enterprises, Manufacturing companies, Service organizations, Government agencies',
+    targetAudience: ['Large enterprises', 'Manufacturing companies', 'Service organizations', 'Government agencies'],
     trialDays: 21,
     setupTime: '2-3 weeks',
     category: 'AI Automation',

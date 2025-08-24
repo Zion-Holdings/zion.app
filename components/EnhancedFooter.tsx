@@ -1,9 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { 
-  Brain, Shield, Rocket, Cpu, Database, Users, 
-  Mail, Phone, MapPin, ExternalLink, ArrowUp,
-  Twitter, Linkedin, Github, Globe, Zap
+  Brain, Mail, Phone, MapPin, ArrowUp,
+  Twitter, Linkedin, Github, Globe, Shield, Zap
 } from 'lucide-react';
 
 export default function EnhancedFooter() {

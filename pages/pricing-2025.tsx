@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import Head from 'next/head';
 import { motion } from 'framer-motion';
 import { 
-  ArrowRight, Check, Star, Users, Zap, Shield, Globe, 
-  TrendingUp, Award, Clock, CheckCircle, ExternalLink
+  ArrowRight, Star, CheckCircle, ExternalLink
 } from 'lucide-react';
 import EnhancedNavigation from '../components/EnhancedNavigation';
 import EnhancedFooter from '../components/EnhancedFooter';
@@ -139,7 +138,7 @@ export default function Pricing2025() {
             animate="visible"
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
-            {filteredServices.map((service, index) => (
+                            {filteredServices.map((service) => (
               <motion.div
                 key={service.id}
                 variants={itemVariants}

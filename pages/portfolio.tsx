@@ -2,10 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import { motion } from 'framer-motion';
 import { 
-  ArrowRight, Brain, Shield, Rocket, Cpu, Database, Atom, Target, Star, 
-  Sparkles, Zap, Users, Award, Clock, CheckCircle, Globe, Code, Server,
-  ChevronRight, ExternalLink, TrendingUp, BarChart3, Cloud, Network,
-  Eye, Github, ExternalLink as ExternalLinkIcon
+  ArrowRight, CheckCircle, Code, Github, ExternalLink as ExternalLinkIcon
 } from 'lucide-react';
 import EnhancedNavigation from '../components/EnhancedNavigation';
 import EnhancedFooter from '../components/EnhancedFooter';
@@ -119,7 +116,7 @@ export default function PortfolioPage() {
               Our Work
             </h1>
             <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed mb-8">
-              Revolutionary technology solutions that are transforming industries and pushing the boundaries of what's possible
+              Revolutionary technology solutions that are transforming industries and pushing the boundaries of what&apos;s possible
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               {categories.map((category) => (
@@ -275,7 +272,7 @@ export default function PortfolioPage() {
               Ready to Start Your Next Project?
             </h2>
             <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
-              Let's collaborate to bring your vision to life with cutting-edge technology solutions that drive real results.
+              Let&apos;s collaborate to bring your vision to life with cutting-edge technology solutions that drive real results.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a

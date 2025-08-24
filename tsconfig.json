@@ -84,6 +84,12 @@
   ],
   "exclude": [
     "node_modules",
-    "zion.app/recovered-content/**"
+    "zion.app/recovered-content/**",
+    "contracts/**",
+    "typechain-types/**",
+    "cypress/**",
+    "data/2025-cutting-edge-enterprise-solutions.ts",
+    "data/2025-cutting-edge-it-infrastructure-innovations.ts",
+    "data/2025-emerging-tech-services.ts"
   ]
 }

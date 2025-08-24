@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { 
-  Mail, Phone, MapPin, Send, CheckCircle, AlertCircle,
-  User, Building, MessageSquare, Globe, Zap
+  Mail, Phone, Send, CheckCircle, AlertCircle, Globe, Zap
 } from 'lucide-react';
 
 export default function EnhancedContactForm() {
@@ -107,7 +106,7 @@ export default function EnhancedContactForm() {
         howDidYouHear: ''
       });
       setErrors({});
-    } catch (error) {
+    } catch {
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
