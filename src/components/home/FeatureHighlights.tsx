@@ -1,103 +1,66 @@
-<<<<<<< HEAD
+
 import React from 'react';
-import { FeatureCard } from '@/components/FeatureCard';
-import { Zap, Shield, Users, Globe } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { 
+  Brain, 
+  Globe, 
+  Shield, 
+  Zap, 
+  Users, 
+  TrendingUp, 
+  Clock, 
+  Star,
+  CheckCircle,
+  ArrowRight
+} from 'lucide-react';
+
+const features = [
+  {
+    icon: Brain,
+    title: 'AI-Powered Intelligence',
+    description: 'Advanced machine learning algorithms that understand your needs and provide intelligent recommendations.',
+    benefits: ['Smart matching', 'Predictive analytics', 'Automated workflows'],
+    color: 'from-zion-purple to-zion-purple-dark',
+    bgColor: 'bg-zion-purple/10',
+    borderColor: 'border-zion-purple/30'
+  },
+  {
+    icon: Globe,
+    title: 'Global Reach',
+    description: 'Connect with talent and services from over 150 countries worldwide, breaking geographical barriers.',
+    benefits: ['150+ countries', '24/7 availability', 'Local expertise'],
+    color: 'from-zion-cyan to-zion-cyan-dark',
+    bgColor: 'bg-zion-cyan/10',
+    borderColor: 'border-zion-cyan/30'
+  },
+  {
+    icon: Shield,
+    title: 'Enterprise Security',
+    description: 'Bank-grade security with enterprise-level compliance, ensuring your data and transactions are protected.',
+    benefits: ['SOC 2 compliance', 'End-to-end encryption', 'GDPR compliant'],
+    color: 'from-zion-blue to-zion-blue-dark',
+    bgColor: 'bg-zion-blue/10',
+    borderColor: 'border-zion-blue/30'
+  },
+  {
+    icon: Zap,
+    title: 'Lightning Fast',
+    description: 'Optimized performance with sub-second response times and real-time updates across all platforms.',
+    benefits: ['<1s response time', 'Real-time sync', '99.9% uptime'],
+    color: 'from-green-500 to-green-600',
+    bgColor: 'bg-green-500/10',
+    borderColor: 'border-green-500/30'
+  }
+];
+
+const stats = [
+  { label: 'Active Users', value: '50K+', icon: Users },
+  { label: 'Success Rate', value: '98%', icon: TrendingUp },
+  { label: 'Response Time', value: '<15min', icon: Clock },
+  { label: 'Satisfaction', value: '4.9/5', icon: Star }
+];
 
 export function FeatureHighlights() {
-  return (
-    <section className="py-16 bg-zion-blue">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-white mb-4">
-            Why Choose Zion Tech Group?
-          </h2>
-          <p className="text-zion-slate-light max-w-2xl mx-auto">
-            We provide the tools, connections, and support you need to succeed in the tech industry.
-          </p>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-          <FeatureCard
-            icon={Zap}
-            title="Lightning Fast"
-            description="Connect with talent and services in seconds, not days."
-          />
-          <FeatureCard
-            icon={Shield}
-            title="Verified & Secure"
-            description="All profiles and services are verified for your safety."
-          />
-          <FeatureCard
-            icon={Users}
-            title="Global Network"
-            description="Access talent and services from around the world."
-          />
-          <FeatureCard
-            icon={Globe}
-            title="24/7 Support"
-            description="Get help whenever you need it, day or night."
-          />
-        </div>
-      </div>
-    </section>
-  );
-}
-=======
-
-import React from "react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Check, Sparkles, Users, Building, ArrowRight } from "lucide-react";
-import { motion } from "framer-motion";
-
-export function FeatureHighlights() {
-  const highlightsData = [
-    {
-      title: "For Talent Seekers",
-      icon: <Users className="w-6 h-6" />,
-      color: "from-cyan-500 to-blue-600",
-      bgColor: "bg-cyan-500/10",
-      borderColor: "border-cyan-500/20",
-      features: [
-        "AI-powered talent matching based on your specific project requirements",
-        "Verified profiles with skills validation and credential checking",
-        "Transparent pricing and no hidden fees",
-        "Direct communication with potential candidates",
-        "Secure payment protection and dispute resolution",
-        "Post jobs and receive AI-matched applicants"
-      ]
-    },
-    {
-      title: "For Talent & Service Providers",
-      icon: <Sparkles className="w-6 h-6" />,
-      color: "from-purple-500 to-indigo-600",
-      bgColor: "bg-purple-500/10",
-      borderColor: "border-purple-500/20",
-      features: [
-        "Create a professional profile showcasing your skills and experience",
-        "Get matched with relevant projects that fit your expertise",
-        "Secure payment processing with on-time disbursements",
-        "Build your reputation through client reviews and ratings",
-        "Access to enterprise clients and high-value projects",
-        "Professional development resources and community support"
-      ]
-    },
-    {
-      title: "For Enterprise Clients",
-      icon: <Building className="w-6 h-6" />,
-      color: "from-emerald-500 to-green-600",
-      bgColor: "bg-emerald-500/10",
-      borderColor: "border-emerald-500/20",
-      features: [
-        "White-labeled talent portal with your company branding",
-        "Dedicated account management and priority support",
-        "Custom talent pools and preferred provider networks",
-        "Advanced analytics and reporting capabilities",
-        "API access for seamless integration with your HR systems",
-        "Customizable workflow and approval processes"
-      ]
-    }
-  ];
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -115,114 +78,149 @@ export function FeatureHighlights() {
       y: 0,
       opacity: 1,
       transition: {
-        duration: 0.6,
-        ease: "easeOut"
-      }
-    }
-  };
-
-  const cardVariants = {
-    hover: {
-      y: -8,
-      scale: 1.02,
-      transition: {
-        duration: 0.3,
+        duration: 0.8,
         ease: "easeOut"
       }
     }
   };
 
   return (
-    <section className="py-16 bg-gradient-to-br from-zion-blue via-zion-blue-dark to-zion-slate-dark relative overflow-hidden">
-      {/* Background decorative elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-20 w-64 h-64 border border-zion-cyan/10 rounded-full opacity-30"></div>
-        <div className="absolute bottom-20 right-20 w-48 h-48 border border-zion-purple/10 rotate-45 opacity-30"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 border border-zion-cyan/5 rounded-full opacity-20"></div>
-      </div>
-
-      <motion.div 
-        className="container mx-auto px-4 relative z-10"
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-      >
-        <motion.div 
-          className="text-center mb-12"
-          variants={itemVariants}
+    <section className="py-20 bg-gradient-to-b from-zion-blue-dark/30 to-zion-blue-dark/10">
+      <div className="container mx-auto px-4">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Tailored Solutions for Everyone</h2>
-          <p className="text-zion-slate-light text-lg md:text-xl max-w-4xl mx-auto leading-relaxed">
-            Whatever your role in the tech ecosystem, Zion offers specialized features to help you succeed
+          <div className="flex items-center justify-center gap-2 mb-4">
+            <Star className="w-6 h-6 text-zion-cyan" />
+            <span className="text-zion-cyan font-medium text-sm uppercase tracking-wider">
+              Why Choose Zion
+            </span>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            Built for the Future of Work
+          </h2>
+          <p className="text-xl text-zion-slate-light max-w-3xl mx-auto leading-relaxed">
+            Experience the next generation of talent marketplace technology. 
+            Our platform combines cutting-edge AI with human expertise to deliver 
+            unparalleled results for businesses and professionals worldwide.
           </p>
         </motion.div>
-        
-        <motion.div 
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8"
-          variants={containerVariants}
-        >
-          {highlightsData.map((category, index) => (
-            <motion.div
-              key={index}
-              variants={itemVariants}
-              whileHover="hover"
-              className="group"
-            >
-              <Card className={`h-full ${category.bgColor} border-2 ${category.borderColor} bg-zion-blue-dark/50 backdrop-blur-sm hover:border-zion-purple/50 transition-all duration-300 hover:shadow-2xl hover:shadow-zion-purple/20`}>
-                <CardContent className="p-6 md:p-8">
-                  <div className="flex items-center gap-3 mb-6">
-                    <div className={`w-12 h-12 bg-gradient-to-br ${category.color} rounded-xl flex items-center justify-center shadow-lg`}>
-                      <div className="text-white">
-                        {category.icon}
-                      </div>
-                    </div>
-                    <h3 className="text-xl md:text-2xl font-bold text-white group-hover:text-zion-cyan transition-colors">
-                      {category.title}
-                    </h3>
-                  </div>
-                  
-                  <ul className="space-y-4 mb-6">
-                    {category.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start group/item">
-                        <div className="w-6 h-6 bg-zion-cyan/20 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0 group-hover/item:bg-zion-cyan/40 transition-colors">
-                          <Check className="h-3 w-3 text-zion-cyan" />
-                        </div>
-                        <span className="text-zion-slate-light leading-relaxed group-hover/item:text-white transition-colors">
-                          {feature}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
 
-                  <div className="flex items-center justify-between">
-                    <div className="w-8 h-8 bg-zion-purple/20 rounded-full flex items-center justify-center group-hover:bg-zion-purple/40 transition-colors">
-                      <ArrowRight className="w-4 h-4 text-zion-purple" />
-                    </div>
-                    <span className="text-xs text-zion-cyan font-medium bg-zion-cyan/10 px-3 py-1 rounded-full">
-                      Learn More
-                    </span>
-                  </div>
-                </CardContent>
-              </Card>
+        {/* Stats Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16"
+        >
+          {stats.map((stat, index) => (
+            <motion.div
+              key={stat.label}
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className="text-center p-6 bg-zion-blue-dark/30 rounded-xl border border-zion-blue/20 hover:border-zion-cyan/40 transition-all duration-300"
+            >
+              <div className="w-12 h-12 bg-zion-cyan/20 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <stat.icon className="w-6 h-6 text-zion-cyan" />
+              </div>
+              <div className="text-2xl font-bold text-white mb-2">{stat.value}</div>
+              <div className="text-zion-slate-light text-sm">{stat.label}</div>
             </motion.div>
           ))}
         </motion.div>
 
-        {/* Call to action */}
-        <motion.div 
-          className="mt-12 text-center"
-          variants={itemVariants}
+        {/* Features Grid */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid grid-cols-1 lg:grid-cols-2 gap-8"
         >
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-zion-purple/20 to-zion-cyan/20 px-8 py-4 rounded-full border border-zion-purple/30">
-            <Sparkles className="w-5 h-5 text-zion-cyan" />
-            <span className="text-zion-slate-light font-medium">
-              Ready to get started? Join thousands of users already on Zion
-            </span>
+          {features.map((feature, index) => (
+            <motion.div
+              key={feature.title}
+              variants={itemVariants}
+              whileHover={{ 
+                y: -5,
+                transition: { duration: 0.2 }
+              }}
+              className={`p-8 rounded-2xl border ${feature.borderColor} ${feature.bgColor} hover:bg-opacity-20 transition-all duration-300 group`}
+            >
+              <div className="flex items-start gap-4 mb-6">
+                <div className={`p-4 rounded-xl bg-gradient-to-r ${feature.color} shadow-lg`}>
+                  <feature.icon className="w-8 h-8 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-zion-cyan transition-colors duration-200">
+                    {feature.title}
+                  </h3>
+                  <p className="text-zion-slate-light leading-relaxed">
+                    {feature.description}
+                  </p>
+                </div>
+              </div>
+
+              <div className="space-y-3">
+                {feature.benefits.map((benefit, benefitIndex) => (
+                  <motion.div
+                    key={benefit}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: benefitIndex * 0.1 }}
+                    className="flex items-center gap-3"
+                  >
+                    <CheckCircle className="w-5 h-5 text-zion-cyan flex-shrink-0" />
+                    <span className="text-zion-slate-light">{benefit}</span>
+                  </motion.div>
+                ))}
+              </div>
+
+              <div className="mt-6 pt-6 border-t border-zion-purple/20">
+                <div className="flex items-center gap-2 text-zion-cyan font-medium group-hover:text-zion-cyan-light transition-colors duration-200">
+                  <span>Learn More</span>
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transform transition-transform duration-200" />
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* Call to Action */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="text-center mt-16"
+        >
+          <div className="bg-gradient-to-r from-zion-purple/20 to-zion-cyan/20 border border-zion-purple/30 rounded-2xl p-8 max-w-2xl mx-auto">
+            <h3 className="text-2xl font-bold text-white mb-4">
+              Ready to Experience the Future?
+            </h3>
+            <p className="text-zion-slate-light mb-6">
+              Join thousands of businesses and professionals who trust Zion for their talent and service needs.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white px-8 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
+                Get Started Free
+              </button>
+              <button className="border border-zion-cyan text-zion-cyan hover:bg-zion-cyan hover:text-zion-blue-dark px-8 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105">
+                Schedule Demo
+              </button>
+            </div>
           </div>
         </motion.div>
-      </motion.div>
+      </div>
     </section>
   );
 }
->>>>>>> b0227f6a3f6a80df96e210611ae67bdcdc943ae0
