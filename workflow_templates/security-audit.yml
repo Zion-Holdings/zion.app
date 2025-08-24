@@ -1,0 +1,32 @@
+name: Security Audit
+
+on:
+
+
+  schedule: - cron: '23 2 * * *'
+  workflow_dispatch:
+
+    contents: read
+  issues: write
+
+concurrency:
+
+
+  group: security-audit
+  cancel-in-progress: true
+
+jobs:
+
+
+  audit: - name: Use Node.js 20.x
+           
+          node-version: 20.x
+          cache: 'npm'
+      - name: Install dependencies
+
+                
+      - name: Run audit
+
+                
+
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"

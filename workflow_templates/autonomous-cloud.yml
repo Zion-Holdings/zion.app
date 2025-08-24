@@ -1,0 +1,83 @@
+name: Autonomous Cloud Orchestrator
+
+on:
+
+
+  schedule: - cron: '0 0 * * *'
+  workflow_dispatch:
+
+    concurrency: group: "github.workflow-${{ github.ref }}"
+  cancel-in-progress: true
+
+jobs:
+
+
+  cloud-automation: contents: write
+      - name: Checkout
+
+                
+          fetch-depth: 0
+      - name: Setup Node.js
+
+                
+          node-version: 20
+          cache: npm
+      - name: Install dependencies
+
+                
+      - name: Clean git state
+
+                
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # Clean up any existing rebase state
+          git rebase --abort 2>/dev/null || true
+          rm -rf .git/rebase-merge .git/rebase-apply 2>/dev/null || true
+          # Reset to clean state
+          git reset --hard HEAD
+          git clean -fd
+      - name: Run Marketing Orchestrator (single cycle)
+
+                
+      - name: Update What's New page
+
+                
+      - name: Ensure What's New banner on homepage
+
+                
+      - name: Newsroom Generator
+
+                
+      - name: Changelog Generator
+
+                
+      - name: Broken Image Scanner
+
+                
+      - name: Sitemap Runner
+
+                
+      - name: Competitor Watch
+
+                
+      - name: FAQ Generator
+
+                
+      - name: Analytics Promoter (optional)
+
+                
+          GA4_PROJECT_ID: "${{ secrets.GA4_PROJECT_ID }}"
+          GA4_PROPERTY_ID: "${{ secrets.GA4_PROPERTY_ID }}"
+          GOOGLE_APPLICATION_CREDENTIALS_JSON: "${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_JSON }}"
+      - name: Commit and push changes
+
+                
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "chore(cloud): autonomous updates (30m cadence) [skip ci]"
+            git push origin HEAD:$(git rev-parse --abbrev-ref HEAD)
+          else
+            echo "No changes to push"
+          fi

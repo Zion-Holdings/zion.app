@@ -1,0 +1,52 @@
+name: Self-Healing Build
+
+on:
+
+
+  schedule: - cron: '0 0 * * *'
+  workflow_dispatch:
+
+    concurrency: group: "github.workflow-${{ github.ref }}"
+  cancel-in-progress: true
+
+  contents: write
+  pull-requests: write
+
+jobs:
+
+
+  build-and-heal: - name: Checkout
+           
+          fetch-depth: 0
+      - name: Setup Node.js
+
+                
+          node-version: 20
+          cache: 'npm'
+      - name: Install dependencies
+
+                
+      - name: Try build
+
+                
+      - name: Heal and retry build
+
+          
+          npm run ci:heal || true
+      - name: Create Pull Request if changes
+
+          
+          token: "${{ secrets.GITHUB_TOKEN }}""
+          commit-message:
+
+            "chore(self-heal): automated build healing"
+          title:
+
+            "chore(self-heal): automated build healing"
+          body: |
+            Automated build healing changes.
+          branch: automation/self-heal-build
+          delete-branch: true
+          labels: |
+            automation
+            auto-merge

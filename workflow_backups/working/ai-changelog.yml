@@ -1,0 +1,47 @@
+name: AI Changelog
+
+on:
+
+
+  schedule: - cron: '0 0 * * *'
+  workflow_dispatch: {}
+
+
+concurrency:
+
+
+
+  group: "github.workflow-${{ github.ref }}"
+  cancel-in-progress: true
+
+  contents: write
+
+jobs:
+
+
+  generate: - name: Checkout
+           
+          fetch-depth: 0
+      - name: Setup Node
+
+                
+          node-version: '20'
+          cache: npm
+      - name: Install dependencies
+
+                
+      - name: Generate AI changelog
+
+                
+      - name: Commit and push
+
+                
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add docs/CHANGELOG_AI.md || true
+            git commit -m "docs(changelog): update AI changelog [skip ci]" || true
+            git push origin HEAD:$(git rev-parse --abbrev-ref HEAD) || true
+          else
+            echo "No changes to push"
+          fi

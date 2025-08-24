@@ -1,0 +1,52 @@
+name: CodeQL Analysis
+
+on:
+
+
+  push: branches: ["main"]
+  pull_request:
+
+    branches: ["main"]
+  schedule:
+    - cron: '0 2 * * 0'  # Weekly on Sunday at 2 AM UTC
+  workflow_dispatch: {}
+
+
+concurrency:
+
+
+
+  group: "github.workflow-${{ github.ref }}"
+  cancel-in-progress: true
+
+  contents: read
+  security-events: write
+  actions: read
+
+jobs:
+
+
+  analyze: name: Analyze
+        language: ['javascript']
+
+
+      - name: Initialize CodeQL
+
+
+
+                
+          languages: "${{ matrix.language }}"
+          queries: security-extended,security-and-quality
+
+      - name: Autobuild
+
+
+                
+
+      - name: Perform CodeQL Analysis
+
+
+                
+          category:
+
+            "/language: "${{matrix.language}}""

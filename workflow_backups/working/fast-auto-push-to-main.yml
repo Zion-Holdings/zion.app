@@ -1,0 +1,39 @@
+name: Fast Auto Push to Main
+
+on:
+
+
+  push: branches-ignore:
+      - main
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch: {}
+
+concurrency:
+
+
+  group: "fast-auto-push-${{ github.ref }}"
+  cancel-in-progress: true
+
+  contents: write
+
+jobs:
+
+
+  fast-push: - name: Checkout
+           
+          fetch-depth: 0
+
+      - name: Setup Node.js
+
+
+                
+          node-version: 20
+
+      - name: Push HEAD to main fast
+
+
+                
+
+          TARGET_BRANCH: main
+          PUSH_TO_MAIN: 'true'
