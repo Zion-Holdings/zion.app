@@ -1,316 +1,238 @@
 import React from 'react';
 import Head from 'next/head';
 import { motion } from 'framer-motion';
-import { 
-  FileText, Calendar, Mail, Phone, Globe, Users
-} from 'lucide-react';
+import { FileText, Users, Shield, AlertTriangle, Scale, Mail, Phone, MapPin } from 'lucide-react';
 import EnhancedNavigation from '../components/EnhancedNavigation';
 import EnhancedFooter from '../components/EnhancedFooter';
 
-export default function TermsPage() {
-  const lastUpdated = "January 15, 2025";
+export default function TermsOfService() {
+  const sections = [
+    {
+      id: 'acceptance',
+      title: 'Acceptance of Terms',
+      icon: FileText,
+      content: [
+        'By accessing our website and services, you agree to these terms',
+        'These terms constitute a legally binding agreement',
+        'If you disagree with any terms, please discontinue use',
+        'We may update these terms periodically with notice'
+      ]
+    },
+    {
+      id: 'services',
+      title: 'Description of Services',
+      icon: Users,
+      content: [
+        'AI and machine learning consulting services',
+        'Quantum computing research and development',
+        'Cybersecurity solutions and assessments',
+        'Cloud infrastructure and digital transformation',
+        'Custom software development and support'
+      ]
+    },
+    {
+      id: 'user-responsibilities',
+      title: 'User Responsibilities',
+      icon: Shield,
+      content: [
+        'Provide accurate and complete information',
+        'Maintain confidentiality of account credentials',
+        'Use services in compliance with applicable laws',
+        'Respect intellectual property rights',
+        'Report security vulnerabilities responsibly'
+      ]
+    },
+    {
+      id: 'prohibited-uses',
+      title: 'Prohibited Uses',
+      icon: AlertTriangle,
+      content: [
+        'Illegal activities or violation of laws',
+        'Unauthorized access to our systems',
+        'Distribution of malware or harmful code',
+        'Harassment or harmful behavior toward others',
+        'Reverse engineering of proprietary systems'
+      ]
+    },
+    {
+      id: 'intellectual-property',
+      title: 'Intellectual Property',
+      icon: Scale,
+      content: [
+        'All content and technology remain our property',
+        'Limited license granted for authorized use',
+        'Respect for third-party intellectual property',
+        'Client retains ownership of their data',
+        'Joint developments subject to separate agreements'
+      ]
+    }
+  ];
 
   return (
     <>
       <Head>
-        <title>Terms of Service - Zion Tech Group</title>
-        <meta name="description" content="Zion Tech Group's terms of service. Read about the terms and conditions governing your use of our services and website." />
-        <meta name="keywords" content="terms of service, terms and conditions, service agreement, Zion Tech Group" />
-        <meta property="og:title" content="Terms of Service - Zion Tech Group" />
-        <meta property="og:description" content="Zion Tech Group's terms of service. Read about the terms and conditions governing your use of our services." />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://ziontechgroup.com/terms" />
+        <title>Terms of Service | Zion Tech Group</title>
+        <meta name="description" content="Review the terms of service for Zion Tech Group. Our terms outline the rules and regulations for using our technology services and platform." />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <EnhancedNavigation />
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+        <EnhancedNavigation />
 
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center"
-          >
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-              Terms of
-              <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-                {" "}Service
-              </span>
-            </h1>
-            <p className="text-xl text-white/70 max-w-4xl mx-auto leading-relaxed">
-              Please read these terms and conditions carefully before using our services. 
-              By using our services, you agree to be bound by these terms.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Terms Content */}
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="mb-8"
-          >
-            <div className="flex items-center space-x-3 text-slate-500 mb-4">
-              <Calendar className="w-5 h-5" />
-              <span>Last Updated: {lastUpdated}</span>
-            </div>
-          </motion.div>
-
-          <div className="prose prose-slate max-w-none">
+        {/* Hero Section */}
+        <section className="pt-32 pb-20 px-6">
+          <div className="max-w-4xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="mb-12"
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="flex items-center justify-center mb-6"
             >
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">1. Acceptance of Terms</h2>
-              <p className="text-slate-600 leading-relaxed mb-4">
-                By accessing and using the services provided by Zion Tech Group ("we," "our," or "us"), 
-                you accept and agree to be bound by the terms and provision of this agreement. 
-                If you do not agree to abide by the above, please do not use this service.
-              </p>
+              <FileText className="w-16 h-16 text-cyan-400" />
+            </motion.div>
+            
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-white to-cyan-100 bg-clip-text text-transparent mb-6"
+            >
+              Terms of Service
+            </motion.h1>
+            
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
+            >
+              These terms govern your use of our services and establish the legal framework for our relationship.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="mt-8 text-sm text-gray-400"
+            >
+              <p>Last updated: December 2024</p>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Terms Content */}
+        <section className="py-20 px-6">
+          <div className="max-w-4xl mx-auto">
+            {sections.map((section, index) => (
+              <motion.div
+                key={section.id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                className="mb-16"
+              >
+                <div className="flex items-center mb-6">
+                  <section.icon className="w-8 h-8 text-cyan-400 mr-4" />
+                  <h2 className="text-3xl font-bold text-white">{section.title}</h2>
+                </div>
+                
+                <div className="bg-slate-800/50 rounded-2xl p-8 border border-white/10">
+                  <ul className="space-y-4">
+                    {section.content.map((item, itemIndex) => (
+                      <li key={itemIndex} className="flex items-start">
+                        <div className="w-2 h-2 bg-cyan-400 rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                        <span className="text-gray-300 leading-relaxed">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </motion.div>
+            ))}
+
+            {/* Additional Terms Sections */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="mb-16"
+            >
+              <h2 className="text-3xl font-bold text-white mb-6">Limitation of Liability</h2>
+              <div className="bg-slate-800/50 rounded-2xl p-8 border border-white/10">
+                <p className="text-gray-300 leading-relaxed mb-4">
+                  To the maximum extent permitted by law, Zion Tech Group shall not be liable for any indirect, 
+                  incidental, special, consequential, or punitive damages arising from your use of our services.
+                </p>
+                <p className="text-gray-300 leading-relaxed">
+                  Our total liability for any claims shall not exceed the amount paid by you for the services 
+                  during the twelve months preceding the claim.
+                </p>
+              </div>
             </motion.div>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="mb-12"
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="mb-16"
             >
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">2. Description of Service</h2>
-              <p className="text-slate-600 leading-relaxed mb-4">
-                Zion Tech Group provides technology consulting, software development, AI solutions, 
-                cybersecurity services, and related technology services. Our services include:
-              </p>
-              <ul className="list-disc list-inside text-slate-600 mb-6 space-y-2">
-                <li>Artificial Intelligence and Machine Learning solutions</li>
-                <li>Quantum Cybersecurity services</li>
-                <li>Edge Computing and IoT solutions</li>
-                <li>Space Technology applications</li>
-                <li>Digital Transformation consulting</li>
-                <li>Cloud Infrastructure services</li>
-              </ul>
+              <h2 className="text-3xl font-bold text-white mb-6">Governing Law</h2>
+              <div className="bg-slate-800/50 rounded-2xl p-8 border border-white/10">
+                <p className="text-gray-300 leading-relaxed">
+                  These terms shall be governed by and construed in accordance with the laws of the State of California, 
+                  without regard to its conflict of law principles. Any disputes shall be resolved in the courts of 
+                  San Francisco County, California.
+                </p>
+              </div>
             </motion.div>
 
+            {/* Contact Information */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="mb-12"
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.7 }}
+              className="bg-gradient-to-r from-cyan-900/20 to-blue-900/20 rounded-2xl p-8 border border-cyan-500/20"
             >
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">3. User Responsibilities</h2>
-              <p className="text-slate-600 leading-relaxed mb-4">
-                As a user of our services, you agree to:
-              </p>
-              <ul className="list-disc list-inside text-slate-600 mb-6 space-y-2">
-                <li>Provide accurate and complete information when required</li>
-                <li>Maintain the security of your account credentials</li>
-                <li>Use our services in compliance with applicable laws</li>
-                <li>Not attempt to gain unauthorized access to our systems</li>
-                <li>Not use our services for any illegal or harmful purposes</li>
-                <li>Respect intellectual property rights</li>
-              </ul>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="mb-12"
-            >
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">4. Payment Terms</h2>
-              <p className="text-slate-600 leading-relaxed mb-4">
-                Payment terms for our services are as follows:
-              </p>
-              <ul className="list-disc list-inside text-slate-600 mb-6 space-y-2">
-                <li>Payment is due upon receipt of invoice unless otherwise agreed</li>
-                <li>We accept payment by credit card, bank transfer, or other agreed methods</li>
-                <li>Late payments may result in service suspension or termination</li>
-                <li>All fees are non-refundable unless otherwise specified</li>
-                <li>Prices are subject to change with 30 days written notice</li>
-              </ul>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              className="mb-12"
-            >
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">5. Intellectual Property</h2>
-              <p className="text-slate-600 leading-relaxed mb-4">
-                All content, features, and functionality of our services, including but not limited to:
-              </p>
-              <ul className="list-disc list-inside text-slate-600 mb-6 space-y-2">
-                <li>Software, code, and applications</li>
-                <li>Designs, graphics, and user interfaces</li>
-                <li>Text, images, and multimedia content</li>
-                <li>Trademarks, service marks, and logos</li>
-                <li>Trade secrets and proprietary information</li>
-              </ul>
-              <p className="text-slate-600 leading-relaxed">
-                Are owned by Zion Tech Group and are protected by copyright, trademark, and other intellectual property laws.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              className="mb-12"
-            >
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">6. Privacy and Data Protection</h2>
-              <p className="text-slate-600 leading-relaxed mb-4">
-                Your privacy is important to us. Our collection and use of personal information is governed by our Privacy Policy, 
-                which is incorporated into these Terms of Service by reference. By using our services, you consent to the collection 
-                and use of information as outlined in our Privacy Policy.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.7 }}
-              className="mb-12"
-            >
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">7. Limitation of Liability</h2>
-              <p className="text-slate-600 leading-relaxed mb-4">
-                To the maximum extent permitted by law, Zion Tech Group shall not be liable for any indirect, incidental, 
-                special, consequential, or punitive damages, including but not limited to:
-              </p>
-              <ul className="list-disc list-inside text-slate-600 mb-6 space-y-2">
-                <li>Loss of profits, data, or business opportunities</li>
-                <li>Service interruptions or downtime</li>
-                <li>Security breaches or data loss</li>
-                <li>Third-party actions or content</li>
-                <li>Any other damages arising from your use of our services</li>
-              </ul>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.8 }}
-              className="mb-12"
-            >
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">8. Service Availability</h2>
-              <p className="text-slate-600 leading-relaxed mb-4">
-                We strive to provide reliable and consistent service, but we do not guarantee:
-              </p>
-              <ul className="list-disc list-inside text-slate-600 mb-6 space-y-2">
-                <li>Uninterrupted or error-free service</li>
-                <li>Immediate resolution of all issues</li>
-                <li>Compatibility with all devices or browsers</li>
-                <li>Availability during maintenance periods</li>
-              </ul>
-              <p className="text-slate-600 leading-relaxed">
-                We reserve the right to modify, suspend, or discontinue any part of our services at any time.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.9 }}
-              className="mb-12"
-            >
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">9. Termination</h2>
-              <p className="text-slate-600 leading-relaxed mb-4">
-                Either party may terminate this agreement at any time with written notice. Upon termination:
-              </p>
-              <ul className="list-disc list-inside text-slate-600 mb-6 space-y-2">
-                <li>Your right to use our services will cease immediately</li>
-                <li>We may delete your account and data</li>
-                <li>Any outstanding payments will become due immediately</li>
-                <li>Provisions that survive termination will remain in effect</li>
-              </ul>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 1.0 }}
-              className="mb-12"
-            >
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">10. Governing Law</h2>
-              <p className="text-slate-600 leading-relaxed">
-                These Terms of Service shall be governed by and construed in accordance with the laws of the State of California, 
-                United States. Any disputes arising from these terms or your use of our services shall be resolved in the courts 
-                of San Francisco County, California.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 1.1 }}
-              className="mb-12"
-            >
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">11. Changes to Terms</h2>
-              <p className="text-slate-600 leading-relaxed mb-4">
-                We reserve the right to modify these terms at any time. Changes will be effective immediately upon posting. 
-                Your continued use of our services after changes are posted constitutes acceptance of the new terms.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 1.2 }}
-              className="mb-12"
-            >
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">12. Contact Information</h2>
-              <p className="text-slate-600 leading-relaxed mb-6">
-                If you have any questions about these Terms of Service, please contact us:
+              <h2 className="text-3xl font-bold text-white mb-6 flex items-center">
+                <Mail className="w-8 h-8 text-cyan-400 mr-4" />
+                Questions About These Terms?
+              </h2>
+              
+              <p className="text-gray-300 mb-6 leading-relaxed">
+                If you have questions about these terms of service, please contact us:
               </p>
               
-              <div className="bg-slate-50 rounded-2xl p-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="flex items-center space-x-3">
-                    <Mail className="w-5 h-5 text-blue-500" />
-                    <div>
-                      <div className="font-medium text-slate-900">Email</div>
-                      <div className="text-slate-600">legal@ziontechgroup.com</div>
-                    </div>
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="flex items-center">
+                  <Mail className="w-5 h-5 text-cyan-400 mr-3" />
+                  <div>
+                    <p className="text-white font-semibold">Email</p>
+                    <p className="text-gray-300">legal@ziontechgroup.com</p>
                   </div>
-                  
-                  <div className="flex items-center space-x-3">
-                    <Phone className="w-5 h-5 text-blue-500" />
-                    <div>
-                      <div className="font-medium text-slate-900">Phone</div>
-                      <div className="text-slate-600">+1 (302) 464-0950</div>
-                    </div>
+                </div>
+                
+                <div className="flex items-center">
+                  <Phone className="w-5 h-5 text-cyan-400 mr-3" />
+                  <div>
+                    <p className="text-white font-semibold">Phone</p>
+                    <p className="text-gray-300">+1 (555) 123-4567</p>
                   </div>
-                  
-                  <div className="flex items-center space-x-3">
-                    <Globe className="w-5 h-5 text-blue-500" />
-                    <div>
-                      <div className="font-medium text-slate-900">Website</div>
-                      <div className="text-slate-600">https://ziontechgroup.com</div>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-center space-x-3">
-                    <Users className="w-5 h-5 text-blue-500" />
-                    <div>
-                      <div className="font-medium text-slate-900">Legal Department</div>
-                      <div className="text-slate-600">legal@ziontechgroup.com</div>
-                    </div>
+                </div>
+                
+                <div className="flex items-center">
+                  <MapPin className="w-5 h-5 text-cyan-400 mr-3" />
+                  <div>
+                    <p className="text-white font-semibold">Address</p>
+                    <p className="text-gray-300">San Francisco, CA</p>
                   </div>
                 </div>
               </div>
             </motion.div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <EnhancedFooter />
+        <EnhancedFooter />
+      </div>
     </>
   );
 }

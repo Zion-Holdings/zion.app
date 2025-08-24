@@ -1,19 +1,11 @@
 {
   "summary": {
     "totalChecks": 6,
-<<<<<<< HEAD
-    "passedChecks": 6,
-    "failedChecks": 0,
-    "criticalFailures": 0,
-    "canBuild": true,
-    "timestamp": "2025-08-19T17:38:03.158Z"
-=======
     "passedChecks": 5,
     "failedChecks": 1,
     "criticalFailures": 0,
     "canBuild": true,
     "timestamp": "2025-08-19T17:47:07.698Z"
->>>>>>> origin/cursor/automate-all-existing-automations-and-clean-up-ce5e
   },
   "results": [
     {
@@ -36,13 +28,8 @@
     },
     {
       "name": "Environment Variables",
-<<<<<<< HEAD
-      "status": "PASS",
-      "result": "Environment variables check completed",
-=======
       "status": "FAIL",
       "error": "Missing environment variables: NODE_VERSION, NODE_OPTIONS",
->>>>>>> origin/cursor/automate-all-existing-automations-and-clean-up-ce5e
       "critical": false
     },
     {
@@ -58,11 +45,7 @@
       "critical": false
     }
   ],
-<<<<<<< HEAD
-  "recommendations": []
-=======
   "recommendations": [
     "Verify all required environment variables are set"
   ]
->>>>>>> origin/cursor/automate-all-existing-automations-and-clean-up-ce5e
 }

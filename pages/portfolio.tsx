@@ -1,519 +1,347 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Head from 'next/head';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Brain, Shield, Rocket, Cpu, Database, Globe, 
-  Users, Target, Star, CheckCircle, TrendingUp, Zap, ExternalLink
+  Briefcase, ExternalLink, Github, Calendar, Users, Award, 
+  Filter, Code, Database, Shield, Cpu, Globe, Brain
 } from 'lucide-react';
 import EnhancedNavigation from '../components/EnhancedNavigation';
 import EnhancedFooter from '../components/EnhancedFooter';
 
-export default function PortfolioPage() {
-  const featuredProjects = [
+export default function Portfolio() {
+  const [selectedCategory, setSelectedCategory] = useState('all');
+
+  const categories = [
+    { id: 'all', name: 'All Projects', icon: Briefcase },
+    { id: 'ai-ml', name: 'AI & ML', icon: Brain },
+    { id: 'cybersecurity', name: 'Cybersecurity', icon: Shield },
+    { id: 'quantum', name: 'Quantum Computing', icon: Cpu },
+    { id: 'web-development', name: 'Web Development', icon: Code },
+    { id: 'data-analytics', name: 'Data Analytics', icon: Database }
+  ];
+
+  const projects = [
     {
-      title: "AI-Powered Financial Analytics Platform",
-      client: "Global Investment Bank",
-      industry: "Financial Services",
-      description: "Developed a comprehensive AI platform that analyzes market data in real-time, providing predictive insights for investment decisions. The system processes millions of data points daily and delivers actionable recommendations.",
-      technologies: ["Machine Learning", "Real-time Analytics", "Cloud Infrastructure", "API Integration"],
-      results: [
-        "40% improvement in investment decision accuracy",
-        "60% reduction in analysis time",
-        "25% increase in portfolio returns",
-        "Real-time market monitoring capabilities"
-      ],
-      image: "/portfolio/financial-analytics.jpg",
-      category: "AI & Machine Learning",
-      duration: "6 months",
-      teamSize: "12 engineers"
+      id: 1,
+      title: 'AI-Powered Fraud Detection System',
+      category: 'ai-ml',
+      description: 'Machine learning system that reduced fraud by 95% for a major financial institution',
+      image: '/api/placeholder/600/400',
+      technologies: ['Python', 'TensorFlow', 'AWS', 'PostgreSQL'],
+      client: 'Fortune 500 Bank',
+      year: 2024,
+      results: ['95% fraud reduction', '50% faster processing', '$2M annual savings'],
+      link: '#',
+      github: '#'
     },
     {
-      title: "Quantum-Resistant Cybersecurity System",
-      client: "Healthcare Technology Company",
-      industry: "Healthcare",
-      description: "Implemented a comprehensive cybersecurity solution using quantum-resistant encryption algorithms. The system protects sensitive patient data and ensures compliance with HIPAA and other healthcare regulations.",
-      technologies: ["Quantum Cryptography", "Zero-Trust Architecture", "AI Threat Detection", "Compliance Management"],
-      results: [
-        "99.99% security uptime guarantee",
-        "Zero security breaches in 18 months",
-        "Full HIPAA compliance achieved",
-        "90% reduction in threat response time"
-      ],
-      image: "/portfolio/cybersecurity.jpg",
-      category: "Cybersecurity",
-      duration: "8 months",
-      teamSize: "15 specialists"
+      id: 2,
+      title: 'Quantum Encryption Platform',
+      category: 'quantum',
+      description: 'Quantum-resistant encryption solution for government communications',
+      image: '/api/placeholder/600/400',
+      technologies: ['Qiskit', 'Python', 'Quantum Circuits', 'Cryptography'],
+      client: 'Government Agency',
+      year: 2024,
+      results: ['Quantum-safe security', '99.99% uptime', 'Zero breaches'],
+      link: '#',
+      github: null
     },
     {
-      title: "Satellite Data Optimization Platform",
-      client: "Agricultural Technology Firm",
-      industry: "Agriculture",
-      description: "Built a platform that processes satellite imagery to provide farmers with real-time insights about crop health, soil conditions, and weather patterns. The system helps optimize agricultural practices and increase yields.",
-      technologies: ["Satellite Imagery Processing", "Machine Learning", "IoT Integration", "Mobile Applications"],
-      results: [
-        "30% increase in crop yields",
-        "25% reduction in water usage",
-        "Real-time monitoring of 50,000+ acres",
-        "Predictive analytics for weather events"
-      ],
-      image: "/portfolio/satellite-agriculture.jpg",
-      category: "Space Technology",
-      duration: "10 months",
-      teamSize: "18 engineers"
+      id: 3,
+      title: 'Smart City IoT Platform',
+      category: 'data-analytics',
+      description: 'Comprehensive IoT platform managing 10,000+ sensors across metropolitan area',
+      image: '/api/placeholder/600/400',
+      technologies: ['React', 'Node.js', 'InfluxDB', 'Kubernetes'],
+      client: 'Metropolitan Government',
+      year: 2023,
+      results: ['30% energy savings', '50% traffic improvement', '10k+ sensors managed'],
+      link: '#',
+      github: '#'
+    },
+    {
+      id: 4,
+      title: 'Zero-Trust Security Framework',
+      category: 'cybersecurity',
+      description: 'Enterprise-grade zero-trust security implementation for global corporation',
+      image: '/api/placeholder/600/400',
+      technologies: ['Microsoft Azure', 'Okta', 'Sentinel', 'PowerShell'],
+      client: 'Global Technology Corp',
+      year: 2023,
+      results: ['100% endpoint coverage', '80% breach prevention', '24/7 monitoring'],
+      link: '#',
+      github: null
+    },
+    {
+      id: 5,
+      title: 'E-commerce Platform Redesign',
+      category: 'web-development',
+      description: 'Complete e-commerce platform overhaul resulting in 200% conversion increase',
+      image: '/api/placeholder/600/400',
+      technologies: ['Next.js', 'TypeScript', 'Stripe', 'Vercel'],
+      client: 'Retail Startup',
+      year: 2023,
+      results: ['200% conversion increase', '60% faster load times', '500k+ users'],
+      link: '#',
+      github: '#'
+    },
+    {
+      id: 6,
+      title: 'Healthcare Data Analytics',
+      category: 'data-analytics',
+      description: 'HIPAA-compliant analytics platform for patient outcome prediction',
+      image: '/api/placeholder/600/400',
+      technologies: ['Python', 'Apache Spark', 'Tableau', 'HIPAA'],
+      client: 'Healthcare Network',
+      year: 2022,
+      results: ['25% better outcomes', 'HIPAA compliant', '1M+ patient records'],
+      link: '#',
+      github: null
     }
   ];
 
-  const caseStudies = [
-    {
-      title: "Digital Transformation for Manufacturing",
-      client: "Automotive Manufacturer",
-      industry: "Manufacturing",
-      challenge: "Legacy systems were slowing down production and increasing costs. The company needed to modernize their operations while maintaining production continuity.",
-      solution: "Implemented a comprehensive digital transformation including IoT sensors, predictive maintenance, and AI-powered quality control systems.",
-      results: [
-        "45% reduction in production downtime",
-        "35% improvement in product quality",
-        "20% reduction in operational costs",
-        "Real-time production monitoring"
-      ],
-      technologies: ["IoT", "Predictive Analytics", "Cloud Computing", "AI Quality Control"],
-      image: "/portfolio/manufacturing.jpg"
-    },
-    {
-      title: "Edge Computing for Retail",
-      client: "National Retail Chain",
-      industry: "Retail",
-      challenge: "The retail chain needed to process customer data in real-time to provide personalized experiences while ensuring data privacy and security.",
-      solution: "Deployed edge computing infrastructure across 500+ locations with AI-powered customer analytics and real-time inventory management.",
-      results: [
-        "35% increase in customer satisfaction",
-        "25% improvement in inventory accuracy",
-        "Real-time customer personalization",
-        "Enhanced data security and privacy"
-      ],
-      technologies: ["Edge Computing", "AI Analytics", "Real-time Processing", "Data Privacy"],
-      image: "/portfolio/retail-edge.jpg"
-    },
-    {
-      title: "AI Research Assistant Platform",
-      client: "Research Institution",
-      industry: "Education & Research",
-      challenge: "Researchers needed a tool to accelerate literature reviews, data analysis, and hypothesis generation across multiple disciplines.",
-      solution: "Developed an autonomous AI research assistant that can analyze scientific papers, identify patterns, and suggest research directions.",
-      results: [
-        "80% reduction in literature review time",
-        "Discovery of 15+ new research connections",
-        "Automated data analysis capabilities",
-        "Cross-disciplinary research insights"
-      ],
-      technologies: ["Natural Language Processing", "Machine Learning", "Knowledge Graphs", "Automated Analysis"],
-      image: "/portfolio/ai-research.jpg"
-    }
-  ];
-
-  const industries = [
-    {
-      name: "Financial Services",
-      projects: 25,
-      description: "AI-powered analytics, risk assessment, and fraud detection systems",
-      icon: TrendingUp
-    },
-    {
-      name: "Healthcare",
-      projects: 18,
-      description: "Patient data security, medical imaging AI, and healthcare analytics",
-      icon: Shield
-    },
-    {
-      name: "Manufacturing",
-      projects: 22,
-      description: "IoT integration, predictive maintenance, and quality control systems",
-      icon: Cpu
-    },
-    {
-      name: "Retail & E-commerce",
-      projects: 20,
-      description: "Customer analytics, inventory optimization, and personalized experiences",
-      icon: Users
-    },
-    {
-      name: "Agriculture",
-      projects: 12,
-      description: "Satellite monitoring, precision farming, and crop optimization",
-      icon: Globe
-    },
-    {
-      name: "Education & Research",
-      projects: 15,
-      description: "AI research tools, educational platforms, and data analysis systems",
-      icon: Brain
-    }
-  ];
-
-  const technologies = [
-    { name: "Machine Learning & AI", count: 45, icon: Brain },
-    { name: "Cybersecurity", count: 38, icon: Shield },
-    { name: "Cloud Computing", count: 42, icon: Globe },
-    { name: "IoT & Edge Computing", count: 28, icon: Cpu },
-    { name: "Data Analytics", count: 35, icon: Database },
-    { name: "Space Technology", count: 15, icon: Rocket }
-  ];
+  const filteredProjects = selectedCategory === 'all' 
+    ? projects 
+    : projects.filter(project => project.category === selectedCategory);
 
   return (
     <>
       <Head>
-        <title>Our Portfolio - Zion Tech Group</title>
-        <meta name="description" content="Explore our portfolio of successful technology implementations across industries. See how we've transformed businesses with AI, cybersecurity, space technology, and more." />
-        <meta name="keywords" content="portfolio, case studies, projects, AI implementations, cybersecurity solutions, space technology, Zion Tech Group" />
-        <meta property="og:title" content="Our Portfolio - Zion Tech Group" />
-        <meta property="og:description" content="Explore our portfolio of successful technology implementations across industries." />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://ziontechgroup.com/portfolio" />
+        <title>Portfolio | Zion Tech Group</title>
+        <meta name="description" content="Explore our portfolio of successful technology projects including AI solutions, cybersecurity implementations, and quantum computing applications." />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <EnhancedNavigation />
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+        <EnhancedNavigation />
 
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center"
-          >
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-              Our
-              <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-                {" "}Portfolio
-              </span>
-            </h1>
-            <p className="text-xl text-white/70 max-w-4xl mx-auto leading-relaxed mb-8">
-              Discover how we've transformed businesses across industries with cutting-edge technology solutions. 
-              From AI-powered analytics to quantum cybersecurity, our projects demonstrate the real-world impact 
-              of innovative technology.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="#featured"
-                className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-200 transform hover:scale-105"
-              >
-                View Projects
-              </a>
-              <a
-                href="#case-studies"
-                className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-200"
-              >
-                Read Case Studies
-              </a>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+        {/* Hero Section */}
+        <section className="pt-32 pb-20 px-6">
+          <div className="max-w-6xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="flex items-center justify-center mb-6"
+            >
+              <Briefcase className="w-16 h-16 text-cyan-400" />
+            </motion.div>
+            
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-white to-cyan-100 bg-clip-text text-transparent mb-6"
+            >
+              Our Portfolio
+            </motion.h1>
+            
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
+            >
+              Discover how we&apos;ve helped organizations transform their operations with cutting-edge technology solutions.
+            </motion.p>
 
-      {/* Stats */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+            {/* Stats */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="grid md:grid-cols-4 gap-6 mt-12"
             >
-              <div className="text-4xl font-bold text-slate-900 mb-2">150+</div>
-              <div className="text-slate-600">Projects Completed</div>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-            >
-              <div className="text-4xl font-bold text-slate-900 mb-2">25+</div>
-              <div className="text-slate-600">Industries Served</div>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              <div className="text-4xl font-bold text-slate-900 mb-2">98%</div>
-              <div className="text-slate-600">Client Satisfaction</div>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-            >
-              <div className="text-4xl font-bold text-slate-900 mb-2">500+</div>
-              <div className="text-slate-600">Happy Clients</div>
+              <div className="bg-slate-800/50 rounded-xl p-6 border border-white/10">
+                <div className="text-3xl font-bold text-cyan-400 mb-2">50+</div>
+                <div className="text-gray-300">Projects Completed</div>
+              </div>
+              <div className="bg-slate-800/50 rounded-xl p-6 border border-white/10">
+                <div className="text-3xl font-bold text-cyan-400 mb-2">98%</div>
+                <div className="text-gray-300">Client Satisfaction</div>
+              </div>
+              <div className="bg-slate-800/50 rounded-xl p-6 border border-white/10">
+                <div className="text-3xl font-bold text-cyan-400 mb-2">25+</div>
+                <div className="text-gray-300">Industry Awards</div>
+              </div>
+              <div className="bg-slate-800/50 rounded-xl p-6 border border-white/10">
+                <div className="text-3xl font-bold text-cyan-400 mb-2">$50M+</div>
+                <div className="text-gray-300">Value Generated</div>
+              </div>
             </motion.div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Featured Projects */}
-      <section id="featured" className="py-20 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold text-slate-900 mb-6">Featured Projects</h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Highlighting some of our most impactful and innovative technology implementations.
-            </p>
-          </motion.div>
+        {/* Category Filter */}
+        <section className="py-10 px-6">
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="flex flex-wrap justify-center gap-4 mb-12"
+            >
+              {categories.map((category) => (
+                <button
+                  key={category.id}
+                  onClick={() => setSelectedCategory(category.id)}
+                  className={`flex items-center space-x-2 px-6 py-3 rounded-full border transition-all duration-300 ${
+                    selectedCategory === category.id
+                      ? 'bg-cyan-500 border-cyan-500 text-white'
+                      : 'bg-slate-800/50 border-white/10 text-gray-300 hover:border-cyan-500/50'
+                  }`}
+                >
+                  <category.icon className="w-4 h-4" />
+                  <span>{category.name}</span>
+                </button>
+              ))}
+            </motion.div>
+          </div>
+        </section>
 
-          <div className="space-y-12">
-            {featuredProjects.map((project, index) => (
+        {/* Projects Grid */}
+        <section className="py-20 px-6">
+          <div className="max-w-6xl mx-auto">
+            <AnimatePresence mode="wait">
               <motion.div
-                key={project.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300"
+                key={selectedCategory}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.5 }}
+                className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
               >
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
-                  <div className="bg-gradient-to-br from-blue-500 to-cyan-500 p-8 flex items-center justify-center">
-                    <div className="text-center text-white">
-                      <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <ExternalLink className="w-10 h-10" />
+                {filteredProjects.map((project, index) => (
+                  <motion.div
+                    key={project.id}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: index * 0.1 }}
+                    className="bg-slate-800/50 rounded-2xl border border-white/10 overflow-hidden hover:border-cyan-500/30 transition-all duration-300 group"
+                  >
+                    {/* Project Image */}
+                    <div className="aspect-video bg-gradient-to-br from-slate-700 to-slate-600 relative overflow-hidden">
+                      <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-blue-500/20"></div>
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="text-6xl opacity-20">
+                          {categories.find(c => c.id === project.category)?.icon && 
+                            React.createElement(categories.find(c => c.id === project.category)!.icon)
+                          }
+                        </div>
                       </div>
-                      <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
-                      <p className="text-blue-100">{project.client}</p>
-                      <span className="inline-block bg-white/20 px-3 py-1 rounded-full text-sm mt-3">
-                        {project.industry}
-                      </span>
                     </div>
-                  </div>
-                  
-                  <div className="p-8">
-                    <div className="mb-6">
-                      <p className="text-slate-600 leading-relaxed mb-4">{project.description}</p>
+
+                    {/* Project Details */}
+                    <div className="p-6">
+                      <div className="flex items-center justify-between mb-4">
+                        <div className="flex items-center space-x-2 text-sm text-cyan-400">
+                          <Calendar className="w-4 h-4" />
+                          <span>{project.year}</span>
+                        </div>
+                        <div className="flex space-x-2">
+                          {project.github && (
+                            <a 
+                              href={project.github}
+                              className="text-gray-400 hover:text-white transition-colors"
+                            >
+                              <Github className="w-4 h-4" />
+                            </a>
+                          )}
+                          <a 
+                            href={project.link}
+                            className="text-gray-400 hover:text-white transition-colors"
+                          >
+                            <ExternalLink className="w-4 h-4" />
+                          </a>
+                        </div>
+                      </div>
+
+                      <h3 className="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">
+                        {project.title}
+                      </h3>
                       
-                      <div className="grid grid-cols-2 gap-4 text-sm mb-4">
-                        <div>
-                          <span className="font-medium text-slate-700">Category:</span>
-                          <p className="text-slate-600">{project.category}</p>
-                        </div>
-                        <div>
-                          <span className="font-medium text-slate-700">Duration:</span>
-                          <p className="text-slate-600">{project.duration}</p>
-                        </div>
-                        <div>
-                          <span className="font-medium text-slate-700">Team Size:</span>
-                          <p className="text-slate-600">{project.teamSize}</p>
+                      <p className="text-gray-300 mb-4 leading-relaxed">
+                        {project.description}
+                      </p>
+
+                      <div className="mb-4">
+                        <div className="text-sm text-gray-400 mb-2">Client:</div>
+                        <div className="text-white font-medium">{project.client}</div>
+                      </div>
+
+                      {/* Technologies */}
+                      <div className="mb-4">
+                        <div className="text-sm text-gray-400 mb-2">Technologies:</div>
+                        <div className="flex flex-wrap gap-2">
+                          {project.technologies.map((tech, techIndex) => (
+                            <span
+                              key={techIndex}
+                              className="px-2 py-1 bg-slate-700 text-cyan-400 text-xs rounded-full"
+                            >
+                              {tech}
+                            </span>
+                          ))}
                         </div>
                       </div>
-                    </div>
-                    
-                    <div className="mb-6">
-                      <h4 className="font-semibold text-slate-900 mb-3">Technologies Used:</h4>
-                      <div className="flex flex-wrap gap-2">
-                        {project.technologies.map((tech) => (
-                          <span key={tech} className="bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full">
-                            {tech}
-                          </span>
-                        ))}
+
+                      {/* Results */}
+                      <div>
+                        <div className="text-sm text-gray-400 mb-2">Key Results:</div>
+                        <ul className="space-y-1">
+                          {project.results.map((result, resultIndex) => (
+                            <li key={resultIndex} className="text-sm text-gray-300 flex items-start">
+                              <div className="w-1.5 h-1.5 bg-cyan-400 rounded-full mt-2 mr-2 flex-shrink-0"></div>
+                              {result}
+                            </li>
+                          ))}
+                        </ul>
                       </div>
                     </div>
-                    
-                    <div>
-                      <h4 className="font-semibold text-slate-900 mb-3">Key Results:</h4>
-                      <ul className="space-y-2">
-                        {project.results.map((result, idx) => (
-                          <li key={idx} className="flex items-center space-x-2 text-sm text-slate-600">
-                            <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                            <span>{result}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </div>
+                  </motion.div>
+                ))}
               </motion.div>
-            ))}
+            </AnimatePresence>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Case Studies */}
-      <section id="case-studies" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold text-slate-900 mb-6">Case Studies</h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Deep dives into how we solved complex business challenges with innovative technology solutions.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {caseStudies.map((study, index) => (
-              <motion.div
-                key={study.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-slate-50 rounded-2xl p-8 hover:bg-slate-100 transition-all duration-300 transform hover:-translate-y-2"
-              >
-                <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center mb-6">
-                  <Target className="w-8 h-8 text-white" />
-                </div>
-                
-                <h3 className="text-xl font-bold text-slate-900 mb-3">{study.title}</h3>
-                <div className="mb-4">
-                  <span className="text-sm font-medium text-blue-600">{study.client}</span>
-                  <span className="text-slate-400 mx-2">•</span>
-                  <span className="text-sm text-slate-600">{study.industry}</span>
-                </div>
-                
-                <div className="mb-4">
-                  <h4 className="font-semibold text-slate-900 mb-2">Challenge:</h4>
-                  <p className="text-slate-600 text-sm leading-relaxed">{study.challenge}</p>
-                </div>
-                
-                <div className="mb-4">
-                  <h4 className="font-semibold text-slate-900 mb-2">Solution:</h4>
-                  <p className="text-slate-600 text-sm leading-relaxed">{study.solution}</p>
-                </div>
-                
-                <div className="mb-4">
-                  <h4 className="font-semibold text-slate-900 mb-2">Results:</h4>
-                  <ul className="space-y-1">
-                    {study.results.map((result, idx) => (
-                      <li key={idx} className="text-sm text-slate-600 flex items-center space-x-2">
-                        <CheckCircle className="w-3 h-3 text-green-500 flex-shrink-0" />
-                        <span>{result}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                
-                <div>
-                  <h4 className="font-semibold text-slate-900 mb-2">Technologies:</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {study.technologies.map((tech) => (
-                      <span key={tech} className="bg-blue-100 text-blue-800 text-xs font-medium px-2 py-1 rounded-full">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </motion.div>
-            ))}
+        {/* CTA Section */}
+        <section className="py-20 px-6">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="bg-gradient-to-r from-cyan-900/20 to-blue-900/20 rounded-2xl p-12 border border-cyan-500/20"
+            >
+              <h2 className="text-4xl font-bold text-white mb-6">Ready to Start Your Project?</h2>
+              <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+                Let&apos;s discuss how we can help transform your business with cutting-edge technology solutions.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href="/contact"
+                  className="bg-cyan-500 hover:bg-cyan-400 text-white px-8 py-4 rounded-xl font-semibold transition-colors duration-300 flex items-center justify-center"
+                >
+                  <Users className="w-5 h-5 mr-2" />
+                  Start a Project
+                </a>
+                <a
+                  href="/services"
+                  className="bg-slate-800 hover:bg-slate-700 text-white px-8 py-4 rounded-xl font-semibold transition-colors duration-300 border border-white/10 flex items-center justify-center"
+                >
+                  <Globe className="w-5 h-5 mr-2" />
+                  View Services
+                </a>
+              </div>
+            </motion.div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Industries */}
-      <section className="py-20 bg-slate-900">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold text-white mb-6">Industries We Serve</h2>
-            <p className="text-xl text-white/70 max-w-3xl mx-auto">
-              Our expertise spans across diverse industries, delivering tailored solutions for unique business challenges.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {industries.map((industry, index) => (
-              <motion.div
-                key={industry.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10 p-8 hover:bg-white/10 transition-all duration-300"
-              >
-                <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center mb-6">
-                  <industry.icon className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-3">{industry.name}</h3>
-                <p className="text-white/70 mb-4 leading-relaxed">{industry.description}</p>
-                <div className="text-2xl font-bold text-blue-400">{industry.projects}+ Projects</div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Technologies */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold text-slate-900 mb-6">Technologies We Master</h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Cutting-edge technologies that power our innovative solutions and drive business transformation.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {technologies.map((tech, index) => (
-              <motion.div
-                key={tech.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-slate-50 rounded-2xl p-8 text-center hover:bg-slate-100 transition-all duration-300"
-              >
-                <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center mx-auto mb-4">
-                  <tech.icon className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-2">{tech.name}</h3>
-                <div className="text-3xl font-bold text-blue-600">{tech.count}+ Projects</div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-cyan-600">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-4xl font-bold text-white mb-6">Ready to Start Your Project?</h2>
-            <p className="text-xl text-blue-100 mb-8">
-              Let's discuss how we can help transform your business with cutting-edge technology solutions.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="/contact"
-                className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-200 transform hover:scale-105"
-              >
-                Get Started Today
-              </a>
-              <a
-                href="/contact"
-                className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-200"
-              >
-                Schedule Consultation
-              </a>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      <EnhancedFooter />
+        <EnhancedFooter />
+      </div>
     </>
   );
 }

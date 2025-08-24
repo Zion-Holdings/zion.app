@@ -5,11 +5,7 @@
     "failedChecks": 1,
     "criticalFailures": 0,
     "canBuild": true,
-<<<<<<< HEAD
-    "timestamp": "2025-08-19T22:04:44.156Z"
-=======
     "timestamp": "2025-08-20T02:36:54.179Z"
->>>>>>> origin/cursor/build-nextjs-app-and-handle-errors-5869
   },
   "results": [
     {

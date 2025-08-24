@@ -5,11 +5,7 @@
     "failedChecks": 1,
     "criticalFailures": 0,
     "canBuild": true,
-<<<<<<< HEAD
-    "timestamp": "2025-08-19T17:23:22.177Z"
-=======
     "timestamp": "2025-08-19T17:47:02.478Z"
->>>>>>> origin/cursor/automate-automation-redundancy-and-build-improvement-43c0
   },
   "results": [
     {

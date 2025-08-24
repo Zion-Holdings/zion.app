@@ -5,11 +5,7 @@
     "failedChecks": 0,
     "criticalFailures": 0,
     "canBuild": true,
-<<<<<<< HEAD
-    "timestamp": "2025-08-20T11:46:56.847Z"
-=======
     "timestamp": "2025-08-19T18:25:53.083Z"
->>>>>>> origin/cursor/automate-all-existing-automations-and-clean-up-1358
   },
   "results": [
     {

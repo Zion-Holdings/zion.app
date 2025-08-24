@@ -17,13 +17,8 @@
   <h1>Metadata Optimizer</h1>
   <p>Checks pages for essential meta tags and proposes titles/descriptions if missing.</p>
   <div class="card">
-<<<<<<< HEAD
-    <div><strong>Generated:</strong> 8/14/2025, 6:38:10 AM</div>
-    <div><strong>Pages scanned:</strong> 2974</div>
-=======
     <div><strong>Generated:</strong> 8/19/2025, 12:44:19 AM</div>
     <div><strong>Pages scanned:</strong> 7808</div>
->>>>>>> origin/cursor/build-fix-and-push-changes-8412
   </div>
   <table>
     <thead><tr><th>Route</th><th>Missing</th><th>Suggested Title</th><th>Suggested Description</th></tr></thead>
@@ -998,10 +993,6 @@
 <tr>
   <td><code>/reports/blueprints/blueprint-2025-08-14-004331</code></td>
   <td>og:image</td>
-<<<<<<< HEAD
-  <td>Reference Architecture — Autonomous Content Mesh</td>
-  <td>Reference Architecture — Autonomous Content Mesh — auto-suggested description</td>
-=======
   <td>Smart Dashboard</td>
   <td>Smart Dashboard — auto-suggested description</td>
 </tr>
@@ -16663,7 +16654,6 @@
   <td>og:image</td>
   <td>Guide — Cloud Improving Implementation</td>
   <td>Guide — Cloud Improving Implementation — auto-suggested description</td>
->>>>>>> origin/cursor/build-fix-and-push-changes-8412
 </tr>
 
 <tr>
@@ -17003,9 +16993,6 @@
 </tr>
 
 <tr>
-<<<<<<< HEAD
-  <td><code>/reports/blueprints/blueprint-2025-08-14-083015</code></td>
-=======
   <td><code>/reports/guides/guide-2025-08-19-034110</code></td>
   <td>og:image</td>
   <td>Guide — Cloud Improving Implementation</td>
@@ -17126,7 +17113,6 @@
 
 <tr>
   <td><code>/reports/guides/ultra-1755539341010-vsuyr3</code></td>
->>>>>>> origin/cursor/build-fix-and-push-changes-8412
   <td>og:image</td>
   <td>Reference Architecture — Autonomous Content Mesh</td>
   <td>Reference Architecture — Autonomous Content Mesh — auto-suggested description</td>
@@ -20367,17 +20353,10 @@
 </tr>
 
 <tr>
-<<<<<<< HEAD
-  <td><code>/reports/guides/guide-2025-08-14-093629</code></td>
-  <td>og:image</td>
-  <td>Guide — Techcrunch Pebble Implementation</td>
-  <td>Guide — Techcrunch Pebble Implementation — auto-suggested description</td>
-=======
   <td><code>/reports/guides/ultra-1755542866497-02z0vc</code></td>
   <td>og:image</td>
   <td>Ultra-Fast Guide: Lightning deployment pipelines</td>
   <td>Ultra-Fast Guide: Lightning deployment pipelines — auto-suggested description</td>
->>>>>>> origin/cursor/build-fix-and-push-changes-8412
 </tr>
 
 <tr>
@@ -20388,47 +20367,6 @@
 </tr>
 
 <tr>
-<<<<<<< HEAD
-  <td><code>/reports/guides/guide-2025-08-14-093727</code></td>
-  <td>og:image</td>
-  <td>Guide — Techcrunch Pebble Implementation</td>
-  <td>Guide — Techcrunch Pebble Implementation — auto-suggested description</td>
-</tr>
-
-<tr>
-  <td><code>/reports/guides/guide-2025-08-14-093731</code></td>
-  <td>og:image</td>
-  <td>Guide — Techcrunch Pebble Implementation</td>
-  <td>Guide — Techcrunch Pebble Implementation — auto-suggested description</td>
-</tr>
-
-<tr>
-  <td><code>/reports/guides/guide-2025-08-14-093747</code></td>
-  <td>og:image</td>
-  <td>Guide — Techcrunch Pebble Implementation</td>
-  <td>Guide — Techcrunch Pebble Implementation — auto-suggested description</td>
-</tr>
-
-<tr>
-  <td><code>/reports/guides/guide-2025-08-14-093751</code></td>
-  <td>og:image</td>
-  <td>Guide — Techcrunch Pebble Implementation</td>
-  <td>Guide — Techcrunch Pebble Implementation — auto-suggested description</td>
-</tr>
-
-<tr>
-  <td><code>/reports/guides/guide-2025-08-14-093752</code></td>
-  <td>og:image</td>
-  <td>Guide — Techcrunch Pebble Implementation</td>
-  <td>Guide — Techcrunch Pebble Implementation — auto-suggested description</td>
-</tr>
-
-<tr>
-  <td><code>/reports/guides/guide-2025-08-14-093804</code></td>
-  <td>og:image</td>
-  <td>Guide — Techcrunch Pebble Implementation</td>
-  <td>Guide — Techcrunch Pebble Implementation — auto-suggested description</td>
-=======
   <td><code>/reports/guides/ultra-1755542882634-yj6rlz</code></td>
   <td>og:image</td>
   <td>Ultra-Fast Guide: Instant deployment systems</td>
@@ -20468,7 +20406,6 @@
   <td>og:image</td>
   <td>Ultra-Fast Guide: Ultra-fast testing frameworks</td>
   <td>Ultra-Fast Guide: Ultra-fast testing frameworks — auto-suggested description</td>
->>>>>>> origin/cursor/build-fix-and-push-changes-8412
 </tr>
 
 <tr>
@@ -20710,9 +20647,6 @@
 </tr>
 
 <tr>
-<<<<<<< HEAD
-  <td><code>/reports/innovations/insight-2025-08-13-2021</code></td>
-=======
   <td><code>/reports/innovations/innovation-2025-08-18-1231</code></td>
   <td>og:image</td>
   <td>Case Study Template — Edge AI &amp; IoT</td>
@@ -22688,7 +22622,6 @@
 
 <tr>
   <td><code>/reports/innovations/insight-2025-08-18-1315</code></td>
->>>>>>> origin/cursor/build-fix-and-push-changes-8412
   <td>og:image</td>
   <td>Blueprint: MLOps</td>
   <td>Blueprint: MLOps — auto-suggested description</td>
@@ -25803,9 +25736,6 @@
 </tr>
 
 <tr>
-<<<<<<< HEAD
-  <td><code>/reports/patterns/pattern-2025-08-14-093258</code></td>
-=======
   <td><code>/reports/innovations/insight-2025-08-19-0340</code></td>
   <td>og:image</td>
   <td>Playbook: RAG Platforms</td>
@@ -25870,7 +25800,6 @@
 
 <tr>
   <td><code>/reports/insights/cloud-computing-2025-trends</code></td>
->>>>>>> origin/cursor/build-fix-and-push-changes-8412
   <td>og:image</td>
   <td>Pattern — Trigger Homepage Sitemap</td>
   <td>Pattern — Trigger Homepage Sitemap — auto-suggested description</td>
@@ -26012,10 +25941,6 @@
 <tr>
   <td><code>/reports/playbooks/playbook-2025-08-13-223010</code></td>
   <td>og:image</td>
-<<<<<<< HEAD
-  <td>Playbook — Autonomous Delivery</td>
-  <td>Playbook — Autonomous Delivery — auto-suggested description</td>
-=======
   <td>Ultra-Fast Lightning deployment pipelines Insight</td>
   <td>Ultra-Fast Lightning deployment pipelines Insight — auto-suggested description</td>
 </tr>
@@ -35573,7 +35498,6 @@
   <td>og:image</td>
   <td>Pattern: Lightning-fast development Architecture</td>
   <td>Pattern: Lightning-fast development Architecture — auto-suggested description</td>
->>>>>>> origin/cursor/build-fix-and-push-changes-8412
 </tr>
 
 <tr>
@@ -36606,17 +36530,10 @@
 </tr>
 
 <tr>
-<<<<<<< HEAD
-  <td><code>/reports/playbooks/playbook-2025-08-14-025018</code></td>
-  <td>og:image</td>
-  <td>Playbook — Autonomous Delivery</td>
-  <td>Playbook — Autonomous Delivery — auto-suggested description</td>
-=======
   <td><code>/reports/patterns/ultra-1755542866498-6orkgh</code></td>
   <td>og:image</td>
   <td>Pattern: Real-time collaboration tools Architecture</td>
   <td>Pattern: Real-time collaboration tools Architecture — auto-suggested description</td>
->>>>>>> origin/cursor/build-fix-and-push-changes-8412
 </tr>
 
 <tr>
@@ -36627,51 +36544,6 @@
 </tr>
 
 <tr>
-<<<<<<< HEAD
-  <td><code>/reports/playbooks/playbook-2025-08-14-033014</code></td>
-  <td>og:image</td>
-  <td>Playbook — Autonomous Delivery</td>
-  <td>Playbook — Autonomous Delivery — auto-suggested description</td>
-</tr>
-
-<tr>
-  <td><code>/reports/playbooks/playbook-2025-08-14-035020</code></td>
-  <td>og:image</td>
-  <td>Playbook — Autonomous Delivery</td>
-  <td>Playbook — Autonomous Delivery — auto-suggested description</td>
-</tr>
-
-<tr>
-  <td><code>/reports/playbooks/playbook-2025-08-14-040018</code></td>
-  <td>og:image</td>
-  <td>Playbook — Autonomous Delivery</td>
-  <td>Playbook — Autonomous Delivery — auto-suggested description</td>
-</tr>
-
-<tr>
-  <td><code>/reports/playbooks/playbook-2025-08-14-041113</code></td>
-  <td>og:image</td>
-  <td>Playbook — Autonomous Delivery</td>
-  <td>Playbook — Autonomous Delivery — auto-suggested description</td>
-</tr>
-
-<tr>
-  <td><code>/reports/playbooks/playbook-2025-08-14-041903</code></td>
-  <td>og:image</td>
-  <td>Playbook — Autonomous Delivery</td>
-  <td>Playbook — Autonomous Delivery — auto-suggested description</td>
-</tr>
-
-<tr>
-  <td><code>/reports/playbooks/playbook-2025-08-14-042123</code></td>
-  <td>og:image</td>
-  <td>Playbook — Autonomous Delivery</td>
-  <td>Playbook — Autonomous Delivery — auto-suggested description</td>
-</tr>
-
-<tr>
-  <td><code>/reports/playbooks/playbook-2025-08-14-043123</code></td>
-=======
   <td><code>/reports/patterns/ultra-1755542882644-0q496l</code></td>
   <td>og:image</td>
   <td>Pattern: Instant deployment systems Architecture</td>
@@ -36932,7 +36804,6 @@
 
 <tr>
   <td><code>/reports/playbooks/playbook-2025-08-18-122902</code></td>
->>>>>>> origin/cursor/build-fix-and-push-changes-8412
   <td>og:image</td>
   <td>Playbook — Autonomous Delivery</td>
   <td>Playbook — Autonomous Delivery — auto-suggested description</td>
@@ -40551,9 +40422,6 @@
 </tr>
 
 <tr>
-<<<<<<< HEAD
-  <td><code>/reports/updates/update-2025-08-13-0544</code></td>
-=======
   <td><code>/reports/playbooks/playbook-2025-08-19-034110</code></td>
   <td>og:image</td>
   <td>Playbook — Autonomous Delivery</td>
@@ -40674,7 +40542,6 @@
 
 <tr>
   <td><code>/reports/tutorials/</code></td>
->>>>>>> origin/cursor/build-fix-and-push-changes-8412
   <td>og:image</td>
   <td>Autonomous Update — 2025-08-13 05:44</td>
   <td>Autonomous Update — 2025-08-13 05:44 — auto-suggested description</td>
@@ -43929,17 +43796,10 @@
 </tr>
 
 <tr>
-<<<<<<< HEAD
-  <td><code>/reports/updates/update-2025-08-13-1940</code></td>
-  <td>og:image</td>
-  <td>Autonomous Update — 2025-08-13 19:40</td>
-  <td>Autonomous Update — 2025-08-13 19:40 — auto-suggested description</td>
-=======
   <td><code>/reports/updates/ultra-1755542866495-ulnuh0</code></td>
   <td>og:image</td>
   <td>Rapid Technology Advancement</td>
   <td>Rapid Technology Advancement — auto-suggested description</td>
->>>>>>> origin/cursor/build-fix-and-push-changes-8412
 </tr>
 
 <tr>
@@ -43950,51 +43810,6 @@
 </tr>
 
 <tr>
-<<<<<<< HEAD
-  <td><code>/reports/updates/update-2025-08-13-1942</code></td>
-  <td>og:image</td>
-  <td>Autonomous Playbook — Edge AI &amp; IoT (2025-08-13 19:42 UTC)</td>
-  <td>Autonomous Playbook — Edge AI &amp; IoT (2025-08-13 19:42 UTC) — auto-suggested description</td>
-</tr>
-
-<tr>
-  <td><code>/reports/updates/update-2025-08-13-1943</code></td>
-  <td>og:image</td>
-  <td>Autonomous Update — 2025-08-13 19:43</td>
-  <td>Autonomous Update — 2025-08-13 19:43 — auto-suggested description</td>
-</tr>
-
-<tr>
-  <td><code>/reports/updates/update-2025-08-13-1944</code></td>
-  <td>og:image</td>
-  <td>Autonomous Update — 2025-08-13 19:44</td>
-  <td>Autonomous Update — 2025-08-13 19:44 — auto-suggested description</td>
-</tr>
-
-<tr>
-  <td><code>/reports/updates/update-2025-08-13-1945</code></td>
-  <td>og:image</td>
-  <td>Autonomous Update — 2025-08-13 19:45</td>
-  <td>Autonomous Update — 2025-08-13 19:45 — auto-suggested description</td>
-</tr>
-
-<tr>
-  <td><code>/reports/updates/update-2025-08-13-1946</code></td>
-  <td>og:image</td>
-  <td>Autonomous Update — 2025-08-13 19:46</td>
-  <td>Autonomous Update — 2025-08-13 19:46 — auto-suggested description</td>
-</tr>
-
-<tr>
-  <td><code>/reports/updates/update-2025-08-13-1947</code></td>
-  <td>og:image</td>
-  <td>Autonomous Update — 2025-08-13 19:47</td>
-  <td>Autonomous Update — 2025-08-13 19:47 — auto-suggested description</td>
-</tr>
-
-<tr>
-  <td><code>/reports/updates/update-2025-08-13-1948</code></td>
-=======
   <td><code>/reports/updates/ultra-1755542882628-4hoji1</code></td>
   <td>og:image</td>
   <td>Ultra-Fast Problem Solving</td>
@@ -44262,7 +44077,6 @@
 
 <tr>
   <td><code>/reports/updates/update-2025-08-18-0928</code></td>
->>>>>>> origin/cursor/build-fix-and-push-changes-8412
   <td>og:image</td>
   <td>Autonomous Update — 2025-08-13 19:48</td>
   <td>Autonomous Update — 2025-08-13 19:48 — auto-suggested description</td>
@@ -49113,9 +48927,6 @@
 </tr>
 
 <tr>
-<<<<<<< HEAD
-  <td><code>/reports/updates/update-2025-08-14T09-30</code></td>
-=======
   <td><code>/reports/updates/update-2025-08-19-0040</code></td>
   <td>og:image</td>
   <td>Autonomous Update — 2025-08-19 00:40</td>
@@ -49215,7 +49026,6 @@
 
 <tr>
   <td><code>/reports/whitepapers/enterprise-ai-strategy-framework</code></td>
->>>>>>> origin/cursor/build-fix-and-push-changes-8412
   <td>og:image</td>
   <td>Autonomous Update — 2025-08-14 09-30</td>
   <td>Autonomous Update — 2025-08-14 09-30 — auto-suggested description</td>
@@ -49264,12 +49074,6 @@
 </tr>
 
 <tr>
-<<<<<<< HEAD
-  <td><code>/services/</code></td>
-  <td>description, og:title, og:description, og:image, twitter:card</td>
-  <td>Services</td>
-  <td>Services — auto-suggested description</td>
-=======
   <td><code>/services/rapid-1755539347154-xzj546</code></td>
   <td>og:image</td>
   <td>Cloud Infrastructure</td>
@@ -51955,7 +51759,6 @@
   <td>og:image</td>
   <td>Training Service</td>
   <td>Training Service — auto-suggested description</td>
->>>>>>> origin/cursor/build-fix-and-push-changes-8412
 </tr>
 
 <tr>
@@ -51964,8 +51767,6 @@
   <td>Site Health</td>
   <td>Site Health — auto-suggested description</td>
 </tr>
-<<<<<<< HEAD
-=======
 
 <tr>
   <td><code>/sitemap</code></td>
@@ -53870,7 +53671,6 @@
   <td>User Management</td>
   <td>User Management — auto-suggested description</td>
 </tr>
->>>>>>> origin/cursor/build-fix-and-push-changes-8412
     </tbody>
   </table>
 </body>
