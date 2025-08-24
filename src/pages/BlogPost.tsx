@@ -1,14 +1,4 @@
 import React from 'react';
-
-<<<<<<< HEAD
-export default function EquipmentDetail() {
-  return (
-    <div className="min-h-screen bg-zion-blue-dark py-8 text-white">
-      <div className="container mx-auto px-4">
-        <h1 className="text-3xl font-bold mb-6">EquipmentDetail</h1>
-        <p>EquipmentDetail page content will go here.</p>
-=======
-import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -362,7 +352,6 @@ const BlogPost = () => {
             </Card>
           </div>
         </div>
->>>>>>> fca3c1339b92e2c99557b3c800831ed83163fd77
       </div>
     </div>
   );

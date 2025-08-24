@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { ADVANCED_SERVICES, AdvancedService } from '@/data/advancedServices';
-import { GradientHeading } from '@/components/GradientHeading';
+
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -117,9 +117,9 @@ export default function ServiceDetailPage() {
                 </Badge>
               </div>
               
-              <GradientHeading level="h1" className="text-3xl md:text-5xl font-bold mb-6">
-                {service.title}
-              </GradientHeading>
+                      <h1 className="text-3xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-zion-cyan to-zion-purple mb-6">
+          {service.title}
+        </h1>
               
               <p className="text-zion-slate-light text-lg mb-6">
                 {service.description}
