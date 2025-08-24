@@ -25,6 +25,10 @@ const AIMatcherPage = React.lazy(() => import('./pages/AIMatcher'));
 const TalentDirectory = React.lazy(() => import('./pages/TalentDirectory'));
 const TalentsPage = React.lazy(() => import('./pages/TalentsPage'));
 const ServicesPage = React.lazy(() => import('./pages/ServicesPage'));
+const ComprehensiveServicesPage = React.lazy(() => import('./pages/ComprehensiveServicesPage'));
+const AIServicesPage = React.lazy(() => import('./pages/AIServicesPage'));
+const CybersecurityServicesPage = React.lazy(() => import('./pages/CybersecurityServicesPage'));
+const PricingGuidePage = React.lazy(() => import('./pages/PricingGuidePage'));
 const EquipmentPage = React.lazy(() => import('./pages/EquipmentPage'));
 const EquipmentDetail = React.lazy(() => import('./pages/EquipmentDetail'));
 const Analytics = React.lazy(() => import('./pages/Analytics'));
@@ -41,9 +45,6 @@ const OpenAppRedirect = React.lazy(() => import('./pages/OpenAppRedirect'));
 const ContactPage = React.lazy(() => import('./pages/Contact'));
 const ZionHireAI = React.lazy(() => import('./pages/ZionHireAI'));
 const RequestQuotePage = React.lazy(() => import('./pages/RequestQuote'));
-const EnhancedServicesPage = React.lazy(() => import('./pages/EnhancedServicesPage'));
-const ServicesOverviewPage = React.lazy(() => import('./pages/ServicesOverviewPage'));
-const ServicesPricingPage = React.lazy(() => import('./pages/ServicesPricingPage'));
 
 const baseRoutes = [
   { path: '/', element: <Home /> },
@@ -53,9 +54,10 @@ const baseRoutes = [
   { path: '/talent', element: <TalentDirectory /> },
   { path: '/talents', element: <TalentsPage /> },
   { path: '/services', element: <ServicesPage /> },
-  { path: '/enhanced-services', element: <EnhancedServicesPage /> },
-  { path: '/services-overview', element: <ServicesOverviewPage /> },
-  { path: '/services-pricing', element: <ServicesPricingPage /> },
+  { path: '/comprehensive-services', element: <ComprehensiveServicesPage /> },
+  { path: '/ai-services', element: <AIServicesPage /> },
+  { path: '/cybersecurity-services', element: <CybersecurityServicesPage /> },
+  { path: '/pricing', element: <PricingGuidePage /> },
   { path: '/it-onsite-services', element: <ITOnsiteServicesPage /> },
   { path: '/categories', element: <Categories /> },
   { path: '/equipment', element: <EquipmentPage /> },
