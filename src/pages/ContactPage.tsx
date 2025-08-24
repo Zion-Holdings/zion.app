@@ -1,5 +1,4 @@
 import React from 'react';
-<<<<<<< HEAD
 import { Mail, Phone, MapPin, Globe, Sparkles, Send, Clock, Users } from 'lucide-react';
 
 export default function ContactPage() {
@@ -100,15 +99,14 @@ export default function ContactPage() {
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-6">
-                Send us a Message
+                Send Us a Message
               </h2>
-              <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-                Fill out the form below and we'll get back to you within 24 hours. 
-                For urgent matters, please call us directly.
+              <p className="text-lg text-slate-600 dark:text-slate-400">
+                Fill out the form below and we'll get back to you within 24 hours.
               </p>
             </div>
             
-            <form className="space-y-8 bg-white dark:bg-slate-800 rounded-2xl p-8 lg:p-12 shadow-xl border border-slate-200 dark:border-slate-700">
+            <form className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="firstName" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-3">
@@ -122,6 +120,7 @@ export default function ContactPage() {
                     placeholder="Your first name"
                   />
                 </div>
+                
                 <div>
                   <label htmlFor="lastName" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-3">
                     Last Name *
@@ -136,35 +135,34 @@ export default function ContactPage() {
                 </div>
               </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-3">
-                    Email Address *
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    required
-                    className="w-full px-4 py-3 border border-slate-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-700 text-slate-900 dark:text-white focus:ring-2 focus:ring-zion-cyan focus:border-transparent transition-all duration-300 hover:border-zion-cyan/50"
-                    placeholder="your.email@company.com"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-3">
-                    Phone Number
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    className="w-full px-4 py-3 border border-slate-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-700 text-slate-900 dark:text-white focus:ring-2 focus:ring-zion-cyan focus:border-transparent transition-all duration-300 hover:border-zion-cyan/50"
-                    placeholder="+1 (555) 123-4567"
-                  />
-                </div>
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-3">
+                  Email Address *
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  required
+                  className="w-full px-4 py-3 border border-slate-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-700 text-slate-900 dark:text-white focus:ring-2 focus:ring-zion-cyan focus:border-transparent transition-all duration-300 hover:border-zion-cyan/50"
+                  placeholder="your.email@example.com"
+                />
+              </div>
+              
+              <div>
+                <label htmlFor="phone" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-3">
+                  Phone Number
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  className="w-full px-4 py-3 border border-slate-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-700 text-slate-900 dark:text-white focus:ring-2 focus:ring-zion-cyan focus:border-transparent transition-all duration-300 hover:border-zion-cyan/50"
+                  placeholder="+1 (555) 123-4567"
+                />
               </div>
               
               <div>
                 <label htmlFor="company" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-3">
-                  Company Name
+                  Company
                 </label>
                 <input
                   type="text"
@@ -176,7 +174,7 @@ export default function ContactPage() {
               
               <div>
                 <label htmlFor="service" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-3">
-                  Service of Interest
+                  Service Interest
                 </label>
                 <select
                   id="service"
@@ -270,16 +268,3 @@ export default function ContactPage() {
     </div>
   );
 }
-=======
-
-export default function EquipmentDetail() {
-  return (
-    <div className="min-h-screen bg-zion-blue-dark py-8 text-white">
-      <div className="container mx-auto px-4">
-        <h1 className="text-3xl font-bold mb-6">EquipmentDetail</h1>
-        <p>EquipmentDetail page content will go here.</p>
-      </div>
-    </div>
-  );
-}
->>>>>>> 181cfac2212680d9635253bde265173d9d08eca1

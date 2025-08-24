@@ -1,6 +1,5 @@
 
 import React from 'react';
-<<<<<<< HEAD
 import { Link } from 'react-router-dom';
 import { ArrowRight, Brain, Shield, BarChart3, Bot, Globe, Sparkles, Star, TrendingUp, Building, Settings, Code } from 'lucide-react';
 
@@ -101,73 +100,18 @@ export default function Home() {
               Explore Services
               <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
             </Link>
+            
             <Link
               to="/contact"
-              className="group inline-flex items-center gap-3 px-8 py-4 border-2 border-zion-cyan text-zion-cyan font-semibold rounded-xl hover:bg-zion-cyan hover:text-white transition-all duration-300 hover:scale-105"
+              className="group inline-flex items-center gap-3 px-8 py-4 border-2 border-zion-cyan/30 text-zion-cyan font-semibold rounded-xl hover:bg-zion-cyan/10 hover:border-zion-cyan transition-all duration-300 hover:scale-105"
             >
-              Get Free Quote
-            </Link>
-=======
-
-export default function Home() {
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 text-white relative overflow-hidden">
-      
-      {/* Hero Section */}
-      <div className="relative z-10 pt-20 pb-16">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-purple-500 to-blue-500 bg-clip-text text-transparent">
-            Zion Tech Group
-          </h1>
-          <p className="text-xl md:text-2xl text-zinc-300 mb-8 max-w-4xl mx-auto leading-relaxed">
-            Pioneering the future of technology with revolutionary AI consciousness, 
-            quantum computing, and autonomous solutions that transform businesses worldwide.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105">
               Get Started
-            </button>
-            <button className="px-8 py-4 bg-zinc-800/50 text-cyan-400 border border-cyan-400/30 rounded-lg text-lg font-semibold hover:bg-zinc-700/50 transition-all duration-300 hover:scale-105">
-              Explore Services
-            </button>
+              <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
+            </Link>
           </div>
         </div>
       </div>
 
-      {/* Services Overview */}
-      <div className="relative z-10 py-16 bg-gradient-to-r from-zinc-800/50 to-zinc-700/50 backdrop-blur-sm">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
-            Our Comprehensive Services
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">🤖</span>
-              </div>
-              <h3 className="text-lg font-semibold text-white mb-2">AI Services</h3>
-              <p className="text-zinc-300">Advanced AI solutions and automation</p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">💼</span>
-              </div>
-              <h3 className="text-lg font-semibold text-white mb-2">Enterprise Solutions</h3>
-              <p className="text-zinc-300">Large-scale business transformations</p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">🔧</span>
-              </div>
-              <h3 className="text-lg font-semibold text-white mb-2">IT Services</h3>
-              <p className="text-zinc-300">Comprehensive IT infrastructure</p>
-            </div>
->>>>>>> 181cfac2212680d9635253bde265173d9d08eca1
-          </div>
-        </div>
-      </div>
-
-<<<<<<< HEAD
       {/* Stats Section */}
       <div className="py-20 bg-white dark:bg-slate-800">
         <div className="container mx-auto px-4">
@@ -264,45 +208,6 @@ export default function Home() {
         </div>
       </div>
 
-      {/* CTA Section */}
-      <div className="py-20 bg-gradient-to-r from-zion-purple/20 to-zion-cyan/20 border-t border-zion-purple/30 relative overflow-hidden">
-        {/* Background Elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-zion-cyan/10 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-0 left-0 w-64 h-64 bg-zion-purple/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        </div>
-        
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-8">
-            Ready to Transform Your Business?
-          </h2>
-          <p className="text-lg md:text-xl lg:text-2xl text-slate-700 dark:text-slate-300 max-w-3xl mx-auto mb-10 leading-relaxed">
-            Let's discuss how our innovative solutions can drive growth, efficiency, 
-            and competitive advantage for your organization.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
-            <Link
-              to="/contact"
-              className="group inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-zion-cyan to-zion-purple text-white font-semibold rounded-xl hover:from-zion-cyan-light hover:to-zion-purple-light transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-zion-cyan/30 text-lg"
-            >
-              <Sparkles className="h-6 w-6 group-hover:rotate-12 transition-transform duration-300" />
-              Get Started Today
-              <ArrowRight className="h-6 w-6 group-hover:translate-x-1 transition-transform duration-300" />
-            </Link>
-            <a
-              href="tel:+13024640950"
-              className="group inline-flex items-center gap-3 px-10 py-5 border-2 border-zion-cyan text-zion-cyan font-semibold rounded-xl hover:bg-zion-cyan hover:text-white transition-all duration-300 hover:scale-105 text-lg"
-            >
-              Call +1 302 464 0950
-            </a>
-          </div>
-          
-          <div className="mt-12 text-slate-700 dark:text-slate-300 space-y-2">
-            <p className="text-lg">📍 364 E Main St STE 1008, Middletown DE 19709</p>
-            <p className="text-lg">✉️ kleber@ziontechgroup.com</p>
-            <p className="text-lg">🌐 <a href="https://ziontechgroup.com" className="text-zion-cyan hover:underline font-medium">ziontechgroup.com</a></p>
-=======
       {/* Contact Information */}
       <div className="relative z-10 py-16 bg-gradient-to-r from-zinc-800/50 to-zinc-700/50 backdrop-blur-sm">
         <div className="container mx-auto px-4 text-center">
@@ -389,7 +294,6 @@ export default function Home() {
               <a href="/privacy" className="ml-2 hover:text-cyan-400 transition-colors">Privacy Policy</a> | 
               <a href="/terms" className="ml-2 hover:text-cyan-400 transition-colors">Terms of Service</a>
             </p>
->>>>>>> 181cfac2212680d9635253bde265173d9d08eca1
           </div>
         </div>
       </div>

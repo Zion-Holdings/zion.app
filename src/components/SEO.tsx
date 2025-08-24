@@ -1,11 +1,11 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 
 interface SEOProps {
   title?: string;
   description?: string;
   keywords?: string;
   ogImage?: string;
-<<<<<<< HEAD
   ogUrl?: string;
   canonical?: string;
   ogType?: string;
@@ -42,9 +42,9 @@ export const SEO: React.FC<SEOProps> = ({
 }: SEOProps) => {
   const siteName = 'Zion Tech Group';
   const siteUrl = 'https://ziontechgroup.com';
-  const fullTitle = title.includes(siteName) ? title : `${title} | ${siteName}`;
+  const fullTitle = title?.includes(siteName) ? title : `${title} | ${siteName}`;
   const fullUrl = canonical || ogUrl || `${siteUrl}${window.location.pathname}`;
-  const fullOgImage = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`;
+  const fullOgImage = ogImage?.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`;
   
   // Organization schema
   const organizationSchema = {
@@ -61,16 +61,18 @@ export const SEO: React.FC<SEOProps> = ({
     ],
     contactPoint: {
       '@type': 'ContactPoint',
-      telephone: '+1-555-0123',
+      telephone: '+1-302-464-0950',
       contactType: 'customer service',
-      email: 'contact@ziontechgroup.com',
+      email: 'kleber@ziontechgroup.com',
       areaServed: 'Worldwide'
     },
     address: {
       '@type': 'PostalAddress',
       addressCountry: 'US',
-      addressLocality: 'San Francisco',
-      addressRegion: 'CA'
+      addressLocality: 'Middletown',
+      addressRegion: 'DE',
+      postalCode: '19709',
+      streetAddress: '364 E Main St STE 1008'
     }
   };
 
@@ -101,7 +103,7 @@ export const SEO: React.FC<SEOProps> = ({
     },
     publisher: {
       '@type': 'Organization',
-      name: 'Zion Tech Group',
+      name: siteName,
       logo: {
         '@type': 'ImageObject',
         url: `${siteUrl}/logo.png`
@@ -113,94 +115,43 @@ export const SEO: React.FC<SEOProps> = ({
       '@type': 'WebPage',
       '@id': fullUrl
     },
-    articleSection: section,
-    keywords: tags.join(', ')
+    ...(section && { articleSection: section }),
+    ...(tags.length > 0 && { keywords: tags.join(', ') })
   } : null;
-
-  const finalStructuredData = structuredData || organizationSchema;
 
   return (
     <Helmet>
-      {/* Basic meta tags */}
       <title>{fullTitle}</title>
-      {description && <meta name="description" content={description} />}
-      {keywords && <meta name="keywords" content={keywords} />}
-      <meta name="author" content={author} />
+      <meta name="description" content={description} />
+      <meta name="keywords" content={keywords} />
       <meta name="robots" content={`${noindex ? 'noindex' : 'index'}, ${nofollow ? 'nofollow' : 'follow'}`} />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta name="theme-color" content="#1e40af" />
-      <meta name="msapplication-TileColor" content="#1e40af" />
       
-      {/* Canonical URL */}
-      <link rel="canonical" href={fullUrl} />
-      
-      {/* Open Graph meta tags */}
-      <meta property="og:type" content={ogType} />
+      {/* Open Graph */}
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={fullOgImage} />
-      <meta property="og:image:width" content="1200" />
-      <meta property="og:image:height" content="630" />
       <meta property="og:url" content={fullUrl} />
+      <meta property="og:type" content={ogType} />
       <meta property="og:site_name" content={siteName} />
-      <meta property="og:locale" content="en_US" />
-      {author && <meta property="og:author" content={author} />}
       
-      {/* Additional Open Graph Tags for Articles */}
-      {(type === 'article' || ogType === 'article') && (
-        <>
-          {publishedTime && <meta property="article:published_time" content={publishedTime} />}
-          {modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
-          {section && <meta property="article:section" content={section} />}
-          {tags.map(tag => (
-            <meta key={tag} property="article:tag" content={tag} />
-          ))}
-        </>
-      )}
-      
-      {/* Twitter Card meta tags */}
+      {/* Twitter */}
       <meta name="twitter:card" content={twitterCard} />
-      <meta name="twitter:site" content="@ziontechgroup" />
-      <meta name="twitter:creator" content="@ziontechgroup" />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={fullOgImage} />
       
-      {/* Additional meta tags */}
-      <meta name="application-name" content={siteName} />
-      <meta name="apple-mobile-web-app-title" content={siteName} />
-      <meta name="apple-mobile-web-app-capable" content="yes" />
-      <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-      <meta name="format-detection" content="telephone=no" />
-      <meta name="mobile-web-app-capable" content="yes" />
+      {/* Canonical */}
+      <link rel="canonical" href={fullUrl} />
       
-      {/* Performance and Security */}
-      <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-      
-      {/* Favicon and app icons */}
-      <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-      <link rel="manifest" href="/site.webmanifest" />
-      
-      {/* Preconnect to external domains for performance */}
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-      <link rel="preconnect" href="https://www.google-analytics.com" />
-      <link rel="preconnect" href="https://www.googletagmanager.com" />
-      
-      {/* DNS Prefetch for performance */}
-      <link rel="dns-prefetch" href="//www.google-analytics.com" />
-      <link rel="dns-prefetch" href="//www.googletagmanager.com" />
-      
-      {/* Structured data */}
+      {/* Structured Data */}
       <script type="application/ld+json">
-        {JSON.stringify(finalStructuredData)}
+        {JSON.stringify(organizationSchema)}
       </script>
+      
       <script type="application/ld+json">
         {JSON.stringify(websiteSchema)}
       </script>
+      
       {articleSchema && (
         <script type="application/ld+json">
           {JSON.stringify(articleSchema)}
@@ -263,40 +214,3 @@ export function TalentPageSEO({
     />
   );
 }
-=======
-  canonical?: string;
-}
-
-export function SEO({ 
-  title = 'Zion Tech Group - AI, IT, and Micro SAAS Solutions',
-  description = 'Discover innovative micro SAAS solutions, cutting-edge AI services, and professional IT solutions designed to transform your business',
-  keywords = 'AI services, IT solutions, micro SAAS, business automation, cybersecurity, cloud computing',
-  ogImage = '/og-image.jpg',
-  canonical = 'https://ziontechgroup.com'
-}: SEOProps) {
-  return (
-    <>
-      <title>{title}</title>
-      <meta name="description" content={description} />
-      <meta name="keywords" content={keywords} />
-      <meta name="robots" content="index, follow" />
-      
-      {/* Open Graph */}
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={description} />
-      <meta property="og:image" content={ogImage} />
-      <meta property="og:url" content={canonical} />
-      <meta property="og:type" content="website" />
-      
-      {/* Twitter */}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={ogImage} />
-      
-      {/* Canonical */}
-      <link rel="canonical" href={canonical} />
-    </>
-  );
-}
->>>>>>> 181cfac2212680d9635253bde265173d9d08eca1

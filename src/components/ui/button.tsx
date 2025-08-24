@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import * as React from "react"
 import { Slot } from "@radix-ui/react-slot"
 import { cva, type VariantProps } from "class-variance-authority"
@@ -54,14 +53,3 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 Button.displayName = "Button"
 
 export { Button, buttonVariants }
-
-      type={type}
-      className={classes}
-      onClick={onClick}
-      disabled={disabled}
-    >
-      {children}
-    </button>
-  );
-}
->>>>>>> ff8d31fe386fedde71ed028377147472d9aef7a8

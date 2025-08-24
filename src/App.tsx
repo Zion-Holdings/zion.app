@@ -1,24 +1,6 @@
 import React from 'react';
 import { Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
-<<<<<<< HEAD
-import { Header } from './components/Header';
-import { EnhancedFooter } from './components/EnhancedFooter';
-import './App.css';
-
-// Lazy load pages
-const Home = React.lazy(() => import('./pages/Home'));
-const AllServicesPage = React.lazy(() => import('./pages/AllServicesPage'));
-const ContactPage = React.lazy(() => import('./pages/ContactPage'));
-const AboutPage = React.lazy(() => import('./pages/AboutPage'));
-
-// Loading component
-const LoadingSpinner = () => (
-  <div className="flex items-center justify-center min-h-screen">
-    <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-zion-cyan"></div>
-  </div>
-);
-=======
 
 import { ThemeProvider } from "./components/ThemeProvider";
 import { useScrollToTop } from "./hooks";
@@ -27,6 +9,7 @@ import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { Toaster } from "./components/ui/toaster";
 import { Toaster as SonnerToaster } from "./components/ui/sonner";
+import { ScrollToTop } from "./components/ui/ScrollToTop";
 import {
   AuthRoutes,
   DashboardRoutes,
@@ -41,6 +24,7 @@ import {
   DeveloperRoutes
 } from './routes';
 
+// Lazy load pages
 const Home = React.lazy(() => import('./pages/Home'));
 const AIMatcherPage = React.lazy(() => import('./pages/AIMatcher'));
 const TalentDirectory = React.lazy(() => import('./pages/TalentDirectory'));
@@ -64,6 +48,13 @@ const RequestQuotePage = React.lazy(() => import('./pages/RequestQuote'));
 const ComprehensiveServices = React.lazy(() => import('./pages/ComprehensiveServices'));
 const AIServicesPage = React.lazy(() => import('./pages/AIServicesPage'));
 const EnterpriseSolutions = React.lazy(() => import('./pages/EnterpriseSolutionsPage'));
+
+// Loading component
+const LoadingSpinner = () => (
+  <div className="flex items-center justify-center min-h-screen">
+    <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-zion-cyan"></div>
+  </div>
+);
 
 const baseRoutes = [
   { path: '/', element: <Home /> },
@@ -92,66 +83,41 @@ const baseRoutes = [
   { path: '/blog', element: <Blog /> },
   { path: '/blog/:slug', element: <BlogPost /> },
 ];
->>>>>>> 181cfac2212680d9635253bde265173d9d08eca1
 
 function App() {
   return (
-<<<<<<< HEAD
-    <div className="App">
-      <Header />
-      <main className="pt-20">
-        <Suspense fallback={<LoadingSpinner />}>
-          <Routes>
-            {/* Base Routes */}
-            <Route path="/" element={<Home />} />
-            <Route path="/all-services" element={<AllServicesPage />} />
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="/about" element={<AboutPage />} />
-            
-            {/* Catch all route */}
-            <Route path="*" element={<Home />} />
-          </Routes>
-        </Suspense>
-      </main>
-      <EnhancedFooter />
-    </div>
-=======
-    <WhitelabelProvider>
-      <ThemeProvider defaultTheme="dark">
-        <Header />
-        <main className="min-h-screen">
-          <Suspense fallback={<div className="p-4 text-center">Loading...</div>}>
-            <Routes>
-              {baseRoutes.map(({ path, element }) => (
-                <Route key={path} path={path} element={element} />
-              ))}
-              <Route path="/auth/*" element={<AuthRoutes />} />
-              <Route path="/dashboard/*" element={<DashboardRoutes />} />
-              <Route path="/marketplace/*" element={<MarketplaceRoutes />} />
-              <Route path="/talent/*" element={<TalentRoutes />} />
-              <Route path="/admin/*" element={<AdminRoutes />} />
-              <Route path="/mobile/*" element={<MobileAppRoutes />} />
-              <Route path="/content/*" element={<ContentRoutes />} />
-              <Route path="/enterprise/*" element={<EnterpriseRoutes />} />
-              <Route path="/community/*" element={<CommunityRoutes />} />
-              <Route path="/developers/*" element={<DeveloperRoutes />} />
-              <Route path="*" element={<ErrorRoutes />} />
-            </Routes>
-          </Suspense>
-        </main>
-        <Footer />
-        <Toaster />
-        <SonnerToaster position="top-right" />
-      </ThemeProvider>
-    </WhitelabelProvider>
->>>>>>> 181cfac2212680d9635253bde265173d9d08eca1
+    <ThemeProvider>
+      <WhitelabelProvider>
+        <div className="App">
+          <Header />
+          <main>
+            <Suspense fallback={<LoadingSpinner />}>
+              <Routes>
+                {baseRoutes.map((route, index) => (
+                  <Route key={index} path={route.path} element={route.element} />
+                ))}
+                <Route path="/auth/*" element={<AuthRoutes />} />
+                <Route path="/dashboard/*" element={<DashboardRoutes />} />
+                <Route path="/marketplace/*" element={<MarketplaceRoutes />} />
+                <Route path="/talent/*" element={<TalentRoutes />} />
+                <Route path="/admin/*" element={<AdminRoutes />} />
+                <Route path="/mobile/*" element={<MobileAppRoutes />} />
+                <Route path="/content/*" element={<ContentRoutes />} />
+                <Route path="/error/*" element={<ErrorRoutes />} />
+                <Route path="/enterprise/*" element={<EnterpriseRoutes />} />
+                <Route path="/community/*" element={<CommunityRoutes />} />
+                <Route path="/developer/*" element={<DeveloperRoutes />} />
+              </Routes>
+            </Suspense>
+          </main>
+          <Footer />
+          <ScrollToTop />
+          <Toaster />
+          <SonnerToaster />
+        </div>
+      </WhitelabelProvider>
+    </ThemeProvider>
   );
 }
 
-<<<<<<< HEAD
 export default App;
-=======
-
-
-export default App;
->>>>>>> 181cfac2212680d9635253bde265173d9d08eca1
