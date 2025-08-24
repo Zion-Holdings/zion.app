@@ -1,14 +1,34 @@
 
 import React from 'react';
+<<<<<<< HEAD
 import { SEO } from '../components/SEO';
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-background" id="main-content">
+=======
+import { CategoriesSection } from "@/components/CategoriesSection";
+import { BenefitsSection } from "@/components/BenefitsSection";
+import { HowItWorksSection } from "@/components/HowItWorksSection";
+import { NewsletterSection } from "@/components/NewsletterSection";
+import { FeaturedListingsSection } from "@/components/FeaturedListingsSection";
+import { SEO } from "@/components/SEO";
+import { HeroSection } from "@/components/HeroSection";
+import { QuickAccess } from "@/components/home/QuickAccess";
+import { FeatureCTAs } from "@/components/home/FeatureCTAs";
+import { FeatureHighlights } from "@/components/home/FeatureHighlights";
+import { ITServiceRequestHero } from "@/components/home/ITServiceRequestHero";
+import { MicroSaasShowcase } from "@/components/home/MicroSaasShowcase";
+
+export default function Home() {
+  return (
+    <div className="min-h-screen bg-background">
+>>>>>>> df388ff54f8b91ea2191d11a1d0b66b487f26c10
       <SEO 
         title="Zion - The Tech & AI Marketplace" 
         description="Discover top AI and tech talent, services, and equipment in one place."
         keywords="AI, technology, marketplace, services, talent"
+<<<<<<< HEAD
         canonical="https://ziontechgroup.com/"
       />
 
@@ -64,6 +84,28 @@ export default function Home() {
           </div>
         </div>
       </div>
+=======
+        canonical="https://app.ziontechgroup.com/"
+      />
+
+      <ITServiceRequestHero />
+
+      <HeroSection />
+      
+      <QuickAccess />
+      
+      <FeatureCTAs />
+      
+      <MicroSaasShowcase />
+      
+      <FeatureHighlights />
+      
+      <CategoriesSection />
+      <BenefitsSection />
+      <HowItWorksSection />
+      <FeaturedListingsSection />
+      <NewsletterSection />
+>>>>>>> df388ff54f8b91ea2191d11a1d0b66b487f26c10
     </div>
   );
 }
