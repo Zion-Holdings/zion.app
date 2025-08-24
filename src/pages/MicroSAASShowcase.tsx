@@ -4,9 +4,9 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { 
-  Brain, 
-  MessageSquare, 
-  PenTool, 
+  Cloud, 
+  Database, 
+  Users, 
   BarChart3, 
   CheckCircle, 
   TrendingUp,
@@ -14,89 +14,92 @@ import {
   Mail,
   Globe,
   ArrowRight,
-  Sparkles,
   Zap,
-  Users,
   Clock,
-  Star
+  Star,
+  Shield,
+  Smartphone,
+  Settings,
+  PieChart,
+  FileText
 } from 'lucide-react';
 import Target from 'lucide-react/dist/esm/icons/target';
 import { Link } from 'react-router-dom';
 
-const aiServices = comprehensiveServices.filter(service => service.category === 'AI Services');
+const microSAASServices = comprehensiveServices.filter(service => service.category === 'Micro SAAS');
 
-export default function AIServicesShowcase() {
+export default function MicroSAASShowcase() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-zion-blue via-zion-purple to-zion-blue-dark py-20">
+      <section className="bg-gradient-to-br from-zion-blue via-zion-cyan to-zion-blue-dark py-20">
         <div className="container mx-auto px-4 text-center">
           <div className="mb-6">
-            <Brain className="w-20 h-20 text-zion-cyan mx-auto mb-4" />
+            <Cloud className="w-20 h-20 text-white mx-auto mb-4" />
           </div>
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-            AI-Powered Solutions
+            Micro SAAS Solutions
           </h1>
           <p className="text-xl text-zion-slate-light mb-8 max-w-3xl mx-auto">
-            Transform your business with cutting-edge artificial intelligence. From chatbots to content generation, 
-            our AI services deliver measurable results and competitive advantages.
+            Powerful, affordable software solutions designed for modern businesses. 
+            Streamline operations, boost productivity, and scale efficiently with our cloud-based platforms.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link to="/contact">
-              <Button size="lg" className="bg-zion-cyan hover:bg-zion-cyan-dark text-zion-blue font-bold">
-                <Sparkles className="w-4 h-4 mr-2" />
-                Start AI Journey
+              <Button size="lg" className="bg-white hover:bg-gray-100 text-zion-blue font-bold">
+                <Zap className="w-4 h-4 mr-2" />
+                Start Free Trial
               </Button>
             </Link>
             <Link to="/request-quote">
               <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
                 <Target className="w-4 h-4 mr-2" />
-                Get AI Assessment
+                Get Demo
               </Button>
             </Link>
           </div>
         </div>
       </section>
 
-      {/* AI Stats Banner */}
+      {/* SAAS Stats Banner */}
       <section className="bg-zion-blue-dark py-8">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6 text-center text-white">
             <div>
-              <div className="text-3xl font-bold text-zion-cyan mb-2">95%</div>
-              <div className="text-sm text-zion-slate-light">Customer Satisfaction</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-zion-cyan mb-2">40%</div>
-              <div className="text-sm text-zion-slate-light">Cost Reduction</div>
+              <div className="text-3xl font-bold text-zion-cyan mb-2">99.9%</div>
+              <div className="text-sm text-zion-slate-light">Uptime</div>
             </div>
             <div>
               <div className="text-3xl font-bold text-zion-cyan mb-2">24/7</div>
-              <div className="text-sm text-zion-slate-light">AI Availability</div>
+              <div className="text-sm text-zion-slate-light">Support</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-zion-cyan mb-2">3x</div>
-              <div className="text-sm text-zion-slate-light">Productivity Boost</div>
+              <div className="text-3xl font-bold text-zion-cyan mb-2">5min</div>
+              <div className="text-sm text-zion-slate-light">Setup Time</div>
+            </div>
+            <div>
+              <div className="text-3xl font-bold text-zion-cyan mb-2">$0</div>
+              <div className="text-sm text-zion-slate-light">Setup Fees</div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* AI Services Overview */}
+      {/* SAAS Solutions Overview */}
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-zion-blue mb-4">
-              AI Services Portfolio
+              SAAS Solutions Portfolio
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our comprehensive AI solutions are designed to address real business challenges 
-              with proven results and measurable ROI.
+              Our micro SAAS platforms are built with modern technology, designed for ease of use, 
+              and priced for accessibility. Start small, scale as you grow.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {aiServices.map((service) => (
+            {microSAASServices.map((service) => (
               <Card key={service.id} className="h-full hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-zion-blue-light">
                 <div className="relative">
                   <img 
@@ -104,7 +107,7 @@ export default function AIServicesShowcase() {
                     alt={service.title}
                     className="w-full h-48 object-cover rounded-t-lg"
                   />
-                  <Badge className="absolute top-4 right-4 bg-zion-purple text-white">
+                  <Badge className="absolute top-4 right-4 bg-zion-cyan text-zion-blue font-bold">
                     {service.subcategory}
                   </Badge>
                 </div>
@@ -118,14 +121,15 @@ export default function AIServicesShowcase() {
 
                 <CardContent className="space-y-6">
                   {/* Pricing */}
-                  <div className="text-center p-4 bg-zion-blue-light rounded-lg">
-                    <div className="text-3xl font-bold text-zion-purple mb-1">
+                  <div className="text-center p-4 bg-zion-cyan-light rounded-lg">
+                    <div className="text-3xl font-bold text-zion-blue mb-1">
                       ${service.price.toLocaleString()}
                     </div>
                     <div className="text-sm text-gray-600">
-                      {service.pricingModel === 'monthly' ? 'per month' : 
-                       service.pricingModel === 'project-based' ? 'project-based' : 
-                       service.pricingModel === 'one-time' ? 'one-time' : 'hourly'}
+                      per month
+                    </div>
+                    <div className="text-xs text-zion-cyan mt-1">
+                      No setup fees • Cancel anytime
                     </div>
                   </div>
 
@@ -182,7 +186,7 @@ export default function AIServicesShowcase() {
                     </h4>
                     <div className="flex flex-wrap gap-2">
                       {service.targetAudience.slice(0, 3).map((audience, index) => (
-                        <Badge key={index} variant="secondary" className="text-xs bg-zion-blue-light text-zion-blue">
+                        <Badge key={index} variant="secondary" className="text-xs bg-zion-cyan-light text-zion-blue">
                           {audience}
                         </Badge>
                       ))}
@@ -192,7 +196,7 @@ export default function AIServicesShowcase() {
                   {/* Contact CTA */}
                   <div className="text-center space-y-4">
                     <div className="text-sm text-gray-600">
-                      Ready to implement AI in your business?
+                      Ready to get started?
                     </div>
                     <div className="flex flex-col gap-2">
                       <a 
@@ -214,7 +218,7 @@ export default function AIServicesShowcase() {
                       to="/contact"
                       className="inline-flex items-center gap-2 text-sm text-zion-purple hover:text-zion-purple-dark transition-colors font-medium"
                     >
-                      Get AI Consultation <ArrowRight className="w-4 h-4" />
+                      Get Demo <ArrowRight className="w-4 h-4" />
                     </Link>
                   </div>
                 </CardContent>
@@ -224,15 +228,119 @@ export default function AIServicesShowcase() {
         </div>
       </section>
 
-      {/* AI Implementation Process */}
+      {/* SAAS Benefits */}
       <section className="bg-zion-blue-light py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-zion-blue mb-4">
-              AI Implementation Process
+              Why Choose Micro SAAS?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our proven methodology ensures successful AI integration with minimal disruption to your business operations.
+              Micro SAAS solutions offer the perfect balance of functionality, affordability, and scalability for growing businesses.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="text-center p-6">
+              <div className="w-16 h-16 bg-zion-cyan rounded-full flex items-center justify-center mx-auto mb-4">
+                <Cloud className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold text-zion-blue mb-2">Cloud-Based</h3>
+              <p className="text-gray-600">Access from anywhere, anytime with automatic updates and backups</p>
+            </div>
+            <div className="text-center p-6">
+              <div className="w-16 h-16 bg-zion-cyan rounded-full flex items-center justify-center mx-auto mb-4">
+                <Zap className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold text-zion-blue mb-2">Quick Setup</h3>
+              <p className="text-gray-600">Get started in minutes, not weeks or months</p>
+            </div>
+            <div className="text-center p-6">
+              <div className="w-16 h-16 bg-zion-cyan rounded-full flex items-center justify-center mx-auto mb-4">
+                <TrendingUp className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold text-zion-blue mb-2">Scalable</h3>
+              <p className="text-gray-600">Grow with your business needs without infrastructure concerns</p>
+            </div>
+            <div className="text-center p-6">
+              <div className="w-16 h-16 bg-zion-cyan rounded-full flex items-center justify-center mx-auto mb-4">
+                <Shield className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold text-zion-blue mb-2">Secure</h3>
+              <p className="text-gray-600">Enterprise-grade security with regular updates and monitoring</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SAAS Features Comparison */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-zion-blue mb-4">
+              Platform Features
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              All our SAAS platforms include these essential features to ensure your success.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="p-6 border border-zion-blue-light rounded-lg">
+              <div className="flex items-center gap-3 mb-4">
+                <Smartphone className="w-8 h-8 text-zion-cyan" />
+                <h3 className="text-xl font-semibold text-zion-blue">Mobile Responsive</h3>
+              </div>
+              <p className="text-gray-600">Access your data and manage operations from any device, anywhere in the world.</p>
+            </div>
+            <div className="p-6 border border-zion-blue-light rounded-lg">
+              <div className="flex items-center gap-3 mb-4">
+                <Globe className="w-8 h-8 text-zion-cyan" />
+                <h3 className="text-xl font-semibold text-zion-blue">Multi-Platform</h3>
+              </div>
+              <p className="text-gray-600">Works seamlessly across web browsers, mobile apps, and desktop applications.</p>
+            </div>
+            <div className="p-6 border border-zion-blue-light rounded-lg">
+              <div className="flex items-center gap-3 mb-4">
+                <Settings className="w-8 h-8 text-zion-cyan" />
+                <h3 className="text-xl font-semibold text-zion-blue">Easy Configuration</h3>
+              </div>
+              <p className="text-gray-600">Simple setup and customization without technical expertise required.</p>
+            </div>
+            <div className="p-6 border border-zion-blue-light rounded-lg">
+              <div className="flex items-center gap-3 mb-4">
+                <PieChart className="w-8 h-8 text-zion-cyan" />
+                <h3 className="text-xl font-semibold text-zion-blue">Analytics Dashboard</h3>
+              </div>
+              <p className="text-gray-600">Comprehensive reporting and insights to track performance and growth.</p>
+            </div>
+            <div className="p-6 border border-zion-blue-light rounded-lg">
+              <div className="flex items-center gap-3 mb-4">
+                <Users className="w-8 h-8 text-zion-cyan" />
+                <h3 className="text-xl font-semibold text-zion-blue">Team Collaboration</h3>
+              </div>
+              <p className="text-gray-600">Built-in tools for team communication, file sharing, and project management.</p>
+            </div>
+            <div className="p-6 border border-zion-blue-light rounded-lg">
+              <div className="flex items-center gap-3 mb-4">
+                <FileText className="w-8 h-8 text-zion-cyan" />
+                <h3 className="text-xl font-semibold text-zion-blue">Documentation</h3>
+              </div>
+              <p className="text-gray-600">Comprehensive guides, tutorials, and support resources for your team.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Implementation Timeline */}
+      <section className="bg-zion-blue-light py-16">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-zion-blue mb-4">
+              Get Started in Minutes
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Our streamlined onboarding process gets you up and running quickly with minimal setup time.
             </p>
           </div>
 
@@ -241,102 +349,55 @@ export default function AIServicesShowcase() {
               <div className="w-16 h-16 bg-zion-purple rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-white font-bold text-xl">1</span>
               </div>
-              <h3 className="text-xl font-semibold text-zion-blue mb-2">Assessment</h3>
-              <p className="text-gray-600">Evaluate your current systems and identify AI opportunities</p>
+              <h3 className="text-xl font-semibold text-zion-blue mb-2">Sign Up</h3>
+              <p className="text-gray-600">Create your account in under 2 minutes</p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-zion-purple rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-white font-bold text-xl">2</span>
               </div>
-              <h3 className="text-xl font-semibold text-zion-blue mb-2">Strategy</h3>
-              <p className="text-gray-600">Develop a customized AI implementation roadmap</p>
+              <h3 className="text-xl font-semibold text-zion-blue mb-2">Configure</h3>
+              <p className="text-gray-600">Set up your preferences and import data</p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-zion-purple rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-white font-bold text-xl">3</span>
               </div>
-              <h3 className="text-xl font-semibold text-zion-blue mb-2">Implementation</h3>
-              <p className="text-gray-600">Deploy AI solutions with expert guidance and support</p>
+              <h3 className="text-xl font-semibold text-zion-blue mb-2">Train Team</h3>
+              <p className="text-gray-600">Quick training session with our experts</p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-zion-purple rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-white font-bold text-xl">4</span>
               </div>
-              <h3 className="text-xl font-semibold text-zion-blue mb-2">Optimization</h3>
-              <p className="text-gray-600">Continuous improvement and performance monitoring</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose Our AI Services */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-zion-blue mb-4">
-              Why Choose Zion Tech Group AI Services?
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We combine cutting-edge AI technology with deep business understanding to deliver solutions that drive real results.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="text-center p-6 border border-zion-blue-light rounded-lg">
-              <Brain className="w-12 h-12 text-zion-purple mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-zion-blue mb-2">Expert AI Team</h3>
-              <p className="text-gray-600">Certified AI engineers and data scientists with years of experience</p>
-            </div>
-            <div className="text-center p-6 border border-zion-blue-light rounded-lg">
-                              <Target className="w-12 h-12 text-zion-purple mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-zion-blue mb-2">Custom Solutions</h3>
-              <p className="text-gray-600">Tailored AI implementations designed for your specific business needs</p>
-            </div>
-            <div className="text-center p-6 border border-zion-blue-light rounded-lg">
-              <TrendingUp className="w-12 h-12 text-zion-purple mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-zion-blue mb-2">Proven ROI</h3>
-              <p className="text-gray-600">Measurable results and documented business impact</p>
-            </div>
-            <div className="text-center p-6 border border-zion-blue-light rounded-lg">
-              <Zap className="w-12 h-12 text-zion-purple mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-zion-blue mb-2">Fast Implementation</h3>
-              <p className="text-gray-600">Quick deployment with minimal business disruption</p>
-            </div>
-            <div className="text-center p-6 border border-zion-blue-light rounded-lg">
-              <CheckCircle className="w-12 h-12 text-zion-purple mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-zion-blue mb-2">Quality Assurance</h3>
-              <p className="text-gray-600">Rigorous testing and validation processes</p>
-            </div>
-            <div className="text-center p-6 border border-zion-blue-light rounded-lg">
-              <Users className="w-12 h-12 text-zion-purple mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-zion-blue mb-2">Ongoing Support</h3>
-              <p className="text-gray-600">Continuous monitoring, updates, and technical support</p>
+              <h3 className="text-xl font-semibold text-zion-blue mb-2">Go Live</h3>
+              <p className="text-gray-600">Start using and see immediate benefits</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Call to Action */}
-      <section className="bg-gradient-to-r from-zion-blue to-zion-purple py-16">
+      <section className="bg-gradient-to-r from-zion-blue to-zion-cyan py-16">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-white mb-6">
-            Ready to Transform Your Business with AI?
+            Ready to Transform Your Business Operations?
           </h2>
           <p className="text-xl text-zion-slate-light mb-8 max-w-2xl mx-auto">
-            Join the AI revolution and gain a competitive edge. Our expert team is ready to help you 
-            implement intelligent solutions that drive growth and efficiency.
+            Join thousands of businesses that have streamlined their operations with our micro SAAS solutions. 
+            Start your free trial today and experience the difference.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link to="/contact">
-              <Button size="lg" className="bg-zion-cyan hover:bg-zion-cyan-dark text-zion-blue font-bold">
-                <Brain className="w-4 h-4 mr-2" />
-                Start AI Consultation
+              <Button size="lg" className="bg-white hover:bg-gray-100 text-zion-blue font-bold">
+                <Cloud className="w-4 h-4 mr-2" />
+                Start Free Trial
               </Button>
             </Link>
             <Link to="/request-quote">
               <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
                 <Target className="w-4 h-4 mr-2" />
-                Get AI Quote
+                Schedule Demo
               </Button>
             </Link>
           </div>
