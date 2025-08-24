@@ -1,155 +1,240 @@
 
-# Welcome to your Lovable project
+# Zion Tech Group - Comprehensive Tech & AI Marketplace
 
-## Project info
+## 🚀 Overview
 
-**URL**: https://lovable.dev/projects/3fad5ec6-2b6e-4163-b266-afac8f1ced32
+Zion Tech Group is the world's leading marketplace for high-tech and artificial intelligence solutions. We connect businesses with cutting-edge technology, expert talent, and innovative services through our comprehensive ecosystem of micro SAAS, IT infrastructure, and AI solutions.
 
-## How can I edit this code?
+## 🌟 New Features & Services
 
-There are several ways of editing your application.
+### 🤖 AI & Machine Learning Services
+- **Custom AI Development** - Full-stack AI development with custom ML models
+- **ML Model Training** - Specialized training for computer vision, NLP, and predictive analytics
+- **AI Strategy Consulting** - Strategic AI implementation planning and ROI analysis
+- **Natural Language Processing** - Advanced NLP solutions for business applications
+- **Computer Vision Solutions** - Image recognition and video analysis systems
+- **Predictive Analytics** - Data-driven insights and forecasting models
+- **AI Integration Services** - Seamless integration with existing business systems
+- **Model Deployment & MLOps** - Production-ready AI model deployment
 
-**Use Lovable**
+**Average Price: $6,000**
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/3fad5ec6-2b6e-4163-b266-afac8f1ced32) and start prompting.
+### 🖥️ IT Infrastructure Services
+- **Cloud Migration** - End-to-end cloud migration with 24/7 support
+- **DevOps Implementation** - CI/CD pipelines and automation workflows
+- **Infrastructure Modernization** - Legacy system transformation
+- **Cybersecurity Services** - Comprehensive security audits and protection
+- **Network Architecture** - Scalable network design and implementation
+- **Data Center Design** - Enterprise-grade infrastructure planning
+- **IT Strategy Consulting** - Technology roadmap and digital transformation
+- **24/7 Support & Monitoring** - Round-the-clock infrastructure management
 
-Changes made via Lovable will be committed automatically to this repo.
+**Average Price: $4,500**
 
-**Use your preferred IDE**
+### ☁️ Micro SAAS Solutions
+- **Business Process Automation** - Custom workflow automation solutions
+- **Custom CRM Development** - Tailored customer relationship management
+- **BI Dashboard Creation** - Real-time analytics and KPI tracking
+- **Workflow Management** - Process optimization and automation
+- **Project Management Tools** - Custom project tracking solutions
+- **Inventory Management** - Automated inventory control systems
+- **Customer Portal Development** - Self-service customer platforms
+- **API Integration Services** - Third-party system integration
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+**Average Price: $3,500**
 
-Follow these steps:
+### 📊 Data & Analytics Services
+- **Big Data Engineering** - Large-scale data processing solutions
+- **Data Pipeline Development** - ETL processes and data workflows
+- **Business Intelligence** - Advanced reporting and analytics
+- **Data Visualization** - Interactive dashboards and charts
+- **ETL Process Design** - Data extraction and transformation
+- **Data Quality Management** - Data governance and validation
+- **Real-time Analytics** - Live data processing and insights
+- **Data Strategy Consulting** - Data-driven business transformation
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+**Average Price: $5,000**
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### 🔒 Cybersecurity Services
+- **Security Audits** - Comprehensive security assessments
+- **Penetration Testing** - Vulnerability identification and testing
+- **Compliance Framework** - Regulatory compliance implementation
+- **Incident Response** - Security breach management
+- **Security Training** - Employee security awareness programs
+- **Vulnerability Assessment** - Risk identification and mitigation
+- **Security Architecture** - Secure system design
+- **Threat Intelligence** - Proactive threat monitoring
 
-# Step 3: Run the setup script with your preferred package manager (npm, pnpm, yarn, or bun)
-./setup.sh npm  # Default and most compatible option
+**Average Price: $5,500**
 
-# If you're using OpenAI Codex environments, a convenience script is available:
-./.codex/setup.sh  # Installs dependencies using npm
+### 🚀 Digital Transformation Services
+- **Digital Strategy** - Technology roadmap development
+- **Process Reengineering** - Business process optimization
+- **Technology Assessment** - Current state analysis
+- **Change Management** - Organizational transformation support
+- **Innovation Consulting** - Emerging technology adoption
+- **Legacy System Modernization** - System upgrade and migration
+- **Digital Maturity Assessment** - Technology readiness evaluation
+- **Transformation Roadmap** - Strategic implementation planning
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev  # Use the same package manager you specified in setup.sh
+**Average Price: $7,000**
+
+## 💰 Pricing Tiers
+
+### 🎯 Starter Plan - $1,500
+- Initial consultation
+- Basic implementation
+- Documentation
+- 30 days support
+
+### ⭐ Professional Plan - $4,500 (Most Popular)
+- Comprehensive consultation
+- Custom development
+- Testing & deployment
+- 90 days support
+- Training & documentation
+
+### 🏢 Enterprise Plan - $12,000
+- Strategic planning
+- Enterprise customization
+- Full deployment
+- 1 year support
+- Training & certification
+- Performance optimization
+- Scalability planning
+
+## 🎨 Enhanced Design Features
+
+### ✨ Futuristic UI/UX
+- **Animated Backgrounds** - Particle systems, grid patterns, and wave effects
+- **Neon Effects** - Glowing elements and cyberpunk aesthetics
+- **Responsive Design** - Optimized for all screen sizes
+- **Enhanced Navigation** - Dropdown menus and mobile-friendly navigation
+- **Improved Typography** - Modern fonts with gradient text effects
+- **Interactive Elements** - Hover effects and smooth transitions
+
+### 🎭 Visual Enhancements
+- **Gradient Overlays** - Dynamic color transitions
+- **Backdrop Blur** - Modern glassmorphism effects
+- **Shadow Systems** - Layered depth and dimension
+- **Animation Libraries** - Smooth micro-interactions
+- **Color Schemes** - Zion brand colors with enhanced contrast
+- **Icon Systems** - Comprehensive icon library
+
+## 🔧 Technical Improvements
+
+### 📱 Responsiveness
+- Mobile-first design approach
+- Touch-friendly interfaces
+- Optimized for all devices
+- Progressive enhancement
+- Performance optimization
+
+### ♿ Accessibility
+- WCAG 2.1 AA compliance
+- Screen reader support
+- Keyboard navigation
+- High contrast modes
+- Focus management
+
+### ⚡ Performance
+- Code splitting and lazy loading
+- Optimized bundle sizes
+- Efficient rendering
+- Minimal re-renders
+- Fast loading times
+
+## 🛠️ Technology Stack
+
+- **Frontend**: React 18, TypeScript, Vite
+- **Styling**: Tailwind CSS, CSS Modules
+- **UI Components**: Radix UI, Custom Components
+- **State Management**: React Context, Custom Hooks
+- **Routing**: React Router v6
+- **Build Tool**: Vite
+- **Package Manager**: npm
+
+## 📍 Contact Information
+
+- **Phone**: +1 (302) 464-0950
+- **Email**: kleber@ziontechgroup.com
+- **Address**: 364 E Main St STE 1008, Middletown, DE 19709
+- **Website**: https://ziontechgroup.com
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js 18+ 
+- npm 8+
+
+### Installation
+```bash
+# Clone the repository
+git clone <repository-url>
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
 ```
 
-> **IMPORTANT**: This project requires internet access to install dependencies. Without network connectivity, the build process will fail with errors about missing modules like 'react', 'react-router-dom', and 'lucide-react'.
+### Available Scripts
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
+- `npm run test` - Run tests
 
-**Edit a file directly in GitHub**
+## 🌐 Live Demo
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Visit our live platform at: https://ziontechgroup.com
 
-**Use GitHub Codespaces**
+## 📈 Business Benefits
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### For Businesses
+- **Cost Savings** - Transparent pricing with no hidden fees
+- **Expert Access** - Verified professionals and proven solutions
+- **Scalability** - Flexible solutions that grow with your business
+- **Innovation** - Access to cutting-edge AI and technology
+- **Support** - Comprehensive support and consultation
 
-## What technologies are used for this project?
+### For Service Providers
+- **Market Access** - Reach global clients and opportunities
+- **Professional Growth** - Build reputation and expand portfolio
+- **Flexible Work** - Choose projects and set your rates
+- **Community** - Connect with peers and industry leaders
+- **Tools & Resources** - Access to platform tools and support
 
-This project is built with:
+## 🔮 Future Roadmap
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- **AI-Powered Matching** - Enhanced talent and service matching
+- **Blockchain Integration** - Secure transactions and smart contracts
+- **AR/VR Solutions** - Immersive technology experiences
+- **IoT Services** - Connected device solutions
+- **Quantum Computing** - Next-generation computing services
+- **Green Tech** - Sustainable technology solutions
 
-## How can I deploy this project?
+## 🤝 Contributing
 
-Simply open [Lovable](https://lovable.dev/projects/3fad5ec6-2b6e-4163-b266-afac8f1ced32) and click on Share -> Publish.
+We welcome contributions from the community! Please see our contributing guidelines for more information.
 
-## Can I connect a custom domain to my Lovable project?
+## 📄 License
 
-Yes, you can!
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## 🙏 Acknowledgments
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+- Our amazing team of developers and designers
+- The open-source community for their contributions
+- Our clients and partners for their trust and feedback
+- The technology community for inspiration and innovation
 
-## Integrations
+---
 
-See [docs/Integrations.md](docs/Integrations.md) for information on the Zion Assistant browser extension and Slack bot.
+**Zion Tech Group** - Empowering businesses through innovative technology solutions.
 
-## Troubleshooting
-
-### Network Issues
-
-If you see errors related to missing modules like 'react', 'react-dom', or 'lucide-react', your environment may not have internet access to download these dependencies. Options to resolve this:
-
-1. Ensure you have internet connectivity
-2. Configure proxy settings if needed: `npm config set proxy http://your-proxy:port`
-3. Use a pre-downloaded `node_modules` directory if available
-
-### Package Manager Issues
-
-If you encounter errors running `bun install` (for example, integrity check failures), delete any `bun.lockb` file and run `npm install` instead. This project relies on npm and is not guaranteed to work with Bun. Adding `bun.lockb` to `.gitignore` ensures Bun isn't accidentally used.
-
-For pnpm errors showing "This project is configured to use npm", use `./setup.sh npm` instead as the project may have npm-specific configurations.
-
-If you see a warning about `rimraf@3.0.2` being deprecated, install the latest
-version of `rimraf`:
-
-```sh
-npm install rimraf@^5 --save-dev
-```
-
-This updates the dependency to a supported v5 release.
-
-To prevent memory leaks from the deprecated `inflight` package, the project pins
-`glob` to version `10.4.5` via the `resolutions` field in `package.json`. Run
-`npm install` to ensure this version is installed.
-
-### Whitelabel Tenant Errors
-
-If the app logs **"Error loading tenant"** during startup, the request to the
-Supabase edge function that provides whitelabel settings failed. Confirm that
-`VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY` are set in your environment and
-that you have network connectivity. The tenant hook will retry a few times
-before giving up.
-
-## Testing
-
-Run unit tests with:
-
-```sh
-npm run test
-```
-
-To watch tests during development:
-
-```sh
-npm run test:watch
-```
-
-### End-to-End Tests
-
-Open Cypress for interactive debugging:
-
-```sh
-npm run cypress:open
-```
-
-Run the Cypress suite headlessly:
-
-```sh
-npm run cypress:run
-```
-
-### Coverage Report
-
-After running `npm run test`, open `coverage/lcov-report/index.html` in your
-browser to view detailed coverage information.
-
-When tests run on GitHub Actions, the workflow uploads the `coverage` directory
-using `actions/upload-artifact@v3`. Visit a workflow run and download the
-`coverage-report` artifact to retrieve the generated HTML coverage report.
+*Built with ❤️ and cutting-edge technology*
