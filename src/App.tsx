@@ -1,8 +1,22 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight, CheckCircle, Star, Users, Code, Cloud, Brain, Shield, Zap, Globe } from 'lucide-react'
+import { ErrorBoundary } from './components/ErrorBoundary'
+import { ScrollToTop } from './components/ScrollToTop'
+import { SEO } from './components/SEO'
+import { usePerformance } from './hooks/usePerformance'
+import { FullPageSkeleton } from './components/LoadingSkeleton'
 
 function App() {
+  const { score, logMetrics } = usePerformance();
+
+  // Log performance metrics after component mounts
+  React.useEffect(() => {
+    const timer = setTimeout(() => {
+      logMetrics();
+    }, 2000);
+    return () => clearTimeout(timer);
+  }, [logMetrics]);
   const heroStats = [
     { value: '200+', label: 'Revolutionary Micro SaaS Services', color: 'text-cyan-400', icon: '🚀' },
     { value: '99.99%', label: 'Uptime Guarantee', color: 'text-fuchsia-400', icon: '🛡️' },
@@ -47,7 +61,14 @@ function App() {
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900">
+    <>
+      <SEO
+        title="Zion Tech Group - Revolutionary Micro SaaS & AI Solutions"
+        description="Leading provider of revolutionary micro SaaS services, AI solutions, cloud infrastructure, and cutting-edge technology services. Transform your business with our innovative solutions."
+        keywords="micro SaaS, AI solutions, cloud infrastructure, cybersecurity, machine learning, React, Node.js, AWS, Azure, business automation"
+        type="website"
+      />
+      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900">
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 px-6">
         <div className="max-w-7xl mx-auto text-center">
@@ -202,7 +223,9 @@ function App() {
           </div>
         </div>
       </footer>
+      <ScrollToTop />
     </div>
+    </>
   )
 }
 
