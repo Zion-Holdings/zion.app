@@ -1,186 +1,316 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from "@/components/ui/button";
-import { GradientHeading } from "@/components/GradientHeading";
 import { Link } from "react-router-dom";
-import { useTranslation } from "react-i18next";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowRight, Sparkles, Zap, Users, Globe } from "lucide-react";
+import { 
+  ArrowRight, 
+  Sparkles, 
+  Brain, 
+  Cloud, 
+  Shield, 
+  BarChart3,
+  Globe,
+  Smartphone,
+  TrendingUp,
+  Briefcase,
+  Sparkles as SparklesIcon,
+  Play,
+  Star,
+  Users,
+  Zap
+} from "lucide-react";
 
-export function EnhancedHeroSection() {
-  const { t } = useTranslation();
+const FloatingIcon: React.FC<{ icon: React.ReactNode; delay: number; position: { x: number; y: number } }> = ({ 
+  icon, 
+  delay, 
+  position 
+}) => (
+  <motion.div
+    initial={{ opacity: 0, scale: 0 }}
+    animate={{ opacity: 1, scale: 1 }}
+    transition={{ delay, duration: 1 }}
+    className="absolute text-zion-cyan/30"
+    style={{ left: `${position.x}%`, top: `${position.y}%` }}
+  >
+    <motion.div
+      animate={{ 
+        y: [0, -20, 0],
+        rotate: [0, 5, -5, 0]
+      }}
+      transition={{ 
+        duration: 4, 
+        repeat: Infinity, 
+        delay 
+      }}
+      className="text-2xl"
+    >
+      {icon}
+    </motion.div>
+  </motion.div>
+);
+
+const AnimatedBackground: React.FC = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const { scrollY } = useScroll();
-  const y = useTransform(scrollY, [0, 300], [0, 100]);
-  const opacity = useTransform(scrollY, [0, 300], [1, 0.3]);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
+      setMousePosition({
+        x: (e.clientX / window.innerWidth) * 100,
+        y: (e.clientY / window.innerHeight) * 100
+      });
     };
 
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
-  const floatingElements = [
-    { icon: <Sparkles className="h-6 w-6" />, delay: 0, duration: 3 },
-    { icon: <Zap className="h-5 w-5" />, delay: 0.5, duration: 4 },
-    { icon: <Users className="h-5 w-5" />, delay: 1, duration: 3.5 },
-    { icon: <Globe className="h-6 w-6" />, delay: 1.5, duration: 4.5 },
-  ];
-
   return (
-    <section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-purple-dark">
-      {/* Animated background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-purple-dark opacity-90" />
+    <div className="absolute inset-0 overflow-hidden">
+      {/* Gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-blue-light" />
       
-      {/* Glassmorphism overlay */}
-      <div className="absolute inset-0 bg-white/5 backdrop-blur-3xl" />
+      {/* Animated mesh gradient */}
+      <div 
+        className="absolute inset-0 opacity-30"
+        style={{
+          background: `radial-gradient(circle at ${mousePosition.x}% ${mousePosition.y}%, rgba(140, 21, 233, 0.3) 0%, rgba(34, 221, 210, 0.2) 50%, rgba(46, 115, 234, 0.1) 100%)`
+        }}
+      />
       
-      {/* Floating particles with mouse interaction */}
+      {/* Floating particles */}
       <div className="absolute inset-0">
-        {floatingElements.map((element, index) => (
+        {Array.from({ length: 20 }).map((_, i) => (
           <motion.div
-            key={index}
-            className="absolute text-zion-cyan-light/30"
+            key={i}
+            className="absolute w-1 h-1 bg-zion-cyan rounded-full"
             style={{
-              left: `${20 + index * 20}%`,
-              top: `${30 + index * 15}%`,
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`
             }}
             animate={{
-              y: [0, -20, 0],
-              rotate: [0, 360],
+              y: [0, -100, 0],
+              opacity: [0, 1, 0],
+              scale: [0, 1, 0]
             }}
             transition={{
-              duration: element.duration,
-              delay: element.delay,
+              duration: 3 + Math.random() * 2,
               repeat: Infinity,
-              ease: "easeInOut",
+              delay: Math.random() * 2
             }}
-          >
-            {element.icon}
-          </motion.div>
+          />
         ))}
       </div>
 
-      {/* Interactive background elements */}
-      <div 
-        className="absolute inset-0 opacity-20"
-        style={{
-          background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(34, 221, 210, 0.1), transparent 40%)`,
-        }}
-      />
+      {/* Floating icons */}
+      <FloatingIcon icon={<Brain />} delay={0} position={{ x: 10, y: 20 }} />
+      <FloatingIcon icon={<Cloud />} delay={0.5} position={{ x: 85, y: 15 }} />
+      <FloatingIcon icon={<Shield />} delay={1} position={{ x: 15, y: 80 }} />
+      <FloatingIcon icon={<BarChart3 />} delay={1.5} position={{ x: 80, y: 75 }} />
+      <FloatingIcon icon={<Globe />} delay={2} position={{ x: 50, y: 10 }} />
+      <FloatingIcon icon={<Smartphone />} delay={2.5} position={{ x: 90, y: 60 }} />
+      <FloatingIcon icon={<TrendingUp />} delay={3} position={{ x: 5, y: 60 }} />
+      <FloatingIcon icon={<Briefcase />} delay={3.5} position={{ x: 70, y: 25 }} />
+      <FloatingIcon icon={<SparklesIcon />} delay={4} position={{ x: 25, y: 85 }} />
+    </div>
+  );
+};
 
-      <motion.div 
-        className="container relative z-10 px-4 mx-auto text-center pt-32 pb-20"
-        style={{ y, opacity }}
+const StatsSection: React.FC = () => {
+  const stats = [
+    { label: "Services Available", value: "500+", icon: <Sparkles className="w-5 h-5" /> },
+    { label: "Expert Providers", value: "200+", icon: <Users className="w-5 h-5" /> },
+    { label: "Projects Completed", value: "1000+", icon: <Star className="w-5 h-5" /> },
+    { label: "Response Time", value: "<2hrs", icon: <Zap className="w-5 h-5" /> }
+  ];
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, delay: 1.2 }}
+      className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12"
+    >
+      {stats.map((stat, index) => (
+        <motion.div
+          key={stat.label}
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, delay: 1.4 + index * 0.1 }}
+          className="text-center group"
+        >
+          <div className="flex items-center justify-center mb-2">
+            <div className="p-2 bg-zion-cyan/20 rounded-lg text-zion-cyan group-hover:bg-zion-cyan group-hover:text-white transition-all duration-300">
+              {stat.icon}
+            </div>
+          </div>
+          <div className="text-2xl md:text-3xl font-bold text-white mb-1">{stat.value}</div>
+          <div className="text-sm text-zion-slate-light">{stat.label}</div>
+        </motion.div>
+      ))}
+    </motion.div>
+  );
+};
+
+const CTAButtons: React.FC = () => {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, delay: 1.6 }}
+      className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8"
+    >
+      <Button
+        className="bg-gradient-to-r from-zion-purple to-zion-cyan hover:from-zion-purple-light hover:to-zion-cyan-light text-white text-lg py-6 px-8 rounded-xl font-bold shadow-lg shadow-zion-purple/25 hover:shadow-xl hover:shadow-zion-purple/40 transition-all duration-300 group"
+        size="lg"
+        asChild
       >
-        {/* Main heading with enhanced animations */}
+        <Link to="/signup">
+          Get Started Now
+          <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+        </Link>
+      </Button>
+      
+      <Button
+        variant="outline"
+        className="border-2 border-zion-cyan text-zion-cyan hover:bg-zion-cyan hover:text-zion-blue-dark text-lg py-6 px-8 rounded-xl font-bold transition-all duration-300 group"
+        size="lg"
+        asChild
+      >
+        <Link to="/comprehensive-services">
+          Explore All Services
+          <Sparkles className="ml-2 w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
+        </Link>
+      </Button>
+      
+      <Button
+        variant="ghost"
+        className="text-zion-slate-light hover:text-zion-cyan hover:bg-zion-cyan/10 text-lg py-6 px-8 rounded-xl font-bold transition-all duration-300 group"
+        size="lg"
+      >
+        <Play className="mr-2 w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
+        Watch Demo
+      </Button>
+    </motion.div>
+  );
+};
+
+export const EnhancedHeroSection: React.FC = () => {
+  const [currentFeature, setCurrentFeature] = useState(0);
+  
+  const features = [
+    "AI-Powered Solutions",
+    "Cloud & DevOps Services", 
+    "Cybersecurity Protection",
+    "Data Analytics & BI",
+    "Web & Mobile Development",
+    "Digital Marketing",
+    "IT Strategy Consulting",
+    "Blockchain & Web3"
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentFeature((prev) => (prev + 1) % features.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [features.length]);
+
+  return (
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <AnimatedBackground />
+      
+      <div className="relative z-10 container mx-auto px-4 text-center">
+        {/* Main heading */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 1 }}
+          className="mb-8"
         >
-          <GradientHeading className="mb-6 text-6xl md:text-8xl font-bold leading-tight">
-            {t('home.hero_title') || "The Future of Tech & AI"}
-          </GradientHeading>
-        </motion.div>
-
-        {/* Subtitle with staggered animation */}
-        <motion.p 
-          className="text-xl md:text-2xl text-zion-slate-light mb-12 max-w-4xl mx-auto leading-relaxed"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-        >
-          {t('home.hero_subtitle') || "Discover top AI and tech talent, cutting-edge services, and revolutionary equipment in the world's most advanced marketplace."}
-        </motion.p>
-
-        {/* Enhanced CTA buttons */}
-        <motion.div 
-          className="flex flex-col sm:flex-row justify-center gap-6 mb-16"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-        >
-          <Button
-            className="group relative overflow-hidden bg-gradient-to-r from-zion-purple via-zion-purple-light to-zion-purple-dark hover:from-zion-purple-light hover:via-zion-purple hover:to-zion-purple-dark text-lg py-7 px-8 rounded-xl shadow-2xl hover:shadow-zion-purple/25 transition-all duration-300 transform hover:scale-105"
-            size="lg"
-            asChild
-          >
-            <Link
-              to="/signup"
-              role="button"
-              aria-label={t('auth.signup') || "Get Started"}
-              tabIndex={0}
-              data-testid="hero-signup-btn"
+          <div className="flex items-center justify-center mb-4">
+            <motion.div
+              animate={{ rotate: 360 }}
+              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              className="w-12 h-12 bg-gradient-to-r from-zion-purple to-zion-cyan rounded-full flex items-center justify-center mr-4"
             >
-              <span className="relative z-10 flex items-center gap-2">
-                {t('auth.signup') || "Get Started"}
-                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-              </span>
-              <div className="absolute inset-0 bg-gradient-to-r from-zion-cyan to-zion-cyan-light opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
-            </Link>
-          </Button>
+              <Sparkles className="w-6 h-6 text-white" />
+            </motion.div>
+            <span className="text-zion-cyan text-lg font-medium">Zion Tech Group</span>
+          </div>
           
-          <Link
-            id="browse-marketplace"
-            to="/marketplace"
-            className="group relative overflow-hidden border-2 border-zion-cyan text-zion-cyan hover:text-zion-blue-dark hover:bg-zion-cyan active:bg-zion-cyan-light text-lg py-7 px-8 rounded-xl inline-flex items-center justify-center transition-all duration-300 transform hover:scale-105 hover:shadow-zion-cyan/25"
-          >
-            <span className="relative z-10 flex items-center gap-2">
-              {t('home.browse_marketplace') || "Browse Marketplace"}
-              <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight">
+            The Future of
+            <br />
+            <span className="bg-gradient-to-r from-zion-cyan via-zion-purple to-zion-cyan bg-clip-text text-transparent">
+              Tech Services
             </span>
-            <div className="absolute inset-0 bg-zion-cyan opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
-          </Link>
+            <br />
+            <span className="text-white">is Here</span>
+          </h1>
         </motion.div>
 
-        {/* Trust indicators */}
-        <motion.div 
-          className="flex flex-wrap justify-center items-center gap-8 text-zion-slate-light/70"
+        {/* Animated feature text */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="mb-8"
+        >
+          <div className="text-2xl md:text-3xl text-zion-slate-light mb-4">
+            Discover cutting-edge
+          </div>
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentFeature}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.5 }}
+              className="text-3xl md:text-4xl font-bold text-zion-cyan"
+            >
+              {features[currentFeature]}
+            </motion.div>
+          </AnimatePresence>
+        </motion.div>
+
+        {/* Description */}
+        <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
+          className="text-xl md:text-2xl text-zion-slate-light mb-8 max-w-4xl mx-auto leading-relaxed"
         >
-          <div className="flex items-center gap-2">
-            <div className="w-2 h-2 bg-zion-cyan rounded-full animate-pulse" />
-            <span className="text-sm font-medium">10,000+ Verified Talents</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <div className="w-2 h-2 bg-zion-purple rounded-full animate-pulse" />
-            <span className="text-sm font-medium">Global Coverage</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <div className="w-2 h-2 bg-zion-blue rounded-full animate-pulse" />
-            <span className="text-sm font-medium">24/7 Support</span>
+          Connect with verified technology experts and service providers. 
+          From AI development to cybersecurity, cloud migration to blockchain solutions - 
+          find the perfect partner for your next project.
+        </motion.p>
+
+        {/* CTA Buttons */}
+        <CTAButtons />
+
+        {/* Stats Section */}
+        <StatsSection />
+
+        {/* Trust indicators */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 2 }}
+          className="mt-16"
+        >
+          <p className="text-zion-slate-light mb-4">Trusted by leading companies worldwide</p>
+          <div className="flex items-center justify-center space-x-8 opacity-60">
+            <div className="text-zion-slate-light font-semibold">Microsoft</div>
+            <div className="text-zion-slate-light font-semibold">Google</div>
+            <div className="text-zion-slate-light font-semibold">Amazon</div>
+            <div className="text-zion-slate-light font-semibold">IBM</div>
+            <div className="text-zion-slate-light font-semibold">Oracle</div>
           </div>
         </motion.div>
-      </motion.div>
-
-      {/* Bottom wave effect */}
-      <div className="absolute bottom-0 left-0 right-0">
-        <svg
-          className="w-full h-16 text-background"
-          viewBox="0 0 1200 120"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
-            opacity=".25"
-            fill="currentColor"
-          />
-          <path
-            d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.71,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
-            opacity=".5"
-            fill="currentColor"
-          />
-          <path
-            d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
-            fill="currentColor"
-          />
-        </svg>
       </div>
+
+      {/* Bottom gradient fade */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-zion-blue-dark to-transparent" />
     </section>
   );
-}
+};

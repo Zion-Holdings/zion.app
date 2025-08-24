@@ -1,170 +1,98 @@
 
-import React from "react";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Link } from "react-router-dom";
-import { 
-  ArrowRight, 
-  Brain, 
-  Shield, 
-  Cloud, 
-  Database, 
-  Zap, 
-  Code, 
-  Settings, 
-  Link as LinkIcon,
-  Phone,
-  Mail,
-  Globe
-} from "lucide-react";
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
-const features = [
-  {
-    title: "AI & Machine Learning",
-    description: "Transform your business with intelligent automation and data-driven insights",
-    icon: <Brain className="w-8 h-8" />,
-    link: "/comprehensive-services#ai-ml",
-    color: "from-purple-500 to-indigo-600",
-    cta: "Explore AI Services"
-  },
-  {
-    title: "Cybersecurity",
-    description: "Protect your organization with comprehensive security solutions and monitoring",
-    icon: <Shield className="w-8 h-8" />,
-    link: "/comprehensive-services#cybersecurity",
-    color: "from-red-500 to-pink-600",
-    cta: "Secure Your Business"
-  },
-  {
-    title: "Cloud & Infrastructure",
-    description: "Modernize your infrastructure with cloud solutions and DevOps automation",
-    icon: <Cloud className="w-8 h-8" />,
-    link: "/comprehensive-services#cloud-infrastructure",
-    color: "from-blue-500 to-cyan-600",
-    cta: "Cloud Solutions"
-  },
-  {
-    title: "Data & Analytics",
-    description: "Unlock business insights with advanced analytics and data engineering",
-    icon: <Database className="w-8 h-8" />,
-    link: "/comprehensive-services#data-analytics",
-    color: "from-green-500 to-emerald-600",
-    cta: "Data Insights"
-  },
-  {
-    title: "Digital Transformation",
-    description: "Accelerate your digital journey with strategic transformation services",
-    icon: <Zap className="w-8 h-8" />,
-    link: "/comprehensive-services#digital-transformation",
-    color: "from-orange-500 to-red-600",
-    cta: "Transform Now"
-  },
-  {
-    title: "Web & Mobile",
-    description: "Build custom applications and digital experiences for your business",
-    icon: <Code className="w-8 h-8" />,
-    link: "/comprehensive-services#web-mobile",
-    color: "from-indigo-500 to-purple-600",
-    cta: "Build Apps"
-  },
-  {
-    title: "IT Support & Management",
-    description: "Ensure smooth IT operations with managed services and support",
-    icon: <Settings className="w-8 h-8" />,
-    link: "/comprehensive-services#it-support",
-    color: "from-gray-500 to-slate-600",
-    cta: "Get Support"
-  },
-  {
-    title: "Blockchain & Web3",
-    description: "Leverage decentralized technologies for innovation and transparency",
-    icon: <LinkIcon className="w-8 h-8" />,
-    link: "/comprehensive-services#blockchain-web3",
-    color: "from-yellow-500 to-amber-600",
-    cta: "Web3 Solutions"
-  }
-];
+export const FeatureCTAs: React.FC = () => {
+  const features = [
+    {
+      title: "AI-Powered Solutions",
+      description: "Leverage cutting-edge artificial intelligence to automate processes, gain insights, and drive innovation across your organization.",
+      icon: "🤖",
+      color: "from-zion-cyan to-zion-blue",
+      link: "/ai-solutions"
+    },
+    {
+      title: "Cybersecurity Services",
+      description: "Protect your digital assets with enterprise-grade security solutions, threat detection, and compliance management.",
+      icon: "🔒",
+      color: "from-zion-purple to-zion-red",
+      link: "/cybersecurity"
+    },
+    {
+      title: "Cloud Infrastructure",
+      description: "Build scalable, resilient cloud architectures that optimize performance, reduce costs, and enable rapid deployment.",
+      icon: "☁️",
+      color: "from-zion-blue to-zion-cyan",
+      link: "/cloud-services"
+    }
+  ];
 
-export function FeatureCTAs() {
   return (
-    <section className="py-20 bg-zion-blue">
+    <section className="py-16 bg-zion-slate-dark">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Professional <span className="text-transparent bg-clip-text bg-gradient-to-r from-zion-cyan to-zion-purple">Technology Services</span>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-12"
+        >
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            Transform Your Business
           </h2>
-          <p className="text-zion-slate-light text-lg max-w-3xl mx-auto">
-            Discover our comprehensive suite of professional technology services designed to accelerate your business growth, 
-            enhance security, and drive innovation across all aspects of your organization.
+          <p className="text-zion-slate-light text-lg max-w-2xl mx-auto">
+            Choose from our comprehensive suite of technology services designed to drive growth and innovation.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {features.map((feature, index) => (
-            <div key={index} className="group">
-              <Link to={feature.link} className="block">
-                <div className="rounded-lg overflow-hidden h-full border border-zion-blue-light bg-zion-blue-dark p-6 transition-all duration-300 hover:border-zion-purple/50 hover:translate-y-[-5px]">
-                  <div className={`rounded-full w-16 h-16 bg-gradient-to-br ${feature.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                    <div className="text-white">
-                      {feature.icon}
-                    </div>
-                  </div>
-                  <h3 className="text-white text-xl font-bold mb-3">{feature.title}</h3>
-                  <p className="text-zion-slate-light text-sm mb-4 leading-relaxed">{feature.description}</p>
-                  
-                  <Button 
-                    variant="outline" 
-                    className="w-full border-zion-purple text-zion-cyan hover:bg-zion-purple/10 group-hover:border-zion-cyan group-hover:text-zion-cyan-light transition-all duration-300"
-                  >
-                    {feature.cta}
-                    <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-                  </Button>
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="group"
+            >
+              <div className="bg-zion-slate-dark/50 backdrop-blur-sm rounded-xl p-6 border border-zion-cyan/20 hover:border-zion-cyan/40 transition-all duration-300 h-full">
+                <div className="text-center mb-6">
+                  <div className="text-4xl mb-4">{feature.icon}</div>
+                  <h3 className="text-xl font-semibold text-white mb-3">{feature.title}</h3>
+                  <p className="text-zion-slate-light">{feature.description}</p>
                 </div>
-              </Link>
-            </div>
+                
+                <div className="flex flex-wrap gap-2 mb-6">
+                  <span className="bg-zion-purple/20 text-zion-cyan border border-zion-purple/30 px-3 py-1 rounded-full text-sm">
+                    Featured
+                  </span>
+                  <span className="bg-zion-cyan/20 text-zion-cyan border border-zion-cyan/30 px-3 py-1 rounded-full text-sm">
+                    New
+                  </span>
+                </div>
+                
+                <Link to={feature.link}>
+                  <button className={`w-full bg-gradient-to-r ${feature.color} text-white py-3 px-6 rounded-lg font-semibold hover:opacity-90 transition-all duration-300`}>
+                    Get Started
+                  </button>
+                </Link>
+              </div>
+            </motion.div>
           ))}
         </div>
 
-        <div className="text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="text-center mt-12"
+        >
           <Link to="/comprehensive-services">
-            <Button size="lg" className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white text-lg px-8 py-6">
+            <button className="bg-zion-cyan text-zion-slate-dark px-8 py-3 rounded-lg font-semibold hover:bg-zion-cyan/80 transition-all duration-300">
               View All Services
-              <ArrowRight className="h-5 w-5 ml-2" />
-            </Button>
+            </button>
           </Link>
-        </div>
-
-        {/* Contact Information */}
-        <div className="mt-16 text-center">
-          <div className="bg-zion-blue-dark border border-zion-blue-light rounded-lg p-8 max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold text-white mb-4">
-              Ready to Transform Your Business?
-            </h3>
-            <p className="text-zion-slate-light mb-6">
-              Our expert team is ready to help you implement the perfect technology solutions. 
-              Get in touch today for a personalized consultation and quote.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white">
-                <Phone className="h-4 w-4 mr-2" />
-                Call +1 302 464 0950
-              </Button>
-              <Button variant="outline" className="border-zion-purple text-zion-cyan hover:bg-zion-purple/10">
-                <Mail className="h-4 w-4 mr-2" />
-                Email kleber@ziontechgroup.com
-              </Button>
-              <Button variant="outline" className="border-zion-purple text-zion-cyan hover:bg-zion-purple/10">
-                <Globe className="h-4 w-4 mr-2" />
-                Visit ziontechgroup.com
-              </Button>
-            </div>
-            <div className="mt-6 text-zion-slate-light text-sm">
-              <p>Address: 364 E Main St STE 1008, Middletown DE 19709</p>
-            </div>
-          </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
-}
+};
