@@ -18,10 +18,6 @@
     "deps:maintain": "node automation/dependency-update-orchestrator.cjs",
     "deps:cron:start": "bash automation/dependency-maintenance-cron.sh",
     "sitemap": "node scripts/generate-sitemap.mjs",
-    "agents:run": "node automation/cloud-autonomy-orchestrator.cjs",
-    "agents:docs": "node automation/docs-intelligence.cjs",
-    "agents:api": "node automation/api-openapi-generator.cjs",
-    "agents:gov": "node automation/governance-insights.cjs",
     "dev": "NODE_OPTIONS=--openssl-legacy-provider next dev",
     "build": "NODE_OPTIONS=--openssl-legacy-provider next build",
     "export": "NODE_OPTIONS=--openssl-legacy-provider next build && next export",
@@ -218,7 +214,9 @@
     "conflicts:watch": "watch -n 30 bash scripts/check-merge-conflicts.sh || true",
     "conflicts:cron:start": "bash automation/merge-conflict-cron.sh start",
     "conflicts:cron:stop": "bash automation/merge-conflict-cron.sh stop",
-    "conflicts:cron:status": "bash automation/merge-conflict-cron.sh status"
+    "conflicts:cron:status": "bash automation/merge-conflict-cron.sh status",
+    "book:export:pdf": "node scripts/export-zion-book.mjs",
+    "book:export:epub": "curl -sS -o dist/zion-os-book.epub http://localhost:3000/api/book/export-epub || true"
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
@@ -254,9 +252,11 @@
     "react": "^17.0.2",
     "react-datepicker": "^8.4.0",
     "react-dom": "^17.0.2",
-          "uuid": "^11.1.0",
-      "jszip": "^3.10.1"
-    },
+    "uuid": "^11.1.0",
+    "epub-gen": "^0.1.0",
+    "epub-gen-memory": "^1.0.0",
+    "puppeteer": "^23.7.0"
+  },
   "devDependencies": {
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
