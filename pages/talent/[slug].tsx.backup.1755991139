@@ -1,0 +1,27 @@
+<<<<<<< HEAD
+import { useRouter } from 'next/router';
+
+export default function TalentProfile() {
+  const { query } = useRouter();
+  return <div>Talent Profile: {String(query.slug || '')}</div>;
+}
+=======
+import React from "react";
+import Head from "next/head";
+
+const Page: React.FC = () => {
+  return (
+    <>
+      <Head>
+        <title>Placeholder Page</title>
+        <meta name="robots" content="noindex" />
+      </Head>
+      <main>
+        <h1>Coming soon</h1>
+      </main>
+    </>
+  );
+};
+
+export default Page;
+>>>>>>> origin/cursor/build-next-app-with-syntax-error-c5e0

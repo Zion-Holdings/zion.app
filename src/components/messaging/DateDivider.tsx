@@ -1,19 +1,9 @@
-
 import React from 'react';
-import { format } from 'date-fns';
-
-interface DateDividerProps {
-  date: Date;
-}
-
-export function DateDivider({ date }: DateDividerProps) {
+export function DateDivider() {
   return (
-    <div className="flex items-center my-4">
-      <div className="flex-1 border-t border-zion-purple/20"></div>
-      <div className="px-3 text-xs text-zion-slate">
-        {format(date, 'MMM d, yyyy')}
-      </div>
-      <div className="flex-1 border-t border-zion-purple/20"></div>
+    <div>
+      <h1>Component</h1>
+      <p>Component placeholder</p>
     </div>
   );
 }

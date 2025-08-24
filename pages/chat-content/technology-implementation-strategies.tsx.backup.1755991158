@@ -1,0 +1,6 @@
+<<<<<<< HEAD
+import React from 'react';
+export default function Page() { return <div className="min-h-screen p-8">Technology Implementation Strategies (WIP)</div>; }
+=======
+export default function TechnologyImplementationStrategies() { return null }
+>>>>>>> origin/cursor/build-decentralized-governance-system-for-zion-2328
