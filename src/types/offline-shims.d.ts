@@ -1,29 +1,47 @@
-// Minimal type declarations for offline development
+// Temporary type declarations for offline development
 
-// React stubs
+declare namespace JSX {
+  interface Element {}
+  interface IntrinsicElements { [elemName: string]: any }
+}
+
 declare module 'react' {
-  export type FC<P = any> = (props: P) => any;
   export type ReactNode = any;
-  export interface ChangeEvent<T = any> extends Event { target: T }
-  export interface FormEvent<T = any> extends Event {}
-  export interface KeyboardEvent<T = any> extends Event {}
-  export interface MutableRefObject<T = any> { current: T }
-  export type RefCallback<T> = (instance: T | null) => void;
-  export type Ref<T> = MutableRefObject<T> | RefCallback<T> | null;
-  export type LegacyRef<T> = Ref<T>;
-  export function useState<S = any>(initial?: S): [S, (value: S) => void];
-  export function useEffect(fn: () => any, deps?: any[]): void;
+  export interface ReactElement {}
+  export interface FC<P = {}> {
+    (props: P & { children?: ReactNode }): ReactElement | null;
+  }
+  export interface SyntheticEvent<T = Element> { target: T; preventDefault(): void; }
+  export interface ChangeEvent<T = Element> extends SyntheticEvent<T> {}
+  export interface KeyboardEvent<T = Element> extends SyntheticEvent<T> {}
+  export interface MouseEvent<T = Element> extends SyntheticEvent<T> {}
+  export interface FormEvent<T = Element> extends SyntheticEvent<T> {}
+  export type LegacyRef<T> = any;
+  export type Ref<T> = any;
+  export type ElementRef<T> = any;
+  export type ComponentPropsWithoutRef<T> = any;
+  export function useState<S>(initialState: S | (() => S)): [S, (value: S) => void];
+  export function useEffect(effect: () => void | (() => void), deps?: any[]): void;
   export function useRef<T = any>(initial: T): { current: T };
+  export function createContext<T>(defaultValue: T): any;
+  export function useContext<T>(context: any): T;
+  export function useMemo<T>(factory: () => T, deps: any[]): T;
+  export function forwardRef<T, P>(component: any): any;
+  export function Suspense(props: any): any;
+  export function lazy(factory: () => Promise<any>): any;
   const react: any;
   export default react;
 }
 
 declare module 'react/jsx-runtime' {
-  export {};
+  export function jsx(...args: any[]): any;
+  export const jsxs: any;
+  export const Fragment: any;
 }
 
 declare module 'react-dom' {
   export function render(...args: any[]): any;
+  export function createRoot(container: any): any;
   const reactDom: any;
   export default reactDom;
 }
@@ -31,18 +49,18 @@ declare module 'react-dom' {
 declare module 'react-router-dom' {
   export function useParams<T = any>(): T;
   export function useNavigate(): any;
+  export function useLocation(): any;
   export const Link: any;
   export const Route: any;
   export const Routes: any;
   export const Navigate: any;
+  export const BrowserRouter: any;
   const rr: any;
   export default rr;
 }
 
 declare module 'react-hook-form' {
-  export function useForm<T = any>(...args: any[]): any;
-  const rhf: any;
-  export default rhf;
+  export function useForm<T extends Record<string, any>>(options?: any): any;
 }
 
 declare module '@hookform/resolvers/zod' {
@@ -56,19 +74,28 @@ declare module '@tanstack/react-query' {
   export default rq;
 }
 
-declare module 'jspdf' {
-  export class jsPDF {
-    constructor(...args: any[]);
-    [key: string]: any;
+declare module 'zod' {
+  export namespace z {
+    type infer<T> = any;
   }
-  export default jsPDF;
+  export = z;
 }
 
-declare module 'zod' {
-  export type infer<T> = any;
-  const z: any;
-  export { z };
-  export default z;
+declare module 'class-variance-authority' {
+  export type VariantProps<T> = any;
+}
+
+declare module 'jspdf' {
+  export default class jsPDF {}
+}
+
+declare module 'clsx' {
+  export function clsx(...inputs: any[]): string;
+  export type ClassValue = any;
+}
+
+declare module 'tailwind-merge' {
+  export function twMerge(...inputs: any[]): string;
 }
 
 // Fallback for other modules

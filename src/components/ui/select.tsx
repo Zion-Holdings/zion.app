@@ -28,40 +28,19 @@ export interface SelectValueProps extends React.HTMLAttributes<HTMLSpanElement> 
 const SelectContext = React.createContext<{
   value: string;
   onValueChange: (value: string) => void;
-  open: boolean;
-  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
   disabled: boolean;
 } | undefined>(undefined);
 
 export const Select: React.FC<SelectProps> = ({
-  value,
+  value = '',
   onValueChange,
   disabled = false,
-  className,
   children,
+  className,
   ...props
 }) => {
-  const [open, setOpen] = React.useState(false);
-  const [internalValue, setInternalValue] = React.useState(value || '');
-  
-  const currentValue = value !== undefined ? value : internalValue;
-  
-  const handleValueChange = (newValue: string) => {
-    if (value === undefined) {
-      setInternalValue(newValue);
-    }
-    onValueChange?.(newValue);
-    setOpen(false);
-  };
-
   return (
-    <SelectContext.Provider value={{ 
-      value: currentValue, 
-      onValueChange: handleValueChange, 
-      open, 
-      setOpen,
-      disabled 
-    }}>
+    <SelectContext.Provider value={{ value, onValueChange: onValueChange || (() => {}), disabled }}>
       <div className={cn('relative', className)} {...props}>
         {children}
       </div>
@@ -70,62 +49,40 @@ export const Select: React.FC<SelectProps> = ({
 };
 
 export const SelectTrigger: React.FC<SelectTriggerProps> = ({
-  className,
   children,
+  className,
   ...props
 }) => {
   const context = React.useContext(SelectContext);
-  if (!context) throw new Error('SelectTrigger must be used within Select');
+  if (!context) {
+    throw new Error('SelectTrigger must be used within Select');
+  }
 
-  const { open, setOpen, disabled } = context;
+  const { disabled } = context;
 
   return (
     <button
-      type="button"
       className={cn(
         'flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50',
         className
       )}
-      onClick={() => !disabled && setOpen(!open)}
       disabled={disabled}
       {...props}
     >
       {children}
-      <svg
-        className={cn(
-          'h-4 w-4 opacity-50 transition-transform',
-          open && 'rotate-180'
-        )}
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <polyline points="6,9 12,15 18,9" />
-      </svg>
     </button>
   );
 };
 
 export const SelectContent: React.FC<SelectContentProps> = ({
-  className,
   children,
+  className,
   ...props
 }) => {
-  const context = React.useContext(SelectContext);
-  if (!context) throw new Error('SelectContent must be used within Select');
-
-  const { open } = context;
-
-  if (!open) return null;
-
   return (
     <div
       className={cn(
-        'absolute top-full z-50 mt-1 max-h-60 w-full overflow-auto rounded-md border bg-popover text-popover-foreground shadow-md',
+        'relative z-50 min-w-[8rem] overflow-hidden rounded-md border bg-popover text-popover-foreground shadow-md data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2',
         className
       )}
       {...props}
@@ -137,54 +94,42 @@ export const SelectContent: React.FC<SelectContentProps> = ({
 
 export const SelectItem: React.FC<SelectItemProps> = ({
   value,
-  className,
   children,
   disabled = false,
+  className,
   ...props
 }) => {
   const context = React.useContext(SelectContext);
-  if (!context) throw new Error('SelectItem must be used within Select');
+  if (!context) {
+    throw new Error('SelectItem must be used within Select');
+  }
 
-  const { value: currentValue, onValueChange } = context;
-  const isSelected = currentValue === value;
+  const { onValueChange } = context;
 
   return (
     <div
       className={cn(
-        'relative flex w-full cursor-pointer select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground',
-        isSelected && 'bg-accent text-accent-foreground',
+        'relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
         disabled && 'pointer-events-none opacity-50',
         className
       )}
       onClick={() => !disabled && onValueChange(value)}
       {...props}
     >
-      {isSelected && (
-        <svg
-          className="absolute left-2 h-4 w-4"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <polyline points="20,6 9,17 4,12" />
-        </svg>
-      )}
       {children}
     </div>
   );
 };
 
 export const SelectValue: React.FC<SelectValueProps> = ({
-  placeholder,
+  placeholder = 'Select an option',
   className,
   ...props
 }) => {
   const context = React.useContext(SelectContext);
-  if (!context) throw new Error('SelectValue must be used within Select');
+  if (!context) {
+    throw new Error('SelectValue must be used within Select');
+  }
 
   const { value } = context;
 

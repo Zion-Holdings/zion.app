@@ -26,9 +26,7 @@ const AccordionContext = React.createContext<{
   type: 'single' | 'multiple';
   collapsible: boolean;
   openItems: string[];
-  setOpenItems: React.Dispatch<React.SetStateAction<string[]>>;
-  value?: string | string[];
-  onValueChange?: (value: string | string[]) => void;
+  onToggle: (value: string) => void;
 } | undefined>(undefined);
 
 export const Accordion: React.FC<AccordionProps> = ({
@@ -37,26 +35,44 @@ export const Accordion: React.FC<AccordionProps> = ({
   defaultValue,
   value,
   onValueChange,
-  className,
   children,
+  className,
   ...props
 }) => {
   const [openItems, setOpenItems] = React.useState<string[]>(
     defaultValue ? (Array.isArray(defaultValue) ? defaultValue : [defaultValue]) : []
   );
 
-  const contextValue = React.useMemo(() => ({
-    type,
-    collapsible,
-    openItems: value ? (Array.isArray(value) ? value : [value]) : openItems,
-    setOpenItems,
-    value,
-    onValueChange
-  }), [type, collapsible, openItems, value, onValueChange]);
+  const handleToggle = (itemValue: string) => {
+    if (type === 'single') {
+      const newOpenItems = openItems.includes(itemValue) ? [] : [itemValue];
+      setOpenItems(newOpenItems);
+      onValueChange?.(newOpenItems);
+    } else {
+      const newOpenItems = openItems.includes(itemValue)
+        ? openItems.filter(item => item !== itemValue)
+        : [...openItems, itemValue];
+      setOpenItems(newOpenItems);
+      onValueChange?.(newOpenItems);
+    }
+  };
+
+  React.useEffect(() => {
+    if (value !== undefined) {
+      setOpenItems(Array.isArray(value) ? value : [value]);
+    }
+  }, [value]);
 
   return (
-    <AccordionContext.Provider value={contextValue}>
-      <div className={cn('w-full', className)} {...props}>
+    <AccordionContext.Provider
+      value={{
+        type,
+        collapsible,
+        openItems,
+        onToggle: handleToggle
+      }}
+    >
+      <div className={cn('space-y-2', className)} {...props}>
         {children}
       </div>
     </AccordionContext.Provider>
@@ -66,14 +82,17 @@ export const Accordion: React.FC<AccordionProps> = ({
 export const AccordionItem: React.FC<AccordionItemProps> = ({
   value,
   disabled = false,
-  className,
   children,
+  className,
   ...props
 }) => {
   return (
     <div
-      className={cn('border-b', className)}
-      data-disabled={disabled}
+      className={cn(
+        'border rounded-lg',
+        disabled && 'opacity-50 cursor-not-allowed',
+        className
+      )}
       {...props}
     >
       {children}
@@ -87,31 +106,21 @@ export const AccordionTrigger: React.FC<AccordionTriggerProps> = ({
   ...props
 }) => {
   const context = React.useContext(AccordionContext);
-  if (!context) throw new Error('AccordionTrigger must be used within Accordion');
+  if (!context) {
+    throw new Error('AccordionTrigger must be used within Accordion');
+  }
 
-  const { type, collapsible, openItems, setOpenItems, onValueChange } = context;
-
-  const handleClick = () => {
-    if (props.disabled) return;
-
-    const newOpenItems = type === 'single'
-      ? openItems.includes(props.value || '') ? [] : [props.value || '']
-      : openItems.includes(props.value || '')
-        ? openItems.filter(item => item !== props.value)
-        : [...openItems, props.value || ''];
-
-    setOpenItems(newOpenItems);
-    onValueChange?.(type === 'single' ? newOpenItems[0] || '' : newOpenItems);
-  };
+  const { onToggle, openItems } = context;
+  const isOpen = openItems.includes(props.value || '');
 
   return (
     <button
       type="button"
       className={cn(
-        'flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline [&[data-state=open]>svg]:rotate-180',
+        'flex w-full items-center justify-between p-4 text-left font-medium transition-all hover:bg-gray-50 [&[data-state=open]>svg]:rotate-180',
         className
       )}
-      onClick={handleClick}
+      onClick={() => onToggle(props.value || '')}
       {...props}
     >
       {children}
@@ -137,33 +146,37 @@ export const AccordionContent: React.FC<AccordionContentProps> = ({
   ...props
 }) => {
   const context = React.useContext(AccordionContext);
-  if (!context) throw new Error('AccordionContent must be used within Accordion');
+  if (!context) {
+    throw new Error('AccordionContent must be used within Accordion');
+  }
 
   const { openItems } = context;
   const isOpen = openItems.includes(props.value || '');
 
+  if (!isOpen) return null;
+
   return (
     <div
       className={cn(
-        'overflow-hidden text-sm transition-all',
-        isOpen ? 'animate-accordion-down' : 'animate-accordion-up'
+        'overflow-hidden text-sm transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down',
+        className
       )}
       {...props}
     >
-      <div className={cn('pb-4 pt-0', className)}>
-        {children}
-      </div>
+      <div className="p-4 pt-0">{children}</div>
     </div>
   );
 };
 
-// Wrapper component for easier usage
-export const AccordionItemWrapper: React.FC<{
-  value: string;
-  children: React.ReactNode;
-  className?: string;
-}> = ({ value, children, className }) => (
-  <AccordionItem value={value} className={className}>
-    {children}
-  </AccordionItem>
-);
+export const AccordionItemWrapper: React.FC<AccordionItemProps> = (props) => {
+  return (
+    <AccordionItem {...props}>
+      <AccordionTrigger value={props.value}>
+        {props.children}
+      </AccordionTrigger>
+      <AccordionContent value={props.value}>
+        Content for {props.value}
+      </AccordionContent>
+    </AccordionItem>
+  );
+};

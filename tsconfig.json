@@ -33,10 +33,11 @@
     "incremental": true,
     "jsx": "react-jsx",
     "typeRoots": [
-      "./node_modules/@types"
+      "./node_modules/@types",
+      "./src/types"
     ],
     "types": ["react", "react-dom", "node"]
   },
-  "include": ["src"],
+  "include": ["src", "src/types/offline-shims.d.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

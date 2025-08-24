@@ -36,26 +36,25 @@ const DialogContext = React.createContext<{
 } | undefined>(undefined);
 
 export const Dialog: React.FC<DialogProps> = ({
-  open: controlledOpen,
+  open = false,
   onOpenChange,
-  className,
   children,
+  className,
   ...props
 }) => {
-  const [internalOpen, setInternalOpen] = React.useState(false);
-  
-  const isControlled = controlledOpen !== undefined;
-  const open = isControlled ? controlledOpen : internalOpen;
-  
-  const setOpen = React.useCallback((newOpen: boolean | ((prev: boolean) => boolean)) => {
-    if (!isControlled) {
-      setInternalOpen(newOpen);
-    }
-    onOpenChange?.(typeof newOpen === 'function' ? newOpen(open) : newOpen);
-  }, [isControlled, onOpenChange, open]);
+  const [isOpen, setIsOpen] = React.useState(open);
+
+  React.useEffect(() => {
+    setIsOpen(open);
+  }, [open]);
+
+  const handleOpenChange = (newOpen: boolean) => {
+    setIsOpen(newOpen);
+    onOpenChange?.(newOpen);
+  };
 
   return (
-    <DialogContext.Provider value={{ open, setOpen }}>
+    <DialogContext.Provider value={{ open: isOpen, setOpen: handleOpenChange }}>
       <div className={cn('relative', className)} {...props}>
         {children}
       </div>
@@ -64,18 +63,19 @@ export const Dialog: React.FC<DialogProps> = ({
 };
 
 export const DialogTrigger: React.FC<DialogTriggerProps> = ({
-  className,
   children,
+  className,
   ...props
 }) => {
   const context = React.useContext(DialogContext);
-  if (!context) throw new Error('DialogTrigger must be used within Dialog');
+  if (!context) {
+    throw new Error('DialogTrigger must be used within Dialog');
+  }
 
   const { setOpen } = context;
 
   return (
     <button
-      type="button"
       className={cn('inline-flex items-center justify-center', className)}
       onClick={() => setOpen(true)}
       {...props}
@@ -86,84 +86,81 @@ export const DialogTrigger: React.FC<DialogTriggerProps> = ({
 };
 
 export const DialogContent: React.FC<DialogContentProps> = ({
-  className,
   children,
+  className,
   ...props
 }) => {
   const context = React.useContext(DialogContext);
-  if (!context) throw new Error('DialogContent must be used within Dialog');
+  if (!context) {
+    throw new Error('DialogContent must be used within Dialog');
+  }
 
   const { open, setOpen } = context;
 
   if (!open) return null;
 
   return (
-    <>
-      {/* Backdrop */}
+    <div className="fixed inset-0 z-50 flex items-center justify-center">
       <div
-        className="fixed inset-0 z-50 bg-background/80 backdrop-blur-sm"
+        className="fixed inset-0 bg-black/50"
         onClick={() => setOpen(false)}
       />
-      
-      {/* Dialog */}
-      <div className="fixed inset-0 z-50 flex items-center justify-center">
-        <div
-          className={cn(
-            'relative w-full max-w-lg rounded-lg border bg-background p-6 shadow-lg',
-            className
-          )}
-          {...props}
-        >
-          {children}
-        </div>
+      <div
+        className={cn(
+          'relative bg-white rounded-lg shadow-lg p-6 max-w-md w-full mx-4',
+          className
+        )}
+        {...props}
+      >
+        {children}
       </div>
-    </>
+    </div>
   );
 };
 
 export const DialogHeader: React.FC<DialogHeaderProps> = ({
-  className,
   children,
+  className,
   ...props
 }) => {
   return (
-    <div className={cn('flex flex-col space-y-1.5 text-center sm:text-left', className)} {...props}>
+    <div className={cn('mb-4', className)} {...props}>
       {children}
     </div>
   );
 };
 
 export const DialogTitle: React.FC<DialogTitleProps> = ({
-  className,
   children,
+  className,
   ...props
 }) => {
   return (
-    <h2 className={cn('text-lg font-semibold leading-none tracking-tight', className)} {...props}>
+    <h2 className={cn('text-lg font-semibold', className)} {...props}>
       {children}
     </h2>
   );
 };
 
 export const DialogDescription: React.FC<DialogDescriptionProps> = ({
-  className,
   children,
+  className,
   ...props
 }) => {
   return (
-    <p className={cn('text-sm text-muted-foreground', className)} {...props}>
+    <p className={cn('text-sm text-gray-600', className)} {...props}>
       {children}
     </p>
   );
 };
 
 export const DialogFooter: React.FC<DialogFooterProps> = ({
-  className,
   children,
+  className,
   ...props
 }) => {
   return (
-    <div className={cn('flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2', className)} {...props}>
+    <div className={cn('flex justify-end gap-2 mt-4', className)} {...props}>
       {children}
     </div>
   );
