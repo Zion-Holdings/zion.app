@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight, CheckCircle, Star, Users, Code, Cloud, Brain, Shield, Zap, Globe } from 'lucide-react'
@@ -230,3 +231,4 @@ function App() {
 }
 
 export default App
+
