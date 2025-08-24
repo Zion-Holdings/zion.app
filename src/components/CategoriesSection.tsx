@@ -8,22 +8,8 @@ const categories = [
     title: "Services",
     description: "On-demand IT support, consulting, development, and more",
     icon: <Briefcase className="w-10 h-10" />,
-    link: "/comprehensive-services",
+    link: "/services",
     color: "from-purple-500 to-indigo-600",
-  },
-  {
-    title: "AI Services",
-    description: "Cutting-edge AI solutions and machine learning services",
-    icon: <Briefcase className="w-10 h-10" />,
-    link: "/ai-services",
-    color: "from-purple-500 to-indigo-600",
-  },
-  {
-    title: "Cybersecurity",
-    description: "Comprehensive security solutions and compliance services",
-    icon: <Briefcase className="w-10 h-10" />,
-    link: "/cybersecurity-services",
-    color: "from-red-500 to-pink-600",
   },
   {
     title: "Talents",
@@ -50,24 +36,24 @@ const categories = [
 
 const specialServices = [
   {
-    title: "Enhanced Services",
-    link: "/enhanced-services"
-  },
-  {
-    title: "Services Overview",
-    link: "/services-overview"
-  },
-  {
-    title: "Services Pricing",
-    link: "/services-pricing"
-  },
-  {
     title: "IT Onsite Services",
     link: "/it-onsite-services"
   },
   {
+    title: "AI Services",
+    link: "/ai-services"
+  },
+  {
+    title: "Cybersecurity",
+    link: "/cybersecurity-services"
+  },
+  {
     title: "All Services",
-    link: "/all-services"
+    link: "/comprehensive-services"
+  },
+  {
+    title: "Pricing",
+    link: "/services-pricing"
   }
 ];
 
@@ -88,7 +74,7 @@ export function CategoriesSection({ showTitle = true }: CategoriesSectionProps) 
           </div>
         )}
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {categories.map((category) => (
             <Link 
               key={category.title} 
@@ -120,12 +106,6 @@ export function CategoriesSection({ showTitle = true }: CategoriesSectionProps) 
                 {service.title}
               </Link>
             ))}
-            <Link 
-              to="/pricing"
-              className="px-6 py-3 bg-zion-purple hover:bg-zion-purple-dark border border-zion-purple/20 hover:border-zion-purple/50 rounded-full text-white transition-all duration-300"
-            >
-              View Pricing Guide
-            </Link>
           </div>
         </div>
         
