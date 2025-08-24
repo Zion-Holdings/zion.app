@@ -5,13 +5,13 @@ export default function Placeholder() {
   return (
     <main className="min-h-screen p-8">
       <Head>
-        <title>Products - Placeholder</title>
+        <title> • Www.google-analytics.com - Placeholder</title>
         <meta name="robots" content="noindex" />
       </Head>
       <div className="max-w-3xl mx-auto">
-        <h1 className="text-2xl font-semibold mb-2">Products</h1>
-        <p className="text-gray-600 mb-6">Auto-generated placeholder for missing route: <code>/products</code>.</p>
-        <Link href="/"><a className="text-blue-600 hover:underline">Back to Home</a></Link>
+        <h1 className="text-2xl font-semibold mb-2"> • Www.google-analytics.com</h1>
+        <p className="text-gray-600 mb-6">Auto-generated placeholder for missing route: <code>{'//www.google-analytics.com'}</code>.</p>
+        <Link href="/" className="text-blue-600 hover:underline">Back to Home</Link>
       </div>
     </main>
   );

@@ -1,8 +1,1 @@
-{
-  "/_app": "pages/_app.js",
-  "/_error": "pages/_error.js",
-  "/_document": "pages/_document.js",
-  "/contact": "pages/contact.js",
-  "/zion-tech-group": "pages/zion-tech-group.js",
-  "/": "pages/index.js"
-}
+{"/_app":"pages/_app.js","/_error":"pages/_error.js","/_document":"pages/_document.js","/about":"pages/about.html","/apple-touch-icon.png":"pages/apple-touch-icon.png.html","/careers":"pages/careers.html","/favicon.ico":"pages/favicon.ico.html","/privacy":"pages/privacy.html","/contact":"pages/contact.html","/":"pages/index.html","/reports/updates/update-2025-08-15-0457":"pages/reports/updates/update-2025-08-15-0457.html","/reports/updates/update-2025-08-15-0507":"pages/reports/updates/update-2025-08-15-0507.html","/reports/updates/update-2025-08-15-0508":"pages/reports/updates/update-2025-08-15-0508.html","/www.google-analytics.com":"pages/www.google-analytics.com.html","/services":"pages/services.html","/404":"pages/404.html"}

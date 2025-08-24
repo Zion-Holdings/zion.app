@@ -12,7 +12,8 @@
   "homepage": "https://github.com/Zion-Holdings/zion.app#readme",
   "engines": {
     "node": ">=20.18.1",
-    "npm": ">=10.0.0"
+    "npm": ">=10.0.0",
+    "pnpm": ">=8.0.0"
   },
   "scripts": {
     "deps:maintain": "node automation/dependency-update-orchestrator.cjs",
