@@ -13,6 +13,7 @@ import SearchPage from "@/pages/SearchPage";
 import { SitemapPage } from "@/components/SitemapPage";
 import Sitemap from "@/pages/Sitemap";
 import Terms from "@/pages/Terms";
+import Cookies from "@/pages/Cookies";
 import HelpCenterPage from "@/pages/HelpCenterPage";
 import AccountSettings from "@/pages/AccountSettings";
 import ProjectRoom from "@/pages/ProjectRoom";
@@ -27,6 +28,7 @@ const ContentRoutes = () => {
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/privacy" element={<Privacy />} />
+      <Route path="/cookies" element={<Cookies />} />
       
       {/* Help Center Routes */}
       <Route path="/help" element={<HelpCenterPage />} />
@@ -59,6 +61,9 @@ const ContentRoutes = () => {
 
       {/* Global Search Route */}
       <Route path="/search" element={<SearchPage />} />
+      
+      {/* API Documentation Redirect */}
+      <Route path="/api-docs" element={<Navigate to="/developers/docs" replace />} />
       
       {/* Sitemap Pages */}
       <Route path="/sitemap" element={<Sitemap />} />
