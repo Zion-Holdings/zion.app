@@ -1,3 +1,183 @@
+<<<<<<< HEAD
+      icon: <Code className="w-8 h-8 text-white" />,
+      title: 'Code Review Assistant',
+      description: 'AI-powered code analysis with security, performance, and maintainability insights. Support for JavaScript, Python, and TypeScript.',
+      color: 'bg-gradient-to-br from-fuchsia-500 to-purple-600',
+      gradient: 'from-fuchsia-400 to-purple-500',
+      pricing: 'Free tier, Pro from $29/month'
+    },
+    {
+      icon: <Lock className="w-8 h-8 text-white" />,
+      title: 'API Rate Limiter',
+      description: 'Intelligent rate limiting with configurable policies, real-time analytics, and Express.js middleware support.',
+      color: 'bg-gradient-to-br from-green-500 to-emerald-600',
+      gradient: 'from-green-400 to-emerald-500',
+      pricing: 'Free tier, Enterprise from $99/month'
+    },
+    {
+      icon: <Database className="w-8 h-8 text-white" />,
+      title: 'Email Validator',
+      description: 'Comprehensive email validation with security risk assessment, disposable email detection, and MX record validation.',
+      color: 'bg-gradient-to-br from-blue-500 to-cyan-600',
+      gradient: 'from-blue-400 to-cyan-500',
+      pricing: 'Free tier, Pro from $19/month'
+    },
+    {
+      icon: <Shield className="w-8 h-8 text-white" />,
+      title: 'Password Strength Checker',
+      description: 'Advanced password analysis with security recommendations, policy enforcement, and strong password generation.',
+      color: 'bg-gradient-to-br from-orange-500 to-red-600',
+      gradient: 'from-orange-400 to-red-500',
+      pricing: 'Free tier, Pro from $15/month'
+    },
+    {
+      icon: <Link className="w-8 h-8 text-white" />,
+      title: 'URL Shortener',
+      description: 'Professional URL shortening with analytics, custom aliases, password protection, and expiration dates.',
+      color: 'bg-gradient-to-br from-indigo-500 to-purple-600',
+      gradient: 'from-indigo-400 to-purple-500',
+      pricing: 'Free tier, Pro from $25/month'
+    },
+    {
+      icon: <FileText className="w-8 h-8 text-white" />,
+      title: 'JSON Formatter',
+      description: 'Advanced JSON processing with validation, transformation, schema generation, and performance optimization.',
+      color: 'bg-gradient-to-br from-teal-500 to-cyan-600',
+      gradient: 'from-teal-400 to-cyan-500',
+      pricing: 'Free tier, Pro from $20/month'
+    },
+    {
+      icon: <QrCode className="w-8 h-8 text-white" />,
+      title: 'QR Code Generator',
+      description: 'Professional QR code creation with customization, security validation, and multiple content types support.',
+      color: 'bg-gradient-to-br from-pink-500 to-rose-600',
+      gradient: 'from-pink-400 to-rose-500',
+      pricing: 'Free tier, Pro from $30/month'
+    },
+    {
+      icon: <Database className="w-8 h-8 text-white" />,
+      title: 'File Type Detector',
+      description: 'Intelligent file analysis with security scanning, metadata extraction, and magic number detection.',
+      color: 'bg-gradient-to-br from-amber-500 to-orange-600',
+      gradient: 'from-amber-400 to-orange-500',
+      pricing: 'Free tier, Pro from $35/month'
+    }
+  ];
+
+  const microSaasServices = [
+    {
+      icon: '📝',
+      title: 'AI Content Generator',
+      description: 'Generate high-quality, SEO-optimized content in seconds with advanced AI writing assistance.',
+      href: '/ai-content-generator',
+      color: 'from-purple-500 to-indigo-600',
+      stats: ['50+ Languages', '10M+ Words Generated', '99.9% Plagiarism-Free']
+    },
+    {
+      icon: '👁️',
+      title: 'Cloud Monitoring & Analytics',
+      description: 'Real-time infrastructure monitoring with AI-powered insights and intelligent alerting.',
+      href: '/cloud-monitoring',
+      color: 'from-green-500 to-emerald-600',
+      stats: ['99.99% Uptime', '1M+ Metrics Tracked', '<100ms Latency']
+    },
+    {
+      icon: '🔍',
+      title: 'AI-Powered SEO Suite',
+      description: 'Comprehensive SEO tools with AI-powered optimization, keyword research, and analytics.',
+      href: '/ai-seo-suite',
+      color: 'from-blue-500 to-cyan-600',
+      stats: ['+150% Organic Traffic', '+45% Search Rankings', '400% ROI']
+    }
+  ];
+
+  const microSaasServices = [
+    { 
+      name: 'Social Media Analytics', 
+      category: 'Marketing', 
+      icon: '📊',
+      price: 'From $49/month',
+      description: 'AI-powered social media performance tracking'
+    },
+    { 
+      name: 'SEO Content Optimization', 
+      category: 'SEO', 
+      icon: '🔍',
+      price: 'From $39/month',
+      description: 'AI-driven content optimization for better rankings'
+    },
+    { 
+      name: 'Email Marketing Automation', 
+      category: 'Marketing', 
+      icon: '📧',
+      price: 'From $29/month',
+      description: 'Intelligent email automation with AI segmentation'
+    },
+    { 
+      name: 'Customer Feedback Platform', 
+      category: 'Analytics', 
+      icon: '🎯',
+      price: 'From $19/month',
+      description: 'AI-powered feedback collection and analysis'
+    },
+    { 
+      name: 'Business Intelligence', 
+      category: 'Analytics', 
+      icon: '📈',
+      price: 'From $79/month',
+      description: 'Real-time BI dashboards and reporting'
+    },
+    { 
+      name: 'AI Chatbot Builder', 
+      category: 'Automation', 
+      icon: '🤖',
+      price: 'From $25/month',
+      description: 'No-code AI chatbot platform'
+    }
+  ];
+
+  const technologyStack = [
+    { name: 'Next.js', category: 'Framework', icon: '⚡' },
+    { name: 'React', category: 'Library', icon: '⚛️' },
+    { name: 'TypeScript', category: 'Language', icon: '📘' },
+    { name: 'Tailwind CSS', category: 'Styling', icon: '🎨' },
+    { name: 'Node.js', category: 'Runtime', icon: '🟢' },
+    { name: 'PostgreSQL', category: 'Database', icon: '🐘' },
+    { name: 'Redis', category: 'Cache', icon: '🔴' },
+    { name: 'Docker', category: 'Containerization', icon: '🐳' },
+    { name: 'AWS', category: 'Cloud', icon: '☁️' },
+    { name: 'TensorFlow', category: 'AI/ML', icon: '🧠' },
+    { name: 'PyTorch', category: 'AI/ML', icon: '🔥' },
+    { name: 'Express.js', category: 'Backend', icon: '🚀' }
+  ];
+
+  const useCases = [
+    {
+      title: 'Development Teams',
+      description: 'Improve code quality, security, and team collaboration with our development tools.',
+      icon: '👥',
+      services: ['Code Review', 'Git Management', 'JSON Processing']
+    },
+    {
+      title: 'Security & Compliance',
+      description: 'Enhance your security posture with validation, threat detection, and compliance tools.',
+      icon: '🔒',
+      services: ['Email Validation', 'Password Security', 'File Analysis']
+    },
+    {
+      title: 'Marketing & Analytics',
+      description: 'Track campaigns, generate QR codes, and analyze performance with our utility services.',
+      icon: '📊',
+      services: ['URL Shortening', 'QR Generation', 'Analytics']
+    },
+    {
+      title: 'API Protection',
+      description: 'Secure your APIs with intelligent rate limiting and threat prevention.',
+      icon: '🛡️',
+      services: ['Rate Limiting', 'Security Scanning', 'Monitoring']
+    }
+  ];
+=======
 import type { NextPage } from 'next';
 import Layout from '../components/Layout';
 import HeroSection from '../components/sections/HeroSection';
@@ -1274,6 +1454,7 @@ export default function HomePage() {
           </div>
         </footer>
       </div>
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-da97
     </>
   );
 }
