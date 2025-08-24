@@ -365,5 +365,3 @@ export default function EnhancedNavigation() {
     </nav>
   );
 };
-
-export default EnhancedNavigation;

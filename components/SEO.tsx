@@ -53,20 +53,12 @@ const SEO: React.FC<SEOProps> = ({
       {nofollow && <meta name="robots" content="nofollow" />}
       {!noindex && !nofollow && <meta name="robots" content="index, follow" />}
       
-      // Analyze description
-      const description = newMetaTags.description || '';
-      const descLength = description.length;
-      const descOptimal = descLength >= 120 && descLength <= 160;
-      const descHasKeywords = newKeywords.some(keyword => 
-        description.toLowerCase().includes(keyword)
-      );
-      
       {/* Open Graph Meta Tags */}
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:type" content={type} />
       <meta property="og:url" content={fullUrl} />
-      <meta property="og:image" content={image} />
+      <meta property="og:image" content={fullImage} />
       <meta property="og:site_name" content="Zion Tech Group" />
       <meta property="og:locale" content="en_US" />
       
@@ -76,7 +68,7 @@ const SEO: React.FC<SEOProps> = ({
       <meta name="twitter:creator" content="@ziontechgroup" />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={image} />
+      <meta name="twitter:image" content={fullImage} />
       
       {/* Article Specific Meta Tags */}
       {type === 'article' && (
@@ -157,28 +149,35 @@ const SEO: React.FC<SEOProps> = ({
         }}
       />
       
+      {/* Canonical URL */}
+      <link rel="canonical" href={fullUrl} />
+      
+      {/* Favicon and App Icons */}
+      <link rel="icon" href="/favicon.ico" />
+      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+      <link rel="manifest" href="/site.webmanifest" />
+      
       {/* Preconnect to external domains for performance */}
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       <link rel="preconnect" href="https://www.google-analytics.com" />
-      <link rel="preconnect" href="https://www.googletagmanager.com" />
       
-      {/* DNS Prefetch for performance */}
-      <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-      <link rel="dns-prefetch" href="//www.google-analytics.com" />
-      <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+      {/* Additional Meta Tags for SEO */}
+      <meta name="google-site-verification" content="your-verification-code" />
+      <meta name="msvalidate.01" content="your-bing-verification-code" />
+      <meta name="yandex-verification" content="your-yandex-verification-code" />
       
-      {/* Favicon and App Icons */}
-      <link rel="icon" href="/favicon.ico" />
-      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-      <link rel="manifest" href="/site.webmanifest" />
-      
-      {/* Additional Performance Optimizations */}
-      <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-      <meta name="format-detection" content="telephone=no" />
-      <meta name="mobile-web-app-capable" content="yes" />
+      {/* Custom Meta Tags */}
+      {structuredData && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(structuredData)
+          }}
+        />
+      )}
     </Head>
   );
 };

@@ -25,8 +25,6 @@ const EnhancedFuturisticCard: React.FC<EnhancedFuturisticCardProps> = ({
   const [isHovered, setIsHovered] = useState(false);
   const [isPressed, setIsPressed] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const animationRef = useRef<number | undefined>(undefined);
 
   // Get variant-specific colors and effects
   const getVariantStyles = () => {

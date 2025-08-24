@@ -437,5 +437,3 @@ export default function EnhancedSidebar2025({ isOpen, onClose }: EnhancedSidebar
     </AnimatePresence>
   );
 };
-
-export default EnhancedSidebar2025;
