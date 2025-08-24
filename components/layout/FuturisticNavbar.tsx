@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, X, Zap, Globe, Bot, Cloud, Shield, Brain, Atom } from 'lucide-react';
+import { Menu, X, Zap, Globe, Bot, Cloud, Shield, Sparkles, Rocket, Cpu, Database, Brain, Atom, Eye, Lock, BarChart3, Users, Target, TrendingUp, Star, Award, ZapIcon, CloudIcon, BotIcon, ShieldIcon, GlobeIcon, CpuIcon, DatabaseIcon, BrainIcon, AtomIcon, EyeIcon, LockIcon, BarChart3Icon, UsersIcon, TargetIcon, TrendingUpIcon, StarIcon, AwardIcon, DollarSign, FlaskConical, Leaf, Factory, ShieldCheck } from 'lucide-react';
 
 const FuturisticNavbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,21 +26,13 @@ const FuturisticNavbar: React.FC = () => {
   const navItems = [
     { name: 'Home', href: '/', icon: <Zap className="w-4 h-4" /> },
     { name: 'Services', href: '/services', icon: <Cloud className="w-4 h-4" /> },
-    { name: 'Micro SaaS', href: '/micro-saas', icon: <Bot className="w-4 h-4" /> },
-    { name: 'AI Solutions', href: '/ai-solutions', icon: <Brain className="w-4 h-4" /> },
-    { name: 'Quantum Tech', href: '/quantum-tech', icon: <Atom className="w-4 h-4" /> },
-    { name: 'Pricing', href: '/pricing', icon: <Globe className="w-4 h-4" /> },
-    { name: 'About', href: '/about', icon: <Shield className="w-4 h-4" /> },
+    { name: 'AI & Quantum', href: '/services?category=AI%20%26%20Machine%20Learning', icon: <Bot className="w-4 h-4" /> },
+    { name: 'Blockchain', href: '/services?category=Blockchain%20%26%20Web3', icon: <Globe className="w-4 h-4" /> },
+    { name: 'Pricing', href: '/pricing', icon: <Shield className="w-4 h-4" /> },
     { name: 'Contact', href: '/contact', icon: <Zap className="w-4 h-4" /> },
   ];
 
-  const handleDropdownEnter = (name: string) => {
-    setActiveDropdown(name);
-  };
-
-  const handleDropdownLeave = () => {
-    setActiveDropdown(null);
-  };
+  const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
@@ -72,45 +64,38 @@ const FuturisticNavbar: React.FC = () => {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-1">
             {navItems.map((item) => (
-              <div
-                key={item.name}
-                className="relative group"
-                onMouseEnter={() => handleDropdownEnter(item.name)}
-                onMouseLeave={handleDropdownLeave}
-              >
+              <div key={item.name} className="relative group">
                 <Link
                   href={item.href}
-                  className="flex items-center space-x-2 px-4 py-3 text-gray-300 hover:text-white transition-all duration-300 group relative rounded-xl hover:bg-white/5"
+                  className="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors duration-200 group relative"
+                  onMouseEnter={() => item.submenu && setActiveSubmenu(item.name)}
+                  onMouseLeave={() => setActiveSubmenu(null)}
                 >
-                  <span className="group-hover:scale-110 transition-transform duration-300">
+                  <span className="group-hover:scale-110 transition-transform duration-200">
                     {item.icon}
                   </span>
-                  <span className="relative font-medium">
+                  <span className="relative">
                     {item.name}
-                    <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-500 group-hover:w-full transition-all duration-500" />
+                    <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 group-hover:w-full transition-all duration-300" />
                   </span>
                 </Link>
-
-                {/* Enhanced Dropdown */}
-                {item.dropdown && activeDropdown === item.name && (
-                  <div className="absolute top-full left-0 mt-2 w-80 bg-black/95 backdrop-blur-xl border border-blue-500/20 rounded-2xl shadow-2xl shadow-blue-500/20 overflow-hidden">
+                
+                {/* Submenu */}
+                {item.submenu && activeSubmenu === item.name && (
+                  <div className="absolute top-full left-0 mt-2 w-64 bg-black/95 backdrop-blur-md border border-blue-500/20 rounded-xl shadow-2xl shadow-blue-500/10 z-50">
                     <div className="p-4">
-                      <div className="grid grid-cols-1 gap-2">
-                        {item.dropdown.map((dropdownItem) => (
-                          <Link
-                            key={dropdownItem.name}
-                            href={dropdownItem.href}
-                            className="flex items-center space-x-3 p-3 rounded-xl hover:bg-white/5 transition-all duration-300 group"
-                          >
-                            <span className="text-blue-400 group-hover:text-cyan-400 transition-colors duration-300">
-                              {dropdownItem.icon}
-                            </span>
-                            <span className="text-gray-300 group-hover:text-white transition-colors duration-300 font-medium">
-                              {dropdownItem.name}
-                            </span>
-                          </Link>
-                        ))}
-                      </div>
+                      {item.submenu.map((subitem, index) => (
+                        <Link
+                          key={index}
+                          href={subitem.href}
+                          className="flex items-center space-x-3 px-4 py-3 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200 group"
+                        >
+                          <span className="text-lg">{subitem.icon}</span>
+                          <span className="group-hover:translate-x-1 transition-transform duration-200">
+                            {subitem.name}
+                          </span>
+                        </Link>
+                      ))}
                     </div>
                   </div>
                 )}

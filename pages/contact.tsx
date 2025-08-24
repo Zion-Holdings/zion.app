@@ -5,10 +5,21 @@ import React from 'react';
 =======
 import React, { useState } from 'react';
 import Head from 'next/head';
-import Button from '../components/ui/Button';
-import Card from '../components/ui/Card';
-import { Mail, Phone, MapPin, MessageSquare, Clock, Globe, Send, CheckCircle, Star, Zap, Shield, Users, ArrowRight, DollarSign } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { 
+  Phone, Mail, MapPin, Globe, Clock, Users, 
+  MessageSquare, Send, CheckCircle, Star, 
+  Rocket, Brain, Atom, Shield, Zap
+} from 'lucide-react';
+import UltraFuturisticBackground2029 from '../components/backgrounds/UltraFuturisticBackground2029';
+import UltraFuturisticNavigation2029 from '../components/layout/UltraFuturisticNavigation2029';
+import UltraFuturisticFooter2029 from '../components/layout/UltraFuturisticFooter2029';
+
+// Import service data for showcase
+import { innovativeAIServices2029 } from '../data/2029-innovative-ai-services';
+import { quantumSpaceInnovations2029 } from '../data/2029-quantum-space-innovations';
+import { enterpriseITInnovations2029 } from '../data/2029-enterprise-it-innovations';
+import { innovativeMicroSaas2029 } from '../data/2029-innovative-micro-saas';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -21,7 +32,24 @@ export default function ContactPage() {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
+
+  const contactInfo = {
+    mobile: '+1 302 464 0950',
+    email: 'kleber@ziontechgroup.com',
+    address: '364 E Main St STE 1008 Middletown DE 19709',
+    website: 'https://ziontechgroup.com',
+    hours: '24/7 Support Available',
+    timezone: 'Eastern Time (ET)'
+  };
+
+  // Get popular services for showcase
+  const popularServices = [
+    ...innovativeAIServices2029.filter(s => s.popular),
+    ...quantumSpaceInnovations2029.filter(s => s.popular),
+    ...enterpriseITInnovations2029.filter(s => s.popular),
+    ...innovativeMicroSaas2029.filter(s => s.popular)
+  ].slice(0, 6);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -38,11 +66,11 @@ export default function ContactPage() {
     await new Promise(resolve => setTimeout(resolve, 2000));
     
     setIsSubmitting(false);
-    setIsSubmitted(true);
+    setSubmitSuccess(true);
     
     // Reset form after 3 seconds
     setTimeout(() => {
-      setIsSubmitted(false);
+      setSubmitSuccess(false);
       setFormData({
         name: '',
         email: '',
@@ -54,422 +82,491 @@ export default function ContactPage() {
     }, 3000);
   };
 
-  const contactMethods = [
-    {
-      icon: <Phone className="w-6 h-6" />,
-      title: 'Phone Support',
-      value: '+1 302 464 0950',
-      description: 'Available 24/7 for urgent matters',
-      color: 'from-blue-500 to-blue-600',
-      bgColor: 'from-blue-500/10 to-blue-600/10',
-      link: 'tel:+13024640950'
-    },
-    {
-      icon: <Mail className="w-6 h-6" />,
-      title: 'Email Support',
-      value: 'kleber@ziontechgroup.com',
-      description: 'Response within 2 hours during business hours',
-      color: 'from-green-500 to-green-600',
-      bgColor: 'from-green-500/10 to-green-600/10',
-      link: 'mailto:kleber@ziontechgroup.com'
-    },
-    {
-      icon: <MapPin className="w-6 h-6" />,
-      title: 'Office Address',
-      value: '364 E Main St STE 1008',
-      description: 'Middletown DE 19709, United States',
-      color: 'from-purple-500 to-purple-600',
-      bgColor: 'from-purple-500/10 to-purple-600/10',
-      link: 'https://maps.google.com/?q=364+E+Main+St+STE+1008+Middletown+DE+19709'
-    },
-    {
-      icon: <Clock className="w-6 h-6" />,
-      title: 'Business Hours',
-      value: 'Monday - Friday',
-      description: '9:00 AM - 6:00 PM EST',
-      color: 'from-orange-500 to-orange-600',
-      bgColor: 'from-orange-500/10 to-orange-600/10',
-      link: null
-    },
-    {
-      icon: <Globe className="w-6 h-6" />,
-      title: 'Website',
-      value: 'ziontechgroup.com',
-      description: 'Visit our main website for more information',
-      color: 'from-cyan-500 to-cyan-600',
-      bgColor: 'from-cyan-500/10 to-cyan-600/10',
-      link: 'https://ziontechgroup.com'
-    },
-    {
-      icon: <MessageSquare className="w-6 h-6" />,
-      title: 'Live Chat',
-      value: 'Available 24/7',
-      description: 'Get instant help from our AI support team',
-      color: 'from-pink-500 to-pink-600',
-      bgColor: 'from-pink-500/10 to-pink-600/10',
-      link: null
-    }
-  ];
-
-  const whyChooseUs = [
-    {
-      icon: <Star className="w-5 h-5" />,
-      title: 'Expert Team',
-      description: 'Certified professionals with 10+ years of experience'
-    },
-    {
-      icon: <Zap className="w-5 h-5" />,
-      title: 'Fast Response',
-      description: 'Average response time under 2 hours'
-    },
-    {
-      icon: <Shield className="w-5 h-5" />,
-      title: 'Secure & Reliable',
-      description: 'Enterprise-grade security and 99.9% uptime guarantee'
-    },
-    {
-      icon: <Users className="w-5 h-5" />,
-      title: 'Global Support',
-      description: '24/7 support across all time zones'
-    },
-    {
-      icon: <DollarSign className="w-5 h-5" />,
-      title: 'Cost Effective',
-      description: 'Competitive pricing with flexible payment options'
-    },
-    {
-      icon: <CheckCircle className="w-5 h-5" />,
-      title: 'Proven Results',
-      description: 'Thousands of satisfied customers worldwide'
-    }
-  ];
-
-  const additionalServices = [
-    {
-      title: 'Technical Consultation',
-      description: 'Get expert advice on technology implementation',
-      price: 'Free for first consultation',
-      duration: '30 minutes'
-    },
-    {
-      title: 'Custom Development',
-      description: 'Tailored solutions for your specific needs',
-      price: 'Custom quote',
-      duration: 'Project-based'
-    },
-    {
-      title: 'Training & Support',
-      description: 'Comprehensive training for your team',
-      price: 'Starting at $199/hour',
-      duration: 'Flexible scheduling'
-    },
-    {
-      title: 'Emergency Support',
-      description: '24/7 critical issue resolution',
-      price: 'Included in enterprise plans',
-      duration: 'Immediate response'
-    }
+  const stats = [
+    { value: '500+', label: 'Micro SaaS Services', icon: <Zap className="w-6 h-6" />, color: 'text-cyan-400' },
+    { value: '99.99%', label: 'Uptime Guarantee', icon: <Shield className="w-6 h-6" />, color: 'text-fuchsia-400' },
+    { value: '30', label: 'Day Free Trials', icon: <Star className="w-6 h-6" />, color: 'text-blue-400' },
+    { value: '24/7', label: 'AI Support', icon: <Brain className="w-6 h-6" />, color: 'text-green-400' },
+    { value: '$1B+', label: 'Market Value', icon: <DollarSign className="w-6 h-6" />, color: 'text-yellow-400' },
+    { value: '2500%+', label: 'Average ROI', icon: <TrendingUp className="w-6 h-6" />, color: 'text-purple-400' }
   ];
 
   return (
-    <QuantumHolographicBackground variant="quantum">
-      <div className="min-h-screen">
-        <Head>
-          <title>Contact Us - Zion Tech Group | Get Started with Revolutionary Technology Solutions</title>
-          <meta name="description" content="Contact Zion Tech Group today for a free consultation on our revolutionary AI, quantum computing, and emerging technology solutions. Transform your business with guaranteed ROI." />
-          <meta name="keywords" content="contact Zion Tech Group, AI consultation, quantum computing services, technology solutions, business transformation" />
-          <meta property="og:title" content="Contact Us - Zion Tech Group" />
-          <meta property="og:description" content="Get started with revolutionary technology solutions. Free consultation available." />
-          <meta property="og:url" content="https://ziontechgroup.com/contact" />
-        </Head>
+    <div className="min-h-screen bg-black text-white overflow-hidden">
+      <Head>
+        <title>Contact Us - Zion Tech Group | Get Started with Revolutionary Micro SaaS Services</title>
+        <meta name="description" content="Contact Zion Tech Group to get started with our revolutionary micro SaaS services. Get a free consultation and discover how our AI and quantum computing solutions can transform your business." />
+        <meta name="keywords" content="contact Zion Tech Group, micro SaaS consultation, AI services consultation, quantum computing services, business transformation" />
+        <meta property="og:title" content="Contact Us - Zion Tech Group" />
+        <meta property="og:description" content="Get started with our revolutionary micro SaaS services. Free consultation available." />
+        <meta property="og:url" content="https://ziontechgroup.com/contact" />
+        <meta property="og:type" content="website" />
+        <link rel="canonical" href="https://ziontechgroup.com/contact" />
+      </Head>
 
-const Contact: NextPage = () => (
-  <div className="py-10">
-    <Head><title>Contact - Zion</title></Head>
-    <h1 className="text-2xl font-semibold text-white">Contact</h1>
-    <p className="text-white/80 mt-2">Get in touch at contact@zion.ai</p>
-  </div>
-);
-
-      <p className="mt-2 text-gray-600 dark:text-gray-300">Get in touch with us.</p>
-=======
-      {/* Contact Information Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-900 to-black relative overflow-hidden">
-        <div className="absolute inset-0 cyber-grid opacity-10" />
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Get in <span className="neon-text-green">Touch</span>
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Our team of experts is here to help you succeed with our micro SaaS services
+      <UltraFuturisticBackground>
+        {/* Hero Section */}
+      <section className="relative z-10 pt-20 pb-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="mb-8"
+          >
+            <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-6">
+              Let's Transform Your Business
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+              Ready to leverage the power of AI, quantum computing, and cutting-edge technology? 
+              Contact us today for a free consultation and discover how our revolutionary micro SaaS services can accelerate your growth.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-16">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="text-center"
-            >
-              <div className="bg-gradient-to-br from-neon-blue/10 to-neon-blue/5 border border-neon-blue/20 rounded-2xl p-8 backdrop-blur-sm hover-glow">
-                <Phone className="h-16 w-16 text-neon-blue mx-auto mb-6" />
-                <h3 className="text-2xl font-bold text-white mb-4">Phone Support</h3>
-                <p className="text-neon-blue font-semibold text-xl mb-2">+1 302 464 0950</p>
-                <p className="text-gray-400 text-sm">Available 24/7 for urgent support</p>
-                <p className="text-gray-400 text-sm mt-2">International calls welcome</p>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="text-center"
-            >
-              <div className="bg-gradient-to-br from-neon-green/10 to-neon-green/5 border border-neon-green/20 rounded-2xl p-8 backdrop-blur-sm hover-glow">
-                <Mail className="h-16 w-16 text-neon-green mx-auto mb-6" />
-                <h3 className="text-2xl font-bold text-white mb-4">Email Support</h3>
-                <p className="text-neon-green font-semibold text-xl mb-2">kleber@ziontechgroup.com</p>
-                <p className="text-gray-400 text-sm">Response within 2 hours</p>
-                <p className="text-gray-400 text-sm mt-2">Technical and sales inquiries</p>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              viewport={{ once: true }}
-              className="text-center"
-            >
-              <div className="bg-gradient-to-br from-neon-purple/10 to-neon-purple/5 border border-neon-purple/20 rounded-2xl p-8 backdrop-blur-sm hover-glow">
-                <MapPin className="h-16 w-16 text-neon-purple mx-auto mb-6" />
-                <h3 className="text-2xl font-bold text-white mb-4">Headquarters</h3>
-                <p className="text-neon-purple font-semibold text-base leading-tight mb-2">
-                  364 E Main St STE 1008<br />
-                  Middletown DE 19709<br />
-                  United States
-                </p>
-                <p className="text-gray-400 text-sm">Main office location</p>
-              </div>
-            </motion.div>
-          </div>
-
-          <div className="text-center">
-            <p className="text-gray-400 text-lg mb-8">
-              Ready to transform your business? Start your free trial today or schedule a consultation with our experts.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button
-                href="/micro-saas"
-                className="btn-futuristic px-8 py-3 text-lg font-semibold"
+          {/* Stats Grid */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 max-w-6xl mx-auto mb-12"
+          >
+            {stats.map((stat, index) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
+                className="text-center group"
               >
-                Explore Services
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-              <Button
-                href="/pricing"
-                variant="outline"
-                className="border-2 border-neon-green text-neon-green hover:bg-neon-green hover:text-black px-8 py-3 text-lg font-semibold transition-all duration-300"
-              >
-                View Pricing
-                <DollarSign className="ml-2 h-5 w-5" />
-              </Button>
-            </div>
-          </div>
+                <div className="bg-gradient-to-br from-gray-900/50 to-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-gray-600/70 transition-all duration-300 hover:scale-105">
+                  <div className="flex justify-center mb-3">
+                    <div className="p-3 bg-gradient-to-br from-gray-800 to-gray-700 rounded-xl group-hover:scale-110 transition-transform duration-300">
+                      {stat.icon}
+                    </div>
+                  </div>
+                  <div className={`text-3xl font-bold ${stat.color} mb-2`}>
+                    {stat.value}
+                  </div>
+                  <div className="text-sm text-gray-400">
+                    {stat.label}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </section>
 
-      {/* Additional Services Section */}
-      <section className="py-20 bg-gradient-to-br from-slate-900 via-purple-900/20 to-slate-900 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(120,119,198,0.1),transparent_50%)]" />
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">
-                Additional Services
-              </span>
-            </h2>
-            <p className="text-xl text-gray-300 max-w-4xl mx-auto">
-              Beyond our micro SaaS solutions, we offer comprehensive support and consulting services
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {additionalServices.map((service, index) => (
-              <motion.div
-                key={service.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="group relative"
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500" />
-                <div className="relative bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-purple-500/50 transition-all duration-300 h-full">
-                  <h3 className="text-xl font-bold text-white mb-4">{service.title}</h3>
-                  <p className="text-gray-300 mb-6">{service.description}</p>
-                  <div className="space-y-3 mb-6">
-                    <div className="flex items-center text-sm text-gray-400">
-                      <span className="w-2 h-2 bg-purple-400 rounded-full mr-3"></span>
-                      {service.price}
-                    </div>
-                    <div className="flex items-center text-sm text-gray-400">
-                      <span className="w-2 h-2 bg-purple-400 rounded-full mr-3"></span>
-                      {service.duration}
-                    </div>
-                  </div>
-                  <Button
-                    href="/contact"
-                    size="sm"
-                    className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700"
+      {/* Contact Form Section */}
+      <section className="relative z-10 py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* Contact Form */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <div className="bg-gradient-to-br from-gray-900/80 to-gray-800/80 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8">
+                <h2 className="text-3xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent mb-6">
+                  Get Free Consultation
+                </h2>
+                
+                {isSubmitted ? (
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    className="text-center py-12"
                   >
-                    Get Quote
-                  </Button>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Enhanced Contact Methods Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Multiple Ways to <span className="text-blue-600">Connect</span>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Choose the most convenient way to reach our team
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {contactMethods.map((method, index) => (
-              <motion.div
-                key={method.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="group"
-              >
-                <div className={`bg-gradient-to-br ${method.bgColor} rounded-2xl p-8 border border-gray-200 hover:border-blue-300 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 cursor-pointer`}>
-                  <div className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br ${method.color} rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                    <div className="text-white">
-                      {method.icon}
-                    </div>
-                  </div>
-                  
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">{method.title}</h3>
-                  
-                  {method.link ? (
-                    <a 
-                      href={method.link}
-                      target={method.link.startsWith('http') ? '_blank' : '_self'}
-                      rel={method.link.startsWith('http') ? 'noopener noreferrer' : ''}
-                      className="block"
-                    >
-                      <p className={`text-lg font-semibold bg-gradient-to-r ${method.color} bg-clip-text text-transparent mb-2 hover:underline`}>
-                        {method.value}
-                      </p>
-                    </a>
-                  ) : (
-                    <p className={`text-lg font-semibold bg-gradient-to-r ${method.color} bg-clip-text text-transparent mb-2`}>
-                      {method.value}
+                    <CheckCircle className="w-16 h-16 text-green-400 mx-auto mb-4" />
+                    <h3 className="text-2xl font-bold text-white mb-2">Thank You!</h3>
+                    <p className="text-gray-300 mb-6">
+                      Your message has been sent successfully. We'll get back to you within 24 hours.
                     </p>
-                  )}
-                  
-                  <p className="text-gray-600">{method.description}</p>
+                    <div className="text-sm text-gray-400">
+                      <p>✓ Free consultation scheduled</p>
+                      <p>✓ Service recommendations prepared</p>
+                      <p>✓ ROI analysis in progress</p>
+                    </div>
+=======
+  return (
+    <UltraFuturisticBackground2029>
+      <Head>
+        <title>Contact Zion Tech Group | Revolutionary 2029 Technology Services</title>
+        <meta name="description" content="Contact Zion Tech Group for revolutionary 2029 technology services including AI consciousness, quantum computing, space mining, and advanced biotechnology. Get in touch today!" />
+        <meta name="keywords" content="contact, Zion Tech Group, AI services, quantum computing, space technology, biotechnology, 2029 technology" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="canonical" href="https://ziontechgroup.com/contact" />
+      </Head>
+
+      <UltraFuturisticNavigation2029 />
+
+      <main className="relative z-10 pt-20">
+        {/* Hero Section */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="max-w-4xl mx-auto"
+          >
+            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+              <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                Get In Touch
+              </span>
+              <br />
+              <span className="text-white">Transform Your Business</span>
+            </h1>
+            <p className="text-xl text-gray-300 mb-8">
+              Ready to revolutionize your business with cutting-edge 2029 technology? 
+              Our team of experts is here to help you implement the future today.
+            </p>
+          </motion.div>
+        </section>
+
+        {/* Contact Information Grid */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+              {/* Phone Contact */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className="group cursor-pointer"
+              >
+                <div className="p-8 rounded-2xl bg-gradient-to-br from-gray-900/50 to-gray-800/50 border border-cyan-500/20 hover:border-cyan-400/40 transition-all duration-300 backdrop-blur-sm hover:transform hover:scale-105">
+                  <div className="w-16 h-16 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <Phone className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-white mb-3">Phone Support</h3>
+                  <p className="text-gray-300 mb-4">24/7 direct access to our technology experts</p>
+                  <div className="text-2xl font-bold text-cyan-400 mb-2">{contactInfo.mobile}</div>
+                  <p className="text-sm text-gray-400">{contactInfo.hours}</p>
                 </div>
               </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* Why Choose Us Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Why Choose <span className="text-blue-600">Zion Tech Group</span>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We're committed to delivering exceptional value and support
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {whyChooseUs.map((feature, index) => (
+              {/* Email Contact */}
               <motion.div
-                key={feature.title}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
                 viewport={{ once: true }}
-                className="group"
+                className="group cursor-pointer"
               >
-                <div className="bg-white rounded-2xl p-8 border border-gray-200 hover:border-blue-300 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <div className="text-white">
-                      {feature.icon}
+                <div className="p-8 rounded-2xl bg-gradient-to-br from-gray-900/50 to-gray-800/50 border border-purple-500/20 hover:border-purple-400/40 transition-all duration-300 backdrop-blur-sm hover:transform hover:scale-105">
+                  <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <Mail className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-white mb-3">Email Support</h3>
+                  <p className="text-gray-300 mb-4">Quick response guaranteed within 2 hours</p>
+                  <div className="text-lg font-semibold text-purple-400 mb-2 break-all">{contactInfo.email}</div>
+                  <p className="text-sm text-gray-400">Response time: &lt;2 hours</p>
+                </div>
+              </motion.div>
+
+              {/* Address Contact */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="group cursor-pointer"
+              >
+                <div className="p-8 rounded-2xl bg-gradient-to-br from-gray-900/50 to-gray-800/50 border border-pink-500/20 hover:border-pink-400/40 transition-all duration-300 backdrop-blur-sm hover:transform hover:scale-105">
+                  <div className="w-16 h-16 bg-gradient-to-r from-pink-500 to-red-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <MapPin className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-white mb-3">Global Headquarters</h3>
+                  <p className="text-gray-300 mb-4">Strategic location for global operations</p>
+                  <div className="text-sm font-semibold text-pink-400 mb-2 leading-relaxed">{contactInfo.address}</div>
+                  <p className="text-sm text-gray-400">{contactInfo.timezone}</p>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Contact Form */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="max-w-4xl mx-auto"
+            >
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                  Start Your Transformation Journey
+                </h2>
+                <p className="text-xl text-gray-300">
+                  Tell us about your project and we'll connect you with the perfect revolutionary technology solution
+                </p>
+              </div>
+
+              <div className="bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-xl rounded-3xl p-8 border border-cyan-500/20">
+                {submitSuccess ? (
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    className="text-center py-12"
+                  >
+                    <CheckCircle className="w-20 h-20 text-green-400 mx-auto mb-6" />
+                    <h3 className="text-2xl font-bold text-white mb-4">Message Sent Successfully!</h3>
+                    <p className="text-gray-300 text-lg">
+                      Thank you for reaching out. Our team will get back to you within 2 hours with a personalized solution.
+                    </p>
+                  </motion.div>
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div>
+                        <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+                          Full Name *
+                        </label>
+                        <input
+                          type="text"
+                          id="name"
+                          name="name"
+                          required
+                          value={formData.name}
+                          onChange={handleInputChange}
+                          className="w-full px-4 py-3 bg-gray-800/50 border border-cyan-500/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400/40 focus:ring-2 focus:ring-cyan-500/20"
+                          placeholder="Enter your full name"
+                        />
+                      </div>
+                      
+                      <div>
+                        <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+                          Email Address *
+                        </label>
+                        <input
+                          type="email"
+                          id="email"
+                          name="email"
+                          required
+                          value={formData.email}
+                          onChange={handleInputChange}
+                          className="w-full px-4 py-3 bg-gray-800/50 border border-cyan-500/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400/40 focus:ring-2 focus:ring-cyan-500/20"
+                          placeholder="Enter your email address"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div>
+                        <label htmlFor="company" className="block text-sm font-medium text-gray-300 mb-2">
+                          Company Name
+                        </label>
+                        <input
+                          type="text"
+                          id="company"
+                          name="company"
+                          value={formData.company}
+                          onChange={handleInputChange}
+                          className="w-full px-4 py-3 bg-gray-800/50 border border-cyan-500/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400/40 focus:ring-2 focus:ring-cyan-500/20"
+                          placeholder="Enter your company name"
+                        />
+                      </div>
+                      
+                      <div>
+                        <label htmlFor="phone" className="block text-sm font-medium text-gray-300 mb-2">
+                          Phone Number
+                        </label>
+                        <input
+                          type="tel"
+                          id="phone"
+                          name="phone"
+                          value={formData.phone}
+                          onChange={handleInputChange}
+                          className="w-full px-4 py-3 bg-gray-800/50 border border-cyan-500/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400/40 focus:ring-2 focus:ring-cyan-500/20"
+                          placeholder="Enter your phone number"
+                        />
+                      </div>
+                    </div>
+
+                    <div>
+                      <label htmlFor="service" className="block text-sm font-medium text-gray-300 mb-2">
+                        Service of Interest
+                      </label>
+                      <select
+                        id="service"
+                        name="service"
+                        value={formData.service}
+                        onChange={handleInputChange}
+                        className="w-full px-4 py-3 bg-gray-800/50 border border-cyan-500/20 rounded-xl text-white focus:outline-none focus:border-cyan-400/40 focus:ring-2 focus:ring-cyan-500/20"
+                      >
+                        <option value="">Select a service category</option>
+                        <option value="ai-services">AI & Machine Learning Services</option>
+                        <option value="quantum-computing">Quantum Computing & Space Technology</option>
+                        <option value="enterprise-it">Enterprise IT & Infrastructure</option>
+                        <option value="micro-saas">Micro SaaS Solutions</option>
+                        <option value="biotechnology">Biotechnology & Healthcare</option>
+                        <option value="custom-solution">Custom Solution Development</option>
+                      </select>
+                    </div>
+
+                    <div>
+                      <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
+                        Project Details *
+                      </label>
+                      <textarea
+                        id="message"
+                        name="message"
+                        required
+                        rows={5}
+                        value={formData.message}
+                        onChange={handleInputChange}
+                        className="w-full px-4 py-3 bg-gray-800/50 border border-cyan-500/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400/40 focus:ring-2 focus:ring-cyan-500/20 resize-none"
+                        placeholder="Tell us about your project, goals, and how we can help transform your business with revolutionary technology..."
+                      />
+                    </div>
+
+                    <div className="text-center">
+                      <button
+                        type="submit"
+                        disabled={isSubmitting}
+                        className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 text-white rounded-xl font-semibold text-lg hover:from-cyan-600 hover:to-purple-700 transition-all duration-200 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                      >
+                        {isSubmitting ? (
+                          <span className="flex items-center justify-center">
+                            <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
+                            Sending Message...
+                          </span>
+                        ) : (
+                          <span className="flex items-center justify-center">
+                            <Send className="w-5 h-5 mr-2" />
+                            Send Message
+                          </span>
+                        )}
+                      </button>
+                    </div>
+                  </form>
+                )}
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Popular Services Showcase */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-12"
+            >
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                Popular Revolutionary Services
+              </h2>
+              <p className="text-xl text-gray-300">
+                Explore some of our most sought-after 2029 technology solutions
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {popularServices.map((service, index) => (
+                <motion.div
+                  key={service.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="group cursor-pointer"
+                >
+                  <div className="p-6 rounded-2xl bg-gradient-to-br from-gray-900/50 to-gray-800/50 border border-cyan-500/20 hover:border-cyan-400/40 transition-all duration-300 backdrop-blur-sm hover:transform hover:scale-105">
+                    {/* Service Icon */}
+                    <div className={`w-16 h-16 bg-gradient-to-r ${service.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                      <span className="text-2xl">{service.icon}</span>
+                    </div>
+
+                    {/* Popular Badge */}
+                    {service.popular && (
+                      <div className="flex items-center space-x-2 mb-4">
+                        <Star className="w-4 h-4 text-yellow-400 fill-current" />
+                        <span className="text-sm text-yellow-400 font-medium">Popular</span>
+                      </div>
+                    )}
+
+                    {/* Service Title and Tagline */}
+                    <h3 className="text-xl font-semibold text-white mb-2">{service.name}</h3>
+                    <p className="text-sm text-cyan-400 mb-3">{service.tagline}</p>
+                    
+                    {/* Description */}
+                    <p className="text-gray-300 leading-relaxed mb-4 line-clamp-3">
+                      {service.description}
+                    </p>
+
+                    {/* Price */}
+                    <div className="mb-4">
+                      <span className={`${service.textColor} font-semibold text-lg`}>
+                        {service.price}
+                      </span>
+                      <span className="text-gray-400 text-sm">{service.period}</span>
+                    </div>
+
+                    {/* CTA */}
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm text-gray-400">Setup: {service.setupTime}</span>
+                      <span className="text-sm text-gray-400">Trial: {service.trialDays} days</span>
                     </div>
                   </div>
-                  
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
-                  <p className="text-gray-600">{feature.description}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-900 to-purple-900">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <Card variant="holographic" size="xl" className="text-center">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
-              Ready to Get Started?
-            </h2>
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              Don't wait to transform your business. Our team is ready to help you succeed with our micro SaaS solutions.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button
-                variant="futuristic"
-                size="lg"
-                href="tel:+13024640950"
-                icon={<Phone className="w-5 h-5" />}
-                iconPosition="left"
-                glow
-                className="min-w-[200px]"
-              >
-                Call Now
-              </Button>
-              
-              <Button
-                variant="outline"
-                size="lg"
-                href="mailto:kleber@ziontechgroup.com"
-                icon={<Mail className="w-5 h-5" />}
-                iconPosition="left"
-                glow
-                className="min-w-[200px]"
-              >
-                Send Email
-              </Button>
+                </motion.div>
+              ))}
             </div>
-          </Card>
-        </div>
-      </section>
-    </div>
+          </div>
+        </section>
+
+        {/* Why Choose Us Section */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
+                Why Choose
+                <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent"> Zion Tech Group?</span>
+              </h2>
+              <p className="text-xl text-gray-300 mb-12">
+                We're not just another technology company - we're your partners in building the future
+              </p>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <Rocket className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-white mb-2">Revolutionary Technology</h3>
+                  <p className="text-gray-300">Access to cutting-edge 2029 technology that's already operational and delivering results</p>
+                </div>
+                
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <Brain className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-white mb-2">Expert Team</h3>
+                  <p className="text-gray-300">World-class engineers and technology experts with decades of combined experience</p>
+                </div>
+                
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-gradient-to-r from-pink-500 to-red-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <Shield className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-white mb-2">Proven Results</h3>
+                  <p className="text-gray-300">Track record of successful implementations with measurable ROI and business impact</p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+      </main>
+
+      <UltraFuturisticFooter2029 />
+    </UltraFuturisticBackground2029>
   );
 }

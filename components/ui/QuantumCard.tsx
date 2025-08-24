@@ -28,7 +28,7 @@ const QuantumCard: React.FC<QuantumCardProps> = ({
   const [isPressed, setIsPressed] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const animationRef = useRef<number | undefined>(undefined);
+  const animationRef = useRef<number | null>(null);
 
   // Get variant-specific styles
   const getVariantStyles = () => {
@@ -209,6 +209,7 @@ const QuantumCard: React.FC<QuantumCardProps> = ({
       animate={isPressed ? "pressed" : isHovered ? "hover" : "initial"}
       onHoverStart={() => hover && setIsHovered(true)}
       onHoverEnd={() => hover && setIsHovered(false)}
+      onTapStart={() => setIsPressed(true)}
       onTap={() => setIsPressed(false)}
       onClick={onClick}
       style={{

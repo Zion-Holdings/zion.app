@@ -1,351 +1,329 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  Star, Users, TrendingUp, Clock, ArrowRight, 
-  ExternalLink, Check, ChevronDown, ChevronUp,
-  Mail, Phone, MapPin, Globe, Cpu, ShieldCheck
-} from 'lucide-react';
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Star, TrendingUp, Clock, DollarSign, ArrowRight, ExternalLink, Phone, Mail, MapPin, Zap, Brain, Rocket, Globe, Cpu, Lock, Eye, Shield, Target, Users, Award } from 'lucide-react';
 import Button from './Button';
-import { EnhancedRealMicroSaasService } from '../../data/enhanced-real-micro-saas-services';
 
-interface UltraFuturisticServiceCardProps {
-  service: {
-    id: string;
-    name: string;
-    tagline: string;
-    price: string;
-    period: string;
-    description: string;
-    features: string[];
-    popular: boolean;
-    icon: string;
-    color: string;
-    textColor: string;
-    link: string;
-    marketPosition: string;
-    targetAudience: string;
-    trialDays: number;
-    setupTime: string;
-    category: string;
-    realService: boolean;
-    technology: string[];
-    integrations: string[];
-    useCases: string[];
-    roi: string;
-    competitors: string[];
-    marketSize: string;
-    growthRate: string;
-    variant: string;
-    contactInfo: {
-      mobile: string;
-      email: string;
-      address: string;
-      website: string;
-    };
-    realImplementation: boolean;
-    implementationDetails: string;
-    launchDate: string;
-    customers: number;
-    rating: number;
-    reviews: number;
+interface Service {
+  id: string;
+  name: string;
+  tagline: string;
+  price: string;
+  period: string;
+  description: string;
+  features: string[];
+  popular: boolean;
+  icon: string;
+  color: string;
+  textColor: string;
+  link: string;
+  marketPosition: string;
+  targetAudience: string;
+  trialDays: number;
+  setupTime: string;
+  category: string;
+  realService: boolean;
+  technology: string[];
+  integrations: string[];
+  useCases: string[];
+  roi: string;
+  competitors: string[];
+  marketSize: string;
+  growthRate: string;
+  variant: string;
+  contactInfo: {
+    mobile: string;
+    email: string;
+    address: string;
+    website: string;
   };
-  variant?: 'default' | 'holographic' | 'quantum' | 'cyberpunk' | 'neural';
+  realImplementation: boolean;
+  implementationDetails: string;
+  launchDate: string;
+  customers: number;
+  rating: number;
+  reviews: number;
 }
 
-const UltraFuturisticServiceCard: React.FC<UltraFuturisticServiceCardProps> = ({
-  service,
-  variant = 'default'
-}) => {
-  const [isHovered, setIsHovered] = useState(false);
-  const [isExpanded, setIsExpanded] = useState(false);
-  const [activeTab, setActiveTab] = useState<'overview' | 'features' | 'market' | 'contact'>('overview');
-  const cardRef = useRef<HTMLDivElement>(null);
-  const glowRef = useRef<HTMLDivElement>(null);
+interface UltraFuturisticServiceCardProps {
+  service: Service;
+}
 
-  const getVariantStyles = () => {
+const categoryIcons: { [key: string]: React.ReactNode } = {
+  'AI & Machine Learning': <Brain className="w-4 h-4" />,
+  'Quantum Computing': <Zap className="w-4 h-4" />,
+  'IoT & Smart Cities': <Cpu className="w-4 h-4" />,
+  'Robotics & Automation': <Rocket className="w-4 h-4" />,
+  'Biotechnology & Healthcare': <Eye className="w-4 h-4" />,
+  'Cybersecurity': <Lock className="w-4 h-4" />,
+  'Analytics & Business Intelligence': <TrendingUp className="w-4 h-4" />,
+  'Cloud & Infrastructure': <Globe className="w-4 h-4" />,
+  'Quantum AI & BCI': <Brain className="w-4 h-4" />,
+  'Autonomous Systems': <Rocket className="w-4 h-4" />,
+  'Space Technology': <Rocket className="w-4 h-4" />,
+  'Quantum Finance': <DollarSign className="w-4 h-4" />,
+  'Metaverse & VR': <Globe className="w-4 h-4" />,
+  'Quantum IoT': <Cpu className="w-4 h-4" />,
+  'Autonomous Vehicles': <Rocket className="w-4 h-4" />,
+  'Smart Energy': <Zap className="w-4 h-4" />
+};
+
+export default function UltraFuturisticServiceCard({ service }: UltraFuturisticServiceCardProps) {
+  const getVariantStyles = (variant: string) => {
     switch (variant) {
-      case 'holographic':
-        return {
-          card: 'bg-gradient-to-br from-purple-900/20 via-pink-900/20 to-cyan-900/20 border-purple-500/30',
-          glow: 'shadow-[0_0_30px_rgba(139,92,246,0.3)]',
-          accent: 'from-purple-500 to-pink-500'
-        };
-      case 'quantum':
-        return {
-          card: 'bg-gradient-to-br from-cyan-900/20 via-blue-900/20 to-indigo-900/20 border-cyan-500/30',
-          glow: 'shadow-[0_0_30px_rgba(0,255,255,0.3)]',
-          accent: 'from-cyan-500 to-blue-500'
-        };
-      case 'cyberpunk':
-        return {
-          card: 'bg-gradient-to-br from-pink-900/20 via-red-900/20 to-orange-900/20 border-pink-500/30',
-          glow: 'shadow-[0_0_30px_rgba(236,73,153,0.3)]',
-          accent: 'from-pink-500 to-red-500'
-        };
-      case 'neural':
-        return {
-          card: 'bg-gradient-to-br from-green-900/20 via-emerald-900/20 to-teal-900/20 border-green-500/30',
-          glow: 'shadow-[0_0_30px_rgba(16,185,129,0.3)]',
-          accent: 'from-green-500 to-emerald-500'
-        };
+      case 'quantum-advanced':
+        return 'from-purple-600 via-indigo-600 to-blue-600';
+      case 'neural-cyberpunk':
+        return 'from-green-600 via-emerald-600 to-teal-600';
+      case 'quantum-space':
+        return 'from-blue-600 via-cyan-600 to-indigo-600';
+      case 'holographic-matrix':
+        return 'from-pink-600 via-rose-600 to-purple-600';
+      case 'neural-quantum':
+        return 'from-green-600 via-cyan-600 to-blue-600';
+      case 'quantum-cyberpunk':
+        return 'from-purple-600 via-pink-600 to-red-600';
+      case 'holographic-neural':
+        return 'from-purple-600 via-green-600 to-blue-600';
+      case 'quantum-holographic-advanced':
+        return 'from-cyan-600 via-purple-600 to-pink-600';
+      case 'quantum-matrix':
+        return 'from-blue-600 via-purple-600 to-cyan-600';
+      case 'holographic-quantum':
+        return 'from-purple-600 via-cyan-600 to-green-600';
+      case 'quantum-neural-advanced':
+        return 'from-cyan-600 via-green-600 to-purple-600';
+      case 'cyberpunk-holographic':
+        return 'from-pink-600 via-purple-600 to-cyan-600';
+      case 'ai-futuristic':
+        return 'from-cyan-600 via-blue-600 to-purple-600';
+      case 'quantum-entanglement':
+        return 'from-purple-600 via-pink-600 to-indigo-600';
+      case 'neural-quantum-cyberpunk':
+        return 'from-green-600 via-cyan-600 via-purple-600 to-pink-600';
       default:
-        return {
-          card: 'bg-gradient-to-br from-gray-900/20 via-slate-900/20 to-zinc-900/20 border-gray-500/30',
-          glow: 'shadow-[0_0_20px_rgba(100,100,100,0.3)]',
-          accent: 'from-gray-500 to-slate-500'
-        };
+        return 'from-cyan-600 to-blue-600';
     }
   };
 
-  const styles = getVariantStyles();
+  const getRoiValue = (roi: string) => {
+    const match = roi.match(/(\d+)/);
+    return match ? match[1] : '0';
+  };
 
   return (
     <motion.div
-      className={`relative group cursor-pointer overflow-hidden rounded-2xl border backdrop-blur-xl transition-all duration-500 ${styles.card} ${styles.glow}`}
-      onHoverStart={() => setIsHovered(true)}
-      onHoverEnd={() => setIsHovered(false)}
-      onClick={() => setIsExpanded(!isExpanded)}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
       whileHover={{ 
-        scale: 1.02,
-        y: -5,
+        y: -8,
         transition: { duration: 0.3 }
       }}
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
+      className="group relative"
     >
-      {/* Animated background */}
-      <div className="absolute inset-0 opacity-20">
-        <motion.div
-          className="absolute inset-0"
-          style={{
-            background: `conic-gradient(from 0deg, transparent, ${service.textColor}20, transparent)`
-          }}
-          animate={{ rotate: 360 }}
-          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-        />
-      </div>
-
-      {/* Popular badge */}
-      {service.popular && (
-        <motion.div
-          className="absolute top-4 right-4 z-10"
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-          transition={{ delay: 0.2 }}
-        >
-          <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-black text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1">
-            <Star className="w-3 h-3 fill-current" />
-            POPULAR
-          </div>
-        </motion.div>
-      )}
-
-      {/* Header */}
-      <div className="relative p-6">
+      {/* Glow Effect */}
+      <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-500"></div>
+      
+      {/* Main Card */}
+      <div className="relative bg-gradient-to-br from-gray-900/90 via-gray-800/80 to-gray-900/90 backdrop-blur-xl border border-gray-700/50 rounded-2xl p-6 h-full hover:border-cyan-500/50 transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-cyan-500/20">
+        
+        {/* Header */}
         <div className="flex items-start justify-between mb-4">
-          <div className="flex items-center gap-3">
-            <motion.div
-              className={`text-4xl ${isHovered ? 'scale-110' : 'scale-100'}`}
-              transition={{ duration: 0.3 }}
-            >
-              {service.icon}
-            </motion.div>
+          <div className="flex items-center space-x-3">
+            <div className="text-4xl">{service.icon}</div>
             <div>
-              <h3 className="text-xl font-bold text-white mb-1">{service.name}</h3>
-              <p className="text-gray-300 text-sm">{service.tagline}</p>
+              <div className="flex items-center space-x-2 mb-1">
+                {categoryIcons[service.category] && (
+                  <span className="text-cyan-400">
+                    {categoryIcons[service.category]}
+                  </span>
+                )}
+                <span className="text-xs px-2 py-1 bg-gray-700/50 text-gray-300 rounded-full border border-gray-600">
+                  {service.category}
+                </span>
+              </div>
+              <h3 className="text-lg font-bold text-white group-hover:text-cyan-400 transition-colors duration-300">
+                {service.name}
+              </h3>
             </div>
           </div>
-        </motion.div>
-
-        {/* Price */}
-        <div className="mb-4">
-          <div className="flex items-baseline gap-2">
-            <span className="text-3xl font-bold text-white">{service.price}</span>
-            <span className="text-gray-400">{service.period}</span>
-          </div>
-          <p className="text-sm text-gray-400 mt-1">{service.description}</p>
+          
+          {service.popular && (
+            <motion.div
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
+              className="flex items-center space-x-1 px-2 py-1 bg-gradient-to-r from-yellow-500 to-orange-500 text-white text-xs rounded-full"
+            >
+              <Star className="w-3 h-3 fill-current" />
+              <span>Popular</span>
+            </motion.div>
+          )}
         </div>
 
-        {/* Quick stats */}
-        <div className="grid grid-cols-3 gap-4 mb-4">
-          <div className="text-center">
-            <div className="text-lg font-bold text-white">{service.customers.toLocaleString()}+</div>
-            <div className="text-xs text-gray-400">Customers</div>
+        {/* Tagline */}
+        <p className="text-sm text-gray-300 mb-4 leading-relaxed">
+          {service.tagline}
+        </p>
+
+        {/* Price and Stats */}
+        <div className="mb-4">
+          <div className="text-2xl font-bold text-cyan-400 mb-2">
+            {service.price}
+            <span className="text-sm text-gray-400 ml-1">{service.period}</span>
           </div>
-          <div className="text-center">
-            <div className="text-lg font-bold text-white">{service.rating}</div>
-            <div className="text-xs text-gray-400">Rating</div>
-          </div>
-          <div className="text-center">
-            <div className="text-lg font-bold text-white">{service.trialDays}</div>
-            <div className="text-xs text-gray-400">Day Trial</div>
+          
+          <div className="grid grid-cols-2 gap-3 text-xs">
+            <div className="flex items-center space-x-2 text-gray-400">
+              <Clock className="w-3 h-3" />
+              <span>{service.trialDays} days trial</span>
+            </div>
+            <div className="flex items-center space-x-2 text-gray-400">
+              <TrendingUp className="w-3 h-3" />
+              <span>{getRoiValue(service.roi)}% ROI</span>
+            </div>
           </div>
         </div>
 
-        {/* Features preview */}
+        {/* Rating and Reviews */}
+        <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center space-x-1">
+            <Star className="w-4 h-4 text-yellow-400 fill-current" />
+            <span className="text-white font-semibold">{service.rating}</span>
+            <span className="text-gray-400 text-sm">({service.reviews})</span>
+          </div>
+          
+          <div className="flex items-center space-x-2 text-xs text-gray-400">
+            <Users className="w-3 h-3" />
+            <span>{service.customers.toLocaleString()}+ users</span>
+          </div>
+        </div>
+
+        {/* Features Preview */}
         <div className="mb-4">
-          <h4 className="text-sm font-semibold text-gray-300 mb-2">Key Features:</h4>
+          <h4 className="text-sm font-semibold text-white mb-2 flex items-center space-x-2">
+            <Target className="w-3 h-3 text-cyan-400" />
+            <span>Key Features</span>
+          </h4>
           <div className="space-y-1">
             {service.features.slice(0, 3).map((feature, index) => (
               <motion.div
                 key={index}
-                className="flex items-center gap-2 text-sm text-gray-400"
-                initial={{ opacity: 0, x: -20 }}
+                initial={{ opacity: 0, x: -10 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: index * 0.1 }}
+                transition={{ delay: 0.1 * index }}
+                className="flex items-center space-x-2 text-xs text-gray-300"
               >
-                <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500" />
-                {feature}
+                <div className="w-1.5 h-1.5 bg-cyan-400 rounded-full"></div>
+                <span className="truncate">{feature}</span>
               </motion.div>
             ))}
-          </div>
-          
-          {!isExpanded && service.features.length > 4 && (
-            <motion.button
-              className="text-cyan-400 text-sm hover:text-cyan-300 transition-colors mt-2"
-              onClick={(e) => {
-                e.stopPropagation();
-                setIsExpanded(true);
-              }}
-            >
-              +{service.features.length - 4} more features
-            </motion.button>
-          )}
-        </motion.div>
-
-        {/* Market position */}
-        <div className="mb-4 p-3 bg-black/20 rounded-lg border border-gray-700/50">
-          <h4 className="text-sm font-semibold text-gray-300 mb-2">Market Position:</h4>
-          <p className="text-xs text-gray-400">{service.marketPosition}</p>
-        </div>
-
-        {/* ROI and competitors */}
-        <div className="grid grid-cols-2 gap-4 mb-4">
-          <div className="p-3 bg-black/20 rounded-lg border border-gray-700/50">
-            <h4 className="text-sm font-semibold text-gray-300 mb-1">ROI</h4>
-            <p className="text-xs text-gray-400">{service.roi}</p>
-          </div>
-          <div className="p-3 bg-black/20 rounded-lg border border-gray-700/50">
-            <h4 className="text-sm font-semibold text-gray-300 mb-1">Market Size</h4>
-            <p className="text-xs text-gray-400">{service.marketSize}</p>
+            {service.features.length > 3 && (
+              <div className="text-xs text-cyan-400 mt-1">
+                +{service.features.length - 3} more features
+              </div>
+            )}
           </div>
         </div>
-      </div>
 
-      {/* Expanded content */}
-      <AnimatePresence>
-        {isExpanded && (
-          <motion.div
-            className="border-t border-gray-700/50"
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3 }}
-          >
-            <div className="p-6 space-y-4">
-              {/* Technology stack */}
-              <div>
-                <h4 className="text-sm font-semibold text-gray-300 mb-2">Technology Stack:</h4>
-                <div className="flex flex-wrap gap-2">
-                  {service.technology.map((tech, index) => (
-                    <span
-                      key={index}
-                      className="px-2 py-1 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 text-cyan-400 text-xs rounded-full border border-cyan-500/30"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              {/* Integrations */}
-              <div>
-                <h4 className="text-sm font-semibold text-gray-300 mb-2">Integrations:</h4>
-                <div className="flex flex-wrap gap-2">
-                  {service.integrations.map((integration, index) => (
-                    <span
-                      key={index}
-                      className="px-2 py-1 bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-purple-400 text-xs rounded-full border border-purple-500/30"
-                    >
-                      {integration}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              {/* Use cases */}
-              <div>
-                <h4 className="text-sm font-semibold text-gray-300 mb-2">Use Cases:</h4>
-                <div className="grid grid-cols-2 gap-2">
-                  {service.useCases.map((useCase, index) => (
-                    <div key={index} className="flex items-center gap-2 text-sm text-gray-400">
-                      <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-green-500 to-emerald-500" />
-                      {useCase}
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Contact information */}
-              <div className="p-4 bg-gradient-to-r from-gray-800/50 to-gray-900/50 rounded-lg border border-gray-600/50">
-                <h4 className="text-sm font-semibold text-gray-300 mb-2">Contact Information:</h4>
-                <div className="space-y-1 text-sm text-gray-400">
-                  <div>📱 {service.contactInfo.mobile}</div>
-                  <div>✉️ {service.contactInfo.email}</div>
-                  <div>📍 {service.contactInfo.address}</div>
-                </div>
-              </div>
+        {/* Market Data */}
+        <div className="mb-4 p-3 bg-gray-800/30 rounded-lg border border-gray-700/50">
+          <div className="grid grid-cols-2 gap-2 text-xs">
+            <div>
+              <span className="text-gray-400">Market:</span>
+              <div className="text-white font-semibold">{service.marketSize}</div>
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            <div>
+              <span className="text-gray-400">Growth:</span>
+              <div className="text-green-400 font-semibold">{service.growthRate}</div>
+            </div>
+          </div>
+        </div>
 
-      {/* Action buttons */}
-      <div className="p-6 pt-0">
-        <div className="flex gap-3">
-          <motion.button
-            className="flex-1 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white font-semibold py-3 px-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 group"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            onClick={(e) => {
-              e.stopPropagation();
-              window.open(service.link, '_blank');
-            }}
+        {/* Action Buttons */}
+        <div className="flex space-x-2 mb-4">
+          <Button 
+            href={service.link} 
+            variant="quantum" 
+            size="sm"
+            className="flex-1 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white"
           >
-            <span>Learn More</span>
-            <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </motion.button>
-          
-          <motion.button
-            className="px-4 py-3 border border-gray-600 hover:border-gray-500 text-gray-300 hover:text-white rounded-lg transition-all duration-300 flex items-center gap-2"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            onClick={(e) => {
-              e.stopPropagation();
-              setIsExpanded(!isExpanded);
-            }}
+            Learn More
+            <ExternalLink className="w-3 h-3 ml-1" />
+          </Button>
+          <Button 
+            href="/contact" 
+            variant="outline" 
+            size="sm"
+            className="flex-1 border-cyan-500 text-cyan-400 hover:bg-cyan-500 hover:text-white"
           >
-            {isExpanded ? 'Show Less' : 'Show More'}
-            <motion.div
-              animate={{ rotate: isExpanded ? 180 : 0 }}
-              transition={{ duration: 0.3 }}
-            >
-              <ArrowRight className="w-4 h-4" />
-            </motion.div>
+            {isExpanded ? 'Less' : 'More'}
           </motion.button>
         </div>
-      </div>
 
-      {/* Hover effects */}
-      <motion.div
-        className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-        style={{
-          background: `radial-gradient(circle at ${isHovered ? '50% 50%' : '0% 0%'}, rgba(0,255,255,0.1) 0%, transparent 70%)`
-        }}
-      />
+        {/* Contact Info */}
+        <div className="pt-4 border-t border-gray-700/50">
+          <div className="grid grid-cols-3 gap-2 text-xs text-gray-400">
+            <div className="flex items-center space-x-1">
+              <Phone className="w-3 h-3 text-cyan-400" />
+              <span className="truncate">{service.contactInfo.mobile}</span>
+            </div>
+            <div className="flex items-center space-x-1">
+              <Mail className="w-3 h-3 text-fuchsia-400" />
+              <span className="truncate">{service.contactInfo.email}</span>
+            </div>
+            <div className="flex items-center space-x-1">
+              <MapPin className="w-3 h-3 text-green-400" />
+              <span className="truncate text-xs">{service.contactInfo.address.split(' ').slice(0, 2).join(' ')}...</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Hover Overlay */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileHover={{ opacity: 1 }}
+          className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-blue-500/5 to-purple-500/5 rounded-2xl pointer-events-none"
+        />
+      </div>
     </motion.div>
   );
-};
+}
 
-export default UltraFuturisticServiceCard;
+// Missing icon components
+const Factory = ({ className }: { className?: string }) => (
+  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+  </svg>
+);
+
+const Video = ({ className }: { className?: string }) => (
+  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+  </svg>
+);
+
+const Eye = ({ className }: { className?: string }) => (
+  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+  </svg>
+);
+
+const Truck = ({ className }: { className?: string }) => (
+  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM21 17a2 2 0 11-4 0 2 2 0 014 0zM9 17h10M9 17v-4m0-4V7a2 2 0 012-2h6a2 2 0 012 2v6m-6 0h6" />
+  </svg>
+);
+
+const Cloud = ({ className }: { className?: string }) => (
+  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+  </svg>
+);
+
+const DollarSign = ({ className }: { className?: string }) => (
+  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
+  </svg>
+);

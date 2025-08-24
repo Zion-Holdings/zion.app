@@ -1,315 +1,587 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion';
+import React, { useEffect, useRef, useState } from 'react';
+import { motion } from 'framer-motion';
 
 interface EnhancedFuturisticCardProps {
-  title: string;
-  description: string;
-  icon?: React.ReactNode;
-  features?: string[];
-  price?: string;
-  period?: string;
-  link?: string;
-  variant?: 'default' | 'holographic' | 'quantum' | 'cyberpunk' | 'neural' | 'quantum-holographic' | 'quantum-advanced' | 'holographic-advanced' | 'neural-quantum' | 'quantum-cyberpunk' | 'holographic-neural' | 'quantum-holographic-advanced' | 'quantum-matrix' | 'neural-cyberpunk' | 'holographic-quantum' | 'quantum-neural-advanced' | 'cyberpunk-holographic' | 'quantum-space' | 'ai-futuristic' | 'quantum-entanglement' | 'holographic-matrix' | 'neural-quantum-cyberpunk';
-  color?: string;
-  textColor?: string;
-  gradient?: string;
-  popular?: boolean;
-  contactInfo?: {
-    mobile: string;
-    email: string;
-    address: string;
-    website: string;
-  };
+  children: React.ReactNode;
   className?: string;
-  variant?: 'holographic' | 'cyberpunk' | 'quantum' | 'neural' | 'matrix' | 'holographic-matrix' | 'quantum-cyberpunk';
+  variant?: 'neural' | 'quantum' | 'holographic' | 'cyberpunk' | 'space' | 'biotech' | 'energy';
   intensity?: 'low' | 'medium' | 'high';
+  glow?: boolean;
   interactive?: boolean;
-  glowColor?: string;
-  borderColor?: string;
-  background?: 'transparent' | 'glass' | 'solid' | 'gradient';
+  onClick?: () => void;
 }
 
-export default function EnhancedFuturisticCard({
+const EnhancedFuturisticCard: React.FC<EnhancedFuturisticCardProps> = ({
   children,
   className = '',
-  variant = 'holographic',
+  variant = 'neural',
   intensity = 'medium',
+  glow = true,
   interactive = true,
-  glowColor,
-  borderColor,
-  background = 'glass'
-}: EnhancedFuturisticCardProps) {
+  onClick
+}) => {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const animationRef = useRef<number | undefined>(undefined);
   const [isHovered, setIsHovered] = useState(false);
   const [isPressed, setIsPressed] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
-  
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-  
-  const rotateX = useTransform(mouseY, [-300, 300], [15, -15]);
-  const rotateY = useTransform(mouseX, [-300, 300], [-15, 15]);
-  
-  const springConfig = { damping: 20, stiffness: 300 };
-  const springRotateX = useSpring(rotateX, springConfig);
-  const springRotateY = useSpring(rotateY, springConfig);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const animationRef = useRef<number | undefined>(undefined);
 
-  const intensityMultiplier = {
-    low: 0.5,
-    medium: 1.0,
-    high: 1.5
-  }[intensity];
-
+  // Get variant-specific colors and effects
   const getVariantStyles = () => {
-    const baseStyles = {
-      holographic: {
-        glow: 'shadow-[0_0_30px_rgba(0,255,255,0.3)]',
-        border: 'border-cyan-400/50',
-        background: 'bg-gradient-to-br from-cyan-900/20 to-blue-900/20',
-        textGlow: 'text-cyan-400',
-        accent: 'from-cyan-400 to-blue-500'
-      },
-      cyberpunk: {
-        glow: 'shadow-[0_0_30px_rgba(255,0,255,0.4)]',
-        border: 'border-pink-500/50',
-        background: 'bg-gradient-to-br from-pink-900/20 to-purple-900/20',
-        textGlow: 'text-pink-400',
-        accent: 'from-pink-400 to-purple-500'
-      },
-      quantum: {
-        glow: 'shadow-[0_0_30px_rgba(0,255,255,0.5)]',
-        border: 'border-blue-400/50',
-        background: 'bg-gradient-to-br from-blue-900/20 to-indigo-900/20',
-        textGlow: 'text-blue-400',
-        accent: 'from-blue-400 to-indigo-500'
-      },
-      neural: {
-        glow: 'shadow-[0_0_30px_rgba(0,255,0,0.3)]',
-        border: 'border-green-400/50',
-        background: 'bg-gradient-to-br from-green-900/20 to-emerald-900/20',
-        textGlow: 'text-green-400',
-        accent: 'from-green-400 to-emerald-500'
-      },
-      matrix: {
-        glow: 'shadow-[0_0_30px_rgba(0,255,0,0.4)]',
-        border: 'border-green-500/50',
-        background: 'bg-gradient-to-br from-green-900/20 to-black/40',
-        textGlow: 'text-green-400',
-        accent: 'from-green-400 to-green-600'
-      },
-      'holographic-matrix': {
-        glow: 'shadow-[0_0_30px_rgba(0,255,255,0.4)]',
-        border: 'border-cyan-400/50',
-        background: 'bg-gradient-to-br from-cyan-900/20 to-blue-900/20',
-        textGlow: 'text-cyan-400',
-        accent: 'from-cyan-400 to-blue-500'
-      },
-      'quantum-cyberpunk': {
-        glow: 'shadow-[0_0_30px_rgba(0,255,255,0.5)]',
-        border: 'border-blue-400/50',
-        background: 'bg-gradient-to-br from-blue-900/20 to-indigo-900/20',
-        textGlow: 'text-blue-400',
-        accent: 'from-blue-400 to-indigo-500'
-      }
-    };
-
-    return baseStyles[variant] || baseStyles.holographic;
-  };
-
-  const getBackgroundStyle = () => {
-    switch (background) {
-      case 'glass':
-        return 'backdrop-blur-md bg-white/5';
-      case 'solid':
-        return 'bg-gray-900/80';
-      case 'gradient':
-        return 'bg-gradient-to-br from-gray-900/80 to-black/80';
+    switch (variant) {
+      case 'neural':
+        return {
+          borderColor: 'from-cyan-500/50 to-blue-500/50',
+          glowColor: 'from-cyan-400/20 to-blue-400/20',
+          accentColor: 'text-cyan-400',
+          bgGradient: 'from-slate-900/80 to-slate-800/80',
+          particleColor: '#60a5fa'
+        };
+      case 'quantum':
+        return {
+          borderColor: 'from-purple-500/50 to-pink-500/50',
+          glowColor: 'from-purple-400/20 to-pink-400/20',
+          accentColor: 'text-purple-400',
+          bgGradient: 'from-slate-900/80 to-slate-800/80',
+          particleColor: '#a855f7'
+        };
+      case 'holographic':
+        return {
+          borderColor: 'from-green-500/50 to-emerald-500/50',
+          glowColor: 'from-green-400/20 to-emerald-400/20',
+          accentColor: 'text-green-400',
+          bgGradient: 'from-slate-900/80 to-slate-800/80',
+          particleColor: '#10b981'
+        };
+      case 'cyberpunk':
+        return {
+          borderColor: 'from-red-500/50 to-orange-500/50',
+          glowColor: 'from-red-400/20 to-orange-400/20',
+          accentColor: 'text-red-400',
+          bgGradient: 'from-slate-900/80 to-slate-800/80',
+          particleColor: '#ef4444'
+        };
+      case 'space':
+        return {
+          borderColor: 'from-blue-500/50 to-indigo-500/50',
+          glowColor: 'from-blue-400/20 to-indigo-400/20',
+          accentColor: 'text-blue-400',
+          bgGradient: 'from-slate-900/80 to-slate-800/80',
+          particleColor: '#3b82f6'
+        };
+      case 'biotech':
+        return {
+          borderColor: 'from-green-500/50 to-teal-500/50',
+          glowColor: 'from-green-400/20 to-teal-400/20',
+          accentColor: 'text-green-400',
+          bgGradient: 'from-slate-900/80 to-slate-800/80',
+          particleColor: '#14b8a6'
+        };
+      case 'energy':
+        return {
+          borderColor: 'from-yellow-500/50 to-orange-500/50',
+          glowColor: 'from-yellow-400/20 to-orange-400/20',
+          accentColor: 'text-yellow-400',
+          bgGradient: 'from-slate-900/80 to-slate-800/80',
+          particleColor: '#eab308'
+        };
       default:
-        return 'backdrop-blur-md bg-white/5';
+        return {
+          borderColor: 'from-cyan-500/50 to-blue-500/50',
+          glowColor: 'from-cyan-400/20 to-blue-400/20',
+          accentColor: 'text-cyan-400',
+          bgGradient: 'from-slate-900/80 to-slate-800/80',
+          particleColor: '#60a5fa'
+        };
     }
   };
 
   const styles = getVariantStyles();
 
-  const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
-    if (!interactive || !cardRef.current) return;
-    
-    const rect = cardRef.current.getBoundingClientRect();
-    const centerX = rect.left + rect.width / 2;
-    const centerY = rect.top + rect.height / 2;
-    
-    mouseX.set(event.clientX - centerX);
-    mouseY.set(event.clientY - centerY);
+  // Canvas animation for particle effects
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas || !glow) return;
+
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    const resizeCanvas = () => {
+      if (cardRef.current) {
+        const rect = cardRef.current.getBoundingClientRect();
+        canvas.width = rect.width;
+        canvas.height = rect.height;
+      }
+    };
+
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    let time = 0;
+    const particles: Array<{
+      x: number;
+      y: number;
+      vx: number;
+      vy: number;
+      size: number;
+      life: number;
+      maxLife: number;
+    }> = [];
+
+    const createParticles = () => {
+      const count = intensity === 'high' ? 20 : intensity === 'medium' ? 12 : 6;
+      for (let i = 0; i < count; i++) {
+        particles.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          vx: (Math.random() - 0.5) * 2,
+          vy: (Math.random() - 0.5) * 2,
+          size: Math.random() * 2 + 1,
+          life: Math.random() * 100,
+          maxLife: 100
+        });
+      }
+    };
+
+    const getParticleColor = (variant: string): string => {
+      switch (variant) {
+        case 'quantum':
+          return `hsl(${280 + Math.sin(Date.now() * 0.001) * 80}, 80%, 70%)`;
+        case 'holographic':
+          return `hsl(${160 + Math.sin(Date.now() * 0.001) * 100}, 90%, 65%)`;
+        case 'cyberpunk':
+          return `hsl(${0 + Math.sin(Date.now() * 0.001) * 60}, 100%, 60%)`;
+        case 'neural':
+          return `hsl(${200 + Math.sin(Date.now() * 0.001) * 60}, 70%, 60%)`;
+        case 'space':
+          return `hsl(${220 + Math.sin(Date.now() * 0.001) * 80}, 90%, 75%)`;
+        default:
+          return `hsl(${200 + Math.sin(Date.now() * 0.001) * 60}, 70%, 60%)`;
+      }
+    };
+
+    const animate = () => {
+      time += 1;
+      
+      // Clear canvas
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      // Update and draw particles
+      particles.forEach(particle => {
+        particle.x += particle.vx;
+        particle.y += particle.vy;
+        particle.life -= 1;
+
+        // Bounce off edges
+        if (particle.x < 0 || particle.x > canvas.width) particle.vx *= -1;
+        if (particle.y < 0 || particle.y > canvas.height) particle.vy *= -1;
+
+        // Reset particle if it dies
+        if (particle.life <= 0) {
+          particle.x = Math.random() * canvas.width;
+          particle.y = Math.random() * canvas.height;
+          particle.life = particle.maxLife;
+        }
+
+        // Draw particle
+        const alpha = particle.life / particle.maxLife;
+        ctx.fillStyle = `${styles.particleColor}${Math.floor(alpha * 255).toString(16).padStart(2, '0')}`;
+        ctx.beginPath();
+        ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+        ctx.fill();
+      });
+
+      animationRef.current = requestAnimationFrame(animate);
+    };
+
+    const drawHolographicGrid = (ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement) => {
+      const time = Date.now() * 0.001;
+      ctx.strokeStyle = `hsla(${160 + Math.sin(time * 0.015) * 100}, 90%, 65%, 0.3)`;
+      ctx.lineWidth = 0.5;
+      
+      for (let x = 0; x < canvas.width; x += 30) {
+        for (let y = 0; y < canvas.height; y += 30) {
+          const opacity = Math.sin(time + x * 0.01 + y * 0.01) * 0.2 + 0.1;
+          ctx.globalAlpha = opacity;
+          ctx.strokeRect(x, y, 30, 30);
+        }
+      }
+      ctx.globalAlpha = 1;
+    };
+
+    const drawQuantumEffects = (ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement) => {
+      const time = Date.now() * 0.001;
+      for (let i = 0; i < 5; i++) {
+        const x = (i / 5) * canvas.width;
+        const y = Math.sin(time + i * 0.5) * 20 + canvas.height / 2;
+        ctx.fillStyle = `rgba(0, 255, 255, ${0.3 + Math.sin(time + i) * 0.2})`;
+        ctx.beginPath();
+        ctx.arc(x, y, 2, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    };
+
+    const drawCyberpunkEffects = (ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement) => {
+      const time = Date.now() * 0.001;
+      for (let i = 0; i < 3; i++) {
+        const x = Math.random() * canvas.width;
+        const y = Math.random() * canvas.height;
+        const height = Math.random() * 50 + 30;
+        ctx.fillStyle = `rgba(0, 255, 0, ${0.4 + Math.sin(time + i) * 0.2})`;
+        ctx.fillRect(x, y, 2, height);
+      }
+    };
+
+    const drawNeuralConnections = (ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement) => {
+      const time = Date.now() * 0.001;
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+          
+          if (distance < 80) {
+            const opacity = (80 - distance) / 80 * 0.3;
+            ctx.strokeStyle = `rgba(0, 255, 128, ${opacity})`;
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.stroke();
+          }
+        }
+      }
+    };
+
+    const drawSpaceEffects = (ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement) => {
+      const time = Date.now() * 0.001;
+      for (let i = 0; i < 3; i++) {
+        const x = canvas.width / 2 + Math.cos(time + i) * 100;
+        const y = canvas.height / 2 + Math.sin(time + i) * 100;
+        const radius = Math.sin(time + i) * 20 + 40;
+        
+        const gradient = ctx.createRadialGradient(x, y, 0, x, y, radius);
+        gradient.addColorStop(0, `rgba(255, 255, 255, 0.2)`);
+        gradient.addColorStop(0.5, `rgba(0, 255, 255, 0.1)`);
+        gradient.addColorStop(1, `rgba(0, 0, 0, 0)`);
+        
+        ctx.fillStyle = gradient;
+        ctx.fillRect(x - radius, y - radius, radius * 2, radius * 2);
+      }
+    };
+
+    createParticles();
+    animate();
+
+    return () => {
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
+      window.removeEventListener('resize', resizeCanvas);
+    };
+  }, [variant, intensity, glow, styles.particleColor]);
+
+  const handleMouseEnter = () => {
+    if (interactive) setIsHovered(true);
   };
 
   const handleMouseLeave = () => {
-    if (!interactive) return;
-    
-    mouseX.set(0);
-    mouseY.set(0);
-    setIsHovered(false);
+    if (interactive) setIsHovered(false);
   };
 
   const handleMouseDown = () => {
-    if (!interactive) return;
-    setIsPressed(true);
+    if (interactive) setIsPressed(true);
   };
 
   const handleMouseUp = () => {
-    if (!interactive) return;
-    setIsPressed(false);
+    if (interactive) setIsPressed(false);
   };
 
   return (
     <motion.div
       ref={cardRef}
-      className={`
-        relative overflow-hidden rounded-2xl border transition-all duration-300
-        ${styles.border} ${styles.background} ${getBackgroundStyle()}
-        ${interactive ? 'cursor-pointer' : ''}
-        ${className}
-      `}
+      className={`relative overflow-hidden rounded-2xl backdrop-blur-xl transition-all duration-300 ${
+        glow ? 'shadow-2xl' : ''
+      } ${className}`}
       style={{
-        transformStyle: 'preserve-3d',
-        perspective: '1000px'
+        background: `linear-gradient(135deg, ${styles.bgGradient})`,
+        border: `1px solid transparent`,
+        backgroundImage: `linear-gradient(135deg, ${styles.bgGradient}), linear-gradient(135deg, ${styles.borderColor})`,
+        backgroundOrigin: 'border-box',
+        backgroundClip: 'content-box, border-box'
       }}
-      whileHover={interactive ? { scale: 1.02 } : {}}
-      whileTap={interactive ? { scale: 0.98 } : {}}
-      animate={{
-        scale: isPressed ? 0.98 : isHovered ? 1.02 : 1,
-      }}
-      transition={{
-        type: 'spring',
-        stiffness: 300,
-        damping: 20
-      }}
-      onMouseMove={handleMouseMove}
+      onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onMouseDown={handleMouseDown}
       onMouseUp={handleMouseUp}
-      onMouseEnter={() => setIsHovered(true)}
+      onClick={onClick}
+      whileHover={interactive ? { 
+        scale: 1.02,
+        y: -5,
+        transition: { duration: 0.2 }
+      } : {}}
+      whileTap={interactive ? { 
+        scale: 0.98,
+        transition: { duration: 0.1 }
+      } : {}}
     >
-      {/* 3D Transform for Interactive Cards */}
-      {interactive && (
-        <motion.div
+      {/* Glow effect */}
+      {glow && (
+        <div
+          className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${styles.glowColor} opacity-0 transition-opacity duration-300 ${
+            isHovered ? 'opacity-100' : ''
+          }`}
+        />
+      )}
+
+      {/* Animated border */}
+      <div className="absolute inset-0 rounded-2xl">
+        <div
+          className={`absolute inset-0 rounded-2xl bg-gradient-to-r ${styles.borderColor} opacity-0 transition-opacity duration-300 ${
+            isHovered ? 'opacity-100' : ''
+          }`}
           style={{
-            rotateX: springRotateX,
-            rotateY: springRotateY,
-            transformStyle: 'preserve-3d'
+            background: `linear-gradient(90deg, transparent, ${styles.particleColor}, transparent)`,
+            backgroundSize: '200% 100%',
+            animation: isHovered ? 'borderFlow 2s linear infinite' : 'none'
           }}
-          transition={{
-            type: 'spring',
-            stiffness: 300,
-            damping: 20
-          }}
-        >
-          {/* Holographic Border Effect */}
-          <div className="absolute inset-0 rounded-2xl">
-            <div className={`
-              absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-500
-              ${isHovered ? 'opacity-100' : ''}
-              ${styles.glow}
-            `} />
-            
-            {/* Animated Border Lines */}
-            <div className="absolute inset-0 rounded-2xl overflow-hidden">
+        />
+      </div>
+
+      {/* Scanning line effect */}
+      <AnimatePresence>
+        {isHovered && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 20 }}
+            transition={{ duration: 0.3 }}
+            className={`absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-${styles.accentColor.replace('text-', '')} to-transparent opacity-60`}
+            style={{
+              boxShadow: `0 0 10px ${styles.particleColor}`
+            }}
+          />
+        )}
+      </AnimatePresence>
+
+      {/* Corner accents */}
+      <div className="absolute top-0 left-0 w-4 h-4 border-l-2 border-t-2 border-cyan-400/50 rounded-tl-lg" />
+      <div className="absolute top-0 right-0 w-4 h-4 border-r-2 border-t-2 border-cyan-400/50 rounded-tr-lg" />
+      <div className="absolute bottom-0 left-0 w-4 h-4 border-l-2 border-b-2 border-cyan-400/50 rounded-bl-lg" />
+      <div className="absolute bottom-0 right-0 w-4 h-4 border-r-2 border-b-2 border-cyan-400/50 rounded-br-lg" />
+
+      {/* Particle canvas */}
+      {glow && (
+        <canvas
+          ref={canvasRef}
+          className="absolute inset-0 w-full h-full pointer-events-none opacity-30"
+        />
+      )}
+
+      {/* Content */}
+      <div className="relative z-10 p-6">
+        {/* Header */}
+        <div className="flex items-start justify-between mb-4">
+          <div className="flex items-center gap-3">
+            {icon && (
               <motion.div
-                className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-current to-transparent"
-                animate={{
-                  x: isHovered ? ['0%', '100%'] : '0%',
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: isHovered ? Infinity : 0,
-                  ease: 'linear'
-                }}
-                style={{ opacity: 0.6 }}
-              />
-              <motion.div
-                className="absolute bottom-0 right-0 w-full h-px bg-gradient-to-r from-transparent via-current to-transparent"
-                animate={{
-                  x: isHovered ? ['100%', '0%'] : '0%',
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: isHovered ? Infinity : 0,
-                  ease: 'linear'
-                }}
-                style={{ opacity: 0.6 }}
-              />
+                className={`text-3xl ${textColor}`}
+                animate={{ rotate: isHovered ? 360 : 0 }}
+                transition={{ duration: 0.6, ease: "easeInOut" }}
+              >
+                {icon}
+              </motion.div>
+            )}
+            <div>
+              <motion.h3
+                className="text-xl font-bold text-white mb-1"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 }}
+              >
+                {title}
+              </motion.h3>
+              {price && (
+                <motion.div
+                  className="flex items-baseline gap-1"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.2 }}
+                >
+                  <span className="text-2xl font-bold text-white">{price}</span>
+                  {period && <span className="text-gray-400">{period}</span>}
+                </motion.div>
+              )}
             </div>
           </div>
+        </div>
 
-          {/* Content Container */}
-          <div className="relative z-10 p-6">
-            {children}
-          </div>
+        {/* Description */}
+        <motion.p
+          className="text-gray-300 mb-6 leading-relaxed"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 }}
+        >
+          {description}
+        </motion.p>
 
-          {/* Interactive Hover Effects */}
-          <>
-            {/* Corner Accents */}
-            <div className="absolute top-0 left-0 w-2 h-2 bg-gradient-to-br from-current to-transparent opacity-60" />
-            <div className="absolute top-0 right-0 w-2 h-2 bg-gradient-to-bl from-current to-transparent opacity-60" />
-            <div className="absolute bottom-0 left-0 w-2 h-2 bg-gradient-to-tr from-current to-transparent opacity-60" />
-            <div className="absolute bottom-0 right-0 w-2 h-2 bg-gradient-to-tl from-current to-transparent opacity-60" />
-            
-            {/* Hover Glow */}
-            <motion.div
-              className="absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300"
-              style={{
-                background: `radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), ${glowColor || styles.textGlow}20, transparent 50%)`
-              }}
-              animate={{
-                opacity: isHovered ? 0.3 : 0
-              }}
-            />
-          </>
-
-          {/* Particle Effects for High Intensity */}
-          {intensity === 'high' && (
-            <div className="absolute inset-0 overflow-hidden rounded-2xl pointer-events-none">
-              {[...Array(5)].map((_, i) => (
+        {/* Features */}
+        {features.length > 0 && (
+          <motion.div
+            className="mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+          >
+            <h4 className="text-white font-semibold mb-3 flex items-center gap-2">
+              <Check className="w-4 h-4 text-green-400" />
+              Key Features
+            </h4>
+            <div className="grid grid-cols-1 gap-2">
+              {features.slice(0, 4).map((feature, index) => (
                 <motion.div
-                  key={i}
-                  className="absolute w-1 h-1 bg-current rounded-full opacity-40"
-                  style={{
-                    left: `${20 + i * 15}%`,
-                    top: `${30 + i * 10}%`
-                  }}
-                  animate={{
-                    y: [0, -20, 0],
-                    opacity: [0.4, 0.8, 0.4],
-                    scale: [1, 1.5, 1]
-                  }}
-                  transition={{
-                    duration: 3 + i * 0.5,
-                    repeat: Infinity,
-                    ease: 'easeInOut'
-                  }}
-                />
+                  key={index}
+                  className="flex items-center gap-2 text-sm text-gray-300"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.5 + index * 0.1 }}
+                >
+                  <div className="w-1.5 h-1.5 bg-cyan-400 rounded-full" />
+                  {feature}
+                </motion.div>
               ))}
             </div>
-          )}
-        </motion.div>
-      )}
+          </motion.div>
+        )}
 
-      {/* Non-interactive Content */}
-      {!interactive && (
-        <>
-          {/* Holographic Border Effect */}
-          <div className="absolute inset-0 rounded-2xl">
-            <div className={`
-              absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-500
-              ${isHovered ? 'opacity-100' : ''}
-              ${styles.glow}
-            `} />
-          </div>
+        {/* Stats */}
+        {stats.length > 0 && (
+          <motion.div
+            className="mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+          >
+            <div className="grid grid-cols-2 gap-4">
+              {stats.map((stat, index) => (
+                <motion.div
+                  key={index}
+                  className="text-center p-3 rounded-lg bg-black/20 backdrop-blur-sm"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.6 + index * 0.1 }}
+                >
+                  <div className={`text-2xl font-bold ${stat.color} mb-1`}>
+                    {stat.value}
+                  </div>
+                  <div className="text-xs text-gray-400">{stat.label}</div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        )}
 
-          {/* Content Container */}
-          <div className="relative z-10 p-6">
+        {/* Contact Info */}
+        {contactInfo && (
+          <motion.div
+            className="mb-6 p-4 rounded-lg bg-black/20 backdrop-blur-sm"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6 }}
+          >
+            <h4 className="text-white font-semibold mb-3 flex items-center gap-2">
+              <Mail className="w-4 h-4 text-cyan-400" />
+              Contact Information
+            </h4>
+            <div className="space-y-2 text-sm text-gray-300">
+              <div className="flex items-center gap-2">
+                <Phone className="w-4 h-4 text-green-400" />
+                <span>{contactInfo.mobile}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Mail className="w-4 h-4 text-blue-400" />
+                <span>{contactInfo.email}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <MapPin className="w-4 h-4 text-red-400" />
+                <span>{contactInfo.address}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Globe className="w-4 h-4 text-purple-400" />
+                <span>{contactInfo.website}</span>
+              </div>
+            </div>
+          </motion.div>
+        )}
+
+        {/* Action button */}
+        {(link || onClick) && (
+          <motion.div
+            className="flex justify-end"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.7 }}
+          >
+            <motion.button
+              className={`px-6 py-3 rounded-lg font-semibold text-white bg-gradient-to-r ${color} hover:shadow-lg transition-all duration-300 flex items-center gap-2 group/btn`}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              {link ? 'Learn More' : 'Get Started'}
+              <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
+            </motion.button>
+          </motion.div>
+        )}
+
+        {/* Children content */}
+        {children && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8 }}
+          >
             {children}
-          </div>
-        </>
-      )}
+          </motion.div>
+        )}
+      </div>
+
+      {/* Hover overlay */}
+      <AnimatePresence>
+        {isHovered && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent rounded-2xl pointer-events-none"
+          />
+        )}
+      </AnimatePresence>
+
+      {/* Press effect */}
+      <AnimatePresence>
+        {isPressed && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            transition={{ duration: 0.1 }}
+            className="absolute inset-0 bg-white/10 rounded-2xl pointer-events-none"
+          />
+        )}
+      </AnimatePresence>
+
+      <style jsx>{`
+        @keyframes borderFlow {
+          0% { background-position: 200% 0; }
+          100% { background-position: -200% 0; }
+        }
+      `}</style>
     </motion.div>
   );
-}
+};
+
+export default EnhancedFuturisticCard;

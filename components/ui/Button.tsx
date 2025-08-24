@@ -6,6 +6,7 @@ interface ButtonProps {
   variant?: 'primary' | 'secondary' | 'outline' | 'ghost';
   size?: 'sm' | 'md' | 'lg';
   href?: string;
+  external?: boolean;
   onClick?: () => void;
   disabled?: boolean;
   className?: string;
@@ -17,6 +18,7 @@ export default function Button({
   variant = 'primary',
   size = 'md',
   href,
+  external = false,
   onClick,
   disabled = false,
   className = '',
@@ -40,9 +42,16 @@ export default function Button({
   const classes = `${baseClasses} ${variants[variant]} ${sizes[size]} ${className}`;
 
   if (href) {
+    if (external) {
+      return (
+        <a href={href} className={classes} style={style} target="_blank" rel="noopener noreferrer">
+          {content}
+        </a>
+      );
+    }
     return (
-      <Link href={href} className={classes}>
-        {children}
+      <Link href={href} className={classes} style={style} target={target} rel={target === '_blank' ? 'noopener noreferrer' : rel}>
+        {content}
       </Link>
     );
   }

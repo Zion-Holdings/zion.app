@@ -1,11 +1,23 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import React from 'react';
-import EnhancedMarketplaceCard, { ServiceItem } from '../../components/ui/EnhancedMarketplaceCard';
-import QuoteRequestModal, { QuoteFormValues } from '../../components/ui/QuoteRequestModal';
-import MarketplaceFilters, { Filters } from '../../components/ui/MarketplaceFilters';
-import { supabase } from '../../utils/supabase/client';
-import localServices from '../../data/services/services.json';
+import SEO from '../../components/SEO';
+import UltraFuturisticBackground from '../../components/ui/UltraFuturisticBackground';
+import Card from '../../components/ui/Card';
+import Link from 'next/link';
+import { enhancedRealMicroSaasServices } from '../../data/enhanced-real-micro-saas-services';
+import { additionalEnhancedServices } from '../../data/additional-real-services';
+import { extraServices } from '../../data/extra-services';
+import { newlyAddedServices } from '../../data/newly-added-services';
+import { curatedMarketServices } from '../../data/curated-market-services';
+import { realMarketServices } from '../../data/real-market-services';
+import { new2025Services } from '../../data/new-2025-services';
+import { marketValidatedServices } from '../../data/market-validated-services';
+import { moreRealServices2025 } from '../../data/more-real-services-2025';
+import { realOperationalServices } from '../../data/real-operational-services';
+import { verified2025Additions } from '../../data/verified-2025-additions';
+import { realServicesQ12025 } from '../../data/real-services-q1-2025'
+import { newVerifiedServicesQ22025 } from '../../data/real-verified-services-q2-2025'
 
 const mapLocalToServiceItem = (item: any): ServiceItem => ({
   slug: item.slug,
@@ -24,44 +36,46 @@ const ServicesPage: NextPage = () => {
   const [modalOpen, setModalOpen] = React.useState(false);
   const [selected, setSelected] = React.useState<ServiceItem | null>(null);
 
-  React.useEffect(() => {
-    let mounted = true;
-    const fetchServices = async () => {
-      try {
-        const hasSupabase =
-          process.env.NEXT_PUBLIC_SUPABASE_URL &&
-          process.env.NEXT_PUBLIC_SUPABASE_URL !== 'https://placeholder.supabase.co' &&
-          process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY &&
-          process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY !== 'placeholder-key';
-        if (hasSupabase) {
-          const { data, error } = await supabase.from('services').select('*').limit(100);
-          if (!error && data && data.length > 0) {
-            const mapped: ServiceItem[] = data.map((s: any) => ({
-              id: s.id,
-              slug: s.slug,
-              title: s.title || s.name,
-              description: s.description,
-              provider: s.provider || 'Marketplace Provider',
-              priceFromUSD: s.price_from_usd ?? undefined,
-              priceRangeUSD: s.price_min_usd && s.price_max_usd ? [s.price_min_usd, s.price_max_usd] : undefined,
-              categories: Array.isArray(s.categories) ? s.categories : (s.category ? [s.category] : []),
-              rating: s.rating ?? 4.5,
-            }));
-            if (mounted) {
-              setServices(mapped);
-              setFiltered(mapped);
-            }
-            return;
-          }
-        }
-      } catch {}
-      const mappedLocal = (localServices as any[]).map(mapLocalToServiceItem);
-      setServices(mappedLocal);
-      setFiltered(mappedLocal);
-    };
-    fetchServices();
-    return () => { mounted = false; };
-  }, []);
+export default function ServicesIndexPage() {
+  const all = (enhancedRealMicroSaasServices as unknown[])
+    .concat(
+      extraServices as any[],
+      additionalEnhancedServices as any[],
+      newlyAddedServices as any[],
+      curatedMarketServices as any[],
+      realMarketServices as any[],
+      new2025Services as any[],
+      marketValidatedServices as any[],
+      moreRealServices2025 as any[],
+      realOperationalServices as any[],
+      verified2025Additions as any[],
+      realServicesQ12025 as any[],
+      newVerifiedServicesQ22025 as any[]
+    );
+  const byCategory: Record<string, unknown[]> = {};
+  for (const c of categories) byCategory[c] = [];
+  // Normalize various category labels into our main buckets
+  const categoryAliases: Record<string, string> = {
+    'AI & Data': 'AI & Data',
+    'AI & Machine Learning': 'AI & Data',
+    'GenAI': 'AI & Data',
+    'Cloud & FinOps': 'Cloud & FinOps',
+    'Cloud & Data': 'Cloud & FinOps',
+    'Platform Engineering': 'Cloud & FinOps',
+    'Observability': 'Observability',
+    'Observability & Telemetry': 'Observability',
+    'Quality & Monitoring': 'Quality & Monitoring',
+    'Security & Reliability': 'Quality & Monitoring',
+    'Security & Compliance': 'Quality & Monitoring',
+    'Developer Tools': 'Developer Tools',
+    'Growth & Marketing': 'Developer Tools'
+  };
+  for (const s of all) {
+    const service = s as { category?: string };
+    const rawCat = (service.category || '').trim();
+    const mapped = categoryAliases[rawCat] || (categories.includes(rawCat) ? rawCat : 'Developer Tools');
+    byCategory[mapped].push(s);
+  }
 
   React.useEffect(() => {
     const next = services.filter((s) => {

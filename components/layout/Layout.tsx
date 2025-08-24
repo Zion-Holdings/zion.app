@@ -1,17 +1,46 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import UltraFuturisticNavigation2037 from './UltraFuturisticNavigation2037';
-import UltraFuturisticFooter2037 from './UltraFuturisticFooter2037';
+import React, { useState } from 'react';
+import UltraFuturisticNavigation2035 from './UltraFuturisticNavigation2035';
+import UltraFuturisticFooter2035 from './UltraFuturisticFooter2035';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
-import UltraFuturisticBackground2038 from '../backgrounds/UltraFuturisticBackground2038';
+import UltraAdvancedFuturisticBackground2035 from './UltraAdvancedFuturisticBackground2035';
 import TopContactBar from './TopContactBar';
+import Head from 'next/head';
 
 interface LayoutProps {
   children: React.ReactNode;
-  seo?: SEOConfig;
+  seo?: {
+    title?: string;
+    description?: string;
+    keywords?: string;
+    canonicalUrl?: string;
+    ogImage?: string;
+  };
 }
 
-    <>
+export default function Layout({ children, seo }: LayoutProps) {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [showEnhancements, setShowEnhancements] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Escape' && sidebarOpen) {
+      setSidebarOpen(false);
+    }
+  };
+
+  const title = seo?.title || 'Zion Tech Group - Revolutionary Technology Solutions';
+  const description = seo?.description || 'Leading provider of innovative AI, quantum computing, and enterprise technology solutions. Transform your business with cutting-edge innovations.';
+  const keywords = seo?.keywords || 'AI, quantum computing, enterprise technology, innovation, Zion Tech Group';
+  const canonicalUrl = seo?.canonicalUrl;
+  const ogImage = seo?.ogImage || 'https://ziontechgroup.com/og-image.jpg';
+
+  return (
+    <div 
+      className="min-h-screen bg-black text-white relative overflow-x-hidden"
+      onKeyDown={handleKeyDown}
+      role="application"
+      aria-label="Zion Tech Group Application"
+    >
       <Head>
         <title>{title}</title>
         <meta name="description" content={description} />
@@ -98,51 +127,22 @@ interface LayoutProps {
                 "telephone": "+1-302-464-0950",
                 "contactType": "customer service",
                 "email": "kleber@ziontechgroup.com"
-              },
-              "sameAs": [
-                "https://github.com/Zion-Holdings",
-                "https://linkedin.com/company/zion-tech-group"
-              ],
-              "hasOfferCatalog": {
-                "@type": "OfferCatalog",
-                "name": "Technology Services",
-                "itemListElement": [
-                  {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "AI Consciousness Evolution 2045",
-                      "description": "Next-generation AI consciousness with emotional intelligence"
-                    }
-                  }
-                ]
               }
             })
           }}
         />
       </Head>
 
-      <div className="min-h-screen bg-black text-white relative overflow-hidden">
-        {/* Background Effects */}
-        <UltraFuturisticBackground2045 />
-        
-        {/* Top Contact Bar */}
-        <TopContactBar />
-        
-        {/* Navigation */}
-        <UltraFuturisticNavigation2045 />
-=======
 export default function Layout({ children, seo }: LayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [showEnhancements, setShowEnhancements] = useState(false);
 
   return (
-    <div 
-      className="min-h-screen bg-black text-white relative overflow-x-hidden"
-      onKeyDown={handleKeyDown}
-      role="application"
-      aria-label="Zion Tech Group Application"
-    >
+    <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
+      {/* Futuristic Background */}
+      <UltraAdvancedFuturisticBackground2035 />
+      
+=======
       {/* Skip to content link for accessibility */}
       <a 
         href="#main" 
@@ -152,7 +152,7 @@ export default function Layout({ children, seo }: LayoutProps) {
       </a>
 
       {/* Enhanced Futuristic Background */}
-      <UltraFuturisticBackground2037 intensity="medium" theme="quantum-neon" />
+      <UltraFuturisticBackground2038 intensity="medium" theme="quantum-neon" />
 
       {/* Loading State */}
       <AnimatePresence>
@@ -170,18 +170,13 @@ export default function Layout({ children, seo }: LayoutProps) {
         )}
       </AnimatePresence>
 
-
-      
       {/* Layout Structure */}
       <div className="relative z-10">
         {/* Top Contact Bar */}
         <TopContactBar />
         
-        {/* Enhanced Navigation */}
-        <UltraFuturisticNavigation2037 
-          onMenuToggle={() => setSidebarOpen(!sidebarOpen)}
-          aria-expanded={sidebarOpen}
-        />
+        {/* Navigation */}
+        <UltraAdvancedNavigation2035 />
         
         {/* Sidebar and Main Content */}
         <div className="flex">
@@ -212,7 +207,7 @@ export default function Layout({ children, seo }: LayoutProps) {
         </div>
         
         {/* Footer */}
-        <UltraFuturisticFooter2037 />
+        <UltraAdvancedFooter2035 />
       </div>
 
       {/* Back to top button */}
@@ -242,17 +237,3 @@ export default function Layout({ children, seo }: LayoutProps) {
     </div>
   );
 }
-
-const Layout: React.FC<LayoutProps> = ({ children }) => {
-  return (
-    <div className="min-h-screen bg-black text-white">
-      <EnhancedNavigation />
-      <main className="pt-24 lg:pt-28">
-        {children}
-      </main>
-      <EnhancedFooter />
-    </div>
-  );
-};
-
-export default Layout;

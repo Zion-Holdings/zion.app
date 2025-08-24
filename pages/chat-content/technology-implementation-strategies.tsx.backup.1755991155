@@ -1,6 +1,0 @@
-<<<<<<< HEAD
-export default function ChatTechImplementation() { return <div className="p-6">Technology Implementation Strategies</div>; }
-=======
-import React from 'react';
-export default function Page() { return <div className="min-h-screen p-8">Technology Implementation Strategies (WIP)</div>; }
->>>>>>> origin/cursor/build-dao-proposal-drafting-system-with-templates-9858

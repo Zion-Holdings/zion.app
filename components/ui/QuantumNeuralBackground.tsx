@@ -14,7 +14,7 @@ const QuantumNeuralBackground: React.FC<QuantumNeuralBackgroundProps> = ({
   children
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const animationRef = useRef<number | undefined>(undefined);
+  const animationRef = useRef<number | null>(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;

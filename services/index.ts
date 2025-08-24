@@ -13,9 +13,44 @@ export { aiHrService } from './aiHrService';
 export { designSystemBuilderService } from './designSystemBuilderService';
 export { performanceMonitorService } from './performanceMonitorService';
 export { videoEditingService } from './videoEditingService';
-export { aiMarketingAutomationService } from './aiMarketingAutomationService';
-export { aiProjectManagementService } from './aiProjectManagementService';
-export { aiCustomerSupportService } from './aiCustomerSupportService';
+export { aiCodeReviewService } from './aiCodeReviewService';
+export { apiDocGeneratorService } from './apiDocGeneratorService';
+export { databasePerformanceMonitorService } from './databasePerformanceMonitorService';
+export { aiMarketResearchService } from './aiMarketResearchService';
+export { aiDataAnalyticsService } from './aiDataAnalyticsService';
+export { aiCybersecurityService } from './aiCybersecurityService';
+
+// Advanced futuristic micro SAAS services
+export { advancedFuturisticMicroSaasServices } from '../data/2025-advanced-futuristic-micro-saas-expansion';
+
+// Advanced IT infrastructure services
+export { advancedITInfrastructureServices } from '../data/2025-advanced-it-infrastructure-services';
+
+// Advanced AI automation services
+export { advancedAIAutomationServices } from '../data/2025-advanced-ai-automation-services';
+
+// Advanced AI & IT Services
+export { aiCybersecurityService } from './aiCybersecurityService';
+export { aiDevOpsService } from './aiDevOpsService';
+export { aiDataEngineeringService } from './aiDataEngineeringService';
+export { aiFintechService } from './aiFintechService';
+export { aiHealthcareService } from './aiHealthcareService';
+
+// New AI-powered services
+export { aiCybersecurityService } from './aiCybersecurityService';
+export { aiDevOpsAutomationService } from './aiDevOpsAutomationService';
+export { aiFinancialAnalyticsService } from './aiFinancialAnalyticsService';
+export { aiHealthcareAnalyticsService } from './aiHealthcareAnalyticsService';
+
+// Export 2025 innovative micro SAAS expansion services
+export { innovative2025MicroSaasExpansionV3 } from '../data/2025-innovative-micro-saas-expansion-v3';
+
+// Export new 2025 services
+export { advancedAIMLServices } from '../data/2025-advanced-ai-ml-services';
+export { advancedCybersecurityServices } from '../data/2025-advanced-cybersecurity-services';
+export { advancedCloudDevOpsServices2025 } from '../data/2025-advanced-cloud-devops-services';
+export { industrySpecificSolutions } from '../data/2025-industry-specific-solutions';
+export { emergingTechnologyServices } from '../data/2025-emerging-technology-services';
 
 // Export types
 export type {
@@ -137,37 +172,150 @@ export type {
 } from './videoEditingService';
 
 export type {
-  MarketingCampaign,
-  CampaignMetrics,
-  EmailTemplate,
-  SocialMediaPost,
-  MarketingAutomation,
-  AutomationCondition,
-  AutomationAction
-} from './aiMarketingAutomationService';
+  CodeReview,
+  CodeIssue,
+  CodeRecommendation,
+  CodeMetrics
+} from './aiCodeReviewService';
 
 export type {
-  Project,
-  TeamMember,
-  Task,
-  Milestone,
-  Risk,
-  Attachment,
-  Comment,
-  ProjectAnalytics,
-  BurndownData,
-  AIRecommendation
-} from './aiProjectManagementService';
+  APIDocumentation,
+  APIEndpoint,
+  APIParameter,
+  APIRequestBody,
+  APIContent,
+  APIResponse,
+  APIHeader,
+  APISchema,
+  APIExample,
+  ExampleRequest,
+  ExampleResponse,
+  RateLimit,
+  AuthenticationRequirement,
+  DocumentationConfig
+} from './apiDocGeneratorService';
 
 export type {
-  SupportTicket,
-  TicketMessage,
-  Customer,
-  SupportAgent,
-  AgentPerformance,
-  ChatbotSession,
-  ChatbotMessage,
-  KnowledgeBaseArticle,
-  SupportAnalytics,
-  AIRecommendation as SupportAIRecommendation
-} from './aiCustomerSupportService';
+  DatabaseConnection,
+  ConnectionMetrics,
+  QueryPerformance,
+  ExecutionPlan,
+  PlanNode,
+  QueryMetrics,
+  QueryRecommendation,
+  DatabaseMetrics,
+  DatabasePerformanceAlert,
+  IndexRecommendation
+} from './databasePerformanceMonitorService';
+
+export type {
+  MarketTrend,
+  CompetitorAnalysis as MarketCompetitorAnalysis,
+  MarketInsight,
+  MarketResearchRequest,
+  MarketResearchResponse
+} from './aiMarketResearchService';
+
+export type {
+  DataSource as AnalyticsDataSource,
+  DataQuery,
+  DataVisualization,
+  PredictiveModel,
+  AnalyticsInsight,
+  DataAnalyticsRequest,
+  DataAnalyticsResponse
+} from './aiDataAnalyticsService';
+
+export type {
+  SmartContract,
+  NFT,
+  NFTMetadata,
+  NFTAttribute,
+  DeFiPool,
+  BlockchainTransaction,
+  TransactionResult,
+  BlockchainStats,
+  WalletAnalytics,
+  NetworkStatus
+} from './blockchainService';
+
+export type {
+  PipelineConfig,
+  PipelineStage,
+  PipelineTrigger,
+  PerformanceThresholds,
+  InfrastructureConfig,
+  DeploymentMetrics,
+  CodeQualityReport,
+  SecurityScanResult,
+  Vulnerability,
+  ComplianceCheck,
+  MonitoringAlert
+} from './aiDevOpsService';
+
+export type {
+  DataPipeline,
+  DataSource,
+  DataDestination,
+  DataTransformation,
+  PipelineSchedule,
+  PipelineMetrics,
+  DataQualityMetrics,
+  DataQualityIssue,
+  CostMetrics,
+  ConnectionConfig,
+  DataSchema,
+  SchemaField,
+  SchemaIndex,
+  SchemaConstraint,
+  PartitioningStrategy,
+  ValidationRule,
+  DataCatalog,
+  Dataset,
+  DataLineage,
+  DatasetUsage,
+  QueryStats
+} from './aiDataEngineeringService';
+
+export type {
+  FinancialInstrument,
+  Portfolio,
+  PortfolioPosition,
+  RiskMetrics,
+  PerformancePoint,
+  RebalancingSchedule,
+  TradingSignal,
+  MarketAnalysis,
+  TechnicalIndicator,
+  FundamentalFactor,
+  AIInsight,
+  RiskAssessment,
+  RiskFactor as FintechRiskFactor,
+  StressTestResult,
+  ComplianceReport,
+  ComplianceViolation
+} from './aiFintechService';
+
+export type {
+  Patient,
+  MedicalRecord,
+  Medication,
+  VitalSigns,
+  RiskFactor,
+  InsuranceInfo,
+  EmergencyContact,
+  Diagnosis,
+  AIAnalysis,
+  DifferentialDiagnosis,
+  TreatmentPlan,
+  FollowUpSchedule,
+  FollowUpAppointment,
+  HealthAnalytics,
+  RiskAssessment as HealthRiskAssessment,
+  TrendAnalysis,
+  VitalSignsTrend,
+  MedicationTrend,
+  SymptomTrend,
+  HealthTrend,
+  PredictiveInsight
+} from './aiHealthcareService';

@@ -1,290 +1,390 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence, Variants } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface AdvancedFuturisticCardProps {
   children: React.ReactNode;
   className?: string;
-  variant?: 'default' | 'premium' | 'enterprise' | 'quantum';
-  glow?: boolean;
-  animated?: boolean;
+  variant?: 'quantum' | 'holographic' | 'neural' | 'cyberpunk' | 'quantum-holographic' | 'neural-cyberpunk';
+  intensity?: 'low' | 'medium' | 'high' | 'extreme';
   interactive?: boolean;
-  theme?: 'cyberpunk' | 'quantum' | 'holographic' | 'neon';
+  glow?: boolean;
+  floating?: boolean;
+  border?: boolean;
+  background?: boolean;
   onClick?: () => void;
 }
 
 const AdvancedFuturisticCard: React.FC<AdvancedFuturisticCardProps> = ({
   children,
   className = '',
-  variant = 'default',
-  glow = true,
-  animated = true,
+  variant = 'quantum-holographic',
+  intensity = 'medium',
   interactive = true,
-  theme = 'quantum',
+  glow = true,
+  floating = true,
+  border = true,
+  background = true,
   onClick
 }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [isFocused, setIsFocused] = useState(false);
-  const cardRef = useRef<HTMLDivElement>(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const cardRef = useRef<HTMLDivElement>(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const animationRef = useRef<number | undefined>(undefined);
 
-  // Get variant styles
   const getVariantStyles = () => {
     switch (variant) {
-      case 'premium':
-        return {
-          background: 'linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%)',
-          border: '1px solid rgba(139, 92, 246, 0.3)',
-          shadow: '0 0 30px rgba(139, 92, 246, 0.3)',
-          glow: 'rgba(139, 92, 246, 0.5)'
-        };
-      case 'enterprise':
-        return {
-          background: 'linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%)',
-          border: '1px solid rgba(59, 130, 246, 0.3)',
-          shadow: '0 0 30px rgba(59, 130, 246, 0.3)',
-          glow: 'rgba(59, 130, 246, 0.5)'
-        };
       case 'quantum':
         return {
-          background: 'linear-gradient(135deg, rgba(6, 182, 212, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%)',
-          border: '1px solid rgba(6, 182, 212, 0.3)',
-          shadow: '0 0 30px rgba(6, 182, 212, 0.3)',
-          glow: 'rgba(6, 182, 212, 0.5)'
-        };
-      default:
-        return {
-          background: 'linear-gradient(135deg, rgba(75, 85, 99, 0.1) 0%, rgba(31, 41, 55, 0.1) 100%)',
-          border: '1px solid rgba(75, 85, 99, 0.3)',
-          shadow: '0 0 20px rgba(75, 85, 99, 0.2)',
-          glow: 'rgba(75, 85, 99, 0.3)'
-        };
-    }
-  };
-
-  // Get theme styles
-  const getThemeStyles = () => {
-    switch (theme) {
-      case 'cyberpunk':
-        return {
-          accent: 'rgba(239, 68, 68, 0.8)',
-          highlight: 'rgba(245, 158, 11, 0.8)',
-          pattern: 'repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(239, 68, 68, 0.1) 2px, rgba(239, 68, 68, 0.1) 4px)'
-        };
-      case 'quantum':
-        return {
-          accent: 'rgba(6, 182, 212, 0.8)',
-          highlight: 'rgba(168, 85, 247, 0.8)',
-          pattern: 'radial-gradient(circle at 20% 80%, rgba(6, 182, 212, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(168, 85, 247, 0.1) 0%, transparent 50%)'
+          bg: 'bg-gradient-to-br from-cyan-900/20 to-blue-900/20',
+          border: 'border-cyan-500/30',
+          glow: 'shadow-cyan-500/20',
+          text: 'text-cyan-400'
         };
       case 'holographic':
         return {
-          accent: 'rgba(236, 72, 153, 0.8)',
-          highlight: 'rgba(139, 92, 246, 0.8)',
-          pattern: 'linear-gradient(45deg, rgba(236, 72, 153, 0.1) 25%, transparent 25%), linear-gradient(-45deg, rgba(139, 92, 246, 0.1) 25%, transparent 25%)'
+          bg: 'bg-gradient-to-br from-purple-900/20 to-indigo-900/20',
+          border: 'border-purple-500/30',
+          glow: 'shadow-purple-500/20',
+          text: 'text-purple-400'
         };
-      case 'neon':
+      case 'neural':
         return {
-          accent: 'rgba(34, 197, 94, 0.8)',
-          highlight: 'rgba(239, 68, 68, 0.8)',
-          pattern: 'linear-gradient(90deg, rgba(34, 197, 94, 0.1) 0%, rgba(239, 68, 68, 0.1) 100%)'
+          bg: 'bg-gradient-to-br from-emerald-900/20 to-teal-900/20',
+          border: 'border-emerald-500/30',
+          glow: 'shadow-emerald-500/20',
+          text: 'text-emerald-400'
+        };
+      case 'cyberpunk':
+        return {
+          bg: 'bg-gradient-to-br from-red-900/20 to-orange-900/20',
+          border: 'border-red-500/30',
+          glow: 'shadow-red-500/20',
+          text: 'text-red-400'
+        };
+      case 'quantum-holographic':
+        return {
+          bg: 'bg-gradient-to-br from-cyan-900/20 via-purple-900/20 to-blue-900/20',
+          border: 'border-cyan-500/30',
+          glow: 'shadow-cyan-500/20 shadow-purple-500/20',
+          text: 'text-cyan-400'
+        };
+      case 'neural-cyberpunk':
+        return {
+          bg: 'bg-gradient-to-br from-emerald-900/20 via-red-900/20 to-teal-900/20',
+          border: 'border-emerald-500/30',
+          glow: 'shadow-emerald-500/20 shadow-red-500/20',
+          text: 'text-emerald-400'
         };
       default:
         return {
-          accent: 'rgba(59, 130, 246, 0.8)',
-          highlight: 'rgba(16, 185, 129, 0.8)',
-          pattern: 'linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%)'
+          bg: 'bg-gradient-to-br from-gray-900/20 to-slate-900/20',
+          border: 'border-gray-500/30',
+          glow: 'shadow-gray-500/20',
+          text: 'text-gray-400'
         };
     }
   };
 
-  const variantStyles = getVariantStyles();
-  const themeStyles = getThemeStyles();
-
-  // Mouse move handler for 3D effect
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!interactive || !cardRef.current) return;
-    
-    const rect = cardRef.current.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    
-    setMousePosition({ x, y });
+  const getIntensityMultiplier = () => {
+    switch (intensity) {
+      case 'extreme': return 2.0;
+      case 'high': return 1.5;
+      case 'medium': return 1.0;
+      case 'low': return 0.5;
+      default: return 1.0;
+    }
   };
 
-  // Calculate 3D transform
-  const get3DTransform = () => {
+  const styles = getVariantStyles();
+  const intensityMultiplier = getIntensityMultiplier();
+
+  // Canvas animation for quantum effects
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas || !background) return;
+
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    const resizeCanvas = () => {
+      if (cardRef.current) {
+        const rect = cardRef.current.getBoundingClientRect();
+        canvas.width = rect.width;
+        canvas.height = rect.height;
+      }
+    };
+
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    let time = 0;
+    const particles: Array<{
+      x: number;
+      y: number;
+      vx: number;
+      vy: number;
+      size: number;
+      life: number;
+      maxLife: number;
+      color: string;
+    }> = [];
+
+    // Create particles
+    const particleCount = Math.floor(20 * intensityMultiplier);
+    for (let i = 0; i < particleCount; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * 2,
+        vy: (Math.random() - 0.5) * 2,
+        size: Math.random() * 3 + 1,
+        life: Math.random() * 100,
+        maxLife: 100,
+        color: styles.text
+      });
+    }
+
+    const animate = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      particles.forEach(particle => {
+        // Update position
+        particle.x += particle.vx;
+        particle.y += particle.vy;
+
+        // Boundary wrapping
+        if (particle.x < 0) particle.x = canvas.width;
+        if (particle.x > canvas.width) particle.x = 0;
+        if (particle.y < 0) particle.y = canvas.height;
+        if (particle.y > canvas.height) particle.y = 0;
+
+        // Update life
+        particle.life--;
+        if (particle.life <= 0) {
+          particle.life = particle.maxLife;
+          particle.x = Math.random() * canvas.width;
+          particle.y = Math.random() * canvas.height;
+        }
+
+        // Render particle
+        const alpha = particle.life / particle.maxLife;
+        ctx.fillStyle = particle.color + Math.floor(alpha * 255).toString(16).padStart(2, '0');
+        ctx.beginPath();
+        ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+        ctx.fill();
+      });
+
+      time++;
+      animationRef.current = requestAnimationFrame(animate);
+    };
+
+    animate();
+
+    return () => {
+      window.removeEventListener('resize', resizeCanvas);
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
+    };
+  }, [background, intensityMultiplier, styles.text]);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!interactive) return;
+    
+    const rect = cardRef.current?.getBoundingClientRect();
+    if (rect) {
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      setMousePosition({ x, y });
+    }
+  };
+
+  const handleMouseEnter = () => {
+    if (!interactive) return;
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    if (!interactive) return;
+    setIsHovered(false);
+  };
+
+  const handleFocus = () => {
+    if (!interactive) return;
+    setIsFocused(true);
+  };
+
+  const handleBlur = () => {
+    if (!interactive) return;
+    setIsFocused(false);
+  };
+
+  const getTransform = () => {
     if (!interactive) return {};
     
-    const centerX = cardRef.current?.offsetWidth / 2 || 0;
-    const centerY = cardRef.current?.offsetHeight / 2 || 0;
+    const isActive = isHovered || isFocused;
+    const intensity = isActive ? intensityMultiplier : 1;
     
-    const rotateX = (mousePosition.y - centerY) / 20;
-    const rotateY = (mousePosition.x - centerX) / 20;
+    if (floating) {
+      return {
+        y: isActive ? -8 * intensity : 0,
+        rotateX: isActive ? (mousePosition.y - 150) * 0.01 * intensity : 0,
+        rotateY: isActive ? (mousePosition.x - 150) * 0.01 * intensity : 0,
+        scale: isActive ? 1.02 * intensity : 1,
+      };
+    }
     
     return {
-      transform: `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`,
-      transition: 'transform 0.1s ease-out'
+      scale: isActive ? 1.02 * intensity : 1,
     };
   };
 
-  // Animation variants
-  const cardVariants: Variants = {
-    initial: { 
-      opacity: 0, 
-      y: 50, 
-      scale: 0.95
-    },
-    animate: { 
-      opacity: 1, 
-      y: 0, 
-      scale: 1,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut"
-      }
-    },
-    hover: {
-      y: -10,
-      scale: 1.02,
-      transition: {
-        duration: 0.3,
-        ease: "easeOut"
-      }
-    },
-    focus: {
-      scale: 1.01,
-      transition: {
-        duration: 0.2
-      }
-    }
-  };
-
-  // Glow effect variants
-  const glowVariants: Variants = {
-    initial: { opacity: 0, scale: 0.8 },
-    animate: { 
-      opacity: 1, 
-      scale: 1,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut"
-      }
-    },
-    hover: { 
-      opacity: 0.8, 
-      scale: 1.1,
-      transition: {
-        duration: 0.3
-      }
-    }
+  const getGlowEffect = () => {
+    if (!glow) return {};
+    
+    const isActive = isHovered || isFocused;
+    const intensity = isActive ? intensityMultiplier : 0.5;
+    
+    return {
+      boxShadow: isActive 
+        ? `0 0 30px ${intensity * 2}px ${styles.glow.replace('shadow-', '').replace('/20', '')}`
+        : `0 0 20px ${intensity}px ${styles.glow.replace('shadow-', '').replace('/20', '')}`
+    };
   };
 
   return (
     <motion.div
       ref={cardRef}
-      className={`relative group ${className}`}
-      variants={animated ? cardVariants : undefined}
-      initial={animated ? "initial" : undefined}
-      animate={animated ? "animate" : undefined}
-      whileHover={interactive && animated ? "hover" : undefined}
-      whileFocus={interactive && animated ? "focus" : undefined}
-      onMouseMove={handleMouseMove}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      onFocus={() => setIsFocused(true)}
-      onBlur={() => setIsFocused(false)}
-      onClick={onClick}
+      className={`relative overflow-hidden rounded-2xl backdrop-blur-xl transition-all duration-500 ${
+        background ? styles.bg : ''
+      } ${border ? `border ${styles.border}` : ''} ${className}`}
       style={{
-        ...get3DTransform(),
-        background: variantStyles.background,
-        border: variantStyles.border,
-        boxShadow: isHovered ? variantStyles.shadow : variantStyles.shadow.replace('0.3', '0.2'),
+        ...getGlowEffect(),
+        transformStyle: 'preserve-3d',
+        perspective: '1000px'
       }}
+      animate={getTransform()}
+      transition={{
+        type: 'spring',
+        stiffness: 300,
+        damping: 30,
+        duration: 0.5
+      }}
+      onMouseMove={handleMouseMove}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      onFocus={handleFocus}
+      onBlur={handleBlur}
+      tabIndex={interactive ? 0 : -1}
+      onClick={onClick}
     >
-      {/* Background pattern */}
-      <div 
-        className="absolute inset-0 opacity-30 pointer-events-none"
-        style={{ background: themeStyles.pattern }}
-      />
-      
-      {/* Glow effect */}
-      {glow && (
-        <motion.div
-          className="absolute inset-0 rounded-xl pointer-events-none"
-          variants={animated ? glowVariants : undefined}
-          initial={animated ? "initial" : undefined}
-          animate={animated ? "animate" : undefined}
-          whileHover={animated ? "hover" : undefined}
-          style={{
-            background: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, ${variantStyles.glow} 0%, transparent 70%)`,
-            filter: 'blur(20px)',
-            opacity: isHovered ? 0.8 : 0.3
-          }}
+      {/* Background Canvas */}
+      {background && (
+        <canvas
+          ref={canvasRef}
+          className="absolute inset-0 w-full h-full pointer-events-none opacity-30"
         />
       )}
-      
-      {/* Border glow */}
-      <div 
-        className="absolute inset-0 rounded-xl pointer-events-none"
-        style={{
-          background: `linear-gradient(45deg, ${themeStyles.accent}, ${themeStyles.highlight})`,
-          padding: '1px',
-          mask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
-          maskComposite: 'exclude'
-        }}
-      />
-      
-      {/* Animated border */}
-      {animated && (
-        <div className="absolute inset-0 rounded-xl overflow-hidden">
-          <div 
-            className="absolute inset-0"
+
+      {/* Holographic Border Effect */}
+      {border && (
+        <div className="absolute inset-0 rounded-2xl overflow-hidden">
+          <div
+            className={`absolute inset-0 rounded-2xl ${
+              isHovered || isFocused 
+                ? 'bg-gradient-to-r from-transparent via-current to-transparent opacity-20' 
+                : 'opacity-0'
+            } transition-opacity duration-500`}
             style={{
-              background: `linear-gradient(90deg, transparent, ${themeStyles.accent}, transparent)`,
-              transform: `translateX(${isHovered ? '100%' : '-100%'})`,
-              transition: 'transform 0.6s ease-in-out'
+              background: `linear-gradient(90deg, transparent, ${styles.text}, transparent)`,
+              animation: isHovered || isFocused ? 'holographic-sweep 2s linear infinite' : 'none'
             }}
           />
         </div>
       )}
-      
+
       {/* Content */}
       <div className="relative z-10 p-6">
         {children}
       </div>
-      
-      {/* Corner accents */}
-      <div className="absolute top-0 left-0 w-2 h-2 bg-gradient-to-br from-transparent to-current opacity-50" />
-      <div className="absolute top-0 right-0 w-2 h-2 bg-gradient-to-bl from-transparent to-current opacity-50" />
-      <div className="absolute bottom-0 left-0 w-2 h-2 bg-gradient-to-tr from-transparent to-current opacity-50" />
-      <div className="absolute bottom-0 right-0 w-2 h-2 bg-gradient-to-tl from-transparent to-current opacity-50" />
-      
-      {/* Floating particles effect */}
-      {animated && (
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          {[...Array(5)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute w-1 h-1 bg-current opacity-30 rounded-full"
+
+      {/* Quantum Energy Field */}
+      {intensity === 'extreme' && (
+        <div className="absolute inset-0 rounded-2xl overflow-hidden pointer-events-none">
+          <div
+            className="absolute inset-0 bg-gradient-to-r from-transparent via-current to-transparent opacity-10"
+            style={{
+              background: `linear-gradient(90deg, transparent, ${styles.text}, transparent)`,
+              animation: 'quantum-pulse 3s ease-in-out infinite'
+            }}
+          />
+        </div>
+      )}
+
+      {/* Neural Network Overlay */}
+      {variant.includes('neural') && intensity !== 'low' && (
+        <div className="absolute inset-0 rounded-2xl overflow-hidden pointer-events-none">
+          <svg className="w-full h-full opacity-20">
+            <defs>
+              <pattern id="neural-grid" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+                <path
+                  d="M 40 0 L 0 0 0 40"
+                  fill="none"
+                  stroke={styles.text}
+                  strokeWidth="0.5"
+                  opacity="0.3"
+                />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#neural-grid)" />
+          </svg>
+        </div>
+      )}
+
+      {/* Holographic Layers */}
+      {variant.includes('holographic') && (
+        <div className="absolute inset-0 rounded-2xl overflow-hidden pointer-events-none">
+          {[1, 2, 3].map((layer) => (
+            <div
+              key={layer}
+              className={`absolute inset-0 rounded-2xl border border-current opacity-5`}
               style={{
-                left: `${20 + i * 15}%`,
-                top: `${30 + i * 10}%`,
-              }}
-              animate={{
-                y: [0, -20, 0],
-                opacity: [0.3, 0.8, 0.3],
-                scale: [1, 1.2, 1]
-              }}
-              transition={{
-                duration: 3 + i * 0.5,
-                repeat: Infinity,
-                delay: i * 0.2,
-                ease: "easeInOut"
+                transform: `translateZ(${layer * 10}px)`,
+                animation: `holographic-layer-${layer} ${4 + layer}s ease-in-out infinite`
               }}
             />
           ))}
         </div>
       )}
+
+      <style jsx>{`
+        @keyframes holographic-sweep {
+          0% { transform: translateX(-100%); }
+          100% { transform: translateX(100%); }
+        }
+        
+        @keyframes quantum-pulse {
+          0%, 100% { opacity: 0.1; transform: scale(1); }
+          50% { opacity: 0.3; transform: scale(1.05); }
+        }
+        
+        @keyframes holographic-layer-1 {
+          0%, 100% { opacity: 0.05; transform: translateZ(10px) rotateY(0deg); }
+          50% { opacity: 0.1; transform: translateZ(10px) rotateY(5deg); }
+        }
+        
+        @keyframes holographic-layer-2 {
+          0%, 100% { opacity: 0.03; transform: translateZ(20px) rotateY(0deg); }
+          50% { opacity: 0.08; transform: translateZ(20px) rotateY(-3deg); }
+        }
+        
+        @keyframes holographic-layer-3 {
+          0%, 100% { opacity: 0.02; transform: translateZ(30px) rotateY(0deg); }
+          50% { opacity: 0.06; transform: translateZ(30px) rotateY(2deg); }
+        }
+      `}</style>
     </motion.div>
   );
 };
