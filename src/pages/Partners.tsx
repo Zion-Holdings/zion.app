@@ -1,4 +1,8 @@
 
+import React from 'react';
+import { AppHeader } from "@/layout/AppHeader";
+import { Footer } from "@/components/Footer";
+import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -20,7 +24,16 @@ export default function Partners() {
   // If not authenticated, display partner program info and signup CTA
   if (!isAuthenticated) {
     return (
-      <div className="container max-w-6xl py-10">
+      <>
+        <SEO
+          title="Partner Program - Zion Tech Group"
+          description="Join Zion Tech Group's partner program and earn rewards by referring AI talent and clients to our marketplace."
+          keywords="partner program, referrals, AI marketplace, Zion Tech Group, affiliate program"
+          canonical="https://ziontechgroup.com/partners"
+        />
+        <AppHeader />
+        <main className="pt-16 pb-20">
+          <div className="container max-w-6xl py-10">
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold tracking-tight text-white mb-2">Zion AI Partner Program</h1>
           <p className="text-xl text-zion-slate-light">Earn rewards by referring AI talent and clients to our marketplace</p>
@@ -147,12 +160,24 @@ export default function Partners() {
           </Button>
         </div>
       </div>
+        </main>
+        <Footer />
+      </>
     );
   }
 
   // Authenticated user view - Partner Dashboard
   return (
-    <div className="container max-w-7xl py-10">
+    <>
+      <SEO
+        title="Partner Dashboard - Zion Tech Group"
+        description="Manage your referral links and track your performance in Zion Tech Group's partner program."
+        keywords="partner dashboard, referrals, earnings, Zion Tech Group"
+        canonical="https://ziontechgroup.com/partners"
+      />
+      <AppHeader />
+      <main className="pt-16 pb-20">
+        <div className="container max-w-7xl py-10">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
         <div>
           <h1 className="text-3xl font-bold tracking-tight text-white">Partner Dashboard</h1>
@@ -204,6 +229,9 @@ export default function Partners() {
           <PartnerResources />
         </TabsContent>
       </Tabs>
-    </div>
-  );
+        </div>
+        </main>
+        <Footer />
+      </>
+    );
 }
