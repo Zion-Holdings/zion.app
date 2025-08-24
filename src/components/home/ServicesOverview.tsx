@@ -1,211 +1,225 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { SERVICE_CATEGORIES } from '@/data/expandedServices';
 import { Button } from '@/components/ui/button';
-import { ENHANCED_SERVICES, SERVICE_CATEGORIES } from '@/data/enhancedServices';
-import { Star, ArrowRight, Shield, Zap, TrendingUp, Users, Award, Phone, Mail, MapPin } from 'lucide-react';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { ArrowRight, Star, Zap, Shield, Database, Code, Smartphone, Link as LinkIcon, Settings, BarChart3 } from 'lucide-react';
+
+const getCategoryIcon = (icon: string) => {
+  return <span className="text-4xl">{icon}</span>;
+};
+
+const getCategoryFeatures = (categoryName: string) => {
+  const features = {
+    "AI & Machine Learning": ["Custom AI Models", "NLP Solutions", "Computer Vision", "Predictive Analytics"],
+    "Cloud & DevOps": ["Multi-Cloud Migration", "Kubernetes Management", "CI/CD Automation", "Infrastructure as Code"],
+    "Cybersecurity": ["Penetration Testing", "Zero Trust Security", "SOC Setup", "Security Audits"],
+    "Data & Analytics": ["Real-time Streaming", "BI Dashboards", "Data Warehouse Optimization", "Big Data Processing"],
+    "Web & Mobile Development": ["Progressive Web Apps", "Cross-platform Apps", "E-commerce Platforms", "Custom Solutions"],
+    "Blockchain & Web3": ["Smart Contracts", "NFT Marketplaces", "DeFi Protocols", "DApp Development"],
+    "IoT & Hardware Integration": ["IoT Platforms", "Hardware APIs", "Device Management", "Sensor Integration"],
+    "Business Process Automation": ["Workflow Automation", "Document Management", "Process Optimization", "Integration Services"]
+  };
+  
+  return features[categoryName as keyof typeof features] || [];
+};
 
 export function ServicesOverview() {
-  const featuredServices = ENHANCED_SERVICES.slice(0, 6);
-  const topCategories = SERVICE_CATEGORIES.slice(0, 8);
-
   return (
-    <section className="py-20 bg-zion-slate-light">
+    <section className="py-20 bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-blue-light">
       <div className="container mx-auto px-4">
-        {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-zion-blue mb-6">
-            Comprehensive Technology Solutions
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            Comprehensive IT & AI Services
           </h2>
-          <p className="text-xl text-zion-slate-dark max-w-4xl mx-auto mb-8">
-            From AI automation to cybersecurity, we deliver enterprise-grade services that transform businesses 
-            and drive innovation across all industries.
+          <p className="text-xl text-zion-slate-light max-w-3xl mx-auto">
+            From cutting-edge AI solutions to enterprise-grade infrastructure, we deliver professional 
+            services that drive business growth and digital transformation.
           </p>
-          <div className="flex flex-wrap justify-center gap-4 mb-8">
-            <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm">
-              <Star className="w-5 h-5 text-yellow-400 fill-current" />
-              <span className="font-semibold text-zion-blue">4.9/5 Rating</span>
-            </div>
-            <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm">
-              <Users className="w-5 h-5 text-zion-cyan" />
-              <span className="font-semibold text-zion-blue">500+ Clients</span>
-            </div>
-            <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm">
-              <Award className="w-5 h-5 text-green-500" />
-              <span className="font-semibold text-zion-blue">ISO 27001 Certified</span>
-            </div>
-          </div>
         </div>
 
         {/* Service Categories Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          {topCategories.map((category) => (
-            <div key={category.id} className="bg-white rounded-lg p-6 border border-zion-slate-light hover:shadow-lg transition-all duration-300 hover:border-zion-cyan/50">
-              <div className="text-4xl mb-4">{category.icon}</div>
-              <h3 className="text-xl font-bold text-zion-blue mb-3">{category.name}</h3>
-              <p className="text-zion-slate-dark text-sm mb-4">{category.description}</p>
-              <div className="text-zion-cyan font-semibold text-sm mb-4">
-                {category.services.length} services available
-              </div>
-              <Button asChild variant="outline" className="w-full border-zion-cyan text-zion-cyan hover:bg-zion-cyan hover:text-white">
-                <Link to="/enhanced-services">Explore Services</Link>
-              </Button>
-            </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          {SERVICE_CATEGORIES.map((category) => (
+            <Card key={category.name} className="bg-white/10 border-zion-blue-light text-white hover:bg-white/20 transition-all duration-300 hover:scale-105">
+              <CardHeader className="text-center">
+                <div className="mb-4">{getCategoryIcon(category.icon)}</div>
+                <CardTitle className="text-lg">{category.name}</CardTitle>
+                <CardDescription className="text-zion-slate-light">
+                  {category.description}
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="text-center">
+                <Badge variant="secondary" className="bg-zion-purple/20 text-zion-cyan mb-3">
+                  {category.count} Services
+                </Badge>
+                <div className="text-sm text-zion-slate-light">
+                  Starting from $3,200
+                </div>
+              </CardContent>
+            </Card>
           ))}
         </div>
 
-        {/* Featured Services */}
-        <div className="mb-16">
-          <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-zion-blue mb-4">Featured Services</h3>
-            <p className="text-zion-slate-dark text-lg max-w-3xl mx-auto">
-              Our most popular and highly-rated services that deliver exceptional value to businesses worldwide.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {featuredServices.map((service) => (
-              <div key={service.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                <div className="h-48 overflow-hidden">
-                  <img 
-                    src={service.images[0]} 
-                    alt={service.title}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <div className="p-6">
-                  <div className="flex items-center gap-2 mb-3">
-                    <span className="px-2 py-1 bg-zion-cyan/20 text-zion-cyan text-xs font-semibold rounded-full">
-                      {service.category}
-                    </span>
-                    <span className="px-2 py-1 bg-yellow-100 text-yellow-800 text-xs font-semibold rounded-full">
-                      Featured
-                    </span>
-                  </div>
-                  <h4 className="text-xl font-bold text-zion-blue mb-3">{service.title}</h4>
-                  <p className="text-zion-slate-dark text-sm mb-4 line-clamp-3">{service.description}</p>
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center gap-1">
-                      <Star className="w-4 h-4 text-yellow-400 fill-current" />
-                      <span className="text-sm font-semibold">{service.rating}</span>
-                      <span className="text-sm text-zion-slate-dark">({service.reviewCount})</span>
-                    </div>
-                    <div className="text-2xl font-bold text-zion-cyan">
-                      {service.currency}{service.price?.toLocaleString()}
-                    </div>
-                  </div>
-                  <Button asChild className="w-full bg-zion-cyan hover:bg-zion-cyan-dark text-zion-blue font-bold">
-                    <Link to="/enhanced-services">Learn More</Link>
-                  </Button>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Why Choose Us */}
-        <div className="mb-16">
-          <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-zion-blue mb-4">Why Choose Zion Tech Group?</h3>
-            <p className="text-zion-slate-dark text-lg max-w-3xl mx-auto">
-              We deliver exceptional value through our expertise, innovation, and commitment to your success.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-zion-cyan/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Shield className="w-8 h-8 text-zion-cyan" />
-              </div>
-              <h4 className="text-xl font-bold text-zion-blue mb-2">Enterprise Security</h4>
-              <p className="text-zion-slate-dark text-sm">ISO 27001 certified with enterprise-grade security protocols</p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-zion-cyan/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Zap className="w-8 h-8 text-zion-cyan" />
-              </div>
-              <h4 className="text-xl font-bold text-zion-blue mb-2">Rapid Deployment</h4>
-              <p className="text-zion-slate-dark text-sm">Quick implementation with proven methodologies</p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-zion-cyan/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <TrendingUp className="w-8 h-8 text-zion-cyan" />
-              </div>
-              <h4 className="text-xl font-bold text-zion-blue mb-2">Proven Results</h4>
-              <p className="text-zion-slate-dark text-sm">Track record of successful transformations and ROI</p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-zion-cyan/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Users className="w-8 h-8 text-zion-cyan" />
-              </div>
-              <h4 className="text-xl font-bold text-zion-blue mb-2">Expert Team</h4>
-              <p className="text-zion-slate-dark text-sm">Certified professionals with deep industry expertise</p>
-            </div>
-          </div>
-        </div>
-
-        {/* Contact Information */}
-        <div className="bg-white rounded-lg shadow-lg p-8 mb-12">
+        {/* Featured Services Preview */}
+        <div className="bg-white/10 rounded-2xl p-8 mb-12">
           <div className="text-center mb-8">
-            <h3 className="text-3xl font-bold text-zion-blue mb-4">Ready to Get Started?</h3>
-            <p className="text-zion-slate-dark text-lg max-w-3xl mx-auto">
-              Contact us today to discuss your technology needs and discover how we can help transform your business.
+            <h3 className="text-2xl font-bold text-white mb-4">Featured Services</h3>
+            <p className="text-zion-slate-light">
+              Explore our most popular and innovative solutions
             </p>
           </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* AI Chatbot Service */}
+            <div className="bg-white rounded-lg p-6 hover:shadow-lg transition-all duration-300">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 bg-zion-purple rounded-full flex items-center justify-center">
+                  <span className="text-white text-lg">🤖</span>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-zion-blue-dark">AI Chatbot Development</h4>
+                  <div className="flex items-center gap-1">
+                    <Star className="h-4 w-4 text-amber-500 fill-current" />
+                    <span className="text-sm text-gray-600">4.9 (127 reviews)</span>
+                  </div>
+                </div>
+              </div>
+              <p className="text-gray-600 text-sm mb-4">
+                Intelligent chatbots with NLP capabilities for customer service automation
+              </p>
+              <div className="flex items-center justify-between">
+                <div className="text-2xl font-bold text-zion-purple">$3,500</div>
+                <Badge className="bg-green-100 text-green-800">Popular</Badge>
+              </div>
+            </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-zion-cyan/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Phone className="w-8 h-8 text-zion-cyan" />
+            {/* Cybersecurity Service */}
+            <div className="bg-white rounded-lg p-6 hover:shadow-lg transition-all duration-300">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 bg-zion-purple rounded-full flex items-center justify-center">
+                  <Shield className="h-5 w-5 text-white" />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-zion-blue-dark">Penetration Testing</h4>
+                  <div className="flex items-center gap-1">
+                    <Star className="h-4 w-4 text-amber-500 fill-current" />
+                    <span className="text-sm text-gray-600">4.9 (267 reviews)</span>
+                  </div>
+                </div>
               </div>
-              <h4 className="text-xl font-bold text-zion-blue mb-2">Call Us</h4>
-              <a href="tel:+13024640950" className="text-zion-cyan hover:text-zion-cyan-dark font-semibold text-lg">
-                +1 (302) 464-0950
-              </a>
+              <p className="text-gray-600 text-sm mb-4">
+                Comprehensive security assessment and vulnerability testing
+              </p>
+              <div className="flex items-center justify-between">
+                <div className="text-2xl font-bold text-zion-purple">$6,800</div>
+                <Badge className="bg-red-100 text-red-800">High Demand</Badge>
+              </div>
             </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-zion-cyan/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Mail className="w-8 h-8 text-zion-cyan" />
+
+            {/* Cloud Migration Service */}
+            <div className="bg-white rounded-lg p-6 hover:shadow-lg transition-all duration-300">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 bg-zion-purple rounded-full flex items-center justify-center">
+                  <Database className="h-5 w-5 text-white" />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-zion-blue-dark">Multi-Cloud Migration</h4>
+                  <div className="flex items-center gap-1">
+                    <Star className="h-4 w-4 text-amber-500 fill-current" />
+                    <span className="text-sm text-gray-600">4.8 (203 reviews)</span>
+                  </div>
+                </div>
               </div>
-              <h4 className="text-xl font-bold text-zion-blue mb-2">Email Us</h4>
-              <a href="mailto:kleber@ziontechgroup.com" className="text-zion-cyan hover:text-zion-cyan-dark font-semibold text-lg">
-                kleber@ziontechgroup.com
-              </a>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-zion-cyan/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <MapPin className="w-8 h-8 text-zion-cyan" />
+              <p className="text-gray-600 text-sm mb-4">
+                Strategic migration across multiple cloud providers for optimal performance
+              </p>
+              <div className="flex items-center justify-between">
+                <div className="text-2xl font-bold text-zion-purple">$8,500</div>
+                <Badge className="bg-blue-100 text-blue-800">Enterprise</Badge>
               </div>
-              <h4 className="text-xl font-bold text-zion-blue mb-2">Visit Us</h4>
-              <p className="text-zion-slate-dark font-semibold">Global - Remote & On-site Services</p>
             </div>
           </div>
+        </div>
 
-          <div className="text-center">
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="bg-zion-cyan hover:bg-zion-cyan-dark text-zion-blue font-bold">
-                <Link to="/request-quote">Get Free Quote</Link>
-              </Button>
-              <Button asChild size="lg" variant="outline" className="border-zion-cyan text-zion-cyan hover:bg-zion-cyan hover:text-white">
-                <Link to="/enhanced-services">View All Services</Link>
-              </Button>
+        {/* Service Benefits */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          <div className="text-center text-white">
+            <div className="w-16 h-16 bg-zion-purple rounded-full flex items-center justify-center mx-auto mb-4">
+              <Zap className="h-8 w-8 text-white" />
             </div>
+            <h4 className="text-xl font-semibold mb-2">Fast Delivery</h4>
+            <p className="text-zion-slate-light">Quick turnaround times without compromising quality</p>
+          </div>
+          
+          <div className="text-center text-white">
+            <div className="w-16 h-16 bg-zion-purple rounded-full flex items-center justify-center mx-auto mb-4">
+              <Shield className="h-8 w-8 text-white" />
+            </div>
+            <h4 className="text-xl font-semibold mb-2">Enterprise Security</h4>
+            <p className="text-zion-slate-light">Bank-level security and compliance standards</p>
+          </div>
+          
+          <div className="text-center text-white">
+            <div className="w-16 h-16 bg-zion-purple rounded-full flex items-center justify-center mx-auto mb-4">
+              <BarChart3 className="h-8 w-8 text-white" />
+            </div>
+            <h4 className="text-xl font-semibold mb-2">Proven Results</h4>
+            <p className="text-zion-slate-light">Track record of successful implementations</p>
+          </div>
+          
+          <div className="text-center text-white">
+            <div className="w-16 h-16 bg-zion-purple rounded-full flex items-center justify-center mx-auto mb-4">
+              <Settings className="h-8 w-8 text-white" />
+            </div>
+            <h4 className="text-xl font-semibold mb-2">24/7 Support</h4>
+            <p className="text-zion-slate-light">Round-the-clock technical support and maintenance</p>
           </div>
         </div>
 
         {/* CTA Section */}
         <div className="text-center">
-          <h3 className="text-3xl font-bold text-zion-blue mb-6">
-            Transform Your Business Today
-          </h3>
-          <p className="text-zion-slate-dark text-lg mb-8 max-w-3xl mx-auto">
-            Join hundreds of businesses that have already transformed their operations with our technology solutions.
-          </p>
-          <Button asChild size="lg" className="bg-zion-blue hover:bg-zion-blue-dark text-white font-bold group">
-            <Link to="/enhanced-services">
-              Explore Our Services
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </Button>
+          <div className="bg-white/10 rounded-2xl p-8 border border-zion-blue-light">
+            <h3 className="text-2xl font-bold text-white mb-4">
+              Ready to Transform Your Business?
+            </h3>
+            <p className="text-zion-slate-light mb-6 max-w-2xl mx-auto">
+              Join hundreds of businesses that trust Zion Tech Group for their digital transformation needs. 
+              Get started with a free consultation and discover how our services can drive your success.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link to="/expanded-services">
+                <Button size="lg" className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white">
+                  Explore All Services
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
+              <Link to="/request-quote">
+                <Button size="lg" variant="outline" className="border-zion-cyan text-zion-cyan hover:bg-zion-cyan/10">
+                  Get Custom Quote
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* Contact Information */}
+        <div className="mt-12 text-center">
+          <div className="inline-flex items-center gap-6 text-zion-slate-light">
+            <div className="flex items-center gap-2">
+              <span className="text-zion-cyan">📞</span>
+              <span>+1 302 464 0950</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-zion-cyan">✉️</span>
+              <span>kleber@ziontechgroup.com</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-zion-cyan">🌐</span>
+              <span>ziontechgroup.com</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
