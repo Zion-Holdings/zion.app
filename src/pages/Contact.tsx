@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { SEO } from '@/components/SEO';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -24,8 +25,6 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
     try {
       await new Promise(resolve => setTimeout(resolve, 2000));
       setSubmitStatus('success');
@@ -81,6 +80,12 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-purple-dark pt-20">
+      <SEO
+        title="Contact Us"
+        description="Get in touch with Zion Tech Group. We're here to help you transform your business with cutting-edge technology solutions."
+        keywords="contact Zion Tech Group, tech support, IT consulting, AI services contact"
+        type="website"
+      />
       <div className="container mx-auto px-4 py-16">
         <motion.div
           variants={containerVariants}
@@ -140,7 +145,7 @@ export default function Contact() {
                       />
                     </div>
                   </div>
-                  
+
                   <div>
                     <label htmlFor="subject" className="block text-sm font-medium text-zion-slate-light mb-2">
                       Subject *
@@ -156,7 +161,7 @@ export default function Contact() {
                       placeholder="What can we help you with?"
                     />
                   </div>
-                  
+
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium text-zion-slate-light mb-2">
                       Message *
@@ -172,7 +177,7 @@ export default function Contact() {
                       placeholder="Tell us more about your project or inquiry..."
                     />
                   </div>
-                  
+
                   <Button
                     type="submit"
                     disabled={isSubmitting}
@@ -190,14 +195,14 @@ export default function Contact() {
                       </>
                     )}
                   </Button>
-                  
+
                   {submitStatus === 'success' && (
                     <div className="flex items-center text-green-400 bg-green-400/10 p-3 rounded-lg">
                       <CheckCircle className="w-5 h-5 mr-2" />
                       Message sent successfully! We'll get back to you soon.
                     </div>
                   )}
-                  
+
                   {submitStatus === 'error' && (
                     <div className="flex items-center text-red-400 bg-red-400/10 p-3 rounded-lg">
                       <AlertCircle className="w-5 h-5 mr-2" />
@@ -273,7 +278,7 @@ export default function Contact() {
             <h2 className="text-3xl font-bold text-white mb-4">Frequently Asked Questions</h2>
             <p className="text-zion-slate-light">Quick answers to common questions</p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <Card className="bg-zion-blue-light/10 border-zion-blue-light/20 backdrop-blur-sm">
               <CardHeader>
@@ -281,43 +286,43 @@ export default function Contact() {
               </CardHeader>
               <CardContent>
                 <p className="text-zion-slate-light">
-                  We offer comprehensive IT services including AI development, cloud solutions, cybersecurity, 
+                  We offer comprehensive IT services including AI development, cloud solutions, cybersecurity,
                   digital transformation, and specialized talent placement for tech projects.
                 </p>
               </CardContent>
             </Card>
-            
+
             <Card className="bg-zion-blue-light/10 border-zion-blue-light/20 backdrop-blur-sm">
               <CardHeader>
                 <CardTitle className="text-lg font-semibold text-white">How quickly can you respond?</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-zion-slate-light">
-                  We typically respond to inquiries within 2 hours during business hours. 
+                  We typically respond to inquiries within 2 hours during business hours.
                   For urgent matters, we offer 24/7 emergency support for existing clients.
                 </p>
               </CardContent>
             </Card>
-            
+
             <Card className="bg-zion-blue-light/10 border-zion-blue-light/20 backdrop-blur-sm">
               <CardHeader>
                 <CardTitle className="text-lg font-semibold text-white">Do you work internationally?</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-zion-slate-light">
-                  Yes! We have a global network of experts and serve clients in over 150 countries. 
+                  Yes! We have a global network of experts and serve clients in over 150 countries.
                   Our team can work remotely or on-site depending on your needs.
                 </p>
               </CardContent>
             </Card>
-            
+
             <Card className="bg-zion-blue-light/10 border-zion-blue-light/20 backdrop-blur-sm">
               <CardHeader>
                 <CardTitle className="text-lg font-semibold text-white">What makes you different?</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-zion-slate-light">
-                  We combine cutting-edge AI technology with human expertise, offering a unique marketplace 
+                  We combine cutting-edge AI technology with human expertise, offering a unique marketplace
                   that connects businesses with verified tech professionals and innovative solutions.
                 </p>
               </CardContent>

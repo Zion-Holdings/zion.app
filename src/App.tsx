@@ -1,6 +1,8 @@
 import React, { Suspense } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 import { LoadingSpinner } from "./components/ui/loading-spinner";
+import { ErrorBoundary } from "./components/ui/error-boundary";
 import { MainNavigation } from "./layout/MainNavigation";
 import { Footer } from "./components/Footer";
 import Home from "./pages/Home";
@@ -25,21 +27,25 @@ const EnhancedLoadingFallback = () => (
 
 function App() {
   return (
-    <Router>
-      <div className="min-h-screen bg-zion-blue-dark">
-        <MainNavigation />
-        <main className="pt-16">
-          <Suspense fallback={<EnhancedLoadingFallback />}>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/contact" element={<Contact />} />
-              {/* Add more routes as components become available */}
-            </Routes>
-          </Suspense>
-        </main>
-        <Footer />
-      </div>
-    </Router>
+    <HelmetProvider>
+      <ErrorBoundary>
+        <Router>
+          <div className="min-h-screen bg-zion-blue-dark">
+            <MainNavigation />
+            <main className="pt-16">
+              <Suspense fallback={<EnhancedLoadingFallback />}>
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/contact" element={<Contact />} />
+                  {/* Add more routes as components become available */}
+                </Routes>
+              </Suspense>
+            </main>
+            <Footer />
+          </div>
+        </Router>
+      </ErrorBoundary>
+    </HelmetProvider>
   );
 }
 
