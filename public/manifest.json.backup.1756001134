@@ -1,0 +1,123 @@
+{
+<<<<<<< HEAD
+  "name": "Zion OS - Sovereign AI-Powered Digital Economies",
+  "short_name": "Zion OS",
+  "description": "Launch sovereign AI-powered digital economies with one click. Unified deployment protocol for Zion ecosystems.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#3b82f6",
+=======
+  "name": "Zion Tech Group",
+  "short_name": "Zion Tech",
+  "description": "Leading-edge technology solutions and autonomous innovation platform",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-a825
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en",
+  "categories": ["business", "productivity", "technology"],
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Launch Economy",
+      "short_name": "Launch",
+      "description": "Quick access to launch your digital economy",
+      "url": "/multiverse/launch",
+      "icons": [
+        {
+          "src": "/icon-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Services",
+      "short_name": "Services",
+<<<<<<< HEAD
+      "description": "View our services and solutions",
+=======
+      "description": "View our technology services",
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-a825
+      "url": "/services",
+      "icons": [
+        {
+          "src": "/icon-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Contact",
+      "short_name": "Contact",
+      "description": "Get in touch with us",
+      "url": "/contact",
+      "icons": [
+        {
+          "src": "/icon-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshot-wide.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+<<<<<<< HEAD
+      "form_factor": "wide",
+      "label": "Zion OS Dashboard"
+=======
+      "form_factor": "wide"
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-a825
+    },
+    {
+      "src": "/screenshot-narrow.png",
+      "sizes": "750x1334",
+      "type": "image/png",
+<<<<<<< HEAD
+      "form_factor": "narrow",
+      "label": "Zion OS Mobile View"
+    }
+  ],
+  "related_applications": [
+    {
+      "platform": "webapp",
+      "url": "https://ziontechgroup.com"
+    }
+  ],
+  "prefer_related_applications": false,
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  }
+=======
+      "form_factor": "narrow"
+    }
+  ]
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-a825
+}

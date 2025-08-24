@@ -1,1 +1,2 @@
-"use strict";(()=>{var e={};e.id=92888,e.ids=[92888],e.modules={20997:e=>{e.exports=require("react/jsx-runtime")}};var r=require("../webpack-runtime.js");r.C(e);var __webpack_exec__=e=>r(r.s=e),_=r.X(0,[38787,91637],()=>__webpack_exec__(91637));module.exports=_})();
+"use strict";(()=>{var e={};e.id=888,e.ids=[888],e.modules={8097:e=>{e.exports=require("@sentry/nextjs")},6689:e=>{e.exports=require("react")},997:e=>{e.exports=require("react/jsx-runtime")}};var r=require("../webpack-runtime.js");r.C(e);var __webpack_exec__=e=>r(r.s=e),s=r.X(0,[523,819],()=>__webpack_exec__(3819));module.exports=s})();
+//# sourceMappingURL=_app.js.map
