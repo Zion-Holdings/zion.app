@@ -151,7 +151,6 @@ const serviceCategories = [
     link: "/expanded-services?category=blockchain-web3"
   }
 ];
-];
 
 interface CategoriesSectionProps {
   showTitle?: boolean;
