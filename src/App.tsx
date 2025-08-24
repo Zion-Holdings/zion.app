@@ -20,6 +20,8 @@ import {
   CommunityRoutes,
   DeveloperRoutes
 } from './routes';
+
+// Lazy load all pages
 const Home = React.lazy(() => import('./pages/Home'));
 const AIMatcherPage = React.lazy(() => import('./pages/AIMatcher'));
 const TalentDirectory = React.lazy(() => import('./pages/TalentDirectory'));
@@ -41,6 +43,19 @@ const OpenAppRedirect = React.lazy(() => import('./pages/OpenAppRedirect'));
 const ContactPage = React.lazy(() => import('./pages/Contact'));
 const ZionHireAI = React.lazy(() => import('./pages/ZionHireAI'));
 const RequestQuotePage = React.lazy(() => import('./pages/RequestQuote'));
+const AboutPage = React.lazy(() => import('./pages/About'));
+
+// New service pages
+const QuantumEdgeComputingPlatform = React.lazy(() => import('./pages/QuantumEdgeComputingPlatform'));
+const AIAutonomousLegalResearchAssistant = React.lazy(() => import('./pages/AIAutonomousLegalResearchAssistant'));
+const ZeroTrustNetworkArchitecture = React.lazy(() => import('./pages/ZeroTrustNetworkArchitecture'));
+
+// Additional missing pages
+const CareersPage = React.lazy(() => import('./pages/Careers'));
+const PrivacyPage = React.lazy(() => import('./pages/Privacy'));
+const TermsPage = React.lazy(() => import('./pages/Terms'));
+const SupportPage = React.lazy(() => import('./pages/Support'));
+const GetStartedPage = React.lazy(() => import('./pages/GetStarted'));
 
 const baseRoutes = [
   { path: '/', element: <Home /> },
@@ -65,6 +80,76 @@ const baseRoutes = [
   { path: '/request-quote', element: <RequestQuotePage /> },
   { path: '/blog', element: <Blog /> },
   { path: '/blog/:slug', element: <BlogPost /> },
+  
+  // New pages
+  { path: '/about', element: <AboutPage /> },
+  { path: '/careers', element: <CareersPage /> },
+  { path: '/privacy', element: <PrivacyPage /> },
+  { path: '/terms', element: <TermsPage /> },
+  { path: '/support', element: <SupportPage /> },
+  { path: '/get-started', element: <GetStartedPage /> },
+  
+  // Service detail pages
+  { path: '/quantum-edge-computing-platform', element: <QuantumEdgeComputingPlatform /> },
+  { path: '/ai-autonomous-legal-research-assistant', element: <AIAutonomousLegalResearchAssistant /> },
+  { path: '/zero-trust-network-architecture', element: <ZeroTrustNetworkArchitecture /> },
+  
+  // Additional service pages (placeholder routes)
+  { path: '/ai-autonomous-financial-risk-manager', element: <ServicesPage /> },
+  { path: '/ai-autonomous-healthcare-diagnostics-pro', element: <ServicesPage /> },
+  { path: '/ai-autonomous-supply-chain-optimizer', element: <ServicesPage /> },
+  { path: '/ai-autonomous-cybersecurity-sentinel', element: <ServicesPage /> },
+  { path: '/neuromorphic-computing-infrastructure', element: <ServicesPage /> },
+  { path: '/holographic-data-center-platform', element: <ServicesPage /> },
+  { path: '/bio-computing-infrastructure', element: <ServicesPage /> },
+  { path: '/quantum-internet-backbone', element: <ServicesPage /> },
+  { path: '/cloud-migration', element: <ServicesPage /> },
+  { path: '/devops-automation', element: <ServicesPage /> },
+  { path: '/edge-computing', element: <ServicesPage /> },
+  { path: '/data-center-optimization', element: <ServicesPage /> },
+  { path: '/5g-private-network-solutions', element: <ServicesPage /> },
+  { path: '/ai-autonomous-content-factory-pro', element: <ServicesPage /> },
+  { path: '/quantum-crm-intelligence-suite', element: <ServicesPage /> },
+  { path: '/ai-autonomous-hr-platform', element: <ServicesPage /> },
+  { path: '/quantum-financial-intelligence-platform', element: <ServicesPage /> },
+  { path: '/ai-autonomous-education-platform', element: <ServicesPage /> },
+  { path: '/threat-intelligence-platform', element: <ServicesPage /> },
+  { path: '/compliance-automation', element: <ServicesPage /> },
+  { path: '/soc2-compliance-automation', element: <ServicesPage /> },
+  { path: '/vulnerability-assessment-penetration-testing', element: <ServicesPage /> },
+  { path: '/healthcare-ai-solutions', element: <ServicesPage /> },
+  { path: '/financial-solutions', element: <ServicesPage /> },
+  { path: '/manufacturing-ai-solutions', element: <ServicesPage /> },
+  { path: '/retail-technology-solutions', element: <ServicesPage /> },
+  { path: '/energy-utilities-solutions', element: <ServicesPage /> },
+  { path: '/ai-services', element: <ServicesPage /> },
+  { path: '/quantum-services', element: <ServicesPage /> },
+  { path: '/it-services', element: <ServicesPage /> },
+  { path: '/cybersecurity', element: <ServicesPage /> },
+  { path: '/data-analytics', element: <ServicesPage /> },
+  { path: '/space-tech', element: <ServicesPage /> },
+  { path: '/solutions/enterprise', element: <ServicesPage /> },
+  { path: '/solutions/healthcare', element: <ServicesPage /> },
+  { path: '/solutions/financial', element: <ServicesPage /> },
+  { path: '/solutions/manufacturing', element: <ServicesPage /> },
+  { path: '/government-technology-solutions', element: <ServicesPage /> },
+  { path: '/mission', element: <AboutPage /> },
+  { path: '/team', element: <AboutPage /> },
+  { path: '/leadership', element: <AboutPage /> },
+  { path: '/culture', element: <AboutPage /> },
+  { path: '/values', element: <AboutPage /> },
+  { path: '/press', element: <Blog /> },
+  { path: '/news', element: <Blog /> },
+  { path: '/case-studies', element: <Blog /> },
+  { path: '/webinars', element: <Blog /> },
+  { path: '/white-papers', element: <Blog /> },
+  { path: '/docs', element: <Blog /> },
+  { path: '/training', element: <Blog /> },
+  { path: '/events-webinars', element: <Blog /> },
+  { path: '/developer-resources', element: <Blog /> },
+  { path: '/status', element: <SupportPage /> },
+  { path: '/cookies', element: <PrivacyPage /> },
+  { path: '/accessibility', element: <SupportPage /> },
 ];
 
 const App = () => {
