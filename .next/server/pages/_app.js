@@ -1,2 +1,32 @@
-"use strict";(()=>{var e={};e.id=888,e.ids=[888],e.modules={8097:e=>{e.exports=require("@sentry/nextjs")},6689:e=>{e.exports=require("react")},997:e=>{e.exports=require("react/jsx-runtime")}};var r=require("../webpack-runtime.js");r.C(e);var __webpack_exec__=e=>r(r.s=e),s=r.X(0,[523,819],()=>__webpack_exec__(3819));module.exports=s})();
-//# sourceMappingURL=_app.js.map
+"use strict";
+(() => {
+var exports = {};
+exports.id = 890636;
+exports.ids = [890636];
+exports.modules = {
+
+/***/ 608732:
+/***/ ((module) => {
+
+module.exports = require("react/jsx-runtime");
+
+/***/ }),
+
+/***/ 882015:
+/***/ ((module) => {
+
+module.exports = require("react");
+
+/***/ })
+
+};
+;
+
+// load runtime
+var __webpack_require__ = require("../webpack-runtime.js");
+__webpack_require__.C(exports);
+var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
+var __webpack_exports__ = __webpack_require__.X(0, [618096,472076], () => (__webpack_exec__(805164)));
+module.exports = __webpack_exports__;
+
+})();

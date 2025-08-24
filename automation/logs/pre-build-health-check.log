@@ -698,3 +698,18 @@
 [2025-08-23T22:23:30.351Z]    Failed: 0
 [2025-08-23T22:23:30.351Z]    Build status: ✅ READY
 [2025-08-23T22:23:30.351Z] ✅ All pre-build health checks passed
+[2025-08-23T23:38:32.922Z] 🔍 Starting pre-build health checks...
+[2025-08-23T23:38:32.922Z]   Running: Page Structure Validation
+[2025-08-23T23:38:33.166Z]     ❌ Page Structure Validation: FAIL - 404 critical issues found in pages
+[2025-08-23T23:38:33.166Z] 🚨 Critical check failed: Page Structure Validation
+[2025-08-23T23:38:33.166Z] ❌ Pre-build health check failed: 404 critical issues found in pages
+[2025-08-23T23:38:49.485Z] 🔍 Starting pre-build health checks...
+[2025-08-23T23:38:49.486Z]   Running: Page Structure Validation
+[2025-08-23T23:38:49.682Z]     ❌ Page Structure Validation: FAIL - 404 critical issues found in pages
+[2025-08-23T23:38:49.682Z] 🚨 Critical check failed: Page Structure Validation
+[2025-08-23T23:38:49.682Z] ❌ Pre-build health check failed: 404 critical issues found in pages
+[2025-08-23T23:44:31.737Z] 🔍 Starting pre-build health checks...
+[2025-08-23T23:44:31.737Z]   Running: Page Structure Validation
+[2025-08-23T23:44:31.943Z]     ❌ Page Structure Validation: FAIL - 390 critical issues found in pages
+[2025-08-23T23:44:31.943Z] 🚨 Critical check failed: Page Structure Validation
+[2025-08-23T23:44:31.943Z] ❌ Pre-build health check failed: 390 critical issues found in pages

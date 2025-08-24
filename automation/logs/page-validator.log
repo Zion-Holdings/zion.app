@@ -61,3 +61,23 @@
 [2025-08-23T22:23:30.217Z]    Warnings: 18
 [2025-08-23T22:23:30.217Z]    Build status: ✅ READY
 [2025-08-23T22:23:30.217Z] ✅ All pages are properly structured for building
+[2025-08-23T23:39:59.777Z] 🔍 Validating 10420 page files...
+[2025-08-23T23:39:59.961Z] 📊 Report saved to /workspace/public/reports/page-validation/latest.json and /workspace/public/reports/page-validation/index.html
+[2025-08-23T23:39:59.961Z] 📊 Validation complete:
+[2025-08-23T23:39:59.961Z]    Total files: 336
+[2025-08-23T23:39:59.961Z]    Files with issues: 336
+[2025-08-23T23:39:59.961Z]    Critical issues: 404
+[2025-08-23T23:39:59.961Z]    Warnings: 133
+[2025-08-23T23:39:59.961Z]    Build status: ❌ WILL FAIL
+[2025-08-23T23:39:59.961Z] 🚨 Build will fail due to critical issues!
+[2025-08-23T23:39:59.962Z]    Check the report for details and fix the issues.
+[2025-08-23T23:44:06.424Z] 🔍 Validating 10420 page files...
+[2025-08-23T23:44:06.607Z] 📊 Report saved to /workspace/public/reports/page-validation/latest.json and /workspace/public/reports/page-validation/index.html
+[2025-08-23T23:44:06.607Z] 📊 Validation complete:
+[2025-08-23T23:44:06.607Z]    Total files: 324
+[2025-08-23T23:44:06.607Z]    Files with issues: 324
+[2025-08-23T23:44:06.607Z]    Critical issues: 390
+[2025-08-23T23:44:06.607Z]    Warnings: 132
+[2025-08-23T23:44:06.607Z]    Build status: ❌ WILL FAIL
+[2025-08-23T23:44:06.607Z] 🚨 Build will fail due to critical issues!
+[2025-08-23T23:44:06.607Z]    Check the report for details and fix the issues.

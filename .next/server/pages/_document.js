@@ -1,2 +1,16 @@
-"use strict";(()=>{var e={};e.id=660,e.ids=[660,888],e.modules={7727:(e,r,s)=>{var t=s(8097),_="undefined"!=typeof global?global:"undefined"!=typeof self?self:{};_.__sentryRewritesTunnelPath__=void 0,_.SENTRY_RELEASE={id:"72c8168bd6c116314ac9f7864198bf6cd3796875"},_.__sentryBasePath=void 0,_.__rewriteFramesDistDir__=".next",t.init({dsn:process.env.SENTRY_DSN,tracesSampleRate:Number(process.env.SENTRY_TRACES_SAMPLE_RATE||.1),environment:process.env.SENTRY_ENV||"production",release:process.env.SENTRY_RELEASE||process.env.VERCEL_GIT_COMMIT_SHA||process.env.COMMIT_REF})},8097:e=>{e.exports=require("@sentry/nextjs")},2785:e=>{e.exports=require("next/dist/compiled/next-server/pages.runtime.prod.js")},1423:e=>{e.exports=require("path")},6689:e=>{e.exports=require("react")},997:e=>{e.exports=require("react/jsx-runtime")}};var r=require("../webpack-runtime.js");r.C(e);var __webpack_exec__=e=>r(r.s=e),s=r.X(0,[859,810],()=>__webpack_exec__(6810));module.exports=s})();
-//# sourceMappingURL=_document.js.map
+"use strict";
+(() => {
+var exports = {};
+exports.id = 733220;
+exports.ids = [733220];
+exports.modules = {};
+;
+
+// load runtime
+var __webpack_require__ = require("../webpack-runtime.js");
+__webpack_require__.C(exports);
+var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
+var __webpack_exports__ = __webpack_require__.X(0, [472076], () => (__webpack_exec__(833932)));
+module.exports = __webpack_exports__;
+
+})();

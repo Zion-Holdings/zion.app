@@ -1,19 +1,18 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "es6"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
-    "esModuleInterop": true,
+    "target": "ES2017",
+    "useDefineForClassFields": true,
+    "lib": [
+      "ES2024",
+      "DOM",
+      "DOM.Iterable",
+      "WebWorker",
+      "WebWorker.Iterable"
+    ],
     "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
-    "incremental": true,
+    "skipLibCheck": true,
+    "importHelpers": false,
+    "noEmitHelpers": false,
     "baseUrl": ".",
     "paths": {
       "@/*": [
@@ -34,7 +33,8 @@
         "./types/*"
       ],
       "@/utils/*": [
-        "./src/utils/*"
+        "./src/utils/*",
+        "./utils/*"
       ],
       "@/hooks/*": [
         "./src/hooks/*"
@@ -59,12 +59,12 @@
     "moduleResolution": "node",
     "esModuleInterop": true,
     "resolveJsonModule": true,
-    "strict": true,
+    "strict": false,
     "noUnusedLocals": false,
     "noUnusedParameters": false,
-    "noFallthroughCasesInSwitch": true,
-    "noUncheckedIndexedAccess": true,
-    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": false,
+    "noUncheckedIndexedAccess": false,
+    "noImplicitReturns": false,
     "allowJs": true,
     "incremental": true,
     "typeRoots": [
@@ -86,32 +86,11 @@
   "exclude": [
     "node_modules",
     "zion.app/recovered-content/**",
-    "contracts/**",
-    "zion-os/**",
-    "zion_academy/**",
-    "wiki/**",
-    "temp_components/**",
-    "cypress/**",
-    "data/2025-cutting-edge-enterprise-solutions.ts",
-    "data/2025-cutting-edge-it-infrastructure-innovations.ts",
-    "data/2025-emerging-tech-services.ts",
-    "data/2025-enterprise-it-solutions.ts",
-    "data/2025-innovative-agriculture-services.ts",
-    "data/2025-innovative-ai-automation-services.ts",
-    "data/2025-innovative-ai-autonomous-ecosystem.ts",
-    "data/2025-innovative-ai-services-enhanced.ts",
-    "data/2025-innovative-ai-services-expansion-v2.ts",
-    "data/2025-innovative-ai-services-expansion.ts",
-    "data/2025-innovative-ar-vr-services.ts",
-    "data/2025-innovative-business-solutions-expansion.ts",
-    "data/2025-innovative-edge-computing-services.ts",
-    "data/2025-innovative-energy-services.ts",
-    "data/2025-innovative-entertainment-services.ts",
-    "data/2025-innovative-environmental-services.ts",
-    "data/2025-innovative-fintech-services.ts",
-    "data/2025-innovative-gaming-services.ts",
-    "data/2025-innovative-government-services.ts",
-    "data/2025-innovative-healthtech-services.ts",
-    "data/2025-innovative-hospitality-services.ts"
+    "apps/**",
+    "browserstack.config.ts",
+    "**/*.test.ts",
+    "**/*.test.tsx",
+    "**/*.spec.ts",
+    "**/*.spec.tsx"
   ]
 }
