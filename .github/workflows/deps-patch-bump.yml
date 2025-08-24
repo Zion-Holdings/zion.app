@@ -1,0 +1,50 @@
+name: Dependencies Patch Bump
+
+on:
+  schedule:
+    - cron: '0 6 * * *' # daily at 06:00 UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  patch-bump:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Patch bump with npm-check-updates
+        run: npx --yes npm-check-updates@latest -u -t patch
+
+      - name: Install updated deps
+        run: npm install --no-audit --no-fund
+
+      - name: Configure Git
+        run: |
+          git config user.name "zion-deps-bot"
+          git config user.email "deps-bot@users.noreply.github.com"
+
+      - name: Commit changes if any
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git add package.json package-lock.json || true
+            git commit -m "chore(deps): daily patch-level updates [skip ci]"
+            git push origin HEAD:${GITHUB_REF#refs/heads/}
+          else
+            echo "No dependency updates"
+          fi

@@ -1,82 +1,91 @@
-name: Autonomous Cloud Automations
+name: Autonomous Cloud Automation
 
 on:
   schedule:
-    # Run every 2 hours to keep content and data fresh
-    - cron: "0 */2 * * *"
-  workflow_dispatch:
+    - cron: '*/30 * * * *' # every 30 minutes
+  workflow_dispatch: {}
+  push:
+    paths:
+      - 'automation/**'
+      - 'scripts/**'
+      - 'package.json'
+      - 'package-lock.json'
 
 permissions:
   contents: write
 
 concurrency:
-  group: autonomous-cloud-automations
-  cancel-in-progress: true
+  group: cloud-automation-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
   run-automations:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 25
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
+          persist-credentials: true
           fetch-depth: 0
 
-      - name: Setup Node.js
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '20.x'
+          node-version: '20'
           cache: 'npm'
 
       - name: Install dependencies
         run: npm ci --no-audit --no-fund
 
-      - name: Configure Git user
+      - name: Run sitemap refresh (fast)
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          npm run sitemap || true
 
-      - name: Run lint quick fix (non-blocking)
-        run: npm run linting:fix || true
-
-      - name: Generate sitemap (non-blocking)
-        run: npm run sitemap || true
-
-      - name: Link crawler and fixer (non-blocking)
-        run: npm run links:scan || true
-
-      - name: Promotional scans (non-blocking)
-        run: npm run promo:scan || true
-
-      - name: Design and responsiveness analyzers (non-blocking)
-        run: |
-          npm run design:analyze || true
-          npm run responsive:analyze || true
-          npm run variation:analyze || true
-
-      - name: Spec-dev and alignment scans (non-blocking)
+      - name: Run Spec-Dev scan
         run: |
           npm run spec-dev:scan || true
+
+      - name: Alignment scan
+        run: |
           npm run alignment:scan || true
+
+      - name: Responsive content analyze
+        run: |
+          npm run responsive:analyze || true
+
+      - name: UI evolution analyze
+        run: |
+          npm run ui-evolution:analyze || true
+
+      - name: Venture services analyze
+        run: |
+          npm run venture:analyze || true
+
+      - name: Links scan
+        run: |
+          npm run links:scan || true
+
+      - name: Promo scan
+        run: |
+          npm run promo:scan || true
+
+      - name: Health check / fix sync
+        run: |
+          npm run sync-health:run || true
+          npm run git:health:fix || true
+
+      - name: Configure Git
+        run: |
+          git config user.name "zion-autobot"
+          git config user.email "autobot@users.noreply.github.com"
 
       - name: Commit changes if any
         run: |
-          if ! git diff --quiet; then
-            echo "Changes detected. Committing..."
+          if [ -n "$(git status --porcelain)" ]; then
             git add -A
-            git commit -m "chore(automations): autonomous cloud updates [skip ci]"
+            git commit -m "chore(autobot): autonomous cloud automation updates [skip ci]"
+            git push origin HEAD:${GITHUB_REF#refs/heads/}
           else
-            echo "No changes to commit."
-          fi
-
-      - name: Push changes
-        if: success()
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          if [ -n "$(git log origin/${GITHUB_REF##*/}..HEAD)" ]; then
-            git push
-          else
-            echo "Nothing to push."
+            echo "No changes to commit"
           fi
