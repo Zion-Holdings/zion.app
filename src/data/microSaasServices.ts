@@ -28,6 +28,7 @@ export interface MicroSaasService {
   };
 }
 
+<<<<<<< HEAD
 export const MICRO_SAAS_SERVICES: MicroSaasService[] = [
   // AI Services
   {
@@ -747,4 +748,232 @@ export const getServicesByPriceRange = (minPrice: number, maxPrice: number) => {
     const monthlyPrice = service.price.monthly || service.price.oneTime || 0;
     return monthlyPrice >= minPrice && monthlyPrice <= maxPrice;
   });
+=======
+export const MICRO_SAAS_SERVICES: ProductListing[] = [
+  {
+    id: "ai-crm-001",
+    title: "AI-Powered CRM System",
+    description: "Intelligent customer relationship management with predictive analytics, automated lead scoring, and personalized customer insights. Features include smart email campaigns, sales forecasting, and customer behavior analysis.",
+    price: "$299",
+    category: "AI Business Solutions",
+    images: ["https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800"],
+    rating: 4.8,
+    reviewCount: 127,
+    aiScore: 95,
+    link: "https://ziontechgroup.com"
+  },
+  {
+    id: "supply-chain-002",
+    title: "Smart Supply Chain Optimizer",
+    description: "End-to-end supply chain management with AI-driven demand forecasting, inventory optimization, and real-time tracking. Includes supplier management, cost analysis, and risk assessment tools.",
+    price: "$199",
+    category: "AI Business Solutions",
+    images: ["https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800"],
+    rating: 4.6,
+    reviewCount: 89,
+    aiScore: 92,
+    link: "https://ziontechgroup.com"
+  },
+  {
+    id: "ai-marketing-003",
+    title: "AI Marketing Automation Suite",
+    description: "Comprehensive marketing automation platform with intelligent audience segmentation, personalized content generation, and performance optimization. Features A/B testing, ROI tracking, and multi-channel campaign management.",
+    price: "$399",
+    category: "AI Business Solutions",
+    images: ["https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800"],
+    rating: 4.9,
+    reviewCount: 156,
+    aiScore: 94,
+    link: "https://ziontechgroup.com"
+  },
+  {
+    id: "cloud-infra-004",
+    title: "Cloud Infrastructure Manager",
+    description: "Enterprise-grade cloud infrastructure management with automated scaling, cost optimization, and security monitoring. Includes multi-cloud support, backup solutions, and disaster recovery planning.",
+    price: "$149",
+    category: "IT Infrastructure",
+    images: ["https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800"],
+    rating: 4.7,
+    reviewCount: 203,
+    aiScore: 88,
+    link: "https://ziontechgroup.com"
+  },
+  {
+    id: "data-analytics-005",
+    title: "Advanced Data Analytics Platform",
+    description: "Powerful data analytics and business intelligence platform with real-time dashboards, predictive modeling, and automated reporting. Features data visualization, statistical analysis, and machine learning capabilities.",
+    price: "$249",
+    category: "Data Analytics",
+    images: ["https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800"],
+    rating: 4.8,
+    reviewCount: 178,
+    aiScore: 91,
+    link: "https://ziontechgroup.com"
+  },
+  {
+    id: "ai-dev-006",
+    title: "AI Development Framework",
+    description: "Complete AI development toolkit with pre-trained models, custom algorithm development, and deployment automation. Includes model training, testing frameworks, and production deployment tools.",
+    price: "$599",
+    category: "AI Development",
+    images: ["https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800"],
+    rating: 4.9,
+    reviewCount: 234,
+    aiScore: 96,
+    link: "https://ziontechgroup.com"
+  },
+  {
+    id: "fintech-007",
+    title: "FinTech Payment Gateway",
+    description: "Secure and scalable payment processing solution with fraud detection, multi-currency support, and compliance management. Features real-time transaction monitoring, automated reconciliation, and API integration.",
+    price: "$349",
+    category: "FinTech",
+    images: ["https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800"],
+    rating: 4.7,
+    reviewCount: 145,
+    aiScore: 89,
+    link: "https://ziontechgroup.com"
+  },
+  {
+    id: "healthtech-008",
+    title: "Healthcare Analytics Platform",
+    description: "Comprehensive healthcare data analytics platform with patient monitoring, predictive diagnostics, and treatment optimization. Includes HIPAA compliance, clinical decision support, and population health management.",
+    price: "$279",
+    category: "HealthTech",
+    images: ["https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800"],
+    rating: 4.8,
+    reviewCount: 167,
+    aiScore: 93,
+    link: "https://ziontechgroup.com"
+  },
+  {
+    id: "ecommerce-009",
+    title: "E-commerce Optimization Suite",
+    description: "AI-powered e-commerce optimization with personalized recommendations, dynamic pricing, and inventory management. Features customer behavior analysis, conversion optimization, and multi-platform integration.",
+    price: "$799",
+    category: "E-commerce",
+    images: ["https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800"],
+    rating: 4.9,
+    reviewCount: 198,
+    aiScore: 94,
+    link: "https://ziontechgroup.com"
+  },
+  {
+    id: "edtech-010",
+    title: "Educational Technology Platform",
+    description: "Comprehensive learning management system with adaptive learning paths, progress tracking, and content creation tools. Includes virtual classrooms, assessment engines, and student analytics.",
+    price: "$199",
+    category: "EdTech",
+    images: ["https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800"],
+    rating: 4.6,
+    reviewCount: 134,
+    aiScore: 87,
+    link: "https://ziontechgroup.com"
+  },
+  {
+    id: "cybersecurity-011",
+    title: "AI Cybersecurity Suite",
+    description: "Advanced cybersecurity platform with threat detection, vulnerability assessment, and automated incident response. Features behavioral analysis, real-time monitoring, and compliance reporting.",
+    price: "$179",
+    category: "Cybersecurity",
+    images: ["https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800"],
+    rating: 4.8,
+    reviewCount: 189,
+    aiScore: 92,
+    link: "https://ziontechgroup.com"
+  },
+  {
+    id: "iot-platform-012",
+    title: "IoT Management Platform",
+    description: "Comprehensive IoT device management with real-time monitoring, data collection, and automated control systems. Includes device provisioning, security management, and analytics dashboards.",
+    price: "$449",
+    category: "IoT Solutions",
+    images: ["https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800"],
+    rating: 4.7,
+    reviewCount: 156,
+    aiScore: 90,
+    link: "https://ziontechgroup.com"
+  },
+  {
+    id: "blockchain-013",
+    title: "Blockchain Development Kit",
+    description: "Complete blockchain development toolkit with smart contract templates, deployment tools, and monitoring solutions. Features multi-chain support, security auditing, and performance optimization.",
+    price: "$899",
+    category: "Blockchain",
+    images: ["https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800"],
+    rating: 4.9,
+    reviewCount: 267,
+    aiScore: 95,
+    link: "https://ziontechgroup.com"
+  },
+  {
+    id: "api-gateway-014",
+    title: "API Gateway & Management",
+    description: "Enterprise API gateway with rate limiting, authentication, and monitoring capabilities. Includes API documentation, testing tools, and performance analytics for seamless integration.",
+    price: "$329",
+    category: "API Management",
+    images: ["https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800"],
+    rating: 4.6,
+    reviewCount: 123,
+    aiScore: 88,
+    link: "https://ziontechgroup.com"
+  },
+  {
+    id: "workflow-automation-015",
+    title: "Workflow Automation Engine",
+    description: "Intelligent workflow automation with process optimization, task scheduling, and performance analytics. Features visual workflow designer, integration connectors, and real-time monitoring.",
+    price: "$249",
+    category: "Business Process",
+    images: ["https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800"],
+    rating: 4.7,
+    reviewCount: 178,
+    aiScore: 91,
+    link: "https://ziontechgroup.com"
+  }
+];
+
+export const MICRO_SAAS_CATEGORIES = [
+  { label: 'AI Business Solutions', value: 'ai-business-solutions' },
+  { label: 'IT Infrastructure', value: 'it-infrastructure' },
+  { label: 'Data Analytics', value: 'data-analytics' },
+  { label: 'AI Development', value: 'ai-development' },
+  { label: 'FinTech', value: 'fintech' },
+  { label: 'HealthTech', value: 'healthtech' },
+  { label: 'E-commerce', value: 'e-commerce' },
+  { label: 'EdTech', value: 'edtech' },
+  { label: 'Cybersecurity', value: 'cybersecurity' },
+  { label: 'IoT Solutions', value: 'iot-solutions' },
+  { label: 'Blockchain', value: 'blockchain' },
+  { label: 'API Management', value: 'api-management' },
+  { label: 'Business Process', value: 'business-process' }
+];
+
+export const MICRO_SAAS_SUBCATEGORIES = {
+  'ai-business-solutions': ['CRM & Sales', 'Supply Chain', 'Marketing'],
+  'it-infrastructure': ['Cloud Management', 'Server Administration', 'Network Security'],
+  'data-analytics': ['Business Intelligence', 'Predictive Analytics', 'Data Visualization'],
+  'ai-development': ['Machine Learning', 'Natural Language Processing', 'Computer Vision'],
+  'fintech': ['Payment Processing', 'Risk Management', 'Financial Analytics'],
+  'healthtech': ['Patient Management', 'Clinical Analytics', 'Telemedicine'],
+  'e-commerce': ['Platform Optimization', 'Customer Analytics', 'Inventory Management'],
+  'edtech': ['Learning Management', 'Student Analytics', 'Content Creation'],
+  'cybersecurity': ['Threat Detection', 'Vulnerability Assessment', 'Incident Response'],
+  'iot-solutions': ['Device Management', 'Data Collection', 'Control Systems'],
+  'blockchain': ['Smart Contracts', 'DeFi Solutions', 'Supply Chain Tracking'],
+  'api-management': ['Gateway Services', 'Documentation', 'Monitoring'],
+  'business-process': ['Workflow Automation', 'Process Optimization', 'Performance Analytics']
+};
+
+export const PRICING_TIERS = {
+  basic: { name: 'Basic', multiplier: 1 },
+  professional: { name: 'Professional', multiplier: 1.5 },
+  enterprise: { name: 'Enterprise', multiplier: 2.5 }
+};
+
+export const CONTACT_INFO = {
+  mobile: "+1 302 464 0950",
+  email: "kleber@ziontechgroup.com",
+  address: "364 E Main St STE 1008 Middletown DE 19709",
+  website: "https://ziontechgroup.com"
+>>>>>>> 2d0a9714a42cb6b8a431feb1f9dc2a642983276c
 };

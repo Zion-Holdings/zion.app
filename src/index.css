@@ -15,9 +15,26 @@ body {
   min-height: 100vh;
 }
 
+<<<<<<< HEAD
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
+=======
+/* Basic utility classes */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  color: white;
+  font-size: 1.2rem;
+>>>>>>> 2d0a9714a42cb6b8a431feb1f9dc2a642983276c
 }
 
 ::-webkit-scrollbar-track {
@@ -87,6 +104,7 @@ html {
   50% { transform: translateY(-10px); }
 }
 
+<<<<<<< HEAD
   .dark {
     --background: 0 0% 7%;
     --foreground: 142 71% 45%;
@@ -767,6 +785,15 @@ html {
       opacity: 1;
     }
   }
+=======
+.h-12 {
+  height: 3rem;
+}
+
+.w-12 {
+  width: 3rem;
+}
+>>>>>>> 2d0a9714a42cb6b8a431feb1f9dc2a642983276c
 
   @keyframes dash {
     to {
@@ -774,6 +801,7 @@ html {
     }
   }
 
+<<<<<<< HEAD
   @keyframes matrix-rain {
     0% {
       transform: translateY(-100vh);
@@ -784,6 +812,11 @@ html {
       opacity: 0;
     }
   }
+=======
+.border-white {
+  border-color: white;
+}
+>>>>>>> 2d0a9714a42cb6b8a431feb1f9dc2a642983276c
 
   @keyframes holographic-shift {
     0%, 100% {
@@ -996,6 +1029,7 @@ html {
     box-shadow: 0 0 20px rgba(34, 221, 210, 0.3);
   }
 
+<<<<<<< HEAD
   .float {
     animation: float 6s ease-in-out infinite;
   }
@@ -1087,19 +1121,42 @@ html {
   /* Smooth scrolling */
   html {
     scroll-behavior: smooth;
+=======
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Responsive utilities */
+@media (max-width: 768px) {
+  .mobile-hidden {
+    display: none;
+>>>>>>> 2d0a9714a42cb6b8a431feb1f9dc2a642983276c
   }
 
+<<<<<<< HEAD
   /* Selection styling */
   ::selection {
     background: theme('colors["zion-cyan"].DEFAULT');
     color: theme('colors["zion-slate"].dark);
+=======
+@media (min-width: 769px) {
+  .desktop-hidden {
+    display: none;
+>>>>>>> 2d0a9714a42cb6b8a431feb1f9dc2a642983276c
   }
+}
 
-  ::-moz-selection {
-    background: theme('colors["zion-cyan"].DEFAULT');
-    color: theme('colors["zion-slate"].dark);
-  }
+/* Responsive utilities */
+.container-responsive {
+  @apply container mx-auto px-4 sm:px-6 lg:px-8;
+}
 
+<<<<<<< HEAD
   /* LiveKit UI overrides */
   [data-lk-theme='default'] {
     --lk-color-accent: #06B6D4;
@@ -1108,89 +1165,91 @@ html {
     --lk-bg1: #0B1120;
     --lk-bg2: #0F172A;
   }
+=======
+/* Enhanced focus states */
+.focus-neon:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(34, 221, 210, 0.3), 0 0 20px rgba(34, 221, 210, 0.2);
+}
+>>>>>>> 2d0a9714a42cb6b8a431feb1f9dc2a642983276c
 
-  /* Responsive utilities */
-  .container-responsive {
-    @apply container mx-auto px-4 sm:px-6 lg:px-8;
-  }
+/* Loading animations */
+.loading-dots {
+  display: inline-block;
+}
 
-  /* Enhanced focus states */
-  .focus-neon:focus {
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(34, 221, 210, 0.3), 0 0 20px rgba(34, 221, 210, 0.2);
-  }
+.loading-dots::after {
+  content: '';
+  animation: loading-dots 1.5s infinite;
+}
 
-  /* Loading animations */
-  .loading-dots {
-    display: inline-block;
-  }
-
-  .loading-dots::after {
+@keyframes loading-dots {
+  0%, 20% {
     content: '';
-    animation: loading-dots 1.5s infinite;
   }
-
-  @keyframes loading-dots {
-    0%, 20% {
-      content: '';
-    }
-    40% {
-      content: '.';
-    }
-    60% {
-      content: '..';
-    }
-    80%, 100% {
-      content: '...';
-    }
+  40% {
+    content: '.';
   }
-
-  /* Hover effects */
-  .hover-lift {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  60% {
+    content: '..';
   }
-
-  .hover-lift:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  80%, 100% {
+    content: '...';
   }
+}
 
-  /* Text gradients */
-  .text-gradient-primary {
-    background: linear-gradient(135deg, #22ddd2, #8c15e9);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
+/* Hover effects */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-  .text-gradient-secondary {
-    background: linear-gradient(135deg, #2e73ea, #22ddd2);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
 
-  /* Border gradients */
-  .border-gradient {
-    border: 2px solid;
-    border-image: linear-gradient(45deg, #22ddd2, #8c15e9, #2e73ea) 1;
-  }
+/* Text gradients */
+.text-gradient-primary {
+  background: linear-gradient(135deg, #22ddd2, #8c15e9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
 
-  /* Enhanced shadows */
-  .shadow-neon {
-    box-shadow: 
-      0 0 20px rgba(34, 221, 210, 0.3),
-      0 0 40px rgba(34, 221, 210, 0.2),
-      0 0 60px rgba(34, 221, 210, 0.1);
-  }
+.text-gradient-secondary {
+  background: linear-gradient(135deg, #2e73ea, #22ddd2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
 
-  .shadow-purple {
-    box-shadow: 
-      0 0 20px rgba(140, 21, 233, 0.3),
-      0 0 40px rgba(140, 21, 233, 0.2),
-      0 0 60px rgba(140, 21, 233, 0.1);
-  }
+/* Border gradients */
+.border-gradient {
+  border: 2px solid;
+  border-image: linear-gradient(45deg, #22ddd2, #8c15e9, #2e73ea) 1;
+}
 
+/* Enhanced shadows */
+.shadow-neon {
+  box-shadow: 
+    0 0 20px rgba(34, 221, 210, 0.3),
+    0 0 40px rgba(34, 221, 210, 0.2),
+    0 0 60px rgba(34, 221, 210, 0.1);
+}
+
+.shadow-purple {
+  box-shadow: 
+    0 0 20px rgba(140, 21, 233, 0.3),
+    0 0 40px rgba(140, 21, 233, 0.2),
+    0 0 60px rgba(140, 21, 233, 0.1);
+}
+
+/* Responsive text */
+.text-responsive {
+  @apply text-sm sm:text-base lg:text-lg;
+}
+
+<<<<<<< HEAD
   /* Responsive text */
   .text-responsive {
     @apply text-sm sm:text-base lg:text-lg;
@@ -1341,3 +1400,8 @@ html {
     text-decoration: underline !important;
 
 
+=======
+.heading-responsive {
+  @apply text-2xl sm:text-3xl lg:text-4xl xl:text-5xl;
+}
+>>>>>>> 2d0a9714a42cb6b8a431feb1f9dc2a642983276c
