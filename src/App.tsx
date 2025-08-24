@@ -20,6 +20,7 @@ import {
   CommunityRoutes,
   DeveloperRoutes
 } from './routes';
+
 const Home = React.lazy(() => import('./pages/Home'));
 const AIMatcherPage = React.lazy(() => import('./pages/AIMatcher'));
 const TalentDirectory = React.lazy(() => import('./pages/TalentDirectory'));
@@ -74,6 +75,7 @@ const baseRoutes = [
 const App = () => {
   // Ensure each navigation starts at the top of the page
   useScrollToTop();
+  
   return (
     <WhitelabelProvider>
       <ThemeProvider defaultTheme="dark">
