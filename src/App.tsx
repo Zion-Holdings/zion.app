@@ -30,6 +30,16 @@ const Navigation = () => {
               Home
             </Link>
             <Link
+              to="/services"
+              className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
+                isActive('/services') 
+                  ? 'text-blue-400 bg-white/20' 
+                  : 'text-blue-100 hover:text-white hover:bg-white/10'
+              }`}
+            >
+              Services
+            </Link>
+            <Link
               to="/about"
               className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
                 isActive('/about') 
@@ -48,6 +58,16 @@ const Navigation = () => {
               }`}
             >
               Contact
+            </Link>
+            <Link
+              to="/request-quote"
+              className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
+                isActive('/request-quote') 
+                  ? 'text-blue-400 bg-white/20' 
+                  : 'text-blue-100 hover:text-white hover:bg-white/10'
+              }`}
+            >
+              Get Quote
             </Link>
           </div>
           
@@ -68,12 +88,50 @@ const Navigation = () => {
 const Home = React.lazy(() => import('./pages/Home'));
 const ContactPage = React.lazy(() => import('./pages/Contact'));
 const AboutPage = React.lazy(() => import('./pages/About'));
+const FAQPage = React.lazy(() => import('./pages/FAQ'));
+const HelpCenterPage = React.lazy(() => import('./pages/HelpCenter'));
+const PartnersPage = React.lazy(() => import('./pages/Partners'));
+const RequestQuotePage = React.lazy(() => import('./pages/RequestQuote'));
+const ZionHireAIPage = React.lazy(() => import('./pages/ZionHireAI'));
+const ITOnsiteServicesPage = React.lazy(() => import('./pages/ITOnsiteServicesPage'));
+const CategoriesPage = React.lazy(() => import('./pages/Categories'));
+const EquipmentPage = React.lazy(() => import('./pages/EquipmentPage'));
+const AnalyticsPage = React.lazy(() => import('./pages/Analytics'));
+const MobileLaunchPage = React.lazy(() => import('./pages/MobileLaunchPage'));
+const TalentDirectoryPage = React.lazy(() => import('./pages/TalentDirectory'));
+const TalentsPage = React.lazy(() => import('./pages/TalentsPage'));
+const MobilePage = React.lazy(() => import('./pages/Mobile'));
+const SitemapPage = React.lazy(() => import('./pages/Sitemap'));
+const PrivacyPage = React.lazy(() => import('./pages/Privacy'));
+const TermsPage = React.lazy(() => import('./pages/Terms'));
+const CareersPage = React.lazy(() => import('./pages/Careers'));
+const ServicesPage = React.lazy(() => import('./pages/Services'));
+const GreenITPage = React.lazy(() => import('./pages/GreenIT'));
 const NotFoundPage = React.lazy(() => import('./pages/NotFound'));
 
 const baseRoutes = [
   { path: '/', element: <Home /> },
   { path: '/contact', element: <ContactPage /> },
   { path: '/about', element: <AboutPage /> },
+  { path: '/faq', element: <FAQPage /> },
+  { path: '/help-center', element: <HelpCenterPage /> },
+  { path: '/partners', element: <PartnersPage /> },
+  { path: '/request-quote', element: <RequestQuotePage /> },
+  { path: '/zion-hire-ai', element: <ZionHireAIPage /> },
+  { path: '/it-onsite-services', element: <ITOnsiteServicesPage /> },
+  { path: '/categories', element: <CategoriesPage /> },
+  { path: '/equipment', element: <EquipmentPage /> },
+  { path: '/analytics', element: <AnalyticsPage /> },
+  { path: '/mobile-launch', element: <MobileLaunchPage /> },
+  { path: '/talent-directory', element: <TalentDirectoryPage /> },
+  { path: '/talents', element: <TalentsPage /> },
+  { path: '/mobile', element: <MobilePage /> },
+  { path: '/sitemap', element: <SitemapPage /> },
+  { path: '/privacy', element: <PrivacyPage /> },
+  { path: '/terms', element: <TermsPage /> },
+  { path: '/careers', element: <CareersPage /> },
+  { path: '/services', element: <ServicesPage /> },
+  { path: '/green-it', element: <GreenITPage /> },
   { path: '*', element: <NotFoundPage /> },
 ];
 
