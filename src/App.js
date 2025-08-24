@@ -8,10 +8,7 @@ import { useScrollToTop } from "./hooks";
 import { WhitelabelProvider } from "./context/WhitelabelContext";
 import { Toaster } from "./components/ui/toaster";
 import { Toaster as SonnerToaster } from "./components/ui/sonner";
-import { FloatingCTA } from "./components/FloatingCTA";
-import { PageLoader } from "./components/ui/PageLoader";
 import { AuthRoutes, DashboardRoutes, MarketplaceRoutes, TalentRoutes, AdminRoutes, MobileAppRoutes, ContentRoutes, ErrorRoutes, EnterpriseRoutes, CommunityRoutes, DeveloperRoutes } from './routes';
-// Lazy load pages for better performance
 const Home = React.lazy(() => import('./pages/Home'));
 const AIMatcherPage = React.lazy(() => import('./pages/AIMatcher'));
 const TalentDirectory = React.lazy(() => import('./pages/TalentDirectory'));
@@ -33,6 +30,7 @@ const OpenAppRedirect = React.lazy(() => import('./pages/OpenAppRedirect'));
 const ContactPage = React.lazy(() => import('./pages/Contact'));
 const ZionHireAI = React.lazy(() => import('./pages/ZionHireAI'));
 const RequestQuotePage = React.lazy(() => import('./pages/RequestQuote'));
+const MicroSaasServices = React.lazy(() => import('./pages/MicroSaasServices'));
 const baseRoutes = [
     { path: '/', element: _jsx(Home, {}) },
     { path: '/match', element: _jsx(AIMatcherPage, {}) },
@@ -41,6 +39,7 @@ const baseRoutes = [
     { path: '/talent', element: _jsx(TalentDirectory, {}) },
     { path: '/talents', element: _jsx(TalentsPage, {}) },
     { path: '/services', element: _jsx(ServicesPage, {}) },
+    { path: '/micro-saas-services', element: _jsx(MicroSaasServices, {}) },
     { path: '/it-onsite-services', element: _jsx(ITOnsiteServicesPage, {}) },
     { path: '/categories', element: _jsx(Categories, {}) },
     { path: '/equipment', element: _jsx(EquipmentPage, {}) },
@@ -57,32 +56,9 @@ const baseRoutes = [
     { path: '/blog', element: _jsx(Blog, {}) },
     { path: '/blog/:slug', element: _jsx(BlogPost, {}) },
 ];
-// Enhanced loading component with better UX
-function EnhancedSuspenseFallback() {
-    return (_jsx(PageLoader, { text: "Loading Zion Tech Group...", className: "bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-slate-dark" }));
-}
-// Error Boundary Component
-class ErrorBoundary extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = { hasError: false };
-    }
-    static getDerivedStateFromError(error) {
-        return { hasError: true, error };
-    }
-    componentDidCatch(error, errorInfo) {
-        console.error('Error caught by boundary:', error, errorInfo);
-    }
-    render() {
-        if (this.state.hasError) {
-            return (_jsx("div", { className: "min-h-screen flex items-center justify-center bg-background", children: _jsxs("div", { className: "text-center space-y-4", children: [_jsx("h1", { className: "text-2xl font-bold text-destructive", children: "Something went wrong" }), _jsx("p", { className: "text-muted-foreground", children: "We're sorry, but something unexpected happened. Please try refreshing the page." }), _jsx("button", { onClick: () => window.location.reload(), className: "px-4 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90", children: "Refresh Page" })] }) }));
-        }
-        return this.props.children;
-    }
-}
 const App = () => {
     // Ensure each navigation starts at the top of the page
     useScrollToTop();
-    return (_jsx(ErrorBoundary, { children: _jsx(WhitelabelProvider, { children: _jsxs(ThemeProvider, { defaultTheme: "dark", children: [_jsx(Suspense, { fallback: _jsx(EnhancedSuspenseFallback, {}), children: _jsxs(Routes, { children: [baseRoutes.map(({ path, element }) => (_jsx(Route, { path: path, element: element }, path))), _jsx(Route, { path: "/auth/*", element: _jsx(AuthRoutes, {}) }), _jsx(Route, { path: "/dashboard/*", element: _jsx(DashboardRoutes, {}) }), _jsx(Route, { path: "/marketplace/*", element: _jsx(MarketplaceRoutes, {}) }), _jsx(Route, { path: "/talent/*", element: _jsx(TalentRoutes, {}) }), _jsx(Route, { path: "/admin/*", element: _jsx(AdminRoutes, {}) }), _jsx(Route, { path: "/mobile/*", element: _jsx(MobileAppRoutes, {}) }), _jsx(Route, { path: "/content/*", element: _jsx(ContentRoutes, {}) }), _jsx(Route, { path: "/enterprise/*", element: _jsx(EnterpriseRoutes, {}) }), _jsx(Route, { path: "/community/*", element: _jsx(CommunityRoutes, {}) }), _jsx(Route, { path: "/developers/*", element: _jsx(DeveloperRoutes, {}) }), _jsx(Route, { path: "*", element: _jsx(ErrorRoutes, {}) })] }) }), _jsx(FloatingCTA, {}), _jsx(Toaster, {}), _jsx(SonnerToaster, { position: "top-right" })] }) }) }));
+    return (_jsx(WhitelabelProvider, { children: _jsxs(ThemeProvider, { defaultTheme: "dark", children: [_jsx(Suspense, { fallback: _jsx("div", { className: "p-4 text-center", children: "Loading..." }), children: _jsxs(Routes, { children: [baseRoutes.map(({ path, element }) => (_jsx(Route, { path: path, element: element }, path))), _jsx(Route, { path: "/auth/*", element: _jsx(AuthRoutes, {}) }), _jsx(Route, { path: "/dashboard/*", element: _jsx(DashboardRoutes, {}) }), _jsx(Route, { path: "/marketplace/*", element: _jsx(MarketplaceRoutes, {}) }), _jsx(Route, { path: "/talent/*", element: _jsx(TalentRoutes, {}) }), _jsx(Route, { path: "/admin/*", element: _jsx(AdminRoutes, {}) }), _jsx(Route, { path: "/mobile/*", element: _jsx(MobileAppRoutes, {}) }), _jsx(Route, { path: "/content/*", element: _jsx(ContentRoutes, {}) }), _jsx(Route, { path: "/enterprise/*", element: _jsx(EnterpriseRoutes, {}) }), _jsx(Route, { path: "/community/*", element: _jsx(CommunityRoutes, {}) }), _jsx(Route, { path: "/developers/*", element: _jsx(DeveloperRoutes, {}) }), _jsx(Route, { path: "*", element: _jsx(ErrorRoutes, {}) })] }) }), _jsx(Toaster, {}), _jsx(SonnerToaster, { position: "top-right" })] }) }));
 };
 export default App;

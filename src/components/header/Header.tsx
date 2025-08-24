@@ -238,14 +238,12 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
             ))}
           </div>
         </div>
-=======
         <button
           onClick={toggleMobileMenu}
           className="lg:hidden p-2 text-white hover:bg-zion-purple/10 rounded-md transition-colors"
         >
           {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
->>>>>>> cursor/enhance-app-with-new-services-and-futuristic-design-da9e
       </div>
 
       {/* Mobile Menu */}

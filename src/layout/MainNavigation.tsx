@@ -47,7 +47,7 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
       href: '/marketplace',
       matches: (path: string) => path.startsWith('/marketplace')
     },
-
+    {
       key: 'talent',
       href: '/talent',
       matches: (path: string) => path.startsWith('/talent') && !path.includes('/talent-dashboard')
