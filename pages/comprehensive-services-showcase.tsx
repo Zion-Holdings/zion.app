@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import SEO from '../components/SEO';
+import Head from 'next/head';
 import { motion } from 'framer-motion';
 import { 
   Search, Grid, List, Star, Users, TrendingUp,
@@ -76,11 +76,11 @@ const ComprehensiveServicesShowcase: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 text-white">
-      <SEO 
-        title="Comprehensive Services Showcase - Zion Tech Group"
-        description="Explore our complete portfolio of innovative micro SAAS, IT services, and AI solutions. From quantum computing to autonomous systems, discover the future of technology."
-        keywords={["micro SAAS", "IT services", "AI solutions", "quantum computing", "cybersecurity", "enterprise IT", "cloud infrastructure"]}
-      />
+      <Head>
+        <title>Comprehensive Services Showcase - Zion Tech Group</title>
+        <meta name="description" content="Explore our complete portfolio of innovative micro SAAS, IT services, and AI solutions. From quantum computing to autonomous systems, discover the future of technology." />
+        <meta name="keywords" content="micro SAAS, IT services, AI solutions, quantum computing, cybersecurity, enterprise IT, cloud infrastructure" />
+      </Head>
 
       {/* Header Section */}
       <section className="py-20 px-4 relative overflow-hidden">
@@ -147,7 +147,7 @@ const ComprehensiveServicesShowcase: React.FC = () => {
                     placeholder="Search services..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full pl-10 pr-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500/50"
+                    className="w-full pl-10 pr-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500"
                   />
                 </div>
               </div>
@@ -195,7 +195,7 @@ const ComprehensiveServicesShowcase: React.FC = () => {
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value as 'name' | 'price' | 'rating' | 'popularity')}
-                  className="px-4 py-2 bg-gray-700/50 border border-gray-600/50 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-cyan-500/50"
+                  className="px-4 py-2 bg-gray-700/50 border border-gray-600/50 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-cyan-500"
                 >
                   <option value="popularity">Most Popular</option>
                   <option value="rating">Highest Rated</option>
@@ -274,7 +274,7 @@ const ComprehensiveServicesShowcase: React.FC = () => {
                     </div>
                     <button
                       onClick={() => window.location.href = service.link}
-                      className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/25 focus:outline-none focus:ring-2 focus:ring-cyan-500/50"
+                      className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/25 focus:outline-none focus:ring-2 focus:ring-cyan-500"
                     >
                       Learn More
                       <ArrowRight className="w-4 h-4 ml-2 inline" />

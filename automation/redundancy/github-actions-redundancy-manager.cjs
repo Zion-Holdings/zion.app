@@ -1,318 +1,545 @@
 #!/usr/bin/env node
-'use strict';
+"use strict";
 
-const { spawnSync } = require('child_process');
-const fs = require('fs');
-const path = require('path');
-const cron = require('node-cron');
+const { spawnSync } = require("child_process");
+const fs = require("fs");
+const path = require("path");
 
 class GitHubActionsRedundancyManager {
   constructor() {
-    this.logDir = path.join(process.cwd(), 'automation', 'logs');
-    this.workflowsDir = path.join(process.cwd(), '.github', 'workflows');
-    this.ensureLogDir();
-    this.backupWorkflows = new Map();
-    this.healthChecks = new Map();
-    this.recoveryAttempts = new Map();
+    this.workflowsDir = path.join(process.cwd(), ".github", "workflows");
+    this.backupDir = path.join(process.cwd(), "automation", "backups", "github-actions");
+    this.redundancyDir = path.join(process.cwd(), "automation", "redundancy", "workflows");
+    this.ensureDirectories();
   }
 
-  ensureLogDir() {
-    if (!fs.existsSync(this.logDir)) {
-      fs.mkdirSync(this.logDir, { recursive: true });
-    }
+  ensureDirectories() {
+    [this.backupDir, this.redundancyDir].forEach(dir => {
+      if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir, { recursive: true });
+      }
+    });
   }
 
-  log(message, level = 'INFO') {
+  log(message) {
     const timestamp = new Date().toISOString();
-    const logMessage = `[${timestamp}] [${level}] ${message}`;
+    const logMessage = `[${timestamp}] GITHUB-ACTIONS-REDUNDANCY: ${message}`;
     console.log(logMessage);
     
-    const logFile = path.join(this.logDir, 'github-actions-redundancy.log');
-    fs.appendFileSync(logFile, logMessage + '\n');
+    // Write to log file
+    const logFile = path.join(process.cwd(), "automation", "logs", "github-actions-redundancy.log");
+    fs.appendFileSync(logFile, logMessage + "\n");
   }
 
-  runCommand(command, args = [], options = {}) {
+  runCommand(command, args = []) {
     const result = spawnSync(command, args, {
       cwd: process.cwd(),
       env: process.env,
       shell: false,
-      encoding: 'utf8',
+      encoding: "utf8",
       maxBuffer: 1024 * 1024 * 10
     });
     return {
       status: result.status,
-      stdout: result.stdout || '',
-      stderr: result.stderr || '',
+      stdout: result.stdout || "",
+      stderr: result.stderr || "",
       success: result.status === 0
     };
   }
 
-  async scanWorkflows() {
-    this.log('Scanning GitHub Actions workflows...');
-    
+  getWorkflowFiles() {
     if (!fs.existsSync(this.workflowsDir)) {
-      this.log('Workflows directory not found', 'WARN');
+      this.log("Workflows directory not found");
       return [];
     }
 
-    const workflowFiles = fs.readdirSync(this.workflowsDir)
-      .filter(file => file.endsWith('.yml') || file.endsWith('.yaml'))
-      .map(file => path.join(this.workflowsDir, file));
-
-    this.log(`Found ${workflowFiles.length} workflow files`);
-    return workflowFiles;
+    const files = fs.readdirSync(this.workflowsDir);
+    return files.filter(file => file.endsWith('.yml') || file.endsWith('.yaml'));
   }
 
-  async createBackupWorkflows() {
-    this.log('Creating backup workflows...');
+  backupWorkflows() {
+    const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
+    const backupPath = path.join(this.backupDir, `workflows-backup-${timestamp}`);
     
-    const workflowFiles = await this.scanWorkflows();
-    
-    for (const workflowPath of workflowFiles) {
-      await this.createBackupWorkflow(workflowPath);
+    if (!fs.existsSync(backupPath)) {
+      fs.mkdirSync(backupPath, { recursive: true });
     }
-  }
 
-  async createBackupWorkflow(workflowPath) {
-    const workflowName = path.basename(workflowPath, path.extname(workflowPath));
-    const backupName = `${workflowName}-backup`;
-    const backupPath = path.join(this.workflowsDir, `${backupName}.yml`);
-    
-    try {
-      const workflowContent = fs.readFileSync(workflowPath, 'utf8');
-      const backupContent = this.generateBackupWorkflow(workflowContent, backupName);
-      
-      fs.writeFileSync(backupPath, backupContent);
-      
-      this.log(`Created backup workflow: ${backupName}`);
-      this.backupWorkflows.set(backupName, {
-        original: workflowName,
-        path: backupPath,
-        created: new Date(),
-        health: 'healthy'
-      });
-      
-    } catch (error) {
-      this.log(`Failed to create backup for ${workflowName}: ${error.message}`, 'ERROR');
-    }
-  }
+    const workflows = this.getWorkflowFiles();
+    let backedUp = 0;
 
-  generateBackupWorkflow(originalContent, backupName) {
-    // Parse the original workflow and create a backup version
-    const lines = originalContent.split('\n');
-    const backupLines = [];
-    
-    for (const line of lines) {
-      if (line.includes('name:')) {
-        backupLines.push(`name: ${backupName}`);
-      } else if (line.includes('on:')) {
-        // Keep the same triggers but add manual dispatch
-        backupLines.push(line);
-      } else if (line.includes('schedule:')) {
-        // Adjust schedule to run less frequently as backup
-        backupLines.push('  schedule:');
-        backupLines.push('    - cron: \'0 */24 * * *\'  # Daily backup');
-      } else if (line.includes('workflow_dispatch:')) {
-        // Keep manual dispatch
-        backupLines.push(line);
-      } else {
-        backupLines.push(line);
-      }
-    }
-    
-    // Add backup identifier comment
-    backupLines.unshift('# Backup workflow - Auto-generated by redundancy manager');
-    backupLines.unshift('# Original workflow: ' + path.basename(originalContent.split('\n')[0]?.replace('name:', '').trim() || 'unknown'));
-    
-    return backupLines.join('\n');
-  }
-
-  async triggerBackupWorkflows() {
-    this.log('Triggering backup workflows...');
-    
-    for (const [name, info] of this.backupWorkflows) {
+    workflows.forEach(workflow => {
+      const sourcePath = path.join(this.workflowsDir, workflow);
+      const destPath = path.join(backupPath, workflow);
+      
       try {
-        await this.triggerWorkflow(name);
-        this.log(`Triggered backup workflow: ${name}`);
+        fs.copyFileSync(sourcePath, destPath);
+        backedUp++;
+        this.log(`Backed up workflow: ${workflow}`);
       } catch (error) {
-        this.log(`Failed to trigger ${name}: ${error.message}`, 'ERROR');
-        info.health = 'unhealthy';
+        this.log(`Failed to backup workflow ${workflow}: ${error.message}`);
       }
-    }
+    });
+
+    this.log(`Workflow backup completed: ${backedUp} workflows backed up to ${backupPath}`);
+    return backupPath;
   }
 
-  async triggerWorkflow(workflowName) {
-    // Use GitHub CLI to trigger workflow
-    const result = this.runCommand('gh', [
-      'workflow', 'run', `${workflowName}.yml`,
-      '--ref', 'main'
-    ]);
-    
-    if (!result.success) {
-      throw new Error(`GitHub CLI failed: ${result.stderr}`);
-    }
-    
-    return result.stdout;
-  }
+  createRedundancyWorkflows() {
+    this.log("Creating redundancy workflows...");
 
-  async checkWorkflowHealth() {
-    this.log('Checking workflow health...');
-    
-    for (const [name, info] of this.backupWorkflows) {
-      try {
-        const health = await this.checkSingleWorkflowHealth(name);
-        info.health = health;
-        info.lastCheck = new Date();
-        
-        if (health === 'unhealthy') {
-          await this.recoverWorkflow(name, info);
+    // Marketing Sync Redundancy
+    const marketingSyncRedundancy = {
+      name: "Marketing Sync Redundancy",
+      on: {
+        schedule: [{ cron: "30 */12 * * *" }], // 30 minutes after the original
+        workflow_dispatch: null
+      },
+      permissions: { contents: "write" },
+      jobs: {
+        "run-marketing-sync-redundant": {
+          runs_on: "ubuntu-latest",
+          steps: [
+            {
+              name: "Checkout repository",
+              uses: "actions/checkout@v4"
+            },
+            {
+              name: "Setup Node.js",
+              uses: "actions/setup-node@v4",
+              with: { "node-version": "20" }
+            },
+            {
+              name: "Run marketing-sync (redundant)",
+              env: {
+                LINKEDIN_ACCESS_TOKEN: "${{ secrets.LINKEDIN_ACCESS_TOKEN }}",
+                LINKEDIN_URN: "${{ secrets.LINKEDIN_URN }}",
+                IG_USER_ID: "${{ secrets.IG_USER_ID }}",
+                IG_ACCESS_TOKEN: "${{ secrets.IG_ACCESS_TOKEN }}"
+              },
+              run: "node automation/marketing-sync.js"
+            },
+            {
+              name: "Commit report if changed (redundant)",
+              run: `git config user.name "github-actions[bot]"
+git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+if [ -n "$(git status --porcelain)" ]; then
+  git add -A
+  git commit -m "chore(marketing): update marketing-sync report (redundant)"
+  git push origin HEAD:main
+else
+  echo "No changes to commit."
+fi`
+            }
+          ]
         }
-      } catch (error) {
-        this.log(`Health check failed for ${name}: ${error.message}`, 'ERROR');
-        info.health = 'unhealthy';
       }
-    }
-  }
-
-  async checkSingleWorkflowHealth(workflowName) {
-    // Check if workflow file exists and is valid
-    const workflowPath = path.join(this.workflowsDir, `${workflowName}.yml`);
-    
-    if (!fs.existsSync(workflowPath)) {
-      return 'unhealthy';
-    }
-    
-    // Check if workflow can be parsed
-    try {
-      const content = fs.readFileSync(workflowPath, 'utf8');
-      if (!content.includes('name:') || !content.includes('on:')) {
-        return 'unhealthy';
-      }
-      return 'healthy';
-    } catch (error) {
-      return 'unhealthy';
-    }
-  }
-
-  async recoverWorkflow(name, info) {
-    this.log(`Recovering workflow: ${name}`);
-    
-    const attempts = this.recoveryAttempts.get(name) || 0;
-    if (attempts >= 3) {
-      this.log(`Max recovery attempts reached for ${name}`, 'ERROR');
-      return;
-    }
-
-    this.recoveryAttempts.set(name, attempts + 1);
-    
-    try {
-      // Recreate the backup workflow
-      const originalPath = path.join(this.workflowsDir, `${info.original}.yml`);
-      if (fs.existsSync(originalPath)) {
-        await this.createBackupWorkflow(originalPath);
-        this.log(`Recovered workflow: ${name}`);
-      } else {
-        this.log(`Original workflow not found for ${name}`, 'WARN');
-      }
-    } catch (error) {
-      this.log(`Recovery failed for ${name}: ${error.message}`, 'ERROR');
-    }
-  }
-
-  async startHealthMonitoring() {
-    this.log('Starting health monitoring...');
-    
-    // Monitor every 10 minutes
-    cron.schedule('*/10 * * * *', async () => {
-      await this.checkWorkflowHealth();
-    });
-
-    // Trigger backups every 6 hours
-    cron.schedule('0 */6 * * *', async () => {
-      await this.triggerBackupWorkflows();
-    });
-  }
-
-  async generateReport() {
-    const report = {
-      timestamp: new Date().toISOString(),
-      backupWorkflows: Array.from(this.backupWorkflows.entries()).map(([name, info]) => ({
-        name,
-        original: info.original,
-        path: info.path,
-        created: info.created,
-        health: info.health,
-        lastCheck: info.lastCheck
-      })),
-      recoveryAttempts: Object.fromEntries(this.recoveryAttempts),
-      totalBackups: this.backupWorkflows.size,
-      healthyBackups: Array.from(this.backupWorkflows.values()).filter(w => w.health === 'healthy').length
     };
 
-    const reportPath = path.join(this.logDir, 'github-actions-redundancy-report.json');
-    fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
-    
-    this.log(`Report generated: ${reportPath}`);
-    return report;
+    // Sync Health Redundancy
+    const syncHealthRedundancy = {
+      name: "Sync Health Redundancy",
+      on: {
+        schedule: [{ cron: "*/20 * * * *" }], // Every 20 minutes (more frequent than original)
+        workflow_dispatch: null
+      },
+      permissions: { contents: "write" },
+      jobs: {
+        "check-sync-redundant": {
+          runs_on: "ubuntu-latest",
+          steps: [
+            {
+              name: "Checkout repository",
+              uses: "actions/checkout@v4",
+              with: { "fetch-depth": 0 }
+            },
+            {
+              name: "Setup Node.js",
+              uses: "actions/setup-node@v4",
+              with: { "node-version": "20" }
+            },
+            {
+              name: "Run pm2-auto-sync (redundant safe mode)",
+              env: {
+                AUTO_SYNC_STRATEGY: "hardreset",
+                AUTO_SYNC_CLEAN: "0"
+              },
+              run: "node automation/pm2-auto-sync.js || true"
+            },
+            {
+              name: "Push if repository is ahead (redundant)",
+              run: `git config user.name "github-actions[bot]"
+git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+AHEAD=$(git rev-list --left-right --count HEAD...origin/main | awk '{print $1}')
+if [ "$AHEAD" != "0" ]; then
+  git push origin HEAD:main
+else
+  echo "No push needed."
+fi`
+            }
+          ]
+        }
+      }
+    };
+
+    // Build Health Monitor Redundancy
+    const buildHealthRedundancy = {
+      name: "Build Health Monitor Redundancy",
+      on: {
+        schedule: [{ cron: "*/10 * * * *" }], // Every 10 minutes
+        workflow_dispatch: null
+      },
+      permissions: { contents: "write" },
+      jobs: {
+        "monitor-build-health": {
+          runs_on: "ubuntu-latest",
+          steps: [
+            {
+              name: "Checkout repository",
+              uses: "actions/checkout@v4"
+            },
+            {
+              name: "Setup Node.js",
+              uses: "actions/setup-node@v4",
+              with: { "node-version": "20" }
+            },
+            {
+              name: "Run build health check",
+              run: "node automation/pre-build-health-check.cjs"
+            },
+            {
+              name: "Run build failure recovery",
+              run: "node automation/build-failure-recovery.cjs"
+            },
+            {
+              name: "Commit any fixes",
+              run: `git config user.name "github-actions[bot]"
+git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+if [ -n "$(git status --porcelain)" ]; then
+  git add -A
+  git commit -m "chore(build): apply build health fixes (redundant)"
+  git push origin HEAD:main
+fi`
+            }
+          ]
+        }
+      }
+    };
+
+    // Dependency Update Redundancy
+    const dependencyUpdateRedundancy = {
+      name: "Dependency Update Redundancy",
+      on: {
+        schedule: [{ cron: "0 2 * * *" }], // Daily at 2 AM
+        workflow_dispatch: null
+      },
+      permissions: { contents: "write" },
+      jobs: {
+        "update-dependencies": {
+          runs_on: "ubuntu-latest",
+          steps: [
+            {
+              name: "Checkout repository",
+              uses: "actions/checkout@v4"
+            },
+            {
+              name: "Setup Node.js",
+              uses: "actions/setup-node@v4",
+              with: { "node-version": "20" }
+            },
+            {
+              name: "Run dependency maintenance",
+              run: "node automation/dependency-update-orchestrator.cjs"
+            },
+            {
+              name: "Commit dependency updates",
+              run: `git config user.name "github-actions[bot]"
+git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+if [ -n "$(git status --porcelain)" ]; then
+  git add -A
+  git commit -m "chore(deps): update dependencies (redundant)"
+  git push origin HEAD:main
+fi`
+            }
+          ]
+        }
+      }
+    };
+
+    // Content Quality Redundancy
+    const contentQualityRedundancy = {
+      name: "Content Quality Redundancy",
+      on: {
+        schedule: [{ cron: "0 */6 * * *" }], // Every 6 hours
+        workflow_dispatch: null
+      },
+      permissions: { contents: "write" },
+      jobs: {
+        "fix-content-quality": {
+          runs_on: "ubuntu-latest",
+          steps: [
+            {
+              name: "Checkout repository",
+              uses: "actions/checkout@v4"
+            },
+            {
+              name: "Setup Node.js",
+              uses: "actions/setup-node@v4",
+              with: { "node-version": "20" }
+            },
+            {
+              name: "Run content quality fixes",
+              run: "node automation/content-quality-fixer.cjs && node automation/content-quality-analyzer.cjs"
+            },
+            {
+              name: "Commit content fixes",
+              run: `git config user.name "github-actions[bot]"
+git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+if [ -n "$(git status --porcelain)" ]; then
+  git add -A
+  git commit -m "chore(content): apply content quality fixes (redundant)"
+  git push origin HEAD:main
+fi`
+            }
+          ]
+        }
+      }
+    };
+
+    const redundancyWorkflows = [
+      { name: "marketing-sync-redundancy.yml", content: marketingSyncRedundancy },
+      { name: "sync-health-redundancy.yml", content: syncHealthRedundancy },
+      { name: "build-health-redundancy.yml", content: buildHealthRedundancy },
+      { name: "dependency-update-redundancy.yml", content: dependencyUpdateRedundancy },
+      { name: "content-quality-redundancy.yml", content: contentQualityRedundancy }
+    ];
+
+    let created = 0;
+    redundancyWorkflows.forEach(workflow => {
+      const workflowPath = path.join(this.redundancyDir, workflow.name);
+      try {
+        const yamlContent = this.convertToYaml(workflow.content);
+        fs.writeFileSync(workflowPath, yamlContent);
+        created++;
+        this.log(`Created redundancy workflow: ${workflow.name}`);
+      } catch (error) {
+        this.log(`Failed to create workflow ${workflow.name}: ${error.message}`);
+      }
+    });
+
+    this.log(`Redundancy workflows created: ${created} workflows in ${this.redundancyDir}`);
+    return created;
   }
 
-  async start() {
-    this.log('Starting GitHub Actions Redundancy Manager...');
+  convertToYaml(obj, indent = 0) {
+    const spaces = "  ".repeat(indent);
+    let yaml = "";
     
-    try {
-      await this.createBackupWorkflows();
-      await this.startHealthMonitoring();
-      
-      this.log('GitHub Actions Redundancy Manager started successfully');
-      
-      // Generate initial report
-      await this.generateReport();
-      
-      // Keep the process running
-      setInterval(async () => {
-        await this.generateReport();
-      }, 600000); // Every 10 minutes
-      
-    } catch (error) {
-      this.log(`Failed to start GitHub Actions Redundancy Manager: ${error.message}`, 'ERROR');
-      process.exit(1);
+    for (const [key, value] of Object.entries(obj)) {
+      if (value === null) {
+        yaml += `${spaces}${key}:\n`;
+      } else if (typeof value === "object" && !Array.isArray(value)) {
+        yaml += `${spaces}${key}:\n${this.convertToYaml(value, indent + 1)}`;
+      } else if (Array.isArray(value)) {
+        yaml += `${spaces}${key}:\n`;
+        value.forEach(item => {
+          if (typeof item === "object") {
+            yaml += `${spaces}- ${this.convertToYaml(item, indent + 1).trim()}`;
+          } else {
+            yaml += `${spaces}- ${item}\n`;
+          }
+        });
+      } else {
+        yaml += `${spaces}${key}: ${value}\n`;
+      }
+    }
+    
+    return yaml;
+  }
+
+  deployRedundancyWorkflows() {
+    this.log("Deploying redundancy workflows to .github/workflows...");
+    
+    const redundancyWorkflows = fs.readdirSync(this.redundancyDir);
+    let deployed = 0;
+
+    redundancyWorkflows.forEach(workflow => {
+      if (workflow.endsWith('.yml') || workflow.endsWith('.yaml')) {
+        const sourcePath = path.join(this.redundancyDir, workflow);
+        const destPath = path.join(this.workflowsDir, workflow);
+        
+        try {
+          fs.copyFileSync(sourcePath, destPath);
+          deployed++;
+          this.log(`Deployed redundancy workflow: ${workflow}`);
+        } catch (error) {
+          this.log(`Failed to deploy workflow ${workflow}: ${error.message}`);
+        }
+      }
+    });
+
+    this.log(`Redundancy workflows deployed: ${deployed} workflows to ${this.workflowsDir}`);
+    return deployed;
+  }
+
+  createWorkflowOrchestrator() {
+    const orchestratorContent = `#!/usr/bin/env node
+"use strict";
+
+const { spawnSync } = require("child_process");
+const fs = require("fs");
+const path = require("path");
+
+class WorkflowOrchestrator {
+  constructor() {
+    this.workflowsDir = path.join(process.cwd(), ".github", "workflows");
+    this.logsDir = path.join(process.cwd(), "automation", "logs");
+    this.ensureDirectories();
+  }
+
+  ensureDirectories() {
+    if (!fs.existsSync(this.logsDir)) {
+      fs.mkdirSync(this.logsDir, { recursive: true });
+    }
+  }
+
+  log(message) {
+    const timestamp = new Date().toISOString();
+    const logMessage = \`[\${timestamp}] WORKFLOW-ORCHESTRATOR: \${message}\`;
+    console.log(logMessage);
+    
+    const logFile = path.join(this.logsDir, "workflow-orchestrator.log");
+    fs.appendFileSync(logFile, logMessage + "\\n");
+  }
+
+  runCommand(command, args = []) {
+    const result = spawnSync(command, args, {
+      cwd: process.cwd(),
+      env: process.env,
+      shell: false,
+      encoding: "utf8",
+      maxBuffer: 1024 * 1024 * 10
+    });
+    return {
+      status: result.status,
+      stdout: result.stdout || "",
+      stderr: result.stderr || "",
+      success: result.status === 0
+    };
+  }
+
+  getWorkflowStatus() {
+    // This would typically check GitHub API for workflow status
+    // For now, we'll check local workflow files
+    const workflows = fs.readdirSync(this.workflowsDir);
+    return workflows.filter(w => w.endsWith('.yml') || w.endsWith('.yaml'));
+  }
+
+  triggerWorkflow(workflowName) {
+    this.log(\`Triggering workflow: \${workflowName}\`);
+    
+    // This would typically use GitHub API to trigger workflows
+    // For now, we'll simulate by running the automation scripts
+    const workflowMap = {
+      "marketing-sync-redundancy.yml": "automation/marketing-sync.js",
+      "sync-health-redundancy.yml": "automation/pm2-auto-sync.js",
+      "build-health-redundancy.yml": "automation/pre-build-health-check.cjs",
+      "dependency-update-redundancy.yml": "automation/dependency-update-orchestrator.cjs",
+      "content-quality-redundancy.yml": "automation/content-quality-fixer.cjs"
+    };
+
+    const scriptPath = workflowMap[workflowName];
+    if (scriptPath && fs.existsSync(scriptPath)) {
+      const result = this.runCommand("node", [scriptPath]);
+      if (result.success) {
+        this.log(\`Workflow \${workflowName} executed successfully\`);
+        return true;
+      } else {
+        this.log(\`Workflow \${workflowName} failed: \${result.stderr}\`);
+        return false;
+      }
+    } else {
+      this.log(\`No script mapping found for workflow: \${workflowName}\`);
+      return false;
+    }
+  }
+
+  run() {
+    const command = process.argv[2];
+    
+    switch (command) {
+      case "status":
+        const workflows = this.getWorkflowStatus();
+        console.log("Available workflows:", workflows);
+        break;
+      case "trigger":
+        const workflowName = process.argv[3];
+        if (workflowName) {
+          this.triggerWorkflow(workflowName);
+        } else {
+          this.log("Please specify workflow name");
+        }
+        break;
+      default:
+        this.log("Available commands: status, trigger <workflow>");
+        this.log("Usage: node automation/redundancy/workflow-orchestrator.cjs <command>");
     }
   }
 }
 
-// CLI interface
+if (require.main === module) {
+  const orchestrator = new WorkflowOrchestrator();
+  orchestrator.run();
+}
+
+module.exports = WorkflowOrchestrator;
+`;
+
+    const orchestratorPath = path.join(this.redundancyDir, "workflow-orchestrator.cjs");
+    try {
+      fs.writeFileSync(orchestratorPath, orchestratorContent);
+      this.log(`Created workflow orchestrator: ${orchestratorPath}`);
+      return orchestratorPath;
+    } catch (error) {
+      this.log(`Failed to create workflow orchestrator: ${error.message}`);
+      return null;
+    }
+  }
+
+  run() {
+    const command = process.argv[2];
+    
+    switch (command) {
+      case "backup":
+        this.backupWorkflows();
+        break;
+      case "create":
+        this.createRedundancyWorkflows();
+        break;
+      case "deploy":
+        this.deployRedundancyWorkflows();
+        break;
+      case "orchestrator":
+        this.createWorkflowOrchestrator();
+        break;
+      case "full-setup":
+        this.log("Running full redundancy setup...");
+        this.backupWorkflows();
+        this.createRedundancyWorkflows();
+        this.createWorkflowOrchestrator();
+        this.log("Full redundancy setup completed");
+        break;
+      default:
+        this.log("Available commands: backup, create, deploy, orchestrator, full-setup");
+        this.log("Usage: node automation/redundancy/github-actions-redundancy-manager.cjs <command>");
+    }
+  }
+}
+
+// Run if called directly
 if (require.main === module) {
   const manager = new GitHubActionsRedundancyManager();
-  
-  const command = process.argv[2];
-  
-  switch (command) {
-    case 'start':
-      manager.start();
-      break;
-    case 'scan':
-      manager.scanWorkflows().then(workflows => {
-        console.log('Workflows found:', workflows);
-      });
-      break;
-    case 'backup':
-      manager.createBackupWorkflows();
-      break;
-    case 'trigger':
-      manager.triggerBackupWorkflows();
-      break;
-    case 'health':
-      manager.checkWorkflowHealth();
-      break;
-    case 'report':
-      manager.generateReport().then(report => {
-        console.log('Report:', JSON.stringify(report, null, 2));
-      });
-      break;
-    default:
-      console.log('Usage: node github-actions-redundancy-manager.cjs [start|scan|backup|trigger|health|report]');
-      process.exit(1);
-  }
+  manager.run();
 }
 
 module.exports = GitHubActionsRedundancyManager;

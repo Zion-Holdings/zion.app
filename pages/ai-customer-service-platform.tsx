@@ -18,10 +18,10 @@ export default function AiCustomerServicePlatform() {
 				"Help center content generation and refresh",
 				"Integrations: Zendesk, Freshdesk, Intercom, Salesforce",
 				"Voice IVR handoff and call summarization",
-				"Workflow analytics and CSAT tracking"
+				"Workflow analytics and CSAT tracking]}
 			]}
 			industries={["E-commerce", "SaaS", "Telecom", "Financial Services"]}
-			canonical="https://ziontechgroup.com/ai-customer-service-platform"
+			url="https://ziontechgroup.com/ai-customer-service-platform"
 		/>
 	);
 }

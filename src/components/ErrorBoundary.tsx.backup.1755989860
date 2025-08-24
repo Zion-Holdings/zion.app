@@ -1,0 +1,81 @@
+<<<<<<< HEAD
+import React, { Component } from 'react';
+import type { ReactNode } from 'react';
+import { Button } from './ui/button';
+import { AlertTriangle } from 'lucide-react';
+
+import {logErrorToProduction} from '@/utils/productionLogger';
+
+
+interface Props {
+  children: ReactNode;
+}
+
+interface State {
+  hasError: boolean;
+}
+
+export class ErrorBoundary extends Component<Props, State> {
+  state: State = { hasError: false };
+=======
+import React, { type ReactNode } from "react";
+
+interface ErrorBoundaryProps {
+  fallback: ReactNode;
+}
+
+interface ErrorBoundaryState {
+  hasError: boolean;
+}
+
+export class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundaryState> {
+  state: ErrorBoundaryState = { hasError: false };
+>>>>>>> origin/591ea5-codex/fix-talent-profile-rendering-issues
+
+  static getDerivedStateFromError() {
+    return { hasError: true };
+  }
+
+<<<<<<< HEAD
+  static getDerivedStateFromError(error: Error): State {
+    return { hasError: true, error };
+  }
+
+  override componentDidCatch(error: Error, errorInfo: unknown) {
+    // Only pass errorInfo if it's an object
+    if (typeof errorInfo === 'object' && errorInfo !== null) {
+      logErrorToProduction('ErrorBoundary caught an error:', error, errorInfo as Record<string, unknown>);
+    } else {
+      logErrorToProduction('ErrorBoundary caught an error:', error);
+    }
+  }
+
+  override render() {
+    if (this.state.hasError) {
+      if (this.props.fallback) {
+        return this.props.fallback;
+      }
+      return (
+        <div className="container py-8">
+          <h2>Something went wrong.</h2>
+          <p>Please try refreshing the page or contact support if the problem persists.</p>
+        </div>
+      );
+=======
+  componentDidCatch(error: unknown) {
+    console.error("ErrorBoundary caught an error", error);
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return this.props.fallback;
+>>>>>>> origin/591ea5-codex/fix-talent-profile-rendering-issues
+    }
+    return this.props.children;
+  }
+}
+<<<<<<< HEAD
+=======
+
+export default ErrorBoundary;
+>>>>>>> origin/591ea5-codex/fix-talent-profile-rendering-issues

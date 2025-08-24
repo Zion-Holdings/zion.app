@@ -34,349 +34,311 @@ export interface ITService {
   reviews: number;
 }
 
-export const innovativeITServices2025: ITService[] = [
+export const innovativeITServices = [
+  // Quantum Encryption Gateway
   {
-    id: 'quantum-cloud-infrastructure',
-    name: 'Quantum Cloud Infrastructure',
-    tagline: 'Next-generation cloud computing with quantum capabilities',
-    description: 'Revolutionary cloud infrastructure platform that combines classical cloud computing with quantum computing capabilities for unprecedented performance and security.',
-    category: 'Cloud & Infrastructure',
-    price: {
-      monthly: 399,
-      yearly: 3990,
-      currency: 'USD',
-      trialDays: 14,
-      setupTime: '2 days'
+    id: 'quantum-encryption-gateway',
+    name: 'Quantum Encryption Gateway',
+    tagline: 'Future-proof encryption with quantum-resistant algorithms',
+    description: 'Advanced encryption gateway that implements quantum-resistant cryptographic algorithms to protect data against future quantum computing threats. Built for organizations requiring the highest level of security.',
+    category: 'Cybersecurity',
+    type: 'IT Service',
+    pricing: {
+      starter: '$2,500/month',
+      professional: '$5,500/month',
+      enterprise: '$13,000/month',
+      custom: 'Contact for pricing'
     },
     features: [
-      'Hybrid classical-quantum computing',
-      'Quantum-enhanced security',
-      'Advanced encryption',
-      'Scalable infrastructure',
-      'Real-time optimization',
-      'Quantum machine learning',
-      'Advanced analytics',
+      'Quantum-resistant algorithms',
+      'Post-quantum cryptography',
+      'Hybrid encryption systems',
+      'Real-time threat monitoring',
+      'Automated key rotation',
+      'Compliance reporting',
+      'API integration',
+      'Custom encryption policies',
+      'Advanced analytics dashboard',
       'Multi-cloud support',
+      'Enterprise security features',
+      '24/7 monitoring'
+    ],
+    benefits: [
+      'Future-proof security',
+      'Quantum-resistant protection',
+      'Compliance with regulations',
+      'Reduced security risks',
+      'Automated security management',
+      'Scalable encryption',
+      'Cost-effective security',
+      'Peace of mind'
+    ],
+    useCases: [
+      'Financial institutions',
+      'Healthcare organizations',
+      'Government agencies',
+      'Technology companies',
+      'Defense contractors',
+      'Research institutions',
+      'Legal firms',
+      'Data centers'
+    ],
+    marketSize: '$3.8B by 2025',
+    targetAudience: 'Financial institutions, healthcare organizations, government agencies, technology companies, defense contractors',
+    competitiveAdvantage: 'Quantum-first encryption with comprehensive security features and compliance capabilities',
+    contact: 'kleber@ziontechgroup.com',
+    mobile: '+1 302 464 0950',
+    address: '364 E Main St STE 1008 Middletown DE 19709',
+    website: 'https://ziontechgroup.com',
+    slug: '/quantum-encryption-gateway',
+    demoUrl: 'https://demo.ziontechgroup.com/quantum-encryption',
+    documentation: 'https://docs.ziontechgroup.com/quantum-encryption',
+    pricingPage: 'https://ziontechgroup.com/pricing/quantum-encryption'
+  },
+
+  // Quantum Threat Detection
+  {
+    id: 'quantum-threat-detection',
+    name: 'Quantum Threat Detection Platform',
+    tagline: 'AI-powered threat detection with quantum computing capabilities',
+    description: 'Next-generation threat detection platform that combines AI, machine learning, and quantum computing to identify and neutralize advanced cybersecurity threats in real-time.',
+    category: 'Cybersecurity',
+    type: 'IT Service',
+    pricing: {
+      starter: '$3,000/month',
+      professional: '$6,500/month',
+      enterprise: '$15,000/month',
+      custom: 'Contact for pricing'
+    },
+    features: [
+      'AI-powered threat detection',
+      'Quantum computing integration',
+      'Real-time monitoring',
+      'Behavioral analysis',
+      'Threat intelligence',
+      'Automated response',
+      'Advanced analytics',
+      'Custom rule engine',
+      'API integrations',
+      'Multi-platform support',
+      'Enterprise security',
+      'Compliance reporting'
+    ],
+    benefits: [
+      'Detect threats 10x faster',
+      'Reduce false positives',
+      'Real-time protection',
+      'Automated response',
+      'Better threat intelligence',
+      'Improved security posture',
+      'Cost-effective security',
+      'Scalable protection'
+    ],
+    useCases: [
+      'Security operations centers',
+      'IT security teams',
+      'Managed security providers',
+      'Enterprise companies',
+      'Government agencies',
+      'Financial institutions',
+      'Healthcare organizations',
+      'Educational institutions'
+    ],
+    marketSize: '$4.5B by 2025',
+    targetAudience: 'Security operations centers, IT security teams, managed security providers, enterprise companies, government agencies',
+    competitiveAdvantage: 'AI-first threat detection with quantum computing integration and comprehensive security coverage',
+    contact: 'kleber@ziontechgroup.com',
+    mobile: '+1 302 464 0950',
+    address: '364 E Main St STE 1008 Middletown DE 19709',
+    website: 'https://ziontechgroup.com',
+    slug: '/quantum-threat-detection',
+    demoUrl: 'https://demo.ziontechgroup.com/threat-detection',
+    documentation: 'https://docs.ziontechgroup.com/threat-detection',
+    pricingPage: 'https://ziontechgroup.com/pricing/threat-detection'
+  },
+
+  // Quantum Identity Verification
+  {
+    id: 'quantum-identity-verification',
+    name: 'Quantum Identity Verification Platform',
+    tagline: 'Unbreakable identity verification with quantum security',
+    description: 'Advanced identity verification platform that uses quantum-resistant cryptography and AI to provide secure, reliable, and tamper-proof identity verification for organizations and individuals.',
+    category: 'Identity & Access Management',
+    type: 'IT Service',
+    pricing: {
+      starter: '$1,800/month',
+      professional: '$4,200/month',
+      enterprise: '$9,500/month',
+      custom: 'Contact for pricing'
+    },
+    features: [
+      'Quantum-resistant verification',
+      'Multi-factor authentication',
+      'Biometric integration',
+      'Blockchain verification',
+      'Real-time validation',
+      'Custom verification flows',
+      'API access',
+      'SDK integration',
+      'Advanced analytics',
+      'Compliance reporting',
+      'Multi-platform support',
+      'Enterprise security'
+    ],
+    benefits: [
+      'Unbreakable security',
+      'Reduced fraud',
+      'Better user experience',
+      'Compliance with regulations',
+      'Cost-effective verification',
+      'Scalable solution',
+      'Multi-platform support',
+      'Future-proof security'
+    ],
+    useCases: [
+      'Financial services',
+      'Healthcare organizations',
+      'Government agencies',
+      'E-commerce businesses',
+      'Educational institutions',
+      'Travel and hospitality',
+      'Legal services',
+      'Real estate'
+    ],
+    marketSize: '$2.9B by 2025',
+    targetAudience: 'Financial services, healthcare organizations, government agencies, e-commerce businesses, educational institutions',
+    competitiveAdvantage: 'Quantum-first identity verification with comprehensive security features and multi-platform support',
+    contact: 'kleber@ziontechgroup.com',
+    mobile: '+1 302 464 0950',
+    address: '364 E Main St STE 1008 Middletown DE 19709',
+    website: 'https://ziontechgroup.com',
+    slug: '/quantum-identity-verification',
+    demoUrl: 'https://demo.ziontechgroup.com/identity-verification',
+    documentation: 'https://docs.ziontechgroup.com/identity-verification',
+    pricingPage: 'https://ziontechgroup.com/pricing/identity-verification'
+  },
+
+  // Quantum Compliance Automation
+  {
+    id: 'quantum-compliance-automation',
+    name: 'Quantum Compliance Automation Platform',
+    tagline: 'Automated compliance with quantum-enhanced security',
+    description: 'Comprehensive compliance automation platform that uses quantum-resistant security and AI to streamline compliance processes, reduce costs, and ensure continuous compliance across all regulations.',
+    category: 'Compliance & Security',
+    type: 'IT Service',
+    pricing: {
+      starter: '$2,200/month',
+      professional: '$5,000/month',
+      enterprise: '$12,000/month',
+      custom: 'Contact for pricing'
+    },
+    features: [
+      'Automated compliance monitoring',
+      'Quantum-resistant security',
+      'Real-time compliance dashboard',
+      'Automated evidence collection',
+      'Policy management',
+      'Risk assessment',
+      'Audit trail management',
+      'Integration capabilities',
+      'Custom frameworks',
+      'Reporting automation',
       'API access',
       'Enterprise security'
     ],
     benefits: [
-      'Improve computational performance by 1000x',
-      'Enhance security with quantum encryption',
-      'Reduce infrastructure costs by 40%',
-      'Enable previously impossible computations',
-      'Future-proof your infrastructure'
+      'Reduce compliance costs by 50%',
+      'Continuous compliance monitoring',
+      'Faster certification',
+      'Better risk management',
+      'Automated reporting',
+      'Improved security posture',
+      'Scalable compliance',
+      'Peace of mind'
     ],
-    targetAudience: [
-      'Technology companies',
-      'Research institutions',
-      'Financial institutions',
+    useCases: [
+      'Financial services',
       'Healthcare organizations',
-      'Government agencies',
-      'Universities'
-    ],
-    marketPosition: 'Leading quantum cloud infrastructure platform. Competitive with AWS ($0.10-2.00 per hour), Azure ($0.10-2.50 per hour), and Google Cloud ($0.10-2.00 per hour). Our advantage: Quantum computing integration.',
-    competitors: ['AWS, Azure, Google Cloud, IBM Cloud, Oracle Cloud'],
-    techStack: ['Python, Go, React, Node.js, PostgreSQL, Redis, AWS, Quantum hardware, Kubernetes'],
-    realImplementation: true,
-    implementationDetails: 'Advanced cloud infrastructure with quantum computing capabilities, hybrid processing, and comprehensive management tools. Includes dashboard, API, and extensive customization.',
-    roi: 'Organizations typically see 300-600% ROI through improved performance and reduced costs.',
-    useCases: [
-      'High-performance computing',
-      'Cryptography and security',
-      'Machine learning',
-      'Scientific research',
-      'Financial modeling',
-      'Drug discovery'
-    ],
-    integrations: ['AWS, Azure, Google Cloud, Kubernetes, Docker, Terraform, Ansible'],
-    support: '24/7 support, dedicated infrastructure specialist, implementation assistance, and comprehensive documentation.',
-    compliance: ['SOC 2 Type II, ISO 27001, GDPR, CCPA, HIPAA'],
-    link: 'https://ziontechgroup.com/quantum-cloud-infrastructure',
-    icon: '☁️',
-    color: 'from-blue-500 to-indigo-600',
-    popular: true,
-    launchDate: '2024-10-15',
-    customers: 200,
-    rating: 4.8,
-    reviews: 120
-  },
-  {
-    id: 'edge-computing-orchestrator',
-    name: 'Edge Computing Orchestrator',
-    tagline: 'Intelligent edge computing for the modern world',
-    description: 'Advanced edge computing platform that intelligently orchestrates distributed computing resources for optimal performance, low latency, and high reliability.',
-    category: 'Edge Computing',
-    price: {
-      monthly: 249,
-      yearly: 2490,
-      currency: 'USD',
-      trialDays: 21,
-      setupTime: '1 day'
-    },
-    features: [
-      'Intelligent edge orchestration',
-      'Low-latency processing',
-      'Distributed computing',
-      'Real-time analytics',
-      'Edge AI capabilities',
-      'Load balancing',
-      'Fault tolerance',
-      'Security management',
-      'Performance monitoring',
-      'Scalable architecture'
-    ],
-    benefits: [
-      'Reduce latency by 90%',
-      'Improve reliability by 99.9%',
-      'Lower bandwidth costs by 60%',
-      'Enable real-time applications',
-      'Scale globally with ease'
-    ],
-    targetAudience: [
-      'IoT companies',
+      'Government contractors',
+      'Technology companies',
       'Manufacturing companies',
-      'Smart city initiatives',
-      'Telecommunications',
-      'Automotive companies',
-      'Healthcare organizations'
+      'Retail businesses',
+      'Educational institutions',
+      'Non-profit organizations'
     ],
-    marketPosition: 'Leading edge computing orchestration platform. Competitive with AWS IoT Greengrass ($0.16 per device), Azure IoT Edge ($0.40 per device), and Google Cloud IoT Edge ($0.30 per device). Our advantage: Intelligent orchestration.',
-    competitors: ['AWS IoT Greengrass, Azure IoT Edge, Google Cloud IoT Edge, EdgeX Foundry'],
-    techStack: ['Go, Python, React, Node.js, PostgreSQL, Redis, Docker, Kubernetes, Edge devices'],
-    realImplementation: true,
-    implementationDetails: 'Advanced edge computing platform with intelligent orchestration, real-time processing, and comprehensive management. Includes dashboard, API, and extensive customization.',
-    roi: 'Organizations typically see 200-400% ROI through improved performance and reduced costs.',
-    useCases: [
-      'IoT applications',
-      'Real-time analytics',
-      'Edge AI processing',
-      'Smart manufacturing',
-      'Autonomous vehicles',
-      'Smart cities'
-    ],
-    integrations: ['AWS IoT, Azure IoT, Google Cloud IoT, Kubernetes, Docker, MQTT, CoAP'],
-    support: '24/7 support, dedicated edge specialist, implementation assistance, and comprehensive documentation.',
-    compliance: ['SOC 2 Type II, ISO 27001, GDPR, CCPA, Industry Standards'],
-    link: 'https://ziontechgroup.com/edge-computing-orchestrator',
-    icon: '🌐',
-    color: 'from-green-500 to-teal-600',
-    popular: false,
-    launchDate: '2024-11-15',
-    customers: 150,
-    rating: 4.7,
-    reviews: 85
+    marketSize: '$3.2B by 2025',
+    targetAudience: 'Financial services, healthcare organizations, government contractors, technology companies, manufacturing companies',
+    competitiveAdvantage: 'Quantum-first compliance automation with comprehensive monitoring and enterprise-grade security',
+    contact: 'kleber@ziontechgroup.com',
+    mobile: '+1 302 464 0950',
+    address: '364 E Main St STE 1008 Middletown DE 19709',
+    website: 'https://ziontechgroup.com',
+    slug: '/quantum-compliance-automation',
+    demoUrl: 'https://demo.ziontechgroup.com/compliance-automation',
+    documentation: 'https://docs.ziontechgroup.com/compliance-automation',
+    pricingPage: 'https://ziontechgroup.com/pricing/compliance-automation'
   },
+
+  // Quantum Network Security
   {
-    id: 'zero-trust-security-platform',
-    name: 'Zero Trust Security Platform',
-    tagline: 'Never trust, always verify security architecture',
-    description: 'Comprehensive zero trust security platform that implements the principle of "never trust, always verify" for maximum protection against modern cyber threats.',
-    category: 'Cybersecurity',
-    price: {
-      monthly: 299,
-      yearly: 2990,
-      currency: 'USD',
-      trialDays: 30,
-      setupTime: '3 days'
+    id: 'quantum-network-security',
+    name: 'Quantum Network Security Platform',
+    tagline: 'Quantum-resistant network security with AI-powered protection',
+    description: 'Advanced network security platform that implements quantum-resistant protocols and AI-powered threat detection to protect networks from current and future cyber threats.',
+    category: 'Network Security',
+    type: 'IT Service',
+    pricing: {
+      starter: '$2,800/month',
+      professional: '$6,000/month',
+      enterprise: '$14,000/month',
+      custom: 'Contact for pricing'
     },
     features: [
-      'Identity verification',
-      'Device trust scoring',
+      'Quantum-resistant protocols',
+      'AI-powered threat detection',
+      'Real-time network monitoring',
+      'Automated threat response',
       'Network segmentation',
-      'Continuous monitoring',
-      'Threat detection',
-      'Access control',
-      'Encryption',
-      'Audit logging',
-      'Compliance tools',
-      'Advanced analytics'
+      'Advanced firewall capabilities',
+      'Intrusion detection',
+      'Traffic analysis',
+      'Custom security policies',
+      'API integration',
+      'Advanced analytics',
+      'Enterprise security'
     ],
     benefits: [
-      'Reduce security incidents by 95%',
-      'Improve compliance scores',
-      'Protect against insider threats',
-      'Enhance data protection',
-      'Lower insurance premiums'
+      'Future-proof security',
+      'Real-time protection',
+      'Automated response',
+      'Better network visibility',
+      'Reduced security risks',
+      'Compliance with regulations',
+      'Cost-effective security',
+      'Scalable protection'
     ],
-    targetAudience: [
+    useCases: [
+      'Enterprise networks',
+      'Data centers',
+      'Cloud infrastructure',
+      'IoT networks',
       'Financial institutions',
       'Healthcare organizations',
       'Government agencies',
-      'Technology companies',
-      'Manufacturing companies',
       'Educational institutions'
     ],
-    marketPosition: 'Leading zero trust security platform. Competitive with Palo Alto Networks ($50-200 per user), Cisco ($25-150 per user), and Fortinet ($30-180 per user). Our advantage: Comprehensive zero trust implementation.',
-    competitors: ['Palo Alto Networks, Cisco, Fortinet, Check Point, Juniper Networks'],
-    techStack: ['Python, Go, React, Node.js, PostgreSQL, Redis, AWS, Security frameworks'],
-    realImplementation: true,
-    implementationDetails: 'Advanced zero trust security platform with comprehensive protection, continuous monitoring, and compliance tools. Includes dashboard, API, and extensive customization.',
-    roi: 'Organizations typically see 200-400% ROI through improved security and reduced incidents.',
-    useCases: [
-      'Network security',
-      'Access control',
-      'Threat detection',
-      'Compliance management',
-      'Data protection',
-      'Risk assessment'
-    ],
-    integrations: ['Active Directory, LDAP, SAML, OAuth, SIEM systems, EDR platforms'],
-    support: '24/7 support, dedicated security specialist, implementation assistance, and comprehensive documentation.',
-    compliance: ['SOC 2 Type II, ISO 27001, GDPR, CCPA, HIPAA, PCI DSS'],
-    link: 'https://ziontechgroup.com/zero-trust-security-platform',
-    icon: '🔒',
-    color: 'from-red-500 to-pink-600',
-    popular: true,
-    launchDate: '2024-12-01',
-    customers: 180,
-    rating: 4.9,
-    reviews: 95
-  },
-  {
-    id: 'blockchain-enterprise-platform',
-    name: 'Blockchain Enterprise Platform',
-    tagline: 'Enterprise-grade blockchain solutions',
-    description: 'Advanced blockchain platform designed for enterprise use cases with high performance, scalability, and comprehensive governance tools.',
-    category: 'Blockchain & Web3',
-    price: {
-      monthly: 199,
-      yearly: 1990,
-      currency: 'USD',
-      trialDays: 21,
-      setupTime: '2 days'
-    },
-    features: [
-      'High-performance blockchain',
-      'Smart contract development',
-      'Token management',
-      'Governance tools',
-      'API access',
-      'Analytics dashboard',
-      'Security features',
-      'Scalability solutions',
-      'Integration tools',
-      'Compliance features'
-    ],
-    benefits: [
-      'Improve transparency by 100%',
-      'Reduce fraud by 90%',
-      'Lower transaction costs by 70%',
-      'Enable new business models',
-      'Enhance trust and security'
-    ],
-    targetAudience: [
-      'Financial institutions',
-      'Supply chain companies',
-      'Healthcare organizations',
-      'Government agencies',
-      'Technology companies',
-      'Real estate companies'
-    ],
-    marketPosition: 'Leading enterprise blockchain platform. Competitive with Hyperledger Fabric (Open source), Ethereum Enterprise ($0-1000 per month), and Corda ($0-500 per month). Our advantage: Enterprise-focused features.',
-    competitors: ['Hyperledger Fabric, Ethereum Enterprise, Corda, Quorum, MultiChain'],
-    techStack: ['Go, Python, React, Node.js, PostgreSQL, Redis, Docker, Kubernetes, Blockchain protocols'],
-    realImplementation: true,
-    implementationDetails: 'Advanced blockchain platform with enterprise features, smart contracts, and comprehensive governance. Includes dashboard, API, and extensive customization.',
-    roi: 'Organizations typically see 200-500% ROI through improved efficiency and new business models.',
-    useCases: [
-      'Supply chain tracking',
-      'Financial transactions',
-      'Identity management',
-      'Asset tokenization',
-      'Voting systems',
-      'Document verification'
-    ],
-    integrations: ['ERP systems, CRM platforms, Financial systems, IoT platforms, Cloud services'],
-    support: '24/7 support, dedicated blockchain specialist, implementation assistance, and comprehensive documentation.',
-    compliance: ['SOC 2 Type II, ISO 27001, GDPR, CCPA, Industry Standards'],
-    link: 'https://ziontechgroup.com/blockchain-enterprise-platform',
-    icon: '⛓️',
-    color: 'from-purple-500 to-indigo-600',
-    popular: false,
-    launchDate: '2025-01-15',
-    customers: 120,
-    rating: 4.6,
-    reviews: 65
-  },
-  {
-    id: 'ai-powered-devops',
-    name: 'AI-Powered DevOps Platform',
-    tagline: 'Intelligent automation for modern development',
-    description: 'Revolutionary DevOps platform that uses AI to automate development processes, predict issues, and optimize performance for faster, more reliable software delivery.',
-    category: 'DevOps & Development',
-    price: {
-      monthly: 179,
-      yearly: 1790,
-      currency: 'USD',
-      trialDays: 21,
-      setupTime: '1 day'
-    },
-    features: [
-      'AI-powered automation',
-      'Predictive analytics',
-      'Intelligent testing',
-      'Performance optimization',
-      'Issue prediction',
-      'Automated deployment',
-      'Continuous monitoring',
-      'Team collaboration',
-      'Advanced reporting',
-      'Integration tools'
-    ],
-    benefits: [
-      'Deploy 5x faster',
-      'Reduce errors by 80%',
-      'Improve team productivity',
-      'Lower infrastructure costs',
-      'Enhance code quality'
-    ],
-    targetAudience: [
-      'Development teams',
-      'DevOps engineers',
-      'Technology companies',
-      'Startups',
-      'Digital agencies',
-      'Enterprise IT teams'
-    ],
-    marketPosition: 'Leading AI-powered DevOps platform. Competitive with GitLab ($19-99), GitHub Actions ($0-44), and Jenkins (Free). Our advantage: AI-powered automation and prediction.',
-    competitors: ['GitLab, GitHub Actions, Jenkins, CircleCI, Travis CI, Azure DevOps'],
-    techStack: ['Python, Go, React, Node.js, PostgreSQL, Redis, AWS, AI/ML frameworks'],
-    realImplementation: true,
-    implementationDetails: 'Advanced DevOps platform with AI-powered automation, predictive analytics, and comprehensive monitoring. Includes dashboard, API, and extensive customization.',
-    roi: 'Teams typically see 200-400% ROI through improved efficiency and reduced errors.',
-    useCases: [
-      'Continuous integration',
-      'Continuous deployment',
-      'Automated testing',
-      'Performance monitoring',
-      'Issue prediction',
-      'Team collaboration'
-    ],
-    integrations: ['GitHub, GitLab, Bitbucket, AWS, Azure, GCP, Slack, Jira'],
-    support: '24/7 support, dedicated DevOps specialist, implementation assistance, and comprehensive documentation.',
-    compliance: ['SOC 2 Type II, ISO 27001, GDPR'],
-    link: 'https://ziontechgroup.com/ai-powered-devops',
-    icon: '🤖',
-    color: 'from-orange-500 to-red-600',
-    popular: true,
-    launchDate: '2025-02-01',
-    customers: 250,
-    rating: 4.8,
-    reviews: 140
+    marketSize: '$5.1B by 2025',
+    targetAudience: 'Enterprise networks, data centers, cloud infrastructure, IoT networks, financial institutions, healthcare organizations',
+    competitiveAdvantage: 'Quantum-first network security with AI-powered protection and comprehensive monitoring',
+    contact: 'kleber@ziontechgroup.com',
+    mobile: '+1 302 464 0950',
+    address: '364 E Main St STE 1008 Middletown DE 19709',
+    website: 'https://ziontechgroup.com',
+    slug: '/quantum-network-security',
+    demoUrl: 'https://demo.ziontechgroup.com/network-security',
+    documentation: 'https://docs.ziontechgroup.com/network-security',
+    pricingPage: 'https://ziontechgroup.com/pricing/network-security'
   }
 ];
 
-export const getPopularITServices = () => {
-  return innovativeITServices2025.filter(service => service.popular);
-};
-
-export const getITServicesByCategory = (category: string) => {
-  return innovativeITServices2025.filter(service => service.category === category);
-};
-
-export const getITServicesByPriceRange = (minPrice: number, maxPrice: number) => {
-  return innovativeITServices2025.filter(service => 
-    service.price.monthly >= minPrice && service.price.monthly <= maxPrice
-  );
-};
+export default innovativeITServices;

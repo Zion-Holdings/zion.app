@@ -1,23 +1,26 @@
 import React from 'react';
-import Head from 'next/head';
+import ServiceLanding from '../components/sections/ServiceLanding';
 
-export default function EducationTechnologySolutionsPage() {
+export default function EducationTechnologySolutions() {
 	return (
-		<div className="min-h-screen pt-24 pb-20 px-4 sm:px-6 lg:px-8 text-white">
-			<Head>
-				<title>Education Technology Solutions | Zion Tech Group</title>
-				<meta name="description" content="Personalized learning, skill assessment, and AI education platforms." />
-				<link rel="canonical" href="https://ziontechgroup.com/education-technology-solutions" />
-			</Head>
-			<div className="max-w-5xl mx-auto space-y-6">
-				<h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Education Technology Solutions</h1>
-				<ul className="list-disc list-inside text-slate-300 space-y-1">
-					<li>Adaptive learning and tutoring</li>
-					<li>Skill assessment and certification</li>
-					<li>Content generation and grading assistance</li>
-					<li>Student success and retention analytics</li>
-				</ul>
-			</div>
-		</div>
+		<ServiceLanding
+			title="Education Technology Solutions"
+			description="Personalized learning, skills assessment, and AI tutoring platforms that increase engagement and outcomes."
+			subtitle="From K-12 to workforce upskilling"
+			pricePerMonthUSD={2999}
+			implementationWeeks="Implementation: 4-8 weeks"
+			roiNote="Higher completion rates and lower instructional costs"
+			features={[
+				"Adaptive learning with mastery-based progression",
+				"Assessment generation and grading assistance",
+				"LLM tutor with curriculum alignment",
+				"Analytics for instructors and administrators",
+				"Accessibility and safety controls",
+				"Integrations: Canvas, Moodle, Google Classroom"
+			]}
+			industries={["K-12", "Higher Ed", "Workforce"]}
+			ctaHref="/contact"
+			canonical="https://ziontechgroup.com/education-technology-solutions"
+		/>
 	);
 }

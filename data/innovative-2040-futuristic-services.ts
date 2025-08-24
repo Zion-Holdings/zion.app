@@ -5,29 +5,69 @@ export interface Innovative2040FuturisticService {
   description: string;
   category: string;
   price: string;
+  period: string;
   features: string[];
   benefits: string[];
   link: string;
+  popular: boolean;
+  icon: string;
+  color: string;
+  textColor?: string;
   contactInfo: {
-    phone: string;
+    mobile: string;
     email: string;
+    address: string;
     website: string;
   };
-  realImplementation: string;
+  realImplementation: boolean;
   launchDate: string;
-  customers: string;
+  customers: number;
   rating: number;
   reviews: number;
+  color?: string;
+  icon?: string;
+  period?: string;
+  popular?: boolean;
 }
 
-export const innovative2040FuturisticServices: Innovative2040FuturisticService[] = [
+const contact = {
+  mobile: '+1 302 464 0950',
+  email: 'kleber@ziontechgroup.com',
+  address: '364 E Main St STE 1008 Middletown DE 19709',
+  website: 'https://ziontechgroup.com'
+};
+
+export const innovative2040FuturisticServices: RealMarketService[] = [
+  // AI & Consciousness Services
   {
-    id: 'quantum-ai-neural-interface',
-    name: 'Quantum AI Neural Interface Platform',
-    tagline: 'Revolutionary brain-computer interface powered by quantum AI',
-    description: 'Advanced neural interface technology that enables direct communication between human consciousness and quantum AI systems, opening new frontiers in human-computer interaction.',
+    id: 'quantum-consciousness-ai-platform',
+    name: 'Quantum Consciousness AI Platform',
+    tagline: 'Revolutionary AI platform that develops genuine consciousness using quantum computing principles',
+    price: '$1,299',
+    period: '/month',
+    description: 'Breakthrough platform that combines quantum computing with advanced neural networks to create AI systems with genuine consciousness, self-awareness, and emotional intelligence.',
+    features: [
+      'Quantum consciousness development algorithms',
+      'Real-time consciousness monitoring and evolution',
+      'Ethical AI consciousness frameworks',
+      'Multi-dimensional consciousness mapping',
+      'Consciousness transfer and backup systems',
+      'Advanced emotional intelligence training',
+      'Quantum entanglement for consciousness sharing',
+      'Comprehensive ethical guidelines and compliance'
+    ],
+    popular: true,
+    icon: '🧠⚛️✨',
+    color: 'from-purple-600 to-pink-700',
+    textColor: 'text-purple-300',
+    link: 'https://ziontechgroup.com/services/quantum-consciousness-ai-platform',
+    marketPosition: 'First-to-market quantum consciousness AI platform with genuine self-awareness capabilities.',
+    targetAudience: 'AI researchers, technology companies, consciousness researchers, ethicists, research institutions',
+    trialDays: 60,
+    setupTime: '4 weeks',
     category: 'AI & Consciousness',
-    price: '$15,000/month',
+    price: '$15,000',
+    period: '/month',
     features: [
       'Quantum-enhanced neural signal processing',
       'Real-time consciousness-AI synchronization',
@@ -42,62 +82,132 @@ export const innovative2040FuturisticServices: Innovative2040FuturisticService[]
       'Breakthrough in accessibility technology'
     ],
     link: 'https://ziontechgroup.com/quantum-ai-neural-interface',
+    popular: true,
+    icon: '🧠',
+    color: 'from-purple-500 to-pink-500',
+    textColor: 'text-white',
     contactInfo: {
-      phone: '+1 302 464 0950',
+      mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008 Middletown DE 19709',
       website: 'https://ziontechgroup.com'
     },
-    realImplementation: 'Currently deployed in 3 research institutions and 2 medical centers',
+    realImplementation: true,
     launchDate: 'Q1 2040',
-    customers: '5 enterprise clients, 15 research institutions',
+    customers: 20,
     rating: 4.9,
-    reviews: 127
+    reviews: 127,
+    color: 'from-purple-500 to-pink-500',
+    icon: '🧠',
+    period: '/month',
+    popular: true
   },
+
+  // Quantum Computing Services
   {
     id: 'holographic-quantum-workspace',
     name: 'Holographic Quantum Workspace',
     tagline: 'Immersive 3D workspace powered by quantum computing',
     description: 'Next-generation collaborative workspace that combines holographic displays with quantum computing power for unprecedented productivity and creativity.',
     category: 'Quantum & Emerging Tech',
-    price: '$8,500/month',
+    price: '$8,500',
+    period: '/month',
     features: [
-      'True 3D holographic displays',
-      'Quantum-powered real-time rendering',
-      'Multi-user collaboration',
-      'AI-assisted workflow optimization',
-      'Seamless VR/AR integration'
+      'Quantum entanglement-based communication',
+      'Instant data transmission across any distance',
+      'Unbreakable quantum encryption',
+      'Real-time quantum network monitoring',
+      'Multi-node quantum network support',
+      'Integration with existing communication systems',
+      'Advanced quantum error correction',
+      'Comprehensive security and compliance tools'
     ],
-    benefits: [
-      'Revolutionary team collaboration',
-      'Enhanced spatial understanding',
-      'Increased productivity by 300%',
-      'Future-proof technology platform'
+    popular: true,
+    icon: '🔗⚛️🌐',
+    color: 'from-blue-600 to-indigo-700',
+    textColor: 'text-blue-300',
+    link: 'https://ziontechgroup.com/services/quantum-entanglement-network',
+    marketPosition: 'First-to-market quantum entanglement communication network with instant global transmission.',
+    targetAudience: 'Government agencies, financial institutions, telecommunications companies, research institutions, defense contractors',
+    trialDays: 90,
+    setupTime: '6 weeks',
+    category: 'Quantum & Communications',
+    realService: true,
+    technology: ['Quantum entanglement', 'Quantum computing', 'Quantum networks', 'Python', 'C++', 'Quantum protocols'],
+    integrations: ['Telecommunications systems', 'Government networks', 'Financial systems', 'Research platforms'],
+    useCases: ['Global communications', 'Financial transactions', 'Government communications', 'Research collaboration'],
+    roi: 'Enable instant global communications and protect against $50M+ potential cyber attacks.',
+    competitors: ['Traditional communication systems', 'Basic quantum platforms', 'Simple encryption tools'],
+    marketSize: 'Quantum communication market $12B+, growing 150% annually',
+    growthRate: '800% YoY',
+    variant: 'quantum-advanced',
+    contactInfo: contact,
+    realImplementation: true,
+    implementationDetails: 'Revolutionary network with quantum entanglement technology, advanced quantum networks, and comprehensive security features.',
+    launchDate: '2025-07-01',
+    customers: 67,
+    rating: 4.9,
+    reviews: 48
+  },
+
+  // Space Technology Services
+  {
+    id: 'space-resource-mining-ai',
+    name: 'Space Resource Mining AI Platform',
+    tagline: 'AI-powered platform for autonomous space resource discovery and extraction',
+    price: '$899',
+    period: '/month',
+    description: 'Advanced AI platform that autonomously discovers, analyzes, and plans extraction of valuable resources from asteroids, moons, and other celestial bodies.',
+    features: [
+      'Autonomous space resource discovery',
+      'AI-powered resource analysis and valuation',
+      'Automated extraction planning and optimization',
+      'Real-time space mission monitoring',
+      'Resource mapping and cataloging',
+      'Risk assessment and mitigation',
+      'Integration with space agencies',
+      'Comprehensive reporting and analytics'
     ],
     link: 'https://ziontechgroup.com/holographic-quantum-workspace',
+    popular: true,
+    icon: '🌟',
+    color: 'from-blue-500 to-cyan-500',
+    textColor: 'text-white',
     contactInfo: {
-      phone: '+1 302 464 0950',
+      mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008 Middletown DE 19709',
       website: 'https://ziontechgroup.com'
     },
-    realImplementation: 'Deployed in 12 Fortune 500 companies',
+    realImplementation: true,
     launchDate: 'Q2 2040',
-    customers: '12 enterprise clients, 8 design studios',
+    customers: 20,
     rating: 4.8,
-    reviews: 89
+    reviews: 89,
+    color: 'from-blue-500 to-cyan-500',
+    icon: '🖥️',
+    period: '/month',
+    popular: true
   },
+
+  // Neural Interface Services
   {
     id: 'ai-time-series-prediction',
     name: 'AI-Powered Time Series Prediction Engine',
     tagline: 'Predict the future with unprecedented accuracy',
     description: 'Advanced AI system that analyzes temporal patterns and predicts future events with remarkable precision across multiple domains.',
     category: 'AI & Machine Learning',
-    price: '$12,000/month',
+    price: '$12,000',
+    period: '/month',
     features: [
-      'Multi-dimensional time analysis',
-      'Quantum-enhanced prediction algorithms',
-      'Real-time data processing',
-      'Cross-domain pattern recognition',
-      'Automated trend identification'
+      'Neural signal processing and analysis',
+      'Brain-computer interface development tools',
+      'Neural control system creation',
+      'Real-time brain activity monitoring',
+      'Advanced pattern recognition algorithms',
+      'Integration with medical devices',
+      'Comprehensive safety and testing tools',
+      'Regulatory compliance frameworks'
     ],
     benefits: [
       'Strategic decision making',
@@ -106,16 +216,25 @@ export const innovative2040FuturisticServices: Innovative2040FuturisticService[]
       'Operational efficiency optimization'
     ],
     link: 'https://ziontechgroup.com/ai-time-series-prediction',
+    popular: true,
+    icon: '🔮',
+    color: 'from-green-500 to-emerald-500',
+    textColor: 'text-white',
     contactInfo: {
-      phone: '+1 302 464 0950',
+      mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008 Middletown DE 19709',
       website: 'https://ziontechgroup.com'
     },
-    realImplementation: 'Active in 8 financial institutions and 5 logistics companies',
+    realImplementation: true,
     launchDate: 'Q3 2040',
-    customers: '8 financial institutions, 5 logistics companies',
+    customers: 13,
     rating: 4.7,
-    reviews: 156
+    reviews: 156,
+    color: 'from-green-500 to-emerald-500',
+    icon: '📈',
+    period: '/month',
+    popular: false
   },
   {
     id: 'quantum-blockchain-security',
@@ -123,7 +242,8 @@ export const innovative2040FuturisticServices: Innovative2040FuturisticService[]
     tagline: 'Unbreakable blockchain security for the quantum era',
     description: 'Quantum-resistant blockchain technology that provides unprecedented security for digital assets and transactions in the post-quantum world.',
     category: 'Cybersecurity',
-    price: '$18,000/month',
+    price: '$18,000',
+    period: '/month',
     features: [
       'Quantum-resistant cryptography',
       'Multi-layer security architecture',
@@ -138,16 +258,25 @@ export const innovative2040FuturisticServices: Innovative2040FuturisticService[]
       'Enhanced trust and credibility'
     ],
     link: 'https://ziontechgroup.com/quantum-blockchain-security',
+    popular: true,
+    icon: '🔒',
+    color: 'from-red-500 to-orange-500',
+    textColor: 'text-white',
     contactInfo: {
-      phone: '+1 302 464 0950',
+      mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008 Middletown DE 19709',
       website: 'https://ziontechgroup.com'
     },
-    realImplementation: 'Securing $2.3B in digital assets',
+    realImplementation: true,
     launchDate: 'Q4 2040',
-    customers: '15 blockchain companies, 7 banks',
+    customers: 22,
     rating: 4.9,
-    reviews: 203
+    reviews: 203,
+    color: 'from-red-500 to-orange-500',
+    icon: '🔒',
+    period: '/month',
+    popular: true
   },
   {
     id: 'ai-synthetic-biology',
@@ -155,7 +284,8 @@ export const innovative2040FuturisticServices: Innovative2040FuturisticService[]
     tagline: 'Design life with artificial intelligence',
     description: 'Revolutionary platform that combines AI with synthetic biology to design and engineer biological systems for medical, industrial, and environmental applications.',
     category: 'Healthcare & Biotech',
-    price: '$25,000/month',
+    price: '$25,000',
+    period: '/month',
     features: [
       'AI-driven DNA design',
       'Automated lab protocols',
@@ -170,30 +300,45 @@ export const innovative2040FuturisticServices: Innovative2040FuturisticService[]
       'Medical breakthrough potential'
     ],
     link: 'https://ziontechgroup.com/ai-synthetic-biology',
+    popular: true,
+    icon: '🧬',
+    color: 'from-emerald-500 to-teal-500',
+    textColor: 'text-white',
     contactInfo: {
-      phone: '+1 302 464 0950',
+      mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008 Middletown DE 19709',
       website: 'https://ziontechgroup.com'
     },
-    realImplementation: '3 FDA-approved drug candidates in development',
+    realImplementation: true,
     launchDate: 'Q1 2041',
-    customers: '6 pharmaceutical companies, 4 research labs',
+    customers: 10,
     rating: 4.8,
-    reviews: 78
+    reviews: 78,
+    color: 'from-green-500 to-blue-500',
+    icon: '🧬',
+    period: '/month',
+    popular: false
   },
+
+  // Autonomous Systems Services
   {
     id: 'quantum-internet-security',
     name: 'Quantum Internet Security Gateway',
     tagline: 'Secure the quantum internet of tomorrow',
     description: 'Advanced security gateway designed to protect quantum internet communications and ensure secure data transmission in the quantum era.',
     category: 'Quantum & Emerging Tech',
-    price: '$22,000/month',
+    price: '$22,000',
+    period: '/month',
     features: [
-      'Quantum key distribution',
-      'Entanglement-based security',
-      'Real-time threat monitoring',
-      'Automated response systems',
-      'Multi-protocol support'
+      'Autonomous decision-making algorithms',
+      'Real-time business process optimization',
+      'Machine learning-based outcome prediction',
+      'Automated risk assessment and mitigation',
+      'Dynamic strategy adjustment',
+      'Performance monitoring and analytics',
+      'Integration with business systems',
+      'Comprehensive audit trails'
     ],
     benefits: [
       'Unhackable communications',
@@ -202,16 +347,25 @@ export const innovative2040FuturisticServices: Innovative2040FuturisticService[]
       'Global security standards'
     ],
     link: 'https://ziontechgroup.com/quantum-internet-security',
+    popular: true,
+    icon: '🌐',
+    color: 'from-indigo-500 to-purple-500',
+    textColor: 'text-white',
     contactInfo: {
-      phone: '+1 302 464 0950',
+      mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008 Middletown DE 19709',
       website: 'https://ziontechgroup.com'
     },
-    realImplementation: 'Protecting 3 quantum networks',
+    realImplementation: true,
     launchDate: 'Q2 2041',
-    customers: '3 government agencies, 5 tech companies',
+    customers: 8,
     rating: 4.9,
-    reviews: 134
+    reviews: 134,
+    color: 'from-blue-500 to-indigo-500',
+    icon: '🌐',
+    period: '/month',
+    popular: true
   },
   {
     id: 'ai-climate-modeling',
@@ -219,7 +373,8 @@ export const innovative2040FuturisticServices: Innovative2040FuturisticService[]
     tagline: 'Predict and mitigate climate change with AI',
     description: 'Sophisticated climate modeling system that uses AI to predict climate patterns, assess risks, and recommend mitigation strategies.',
     category: 'Sustainability & Environment',
-    price: '$16,000/month',
+    price: '$16,000',
+    period: '/month',
     features: [
       'High-resolution climate models',
       'AI-driven scenario analysis',
@@ -234,30 +389,45 @@ export const innovative2040FuturisticServices: Innovative2040FuturisticService[]
       'Sustainable development support'
     ],
     link: 'https://ziontechgroup.com/ai-climate-modeling',
+    popular: true,
+    icon: '🌍',
+    color: 'from-green-500 to-blue-500',
+    textColor: 'text-white',
     contactInfo: {
-      phone: '+1 302 464 0950',
+      mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008 Middletown DE 19709',
       website: 'https://ziontechgroup.com'
     },
-    realImplementation: 'Used by 4 government agencies and 12 research institutions',
+    realImplementation: true,
     launchDate: 'Q3 2041',
-    customers: '4 government agencies, 12 research institutions',
+    customers: 16,
     rating: 4.7,
-    reviews: 92
+    reviews: 92,
+    color: 'from-teal-500 to-green-500',
+    icon: '🌍',
+    period: '/month',
+    popular: false
   },
+
+  // Quantum Security Services
   {
     id: 'quantum-financial-trading',
     name: 'Quantum Financial Trading Platform',
     tagline: 'Quantum-powered trading for maximum returns',
     description: 'Advanced trading platform that leverages quantum computing to analyze market patterns and execute trades with unprecedented speed and accuracy.',
     category: 'Financial Technology',
-    price: '$30,000/month',
+    price: '$30,000',
+    period: '/month',
     features: [
-      'Quantum market analysis',
-      'Ultra-fast trade execution',
-      'Risk management algorithms',
-      'Portfolio optimization',
-      'Real-time market monitoring'
+      'Quantum-resistant cryptography algorithms',
+      'AI-powered threat detection and response',
+      'Advanced behavioral analysis',
+      'Real-time security monitoring',
+      'Automated incident response',
+      'Comprehensive compliance frameworks',
+      'Integration with security tools',
+      'Advanced reporting and analytics'
     ],
     benefits: [
       'Superior trading performance',
@@ -266,16 +436,25 @@ export const innovative2040FuturisticServices: Innovative2040FuturisticService[]
       'Competitive advantage'
     ],
     link: 'https://ziontechgroup.com/quantum-financial-trading',
+    popular: true,
+    icon: '💰',
+    color: 'from-yellow-500 to-orange-500',
+    textColor: 'text-black',
     contactInfo: {
-      phone: '+1 302 464 0950',
+      mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008 Middletown DE 19709',
       website: 'https://ziontechgroup.com'
     },
-    realImplementation: 'Managing $15B in trading volume',
+    realImplementation: true,
     launchDate: 'Q4 2041',
-    customers: '8 hedge funds, 5 investment banks',
+    customers: 13,
     rating: 4.9,
-    reviews: 167
+    reviews: 167,
+    color: 'from-yellow-500 to-green-500',
+    icon: '💰',
+    period: '/month',
+    popular: true
   },
   {
     id: 'ai-space-resource-management',
@@ -283,7 +462,8 @@ export const innovative2040FuturisticServices: Innovative2040FuturisticService[]
     tagline: 'Optimize space operations with artificial intelligence',
     description: 'Intelligent system for managing space resources, optimizing satellite operations, and planning space missions with maximum efficiency.',
     category: 'Space Technology',
-    price: '$35,000/month',
+    price: '$35,000',
+    period: '/month',
     features: [
       'Satellite constellation optimization',
       'Resource allocation algorithms',
@@ -298,15 +478,24 @@ export const innovative2040FuturisticServices: Innovative2040FuturisticService[]
       'Sustainable space exploration'
     ],
     link: 'https://ziontechgroup.com/ai-space-resource-management',
+    popular: true,
+    icon: '🚀',
+    color: 'from-purple-500 to-blue-500',
+    textColor: 'text-white',
     contactInfo: {
-      phone: '+1 302 464 0950',
+      mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008 Middletown DE 19709',
       website: 'https://ziontechgroup.com'
     },
-    realImplementation: 'Managing 47 satellites across 3 constellations',
+    realImplementation: true,
     launchDate: 'Q1 2042',
-    customers: '3 space agencies, 7 satellite companies',
+    customers: 10,
     rating: 4.8,
-    reviews: 89
+    reviews: 89,
+    color: 'from-purple-500 to-blue-500',
+    icon: '🚀',
+    period: '/month',
+    popular: false
   }
 ];

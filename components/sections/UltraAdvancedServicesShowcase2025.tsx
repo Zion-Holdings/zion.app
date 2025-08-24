@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Brain, Rocket, Shield, Atom, Cpu, Cloud, Target,
+  Brain, Rocket, Atom, Cpu, Target,
   ArrowRight, Star, Zap, Users, Award, Globe, Search,
-  Filter, ChevronDown, ExternalLink, Sparkles, Eye,
-  Lock, Clock, CheckCircle, TrendingUp, DollarSign, Phone
+  ExternalLink, Sparkles, Eye,
+  Clock, CheckCircle, TrendingUp, DollarSign, Phone
 } from 'lucide-react';
 
 // Import service data
@@ -14,7 +14,7 @@ import { innovativeRealMicroSaasServices2025 } from '../../data/2025-innovative-
 import { innovativeAIServicesEnhanced2025 } from '../../data/2025-innovative-ai-services-enhanced';
 import { innovativeITServicesEnhanced2025 } from '../../data/2025-innovative-it-services-enhanced';
 import { emergingTechServicesEnhanced2025 } from '../../data/2025-emerging-tech-services-enhanced';
-import { advancedAIAutomationServices2025 } from '../../data/2025-advanced-ai-automation-services';
+import { advancedAIAutomationServices } from '../../data/2026-advanced-ai-automation-services';
 import { advancedITInfrastructureServices2025 } from '../../data/2025-advanced-it-infrastructure-services';
 import { innovativeBusinessSolutions2025 } from '../../data/2025-innovative-business-solutions';
 
@@ -32,7 +32,7 @@ const UltraAdvancedServicesShowcase2025: React.FC = () => {
     ...innovativeAIServicesEnhanced2025,
     ...innovativeITServicesEnhanced2025,
     ...emergingTechServicesEnhanced2025,
-    ...advancedAIAutomationServices2025,
+    ...advancedAIAutomationServices,
     ...advancedITInfrastructureServices2025,
     ...innovativeBusinessSolutions2025
   ];
@@ -60,14 +60,29 @@ const UltraAdvancedServicesShowcase2025: React.FC = () => {
     })
     .sort((a, b) => {
       switch (sortBy) {
-        case 'popularity':
-          return (b.popular ? 1 : 0) - (a.popular ? 1 : 0);
-        case 'price-low':
-          return parseFloat(a.price.replace(/[^0-9.]/g, '')) - parseFloat(b.price.replace(/[^0-9.]/g, ''));
-        case 'price-high':
-          return parseFloat(b.price.replace(/[^0-9.]/g, '')) - parseFloat(a.price.replace(/[^0-9.]/g, ''));
-        case 'name':
+        case 'popularity': {
+          // Handle both old and new service structures
+          const aPopular = 'popular' in a ? a.popular : false;
+          const bPopular = 'popular' in b ? b.popular : false;
+          return (bPopular ? 1 : 0) - (aPopular ? 1 : 0);
+        }
+        case 'price-low': {
+          const aPrice = 'price' in a && typeof a.price === 'string' ? parseFloat(a.price.replace(/[^0-9.]/g, '')) : 
+                         'pricing' in a && typeof a.pricing === 'object' && a.pricing && 'starter' in a.pricing ? (a.pricing as any).starter : 0;
+          const bPrice = 'price' in b && typeof b.price === 'string' ? parseFloat(b.price.replace(/[^0-9.]/g, '')) : 
+                         'pricing' in b && typeof b.pricing === 'object' && b.pricing && 'starter' in b.pricing ? (b.pricing as any).starter : 0;
+          return aPrice - bPrice;
+        }
+        case 'price-high': {
+          const aPriceHigh = 'price' in a && typeof a.price === 'string' ? parseFloat(a.price.replace(/[^0-9.]/g, '')) : 
+                            'pricing' in a && typeof a.pricing === 'object' && a.pricing && 'starter' in a.pricing ? (a.pricing as any).starter : 0;
+          const bPriceHigh = 'price' in b && typeof b.price === 'string' ? parseFloat(b.price.replace(/[^0-9.]/g, '')) : 
+                            'pricing' in b && typeof b.pricing === 'object' && b.pricing && 'starter' in b.pricing ? (b.pricing as any).starter : 0;
+          return bPriceHigh - aPriceHigh;
+        }
+        case 'name': {
           return a.name.localeCompare(b.name);
+        }
         default:
           return 0;
       }
@@ -209,7 +224,7 @@ const UltraAdvancedServicesShowcase2025: React.FC = () => {
           {/* Sort and View Controls */}
           <div className="flex flex-wrap items-center justify-center gap-4">
             <div className="flex items-center space-x-2">
-              <Filter className="w-4 h-4 text-gray-400" />
+                                <Search className="w-4 h-4 text-gray-400" />
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value)}
@@ -279,8 +294,8 @@ const UltraAdvancedServicesShowcase2025: React.FC = () => {
                 <div className={`${
                   viewMode === 'list' ? 'flex-shrink-0' : 'mb-4'
                 }`}>
-                  <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-xl flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300`}>
-                    <div className="text-2xl">{service.icon}</div>
+                  <div className={`w-16 h-16 bg-gradient-to-br ${'color' in service ? service.color : 'from-blue-500 to-purple-600'} rounded-xl flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300`}>
+                    <div className="text-2xl">{'icon' in service ? service.icon : '🚀'}</div>
                   </div>
                 </div>
 
@@ -294,7 +309,7 @@ const UltraAdvancedServicesShowcase2025: React.FC = () => {
                       </h3>
                       <p className="text-gray-400 text-sm mb-2">{service.tagline}</p>
                     </div>
-                    {service.popular && (
+                    {'popular' in service && service.popular && (
                       <div className="flex-shrink-0 ml-2">
                         <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-gradient-to-r from-yellow-500 to-orange-500 text-white">
                           <Star className="w-3 h-3 mr-1" />
@@ -332,8 +347,11 @@ const UltraAdvancedServicesShowcase2025: React.FC = () => {
                   {/* Pricing and Actions */}
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-2">
-                      <span className="text-2xl font-bold text-white">{service.price}</span>
-                      <span className="text-gray-400 text-sm">/{service.period}</span>
+                                            <span className="text-2xl font-bold text-white">
+                        ${'price' in service && typeof service.price === 'string' ? service.price :
+                          'pricing' in service && typeof service.pricing === 'object' && service.pricing && 'starter' in service.pricing ? (service.pricing as any).starter : 'Custom'}
+                      </span>
+                      <span className="text-gray-400 text-sm">/month</span>
                     </div>
                     <div className="flex items-center space-x-2">
                       <motion.button
@@ -360,16 +378,17 @@ const UltraAdvancedServicesShowcase2025: React.FC = () => {
                     <div className="flex items-center justify-between text-xs text-gray-400">
                       <div className="flex items-center space-x-4">
                         <span className="flex items-center space-x-1">
-                          <Clock className="w-3 h-3" />
-                          <span>{service.setupTime}</span>
+                                                    <Clock className="w-3 h-3" />
+                          <span>{'price' in service && typeof service.price === 'string' ? (service as any).setupTime :
+                                'pricing' in service && typeof service.pricing === 'object' && service.pricing && 'setupTime' in service.pricing ? (service.pricing as any).setupTime : 'Custom'}</span>
                         </span>
                         <span className="flex items-center space-x-1">
                           <DollarSign className="w-3 h-3" />
-                          <span>ROI: {service.roi}</span>
+                          <span>ROI: {(service as any).roi || 'Contact us'}</span>
                         </span>
                       </div>
                       <a
-                        href={service.link}
+                        href={'link' in service ? service.link : service.slug}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center space-x-1 text-cyan-400 hover:text-cyan-300 transition-colors"

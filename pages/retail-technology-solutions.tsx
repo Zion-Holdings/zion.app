@@ -1,23 +1,26 @@
 import React from 'react';
-import Head from 'next/head';
+import ServiceLanding from '../components/sections/ServiceLanding';
 
-export default function RetailTechnologySolutionsPage() {
+export default function RetailTechnologySolutions() {
 	return (
-		<div className="min-h-screen pt-24 pb-20 px-4 sm:px-6 lg:px-8 text-white">
-			<Head>
-				<title>Retail Technology Solutions | Zion Tech Group</title>
-				<meta name="description" content="Personalization, demand forecasting, and omnichannel analytics for retail." />
-				<link rel="canonical" href="https://ziontechgroup.com/retail-technology-solutions" />
-			</Head>
-			<div className="max-w-5xl mx-auto space-y-6">
-				<h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Retail Technology Solutions</h1>
-				<ul className="list-disc list-inside text-slate-300 space-y-1">
-					<li>Dynamic pricing and promotion optimization</li>
-					<li>Inventory forecasting and replenishment</li>
-					<li>Customer personalization and recommendations</li>
-					<li>Retail media analytics and attribution</li>
-				</ul>
-			</div>
-		</div>
+		<ServiceLanding
+			title="Retail Technology Solutions"
+			description="Transform retail with AI-driven demand forecasting, personalization, and omnichannel optimization from store to logistics."
+			subtitle="Win every shelf and channel"
+			pricePerMonthUSD={3999}
+			implementationWeeks="Implementation: 4-8 weeks"
+			roiNote="Increase conversion and cut operational costs"
+			features={[
+				"AI demand sensing and inventory optimization",
+				"On-site and CRM personalization",
+				"Computer vision for store analytics",
+				"Omnichannel orchestration and fulfillment",
+				"Dynamic pricing and promotions",
+				"Integrations: Shopify, BigCommerce, Salesforce, Snowflake"
+			]}
+			industries={["Retail", "CPG", "E-commerce"]}
+			ctaHref="/contact"
+			canonical="https://ziontechgroup.com/retail-technology-solutions"
+		/>
 	);
 }

@@ -81,9 +81,9 @@ const serviceCategories = [
     description: 'Cutting-edge micro solutions',
     services: [
       { name: 'AI Business Intelligence Suite', href: '/ai-business-intelligence-suite', description: 'Intelligent business insights', price: '$299/month' },
-      { name: 'Quantum-Secure Communication Platform', href: '/quantum-secure-communication-platform', description: 'Unbreakable encryption', price: '$599/month' },
       { name: 'AI Customer Success Automation', href: '/ai-customer-success-automation', description: 'Automate customer success', price: '$199/month' },
-      { name: 'Blockchain Supply Chain Transparency', href: '/blockchain-supply-chain-transparency', description: 'End-to-end traceability', price: '$399/month' }
+      { name: 'Blockchain Supply Chain Transparency', href: '/blockchain-supply-chain-transparency', description: 'End-to-end traceability', price: '$399/month' },
+      { name: 'AI SEO Optimization Platform', href: '/ai-seo-optimization-platform', description: 'AI-powered SEO optimization', price: '$249/month' }
     ]
   },
   {
@@ -92,10 +92,22 @@ const serviceCategories = [
     color: 'from-orange-600 via-red-600 to-pink-600',
     description: 'Breakthrough research solutions',
     services: [
-      { name: 'Neuromorphic Computing Platform', href: '/neuromorphic-computing-platform', description: 'Brain-inspired computing', price: '$899/month' },
-      { name: 'DNA Computing Platform', href: '/dna-computing-platform', description: 'Molecular computing', price: '$1,299/month' },
+      { name: 'Neuromorphic Computing Platform', href: '/neuromorphic-computing-platform', description: 'Brain-inspired computing', price: '$1,299/month' },
+      { name: 'DNA Computing Platform', href: '/dna-computing-platform', description: 'Molecular computing', price: '$1,599/month' },
       { name: 'Photonic Computing Infrastructure', href: '/photonic-computing-infrastructure', description: 'Light-speed computing', price: '$699/month' },
       { name: 'Swarm Robotics Orchestration', href: '/swarm-robotics-orchestration', description: 'Coordinate robot swarms', price: '$449/month' }
+    ]
+  },
+  {
+    title: '🎬 2031 Content & Media',
+    icon: Video,
+    color: 'from-pink-600 via-rose-600 to-red-600',
+    description: 'AI-powered content creation',
+    services: [
+      { name: 'AI Video Editing Platform', href: '/ai-video-editing-platform', description: 'Professional video editing', price: '$179/month' },
+      { name: 'AI Website Personalization Engine', href: '/ai-website-personalization-engine', description: 'Personalize every visitor', price: '$349/month' },
+      { name: 'AI Sales Automation Platform', href: '/ai-sales-automation-platform', description: 'Automate sales processes', price: '$399/month' },
+      { name: 'AI HR Recruitment Platform', href: '/ai-hr-recruitment-platform', description: 'Streamline hiring', price: '$299/month' }
     ]
   }
 ];

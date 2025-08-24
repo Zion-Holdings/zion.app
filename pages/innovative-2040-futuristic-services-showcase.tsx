@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import SEO from '../components/SEO';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Search, Grid, List, Filter, Star, Users, TrendingUp,
-  Brain, Atom, Shield, Target, Rocket, ArrowRight, Check,
-  Zap, Globe, Lock, Cpu, Database, Cloud, Palette, Heart, Phone, Mail, MapPin
+  Search, Grid, List, Star, Check,
+  Phone, Mail, MapPin
 } from 'lucide-react';
+import { UnifiedService } from '../types/unified-service-types';
 
 // Import our new innovative services
 import { innovative2040FuturisticServices } from '../data/innovative-2040-futuristic-services';
@@ -15,6 +15,7 @@ import { innovative2040ITServices } from '../data/innovative-2040-it-services';
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
 import { innovativeAIServices } from '../data/innovative-ai-services';
 import { enterpriseITServices } from '../data/enterprise-it-services';
+import { RealMarketService } from '../data/real-market-services';
 
 interface Service {
   id: string;
@@ -39,8 +40,8 @@ interface Service {
   marketSize?: string;
   growthRate?: string;
   contactInfo?: {
-    mobile?: string;
     phone?: string;
+    mobile?: string;
     email: string;
     address?: string;
     website: string;
@@ -60,9 +61,25 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
   const [sortBy, setSortBy] = useState<'name' | 'price' | 'popularity' | 'category'>('name');
   const [isLoading, setIsLoading] = useState(true);
 
-  // Combine all services
+  // Combine all services and map them to the Service interface
   const allServices: Service[] = [
-    ...innovative2040FuturisticServices,
+    ...innovative2040FuturisticServices.map(service => ({
+      ...service,
+      popular: false,
+      icon: '🚀',
+      color: 'from-cyan-400 to-blue-500',
+      textColor: 'text-cyan-400',
+      customers: 0,
+      rating: 0,
+      reviews: 0,
+      contactInfo: {
+        mobile: service.contactInfo.phone,
+        email: service.contactInfo.email,
+        address: '364 E Main St STE 1008 Middletown DE 19709',
+        website: service.contactInfo.website
+      },
+      realImplementation: typeof service.realImplementation === 'string' ? true : service.realImplementation
+    })),
     ...innovative2040ITServices,
     ...realMicroSaasServices,
     ...innovativeAIServices,
@@ -84,12 +101,12 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
     .sort((a, b) => {
       switch (sortBy) {
         case 'price': {
-          const aPrice = typeof a.price === 'string' ? parseFloat(a.price.replace(/[^0-9.]/g, '')) : a.price.monthly;
-          const bPrice = typeof b.price === 'string' ? parseFloat(b.price.replace(/[^0-9.]/g, '')) : b.price.monthly;
+          const aPrice = typeof a.price === 'string' && a.price ? parseFloat(a.price.replace(/[^0-9.]/g, '')) : (a.price && typeof a.price === 'object' ? a.price.monthly : 0);
+          const bPrice = typeof b.price === 'string' && b.price ? parseFloat(b.price.replace(/[^0-9.]/g, '')) : (b.price && typeof b.price === 'object' ? b.price.monthly : 0);
           return aPrice - bPrice;
         }
         case 'popularity':
-          return b.rating - a.rating;
+          return (b.popular ? 1 : 0) - (a.popular ? 1 : 0) || b.rating - a.rating;
         case 'category':
           return a.category.localeCompare(b.category);
         default:
@@ -143,7 +160,7 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
       <SEO 
         title="Innovative 2040 Futuristic Services Showcase | Zion Tech Group"
         description="Explore our comprehensive collection of innovative 2040 futuristic services including quantum computing, AI-powered solutions, and cutting-edge technology offerings. Contact us at +1 302 464 0950 or kleber@ziontechgroup.com"
-        keywords={["innovative services", "futuristic technology", "quantum computing", "AI services", "IT solutions", "micro SaaS", "Zion Tech Group"]}
+        keywords="innovative services, futuristic technology, quantum computing, AI services, IT solutions, micro SaaS, Zion Tech Group"
 
       />
 
@@ -151,7 +168,7 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
       <section className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
         {/* Animated Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-blue-900/20 to-purple-900/20">
-          <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%239C92AC%22%20fill-opacity%3D%220.05%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%222%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-30"></div>
+          <div className="absolute inset-0 bg-gray-800/20"></div>
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto text-center">
@@ -292,15 +309,15 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
                     variants={fadeInUp}
                     className="group relative bg-gray-800/50 border border-gray-700/50 rounded-2xl p-6 hover:border-cyan-500/50 hover:bg-gray-800/70 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/10"
                   >
-                    {/* Popular Badge */}
-                    {service.popular && (
+                    {/* Rating Badge */}
+                    {service.rating >= 4.5 && (
                       <div className="absolute -top-3 -right-3 bg-gradient-to-r from-yellow-500 to-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full">
-                        Popular
+                        Top Rated
                       </div>
                     )}
 
                     {/* Service Icon */}
-                    <div className={`w-16 h-16 bg-gradient-to-r ${service.color} rounded-2xl flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                    <div className={`w-16 h-16 bg-gradient-to-r ${service.color || 'from-cyan-500 to-blue-500'} rounded-2xl flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform duration-300`}>
                       {service.icon}
                     </div>
 
@@ -309,15 +326,15 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
                       {service.name}
                     </h3>
                     <p className="text-gray-300 mb-4 line-clamp-2">
-                      {service.tagline}
+                      {getServiceTagline(service)}
                     </p>
 
                     {/* Price */}
                     <div className="flex items-center justify-between mb-4">
                       <div className="text-2xl font-bold text-cyan-400">
-                        {typeof service.price === 'string' ? service.price : `$${service.price.monthly}/${service.price.currency}`}
+                        {getPriceDisplay(service).price}
                         <span className="text-sm text-gray-400">
-                          {typeof service.price === 'string' ? service.period : '/month'}
+                          {typeof service.price === 'string' ? (service as any).period || '/month' : '/month'}
                         </span>
                       </div>
                       <div className="flex items-center space-x-1 text-yellow-400">
@@ -382,7 +399,7 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
                 animate="animate"
                 className="space-y-6"
               >
-                {filteredServices.map((service, index) => (
+                {filteredServices.map((service) => (
                   <motion.div
                     key={service.id}
                     variants={fadeInUp}
@@ -390,7 +407,7 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
                   >
                     <div className="flex items-start space-x-6">
                       {/* Service Icon */}
-                      <div className={`w-20 h-20 bg-gradient-to-r ${service.color} rounded-2xl flex items-center justify-center text-4xl group-hover:scale-110 transition-transform duration-300 flex-shrink-0`}>
+                      <div className={`w-20 h-20 bg-gradient-to-r ${service.color || 'from-cyan-500 to-blue-500'} rounded-2xl flex items-center justify-center text-4xl group-hover:scale-110 transition-transform duration-300 flex-shrink-0`}>
                         {service.icon}
                       </div>
 
@@ -419,7 +436,7 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
                                                        <div className="text-3xl font-bold text-cyan-400 mb-1">
                              {typeof service.price === 'string' ? service.price : `$${service.price.monthly}/${service.price.currency}`}
                              <span className="text-lg text-gray-400">
-                               {typeof service.price === 'string' ? service.period : '/month'}
+                               {typeof service.price === 'string' ? (service as any).period || '/month' : '/month'}
                              </span>
                            </div>
                             <div className="flex items-center justify-end space-x-1 text-yellow-400 mb-2">

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Menu, X, Zap, Globe, Bot, Cloud, Shield, Sparkles, Rocket, Cpu, Database, Brain, Atom, Eye, Lock, BarChart3, Users, Target, TrendingUp, Star, Award, ZapIcon, CloudIcon, BotIcon, ShieldIcon, GlobeIcon, CpuIcon, DatabaseIcon, BrainIcon, AtomIcon, EyeIcon, LockIcon, BarChart3Icon, UsersIcon, TargetIcon, TrendingUpIcon, StarIcon, AwardIcon } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu as HeadlessMenu, X as HeadlessX, Zap as HeadlessZap, Sparkles as HeadlessSparkles, ChevronDown, Globe as HeadlessGlobe, Shield as HeadlessShield, Cpu as HeadlessCpu, Brain as HeadlessBrain } from 'lucide-react';
+import { BookOpen, ShieldCheck } from 'lucide-react';
 
 export default function QuantumHolographicNavbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,6 +32,18 @@ export default function QuantumHolographicNavbar() {
       href: '/', 
       icon: <Zap className="w-4 h-4" />,
       description: 'Welcome to the future'
+    },
+    {
+      name: 'AI Services',
+      href: '/ai-services',
+      icon: <Brain className="w-4 h-4" />,
+      description: 'LLM, RAG, MLOps packages'
+    },
+    {
+      name: 'IT Services',
+      href: '/it-services',
+      icon: <Cloud className="w-4 h-4" />,
+      description: 'Cloud, SRE, security'
     },
     { 
       name: 'AI Services', 
@@ -65,6 +78,18 @@ export default function QuantumHolographicNavbar() {
       href: '/micro-saas', 
       icon: <Bot className="w-4 h-4" />,
       description: 'Innovative Solutions'
+    },
+    { 
+      name: 'Resources', 
+      href: '/resources', 
+      icon: <BookOpen className="w-4 h-4" />,
+      description: 'Docs & reports'
+    },
+    { 
+      name: 'Support', 
+      href: '/support', 
+      icon: <ShieldCheck className="w-4 h-4" />,
+      description: 'Help & SLAs'
     },
     { 
       name: 'Pricing', 

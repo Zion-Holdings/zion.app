@@ -8,21 +8,192 @@ const ext = (url: string) => (
 export default function ServicesAdvertisingPage() {
 	return (
 		<div className="min-h-screen pt-24 pb-20 px-4 sm:px-6 lg:px-8">
-			<SEO title="Services Advertising | Zion Tech Group" description="Features, benefits, and market references for Zion Tech Group services" canonical="https://ziontechgroup.com/services-advertising/" />
+			<SEO title="Services Advertising | Zion Tech Group" description="Features, benefits, and market references for Zion Tech Group services" url="https://ziontechgroup.com/services-advertising/" />
 			<div className="max-w-6xl mx-auto space-y-10">
 				<h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Services Advertising</h1>
 
-				{/* Quick contact */}
-				<div className="flex flex-col md:flex-row items-center gap-4 p-4 rounded-xl bg-black/30 border border-gray-800">
-					<a href="tel:+13024640950" className="px-4 py-2 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 text-white">Call +1 302 464 0950</a>
-					<a href="mailto:kleber@ziontechgroup.com" className="px-4 py-2 rounded-lg bg-gradient-to-r from-purple-500 to-pink-600 text-white">Email kleber@ziontechgroup.com</a>
-					<a href="/pricing" className="px-4 py-2 rounded-lg border border-cyan-500/40 text-cyan-300">View Pricing</a>
-					<div className="text-slate-400 text-sm">
-						<span className="block md:inline">Address: 364 E Main St STE 1008 Middletown DE 19709</span>
-						<span className="hidden md:inline mx-2">·</span>
-						<a className="text-cyan-400 underline" href="https://ziontechgroup.com" target="_blank" rel="noopener noreferrer">ziontechgroup.com</a>
-					</div>
-				</div>
+  const benefits = [
+    '1000% ROI target with measurable KPIs',
+    'Transparent pricing with market references',
+    'Fast onboarding with templates and playbooks',
+    'Enterprise-grade security and compliance',
+    '24/7 support with SLAs',
+    'Proven architectures and reference implementations',
+    'No long-term lock-in; cancel anytime',
+    'SOC 2-aligned processes and data handling',
+    'Flexible deployment: SaaS or self-hosted options'
+  ];
+
+				{/* New: Core micro SaaS and AI additions */}
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">AI Social Media Manager</h2>
+					<p className="text-slate-300">Generate, schedule, and optimize multi-platform posts with best-time recommendations and analytics.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $20–$80/mo</li>
+						<li>References: {ext('https://buffer.com/pricing')}, {ext('https://www.hootsuite.com/plans')}</li>
+						<li>Try: <a href="/services/ai-social-media-manager" className="text-cyan-400 underline">ziontechgroup.com/services/ai-social-media-manager</a></li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">AI Resume & Cover Letter Builder</h2>
+					<p className="text-slate-300">ATS-optimized resumes and tailored cover letters with role-aware keywording and metric suggestions.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical budget: $8–$25/mo</li>
+						<li>References: {ext('https://www.rezi.ai/pricing')}, {ext('https://resume.io/pricing')}</li>
+						<li>Try: <a href="/services/ai-resume-cover-letter-builder" className="text-cyan-400 underline">ziontechgroup.com/services/ai-resume-cover-letter-builder</a></li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">AI Document Summarizer</h2>
+					<p className="text-slate-300">Concise summaries with citations for PDFs, docs, and URLs with export options.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical budget: $10–$30/mo + usage</li>
+						<li>References: {ext('https://openai.com/api/pricing')}, {ext('https://www.pinecone.io/pricing/')}</li>
+						<li>Try: <a href="/services/ai-document-summarizer" className="text-cyan-400 underline">ziontechgroup.com/services/ai-document-summarizer</a></li>
+					</ul>
+				</section>
+
+      <div className="min-h-screen pt-24 pb-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto space-y-12">
+          <header className="text-center">
+            <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-4">
+              Services That Ship Outcomes
+            </h1>
+            <p className="text-gray-300 text-lg">AI platforms, enterprise IT solutions, and real micro SaaS accelerators.</p>
+            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Button href="/contact" className="px-8 py-4 bg-gradient-to-r from-cyan-600 to-blue-700 text-white">
+                Talk to Sales <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+              <Button href="/market-pricing" variant="outline" className="px-8 py-4 border border-gray-600 text-gray-200">
+                View Market Pricing <ExternalLink className="w-5 h-5 ml-2" />
+              </Button>
+            </div>
+          </header>
+
+          <section>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">New Real Micro SaaS</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[ 
+                { name: 'API Security Scanner', price: '$299/mo', href: '/services/api-security-scanner', points: ['OWASP Top 10', 'CI/CD checks', 'PII detection'] },
+                { name: 'Email DMARC Analyzer', price: '$99/mo', href: '/services/email-dmarc-analyzer', points: ['DMARC/SPF/DKIM', 'BIMI readiness', 'Weekly reports'] },
+                { name: 'Browser Performance Monitor', price: '$149/mo', href: '/services/browser-performance-monitor', points: ['RUM + Synthetic', 'Core Web Vitals', 'Alerts'] },
+                { name: 'Cloud Cost Optimizer', price: '$399/mo', href: '/services/cloud-cost-optimizer', points: ['Anomalies', 'Rightsizing', 'Budgets'] },
+                { name: 'API Observability Starter', price: '$149/mo', href: '/services/api-observability-starter', points: ['Traces', 'SLOs', 'Deps map'] }
+              ].map((o) => (
+                <a key={o.name} href={o.href} className="block p-6 rounded-2xl bg-black/40 border border-gray-700/60 hover:border-cyan-500/40">
+                  <div className="text-sm text-gray-400 mb-1">From</div>
+                  <div className="text-2xl font-bold text-white">{o.price}</div>
+                  <div className="text-gray-200 mt-2 mb-3">{o.name}</div>
+                  <ul className="text-sm text-gray-300 space-y-1 list-disc list-inside">
+                    {o.points.map((p) => (<li key={p}>{p}</li>))}
+                  </ul>
+                </a>
+              ))}
+            </div>
+          </section>
+
+          <section>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">Why Zion Tech Group</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {benefits.map((b) => (
+                <div key={b} className="p-6 rounded-2xl bg-black/40 border border-gray-700/60">
+                  <div className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-emerald-400 mt-1" />
+                    <p className="text-gray-200">{b}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">Featured Offerings</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                { name: 'LLM Gateway & Cost Control', price: '$299/mo', href: '/llm-gateway' },
+                { name: 'API Observability Starter', price: '$149/mo', href: '/api-observability-starter' },
+                { name: 'Cloud Cost Optimizer', price: '$399/mo', href: '/cloud-cost-optimizer' },
+                { name: 'SOC 2 Evidence Automation', price: '$499/mo', href: '/soc2-evidence-automation' },
+                { name: 'Vector Search Starter', price: '$249/mo', href: '/vector-search-starter' },
+                { name: 'TLS Certificate Monitor', price: '$49/mo', href: '/tls-certificate-monitor' },
+                { name: 'Affiliate Marketing Tracking Suite', price: '$149/mo', href: '/services/affiliate-marketing-tracking-suite' },
+                { name: 'SMB Website Analytics Dashboard', price: '$29/mo', href: '/services/smb-website-analytics-dashboard' },
+                { name: 'Customer Support Helpdesk Pro', price: '$79/mo', href: '/services/customer-support-helpdesk-pro' }
+              ].map((o) => (
+                <a key={o.name} href={o.href} className="block p-6 rounded-2xl bg-black/40 border border-gray-700/60 hover:border-cyan-500/40">
+                  <div className="text-sm text-gray-400 mb-1">From</div>
+                  <div className="text-2xl font-bold text-white">{o.price}</div>
+                  <div className="text-gray-200 mt-2">{o.name}</div>
+                </a>
+              ))}
+            </div>
+          </section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">API Performance Testing</h2>
+					<p className="text-slate-300">Load, latency and regression testing with CI gates and dashboards.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical budget: $30–$150/mo</li>
+						<li>References: {ext('https://k6.io/pricing')}, {ext('https://jmeter.apache.org/')}</li>
+						<li>Try: <a href="/services/api-performance-testing" className="text-cyan-400 underline">ziontechgroup.com/services/api-performance-testing</a></li>
+					</ul>
+				</section>
+
+          <section>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">Average Market Prices</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="p-6 rounded-2xl bg-black/40 border border-sky-500/30">
+                <h3 className="text-xl font-semibold text-white mb-3">Affiliate & Partnerships</h3>
+                <ul className="text-slate-300 space-y-1">
+                  <li>Impact.com: <a className="text-cyan-400 underline" href={`https://impact.com/pricing/`} target="_blank" rel="noopener noreferrer">impact.com/pricing</a></li>
+                  <li>PartnerStack: <a className="text-cyan-400 underline" href={`https://partnerstack.com/pricing`} target="_blank" rel="noopener noreferrer">partnerstack.com/pricing</a></li>
+                  <li>Refersion: <a className="text-cyan-400 underline" href={`https://www.refersion.com/pricing`} target="_blank" rel="noopener noreferrer">refersion.com/pricing</a></li>
+                </ul>
+                <div className="text-sm text-slate-400 mt-3">Typical: $99–$500/month + commissions.</div>
+              </div>
+              <div className="p-6 rounded-2xl bg-black/40 border border-emerald-500/30">
+                <h3 className="text-xl font-semibold text-white mb-3">Website Analytics</h3>
+                <ul className="text-slate-300 space-y-1">
+                  <li>Plausible: <a className="text-cyan-400 underline" href={`https://plausible.io/pricing`} target="_blank" rel="noopener noreferrer">plausible.io/pricing</a></li>
+                  <li>Fathom: <a className="text-cyan-400 underline" href={`https://usefathom.com/pricing`} target="_blank" rel="noopener noreferrer">usefathom.com/pricing</a></li>
+                  <li>Simple Analytics: <a className="text-cyan-400 underline" href={`https://simpleanalytics.com/pricing`} target="_blank" rel="noopener noreferrer">simpleanalytics.com/pricing</a></li>
+                </ul>
+                <div className="text-sm text-slate-400 mt-3">Typical: $9–$59/month.</div>
+              </div>
+              <div className="p-6 rounded-2xl bg-black/40 border border-pink-500/30">
+                <h3 className="text-xl font-semibold text-white mb-3">Helpdesk & Chat</h3>
+                <ul className="text-slate-300 space-y-1">
+                  <li>Zendesk: <a className="text-cyan-400 underline" href={`https://www.zendesk.com/pricing/`} target="_blank" rel="noopener noreferrer">zendesk.com/pricing</a></li>
+                  <li>Freshdesk: <a className="text-cyan-400 underline" href={`https://freshdesk.com/pricing`} target="_blank" rel="noopener noreferrer">freshdesk.com/pricing</a></li>
+                  <li>Help Scout: <a className="text-cyan-400 underline" href={`https://www.helpscout.com/pricing/`} target="_blank" rel="noopener noreferrer">helpscout.com/pricing</a></li>
+                </ul>
+                <div className="text-sm text-slate-400 mt-3">Typical: $15–$99/agent/month.</div>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">Explore by Category</h2>
+            <div className="flex flex-wrap items-center justify-center gap-3">
+              {anchors.map((a) => (
+                <a key={a.title} href={a.href} className="px-4 py-2 rounded-full bg-gradient-to-r from-cyan-600/20 to-purple-600/20 border border-cyan-500/30 text-gray-200">
+                  {a.title}
+                </a>
+              ))}
+            </div>
+          </section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Podcast Transcription & Insights</h2>
+					<p className="text-slate-300">Transcripts, chapters, show notes, and SEO-ready blog pages.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical budget: $10–$60/mo + usage</li>
+						<li>References: {ext('https://openai.com/api/pricing')}, {ext('https://www.descript.com/pricing')}</li>
+						<li>Try: <a href="/services/podcast-transcription-insights" className="text-cyan-400 underline">ziontechgroup.com/services/podcast-transcription-insights</a></li>
+					</ul>
+				</section>
 
 				<section id="ai-evaluation-orchestrator" className="space-y-6">
 					<h2 className="text-2xl font-semibold text-white">AI Evaluation Orchestrator</h2>
@@ -68,15 +239,19 @@ export default function ServicesAdvertisingPage() {
 						<li>References: {ext('https://auth0.com/pricing')}, {ext('https://workos.com/pricing')}, {ext('https://www.okta.com/pricing/')}</li>
 					</ul>
 				</section>
-				
-				{/* New additions */}
+
+				{/* New sections with average market prices and references */}
 				<section className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">Status Page & SLO Monitor</h2>
-					<p className="text-slate-300">Public status pages, incident comms, and SLO/error budget tracking.</p>
+					<h2 className="text-2xl font-semibold text-white">Customer Support & Helpdesk</h2>
+					<p className="text-slate-300">Ticketing, live chat, knowledge base, and AI assistants to reduce response times.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
 						<li>Typical SMB budget: $20–$200/mo</li>
 						<li>References: {ext('https://www.atlassian.com/software/statuspage/pricing')}, {ext('https://www.checklyhq.com/pricing/')}</li>
 					</ul>
+					<div className="flex gap-3">
+						<a href="/status-pages-slo" className="px-3 py-1.5 rounded-md bg-cyan-600 text-white">View Service</a>
+						<a href="/pricing" className="px-3 py-1.5 rounded-md border border-cyan-500/40 text-cyan-300">Pricing</a>
+					</div>
 				</section>
 
 				<section className="space-y-6">
@@ -120,7 +295,7 @@ export default function ServicesAdvertisingPage() {
 					<p className="text-slate-300">Transcripts, chapters, show notes, and SEO-ready blog pages with exports.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
 						<li>Typical SMB budget: $10–$60/mo + usage</li>
-						<li>References: {ext('https://platform.openai.com/pricing')}, {ext('https://www.descript.com/pricing')}, {ext('https://otter.ai/pricing')}</li>
+						<li>References: {ext('https://openai.com/api/pricing')}, {ext('https://www.descript.com/pricing')}, {ext('https://otter.ai/pricing')}</li>
 					</ul>
 				</section>
 
@@ -138,7 +313,7 @@ export default function ServicesAdvertisingPage() {
 					<p className="text-slate-300">Contacts, deals, appointments, and reminders without enterprise complexity.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
 						<li>Typical SMB budget: $15–$60/mo</li>
-						<li>References: {ext('https://www.hubspot.com/pricing')}, {ext('https://www.zoho.com/crm/pricing.html')}</li>
+						<li>References: {ext('https://www.hubspot.com/pricing/starter')}, {ext('https://www.zoho.com/crm/pricing.html')}</li>
 					</ul>
 				</section>
 
@@ -167,6 +342,10 @@ export default function ServicesAdvertisingPage() {
 						<li>Typical SMB budget: $9–$50/mo</li>
 						<li>References: {ext('https://plausible.io/pricing')}, {ext('https://usefathom.com/pricing')}</li>
 					</ul>
+					<div className="flex gap-3">
+						<a href="/website-analytics" className="px-3 py-1.5 rounded-md bg-cyan-600 text-white">View Service</a>
+						<a href="/pricing" className="px-3 py-1.5 rounded-md border border-cyan-500/40 text-cyan-300">Pricing</a>
+					</div>
 				</section>
 
 				<section className="space-y-6">
@@ -176,6 +355,10 @@ export default function ServicesAdvertisingPage() {
 						<li>Typical SMB budget: $20–$100/mo</li>
 						<li>References: {ext('https://mailshake.com/pricing')}, {ext('https://www.gmass.co/pricing')}</li>
 					</ul>
+					<div className="flex gap-3">
+						<a href="/email-followups" className="px-3 py-1.5 rounded-md bg-cyan-600 text-white">View Service</a>
+						<a href="/pricing" className="px-3 py-1.5 rounded-md border border-cyan-500/40 text-cyan-300">Pricing</a>
+					</div>
 				</section>
 				
 				<section className="space-y-6">
@@ -265,7 +448,7 @@ export default function ServicesAdvertisingPage() {
 					<h2 className="text-2xl font-semibold text-white">Latest Real Additions</h2>
 					<ul className="list-disc list-inside text-slate-300 space-y-2">
 						<li>
-							<strong className="text-white">Postgres Index Advisor Pro</strong> — $79/mo. Auto index insights, PR rollouts. Learn: <a className="text-cyan-400 underline" href="/services/postgres-index-advisor-pro">/services/postgres-index-advisor-pro</a>. Benchmarks: {ext('https://www.postgresql.org/docs/current/auto-explain.html')}{', '}{ext('https://pganalyze.com/blog/postgres-index-tuning')}
+							<strong className="text-white">Postgres Index Advisor Pro</strong> — $79/mo. Auto index insights, PR rollouts. Learn: <a className="text-cyan-400 underline" href="/services/postgres-index-advisor-pro">/services/postgres-index-advisor-pro</a>. Benchmarks: {ext('https://www.postgresql.org/docs/current/auto-explain.html')}{', '}{ext('https://pganalyze.com/blog')}
 						</li>
 						<li>
 							<strong className="text-white">S3 Lifecycle Optimizer</strong> — $59/mo. Smart storage class moves. Learn: <a className="text-cyan-400 underline" href="/services/s3-lifecycle-optimizer">/services/s3-lifecycle-optimizer</a>. References: {ext('https://aws.amazon.com/s3/pricing/')}{', '}{ext('https://aws.amazon.com/s3/storage-classes/')}
@@ -389,7 +572,7 @@ export default function ServicesAdvertisingPage() {
 					<p className="text-slate-300">Freshness SLAs, schema drift detection, and anomaly alerts for your warehouse and lakes.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
 						<li>Typical SMB budget: $100–$500/mo</li>
-						<li>References: {ext('https://www.montecarlodata.com/')}, {ext('https://www.bigeye.com/pricing')}, {ext('https://soda.io/')}</li>
+						<li>References: {ext('https://www.montecarlodata.com/')}, {ext('https://www.bigeye.com/')}, {ext('https://soda.io/')}</li>
 					</ul>
 				</section>
 
@@ -484,56 +667,57 @@ export default function ServicesAdvertisingPage() {
 				</section>
 
 				<section className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">AI Code Review Assistant Pro</h2>
-					<p className="text-slate-300">Automated PR comments with security, performance, and testing insights tuned to your codebase.</p>
+					<h2 className="text-2xl font-semibold text-white">E‑commerce Returns Management</h2>
+					<p className="text-slate-300">Automate RMAs, labels, exchanges, and refunds for a delightful post‑purchase experience.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $30–$200/mo</li>
-						<li>References: {ext('https://github.com/enterprise/code-security')}, {ext('https://snyk.io/plans/')}, {ext('https://sonarcloud.io/pricing')}</li>
+						<li>Typical SMB budget: $29–$299/mo + labels</li>
+						<li>References: {ext('https://www.loopreturns.com/pricing')}, {ext('https://www.aftership.com/returns-center/pricing')}</li>
 					</ul>
 				</section>
 
 				<section className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">AI Revenue Forecasting Copilot</h2>
-					<p className="text-slate-300">Calibrated forecasts, scenarios, and risk bands on CRM pipeline with executive dashboards.</p>
+					<h2 className="text-2xl font-semibold text-white">Podcast Transcription & Notes</h2>
+					<p className="text-slate-300">Accurate transcriptions with chapters and show notes drafts for SEO & accessibility.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
 						<li>Typical SMB budget: $100–$600/mo</li>
-						<li>References: {ext('https://www.pigment.com/pricing')}, {ext('https://www.anaplan.com/platform/overview')}</li>
+						<li>References: {ext('https://www.pigment.com/')}, {ext('https://www.anaplan.com/platform/overview')}</li>
 					</ul>
 				</section>
 
 				<section className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">AI Customer Churn Predictor Pro</h2>
-					<p className="text-slate-300">Early churn signals with interpretable drivers and CRM playbooks to save accounts.</p>
+					<h2 className="text-2xl font-semibold text-white">Automated Email Follow‑ups</h2>
+					<p className="text-slate-300">Lead nurturing sequences triggered by activity with AI‑personalized copy and CRM sync.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $50–$200/mo</li>
-						<li>References: {ext('https://segment.com/pricing/')}, {ext('https://www.amplitude.com/pricing')}, {ext('https://mixpanel.com/pricing/')}</li>
+						<li>Typical SMB budget: $25–$150/mo</li>
+						<li>References: {ext('https://mailchimp.com/pricing/')} (automations), {ext('https://customer.io/pricing')}</li>
 					</ul>
 				</section>
 
 				<section className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">AI Competitive Intelligence Tracker</h2>
-					<p className="text-slate-300">Track competitor website changes, pricing moves, and release notes with alerts.</p>
+					<h2 className="text-2xl font-semibold text-white">Freelancer Portfolio Builder</h2>
+					<p className="text-slate-300">Beautiful portfolios with case studies, testimonials, and SEO.
+					</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $30–$120/mo</li>
-						<li>References: {ext('https://www.crayon.co/pricing')}, {ext('https://www.kompyte.com/pricing')}</li>
+						<li>Typical SMB budget: $12–$49/mo</li>
+						<li>References: {ext('https://webflow.com/pricing')}, {ext('https://www.squarespace.com/pricing')}</li>
 					</ul>
 				</section>
 
 				<section className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">Cloud Landing Zone Accelerator</h2>
-					<p className="text-slate-300">Secure multi-account AWS/Azure baselines with budgets, guardrails, and SSO in days.</p>
+					<h2 className="text-2xl font-semibold text-white">Scheduling & Appointments</h2>
+					<p className="text-slate-300">Booking pages, reminders, no‑show reduction, and payments.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $2,000–$8,000 one-time</li>
-						<li>References: {ext('https://aws.amazon.com/solutions/implementations/landing-zone-accelerator-on-aws/')}, {ext('https://learn.microsoft.com/azure/cloud-adoption-framework/ready/landing-zone/')}</li>
+						<li>Typical SMB budget: $10–$200/mo</li>
+						<li>References: {ext('https://calendly.com/pricing')}, {ext('https://cal.com/pricing')}</li>
 					</ul>
 				</section>
 
 				<section className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">Kubernetes Cost Guard</h2>
-					<p className="text-slate-300">Rightsizing, SP/RI planning, and anomaly alerts with GitOps-friendly policies.</p>
+					<h2 className="text-2xl font-semibold text-white">Feature Flags & Experiments</h2>
+					<p className="text-slate-300">Safe launches and A/B tests with audit trails and targeting.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $100–$500/mo</li>
-						<li>References: {ext('https://www.kubecost.com/pricing')}, {ext('https://www.cloudzero.com/pricing')}, {ext('https://www.finout.io/pricing')}</li>
+						<li>Typical SMB budget: $50–$800/mo</li>
+						<li>References: {ext('https://launchdarkly.com/pricing/')}, {ext('https://www.flagsmith.com/pricing')}</li>
 					</ul>
 				</section>
 
@@ -634,7 +818,7 @@ export default function ServicesAdvertisingPage() {
 					<p className="text-slate-300">Automated WCAG checks with CI annotations and remediation guidance.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
 						<li>Typical SMB budget: $20–$150/mo</li>
-						<li>References: {ext('https://www.deque.com/axe/')}, {ext('https://pagespeed.web.dev/pricing')}</li>
+						<li>References: {ext('https://www.deque.com/axe/')}, {ext('https://pagespeed.web.dev/')}</li>
 					</ul>
 					<div><a className="text-cyan-400 underline" href="/accessibility-scanner">Learn more</a></div>
 				</section>
@@ -692,7 +876,7 @@ export default function ServicesAdvertisingPage() {
 					<p className="text-slate-300">Freshness forecasts, schema drift detection, and anomaly alerts for warehouses and lakes.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
 						<li>Typical SMB budget: $100–$400/mo</li>
-						<li>References: {ext('https://www.montecarlodata.com/')}, {ext('https://www.bigeye.com/pricing')}, {ext('https://soda.io/')}</li>
+						<li>References: {ext('https://www.montecarlodata.com/')}, {ext('https://www.bigeye.com/')}, {ext('https://soda.io/')}</li>
 					</ul>
 				</section>
 
@@ -807,7 +991,7 @@ export default function ServicesAdvertisingPage() {
 				</section>
 
 				<section id="customer-data-platform-lite" className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">Customer Data Platform Lite</h2>
+					<h2 className="text-2xl font-semibold text-white">Customer Data Platform (CDP) Lite</h2>
 					<p className="text-slate-300">Unify events into profiles with traits and audiences, privacy-safe.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
 						<li>Typical SMB budget: $49–$300/mo</li>
@@ -1254,7 +1438,7 @@ export default function ServicesAdvertisingPage() {
 						<p className="text-slate-300">Spin up realistic mocks from OpenAPI/GraphQL with contract tests and golden recordings.</p>
 						<ul className="list-disc list-inside text-slate-300 space-y-1">
 							<li>Typical SMB budget: $19–$129/mo</li>
-							<li>References: {ext('https://stoplight.io/open-source/prism')}, {ext('https://www.postman.com/product/mock-server/')}</li>
+							<li>References: {ext('https://stoplight.io/open-source/prism')}, {ext('https://learning.postman.com/docs/designing-and-developing-your-api/mocking-data/overview')}</li>
 						</ul>
 						<div><a className="text-cyan-400 underline" href="/services/api-contract-mock-sandbox">Learn more</a></div>
 					</section>
@@ -1284,7 +1468,7 @@ export default function ServicesAdvertisingPage() {
 						<p className="text-slate-300">Weekly SKU forecasts with confidence bands and purchase order suggestions.</p>
 						<ul className="list-disc list-inside text-slate-300 space-y-1">
 							<li>Typical SMB budget: $99–$699/mo</li>
-							<li>References: {ext('https://aws.amazon.com/forecast/pricing/')}, {ext('https://www.pigment.com/pricing')}</li>
+							<li>References: {ext('https://aws.amazon.com/forecast/pricing/')}, {ext('https://www.pigment.com/')}</li>
 						</ul>
 						<div><a className="text-cyan-400 underline" href="/services/sku-demand-forecast">Learn more</a></div>
 					</section>
@@ -1340,317 +1524,12 @@ export default function ServicesAdvertisingPage() {
 					</section>
 				</section>
 
-				<section className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">AI Email Responder Pro</h2>
-					<p className="text-slate-300">Automate inbox triage and replies with brand-safe guardrails and approvals.</p>
-					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $30–$150/mo</li>
-						<li>Learn more: <a className="text-cyan-400 underline" href="/services/ai-email-responder-pro">/services/ai-email-responder-pro</a></li>
-						<li>References: https://front.com/pricing, https://www.zendesk.com/pricing/</li>
-					</ul>
-				</section>
-
-				<section className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">Cloud Cost Anomaly Guard</h2>
-					<p className="text-slate-300">Detect spend spikes, attribute drivers, and ship Terraform savings recommendations.</p>
-					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $50–$300/mo</li>
-						<li>Learn more: <a className="text-cyan-400 underline" href="/services/cloud-cost-anomaly-guard">/services/cloud-cost-anomaly-guard</a></li>
-						<li>References: https://www.vantage.sh/pricing, https://www.cloudzero.com/pricing</li>
-					</ul>
-				</section>
-
-				<section className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">Serverless Batch Orchestrator</h2>
-					<p className="text-slate-300">Cross-cloud cron at scale with retries, DLQs, notifications, and cost windows.</p>
-					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $20–$120/mo</li>
-						<li>Learn more: <a className="text-cyan-400 underline" href="/services/serverless-batch-orchestrator-pro">/services/serverless-batch-orchestrator-pro</a></li>
-						<li>References: https://aws.amazon.com/eventbridge/pricing/, https://cloud.google.com/scheduler/pricing</li>
-					</ul>
-				</section>
-
-				<section className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">Data Contracts Health Monitor</h2>
-					<p className="text-slate-300">Schema diffs, SLA monitors, lineage ownership, and auto ticketing.</p>
-					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $79–$299/mo</li>
-						<li>Learn more: <a className="text-cyan-400 underline" href="/services/data-contracts-health-monitor">/services/data-contracts-health-monitor</a></li>
-						<li>References: https://www.datafold.com/pricing, https://www.getmontecarlo.com/pricing</li>
-					</ul>
-				</section>
-
-				<section className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">License Keys & Usage Metering</h2>
-					<p className="text-slate-300">Provision keys, entitlements, and metered billing with Stripe.</p>
-					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $49–$199/mo</li>
-						<li>Learn more: <a className="text-cyan-400 underline" href="/services/license-key-usage-metering">/services/license-key-usage-metering</a></li>
-						<li>References: https://stripe.com/pricing, https://paddle.com/pricing/</li>
-					</ul>
-				</section>
-
-				<section className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">Email DMARC/SPF/DKIM Monitor</h2>
-					<p className="text-slate-300">Fix email auth and safely roll out DMARC policies for deliverability.</p>
-					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $10–$59/mo</li>
-						<li>Learn more: <a className="text-cyan-400 underline" href="/services/email-dmarc-monitor">/services/email-dmarc-monitor</a></li>
-						<li>References: https://dmarcian.com/pricing/, https://valimail.com/products/</li>
-					</ul>
-				</section>
-
 				{/* Contact CTA */}
 				<div className="flex flex-col md:flex-row items-center gap-4 p-4 rounded-xl bg-black/30 border border-gray-800">
 					<a href="tel:+13024640950" className="px-4 py-2 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 text-white">Call +1 302 464 0950</a>
 					<a href="mailto:kleber@ziontechgroup.com" className="px-4 py-2 rounded-lg bg-gradient-to-r from-purple-500 to-pink-600 text-white">Email kleber@ziontechgroup.com</a>
 					<a href="/pricing" className="px-4 py-2 rounded-lg border border-cyan-500/40 text-cyan-300">View Pricing</a>
 				</div>
-
-				<section className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">New: Developer Productivity & Reliability</h2>
-					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li><strong className="text-white">Feature Flag Auditor</strong> — $29/mo. Hygiene checks + PRs. Learn: <a className="text-cyan-400 underline" href="/services/feature-flag-auditor">/services/feature-flag-auditor</a>. References: <a className="text-cyan-400 underline" href="https://launchdarkly.com/pricing/" target="_blank" rel="noopener noreferrer">launchdarkly.com/pricing</a>, <a className="text-cyan-400 underline" href="https://www.flagsmith.com/pricing" target="_blank" rel="noopener noreferrer">flagsmith.com/pricing</a></li>
-						<li><strong className="text-white">API Contract Testing Studio</strong> — $79/mo. Contracts + mocks. Learn: <a className="text-cyan-400 underline" href="/services/api-contract-testing-studio">/services/api-contract-testing-studio</a>. References: <a className="text-cyan-400 underline" href="https://pactflow.io/pricing/" target="_blank" rel="noopener noreferrer">pactflow.io/pricing</a>, <a className="text-cyan-400 underline" href="https://stoplight.io/pricing" target="_blank" rel="noopener noreferrer">stoplight.io/pricing</a>, <a className="text-cyan-400 underline" href="https://www.postman.com/pricing/" target="_blank" rel="noopener noreferrer">postman.com/pricing</a></li>
-						<li><strong className="text-white">SLA/SLO Calculator</strong> — $39/mo. Targets + error budgets. Learn: <a className="text-cyan-400 underline" href="/services/sla-slo-calculator">/services/sla-slo-calculator</a>. References: <a className="text-cyan-400 underline" href="https://www.nobl9.com/pricing" target="_blank" rel="noopener noreferrer">nobl9.com/pricing</a>, <a className="text-cyan-400 underline" href="https://grafana.com/docs/grafana-cloud/monitor-infrastructure/slo/" target="_blank" rel="noopener noreferrer">grafana.com/docs/.../slo</a></li>
-						<li><strong className="text-white">Email Deliverability & Warmup Suite</strong> — $19/mo. Warmup + DMARC/SPF/DKIM. Learn: <a className="text-cyan-400 underline" href="/services/email-deliverability-and-warmup-suite">/services/email-deliverability-and-warmup-suite</a>. References: <a className="text-cyan-400 underline" href="https://folderly.com" target="_blank" rel="noopener noreferrer">folderly.com</a>, <a className="text-cyan-400 underline" href="https://www.mailreach.co/" target="_blank" rel="noopener noreferrer">mailreach.co</a></li>
-					</ul>
-					<div className="flex flex-col md:flex-row items-center gap-4 p-4 rounded-xl bg-black/30 border border-gray-800">
-						<a href="tel:+13024640950" className="px-4 py-2 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 text-white">Call +1 302 464 0950</a>
-						<a href="mailto:kleber@ziontechgroup.com" className="px-4 py-2 rounded-lg bg-gradient-to-r from-purple-500 to-pink-600 text-white">Email kleber@ziontechgroup.com</a>
-						<a href="/pricing" className="px-4 py-2 rounded-lg border border-cyan-500/40 text-cyan-300">View Pricing</a>
-					</div>
-				</section>
-
-				<section id="gitops-policy-auditor" className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">GitOps Policy Auditor</h2>
-					<p className="text-slate-300">OPA/Rego policy packs with CI annotations, auto-fix PRs, and exceptions to prevent misconfigurations.</p>
-					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $20–$150/mo</li>
-						<li>References: {ext('https://www.openpolicyagent.org/')}, {ext('https://www.conftest.dev/')}, {ext('https://argo-cd.readthedocs.io/en/stable/')}</li>
-					</ul>
-					<div><a className="text-cyan-400 underline" href="/services/gitops-policy-auditor">Learn more</a></div>
-				</section>
-
-				<section id="multicloud-failover-orchestrator" className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">Multi-Cloud Failover Orchestrator</h2>
-					<p className="text-slate-300">Automated DNS/edge failover with health checks, chaos drills, and runbooks to reduce downtime minutes.</p>
-					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $100–$500/mo</li>
-						<li>References: {ext('https://www.cloudflare.com/load-balancing/')}, {ext('https://aws.amazon.com/route53/features/#Health_Checking')}</li>
-					</ul>
-					<div><a className="text-cyan-400 underline" href="/services/multicloud-failover-orchestrator">Learn more</a></div>
-				</section>
-
-				<section id="incident-communication-hub" className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">Incident Communication Hub</h2>
-					<p className="text-slate-300">Templates, stakeholder groups, and multi-channel updates to keep customers informed during incidents.</p>
-					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $20–$100/mo</li>
-						<li>References: {ext('https://www.atlassian.com/software/statuspage/pricing')}, {ext('https://www.twilio.com/pricing')}</li>
-					</ul>
-					<div><a className="text-cyan-400 underline" href="/services/incident-communication-hub">Learn more</a></div>
-				</section>
-
-				<section id="saas-backup-vault" className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">SaaS Backup Vault</h2>
-					<p className="text-slate-300">Automated backups for Google Workspace, Microsoft 365, and Slack with retention, legal hold, and restore.</p>
-					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $49–$299/mo</li>
-						<li>References: {ext('https://workspace.google.com/pricing')}, {ext('https://www.microsoft.com/microsoft-365/business')}</li>
-					</ul>
-					<div><a className="text-cyan-400 underline" href="/services/saas-backup-vault">Learn more</a></div>
-				</section>
-
-				<section id="customer-data-platform-lite" className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">Customer Data Platform Lite</h2>
-					<p className="text-slate-300">Identity stitching, computed traits, and reverse ETL syncs — a slim CDP for SMBs.</p>
-					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $49–$199/mo</li>
-						<li>References: {ext('https://segment.com/pricing/')}, {ext('https://www.rudderstack.com/pricing/')}</li>
-					</ul>
-					<div><a className="text-cyan-400 underline" href="/services/customer-data-platform-lite">Learn more</a></div>
-				</section>
-
-				<section id="ai-contract-risk-analyzer" className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">AI Contract Risk Analyzer</h2>
-					<p className="text-slate-300">Policy-pack clause checks, risk scoring, and suggested redlines with exportable reports.</p>
-					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $59–$299/mo</li>
-						<li>References: {ext('https://www.ironcladapp.com/ai/')}, {ext('https://www.evisort.com/')}</li>
-					</ul>
-					<div><a className="text-cyan-400 underline" href="/services/ai-contract-risk-analyzer">Learn more</a></div>
-				</section>
-
-				<section id="shopify-speed-optimizer" className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">Shopify Speed Optimizer</h2>
-					<p className="text-slate-300">Improve CWV with safe theme defers/inlines, optimized images, and app impact insights.</p>
-					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $29–$149/mo</li>
-						<li>References: {ext('https://pagespeed.web.dev/')}, {ext('https://shopify.dev/docs/storefronts/best-practices/performance')}</li>
-					</ul>
-					<div><a className="text-cyan-400 underline" href="/services/shopify-speed-optimizer">Learn more</a></div>
-				</section>
-
-				<section id="whatsapp-automation-studio" className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">WhatsApp Automation Studio</h2>
-					<p className="text-slate-300">Approved templates, flows, and broadcasts for support and commerce on WhatsApp.</p>
-					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $29–$199/mo</li>
-						<li>References: {ext('https://developers.facebook.com/docs/whatsapp/pricing/')}, {ext('https://www.twilio.com/whatsapp/pricing')}</li>
-					</ul>
-					<div><a className="text-cyan-400 underline" href="/services/whatsapp-automation-studio">Learn more</a></div>
-				</section>
-
-				<section id="q2-2035-additions" className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">New Q2 2035 Additions</h2>
-					<ul className="list-disc list-inside text-slate-300 space-y-2">
-						<li><strong className="text-white">AI RFP & Bid Writer</strong> — $149/mo. Learn: <a className="text-cyan-400 underline" href="/services/ai-rfp-bid-writer">/services/ai-rfp-bid-writer</a>. References: https://www.rfpio.com/, https://loopio.com/</li>
-						<li><strong className="text-white">Cloud SQL Spend Optimizer</strong> — $79/mo. Learn: <a className="text-cyan-400 underline" href="/services/cloud-sql-spend-optimizer">/services/cloud-sql-spend-optimizer</a>. References: https://cloud.google.com/sql/pricing, https://aws.amazon.com/rds/pricing/, https://azure.microsoft.com/pricing</li>
-						<li><strong className="text-white">Customer Interview Insights</strong> — $39/mo. Learn: <a className="text-cyan-400 underline" href="/services/customer-interview-insights">/services/customer-interview-insights</a>. References: https://www.descript.com/pricing, https://otter.ai/pricing</li>
-						<li><strong className="text-white">IT Asset & Attack Surface Mapper</strong> — $129/mo. Learn: <a className="text-cyan-400 underline" href="/services/it-asset-attack-surface">/services/it-asset-attack-surface</a>. References: https://www.axonius.com/pricing, https://www.jupiterone.com/</li>
-						<li><strong className="text-white">Warehouse Query Guard</strong> — $59/mo. Learn: <a className="text-cyan-400 underline" href="/services/warehouse-query-guard">/services/warehouse-query-guard</a>. References: https://www.getdbt.com/pricing/, https://cloud.google.com/bigquery/pricing, https://www.snowflake.com/en/pricing/</li>
-						<li><strong className="text-white">Edge A/B Testing Kit</strong> — $49/mo. Learn: <a className="text-cyan-400 underline" href="/services/edge-ab-testing-kit">/services/edge-ab-testing-kit</a>. References: https://vercel.com/pricing, https://www.cloudflare.com/plans/</li>
-						<li><strong className="text-white">SLA Breach Predictor</strong> — $35/agent/mo. Learn: <a className="text-cyan-400 underline" href="/services/sla-breach-predictor">/services/sla-breach-predictor</a>. References: https://www.zendesk.com/pricing/, https://freshdesk.com/pricing</li>
-						<li><strong className="text-white">Secure Document Redaction Suite</strong> — $89/mo. Learn: <a className="text-cyan-400 underline" href="/services/secure-doc-redaction-suite">/services/secure-doc-redaction-suite</a>. References: https://www.skyflow.com/pricing, https://www.verygoodsecurity.com/pricing</li>
-						<li><strong className="text-white">API Latency & SLO Tracker Pro</strong> — $59/mo. Learn: <a className="text-cyan-400 underline" href="/services/api-latency-slo-tracker-pro">/services/api-latency-slo-tracker-pro</a>. References: https://opentelemetry.io/, https://grafana.com/</li>
-						<li><strong className="text-white">Browser Performance Optimizer</strong> — $39/mo. Learn: <a className="text-cyan-400 underline" href="/services/browser-performance-optimizer">/services/browser-performance-optimizer</a>. References: https://developer.chrome.com/docs/lighthouse/overview/, https://www.checklyhq.com/pricing/</li>
-						<li><strong className="text-white">AI Contract Reviewer</strong> — $69/mo. Learn: <a className="text-cyan-400 underline" href="/services/ai-contract-reviewer">/services/ai-contract-reviewer</a>. References: https://openai.com/api/pricing, https://anthropic.com/pricing</li>
-						<li><strong className="text-white">Security Questionnaire AutoFill</strong> — $59/mo. Learn: <a className="text-cyan-400 underline" href="/services/security-questionnaire-autofill">/services/security-questionnaire-autofill</a>. References: https://www.conveyor.com/, https://www.whistic.com/</li>
-						<li><strong className="text-white">Kubernetes Policy Auditor</strong> — $69/mo. Learn: <a className="text-cyan-400 underline" href="/services/kubernetes-policy-auditor">/services/kubernetes-policy-auditor</a>. References: https://www.openpolicyagent.org/, https://argo-cd.readthedocs.io/</li>
-						<li><strong className="text-white">ML Experiment Tracker Lite</strong> — $25/user/mo. Learn: <a className="text-cyan-400 underline" href="/services/ml-experiment-tracker-lite">/services/ml-experiment-tracker-lite</a>. References: https://mlflow.org/, https://wandb.ai/site/pricing</li>
-						<li><strong className="text-white">IAM Permission Graph</strong> — $79/mo. Learn: <a className="text-cyan-400 underline" href="/services/iam-permission-graph">/services/iam-permission-graph</a>. References: https://aws.amazon.com/iam/, https://cloud.google.com/iam/docs</li>
-						<li><strong className="text-white">ETL Incident Copilot</strong> — $45/mo. Learn: <a className="text-cyan-400 underline" href="/services/etl-incident-copilot">/services/etl-incident-copilot</a>. References: https://airflow.apache.org/, https://www.getdbt.com/</li>
-					</ul>
-					<div className="text-slate-400 text-sm">Full catalog: <a className="text-cyan-400 underline" href="/services">/services</a> • Market pricing: <a className="text-cyan-400 underline" href="/market-pricing">/market-pricing</a></div>
-				</section>
-
-				<section id="api-schema-diff-registry-ad" className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">API Schema Diff & Registry</h2>
-					<p className="text-slate-300">Versioned OpenAPI registry with CI diffs, breaking-change alerts, and docs portal for safer API releases.</p>
-					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $20–$100/mo</li>
-						<li>References: {ext('https://swagger.io/tools/swaggerhub/pricing/')}, {ext('https://stoplight.io/pricing')}</li>
-					</ul>
-					<div><a className="text-cyan-400 underline" href="/services/api-schema-diff-registry">Learn more</a></div>
-				</section>
-
-				<section id="incident-postmortem-generator-ad" className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">Incident Postmortem Generator</h2>
-					<p className="text-slate-300">Automated timelines, contributing factors, and action items from alerts, logs, and chats.</p>
-					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $30–$150/mo</li>
-						<li>References: {ext('https://www.pagerduty.com/pricing/')}, {ext('https://www.datadoghq.com/pricing/')}</li>
-					</ul>
-					<div><a className="text-cyan-400 underline" href="/services/incident-postmortem-generator">Learn more</a></div>
-				</section>
-
-				<section id="github-compliance-bot-ad" className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">GitHub Compliance Bot</h2>
-					<p className="text-slate-300">Automate policy checks, secrets scans, SCA, and generate SOC2/ISO evidence packs directly from your repos and pipelines.</p>
-					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $20–$99/mo</li>
-						<li>References: {ext('https://semgrep.dev/pricing')}, {ext('https://docs.gitguardian.com/inner-source-monitoring/')}</li>
-					</ul>
-					<div><a className="text-cyan-400 underline" href="/services/github-compliance-bot">Learn more</a></div>
-				</section>
-
-				<section id="serverless-cron-manager-ad" className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">Serverless Cron Manager</h2>
-					<p className="text-slate-300">Unified dashboard, retries, and SLOs for edge/serverless scheduled jobs across Vercel, Netlify, and Cloudflare.</p>
-					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $10–$79/mo</li>
-						<li>References: {ext('https://vercel.com/docs/cron-jobs')}, {ext('https://www.netlify.com/products/background-functions/')}, {ext('https://developers.cloudflare.com/workers/configuration/cron-triggers/')}</li>
-					</ul>
-					<div><a className="text-cyan-400 underline" href="/services/serverless-cron-manager">Learn more</a></div>
-				</section>
-
-				<section id="edge-ab-testing-kit-ad" className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">Edge A/B Testing Kit</h2>
-					<p className="text-slate-300">Audience and geo-targeted experiments at the edge with guardrails and simple SDKs.</p>
-					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $20–$99/mo</li>
-						<li>References: {ext('https://vercel.com/pricing')}, {ext('https://www.cloudflare.com/plans/')}</li>
-					</ul>
-					<div><a className="text-cyan-400 underline" href="/services/edge-ab-testing-kit">Learn more</a></div>
-				</section>
-
-				<section id="iam-permission-graph-ad" className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">IAM Permission Graph</h2>
-					<p className="text-slate-300">Visualize effective permissions and risky paths across AWS/GCP/Azure with least-privilege guidance.</p>
-					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $49–$199/mo</li>
-						<li>References: {ext('https://aws.amazon.com/iam/')}, {ext('https://cloud.google.com/iam/docs')}</li>
-					</ul>
-					<div><a className="text-cyan-400 underline" href="/services/iam-permission-graph">Learn more</a></div>
-				</section>
-
-				<section id="customer-interview-insights-ad" className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">Customer Interview Insights</h2>
-					<p className="text-slate-300">Transcripts, themes, JTBD summaries, and shareable insight packs from interviews and calls.</p>
-					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $15–$69/mo + usage</li>
-						<li>References: {ext('https://www.descript.com/pricing')}, {ext('https://otter.ai/pricing')}</li>
-					</ul>
-					<div><a className="text-cyan-400 underline" href="/services/customer-interview-insights">Learn more</a></div>
-				</section>
-
-				<section id="kubernetes-policy-auditor-ad" className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">Kubernetes Policy Auditor</h2>
-					<p className="text-slate-300">Continuously check clusters against OPA/Gatekeeper and CIS benchmarks with fix guidance.</p>
-					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $39–$149/mo</li>
-						<li>References: {ext('https://www.openpolicyagent.org/')}, {ext('https://kubernetes.io/docs/concepts/overview/')}, {ext('https://argo-cd.readthedocs.io/')}</li>
-					</ul>
-					<div><a className="text-cyan-400 underline" href="/services/kubernetes-policy-auditor">Learn more</a></div>
-				</section>
-
-				<section className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">Browser Automation Cloud</h2>
-					<p className="text-slate-300">Hosted Playwright/Puppeteer runners with recorder, retries, proxy pools, schedules, and analytics. Export to CI or agent scripts.</p>
-					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $50–$300/mo</li>
-						<li>References: {ext('https://playwright.dev/')}, {ext('https://pptr.dev/')}, {ext('https://www.checklyhq.com/pricing/')}</li>
-					</ul>
-				</section>
-
-				<section className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">Status Pages & SLO Monitor</h2>
-					<p className="text-slate-300">Public status pages, incident comms, and SLO/error budget analytics with burn rate alerts and synthetic checks.</p>
-					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $20–$150/mo</li>
-						<li>References: {ext('https://www.atlassian.com/software/statuspage/pricing')}, {ext('https://sre.google/sre-book/service-level-objectives/')}, {ext('https://www.checklyhq.com/pricing/')}</li>
-					</ul>
-				</section>
-
-				<section className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">AI Customer Journey Analytics</h2>
-					<p className="text-slate-300">Unify product events, tickets, chats, and CRM; AI summarizes friction points and recommends experiments with funnels and cohorts.</p>
-					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $100–$600/mo</li>
-						<li>References: {ext('https://mixpanel.com/pricing/')}, {ext('https://amplitude.com/pricing')}, {ext('https://snowflake.com/pricing')}</li>
-					</ul>
-				</section>
-
-				<section className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">SOC 2 Evidence Automation</h2>
-					<p className="text-slate-300">Continuously collect and package control evidence from cloud, CI, and ticketing—export-ready for auditors.</p>
-					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $300–$1,500/mo</li>
-						<li>References: {ext('https://trustcenter.transcend.io/')}, {ext('https://vanta.com/pricing')}, {ext('https://drata.com/pricing')}</li>
-					</ul>
-				</section>
-
-				<section id="service-expansions-2036" className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">New 2036 Service Expansions</h2>
-					<ul className="list-disc list-inside text-slate-300 space-y-2">
-						<li><strong className="text-white">API Latency & SLO Tracker Pro</strong> — $59/mo. <a className="text-cyan-400 underline" href="/services/api-latency-slo-tracker-pro">Learn more</a>. References: {ext('https://opentelemetry.io/')}, {ext('https://grafana.com/')}</li>
-						<li><strong className="text-white">Cloud SQL Spend Optimizer</strong> — $79/mo. <a className="text-cyan-400 underline" href="/services/cloud-sql-spend-optimizer">Learn more</a>. References: {ext('https://cloud.google.com/sql/pricing')}, {ext('https://aws.amazon.com/rds/pricing/')}, {ext('https://azure.microsoft.com/pricing')}</li>
-						<li><strong className="text-white">AI Contract Reviewer</strong> — $69/mo. <a className="text-cyan-400 underline" href="/services/ai-contract-reviewer">Learn more</a>. References: {ext('https://openai.com/api/pricing')}, {ext('https://www.anthropic.com/pricing')}</li>
-						<li><strong className="text-white">ETL Incident Copilot</strong> — $45/mo. <a className="text-cyan-400 underline" href="/services/etl-incident-copilot">Learn more</a>. References: {ext('https://airflow.apache.org/')}, {ext('https://www.getdbt.com/')}</li>
-					</ul>
-					<div className="text-slate-400 text-sm">Contact: <a className="text-cyan-400 underline" href="tel:+13024640950">+1 302 464 0950</a> · <a className="text-cyan-400 underline" href="mailto:kleber@ziontechgroup.com">kleber@ziontechgroup.com</a> · <a className="text-cyan-400 underline" href="https://ziontechgroup.com" target="_blank" rel="noopener noreferrer">ziontechgroup.com</a></div>
-				</section>
 			</div>
 		</div>
 	);

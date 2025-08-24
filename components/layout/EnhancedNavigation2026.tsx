@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { 
   Menu, X, ChevronDown, Rocket, Phone, Mail, MapPin,
-  Brain, Shield, Star,
+  Brain, Shield,
   Target,
   Sparkles, Atom, Satellite, Search
 } from 'lucide-react';
