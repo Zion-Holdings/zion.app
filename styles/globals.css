@@ -2,41 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Futuristic background */
-.futuristic-bg {
-  background: radial-gradient(1200px 600px at 20% 10%, rgba(34,211,238,0.15), transparent 60%),
-              radial-gradient(900px 500px at 80% 90%, rgba(217,70,239,0.12), transparent 60%),
-              radial-gradient(800px 400px at 50% 30%, rgba(139,92,246,0.10), transparent 60%),
-              linear-gradient(180deg, rgba(15,23,42,0.9), rgba(2,6,23,0.95));
-  animation: bg-shift 20s ease-in-out infinite alternate;
-}
-
-.grid-overlay {
-  background-image: linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
-                    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
-  background-size: 40px 40px;
-  mask-image: radial-gradient(circle at 50% 50%, black 50%, transparent 100%);
-  animation: grid-pan 30s linear infinite;
-}
-
-@keyframes grid-pan {
-  from { background-position: 0 0, 0 0; }
-  to { background-position: 200px 100px, 200px 100px; }
-}
-
-@keyframes bg-shift {
-  0% { filter: hue-rotate(0deg) saturate(1.2); }
-  100% { filter: hue-rotate(30deg) saturate(1.5); }
-}
-
-@keyframes float {
-  0% { transform: translateY(0px) translateX(0px); }
-  50% { transform: translateY(-12px) translateX(6px); }
-  100% { transform: translateY(0px) translateX(0px); }
-}
-
-.animate-float { animation: float 8s ease-in-out infinite; }
-
 /* Import Modern Design System */
 @import './modern-design-system.css';
 
@@ -1019,49 +984,12 @@ td {
 
 /* Mobile-First Print Styles */
 @media print {
-  @page {
-    size: 8.5in 11in; /* US Letter */
-    margin: 0.75in;
-  }
-  html, body {
-    background: white !important;
-    color: #111 !important;
-  }
-  body, .book-serif {
-    font-family: 'Source Serif 4', 'Playfair Display', Georgia, 'Times New Roman', serif !important;
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
-  }
-  header, footer, nav, .print-hidden, .no-print {
+  .print-hidden {
     display: none !important;
   }
-  .print-fullpage {
-    page-break-after: always;
-    break-after: page;
-  }
-  .print-avoid-break {
-    break-inside: avoid;
-    page-break-inside: avoid;
-  }
-  .print-chapter-title {
-    font-size: 28pt;
-    line-height: 1.2;
-    font-weight: 800;
-    margin-bottom: 0.15in;
-  }
-  .print-subtitle {
-    font-size: 16pt;
-    color: #444;
-    margin-bottom: 0.25in;
-  }
-  .print-quote {
-    font-size: 18pt;
-    font-style: italic;
-    margin: 0.5in 0;
-  }
-  .print-meta {
-    font-size: 9pt;
-    color: #555;
+
+  .print-visible {
+    display: block !important;
   }
 }
 
@@ -1233,7 +1161,10 @@ td {
   transform: translateY(-2px);
 } 
 
-/* Global reset/additions for wiki/docs */
-.prose pre { white-space: pre-wrap; }
-.prose table { display: table; width: 100%; }
-.prose thead th { font-weight: 600; } 
+/* React DatePicker minimal styles to avoid direct package CSS import */
+.react-datepicker-wrapper {
+  display: block;
+}
+.react-datepicker__input-container input {
+  width: 100%;
+} 
