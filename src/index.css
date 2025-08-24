@@ -10,6 +10,7 @@ body {
   color: #ffffff;
 }
 
+<<<<<<< HEAD
 #root {
   min-height: 100vh;
 }
@@ -91,5 +92,12 @@ body {
 @media (min-width: 769px) {
   .desktop-hidden {
     display: none;
+=======
+@layer base {
+  body {
+    font-family: 'Orbitron', system-ui, sans-serif;
+    background-color: #172d67;
+    color: #ffffff;
+>>>>>>> cursor/enhance-app-with-new-services-and-futuristic-design-8cc4
   }
 }
