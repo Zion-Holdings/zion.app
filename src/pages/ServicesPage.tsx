@@ -4,7 +4,7 @@ import { ProductListing } from "@/types/listings";
 import { TrustedBySection } from "@/components/TrustedBySection";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Globe } from "lucide-react";
+import { Globe, ArrowRight, Sparkles } from "lucide-react";
 import { useEffect, useState } from "react";
 
 // Sample service listings
