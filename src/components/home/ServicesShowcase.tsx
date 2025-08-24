@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from "react-router-dom";
+import { motion, AnimatePresence } from 'framer-motion';
 import { COMPREHENSIVE_SERVICES } from '@/data/comprehensiveServices';
 
 export function ServicesShowcase() {
+  const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  
   // Get featured services from the comprehensive services data
   const featuredServices = COMPREHENSIVE_SERVICES.filter(service => service.featured).slice(0, 8);
 
@@ -42,45 +45,122 @@ export function ServicesShowcase() {
     }
   };
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20, scale: 0.95 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  const categoryVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    }
+  };
+
   return (
     <section className="py-16 bg-background">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
+        <motion.div 
+          className="text-center mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           <h2 className="text-3xl font-bold text-zion-blue mb-4">Featured Services</h2>
           <p className="text-zion-slate-light text-lg max-w-2xl mx-auto">
             Discover our most popular and highly-rated services that are helping businesses transform and grow.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {featuredServices.map((service) => (
-            <div key={service.id} className="bg-white rounded-lg shadow-lg overflow-hidden border border-zion-slate/10 hover:shadow-xl transition-all duration-300">
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          {featuredServices.map((service, index) => (
+            <motion.div 
+              key={service.id} 
+              className="bg-white rounded-lg shadow-lg overflow-hidden border border-zion-slate/10 hover:shadow-xl transition-all duration-300 cursor-pointer group"
+              variants={itemVariants}
+              whileHover={{ 
+                y: -8, 
+                scale: 1.02,
+                transition: { duration: 0.2 }
+              }}
+              whileTap={{ scale: 0.98 }}
+            >
               <div className={`h-2 bg-gradient-to-r ${getCategoryColor(service.category)}`}></div>
               <div className="p-6">
                 <div className="flex items-center justify-between mb-3">
                   <div className="flex items-center gap-2">
-                    <span className="text-lg">{getCategoryIcon(service.category)}</span>
+                    <motion.span 
+                      className="text-lg"
+                      animate={{ rotate: [0, 10, -10, 0] }}
+                      transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
+                    >
+                      {getCategoryIcon(service.category)}
+                    </motion.span>
                     <span className="text-xs font-medium text-zion-slate bg-zion-slate/10 px-2 py-1 rounded-full">
                       {service.category}
                     </span>
                   </div>
                   <div className="flex items-center">
-                    <span className="text-yellow-500 text-sm">★</span>
+                    <motion.span 
+                      className="text-yellow-500 text-sm"
+                      animate={{ scale: [1, 1.2, 1] }}
+                      transition={{ duration: 2, repeat: Infinity }}
+                    >
+                      ★
+                    </motion.span>
                     <span className="text-sm text-zion-slate ml-1">{service.rating}</span>
                     <span className="text-xs text-zion-slate-light ml-1">({service.reviewCount})</span>
                   </div>
                 </div>
 
-                <h3 className="text-lg font-semibold text-zion-blue mb-2">{service.title}</h3>
+                <h3 className="text-lg font-semibold text-zion-blue mb-2 group-hover:text-zion-purple transition-colors">
+                  {service.title}
+                </h3>
                 <p className="text-zion-slate-light text-sm mb-4 line-clamp-2">{service.description}</p>
 
                 {/* Key Features Preview */}
                 <div className="mb-4">
                   <div className="flex flex-wrap gap-1">
                     {service.features.slice(0, 2).map((feature, index) => (
-                      <span key={index} className="text-xs bg-zion-slate/10 text-zion-slate px-2 py-1 rounded-full">
+                      <motion.span 
+                        key={index} 
+                        className="text-xs bg-zion-slate/10 text-zion-slate px-2 py-1 rounded-full"
+                        whileHover={{ scale: 1.05 }}
+                        transition={{ duration: 0.2 }}
+                      >
                         {feature}
-                      </span>
+                      </motion.span>
                     ))}
                     {service.features.length > 2 && (
                       <span className="text-xs text-zion-slate-light">
@@ -92,31 +172,59 @@ export function ServicesShowcase() {
 
                 <div className="flex items-center justify-between">
                   <span className="text-2xl font-bold text-zion-purple">{getPriceDisplay(service)}</span>
-                  <Link
-                    to={`/comprehensive-services?service=${service.id}`}
-                    className="text-zion-cyan hover:text-zion-cyan-dark font-medium text-sm transition-colors"
+                  <motion.div
+                    whileHover={{ x: 5 }}
+                    transition={{ duration: 0.2 }}
                   >
-                    View Details →
-                  </Link>
+                    <Link
+                      to={`/comprehensive-services?service=${service.id}`}
+                      className="text-zion-cyan hover:text-zion-cyan-dark font-medium text-sm transition-colors"
+                    >
+                      View Details →
+                    </Link>
+                  </motion.div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
-        <div className="text-center mt-12">
-          <Link
-            to="/comprehensive-services"
-            className="inline-block bg-gradient-to-r from-zion-cyan to-zion-purple text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-zion-cyan-dark hover:to-zion-purple-dark transition-all duration-300"
+        <motion.div 
+          className="text-center mt-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+        >
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
-            Explore All Services
-          </Link>
-        </div>
+            <Link
+              to="/comprehensive-services"
+              className="inline-block bg-gradient-to-r from-zion-cyan to-zion-purple text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-zion-cyan-dark hover:to-zion-purple-dark transition-all duration-300 shadow-lg hover:shadow-xl"
+            >
+              Explore All Services
+            </Link>
+          </motion.div>
+        </motion.div>
 
         {/* Service Categories Overview */}
-        <div className="mt-16">
+        <motion.div 
+          className="mt-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+        >
           <h3 className="text-2xl font-bold text-zion-blue text-center mb-8">Service Categories</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
             {[
               {
                 title: "AI & Machine Learning",
@@ -167,28 +275,48 @@ export function ServicesShowcase() {
                 serviceCount: COMPREHENSIVE_SERVICES.filter(s => s.category === "Enterprise Solutions").length
               }
             ].map((category, index) => (
-              <Link
+              <motion.div
                 key={index}
-                to={category.link}
-                className="group block"
+                variants={categoryVariants}
+                whileHover={{ 
+                  y: -8, 
+                  scale: 1.02,
+                  transition: { duration: 0.2 }
+                }}
+                whileTap={{ scale: 0.98 }}
               >
-                <div className={`rounded-lg overflow-hidden h-full border border-zion-slate/10 bg-white p-6 transition-all duration-300 hover:border-zion-purple/50 hover:translate-y-[-5px] hover:shadow-lg`}>
-                  <div className={`rounded-full w-16 h-16 bg-gradient-to-br ${category.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                    <div className="text-white text-2xl">
-                      {category.icon}
+                <Link
+                  to={category.link}
+                  className="group block"
+                >
+                  <div className={`rounded-lg overflow-hidden h-full border border-zion-slate/10 bg-white p-6 transition-all duration-300 hover:border-zion-purple/50 hover:shadow-lg`}>
+                    <motion.div 
+                      className={`rounded-full w-16 h-16 bg-gradient-to-br ${category.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
+                      whileHover={{ rotate: 360 }}
+                      transition={{ duration: 0.6 }}
+                    >
+                      <div className="text-white text-2xl">
+                        {category.icon}
+                      </div>
+                    </motion.div>
+                    <h3 className="text-xl font-bold text-zion-blue mb-2 group-hover:text-zion-purple transition-colors">{category.title}</h3>
+                    <p className="text-zion-slate-light mb-4">{category.description}</p>
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm text-zion-slate-light">{category.serviceCount} services</span>
+                      <motion.span 
+                        className="text-zion-cyan group-hover:text-zion-cyan-dark transition-colors"
+                        whileHover={{ x: 5 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        Learn More →
+                      </motion.span>
                     </div>
                   </div>
-                  <h3 className="text-xl font-bold text-zion-blue mb-2">{category.title}</h3>
-                  <p className="text-zion-slate-light mb-4">{category.description}</p>
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-zion-slate-light">{category.serviceCount} services</span>
-                    <span className="text-zion-cyan group-hover:text-zion-cyan-dark transition-colors">Learn More →</span>
-                  </div>
-                </div>
-              </Link>
+                </Link>
+              </motion.div>
             ))}
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );
