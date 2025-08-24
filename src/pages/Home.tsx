@@ -11,27 +11,25 @@ import { QuickAccess } from "@/components/home/QuickAccess";
 import { FeatureCTAs } from "@/components/home/FeatureCTAs";
 import { FeatureHighlights } from "@/components/home/FeatureHighlights";
 import { ITServiceRequestHero } from "@/components/home/ITServiceRequestHero";
-import { AnimatedBackground, FloatingParticles } from "@/components/ui/AnimatedBackground";
+import { MicroSaasShowcase } from "@/components/home/MicroSaasShowcase";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background relative">
+    <div className="min-h-screen bg-background">
       <SEO 
         title="Zion - The Tech & AI Marketplace" 
         description="Discover top AI and tech talent, services, and equipment in one place."
         keywords="AI, technology, marketplace, services, talent"
-        canonical="https://ziontechgroup.com/"
+        canonical="https://app.ziontechgroup.com/"
       />
-
-      {/* Animated Background */}
-      <AnimatedBackground variant="particles" />
-      <FloatingParticles count={30} />
 
       <ITServiceRequestHero />
 
       <HeroSection />
       
       <QuickAccess />
+      
+      <MicroSaasShowcase />
       
       <FeatureCTAs />
       
