@@ -48,7 +48,9 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
   return (
     <header className="sticky top-0 z-50 w-full border-b border-zion-purple/20 bg-zion-blue-dark/95 backdrop-blur-md">
       <div className="container flex h-16 items-center px-4 sm:px-6">
-        <div className="text-2xl font-bold text-zion-cyan">Zion Tech</div>
+        <div className="text-2xl font-bold bg-gradient-to-r from-zion-cyan to-zion-purple bg-clip-text text-transparent">
+          Zion Tech Group
+        </div>
 
         {/* Desktop Navigation */}
         <div className="ml-6 flex-1 hidden lg:block">

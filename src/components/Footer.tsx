@@ -26,11 +26,11 @@ export function Footer() {
           {/* Company Info */}
           <div className="lg:col-span-2">
             <div className="mb-6">
-              <span className="text-3xl font-bold bg-gradient-to-r from-zion-cyan via-zion-purple-light to-zion-purple bg-clip-text text-transparent">ZION</span>
+              <span className="text-3xl font-bold bg-gradient-to-r from-zion-cyan via-zion-purple-light to-zion-purple bg-clip-text text-transparent">ZION TECH GROUP</span>
             </div>
             <p className="text-zion-slate-light mb-6 max-w-md leading-relaxed">
-              The world's first free marketplace dedicated to high-tech and artificial intelligence. 
-              Connecting global talent, services, and innovation.
+              Pioneering the future of technology with revolutionary AI consciousness, quantum computing, and autonomous solutions. 
+              Offering 33+ specialized services across 12 categories to transform businesses worldwide.
             </p>
             
             {/* Contact Info */}
@@ -108,13 +108,13 @@ export function Footer() {
           <div>
             <h3 className="text-white font-semibold mb-4 text-lg">Services</h3>
             <ul className="space-y-3">
-              <li><Link to="/services" className="text-zion-slate-light hover:text-zion-cyan transition-colors hover:translate-x-1 inline-block">All Services</Link></li>
-              <li><Link to="/services" className="text-zion-slate-light hover:text-zion-cyan transition-colors hover:translate-x-1 inline-block">AI & Machine Learning</Link></li>
-              <li><Link to="/services" className="text-zion-slate-light hover:text-zion-cyan transition-colors hover:translate-x-1 inline-block">Cybersecurity</Link></li>
-              <li><Link to="/services" className="text-zion-slate-light hover:text-zion-cyan transition-colors hover:translate-x-1 inline-block">Cloud Computing</Link></li>
-              <li><Link to="/services" className="text-zion-slate-light hover:text-zion-cyan transition-colors hover:translate-x-1 inline-block">Web Development</Link></li>
-              <li><Link to="/services" className="text-zion-slate-light hover:text-zion-cyan transition-colors hover:translate-x-1 inline-block">Mobile Development</Link></li>
-              <li><Link to="/services" className="text-zion-slate-light hover:text-zion-cyan transition-colors hover:translate-x-1 inline-block">Data Analytics</Link></li>
+              <li><Link to="/services" className="text-zion-slate-light hover:text-zion-cyan transition-colors hover:translate-x-1 inline-block">All 33+ Services</Link></li>
+              <li><Link to="/services" className="text-zion-slate-light hover:text-zion-cyan transition-colors hover:translate-x-1 inline-block">AI & Machine Learning (6)</Link></li>
+              <li><Link to="/services" className="text-zion-slate-light hover:text-zion-cyan transition-colors hover:translate-x-1 inline-block">Cybersecurity (4)</Link></li>
+              <li><Link to="/services" className="text-zion-slate-light hover:text-zion-cyan transition-colors hover:translate-x-1 inline-block">Cloud Computing (5)</Link></li>
+              <li><Link to="/services" className="text-zion-slate-light hover:text-zion-cyan transition-colors hover:translate-x-1 inline-block">Data Analytics (4)</Link></li>
+              <li><Link to="/services" className="text-zion-slate-light hover:text-zion-cyan transition-colors hover:translate-x-1 inline-block">Blockchain & DeFi (2)</Link></li>
+              <li><Link to="/services" className="text-zion-slate-light hover:text-zion-cyan transition-colors hover:translate-x-1 inline-block">IoT & Edge Computing (2)</Link></li>
             </ul>
           </div>
 
@@ -125,49 +125,59 @@ export function Footer() {
               <li><Link to="/about" className="text-zion-slate-light hover:text-zion-cyan transition-colors hover:translate-x-1 inline-block">About Us</Link></li>
               <li><Link to="/about" className="text-zion-slate-light hover:text-zion-cyan transition-colors hover:translate-x-1 inline-block">Our Team</Link></li>
               <li><Link to="/about" className="text-zion-slate-light hover:text-zion-cyan transition-colors hover:translate-x-1 inline-block">Our Mission</Link></li>
+              <li><Link to="/about" className="text-zion-slate-light hover:text-zion-cyan transition-colors hover:translate-x-1 inline-block">Technology Innovation</Link></li>
               <li><Link to="/contact" className="text-zion-slate-light hover:text-zion-cyan transition-colors hover:translate-x-1 inline-block">Contact</Link></li>
-              <li><Link to="/contact" className="text-zion-slate-light hover:text-zion-cyan transition-colors hover:translate-x-1 inline-block">Get Quote</Link></li>
-              <li><Link to="/services" className="text-zion-slate-light hover:text-zion-cyan transition-colors hover:translate-x-1 inline-block">Case Studies</Link></li>
-              <li><Link to="/about" className="text-zion-slate-light hover:text-zion-cyan transition-colors hover:translate-x-1 inline-block">Careers</Link></li>
+              <li><Link to="/contact" className="text-zion-slate-light hover:text-zion-cyan transition-colors hover:translate-x-1 inline-block">Get Free Quote</Link></li>
+              <li><Link to="/services" className="text-zion-slate-light hover:text-zion-cyan transition-colors hover:translate-x-1 inline-block">Success Stories</Link></li>
             </ul>
           </div>
 
           {/* Support & Updates */}
           <div>
-            <h3 className="text-white font-semibold mb-4 text-lg">Support & Updates</h3>
+            <h3 className="text-white font-semibold mb-4 text-lg">Support & Resources</h3>
             <ul className="space-y-3 mb-6">
-              <li><Link to="/contact" className="text-zion-slate-light hover:text-zion-cyan transition-colors hover:translate-x-1 inline-block">Help Center</Link></li>
-              <li><Link to="/contact" className="text-zion-slate-light hover:text-zion-cyan transition-colors hover:translate-x-1 inline-block">Support</Link></li>
-              <li><Link to="/contact" className="text-zion-slate-light hover:text-zion-cyan transition-colors hover:translate-x-1 inline-block">System Status</Link></li>
-              <li><Link to="/services" className="text-zion-slate-light hover:text-zion-cyan transition-colors hover:translate-x-1 inline-block">API Docs</Link></li>
+              <li><Link to="/contact" className="text-zion-slate-light hover:text-zion-cyan transition-colors hover:translate-x-1 inline-block">24/7 Support</Link></li>
+              <li><Link to="/contact" className="text-zion-slate-light hover:text-zion-cyan transition-colors hover:translate-x-1 inline-block">Technical Documentation</Link></li>
+              <li><Link to="/services" className="text-zion-slate-light hover:text-zion-cyan transition-colors hover:translate-x-1 inline-block">API Integration</Link></li>
+              <li><Link to="/contact" className="text-zion-slate-light hover:text-zion-cyan transition-colors hover:translate-x-1 inline-block">Training & Workshops</Link></li>
             </ul>
             
             <div className="mb-4">
               <h4 className="text-white font-medium mb-3">Stay Updated</h4>
               <p className="text-zion-slate-light text-sm mb-3">
-                Get the latest news on tech, AI, and marketplace opportunities.
+                Get the latest insights on AI, emerging technologies, and digital transformation trends.
               </p>
-              {/* FooterNewsletter component removed for now */}
+              <div className="flex space-x-2">
+                <div className="w-2 h-2 bg-zion-cyan rounded-full animate-pulse"></div>
+                <div className="w-2 h-2 bg-zion-purple rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+                <div className="w-2 h-2 bg-zion-cyan rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Bottom Section */}
-        <div className="mt-16 pt-8 border-t border-zion-blue-light">
+        {/* Enhanced Bottom Section */}
+        <div className="mt-20 pt-8 border-t border-zion-blue-light">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="text-center md:text-left mb-4 md:mb-0">
-              <p className="text-zion-slate-light text-sm">
+            <div className="text-center md:text-left mb-6 md:mb-0">
+              <p className="text-zion-slate-light text-sm mb-2">
                 &copy; {new Date().getFullYear()} Zion Tech Group. All rights reserved.
               </p>
-              <p className="text-zion-slate-light text-xs mt-1">
-                Empowering the future of technology and AI
+              <p className="text-zion-slate-light text-xs mb-2">
+                Empowering the future of technology and AI with 33+ innovative services
               </p>
+              <div className="flex items-center justify-center md:justify-start gap-2 text-xs text-zion-slate-light">
+                <span className="w-2 h-2 bg-zion-cyan rounded-full"></span>
+                <span>ISO 27001 Certified</span>
+                <span className="w-2 h-2 bg-zion-purple rounded-full"></span>
+                <span>24/7 Global Support</span>
+              </div>
             </div>
-            <div className="flex flex-wrap justify-center gap-6">
-              <Link to="/privacy" className="text-zion-slate-light hover:text-zion-cyan text-sm transition-colors">Privacy Policy</Link>
-              <Link to="/terms" className="text-zion-slate-light hover:text-zion-cyan text-sm transition-colors">Terms of Service</Link>
-              <Link to="/cookies" className="text-zion-slate-light hover:text-zion-cyan text-sm transition-colors">Cookie Policy</Link>
-              <Link to="/accessibility" className="text-zion-slate-light hover:text-zion-cyan text-sm transition-colors">Accessibility</Link>
+            <div className="flex flex-wrap justify-center gap-8">
+              <Link to="/privacy" className="text-zion-slate-light hover:text-zion-cyan text-sm transition-colors hover:scale-105 transform">Privacy Policy</Link>
+              <Link to="/terms" className="text-zion-slate-light hover:text-zion-cyan text-sm transition-colors hover:scale-105 transform">Terms of Service</Link>
+              <Link to="/cookies" className="text-zion-slate-light hover:text-zion-cyan text-sm transition-colors hover:scale-105 transform">Cookie Policy</Link>
+              <Link to="/accessibility" className="text-zion-slate-light hover:text-zion-cyan text-sm transition-colors hover:scale-105 transform">Accessibility</Link>
             </div>
           </div>
         </div>
