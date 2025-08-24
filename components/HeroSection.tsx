@@ -15,11 +15,11 @@ const HeroSection: React.FC = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentTextIndex((prev) => (prev + 1) % animatedTexts.length);
+      setCurrentTextIndex((currentTextIndex + 1) % animatedTexts.length);
     }, 3000);
 
     return () => clearInterval(interval);
-  }, [animatedTexts.length]);
+  }, [currentTextIndex, animatedTexts.length]);
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
