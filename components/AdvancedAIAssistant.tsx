@@ -74,7 +74,7 @@ interface AIInsight {
   type: 'positive' | 'warning' | 'critical' | 'info';
   impact: 'high' | 'medium' | 'low';
   confidence: number;
-  data: any;
+  data: Record<string, string | number | boolean>;
   createdAt: string;
 }
 

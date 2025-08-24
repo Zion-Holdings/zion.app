@@ -29,6 +29,8 @@ import AdvancedProjectHub from '../components/AdvancedProjectHub';
 import AdvancedAIAssistant from '../components/AdvancedAIAssistant';
 import AdvancedPerformanceOptimizer from '../components/AdvancedPerformanceOptimizer';
 import FinalIntegrationHub from '../components/FinalIntegrationHub';
+import EnhancedPerformanceMetrics from '../components/EnhancedPerformanceMetrics';
+import EnhancedSecurityDashboard from '../components/EnhancedSecurityDashboard';
 
 const Home: NextPage = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -331,6 +333,22 @@ const Home: NextPage = () => {
 
         {/* Advanced Performance Optimizer Section */}
         <AdvancedPerformanceOptimizer />
+
+        {/* Enhanced Performance Metrics Section */}
+        <EnhancedPerformanceMetrics 
+          title="Advanced Performance Analytics"
+          subtitle="Real-time monitoring and intelligent insights for optimal system performance"
+          showCharts={true}
+          autoRefresh={true}
+        />
+
+        {/* Enhanced Security Dashboard Section */}
+        <EnhancedSecurityDashboard 
+          title="Enterprise Security Monitoring"
+          subtitle="Comprehensive threat detection and security analytics for your infrastructure"
+          showThreats={true}
+          autoRefresh={true}
+        />
 
         {/* Final Integration Hub Section */}
         <FinalIntegrationHub />
