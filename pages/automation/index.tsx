@@ -12,6 +12,21 @@ export default function AutomationHub() {
         <p className="text-white/70 mb-8">Discover our autonomous, self-healing systems that keep the codebase evergreen. Powered by scheduled cloud functions — no GitHub Actions required.</p>
         <ul className="space-y-4">
           <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Innovation Generator</h2>
+            <p className="text-white/70">Synthesizes new promos, updates homepage, and syncs to main.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/innovation-generator" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Dependency Health Runner</h2>
+            <p className="text-white/70">Auto-upgrades dependencies safely and syncs.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/dependency-health-runner" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Changelog Publisher</h2>
+            <p className="text-white/70">Publishes AI-generated changelog and commits updates.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/changelog-publisher" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
             <h2 className="text-xl font-bold">Homepage Updates</h2>
             <p className="text-white/70">Keeps the homepage fresh and the sitemap up to date.</p>
             <a className="text-cyan-300 underline" href="/.netlify/functions/schedule-homepage" target="_blank" rel="noopener">Trigger / View</a>
