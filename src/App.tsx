@@ -1,10 +1,13 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { LoadingSpinner } from "./components/ui/loading-spinner";
 import { MainNavigation } from "./layout/MainNavigation";
+import { MainSidebar } from "./components/layout/MainSidebar";
 import { Footer } from "./components/Footer";
 import Home from "./pages/Home";
 import Contact from "./pages/Contact";
+import HelpCenter from "./pages/HelpCenter";
+import Cookies from "./pages/Cookies";
 import { motion } from "framer-motion";
 
 // Enhanced loading fallback
@@ -24,19 +27,30 @@ const EnhancedLoadingFallback = () => (
 );
 
 function App() {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const handleSidebarToggle = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
   return (
     <Router>
       <div className="min-h-screen bg-zion-blue-dark">
-        <MainNavigation />
-        <main className="pt-16">
-          <Suspense fallback={<EnhancedLoadingFallback />}>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/contact" element={<Contact />} />
-              {/* Add more routes as components become available */}
-            </Routes>
-          </Suspense>
-        </main>
+        <MainNavigation onSidebarToggle={handleSidebarToggle} />
+        <div className="flex pt-16">
+          <MainSidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
+          <main className="flex-1">
+            <Suspense fallback={<EnhancedLoadingFallback />}>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/help" element={<HelpCenter />} />
+                <Route path="/cookies" element={<Cookies />} />
+                {/* Add more routes as components become available */}
+              </Routes>
+            </Suspense>
+          </main>
+        </div>
         <Footer />
       </div>
     </Router>

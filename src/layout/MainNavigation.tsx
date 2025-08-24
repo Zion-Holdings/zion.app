@@ -2,12 +2,16 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Search, User, ShoppingCart, Bell, Globe, Sparkles } from 'lucide-react';
+import { Menu, X, Search, User, ShoppingCart, Bell, Globe, Sparkles, PanelLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 
-export function MainNavigation() {
+interface MainNavigationProps {
+  onSidebarToggle?: () => void;
+}
+
+export function MainNavigation({ onSidebarToggle }: MainNavigationProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
@@ -52,15 +56,29 @@ export function MainNavigation() {
     }`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-zion-cyan to-zion-purple rounded-lg flex items-center justify-center">
-              <Sparkles className="w-5 h-5 text-white" />
-            </div>
-            <span className="text-xl font-bold bg-gradient-to-r from-zion-cyan to-zion-purple bg-clip-text text-transparent">
-              Zion Tech
-            </span>
-          </Link>
+          {/* Left Side - Sidebar Toggle and Logo */}
+          <div className="flex items-center space-x-4">
+            {/* Sidebar Toggle */}
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={onSidebarToggle}
+              className="text-zion-slate-light hover:text-zion-cyan hover:bg-zion-blue-light/10"
+              aria-label="Toggle sidebar"
+            >
+              <PanelLeft className="w-5 h-5" />
+            </Button>
+
+            {/* Logo */}
+            <Link to="/" className="flex items-center space-x-2">
+              <div className="w-8 h-8 bg-gradient-to-br from-zion-cyan to-zion-purple rounded-lg flex items-center justify-center">
+                <Sparkles className="w-5 h-5 text-white" />
+              </div>
+              <span className="text-xl font-bold bg-gradient-to-r from-zion-cyan to-zion-purple bg-clip-text text-transparent">
+                Zion Tech
+              </span>
+            </Link>
+          </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
@@ -179,6 +197,7 @@ export function MainNavigation() {
                 </Button>
                 <Button variant="ghost" className="w-full justify-start text-zion-slate-light hover:text-zion-cyan">
                   <Bell className="w-4 h-4 mr-2" />
+                  <User className="w-4 h-4 mr-2" />
                   Notifications
                 </Button>
                 <Button variant="ghost" className="w-full justify-start text-zion-slate-light hover:text-zion-cyan">
