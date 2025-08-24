@@ -11,7 +11,7 @@ import { QuickAccess } from "@/components/home/QuickAccess";
 import { FeatureCTAs } from "@/components/home/FeatureCTAs";
 import { FeatureHighlights } from "@/components/home/FeatureHighlights";
 import { ITServiceRequestHero } from "@/components/home/ITServiceRequestHero";
-import { MicroSaasShowcase } from "@/components/home/MicroSaasShowcase";
+import { FloatingCTA } from "@/components/FloatingCTA";
 
 export default function Home() {
   return (
@@ -31,8 +31,6 @@ export default function Home() {
       
       <FeatureCTAs />
       
-      <MicroSaasShowcase />
-      
       <FeatureHighlights />
       
       <CategoriesSection />
@@ -40,6 +38,8 @@ export default function Home() {
       <HowItWorksSection />
       <FeaturedListingsSection />
       <NewsletterSection />
+      
+      <FloatingCTA />
     </div>
   );
 }
