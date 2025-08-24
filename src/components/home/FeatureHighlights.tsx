@@ -43,6 +43,17 @@ export function FeatureHighlights({ className, style }: FeatureHighlightsProps) 
         "API access for seamless integration with your HR systems",
         "Customizable workflow and approval processes"
       ]
+    },
+    {
+      title: "Micro SAAS Solutions",
+      features: [
+        "AI-powered content generation and code assistance tools",
+        "Cloud migration and cybersecurity audit services",
+        "Business intelligence dashboards and analytics platforms",
+        "SEO optimization and digital marketing automation",
+        "Custom chatbot builders and conversational AI solutions",
+        "Scalable pricing plans from startup to enterprise"
+      ]
     }
   ];
 
@@ -56,7 +67,7 @@ export function FeatureHighlights({ className, style }: FeatureHighlightsProps) 
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {highlightsData.map((category, index) => (
             <Card key={index} className="bg-zion-blue-dark border-zion-blue-light">
               <CardContent className="p-6">

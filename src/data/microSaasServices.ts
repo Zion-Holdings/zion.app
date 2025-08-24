@@ -1,515 +1,579 @@
 export interface MicroSaasService {
   id: string;
   title: string;
-  category: 'AI' | 'IT' | 'Development' | 'Analytics' | 'Security' | 'Automation' | 'Integration' | 'Monitoring';
   description: string;
-  features: string[];
-  benefits: string[];
+  category: string;
+  subcategory: string;
   pricing: {
-    monthly: number;
-    yearly: number;
+    starter: number;
+    professional: number;
     enterprise: number;
     currency: string;
+    billing: string;
   };
-  marketPrice: {
-    min: number;
-    max: number;
-    average: number;
-    currency: string;
-  };
+  features: string[];
+  benefits: string[];
+  useCases: string[];
+  targetAudience: string[];
+  integration: string[];
+  support: string[];
+  demoUrl?: string;
+  websiteUrl?: string;
   contactInfo: {
-    phone: string;
     email: string;
-    website: string;
+    phone: string;
+    address: string;
   };
-  tags: string[];
-  image: string;
-  aiScore: number;
   rating: number;
   reviewCount: number;
-  isNew?: boolean;
-  isPopular?: boolean;
+  featured: boolean;
+  tags: string[];
+  imageUrl: string;
+  createdAt: string;
 }
 
 export const MICRO_SAAS_SERVICES: MicroSaasService[] = [
-  // AI Services
+  // AI & Machine Learning Services
   {
-    id: 'ai-content-generator',
-    title: 'AI Content Generator Pro',
-    category: 'AI',
-    description: 'Advanced AI-powered content generation platform for blogs, social media, and marketing materials with SEO optimization and brand voice consistency.',
+    id: "ai-content-generator",
+    title: "Zion AI Content Generator Pro",
+    description: "Advanced AI-powered content creation platform that generates high-quality articles, blog posts, social media content, and marketing copy in seconds. Features multi-language support, SEO optimization, and brand voice customization.",
+    category: "AI & Machine Learning",
+    subcategory: "Content Generation",
+    pricing: {
+      starter: 29,
+      professional: 79,
+      enterprise: 199,
+      currency: "$",
+      billing: "monthly"
+    },
     features: [
-      'Multi-language content generation',
-      'SEO optimization tools',
-      'Brand voice customization',
-      'Plagiarism detection',
-      'Content scheduling',
-      'Analytics dashboard',
-      'API integration',
-      'Team collaboration tools'
+      "AI-powered content generation",
+      "Multi-language support (25+ languages)",
+      "SEO optimization tools",
+      "Brand voice customization",
+      "Content templates library",
+      "Plagiarism detection",
+      "Content scheduling",
+      "Analytics dashboard",
+      "API access",
+      "Team collaboration tools"
     ],
     benefits: [
-      'Save 80% of content creation time',
-      'Improve SEO rankings by 40%',
-      'Maintain consistent brand voice',
-      'Scale content production instantly',
-      'Reduce content creation costs'
+      "Save 80% of content creation time",
+      "Improve SEO rankings with optimized content",
+      "Maintain consistent brand voice across all content",
+      "Scale content production without hiring more writers",
+      "Generate content in multiple languages instantly"
     ],
-    pricing: {
-      monthly: 99,
-      yearly: 990,
-      enterprise: 2999,
-      currency: 'USD'
-    },
-    marketPrice: {
-      min: 49,
-      max: 299,
-      average: 149,
-      currency: 'USD'
-    },
+    useCases: [
+      "Blog and article writing",
+      "Social media content creation",
+      "Marketing copy generation",
+      "Product description writing",
+      "Email newsletter creation"
+    ],
+    targetAudience: [
+      "Content marketers",
+      "Digital agencies",
+      "E-commerce businesses",
+      "Bloggers and influencers",
+      "Small to medium businesses"
+    ],
+    integration: [
+      "WordPress plugin",
+      "Shopify integration",
+      "Social media platforms",
+      "Email marketing tools",
+      "CMS systems"
+    ],
+    support: [
+      "24/7 live chat support",
+      "Email support",
+      "Video tutorials",
+      "Knowledge base",
+      "Community forum"
+    ],
+    demoUrl: "https://ziontechgroup.com/demo/ai-content-generator",
+    websiteUrl: "https://ziontechgroup.com/ai-content-generator",
     contactInfo: {
-      phone: '+1 302 464 0950',
-      email: 'kleber@ziontechgroup.com',
-      website: 'https://ziontechgroup.com/ai-content-generator'
+      email: "kleber@ziontechgroup.com",
+      phone: "+1 302 464 0950",
+      address: "364 E Main St STE 1008 Middletown DE 19709"
     },
-    tags: ['AI', 'Content Generation', 'SEO', 'Marketing', 'Automation'],
-    image: 'https://images.unsplash.com/photo-1516192518150-0d8fee5425e3?w=800&auto=format',
-    aiScore: 95,
+    rating: 4.8,
+    reviewCount: 342,
+    featured: true,
+    tags: ["AI", "Content Generation", "Marketing", "SEO", "Automation"],
+    imageUrl: "https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=800&h=500",
+    createdAt: "2024-01-15T10:00:00.000Z"
+  },
+  {
+    id: "ai-code-assistant",
+    title: "Zion AI Code Assistant",
+    description: "Intelligent code generation and assistance tool that helps developers write better code faster. Features code completion, bug detection, documentation generation, and multi-language support.",
+    category: "AI & Machine Learning",
+    subcategory: "Developer Tools",
+    pricing: {
+      starter: 19,
+      professional: 49,
+      enterprise: 129,
+      currency: "$",
+      billing: "monthly"
+    },
+    features: [
+      "AI-powered code completion",
+      "Multi-language support (30+ languages)",
+      "Bug detection and suggestions",
+      "Code documentation generation",
+      "Refactoring suggestions",
+      "IDE integration",
+      "Code review assistance",
+      "Performance optimization tips",
+      "Security vulnerability detection",
+      "Team collaboration features"
+    ],
+    benefits: [
+      "Increase coding speed by 3x",
+      "Reduce bugs and improve code quality",
+      "Automate documentation generation",
+      "Learn best practices from AI suggestions",
+      "Collaborate effectively with team members"
+    ],
+    useCases: [
+      "Web development",
+      "Mobile app development",
+      "Backend development",
+      "Data science projects",
+      "DevOps automation"
+    ],
+    targetAudience: [
+      "Software developers",
+      "Web developers",
+      "Data scientists",
+      "DevOps engineers",
+      "Student developers"
+    ],
+    integration: [
+      "VS Code extension",
+      "IntelliJ IDEA plugin",
+      "GitHub integration",
+      "GitLab integration",
+      "Bitbucket integration"
+    ],
+    support: [
+      "Developer documentation",
+      "API reference",
+      "Community forum",
+      "Email support",
+      "Video tutorials"
+    ],
+    demoUrl: "https://ziontechgroup.com/demo/ai-code-assistant",
+    websiteUrl: "https://ziontechgroup.com/ai-code-assistant",
+    contactInfo: {
+      email: "kleber@ziontechgroup.com",
+      phone: "+1 302 464 0950",
+      address: "364 E Main St STE 1008 Middletown DE 19709"
+    },
+    rating: 4.9,
+    reviewCount: 567,
+    featured: true,
+    tags: ["AI", "Developer Tools", "Code Generation", "Programming", "Automation"],
+    imageUrl: "https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=800&h=500",
+    createdAt: "2024-01-20T14:30:00.000Z"
+  },
+  {
+    id: "ai-chatbot-builder",
+    title: "Zion AI Chatbot Builder",
+    description: "No-code AI chatbot creation platform that enables businesses to build intelligent conversational agents for customer service, lead generation, and support automation.",
+    category: "AI & Machine Learning",
+    subcategory: "Conversational AI",
+    pricing: {
+      starter: 39,
+      professional: 99,
+      enterprise: 249,
+      currency: "$",
+      billing: "monthly"
+    },
+    features: [
+      "No-code chatbot builder",
+      "AI-powered responses",
+      "Multi-channel deployment",
+      "Custom branding options",
+      "Analytics dashboard",
+      "Integration with CRM systems",
+      "Multi-language support",
+      "Voice and text capabilities",
+      "Advanced NLP processing",
+      "Automated training"
+    ],
+    benefits: [
+      "Reduce customer service costs by 60%",
+      "Provide 24/7 customer support",
+      "Increase lead generation by 40%",
+      "Improve customer satisfaction scores",
+      "Scale support operations efficiently"
+    ],
+    useCases: [
+      "Customer service automation",
+      "Lead generation and qualification",
+      "FAQ handling",
+      "Appointment scheduling",
+      "E-commerce support"
+    ],
+    targetAudience: [
+      "E-commerce businesses",
+      "Service companies",
+      "Healthcare providers",
+      "Educational institutions",
+      "Real estate agencies"
+    ],
+    integration: [
+      "Website widgets",
+      "Facebook Messenger",
+      "WhatsApp Business",
+      "Slack integration",
+      "CRM systems"
+    ],
+    support: [
+      "Setup assistance",
+      "Training sessions",
+      "24/7 technical support",
+      "Knowledge base",
+      "Community forum"
+    ],
+    demoUrl: "https://ziontechgroup.com/demo/ai-chatbot-builder",
+    websiteUrl: "https://ziontechgroup.com/ai-chatbot-builder",
+    contactInfo: {
+      email: "kleber@ziontechgroup.com",
+      phone: "+1 302 464 0950",
+      address: "364 E Main St STE 1008 Middletown DE 19709"
+    },
+    rating: 4.7,
+    reviewCount: 289,
+    featured: true,
+    tags: ["AI", "Chatbot", "Customer Service", "Automation", "NLP"],
+    imageUrl: "https://images.unsplash.com/photo-1633412802994-5c058f151b66?auto=format&fit=crop&w=800&h=500",
+    createdAt: "2024-02-01T09:15:00.000Z"
+  },
+  // IT Services & Solutions
+  {
+    id: "cloud-migration-service",
+    title: "Zion Cloud Migration Pro",
+    description: "Comprehensive cloud migration service that helps businesses seamlessly transition to cloud infrastructure with minimal downtime and maximum efficiency.",
+    category: "IT Services",
+    subcategory: "Cloud Solutions",
+    pricing: {
+      starter: 2999,
+      professional: 7999,
+      enterprise: 19999,
+      currency: "$",
+      billing: "one-time"
+    },
+    features: [
+      "Infrastructure assessment",
+      "Migration planning and strategy",
+      "Data migration services",
+      "Application modernization",
+      "Performance optimization",
+      "Security implementation",
+      "Training and documentation",
+      "Post-migration support",
+      "Disaster recovery setup",
+      "Cost optimization analysis"
+    ],
+    benefits: [
+      "Reduce infrastructure costs by 30-50%",
+      "Improve system performance and reliability",
+      "Enhanced security and compliance",
+      "Scalable and flexible infrastructure",
+      "Access to latest cloud technologies"
+    ],
+    useCases: [
+      "Legacy system modernization",
+      "Data center consolidation",
+      "Application migration",
+      "Disaster recovery setup",
+      "Performance optimization"
+    ],
+    targetAudience: [
+      "Medium to large enterprises",
+      "Healthcare organizations",
+      "Financial institutions",
+      "Educational institutions",
+      "Government agencies"
+    ],
+    integration: [
+      "AWS services",
+      "Azure platform",
+      "Google Cloud Platform",
+      "VMware solutions",
+      "On-premises systems"
+    ],
+    support: [
+      "24/7 migration support",
+      "Dedicated project manager",
+      "Technical consultation",
+      "Training sessions",
+      "Post-migration maintenance"
+    ],
+    demoUrl: "https://ziontechgroup.com/demo/cloud-migration",
+    websiteUrl: "https://ziontechgroup.com/cloud-migration",
+    contactInfo: {
+      email: "kleber@ziontechgroup.com",
+      phone: "+1 302 464 0950",
+      address: "364 E Main St STE 1008 Middletown DE 19709"
+    },
     rating: 4.8,
     reviewCount: 156,
-    isNew: true
+    featured: true,
+    tags: ["Cloud Migration", "IT Services", "Infrastructure", "AWS", "Azure"],
+    imageUrl: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=800&h=500",
+    createdAt: "2024-01-25T11:45:00.000Z"
   },
   {
-    id: 'ai-chatbot-platform',
-    title: 'Smart AI Chatbot Platform',
-    category: 'AI',
-    description: 'Enterprise-grade AI chatbot platform with natural language processing, multi-channel integration, and advanced analytics for customer support automation.',
-    features: [
-      'Natural language processing',
-      'Multi-channel integration',
-      'Custom training models',
-      'Analytics dashboard',
-      'A/B testing tools',
-      'CRM integration',
-      'Voice recognition',
-      '24/7 availability'
-    ],
-    benefits: [
-      'Reduce support costs by 60%',
-      'Improve response time to seconds',
-      'Handle unlimited conversations',
-      '24/7 customer support',
-      'Scalable customer service'
-    ],
+    id: "cybersecurity-audit",
+    title: "Zion Cybersecurity Audit Suite",
+    description: "Comprehensive cybersecurity assessment and audit service that identifies vulnerabilities, provides remediation strategies, and ensures compliance with industry standards.",
+    category: "IT Services",
+    subcategory: "Cybersecurity",
     pricing: {
-      monthly: 199,
-      yearly: 1990,
-      enterprise: 4999,
-      currency: 'USD'
-    },
-    marketPrice: {
-      min: 99,
-      max: 599,
-      average: 299,
-      currency: 'USD'
-    },
-    contactInfo: {
-      phone: '+1 302 464 0950',
-      email: 'kleber@ziontechgroup.com',
-      website: 'https://ziontechgroup.com/ai-chatbot'
-    },
-    tags: ['AI', 'Chatbot', 'Customer Support', 'Automation', 'NLP'],
-    image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&auto=format',
-    aiScore: 92,
-    rating: 4.7,
-    reviewCount: 89,
-    isPopular: true
-  },
-  {
-    id: 'ai-data-analytics',
-    title: 'AI-Powered Data Analytics Suite',
-    category: 'AI',
-    description: 'Comprehensive data analytics platform powered by AI for business intelligence, predictive analytics, and automated reporting.',
-    features: [
-      'Predictive analytics',
-      'Real-time dashboards',
-      'Automated reporting',
-      'Data visualization',
-      'Machine learning models',
-      'API integrations',
-      'Custom algorithms',
-      'Data security compliance'
-    ],
-    benefits: [
-      'Uncover hidden business insights',
-      'Predict market trends accurately',
-      'Automate decision-making processes',
-      'Reduce manual analysis time by 70%',
-      'Improve business outcomes'
-    ],
-    pricing: {
-      monthly: 299,
-      yearly: 2990,
-      enterprise: 7999,
-      currency: 'USD'
-    },
-    marketPrice: {
-      min: 199,
-      max: 999,
-      average: 499,
-      currency: 'USD'
-    },
-    contactInfo: {
-      phone: '+1 302 464 0950',
-      email: 'kleber@ziontechgroup.com',
-      website: 'https://ziontechgroup.com/ai-analytics'
-    },
-    tags: ['AI', 'Analytics', 'Business Intelligence', 'Predictive Analytics', 'Data Science'],
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format',
-    aiScore: 94,
-    rating: 4.9,
-    reviewCount: 203
-  },
-
-  // IT Services
-  {
-    id: 'cloud-infrastructure-manager',
-    title: 'Cloud Infrastructure Manager',
-    category: 'IT',
-    description: 'Comprehensive cloud infrastructure management platform for AWS, Azure, and Google Cloud with automated scaling, monitoring, and cost optimization.',
-    features: [
-      'Multi-cloud management',
-      'Automated scaling',
-      'Cost optimization',
-      'Security monitoring',
-      'Backup automation',
-      'Performance analytics',
-      'Compliance reporting',
-      '24/7 monitoring'
-    ],
-    benefits: [
-      'Reduce cloud costs by 30%',
-      'Improve infrastructure reliability',
-      'Automate routine tasks',
-      'Enhance security posture',
-      'Scale infrastructure automatically'
-    ],
-    pricing: {
-      monthly: 399,
-      yearly: 3990,
-      enterprise: 9999,
-      currency: 'USD'
-    },
-    marketPrice: {
-      min: 299,
-      max: 1499,
-      average: 699,
-      currency: 'USD'
-    },
-    contactInfo: {
-      phone: '+1 302 464 0950',
-      email: 'kleber@ziontechgroup.com',
-      website: 'https://ziontechgroup.com/cloud-manager'
-    },
-    tags: ['IT', 'Cloud Computing', 'DevOps', 'Automation', 'Monitoring'],
-    image: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800&auto=format',
-    aiScore: 89,
-    rating: 4.6,
-    reviewCount: 134
-  },
-  {
-    id: 'cybersecurity-monitor',
-    title: 'Advanced Cybersecurity Monitor',
-    category: 'Security',
-    description: 'Real-time cybersecurity monitoring and threat detection platform with AI-powered analysis, automated response, and compliance reporting.',
-    features: [
-      'Real-time threat detection',
-      'AI-powered analysis',
-      'Automated response',
-      'Compliance reporting',
-      'Vulnerability scanning',
-      'Incident management',
-      'Security training',
-      '24/7 SOC support'
-    ],
-    benefits: [
-      'Detect threats in real-time',
-      'Reduce security incidents by 80%',
-      'Automate security responses',
-      'Maintain compliance easily',
-      'Protect against zero-day attacks'
-    ],
-    pricing: {
-      monthly: 499,
-      yearly: 4990,
+      starter: 1999,
+      professional: 4999,
       enterprise: 12999,
-      currency: 'USD'
+      currency: "$",
+      billing: "one-time"
     },
-    marketPrice: {
-      min: 399,
-      max: 1999,
-      average: 899,
-      currency: 'USD'
-    },
+    features: [
+      "Vulnerability assessment",
+      "Penetration testing",
+      "Security policy review",
+      "Compliance auditing",
+      "Risk assessment",
+      "Incident response planning",
+      "Security awareness training",
+      "Regular security monitoring",
+      "Compliance reporting",
+      "Ongoing security consultation"
+    ],
+    benefits: [
+      "Identify and fix security vulnerabilities",
+      "Ensure regulatory compliance",
+      "Protect against cyber threats",
+      "Build customer trust",
+      "Reduce insurance costs"
+    ],
+    useCases: [
+      "Regulatory compliance",
+      "Security certification",
+      "Risk management",
+      "Incident response preparation",
+      "Security policy development"
+    ],
+    targetAudience: [
+      "Financial institutions",
+      "Healthcare organizations",
+      "E-commerce businesses",
+      "Educational institutions",
+      "Government contractors"
+    ],
+    integration: [
+      "SIEM systems",
+      "Firewall management",
+      "Endpoint protection",
+      "Identity management",
+      "Compliance tools"
+    ],
+    support: [
+      "Dedicated security consultant",
+      "24/7 emergency response",
+      "Regular security updates",
+      "Training and workshops",
+      "Compliance assistance"
+    ],
+    demoUrl: "https://ziontechgroup.com/demo/cybersecurity-audit",
+    websiteUrl: "https://ziontechgroup.com/cybersecurity-audit",
     contactInfo: {
-      phone: '+1 302 464 0950',
-      email: 'kleber@ziontechgroup.com',
-      website: 'https://ziontechgroup.com/cybersecurity'
+      email: "kleber@ziontechgroup.com",
+      phone: "+1 302 464 0950",
+      address: "364 E Main St STE 1008 Middletown DE 19709"
     },
-    tags: ['Security', 'Cybersecurity', 'Threat Detection', 'Compliance', 'AI'],
-    image: 'https://images.unsplash.com/photo-1510511459019-5dda7724fd87?w=800&auto=format',
-    aiScore: 96,
     rating: 4.9,
-    reviewCount: 187,
-    isPopular: true
+    reviewCount: 234,
+    featured: true,
+    tags: ["Cybersecurity", "Security Audit", "Compliance", "Penetration Testing", "Risk Assessment"],
+    imageUrl: "https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=800&h=500",
+    createdAt: "2024-02-05T13:20:00.000Z"
   },
-
-  // Development Services
+  // Business Intelligence & Analytics
   {
-    id: 'api-management-platform',
-    title: 'Enterprise API Management Platform',
-    category: 'Development',
-    description: 'Complete API lifecycle management platform with design, testing, deployment, monitoring, and analytics capabilities.',
+    id: "business-intelligence-dashboard",
+    title: "Zion BI Dashboard Pro",
+    description: "Advanced business intelligence platform that transforms raw data into actionable insights with interactive dashboards, real-time analytics, and predictive modeling capabilities.",
+    category: "Business Intelligence",
+    subcategory: "Analytics",
+    pricing: {
+      starter: 99,
+      professional: 299,
+      enterprise: 799,
+      currency: "$",
+      billing: "monthly"
+    },
     features: [
-      'API design tools',
-      'Testing automation',
-      'Deployment pipeline',
-      'Performance monitoring',
-      'Rate limiting',
-      'Authentication',
-      'Documentation generator',
-      'Analytics dashboard'
+      "Interactive dashboards",
+      "Real-time data visualization",
+      "Predictive analytics",
+      "Custom report builder",
+      "Data integration tools",
+      "Mobile-responsive design",
+      "Automated reporting",
+      "Advanced filtering",
+      "Export capabilities",
+      "Team collaboration"
     ],
     benefits: [
-      'Accelerate API development by 50%',
-      'Improve API reliability',
-      'Reduce development costs',
-      'Enhance developer experience',
-      'Streamline API operations'
+      "Make data-driven decisions faster",
+      "Identify business opportunities",
+      "Improve operational efficiency",
+      "Monitor KPIs in real-time",
+      "Share insights across teams"
     ],
-    pricing: {
-      monthly: 199,
-      yearly: 1990,
-      enterprise: 5999,
-      currency: 'USD'
-    },
-    marketPrice: {
-      min: 149,
-      max: 799,
-      average: 399,
-      currency: 'USD'
-    },
+    useCases: [
+      "Sales performance tracking",
+      "Financial reporting",
+      "Marketing campaign analysis",
+      "Operational metrics",
+      "Customer behavior analysis"
+    ],
+    targetAudience: [
+      "Business analysts",
+      "Marketing teams",
+      "Sales departments",
+      "Executive leadership",
+      "Operations managers"
+    ],
+    integration: [
+      "CRM systems",
+      "ERP platforms",
+      "Marketing tools",
+      "E-commerce platforms",
+      "Database systems"
+    ],
+    support: [
+      "Setup and configuration",
+      "Data integration assistance",
+      "Training sessions",
+      "Technical support",
+      "Custom development"
+    ],
+    demoUrl: "https://ziontechgroup.com/demo/bi-dashboard",
+    websiteUrl: "https://ziontechgroup.com/bi-dashboard",
     contactInfo: {
-      phone: '+1 302 464 0950',
-      email: 'kleber@ziontechgroup.com',
-      website: 'https://ziontechgroup.com/api-platform'
+      email: "kleber@ziontechgroup.com",
+      phone: "+1 302 464 0950",
+      address: "364 E Main St STE 1008 Middletown DE 19709"
     },
-    tags: ['Development', 'API', 'Microservices', 'Integration', 'DevOps'],
-    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&auto=format',
-    aiScore: 88,
-    rating: 4.5,
-    reviewCount: 76
-  },
-  {
-    id: 'code-quality-analyzer',
-    title: 'AI Code Quality Analyzer',
-    category: 'Development',
-    description: 'Intelligent code analysis platform that automatically reviews code quality, identifies bugs, suggests improvements, and enforces coding standards.',
-    features: [
-      'Automated code review',
-      'Bug detection',
-      'Code quality scoring',
-      'Performance analysis',
-      'Security scanning',
-      'Refactoring suggestions',
-      'Team collaboration',
-      'Integration with CI/CD'
-    ],
-    benefits: [
-      'Reduce bugs by 60%',
-      'Improve code quality',
-      'Accelerate code reviews',
-      'Enforce coding standards',
-      'Reduce technical debt'
-    ],
-    pricing: {
-      monthly: 149,
-      yearly: 1490,
-      enterprise: 3999,
-      currency: 'USD'
-    },
-    marketPrice: {
-      min: 99,
-      max: 599,
-      average: 299,
-      currency: 'USD'
-    },
-    contactInfo: {
-      phone: '+1 302 464 0950',
-      email: 'kleber@ziontechgroup.com',
-      website: 'https://ziontechgroup.com/code-analyzer'
-    },
-    tags: ['Development', 'Code Quality', 'Code Review', 'Automation', 'AI'],
-    image: 'https://images.unsplash.com/photo-1516192518150-0d8fee5425e3?w=800&auto=format',
-    aiScore: 91,
-    rating: 4.7,
-    reviewCount: 112
-  },
-
-  // Automation Services
-  {
-    id: 'workflow-automation',
-    title: 'Intelligent Workflow Automation',
-    category: 'Automation',
-    description: 'AI-powered workflow automation platform that streamlines business processes, reduces manual tasks, and improves operational efficiency.',
-    features: [
-      'Visual workflow builder',
-      'AI process optimization',
-      'Integration connectors',
-      'Process analytics',
-      'Error handling',
-      'Approval workflows',
-      'Mobile access',
-      'Custom dashboards'
-    ],
-    benefits: [
-      'Reduce manual work by 70%',
-      'Improve process efficiency',
-      'Eliminate human errors',
-      'Accelerate business processes',
-      'Reduce operational costs'
-    ],
-    pricing: {
-      monthly: 249,
-      yearly: 2490,
-      enterprise: 6999,
-      currency: 'USD'
-    },
-    marketPrice: {
-      min: 199,
-      max: 999,
-      average: 449,
-      currency: 'USD'
-    },
-    contactInfo: {
-      phone: '+1 302 464 0950',
-      email: 'kleber@ziontechgroup.com',
-      website: 'https://ziontechgroup.com/workflow-automation'
-    },
-    tags: ['Automation', 'Workflow', 'Business Process', 'AI', 'Integration'],
-    image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&auto=format',
-    aiScore: 93,
-    rating: 4.8,
-    reviewCount: 145
-  },
-
-  // Integration Services
-  {
-    id: 'data-integration-hub',
-    title: 'Enterprise Data Integration Hub',
-    category: 'Integration',
-    description: 'Comprehensive data integration platform that connects disparate systems, automates data flows, and provides real-time data synchronization.',
-    features: [
-      'Multi-system connectors',
-      'Real-time synchronization',
-      'Data transformation',
-      'Error handling',
-      'Monitoring dashboard',
-      'API management',
-      'Data validation',
-      'Scheduled workflows'
-    ],
-    benefits: [
-      'Connect all business systems',
-      'Eliminate data silos',
-      'Improve data accuracy',
-      'Reduce integration time',
-      'Enable real-time insights'
-    ],
-    pricing: {
-      monthly: 349,
-      yearly: 3490,
-      enterprise: 8999,
-      currency: 'USD'
-    },
-    marketPrice: {
-      min: 249,
-      max: 1299,
-      average: 599,
-      currency: 'USD'
-    },
-    contactInfo: {
-      phone: '+1 302 464 0950',
-      email: 'kleber@ziontechgroup.com',
-      website: 'https://ziontechgroup.com/data-integration'
-    },
-    tags: ['Integration', 'Data', 'ETL', 'API', 'Automation'],
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format',
-    aiScore: 87,
     rating: 4.6,
-    reviewCount: 98
+    reviewCount: 178,
+    featured: false,
+    tags: ["Business Intelligence", "Analytics", "Dashboard", "Data Visualization", "Reporting"],
+    imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&h=500",
+    createdAt: "2024-02-10T15:30:00.000Z"
   },
-
-  // Monitoring Services
+  // Digital Marketing & SEO
   {
-    id: 'performance-monitor',
-    title: 'Application Performance Monitor',
-    category: 'Monitoring',
-    description: 'Advanced application performance monitoring platform with real-time insights, alerting, and optimization recommendations.',
+    id: "seo-optimization-service",
+    title: "Zion SEO Optimization Pro",
+    description: "Comprehensive SEO service that improves search engine rankings, increases organic traffic, and drives more qualified leads to your business.",
+    category: "Digital Marketing",
+    subcategory: "SEO Services",
+    pricing: {
+      starter: 499,
+      professional: 1299,
+      enterprise: 2999,
+      currency: "$",
+      billing: "monthly"
+    },
     features: [
-      'Real-time monitoring',
-      'Performance analytics',
-      'Alert management',
-      'Root cause analysis',
-      'Performance optimization',
-      'Custom dashboards',
-      'API monitoring',
-      'Mobile app monitoring'
+      "Technical SEO audit",
+      "Keyword research and strategy",
+      "On-page optimization",
+      "Content optimization",
+      "Link building",
+      "Local SEO optimization",
+      "Performance monitoring",
+      "Competitor analysis",
+      "Monthly reporting",
+      "Ongoing optimization"
     ],
     benefits: [
-      'Identify performance bottlenecks',
-      'Improve user experience',
-      'Reduce downtime',
-      'Optimize application performance',
-      'Proactive issue detection'
+      "Increase organic traffic by 200%+",
+      "Improve search engine rankings",
+      "Generate more qualified leads",
+      "Build brand authority",
+      "Long-term sustainable growth"
     ],
-    pricing: {
-      monthly: 179,
-      yearly: 1790,
-      enterprise: 4999,
-      currency: 'USD'
-    },
-    marketPrice: {
-      min: 129,
-      max: 699,
-      average: 349,
-      currency: 'USD'
-    },
+    useCases: [
+      "Website optimization",
+      "Local business promotion",
+      "E-commerce SEO",
+      "Content marketing",
+      "Brand visibility"
+    ],
+    targetAudience: [
+      "Small businesses",
+      "E-commerce stores",
+      "Local businesses",
+      "Service companies",
+      "Startups"
+    ],
+    integration: [
+      "Google Analytics",
+      "Google Search Console",
+      "WordPress",
+      "Shopify",
+      "Social media platforms"
+    ],
+    support: [
+      "Dedicated SEO specialist",
+      "Monthly strategy calls",
+      "Performance reports",
+      "Technical support",
+      "Content recommendations"
+    ],
+    demoUrl: "https://ziontechgroup.com/demo/seo-optimization",
+    websiteUrl: "https://ziontechgroup.com/seo-optimization",
     contactInfo: {
-      phone: '+1 302 464 0950',
-      email: 'kleber@ziontechgroup.com',
-      website: 'https://ziontechgroup.com/performance-monitor'
+      email: "kleber@ziontechgroup.com",
+      phone: "+1 302 464 0950",
+      address: "364 E Main St STE 1008 Middletown DE 19709"
     },
-    tags: ['Monitoring', 'Performance', 'Analytics', 'DevOps', 'Optimization'],
-    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&auto=format',
-    aiScore: 90,
     rating: 4.7,
-    reviewCount: 167
+    reviewCount: 312,
+    featured: true,
+    tags: ["SEO", "Digital Marketing", "Search Optimization", "Content Marketing", "Local SEO"],
+    imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&h=500",
+    createdAt: "2024-01-30T16:45:00.000Z"
   }
 ];
 
-export const getServiceByCategory = (category: string) => {
-  return MICRO_SAAS_SERVICES.filter(service => service.category.toLowerCase() === category.toLowerCase());
+export const getServiceByCategory = (category: string): MicroSaasService[] => {
+  return MICRO_SAAS_SERVICES.filter(service => service.category === category);
 };
 
-export const getPopularServices = () => {
-  return MICRO_SAAS_SERVICES.filter(service => service.isPopular);
+export const getServiceBySubcategory = (subcategory: string): MicroSaasService[] => {
+  return MICRO_SAAS_SERVICES.filter(service => service.subcategory === subcategory);
 };
 
-export const getNewServices = () => {
-  return MICRO_SAAS_SERVICES.filter(service => service.isNew);
+export const getFeaturedServices = (): MicroSaasService[] => {
+  return MICRO_SAAS_SERVICES.filter(service => service.featured);
 };
 
-export const getServiceById = (id: string) => {
-  return MICRO_SAAS_SERVICES.find(service => service.id === id);
+export const searchServices = (query: string): MicroSaasService[] => {
+  const lowercaseQuery = query.toLowerCase();
+  return MICRO_SAAS_SERVICES.filter(service =>
+    service.title.toLowerCase().includes(lowercaseQuery) ||
+    service.description.toLowerCase().includes(lowercaseQuery) ||
+    service.tags.some(tag => tag.toLowerCase().includes(lowercaseQuery))
+  );
 };
