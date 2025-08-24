@@ -10,9 +10,20 @@ import { useWhitelabel } from '@/context/WhitelabelContext';
 import { EnhancedSearchInput } from "@/components/search/EnhancedSearchInput";
 import { generateSearchSuggestions } from "@/data/marketplaceData";
 import { useNavigate } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
-import { Search, Menu, X, Bell, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { 
+  Menu, 
+  X, 
+  ChevronDown, 
+  Sparkles, 
+  Zap, 
+  Shield, 
+  BarChart3, 
+  Users, 
+  Building,
+  Globe,
+  Star
+} from "lucide-react";
 
 export interface HeaderProps {
   hideLogin?: boolean;
@@ -30,7 +41,8 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
   const navigate = useNavigate();
   const [query, setQuery] = useState("");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isSearchExpanded, setIsSearchExpanded] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const searchSuggestions = generateSearchSuggestions();
   
   // If we have a white-label tenant and no specific customTheme is provided,
@@ -47,43 +59,78 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
     borderColor: `${effectiveTheme.primaryColor}20`
   } : {};
 
+  // Handle scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (query.trim()) {
       navigate(`/search?q=${encodeURIComponent(query)}`);
       setQuery("");
-      setIsSearchExpanded(false);
     }
   };
 
-  const handleSearchSelect = (text: string) => {
-    navigate(`/search?q=${encodeURIComponent(text)}`);
-    setQuery("");
-    setIsSearchExpanded(false);
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  // Close mobile menu when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      const target = event.target as Element;
-      if (!target.closest('.mobile-menu') && !target.closest('.mobile-menu-toggle')) {
-        setIsMobileMenuOpen(false);
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
-
-  // Close mobile menu on route change
-  useEffect(() => {
+  const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
-    setIsSearchExpanded(false);
-  }, [navigate]);
+  };
+
+  const handleDropdownToggle = (dropdown: string) => {
+    setActiveDropdown(activeDropdown === dropdown ? null : dropdown);
+  };
+
+  const megaMenuItems = [
+    {
+      title: "AI & Technology",
+      icon: <Zap className="h-5 w-5 text-zion-cyan" />,
+      description: "Cutting-edge AI solutions and tech services",
+      items: [
+        { name: "AI Development", href: "/services", description: "Custom AI solutions" },
+        { name: "Machine Learning", href: "/services", description: "ML model development" },
+        { name: "AI Integration", href: "/services", description: "Seamless AI integration" },
+        { name: "Zion Hire AI", href: "/zion-hire-ai", description: "AI-powered recruiting" }
+      ]
+    },
+    {
+      title: "Micro SAAS Services",
+      icon: <Sparkles className="h-5 w-5 text-zion-purple-light" />,
+      description: "Innovative micro SAAS solutions",
+      items: [
+        { name: "Business Tools", href: "/micro-saas-services", description: "Productivity & collaboration" },
+        { name: "Security Solutions", href: "/micro-saas-services", description: "Cybersecurity & compliance" },
+        { name: "Analytics Platform", href: "/micro-saas-services", description: "Data visualization & BI" },
+        { name: "Marketing Tools", href: "/micro-saas-services", description: "AI-powered marketing" }
+      ]
+    },
+    {
+      title: "Enterprise Solutions",
+      icon: <Building className="h-5 w-5 text-zion-blue-light" />,
+      description: "Scalable enterprise-grade solutions",
+      items: [
+        { name: "White-label Solutions", href: "/enterprise", description: "Custom branded platforms" },
+        { name: "API Integration", href: "/developers", description: "Developer tools & APIs" },
+        { name: "Consulting Services", href: "/services", description: "Expert IT consulting" },
+        { name: "Onsite Support", href: "/it-onsite-services", description: "Global IT services" }
+      ]
+    }
+  ];
   
   return (
     <header 
-      className="sticky top-0 z-50 w-full border-b border-zion-purple/20 bg-zion-blue-dark/95 backdrop-blur-md shadow-lg"
+      className={`sticky top-0 z-50 w-full transition-all duration-300 ${
+        isScrolled 
+          ? 'bg-zion-slate-dark/95 backdrop-blur-xl border-b border-zion-cyan/30 shadow-2xl shadow-zion-cyan/10' 
+          : 'bg-zion-slate-dark/90 backdrop-blur-md border-b border-zion-purple/20'
+      }`}
       style={headerStyle}
     >
       <div className="container flex h-16 items-center px-4 sm:px-6">
@@ -94,153 +141,166 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
           <MainNavigation />
         </div>
 
-        {/* Enhanced Search - Desktop */}
-        <div className="hidden md:block w-64 mx-4">
+        {/* Desktop Search */}
+        <form onSubmit={handleSubmit} className="hidden lg:block w-80 mx-6">
           <EnhancedSearchInput
             value={query}
             onChange={setQuery}
-            onSelectSuggestion={handleSearchSelect}
+            onSelectSuggestion={(text) => {
+              navigate(`/search?q=${encodeURIComponent(text)}`);
+              setQuery("");
+            }}
             searchSuggestions={searchSuggestions}
-            placeholder="Search talents, services, equipment..."
           />
-        </div>
+        </form>
 
-        {/* Mobile Search Toggle */}
-        <div className="md:hidden ml-auto mr-2">
-          <Button
-            variant="ghost"
-            size="sm"
-            onClick={() => setIsSearchExpanded(!isSearchExpanded)}
-            className="text-zion-cyan hover:bg-zion-cyan/10"
-            aria-label="Toggle search"
-          >
-            <Search className="w-5 h-5" />
-          </Button>
-        </div>
-
-        {/* Mobile Menu Toggle */}
-        <Button
-          variant="ghost"
-          size="sm"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="lg:hidden text-zion-cyan hover:bg-zion-cyan/10 mobile-menu-toggle"
-          aria-label="Toggle mobile menu"
-          aria-expanded={isMobileMenuOpen}
-        >
-          {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-        </Button>
-
-        {/* Desktop Actions */}
-        <div className="hidden lg:flex items-center gap-3">
-          {user && (
-            <Button
-              variant="ghost"
-              size="sm"
-              className="text-zion-cyan hover:bg-zion-cyan/10 relative"
-              aria-label="Notifications"
-            >
-              <Bell className="w-5 h-5" />
-              <span className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full animate-pulse"></span>
-            </Button>
-          )}
+        {/* Desktop Right Side */}
+        <div className="flex items-center gap-2 hidden lg:flex">
           <LanguageSelector />
           {!hideLogin && <UserMenu />}
         </div>
+
+        {/* Mobile Menu Button */}
+        <Button
+          variant="ghost"
+          size="sm"
+          className="lg:hidden ml-auto p-2 text-white hover:bg-zion-purple/20"
+          onClick={toggleMobileMenu}
+        >
+          {isMobileMenuOpen ? (
+            <X className="h-6 w-6" />
+          ) : (
+            <Menu className="h-6 w-6" />
+          )}
+        </Button>
       </div>
 
-      {/* Mobile Search Bar */}
-      <AnimatePresence>
-        {isSearchExpanded && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            className="md:hidden border-t border-zion-purple/20 bg-zion-blue-dark/95"
-          >
-            <div className="container px-4 py-3">
-                              <EnhancedSearchInput
-                  value={query}
-                  onChange={setQuery}
-                  onSelectSuggestion={handleSearchSelect}
-                  searchSuggestions={searchSuggestions}
-                  placeholder="Search talents, services, equipment..."
-                />
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
       {/* Mobile Menu */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            className="lg:hidden border-t border-zion-purple/20 bg-zion-blue-dark/95 mobile-menu"
-          >
-            <div className="container px-4 py-4 space-y-4">
-              {/* Mobile Navigation */}
-              <nav className="space-y-2">
-                <Link
-                  to="/marketplace"
-                  className="block px-3 py-2 text-zion-cyan hover:bg-zion-cyan/10 rounded-md transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Marketplace
-                </Link>
-                <Link
-                  to="/talent"
-                  className="block px-3 py-2 text-zion-cyan hover:bg-zion-cyan/10 rounded-md transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Find Talent
-                </Link>
-                <Link
-                  to="/services"
-                  className="block px-3 py-2 text-zion-cyan hover:bg-zion-cyan/10 rounded-md transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Services
-                </Link>
-                <Link
-                  to="/equipment"
-                  className="block px-3 py-2 text-zion-cyan hover:bg-zion-cyan/10 rounded-md transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Equipment
-                </Link>
-                <Link
-                  to="/community"
-                  className="block px-3 py-2 text-zion-cyan hover:bg-zion-cyan/10 rounded-md transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Community
-                </Link>
-              </nav>
+      {isMobileMenuOpen && (
+        <div className="lg:hidden bg-zion-slate-dark border-t border-zion-blue-light">
+          <div className="container px-4 py-4">
+            {/* Mobile Search */}
+            <form onSubmit={handleSubmit} className="mb-4">
+              <EnhancedSearchInput
+                value={query}
+                onChange={setQuery}
+                onSelectSuggestion={(text) => {
+                  navigate(`/search?q=${encodeURIComponent(text)}`);
+                  setQuery("");
+                  closeMobileMenu();
+                }}
+                searchSuggestions={searchSuggestions}
+              />
+            </form>
 
-              {/* Mobile Actions */}
-              <div className="pt-4 border-t border-zion-purple/20">
-                <div className="flex items-center gap-3 mb-4">
-                  <LanguageSelector />
-                  {user && (
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      className="text-zion-cyan hover:bg-zion-cyan/10"
-                      aria-label="Notifications"
-                    >
-                      <Bell className="w-5 h-5" />
-                      <span className="ml-1 text-sm">Notifications</span>
-                    </Button>
-                  )}
-                </div>
-                {!hideLogin && <UserMenu />}
-              </div>
+            {/* Mobile Navigation */}
+            <nav className="space-y-2">
+              <Link
+                to="/"
+                className="block px-4 py-2 text-white hover:bg-zion-purple/20 rounded-md transition-colors"
+                onClick={closeMobileMenu}
+              >
+                Home
+              </Link>
+              <Link
+                to="/marketplace"
+                className="block px-4 py-2 text-white hover:bg-zion-purple/20 rounded-md transition-colors"
+                onClick={closeMobileMenu}
+              >
+                Marketplace
+              </Link>
+              <Link
+                to="/micro-saas-services"
+                className="block px-4 py-2 text-white hover:bg-zion-purple/20 rounded-md transition-colors"
+                onClick={closeMobileMenu}
+              >
+                Micro SAAS Services
+              </Link>
+              <Link
+                to="/talent"
+                className="block px-4 py-2 text-white hover:bg-zion-purple/20 rounded-md transition-colors"
+                onClick={closeMobileMenu}
+              >
+                Talent
+              </Link>
+              <Link
+                to="/services"
+                className="block px-4 py-2 text-white hover:bg-zion-purple/20 rounded-md transition-colors"
+                onClick={closeMobileMenu}
+              >
+                Services
+              </Link>
+              <Link
+                to="/community"
+                className="block px-4 py-2 text-white hover:bg-zion-purple/20 rounded-md transition-colors"
+                onClick={closeMobileMenu}
+              >
+                Community
+              </Link>
+              {user && (
+                <Link
+                  to="/dashboard"
+                  className="block px-4 py-2 text-white hover:bg-zion-purple/20 rounded-md transition-colors"
+                  onClick={closeMobileMenu}
+                >
+                  Dashboard
+                </Link>
+              )}
+            </nav>
+
+            {/* Mobile Language & User */}
+            <div className="mt-4 pt-4 border-t border-zion-blue-light flex items-center justify-between">
+              <LanguageSelector />
+              {!hideLogin && <UserMenu />}
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          </div>
+        </div>
+      )}
+
+      {/* Mega Menu for Desktop */}
+      <div className="hidden lg:block border-t border-zion-blue-light/30">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-center space-x-8 py-2">
+            {megaMenuItems.map((section) => (
+              <div key={section.title} className="relative group">
+                <button
+                  className="flex items-center gap-2 px-4 py-2 text-zion-slate-light hover:text-zion-cyan transition-colors font-medium"
+                  onClick={() => handleDropdownToggle(section.title)}
+                >
+                  {section.icon}
+                  {section.title}
+                  <ChevronDown className={`h-4 w-4 transition-transform ${activeDropdown === section.title ? 'rotate-180' : ''}`} />
+                </button>
+
+                {/* Dropdown Content */}
+                {activeDropdown === section.title && (
+                  <div className="absolute top-full left-0 w-80 bg-zion-slate-dark border border-zion-blue-light rounded-lg shadow-2xl shadow-zion-cyan/20 p-6 z-50">
+                    <div className="mb-4">
+                      <h3 className="text-lg font-semibold text-white mb-2">{section.title}</h3>
+                      <p className="text-sm text-zion-slate-light">{section.description}</p>
+                    </div>
+                    <div className="grid grid-cols-1 gap-3">
+                      {section.items.map((item) => (
+                        <Link
+                          key={item.name}
+                          to={item.href}
+                          className="block p-3 rounded-md hover:bg-zion-blue-dark/30 transition-colors group/item"
+                          onClick={() => setActiveDropdown(null)}
+                        >
+                          <div className="font-medium text-white group-hover/item:text-zion-cyan transition-colors">
+                            {item.name}
+                          </div>
+                          <div className="text-sm text-zion-slate-light">{item.description}</div>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
     </header>
   );
 }
