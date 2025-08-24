@@ -235,6 +235,7 @@ export default function ServicesPage() {
 
   return (
     <>
+<<<<<<< HEAD:src_disabled/ServicesPage.tsx
       {/* Hero Section */}
       <div className="bg-zion-blue-dark py-16 px-4 md:px-8 border-b border-zion-blue-light">
         <div className="container mx-auto text-center">
@@ -283,6 +284,30 @@ export default function ServicesPage() {
           </div>
 
           <div className="flex flex-wrap justify-center gap-4 mt-8">
+=======
+      <div className="bg-zion-blue-dark py-4 px-4 md:px-8 mb-6 border-b border-zion-blue-light">
+        <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+          <h2 className="text-white text-lg font-medium">Featured Services</h2>
+          <div className="flex flex-wrap gap-2">
+            <Link to="/comprehensive-services">
+              <Button variant="outline" className="border-zion-purple text-zion-cyan hover:bg-zion-purple/10">
+                <Globe className="h-4 w-4 mr-2" />
+                Comprehensive Services
+              </Button>
+            </Link>
+            <Link to="/ai-it-solutions">
+              <Button variant="outline" className="border-zion-purple text-zion-cyan hover:bg-zion-purple/10">
+                <Globe className="h-4 w-4 mr-2" />
+                AI & IT Solutions
+              </Button>
+            </Link>
+            <Link to="/micro-saas">
+              <Button variant="outline" className="border-zion-purple text-zion-cyan hover:bg-zion-purple/10">
+                <Globe className="h-4 w-4 mr-2" />
+                Micro SAAS
+              </Button>
+            </Link>
+>>>>>>> cursor/expand-services-and-deploy-updates-fbb3:src/pages/ServicesPage.tsx
             <Link to="/it-onsite-services">
               <Button variant="outline" className="border-zion-purple text-zion-cyan hover:bg-zion-purple/10">
                 <Globe className="h-4 w-4 mr-2" />
