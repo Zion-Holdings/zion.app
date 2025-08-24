@@ -97,101 +97,106 @@ const features = [
     description: "Leverage decentralized technologies for innovation and transparency",
     icon: <LinkIcon className="w-8 h-8" />,
     link: "/comprehensive-services#blockchain-web3",
-    color: "from-yellow-500 to-amber-600",
-    cta: "Web3 Solutions",
+    color: "from-teal-500 to-blue-600",
+    cta: "Explore Web3",
     benefits: ["Smart Contracts", "DeFi", "NFTs"],
-    badge: "Innovative"
+    badge: "Innovation"
   }
 ];
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.2
-    }
-  }
-};
-
-const itemVariants = {
-  hidden: { y: 20, opacity: 0 },
-  visible: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.6,
-              ease: "easeOut" as const
-    }
-  }
-};
-
 export function FeatureCTAs() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30, scale: 0.9 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut"
+      }
+    }
+  };
+
   return (
-    <section className="py-20 bg-gradient-to-br from-zion-blue via-zion-blue-dark to-zion-purple-dark">
+    <section className="py-20 bg-zion-blue-dark">
       <div className="container mx-auto px-4">
         <motion.div 
           className="text-center mb-16"
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Professional <span className="text-transparent bg-clip-text bg-gradient-to-r from-zion-cyan to-zion-purple">Technology Services</span>
+            Explore Our <span className="bg-gradient-to-r from-zion-cyan to-zion-purple bg-clip-text text-transparent">Services</span>
           </h2>
-          <p className="text-zion-slate-light text-lg max-w-3xl mx-auto">
-            Discover our comprehensive suite of professional technology services designed to accelerate your business growth, 
-            enhance security, and drive innovation across all aspects of your organization.
+          <p className="text-xl text-zion-slate-light max-w-3xl mx-auto">
+            Discover comprehensive solutions designed to accelerate your business growth and digital transformation
           </p>
         </motion.div>
 
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
           {features.map((feature, index) => (
-            <motion.div key={index} variants={itemVariants}>
-              <div className="group">
-                                            <Link href={feature.link} className="block">
-                  <div className="rounded-lg overflow-hidden h-full border border-zion-blue-light bg-zion-blue-dark p-6 transition-all duration-300 hover:border-zion-purple/50 hover:translate-y-[-5px] hover:shadow-2xl hover:shadow-zion-purple/25">
-                    <div className="flex items-start justify-between mb-4">
-                      <div className={`rounded-full w-16 h-16 bg-gradient-to-br ${feature.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                        <div className="text-white">
-                          {feature.icon}
-                        </div>
-                      </div>
-                      {feature.badge && (
-                        <Badge className="bg-zion-purple text-white border-0 text-xs">
-                          {feature.badge}
-                        </Badge>
-                      )}
+            <motion.div 
+              key={index} 
+              variants={itemVariants}
+              className="group relative"
+            >
+              <div className="h-full bg-zion-blue-light border border-zion-blue-light/30 rounded-xl p-6 hover:border-zion-purple/50 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                <div className="flex items-start justify-between mb-4">
+                  <div className={`w-12 h-12 bg-gradient-to-br ${feature.color} rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                    <div className="text-white">
+                      {feature.icon}
                     </div>
-                    <h3 className="text-white text-xl font-bold mb-3 group-hover:text-zion-cyan transition-colors duration-300">{feature.title}</h3>
-                    <p className="text-zion-slate-light text-sm mb-4 leading-relaxed">{feature.description}</p>
-                    
-                    {/* Benefits */}
-                    <div className="mb-4">
-                      {feature.benefits.map((benefit, benefitIndex) => (
-                        <div key={benefitIndex} className="flex items-center gap-2 text-xs text-zion-slate-light mb-1">
-                          <CheckCircle className="w-3 h-3 text-zion-cyan flex-shrink-0" />
-                          <span>{benefit}</span>
-                        </div>
-                      ))}
-                    </div>
-                    
-                    <Button 
-                      variant="outline" 
-                      className="w-full border-zion-purple text-zion-cyan hover:bg-zion-purple/10 group-hover:border-zion-cyan group-hover:text-zion-cyan-light transition-all duration-300"
-                    >
-                      {feature.cta}
-                      <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-                    </Button>
                   </div>
+                  <Badge variant="outline" className="border-zion-purple/30 text-zion-cyan">
+                    {feature.badge}
+                  </Badge>
+                </div>
+                
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-zion-cyan transition-colors">
+                  {feature.title}
+                </h3>
+                
+                <p className="text-zion-slate-light text-sm leading-relaxed mb-4">
+                  {feature.description}
+                </p>
+                
+                <div className="space-y-2 mb-6">
+                  {feature.benefits.map((benefit, idx) => (
+                    <div key={idx} className="flex items-center gap-2 text-sm text-zion-slate-light">
+                      <CheckCircle className="w-4 h-4 text-zion-cyan flex-shrink-0" />
+                      <span>{benefit}</span>
+                    </div>
+                  ))}
+                </div>
+                
+                <Link href={feature.link} className="block">
+                  <Button 
+                    className="w-full bg-zion-purple hover:bg-zion-purple-dark group-hover:bg-zion-cyan group-hover:text-white transition-all duration-300"
+                    size="sm"
+                  >
+                    {feature.cta}
+                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                  </Button>
                 </Link>
               </div>
             </motion.div>
@@ -199,65 +204,30 @@ export function FeatureCTAs() {
         </motion.div>
 
         <motion.div 
-          className="text-center"
-          initial={{ opacity: 0, y: 20 }}
+          className="text-center mt-16"
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-                                <Link href="/comprehensive-services">
-            <Button size="lg" className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white text-lg px-8 py-6 shadow-lg hover:shadow-zion-purple/25 transition-all duration-300 transform hover:scale-105">
-              View All Services
-              <ArrowRight className="h-5 w-5 ml-2" />
-            </Button>
-          </Link>
-        </motion.div>
-
-        {/* Enhanced Contact Information */}
-        <motion.div 
-          className="mt-20 text-center"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-        >
-          <div className="bg-zion-blue-dark border border-zion-blue-light rounded-2xl p-8 max-w-4xl mx-auto shadow-2xl">
-            <div className="mb-6">
-              <div className="inline-flex items-center gap-2 bg-zion-purple/20 rounded-full px-4 py-2 border border-zion-purple/30 mb-4">
-                <Star className="w-4 h-4 text-zion-cyan" />
-                <span className="text-sm text-zion-cyan font-medium">Ready to Transform Your Business?</span>
-              </div>
-              <h3 className="text-2xl font-bold text-white mb-4">
-                Let's Build Something Amazing Together
-              </h3>
-              <p className="text-zion-slate-light mb-6">
-                Our expert team is ready to help you implement the perfect technology solutions. 
-                Get in touch today for a personalized consultation and quote.
-              </p>
-            </div>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
-              <Button className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white shadow-lg hover:shadow-zion-purple/25 transition-all duration-300 transform hover:scale-105">
-                <Phone className="h-4 w-4 mr-2" />
-                Call +1 302 464 0950
+          <div className="inline-flex items-center gap-2 px-6 py-3 bg-zion-purple/20 backdrop-blur-sm border border-zion-purple/30 rounded-full mb-6">
+            <Star className="w-5 h-5 text-zion-cyan" />
+            <span className="text-zion-cyan font-medium">All services include 24/7 support and quality guarantee</span>
+          </div>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/comprehensive-services">
+              <Button size="lg" className="bg-zion-purple hover:bg-zion-purple-dark">
+                View All Services
+                <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
-              <Button variant="outline" className="border-zion-purple text-zion-cyan hover:bg-zion-purple/10 transition-all duration-300">
-                <Mail className="h-4 w-4 mr-2" />
-                Email kleber@ziontechgroup.com
+            </Link>
+            <Link href="/contact">
+              <Button size="lg" variant="outline" className="border-zion-cyan text-zion-cyan hover:bg-zion-cyan hover:text-white">
+                Get Custom Quote
+                <Mail className="ml-2 w-5 h-5" />
               </Button>
-              <Button variant="outline" className="border-zion-purple text-zion-cyan hover:bg-zion-purple/10 transition-all duration-300">
-                <Globe className="h-4 w-4 mr-2" />
-                Visit ziontechgroup.com
-              </Button>
-            </div>
-            
-            <div className="bg-zion-blue/50 rounded-lg p-4 border border-zion-blue-light/30">
-              <div className="text-zion-slate-light text-sm">
-                <p className="font-medium mb-2">📍 Main Office:</p>
-                <p>364 E Main St STE 1008, Middletown DE 19709</p>
-                <p className="mt-1 text-zion-cyan">🌍 Global Services Available • 24/7 Support</p>
-              </div>
-            </div>
+            </Link>
           </div>
         </motion.div>
       </div>
