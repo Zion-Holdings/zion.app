@@ -1,26 +1,22 @@
-export default async function handler(req, res) {
-  try {
-    // Test critical external services
-    const healthChecks = await Promise.allSettled([
-      // Add your critical service checks here
-      // Example: fetch('https://api.example.com/health')
-    ]);
-    
-    const isHealthy = healthChecks.every(check => check.status === 'fulfilled');
-    
-    res.status(isHealthy ? 200 : 503).json({
-      status: isHealthy ? 'healthy' : 'unhealthy',
-      timestamp: new Date().toISOString(),
-      checks: healthChecks,
-      environment: process.env.NODE_ENV || 'development',
-      nodeVersion: process.version,
-      uptime: process.uptime()
-    });
-  } catch (error) {
-    res.status(500).json({
-      status: 'error',
-      error: error.message,
-      timestamp: new Date().toISOString()
-    });
-  }
+import React from 'react';
+import Head from 'next/head';
+
+export default function Health() {
+  return (
+    <>
+      <Head>
+        <title>Health - Zion Tech Group</title>
+        <meta name="description" content="Health page" />
+      </Head>
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold mb-6">Health</h1>
+        <p className="text-lg mb-4">This page is under construction.</p>
+        <div className="mt-4">
+          <a href="/" className="text-blue-600 hover:underline">
+            ← Back to Home
+          </a>
+        </div>
+      </div>
+    </>
+  );
 }

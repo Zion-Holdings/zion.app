@@ -65,18 +65,18 @@ const ContactForm: React.FC<ContactFormProps> = ({ isReducedMotion = false }) =>
 
   const handleInputChange = useCallback((e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData({ ...formData, [name]: value });
     
     // Clear error when user starts typing
     if (errors[name as keyof ContactFormData]) {
-      setErrors(prev => ({ ...prev, [name]: '' }));
+      setErrors({ ...errors, [name]: '' });
     }
-  }, [errors]);
+  }, [formData, errors]);
 
   const handleBlur = useCallback((name: keyof ContactFormData) => {
     const error = validateField(name, formData[name]);
-    setErrors(prev => ({ ...prev, [name]: error }));
-  }, [validateField, formData]);
+    setErrors({ ...errors, [name]: error });
+  }, [validateField, formData, errors]);
 
   const validateForm = useCallback((): boolean => {
     const newErrors: Partial<ContactFormData> = {};
@@ -91,32 +91,6 @@ const ContactForm: React.FC<ContactFormProps> = ({ isReducedMotion = false }) =>
       }
     });
 
-  const handleInputChange = (name: string, value: string) => {
-    setFormData(prev => ({ ...prev, [name]: value }));
-    
-    // Clear error when user starts typing
-    if (errors[name]) {
-      setErrors(prev => ({ ...prev, [name]: '' }));
-    }
-  };
-
-  const handleBlur = (name: string) => {
-    const error = validateField(name, formData[name]);
-    if (error) {
-      setErrors(prev => ({ ...prev, [name]: error }));
-    }
-  };
-
-  const validateForm = (): boolean => {
-    const newErrors: FormErrors = {};
-    
-    Object.keys(formData).forEach(key => {
-      const error = validateField(key, formData[key as keyof FormData]);
-      if (error) {
-        newErrors[key] = error;
-      }
-    });
-    
     setErrors(newErrors);
     return isValid;
   }, [formData, validateField]);

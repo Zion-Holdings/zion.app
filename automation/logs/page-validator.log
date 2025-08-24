@@ -61,3 +61,13 @@
 [2025-08-23T22:23:30.217Z]    Warnings: 18
 [2025-08-23T22:23:30.217Z]    Build status: ✅ READY
 [2025-08-23T22:23:30.217Z] ✅ All pages are properly structured for building
+[2025-08-24T00:53:59.111Z] 🔍 Validating 10375 page files...
+[2025-08-24T00:53:59.303Z] 📊 Report saved to /workspace/public/reports/page-validation/latest.json and /workspace/public/reports/page-validation/index.html
+[2025-08-24T00:53:59.303Z] 📊 Validation complete:
+[2025-08-24T00:53:59.304Z]    Total files: 332
+[2025-08-24T00:53:59.304Z]    Files with issues: 332
+[2025-08-24T00:53:59.304Z]    Critical issues: 401
+[2025-08-24T00:53:59.304Z]    Warnings: 129
+[2025-08-24T00:53:59.304Z]    Build status: ❌ WILL FAIL
+[2025-08-24T00:53:59.304Z] 🚨 Build will fail due to critical issues!
+[2025-08-24T00:53:59.304Z]    Check the report for details and fix the issues.

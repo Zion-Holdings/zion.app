@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Settings, Shield, Cookie, Info } from 'lucide-react';
+import { X, Settings, Shield, Circle, Info } from 'lucide-react';
 
 interface CookiePreferences {
   necessary: boolean;
@@ -47,9 +47,16 @@ const CookieConsentBanner: React.FC<CookieConsentBannerProps> = ({
       }
     }
 
+    // Show banner after 2 seconds if no consent
     timeoutRef.current = setTimeout(() => {
       setIsVisible(true);
-    }, 2000); // Show after 2 seconds
+    }, 2000);
+    
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
   }, []);
 
   const handleAcceptAll = () => {
@@ -109,10 +116,10 @@ const CookieConsentBanner: React.FC<CookieConsentBannerProps> = ({
       disableMarketing();
     }
     
-    if (prefs.functional) {
-      enableFunctional();
+    if (prefs.preferences) {
+      enablePreferences();
     } else {
-      disableFunctional();
+      disablePreferences();
     }
   };
 
@@ -152,14 +159,14 @@ const CookieConsentBanner: React.FC<CookieConsentBannerProps> = ({
     }
   };
 
-  const enableFunctional = () => {
-    // Enable functional cookies
-    console.log('Functional cookies enabled');
+  const enablePreferences = () => {
+    // Enable preference cookies
+    console.log('Preference cookies enabled');
   };
 
-  const disableFunctional = () => {
-    // Disable functional cookies
-    console.log('Functional cookies disabled');
+  const disablePreferences = () => {
+    // Disable preference cookies
+    console.log('Preference cookies disabled');
   };
 
   const announceToScreenReader = (message: string) => {
@@ -194,12 +201,12 @@ const CookieConsentBanner: React.FC<CookieConsentBannerProps> = ({
       key: 'marketing' as keyof CookiePreferences,
       title: 'Marketing Cookies',
       description: 'Used to track visitors across websites to display relevant and engaging advertisements.',
-      icon: Cookie,
+      icon: Circle,
       required: false
     },
     {
-      key: 'functional' as keyof CookiePreferences,
-      title: 'Functional Cookies',
+      key: 'preferences' as keyof CookiePreferences,
+      title: 'Preference Cookies',
       description: 'Enable enhanced functionality and personalization, such as live chat support and language preferences.',
       icon: Settings,
       required: false
@@ -227,7 +234,7 @@ const CookieConsentBanner: React.FC<CookieConsentBannerProps> = ({
                 <div className="flex-1">
                   <div className="flex items-start gap-3">
                     <div className="flex-shrink-0 mt-1">
-                      <Cookie className="w-6 h-6 text-cyan-600 dark:text-cyan-400" />
+                      <Circle className="w-6 h-6 text-cyan-600 dark:text-cyan-400" />
                     </div>
                     <div>
                       <h2 id="cookie-banner-title" className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
@@ -368,10 +375,10 @@ const CookieConsentBanner: React.FC<CookieConsentBannerProps> = ({
                                 checked={preferences[cookieType.key]}
                                 onChange={(e) => {
                                   if (!cookieType.required) {
-                                    setPreferences(prev => ({
-                                      ...prev,
+                                    setPreferences({
+                                      ...preferences,
                                       [cookieType.key]: e.target.checked
-                                    }));
+                                    });
                                   }
                                 }}
                                 disabled={cookieType.required}

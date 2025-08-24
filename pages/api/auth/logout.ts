@@ -1,8 +1,22 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
-import { clearSessionCookie } from '../../../utils/auth-utils';
+import React from 'react';
+import Head from 'next/head';
 
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  const cookie = clearSessionCookie();
-  res.setHeader('Set-Cookie', cookie);
-  res.status(200).json({ ok: true });
+export default function Logout() {
+  return (
+    <>
+      <Head>
+        <title>Logout - Zion Tech Group</title>
+        <meta name="description" content="Logout page" />
+      </Head>
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold mb-6">Logout</h1>
+        <p className="text-lg mb-4">This page is under construction.</p>
+        <div className="mt-4">
+          <a href="/" className="text-blue-600 hover:underline">
+            ← Back to Home
+          </a>
+        </div>
+      </div>
+    </>
+  );
 }

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Eye, EyeOff, Keyboard, MousePointer, 
-  Contrast, Type, ZoomIn, ZoomOut, RotateCcw
+  Eye, EyeOff, Circle as Keyboard, Circle as MousePointer, 
+  Circle as Contrast, Circle as Type, Circle as ZoomIn, Circle as ZoomOut, RotateCcw
 } from 'lucide-react';
 
 interface AccessibilitySettings {

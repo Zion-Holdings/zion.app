@@ -221,3 +221,5 @@ const AICustomerSuccessPlatform: React.FC = () => {
     </>
   );
 }
+
+export default Aicustomersuccessplatform;

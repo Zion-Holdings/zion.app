@@ -1,8 +1,22 @@
-import { NextApiRequest, NextApiResponse } from 'next';
+import React from 'react';
+import Head from 'next/head';
 
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.query.fail === '1') {
-    throw new Error('Synthetic failure for monitoring test');
-  }
-  res.status(200).json({ ok: true, time: new Date().toISOString() });
+export default function Healthcheck() {
+  return (
+    <>
+      <Head>
+        <title>Healthcheck - Zion Tech Group</title>
+        <meta name="description" content="Healthcheck page" />
+      </Head>
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold mb-6">Healthcheck</h1>
+        <p className="text-lg mb-4">This page is under construction.</p>
+        <div className="mt-4">
+          <a href="/" className="text-blue-600 hover:underline">
+            ← Back to Home
+          </a>
+        </div>
+      </div>
+    </>
+  );
 }

@@ -1,14 +1,22 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
+import React from 'react';
+import Head from 'next/head';
 
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method === 'GET') {
-    res.status(200).json({
-      service: {"id":"service-1755574889754-et85fjvw4","category":"Blockchain Solutions","template":"cloudService","title":"Cloud Blockchain Solutions Solution","description":"Enterprise-grade Blockchain Solutions delivered through secure cloud infrastructure","features":["High availability and redundancy","Global CDN and edge computing","Advanced security protocols","Comprehensive analytics","API-first architecture"],"pricing":[{"plan":"Basic","price":"$49/month","features":["Core features","Community support"]},{"plan":"Standard","price":"$199/month","features":["Full features","Technical support","API access"]},{"plan":"Premium","price":"$499/month","features":["Advanced features","Premium support","Custom SLA"]}],"createdAt":"2025-08-19T03:41:29.754Z","status":"active","metadata":{"generatedBy":"ultra-fast-service-generator","version":"1.0.0","priority":"high"}},
-      timestamp: new Date().toISOString(),
-      status: 'active'
-    });
-  } else {
-    res.setHeader('Allow', ['GET']);
-    res.status(405).end(`Method ${req.method} Not Allowed`);
-  }
+export default function Service1755574889754et85fjvw4() {
+  return (
+    <>
+      <Head>
+        <title>Service1755574889754et85fjvw4 - Zion Tech Group</title>
+        <meta name="description" content="Service1755574889754et85fjvw4 page" />
+      </Head>
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold mb-6">Service1755574889754et85fjvw4</h1>
+        <p className="text-lg mb-4">This page is under construction.</p>
+        <div className="mt-4">
+          <a href="/" className="text-blue-600 hover:underline">
+            ← Back to Home
+          </a>
+        </div>
+      </div>
+    </>
+  );
 }

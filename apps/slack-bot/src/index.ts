@@ -1,4 +1,4 @@
-import { App } from '@slack/bolt';
+import App from '@slack/bolt';
 import dotenv from 'dotenv';
 import fetch from 'node-fetch';
 
@@ -23,7 +23,7 @@ function helpText(): string {
   ].join('\n');
 }
 
-app.command('/zion', async ({ command, ack, respond }) => {
+app.command('/zion', async ({ command, ack, respond }: { command: any; ack: () => Promise<void>; respond: (response: any) => Promise<void> }) => {
   await ack();
   const text = (command.text || '').trim();
   const [sub, ...rest] = text.split(' ');

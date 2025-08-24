@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  BarChart3, Users, Eye, MousePointer, 
+  BarChart3, Users, Eye, Circle, 
   Clock, TrendingUp, TrendingDown, 
-  Activity, Zap, Target, Filter,
+  Circle as ActivityIcon, Zap, Circle as TargetIcon, Filter,
   Download, Share2, RefreshCw, X, AlertTriangle
 } from 'lucide-react';
 
@@ -482,7 +482,7 @@ const Analytics: React.FC<AnalyticsProps> = ({
                       <MetricCard
                         title="Conversion Rate"
                         value={`${data.conversionRate}%`}
-                        icon={<Target className="w-6 h-6" />}
+                        icon={<TargetIcon className="w-6 h-6" />}
                         trend="up"
                         trendValue="+1.8%"
                         color="purple"
@@ -494,7 +494,7 @@ const Analytics: React.FC<AnalyticsProps> = ({
                       {/* Top Pages */}
                       <div className="bg-gray-800/50 border border-gray-700/50 rounded-xl p-6">
                         <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
-                          <Activity className="w-5 h-5 text-blue-400" />
+                                                     <ActivityIcon className="w-5 h-5 text-blue-400" />
                           Top Pages
                         </h3>
                         <div className="space-y-3">
@@ -516,7 +516,7 @@ const Analytics: React.FC<AnalyticsProps> = ({
                       {/* User Behavior */}
                       <div className="bg-gray-800/50 border border-gray-700/50 rounded-xl p-6">
                         <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
-                          <MousePointer className="w-5 h-5 text-green-400" />
+                          <Circle className="w-5 h-5 text-green-400" />
                           User Behavior
                         </h3>
                         <div className="space-y-3">
@@ -590,7 +590,7 @@ const Analytics: React.FC<AnalyticsProps> = ({
 
                     {/* Last Updated */}
                     <div className="text-center mt-8 text-gray-500 text-sm">
-                      Last updated: {lastRefreshRef.current.toLocaleTimeString()}
+                      Last updated: {lastRefreshRef.current?.toLocaleTimeString() || 'Unknown'}
                     </div>
                   </div>
                 ) : null}

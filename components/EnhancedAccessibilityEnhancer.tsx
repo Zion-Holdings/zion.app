@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { 
-  Eye, EyeOff, Volume2, VolumeX, Keyboard, Mouse, 
-  Smartphone, Monitor, CheckCircle, AlertTriangle, 
-  Settings, X, Zap, Accessibility, Contrast, Type
+  Eye, EyeOff, Volume2, VolumeX, Circle as Keyboard, Circle as Mouse, 
+  Circle as Smartphone, Monitor, CheckCircle, AlertTriangle, 
+  Settings, X, Zap, Circle as Accessibility, Circle as Contrast, Circle as Type
 } from 'lucide-react';
 
 interface AccessibilitySettings {
@@ -40,7 +40,6 @@ const EnhancedAccessibilityEnhancer: React.FC = () => {
   const [isScanning, setIsScanning] = useState(false);
   const [scanProgress, setScanProgress] = useState(0);
 
-  const [isVisible, setIsVisible] = useState(false);
   const [announcements, setAnnouncements] = useState<string[]>([]);
 
   // Apply accessibility settings

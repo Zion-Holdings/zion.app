@@ -220,3 +220,5 @@ const AISalesIntelligencePlatform: React.FC = () => {
     </>
   );
 }
+
+export default Aisalesintelligenceplatform;

@@ -698,3 +698,1005 @@
 [2025-08-23T22:23:30.351Z]    Failed: 0
 [2025-08-23T22:23:30.351Z]    Build status: ✅ READY
 [2025-08-23T22:23:30.351Z] ✅ All pre-build health checks passed
+[2025-08-24T00:50:47.868Z] 🔍 Starting pre-build health checks...
+[2025-08-24T00:50:47.869Z]   Running: Page Structure Validation
+[2025-08-24T00:50:48.131Z]     ❌ Page Structure Validation: FAIL - 401 critical issues found in pages
+[2025-08-24T00:50:48.131Z] 🚨 Critical check failed: Page Structure Validation
+[2025-08-24T00:50:48.131Z] ❌ Pre-build health check failed: 401 critical issues found in pages
+[2025-08-24T00:51:17.014Z] 🔍 Starting pre-build health checks...
+[2025-08-24T00:51:17.015Z]   Running: Page Structure Validation
+[2025-08-24T00:51:17.206Z]     ❌ Page Structure Validation: FAIL - 401 critical issues found in pages
+[2025-08-24T00:51:17.206Z] 🚨 Critical check failed: Page Structure Validation
+[2025-08-24T00:51:17.206Z] ❌ Pre-build health check failed: 401 critical issues found in pages
+[2025-08-24T00:57:37.555Z] 🔍 Starting pre-build health checks...
+[2025-08-24T00:57:37.556Z]   Running: Page Structure Validation
+[2025-08-24T00:57:37.749Z]     ❌ Page Structure Validation: FAIL - 394 critical issues found in pages
+[2025-08-24T00:57:37.749Z] 🚨 Critical check failed: Page Structure Validation
+[2025-08-24T00:57:37.749Z] ❌ Pre-build health check failed: 394 critical issues found in pages
+[2025-08-24T00:59:14.870Z] 🔍 Starting pre-build health checks...
+[2025-08-24T00:59:14.870Z]   Running: Page Structure Validation
+[2025-08-24T00:59:15.065Z]     ✅ Page Structure Validation: PASS
+[2025-08-24T00:59:15.065Z]   Running: Dependencies Check
+[2025-08-24T00:59:15.065Z]     ✅ Dependencies Check: PASS
+[2025-08-24T00:59:15.065Z]   Running: Next.js Configuration
+[2025-08-24T00:59:15.066Z]     ❌ Next.js Configuration: FAIL - next.config.js has syntax errors: assetPrefix is not defined
+[2025-08-24T00:59:15.066Z] 🚨 Critical check failed: Next.js Configuration
+[2025-08-24T00:59:15.066Z] ❌ Pre-build health check failed: next.config.js has syntax errors: assetPrefix is not defined
+[2025-08-24T01:02:07.529Z] 🔍 Starting pre-build health checks...
+[2025-08-24T01:02:07.530Z]   Running: Page Structure Validation
+[2025-08-24T01:02:07.729Z]     ✅ Page Structure Validation: PASS
+[2025-08-24T01:02:07.729Z]   Running: Dependencies Check
+[2025-08-24T01:02:07.729Z]     ✅ Dependencies Check: PASS
+[2025-08-24T01:02:07.729Z]   Running: Next.js Configuration
+[2025-08-24T01:02:07.730Z]     ❌ Next.js Configuration: FAIL - next.config.js has syntax errors: os is not defined
+[2025-08-24T01:02:07.730Z] 🚨 Critical check failed: Next.js Configuration
+[2025-08-24T01:02:07.730Z] ❌ Pre-build health check failed: next.config.js has syntax errors: os is not defined
+[2025-08-24T01:03:32.972Z] 🔍 Starting pre-build health checks...
+[2025-08-24T01:03:32.972Z]   Running: Page Structure Validation
+[2025-08-24T01:03:33.166Z]     ✅ Page Structure Validation: PASS
+[2025-08-24T01:03:33.166Z]   Running: Dependencies Check
+[2025-08-24T01:03:33.167Z]     ✅ Dependencies Check: PASS
+[2025-08-24T01:03:33.167Z]   Running: Next.js Configuration
+[2025-08-24T01:03:33.167Z]     ❌ Next.js Configuration: FAIL - next.config.js has syntax errors: withSentryConfig is not defined
+[2025-08-24T01:03:33.168Z] 🚨 Critical check failed: Next.js Configuration
+[2025-08-24T01:03:33.168Z] ❌ Pre-build health check failed: next.config.js has syntax errors: withSentryConfig is not defined
+[2025-08-24T01:07:25.507Z] 🔍 Starting pre-build health checks...
+[2025-08-24T01:07:25.508Z]   Running: Page Structure Validation
+[2025-08-24T01:07:25.705Z]     ✅ Page Structure Validation: PASS
+[2025-08-24T01:07:25.705Z]   Running: Dependencies Check
+[2025-08-24T01:07:25.705Z]     ✅ Dependencies Check: PASS
+[2025-08-24T01:07:25.705Z]   Running: Next.js Configuration
+[2025-08-24T01:07:25.706Z]     ✅ Next.js Configuration: PASS
+[2025-08-24T01:07:25.706Z]   Running: Environment Variables
+[2025-08-24T01:07:25.706Z]     ✅ Environment Variables: PASS
+[2025-08-24T01:07:25.706Z]   Running: File Permissions
+[2025-08-24T01:07:25.707Z]     ✅ File Permissions: PASS
+[2025-08-24T01:07:25.707Z]   Running: Build Artifacts
+[2025-08-24T01:07:25.724Z]     ✅ Build Artifacts: PASS
+[2025-08-24T01:07:25.736Z] 📊 Pre-build health report saved to /workspace/public/reports/pre-build-health/latest.json and /workspace/public/reports/pre-build-health/index.html
+[2025-08-24T01:07:25.736Z] 📊 Pre-build health check complete
+[2025-08-24T01:07:25.736Z]    Total checks: 6
+[2025-08-24T01:07:25.736Z]    Passed: 6
+[2025-08-24T01:07:25.736Z]    Failed: 0
+[2025-08-24T01:07:25.736Z]    Build status: ✅ READY
+[2025-08-24T01:07:25.736Z] ✅ All pre-build health checks passed
+[2025-08-24T01:08:51.346Z] 🔍 Starting pre-build health checks...
+[2025-08-24T01:08:51.347Z]   Running: Page Structure Validation
+[2025-08-24T01:08:51.553Z]     ✅ Page Structure Validation: PASS
+[2025-08-24T01:08:51.553Z]   Running: Dependencies Check
+[2025-08-24T01:08:51.554Z]     ✅ Dependencies Check: PASS
+[2025-08-24T01:08:51.554Z]   Running: Next.js Configuration
+[2025-08-24T01:08:51.554Z]     ✅ Next.js Configuration: PASS
+[2025-08-24T01:08:51.554Z]   Running: Environment Variables
+[2025-08-24T01:08:51.555Z]     ✅ Environment Variables: PASS
+[2025-08-24T01:08:51.555Z]   Running: File Permissions
+[2025-08-24T01:08:51.555Z]     ✅ File Permissions: PASS
+[2025-08-24T01:08:51.555Z]   Running: Build Artifacts
+[2025-08-24T01:08:51.555Z]     ✅ Build Artifacts: PASS
+[2025-08-24T01:08:51.568Z] 📊 Pre-build health report saved to /workspace/public/reports/pre-build-health/latest.json and /workspace/public/reports/pre-build-health/index.html
+[2025-08-24T01:08:51.568Z] 📊 Pre-build health check complete
+[2025-08-24T01:08:51.568Z]    Total checks: 6
+[2025-08-24T01:08:51.568Z]    Passed: 6
+[2025-08-24T01:08:51.568Z]    Failed: 0
+[2025-08-24T01:08:51.568Z]    Build status: ✅ READY
+[2025-08-24T01:08:51.568Z] ✅ All pre-build health checks passed
+[2025-08-24T01:11:31.248Z] 🔍 Starting pre-build health checks...
+[2025-08-24T01:11:31.248Z]   Running: Page Structure Validation
+[2025-08-24T01:11:31.329Z]     ✅ Page Structure Validation: PASS
+[2025-08-24T01:11:31.330Z]   Running: Dependencies Check
+[2025-08-24T01:11:31.330Z]     ✅ Dependencies Check: PASS
+[2025-08-24T01:11:31.330Z]   Running: Next.js Configuration
+[2025-08-24T01:11:31.330Z]     ✅ Next.js Configuration: PASS
+[2025-08-24T01:11:31.330Z]   Running: Environment Variables
+[2025-08-24T01:11:31.331Z]     ✅ Environment Variables: PASS
+[2025-08-24T01:11:31.331Z]   Running: File Permissions
+[2025-08-24T01:11:31.331Z]     ✅ File Permissions: PASS
+[2025-08-24T01:11:31.331Z]   Running: Build Artifacts
+[2025-08-24T01:11:31.332Z]     ✅ Build Artifacts: PASS
+[2025-08-24T01:11:31.342Z] 📊 Pre-build health report saved to /workspace/public/reports/pre-build-health/latest.json and /workspace/public/reports/pre-build-health/index.html
+[2025-08-24T01:11:31.343Z] 📊 Pre-build health check complete
+[2025-08-24T01:11:31.343Z]    Total checks: 6
+[2025-08-24T01:11:31.343Z]    Passed: 6
+[2025-08-24T01:11:31.343Z]    Failed: 0
+[2025-08-24T01:11:31.343Z]    Build status: ✅ READY
+[2025-08-24T01:11:31.343Z] ✅ All pre-build health checks passed
+[2025-08-24T01:14:30.054Z] 🔍 Starting pre-build health checks...
+[2025-08-24T01:14:30.054Z]   Running: Page Structure Validation
+[2025-08-24T01:14:30.158Z]     ✅ Page Structure Validation: PASS
+[2025-08-24T01:14:30.158Z]   Running: Dependencies Check
+[2025-08-24T01:14:30.158Z]     ✅ Dependencies Check: PASS
+[2025-08-24T01:14:30.159Z]   Running: Next.js Configuration
+[2025-08-24T01:14:30.159Z]     ✅ Next.js Configuration: PASS
+[2025-08-24T01:14:30.159Z]   Running: Environment Variables
+[2025-08-24T01:14:30.160Z]     ✅ Environment Variables: PASS
+[2025-08-24T01:14:30.160Z]   Running: File Permissions
+[2025-08-24T01:14:30.160Z]     ✅ File Permissions: PASS
+[2025-08-24T01:14:30.160Z]   Running: Build Artifacts
+[2025-08-24T01:14:30.161Z]     ✅ Build Artifacts: PASS
+[2025-08-24T01:14:30.174Z] 📊 Pre-build health report saved to /workspace/public/reports/pre-build-health/latest.json and /workspace/public/reports/pre-build-health/index.html
+[2025-08-24T01:14:30.174Z] 📊 Pre-build health check complete
+[2025-08-24T01:14:30.174Z]    Total checks: 6
+[2025-08-24T01:14:30.174Z]    Passed: 6
+[2025-08-24T01:14:30.174Z]    Failed: 0
+[2025-08-24T01:14:30.174Z]    Build status: ✅ READY
+[2025-08-24T01:14:30.174Z] ✅ All pre-build health checks passed
+[2025-08-24T01:17:04.271Z] 🔍 Starting pre-build health checks...
+[2025-08-24T01:17:04.271Z]   Running: Page Structure Validation
+[2025-08-24T01:17:04.376Z]     ✅ Page Structure Validation: PASS
+[2025-08-24T01:17:04.376Z]   Running: Dependencies Check
+[2025-08-24T01:17:04.376Z]     ✅ Dependencies Check: PASS
+[2025-08-24T01:17:04.376Z]   Running: Next.js Configuration
+[2025-08-24T01:17:04.377Z]     ✅ Next.js Configuration: PASS
+[2025-08-24T01:17:04.377Z]   Running: Environment Variables
+[2025-08-24T01:17:04.377Z]     ✅ Environment Variables: PASS
+[2025-08-24T01:17:04.377Z]   Running: File Permissions
+[2025-08-24T01:17:04.378Z]     ✅ File Permissions: PASS
+[2025-08-24T01:17:04.378Z]   Running: Build Artifacts
+[2025-08-24T01:17:04.379Z]     ✅ Build Artifacts: PASS
+[2025-08-24T01:17:04.390Z] 📊 Pre-build health report saved to /workspace/public/reports/pre-build-health/latest.json and /workspace/public/reports/pre-build-health/index.html
+[2025-08-24T01:17:04.390Z] 📊 Pre-build health check complete
+[2025-08-24T01:17:04.390Z]    Total checks: 6
+[2025-08-24T01:17:04.390Z]    Passed: 6
+[2025-08-24T01:17:04.390Z]    Failed: 0
+[2025-08-24T01:17:04.390Z]    Build status: ✅ READY
+[2025-08-24T01:17:04.390Z] ✅ All pre-build health checks passed
+[2025-08-24T01:21:45.774Z] 🔍 Starting pre-build health checks...
+[2025-08-24T01:21:45.775Z]   Running: Page Structure Validation
+[2025-08-24T01:21:45.881Z]     ✅ Page Structure Validation: PASS
+[2025-08-24T01:21:45.881Z]   Running: Dependencies Check
+[2025-08-24T01:21:45.881Z]     ✅ Dependencies Check: PASS
+[2025-08-24T01:21:45.882Z]   Running: Next.js Configuration
+[2025-08-24T01:21:45.882Z]     ✅ Next.js Configuration: PASS
+[2025-08-24T01:21:45.882Z]   Running: Environment Variables
+[2025-08-24T01:21:45.883Z]     ✅ Environment Variables: PASS
+[2025-08-24T01:21:45.883Z]   Running: File Permissions
+[2025-08-24T01:21:45.883Z]     ✅ File Permissions: PASS
+[2025-08-24T01:21:45.883Z]   Running: Build Artifacts
+[2025-08-24T01:21:45.884Z]     ✅ Build Artifacts: PASS
+[2025-08-24T01:21:45.897Z] 📊 Pre-build health report saved to /workspace/public/reports/pre-build-health/latest.json and /workspace/public/reports/pre-build-health/index.html
+[2025-08-24T01:21:45.897Z] 📊 Pre-build health check complete
+[2025-08-24T01:21:45.897Z]    Total checks: 6
+[2025-08-24T01:21:45.897Z]    Passed: 6
+[2025-08-24T01:21:45.897Z]    Failed: 0
+[2025-08-24T01:21:45.897Z]    Build status: ✅ READY
+[2025-08-24T01:21:45.897Z] ✅ All pre-build health checks passed
+[2025-08-24T01:23:47.631Z] 🔍 Starting pre-build health checks...
+[2025-08-24T01:23:47.631Z]   Running: Page Structure Validation
+[2025-08-24T01:23:47.740Z]     ✅ Page Structure Validation: PASS
+[2025-08-24T01:23:47.740Z]   Running: Dependencies Check
+[2025-08-24T01:23:47.740Z]     ✅ Dependencies Check: PASS
+[2025-08-24T01:23:47.740Z]   Running: Next.js Configuration
+[2025-08-24T01:23:47.741Z]     ✅ Next.js Configuration: PASS
+[2025-08-24T01:23:47.741Z]   Running: Environment Variables
+[2025-08-24T01:23:47.741Z]     ✅ Environment Variables: PASS
+[2025-08-24T01:23:47.741Z]   Running: File Permissions
+[2025-08-24T01:23:47.742Z]     ✅ File Permissions: PASS
+[2025-08-24T01:23:47.742Z]   Running: Build Artifacts
+[2025-08-24T01:23:47.743Z]     ✅ Build Artifacts: PASS
+[2025-08-24T01:23:47.756Z] 📊 Pre-build health report saved to /workspace/public/reports/pre-build-health/latest.json and /workspace/public/reports/pre-build-health/index.html
+[2025-08-24T01:23:47.756Z] 📊 Pre-build health check complete
+[2025-08-24T01:23:47.756Z]    Total checks: 6
+[2025-08-24T01:23:47.756Z]    Passed: 6
+[2025-08-24T01:23:47.756Z]    Failed: 0
+[2025-08-24T01:23:47.756Z]    Build status: ✅ READY
+[2025-08-24T01:23:47.756Z] ✅ All pre-build health checks passed
+[2025-08-24T01:26:29.087Z] 🔍 Starting pre-build health checks...
+[2025-08-24T01:26:29.088Z]   Running: Page Structure Validation
+[2025-08-24T01:26:29.189Z]     ✅ Page Structure Validation: PASS
+[2025-08-24T01:26:29.189Z]   Running: Dependencies Check
+[2025-08-24T01:26:29.189Z]     ✅ Dependencies Check: PASS
+[2025-08-24T01:26:29.189Z]   Running: Next.js Configuration
+[2025-08-24T01:26:29.190Z]     ✅ Next.js Configuration: PASS
+[2025-08-24T01:26:29.190Z]   Running: Environment Variables
+[2025-08-24T01:26:29.190Z]     ✅ Environment Variables: PASS
+[2025-08-24T01:26:29.190Z]   Running: File Permissions
+[2025-08-24T01:26:29.191Z]     ✅ File Permissions: PASS
+[2025-08-24T01:26:29.191Z]   Running: Build Artifacts
+[2025-08-24T01:26:29.192Z]     ✅ Build Artifacts: PASS
+[2025-08-24T01:26:29.202Z] 📊 Pre-build health report saved to /workspace/public/reports/pre-build-health/latest.json and /workspace/public/reports/pre-build-health/index.html
+[2025-08-24T01:26:29.203Z] 📊 Pre-build health check complete
+[2025-08-24T01:26:29.203Z]    Total checks: 6
+[2025-08-24T01:26:29.203Z]    Passed: 6
+[2025-08-24T01:26:29.203Z]    Failed: 0
+[2025-08-24T01:26:29.203Z]    Build status: ✅ READY
+[2025-08-24T01:26:29.203Z] ✅ All pre-build health checks passed
+[2025-08-24T01:28:52.655Z] 🔍 Starting pre-build health checks...
+[2025-08-24T01:28:52.655Z]   Running: Page Structure Validation
+[2025-08-24T01:28:52.755Z]     ✅ Page Structure Validation: PASS
+[2025-08-24T01:28:52.755Z]   Running: Dependencies Check
+[2025-08-24T01:28:52.755Z]     ✅ Dependencies Check: PASS
+[2025-08-24T01:28:52.755Z]   Running: Next.js Configuration
+[2025-08-24T01:28:52.756Z]     ✅ Next.js Configuration: PASS
+[2025-08-24T01:28:52.756Z]   Running: Environment Variables
+[2025-08-24T01:28:52.757Z]     ✅ Environment Variables: PASS
+[2025-08-24T01:28:52.757Z]   Running: File Permissions
+[2025-08-24T01:28:52.757Z]     ✅ File Permissions: PASS
+[2025-08-24T01:28:52.757Z]   Running: Build Artifacts
+[2025-08-24T01:28:52.758Z]     ✅ Build Artifacts: PASS
+[2025-08-24T01:28:52.771Z] 📊 Pre-build health report saved to /workspace/public/reports/pre-build-health/latest.json and /workspace/public/reports/pre-build-health/index.html
+[2025-08-24T01:28:52.771Z] 📊 Pre-build health check complete
+[2025-08-24T01:28:52.771Z]    Total checks: 6
+[2025-08-24T01:28:52.771Z]    Passed: 6
+[2025-08-24T01:28:52.771Z]    Failed: 0
+[2025-08-24T01:28:52.771Z]    Build status: ✅ READY
+[2025-08-24T01:28:52.771Z] ✅ All pre-build health checks passed
+[2025-08-24T01:30:48.023Z] 🔍 Starting pre-build health checks...
+[2025-08-24T01:30:48.023Z]   Running: Page Structure Validation
+[2025-08-24T01:30:48.130Z]     ✅ Page Structure Validation: PASS
+[2025-08-24T01:30:48.130Z]   Running: Dependencies Check
+[2025-08-24T01:30:48.130Z]     ✅ Dependencies Check: PASS
+[2025-08-24T01:30:48.130Z]   Running: Next.js Configuration
+[2025-08-24T01:30:48.131Z]     ✅ Next.js Configuration: PASS
+[2025-08-24T01:30:48.131Z]   Running: Environment Variables
+[2025-08-24T01:30:48.131Z]     ✅ Environment Variables: PASS
+[2025-08-24T01:30:48.131Z]   Running: File Permissions
+[2025-08-24T01:30:48.132Z]     ✅ File Permissions: PASS
+[2025-08-24T01:30:48.132Z]   Running: Build Artifacts
+[2025-08-24T01:30:48.133Z]     ✅ Build Artifacts: PASS
+[2025-08-24T01:30:48.146Z] 📊 Pre-build health report saved to /workspace/public/reports/pre-build-health/latest.json and /workspace/public/reports/pre-build-health/index.html
+[2025-08-24T01:30:48.146Z] 📊 Pre-build health check complete
+[2025-08-24T01:30:48.146Z]    Total checks: 6
+[2025-08-24T01:30:48.146Z]    Passed: 6
+[2025-08-24T01:30:48.146Z]    Failed: 0
+[2025-08-24T01:30:48.146Z]    Build status: ✅ READY
+[2025-08-24T01:30:48.146Z] ✅ All pre-build health checks passed
+[2025-08-24T01:33:34.027Z] 🔍 Starting pre-build health checks...
+[2025-08-24T01:33:34.028Z]   Running: Page Structure Validation
+[2025-08-24T01:33:34.131Z]     ✅ Page Structure Validation: PASS
+[2025-08-24T01:33:34.132Z]   Running: Dependencies Check
+[2025-08-24T01:33:34.132Z]     ✅ Dependencies Check: PASS
+[2025-08-24T01:33:34.132Z]   Running: Next.js Configuration
+[2025-08-24T01:33:34.133Z]     ✅ Next.js Configuration: PASS
+[2025-08-24T01:33:34.133Z]   Running: Environment Variables
+[2025-08-24T01:33:34.133Z]     ✅ Environment Variables: PASS
+[2025-08-24T01:33:34.133Z]   Running: File Permissions
+[2025-08-24T01:33:34.134Z]     ✅ File Permissions: PASS
+[2025-08-24T01:33:34.134Z]   Running: Build Artifacts
+[2025-08-24T01:33:34.135Z]     ✅ Build Artifacts: PASS
+[2025-08-24T01:33:34.148Z] 📊 Pre-build health report saved to /workspace/public/reports/pre-build-health/latest.json and /workspace/public/reports/pre-build-health/index.html
+[2025-08-24T01:33:34.148Z] 📊 Pre-build health check complete
+[2025-08-24T01:33:34.148Z]    Total checks: 6
+[2025-08-24T01:33:34.148Z]    Passed: 6
+[2025-08-24T01:33:34.148Z]    Failed: 0
+[2025-08-24T01:33:34.148Z]    Build status: ✅ READY
+[2025-08-24T01:33:34.148Z] ✅ All pre-build health checks passed
+[2025-08-24T01:35:44.290Z] 🔍 Starting pre-build health checks...
+[2025-08-24T01:35:44.291Z]   Running: Page Structure Validation
+[2025-08-24T01:35:44.400Z]     ✅ Page Structure Validation: PASS
+[2025-08-24T01:35:44.400Z]   Running: Dependencies Check
+[2025-08-24T01:35:44.400Z]     ✅ Dependencies Check: PASS
+[2025-08-24T01:35:44.400Z]   Running: Next.js Configuration
+[2025-08-24T01:35:44.401Z]     ✅ Next.js Configuration: PASS
+[2025-08-24T01:35:44.401Z]   Running: Environment Variables
+[2025-08-24T01:35:44.401Z]     ✅ Environment Variables: PASS
+[2025-08-24T01:35:44.401Z]   Running: File Permissions
+[2025-08-24T01:35:44.402Z]     ✅ File Permissions: PASS
+[2025-08-24T01:35:44.402Z]   Running: Build Artifacts
+[2025-08-24T01:35:44.403Z]     ✅ Build Artifacts: PASS
+[2025-08-24T01:35:44.416Z] 📊 Pre-build health report saved to /workspace/public/reports/pre-build-health/latest.json and /workspace/public/reports/pre-build-health/index.html
+[2025-08-24T01:35:44.417Z] 📊 Pre-build health check complete
+[2025-08-24T01:35:44.417Z]    Total checks: 6
+[2025-08-24T01:35:44.417Z]    Passed: 6
+[2025-08-24T01:35:44.417Z]    Failed: 0
+[2025-08-24T01:35:44.417Z]    Build status: ✅ READY
+[2025-08-24T01:35:44.417Z] ✅ All pre-build health checks passed
+[2025-08-24T01:37:34.387Z] 🔍 Starting pre-build health checks...
+[2025-08-24T01:37:34.387Z]   Running: Page Structure Validation
+[2025-08-24T01:37:34.492Z]     ✅ Page Structure Validation: PASS
+[2025-08-24T01:37:34.493Z]   Running: Dependencies Check
+[2025-08-24T01:37:34.493Z]     ✅ Dependencies Check: PASS
+[2025-08-24T01:37:34.493Z]   Running: Next.js Configuration
+[2025-08-24T01:37:34.493Z]     ✅ Next.js Configuration: PASS
+[2025-08-24T01:37:34.494Z]   Running: Environment Variables
+[2025-08-24T01:37:34.494Z]     ✅ Environment Variables: PASS
+[2025-08-24T01:37:34.494Z]   Running: File Permissions
+[2025-08-24T01:37:34.494Z]     ✅ File Permissions: PASS
+[2025-08-24T01:37:34.494Z]   Running: Build Artifacts
+[2025-08-24T01:37:34.496Z]     ✅ Build Artifacts: PASS
+[2025-08-24T01:37:34.508Z] 📊 Pre-build health report saved to /workspace/public/reports/pre-build-health/latest.json and /workspace/public/reports/pre-build-health/index.html
+[2025-08-24T01:37:34.508Z] 📊 Pre-build health check complete
+[2025-08-24T01:37:34.508Z]    Total checks: 6
+[2025-08-24T01:37:34.508Z]    Passed: 6
+[2025-08-24T01:37:34.508Z]    Failed: 0
+[2025-08-24T01:37:34.508Z]    Build status: ✅ READY
+[2025-08-24T01:37:34.508Z] ✅ All pre-build health checks passed
+[2025-08-24T01:41:37.715Z] 🔍 Starting pre-build health checks...
+[2025-08-24T01:41:37.716Z]   Running: Page Structure Validation
+[2025-08-24T01:41:37.814Z]     ✅ Page Structure Validation: PASS
+[2025-08-24T01:41:37.815Z]   Running: Dependencies Check
+[2025-08-24T01:41:37.815Z]     ✅ Dependencies Check: PASS
+[2025-08-24T01:41:37.815Z]   Running: Next.js Configuration
+[2025-08-24T01:41:37.815Z]     ✅ Next.js Configuration: PASS
+[2025-08-24T01:41:37.815Z]   Running: Environment Variables
+[2025-08-24T01:41:37.816Z]     ✅ Environment Variables: PASS
+[2025-08-24T01:41:37.816Z]   Running: File Permissions
+[2025-08-24T01:41:37.816Z]     ✅ File Permissions: PASS
+[2025-08-24T01:41:37.816Z]   Running: Build Artifacts
+[2025-08-24T01:41:37.817Z]     ✅ Build Artifacts: PASS
+[2025-08-24T01:41:37.830Z] 📊 Pre-build health report saved to /workspace/public/reports/pre-build-health/latest.json and /workspace/public/reports/pre-build-health/index.html
+[2025-08-24T01:41:37.830Z] 📊 Pre-build health check complete
+[2025-08-24T01:41:37.830Z]    Total checks: 6
+[2025-08-24T01:41:37.830Z]    Passed: 6
+[2025-08-24T01:41:37.830Z]    Failed: 0
+[2025-08-24T01:41:37.830Z]    Build status: ✅ READY
+[2025-08-24T01:41:37.830Z] ✅ All pre-build health checks passed
+[2025-08-24T01:44:21.942Z] 🔍 Starting pre-build health checks...
+[2025-08-24T01:44:21.942Z]   Running: Page Structure Validation
+[2025-08-24T01:44:22.080Z]     ✅ Page Structure Validation: PASS
+[2025-08-24T01:44:22.081Z]   Running: Dependencies Check
+[2025-08-24T01:44:22.081Z]     ✅ Dependencies Check: PASS
+[2025-08-24T01:44:22.081Z]   Running: Next.js Configuration
+[2025-08-24T01:44:22.082Z]     ✅ Next.js Configuration: PASS
+[2025-08-24T01:44:22.082Z]   Running: Environment Variables
+[2025-08-24T01:44:22.083Z]     ✅ Environment Variables: PASS
+[2025-08-24T01:44:22.083Z]   Running: File Permissions
+[2025-08-24T01:44:22.084Z]     ✅ File Permissions: PASS
+[2025-08-24T01:44:22.084Z]   Running: Build Artifacts
+[2025-08-24T01:44:22.086Z]     ✅ Build Artifacts: PASS
+[2025-08-24T01:44:22.100Z] 📊 Pre-build health report saved to /workspace/public/reports/pre-build-health/latest.json and /workspace/public/reports/pre-build-health/index.html
+[2025-08-24T01:44:22.100Z] 📊 Pre-build health check complete
+[2025-08-24T01:44:22.100Z]    Total checks: 6
+[2025-08-24T01:44:22.100Z]    Passed: 6
+[2025-08-24T01:44:22.100Z]    Failed: 0
+[2025-08-24T01:44:22.100Z]    Build status: ✅ READY
+[2025-08-24T01:44:22.101Z] ✅ All pre-build health checks passed
+[2025-08-24T01:46:33.988Z] 🔍 Starting pre-build health checks...
+[2025-08-24T01:46:33.989Z]   Running: Page Structure Validation
+[2025-08-24T01:46:34.102Z]     ✅ Page Structure Validation: PASS
+[2025-08-24T01:46:34.102Z]   Running: Dependencies Check
+[2025-08-24T01:46:34.102Z]     ✅ Dependencies Check: PASS
+[2025-08-24T01:46:34.102Z]   Running: Next.js Configuration
+[2025-08-24T01:46:34.103Z]     ✅ Next.js Configuration: PASS
+[2025-08-24T01:46:34.103Z]   Running: Environment Variables
+[2025-08-24T01:46:34.104Z]     ✅ Environment Variables: PASS
+[2025-08-24T01:46:34.104Z]   Running: File Permissions
+[2025-08-24T01:46:34.105Z]     ✅ File Permissions: PASS
+[2025-08-24T01:46:34.105Z]   Running: Build Artifacts
+[2025-08-24T01:46:34.106Z]     ✅ Build Artifacts: PASS
+[2025-08-24T01:46:34.119Z] 📊 Pre-build health report saved to /workspace/public/reports/pre-build-health/latest.json and /workspace/public/reports/pre-build-health/index.html
+[2025-08-24T01:46:34.119Z] 📊 Pre-build health check complete
+[2025-08-24T01:46:34.119Z]    Total checks: 6
+[2025-08-24T01:46:34.119Z]    Passed: 6
+[2025-08-24T01:46:34.119Z]    Failed: 0
+[2025-08-24T01:46:34.119Z]    Build status: ✅ READY
+[2025-08-24T01:46:34.120Z] ✅ All pre-build health checks passed
+[2025-08-24T01:48:58.221Z] 🔍 Starting pre-build health checks...
+[2025-08-24T01:48:58.221Z]   Running: Page Structure Validation
+[2025-08-24T01:48:58.324Z]     ✅ Page Structure Validation: PASS
+[2025-08-24T01:48:58.325Z]   Running: Dependencies Check
+[2025-08-24T01:48:58.325Z]     ✅ Dependencies Check: PASS
+[2025-08-24T01:48:58.325Z]   Running: Next.js Configuration
+[2025-08-24T01:48:58.325Z]     ✅ Next.js Configuration: PASS
+[2025-08-24T01:48:58.326Z]   Running: Environment Variables
+[2025-08-24T01:48:58.326Z]     ✅ Environment Variables: PASS
+[2025-08-24T01:48:58.326Z]   Running: File Permissions
+[2025-08-24T01:48:58.326Z]     ✅ File Permissions: PASS
+[2025-08-24T01:48:58.326Z]   Running: Build Artifacts
+[2025-08-24T01:48:58.328Z]     ✅ Build Artifacts: PASS
+[2025-08-24T01:48:58.342Z] 📊 Pre-build health report saved to /workspace/public/reports/pre-build-health/latest.json and /workspace/public/reports/pre-build-health/index.html
+[2025-08-24T01:48:58.342Z] 📊 Pre-build health check complete
+[2025-08-24T01:48:58.342Z]    Total checks: 6
+[2025-08-24T01:48:58.342Z]    Passed: 6
+[2025-08-24T01:48:58.342Z]    Failed: 0
+[2025-08-24T01:48:58.342Z]    Build status: ✅ READY
+[2025-08-24T01:48:58.342Z] ✅ All pre-build health checks passed
+[2025-08-24T01:50:51.653Z] 🔍 Starting pre-build health checks...
+[2025-08-24T01:50:51.653Z]   Running: Page Structure Validation
+[2025-08-24T01:50:51.758Z]     ✅ Page Structure Validation: PASS
+[2025-08-24T01:50:51.758Z]   Running: Dependencies Check
+[2025-08-24T01:50:51.758Z]     ✅ Dependencies Check: PASS
+[2025-08-24T01:50:51.758Z]   Running: Next.js Configuration
+[2025-08-24T01:50:51.759Z]     ✅ Next.js Configuration: PASS
+[2025-08-24T01:50:51.759Z]   Running: Environment Variables
+[2025-08-24T01:50:51.759Z]     ✅ Environment Variables: PASS
+[2025-08-24T01:50:51.759Z]   Running: File Permissions
+[2025-08-24T01:50:51.760Z]     ✅ File Permissions: PASS
+[2025-08-24T01:50:51.760Z]   Running: Build Artifacts
+[2025-08-24T01:50:51.761Z]     ✅ Build Artifacts: PASS
+[2025-08-24T01:50:51.773Z] 📊 Pre-build health report saved to /workspace/public/reports/pre-build-health/latest.json and /workspace/public/reports/pre-build-health/index.html
+[2025-08-24T01:50:51.773Z] 📊 Pre-build health check complete
+[2025-08-24T01:50:51.773Z]    Total checks: 6
+[2025-08-24T01:50:51.773Z]    Passed: 6
+[2025-08-24T01:50:51.773Z]    Failed: 0
+[2025-08-24T01:50:51.773Z]    Build status: ✅ READY
+[2025-08-24T01:50:51.773Z] ✅ All pre-build health checks passed
+[2025-08-24T01:52:40.051Z] 🔍 Starting pre-build health checks...
+[2025-08-24T01:52:40.051Z]   Running: Page Structure Validation
+[2025-08-24T01:52:40.158Z]     ✅ Page Structure Validation: PASS
+[2025-08-24T01:52:40.158Z]   Running: Dependencies Check
+[2025-08-24T01:52:40.158Z]     ✅ Dependencies Check: PASS
+[2025-08-24T01:52:40.158Z]   Running: Next.js Configuration
+[2025-08-24T01:52:40.159Z]     ✅ Next.js Configuration: PASS
+[2025-08-24T01:52:40.159Z]   Running: Environment Variables
+[2025-08-24T01:52:40.159Z]     ✅ Environment Variables: PASS
+[2025-08-24T01:52:40.159Z]   Running: File Permissions
+[2025-08-24T01:52:40.160Z]     ✅ File Permissions: PASS
+[2025-08-24T01:52:40.160Z]   Running: Build Artifacts
+[2025-08-24T01:52:40.161Z]     ✅ Build Artifacts: PASS
+[2025-08-24T01:52:40.173Z] 📊 Pre-build health report saved to /workspace/public/reports/pre-build-health/latest.json and /workspace/public/reports/pre-build-health/index.html
+[2025-08-24T01:52:40.173Z] 📊 Pre-build health check complete
+[2025-08-24T01:52:40.173Z]    Total checks: 6
+[2025-08-24T01:52:40.173Z]    Passed: 6
+[2025-08-24T01:52:40.174Z]    Failed: 0
+[2025-08-24T01:52:40.174Z]    Build status: ✅ READY
+[2025-08-24T01:52:40.174Z] ✅ All pre-build health checks passed
+[2025-08-24T01:54:30.796Z] 🔍 Starting pre-build health checks...
+[2025-08-24T01:54:30.797Z]   Running: Page Structure Validation
+[2025-08-24T01:54:30.884Z]     ✅ Page Structure Validation: PASS
+[2025-08-24T01:54:30.884Z]   Running: Dependencies Check
+[2025-08-24T01:54:30.884Z]     ✅ Dependencies Check: PASS
+[2025-08-24T01:54:30.884Z]   Running: Next.js Configuration
+[2025-08-24T01:54:30.885Z]     ✅ Next.js Configuration: PASS
+[2025-08-24T01:54:30.885Z]   Running: Environment Variables
+[2025-08-24T01:54:30.885Z]     ✅ Environment Variables: PASS
+[2025-08-24T01:54:30.885Z]   Running: File Permissions
+[2025-08-24T01:54:30.886Z]     ✅ File Permissions: PASS
+[2025-08-24T01:54:30.886Z]   Running: Build Artifacts
+[2025-08-24T01:54:30.887Z]     ✅ Build Artifacts: PASS
+[2025-08-24T01:54:30.899Z] 📊 Pre-build health report saved to /workspace/public/reports/pre-build-health/latest.json and /workspace/public/reports/pre-build-health/index.html
+[2025-08-24T01:54:30.899Z] 📊 Pre-build health check complete
+[2025-08-24T01:54:30.899Z]    Total checks: 6
+[2025-08-24T01:54:30.899Z]    Passed: 6
+[2025-08-24T01:54:30.899Z]    Failed: 0
+[2025-08-24T01:54:30.899Z]    Build status: ✅ READY
+[2025-08-24T01:54:30.899Z] ✅ All pre-build health checks passed
+[2025-08-24T01:56:00.426Z] 🔍 Starting pre-build health checks...
+[2025-08-24T01:56:00.426Z]   Running: Page Structure Validation
+[2025-08-24T01:56:00.529Z]     ✅ Page Structure Validation: PASS
+[2025-08-24T01:56:00.529Z]   Running: Dependencies Check
+[2025-08-24T01:56:00.529Z]     ✅ Dependencies Check: PASS
+[2025-08-24T01:56:00.529Z]   Running: Next.js Configuration
+[2025-08-24T01:56:00.530Z]     ✅ Next.js Configuration: PASS
+[2025-08-24T01:56:00.530Z]   Running: Environment Variables
+[2025-08-24T01:56:00.530Z]     ✅ Environment Variables: PASS
+[2025-08-24T01:56:00.530Z]   Running: File Permissions
+[2025-08-24T01:56:00.531Z]     ✅ File Permissions: PASS
+[2025-08-24T01:56:00.531Z]   Running: Build Artifacts
+[2025-08-24T01:56:00.532Z]     ✅ Build Artifacts: PASS
+[2025-08-24T01:56:00.543Z] 📊 Pre-build health report saved to /workspace/public/reports/pre-build-health/latest.json and /workspace/public/reports/pre-build-health/index.html
+[2025-08-24T01:56:00.543Z] 📊 Pre-build health check complete
+[2025-08-24T01:56:00.543Z]    Total checks: 6
+[2025-08-24T01:56:00.543Z]    Passed: 6
+[2025-08-24T01:56:00.543Z]    Failed: 0
+[2025-08-24T01:56:00.543Z]    Build status: ✅ READY
+[2025-08-24T01:56:00.543Z] ✅ All pre-build health checks passed
+[2025-08-24T01:57:36.890Z] 🔍 Starting pre-build health checks...
+[2025-08-24T01:57:36.890Z]   Running: Page Structure Validation
+[2025-08-24T01:57:36.977Z]     ✅ Page Structure Validation: PASS
+[2025-08-24T01:57:36.977Z]   Running: Dependencies Check
+[2025-08-24T01:57:36.977Z]     ✅ Dependencies Check: PASS
+[2025-08-24T01:57:36.977Z]   Running: Next.js Configuration
+[2025-08-24T01:57:36.978Z]     ✅ Next.js Configuration: PASS
+[2025-08-24T01:57:36.978Z]   Running: Environment Variables
+[2025-08-24T01:57:36.978Z]     ✅ Environment Variables: PASS
+[2025-08-24T01:57:36.978Z]   Running: File Permissions
+[2025-08-24T01:57:36.979Z]     ✅ File Permissions: PASS
+[2025-08-24T01:57:36.979Z]   Running: Build Artifacts
+[2025-08-24T01:57:36.980Z]     ✅ Build Artifacts: PASS
+[2025-08-24T01:57:36.992Z] 📊 Pre-build health report saved to /workspace/public/reports/pre-build-health/latest.json and /workspace/public/reports/pre-build-health/index.html
+[2025-08-24T01:57:36.992Z] 📊 Pre-build health check complete
+[2025-08-24T01:57:36.992Z]    Total checks: 6
+[2025-08-24T01:57:36.992Z]    Passed: 6
+[2025-08-24T01:57:36.992Z]    Failed: 0
+[2025-08-24T01:57:36.992Z]    Build status: ✅ READY
+[2025-08-24T01:57:36.992Z] ✅ All pre-build health checks passed
+[2025-08-24T01:59:07.030Z] 🔍 Starting pre-build health checks...
+[2025-08-24T01:59:07.031Z]   Running: Page Structure Validation
+[2025-08-24T01:59:07.120Z]     ✅ Page Structure Validation: PASS
+[2025-08-24T01:59:07.120Z]   Running: Dependencies Check
+[2025-08-24T01:59:07.120Z]     ✅ Dependencies Check: PASS
+[2025-08-24T01:59:07.120Z]   Running: Next.js Configuration
+[2025-08-24T01:59:07.121Z]     ✅ Next.js Configuration: PASS
+[2025-08-24T01:59:07.121Z]   Running: Environment Variables
+[2025-08-24T01:59:07.121Z]     ✅ Environment Variables: PASS
+[2025-08-24T01:59:07.121Z]   Running: File Permissions
+[2025-08-24T01:59:07.122Z]     ✅ File Permissions: PASS
+[2025-08-24T01:59:07.122Z]   Running: Build Artifacts
+[2025-08-24T01:59:07.123Z]     ✅ Build Artifacts: PASS
+[2025-08-24T01:59:07.134Z] 📊 Pre-build health report saved to /workspace/public/reports/pre-build-health/latest.json and /workspace/public/reports/pre-build-health/index.html
+[2025-08-24T01:59:07.134Z] 📊 Pre-build health check complete
+[2025-08-24T01:59:07.134Z]    Total checks: 6
+[2025-08-24T01:59:07.134Z]    Passed: 6
+[2025-08-24T01:59:07.134Z]    Failed: 0
+[2025-08-24T01:59:07.134Z]    Build status: ✅ READY
+[2025-08-24T01:59:07.134Z] ✅ All pre-build health checks passed
+[2025-08-24T02:00:46.347Z] 🔍 Starting pre-build health checks...
+[2025-08-24T02:00:46.347Z]   Running: Page Structure Validation
+[2025-08-24T02:00:46.439Z]     ✅ Page Structure Validation: PASS
+[2025-08-24T02:00:46.439Z]   Running: Dependencies Check
+[2025-08-24T02:00:46.439Z]     ✅ Dependencies Check: PASS
+[2025-08-24T02:00:46.439Z]   Running: Next.js Configuration
+[2025-08-24T02:00:46.440Z]     ✅ Next.js Configuration: PASS
+[2025-08-24T02:00:46.440Z]   Running: Environment Variables
+[2025-08-24T02:00:46.441Z]     ✅ Environment Variables: PASS
+[2025-08-24T02:00:46.441Z]   Running: File Permissions
+[2025-08-24T02:00:46.441Z]     ✅ File Permissions: PASS
+[2025-08-24T02:00:46.441Z]   Running: Build Artifacts
+[2025-08-24T02:00:46.442Z]     ✅ Build Artifacts: PASS
+[2025-08-24T02:00:46.453Z] 📊 Pre-build health report saved to /workspace/public/reports/pre-build-health/latest.json and /workspace/public/reports/pre-build-health/index.html
+[2025-08-24T02:00:46.453Z] 📊 Pre-build health check complete
+[2025-08-24T02:00:46.453Z]    Total checks: 6
+[2025-08-24T02:00:46.453Z]    Passed: 6
+[2025-08-24T02:00:46.453Z]    Failed: 0
+[2025-08-24T02:00:46.453Z]    Build status: ✅ READY
+[2025-08-24T02:00:46.453Z] ✅ All pre-build health checks passed
+[2025-08-24T02:02:20.277Z] 🔍 Starting pre-build health checks...
+[2025-08-24T02:02:20.278Z]   Running: Page Structure Validation
+[2025-08-24T02:02:20.371Z]     ✅ Page Structure Validation: PASS
+[2025-08-24T02:02:20.371Z]   Running: Dependencies Check
+[2025-08-24T02:02:20.371Z]     ✅ Dependencies Check: PASS
+[2025-08-24T02:02:20.371Z]   Running: Next.js Configuration
+[2025-08-24T02:02:20.372Z]     ✅ Next.js Configuration: PASS
+[2025-08-24T02:02:20.372Z]   Running: Environment Variables
+[2025-08-24T02:02:20.372Z]     ✅ Environment Variables: PASS
+[2025-08-24T02:02:20.372Z]   Running: File Permissions
+[2025-08-24T02:02:20.373Z]     ✅ File Permissions: PASS
+[2025-08-24T02:02:20.373Z]   Running: Build Artifacts
+[2025-08-24T02:02:20.374Z]     ✅ Build Artifacts: PASS
+[2025-08-24T02:02:20.386Z] 📊 Pre-build health report saved to /workspace/public/reports/pre-build-health/latest.json and /workspace/public/reports/pre-build-health/index.html
+[2025-08-24T02:02:20.386Z] 📊 Pre-build health check complete
+[2025-08-24T02:02:20.386Z]    Total checks: 6
+[2025-08-24T02:02:20.386Z]    Passed: 6
+[2025-08-24T02:02:20.386Z]    Failed: 0
+[2025-08-24T02:02:20.386Z]    Build status: ✅ READY
+[2025-08-24T02:02:20.386Z] ✅ All pre-build health checks passed
+[2025-08-24T02:03:55.060Z] 🔍 Starting pre-build health checks...
+[2025-08-24T02:03:55.060Z]   Running: Page Structure Validation
+[2025-08-24T02:03:55.162Z]     ✅ Page Structure Validation: PASS
+[2025-08-24T02:03:55.162Z]   Running: Dependencies Check
+[2025-08-24T02:03:55.162Z]     ✅ Dependencies Check: PASS
+[2025-08-24T02:03:55.162Z]   Running: Next.js Configuration
+[2025-08-24T02:03:55.163Z]     ✅ Next.js Configuration: PASS
+[2025-08-24T02:03:55.163Z]   Running: Environment Variables
+[2025-08-24T02:03:55.163Z]     ✅ Environment Variables: PASS
+[2025-08-24T02:03:55.163Z]   Running: File Permissions
+[2025-08-24T02:03:55.164Z]     ✅ File Permissions: PASS
+[2025-08-24T02:03:55.164Z]   Running: Build Artifacts
+[2025-08-24T02:03:55.165Z]     ✅ Build Artifacts: PASS
+[2025-08-24T02:03:55.176Z] 📊 Pre-build health report saved to /workspace/public/reports/pre-build-health/latest.json and /workspace/public/reports/pre-build-health/index.html
+[2025-08-24T02:03:55.176Z] 📊 Pre-build health check complete
+[2025-08-24T02:03:55.176Z]    Total checks: 6
+[2025-08-24T02:03:55.176Z]    Passed: 6
+[2025-08-24T02:03:55.176Z]    Failed: 0
+[2025-08-24T02:03:55.176Z]    Build status: ✅ READY
+[2025-08-24T02:03:55.176Z] ✅ All pre-build health checks passed
+[2025-08-24T02:05:29.526Z] 🔍 Starting pre-build health checks...
+[2025-08-24T02:05:29.527Z]   Running: Page Structure Validation
+[2025-08-24T02:05:29.616Z]     ✅ Page Structure Validation: PASS
+[2025-08-24T02:05:29.616Z]   Running: Dependencies Check
+[2025-08-24T02:05:29.617Z]     ✅ Dependencies Check: PASS
+[2025-08-24T02:05:29.617Z]   Running: Next.js Configuration
+[2025-08-24T02:05:29.617Z]     ✅ Next.js Configuration: PASS
+[2025-08-24T02:05:29.617Z]   Running: Environment Variables
+[2025-08-24T02:05:29.618Z]     ✅ Environment Variables: PASS
+[2025-08-24T02:05:29.618Z]   Running: File Permissions
+[2025-08-24T02:05:29.618Z]     ✅ File Permissions: PASS
+[2025-08-24T02:05:29.618Z]   Running: Build Artifacts
+[2025-08-24T02:05:29.619Z]     ✅ Build Artifacts: PASS
+[2025-08-24T02:05:29.632Z] 📊 Pre-build health report saved to /workspace/public/reports/pre-build-health/latest.json and /workspace/public/reports/pre-build-health/index.html
+[2025-08-24T02:05:29.632Z] 📊 Pre-build health check complete
+[2025-08-24T02:05:29.632Z]    Total checks: 6
+[2025-08-24T02:05:29.632Z]    Passed: 6
+[2025-08-24T02:05:29.632Z]    Failed: 0
+[2025-08-24T02:05:29.632Z]    Build status: ✅ READY
+[2025-08-24T02:05:29.632Z] ✅ All pre-build health checks passed
+[2025-08-24T02:07:05.243Z] 🔍 Starting pre-build health checks...
+[2025-08-24T02:07:05.243Z]   Running: Page Structure Validation
+[2025-08-24T02:07:05.348Z]     ✅ Page Structure Validation: PASS
+[2025-08-24T02:07:05.348Z]   Running: Dependencies Check
+[2025-08-24T02:07:05.348Z]     ✅ Dependencies Check: PASS
+[2025-08-24T02:07:05.348Z]   Running: Next.js Configuration
+[2025-08-24T02:07:05.349Z]     ✅ Next.js Configuration: PASS
+[2025-08-24T02:07:05.349Z]   Running: Environment Variables
+[2025-08-24T02:07:05.349Z]     ✅ Environment Variables: PASS
+[2025-08-24T02:07:05.349Z]   Running: File Permissions
+[2025-08-24T02:07:05.350Z]     ✅ File Permissions: PASS
+[2025-08-24T02:07:05.350Z]   Running: Build Artifacts
+[2025-08-24T02:07:05.351Z]     ✅ Build Artifacts: PASS
+[2025-08-24T02:07:05.363Z] 📊 Pre-build health report saved to /workspace/public/reports/pre-build-health/latest.json and /workspace/public/reports/pre-build-health/index.html
+[2025-08-24T02:07:05.363Z] 📊 Pre-build health check complete
+[2025-08-24T02:07:05.363Z]    Total checks: 6
+[2025-08-24T02:07:05.363Z]    Passed: 6
+[2025-08-24T02:07:05.363Z]    Failed: 0
+[2025-08-24T02:07:05.363Z]    Build status: ✅ READY
+[2025-08-24T02:07:05.363Z] ✅ All pre-build health checks passed
+[2025-08-24T02:08:45.341Z] 🔍 Starting pre-build health checks...
+[2025-08-24T02:08:45.341Z]   Running: Page Structure Validation
+[2025-08-24T02:08:45.447Z]     ✅ Page Structure Validation: PASS
+[2025-08-24T02:08:45.448Z]   Running: Dependencies Check
+[2025-08-24T02:08:45.448Z]     ✅ Dependencies Check: PASS
+[2025-08-24T02:08:45.448Z]   Running: Next.js Configuration
+[2025-08-24T02:08:45.449Z]     ✅ Next.js Configuration: PASS
+[2025-08-24T02:08:45.449Z]   Running: Environment Variables
+[2025-08-24T02:08:45.449Z]     ✅ Environment Variables: PASS
+[2025-08-24T02:08:45.449Z]   Running: File Permissions
+[2025-08-24T02:08:45.450Z]     ✅ File Permissions: PASS
+[2025-08-24T02:08:45.450Z]   Running: Build Artifacts
+[2025-08-24T02:08:45.451Z]     ✅ Build Artifacts: PASS
+[2025-08-24T02:08:45.463Z] 📊 Pre-build health report saved to /workspace/public/reports/pre-build-health/latest.json and /workspace/public/reports/pre-build-health/index.html
+[2025-08-24T02:08:45.463Z] 📊 Pre-build health check complete
+[2025-08-24T02:08:45.463Z]    Total checks: 6
+[2025-08-24T02:08:45.463Z]    Passed: 6
+[2025-08-24T02:08:45.464Z]    Failed: 0
+[2025-08-24T02:08:45.464Z]    Build status: ✅ READY
+[2025-08-24T02:08:45.464Z] ✅ All pre-build health checks passed
+[2025-08-24T02:10:32.580Z] 🔍 Starting pre-build health checks...
+[2025-08-24T02:10:32.580Z]   Running: Page Structure Validation
+[2025-08-24T02:10:32.687Z]     ✅ Page Structure Validation: PASS
+[2025-08-24T02:10:32.688Z]   Running: Dependencies Check
+[2025-08-24T02:10:32.688Z]     ✅ Dependencies Check: PASS
+[2025-08-24T02:10:32.688Z]   Running: Next.js Configuration
+[2025-08-24T02:10:32.689Z]     ✅ Next.js Configuration: PASS
+[2025-08-24T02:10:32.689Z]   Running: Environment Variables
+[2025-08-24T02:10:32.689Z]     ✅ Environment Variables: PASS
+[2025-08-24T02:10:32.689Z]   Running: File Permissions
+[2025-08-24T02:10:32.690Z]     ✅ File Permissions: PASS
+[2025-08-24T02:10:32.690Z]   Running: Build Artifacts
+[2025-08-24T02:10:32.691Z]     ✅ Build Artifacts: PASS
+[2025-08-24T02:10:32.703Z] 📊 Pre-build health report saved to /workspace/public/reports/pre-build-health/latest.json and /workspace/public/reports/pre-build-health/index.html
+[2025-08-24T02:10:32.703Z] 📊 Pre-build health check complete
+[2025-08-24T02:10:32.703Z]    Total checks: 6
+[2025-08-24T02:10:32.704Z]    Passed: 6
+[2025-08-24T02:10:32.704Z]    Failed: 0
+[2025-08-24T02:10:32.704Z]    Build status: ✅ READY
+[2025-08-24T02:10:32.704Z] ✅ All pre-build health checks passed
+[2025-08-24T02:13:25.788Z] 🔍 Starting pre-build health checks...
+[2025-08-24T02:13:25.789Z]   Running: Page Structure Validation
+[2025-08-24T02:13:25.938Z]     ✅ Page Structure Validation: PASS
+[2025-08-24T02:13:25.938Z]   Running: Dependencies Check
+[2025-08-24T02:13:25.939Z]     ✅ Dependencies Check: PASS
+[2025-08-24T02:13:25.939Z]   Running: Next.js Configuration
+[2025-08-24T02:13:25.940Z]     ✅ Next.js Configuration: PASS
+[2025-08-24T02:13:25.940Z]   Running: Environment Variables
+[2025-08-24T02:13:25.941Z]     ✅ Environment Variables: PASS
+[2025-08-24T02:13:25.941Z]   Running: File Permissions
+[2025-08-24T02:13:25.942Z]     ✅ File Permissions: PASS
+[2025-08-24T02:13:25.942Z]   Running: Build Artifacts
+[2025-08-24T02:13:25.943Z]     ✅ Build Artifacts: PASS
+[2025-08-24T02:13:25.959Z] 📊 Pre-build health report saved to /workspace/public/reports/pre-build-health/latest.json and /workspace/public/reports/pre-build-health/index.html
+[2025-08-24T02:13:25.960Z] 📊 Pre-build health check complete
+[2025-08-24T02:13:25.960Z]    Total checks: 6
+[2025-08-24T02:13:25.960Z]    Passed: 6
+[2025-08-24T02:13:25.960Z]    Failed: 0
+[2025-08-24T02:13:25.960Z]    Build status: ✅ READY
+[2025-08-24T02:13:25.960Z] ✅ All pre-build health checks passed
+[2025-08-24T02:15:02.900Z] 🔍 Starting pre-build health checks...
+[2025-08-24T02:15:02.900Z]   Running: Page Structure Validation
+[2025-08-24T02:15:03.008Z]     ✅ Page Structure Validation: PASS
+[2025-08-24T02:15:03.008Z]   Running: Dependencies Check
+[2025-08-24T02:15:03.008Z]     ✅ Dependencies Check: PASS
+[2025-08-24T02:15:03.008Z]   Running: Next.js Configuration
+[2025-08-24T02:15:03.009Z]     ✅ Next.js Configuration: PASS
+[2025-08-24T02:15:03.009Z]   Running: Environment Variables
+[2025-08-24T02:15:03.010Z]     ✅ Environment Variables: PASS
+[2025-08-24T02:15:03.010Z]   Running: File Permissions
+[2025-08-24T02:15:03.010Z]     ✅ File Permissions: PASS
+[2025-08-24T02:15:03.010Z]   Running: Build Artifacts
+[2025-08-24T02:15:03.011Z]     ✅ Build Artifacts: PASS
+[2025-08-24T02:15:03.024Z] 📊 Pre-build health report saved to /workspace/public/reports/pre-build-health/latest.json and /workspace/public/reports/pre-build-health/index.html
+[2025-08-24T02:15:03.024Z] 📊 Pre-build health check complete
+[2025-08-24T02:15:03.024Z]    Total checks: 6
+[2025-08-24T02:15:03.024Z]    Passed: 6
+[2025-08-24T02:15:03.024Z]    Failed: 0
+[2025-08-24T02:15:03.024Z]    Build status: ✅ READY
+[2025-08-24T02:15:03.024Z] ✅ All pre-build health checks passed
+[2025-08-24T02:16:41.933Z] 🔍 Starting pre-build health checks...
+[2025-08-24T02:16:41.934Z]   Running: Page Structure Validation
+[2025-08-24T02:16:42.039Z]     ✅ Page Structure Validation: PASS
+[2025-08-24T02:16:42.040Z]   Running: Dependencies Check
+[2025-08-24T02:16:42.040Z]     ✅ Dependencies Check: PASS
+[2025-08-24T02:16:42.040Z]   Running: Next.js Configuration
+[2025-08-24T02:16:42.041Z]     ✅ Next.js Configuration: PASS
+[2025-08-24T02:16:42.041Z]   Running: Environment Variables
+[2025-08-24T02:16:42.041Z]     ✅ Environment Variables: PASS
+[2025-08-24T02:16:42.041Z]   Running: File Permissions
+[2025-08-24T02:16:42.042Z]     ✅ File Permissions: PASS
+[2025-08-24T02:16:42.042Z]   Running: Build Artifacts
+[2025-08-24T02:16:42.043Z]     ✅ Build Artifacts: PASS
+[2025-08-24T02:16:42.055Z] 📊 Pre-build health report saved to /workspace/public/reports/pre-build-health/latest.json and /workspace/public/reports/pre-build-health/index.html
+[2025-08-24T02:16:42.055Z] 📊 Pre-build health check complete
+[2025-08-24T02:16:42.055Z]    Total checks: 6
+[2025-08-24T02:16:42.055Z]    Passed: 6
+[2025-08-24T02:16:42.056Z]    Failed: 0
+[2025-08-24T02:16:42.056Z]    Build status: ✅ READY
+[2025-08-24T02:16:42.056Z] ✅ All pre-build health checks passed
+[2025-08-24T02:18:13.231Z] 🔍 Starting pre-build health checks...
+[2025-08-24T02:18:13.231Z]   Running: Page Structure Validation
+[2025-08-24T02:18:13.334Z]     ✅ Page Structure Validation: PASS
+[2025-08-24T02:18:13.334Z]   Running: Dependencies Check
+[2025-08-24T02:18:13.334Z]     ✅ Dependencies Check: PASS
+[2025-08-24T02:18:13.334Z]   Running: Next.js Configuration
+[2025-08-24T02:18:13.335Z]     ✅ Next.js Configuration: PASS
+[2025-08-24T02:18:13.335Z]   Running: Environment Variables
+[2025-08-24T02:18:13.335Z]     ✅ Environment Variables: PASS
+[2025-08-24T02:18:13.335Z]   Running: File Permissions
+[2025-08-24T02:18:13.336Z]     ✅ File Permissions: PASS
+[2025-08-24T02:18:13.336Z]   Running: Build Artifacts
+[2025-08-24T02:18:13.337Z]     ✅ Build Artifacts: PASS
+[2025-08-24T02:18:13.349Z] 📊 Pre-build health report saved to /workspace/public/reports/pre-build-health/latest.json and /workspace/public/reports/pre-build-health/index.html
+[2025-08-24T02:18:13.350Z] 📊 Pre-build health check complete
+[2025-08-24T02:18:13.350Z]    Total checks: 6
+[2025-08-24T02:18:13.350Z]    Passed: 6
+[2025-08-24T02:18:13.350Z]    Failed: 0
+[2025-08-24T02:18:13.350Z]    Build status: ✅ READY
+[2025-08-24T02:18:13.350Z] ✅ All pre-build health checks passed
+[2025-08-24T02:19:48.025Z] 🔍 Starting pre-build health checks...
+[2025-08-24T02:19:48.026Z]   Running: Page Structure Validation
+[2025-08-24T02:19:48.129Z]     ✅ Page Structure Validation: PASS
+[2025-08-24T02:19:48.129Z]   Running: Dependencies Check
+[2025-08-24T02:19:48.130Z]     ✅ Dependencies Check: PASS
+[2025-08-24T02:19:48.130Z]   Running: Next.js Configuration
+[2025-08-24T02:19:48.130Z]     ✅ Next.js Configuration: PASS
+[2025-08-24T02:19:48.130Z]   Running: Environment Variables
+[2025-08-24T02:19:48.131Z]     ✅ Environment Variables: PASS
+[2025-08-24T02:19:48.131Z]   Running: File Permissions
+[2025-08-24T02:19:48.131Z]     ✅ File Permissions: PASS
+[2025-08-24T02:19:48.131Z]   Running: Build Artifacts
+[2025-08-24T02:19:48.132Z]     ✅ Build Artifacts: PASS
+[2025-08-24T02:19:48.143Z] 📊 Pre-build health report saved to /workspace/public/reports/pre-build-health/latest.json and /workspace/public/reports/pre-build-health/index.html
+[2025-08-24T02:19:48.143Z] 📊 Pre-build health check complete
+[2025-08-24T02:19:48.143Z]    Total checks: 6
+[2025-08-24T02:19:48.143Z]    Passed: 6
+[2025-08-24T02:19:48.143Z]    Failed: 0
+[2025-08-24T02:19:48.143Z]    Build status: ✅ READY
+[2025-08-24T02:19:48.143Z] ✅ All pre-build health checks passed
+[2025-08-24T02:21:33.347Z] 🔍 Starting pre-build health checks...
+[2025-08-24T02:21:33.347Z]   Running: Page Structure Validation
+[2025-08-24T02:21:33.435Z]     ✅ Page Structure Validation: PASS
+[2025-08-24T02:21:33.435Z]   Running: Dependencies Check
+[2025-08-24T02:21:33.435Z]     ✅ Dependencies Check: PASS
+[2025-08-24T02:21:33.435Z]   Running: Next.js Configuration
+[2025-08-24T02:21:33.435Z]     ✅ Next.js Configuration: PASS
+[2025-08-24T02:21:33.435Z]   Running: Environment Variables
+[2025-08-24T02:21:33.436Z]     ✅ Environment Variables: PASS
+[2025-08-24T02:21:33.436Z]   Running: File Permissions
+[2025-08-24T02:21:33.436Z]     ✅ File Permissions: PASS
+[2025-08-24T02:21:33.436Z]   Running: Build Artifacts
+[2025-08-24T02:21:33.437Z]     ✅ Build Artifacts: PASS
+[2025-08-24T02:21:33.449Z] 📊 Pre-build health report saved to /workspace/public/reports/pre-build-health/latest.json and /workspace/public/reports/pre-build-health/index.html
+[2025-08-24T02:21:33.449Z] 📊 Pre-build health check complete
+[2025-08-24T02:21:33.449Z]    Total checks: 6
+[2025-08-24T02:21:33.450Z]    Passed: 6
+[2025-08-24T02:21:33.450Z]    Failed: 0
+[2025-08-24T02:21:33.450Z]    Build status: ✅ READY
+[2025-08-24T02:21:33.450Z] ✅ All pre-build health checks passed
+[2025-08-24T02:23:19.576Z] 🔍 Starting pre-build health checks...
+[2025-08-24T02:23:19.576Z]   Running: Page Structure Validation
+[2025-08-24T02:23:19.680Z]     ✅ Page Structure Validation: PASS
+[2025-08-24T02:23:19.680Z]   Running: Dependencies Check
+[2025-08-24T02:23:19.681Z]     ✅ Dependencies Check: PASS
+[2025-08-24T02:23:19.681Z]   Running: Next.js Configuration
+[2025-08-24T02:23:19.681Z]     ✅ Next.js Configuration: PASS
+[2025-08-24T02:23:19.681Z]   Running: Environment Variables
+[2025-08-24T02:23:19.682Z]     ✅ Environment Variables: PASS
+[2025-08-24T02:23:19.682Z]   Running: File Permissions
+[2025-08-24T02:23:19.682Z]     ✅ File Permissions: PASS
+[2025-08-24T02:23:19.682Z]   Running: Build Artifacts
+[2025-08-24T02:23:19.684Z]     ✅ Build Artifacts: PASS
+[2025-08-24T02:23:19.695Z] 📊 Pre-build health report saved to /workspace/public/reports/pre-build-health/latest.json and /workspace/public/reports/pre-build-health/index.html
+[2025-08-24T02:23:19.695Z] 📊 Pre-build health check complete
+[2025-08-24T02:23:19.695Z]    Total checks: 6
+[2025-08-24T02:23:19.695Z]    Passed: 6
+[2025-08-24T02:23:19.695Z]    Failed: 0
+[2025-08-24T02:23:19.695Z]    Build status: ✅ READY
+[2025-08-24T02:23:19.695Z] ✅ All pre-build health checks passed
+[2025-08-24T02:25:06.909Z] 🔍 Starting pre-build health checks...
+[2025-08-24T02:25:06.909Z]   Running: Page Structure Validation
+[2025-08-24T02:25:07.012Z]     ✅ Page Structure Validation: PASS
+[2025-08-24T02:25:07.012Z]   Running: Dependencies Check
+[2025-08-24T02:25:07.012Z]     ✅ Dependencies Check: PASS
+[2025-08-24T02:25:07.012Z]   Running: Next.js Configuration
+[2025-08-24T02:25:07.013Z]     ✅ Next.js Configuration: PASS
+[2025-08-24T02:25:07.013Z]   Running: Environment Variables
+[2025-08-24T02:25:07.014Z]     ✅ Environment Variables: PASS
+[2025-08-24T02:25:07.014Z]   Running: File Permissions
+[2025-08-24T02:25:07.014Z]     ✅ File Permissions: PASS
+[2025-08-24T02:25:07.014Z]   Running: Build Artifacts
+[2025-08-24T02:25:07.015Z]     ✅ Build Artifacts: PASS
+[2025-08-24T02:25:07.027Z] 📊 Pre-build health report saved to /workspace/public/reports/pre-build-health/latest.json and /workspace/public/reports/pre-build-health/index.html
+[2025-08-24T02:25:07.028Z] 📊 Pre-build health check complete
+[2025-08-24T02:25:07.028Z]    Total checks: 6
+[2025-08-24T02:25:07.028Z]    Passed: 6
+[2025-08-24T02:25:07.028Z]    Failed: 0
+[2025-08-24T02:25:07.028Z]    Build status: ✅ READY
+[2025-08-24T02:25:07.028Z] ✅ All pre-build health checks passed
+[2025-08-24T02:26:47.664Z] 🔍 Starting pre-build health checks...
+[2025-08-24T02:26:47.664Z]   Running: Page Structure Validation
+[2025-08-24T02:26:47.766Z]     ✅ Page Structure Validation: PASS
+[2025-08-24T02:26:47.766Z]   Running: Dependencies Check
+[2025-08-24T02:26:47.766Z]     ✅ Dependencies Check: PASS
+[2025-08-24T02:26:47.766Z]   Running: Next.js Configuration
+[2025-08-24T02:26:47.766Z]     ✅ Next.js Configuration: PASS
+[2025-08-24T02:26:47.767Z]   Running: Environment Variables
+[2025-08-24T02:26:47.767Z]     ✅ Environment Variables: PASS
+[2025-08-24T02:26:47.767Z]   Running: File Permissions
+[2025-08-24T02:26:47.767Z]     ✅ File Permissions: PASS
+[2025-08-24T02:26:47.767Z]   Running: Build Artifacts
+[2025-08-24T02:26:47.769Z]     ✅ Build Artifacts: PASS
+[2025-08-24T02:26:47.781Z] 📊 Pre-build health report saved to /workspace/public/reports/pre-build-health/latest.json and /workspace/public/reports/pre-build-health/index.html
+[2025-08-24T02:26:47.781Z] 📊 Pre-build health check complete
+[2025-08-24T02:26:47.781Z]    Total checks: 6
+[2025-08-24T02:26:47.781Z]    Passed: 6
+[2025-08-24T02:26:47.781Z]    Failed: 0
+[2025-08-24T02:26:47.781Z]    Build status: ✅ READY
+[2025-08-24T02:26:47.781Z] ✅ All pre-build health checks passed
+[2025-08-24T02:28:25.662Z] 🔍 Starting pre-build health checks...
+[2025-08-24T02:28:25.662Z]   Running: Page Structure Validation
+[2025-08-24T02:28:25.750Z]     ✅ Page Structure Validation: PASS
+[2025-08-24T02:28:25.751Z]   Running: Dependencies Check
+[2025-08-24T02:28:25.751Z]     ✅ Dependencies Check: PASS
+[2025-08-24T02:28:25.751Z]   Running: Next.js Configuration
+[2025-08-24T02:28:25.751Z]     ✅ Next.js Configuration: PASS
+[2025-08-24T02:28:25.751Z]   Running: Environment Variables
+[2025-08-24T02:28:25.752Z]     ✅ Environment Variables: PASS
+[2025-08-24T02:28:25.752Z]   Running: File Permissions
+[2025-08-24T02:28:25.752Z]     ✅ File Permissions: PASS
+[2025-08-24T02:28:25.752Z]   Running: Build Artifacts
+[2025-08-24T02:28:25.753Z]     ✅ Build Artifacts: PASS
+[2025-08-24T02:28:25.766Z] 📊 Pre-build health report saved to /workspace/public/reports/pre-build-health/latest.json and /workspace/public/reports/pre-build-health/index.html
+[2025-08-24T02:28:25.766Z] 📊 Pre-build health check complete
+[2025-08-24T02:28:25.766Z]    Total checks: 6
+[2025-08-24T02:28:25.766Z]    Passed: 6
+[2025-08-24T02:28:25.766Z]    Failed: 0
+[2025-08-24T02:28:25.766Z]    Build status: ✅ READY
+[2025-08-24T02:28:25.766Z] ✅ All pre-build health checks passed
+[2025-08-24T02:30:20.240Z] 🔍 Starting pre-build health checks...
+[2025-08-24T02:30:20.240Z]   Running: Page Structure Validation
+[2025-08-24T02:30:20.341Z]     ✅ Page Structure Validation: PASS
+[2025-08-24T02:30:20.341Z]   Running: Dependencies Check
+[2025-08-24T02:30:20.341Z]     ✅ Dependencies Check: PASS
+[2025-08-24T02:30:20.341Z]   Running: Next.js Configuration
+[2025-08-24T02:30:20.342Z]     ✅ Next.js Configuration: PASS
+[2025-08-24T02:30:20.342Z]   Running: Environment Variables
+[2025-08-24T02:30:20.342Z]     ✅ Environment Variables: PASS
+[2025-08-24T02:30:20.342Z]   Running: File Permissions
+[2025-08-24T02:30:20.343Z]     ✅ File Permissions: PASS
+[2025-08-24T02:30:20.343Z]   Running: Build Artifacts
+[2025-08-24T02:30:20.344Z]     ✅ Build Artifacts: PASS
+[2025-08-24T02:30:20.355Z] 📊 Pre-build health report saved to /workspace/public/reports/pre-build-health/latest.json and /workspace/public/reports/pre-build-health/index.html
+[2025-08-24T02:30:20.355Z] 📊 Pre-build health check complete
+[2025-08-24T02:30:20.355Z]    Total checks: 6
+[2025-08-24T02:30:20.355Z]    Passed: 6
+[2025-08-24T02:30:20.355Z]    Failed: 0
+[2025-08-24T02:30:20.355Z]    Build status: ✅ READY
+[2025-08-24T02:30:20.355Z] ✅ All pre-build health checks passed
+[2025-08-24T02:31:55.663Z] 🔍 Starting pre-build health checks...
+[2025-08-24T02:31:55.663Z]   Running: Page Structure Validation
+[2025-08-24T02:31:55.769Z]     ✅ Page Structure Validation: PASS
+[2025-08-24T02:31:55.769Z]   Running: Dependencies Check
+[2025-08-24T02:31:55.769Z]     ✅ Dependencies Check: PASS
+[2025-08-24T02:31:55.769Z]   Running: Next.js Configuration
+[2025-08-24T02:31:55.770Z]     ✅ Next.js Configuration: PASS
+[2025-08-24T02:31:55.770Z]   Running: Environment Variables
+[2025-08-24T02:31:55.770Z]     ✅ Environment Variables: PASS
+[2025-08-24T02:31:55.770Z]   Running: File Permissions
+[2025-08-24T02:31:55.771Z]     ✅ File Permissions: PASS
+[2025-08-24T02:31:55.771Z]   Running: Build Artifacts
+[2025-08-24T02:31:55.772Z]     ✅ Build Artifacts: PASS
+[2025-08-24T02:31:55.785Z] 📊 Pre-build health report saved to /workspace/public/reports/pre-build-health/latest.json and /workspace/public/reports/pre-build-health/index.html
+[2025-08-24T02:31:55.785Z] 📊 Pre-build health check complete
+[2025-08-24T02:31:55.785Z]    Total checks: 6
+[2025-08-24T02:31:55.785Z]    Passed: 6
+[2025-08-24T02:31:55.785Z]    Failed: 0
+[2025-08-24T02:31:55.785Z]    Build status: ✅ READY
+[2025-08-24T02:31:55.785Z] ✅ All pre-build health checks passed
+[2025-08-24T02:33:28.182Z] 🔍 Starting pre-build health checks...
+[2025-08-24T02:33:28.182Z]   Running: Page Structure Validation
+[2025-08-24T02:33:28.277Z]     ✅ Page Structure Validation: PASS
+[2025-08-24T02:33:28.278Z]   Running: Dependencies Check
+[2025-08-24T02:33:28.278Z]     ✅ Dependencies Check: PASS
+[2025-08-24T02:33:28.278Z]   Running: Next.js Configuration
+[2025-08-24T02:33:28.278Z]     ✅ Next.js Configuration: PASS
+[2025-08-24T02:33:28.278Z]   Running: Environment Variables
+[2025-08-24T02:33:28.279Z]     ✅ Environment Variables: PASS
+[2025-08-24T02:33:28.279Z]   Running: File Permissions
+[2025-08-24T02:33:28.279Z]     ✅ File Permissions: PASS
+[2025-08-24T02:33:28.279Z]   Running: Build Artifacts
+[2025-08-24T02:33:28.280Z]     ✅ Build Artifacts: PASS
+[2025-08-24T02:33:28.293Z] 📊 Pre-build health report saved to /workspace/public/reports/pre-build-health/latest.json and /workspace/public/reports/pre-build-health/index.html
+[2025-08-24T02:33:28.293Z] 📊 Pre-build health check complete
+[2025-08-24T02:33:28.293Z]    Total checks: 6
+[2025-08-24T02:33:28.293Z]    Passed: 6
+[2025-08-24T02:33:28.293Z]    Failed: 0
+[2025-08-24T02:33:28.293Z]    Build status: ✅ READY
+[2025-08-24T02:33:28.293Z] ✅ All pre-build health checks passed
+[2025-08-24T02:35:17.058Z] 🔍 Starting pre-build health checks...
+[2025-08-24T02:35:17.058Z]   Running: Page Structure Validation
+[2025-08-24T02:35:17.145Z]     ✅ Page Structure Validation: PASS
+[2025-08-24T02:35:17.146Z]   Running: Dependencies Check
+[2025-08-24T02:35:17.146Z]     ✅ Dependencies Check: PASS
+[2025-08-24T02:35:17.146Z]   Running: Next.js Configuration
+[2025-08-24T02:35:17.146Z]     ✅ Next.js Configuration: PASS
+[2025-08-24T02:35:17.146Z]   Running: Environment Variables
+[2025-08-24T02:35:17.147Z]     ✅ Environment Variables: PASS
+[2025-08-24T02:35:17.147Z]   Running: File Permissions
+[2025-08-24T02:35:17.147Z]     ✅ File Permissions: PASS
+[2025-08-24T02:35:17.147Z]   Running: Build Artifacts
+[2025-08-24T02:35:17.148Z]     ✅ Build Artifacts: PASS
+[2025-08-24T02:35:17.160Z] 📊 Pre-build health report saved to /workspace/public/reports/pre-build-health/latest.json and /workspace/public/reports/pre-build-health/index.html
+[2025-08-24T02:35:17.160Z] 📊 Pre-build health check complete
+[2025-08-24T02:35:17.160Z]    Total checks: 6
+[2025-08-24T02:35:17.160Z]    Passed: 6
+[2025-08-24T02:35:17.160Z]    Failed: 0
+[2025-08-24T02:35:17.160Z]    Build status: ✅ READY
+[2025-08-24T02:35:17.160Z] ✅ All pre-build health checks passed
+[2025-08-24T02:36:51.835Z] 🔍 Starting pre-build health checks...
+[2025-08-24T02:36:51.836Z]   Running: Page Structure Validation
+[2025-08-24T02:36:51.926Z]     ✅ Page Structure Validation: PASS
+[2025-08-24T02:36:51.926Z]   Running: Dependencies Check
+[2025-08-24T02:36:51.926Z]     ✅ Dependencies Check: PASS
+[2025-08-24T02:36:51.926Z]   Running: Next.js Configuration
+[2025-08-24T02:36:51.927Z]     ✅ Next.js Configuration: PASS
+[2025-08-24T02:36:51.927Z]   Running: Environment Variables
+[2025-08-24T02:36:51.927Z]     ✅ Environment Variables: PASS
+[2025-08-24T02:36:51.927Z]   Running: File Permissions
+[2025-08-24T02:36:51.928Z]     ✅ File Permissions: PASS
+[2025-08-24T02:36:51.928Z]   Running: Build Artifacts
+[2025-08-24T02:36:51.929Z]     ✅ Build Artifacts: PASS
+[2025-08-24T02:36:51.940Z] 📊 Pre-build health report saved to /workspace/public/reports/pre-build-health/latest.json and /workspace/public/reports/pre-build-health/index.html
+[2025-08-24T02:36:51.940Z] 📊 Pre-build health check complete
+[2025-08-24T02:36:51.940Z]    Total checks: 6
+[2025-08-24T02:36:51.940Z]    Passed: 6
+[2025-08-24T02:36:51.940Z]    Failed: 0
+[2025-08-24T02:36:51.940Z]    Build status: ✅ READY
+[2025-08-24T02:36:51.940Z] ✅ All pre-build health checks passed
+[2025-08-24T02:38:36.130Z] 🔍 Starting pre-build health checks...
+[2025-08-24T02:38:36.130Z]   Running: Page Structure Validation
+[2025-08-24T02:38:36.225Z]     ✅ Page Structure Validation: PASS
+[2025-08-24T02:38:36.225Z]   Running: Dependencies Check
+[2025-08-24T02:38:36.225Z]     ✅ Dependencies Check: PASS
+[2025-08-24T02:38:36.225Z]   Running: Next.js Configuration
+[2025-08-24T02:38:36.226Z]     ✅ Next.js Configuration: PASS
+[2025-08-24T02:38:36.226Z]   Running: Environment Variables
+[2025-08-24T02:38:36.226Z]     ✅ Environment Variables: PASS
+[2025-08-24T02:38:36.226Z]   Running: File Permissions
+[2025-08-24T02:38:36.226Z]     ✅ File Permissions: PASS
+[2025-08-24T02:38:36.227Z]   Running: Build Artifacts
+[2025-08-24T02:38:36.227Z]     ✅ Build Artifacts: PASS
+[2025-08-24T02:38:36.238Z] 📊 Pre-build health report saved to /workspace/public/reports/pre-build-health/latest.json and /workspace/public/reports/pre-build-health/index.html
+[2025-08-24T02:38:36.238Z] 📊 Pre-build health check complete
+[2025-08-24T02:38:36.238Z]    Total checks: 6
+[2025-08-24T02:38:36.239Z]    Passed: 6
+[2025-08-24T02:38:36.239Z]    Failed: 0
+[2025-08-24T02:38:36.239Z]    Build status: ✅ READY
+[2025-08-24T02:38:36.239Z] ✅ All pre-build health checks passed
+[2025-08-24T02:40:13.300Z] 🔍 Starting pre-build health checks...
+[2025-08-24T02:40:13.301Z]   Running: Page Structure Validation
+[2025-08-24T02:40:13.387Z]     ✅ Page Structure Validation: PASS
+[2025-08-24T02:40:13.387Z]   Running: Dependencies Check
+[2025-08-24T02:40:13.387Z]     ✅ Dependencies Check: PASS
+[2025-08-24T02:40:13.387Z]   Running: Next.js Configuration
+[2025-08-24T02:40:13.387Z]     ✅ Next.js Configuration: PASS
+[2025-08-24T02:40:13.388Z]   Running: Environment Variables
+[2025-08-24T02:40:13.388Z]     ✅ Environment Variables: PASS
+[2025-08-24T02:40:13.388Z]   Running: File Permissions
+[2025-08-24T02:40:13.388Z]     ✅ File Permissions: PASS
+[2025-08-24T02:40:13.388Z]   Running: Build Artifacts
+[2025-08-24T02:40:13.389Z]     ✅ Build Artifacts: PASS
+[2025-08-24T02:40:13.402Z] 📊 Pre-build health report saved to /workspace/public/reports/pre-build-health/latest.json and /workspace/public/reports/pre-build-health/index.html
+[2025-08-24T02:40:13.402Z] 📊 Pre-build health check complete
+[2025-08-24T02:40:13.402Z]    Total checks: 6
+[2025-08-24T02:40:13.402Z]    Passed: 6
+[2025-08-24T02:40:13.402Z]    Failed: 0
+[2025-08-24T02:40:13.402Z]    Build status: ✅ READY
+[2025-08-24T02:40:13.402Z] ✅ All pre-build health checks passed
+[2025-08-24T02:41:42.272Z] 🔍 Starting pre-build health checks...
+[2025-08-24T02:41:42.272Z]   Running: Page Structure Validation
+[2025-08-24T02:41:42.375Z]     ✅ Page Structure Validation: PASS
+[2025-08-24T02:41:42.375Z]   Running: Dependencies Check
+[2025-08-24T02:41:42.375Z]     ✅ Dependencies Check: PASS
+[2025-08-24T02:41:42.375Z]   Running: Next.js Configuration
+[2025-08-24T02:41:42.376Z]     ✅ Next.js Configuration: PASS
+[2025-08-24T02:41:42.376Z]   Running: Environment Variables
+[2025-08-24T02:41:42.376Z]     ✅ Environment Variables: PASS
+[2025-08-24T02:41:42.376Z]   Running: File Permissions
+[2025-08-24T02:41:42.377Z]     ✅ File Permissions: PASS
+[2025-08-24T02:41:42.377Z]   Running: Build Artifacts
+[2025-08-24T02:41:42.378Z]     ✅ Build Artifacts: PASS
+[2025-08-24T02:41:42.389Z] 📊 Pre-build health report saved to /workspace/public/reports/pre-build-health/latest.json and /workspace/public/reports/pre-build-health/index.html
+[2025-08-24T02:41:42.389Z] 📊 Pre-build health check complete
+[2025-08-24T02:41:42.389Z]    Total checks: 6
+[2025-08-24T02:41:42.389Z]    Passed: 6
+[2025-08-24T02:41:42.389Z]    Failed: 0
+[2025-08-24T02:41:42.389Z]    Build status: ✅ READY
+[2025-08-24T02:41:42.389Z] ✅ All pre-build health checks passed

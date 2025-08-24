@@ -52,3 +52,5 @@ const ThankYouPage: React.FC = () => {
 		</>
 	);
 }
+
+export default Thankyou;
