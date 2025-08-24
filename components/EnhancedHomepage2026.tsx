@@ -74,52 +74,82 @@ const EnhancedHomepage2026: React.FC = () => {
 
   const featuredServices = [
     {
-      title: "Quantum AI Content Factory",
+      id: "quantum-ai-content-factory",
+      name: "Quantum AI Content Factory",
       description: "Generate unlimited high-quality content with quantum AI processing",
-      icon: Brain,
-      color: "from-purple-600 to-pink-700",
-      price: "$1,299/month",
-      features: ["Quantum AI content generation", "Unlimited content creation", "Multi-format support"]
+      category: ["AI", "Quantum", "Content Creation"],
+      features: ["Quantum AI content generation", "Unlimited content creation", "Multi-format support"],
+      pricing: "$1,299/month",
+      rating: 4.9,
+      icon: "🧠",
+      href: "/services/quantum-ai-content-factory",
+      isPopular: true,
+      isNew: false
     },
     {
-      title: "Autonomous Customer Success Platform",
+      id: "autonomous-customer-success-platform",
+      name: "Autonomous Customer Success Platform",
       description: "AI-driven customer success automation that never sleeps",
-      icon: Shield,
-      color: "from-cyan-600 to-blue-700",
-      price: "$899/month",
-      features: ["Autonomous monitoring", "Predictive churn prevention", "AI engagement scoring"]
+      category: ["AI", "Automation", "Customer Success"],
+      features: ["Autonomous monitoring", "Predictive churn prevention", "AI engagement scoring"],
+      pricing: "$899/month",
+      rating: 4.8,
+      icon: "🛡️",
+      href: "/services/autonomous-customer-success-platform",
+      isPopular: false,
+      isNew: true
     },
     {
-      title: "Quantum Financial Forecasting Engine",
+      id: "quantum-financial-forecasting-engine",
+      name: "Quantum Financial Forecasting Engine",
       description: "Predict market movements with quantum computing precision",
-      icon: Zap,
-      color: "from-emerald-600 to-teal-700",
-      price: "$2,499/month",
-      features: ["Quantum market analysis", "Real-time forecasting", "Portfolio optimization"]
+      category: ["Quantum", "Finance", "AI"],
+      features: ["Quantum market analysis", "Real-time forecasting", "Portfolio optimization"],
+      pricing: "$2,499/month",
+      rating: 4.9,
+      icon: "⚡",
+      href: "/services/quantum-financial-forecasting-engine",
+      isPopular: true,
+      isNew: false
     },
     {
-      title: "Autonomous DevOps Orchestrator",
+      id: "autonomous-devops-orchestrator",
+      name: "Autonomous DevOps Orchestrator",
       description: "Self-managing infrastructure that scales automatically",
-      icon: Cpu,
-      color: "from-orange-600 to-red-700",
-      price: "$1,599/month",
-      features: ["Autonomous management", "Self-healing systems", "Predictive optimization"]
+      category: ["AI", "Automation", "DevOps"],
+      features: ["Autonomous management", "Self-healing systems", "Predictive optimization"],
+      pricing: "$1,599/month",
+      rating: 4.7,
+      icon: "🚀",
+      href: "/services/autonomous-devops-orchestrator",
+      isPopular: false,
+      isNew: false
     },
     {
-      title: "Quantum Cybersecurity Monitor",
+      id: "quantum-cybersecurity-monitor",
+      name: "Quantum Cybersecurity Monitor",
       description: "Future-proof security with quantum-resistant encryption",
-      icon: Eye,
-      color: "from-red-600 to-pink-700",
-      price: "$1,799/month",
-      features: ["Quantum-resistant encryption", "AI threat detection", "Zero-trust architecture"]
+      category: ["Quantum", "Security", "AI"],
+      features: ["Quantum-resistant encryption", "AI threat detection", "Zero-trust architecture"],
+      pricing: "$1,799/month",
+      rating: 4.9,
+      icon: "🔒",
+      href: "/services/quantum-cybersecurity-monitor",
+      isPopular: true,
+      isNew: false
     },
     {
-      title: "Autonomous Marketing AI",
+      id: "autonomous-marketing-ai",
+      name: "Autonomous Marketing AI",
       description: "Marketing that runs itself with intelligent automation",
-      icon: Globe,
-      color: "from-blue-600 to-indigo-700",
-      price: "$1,099/month",
-      features: ["Autonomous campaigns", "AI optimization", "Predictive targeting"]
+      category: ["AI", "Marketing", "Automation"],
+      features: ["Autonomous campaigns", "AI optimization", "Predictive targeting"],
+      pricing: "$1,099/month",
+      rating: 4.6,
+      icon: "🎯",
+      href: "/services/autonomous-marketing-ai",
+      isPopular: false,
+      isNew: false
     }
   ];
 
@@ -214,7 +244,7 @@ const EnhancedHomepage2026: React.FC = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                   {featuredServices.map((service, index) => (
                     <motion.div
-                      key={service.title}
+                      key={service.name}
                       className="relative group"
                       initial={{ opacity: 0, y: 30 }}
                       whileInView={{ opacity: 1, y: 0 }}
@@ -222,15 +252,15 @@ const EnhancedHomepage2026: React.FC = () => {
                       transition={{ duration: 0.6, delay: index * 0.1 }}
                     >
                       <div className="w-12 h-12 mx-auto mb-3 bg-gradient-to-br from-cyan-500/20 to-purple-500/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                        <div className={stat.color}>
-                          <stat.icon className="w-6 h-6" aria-hidden="true" />
+                        <div className="text-cyan-400">
+                          <Star className="w-6 h-6" aria-hidden="true" />
                         </div>
                       </div>
-                      <div className="text-2xl font-bold text-white mb-1">{stat.value}</div>
-                      <div className="text-sm text-gray-400">{stat.label}</div>
-                    </div>
+                      <div className="text-2xl font-bold text-white mb-1">{service.name}</div>
+                      <div className="text-sm text-gray-400">{service.description}</div>
+                    </motion.div>
                   ))}
-                </motion.div>
+                </div>
 
                 {/* Scroll Indicator */}
                 <motion.div 
@@ -344,15 +374,17 @@ const EnhancedHomepage2026: React.FC = () => {
                 
                 <div className="relative z-10">
                   <div className="flex items-center justify-center mb-8">
-                    <div className={`p-6 rounded-2xl bg-gradient-to-r ${featuredServices[currentServiceIndex].color} shadow-2xl`}>
-                      {React.createElement(featuredServices[currentServiceIndex].icon, { className: "w-16 h-16 text-white" })}
+                    <div className="p-6 rounded-2xl bg-gradient-to-r from-cyan-500 to-blue-600 shadow-2xl">
+                      <div className="w-16 h-16 text-white text-4xl flex items-center justify-center">
+                        {featuredServices[currentServiceIndex].icon}
+                      </div>
                     </div>
                   </div>
                   
-                  <h3 className="text-4xl font-bold text-white mb-6">{featuredServices[currentServiceIndex].title}</h3>
+                  <h3 className="text-4xl font-bold text-white mb-6">{featuredServices[currentServiceIndex].name}</h3>
                   <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">{featuredServices[currentServiceIndex].description}</p>
                   
-                  <div className="text-3xl font-bold text-cyan-400 mb-8">{featuredServices[currentServiceIndex].price}</div>
+                  <div className="text-3xl font-bold text-cyan-400 mb-8">{featuredServices[currentServiceIndex].pricing}</div>
                   
                   <div className="flex flex-wrap justify-center gap-4 mb-8">
                     {featuredServices[currentServiceIndex].features.map((feature, index) => (
@@ -462,7 +494,7 @@ const EnhancedHomepage2026: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
               {[
                 {
-                  title: "AI Digital Advertising Platform",
+                  name: "AI Digital Advertising Platform",
                   description: "Intelligent advertising automation with AI-powered optimization",
                   price: "$799/month",
                   features: ["AI ad creation", "Multi-platform management", "ROI optimization"],
@@ -470,7 +502,7 @@ const EnhancedHomepage2026: React.FC = () => {
                   color: "from-blue-500 to-cyan-500"
                 },
                 {
-                  title: "Social Media Automation Suite",
+                  name: "Social Media Automation Suite",
                   description: "Complete social media automation for all major platforms",
                   price: "$599/month",
                   features: ["AI content generation", "Multi-platform scheduling", "Engagement automation"],
@@ -478,7 +510,7 @@ const EnhancedHomepage2026: React.FC = () => {
                   color: "from-purple-500 to-pink-500"
                 },
                 {
-                  title: "Content Marketing Automation",
+                  name: "Content Marketing Automation",
                   description: "AI-powered content creation and distribution automation",
                   price: "$699/month",
                   features: ["AI content generation", "SEO optimization", "Multi-channel distribution"],
@@ -486,7 +518,7 @@ const EnhancedHomepage2026: React.FC = () => {
                   color: "from-green-500 to-emerald-500"
                 },
                 {
-                  title: "Email Marketing Suite",
+                  name: "Email Marketing Suite",
                   description: "Advanced email marketing with AI-powered personalization",
                   price: "$399/month",
                   features: ["AI personalization", "Automated workflows", "ROI tracking"],
@@ -494,7 +526,7 @@ const EnhancedHomepage2026: React.FC = () => {
                   color: "from-orange-500 to-red-500"
                 },
                 {
-                  title: "Influencer Marketing Platform",
+                  name: "Influencer Marketing Platform",
                   description: "Complete influencer marketing automation and management",
                   price: "$899/month",
                   features: ["AI influencer discovery", "Campaign management", "ROI analytics"],
@@ -502,7 +534,7 @@ const EnhancedHomepage2026: React.FC = () => {
                   color: "from-yellow-500 to-orange-500"
                 },
                 {
-                  title: "Marketing Analytics Platform",
+                  name: "Marketing Analytics Platform",
                   description: "Advanced marketing analytics with AI-powered attribution",
                   price: "$999/month",
                   features: ["Multi-channel attribution", "Customer journey mapping", "Predictive modeling"],
@@ -511,7 +543,7 @@ const EnhancedHomepage2026: React.FC = () => {
                 }
               ].map((service, index) => (
                 <motion.div
-                  key={service.title}
+                  key={service.name}
                   className="p-8 rounded-2xl bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 hover:border-green-400/50 transition-all duration-300 group relative overflow-hidden"
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -524,7 +556,7 @@ const EnhancedHomepage2026: React.FC = () => {
                   
                   <div className="relative z-10">
                     <div className="text-4xl mb-4">{service.icon}</div>
-                    <h3 className="text-2xl font-bold text-white mb-4">{service.title}</h3>
+                    <h3 className="text-2xl font-bold text-white mb-4">{service.name}</h3>
                     <p className="text-gray-400 mb-6 text-lg">{service.description}</p>
                     <div className="text-2xl font-bold text-green-400 mb-6">{service.price}</div>
                     <ul className="space-y-3 mb-8">
@@ -615,7 +647,7 @@ const EnhancedHomepage2026: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {featuredServices.map((service, index) => (
                 <motion.div
-                  key={service.id}
+                  key={service.name}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -628,13 +660,13 @@ const EnhancedHomepage2026: React.FC = () => {
                       <div className="h-4 bg-gray-700 rounded mb-4"></div>
                     </div>
                   }>
-                    <LazyServiceCard service={service} />
+                    <LazyServiceCard service={service} index={index} />
                   </Suspense>
                 </motion.div>
               ))}
             </div>
           </div>
-        </section>
+        </motion.section>
 
         {/* Lazy Loaded Testimonials */}
         <Suspense fallback={

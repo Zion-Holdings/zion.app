@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search, X, Filter, TrendingUp, Clock, Star, Zap, Brain, Atom, Shield, Rocket } from 'lucide-react';
 
@@ -18,7 +18,7 @@ interface SearchResult {
 }
 
 interface SearchProps {
-  onSearch: (query: string) => void;
+  onSearch: (searchQuery: string) => void;
   onResultSelect: (result: SearchResult) => void;
   placeholder?: string;
   className?: string;
@@ -91,51 +91,6 @@ const EnhancedSearch: React.FC<SearchProps> = ({
     { id: 'business', name: 'Business', icon: Rocket, color: 'from-emerald-500 to-teal-500' }
   ];
 
-  // Debounced search function
-  const debouncedSearch = useCallback(
-    useMemo(
-      () => debounce((searchQuery: string) => {
-        if (searchQuery.trim().length < 2) {
-          setResults([]);
-          setShowResults(false);
-          return;
-        }
-
-        setIsSearching(true);
-        
-        // Simulate API call delay
-        setTimeout(() => {
-          const filteredResults = mockSearchResults.filter(result => {
-            const matchesQuery = result.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                               result.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                               result.category.toLowerCase().includes(searchQuery.toLowerCase());
-            
-            const matchesFilters = selectedFilters.length === 0 || 
-                                 selectedFilters.some(filter => 
-                                   result.category.toLowerCase().includes(filter.toLowerCase()) ||
-                                   result.type.toLowerCase().includes(filter.toLowerCase())
-                                 );
-            
-            return matchesQuery && matchesFilters;
-          });
-
-          // Sort by relevance
-          const sortedResults = filteredResults.sort((a, b) => b.relevance - a.relevance);
-          
-          setResults(sortedResults);
-          setShowResults(true);
-          setIsSearching(false);
-        }, 300);
-      }, 300),
-      [selectedFilters]
-    ),
-    [selectedFilters]
-  );
-
-  useEffect(() => {
-    debouncedSearch(query);
-  }, [query, debouncedSearch]);
-
   // Handle search input change
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
@@ -144,16 +99,32 @@ const EnhancedSearch: React.FC<SearchProps> = ({
     if (value.trim().length === 0) {
       setShowResults(false);
       setResults([]);
+      return;
     }
-  }, [suggestions, selectedIndex, query, handleSearch]);
 
-  // Close search on outside click
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
-        setIsOpen(false);
-      }
-    };
+    // Simple search implementation
+    setIsSearching(true);
+    setTimeout(() => {
+      const filteredResults = mockSearchResults.filter(result => {
+        const matchesQuery = result.name.toLowerCase().includes(value.toLowerCase()) ||
+                           result.description.toLowerCase().includes(value.toLowerCase()) ||
+                           result.category.toLowerCase().includes(value.toLowerCase());
+        
+        const matchesFilters = selectedFilters.length === 0 || 
+                             selectedFilters.some(filter => 
+                               result.category.toLowerCase().includes(filter.toLowerCase()) ||
+                               result.type.toLowerCase().includes(filter.toLowerCase())
+                             );
+        
+        return matchesQuery && matchesFilters;
+      });
+
+      const sortedResults = filteredResults.sort((a, b) => b.relevance - a.relevance);
+      setResults(sortedResults);
+      setShowResults(true);
+      setIsSearching(false);
+    }, 300);
+  };
 
   // Handle search submission
   const handleSearch = (e: React.FormEvent) => {
@@ -163,13 +134,7 @@ const EnhancedSearch: React.FC<SearchProps> = ({
       addToSearchHistory(query);
       setShowResults(false);
     }
-  }, [router, handleSearch]);
-
-  // Handle quick action click
-  const handleQuickAction = useCallback((action: string) => {
-    router.push(action);
-    setIsOpen(false);
-  }, [router]);
+  };
 
   // Add search to history
   const addToSearchHistory = (searchTerm: string) => {
@@ -253,104 +218,43 @@ const EnhancedSearch: React.FC<SearchProps> = ({
       <AnimatePresence>
         {showResults && (
           <motion.div
-            initial={{ opacity: 0, y: -10, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -10, scale: 0.95 }}
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="absolute top-full left-0 right-0 mt-2 bg-gray-900/95 backdrop-blur-md border border-gray-700 rounded-xl shadow-2xl z-50 max-h-96 overflow-y-auto"
+            className="absolute top-full left-0 right-0 mt-2 bg-gray-900/95 backdrop-blur-xl border border-gray-700 rounded-xl shadow-2xl z-50 max-h-96 overflow-y-auto"
           >
-            {/* Filters */}
-            {showFilters && (
-              <div className="p-4 border-b border-gray-700">
-                <div className="flex items-center gap-2 mb-3">
-                  <Filter className="w-4 h-4 text-gray-400" />
-                  <span className="text-sm font-medium text-gray-300">Filter by Category</span>
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {categories.map((category) => (
-                    <button
-                      key={category.id}
-                      onClick={() => toggleFilter(category.id)}
-                      className={`flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-300 ${
-                        selectedFilters.includes(category.id)
-                          ? `bg-gradient-to-r ${category.color} text-white`
-                          : 'bg-gray-700/50 text-gray-300 hover:bg-gray-600/50'
-                      }`}
-                    >
-                      <category.icon className="w-3 h-3" />
-                      {category.name}
-                    </button>
-                  )}
-                  <div className="flex-shrink-0 pr-4">
-                    <button
-                      onClick={() => handleSearch()}
-                      disabled={isSearching || !query.trim()}
-                      className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-lg font-medium hover:from-cyan-600 hover:to-blue-600 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
-                    >
-                      {isSearching ? 'Searching...' : 'Search'}
-                    </button>
+            <div className="p-4">
+              {/* Filters */}
+              {showFilters && (
+                <div className="mb-4">
+                  <div className="flex items-center gap-2 mb-3">
+                    <Filter className="w-4 h-4 text-gray-400" />
+                    <span className="text-sm font-medium text-gray-300">Filters</span>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {categories.map((category) => (
+                      <button
+                        key={category.id}
+                        onClick={() => toggleFilter(category.id)}
+                        className={`px-3 py-1.5 rounded-lg text-sm transition-all duration-300 ${
+                          selectedFilters.includes(category.id)
+                            ? 'bg-gradient-to-r from-cyan-500 to-blue-600 text-white'
+                            : 'bg-gray-700/50 text-gray-300 hover:bg-gray-600/50'
+                        }`}
+                      >
+                        {category.name}
+                      </button>
+                    ))}
                   </div>
                 </div>
+              )}
 
-                {/* Search Suggestions */}
-                <AnimatePresence>
-                  {showSuggestions && suggestions.length > 0 && (
-                    <motion.div
-                      initial={{ opacity: 0, y: -10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -10 }}
-                      className="absolute top-full left-0 right-0 mt-2 bg-gray-900 border border-gray-700 rounded-xl shadow-2xl overflow-hidden z-10"
-                    >
-                      {/* Quick Actions */}
-                      <div className="p-4 border-b border-gray-700">
-                        <h3 className="text-sm font-medium text-gray-400 mb-3">Quick Actions</h3>
-                        <div className="grid grid-cols-2 gap-2">
-                          {quickActions.map((action) => (
-                            <button
-                              key={action.name}
-                              onClick={() => handleQuickAction(action.action)}
-                              className="flex items-center space-x-2 p-2 text-sm text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors"
-                            >
-                              {action.icon}
-                              <span>{action.name}</span>
-                            </button>
-                          ))}
-                        </div>
-                      </div>
-
-                      {/* Suggestions */}
-                      <div className="max-h-64 overflow-y-auto">
-                        {suggestions.map((suggestion) => (
-                          <button
-                            key={suggestion.id}
-                            onClick={() => handleSuggestionClick(suggestion)}
-                            className="w-full flex items-center space-x-3 p-3 text-left hover:bg-gray-800 transition-colors"
-                          >
-                            <div className="text-gray-400">
-                              {suggestion.icon}
-                            </div>
-                            <div className="flex-1">
-                              <div className="text-white">{suggestion.text}</div>
-                              <div className="text-sm text-gray-400 capitalize">
-                                {suggestion.type} • {suggestion.category}
-                              </div>
-                            </div>
-                            <ArrowRight className="w-4 h-4 text-gray-400" />
-                          </button>
-                        ))}
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            )}
-
-            {/* Search Results */}
-            <div className="p-4">
+              {/* Results */}
               {isSearching ? (
-                <div className="flex items-center justify-center py-8">
-                  <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-cyan-400"></div>
-                  <span className="ml-3 text-gray-400">Searching...</span>
+                <div className="text-center py-8">
+                  <div className="animate-spin w-6 h-6 border-2 border-cyan-500 border-t-transparent rounded-full mx-auto mb-2"></div>
+                  <div className="text-gray-400">Searching...</div>
                 </div>
               ) : results.length > 0 ? (
                 <div className="space-y-3">
@@ -364,7 +268,7 @@ const EnhancedSearch: React.FC<SearchProps> = ({
                       <div className="flex items-start justify-between">
                         <div className="flex-1">
                           <h4 className="font-medium text-white mb-1">{result.name}</h4>
-                          <p className="text-sm text-gray-300 mb-2 line-clamp-2">{result.description}</p>
+                          <p className="text-sm text-gray-300 mb-2">{result.description}</p>
                           <div className="flex items-center gap-2">
                             <span className="px-2 py-1 bg-cyan-500/20 text-cyan-400 text-xs rounded-full">
                               {result.category}
@@ -439,17 +343,5 @@ const EnhancedSearch: React.FC<SearchProps> = ({
     </div>
   );
 };
-
-// Debounce utility function
-function debounce<T extends (...args: any[]) => any>(
-  func: T,
-  wait: number
-): (...args: Parameters<T>) => void {
-  let timeout: NodeJS.Timeout;
-  return (...args: Parameters<T>) => {
-    clearTimeout(timeout);
-    timeout = setTimeout(() => func(...args), wait);
-  };
-}
 
 export default EnhancedSearch;

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { 
   AlertTriangle, RefreshCw, Bug, 
   Home, ArrowLeft, Info,
-  FileText, Terminal, Shield
+  FileText, Terminal, Shield, Mail, Phone
 } from 'lucide-react';
 import { AnimatePresence } from 'framer-motion';
 
@@ -20,6 +20,8 @@ interface State {
   error: Error | null;
   errorInfo: ErrorInfo | null;
   errorId: string;
+  retryCount: number;
+  showDetails: boolean;
 }
 
 class ErrorBoundary extends Component<Props, State> {
@@ -29,7 +31,9 @@ class ErrorBoundary extends Component<Props, State> {
       hasError: false,
       error: null,
       errorInfo: null,
-      errorId: ''
+      errorId: '',
+      retryCount: 0,
+      showDetails: false
     };
   }
 
@@ -38,7 +42,9 @@ class ErrorBoundary extends Component<Props, State> {
       hasError: true,
       error,
       errorInfo: null,
-      errorId: `error-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`
+      errorId: `error-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
+      retryCount: 0,
+      showDetails: false
     };
   }
 
@@ -90,12 +96,13 @@ class ErrorBoundary extends Component<Props, State> {
   }
 
   private handleRetry = () => {
-    this.setState({
+    this.setState(prev => ({
       hasError: false,
       error: null,
       errorInfo: null,
-      errorId: ''
-    });
+      errorId: '',
+      retryCount: prev.retryCount + 1
+    }));
   };
 
   private handleGoHome = () => {

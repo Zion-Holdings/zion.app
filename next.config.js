@@ -12,7 +12,6 @@ const baseConfig = {
   poweredByHeader: false,
   trailingSlash: false,
   reactStrictMode: true,
-  swcMinify: true,
   
   // Environment configuration
   env: {

@@ -1,47 +1,3 @@
-<<<<<<< HEAD
-// Temporarily disabled due to TypeScript compilation issues
-/*
-import React, { useState, useEffect, useCallback, useRef, FocusEvent } from 'react';
-import { motion } from 'framer-motion';
-import { 
-  Eye, EyeOff, Volume2, VolumeX, Type, 
-  Contrast, ZoomIn, ZoomOut, RotateCcw,
-  Settings, X, Accessibility, Sun, Moon,
-  Highlighter, TextCursor, AlignJustify
-} from 'lucide-react';
-
-interface AccessibilitySettings {
-  highContrast: boolean;
-  largeText: boolean;
-  reducedMotion: boolean;
-  highlighter: boolean;
-  fontSize: number;
-  lineSpacing: number;
-  colorBlindMode: 'none' | 'protanopia' | 'deuteranopia' | 'tritanopia';
-}
-
-interface AccessibilityEnhancerProps {
-  children: React.ReactNode;
-}
-
-const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({ children }) => {
-  // Component implementation temporarily disabled
-  return <>{children}</>;
-};
-
-export default AccessibilityEnhancer;
-*/
-
-// Simple placeholder component
-import React from 'react';
-
-interface AccessibilityEnhancerProps {
-  children: React.ReactNode;
-}
-
-const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({ children }) => {
-  return <>{children}</>;
-=======
 import React, { useEffect, useRef } from 'react';
 
 interface AccessibilityEnhancerProps {
@@ -98,41 +54,34 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({
         }
         break;
       case 'Escape':
-        if (ariaExpanded !== undefined) {
-          // Close dropdown or modal
-          event.preventDefault();
-          // You can add custom close logic here
+        // Handle escape key for modals, dropdowns, etc.
+        if (onKeyDown) {
+          onKeyDown(event);
         }
         break;
       default:
-        break;
+        if (onKeyDown) {
+          onKeyDown(event);
+        }
     }
-
-    // Call custom onKeyDown handler
-    if (onKeyDown) {
-      onKeyDown(event);
-    }
-  };
-
-  const accessibilityProps = {
-    role,
-    'aria-label': ariaLabel,
-    'aria-describedby': ariaDescribedby,
-    'aria-expanded': ariaExpanded,
-    'aria-controls': ariaControls,
-    'aria-haspopup': ariaHaspopup,
-    tabIndex: focusable ? tabIndex : -1,
-    onKeyDown: handleKeyDown,
-    className: `${className} ${focusable ? 'focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2' : ''}`,
-    ref
   };
 
   return (
-    <div {...accessibilityProps}>
+    <div
+      ref={ref}
+      role={role}
+      aria-label={ariaLabel}
+      aria-describedby={ariaDescribedby}
+      aria-expanded={ariaExpanded}
+      aria-controls={ariaControls}
+      aria-haspopup={ariaHaspopup}
+      tabIndex={focusable ? tabIndex : -1}
+      onKeyDown={handleKeyDown}
+      className={className}
+    >
       {children}
     </div>
   );
->>>>>>> 6d7be8fce1d5e66d749ea8dd439e0663bfd83322
 };
 
 export default AccessibilityEnhancer;
