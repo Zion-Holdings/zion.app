@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import ErrorPage from 'next/error';
 import { ProfileLoadingState } from '@/components/profile/ProfileLoadingState';
 import type { TalentProfile as TalentProfileType } from '@/types/talent';
 import { ProfileErrorState } from '@/components/profile/ProfileErrorState';
@@ -8,6 +7,21 @@ import { ProfileErrorState } from '@/components/profile/ProfileErrorState';
 interface TalentProfileWithSocial extends TalentProfileType {
   social?: Record<string, string>;
 }
+
+// Simple error component for 404
+const ErrorPage: React.FC<{ statusCode: number }> = ({ statusCode }) => (
+  <div className="min-h-screen bg-zion-blue flex items-center justify-center text-white">
+    <div className="text-center">
+      <h1 className="text-6xl font-bold mb-4">{statusCode}</h1>
+      <p className="text-xl mb-4">
+        {statusCode === 404 ? 'Talent not found' : 'Something went wrong'}
+      </p>
+      <p className="text-zion-cyan">
+        The talent profile you're looking for doesn't exist or has been removed.
+      </p>
+    </div>
+  </div>
+);
 
 const TalentProfilePage: React.FC = () => {
   const router = useRouter();
