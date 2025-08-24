@@ -1,148 +1,131 @@
 
-import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import { Helmet } from "react-helmet-async";
 
 interface SEOProps {
   title: string;
   description: string;
   keywords?: string;
+  ogImage?: string;
+  ogUrl?: string;
   canonical?: string;
-  image?: string;
-  type?: 'website' | 'article' | 'profile' | 'product';
+  noindex?: boolean;
+  type?: "website" | "article" | "profile" | "product";
   author?: string;
   publishedTime?: string;
   modifiedTime?: string;
   section?: string;
   tags?: string[];
-  noindex?: boolean;
-  nofollow?: boolean;
-  structuredData?: object;
 }
 
 export function SEO({
   title,
   description,
   keywords,
+  // Default to a professional Zion Tech Group image
+  ogImage = "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=1200&h=630&fit=crop&crop=center",
+  ogUrl,
   canonical,
-  image = '/images/zion-og-image.jpg',
-  type = 'website',
+  noindex,
+  type = "website",
   author,
   publishedTime,
   modifiedTime,
   section,
   tags,
-  noindex = false,
-  nofollow = false,
-  structuredData
 }: SEOProps) {
-  const siteName = 'Zion Tech Group';
-  const fullTitle = title.includes(siteName) ? title : `${title} | ${siteName}`;
-  const fullCanonical = canonical || window.location.href;
+  const siteTitle = "Zion Tech Group - The Future of Tech & AI Marketplace";
+  const fullTitle = title ? `${title} | ${siteTitle}` : siteTitle;
+  const siteUrl = "https://ziontechgroup.com";
+  const fullCanonical = canonical || `${siteUrl}${window.location.pathname}`;
   
-  // Default structured data for organization
-  const defaultStructuredData = {
+  // Enhanced keywords with default tech-related terms
+  const defaultKeywords = [
+    "AI marketplace", "tech talent", "IT services", "software development",
+    "artificial intelligence", "technology consulting", "digital transformation",
+    "tech recruitment", "AI solutions", "enterprise technology"
+  ];
+  const allKeywords = keywords 
+    ? `${keywords}, ${defaultKeywords.join(", ")}`
+    : defaultKeywords.join(", ");
+
+  // Structured data for better SEO
+  const structuredData = {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Zion Tech Group",
-    "url": "https://ziontechgroup.com",
-    "logo": "https://ziontechgroup.com/images/zion-logo.png",
-    "description": "The premier marketplace for AI and tech talent, services, and equipment",
+    "@type": type === "website" ? "WebSite" : "Organization",
+    "name": siteTitle,
+    "url": siteUrl,
+    "description": "Zion Tech Group is a leading technology marketplace connecting businesses with world-class AI talent, IT services, and innovative tech solutions.",
+    "logo": "https://ziontechgroup.com/logo.png",
     "sameAs": [
       "https://twitter.com/ziontechgroup",
       "https://linkedin.com/company/ziontechgroup",
-      "https://github.com/ziontechgroup"
+      "https://facebook.com/ziontechgroup"
     ],
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+1-555-0123",
+      "telephone": "+1-800-ZION-TECH",
       "contactType": "customer service",
-      "email": "contact@ziontechgroup.com"
+      "availableLanguage": ["English", "Spanish", "French", "German", "Chinese"]
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "Global",
+      "addressLocality": "Worldwide"
     }
   };
 
-  // Merge with custom structured data
-  const finalStructuredData = structuredData || defaultStructuredData;
-
   return (
     <Helmet>
-      {/* Basic Meta Tags */}
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
-      {keywords && <meta name="keywords" content={keywords} />}
-      <meta name="author" content={author || 'Zion Tech Group'} />
+      <meta name="keywords" content={allKeywords} />
+      <meta name="author" content={author || "Zion Tech Group"} />
+      <meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow"} />
       
-      {/* Canonical URL */}
-      <link rel="canonical" href={fullCanonical} />
-      
-      {/* Robots Meta */}
-      <meta name="robots" content={`${noindex ? 'noindex' : 'index'},${nofollow ? 'nofollow' : 'follow'}`} />
-      
-      {/* Open Graph Meta Tags */}
+      {/* Enhanced Open Graph / Facebook */}
+      <meta property="og:type" content={type} />
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
-      <meta property="og:type" content={type} />
-      <meta property="og:url" content={fullCanonical} />
-      <meta property="og:image" content={image} />
-      <meta property="og:image:width" content="1200" />
-      <meta property="og:image:height" content="630" />
-      <meta property="og:site_name" content={siteName} />
+      <meta property="og:image" content={ogImage} />
+      <meta property="og:url" content={ogUrl || fullCanonical} />
+      <meta property="og:site_name" content={siteTitle} />
       <meta property="og:locale" content="en_US" />
+      {author && <meta property="og:author" content={author} />}
+      {publishedTime && <meta property="article:published_time" content={publishedTime} />}
+      {modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
+      {section && <meta property="article:section" content={section} />}
+      {tags && tags.map(tag => <meta key={tag} property="article:tag" content={tag} />)}
       
-      {/* Twitter Card Meta Tags */}
+      {/* Enhanced Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@ziontechgroup" />
       <meta name="twitter:creator" content="@ziontechgroup" />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={image} />
+      <meta name="twitter:image" content={ogImage} />
+      <meta name="twitter:image:alt" content={description} />
       
-      {/* Article-specific meta tags */}
-      {type === 'article' && (
-        <>
-          {author && <meta property="article:author" content={author} />}
-          {publishedTime && <meta property="article:published_time" content={publishedTime} />}
-          {modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
-          {section && <meta property="article:section" content={section} />}
-          {tags && tags.map((tag, index) => (
-            <meta key={index} property="article:tag" content={tag} />
-          ))}
-        </>
-      )}
-      
-      {/* Additional Meta Tags */}
+      {/* Additional meta tags for better SEO */}
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta name="theme-color" content="#2e73ea" />
-      <meta name="msapplication-TileColor" content="#2e73ea" />
+      <meta name="theme-color" content="#1e40af" />
+      <meta name="msapplication-TileColor" content="#1e40af" />
       <meta name="apple-mobile-web-app-capable" content="yes" />
       <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-      <meta name="apple-mobile-web-app-title" content={siteName} />
+      <meta name="apple-mobile-web-app-title" content={siteTitle} />
       
-      {/* Favicon and App Icons */}
+      {/* Canonical URL */}
+      <link rel="canonical" href={fullCanonical} />
+      
+      {/* Favicon and app icons */}
       <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
       <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
       <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-      <link rel="manifest" href="/site.webmanifest" />
       
-      {/* Preconnect to external domains for performance */}
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-      
-      {/* Structured Data */}
+      {/* Structured data */}
       <script type="application/ld+json">
-        {JSON.stringify(finalStructuredData)}
+        {JSON.stringify(structuredData)}
       </script>
-      
-      {/* Additional SEO Meta Tags */}
-      <meta name="application-name" content={siteName} />
-      <meta name="mobile-web-app-capable" content="yes" />
-      <meta name="format-detection" content="telephone=no" />
-      
-      {/* Security Meta Tags */}
-      <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
-      <meta httpEquiv="X-Frame-Options" content="DENY" />
-      <meta httpEquiv="X-XSS-Protection" content="1; mode=block" />
-      <meta httpEquiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
     </Helmet>
   );
 }

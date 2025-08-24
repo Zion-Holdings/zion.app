@@ -11,18 +11,18 @@ import { QuickAccess } from "@/components/home/QuickAccess";
 import { FeatureCTAs } from "@/components/home/FeatureCTAs";
 import { FeatureHighlights } from "@/components/home/FeatureHighlights";
 import { ITServiceRequestHero } from "@/components/home/ITServiceRequestHero";
-import { PerformanceDashboard } from "@/components/PerformanceDashboard";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-background">
       <SEO 
-        title="Zion - The Tech & AI Marketplace" 
-        description="Discover top AI and tech talent, services, and equipment in one place. Connect with verified professionals and find the perfect match for your projects."
-        keywords="AI, technology, marketplace, services, talent, artificial intelligence, tech professionals, IT services, equipment rental"
+        title="Leading Tech & AI Marketplace - Connect with World-Class Talent & Services" 
+        description="Zion Tech Group is the premier marketplace for AI talent, IT services, and cutting-edge technology solutions. Connect with 10,000+ verified professionals, get 24/7 global IT support, and accelerate your digital transformation."
+        keywords="AI marketplace, tech talent, IT services, software development, artificial intelligence, technology consulting, digital transformation, tech recruitment, AI solutions, enterprise technology, Zion Tech Group"
         canonical="https://ziontechgroup.com/"
         type="website"
-        image="/images/zion-hero-image.jpg"
+        ogImage="https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=1200&h=630&fit=crop&crop=center"
+        tags={["AI", "Technology", "Marketplace", "IT Services", "Digital Transformation"]}
       />
 
       <ITServiceRequestHero />
@@ -40,11 +40,6 @@ export default function Home() {
       <HowItWorksSection />
       <FeaturedListingsSection />
       <NewsletterSection />
-
-      {/* Performance Dashboard - Only show in development */}
-      {process.env.NODE_ENV === 'development' && (
-        <PerformanceDashboard />
-      )}
     </div>
   );
 }
