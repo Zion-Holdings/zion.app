@@ -5,11 +5,7 @@ const KpiDashboard = dynamic(() => import('../../components/dashboard/KpiDashboa
 });
 
 export default function AdminKpiPage() {
-  return
-
-export default function KpiPage() {
   return (
-    <KpiDashboard admin />;
-}
+    <KpiDashboard admin />
   );
 }

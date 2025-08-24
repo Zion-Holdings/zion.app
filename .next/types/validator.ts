@@ -521,12 +521,6 @@ type ApiRouteConfig = {
   handler satisfies PagesPageConfig
 }
 
-// Validate ../../pages/admin/_middleware.ts
-{
-  const handler = {} as typeof import("../../pages/admin/_middleware.js")
-  handler satisfies PagesPageConfig
-}
-
 // Validate ../../pages/admin/analytics.tsx
 {
   const handler = {} as typeof import("../../pages/admin/analytics.js")
@@ -3413,12 +3407,6 @@ type ApiRouteConfig = {
   handler satisfies PagesPageConfig
 }
 
-// Validate ../../pages/dashboard/_middleware.ts
-{
-  const handler = {} as typeof import("../../pages/dashboard/_middleware.js")
-  handler satisfies PagesPageConfig
-}
-
 // Validate ../../pages/dashboard/ai-core/index.tsx
 {
   const handler = {} as typeof import("../../pages/dashboard/ai-core/index.js")
@@ -3674,18 +3662,6 @@ type ApiRouteConfig = {
 // Validate ../../pages/dora-metrics-dashboard.tsx
 {
   const handler = {} as typeof import("../../pages/dora-metrics-dashboard.js")
-  handler satisfies PagesPageConfig
-}
-
-// Validate ../../pages/download.page.tsx
-{
-  const handler = {} as typeof import("../../pages/download.page.js")
-  handler satisfies PagesPageConfig
-}
-
-// Validate ../../pages/download.tsx
-{
-  const handler = {} as typeof import("../../pages/download.js")
   handler satisfies PagesPageConfig
 }
 
