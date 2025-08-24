@@ -395,11 +395,11 @@ const EnterpriseSolutionsPage: React.FC = () => {
       <div className="bg-gradient-to-r from-zion-purple to-zion-purple-dark py-16">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">
-            Ready to Transform Your Enterprise?
+            Ready to Scale Your Enterprise?
           </h2>
           <p className="text-zion-slate-light text-lg mb-8 max-w-2xl mx-auto">
-            Let's discuss how our enterprise solutions can drive innovation, 
-            efficiency, and growth for your organization.
+            Let's discuss how our enterprise solutions can drive transformation, 
+            efficiency, and competitive advantage for your organization.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
@@ -414,6 +414,64 @@ const EnterpriseSolutionsPage: React.FC = () => {
             >
               Schedule Enterprise Consultation
             </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Footer Section */}
+      <div className="bg-zion-slate-dark py-12 border-t border-zion-blue-light">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            {/* Company Info */}
+            <div className="col-span-1 md:col-span-2">
+              <h3 className="text-xl font-bold text-white mb-4">Zion Tech Group</h3>
+              <p className="text-zion-slate-light mb-4">
+                Pioneering the future of technology with revolutionary AI consciousness, 
+                quantum computing, and autonomous solutions that transform businesses worldwide.
+              </p>
+              <div className="flex items-center gap-4 text-zion-slate-light">
+                <a href="https://ziontechgroup.com" className="hover:text-zion-cyan transition-colors">
+                  ziontechgroup.com
+                </a>
+              </div>
+            </div>
+
+            {/* Contact Info */}
+            <div>
+              <h4 className="text-lg font-semibold text-white mb-4">Contact</h4>
+              <div className="space-y-2 text-zion-slate-light">
+                <p>📱 +1 302 464 0950</p>
+                <p>✉️ kleber@ziontechgroup.com</p>
+                <p>📍 364 E Main St STE 1008<br />Middletown DE 19709</p>
+              </div>
+            </div>
+
+            {/* Quick Links */}
+            <div>
+              <h4 className="text-lg font-semibold text-white mb-4">Services</h4>
+              <div className="space-y-2">
+                <a href="/comprehensive-services" className="block text-zion-slate-light hover:text-zion-cyan transition-colors">
+                  Comprehensive Services
+                </a>
+                <a href="/ai-services" className="block text-zion-slate-light hover:text-zion-cyan transition-colors">
+                  AI Services
+                </a>
+                <a href="/enterprise-solutions" className="block text-zion-slate-light hover:text-zion-cyan transition-colors">
+                  Enterprise Solutions
+                </a>
+                <a href="/micro-saas-services" className="block text-zion-slate-light hover:text-zion-cyan transition-colors">
+                  Micro SAAS Services
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <div className="border-t border-zion-blue-light mt-8 pt-8 text-center">
+            <p className="text-zion-slate-light text-sm">
+              © 2024 Zion Tech Group. All rights reserved. | 
+              <a href="/privacy" className="ml-2 hover:text-zion-cyan transition-colors">Privacy Policy</a> | 
+              <a href="/terms" className="ml-2 hover:text-zion-cyan transition-colors">Terms of Service</a>
+            </p>
           </div>
         </div>
       </div>

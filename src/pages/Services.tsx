@@ -176,7 +176,7 @@ export function Services() {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20"
         >
           {filteredServices.map((service, index) => (
             <motion.div
@@ -269,44 +269,123 @@ export function Services() {
           ))}
         </motion.div>
 
-        {/* No Results Message */}
-        {filteredServices.length === 0 && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="text-center py-16"
-          >
-            <div className="text-6xl mb-4">🔍</div>
-            <h3 className="text-2xl font-bold text-zion-slate-light mb-2">No services found</h3>
-            <p className="text-zion-slate-light">Try adjusting your search terms or category filter</p>
-          </motion.div>
-        )}
-
-        {/* Call to Action */}
+        {/* Call to Action Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="text-center mt-20"
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="text-center mb-20"
         >
           <div className="bg-gradient-to-r from-zion-blue-light/20 to-zion-purple/20 border border-zion-cyan/30 rounded-2xl p-8 backdrop-blur-sm">
-            <h2 className="text-3xl font-bold text-zion-cyan mb-4">
-              Need a Custom Solution?
-            </h2>
+            <h2 className="text-3xl font-bold text-zion-cyan mb-6">Ready to Transform Your Business?</h2>
             <p className="text-zion-slate-light mb-6 max-w-2xl mx-auto">
-              Our team of experts can create tailored solutions to meet your specific business requirements. 
+              Our team of experts can create tailored solutions to meet your specific business requirements.
               Let's discuss how we can help transform your business.
             </p>
+
+            {/* Contact Information */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+              <div className="text-center">
+                <div className="text-3xl mb-3">📱</div>
+                <h3 className="text-lg font-bold text-zion-cyan mb-2">Call Us</h3>
+                <p className="text-zion-slate-light text-sm mb-2">Available 24/7</p>
+                <a href="tel:+13024640950" className="text-zion-cyan hover:text-white transition-colors">
+                  +1 302 464 0950
+                </a>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl mb-3">✉️</div>
+                <h3 className="text-lg font-bold text-zion-cyan mb-2">Email Us</h3>
+                <p className="text-zion-slate-light text-sm mb-2">Quick response</p>
+                <a href="mailto:kleber@ziontechgroup.com" className="text-zion-cyan hover:text-white transition-colors">
+                  kleber@ziontechgroup.com
+                </a>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl mb-3">📍</div>
+                <h3 className="text-lg font-bold text-zion-cyan mb-2">Visit Us</h3>
+                <p className="text-zion-slate-light text-sm mb-2">Main office</p>
+                <p className="text-zion-slate-light text-sm">
+                  364 E Main St STE 1008<br />
+                  Middletown DE 19709
+                </p>
+              </div>
+            </div>
+            
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-4 bg-gradient-to-r from-zion-cyan to-zion-purple text-white rounded-lg text-lg font-semibold hover:shadow-neon transition-all duration-300 transform hover:scale-105">
+              <a
+                href="mailto:kleber@ziontechgroup.com?subject=Custom Solution Consultation"
+                className="px-8 py-4 bg-gradient-to-r from-zion-cyan to-zion-purple text-white rounded-lg text-lg font-semibold hover:shadow-neon transition-all duration-300 transform hover:scale-105"
+              >
                 Schedule Consultation
-              </button>
-              <button className="px-8 py-4 bg-zion-blue-light/20 text-zion-cyan border border-zion-cyan/30 rounded-lg text-lg font-semibold hover:bg-zion-blue-light/30 transition-all duration-300">
-                Contact Sales
-              </button>
+              </a>
+              <a
+                href="tel:+13024640950"
+                className="px-8 py-4 bg-zion-blue-light/20 text-zion-cyan border border-zion-cyan/30 rounded-lg text-lg font-semibold hover:bg-zion-blue-light/30 transition-all duration-300"
+              >
+                Call Sales Team
+              </a>
             </div>
           </div>
         </motion.div>
+
+        {/* Footer Section */}
+        <div className="bg-zion-slate-dark py-12 border-t border-zion-blue-light">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+              {/* Company Info */}
+              <div className="col-span-1 md:col-span-2">
+                <h3 className="text-xl font-bold text-white mb-4">Zion Tech Group</h3>
+                <p className="text-zion-slate-light mb-4">
+                  Pioneering the future of technology with revolutionary AI consciousness, 
+                  quantum computing, and autonomous solutions that transform businesses worldwide.
+                </p>
+                <div className="flex items-center gap-4 text-zion-slate-light">
+                  <a href="https://ziontechgroup.com" className="hover:text-zion-cyan transition-colors">
+                    ziontechgroup.com
+                  </a>
+                </div>
+              </div>
+
+              {/* Contact Info */}
+              <div>
+                <h4 className="text-lg font-semibold text-white mb-4">Contact</h4>
+                <div className="space-y-2 text-zion-slate-light">
+                  <p>📱 +1 302 464 0950</p>
+                  <p>✉️ kleber@ziontechgroup.com</p>
+                  <p>📍 364 E Main St STE 1008<br />Middletown DE 19709</p>
+                </div>
+              </div>
+
+              {/* Quick Links */}
+              <div>
+                <h4 className="text-lg font-semibold text-white mb-4">Services</h4>
+                <div className="space-y-2">
+                  <a href="/comprehensive-services" className="block text-zion-slate-light hover:text-zion-cyan transition-colors">
+                    Comprehensive Services
+                  </a>
+                  <a href="/ai-services" className="block text-zion-slate-light hover:text-zion-cyan transition-colors">
+                    AI Services
+                  </a>
+                  <a href="/enterprise-solutions" className="block text-zion-slate-light hover:text-zion-cyan transition-colors">
+                    Enterprise Solutions
+                  </a>
+                  <a href="/micro-saas-services" className="block text-zion-slate-light hover:text-zion-cyan transition-colors">
+                    Micro SAAS Services
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+            <div className="border-t border-zion-blue-light mt-8 pt-8 text-center">
+              <p className="text-zion-slate-light text-sm">
+                © 2024 Zion Tech Group. All rights reserved. | 
+                <a href="/privacy" className="ml-2 hover:text-zion-cyan transition-colors">Privacy Policy</a> | 
+                <a href="/terms" className="ml-2 hover:text-zion-cyan transition-colors">Terms of Service</a>
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
