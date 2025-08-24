@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 interface AccessibilityEnhancerProps {
   children: React.ReactNode;
@@ -15,8 +15,8 @@ interface AccessibilityEnhancerProps {
   skipToContent?: boolean;
 }
 
-export default function AccessibilityEnhancer({ 
-  children, 
+const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({
+  children,
   role,
   'aria-label': ariaLabel,
   'aria-describedby': ariaDescribedby,
@@ -28,90 +28,45 @@ export default function AccessibilityEnhancer({
   className = '',
   focusable = true,
   skipToContent = false
-}: AccessibilityEnhancerProps) {
-  const [isHighContrast, setIsHighContrast] = useState(false);
-  const [isReducedMotion, setIsReducedMotion] = useState(false);
-  const [fontSize, setFontSize] = useState(16);
+}) => {
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Check for user preferences
-    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-    setIsReducedMotion(mediaQuery.matches);
-
-    const handleMotionChange = (e: MediaQueryListEvent) => {
-      setIsReducedMotion(e.matches);
-    };
-
-    mediaQuery.addEventListener('change', handleMotionChange);
-
-    // Check for high contrast preference
-    const highContrastQuery = window.matchMedia('(prefers-contrast: high)');
-    setIsHighContrast(highContrastQuery.matches);
-
-    const handleContrastChange = (e: MediaQueryListEvent) => {
-      setIsHighContrast(e.matches);
-    };
-
-    highContrastQuery.addEventListener('change', handleContrastChange);
-
-    // Apply accessibility features
-    applyAccessibilityFeatures();
-
-    return () => {
-      mediaQuery.removeEventListener('change', handleMotionChange);
-      highContrastQuery.removeEventListener('change', handleContrastChange);
-    };
-  }, []);
-
-  useEffect(() => {
-    // Apply accessibility features when preferences change
-    applyAccessibilityFeatures();
-  }, [isHighContrast, isReducedMotion, fontSize]);
-
-  const applyAccessibilityFeatures = () => {
-    const root = document.documentElement;
-    
-    // Apply high contrast mode
-    if (isHighContrast) {
-      root.style.setProperty('--text-color', '#000000');
-      root.style.setProperty('--bg-color', '#ffffff');
-      root.style.setProperty('--accent-color', '#0000ff');
-    } else {
-      root.style.removeProperty('--text-color');
-      root.style.removeProperty('--bg-color');
-      root.style.removeProperty('--accent-color');
+    if (skipToContent && ref.current) {
+      ref.current.focus();
     }
-
-    // Apply reduced motion
-    if (isReducedMotion) {
-      root.style.setProperty('--animation-duration', '0s');
-      root.style.setProperty('--transition-duration', '0s');
-    } else {
-      root.style.removeProperty('--animation-duration');
-      root.style.removeProperty('--transition-duration');
-    }
-
-    // Apply font size
-    root.style.setProperty('--base-font-size', `${fontSize}px`);
-  };
+  }, [skipToContent]);
 
   const handleKeyDown = (event: React.KeyboardEvent) => {
-    if (onKeyDown) {
-      onKeyDown(event);
-    }
-
-    // Handle common accessibility shortcuts
+    // Handle common keyboard interactions
     switch (event.key) {
-      case 'Escape':
-        // Close modals, dropdowns, etc.
-        break;
-      case 'Tab':
-        // Handle tab navigation
-        break;
       case 'Enter':
       case ' ':
-        // Handle activation
+        if (role === 'button' || role === 'link') {
+          event.preventDefault();
+          // Trigger click event
+          const clickEvent = new MouseEvent('click', {
+            bubbles: true,
+            cancelable: true,
+            view: window
+          });
+          event.currentTarget.dispatchEvent(clickEvent);
+        }
         break;
+      case 'Escape':
+        if (ariaExpanded !== undefined) {
+          // Close dropdown or modal
+          event.preventDefault();
+          // You can add custom close logic here
+        }
+        break;
+      default:
+        break;
+    }
+
+    // Call custom onKeyDown handler
+    if (onKeyDown) {
+      onKeyDown(event);
     }
   };
 
@@ -124,34 +79,15 @@ export default function AccessibilityEnhancer({
     'aria-haspopup': ariaHaspopup,
     tabIndex: focusable ? tabIndex : -1,
     onKeyDown: handleKeyDown,
-    className: `accessibility-enhanced ${className}`.trim()
+    className: `${className} ${focusable ? 'focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2' : ''}`,
+    ref
   };
 
   return (
     <div {...accessibilityProps}>
       {children}
-      
-      {/* Accessibility controls */}
-      <div className="sr-only">
-        <button
-          onClick={() => setFontSize(prev => Math.min(prev + 2, 24))}
-          aria-label="Increase font size"
-        >
-          Increase font size
-        </button>
-        <button
-          onClick={() => setFontSize(prev => Math.max(prev - 2, 12))}
-          aria-label="Decrease font size"
-        >
-          Decrease font size
-        </button>
-        <button
-          onClick={() => setIsHighContrast(!isHighContrast)}
-          aria-label={`${isHighContrast ? 'Disable' : 'Enable'} high contrast`}
-        >
-          {isHighContrast ? 'Disable' : 'Enable'} high contrast
-        </button>
-      </div>
     </div>
   );
-}
+};
+
+export default AccessibilityEnhancer;
