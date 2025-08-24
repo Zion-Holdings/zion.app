@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { GradientHeading } from "@/components/GradientHeading";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { NeonGlow } from "@/components/ui/AnimatedBackground";
 
 export function HeroSection() {
   const { t } = useTranslation();
@@ -20,13 +21,17 @@ export function HeroSection() {
       </div>
       
       <div className="container relative z-10 px-4 mx-auto text-center">
-        <GradientHeading className="mb-6 text-5xl md:text-7xl font-bold">
-          {t('home.hero_title')}
-        </GradientHeading>
+        <NeonGlow color="zion-purple" intensity="high">
+          <GradientHeading className="mb-6 text-5xl md:text-7xl font-bold">
+            {t('home.hero_title')}
+          </GradientHeading>
+        </NeonGlow>
 
-        <p className="text-xl md:text-2xl text-zion-slate-light mb-10 max-w-3xl mx-auto">
-          {t('home.hero_subtitle')}
-        </p>
+        <NeonGlow color="zion-cyan" intensity="medium">
+          <p className="text-xl md:text-2xl text-zion-slate-light mb-10 max-w-3xl mx-auto">
+            {t('home.hero_subtitle')}
+          </p>
+        </NeonGlow>
 
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <Button
