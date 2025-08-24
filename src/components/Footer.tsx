@@ -1,193 +1,200 @@
 import React from 'react';
-import { Link } from "react-router-dom";
-import { Facebook, Twitter, Instagram, Github, Linkedin, Mail, Phone, MapPin, Zap, Brain, Shield, Cloud } from "lucide-react";
+import { Link } from 'react-router-dom';
 
 export function Footer() {
+  const currentYear = new Date().getFullYear();
+
+  const footerSections = [
+    {
+      title: "Services",
+      links: [
+        { label: "AI Services", path: "/comprehensive-services?category=AI Services" },
+        { label: "Micro SAAS", path: "/comprehensive-services?category=Micro SAAS" },
+        { label: "IT Services", path: "/comprehensive-services?category=IT Services" },
+        { label: "Blockchain & Web3", path: "/comprehensive-services?category=Blockchain & Web3" },
+        { label: "IoT & Edge Computing", path: "/comprehensive-services?category=IoT & Edge Computing" },
+        { label: "Cybersecurity", path: "/comprehensive-services?category=Cybersecurity Services" },
+        { label: "Data Science", path: "/comprehensive-services?category=Data Science & Analytics" }
+      ]
+    },
+    {
+      title: "Company",
+      links: [
+        { label: "About Us", path: "/" },
+        { label: "Services Overview", path: "/services" },
+        { label: "Service Comparison", path: "/services-comparison" },
+        { label: "Onsite IT Services", path: "/it-onsite-services" },
+        { label: "Contact", path: "/" }
+      ]
+    },
+    {
+      title: "Resources",
+      links: [
+        { label: "Technology Blog", path: "/" },
+        { label: "Case Studies", path: "/" },
+        { label: "White Papers", path: "/" },
+        { label: "API Documentation", path: "/" },
+        { label: "Support Center", path: "/" }
+      ]
+    },
+    {
+      title: "Industries",
+      links: [
+        { label: "Healthcare", path: "/" },
+        { label: "Finance", path: "/" },
+        { label: "Manufacturing", path: "/" },
+        { label: "Retail", path: "/" },
+        { label: "Education", path: "/" },
+        { label: "Government", path: "/" }
+      ]
+    }
+  ];
+
   return (
-    <footer className="relative bg-zion-blue-dark text-white overflow-hidden">
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 left-0 w-full h-full">
-          <div className="absolute top-20 left-1/4 w-3 h-3 bg-zion-purple/20 rounded-full animate-pulse" />
-          <div className="absolute top-40 right-1/3 w-2 h-2 bg-zion-cyan/20 rounded-full animate-bounce" />
-          <div className="absolute bottom-20 left-1/2 w-2.5 h-2.5 bg-zion-purple/20 rounded-full animate-ping" />
-        </div>
+    <footer className="relative bg-gradient-to-br from-black via-gray-900 to-blue-900 text-white overflow-hidden">
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-0 left-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse animation-delay-1000"></div>
+        <div className="absolute bottom-0 left-1/2 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse animation-delay-2000"></div>
       </div>
 
-      <div className="container mx-auto px-4 py-16 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {/* Grid Pattern Overlay */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(6,182,212,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.1)_1px,transparent_1px)] bg-[size:50px_50px] opacity-20"></div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
+        {/* Main Footer Content */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
           {/* Company Info */}
-          <div>
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-zion-purple to-zion-cyan rounded-lg flex items-center justify-center">
-                <Zap className="h-6 w-6 text-white" />
+          <div className="lg:col-span-2">
+            <div className="flex items-center space-x-3 mb-6">
+              <div className="w-12 h-12 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-cyan-500/50">
+                Z
               </div>
               <div>
-                <h3 className="text-white font-bold text-lg">Zion Tech Group</h3>
-                <p className="text-zion-cyan text-sm">Innovation at Your Fingertips</p>
+                <h3 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
+                  Zion Tech Group
+                </h3>
+                <p className="text-gray-400 text-sm">The Tech & AI Marketplace</p>
               </div>
             </div>
-            <p className="text-zion-slate-light mb-6 leading-relaxed">
-              Your trusted partner for cutting-edge AI, IT, and SAAS solutions. 
-              We deliver innovative technology solutions that drive business growth and transformation.
-            </p>
             
+            <p className="text-gray-300 mb-6 max-w-md">
+              Empowering businesses with cutting-edge AI, Micro SAAS, and IT solutions. 
+              We transform ideas into innovative digital solutions that drive growth and efficiency.
+            </p>
+
             {/* Social Links */}
             <div className="flex space-x-4">
-              <a
-                href="https://linkedin.com/company/ziontechgroup"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 bg-zion-purple/20 border border-zion-purple/30 rounded-lg flex items-center justify-center text-zion-slate-light hover:text-zion-cyan hover:bg-zion-purple/30 transition-all duration-300"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="h-5 w-5" />
-              </a>
-              <a
-                href="https://github.com/ziontechgroup"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 bg-zion-purple/20 border border-zion-purple/30 rounded-lg flex items-center justify-center text-zion-slate-light hover:text-zion-cyan hover:bg-zion-purple/30 transition-all duration-300"
-                aria-label="GitHub"
-              >
-                <Github className="h-5 w-5" />
-              </a>
-              <a
-                href="https://twitter.com/ziontechgroup"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 bg-zion-purple/20 border border-zion-purple/30 rounded-lg flex items-center justify-center text-zion-slate-light hover:text-zion-cyan hover:bg-zion-purple/30 transition-all duration-300"
-                aria-label="Twitter"
-              >
-                <Twitter className="h-5 w-5" />
-              </a>
+              {[
+                { icon: "🔗", label: "LinkedIn", href: "#" },
+                { icon: "🐦", label: "Twitter", href: "#" },
+                { icon: "📘", label: "Facebook", href: "#" },
+                { icon: "📷", label: "Instagram", href: "#" }
+              ].map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  className="w-10 h-10 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 rounded-lg flex items-center justify-center text-cyan-400 hover:bg-cyan-500/30 hover:border-cyan-400 transition-all duration-300 group"
+                >
+                  <span className="text-lg group-hover:scale-110 transition-transform duration-300">
+                    {social.icon}
+                  </span>
+                </a>
+              ))}
             </div>
           </div>
 
-          {/* Services */}
-          <div>
-            <h3 className="text-white font-semibold mb-4 text-lg flex items-center gap-2">
-              <Brain className="h-5 w-5 text-zion-cyan" />
-              Our Services
-            </h3>
-            <ul className="space-y-3">
-              <li><Link to="/enhanced-services" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300 flex items-center gap-2 group">
-                <span className="w-1 h-1 bg-zion-cyan rounded-full group-hover:scale-150 transition-transform duration-300"></span>
-                AI Solutions
-              </Link></li>
-              <li><Link to="/enhanced-services" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300 flex items-center gap-2 group">
-                <span className="w-1 h-1 bg-zion-cyan rounded-full group-hover:scale-150 transition-transform duration-300"></span>
-                IT Services
-              </Link></li>
-              <li><Link to="/enhanced-services" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300 flex items-center gap-2 group">
-                <span className="w-1 h-1 bg-zion-cyan rounded-full group-hover:scale-150 transition-transform duration-300"></span>
-                SAAS Platforms
-              </Link></li>
-              <li><Link to="/enhanced-services" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300 flex items-center gap-2 group">
-                <span className="w-1 h-1 bg-zion-cyan rounded-full group-hover:scale-150 transition-transform duration-300"></span>
-                Cloud Solutions
-              </Link></li>
-              <li><Link to="/enhanced-services" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300 flex items-center gap-2 group">
-                <span className="w-1 h-1 bg-zion-cyan rounded-full group-hover:scale-150 transition-transform duration-300"></span>
-                Cybersecurity
-              </Link></li>
-            </ul>
-          </div>
-
-          {/* Company */}
-          <div>
-            <h3 className="text-white font-semibold mb-4 text-lg flex items-center gap-2">
-              <Shield className="h-5 w-5 text-zion-cyan" />
-              Company
-            </h3>
-            <ul className="space-y-3">
-              <li><Link to="/about" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300 flex items-center gap-2 group">
-                <span className="w-1 h-1 bg-zion-cyan rounded-full group-hover:scale-150 transition-transform duration-300"></span>
-                About Us
-              </Link></li>
-              <li><Link to="/contact" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300 flex items-center gap-2 group">
-                <span className="w-1 h-1 bg-zion-cyan rounded-full group-hover:scale-150 transition-transform duration-300"></span>
-                Contact
-              </Link></li>
-              <li><Link to="/enhanced-services" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300 flex items-center gap-2 group">
-                <span className="w-1 h-1 bg-zion-cyan rounded-full group-hover:scale-150 transition-transform duration-300"></span>
-                Services
-              </Link></li>
-              <li><Link to="/contact" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300 flex items-center gap-2 group">
-                <span className="w-1 h-1 bg-zion-cyan rounded-full group-hover:scale-150 transition-transform duration-300"></span>
-                Get Quote
-              </Link></li>
-            </ul>
-          </div>
-
-          {/* Contact Info */}
-          <div>
-            <h3 className="text-white font-semibold mb-4 text-lg flex items-center gap-2">
-              <Cloud className="h-5 w-5 text-zion-cyan" />
-              Contact Info
-            </h3>
-            <div className="space-y-4">
-              <div className="flex items-center gap-3 p-3 bg-zion-purple/10 border border-zion-purple/20 rounded-lg hover:bg-zion-purple/20 transition-colors duration-300">
-                <Phone className="h-5 w-5 text-zion-cyan" />
-                <div>
-                  <div className="text-white font-medium">+1 302 464 0950</div>
-                  <div className="text-zion-slate-light text-sm">Call us anytime</div>
-                </div>
-              </div>
-              <div className="flex items-center gap-3 p-3 bg-zion-purple/10 border border-zion-purple/20 rounded-lg hover:bg-zion-purple/20 transition-colors duration-300">
-                <Mail className="h-5 w-5 text-zion-cyan" />
-                <div>
-                  <div className="text-white font-medium">kleber@ziontechgroup.com</div>
-                  <div className="text-zion-slate-light text-sm">Email us today</div>
-                </div>
-              </div>
-              <div className="flex items-center gap-3 p-3 bg-zion-purple/10 border border-zion-purple/20 rounded-lg hover:bg-zion-purple/20 transition-colors duration-300">
-                <MapPin className="h-5 w-5 text-zion-cyan" />
-                <div>
-                  <div className="text-white font-medium">364 E Main St STE 1008</div>
-                  <div className="text-zion-slate-light text-sm">Middletown DE 19709</div>
-                </div>
-              </div>
+          {/* Footer Sections */}
+          {footerSections.map((section) => (
+            <div key={section.title}>
+              <h4 className="text-lg font-semibold text-cyan-400 mb-4 border-b border-cyan-500/30 pb-2">
+                {section.title}
+              </h4>
+              <ul className="space-y-3">
+                {section.links.map((link) => (
+                  <li key={link.label}>
+                    <Link
+                      to={link.path}
+                      className="text-gray-300 hover:text-cyan-400 transition-colors duration-200 text-sm hover:translate-x-1 inline-block"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
-          </div>
+          ))}
         </div>
 
-        {/* Newsletter Section */}
-        <div className="mt-12 pt-8 border-t border-zion-purple/30">
-          <div className="bg-gradient-to-r from-zion-purple/10 to-zion-cyan/10 border border-zion-purple/30 rounded-xl p-6">
-            <div className="text-center mb-4">
-              <h4 className="text-white font-semibold text-lg mb-2">Stay Updated with Innovation</h4>
-              <p className="text-zion-slate-light">Get the latest insights on AI, technology trends, and industry updates.</p>
+        {/* Contact & CTA Section */}
+        <div className="border-t border-cyan-500/30 pt-8 mb-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+            {/* Contact Info */}
+            <div className="space-y-3">
+              <h4 className="text-lg font-semibold text-cyan-400">Contact Information</h4>
+              <div className="space-y-2 text-sm text-gray-300">
+                <p className="flex items-center space-x-2">
+                  <span className="text-cyan-400">📱</span>
+                  <span>+1 302 464 0950</span>
+                </p>
+                <p className="flex items-center space-x-2">
+                  <span className="text-cyan-400">✉️</span>
+                  <span>kleber@ziontechgroup.com</span>
+                </p>
+                <p className="flex items-center space-x-2">
+                  <span className="text-cyan-400">📍</span>
+                  <span>364 E Main St STE 1008<br />Middletown DE 19709</span>
+                </p>
+              </div>
             </div>
-            <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-2 bg-zion-blue-dark/50 border border-zion-purple/30 rounded-lg text-white placeholder:text-zion-slate-light focus:outline-none focus:border-zion-cyan transition-colors duration-300"
-              />
-              <button className="px-6 py-2 bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white rounded-lg font-medium transition-all duration-300 hover:scale-105">
-                Subscribe
+
+            {/* Newsletter */}
+            <div className="space-y-3">
+              <h4 className="text-lg font-semibold text-cyan-400">Stay Updated</h4>
+              <p className="text-sm text-gray-300">Get the latest tech insights and service updates</p>
+              <div className="flex space-x-2">
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  className="flex-1 px-3 py-2 bg-gray-800/50 border border-cyan-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400/50"
+                />
+                <button className="px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-lg hover:from-cyan-400 hover:to-blue-400 transition-all duration-300 text-sm font-medium">
+                  Subscribe
+                </button>
+              </div>
+            </div>
+
+            {/* CTA */}
+            <div className="text-center lg:text-right">
+              <h4 className="text-lg font-semibold text-cyan-400 mb-3">Ready to Get Started?</h4>
+              <p className="text-sm text-gray-300 mb-4">Transform your business with our innovative solutions</p>
+              <button className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-lg font-medium hover:from-cyan-400 hover:to-blue-400 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cyan-500/30">
+                Get Free Consultation
               </button>
             </div>
           </div>
         </div>
 
-        {/* Bottom Section */}
-        <div className="mt-12 pt-8 border-t border-zion-purple/30">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-zion-slate-light text-sm">
-              &copy; {new Date().getFullYear()} Zion Tech Group. All rights reserved.
-            </p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="/privacy" className="text-zion-slate-light hover:text-zion-cyan text-sm transition-colors duration-300">Privacy Policy</a>
-              <a href="/terms" className="text-zion-slate-light hover:text-zion-cyan text-sm transition-colors duration-300">Terms of Service</a>
+        {/* Bottom Bar */}
+        <div className="border-t border-cyan-500/30 pt-6">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <div className="text-sm text-gray-400">
+              © {currentYear} Zion Tech Group. All rights reserved.
+            </div>
+            <div className="flex space-x-6 text-sm text-gray-400">
+              <Link to="/" className="hover:text-cyan-400 transition-colors duration-200">Privacy Policy</Link>
+              <Link to="/" className="hover:text-cyan-400 transition-colors duration-200">Terms of Service</Link>
+              <Link to="/" className="hover:text-cyan-400 transition-colors duration-200">Cookie Policy</Link>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Animated bottom border */}
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-zion-purple to-transparent opacity-60" />
+      {/* Floating Elements */}
+      <div className="absolute top-20 right-20 w-2 h-2 bg-cyan-400 rounded-full animate-ping"></div>
+      <div className="absolute bottom-32 left-32 w-3 h-3 bg-blue-400 rounded-full animate-pulse"></div>
+      <div className="absolute top-1/2 left-20 w-1 h-1 bg-purple-400 rounded-full animate-bounce"></div>
     </footer>
   );
 }

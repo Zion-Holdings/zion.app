@@ -1,44 +1,43 @@
 import React from 'react';
-import { Suspense } from 'react';
-import { Routes, Route } from 'react-router-dom';
-import { EnhancedHeader } from './components/header/EnhancedHeader';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Header } from './components/Header';
 import { Footer } from './components/Footer';
+import { Sidebar } from './components/Sidebar';
+import './App.css';
 
-// Only import components that exist
+// Lazy load pages
 const Home = React.lazy(() => import('./pages/Home'));
-const ContactPage = React.lazy(() => import('./pages/Contact'));
-const AboutPage = React.lazy(() => import('./pages/About'));
-const EnhancedServicesPage = React.lazy(() => import('./pages/EnhancedServicesPage'));
-const NotFoundPage = React.lazy(() => import('./pages/NotFound'));
-
-const baseRoutes = [
-  { path: '/', element: <Home /> },
-  { path: '/contact', element: <ContactPage /> },
-  { path: '/about', element: <AboutPage /> },
-  { path: '/enhanced-services', element: <EnhancedServicesPage /> },
-  { path: '*', element: <NotFoundPage /> },
-];
 
 const App = () => {
   return (
-    <div className="App">
-      <EnhancedHeader />
-      <Suspense fallback={
-        <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 flex items-center justify-center">
-          <div className="text-center">
-            <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-blue-400 mx-auto mb-4"></div>
-            <p className="text-blue-100 text-lg">Loading amazing content...</p>
-          </div>
-        </div>
-      }>
-        <Routes>
-          {baseRoutes.map(({ path, element }) => (
-            <Route key={path} path={path} element={element} />
-          ))}
-        </Routes>
-      </Suspense>
-      <Footer />
-    </div>
+    <Router>
+      <div className="App min-h-screen bg-gradient-to-br from-black via-gray-900 to-blue-900">
+        <Header />
+        <Sidebar />
+        
+        {/* Main Content with proper spacing for header and sidebar */}
+        <main className="ml-64 pt-20 min-h-screen">
+          <React.Suspense fallback={
+            <div className="flex items-center justify-center min-h-screen">
+              <div className="text-center">
+                <div className="w-16 h-16 border-4 border-cyan-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+                <p className="text-cyan-400 text-lg">Loading...</p>
+              </div>
+            </div>
+          }>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/services" element={<Home />} />
+              <Route path="/comprehensive-services" element={<Home />} />
+              <Route path="/services-comparison" element={<Home />} />
+              <Route path="/it-onsite-services" element={<Home />} />
+            </Routes>
+          </React.Suspense>
+        </main>
+        
+        <Footer />
+      </div>
+    </Router>
   );
 };
 

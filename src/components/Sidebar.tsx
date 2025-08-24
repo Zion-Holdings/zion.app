@@ -1,250 +1,173 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { cn } from '@/lib/utils';
-import { useAuth } from '@/hooks/useAuth';
-import { 
-  Home, 
-  ShoppingCart, 
-  Users, 
-  Settings, 
-  HelpCircle, 
-  FileText, 
-  Briefcase,
-  Building,
-  Globe,
-  MessageSquare,
-  BarChart3,
-  Smartphone,
-  Zap,
-  Shield,
-  BookOpen,
-  Mail,
-  Phone,
-  MapPin,
-  ChevronRight,
-  ChevronDown
-} from 'lucide-react';
 
-interface SidebarProps {
-  isOpen?: boolean;
-  onClose?: () => void;
-  className?: string;
-}
-
-export function Sidebar({ isOpen = true, onClose, className }: SidebarProps) {
-  const { user } = useAuth();
-  const isAuthenticated = !!user;
+export function Sidebar() {
+  const [isCollapsed, setIsCollapsed] = useState(false);
   const location = useLocation();
-  const [expandedSections, setExpandedSections] = useState<string[]>(['marketplace']);
 
-  const toggleSection = (section: string) => {
-    setExpandedSections(prev => 
-      prev.includes(section) 
-        ? prev.filter(s => s !== section)
-        : [...prev, section]
-    );
+  const navigationItems = [
+    {
+      title: "Main",
+      items: [
+        { path: '/', label: 'Dashboard', icon: '🏠', badge: null },
+        { path: '/services', label: 'Services', icon: '⚡', badge: 'New' },
+        { path: '/comprehensive-services', label: 'All Services', icon: '🚀', badge: null },
+        { path: '/services-comparison', label: 'Compare', icon: '📊', badge: null },
+        { path: '/it-onsite-services', label: 'Onsite IT', icon: '🔧', badge: 'Hot' }
+      ]
+    },
+    {
+      title: "AI & Tech",
+      items: [
+        { path: '/comprehensive-services?category=AI Services', label: 'AI Services', icon: '🤖', badge: null },
+        { path: '/comprehensive-services?category=Micro SAAS', label: 'Micro SAAS', icon: '💻', badge: null },
+        { path: '/comprehensive-services?category=Blockchain & Web3', label: 'Blockchain', icon: '⛓️', badge: null },
+        { path: '/comprehensive-services?category=IoT & Edge Computing', label: 'IoT & Edge', icon: '🌐', badge: null },
+        { path: '/comprehensive-services?category=Emerging Technologies', label: 'Emerging Tech', icon: '🔮', badge: 'Trending' }
+      ]
+    },
+    {
+      title: "Business",
+      items: [
+        { path: '/comprehensive-services?category=IT Services', label: 'IT Services', icon: '🖥️', badge: null },
+        { path: '/comprehensive-services?category=Cybersecurity Services', label: 'Cybersecurity', icon: '🔒', badge: null },
+        { path: '/comprehensive-services?category=Data Science & Analytics', label: 'Data Science', icon: '📈', badge: null }
+      ]
+    },
+    {
+      title: "Support",
+      items: [
+        { path: '/', label: 'Documentation', icon: '📚', badge: null },
+        { path: '/', label: 'Help Center', icon: '❓', badge: null },
+        { path: '/', label: 'Contact Support', icon: '💬', badge: null }
+      ]
+    }
+  ];
+
+  const isActive = (path: string) => {
+    if (path.includes('?')) {
+      const basePath = path.split('?')[0];
+      return location.pathname === basePath;
+    }
+    return location.pathname === path;
   };
 
-  const isActive = (path: string) => location.pathname === path || location.pathname.startsWith(path);
-
-  const navigationSections = [
-    {
-      id: 'main',
-      title: 'Main',
-      items: [
-        { name: 'Home', href: '/', icon: Home },
-        { name: 'About', href: '/about', icon: Building },
-        { name: 'Contact', href: '/contact', icon: Mail },
-        { name: 'Blog', href: '/blog', icon: BookOpen },
-      ]
-    },
-    {
-      id: 'marketplace',
-      title: 'Marketplace',
-      items: [
-        { name: 'Products', href: '/marketplace', icon: ShoppingCart },
-        { name: 'Services', href: '/services', icon: Briefcase },
-        { name: 'Talent', href: '/talent', icon: Users },
-        { name: 'Equipment', href: '/equipment', icon: Settings },
-        { name: 'Categories', href: '/categories', icon: FileText },
-        { name: 'Green IT', href: '/green-it', icon: Globe },
-        { name: 'AI Matcher', href: '/ai-matcher', icon: Zap },
-      ]
-    },
-    {
-      id: 'community',
-      title: 'Community',
-      items: [
-        { name: 'Forum', href: '/community', icon: MessageSquare },
-        { name: 'Partners', href: '/partners', icon: Building },
-        { name: 'Careers', href: '/careers', icon: Briefcase },
-      ]
-    },
-    {
-      id: 'support',
-      title: 'Support',
-      items: [
-        { name: 'Help Center', href: '/help', icon: HelpCircle },
-        { name: 'Support', href: '/support', icon: MessageSquare },
-        { name: 'Request Quote', href: '/request-quote', icon: Mail },
-      ]
-    },
-    {
-      id: 'enterprise',
-      title: 'Enterprise',
-      items: [
-        { name: 'Enterprise Plans', href: '/enterprise', icon: Building },
-        { name: 'Developer Portal', href: '/developers', icon: Code },
-        { name: 'Mobile App', href: '/mobile-launch', icon: Smartphone },
-      ]
-    }
-  ];
-
-  const authenticatedSections = [
-    {
-      id: 'dashboard',
-      title: 'Dashboard',
-      items: [
-        { name: 'Main Dashboard', href: '/dashboard', icon: BarChart3 },
-        { name: 'Projects', href: '/projects', icon: Briefcase },
-        { name: 'Messages', href: '/messages', icon: MessageSquare },
-        { name: 'Account Settings', href: '/settings/account', icon: Settings },
-      ]
-    }
-  ];
-
   return (
-    <div className={cn(
-      "bg-zion-blue-dark border-r border-zion-blue-light h-full overflow-y-auto transition-all duration-300",
-      isOpen ? "w-64" : "w-16",
-      className
-    )}>
-      <div className="p-4">
-        {/* Logo */}
-        <div className="mb-6">
-          <Link to="/" className="flex items-center space-x-2">
-            <span className="text-xl font-bold bg-gradient-to-r from-zion-cyan via-zion-purple-light to-zion-purple bg-clip-text text-transparent">
-              {isOpen ? 'ZION' : 'Z'}
-            </span>
-          </Link>
+    <aside className={`fixed left-0 top-0 h-full z-40 transition-all duration-300 ease-in-out ${
+      isCollapsed ? 'w-16' : 'w-64'
+    } bg-gradient-to-b from-black/95 via-gray-900/95 to-black/95 backdrop-blur-xl border-r border-cyan-500/30 shadow-2xl shadow-cyan-500/20`}>
+      
+      {/* Animated Background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-cyan-500/5 via-blue-500/5 to-purple-500/5"></div>
+      
+      {/* Grid Pattern */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(6,182,212,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.1)_1px,transparent_1px)] bg-[size:20px_20px] opacity-20"></div>
+
+      <div className="relative z-10 h-full flex flex-col">
+        {/* Header */}
+        <div className="flex items-center justify-between p-4 border-b border-cyan-500/30">
+          {!isCollapsed && (
+            <div className="flex items-center space-x-3">
+              <div className="w-8 h-8 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-cyan-500/50">
+                Z
+              </div>
+              <span className="text-white font-semibold text-sm">Zion Tech</span>
+            </div>
+          )}
+          
+          <button
+            onClick={() => setIsCollapsed(!isCollapsed)}
+            className="p-2 rounded-lg text-cyan-400 hover:bg-cyan-500/20 transition-colors duration-200"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              {isCollapsed ? (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 5l7 7-7 7M5 5l7 7-7 7" />
+              ) : (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 19l-7-7 7-7m8 14l-7-7 7-7" />
+              )}
+            </svg>
+          </button>
         </div>
 
-        {/* Navigation Sections */}
-        <nav className="space-y-4">
-          {navigationSections.map((section) => (
-            <div key={section.id}>
-              <button
-                onClick={() => toggleSection(section.id)}
-                className="flex items-center justify-between w-full text-left text-zion-slate-light hover:text-white transition-colors mb-2"
-              >
-                <span className="text-sm font-medium uppercase tracking-wide">
-                  {isOpen ? section.title : ''}
-                </span>
-                {isOpen && (
-                  expandedSections.includes(section.id) ? 
-                    <ChevronDown className="h-4 w-4" /> : 
-                    <ChevronRight className="h-4 w-4" />
-                )}
-              </button>
-              
-              {expandedSections.includes(section.id) && (
-                <ul className="space-y-1">
-                  {section.items.map((item) => {
-                    const Icon = item.icon;
-                    return (
-                      <li key={item.name}>
-                        <Link
-                          to={item.href}
-                          className={cn(
-                            "flex items-center space-x-3 px-3 py-2 rounded-md text-sm transition-colors",
-                            isActive(item.href)
-                              ? "bg-zion-purple/20 text-zion-cyan"
-                              : "text-zion-slate-light hover:bg-zion-purple/10 hover:text-zion-cyan"
-                          )}
-                        >
-                          <Icon className="h-4 w-4 flex-shrink-0" />
-                          {isOpen && <span>{item.name}</span>}
-                        </Link>
-                      </li>
-                    );
-                  })}
-                </ul>
+        {/* Navigation */}
+        <nav className="flex-1 overflow-y-auto py-4 px-2">
+          {navigationItems.map((section) => (
+            <div key={section.title} className="mb-6">
+              {!isCollapsed && (
+                <h3 className="px-3 mb-3 text-xs font-semibold text-cyan-400 uppercase tracking-wider">
+                  {section.title}
+                </h3>
               )}
-            </div>
-          ))}
-
-          {/* Authenticated Sections */}
-          {isAuthenticated && authenticatedSections.map((section) => (
-            <div key={section.id}>
-              <button
-                onClick={() => toggleSection(section.id)}
-                className="flex items-center justify-between w-full text-left text-zion-slate-light hover:text-white transition-colors mb-2"
-              >
-                <span className="text-sm font-medium uppercase tracking-wide">
-                  {isOpen ? section.title : ''}
-                </span>
-                {isOpen && (
-                  expandedSections.includes(section.id) ? 
-                    <ChevronDown className="h-4 w-4" /> : 
-                    <ChevronRight className="h-4 w-4" />
-                )}
-              </button>
               
-              {expandedSections.includes(section.id) && (
-                <ul className="space-y-1">
-                  {section.items.map((item) => {
-                    const Icon = item.icon;
-                    return (
-                      <li key={item.name}>
-                        <Link
-                          to={item.href}
-                          className={cn(
-                            "flex items-center space-x-3 px-3 py-2 rounded-md text-sm transition-colors",
-                            isActive(item.href)
-                              ? "bg-zion-purple/20 text-zion-cyan"
-                              : "text-zion-slate-light hover:bg-zion-purple/10 hover:text-zion-cyan"
+              <ul className="space-y-1">
+                {section.items.map((item) => (
+                  <li key={item.path}>
+                    <Link
+                      to={item.path}
+                      className={`group flex items-center px-3 py-2 rounded-lg transition-all duration-200 ${
+                        isActive(item.path)
+                          ? 'bg-gradient-to-r from-cyan-500/20 to-blue-500/20 text-white border border-cyan-500/50 shadow-lg shadow-cyan-500/30'
+                          : 'text-gray-300 hover:text-white hover:bg-white/10'
+                      }`}
+                    >
+                      <span className="text-lg min-w-[20px]">{item.icon}</span>
+                      
+                      {!isCollapsed && (
+                        <>
+                          <span className="ml-3 flex-1">{item.label}</span>
+                          {item.badge && (
+                            <span className={`px-2 py-1 text-xs rounded-full font-medium ${
+                              item.badge === 'New' 
+                                ? 'bg-green-500/20 text-green-400 border border-green-500/30'
+                                : item.badge === 'Hot'
+                                ? 'bg-red-500/20 text-red-400 border border-red-500/30'
+                                : 'bg-blue-500/20 text-blue-400 border border-blue-500/30'
+                            }`}>
+                              {item.badge}
+                            </span>
                           )}
-                        >
-                          <Icon className="h-4 w-4 flex-shrink-0" />
-                          {isOpen && <span>{item.name}</span>}
-                        </Link>
-                      </li>
-                    );
-                  })}
-                </ul>
-              )}
+                        </>
+                      )}
+                      
+                      {/* Active Indicator */}
+                      {isActive(item.path) && (
+                        <div className="absolute right-2 w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></div>
+                      )}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
           ))}
         </nav>
 
-        {/* Contact Info - Only show when expanded */}
-        {isOpen && (
-          <div className="mt-8 pt-6 border-t border-zion-blue-light">
-            <h4 className="text-white font-medium mb-3">Contact Info</h4>
-            <div className="space-y-2 text-zion-slate-light text-xs">
-              <div className="flex items-center space-x-2">
-                <Mail className="h-3 w-3" />
-                <span>contact@ziontechgroup.com</span>
+        {/* Footer */}
+        <div className="p-4 border-t border-cyan-500/30">
+          {!isCollapsed ? (
+            <div className="space-y-3">
+              <div className="text-center">
+                <div className="w-10 h-10 mx-auto bg-gradient-to-br from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 rounded-lg flex items-center justify-center">
+                  <span className="text-cyan-400 text-lg">💡</span>
+                </div>
+                <p className="text-xs text-gray-400 mt-2">Need Help?</p>
               </div>
-              <div className="flex items-center space-x-2">
-                <Phone className="h-3 w-3" />
-                <span>+1 (555) 123-4567</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <MapPin className="h-3 w-3" />
-                <span>San Francisco, CA</span>
-              </div>
+              <button className="w-full px-3 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-lg text-sm font-medium hover:from-cyan-400 hover:to-blue-400 transition-all duration-300">
+                Contact Support
+              </button>
             </div>
-          </div>
-        )}
+          ) : (
+            <div className="text-center">
+              <button className="w-8 h-8 mx-auto bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg flex items-center justify-center text-white text-sm hover:from-cyan-400 hover:to-blue-400 transition-all duration-300">
+                💬
+              </button>
+            </div>
+          )}
+        </div>
       </div>
-    </div>
+
+      {/* Floating Elements */}
+      <div className="absolute top-1/3 right-2 w-1 h-1 bg-cyan-400 rounded-full animate-ping"></div>
+      <div className="absolute bottom-1/3 right-2 w-1 h-1 bg-blue-400 rounded-full animate-pulse"></div>
+    </aside>
   );
 }
-
-// Add missing Code icon component
-const Code = ({ className }: { className?: string }) => (
-  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-  </svg>
-);
