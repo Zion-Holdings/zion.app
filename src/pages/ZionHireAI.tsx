@@ -19,6 +19,8 @@ export default function ZionHireAI() {
       <SEO 
         title="Zion Hire AI - White-labeled AI Recruiting Assistant" 
         description="Empower your company with AI-powered recruiting tools. Streamline hiring, improve matches, and enhance candidate experience."
+        keywords="AI hiring, AI recruiting, talent acquisition, AI assistant, Zion Hire AI"
+        canonical="https://ziontechgroup.com/zion-hire-ai"
       />
       <Header />
       <main className="flex-1">

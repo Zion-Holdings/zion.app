@@ -4,8 +4,8 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://app.ziontechgroup.com/sitemap.xml
-Sitemap: https://app.ziontechgroup.com/sitemap
+Sitemap: https://ziontechgroup.com/sitemap.xml
+Sitemap: https://ziontechgroup.com/sitemap
 
 # Specific rules for major crawlers
 User-agent: Googlebot
