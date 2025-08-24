@@ -13,6 +13,11 @@ interface SEOProps {
   structuredData?: object;
   noindex?: boolean;
   nofollow?: boolean;
+  author?: string;
+  publishedTime?: string;
+  modifiedTime?: string;
+  section?: string;
+  tags?: string[];
 }
 
 export function SEO({
@@ -25,10 +30,18 @@ export function SEO({
   twitterCard = 'summary_large_image',
   structuredData,
   noindex = false,
-  nofollow = false
+  nofollow = false,
+  author,
+  publishedTime,
+  modifiedTime,
+  section,
+  tags
 }: SEOProps) {
   const siteName = 'Zion Tech Group';
   const fullTitle = title.includes(siteName) ? title : `${title} | ${siteName}`;
+  const fullCanonicalUrl = canonical || 'https://ziontechgroup.com';
+  const fullImageUrl = ogImage.startsWith('http') ? ogImage : `https://ziontechgroup.com${ogImage}`;
+  
   const defaultStructuredData = {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -50,7 +63,6 @@ export function SEO({
   };
 
   const finalStructuredData = structuredData || defaultStructuredData;
->>>>>>> cursor/analyze-improve-and-deploy-ziontechgroup-app-f1c5
 
   return (
     <Helmet>
@@ -58,24 +70,16 @@ export function SEO({
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
       {keywords && <meta name="keywords" content={keywords} />}
-<<<<<<< HEAD
       <meta name="author" content={author || 'Zion Tech Group'} />
-=======
       <meta name="robots" content={`${noindex ? 'noindex' : 'index'}, ${nofollow ? 'nofollow' : 'follow'}`} />
->>>>>>> cursor/analyze-improve-and-deploy-ziontechgroup-app-f1c5
       
       {/* Canonical URL */}
       <link rel="canonical" href={fullCanonicalUrl} />
       
-<<<<<<< HEAD
-      {/* Robots Meta */}
-      {noindex && <meta name="robots" content="noindex" />}
-      {nofollow && <meta name="robots" content="nofollow" />}
-      
       {/* Open Graph Meta Tags */}
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
-      <meta property="og:type" content={type} />
+      <meta property="og:type" content={ogType} />
       <meta property="og:url" content={fullCanonicalUrl} />
       <meta property="og:image" content={fullImageUrl} />
       <meta property="og:image:width" content="1200" />
@@ -84,7 +88,7 @@ export function SEO({
       <meta property="og:locale" content="en_US" />
       
       {/* Twitter Card Meta Tags */}
-      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:card" content={twitterCard} />
       <meta name="twitter:site" content="@ziontechgroup" />
       <meta name="twitter:creator" content="@ziontechgroup" />
       <meta name="twitter:title" content={fullTitle} />
@@ -92,7 +96,7 @@ export function SEO({
       <meta name="twitter:image" content={fullImageUrl} />
       
       {/* Additional Open Graph Tags for Articles */}
-      {type === 'article' && (
+      {ogType === 'article' && (
         <>
           {publishedTime && <meta property="article:published_time" content={publishedTime} />}
           {modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
@@ -112,90 +116,71 @@ export function SEO({
       <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
       <meta name="apple-mobile-web-app-title" content={siteName} />
       
+      {/* Performance and Security */}
+      <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="format-detection" content="telephone=no" />
+      
       {/* Favicon and App Icons */}
       <link rel="icon" type="image/x-icon" href="/favicon.ico" />
       <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
       <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
       <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
       <link rel="manifest" href="/site.webmanifest" />
-=======
-      {/* Open Graph Meta Tags */}
-      <meta property="og:title" content={fullTitle} />
-      <meta property="og:description" content={description} />
-      <meta property="og:type" content={ogType} />
-      <meta property="og:url" content={canonical || 'https://ziontechgroup.com'} />
-      <meta property="og:image" content={ogImage} />
-      <meta property="og:site_name" content={siteName} />
-      <meta property="og:locale" content="en_US" />
-      
-      {/* Twitter Meta Tags */}
-      <meta name="twitter:card" content={twitterCard} />
-      <meta name="twitter:title" content={fullTitle} />
-      <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={ogImage} />
-      <meta name="twitter:site" content="@ziontechgroup" />
-      
-      {/* Additional Meta Tags */}
-      <meta name="author" content="Zion Tech Group" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta name="theme-color" content="#2e73ea" />
-      <meta name="msapplication-TileColor" content="#2e73ea" />
-      
-      {/* Performance and Security */}
-      <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-      <meta name="format-detection" content="telephone=no" />
->>>>>>> cursor/analyze-improve-and-deploy-ziontechgroup-app-f1c5
       
       {/* Preconnect to external domains for performance */}
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      <link rel="preconnect" href="https://www.google-analytics.com" />
+      <link rel="preconnect" href="https://www.googletagmanager.com" />
       
-<<<<<<< HEAD
-=======
-      {/* Favicon and App Icons */}
-      <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+      {/* DNS Prefetch for performance */}
+      <link rel="dns-prefetch" href="//www.google-analytics.com" />
+      <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+      <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+      <link rel="dns-prefetch" href="//fonts.gstatic.com" />
       
-      {/* Manifest */}
-      <link rel="manifest" href="/site.webmanifest" />
-      
->>>>>>> cursor/analyze-improve-and-deploy-ziontechgroup-app-f1c5
       {/* Structured Data */}
       <script type="application/ld+json">
         {JSON.stringify(finalStructuredData)}
       </script>
       
-<<<<<<< HEAD
-      {/* Additional Structured Data for Breadcrumbs */}
-      {canonical && (
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-              {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": siteUrl
-              },
-              {
-                "@type": "ListItem",
-                "position": 2,
-                "name": title,
-                "item": fullCanonicalUrl
-              }
-            ]
-          })}
-        </script>
-      )}
-=======
-      {/* Additional Performance Hints */}
-      <link rel="dns-prefetch" href="//cdn.ziontechgroup.com" />
-      <link rel="dns-prefetch" href="//api.ziontechgroup.com" />
->>>>>>> cursor/analyze-improve-and-deploy-ziontechgroup-app-f1c5
+      {/* Additional Structured Data for Organization */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "Zion Tech Group",
+          "url": "https://ziontechgroup.com",
+          "description": "The premier AI and tech marketplace connecting talent, services, and innovation.",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://ziontechgroup.com/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        })}
+      </script>
+      
+      {/* Breadcrumb Structured Data */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://ziontechgroup.com"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": title,
+              "item": fullCanonicalUrl
+            }
+          ]
+        })}
+      </script>
     </Helmet>
   );
 }

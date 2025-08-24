@@ -273,7 +273,7 @@ export default function ForumPostPage() {
             <div className="flex justify-between items-start mb-6">
               <div className="flex items-center gap-4">
                 <Avatar className="h-12 w-12">
-                  <AvatarImage src={post.authorAvatar} />
+                  <AvatarImage src={post.authorAvatar} alt={post.authorName} />
                   <AvatarFallback>{post.authorName.charAt(0)}</AvatarFallback>
                 </Avatar>
                 <div>

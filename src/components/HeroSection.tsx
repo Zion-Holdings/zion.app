@@ -44,7 +44,6 @@ export function HeroSection() {
   };
 
   return (
-<<<<<<< HEAD
     <section className="relative overflow-hidden py-20 md:py-32" role="banner" aria-labelledby="hero-title">
       {/* Background gradient effect */}
       <div className="absolute inset-0 bg-gradient-to-b from-zion-blue-dark via-zion-blue to-zion-blue-light opacity-80"></div>
@@ -53,25 +52,11 @@ export function HeroSection() {
       <div className="absolute inset-0">
         <motion.div 
           className="absolute top-1/4 left-1/4 w-2 h-2 rounded-full bg-zion-purple-light opacity-40"
-=======
-    <section className="relative overflow-hidden py-20 md:py-32" role="banner" aria-labelledby="hero-title">
-      {/* Background gradient effect */}
-      <div className="absolute inset-0 bg-gradient-to-b from-zion-blue-dark via-zion-blue to-zion-blue-light opacity-80"></div>
-      
-      {/* Enhanced animated floating particles */}
-      <div className="absolute inset-0">
-        <motion.div 
-          className="absolute top-1/4 left-1/4 w-2 h-2 rounded-full bg-zion-purple-light opacity-40"
->>>>>>> cursor/analyze-improve-and-deploy-ziontechgroup-app-f1c5
           variants={particleVariants}
           animate="animate"
         />
         <motion.div 
-<<<<<<< HEAD
-          className="absolute top-1/3 right-1/3 w-4 h-4 rounded-full bg-zion-cyan opacity-50"
-=======
           className="absolute top-1/3 right-1/3 w-3 h-3 rounded-full bg-zion-cyan opacity-30"
->>>>>>> cursor/analyze-improve-and-deploy-ziontechgroup-app-f1c5
           variants={particleVariants}
           animate="animate"
           style={{ animationDelay: "1s" }}

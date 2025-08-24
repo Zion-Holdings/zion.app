@@ -7,8 +7,8 @@ import { useScrollToTop } from "./hooks";
 import { WhitelabelProvider } from "./context/WhitelabelContext";
 import { Toaster } from "./components/ui/toaster";
 import { Toaster as SonnerToaster } from "./components/ui/sonner";
-import { PageLoader } from "./components/ui/LoadingSpinner";
 import { FloatingCTA } from "./components/FloatingCTA";
+import { PageLoader } from "./components/ui/PageLoader";
 import {
   AuthRoutes,
   DashboardRoutes,
@@ -23,7 +23,7 @@ import {
   DeveloperRoutes
 } from './routes';
 
-// Lazy load pages with better error handling
+// Lazy load pages for better performance
 const Home = React.lazy(() => import('./pages/Home'));
 const AIMatcherPage = React.lazy(() => import('./pages/AIMatcher'));
 const TalentDirectory = React.lazy(() => import('./pages/TalentDirectory'));
@@ -45,28 +45,9 @@ const OpenAppRedirect = React.lazy(() => import('./pages/OpenAppRedirect'));
 const ContactPage = React.lazy(() => import('./pages/Contact'));
 const ZionHireAI = React.lazy(() => import('./pages/ZionHireAI'));
 const RequestQuotePage = React.lazy(() => import('./pages/RequestQuote'));
-const About = React.lazy(() => import('./pages/About'));
-const GreenIT = React.lazy(() => import('./pages/GreenIT'));
-const Careers = React.lazy(() => import('./pages/Careers'));
-const Sitemap = React.lazy(() => import('./pages/Sitemap'));
-const Privacy = React.lazy(() => import('./pages/Privacy'));
-const Terms = React.lazy(() => import('./pages/Terms'));
-const HelpCenter = React.lazy(() => import('./pages/HelpCenterPage'));
-const ApiDocs = React.lazy(() => import('./pages/ApiDocsHub'));
-const DeveloperPortal = React.lazy(() => import('./pages/DeveloperPortal'));
 
 const baseRoutes = [
   { path: '/', element: <Home /> },
-  { path: '/about', element: <About /> },
-  { path: '/green-it', element: <GreenIT /> },
-  { path: '/careers', element: <Careers /> },
-  { path: '/sitemap', element: <Sitemap /> },
-  { path: '/privacy', element: <Privacy /> },
-  { path: '/terms', element: <Terms /> },
-  { path: '/help', element: <HelpCenter /> },
-  { path: '/api-docs', element: <ApiDocs /> },
-  { path: '/developers', element: <DeveloperPortal /> },
-  { path: '/ai-matcher', element: <AIMatcherPage /> },
   { path: '/match', element: <AIMatcherPage /> },
   { path: '/login', element: <Login /> },
   { path: '/signup', element: <Signup /> },
@@ -99,6 +80,14 @@ function EnhancedSuspenseFallback() {
     />
   );
 }
+
+// Error Boundary Component
+class ErrorBoundary extends React.Component<
+  { children: React.ReactNode },
+  { hasError: boolean; error?: Error }
+> {
+  constructor(props: { children: React.ReactNode }) {
+    super(props);
     this.state = { hasError: false };
   }
 
@@ -137,7 +126,6 @@ function EnhancedSuspenseFallback() {
 const App = () => {
   // Ensure each navigation starts at the top of the page
   useScrollToTop();
-<<<<<<< HEAD
 
   return (
     <ErrorBoundary>

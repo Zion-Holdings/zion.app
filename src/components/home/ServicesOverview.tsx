@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { ENHANCED_SERVICES, SERVICE_CATEGORIES, CONTACT_INFO } from '@/data/enhancedServices';
+import { ENHANCED_SERVICES, SERVICE_CATEGORIES } from '@/data/enhancedServices';
 import { Star, ArrowRight, Shield, Zap, TrendingUp, Users, Award, Phone, Mail, MapPin } from 'lucide-react';
 
 export function ServicesOverview() {
-  const featuredServices = ENHANCED_SERVICES.filter(service => service.featured).slice(0, 6);
+  const featuredServices = ENHANCED_SERVICES.slice(0, 6);
   const topCategories = SERVICE_CATEGORIES.slice(0, 8);
 
   return (
@@ -158,8 +158,8 @@ export function ServicesOverview() {
                 <Phone className="w-8 h-8 text-zion-cyan" />
               </div>
               <h4 className="text-xl font-bold text-zion-blue mb-2">Call Us</h4>
-              <a href={`tel:${CONTACT_INFO.mobile}`} className="text-zion-cyan hover:text-zion-cyan-dark font-semibold text-lg">
-                {CONTACT_INFO.mobile}
+              <a href="tel:+13024640950" className="text-zion-cyan hover:text-zion-cyan-dark font-semibold text-lg">
+                +1 (302) 464-0950
               </a>
             </div>
             <div className="text-center">
@@ -167,8 +167,8 @@ export function ServicesOverview() {
                 <Mail className="w-8 h-8 text-zion-cyan" />
               </div>
               <h4 className="text-xl font-bold text-zion-blue mb-2">Email Us</h4>
-              <a href={`mailto:${CONTACT_INFO.email}`} className="text-zion-cyan hover:text-zion-cyan-dark font-semibold text-lg">
-                {CONTACT_INFO.email}
+              <a href="mailto:kleber@ziontechgroup.com" className="text-zion-cyan hover:text-zion-cyan-dark font-semibold text-lg">
+                kleber@ziontechgroup.com
               </a>
             </div>
             <div className="text-center">
@@ -176,7 +176,7 @@ export function ServicesOverview() {
                 <MapPin className="w-8 h-8 text-zion-cyan" />
               </div>
               <h4 className="text-xl font-bold text-zion-blue mb-2">Visit Us</h4>
-              <p className="text-zion-slate-dark font-semibold">{CONTACT_INFO.address}</p>
+              <p className="text-zion-slate-dark font-semibold">Global - Remote & On-site Services</p>
             </div>
           </div>
 
