@@ -12,6 +12,8 @@ import HomePage from './pages/HomePage';
 import Privacy from './pages/Privacy';
 import Terms from './pages/Terms';
 import Cookies from './pages/Cookies';
+import Sitemap from './pages/Sitemap';
+import NotFound from './pages/NotFound';
 
 function App() {
   return (
@@ -32,7 +34,9 @@ function App() {
               <Route path="/privacy" element={<Privacy />} />
               <Route path="/terms" element={<Terms />} />
               <Route path="/cookies" element={<Cookies />} />
+              <Route path="/sitemap" element={<Sitemap />} />
               <Route path="/services/:category" element={<Services />} />
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </main>
         </div>

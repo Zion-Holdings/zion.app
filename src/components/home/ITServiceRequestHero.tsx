@@ -110,7 +110,7 @@ export default function ITServiceRequestHero() {
                 className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-lg py-6 px-8 group"
                 asChild
               >
-                <a href="/request-quote" className="flex items-center gap-2">
+                <a href="/quote" className="flex items-center gap-2">
                   Get Free Quote
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </a>
