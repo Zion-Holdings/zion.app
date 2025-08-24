@@ -1,19 +1,21 @@
 #!/usr/bin/env node
 
+'use strict';
+
 const fs = require('fs');
 const path = require('path');
 
-function main() {
-  const functionsDir = path.join(__dirname, '..', 'netlify', 'functions');
-  const files = fs.readdirSync(functionsDir).filter(f => f.endsWith('.js'));
-  const names = files.map(f => path.basename(f, '.js')).sort();
-  const manifest = {
-    generatedAt: new Date().toISOString(),
-    functions: names
-  };
-  const outPath = path.join(functionsDir, 'functions-manifest.json');
-  fs.writeFileSync(outPath, JSON.stringify(manifest, null, 2));
-  console.log('Wrote manifest with', names.length, 'functions to', outPath);
+function listFunctions(dir) {
+  const entries = fs.readdirSync(dir).filter(f => f.endsWith('.js'));
+  return entries.map(f => f.replace(/\.js$/, ''));
 }
 
-main();
+(function main() {
+  const root = process.cwd();
+  const fnDir = path.join(root, 'netlify', 'functions');
+  const out = path.join(fnDir, 'functions-manifest.json');
+  const names = listFunctions(fnDir).filter(n => n !== 'functions-manifest');
+  const json = { generatedAt: new Date().toISOString(), functions: names.sort() };
+  fs.writeFileSync(out, JSON.stringify(json, null, 2), 'utf8');
+  console.log(`Wrote manifest with ${names.length} functions.`);
+})();
