@@ -2,724 +2,645 @@ export interface MicroSaasService {
   id: string;
   title: string;
   description: string;
-  category: 'AI' | 'IT' | 'Development' | 'Analytics' | 'Security' | 'Automation' | 'Integration' | 'Consulting';
+  category: 'AI Services' | 'IT Services' | 'Micro SAAS' | 'Development' | 'Analytics' | 'Security' | 'Cloud' | 'Automation';
+  price: number;
+  currency: string;
+  pricingModel: 'one-time' | 'monthly' | 'yearly' | 'usage-based' | 'hourly';
   features: string[];
-  pricing: {
-    monthly: number;
-    yearly: number;
-    enterprise: number;
-    currency: string;
-  };
   benefits: string[];
-  useCases: string[];
-  targetAudience: string[];
-  integration: string[];
-  support: string[];
+  marketPrice: string;
+  contactLink: string;
+  tags: string[];
+  author: {
+    name: string;
+    id: string;
+    avatarUrl?: string;
+  };
+  images: string[];
   rating: number;
   reviewCount: number;
-  launchDate: string;
-  status: 'Live' | 'Beta' | 'Coming Soon';
-  website: string;
-  demo: string;
-  documentation: string;
-  apiAvailable: boolean;
-  freeTier: boolean;
-  tags: string[];
+  aiScore: number;
+  featured?: boolean;
+  location: string;
+  availability: string;
+  createdAt: string;
 }
 
 export const MICRO_SAAS_SERVICES: MicroSaasService[] = [
   // AI Services
   {
-    id: 'ai-content-generator-pro',
-    title: 'AI Content Generator Pro',
-    description: 'Advanced AI-powered content creation platform for blogs, social media, and marketing materials with multi-language support and SEO optimization.',
-    category: 'AI',
+    id: "ai-chatbot-builder",
+    title: "AI Chatbot Builder Pro",
+    description: "No-code AI chatbot creation platform with advanced NLP, multi-language support, and seamless integration capabilities for websites and applications.",
+    category: "AI Services",
+    price: 299,
+    currency: "$",
+    pricingModel: "monthly",
     features: [
-      'Multi-language content generation',
-      'SEO-optimized writing',
-      'Brand voice customization',
-      'Plagiarism detection',
-      'Content scheduling',
-      'Analytics dashboard',
-      'API integration',
-      'Team collaboration tools'
+      "Drag & Drop Interface",
+      "Multi-language Support",
+      "Advanced NLP Engine",
+      "Analytics Dashboard",
+      "API Integration",
+      "Custom Branding",
+      "24/7 Support"
     ],
-    pricing: {
-      monthly: 49,
-      yearly: 490,
-      enterprise: 999,
-      currency: '$'
-    },
     benefits: [
-      '10x faster content creation',
-      'SEO-optimized content',
-      'Consistent brand voice',
-      'Multi-language reach',
-      'Cost-effective marketing'
+      "Reduce customer service costs by 60%",
+      "24/7 customer support availability",
+      "Instant response to customer queries",
+      "Scalable customer interaction solution"
     ],
-    useCases: [
-      'Blog content creation',
-      'Social media posts',
-      'Email marketing campaigns',
-      'Product descriptions',
-      'SEO content optimization'
-    ],
-    targetAudience: [
-      'Marketing agencies',
-      'Content creators',
-      'E-commerce businesses',
-      'Startups',
-      'Enterprise marketing teams'
-    ],
-    integration: [
-      'WordPress',
-      'Shopify',
-      'HubSpot',
-      'Mailchimp',
-      'Social media platforms'
-    ],
-    support: [
-      '24/7 live chat',
-      'Email support',
-      'Video tutorials',
-      'API documentation',
-      'Dedicated account manager'
-    ],
-    rating: 4.8,
-    reviewCount: 1247,
-    launchDate: '2024-01-15',
-    status: 'Live',
-    website: 'https://ziontechgroup.com/ai-content-generator',
-    demo: 'https://ziontechgroup.com/ai-content-generator/demo',
-    documentation: 'https://ziontechgroup.com/ai-content-generator/docs',
-    apiAvailable: true,
-    freeTier: true,
-    tags: ['AI', 'Content Creation', 'SEO', 'Marketing', 'Automation']
-  },
-  {
-    id: 'smart-data-analytics',
-    title: 'Smart Data Analytics Platform',
-    description: 'Intelligent data analytics platform that automatically discovers insights, generates reports, and provides actionable recommendations using AI.',
-    category: 'Analytics',
-    features: [
-      'AI-powered insight discovery',
-      'Automated report generation',
-      'Predictive analytics',
-      'Real-time dashboards',
-      'Data visualization',
-      'Custom alerts',
-      'Data integration',
-      'Advanced filtering'
-    ],
-    pricing: {
-      monthly: 79,
-      yearly: 790,
-      enterprise: 1499,
-      currency: '$'
+    marketPrice: "Starting from $299/month (Industry average: $500-800/month)",
+    contactLink: "https://ziontechgroup.com/contact",
+    tags: ["AI Chatbot", "NLP", "Customer Service", "Automation"],
+    author: {
+      name: "Zion AI Solutions",
+      id: "zion-ai",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
     },
-    benefits: [
-      'Instant insights discovery',
-      'Automated reporting',
-      'Predictive business intelligence',
-      'Real-time decision making',
-      'Cost-effective analytics'
-    ],
-    useCases: [
-      'Business intelligence',
-      'Sales analytics',
-      'Customer behavior analysis',
-      'Performance tracking',
-      'Market research'
-    ],
-    targetAudience: [
-      'Data analysts',
-      'Business intelligence teams',
-      'Marketing managers',
-      'Sales teams',
-      'Executive leadership'
-    ],
-    integration: [
-      'Google Analytics',
-      'Salesforce',
-      'HubSpot',
-      'MySQL',
-      'PostgreSQL',
-      'Excel/CSV'
-    ],
-    support: [
-      'Priority support',
-      'Custom training',
-      'Data migration assistance',
-      'API support',
-      'Dedicated success manager'
-    ],
+    images: ["https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&h=500"],
     rating: 4.9,
-    reviewCount: 892,
-    launchDate: '2024-02-01',
-    status: 'Live',
-    website: 'https://ziontechgroup.com/smart-analytics',
-    demo: 'https://ziontechgroup.com/smart-analytics/demo',
-    documentation: 'https://ziontechgroup.com/smart-analytics/docs',
-    apiAvailable: true,
-    freeTier: true,
-    tags: ['Analytics', 'AI', 'Business Intelligence', 'Data Visualization', 'Reporting']
+    reviewCount: 156,
+    aiScore: 96,
+    featured: true,
+    location: "Global",
+    availability: "Immediate",
+    createdAt: "2024-01-15T10:30:00.000Z"
   },
   {
-    id: 'ai-customer-support',
-    title: 'AI Customer Support Assistant',
-    description: 'Intelligent customer support automation with natural language processing, ticket routing, and 24/7 availability.',
-    category: 'AI',
+    id: "ai-content-generator",
+    title: "AI Content Generation Suite",
+    description: "Enterprise-grade AI content creation platform for blogs, social media, marketing materials, and technical documentation with SEO optimization.",
+    category: "AI Services",
+    price: 199,
+    currency: "$",
+    pricingModel: "monthly",
     features: [
-      'Natural language processing',
-      'Automated ticket routing',
-      'Knowledge base integration',
-      'Multi-language support',
-      'Sentiment analysis',
-      'Escalation management',
-      'Performance analytics',
-      'CRM integration'
+      "Multi-format Content Creation",
+      "SEO Optimization",
+      "Brand Voice Consistency",
+      "Plagiarism Detection",
+      "Content Calendar",
+      "Team Collaboration",
+      "Analytics & Insights"
     ],
-    pricing: {
-      monthly: 39,
-      yearly: 390,
-      enterprise: 799,
-      currency: '$'
-    },
     benefits: [
-      '24/7 customer support',
-      'Instant response times',
-      'Reduced support costs',
-      'Improved customer satisfaction',
-      'Scalable support operations'
+      "10x faster content creation",
+      "SEO-optimized content generation",
+      "Consistent brand messaging",
+      "Reduced content creation costs"
     ],
-    useCases: [
-      'Customer service automation',
-      'FAQ handling',
-      'Ticket classification',
-      'Customer satisfaction monitoring',
-      'Support team optimization'
+    marketPrice: "Starting from $199/month (Industry average: $300-600/month)",
+    contactLink: "https://ziontechgroup.com/contact",
+    tags: ["Content Generation", "AI Writing", "SEO", "Marketing"],
+    author: {
+      name: "Zion Content AI",
+      id: "zion-content",
+      avatarUrl: "https://images.unsplash.com/photo-1573497161161-c3e73707e25c?auto=format&fit=crop&w=100&h=100"
+    },
+    images: ["https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=800&h=500"],
+    rating: 4.8,
+    reviewCount: 234,
+    aiScore: 94,
+    location: "Global",
+    availability: "Immediate",
+    createdAt: "2024-01-20T14:15:00.000Z"
+  },
+  {
+    id: "ai-data-analytics",
+    title: "AI-Powered Business Intelligence",
+    description: "Advanced analytics platform with predictive modeling, real-time dashboards, and AI-driven insights for data-driven decision making.",
+    category: "AI Services",
+    price: 499,
+    currency: "$",
+    pricingModel: "monthly",
+    features: [
+      "Real-time Dashboards",
+      "Predictive Analytics",
+      "Machine Learning Models",
+      "Data Visualization",
+      "Custom Reports",
+      "API Integration",
+      "Multi-source Data Connectors"
     ],
-    targetAudience: [
-      'E-commerce businesses',
-      'SaaS companies',
-      'Customer support teams',
-      'Service providers',
-      'Enterprise organizations'
+    benefits: [
+      "Uncover hidden business insights",
+      "Predict future trends accurately",
+      "Automate reporting processes",
+      "Improve decision-making speed"
     ],
-    integration: [
-      'Zendesk',
-      'Freshdesk',
-      'Intercom',
-      'Salesforce',
-      'Shopify',
-      'Custom APIs'
+    marketPrice: "Starting from $499/month (Industry average: $800-1500/month)",
+    contactLink: "https://ziontechgroup.com/contact",
+    tags: ["Business Intelligence", "Predictive Analytics", "Data Visualization", "ML"],
+    author: {
+      name: "Zion Analytics",
+      id: "zion-analytics",
+      avatarUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=100&h=100"
+    },
+    images: ["https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&h=500"],
+    rating: 4.9,
+    reviewCount: 89,
+    aiScore: 97,
+    featured: true,
+    location: "Global",
+    availability: "Immediate",
+    createdAt: "2024-02-01T09:45:00.000Z"
+  },
+
+  // IT Services
+  {
+    id: "cloud-migration-expert",
+    title: "Cloud Migration & Optimization",
+    description: "End-to-end cloud migration services including AWS, Azure, and Google Cloud with cost optimization, security implementation, and performance tuning.",
+    category: "IT Services",
+    price: 5000,
+    currency: "$",
+    pricingModel: "one-time",
+    features: [
+      "Multi-cloud Strategy",
+      "Cost Optimization",
+      "Security Implementation",
+      "Performance Tuning",
+      "Disaster Recovery",
+      "24/7 Monitoring",
+      "Training & Documentation"
     ],
-    support: [
-      'Setup assistance',
-      'Training sessions',
-      'Custom configuration',
-      'Priority support',
-      'Success planning'
+    benefits: [
+      "Reduce infrastructure costs by 40%",
+      "Improve system performance",
+      "Enhanced security and compliance",
+      "Scalable and flexible infrastructure"
     ],
+    marketPrice: "Starting from $5,000 (Industry average: $8,000-15,000)",
+    contactLink: "https://ziontechgroup.com/contact",
+    tags: ["Cloud Migration", "AWS", "Azure", "DevOps"],
+    author: {
+      name: "Zion Cloud Solutions",
+      id: "zion-cloud",
+      avatarUrl: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=100&h=100"
+    },
+    images: ["https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&h=500"],
+    rating: 4.8,
+    reviewCount: 67,
+    aiScore: 91,
+    location: "Global",
+    availability: "2-4 Weeks",
+    createdAt: "2024-01-25T11:20:00.000Z"
+  },
+  {
+    id: "cybersecurity-audit",
+    title: "Comprehensive Cybersecurity Audit",
+    description: "Full security assessment including penetration testing, vulnerability scanning, compliance review, and security roadmap development.",
+    category: "IT Services",
+    price: 3500,
+    currency: "$",
+    pricingModel: "one-time",
+    features: [
+      "Penetration Testing",
+      "Vulnerability Assessment",
+      "Compliance Review",
+      "Security Roadmap",
+      "Incident Response Plan",
+      "Employee Training",
+      "Ongoing Support"
+    ],
+    benefits: [
+      "Identify security vulnerabilities",
+      "Ensure compliance requirements",
+      "Protect against cyber threats",
+      "Build customer trust"
+    ],
+    marketPrice: "Starting from $3,500 (Industry average: $6,000-12,000)",
+    contactLink: "https://ziontechgroup.com/contact",
+    tags: ["Cybersecurity", "Penetration Testing", "Compliance", "Security"],
+    author: {
+      name: "Zion Security",
+      id: "zion-security",
+      avatarUrl: "https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=100&h=100"
+    },
+    images: ["https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=800&h=500"],
+    rating: 4.9,
+    reviewCount: 45,
+    aiScore: 93,
+    location: "Global",
+    availability: "1-2 Weeks",
+    createdAt: "2024-02-05T15:30:00.000Z"
+  },
+  {
+    id: "devops-automation",
+    title: "DevOps Automation & CI/CD",
+    description: "Complete DevOps transformation with automated CI/CD pipelines, infrastructure as code, monitoring, and deployment automation.",
+    category: "IT Services",
+    price: 4000,
+    currency: "$",
+    pricingModel: "one-time",
+    features: [
+      "CI/CD Pipeline Setup",
+      "Infrastructure as Code",
+      "Automated Testing",
+      "Monitoring & Alerting",
+      "Deployment Automation",
+      "Performance Optimization",
+      "Team Training"
+    ],
+    benefits: [
+      "10x faster deployment cycles",
+      "Reduced human errors",
+      "Improved code quality",
+      "Faster time to market"
+    ],
+    marketPrice: "Starting from $4,000 (Industry average: $7,000-12,000)",
+    contactLink: "https://ziontechgroup.com/contact",
+    tags: ["DevOps", "CI/CD", "Automation", "Infrastructure"],
+    author: {
+      name: "Zion DevOps",
+      id: "zion-devops",
+      avatarUrl: "https://images.unsplash.com/photo-1523475496153-3a12d3e9ad12?auto=format&fit=crop&w=100&h=100"
+    },
+    images: ["https://images.unsplash.com/photo-1523475496153-3a12d3e9ad12?auto=format&fit=crop&w=800&h=500"],
     rating: 4.7,
-    reviewCount: 1563,
-    launchDate: '2024-01-20',
-    status: 'Live',
-    website: 'https://ziontechgroup.com/ai-support',
-    demo: 'https://ziontechgroup.com/ai-support/demo',
-    documentation: 'https://ziontechgroup.com/ai-support/docs',
-    apiAvailable: true,
-    freeTier: true,
-    tags: ['AI', 'Customer Support', 'Automation', 'NLP', 'Help Desk']
+    reviewCount: 78,
+    aiScore: 89,
+    location: "Global",
+    availability: "3-5 Weeks",
+    createdAt: "2024-01-30T13:15:00.000Z"
+  },
+
+  // Micro SAAS
+  {
+    id: "project-management-saas",
+    title: "Project Management Suite",
+    description: "Comprehensive project management platform with task tracking, team collaboration, time management, and resource allocation tools.",
+    category: "Micro SAAS",
+    price: 29,
+    currency: "$",
+    pricingModel: "monthly",
+    features: [
+      "Task Management",
+      "Team Collaboration",
+      "Time Tracking",
+      "Resource Allocation",
+      "Gantt Charts",
+      "Reporting & Analytics",
+      "Mobile App"
+    ],
+    benefits: [
+      "Improve team productivity by 35%",
+      "Better project visibility",
+      "Streamlined communication",
+      "Data-driven decision making"
+    ],
+    marketPrice: "Starting from $29/month (Industry average: $45-80/month)",
+    contactLink: "https://ziontechgroup.com/contact",
+    tags: ["Project Management", "Team Collaboration", "Productivity", "SaaS"],
+    author: {
+      name: "Zion Project Hub",
+      id: "zion-projects",
+      avatarUrl: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=100&h=100"
+    },
+    images: ["https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&h=500"],
+    rating: 4.6,
+    reviewCount: 189,
+    aiScore: 87,
+    location: "Global",
+    availability: "Immediate",
+    createdAt: "2024-01-18T16:45:00.000Z"
   },
   {
-    id: 'cyber-security-monitor',
-    title: 'Cyber Security Monitor',
-    description: 'Real-time cybersecurity monitoring and threat detection platform with automated incident response and compliance reporting.',
-    category: 'Security',
+    id: "inventory-management-saas",
+    title: "Smart Inventory Management",
+    description: "AI-powered inventory tracking system with demand forecasting, automated reordering, and real-time analytics for retail and manufacturing.",
+    category: "Micro SAAS",
+    price: 49,
+    currency: "$",
+    pricingModel: "monthly",
     features: [
-      'Real-time threat detection',
-      'Automated incident response',
-      'Vulnerability scanning',
-      'Compliance reporting',
-      'Security analytics',
-      'Threat intelligence',
-      'Incident management',
-      'Security awareness training'
+      "Real-time Tracking",
+      "Demand Forecasting",
+      "Automated Reordering",
+      "Barcode Scanning",
+      "Multi-location Support",
+      "Analytics Dashboard",
+      "Mobile App"
     ],
-    pricing: {
-      monthly: 99,
-      yearly: 990,
-      enterprise: 1999,
-      currency: '$'
-    },
     benefits: [
-      '24/7 security monitoring',
-      'Instant threat detection',
-      'Automated response',
-      'Compliance assurance',
-      'Reduced security risks'
+      "Reduce inventory costs by 25%",
+      "Prevent stockouts",
+      "Optimize reorder points",
+      "Improve cash flow"
     ],
-    useCases: [
-      'Threat detection',
-      'Incident response',
-      'Compliance monitoring',
-      'Security auditing',
-      'Risk assessment'
-    ],
-    targetAudience: [
-      'IT security teams',
-      'Compliance officers',
-      'System administrators',
-      'Security consultants',
-      'Enterprise organizations'
-    ],
-    integration: [
-      'SIEM systems',
-      'Firewall management',
-      'Endpoint protection',
-      'Cloud security platforms',
-      'Identity management'
-    ],
-    support: [
-      'Security consultation',
-      'Incident response support',
-      'Compliance guidance',
-      '24/7 security operations',
-      'Custom security policies'
-    ],
-    rating: 4.9,
-    reviewCount: 734,
-    launchDate: '2024-02-10',
-    status: 'Live',
-    website: 'https://ziontechgroup.com/cyber-security',
-    demo: 'https://ziontechgroup.com/cyber-security/demo',
-    documentation: 'https://ziontechgroup.com/cyber-security/docs',
-    apiAvailable: true,
-    freeTier: false,
-    tags: ['Cybersecurity', 'Threat Detection', 'Compliance', 'Incident Response', 'Security Monitoring']
-  },
-  {
-    id: 'workflow-automation-pro',
-    title: 'Workflow Automation Pro',
-    description: 'Advanced workflow automation platform that streamlines business processes with AI-powered decision making and integration capabilities.',
-    category: 'Automation',
-    features: [
-      'Visual workflow builder',
-      'AI decision making',
-      'Multi-system integration',
-      'Conditional logic',
-      'Approval workflows',
-      'Performance analytics',
-      'Custom triggers',
-      'Mobile app access'
-    ],
-    pricing: {
-      monthly: 69,
-      yearly: 690,
-      enterprise: 1299,
-      currency: '$'
+    marketPrice: "Starting from $49/month (Industry average: $75-120/month)",
+    contactLink: "https://ziontechgroup.com/contact",
+    tags: ["Inventory Management", "AI Forecasting", "Retail", "Manufacturing"],
+    author: {
+      name: "Zion Inventory",
+      id: "zion-inventory",
+      avatarUrl: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=100&h=100"
     },
-    benefits: [
-      'Process efficiency improvement',
-      'Error reduction',
-      'Cost savings',
-      'Scalable operations',
-      'Better compliance'
-    ],
-    useCases: [
-      'HR onboarding',
-      'Invoice processing',
-      'Customer onboarding',
-      'Project management',
-      'Quality assurance'
-    ],
-    targetAudience: [
-      'Operations managers',
-      'Process improvement teams',
-      'HR professionals',
-      'Finance teams',
-      'Project managers'
-    ],
-    integration: [
-      'Slack',
-      'Microsoft Teams',
-      'Google Workspace',
-      'Salesforce',
-      'QuickBooks',
-      'Custom APIs'
-    ],
-    support: [
-      'Workflow design assistance',
-      'Integration support',
-      'Training programs',
-      'Process optimization',
-      'Success planning'
-    ],
+    images: ["https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&h=500"],
     rating: 4.8,
-    reviewCount: 1102,
-    launchDate: '2024-01-25',
-    status: 'Live',
-    website: 'https://ziontechgroup.com/workflow-automation',
-    demo: 'https://ziontechgroup.com/workflow-automation/demo',
-    documentation: 'https://ziontechgroup.com/workflow-automation/docs',
-    apiAvailable: true,
-    freeTier: true,
-    tags: ['Automation', 'Workflow', 'Process Management', 'Integration', 'Business Process']
+    reviewCount: 134,
+    aiScore: 92,
+    location: "Global",
+    availability: "Immediate",
+    createdAt: "2024-02-08T10:20:00.000Z"
   },
   {
-    id: 'ai-code-assistant',
-    title: 'AI Code Assistant',
-    description: 'Intelligent coding assistant that provides real-time suggestions, code review, and automated testing using advanced AI models.',
-    category: 'Development',
+    id: "hr-management-saas",
+    title: "HR Management Platform",
+    description: "Complete HR solution with employee onboarding, performance management, payroll integration, and compliance tracking.",
+    category: "Micro SAAS",
+    price: 39,
+    currency: "$",
+    pricingModel: "monthly",
     features: [
-      'Real-time code suggestions',
-      'Automated code review',
-      'Bug detection',
-      'Performance optimization',
-      'Security scanning',
-      'Documentation generation',
-      'Multi-language support',
-      'IDE integration'
+      "Employee Onboarding",
+      "Performance Management",
+      "Payroll Integration",
+      "Compliance Tracking",
+      "Time & Attendance",
+      "Benefits Management",
+      "Reporting & Analytics"
     ],
-    pricing: {
-      monthly: 59,
-      yearly: 590,
-      enterprise: 1199,
-      currency: '$'
-    },
     benefits: [
-      'Faster development',
-      'Higher code quality',
-      'Reduced bugs',
-      'Better security',
-      'Improved productivity'
+      "Streamline HR processes",
+      "Ensure compliance",
+      "Improve employee experience",
+      "Reduce administrative overhead"
     ],
-    useCases: [
-      'Code development',
-      'Code review',
-      'Bug fixing',
-      'Performance optimization',
-      'Security auditing'
-    ],
-    targetAudience: [
-      'Software developers',
-      'Development teams',
-      'Code reviewers',
-      'DevOps engineers',
-      'Technical leads'
-    ],
-    integration: [
-      'VS Code',
-      'IntelliJ IDEA',
-      'GitHub',
-      'GitLab',
-      'Bitbucket',
-      'CI/CD pipelines'
-    ],
-    support: [
-      'Setup assistance',
-      'Custom training',
-      'API support',
-      'Integration help',
-      'Best practices guidance'
-    ],
-    rating: 4.9,
-    reviewCount: 2341,
-    launchDate: '2024-02-05',
-    status: 'Live',
-    website: 'https://ziontechgroup.com/ai-code-assistant',
-    demo: 'https://ziontechgroup.com/ai-code-assistant/demo',
-    documentation: 'https://ziontechgroup.com/ai-code-assistant/docs',
-    apiAvailable: true,
-    freeTier: true,
-    tags: ['AI', 'Development', 'Code Review', 'Bug Detection', 'Programming']
-  },
-  {
-    id: 'cloud-cost-optimizer',
-    title: 'Cloud Cost Optimizer',
-    description: 'AI-powered cloud cost optimization platform that analyzes usage patterns and provides recommendations to reduce cloud spending.',
-    category: 'IT',
-    features: [
-      'Cost analysis dashboard',
-      'Usage optimization',
-      'Reserved instance recommendations',
-      'Spot instance management',
-      'Cost forecasting',
-      'Budget alerts',
-      'Multi-cloud support',
-      'Automated optimization'
-    ],
-    pricing: {
-      monthly: 49,
-      yearly: 490,
-      enterprise: 999,
-      currency: '$'
+    marketPrice: "Starting from $39/month (Industry average: $60-100/month)",
+    contactLink: "https://ziontechgroup.com/contact",
+    tags: ["HR Management", "Employee Onboarding", "Compliance", "Payroll"],
+    author: {
+      name: "Zion HR Solutions",
+      id: "zion-hr",
+      avatarUrl: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=100&h=100"
     },
-    benefits: [
-      'Significant cost savings',
-      'Better resource utilization',
-      'Automated optimization',
-      'Budget control',
-      'ROI improvement'
-    ],
-    useCases: [
-      'Cloud cost management',
-      'Resource optimization',
-      'Budget planning',
-      'Cost forecasting',
-      'Multi-cloud management'
-    ],
-    targetAudience: [
-      'Cloud architects',
-      'DevOps engineers',
-      'IT managers',
-      'Finance teams',
-      'System administrators'
-    ],
-    integration: [
-      'AWS',
-      'Azure',
-      'Google Cloud',
-      'Kubernetes',
-      'Docker',
-      'Terraform'
-    ],
-    support: [
-      'Cost analysis consultation',
-      'Optimization strategies',
-      'Implementation support',
-      'Best practices guidance',
-      'ROI tracking'
-    ],
+    images: ["https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&h=500"],
     rating: 4.7,
-    reviewCount: 876,
-    launchDate: '2024-02-15',
-    status: 'Live',
-    website: 'https://ziontechgroup.com/cloud-cost-optimizer',
-    demo: 'https://ziontechgroup.com/cloud-cost-optimizer/demo',
-    documentation: 'https://ziontechgroup.com/cloud-cost-optimizer/docs',
-    apiAvailable: true,
-    freeTier: true,
-    tags: ['Cloud', 'Cost Optimization', 'DevOps', 'Resource Management', 'AWS/Azure/GCP']
+    reviewCount: 98,
+    aiScore: 88,
+    location: "Global",
+    availability: "Immediate",
+    createdAt: "2024-01-28T12:10:00.000Z"
   },
+
+  // Development Services
   {
-    id: 'ai-project-manager',
-    title: 'AI Project Manager',
-    description: 'Intelligent project management platform that uses AI to predict risks, optimize resource allocation, and ensure project success.',
-    category: 'Automation',
+    id: "web-app-development",
+    title: "Custom Web Application Development",
+    description: "Full-stack web application development with modern technologies, responsive design, and scalable architecture for businesses of all sizes.",
+    category: "Development",
+    price: 8000,
+    currency: "$",
+    pricingModel: "one-time",
     features: [
-      'AI risk prediction',
-      'Resource optimization',
-      'Timeline forecasting',
-      'Team performance analytics',
-      'Automated reporting',
-      'Risk mitigation',
-      'Progress tracking',
-      'Stakeholder communication'
+      "Custom Design & Development",
+      "Responsive Web Design",
+      "Database Design",
+      "API Development",
+      "Testing & QA",
+      "Deployment & Hosting",
+      "Maintenance Support"
     ],
-    pricing: {
-      monthly: 79,
-      yearly: 790,
-      enterprise: 1499,
-      currency: '$'
-    },
     benefits: [
-      'Better project success rates',
-      'Risk reduction',
-      'Resource optimization',
-      'Improved communication',
-      'Data-driven decisions'
+      "Custom solution for your business",
+      "Scalable and maintainable code",
+      "Modern technology stack",
+      "Ongoing support and updates"
     ],
-    useCases: [
-      'Project planning',
-      'Risk management',
-      'Resource allocation',
-      'Progress monitoring',
-      'Stakeholder reporting'
-    ],
-    targetAudience: [
-      'Project managers',
-      'Program managers',
-      'Team leads',
-      'Stakeholders',
-      'Executive leadership'
-    ],
-    integration: [
-      'Jira',
-      'Asana',
-      'Trello',
-      'Microsoft Project',
-      'Slack',
-      'Microsoft Teams'
-    ],
-    support: [
-      'Implementation support',
-      'Custom training',
-      'Best practices guidance',
-      'Success planning',
-      'Ongoing consultation'
-    ],
-    rating: 4.8,
-    reviewCount: 945,
-    launchDate: '2024-02-20',
-    status: 'Live',
-    website: 'https://ziontechgroup.com/ai-project-manager',
-    demo: 'https://ziontechgroup.com/ai-project-manager/demo',
-    documentation: 'https://ziontechgroup.com/ai-project-manager/docs',
-    apiAvailable: true,
-    freeTier: true,
-    tags: ['AI', 'Project Management', 'Risk Management', 'Resource Optimization', 'Team Collaboration']
-  },
-  {
-    id: 'data-privacy-compliance',
-    title: 'Data Privacy Compliance Manager',
-    description: 'Comprehensive data privacy and compliance platform that helps organizations meet GDPR, CCPA, and other regulatory requirements.',
-    category: 'Security',
-    features: [
-      'Privacy impact assessments',
-      'Data mapping',
-      'Consent management',
-      'Breach notification',
-      'Compliance reporting',
-      'Data subject rights',
-      'Audit trails',
-      'Training modules'
-    ],
-    pricing: {
-      monthly: 89,
-      yearly: 890,
-      enterprise: 1799,
-      currency: '$'
+    marketPrice: "Starting from $8,000 (Industry average: $15,000-30,000)",
+    contactLink: "https://ziontechgroup.com/contact",
+    tags: ["Web Development", "Custom Apps", "Full-stack", "Responsive Design"],
+    author: {
+      name: "Zion Development",
+      id: "zion-dev",
+      avatarUrl: "https://images.unsplash.com/photo-1573497019940-1c4c3acd3789?auto=format&fit=crop&w=100&h=100"
     },
-    benefits: [
-      'Regulatory compliance',
-      'Risk mitigation',
-      'Customer trust',
-      'Legal protection',
-      'Operational efficiency'
-    ],
-    useCases: [
-      'GDPR compliance',
-      'CCPA compliance',
-      'Data privacy audits',
-      'Consent management',
-      'Breach response'
-    ],
-    targetAudience: [
-      'Compliance officers',
-      'Legal teams',
-      'Data protection officers',
-      'IT security teams',
-      'Privacy consultants'
-    ],
-    integration: [
-      'CRM systems',
-      'Marketing platforms',
-      'Analytics tools',
-      'Customer databases',
-      'HR systems'
-    ],
-    support: [
-      'Compliance consultation',
-      'Legal guidance',
-      'Implementation support',
-      'Training programs',
-      'Audit assistance'
-    ],
+    images: ["https://images.unsplash.com/photo-1547082299-de196ea013d6?auto=format&fit=crop&w=800&h=500"],
     rating: 4.9,
-    reviewCount: 623,
-    launchDate: '2024-03-01',
-    status: 'Live',
-    website: 'https://ziontechgroup.com/data-privacy',
-    demo: 'https://ziontechgroup.com/data-privacy/demo',
-    documentation: 'https://ziontechgroup.com/data-privacy/docs',
-    apiAvailable: true,
-    freeTier: false,
-    tags: ['Privacy', 'Compliance', 'GDPR', 'CCPA', 'Data Protection']
+    reviewCount: 156,
+    aiScore: 94,
+    featured: true,
+    location: "Global",
+    availability: "6-8 Weeks",
+    createdAt: "2024-01-22T14:30:00.000Z"
   },
   {
-    id: 'ai-marketing-automation',
-    title: 'AI Marketing Automation Suite',
-    description: 'Intelligent marketing automation platform that personalizes campaigns, optimizes conversions, and provides predictive analytics.',
-    category: 'AI',
+    id: "mobile-app-development",
+    title: "Cross-Platform Mobile App Development",
+    description: "Native-quality mobile applications for iOS and Android using React Native or Flutter with backend integration and app store deployment.",
+    category: "Development",
+    price: 12000,
+    currency: "$",
+    pricingModel: "one-time",
     features: [
-      'AI-powered personalization',
-      'Predictive analytics',
-      'Campaign optimization',
-      'Customer segmentation',
-      'A/B testing automation',
-      'ROI tracking',
-      'Multi-channel campaigns',
-      'Behavioral targeting'
+      "Cross-platform Development",
+      "Native Performance",
+      "Backend Integration",
+      "Push Notifications",
+      "App Store Deployment",
+      "Testing & QA",
+      "Post-launch Support"
     ],
-    pricing: {
-      monthly: 99,
-      yearly: 990,
-      enterprise: 1999,
-      currency: '$'
-    },
     benefits: [
-      'Higher conversion rates',
-      'Better ROI',
-      'Personalized experiences',
-      'Automated optimization',
-      'Data-driven decisions'
+      "Reach both iOS and Android users",
+      "Faster development time",
+      "Cost-effective solution",
+      "Easy maintenance and updates"
     ],
-    useCases: [
-      'Email marketing',
-      'Social media campaigns',
-      'Website personalization',
-      'Lead nurturing',
-      'Customer retention'
-    ],
-    targetAudience: [
-      'Marketing teams',
-      'Digital marketers',
-      'E-commerce businesses',
-      'Marketing agencies',
-      'Growth hackers'
-    ],
-    integration: [
-      'Mailchimp',
-      'HubSpot',
-      'Salesforce',
-      'Shopify',
-      'Google Analytics',
-      'Facebook Ads'
-    ],
-    support: [
-      'Strategy consultation',
-      'Implementation support',
-      'Performance optimization',
-      'Training programs',
-      'Success planning'
-    ],
+    marketPrice: "Starting from $12,000 (Industry average: $20,000-40,000)",
+    contactLink: "https://ziontechgroup.com/contact",
+    tags: ["Mobile Development", "React Native", "Flutter", "Cross-platform"],
+    author: {
+      name: "Zion Mobile",
+      id: "zion-mobile",
+      avatarUrl: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=100&h=100"
+    },
+    images: ["https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&h=500"],
     rating: 4.8,
-    reviewCount: 1876,
-    launchDate: '2024-02-25',
-    status: 'Live',
-    website: 'https://ziontechgroup.com/ai-marketing',
-    demo: 'https://ziontechgroup.com/ai-marketing/demo',
-    documentation: 'https://ziontechgroup.com/ai-marketing/docs',
-    apiAvailable: true,
-    freeTier: true,
-    tags: ['AI', 'Marketing', 'Automation', 'Personalization', 'Analytics']
+    reviewCount: 89,
+    aiScore: 91,
+    location: "Global",
+    availability: "8-12 Weeks",
+    createdAt: "2024-02-03T11:45:00.000Z"
+  },
+
+  // Analytics Services
+  {
+    id: "data-engineering",
+    title: "Data Engineering & ETL Solutions",
+    description: "End-to-end data pipeline development with ETL processes, data warehousing, and real-time analytics infrastructure.",
+    category: "Analytics",
+    price: 6000,
+    currency: "$",
+    pricingModel: "one-time",
+    features: [
+      "Data Pipeline Design",
+      "ETL Process Development",
+      "Data Warehousing",
+      "Real-time Processing",
+      "Data Quality Monitoring",
+      "Performance Optimization",
+      "Documentation & Training"
+    ],
+    benefits: [
+      "Centralized data management",
+      "Real-time insights",
+      "Improved data quality",
+      "Scalable data infrastructure"
+    ],
+    marketPrice: "Starting from $6,000 (Industry average: $10,000-20,000)",
+    contactLink: "https://ziontechgroup.com/contact",
+    tags: ["Data Engineering", "ETL", "Data Warehousing", "Real-time Analytics"],
+    author: {
+      name: "Zion Data",
+      id: "zion-data",
+      avatarUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=100&h=100"
+    },
+    images: ["https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&h=500"],
+    rating: 4.7,
+    reviewCount: 67,
+    aiScore: 90,
+    location: "Global",
+    availability: "4-6 Weeks",
+    createdAt: "2024-01-27T09:15:00.000Z"
+  },
+
+  // Security Services
+  {
+    id: "managed-security",
+    title: "Managed Security Services",
+    description: "24/7 security monitoring, threat detection, incident response, and security management for businesses of all sizes.",
+    category: "Security",
+    price: 1500,
+    currency: "$",
+    pricingModel: "monthly",
+    features: [
+      "24/7 Security Monitoring",
+      "Threat Detection & Response",
+      "Vulnerability Management",
+      "Security Incident Response",
+      "Compliance Reporting",
+      "Security Awareness Training",
+      "Dedicated Security Team"
+    ],
+    benefits: [
+      "Proactive threat protection",
+      "Reduced security risks",
+      "Compliance assurance",
+      "Peace of mind"
+    ],
+    marketPrice: "Starting from $1,500/month (Industry average: $2,500-5,000/month)",
+    contactLink: "https://ziontechgroup.com/contact",
+    tags: ["Managed Security", "Threat Detection", "Incident Response", "Compliance"],
+    author: {
+      name: "Zion Security Operations",
+      id: "zion-secops",
+      avatarUrl: "https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=100&h=100"
+    },
+    images: ["https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=800&h=500"],
+    rating: 4.9,
+    reviewCount: 123,
+    aiScore: 95,
+    featured: true,
+    location: "Global",
+    availability: "Immediate",
+    createdAt: "2024-01-24T16:20:00.000Z"
+  },
+
+  // Cloud Services
+  {
+    id: "cloud-consulting",
+    title: "Cloud Strategy & Consulting",
+    description: "Strategic cloud consulting services including architecture design, cost optimization, security planning, and migration strategy.",
+    category: "Cloud",
+    price: 200,
+    currency: "$",
+    pricingModel: "hourly",
+    features: [
+      "Cloud Architecture Design",
+      "Cost Optimization",
+      "Security Planning",
+      "Migration Strategy",
+      "Performance Optimization",
+      "Compliance Review",
+      "Ongoing Advisory"
+    ],
+    benefits: [
+      "Optimize cloud costs",
+      "Improve performance",
+      "Ensure security best practices",
+      "Strategic cloud roadmap"
+    ],
+    marketPrice: "Starting from $200/hour (Industry average: $300-500/hour)",
+    contactLink: "https://ziontechgroup.com/contact",
+    tags: ["Cloud Consulting", "Architecture", "Cost Optimization", "Strategy"],
+    author: {
+      name: "Zion Cloud Advisory",
+      id: "zion-cloud-advice",
+      avatarUrl: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=100&h=100"
+    },
+    images: ["https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&h=500"],
+    rating: 4.8,
+    reviewCount: 78,
+    aiScore: 89,
+    location: "Global",
+    availability: "Immediate",
+    createdAt: "2024-02-06T13:45:00.000Z"
+  },
+
+  // Automation Services
+  {
+    id: "business-process-automation",
+    title: "Business Process Automation",
+    description: "RPA and workflow automation solutions to streamline business processes, reduce manual work, and improve operational efficiency.",
+    category: "Automation",
+    price: 3500,
+    currency: "$",
+    pricingModel: "one-time",
+    features: [
+      "Process Analysis",
+      "Workflow Design",
+      "RPA Implementation",
+      "Integration Development",
+      "Testing & Validation",
+      "Training & Documentation",
+      "Ongoing Support"
+    ],
+    benefits: [
+      "Reduce manual work by 70%",
+      "Improve process accuracy",
+      "Increase operational efficiency",
+      "Reduce processing time"
+    ],
+    marketPrice: "Starting from $3,500 (Industry average: $6,000-12,000)",
+    contactLink: "https://ziontechgroup.com/contact",
+    tags: ["Process Automation", "RPA", "Workflow", "Efficiency"],
+    author: {
+      name: "Zion Automation",
+      id: "zion-automation",
+      avatarUrl: "https://images.unsplash.com/photo-1591405351990-4726e331f141?auto=format&fit=crop&w=100&h=100"
+    },
+    images: ["https://images.unsplash.com/photo-1591405351990-4726e331f141?auto=format&fit=crop&w=800&h=500"],
+    rating: 4.6,
+    reviewCount: 56,
+    aiScore: 86,
+    location: "Global",
+    availability: "3-4 Weeks",
+    createdAt: "2024-01-29T10:30:00.000Z"
   }
 ];
 
-export const getServiceByCategory = (category: string) => {
+export const getMicroSaasServicesByCategory = (category: string) => {
   return MICRO_SAAS_SERVICES.filter(service => service.category === category);
 };
 
-export const getServiceById = (id: string) => {
-  return MICRO_SAAS_SERVICES.find(service => service.id === id);
+export const getFeaturedMicroSaasServices = () => {
+  return MICRO_SAAS_SERVICES.filter(service => service.featured);
 };
 
-export const getServicesByTag = (tag: string) => {
-  return MICRO_SAAS_SERVICES.filter(service => 
-    service.tags.some(serviceTag => 
-      serviceTag.toLowerCase().includes(tag.toLowerCase())
-    )
-  );
+export const getMicroSaasServicesByPriceRange = (min: number, max: number) => {
+  return MICRO_SAAS_SERVICES.filter(service => service.price >= min && service.price <= max);
 };

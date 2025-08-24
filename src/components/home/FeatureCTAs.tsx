@@ -17,7 +17,9 @@ import {
   Code,
   Building,
   Clock,
-  Sparkles
+  Shield,
+  Cloud,
+  BarChart3
 } from "lucide-react";
 
 export function FeatureCTAs() {
@@ -44,6 +46,14 @@ export function FeatureCTAs() {
       link: "/services",
       badge: "New",
       details: "From on-demand IT support to specialized AI development, our marketplace offers verified services with transparent pricing and reviews."
+    },
+    {
+      title: "Micro SAAS Solutions",
+      description: "Access innovative micro SAAS services including AI chatbots, content generation, and business automation tools.",
+      icon: <Code className="h-10 w-10 p-2 rounded-md bg-emerald-100 text-emerald-700" />,
+      link: "/micro-saas-services",
+      badge: "Featured",
+      details: "Scalable software solutions starting from $29/month. Transform your business with AI-powered tools and automation."
     },
     {
       title: "Equipment Catalog",
@@ -102,55 +112,164 @@ export function FeatureCTAs() {
       link: "/zion-hire-ai",
       badge: "Premium",
       details: "Automate screening, improve candidate matching, and enhance the hiring experience with our AI recruiting solution."
+    }
+  ];
+
+  const serviceCategories = [
+    {
+      title: "AI Services",
+      description: "Cutting-edge AI solutions",
+      icon: <Zap className="h-8 w-8" />,
+      link: "/micro-saas-services?category=AI Services",
+      color: "from-purple-500 to-pink-500",
+      count: "15+ Services"
     },
     {
-      title: "Micro SAAS Services",
-      description: "Comprehensive suite of micro SAAS solutions for AI, IT, development, analytics, security, and automation.",
-      icon: <Sparkles className="h-10 w-10 p-2 rounded-md bg-gradient-to-r from-zion-purple to-zion-cyan text-white" />,
-      link: "/micro-saas-services",
-      badge: "New",
-      details: "Transform your business with our cutting-edge micro SAAS solutions designed to solve specific challenges and drive growth."
+      title: "IT Services",
+      description: "Professional IT solutions",
+      icon: <Settings className="h-8 w-8" />,
+      link: "/micro-saas-services?category=IT Services",
+      color: "from-blue-500 to-cyan-500",
+      count: "12+ Services"
+    },
+    {
+      title: "Micro SAAS",
+      description: "Scalable software solutions",
+      icon: <Users className="h-8 w-8" />,
+      link: "/micro-saas-services?category=Micro SAAS",
+      color: "from-green-500 to-emerald-500",
+      count: "8+ Services"
+    },
+    {
+      title: "Development",
+      description: "Custom development services",
+      icon: <Code className="h-8 w-8" />,
+      link: "/micro-saas-services?category=Development",
+      color: "from-orange-500 to-red-500",
+      count: "10+ Services"
     }
   ];
 
   return (
-    <section className="py-16 bg-gradient-to-b from-background to-background/90">
-      <div className="container mx-auto px-4">
-        <div className="mb-12 text-center">
-          <h2 className="text-3xl font-bold tracking-tight mb-3">Discover Zion's Powerful Features</h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+    <section className="py-20 bg-gradient-to-b from-background to-background/90 relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-20 left-20 w-32 h-32 bg-zion-cyan/5 rounded-full animate-pulse"></div>
+        <div className="absolute top-40 right-32 w-24 h-24 bg-zion-purple/5 rounded-full animate-pulse delay-1000"></div>
+        <div className="absolute bottom-20 left-1/3 w-28 h-28 bg-zion-blue/5 rounded-full animate-pulse delay-2000"></div>
+      </div>
+
+      <div className="relative container mx-auto px-4">
+        <div className="mb-16 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 bg-gradient-to-r from-zion-cyan via-zion-purple to-zion-blue bg-clip-text text-transparent">
+            Discover Zion's Powerful Features
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
             Explore our comprehensive suite of tools designed to transform how you connect, collaborate, and create in the tech ecosystem.
           </p>
         </div>
+
+        {/* Service Categories Quick Access */}
+        <div className="mb-16">
+          <h3 className="text-2xl font-semibold text-center mb-8 text-white">
+            Popular Service Categories
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {serviceCategories.map((category, index) => (
+              <Link
+                key={index}
+                to={category.link}
+                className="group block"
+              >
+                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:border-zion-cyan/30 hover:bg-white/10 transition-all duration-300 hover:shadow-2xl hover:shadow-zion-cyan/10">
+                  <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${category.color} p-4 text-white mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                    {category.icon}
+                  </div>
+                  <h4 className="text-lg font-semibold text-white mb-2 group-hover:text-zion-cyan transition-colors">
+                    {category.title}
+                  </h4>
+                  <p className="text-white/70 text-sm mb-3">
+                    {category.description}
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-zion-cyan text-sm font-medium">
+                      {category.count}
+                    </span>
+                    <ArrowRight className="h-4 w-4 text-zion-cyan group-hover:translate-x-1 transition-transform duration-300" />
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
-            <Card key={index} className="overflow-hidden transition-all duration-300 hover:shadow-lg hover:border-primary/50">
+            <Card key={index} className="overflow-hidden transition-all duration-300 hover:shadow-2xl hover:border-primary/50 bg-white/5 backdrop-blur-sm border-white/10 hover:border-zion-cyan/30 group">
               <CardHeader className="pb-2">
                 <div className="flex justify-between items-start">
-                  {feature.icon}
+                  <div className="group-hover:scale-110 transition-transform duration-300">
+                    {feature.icon}
+                  </div>
                   {feature.badge && (
-                    <Badge variant="secondary" className="bg-primary/20 text-primary">
+                    <Badge variant="secondary" className="bg-primary/20 text-primary border border-primary/30">
                       {feature.badge}
                     </Badge>
                   )}
                 </div>
-                <CardTitle className="mt-4">{feature.title}</CardTitle>
-                <CardDescription className="line-clamp-2">{feature.description}</CardDescription>
+                <CardTitle className="mt-4 text-white group-hover:text-zion-cyan transition-colors">
+                  {feature.title}
+                </CardTitle>
+                <CardDescription className="line-clamp-2 text-white/70">
+                  {feature.description}
+                </CardDescription>
               </CardHeader>
               <CardContent>
-                <p className="text-sm text-muted-foreground">{feature.details}</p>
+                <p className="text-sm text-white/60">{feature.details}</p>
               </CardContent>
               <CardFooter>
-                <Button asChild className="w-full gap-1">
+                <Button asChild className="w-full gap-1 bg-gradient-to-r from-zion-purple to-zion-blue hover:from-zion-purple-light hover:to-zion-blue-light text-white border-0">
                   <Link to={feature.link}>
                     <span>Explore {feature.title}</span>
-                    <ArrowRight className="h-4 w-4" />
+                    <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
                   </Link>
                 </Button>
               </CardFooter>
             </Card>
           ))}
+        </div>
+
+        {/* CTA Section */}
+        <div className="mt-16 text-center">
+          <div className="bg-gradient-to-r from-zion-purple/20 via-zion-blue/20 to-zion-cyan/20 rounded-3xl p-12 border border-white/20">
+            <h3 className="text-3xl font-bold text-white mb-4">
+              Ready to Get Started?
+            </h3>
+            <p className="text-xl text-white/80 mb-8 max-w-3xl mx-auto">
+              Join thousands of businesses already using Zion to transform their technology operations and find the perfect solutions.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button 
+                size="lg"
+                className="bg-gradient-to-r from-zion-cyan to-zion-blue text-white hover:from-zion-cyan-light hover:to-zion-blue-light"
+                asChild
+              >
+                <Link to="/micro-saas-services">
+                  Browse All Services
+                </Link>
+              </Button>
+              <Button 
+                size="lg"
+                variant="outline"
+                className="border-zion-cyan text-zion-cyan hover:bg-zion-cyan hover:text-white"
+                asChild
+              >
+                <Link to="/contact">
+                  Get in Touch
+                </Link>
+              </Button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
