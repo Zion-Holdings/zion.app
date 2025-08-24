@@ -1,17 +1,8 @@
 
 import React from 'react';
 import { CategoriesSection } from "@/components/CategoriesSection";
-import { BenefitsSection } from "@/components/BenefitsSection";
-import { HowItWorksSection } from "@/components/HowItWorksSection";
-import { NewsletterSection } from "@/components/NewsletterSection";
-import { FeaturedListingsSection } from "@/components/FeaturedListingsSection";
 import { SEO } from "@/components/SEO";
 import { HeroSection } from "@/components/HeroSection";
-import { QuickAccess } from "@/components/home/QuickAccess";
-import { FeatureCTAs } from "@/components/home/FeatureCTAs";
-import { FeatureHighlights } from "@/components/home/FeatureHighlights";
-import { ITServiceRequestHero } from "@/components/home/ITServiceRequestHero";
-import { MicroSaasShowcase } from "@/components/home/MicroSaasShowcase";
 
 export default function Home() {
   return (
@@ -23,23 +14,9 @@ export default function Home() {
         canonical="https://app.ziontechgroup.com/"
       />
 
-      <ITServiceRequestHero />
-
       <HeroSection />
       
-      <QuickAccess />
-      
-      <FeatureCTAs />
-      
-      <MicroSaasShowcase />
-      
-      <FeatureHighlights />
-      
       <CategoriesSection />
-      <BenefitsSection />
-      <HowItWorksSection />
-      <FeaturedListingsSection />
-      <NewsletterSection />
     </div>
   );
 }
