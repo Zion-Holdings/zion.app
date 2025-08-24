@@ -38,7 +38,6 @@ export function AnalyticsContainer({ children }: AnalyticsContainerProps) {
       <SEO
         title="Analytics Dashboard"
         description="Track user behavior, page views, and conversion rates to improve your platform performance"
-        noindex
       />
       <main className="flex-1 p-6 md:p-8 container mx-auto">
         <div className="mb-8">

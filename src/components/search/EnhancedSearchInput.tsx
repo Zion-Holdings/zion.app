@@ -15,6 +15,7 @@ interface EnhancedSearchInputProps {
   onSelectSuggestion?: (value: string) => void;
   placeholder?: string;
   searchSuggestions: SearchSuggestion[];
+  className?: string;
 }
 
 export function EnhancedSearchInput({
@@ -22,7 +23,8 @@ export function EnhancedSearchInput({
   onChange,
   onSelectSuggestion,
   placeholder = "Search...",
-  searchSuggestions
+  searchSuggestions,
+  className
 }: EnhancedSearchInputProps) {
   const [isFocused, setIsFocused] = useState(false);
   const [filteredSuggestions, setFilteredSuggestions] = useState<SearchSuggestion[]>([]);
@@ -73,7 +75,7 @@ export function EnhancedSearchInput({
   };
   
   return (
-    <div className="relative w-full" ref={containerRef}>
+    <div className={`relative w-full ${className || ''}`} ref={containerRef}>
       <div className="relative">
         <Search 
           className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-zion-slate" 
