@@ -129,10 +129,7 @@ export function Sidebar({ isOpen, onClose, className }: SidebarProps) {
         {navigationItems.map((section) => (
           <div key={section.section} className="space-y-1">
             <Collapsible
-              open={openSections.includes(section.section)}
-              onOpenChange={() => toggleSection(section.section)}
-            >
-              <CollapsibleTrigger asChild>
+              trigger={
                 <Button
                   variant="ghost"
                   className={cn(
@@ -147,7 +144,10 @@ export function Sidebar({ isOpen, onClose, className }: SidebarProps) {
                     <ChevronRight className="h-4 w-4" />
                   )}
                 </Button>
-              </CollapsibleTrigger>
+              }
+              open={openSections.includes(section.section)}
+              onOpenChange={() => toggleSection(section.section)}
+            >
               <CollapsibleContent className="space-y-1 pl-4">
                 {section.items.map((item) => {
                   const Icon = item.icon;

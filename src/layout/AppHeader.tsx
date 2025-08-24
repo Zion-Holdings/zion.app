@@ -76,6 +76,7 @@ export function AppHeader() {
           />
           <div className="relative bg-zion-blue-dark border-t border-zion-purple/20 h-auto max-h-[calc(100vh-4rem)] overflow-y-auto">
             <MobileMenu 
+              isOpen={mobileMenuOpen}
               unreadCount={unreadCount} 
               onClose={() => setMobileMenuOpen(false)} 
             />

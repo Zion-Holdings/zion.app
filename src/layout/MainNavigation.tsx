@@ -2,8 +2,9 @@
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { useAuth } from "@/hooks/useAuth";
-import { MessageSquare } from "lucide-react";
+import { MessageSquare, Sparkles, Zap } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
 
 interface MainNavigationProps {
   isAdmin?: boolean;
@@ -21,90 +22,50 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
     {
       key: 'home',
       href: '/',
-      matches: (path: string) => path === '/' || path === '/home'
-    },
-    {
-      key: 'about',
-      href: '/about',
-      matches: (path: string) => path === '/about'
+      matches: (path: string) => path === '/' || path === '/home',
+      icon: <Sparkles className="w-4 h-4" />
     },
     {
       key: 'services',
       href: '/services',
-      matches: (path: string) => path.startsWith('/services')
-    },
-    {
-      key: 'it-onsite-services',
-      href: '/it-onsite-services',
-      matches: (path: string) => path.startsWith('/it-onsite-services')
+      matches: (path: string) => path.startsWith('/services'),
+      icon: <Zap className="w-4 h-4" />
     },
     {
       key: 'marketplace',
       href: '/marketplace',
-      matches: (path: string) => path.startsWith('/marketplace')
-    },
-    {
-      key: 'micro-saas',
-      href: '/micro-saas-services',
-      matches: (path: string) => path.startsWith('/micro-saas-services')
-    },
-    {
-      key: 'comprehensive-services',
-      href: '/comprehensive-services',
-      matches: (path: string) => path.startsWith('/comprehensive-services')
-    },
-    {
-      key: 'ai-services',
-      href: '/ai-services',
-      matches: (path: string) => path.startsWith('/ai-services')
-    },
-    {
-      key: 'enterprise-solutions',
-      href: '/enterprise-solutions',
-      matches: (path: string) => path.startsWith('/enterprise-solutions')
-    },
-    {
-      key: 'categories',
-      href: '/categories',
-      matches: (path: string) => path.startsWith('/categories')
+      matches: (path: string) => path.startsWith('/marketplace'),
+      icon: <Zap className="w-4 h-4" />
     },
     {
       key: 'talent',
       href: '/talent',
-      matches: (path: string) => path.startsWith('/talent') && !path.includes('/talent-dashboard')
+      matches: (path: string) => path.startsWith('/talent') && !path.includes('/talent-dashboard'),
+      icon: <Zap className="w-4 h-4" />
     },
     {
       key: 'equipment',
       href: '/equipment',
-      matches: (path: string) => path.startsWith('/equipment')
+      matches: (path: string) => path.startsWith('/equipment'),
+      icon: <Zap className="w-4 h-4" />
     },
     {
       key: 'community',
       href: '/community',
-      matches: (path: string) => path.startsWith('/community') || path.startsWith('/forum')
-<<<<<<< HEAD
+      matches: (path: string) => path.startsWith('/community') || path.startsWith('/forum'),
+      icon: <Zap className="w-4 h-4" />
     },
     {
       key: 'blog',
       href: '/blog',
-      matches: (path: string) => path.startsWith('/blog')
-    },
-    {
-      key: 'partners',
-      href: '/partners',
-      matches: (path: string) => path.startsWith('/partners')
-    },
-    {
-      key: 'careers',
-      href: '/careers',
-      matches: (path: string) => path.startsWith('/careers')
+      matches: (path: string) => path.startsWith('/blog'),
+      icon: <Zap className="w-4 h-4" />
     },
     {
       key: 'contact',
       href: '/contact',
-      matches: (path: string) => path.startsWith('/contact')
-=======
->>>>>>> 1190166b600d0883f3d21629581161b11801bcbf
+      matches: (path: string) => path.startsWith('/contact'),
+      icon: <Zap className="w-4 h-4" />
     }
   ];
 
@@ -116,7 +77,8 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
       key: 'dashboard',
       name: t('nav.dashboard'),
       href: '/dashboard',
-      matches: (path: string) => path === '/dashboard' || path === '/client-dashboard' || path === '/talent-dashboard'
+      matches: (path: string) => path === '/dashboard' || path === '/client-dashboard' || path === '/talent-dashboard',
+      icon: <Zap className="w-4 h-4" />
     });
   }
   
@@ -126,57 +88,136 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
       key: 'analytics',
       name: t('nav.analytics'),
       href: '/analytics',
-      matches: (path: string) => path.startsWith('/analytics')
+      matches: (path: string) => path.startsWith('/analytics'),
+      icon: <Zap className="w-4 h-4" />
     });
   }
+
+  const containerVariants = {
+    hidden: { opacity: 0, y: -20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        staggerChildren: 0.1,
+        delayChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: -10 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.4,
+        ease: "easeOut"
+      }
+    }
+  };
   
   return (
-    <nav className={cn("navbar ml-6 hidden md:flex", className)}>
-      <ul className="flex items-center gap-1">
+    <motion.nav 
+      className={cn("navbar ml-6 hidden md:flex", className)}
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+    >
+      <ul className="flex items-center gap-2">
         {links.map((link) => (
-          <li key={link.name}>
+          <motion.li key={link.name} variants={itemVariants}>
             <Link
               to={link.href}
               className={cn(
-                "inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-all duration-300 relative group",
+                "inline-flex h-10 items-center justify-center rounded-xl px-5 text-sm font-medium transition-all duration-500 relative group overflow-hidden",
                 link.matches(location.pathname)
-                  ? "bg-zion-purple/20 text-zion-cyan shadow-lg shadow-zion-cyan/20"
-                  : "text-white hover:bg-zion-purple/10 hover:text-zion-cyan hover:shadow-lg hover:shadow-zion-cyan/10"
+                  ? "bg-gradient-to-r from-zion-purple/30 via-zion-purple/20 to-zion-cyan/30 text-zion-cyan shadow-2xl shadow-zion-purple/30 border border-zion-purple/40"
+                  : "text-white hover:bg-gradient-to-r hover:from-zion-purple/20 hover:via-zion-purple/10 hover:to-zion-cyan/20 hover:text-zion-cyan hover:shadow-xl hover:shadow-zion-purple/20 hover:border hover:border-zion-purple/30"
               )}
             >
+              {/* Icon with animation */}
+              <motion.div 
+                className="mr-2 opacity-70 group-hover:opacity-100"
+                whileHover={{ rotate: 360, scale: 1.1 }}
+                transition={{ duration: 0.6 }}
+              >
+                {link.icon}
+              </motion.div>
+              
               {link.name}
+              
+              {/* Active indicator */}
               {link.matches(location.pathname) && (
-                <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-zion-cyan to-zion-purple rounded-full"></div>
+                <motion.div 
+                  className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-zion-cyan via-zion-purple to-zion-cyan rounded-full"
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: 1 }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
+                />
               )}
-              <div className="absolute inset-0 rounded-md bg-gradient-to-r from-zion-cyan/0 via-zion-cyan/5 to-zion-cyan/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              
+              {/* Hover glow effect */}
+              <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-zion-cyan/0 via-zion-cyan/10 to-zion-cyan/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              
+              {/* Ripple effect on hover */}
+              <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-zion-purple/0 via-zion-purple/5 to-zion-purple/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 scale-0 group-hover:scale-100 transition-transform duration-500"></div>
             </Link>
-          </li>
+          </motion.li>
         ))}
         
-        {/* Messages link with unread counter */}
+        {/* Enhanced Messages link with unread counter */}
         {isAuthenticated && (
-          <li>
+          <motion.li variants={itemVariants}>
             <Link
               to="/messages"
               className={cn(
-                "inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-all duration-300 relative group",
+                "inline-flex h-10 items-center justify-center rounded-xl px-5 text-sm font-medium transition-all duration-500 relative group overflow-hidden",
                 location.pathname === "/messages" || location.pathname === "/inbox"
-                  ? "bg-zion-purple/20 text-zion-cyan shadow-lg shadow-zion-cyan/20"
-                  : "text-white hover:bg-zion-purple/10 hover:text-zion-cyan hover:shadow-lg hover:shadow-zion-cyan/10"
+                  ? "bg-gradient-to-r from-zion-purple/30 via-zion-purple/20 to-zion-cyan/30 text-zion-cyan shadow-2xl shadow-zion-purple/30 border border-zion-purple/40"
+                  : "text-white hover:bg-gradient-to-r hover:from-zion-purple/20 hover:via-zion-purple/10 hover:to-zion-cyan/20 hover:text-zion-cyan hover:shadow-xl hover:shadow-zion-purple/20 hover:border hover:border-zion-purple/30"
               )}
             >
-              <MessageSquare className="w-4 h-4 mr-1" />
+              <motion.div 
+                className="mr-2"
+                whileHover={{ rotate: 360, scale: 1.1 }}
+                transition={{ duration: 0.6 }}
+              >
+                <MessageSquare className="w-4 h-4" />
+              </motion.div>
+              
               {t('nav.messages')}
+              
+              {/* Enhanced unread counter */}
               {unreadCount > 0 && (
-                <span className="absolute -top-1 -right-1 bg-gradient-to-r from-zion-purple to-zion-cyan text-white text-xs rounded-full h-5 w-5 flex items-center justify-center shadow-lg shadow-zion-cyan/30">
+                <motion.span 
+                  className="absolute -top-2 -right-2 bg-gradient-to-r from-zion-purple via-zion-cyan to-zion-purple text-white text-xs rounded-full h-6 w-6 flex items-center justify-center shadow-2xl shadow-zion-cyan/40 border-2 border-zion-blue-dark"
+                  initial={{ scale: 0, rotate: -180 }}
+                  animate={{ scale: 1, rotate: 0 }}
+                  transition={{ duration: 0.5, type: "spring", stiffness: 200 }}
+                >
                   {unreadCount}
-                </span>
+                </motion.span>
               )}
-              <div className="absolute inset-0 rounded-md bg-gradient-to-r from-zion-cyan/0 via-zion-cyan/5 to-zion-cyan/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              
+              {/* Active indicator */}
+              {(location.pathname === "/messages" || location.pathname === "/inbox") && (
+                <motion.div 
+                  className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-zion-cyan via-zion-purple to-zion-cyan rounded-full"
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: 1 }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
+                />
+              )}
+              
+              {/* Hover effects */}
+              <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-zion-cyan/0 via-zion-cyan/10 to-zion-cyan/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-zion-purple/0 via-zion-purple/5 to-zion-purple/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 scale-0 group-hover:scale-100 transition-transform duration-500"></div>
             </Link>
-          </li>
+          </motion.li>
         )}
       </ul>
-    </nav>
+    </motion.nav>
   );
 }
