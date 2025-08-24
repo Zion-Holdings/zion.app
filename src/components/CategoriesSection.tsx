@@ -1,7 +1,17 @@
 
 import { GradientHeading } from "./GradientHeading";
 import { Link } from "react-router-dom";
-import { Briefcase, HardDrive, Lightbulb, Users } from "lucide-react";
+import { 
+  Briefcase, 
+  HardDrive, 
+  Lightbulb, 
+  Users, 
+  Cloud, 
+  Database, 
+  TrendingUp, 
+  Cpu, 
+  Link as LinkIcon 
+} from "lucide-react";
 
 const categories = [
   {
@@ -66,7 +76,10 @@ const specialServices = [
   {
     title: "Enterprise Solutions",
     link: "/enterprise-solutions"
-  },
+  }
+];
+
+const serviceCategories = [
   {
     title: "Cloud & DevOps",
     description: "Cloud migration and automation",
@@ -159,6 +172,29 @@ export function CategoriesSection({ showTitle = true }: CategoriesSectionProps) 
             >
               View All Services
             </Link>
+          </div>
+        </div>
+        
+        <div className="mt-12">
+          <h3 className="text-center text-xl font-bold text-white mb-6">Service Categories</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {serviceCategories.map((category) => (
+              <Link 
+                key={category.title} 
+                to={category.link} 
+                className="group block"
+              >
+                <div className="rounded-lg overflow-hidden h-full border border-zion-blue-light bg-zion-blue-dark p-6 transition-all duration-300 hover:border-zion-purple/50 hover:translate-y-[-5px]">
+                  <div className={`rounded-full w-16 h-16 bg-gradient-to-br ${category.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                    <div className="text-white">
+                      {category.icon}
+                    </div>
+                  </div>
+                  <h3 className="text-white text-xl font-bold mb-2">{category.title}</h3>
+                  <p className="text-zion-slate-light">{category.description}</p>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
         

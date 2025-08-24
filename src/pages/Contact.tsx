@@ -115,7 +115,6 @@ export default function Contact() {
     }
   ];
 
->>>>>>> 1190166b600d0883f3d21629581161b11801bcbf
   return (
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-16">
