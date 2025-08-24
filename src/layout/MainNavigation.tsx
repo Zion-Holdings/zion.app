@@ -31,7 +31,7 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
     {
       key: 'services',
       href: '/services',
-      matches: (path: string) => path.startsWith('/services') || path.startsWith('/it-onsite-services')
+      matches: (path: string) => path.startsWith('/services')
     },
     {
       key: 'talent',
@@ -52,6 +52,11 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
       key: 'about',
       href: '/about',
       matches: (path: string) => path === '/about'
+    },
+    {
+      key: 'contact',
+      href: '/contact',
+      matches: (path: string) => path === '/contact'
     }
   ];
 

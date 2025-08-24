@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { COMPREHENSIVE_SERVICES, SERVICE_CATEGORIES, PRICING_TIERS, CONTACT_INFO } from '@/data/comprehensiveServices';
 import { GradientHeading } from '@/components/GradientHeading';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { 
   Search, 
   Filter, 
@@ -22,19 +21,47 @@ import {
   CheckCircle,
   ArrowRight,
   Users,
-  Building
+  Building,
+  Brain,
+  Cloud,
+  Database,
+  Code,
+  Link as LinkIcon,
+  ChevronDown,
+  ChevronUp
 } from 'lucide-react';
 import Rocket from 'lucide-react/dist/esm/icons/rocket';
+import Wifi from 'lucide-react/dist/esm/icons/wifi';
 
-export default function ComprehensiveServices() {
+export default function ComprehensiveServicesLanding() {
+  const [searchParams, setSearchParams] = useSearchParams();
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [searchTerm, setSearchTerm] = useState('');
+  const [expandedService, setExpandedService] = useState<string | null>(null);
+
+  // Get category from URL params
+  useEffect(() => {
+    const category = searchParams.get('category');
+    if (category) {
+      setSelectedCategory(category);
+    }
+  }, [searchParams]);
 
   const filteredServices = COMPREHENSIVE_SERVICES.filter(service => {
-    const matchesCategory = selectedCategory === 'all' || service.category === selectedCategory;
+    const matchesCategory = selectedCategory === 'all' || 
+                          (selectedCategory === 'ai-automation' && service.category === 'AI & Automation') ||
+                          (selectedCategory === 'cloud-infrastructure' && service.category === 'Cloud & Infrastructure') ||
+                          (selectedCategory === 'cybersecurity' && service.category === 'Cybersecurity') ||
+                          (selectedCategory === 'data-analytics' && service.category === 'Data & Analytics') ||
+                          (selectedCategory === 'devops-development' && service.category === 'DevOps & Development') ||
+                          (selectedCategory === 'iot-hardware' && service.category === 'IoT & Hardware') ||
+                          (selectedCategory === 'blockchain-web3' && service.category === 'Blockchain & Web3') ||
+                          (selectedCategory === 'digital-transformation' && service.category === 'Digital Transformation');
+    
     const matchesSearch = service.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          service.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          service.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
+    
     return matchesCategory && matchesSearch;
   });
 
@@ -43,17 +70,40 @@ export default function ComprehensiveServices() {
     return categoryData?.icon || '🔧';
   };
 
+  const getCategoryIconComponent = (category: string) => {
+    const iconMap: { [key: string]: React.ReactNode } = {
+      'AI & Automation': <Brain className="w-6 h-6" />,
+      'Cloud & Infrastructure': <Cloud className="w-6 h-6" />,
+      'Cybersecurity': <Shield className="w-6 h-6" />,
+      'Data & Analytics': <Database className="w-6 h-6" />,
+      'DevOps & Development': <Code className="w-6 h-6" />,
+      'IoT & Hardware': <Wifi className="w-6 h-6" />,
+      'Blockchain & Web3': <LinkIcon className="w-6 h-6" />,
+      'Digital Transformation': <Rocket className="w-6 h-6" />
+    };
+    return iconMap[category] || <Zap className="w-6 h-6" />;
+  };
+
+  const handleCategoryChange = (category: string) => {
+    setSelectedCategory(category);
+    if (category === 'all') {
+      setSearchParams({});
+    } else {
+      setSearchParams({ category });
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-zion-blue via-zion-blue-dark to-zion-purple">
       {/* Hero Section */}
       <section className="pt-20 pb-16 px-4">
         <div className="container mx-auto text-center">
           <GradientHeading level="h1" className="text-5xl md:text-6xl font-bold mb-6">
-            Enterprise-Grade Micro SAAS Solutions
+            Comprehensive Micro SAAS Solutions
           </GradientHeading>
           <p className="text-zion-slate-light text-xl md:text-2xl max-w-4xl mx-auto mb-8">
-            Transform your business with our comprehensive suite of AI-powered, cloud-native, and innovative technology solutions. 
-            From automation to cybersecurity, we deliver results that drive growth and efficiency.
+            Discover our complete portfolio of enterprise-grade technology solutions designed to accelerate your business growth, 
+            enhance security, and drive innovation across all operations.
           </p>
           
           {/* Search and Filter */}
@@ -74,7 +124,7 @@ export default function ComprehensiveServices() {
           <div className="flex flex-wrap justify-center gap-3 mb-8">
             <Button
               variant={selectedCategory === 'all' ? 'default' : 'outline'}
-              onClick={() => setSelectedCategory('all')}
+              onClick={() => handleCategoryChange('all')}
               className="bg-zion-cyan hover:bg-zion-cyan-dark text-white border-zion-cyan"
             >
               All Services ({COMPREHENSIVE_SERVICES.length})
@@ -82,8 +132,8 @@ export default function ComprehensiveServices() {
             {SERVICE_CATEGORIES.map((category) => (
               <Button
                 key={category.id}
-                variant={selectedCategory === category.name ? 'default' : 'outline'}
-                onClick={() => setSelectedCategory(category.name)}
+                variant={selectedCategory === category.id ? 'default' : 'outline'}
+                onClick={() => handleCategoryChange(category.id)}
                 className="bg-zion-cyan hover:bg-zion-cyan-dark text-white border-zion-cyan"
               >
                 {category.icon} {category.name}
@@ -96,34 +146,34 @@ export default function ComprehensiveServices() {
       {/* Services Grid */}
       <section className="pb-20 px-4">
         <div className="container mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {filteredServices.map((service) => (
-              <Card key={service.id} className="bg-zion-blue-dark border-zion-blue-light hover:border-zion-cyan transition-all duration-300 hover:shadow-2xl hover:shadow-zion-cyan/20 group">
+              <Card key={service.id} className="bg-zion-blue-dark border-zion-blue-light hover:border-zion-cyan transition-all duration-300 hover:shadow-2xl hover:shadow-zion-cyan/20">
                 <div className="relative">
                   <img
                     src={service.images[0]}
                     alt={service.title}
-                    className="w-full h-48 object-cover rounded-t-lg group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-64 object-cover rounded-t-lg"
                   />
                   {service.featured && (
                     <Badge className="absolute top-4 right-4 bg-zion-cyan text-white">
                       Featured
                     </Badge>
                   )}
-                  <div className="absolute top-4 left-4 flex items-center gap-2">
-                    <Badge variant="secondary" className="bg-black/50 text-white">
-                      {getCategoryIcon(service.category)}
-                    </Badge>
+                  <div className="absolute top-4 left-4">
+                    <div className="w-12 h-12 bg-black/50 rounded-full flex items-center justify-center">
+                      {getCategoryIconComponent(service.category)}
+                    </div>
                   </div>
                 </div>
                 
                 <CardHeader className="pb-4">
                   <div className="flex items-start justify-between mb-2">
-                    <CardTitle className="text-white text-xl group-hover:text-zion-cyan transition-colors">
+                    <CardTitle className="text-white text-2xl flex-1 mr-4">
                       {service.title}
                     </CardTitle>
                     <div className="text-right">
-                      <div className="text-zion-cyan font-bold text-2xl">
+                      <div className="text-zion-cyan font-bold text-3xl">
                         {service.currency}{service.price?.toLocaleString()}
                       </div>
                       <div className="text-zion-slate-light text-sm">
@@ -139,8 +189,8 @@ export default function ComprehensiveServices() {
 
                 <CardContent className="pt-0">
                   {/* Tags */}
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {service.tags.slice(0, 3).map((tag) => (
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {service.tags.map((tag) => (
                       <Badge key={tag} variant="outline" className="text-zion-cyan border-zion-cyan/30">
                         {tag}
                       </Badge>
@@ -148,43 +198,81 @@ export default function ComprehensiveServices() {
                   </div>
 
                   {/* Service Details */}
-                  <div className="space-y-3 mb-6">
-                    <div className="flex items-center gap-2 text-zion-slate-light">
-                      <Clock className="w-4 h-4" />
-                      <span className="text-sm">Availability: {service.availability}</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-zion-slate-light">
-                      <Globe className="w-4 h-4" />
-                      <span className="text-sm">Location: {service.location}</span>
-                    </div>
-                    {service.aiScore && (
+                  <div className="grid grid-cols-2 gap-4 mb-6">
+                    <div className="space-y-3">
                       <div className="flex items-center gap-2 text-zion-slate-light">
-                        <TrendingUp className="w-4 h-4" />
-                        <span className="text-sm">AI Score: {service.aiScore}/100</span>
+                        <Clock className="w-4 h-4" />
+                        <span className="text-sm">Availability: {service.availability}</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-zion-slate-light">
+                        <Globe className="w-4 h-4" />
+                        <span className="text-sm">Location: {service.location}</span>
+                      </div>
+                    </div>
+                    <div className="space-y-3">
+                      {service.aiScore && (
+                        <div className="flex items-center gap-2 text-zion-slate-light">
+                          <TrendingUp className="w-4 h-4" />
+                          <span className="text-sm">AI Score: {service.aiScore}/100</span>
+                        </div>
+                      )}
+                      {service.rating && (
+                        <div className="flex items-center gap-2 text-zion-slate-light">
+                          <Star className="w-4 h-4 text-yellow-400 fill-current" />
+                          <span className="text-sm">{service.rating} ({service.reviewCount} reviews)</span>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Expandable Details */}
+                  <div className="mb-6">
+                    <Button
+                      variant="ghost"
+                      onClick={() => setExpandedService(expandedService === service.id ? null : service.id)}
+                      className="text-zion-cyan hover:text-zion-cyan-dark p-0 h-auto"
+                    >
+                      {expandedService === service.id ? (
+                        <>
+                          <ChevronUp className="w-4 h-4 mr-2" />
+                          Hide Details
+                        </>
+                      ) : (
+                        <>
+                          <ChevronDown className="w-4 h-4 mr-2" />
+                          Show Details
+                        </>
+                      )}
+                    </Button>
+                    
+                    {expandedService === service.id && (
+                      <div className="mt-4 p-4 bg-zion-blue/30 rounded-lg border border-zion-blue-light">
+                        <h4 className="text-white font-semibold mb-3">Service Features & Benefits</h4>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                          <div>
+                            <h5 className="text-zion-cyan font-medium mb-2">Key Features</h5>
+                            <ul className="space-y-2 text-zion-slate-light text-sm">
+                              <li>• Advanced AI-powered automation</li>
+                              <li>• Real-time monitoring & analytics</li>
+                              <li>• Enterprise-grade security</li>
+                              <li>• Scalable cloud infrastructure</li>
+                              <li>• 24/7 technical support</li>
+                            </ul>
+                          </div>
+                          <div>
+                            <h5 className="text-zion-cyan font-medium mb-2">Business Benefits</h5>
+                            <ul className="space-y-2 text-zion-slate-light text-sm">
+                              <li>• 80% reduction in manual tasks</li>
+                              <li>• 60% improvement in efficiency</li>
+                              <li>• Enhanced security & compliance</li>
+                              <li>• Faster time to market</li>
+                              <li>• Cost optimization</li>
+                            </ul>
+                          </div>
+                        </div>
                       </div>
                     )}
                   </div>
-
-                  {/* Rating */}
-                  {service.rating && (
-                    <div className="flex items-center gap-2 mb-4">
-                      <div className="flex items-center gap-1">
-                        {[...Array(5)].map((_, i) => (
-                          <Star
-                            key={i}
-                            className={`w-4 h-4 ${
-                              i < Math.floor(service.rating!) 
-                                ? 'text-yellow-400 fill-current' 
-                                : 'text-zion-slate-light'
-                            }`}
-                          />
-                        ))}
-                      </div>
-                      <span className="text-zion-slate-light text-sm">
-                        {service.rating} ({service.reviewCount} reviews)
-                      </span>
-                    </div>
-                  )}
 
                   {/* CTA Buttons */}
                   <div className="flex gap-3">
@@ -192,7 +280,7 @@ export default function ComprehensiveServices() {
                       Get Quote
                     </Button>
                     <Button variant="outline" className="border-zion-cyan text-zion-cyan hover:bg-zion-cyan hover:text-white">
-                      Learn More
+                      Schedule Demo
                     </Button>
                   </div>
                 </CardContent>
@@ -205,7 +293,7 @@ export default function ComprehensiveServices() {
               <div className="text-zion-slate-light text-xl mb-4">
                 No services found matching your criteria
               </div>
-              <Button onClick={() => { setSearchTerm(''); setSelectedCategory('all'); }}>
+              <Button onClick={() => { setSearchTerm(''); handleCategoryChange('all'); }}>
                 Clear Filters
               </Button>
             </div>
