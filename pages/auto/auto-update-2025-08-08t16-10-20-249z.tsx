@@ -1,1 +1,1 @@
-export default function AutoPage() { return <div>auto-update-2025-08-08t16-10-20-249z</div>; }
+export default function Page() { return <div>Auto Page</div>; }

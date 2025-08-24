@@ -1,27 +1,17 @@
 import Link from 'next/link';
-import dynamic from 'next/dynamic';
-
-const GlobalSearchBar = dynamic(() => import('../search/GlobalSearchBar'), { ssr: false });
 
 export default function EnhancedNavigation() {
   return (
     <nav className="border-b border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-black/40 backdrop-blur supports-backdrop-blur:bg-white/50 sticky top-0 z-40">
-      <div className="container mx-auto px-4 h-14 flex items-center justify-between gap-4">
+      <div className="container mx-auto px-4 h-14 flex items-center justify-between">
         <Link href="/">
           <a className="font-semibold">Zion</a>
         </Link>
-        <div className="flex-1 hidden sm:block">
-          <GlobalSearchBar />
-        </div>
         <div className="flex items-center gap-4 text-sm">
           <Link href="/about"><a>About</a></Link>
           <Link href="/blog"><a>Blog</a></Link>
-          <Link href="/partners"><a>Partners</a></Link>
-          <Link href="/affiliate-dashboard"><a>Affiliate Dashboard</a></Link>
           <Link href="/contact"><a>Contact</a></Link>
-          <Link href="/protocol/un-bridge"><a>UN Bridge</a></Link>
-          <Link href="/governance/global-outreach"><a>Global Outreach</a></Link>
-          <Link href="/proposals/international"><a>International</a></Link>
+          <Link href="/help"><a>Support</a></Link>
         </div>
       </div>
     </nav>

@@ -1,1 +1,1 @@
-export default function Page() { return <div>cloud-computing-strategies</div>; }
+export default function Page() { return <div>Cloud Computing Strategies</div>; }

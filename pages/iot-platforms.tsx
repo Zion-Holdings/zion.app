@@ -1,8 +1,7 @@
-export default function IotPlatforms() {
+export default function IoTPlatforms() {
   return (
-    <div className="space-y-2">
+    <div>
       <h1 className="text-2xl font-semibold">IoT Platforms</h1>
-      <p>Overview of IoT platform integrations.</p>
     </div>
   );
 }

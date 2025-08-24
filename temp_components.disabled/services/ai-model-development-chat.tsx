@@ -1,6 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
+import UseTokensButton from '../../components/tokens/UseTokensButton';
 
 const AiModelDevelopmentChat: NextPage = () => {
   return (
@@ -10,10 +11,11 @@ const AiModelDevelopmentChat: NextPage = () => {
         <meta name="description" content="AiModelDevelopmentChat service" />
       </Head>
       
-      <main>
+      <main className="space-y-4">
         <h1>AiModelDevelopmentChat</h1>
         <p>Service details coming soon...</p>
-        <a href="/services">Back to Services</a>
+        <UseTokensButton serviceId="ai-model-development-chat" />
+        <Link href="/services">Back to Services</Link>
       </main>
     </div>
   );

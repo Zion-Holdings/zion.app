@@ -1,1 +1,1 @@
-export default function Page() { return <div>digital-transformation-insights</div>; }
+export default function Page() { return <div>Digital Transformation Insights</div>; }
