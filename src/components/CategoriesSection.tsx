@@ -1,17 +1,7 @@
 
 import { GradientHeading } from "./GradientHeading";
 import { Link } from "react-router-dom";
-import { 
-  Briefcase, 
-  HardDrive, 
-  Lightbulb, 
-  Users, 
-  Cloud, 
-  Database, 
-  TrendingUp, 
-  Cpu, 
-  Link as LinkIcon 
-} from "lucide-react";
+import { Briefcase, HardDrive, Lightbulb, Users } from "lucide-react";
 
 const categories = [
   {
@@ -52,72 +42,6 @@ const specialServices = [
   {
     title: "Comprehensive Services",
     link: "/comprehensive-services"
-  },
-  {
-    title: "AI Services",
-    link: "/ai-services"
-  },
-  {
-    title: "Cybersecurity Services",
-    link: "/cybersecurity-services"
-  },
-  {
-    title: "Micro SAAS",
-    link: "/micro-saas"
-  },
-  {
-    title: "All Services",
-    link: "/comprehensive-services"
-  },
-  {
-    title: "Pricing",
-    link: "/services-pricing"
-  },
-  {
-    title: "Enterprise Solutions",
-    link: "/enterprise-solutions"
-  },
-  {
-    title: "Innovative Services",
-    link: "/innovative-services"
-  }
-];
-
-const serviceCategories = [
-  {
-    title: "Cloud & DevOps",
-    description: "Cloud migration and automation",
-    icon: <Cloud className="w-8 h-8" />,
-    color: "from-blue-500 to-cyan-600",
-    link: "/expanded-services?category=cloud-devops"
-  },
-  {
-    title: "Data & Analytics",
-    description: "Business intelligence and governance",
-    icon: <Database className="w-8 h-8" />,
-    color: "from-green-500 to-emerald-600",
-    link: "/expanded-services?category=data-analytics"
-  },
-  {
-    title: "Digital Transformation",
-    description: "Strategy and modernization",
-    icon: <TrendingUp className="w-8 h-8" />,
-    color: "from-orange-500 to-yellow-600",
-    link: "/expanded-services?category=digital-transformation"
-  },
-  {
-    title: "IoT & Edge",
-    description: "Connected solutions and edge computing",
-    icon: <Cpu className="w-8 h-8" />,
-    color: "from-indigo-500 to-purple-600",
-    link: "/expanded-services?category=iot-edge"
-  },
-  {
-    title: "Blockchain & Web3",
-    description: "Decentralized solutions and smart contracts",
-    icon: <LinkIcon className="w-8 h-8" />,
-    color: "from-teal-500 to-blue-600",
-    link: "/expanded-services?category=blockchain-web3"
   }
 ];
 
@@ -168,35 +92,6 @@ export function CategoriesSection({ showTitle = true }: CategoriesSectionProps) 
                 className="px-6 py-3 bg-zion-blue-light hover:bg-zion-blue-dark border border-zion-purple/20 hover:border-zion-purple/50 rounded-full text-zion-cyan transition-all duration-300"
               >
                 {service.title}
-              </Link>
-            ))}
-            <Link 
-              to="/comprehensive-services"
-              className="px-6 py-3 bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple border border-zion-purple/50 hover:border-zion-purple rounded-full text-white transition-all duration-300"
-            >
-              View All Services
-            </Link>
-          </div>
-        </div>
-        
-        <div className="mt-12">
-          <h3 className="text-center text-xl font-bold text-white mb-6">Service Categories</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {serviceCategories.map((category) => (
-              <Link 
-                key={category.title} 
-                to={category.link} 
-                className="group block"
-              >
-                <div className="rounded-lg overflow-hidden h-full border border-zion-blue-light bg-zion-blue-dark p-6 transition-all duration-300 hover:border-zion-purple/50 hover:translate-y-[-5px]">
-                  <div className={`rounded-full w-16 h-16 bg-gradient-to-br ${category.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                    <div className="text-white">
-                      {category.icon}
-                    </div>
-                  </div>
-                  <h3 className="text-white text-xl font-bold mb-2">{category.title}</h3>
-                  <p className="text-zion-slate-light">{category.description}</p>
-                </div>
               </Link>
             ))}
           </div>
