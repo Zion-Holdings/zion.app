@@ -1,25 +1,9 @@
-
-import React from "react";
-import { AppLayout } from "@/layout/AppLayout";
-import { SEO } from "@/components/SEO";
-import { MetadataManager } from "@/components/mobile-app/admin/MetadataManager";
-
-const AppMetadataManager: React.FC = () => {
+import React from 'react';
+export function AppMetadataManager() {
   return (
-    <AppLayout>
-      <SEO 
-        title="App Metadata Manager"
-        description="Manage app store metadata for the Zion mobile application"
-        noindex={true}
-      />
-      
-      <div className="container py-8">
-        <h1 className="text-3xl font-bold text-zion-cyan mb-8">App Metadata Manager</h1>
-        
-        <MetadataManager />
-      </div>
-    </AppLayout>
+    <div>
+      <h1>Component</h1>
+      <p>Component placeholder</p>
+    </div>
   );
-};
-
-export default AppMetadataManager;
+}
