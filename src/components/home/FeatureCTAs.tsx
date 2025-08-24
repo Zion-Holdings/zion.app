@@ -37,12 +37,12 @@ export function FeatureCTAs() {
       details: "Every talent in our directory undergoes a rigorous verification process to ensure quality, authenticity, and reliability."
     },
     {
-      title: "Services Marketplace",
-      description: "Discover professional tech and AI services for your business needs, from development to consulting.",
+      title: "AI Services Hub",
+      description: "Cutting-edge AI solutions including chatbots, image generation, video editing, and data analytics.",
       icon: <Zap className="h-10 w-10 p-2 rounded-md bg-cyan-100 text-cyan-700" />,
-      link: "/services",
+      link: "/ai-services",
       badge: "New",
-      details: "From on-demand IT support to specialized AI development, our marketplace offers verified services with transparent pricing and reviews."
+      details: "From AI chatbots to advanced analytics, our AI services help businesses leverage artificial intelligence for competitive advantage."
     },
     {
       title: "Equipment Catalog",
@@ -67,11 +67,11 @@ export function FeatureCTAs() {
       details: "Manage your projects, communicate with clients or talents, and receive real-time updates wherever you are."
     },
     {
-      title: "Enterprise Solutions",
-      description: "Custom-branded hiring portal, dedicated talent pool, and powerful admin controls for your organization.",
+      title: "IT Services Hub",
+      description: "Comprehensive IT solutions including cloud migration, cybersecurity, network infrastructure, and 24/7 support.",
       icon: <Building className="h-10 w-10 p-2 rounded-md bg-pink-100 text-pink-700" />,
-      link: "/enterprise",
-      details: "Scale your talent acquisition with white-labeled solutions, analytics dashboards, and dedicated account managers."
+      link: "/it-services",
+      details: "From cloud migration to cybersecurity audits, our IT services help businesses modernize their infrastructure and enhance security."
     },
     {
       title: "Developer Tools",
@@ -95,6 +95,14 @@ export function FeatureCTAs() {
       details: "Our intuitive project management tools help you track progress, manage deliverables, and ensure timely completion."
     },
     {
+      title: "Micro SAAS Hub",
+      description: "Affordable software solutions for growing businesses including CRM, project management, and marketing tools.",
+      icon: <Zap className="h-10 w-10 p-2 rounded-md bg-violet-100 text-violet-700" />,
+      link: "/micro-saas",
+      badge: "New",
+      details: "Discover powerful, affordable software solutions designed to help your business scale without breaking the bank."
+    },
+    {
       title: "Zion Hire AI",
       description: "AI-powered recruiting assistant to streamline your hiring process and find better matches.",
       icon: <Clock className="h-10 w-10 p-2 rounded-md bg-violet-100 text-violet-700" />,
@@ -105,10 +113,11 @@ export function FeatureCTAs() {
   ];
 
   return (
-    <section className="py-16 bg-gradient-to-b from-background to-background/90">
-      <div className="container mx-auto px-4">
+    <section className="py-16 bg-gradient-to-b from-background to-background/90 cyber-grid relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-r from-zion-purple/5 to-zion-cyan/5"></div>
+      <div className="relative container mx-auto px-4">
         <div className="mb-12 text-center">
-          <h2 className="text-3xl font-bold tracking-tight mb-3">Discover Zion's Powerful Features</h2>
+          <h2 className="text-3xl font-bold tracking-tight mb-3 glow">Discover Zion's Powerful Features</h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Explore our comprehensive suite of tools designed to transform how you connect, collaborate, and create in the tech ecosystem.
           </p>
@@ -116,7 +125,7 @@ export function FeatureCTAs() {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature, index) => (
-            <Card key={index} className="overflow-hidden transition-all duration-300 hover:shadow-lg hover:border-primary/50">
+            <Card key={index} className="overflow-hidden transition-all duration-300 hover:shadow-lg hover:border-primary/50 hover:neon-pulse group">
               <CardHeader className="pb-2">
                 <div className="flex justify-between items-start">
                   {feature.icon}
@@ -133,7 +142,7 @@ export function FeatureCTAs() {
                 <p className="text-sm text-muted-foreground">{feature.details}</p>
               </CardContent>
               <CardFooter>
-                <Button asChild className="w-full gap-1">
+                <Button asChild className="w-full gap-1 hover:neon-pulse transition-all duration-300">
                   <Link to={feature.link}>
                     <span>Explore {feature.title}</span>
                     <ArrowRight className="h-4 w-4" />

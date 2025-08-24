@@ -16,17 +16,18 @@ export function ITServiceRequestHero() {
   };
 
   return (
-    <section className="bg-zion-blue-dark py-16 md:py-24 border-b border-zion-purple/20">
-      <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        <div>
-          <GradientHeading className="mb-6 text-4xl md:text-5xl">
+    <section className="bg-zion-blue-dark py-16 md:py-24 border-b border-zion-purple/20 cyber-grid relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-r from-zion-purple/10 to-zion-cyan/10"></div>
+      <div className="relative container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div className="float">
+          <GradientHeading className="mb-6 text-4xl md:text-5xl glow">
             24x7 Global IT Onsite Services
           </GradientHeading>
           <p className="text-lg text-zion-slate-light mb-8 max-w-md">
             Request professional technicians anywhere in the world, anytime you need them.
           </p>
         </div>
-        <div className="bg-zion-blue-light p-6 rounded-lg shadow-lg">
+        <div className="bg-zion-blue-light/80 backdrop-blur-sm p-6 rounded-lg shadow-lg neon-border float">
           <form onSubmit={handleSubmit} className="space-y-4">
             <Input
               value={location}
