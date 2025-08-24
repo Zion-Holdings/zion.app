@@ -273,7 +273,10 @@ export default function HomePage() {
         <meta property="og:title" content="Zion Tech Group — AI-Powered Micro SaaS Services with Competitive Pricing" />
         <meta property="og:description" content="Real micro SaaS solutions with competitive pricing. AI-powered tools for social media, SEO, email marketing, and business intelligence." />
         <meta name="twitter:card" content="summary_large_image" />
-      </Head>
+        <meta name="keywords" content="AI, quantum computing, cybersecurity, digital transformation, autonomous systems, technology solutions" />
+        <link rel="canonical" href="https://ziontechgroup.com" />
+      
+        <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","headline":"Zion Tech Group — Leading-Edge Technology Solutions & Autonomous Innovation Platform","url":"https://ziontechgroup.com/","isPartOf":{"@type":"WebSite","name":"Zion Tech Group","url":"https://ziontechgroup.com"}}</script></Head>
 
       {/* Hero Section */}
       <Hero
