@@ -316,7 +316,9 @@ class FileConverterService {
       channelData[i] = Math.sin(2 * Math.PI * 440 * i / 44100) * 0.1;
     }
     
-    return new Blob([buffer], { type: this.getMimeType(options.format) });
+    // Convert AudioBuffer to ArrayBuffer for Blob creation
+    const arrayBuffer = buffer.getChannelData(0).buffer;
+    return new Blob([arrayBuffer], { type: this.getMimeType(options.format) });
   }
 
   private async createMockVideoBlob(file: File, options: ConversionOptions): Promise<Blob> {

@@ -434,11 +434,15 @@ export class EmailMarketingService {
     const subscriberGrowth = Array.from({ length: 30 }, (_, i) => {
       const date = new Date();
       date.setDate(date.getDate() - (29 - i));
-      return {
-        date: date.toISOString().split('T')[0],
-        subscribers: Math.floor(Math.random() * 100) + 1000 + i * 10
-      };
-    });
+      const dateStr = date.toISOString().split('T')[0];
+      if (dateStr) {
+        return {
+          date: dateStr,
+          subscribers: Math.floor(Math.random() * 100) + 1000 + i * 10
+        };
+      }
+      return null;
+    }).filter(Boolean) as { date: string; subscribers: number }[];
 
     return {
       overview: {

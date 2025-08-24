@@ -447,6 +447,9 @@ class CloudCostOptimizerService {
       'year': 'yearly'
     };
     const costKey = periodMap[period];
+    if (!costKey) {
+      throw new Error(`Invalid period: ${period}`);
+    }
     return resources.reduce((total, resource) => {
       return total + resource.cost[costKey];
     }, 0);
@@ -459,6 +462,17 @@ class CloudCostOptimizerService {
     byAccount: Record<string, number>;
   }> {
     const resources = Array.from(this.resources.values());
+    const periodMap: Record<string, keyof typeof resources[0]['cost']> = {
+      'hour': 'hourly',
+      'day': 'daily',
+      'month': 'monthly',
+      'year': 'yearly'
+    };
+    const costKey = periodMap[period];
+    if (!costKey) {
+      throw new Error(`Invalid period: ${period}`);
+    }
+    
     const byService: Record<string, number> = {};
     const byRegion: Record<string, number> = {};
     const byTag: Record<string, number> = {};
@@ -466,20 +480,20 @@ class CloudCostOptimizerService {
 
     resources.forEach(resource => {
       // By service type
-      byService[resource.type] = (byService[resource.type] || 0) + resource.cost[period];
+      byService[resource.type] = (byService[resource.type] || 0) + resource.cost[costKey];
       
       // By region
-      byRegion[resource.region] = (byRegion[resource.region] || 0) + resource.cost[period];
+      byRegion[resource.region] = (byRegion[resource.region] || 0) + resource.cost[costKey];
       
       // By tags
       Object.entries(resource.tags).forEach(([key, value]) => {
         const tagKey = `${key}:${value}`;
-        byTag[tagKey] = (byTag[tagKey] || 0) + resource.cost[period];
+        byTag[tagKey] = (byTag[tagKey] || 0) + resource.cost[costKey];
       });
 
       // By account (mock account data)
       const accountId = 'account-123'; // Mock account ID
-      byAccount[accountId] = (byAccount[accountId] || 0) + resource.cost[period];
+      byAccount[accountId] = (byAccount[accountId] || 0) + resource.cost[costKey];
     });
 
     return { byService, byRegion, byTag, byAccount };
@@ -683,10 +697,13 @@ class CloudCostOptimizerService {
     
     while (currentDate <= endDate) {
       const dailyCost = Math.random() * 2000 + 1000; // Mock daily cost
-      trends.push({
-        date: currentDate.toISOString().split('T')[0],
-        cost: Math.round(dailyCost)
-      });
+      const dateString = currentDate.toISOString().split('T')[0];
+      if (dateString) {
+        trends.push({
+          date: dateString,
+          cost: Math.round(dailyCost)
+        });
+      }
       currentDate.setDate(currentDate.getDate() + 1);
     }
     

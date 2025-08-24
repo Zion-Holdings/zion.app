@@ -462,9 +462,21 @@ export default {
       return null;
     }
 
+    const existingComponent = this.currentSystem.components[componentIndex];
+    if (!existingComponent) {
+      return null;
+    }
+    
     this.currentSystem.components[componentIndex] = {
-      ...this.currentSystem.components[componentIndex],
+      ...existingComponent,
       ...updates,
+      id: existingComponent.id, // Preserve required fields
+      name: updates.name || existingComponent.name,
+      category: updates.category || existingComponent.category,
+      variants: updates.variants || existingComponent.variants,
+      props: updates.props || existingComponent.props,
+      code: updates.code || existingComponent.code,
+      usage: existingComponent.usage,
       lastUpdated: new Date()
     };
 
@@ -513,9 +525,20 @@ export default {
       return null;
     }
 
+    const existingToken = this.currentSystem.tokens[tokenIndex];
+    if (!existingToken) {
+      return null;
+    }
+    
     this.currentSystem.tokens[tokenIndex] = {
-      ...this.currentSystem.tokens[tokenIndex],
-      ...updates
+      ...existingToken,
+      ...updates,
+      id: existingToken.id, // Preserve required fields
+      name: updates.name || existingToken.name,
+      category: updates.category || existingToken.category,
+      value: updates.value || existingToken.value,
+      description: updates.description || existingToken.description,
+      usage: existingToken.usage
     };
 
     this.currentSystem.lastUpdated = new Date();

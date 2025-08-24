@@ -128,7 +128,8 @@ class CodeReviewService {
   private findLineNumber(code: string, pattern: RegExp): number {
     const lines = code.split('\n');
     for (let i = 0; i < lines.length; i++) {
-      if (pattern.test(lines[i])) {
+      const line = lines[i];
+      if (line && pattern.test(line)) {
         return i + 1;
       }
     }

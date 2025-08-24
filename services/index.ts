@@ -20,37 +20,26 @@ export { aiMarketResearchService } from './aiMarketResearchService';
 export { aiDataAnalyticsService } from './aiDataAnalyticsService';
 export { aiCybersecurityService } from './aiCybersecurityService';
 
-// Advanced futuristic micro SAAS services
-export { advancedFuturisticMicroSaasServices } from '../data/2025-advanced-futuristic-micro-saas-expansion';
-
 // Advanced IT infrastructure services
-export { advancedITInfrastructureServices } from '../data/2025-advanced-it-infrastructure-services';
+export { advancedITInfrastructureExpansion2025V2 } from '../data/2025-advanced-it-infrastructure-expansion-v2';
 
-// Advanced AI automation services
-export { advancedAIAutomationServices } from '../data/2025-advanced-ai-automation-services';
+// Advanced micro SAAS expansion services
+export { advancedMicroSaasExpansion2025V2 } from '../data/2025-advanced-micro-saas-expansion-v2';
 
-// Advanced AI & IT Services
-export { aiCybersecurityService } from './aiCybersecurityService';
-export { aiDevOpsService } from './aiDevOpsService';
-export { aiDataEngineeringService } from './aiDataEngineeringService';
-export { aiFintechService } from './aiFintechService';
-export { aiHealthcareService } from './aiHealthcareService';
+// Advanced AI services expansion
+export { advancedAIServicesExpansion2025V2 } from '../data/2025-advanced-ai-services-expansion-v2';
 
-// New AI-powered services
-export { aiCybersecurityService } from './aiCybersecurityService';
-export { aiDevOpsAutomationService } from './aiDevOpsAutomationService';
-export { aiFinancialAnalyticsService } from './aiFinancialAnalyticsService';
-export { aiHealthcareAnalyticsService } from './aiHealthcareAnalyticsService';
-
-// Export 2025 innovative micro SAAS expansion services
-export { innovative2025MicroSaasExpansionV3 } from '../data/2025-innovative-micro-saas-expansion-v3';
-
-// Export new 2025 services
-export { advancedAIMLServices } from '../data/2025-advanced-ai-ml-services';
-export { advancedCybersecurityServices } from '../data/2025-advanced-cybersecurity-services';
+// Advanced cloud DevOps services
 export { advancedCloudDevOpsServices2025 } from '../data/2025-advanced-cloud-devops-services';
-export { industrySpecificSolutions } from '../data/2025-industry-specific-solutions';
-export { emergingTechnologyServices } from '../data/2025-emerging-technology-services';
+
+// Advanced energy and sustainability solutions
+export { advancedEnergySustainabilitySolutions2025 } from '../data/2025-advanced-energy-sustainability-solutions';
+
+// Advanced healthcare tech solutions
+export { advancedHealthcareTechSolutions2025 } from '../data/2025-advanced-healthcare-tech-solutions';
+
+// Advanced logistics and supply chain solutions
+export { advancedLogisticsSupplyChainSolutions2025 } from '../data/2025-advanced-logistics-supply-chain-solutions';
 
 // Export types
 export type {
@@ -211,7 +200,8 @@ export type {
 export type {
   MarketTrend,
   CompetitorAnalysis as MarketCompetitorAnalysis,
-  MarketInsight,
+  MarketSegment,
+  MarketReport,
   MarketResearchRequest,
   MarketResearchResponse
 } from './aiMarketResearchService';

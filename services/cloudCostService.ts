@@ -145,10 +145,13 @@ class CloudCostService {
       for (let i = 0; i < days; i++) {
         const date = new Date(startDate);
         date.setDate(date.getDate() + i);
-        costTrend.push({
-          date: date.toISOString().split('T')[0],
-          cost: totalCost + (Math.random() - 0.5) * 20
-        });
+        const dateString = date.toISOString().split('T')[0];
+        if (dateString) {
+          costTrend.push({
+            date: dateString,
+            cost: totalCost + (Math.random() - 0.5) * 20
+          });
+        }
       }
       
       const savingsOpportunities = [

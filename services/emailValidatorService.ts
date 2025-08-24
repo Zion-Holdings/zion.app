@@ -93,6 +93,13 @@ class EmailValidatorService {
 
       // Extract domain
       const domain = email.split('@')[1];
+      if (!domain) {
+        result.suggestions.push('Invalid domain format');
+        result.confidence = 10;
+        this.stats.invalidEmails++;
+        return result;
+      }
+      
       result.details.domain = this.validateDomain(domain);
       
       if (!result.details.domain) {
@@ -114,9 +121,11 @@ class EmailValidatorService {
       
       // Check if role account
       const localPart = email.split('@')[0];
-      result.details.role = this.isRoleAccount(localPart);
-      if (result.details.role) {
-        result.suggestions.push('This appears to be a role-based email address');
+      if (localPart) {
+        result.details.role = this.isRoleAccount(localPart);
+        if (result.details.role) {
+          result.suggestions.push('This appears to be a role-based email address');
+        }
       }
 
       // Check MX records (simulated)

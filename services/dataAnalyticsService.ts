@@ -694,26 +694,28 @@ class DataAnalyticsService {
       date.setDate(date.getDate() - i);
       const dateStr = date.toISOString().split('T')[0];
       
-      const dayDatasets = datasets.filter(d => 
-        d.lastUpdated.toISOString().split('T')[0] === dateStr
-      );
-      
-      const dayTransformations = transformations.filter(t => 
-        t.lastExecutedAt && t.lastExecutedAt.toISOString().split('T')[0] === dateStr
-      );
-      
-      const datasetsProcessed = dayDatasets.length;
-      const dataVolume = dayDatasets.reduce((sum, d) => sum + d.rowCount * 0.001, 0);
-      const averageTime = dayTransformations.length > 0
-        ? dayTransformations.reduce((sum, t) => sum + t.executionTime, 0) / dayTransformations.length
-        : 0;
-      
-      trends.push({ 
-        date: dateStr, 
-        datasetsProcessed, 
-        dataVolume: Math.round(dataVolume * 100) / 100, 
-        averageTime: Math.round(averageTime) 
-      });
+      if (dateStr) {
+        const dayDatasets = datasets.filter(d => 
+          d.lastUpdated.toISOString().split('T')[0] === dateStr
+        );
+        
+        const dayTransformations = transformations.filter(t => 
+          t.lastExecutedAt && t.lastExecutedAt.toISOString().split('T')[0] === dateStr
+        );
+        
+        const datasetsProcessed = dayDatasets.length;
+        const dataVolume = dayDatasets.reduce((sum, d) => sum + d.rowCount * 0.001, 0);
+        const averageTime = dayTransformations.length > 0
+          ? dayTransformations.reduce((sum, t) => sum + t.executionTime, 0) / dayTransformations.length
+          : 0;
+        
+        trends.push({ 
+          date: dateStr, 
+          datasetsProcessed, 
+          dataVolume: Math.round(dataVolume * 100) / 100, 
+          averageTime: Math.round(averageTime) 
+        });
+      }
     }
     
     return trends;
