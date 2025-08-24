@@ -2,8 +2,9 @@
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { useAuth } from "@/hooks/useAuth";
-import { MessageSquare } from "lucide-react";
+import { MessageSquare, ChevronDown } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { useState } from "react";
 
 interface MainNavigationProps {
   isAdmin?: boolean;
@@ -16,6 +17,8 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
   const isAuthenticated = !!user;
   const location = useLocation();
   const { t } = useTranslation();
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const [companyOpen, setCompanyOpen] = useState(false);
 
   const baseLinks = [
     {
@@ -24,14 +27,19 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
       matches: (path: string) => path === '/'
     },
     {
+      key: 'about',
+      href: '/about',
+      matches: (path: string) => path === '/about'
+    },
+    {
       key: 'marketplace',
       href: '/marketplace',
       matches: (path: string) => path.startsWith('/marketplace')
     },
     {
-      key: 'categories',
-      href: '/categories',
-      matches: (path: string) => path.startsWith('/categories')
+      key: 'services',
+      href: '/services',
+      matches: (path: string) => path.startsWith('/services') || path.startsWith('/it-onsite-services')
     },
     {
       key: 'talent',
@@ -44,9 +52,19 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
       matches: (path: string) => path.startsWith('/equipment')
     },
     {
+      key: 'green-it',
+      href: '/green-it',
+      matches: (path: string) => path === '/green-it'
+    },
+    {
       key: 'community',
       href: '/community',
       matches: (path: string) => path.startsWith('/community') || path.startsWith('/forum')
+    },
+    {
+      key: 'blog',
+      href: '/blog',
+      matches: (path: string) => path.startsWith('/blog')
     }
   ];
 
@@ -90,6 +108,102 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
             </Link>
           </li>
         ))}
+        
+        {/* Services Dropdown */}
+        <li className="relative">
+          <button
+            onClick={() => setServicesOpen(!servicesOpen)}
+            onMouseEnter={() => setServicesOpen(true)}
+            onMouseLeave={() => setServicesOpen(false)}
+            className={cn(
+              "inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-colors",
+              location.pathname.startsWith('/services') || location.pathname.startsWith('/it-onsite-services')
+                ? "bg-zion-purple/20 text-zion-cyan"
+                : "text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
+            )}
+          >
+            Services
+            <ChevronDown className="ml-1 h-4 w-4" />
+          </button>
+          
+          {servicesOpen && (
+            <div
+              className="absolute top-full left-0 mt-1 w-48 bg-zion-blue-dark border border-zion-purple/20 rounded-md shadow-lg py-2 z-50"
+              onMouseEnter={() => setServicesOpen(true)}
+              onMouseLeave={() => setServicesOpen(false)}
+            >
+              <Link
+                to="/services"
+                className="block px-4 py-2 text-sm text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
+              >
+                All Services
+              </Link>
+              <Link
+                to="/it-onsite-services"
+                className="block px-4 py-2 text-sm text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
+              >
+                IT Onsite Services
+              </Link>
+              <Link
+                to="/green-it"
+                className="block px-4 py-2 text-sm text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
+              >
+                Green IT Solutions
+              </Link>
+            </div>
+          )}
+        </li>
+        
+        {/* Company Dropdown */}
+        <li className="relative">
+          <button
+            onClick={() => setCompanyOpen(!companyOpen)}
+            onMouseEnter={() => setCompanyOpen(true)}
+            onMouseLeave={() => setCompanyOpen(false)}
+            className={cn(
+              "inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-colors",
+              location.pathname === '/about' || location.pathname === '/careers' || location.pathname === '/partners'
+                ? "bg-zion-purple/20 text-zion-cyan"
+                : "text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
+            )}
+          >
+            Company
+            <ChevronDown className="ml-1 h-4 w-4" />
+          </button>
+          
+          {companyOpen && (
+            <div
+              className="absolute top-full left-0 mt-1 w-48 bg-zion-blue-dark border border-zion-purple/20 rounded-md shadow-lg py-2 z-50"
+              onMouseEnter={() => setCompanyOpen(true)}
+              onMouseLeave={() => setCompanyOpen(false)}
+            >
+              <Link
+                to="/about"
+                className="block px-4 py-2 text-sm text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
+              >
+                About Us
+              </Link>
+              <Link
+                to="/careers"
+                className="block px-4 py-2 text-sm text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
+              >
+                Careers
+              </Link>
+              <Link
+                to="/partners"
+                className="block px-4 py-2 text-sm text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
+              >
+                Partners
+              </Link>
+              <Link
+                to="/contact"
+                className="block px-4 py-2 text-sm text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
+              >
+                Contact
+              </Link>
+            </div>
+          )}
+        </li>
         
         {/* Messages link with unread counter */}
         {isAuthenticated && (
