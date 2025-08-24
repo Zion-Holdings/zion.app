@@ -23,7 +23,7 @@ export default function Header() {
               <Link href="/" className="inline-flex items-center gap-2">
                 <span className="text-xl font-extrabold tracking-wide bg-gradient-to-r from-fuchsia-400 via-violet-400 to-cyan-400 bg-clip-text text-transparent drop-shadow-neon">Zion</span>
               </Link>
-              <span className="hidden text-xs text-white/60 sm:inline">Autonomous Cloud Automations</span>
+              <span className="hidden text-xs text-white/60 sm:inline">AI-powered cloud automation & deployment</span>
             </div>
 
             <div className="hidden items-center gap-6 md:flex">

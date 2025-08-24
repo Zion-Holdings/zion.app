@@ -131,13 +131,14 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white overflow-hidden">
       <Head>
-        <title>Zion Tech Group — Leading-Edge Technology Solutions & Autonomous Innovation Platform</title>
-        <meta name="description" content="Zion Tech Group delivers cutting-edge AI, quantum computing, cybersecurity, and digital transformation solutions. Leading the future of autonomous innovation." />
-        <meta property="og:title" content="Zion Tech Group — Leading-Edge Technology Solutions" />
-        <meta property="og:description" content="Cutting-edge AI, quantum computing, cybersecurity, and digital transformation solutions. Leading the future of autonomous innovation." />
+        <title>Zion Tech Group — AI-Powered Cloud Automation & Autonomous Deployment Platform</title>
+        <meta name="description" content="Zion Tech Group delivers AI-powered cloud automation and autonomous deployment solutions. Automate content generation and infrastructure updates with intelligent agents that work 24/7." />
+        <meta property="og:title" content="Zion Tech Group — AI-Powered Cloud Automation Platform" />
+        <meta property="og:description" content="AI-powered cloud automation and autonomous deployment solutions. Automate content generation and infrastructure updates with intelligent agents." />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="keywords" content="AI, quantum computing, cybersecurity, digital transformation, autonomous systems, technology solutions" />
-        <link rel="canonical" href="https://ziontechgroup.com" />
+        <meta name="keywords" content="AI automation, cloud automation, autonomous deployment, content generation, infrastructure optimization, Zion Tech Group" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <EnhancedNavigation />
@@ -161,8 +162,18 @@ export default function HomePage() {
               Zion Tech Group
             </h1>
             <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed">
-              Leading-edge technology solutions and autonomous innovation platform
+              AI-powered cloud automation and autonomous deployment platform
             </p>
+            
+            {/* Clear Value Proposition */}
+            <div className="mt-6 p-4 rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm">
+              <p className="text-base text-cyan-400 font-medium mb-2">What Zion Does:</p>
+              <p className="text-sm text-white/80">
+                AI-powered deployment of updates across your cloud infrastructure. 
+                Automate content generation and deployment effortlessly with self-improving, 
+                cloud-native agents that continuously optimize your systems.
+              </p>
+            </div>
           </motion.div>
 
           <motion.div
@@ -204,6 +215,106 @@ export default function HomePage() {
             transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
             className="absolute bottom-40 left-1/4 w-2 h-2 bg-blue-400 rounded-full opacity-60"
           />
+        </div>
+      </section>
+
+      {/* How It Works Section */}
+      <section className="py-20 px-6 bg-gradient-to-br from-slate-900/50 to-slate-800/50">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent">
+              How It Works
+            </h2>
+            <p className="text-xl text-white/70 max-w-3xl mx-auto">
+              Our AI agents work 24/7 to continuously improve your cloud infrastructure and applications
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Step 1: Monitor & Analyze */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="text-center p-8 rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-xl"
+            >
+              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 p-5 mx-auto mb-6 flex items-center justify-center">
+                <Brain className="w-10 h-10 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4 text-white">1. Monitor & Analyze</h3>
+              <p className="text-white/70 leading-relaxed">
+                AI agents continuously monitor your cloud infrastructure, analyzing performance, 
+                security, and optimization opportunities in real-time.
+              </p>
+            </motion.div>
+
+            {/* Step 2: Generate & Optimize */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="text-center p-8 rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-xl"
+            >
+              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 p-5 mx-auto mb-6 flex items-center justify-center">
+                <Zap className="w-10 h-10 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4 text-white">2. Generate & Optimize</h3>
+              <p className="text-white/70 leading-relaxed">
+                Automatically generate optimized configurations, content updates, and 
+                infrastructure improvements based on AI analysis and best practices.
+              </p>
+            </motion.div>
+
+            {/* Step 3: Deploy & Sync */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="text-center p-8 rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-xl"
+            >
+              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-green-500 to-teal-500 p-5 mx-auto mb-6 flex items-center justify-center">
+                <Rocket className="w-10 h-10 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4 text-white">3. Deploy & Sync</h3>
+              <p className="text-white/70 leading-relaxed">
+                Seamlessly deploy updates across your infrastructure while maintaining 
+                version control and ensuring zero-downtime deployments.
+              </p>
+            </motion.div>
+          </div>
+
+          {/* Benefits Checklist */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="mt-16 text-center"
+          >
+            <h3 className="text-2xl font-bold mb-8 text-white">Real-Time Benefits</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
+              {[
+                { icon: Clock, text: "24/7 Monitoring", color: "text-blue-400" },
+                { icon: TrendingUp, text: "Continuous Optimization", color: "text-green-400" },
+                { icon: Shield, text: "Security First", color: "text-purple-400" },
+                { icon: Zap, text: "Instant Deployment", color: "text-cyan-400" }
+              ].map((benefit, index) => (
+                <div key={index} className="flex items-center gap-3 p-4 rounded-xl border border-white/10 bg-white/5">
+                  <benefit.icon className={`w-5 h-5 ${benefit.color}`} />
+                  <span className="text-white/80 font-medium">{benefit.text}</span>
+                </div>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </section>
 
