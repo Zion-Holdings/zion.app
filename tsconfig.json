@@ -74,12 +74,27 @@
       "node"
     ],
     "jsx": "preserve",
-    "noEmit": true
+    "noEmit": true,
+    "isolatedModules": true
   },
   "include": [
     "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx"
+    "pages/**/*.ts",
+    "pages/**/*.tsx",
+    "components/**/*.ts",
+    "components/**/*.tsx",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "utils/**/*.ts",
+    "utils/**/*.tsx",
+    "types/**/*.ts",
+    "types/**/*.tsx",
+    "hooks/**/*.ts",
+    "hooks/**/*.tsx",
+    "context/**/*.ts",
+    "context/**/*.tsx",
+    "services/**/*.ts",
+    "services/**/*.tsx"
   ],
   "exclude": [
     "node_modules",

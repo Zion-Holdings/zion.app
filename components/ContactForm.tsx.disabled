@@ -65,17 +65,17 @@ const ContactForm: React.FC<ContactFormProps> = ({ isReducedMotion = false }) =>
 
   const handleInputChange = useCallback((e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData({ ...formData, [name]: value });
     
     // Clear error when user starts typing
     if (errors[name as keyof ContactFormData]) {
-      setErrors(prev => ({ ...prev, [name]: '' }));
+      setErrors({ ...errors, [name]: '' });
     }
   }, [errors]);
 
   const handleBlur = useCallback((name: keyof ContactFormData) => {
     const error = validateField(name, formData[name]);
-    setErrors(prev => ({ ...prev, [name]: error }));
+    setErrors({ ...errors, [name]: error });
   }, [validateField, formData]);
 
   const validateForm = useCallback((): boolean => {
@@ -91,7 +91,11 @@ const ContactForm: React.FC<ContactFormProps> = ({ isReducedMotion = false }) =>
       }
     });
 
-  const handleInputChange = (name: string, value: string) => {
+    setErrors(newErrors);
+    return isValid;
+  }, [formData, validateField]);
+
+  const handleSubmit = useCallback(async (e: React.FormEvent) => {
     setFormData(prev => ({ ...prev, [name]: value }));
     
     // Clear error when user starts typing

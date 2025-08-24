@@ -2,14 +2,17 @@ import React, { useEffect, useCallback } from 'react';
 
 // Browser API types are declared globally in PerformanceOptimizer.tsx
 
-const AnalyticsTracker: React.FC = () => {
-  const router = useRouter();
-
 // Performance entry types for Core Web Vitals
 interface PerformanceEventTiming extends PerformanceEntry {
   processingStart: number;
   processingEnd: number;
   target?: any | null;
+}
+
+interface AnalyticsTrackerProps {
+  pageTitle?: string;
+  pagePath?: string;
+  customEvents?: Array<{ action: string; parameters: Record<string, unknown> }>;
 }
 
 const AnalyticsTracker: React.FC<AnalyticsTrackerProps> = ({

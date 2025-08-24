@@ -10,7 +10,7 @@ dotenv.config();
 const app = Fastify({ logger: true });
 
 await app.register(cors, {
-  origin: (origin, cb) => {
+  origin: (origin: string | undefined, cb: (err: Error | null, allow?: boolean) => void) => {
     const allowed = (process.env.CORS_ORIGINS || '').split(',').map((s) => s.trim());
     if (!origin || allowed.includes('*') || allowed.includes(origin)) {
       cb(null, true);

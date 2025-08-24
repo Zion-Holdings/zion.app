@@ -1,234 +1,187 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import Link from 'next/link';
-import { useNavigation } from '../hooks/useNavigation';
+import { mainNavigation, socialLinks, contactInfo } from '../utils/navigationConfig';
 
 export default function SmartFooter() {
-  const { navigation, isLoading } = useNavigation();
-
-  // Group services by category for footer display
-  const servicesByCategory = useMemo(() => {
-    if (!navigation) return [];
-
-    const categoryMap = new Map<string, typeof navigation.services>();
-    
-    navigation.services.forEach(service => {
-      if (service.category) {
-        if (!categoryMap.has(service.category)) {
-          categoryMap.set(service.category, []);
-        }
-        categoryMap.get(service.category)!.push(service);
-      }
-    });
-
-    return Array.from(categoryMap.entries()).map(([categoryName, services]) => ({
-      name: categoryName,
-      services: services.sort((a, b) => (a.priority || 0) - (b.priority || 0))
-    }));
-  }, [navigation]);
-
-  // Get popular services (top 6 by priority)
-  const popularServices = useMemo(() => {
-    if (!navigation) return [];
-    return navigation.services
-      .filter(service => service.status === 'active')
-      .sort((a, b) => (a.priority || 0) - (b.priority || 0))
-      .slice(0, 6);
-  }, [navigation]);
-
-  if (isLoading) {
-    return (
-      <footer className="border-t border-white/10 bg-black/30">
-        <div className="mx-auto max-w-7xl px-6 py-10 text-sm text-white/70 grid gap-6 md:grid-cols-4">
-          {[...Array(4)].map((_, i) => (
-            <div key={i} className="space-y-2">
-              <div className="w-24 h-6 bg-white/20 rounded animate-pulse"></div>
-              <div className="w-32 h-4 bg-white/20 rounded animate-pulse"></div>
-              <div className="w-28 h-4 bg-white/20 rounded animate-pulse"></div>
-            </div>
-          ))}
-        </div>
-        <div className="border-t border-white/10">
-          <div className="mx-auto max-w-7xl px-6 py-4 text-xs text-white/50 flex items-center justify-between">
-            <div className="w-32 h-4 bg-white/20 rounded animate-pulse"></div>
-            <div className="w-48 h-4 bg-white/20 rounded animate-pulse"></div>
-          </div>
-        </div>
-      </footer>
-    );
-  }
-
   return (
-    <footer className="border-t border-white/10 bg-black/30">
-      <div className="mx-auto max-w-7xl px-6 py-10 text-sm text-white/70">
+    <footer className="bg-black/90 border-t border-cyan-500/20">
+      <div className="max-w-7xl mx-auto px-6 py-12">
         {/* Main Footer Content */}
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Company Info */}
-          <div className="space-y-3">
-            <div className="text-lg font-semibold text-white">Zion Tech Group</div>
-            <p className="text-white/70">AI-driven, self-improving web platform</p>
-            <p className="text-white/50">Continuous, safe improvements delivered to main.</p>
-            
-            {/* Quick Stats */}
-            {navigation && (
-              <div className="pt-4 space-y-2">
-                <div className="text-xs text-white/40">
-                  {navigation.services.length} AI Services Available
-                </div>
-                <div className="text-xs text-white/40">
-                  {navigation.categories.length} Technology Categories
-                </div>
-                <div className="text-xs text-white/40">
-                  Continuously updated by autonomous agents
-                </div>
+          <div className="space-y-4">
+            <div className="flex items-center space-x-2">
+              <div className="w-8 h-8 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-lg flex items-center justify-center">
+                <span className="text-white font-bold text-lg">Z</span>
               </div>
-            )}
-          </div>
-
-          {/* Auto-generated Services */}
-          <div className="space-y-3">
-            <h4 className="text-white font-semibold">Popular Services</h4>
-            <ul className="space-y-2">
-              {popularServices.map(service => (
-                <li key={service.id}>
-                  <Link 
-                    href={service.href} 
-                    className="hover:text-white transition-colors text-white/70 hover:text-white"
-                  >
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm">{service.label}</span>
-                      {service.status && (
-                        <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-                          service.status === 'active' ? 'bg-green-500/20 text-green-300' :
-                          service.status === 'beta' ? 'bg-yellow-500/20 text-yellow-300' :
-                          'bg-blue-500/20 text-blue-300'
-                        }`}>
-                          {service.status}
-                        </span>
-                      )}
-                    </div>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            <div className="pt-2">
-              <Link href="/services" className="text-blue-400 hover:text-blue-300 text-xs">
-                View All Services →
-              </Link>
+              <span className="text-white font-bold text-xl">Zion Tech Group</span>
             </div>
-          </div>
-
-          {/* Auto-generated Categories */}
-          <div className="space-y-3">
-            <h4 className="text-white font-semibold">Categories</h4>
-            <ul className="space-y-2">
-              {navigation?.categories.map(category => (
-                <li key={category.id}>
-                  <Link 
-                    href={`/category/${category.slug}`}
-                    className="hover:text-white transition-colors text-white/70 hover:text-white"
-                  >
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm flex items-center gap-2">
-                        <span>{category.icon}</span>
-                        {category.name}
-                      </span>
-                      <span className="text-white/40 text-xs">{category.serviceCount}</span>
-                    </div>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            <div className="pt-2">
-              <Link href="/explore" className="text-blue-400 hover:text-blue-300 text-xs">
-                Explore All Categories →
-              </Link>
-            </div>
-          </div>
-
-          {/* Important Links & Resources */}
-          <div className="space-y-3">
-            <h4 className="text-white font-semibold">Resources</h4>
-            <ul className="space-y-2">
-              {navigation?.pages.slice(0, 6).map(page => (
-                <li key={page.id}>
-                  <Link 
-                    href={page.href} 
-                    className="hover:text-white transition-colors text-white/70 hover:text-white text-sm"
-                  >
-                    {page.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <p className="text-white/70 text-sm">
+              AI-driven, self-improving web platform delivering continuous innovation and excellence.
+            </p>
             
-            {/* External Links */}
-            <div className="pt-4 space-y-2">
-              <h5 className="text-white/60 text-xs font-medium">External Resources</h5>
-              {navigation?.importantLinks.map(link => (
-                <div key={link.id}>
-                  <a 
-                    href={link.href} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-blue-400 hover:text-blue-300 text-sm"
-                  >
-                    {link.label}
-                  </a>
-                </div>
-              ))}
+            {/* Contact Info */}
+            <div className="space-y-2 pt-4">
+              <div className="flex items-center space-x-2 text-sm text-white/60">
+                <span>📞</span>
+                <a 
+                  href={`tel:${contactInfo.phone.replace(/\s/g, '')}`}
+                  className="hover:text-white transition-colors"
+                >
+                  {contactInfo.phone}
+                </a>
+              </div>
+              <div className="flex items-center space-x-2 text-sm text-white/60">
+                <span>✉️</span>
+                <a 
+                  href={`mailto:${contactInfo.email}`}
+                  className="hover:text-white transition-colors"
+                >
+                  {contactInfo.email}
+                </a>
+              </div>
+              <div className="flex items-center space-x-2 text-sm text-white/60">
+                <span>📍</span>
+                <span>{contactInfo.address}</span>
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* Services Grid - Show all services organized by category */}
-        {navigation && (
-          <div className="mt-12 pt-8 border-t border-white/10">
-            <h3 className="text-white font-semibold text-center mb-6">All AI Services</h3>
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {servicesByCategory.map(({ name, services }) => (
-                <div key={name} className="space-y-3">
-                  <h4 className="text-white/80 font-medium text-sm border-b border-white/20 pb-2">
-                    {name} ({services.length})
-                  </h4>
-                  <ul className="space-y-1">
-                    {services.map(service => (
+          {/* Services */}
+          <div className="space-y-4">
+            <h4 className="text-white font-semibold text-lg">🚀 Services</h4>
+            <div className="space-y-2">
+              {mainNavigation.services.slice(0, 3).map((category) => (
+                <div key={category.id}>
+                  <h5 className="text-cyan-300 font-medium text-sm mb-1">{category.name}</h5>
+                  <ul className="space-y-1 ml-2">
+                    {category.items.slice(0, 3).map((service) => (
                       <li key={service.id}>
                         <Link 
-                          href={service.href}
-                          className="text-white/60 hover:text-white text-xs transition-colors flex items-center justify-between"
+                          href={service.href} 
+                          className="text-sm text-white/70 hover:text-white transition-colors"
                         >
-                          <span className="truncate">{service.label}</span>
-                          {service.status && (
-                            <span className={`px-1.5 py-0.5 rounded text-xs font-medium flex-shrink-0 ${
-                              service.status === 'active' ? 'bg-green-500/20 text-green-300' :
-                              service.status === 'beta' ? 'bg-yellow-500/20 text-yellow-300' :
-                              'bg-blue-500/20 text-blue-300'
-                            }`}>
-                              {service.status}
-                            </span>
-                          )}
+                          {service.label}
                         </Link>
                       </li>
                     ))}
                   </ul>
                 </div>
               ))}
+              <div className="pt-2">
+                <Link 
+                  href="/services" 
+                  className="text-cyan-400 hover:text-cyan-300 text-sm font-medium"
+                >
+                  View All Services →
+                </Link>
+              </div>
             </div>
           </div>
-        )}
-      </div>
 
-      {/* Footer Bottom */}
-      <div className="border-t border-white/10">
-        <div className="mx-auto max-w-7xl px-6 py-4 text-xs text-white/50 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <span>© {new Date().getFullYear()} Zion Tech Group. All rights reserved.</span>
-          <div className="flex items-center gap-4">
-            <span className="hidden sm:inline">Built with Next.js & Netlify • Tailwind UI</span>
-            {navigation && (
-              <span className="text-white/40">
-                {navigation.services.length} Services • {navigation.categories.length} Categories
-              </span>
-            )}
+          {/* Resources */}
+          <div className="space-y-4">
+            <h4 className="text-white font-semibold text-lg">📚 Resources</h4>
+            <ul className="space-y-2">
+              {mainNavigation.resources.map((item) => (
+                <li key={item.id}>
+                  <Link 
+                    href={item.href} 
+                    className="text-sm text-white/70 hover:text-white transition-colors"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            
+            {/* Company Links */}
+            <div className="pt-4">
+              <h5 className="text-cyan-300 font-medium text-sm mb-2">🏢 Company</h5>
+              <ul className="space-y-1">
+                {mainNavigation.company.slice(0, 3).map((item) => (
+                  <li key={item.id}>
+                    <Link 
+                      href={item.href} 
+                      className="text-sm text-white/70 hover:text-white transition-colors"
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* Social & Newsletter */}
+          <div className="space-y-4">
+            <h4 className="text-white font-semibold text-lg">🔗 Connect</h4>
+            
+            {/* Social Links */}
+            <div className="space-y-2">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.id}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-2 text-sm text-white/70 hover:text-white transition-colors"
+                >
+                  <span>{social.icon}</span>
+                  <span>{social.label}</span>
+                </a>
+              ))}
+            </div>
+
+            {/* Newsletter Signup */}
+            <div className="pt-4">
+              <h5 className="text-cyan-300 font-medium text-sm mb-2">📧 Stay Updated</h5>
+              <p className="text-white/60 text-xs mb-3">
+                Get the latest insights and updates from Zion Tech Group
+              </p>
+              <div className="flex space-x-2">
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  className="flex-1 px-3 py-2 bg-white/10 border border-white/20 rounded text-white placeholder-white/50 text-sm focus:outline-none focus:border-cyan-500/50"
+                />
+                <button className="px-4 py-2 bg-cyan-500 hover:bg-cyan-600 text-white rounded text-sm font-medium transition-colors">
+                  Subscribe
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Section */}
+        <div className="border-t border-white/10 mt-12 pt-8">
+          <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
+            {/* Copyright */}
+            <div className="text-white/60 text-sm">
+              © {new Date().getFullYear()} Zion Tech Group. All rights reserved.
+            </div>
+
+            {/* Legal Links */}
+            <div className="flex items-center space-x-6 text-sm">
+              <Link href="/privacy" className="text-white/60 hover:text-white transition-colors">
+                Privacy Policy
+              </Link>
+              <Link href="/terms" className="text-white/60 hover:text-white transition-colors">
+                Terms of Service
+              </Link>
+              <Link href="/cookies" className="text-white/60 hover:text-white transition-colors">
+                Cookie Policy
+              </Link>
+              <Link href="/accessibility" className="text-white/60 hover:text-white transition-colors">
+                Accessibility
+              </Link>
+            </div>
+
+            {/* Status Indicator */}
+            <div className="flex items-center space-x-2">
+              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+              <span className="text-green-400 text-xs font-medium">All Systems Operational</span>
+            </div>
           </div>
         </div>
       </div>

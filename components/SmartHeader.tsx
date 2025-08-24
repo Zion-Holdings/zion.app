@@ -1,7 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import Link from 'next/link';
-import { useNavigation } from '../hooks/useNavigation';
-import { NavigationItem } from '../types/navigation';
+import { mainNavigation, socialLinks, contactInfo } from '../utils/navigationConfig';
 
 interface DropdownMenuProps {
   trigger: React.ReactNode;
@@ -18,7 +17,7 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({ trigger, children, classNam
         {trigger}
       </div>
       {isOpen && (
-        <div className={`absolute top-full left-0 mt-2 w-64 bg-white/10 backdrop-blur-md border border-white/20 rounded-lg shadow-xl z-50 ${className}`}>
+        <div className={`absolute top-full left-0 mt-2 w-80 bg-black/90 backdrop-blur-md border border-cyan-500/20 rounded-lg shadow-xl z-50 ${className}`}>
           <div className="py-2">
             {children}
           </div>
@@ -28,13 +27,18 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({ trigger, children, classNam
   );
 };
 
-const DropdownItem: React.FC<{ item: NavigationItem }> = ({ item }) => (
+const DropdownItem: React.FC<{ item: any }> = ({ item }) => (
   <Link 
     href={item.href}
-    className="block px-4 py-2 text-white/80 hover:text-white hover:bg-white/10 transition-colors"
+    className="block px-4 py-3 text-white/80 hover:text-white hover:bg-cyan-500/10 transition-colors border-b border-white/5 last:border-b-0"
   >
     <div className="flex items-center justify-between">
-      <span>{item.label}</span>
+      <div>
+        <div className="font-medium">{item.label}</div>
+        {item.description && (
+          <div className="text-sm text-white/60 mt-1">{item.description}</div>
+        )}
+      </div>
       {item.status && (
         <span className={`px-2 py-1 rounded-full text-xs font-medium ${
           item.status === 'active' ? 'bg-green-500/20 text-green-300' :
@@ -49,349 +53,212 @@ const DropdownItem: React.FC<{ item: NavigationItem }> = ({ item }) => (
 );
 
 export default function SmartHeader() {
-  const { navigation, isLoading } = useNavigation();
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  // Auto-generate navigation items from services
-  const navItems = useMemo(() => {
-    if (!navigation) return [];
-    
-    return [
-      {
-        id: 'home',
-        label: '🏠 Home',
-        href: '/',
-        priority: 1
-      },
-      {
-        id: 'explore',
-        label: '🔍 Explore',
-        href: '/explore',
-        priority: 2
-      },
-      {
-        id: 'services',
-        label: '🚀 Services',
-        href: '/services',
-        priority: 3
-      },
-      {
-        id: 'automation',
-        label: '⚡ Automations',
-        href: '/automation',
-        priority: 4
-      },
-      {
-        id: 'reports',
-        label: '📊 Reports',
-        href: '/reports',
-        priority: 5
-      },
-      {
-        id: 'newsroom',
-        label: '📰 Updates',
-        href: '/newsroom',
-        priority: 6
-      },
-      {
-        id: 'search',
-        label: '🔎 Search',
-        href: '/search',
-        priority: 7
-      }
-    ];
-  }, [navigation]);
-
-  // Auto-categorize and group items for dropdown menus
-  const categorizedNav = useMemo(() => {
-    if (!navigation) return [];
-
-    // Create service categories dropdown
-    const servicesCategory = {
-      id: 'services-dropdown',
-      name: 'Services',
-      items: navigation.services.sort((a, b) => (a.priority || 0) - (b.priority || 0))
-    };
-
-    // Create category-based dropdowns
-    const categoryDropdowns = navigation.categories.map(category => ({
-      id: `category-${category.id}`,
-      name: category.name,
-      items: navigation.services
-        .filter(service => service.category === category.name)
-        .sort((a, b) => (a.priority || 0) - (b.priority || 0))
-    }));
-
-    return [servicesCategory, ...categoryDropdowns];
-  }, [navigation]);
-
-  // Generate main navigation with dropdowns
-  const mainNavigation = useMemo(() => {
-    if (!navigation) return navItems;
-
-    return [
-      {
-        id: 'home',
-        label: '🏠 Home',
-        href: '/',
-        priority: 1
-      },
-      {
-        id: 'explore',
-        label: '🔍 Explore',
-        href: '/explore',
-        priority: 2
-      },
-      // Services dropdown
-      {
-        id: 'services-dropdown',
-        label: '🚀 Services',
-        href: '#',
-        priority: 3,
-        isDropdown: true
-      },
-      // Categories dropdown
-      {
-        id: 'categories-dropdown',
-        label: '📂 Categories',
-        href: '#',
-        priority: 4,
-        isDropdown: true
-      },
-      {
-        id: 'automation',
-        label: '⚡ Automations',
-        href: '/automation',
-        priority: 5
-      },
-      {
-        id: 'reports',
-        label: '📊 Reports',
-        href: '/reports',
-        priority: 6
-      },
-      {
-        id: 'newsroom',
-        label: '📰 Updates',
-        href: '/newsroom',
-        priority: 7
-      },
-      {
-        id: 'search',
-        label: '🔎 Search',
-        href: '/search',
-        priority: 8
-      }
-    ];
-  }, [navigation, navItems]);
-
-  if (isLoading) {
-    return (
-      <header className="sticky top-0 z-50">
-        <div className="backdrop-blur supports-[backdrop-filter]:bg-black/30 bg-black/50 border-b border-white/10">
-          <nav className="mx-auto max-w-7xl px-6">
-            <div className="flex h-16 items-center justify-between">
-              <div className="flex items-center gap-3">
-                <div className="w-20 h-6 bg-white/20 rounded animate-pulse"></div>
-              </div>
-              <div className="hidden md:flex items-center gap-6">
-                {[...Array(7)].map((_, i) => (
-                  <div key={i} className="w-16 h-4 bg-white/20 rounded animate-pulse"></div>
-                ))}
-              </div>
-            </div>
-          </nav>
-        </div>
-      </header>
-    );
-  }
-
   return (
-    <header className="sticky top-0 z-50">
-      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:left-3 focus:top-3 rounded bg-white px-3 py-2 text-slate-900">
-        Skip to content
-      </a>
-      <div className="backdrop-blur supports-[backdrop-filter]:bg-black/30 bg-black/50 border-b border-white/10">
-        <nav className="mx-auto max-w-7xl px-6">
-          <div className="flex h-16 items-center justify-between">
-            <div className="flex items-center gap-3">
-              <Link href="/" className="inline-flex items-center gap-2">
-                <span className="text-xl font-extrabold tracking-wide bg-gradient-to-r from-fuchsia-400 via-violet-400 to-cyan-400 bg-clip-text text-transparent drop-shadow-neon">
-                  Zion
-                </span>
-              </Link>
-              <span className="hidden text-xs text-white/60 sm:inline">
-                Autonomous Cloud Automations
-              </span>
-            </div>
+    <header className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-cyan-500/20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
+          {/* Logo */}
+          <div className="flex-shrink-0">
+            <Link href="/" className="flex items-center space-x-2">
+              <div className="w-8 h-8 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-lg flex items-center justify-center">
+                <span className="text-white font-bold text-lg">Z</span>
+              </div>
+              <span className="text-white font-bold text-xl">Zion Tech Group</span>
+            </Link>
+          </div>
 
-            <div className="hidden items-center gap-6 md:flex">
-              {mainNavigation.map((item) => {
-                if (item.isDropdown) {
-                  if (item.id === 'services-dropdown') {
-                    return (
-                      <DropdownMenu key={item.id} trigger={
-                        <span className="text-white/80 hover:text-white transition-colors cursor-pointer">
-                          {item.label}
-                        </span>
-                      }>
-                        <div className="px-3 py-2 border-b border-white/20 mb-2">
-                          <h3 className="text-white font-semibold text-sm">All Services</h3>
-                          <p className="text-white/60 text-xs">Explore our AI-powered solutions</p>
-                        </div>
-                        {navigation?.services.slice(0, 8).map(service => (
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex items-center space-x-8">
+            {/* Main Navigation */}
+            {mainNavigation.main.map((item) => (
+              <Link
+                key={item.id}
+                href={item.href}
+                className="text-white/80 hover:text-white transition-colors font-medium"
+              >
+                {item.label}
+              </Link>
+            ))}
+
+            {/* Services Dropdown */}
+            <DropdownMenu
+              trigger={
+                <div className="text-white/80 hover:text-white transition-colors font-medium cursor-pointer">
+                  🚀 Services
+                </div>
+              }
+            >
+              <div className="p-4">
+                <h3 className="text-white font-semibold mb-3 text-lg">Our Services</h3>
+                <div className="grid grid-cols-1 gap-2">
+                  {mainNavigation.services.map((category) => (
+                    <div key={category.id} className="mb-4">
+                      <h4 className="text-cyan-300 font-medium mb-2">{category.name}</h4>
+                      <div className="space-y-1">
+                        {category.items.map((service) => (
                           <DropdownItem key={service.id} item={service} />
                         ))}
-                        <div className="px-4 py-2 border-t border-white/20 mt-2">
-                          <Link href="/services" className="text-blue-400 hover:text-blue-300 text-sm">
-                            View All Services →
-                          </Link>
-                        </div>
-                      </DropdownMenu>
-                    );
-                  }
-                  
-                  if (item.id === 'categories-dropdown') {
-                    return (
-                      <DropdownMenu key={item.id} trigger={
-                        <span className="text-white/80 hover:text-white transition-colors cursor-pointer">
-                          {item.label}
-                        </span>
-                      }>
-                        <div className="px-3 py-2 border-b border-white/20 mb-2">
-                          <h3 className="text-white font-semibold text-sm">Service Categories</h3>
-                          <p className="text-white/60 text-xs">Browse by technology area</p>
-                        </div>
-                        {navigation?.categories.map(category => (
-                          <Link 
-                            key={category.id}
-                            href={`/category/${category.slug}`}
-                            className="block px-4 py-2 text-white/80 hover:text-white hover:bg-white/10 transition-colors"
-                          >
-                            <div className="flex items-center justify-between">
-                              <span className="flex items-center gap-2">
-                                <span>{category.icon}</span>
-                                {category.name}
-                              </span>
-                              <span className="text-white/40 text-xs">{category.serviceCount}</span>
-                            </div>
-                          </Link>
-                        ))}
-                        <div className="px-4 py-2 border-t border-white/20 mt-2">
-                          <Link href="/explore" className="text-blue-400 hover:text-blue-300 text-sm">
-                            Explore All Categories →
-                          </Link>
-                        </div>
-                      </DropdownMenu>
-                    );
-                  }
-                }
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </DropdownMenu>
 
-                return (
-                  <Link key={item.id} href={item.href} className="text-white/80 hover:text-white transition-colors">
-                    {item.label}
-                  </Link>
-                );
-              })}
-              
-              <Link 
-                href="/main/front#features" 
-                className="rounded-lg bg-gradient-to-r from-fuchsia-500 to-cyan-500 px-3 py-1.5 text-sm font-semibold shadow-[0_0_20px_rgba(34,211,238,0.35)] hover:shadow-[0_0_28px_rgba(34,211,238,0.6)] transition-shadow"
-              >
-                Get Started
-              </Link>
-            </div>
-
-            <button
-              aria-label="Toggle navigation menu"
-              className="md:hidden inline-flex h-9 w-9 items-center justify-center rounded-md border border-white/10 bg-white/10 text-white/90 hover:bg-white/15"
-              aria-expanded={mobileOpen}
-              aria-controls="mobile-nav"
-              onClick={() => setMobileOpen((v) => !v)}
+            {/* Resources Dropdown */}
+            <DropdownMenu
+              trigger={
+                <div className="text-white/80 hover:text-white transition-colors font-medium cursor-pointer">
+                  📚 Resources
+                </div>
+              }
             >
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <div className="p-4">
+                <h3 className="text-white font-semibold mb-3 text-lg">Resources</h3>
+                <div className="space-y-1">
+                  {mainNavigation.resources.map((item) => (
+                    <DropdownItem key={item.id} item={item} />
+                  ))}
+                </div>
+              </div>
+            </DropdownMenu>
+
+            {/* Company Dropdown */}
+            <DropdownMenu
+              trigger={
+                <div className="text-white/80 hover:text-white transition-colors font-medium cursor-pointer">
+                  🏢 Company
+                </div>
+              }
+            >
+              <div className="p-4">
+                <h3 className="text-white font-semibold mb-3 text-lg">About Zion Tech Group</h3>
+                <div className="space-y-1">
+                  {mainNavigation.company.map((item) => (
+                    <DropdownItem key={item.id} item={item} />
+                  ))}
+                </div>
+              </div>
+            </DropdownMenu>
+          </nav>
+
+          {/* Contact Info */}
+          <div className="hidden lg:flex items-center space-x-4">
+            <a
+              href={`tel:${contactInfo.phone.replace(/\s/g, '')}`}
+              className="text-white/80 hover:text-white transition-colors text-sm"
+            >
+              📞 {contactInfo.phone}
+            </a>
+            <a
+              href={`mailto:${contactInfo.email}`}
+              className="text-white/80 hover:text-white transition-colors text-sm"
+            >
+              ✉️ {contactInfo.email}
+            </a>
+          </div>
+
+          {/* Mobile menu button */}
+          <div className="lg:hidden">
+            <button
+              onClick={() => setMobileOpen(!mobileOpen)}
+              className="text-white/80 hover:text-white transition-colors"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 {mobileOpen ? (
-                  <path d="M18 6L6 18M6 6l12 12" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 ) : (
-                  <path d="M3 12h18M3 6h18M3 18h18" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                 )}
               </svg>
             </button>
           </div>
-        </nav>
-        
+        </div>
+
         {/* Mobile Navigation */}
         {mobileOpen && (
-          <div id="mobile-nav" className="md:hidden border-t border-white/10">
-            <div className="mx-auto max-w-7xl px-6 py-3 grid gap-3">
-              {mainNavigation.map((item) => (
-                <Link 
-                  key={item.id} 
-                  href={item.href} 
-                  className="rounded-md px-3 py-2 text-white/90 hover:bg-white/10"
+          <div className="lg:hidden bg-black/95 border-t border-cyan-500/20">
+            <div className="px-2 pt-2 pb-3 space-y-1">
+              {/* Main Navigation */}
+              {mainNavigation.main.map((item) => (
+                <Link
+                  key={item.id}
+                  href={item.href}
+                  className="block px-3 py-2 text-white/80 hover:text-white hover:bg-cyan-500/10 transition-colors rounded-md"
                   onClick={() => setMobileOpen(false)}
                 >
                   {item.label}
                 </Link>
               ))}
-              
-              {/* Mobile Services Section */}
-              {navigation && (
-                <>
-                  <div className="px-3 py-2 border-t border-white/20 mt-4">
-                    <h3 className="text-white/60 text-sm font-medium mb-2">Services</h3>
-                    {navigation.services.slice(0, 5).map(service => (
-                      <Link 
+
+              {/* Services Section */}
+              <div className="px-3 py-2">
+                <div className="text-cyan-300 font-medium mb-2">🚀 Services</div>
+                {mainNavigation.services.map((category) => (
+                  <div key={category.id} className="ml-4 mb-3">
+                    <div className="text-white/70 font-medium mb-1">{category.name}</div>
+                    {category.items.map((service) => (
+                      <Link
                         key={service.id}
                         href={service.href}
-                        className="block px-3 py-2 text-white/70 hover:text-white hover:bg-white/10 rounded transition-colors"
+                        className="block ml-4 px-3 py-1 text-white/60 hover:text-white hover:bg-cyan-500/10 transition-colors rounded text-sm"
                         onClick={() => setMobileOpen(false)}
                       >
-                        <div className="flex items-center justify-between">
-                          <span className="text-sm">{service.label}</span>
-                          {service.status && (
-                            <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-                              service.status === 'active' ? 'bg-green-500/20 text-green-300' :
-                              service.status === 'beta' ? 'bg-yellow-500/20 text-yellow-300' :
-                              'bg-blue-500/20 text-blue-300'
-                            }`}>
-                              {service.status}
-                            </span>
-                          )}
-                        </div>
+                        {service.label}
                       </Link>
                     ))}
                   </div>
-                  
-                  <div className="px-3 py-2 border-t border-white/20">
-                    <h3 className="text-white/60 text-sm font-medium mb-2">Categories</h3>
-                    {navigation.categories.map(category => (
-                      <Link 
-                        key={category.id}
-                        href={`/category/${category.slug}`}
-                        className="block px-3 py-2 text-white/70 hover:text-white hover:bg-white/10 rounded transition-colors"
-                        onClick={() => setMobileOpen(false)}
-                      >
-                        <div className="flex items-center justify-between">
-                          <span className="text-sm flex items-center gap-2">
-                            <span>{category.icon}</span>
-                            {category.name}
-                          </span>
-                          <span className="text-white/40 text-xs">{category.serviceCount}</span>
-                        </div>
-                      </Link>
-                    ))}
-                  </div>
-                </>
-              )}
-              
-              <Link 
-                href="/main/front#features" 
-                className="rounded-md bg-white/90 px-3 py-2 text-center font-semibold text-slate-900 hover:bg-white"
-                onClick={() => setMobileOpen(false)}
-              >
-                Get Started
-              </Link>
+                ))}
+              </div>
+
+              {/* Resources Section */}
+              <div className="px-3 py-2">
+                <div className="text-cyan-300 font-medium mb-2">📚 Resources</div>
+                {mainNavigation.resources.map((item) => (
+                  <Link
+                    key={item.id}
+                    href={item.href}
+                    className="block ml-4 px-3 py-1 text-white/60 hover:text-white hover:bg-cyan-500/10 transition-colors rounded text-sm"
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
+
+              {/* Company Section */}
+              <div className="px-3 py-2">
+                <div className="text-cyan-300 font-medium mb-2">🏢 Company</div>
+                {mainNavigation.company.map((item) => (
+                  <Link
+                    key={item.id}
+                    href={item.href}
+                    className="block ml-4 px-3 py-1 text-white/60 hover:text-white hover:bg-cyan-500/10 transition-colors rounded text-sm"
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
+
+              {/* Contact Info */}
+              <div className="px-3 py-2 border-t border-white/10 mt-4">
+                <div className="text-cyan-300 font-medium mb-2">📞 Contact</div>
+                <a
+                  href={`tel:${contactInfo.phone.replace(/\s/g, '')}`}
+                  className="block ml-4 px-3 py-1 text-white/60 hover:text-white transition-colors text-sm"
+                >
+                  {contactInfo.phone}
+                </a>
+                <a
+                  href={`mailto:${contactInfo.email}`}
+                  className="block ml-4 px-3 py-1 text-white/60 hover:text-white transition-colors text-sm"
+                >
+                  {contactInfo.email}
+                </a>
+              </div>
             </div>
           </div>
         )}
