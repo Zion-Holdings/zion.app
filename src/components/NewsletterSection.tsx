@@ -1,6 +1,6 @@
 
-import { GradientHeading } from "@/components/GradientHeading";
-import { EnhancedNewsletterForm } from "@/components/EnhancedNewsletterForm";
+import GradientHeading from "@/components/GradientHeading";
+// import { EnhancedNewsletterForm } from "@/components/EnhancedNewsletterForm";
 import { motion } from "framer-motion";
 import { Mail, Bell, TrendingUp, Users } from "lucide-react";
 
@@ -72,7 +72,7 @@ export function NewsletterSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
           >
-            <EnhancedNewsletterForm />
+            {/* <EnhancedNewsletterForm /> */}
           </motion.div>
 
           {/* Trust indicators */}

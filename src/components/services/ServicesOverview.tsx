@@ -4,7 +4,8 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { getFeaturedServices, getServicesByCategory } from '@/data/microSaasServices';
+// import { getFeaturedServices, getServicesByCategory } from '@/data/microSaasServices';
+import { COMPREHENSIVE_SERVICES } from '@/data/comprehensiveServices';
 import { 
   Brain, 
   Cloud, 
@@ -39,10 +40,10 @@ const categoryDescriptions = {
 };
 
 export function ServicesOverview() {
-  const featuredServices = getFeaturedServices();
-  const aiServices = getServicesByCategory('AI Services');
-  const itServices = getServicesByCategory('IT Services');
-  const innovativeServices = getServicesByCategory('Innovative Solutions');
+  const featuredServices = COMPREHENSIVE_SERVICES.filter(service => service.featured).slice(0, 3);
+  const aiServices = COMPREHENSIVE_SERVICES.filter(service => service.category === 'ai-ml').slice(0, 3);
+  const itServices = COMPREHENSIVE_SERVICES.filter(service => service.category === 'cloud-devops').slice(0, 3);
+  const innovativeServices = COMPREHENSIVE_SERVICES.filter(service => service.category === 'cybersecurity').slice(0, 3);
 
   const formatPrice = (price: number, model: string) => {
     if (model === 'monthly') return `$${price}/month`;

@@ -30,7 +30,7 @@ import {
   Clock,
   Code
 } from "lucide-react";
-import { MICRO_SAAS_SERVICES, MicroSaasService, getMicroSaasServicesByCategory, getFeaturedMicroSaasServices } from "@/data/microSaasServices";
+// import { MICRO_SAAS_SERVICES, MicroSaasService, getMicroSaasServicesByCategory, getFeaturedMicroSaasServices } from "@/data/microSaasServices";
 import { SEO } from "@/components/SEO";
 
 export default function MicroSaasServicesPage() {
@@ -38,7 +38,7 @@ export default function MicroSaasServicesPage() {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [priceRange, setPriceRange] = useState<string>('all');
   const [sortBy, setSortBy] = useState<string>('featured');
-  const [filteredServices, setFilteredServices] = useState<MicroSaasService[]>(MICRO_SAAS_SERVICES);
+  const [filteredServices, setFilteredServices] = useState<any[]>([]);
 
   const categories = [
     { value: 'all', label: 'All Categories', icon: <Globe className="h-4 w-4" /> },
@@ -73,7 +73,7 @@ export default function MicroSaasServicesPage() {
   ];
 
   useEffect(() => {
-    let filtered = MICRO_SAAS_SERVICES;
+    let filtered: any[] = [];
 
     // Filter by search query
     if (searchQuery) {
@@ -123,7 +123,7 @@ export default function MicroSaasServicesPage() {
     setFilteredServices(filtered);
   }, [searchQuery, selectedCategory, priceRange, sortBy]);
 
-  const getPriceRange = (service: MicroSaasService) => {
+  const getPriceRange = (service: any) => {
     const { starter, professional, enterprise, currency } = service.pricing;
     return `${currency}${starter} - ${currency}${enterprise}`;
   };
@@ -180,7 +180,7 @@ export default function MicroSaasServicesPage() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div className="space-y-2">
-              <div className="text-3xl md:text-4xl font-bold text-zion-cyan">{MICRO_SAAS_SERVICES.length}+</div>
+              <div className="text-3xl md:text-4xl font-bold text-zion-cyan">0+</div>
               <div className="text-zion-slate-light">Micro SAAS Services</div>
             </div>
             <div className="space-y-2">
