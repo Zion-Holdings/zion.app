@@ -1,3 +1,1 @@
-export default function Talent() {
-  return <div className="py-10">Talent</div>;
-}
+export default function TalentIndexPage() { return null; }
