@@ -71,7 +71,11 @@
   },
   {
     "route": "/_document",
+<<<<<<< HEAD
+    "title": "Zion Tech Group - Pioneering Autonomous Business Operations",
+=======
     "title": "",
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-25a3
     "h1": ""
   },
   {
@@ -411,8 +415,13 @@
   },
   {
     "route": "/",
+<<<<<<< HEAD
+    "title": "",
+    "h1": ""
+=======
     "title": "Zion Tech Group — Leading-Edge Technology Solutions & Autonomous Innovation Platform",
     "h1": "Zion Tech Group"
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-25a3
   },
   {
     "route": "/innovative-services-showcase-2025",
@@ -605,11 +614,14 @@
     "h1": "Resources"
   },
   {
+<<<<<<< HEAD
+=======
     "route": "/revolutionary-2025-services-showcase",
     "title": "Revolutionary 2025 Services Showcase | Zion Tech Group",
     "h1": "Revolutionary 2025 Services"
   },
   {
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-25a3
     "route": "/revolutionary-2028-pricing",
     "title": "2028 Revolutionary Pricing - Zion Tech Group",
     "h1": ""
