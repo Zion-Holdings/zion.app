@@ -1,16 +1,13 @@
 import React from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
 import { 
-  Phone, Mail, MapPin, Globe, ArrowRight, 
-  Rocket, Brain, Atom, Shield, Target, Zap,
-  Twitter, Linkedin, Facebook, Instagram, Youtube,
-  Github, MessageCircle, Twitch, MessageSquare, BookOpen,
-  Users, Briefcase, Star, TrendingUp, Layers, Cpu, Database, 
+  Phone, Mail, MapPin, Globe, Rocket, Brain, Atom, 
+  Shield, Users, Briefcase, BookOpen, MessageCircle, 
+  Star, TrendingUp, Target, Layers, Cpu, Database, 
   Cloud, Lock, ShieldCheck, Heart, Leaf, Car, 
   GraduationCap, Scale, Building, Factory, Camera,
   Video, Music, Gamepad2, Sun, Moon, Wind, Droplets,
-  Code, Handshake
+  Code
 } from 'lucide-react';
 
 const contactInfo = {
@@ -22,21 +19,12 @@ const contactInfo = {
 
 const serviceCategories = [
   {
-    title: '🚀 2028 Cutting-Edge',
+    title: '🚀 2028 Futuristic Innovations',
     services: [
-      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-platform' },
-      { name: 'Quantum Time Manipulation', href: '/quantum-time-manipulation' },
-      { name: 'Autonomous AI Civilization', href: '/autonomous-ai-civilization-platform' },
-      { name: 'Quantum Neural Interface', href: '/quantum-neural-interface-platform' }
-    ]
-  },
-  {
-    title: '🎯 Business Solutions',
-    services: [
-      { name: 'AI Customer Success', href: '/ai-customer-success-automation' },
-      { name: 'AI Content Marketing', href: '/ai-content-marketing-automation' },
-      { name: 'Smart Inventory Management', href: '/smart-inventory-management-system' },
-      { name: 'AI Sales Automation', href: '/ai-sales-automation' }
+      { name: 'AI Climate Prediction Platform', href: '/ai-climate-prediction-platform' },
+      { name: 'Quantum Cybersecurity Firewall', href: '/quantum-cybersecurity-firewall' },
+      { name: 'Autonomous Drone Delivery Network', href: '/autonomous-drone-delivery-network' },
+      { name: 'AI Healthcare Diagnosis Platform', href: '/ai-healthcare-diagnosis-platform' }
     ]
   },
   {
@@ -70,40 +58,27 @@ const serviceCategories = [
 
 const companyLinks = [
   { name: 'About Us', href: '/about', icon: Users },
-  { name: 'Careers', href: '/careers', icon: TrendingUp },
   { name: 'Case Studies', href: '/case-studies', icon: Briefcase },
-  { name: 'Blog', href: '/blog', icon: BookOpen },
-  { name: 'News', href: '/news', icon: Star },
-  { name: 'Press', href: '/press', icon: MessageCircle }
+  { name: 'Blog & Resources', href: '/blog', icon: BookOpen },
+  { name: 'Careers', href: '/careers', icon: TrendingUp },
+  { name: 'Contact', href: '/contact', icon: MessageCircle },
+  { name: 'Support', href: '/support', icon: ShieldCheck }
 ];
 
 const resourceLinks = [
   { name: 'Documentation', href: '/docs', icon: BookOpen },
   { name: 'API Reference', href: '/api', icon: Cpu },
-  { name: 'Training', href: '/training', icon: GraduationCap },
-  { name: 'Support', href: '/support', icon: ShieldCheck },
-  { name: 'Community', href: '/community', icon: Users },
-  { name: 'Partners', href: '/partners', icon: Handshake }
-];
-
-const legalLinks = [
-  { name: 'Privacy Policy', href: '/privacy' },
-  { name: 'Terms of Service', href: '/terms' },
-  { name: 'Cookie Policy', href: '/cookies' },
-  { name: 'Security', href: '/security' },
-  { name: 'Compliance', href: '/compliance' },
-  { name: 'GDPR', href: '/gdpr' }
+  { name: 'Developer Tools', href: '/dev-tools', icon: Database },
+  { name: 'Mobile Apps', href: '/mobile', icon: Globe },
+  { name: 'Cloud Services', href: '/cloud', icon: Cloud },
+  { name: 'Security Center', href: '/security', icon: Shield }
 ];
 
 const socialLinks = [
-  { name: 'Twitter', href: 'https://twitter.com/ziontechgroup', icon: Twitter, color: 'hover:text-blue-400' },
-  { name: 'LinkedIn', href: 'https://linkedin.com/company/ziontechgroup', icon: Linkedin, color: 'hover:text-blue-600' },
-  { name: 'Facebook', href: 'https://facebook.com/ziontechgroup', icon: Facebook, color: 'hover:text-blue-500' },
-  { name: 'Instagram', href: 'https://instagram.com/ziontechgroup', icon: Instagram, color: 'hover:text-pink-500' },
-  { name: 'YouTube', href: 'https://youtube.com/@ziontechgroup', icon: Youtube, color: 'hover:text-red-500' },
-  { name: 'GitHub', href: 'https://github.com/ziontechgroup', icon: Github, color: 'hover:text-gray-400' },
-  { name: 'Discord', href: 'https://discord.gg/ziontechgroup', icon: MessageCircle, color: 'hover:text-indigo-500' },
-  { name: 'Medium', href: 'https://medium.com/@ziontechgroup', icon: BookOpen, color: 'hover:text-gray-600' }
+  { name: 'LinkedIn', href: 'https://linkedin.com/company/ziontechgroup', icon: Users },
+  { name: 'Twitter', href: 'https://twitter.com/ziontechgroup', icon: MessageCircle },
+  { name: 'YouTube', href: 'https://youtube.com/@ziontechgroup', icon: Video },
+  { name: 'GitHub', href: 'https://github.com/ziontechgroup', icon: Code }
 ];
 
 export default function UltraFuturisticFooter2028() {

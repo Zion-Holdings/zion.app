@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import SEO from '../components/SEO';
+import Head from 'next/head';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Search, Grid, List, Star, TrendingUp, Zap, Brain, Atom, Rocket,
@@ -8,7 +8,7 @@ import {
 } from 'lucide-react';
 
 // Import all service data
-import { innovative2036MicroSaasServices } from '../data/innovative-2036-micro-saas-services';
+import { innovativeMicroSaasServices2036 } from '../data/innovative-2036-micro-saas-services';
 import { innovative2036ITServices } from '../data/innovative-2036-it-services';
 import { newlyAddedServices } from '../data/newly-added-services';
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
@@ -25,7 +25,7 @@ const contactInfo = {
 
 // Create unified services array
 const allServices = [
-  ...innovative2036MicroSaasServices,
+  ...innovativeMicroSaasServices2036,
   ...innovative2036ITServices,
   ...newlyAddedServices,
   ...realMicroSaasServices,
@@ -169,8 +169,14 @@ export default function ComprehensiveServicesShowcase2036() {
 
 
   const getServicePricing = (service: any) => {
-    if (service.pricing?.starter) return service.pricing.starter;
-    if (service.pricing?.monthly) return `$${service.pricing.monthly}/month`;
+          if (service.pricing?.starter) return service.pricing.starter;
+      if (service.pricing?.monthly) return `$${service.pricing.monthly}/month`;
+      if (service.pricing) {
+        if (typeof service.pricing === 'string') return service.pricing;
+        if (service.pricing.monthly) return `$${service.pricing.monthly}/month`;
+        if (service.pricing.starter) return service.pricing.starter;
+        return 'Contact for pricing';
+      }
     if (service.price?.monthly) return `$${service.price.monthly}/month`;
     if (service.price) return service.price;
     return 'Contact for pricing';
@@ -190,10 +196,10 @@ export default function ComprehensiveServicesShowcase2036() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
-      <SEO 
-        title="Comprehensive Services Showcase 2036 - ZionTech Group"
-        description="Explore our complete portfolio of innovative micro SAAS services, AI solutions, IT infrastructure, and emerging technologies. Discover cutting-edge solutions for your business needs."
-      />
+      <Head>
+        <title>Comprehensive Services Showcase 2036 - ZionTech Group</title>
+        <meta name="description" content="Explore our complete portfolio of innovative micro SAAS services, AI solutions, IT infrastructure, and emerging technologies. Discover cutting-edge solutions for your business needs." />
+      </Head>
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">

@@ -97,8 +97,6 @@
     "ui-enhancer",
     "ultrafast-front-orchestrator",
     "ultrafast-orchestrator",
-    "unused-media-scanner",
-    "ultimate-redundancy-monitor",
-    "ultimate-build-guardian"
+    "unused-media-scanner"
   ]
 }

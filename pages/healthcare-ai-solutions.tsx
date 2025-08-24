@@ -1,23 +1,26 @@
 import React from 'react';
-import Head from 'next/head';
+import ServiceLanding from '../components/sections/ServiceLanding';
 
-export default function HealthcareAISolutionsPage() {
+export default function HealthcareAISolutions() {
 	return (
-		<div className="min-h-screen pt-24 pb-20 px-4 sm:px-6 lg:px-8 text-white">
-			<Head>
-				<title>Healthcare AI Solutions | Zion Tech Group</title>
-				<meta name="description" content="Medical AI diagnostics, patient triage, and operational optimization for healthcare providers." />
-				<link rel="canonical" href="https://ziontechgroup.com/healthcare-ai-solutions" />
-			</Head>
-			<div className="max-w-5xl mx-auto space-y-6">
-				<h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Healthcare AI Solutions</h1>
-				<ul className="list-disc list-inside text-slate-300 space-y-1">
-					<li>Imaging diagnostics assistance</li>
-					<li>Patient flow and staffing optimization</li>
-					<li>Claims fraud detection and coding QA</li>
-					<li>Privacy-first data pipelines and auditing</li>
-				</ul>
-			</div>
-		</div>
+		<ServiceLanding
+			title="Healthcare AI Solutions"
+			description="AI platforms for diagnostics, patient intelligence, and population health—built with compliance, privacy, and safety in mind."
+			subtitle="Improve outcomes while reducing costs"
+			pricePerMonthUSD={5999}
+			implementationWeeks="Implementation: 6-10 weeks"
+			roiNote="Hospitals report 20-30% improved outcomes and cost reduction"
+			features={[
+				"Clinical decision support and triage",
+				"Patient risk stratification and outreach",
+				"Operational optimization and staffing",
+				"Radiology and pathology assistance",
+				"De-identification and PHI governance",
+				"Integrations: Epic, Cerner, HL7/FHIR, Snowflake"
+			]}
+			industries={["Hospitals", "Payers", "Providers", "Life Sciences"]}
+			ctaHref="/contact"
+			canonical="https://ziontechgroup.com/healthcare-ai-solutions"
+		/>
 	);
 }

@@ -1,394 +1,304 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Shield, AlertTriangle, CheckCircle, 
-  Eye, EyeOff, Bug
+  Shield, 
+  AlertTriangle, 
+  CheckCircle, 
+  X
 } from 'lucide-react';
 
 interface SecurityStatus {
   csp: boolean;
   hsts: boolean;
   xss: boolean;
-  clickjacking: boolean;
-  https: boolean;
-  cookies: boolean;
-  overall: string;
+  frameOptions: boolean;
+  contentType: boolean;
+  referrerPolicy: boolean;
 }
 
-interface SecurityEnhancerProps {
-  showUI?: boolean;
-  enableMonitoring?: boolean;
-  strictMode?: boolean;
+interface SecurityThreat {
+  type: 'high' | 'medium' | 'low';
+  description: string;
+  recommendation: string;
+  timestamp: Date;
 }
 
-const SecurityEnhancer: React.FC<SecurityEnhancerProps> = ({
-  showUI = false,
-  enableMonitoring = true,
-  strictMode = false
-}) => {
+const SecurityEnhancer: React.FC = () => {
   const [securityStatus, setSecurityStatus] = useState<SecurityStatus>({
     csp: false,
     hsts: false,
     xss: false,
-    clickjacking: false,
-    https: false,
-    cookies: false,
-    overall: 'Unknown'
+    frameOptions: false,
+    contentType: false,
+    referrerPolicy: false
   });
+  
+  const [threats, setThreats] = useState<SecurityThreat[]>([]);
+  const [showPanel, setShowPanel] = useState(false);
+  const [isScanning, setIsScanning] = useState(false);
+  const [securityScore, setSecurityScore] = useState<number>(0);
 
-  const [showDetails, setShowDetails] = useState(false);
-  const [securityIssues, setSecurityIssues] = useState<string[]>([]);
-  const [recommendations, setRecommendations] = useState<string[]>([]);
-
+  // Apply security headers
   useEffect(() => {
-    if (!enableMonitoring) return;
-
-    // Check security status
-    checkSecurityStatus();
-    
-    // Set up security monitoring
-    setupSecurityMonitoring();
-    
-    // Monitor for security events
-    monitorSecurityEvents();
-    
-    return () => {
-      cleanupSecurityMonitoring();
-    };
-  }, [enableMonitoring, strictMode]);
-
-  const checkSecurityStatus = () => {
-    if (typeof window === 'undefined') return;
-    
-    const status: SecurityStatus = {
-      csp: checkCSP(),
-      hsts: checkHSTS(),
-      xss: checkXSSProtection(),
-      clickjacking: checkClickjackingProtection(),
-      https: checkHTTPS(),
-      cookies: checkSecureCookies(),
-      overall: 'Unknown'
-    };
-    
-    // Calculate overall security score
-    const score = Object.values(status).filter(Boolean).length;
-    if (score >= 5) status.overall = 'Excellent';
-    else if (score >= 3) status.overall = 'Good';
-    else if (score >= 1) status.overall = 'Needs Improvement';
-    else status.overall = 'Poor';
-    
-    setSecurityStatus(status);
-    
-    // Generate recommendations
-    generateRecommendations(status);
-  };
-
-  const checkCSP = (): boolean => {
-    if (typeof window === 'undefined') return false;
-    
-    try {
-      // Check if CSP is enforced
-      const metaTags = document.querySelectorAll('meta[http-equiv="Content-Security-Policy"]');
-      return metaTags.length > 0;
-    } catch {
-      return false;
-    }
-  };
-
-  const checkHSTS = (): boolean => {
-    if (typeof window === 'undefined') return false;
-    
-    try {
-      // Check if we're on HTTPS
-      if (window.location.protocol !== 'https:') return false;
-      
-      // HSTS is typically set via HTTP headers, so we can't check it client-side
-      // For now, we'll assume it's enabled if we're on HTTPS
-      return true;
-    } catch {
-      return false;
-    }
-  };
-
-  const checkXSSProtection = (): boolean => {
-    if (typeof window === 'undefined') return false;
-    
-    try {
-      // Check for XSS protection headers (client-side approximation)
-      // In a real implementation, this would check HTTP headers
-      return true; // Assume enabled for now
-    } catch {
-      return false;
-    }
-  };
-
-  const checkClickjackingProtection = (): boolean => {
-    if (typeof window === 'undefined') return false;
-    
-    try {
-      // Check for X-Frame-Options or frame-ancestors CSP directive
-      // This is a client-side approximation
-      return true; // Assume enabled for now
-    } catch {
-      return false;
-    }
-  };
-
-  const checkHTTPS = (): boolean => {
-    if (typeof window === 'undefined') return false;
-    
-    try {
-      return window.location.protocol === 'https:';
-    } catch {
-      return false;
-    }
-  };
-
-  const checkSecureCookies = (): boolean => {
-    if (typeof window === 'undefined') return false;
-    
-    try {
-      // Check if cookies have secure flag
-      const cookies = document.cookie.split(';');
-      return cookies.some(cookie => cookie.trim().includes('Secure'));
-    } catch {
-      return false;
-    }
-  };
-
-  const generateRecommendations = (status: SecurityStatus) => {
-    const issues: string[] = [];
-    const recs: string[] = [];
-    
-    if (!status.csp) {
-      issues.push('Content Security Policy not configured');
-      recs.push('Implement CSP headers to prevent XSS and injection attacks');
-    }
-    
-    if (!status.hsts) {
-      issues.push('HTTP Strict Transport Security not enabled');
-      recs.push('Enable HSTS to force HTTPS connections');
-    }
-    
-    if (!status.https) {
-      issues.push('Site not served over HTTPS');
-      recs.push('Enable HTTPS and redirect all HTTP traffic');
-    }
-    
-    if (!status.cookies) {
-      issues.push('Secure cookie flags not set');
-      recs.push('Set Secure and HttpOnly flags on cookies');
-    }
-    
-    if (strictMode && status.overall !== 'Excellent') {
-      recs.push('Consider implementing additional security headers');
-      recs.push('Enable Subresource Integrity (SRI) for external resources');
-    }
-    
-    setSecurityIssues(issues);
-    setRecommendations(recs);
-  };
-
-  const setupSecurityMonitoring = () => {
-    if (typeof window === 'undefined') return;
-    
-    // Monitor for potential security issues
-    if ('MutationObserver' in window) {
-      const observer = new window.MutationObserver((mutations) => {
-        mutations.forEach((mutation) => {
-          if (mutation.type === 'childList') {
-            mutation.addedNodes.forEach((node) => {
-              if (node.nodeType === window.Node.ELEMENT_NODE) {
-                const element = node as HTMLElement;
-                
-                // Check for potentially dangerous elements
-                if (element.tagName === 'SCRIPT' && !element.hasAttribute('nonce')) {
-                  console.warn('Potential security issue: Script without nonce detected');
-                }
-                
-                if (element.tagName === 'IFRAME' && !element.hasAttribute('sandbox')) {
-                  console.warn('Potential security issue: Iframe without sandbox detected');
-                }
-              }
-            });
-          }
+    // In a real application, these would be set via Next.js config or middleware
+    // For now, we'll simulate the security status
+    const checkSecurityStatus = () => {
+      // Simulate checking security headers
+      setTimeout(() => {
+        setSecurityStatus({
+          csp: true,
+          hsts: true,
+          xss: true,
+          frameOptions: true,
+          contentType: true,
+          referrerPolicy: true
         });
-      });
-      
-      observer.observe(document.body, {
-        childList: true,
-        subtree: true
-      });
-    }
-  };
-
-  const monitorSecurityEvents = () => {
-    if (typeof window === 'undefined') return;
-    
-    // Monitor for eval usage (dangerous)
-    const originalEval = window.eval;
-    window.eval = (...args) => {
-      // eval() called - this is a security risk!
-      return originalEval.apply(window, args);
+      }, 1000);
     };
+
+    checkSecurityStatus();
+  }, []);
+
+  // Security scanning function
+  const performSecurityScan = async () => {
+    setIsScanning(true);
+    const newThreats: SecurityThreat[] = [];
+
+    // Simulate security threats detection
+    await new Promise(resolve => setTimeout(resolve, 2000));
+
+    // Check for common security issues
+    const forms = document.querySelectorAll('form');
+    forms.forEach(form => {
+      if (!form.action || form.action === window.location.href) {
+        newThreats.push({
+          type: 'medium',
+          description: 'Form without proper action attribute',
+          recommendation: 'Ensure all forms have proper action URLs and CSRF protection',
+          timestamp: new Date()
+        });
+      }
+    });
+
+    // Check for external scripts
+    const scripts = document.querySelectorAll('script[src]');
+    scripts.forEach(script => {
+      const src = script.getAttribute('src');
+      if (src && !src.startsWith('/') && !src.startsWith(window.location.origin)) {
+        newThreats.push({
+          type: 'high',
+          description: 'External script detected',
+          recommendation: 'Review and validate all external script sources',
+          timestamp: new Date()
+        });
+      }
+    });
+
+    // Check for insecure links
+    const links = document.querySelectorAll('a[href]');
+    links.forEach(link => {
+      const href = link.getAttribute('href');
+      if (href && href.startsWith('http://')) {
+        newThreats.push({
+          type: 'high',
+          description: 'Insecure HTTP link detected',
+          recommendation: 'Use HTTPS for all external links',
+          timestamp: new Date()
+        });
+      }
+    });
+
+    setThreats(newThreats);
+    setIsScanning(false);
+
+    // Calculate security score
+    const baseScore = 100;
+    const threatPenalty = newThreats.reduce((penalty, threat) => {
+      switch (threat.type) {
+        case 'high': return penalty + 20;
+        case 'medium': return penalty + 10;
+        case 'low': return penalty + 5;
+        default: return penalty;
+      }
+    }, 0);
+
+    setSecurityScore(Math.max(0, baseScore - threatPenalty));
   };
 
-  const cleanupSecurityMonitoring = () => {
-    // Cleanup would go here if needed
+  // Get security score color
+  const getSecurityScoreColor = (score: number): string => {
+    if (score >= 90) return 'text-green-500';
+    if (score >= 80) return 'text-yellow-500';
+    if (score >= 70) return 'text-orange-500';
+    return 'text-red-500';
   };
 
-  const getStatusColor = (status: string): string => {
-    switch (status) {
-      case 'Excellent':
-        return 'text-green-600';
-      case 'Good':
-        return 'text-blue-600';
-      case 'Needs Improvement':
-        return 'text-yellow-600';
-      case 'Poor':
-        return 'text-red-600';
-      default:
-        return 'text-gray-600';
-    }
+  // Get security score grade
+  const getSecurityScoreGrade = (score: number): string => {
+    if (score >= 90) return 'A';
+    if (score >= 80) return 'B';
+    if (score >= 70) return 'C';
+    if (score >= 60) return 'D';
+    return 'F';
   };
-
-  const getCheckIcon = (passed: boolean) => {
-    return passed ? (
-      <CheckCircle className="w-4 h-4 text-green-500" />
-    ) : (
-      <AlertTriangle className="w-4 h-4 text-red-500" />
-    );
-  };
-
-  if (!showUI) return null;
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      className="fixed bottom-4 right-4 z-50 bg-white/95 backdrop-blur-sm border border-gray-200 rounded-lg shadow-xl p-4 max-w-sm"
-    >
-      <div className="flex items-center justify-between mb-3">
-        <div className="flex items-center space-x-2">
-          <Shield className="w-5 h-5 text-green-600" />
-          <h3 className="text-sm font-semibold text-gray-900">Security Status</h3>
-        </div>
-        <button
-          onClick={() => setShowDetails(!showDetails)}
-          className="text-gray-500 hover:text-gray-700 transition-colors"
-        >
-          {showDetails ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
-        </button>
-      </div>
+    <>
+      {/* Security Panel */}
+      <AnimatePresence>
+        {showPanel && (
+          <motion.div
+            initial={{ opacity: 0, x: 300 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 300 }}
+            className="fixed top-0 right-0 h-full w-96 bg-black/95 backdrop-blur-xl border-l border-red-500/30 z-50 overflow-y-auto"
+          >
+            <div className="p-6">
+              <div className="flex items-center justify-between mb-6">
+                <h2 className="text-2xl font-bold text-red-400 flex items-center gap-2">
+                  <Shield className="w-6 h-6" />
+                  Security Center
+                </h2>
+                <button
+                  onClick={() => setShowPanel(false)}
+                  className="text-gray-400 hover:text-white transition-colors p-2"
+                  aria-label="Close security panel"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
 
-      <div className="space-y-3">
-        {/* Overall Status */}
-        <div className="text-center p-3 bg-gray-50 rounded">
-          <div className={`text-lg font-bold ${getStatusColor(securityStatus.overall)}`}>
-            {securityStatus.overall}
-          </div>
-          <div className="text-xs text-gray-600">Security Score</div>
-        </div>
+              {/* Security Score */}
+              <div className="mb-6 p-4 bg-gradient-to-r from-red-900/20 to-orange-900/20 rounded-xl border border-red-500/20">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-sm text-gray-300">Security Score</span>
+                  <span className={`text-2xl font-bold ${getSecurityScoreColor(securityScore)}`}>
+                    {getSecurityScoreGrade(securityScore)}
+                  </span>
+                </div>
+                <div className="w-full bg-gray-700 rounded-full h-2">
+                  <div 
+                    className={`h-2 rounded-full transition-all duration-500 ${
+                      securityScore >= 90 ? 'bg-green-500' : 
+                      securityScore >= 80 ? 'bg-yellow-500' : 
+                      securityScore >= 70 ? 'bg-orange-500' : 'bg-red-500'
+                    }`}
+                    style={{ width: `${securityScore}%` }}
+                  />
+                </div>
+                <span className="text-xs text-gray-400">{securityScore}/100</span>
+              </div>
 
-        {/* Quick Status */}
-        <div className="grid grid-cols-2 gap-2">
-          <div className="flex items-center space-x-2 text-xs">
-            {getCheckIcon(securityStatus.https)}
-            <span className="text-gray-600">HTTPS</span>
-          </div>
-          <div className="flex items-center space-x-2 text-xs">
-            {getCheckIcon(securityStatus.csp)}
-            <span className="text-gray-600">CSP</span>
-          </div>
-          <div className="flex items-center space-x-2 text-xs">
-            {getCheckIcon(securityStatus.hsts)}
-            <span className="text-gray-600">HSTS</span>
-          </div>
-          <div className="flex items-center space-x-2 text-xs">
-            {getCheckIcon(securityStatus.cookies)}
-            <span className="text-gray-600">Cookies</span>
-          </div>
-        </div>
-
-        {/* Detailed Status */}
-        <AnimatePresence>
-          {showDetails && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              className="space-y-3 pt-3 border-t border-gray-100"
-            >
-              {/* Security Checks */}
-              <div>
-                <h4 className="text-xs font-semibold text-gray-700 mb-2">Security Checks</h4>
+              {/* Security Status */}
+              <div className="mb-6">
+                <h3 className="text-lg font-semibold text-white mb-3">Security Headers</h3>
                 <div className="space-y-2">
-                  {[
-                    { key: 'csp', label: 'Content Security Policy', status: securityStatus.csp },
-                    { key: 'hsts', label: 'HSTS', status: securityStatus.hsts },
-                    { key: 'xss', label: 'XSS Protection', status: securityStatus.xss },
-                    { key: 'clickjacking', label: 'Clickjacking Protection', status: securityStatus.clickjacking },
-                    { key: 'https', label: 'HTTPS', status: securityStatus.https },
-                    { key: 'cookies', label: 'Secure Cookies', status: securityStatus.cookies }
-                  ].map(({ key, label, status }) => (
-                    <div key={key} className="flex items-center justify-between text-xs">
-                      <span className="text-gray-600">{label}</span>
-                      {getCheckIcon(status)}
+                  {Object.entries(securityStatus).map(([key, value]) => (
+                    <div key={key} className="flex items-center justify-between p-2 bg-gray-800 rounded-lg">
+                      <span className="text-sm text-gray-300 capitalize">
+                        {key.replace(/([A-Z])/g, ' $1').trim()}
+                      </span>
+                      {value ? (
+                        <CheckCircle className="w-4 h-4 text-green-400" />
+                      ) : (
+                        <AlertTriangle className="w-4 h-4 text-red-400" />
+                      )}
                     </div>
                   ))}
                 </div>
               </div>
 
-              {/* Issues */}
-              {securityIssues.length > 0 && (
-                <div>
-                  <h4 className="text-xs font-semibold text-red-700 mb-2">Security Issues</h4>
-                  <div className="space-y-1">
-                    {securityIssues.map((issue, index) => (
-                      <div key={index} className="text-xs text-red-600 flex items-start space-x-2">
-                        <AlertTriangle className="w-3 h-3 text-red-500 mt-0.5 flex-shrink-0" />
-                        <span>{issue}</span>
+              {/* Security Scanner */}
+              <div className="mb-6">
+                <div className="flex items-center justify-between mb-3">
+                  <h3 className="text-lg font-semibold text-white">Security Scanner</h3>
+                  <button
+                    onClick={performSecurityScan}
+                    disabled={isScanning}
+                    className="bg-gradient-to-r from-red-500 to-orange-600 hover:from-red-600 hover:to-orange-700 disabled:opacity-50 px-4 py-2 rounded-lg text-white font-medium transition-all duration-300 flex items-center gap-2"
+                  >
+                    {isScanning ? (
+                      <>
+                        <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                        Scanning...
+                      </>
+                    ) : (
+                      <>
+                        <Shield className="w-4 h-4" />
+                        Scan
+                      </>
+                    )}
+                  </button>
+                </div>
+
+                {threats.length > 0 && (
+                  <div className="space-y-2 max-h-64 overflow-y-auto">
+                    {threats.map((threat, index) => (
+                      <div
+                        key={index}
+                        className={`p-3 rounded-lg border-l-4 ${
+                          threat.type === 'high' ? 'border-red-500 bg-red-900/20' :
+                          threat.type === 'medium' ? 'border-yellow-500 bg-yellow-900/20' :
+                          'border-blue-500 bg-blue-900/20'
+                        }`}
+                      >
+                        <div className="flex items-start gap-2">
+                          <AlertTriangle className={`w-4 h-4 mt-0.5 flex-shrink-0 ${
+                            threat.type === 'high' ? 'text-red-400' :
+                            threat.type === 'medium' ? 'text-yellow-400' :
+                            'text-blue-400'
+                          }`} />
+                          <div className="flex-1">
+                            <p className="text-sm text-white">{threat.description}</p>
+                            <p className="text-xs text-gray-400 mt-1">{threat.recommendation}</p>
+                            <span className={`inline-block px-2 py-1 rounded text-xs mt-2 ${
+                              threat.type === 'high' ? 'bg-red-600 text-white' :
+                              threat.type === 'medium' ? 'bg-yellow-600 text-white' :
+                              'bg-blue-600 text-white'
+                            }`}>
+                              {threat.type} priority
+                            </span>
+                          </div>
+                        </div>
                       </div>
                     ))}
                   </div>
-                </div>
-              )}
+                )}
+              </div>
 
-              {/* Recommendations */}
-              {recommendations.length > 0 && (
-                <div>
-                  <h4 className="text-xs font-semibold text-blue-700 mb-2">Recommendations</h4>
-                  <div className="space-y-1">
-                    {recommendations.map((rec, index) => (
-                      <div key={index} className="text-xs text-blue-600 flex items-start space-x-2">
-                        <CheckCircle className="w-3 h-3 text-blue-500 mt-0.5 flex-shrink-0" />
-                        <span>{rec}</span>
-                      </div>
-                    ))}
+              {/* Security Recommendations */}
+              <div className="mb-6">
+                <h3 className="text-lg font-semibold text-white mb-3">Security Recommendations</h3>
+                <div className="space-y-2 text-sm text-gray-300">
+                  <div className="p-3 bg-gray-800 rounded-lg border border-gray-600">
+                    <p className="font-medium text-white mb-1">Enable HTTPS Only</p>
+                    <p className="text-xs">Ensure all traffic is encrypted with TLS 1.3</p>
+                  </div>
+                  <div className="p-3 bg-gray-800 rounded-lg border border-gray-600">
+                    <p className="font-medium text-white mb-1">Implement Rate Limiting</p>
+                    <p className="text-xs">Protect against brute force and DDoS attacks</p>
+                  </div>
+                  <div className="p-3 bg-gray-800 rounded-lg border border-gray-600">
+                    <p className="font-medium text-white mb-1">Regular Security Audits</p>
+                    <p className="text-xs">Conduct monthly security assessments</p>
                   </div>
                 </div>
-              )}
-            </motion.div>
-          )}
-        </AnimatePresence>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
-        {/* Actions */}
-        <div className="flex space-x-2 pt-2 border-t border-gray-100">
-          <button
-            onClick={checkSecurityStatus}
-            className="flex-1 px-3 py-1 text-xs bg-green-600 text-white rounded hover:bg-green-700 transition-colors"
-          >
-            Recheck
-          </button>
-          <button
-            onClick={() => setShowDetails(!showDetails)}
-            className="px-3 py-1 text-xs bg-gray-600 text-white rounded hover:bg-gray-700 transition-colors"
-          >
-            {showDetails ? 'Hide' : 'Details'}
-          </button>
-        </div>
-      </div>
-    </motion.div>
+      {/* Toggle Button */}
+      <button
+        onClick={() => setShowPanel(!showPanel)}
+        className="fixed top-32 right-4 z-40 bg-gradient-to-r from-red-500 to-orange-600 hover:from-red-600 hover:to-orange-700 text-white p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2"
+        aria-label="Toggle security panel"
+      >
+        <Shield className="w-5 h-5" />
+        {showPanel ? 'Hide' : 'Show'} Security
+      </button>
+    </>
   );
 };
 

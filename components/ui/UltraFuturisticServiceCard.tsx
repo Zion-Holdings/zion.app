@@ -1,373 +1,329 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, ExternalLink, Star, TrendingUp, Users, Zap, Shield, Clock } from 'lucide-react';
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Star, TrendingUp, Clock, DollarSign, ArrowRight, ExternalLink, Phone, Mail, MapPin, Zap, Brain, Rocket, Globe, Cpu, Lock, Eye, Shield, Target, Users, Award } from 'lucide-react';
+import Button from './Button';
 
-interface UltraFuturisticServiceCardProps {
-  service: {
-    id: string;
-    name: string;
-    tagline: string;
-    price: string;
-    period: string;
-    description: string;
-    features: string[];
-    popular: boolean;
-    icon: string;
-    color: string;
-    textColor: string;
-    link: string;
-    marketPosition: string;
-    targetAudience: string | string[];
-    trialDays: number;
-    setupTime: string;
-    category: string;
-    realService: boolean;
-    technology: string[];
-    integrations: string[];
-    useCases: string[];
-    roi: string;
-    competitors: string[];
-    marketSize: string;
-    growthRate: string;
-    variant?: string;
-    contactInfo: {
-      mobile: string;
-      email: string;
-      address: string;
-      website: string;
-    };
-    realImplementation: boolean;
-    implementationDetails: string;
-    launchDate: string;
-    customers: number;
-    rating: number;
-    reviews: number;
+interface Service {
+  id: string;
+  name: string;
+  tagline: string;
+  price: string;
+  period: string;
+  description: string;
+  features: string[];
+  popular: boolean;
+  icon: string;
+  color: string;
+  textColor: string;
+  link: string;
+  marketPosition: string;
+  targetAudience: string;
+  trialDays: number;
+  setupTime: string;
+  category: string;
+  realService: boolean;
+  technology: string[];
+  integrations: string[];
+  useCases: string[];
+  roi: string;
+  competitors: string[];
+  marketSize: string;
+  growthRate: string;
+  variant: string;
+  contactInfo: {
+    mobile: string;
+    email: string;
+    address: string;
+    website: string;
   };
-  className?: string;
+  realImplementation: boolean;
+  implementationDetails: string;
+  launchDate: string;
+  customers: number;
+  rating: number;
+  reviews: number;
 }
 
-const UltraFuturisticServiceCard: React.FC<UltraFuturisticServiceCardProps> = ({
-  service,
-  className = ''
-}) => {
-  const [isHovered, setIsHovered] = useState(false);
-  const [isExpanded, setIsExpanded] = useState(false);
-  const cardRef = useRef<HTMLDivElement>(null);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+interface UltraFuturisticServiceCardProps {
+  service: Service;
+}
 
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      if (cardRef.current) {
-        const rect = cardRef.current.getBoundingClientRect();
-        setMousePosition({
-          x: e.clientX - rect.left,
-          y: e.clientY - rect.top
-        });
-      }
-    };
+const categoryIcons: { [key: string]: React.ReactNode } = {
+  'AI & Machine Learning': <Brain className="w-4 h-4" />,
+  'Quantum Computing': <Zap className="w-4 h-4" />,
+  'IoT & Smart Cities': <Cpu className="w-4 h-4" />,
+  'Robotics & Automation': <Rocket className="w-4 h-4" />,
+  'Biotechnology & Healthcare': <Eye className="w-4 h-4" />,
+  'Cybersecurity': <Lock className="w-4 h-4" />,
+  'Analytics & Business Intelligence': <TrendingUp className="w-4 h-4" />,
+  'Cloud & Infrastructure': <Globe className="w-4 h-4" />,
+  'Quantum AI & BCI': <Brain className="w-4 h-4" />,
+  'Autonomous Systems': <Rocket className="w-4 h-4" />,
+  'Space Technology': <Rocket className="w-4 h-4" />,
+  'Quantum Finance': <DollarSign className="w-4 h-4" />,
+  'Metaverse & VR': <Globe className="w-4 h-4" />,
+  'Quantum IoT': <Cpu className="w-4 h-4" />,
+  'Autonomous Vehicles': <Rocket className="w-4 h-4" />,
+  'Smart Energy': <Zap className="w-4 h-4" />
+};
 
-    const card = cardRef.current;
-    if (card) {
-      card.addEventListener('mousemove', handleMouseMove);
-      return () => card.removeEventListener('mousemove', handleMouseMove);
-    }
-  }, []);
-
-  const cardVariants = {
-    initial: { 
-      scale: 1,
-      rotateY: 0,
-      rotateX: 0
-    },
-    hover: { 
-      scale: 1.02,
-      rotateY: (mousePosition.x - 150) * 0.01,
-      rotateX: (mousePosition.y - 150) * 0.01,
-      transition: {
-        duration: 0.3,
-        ease: "easeOut" as const
-      }
-    }
-  };
-
-  const glowVariants = {
-    initial: { opacity: 0.3 },
-    hover: { 
-      opacity: 0.8,
-      transition: { duration: 0.3 }
-    }
-  };
-
-  const contentVariants = {
-    initial: { opacity: 0, y: 20 },
-    animate: { 
-      opacity: 1, 
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut" as const
-      }
+export default function UltraFuturisticServiceCard({ service }: UltraFuturisticServiceCardProps) {
+  const getVariantStyles = (variant: string) => {
+    switch (variant) {
+      case 'quantum-advanced':
+        return 'from-purple-600 via-indigo-600 to-blue-600';
+      case 'neural-cyberpunk':
+        return 'from-green-600 via-emerald-600 to-teal-600';
+      case 'quantum-space':
+        return 'from-blue-600 via-cyan-600 to-indigo-600';
+      case 'holographic-matrix':
+        return 'from-pink-600 via-rose-600 to-purple-600';
+      case 'neural-quantum':
+        return 'from-green-600 via-cyan-600 to-blue-600';
+      case 'quantum-cyberpunk':
+        return 'from-purple-600 via-pink-600 to-red-600';
+      case 'holographic-neural':
+        return 'from-purple-600 via-green-600 to-blue-600';
+      case 'quantum-holographic-advanced':
+        return 'from-cyan-600 via-purple-600 to-pink-600';
+      case 'quantum-matrix':
+        return 'from-blue-600 via-purple-600 to-cyan-600';
+      case 'holographic-quantum':
+        return 'from-purple-600 via-cyan-600 to-green-600';
+      case 'quantum-neural-advanced':
+        return 'from-cyan-600 via-green-600 to-purple-600';
+      case 'cyberpunk-holographic':
+        return 'from-pink-600 via-purple-600 to-cyan-600';
+      case 'ai-futuristic':
+        return 'from-cyan-600 via-blue-600 to-purple-600';
+      case 'quantum-entanglement':
+        return 'from-purple-600 via-pink-600 to-indigo-600';
+      case 'neural-quantum-cyberpunk':
+        return 'from-green-600 via-cyan-600 via-purple-600 to-pink-600';
+      default:
+        return 'from-cyan-600 to-blue-600';
     }
   };
 
-  const featureVariants = {
-    initial: { opacity: 0, x: -20 },
-    animate: (i: number) => ({
-      opacity: 1,
-      x: 0,
-      transition: {
-        duration: 0.5,
-        delay: i * 0.1,
-        ease: "easeOut" as const
-      }
-    })
-  };
-
-  const getGradientClass = (color: string) => {
-    const colorMap: { [key: string]: string } = {
-      'from-pink-500 to-rose-600': 'from-pink-500 via-rose-500 to-rose-600',
-      'from-cyan-600 to-blue-700': 'from-cyan-500 via-blue-500 to-blue-600',
-      'from-emerald-600 to-teal-700': 'from-emerald-500 via-teal-500 to-teal-600',
-      'from-violet-600 to-purple-700': 'from-violet-500 via-purple-500 to-purple-600',
-      'from-purple-600 via-pink-600 to-cyan-600': 'from-purple-500 via-pink-500 to-cyan-500',
-      'from-blue-600 via-indigo-600 to-purple-600': 'from-blue-500 via-indigo-500 to-purple-500',
-      'from-green-600 via-emerald-600 to-teal-600': 'from-green-500 via-emerald-500 to-teal-500',
-      'from-yellow-600 via-orange-600 to-red-600': 'from-yellow-500 via-orange-500 to-red-500',
-      'from-red-600 via-pink-600 to-purple-600': 'from-red-500 via-pink-500 to-purple-500',
-      'from-cyan-600 via-blue-600 to-indigo-600': 'from-cyan-500 via-blue-500 to-indigo-500',
-      'from-teal-600 via-emerald-600 to-green-600': 'from-teal-500 via-emerald-500 to-green-500',
-      'from-orange-600 via-red-600 to-pink-600': 'from-orange-500 via-red-500 to-pink-500',
-      'from-violet-600 via-purple-600 to-pink-600': 'from-violet-500 via-purple-500 to-pink-500',
-      'from-gray-600 via-slate-600 to-zinc-600': 'from-gray-500 via-slate-500 to-zinc-500',
-      'from-indigo-600 via-blue-600 to-cyan-600': 'from-indigo-500 via-blue-500 to-cyan-500',
-      'from-emerald-600 via-teal-600 to-cyan-600': 'from-emerald-500 via-teal-500 to-cyan-500'
-    };
-    return colorMap[color] || color;
+  const getRoiValue = (roi: string) => {
+    const match = roi.match(/(\d+)/);
+    return match ? match[1] : '0';
   };
 
   return (
     <motion.div
-      ref={cardRef}
-      className={`relative group cursor-pointer ${className}`}
-      variants={cardVariants}
-      initial="initial"
-      whileHover="hover"
-      onHoverStart={() => setIsHovered(true)}
-      onHoverEnd={() => setIsHovered(false)}
-      onClick={() => setIsExpanded(!isExpanded)}
-      style={{
-        perspective: '1000px',
-        transformStyle: 'preserve-3d'
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      whileHover={{ 
+        y: -8,
+        transition: { duration: 0.3 }
       }}
+      className="group relative"
     >
-      {/* Enhanced Glow Effect */}
-      <motion.div
-        className={`absolute -inset-1 rounded-2xl bg-gradient-to-r ${getGradientClass(service.color)} opacity-0 blur-lg transition-all duration-300 group-hover:opacity-75`}
-        variants={glowVariants}
-        initial="initial"
-        whileHover="hover"
-      />
+      {/* Glow Effect */}
+      <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-500"></div>
       
       {/* Main Card */}
-      <motion.div
-        className="relative bg-black/80 backdrop-blur-xl border border-white/10 rounded-2xl p-6 overflow-hidden"
-        style={{
-          background: `linear-gradient(135deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.7) 100%)`,
-          boxShadow: isHovered 
-            ? `0 0 40px rgba(0, 255, 255, 0.3), 0 0 80px rgba(139, 92, 246, 0.2), 0 0 120px rgba(236, 73, 153, 0.1)`
-            : '0 0 20px rgba(0, 255, 255, 0.1)'
-        }}
-      >
-        {/* Quantum Holographic Border */}
-        <div className="absolute inset-0 rounded-2xl overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 via-purple-500/20 to-pink-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-          <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-        </div>
-
-        {/* Header Section */}
-        <motion.div
-          className="relative z-10"
-          variants={contentVariants}
-          initial="initial"
-          animate="animate"
-        >
-          {/* Popular Badge */}
+      <div className="relative bg-gradient-to-br from-gray-900/90 via-gray-800/80 to-gray-900/90 backdrop-blur-xl border border-gray-700/50 rounded-2xl p-6 h-full hover:border-cyan-500/50 transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-cyan-500/20">
+        
+        {/* Header */}
+        <div className="flex items-start justify-between mb-4">
+          <div className="flex items-center space-x-3">
+            <div className="text-4xl">{service.icon}</div>
+            <div>
+              <div className="flex items-center space-x-2 mb-1">
+                {categoryIcons[service.category] && (
+                  <span className="text-cyan-400">
+                    {categoryIcons[service.category]}
+                  </span>
+                )}
+                <span className="text-xs px-2 py-1 bg-gray-700/50 text-gray-300 rounded-full border border-gray-600">
+                  {service.category}
+                </span>
+              </div>
+              <h3 className="text-lg font-bold text-white group-hover:text-cyan-400 transition-colors duration-300">
+                {service.name}
+              </h3>
+            </div>
+          </div>
+          
           {service.popular && (
             <motion.div
-              className="absolute -top-3 -right-3 bg-gradient-to-r from-yellow-400 to-orange-500 text-black text-xs font-bold px-3 py-1 rounded-full shadow-lg"
-              initial={{ scale: 0, rotate: -180 }}
-              animate={{ scale: 1, rotate: 0 }}
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
               transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
+              className="flex items-center space-x-1 px-2 py-1 bg-gradient-to-r from-yellow-500 to-orange-500 text-white text-xs rounded-full"
             >
-              <Star className="w-3 h-3 inline mr-1" />
-              POPULAR
+              <Star className="w-3 h-3 fill-current" />
+              <span>Popular</span>
             </motion.div>
           )}
+        </div>
 
-          {/* Service Icon and Title */}
-          <div className="flex items-start justify-between mb-4">
-            <div className="flex items-center space-x-3">
+        {/* Tagline */}
+        <p className="text-sm text-gray-300 mb-4 leading-relaxed">
+          {service.tagline}
+        </p>
+
+        {/* Price and Stats */}
+        <div className="mb-4">
+          <div className="text-2xl font-bold text-cyan-400 mb-2">
+            {service.price}
+            <span className="text-sm text-gray-400 ml-1">{service.period}</span>
+          </div>
+          
+          <div className="grid grid-cols-2 gap-3 text-xs">
+            <div className="flex items-center space-x-2 text-gray-400">
+              <Clock className="w-3 h-3" />
+              <span>{service.trialDays} days trial</span>
+            </div>
+            <div className="flex items-center space-x-2 text-gray-400">
+              <TrendingUp className="w-3 h-3" />
+              <span>{getRoiValue(service.roi)}% ROI</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Rating and Reviews */}
+        <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center space-x-1">
+            <Star className="w-4 h-4 text-yellow-400 fill-current" />
+            <span className="text-white font-semibold">{service.rating}</span>
+            <span className="text-gray-400 text-sm">({service.reviews})</span>
+          </div>
+          
+          <div className="flex items-center space-x-2 text-xs text-gray-400">
+            <Users className="w-3 h-3" />
+            <span>{service.customers.toLocaleString()}+ users</span>
+          </div>
+        </div>
+
+        {/* Features Preview */}
+        <div className="mb-4">
+          <h4 className="text-sm font-semibold text-white mb-2 flex items-center space-x-2">
+            <Target className="w-3 h-3 text-cyan-400" />
+            <span>Key Features</span>
+          </h4>
+          <div className="space-y-1">
+            {service.features.slice(0, 3).map((feature, index) => (
               <motion.div
-                className={`text-4xl ${service.textColor}`}
-                animate={{ 
-                  scale: isHovered ? 1.1 : 1,
-                  rotate: isHovered ? 5 : 0
-                }}
-                transition={{ duration: 0.3 }}
+                key={index}
+                initial={{ opacity: 0, x: -10 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.1 * index }}
+                className="flex items-center space-x-2 text-xs text-gray-300"
               >
-                {service.icon}
+                <div className="w-1.5 h-1.5 bg-cyan-400 rounded-full"></div>
+                <span className="truncate">{feature}</span>
               </motion.div>
-              <div>
-                <h3 className="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors duration-300">
-                  {service.name}
-                </h3>
-                <p className="text-gray-400 text-sm">{service.tagline}</p>
+            ))}
+            {service.features.length > 3 && (
+              <div className="text-xs text-cyan-400 mt-1">
+                +{service.features.length - 3} more features
               </div>
+            )}
+          </div>
+        </div>
+
+        {/* Market Data */}
+        <div className="mb-4 p-3 bg-gray-800/30 rounded-lg border border-gray-700/50">
+          <div className="grid grid-cols-2 gap-2 text-xs">
+            <div>
+              <span className="text-gray-400">Market:</span>
+              <div className="text-white font-semibold">{service.marketSize}</div>
             </div>
-            
-            {/* Price */}
-            <div className="text-right">
-              <div className="text-2xl font-bold text-white">{service.price}</div>
-              <div className="text-gray-400 text-sm">{service.period}</div>
+            <div>
+              <span className="text-gray-400">Growth:</span>
+              <div className="text-green-400 font-semibold">{service.growthRate}</div>
             </div>
           </div>
-
-          {/* Description */}
-          <p className="text-gray-300 mb-4 leading-relaxed">{service.description}</p>
-
-          {/* Quick Stats */}
-          <div className="grid grid-cols-2 gap-3 mb-4">
-            <div className="flex items-center space-x-2 text-sm">
-              <Users className="w-4 h-4 text-cyan-400" />
-              <span className="text-gray-300">{service.customers.toLocaleString()}+ users</span>
-            </div>
-            <div className="flex items-center space-x-2 text-sm">
-              <Star className="w-4 h-4 text-yellow-400" />
-              <span className="text-gray-300">{service.rating}/5 ({service.reviews})</span>
-            </div>
-            <div className="flex items-center space-x-2 text-sm">
-              <TrendingUp className="w-4 h-4 text-green-400" />
-              <span className="text-gray-300">{service.growthRate}</span>
-            </div>
-            <div className="flex items-center space-x-2 text-sm">
-              <Shield className="w-4 h-4 text-blue-400" />
-              <span className="text-gray-300">{service.trialDays} day trial</span>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Features Section */}
-        <AnimatePresence>
-          {isExpanded && (
-            <motion.div
-              className="mt-6 pt-6 border-t border-white/10"
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.5, ease: "easeInOut" }}
-            >
-              <h4 className="text-lg font-semibold text-white mb-3 flex items-center">
-                <Zap className="w-5 h-5 text-yellow-400 mr-2" />
-                Key Features
-              </h4>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                {service.features.map((feature, index) => (
-                  <motion.div
-                    key={index}
-                    className="flex items-center space-x-2 text-sm text-gray-300"
-                    variants={featureVariants}
-                    initial="initial"
-                    animate="animate"
-                    custom={index}
-                  >
-                    <div className="w-2 h-2 bg-cyan-400 rounded-full" />
-                    <span>{feature}</span>
-                  </motion.div>
-                ))}
-              </div>
-
-              {/* Market Information */}
-              <div className="mt-4 p-4 bg-white/5 rounded-lg border border-white/10">
-                <h5 className="text-sm font-semibold text-white mb-2">Market Position</h5>
-                <p className="text-xs text-gray-400 mb-2">{service.marketPosition}</p>
-                <div className="flex items-center justify-between text-xs">
-                  <span className="text-gray-400">Market Size: <span className="text-white">{service.marketSize}</span></span>
-                  <span className="text-gray-400">ROI: <span className="text-green-400">{service.roi}</span></span>
-                </div>
-              </div>
-
-              {/* Contact Information */}
-              <div className="mt-4 p-4 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 rounded-lg border border-cyan-500/20">
-                <h5 className="text-sm font-semibold text-cyan-400 mb-2">Contact Information</h5>
-                <div className="space-y-1 text-xs text-gray-300">
-                  <div>📱 {service.contactInfo.mobile}</div>
-                  <div>✉️ {service.contactInfo.email}</div>
-                  <div>📍 {service.contactInfo.address}</div>
-                </div>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+        </div>
 
         {/* Action Buttons */}
-        <motion.div
-          className="flex space-x-3 mt-6"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
-        >
-          <motion.a
-            href={service.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex-1 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-semibold py-3 px-4 rounded-lg transition-all duration-300 flex items-center justify-center space-x-2 group/btn"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
+        <div className="flex space-x-2 mb-4">
+          <Button 
+            href={service.link} 
+            variant="quantum" 
+            size="sm"
+            className="flex-1 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white"
           >
-            <span>Get Started</span>
-            <ExternalLink className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
-          </motion.a>
-          
-          <motion.button
-            onClick={(e) => {
-              e.stopPropagation();
-              setIsExpanded(!isExpanded);
-            }}
-            className="px-4 py-3 border border-white/20 hover:border-cyan-400/50 text-white rounded-lg transition-all duration-300 hover:bg-white/5"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            Learn More
+            <ExternalLink className="w-3 h-3 ml-1" />
+          </Button>
+          <Button 
+            href="/contact" 
+            variant="outline" 
+            size="sm"
+            className="flex-1 border-cyan-500 text-cyan-400 hover:bg-cyan-500 hover:text-white"
           >
-            {isExpanded ? 'Show Less' : 'Learn More'}
+            {isExpanded ? 'Less' : 'More'}
           </motion.button>
-        </motion.div>
-
-        {/* Floating Quantum Particles */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          {[...Array(5)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute w-1 h-1 bg-cyan-400 rounded-full opacity-60"
-              style={{
-                left: `${20 + i * 15}%`,
-                top: `${30 + i * 10}%`
-              }}
-              animate={{
-                y: [0, -20, 0],
-                opacity: [0.6, 1, 0.6],
-                scale: [1, 1.5, 1]
-              }}
-              transition={{
-                duration: 3 + i,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: i * 0.5
-              }}
-            />
-          ))}
         </div>
-      </motion.div>
+
+        {/* Contact Info */}
+        <div className="pt-4 border-t border-gray-700/50">
+          <div className="grid grid-cols-3 gap-2 text-xs text-gray-400">
+            <div className="flex items-center space-x-1">
+              <Phone className="w-3 h-3 text-cyan-400" />
+              <span className="truncate">{service.contactInfo.mobile}</span>
+            </div>
+            <div className="flex items-center space-x-1">
+              <Mail className="w-3 h-3 text-fuchsia-400" />
+              <span className="truncate">{service.contactInfo.email}</span>
+            </div>
+            <div className="flex items-center space-x-1">
+              <MapPin className="w-3 h-3 text-green-400" />
+              <span className="truncate text-xs">{service.contactInfo.address.split(' ').slice(0, 2).join(' ')}...</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Hover Overlay */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileHover={{ opacity: 1 }}
+          className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-blue-500/5 to-purple-500/5 rounded-2xl pointer-events-none"
+        />
+      </div>
     </motion.div>
   );
-};
+}
 
-export default UltraFuturisticServiceCard;
+// Missing icon components
+const Factory = ({ className }: { className?: string }) => (
+  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+  </svg>
+);
+
+const Video = ({ className }: { className?: string }) => (
+  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+  </svg>
+);
+
+const Eye = ({ className }: { className?: string }) => (
+  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+  </svg>
+);
+
+const Truck = ({ className }: { className?: string }) => (
+  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM21 17a2 2 0 11-4 0 2 2 0 014 0zM9 17h10M9 17v-4m0-4V7a2 2 0 012-2h6a2 2 0 012 2v6m-6 0h6" />
+  </svg>
+);
+
+const Cloud = ({ className }: { className?: string }) => (
+  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+  </svg>
+);
+
+const DollarSign = ({ className }: { className?: string }) => (
+  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
+  </svg>
+);

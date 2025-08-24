@@ -8,7 +8,7 @@ import {
 } from 'lucide-react';
 
 // Import our new revolutionary services
-import { revolutionary2040FuturisticServices } from '../data/revolutionary-2040-futuristic-services';
+// import { revolutionary2040FuturisticServices } from '../data/revolutionary-2040-futuristic-services';
 import { revolutionary2041AdvancedServices } from '../data/revolutionary-2041-advanced-services';
 
 const Revolutionary20402041PricingShowcase: React.FC = () => {
@@ -21,7 +21,7 @@ const Revolutionary20402041PricingShowcase: React.FC = () => {
   }, []);
 
   // Combine all services
-  const allServices = [...revolutionary2040FuturisticServices, ...revolutionary2041AdvancedServices];
+  const allServices = [...revolutionary2041AdvancedServices];
 
   // Get unique categories
   const categories = [
@@ -45,10 +45,12 @@ const Revolutionary20402041PricingShowcase: React.FC = () => {
 
   // Get pricing for selected plan
   const getPricing = (service: any) => {
-    if (selectedPlan === 'starter') return service.pricing.starter;
-    if (selectedPlan === 'professional') return service.pricing.professional;
-    if (selectedPlan === 'enterprise') return service.pricing.enterprise;
-    return service.pricing.custom;
+    if (!service.pricing) return 'Contact for pricing';
+    
+    if (selectedPlan === 'starter') return service.pricing.starter || 'Contact for pricing';
+    if (selectedPlan === 'professional') return service.pricing.professional || 'Contact for pricing';
+    if (selectedPlan === 'enterprise') return service.pricing.enterprise || 'Contact for pricing';
+    return service.pricing.custom || 'Contact for pricing';
   };
 
   // Get plan features
@@ -56,7 +58,7 @@ const Revolutionary20402041PricingShowcase: React.FC = () => {
     const features = {
       starter: ['Core functionality', 'Basic support', 'Standard features', 'Community access'],
       professional: ['Advanced features', 'Priority support', 'Custom integrations', 'Analytics dashboard'],
-      enterprise: ['Full feature set', '24/7 dedicated support', 'Custom development', 'White-label options']
+      enterprise: ['Full feature set', '24/7 dedicated support', 'Custom development', 'White-label options'"
     };
     return features[plan as keyof typeof features] || [];
   };
@@ -66,10 +68,7 @@ const Revolutionary20402041PricingShowcase: React.FC = () => {
       <SEO 
         title="Revolutionary 2040-2041 Futuristic Services Pricing | Zion Tech Group"
         description="Explore our revolutionary 2040-2041 futuristic micro SAAS, IT, and AI services with comprehensive pricing. From AI consciousness evolution to quantum computing solutions."
-        keywords={[
-          "2040 services", "2041 services", "futuristic pricing", "AI consciousness", 
-          "quantum computing", "micro SAAS", "IT services", "AI services", "Zion Tech Group"
-        ]}
+                keywords="2040 services, 2041 services, futuristic pricing, AI consciousness, quantum computing, micro SAAS, IT services, AI services, Zion Tech Group"
       />
 
       {/* Hero Section */}
@@ -213,7 +212,7 @@ const Revolutionary20402041PricingShowcase: React.FC = () => {
                     </div>
                     <div>
                       <p className="text-gray-400">Target</p>
-                      <p className="text-white font-medium">{service.targetAudience.split(',')[0]}</p>
+                      <p className="text-white font-medium">{service.targetAudience.split(',')[0"</p>
                     </div>
                   </div>
                 </div>

@@ -5,20 +5,21 @@ export default function EdgeComputingOrchestrationPlatform() {
 	return (
 		<ServiceLanding
 			title="Edge Computing Orchestration Platform"
-			description="Deploy, manage, and observe workloads across edge locations with secure updates, policy control, and low-latency routing."
-			subtitle="Operate everywhere securely"
-			pricePerMonthUSD={3499}
-			implementationWeeks="4-8 weeks"
-			roiNote="Improve latency up to 60% and reduce bandwidth costs"
+			description="Deploy, manage, and observe applications across thousands of distributed edge nodes with policy and intent-based automation."
+			subtitle="Operate at the edge with confidence"
+			pricePerMonthUSD={5999}
+			implementationWeeks="Implementation: 6-10 weeks"
+			roiNote="Lower latency, bandwidth costs, and outages at the edge"
 			features={[
-				"Zero-touch provisioning",
-				"Fleet management and canary updates",
-				"Policy and configuration drift detection",
-				"Edge-aware service mesh",
-				"Observability with traces/logs/metrics",
-				"Cloudflare Workers, Fly.io, K3s support"
+				"Zero-touch provisioning and updates",
+				"GitOps and policy-as-code orchestration",
+				"Secure mesh networking and secret management",
+				"Health checks, rollbacks, and A/B",
+				"Edge observability and audit trails",
+				"Integrations: K3s, K8s, Nomad, Cloudflare, Akamai"
 			]}
-			industries={["Retail", "Manufacturing", "Telecom", "Media"]}
+			industries={["Retail", "Telecom", "Manufacturing", "Media"]}
+			ctaHref="/contact"
 			canonical="https://ziontechgroup.com/edge-computing-orchestration-platform"
 		/>
 	);

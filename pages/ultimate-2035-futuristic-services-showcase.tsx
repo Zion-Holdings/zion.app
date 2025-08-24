@@ -7,7 +7,7 @@ import {
   Rocket, Brain, Atom, Shield, Zap, Target, Users, Award, Clock, 
   Heart, Lightbulb, Search, Filter, Grid, List, Globe, Sparkles
 } from 'lucide-react';
-import Layout from '../components/layout/Layout';
+import { Layout } from '../components/layout/Layout';
 import { ultimateFuturisticServices2025 } from '../data/2025-ultimate-futuristic-services';
 
 const contactInfo = {

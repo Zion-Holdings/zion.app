@@ -1,23 +1,26 @@
 import React from 'react';
-import Head from 'next/head';
+import ServiceLanding from '../components/sections/ServiceLanding';
 
-export default function EnergyUtilitiesSolutionsPage() {
+export default function EnergyUtilitiesSolutions() {
 	return (
-		<div className="min-h-screen pt-24 pb-20 px-4 sm:px-6 lg:px-8 text-white">
-			<Head>
-				<title>Energy & Utilities Solutions | Zion Tech Group</title>
-				<meta name="description" content="AI for grid optimization, predictive maintenance, and renewable integration." />
-				<link rel="canonical" href="https://ziontechgroup.com/energy-utilities-solutions" />
-			</Head>
-			<div className="max-w-5xl mx-auto space-y-6">
-				<h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Energy & Utilities Solutions</h1>
-				<ul className="list-disc list-inside text-slate-300 space-y-1">
-					<li>Demand forecasting and grid optimization</li>
-					<li>Asset health and predictive maintenance</li>
-					<li>Renewable integration and storage optimization</li>
-					<li>Leak detection and anomaly monitoring</li>
-				</ul>
-			</div>
-		</div>
+		<ServiceLanding
+			title="Energy & Utilities Solutions"
+			description="Grid forecasting, asset intelligence, and outage management with AI—improving reliability and sustainability."
+			subtitle="Build resilient, efficient energy systems"
+			pricePerMonthUSD={4999}
+			implementationWeeks="Implementation: 6-10 weeks"
+			roiNote="Lower SAIDI/SAIFI and O&M costs"
+			features={[
+				"Load and price forecasting",
+				"Predictive maintenance for assets",
+				"DER orchestration and flexibility",
+				"Outage prediction and crew dispatch",
+				"Regulatory reporting and analytics",
+				"Integrations: OSIsoft PI, SCADA, ESRI, Snowflake"
+			]}
+			industries={["Utilities", "Renewables", "Oil & Gas"]}
+			ctaHref="/contact"
+			canonical="https://ziontechgroup.com/energy-utilities-solutions"
+		/>
 	);
 }

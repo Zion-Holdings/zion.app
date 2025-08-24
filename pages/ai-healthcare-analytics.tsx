@@ -16,10 +16,10 @@ export default function AiHealthcareAnalytics() {
 				"Population health analytics",
 				"Risk stratification",
 				"Care pathway optimization",
-				"Interoperability and security"
+				"Interoperability and security]}
 			]}
 			industries={["Healthcare", "Hospitals", "Payers", "Providers"]}
-			canonical="https://ziontechgroup.com/ai-healthcare-analytics"
+			url="https://ziontechgroup.com/ai-healthcare-analytics"
 		/>
 	);
 }

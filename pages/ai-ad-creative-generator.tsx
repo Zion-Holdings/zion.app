@@ -28,7 +28,7 @@ export default function AIAdCreativeGenerator() {
 							<h3 className="text-xl font-semibold text-white mb-2">Pricing (market)</h3>
 							<ul className="list-disc list-inside text-slate-300 space-y-1">
 								<li>$20–$300/mo + usage</li>
-								<li>References: <a className="text-cyan-400 underline" href="https://openai.com/api/pricing" target="_blank" rel="noreferrer">OpenAI</a>, <a className="text-cyan-400 underline" href="https://stability.ai/stable-image/pricing" target="_blank" rel="noreferrer">Stable Image</a></li>
+								<li>References: <a className="text-cyan-400 underline" href="https://platform.openai.com/pricing" target="_blank" rel="noreferrer">OpenAI Pricing</a>, <a className="text-cyan-400 underline" href="https://stability.ai/stable-image/pricing" target="_blank" rel="noreferrer">Stable Image</a></li>
 							</ul>
 						</div>
 						<div className="p-6 rounded-2xl bg-black/50 border border-gray-800">

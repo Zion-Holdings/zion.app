@@ -3,13 +3,12 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { 
-  CheckCircle, ArrowRight, Star, TrendingUp, Phone, Zap, DollarSign, 
-  Shield, Mail, MapPin, Rocket, Brain, Sparkles, Atom, Dna, Users, 
-  Globe, Cpu, Target, Microscope, Lock, Cloud, BarChart3, Settings, 
-  Eye, Award, Clock, Heart, Lightbulb, Target as TargetIcon, 
-  Zap as ZapIcon, Shield as ShieldIcon, Globe as GlobeIcon,
-  Search, Code, TestTube, Server, Database, Network, Shield as SecurityIcon,
-  Wifi, Building, Cpu as CpuIcon
+  CheckCircle, ArrowRight, Star, TrendingUp, Phone, 
+  Shield, Mail, Brain, Atom, 
+  Cloud, 
+  Award, 
+  Server, Network, Shield as SecurityIcon,
+  Wifi, Building
 } from 'lucide-react';
 import Layout from '../components/layout/Layout';
 import { advancedITInfrastructureServices2025 } from '../data/2025-advanced-it-infrastructure-services';
@@ -274,11 +273,11 @@ export default function AdvancedITInfrastructureServices() {
                       viewport={{ once: true }}
                       className="relative group"
                     >
-                      <div className={`${service.color} p-1 rounded-xl`}>
+                      <div className={`${'color' in service ? service.color : 'from-blue-500 to-purple-600'} p-1 rounded-xl`}>
                         <div className="bg-gray-900 rounded-xl p-6 h-full">
                           <div className="flex items-center justify-between mb-4">
-                            <span className="text-3xl">{service.icon}</span>
-                            {service.popular && (
+                            <span className="text-3xl">{'icon' in service ? (service.icon as React.ReactNode) : '🚀'}</span>
+                            {'popular' in service && service.popular && (
                               <span className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black text-xs font-bold px-3 py-1 rounded-full">
                                 Popular
                               </span>
@@ -287,8 +286,8 @@ export default function AdvancedITInfrastructureServices() {
                           <h4 className="text-xl font-semibold text-white mb-2">{service.name}</h4>
                           <p className="text-gray-300 text-sm mb-4">{service.tagline}</p>
                           <div className="flex items-center justify-between mb-4">
-                            <span className="text-2xl font-bold text-white">{service.price}</span>
-                            <span className="text-gray-400">{service.period}</span>
+                            <span className="text-2xl font-bold text-white">${'price' in service && typeof service.price === 'string' ? service.price : ('pricing' in service && service.pricing?.starter ? service.pricing.starter : 'Custom')}</span>
+                            <span className="text-gray-400">/month</span>
                           </div>
                           <p className="text-gray-300 text-sm mb-4">{service.description}</p>
                           <div className="space-y-2 mb-6">
@@ -301,7 +300,7 @@ export default function AdvancedITInfrastructureServices() {
                           </div>
                           <div className="flex items-center justify-between">
                             <Link
-                              href={service.link}
+                              href={'link' in service ? service.link : service.slug}
                               className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors duration-300"
                             >
                               Learn More

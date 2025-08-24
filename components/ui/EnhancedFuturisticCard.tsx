@@ -1,366 +1,583 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ExternalLink, Star, Users, TrendingUp, Zap, Shield, Brain, Rocket } from 'lucide-react';
+import React, { useEffect, useRef, useState } from 'react';
+import { motion } from 'framer-motion';
 
 interface EnhancedFuturisticCardProps {
-  service: {
-    id: string;
-    name: string;
-    tagline: string;
-    price: string;
-    period: string;
-    description: string;
-    features: string[];
-    popular: boolean;
-    icon: string;
-    color: string;
-    textColor: string;
-    link: string;
-    marketPosition: string;
-    targetAudience: string;
-    category: string;
-    realService: boolean;
-    technology: string[];
-    integrations: string[];
-    useCases: string[];
-    roi: string;
-    competitors: string[];
-    marketSize: string;
-    growthRate: string;
-    variant: string;
-    contactInfo: {
-      mobile: string;
-      email: string;
-      address: string;
-      website: string;
-    };
-    realImplementation: boolean;
-    implementationDetails: string;
-    launchDate: string;
-    customers: number;
-    rating: number;
-    reviews: number;
-  };
+  children: React.ReactNode;
   className?: string;
+  variant?: 'neural' | 'quantum' | 'holographic' | 'cyberpunk' | 'space' | 'biotech' | 'energy';
+  intensity?: 'low' | 'medium' | 'high';
+  glow?: boolean;
+  interactive?: boolean;
+  onClick?: () => void;
 }
 
-const EnhancedFuturisticCard: React.FC<EnhancedFuturisticCardProps> = ({ service, className = '' }) => {
+const EnhancedFuturisticCard: React.FC<EnhancedFuturisticCardProps> = ({
+  children,
+  className = '',
+  variant = 'neural',
+  intensity = 'medium',
+  glow = true,
+  interactive = true,
+  onClick
+}) => {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const animationRef = useRef<number | undefined>(undefined);
   const [isHovered, setIsHovered] = useState(false);
-  const [isExpanded, setIsExpanded] = useState(false);
+  const [isPressed, setIsPressed] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const animationRef = useRef<number | undefined>(undefined);
 
+  // Get variant-specific colors and effects
+  const getVariantStyles = () => {
+    switch (variant) {
+      case 'neural':
+        return {
+          borderColor: 'from-cyan-500/50 to-blue-500/50',
+          glowColor: 'from-cyan-400/20 to-blue-400/20',
+          accentColor: 'text-cyan-400',
+          bgGradient: 'from-slate-900/80 to-slate-800/80',
+          particleColor: '#60a5fa'
+        };
+      case 'quantum':
+        return {
+          borderColor: 'from-purple-500/50 to-pink-500/50',
+          glowColor: 'from-purple-400/20 to-pink-400/20',
+          accentColor: 'text-purple-400',
+          bgGradient: 'from-slate-900/80 to-slate-800/80',
+          particleColor: '#a855f7'
+        };
+      case 'holographic':
+        return {
+          borderColor: 'from-green-500/50 to-emerald-500/50',
+          glowColor: 'from-green-400/20 to-emerald-400/20',
+          accentColor: 'text-green-400',
+          bgGradient: 'from-slate-900/80 to-slate-800/80',
+          particleColor: '#10b981'
+        };
+      case 'cyberpunk':
+        return {
+          borderColor: 'from-red-500/50 to-orange-500/50',
+          glowColor: 'from-red-400/20 to-orange-400/20',
+          accentColor: 'text-red-400',
+          bgGradient: 'from-slate-900/80 to-slate-800/80',
+          particleColor: '#ef4444'
+        };
+      case 'space':
+        return {
+          borderColor: 'from-blue-500/50 to-indigo-500/50',
+          glowColor: 'from-blue-400/20 to-indigo-400/20',
+          accentColor: 'text-blue-400',
+          bgGradient: 'from-slate-900/80 to-slate-800/80',
+          particleColor: '#3b82f6'
+        };
+      case 'biotech':
+        return {
+          borderColor: 'from-green-500/50 to-teal-500/50',
+          glowColor: 'from-green-400/20 to-teal-400/20',
+          accentColor: 'text-green-400',
+          bgGradient: 'from-slate-900/80 to-slate-800/80',
+          particleColor: '#14b8a6'
+        };
+      case 'energy':
+        return {
+          borderColor: 'from-yellow-500/50 to-orange-500/50',
+          glowColor: 'from-yellow-400/20 to-orange-400/20',
+          accentColor: 'text-yellow-400',
+          bgGradient: 'from-slate-900/80 to-slate-800/80',
+          particleColor: '#eab308'
+        };
+      default:
+        return {
+          borderColor: 'from-cyan-500/50 to-blue-500/50',
+          glowColor: 'from-cyan-400/20 to-blue-400/20',
+          accentColor: 'text-cyan-400',
+          bgGradient: 'from-slate-900/80 to-slate-800/80',
+          particleColor: '#60a5fa'
+        };
+    }
+  };
+
+  const styles = getVariantStyles();
+
+  // Canvas animation for particle effects
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
+    const canvas = canvasRef.current;
+    if (!canvas || !glow) return;
+
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    const resizeCanvas = () => {
       if (cardRef.current) {
         const rect = cardRef.current.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        setMousePosition({ x, y });
+        canvas.width = rect.width;
+        canvas.height = rect.height;
       }
     };
 
-    const card = cardRef.current;
-    if (card) {
-      card.addEventListener('mousemove', handleMouseMove);
-      return () => card.removeEventListener('mousemove', handleMouseMove);
-    }
-  }, []);
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
 
-  const getVariantStyles = () => {
-    const baseStyles = 'relative overflow-hidden rounded-2xl border backdrop-blur-xl transition-all duration-500';
-    
-    switch (service.variant) {
-      case 'quantum':
-        return `${baseStyles} border-cyan-500/30 bg-gradient-to-br from-cyan-900/20 via-slate-900/40 to-cyan-800/20 shadow-[0_0_50px_rgba(0,255,255,0.1)]`;
-      case 'holographic':
-        return `${baseStyles} border-purple-500/30 bg-gradient-to-br from-purple-900/20 via-slate-900/40 to-pink-800/20 shadow-[0_0_50px_rgba(139,92,246,0.1)]`;
-      case 'neural':
-        return `${baseStyles} border-green-500/30 bg-gradient-to-br from-green-900/20 via-slate-900/40 to-emerald-800/20 shadow-[0_0_50px_rgba(16,185,129,0.1)]`;
-      case 'cyberpunk':
-        return `${baseStyles} border-pink-500/30 bg-gradient-to-br from-pink-900/20 via-slate-900/40 to-red-800/20 shadow-[0_0_50px_rgba(236,73,153,0.1)]`;
-      case 'space':
-        return `${baseStyles} border-blue-500/30 bg-gradient-to-br from-blue-900/20 via-slate-900/40 to-indigo-800/20 shadow-[0_0_50px_rgba(59,130,246,0.1)]`;
-      case 'matrix':
-        return `${baseStyles} border-green-500/30 bg-gradient-to-br from-green-900/20 via-slate-900/40 to-emerald-800/20 shadow-[0_0_50px_rgba(16,185,129,0.1)]`;
-      default:
-        return `${baseStyles} border-slate-500/30 bg-gradient-to-br from-slate-900/20 via-slate-900/40 to-slate-800/20`;
-    }
+    let time = 0;
+    const particles: Array<{
+      x: number;
+      y: number;
+      vx: number;
+      vy: number;
+      size: number;
+      life: number;
+      maxLife: number;
+    }> = [];
+
+    const createParticles = () => {
+      const count = intensity === 'high' ? 20 : intensity === 'medium' ? 12 : 6;
+      for (let i = 0; i < count; i++) {
+        particles.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          vx: (Math.random() - 0.5) * 2,
+          vy: (Math.random() - 0.5) * 2,
+          size: Math.random() * 2 + 1,
+          life: Math.random() * 100,
+          maxLife: 100
+        });
+      }
+    };
+
+    const getParticleColor = (variant: string): string => {
+      switch (variant) {
+        case 'quantum':
+          return `hsl(${280 + Math.sin(Date.now() * 0.001) * 80}, 80%, 70%)`;
+        case 'holographic':
+          return `hsl(${160 + Math.sin(Date.now() * 0.001) * 100}, 90%, 65%)`;
+        case 'cyberpunk':
+          return `hsl(${0 + Math.sin(Date.now() * 0.001) * 60}, 100%, 60%)`;
+        case 'neural':
+          return `hsl(${200 + Math.sin(Date.now() * 0.001) * 60}, 70%, 60%)`;
+        case 'space':
+          return `hsl(${220 + Math.sin(Date.now() * 0.001) * 80}, 90%, 75%)`;
+        default:
+          return `hsl(${200 + Math.sin(Date.now() * 0.001) * 60}, 70%, 60%)`;
+      }
+    };
+
+    const animate = () => {
+      time += 1;
+      
+      // Clear canvas
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      // Update and draw particles
+      particles.forEach(particle => {
+        particle.x += particle.vx;
+        particle.y += particle.vy;
+        particle.life -= 1;
+
+        // Bounce off edges
+        if (particle.x < 0 || particle.x > canvas.width) particle.vx *= -1;
+        if (particle.y < 0 || particle.y > canvas.height) particle.vy *= -1;
+
+        // Reset particle if it dies
+        if (particle.life <= 0) {
+          particle.x = Math.random() * canvas.width;
+          particle.y = Math.random() * canvas.height;
+          particle.life = particle.maxLife;
+        }
+
+        // Draw particle
+        const alpha = particle.life / particle.maxLife;
+        ctx.fillStyle = `${styles.particleColor}${Math.floor(alpha * 255).toString(16).padStart(2, '0')}`;
+        ctx.beginPath();
+        ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+        ctx.fill();
+      });
+
+      animationRef.current = requestAnimationFrame(animate);
+    };
+
+    const drawHolographicGrid = (ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement) => {
+      const time = Date.now() * 0.001;
+      ctx.strokeStyle = `hsla(${160 + Math.sin(time * 0.015) * 100}, 90%, 65%, 0.3)`;
+      ctx.lineWidth = 0.5;
+      
+      for (let x = 0; x < canvas.width; x += 30) {
+        for (let y = 0; y < canvas.height; y += 30) {
+          const opacity = Math.sin(time + x * 0.01 + y * 0.01) * 0.2 + 0.1;
+          ctx.globalAlpha = opacity;
+          ctx.strokeRect(x, y, 30, 30);
+        }
+      }
+      ctx.globalAlpha = 1;
+    };
+
+    const drawQuantumEffects = (ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement) => {
+      const time = Date.now() * 0.001;
+      for (let i = 0; i < 5; i++) {
+        const x = (i / 5) * canvas.width;
+        const y = Math.sin(time + i * 0.5) * 20 + canvas.height / 2;
+        ctx.fillStyle = `rgba(0, 255, 255, ${0.3 + Math.sin(time + i) * 0.2})`;
+        ctx.beginPath();
+        ctx.arc(x, y, 2, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    };
+
+    const drawCyberpunkEffects = (ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement) => {
+      const time = Date.now() * 0.001;
+      for (let i = 0; i < 3; i++) {
+        const x = Math.random() * canvas.width;
+        const y = Math.random() * canvas.height;
+        const height = Math.random() * 50 + 30;
+        ctx.fillStyle = `rgba(0, 255, 0, ${0.4 + Math.sin(time + i) * 0.2})`;
+        ctx.fillRect(x, y, 2, height);
+      }
+    };
+
+    const drawNeuralConnections = (ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement) => {
+      const time = Date.now() * 0.001;
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+          
+          if (distance < 80) {
+            const opacity = (80 - distance) / 80 * 0.3;
+            ctx.strokeStyle = `rgba(0, 255, 128, ${opacity})`;
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.stroke();
+          }
+        }
+      }
+    };
+
+    const drawSpaceEffects = (ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement) => {
+      const time = Date.now() * 0.001;
+      for (let i = 0; i < 3; i++) {
+        const x = canvas.width / 2 + Math.cos(time + i) * 100;
+        const y = canvas.height / 2 + Math.sin(time + i) * 100;
+        const radius = Math.sin(time + i) * 20 + 40;
+        
+        const gradient = ctx.createRadialGradient(x, y, 0, x, y, radius);
+        gradient.addColorStop(0, `rgba(255, 255, 255, 0.2)`);
+        gradient.addColorStop(0.5, `rgba(0, 255, 255, 0.1)`);
+        gradient.addColorStop(1, `rgba(0, 0, 0, 0)`);
+        
+        ctx.fillStyle = gradient;
+        ctx.fillRect(x - radius, y - radius, radius * 2, radius * 2);
+      }
+    };
+
+    createParticles();
+    animate();
+
+    return () => {
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
+      window.removeEventListener('resize', resizeCanvas);
+    };
+  }, [variant, intensity, glow, styles.particleColor]);
+
+  const handleMouseEnter = () => {
+    if (interactive) setIsHovered(true);
   };
 
-  const getGlowColor = () => {
-    switch (service.variant) {
-      case 'quantum': return 'rgba(0, 255, 255, 0.3)';
-      case 'holographic': return 'rgba(139, 92, 246, 0.3)';
-      case 'neural': return 'rgba(16, 185, 129, 0.3)';
-      case 'cyberpunk': return 'rgba(236, 73, 153, 0.3)';
-      case 'space': return 'rgba(59, 130, 246, 0.3)';
-      case 'matrix': return 'rgba(16, 185, 129, 0.3)';
-      default: return 'rgba(148, 163, 184, 0.3)';
-    }
+  const handleMouseLeave = () => {
+    if (interactive) setIsHovered(false);
+  };
+
+  const handleMouseDown = () => {
+    if (interactive) setIsPressed(true);
+  };
+
+  const handleMouseUp = () => {
+    if (interactive) setIsPressed(false);
   };
 
   return (
     <motion.div
       ref={cardRef}
-      className={`${getVariantStyles()} ${className}`}
-      onHoverStart={() => setIsHovered(true)}
-      onHoverEnd={() => setIsHovered(false)}
-      whileHover={{ 
+      className={`relative overflow-hidden rounded-2xl backdrop-blur-xl transition-all duration-300 ${
+        glow ? 'shadow-2xl' : ''
+      } ${className}`}
+      style={{
+        background: `linear-gradient(135deg, ${styles.bgGradient})`,
+        border: `1px solid transparent`,
+        backgroundImage: `linear-gradient(135deg, ${styles.bgGradient}), linear-gradient(135deg, ${styles.borderColor})`,
+        backgroundOrigin: 'border-box',
+        backgroundClip: 'content-box, border-box'
+      }}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      onMouseDown={handleMouseDown}
+      onMouseUp={handleMouseUp}
+      onClick={onClick}
+      whileHover={interactive ? { 
         scale: 1.02,
         y: -5,
-        transition: { duration: 0.3 }
-      }}
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
+        transition: { duration: 0.2 }
+      } : {}}
+      whileTap={interactive ? { 
+        scale: 0.98,
+        transition: { duration: 0.1 }
+      } : {}}
     >
-      {/* Animated background gradient */}
-      <div 
-        className="absolute inset-0 opacity-50"
-        style={{
-          background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, ${getGlowColor()}, transparent 40%)`,
-          transition: 'all 0.3s ease'
-        }}
-      />
+      {/* Glow effect */}
+      {glow && (
+        <div
+          className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${styles.glowColor} opacity-0 transition-opacity duration-300 ${
+            isHovered ? 'opacity-100' : ''
+          }`}
+        />
+      )}
 
-      {/* Holographic border effect */}
+      {/* Animated border */}
       <div className="absolute inset-0 rounded-2xl">
-        <div 
-          className="absolute inset-0 rounded-2xl opacity-30"
+        <div
+          className={`absolute inset-0 rounded-2xl bg-gradient-to-r ${styles.borderColor} opacity-0 transition-opacity duration-300 ${
+            isHovered ? 'opacity-100' : ''
+          }`}
           style={{
-            background: `linear-gradient(45deg, transparent 30%, ${getGlowColor()}, transparent 70%)`,
-            animation: isHovered ? 'borderGlow 2s linear infinite' : 'none'
+            background: `linear-gradient(90deg, transparent, ${styles.particleColor}, transparent)`,
+            backgroundSize: '200% 100%',
+            animation: isHovered ? 'borderFlow 2s linear infinite' : 'none'
           }}
         />
       </div>
+
+      {/* Scanning line effect */}
+      <AnimatePresence>
+        {isHovered && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 20 }}
+            transition={{ duration: 0.3 }}
+            className={`absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-${styles.accentColor.replace('text-', '')} to-transparent opacity-60`}
+            style={{
+              boxShadow: `0 0 10px ${styles.particleColor}`
+            }}
+          />
+        )}
+      </AnimatePresence>
+
+      {/* Corner accents */}
+      <div className="absolute top-0 left-0 w-4 h-4 border-l-2 border-t-2 border-cyan-400/50 rounded-tl-lg" />
+      <div className="absolute top-0 right-0 w-4 h-4 border-r-2 border-t-2 border-cyan-400/50 rounded-tr-lg" />
+      <div className="absolute bottom-0 left-0 w-4 h-4 border-l-2 border-b-2 border-cyan-400/50 rounded-bl-lg" />
+      <div className="absolute bottom-0 right-0 w-4 h-4 border-r-2 border-b-2 border-cyan-400/50 rounded-br-lg" />
+
+      {/* Particle canvas */}
+      {glow && (
+        <canvas
+          ref={canvasRef}
+          className="absolute inset-0 w-full h-full pointer-events-none opacity-30"
+        />
+      )}
 
       {/* Content */}
       <div className="relative z-10 p-6">
         {/* Header */}
         <div className="flex items-start justify-between mb-4">
-          <div className="flex items-center space-x-3">
-            <motion.div
-              className="text-4xl"
-              animate={{ 
-                rotate: isHovered ? [0, 10, -10, 0] : 0,
-                scale: isHovered ? 1.1 : 1
-              }}
-              transition={{ duration: 0.3 }}
-            >
-              {service.icon}
-            </motion.div>
+          <div className="flex items-center gap-3">
+            {icon && (
+              <motion.div
+                className={`text-3xl ${textColor}`}
+                animate={{ rotate: isHovered ? 360 : 0 }}
+                transition={{ duration: 0.6, ease: "easeInOut" }}
+              >
+                {icon}
+              </motion.div>
+            )}
             <div>
-              <h3 className="text-xl font-bold text-white mb-1">{service.name}</h3>
-              <p className="text-sm text-slate-400">{service.tagline}</p>
+              <motion.h3
+                className="text-xl font-bold text-white mb-1"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 }}
+              >
+                {title}
+              </motion.h3>
+              {price && (
+                <motion.div
+                  className="flex items-baseline gap-1"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.2 }}
+                >
+                  <span className="text-2xl font-bold text-white">{price}</span>
+                  {period && <span className="text-gray-400">{period}</span>}
+                </motion.div>
+              )}
             </div>
-          </div>
-          
-          {service.popular && (
-            <motion.div
-              className="px-3 py-1 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full text-xs font-semibold text-white"
-              animate={{ 
-                scale: isHovered ? 1.1 : 1,
-                rotate: isHovered ? [0, 5, -5, 0] : 0
-              }}
-              transition={{ duration: 0.3 }}
-            >
-              POPULAR
-            </motion.div>
-          )}
-        </div>
-
-        {/* Price and Rating */}
-        <div className="flex items-center justify-between mb-4">
-          <div className="flex items-center space-x-2">
-            <span className="text-3xl font-bold text-white">{service.price}</span>
-            <span className="text-slate-400">{service.period}</span>
-          </div>
-          <div className="flex items-center space-x-1">
-            <Star className="w-4 h-4 text-yellow-400 fill-current" />
-            <span className="text-sm text-white">{service.rating}</span>
-            <span className="text-xs text-slate-400">({service.reviews})</span>
           </div>
         </div>
 
         {/* Description */}
-        <p className="text-slate-300 text-sm mb-4 line-clamp-2">{service.description}</p>
+        <motion.p
+          className="text-gray-300 mb-6 leading-relaxed"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 }}
+        >
+          {description}
+        </motion.p>
 
-        {/* Quick Stats */}
-        <div className="grid grid-cols-3 gap-3 mb-4">
-          <div className="text-center p-2 bg-slate-800/50 rounded-lg">
-            <Users className="w-4 h-4 text-blue-400 mx-auto mb-1" />
-            <div className="text-xs text-slate-400">Customers</div>
-            <div className="text-sm font-semibold text-white">{service.customers.toLocaleString()}</div>
-          </div>
-          <div className="text-center p-2 bg-slate-800/50 rounded-lg">
-            <TrendingUp className="w-4 h-4 text-green-400 mx-auto mb-1" />
-            <div className="text-xs text-slate-400">Growth</div>
-            <div className="text-sm font-semibold text-white">{service.growthRate}</div>
-          </div>
-          <div className="text-center p-2 bg-slate-800/50 rounded-lg">
-            <Zap className="w-4 h-4 text-yellow-400 mx-auto mb-1" />
-            <div className="text-xs text-slate-400">ROI</div>
-            <div className="text-sm font-semibold text-white">{service.roi.split(' ')[0]}</div>
-          </div>
-        </div>
-
-        {/* Features Preview */}
-        <div className="mb-4">
-          <h4 className="text-sm font-semibold text-white mb-2">Key Features:</h4>
-          <div className="space-y-1">
-            {service.features.slice(0, 3).map((feature, index) => (
-              <motion.div
-                key={index}
-                className="flex items-center space-x-2 text-xs text-slate-300"
-                initial={{ opacity: 0, x: -10 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: index * 0.1 }}
-              >
-                <div className="w-1.5 h-1.5 bg-cyan-400 rounded-full" />
-                <span className="line-clamp-1">{feature}</span>
-              </motion.div>
-            ))}
-            {service.features.length > 3 && (
-              <div className="text-xs text-slate-500 mt-2">
-                +{service.features.length - 3} more features
-              </div>
-            )}
-          </div>
-        </div>
-
-        {/* Technology Stack */}
-        <div className="mb-4">
-          <h4 className="text-sm font-semibold text-white mb-2">Technology:</h4>
-          <div className="flex flex-wrap gap-1">
-            {service.technology.slice(0, 4).map((tech, index) => (
-              <motion.span
-                key={index}
-                className="px-2 py-1 bg-slate-800/50 rounded text-xs text-slate-300"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: index * 0.1 }}
-              >
-                {tech}
-              </motion.span>
-            ))}
-            {service.technology.length > 4 && (
-              <span className="px-2 py-1 bg-slate-800/50 rounded text-xs text-slate-500">
-                +{service.technology.length - 4}
-              </span>
-            )}
-          </div>
-        </div>
-
-        {/* Action Buttons */}
-        <div className="flex space-x-3">
-          <motion.button
-            className="flex-1 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white py-2 px-4 rounded-lg font-semibold text-sm transition-all duration-300 flex items-center justify-center space-x-2"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={() => window.open(service.link, '_blank')}
-          >
-            <span>Get Started</span>
-            <ExternalLink className="w-4 h-4" />
-          </motion.button>
-          
-          <motion.button
-            className="px-4 py-2 border border-slate-600 hover:border-slate-500 text-slate-300 hover:text-white rounded-lg text-sm transition-all duration-300"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={() => setIsExpanded(!isExpanded)}
-          >
-            {isExpanded ? 'Less' : 'More'}
-          </motion.button>
-        </div>
-
-        {/* Expanded Content */}
-        <AnimatePresence>
-          {isExpanded && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3 }}
-              className="mt-4 pt-4 border-t border-slate-700"
-            >
-              {/* Market Position */}
-              <div className="mb-4">
-                <h4 className="text-sm font-semibold text-white mb-2">Market Position:</h4>
-                <p className="text-xs text-slate-300">{service.marketPosition}</p>
-              </div>
-
-              {/* Use Cases */}
-              <div className="mb-4">
-                <h4 className="text-sm font-semibold text-white mb-2">Use Cases:</h4>
-                <div className="grid grid-cols-2 gap-2">
-                  {service.useCases.map((useCase, index) => (
-                    <div key={index} className="text-xs text-slate-300 bg-slate-800/30 p-2 rounded">
-                      {useCase}
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Integrations */}
-              <div className="mb-4">
-                <h4 className="text-sm font-semibold text-white mb-2">Integrations:</h4>
-                <div className="flex flex-wrap gap-1">
-                  {service.integrations.slice(0, 6).map((integration, index) => (
-                    <span key={index} className="px-2 py-1 bg-slate-800/50 rounded text-xs text-slate-300">
-                      {integration}
-                    </span>
-                  ))}
-                  {service.integrations.length > 6 && (
-                    <span className="px-2 py-1 bg-slate-800/50 rounded text-xs text-slate-500">
-                      +{service.integrations.length - 6}
-                    </span>
-                  )}
-                </div>
-              </div>
-
-              {/* Contact Information */}
-              <div className="bg-slate-800/30 p-3 rounded-lg">
-                <h4 className="text-sm font-semibold text-white mb-2">Contact:</h4>
-                <div className="space-y-1 text-xs text-slate-300">
-                  <div>📱 {service.contactInfo.mobile}</div>
-                  <div>✉️ {service.contactInfo.email}</div>
-                  <div>📍 {service.contactInfo.address}</div>
-                </div>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
-
-      {/* Floating particles effect */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {[...Array(5)].map((_, index) => (
+        {/* Features */}
+        {features.length > 0 && (
           <motion.div
-            key={index}
-            className="absolute w-1 h-1 bg-cyan-400 rounded-full opacity-30"
-            style={{
-              left: `${20 + index * 15}%`,
-              top: `${30 + index * 10}%`,
-            }}
-            animate={{
-              y: [0, -20, 0],
-              opacity: [0.3, 0.8, 0.3],
-              scale: [1, 1.5, 1],
-            }}
-            transition={{
-              duration: 3 + index,
-              repeat: Infinity,
-              delay: index * 0.5,
-            }}
-          />
-        ))}
+            className="mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+          >
+            <h4 className="text-white font-semibold mb-3 flex items-center gap-2">
+              <Check className="w-4 h-4 text-green-400" />
+              Key Features
+            </h4>
+            <div className="grid grid-cols-1 gap-2">
+              {features.slice(0, 4).map((feature, index) => (
+                <motion.div
+                  key={index}
+                  className="flex items-center gap-2 text-sm text-gray-300"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.5 + index * 0.1 }}
+                >
+                  <div className="w-1.5 h-1.5 bg-cyan-400 rounded-full" />
+                  {feature}
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        )}
+
+        {/* Stats */}
+        {stats.length > 0 && (
+          <motion.div
+            className="mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+          >
+            <div className="grid grid-cols-2 gap-4">
+              {stats.map((stat, index) => (
+                <motion.div
+                  key={index}
+                  className="text-center p-3 rounded-lg bg-black/20 backdrop-blur-sm"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.6 + index * 0.1 }}
+                >
+                  <div className={`text-2xl font-bold ${stat.color} mb-1`}>
+                    {stat.value}
+                  </div>
+                  <div className="text-xs text-gray-400">{stat.label}</div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        )}
+
+        {/* Contact Info */}
+        {contactInfo && (
+          <motion.div
+            className="mb-6 p-4 rounded-lg bg-black/20 backdrop-blur-sm"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6 }}
+          >
+            <h4 className="text-white font-semibold mb-3 flex items-center gap-2">
+              <Mail className="w-4 h-4 text-cyan-400" />
+              Contact Information
+            </h4>
+            <div className="space-y-2 text-sm text-gray-300">
+              <div className="flex items-center gap-2">
+                <Phone className="w-4 h-4 text-green-400" />
+                <span>{contactInfo.mobile}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Mail className="w-4 h-4 text-blue-400" />
+                <span>{contactInfo.email}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <MapPin className="w-4 h-4 text-red-400" />
+                <span>{contactInfo.address}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Globe className="w-4 h-4 text-purple-400" />
+                <span>{contactInfo.website}</span>
+              </div>
+            </div>
+          </motion.div>
+        )}
+
+        {/* Action button */}
+        {(link || onClick) && (
+          <motion.div
+            className="flex justify-end"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.7 }}
+          >
+            <motion.button
+              className={`px-6 py-3 rounded-lg font-semibold text-white bg-gradient-to-r ${color} hover:shadow-lg transition-all duration-300 flex items-center gap-2 group/btn`}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              {link ? 'Learn More' : 'Get Started'}
+              <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
+            </motion.button>
+          </motion.div>
+        )}
+
+        {/* Children content */}
+        {children && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8 }}
+          >
+            {children}
+          </motion.div>
+        )}
       </div>
+
+      {/* Hover overlay */}
+      <AnimatePresence>
+        {isHovered && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent rounded-2xl pointer-events-none"
+          />
+        )}
+      </AnimatePresence>
+
+      {/* Press effect */}
+      <AnimatePresence>
+        {isPressed && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            transition={{ duration: 0.1 }}
+            className="absolute inset-0 bg-white/10 rounded-2xl pointer-events-none"
+          />
+        )}
+      </AnimatePresence>
 
       <style jsx>{`
-        @keyframes borderGlow {
-          0%, 100% { opacity: 0.3; }
-          50% { opacity: 0.8; }
+        @keyframes borderFlow {
+          0% { background-position: 200% 0; }
+          100% { background-position: -200% 0; }
         }
       `}</style>
     </motion.div>
