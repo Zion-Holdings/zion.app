@@ -68,53 +68,33 @@ export default function AutomationHub() {
           </li>
           <li className="rounded-lg bg-white/5 border border-white/10 p-5">
             <h2 className="text-xl font-bold">Innovation Scout</h2>
-            <p className="text-white/70">Researches AI trends, curates content, updates newsroom, and syncs.</p>
+            <p className="text-white/70">AI trends radar that feeds homepage promos in near‑real time.</p>
             <a className="text-cyan-300 underline" href="/.netlify/functions/innovation-scout" target="_blank" rel="noopener">Trigger / View</a>
           </li>
           <li className="rounded-lg bg-white/5 border border-white/10 p-5">
-            <h2 className="text-xl font-bold">Content & UX Curator</h2>
-            <p className="text-white/70">Regenerates OG images, docs indexes, and homepage/front promos.</p>
-            <a className="text-cyan-300 underline" href="/.netlify/functions/content-ux-curator" target="_blank" rel="noopener">Trigger / View</a>
+            <h2 className="text-xl font-bold">LLM Content Curator</h2>
+            <p className="text-white/70">Curates useful links and content, commits, and updates the front.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/content-curator" target="_blank" rel="noopener">Trigger / View</a>
           </li>
           <li className="rounded-lg bg-white/5 border border-white/10 p-5">
-            <h2 className="text-xl font-bold">Security & Integrity Runner</h2>
-            <p className="text-white/70">Security audit, external link checks, image integrity and sitemap.</p>
-            <a className="text-cyan-300 underline" href="/.netlify/functions/security-and-integrity-runner" target="_blank" rel="noopener">Trigger / View</a>
+            <h2 className="text-xl font-bold">Knowledge Graph Orchestrator</h2>
+            <p className="text-white/70">Auto‑rebuilds the repository knowledge graph and radar metrics.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/knowledge-graph-orchestrator" target="_blank" rel="noopener">Trigger / View</a>
           </li>
           <li className="rounded-lg bg-white/5 border border-white/10 p-5">
-            <h2 className="text-xl font-bold">Autonomous Cloud Maximizer</h2>
-            <p className="text-white/70">High-frequency orchestrator that chains innovation + integrity.</p>
-            <a className="text-cyan-300 underline" href="/.netlify/functions/autonomous-cloud-maximizer" target="_blank" rel="noopener">Trigger / View</a>
+            <h2 className="text-xl font-bold">Code Health Orchestrator</h2>
+            <p className="text-white/70">Dead code, links, and assets optimized with auto‑push to main.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/code-health-orchestrator" target="_blank" rel="noopener">Trigger / View</a>
           </li>
           <li className="rounded-lg bg-white/5 border border-white/10 p-5">
-            <h2 className="text-xl font-bold">Content Freshness Auditor</h2>
-            <p className="text-white/70">Ranks stale pages/docs and publishes a freshness report.</p>
-            <a className="text-cyan-300 underline" href="/.netlify/functions/content-freshness-auditor" target="_blank" rel="noopener">Trigger / View</a>
+            <h2 className="text-xl font-bold">Security Audit Runner</h2>
+            <p className="text-white/70">Automated security scanning with artifacts committed to the repo.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/security-audit-runner" target="_blank" rel="noopener">Trigger / View</a>
           </li>
           <li className="rounded-lg bg-white/5 border border-white/10 p-5">
-            <h2 className="text-xl font-bold">Dependency Intelligence Upgrader</h2>
-            <p className="text-white/70">Performs safe dependency updates and syncs to main.</p>
-            <a className="text-cyan-300 underline" href="/.netlify/functions/dependency-intelligence-upgrader" target="_blank" rel="noopener">Trigger / View</a>
-          </li>
-          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
-            <h2 className="text-xl font-bold">Smart Redirects</h2>
-            <p className="text-white/70">Heals internal 404s by proposing and committing safe redirects.</p>
-            <a className="text-cyan-300 underline" href="/.netlify/functions/smart-redirects" target="_blank" rel="noopener">Trigger / View</a>
-          </li>
-          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
-            <h2 className="text-xl font-bold">Automation Catalog</h2>
-            <p className="text-white/70">Live index of functions and automation scripts.</p>
-            <a className="text-cyan-300 underline" href="/.netlify/functions/automation-catalog" target="_blank" rel="noopener">Open</a>
-          </li>
-          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
-            <h2 className="text-xl font-bold">Duplicate Content Detector</h2>
-            <p className="text-white/70">Finds near-duplicate pages/components/docs and publishes a consolidation report.</p>
-            <a className="text-cyan-300 underline" href="/.netlify/functions/duplicate-content-detector" target="_blank" rel="noopener">Trigger / View</a>
-          </li>
-          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
-            <h2 className="text-xl font-bold">Unused Media Auditor</h2>
-            <p className="text-white/70">Detects unreferenced images in public/ and writes a report for cleanup.</p>
-            <a className="text-cyan-300 underline" href="/.netlify/functions/unused-media-auditor" target="_blank" rel="noopener">Trigger / View</a>
+            <h2 className="text-xl font-bold">Media Orchestrator</h2>
+            <p className="text-white/70">OG image refresh and automated media releases.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/media-orchestrator" target="_blank" rel="noopener">Trigger / View</a>
           </li>
         </ul>
       </main>
