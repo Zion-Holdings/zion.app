@@ -142,6 +142,7 @@
     @apply bg-background text-foreground font-sans;
   }
 
+  /* Futuristic Animations */
   @keyframes pulse {
     0%, 100% {
       opacity: 1;
@@ -151,26 +152,164 @@
     }
   }
 
+  @keyframes glow {
+    0%, 100% {
+      box-shadow: 0 0 20px rgba(34, 221, 210, 0.3);
+    }
+    50% {
+      box-shadow: 0 0 40px rgba(34, 221, 210, 0.6), 0 0 60px rgba(139, 113, 242, 0.4);
+    }
+  }
+
+  @keyframes neon-flicker {
+    0%, 100% {
+      text-shadow: 
+        0 0 5px rgba(34, 221, 210, 0.8),
+        0 0 10px rgba(34, 221, 210, 0.6),
+        0 0 15px rgba(34, 221, 210, 0.4),
+        0 0 20px rgba(34, 221, 210, 0.2);
+    }
+    50% {
+      text-shadow: 
+        0 0 2px rgba(34, 221, 210, 0.8),
+        0 0 5px rgba(34, 221, 210, 0.6),
+        0 0 8px rgba(34, 221, 210, 0.4),
+        0 0 12px rgba(34, 221, 210, 0.2);
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes slide-in-left {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-in-right {
+    0% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes fade-in-up {
+    0% {
+      transform: translateY(30px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes rotate-slow {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes wave {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    25% {
+      transform: translateY(-5px);
+    }
+    75% {
+      transform: translateY(5px);
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
   .pulse {
     animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
 
+  .glow {
+    animation: glow 3s ease-in-out infinite;
+  }
+
+  .neon-flicker {
+    animation: neon-flicker 2s ease-in-out infinite;
+  }
+
+  .float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .slide-in-left {
+    animation: slide-in-left 0.8s ease-out;
+  }
+
+  .slide-in-right {
+    animation: slide-in-right 0.8s ease-out;
+  }
+
+  .fade-in-up {
+    animation: fade-in-up 0.8s ease-out;
+  }
+
+  .rotate-slow {
+    animation: rotate-slow 20s linear infinite;
+  }
+
+  .wave {
+    animation: wave 2s ease-in-out infinite;
+  }
+
+  .shimmer {
+    background: linear-gradient(90deg, transparent, rgba(34, 221, 210, 0.2), transparent);
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+  }
+
   /* Custom scrollbar for webkit browsers */
   ::-webkit-scrollbar {
-    width: 10px;
+    width: 12px;
   }
 
   ::-webkit-scrollbar-track {
     background: theme('colors["zion-blue"].DEFAULT');
+    border-radius: 6px;
   }
 
   ::-webkit-scrollbar-thumb {
-    background: theme('colors["zion-purple"].dark');
-    border-radius: 5px;
+    background: linear-gradient(180deg, theme('colors["zion-purple"].DEFAULT'), theme('colors["zion-cyan"].DEFAULT'));
+    border-radius: 6px;
+    border: 2px solid theme('colors["zion-blue"].DEFAULT');
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: theme('colors["zion-purple"].DEFAULT');
+    background: linear-gradient(180deg, theme('colors["zion-purple"].light'), theme('colors["zion-cyan"].light'));
   }
 
   /* Smooth scrolling */
@@ -185,5 +324,116 @@
     --lk-button-background-hover: #0891B2;
     --lk-bg1: #0B1120;
     --lk-bg2: #0F172A;
+  }
+
+  /* Futuristic UI Elements */
+  .neon-border {
+    border: 1px solid rgba(34, 221, 210, 0.3);
+    box-shadow: 
+      0 0 10px rgba(34, 221, 210, 0.2),
+      inset 0 0 10px rgba(34, 221, 210, 0.1);
+  }
+
+  .neon-border:hover {
+    border-color: rgba(34, 221, 210, 0.6);
+    box-shadow: 
+      0 0 20px rgba(34, 221, 210, 0.4),
+      inset 0 0 20px rgba(34, 221, 210, 0.2);
+  }
+
+  .glass-effect {
+    background: rgba(23, 7, 43, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(139, 113, 242, 0.2);
+  }
+
+  .glass-effect:hover {
+    background: rgba(23, 7, 43, 0.2);
+    border-color: rgba(139, 113, 242, 0.4);
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, #22ddd2, #8c15e9, #22ddd2);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer 3s ease-in-out infinite;
+  }
+
+  .cyber-button {
+    position: relative;
+    background: linear-gradient(45deg, #22ddd2, #8c15e9);
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .cyber-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+  }
+
+  .cyber-button:hover::before {
+    left: 100%;
+  }
+
+  .cyber-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(34, 221, 210, 0.4);
+  }
+
+  /* Responsive Design Improvements */
+  @media (max-width: 768px) {
+    .container {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .container {
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+    }
+  }
+
+  /* Loading States */
+  .loading-shimmer {
+    background: linear-gradient(90deg, 
+      rgba(34, 221, 210, 0.1) 25%, 
+      rgba(139, 113, 242, 0.1) 50%, 
+      rgba(34, 221, 210, 0.1) 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+
+  /* Focus States */
+  .focus-visible {
+    outline: 2px solid rgba(34, 221, 210, 0.6);
+    outline-offset: 2px;
+  }
+
+  /* Selection */
+  ::selection {
+    background: rgba(34, 221, 210, 0.3);
+    color: white;
+  }
+
+  ::-moz-selection {
+    background: rgba(34, 221, 210, 0.3);
+    color: white;
   }
 }
