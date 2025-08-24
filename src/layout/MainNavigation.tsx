@@ -21,7 +21,22 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
     {
       key: 'home',
       href: '/',
-      matches: (path: string) => path === '/'
+      matches: (path: string) => path === '/' || path === '/home'
+    },
+    {
+      key: 'about',
+      href: '/about',
+      matches: (path: string) => path === '/about'
+    },
+    {
+      key: 'services',
+      href: '/services',
+      matches: (path: string) => path.startsWith('/services')
+    },
+    {
+      key: 'it-onsite-services',
+      href: '/it-onsite-services',
+      matches: (path: string) => path.startsWith('/it-onsite-services')
     },
     {
       key: 'marketplace',
@@ -32,6 +47,21 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
       key: 'micro-saas',
       href: '/micro-saas-services',
       matches: (path: string) => path.startsWith('/micro-saas-services')
+    },
+    {
+      key: 'comprehensive-services',
+      href: '/comprehensive-services',
+      matches: (path: string) => path.startsWith('/comprehensive-services')
+    },
+    {
+      key: 'ai-services',
+      href: '/ai-services',
+      matches: (path: string) => path.startsWith('/ai-services')
+    },
+    {
+      key: 'enterprise-solutions',
+      href: '/enterprise-solutions',
+      matches: (path: string) => path.startsWith('/enterprise-solutions')
     },
     {
       key: 'categories',
@@ -52,6 +82,29 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
       key: 'community',
       href: '/community',
       matches: (path: string) => path.startsWith('/community') || path.startsWith('/forum')
+<<<<<<< HEAD
+    },
+    {
+      key: 'blog',
+      href: '/blog',
+      matches: (path: string) => path.startsWith('/blog')
+    },
+    {
+      key: 'partners',
+      href: '/partners',
+      matches: (path: string) => path.startsWith('/partners')
+    },
+    {
+      key: 'careers',
+      href: '/careers',
+      matches: (path: string) => path.startsWith('/careers')
+    },
+    {
+      key: 'contact',
+      href: '/contact',
+      matches: (path: string) => path.startsWith('/contact')
+=======
+>>>>>>> 1190166b600d0883f3d21629581161b11801bcbf
     }
   ];
 

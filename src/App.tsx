@@ -45,6 +45,9 @@ const ComprehensiveServicesPage = React.lazy(() => import('./pages/Comprehensive
 const ServicesPricingPage = React.lazy(() => import('./pages/ServicesPricingPage'));
 const AIITSolutionsPage = React.lazy(() => import('./pages/AIITSolutionsPage'));
 const MicroSAASPage = React.lazy(() => import('./pages/MicroSAASPage'));
+const ComprehensiveServices = React.lazy(() => import('./pages/ComprehensiveServices'));
+const AIServicesPage = React.lazy(() => import('./pages/AIServicesPage'));
+const EnterpriseSolutions = React.lazy(() => import('./pages/EnterpriseSolutions'));
 const MicroSaasServicesPage = React.lazy(() => import('./pages/MicroSaasServices'));
 
 const baseRoutes = [
@@ -55,6 +58,12 @@ const baseRoutes = [
   { path: '/talent', element: <TalentDirectory /> },
   { path: '/talents', element: <TalentsPage /> },
   { path: '/services', element: <ServicesPage /> },
+  { path: '/comprehensive-services', element: <ComprehensiveServicesPage /> },
+  { path: '/services-pricing', element: <ServicesPricingPage /> },
+  { path: '/ai-it-solutions', element: <AIITSolutionsPage /> },
+  { path: '/micro-saas', element: <MicroSAASPage /> },
+  { path: '/ai-services', element: <AIServicesPage /> },
+  { path: '/enterprise-solutions', element: <EnterpriseSolutions /> },
   { path: '/micro-saas-services', element: <MicroSaasServicesPage /> },
   { path: '/it-onsite-services', element: <ITOnsiteServicesPage /> },
   { path: '/categories', element: <Categories /> },
@@ -69,10 +78,6 @@ const baseRoutes = [
   { path: '/zion-hire-ai', element: <ZionHireAI /> },
   { path: '/hire-ai', element: <ZionHireAI /> },
   { path: '/request-quote', element: <RequestQuotePage /> },
-  { path: '/comprehensive-services', element: <ComprehensiveServicesPage /> },
-  { path: '/services-pricing', element: <ServicesPricingPage /> },
-  { path: '/ai-it-solutions', element: <AIITSolutionsPage /> },
-  { path: '/micro-saas', element: <MicroSAASPage /> },
   { path: '/blog', element: <Blog /> },
   { path: '/blog/:slug', element: <BlogPost /> },
 ];
