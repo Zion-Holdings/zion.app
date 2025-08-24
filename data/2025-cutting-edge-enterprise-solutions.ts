@@ -46,12 +46,17 @@ export interface CuttingEdgeEnterpriseSolution {
 export const cuttingEdgeEnterpriseSolutions: CuttingEdgeEnterpriseSolution[] = [
   // ENTERPRISE SOLUTIONS
   {
-<<<<<<< HEAD
     id: 'ai-powered-enterprise-risk-management',
     name: 'AI-Powered Enterprise Risk Management',
     tagline: 'Intelligent risk assessment and mitigation for enterprise',
-    price: '$899',
-    period: '/month',
+    price: {
+      monthly: 899,
+      yearly: 8990,
+      currency: 'USD',
+      trialDays: 30,
+      setupTime: '2-3 weeks',
+      enterprise: 'Custom enterprise pricing'
+    },
     description: 'Advanced AI platform that identifies, assesses, and mitigates enterprise risks in real-time, providing comprehensive risk intelligence and automated response capabilities.',
     features: [
       'Real-time risk monitoring',
@@ -65,31 +70,43 @@ export const cuttingEdgeEnterpriseSolutions: CuttingEdgeEnterpriseSolution[] = [
       'Integration capabilities',
       'Custom workflows'
     ],
-    popular: true,
+    benefits: [
+      'Reduce risk exposure by 60%',
+      'Improve compliance by 85%',
+      'Cut risk management costs by 40%',
+      'Real-time risk monitoring',
+      'Automated response capabilities'
+    ],
+    targetAudience: ['Fortune 500 companies', 'Financial institutions', 'Healthcare organizations', 'Government agencies'],
+    marketPosition: 'Leading AI enterprise risk management platform with intelligent automation',
+    competitors: ['MetricStream', 'ServiceNow', 'IBM OpenPages', 'RSA Archer', 'SAP GRC'],
+    techStack: ['AI/ML', 'Machine Learning', 'Risk Analytics', 'Compliance', 'Automation'],
+    realImplementation: true,
+    implementationDetails: 'AI-powered risk management platform with real-time monitoring and automated response capabilities.',
+    roi: 'Reduce risk exposure by 60%. Improve compliance by 85%. Cut risk management costs by 40%.',
+    useCases: ['Risk assessment', 'Compliance management', 'Incident response', 'Business continuity', 'Strategic planning'],
+    integrations: ['ERP systems', 'GRC platforms', 'Compliance tools', 'Security systems', 'Business intelligence tools'],
+    support: '24/7 risk management support with dedicated risk managers and automated response systems.',
+    compliance: ['Industry-specific compliance', 'Regulatory requirements', 'Security standards', 'Data governance'],
+    link: 'https://ziontechgroup.com/ai-powered-enterprise-risk-management',
     icon: '⚠️',
     color: 'from-orange-600 via-red-600 to-pink-600',
-    textColor: 'text-orange-400',
-    link: 'https://ziontechgroup.com/ai-powered-enterprise-risk-management',
-    marketPosition: 'Leading AI enterprise risk management platform with intelligent automation',
-    targetAudience: 'Fortune 500 companies, Financial institutions, Healthcare organizations, Government agencies',
-    trialDays: 30,
-    setupTime: '2-3 weeks',
-    category: 'Enterprise AI',
-    realService: true,
-    technology: ['AI/ML, Machine Learning, Risk Analytics, Compliance, Automation'],
-    integrations: ['ERP systems, GRC platforms, Compliance tools, Security systems, Business intelligence tools'],
-    useCases: ['Risk assessment, Compliance management, Incident response, Business continuity, Strategic planning'],
-    roi: 'Reduce risk exposure by 60%. Improve compliance by 85%. Cut risk management costs by 40%.',
-    competitors: ['MetricStream, ServiceNow, IBM OpenPages, RSA Archer, SAP GRC'],
+    popular: true,
+    launchDate: '2025-01-20',
+    customers: 45,
+    rating: 4.8,
+    reviews: 38,
     marketSize: '$12.8B enterprise risk management market',
     growthRate: '25% annual growth',
-    variant: 'ai-autonomous',
+    category: 'Enterprise Solutions',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
       address: '364 E Main St STE 1008 Middletown DE 19709',
       website: 'https://ziontechgroup.com'
-=======
+    }
+  },
+  {
     id: 'digital-transformation-accelerator',
     name: 'Digital Transformation Accelerator',
     tagline: 'Accelerate your digital transformation journey with proven methodologies and expert guidance',
@@ -102,7 +119,6 @@ export const cuttingEdgeEnterpriseSolutions: CuttingEdgeEnterpriseSolution[] = [
       trialDays: 0,
       setupTime: '8-16 weeks',
       enterprise: 'Project-based pricing: $50,000 - $500,000'
->>>>>>> origin/main
     },
     features: [
       'Digital maturity assessment',
@@ -155,52 +171,9 @@ export const cuttingEdgeEnterpriseSolutions: CuttingEdgeEnterpriseSolution[] = [
     launchDate: '2025-01-15',
     customers: 28,
     rating: 4.9,
-<<<<<<< HEAD
-    reviews: 42
-  },
-  {
-    id: 'autonomous-business-process-optimization',
-    name: 'Autonomous Business Process Optimization',
-    tagline: 'AI-powered business process automation and optimization',
-    price: '$699',
-    period: '/month',
-    description: 'Intelligent platform that autonomously analyzes, optimizes, and automates business processes using AI, improving efficiency by up to 70% and reducing operational costs.',
-    features: [
-      'Process analysis AI',
-      'Automated optimization',
-      'Workflow automation',
-      'Performance monitoring',
-      'Cost optimization',
-      'Compliance automation',
-      'Integration capabilities',
-      'Real-time analytics',
-      'Custom workflows',
-      'Reporting dashboard'
-    ],
-    popular: true,
-    icon: '⚙️',
-    color: 'from-blue-600 via-cyan-600 to-teal-600',
-    textColor: 'text-blue-400',
-    link: 'https://ziontechgroup.com/autonomous-business-process-optimization',
-    marketPosition: 'Leading autonomous business process optimization platform with AI intelligence',
-    targetAudience: 'Large enterprises, Manufacturing companies, Service organizations, Government agencies',
-    trialDays: 21,
-    setupTime: '2-3 weeks',
-    category: 'AI Automation',
-    realService: true,
-    technology: ['AI/ML, Machine Learning, Process Mining, Automation, Workflow Management'],
-    integrations: ['ERP systems, CRM platforms, BPM tools, Workflow engines, Business intelligence tools'],
-    useCases: ['Process optimization, Workflow automation, Cost reduction, Efficiency improvement, Compliance'],
-    roi: 'Improve process efficiency by 70%. Reduce operational costs by 45%. Increase productivity by 60%.',
-    competitors: ['UiPath, Automation Anywhere, Blue Prism, Pega, Appian'],
-    marketSize: '$19.6B business process automation market',
-    growthRate: '31% annual growth',
-    variant: 'ai-autonomous',
-=======
     reviews: 25,
     marketSize: '$521B digital transformation market',
     growthRate: '23% annual growth',
->>>>>>> origin/main
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -251,7 +224,7 @@ export const cuttingEdgeEnterpriseSolutions: CuttingEdgeEnterpriseSolution[] = [
     targetAudience: 'Large enterprises, Consulting firms, Research organizations, Government agencies',
     trialDays: 21,
     setupTime: '2-3 weeks',
-    category: 'AI Automation',
+    category: 'Innovation Services',
     realService: true,
     technology: ['AI/ML, Natural Language Processing, Knowledge Graphs, Search, Collaboration'],
     integrations: ['Microsoft Office, Google Workspace, SharePoint, Confluence, Slack, Teams'],
