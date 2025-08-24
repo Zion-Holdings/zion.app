@@ -3,11 +3,20 @@ import { Button } from "@/components/ui/button";
 import { GradientHeading } from "@/components/GradientHeading";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { motion } from "framer-motion";
-import { ArrowRight, Sparkles, Zap, Users } from "lucide-react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { ArrowRight, Sparkles, Zap, Users, Star, TrendingUp, Shield } from "lucide-react";
+import { useRef } from "react";
 
 export function HeroSection() {
   const { t } = useTranslation();
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end start"]
+  });
+  
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
   
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -21,12 +30,12 @@ export function HeroSection() {
   };
 
   const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
+    hidden: { y: 30, opacity: 0 },
     visible: {
       y: 0,
       opacity: 1,
       transition: {
-        duration: 0.6,
+        duration: 0.8,
         ease: "easeOut"
       }
     }
@@ -34,9 +43,22 @@ export function HeroSection() {
 
   const floatingVariants = {
     animate: {
-      y: [-10, 10, -10],
+      y: [-15, 15, -15],
+      rotate: [0, 5, 0],
       transition: {
-        duration: 3,
+        duration: 4,
+        repeat: Infinity,
+        ease: "easeInOut"
+      }
+    }
+  };
+
+  const pulseVariants = {
+    animate: {
+      scale: [1, 1.1, 1],
+      opacity: [0.5, 0.8, 0.5],
+      transition: {
+        duration: 2,
         repeat: Infinity,
         ease: "easeInOut"
       }
@@ -44,25 +66,28 @@ export function HeroSection() {
   };
 
   return (
-    <section className="relative overflow-hidden py-20 md:py-32">
-      {/* Enhanced background gradient effect */}
-      <div className="absolute inset-0 bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-purple opacity-90"></div>
+    <section ref={containerRef} className="relative overflow-hidden py-20 md:py-32 min-h-screen flex items-center">
+      {/* Enhanced background with parallax effect */}
+      <motion.div 
+        className="absolute inset-0 bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-purple opacity-90"
+        style={{ y, opacity }}
+      />
       
-      {/* Animated floating particles with better positioning */}
+      {/* Animated floating particles with better positioning and variety */}
       <div className="absolute inset-0">
         <motion.div 
-          className="absolute top-1/4 left-1/4 w-3 h-3 rounded-full bg-zion-purple-light opacity-60"
+          className="absolute top-1/4 left-1/4 w-4 h-4 rounded-full bg-zion-purple-light opacity-60"
           variants={floatingVariants}
           animate="animate"
         />
         <motion.div 
-          className="absolute top-1/3 right-1/3 w-4 h-4 rounded-full bg-zion-cyan opacity-50"
+          className="absolute top-1/3 right-1/3 w-6 h-6 rounded-full bg-zion-cyan opacity-50"
           variants={floatingVariants}
           animate="animate"
           style={{ animationDelay: '1s' }}
         />
         <motion.div 
-          className="absolute bottom-1/4 left-1/2 w-2 h-2 rounded-full bg-zion-purple opacity-70"
+          className="absolute bottom-1/4 left-1/2 w-3 h-3 rounded-full bg-zion-purple opacity-70"
           variants={floatingVariants}
           animate="animate"
           style={{ animationDelay: '2s' }}
@@ -73,11 +98,44 @@ export function HeroSection() {
           animate="animate"
           style={{ animationDelay: '0.5s' }}
         />
+        <motion.div 
+          className="absolute top-3/4 left-1/6 w-2 h-2 rounded-full bg-zion-purple-light opacity-80"
+          variants={floatingVariants}
+          animate="animate"
+          style={{ animationDelay: '1.5s' }}
+        />
+        <motion.div 
+          className="absolute top-1/6 right-1/6 w-4 h-4 rounded-full bg-zion-cyan opacity-40"
+          variants={floatingVariants}
+          animate="animate"
+          style={{ animationDelay: '2.5s' }}
+        />
       </div>
 
-      {/* Decorative geometric shapes */}
-      <div className="absolute top-20 right-20 w-32 h-32 border border-zion-cyan/20 rounded-full opacity-30"></div>
-      <div className="absolute bottom-20 left-20 w-24 h-24 border border-zion-purple/20 transform rotate-45 opacity-30"></div>
+      {/* Enhanced decorative geometric shapes with animations */}
+      <motion.div 
+        className="absolute top-20 right-20 w-32 h-32 border border-zion-cyan/20 rounded-full opacity-30"
+        animate={{ rotate: 360 }}
+        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+      />
+      <motion.div 
+        className="absolute bottom-20 left-20 w-24 h-24 border border-zion-purple/20 transform rotate-45 opacity-30"
+        animate={{ rotate: -360 }}
+        transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+      />
+      
+      {/* New floating elements */}
+      <motion.div 
+        className="absolute top-1/3 left-10 w-16 h-16 border border-zion-cyan/30 rounded-full opacity-20"
+        variants={pulseVariants}
+        animate="animate"
+      />
+      <motion.div 
+        className="absolute bottom-1/3 right-10 w-20 h-20 border border-zion-purple/30 rounded-full opacity-20"
+        variants={pulseVariants}
+        animate="animate"
+        style={{ animationDelay: '1s' }}
+      />
       
       <motion.div 
         className="container relative z-10 px-4 mx-auto text-center"
@@ -85,75 +143,162 @@ export function HeroSection() {
         initial="hidden"
         animate="visible"
       >
-        {/* Enhanced title with better typography */}
-        <motion.div variants={itemVariants} className="mb-6">
-          <GradientHeading className="text-5xl md:text-7xl font-bold leading-tight">
-            {t('home.hero_title')}
+        {/* Enhanced title with better typography and animations */}
+        <motion.div variants={itemVariants} className="mb-8">
+          <GradientHeading className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight tracking-tight">
+            {t('home.hero_title') || "The Future of Tech & AI"}
           </GradientHeading>
         </motion.div>
 
-        {/* Enhanced subtitle with better spacing */}
+        {/* Enhanced subtitle with better spacing and animations */}
         <motion.p 
           variants={itemVariants}
-          className="text-xl md:text-2xl text-zion-slate-light mb-12 max-w-4xl mx-auto leading-relaxed"
+          className="text-xl md:text-2xl lg:text-3xl text-zion-slate-light mb-16 max-w-5xl mx-auto leading-relaxed font-light"
         >
-          {t('home.hero_subtitle')}
+          {t('home.hero_subtitle') || "Discover the world's most advanced AI marketplace. Connect with top tech talent, cutting-edge services, and revolutionary equipment in one seamless platform."}
         </motion.p>
 
-        {/* Feature highlights */}
+        {/* Enhanced feature highlights with icons and animations */}
         <motion.div 
           variants={itemVariants}
-          className="flex flex-wrap justify-center gap-6 mb-12 text-zion-slate-light"
+          className="flex flex-wrap justify-center gap-8 mb-16 text-zion-slate-light"
         >
-          <div className="flex items-center gap-2">
-            <Sparkles className="w-5 h-5 text-zion-cyan" />
-            <span>AI-Powered Matching</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Zap className="w-5 h-5 text-zion-purple" />
-            <span>Global Talent Pool</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Users className="w-5 h-5 text-zion-cyan-light" />
-            <span>24/7 Support</span>
-          </div>
-        </motion.div>
-
-        {/* Enhanced CTA buttons */}
-        <motion.div 
-          variants={itemVariants}
-          className="flex flex-col sm:flex-row justify-center gap-6"
-        >
-          <Link
-            to="/signup"
-            className="group bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-lg py-6 px-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 inline-flex items-center justify-center rounded-md font-medium text-white"
+          <motion.div 
+            className="flex items-center gap-3 group"
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 400 }}
           >
-            {t('auth.signup')}
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
-          </Link>
+            <div className="p-2 bg-zion-cyan/20 rounded-full group-hover:bg-zion-cyan/30 transition-colors">
+              <Sparkles className="w-6 h-6 text-zion-cyan" />
+            </div>
+            <span className="font-medium">AI-Powered Matching</span>
+          </motion.div>
           
-          <Link
-            id="browse-marketplace"
-            to="/marketplace"
-            className="group border-2 border-zion-cyan text-zion-cyan hover:bg-zion-cyan hover:text-zion-blue-dark active:bg-zion-cyan-light text-lg py-6 px-8 rounded-md inline-flex items-center justify-center transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+          <motion.div 
+            className="flex items-center gap-3 group"
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 400 }}
           >
-            {t('home.browse_marketplace')}
-            <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
-          </Link>
+            <div className="p-2 bg-zion-purple/20 rounded-full group-hover:bg-zion-purple/30 transition-colors">
+              <Zap className="w-6 h-6 text-zion-purple" />
+            </div>
+            <span className="font-medium">Global Talent Pool</span>
+          </motion.div>
+          
+          <motion.div 
+            className="flex items-center gap-3 group"
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 400 }}
+          >
+            <div className="p-2 bg-zion-cyan-light/20 rounded-full group-hover:bg-zion-cyan-light/30 transition-colors">
+              <Users className="w-6 h-6 text-zion-cyan-light" />
+            </div>
+            <span className="font-medium">24/7 Support</span>
+          </motion.div>
         </motion.div>
 
-        {/* Trust indicators */}
+        {/* Enhanced CTA buttons with better animations and effects */}
         <motion.div 
           variants={itemVariants}
-          className="mt-16 text-zion-slate-light/70"
+          className="flex flex-col sm:flex-row justify-center gap-6 mb-16"
         >
-          <p className="text-sm mb-4">Trusted by leading companies worldwide</p>
-          <div className="flex justify-center items-center gap-8 opacity-50">
-            <div className="w-16 h-8 bg-zion-slate-light/20 rounded"></div>
-            <div className="w-16 h-8 bg-zion-slate-light/20 rounded"></div>
-            <div className="w-16 h-8 bg-zion-slate-light/20 rounded"></div>
-            <div className="w-16 h-8 bg-zion-slate-light/20 rounded"></div>
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ type: "spring", stiffness: 400, damping: 10 }}
+          >
+            <Link
+              to="/signup"
+              className="group bg-gradient-to-r from-zion-purple via-zion-purple-dark to-zion-purple hover:from-zion-purple-light hover:via-zion-purple hover:to-zion-purple-light text-lg py-6 px-10 shadow-2xl hover:shadow-zion-purple/25 transition-all duration-300 transform inline-flex items-center justify-center rounded-2xl font-semibold text-white border-0"
+            >
+              {t('auth.signup') || "Get Started Free"}
+              <ArrowRight className="w-6 h-6 ml-3 group-hover:translate-x-2 transition-transform duration-300" />
+            </Link>
+          </motion.div>
+          
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ type: "spring", stiffness: 400, damping: 10 }}
+          >
+            <Link
+              id="browse-marketplace"
+              to="/marketplace"
+              className="group border-2 border-zion-cyan text-zion-cyan hover:bg-zion-cyan hover:text-zion-blue-dark active:bg-zion-cyan-light text-lg py-6 px-10 rounded-2xl inline-flex items-center justify-center transition-all duration-300 transform hover:shadow-2xl hover:shadow-zion-cyan/25 font-semibold backdrop-blur-sm bg-white/10"
+            >
+              {t('home.browse_marketplace') || "Explore Marketplace"}
+              <ArrowRight className="w-6 h-6 ml-3 group-hover:translate-x-2 transition-transform duration-300" />
+            </Link>
+          </motion.div>
+        </motion.div>
+
+        {/* Enhanced trust indicators with better visuals */}
+        <motion.div 
+          variants={itemVariants}
+          className="mt-20 text-zion-slate-light/80"
+        >
+          <p className="text-lg mb-6 font-medium">Trusted by leading companies worldwide</p>
+          <div className="flex justify-center items-center gap-12 opacity-60">
+            <motion.div 
+              className="w-20 h-10 bg-zion-slate-light/20 rounded-lg backdrop-blur-sm"
+              whileHover={{ scale: 1.1, opacity: 1 }}
+              transition={{ type: "spring", stiffness: 400 }}
+            />
+            <motion.div 
+              className="w-20 h-10 bg-zion-slate-light/20 rounded-lg backdrop-blur-sm"
+              whileHover={{ scale: 1.1, opacity: 1 }}
+              transition={{ type: "spring", stiffness: 400 }}
+            />
+            <motion.div 
+              className="w-20 h-10 bg-zion-slate-light/20 rounded-lg backdrop-blur-sm"
+              whileHover={{ scale: 1.1, opacity: 1 }}
+              transition={{ type: "spring", stiffness: 400 }}
+            />
+            <motion.div 
+              className="w-20 h-10 bg-zion-slate-light/20 rounded-lg backdrop-blur-sm"
+              whileHover={{ scale: 1.1, opacity: 1 }}
+              transition={{ type: "spring", stiffness: 400 }}
+            />
           </div>
+        </motion.div>
+
+        {/* New stats section */}
+        <motion.div 
+          variants={itemVariants}
+          className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto"
+        >
+          <motion.div 
+            className="text-center group"
+            whileHover={{ y: -5 }}
+            transition={{ type: "spring", stiffness: 400 }}
+          >
+            <div className="text-4xl font-bold text-zion-cyan mb-2 group-hover:text-zion-cyan-light transition-colors">
+              10K+
+            </div>
+            <div className="text-zion-slate-light">Active Users</div>
+          </motion.div>
+          
+          <motion.div 
+            className="text-center group"
+            whileHover={{ y: -5 }}
+            transition={{ type: "spring", stiffness: 400 }}
+          >
+            <div className="text-4xl font-bold text-zion-purple mb-2 group-hover:text-zion-purple-light transition-colors">
+              500+
+            </div>
+            <div className="text-zion-slate-light">AI Services</div>
+          </motion.div>
+          
+          <motion.div 
+            className="text-center group"
+            whileHover={{ y: -5 }}
+            transition={{ type: "spring", stiffness: 400 }}
+          >
+            <div className="text-4xl font-bold text-zion-cyan-light mb-2 group-hover:text-zion-cyan transition-colors">
+              99.9%
+            </div>
+            <div className="text-zion-slate-light">Uptime</div>
+          </motion.div>
         </motion.div>
       </motion.div>
     </section>
