@@ -16,30 +16,11 @@ import { ServicesShowcase } from "@/components/ServicesShowcase";
 export default function Home() {
   return (
     <div className="min-h-screen bg-background">
-      <EnhancedSEO 
-        title="Zion - The Future of Tech & AI Marketplace" 
-        description="Discover top AI and tech talent, cutting-edge services, and revolutionary equipment in the world's most advanced marketplace. Join 50,000+ users worldwide."
-        keywords="AI marketplace, tech talent, AI services, tech equipment, machine learning, data science, software development, cybersecurity"
+      <SEO 
+        title="Zion - The Tech & AI Marketplace" 
+        description="Discover top AI and tech talent, services, and equipment in one place."
+        keywords="AI, technology, marketplace, services, talent"
         canonical="https://ziontechgroup.com/"
-        ogImage="https://ziontechgroup.com/og-image.jpg"
-        twitterCard="summary_large_image"
-        structuredData={{
-          "@context": "https://schema.org",
-          "@type": "WebPage",
-          "name": "Zion - The Future of Tech & AI Marketplace",
-          "description": "Discover top AI and tech talent, cutting-edge services, and revolutionary equipment in the world's most advanced marketplace.",
-          "url": "https://ziontechgroup.com/",
-          "mainEntity": {
-            "@type": "Organization",
-            "name": "Zion Tech Group",
-            "description": "The Future of Tech & AI Marketplace",
-            "url": "https://ziontechgroup.com",
-            "sameAs": [
-              "https://twitter.com/ziontechgroup",
-              "https://linkedin.com/company/ziontechgroup"
-            ]
-          }
-        }}
       />
 
       {/* Enhanced Hero Section */}
