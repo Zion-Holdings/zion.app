@@ -52,7 +52,7 @@ export function PageLoader() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-900 via-blue-800 to-slate-900">
       <div className="text-center text-white">
-        <LoadingSpinner size="xl" variant="white" className="mx-auto mb-4" />
+        <LoadingSpinner size="xl" variant="default" className="mx-auto mb-4" />
         <h1 className="text-2xl font-bold">Loading Zion Tech Group...</h1>
         <p className="mt-2 text-blue-200">Please wait while we prepare your experience.</p>
       </div>

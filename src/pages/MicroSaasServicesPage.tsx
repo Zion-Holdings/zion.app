@@ -142,7 +142,6 @@ export default function MicroSaasServicesPage() {
         title="Micro SAAS Services - Zion Tech Group"
         description="Discover innovative micro SAAS services and solutions in AI, IT, and business automation. Transform your business with cutting-edge technology."
         keywords="micro SAAS, AI services, IT solutions, business automation, Zion Tech Group"
-        canonical="https://ziontechgroup.com/micro-saas-services"
       />
 
       {/* Hero Section */}
