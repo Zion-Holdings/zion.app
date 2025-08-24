@@ -29,7 +29,7 @@ export const UserMenu: React.FC = () => {
         className="flex items-center space-x-2"
       >
         <Avatar className="w-8 h-8">
-          <AvatarImage src={user?.avatar} />
+          <AvatarImage src={user?.avatar} alt={user?.name || 'User avatar'} />
           <AvatarFallback>
             {user?.name?.charAt(0) || 'U'}
           </AvatarFallback>

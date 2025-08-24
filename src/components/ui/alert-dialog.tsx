@@ -11,6 +11,7 @@ interface AlertDialogTriggerProps {
   children: React.ReactNode;
   asChild?: boolean;
   onClick?: () => void;
+  onOpenChange?: (open: boolean) => void;
 }
 
 interface AlertDialogContentProps {
@@ -60,12 +61,7 @@ export const AlertDialog: React.FC<AlertDialogProps> = ({ children, open = false
 
   return (
     <div className={cn("relative", isOpen && "z-50")}>
-      {React.Children.map(children, (child) => {
-        if (React.isValidElement(child)) {
-          return React.cloneElement(child, { isOpen, onOpenChange: handleOpenChange });
-        }
-        return child;
-      })}
+      {children}
     </div>
   );
 };

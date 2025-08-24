@@ -1,5 +1,5 @@
 import React from 'react';
-import { Share2, Twitter, Facebook, LinkedIn, Link as LinkIcon } from 'lucide-react';
+import { Share2, Twitter, Facebook, Linkedin, Link as LinkIcon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export const SocialShareSection: React.FC = () => {
@@ -65,7 +65,7 @@ export const SocialShareSection: React.FC = () => {
             onClick={shareToLinkedIn}
             className="bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-lg flex items-center space-x-2"
           >
-            <LinkedIn className="w-5 h-5" />
+            <Linkedin className="w-5 h-5" />
             <span>Share on LinkedIn</span>
           </Button>
         </div>
