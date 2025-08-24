@@ -1,0 +1,8 @@
+[2025-08-24T00:59:03.591Z] 🚀 Sitemap keeper starting
+[2025-08-24T00:59:03.596Z] ▶ npm run sitemap
+npm error Missing script: "sitemap"
+npm error
+npm error To see a list of scripts, run:
+npm error   npm run
+npm error A complete log of this run can be found in: /home/runner/.npm/_logs/2025-08-24T00_59_03_652Z-debug-0.log
+[2025-08-24T00:59:03.728Z] ❌ sitemap generation failed: Command failed: npm run sitemap

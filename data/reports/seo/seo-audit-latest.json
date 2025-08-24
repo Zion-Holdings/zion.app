@@ -1,0 +1,76 @@
+{
+  "summary": {
+    "timestamp": "2025-08-24T00:59:05.237Z",
+    "baseUrl": "https://ziontechgroup.com",
+    "pagesChecked": 6,
+    "totals": {
+      "missingTitle": 0,
+      "missingDescription": 0,
+      "missingCanonical": 0,
+      "missingOgTitle": 0,
+      "missingOgImage": 0
+    }
+  },
+  "results": [
+    {
+      "url": "https://ziontechgroup.com",
+      "title": "Zion Tech Group - Revolutionary AI & Quantum Technology Solutions 2045",
+      "h1": "Zion Tech Group",
+      "descPresent": true,
+      "canonPresent": true,
+      "ogTitlePresent": true,
+      "ogImagePresent": true,
+      "missing": []
+    },
+    {
+      "url": "https://ziontechgroup.com/",
+      "title": "Zion Tech Group - Revolutionary AI & Quantum Technology Solutions 2045",
+      "h1": "Zion Tech Group",
+      "descPresent": true,
+      "canonPresent": true,
+      "ogTitlePresent": true,
+      "ogImagePresent": true,
+      "missing": []
+    },
+    {
+      "url": "https://ziontechgroup.com/services",
+      "title": "Zion Tech Group - Revolutionary AI & Quantum Technology Solutions 2045",
+      "h1": "Our Services",
+      "descPresent": true,
+      "canonPresent": true,
+      "ogTitlePresent": true,
+      "ogImagePresent": true,
+      "missing": []
+    },
+    {
+      "url": "https://ziontechgroup.com/about",
+      "title": "Zion Tech Group - Revolutionary AI & Quantum Technology Solutions 2045",
+      "h1": "About Zion Tech Group",
+      "descPresent": true,
+      "canonPresent": true,
+      "ogTitlePresent": true,
+      "ogImagePresent": true,
+      "missing": []
+    },
+    {
+      "url": "https://ziontechgroup.com/contact",
+      "title": "Zion Tech Group - Revolutionary AI & Quantum Technology Solutions 2045",
+      "h1": "Contact Us",
+      "descPresent": true,
+      "canonPresent": true,
+      "ogTitlePresent": true,
+      "ogImagePresent": true,
+      "missing": []
+    },
+    {
+      "url": "https://ziontechgroup.com/blog",
+      "title": "Zion Tech Group - Revolutionary AI & Quantum Technology Solutions 2045",
+      "h1": "Zion Tech Group Blog",
+      "descPresent": true,
+      "canonPresent": true,
+      "ogTitlePresent": true,
+      "ogImagePresent": true,
+      "missing": []
+    }
+  ]
+}

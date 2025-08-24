@@ -1,92 +1,83 @@
+import { prisma } from "@/lib/prisma";
+import { InstanceCard } from "@/components/InstanceCard";
+
 export const metadata = {
   title: "Admin Instances - Zion Tech Group",
   description: "Manage deployed AI instances and system configurations.",
 };
 
-// Mock data for demonstration
-const mockInstances = [
-  {
-    id: "1",
-    name: "AI Business Manager",
-    vertical: "Business Automation",
-    domain: "ai-biz.ziontechgroup.com",
-    governanceType: "ADMIN",
-    deploymentCount: 3,
-    featureCount: 12
-  },
-  {
-    id: "2",
-    name: "Quantum Research Lab",
-    vertical: "Research & Development",
-    domain: "quantum.ziontechgroup.com",
-    governanceType: "DEMOCRATIC",
-    deploymentCount: 1,
-    featureCount: 8
-  },
-  {
-    id: "3",
-    name: "Content Creation Hub",
-    vertical: "Media & Marketing",
-    domain: "content.ziontechgroup.com",
-    governanceType: "ADMIN",
-    deploymentCount: 5,
-    featureCount: 15
-  }
-];
+export const dynamic = 'force-dynamic';
 
-export default function InstancesPage() {
+interface Instance {
+  id: string;
+  name: string;
+  slug: string;
+  domain?: string | null;
+  subdomain?: string | null;
+  vertical: string;
+  governanceType: string;
+  createdAt: Date;
+  _count: {
+    deployments: number;
+    features: number;
+  };
+}
+
+export default async function InstancesPage() {
+  let instances: Instance[] = [];
+  
+  try {
+    instances = await prisma.instance.findMany({
+      include: {
+        daoConfig: true,
+        _count: { select: { deployments: true, features: true } },
+      },
+      orderBy: { createdAt: "desc" },
+    });
+  } catch (error) {
+    console.error('Failed to fetch instances:', error);
+    // Continue with empty instances array
+  }
+
   return (
-    <div className="space-y-6">
-      <h1 className="text-2xl font-semibold">AI Instances Management</h1>
-      <p className="text-gray-600 mb-6">
-        Monitor and manage your deployed AI-powered systems and instances.
-      </p>
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {mockInstances.map((inst) => (
-          <div key={inst.id} className="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg transition-all duration-300">
-            <div className="flex items-center justify-between mb-4">
-              <div className="font-semibold text-lg text-gray-900">{inst.name}</div>
-              <span className="text-xs px-2 py-1 bg-blue-100 text-blue-800 rounded-full">{inst.vertical}</span>
-            </div>
-            <div className="text-sm text-gray-600 mb-3">{inst.domain}</div>
-            <div className="space-y-2 text-sm">
-              <div className="flex justify-between">
-                <span className="text-gray-500">Governance:</span>
-                <span className="font-medium">{inst.governanceType}</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-gray-500">Deployments:</span>
-                <span className="font-medium">{inst.deploymentCount}</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-gray-500">Features:</span>
-                <span className="font-medium">{inst.featureCount}</span>
-              </div>
-            </div>
-            <div className="mt-4 pt-4 border-t border-gray-100">
-              <button className="w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">
-                Manage Instance
-              </button>
-            </div>
+    <div className="max-w-7xl mx-auto px-4 py-8">
+      <div className="text-center mb-12">
+        <h1 className="text-4xl font-bold mb-4">Your Digital Economies</h1>
+        <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+          Manage and monitor all your deployed Zion OS instances. Track deployments, 
+          configure features, and oversee governance.
+        </p>
+      </div>
+
+      {instances.length === 0 ? (
+        <div className="text-center py-20">
+          <div className="w-24 h-24 bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-6">
+            <svg className="w-12 h-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+            </svg>
           </div>
-        ))}
-      </div>
-      
-      <div className="mt-8 p-6 bg-gray-50 rounded-lg">
-        <h3 className="text-lg font-semibold text-gray-900 mb-2">Quick Actions</h3>
-        <div className="flex flex-wrap gap-3">
-          <button className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">
-            Deploy New Instance
-          </button>
-          <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">
-            View System Status
-          </button>
-          <button className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">
-            Generate Report
-          </button>
+          <h3 className="text-2xl font-semibold mb-2">No Instances Yet</h3>
+          <p className="text-gray-400 mb-8">
+            You haven't deployed any digital economies yet. Get started by creating your first instance.
+          </p>
+          <a href="/multiverse/launch" className="btn-primary">
+            Deploy Your First Economy
+          </a>
         </div>
-      </div>
+      ) : (
+        <>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            {instances.map((instance) => (
+              <InstanceCard key={instance.id} instance={instance} />
+            ))}
+          </div>
+          
+          <div className="text-center">
+            <a href="/multiverse/launch" className="btn-primary">
+              Deploy Another Economy
+            </a>
+          </div>
+        </>
+      )}
     </div>
   );
-}

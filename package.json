@@ -1,29 +1,19 @@
 {
-  "name": "zion-tech-group",
+  "name": "bolt.new.zion.app",
   "version": "0.1.0",
   "private": true,
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Zion-Holdings/zion.app.git"
-  },
-  "bugs": {
-    "url": "https://github.com/Zion-Holdings/zion.app/issues"
-  },
-  "homepage": "https://ziontechgroup.com",
   "engines": {
     "node": ">=20.18.1",
     "npm": ">=10.0.0"
   },
   "scripts": {
-    "dev": "NODE_OPTIONS=\"--max-old-space-size=4096 --openssl-legacy-provider\" next dev",
-    "build": "NODE_OPTIONS=\"--max-old-space-size=6144 --openssl-legacy-provider\" next build",
+    "sitemap": "node scripts/generate-sitemap.mjs",
+    "dev": "next dev",
+    "build": "next build",
+    "export": "next build && next export",
     "start": "next start",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "type-check": "tsc --noEmit",
-    "prepare": "git config core.hooksPath .husky || true",
-    "fix:all": "npm run lint -- --fix || true",
-    "build:heal": "npm run build || (npm run fix:all && npm run build)",
-    "ci:heal": "npm run fix:all && (npm run type-check || true) && npm run build:heal"
+    "lint": "next lint",
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
@@ -37,7 +27,7 @@
     "@sentry/node": "^7.120.4",
     "@supabase/ssr": "^0.6.1",
     "@supabase/supabase-js": "^2.39.0",
-    "@types/react-datepicker": "^6.2.0",
+    "autoprefixer": "^10.4.21",
     "axios": "^1.11.0",
     "chalk": "^5.5.0",
     "cheerio": "^1.1.2",
@@ -56,17 +46,14 @@
     "js-yaml": "^4.1.0",
     "jsdom": "^24.1.0",
     "lucide-react": "^0.536.0",
-    "next": "^13.5.6",
+    "next": "^12.3.7",
     "node-cron": "^4.2.1",
     "openai": "^5.11.0",
     "path": "^0.12.7",
     "pdfkit": "^0.15.0",
     "postcss": "^8.4.32",
-    "react": "18.2.0",
-    "react-datepicker": "^8.4.0",
-    "react-dom": "^18.3.1",
-    "recharts": "^3.1.2",
-    "resend": "^4.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "uuid": "^11.1.0"
   },
   "devDependencies": {
@@ -74,11 +61,11 @@
     "@commitlint/config-conventional": "^19.8.1",
     "@eslint/js": "^9.32.0",
     "@testing-library/jest-dom": "^6.6.4",
-    "@testing-library/react": "^14.3.1",
-    "@types/node": "24.2.1",
+    "@testing-library/react": "^16.3.0",
+    "@types/node": "^24.3.0",
     "@types/node-cron": "^3.0.11",
-    "@types/react": "18.3.23",
-    "@types/react-dom": "^18.3.0",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
     "@typescript-eslint/eslint-plugin": "^8.39.0",
     "@typescript-eslint/parser": "^8.39.0",
     "autoprefixer": "^10.4.21",
@@ -92,10 +79,6 @@
     "tailwindcss": "^3.4.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.2"
-  },
-  "lint-staged": {
-    "**/*.{js,jsx,ts,tsx}": [
-      "eslint --fix"
-    ]
+>>>>>>> 6a33cb052a9f7ad70b014381aba5b90becd15b44
   }
 }

@@ -173,13 +173,32 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Contact Information Section */}
       <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold mb-6">Ready to Get Started?</h2>
           <p className="text-xl mb-8 text-blue-100">
             Let's discuss how AI can transform your business and drive growth
           </p>
+          
+          {/* Contact Details */}
+          <div className="bg-white/10 rounded-lg p-6 mb-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
+              <div className="flex items-center justify-center gap-2">
+                <span>📱</span>
+                <a href="tel:+13024640950" className="hover:underline">+1 302 464 0950</a>
+              </div>
+              <div className="flex items-center justify-center gap-2">
+                <span>✉️</span>
+                <a href="mailto:kleber@ziontechgroup.com" className="hover:underline">kleber@ziontechgroup.com</a>
+              </div>
+              <div className="flex items-center justify-center gap-2">
+                <span>📍</span>
+                <span>364 E Main St STE 1008, Middletown DE 19709</span>
+              </div>
+            </div>
+          </div>
+          
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
               href="/contact" 
