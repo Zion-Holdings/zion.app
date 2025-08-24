@@ -25,7 +25,7 @@ export default function CompanyWorkspace() {
   }
   
   if (error || !company) {
-    return <Navigate to="/not-found" />;
+            return <Navigate to="/" />;
   }
   
   // In white-label mode, use the tenant's theme instead of the company's theme
