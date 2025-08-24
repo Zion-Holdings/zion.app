@@ -1,0 +1,107 @@
+{
+  "compilerOptions": {
+    "target": "ES2017",
+    "useDefineForClassFields": true,
+    "lib": [
+      "ES2024",
+      "DOM",
+      "DOM.Iterable",
+      "WebWorker",
+      "WebWorker.Iterable"
+    ],
+    "module": "esnext",
+    "skipLibCheck": true,
+    "importHelpers": false,
+    "noEmitHelpers": false,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ],
+      "@/pages/*": [
+        "./src/pages/*",
+        "./pages/*"
+      ],
+      "@/components/*": [
+        "./src/components/*"
+      ],
+      "@/api/*": [
+        "./src/api/*"
+      ],
+      "@/types/*": [
+        "./src/types/*",
+        "./types/*"
+      ],
+      "@/utils/*": [
+        "./src/utils/*",
+        "./utils/*"
+      ],
+      "@/hooks/*": [
+        "./src/hooks/*"
+      ],
+      "@/context/*": [
+        "./src/context/*"
+      ],
+      "@/services/*": [
+        "./src/services/*"
+      ],
+      "react-router-dom": [
+        "./src/stubs/react-router-dom.tsx"
+      ],
+      "next-cloudinary": [
+        "./types/next-cloudinary.d.ts"
+      ],
+      "types/*": [
+        "./types/*"
+      ]
+    },
+    /* Bundler mode */
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "strict": false,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noFallthroughCasesInSwitch": false,
+    "noUncheckedIndexedAccess": false,
+    "noImplicitReturns": false,
+    "allowJs": true,
+    "incremental": true,
+    "typeRoots": [
+      "./node_modules/@types",
+      "./types"
+    ],
+    "types": [
+      "node"
+    ],
+    "jsx": "preserve",
+    "noEmit": true,
+    "isolatedModules": true
+  },
+  "include": [
+    "next-env.d.ts",
+    "pages/**/*.ts",
+    "pages/**/*.tsx",
+    "components/**/*.ts",
+    "components/**/*.tsx",
+    "types/**/*.ts",
+    "types/**/*.d.ts",
+    "utils/**/*.ts",
+    "services/**/*.ts",
+    "styles/**/*.css"
+  ],
+  "exclude": [
+    "node_modules",
+    "zion.app/recovered-content/**",
+    "apps/**",
+<<<<<<< HEAD
+    "browserstack.config.ts",
+    "**/*.test.ts",
+    "**/*.test.tsx",
+    "**/*.spec.ts",
+    "**/*.spec.tsx"
+=======
+    "apps.backup/**"
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-bb1b
+  ]
+}

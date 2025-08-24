@@ -94,10 +94,6 @@
     "node_modules",
     "zion.app/recovered-content/**",
     "apps/**",
-    "browserstack.config.ts",
-    "**/*.test.ts",
-    "**/*.test.tsx",
-    "**/*.spec.ts",
-    "**/*.spec.tsx"
+    "apps.backup/**"
   ]
 }
