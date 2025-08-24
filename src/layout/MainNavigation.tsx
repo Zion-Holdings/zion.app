@@ -24,29 +24,29 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
       matches: (path: string) => path === '/'
     },
     {
-      key: 'marketplace',
-      href: '/marketplace',
-      matches: (path: string) => path.startsWith('/marketplace')
+      key: 'services',
+      href: '/services',
+      matches: (path: string) => path.startsWith('/services')
     },
     {
-      key: 'categories',
-      href: '/categories',
-      matches: (path: string) => path.startsWith('/categories')
+      key: 'about',
+      href: '/about',
+      matches: (path: string) => path.startsWith('/about') || path === '/mission' || path === '/team'
     },
     {
-      key: 'talent',
-      href: '/talent',
-      matches: (path: string) => path.startsWith('/talent') && !path.includes('/talent-dashboard')
+      key: 'case-studies',
+      href: '/case-studies',
+      matches: (path: string) => path.startsWith('/case-studies')
     },
     {
-      key: 'equipment',
-      href: '/equipment',
-      matches: (path: string) => path.startsWith('/equipment')
+      key: 'news',
+      href: '/news',
+      matches: (path: string) => path.startsWith('/news') || path.startsWith('/blog')
     },
     {
-      key: 'community',
-      href: '/community',
-      matches: (path: string) => path.startsWith('/community') || path.startsWith('/forum')
+      key: 'contact',
+      href: '/contact',
+      matches: (path: string) => path === '/contact'
     }
   ];
 
