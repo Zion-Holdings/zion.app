@@ -1,57 +1,80 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { cn } from '@/lib/utils';
+import React from "react";
+import { motion } from "framer-motion";
+import { cn } from "@/lib/utils";
 
 interface LoadingSpinnerProps {
-  size?: 'sm' | 'md' | 'lg' | 'xl';
+  size?: "sm" | "md" | "lg" | "xl";
   className?: string;
   text?: string;
-  variant?: 'default' | 'pulse' | 'dots';
+  variant?: "default" | "pulse" | "dots" | "bars";
 }
 
 export function LoadingSpinner({ 
-  size = 'md', 
+  size = "md", 
   className, 
   text,
-  variant = 'default' 
+  variant = "default" 
 }: LoadingSpinnerProps) {
   const sizeClasses = {
-    sm: 'w-4 h-4',
-    md: 'w-8 h-8',
-    lg: 'w-12 h-12',
-    xl: 'w-16 h-16'
+    sm: "w-4 h-4",
+    md: "w-8 h-8",
+    lg: "w-12 h-12",
+    xl: "w-16 h-16"
   };
 
-  const textSizeClasses = {
-    sm: 'text-xs',
-    md: 'text-sm',
-    lg: 'text-base',
-    xl: 'text-lg'
+  const textSizes = {
+    sm: "text-xs",
+    md: "text-sm",
+    lg: "text-base",
+    xl: "text-lg"
   };
 
-  if (variant === 'pulse') {
+  if (variant === "pulse") {
     return (
-      <div className={cn("flex flex-col items-center justify-center", className)}>
-        <div className={cn(
-          "rounded-full bg-zion-purple animate-pulse",
-          sizeClasses[size]
-        )} />
+      <div className={cn("flex flex-col items-center gap-3", className)}>
+        <div className={cn("relative", sizeClasses[size])}>
+          <motion.div
+            className="absolute inset-0 rounded-full bg-gradient-to-r from-zion-cyan to-zion-purple"
+            animate={{
+              scale: [1, 1.2, 1],
+              opacity: [0.5, 1, 0.5]
+            }}
+            transition={{
+              duration: 1.5,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+          <motion.div
+            className="absolute inset-1 rounded-full bg-zion-blue-dark"
+            animate={{
+              scale: [1, 0.8, 1],
+              opacity: [1, 0.5, 1]
+            }}
+            transition={{
+              duration: 1.5,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+        </div>
         {text && (
-          <p className={cn(
-            "mt-2 text-zion-slate-light text-center",
-            textSizeClasses[size]
-          )}>
+          <motion.p
+            className={cn("text-zion-slate-light font-medium", textSizes[size])}
+            animate={{ opacity: [0.5, 1, 0.5] }}
+            transition={{ duration: 2, repeat: Infinity }}
+          >
             {text}
-          </p>
+          </motion.p>
         )}
       </div>
     );
   }
 
-  if (variant === 'dots') {
+  if (variant === "dots") {
     return (
-      <div className={cn("flex flex-col items-center justify-center", className)}>
-        <div className="flex space-x-1">
+      <div className={cn("flex flex-col items-center gap-3", className)}>
+        <div className="flex gap-2">
           {[0, 1, 2].map((i) => (
             <motion.div
               key={i}
@@ -61,7 +84,7 @@ export function LoadingSpinner({
                 opacity: [0.5, 1, 0.5]
               }}
               transition={{
-                duration: 1.4,
+                duration: 0.6,
                 repeat: Infinity,
                 delay: i * 0.2,
                 ease: "easeInOut"
@@ -70,40 +93,84 @@ export function LoadingSpinner({
           ))}
         </div>
         {text && (
-          <p className={cn(
-            "mt-3 text-zion-slate-light text-center",
-            textSizeClasses[size]
-          )}>
+          <motion.p
+            className={cn("text-zion-slate-light font-medium", textSizes[size])}
+            animate={{ opacity: [0.5, 1, 0.5] }}
+            transition={{ duration: 2, repeat: Infinity }}
+          >
             {text}
-          </p>
+          </motion.p>
         )}
       </div>
     );
   }
 
-  return (
-    <div className={cn("flex flex-col items-center justify-center", className)}>
-      <motion.div
-        className={cn(
-          "border-2 border-zion-blue-light border-t-zion-purple rounded-full",
-          sizeClasses[size]
+  if (variant === "bars") {
+    return (
+      <div className={cn("flex flex-col items-center gap-3", className)}>
+        <div className="flex gap-1">
+          {[0, 1, 2, 3, 4].map((i) => (
+            <motion.div
+              key={i}
+              className="w-1 bg-gradient-to-t from-zion-cyan to-zion-purple rounded-full"
+              style={{ height: `${(i + 1) * 8}px` }}
+              animate={{
+                scaleY: [1, 1.5, 1],
+                opacity: [0.5, 1, 0.5]
+              }}
+              transition={{
+                duration: 0.8,
+                repeat: Infinity,
+                delay: i * 0.1,
+                ease: "easeInOut"
+              }}
+            />
+          ))}
+        </div>
+        {text && (
+          <motion.p
+            className={cn("text-zion-slate-light font-medium", textSizes[size])}
+            animate={{ opacity: [0.5, 1, 0.5] }}
+            transition={{ duration: 2, repeat: Infinity }}
+          >
+            {text}
+          </motion.p>
         )}
-        animate={{ rotate: 360 }}
-        transition={{
-          duration: 1,
-          repeat: Infinity,
-          ease: "linear"
-        }}
-      />
+      </div>
+    );
+  }
+
+  // Default spinner
+  return (
+    <div className={cn("flex flex-col items-center gap-3", className)}>
+      <div className={cn("relative", sizeClasses[size])}>
+        <motion.div
+          className="absolute inset-0 rounded-full border-2 border-zion-cyan/20"
+        />
+        <motion.div
+          className="absolute inset-0 rounded-full border-2 border-transparent border-t-zion-cyan"
+          animate={{ rotate: 360 }}
+          transition={{
+            duration: 1,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+        />
+        <motion.div
+          className="absolute inset-0 rounded-full border-2 border-transparent border-t-zion-purple"
+          animate={{ rotate: -360 }}
+          transition={{
+            duration: 1.5,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+        />
+      </div>
       {text && (
-        <motion.p 
-          className={cn(
-            "mt-3 text-zion-slate-light text-center",
-            textSizeClasses[size]
-          )}
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 0.5 }}
+        <motion.p
+          className={cn("text-zion-slate-light font-medium", textSizes[size])}
+          animate={{ opacity: [0.5, 1, 0.5] }}
+          transition={{ duration: 2, repeat: Infinity }}
         >
           {text}
         </motion.p>
@@ -112,28 +179,30 @@ export function LoadingSpinner({
   );
 }
 
-export function PageLoader() {
+// Full page loading component
+export function FullPageLoader({ text = "Loading..." }: { text?: string }) {
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center">
+    <div className="fixed inset-0 bg-zion-blue-dark/95 backdrop-blur-sm flex items-center justify-center z-50">
       <div className="text-center">
-        <LoadingSpinner size="xl" text="Loading amazing content..." />
+        <LoadingSpinner size="xl" text={text} variant="pulse" />
+        <motion.div
+          className="mt-8 text-zion-slate-light text-sm"
+          animate={{ opacity: [0.5, 1, 0.5] }}
+          transition={{ duration: 2, repeat: Infinity }}
+        >
+          Please wait while we prepare your experience...
+        </motion.div>
       </div>
     </div>
   );
 }
 
-export function SectionLoader() {
+// Inline loading component
+export function InlineLoader({ text, size = "sm" }: { text?: string; size?: "sm" | "md" | "lg" }) {
   return (
-    <div className="py-20 flex items-center justify-center">
-      <LoadingSpinner size="lg" text="Loading section..." />
-    </div>
-  );
-}
-
-export function CardLoader() {
-  return (
-    <div className="p-8 flex items-center justify-center">
-      <LoadingSpinner size="md" text="Loading..." />
+    <div className="inline-flex items-center gap-2">
+      <LoadingSpinner size={size} variant="dots" />
+      {text && <span className="text-zion-slate-light text-sm">{text}</span>}
     </div>
   );
 }

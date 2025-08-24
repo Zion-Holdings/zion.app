@@ -1,538 +1,669 @@
-import { ProductListing } from "@/types/listings";
+export interface EnhancedService {
+  id: string;
+  title: string;
+  description: string;
+  category: string;
+  subcategory: string;
+  price: number;
+  currency: string;
+  pricingModel: 'one-time' | 'monthly' | 'hourly' | 'project-based';
+  features: string[];
+  benefits: string[];
+  useCases: string[];
+  marketPrice: string;
+  contactInfo: {
+    phone: string;
+    email: string;
+    website: string;
+  };
+  tags: string[];
+  author: {
+    name: string;
+    id: string;
+    avatarUrl?: string;
+  };
+  images: string[];
+  createdAt: string;
+  aiScore: number;
+  rating: number;
+  reviewCount: number;
+  availability: 'immediate' | '1-2 weeks' | '1 month' | 'custom';
+  supportLevel: 'basic' | 'standard' | 'premium' | 'enterprise';
+}
 
-// Enhanced Micro SAAS Services with Real Market Solutions
-export const ENHANCED_SERVICES: ProductListing[] = [
+export const ENHANCED_SERVICES: EnhancedService[] = [
   // AI & Machine Learning Services
   {
-    id: "ai-automation-suite",
-    title: "AI Workflow Automation Suite",
-    description: "Complete automation platform for business processes using AI. Includes workflow design, RPA integration, and intelligent decision-making capabilities. Perfect for SMEs looking to automate repetitive tasks.",
-    category: "AI Automation",
-    price: 299,
+    id: "ai-ml-1",
+    title: "AI-Powered Customer Service Automation",
+    description: "Implement intelligent chatbots and automated customer service solutions using advanced NLP and machine learning to handle 80% of customer inquiries automatically.",
+    category: "AI & Machine Learning",
+    subcategory: "Customer Service",
+    price: 2500,
     currency: "$",
-    tags: ["Workflow Automation", "RPA", "Business Process", "AI Integration"],
+    pricingModel: "monthly",
+    features: [
+      "Multi-language support",
+      "24/7 availability",
+      "Seamless human handoff",
+      "Analytics dashboard",
+      "Custom training on your data",
+      "Integration with CRM systems"
+    ],
+    benefits: [
+      "Reduce customer service costs by 60%",
+      "Improve response time from hours to seconds",
+      "Handle unlimited customer inquiries simultaneously",
+      "Provide consistent service quality",
+      "Gather valuable customer insights"
+    ],
+    useCases: [
+      "E-commerce customer support",
+      "SaaS product help desks",
+      "Financial services inquiries",
+      "Healthcare appointment scheduling",
+      "Real estate lead qualification"
+    ],
+    marketPrice: "$2,000 - $5,000/month",
+    contactInfo: {
+      phone: "+1 302 464 0950",
+      email: "kleber@ziontechgroup.com",
+      website: "https://ziontechgroup.com/ai-customer-service"
+    },
+    tags: ["AI", "Chatbot", "NLP", "Customer Service", "Automation"],
     author: {
       name: "Zion Tech Group",
-      id: "zion-tech",
-      email: "kleber@ziontechgroup.com",
-      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100",
+      id: "zion-tech-group",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
     },
-    images: ["https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=800&h=500"],
+    images: ["https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&h=500"],
     createdAt: "2024-01-15T10:00:00.000Z",
-    aiScore: 96,
-    rating: 4.9,
-    reviewCount: 156,
-    featured: true,
-    location: "Global",
-    availability: "Immediate",
-  },
-  {
-    id: "ai-content-optimizer",
-    title: "AI Content Optimization Platform",
-    description: "Advanced content optimization tool using NLP and machine learning. Optimizes SEO, readability, engagement, and conversion rates. Includes A/B testing and performance analytics.",
-    category: "Content AI",
-    price: 199,
-    currency: "$",
-    tags: ["Content Optimization", "SEO", "NLP", "Analytics"],
-    author: {
-      name: "Zion Tech Group",
-      id: "zion-tech",
-      email: "kleber@ziontechgroup.com",
-    },
-    images: ["https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-01-20T14:30:00.000Z",
-    aiScore: 94,
-    rating: 4.8,
-    reviewCount: 89,
-    location: "Global",
-    availability: "Immediate",
-  },
-  {
-    id: "ai-customer-insights",
-    title: "AI Customer Behavior Analytics",
-    description: "Real-time customer behavior analysis using AI. Tracks user journeys, predicts churn, identifies upsell opportunities, and provides actionable insights for business growth.",
-    category: "Customer Analytics",
-    price: 399,
-    currency: "$",
-    tags: ["Customer Analytics", "Behavior Tracking", "Predictive Analytics", "Business Intelligence"],
-    author: {
-      name: "Zion Tech Group",
-      id: "zion-tech",
-      email: "kleber@ziontechgroup.com",
-    },
-    images: ["https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-01-25T09:15:00.000Z",
-    aiScore: 93,
-    rating: 4.7,
-    reviewCount: 67,
-    location: "Global",
-    availability: "1-2 Weeks",
-  },
-
-  // Cybersecurity & Compliance Services
-  {
-    id: "ai-threat-detection",
-    title: "AI-Powered Threat Detection System",
-    description: "Advanced cybersecurity solution using machine learning to detect and prevent threats in real-time. Includes anomaly detection, behavioral analysis, and automated response capabilities.",
-    category: "Cybersecurity",
-    price: 599,
-    currency: "$",
-    tags: ["Threat Detection", "Machine Learning", "Cybersecurity", "Real-time Monitoring"],
-    author: {
-      name: "Zion Tech Group",
-      id: "zion-tech",
-      email: "kleber@ziontechgroup.com",
-    },
-    images: ["https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-02-01T11:45:00.000Z",
     aiScore: 95,
     rating: 4.9,
-    reviewCount: 134,
-    featured: true,
-    location: "Global",
-    availability: "Immediate",
+    reviewCount: 156,
+    availability: "1-2 weeks",
+    supportLevel: "premium"
   },
   {
-    id: "compliance-automation",
-    title: "Regulatory Compliance Automation",
-    description: "Automated compliance management system for GDPR, HIPAA, SOX, and other regulations. Includes audit trails, risk assessment, and automated reporting to ensure continuous compliance.",
-    category: "Compliance",
-    price: 449,
+    id: "ai-ml-2",
+    title: "Predictive Analytics & Business Intelligence",
+    description: "Transform your business data into actionable insights with advanced predictive analytics, forecasting models, and real-time business intelligence dashboards.",
+    category: "AI & Machine Learning",
+    subcategory: "Analytics",
+    price: 3500,
     currency: "$",
-    tags: ["Compliance", "GDPR", "HIPAA", "Automation", "Risk Management"],
+    pricingModel: "monthly",
+    features: [
+      "Real-time data processing",
+      "Custom ML model development",
+      "Interactive dashboards",
+      "Automated reporting",
+      "Anomaly detection",
+      "Forecasting algorithms"
+    ],
+    benefits: [
+      "Increase revenue by 15-25% through better decision making",
+      "Reduce operational costs by identifying inefficiencies",
+      "Predict market trends and customer behavior",
+      "Optimize inventory and resource allocation",
+      "Improve customer retention strategies"
+    ],
+    useCases: [
+      "Sales forecasting and pipeline analysis",
+      "Inventory optimization",
+      "Customer churn prediction",
+      "Market trend analysis",
+      "Operational efficiency optimization"
+    ],
+    marketPrice: "$3,000 - $8,000/month",
+    contactInfo: {
+      phone: "+1 302 464 0950",
+      email: "kleber@ziontechgroup.com",
+      website: "https://ziontechgroup.com/predictive-analytics"
+    },
+    tags: ["AI", "Analytics", "Business Intelligence", "Machine Learning", "Forecasting"],
     author: {
       name: "Zion Tech Group",
-      id: "zion-tech",
+      id: "zion-tech-group",
+      avatarUrl: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=100&h=100"
+    },
+    images: ["https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&h=500"],
+    createdAt: "2024-01-20T14:30:00.000Z",
+    aiScore: 92,
+    rating: 4.8,
+    reviewCount: 89,
+    availability: "1-2 weeks",
+    supportLevel: "premium"
+  },
+  {
+    id: "ai-ml-3",
+    title: "Computer Vision & Image Recognition Solutions",
+    description: "Implement advanced computer vision solutions for quality control, security monitoring, and automated image analysis across various industries.",
+    category: "AI & Machine Learning",
+    subcategory: "Computer Vision",
+    price: 4500,
+    currency: "$",
+    pricingModel: "project-based",
+    features: [
+      "Custom model training",
+      "Real-time processing",
+      "Multi-object detection",
+      "Quality control automation",
+      "Security monitoring",
+      "API integration"
+    ],
+    benefits: [
+      "Reduce quality control costs by 70%",
+      "Improve product consistency",
+      "24/7 automated monitoring",
+      "Reduce human error in visual tasks",
+      "Scalable image processing capabilities"
+    ],
+    useCases: [
+      "Manufacturing quality control",
+      "Retail inventory management",
+      "Security surveillance systems",
+      "Medical image analysis",
+      "Agricultural crop monitoring"
+    ],
+    marketPrice: "$4,000 - $15,000/project",
+    contactInfo: {
+      phone: "+1 302 464 0950",
       email: "kleber@ziontechgroup.com",
+      website: "https://ziontechgroup.com/computer-vision"
+    },
+    tags: ["AI", "Computer Vision", "Image Recognition", "Quality Control", "Automation"],
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      avatarUrl: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=100&h=100"
+    },
+    images: ["https://images.unsplash.com/photo-1516192518150-0d8fee5425e3?auto=format&fit=crop&w=800&h=500"],
+    createdAt: "2024-01-25T09:15:00.000Z",
+    aiScore: 94,
+    rating: 4.9,
+    reviewCount: 67,
+    availability: "1 month",
+    supportLevel: "enterprise"
+  },
+
+  // Cybersecurity Services
+  {
+    id: "cyber-1",
+    title: "Zero-Trust Security Architecture Implementation",
+    description: "Design and implement comprehensive zero-trust security frameworks that protect your organization from modern cyber threats with continuous verification and least-privilege access.",
+    category: "Cybersecurity",
+    subcategory: "Architecture",
+    price: 8000,
+    currency: "$",
+    pricingModel: "project-based",
+    features: [
+      "Identity and access management",
+      "Network segmentation",
+      "Continuous monitoring",
+      "Threat detection",
+      "Compliance reporting",
+      "Security training"
+    ],
+    benefits: [
+      "Reduce security breach risk by 90%",
+      "Meet industry compliance requirements",
+      "Improve audit readiness",
+      "Protect against insider threats",
+      "Enable secure remote work"
+    ],
+    useCases: [
+      "Financial services security",
+      "Healthcare data protection",
+      "Government contractor compliance",
+      "Enterprise network security",
+      "Cloud security implementation"
+    ],
+    marketPrice: "$7,000 - $25,000/project",
+    contactInfo: {
+      phone: "+1 302 464 0950",
+      email: "kleber@ziontechgroup.com",
+      website: "https://ziontechgroup.com/zero-trust-security"
+    },
+    tags: ["Cybersecurity", "Zero-Trust", "Compliance", "Network Security", "Access Control"],
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      avatarUrl: "https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=100&h=100"
     },
     images: ["https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-02-05T16:20:00.000Z",
-    aiScore: 91,
-    rating: 4.6,
-    reviewCount: 78,
-    location: "Global",
-    availability: "2-3 Weeks",
-  },
-
-  // Data & Analytics Services
-  {
-    id: "data-pipeline-automation",
-    title: "Data Pipeline Automation Platform",
-    description: "End-to-end data pipeline automation with ETL/ELT capabilities, data quality monitoring, and real-time processing. Supports multiple data sources and cloud platforms.",
-    category: "Data Engineering",
-    price: 349,
-    currency: "$",
-    tags: ["Data Pipeline", "ETL/ELT", "Data Quality", "Real-time Processing"],
-    author: {
-      name: "Zion Tech Group",
-      id: "zion-tech",
-      email: "kleber@ziontechgroup.com",
-    },
-    images: ["https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-02-10T13:10:00.000Z",
-    aiScore: 92,
-    rating: 4.8,
-    reviewCount: 92,
-    location: "Global",
-    availability: "1-2 Weeks",
-  },
-  {
-    id: "predictive-maintenance",
-    title: "IoT Predictive Maintenance System",
-    description: "AI-powered predictive maintenance solution for IoT devices and industrial equipment. Reduces downtime, optimizes maintenance schedules, and saves operational costs.",
-    category: "IoT Analytics",
-    price: 499,
-    currency: "$",
-    tags: ["IoT", "Predictive Maintenance", "Industrial AI", "Cost Optimization"],
-    author: {
-      name: "Zion Tech Group",
-      id: "zion-tech",
-      email: "kleber@ziontechgroup.com",
-    },
-    images: ["https://images.unsplash.com/photo-1591405351990-4726e331f141?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-02-15T10:30:00.000Z",
-    aiScore: 94,
-    rating: 4.7,
-    reviewCount: 56,
-    location: "Global",
-    availability: "2-3 Weeks",
-  },
-
-  // Business Process Services
-  {
-    id: "invoice-automation",
-    title: "AI Invoice Processing & Automation",
-    description: "Intelligent invoice processing system that automatically extracts data, validates information, and processes payments. Reduces manual work by 90% and improves accuracy.",
-    category: "Business Automation",
-    price: 249,
-    currency: "$",
-    tags: ["Invoice Processing", "OCR", "Payment Automation", "Data Extraction"],
-    author: {
-      name: "Zion Tech Group",
-      id: "zion-tech",
-      email: "kleber@ziontechgroup.com",
-    },
-    images: ["https://images.unsplash.com/photo-1506765515384-028b60a970df?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-02-20T15:45:00.000Z",
-    aiScore: 93,
-    rating: 4.8,
-    reviewCount: 123,
-    location: "Global",
-    availability: "Immediate",
-  },
-  {
-    id: "hr-automation-suite",
-    title: "HR Process Automation Suite",
-    description: "Comprehensive HR automation platform including recruitment, onboarding, performance management, and employee self-service. Streamlines HR operations and improves employee experience.",
-    category: "HR Tech",
-    price: 399,
-    currency: "$",
-    tags: ["HR Automation", "Recruitment", "Onboarding", "Performance Management"],
-    author: {
-      name: "Zion Tech Group",
-      id: "zion-tech",
-      email: "kleber@ziontechgroup.com",
-    },
-    images: ["https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-02-25T12:00:00.000Z",
-    aiScore: 90,
-    rating: 4.6,
-    reviewCount: 87,
-    location: "Global",
-    availability: "2-3 Weeks",
-  },
-
-  // Marketing & Sales Services
-  {
-    id: "ai-marketing-automation",
-    title: "AI Marketing Automation Platform",
-    description: "Intelligent marketing automation with AI-driven personalization, campaign optimization, and lead scoring. Increases conversion rates and ROI through data-driven insights.",
-    category: "Marketing AI",
-    price: 299,
-    currency: "$",
-    tags: ["Marketing Automation", "Personalization", "Lead Scoring", "Campaign Optimization"],
-    author: {
-      name: "Zion Tech Group",
-      id: "zion-tech",
-      email: "kleber@ziontechgroup.com",
-    },
-    images: ["https://images.unsplash.com/photo-1557838923-2985c318be48?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-03-01T09:30:00.000Z",
-    aiScore: 95,
-    rating: 4.9,
-    reviewCount: 145,
-    featured: true,
-    location: "Global",
-    availability: "Immediate",
-  },
-  {
-    id: "sales-intelligence-platform",
-    title: "AI Sales Intelligence Platform",
-    description: "Advanced sales intelligence tool with lead generation, prospect research, and sales forecasting. Uses AI to identify high-value opportunities and optimize sales strategies.",
-    category: "Sales Intelligence",
-    price: 449,
-    currency: "$",
-    tags: ["Sales Intelligence", "Lead Generation", "Prospect Research", "Sales Forecasting"],
-    author: {
-      name: "Zion Tech Group",
-      id: "zion-tech",
-      email: "kleber@ziontechgroup.com",
-    },
-    images: ["https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-03-05T14:15:00.000Z",
-    aiScore: 92,
-    rating: 4.7,
-    reviewCount: 78,
-    location: "Global",
-    availability: "1-2 Weeks",
-  },
-
-  // Financial Services
-  {
-    id: "ai-financial-advisor",
-    title: "AI Financial Advisory Platform",
-    description: "Intelligent financial advisory system providing personalized investment recommendations, portfolio optimization, and risk assessment. Helps users make informed financial decisions.",
-    category: "FinTech",
-    price: 199,
-    currency: "$",
-    tags: ["Financial Advisory", "Investment Recommendations", "Portfolio Optimization", "Risk Assessment"],
-    author: {
-      name: "Zion Tech Group",
-      id: "zion-tech",
-      email: "kleber@ziontechgroup.com",
-    },
-    images: ["https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-03-10T11:20:00.000Z",
-    aiScore: 94,
-    rating: 4.8,
-    reviewCount: 112,
-    location: "Global",
-    availability: "Immediate",
-  },
-  {
-    id: "fraud-detection-system",
-    title: "Real-time Fraud Detection System",
-    description: "Advanced fraud detection using machine learning algorithms to identify suspicious transactions in real-time. Protects businesses from financial losses and maintains customer trust.",
-    category: "Fraud Prevention",
-    price: 599,
-    currency: "$",
-    tags: ["Fraud Detection", "Real-time Monitoring", "Machine Learning", "Financial Security"],
-    author: {
-      name: "Zion Tech Group",
-      id: "zion-tech",
-      email: "kleber@ziontechgroup.com",
-    },
-    images: ["https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-03-15T16:45:00.000Z",
+    createdAt: "2024-01-18T16:45:00.000Z",
     aiScore: 96,
     rating: 4.9,
-    reviewCount: 89,
-    featured: true,
-    location: "Global",
-    availability: "Immediate",
-  },
-
-  // Healthcare & Life Sciences
-  {
-    id: "healthcare-analytics",
-    title: "Healthcare Analytics & Insights Platform",
-    description: "Comprehensive healthcare analytics platform providing patient insights, treatment optimization, and operational efficiency. HIPAA-compliant with advanced data visualization.",
-    category: "Healthcare Tech",
-    price: 799,
-    currency: "$",
-    tags: ["Healthcare Analytics", "Patient Insights", "Treatment Optimization", "HIPAA Compliant"],
-    author: {
-      name: "Zion Tech Group",
-      id: "zion-tech",
-      email: "kleber@ziontechgroup.com",
-    },
-    images: ["https://images.unsplash.com/photo-1576091160399-112c8b76a755?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-03-20T10:10:00.000Z",
-    aiScore: 95,
-    rating: 4.8,
-    reviewCount: 67,
-    location: "Global",
-    availability: "3-4 Weeks",
+    reviewCount: 134,
+    availability: "1 month",
+    supportLevel: "enterprise"
   },
   {
-    id: "drug-discovery-ai",
-    title: "AI Drug Discovery Platform",
-    description: "Revolutionary AI platform for drug discovery and development. Accelerates research timelines, reduces costs, and improves success rates in pharmaceutical development.",
-    category: "Life Sciences",
-    price: 1499,
+    id: "cyber-2",
+    title: "Penetration Testing & Vulnerability Assessment",
+    description: "Comprehensive security testing services including penetration testing, vulnerability assessments, and security audits to identify and remediate security weaknesses.",
+    category: "Cybersecurity",
+    subcategory: "Testing",
+    price: 3500,
     currency: "$",
-    tags: ["Drug Discovery", "Pharmaceutical AI", "Research Acceleration", "Cost Reduction"],
+    pricingModel: "one-time",
+    features: [
+      "External and internal testing",
+      "Web application security",
+      "Network infrastructure testing",
+      "Social engineering assessment",
+      "Detailed remediation report",
+      "Follow-up verification"
+    ],
+    benefits: [
+      "Identify security vulnerabilities before attackers",
+      "Meet compliance requirements",
+      "Improve security posture",
+      "Protect customer data",
+      "Reduce cyber insurance costs"
+    ],
+    useCases: [
+      "Annual security audits",
+      "Compliance requirements",
+      "Pre-deployment testing",
+      "Merger and acquisition due diligence",
+      "Incident response preparation"
+    ],
+    marketPrice: "$3,000 - $10,000/assessment",
+    contactInfo: {
+      phone: "+1 302 464 0950",
+      email: "kleber@ziontechgroup.com",
+      website: "https://ziontechgroup.com/penetration-testing"
+    },
+    tags: ["Cybersecurity", "Penetration Testing", "Vulnerability Assessment", "Security Audit", "Compliance"],
     author: {
       name: "Zion Tech Group",
-      id: "zion-tech",
-      email: "kleber@ziontechgroup.com",
+      id: "zion-tech-group",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
     },
-    images: ["https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-03-25T13:30:00.000Z",
-    aiScore: 97,
-    rating: 4.9,
-    reviewCount: 34,
-    featured: true,
-    location: "Global",
-    availability: "4-6 Weeks",
-  },
-
-  // Education & Training
-  {
-    id: "adaptive-learning-platform",
-    title: "AI-Powered Adaptive Learning Platform",
-    description: "Personalized learning experience that adapts to individual student needs. Uses AI to create custom learning paths, track progress, and optimize educational outcomes.",
-    category: "EdTech",
-    price: 299,
-    currency: "$",
-    tags: ["Adaptive Learning", "Personalized Education", "Progress Tracking", "Student Analytics"],
-    author: {
-      name: "Zion Tech Group",
-      id: "zion-tech",
-      email: "kleber@ziontechgroup.com",
-    },
-    images: ["https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-03-30T09:45:00.000Z",
+    images: ["https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=800&h=500"],
+    createdAt: "2024-01-22T11:20:00.000Z",
     aiScore: 93,
-    rating: 4.7,
-    reviewCount: 156,
-    location: "Global",
-    availability: "2-3 Weeks",
-  },
-  {
-    id: "skills-assessment-ai",
-    title: "AI Skills Assessment & Certification",
-    description: "Intelligent skills assessment platform with automated testing, certification management, and skill gap analysis. Perfect for corporate training and professional development.",
-    category: "Skills Assessment",
-    price: 199,
-    currency: "$",
-    tags: ["Skills Assessment", "Certification", "Skill Gap Analysis", "Corporate Training"],
-    author: {
-      name: "Zion Tech Group",
-      id: "zion-tech",
-      email: "kleber@ziontechgroup.com",
-    },
-    images: ["https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-04-01T15:20:00.000Z",
-    aiScore: 91,
-    rating: 4.6,
-    reviewCount: 89,
-    location: "Global",
-    availability: "Immediate",
-  },
-
-  // Supply Chain & Logistics
-  {
-    id: "supply-chain-optimization",
-    title: "AI Supply Chain Optimization Platform",
-    description: "Intelligent supply chain management with demand forecasting, inventory optimization, and route planning. Reduces costs and improves efficiency across the entire supply chain.",
-    category: "Supply Chain",
-    price: 599,
-    currency: "$",
-    tags: ["Supply Chain", "Demand Forecasting", "Inventory Optimization", "Route Planning"],
-    author: {
-      name: "Zion Tech Group",
-      id: "zion-tech",
-      email: "kleber@ziontechgroup.com",
-    },
-    images: ["https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-04-05T12:00:00.000Z",
-    aiScore: 94,
     rating: 4.8,
     reviewCount: 78,
-    location: "Global",
-    availability: "2-3 Weeks",
-  },
-  {
-    id: "logistics-automation",
-    title: "Logistics Automation & Tracking System",
-    description: "End-to-end logistics automation with real-time tracking, automated dispatching, and intelligent route optimization. Streamlines operations and improves customer satisfaction.",
-    category: "Logistics",
-    price: 449,
-    currency: "$",
-    tags: ["Logistics", "Real-time Tracking", "Route Optimization", "Automated Dispatching"],
-    author: {
-      name: "Zion Tech Group",
-      id: "zion-tech",
-      email: "kleber@ziontechgroup.com",
-    },
-    images: ["https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-04-10T14:30:00.000Z",
-    aiScore: 92,
-    rating: 4.7,
-    reviewCount: 56,
-    location: "Global",
-    availability: "1-2 Weeks",
+    availability: "1-2 weeks",
+    supportLevel: "standard"
   },
 
-  // Real Estate & Property
+  // Cloud & DevOps Services
   {
-    id: "real-estate-analytics",
-    title: "AI Real Estate Analytics Platform",
-    description: "Comprehensive real estate analytics with market trends, property valuation, and investment analysis. Helps investors and agents make data-driven decisions.",
-    category: "Real Estate Tech",
-    price: 399,
+    id: "cloud-1",
+    title: "Multi-Cloud Infrastructure Management",
+    description: "Comprehensive multi-cloud strategy and management services to optimize costs, improve performance, and ensure business continuity across AWS, Azure, and Google Cloud.",
+    category: "Cloud & DevOps",
+    subcategory: "Infrastructure",
+    price: 5000,
     currency: "$",
-    tags: ["Real Estate", "Market Analytics", "Property Valuation", "Investment Analysis"],
+    pricingModel: "monthly",
+    features: [
+      "Multi-cloud architecture design",
+      "Cost optimization strategies",
+      "Performance monitoring",
+      "Disaster recovery planning",
+      "Security compliance",
+      "24/7 support"
+    ],
+    benefits: [
+      "Reduce cloud costs by 20-40%",
+      "Improve application performance",
+      "Enhance disaster recovery capabilities",
+      "Avoid vendor lock-in",
+      "Optimize resource utilization"
+    ],
+    useCases: [
+      "Enterprise cloud migration",
+      "Multi-cloud strategy development",
+      "Cost optimization initiatives",
+      "Disaster recovery implementation",
+      "Performance optimization"
+    ],
+    marketPrice: "$4,000 - $12,000/month",
+    contactInfo: {
+      phone: "+1 302 464 0950",
+      email: "kleber@ziontechgroup.com",
+      website: "https://ziontechgroup.com/multi-cloud-management"
+    },
+    tags: ["Cloud", "DevOps", "AWS", "Azure", "Google Cloud", "Infrastructure"],
     author: {
       name: "Zion Tech Group",
-      id: "zion-tech",
-      email: "kleber@ziontechgroup.com",
+      id: "zion-tech-group",
+      avatarUrl: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=100&h=100"
     },
-    images: ["https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-04-15T10:15:00.000Z",
+    images: ["https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&h=500"],
+    createdAt: "2024-01-16T13:15:00.000Z",
+    aiScore: 91,
+    rating: 4.7,
+    reviewCount: 112,
+    availability: "1-2 weeks",
+    supportLevel: "premium"
+  },
+  {
+    id: "cloud-2",
+    title: "DevOps Automation & CI/CD Pipeline",
+    description: "Implement automated DevOps practices and CI/CD pipelines to accelerate software delivery, improve code quality, and reduce deployment risks.",
+    category: "Cloud & DevOps",
+    subcategory: "Automation",
+    price: 4000,
+    currency: "$",
+    pricingModel: "monthly",
+    features: [
+      "CI/CD pipeline setup",
+      "Automated testing",
+      "Infrastructure as code",
+      "Monitoring and alerting",
+      "Security scanning",
+      "Performance optimization"
+    ],
+    benefits: [
+      "Reduce deployment time by 80%",
+      "Improve code quality and reliability",
+      "Enable faster feature delivery",
+      "Reduce human error in deployments",
+      "Improve team productivity"
+    ],
+    useCases: [
+      "Software development teams",
+      "Digital transformation projects",
+      "Microservices architecture",
+      "Container orchestration",
+      "Legacy system modernization"
+    ],
+    marketPrice: "$3,500 - $8,000/month",
+    contactInfo: {
+      phone: "+1 302 464 0950",
+      email: "kleber@ziontechgroup.com",
+      website: "https://ziontechgroup.com/devops-automation"
+    },
+    tags: ["DevOps", "CI/CD", "Automation", "Infrastructure as Code", "Monitoring"],
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
+    },
+    images: ["https://images.unsplash.com/photo-1593642532973-d31b6557fa68?auto=format&fit=crop&w=800&h=500"],
+    createdAt: "2024-01-19T15:30:00.000Z",
+    aiScore: 89,
+    rating: 4.6,
+    reviewCount: 95,
+    availability: "1-2 weeks",
+    supportLevel: "standard"
+  },
+
+  // Business Intelligence & Analytics
+  {
+    id: "bi-1",
+    title: "Real-Time Business Intelligence Dashboard",
+    description: "Custom business intelligence dashboards that provide real-time insights into key performance indicators, enabling data-driven decision making across your organization.",
+    category: "Business Intelligence",
+    subcategory: "Dashboards",
+    price: 3000,
+    currency: "$",
+    pricingModel: "monthly",
+    features: [
+      "Real-time data visualization",
+      "Custom KPI tracking",
+      "Interactive charts and graphs",
+      "Mobile-responsive design",
+      "Automated reporting",
+      "Data integration services"
+    ],
+    benefits: [
+      "Improve decision-making speed by 60%",
+      "Identify business opportunities faster",
+      "Monitor performance in real-time",
+      "Reduce manual reporting time",
+      "Enable data-driven culture"
+    ],
+    useCases: [
+      "Sales performance monitoring",
+      "Financial reporting and analysis",
+      "Operational efficiency tracking",
+      "Customer behavior analysis",
+      "Supply chain optimization"
+    ],
+    marketPrice: "$2,500 - $6,000/month",
+    contactInfo: {
+      phone: "+1 302 464 0950",
+      email: "kleber@ziontechgroup.com",
+      website: "https://ziontechgroup.com/bi-dashboards"
+    },
+    tags: ["Business Intelligence", "Analytics", "Dashboards", "KPI", "Real-time"],
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      avatarUrl: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=100&h=100"
+    },
+    images: ["https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&h=500"],
+    createdAt: "2024-01-17T12:00:00.000Z",
+    aiScore: 88,
+    rating: 4.7,
+    reviewCount: 73,
+    availability: "1-2 weeks",
+    supportLevel: "standard"
+  },
+
+  // Digital Transformation Services
+  {
+    id: "digital-1",
+    title: "Legacy System Modernization",
+    description: "Transform your outdated legacy systems into modern, cloud-native applications that improve efficiency, reduce costs, and enable digital innovation.",
+    category: "Digital Transformation",
+    subcategory: "Modernization",
+    price: 15000,
+    currency: "$",
+    pricingModel: "project-based",
+    features: [
+      "System assessment and planning",
+      "Cloud migration strategy",
+      "API development and integration",
+      "Data migration services",
+      "User training and change management",
+      "Ongoing support and maintenance"
+    ],
+    benefits: [
+      "Reduce operational costs by 30-50%",
+      "Improve system performance and reliability",
+      "Enable new digital capabilities",
+      "Enhance user experience",
+      "Reduce security risks"
+    ],
+    useCases: [
+      "ERP system modernization",
+      "Legacy database migration",
+      "Mainframe to cloud migration",
+      "Custom application modernization",
+      "Integration platform development"
+    ],
+    marketPrice: "$15,000 - $100,000/project",
+    contactInfo: {
+      phone: "+1 302 464 0950",
+      email: "kleber@ziontechgroup.com",
+      website: "https://ziontechgroup.com/legacy-modernization"
+    },
+    tags: ["Digital Transformation", "Legacy Systems", "Cloud Migration", "API Development", "Modernization"],
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      avatarUrl: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=100&h=100"
+    },
+    images: ["https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&h=500"],
+    createdAt: "2024-01-21T10:45:00.000Z",
+    aiScore: 87,
+    rating: 4.6,
+    reviewCount: 45,
+    availability: "1 month",
+    supportLevel: "enterprise"
+  },
+
+  // Specialized Industry Solutions
+  {
+    id: "industry-1",
+    title: "Healthcare IT Compliance & Security",
+    description: "Specialized IT services for healthcare organizations, ensuring HIPAA compliance, data security, and seamless integration of medical systems while maintaining patient privacy.",
+    category: "Healthcare IT",
+    subcategory: "Compliance",
+    price: 6000,
+    currency: "$",
+    pricingModel: "monthly",
+    features: [
+      "HIPAA compliance auditing",
+      "Medical device security",
+      "Electronic health record integration",
+      "Patient data protection",
+      "Staff training programs",
+      "Incident response planning"
+    ],
+    benefits: [
+      "Ensure HIPAA compliance and avoid penalties",
+      "Protect sensitive patient information",
+      "Improve healthcare delivery efficiency",
+      "Reduce security breach risks",
+      "Enable telemedicine capabilities"
+    ],
+    useCases: [
+      "Hospitals and medical centers",
+      "Private medical practices",
+      "Healthcare technology companies",
+      "Medical device manufacturers",
+      "Healthcare consulting firms"
+    ],
+    marketPrice: "$5,000 - $15,000/month",
+    contactInfo: {
+      phone: "+1 302 464 0950",
+      email: "kleber@ziontechgroup.com",
+      website: "https://ziontechgroup.com/healthcare-it"
+    },
+    tags: ["Healthcare", "HIPAA", "Compliance", "Security", "Medical IT"],
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      avatarUrl: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=100&h=100"
+    },
+    images: ["https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=800&h=500"],
+    createdAt: "2024-01-23T14:20:00.000Z",
+    aiScore: 95,
+    rating: 4.9,
+    reviewCount: 89,
+    availability: "1-2 weeks",
+    supportLevel: "premium"
+  },
+  {
+    id: "industry-2",
+    title: "Financial Services Technology Solutions",
+    description: "Comprehensive IT solutions for financial institutions, including regulatory compliance, fraud detection, payment processing, and digital banking platforms.",
+    category: "Financial Services",
+    subcategory: "Technology",
+    price: 8000,
+    currency: "$",
+    pricingModel: "monthly",
+    features: [
+      "Regulatory compliance (SOX, PCI-DSS)",
+      "Fraud detection and prevention",
+      "Payment gateway integration",
+      "Digital banking platforms",
+      "Risk management systems",
+      "Audit trail and reporting"
+    ],
+    benefits: [
+      "Ensure regulatory compliance",
+      "Reduce fraud losses",
+      "Improve customer experience",
+      "Enable digital transformation",
+      "Reduce operational risks"
+    ],
+    useCases: [
+      "Banks and credit unions",
+      "Payment processors",
+      "Investment firms",
+      "Insurance companies",
+      "Fintech startups"
+    ],
+    marketPrice: "$7,000 - $20,000/month",
+    contactInfo: {
+      phone: "+1 302 464 0950",
+      email: "kleber@ziontechgroup.com",
+      website: "https://ziontechgroup.com/financial-services"
+    },
+    tags: ["Financial Services", "Compliance", "Fraud Detection", "Digital Banking", "Regulatory"],
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      avatarUrl: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=100&h=100"
+    },
+    images: ["https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&h=500"],
+    createdAt: "2024-01-24T11:30:00.000Z",
     aiScore: 93,
     rating: 4.8,
-    reviewCount: 123,
-    location: "Global",
-    availability: "Immediate",
-  },
-  {
-    id: "property-management-ai",
-    title: "AI Property Management System",
-    description: "Intelligent property management platform with tenant screening, maintenance scheduling, and financial reporting. Streamlines operations for property managers and landlords.",
-    category: "Property Management",
-    price: 299,
-    currency: "$",
-    tags: ["Property Management", "Tenant Screening", "Maintenance Scheduling", "Financial Reporting"],
-    author: {
-      name: "Zion Tech Group",
-      id: "zion-tech",
-      email: "kleber@ziontechgroup.com",
-    },
-    images: ["https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-04-20T16:45:00.000Z",
-    aiScore: 90,
-    rating: 4.6,
-    reviewCount: 89,
-    location: "Global",
-    availability: "2-3 Weeks",
-  },
-
-  // Legal & Compliance
-  {
-    id: "legal-document-ai",
-    title: "AI Legal Document Analysis",
-    description: "Advanced legal document analysis using NLP and machine learning. Automates contract review, legal research, and compliance checking to save time and reduce costs.",
-    category: "Legal Tech",
-    price: 499,
-    currency: "$",
-    tags: ["Legal Tech", "Document Analysis", "Contract Review", "Legal Research"],
-    author: {
-      name: "Zion Tech Group",
-      id: "zion-tech",
-      email: "kleber@ziontechgroup.com",
-    },
-    images: ["https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-04-25T11:30:00.000Z",
-    aiScore: 95,
-    rating: 4.8,
     reviewCount: 67,
-    location: "Global",
-    availability: "2-3 Weeks",
-  },
-  {
-    id: "intellectual-property-ai",
-    title: "AI Intellectual Property Management",
-    description: "Comprehensive IP management platform with patent analysis, trademark monitoring, and infringement detection. Protects and maximizes the value of intellectual property assets.",
-    category: "IP Management",
-    price: 599,
-    currency: "$",
-    tags: ["IP Management", "Patent Analysis", "Trademark Monitoring", "Infringement Detection"],
-    author: {
-      name: "Zion Tech Group",
-      id: "zion-tech",
-      email: "kleber@ziontechgroup.com",
-    },
-    images: ["https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-04-30T13:15:00.000Z",
-    aiScore: 94,
-    rating: 4.7,
-    reviewCount: 45,
-    location: "Global",
-    availability: "3-4 Weeks",
+    availability: "1 month",
+    supportLevel: "enterprise"
   }
 ];
 
-// Service Categories for Enhanced Organization
-export const ENHANCED_SERVICE_CATEGORIES = [
-  { label: 'AI & Machine Learning', value: 'ai-ml' },
-  { label: 'Cybersecurity & Compliance', value: 'cybersecurity' },
-  { label: 'Data & Analytics', value: 'data-analytics' },
-  { label: 'Business Process', value: 'business-process' },
-  { label: 'Marketing & Sales', value: 'marketing-sales' },
-  { label: 'Financial Services', value: 'fintech' },
-  { label: 'Healthcare & Life Sciences', value: 'healthcare' },
-  { label: 'Education & Training', value: 'edtech' },
-  { label: 'Supply Chain & Logistics', value: 'supply-chain' },
-  { label: 'Real Estate & Property', value: 'real-estate' },
-  { label: 'Legal & Compliance', value: 'legal-tech' },
+export const SERVICE_CATEGORIES = [
+  {
+    id: "ai-ml",
+    name: "AI & Machine Learning",
+    description: "Advanced artificial intelligence and machine learning solutions",
+    icon: "🤖",
+    services: ENHANCED_SERVICES.filter(s => s.category === "AI & Machine Learning")
+  },
+  {
+    id: "cybersecurity",
+    name: "Cybersecurity",
+    description: "Comprehensive security solutions and protection services",
+    icon: "🔒",
+    services: ENHANCED_SERVICES.filter(s => s.category === "Cybersecurity")
+  },
+  {
+    id: "cloud-devops",
+    name: "Cloud & DevOps",
+    description: "Cloud infrastructure and DevOps automation services",
+    icon: "☁️",
+    services: ENHANCED_SERVICES.filter(s => s.category === "Cloud & DevOps")
+  },
+  {
+    id: "business-intelligence",
+    name: "Business Intelligence",
+    description: "Data analytics and business intelligence solutions",
+    icon: "📊",
+    services: ENHANCED_SERVICES.filter(s => s.category === "Business Intelligence")
+  },
+  {
+    id: "digital-transformation",
+    name: "Digital Transformation",
+    description: "Legacy system modernization and digital innovation",
+    icon: "🚀",
+    services: ENHANCED_SERVICES.filter(s => s.category === "Digital Transformation")
+  },
+  {
+    id: "healthcare-it",
+    name: "Healthcare IT",
+    description: "Specialized IT solutions for healthcare organizations",
+    icon: "🏥",
+    services: ENHANCED_SERVICES.filter(s => s.category === "Healthcare IT")
+  },
+  {
+    id: "financial-services",
+    name: "Financial Services",
+    description: "Technology solutions for financial institutions",
+    icon: "💰",
+    services: ENHANCED_SERVICES.filter(s => s.category === "Financial Services")
+  }
 ];
 
-// Pricing Tiers for Different Business Sizes
-export const PRICING_TIERS = {
-  startup: { min: 99, max: 299, label: "Startup" },
-  smb: { min: 299, max: 799, label: "Small Business" },
-  enterprise: { min: 799, max: 1999, label: "Enterprise" },
-  custom: { min: 1999, max: 5000, label: "Custom Solutions" }
+export const getServiceByCategory = (categoryId: string) => {
+  return ENHANCED_SERVICES.filter(service => 
+    SERVICE_CATEGORIES.find(cat => cat.id === categoryId)?.services.includes(service)
+  );
+};
+
+export const getServiceById = (id: string) => {
+  return ENHANCED_SERVICES.find(service => service.id === id);
 };

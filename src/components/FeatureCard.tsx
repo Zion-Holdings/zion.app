@@ -1,46 +1,22 @@
-
-import { cn } from "@/lib/utils";
-import React from "react";
+import React from 'react';
 
 interface FeatureCardProps {
   title: string;
   description: string;
   icon: React.ReactNode;
   className?: string;
-  key?: string | number;
-  gradient?: string;
 }
 
-export function FeatureCard({ title, description, icon, className, gradient }: FeatureCardProps) {
+export function FeatureCard({ title, description, icon, className = '' }: FeatureCardProps) {
   return (
-    <div className={cn(
-      "flex items-start p-6 rounded-lg border border-zion-purple/20 hover:border-zion-purple/50 transition-all duration-300 relative overflow-hidden group",
-      className
-    )}>
-      {/* Gradient background overlay on hover */}
-      {gradient && (
-        <div className={cn(
-          "absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-10 transition-opacity duration-300",
-          gradient
-        )} />
-      )}
-      
-      <div className="relative z-10 flex items-start w-full">
-        <div className={cn(
-          "mr-4 text-zion-cyan p-3 rounded-lg bg-zion-blue-dark/50 group-hover:bg-zion-blue-dark/80 transition-all duration-300",
-          gradient && "group-hover:bg-white/10"
-        )}>
+    <div className={`bg-white/5 backdrop-blur-sm border border-zion-slate/20 rounded-xl p-6 hover:border-zion-cyan/40 transition-all duration-300 ${className}`}>
+      <div className="flex items-center space-x-3 mb-4">
+        <div className="text-zion-cyan text-xl">
           {icon}
         </div>
-        <div className="flex-1">
-          <h3 className="text-lg font-bold mb-3 text-white group-hover:text-zion-cyan transition-colors duration-300">
-            {title}
-          </h3>
-          <p className="text-zion-slate-light leading-relaxed group-hover:text-zion-slate-light/90 transition-colors duration-300">
-            {description}
-          </p>
-        </div>
+        <h3 className="text-lg font-semibold text-zion-slate-light">{title}</h3>
       </div>
+      <p className="text-zion-slate text-sm leading-relaxed">{description}</p>
     </div>
   );
 }

@@ -1,5 +1,18 @@
-// Hook for use-mobile;
-export const useUse-mobile = () => {;
-  // TODO: Implement hook logic;
-  return {};
-};
+import { useState, useEffect } from 'react';
+
+export function useIsMobile() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkIsMobile();
+    window.addEventListener('resize', checkIsMobile);
+
+    return () => window.removeEventListener('resize', checkIsMobile);
+  }, []);
+
+  return isMobile;
+}
