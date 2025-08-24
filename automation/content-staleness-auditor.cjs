@@ -1,67 +1,110 @@
 #!/usr/bin/env node
 
-const { execSync } = require('child_process');
+'use strict';
+
 const fs = require('fs');
 const path = require('path');
+const { execSync } = require('child_process');
 
-function getAllFiles(dir, exts, out = []) {
+const ROOT = process.cwd();
+const TARGET_DIRS = ['pages', 'docs', 'components'].map((d) => path.join(ROOT, d));
+const REPORT_JSON_DIR = path.join(ROOT, 'data', 'reports', 'staleness');
+const REPORT_HTML_DIR = path.join(ROOT, 'public', 'reports', 'staleness');
+
+function ensureDir(p) { if (!fs.existsSync(p)) fs.mkdirSync(p, { recursive: true }); }
+ensureDir(REPORT_JSON_DIR);
+ensureDir(REPORT_HTML_DIR);
+
+const EXT_RE = /\.(md|mdx|tsx|ts|jsx|js)$/i;
+
+function listFiles(dir) {
+  const out = [];
   if (!fs.existsSync(dir)) return out;
-  for (const entry of fs.readdirSync(dir)) {
-    const abs = path.join(dir, entry);
-    const stat = fs.statSync(abs);
-    if (stat.isDirectory()) getAllFiles(abs, exts, out);
-    else if (exts.includes(path.extname(entry))) out.push(abs);
+  const entries = fs.readdirSync(dir, { withFileTypes: true });
+  for (const entry of entries) {
+    const full = path.join(dir, entry.name);
+    if (entry.isDirectory()) out.push(...listFiles(full));
+    else if (EXT_RE.test(entry.name)) out.push(full);
   }
   return out;
 }
 
-function getLastCommitTimestamp(filePath) {
+function gitLastCommitUnixTs(file) {
   try {
-    const out = execSync(`git log -1 --format=%ct -- ${JSON.stringify(filePath)}`, { encoding: 'utf8', stdio: ['ignore','pipe','ignore'] }).trim();
+    const out = execSync(`git log -1 --format=%ct -- ${JSON.stringify(path.relative(ROOT, file))}`, { encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'], shell: true }).trim();
     const ts = parseInt(out, 10);
-    if (!Number.isNaN(ts) && ts > 0) return ts * 1000;
-  } catch {}
+    if (!isNaN(ts) && ts > 0) return ts * 1000; // ms
+  } catch (e) {
+    // ignore
+  }
   try {
-    return fs.statSync(filePath).mtimeMs;
-  } catch {
+    return fs.statSync(file).mtimeMs;
+  } catch (e) {
     return Date.now();
   }
 }
 
-function main() {
-  const root = path.resolve(__dirname, '..');
-  const targets = [
-    path.join(root, 'docs'),
-    path.join(root, 'pages'),
-  ];
-  const exts = ['.md', '.mdx', '.mdoc', '.tsx', '.ts', '.js'];
-  const files = targets.flatMap((d) => getAllFiles(d, exts));
-
+(function main() {
+  const files = TARGET_DIRS.flatMap(listFiles);
   const now = Date.now();
-  const items = files.map((f) => {
-    const ts = getLastCommitTimestamp(f);
-    const ageDays = Math.round((now - ts) / (1000 * 60 * 60 * 24));
-    return { path: path.relative(root, f), lastUpdatedAt: new Date(ts).toISOString(), ageDays };
+  const DAY_MS = 24 * 60 * 60 * 1000;
+  const thresholds = { warnDays: 60, staleDays: 120, criticalDays: 240 };
+
+  const entries = files.map((file) => {
+    const tsMs = gitLastCommitUnixTs(file);
+    const ageDays = Math.round((now - tsMs) / DAY_MS);
+    return { file: path.relative(ROOT, file), lastModifiedMs: tsMs, ageDays };
   }).sort((a, b) => b.ageDays - a.ageDays);
+
+  const summary = {
+    totalFiles: entries.length,
+    overWarn: entries.filter((e) => e.ageDays >= thresholds.warnDays).length,
+    overStale: entries.filter((e) => e.ageDays >= thresholds.staleDays).length,
+    overCritical: entries.filter((e) => e.ageDays >= thresholds.criticalDays).length,
+  };
 
   const report = {
     generatedAt: new Date().toISOString(),
-    totalFiles: items.length,
-    oldest: items.slice(0, 50),
-    thresholds: {
-      warnDays: 90,
-      criticalDays: 180,
-    },
-    stale: items.filter(i => i.ageDays >= 90).slice(0, 200),
+    thresholds,
+    summary,
+    items: entries,
   };
 
-  const outDir1 = path.join(root, 'data', 'reports', 'content');
-  const outDir2 = path.join(root, 'public', 'automation');
-  try { fs.mkdirSync(outDir1, { recursive: true }); } catch {}
-  try { fs.mkdirSync(outDir2, { recursive: true }); } catch {}
-  fs.writeFileSync(path.join(outDir1, 'content-staleness.json'), JSON.stringify(report, null, 2));
-  fs.writeFileSync(path.join(outDir2, 'content-staleness.json'), JSON.stringify(report, null, 2));
-  console.log(`Content staleness report written. totalFiles=${items.length}`);
-}
+  fs.writeFileSync(path.join(REPORT_JSON_DIR, 'latest.json'), JSON.stringify(report, null, 2));
 
-main();
+  function renderRow(e) {
+    return `<tr><td>${e.file}</td><td>${e.ageDays} days</td></tr>`;
+  }
+
+  const rows = entries.slice(0, 300).map(renderRow).join('\n');
+  const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Content Staleness Auditor</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, sans-serif; margin: 24px; }
+    h1 { margin-bottom: 8px; }
+    p { color: #444; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ddd; padding: 8px; font-size: 14px; }
+    th { background: #f3f4f6; text-align: left; }
+  </style>
+</head>
+<body>
+  <h1>Content Staleness Auditor</h1>
+  <p>Autonomously generated at ${report.generatedAt}. Thresholds: warn ≥ ${thresholds.warnDays}d, stale ≥ ${thresholds.staleDays}d, critical ≥ ${thresholds.criticalDays}d.</p>
+  <p>Total files: ${summary.totalFiles}. Over warn: ${summary.overWarn}. Over stale: ${summary.overStale}. Over critical: ${summary.overCritical}.</p>
+  <table>
+    <thead><tr><th>File</th><th>Age</th></tr></thead>
+    <tbody>
+      ${rows}
+    </tbody>
+  </table>
+</body>
+</html>`;
+  fs.writeFileSync(path.join(REPORT_HTML_DIR, 'index.html'), html);
+
+  console.log(`Staleness audit: ${summary.overStale} stale, ${summary.overCritical} critical out of ${summary.totalFiles} files.`);
+})();
