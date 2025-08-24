@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-export default function About() {
-  return <div>About Zion</div>;
-}
-=======
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
@@ -38,4 +33,3 @@ const About: NextPage = () => {
 };
 
 export default About;
->>>>>>> origin/cursor/create-dynamic-listing-pages-with-filters-fc72

@@ -7,23 +7,6 @@ import {
   ShieldCheck
 } from 'lucide-react';
 import Button from '../components/ui/Button';
-<<<<<<< HEAD
-
-import UltraFuturisticServiceCard from '../components/ui/UltraFuturisticServiceCard';
-import UltraAdvancedQuantumBackground from '../components/ui/UltraAdvancedQuantumBackground';
-import UltraAdvancedServiceCard from '../components/ui/UltraAdvancedServiceCard';
-import ServiceAds from '../components/sections/ServiceAds';
-import InnovativeServicesShowcase from '../components/sections/InnovativeServicesShowcase';
-import EnhancedNavigation from '../components/layout/EnhancedNavigation';
-import Card from '../components/ui/Card';
-import { motion } from 'framer-motion';
-import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
-import { extraServices } from '../data/extra-services';
-import { additionalEnhancedServices } from '../data/additional-real-services';
-import { innovativeMicroSaasServices } from '../data/innovative-micro-saas-services';
-
-export default function HomePage() {
-=======
 import EnhancedFuturisticBackground from '../components/ui/EnhancedFuturisticBackground';
 import { Cloud, Bot, RefreshCw, Zap, Shield, BarChart3, ArrowRight, Check, ExternalLink, Star, Users, Globe, Lock, Rocket, Cpu, Database, TrendingUp, Clock, Target, Building, Award, DollarSign, ChartBar, Code, BookOpen, Activity, Smartphone, Palette, Search, MessageSquare, FileText, Calendar, CreditCard, Settings, BookOpen as BookOpenIcon, Activity as ActivityIcon, Database as DatabaseIcon, Play, Mail, Phone, MapPin, Sparkles, Atom, Brain, Eye, Shield as ShieldIcon, Zap as ZapIcon, Globe as GlobeIcon, Cpu as CpuIcon, Cloud as CloudIcon, Bot as BotIcon, Lock as LockIcon, BarChart3 as BarChart3Icon, TrendingUp as TrendingUpIcon, Users as UsersIcon, Award as AwardIcon, Star as StarIcon, Check as CheckIcon, ArrowRight as ArrowRightIcon, ExternalLink as ExternalLinkIcon, Phone as PhoneIcon, Mail as MailIcon, MapPin as MapPinIcon, Trophy, Wifi, Satellite, Cpu as CpuIcon2, Database as DatabaseIcon2, Globe as GlobeIcon2, Bot as BotIcon2, Shield as ShieldIcon2, Zap as ZapIcon2, BarChart3 as BarChart3Icon2, TrendingUp as TrendingUpIcon2, Users as UsersIcon2, Award as AwardIcon2, Star as StarIcon2, Check as CheckIcon2, ArrowRight as ArrowRightIcon2, ExternalLink as ExternalLinkIcon2, Phone as PhoneIcon2, Mail as MailIcon2, MapPin as MapPinIcon2 } from 'lucide-react';
 import { motion } from 'framer-motion';
@@ -322,7 +305,6 @@ export default function HomePage() {
     { name: 'Stripe', logo: '💳', category: 'Payments' }
   ];
 
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-17dc
   return (
     <UltraAdvancedQuantumBackground>
       <Head>
@@ -820,12 +802,6 @@ export default function HomePage() {
                 Explore Services
               </Button>
             </div>
-<<<<<<< HEAD
-          </motion.div>
-        </div>
-      </section>
-    </UltraAdvancedQuantumBackground>
-=======
           </div>
         </section>
 
@@ -1167,6 +1143,5 @@ export default function HomePage() {
         </section>
       </div>
     </EnhancedFuturisticBackground>
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-17dc
   );
 }

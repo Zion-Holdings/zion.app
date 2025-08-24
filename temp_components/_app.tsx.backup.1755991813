@@ -1,27 +1,14 @@
 import type { AppProps } from 'next/app';
-<<<<<<< HEAD
-import EnhancedLayout from '../components/layout/EnhancedLayout';
-import '../styles/globals.css';
-import '../styles/enhanced-design-system.css';
-import '../styles/modern-design-system.css';
-=======
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-c3e1
 import '../styles/globals.css';
 import Navigation from '../components/layout/Navigation';
 import Footer from '../components/layout/Footer';
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
-<<<<<<< HEAD
-    <EnhancedLayout>
-      <Component {...pageProps} />
-    </EnhancedLayout>
-=======
     <>
       <Navigation />
       <Component {...pageProps} />
       <Footer />
     </>
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-c3e1
   );
 }

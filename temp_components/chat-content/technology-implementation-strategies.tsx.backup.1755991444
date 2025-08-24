@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-export default function TechnologyImplementationStrategies() { return <div>Technology Implementation Strategies</div>; }
-=======
 export default function Page(){return null}
->>>>>>> origin/cursor/enable-vendor-agency-marketplace-operations-5a51

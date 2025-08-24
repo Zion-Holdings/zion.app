@@ -6,53 +6,6 @@ import { enhancedRealMicroSaasServices } from '../../data/enhanced-real-micro-sa
 import { extraServices } from '../../data/extra-services';
 import { additionalEnhancedServices } from '../../data/additional-real-services';
 import { newlyAddedServices } from '../../data/newly-added-services';
-<<<<<<< HEAD
-import { curatedMarketServices } from '../../data/curated-market-services';
-import { new2025Services } from '../../data/new-2025-services';
-import { marketValidatedServices } from '../../data/market-validated-services';
-import { moreRealServices2025 } from '../../data/more-real-services-2025';
-import { verified2025Additions } from '../../data/verified-2025-additions';
-import { realServicesQ12025 } from '../../data/real-services-q1-2025';
-import { realEnterpriseServices2025 } from '../../data/real-enterprise-services-2025';
-import { verifiedRealServices2025Batch2 } from '../../data/verified-real-services-2025-batch2';
-import { realMarketAugmentations2025 } from '../../data/real-market-augmentations-2025';
-import { additionalLiveServices2025 } from '../../data/additional-live-services-2025';
-import { real2025Q2Additions } from '../../data/real-2025-q2-additions';
-import { augmentedServicesBatch3 } from '../../data/real-augmented-services-2025-batch3';
-import { realServicesQ22025 } from '../../data/real-services-q2-2025';
-import { realServicesQ32025 } from '../../data/real-services-q3-2025';
-import { realQ4Services2025, } from '../../data/real-2025-q4-additions';
-import { real2025Q4Additions } from '../../data/real-2025-q4-additions';
-import { realMarketServicesExtended } from '../../data/real-market-services-extended';
-import { real2026Additions } from '../../data/real-2026-additions';
-import { real2026Q1Additions } from '../../data/real-2026-q1-additions';
-import { added2026Q2Services } from '../../data/added-2026-q2-services';
-import { real2026Q3Additions } from '../../data/real-2026-q3-additions';
-import { real2026Q4Additions } from '../../data/real-2026-q4-additions';
-import { real2026Q4NewServices } from '../../data/real-2026-q4-new-services';
-import { real2027Q1Additions } from '../../data/real-2027-q1-additions';
-import { real2027Q2Additions } from '../../data/real-2027-q2-additions';
-import { real2028ServiceExpansions } from '../../data/real-2028-service-expansions';
-
-import { real2029Q1Additions } from '../../data/real-2029-q1-additions';
-import { realMarketServices } from '../../data/real-market-services';
-import { real2029Q2Additions } from '../../data/real-2029-q2-additions';
-import { real2029Q3Additions } from '../../data/real-2029-q3-additions';
-import { real2030Q1Additions } from '../../data/real-2030-q1-additions';
-import { enterpriseITSolutions } from '../../data/2034-enterprise-it-solutions';
-import { innovativeMicroSaasSolutions } from '../../data/2034-innovative-micro-saas-solutions';
-import { cuttingEdgeAIServices } from '../../data/2034-cutting-edge-ai-services';
-import { real2031MicroSaasAdditions } from '../../data/real-2031-micro-saas-additions';
-import { real2031ITServicesAdditions } from '../../data/real-2031-it-services-additions';
-import { real2031AIServicesAdditions } from '../../data/real-2031-ai-services-additions';
-import { real2030Q2Additions } from '../../data/real-2030-q2-additions';
-import { real2027Q3Additions } from '../../data/real-2027-q3-additions';
-import { aiAutonomousEcosystemServices2029 } from '../../data/2029-ai-autonomous-ecosystem';
-import { emergingTechBreakthroughServices2029 } from '../../data/2029-emerging-tech-breakthroughs';
-import { practicalBusinessSolutionServices2029 } from '../../data/2029-practical-business-solutions';
-import { real2032AdditionalServices } from '../../data/real-2032-additional-services';
-=======
->>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-1c54
 
 type Service = typeof enhancedRealMicroSaasServices[number];
 
@@ -74,10 +27,6 @@ function getPriceValue(price: Service['price']): string {
 }
 
 function getAllServices(): Service[] {
-<<<<<<< HEAD
-		.concat(real2032ServiceExpansions as unknown as Service[])
-		.concat(real2025Q4FreshAdditions as unknown as Service[]);
-=======
 	return enhancedRealMicroSaasServices
 		.concat(extraServices as Service[], additionalEnhancedServices as Service[])
 		.concat(newlyAddedServices as unknown as Service[])
@@ -126,7 +75,6 @@ function getAllServices(): Service[] {
 	return enhancedRealMicroSaasServices
 		.concat(extraServices as Service[], additionalEnhancedServices as Service[])
 		.concat(newlyAddedServices as unknown as Service[]);
->>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-1c54
 }
 
 function toSlug(value: string): string {
@@ -330,9 +278,6 @@ export default function ServiceDetailPage({ service }: { service: Service }) {
 			</div>
 		</Layout>
 	);
-<<<<<<< HEAD
-}
-=======
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
@@ -395,4 +340,3 @@ const ServiceDetail: NextPage = () => {
 export default ServiceDetail;
 =======
 }
->>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-1c54

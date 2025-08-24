@@ -54,13 +54,6 @@ export default function MicroSaasPage() {
       title: 'Focused Solutions',
       description: 'Specialized tools that do one thing exceptionally well, without enterprise complexity. Each service solves a specific business problem with precision.',
       color: 'from-rose-500 to-pink-600',
-<<<<<<< HEAD
-      bgColor: 'from-rose-500/10 to-rose-500/10'
-    }
-  ];
-  
-  const microSaasServices = [
-=======
       bgColor: 'from-rose-500/10 to-pink-500/10',
       examples: ['Quantum AI for research', 'Manufacturing for production', 'Space tech for satellites']
     }
@@ -168,7 +161,6 @@ export default function MicroSaasPage() {
 
   // Enhanced service advertising content
   const serviceHighlights = [
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-24ae
     {
       name: 'AI Content Generator Pro',
       tagline: 'Professional AI-powered content creation',
@@ -664,17 +656,6 @@ export default function MicroSaasPage() {
         </div>
       </section>
 
-<<<<<<< HEAD
-      {/* Services Section */}
-      <section id="services" className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Real Micro SaaS Services
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-              Not just mockups - these are fully functional, production-ready tools that solve real business problems.
-=======
       {/* Revolutionary Services Section */}
       <section className="py-20">
         <div className="container mx-auto px-4">
@@ -889,7 +870,6 @@ export default function MicroSaasPage() {
             </h2>
             <p className="text-xl text-slate-300 mb-8">
               Get started with our revolutionary micro SaaS services today
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-24ae
             </p>
             
             {/* Category Filter */}

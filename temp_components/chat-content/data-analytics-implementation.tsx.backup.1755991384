@@ -17,8 +17,4 @@ const DataAnalyticsImplementation: NextPage = () => {
   );
 };
 
-<<<<<<< HEAD
 export default DataAnalyticsImplementation;
-=======
-export default DataAnalyticsImplementation;
->>>>>>> origin/cursor/deploy-zion-brain-ai-system-5783

@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-      <p className="mt-2 text-gray-600 dark:text-gray-300">Get in touch with us.</p>
-    </div>
-  );
-}
-=======
 export default function ContactPage() {
   return (
     <div className="py-8">
@@ -30,4 +24,3 @@ export default function ContactPage() {
     </div>
   );
 }
->>>>>>> origin/cursor/build-zion-global-expo-platform-712b

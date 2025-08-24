@@ -22,113 +22,9 @@ const Comprehensive2025InnovativeServicesShowcase: React.FC = () => {
     { name: 'AI & Robotics', icon: Database, color: 'from-emerald-500 to-green-500' }
   ];
 
-<<<<<<< HEAD
-// Import existing services for comprehensive showcase
-import { realMicroSaasServices2025 } from '../data/2025-real-micro-saas-services';
-
-// Combine all services
-const allServices = [
-  ...innovativeMicroSaas2025ExpansionV2,
-  ...emergingTechInnovations2025,
-  ...realMicroSaasServices2025
-];
-
-// Service categories
-const serviceCategories = [
-  'All Services',
-  'AI & Machine Learning',
-  'Quantum Computing',
-  'Cybersecurity',
-  'Healthcare & Biotech',
-  'Finance & Investment',
-  'Supply Chain & Logistics',
-  'Manufacturing & Industry 4.0',
-  'Space Technology',
-  'Blockchain & Web3',
-  'Education & Learning',
-  'Legal & Compliance',
-  'Energy & Sustainability',
-  'Autonomous Vehicles',
-  'IoT & Edge Computing',
-  'Metaverse & VR',
-  'Neuroscience & BCI'
-];
-
-// Helper function to get service category
-const getServiceCategory = (service: any) => {
-  if (service.category) return service.category;
-  if (service.type) return service.type;
-  return 'Other';
-};
-
-// Helper function to get service pricing
-const getServicePricing = (service: any) => {
-  if (service.pricing?.starter) return service.pricing.starter;
-  if (service.pricing?.monthly) return `$${service.pricing.monthly}/month`;
-  if (service.price?.monthly) return `$${service.price.monthly}/month`;
-  return 'Contact for pricing';
-};
-
-// Helper function to get service features
-const getServiceFeatures = (service: any) => {
-  if (service.features) return service.features;
-  if (service.keyFeatures) return service.keyFeatures;
-  return [];
-};
-
-// Helper function to get service description
-const getServiceDescription = (service: any) => {
-  if (service.description) return service.description;
-  if (service.tagline) return service.tagline;
-  return '';
-};
-
-export default function Comprehensive2025InnovativeServicesShowcase() {
-  const [searchTerm, setSearchTerm] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('All Services');
-  const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
-  const [sortBy, setSortBy] = useState<'name' | 'price' | 'rating' | 'popularity'>('popularity');
-
-  // Filter and sort services
-  const filteredServices = allServices
-    .filter(service => {
-      const serviceName = (service as any).title || (service as any).name || '';
-      const matchesSearch = serviceName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                           service.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                           (service as any).tagline?.toLowerCase().includes(searchTerm.toLowerCase()) || false;
-      const matchesCategory = selectedCategory === 'All Services' || 
-                             getServiceCategory(service).includes(selectedCategory.split(' ')[0]);
-      return matchesSearch && matchesCategory;
-    })
-    .sort((a, b) => {
-      const aName = (a as any).title || (a as any).name || '';
-      const bName = (b as any).title || (b as any).name || '';
-      switch (sortBy) {
-        case 'name':
-          return aName.localeCompare(bName);
-        case 'price':
-          return ((a as any).price?.monthly || 0) - ((b as any).price?.monthly || 0);
-        case 'rating':
-          return ((b as any).rating || 0) - ((a as any).rating || 0);
-        case 'popularity':
-        default:
-          return ((b as any).customers || 0) - ((a as any).customers || 0);
-      }
-    });
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-=======
   const getCategoryIcon = (category: string) => {
     const cat = categories.find(c => c.name === category);
     return cat ? cat.icon : Star;
->>>>>>> 4e26761e9808218b595a40eae6dfbc7c204b5906
   };
 
   const getCategoryColor = (category: string) => {
@@ -139,12 +35,6 @@ export default function Comprehensive2025InnovativeServicesShowcase() {
   return (
     <Layout>
       <SEO 
-<<<<<<< HEAD
-        title="2025 Comprehensive Innovative Services Showcase | Zion Tech Group"
-        description="Discover our comprehensive portfolio of innovative micro SAAS services, AI solutions, and cutting-edge technology platforms. From quantum computing to healthcare AI, explore the future of business technology."
-        keywords={["innovative micro SAAS", "AI services", "quantum computing", "healthcare AI", "cybersecurity", "blockchain", "space technology", "autonomous vehicles", "IoT", "metaverse", "Zion Tech Group"]}
-        ogImage="https://ziontechgroup.com/og-innovative-services-2025.jpg"
-=======
         title="2025 Innovative Services Showcase | Zion Tech Group"
         description="Discover our cutting-edge 2025 innovative micro SAAS services, IT solutions, and AI platforms. Quantum computing, space technology, and autonomous systems."
         keywords={[
@@ -155,7 +45,6 @@ export default function Comprehensive2025InnovativeServicesShowcase() {
           'AI platforms',
           'autonomous systems'
         ]}
->>>>>>> 4e26761e9808218b595a40eae6dfbc7c204b5906
       />
       
       {/* Hero Section */}
@@ -319,44 +208,8 @@ export default function Comprehensive2025InnovativeServicesShowcase() {
                         {service.price}<span className="text-lg text-gray-400">/{service.period}</span>
                       </div>
                     </div>
-<<<<<<< HEAD
-                    <span className="text-gray-300 text-sm">
-                      {(service as any).rating || 0} ({(service as any).reviews || 0} reviews)
-                    </span>
-                  </div>
-                </div>
-
-                {/* Service Details */}
-                <div className={`p-6 bg-white/5 ${viewMode === 'list' ? 'lg:w-2/3' : ''}`}>
-                  <p className="text-gray-300 mb-4">{service.description}</p>
-                  
-                  {/* Key Benefits */}
-                  <div className="mb-4">
-                    <h4 className="text-white font-semibold mb-2 flex items-center gap-2">
-                      <TrendingUp className="w-4 h-4 text-green-400" />
-                      Key Benefits
-                    </h4>
-                    <ul className="space-y-1">
-                      {(service as any).benefits?.slice(0, 3)?.map((benefit: string, idx: number) => (
-                        <li key={idx} className="text-gray-300 text-sm flex items-start gap-2">
-                          <Check className="w-3 h-3 text-green-400 mt-1 flex-shrink-0" />
-                          {benefit}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Features */}
-                  <div className="mb-6">
-                    <h4 className="text-white font-semibold mb-2 flex items-center gap-2">
-                      <Zap className="w-4 h-4 text-blue-400" />
-                      Key Features
-                    </h4>
-                    <div className="flex flex-wrap gap-2">
-=======
                     
                     <div className="space-y-3 mb-6">
->>>>>>> 4e26761e9808218b595a40eae6dfbc7c204b5906
                       {service.features.slice(0, 4).map((feature, idx) => (
                         <div key={idx} className="flex items-center space-x-3 text-sm text-gray-300">
                           <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>

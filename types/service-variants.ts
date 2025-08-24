@@ -5,10 +5,7 @@ export type ServiceVariant =
   | 'quantum'
   | 'cyberpunk'
   | 'neural'
-  | 'standard'
-  
-  // Quantum variants
-  | 'quantum-holographic'
+  | 'quantum-hologographic'
   | 'quantum-advanced'
   | 'quantum-ai-advanced'
   | 'quantum-ai-enterprise'
@@ -470,6 +467,13 @@ export type ServiceVariant =
   | 'simulation-futuristic'
   | 'space-futuristic'
   | 'neuromorphic-futuristic'
-  | 'dna-futuristic'
-  | 'photonic-futuristic'
-  | 'robotics-futuristic';
+  | 'bio-futuristic'
+  | 'fusion-futuristic'
+  | 'automation-futuristic'
+  | 'retail-futuristic'
+  | 'energy-futuristic'
+  | 'transportation-futuristic'
+  | 'education-futuristic'
+  | 'real-estate-futuristic'
+  | 'industrial-futuristic'
+  | 'neural-futuristic';

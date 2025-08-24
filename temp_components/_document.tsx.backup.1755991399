@@ -19,8 +19,4 @@ class MyDocument extends Document {
   }
 }
 
-<<<<<<< HEAD
 export default MyDocument;
-=======
-export default MyDocument;
->>>>>>> origin/cursor/deploy-zion-token-economy-simulator-07d9

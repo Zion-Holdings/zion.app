@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-=======
 =======
 import React from 'react';
->>>>>>> 5f48a381108fa3a8a43c189dd4b043133ce9307e
 import Head from 'next/head';
 import Link from 'next/link';
 
@@ -25,8 +22,6 @@ export default function Services() {
     </div>
   );
 }
-<<<<<<< HEAD
-=======
 import Head from 'next/head';
 import Link from 'next/link';
 
@@ -46,4 +41,3 @@ export default function Placeholder() {
   );
 }
 =======
->>>>>>> 5f48a381108fa3a8a43c189dd4b043133ce9307e

@@ -8,10 +8,6 @@ import {
   Lock, Palette, Cpu, Layers, Globe2, Truck, Zap, ArrowRight, CheckCircle, ShoppingCart
 } from 'lucide-react';
 
-<<<<<<< HEAD:pages/services.tsx
-=======
-<<<<<<< HEAD
-=======
 const Services: React.FC = () => {
 // Import our new innovative 2025 services
 import { realInnovativeMicroSaasServices2025 } from '../data/2025-real-innovative-micro-saas-expansion';
@@ -324,7 +320,6 @@ const categories = [
   }
 ];
 
->>>>>>> 3c69eec6124bf95995ad8db99e4fcc1addda60da
 const sortOptions = [
   { value: 'name', label: 'Name A-Z' },
   { value: 'price-low', label: 'Price: Low to High' },
@@ -333,7 +328,6 @@ const sortOptions = [
   { value: 'newest', label: 'Newest First' },
   { value: 'rating', label: 'Highest Rated' }
 ];
->>>>>>> 4e26761e9808218b595a40eae6dfbc7c204b5906:pages/services.tsx.backup.1755990302
 
 // Import our new innovative 2025 services
 import { realInnovativeMicroSaasServices2025 } from '../data/2025-real-innovative-micro-saas-expansion';

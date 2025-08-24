@@ -1,16 +1,3 @@
-<<<<<<< HEAD
-import type { AppProps } from 'next/app';
-import Layout from '../components/Layout';
-import '../styles/globals.css';
-
-export default function App({ Component, pageProps }: AppProps) {
-  return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
-  );
-}
-=======
 import React from 'react';
 import { useRouter } from 'next/router';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
@@ -438,4 +425,3 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 export default MyApp;
->>>>>>> origin/c54iqp-codex/fix-app-loading-blank-screen

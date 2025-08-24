@@ -5,12 +5,6 @@ import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFut
 import UltraAdvancedNavigation from '../components/layout/UltraAdvancedNavigation';
 import UltraAdvancedNavigation2026 from '../components/layout/UltraAdvancedNavigation2026';
 import UltraFuturisticNavigation2029 from '../components/layout/UltraFuturisticNavigation2029';
-<<<<<<< HEAD
-import UltraFuturisticNavigation2030 from '../components/layout/UltraFuturisticNavigation2030';
-import UltraFuturisticFooter2029 from '../components/layout/UltraFuturisticFooter2029';
-import UltraFuturisticFooter2030 from '../components/layout/UltraFuturisticFooter2030';
-import EnhancedServiceShowcase from '../components/sections/EnhancedServiceShowcase';
-=======
 import UltraFuturisticFooter2028 from '../components/layout/UltraFuturisticFooter2028';
 import EnhancedServiceShowcase from '../components/sections/EnhancedServiceShowcase';
 import Enhanced2026ServicesShowcase from '../components/sections/Enhanced2026ServicesShowcase';
@@ -20,7 +14,6 @@ import Revolutionary2027Hero from '../components/sections/Revolutionary2027Hero'
 import EnhancedHero2026 from '../components/sections/EnhancedHero2026';
 import UltraFuturisticHero2029 from '../components/sections/UltraFuturisticHero2029';
 import { motion } from 'framer-motion';
->>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-0526
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
 import { innovativeMicroSaasServices } from '../data/innovative-micro-saas-services';
 
@@ -33,9 +26,6 @@ import { emergingTechnologyServices } from '../data/emerging-technology-services
 import { emergingTechServices2025 } from '../data/emerging-tech-services-2025';
 import { comprehensiveITSolutions } from '../data/comprehensive-it-solutions';
 import { realMarketServices } from '../data/real-market-services';
-<<<<<<< HEAD
-import { new2025Q1RealServices } from '../data/new-2025-q1-services';
-=======
 import { serviceExpansions2025 } from '../data/service-expansions-2025';
 import { verifiedRealServices2025Batch2 } from '../data/verified-real-services-2025-batch2';
 import { realOperationalServices } from '../data/real-operational-services';
@@ -80,7 +70,6 @@ import { quantumInnovationServices2029 } from '../data/2029-quantum-innovation-s
 import { spaceInnovationServices2029 } from '../data/2029-space-innovation-services';
 import { emergingTechServices2029 } from '../data/2029-emerging-tech-services';
 import { enterpriseITServices2029 } from '../data/2029-enterprise-it-services';
->>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-0526
 
 export default function HomePage() {
   const heroStats = [
@@ -289,9 +278,6 @@ export default function HomePage() {
     ...emergingTechServices2025,
     ...comprehensiveITSolutions,
     ...realMarketServices,
-<<<<<<< HEAD
-    ...new2025Q1RealServices
-=======
     ...serviceExpansions2025,
     ...realOperationalServices,
     ...newOperationalServices2025,
@@ -337,7 +323,6 @@ export default function HomePage() {
     ...spaceInnovationServices2029,
     ...emergingTechServices2029,
     ...enterpriseITServices2029
->>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-0526
   ];
 
   // Get unique services by ID to avoid duplicates
@@ -379,13 +364,6 @@ export default function HomePage() {
         </Head>
 
         {/* Ultra Advanced Navigation */}
-<<<<<<< HEAD
-        <UltraFuturisticNavigation2030 />
-
-        {/* Hero Section */}
-        <section className="relative z-10 pt-32 pb-16 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto text-center">
-=======
         <UltraFuturisticNavigation2029 />
 
                                       {/* Ultra Futuristic Hero Section 2029 */}
@@ -416,7 +394,6 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/10 to-cyan-900/10"></div>
           
           <div className="max-w-7xl mx-auto relative z-10">
->>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-0526
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}

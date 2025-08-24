@@ -19,16 +19,6 @@ import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-
 import { motion } from 'framer-motion';
 
 export default function HomePage() {
-<<<<<<< HEAD
-  const popularServices = getPopularServices();
-  const allCategories = getAllCategories();
-
-  const stats = [
-    { number: '50+', label: 'Real Micro SaaS Services' },
-    { number: '99.9%', label: 'Uptime Guarantee' },
-    { number: '14 Days', label: 'Free Trial' },
-    { number: '24/7', label: 'Expert Support' }
-=======
   const heroStats = [
     { value: '200+', label: 'Real Micro SaaS Services', color: 'text-cyan-400' },
     { value: '99.9%', label: 'Uptime Guarantee', color: 'text-fuchsia-400' },
@@ -36,7 +26,6 @@ export default function HomePage() {
     { value: '24/7', label: 'AI Support', color: 'text-green-400' },
     { value: '$100M+', label: 'Market Value', color: 'text-yellow-400' },
     { value: '800%+', label: 'Average ROI', color: 'text-purple-400' },
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-695e
   ];
 
   const contactInfo = {
@@ -48,223 +37,6 @@ export default function HomePage() {
 
   const revolutionaryServices = [
     {
-<<<<<<< HEAD
-      name: 'AI Content Factory Pro',
-      description: 'Advanced AI-powered content creation platform that generates blog posts, social media content, marketing copy, and technical documentation. Features GPT-4 integration and SEO optimization.',
-      icon: '✍️',
-      price: '$299/month',
-      category: 'AI & Content Creation',
-      variant: 'quantum',
-      link: 'https://ziontechgroup.com/ai-content-factory-pro',
-      features: ['GPT-4 powered content generation', 'SEO-optimized content creation', 'Brand voice customization', 'Multi-language support']
-    },
-    {
-      name: 'Blockchain NFT Marketplace',
-      description: 'Complete white-label NFT marketplace solution with smart contracts, wallet integration, and advanced trading features. Supports multiple blockchains and includes royalty management.',
-      icon: '🖼️',
-      price: '$799/month',
-      category: 'Blockchain & Web3',
-      variant: 'holographic',
-      link: 'https://ziontechgroup.com/blockchain-nft-marketplace',
-      features: ['Multi-blockchain support', 'Smart contract deployment', 'Wallet integration', 'Royalty management system']
-    },
-    {
-      name: 'AI Video Editing Suite',
-      description: 'Revolutionary AI-powered video editing platform that automatically edits, enhances, and optimizes videos. Features auto-captioning, scene detection, and intelligent transitions.',
-      icon: '🎬',
-      price: '$199/month',
-      category: 'AI & Media',
-      variant: 'cyberpunk',
-      link: 'https://ziontechgroup.com/ai-video-editing-suite',
-      features: ['AI-powered auto-editing', 'Automatic scene detection', 'Smart caption generation', 'Background music selection']
-    },
-    {
-      name: 'Quantum Cryptography Platform',
-      description: 'Advanced quantum-resistant cryptography platform that protects data against current and future quantum threats. Features post-quantum algorithms and quantum key distribution.',
-      icon: '🔐',
-      price: '$1,599/month',
-      category: 'Cybersecurity & Quantum',
-      variant: 'neural',
-      link: 'https://ziontechgroup.com/quantum-cryptography-platform',
-      features: ['Post-quantum cryptography algorithms', 'Quantum key distribution (QKD)', 'Hybrid encryption systems', 'Real-time threat detection']
-    },
-    {
-      name: 'Autonomous Logistics Platform',
-      description: 'Intelligent logistics platform that optimizes supply chains, predicts demand, and automates warehouse operations. Features autonomous vehicles, drone delivery, and predictive analytics.',
-      icon: '🚚',
-      price: '$1,299/month',
-      category: 'Logistics & Supply Chain',
-      variant: 'quantum',
-      link: 'https://ziontechgroup.com/autonomous-logistics-platform',
-      features: ['AI demand forecasting', 'Autonomous vehicle management', 'Drone delivery optimization', 'Warehouse automation']
-    },
-    {
-      name: 'AI Healthcare Diagnostics',
-      description: 'Revolutionary AI-powered medical diagnostics platform that analyzes medical images, predicts diseases, and assists healthcare professionals. FDA-approved and HIPAA-compliant.',
-      icon: '🏥',
-      price: '$899/month',
-      category: 'Healthcare & AI',
-      variant: 'space',
-      link: 'https://ziontechgroup.com/ai-healthcare-diagnostics',
-      features: ['Medical image analysis', 'Disease prediction algorithms', 'HIPAA compliance', 'FDA-approved diagnostics']
-    }
-  ];
-
-  const emergingTechServices = [
-    {
-      name: 'DeFi Yield Optimizer',
-      description: 'Intelligent DeFi yield optimization platform that automatically finds the best yield farming opportunities across multiple protocols. Features risk assessment and automated rebalancing.',
-      icon: '💰',
-      price: '$399/month',
-      category: 'DeFi & Cryptocurrency',
-      link: 'https://ziontechgroup.com/defi-yield-optimizer'
-    },
-    {
-      name: 'Quantum Financial Modeling',
-      description: 'Advanced quantum computing platform for financial modeling, risk assessment, and portfolio optimization. Processes complex financial calculations 1000x faster than traditional methods.',
-      icon: '📊',
-      price: '$1,899/month',
-      category: 'Financial Technology',
-      link: 'https://ziontechgroup.com/quantum-financial-modeling'
-    },
-    {
-      name: 'AI Climate Prediction Platform',
-      description: 'Advanced AI platform that predicts climate patterns, extreme weather events, and environmental changes. Uses satellite data, IoT sensors, and machine learning for accurate forecasting.',
-      icon: '🌍',
-      price: '$699/month',
-      category: 'Climate Tech & AI',
-      link: 'https://ziontechgroup.com/ai-climate-prediction'
-    },
-    {
-      name: 'Autonomous Energy Management',
-      description: 'Intelligent energy management platform that optimizes power consumption, manages renewable energy sources, and automates grid operations. Reduces energy costs by up to 40%.',
-      icon: '⚡',
-      price: '$1,099/month',
-      category: 'Energy & Sustainability',
-      link: 'https://ziontechgroup.com/autonomous-energy-management'
-    },
-    {
-      name: 'Quantum Drug Discovery Platform',
-      description: 'Revolutionary quantum computing platform for drug discovery and molecular modeling. Accelerates research timelines by 100x while maintaining scientific accuracy and compliance.',
-      icon: '🧪',
-      price: '$2,299/month',
-      category: 'Biotechnology & Quantum',
-      link: 'https://ziontechgroup.com/quantum-drug-discovery'
-    },
-    {
-      name: 'Metaverse Development Studio',
-      description: 'Complete metaverse development platform with VR/AR integration, 3D modeling, and immersive experiences. Features real-time collaboration, AI-powered content generation, and cross-platform deployment.',
-      icon: '🌐',
-      price: '$799/month',
-      category: 'Metaverse & VR/AR',
-      link: 'https://ziontechgroup.com/metaverse-development-studio'
-    },
-    {
-      name: 'IoT Smart City Platform',
-      description: 'Comprehensive IoT platform for smart city management, traffic optimization, and environmental monitoring. Features real-time data collection, AI analytics, and automated city services.',
-      icon: '🏙️',
-      price: '$1,099/month',
-      category: 'IoT & Smart Cities',
-      link: 'https://ziontechgroup.com/iot-smart-city-platform'
-    }
-  ];
-
-  const marketInsights = [
-    {
-      metric: '$15B',
-      label: 'Quantum AI Market',
-      description: 'Growing at 400% annually',
-      icon: <BrainIcon className="w-6 h-6" />
-    },
-    {
-      metric: '$25B',
-      label: 'Industry 4.0 Market',
-      description: '300% annual growth rate',
-      icon: <FactoryIcon className="w-6 h-6" />
-    },
-    {
-      metric: '$20B',
-      label: 'Quantum Cybersecurity',
-      description: '350% annual growth rate',
-      icon: <ShieldIcon className="w-6 h-6" />
-    },
-    {
-      metric: '$3.2B',
-      label: 'Biomedical AI Market',
-      description: '200% annual growth rate',
-      icon: <FlaskIcon className="w-6 h-6" />
-    },
-    {
-      metric: '$2.1B',
-      label: 'Quantum Finance Market',
-      description: '350% annual growth rate',
-      icon: <DollarIcon className="w-6 h-6" />
-    },
-    {
-      metric: '$1.8B',
-      label: 'Space AI Market',
-      description: '280% annual growth rate',
-      icon: <RocketIcon className="w-6 h-6" />
-    }
-  ];
-
-  // Revolutionary services showcase
-  const revolutionaryServices = [
-    {
-      name: 'AI & Machine Learning',
-      description: 'Intelligent solutions that learn and adapt',
-      icon: '🤖',
-      count: 15,
-      color: 'from-purple-500 to-pink-600'
-    },
-    {
-      name: 'Cloud & DevOps',
-      description: 'Scalable infrastructure and automation',
-      icon: '☁️',
-      count: 10,
-      color: 'from-blue-500 to-cyan-600'
-    },
-    {
-      name: 'Business & Productivity',
-      description: 'Tools to streamline operations',
-      icon: '💼',
-      count: 12,
-      color: 'from-green-500 to-emerald-600'
-    },
-    {
-      name: 'Marketing & Sales',
-      description: 'Drive growth and conversions',
-      icon: '📈',
-      count: 8,
-      color: 'from-orange-500 to-red-600'
-    },
-  ];
-
-  const testimonials = [
-    {
-      name: 'Dr. Sarah Chen',
-      role: 'CTO, QuantumTech Solutions',
-      company: 'Fortune 500 Tech Company',
-      content: 'The Quantum AI Cognitive Platform has revolutionized our research capabilities. We\'ve achieved breakthroughs in drug discovery that would have taken years with traditional methods.',
-      rating: 5,
-      avatar: '👩‍🔬'
-    },
-    {
-      name: 'Michael Rodriguez',
-      role: 'VP of Operations',
-      company: 'Global Manufacturing Corp',
-      content: 'The Autonomous AI Factory has increased our productivity by 200% while reducing costs by 60%. It\'s like having a super-intelligent factory that never sleeps.',
-      rating: 5,
-      avatar: '👨‍🏭'
-    },
-    {
-      name: 'Dr. James Wilson',
-      role: 'Chief Security Officer',
-      company: 'International Bank',
-      content: 'Quantum Cybersecurity Fortress gives us peace of mind knowing we\'re protected against both current and future threats. The AI threat detection is incredibly accurate.',
-      rating: 5,
-      avatar: '👨‍💼'
-=======
       icon: <Cloud className="w-8 h-8 text-white" />,
       title: '200+ Real Micro SaaS Services',
       description: 'Complete portfolio of fully functional micro SaaS tools with real implementations, not just mockups. Starting from $49/month with 14-day free trials.',
@@ -432,7 +204,6 @@ export default function HomePage() {
       icon: '⚡',
       color: 'from-yellow-500 to-orange-600',
       link: 'https://ziontechgroup.com/ai-sustainable-energy'
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-695e
     }
   ];
 
@@ -800,18 +571,6 @@ export default function HomePage() {
                   <Mail className="w-4 h-4 text-purple-400" />
                   <span className="text-gray-300">{contactInfo.email}</span>
                 </div>
-<<<<<<< HEAD
-                <div className="flex items-center justify-center space-x-2">
-                  <MapPin className="w-4 h-4 text-green-400" />
-                  <span className="text-gray-300">{contactInfo.address}</span>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-    </UltraFuturisticBackground>
-=======
               ))}
             </div>
           </div>
@@ -1127,6 +886,5 @@ export default function HomePage() {
         </section>
       </div>
     </EnhancedFuturisticBackground>
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-695e
   );
 }

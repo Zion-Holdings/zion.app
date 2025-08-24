@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-export default function ContactPage() { return null }
-=======
 export default function Contact() { return <main className="p-10"><h1 className="text-2xl font-bold">Contact</h1></main>; }
 =======
 export default function ContactPage() {
@@ -24,4 +21,3 @@ const Contact: NextPage = () => (
 );
 
 export default Contact;
->>>>>>> origin/cursor/build-zion-ai-marketplace-service-listing-9ebf

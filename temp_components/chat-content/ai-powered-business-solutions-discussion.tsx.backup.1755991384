@@ -17,8 +17,4 @@ const AiPoweredBusinessSolutionsDiscussion: NextPage = () => {
   );
 };
 
-<<<<<<< HEAD
 export default AiPoweredBusinessSolutionsDiscussion;
-=======
-export default AiPoweredBusinessSolutionsDiscussion;
->>>>>>> origin/cursor/deploy-zion-brain-ai-system-5783

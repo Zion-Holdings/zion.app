@@ -2,16 +2,6 @@ import React from 'react';
 import Head from 'next/head';
 
 export default function LocationsPage() {
-<<<<<<< HEAD
-  return (
-    <UltraFuturisticBackground variant="holographic" intensity="high">
-      <div className="container mx-auto px-4 pt-28 pb-20 text-white">
-        <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-4">Locations</h1>
-        <p className="text-gray-300 max-w-3xl">Headquarters: 364 E Main St STE 1008 Middletown DE 19709. Remote-first team serving clients globally.</p>
-      </div>
-    </UltraFuturisticBackground>
-  );
-=======
 	return (
 		<div className="min-h-screen pt-24 pb-20 px-4 sm:px-6 lg:px-8">
 			<Head>
@@ -29,5 +19,4 @@ export default function LocationsPage() {
 			</div>
 		</div>
 	);
->>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-1749
 }

@@ -29,12 +29,6 @@ export default function HomePage() {
     website: 'https://ziontechgroup.com'
   };
 
-<<<<<<< HEAD
-  // Get featured services from the enhanced data
-  const revolutionaryServices = ultimateEnhancedServices
-    .filter(service => service.realImplementation && service.popular)
-    .slice(0, 8);
-=======
   // Enhanced service advertising content with real market data and competitive advantages
   const serviceHighlights = [
     {
@@ -195,7 +189,6 @@ export default function HomePage() {
       }
     }
   ];
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-64da
 
   const marketInsights = [
     {

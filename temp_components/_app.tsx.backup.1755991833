@@ -1,20 +1,12 @@
 import type { AppProps } from 'next/app';
 import '../styles/globals.css';
 import Navigation from '../components/layout/Navigation';
-<<<<<<< HEAD
-import Footer from '../components/layout/Footer';
-=======
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-d7ba
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Navigation />
       <Component {...pageProps} />
-<<<<<<< HEAD
-      <Footer />
-=======
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-d7ba
     </>
   );
 }

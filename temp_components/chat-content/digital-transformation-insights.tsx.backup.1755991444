@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-export default function DigitalTransformationInsights() { return <div>Digital Transformation Insights</div>; }
-=======
 export default function Page(){return null}
->>>>>>> origin/cursor/enable-vendor-agency-marketplace-operations-5a51

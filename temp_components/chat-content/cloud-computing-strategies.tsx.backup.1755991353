@@ -1,9 +1,4 @@
 import type { NextPage } from 'next';
-<<<<<<< HEAD
-
-const Page: NextPage = () => (<div><h1 className="text-2xl font-semibold mb-2">Cloud Computing Strategies</h1></div>);
-export default Page;
-=======
 import Head from 'next/head';
 
 const CloudComputingStrategies: NextPage = () => {
@@ -23,4 +18,3 @@ const CloudComputingStrategies: NextPage = () => {
 };
 
 export default CloudComputingStrategies;
->>>>>>> origin/cursor/create-dynamic-listing-pages-with-filters-fc72

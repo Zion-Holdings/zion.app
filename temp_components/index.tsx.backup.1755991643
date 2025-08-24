@@ -36,21 +36,6 @@ export default function HomePage() {
     website: 'https://ziontechgroup.com'
   };
 
-<<<<<<< HEAD
-  // Get the new innovative services
-  const innovativeServices = enhancedRealMicroSaasServices.filter(service => 
-    service.category === 'Quantum Computing & AI' || 
-    service.category === 'Manufacturing & Industry 4.0' ||
-    service.category === 'Cybersecurity' ||
-    service.category === 'Healthcare & Biotechnology' ||
-    service.category === 'Financial Technology' ||
-    service.category === 'Aerospace & Space Technology' ||
-    service.category === 'Metaverse & VR/AR' ||
-    service.category === 'Blockchain & DeFi' ||
-    service.category === 'IoT & Smart Cities' ||
-    service.category === 'Edge Computing'
-  ).slice(0, 12);
-=======
   const revolutionaryServices = [
     {
       name: 'AI Content Factory Pro',
@@ -172,7 +157,6 @@ export default function HomePage() {
       link: 'https://ziontechgroup.com/iot-smart-city-platform'
     }
   ];
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-6601
 
   const marketInsights = [
     {

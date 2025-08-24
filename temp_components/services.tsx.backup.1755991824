@@ -439,11 +439,7 @@ export default function ServicesPage() {
   ];
 
   return (
-<<<<<<< HEAD
-    <EnhancedFuturisticBackground variant="quantum-holographic" intensity="high">
-=======
     <EnhancedFuturisticBackground variant="neural-network" intensity="high">
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-d240
       <div className="min-h-screen">
         <Head>
           <title>300+ Real Micro SaaS Services | Zion Tech Group - AI, Quantum Computing & Emerging Tech</title>
@@ -969,10 +965,6 @@ export default function ServicesPage() {
               </Button>
             </div>
           </div>
-<<<<<<< HEAD
-        </div>
-      </section>
-=======
         </section>
 
         {/* Contact Information Section */}
@@ -1052,7 +1044,6 @@ export default function ServicesPage() {
           </div>
         </section>
       </div>
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-d240
     </EnhancedFuturisticBackground>
   );
 }

@@ -2,14 +2,7 @@ import React, { useState } from 'react';
 import Head from 'next/head';
 import { Check, Star, Zap, Shield, Users, Globe, ArrowRight, ExternalLink, TrendingUp, Clock, Target, Building, Rocket, Award, DollarSign, ChartBar, Lock, Cpu, Database, Cloud, Smartphone, Palette, Search, MessageSquare, FileText, Calendar, CreditCard, BarChart3, Settings, Zap as ZapIcon, Mail, MessageCircle, Kanban, Headphones, Brain, Code, Server, Shield as ShieldIcon, Zap as ZapIcon2, Globe as GlobeIcon, Users as UsersIcon, Bot, Database as DatabaseIcon, Network, Key, Eye, Fingerprint, Lock as LockIcon, Globe as GlobeIcon2, Zap as ZapIcon3, Shield as ShieldIcon2, Users as UsersIcon2, Rocket as RocketIcon, Target as TargetIcon, TrendingUp as TrendingUpIcon, Clock as ClockIcon, Award as AwardIcon, DollarSign as DollarSignIcon, ChartBar as ChartBarIcon, Lock as LockIcon2, Cpu as CpuIcon, Database as DatabaseIcon2, Cloud as CloudIcon, Smartphone as SmartphoneIcon, Palette as PaletteIcon, Search as SearchIcon, MessageSquare as MessageSquareIcon, FileText as FileTextIcon, Calendar as CalendarIcon, CreditCard as CreditCardIcon, BarChart3 as BarChart3Icon, Settings as SettingsIcon, Zap as ZapIcon4, Mail as MailIcon, MessageCircle as MessageCircleIcon, Kanban as KanbanIcon, Headphones as HeadphonesIcon, Brain as BrainIcon, Code as CodeIcon, Server as ServerIcon, Shield as ShieldIcon3, Zap as ZapIcon5, Globe as GlobeIcon3, Users as UsersIcon3 } from 'lucide-react';
 import Button from '../components/ui/Button';
-<<<<<<< HEAD
-import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
-import EnhancedFuturisticCard from '../components/ui/EnhancedFuturisticCard';
-import { ultimateEnhancedServices, serviceCategories, getServicesByCategory, getPopularServices } from '../data/ultimate-enhanced-services';
-import { motion } from 'framer-motion';
-=======
 import ParticleBackground from '../components/ui/ParticleBackground';
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-7297
 
 export default function MicroSaasPage() {
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -64,43 +57,6 @@ export default function MicroSaasPage() {
       bgColor: 'from-rose-500/10 to-rose-500/10'
     }
   ];
-<<<<<<< HEAD
-
-  // Filter and sort services
-  let filteredServices = selectedCategory === 'all' || selectedCategory === 'All'
-    ? ultimateEnhancedServices 
-    : getServicesByCategory(selectedCategory);
-
-  // Apply search filter
-  if (searchQuery) {
-    filteredServices = filteredServices.filter(service =>
-      service.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      service.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      service.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      service.technology.some(tech => tech.toLowerCase().includes(searchQuery.toLowerCase()))
-    );
-  }
-
-  // Apply sorting
-  filteredServices.sort((a, b) => {
-    switch (sortBy) {
-      case 'name':
-        return a.name.localeCompare(b.name);
-      case 'price':
-        return parseFloat(a.price.replace('$', '').replace(',', '')) - parseFloat(b.price.replace('$', '').replace(',', ''));
-      case 'rating':
-        return b.rating - a.rating;
-      case 'innovation': {
-        // Sort by realImplementation first, then by popularity
-        if (a.realImplementation && !b.realImplementation) return -1;
-        if (!a.realImplementation && b.realImplementation) return 1;
-        if (a.popular && !b.popular) return -1;
-        if (!a.popular && b.popular) return 1;
-        return 0;
-      }
-      default:
-        return 0;
-=======
   
   const microSaasServices = [
     {
@@ -1031,17 +987,10 @@ export default function MicroSaasPage() {
       category: 'Energy & Utilities',
       realImplementation: true,
       techStack: ['OpenAI API', 'React', 'Node.js', 'Energy APIs', 'PostgreSQL']
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-7297
     }
   });
 
-<<<<<<< HEAD
-  const revolutionaryServices = ultimateEnhancedServices.filter(service => 
-    service.realImplementation && service.popular
-  );
-=======
   const categories = ['All', 'Content & Marketing', 'Development & DevOps', 'Sales & CRM', 'Legal & Compliance', 'Human Resources', 'Analytics & Data', 'Productivity & Collaboration', 'Customer Service', 'Finance & Accounting', 'Design & UX', 'Finance & Investment', 'Operations & Logistics', 'Security & Compliance', 'Healthcare & Life Sciences', 'Education & Training', 'Real Estate & Property', 'Manufacturing & Industry', 'Energy & Utilities'];
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-7297
 
   const contactInfo = {
     mobile: '+1 302 464 0950',
@@ -1051,32 +1000,6 @@ export default function MicroSaasPage() {
   };
 
   return (
-<<<<<<< HEAD
-    <EnhancedFuturisticBackground variant="holographic-advanced" intensity="medium">
-      <div className="min-h-screen">
-        <Head>
-          <title>75+ Micro SaaS Services | Zion Tech Group - AI, Cloud, Security Solutions</title>
-          <meta name="description" content="Explore 75+ real micro SaaS services from Zion Tech Group. AI-powered solutions, cloud infrastructure, cybersecurity, IoT, blockchain, and emerging technologies. Start your free trial today." />
-          <meta name="keywords" content="micro SaaS services, AI solutions, cloud services, cybersecurity, data analytics, IoT platform, blockchain analytics, quantum computing, AR/VR development" />
-          <meta name="author" content="Zion Tech Group" />
-          <meta property="og:title" content="75+ Micro SaaS Services | Zion Tech Group" />
-          <meta property="og:description" content="Comprehensive micro SaaS platform with AI, cloud, security, and emerging technology solutions." />
-          <meta property="og:url" content="https://ziontechgroup.com/micro-saas" />
-          <meta property="og:type" content="website" />
-          <link rel="canonical" href="https://ziontechgroup.com/micro-saas" />
-        </Head>
-
-      {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 py-20">
-        <div className="absolute inset-0 bg-black/50" />
-        <div className="relative z-10 container mx-auto px-4 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-            <span className="neon-text-blue">35+</span> Real Micro SaaS Services
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
-            Discover cutting-edge AI-powered solutions that solve real business problems. 
-            From content creation to cybersecurity, we've got you covered with enterprise-grade tools.
-=======
     <div className="min-h-screen futuristic-bg particle-bg">
       <ParticleBackground />
       <Head>
@@ -1111,7 +1034,6 @@ export default function MicroSaasPage() {
           <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
             Discover 40+ fully functional micro SaaS tools built with modern technology. 
             No mockups, no demos - just real services that solve real business problems.
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-7297
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
@@ -1218,21 +1140,12 @@ export default function MicroSaasPage() {
           {/* Services Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {filteredServices.map((service, index) => (
-<<<<<<< HEAD
-              <motion.div
-                key={service.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-=======
               <div
                 key={index}
                 className={`relative group futuristic-card overflow-hidden transition-all duration-300 hover:scale-105 ${
                   service.popular ? 'ring-2 ring-yellow-400 glow-yellow' : ''
                 }`}
                 style={{animationDelay: `${index * 0.1}s`}}
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-7297
               >
                 <Card className="h-full hover:shadow-2xl transition-all duration-300 hover:transform hover:scale-105">
                   <div className="p-6">
@@ -1263,20 +1176,6 @@ export default function MicroSaasPage() {
                         <span className="text-gray-500 text-lg font-normal">/month</span>
                       </div>
 
-<<<<<<< HEAD
-                      {/* Trial Info */}
-                      <div className="text-gray-600 text-sm mb-4">
-                        {service.price.trialDays} days free trial • {service.price.setupTime} setup
-                      </div>
-
-                      {/* Popular Badge */}
-                      {service.popular && (
-                        <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-gradient-to-r from-yellow-400 to-orange-500 text-white mb-4">
-                          <Star className="h-3 w-3 mr-1" />
-                          Popular
-                        </div>
-                      )}
-=======
                 <div className="p-6 h-full">
                   {/* Service Header */}
                   <div className="text-center mb-6">
@@ -1288,7 +1187,6 @@ export default function MicroSaasPage() {
                     <div className="mb-4">
                       <span className="text-3xl font-bold text-white">{service.price}</span>
                       <span className="text-gray-400">{service.period}</span>
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-7297
                     </div>
 
                     {/* Description */}
@@ -1338,50 +1236,6 @@ export default function MicroSaasPage() {
       </section>
 
       {/* Contact Information Section */}
-<<<<<<< HEAD
-      <section className="py-20 bg-gray-900 relative overflow-hidden">
-        <div className="absolute inset-0 futuristic-bg opacity-20" />
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Ready to <span className="neon-text-cyan">Transform</span> Your Business?
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Get in touch with our team of experts to find the perfect solution for your business needs.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <div className="text-center">
-              <div className="inline-flex p-4 rounded-full bg-gradient-to-r from-neon-blue/20 to-cyan-500/20 mb-4">
-                <Phone className="h-8 w-8 text-neon-blue" />
-              </div>
-              <h3 className="text-xl font-semibold text-white mb-2">Phone</h3>
-              <p className="text-neon-blue text-lg font-mono">+1 302 464 0950</p>
-            </div>
-
-            <div className="text-center">
-              <div className="inline-flex p-4 rounded-full bg-gradient-to-r from-neon-purple/20 to-pink-500/20 mb-4">
-                <Mail className="h-8 w-8 text-neon-purple" />
-              </div>
-              <h3 className="text-xl font-semibold text-white mb-2">Email</h3>
-              <p className="text-neon-purple text-lg font-mono">kleber@ziontechgroup.com</p>
-            </div>
-
-            <div className="text-center">
-              <div className="inline-flex p-4 rounded-full bg-gradient-to-r from-neon-green/20 to-emerald-500/20 mb-4">
-                <MapPin className="h-8 w-8 text-neon-green" />
-              </div>
-              <h3 className="text-xl font-semibold text-white mb-2">Address</h3>
-              <p className="text-neon-green text-lg font-mono">
-                364 E Main St STE 1008<br />
-                Middletown DE 19709
-              </p>
-            </div>
-          </div>
-
-          <div className="text-center mt-12">
-=======
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-600/20 to-purple-600/20">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
@@ -1433,7 +1287,6 @@ export default function MicroSaasPage() {
               Start Free Trial
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-7297
             <Button
               href="/contact"
               className="btn-futuristic text-lg px-8 py-4 text-white font-semibold"

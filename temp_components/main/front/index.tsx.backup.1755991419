@@ -446,11 +446,7 @@ export default function MainFrontIndex() {
             {[ 
               { label: 'Autonomous Cloud Brain (1m)', desc: 'Selectively triggers and syncs key pipelines every minute.', href: '/.netlify/functions/autonomous-cloud-brain' },
               { label: 'Homepage Advertiser', desc: 'Curates and updates the home explore section.', href: '/.netlify/functions/homepage_advertiser' },
-<<<<<<< HEAD
-              { label: 'Supreme Orchestrator (1m)', desc: 'Meta trigger for all cloud agents; commits to main.', href: '/.netlify/functions/supreme-orchestrator' },
-=======
               { label: 'Autonomous Meta Orchestrator', desc: 'Intelligently triggers cloud functions and syncs to main every minute.', href: '/.netlify/functions/autonomous-meta-orchestrator' },
->>>>>>> origin/cursor/develop-autonomous-cloud-agents-for-automation-orchestration-a23d
               { label: 'Cloud Orchestrator', desc: 'Runs fast improvement cycle and git sync.', href: '/.netlify/functions/cloud_orchestrator' },
               { label: 'Autonomous Cloud Meta Orchestrator (1m)', desc: 'Triggers high‑impact cloud jobs and stamps commits for rapid sync.', href: '/.netlify/functions/autonomous-cloud-meta-orchestrator' },
               { label: 'Sitemap Runner', desc: 'Keeps sitemap fresh for SEO visibility.', href: '/.netlify/functions/sitemap_runner' },

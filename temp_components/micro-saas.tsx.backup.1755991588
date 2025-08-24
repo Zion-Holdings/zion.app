@@ -16,11 +16,7 @@ export default function MicroSaasPage() {
       description: 'Get started in minutes, not weeks. Our services are designed for immediate value delivery with minimal configuration. Most services are operational within 1-2 hours.',
       color: 'from-yellow-500 to-orange-600',
       bgColor: 'from-yellow-500/10 to-orange-500/10',
-<<<<<<< HEAD
-      examples: ['Quantum AI: 2 hours', 'Manufacturing AI: 1 day', 'Cybersecurity: 4 hours']
-=======
       marketData: 'Average setup time: 2 hours vs. competitors: 2-4 weeks'
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-30ec
     },
     {
       icon: '💰',
@@ -28,11 +24,7 @@ export default function MicroSaasPage() {
       description: 'No hidden fees, no enterprise sales calls. Simple monthly pricing that scales with your business needs. 50-80% lower than enterprise alternatives.',
       color: 'from-green-500 to-emerald-600',
       bgColor: 'from-green-500/10 to-emerald-500/10',
-<<<<<<< HEAD
-      examples: ['Quantum AI: $299 vs $2000+', 'Manufacturing: $199 vs $500+', 'Space Tech: $399 vs $1000+']
-=======
       marketData: 'Save 60-95% vs. enterprise competitors'
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-30ec
     },
     {
       icon: '🔒',
@@ -40,11 +32,7 @@ export default function MicroSaasPage() {
       description: 'Bank-level security, SOC 2 compliance, and 99.9% uptime guarantee for all services. Quantum-resistant encryption and AI-powered threat detection.',
       color: 'from-blue-500 to-indigo-600',
       bgColor: 'from-blue-500/10 to-blue-500/10',
-<<<<<<< HEAD
-      examples: ['Quantum-resistant encryption', 'AI threat detection', 'Zero-trust architecture']
-=======
       marketData: '99.9% uptime guarantee vs. industry average 99.5%'
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-30ec
     },
     {
       icon: '📊',
@@ -52,11 +40,7 @@ export default function MicroSaasPage() {
       description: 'Each service delivers measurable ROI within months. Our customers report 200-1000% returns on investment through improved efficiency and breakthrough capabilities.',
       color: 'from-purple-500 to-violet-600',
       bgColor: 'from-purple-500/10 to-purple-500/10',
-<<<<<<< HEAD
-      examples: ['Quantum AI: 1000% ROI', 'Manufacturing: 400% ROI', 'Cybersecurity: 300% ROI']
-=======
       marketData: 'Average customer ROI: 400-1200% within 6-12 months'
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-30ec
     },
     {
       icon: '🌐',
@@ -64,24 +48,15 @@ export default function MicroSaasPage() {
       description: 'Access all services through ziontechgroup.com with single sign-on and integrated billing. Seamless integration between different micro SAAS solutions.',
       color: 'from-teal-500 to-cyan-600',
       bgColor: 'from-teal-500/10 to-cyan-500/10',
-<<<<<<< HEAD
-      examples: ['Single sign-on', 'Integrated billing', 'Cross-service integration']
-=======
       marketData: '150+ services on one platform vs. managing multiple vendors'
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-30ec
     },
     {
       icon: '🎯',
       title: 'Focused Solutions',
       description: 'Specialized tools that do one thing exceptionally well, without enterprise complexity. Each service solves a specific business problem with precision.',
       color: 'from-rose-500 to-pink-600',
-<<<<<<< HEAD
-      bgColor: 'from-rose-500/10 to-pink-500/10',
-      examples: ['Quantum AI for research', 'Manufacturing for production', 'Space tech for satellites']
-=======
       bgColor: 'from-rose-500/10 to-rose-500/10',
       marketData: 'Specialized expertise vs. jack-of-all-trades approach'
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-30ec
     }
   ];
 
@@ -122,22 +97,10 @@ export default function MicroSaasPage() {
     }
   });
 
-<<<<<<< HEAD
-  // Enhanced revolutionary services with real implementation details
-  const revolutionaryServices = enhancedRealMicroSaasServices.filter(service => 
-    service.realImplementation && service.popular
-  ).map(service => ({
-    ...service,
-    marketAdvantage: getMarketAdvantage(service),
-    implementationBenefits: getImplementationBenefits(service),
-    competitivePricing: getCompetitivePricing(service)
-  }));
-=======
   // New revolutionary services showcase with enhanced market data
   const revolutionaryServices = enhancedRealMicroSaasServices.filter(service => 
     service.realImplementation && service.popular
   ).slice(0, 6);
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-30ec
 
   function getMarketAdvantage(service: any) {
     switch (service.category) {
@@ -771,16 +734,10 @@ export default function MicroSaasPage() {
                   {service.icon}
                   <h3 className="text-2xl font-bold text-white">{service.title}</h3>
                 </div>
-<<<<<<< HEAD
-                <h3 className="text-xl font-bold text-gray-900 mb-4">{advantage.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{advantage.description}</p>
-              </Card>
-=======
                 <h3 className="text-xl font-semibold text-white mb-3">{advantage.title}</h3>
                 <p className="text-slate-300">{advantage.description}</p>
                 <p className="text-slate-400 text-sm mt-2">{advantage.marketData}</p>
               </motion.div>
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-30ec
             ))}
           </div>
         </div>
@@ -806,13 +763,8 @@ export default function MicroSaasPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {revolutionaryServices.slice(0, 6).map((service, index) => (
               <motion.div
-<<<<<<< HEAD
-                key={service.id}
-                initial={{ opacity: 0, y: 30 }}
-=======
                 key={service.name}
                 initial={{ opacity: 0, y: 20 }}
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-30ec
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}

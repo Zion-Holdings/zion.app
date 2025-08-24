@@ -17,8 +17,4 @@ const Verify: NextPage = () => {
   );
 };
 
-<<<<<<< HEAD
 export default Verify;
-=======
-export default Verify;
->>>>>>> origin/cursor/deploy-zion-brain-ai-system-5783

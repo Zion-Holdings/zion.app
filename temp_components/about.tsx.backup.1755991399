@@ -17,9 +17,6 @@ const About: NextPage = () => {
   );
 };
 
-<<<<<<< HEAD
-export default About;
-=======
 import React from 'react';
 
 export default function AboutPage() {
@@ -32,4 +29,3 @@ export default function AboutPage() {
 }
 =======
 export default About;
->>>>>>> origin/cursor/deploy-zion-token-economy-simulator-07d9

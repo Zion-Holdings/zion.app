@@ -52,14 +52,6 @@ export default function AIFinancialPlanningPlatform() {
     'Gain professional-grade financial insights'
   ];
 
-<<<<<<< HEAD
-  const useCases = [
-    'Retirement Planning', 'Investment Management', 'Tax Optimization',
-    'Estate Planning', 'Insurance Planning', 'Debt Management',
-    'Cash Flow Analysis', 'Budget Planning', 'Emergency Fund Planning',
-    'Education Funding', 'Real Estate Planning', 'Business Financial Planning'
-  ];
-=======
 					<div className="mt-12">
 						<h2 className="text-2xl font-semibold">Pricing</h2>
 						<div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -81,7 +73,6 @@ export default function AIFinancialPlanningPlatform() {
 						</div>
 						<p className="mt-4 text-sm text-gray-400">Market references: <a className="underline hover:text-cyan-300" href="https://www.workday.com/en-us/products/planning/adaptive-planning.html" target="_blank" rel="noreferrer">Workday Adaptive</a>, <a className="underline hover:text-cyan-300" href="https://www.anaplan.com/pricing/" target="_blank" rel="noreferrer">Anaplan</a>, <a className="underline hover:text-cyan-300" href="https://pigment.com/pricing" target="_blank" rel="noreferrer">Pigment</a>.</p>
 					</div>
->>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-1fa4
 
   return (
     <>

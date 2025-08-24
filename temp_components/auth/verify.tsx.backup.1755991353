@@ -1,15 +1,4 @@
 import type { NextPage } from 'next';
-<<<<<<< HEAD
-
-const Verify: NextPage = () => (
-  <div>
-    <h1 className="text-2xl font-semibold mb-2">Verify Account</h1>
-    <p className="text-gray-700 dark:text-gray-300">Verifying your account...</p>
-  </div>
-);
-
-export default Verify;
-=======
 import Head from 'next/head';
 
 const Verify: NextPage = () => {
@@ -29,4 +18,3 @@ const Verify: NextPage = () => {
 };
 
 export default Verify;
->>>>>>> origin/cursor/create-dynamic-listing-pages-with-filters-fc72

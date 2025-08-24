@@ -84,18 +84,6 @@ export default function HomePage() {
       description: 'Typical return on investment for our customers',
       color: 'text-yellow-400'
     },
-<<<<<<< HEAD
-    { 
-      value: '24/7', 
-      label: 'AI Support', 
-      description: 'Round-the-clock intelligent customer assistance',
-      color: 'text-pink-400'
-    }
-  ];
-
-  // Service categories with market insights
-  const serviceCategoriesWithInsights = [
-=======
     {
       title: '💰 Quantum Financial Trading Platform',
       description: 'Quantum-enhanced algorithmic trading and risk management. Achieve 1200% ROI within 6 months.',
@@ -330,7 +318,6 @@ export default function HomePage() {
   ];
 
   const serviceCategories = [
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-30ec
     {
       name: 'Quantum Computing & AI',
       description: 'Revolutionary quantum AI solutions with unprecedented computing power',

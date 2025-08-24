@@ -17,8 +17,4 @@ const EmergingTechnologyTrends: NextPage = () => {
   );
 };
 
-<<<<<<< HEAD
 export default EmergingTechnologyTrends;
-=======
-export default EmergingTechnologyTrends;
->>>>>>> origin/cursor/deploy-zion-brain-ai-system-5783

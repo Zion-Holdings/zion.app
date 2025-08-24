@@ -1,7 +1,1 @@
-<<<<<<< HEAD
-export default function Page() {
-  return <div className="py-10">Digital Transformation Insights</div>;
-}
-=======
 export default function Page(){return <div className="prose dark:prose-invert"><h1>Digital Transformation Insights</h1><p>Content coming soon.</p></div>}
->>>>>>> origin/cursor/build-zion-global-expo-platform-712b

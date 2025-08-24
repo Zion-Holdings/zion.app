@@ -570,9 +570,6 @@ export default function ServicesPage() {
                     </Button>
                   </div>
                 </div>
-<<<<<<< HEAD
-              </div>
-=======
               </Card>
             ))}
           </div>
@@ -660,7 +657,6 @@ export default function ServicesPage() {
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-cursor-blue/10 border border-cursor-blue/20 text-cursor-blue text-sm font-medium mb-6">
               <span className="w-2 h-2 bg-cursor-blue rounded-full mr-2 animate-pulse" />
               Technology Stack
->>>>>>> origin/cursor/enhance-app-with-micro-saas-and-advertising-602f
             </div>
 
             {/* Contact Info */}

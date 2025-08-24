@@ -1,58 +1,3 @@
-<<<<<<< HEAD
-import Link from 'next/link';
-
-export default function HomePage() {
-  return (
-    <div className="space-y-10">
-      <section className="text-center py-16">
-        <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">Autonomous Cloud Automations for Zion</h1>
-        <p className="mt-4 text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-          Always-on agents that research, improve, and evolve your product—no human babysitting, no servers to manage.
-        </p>
-        <div className="mt-8 flex flex-wrap justify-center gap-3">
-          <Link href="/automation"><a className="px-5 py-3 rounded-lg bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-medium shadow">Explore Automations</a></Link>
-          <Link href="/automation/innovation"><a className="px-5 py-3 rounded-lg border border-gray-300 dark:border-gray-700 font-medium">Innovation Digest</a></Link>
-          <Link href="/automation/tech-radar"><a className="px-5 py-3 rounded-lg border border-gray-300 dark:border-gray-700 font-medium">Tech Radar</a></Link>
-          <Link href="/automation/repo-health"><a className="px-5 py-3 rounded-lg border border-gray-300 dark:border-gray-700 font-medium">Repo Health</a></Link>
-          <Link href="/automation/content-map"><a className="px-5 py-3 rounded-lg border border-gray-300 dark:border-gray-700 font-medium">Content Map</a></Link>
-          <Link href="/automation/site-validator"><a className="px-5 py-3 rounded-lg border border-gray-300 dark:border-gray-700 font-medium">Site Validator</a></Link>
-          <Link href="/automation/knowledge-graph"><a className="px-5 py-3 rounded-lg border border-gray-300 dark:border-gray-700 font-medium">Knowledge Graph</a></Link>
-        </div>
-      </section>
-
-      <section className="grid md:grid-cols-3 gap-6">
-        <div className="p-6 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
-          <h3 className="font-semibold text-lg">Innovation Digest</h3>
-          <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">Scans arXiv, GitHub Trending, and HuggingFace to summarize the latest AI breakthroughs.</p>
-          <div className="mt-4">
-            <Link href="/automation/innovation"><a className="text-blue-600 dark:text-cyan-400">View live feed →</a></Link>
-          </div>
-        </div>
-        <div className="p-6 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
-          <h3 className="font-semibold text-lg">UI Evolution</h3>
-          <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">Continuously refines UI structure, accessibility, and visual polish based on content analysis.</p>
-          <div className="mt-4">
-            <Link href="/automation"><a className="text-blue-600 dark:text-cyan-400">See details →</a></Link>
-          </div>
-        </div>
-        <div className="p-6 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
-          <h3 className="font-semibold text-lg">SEO & Link Health</h3>
-          <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">Monitors pages, structured data, and links—autofixes issues and keeps growth compounding.</p>
-          <div className="mt-4">
-            <Link href="/automation"><a className="text-blue-600 dark:text-cyan-400">Learn more →</a></Link>
-          </div>
-        </div>
-      </section>
-
-<<<<<<< HEAD
-      <section className="rounded-2xl p-8 bg-gradient-to-br from-blue-600 to-cyan-500 text-white">
-        <h2 className="text-2xl font-bold">Zero-maintenance, Cloud-native</h2>
-        <p className="mt-2 text-white/90 max-w-2xl">Agents run on schedules in GitHub Actions and Netlify—fetching data, updating the site, and committing changes automatically.</p>
-        <div className="mt-4">
-          <Link href="https://github.com/Zion-Holdings/zion.app"><a className="underline" target="_blank" rel="noreferrer">View repo →</a></Link>
-        </div>
-      </section>
-=======
         {/* Features */}
         <section className="mx-auto max-w-7xl px-6 pb-14">
           <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Features</h2>
@@ -357,53 +302,9 @@ export default function HomePage() {
           </div>
         </section>
 </main>
->>>>>>> origin/cursor/develop-and-deploy-continuous-github-action-innovations-1374
     </div>
   );
 }
-=======
-<<<<<<< HEAD
-import type { NextPage } from 'next';
-import Head from 'next/head';
-import Link from 'next/link';
-
-const Home: NextPage = () => {
-  return (
-    <div>
-      <Head>
-        <title>Zion</title>
-      </Head>
-      <div className="py-16">
-        <h1 className="text-3xl font-bold text-white">Welcome to Zion</h1>
-        <p className="mt-2 text-white/80">Explore our AI Marketplace of curated IT services.</p>
-        <div className="mt-6 flex flex-wrap gap-3">
-          <Link href="/services"><a className="inline-block rounded-full px-5 py-2 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 text-white">Browse Services</a></Link>
-          <Link href="/automation"><a className="inline-block rounded-full px-5 py-2 border border-white/20 text-white/90 hover:bg-white/10">See Autonomous Automations</a></Link>
-        </div>
-        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          <Link href="/automation/marketplace-enrichment"><a className="rounded-2xl border border-white/10 bg-white/5 p-5 hover:bg-white/10 transition">
-            <div className="text-white font-medium">Marketplace Enrichment</div>
-            <div className="text-white/70 text-sm mt-1">AI summaries, tags and tiers for services</div>
-          </a></Link>
-          <Link href="/automation/quote-requests"><a className="rounded-2xl border border-white/10 bg-white/5 p-5 hover:bg-white/10 transition">
-            <div className="text-white font-medium">Quote Requests Log</div>
-            <div className="text-white/70 text-sm mt-1">Auto-synced requests with AI analysis</div>
-          </a></Link>
-          <Link href="/automation/autodocs"><a className="rounded-2xl border border-white/10 bg-white/5 p-5 hover:bg-white/10 transition">
-            <div className="text-white font-medium">Autodocs</div>
-            <div className="text-white/70 text-sm mt-1">Documentation generated from code</div>
-          </a></Link>
-          <Link href="/automation/bundle-report"><a className="rounded-2xl border border-white/10 bg-white/5 p-5 hover:bg-white/10 transition">
-            <div className="text-white font-medium">Bundle Size Report</div>
-            <div className="text-white/70 text-sm mt-1">Performance snapshot from the latest build</div>
-          </a></Link>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export default Home;
 =======
 import React from 'react';
 
@@ -415,5 +316,3 @@ export default function HomePage() {
     </div>
   );
 }
->>>>>>> origin/cursor/build-zion-ai-notification-center-5a66
->>>>>>> 5f48a381108fa3a8a43c189dd4b043133ce9307e

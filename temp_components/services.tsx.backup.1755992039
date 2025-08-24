@@ -134,9 +134,6 @@ import { comprehensiveITSolutions } from '../data/comprehensive-it-solutions';
 import { curatedMarketServices } from '../data/curated-market-services';
 import { realMarketServices } from '../data/real-market-services';
 import { new2025Services } from '../data/new-2025-services';
-<<<<<<< HEAD
-import { new2025Q1RealServices } from '../data/new-2025-q1-services';
-=======
 import { newRealInnovations } from '../data/new-real-innovations';
 import { serviceExpansions2025 } from '../data/service-expansions-2025';
 import { newOperationalServices2025 } from '../data/new-operational-services-2025';
@@ -157,7 +154,6 @@ import { innovative2026MicroSaasServicesV3 } from '../data/innovative-2026-micro
 import { emergingTech2026ServicesV3 } from '../data/emerging-tech-2026-services-v3';
 import { enterpriseIT2026ServicesV3 } from '../data/enterprise-it-2026-services-v3';
 import { nextGenAI2026ServicesV3 } from '../data/next-gen-ai-2026-services-v3';
->>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-071d
 
 export default function ServicesPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -183,9 +179,6 @@ export default function ServicesPage() {
     ...curatedMarketServices,
     ...realMarketServices,
     ...new2025Services,
-<<<<<<< HEAD
-    ...new2025Q1RealServices
-=======
     ...verified2025Additions,
     ...newRealInnovations,
     ...serviceExpansions2025,
@@ -203,7 +196,6 @@ export default function ServicesPage() {
     ...emergingTech2026ServicesV3,
     ...enterpriseIT2026ServicesV3,
     ...nextGenAI2026ServicesV3
->>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-071d
   ];
 
   const marketAnalysis = [

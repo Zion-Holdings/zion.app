@@ -17,8 +17,4 @@ const Callback: NextPage = () => {
   );
 };
 
-<<<<<<< HEAD
 export default Callback;
-=======
-export default Callback;
->>>>>>> origin/cursor/deploy-zion-brain-ai-system-5783

@@ -2,13 +2,6 @@ import Link from 'next/link';
 
 export default function Home() {
   return (
-<<<<<<< HEAD
-    <div className="space-y-4">
-      <h1 className="text-2xl font-bold">Zion</h1>
-      <p>Welcome. Visit the org chart:</p>
-      <Link className="text-indigo-600 underline" href="/team">/team</Link>
-    </div>
-=======
     <>
       <Head>
         <title>Zion Tech Group — Autonomous Innovation Hub</title>
@@ -192,6 +185,5 @@ export default function Home() {
         </main>
       </div>
     </>
->>>>>>> origin/cursor/content-updates-and-link-fixes
   );
 }

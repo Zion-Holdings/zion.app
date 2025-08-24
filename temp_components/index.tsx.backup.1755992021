@@ -89,26 +89,6 @@ import { innovativeMicroSaas2030 } from '../data/2030-innovative-micro-saas';
 
 export default function HomePage() {
   const heroStats = [
-<<<<<<< HEAD
-    { value: '6+', label: 'Micro SaaS Services', color: 'text-cyan-400' },
-    { value: '14-Day', label: 'Free Trial', color: 'text-fuchsia-400' },
-    { value: 'AI-Powered', label: 'Solutions', color: 'text-blue-400' },
-    { value: 'Competitive', label: 'Pricing', color: 'text-green-400' },
-  ];
-
-  const heroStats = marketStats;
-
-  const contactInfo = {
-    mobile: '+1 302 464 0950',
-    email: 'kleber@ziontechgroup.com',
-    address: '364 E Main St STE 1008 Middletown DE 19709',
-    website: 'https://ziontechgroup.com'
-  };
-
-      icon: <Code className="w-8 h-8 text-white" />,
-      title: 'Code Review Assistant',
-      description: 'AI-powered code analysis with security, performance, and maintainability insights. Support for JavaScript, Python, and TypeScript.',
-=======
     { value: '75+', label: 'Real Micro SaaS Services', color: 'text-cyan-400' },
     { value: '99.9%', label: 'Uptime Guarantee', color: 'text-fuchsia-400' },
     { value: '14', label: 'Day Free Trials', color: 'text-blue-400' },
@@ -127,7 +107,6 @@ export default function HomePage() {
       icon: <Bot className="w-8 h-8 text-white" />,
       title: 'AI-Powered Solutions',
       description: 'Advanced AI content generation, SEO automation, chatbots, and business intelligence.',
->>>>>>> origin/cursor/enhance-app-with-micro-saas-and-website-improvements-05c6
       color: 'bg-gradient-to-br from-fuchsia-500 to-purple-600',
       gradient: 'from-fuchsia-400 to-purple-500',
       pricing: 'Free tier, Pro from $29/month'
@@ -671,13 +650,6 @@ export default function HomePage() {
               </div>
             </motion.div>
           </div>
-<<<<<<< HEAD
-        </section>
-      
-      {/* Footer */}
-              <UltraFuturisticFooter2030 />
-          </UltraFuturisticBackground2030>
-=======
           
           <div className="text-center mt-12">
             <p className="text-gray-300 mb-6">
@@ -1026,6 +998,5 @@ export default function HomePage() {
         </div>
       </section>
     </>
->>>>>>> origin/cursor/enhance-app-with-micro-saas-and-website-improvements-05c6
   );
 }

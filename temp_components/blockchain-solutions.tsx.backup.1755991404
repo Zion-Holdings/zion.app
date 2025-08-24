@@ -1,26 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-import type { NextPage } from 'next';
-import Head from 'next/head';
-
-const BlockchainSolutions: NextPage = () => {
-  return (
-    <div>
-      <Head>
-        <title>BlockchainSolutions - Zion Tech Solutions</title>
-        <meta name="description" content="BlockchainSolutions page" />
-      </Head>
-      
-      <main>
-        <h1>BlockchainSolutions</h1>
-        <p>This page is under construction.</p>
-      </main>
-    </div>
-  );
-};
-
-export default BlockchainSolutions;
-=======
 export default function BlockchainSolutions() {
   return (
     <div className="space-y-2">
@@ -29,7 +6,6 @@ export default function BlockchainSolutions() {
     </div>
   );
 }
->>>>>>> origin/cursor/design-zion-ai-marketplace-mobile-app-ui-348a
 =======
 export default function BlockchainSolutionsPage() {
   return (
@@ -52,5 +28,3 @@ const BlockchainSolutions: NextPage = () => (
 );
 
 export default BlockchainSolutions;
->>>>>>> origin/cursor/build-zion-ai-marketplace-service-listing-9ebf
->>>>>>> 5f48a381108fa3a8a43c189dd4b043133ce9307e

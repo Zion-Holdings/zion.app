@@ -12,11 +12,7 @@ import { motion } from 'framer-motion';
 
 export default function ContactPage() {
   return (
-<<<<<<< HEAD
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
-=======
     <UltraFuturisticBackground variant="neural" intensity={1}>
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-465f
       <Head>
         <title>Contact Us - Zion Tech Group</title>
         <meta name="description" content="Get in touch with Zion Tech Group. Contact our team of experts for support, sales inquiries, or technical assistance. Available 24/7." />

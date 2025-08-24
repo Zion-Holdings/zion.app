@@ -1,18 +1,9 @@
-<<<<<<< HEAD
-=======
 import React from 'react';
 
->>>>>>> origin/cursor/build-zion-ai-notification-center-5a66
 export default function AboutPage() {
   return (
     <div className="container mx-auto px-4 py-10">
       <h1 className="text-2xl font-semibold">About Zion</h1>
-<<<<<<< HEAD
-      <p className="mt-2 text-gray-600">Information about the Zion AI Marketplace is coming soon.</p>
-    </div>
-  );
-}
-=======
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
@@ -30,4 +21,3 @@ export default About;
     </div>
   );
 }
->>>>>>> origin/cursor/build-zion-ai-notification-center-5a66

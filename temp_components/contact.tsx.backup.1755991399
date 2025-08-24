@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 =======
-=======
->>>>>>> origin/cursor/deploy-zion-token-economy-simulator-07d9
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
@@ -21,9 +18,6 @@ const Contact: NextPage = () => {
   );
 };
 
-<<<<<<< HEAD
-export default Contact;
-=======
 import React from 'react';
 
 export default function ContactPage() {
@@ -36,4 +30,3 @@ export default function ContactPage() {
 }
 =======
 export default Contact;
->>>>>>> origin/cursor/deploy-zion-token-economy-simulator-07d9

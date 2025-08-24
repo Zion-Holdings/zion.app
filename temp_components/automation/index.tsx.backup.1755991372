@@ -1,15 +1,6 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-import React from 'react';
-
-export default function AutomationIndexPage() {
-  return <div>Automation Overview</div>;
-}
-=======
 export default function Automation(){
   return <div style={{padding:20}}>Automation</div>
 }
->>>>>>> origin/cursor/deploy-anonymous-zk-voting-for-dao-e4d6
 =======
 export default function AutomationPage() {
   return <div className="py-10">Automation Dashboard Placeholder</div>;
@@ -33,5 +24,3 @@ export default function AutomationsIndex() {
     </div>
   );
 }
->>>>>>> origin/cursor/build-talent-marketplace-platform-793e
->>>>>>> 5f48a381108fa3a8a43c189dd4b043133ce9307e

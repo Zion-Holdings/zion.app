@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-export default function AuthIndex() { return <div>Auth</div>; }
-=======
 import type { NextPage } from 'next';
 
 const AuthIndex: NextPage = () => (
@@ -11,4 +8,3 @@ const AuthIndex: NextPage = () => (
 );
 
 export default AuthIndex;
->>>>>>> origin/cursor/create-and-automate-service-index-page-b746

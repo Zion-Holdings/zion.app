@@ -8,16 +8,11 @@ import QuantumNeuralBackground from '../components/ui/QuantumNeuralBackground';
 import { expandedMicroSaasServices, serviceCategories, getServicesByCategory, getPopularServices, getServicesByPriceRange } from '../data/expanded-micro-saas-services';
 =======
 import Card from '../components/ui/Card';
-<<<<<<< HEAD
-import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackground';
-import { enhancedMicroSaasServices, serviceCategories, getServicesByCategory, getPopularServices, getServicesByPriceRange } from '../data/enhanced-micro-saas-services';
-=======
 import { motion } from 'framer-motion';
 import { enhancedRealMicroSaasServices, serviceCategories } from '../data/enhanced-real-micro-saas-services';
 import { extraServices } from '../data/extra-services';
 import { additionalEnhancedServices } from '../data/additional-real-services';
 import { innovativeNewServices } from '../data/innovative-new-services';
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-4d3b
 
 export default function ServicesPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -585,25 +580,6 @@ export default function ServicesPage() {
           </div>
         </section>
 
-<<<<<<< HEAD
-        {/* Services Grid */}
-        <section className="py-16">
-          <div className="container mx-auto px-4">
-            {/* Results Count */}
-            <div className="flex justify-between items-center mb-8">
-              <p className="text-gray-300">
-                Showing {filteredServices.length} of {expandedMicroSaasServices.length} services
-              </p>
-              {selectedCategory !== 'All' && (
-                <Button
-                  onClick={() => setSelectedCategory('All')}
-                  variant="secondary"
-                  size="sm"
-                >
-                  Clear Filters
-                </Button>
-              )}
-=======
       {/* Market Benchmarks */}
       <section className="py-6 px-4">
         <div className="container mx-auto">
@@ -752,7 +728,6 @@ export default function ServicesPage() {
                   <UltraFuturisticServiceCard service={service} />
                 </motion.div>
               ))}
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-4d3b
             </div>
           ) : (
                         <div className={`grid gap-8 ${

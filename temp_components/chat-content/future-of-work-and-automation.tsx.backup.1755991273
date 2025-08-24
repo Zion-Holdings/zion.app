@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-export default function Page(){return <div className="prose dark:prose-invert"><h1>Future of Work and Automation</h1><p>Content coming soon.</p></div>}
-=======
 export default function Page() { return <div className="p-8">Future of Work and Automation</div>; }
->>>>>>> origin/cursor/build-zion-ipo-readiness-portal-e565

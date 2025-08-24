@@ -1,2 +1,46 @@
-"use strict";(()=>{var e={};e.id=888,e.ids=[888],e.modules={7727:(e,r,s)=>{var _=s(8097),n="undefined"!=typeof global?global:"undefined"!=typeof self?self:{};n.__sentryRewritesTunnelPath__=void 0,n.SENTRY_RELEASE={id:"RVU7rcs5ix7wi1QrM1sAj"},n.__sentryBasePath=void 0,n.__rewriteFramesDistDir__=".next",_.init({dsn:process.env.SENTRY_DSN,tracesSampleRate:Number(process.env.SENTRY_TRACES_SAMPLE_RATE||.1),environment:process.env.SENTRY_ENV||"production",release:process.env.SENTRY_RELEASE||process.env.VERCEL_GIT_COMMIT_SHA||process.env.COMMIT_REF})},8097:e=>{e.exports=require("@sentry/nextjs")},997:e=>{e.exports=require("react/jsx-runtime")}};var r=require("../webpack-runtime.js");r.C(e);var __webpack_exec__=e=>r(r.s=e),s=r.X(0,[708],()=>__webpack_exec__(4708));module.exports=s})();
-//# sourceMappingURL=_app.js.map
+"use strict";
+/*
+ * ATTENTION: An "eval-source-map" devtool has been used.
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file with attached SourceMaps in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
+(() => {
+var exports = {};
+exports.id = "pages/_app";
+exports.ids = ["pages/_app"];
+exports.modules = {
+
+/***/ "react":
+/*!************************!*\
+  !*** external "react" ***!
+  \************************/
+/***/ ((module) => {
+
+module.exports = require("react");
+
+/***/ }),
+
+/***/ "react/jsx-runtime":
+/*!************************************!*\
+  !*** external "react/jsx-runtime" ***!
+  \************************************/
+/***/ ((module) => {
+
+module.exports = require("react/jsx-runtime");
+
+/***/ })
+
+};
+;
+
+// load runtime
+var __webpack_require__ = require("../webpack-runtime.js");
+__webpack_require__.C(exports);
+var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
+var __webpack_exports__ = __webpack_require__.X(0, ["vendor-chunks/next","vendor-chunks/@swc"], () => (__webpack_exec__("./node_modules/next/dist/pages/_app.js")));
+module.exports = __webpack_exports__;
+
+})();

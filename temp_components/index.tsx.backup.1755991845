@@ -1,33 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
 import { 
-<<<<<<< HEAD
-  Cloud, Bot, RefreshCw, Zap, Shield, BarChart3, ArrowRight, Check, ExternalLink, 
-  Star, Users, Globe, Lock, Rocket, Cpu, Database, TrendingUp, Clock, Target, 
-  Building, Award, DollarSign, ChartBar, Code, BookOpen, Activity, Smartphone, 
-  Palette, Search, MessageSquare, FileText, Calendar, CreditCard, Settings, 
-  Mail, Phone, MapPin, Sparkles, Atom, Brain, Eye, Trophy, FlaskConical, Dna, 
-  Car, Leaf, Factory, Truck, Microscope, GraduationCap, ShieldCheck, Globe2,
-  ChevronRight, Play, Star as StarIcon, Check as CheckIcon, ArrowRight as ArrowRightIcon,
-  Brain as BrainIcon, Factory as FactoryIcon, Shield as ShieldIcon, FlaskConical as FlaskIcon,
-  DollarSign as DollarIcon, Rocket as RocketIcon, Globe as GlobeIcon, Zap as ZapIcon,
-  Link as LinkIcon, Building2 as Building2Icon, Cpu as CpuIcon, Database as DatabaseIcon,
-  Bot as BotIcon, Cloud as CloudIcon, Lock as LockIcon, Users as UsersIcon
-} from 'lucide-react';
-import Button from '../components/ui/Button';
-import QuantumHolographicMatrixBackground from '../components/ui/QuantumHolographicMatrixBackground';
-import EnhancedFuturisticCard from '../components/ui/EnhancedFuturisticCard';
-import { Cloud, Bot, RefreshCw, Zap, Shield, BarChart3, ArrowRight, Check, ExternalLink, Star, Users, Globe, Lock, Rocket, Cpu, Database, TrendingUp, Clock, Target, Building, Award, DollarSign, ChartBar, Code, BookOpen, Activity, Smartphone, Palette, Search, MessageSquare, FileText, Calendar, CreditCard, Settings, BookOpen as BookOpenIcon, Activity as ActivityIcon, Database as DatabaseIcon, Play, Mail, Phone, MapPin, Sparkles, Atom, Brain, Eye, Shield as ShieldIcon, Zap as ZapIcon, Globe as GlobeIcon, Cpu as CpuIcon, Cloud as CloudIcon, Bot as BotIcon, Lock as LockIcon, BarChart3 as BarChart3Icon, TrendingUp as TrendingUpIcon, Users as UsersIcon, Award as AwardIcon, Star as StarIcon, Check as CheckIcon, ArrowRight as ArrowRightIcon, ExternalLink as ExternalLinkIcon, Phone as PhoneIcon, Mail as MailIcon, MapPin as MapPinIcon, Rocket as RocketIcon, Satellite, Dna, Leaf, Factory, Car, Microscope, Lightbulb } from 'lucide-react';
-
-export default function HomePage() {
-  const heroStats = [
-    { value: '500+', label: 'Real Micro SaaS Services', color: 'text-cyan-400', icon: <CpuIcon className="w-6 h-6" /> },
-    { value: '99.99%', label: 'Uptime Guarantee', color: 'text-fuchsia-400', icon: <ShieldIcon className="w-6 h-6" /> },
-    { value: '30', label: 'Day Free Trials', color: 'text-blue-400', icon: <StarIcon className="w-6 h-6" /> },
-    { value: '24/7', label: 'AI Support', color: 'text-green-400', icon: <BotIcon className="w-6 h-6" /> },
-    { value: '$1B+', label: 'Market Value', color: 'text-yellow-400', icon: <DollarIcon className="w-6 h-6" /> },
-    { value: '2500%+', label: 'Average ROI', color: 'text-purple-400', icon: <TrendingUp className="w-6 h-6" /> },
-=======
   Shield, Rocket, Clock, DollarSign, TrendingUp, Brain, Factory, Globe, 
   Zap, Link, Building2, FlaskConical, Leaf, Car, Truck, Microscope, 
   GraduationCap, ShieldCheck, Globe2, Cloud, Cpu, Database, Lock, 
@@ -53,7 +26,6 @@ export default function HomePage() {
     { value: '24/7', label: 'AI Support', color: 'text-green-400', icon: <Brain className="w-6 h-6" /> },
     { value: '$25B+', label: 'Combined Market Value', color: 'text-yellow-400', icon: <TrendingUp className="w-6 h-6" /> },
     { value: '800%+', label: 'Average ROI', color: 'text-purple-400', icon: <DollarSign className="w-6 h-6" /> },
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-de06
   ];
 
   const heroStats = marketStats;
@@ -138,132 +110,6 @@ export default function HomePage() {
       color: 'from-purple-500 to-indigo-600'
     },
     {
-<<<<<<< HEAD
-      name: 'Space Technology & Mining',
-      description: 'AI-powered space exploration and asteroid mining platforms',
-      icon: <RocketIcon className="w-8 h-8" />,
-      marketSize: '$60B+',
-      growthRate: '500%',
-      services: 8,
-      color: 'from-indigo-500 to-blue-600'
-    },
-    {
-      name: 'Autonomous Systems & Robotics',
-      description: 'Next-generation autonomous manufacturing and robotics platforms',
-      icon: <FactoryIcon className="w-8 h-8" />,
-      marketSize: '$45B+',
-      growthRate: '350%',
-      services: 18,
-      color: 'from-orange-500 to-red-600'
-    },
-    {
-      name: 'Healthcare & Biotechnology',
-      description: 'AI-powered biomedical research and drug discovery platforms',
-      icon: <FlaskIcon className="w-8 h-8" />,
-      marketSize: '$200B+',
-      growthRate: '400%',
-      services: 22,
-      color: 'from-green-500 to-emerald-600'
-    },
-    {
-      name: 'Quantum Finance & Trading',
-      description: 'Quantum AI-powered financial optimization and trading platforms',
-      icon: <DollarIcon className="w-8 h-8" />,
-      marketSize: '$85B+',
-      growthRate: '300%',
-      services: 15,
-      color: 'from-emerald-500 to-teal-600'
-    },
-    {
-      name: 'Metaverse & Virtual Reality',
-      description: 'Holographic metaverse platforms with quantum rendering technology',
-      icon: <GlobeIcon className="w-8 h-8" />,
-      marketSize: '$800B+',
-      growthRate: '400%',
-      services: 12,
-      color: 'from-cyan-500 to-blue-600'
-    }
-  ];
-
-  const revolutionaryServices = [
-    {
-      icon: <Cloud className="w-8 h-8 text-white" />,
-      title: '200+ Real Micro SaaS Services',
-      description: 'Complete portfolio of fully functional micro SaaS tools with real implementations, not just mockups. Starting from $49/month with 21-day free trials.',
-      color: 'bg-gradient-to-br from-cyan-500 to-blue-600',
-      gradient: 'from-cyan-400 to-blue-500',
-    },
-    {
-      icon: <Bot className="w-8 h-8 text-white" />,
-      title: 'AI-Powered Solutions',
-      description: 'Advanced AI content generation, SEO automation, chatbots, business intelligence, and quantum computing platforms. Market-leading technology with 800%+ average ROI.',
-      color: 'bg-gradient-to-br from-fuchsia-500 to-purple-600',
-      gradient: 'from-fuchsia-400 to-purple-500',
-    },
-    {
-      icon: <ShieldIcon className="w-8 h-8 text-white" />,
-      title: 'Enterprise Security',
-      description: '99.9% uptime guarantee, quantum-safe cryptography, and intelligent security monitoring.',
-      color: 'bg-gradient-to-br from-green-500 to-emerald-600',
-      gradient: 'from-green-400 to-emerald-500',
-    },
-    {
-      title: '🚀 Space Technology Platform',
-      description: 'Cutting-edge space exploration and satellite management tools. Achieve 500% ROI within 8 months through improved operations.',
-      price: 'Starting at $399/month',
-      features: ['Satellite mission management and planning', 'Space data analytics and visualization', 'Orbital optimization algorithms', 'Space debris tracking and avoidance'],
-      link: 'https://ziontechgroup.com/space-technology',
-      color: 'from-blue-500 to-indigo-600',
-      marketData: '$4.2B space technology market, 280% annual growth',
-      competitors: 'Maxar ($500+/month), Planet Labs ($400+/month)',
-      savings: 'Save 20% vs. competitors'
-    },
-    {
-      name: 'Quantum Finance Optimizer',
-      description: 'Revolutionary financial optimization platform using quantum computing for portfolio optimization and risk assessment. 50x faster calculations.',
-      icon: <DollarIcon className="w-8 h-8" />,
-      price: '$1,199/month',
-      category: 'Financial Technology',
-      variant: 'quantum-matrix',
-      link: 'https://ziontechgroup.com/quantum-finance-optimizer',
-      features: ['Portfolio optimization', 'Risk assessment', 'Real-time trading', 'Quantum algorithms'],
-      marketSize: '$2.8B market',
-      growthRate: '320% annual growth'
-    },
-    {
-      name: 'Autonomous Logistics AI',
-      description: 'Next-generation autonomous logistics platform that optimizes supply chains in real-time, reducing costs by 40% and improving delivery times by 60%.',
-      icon: <Truck className="w-8 h-8" />,
-      price: '$1,899/month',
-      category: 'Logistics & Supply Chain',
-      variant: 'holographic-neural',
-      link: 'https://ziontechgroup.com/autonomous-logistics-ai',
-      features: ['Real-time route optimization', 'Autonomous vehicle management', 'Inventory forecasting', 'Demand prediction'],
-      marketSize: '$3.5B market',
-      growthRate: '240% annual growth'
-    }
-  ];
-
-  const serviceCategories = [
-    { name: 'Quantum Computing & AI', icon: <BrainIcon className="w-6 h-6" />, count: 15, color: 'from-purple-600 to-indigo-700' },
-    { name: 'Manufacturing & Industry 4.0', icon: <FactoryIcon className="w-6 h-6" />, count: 12, color: 'from-orange-500 to-red-600' },
-    { name: 'Cybersecurity', icon: <ShieldIcon className="w-6 h-6" />, count: 18, color: 'from-green-600 to-emerald-700' },
-    { name: 'Healthcare & Biotechnology', icon: <FlaskIcon className="w-6 h-6" />, count: 14, color: 'from-blue-600 to-cyan-700' },
-    { name: 'Financial Technology', icon: <DollarIcon className="w-6 h-6" />, count: 16, color: 'from-yellow-500 to-amber-600' },
-    { name: 'Logistics & Supply Chain', icon: <Truck className="w-6 h-6" />, count: 11, color: 'from-teal-500 to-green-600' },
-    { name: 'Space Technology', icon: <RocketIcon className="w-6 h-6" />, count: 8, color: 'from-indigo-600 to-purple-700' },
-    { name: 'Education Technology', icon: <GraduationCap className="w-6 h-6" />, count: 13, color: 'from-blue-500 to-indigo-600' }
-  ];
-
-  return (
-    <div className="min-h-screen bg-black text-white overflow-hidden">
-      <Head>
-        <title>Zion Tech Group - Revolutionary Micro SaaS Services & AI Solutions</title>
-        <meta name="description" content="Discover 500+ revolutionary micro SaaS services powered by AI, quantum computing, and cutting-edge technology. Transform your business with our innovative solutions." />
-        <meta name="keywords" content="micro SaaS, AI services, quantum computing, cybersecurity, healthcare AI, fintech, logistics AI, space technology" />
-        <meta property="og:title" content="Zion Tech Group - Revolutionary Micro SaaS Services" />
-        <meta property="og:description" content="500+ innovative micro SaaS services powered by AI and quantum computing" />
-=======
       avatar: '🏭',
       name: 'Marcus Rodriguez',
       role: 'Operations Director',
@@ -358,20 +204,13 @@ export default function HomePage() {
         <meta name="author" content="Zion Tech Group" />
         <meta property="og:title" content="Zion Tech Group - Revolutionary Micro SaaS Services" />
         <meta property="og:description" content="200+ cutting-edge micro SaaS services powered by quantum computing and AI" />
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-de06
         <meta property="og:url" content="https://ziontechgroup.com" />
         <meta property="og:type" content="website" />
         <link rel="canonical" href="https://ziontechgroup.com" />
       </Head>
 
-<<<<<<< HEAD
-      <UltraFuturisticBackground>
-        {/* Hero Section */}
-      <section className="relative z-10 pt-20 pb-32 px-4 sm:px-6 lg:px-8">
-=======
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-de06
         <div className="max-w-7xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -379,17 +218,6 @@ export default function HomePage() {
             transition={{ duration: 0.8 }}
             className="mb-8"
           >
-<<<<<<< HEAD
-            <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-6">
-              The Future of
-              <span className="block text-6xl md:text-8xl bg-gradient-to-r from-blue-400 via-indigo-500 to-violet-500 bg-clip-text text-transparent">
-                Micro SaaS
-              </span>
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-              Discover 500+ revolutionary micro SaaS services powered by AI, quantum computing, and cutting-edge technology. 
-              Transform your business with our innovative solutions that deliver unprecedented ROI and competitive advantages.
-=======
             <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
               <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
                 Revolutionary
@@ -399,7 +227,6 @@ export default function HomePage() {
             </h1>
             <p className="text-xl sm:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
               Experience the future of business technology with our cutting-edge micro SaaS solutions powered by quantum computing, artificial intelligence, and next-generation innovations.
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-de06
             </p>
           </motion.div>
 
@@ -438,25 +265,6 @@ export default function HomePage() {
           >
             {heroStats.map((stat, index) => (
               <motion.div
-<<<<<<< HEAD
-                key={stat.label}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
-                className="text-center group"
-              >
-                <div className="bg-gradient-to-br from-gray-900/50 to-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-gray-600/70 transition-all duration-300 hover:scale-105">
-                  <div className="flex justify-center mb-3">
-                    <div className="p-3 bg-gradient-to-br from-gray-800 to-gray-700 rounded-xl group-hover:scale-110 transition-transform duration-300">
-                      {stat.icon}
-                    </div>
-                  </div>
-                  <div className={`text-3xl font-bold ${stat.color} mb-2`}>
-                    {stat.value}
-                  </div>
-                  <div className="text-sm text-gray-400">
-                    {stat.label}
-=======
                 key={index}
                 className="text-center p-4 rounded-xl bg-black/20 backdrop-blur-sm border border-white/10"
                 whileHover={{ scale: 1.05, y: -5 }}
@@ -557,7 +365,6 @@ export default function HomePage() {
                   <div className="text-gray-300">{insight.description}</div>
                   <div className="mt-4 text-white/60">
                     {insight.icon}
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-de06
                   </div>
                 </div>
               </motion.div>
@@ -567,11 +374,7 @@ export default function HomePage() {
       </section>
 
       {/* Revolutionary Services Section */}
-<<<<<<< HEAD
-      <section className="relative z-10 py-20 px-4 sm:px-6 lg:px-8">
-=======
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-black/20">
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-de06
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -580,94 +383,23 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-<<<<<<< HEAD
-            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent mb-6">
-              Revolutionary Services
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Experience the future with our cutting-edge services that combine AI, quantum computing, and innovative technology
-=======
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
               Revolutionary <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Services</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Discover our most innovative micro SaaS services that are transforming industries and creating new possibilities.
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-de06
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {revolutionaryServices.map((service, index) => (
               <motion.div
-<<<<<<< HEAD
-                key={service.name}
-=======
                 key={service.id}
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-de06
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-<<<<<<< HEAD
-                <UltraFuturisticCard
-                  variant="default"
-                  className="h-full group hover:scale-105 transition-transform duration-300"
-                >
-                  <div className="p-6">
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="p-3 bg-gradient-to-br from-gray-800 to-gray-700 rounded-xl group-hover:scale-110 transition-transform duration-300">
-                        {service.icon}
-                      </div>
-                      <span className="text-sm font-semibold text-gray-400 bg-gray-800/50 px-3 py-1 rounded-full">
-                        {service.category}
-                      </span>
-                    </div>
-                    
-                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">
-                      {service.name}
-                    </h3>
-                    
-                    <p className="text-gray-300 mb-4 line-clamp-3">
-                      {service.description}
-                    </p>
-                    
-                    <div className="space-y-3 mb-6">
-                      {service.features.slice(0, 4).map((feature, idx) => (
-                        <div key={idx} className="flex items-center text-sm text-gray-400">
-                          <Check className="w-4 h-4 text-green-400 mr-2 flex-shrink-0" />
-                          {feature}
-                        </div>
-                      ))}
-                    </div>
-                    
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="text-2xl font-bold text-cyan-400">
-                        {service.price}
-                      </div>
-                      <div className="text-sm text-gray-400">
-                        {service.marketSize}
-                      </div>
-                    </div>
-                    
-                    <div className="text-sm text-gray-400 mb-4">
-                      Growth: <span className="text-green-400 font-semibold">{service.growthRate}</span>
-                    </div>
-                    
-                    <Button
-                      href={service.link}
-                      variant="primary"
-                      size="sm"
-                      className="w-full group"
-                    >
-                      Learn More
-                      <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                    </Button>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-=======
                 <UltraAdvancedFuturisticCard
                   title={service.name}
                   description={service.description}
@@ -685,14 +417,9 @@ export default function HomePage() {
                 />
               </motion.div>
             ))}
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-de06
           </div>
         </section>
 
-<<<<<<< HEAD
-      {/* Service Categories Section */}
-      <section className="relative z-10 py-20 px-4 sm:px-6 lg:px-8">
-=======
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -713,7 +440,6 @@ export default function HomePage() {
 
       {/* Technology Highlights Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-de06
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -722,20 +448,6 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-<<<<<<< HEAD
-            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent mb-6">
-              Service Categories
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Explore our comprehensive range of micro SaaS services across cutting-edge technology domains
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {serviceCategories.map((category, index) => (
-              <motion.div
-                key={category.name}
-=======
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
               Cutting-Edge <span className="bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">Technology</span>
             </h2>
@@ -748,32 +460,10 @@ export default function HomePage() {
             {technologyHighlights.map((tech, index) => (
               <motion.div
                 key={index}
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-de06
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 viewport={{ once: true }}
-<<<<<<< HEAD
-              >
-                <div className={`bg-gradient-to-br ${category.color} p-6 rounded-2xl group hover:scale-105 transition-all duration-300 cursor-pointer`}>
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="p-3 bg-white/20 rounded-xl group-hover:scale-110 transition-transform duration-300">
-                      {category.icon}
-                    </div>
-                    <span className="text-sm font-semibold text-white/80 bg-white/20 px-3 py-1 rounded-full">
-                      {category.count}
-                    </span>
-                  </div>
-                  
-                  <h3 className="text-lg font-bold text-white mb-2">
-                    {category.name}
-                  </h3>
-                  
-                  <div className="flex items-center text-white/80 group-hover:text-white transition-colors">
-                    <span className="text-sm">Explore services</span>
-                    <ChevronRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                  </div>
-=======
                 className="text-center group"
               >
                 <div className={`p-8 rounded-2xl bg-gradient-to-br ${tech.color} bg-opacity-10 border border-white/10 backdrop-blur-sm group-hover:scale-105 transition-all duration-300 mb-6`}>
@@ -821,7 +511,6 @@ export default function HomePage() {
                   <div className="text-4xl mb-4">{advantage.icon}</div>
                   <h3 className="text-xl font-semibold text-white mb-3">{advantage.title}</h3>
                   <p className="text-gray-300">{advantage.description}</p>
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-de06
                 </div>
               </motion.div>
             ))}
@@ -829,13 +518,8 @@ export default function HomePage() {
         </div>
       </section>
 
-<<<<<<< HEAD
-      {/* Featured Services Section */}
-      <section className="relative z-10 py-20 px-4 sm:px-6 lg:px-8">
-=======
       {/* Testimonials Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-de06
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -844,20 +528,6 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-<<<<<<< HEAD
-            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent mb-6">
-              Featured Services
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Our most popular and innovative micro SaaS services that are transforming industries worldwide
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {featuredServices.map((service, index) => (
-              <motion.div
-                key={service.id}
-=======
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
               Customer <span className="bg-gradient-to-r from-pink-400 to-rose-400 bg-clip-text text-transparent">Success</span>
             </h2>
@@ -870,56 +540,10 @@ export default function HomePage() {
             {testimonials.map((testimonial, index) => (
               <motion.div
                 key={index}
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-de06
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 viewport={{ once: true }}
-<<<<<<< HEAD
-              >
-                <UltraFuturisticCard
-                  variant="default"
-                  className="h-full group hover:scale-105 transition-transform duration-300"
-                >
-                  <div className="p-6">
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="text-3xl">{service.icon}</div>
-                      <span className="text-sm font-semibold text-gray-400 bg-gray-800/50 px-3 py-1 rounded-full">
-                        {service.category}
-                      </span>
-                    </div>
-                    
-                    <h3 className="text-lg font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors line-clamp-2">
-                      {service.name}
-                    </h3>
-                    
-                    <p className="text-gray-300 text-sm mb-4 line-clamp-3">
-                      {service.tagline}
-                    </p>
-                    
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="text-xl font-bold text-cyan-400">
-                        {service.price}
-                        <span className="text-sm text-gray-400 font-normal">{service.period}</span>
-                      </div>
-                      <div className="flex items-center text-yellow-400">
-                        <Star className="w-4 h-4 fill-current" />
-                        <span className="text-sm ml-1">{service.rating}</span>
-                      </div>
-                    </div>
-                    
-                    <Button
-                      href={service.link}
-                      variant="primary"
-                      size="sm"
-                      className="w-full group"
-                    >
-                      View Details
-                      <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                    </Button>
-                  </div>
-                </UltraFuturisticCard>
-=======
                 className="group"
               >
                 <div className="p-8 rounded-2xl bg-black/20 backdrop-blur-sm border border-white/10 group-hover:scale-105 transition-all duration-300">
@@ -936,20 +560,14 @@ export default function HomePage() {
                     <div className="text-sm text-cyan-400 mt-2">{testimonial.service}</div>
                   </div>
                 </div>
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-de06
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-<<<<<<< HEAD
-      {/* Contact CTA Section */}
-      <section className="relative z-10 py-20 px-4 sm:px-6 lg:px-8">
-=======
       {/* Final CTA Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-de06
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -957,54 +575,6 @@ export default function HomePage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-<<<<<<< HEAD
-            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent mb-6">
-              Ready to Transform Your Business?
-            </h2>
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              Join thousands of businesses already leveraging our revolutionary micro SaaS services. 
-              Get started today with a free consultation and discover how we can accelerate your growth.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-              <Button 
-                href="/contact" 
-                variant="primary" 
-                size="lg"
-                className="group relative overflow-hidden"
-              >
-                Get Free Consultation
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <Button 
-                href="/services" 
-                variant="secondary" 
-                size="lg"
-                className="group relative overflow-hidden"
-              >
-                Browse All Services
-                <Search className="ml-2 h-5 w-5 group-hover:scale-110 transition-transform" />
-              </Button>
-            </div>
-
-            {/* Contact Information */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
-              <div className="flex flex-col items-center p-4 bg-gradient-to-br from-gray-900/50 to-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-xl">
-                <Phone className="w-6 h-6 text-cyan-400 mb-2" />
-                <span className="text-sm text-gray-400">Phone</span>
-                <span className="text-white font-semibold">{contactInfo.mobile}</span>
-              </div>
-              <div className="flex flex-col items-center p-4 bg-gradient-to-br from-gray-900/50 to-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-xl">
-                <Mail className="w-6 h-6 text-purple-400 mb-2" />
-                <span className="text-sm text-gray-400">Email</span>
-                <span className="text-white font-semibold">{contactInfo.email}</span>
-              </div>
-              <div className="flex flex-col items-center p-4 bg-gradient-to-br from-gray-900/50 to-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-xl">
-                <MapPin className="w-6 h-6 text-green-400 mb-2" />
-                <span className="text-sm text-gray-400">Address</span>
-                <span className="text-white font-semibold text-center text-sm">{contactInfo.address}</span>
-              </div>
-=======
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
               Ready to <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">Transform</span> Your Business?
             </h2>
@@ -1027,7 +597,6 @@ export default function HomePage() {
               >
                 Get Started
               </Button>
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-de06
             </div>
 
             {/* Contact Information */}

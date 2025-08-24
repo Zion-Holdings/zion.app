@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-import React from 'react';
-
-export default function AboutPage() {
-  return <div>About Zion</div>;
-}
-=======
 export default function About(){
   return <div style={{padding:20}}>About Zion</div>
 }
@@ -30,7 +22,6 @@ const About: NextPage = () => {
 };
 
 export default About;
->>>>>>> origin/cursor/deploy-offworld-zion-os-on-ipfs-and-orbitdb-92ee
 =======
 export default function AboutPage() { return <div className="py-12">About page coming soon.</div>; }
 =======
@@ -39,5 +30,3 @@ export default function About(){
 }
 =======
 export default function AboutPage() { return null }
->>>>>>> origin/cursor/build-zion-ai-api-developer-documentation-hub-2aa3
->>>>>>> 5f48a381108fa3a8a43c189dd4b043133ce9307e

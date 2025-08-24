@@ -325,18 +325,6 @@ export default function HomePage() {
             <h2 className="text-4xl sm:text-5xl font-bold mb-8 text-white leading-tight">
               Enterprise-Grade Micro SaaS Services
             </h2>
-<<<<<<< HEAD
-            <p className="text-xl text-purple-200 max-w-4xl mx-auto leading-relaxed">
-              Discover our comprehensive suite of professional micro SaaS solutions designed for modern businesses. 
-              From AI content generation to performance monitoring, we deliver exceptional value at competitive prices.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-purple-500/30 transition-all duration-300 group">
-              <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Brain className="w-8 h-8 text-white" />
-=======
             <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
               20 specialized micro SaaS solutions covering content creation, design systems, performance monitoring, 
               SEO automation, chatbots, business intelligence, email marketing, social media management, 
@@ -374,7 +362,6 @@ export default function HomePage() {
                     Try Free
                   </Button>
                 </div>
->>>>>>> origin/cursor/enhance-app-with-micro-saas-and-marketing-dece
               </div>
               <h3 className="text-2xl font-bold text-white mb-4">AI Content Generator</h3>
               <p className="text-purple-200 mb-6">Generate high-quality, SEO-optimized content for blogs, social media, and marketing campaigns.</p>
@@ -384,11 +371,6 @@ export default function HomePage() {
               </Button>
             </div>
 
-<<<<<<< HEAD
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-purple-500/30 transition-all duration-300 group">
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Monitor className="w-8 h-8 text-white" />
-=======
             {/* Design System Builder */}
             <div className="group relative">
               <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-violet-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-violet-500/20">
@@ -416,7 +398,6 @@ export default function HomePage() {
                     Try Free
                   </Button>
                 </div>
->>>>>>> origin/cursor/enhance-app-with-micro-saas-and-marketing-dece
               </div>
               <h3 className="text-2xl font-bold text-white mb-4">Performance Monitor</h3>
               <p className="text-purple-200 mb-6">Monitor website performance in real-time with comprehensive metrics and optimization recommendations.</p>
@@ -426,11 +407,6 @@ export default function HomePage() {
               </Button>
             </div>
 
-<<<<<<< HEAD
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-purple-500/30 transition-all duration-300 group">
-              <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Search className="w-8 h-8 text-white" />
-=======
             {/* App Performance Monitor */}
             <div className="group relative">
               <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-amber-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-amber-500/20">
@@ -548,7 +524,6 @@ export default function HomePage() {
                     Try Free
                   </Button>
                 </div>
->>>>>>> origin/cursor/enhance-app-with-micro-saas-and-marketing-dece
               </div>
               <h3 className="text-2xl font-bold text-white mb-4">SEO Analytics</h3>
               <p className="text-purple-200 mb-6">Comprehensive SEO tracking, competitor analysis, and keyword monitoring to improve rankings.</p>

@@ -542,77 +542,6 @@ export default function MicroSaasPage() {
         <meta name="twitter:image" content="https://ziontechgroup.com/og-image.jpg" />
       </Head>
 
-<<<<<<< HEAD
-      {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-pink-900/20 to-cyan-900/20"></div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-500/30 backdrop-blur-sm mb-6">
-            <Star className="w-4 h-4 text-yellow-400 mr-2" />
-            <span className="text-sm font-medium text-blue-300">
-              Real Micro SaaS Solutions
-            </span>
-          </div>
-          
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-            <span className="bg-gradient-to-r from-white via-blue-100 to-cyan-100 bg-clip-text text-transparent">
-              Transform Your Business with
-            </span>
-            <br />
-            <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
-              Real Micro SaaS Services
-            </span>
-          </h1>
-          
-          <p className="text-xl text-gray-300 max-w-4xl mx-auto mb-8 leading-relaxed">
-            Discover 45+ fully-functional micro SaaS tools that deliver immediate value. 
-            From AI-powered automation to cloud optimization, get enterprise-grade solutions without enterprise complexity.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <Button
-              variant="futuristic"
-              size="lg"
-              href="#services"
-              icon={<ArrowRight className="w-5 h-5" />}
-              iconPosition="right"
-              glow
-              className="min-w-[200px]"
-            >
-              Explore Services
-            </Button>
-            
-            <Button
-              variant="outline"
-              size="lg"
-              href="#demo"
-              icon={<Play className="w-5 h-5" />}
-              iconPosition="left"
-              glow
-              className="min-w-[200px]"
-            >
-              Watch Demo
-            </Button>
-          </div>
-          
-          {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-cyan-400 mb-2">45+</div>
-              <div className="text-sm text-gray-400">Real Services</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-fuchsia-400 mb-2">99.9%</div>
-              <div className="text-sm text-gray-400">Uptime</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-blue-400 mb-2">14</div>
-              <div className="text-sm text-gray-400">Day Trials</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-green-400 mb-2">24/7</div>
-              <div className="text-sm text-gray-400">Support</div>
-=======
         {/* Hero Section */}
         <section className="relative py-20 overflow-hidden">
           <div className="container mx-auto px-4 text-center">
@@ -772,7 +701,6 @@ export default function MicroSaasPage() {
                   </Button>
                 </div>
               </div>
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-2d92
             </div>
           </div>
         </div>

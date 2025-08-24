@@ -1,16 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
-<<<<<<< HEAD
-  const role = (req.query.role as string) || 'investor';
-  const valid = ['investor','franchisee','superadmin'];
-  if (!valid.includes(role)) {
-    res.status(400).json({ error: 'Invalid role' });
-    return;
-  }
-  res.setHeader('Set-Cookie', `zion_role=${role}; Path=/; HttpOnly; SameSite=Lax; Max-Age=86400`);
-  res.status(200).json({ ok: true, role });
-=======
   const { role = 'guest', talent } = req.query as { role?: string; talent?: string };
 
   const headers: Record<string, string> = {};
@@ -31,5 +21,4 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   headers['Set-Cookie'] = cookies.join(', ');
   res.writeHead(302, { ...headers, Location: '/' });
   res.end();
->>>>>>> origin/cursor/create-zion-ai-dashboard-interfaces-6fb9
 }

@@ -1,8 +1,4 @@
 import type { NextPage } from 'next';
-<<<<<<< HEAD
-const Page: NextPage = () => (<div><h1 className="text-2xl font-semibold mb-2">Automated Update</h1></div>);
-export default Page;
-=======
 import Head from 'next/head';
 
 const AutoUpdate20250808t172307688z: NextPage = () => {
@@ -22,4 +18,3 @@ const AutoUpdate20250808t172307688z: NextPage = () => {
 };
 
 export default AutoUpdate20250808t172307688z;
->>>>>>> origin/cursor/create-dynamic-listing-pages-with-filters-fc72

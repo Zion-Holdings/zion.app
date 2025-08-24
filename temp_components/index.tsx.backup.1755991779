@@ -12,21 +12,12 @@ export default function HomePage() {
   const [activeSection, setActiveSection] = React.useState('hero');
 
   const heroStats = [
-<<<<<<< HEAD
-    { value: '200+', label: 'Revolutionary Micro SaaS Services', color: 'text-cyan-400', icon: <Cpu className="w-6 h-6" /> },
-    { value: '99.99%', label: 'Uptime Guarantee', color: 'text-fuchsia-400', icon: <ShieldCheck className="w-6 h-6" /> },
-    { value: '21', label: 'Day Free Trials', color: 'text-blue-400', icon: <Clock className="w-6 h-6" /> },
-    { value: '24/7', label: 'AI Support', color: 'text-green-400', icon: <Bot className="w-6 h-6" /> },
-    { value: '$50B+', label: 'Market Value', color: 'text-yellow-400', icon: <DollarSign className="w-6 h-6" /> },
-    { value: '300%+', label: 'Average ROI', color: 'text-purple-400', icon: <TrendingUp className="w-6 h-6" /> },
-=======
     { value: '100+', label: 'Real Micro SaaS Services', color: 'text-cyan-400', icon: <Sparkles className="w-5 h-5" /> },
     { value: '99.99%', label: 'Uptime Guarantee', color: 'text-fuchsia-400', icon: <Shield className="w-5 h-5" /> },
     { value: '21', label: 'Day Free Trials', color: 'text-blue-400', icon: <Clock className="w-5 h-5" /> },
     { value: '24/7', label: 'AI Support', color: 'text-green-400', icon: <Bot className="w-5 h-5" /> },
     { value: '$1B+', label: 'Market Value', color: 'text-yellow-400', icon: <Trophy className="w-5 h-5" /> },
     { value: '1500%+', label: 'Average ROI', color: 'text-purple-400', icon: <TrendingUp className="w-5 h-5" /> },
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-a01f
   ];
 
   const contactInfo = {
@@ -39,29 +30,12 @@ export default function HomePage() {
   // Enhanced service advertising content with real market data and competitive advantages
   const serviceHighlights = [
     {
-<<<<<<< HEAD
-      title: '🧠 Revolutionary Quantum AI Cognitive Platform',
-      description: 'World\'s first quantum-enhanced AI with human-like reasoning capabilities. Achieve breakthrough discoveries with 1000% ROI within 6 months.',
-      price: 'Starting at $299/month',
-      features: ['Quantum neural networks with 1000+ qubits', 'Human-like reasoning and problem-solving', 'Real-time quantum simulation', 'Advanced research collaboration tools'],
-      link: 'https://ziontechgroup.com/quantum-ai-cognitive',
-      color: 'from-purple-600 to-indigo-700',
-      marketData: '$15B quantum computing market, 500% annual growth',
-      competitors: 'IBM Quantum ($2000+/month), Google Quantum AI ($1500+/month)',
-      savings: 'Save 85% vs. competitors',
-      contactInfo: {
-        mobile: '+1 302 464 0950',
-        email: 'kleber@ziontechgroup.com',
-        address: '364 E Main St STE 1008 Middletown DE 19709'
-      }
-=======
       icon: <Cloud className="w-8 h-8 text-white" />,
       title: '100+ Real Micro SaaS Services',
       description: 'Complete portfolio of fully functional micro SaaS tools with real implementations, not just mockups. Starting from $29/month with 21-day free trials.',
       color: 'bg-gradient-to-br from-cyan-500 to-blue-600',
       gradient: 'from-cyan-400 to-blue-500',
       features: ['Quantum Computing', 'Edge AI', 'Autonomous Systems', 'Synthetic Biology', 'Neuromorphic Computing']
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-a01f
     },
     {
       title: '🏭 Autonomous Manufacturing AI Platform',
@@ -288,11 +262,7 @@ export default function HomePage() {
   ];
 
   return (
-<<<<<<< HEAD
-    <UltraFuturisticBackground variant="neural" intensity="extreme">
-=======
           <EnhancedFuturisticBackground variant="quantum-entanglement" intensity="high">
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-a01f
       <div className="min-h-screen">
         <Head>
           <title>Zion Tech Group - Revolutionary AI, Quantum Computing & Emerging Technology Solutions</title>
@@ -667,11 +637,6 @@ export default function HomePage() {
                   Ready to Transform Your Business?
                 </span>
               </h2>
-<<<<<<< HEAD
-              <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-                Join thousands of businesses that have already revolutionized their operations 
-                with Zion Tech Group's cutting-edge solutions. Start your transformation today.
-=======
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
                 Our track record speaks for itself. Join thousands of successful businesses worldwide.
               </p>
@@ -957,7 +922,6 @@ export default function HomePage() {
               </h2>
               <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
                 Join thousands of successful businesses that have already discovered the power of Zion Tech Group's micro SaaS services.
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-a01f
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">

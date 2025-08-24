@@ -1,12 +1,4 @@
 import React from 'react';
-<<<<<<< HEAD
-import Head from 'next/head';
-  return (
-    <>
-      <Head><title>governance/org-chart - Zion App</title><meta name="description" content="governance/org-chart page" /></Head><div className="container mx-auto px-4 py-8"><h1 className="text-3xl font-bold mb-6">governance/org-chart</h1><p className="text-lg mb-4">This page is under construction.</p><div className="mt-4"><a href="/" className="text-blue-600 hover:underline">;
-            ← Back to Home</a></div></div></>;
-  );
-=======
 import dynamic from 'next/dynamic';
 
 const OrgChartPage = dynamic(() => import('../../components/org/OrgChartPage'), { ssr: false });
@@ -14,4 +6,3 @@ const OrgChartPage = dynamic(() => import('../../components/org/OrgChartPage'), 
 export default function OrgChartGovernancePage() {
   return <OrgChartPage />;
 }
->>>>>>> origin/cursor/build-zion-s-modular-org-chart-builder-7425

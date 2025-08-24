@@ -10,11 +10,7 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head />
-<<<<<<< HEAD
-        <body className="bg-white dark:bg-black">
-=======
         <body className="bg-high-contrast-primary text-high-contrast">
->>>>>>> origin/cursor/build-zion-ai-marketplace-service-listing-9ebf
           <Main />
           <NextScript />
         </body>
@@ -23,8 +19,4 @@ class MyDocument extends Document {
   }
 }
 
-<<<<<<< HEAD
 export default MyDocument;
-=======
-export default MyDocument;
->>>>>>> origin/cursor/build-zion-ai-marketplace-service-listing-9ebf

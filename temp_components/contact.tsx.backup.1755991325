@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-export default function Contact() { return <div className="p-8">Contact</div>; }
-=======
 import React from 'react';
 
 const Component = () => {
@@ -40,4 +37,3 @@ export default function Contact() {
     </div>
   );
 }
->>>>>>> origin/cursor/crawl-and-fix-site-links-and-pages-1131

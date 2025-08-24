@@ -1,15 +1,5 @@
 import Link from 'next/link';
 
-<<<<<<< HEAD
-export default function HomePage() {
-  return (
-    <div className="space-y-6">
-      <h1 className="text-3xl font-bold">Zion Global</h1>
-      <p>Welcome. Explore the Zion Global Expo to discover multiverse innovation, protocol updates, and partner breakthroughs.</p>
-      <div className="flex gap-4">
-        <Link href="/expo"><a className="px-4 py-2 rounded bg-black text-white dark:bg-white dark:text-black">Enter Expo</a></Link>
-        <Link href="/events/global"><a className="px-4 py-2 rounded border">Global Event</a></Link>
-=======
 export default function Home() {
   return (
     <div className="relative min-h-screen overflow-hidden bg-black text-white">
@@ -128,13 +118,10 @@ function FeatureCard({ title, desc, tag, color }: { title: string; desc: string;
         <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/10 px-3 py-1 text-[10px] uppercase tracking-wider text-white/70">{tag}</div>
         <h3 className="text-lg font-semibold">{title}</h3>
         <p className="mt-1 text-sm text-white/70">{desc}</p>
->>>>>>> origin/cursor/build-zion-ipo-readiness-portal-e565
       </div>
     </div>
   );
 }
-<<<<<<< HEAD
-=======
 
 function Stat({ label, value }: { label: string; value: string }) {
   return (
@@ -159,4 +146,3 @@ function AutomationItem({ title, desc, link }: { title: string; desc: string; li
     </Link>
   );
 }
->>>>>>> origin/cursor/build-zion-ipo-readiness-portal-e565

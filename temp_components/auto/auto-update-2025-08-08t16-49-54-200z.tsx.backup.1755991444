@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-export default function AutoUpdate_164954() { return <div>Auto Update 16:49:54</div>; }
-=======
 export default function Page(){return null}
->>>>>>> origin/cursor/enable-vendor-agency-marketplace-operations-5a51

@@ -21,24 +21,7 @@ import { emergingTechnologyServices } from '../data/emerging-technology-services
 import { emergingTechServices2025 } from '../data/emerging-tech-services-2025';
 import { comprehensiveITSolutions } from '../data/comprehensive-it-solutions';
 import { realMarketServices } from '../data/real-market-services';
-<<<<<<< HEAD
-import { serviceExpansions2025 } from '../data/service-expansions-2025';
-import { realOperationalServices } from '../data/real-operational-services';
-import { verifiedRealServices2025Batch2 } from '../data/verified-real-services-2025-batch2';
-import { professionalServices } from '../data/professional-services';
-import { newOperationalServices2025 } from '../data/new-operational-services-2025';
-import { innovative2025Services } from '../data/innovative-2025-services';
-import { revolutionary2025Services } from '../data/revolutionary-2025-services';
-import { nextGenInnovations2025 } from '../data/next-gen-innovations-2025';
-import { innovative2025Batch3Services } from '../data/innovative-2025-batch3';
-
-// New 2026 Services
-import { revolutionary2026Services } from '../data/revolutionary-2026-services';
-import { emergingTech2026Services } from '../data/emerging-tech-2026-services';
-import { comprehensiveIT2026Services } from '../data/comprehensive-it-2026-services';
-=======
 import { new2025Q1RealServices } from '../data/new-2025-q1-services';
->>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-04c6
 
 export default function HomePage() {
   const heroStats = [
@@ -247,22 +230,7 @@ export default function HomePage() {
     ...emergingTechServices2025,
     ...comprehensiveITSolutions,
     ...realMarketServices,
-<<<<<<< HEAD
-    ...serviceExpansions2025,
-    ...verifiedRealServices2025Batch2,
-    ...realOperationalServices,
-    ...newOperationalServices2025,
-    ...innovative2025Services,
-    ...revolutionary2025Services,
-    ...nextGenInnovations2025,
-    ...innovative2025Batch3Services,
-    // New 2026 Services
-    ...revolutionary2026Services,
-    ...emergingTech2026Services,
-    ...comprehensiveIT2026Services
-=======
     ...new2025Q1RealServices
->>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-04c6
   ];
 
   // Get unique services by ID to avoid duplicates

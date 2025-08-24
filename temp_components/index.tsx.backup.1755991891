@@ -7,26 +7,6 @@ import {
   ShieldCheck, Star, Award, Target, Users, Globe
 } from 'lucide-react';
 import Button from '../components/ui/Button';
-<<<<<<< HEAD
-import Card from '../components/ui/Card';
-import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackground';
-import UltraFuturisticCard from '../components/ui/UltraFuturisticCard';
-import { enhancedRealMicroSaasServices, getPopularServices, getServicesByCategory } from '../data/enhanced-real-micro-saas-services';
-import { motion } from 'framer-motion';
-import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
-import { extraServices } from '../data/extra-services';
-import { additionalEnhancedServices } from '../data/additional-real-services';
-import { innovativeNewServices } from '../data/innovative-new-services';
-
-export default function HomePage() {
-  const heroStats = [
-    { value: '250+', label: 'Revolutionary Micro SaaS Services', color: 'text-cyan-400', icon: <Cpu className="w-6 h-6" /> },
-    { value: '99.99%', label: 'Uptime Guarantee', color: 'text-fuchsia-400', icon: <ShieldCheck className="w-6 h-6" /> },
-    { value: '30+', label: 'Day Free Trials', color: 'text-blue-400', icon: <Clock className="w-6 h-6" /> },
-    { value: '24/7', label: 'AI Support', color: 'text-green-400', icon: <Brain className="w-6 h-6" /> },
-    { value: '$50B+', label: 'Combined Market Value', color: 'text-yellow-400', icon: <TrendingUp className="w-6 h-6" /> },
-    { value: '1000%+', label: 'Average ROI', color: 'text-purple-400', icon: <DollarSign className="w-6 h-6" /> },
-=======
 import EnhancedFuturisticBackground from '../components/ui/EnhancedFuturisticBackground';
 import EnhancedFuturisticCard from '../components/ui/EnhancedFuturisticCard';
 import AdvancedFuturisticBackground from '../components/ui/AdvancedFuturisticBackground';
@@ -42,7 +22,6 @@ export default function HomePage() {
     { value: '24/7', label: 'AI Support', color: 'text-green-400' },
     { value: '$200M+', label: 'Market Value', color: 'text-yellow-400' },
     { value: '1000%+', label: 'Average ROI', color: 'text-purple-400' },
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-ef9e
   ];
 
   const heroStats = marketStats;
@@ -57,175 +36,6 @@ export default function HomePage() {
   // Enhanced service advertising content with real market data and competitive advantages
   const serviceHighlights = [
     {
-<<<<<<< HEAD
-      title: '🧠 Revolutionary Quantum AI Brain-Computer Interface',
-      description: 'World\'s first quantum-enhanced BCI with direct neural communication. Achieve breakthrough discoveries with 500% ROI within 6 months.',
-      price: 'Starting at $2,999/month',
-      features: ['Neural signal processing with 99.9% accuracy', 'Quantum AI integration for enhanced cognition', 'Real-time brain-to-computer communication', 'Medical-grade safety standards'],
-      link: 'https://ziontechgroup.com/quantum-ai-brain-computer-interface',
-      color: 'from-purple-600 to-indigo-700',
-      marketData: '$2.1B BCI market, 15.5% CAGR',
-      competitors: 'Neuralink ($10,000+/month), Kernel ($5,000+/month)',
-      savings: 'Save 70% vs. competitors',
-      contactInfo: {
-        mobile: '+1 302 464 0950',
-        email: 'kleber@ziontechgroup.com',
-        address: '364 E Main St STE 1008 Middletown DE 19709'
-      }
-    },
-    {
-      title: '🏭 Autonomous Manufacturing AI Platform',
-      description: 'Self-optimizing factories with zero human intervention. 40% more efficient than Siemens Mindsphere, 60% cheaper than GE Predix.',
-      price: 'Starting at $1,499/month',
-      features: ['Full production line automation', 'AI-powered quality control', 'Predictive maintenance', 'Supply chain optimization'],
-      link: 'https://ziontechgroup.com/autonomous-manufacturing-ai',
-      color: 'from-emerald-600 to-teal-700',
-      marketData: '$15.3B smart manufacturing market, 12.8% CAGR',
-      competitors: 'Siemens Mindsphere ($3,000+/month), GE Predix ($4,000+/month)',
-      savings: 'Save 50% vs. competitors',
-      contactInfo: {
-        mobile: '+1 302 464 0950',
-        email: 'kleber@ziontechgroup.com',
-        address: '364 E Main St STE 1008 Middletown DE 19709'
-      }
-    },
-    {
-      title: '🚀 Space Technology Optimization Platform',
-      description: 'AI-powered satellite and space mission optimization. 50% more efficient than traditional methods, 70% cost reduction in mission planning.',
-      price: 'Starting at $899/month',
-      features: ['Satellite orbit optimization', 'Mission planning automation', 'Space debris tracking', 'Fuel efficiency optimization'],
-      link: 'https://ziontechgroup.com/space-technology',
-      color: 'from-blue-600 to-indigo-700',
-      marketData: '$469B space economy, 6.4% CAGR',
-      competitors: 'AGI STK ($2,000+/month), Celestrak ($1,500+/month)',
-      savings: 'Save 55% vs. competitors',
-      contactInfo: {
-        mobile: '+1 302 464 0950',
-        email: 'kleber@ziontechgroup.com',
-        address: '364 E Main St STE 1008 Middletown DE 19709'
-      }
-    },
-    {
-      title: '🧬 Biomedical AI Research Platform',
-      description: 'AI-powered drug discovery and medical research. 60% faster drug discovery than traditional methods, 40% reduction in clinical trial costs.',
-      price: 'Starting at $1,299/month',
-      features: ['AI-powered drug discovery', 'Clinical trial optimization', 'Medical image analysis', 'Genomic data processing'],
-      link: 'https://ziontechgroup.com/biotech-ai',
-      color: 'from-green-600 to-emerald-700',
-      marketData: '$45.8B AI in healthcare market, 45.1% CAGR',
-      competitors: 'Atomwise ($5,000+/month), Insilico Medicine ($3,000+/month)',
-      savings: 'Save 60% vs. competitors',
-      contactInfo: {
-        mobile: '+1 302 464 0950',
-        email: 'kleber@ziontechgroup.com',
-        address: '364 E Main St STE 1008 Middletown DE 19709'
-      }
-    },
-    {
-      title: '💰 Quantum Financial Trading Platform',
-      description: 'Quantum AI-powered algorithmic trading and risk management. 80% more accurate predictions than traditional AI, 200% better risk-adjusted returns.',
-      price: 'Starting at $2,499/month',
-      features: ['Quantum AI trading algorithms', 'Real-time risk assessment', 'Portfolio optimization', 'Market prediction models'],
-      link: 'https://ziontechgroup.com/quantum-financial-trading',
-      color: 'from-yellow-600 to-orange-700',
-      marketData: '$12.8B algorithmic trading market, 11.2% CAGR',
-      competitors: 'Renaissance Technologies ($10,000+/month), Two Sigma ($8,000+/month)',
-      savings: 'Save 75% vs. competitors',
-      contactInfo: {
-        mobile: '+1 302 464 0950',
-        email: 'kleber@ziontechgroup.com',
-        address: '364 E Main St STE 1008 Middletown DE 19709'
-      }
-    },
-    {
-      title: '🌐 Metaverse AI Development Platform',
-      description: 'AI-powered metaverse creation and management. 70% faster development than traditional methods, 50% better user engagement.',
-      price: 'Starting at $799/month',
-      features: ['AI-powered world generation', 'Virtual character creation', 'Real-time optimization', 'Multi-user synchronization'],
-      link: 'https://ziontechgroup.com/metaverse-ai-development-platform',
-      color: 'from-pink-600 to-rose-700',
-      marketData: '$74.4B metaverse market, 37.7% CAGR',
-      competitors: 'Roblox Studio ($1,200+/month), Unity Pro ($1,800+/month)',
-      savings: 'Save 45% vs. competitors',
-      contactInfo: {
-        mobile: '+1 302 464 0950',
-        email: 'kleber@ziontechgroup.com',
-        address: '364 E Main St STE 1008 Middletown DE 19709'
-      }
-    }
-  ];
-
-  // Combine all services for display
-  const allServices = [...enhancedRealMicroSaasServices, ...extraServices, ...additionalEnhancedServices, ...innovativeNewServices];
-  const featuredServices = allServices.filter(s => s.popular).slice(0, 8);
-
-  return (
-    <AdvancedFuturisticBackground>
-      <Head>
-  const popularServices = getPopularServices().slice(0, 6);
-
-  return (
-    <UltraFuturisticBackground>
-      <Head>
-        <title>Zion Tech Group - Revolutionary Micro SAAS Services & AI Solutions</title>
-        <meta name="description" content="Transform your business with Zion Tech Group's cutting-edge micro SAAS services, quantum AI platforms, and autonomous systems. 500+ innovative solutions for the future." />
-        <meta name="keywords" content="micro SAAS, AI services, quantum computing, autonomous systems, business automation, Zion Tech Group" />
-        <meta property="og:title" content="Zion Tech Group - Revolutionary Micro SAAS Services" />
-        <meta property="og:description" content="500+ cutting-edge micro SAAS services powered by quantum AI and autonomous systems." />
-        <meta property="og:url" content="https://ziontechgroup.com" />
-        <meta property="og:type" content="website" />
-        <link rel="canonical" href="https://ziontechgroup.com" />
-      </Head>
-
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto text-center">
-          {/* Main Headline */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="mb-8"
-          >
-            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-              <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
-                Revolutionary
-              </span>
-              <br />
-              <span className="text-white">Micro SAAS Services</span>
-            </h1>
-            <p className="text-xl sm:text-2xl lg:text-3xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
-              Transform your business with <span className="text-cyan-400 font-semibold">500+ cutting-edge solutions</span> powered by quantum AI, autonomous systems, and next-generation technology
-            </p>
-          </motion.div>
-
-          {/* Contact Information */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="mb-12"
-          >
-            <UltraFuturisticCard variant="quantum" className="max-w-4xl mx-auto p-8">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-                <div className="flex flex-col items-center">
-                  <Phone className="w-8 h-8 text-cyan-400 mb-3" />
-                  <h3 className="text-lg font-semibold text-white mb-2">Mobile</h3>
-                  <p className="text-gray-300">{contactInfo.mobile}</p>
-                </div>
-                <div className="flex flex-col items-center">
-                  <Mail className="w-8 h-8 text-cyan-400 mb-3" />
-                  <h3 className="text-lg font-semibold text-white mb-2">Email</h3>
-                  <p className="text-gray-300">{contactInfo.email}</p>
-                </div>
-                <div className="flex flex-col items-center">
-                  <MapPin className="w-8 h-8 text-cyan-400 mb-3" />
-                  <h3 className="text-lg font-semibold text-white mb-2">Address</h3>
-                  <p className="text-gray-300 text-sm">{contactInfo.address}</p>
-                </div>
-              </div>
-            </UltraFuturisticCard>
-=======
         <title>Zion Tech Group | Revolutionary Micro SaaS, IT & AI Solutions | 250+ Services</title>
         <meta name="description" content="Discover 250+ revolutionary micro SaaS, IT services and AI solutions delivering 1000%+ ROI. Quantum AI, autonomous systems, space technology, and more. Free trials available." />
         <meta name="keywords" content="micro SaaS, AI services, IT services, quantum computing, autonomous systems, space technology, biotechnology, cybersecurity, metaverse, IoT" />
@@ -1122,6 +932,5 @@ export default function HomePage() {
         </section>
       </div>
     </AdvancedFuturisticBackground>
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-ef9e
   );
 }
