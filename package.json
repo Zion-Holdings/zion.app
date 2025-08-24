@@ -5,12 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-<<<<<<< HEAD
-    "build": "tsc && vite build",
-=======
     "build": "vite build",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
->>>>>>> 181cfac2212680d9635253bde265173d9d08eca1
     "preview": "vite preview",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "type-check": "tsc --noEmit",
@@ -111,7 +106,7 @@
     "frontend-sync:autonomous:cron": "bash automation/frontend-sync-autonomous-cron.sh"
   },
   "dependencies": {
-    "@supabase/supabase-js": "^2.39.0",
+    "@supabase/supabase-js": "^2.39.3",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/forms": "^0.5.10",
     "@tailwindcss/typography": "^0.5.16",
@@ -142,10 +137,8 @@
     "@radix-ui/react-tabs": "^1.0.4",
     "@radix-ui/react-toast": "^1.1.5",
     "@radix-ui/react-tooltip": "^1.0.7",
-    "@supabase/supabase-js": "^2.39.3",
     "@tanstack/react-query": "^5.17.19",
     "class-variance-authority": "^0.7.0",
-    "clsx": "^2.1.0",
     "cmdk": "^0.2.1",
     "date-fns": "^3.3.1",
     "embla-carousel-react": "^8.0.0-rc19",
