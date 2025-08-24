@@ -95,23 +95,13 @@ export const EnhancedSearchInput: React.FC<EnhancedSearchInputProps> = ({
       <div className="relative">
         <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
         <Input
-          ref={inputRef}
           type="text"
           value={query}
-          onChange={(e) => {
-            setQuery(e.target.value);
-            setShowSuggestions(e.target.value.length > 0);
-          }}
-          onFocus={() => {
-            setIsFocused(true);
-            if (query.length > 0) {
-              setShowSuggestions(true);
-            }
-          }}
-          onBlur={() => setIsFocused(false)}
-          onKeyPress={handleKeyPress}
-          placeholder={placeholder}
-          className="pl-10 pr-20 py-3 text-base border-2 focus:border-blue-500 focus:ring-blue-500"
+          onChange={(e) => setQuery(e.target.value)}
+          onFocus={() => setIsFocused(true)}
+          onBlur={() => setTimeout(() => setIsFocused(false), 200)}
+          placeholder="Search for services, talent, or equipment..."
+          className="flex-1 border-0 focus:ring-0 text-lg"
         />
         
         {query && (

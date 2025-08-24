@@ -236,18 +236,15 @@ export const ProfileSetup: React.FC<ProfileSetupProps> = ({
             <div className="text-sm text-gray-600 mb-2">Quick add:</div>
             <div className="flex flex-wrap gap-2">
               {INTEREST_OPTIONS.map((interest) => (
-                <Badge
+                <button
                   key={interest}
-                  variant="outline"
-                  className={`cursor-pointer hover:bg-blue-50 ${
-                    profileData.interests.includes(interest) 
-                      ? 'bg-blue-100 border-blue-300' 
-                      : ''
-                  }`}
                   onClick={() => handleInterestOptionClick(interest)}
+                  className="inline-block"
                 >
-                  {interest}
-                </Badge>
+                  <Badge variant="outline" className="cursor-pointer hover:bg-zion-blue hover:text-white transition-colors">
+                    {interest}
+                  </Badge>
+                </button>
               ))}
             </div>
           </div>

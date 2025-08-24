@@ -22,10 +22,20 @@ export const Steps: React.FC<StepsProps> = ({ children, className, currentStep =
     <div className={cn("flex items-center space-x-2", className)}>
       {React.Children.map(children, (child, index) => {
         if (React.isValidElement(child)) {
-          return React.cloneElement(child, {
-            isActive: index === currentStep,
-            isCompleted: index < currentStep,
-          });
+          const childProps = child.props || {};
+          const isActive = index === currentStep;
+          const isCompleted = index < currentStep;
+          
+          // Only pass props if the child component accepts them
+          const propsToPass: any = {};
+          if ('isActive' in childProps || child.type === Step) {
+            propsToPass.isActive = isActive;
+          }
+          if ('isCompleted' in childProps || child.type === Step) {
+            propsToPass.isCompleted = isCompleted;
+          }
+          
+          return React.cloneElement(child, propsToPass);
         }
         return child;
       })}

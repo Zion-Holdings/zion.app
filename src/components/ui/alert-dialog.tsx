@@ -62,7 +62,7 @@ export const AlertDialog: React.FC<AlertDialogProps> = ({ children, open = false
     <div className={cn("relative", isOpen && "z-50")}>
       {React.Children.map(children, (child) => {
         if (React.isValidElement(child)) {
-          return React.cloneElement(child, { isOpen, onOpenChange: handleOpenChange });
+          return child;
         }
         return child;
       })}

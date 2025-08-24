@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { 
@@ -99,47 +99,25 @@ export const UserTypeSelection: React.FC<UserTypeSelectionProps> = ({
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
         {USER_TYPES.map((type) => (
-          <Card 
+          <button
             key={type.id}
-            className={`cursor-pointer transition-all duration-200 hover:shadow-lg ${
-              selectedType === type.id 
-                ? 'ring-2 ring-blue-500 border-blue-500' 
-                : 'hover:border-gray-300'
-            }`}
             onClick={() => onSelectType(type.id)}
+            className="w-full text-left"
           >
-            <CardHeader>
-              <div className="flex items-start justify-between">
-                <div className="flex items-center space-x-3">
-                  <div className="p-2 bg-blue-100 rounded-lg text-blue-600">
+            <Card className="p-6 text-center hover:shadow-lg transition-all duration-300 cursor-pointer border-2 border-transparent hover:border-blue-500">
+              <CardContent className="p-0">
+                <div className="flex flex-col items-center space-y-4">
+                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center">
                     {type.icon}
                   </div>
                   <div>
-                    <CardTitle className="text-lg">{type.title}</CardTitle>
-                    {type.recommended && (
-                      <Badge className="ml-2 bg-green-100 text-green-800">
-                        Recommended
-                      </Badge>
-                    )}
+                    <CardTitle className="text-xl font-semibold mb-2">{type.title}</CardTitle>
+                    <p className="text-gray-600">{type.description}</p>
                   </div>
                 </div>
-                {selectedType === type.id && (
-                  <CheckCircle className="w-6 h-6 text-blue-500" />
-                )}
-              </div>
-              <p className="text-gray-600 text-sm">{type.description}</p>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-2">
-                {type.features.map((feature, index) => (
-                  <div key={index} className="flex items-center space-x-2 text-sm text-gray-600">
-                    <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
-                    <span>{feature}</span>
-                  </div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
+              </CardContent>
+            </Card>
+          </button>
         ))}
       </div>
       
