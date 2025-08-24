@@ -87,6 +87,7 @@
     "zion.app/recovered-content/**",
     "**/*.disabled/**",
     "__tests__.disabled/**",
-    "plugins.disabled/**"
+    "plugins.disabled/**",
+    "test.disabled/**"
   ]
 }
