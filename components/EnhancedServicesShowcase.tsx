@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Star, Clock, Users, TrendingUp, CheckCircle, 
-  ChevronRight, Shield, Zap, Globe, ExternalLink
+  Star, Clock, Users, TrendingUp, CheckCircle, ExternalLink, 
+  ChevronRight, Shield, Zap, Globe
 } from 'lucide-react';
 import { enhancedMicroSaasServices } from '../data/enhanced-micro-saas-services-2025';
 

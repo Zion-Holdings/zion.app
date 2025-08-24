@@ -20,18 +20,8 @@
     "h1": "Zion Tech Group"
   },
   {
-    "route": "/portfolio",
-    "title": "Our Work - Zion Tech Group | Portfolio of Revolutionary Technology Solutions",
-    "h1": "Our Work"
-  },
-  {
     "route": "/pricing-2025",
     "title": "2025 Pricing & Services — Zion Tech Group",
     "h1": "2025 Pricing & Services"
-  },
-  {
-    "route": "/whitepapers",
-    "title": "",
-    "h1": ""
   }
 ]
