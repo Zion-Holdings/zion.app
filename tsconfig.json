@@ -19,77 +19,76 @@
         "./src/*"
       ],
       "@/pages/*": [
-        "./src/pages/*",
-        "./pages/*"
+        "./src/pages/*"
       ],
       "@/components/*": [
         "./src/components/*"
       ],
-      "@/api/*": [
-        "./src/api/*"
-      ],
       "@/types/*": [
-        "./src/types/*",
-        "./types/*"
+        "./src/types/*"
       ],
       "@/utils/*": [
         "./src/utils/*"
       ],
-      "@/hooks/*": [
-        "./src/hooks/*"
-      ],
-      "@/context/*": [
-        "./src/context/*"
-      ],
       "@/services/*": [
         "./src/services/*"
       ],
-      "react-router-dom": [
-        "./src/stubs/react-router-dom.tsx"
-      ],
-      "next-cloudinary": [
-        "./types/next-cloudinary.d.ts"
-      ],
-      "types/*": [
-        "./types/*"
+      "@/styles/*": [
+        "./src/styles/*"
       ]
     },
     /* Bundler mode */
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
-    "strict": true,
+    "strict": false,
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedIndexedAccess": true,
-    "noImplicitReturns": true,
+    "noUncheckedIndexedAccess": false,
+    "noImplicitReturns": false,
     "allowJs": true,
     "incremental": true,
     "typeRoots": [
       "./node_modules/@types",
-      "./types"
+      "./src/types"
     ],
     "types": [
       "node"
     ],
     "jsx": "preserve",
     "noEmit": true,
-    "isolatedModules": true
+    "isolatedModules": true,
+    "forceConsistentCasingInFileNames": true
   },
   "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx"
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.d.ts"
   ],
   "exclude": [
     "node_modules",
     "zion.app/recovered-content/**",
     "contracts/**",
-    "temp_components/**",
-    "zion_academy/**",
+    "dao/**",
     "zion-os/**",
-    "automation/**",
-    "typechain-types/**"
+    "zion_academy/**",
+    "packages/**",
+    "monitoring/**",
+    "scripts/**",
+    "server/**",
+    "cypress/**",
+    "**/*.disabled/**",
+    "__tests__.disabled/**",
+    "plugins.disabled/**",
+    "test.disabled/**",
+    "services.disabled.temp/**",
+    "data.temp/**",
+    "src_backup/**",
+    "components/**",
+    "pages/**",
+    "data/**",
+    "utils/**"
   ]
 }

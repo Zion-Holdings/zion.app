@@ -1,63 +1,61 @@
-import React from 'react';
+import { Helmet } from "react-helmet-async";
 
 interface SEOProps {
-  title?: string;
-  description?: string;
-  keywords?: string | string[];
+  title: string;
+  description: string;
+  keywords?: string;
+  canonical?: string;
   image?: string;
-  url?: string;
   type?: 'website' | 'article' | 'product';
+  author?: string;
   publishedTime?: string;
   modifiedTime?: string;
-  author?: string;
   section?: string;
   tags?: string[];
-  structuredData?: any;
-  noindex?: boolean;
-  nofollow?: boolean;
 }
 
-const SEO: React.FC<SEOProps> = ({
-  title = 'Zion Tech Group - Revolutionary AI, Quantum Computing & Space Technology Solutions',
-  description = 'Pioneering the future of technology with revolutionary AI consciousness, quantum computing, and autonomous solutions that transform businesses worldwide. Leading-edge services in AI, cybersecurity, space tech, and quantum solutions.',
-  keywords = 'AI, artificial intelligence, quantum computing, space technology, cybersecurity, machine learning, automation, Zion Tech Group, technology solutions, enterprise software, cloud computing, blockchain, IoT, robotics',
-  image = '/images/zion-tech-group-og-image.jpg',
-  url = 'https://ziontechgroup.com',
-  type = 'website',
+export function SEO({
+  title,
+  description,
+  keywords,
+  canonical,
+  image = "https://ziontechgroup.com/og-image.jpg",
+  type = "website",
+  author = "Zion Tech Group",
   publishedTime,
   modifiedTime,
-  author = 'Zion Tech Group',
   section,
-  tags = [],
-  structuredData,
-  noindex = false,
-  nofollow = false,
-}) => {
-  const fullTitle = title.includes('Zion Tech Group') ? title : `${title} | Zion Tech Group`;
-  const fullUrl = url.startsWith('http') ? url : `https://ziontechgroup.com${url}`;
-  const fullImage = image.startsWith('http') ? image : `https://ziontechgroup.com${image}`;
+  tags = []
+}: SEOProps) {
+  const siteName = "Zion Tech Group";
+  const fullTitle = title.includes(siteName) ? title : `${title} | ${siteName}`;
+  const fullDescription = description.length > 160 ? description.substring(0, 157) + "..." : description;
+  const fullUrl = canonical || `https://ziontechgroup.com${window.location.pathname}`;
+  
+  // Process keywords
+  const newKeywords = keywords ? keywords.split(',').map(k => k.trim()) : [];
+  
+  // Analyze description
+  const descLength = description.length;
+  const descOptimal = descLength >= 120 && descLength <= 160;
+  const descHasKeywords = newKeywords.some(keyword => 
+    description.toLowerCase().includes(keyword)
+  );
 
   return (
-    <>
+    <Helmet>
       {/* Basic Meta Tags */}
       <title>{fullTitle}</title>
-      <meta name="description" content={description} />
-      <meta name="keywords" content={Array.isArray(keywords) ? keywords.join(', ') : keywords} />
-      <meta name="author" content={author} />
-      <meta name="robots" content={noindex ? 'noindex' : 'index'} />
-      {nofollow && <meta name="robots" content="nofollow" />}
-      
-      {/* Robots Meta */}
-      {noindex && <meta name="robots" content="noindex" />}
-      {nofollow && <meta name="robots" content="nofollow" />}
-      {!noindex && !nofollow && <meta name="robots" content="index, follow" />}
+      <meta name="description" content={fullDescription} />
+      {keywords && <meta name="keywords" content={keywords} />}
+      <link rel="canonical" href={fullUrl} />
       
       {/* Open Graph Meta Tags */}
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:type" content={type} />
       <meta property="og:url" content={fullUrl} />
-      <meta property="og:image" content={fullImage} />
+      <meta property="og:image" content={image} />
       <meta property="og:site_name" content="Zion Tech Group" />
       <meta property="og:locale" content="en_US" />
       
@@ -67,7 +65,7 @@ const SEO: React.FC<SEOProps> = ({
       <meta name="twitter:creator" content="@ziontechgroup" />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={fullImage} />
+      <meta name="twitter:image" content={image} />
       
       {/* Article Specific Meta Tags */}
       {type === 'article' && (
@@ -91,80 +89,96 @@ const SEO: React.FC<SEOProps> = ({
       <meta name="apple-mobile-web-app-title" content="Zion Tech Group" />
       
       {/* Structured Data */}
-      {structuredData && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(structuredData)
-          }}
-        />
-      )}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Zion Tech Group",
+            "url": "https://ziontechgroup.com",
+            "logo": "https://ziontechgroup.com/images/zion-tech-group-logo.png",
+            "description": description,
+            "foundingDate": "2020",
+            "sameAs": [
+              "https://www.linkedin.com/company/zion-tech-group",
+              "https://twitter.com/ziontechgroup",
+              "https://github.com/Zion-Holdings"
+            ],
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+1-800-ZION-TECH",
+              "contactType": "customer service",
+              "availableLanguage": "English"
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "US"
+            },
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Technology Services",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "AI & Machine Learning Solutions"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Quantum Computing Services"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Space Technology Solutions"
+                  }
+                }
+              ]
+            }
+          })
+        }}
+      />
       
-      {/* Default Structured Data if none provided */}
-      {!structuredData && (
+      {/* Additional Structured Data for Articles */}
+      {type === 'article' && (
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "Organization",
-              "name": "Zion Tech Group",
-              "url": "https://ziontechgroup.com",
-              "logo": "https://ziontechgroup.com/images/zion-tech-group-logo.png",
+              "@type": "Article",
+              "headline": title,
               "description": description,
-              "foundingDate": "2020",
-              "sameAs": [
-                "https://www.linkedin.com/company/zion-tech-group",
-                "https://twitter.com/ziontechgroup",
-                "https://github.com/Zion-Holdings"
-              ],
-              "contactPoint": {
-                "@type": "ContactPoint",
-                "telephone": "+1-302-464-0950",
-                "contactType": "customer service",
-                "availableLanguage": "English"
+              "image": image,
+              "author": {
+                "@type": "Person",
+                "name": author
               },
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "364 E Main St STE 1008",
-                "addressLocality": "Middletown",
-                "addressRegion": "DE",
-                "postalCode": "19709",
-                "addressCountry": "US"
+              "publisher": {
+                "@type": "Organization",
+                "name": "Zion Tech Group",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://ziontechgroup.com/images/zion-tech-group-logo.png"
+                }
               },
-              "hasOfferCatalog": {
-                "@type": "OfferCatalog",
-                "name": "Technology Services",
-                "itemListElement": [
-                  {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "AI & Machine Learning Solutions"
-                    }
-                  },
-                  {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "Quantum Computing Services"
-                    }
-                  },
-                  {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "Space Technology Solutions"
-                    }
-                  }
-                ]
+              "datePublished": publishedTime,
+              "dateModified": modifiedTime || publishedTime,
+              "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": fullUrl
               }
             })
           }}
         />
       )}
-    </>
+    </Helmet>
   );
-};
-
-export default SEO;
+}

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Header } from './Header';
-import { Footer } from './Footer';
+import { Header } from '../components/header/Header';
+import { Footer } from '../components/Footer';
 import { Helmet } from 'react-helmet-async';
 
 interface LayoutProps {
