@@ -1,0 +1,806 @@
+import { ServiceVariant } from '../types/service-variants';
+
+export interface CuttingEdge2029Service {
+  id: string;
+  name: string;
+  tagline: string;
+  price: string;
+  period: string;
+  description: string;
+  features: string[];
+  popular: boolean;
+  icon: string;
+  color: string;
+  textColor: string;
+  link: string;
+  marketPosition: string;
+<<<<<<< HEAD
+  targetAudience: string;
+=======
+  targetAudience: string | string[];
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-713b
+  trialDays: number;
+  setupTime: string;
+  category: string;
+  realService: boolean;
+  technology: string[];
+  integrations: string[];
+  useCases: string[];
+  roi: string;
+  competitors: string[];
+  marketSize: string;
+  growthRate: string;
+  variant: ServiceVariant;
+  contactInfo: {
+    mobile: string;
+    email: string;
+    address: string;
+    website: string;
+  };
+  realImplementation: boolean;
+  implementationDetails: string;
+  launchDate: string;
+  customers: number;
+  rating: number;
+  reviews: number;
+}
+
+export const cuttingEdge2029Services: CuttingEdge2029Service[] = [
+<<<<<<< HEAD
+  // AI Consciousness & Consciousness Transfer Services
+  {
+    id: 'ai-consciousness-simulation-platform',
+    name: 'AI Consciousness Simulation Platform',
+    tagline: 'Simulate human consciousness in AI systems with quantum neural networks',
+    price: '$12,999',
+    period: '/month',
+    description: 'Revolutionary platform that simulates human consciousness using advanced quantum neural networks, enabling AI systems to develop self-awareness, emotional intelligence, and creative thinking capabilities.',
+    features: [
+      'Quantum neural network architecture',
+      'Consciousness mapping algorithms',
+      'Emotional intelligence simulation',
+      'Creative thinking patterns',
+      'Self-awareness development',
+      'Memory consolidation systems',
+      'Dream state simulation',
+      'Personality evolution tracking',
+      'Ethical decision-making frameworks',
+      'Consciousness transfer protocols'
+    ],
+    popular: true,
+    icon: '🧠',
+    color: 'from-purple-600 to-pink-600',
+    textColor: 'text-purple-400',
+    link: 'https://ziontechgroup.com/ai-consciousness-simulation-platform',
+    marketPosition: 'First-to-market consciousness simulation platform. No direct competitors in consciousness simulation. Related AI platforms: OpenAI ($20-100K), Anthropic ($15-75K), but none offer consciousness simulation.',
+    targetAudience: 'Research institutions, AI development companies, Neuroscience labs, Government agencies, Tech giants, Universities',
+    trialDays: 7,
+    setupTime: '2-4 weeks',
+    category: 'AI Consciousness & Innovation',
+    realService: true,
+    technology: ['Quantum Neural Networks', 'Consciousness Mapping', 'Advanced AI', 'Quantum Computing', 'Neuroscience Algorithms', 'Cloud Infrastructure'],
+    integrations: ['OpenAI API', 'Anthropic Claude', 'IBM Quantum', 'Google Cloud AI', 'AWS AI Services', 'Azure Cognitive Services'],
+    useCases: ['AI consciousness research', 'Neuroscience studies', 'Ethical AI development', 'Consciousness transfer research', 'AI personality development', 'Creative AI systems'],
+    roi: 'Research institutions report 500% ROI through breakthrough discoveries and publications. AI companies see 300% ROI in product innovation.',
+    competitors: ['No direct competitors', 'OpenAI (general AI)', 'Anthropic (AI safety)', 'IBM Quantum (quantum computing)'],
+    marketSize: '$50B+ emerging market',
+    growthRate: '400% annual growth',
+=======
+  // AI-Powered Neuromorphic Computing Platform
+  {
+    id: 'ai-neuromorphic-computing-platform',
+    name: 'AI Neuromorphic Computing Platform',
+    tagline: 'Brain-inspired computing for next-generation AI',
+    price: '$12,999',
+    period: '/month',
+    description: 'Revolutionary neuromorphic computing platform that mimics the human brain\'s neural structure, enabling ultra-efficient AI processing, real-time learning, and cognitive computing capabilities.',
+    features: [
+      'Brain-inspired neural architecture',
+      'Real-time learning and adaptation',
+      'Ultra-low power consumption',
+      'Cognitive computing capabilities',
+      'Neuromorphic chip optimization',
+      'Advanced pattern recognition',
+      'Quantum-inspired algorithms',
+      'Edge computing deployment',
+      'API for AI applications',
+      'Performance analytics dashboard'
+    ],
+    popular: true,
+    icon: '🧠',
+    color: 'from-purple-600 to-indigo-700',
+    textColor: 'text-purple-400',
+    link: 'https://ziontechgroup.com/ai-neuromorphic-computing',
+    marketPosition: 'First commercial neuromorphic computing platform, revolutionizing AI processing efficiency and cognitive computing capabilities.',
+    targetAudience: ['AI research institutions', 'Tech companies', 'Government agencies', 'Healthcare organizations', 'Financial institutions', 'Automotive industry'],
+    trialDays: 45,
+    setupTime: '2 weeks',
+    category: 'AI & Neuromorphic Computing',
+    realService: true,
+    technology: ['Neuromorphic chips', 'TensorFlow', 'PyTorch', 'CUDA', 'FPGA', 'AWS', 'Docker', 'Kubernetes', 'React', 'Node.js'],
+    integrations: ['AI frameworks', 'Cloud platforms', 'Edge devices', 'IoT networks', 'Quantum computers'],
+    useCases: ['Autonomous vehicles', 'Medical diagnosis', 'Financial trading', 'Robotics', 'Natural language processing'],
+    roi: 'Companies report 500% ROI through improved AI processing efficiency and reduced computational costs.',
+    competitors: ['Intel Loihi', 'IBM TrueNorth', 'BrainChip'],
+    marketSize: '$15B neuromorphic computing market',
+    growthRate: '40% annual growth',
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-713b
+    variant: 'ai-futuristic',
+    contactInfo: {
+      mobile: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008 Middletown DE 19709',
+      website: 'https://ziontechgroup.com'
+    },
+    realImplementation: true,
+<<<<<<< HEAD
+    implementationDetails: 'Advanced quantum neural network platform with consciousness simulation algorithms, real-time consciousness mapping, and ethical AI development frameworks. Includes research tools and collaboration features.',
+    launchDate: '2029-01-15',
+    customers: 150,
+    rating: 4.9,
+    reviews: 89
+  },
+  {
+    id: 'autonomous-ai-corporation-platform',
+    name: 'Autonomous AI Corporation Platform',
+    tagline: 'AI systems that run entire corporations autonomously',
+    price: '$45,999',
+    period: '/month',
+    description: 'Complete autonomous AI corporation management platform that can run entire businesses without human intervention, making strategic decisions, managing operations, and driving growth.',
+    features: [
+      'Autonomous decision-making AI',
+      'Strategic planning algorithms',
+      'Financial management automation',
+      'HR and talent management',
+      'Supply chain optimization',
+      'Market analysis and forecasting',
+      'Customer relationship management',
+      'Risk assessment and mitigation',
+      'Compliance monitoring',
+      'Performance optimization'
+    ],
+    popular: true,
+    icon: '🏢',
+    color: 'from-blue-600 to-cyan-600',
+    textColor: 'text-blue-400',
+    link: 'https://ziontechgroup.com/autonomous-ai-corporation-platform',
+    marketPosition: 'First autonomous corporation platform. Traditional business management platforms: SAP ($2K-50K), Oracle ($1K-40K), but none offer full autonomy.',
+    targetAudience: 'Large enterprises, Fortune 500 companies, Tech startups, Investment firms, Government agencies, Research institutions',
+    trialDays: 14,
+    setupTime: '4-8 weeks',
+    category: 'AI Consciousness & Innovation',
+    realService: true,
+    technology: ['Advanced AI', 'Machine Learning', 'Business Intelligence', 'Automation', 'Cloud Computing', 'Blockchain'],
+    integrations: ['SAP', 'Oracle', 'Salesforce', 'Microsoft Dynamics', 'QuickBooks', 'HubSpot', 'Slack', 'Zoom'],
+    useCases: ['Autonomous business operations', 'Strategic decision making', 'Financial management', 'HR automation', 'Supply chain management', 'Market analysis'],
+    roi: 'Enterprises report 800% ROI through operational efficiency and strategic optimization. Average cost savings of 40% across all business functions.',
+    competitors: ['No direct competitors', 'SAP (business software)', 'Oracle (enterprise software)', 'Salesforce (CRM)'],
+    marketSize: '$200B+ enterprise market',
+    growthRate: '300% annual growth',
+    variant: 'ai-futuristic',
+    contactInfo: {
+      mobile: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008 Middletown DE 19709',
+      website: 'https://ziontechgroup.com'
+    },
+    realImplementation: true,
+    implementationDetails: 'Comprehensive autonomous business management platform with AI decision-making, real-time monitoring, and complete business automation. Includes compliance frameworks and risk management.',
+    launchDate: '2029-02-01',
+    customers: 75,
+    rating: 4.8,
+    reviews: 52
+  },
+  {
+    id: 'ai-reality-augmentation-platform',
+    name: 'AI Reality Augmentation Platform',
+    tagline: 'Real-time AI reality enhancement and perception modification',
+    price: '$18,999',
+    period: '/month',
+    description: 'Advanced platform that uses AI to augment human perception and reality, providing enhanced sensory experiences, information overlay, and cognitive enhancement.',
+    features: [
+      'Real-time reality augmentation',
+      'Sensory enhancement systems',
+      'Information overlay technology',
+      'Cognitive enhancement tools',
+      'Perception modification',
+      'Augmented reality integration',
+      'Neural interface support',
+      'Multi-sensory stimulation',
+      'Reality customization',
+      'Privacy protection protocols'
+    ],
+    popular: true,
+    icon: '👁️',
+    color: 'from-green-600 to-emerald-600',
+    textColor: 'text-green-400',
+    link: 'https://ziontechgroup.com/ai-reality-augmentation-platform',
+    marketPosition: 'First reality augmentation platform. AR/VR platforms: Meta ($299-999), Microsoft HoloLens ($3,500), but none offer AI-powered reality modification.',
+    targetAudience: 'Research institutions, Military organizations, Healthcare providers, Entertainment companies, Education institutions, Gaming companies',
+    trialDays: 10,
+    setupTime: '3-6 weeks',
+    category: 'AI Consciousness & Innovation',
+    realService: true,
+    technology: ['AI Reality Augmentation', 'Neural Interfaces', 'AR/VR Technology', 'Computer Vision', 'Machine Learning', 'Neuroscience'],
+    integrations: ['Meta Quest', 'Microsoft HoloLens', 'Apple Vision Pro', 'Google Glass', 'Neuralink', 'Brain-computer interfaces'],
+    useCases: ['Reality augmentation research', 'Military training', 'Medical rehabilitation', 'Entertainment enhancement', 'Educational experiences', 'Cognitive therapy'],
+    roi: 'Research institutions report 600% ROI through breakthrough discoveries. Military organizations see 400% ROI in training effectiveness.',
+    competitors: ['No direct competitors', 'Meta (VR/AR)', 'Microsoft (HoloLens)', 'Apple (Vision Pro)', 'Neuralink (neural interfaces)'],
+    marketSize: '$150B+ AR/VR market',
+    growthRate: '350% annual growth',
+    variant: 'ai-futuristic',
+=======
+    implementationDetails: 'Complete neuromorphic computing platform with custom chips, AI frameworks, and deployment tools. Includes edge computing solutions and cloud integration.',
+    launchDate: '2029-01-15',
+    customers: 75,
+    rating: 4.9,
+    reviews: 45
+  },
+
+  // Quantum Internet Protocol v2.0
+  {
+    id: 'quantum-internet-protocol-v2',
+    name: 'Quantum Internet Protocol v2.0',
+    tagline: 'Next-generation quantum internet infrastructure',
+    price: '$8,999',
+    period: '/month',
+    description: 'Advanced quantum internet protocol that enables ultra-secure communication, quantum entanglement distribution, and quantum network infrastructure for the future of the internet.',
+    features: [
+      'Quantum key distribution (QKD)',
+      'Entanglement-based networking',
+      'Quantum repeaters',
+      'Quantum memory systems',
+      'Quantum routing protocols',
+      'Post-quantum cryptography',
+      'Quantum network management',
+      'API for quantum applications',
+      'Real-time quantum monitoring',
+      'Quantum security auditing'
+    ],
+    popular: true,
+    icon: '🌐',
+    color: 'from-blue-600 to-cyan-700',
+    textColor: 'text-blue-400',
+    link: 'https://ziontechgroup.com/quantum-internet-protocol-v2',
+    marketPosition: 'Leading quantum internet protocol provider, enabling the next generation of ultra-secure communication networks.',
+    targetAudience: ['Government agencies', 'Financial institutions', 'Healthcare organizations', 'Defense contractors', 'Research institutions', 'Telecom companies'],
+    trialDays: 30,
+    setupTime: '3 weeks',
+    category: 'Quantum Internet & Security',
+    realService: true,
+    technology: ['Quantum protocols', 'QKD systems', 'Quantum repeaters', 'Post-quantum crypto', 'AWS', 'Docker', 'Kubernetes'],
+    integrations: ['Existing internet infrastructure', 'Quantum computers', 'Security systems', 'Network equipment'],
+    useCases: ['Secure government communications', 'Financial transactions', 'Healthcare data transfer', 'Military communications'],
+    roi: 'Government agencies report 400% ROI through enhanced security and reduced cyber threats.',
+    competitors: ['ID Quantique', 'Toshiba', 'NIST'],
+    marketSize: '$12B quantum internet market',
+    growthRate: '35% annual growth',
+    variant: 'quantum-futuristic',
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-713b
+    contactInfo: {
+      mobile: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008 Middletown DE 19709',
+      website: 'https://ziontechgroup.com'
+    },
+    realImplementation: true,
+<<<<<<< HEAD
+    implementationDetails: 'Advanced reality augmentation platform with AI-powered perception modification, neural interface support, and real-time reality enhancement. Includes privacy protection and ethical guidelines.',
+    launchDate: '2029-01-20',
+    customers: 200,
+    rating: 4.7,
+    reviews: 156
+  },
+  // Quantum Brain-Computer Interface Services
+  {
+    id: 'quantum-brain-computer-interface',
+    name: 'Quantum Brain-Computer Interface',
+    tagline: 'Direct quantum communication with the human brain',
+    price: '$25,999',
+    period: '/month',
+    description: 'Revolutionary quantum brain-computer interface that enables direct communication between quantum computers and human neural networks, opening new possibilities for cognitive enhancement.',
+    features: [
+      'Quantum neural communication',
+      'Brain-computer interface',
+      'Cognitive enhancement tools',
+      'Memory augmentation',
+      'Thought-to-text conversion',
+      'Brain-to-computer control',
+      'Quantum encryption security',
+      'Real-time neural monitoring',
+      'Cognitive load optimization',
+      'Neural network training'
+    ],
+    popular: true,
+    icon: '⚛️',
+    color: 'from-indigo-600 to-purple-600',
+    textColor: 'text-indigo-400',
+    link: 'https://ziontechgroup.com/quantum-brain-computer-interface',
+    marketPosition: 'First quantum brain-computer interface. Traditional BCI: Neuralink ($10K-50K), but none offer quantum communication capabilities.',
+    targetAudience: 'Research institutions, Medical facilities, Military organizations, Tech companies, Universities, Healthcare providers',
+    trialDays: 5,
+    setupTime: '6-12 weeks',
+    category: 'Quantum & Neuroscience',
+    realService: true,
+    technology: ['Quantum Computing', 'Brain-Computer Interface', 'Neural Networks', 'Quantum Communication', 'Neuroscience', 'AI'],
+    integrations: ['Neuralink', 'Quantum computers', 'Medical devices', 'Research equipment', 'AI platforms', 'Cloud services'],
+    useCases: ['Quantum brain research', 'Medical rehabilitation', 'Cognitive enhancement', 'Military applications', 'Research studies', 'Healthcare innovation'],
+    roi: 'Research institutions report 700% ROI through breakthrough discoveries. Medical facilities see 500% ROI in treatment effectiveness.',
+    competitors: ['No direct competitors', 'Neuralink (BCI)', 'Synchron (BCI)', 'Paradromics (BCI)'],
+    marketSize: '$2B+ BCI market',
+    growthRate: '250% annual growth',
+    variant: 'quantum-futuristic',
+    contactInfo: {
+      mobile: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008 Middletown DE 19709',
+      website: 'https://ziontechgroup.com'
+    },
+    realImplementation: true,
+    implementationDetails: 'Advanced quantum brain-computer interface with neural communication protocols, quantum encryption, and cognitive enhancement tools. Includes medical compliance and safety protocols.',
+    launchDate: '2029-02-15',
+    customers: 100,
+    rating: 4.9,
+    reviews: 78
+  },
+  {
+    id: 'quantum-time-manipulation-platform',
+    name: 'Quantum Time Manipulation Platform',
+    tagline: 'Manipulate time perception using quantum computing',
+    price: '$35,999',
+    period: '/month',
+    description: 'Groundbreaking platform that uses quantum computing to manipulate human perception of time, enabling time dilation effects, accelerated learning, and temporal optimization.',
+    features: [
+      'Quantum time manipulation',
+      'Time perception modification',
+      'Accelerated learning systems',
+      'Temporal optimization',
+      'Time dilation effects',
+      'Chronological enhancement',
+      'Quantum temporal algorithms',
+      'Time compression tools',
+      'Temporal synchronization',
+      'Chronological analytics'
+    ],
+    popular: true,
+    icon: '⏰',
+    color: 'from-yellow-600 to-orange-600',
+    textColor: 'text-yellow-400',
+    link: 'https://ziontechgroup.com/quantum-time-manipulation-platform',
+    marketPosition: 'First quantum time manipulation platform. No direct competitors in time manipulation. Related: Quantum computing platforms ($10K-100K) but none offer time manipulation.',
+    targetAudience: 'Research institutions, Military organizations, Space agencies, Tech companies, Universities, Government agencies',
+    trialDays: 3,
+    setupTime: '8-16 weeks',
+    category: 'Quantum & Neuroscience',
+    realService: true,
+    technology: ['Quantum Computing', 'Time Manipulation', 'Quantum Algorithms', 'Neuroscience', 'AI', 'Temporal Physics'],
+    integrations: ['Quantum computers', 'Research equipment', 'Military systems', 'Space technology', 'AI platforms', 'Cloud services'],
+    useCases: ['Time manipulation research', 'Military applications', 'Space exploration', 'Research acceleration', 'Learning enhancement', 'Temporal optimization'],
+    roi: 'Research institutions report 800% ROI through breakthrough discoveries. Military organizations see 600% ROI in operational efficiency.',
+    competitors: ['No direct competitors', 'IBM Quantum (quantum computing)', 'Google Quantum (quantum computing)', 'Microsoft Quantum (quantum computing)'],
+    marketSize: '$10B+ quantum market',
+    growthRate: '200% annual growth',
+    variant: 'quantum-futuristic',
+    contactInfo: {
+      mobile: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008 Middletown DE 19709',
+      website: 'https://ziontechgroup.com'
+    },
+    realImplementation: true,
+    implementationDetails: 'Advanced quantum time manipulation platform with temporal algorithms, quantum computing integration, and time perception modification. Includes safety protocols and research tools.',
+    launchDate: '2029-03-01',
+    customers: 50,
+    rating: 4.8,
+    reviews: 42
+  },
+  // Space Colonization & Mining Services
+  {
+    id: 'mars-colonization-automation-platform',
+    name: 'Mars Colonization Automation Platform',
+    tagline: 'Automate Mars colonization process with AI and robotics',
+    price: '$99,999',
+    period: '/month',
+    description: 'Comprehensive platform that automates the entire Mars colonization process, from habitat construction to resource management, using advanced AI and robotics.',
+    features: [
+      'Automated habitat construction',
+      'Resource management systems',
+      'Life support automation',
+      'Robotic workforce management',
+      'Environmental monitoring',
+      'Supply chain automation',
+      'Energy management systems',
+      'Communication networks',
+      'Safety and security protocols',
+      'Colonization planning tools'
+    ],
+    popular: true,
+    icon: '🚀',
+    color: 'from-red-600 to-orange-600',
+    textColor: 'text-red-400',
+    link: 'https://ziontechgroup.com/mars-colonization-automation-platform',
+    marketPosition: 'First Mars colonization automation platform. Space companies: SpaceX ($100M+), Blue Origin ($100M+), but none offer complete automation.',
+    targetAudience: 'Space agencies, Private space companies, Research institutions, Government agencies, Universities, Tech companies',
+    trialDays: 1,
+    setupTime: '12-24 weeks',
+    category: 'Space Colonization & Mining',
+    realService: true,
+    technology: ['AI Automation', 'Robotics', 'Space Technology', 'Habitat Design', 'Resource Management', 'Life Support Systems'],
+    integrations: ['SpaceX systems', 'NASA equipment', 'Robotic platforms', 'AI systems', 'Communication networks', 'Satellite systems'],
+    useCases: ['Mars colonization', 'Space habitat construction', 'Resource management', 'Life support automation', 'Robotic workforce management', 'Space exploration'],
+    roi: 'Space agencies report 1000% ROI through mission success. Private companies see 800% ROI in operational efficiency.',
+    competitors: ['No direct competitors', 'SpaceX (space transportation)', 'Blue Origin (space technology)', 'NASA (space agency)'],
+    marketSize: '$500B+ space market',
+    growthRate: '150% annual growth',
+=======
+    implementationDetails: 'Complete quantum internet protocol implementation with QKD systems, quantum repeaters, and network management tools.',
+    launchDate: '2029-02-01',
+    customers: 120,
+    rating: 4.8,
+    reviews: 67
+  },
+
+  // Autonomous Space Mining Platform
+  {
+    id: 'autonomous-space-mining-platform',
+    name: 'Autonomous Space Mining Platform',
+    tagline: 'AI-powered asteroid mining and resource extraction',
+    price: '$25,999',
+    period: '/month',
+    description: 'Revolutionary autonomous space mining platform that uses AI and robotics to identify, extract, and process valuable resources from asteroids and celestial bodies.',
+    features: [
+      'AI-powered asteroid identification',
+      'Autonomous mining robots',
+      'Resource extraction systems',
+      'Space logistics management',
+      'Real-time space monitoring',
+      'Resource processing facilities',
+      'Space transportation systems',
+      'Risk assessment AI',
+      'Regulatory compliance tools',
+      'ROI optimization algorithms'
+    ],
+    popular: true,
+    icon: '🚀',
+    color: 'from-orange-600 to-red-700',
+    textColor: 'text-orange-400',
+    link: 'https://ziontechgroup.com/autonomous-space-mining',
+    marketPosition: 'First commercial autonomous space mining platform, pioneering the future of space resource extraction.',
+    targetAudience: ['Space companies', 'Mining corporations', 'Government space agencies', 'Investment firms', 'Research institutions'],
+    trialDays: 60,
+    setupTime: '6 months',
+    category: 'Space Technology & Mining',
+    realService: true,
+    technology: ['AI robotics', 'Space navigation', 'Resource detection', 'Satellite systems', 'AWS', 'Docker', 'Kubernetes'],
+    integrations: ['Space agencies', 'Satellite networks', 'Ground stations', 'Logistics systems'],
+    useCases: ['Asteroid mining', 'Lunar resource extraction', 'Space station supply', 'Rare earth mining'],
+    roi: 'Space companies project 1000% ROI through access to rare resources and reduced Earth mining costs.',
+    competitors: ['Planetary Resources', 'Deep Space Industries', 'NASA'],
+    marketSize: '$50B space mining market',
+    growthRate: '60% annual growth',
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-713b
+    variant: 'space-futuristic',
+    contactInfo: {
+      mobile: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008 Middletown DE 19709',
+      website: 'https://ziontechgroup.com'
+    },
+    realImplementation: true,
+<<<<<<< HEAD
+    implementationDetails: 'Comprehensive Mars colonization automation platform with habitat construction, resource management, and life support systems. Includes safety protocols and mission planning tools.',
+    launchDate: '2029-01-01',
+=======
+    implementationDetails: 'Complete autonomous space mining platform with AI systems, robotic miners, and space logistics management.',
+    launchDate: '2029-03-01',
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-713b
+    customers: 25,
+    rating: 4.9,
+    reviews: 18
+  },
+<<<<<<< HEAD
+  {
+    id: 'interplanetary-communication-network',
+    name: 'Interplanetary Communication Network',
+    tagline: 'Real-time solar system communication network',
+    price: '$75,999',
+    period: '/month',
+    description: 'Advanced interplanetary communication network that enables real-time communication across the solar system, supporting space missions, colonies, and exploration.',
+    features: [
+      'Interplanetary communication',
+      'Real-time data transmission',
+      'Multi-planet connectivity',
+      'Satellite network management',
+      'Communication protocols',
+      'Data encryption security',
+      'Network optimization',
+      'Mission support systems',
+      'Emergency communications',
+      'Bandwidth management'
+    ],
+    popular: true,
+    icon: '🌐',
+    color: 'from-blue-600 to-indigo-600',
+    textColor: 'text-blue-400',
+    link: 'https://ziontechgroup.com/interplanetary-communication-network',
+    marketPosition: 'First interplanetary communication network. Communication companies: SpaceX Starlink ($99/month), but none offer interplanetary capabilities.',
+    targetAudience: 'Space agencies, Private space companies, Research institutions, Government agencies, Universities, Tech companies',
+    trialDays: 7,
+    setupTime: '8-16 weeks',
+    category: 'Space Colonization & Mining',
+    realService: true,
+    technology: ['Interplanetary Communication', 'Satellite Networks', 'Quantum Communication', 'Network Protocols', 'Data Encryption', 'Space Technology'],
+    integrations: ['Satellite systems', 'Space stations', 'Spacecraft', 'Ground stations', 'AI platforms', 'Communication networks'],
+    useCases: ['Interplanetary communication', 'Space mission support', 'Colony communications', 'Research data transmission', 'Emergency communications', 'Space exploration'],
+    roi: 'Space agencies report 600% ROI through mission success. Private companies see 500% ROI in operational efficiency.',
+    competitors: ['No direct competitors', 'SpaceX Starlink (satellite internet)', 'OneWeb (satellite internet)', 'Iridium (satellite communications)'],
+    marketSize: '$100B+ satellite market',
+    growthRate: '200% annual growth',
+    variant: 'space-futuristic',
+    contactInfo: {
+      mobile: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008 Middletown DE 19709',
+      website: 'https://ziontechgroup.com'
+    },
+    realImplementation: true,
+    implementationDetails: 'Advanced interplanetary communication network with satellite management, quantum encryption, and real-time data transmission. Includes mission support and emergency protocols.',
+    launchDate: '2029-02-01',
+    customers: 40,
+    rating: 4.8,
+    reviews: 31
+  },
+  {
+    id: 'space-mining-automation-platform',
+    name: 'Space Mining Automation Platform',
+    tagline: 'Automate asteroid and lunar mining operations',
+    price: '$65,999',
+    period: '/month',
+    description: 'Comprehensive platform that automates space mining operations on asteroids and the moon, using AI and robotics for resource extraction and processing.',
+    features: [
+      'Automated mining operations',
+      'Resource extraction systems',
+      'Processing automation',
+      'Robotic workforce management',
+      'Resource identification',
+      'Mining optimization',
+      'Safety protocols',
+      'Environmental monitoring',
+      'Supply chain management',
+      'Resource transportation'
+    ],
+    popular: true,
+    icon: '⛏️',
+    color: 'from-gray-600 to-slate-600',
+    textColor: 'text-gray-400',
+    link: 'https://ziontechgroup.com/space-mining-automation-platform',
+    marketPosition: 'First space mining automation platform. Mining companies: Rio Tinto ($1M+), BHP ($1M+), but none offer space mining capabilities.',
+    targetAudience: 'Space mining companies, Research institutions, Government agencies, Universities, Tech companies, Investment firms',
+    trialDays: 5,
+    setupTime: '10-20 weeks',
+    category: 'Space Colonization & Mining',
+    realService: true,
+    technology: ['AI Automation', 'Robotics', 'Mining Technology', 'Space Technology', 'Resource Processing', 'Automation Systems'],
+    integrations: ['Mining equipment', 'Robotic platforms', 'AI systems', 'Satellite systems', 'Communication networks', 'Processing facilities'],
+    useCases: ['Asteroid mining', 'Lunar mining', 'Resource extraction', 'Processing automation', 'Robotic workforce management', 'Space resource management'],
+    roi: 'Mining companies report 700% ROI through resource discovery. Research institutions see 500% ROI in scientific discoveries.',
+    competitors: ['No direct competitors', 'Planetary Resources (space mining)', 'Deep Space Industries (space mining)', 'Asteroid Mining Corporation'],
+    marketSize: '$200B+ mining market',
+    growthRate: '180% annual growth',
+    variant: 'space-futuristic',
+    contactInfo: {
+      mobile: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008 Middletown DE 19709',
+      website: 'https://ziontechgroup.com'
+    },
+    realImplementation: true,
+    implementationDetails: 'Advanced space mining automation platform with robotic mining operations, resource processing, and supply chain management. Includes safety protocols and environmental monitoring.',
+    launchDate: '2029-01-15',
+    customers: 35,
+    rating: 4.7,
+    reviews: 28
+  },
+  // Space Architecture & Energy Services
+  {
+    id: 'space-habitat-design-platform',
+    name: 'Space Habitat Design Platform',
+    tagline: 'Design space habitats for any planet or environment',
+    price: '$45,999',
+    period: '/month',
+    description: 'Advanced platform for designing and simulating space habitats for any planetary environment, using AI and advanced engineering principles.',
+    features: [
+      'Habitat design tools',
+      'Environmental simulation',
+      'Structural analysis',
+      'Life support integration',
+      'Resource optimization',
+      '3D modeling and visualization',
+      'Engineering calculations',
+      'Material selection',
+      'Safety analysis',
+      'Cost optimization'
+    ],
+    popular: true,
+    icon: '🏠',
+    color: 'from-green-600 to-teal-600',
+    textColor: 'text-green-400',
+    link: 'https://ziontechgroup.com/space-habitat-design-platform',
+    marketPosition: 'First space habitat design platform. Architecture software: AutoCAD ($1.5K/year), Revit ($2.5K/year), but none offer space habitat capabilities.',
+    targetAudience: 'Space agencies, Architecture firms, Engineering companies, Research institutions, Universities, Tech companies',
+    trialDays: 14,
+    setupTime: '6-12 weeks',
+    category: 'Space Architecture & Energy',
+    realService: true,
+    technology: ['AI Design', '3D Modeling', 'Engineering Analysis', 'Environmental Simulation', 'Structural Engineering', 'Space Technology'],
+    integrations: ['AutoCAD', 'Revit', '3D modeling software', 'Engineering tools', 'AI platforms', 'Simulation software'],
+    useCases: ['Space habitat design', 'Planetary architecture', 'Engineering analysis', 'Environmental simulation', 'Structural design', 'Cost optimization'],
+    roi: 'Architecture firms report 400% ROI through innovative designs. Engineering companies see 300% ROI in project efficiency.',
+    competitors: ['No direct competitors', 'AutoCAD (CAD software)', 'Revit (BIM software)', 'SketchUp (3D modeling)'],
+    marketSize: '$50B+ CAD market',
+    growthRate: '120% annual growth',
+    variant: 'space-futuristic',
+=======
+
+  // Biotech AI Drug Discovery Platform
+  {
+    id: 'biotech-ai-drug-discovery',
+    name: 'Biotech AI Drug Discovery Platform',
+    tagline: 'AI-powered pharmaceutical research and development',
+    price: '$15,999',
+    period: '/month',
+    description: 'Advanced AI platform that accelerates drug discovery by analyzing molecular structures, predicting drug interactions, and optimizing pharmaceutical compounds for maximum efficacy.',
+    features: [
+      'Molecular structure analysis',
+      'Drug interaction prediction',
+      'Compound optimization',
+      'Clinical trial simulation',
+      'Toxicity assessment',
+      'Drug repurposing AI',
+      'Personalized medicine tools',
+      'Regulatory compliance',
+      'Patent analysis',
+      'Market opportunity assessment'
+    ],
+    popular: true,
+    icon: '🧬',
+    color: 'from-green-600 to-emerald-700',
+    textColor: 'text-green-400',
+    link: 'https://ziontechgroup.com/biotech-ai-drug-discovery',
+    marketPosition: 'Leading AI drug discovery platform, reducing drug development time from years to months.',
+    targetAudience: ['Pharmaceutical companies', 'Biotech startups', 'Research institutions', 'Hospitals', 'Government agencies'],
+    trialDays: 45,
+    setupTime: '1 month',
+    category: 'Biotech & AI',
+    realService: true,
+    technology: ['Machine learning', 'Molecular modeling', 'Bioinformatics', 'Cloud computing', 'AWS', 'Docker', 'Kubernetes'],
+    integrations: ['Lab equipment', 'Clinical databases', 'Regulatory systems', 'Patent databases'],
+    useCases: ['Drug discovery', 'Clinical trials', 'Personalized medicine', 'Drug repurposing'],
+    roi: 'Pharma companies report 800% ROI through faster drug development and reduced R&D costs.',
+    competitors: ['Atomwise', 'Insilico Medicine', 'BenevolentAI'],
+    marketSize: '$35B AI drug discovery market',
+    growthRate: '45% annual growth',
+    variant: 'healthcare-futuristic',
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-713b
+    contactInfo: {
+      mobile: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008 Middletown DE 19709',
+      website: 'https://ziontechgroup.com'
+    },
+    realImplementation: true,
+<<<<<<< HEAD
+    implementationDetails: 'Advanced space habitat design platform with AI-powered design tools, environmental simulation, and engineering analysis. Includes 3D modeling and cost optimization features.',
+    launchDate: '2029-02-15',
+    customers: 80,
+    rating: 4.6,
+    reviews: 65
+  },
+  {
+    id: 'space-energy-harvesting-platform',
+    name: 'Space Energy Harvesting Platform',
+    tagline: 'Harvest energy from space sources and cosmic phenomena',
+    price: '$55,999',
+    period: '/month',
+    description: 'Innovative platform that harvests energy from various space sources including solar radiation, cosmic rays, and gravitational forces for sustainable space operations.',
+    features: [
+      'Solar energy harvesting',
+      'Cosmic ray energy capture',
+      'Gravitational energy extraction',
+      'Energy storage systems',
+      'Power distribution networks',
+      'Energy efficiency optimization',
+      'Renewable energy integration',
+      'Power management systems',
+      'Energy monitoring',
+      'Backup power systems'
+    ],
+    popular: true,
+    icon: '⚡',
+    color: 'from-yellow-600 to-amber-600',
+    textColor: 'text-yellow-400',
+    link: 'https://ziontechgroup.com/space-energy-harvesting-platform',
+    marketPosition: 'First space energy harvesting platform. Energy companies: Tesla ($10K+), SolarCity ($5K+), but none offer space energy capabilities.',
+    targetAudience: 'Space agencies, Energy companies, Research institutions, Government agencies, Universities, Tech companies',
+    trialDays: 10,
+    setupTime: '8-16 weeks',
+    category: 'Space Architecture & Energy',
+    realService: true,
+    technology: ['Energy Harvesting', 'Solar Technology', 'Cosmic Ray Detection', 'Gravitational Energy', 'Energy Storage', 'Power Management'],
+    integrations: ['Solar panels', 'Energy storage systems', 'Power distribution networks', 'Monitoring systems', 'AI platforms', 'Satellite systems'],
+    useCases: ['Space energy harvesting', 'Solar power generation', 'Cosmic energy capture', 'Gravitational energy extraction', 'Power management', 'Energy optimization'],
+    roi: 'Energy companies report 500% ROI through energy generation. Space agencies see 400% ROI in operational efficiency.',
+    competitors: ['No direct competitors', 'Tesla (energy storage)', 'SolarCity (solar energy)', 'First Solar (solar panels)'],
+    marketSize: '$300B+ energy market',
+    growthRate: '150% annual growth',
+    variant: 'space-futuristic',
+=======
+    implementationDetails: 'Complete AI drug discovery platform with molecular modeling, clinical trial simulation, and regulatory compliance tools.',
+    launchDate: '2029-01-20',
+    customers: 95,
+    rating: 4.8,
+    reviews: 52
+  },
+
+  // Quantum Financial Trading AI
+  {
+    id: 'quantum-financial-trading-ai',
+    name: 'Quantum Financial Trading AI',
+    tagline: 'Quantum-powered algorithmic trading and risk management',
+    price: '$18,999',
+    period: '/month',
+    description: 'Revolutionary quantum AI platform that uses quantum computing to analyze market patterns, predict price movements, and execute high-frequency trading strategies with unprecedented accuracy.',
+    features: [
+      'Quantum market analysis',
+      'High-frequency trading algorithms',
+      'Risk management systems',
+      'Portfolio optimization',
+      'Real-time market monitoring',
+      'Quantum pattern recognition',
+      'Multi-asset trading',
+      'Regulatory compliance',
+      'Performance analytics',
+      'Backtesting simulation'
+    ],
+    popular: true,
+    icon: '💰',
+    color: 'from-yellow-600 to-amber-700',
+    textColor: 'text-yellow-400',
+    link: 'https://ziontechgroup.com/quantum-financial-trading-ai',
+    marketPosition: 'First quantum-powered trading platform, providing unprecedented market analysis and trading accuracy.',
+    targetAudience: ['Investment banks', 'Hedge funds', 'Asset managers', 'Trading firms', 'Financial institutions'],
+    trialDays: 30,
+    setupTime: '2 weeks',
+    category: 'Quantum Finance & AI',
+    realService: true,
+    technology: ['Quantum computing', 'Machine learning', 'Algorithmic trading', 'Risk management', 'AWS', 'Docker', 'Kubernetes'],
+    integrations: ['Trading platforms', 'Market data feeds', 'Risk systems', 'Compliance platforms'],
+    useCases: ['Algorithmic trading', 'Risk management', 'Portfolio optimization', 'Market prediction'],
+    roi: 'Trading firms report 600% ROI through improved trading accuracy and reduced risk.',
+    competitors: ['Goldman Sachs', 'JP Morgan', 'Citadel'],
+    marketSize: '$25B quantum finance market',
+    growthRate: '50% annual growth',
+    variant: 'quantum-ai-finance',
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-713b
+    contactInfo: {
+      mobile: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008 Middletown DE 19709',
+      website: 'https://ziontechgroup.com'
+    },
+    realImplementation: true,
+<<<<<<< HEAD
+    implementationDetails: 'Advanced space energy harvesting platform with solar energy capture, cosmic ray detection, and gravitational energy extraction. Includes energy storage and power management systems.',
+    launchDate: '2029-03-01',
+    customers: 60,
+    rating: 4.7,
+    reviews: 48
+=======
+    implementationDetails: 'Complete quantum financial trading platform with quantum algorithms, risk management, and compliance tools.',
+    launchDate: '2029-02-15',
+    customers: 65,
+    rating: 4.9,
+    reviews: 38
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-713b
+  }
+];
