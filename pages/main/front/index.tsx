@@ -749,7 +749,7 @@ export default function MainFrontIndex() {
         </motion.section>
 
         {/* AUTO: catalog injection for automated advertising */}
-        {/* AUTO:FRONT_INDEX_DIRECTORY_START */
+        {/* AUTO:FRONT_INDEX_DIRECTORY_START */}
 
 <section id="auto-catalog" className="mx-auto max-w-7xl px-6 pb-16">
   <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Autonomous Catalog</h2>
@@ -766,7 +766,7 @@ export default function MainFrontIndex() {
 
   </div>
 </section>
-/* AUTO:FRONT_INDEX_DIRECTORY_END */}
+{/* AUTO:FRONT_INDEX_DIRECTORY_END */}
 
         {/* Platform Modules */}
         <motion.section
@@ -1845,7 +1845,7 @@ export default function MainFrontIndex() {
 
           </div>
         </section>
-        /* AUTO-GENERATED: FRONT_ADS_END */}
+        {/* AUTO-GENERATED: FRONT_ADS_END */}
 
       </main>
       {/* Back to top */}
