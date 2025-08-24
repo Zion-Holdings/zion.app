@@ -30,6 +30,7 @@ import {
   Settings
 } from 'lucide-react';
 import { MICRO_SAAS_SERVICES, MicroSaasService, getServiceByCategory, getFeaturedServices } from '@/data/microSaasServices';
+import { motion } from 'framer-motion';
 
 const categoryIcons = {
   'AI Services': Brain,
@@ -192,7 +193,7 @@ export function MicroSaasServicesShowcase() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
             {featuredServices.slice(0, 6).map((service) => (
-              <ServiceCard key={service.id} service={service} featured={true} />
+              <ServiceCard key={service.id} service={service} />
             ))}
           </div>
         </div>
@@ -266,7 +267,7 @@ export function MicroSaasServicesShowcase() {
 }
 
 // Helper function for formatting prices
-const formatPrice = (price: number, currency: string) => {
+const formatPrice = (price: number, currency: string = 'USD') => {
   if (price === 0) return 'Free';
   return new Intl.NumberFormat('en-US', {
     style: 'currency',
@@ -277,97 +278,111 @@ const formatPrice = (price: number, currency: string) => {
 };
 
 // Service Card Component
-function ServiceCard({ service, featured = false }: { service: MicroSaasService; featured?: boolean }) {
-  const CategoryIcon = categoryIcons[service.category as keyof typeof categoryIcons] || Building;
-  const categoryColor = categoryColors[service.category as keyof typeof categoryColors] || 'from-slate-500 to-slate-600';
+const ServiceCard: React.FC<{ service: MicroSaasService }> = ({ service }) => {
+  const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <Card className={`group bg-white/10 backdrop-blur-md border-white/20 hover:bg-white/20 transition-all duration-500 hover:-translate-y-2 ${featured ? 'ring-2 ring-zion-cyan/50' : ''}`}>
-      <CardHeader className="pb-4">
-        <div className="flex items-start justify-between mb-4">
-          <div className="flex items-center gap-3">
-            <div className={`w-12 h-12 bg-gradient-to-br ${categoryColor} rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-              <CategoryIcon className="h-6 w-6 text-white" />
-            </div>
-            <div>
-              <Badge variant="secondary" className="bg-zion-cyan/20 text-zion-cyan border-zion-cyan/30">
-                {service.category}
-              </Badge>
-              {service.badge && (
-                <Badge className="ml-2 bg-gradient-to-r from-zion-purple to-zion-cyan text-white">
-                  {service.badge}
-                </Badge>
-              )}
-            </div>
-          </div>
-          <div className="flex items-center gap-1 text-zion-cyan">
-            <Star className="h-4 w-4 fill-current" />
-            <span className="text-sm font-medium">{service.rating}</span>
-          </div>
-        </div>
-        
-        <CardTitle className="text-xl text-white group-hover:text-zion-cyan transition-colors duration-300">
-          {service.title}
-        </CardTitle>
-        
-        <CardDescription className="text-zion-slate-light leading-relaxed">
-          {service.description}
-        </CardDescription>
-      </CardHeader>
+    <motion.div
+      className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-zion-dark/80 via-zion-dark/60 to-zion-primary/20 backdrop-blur-sm border border-zion-primary/30 hover:border-zion-primary/60 transition-all duration-500"
+      whileHover={{ y: -8, scale: 1.02 }}
+      onHoverStart={() => setIsHovered(true)}
+      onHoverEnd={() => setIsHovered(false)}
+    >
+      {/* Animated background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-zion-primary/5 via-transparent to-zion-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       
-      <CardContent className="pb-4">
-        {/* Pricing */}
-        <div className="mb-6">
-          <div className="flex items-center gap-4 mb-3">
-            <div className="text-2xl font-bold text-white">
-              {formatPrice(service.price.monthly, service.price.currency)}
-              <span className="text-sm text-zion-slate-light font-normal">/month</span>
+      {/* Glow effect */}
+      <div className="absolute inset-0 bg-gradient-to-r from-zion-primary/20 via-transparent to-zion-secondary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl" />
+      
+      <div className="relative p-6 space-y-4">
+        {/* Header */}
+        <div className="flex items-start justify-between">
+          <div className="flex-1">
+            <div className="flex items-center gap-2 mb-2">
+              <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${
+                service.badge === 'New' ? 'bg-green-500/20 text-green-400 border border-green-500/30' :
+                service.badge === 'Popular' ? 'bg-orange-500/20 text-orange-400 border border-orange-500/30' :
+                service.badge === 'Featured' ? 'bg-purple-500/20 text-purple-400 border border-purple-500/30' :
+                'bg-zion-primary/20 text-zion-primary border border-zion-primary/30'
+              }`}>
+                {service.badge}
+              </span>
+              <span className="text-zion-secondary/60 text-xs">{service.category}</span>
             </div>
-            {service.price.yearly && (
-              <div className="text-sm text-zion-slate-light">
-                {formatPrice(service.price.yearly, service.price.currency)}/year
-              </div>
-            )}
+            <h3 className="text-xl font-bold text-white group-hover:text-zion-primary transition-colors duration-300">
+              {service.name}
+            </h3>
           </div>
-          {service.price.oneTime && (
-            <div className="text-sm text-zion-slate-light">
-              One-time: {formatPrice(service.price.oneTime, service.price.currency)}
-            </div>
-          )}
+          <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-zion-primary/20 to-zion-secondary/20 flex items-center justify-center border border-zion-primary/30">
+            <service.icon className="w-6 h-6 text-zion-primary" />
+          </div>
         </div>
-        
+
+        {/* Description */}
+        <p className="text-zion-light/80 text-sm leading-relaxed">
+          {service.description}
+        </p>
+
         {/* Features */}
-        <div className="mb-6">
-          <h4 className="text-sm font-semibold text-white mb-3">Key Features:</h4>
-          <div className="space-y-2">
-            {service.features.slice(0, 3).map((feature, index) => (
-              <div key={index} className="flex items-center gap-2 text-sm text-zion-slate-light">
-                <CheckCircle className="h-4 w-4 text-zion-cyan flex-shrink-0" />
-                <span>{feature}</span>
+        <div className="space-y-2">
+          <h4 className="text-sm font-semibold text-zion-primary">Key Features:</h4>
+          <div className="grid grid-cols-2 gap-2">
+            {service.features.slice(0, 4).map((feature, index) => (
+              <div key={index} className="flex items-center gap-2 text-xs text-zion-light/70">
+                <div className="w-1.5 h-1.5 rounded-full bg-zion-primary" />
+                {feature}
               </div>
             ))}
           </div>
         </div>
-        
-        {/* AI Score */}
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <Brain className="h-4 w-4 text-zion-purple" />
-            <span className="text-sm text-zion-slate-light">AI Score:</span>
-            <span className="text-sm font-semibold text-zion-purple">{service.aiScore}/100</span>
-          </div>
-          <div className="text-sm text-zion-slate-light">
-            {service.reviewCount} reviews
+
+        {/* Pricing */}
+        <div className="space-y-3">
+          <h4 className="text-sm font-semibold text-zion-primary">Pricing:</h4>
+          <div className="grid grid-cols-3 gap-2 text-xs">
+            {service.price.monthly && (
+              <div className="text-center p-2 rounded-lg bg-zion-dark/50 border border-zion-primary/20">
+                <div className="text-zion-light/60">Monthly</div>
+                <div className="text-white font-semibold">{formatPrice(service.price.monthly)}</div>
+              </div>
+            )}
+            {service.price.yearly && (
+              <div className="text-center p-2 rounded-lg bg-zion-primary/20 border border-zion-primary/30">
+                <div className="text-zion-light/60">Yearly</div>
+                <div className="text-white font-semibold">{formatPrice(service.price.yearly)}</div>
+                {service.price.monthly && (
+                  <div className="text-zion-secondary text-xs">
+                    Save {Math.round(((service.price.monthly * 12 - service.price.yearly) / (service.price.monthly * 12)) * 100)}%
+                  </div>
+                )}
+              </div>
+            )}
+            {service.price.oneTime && (
+              <div className="text-center p-2 rounded-lg bg-zion-dark/50 border border-zion-primary/20">
+                <div className="text-zion-light/60">One-time</div>
+                <div className="text-white font-semibold">{formatPrice(service.price.oneTime)}</div>
+              </div>
+            )}
           </div>
         </div>
-      </CardContent>
-      
-      <CardFooter className="pt-0">
-        <Button className="w-full bg-gradient-to-r from-zion-cyan to-zion-purple hover:from-zion-cyan-light hover:to-zion-purple-light text-white group-hover:scale-105 transition-transform duration-300">
-          <ArrowRight className="h-4 w-4 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
-          Learn More
-        </Button>
-      </CardFooter>
-    </Card>
+
+        {/* CTA */}
+        <div className="pt-2">
+          <button className="w-full bg-gradient-to-r from-zion-primary to-zion-secondary hover:from-zion-primary/90 hover:to-zion-secondary/90 text-white font-semibold py-3 px-4 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-zion-primary/25">
+            Get Started
+          </button>
+        </div>
+      </div>
+
+      {/* Hover overlay */}
+      {isHovered && (
+        <motion.div
+          className="absolute inset-0 bg-gradient-to-br from-zion-primary/10 to-zion-secondary/10"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+        />
+      )}
+    </motion.div>
   );
-}
+};
