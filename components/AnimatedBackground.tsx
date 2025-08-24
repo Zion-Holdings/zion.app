@@ -93,8 +93,8 @@ const AnimatedBackground: React.FC = () => {
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      // Update and draw orbs
-      orbsRef.current.forEach((orb) => {
+             // Update and draw orbs
+       orbsRef.current.forEach((orb) => {
         orb.pulse += 0.02;
         const pulseOpacity = orb.opacity + Math.sin(orb.pulse) * 0.02;
         
