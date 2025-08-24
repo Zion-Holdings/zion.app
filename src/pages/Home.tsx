@@ -12,6 +12,8 @@ import { FeatureCTAs } from "@/components/home/FeatureCTAs";
 import { FeatureHighlights } from "@/components/home/FeatureHighlights";
 import { ITServiceRequestHero } from "@/components/home/ITServiceRequestHero";
 import { ComprehensiveServicesShowcase } from "@/components/home/ComprehensiveServicesShowcase";
+import { AIServicesShowcase } from "@/components/home/AIServicesShowcase";
+import { CybersecurityShowcase } from "@/components/home/CybersecurityShowcase";
 import { FuturisticBackground } from "@/components/ui/FuturisticBackground";
 
 export default function Home() {
@@ -37,7 +39,13 @@ export default function Home() {
       
       <FeatureHighlights />
       
-      {/* New Comprehensive Services Showcase */}
+      {/* Specialized AI Services Showcase */}
+      <AIServicesShowcase />
+      
+      {/* Specialized Cybersecurity Services Showcase */}
+      <CybersecurityShowcase />
+      
+      {/* Comprehensive Services Showcase */}
       <ComprehensiveServicesShowcase />
       
       <CategoriesSection />
