@@ -4,8 +4,9 @@ import { ProductListing } from "@/types/listings";
 import { TrustedBySection } from "@/components/TrustedBySection";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Globe } from "lucide-react";
+import { Globe, Zap, Brain } from "lucide-react";
 import { useEffect, useState } from "react";
+import { MICRO_SAAS_SERVICES } from "@/data/microSaasServices";
 
 // Sample service listings
 const SERVICE_LISTINGS: ProductListing[] = [
@@ -222,7 +223,7 @@ const SERVICE_FILTERS = [
 ];
 
 export default function ServicesPage() {
-  const [listings, setListings] = useState<ProductListing[]>(SERVICE_LISTINGS);
+  const [listings, setListings] = useState<ProductListing[]>([...SERVICE_LISTINGS, ...MICRO_SAAS_SERVICES]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -242,6 +243,12 @@ export default function ServicesPage() {
               <Button variant="outline" className="border-zion-purple text-zion-cyan hover:bg-zion-purple/10">
                 <Globe className="h-4 w-4 mr-2" />
                 Global IT Onsite Services
+              </Button>
+            </Link>
+            <Link to="/micro-saas-services">
+              <Button variant="outline" className="border-zion-purple text-zion-cyan hover:bg-zion-purple/10">
+                <Brain className="h-4 w-4 mr-2" />
+                Micro SAAS Solutions
               </Button>
             </Link>
             <Link to="/request-quote">
