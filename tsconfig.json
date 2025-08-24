@@ -16,25 +16,31 @@
     "baseUrl": ".",
     "paths": {
       "@/*": [
-        "./*"
+        "./src/*"
       ],
       "@/pages/*": [
-        "./pages/*"
+        "./src/pages/*"
       ],
       "@/components/*": [
-        "./components/*"
+        "./src/components/*"
       ],
       "@/types/*": [
-        "./types/*"
+        "./src/types/*"
       ],
       "@/utils/*": [
-        "./utils/*"
+        "./src/utils/*"
       ],
       "@/services/*": [
-        "./services/*"
+        "./src/services/*"
       ],
       "@/styles/*": [
-        "./styles/*"
+        "./src/styles/*"
+      ],
+      "@/lib/*": [
+        "./src/lib/*"
+      ],
+      "@/data/*": [
+        "./src/data/*"
       ]
     },
     /* Bundler mode */
@@ -56,7 +62,7 @@
     "types": [
       "node"
     ],
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "noEmit": true,
     "isolatedModules": true,
     "forceConsistentCasingInFileNames": true
