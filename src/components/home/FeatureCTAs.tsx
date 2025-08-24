@@ -45,6 +45,14 @@ export function FeatureCTAs() {
       details: "From on-demand IT support to specialized AI development, our marketplace offers verified services with transparent pricing and reviews."
     },
     {
+      title: "Comprehensive Micro SAAS Services",
+      description: "Explore our extensive range of micro SAAS solutions including AI chatbots, blockchain development, IoT platforms, and more.",
+      icon: <Zap className="h-10 w-10 p-2 rounded-md bg-purple-100 text-purple-700" />,
+      link: "/comprehensive-services",
+      badge: "Featured",
+      details: "From AI chatbots starting at $299 to enterprise blockchain solutions at $3,499, we offer competitive pricing with enterprise-grade quality and support."
+    },
+    {
       title: "Equipment Catalog",
       description: "Find specialized hardware and tech equipment for AI development and research.",
       icon: <Settings className="h-10 w-10 p-2 rounded-md bg-amber-100 text-amber-700" />,
