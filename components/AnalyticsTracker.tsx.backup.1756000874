@@ -1,6 +1,11 @@
 import React, { useEffect, useCallback } from 'react';
 import { useRouter } from 'next/router';
 
+<<<<<<< HEAD
+interface AnalyticsTrackerProps {
+  trackingId?: string;
+  enableTracking?: boolean;
+=======
 // Browser API types are declared globally in PerformanceOptimizer.tsx
 
 // Performance entry types for Core Web Vitals
@@ -8,6 +13,7 @@ interface PerformanceEventTiming extends PerformanceEntry {
   processingStart: number;
   processingEnd: number;
   target?: any | null;
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-e21f
 }
 
 interface AnalyticsTrackerProps {
@@ -71,6 +77,8 @@ const AnalyticsTracker: React.FC<AnalyticsTrackerProps> = ({
         });
       }
 
+<<<<<<< HEAD
+=======
       // Send to custom analytics endpoint
       if (process.env.NODE_ENV === 'production') {
         fetch('/api/analytics/events', {
@@ -268,6 +276,7 @@ const AnalyticsTracker: React.FC<AnalyticsTrackerProps> = ({
         });
       }
 
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-e21f
       // Google Tag Manager
       if ((window as any).dataLayer) {
         (window as any).dataLayer.push({
