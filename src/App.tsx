@@ -27,7 +27,6 @@ const Home = React.lazy(() => import('./pages/Home'));
 const AIMatcherPage = React.lazy(() => import('./pages/AIMatcher'));
 const TalentDirectory = React.lazy(() => import('./pages/TalentDirectory'));
 const TalentsPage = React.lazy(() => import('./pages/TalentsPage'));
-const ServicesPage = React.lazy(() => import('./pages/ServicesPage'));
 const EquipmentPage = React.lazy(() => import('./pages/EquipmentPage'));
 const EquipmentDetail = React.lazy(() => import('./pages/EquipmentDetail'));
 const Analytics = React.lazy(() => import('./pages/Analytics'));
@@ -56,7 +55,6 @@ const baseRoutes = [
   { path: '/signup', element: <Signup /> },
   { path: '/talent', element: <TalentDirectory /> },
   { path: '/talents', element: <TalentsPage /> },
-  { path: '/services', element: <ServicesPage /> },
   { path: '/micro-saas-services', element: <MicroSaasServicesPage /> },
   { path: '/comprehensive-services', element: <ComprehensiveServices /> },
   { path: '/ai-services', element: <AIServicesPage /> },
@@ -110,5 +108,7 @@ const App = () => {
     </WhitelabelProvider>
   );
 };
+
+
 
 export default App;

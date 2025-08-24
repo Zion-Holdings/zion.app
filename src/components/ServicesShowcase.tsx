@@ -1,5 +1,79 @@
 import React, { useState } from 'react';
-import { SERVICE_CATEGORIES, COMPREHENSIVE_SERVICES } from '../data/comprehensiveServices';
+
+// Mock data for services since the comprehensiveServices file was removed
+const SERVICE_CATEGORIES = [
+  { id: 1, name: "AI Services", count: 10, icon: "🤖" },
+  { id: 2, name: "Micro SAAS", count: 8, icon: "💻" },
+  { id: 3, name: "IT Services", count: 12, icon: "🖥️" },
+  { id: 4, name: "Blockchain & Web3", count: 5, icon: "⛓️" },
+  { id: 5, name: "IoT & Edge Computing", count: 6, icon: "🌐" },
+  { id: 6, name: "Emerging Technologies", count: 4, icon: "🔮" },
+  { id: 7, name: "Cybersecurity Services", count: 3, icon: "🔒" },
+  { id: 8, name: "Data Science & Analytics", count: 4, icon: "📊" }
+];
+
+const COMPREHENSIVE_SERVICES = [
+  {
+    id: "ai-1",
+    name: "AI-Powered Chatbot Development",
+    description: "Custom AI chatbots for customer service, sales, and support with natural language processing capabilities",
+    category: "AI Services",
+    price: 2999,
+    rating: 4.8,
+    features: ["Natural language processing", "Multi-language support", "Integration APIs", "Analytics dashboard", "24/7 availability"]
+  },
+  {
+    id: "ai-2",
+    name: "Machine Learning Model Development",
+    description: "Custom ML models for predictive analytics, pattern recognition, and data-driven decision making",
+    category: "AI Services",
+    price: 5999,
+    rating: 4.9,
+    features: ["Custom algorithm development", "Data preprocessing", "Model training", "Performance optimization", "Deployment support"]
+  },
+  {
+    id: "micro-1",
+    name: "Project Management Platform",
+    description: "Comprehensive project management solution with task tracking, team collaboration, and reporting",
+    category: "Micro SAAS",
+    price: 199,
+    rating: 4.7,
+    features: ["Task management", "Team collaboration", "Time tracking", "Reporting", "Mobile app"]
+  },
+  {
+    id: "it-1",
+    name: "Cloud Infrastructure Setup",
+    description: "Complete cloud infrastructure design and implementation for scalable applications",
+    category: "IT Services",
+    price: 3999,
+    rating: 4.8,
+    features: ["Architecture design", "Security implementation", "Monitoring setup", "Backup solutions", "24/7 support"]
+  }
+];
+
+const SERVICE_ADDONS = [
+  {
+    id: "custom-model",
+    name: "Custom AI Model Training",
+    description: "Specialized training for your specific use case and data",
+    price: 2499,
+    category: "AI Services"
+  },
+  {
+    id: "api-access",
+    name: "API Access & Documentation",
+    description: "Full API access with comprehensive documentation and support",
+    price: 999,
+    category: "All Services"
+  },
+  {
+    id: "24-7-support",
+    name: "24/7 Priority Support",
+    description: "Round-the-clock technical support with guaranteed response times",
+    price: 1999,
+    category: "All Services"
+  }
+];
 
 export function ServicesShowcase() {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
@@ -103,7 +177,7 @@ export function ServicesShowcase() {
               <div className="h-48 bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center">
                 <span className="text-6xl">{getCategoryIcon(service.category)}</span>
               </div>
-              
+
               {/* Service Content */}
               <div className="p-6">
                 <div className="flex items-center justify-between mb-3">
@@ -115,10 +189,10 @@ export function ServicesShowcase() {
                     <span className="text-sm font-medium text-gray-700">{service.rating}</span>
                   </div>
                 </div>
-                
+
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{service.name}</h3>
                 <p className="text-gray-600 mb-4 line-clamp-3">{service.description}</p>
-                
+
                 {/* Features */}
                 <div className="mb-4">
                   <h4 className="text-sm font-semibold text-gray-700 mb-2">Key Features:</h4>
@@ -131,7 +205,7 @@ export function ServicesShowcase() {
                     ))}
                   </ul>
                 </div>
-                
+
                 {/* Price and CTA */}
                 <div className="flex items-center justify-between">
                   <div className="text-2xl font-bold text-gray-900">
@@ -156,39 +230,20 @@ export function ServicesShowcase() {
               Enhance your services with our specialized addons and customization options
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {/* Temporarily disabled SERVICE_ADDONS display */}
-            <div className="border border-gray-200 rounded-lg p-4 hover:border-blue-300 transition-colors">
-              <div className="flex items-center justify-between mb-2">
-                <span className="text-sm font-medium text-blue-600 bg-blue-50 px-2 py-1 rounded">
-                  AI Services
-                </span>
-                <span className="text-lg font-bold text-gray-900">$1499</span>
+            {SERVICE_ADDONS.map(addon => (
+              <div key={addon.id} className="border border-gray-200 rounded-lg p-4 hover:border-blue-300 transition-colors">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-sm font-medium text-blue-600 bg-blue-50 px-2 py-1 rounded">
+                    {addon.category}
+                  </span>
+                  <span className="text-lg font-bold text-gray-900">${addon.price}</span>
+                </div>
+                <h4 className="font-semibold text-gray-900 mb-2">{addon.name}</h4>
+                <p className="text-sm text-gray-600">{addon.description}</p>
               </div>
-              <h4 className="font-semibold text-gray-900 mb-2">Custom AI Model Training</h4>
-              <p className="text-sm text-gray-600">Train custom AI models on your specific data for improved accuracy and relevance</p>
-            </div>
-            <div className="border border-gray-200 rounded-lg p-4 hover:border-blue-300 transition-colors">
-              <div className="flex items-center justify-between mb-2">
-                <span className="text-sm font-medium text-blue-600 bg-blue-50 px-2 py-1 rounded">
-                  IT Services
-                </span>
-                <span className="text-lg font-bold text-gray-900">$499</span>
-              </div>
-              <h4 className="font-semibold text-gray-900 mb-2">24/7 Technical Support</h4>
-              <p className="text-sm text-gray-600">Round-the-clock technical support and monitoring services</p>
-            </div>
-            <div className="border border-gray-200 rounded-lg p-4 hover:border-blue-300 transition-colors">
-              <div className="flex items-center justify-between mb-2">
-                <span className="text-sm font-medium text-blue-600 bg-blue-50 px-2 py-1 rounded">
-                  Micro SAAS
-                </span>
-                <span className="text-lg font-bold text-gray-900">$299</span>
-              </div>
-              <h4 className="font-semibold text-gray-900 mb-2">Mobile App Development</h4>
-              <p className="text-sm text-gray-600">Native mobile applications for iOS and Android platforms</p>
-            </div>
+            ))}
           </div>
         </div>
 
