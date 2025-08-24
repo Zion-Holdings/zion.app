@@ -1,0 +1,89 @@
+name: Media Optimizer
+
+on:
+<<<<<<< HEAD
+  workflow_dispatch: {}
+  schedule:
+    - cron: '*/10 * * * *'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: media-optimizer-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  main:
+    name: Main Job
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout repository
+=======
+  schedule:
+    - cron: "*/15 * * * *" # every 15 minutes
+  workflow_dispatch:
+  push:
+    paths:
+      - "public/**"
+      - "styles/**"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: media-optimizer
+  cancel-in-progress: true
+
+jobs:
+  optimize:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-github-actions-21fe
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+<<<<<<< HEAD
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+=======
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Optimize images
+        run: node automation/optimize-images.cjs || node automation/image-optimizer.cjs || true
+
+      - name: Build to validate
+        run: npm run build --if-present || true
+
+      - name: Auto-commit optimized assets
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore(automation): optimize media assets"
+          commit_user_name: github-actions[bot]
+          commit_user_email: 41898282+github-actions[bot]@users.noreply.github.com
+          file_pattern: |
+            public/**
+            data/**
+            automation/logs/**
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-github-actions-21fe

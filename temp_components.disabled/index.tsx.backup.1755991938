@@ -1,0 +1,984 @@
+import React from 'react';
+import Head from 'next/head';
+import Hero from '../components/sections/Hero';
+import Features from '../components/sections/Features';
+import MicroSaasServices from '../components/sections/MicroSaasServices';
+import Card from '../components/ui/Card';
+import Button from '../components/ui/Button';
+<<<<<<< HEAD
+import { Cloud, Bot, RefreshCw, Zap, Shield, BarChart3, ArrowRight, TrendingUp, DollarSign, Users } from 'lucide-react';
+=======
+import { Cloud, Bot, RefreshCw, Zap, Shield, BarChart3, ArrowRight, Brain, Monitor, Search } from 'lucide-react';
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-deploy-dfdd
+
+export default function HomePage() {
+  const heroStats = [
+    { value: '6+', label: 'Micro SaaS Services', color: 'text-cyan-400' },
+    { value: '14-Day', label: 'Free Trial', color: 'text-fuchsia-400' },
+    { value: 'AI-Powered', label: 'Solutions', color: 'text-blue-400' },
+    { value: 'Competitive', label: 'Pricing', color: 'text-green-400' },
+  ];
+
+  const heroStats = marketStats;
+
+  const contactInfo = {
+    mobile: '+1 302 464 0950',
+    email: 'kleber@ziontechgroup.com',
+    address: '364 E Main St STE 1008 Middletown DE 19709',
+    website: 'https://ziontechgroup.com'
+  };
+
+  // Enhanced service advertising content with real market data and competitive advantages
+  const serviceHighlights = [
+    {
+      icon: <TrendingUp className="w-8 h-8 text-white" />,
+      title: 'Market-Driven Solutions',
+      description: 'Real micro SaaS services with competitive pricing, market analysis, and proven business models.',
+      color: 'bg-gradient-to-br from-cyan-500 to-blue-600',
+      gradient: 'from-cyan-400 to-blue-500',
+      price: 'Starting at $49/month',
+      marketSize: '$45B+ global market',
+      competitors: 'Salesforce, HubSpot, Adobe'
+    },
+    {
+      icon: <Bot className="w-8 h-8 text-white" />,
+      title: 'AI-Powered Automation',
+      description: 'Intelligent automation for social media, SEO, email marketing, and business intelligence.',
+      color: 'bg-gradient-to-br from-fuchsia-500 to-purple-600',
+      gradient: 'from-fuchsia-400 to-purple-500',
+      price: 'Starting at $199/month',
+      marketSize: '$200B+ global market',
+      competitors: 'OpenAI, Google AI, Microsoft AI'
+    },
+    {
+      icon: <DollarSign className="w-8 h-8 text-white" />,
+      title: 'Transparent Pricing',
+      description: 'Clear pricing tiers with competitive rates, feature comparisons, and market positioning.',
+      color: 'bg-gradient-to-br from-green-500 to-emerald-600',
+      gradient: 'from-green-400 to-emerald-500',
+      price: 'Starting at $299/month',
+      marketSize: '$100B+ global market',
+      competitors: 'AWS, Azure, Google Cloud'
+    },
+    {
+      icon: <Users className="w-8 h-8 text-white" />,
+      title: 'Targeted Use Cases',
+      description: 'Specific solutions for marketing agencies, e-commerce, SaaS companies, and content creators.',
+      color: 'bg-gradient-to-br from-orange-500 to-red-600',
+      gradient: 'from-orange-400 to-red-500',
+      price: 'Starting at $99/month',
+      marketSize: '$25B+ global market',
+      competitors: 'Shopify, Wix, Squarespace'
+    },
+    {
+      icon: <Shield className="w-8 h-8 text-white" />,
+      title: 'Enterprise Features',
+      description: 'Advanced security, compliance, white-label solutions, and SLA guarantees for large organizations.',
+      color: 'bg-gradient-to-br from-indigo-500 to-purple-600',
+      gradient: 'from-indigo-400 to-purple-500',
+      price: 'Starting at $399/month',
+      marketSize: '$150B+ global market',
+      competitors: 'CrowdStrike, Palo Alto, Fortinet'
+    },
+    {
+      icon: <BarChart3 className="w-8 h-8 text-white" />,
+      title: 'Market Intelligence',
+      description: 'Comprehensive market analysis, competitive positioning, and growth opportunity insights.',
+      color: 'bg-gradient-to-br from-teal-500 to-cyan-600',
+      gradient: 'from-teal-400 to-cyan-500',
+      price: 'Starting at $49/month',
+      marketSize: '$50B+ global market',
+      competitors: 'Stripe, PayPal, Square'
+=======
+      icon: <Code className="w-8 h-8 text-white" />,
+      title: 'Code Review Assistant',
+      description: 'AI-powered code analysis with security, performance, and maintainability insights. Support for JavaScript, Python, and TypeScript.',
+      color: 'bg-gradient-to-br from-fuchsia-500 to-purple-600',
+      gradient: 'from-fuchsia-400 to-purple-500',
+      pricing: 'Free tier, Pro from $29/month'
+    },
+    {
+      icon: <Lock className="w-8 h-8 text-white" />,
+      title: 'API Rate Limiter',
+      description: 'Intelligent rate limiting with configurable policies, real-time analytics, and Express.js middleware support.',
+      color: 'bg-gradient-to-br from-green-500 to-emerald-600',
+      gradient: 'from-green-400 to-emerald-500',
+      pricing: 'Free tier, Enterprise from $99/month'
+    },
+    {
+      icon: <Database className="w-8 h-8 text-white" />,
+      title: 'Email Validator',
+      description: 'Comprehensive email validation with security risk assessment, disposable email detection, and MX record validation.',
+      color: 'bg-gradient-to-br from-blue-500 to-cyan-600',
+      gradient: 'from-blue-400 to-cyan-500',
+      pricing: 'Free tier, Pro from $19/month'
+    },
+    {
+      icon: <Shield className="w-8 h-8 text-white" />,
+      title: 'Password Strength Checker',
+      description: 'Advanced password analysis with security recommendations, policy enforcement, and strong password generation.',
+      color: 'bg-gradient-to-br from-orange-500 to-red-600',
+      gradient: 'from-orange-400 to-red-500',
+      pricing: 'Free tier, Pro from $15/month'
+    },
+    {
+      icon: <Link className="w-8 h-8 text-white" />,
+      title: 'URL Shortener',
+      description: 'Professional URL shortening with analytics, custom aliases, password protection, and expiration dates.',
+      color: 'bg-gradient-to-br from-indigo-500 to-purple-600',
+      gradient: 'from-indigo-400 to-purple-500',
+      pricing: 'Free tier, Pro from $25/month'
+    },
+    {
+      icon: <FileText className="w-8 h-8 text-white" />,
+      title: 'JSON Formatter',
+      description: 'Advanced JSON processing with validation, transformation, schema generation, and performance optimization.',
+      color: 'bg-gradient-to-br from-teal-500 to-cyan-600',
+      gradient: 'from-teal-400 to-cyan-500',
+      pricing: 'Free tier, Pro from $20/month'
+    },
+    {
+      icon: <QrCode className="w-8 h-8 text-white" />,
+      title: 'QR Code Generator',
+      description: 'Professional QR code creation with customization, security validation, and multiple content types support.',
+      color: 'bg-gradient-to-br from-pink-500 to-rose-600',
+      gradient: 'from-pink-400 to-rose-500',
+      pricing: 'Free tier, Pro from $30/month'
+    },
+    {
+      icon: <Database className="w-8 h-8 text-white" />,
+      title: 'File Type Detector',
+      description: 'Intelligent file analysis with security scanning, metadata extraction, and magic number detection.',
+      color: 'bg-gradient-to-br from-amber-500 to-orange-600',
+      gradient: 'from-amber-400 to-orange-500',
+      pricing: 'Free tier, Pro from $35/month'
+    }
+  ];
+
+  const microSaasServices = [
+    {
+      icon: '📝',
+      title: 'AI Content Generator',
+      description: 'Generate high-quality, SEO-optimized content in seconds with advanced AI writing assistance.',
+      href: '/ai-content-generator',
+      color: 'from-purple-500 to-indigo-600',
+      stats: ['50+ Languages', '10M+ Words Generated', '99.9% Plagiarism-Free']
+    },
+    {
+      icon: '👁️',
+      title: 'Cloud Monitoring & Analytics',
+      description: 'Real-time infrastructure monitoring with AI-powered insights and intelligent alerting.',
+      href: '/cloud-monitoring',
+      color: 'from-green-500 to-emerald-600',
+      stats: ['99.99% Uptime', '1M+ Metrics Tracked', '<100ms Latency']
+    },
+    {
+      icon: '🔍',
+      title: 'AI-Powered SEO Suite',
+      description: 'Comprehensive SEO tools with AI-powered optimization, keyword research, and analytics.',
+      href: '/ai-seo-suite',
+      color: 'from-blue-500 to-cyan-600',
+      stats: ['+150% Organic Traffic', '+45% Search Rankings', '400% ROI']
+    }
+  ];
+
+  const microSaasServices = [
+    { 
+      name: 'Social Media Analytics', 
+      category: 'Marketing', 
+      icon: '📊',
+      price: 'From $49/month',
+      description: 'AI-powered social media performance tracking'
+    },
+    { 
+      name: 'SEO Content Optimization', 
+      category: 'SEO', 
+      icon: '🔍',
+      price: 'From $39/month',
+      description: 'AI-driven content optimization for better rankings'
+    },
+    { 
+      name: 'Email Marketing Automation', 
+      category: 'Marketing', 
+      icon: '📧',
+      price: 'From $29/month',
+      description: 'Intelligent email automation with AI segmentation'
+    },
+    { 
+      name: 'Customer Feedback Platform', 
+      category: 'Analytics', 
+      icon: '🎯',
+      price: 'From $19/month',
+      description: 'AI-powered feedback collection and analysis'
+    },
+    { 
+      name: 'Business Intelligence', 
+      category: 'Analytics', 
+      icon: '📈',
+      price: 'From $79/month',
+      description: 'Real-time BI dashboards and reporting'
+    },
+    { 
+      name: 'AI Chatbot Builder', 
+      category: 'Automation', 
+      icon: '🤖',
+      price: 'From $25/month',
+      description: 'No-code AI chatbot platform'
+    }
+  ];
+
+  const technologyStack = [
+    { name: 'Next.js', category: 'Framework', icon: '⚡' },
+    { name: 'React', category: 'Library', icon: '⚛️' },
+    { name: 'TypeScript', category: 'Language', icon: '📘' },
+    { name: 'Tailwind CSS', category: 'Styling', icon: '🎨' },
+    { name: 'Node.js', category: 'Runtime', icon: '🟢' },
+    { name: 'PostgreSQL', category: 'Database', icon: '🐘' },
+    { name: 'Redis', category: 'Cache', icon: '🔴' },
+    { name: 'Docker', category: 'Containerization', icon: '🐳' },
+    { name: 'AWS', category: 'Cloud', icon: '☁️' },
+    { name: 'TensorFlow', category: 'AI/ML', icon: '🧠' },
+    { name: 'PyTorch', category: 'AI/ML', icon: '🔥' },
+    { name: 'Express.js', category: 'Backend', icon: '🚀' }
+  ];
+
+  const useCases = [
+    {
+      title: 'Development Teams',
+      description: 'Improve code quality, security, and team collaboration with our development tools.',
+      icon: '👥',
+      services: ['Code Review', 'Git Management', 'JSON Processing']
+    },
+    {
+      title: 'Security & Compliance',
+      description: 'Enhance your security posture with validation, threat detection, and compliance tools.',
+      icon: '🔒',
+      services: ['Email Validation', 'Password Security', 'File Analysis']
+    },
+    {
+      title: 'Marketing & Analytics',
+      description: 'Track campaigns, generate QR codes, and analyze performance with our utility services.',
+      icon: '📊',
+      services: ['URL Shortening', 'QR Generation', 'Analytics']
+    },
+    {
+      title: 'API Protection',
+      description: 'Secure your APIs with intelligent rate limiting and threat prevention.',
+      icon: '🛡️',
+      services: ['Rate Limiting', 'Security Scanning', 'Monitoring']
+    }
+  ];
+
+  return (
+    <>
+      <Head>
+        <title>Zion Tech Group — AI-Powered Micro SaaS Services with Competitive Pricing</title>
+        <meta name="description" content="Discover real micro SaaS services: AI-powered social media analytics, SEO optimization, email marketing automation, and more. Competitive pricing with 14-day free trials." />
+        <meta property="og:title" content="Zion Tech Group — AI-Powered Micro SaaS Services with Competitive Pricing" />
+        <meta property="og:description" content="Real micro SaaS solutions with competitive pricing. AI-powered tools for social media, SEO, email marketing, and business intelligence." />
+        <meta name="twitter:card" content="summary_large_image" />
+      </Head>
+
+      {/* Hero Section */}
+      <Hero
+        title="Zion Tech Group"
+        subtitle="Real micro SaaS services with AI-powered automation, competitive pricing, and proven business models. Start your 14-day free trial today."
+        primaryAction={{
+          text: "View Services",
+          href: "/services"
+        }}
+        secondaryAction={{
+          text: "See Pricing",
+          href: "/pricing"
+        }}
+        stats={heroStats}
+      />
+
+      {/* Stats Section */}
+      <section className="py-20 bg-gray-800/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {stats.map((stat) => (
+              <div key={stat.label} className="text-center">
+                <div className="text-4xl md:text-5xl font-bold text-white mb-2">{stat.number}</div>
+                <div className="text-gray-400">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Platform Capabilities */}
+      <Features
+        title="Why Choose Our Micro SaaS Services"
+        subtitle="Real solutions with competitive pricing, market analysis, and enterprise-grade features designed for modern businesses."
+        features={platformFeatures}
+        columns={2}
+      />
+
+<<<<<<< HEAD
+      {/* Micro SaaS Services */}
+      <MicroSaasServices
+        title="Our Micro SaaS Portfolio"
+        subtitle="Discover our collection of innovative, AI-powered micro SaaS solutions that solve real business problems. Each service is designed to be powerful, affordable, and easy to use."
+        maxServices={6}
+        featured={true}
+      />
+
+      {/* Micro SaaS Services Preview */}
+      <section className="py-24 bg-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20 animate-fade-in">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-6">
+              <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse" />
+              Our Micro SaaS Services
+            </div>
+            <h2 className="text-4xl sm:text-5xl font-bold mb-8 text-white leading-tight">
+              Real Solutions, Real Pricing
+            </h2>
+            <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
+              Each service is designed to solve specific business problems with competitive pricing and proven market demand.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            {/* AI Content Generator */}
+            <div className="group relative">
+              <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-pink-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-pink-500/20">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-pink-500 to-rose-600 rounded-xl flex items-center justify-center text-2xl mr-4">
+                    📝
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">AI Content Generator</h3>
+                    <p className="text-pink-400 text-sm font-medium">$49/month</p>
+                  </div>
+                </div>
+                <p className="text-gray-300 text-sm mb-4">
+                  Professional AI-powered content creation with SEO optimization and brand voice customization.
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-gray-500">14-day free trial</span>
+                  <Button
+                    href="https://contentgen.zion.app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    size="sm"
+                    className="bg-gradient-to-r from-pink-500 to-rose-600 hover:from-pink-600 hover:to-rose-700"
+                  >
+                    Try Free
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            {/* Design System Builder */}
+            <div className="group relative">
+              <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-violet-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-violet-500/20">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-violet-500 to-purple-600 rounded-xl flex items-center justify-center text-2xl mr-4">
+                    🎨
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">Design System Builder</h3>
+                    <p className="text-violet-400 text-sm font-medium">$79/month</p>
+                  </div>
+                </div>
+                <p className="text-gray-300 text-sm mb-4">
+                  Create and maintain consistent design systems with automated component generation.
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-gray-500">14-day free trial</span>
+                  <Button
+                    href="https://design.zion.app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    size="sm"
+                    className="bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700"
+                  >
+                    Try Free
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            {/* App Performance Monitor */}
+            <div className="group relative">
+              <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-amber-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-amber-500/20">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-amber-500 to-orange-600 rounded-xl flex items-center justify-center text-2xl mr-4">
+                    📱
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">Performance Monitor</h3>
+                    <p className="text-amber-400 text-sm font-medium">$39/month</p>
+                  </div>
+                </div>
+                <p className="text-gray-300 text-sm mb-4">
+                  Real-time monitoring and optimization for web and mobile applications.
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-gray-500">14-day free trial</span>
+                  <Button
+                    href="https://monitor.zion.app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    size="sm"
+                    className="bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700"
+                  >
+                    Try Free
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            {/* Email Automation Studio */}
+            <div className="group relative">
+              <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-blue-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/20">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center text-2xl mr-4">
+                    📧
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">Email Automation</h3>
+                    <p className="text-blue-400 text-sm font-medium">$59/month</p>
+                  </div>
+                </div>
+                <p className="text-gray-300 text-sm mb-4">
+                  AI-powered email marketing with advanced personalization and automation workflows.
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-gray-500">14-day free trial</span>
+                  <Button
+                    href="https://emailstudio.zion.app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    size="sm"
+                    className="bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700"
+                  >
+                    Try Free
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            {/* Social Media Scheduler */}
+            <div className="group relative">
+              <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-green-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-green-500/20">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-teal-600 rounded-xl flex items-center justify-center text-2xl mr-4">
+                    📱
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">Social Media Scheduler</h3>
+                    <p className="text-green-400 text-sm font-medium">$29/month</p>
+                  </div>
+                </div>
+                <p className="text-gray-300 text-sm mb-4">
+                  Intelligent social media management with AI insights and multi-platform scheduling.
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-gray-500">14-day free trial</span>
+                  <Button
+                    href="https://socialscheduler.zion.app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    size="sm"
+                    className="bg-gradient-to-r from-green-500 to-teal-600 hover:from-green-600 hover:to-teal-700"
+                  >
+                    Try Free
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            {/* Project Management Hub */}
+            <div className="group relative">
+              <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-purple-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/20">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center text-2xl mr-4">
+                    📋
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">Project Management</h3>
+                    <p className="text-purple-400 text-sm font-medium">$45/month</p>
+                  </div>
+                </div>
+                <p className="text-gray-300 text-sm mb-4">
+                  Streamlined project collaboration with task management and team coordination.
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-gray-500">14-day free trial</span>
+                  <Button
+                    href="https://projecthub.zion.app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    size="sm"
+                    className="bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700"
+                  >
+                    Try Free
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            {/* Email Marketing Automation */}
+            <div className="group relative">
+              <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-indigo-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-indigo-500/20">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center text-2xl mr-4">
+                    📧
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">Email Marketing</h3>
+                    <p className="text-indigo-400 text-sm font-medium">$59/month</p>
+                  </div>
+                </div>
+                <p className="text-gray-300 text-sm mb-4">
+                  AI-powered email campaigns with automation, personalization, and analytics.
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-gray-500">14-day free trial</span>
+                  <Button
+                    href="https://email.zion.app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    size="sm"
+                    className="bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700"
+                  >
+                    Try Free
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            {/* Social Media Scheduler */}
+            <div className="group relative">
+              <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-teal-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-teal-500/20">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-teal-500 to-cyan-600 rounded-xl flex items-center justify-center text-2xl mr-4">
+                    📱
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">Social Media</h3>
+                    <p className="text-teal-400 text-sm font-medium">$44/month</p>
+                  </div>
+                </div>
+                <p className="text-gray-300 text-sm mb-4">
+                  Intelligent social media management with AI optimization and analytics.
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-gray-500">14-day free trial</span>
+                  <Button
+                    href="https://social.zion.app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    size="sm"
+                    className="bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-teal-600 hover:to-cyan-700"
+                  >
+                    Try Free
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Call to Action */}
+          <div className="text-center">
+            <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-green-500 to-emerald-600 text-white font-semibold text-lg hover:from-green-600 hover:to-emerald-700 transition-all duration-300 transform hover:scale-105 cursor-pointer">
+              <span className="mr-2">🚀</span>
+              Explore All 12 Micro SaaS Services
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </div>
+            <p className="text-gray-400 mt-4 text-lg">
+              From $25/month • 14-day free trials • No setup fees
+            </p>
+            <div className="mt-6 flex justify-center space-x-4">
+              <Button
+                href="/micro-saas"
+                size="lg"
+                className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700"
+              >
+                View All Services
+              </Button>
+              <Button
+                href="/pricing"
+                variant="outline"
+                size="lg"
+                className="border-green-500/30 text-green-400 hover:bg-green-500/10"
+              >
+                Compare Pricing
+              </Button>
+            </div>
+=======
+      {/* Micro SaaS Services Preview */}
+      <section className="py-24 bg-gradient-to-r from-purple-900 to-pink-900 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(168,85,247,0.1),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(236,72,153,0.1),transparent_50%)]" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-20 animate-fade-in">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-sm font-medium mb-6">
+              <span className="w-2 h-2 bg-purple-500 rounded-full mr-2 animate-pulse" />
+              Professional Micro SaaS Solutions
+            </div>
+            <h2 className="text-4xl sm:text-5xl font-bold mb-8 text-white leading-tight">
+              Enterprise-Grade Micro SaaS Services
+            </h2>
+            <p className="text-xl text-purple-200 max-w-4xl mx-auto leading-relaxed">
+              Discover our comprehensive suite of professional micro SaaS solutions designed for modern businesses. 
+              From AI content generation to performance monitoring, we deliver exceptional value at competitive prices.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-purple-500/30 transition-all duration-300 group">
+              <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <Brain className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-4">AI Content Generator</h3>
+              <p className="text-purple-200 mb-6">Generate high-quality, SEO-optimized content for blogs, social media, and marketing campaigns.</p>
+              <div className="text-3xl font-bold text-white mb-4">From $29<span className="text-lg text-purple-300">/month</span></div>
+              <Button href="/micro-saas-services" variant="outline" className="w-full border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-white">
+                Learn More
+              </Button>
+            </div>
+
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-purple-500/30 transition-all duration-300 group">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <Monitor className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-4">Performance Monitor</h3>
+              <p className="text-purple-200 mb-6">Monitor website performance in real-time with comprehensive metrics and optimization recommendations.</p>
+              <div className="text-3xl font-bold text-white mb-4">From $19<span className="text-lg text-purple-300">/month</span></div>
+              <Button href="/micro-saas-services" variant="outline" className="w-full border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-white">
+                Learn More
+              </Button>
+            </div>
+
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-purple-500/30 transition-all duration-300 group">
+              <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <Search className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-4">SEO Analytics</h3>
+              <p className="text-purple-200 mb-6">Comprehensive SEO tracking, competitor analysis, and keyword monitoring to improve rankings.</p>
+              <div className="text-3xl font-bold text-white mb-4">From $39<span className="text-lg text-purple-300">/month</span></div>
+              <Button href="/micro-saas-services" variant="outline" className="w-full border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-white">
+                Learn More
+              </Button>
+            </div>
+          </div>
+
+          <div className="text-center mt-12">
+            <Button href="/micro-saas-services" size="lg" className="bg-purple-600 hover:bg-purple-700 text-white shadow-2xl hover-glow">
+              View All Micro SaaS Services
+            </Button>
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-deploy-dfdd
+          </div>
+        </div>
+      </section>
+
+      {/* Technology Stack */}
+      <section className="py-24 bg-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20 animate-fade-in">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-sm font-medium mb-6">
+              <span className="w-2 h-2 bg-purple-500 rounded-full mr-2 animate-pulse" />
+              Our Micro SaaS Services
+            </div>
+            <h2 className="text-4xl sm:text-5xl font-bold mb-8 text-white leading-tight">
+              Ready-to-Use SaaS Solutions
+            </h2>
+            <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
+              Discover our suite of specialized micro SaaS services designed to solve specific business challenges with AI-powered intelligence.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {microSaasServices.map((service, index) => (
+              <Card
+                key={index}
+                className="text-center group border border-gray-800 hover:border-purple-500/30 cursor-pointer"
+                style={{ animationDelay: `${(index * 0.1) + 0.2}s` }}
+                onClick={() => window.location.href = service.href}
+              >
+                <div className="relative">
+                  <div className={`w-20 h-20 mx-auto mb-6 rounded-2xl flex items-center justify-center text-4xl bg-gradient-to-br ${service.color} shadow-xl group-hover:scale-110 transition-transform duration-300`}>
+                    {service.icon}
+                  </div>
+                  <div className={`absolute -inset-2 bg-gradient-to-r from-transparent via-${service.color} to-transparent rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-300 blur-sm`} />
+                </div>
+                <h3 className="text-xl font-bold mb-4 text-white group-hover:text-purple-400 transition-colors duration-300">
+                  {service.title}
+                </h3>
+                <p className="text-gray-400 leading-relaxed mb-6">
+                  {service.description}
+                </p>
+                <div className="space-y-2 mb-6">
+                  {service.stats.map((stat, statIndex) => (
+                    <div key={statIndex} className="text-sm text-gray-300">
+                      {stat}
+                    </div>
+                  ))}
+                </div>
+                <div className="flex items-center justify-center text-purple-400 group-hover:text-white transition-colors duration-300">
+                  <span className="text-sm font-medium">Learn More</span>
+                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Technology Stack */}
+      <section className="py-24 bg-black">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20 animate-fade-in">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-6">
+              <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse" />
+              Built with Modern Technology
+            </div>
+            <h2 className="text-4xl sm:text-5xl font-bold mb-8 text-white leading-tight">
+              Technology Stack
+            </h2>
+            <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
+              Our services leverage the latest technologies and best practices to deliver exceptional performance and reliability.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+            {technologyStack.map((tech, index) => (
+              <FuturisticCard
+                key={index}
+                className="text-center group border border-gray-800 hover:border-blue-500/30"
+              >
+                <div className="text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                  {tech.icon}
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2 text-lg">{tech.name}</h3>
+                <p className="text-sm text-gray-400">{tech.category}</p>
+              </FuturisticCard>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Micro SaaS Services Preview */}
+      <section className="py-24 bg-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20 animate-fade-in">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-sm font-medium mb-6">
+              <span className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse" />
+              New: Micro SaaS Services
+            </div>
+            <h2 className="text-4xl sm:text-5xl font-bold mb-8 text-white leading-tight">
+              Professional Developer Tools & APIs
+            </h2>
+            <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
+              Discover our comprehensive suite of micro SaaS services designed to accelerate your development, 
+              enhance security, and optimize performance. Built by developers, for developers.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            {[
+              {
+                icon: '🛡️',
+                title: 'API Rate Limiting',
+                description: 'Protect your APIs from abuse',
+                color: 'from-red-500 to-pink-600'
+              },
+              {
+                icon: '✉️',
+                title: 'Email Validation',
+                description: 'Comprehensive email verification',
+                color: 'from-blue-500 to-indigo-600'
+              },
+              {
+                icon: '🔐',
+                title: 'Password Strength',
+                description: 'Advanced security analysis',
+                color: 'from-green-500 to-emerald-600'
+              },
+              {
+                icon: '🔗',
+                title: 'URL Shortener',
+                description: 'Professional link management',
+                color: 'from-purple-500 to-violet-600'
+              }
+            ].map((service, index) => (
+              <Card
+                key={index}
+                className="text-center group border border-gray-800 hover:border-blue-500/30"
+                style={{ animationDelay: `${(index * 0.1) + 0.2}s` }}
+              >
+                <div className={`text-3xl mb-4 group-hover:scale-110 transition-transform duration-300 bg-gradient-to-br ${service.color} bg-clip-text text-transparent`}>
+                  {service.icon}
+                </div>
+                <h3 className="font-semibold text-white mb-2 text-lg">{service.title}</h3>
+                <p className="text-sm text-gray-400">{service.description}</p>
+              </Card>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <Button
+              href="/micro-saas"
+              variant="primary"
+              size="lg"
+              className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 shadow-2xl"
+            >
+              Explore All Services
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Micro SaaS Services Section */}
+      <section className="py-24 bg-gradient-to-r from-purple-600 to-indigo-700 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:20px_20px] opacity-10" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white text-sm font-medium mb-6">
+            <span className="w-2 h-2 bg-white rounded-full mr-2 animate-pulse" />
+            New: Micro SaaS Directory
+          </div>
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-8">
+            Essential Tools & Services Directory
+          </h2>
+          <p className="text-xl text-purple-100 mb-12 max-w-4xl mx-auto leading-relaxed">
+            Discover curated micro SaaS services, developer tools, and business solutions with real pricing, 
+            market insights, and direct links. Everything you need to build and grow your business.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl">💼</span>
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2">Micro SaaS Services</h3>
+              <p className="text-purple-200 text-sm">Real pricing and features for essential business tools</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl">🛠️</span>
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2">Developer Tools</h3>
+              <p className="text-purple-200 text-sm">Professional development tools and learning resources</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl">📊</span>
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2">Business Tools</h3>
+              <p className="text-purple-200 text-sm">Productivity and business management solutions</p>
+            </div>
+          </div>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <Button
+              href="/micro-saas"
+              variant="secondary"
+              size="lg"
+              className="bg-white text-purple-600 hover:bg-gray-100 shadow-2xl"
+            >
+              Explore Micro SaaS
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Button>
+            <Button
+              href="/developer-tools"
+              variant="outline"
+              size="lg"
+              className="border-white text-white hover:bg-white hover:text-purple-600 shadow-2xl"
+            >
+              Developer Tools
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Market Intelligence Section */}
+      <section className="py-24 bg-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-6">
+              <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse" />
+              Market Intelligence
+            </div>
+            <h2 className="text-4xl sm:text-5xl font-bold mb-8 text-white leading-tight">
+              Data-Driven Market Insights
+            </h2>
+            <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
+              Access comprehensive market research, competitive analysis, and industry trends to make informed decisions about your technology investments.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div className="text-center">
+              <div className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400">
+                <BarChart3 className="w-8 h-8" />
+              </div>
+              <h3 className="text-xl font-bold text-white mb-3">Market Research</h3>
+              <p className="text-gray-400">Comprehensive analysis of micro SaaS market segments, growth rates, and opportunities</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-green-500/10 border border-green-500/20 flex items-center justify-center text-green-400">
+                <Target className="w-8 h-8" />
+              </div>
+              <h3 className="text-xl font-bold text-white mb-3">Competitive Analysis</h3>
+              <p className="text-gray-400">Detailed insights into competitor positioning, strengths, weaknesses, and market share</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400">
+                <TrendingUp className="w-8 h-8" />
+              </div>
+              <h3 className="text-xl font-bold text-white mb-3">Trend Analysis</h3>
+              <p className="text-gray-400">Emerging market trends, investment insights, and pricing strategy analysis</p>
+            </div>
+          </div>
+
+          <div className="text-center">
+            <Button
+              href="/market-research"
+              size="lg"
+              className="bg-blue-600 hover:bg-blue-700 text-white shadow-2xl"
+            >
+              Explore Market Research
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-24 bg-gradient-to-r from-blue-600 to-blue-700 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:20px_20px] opacity-10" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-8">
+            Ready to Get Started?
+          </h2>
+          <p className="text-xl text-blue-100 mb-12 max-w-4xl mx-auto leading-relaxed">
+            Start your 14-day free trial today. No credit card required. Experience the power of AI-powered micro SaaS services.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <Button
+              href="/services"
+              variant="secondary"
+              size="lg"
+              className="bg-white text-blue-600 hover:bg-gray-100 shadow-2xl"
+            >
+              View All Services
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Button>
+            <Button
+              href="/pricing"
+              variant="outline"
+              size="lg"
+              className="border-white text-white hover:bg-white hover:text-blue-600 shadow-2xl"
+            >
+              See Pricing
+            </Button>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}

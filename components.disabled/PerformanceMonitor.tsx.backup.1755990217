@@ -1,0 +1,758 @@
+<<<<<<< HEAD
+import React, { useState, useEffect, useCallback, useMemo, useRef } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { 
+  TrendingUp, AlertTriangle, CheckCircle, Clock, 
+  Zap, Database, Network, Cpu, HardDrive, X
+} from 'lucide-react';
+=======
+import React, { useEffect, useState, useCallback } from 'react';
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-a25d
+
+interface PerformanceMetrics {
+  fcp: number;
+  lcp: number;
+  cls: number;
+  tti: number;
+  fid: number;
+  ttfb: number;
+  bundleSize: number;
+  loadTime: number;
+}
+
+interface PerformanceIssue {
+  type: 'warning' | 'error' | 'info';
+  message: string;
+  suggestion: string;
+  priority: 'low' | 'medium' | 'high';
+}
+
+interface FirstInputEntry extends PerformanceEntry {
+  processingStart: number;
+  startTime: number;
+}
+
+interface LargestContentfulPaintEntry extends PerformanceEntry {
+  size: number;
+  id: string;
+  url?: string;
+}
+
+interface PerformanceEventTiming extends PerformanceEntry {
+  processingStart: number;
+  startTime: number;
+}
+
+interface PerformanceMetrics {
+  lcp: number;
+  fid: number;
+  cls: number;
+  ttfb: number;
+<<<<<<< HEAD
+  fcp: number;
+  fmp: number;
+  tti: number;
+}
+
+interface PerformanceMonitorProps {
+  onToggle?: (visible: boolean) => void;
+}
+
+const PerformanceMonitor: React.FC<PerformanceMonitorProps> = ({ onToggle }) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const [metrics, setMetrics] = useState<PerformanceMetrics | null>(null);
+  const [issues, setIssues] = useState<PerformanceIssue[]>([]);
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  useEffect(() => {
+    // Show performance monitor after page load
+    const timer = setTimeout(() => setIsVisible(true), 5000);
+    
+    // Measure performance metrics
+    if ('PerformanceObserver' in window) {
+      const observer = new PerformanceObserver((list) => {
+        const entries = list.getEntries();
+        entries.forEach((entry) => {
+          if (entry.entryType === 'largest-contentful-paint') {
+            const lcp = entry.startTime;
+            setMetrics(prev => prev ? { ...prev, lcp } : null);
+          }
+        });
+      });
+      
+      observer.observe({ entryTypes: ['largest-contentful-paint'] });
+    }
+
+    // Measure First Contentful Paint
+    if ('PerformanceObserver' in window) {
+      const observer = new PerformanceObserver((list) => {
+        const entries = list.getEntries();
+        entries.forEach((entry) => {
+          if (entry.entryType === 'paint' && entry.name === 'first-contentful-paint') {
+            const fcp = entry.startTime;
+            setMetrics(prev => prev ? { ...prev, fcp } : null);
+          }
+        });
+      });
+      
+      observer.observe({ entryTypes: ['paint'] });
+    }
+
+    // Measure bundle size and load time
+    const measureBundleSize = () => {
+      const loadTime = performance.now();
+      const bundleSize = performance.memory?.usedJSHeapSize || 0;
+      
+      setMetrics(prev => ({
+        fcp: prev?.fcp || 0,
+        lcp: prev?.lcp || 0,
+        cls: prev?.cls || 0,
+        tti: prev?.tti || 0,
+        fid: prev?.fid || 0,
+        ttfb: prev?.ttfb || 0,
+        bundleSize,
+        loadTime
+      }));
+    };
+
+    // Wait for page to fully load
+    if (document.readyState === 'complete') {
+      measureBundleSize();
+    } else {
+      window.addEventListener('load', measureBundleSize);
+    }
+
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener('load', measureBundleSize);
+    };
+  }, []);
+
+  // Analyze performance and generate suggestions
+  useEffect(() => {
+    if (!metrics) return;
+
+    const newIssues: PerformanceIssue[] = [];
+
+    // FCP analysis
+    if (metrics.fcp > 1500) {
+      newIssues.push({
+        type: 'warning',
+        message: 'First Contentful Paint is slow',
+        suggestion: 'Optimize critical rendering path, reduce server response time',
+        priority: 'high'
+      });
+=======
+  domContentLoaded: number;
+  loadComplete: number;
+  memoryUsage?: {
+    usedJSHeapSize: number;
+    totalJSHeapSize: number;
+    jsHeapSizeLimit: number;
+  };
+}
+
+interface PerformanceMonitorProps {
+  enabled?: boolean;
+  logToConsole?: boolean;
+  sendToAnalytics?: boolean;
+  threshold?: {
+    fcp: number;
+    lcp: number;
+    fid: number;
+    cls: number;
+    ttfb: number;
+  };
+}
+
+const PerformanceMonitor: React.FC<PerformanceMonitorProps> = ({
+  enabled = true,
+  logToConsole = false,
+  sendToAnalytics = false,
+  threshold = {
+    fcp: 1800,
+    lcp: 2500,
+    fid: 100,
+    cls: 0.1,
+    ttfb: 800,
+  }
+}) => {
+  const [metrics, setMetrics] = useState<PerformanceMetrics | null>(null);
+  const [isMonitoring, setIsMonitoring] = useState(false);
+
+  // Get performance metrics
+  const getPerformanceMetrics = useCallback((): PerformanceMetrics => {
+    const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
+    const paint = performance.getEntriesByType('paint');
+    
+    const fcp = paint.find(entry => entry.name === 'first-contentful-paint')?.startTime || 0;
+    const lcp = paint.find(entry => entry.name === 'largest-contentful-paint')?.startTime || 0;
+    
+    // Get FID (First Input Delay) - requires user interaction
+    const fid = 0; // Will be updated when user interacts
+    
+    // Get CLS (Cumulative Layout Shift)
+    const cls = 0; // Will be updated by observer
+    
+    const ttfb = navigation.responseStart - navigation.requestStart;
+    const domContentLoaded = navigation.domContentLoadedEventEnd - navigation.fetchStart;
+    const loadComplete = navigation.loadEventEnd - navigation.fetchStart;
+    
+    // Get memory usage if available
+    let memoryUsage;
+    if ('memory' in performance) {
+      const memory = (performance as any).memory;
+      memoryUsage = {
+        usedJSHeapSize: memory.usedJSHeapSize,
+        totalJSHeapSize: memory.totalJSHeapSize,
+        jsHeapSizeLimit: memory.jsHeapSizeLimit,
+      };
+    }
+    
+    return {
+      fcp,
+      lcp,
+      fid,
+      cls,
+      ttfb,
+      domContentLoaded,
+      loadComplete,
+      memoryUsage,
+    };
+  }, []);
+
+  // Monitor Core Web Vitals
+  const monitorCoreWebVitals = useCallback(() => {
+    // Monitor LCP
+    if ('PerformanceObserver' in window) {
+      const lcpObserver = new PerformanceObserver((list) => {
+        const entries = list.getEntries();
+        const lastEntry = entries[entries.length - 1] as PerformanceEntry;
+        if (lastEntry) {
+          setMetrics(prev => prev ? { ...prev, lcp: lastEntry.startTime } : null);
+        }
+      });
+      lcpObserver.observe({ entryTypes: ['largest-contentful-paint'] });
+      
+      // Monitor CLS
+      const clsObserver = new PerformanceObserver((list) => {
+        let clsValue = 0;
+        for (const entry of list.getEntries()) {
+          if (!(entry as any).hadRecentInput) {
+            clsValue += (entry as any).value;
+          }
+        }
+        setMetrics(prev => prev ? { ...prev, cls: clsValue } : null);
+      });
+      clsObserver.observe({ entryTypes: ['layout-shift'] });
+      
+      // Monitor FID
+      const fidObserver = new PerformanceObserver((list) => {
+        for (const entry of list.getEntries()) {
+          const fid = (entry as any).processingStart - (entry as any).startTime;
+          setMetrics(prev => prev ? { ...prev, fid } : null);
+        }
+      });
+      fidObserver.observe({ entryTypes: ['first-input'] });
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-a25d
+    }
+
+    // LCP analysis
+    if (metrics.lcp > 2500) {
+      newIssues.push({
+        type: 'error',
+        message: 'Largest Contentful Paint exceeds target',
+        suggestion: 'Optimize images, implement lazy loading, use CDN',
+        priority: 'high'
+      });
+    }
+
+    // Bundle size analysis
+    if (metrics.bundleSize > 5000000) { // 5MB
+      newIssues.push({
+        type: 'warning',
+        message: 'Bundle size is large',
+        suggestion: 'Implement code splitting, tree shaking, and bundle analysis',
+        priority: 'medium'
+      });
+    }
+
+    // Load time analysis
+    if (metrics.loadTime > 3000) {
+      newIssues.push({
+        type: 'info',
+        message: 'Page load time could be improved',
+        suggestion: 'Enable compression, optimize images, use caching',
+        priority: 'low'
+      });
+    }
+
+    setIssues(newIssues);
+  }, [metrics]);
+
+  const getPerformanceScore = useCallback(() => {
+    if (!metrics) return 0;
+    
+    let score = 100;
+    
+    if (metrics.fcp > 1500) score -= 20;
+    if (metrics.lcp > 2500) score -= 25;
+    if (metrics.cls > 0.1) score -= 15;
+    if (metrics.bundleSize > 5000000) score -= 10;
+    if (metrics.loadTime > 3000) score -= 10;
+    
+    return Math.max(0, score);
+  }, [metrics]);
+
+  const getScoreColor = (score: number) => {
+    if (score >= 90) return 'text-green-500';
+    if (score >= 70) return 'text-yellow-500';
+    return 'text-red-500';
+  };
+
+  const overallScore = getOverallScore();
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    // Core Web Vitals monitoring
+    const observer = new PerformanceObserver((list) => {
+      for (const entry of list.getEntries()) {
+        if (entry.entryType === 'largest-contentful-paint') {
+          setMetrics(prev => ({ ...prev, lcp: entry.startTime }));
+        }
+        if (entry.entryType === 'first-input') {
+          const firstInputEntry = entry as FirstInputEntry;
+          setMetrics(prev => ({ ...prev, fid: firstInputEntry.processingStart - firstInputEntry.startTime }));
+        }
+        if (entry.entryType === 'layout-shift') {
+          const layoutShiftEntry = entry as LayoutShiftEntry;
+          setMetrics(prev => ({ ...prev, cls: layoutShiftEntry.value }));
+        }
+      }
+    });
+
+    observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input', 'layout-shift'] });
+
+    // Navigation timing
+    const navigationEntry = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
+    if (navigationEntry) {
+      setMetrics(prev => ({
+        ...prev,
+        ttfb: navigationEntry.responseStart - navigationEntry.requestStart,
+        fcp: navigationEntry.domContentLoadedEventEnd - navigationEntry.domContentLoadedEventStart,
+        fmp: navigationEntry.loadEventEnd - navigationEntry.loadEventStart,
+        tti: navigationEntry.domInteractive - navigationEntry.domContentLoadedEventStart
+      }));
+    }
+
+    // Paint timing
+    const paintObserver = new PerformanceObserver((list) => {
+      for (const entry of list.getEntries()) {
+        if (entry.name === 'first-contentful-paint') {
+          setMetrics(prev => ({ ...prev, fcp: entry.startTime }));
+        }
+      }
+    });
+
+    paintObserver.observe({ entryTypes: ['paint'] });
+
+    // Resource timing
+    const resourceObserver = new PerformanceObserver((list) => {
+      for (const entry of list.getEntries()) {
+        if (entry.entryType === 'resource') {
+          const resourceEntry = entry as PerformanceResourceTiming;
+          if (resourceEntry.initiatorType === 'img' && resourceEntry.duration > 1000) {
+            setAlerts(prev => [...prev, `Slow image load: ${resourceEntry.name}`]);
+          }
+        }
+      }
+    });
+
+    resourceObserver.observe({ entryTypes: ['resource'] });
+
+    // Long tasks monitoring
+    const longTaskObserver = new PerformanceObserver((list) => {
+      for (const entry of list.getEntries()) {
+        if (entry.entryType === 'longtask' && entry.duration > 50) {
+          setAlerts(prev => [...prev, `Long task detected: ${Math.round(entry.duration)}ms`]);
+        }
+      }
+    });
+
+    longTaskObserver.observe({ entryTypes: ['longtask'] });
+
+    return () => {
+      observer.disconnect();
+      paintObserver.disconnect();
+      resourceObserver.disconnect();
+      longTaskObserver.disconnect();
+    };
+  }, []);
+
+<<<<<<< HEAD
+  useEffect(() => {
+    const score = calculateScore(metrics);
+    setOverallScore(score);
+    
+    // Generate alerts for poor performance
+    const newAlerts: string[] = [];
+    
+    if (metrics.lcp > threshold.lcp) {
+      newAlerts.push(`LCP is ${Math.round(metrics.lcp)}ms (should be < ${threshold.lcp}ms)`);
+=======
+  // Analyze performance and provide recommendations
+  const analyzePerformance = useCallback((metrics: PerformanceMetrics) => {
+    const recommendations: string[] = [];
+    
+    if (metrics.fcp > threshold.fcp) {
+      recommendations.push('First Contentful Paint is slow. Consider optimizing critical rendering path.');
+    }
+    
+    if (metrics.lcp > threshold.lcp) {
+      recommendations.push('Largest Contentful Paint is slow. Optimize images and reduce render-blocking resources.');
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-a25d
+    }
+    
+    if (metrics.fid > threshold.fid) {
+<<<<<<< HEAD
+      newAlerts.push(`FID is ${Math.round(metrics.fid)}ms (should be < ${threshold.fid}ms)`);
+=======
+      recommendations.push('First Input Delay is high. Consider code splitting and reducing JavaScript execution time.');
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-a25d
+    }
+    
+    if (metrics.cls > threshold.cls) {
+<<<<<<< HEAD
+      newAlerts.push(`CLS is ${metrics.cls.toFixed(3)} (should be < ${threshold.cls})`);
+=======
+      recommendations.push('Cumulative Layout Shift is high. Ensure stable layouts and avoid content jumping.');
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-a25d
+    }
+    
+    if (metrics.ttfb > threshold.ttfb) {
+<<<<<<< HEAD
+      newAlerts.push(`TTFB is ${Math.round(metrics.ttfb)}ms (should be < ${threshold.ttfb}ms)`);
+    }
+    
+    setAlerts(newAlerts);
+  }, [metrics, threshold, calculateScore]);
+
+  useEffect(() => {
+    if (autoHide && showUI) {
+      const timer = setTimeout(() => setIsVisible(false), 10000);
+      return () => clearTimeout(timer);
+    }
+  }, [autoHide, showUI]);
+
+  if (!showUI) return null;
+
+  return (
+    <AnimatePresence>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: 20 }}
+        className="fixed bottom-4 right-4 z-50"
+      >
+        <div className="bg-white dark:bg-gray-900 rounded-lg shadow-2xl border border-gray-200 dark:border-gray-700 max-w-sm">
+          {/* Header */}
+          <div className="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700">
+            <div className="flex items-center space-x-2">
+              <TrendingUp className="w-5 h-5 text-blue-500" />
+              <span className="font-semibold text-gray-900 dark:text-white">
+                Performance Monitor
+              </span>
+            </div>
+            <button
+              onClick={() => setIsVisible(false)}
+              className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300"
+            >
+              <X className="w-4 h-4" />
+            </button>
+          </div>
+
+          {/* Performance Score */}
+          {metrics && (
+            <div className="p-4">
+              <div className="text-center mb-4">
+                <div className={`text-3xl font-bold ${getScoreColor(getPerformanceScore())}`}>
+                  {getPerformanceScore()}
+                </div>
+                <div className="text-sm text-gray-600 dark:text-gray-400">
+                  Performance Score
+                </div>
+              </div>
+
+              {/* Key Metrics */}
+              <div className="space-y-3">
+                <div className="flex justify-between text-sm">
+                  <span className="text-gray-600 dark:text-gray-400">FCP</span>
+                  <span className={metrics.fcp > 1500 ? 'text-red-500' : 'text-green-500'}>
+                    {metrics.fcp.toFixed(0)}ms
+                  </span>
+                </div>
+                <div className="flex justify-between text-sm">
+                  <span className="text-gray-600 dark:text-gray-400">LCP</span>
+                  <span className={metrics.lcp > 2500 ? 'text-red-500' : 'text-green-500'}>
+                    {metrics.lcp.toFixed(0)}ms
+                  </span>
+                </div>
+                <div className="flex justify-between text-sm">
+                  <span className="text-gray-600 dark:text-gray-400">Bundle Size</span>
+                  <span className={metrics.bundleSize > 5000000 ? 'text-yellow-500' : 'text-green-500'}>
+                    {(metrics.bundleSize / 1000000).toFixed(1)}MB
+                  </span>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Issues */}
+          {issues.length > 0 && (
+            <div className="border-t border-gray-200 dark:border-gray-700">
+              <div className="p-4">
+                <h4 className="font-semibold text-gray-900 dark:text-white mb-3">
+                  Optimization Suggestions
+                </h4>
+                <div className="space-y-3">
+                  {issues.slice(0, 3).map((issue, index) => (
+                    <div key={index} className="flex items-start space-x-2">
+                      <div className={`mt-1 w-2 h-2 rounded-full ${
+                        issue.type === 'error' ? 'bg-red-500' :
+                        issue.type === 'warning' ? 'bg-yellow-500' : 'bg-blue-500'
+                      }`} />
+                      <div className="flex-1">
+                        <div className="text-sm font-medium text-gray-900 dark:text-white">
+                          {issue.message}
+                        </div>
+                        <div className="text-xs text-gray-600 dark:text-gray-400">
+                          {issue.suggestion}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Expand Button */}
+          <div className="border-t border-gray-200 dark:border-gray-700 p-2">
+            <button
+              onClick={() => setIsExpanded(!isExpanded)}
+              className="w-full text-center text-sm text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+            >
+              {isExpanded ? 'Show Less' : 'Show More'}
+            </button>
+=======
+      recommendations.push('Time to First Byte is slow. Optimize server response time and consider CDN.');
+    }
+    
+    return recommendations;
+  }, [threshold]);
+
+  // Send metrics to analytics
+  const sendMetricsToAnalytics = useCallback((metrics: PerformanceMetrics) => {
+    if (!sendToAnalytics) return;
+    
+    // Send to Google Analytics 4
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('event', 'performance_metrics', {
+        event_category: 'performance',
+        event_label: 'core_web_vitals',
+        value: Math.round(metrics.lcp),
+        custom_parameters: {
+          fcp: Math.round(metrics.fcp),
+          lcp: Math.round(metrics.lcp),
+          fid: Math.round(metrics.fid),
+          cls: metrics.cls.toFixed(3),
+          ttfb: Math.round(metrics.ttfb),
+        }
+      });
+    }
+    
+    // Send to custom analytics endpoint
+    fetch('/api/analytics/performance', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        timestamp: Date.now(),
+        url: window.location.href,
+        userAgent: navigator.userAgent,
+        metrics,
+      }),
+    }).catch(() => {
+      // Silently fail if analytics endpoint is not available
+    });
+  }, [sendToAnalytics]);
+
+  // Log metrics to console
+  const logMetrics = useCallback((metrics: PerformanceMetrics) => {
+    if (!logToConsole) return;
+    
+    console.group('🚀 Performance Metrics');
+    console.log('First Contentful Paint:', `${metrics.fcp.toFixed(0)}ms`);
+    console.log('Largest Contentful Paint:', `${metrics.lcp.toFixed(0)}ms`);
+    console.log('First Input Delay:', `${metrics.fid.toFixed(0)}ms`);
+    console.log('Cumulative Layout Shift:', metrics.cls.toFixed(3));
+    console.log('Time to First Byte:', `${metrics.ttfb.toFixed(0)}ms`);
+    console.log('DOM Content Loaded:', `${metrics.domContentLoaded.toFixed(0)}ms`);
+    console.log('Load Complete:', `${metrics.loadComplete.toFixed(0)}ms`);
+    
+    if (metrics.memoryUsage) {
+      console.log('Memory Usage:', {
+        used: `${(metrics.memoryUsage.usedJSHeapSize / 1048576).toFixed(2)}MB`,
+        total: `${(metrics.memoryUsage.totalJSHeapSize / 1048576).toFixed(2)}MB`,
+        limit: `${(metrics.memoryUsage.jsHeapSizeLimit / 1048576).toFixed(2)}MB`,
+      });
+    }
+    
+    const recommendations = analyzePerformance(metrics);
+    if (recommendations.length > 0) {
+      console.group('💡 Performance Recommendations');
+      recommendations.forEach(rec => console.log(rec));
+      console.groupEnd();
+    }
+    
+    console.groupEnd();
+  }, [logToConsole, analyzePerformance]);
+
+  // Start monitoring
+  useEffect(() => {
+    if (!enabled) return;
+    
+    setIsMonitoring(true);
+    
+    // Wait for page to load completely
+    if (document.readyState === 'complete') {
+      const initialMetrics = getPerformanceMetrics();
+      setMetrics(initialMetrics);
+      logMetrics(initialMetrics);
+      sendMetricsToAnalytics(initialMetrics);
+    } else {
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          const initialMetrics = getPerformanceMetrics();
+          setMetrics(initialMetrics);
+          logMetrics(initialMetrics);
+          sendMetricsToAnalytics(initialMetrics);
+        }, 100);
+      });
+    }
+    
+    // Start monitoring Core Web Vitals
+    monitorCoreWebVitals();
+    
+    // Monitor performance over time
+    const interval = setInterval(() => {
+      if (metrics) {
+        const currentMetrics = getPerformanceMetrics();
+        setMetrics(currentMetrics);
+        logMetrics(currentMetrics);
+        sendMetricsToAnalytics(currentMetrics);
+      }
+    }, 30000); // Check every 30 seconds
+    
+    return () => {
+      clearInterval(interval);
+      setIsMonitoring(false);
+    };
+  }, [enabled, getPerformanceMetrics, logMetrics, sendMetricsToAnalytics, monitorCoreWebVitals, metrics]);
+
+  // Performance optimization suggestions
+  const getOptimizationTips = useCallback(() => {
+    if (!metrics) return [];
+    
+    const tips: string[] = [];
+    
+    if (metrics.fcp > 1000) {
+      tips.push('Optimize critical rendering path by inlining critical CSS');
+    }
+    
+    if (metrics.lcp > 2000) {
+      tips.push('Use next/image for automatic image optimization');
+    }
+    
+    if (metrics.ttfb > 600) {
+      tips.push('Consider implementing server-side caching');
+    }
+    
+    if (metrics.memoryUsage && metrics.memoryUsage.usedJSHeapSize > 50 * 1024 * 1024) {
+      tips.push('Monitor memory usage and implement cleanup for long-running components');
+    }
+    
+    return tips;
+  }, [metrics]);
+
+  // Don't render anything in production unless explicitly enabled
+  if (!enabled || process.env.NODE_ENV === 'production') {
+    return null;
+  }
+
+  return (
+    <div className="fixed bottom-4 right-4 bg-black/80 text-white p-4 rounded-lg backdrop-blur-sm border border-gray-700 max-w-sm z-50">
+      <div className="flex items-center justify-between mb-2">
+        <h3 className="text-sm font-semibold">Performance Monitor</h3>
+        <span className={`w-2 h-2 rounded-full ${isMonitoring ? 'bg-green-400' : 'bg-red-400'}`}></span>
+      </div>
+      
+      {metrics && (
+        <div className="space-y-1 text-xs">
+          <div className="flex justify-between">
+            <span>FCP:</span>
+            <span className={metrics.fcp > threshold.fcp ? 'text-red-400' : 'text-green-400'}>
+              {metrics.fcp.toFixed(0)}ms
+            </span>
+          </div>
+          <div className="flex justify-between">
+            <span>LCP:</span>
+            <span className={metrics.lcp > threshold.lcp ? 'text-red-400' : 'text-green-400'}>
+              {metrics.lcp.toFixed(0)}ms
+            </span>
+          </div>
+          <div className="flex justify-between">
+            <span>CLS:</span>
+            <span className={metrics.cls > threshold.cls ? 'text-red-400' : 'text-green-400'}>
+              {metrics.cls.toFixed(3)}
+            </span>
+          </div>
+          <div className="flex justify-between">
+            <span>TTFB:</span>
+            <span className={metrics.ttfb > threshold.ttfb ? 'text-red-400' : 'text-green-400'}>
+              {metrics.ttfb.toFixed(0)}ms
+            </span>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-a25d
+          </div>
+        </div>
+      )}
+      
+      {getOptimizationTips().length > 0 && (
+        <div className="mt-3 pt-2 border-t border-gray-600">
+          <h4 className="text-xs font-medium mb-1">Optimization Tips:</h4>
+          <ul className="text-xs space-y-1">
+            {getOptimizationTips().map((tip, index) => (
+              <li key={index} className="text-yellow-300">• {tip}</li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </div>
+  );
+};
+
+// Helper functions
+const getScoreIcon = (score: number) => {
+  if (score >= 90) return <CheckCircle className="w-5 h-5 text-green-400" />;
+  if (score >= 70) return <AlertTriangle className="w-5 h-5 text-yellow-400" />;
+  return <AlertTriangle className="w-5 h-5 text-red-400" />;
+};
+
+const getScoreLabel = (score: number) => {
+  if (score >= 90) return 'Excellent';
+  if (score >= 70) return 'Good';
+  if (score >= 50) return 'Needs Improvement';
+  return 'Poor';
+};
+
+export default PerformanceMonitor;

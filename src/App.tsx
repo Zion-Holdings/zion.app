@@ -37,6 +37,9 @@ const PartnersPage = React.lazy(() => import('./pages/Partners'));
 const Login = React.lazy(() => import('./pages/Login'));
 const Signup = React.lazy(() => import('./pages/Signup'));
 const ITOnsiteServicesPage = React.lazy(() => import('./pages/ITOnsiteServicesPage'));
+const GreenIT = React.lazy(() => import('./pages/GreenIT'));
+const FAQ = React.lazy(() => import('./pages/FAQ'));
+const HelpCenter = React.lazy(() => import('./pages/HelpCenter'));
 const OpenAppRedirect = React.lazy(() => import('./pages/OpenAppRedirect'));
 const ContactPage = React.lazy(() => import('./pages/Contact'));
 const ZionHireAI = React.lazy(() => import('./pages/ZionHireAI'));
@@ -53,6 +56,9 @@ const baseRoutes = [
   { path: '/talents', element: <TalentsPage /> },
   { path: '/services', element: <ServicesPage /> },
   { path: '/it-onsite-services', element: <ITOnsiteServicesPage /> },
+  { path: '/green-it', element: <GreenIT /> },
+  { path: '/faq', element: <FAQ /> },
+  { path: '/help', element: <HelpCenter /> },
   { path: '/categories', element: <Categories /> },
   { path: '/equipment', element: <EquipmentPage /> },
   { path: '/equipment/:id', element: <EquipmentDetail /> },

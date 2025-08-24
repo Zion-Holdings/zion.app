@@ -11,7 +11,7 @@ export default function Sitemap() {
         title="Sitemap | Zion AI Marketplace"
         description="Human readable sitemap for all public routes"
         keywords="sitemap, navigation"
-        canonical="https://app.ziontechgroup.com/sitemap"
+        canonical="https://ziontechgroup.com/sitemap"
       />
       <Header />
       <main className="min-h-screen bg-zion-blue pt-24 pb-20">

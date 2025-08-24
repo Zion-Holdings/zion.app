@@ -1,0 +1,12 @@
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "index",
+  "description": "import type { NextPage } from 'next'; import Head from 'next/head'; import Link from 'next/link'; import { ArrowRight, CheckCircle, Star, Us",
+  "url": "https://zion.app/index",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Zion",
+    "url": "https://zion.app"
+  }
+}
