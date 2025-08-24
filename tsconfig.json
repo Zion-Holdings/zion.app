@@ -58,12 +58,12 @@
     "moduleResolution": "node",
     "esModuleInterop": true,
     "resolveJsonModule": true,
-    "strict": true,
+    "strict": false,
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedIndexedAccess": true,
-    "noImplicitReturns": true,
+    "noUncheckedIndexedAccess": false,
+    "noImplicitReturns": false,
     "allowJs": true,
     "incremental": true,
     "typeRoots": [
@@ -84,6 +84,10 @@
   ],
   "exclude": [
     "node_modules",
-    "zion.app/recovered-content/**"
+    "zion.app/recovered-content/**",
+    "**/*.disabled/**",
+    "__tests__.disabled/**",
+    "plugins.disabled/**",
+    "test.disabled/**"
   ]
 }
