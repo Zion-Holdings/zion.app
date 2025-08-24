@@ -1,188 +1,112 @@
 import "./globals.css";
 import type { ReactNode } from "react";
-import { Navigation } from "@/components/Navigation";
-import Link from "next/link";
 
 export const metadata = {
-  title: "Zion Tech Group - Leading AI, Quantum Computing & Enterprise Solutions",
-  description: "Zion Tech Group is a global technology leader specializing in AI, quantum computing, cybersecurity, enterprise IT, and space technology solutions. Transform your business with cutting-edge innovation.",
-  keywords: "AI, artificial intelligence, quantum computing, cybersecurity, enterprise IT, space technology, Zion Tech Group, technology solutions, innovation",
+  title: "Zion Tech Group - AI-Powered Digital Economy Solutions",
+  description: "Launch sovereign AI-powered digital economies with one click. Advanced AI automation, quantum computing, and autonomous business solutions for the future.",
+  keywords: "AI automation, quantum computing, digital economy, autonomous business, Zion Tech Group, AI consciousness, blockchain, cybersecurity",
   authors: [{ name: "Zion Tech Group" }],
+  creator: "Zion Tech Group",
+  publisher: "Zion Tech Group",
   robots: "index, follow",
+  metadataBase: new URL('https://ziontechgroup.com'),
   openGraph: {
-    title: "Zion Tech Group - Leading AI, Quantum Computing & Enterprise Solutions",
-    description: "Transform your business with cutting-edge AI, quantum computing, and enterprise technology solutions from Zion Tech Group.",
     type: "website",
     locale: "en_US",
     url: "https://ziontechgroup.com",
     siteName: "Zion Tech Group",
+    title: "Zion Tech Group - AI-Powered Digital Economy Solutions",
+    description: "Launch sovereign AI-powered digital economies with one click. Advanced AI automation, quantum computing, and autonomous business solutions for the future.",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Zion Tech Group - AI-Powered Digital Economy Solutions",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Zion Tech Group - Leading AI, Quantum Computing & Enterprise Solutions",
-    description: "Transform your business with cutting-edge AI, quantum computing, and enterprise technology solutions from Zion Tech Group.",
-  },
-  alternates: {
-    canonical: "https://ziontechgroup.com",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Zion Tech Group - Leading AI-Powered Technology Solutions",
-    description: "Transform your business with cutting-edge AI solutions, autonomous systems, and quantum computing.",
+    title: "Zion Tech Group - AI-Powered Digital Economy Solutions",
+    description: "Launch sovereign AI-powered digital economies with one click. Advanced AI automation, quantum computing, and autonomous business solutions for the future.",
     images: ["/og-image.jpg"],
     creator: "@ziontechgroup",
     site: "@ziontechgroup",
   },
-  alternates: {
-    canonical: "https://ziontechgroup.com",
+  manifest: "/manifest.json",
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
   },
-  verification: {
-    google: "your-google-verification-code",
-    yandex: "your-yandex-verification-code",
-    yahoo: "your-yahoo-verification-code",
-  },
-};
-
-export const viewport: Viewport = {
-  width: "device-width",
-  initialScale: 1,
-  maximumScale: 5,
-  userScalable: true,
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#8b5cf6" },
-    { media: "(prefers-color-scheme: dark)", color: "#1e293b" },
-  ],
 };
 
 export const viewport = {
-  width: "device-width",
+  width: 'device-width',
   initialScale: 1,
+  themeColor: '#000000',
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en">
       <head>
-        {/* Structured Data */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              "name": "Zion Tech Group",
-              "url": "https://ziontechgroup.com",
-              "logo": "https://ziontechgroup.com/logo.png",
-              "description": "Leading provider of AI-powered technology solutions, autonomous systems, and quantum computing innovations.",
-              "foundingDate": "2020",
-              "sameAs": [
-                "https://linkedin.com/company/ziontechgroup",
-                "https://twitter.com/ziontechgroup",
-                "https://github.com/ziontechgroup",
-                "https://youtube.com/@ziontechgroup",
-                "https://discord.gg/ziontechgroup"
-              ],
-              "contactPoint": {
-                "@type": "ContactPoint",
-                "telephone": "+1-302-464-0950",
-                "contactType": "customer service",
-                "email": "info@ziontechgroup.com"
-              },
-              "address": {
-                "@type": "PostalAddress",
-                "addressCountry": "US"
-              },
-              "serviceType": [
-                "AI Solutions",
-                "Quantum Computing",
-                "Enterprise Security",
-                "Business Intelligence",
-                "Content Generation",
-                "Research Automation"
-              ]
-            })
-          }}
-        />
-        
-        {/* Preconnect to external domains */}
+        <link rel="canonical" href="https://ziontechgroup.com" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <meta name="theme-color" content="#000000" />
+        <meta name="google-site-verification" content="your-verification-code" />
+        <meta name="msvalidate.01" content="your-verification-code" />
       </head>
-      <body className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white antialiased">
-        <Header />
-        <main className="min-h-screen" role="main">
-          {children}
-        </main>
-        <footer className="border-t border-white/10 bg-black/20 backdrop-blur-sm mt-20">
-          <div className="max-w-7xl mx-auto px-4 py-8">
+      <body className="min-h-screen bg-[var(--bg)] text-[var(--fg)]">
+        <nav className="border-b border-white/10 sticky top-0 z-50 bg-zinc-900/50 backdrop-blur">
+          <div className="max-w-6xl mx-auto px-4 py-3 flex items-center gap-4">
+            <a href="/" className="font-semibold">Zion Tech Group</a>
+            <a href="/multiverse/launch" className="text-sm opacity-80 hover:opacity-100">Launch</a>
+            <a href="/admin/os-deploy" className="text-sm opacity-80 hover:opacity-100">Admin Deploy</a>
+            <a href="/admin/instances" className="text-sm opacity-80 hover:opacity-100">Instances</a>
+            <a href="/services" className="text-sm opacity-80 hover:opacity-100">Services</a>
+            <a href="/about" className="text-sm opacity-80 hover:opacity-100">About</a>
+            <a href="/contact" className="text-sm opacity-80 hover:opacity-100">Contact</a>
+          </div>
+        </nav>
+        <main className="max-w-6xl mx-auto px-4 py-8">{children}</main>
+        <footer className="border-t border-white/10 bg-zinc-900/50 mt-16">
+          <div className="max-w-6xl mx-auto px-4 py-8">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               <div>
-                <h3 className="text-xl font-bold gradient-text mb-4">Zion Tech Group</h3>
-                <p className="text-sm text-gray-400">
-                  Leading the future of technology with AI, quantum computing, and enterprise solutions.
-                </p>
-                <div className="flex space-x-4 mt-4">
-                  <a href="https://linkedin.com/company/ziontechgroup" className="text-gray-400 hover:text-white transition-colors">
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                    </svg>
-                  </a>
-                  <a href="https://twitter.com/ziontechgroup" className="text-gray-400 hover:text-white transition-colors">
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
-                    </svg>
-                  </a>
-                  <a href="https://github.com/ziontechgroup" className="text-gray-400 hover:text-white transition-colors">
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                    </svg>
-                  </a>
-                </div>
+                <h3 className="font-semibold mb-4">Zion Tech Group</h3>
+                <p className="text-sm opacity-80">Pioneering the future of AI-powered digital economies.</p>
               </div>
               <div>
-                <h4 className="font-semibold mb-3">Services</h4>
-                <ul className="space-y-2 text-sm text-gray-400">
-                  <li><a href="/ai-services" className="hover:text-white transition-colors">AI Solutions</a></li>
-                  <li><a href="/quantum-services" className="hover:text-white transition-colors">Quantum Computing</a></li>
-                  <li><a href="/enterprise-it" className="hover:text-white transition-colors">Enterprise IT</a></li>
-                  <li><a href="/cybersecurity" className="hover:text-white transition-colors">Cybersecurity</a></li>
-                  <li><a href="/space-tech" className="hover:text-white transition-colors">Space Technology</a></li>
+                <h4 className="font-semibold mb-4">Services</h4>
+                <ul className="text-sm space-y-2 opacity-80">
+                  <li><a href="/ai-automation" className="hover:opacity-100">AI Automation</a></li>
+                  <li><a href="/quantum-computing" className="hover:opacity-100">Quantum Computing</a></li>
+                  <li><a href="/blockchain" className="hover:opacity-100">Blockchain Solutions</a></li>
+                  <li><a href="/cybersecurity" className="hover:opacity-100">Cybersecurity</a></li>
                 </ul>
               </div>
               <div>
-                <h4 className="font-semibold mb-3">Company</h4>
-                <ul className="space-y-2 text-sm text-gray-400">
-                  <li><a href="/about" className="hover:text-white transition-colors">About Us</a></li>
-                  <li><a href="/case-studies" className="hover:text-white transition-colors">Case Studies</a></li>
-                  <li><a href="/news" className="hover:text-white transition-colors">News</a></li>
-                  <li><a href="/events" className="hover:text-white transition-colors">Events</a></li>
-                  <li><a href="/contact" className="hover:text-white transition-colors">Contact</a></li>
+                <h4 className="font-semibold mb-4">Company</h4>
+                <ul className="text-sm space-y-2 opacity-80">
+                  <li><a href="/about" className="hover:opacity-100">About Us</a></li>
+                  <li><a href="/careers" className="hover:opacity-100">Careers</a></li>
+                  <li><a href="/news" className="hover:opacity-100">News</a></li>
+                  <li><a href="/contact" className="hover:opacity-100">Contact</a></li>
                 </ul>
               </div>
-
-              {/* Services */}
               <div>
-                <h4 className="font-semibold mb-3">Platform</h4>
-                <ul className="space-y-2 text-sm text-gray-400">
-                  <li><a href="/zion-os" className="hover:text-white transition-colors">Zion OS</a></li>
-                  <li><a href="/multiverse/launch" className="hover:text-white transition-colors">Launch Wizard</a></li>
-                  <li><a href="/docs" className="hover:text-white transition-colors">Documentation</a></li>
-                  <li><a href="/admin/instances" className="hover:text-white transition-colors">Instances</a></li>
+                <h4 className="font-semibold mb-4">Connect</h4>
+                <ul className="text-sm space-y-2 opacity-80">
+                  <li><a href="https://linkedin.com/company/ziontechgroup" target="_blank" rel="noopener noreferrer" className="hover:opacity-100">LinkedIn</a></li>
+                  <li><a href="https://twitter.com/ziontechgroup" target="_blank" rel="noopener noreferrer" className="hover:opacity-100">Twitter</a></li>
+                  <li><a href="https://github.com/Zion-Holdings" target="_blank" rel="noopener noreferrer" className="hover:opacity-100">GitHub</a></li>
+                  <li><a href="mailto:kleber@ziontechgroup.com" className="hover:opacity-100">Email</a></li>
                 </ul>
               </div>
             </div>
-            <div className="border-t border-white/10 mt-8 pt-8 text-center text-sm text-gray-400">
-              <p>&copy; 2024 Zion Tech Group. All rights reserved.</p>
-              <div className="flex justify-center space-x-6 mt-2">
-                <a href="/privacy" className="hover:text-white transition-colors">Privacy Policy</a>
-                <a href="/terms" className="hover:text-white transition-colors">Terms of Service</a>
-                <a href="/cookies" className="hover:text-white transition-colors">Cookie Policy</a>
-                <a href="/accessibility" className="hover:text-white transition-colors">Accessibility</a>
-              </div>
+            <div className="border-t border-white/10 mt-8 pt-8 text-center text-sm opacity-80">
+              <p>&copy; 2025 Zion Tech Group. All rights reserved.</p>
             </div>
           </div>
         </footer>
