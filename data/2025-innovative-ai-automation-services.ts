@@ -130,14 +130,7 @@ export const innovativeAIAutomationServices: InnovativeAIAutomationService[] = [
     competitors: ['Zendesk, Intercom, Freshdesk, Help Scout, Zoho Desk'],
     marketSize: '$15B customer service software market',
     growthRate: '22% annual growth',
-    variant: 'ai-automation',
-    contactInfo: {
-      mobile: '+1 302 464 0950',
-      email: 'kleber@ziontechgroup.com',
-      address: '364 E Main St STE 1008 Middletown DE 19709',
-      website: 'https://ziontechgroup.com'
-    },
-=======
+    variant: 'ai-autonomous',
     technology: ['Python, Selenium, Playwright, OpenAI, TensorFlow, Docker'],
     integrations: ['Jenkins, GitHub Actions, GitLab CI, Azure DevOps, Jira'],
     useCases: ['Automated testing, CI/CD integration, Quality assurance, Regression testing'],
@@ -263,6 +256,16 @@ export const innovativeAIAutomationServices: InnovativeAIAutomationService[] = [
       'Predictive security analytics'
     ],
     popular: true,
+    icon: '🛡️',
+    color: 'from-red-600 via-orange-600 to-yellow-600',
+    textColor: 'text-red-400',
+    link: 'https://ziontechgroup.com/ai-autonomous-security-monitor',
+    marketPosition: 'Leading AI security monitoring platform with autonomous threat response capabilities.',
+    targetAudience: 'Enterprise IT teams, Security operations centers, Cybersecurity professionals',
+    trialDays: 30,
+    setupTime: '2-4 hours',
+    category: 'AI Security',
+    realService: true,
     technology: ['React, Node.js, Python, TensorFlow, PostgreSQL, Redis, AWS, Google Analytics'],
     integrations: ['HubSpot, Salesforce, Mailchimp, Facebook Ads, Google Ads, LinkedIn, Twitter'],
     useCases: ['Email marketing automation, Social media management, Lead nurturing, Campaign optimization, Customer segmentation'],
@@ -270,7 +273,7 @@ export const innovativeAIAutomationServices: InnovativeAIAutomationService[] = [
     competitors: ['HubSpot, Marketo, Pardot, ActiveCampaign, ConvertKit'],
     marketSize: '$35B marketing automation market',
     growthRate: '24% annual growth',
-    variant: 'ai-marketing',
+    variant: 'email-marketing',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',

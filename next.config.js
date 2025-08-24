@@ -98,6 +98,42 @@ const nextConfig = {
   ],
 
   webpack: (config, { dev, isServer, webpack }) => {
+    // Exclude contracts directory from webpack compilation
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      'hardhat/config': false,
+      'cypress': false,
+    };
+    
+    // Exclude contracts directory from compilation
+    config.module.rules.push({
+      test: /contracts\/.*\.ts$/,
+      loader: 'ignore-loader'
+    });
+    
+    // Exclude hardhat config specifically
+    config.module.rules.push({
+      test: /hardhat\.config\.ts$/,
+      loader: 'ignore-loader'
+    });
+    
+    // Exclude Cypress test files from compilation
+    config.module.rules.push({
+      test: /cypress\/.*\.cy\.(ts|js)$/,
+      loader: 'ignore-loader'
+    });
+    
+    // Exclude Cypress config files
+    config.module.rules.push({
+      test: /cypress\.config\.(ts|js)$/,
+      loader: 'ignore-loader'
+    });
+    
+    // Exclude entire cypress directory from webpack processing
+    config.module.rules.push({
+      test: /cypress\//,
+      loader: 'ignore-loader'
+    });
     // Fix EventEmitter memory leak by increasing max listeners
     // events.EventEmitter.defaultMaxListeners = 20; // Will be set by build script
     

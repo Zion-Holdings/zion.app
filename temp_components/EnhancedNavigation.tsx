@@ -21,7 +21,8 @@ const EnhancedNavigation: React.FC = () => {
   }, []);
 
   const services = [
-    { name: 'All Services', href: '/comprehensive-2025-services-showcase', icon: Globe, description: 'Complete collection of innovative services' },
+    { name: '2026 Services Showcase', href: '/comprehensive-2026-services-showcase', icon: Globe, description: 'Complete collection of 2026 innovative services' },
+    { name: '2025 Services Showcase', href: '/comprehensive-2025-services-showcase', icon: Globe, description: 'Complete collection of 2025 innovative services' },
     { name: 'AI Business Intelligence', href: 'https://ziontechgroup.com/ai-business-intelligence', icon: Brain, description: 'AI-powered analytics and insights' },
     { name: 'Quantum Cybersecurity', href: 'https://ziontechgroup.com/quantum-cybersecurity', icon: Shield, description: 'Quantum-resistant security solutions' },
     { name: 'Edge Computing', href: 'https://ziontechgroup.com/edge-computing-orchestration', icon: Cpu, description: 'Edge orchestration and IoT management' },

@@ -1,4 +1,4 @@
-import { defineConfig } from cypress';
+import { defineConfig } from 'cypress';
 // fs and path are no longer needed as getPort() is removed.
 ;
 default defineConfig({
