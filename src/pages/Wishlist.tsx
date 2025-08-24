@@ -3,14 +3,14 @@ import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { loadWishlistFromDB, removeFromWishlist } from '@/store/wishlistSlice';
 import { useAuth } from '@/hooks/useAuth';
 import { Button } from '@/components/ui/button';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function Wishlist() {
   const dispatch = useAppDispatch();
   const items = useAppSelector((s) => s.wishlist.items);
   const { user } = useAuth();
   const navigate = useNavigate();
-  const location = useLocation();
+  const location = { pathname: window.location.pathname };
 
   useEffect(() => {
     if (!user) {
