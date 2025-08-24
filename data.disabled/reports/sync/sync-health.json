@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-08T22:52:18.585Z",
+  "timestamp": "2025-08-10T02:17:54.017Z",
   "host": "cursor",
   "repoRoot": "/workspace",
   "status": "degraded",
@@ -42,17 +42,17 @@
     {
       "name": "origin-configured",
       "ok": true,
-      "details": "https://x-access-token:ghs_GaWdrZKcP2qudqv5z79wnZBEQzMiLe39Lwvr@github.com/Zion-Holdings/zion.app"
+      "details": "https://x-access-token:ghs_4yNsBBom8HmkiD0GuvaAU0qRIsPT8K29I0p8@github.com/Zion-Holdings/zion.app"
     },
     {
       "name": "divergence",
       "ok": true,
-      "details": "behind=0, ahead=0, branch=cursor/automate-fundraising-deck-and-deal-room-generation-c352"
+      "details": "behind=0, ahead=0, branch=cursor/generate-zion-multiverse-narrative-and-world-building-7334"
     },
     {
       "name": "working-tree-clean",
       "ok": false,
-      "details": "changed=6"
+      "details": "changed=8"
     }
   ]
 }

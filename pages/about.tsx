@@ -1,20 +1,11 @@
-import type { NextPage } from 'next';
-import Head from 'next/head';
-
-const About: NextPage = () => {
+import React from 'react';
+export default function Page() {
   return (
-    <div>
-      <Head>
-        <title>About - Zion Tech Solutions</title>
-        <meta name="description" content="About page" />
-      </Head>
-      
-      <main>
-        <h1>About</h1>
-        <p>This page is under construction.</p>
-      </main>
-    </div>
+    <main className="min-h-screen bg-black text-zinc-100 p-8">
+      <section className="prose prose-invert max-w-3xl mx-auto">
+        <h1>about</h1>
+        <p>Auto-healed placeholder. Replace with real content.</p>
+      </section>
+    </main>
   );
-};
-
-export default About;
+}

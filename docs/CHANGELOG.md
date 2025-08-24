@@ -1,0 +1,203 @@
+# Changelog
+
+## 2025-08-10
+- feat(home): advertise autonomous automations on homepage; add custom Document; guard workflow (af7e1993dc) 2025-08-10
+- chore(sync): auto-sync from cursor on cursor/generate-zion-multiverse-narrative-and-world-building-7334 at 2025-08-10T12:05:12.712Z (faf7d3637a) 2025-08-10
+- fix(heal): regex safety in empty-page-healer (e189dc1562) 2025-08-10
+- chore(automation): add rapid sync, healer, docs indexer, nft pack (c0fa86f75b) 2025-08-10
+- chore(sync): auto-sync from cursor on cursor/generate-zion-multiverse-narrative-and-world-building-7334 at 2025-08-10T02:17:55.027Z (e1ab226394) 2025-08-10
+- feat(lore): add autonomous lore generator, routes guard, and CI workflows (a443167be3) 2025-08-09
+- chore(sync): auto-sync from cursor on main at 2025-08-08T18:44:30.094Z (e3d9d7e5b5) 2025-08-08
+- chore(sync): auto-sync from cursor on main at 2025-08-08T18:43:36.787Z (eed14e6b3a) 2025-08-08
+- chore(sync): auto-sync from cursor on main at 2025-08-08T18:42:29.390Z (344ae2f450) 2025-08-08
+- chore(sync): auto-sync from cursor on main at 2025-08-08T18:41:34.788Z (b2f15aecf8) 2025-08-08
+- chore(sync): auto-sync from cursor on main at 2025-08-08T18:40:28.073Z (dd1ce12c5b) 2025-08-08
+- chore(sync): auto-sync from cursor on main at 2025-08-08T18:39:32.715Z (8a9128a0b0) 2025-08-08
+- chore(sync): auto-sync from cursor on main at 2025-08-08T18:38:27.469Z (df0bae3a9d) 2025-08-08
+- chore(sync): auto-sync from cursor on main at 2025-08-08T18:37:30.604Z (c2d356b435) 2025-08-08
+- chore(sync): auto-sync from cursor on main at 2025-08-08T18:36:26.005Z (35032464b5) 2025-08-08
+- chore(sync): auto-sync from cursor on main at 2025-08-08T18:35:28.464Z (499bb77f03) 2025-08-08
+- chore(sync): auto-sync from cursor on main at 2025-08-08T18:34:25.385Z (5a4533a0eb) 2025-08-08
+- chore(sync): auto-sync from cursor on main at 2025-08-08T18:33:26.459Z (1e475a59bc) 2025-08-08
+- chore(sync): auto-sync from cursor on main at 2025-08-08T18:32:24.018Z (2875fc4d19) 2025-08-08
+- chore(sync): auto-sync from cursor on main at 2025-08-08T18:31:24.411Z (91f03f20a0) 2025-08-08
+- chore(sync): auto-sync from cursor on main at 2025-08-08T18:30:23.316Z (2caaf227dc) 2025-08-08
+- chore(sync): auto-sync from cursor on main at 2025-08-08T18:29:22.452Z (ff44751aa1) 2025-08-08
+- chore(sync): auto-sync from cursor on main at 2025-08-08T18:06:59.530Z (cdf87d2d6a) 2025-08-08
+- chore(sync): auto-sync from cursor on main at 2025-08-08T18:04:58.755Z (2849204409) 2025-08-08
+- chore(sync): auto-sync from cursor on main at 2025-08-08T18:02:57.621Z (a79595c5fb) 2025-08-08
+- chore(sync): auto-sync from cursor on main at 2025-08-08T18:00:56.761Z (b180b2f926) 2025-08-08
+- chore(sync): auto-sync from cursor on main at 2025-08-08T17:58:55.583Z (97c7d9dbaf) 2025-08-08
+- chore(sync): auto-sync from cursor on main at 2025-08-08T17:56:54.814Z (7fbc38ab98) 2025-08-08
+- chore(sync): auto-sync from cursor on main at 2025-08-08T17:54:53.627Z (2e3d375609) 2025-08-08
+- chore(sync): auto-sync from cursor on main at 2025-08-08T17:52:52.761Z (dc7a688e71) 2025-08-08
+- chore(sync): auto-sync from cursor on main at 2025-08-08T17:50:51.680Z (628a1caf58) 2025-08-08
+- Merge branch 'cursor/automate-merge-conflict-resolution-and-main-branch-sync-421c' (c39d57647e) 2025-08-08
+- chore(sync): auto-sync from cursor on main at 2025-08-08T17:48:49.056Z (79c9b12186) 2025-08-08
+- fix: finalize package.json merge (add git:health:cron and conflict guard scripts) (215c5150b2) 2025-08-08
+- feat(automation): add adaptive intelligence orchestrator (0d3145e238) 2025-08-08
+- chore(sync): auto-sync from cursor on main at 2025-08-08T17:46:47.424Z (e0e5e56273) 2025-08-08
+- fix: merge package.json with origin/main scripts; preserve conflict automation and sync-health scripts (6cab105790) 2025-08-08
+- chore(git): add fast git health checks (hooks, CI, cron) and npm scripts (4a77d239dc) 2025-08-08
+- chore(sync): auto-sync from cursor on main at 2025-08-08T17:44:47.305Z (2cfa35ae7c) 2025-08-08
+- chore(sync): auto-sync from cursor on main at 2025-08-08T17:44:45.174Z (581f212541) 2025-08-08
+- chore(sync): auto-sync from cursor on main at 2025-08-08T17:42:45.414Z (774b6dee50) 2025-08-08
+- fix: reconcile package.json scripts and add conflict automation entries (05f5dd45e6) 2025-08-08
+- fix(ts): resolve rebase-introduced TS syntax errors and implement minimal layout components (db5a7cfd00) 2025-08-08
+- chore(automation): add missing orchestrators and beautify wrapper; dedupe dep maintenance workflow (18d6c6af46) 2025-08-08
+- Update sync health status with new timestamp and branch details (757f1a5ef3) 2025-08-08
+- chore(sync): resolve package.json merge conflict; keep sync health scripts and upstream scripts (dec86e81ad) 2025-08-08
+- fix: resolve merge conflicts in monetization automation (prefer origin/main) (8750168644) 2025-08-08
+- feat(automation): add site maintenance orchestrator, cron manager, and health monitor (8f67b4b0b7) 2025-08-08
+- chore(sync): add multi-machine sync health checker, cron, CI, and memory rules (8468b638f5) 2025-08-08
+- chore(sync): auto-sync from cursor on cursor/ensure-multi-machine-sync-processes-are-error-free-06c0 at 2025-08-08T17:38:41.929Z (ef370e5ef4) 2025-08-08
+- chore(netlify): add continuous Netlify deploy monitor (script, cron, CI) + Cursor rule; ignore .env.netlify (624fa4103e) 2025-08-08
+- ci: add comprehensive merge-conflict detection (9cae26d1d4) 2025-08-08
+- fix(automation): correct projectRoot and scan components; ensure files are scanned (4eb19eba94) 2025-08-08
+- Merge branch 'cursor/automate-project-sync-to-github-main-branch-89d5' (03a1975c79) 2025-08-08
+- chore(automation): add auto sync daemon scripts (9ae0a325f9) 2025-08-08
+- Merge branch 'cursor/automate-commit-push-and-sync-across-computers-bbfb' (3cffeafc2c) 2025-08-08
+- chore(automation): add auto sync, commit/push, and merge scripts (e24b47354b) 2025-08-08
+- Merge branch 'main' into cursor/automate-commit-push-and-sync-across-computers-bbfb (62f72b33c6) 2025-08-08
+- chore(merge): resolve conflicts in package.json and learned-memories; add git sync scripts (420c278335) 2025-08-08
+- chore(sync): auto-sync from cursor on cursor/automate-commit-push-and-sync-across-computers-bbfb at 2025-08-08T17:27:24.572Z (835910429c) 2025-08-08
+- chore(automation): add consolidated runner + local cron; update infinite improvement workflow; update Cursor memory/rules (881c5a50e4) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T17:26:51.232Z (7dbbdc5f75) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T17:26:41.863Z (b3fa8f1e78) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T17:26:35.910Z (b52da0ea08) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T17:26:30.985Z (b75ad5a4bf) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T17:26:21.528Z (591546dad3) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T17:26:11.412Z (348bbbad38) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T17:25:56.871Z (ce96e38844) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T17:25:46.548Z (6e3682ed44) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T17:25:36.280Z (58014b2e1d) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T17:25:26.649Z (a4b94fad4f) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T17:25:16.160Z (6b9b7c2f25) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T17:25:05.782Z (46621e145c) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T17:24:56.101Z (997ede59cc) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T17:24:51.321Z (9e47ad1ece) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T17:24:45.450Z (5a3016f270) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T17:24:35.879Z (c430d7752e) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T17:24:31.300Z (da9e78aadf) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T17:24:21.368Z (4b0ad9caa0) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T17:24:11.030Z (6e4d59b3ee) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T17:24:05.752Z (45318deeb8) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T17:24:01.309Z (44e52e81ee) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T17:23:55.665Z (5990368642) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T17:23:50.684Z (2c2d00110e) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T17:23:40.413Z (5227751c65) 2025-08-08
+- Update automation pages and homepage promo data for new auto-update (de4d592d3f) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T17:23:24.565Z (cd40b73713) 2025-08-08
+- chore(automation): resilience improvements (frontend-sync factory auto-analyze, launcher status scan); cursor memory status persistence (a80f299238) 2025-08-08
+- Merge branch 'cursor/develop-new-monetization-strategies-for-autonomous-agents-7194' (a92a3a4acf) 2025-08-08
+- chore(automation): add Diverse Agent Matrix workflow and runner (0377e032c0) 2025-08-08
+- feat(revenue-ideas): add new analyzer/factory/orchestrator and daily workflow; keep existing monetization systems intact (e2af17f08b) 2025-08-08
+- chore(alignment): configure shared chat URL, add compliance-checker agent, wire into orchestrator, and restore crawler config (a79d3a3832) 2025-08-08
+- fix(main): correct JSON in package.json on main (cc09f1835c) 2025-08-08
+- chore(automation): add continuous improvement workflow and orchestrator; enhance CI build; CI-safe git-sync (237836cb57) 2025-08-08
+- Merge branch 'cursor/automate-continuous-project-optimization-and-diversity-631b' (cd25fb4a0c) 2025-08-08
+- chore(automation): add infinite improvement loop workflow (8fb86fdcc6) 2025-08-08
+- feat(automation): add monetization agents analyzer/factory/orchestrator + daily workflow to continuously generate monetization strategies and artifacts (b359e7ee5a) 2025-08-08
+- chore(automation): add infinite improvement loop workflow (17af91b4b1) 2025-08-08
+- chore(cursor): spawn generator process for periodic refresh to avoid require cache (1aceb8d7d9) 2025-08-08
+- feat(cursor): add auto-generated Cursor rules, memory system, and CI auto-update (94828b4f16) 2025-08-08
+- feat(automation): add autonomous auto-fix workflow and aggregate fix:all script (8597025044) 2025-08-08
+- chore(package): resolve merge conflict and include autonomous frontend-sync scripts (9c8f2c9351) 2025-08-08
+- feat(automation): add autonomous frontend sync analyzer, factory, orchestrator and npm scripts to continuously sync new pages and improvements (6baac14400) 2025-08-08
+- feat(automation): add innovation agents runner and cron wiring; tighten dashboard CORS (cb34e29b4e) 2025-08-08
+- feat(automation): add innovation orchestrator and AI trends researcher with cron; admin-only automation status page with Basic Auth; wire into launcher and scripts (513d2614c8) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T17:10:25.705Z (76ef849b7c) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T17:10:17.431Z (be6c7c0cca) 2025-08-08
+- Merge feature: AI Talent Marketplace [2025-08-08 17:08:41] (7be0bcd4a6) 2025-08-08
+- feat(talent): launch AI Talent Marketplace with listing and detail pages; add nav + homepage promo (62d7758861) 2025-08-08
+- chore: resolve package.json merge conflict; add venture scripts (d14cedd4fa) 2025-08-08
+- feat(venture): add autonomous venture factory pipeline (analyzer, services factory, ads generator, sales agents, orchestrator, cron) without touching existing factories (ff4bbe3d27) 2025-08-08
+- chore(policy): enforce file preservation policy with deletion guard and docs (fc393b83a9) 2025-08-08
+- merge: add monetization automation (616b2efbd3) 2025-08-08
+- fix(automation): escape strings in monetization factory to avoid nested template literal parse errors (4037144c1f) 2025-08-08
+- feat(automation): add monetization analyzer, factory, orchestrator, cron, and CI workflow for continuous revenue optimization (3105de6d07) 2025-08-08
+- fix(automation): escape strings in monetization factory to avoid nested template literal parse errors (6dfccd2a13) 2025-08-08
+- feat(marketing/instagram): add posting agent using Graph API and 6-hourly GitHub Actions workflow; docs update (8aa48515ce) 2025-08-08
+- feat(automation): add monetization analyzer, factory, orchestrator, cron, and CI workflow for continuous revenue optimization (75a319a324) 2025-08-08
+- merge: new automation factories (4ab9fbc3d1) 2025-08-08
+- feat(automation): add new intelligent factories (build-rescue, health-remediation, security-remediation, smoke-test, sitemap-maintenance) (ab26b5be74) 2025-08-08
+- chore(contact): update contact details and centralize in data/site-info.ts (73cf9ace38) 2025-08-08
+- feat(automation): add new intelligent factories (build-rescue, health-remediation, security-remediation, smoke-test, sitemap-maintenance) (9f1b45a080) 2025-08-08
+- feat(automation): add autonomous meta-factory, orchestrator, cron, and scheduled workflow to continuously generate new automation factories (1739abec0a) 2025-08-08
+- feat(frontend-sync): add analyzer, factory, orchestrator, cron, and workflow for continuous frontend sync (16309bc87a) 2025-08-08
+- Merge: add growth and content-expansion factories (39a8d4dfdc) 2025-08-08
+- feat(automation): add growth and content-expansion factories + orchestrator; generate agents from LinkedIn and variation reports (4a98b466ea) 2025-08-08
+- Merge branch 'cursor/automate-continuous-design-and-navigation-improvement-a59b' into main: add UI Evolution autonomous suite and schedules (3825ab9b57) 2025-08-08
+- feat(automation): add UI Evolution autonomous suite (analyzer, factory, orchestrator, cron, beautify, dashboards) and scheduled workflows for continuous high-tech design improvements (a1d1edbc75) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T16:53:36.913Z (54116f818d) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T16:53:21.958Z (db0ff1aa4c) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T16:53:07.236Z (bc14190c65) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T16:52:53.207Z (0d3d70796c) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T16:52:37.224Z (0bb3c12cca) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T16:52:17.081Z (4033048f9e) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T16:52:02.627Z (cfa3767b77) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T16:51:47.500Z (0e532e4663) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T16:51:32.587Z (78ee5dea88) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T16:51:17.808Z (268caa3099) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T16:51:02.030Z (d23846028e) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T16:50:46.784Z (3b43e652f3) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T16:50:36.947Z (1346f17fa4) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T16:50:27.118Z (56731f6fab) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T16:50:10.601Z (d402b8cea6) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T16:50:08.302Z (8f18d9430a) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T16:50:06.466Z (80ed9a3d69) 2025-08-08
+- chore(automation): add Auto Health Monitor (missing routes/assets scanner) + scripts; integrate with automation:all (13000a5ddc) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T16:39:46.786Z (7aadb08706) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T16:39:42.582Z (054930b19a) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T16:39:32.523Z (d62b95f9e3) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T16:39:22.577Z (5ba5b25e80) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T16:39:14.280Z (6425cff931) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T16:39:12.275Z (3051592750) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T16:39:01.974Z (deb24d6ebc) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T16:38:52.654Z (5816854b51) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T16:38:43.554Z (655d8fb7ab) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T16:38:41.228Z (3d60918543) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T16:38:31.982Z (9ba394f227) 2025-08-08
+- Update design and responsive analysis reports with latest timestamp (e5b028179c) 2025-08-08
+- chore(seo): set sitemap base to ziontechgroup.com and add robots.txt on main (f1e789d84a) 2025-08-08
+- feat(ui): improve global layout (skip link, nav/footer), add SEO/meta in _document with canonical https://ziontechgroup.com (58b2564a2b) 2025-08-08
+- chore: persist reports and agents; remove stray core file (d0fad3771f) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T16:32:52.224Z (b2223700d6) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T16:32:46.972Z (6d40060cfa) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T16:32:37.038Z (f333e1a4e4) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T16:32:27.463Z (ef47c895f5) 2025-08-08
+- chore: persist generated agents/reports and UI tweaks (e961551305) 2025-08-08
+- feat(site): apply automated design/frontend changes and update reports (f285eab796) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T16:31:06.993Z (792c5a430f) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T16:31:01.888Z (5287d06c93) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T16:30:52.275Z (e624301a0d) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T16:30:32.071Z (3c8b8adfe0) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T16:30:27.337Z (949e098c03) 2025-08-08
+- chore(automation): run improvement orchestrators and generate auto content pages (43d8dc1313) 2025-08-08
+- Update design analysis and add design fix agents for auto-update pages (1e86a8d9b3) 2025-08-08
+- Checkpoint before follow-up message (92aca3e7a4) 2025-08-08
+- Update TypeScript build info and project configuration (62c96b6f4c) 2025-08-08
+- feat(automation): add daily marketing and weekly performance audit workflows; implement performance audit script; update summary and package scripts (2c3bbfa84f) 2025-08-08
+- feat(automation): add dependency maintenance orchestrator + cron + CI workflow (b1c254df30) 2025-08-08
+- fix(autogen): correct output path resolution for generated content (f80afc9691) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T16:09:16.670Z (0e1b9f9ab9) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T16:09:11.288Z (bd6b6b5353) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T16:09:06.510Z (ef7c74cfb6) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T16:09:01.395Z (f87913314e) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T16:08:56.438Z (95f1f349e7) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T16:08:51.738Z (85bdd1e759) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T16:08:46.168Z (d9f3b801cc) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T16:08:41.643Z (2cdb20c650) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T16:08:36.647Z (5c22ef1352) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T16:08:31.958Z (4dfa637f30) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T16:08:21.728Z (7ee2be26b4) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T16:08:11.607Z (fe441ca48c) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T16:08:07.185Z (3521e417fd) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T16:07:46.518Z (e6059902c7) 2025-08-08
+- Update file paths from local to workspace in analysis reports (b643967d09) 2025-08-08
+- Merge branch 'cursor/automate-app-with-new-autonomous-process-16da' (32e906d392) 2025-08-08
+- feat(automation): add autonomous-guardian supervisor and npm scripts; exclude from auto-discovery (6a7e0d983f) 2025-08-08
+- feat(automation): add autonomous content autogen orchestrator and CLI; integrate with launcher and npm scripts (a23acce849) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T16:05:55.397Z (bf2970720a) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T16:05:26.303Z (c82707250c) 2025-08-08
+- chore(automation): sync changes from automation at 2025-08-08T16:04:55.060Z (730f061d3f) 2025-08-08

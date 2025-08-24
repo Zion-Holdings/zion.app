@@ -1,32 +1,37 @@
-name: Changelog Generator
+name: Changelog AutoCurator
 
 on:
+  push:
+    branches: [ main ]
   schedule:
-    - cron: '33 3 * * *'
+    - cron: '*/30 * * * *'
   workflow_dispatch:
 
 permissions:
   contents: write
-  pull-requests: write
 
 jobs:
   changelog:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Generate changelog
-        run: node automation/generate-changelog.cjs
-      - name: Create Pull Request
-        id: cpr
-        uses: peter-evans/create-pull-request@v6
+      - uses: actions/setup-node@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: 'chore(docs): update CHANGELOG.md'
-          title: 'chore(docs): update CHANGELOG.md'
-          body: 'Automated daily changelog update.'
-          branch: automation/changelog
-          delete-branch: true
-          labels: automation
+          node-version: 20
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - name: Generate changelog
+        run: node automation/changelog-autocurator.cjs | cat
+      - name: Commit and push changes
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "docs(changelog): update CHANGELOG.md [skip ci]"
+            git push origin HEAD:main
+          else
+            echo "No changes to push"
+          fi
