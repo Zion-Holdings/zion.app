@@ -77,6 +77,11 @@
     "zion.app/recovered-content/**",
     "contracts/**",
     "cypress/**",
+<<<<<<< HEAD
+    "data/2025-cutting-edge-enterprise-solutions.ts",
+    "data/2025-cutting-edge-it-infrastructure-innovations.ts"
+=======
     "cypress.config.ts"
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-d4f3
   ]
 }

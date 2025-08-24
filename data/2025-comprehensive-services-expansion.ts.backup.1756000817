@@ -265,7 +265,11 @@ export const comprehensiveServicesExpansion: ComprehensiveService[] = [
     competitors: ['AWS IoT Greengrass, Azure IoT Edge, Google Edge TPU'],
     marketSize: '$12B edge AI',
     growthRate: '38% YoY',
+<<<<<<< HEAD
+    variant: 'edge-computing',
+=======
     variant: 'edge-computing-enterprise',
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-d4f3
     contactInfo: contact,
     realImplementation: true,
     implementationDetails: 'Edge deployment framework with model optimization and device management capabilities.',

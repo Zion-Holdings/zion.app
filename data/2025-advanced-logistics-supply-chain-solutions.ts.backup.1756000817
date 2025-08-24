@@ -283,7 +283,11 @@ export const advancedLogisticsSupplyChainSolutions2025: AdvancedLogisticsSupplyC
     competitors: ['Locus Robotics, 6 River Systems, Fetch Robotics, RightHand Robotics, AutoStore'],
     marketSize: '$28B warehouse automation market',
     growthRate: '38% annual growth',
+<<<<<<< HEAD
+    variant: 'ai-autonomous',
+=======
     variant: 'content-automation-enterprise',
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-d4f3
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',

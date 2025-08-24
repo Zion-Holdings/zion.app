@@ -12,16 +12,22 @@ const baseConfig = {
   poweredByHeader: false,
   trailingSlash: false,
   reactStrictMode: true,
+<<<<<<< HEAD
+=======
 
   // Optimized for fast builds (hanging issue SOLVED)
   // outputFileTracing: false, // Intentionally disabled via env vars in build scripts and netlify.toml to prevent hanging.
   productionBrowserSourceMaps: false, // Disable for faster builds
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-d4f3
   
   // Environment configuration
   env: {
     NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000',
+<<<<<<< HEAD
+=======
     NEXT_PUBLIC_SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL || '',
     NEXT_PUBLIC_SUPABASE_ANON_KEY: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '',
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-d4f3
   },
 
   modularizeImports: {
@@ -29,10 +35,15 @@ const baseConfig = {
       transform: 'lucide-react/dist/esm/icons/{{kebabCase member}}',
       skipDefaultConversion: true,
     },
+<<<<<<< HEAD
+  },
+
+=======
     '@radix-ui/react-icons': {
       transform: '@radix-ui/react-icons/dist/{{member}}',
     },
   },
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-d4f3
   experimental: {
     optimizePackageImports: [
       'lucide-react',
@@ -50,6 +61,17 @@ const baseConfig = {
     removeConsole: process.env.NODE_ENV === "production",
   },
 
+<<<<<<< HEAD
+  webpack: (config, { dev, isServer }) => {
+    // Exclude contracts directory from build
+    config.watchOptions = {
+      ignored: [
+        /node_modules/,
+        /contracts/,
+        /\.git/,
+        /\.next/
+      ]
+=======
   transpilePackages: [
     'react-markdown',
     'date-fns',
@@ -209,6 +231,7 @@ const baseConfig = {
       'lodash/isArray': 'lodash-es/isArray',
       'lodash/isObject': 'lodash-es/isObject',
       'lodash': 'lodash-es',
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-d4f3
     };
 
     // Handle ESM modules properly
