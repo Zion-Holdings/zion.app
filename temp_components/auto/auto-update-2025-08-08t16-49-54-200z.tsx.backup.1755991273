@@ -1,5 +1,0 @@
-<<<<<<< HEAD
-export default function AutoUpdate(){return <div className="prose dark:prose-invert"><h1>Auto Update</h1><p>2025-08-08T16:49:54.200Z</p></div>}
-=======
-export default function Page() { return <div className="p-8">Auto Update</div>; }
->>>>>>> origin/cursor/build-zion-ipo-readiness-portal-e565

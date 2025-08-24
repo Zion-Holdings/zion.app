@@ -1,14 +1,3 @@
-<<<<<<< HEAD:src_backup/context/ThemeContext.tsx
-import React from 'react';
-export function ThemeContext() {
-  return (
-    <div>
-      <h1>Component</h1>
-      <p>Component placeholder</p>
-    </div>
-  );
-}
-=======
 import React, {
   createContext,
   useContext,
@@ -72,4 +61,3 @@ export const useTheme = (): ThemeContextState => {
   }
   return context;
 };
->>>>>>> origin/by9dba-codex/implement-light/dark-theme-with-persistence:src/context/ThemeContext.tsx

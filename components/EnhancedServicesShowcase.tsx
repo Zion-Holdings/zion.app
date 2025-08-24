@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Star, Clock, Users, TrendingUp, CheckCircle, ExternalLink, 
-  ChevronRight, Shield, Zap, Globe, Rocket, Brain, Atom
+  ChevronRight, Shield, Zap, Globe
 } from 'lucide-react';
 import { enhancedMicroSaasServices } from '../data/enhanced-micro-saas-services-2025';
 

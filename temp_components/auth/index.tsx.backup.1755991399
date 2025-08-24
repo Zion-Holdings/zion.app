@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-export default function AuthIndex() { return null; }
-=======
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
@@ -105,145 +102,6 @@ const BlogIndex: NextPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50">
       <Head>
-<<<<<<< HEAD:pages/blog/index.tsx
-        <title>Blog - Zion Tech Group | Technology Insights & Industry Trends</title>
-        <meta name="description" content="Stay updated with the latest technology insights, industry trends, and thought leadership content from Zion Tech Group experts." />
-        <meta name="keywords" content="technology blog, AI insights, cloud computing, software development, cybersecurity, digital transformation" />
-      </Head>
-      
-      <main className="container mx-auto px-4 py-16">
-        {/* Hero Section */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Technology Insights & Industry Trends
-          </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Stay ahead of the curve with expert insights, best practices, and thought leadership 
-            content from our technology experts and industry leaders.
-          </p>
-          <div className="mt-8">
-            <Link href="/contact" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors inline-block">
-              Subscribe to Updates
-            </Link>
-          </div>
-        </div>
-
-        {/* Featured Posts */}
-        <div className="mb-20">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8">Featured Articles</h2>
-          <div className="grid lg:grid-cols-3 gap-8">
-            {featuredPosts.map((post, index) => (
-              <article key={index} className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                <div className="h-48 bg-gradient-to-br from-blue-400 to-purple-600 flex items-center justify-center">
-                  <span className="text-4xl text-white">📚</span>
-                </div>
-                <div className="p-6">
-                  <div className="flex items-center gap-2 mb-3">
-                    <span className="inline-block bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">
-                      {post.category}
-                    </span>
-                    <span className="text-sm text-gray-500">{post.readTime}</span>
-                  </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3 line-clamp-2">
-                    {post.title}
-                  </h3>
-                  <p className="text-gray-600 mb-4 line-clamp-3">{post.excerpt}</p>
-                  <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
-                    <span>By {post.author}</span>
-                    <span>{post.date}</span>
-                  </div>
-                  <Link href={post.href} className="text-blue-600 hover:text-blue-700 font-medium">
-                    Read More →
-                  </Link>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-
-        {/* Categories */}
-        <div className="mb-16">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">Browse by Category</h2>
-          <div className="flex flex-wrap gap-3">
-            {categories.map((category, index) => (
-              <Link 
-                key={index} 
-                href={`/blog/category/${category.toLowerCase().replace(/\s+/g, '-')}`}
-                className="bg-gray-100 hover:bg-blue-100 text-gray-700 hover:text-blue-700 px-4 py-2 rounded-full text-sm font-medium transition-colors"
-              >
-                {category}
-              </Link>
-            ))}
-          </div>
-        </div>
-
-        {/* Recent Posts */}
-        <div className="mb-16">
-          <h2 className="text-2xl font-bold text-gray-900 mb-8">Recent Articles</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {recentPosts.map((post, index) => (
-              <article key={index} className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="inline-block bg-gray-100 text-gray-700 text-xs font-medium px-2.5 py-0.5 rounded-full">
-                    {post.category}
-                  </span>
-                  <span className="text-sm text-gray-500">{post.readTime}</span>
-                </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-3 line-clamp-2">
-                  {post.title}
-                </h3>
-                <p className="text-gray-600 mb-4 line-clamp-3 text-sm">{post.excerpt}</p>
-                <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
-                  <span>{post.date}</span>
-                </div>
-                <Link href={post.href} className="text-blue-600 hover:text-blue-700 font-medium text-sm">
-                  Read More →
-                </Link>
-              </article>
-            ))}
-          </div>
-        </div>
-
-        {/* Newsletter Signup */}
-        <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-12 text-center text-white">
-          <h2 className="text-3xl font-bold mb-4">Stay Updated with Latest Insights</h2>
-          <p className="text-xl mb-8 opacity-90">
-            Get the latest technology insights, industry trends, and expert advice delivered to your inbox.
-          </p>
-          <div className="max-w-md mx-auto">
-            <div className="flex gap-3">
-              <input
-                type="email"
-                placeholder="Enter your email address"
-                className="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-white"
-              />
-              <button className="bg-white text-blue-600 hover:bg-gray-100 px-6 py-3 rounded-lg font-semibold transition-colors">
-                Subscribe
-              </button>
-            </div>
-            <p className="text-sm opacity-80 mt-3">
-              No spam, unsubscribe at any time. We respect your privacy.
-            </p>
-          </div>
-        </div>
-
-        {/* Call to Action */}
-        <div className="mt-16 text-center">
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">Need Expert Technology Advice?</h3>
-          <p className="text-gray-600 mb-6">
-            Our team of technology experts is here to help you navigate complex technical challenges 
-            and implement innovative solutions for your business.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
-              Schedule Consultation
-            </Link>
-            <a href="tel:+13024640950" className="bg-transparent border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-3 rounded-lg font-semibold transition-colors">
-              Call +1 302 464 0950
-            </a>
-          </div>
-        </div>
-=======
         <title>Index - Zion Tech Solutions</title>
         <meta name="description" content="Index page" />
       </Head>
@@ -251,15 +109,9 @@ const BlogIndex: NextPage = () => {
       <main>
         <h1>Index</h1>
         <p>This page is under construction.</p>
->>>>>>> 84d173ee8a40495698da2560d91f786b60cbd3c9:temp_components/auth/index.tsx.backup.1755991399
       </main>
     </div>
   );
 };
 
-<<<<<<< HEAD:pages/blog/index.tsx
-export default BlogIndex;
-=======
 export default Index;
->>>>>>> origin/cursor/deploy-zion-token-economy-simulator-07d9
->>>>>>> 84d173ee8a40495698da2560d91f786b60cbd3c9:temp_components/auth/index.tsx.backup.1755991399

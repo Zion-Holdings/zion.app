@@ -1,12 +1,3 @@
-<<<<<<< HEAD:src_backup/components/header/AvatarMenu.tsx
-import React from 'react';
-export function AvatarMenu() {
-  return (
-    <div>
-      <h1>Component</h1>
-      <p>Component placeholder</p>
-    </div>
-=======
 import React, { useRef } from "react";
 import { Popover } from "@headlessui/react";
 import { Link } from "react-router-dom";
@@ -84,6 +75,5 @@ export function AvatarMenu({ avatarUrl, onLogout }: AvatarMenuProps) {
         </>
       )}
     </Popover>
->>>>>>> origin/codex/activate-avatar-menu-with-keyboard-navigation:src/components/header/AvatarMenu.tsx
   );
 }

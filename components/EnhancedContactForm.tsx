@@ -111,7 +111,7 @@ const EnhancedContactForm: React.FC = () => {
         </div>
         <h3 className="text-2xl font-bold text-white mb-4">Thank You!</h3>
         <p className="text-white/70 mb-8 max-w-md mx-auto">
-          Your message has been sent successfully.             We&apos;ll get back to you within 24 hours.
+          Your message has been sent successfully. We&apos;ll get back to you within 24 hours.
         </p>
         <button
           onClick={() => setIsSubmitted(false)}
@@ -144,7 +144,7 @@ const EnhancedContactForm: React.FC = () => {
               <div>
                 <h4 className="text-white font-semibold mb-1">Email Us</h4>
                 <p className="text-white/70">contact@ziontechgroup.com</p>
-                <p className="text-white/50 text-sm">            We&apos;ll respond within 24 hours</p>
+                <p className="text-white/50 text-sm">We&apos;ll respond within 24 hours</p>
               </div>
             </div>
 

@@ -1,7 +1,0 @@
-<<<<<<< HEAD
-export default function ProductsIndex() {
-  return <div>Products</div>;
-}
-=======
-export default function Page(){return null}
->>>>>>> origin/cursor/enable-vendor-agency-marketplace-operations-5a51

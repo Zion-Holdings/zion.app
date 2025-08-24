@@ -1,339 +1,270 @@
 import React from 'react';
 import Head from 'next/head';
 import { motion } from 'framer-motion';
-import Link from 'next/link';
-import { 
-  Brain, Shield, Rocket, Cpu, Database, Atom, 
-  Users, Award, Globe, Target, Star, Zap,
-  CheckCircle, TrendingUp, Lightbulb, Heart
-} from 'lucide-react';
+import { Users, Award, Globe, Zap, Shield, Target } from 'lucide-react';
 import EnhancedNavigation from '../components/EnhancedNavigation';
 import EnhancedFooter from '../components/EnhancedFooter';
 
 export default function AboutPage() {
   const values = [
     {
-      icon: Brain,
+      icon: Zap,
       title: "Innovation First",
-      description: "We push the boundaries of what's possible, constantly exploring new frontiers in AI and quantum technology.",
-      color: "from-purple-500 to-pink-500"
+      description: "We push the boundaries of what's possible, constantly exploring new technologies and approaches."
     },
     {
       icon: Shield,
-      title: "Trust & Security",
-      description: "Your data and systems are protected with enterprise-grade security and quantum-resistant encryption.",
-      color: "from-red-500 to-orange-500"
+      title: "Security & Trust",
+      description: "Enterprise-grade security is built into everything we do, ensuring your data and systems are protected."
+    },
+    {
+      icon: Target,
+      title: "Results Driven",
+      description: "We measure success by the tangible impact our solutions have on your business outcomes."
     },
     {
       icon: Users,
-      title: "Human-Centric",
-      description: "Technology serves humanity. We build solutions that enhance human capabilities and improve lives.",
-      color: "from-blue-500 to-cyan-500"
-    },
-    {
-      icon: Globe,
-      title: "Global Impact",
-      description: "We're committed to solving global challenges through sustainable, scalable technology solutions.",
-      color: "from-green-500 to-teal-500"
-    }
-  ];
-
-  const milestones = [
-    { year: "2020", title: "Company Founded", description: "Zion Tech Group established with a vision to revolutionize technology" },
-    { year: "2021", title: "First AI Platform", description: "Launched our flagship AI business intelligence platform" },
-    { year: "2022", title: "Quantum Breakthrough", description: "Achieved breakthrough in quantum cybersecurity algorithms" },
-    { year: "2023", title: "Global Expansion", description: "Expanded to serve clients across 25+ countries" },
-    { year: "2024", title: "Space Tech Launch", description: "Entered space technology sector with AI-powered solutions" },
-    { year: "2025", title: "Future Forward", description: "Leading the next generation of autonomous AI systems" }
-  ];
-
-  const team = [
-    {
-      name: "Dr. Kleber Santos",
-      role: "Founder & CEO",
-      bio: "Visionary leader with 15+ years in AI and quantum computing. Former research scientist at leading tech companies.",
-      image: "/team/kleber-santos.jpg"
-    },
-    {
-      name: "Dr. Sarah Chen",
-      role: "Chief Technology Officer",
-      bio: "Expert in neural networks and autonomous systems. PhD in Computer Science from MIT with focus on AI consciousness.",
-      image: "/team/sarah-chen.jpg"
-    },
-    {
-      name: "Marcus Rodriguez",
-      role: "Head of Quantum Security",
-      bio: "Leading researcher in quantum-resistant cryptography and post-quantum security protocols.",
-      image: "/team/marcus-rodriguez.jpg"
-    },
-    {
-      name: "Dr. Elena Petrova",
-      role: "Space Technology Director",
-      bio: "Former NASA scientist specializing in AI-powered space resource optimization and mission planning.",
-      image: "/team/elena-petrova.jpg"
+      title: "Client Partnership",
+      description: "We work as an extension of your team, deeply understanding your challenges and goals."
     }
   ];
 
   const stats = [
-    { number: "500+", label: "Projects Delivered", icon: CheckCircle },
-    { number: "50+", label: "Enterprise Clients", icon: Users },
-    { number: "99.9%", label: "Uptime Guarantee", icon: Shield },
-    { number: "25+", label: "Countries Served", icon: Globe },
-    { number: "24/7", label: "Support Available", icon: Zap },
-    { number: "15+", label: "Years Experience", icon: Award }
+    { number: "500+", label: "Projects Delivered" },
+    { number: "50+", label: "Enterprise Clients" },
+    { number: "99.9%", label: "Uptime Guarantee" },
+    { number: "24/7", label: "Support Available" }
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white">
+    <>
       <Head>
-        <title>About Us — Zion Tech Group | Leading AI & Quantum Technology Company</title>
-        <meta name="description" content="Learn about Zion Tech Group's mission to revolutionize technology through AI, quantum computing, and autonomous innovation. Meet our team of experts." />
-        <meta property="og:title" content="About Zion Tech Group" />
-        <meta property="og:description" content="Leading AI & quantum technology company transforming businesses worldwide." />
-        <meta name="keywords" content="about us, team, company, AI company, quantum technology, innovation" />
-        <link rel="canonical" href="https://ziontechgroup.com/about" />
+        <title>About Us - Zion Tech Group</title>
+        <meta name="description" content="Learn about Zion Tech Group's mission to transform businesses through cutting-edge technology solutions and innovation." />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
       <EnhancedNavigation />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-6">
-        <div className="max-w-6xl mx-auto text-center">
+      <section className="relative pt-32 pb-20 px-6 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
+        <div className="max-w-7xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-white via-blue-100 to-cyan-100 bg-clip-text text-transparent mb-6">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent">
               About Zion Tech Group
             </h1>
-            <p className="text-xl md:text-2xl text-white/80 max-w-4xl mx-auto leading-relaxed">
-              Pioneering the future of technology through revolutionary AI, quantum computing, 
-              and autonomous innovation that transforms businesses and empowers humanity.
+            <p className="text-xl text-white/80 max-w-3xl mx-auto">
+              We&apos;re a team of innovators, engineers, and visionaries dedicated to transforming businesses through cutting-edge technology solutions.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Mission & Vision */}
-      <section className="py-20 px-6">
+      {/* Mission Section */}
+      <section className="py-20 px-6 bg-slate-800">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
             >
-              <h2 className="text-4xl font-bold text-white mb-8">
-                Our Mission
-              </h2>
-              <p className="text-lg text-slate-300 leading-relaxed mb-6">
-                To democratize cutting-edge technology and make AI, quantum computing, and autonomous 
-                systems accessible to businesses of all sizes, enabling them to thrive in the digital age.
+              <h2 className="text-4xl font-bold text-white mb-6">Our Mission</h2>
+              <p className="text-lg text-white/70 mb-6 leading-relaxed">
+                At Zion Tech Group, we believe that technology should be a force for good, driving innovation and creating value for businesses and society. Our mission is to democratize access to cutting-edge technology solutions, making them accessible to organizations of all sizes.
               </p>
-              <p className="text-lg text-slate-300 leading-relaxed mb-8">
-                We believe that technology should serve humanity, not replace it. Our solutions enhance 
-                human capabilities, automate complex processes, and unlock new possibilities for innovation.
+              <p className="text-lg text-white/70 leading-relaxed">
+                We&apos;re committed to building solutions that not only solve today&apos;s challenges but also anticipate tomorrow&apos;s opportunities. Through our expertise in AI, quantum computing, cybersecurity, and digital transformation, we help businesses stay ahead of the curve and achieve sustainable growth.
               </p>
-              
-              <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center">
-                  <Target className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-white font-semibold text-lg">Vision 2030</h3>
-                  <p className="text-slate-400">Leading the autonomous AI revolution</p>
-                </div>
-              </div>
             </motion.div>
 
             <motion.div
               initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="relative"
+              className="bg-gradient-to-br from-white/5 to-white/10 rounded-2xl border border-white/10 p-8 backdrop-blur-xl"
             >
-              <div className="bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-3xl p-8 border border-blue-500/30">
-                <div className="grid grid-cols-2 gap-6">
-                  {stats.slice(0, 4).map((stat, index) => (
-                    <div key={stat.label} className="text-center">
-                      <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                        <stat.icon className="w-8 h-8 text-white" />
-                      </div>
-                      <div className="text-2xl font-bold text-white mb-2">{stat.number}</div>
-                      <div className="text-slate-300 text-sm">{stat.label}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
+              <h3 className="text-2xl font-bold text-white mb-4">Why We Exist</h3>
+              <ul className="space-y-3 text-white/70">
+                <li className="flex items-start gap-3">
+                  <span className="text-cyan-400 mt-1">•</span>
+                  <span>To bridge the gap between cutting-edge research and practical business applications</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-cyan-400 mt-1">•</span>
+                  <span>To make enterprise-grade technology accessible to growing businesses</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-cyan-400 mt-1">•</span>
+                  <span>To accelerate digital transformation and innovation across industries</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-cyan-400 mt-1">•</span>
+                  <span>To build a more secure, efficient, and intelligent digital future</span>
+                </li>
+              </ul>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Company Values */}
-      <section className="py-20 px-6 bg-slate-900/50">
-        <div className="max-w-6xl mx-auto">
+      {/* Values Section */}
+      <section className="py-20 px-6 bg-gradient-to-b from-slate-800 to-slate-900">
+        <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold text-white mb-6">Our Core Values</h2>
-            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              The principles that guide everything we do, from product development to client relationships.
+            <p className="text-xl text-white/70 max-w-3xl mx-auto">
+              These principles guide everything we do, from how we develop solutions to how we work with our clients.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
               <motion.div
                 key={value.title}
                 initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-slate-800/50 backdrop-blur-sm rounded-2xl border border-slate-700/50 p-8 hover:border-slate-600/50 transition-all duration-300"
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="text-center p-6 rounded-2xl bg-gradient-to-br from-white/5 to-white/10 border border-white/10 backdrop-blur-xl hover:border-cyan-400/30 transition-all duration-300"
               >
-                <div className={`w-16 h-16 bg-gradient-to-br ${value.color} rounded-2xl flex items-center justify-center mb-6`}>
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-600 p-4 mx-auto mb-6 flex items-center justify-center">
                   <value.icon className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-4">{value.title}</h3>
-                <p className="text-slate-300 leading-relaxed">{value.description}</p>
+                <h3 className="text-xl font-semibold text-white mb-3">{value.title}</h3>
+                <p className="text-white/70">{value.description}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Company Timeline */}
-      <section className="py-20 px-6">
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold text-white mb-6">Our Journey</h2>
-            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              From startup to industry leader, here&apos;s how we&apos;ve grown and evolved over the years.
-            </p>
-          </motion.div>
-
-          <div className="relative">
-            {/* Timeline Line */}
-            <div className="absolute left-1/2 transform -translate-x-px w-0.5 h-full bg-gradient-to-b from-blue-500 to-cyan-500"></div>
-            
-            <div className="space-y-12">
-              {milestones.map((milestone, index) => (
-                <motion.div
-                  key={milestone.year}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className={`relative flex items-center ${
-                    index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'
-                  }`}
-                >
-                  {/* Timeline Dot */}
-                  <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full border-4 border-slate-950"></div>
-                  
-                  {/* Content */}
-                  <div className={`w-5/12 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8 text-left'}`}>
-                    <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl border border-slate-700/50 p-6">
-                      <div className="text-2xl font-bold text-blue-400 mb-2">{milestone.year}</div>
-                      <h3 className="text-xl font-bold text-white mb-3">{milestone.title}</h3>
-                      <p className="text-slate-300">{milestone.description}</p>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
+      {/* Stats Section */}
+      <section className="py-20 px-6 bg-slate-900">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {stats.map((stat, index) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="text-center"
+              >
+                <div className="text-4xl md:text-5xl font-bold text-cyan-400 mb-2">{stat.number}</div>
+                <div className="text-white/70">{stat.label}</div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Team Section */}
-      <section className="py-20 px-6 bg-slate-900/50">
-        <div className="max-w-6xl mx-auto">
+      <section className="py-20 px-6 bg-slate-800">
+        <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-white mb-6">Meet Our Team</h2>
-            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              World-class experts in AI, quantum computing, and technology innovation, 
-              united by a shared vision of the future.
+            <h2 className="text-4xl font-bold text-white mb-6">Our Leadership Team</h2>
+            <p className="text-xl text-white/70 max-w-3xl mx-auto">
+              Meet the visionaries and experts who are driving innovation and shaping the future of technology.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {team.map((member, index) => (
-              <motion.div
-                key={member.name}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="text-center group"
-              >
-                <div className="w-32 h-32 bg-gradient-to-br from-slate-700 to-slate-800 rounded-full mx-auto mb-6 flex items-center justify-center border-4 border-slate-600 group-hover:border-blue-500 transition-all duration-300">
-                  <Users className="w-16 h-16 text-slate-400" />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-2">{member.name}</h3>
-                <p className="text-blue-400 font-medium mb-4">{member.role}</p>
-                <p className="text-slate-300 text-sm leading-relaxed">{member.bio}</p>
-              </motion.div>
-            ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="bg-gradient-to-br from-white/5 to-white/10 rounded-2xl border border-white/10 p-6 backdrop-blur-xl text-center"
+            >
+              <div className="w-24 h-24 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 mx-auto mb-4 flex items-center justify-center">
+                <Users className="w-12 h-12 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-2">Kleber Santos</h3>
+              <p className="text-cyan-400 mb-3">Founder & CEO</p>
+              <p className="text-white/70 text-sm">
+                Visionary leader with over 15 years of experience in technology innovation and business transformation.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="bg-gradient-to-br from-white/5 to-white/10 rounded-2xl border border-white/10 p-6 backdrop-blur-xl text-center"
+            >
+              <div className="w-24 h-24 rounded-full bg-gradient-to-br from-purple-500 to-pink-600 mx-auto mb-4 flex items-center justify-center">
+                <Globe className="w-12 h-12 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-2">Sarah Chen</h3>
+              <p className="text-cyan-400 mb-3">CTO</p>
+              <p className="text-white/70 text-sm">
+                Technology expert specializing in AI, quantum computing, and enterprise architecture.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="bg-gradient-to-br from-white/5 to-white/10 rounded-2xl border border-white/10 p-6 backdrop-blur-xl text-center"
+            >
+              <div className="w-24 h-24 rounded-full bg-gradient-to-br from-green-500 to-teal-600 mx-auto mb-4 flex items-center justify-center">
+                <Award className="w-12 h-12 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-2">Michael Rodriguez</h3>
+              <p className="text-cyan-400 mb-3">Head of Security</p>
+              <p className="text-white/70 text-sm">
+                Cybersecurity expert with deep knowledge of quantum-resistant encryption and threat detection.
+              </p>
+            </motion.div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-6">
+      <section className="py-20 px-6 bg-gradient-to-r from-cyan-500/10 to-blue-500/10">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold text-white mb-6">
-              Ready to Transform Your Business?
-            </h2>
-            <p className="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
-              Join hundreds of companies already leveraging our cutting-edge technology 
-              to drive innovation and growth.
+            <h2 className="text-4xl font-bold text-white mb-6">Ready to Work With Us?</h2>
+            <p className="text-xl text-white/70 mb-8 max-w-2xl mx-auto">
+              Join hundreds of forward-thinking companies already leveraging our expertise to transform their businesses.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
+              <a
                 href="/contact"
-                className="px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105"
+                className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 rounded-xl text-white font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-2xl"
               >
-                Get Started Today
-              </Link>
-              <Link
-                href="/case-studies"
-                className="px-8 py-4 border border-white/20 hover:border-white/40 rounded-full font-semibold text-lg transition-all duration-300 backdrop-blur-sm bg-white/5 hover:bg-white/10"
+                Get Started
+              </a>
+              <a
+                href="#services"
+                className="px-8 py-4 border-2 border-white/20 hover:border-white/40 rounded-xl text-white font-semibold text-lg transition-all duration-300 backdrop-blur-sm"
               >
-                View Case Studies
-              </Link>
+                Explore Services
+              </a>
             </div>
           </motion.div>
         </div>
       </section>
 
       <EnhancedFooter />
-    </div>
+    </>
   );
 }
