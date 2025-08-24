@@ -1,5 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import Link from 'next/link';
 import { useState } from 'react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
@@ -192,6 +193,7 @@ const Contact: NextPage = () => {
           <div className="bg-white rounded-2xl shadow-lg p-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">Start Your Project</h2>
             
+<<<<<<< HEAD
             {submitSuccess ? (
               <div className="bg-green-50 border border-green-200 rounded-lg p-6 text-center">
                 <div className="text-green-600 text-5xl mb-4">✅</div>
@@ -199,6 +201,22 @@ const Contact: NextPage = () => {
                 <p className="text-green-700">
                   Your message has been sent successfully. We&apos;ll get back to you within 2 hours.
                 </p>
+=======
+            <div className="space-y-6">
+              <div className="flex items-start space-x-4">
+                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-gray-900">Phone</h3>
+                  <a href="/tel:+13024640950" className="text-blue-600 hover:text-blue-700 text-lg">
+                    +1 302 464 0950
+                  </a>
+                  <p className="text-gray-600 text-sm">Available Monday - Friday, 9 AM - 6 PM EST</p>
+                </div>
+>>>>>>> 6d7be8fce1d5e66d749ea8dd439e0663bfd83322
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -477,6 +495,7 @@ const Contact: NextPage = () => {
                 href="tel:+13024640950"
                 className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-300"
               >
+<<<<<<< HEAD
                 Call Now: +1 302 464 0950
               </a>
               <a
@@ -488,6 +507,62 @@ const Contact: NextPage = () => {
             </div>
           </div>
         </section>
+=======
+                Send Message
+              </button>
+            </form>
+
+            <div className="mt-6 text-center">
+              <p className="text-sm text-gray-600">
+                By submitting this form, you agree to our{' '}
+                <Link href="/privacy" className="text-blue-600 hover:text-blue-700">Privacy Policy</Link>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Additional Contact Options */}
+        <div className="grid md:grid-cols-3 gap-8 mb-16">
+          <div className="text-center p-6 bg-white rounded-xl shadow-lg">
+            <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">Free Consultation</h3>
+            <p className="text-gray-600 mb-4">Get a free 30-minute consultation to discuss your project requirements</p>
+            <a href="/tel:+13024640950" className="text-blue-600 hover:text-blue-700 font-medium">
+              Schedule Now →
+            </a>
+          </div>
+
+          <div className="text-center p-6 bg-white rounded-xl shadow-lg">
+            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+              </svg>
+            </div>
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">Project Quote</h3>
+            <p className="text-gray-600 mb-4">Receive a detailed project quote within 24 hours</p>
+            <a href="mailto:kleber@ziontechgroup.com" className="text-blue-600 hover:text-blue-700 font-medium">
+              Get Quote →
+            </a>
+          </div>
+
+          <div className="text-center p-6 bg-white rounded-xl shadow-lg">
+            <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg className="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">Emergency Support</h3>
+            <p className="text-gray-600 mb-4">24/7 emergency support for enterprise clients</p>
+            <a href="/tel:+13024640950" className="text-blue-600 hover:text-blue-700 font-medium">
+              Call Now →
+            </a>
+          </div>
+        </div>
+>>>>>>> 6d7be8fce1d5e66d749ea8dd439e0663bfd83322
       </main>
 
       <Footer />

@@ -55,7 +55,7 @@
       ]
     },
     /* Bundler mode */
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "strict": false,
@@ -75,7 +75,8 @@
     ],
     "jsx": "preserve",
     "noEmit": true,
-    "isolatedModules": true
+    "isolatedModules": true,
+    "forceConsistentCasingInFileNames": true
   },
   "include": [
     "next-env.d.ts",
@@ -85,9 +86,17 @@
   "exclude": [
     "node_modules",
     "zion.app/recovered-content/**",
+<<<<<<< HEAD
     "**/*.disabled/**",
     "__tests__.disabled/**",
     "plugins.disabled/**",
     "test.disabled/**"
+=======
+    "services.disabled.temp/**",
+    "data.temp/**",
+    "src_backup/**",
+    "**/*.disabled",
+    "**/*.disabled/**"
+>>>>>>> 6d7be8fce1d5e66d749ea8dd439e0663bfd83322
   ]
 }
