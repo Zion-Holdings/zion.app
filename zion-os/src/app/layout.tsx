@@ -3,144 +3,150 @@ import type { ReactNode } from "react";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Zion Tech Group - AI & Quantum Computing Solutions",
-  description: "Pioneering the future of AI-powered autonomous systems, quantum computing, and next-generation technology solutions. Transform your business with cutting-edge innovation.",
-  keywords: "AI, Machine Learning, Quantum Computing, Cybersecurity, Enterprise Solutions, Technology Consulting",
+  title: "Zion Tech Group - AI-Powered Enterprise Solutions & Autonomous Systems",
+  description: "Leading provider of AI-powered enterprise solutions, autonomous business systems, quantum computing, and next-generation technology services. Transform your business with cutting-edge AI technology.",
+  keywords: "AI, artificial intelligence, autonomous systems, quantum computing, enterprise solutions, business automation, AI consulting, technology services",
   authors: [{ name: "Zion Tech Group" }],
   openGraph: {
-    title: "Zion Tech Group - AI & Quantum Computing Solutions",
-    description: "Pioneering the future of AI-powered autonomous systems, quantum computing, and next-generation technology solutions.",
+    title: "Zion Tech Group - AI-Powered Enterprise Solutions",
+    description: "Leading provider of AI-powered enterprise solutions and autonomous systems",
+    url: "https://ziontechgroup.com",
+    siteName: "Zion Tech Group",
     type: "website",
-    locale: "en_US",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Zion Tech Group - AI-Powered Enterprise Solutions",
+    description: "Leading provider of AI-powered enterprise solutions and autonomous systems",
+  },
+  robots: "index, follow",
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <body className="min-h-screen bg-[var(--bg)] text-[var(--fg)]">
-        {/* Enhanced Navigation */}
-        <nav className="border-b border-white/10 sticky top-0 z-50 bg-zinc-900/80 backdrop-blur-md">
-          <div className="max-w-7xl mx-auto px-4 py-4">
-            <div className="flex items-center justify-between">
+      <body className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white">
+        {/* Header */}
+        <header className="sticky top-0 z-50 bg-black/20 backdrop-blur-md border-b border-white/10">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex justify-between items-center py-4">
               {/* Logo */}
-              <Link href="/" className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-sm">Z</span>
-                </div>
-                <span className="font-bold text-xl text-white">Zion Tech Group</span>
-              </Link>
-
-              {/* Desktop Navigation */}
-              <div className="hidden md:flex items-center space-x-8">
-                <Link href="/services" className="text-sm text-gray-300 hover:text-white transition-colors duration-200">
-                  Services
-                </Link>
-                <Link href="/solutions" className="text-sm text-gray-300 hover:text-white transition-colors duration-200">
-                  Solutions
-                </Link>
-                <Link href="/research" className="text-sm text-gray-300 hover:text-white transition-colors duration-200">
-                  Research
-                </Link>
-                <Link href="/case-studies" className="text-sm text-gray-300 hover:text-white transition-colors duration-200">
-                  Case Studies
-                </Link>
-                <Link href="/about" className="text-sm text-gray-300 hover:text-white transition-colors duration-200">
-                  About
-                </Link>
-                <Link href="/contact" className="text-sm text-gray-300 hover:text-white transition-colors duration-200">
-                  Contact
-                </Link>
+              <div className="flex items-center">
+                <a href="/" className="flex items-center space-x-2">
+                  <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+                    <span className="text-white font-bold text-xl">Z</span>
+                  </div>
+                  <span className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                    Zion Tech Group
+                  </span>
+                </a>
               </div>
+
+              {/* Navigation */}
+              <nav className="hidden md:flex items-center space-x-8">
+                <a href="/services" className="text-gray-300 hover:text-white transition-colors">Services</a>
+                <a href="/solutions" className="text-gray-300 hover:text-white transition-colors">Solutions</a>
+                <a href="/research" className="text-gray-300 hover:text-white transition-colors">Research</a>
+                <a href="/about" className="text-gray-300 hover:text-white transition-colors">About</a>
+                <a href="/contact" className="text-gray-300 hover:text-white transition-colors">Contact</a>
+              </nav>
 
               {/* CTA Button */}
               <div className="hidden md:block">
-                <Link 
-                  href="/get-started" 
-                  className="px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-sm font-semibold rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300"
-                >
+                <a href="/contact" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 py-2 rounded-lg transition-all duration-200 transform hover:scale-105">
                   Get Started
-                </Link>
+                </a>
               </div>
 
-              {/* Mobile Menu Button */}
-              <button className="md:hidden p-2 rounded-lg border border-white/20 hover:bg-white/10 transition-colors duration-200">
-                <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-              </button>
+              {/* Mobile menu button */}
+              <div className="md:hidden">
+                <button className="text-gray-300 hover:text-white">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  </svg>
+                </button>
+              </div>
             </div>
           </div>
-        </nav>
+        </header>
 
         {/* Main Content */}
-        <main className="min-h-screen">{children}</main>
+        <main className="flex-1">{children}</main>
 
         {/* Footer */}
-        <footer className="bg-black/40 border-t border-white/10">
-          <div className="max-w-7xl mx-auto px-4 py-12">
+        <footer className="bg-black/30 border-t border-white/10 mt-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-              <div>
-                <h3 className="text-lg font-semibold text-white mb-4">Zion Tech Group</h3>
-                <p className="text-gray-400 text-sm mb-4">
-                  Pioneering the future of AI-powered autonomous systems and quantum computing solutions.
+              {/* Company Info */}
+              <div className="col-span-1 md:col-span-2">
+                <div className="flex items-center space-x-2 mb-4">
+                  <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+                    <span className="text-white font-bold">Z</span>
+                  </div>
+                  <span className="text-lg font-bold">Zion Tech Group</span>
+                </div>
+                <p className="text-gray-400 mb-4 max-w-md">
+                  Leading provider of AI-powered enterprise solutions, autonomous systems, and next-generation technology services.
                 </p>
                 <div className="flex space-x-4">
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200">
+                  <a href="https://linkedin.com/company/ziontechgroup" className="text-gray-400 hover:text-white transition-colors">
                     <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.047-1.032-3.047-1.032 0-1.26 1.317-1.26 2.5v5.607h-3.188v-11.177h3.168v1.561c.76-1.773 2.366-3.17 4.657-3.17 4.964 0 5.881 3.25 5.881 7.465v6.286z"/>
                     </svg>
                   </a>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200">
+                  <a href="https://twitter.com/ziontechgroup" className="text-gray-400 hover:text-white transition-colors">
                     <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                      <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.055 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
                     </svg>
                   </a>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200">
+                  <a href="https://github.com/ziontechgroup" className="text-gray-400 hover:text-white transition-colors">
                     <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.746-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001 12.017.001z"/>
+                      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                     </svg>
                   </a>
                 </div>
               </div>
-              
+
+              {/* Services */}
               <div>
-                <h4 className="text-white font-semibold mb-4">Services</h4>
-                <ul className="space-y-2 text-sm">
-                  <li><a href="/ai-solutions" className="text-gray-400 hover:text-white transition-colors duration-200">AI Solutions</a></li>
-                  <li><a href="/quantum-computing" className="text-gray-400 hover:text-white transition-colors duration-200">Quantum Computing</a></li>
-                  <li><a href="/cybersecurity" className="text-gray-400 hover:text-white transition-colors duration-200">Cybersecurity</a></li>
-                  <li><a href="/enterprise-solutions" className="text-gray-400 hover:text-white transition-colors duration-200">Enterprise Solutions</a></li>
+                <h3 className="text-white font-semibold mb-4">Services</h3>
+                <ul className="space-y-2">
+                  <li><a href="/services/ai-autonomous-systems" className="text-gray-400 hover:text-white transition-colors">AI Autonomous Systems</a></li>
+                  <li><a href="/services/quantum-computing" className="text-gray-400 hover:text-white transition-colors">Quantum Computing</a></li>
+                  <li><a href="/services/enterprise-ai" className="text-gray-400 hover:text-white transition-colors">Enterprise AI</a></li>
+                  <li><a href="/services/ai-consulting" className="text-gray-400 hover:text-white transition-colors">AI Consulting</a></li>
                 </ul>
               </div>
-              
+
+              {/* Contact */}
               <div>
-                <h4 className="text-white font-semibold mb-4">Company</h4>
-                <ul className="space-y-2 text-sm">
-                  <li><a href="/about" className="text-gray-400 hover:text-white transition-colors duration-200">About Us</a></li>
-                  <li><a href="/careers" className="text-gray-400 hover:text-white transition-colors duration-200">Careers</a></li>
-                  <li><a href="/news" className="text-gray-400 hover:text-white transition-colors duration-200">News</a></li>
-                  <li><a href="/contact" className="text-gray-400 hover:text-white transition-colors duration-200">Contact</a></li>
-                </ul>
-              </div>
-              
-              <div>
-                <h4 className="text-white font-semibold mb-4">Resources</h4>
-                <ul className="space-y-2 text-sm">
-                  <li><a href="/documentation" className="text-gray-400 hover:text-white transition-colors duration-200">Documentation</a></li>
-                  <li><a href="/case-studies" className="text-gray-400 hover:text-white transition-colors duration-200">Case Studies</a></li>
-                  <li><a href="/white-papers" className="text-gray-400 hover:text-white transition-colors duration-200">White Papers</a></li>
-                  <li><a href="/blog" className="text-gray-400 hover:text-white transition-colors duration-200">Blog</a></li>
+                <h3 className="text-white font-semibold mb-4">Contact</h3>
+                <ul className="space-y-2">
+                  <li className="text-gray-400">
+                    <a href="tel:+13024640950" className="hover:text-white transition-colors">+1 (302) 464-0950</a>
+                  </li>
+                  <li className="text-gray-400">
+                    <a href="mailto:kleber@ziontechgroup.com" className="hover:text-white transition-colors">kleber@ziontechgroup.com</a>
+                  </li>
+                  <li className="text-gray-400">Delaware, USA</li>
                 </ul>
               </div>
             </div>
-            
-            <div className="border-t border-white/10 mt-8 pt-8 text-center">
+
+            <div className="border-t border-white/10 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
               <p className="text-gray-400 text-sm">
-                © 2024 Zion Tech Group. All rights reserved. | 
-                <a href="/privacy" className="text-gray-400 hover:text-white transition-colors duration-200 ml-2">Privacy Policy</a> | 
-                <a href="/terms" className="text-gray-400 hover:text-white transition-colors duration-200 ml-2">Terms of Service</a>
+                © 2024 Zion Tech Group. All rights reserved.
               </p>
+              <div className="flex space-x-6 mt-4 md:mt-0">
+                <a href="/privacy" className="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
+                <a href="/terms" className="text-gray-400 hover:text-white text-sm transition-colors">Terms of Service</a>
+                <a href="/cookies" className="text-gray-400 hover:text-white text-sm transition-colors">Cookie Policy</a>
+              </div>
             </div>
           </div>
         </footer>
