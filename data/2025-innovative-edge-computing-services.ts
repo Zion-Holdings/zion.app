@@ -73,7 +73,7 @@ export const innovativeEdgeComputingServices: InnovativeEdgeComputingService[] =
     textColor: 'text-blue-400',
     link: 'https://ziontechgroup.com/ai-powered-edge-computing',
     marketPosition: 'Leading AI-powered edge computing platform with optimization and real-time processing.',
-    targetAudience: 'Edge computing companies, Cloud providers, IoT companies, Telecommunications firms'],
+    targetAudience: 'Edge computing companies, Cloud providers, IoT companies, Telecommunications firms',
     trialDays: 30,
     setupTime: '2 weeks',
     category: 'Edge Computing & 5G',

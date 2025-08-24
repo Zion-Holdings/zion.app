@@ -84,6 +84,12 @@
   ],
   "exclude": [
     "node_modules",
-    "zion.app/recovered-content/**"
+    "zion.app/recovered-content/**",
+    "contracts/**",
+    "dao/**",
+    "token/**",
+    "hardhat.config.*",
+    "cypress.config.*",
+    "cypress/**"
   ]
 }
