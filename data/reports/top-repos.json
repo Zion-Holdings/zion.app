@@ -1,0 +1,75 @@
+{
+  "generatedAt": "2025-08-24T09:08:24.958Z",
+  "items": [
+    {
+      "name": "freeCodeCamp/freeCodeCamp",
+      "stars": 426315,
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp",
+      "description": "freeCodeCamp.org's open-source codebase and curriculum. Learn math, programming, and computer science for free.",
+      "language": "TypeScript"
+    },
+    {
+      "name": "codecrafters-io/build-your-own-x",
+      "stars": 413486,
+      "url": "https://github.com/codecrafters-io/build-your-own-x",
+      "description": "Master programming by recreating your favorite technologies from scratch.",
+      "language": "Markdown"
+    },
+    {
+      "name": "sindresorhus/awesome",
+      "stars": 394440,
+      "url": "https://github.com/sindresorhus/awesome",
+      "description": "😎 Awesome lists about all kinds of interesting topics",
+      "language": null
+    },
+    {
+      "name": "EbookFoundation/free-programming-books",
+      "stars": 365923,
+      "url": "https://github.com/EbookFoundation/free-programming-books",
+      "description": ":books: Freely available programming books",
+      "language": "Python"
+    },
+    {
+      "name": "public-apis/public-apis",
+      "stars": 362666,
+      "url": "https://github.com/public-apis/public-apis",
+      "description": "A collective list of free APIs",
+      "language": "Python"
+    },
+    {
+      "name": "kamranahmedse/developer-roadmap",
+      "stars": 334421,
+      "url": "https://github.com/kamranahmedse/developer-roadmap",
+      "description": "Interactive roadmaps, guides and other educational content to help developers grow in their careers.",
+      "language": "TypeScript"
+    },
+    {
+      "name": "jwasham/coding-interview-university",
+      "stars": 324745,
+      "url": "https://github.com/jwasham/coding-interview-university",
+      "description": "A complete computer science study plan to become a software engineer.",
+      "language": null
+    },
+    {
+      "name": "donnemartin/system-design-primer",
+      "stars": 317314,
+      "url": "https://github.com/donnemartin/system-design-primer",
+      "description": "Learn how to design large-scale systems. Prep for the system design interview.  Includes Anki flashcards.",
+      "language": "Python"
+    },
+    {
+      "name": "996icu/996.ICU",
+      "stars": 274139,
+      "url": "https://github.com/996icu/996.ICU",
+      "description": "Repo for counting stars and contributing. Press F to pay respect to glorious developers.",
+      "language": null
+    },
+    {
+      "name": "vinta/awesome-python",
+      "stars": 256449,
+      "url": "https://github.com/vinta/awesome-python",
+      "description": "An opinionated list of awesome Python frameworks, libraries, software and resources.",
+      "language": "Python"
+    }
+  ]
+}

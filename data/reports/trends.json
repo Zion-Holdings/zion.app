@@ -1,0 +1,287 @@
+{
+  "generatedAt": "2025-08-24T09:08:25.674Z",
+  "hn": [
+    {
+      "id": 45002315,
+      "title": "Turning Claude Code into My Best Design Partner",
+      "url": "https://betweentheprompts.com/design-partner/",
+      "score": 26,
+      "by": "scastiel"
+    },
+    {
+      "id": 45002301,
+      "title": "Valve Software handbook for new employees [pdf]",
+      "url": "https://cdn.akamai.steamstatic.com/apps/valve/Valve_NewEmployeeHandbook.pdf",
+      "score": 20,
+      "by": "Michelangelo11"
+    },
+    {
+      "id": 45001979,
+      "title": "Seed: Interactive software environment based on Common Lisp",
+      "url": "https://github.com/phantomics/seed",
+      "score": 27,
+      "by": "todsacerdoti"
+    },
+    {
+      "id": 45001051,
+      "title": "How to build a coding agent",
+      "url": "https://ghuntley.com/agent/",
+      "score": 184,
+      "by": "ghuntley"
+    },
+    {
+      "id": 45001778,
+      "title": "Buy a Faster CPU",
+      "url": "https://blog.howardjohn.info/posts/buy-a-cpu/",
+      "score": 37,
+      "by": "ingve"
+    },
+    {
+      "id": 45001751,
+      "title": "Equal Earth – Political Wall Map (2018)",
+      "url": "https://equal-earth.com/index.html",
+      "score": 27,
+      "by": "bjelkeman-again"
+    },
+    {
+      "id": 45001740,
+      "title": "Wildthing – A model trained on role-reversed ChatGPT conversations",
+      "url": "https://youaretheassistantnow.com/",
+      "score": 36,
+      "by": "iamwil"
+    },
+    {
+      "id": 44997023,
+      "title": "Setting serial baud rate on ESP-IDF does nothing",
+      "url": "https://atomic14.substack.com/p/this-number-does-nothing",
+      "score": 11,
+      "by": "iamflimflam1"
+    },
+    {
+      "id": 44977833,
+      "title": "Rolling the dice with CSS random()",
+      "url": "https://webkit.org/blog/17285/rolling-the-dice-with-css-random/",
+      "score": 89,
+      "by": "zdw"
+    },
+    {
+      "id": 45001371,
+      "title": "ThinkMesh: A Python lib for parallel thinking in LLMs",
+      "url": "https://github.com/martianlantern/ThinkMesh",
+      "score": 22,
+      "by": "martianlantern"
+    },
+    {
+      "id": 44996938,
+      "title": "Line scan camera image processing for train photography",
+      "url": "https://daniel.lawrence.lu/blog/y2025m09d21/",
+      "score": 302,
+      "by": "dllu"
+    },
+    {
+      "id": 44960942,
+      "title": "Marshal madness: A brief history of Ruby deserialization exploits",
+      "url": "https://blog.trailofbits.com/2025/08/20/marshal-madness-a-brief-history-of-ruby-deserialization-exploits/",
+      "score": 13,
+      "by": "pentestercrab"
+    },
+    {
+      "id": 44999373,
+      "title": "The cost of interrupted work (2023)",
+      "url": "https://blog.oberien.de/2023/11/05/23-minutes-15-seconds.html",
+      "score": 176,
+      "by": "_vaporwave_"
+    },
+    {
+      "id": 44964800,
+      "title": "How can AI ID a cat?",
+      "url": "https://www.quantamagazine.org/how-can-ai-id-a-cat-an-illustrated-guide-20250430/",
+      "score": 140,
+      "by": "sonabinu"
+    },
+    {
+      "id": 44961155,
+      "title": "Physics of badminton's new killer spin serve",
+      "url": "https://arstechnica.com/science/2025/08/physics-of-badmintons-new-killer-spin-serve/",
+      "score": 78,
+      "by": "amichail"
+    },
+    {
+      "id": 44970974,
+      "title": "What if every city had a London Overground?",
+      "url": "https://www.dwell.com/article/what-if-every-city-had-a-london-overground-ac7a7ff9",
+      "score": 31,
+      "by": "edward"
+    },
+    {
+      "id": 44998295,
+      "title": "What makes Claude Code so damn good",
+      "url": "https://minusx.ai/blog/decoding-claude-code/",
+      "score": 306,
+      "by": "samuelstros"
+    },
+    {
+      "id": 45000982,
+      "title": "Show HN: Port Kill – A lightweight macOS status bar development port monitor",
+      "url": "https://github.com/kagehq/port-kill",
+      "score": 57,
+      "by": "lexokoh"
+    },
+    {
+      "id": 45000894,
+      "title": "Agentic Browser Security: Indirect Prompt Injection in Perplexity Comet",
+      "url": "https://brave.com/blog/comet-prompt-injection/",
+      "score": 29,
+      "by": "drak0n1c"
+    },
+    {
+      "id": 44998514,
+      "title": "A 2k-year-old sun hat worn by a Roman soldier in Egypt",
+      "url": "https://www.smithsonianmag.com/smart-news/a-2000-year-old-sun-hat-worn-by-a-roman-soldier-in-egypt-goes-on-view-after-a-century-in-storage-180987192/",
+      "score": 123,
+      "by": "sensiquest"
+    }
+  ],
+  "gh": [
+    {
+      "name": "openai/agents.md",
+      "stars": 3207,
+      "url": "https://github.com/openai/agents.md",
+      "description": "AGENTS.md — a simple, open format for guiding coding agents",
+      "language": "TypeScript"
+    },
+    {
+      "name": "automazeio/ccpm",
+      "stars": 1594,
+      "url": "https://github.com/automazeio/ccpm",
+      "description": "Project management system for Claude Code using GitHub Issues and Git worktrees for parallel agent execution.",
+      "language": "Shell"
+    },
+    {
+      "name": "karpathy/rendergit",
+      "stars": 1133,
+      "url": "https://github.com/karpathy/rendergit",
+      "description": "Render any git repo into a single static HTML page for humans or LLMs",
+      "language": "Python"
+    },
+    {
+      "name": "NiladriHazra/Open-Fiesta",
+      "stars": 688,
+      "url": "https://github.com/NiladriHazra/Open-Fiesta",
+      "description": "An open-source version of  Dhruv Rathee's  AI startup.  Even with more models :)",
+      "language": "TypeScript"
+    },
+    {
+      "name": "opactorai/Claudable",
+      "stars": 643,
+      "url": "https://github.com/opactorai/Claudable",
+      "description": "Claudable is an open-source web builder that leverages local CLI agents, such as Claude Code and Cursor Agent, to build and deploy products effortlessly.",
+      "language": "TypeScript"
+    },
+    {
+      "name": "auv-sh/av",
+      "stars": 497,
+      "url": "https://github.com/auv-sh/av",
+      "description": "An extremely fast movie  manager, written in Rust.",
+      "language": "Rust"
+    },
+    {
+      "name": "tobi/try",
+      "stars": 493,
+      "url": "https://github.com/tobi/try",
+      "description": "fresh directories for every vibe",
+      "language": "Ruby"
+    },
+    {
+      "name": "Growth-Kinetics/DiffMem",
+      "stars": 469,
+      "url": "https://github.com/Growth-Kinetics/DiffMem",
+      "description": "Git Based Memory Storage for Conversational AI Agent",
+      "language": "Python"
+    },
+    {
+      "name": "shuding/nstr",
+      "stars": 386,
+      "url": "https://github.com/shuding/nstr",
+      "description": "number → string, but looks good",
+      "language": "TypeScript"
+    },
+    {
+      "name": "librebox-devs/librebox-demo",
+      "stars": 311,
+      "url": "https://github.com/librebox-devs/librebox-demo",
+      "description": "Librebox – Open-source Luau 3D engine (API-compatible)",
+      "language": "C++"
+    },
+    {
+      "name": "printz-labs/pumpfun-bundler",
+      "stars": 245,
+      "url": "https://github.com/printz-labs/pumpfun-bundler",
+      "description": "PumpFun bundler is a bundling tool to create/buy token in single bundle for Pumpfun with 20 wallets",
+      "language": "TypeScript"
+    },
+    {
+      "name": "bytedance-fanqie-ai/FocusDPO",
+      "stars": 230,
+      "url": "https://github.com/bytedance-fanqie-ai/FocusDPO",
+      "description": null,
+      "language": null
+    },
+    {
+      "name": "bytedance-fanqie-ai/MOSAIC",
+      "stars": 227,
+      "url": "https://github.com/bytedance-fanqie-ai/MOSAIC",
+      "description": null,
+      "language": null
+    },
+    {
+      "name": "printz-labs/copytrading-bot-solana",
+      "stars": 227,
+      "url": "https://github.com/printz-labs/copytrading-bot-solana",
+      "description": "Copy trading bot(copytrading bot): copy the trader's trading on solana, This copy trading bot can work on any DEXs on Solana",
+      "language": "TypeScript"
+    },
+    {
+      "name": "printz-labs/solana-raydium-pumpfun-sniper-Rust",
+      "stars": 221,
+      "url": "https://github.com/printz-labs/solana-raydium-pumpfun-sniper-Rust",
+      "description": "solana raydium sniper/pumpfun sniper: this solana raydium sniper/pumpfun sniper is written in Rust⚡. In addtion to these solana raydium",
+      "language": "Rust"
+    },
+    {
+      "name": "printz-labs/bonkfun-sniper",
+      "stars": 216,
+      "url": "https://github.com/printz-labs/bonkfun-sniper",
+      "description": "🎯Solana Sniper Sets: ✅Raydium Bonkfun Sniper, ✅Pumpfun Sniper, ✅Migration Sniper and ✅Meteora Sniper",
+      "language": "TypeScript"
+    },
+    {
+      "name": "printz-labs/pumpswap-bot-solana",
+      "stars": 215,
+      "url": "https://github.com/printz-labs/pumpswap-bot-solana",
+      "description": "A PumpSwap trading bot for Solana. Also supports CPMM/OpenBook Raydium. Same-TX or human mode.",
+      "language": "TypeScript"
+    },
+    {
+      "name": "scaik/scam-max-disabler",
+      "stars": 207,
+      "url": "https://github.com/scaik/scam-max-disabler",
+      "description": "Позволяет убедительно показать, что Max «не работает» на вашем устройстве в ситуациях, когда требуют е��о установку",
+      "language": "Kotlin"
+    },
+    {
+      "name": "DatarusAI/Datarus-JupyterAgent",
+      "stars": 202,
+      "url": "https://github.com/DatarusAI/Datarus-JupyterAgent",
+      "description": "A sophisticated multi-step reasoning pipeline powered by the Datarus-R1-14B-Preview model",
+      "language": "Python"
+    },
+    {
+      "name": "CallToSta/TG-2025",
+      "stars": 197,
+      "url": "https://github.com/CallToSta/TG-2025",
+      "description": "Scraper, Adder, Forwarder, Copy, Report And More! Easy to use and no coding-knowledge required. A tool to scrape members, add members and many other functions.",
+      "language": "Python"
+    }
+  ]
+}
