@@ -1,1 +1,1 @@
-export default function Page() { return <main style={{padding:'2rem'}}>Data Analytics Implementation</main>; }
+export default function ChatContentPage4() { return null; }

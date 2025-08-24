@@ -1,1 +1,1 @@
-export default function Page() { return <main style={{padding:'2rem'}}>Future of Work & Automation</main>; }
+export default function ChatContentPage7() { return null; }

@@ -1,1 +1,1 @@
-export default function EnhancedHome() { return <main style={{padding:'2rem'}}>Enhanced Home</main>; }
+export default function EnhancedHome() { return null; }

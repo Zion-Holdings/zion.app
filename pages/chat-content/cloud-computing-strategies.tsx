@@ -1,1 +1,1 @@
-export default function Page() { return <main style={{padding:'2rem'}}>Cloud Computing Strategies</main>; }
+export default function ChatContentPage2() { return null; }
