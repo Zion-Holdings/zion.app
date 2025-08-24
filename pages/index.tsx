@@ -173,8 +173,10 @@ const Home: NextPage = () => {
                   className="inline-flex items-center px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-black"
                   aria-label="Start your project with Zion Tech Group"
                 >
-                  Start Your Project
-                  <ArrowRight className="ml-2 h-5 w-5" aria-hidden="true" />
+                  <span className="inline-flex items-center">
+                    Start Your Project
+                    <ArrowRight className="ml-2 h-5 w-5" aria-hidden="true" />
+                  </span>
                 </Link>
                 <Link 
                   href="/services" 
@@ -239,8 +241,10 @@ const Home: NextPage = () => {
                     href={service.href}
                     className="inline-flex items-center text-blue-400 hover:text-blue-300 font-medium group-hover:translate-x-1 transition-transform"
                   >
-                    Learn More
-                    <ArrowRight className="ml-2 w-4 h-4" />
+                    <span className="inline-flex items-center">
+                      Learn More
+                      <ArrowRight className="ml-2 w-4 h-4" />
+                    </span>
                   </Link>
                 </div>
               ))}
