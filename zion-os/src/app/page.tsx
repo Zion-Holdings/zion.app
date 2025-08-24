@@ -1,200 +1,217 @@
 import Link from 'next/link';
-import { ArrowRight, Brain, Rocket, Shield, Globe, Zap, Users, Target } from 'lucide-react';
 
 export default function HomePage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900 text-white py-20">
-        <div className="absolute inset-0 bg-black/20"></div>
+      <section className="relative py-20 lg:py-32 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/20 to-purple-900/20"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-            Zion Tech Group
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
+            <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
+              AI-Powered
+            </span>
+            <br />
+            <span className="text-white">Enterprise Solutions</span>
           </h1>
-          <p className="text-xl md:text-2xl mb-8 text-blue-100 max-w-4xl mx-auto">
-            Pioneering the future of AI-powered business transformation and autonomous systems
+          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
+            Transform your business with cutting-edge AI technology. From autonomous systems to quantum computing, 
+            we deliver next-generation solutions that drive innovation and growth.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link 
-              href="/services" 
-              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 flex items-center justify-center gap-2"
-            >
-              Explore Services
-              <ArrowRight className="w-5 h-5" />
+            <Link href="/contact" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-200 transform hover:scale-105">
+              Get Started Today
             </Link>
-            <Link 
-              href="/contact" 
-              className="border-2 border-white/30 hover:border-white/50 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300"
-            >
-              Get Started
+            <Link href="/solutions" className="border border-white/20 hover:border-white/40 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-200 hover:bg-white/10">
+              Explore Solutions
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Services Overview */}
-      <section className="py-20 bg-gray-50">
+      {/* Services Grid */}
+      <section className="py-20 bg-black/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">AI-Powered Solutions</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Transform your business with cutting-edge AI technologies designed for the future
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Our Core Services
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Comprehensive AI solutions designed to revolutionize your business operations and drive sustainable growth.
             </p>
           </div>
-          
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* AI Autonomous Systems */}
+            <div className="bg-gradient-to-br from-blue-900/20 to-purple-900/20 border border-white/10 rounded-xl p-6 hover:border-white/20 transition-all duration-300 hover:transform hover:scale-105">
+              <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-3">AI Autonomous Systems</h3>
+              <p className="text-gray-300 mb-4">
+                Self-managing AI systems that operate independently, making decisions and executing tasks without human intervention.
+              </p>
+              <Link href="/services/ai-autonomous-systems" className="text-blue-400 hover:text-blue-300 font-medium">
+                Learn More →
+              </Link>
+            </div>
+
+            {/* Quantum Computing */}
+            <div className="bg-gradient-to-br from-purple-900/20 to-pink-900/20 border border-white/10 rounded-xl p-6 hover:border-white/20 transition-all duration-300 hover:transform hover:scale-105">
+              <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-600 rounded-lg flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-3">Quantum Computing</h3>
+              <p className="text-gray-300 mb-4">
+                Next-generation computing solutions that leverage quantum mechanics for unprecedented processing power.
+              </p>
+              <Link href="/services/quantum-computing" className="text-purple-400 hover:text-purple-300 font-medium">
+                Learn More →
+              </Link>
+            </div>
+
+            {/* Enterprise AI */}
+            <div className="bg-gradient-to-br from-green-900/20 to-blue-900/20 border border-white/10 rounded-xl p-6 hover:border-white/20 transition-all duration-300 hover:transform hover:scale-105">
+              <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-blue-600 rounded-lg flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-3">Enterprise AI</h3>
+              <p className="text-gray-300 mb-4">
+                Scalable AI solutions designed for enterprise environments, from data analytics to process automation.
+              </p>
+              <Link href="/services/enterprise-ai" className="text-green-400 hover:text-green-300 font-medium">
+                Learn More →
+              </Link>
+            </div>
+
+            {/* AI Consulting */}
+            <div className="bg-gradient-to-br from-orange-900/20 to-red-900/20 border border-white/10 rounded-xl p-6 hover:border-white/20 transition-all duration-300 hover:transform hover:scale-105">
+              <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-600 rounded-lg flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-3">AI Consulting</h3>
+              <p className="text-gray-300 mb-4">
+                Expert guidance on AI strategy, implementation, and optimization to maximize your technology investments.
+              </p>
+              <Link href="/services/ai-consulting" className="text-orange-400 hover:text-orange-300 font-medium">
+                Learn More →
+              </Link>
+            </div>
+
+            {/* Autonomous Business Operations */}
+            <div className="bg-gradient-to-br from-cyan-900/20 to-blue-900/20 border border-white/10 rounded-xl p-6 hover:border-white/20 transition-all duration-300 hover:transform hover:scale-105">
+              <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-3">Autonomous Business Operations</h3>
+              <p className="text-gray-300 mb-4">
+                Self-managing business processes that optimize operations, reduce costs, and improve efficiency.
+              </p>
+              <Link href="/services/autonomous-business-operations" className="text-cyan-400 hover:text-cyan-300 font-medium">
+                Learn More →
+              </Link>
+            </div>
+
+            {/* AI Research & Development */}
+            <div className="bg-gradient-to-br from-indigo-900/20 to-purple-900/20 border border-white/10 rounded-xl p-6 hover:border-white/20 transition-all duration-300 hover:transform hover:scale-105">
+              <div className="w-12 h-12 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-3">AI Research & Development</h3>
+              <p className="text-gray-300 mb-4">
+                Cutting-edge research in AI consciousness, neural networks, and next-generation AI technologies.
+              </p>
+              <Link href="/research" className="text-indigo-400 hover:text-indigo-300 font-medium">
+                Learn More →
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Why Choose Zion Tech Group?
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              We combine cutting-edge technology with deep industry expertise to deliver transformative solutions.
+            </p>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
-              <div className="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
-                <Brain className="w-8 h-8 text-blue-600" />
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">AI Autonomous Systems</h3>
-              <p className="text-gray-600 mb-4">
-                Self-managing AI systems that operate independently across your business operations
-              </p>
-              <Link href="/services/ai-autonomous-systems" className="text-blue-600 hover:text-blue-700 font-medium">
-                Learn More →
-              </Link>
+              <h3 className="text-xl font-semibold text-white mb-2">Innovation First</h3>
+              <p className="text-gray-300">Pioneering the future of AI technology with breakthrough innovations.</p>
             </div>
 
-            <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
-              <div className="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
-                <Rocket className="w-8 h-8 text-purple-600" />
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Business Intelligence</h3>
-              <p className="text-gray-600 mb-4">
-                Advanced analytics and insights powered by machine learning and AI
-              </p>
-              <Link href="/services/business-intelligence" className="text-purple-600 hover:text-purple-700 font-medium">
-                Learn More →
-              </Link>
+              <h3 className="text-xl font-semibold text-white mb-2">Enterprise Security</h3>
+              <p className="text-gray-300">Bank-grade security and compliance for enterprise environments.</p>
             </div>
 
-            <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
-              <div className="w-16 h-16 bg-green-100 rounded-lg flex items-center justify-center mb-6">
-                <Shield className="w-8 h-8 text-green-600" />
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Enterprise Security</h3>
-              <p className="text-gray-600 mb-4">
-                AI-powered security solutions protecting your digital assets and infrastructure
-              </p>
-              <Link href="/services/enterprise-security" className="text-green-600 hover:text-green-700 font-medium">
-                Learn More →
-              </Link>
+              <h3 className="text-xl font-semibold text-white mb-2">Expert Team</h3>
+              <p className="text-gray-300">World-class AI researchers and industry experts.</p>
             </div>
 
-            <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
-              <div className="w-16 h-16 bg-orange-100 rounded-lg flex items-center justify-center mb-6">
-                <Globe className="w-8 h-8 text-orange-600" />
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                </svg>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Quantum Computing</h3>
-              <p className="text-gray-600 mb-4">
-                Next-generation computing solutions for complex problem-solving
-              </p>
-              <Link href="/services/quantum-computing" className="text-orange-600 hover:text-orange-700 font-medium">
-                Learn More →
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Featured Services */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Featured Solutions</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Discover our most innovative AI solutions that are reshaping industries
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div className="space-y-6">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <Zap className="w-6 h-6 text-blue-600" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">AI Autonomous Business Manager</h3>
-                  <p className="text-gray-600">
-                    Complete business automation with AI agents managing operations, decision-making, and growth strategies.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <Users className="w-6 h-6 text-purple-600" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">AI Content Creation Suite</h3>
-                  <p className="text-gray-600">
-                    Revolutionary content generation platform that creates engaging, personalized content at scale.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <Target className="w-6 h-6 text-green-600" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">AI Research Assistant</h3>
-                  <p className="text-gray-600">
-                    Autonomous research capabilities that accelerate discovery and innovation across all fields.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-8 rounded-2xl">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Why Choose Zion Tech Group?</h3>
-              <ul className="space-y-3">
-                <li className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                  <span className="text-gray-700">Industry-leading AI expertise</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                  <span className="text-gray-700">Proven track record of success</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                  <span className="text-gray-700">24/7 support and maintenance</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                  <span className="text-gray-700">Custom solutions for your needs</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                  <span className="text-gray-700">Future-proof technology stack</span>
-                </li>
-              </ul>
+              <h3 className="text-xl font-semibold text-white mb-2">Proven Results</h3>
+              <p className="text-gray-300">Track record of successful AI implementations and ROI.</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+      <section className="py-20 bg-gradient-to-r from-blue-900/20 to-purple-900/20">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold mb-6">Ready to Transform Your Business?</h2>
-          <p className="text-xl mb-8 text-blue-100">
-            Join the AI revolution and unlock unprecedented growth opportunities
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            Ready to Transform Your Business?
+          </h2>
+          <p className="text-xl text-gray-300 mb-8">
+            Join the AI revolution and discover how our solutions can drive innovation, efficiency, and growth for your organization.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link 
-              href="/contact" 
-              className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300"
-            >
+            <Link href="/contact" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-200 transform hover:scale-105">
               Schedule a Consultation
             </Link>
-            <Link 
-              href="/services" 
-              className="border-2 border-white/30 hover:border-white/50 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300"
-            >
-              View All Services
+            <Link href="/solutions" className="border border-white/20 hover:border-white/40 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-200 hover:bg-white/10">
+              View Case Studies
             </Link>
           </div>
         </div>
