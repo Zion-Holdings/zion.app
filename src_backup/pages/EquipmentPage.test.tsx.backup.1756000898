@@ -1,3 +1,8 @@
+<<<<<<< HEAD:src_backup/pages/EquipmentPage.test.tsx
+import React from 'react';
+
+export default function EquipmentPageTest() {
+=======
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { SERVICE_CATEGORIES } from '@/data/servicesData';
@@ -31,6 +36,7 @@ export function ContactPage() {
     window.location.href = mailtoLink;
   };
 
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-e654:src/pages/Contact.tsx
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
       {/* Hero Section */}

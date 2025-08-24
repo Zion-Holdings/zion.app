@@ -1,3 +1,8 @@
+<<<<<<< HEAD:src_backup/components/ui/switch.tsx
+import React from 'react';
+
+export default function Switch() {
+=======
 import React, { useState } from 'react';
 import { 
   SERVICE_CATEGORIES, 
@@ -37,6 +42,7 @@ export function ServicesPage() {
 
   const selectedServices = selectedCategory === 'all' ? filteredServices : getServicesByCategory(selectedCategory);
 
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-e654:src/pages/ServicesPage.tsx
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
       {/* Hero Section */}
