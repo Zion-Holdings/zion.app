@@ -194,16 +194,10 @@
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.39.0",
-<<<<<<< HEAD
     "@tailwindcss/line-clamp": "^0.4.4",
-=======
-    "@tailwindcss/postcss": "^4.1.12",
-    "@types/react-datepicker": "^6.2.0",
->>>>>>> 675244ddb2fd7fa71c7c7689e65ad6ba7a1f0d47
     "axios": "^1.11.0",
     "clsx": "^2.1.1",
     "framer-motion": "^12.23.12",
-<<<<<<< HEAD
     "lucide-react": "^0.541.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -237,50 +231,6 @@
     "typescript": "^5.2.2",
     "vite": "^5.0.8",
     "vitest": "^1.4.0"
-=======
-    "fs": "^0.0.1-security",
-    "fs-extra": "^11.3.1",
-    "glob": "^11.0.3",
-    "https": "^1.0.0",
-    "import-fresh": "^3.3.1",
-    "js-yaml": "^4.1.0",
-    "jsdom": "^26.1.0",
-    "lucide-react": "^0.540.0",
-    "next": "^15.5.0",
-    "node-cron": "^4.2.1",
-    "openai": "^5.11.0",
-    "path": "^0.12.7",
-    "react": "^19.1.1",
-    "react-datepicker": "^8.4.0",
-    "react-dom": "^19.1.1",
-    "tailwind-merge": "^3.3.1",
-    "uuid": "^11.1.0"
-  },
-  "devDependencies": {
-    "@commitlint/cli": "^19.8.1",
-    "@commitlint/config-conventional": "^19.8.1",
-    "@eslint/js": "^9.32.0",
-    "@testing-library/jest-dom": "^6.6.4",
-    "@testing-library/react": "^16.3.0",
-    "@types/node": "^24.3.0",
-    "@types/node-cron": "^3.0.11",
-    "@types/react": "^19.1.10",
-    "@types/react-dom": "^19.1.7",
-    "@typescript-eslint/eslint-plugin": "^8.39.0",
-    "@typescript-eslint/parser": "^8.39.0",
-    "autoprefixer": "^10.4.21",
-    "eslint": "^8.57.1",
-    "eslint-config-next": "^15.0.0",
-    "eslint-plugin-react-hooks": "^5.2.0",
-    "eslint-plugin-react-refresh": "^0.4.20",
-    "husky": "^9.1.7",
-    "lint-staged": "^16.1.5",
-    "postcss": "^8.5.6",
-    "sharp": "^0.34.3",
-    "tailwindcss": "^4.1.12",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.0.0"
->>>>>>> 675244ddb2fd7fa71c7c7689e65ad6ba7a1f0d47
   },
   "peerDependencies": {
     "react": "^18.2.0",
