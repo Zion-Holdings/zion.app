@@ -1,10 +1,10 @@
 import React from 'react';
 import Head from 'next/head';
-import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
+import Layout from '../components/layout/Layout';
 
 export default function MarketPricingPage() {
   return (
-    <UltraAdvancedFuturisticBackground>
+    <Layout>
       <Head>
         <title>Market Pricing & Competitor References | Zion Tech Group</title>
         <meta name="description" content="Transparent market pricing references and competitor links for AI, security, analytics, and cloud services." />
@@ -133,7 +133,7 @@ export default function MarketPricingPage() {
           </div>
         </div>
       </div>
-    </UltraAdvancedFuturisticBackground>
+    </Layout>
   );
 }
 

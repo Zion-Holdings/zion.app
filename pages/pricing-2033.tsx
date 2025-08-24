@@ -213,9 +213,7 @@ export default function Pricing2033Page() {
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                className="mb-6"
-              >
+                transition={{ duration: 0.6 }} className="mb-6">
                 <div className="inline-flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-purple-600/20 to-cyan-600/20 border border-purple-500/30 rounded-full text-purple-300 text-sm font-medium">
                   <Crown className="w-4 h-4" />
                   <span>2033 Revolutionary Pricing</span>
@@ -225,9 +223,7 @@ export default function Pricing2033Page() {
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
-              >
+                transition={{ duration: 0.6, delay: 0.1 }} className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
                 <span className="bg-gradient-to-r from-purple-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent">
                   Revolutionary Technology
                 </span>
@@ -238,9 +234,7 @@ export default function Pricing2033Page() {
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-8"
-              >
+                transition={{ duration: 0.6, delay: 0.2 }} className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-8">
                 Experience the future of technology with our revolutionary AI consciousness, quantum DNA computing, and space mining automation solutions at competitive prices.
               </motion.p>
 
@@ -248,16 +242,12 @@ export default function Pricing2033Page() {
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="flex items-center justify-center space-x-4 mb-8"
-              >
+                transition={{ duration: 0.6, delay: 0.3 }} className="flex items-center justify-center space-x-4 mb-8">
                 <span className={`text-sm ${billingCycle === 'monthly' ? 'text-white' : 'text-gray-400'}`}>
                   Monthly
                 </span>
                 <button
-                  onClick={() => setBillingCycle(billingCycle === 'monthly' ? 'yearly' : 'monthly')}
-                  className="relative w-16 h-8 bg-gray-700 rounded-full p-1 transition-colors duration-200"
-                >
+                  onClick={() => setBillingCycle(billingCycle === 'monthly' ? 'yearly' : 'monthly')} className="relative w-16 h-8 bg-gray-700 rounded-full p-1 transition-colors duration-200">
                   <div
                     className={`w-6 h-6 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full transition-transform duration-200 ${
                       billingCycle === 'yearly' ? 'translate-x-8' : 'translate-x-0'
@@ -360,9 +350,7 @@ export default function Pricing2033Page() {
                   key={category.name}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-gray-900/50 border border-purple-500/30 rounded-2xl p-6 backdrop-blur-sm hover:border-purple-500/50 transition-all duration-300"
-                >
+                  transition={{ duration: 0.6, delay: index * 0.1 }} className="bg-gray-900/50 border border-purple-500/30 rounded-2xl p-6 backdrop-blur-sm hover:border-purple-500/50 transition-all duration-300">
                   <div className="flex items-center space-x-3 mb-4">
                     <div className={`w-12 h-12 bg-gradient-to-r ${category.color} rounded-xl flex items-center justify-center`}>
                       <category.icon className="w-6 h-6 text-white" />
@@ -388,9 +376,7 @@ export default function Pricing2033Page() {
                   </ul>
 
                   <a
-                    href="/services"
-                    className="inline-flex items-center space-x-2 text-purple-400 hover:text-cyan-400 transition-colors duration-200 text-sm font-medium"
-                  >
+                    href="/services" className="inline-flex items-center space-x-2 text-purple-400 hover:text-cyan-400 transition-colors duration-200 text-sm font-medium">
                     <span>Learn More</span>
                     <ArrowRight className="w-4 h-4" />
                   </a>
@@ -419,9 +405,7 @@ export default function Pricing2033Page() {
                   key={service.name}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-gray-900/50 border border-purple-500/30 rounded-2xl p-6 backdrop-blur-sm hover:border-purple-500/50 transition-all duration-300"
-                >
+                  transition={{ duration: 0.6, delay: index * 0.1 }} className="bg-gray-900/50 border border-purple-500/30 rounded-2xl p-6 backdrop-blur-sm hover:border-purple-500/50 transition-all duration-300">
                   <div className="flex items-start justify-between mb-4">
                     <div className="flex-1">
                       <h3 className="text-xl font-bold text-white mb-2">{service.name}</h3>
@@ -447,15 +431,11 @@ export default function Pricing2033Page() {
 
                   <div className="flex space-x-3">
                     <a
-                      href="/contact"
-                      className="flex-1 px-4 py-2 bg-gradient-to-r from-purple-600 to-cyan-600 text-white text-sm font-medium rounded-lg hover:from-purple-700 hover:to-cyan-700 transition-all duration-200 text-center"
-                    >
+                      href="/contact" className="flex-1 px-4 py-2 bg-gradient-to-r from-purple-600 to-cyan-600 text-white text-sm font-medium rounded-lg hover:from-purple-700 hover:to-cyan-700 transition-all duration-200 text-center">
                       Get Quote
                     </a>
                     <a
-                      href={`tel:${contactInfo.mobile}`}
-                      className="px-4 py-2 bg-gray-800/50 border border-purple-500/30 text-purple-300 text-sm font-medium rounded-lg hover:bg-gray-700/50 hover:border-purple-500/50 transition-all duration-200"
-                    >
+                      href={`tel:${contactInfo.mobile}`} className="px-4 py-2 bg-gray-800/50 border border-purple-500/30 text-purple-300 text-sm font-medium rounded-lg hover:bg-gray-700/50 hover:border-purple-500/50 transition-all duration-200">
                       Call Now
                     </a>
                   </div>
@@ -480,17 +460,13 @@ export default function Pricing2033Page() {
               
               <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
                 <a
-                  href="/contact"
-                  className="px-8 py-4 bg-gradient-to-r from-purple-600 to-cyan-600 text-white font-medium rounded-lg hover:from-purple-700 hover:to-cyan-700 transition-all duration-200 shadow-lg hover:shadow-purple-500/25"
-                >
+                  href="/contact" className="px-8 py-4 bg-gradient-to-r from-purple-600 to-cyan-600 text-white font-medium rounded-lg hover:from-purple-700 hover:to-cyan-700 transition-all duration-200 shadow-lg hover:shadow-purple-500/25">
                   Start Your Journey
                   <ArrowRight className="w-5 h-5 ml-2 inline" />
                 </a>
                 
                 <a
-                  href={`tel:${contactInfo.mobile}`}
-                  className="px-8 py-4 bg-gray-800/50 border border-purple-500/30 text-purple-300 font-medium rounded-lg hover:bg-gray-700/50 hover:border-purple-500/50 transition-all duration-200"
-                >
+                  href={`tel:${contactInfo.mobile}`} className="px-8 py-4 bg-gray-800/50 border border-purple-500/30 text-purple-300 font-medium rounded-lg hover:bg-gray-700/50 hover:border-purple-500/50 transition-all duration-200">
                   <Phone className="w-5 h-5 mr-2 inline" />
                   Call Now
                 </a>
