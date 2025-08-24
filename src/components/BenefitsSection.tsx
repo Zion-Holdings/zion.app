@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle, Zap, Shield, Users, Clock, TrendingUp } from 'lucide-react';
 
@@ -54,7 +53,7 @@ export function BenefitsSection() {
       opacity: 1,
       transition: {
         duration: 0.5,
-        ease: "easeOut"
+        ease: "easeOut" as const
       }
     }
   };
