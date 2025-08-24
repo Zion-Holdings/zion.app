@@ -1,512 +1,406 @@
-import React from 'react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Link } from 'react-router-dom';
-import { 
-  Brain, 
-  Cloud, 
-  Shield, 
-  Code, 
-  Database, 
-  BarChart3, 
-  MessageSquare, 
-  Palette, 
-  Key, 
-  Network, 
-  TrendingUp, 
-  Rocket, 
-  Smartphone, 
-  ShoppingCart,
-  Zap,
-  Globe,
-  Lock,
-  Cpu,
-  FileText,
-  Target,
-  Eye,
-  Headphones,
-  Monitor,
-  Server,
-  ShieldCheck,
-  Lightning,
-  Globe2,
-  Layers,
-  Activity,
-  Sparkles,
-  CheckCircle,
-  Star,
-  Users,
-  Clock,
-  DollarSign
-} from 'lucide-react';
+import React, { useState } from 'react';
+import { Search, Filter, Star, Clock, DollarSign, Users, Zap, Brain, Cloud, Database, Shield, Settings, Eye, Leaf, CreditCard, Heart, Truck, ShoppingCart, Phone, Mail, MapPin, Globe, Bot, Cpu, Network, Database as DatabaseIcon, Shield as ShieldIcon, Zap as ZapIcon, Building, Factory, Store, Car, Plane, Ship, Home, Hospital, Bank, GraduationCap, Calendar, FileText, BarChart3, Users as UsersIcon, CreditCard as CreditCardIcon, MessageSquare, Camera, Video, Music, BookOpen, Target, TrendingUp, PieChart, Activity, Zap as ZapIcon2 } from 'lucide-react';
 
-const MicroSaasServices = () => {
-  const serviceCategories = [
+const MicroSaasServices: React.FC = () => {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  const [selectedPricing, setSelectedPricing] = useState<string>('all');
+
+  // Micro SAAS Services data
+  const microSaasServices = [
     {
-      id: 'ai-ml',
-      title: 'AI & Machine Learning',
-      description: 'Cutting-edge artificial intelligence and machine learning solutions',
-      icon: <Brain className="h-12 w-12 text-zion-cyan" />,
-      color: 'from-purple-500 to-pink-500',
-      services: [
-        {
-          name: 'AI Content Generation',
-          description: 'Generate high-quality content, articles, and marketing copy using advanced AI models',
-          price: 99,
-          period: '/month',
-          features: ['Unlimited content generation', 'SEO optimization', 'Brand voice consistency', 'Multi-language support'],
-          savings: 'Save 40% vs market',
-          badge: 'Popular'
-        },
-        {
-          name: 'AI-Powered Analytics',
-          description: 'Transform raw data into actionable insights with machine learning algorithms',
-          price: 199,
-          period: '/month',
-          features: ['Predictive analytics', 'Automated reporting', 'Real-time insights', 'Custom dashboards'],
-          savings: 'Save 35% vs market',
-          badge: 'New'
-        },
-        {
-          name: 'AI Chatbot Platform',
-          description: 'Custom AI chatbots for customer service and business automation',
-          price: 399,
-          period: '/month',
-          features: ['24/7 customer support', 'Lead generation', 'Multi-platform integration', 'Advanced NLP'],
-          savings: 'Save 45% vs market',
-          badge: 'Featured'
-        }
-      ]
+      id: 1,
+      name: "TaskFlow Pro",
+      category: "Productivity",
+      pricing: "Freemium",
+      description: "Simple yet powerful task management and project collaboration tool for small teams",
+      price: 15,
+      pricingModel: "monthly",
+      userLimit: "Up to 10 users",
+      features: ["Task management", "Team collaboration", "Time tracking", "Progress reports"],
+      benefits: ["Increased productivity", "Better team coordination", "Project visibility", "Easy to use"],
+      targetAudience: ["Small teams", "Startups", "Freelancers", "Small businesses"],
+      tags: ["Task Management", "Productivity", "Collaboration", "Project Management"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      }
     },
     {
-      id: 'it-infrastructure',
-      title: 'IT Infrastructure',
-      description: 'Robust infrastructure solutions for modern businesses',
-      icon: <Cloud className="h-12 w-12 text-zion-cyan" />,
-      color: 'from-blue-500 to-cyan-500',
-      services: [
-        {
-          name: 'Cloud Migration Suite',
-          description: 'Seamless cloud migration and management for AWS, Azure, and Google Cloud',
-          price: 799,
-          period: '/month',
-          features: ['Multi-cloud support', 'Cost optimization', '24/7 monitoring', 'Security compliance'],
-          savings: 'Save 50% vs market',
-          badge: 'Featured'
-        },
-        {
-          name: 'Cybersecurity Platform',
-          description: 'Comprehensive security audits and compliance management',
-          price: 599,
-          period: '/month',
-          features: ['Penetration testing', 'SOC 2 compliance', 'Threat detection', 'Incident response'],
-          savings: 'Save 40% vs market',
-          badge: 'Essential'
-        },
-        {
-          name: 'DevOps Automation',
-          description: 'Streamline development workflows with CI/CD and infrastructure as code',
-          price: 499,
-          period: '/month',
-          features: ['Automated testing', 'Deployment pipelines', 'Infrastructure management', 'Performance monitoring'],
-          savings: 'Save 35% vs market',
-          badge: 'Popular'
-        }
-      ]
+      id: 2,
+      name: "InvoiceGenius",
+      category: "Finance",
+      pricing: "Subscription",
+      description: "Automated invoicing and expense tracking solution for small businesses",
+      price: 25,
+      pricingModel: "monthly",
+      userLimit: "Unlimited users",
+      features: ["Automated invoicing", "Expense tracking", "Payment processing", "Financial reports"],
+      benefits: ["Faster payments", "Reduced errors", "Better cash flow", "Tax preparation"],
+      targetAudience: ["Small businesses", "Freelancers", "Consultants", "Service providers"],
+      tags: ["Invoicing", "Finance", "Expense Tracking", "Payments"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      }
     },
     {
-      id: 'business-solutions',
-      title: 'Business Solutions',
-      description: 'Strategic solutions to drive business transformation',
-      icon: <Rocket className="h-12 w-12 text-zion-cyan" />,
-      color: 'from-green-500 to-emerald-500',
-      services: [
-        {
-          name: 'Digital Transformation',
-          description: 'Strategic consulting to modernize legacy systems and drive innovation',
-          price: 1499,
-          period: '/month',
-          features: ['Legacy modernization', 'Process automation', 'Change management', 'ROI optimization'],
-          savings: 'Save 60% vs market',
-          badge: 'Premium'
-        },
-        {
-          name: 'API Development Platform',
-          description: 'Custom API development and third-party integrations',
-          price: 399,
-          period: '/month',
-          features: ['RESTful APIs', 'GraphQL support', 'Webhook management', 'Documentation'],
-          savings: 'Save 45% vs market',
-          badge: 'Popular'
-        },
-        {
-          name: 'Mobile App Development',
-          description: 'Native and cross-platform mobile applications with modern UI/UX',
-          price: 899,
-          period: '/month',
-          features: ['iOS & Android', 'React Native', 'UI/UX design', 'App store deployment'],
-          savings: 'Save 40% vs market',
-          badge: 'Featured'
-        }
-      ]
+      id: 3,
+      name: "SocialSync",
+      category: "Marketing",
+      pricing: "Freemium",
+      description: "Social media management and analytics platform for small businesses",
+      price: 20,
+      pricingModel: "monthly",
+      userLimit: "Up to 5 social accounts",
+      features: ["Multi-platform posting", "Content calendar", "Analytics dashboard", "Auto-scheduling"],
+      benefits: ["Time savings", "Better engagement", "Data insights", "Consistent posting"],
+      targetAudience: ["Small businesses", "Marketing agencies", "Content creators", "Entrepreneurs"],
+      tags: ["Social Media", "Marketing", "Content Management", "Analytics"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      }
     },
     {
-      id: 'specialized-services',
-      title: 'Specialized Services',
-      description: 'Expert solutions for cutting-edge technologies',
-      icon: <Key className="h-12 w-12 text-zion-cyan" />,
-      color: 'from-orange-500 to-red-500',
-      services: [
-        {
-          name: 'Blockchain Development',
-          description: 'Smart contracts, DeFi applications, and blockchain infrastructure',
-          price: 1299,
-          period: '/month',
-          features: ['Smart contracts', 'DeFi protocols', 'Multi-chain support', 'Security auditing'],
-          savings: 'Save 55% vs market',
-          badge: 'Premium'
-        },
-        {
-          name: 'IoT Solutions Platform',
-          description: 'Internet of Things device development and sensor networks',
-          price: 599,
-          period: '/month',
-          features: ['Sensor integration', 'Data collection', 'Real-time monitoring', 'Scalable architecture'],
-          savings: 'Save 40% vs market',
-          badge: 'New'
-        },
-        {
-          name: 'Data Science Consulting',
-          description: 'Advanced analytics and machine learning model development',
-          price: 899,
-          period: '/month',
-          features: ['Predictive modeling', 'Statistical analysis', 'Data strategy', 'Model deployment'],
-          savings: 'Save 45% vs market',
-          badge: 'Featured'
-        }
-      ]
+      id: 4,
+      name: "CustomerConnect",
+      category: "CRM",
+      pricing: "Subscription",
+      description: "Simple customer relationship management for growing businesses",
+      price: 30,
+      pricingModel: "monthly",
+      userLimit: "Up to 15 users",
+      features: ["Contact management", "Lead tracking", "Sales pipeline", "Email integration"],
+      benefits: ["Better customer relationships", "Increased sales", "Organized data", "Team collaboration"],
+      targetAudience: ["Sales teams", "Small businesses", "Real estate agents", "Consultants"],
+      tags: ["CRM", "Sales", "Customer Management", "Lead Tracking"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      }
+    },
+    {
+      id: 5,
+      name: "DataViz Studio",
+      category: "Analytics",
+      pricing: "Freemium",
+      description: "Easy-to-use data visualization and reporting tool for business insights",
+      price: 18,
+      pricingModel: "monthly",
+      userLimit: "Up to 8 users",
+      features: ["Chart creation", "Dashboard builder", "Data import", "Report sharing"],
+      benefits: ["Better insights", "Data-driven decisions", "Professional reports", "Easy sharing"],
+      targetAudience: ["Business analysts", "Small businesses", "Consultants", "Researchers"],
+      tags: ["Analytics", "Data Visualization", "Reporting", "Business Intelligence"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      }
+    },
+    {
+      id: 6,
+      name: "AppointmentPro",
+      category: "Scheduling",
+      pricing: "Subscription",
+      description: "Online appointment booking and calendar management system",
+      price: 22,
+      pricingModel: "monthly",
+      userLimit: "Up to 12 users",
+      features: ["Online booking", "Calendar sync", "Reminder system", "Payment integration"],
+      benefits: ["Reduced no-shows", "24/7 booking", "Automated reminders", "Payment collection"],
+      targetAudience: ["Service businesses", "Healthcare providers", "Consultants", "Salons"],
+      tags: ["Scheduling", "Appointments", "Calendar", "Online Booking"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      }
+    },
+    {
+      id: 7,
+      name: "ContentCreator",
+      category: "Content",
+      pricing: "Freemium",
+      description: "AI-powered content creation and optimization tool for marketers",
+      price: 28,
+      pricingModel: "monthly",
+      userLimit: "Unlimited content",
+      features: ["AI writing assistant", "SEO optimization", "Content templates", "Performance tracking"],
+      benefits: ["Faster content creation", "Better SEO", "Consistent quality", "Time savings"],
+      targetAudience: ["Content marketers", "Small businesses", "Bloggers", "Agencies"],
+      tags: ["Content Creation", "AI Writing", "SEO", "Marketing"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      }
+    },
+    {
+      id: 8,
+      name: "SecureVault",
+      category: "Security",
+      pricing: "Subscription",
+      description: "Password management and secure file storage for small teams",
+      price: 12,
+      pricingModel: "monthly",
+      userLimit: "Up to 20 users",
+      features: ["Password manager", "Secure file storage", "Team sharing", "Two-factor auth"],
+      benefits: ["Enhanced security", "Easy access", "Team collaboration", "Peace of mind"],
+      targetAudience: ["Small businesses", "Remote teams", "Startups", "Freelancers"],
+      tags: ["Security", "Password Management", "File Storage", "Team Security"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      }
+    },
+    {
+      id: 9,
+      name: "VideoStudio Pro",
+      category: "Media",
+      pricing: "Freemium",
+      description: "Professional video editing and streaming solution for content creators",
+      price: 35,
+      pricingModel: "monthly",
+      userLimit: "Up to 3 users",
+      features: ["Video editing", "Live streaming", "Video hosting", "Analytics"],
+      benefits: ["Professional quality", "Easy streaming", "Audience engagement", "Content monetization"],
+      targetAudience: ["Content creators", "Streamers", "Small businesses", "Educators"],
+      tags: ["Video Editing", "Live Streaming", "Content Creation", "Media"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      }
+    },
+    {
+      id: 10,
+      name: "LearningHub",
+      category: "Education",
+      pricing: "Freemium",
+      description: "Online learning platform for creating and selling courses",
+      price: 40,
+      pricingModel: "monthly",
+      userLimit: "Up to 100 students",
+      features: ["Course creation", "Student management", "Payment processing", "Progress tracking"],
+      benefits: ["Passive income", "Global reach", "Student engagement", "Easy management"],
+      targetAudience: ["Educators", "Trainers", "Experts", "Entrepreneurs"],
+      tags: ["Online Learning", "Course Creation", "Education", "E-learning"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      }
     }
   ];
 
-  const pricingPlans = [
-    {
-      name: 'Starter',
-      price: 99,
-      period: '/month',
-      description: 'Perfect for small businesses and startups',
-      features: [
-        'AI Content Generation',
-        'Basic Analytics',
-        'Email Support',
-        '5 Projects',
-        'Standard Security'
-      ],
-      color: 'from-zion-cyan to-zion-purple',
-      popular: false
-    },
-    {
-      name: 'Professional',
-      price: 299,
-      period: '/month',
-      description: 'Ideal for growing companies and teams',
-      features: [
-        'All Starter Features',
-        'AI Analytics Platform',
-        'Priority Support',
-        'Unlimited Projects',
-        'API Access',
-        'Advanced Security'
-      ],
-      color: 'from-zion-purple to-zion-blue',
-      popular: true
-    },
-    {
-      name: 'Enterprise',
-      price: 799,
-      period: '/month',
-      description: 'For large organizations with complex needs',
-      features: [
-        'All Professional Features',
-        'Custom AI Models',
-        'Dedicated Support',
-        'White-labeling',
-        'Advanced Security',
-        'Custom Integrations'
-      ],
-      color: 'from-zion-blue to-zion-cyan',
-      popular: false
-    }
-  ];
+  const categories = ['all', 'Productivity', 'Finance', 'Marketing', 'CRM', 'Analytics', 'Scheduling', 'Content', 'Security', 'Media', 'Education'];
+  const pricingModels = ['all', 'Freemium', 'Subscription', 'One-time'];
 
-  const benefits = [
-    {
-      icon: <DollarSign className="h-8 w-8 text-zion-cyan" />,
-      title: 'Cost Savings',
-      description: 'Save 30-60% compared to traditional enterprise solutions'
-    },
-    {
-      icon: <Zap className="h-8 w-8 text-zion-cyan" />,
-      title: 'Rapid Deployment',
-      description: 'Get up and running in days, not months'
-    },
-    {
-      icon: <Shield className="h-8 w-8 text-zion-cyan" />,
-      title: 'Enterprise Security',
-      description: 'Bank-level security with SOC 2 compliance'
-    },
-    {
-      icon: <Users className="h-8 w-8 text-zion-cyan" />,
-      title: 'Expert Support',
-      description: '24/7 technical support from certified professionals'
-    },
-    {
-      icon: <Globe className="h-8 w-8 text-zion-cyan" />,
-      title: 'Global Reach',
-      description: 'Services available worldwide with local support'
-    },
-    {
-      icon: <Clock className="h-8 w-8 text-zion-cyan" />,
-      title: 'Always Available',
-      description: '99.9% uptime guarantee with real-time monitoring'
+  const filteredServices = microSaasServices.filter(service => {
+    const matchesSearch = service.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         service.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         service.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
+    
+    const matchesCategory = selectedCategory === 'all' || service.category === selectedCategory;
+    const matchesPricing = selectedPricing === 'all' || service.pricing === selectedPricing;
+    
+    return matchesSearch && matchesCategory && matchesPricing;
+  });
+
+  const formatPrice = (price: number, model: string) => {
+    switch (model) {
+      case 'monthly':
+        return `$${price}/month`;
+      case 'yearly':
+        return `$${price * 12}/year`;
+      case 'one-time':
+        return `$${price.toLocaleString()}`;
+      default:
+        return `$${price}`;
     }
-  ];
+  };
+
+  const getCategoryIcon = (category: string) => {
+    switch (category) {
+      case 'Productivity': return <Target className="w-6 h-6" />;
+      case 'Finance': return <CreditCardIcon className="w-6 h-6" />;
+      case 'Marketing': return <TrendingUp className="w-6 h-6" />;
+      case 'CRM': return <UsersIcon className="w-6 h-6" />;
+      case 'Analytics': return <BarChart3 className="w-6 h-6" />;
+      case 'Scheduling': return <Calendar className="w-6 h-6" />;
+      case 'Content': return <FileText className="w-6 h-6" />;
+      case 'Security': return <Shield className="w-6 h-6" />;
+      case 'Media': return <Video className="w-6 h-6" />;
+      case 'Education': return <BookOpen className="w-6 h-6" />;
+      default: return <ZapIcon2 className="w-6 h-6" />;
+    }
+  };
+
+  const getPricingColor = (pricing: string) => {
+    switch (pricing) {
+      case 'Freemium': return 'text-green-400';
+      case 'Subscription': return 'text-blue-400';
+      case 'One-time': return 'text-purple-400';
+      default: return 'text-gray-400';
+    }
+  };
 
   return (
-    <div className="min-h-screen bg-background">
-      {/* Hero Section */}
-      <div className="bg-gradient-to-r from-zion-blue-dark to-zion-purple-dark py-20">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-            Micro SAAS <span className="text-transparent bg-clip-text bg-gradient-to-r from-zion-cyan to-zion-purple">Services</span>
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-green-900 to-slate-900">
+      <div className="container mx-auto px-4 py-8">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-green-400 via-blue-400 to-green-600 bg-clip-text text-transparent mb-4">
+            Micro SAAS Services
           </h1>
-          <p className="text-zion-slate-light text-lg md:text-xl max-w-3xl mx-auto mb-8">
-            Enterprise-grade technology solutions at micro SAAS prices. Transform your business with AI, 
-            cloud infrastructure, and digital transformation services that scale with you.
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            Affordable, focused software solutions designed specifically for small businesses, startups, and entrepreneurs
           </p>
-          
-          {/* Contact Information */}
-          <div className="bg-white/10 backdrop-blur-md rounded-lg p-6 max-w-4xl mx-auto border border-zion-cyan/20 mb-8">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="flex items-center justify-center gap-3 text-zion-cyan">
-                <div className="w-2 h-2 bg-zion-cyan rounded-full"></div>
-                <div className="text-left">
-                  <div className="text-white font-semibold">Call Us</div>
-                  <a href="tel:+13024640950" className="text-zion-cyan hover:text-zion-cyan-light">
-                    +1 302 464 0950
-                  </a>
-                </div>
-              </div>
-              <div className="flex items-center justify-center gap-3 text-zion-cyan">
-                <div className="w-2 h-2 bg-zion-cyan rounded-full"></div>
-                <div className="text-left">
-                  <div className="text-white font-semibold">Email Us</div>
-                  <a href="mailto:kleber@ziontechgroup.com" className="text-zion-cyan hover:text-zion-cyan-light">
-                    kleber@ziontechgroup.com
-                  </a>
-                </div>
-              </div>
-              <div className="flex items-center justify-center gap-3 text-zion-cyan">
-                <div className="w-2 h-2 bg-zion-cyan rounded-full"></div>
-                <div className="text-left">
-                  <div className="text-white font-semibold">Visit Us</div>
-                  <a href="https://ziontechgroup.com" target="_blank" rel="noopener noreferrer" className="text-zion-cyan hover:text-zion-cyan-light">
-                    ziontechgroup.com
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="mt-4 text-zion-slate-light text-sm">
-              Address: 364 E Main St STE 1008, Middletown DE 19709
-            </div>
-          </div>
+        </div>
 
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link to="/request-quote">
-              <Button className="bg-gradient-to-r from-zion-cyan to-zion-purple hover:from-zion-cyan-light hover:to-zion-purple-light text-white text-lg px-8 py-3">
-                Get Started Today
-              </Button>
-            </Link>
-            <Link to="/contact">
-              <Button variant="outline" className="border-zion-cyan text-zion-cyan hover:bg-zion-cyan/10 text-lg px-8 py-3">
-                Contact Sales
-              </Button>
-            </Link>
+        {/* Search and Filters */}
+        <div className="mb-8 space-y-4">
+          <div className="relative">
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+            <input
+              type="text"
+              placeholder="Search micro SAAS services..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="w-full pl-10 pr-4 py-3 bg-white/10 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+            />
+          </div>
+          
+          <div className="flex flex-wrap gap-4">
+            <select
+              value={selectedCategory}
+              onChange={(e) => setSelectedCategory(e.target.value)}
+              className="px-4 py-2 bg-white/10 border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-green-500"
+            >
+              {categories.map(category => (
+                <option key={category} value={category} className="bg-gray-800 text-white">
+                  {category === 'all' ? 'All Categories' : category}
+                </option>
+              ))}
+            </select>
+            
+            <select
+              value={selectedPricing}
+              onChange={(e) => setSelectedPricing(e.target.value)}
+              className="px-4 py-2 bg-white/10 border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-green-500"
+            >
+              {pricingModels.map(pricing => (
+                <option key={pricing} value={pricing} className="bg-gray-800 text-white">
+                  {pricing === 'all' ? 'All Pricing Models' : pricing}
+                </option>
+              ))}
+            </select>
           </div>
         </div>
-      </div>
 
-      {/* Benefits Section */}
-      <div className="py-20 bg-zion-slate-dark">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Why Choose <span className="text-transparent bg-clip-text bg-gradient-to-r from-zion-cyan to-zion-purple">Zion</span>
-            </h2>
-            <p className="text-zion-slate-light text-lg max-w-2xl mx-auto">
-              Get enterprise-grade technology solutions without the enterprise price tag
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {benefits.map((benefit, index) => (
-              <div key={index} className="bg-white/5 backdrop-blur-md rounded-lg p-6 border border-zion-cyan/20 hover:border-zion-cyan/40 transition-all duration-300 group">
-                <div className="inline-flex p-3 rounded-full bg-zion-cyan/20 mb-4 group-hover:scale-110 transition-transform">
-                  {benefit.icon}
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {filteredServices.map((service) => (
+            <div key={service.id} className="bg-white/5 backdrop-blur-sm border border-gray-600 rounded-xl p-6 hover:bg-white/10 transition-all duration-300 hover:shadow-2xl hover:shadow-green-500/20">
+              <div className="flex items-start justify-between mb-4">
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="text-green-400">
+                    {getCategoryIcon(service.category)}
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-white">{service.name}</h3>
+                    <div className="flex items-center gap-2">
+                      <span className={`px-2 py-1 text-xs font-medium rounded-full ${getPricingColor(service.pricing)} bg-opacity-20 bg-current`}>
+                        {service.pricing}
+                      </span>
+                      <span className="px-2 py-1 text-xs font-medium rounded-full text-green-400 bg-green-400 bg-opacity-20">
+                        {service.category}
+                      </span>
+                    </div>
+                  </div>
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-2">{benefit.title}</h3>
-                <p className="text-zion-slate-light">{benefit.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Service Categories */}
-      <div className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-zion-cyan to-zion-purple">Service Categories</span>
-            </h2>
-            <p className="text-zion-slate-light text-lg max-w-3xl mx-auto">
-              Comprehensive solutions across AI, IT infrastructure, business transformation, and specialized services
-            </p>
-          </div>
-          
-          {serviceCategories.map((category, categoryIndex) => (
-            <div key={category.id} className="mb-20">
-              <div className="text-center mb-12">
-                <div className="inline-flex p-4 rounded-full bg-gradient-to-r from-zion-cyan/20 to-zion-purple/20 mb-6">
-                  {category.icon}
-                </div>
-                <h3 className="text-3xl font-bold text-white mb-4">{category.title}</h3>
-                <p className="text-zion-slate-light text-lg max-w-2xl mx-auto">{category.description}</p>
               </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {category.services.map((service, serviceIndex) => (
-                  <Card key={serviceIndex} className="bg-white/5 backdrop-blur-md border border-zion-cyan/20 hover:border-zion-cyan/40 transition-all duration-300 group overflow-hidden">
-                    <CardHeader className="pb-4">
-                      <div className="flex justify-between items-start mb-4">
-                        {service.badge && (
-                          <Badge className="bg-gradient-to-r from-zion-cyan to-zion-purple text-white">
-                            {service.badge}
-                          </Badge>
-                        )}
-                      </div>
-                      <CardTitle className="text-xl text-white mb-2">{service.name}</CardTitle>
-                      <CardDescription className="text-zion-slate-light">
-                        {service.description}
-                      </CardDescription>
-                    </CardHeader>
-                    
-                    <CardContent className="space-y-4">
-                      <div className="text-center">
-                        <div className="flex items-baseline justify-center">
-                          <span className="text-3xl font-bold text-zion-cyan">${service.price}</span>
-                          <span className="text-zion-slate-light ml-1">{service.period}</span>
-                        </div>
-                        <p className="text-sm text-green-400 font-medium">{service.savings}</p>
-                      </div>
-                      
-                      <ul className="space-y-2">
-                        {service.features.map((feature, featureIndex) => (
-                          <li key={featureIndex} className="flex items-center text-zion-slate-light text-sm">
-                            <CheckCircle className="h-4 w-4 text-zion-cyan mr-2 flex-shrink-0" />
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
-                      
-                      <Button className="w-full bg-gradient-to-r from-zion-cyan to-zion-purple hover:from-zion-cyan-light hover:to-zion-purple-light text-white group-hover:scale-105 transition-transform">
-                        Get Started
-                      </Button>
-                    </CardContent>
-                  </Card>
-                ))}
+              <p className="text-gray-300 mb-4">{service.description}</p>
+              
+              <div className="mb-4">
+                <div className="text-2xl font-bold text-white mb-2">
+                  {formatPrice(service.price, service.pricingModel)}
+                </div>
+                <div className="text-sm text-gray-400">{service.userLimit}</div>
+              </div>
+
+              <div className="mb-4">
+                <h4 className="text-sm font-semibold text-white mb-2">Key Features:</h4>
+                <div className="flex flex-wrap gap-2">
+                  {service.features.slice(0, 3).map((feature, index) => (
+                    <span key={index} className="px-2 py-1 text-xs bg-green-500/20 text-green-300 rounded">
+                      {feature}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="mb-4">
+                <h4 className="text-sm font-semibold text-white mb-2">Perfect For:</h4>
+                <div className="flex flex-wrap gap-2">
+                  {service.targetAudience.slice(0, 2).map((audience, index) => (
+                    <span key={index} className="px-2 py-1 text-xs bg-blue-500/20 text-blue-300 rounded">
+                      {audience}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="border-t border-gray-600 pt-4">
+                <div className="flex items-center justify-between text-sm text-gray-400">
+                  <span>Start your free trial today</span>
+                  <a 
+                    href={service.contactInfo.website}
+                    className="text-green-400 hover:text-green-300 transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Get Started →
+                  </a>
+                </div>
               </div>
             </div>
           ))}
         </div>
-      </div>
 
-      {/* Pricing Plans */}
-      <div className="py-20 bg-zion-slate-dark">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Simple <span className="text-transparent bg-clip-text bg-gradient-to-r from-zion-cyan to-zion-purple">Pricing</span>
-            </h2>
-            <p className="text-zion-slate-light text-lg max-w-2xl mx-auto">
-              Choose the plan that fits your business needs. All plans include enterprise-grade security and support.
+        {/* Contact Information */}
+        <div className="mt-16 text-center">
+          <div className="bg-white/5 backdrop-blur-sm border border-gray-600 rounded-xl p-8">
+            <h2 className="text-2xl font-bold text-white mb-4">Ready to Scale Your Business?</h2>
+            <p className="text-gray-300 mb-6">
+              Our micro SAAS solutions are designed to grow with your business needs
             </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {pricingPlans.map((plan, index) => (
-              <div key={index} className={`relative bg-white/5 backdrop-blur-md rounded-lg p-8 border ${plan.popular ? 'border-zion-cyan' : 'border-zion-slate-light/30'}`}>
-                {plan.popular && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <span className="bg-gradient-to-r from-zion-cyan to-zion-purple text-white px-6 py-2 rounded-full text-sm font-medium">
-                      Most Popular
-                    </span>
-                  </div>
-                )}
-                
-                <div className="text-center mb-8">
-                  <h3 className="text-2xl font-bold text-white mb-2">{plan.name}</h3>
-                  <div className="flex items-baseline justify-center">
-                    <span className="text-5xl font-bold text-zion-cyan">${plan.price}</span>
-                    <span className="text-zion-slate-light ml-1">{plan.period}</span>
-                  </div>
-                  <p className="text-zion-slate-light mt-2">{plan.description}</p>
-                </div>
-                
-                <ul className="space-y-4 mb-8">
-                  {plan.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center text-zion-slate-light">
-                      <CheckCircle className="h-5 w-5 text-zion-cyan mr-3 flex-shrink-0" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-                
-                <Button className={`w-full bg-gradient-to-r ${plan.color} hover:opacity-90 transition-opacity text-lg py-3`}>
-                  {plan.popular ? 'Start Free Trial' : 'Get Started'}
-                </Button>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+              <div>
+                <Phone className="w-8 h-8 text-green-400 mx-auto mb-2" />
+                <p className="text-white font-semibold">Phone</p>
+                <p className="text-gray-300">{microSaasServices[0].contactInfo.phone}</p>
               </div>
-            ))}
+              <div>
+                <Mail className="w-8 h-8 text-green-400 mx-auto mb-2" />
+                <p className="text-white font-semibold">Email</p>
+                <p className="text-gray-300">{microSaasServices[0].contactInfo.email}</p>
+              </div>
+              <div>
+                <MapPin className="w-8 h-8 text-green-400 mx-auto mb-2" />
+                <p className="text-white font-semibold">Address</p>
+                <p className="text-gray-300">364 E Main St STE 1008<br />Middletown DE 19709</p>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-
-      {/* CTA Section */}
-      <div className="py-20 bg-gradient-to-r from-zion-blue-dark to-zion-purple-dark">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Ready to Transform Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-zion-cyan to-zion-purple">Business</span>?
-          </h2>
-          <p className="text-zion-slate-light text-lg max-w-2xl mx-auto mb-8">
-            Join thousands of businesses already using Zion's micro SAAS services to scale and innovate.
-          </p>
-          
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link to="/request-quote">
-              <Button className="bg-gradient-to-r from-zion-cyan to-zion-purple hover:from-zion-cyan-light hover:to-zion-purple-light text-white text-lg px-8 py-3">
-                Start Free Trial
-              </Button>
-            </Link>
-            <Link to="/contact">
-              <Button variant="outline" className="border-zion-cyan text-zion-cyan hover:bg-zion-cyan/10 text-lg px-8 py-3">
-                Schedule Demo
-              </Button>
-            </Link>
-          </div>
-          
-          <p className="text-zion-slate-light text-sm mt-6">
-            No credit card required • 14-day free trial • Cancel anytime
-          </p>
         </div>
       </div>
     </div>

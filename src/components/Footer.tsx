@@ -9,11 +9,13 @@ const Footer = () => {
     {
       title: 'Services',
       links: [
-        { name: 'Micro SAAS Solutions', path: '/micro-saas-services' },
-        { name: 'IT Infrastructure', path: '/it-onsite-services' },
+        { name: 'Micro SAAS Solutions', path: '/micro-saas' },
+        { name: 'Comprehensive Services', path: '/comprehensive-services' },
         { name: 'AI & Machine Learning', path: '/ai-services' },
         { name: 'Enterprise Solutions', path: '/enterprise-solutions' },
-        { name: 'Advanced Services', path: '/advanced-services' }
+        { name: 'Advanced Services', path: '/advanced-services' },
+        { name: 'Emerging Tech', path: '/emerging-tech-services' },
+        { name: 'Industry Solutions', path: '/industry-solutions' }
       ]
     },
     {
