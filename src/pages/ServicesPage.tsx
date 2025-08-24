@@ -1,266 +1,279 @@
 
-import { DynamicListingPage } from "@/components/DynamicListingPage";
-import { ProductListing } from "@/types/listings";
-import { TrustedBySection } from "@/components/TrustedBySection";
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
-import { Globe } from "lucide-react";
-import { useEffect, useState } from "react";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import {
+  Brain,
+  Zap,
+  Shield,
+  Cloud,
+  Building,
+  ArrowRight,
+  Star,
+  Users,
+  Server,
+  BarChart3,
+  Star as StarIcon
+} from 'lucide-react';
 
-// Sample service listings
-const SERVICE_LISTINGS: ProductListing[] = [
-  {
-    id: "service-1",
-    title: "AI Development & Integration",
-    description: "Full-stack AI development services to integrate advanced machine learning models into your existing business systems.",
-    category: "Development",
-    price: 5000,
-    currency: "$",
-    tags: ["AI Integration", "Machine Learning", "Enterprise"],
-    author: {
-      name: "TechSolutions Inc.",
-      id: "tech-solutions",
-      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100",
-    },
-    images: ["https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2023-12-10T14:48:00.000Z",
-    aiScore: 95,
-    rating: 4.9,
-    reviewCount: 124,
-  },
-  {
-    id: "service-2",
-    title: "Cloud Infrastructure Management",
-    description: "24/7 monitoring and management of your cloud infrastructure to ensure optimal performance, security, and cost efficiency.",
-    category: "Management",
-    price: 3000,
-    currency: "$",
-    tags: ["Cloud", "DevOps", "Security"],
-    author: {
-      name: "CloudPro Experts",
-      id: "cloud-pro",
-    },
-    images: ["https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2023-11-20T09:30:00.000Z",
-    aiScore: 88,
-    rating: 4.7,
-    reviewCount: 92,
-  },
-  {
-    id: "service-3",
-    title: "Big Data Analysis & Insights",
-    description: "Transform your raw data into actionable business insights with our advanced analytics and visualization services.",
-    category: "Analytics",
-    price: 4500,
-    currency: "$",
-    tags: ["Big Data", "Analytics", "Business Intelligence"],
-    author: {
-      name: "DataMind Solutions",
-      id: "datamind",
-      avatarUrl: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=100&h=100",
-    },
-    images: ["https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-01-05T11:15:00.000Z",
-    aiScore: 92,
-    rating: 4.8,
-    reviewCount: 78,
-  },
-  {
-    id: "service-4",
-    title: "Cybersecurity Assessment & Protection",
-    description: "Comprehensive security audits and implementation of robust protection systems against modern cyber threats.",
-    category: "Security",
-    price: 6000,
-    currency: "$",
-    tags: ["Cybersecurity", "Penetration Testing", "Compliance"],
-    author: {
-      name: "SecureNet Team",
-      id: "secure-net",
-    },
-    images: ["https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2023-12-28T16:22:00.000Z",
-    aiScore: 89,
-    rating: 4.9,
-    reviewCount: 103,
-  },
-  {
-    id: "service-5",
-    title: "IT Infrastructure Modernization",
-    description: "Transform your legacy systems into modern, agile infrastructure that supports innovation and business growth.",
-    category: "Consulting",
-    price: 8500,
-    currency: "$",
-    tags: ["Digital Transformation", "Legacy Systems", "Infrastructure"],
-    author: {
-      name: "ModernizeIT Consulting",
-      id: "modernize-it",
-    },
-    images: ["https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2023-11-10T08:45:00.000Z",
-    aiScore: 86,
-    rating: 4.6,
-    reviewCount: 67,
-  },
-  {
-    id: "service-6",
-    title: "AI Strategy & Implementation",
-    description: "Strategic consulting and implementation services to help businesses leverage AI for competitive advantage.",
-    category: "Strategy",
-    price: 7500,
-    currency: "$",
-    tags: ["AI Strategy", "Digital Transformation", "Business Growth"],
-    author: {
-      name: "AI Future Consulting",
-      id: "ai-future",
-      avatarUrl: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=100&h=100",
-    },
-    images: ["https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-02-02T10:30:00.000Z",
-    aiScore: 94,
-    rating: 4.8,
-    reviewCount: 85,
-  },
-];
-
-function getRandomItem<T>(arr: T[]): T {
-  return arr[Math.floor(Math.random() * arr.length)];
-}
-
-function generateRandomService(idNum: number): ProductListing {
-  const templates = [
+const ServicesPage = () => {
+  const serviceCategories = [
     {
-      title: "AI Automation Consulting",
-      category: "Consulting",
-      min: 4000,
-      max: 12000,
-      tags: ["Automation", "AI Strategy", "Optimization"],
+      title: "AI & Autonomous Systems",
+      description: "Revolutionary AI systems that operate independently",
+      icon: Brain,
+      color: "from-violet-500 to-purple-600",
+      services: [
+        { name: "AI Legal Research Assistant", href: "/ai-autonomous-legal-research-assistant" },
+        { name: "AI Financial Risk Manager", href: "/ai-autonomous-financial-risk-manager" },
+        { name: "AI Healthcare Diagnostics Pro", href: "/ai-autonomous-healthcare-diagnostics-pro" },
+        { name: "AI Supply Chain Optimizer", href: "/ai-autonomous-supply-chain-optimizer" },
+        { name: "AI Cybersecurity Sentinel", href: "/ai-autonomous-cybersecurity-sentinel" }
+      ]
     },
     {
-      title: "Cloud Migration & Support",
-      category: "Management",
-      min: 3000,
-      max: 9000,
-      tags: ["Cloud", "Migration", "DevOps"],
+      title: "Quantum Technology",
+      description: "Next-generation quantum computing solutions",
+      icon: Brain,
+      color: "from-blue-500 to-indigo-600",
+      services: [
+        { name: "Quantum Edge Computing Platform", href: "/quantum-edge-computing-platform" },
+        { name: "Neuromorphic Computing Infrastructure", href: "/neuromorphic-computing-infrastructure" },
+        { name: "Holographic Data Center Platform", href: "/holographic-data-center-platform" },
+        { name: "Bio-Computing Infrastructure", href: "/bio-computing-infrastructure" },
+        { name: "Quantum Internet Backbone", href: "/quantum-internet-backbone" }
+      ]
     },
     {
-      title: "Advanced Cybersecurity Suite",
-      category: "Security",
-      min: 5000,
-      max: 15000,
-      tags: ["Cybersecurity", "PenTesting", "Compliance"],
+      title: "IT Infrastructure",
+      description: "Cutting-edge infrastructure solutions",
+      icon: Server,
+      color: "from-green-500 to-teal-600",
+      services: [
+        { name: "Cloud Migration Services", href: "/cloud-migration" },
+        { name: "DevOps Automation", href: "/devops-automation" },
+        { name: "Edge Computing Solutions", href: "/edge-computing" },
+        { name: "Data Center Optimization", href: "/data-center-optimization" },
+        { name: "5G Private Network Solutions", href: "/5g-private-network-solutions" }
+      ]
     },
     {
-      title: "Big Data Engineering",
-      category: "Analytics",
-      min: 3500,
-      max: 11000,
-      tags: ["Data Engineering", "Analytics", "ETL"],
+      title: "Micro SAAS Solutions",
+      description: "Innovative software-as-a-service solutions",
+      icon: Building,
+      color: "from-orange-500 to-red-600",
+      services: [
+        { name: "AI Content Factory Pro", href: "/ai-autonomous-content-factory-pro" },
+        { name: "Quantum CRM Intelligence Suite", href: "/quantum-crm-intelligence-suite" },
+        { name: "AI HR Platform", href: "/ai-autonomous-hr-platform" },
+        { name: "Quantum Financial Intelligence Platform", href: "/quantum-financial-intelligence-platform" },
+        { name: "AI Education Platform", href: "/ai-autonomous-education-platform" }
+      ]
     },
     {
-      title: "AI Model Training Service",
-      category: "Development",
-      min: 4500,
-      max: 13000,
-      tags: ["Machine Learning", "Model Training", "AI"],
+      title: "Cybersecurity",
+      description: "Advanced security and protection solutions",
+      icon: Shield,
+      color: "from-red-500 to-pink-600",
+      services: [
+        { name: "Zero Trust Network Architecture", href: "/zero-trust-network-architecture" },
+        { name: "Threat Intelligence Platform", href: "/threat-intelligence-platform" },
+        { name: "Compliance Automation", href: "/compliance-automation" },
+        { name: "SOC2 Compliance Automation", href: "/soc2-compliance-automation" },
+        { name: "Vulnerability Assessment & Penetration Testing", href: "/vulnerability-assessment-penetration-testing" }
+      ]
     },
     {
-      title: "Digital Transformation Strategy",
-      category: "Strategy",
-      min: 6000,
-      max: 14000,
-      tags: ["Transformation", "Strategy", "Business"],
-    },
+      title: "Industry Solutions",
+      description: "Industry-specific technology solutions",
+      icon: BarChart3,
+      color: "from-yellow-500 to-orange-600",
+      services: [
+        { name: "Healthcare AI Solutions", href: "/healthcare-ai-solutions" },
+        { name: "Financial Technology Solutions", href: "/financial-solutions" },
+        { name: "Manufacturing AI Solutions", href: "/manufacturing-ai-solutions" },
+        { name: "Retail Technology Solutions", href: "/retail-technology-solutions" },
+        { name: "Energy & Utilities Solutions", href: "/energy-utilities-solutions" }
+      ]
+    }
   ];
 
-  const authors = [
-    "Global AI Experts",
-    "InnovateTech",
-    "SecureFuture",
-    "CloudOps Partners",
-    "DataVisor",
-    "NexGen Solutions",
+  const featuredServices = [
+    {
+      title: "Quantum Edge Computing Platform",
+      description: "Revolutionary edge computing platform that leverages quantum computing principles to deliver unprecedented performance and efficiency for distributed applications.",
+      price: "$1,299/month",
+      href: "/quantum-edge-computing-platform",
+      icon: Brain,
+      color: "from-cyan-500 to-blue-500"
+    },
+    {
+      title: "AI Autonomous Legal Research Assistant",
+      description: "Advanced AI-powered legal research tool that autonomously analyzes case law, statutes, and legal precedents to provide comprehensive legal insights.",
+      price: "$899/month",
+      href: "/ai-autonomous-legal-research-assistant",
+      icon: Brain,
+      color: "from-purple-500 to-pink-500"
+    },
+    {
+      title: "Zero Trust Network Architecture",
+      description: "Comprehensive cybersecurity solution implementing zero-trust principles across your entire network infrastructure for maximum security.",
+      price: "$2,199/month",
+      href: "/zero-trust-network-architecture",
+      icon: Shield,
+      color: "from-red-500 to-orange-500"
+    }
   ];
-
-  const images = [
-    "https://images.unsplash.com/photo-1506765515384-028b60a970df?auto=format&fit=crop&w=800&h=500",
-    "https://images.unsplash.com/photo-1593642532973-d31b6557fa68?auto=format&fit=crop&w=800&h=500",
-    "https://images.unsplash.com/photo-1523475496153-3a12d3e9ad12?auto=format&fit=crop&w=800&h=500",
-    "https://images.unsplash.com/photo-1545997331-9d517f5ab3b4?auto=format&fit=crop&w=800&h=500",
-  ];
-
-  const template = getRandomItem(templates);
-  const author = getRandomItem(authors);
-  const price = Math.round(
-    Math.random() * (template.max - template.min) + template.min
-  );
-
-  return {
-    id: `auto-service-${idNum}`,
-    title: template.title,
-    description: `Professional ${template.title.toLowerCase()} with industry-standard practices and tailored solutions for your business.`,
-    category: template.category,
-    price,
-    currency: "$",
-    tags: template.tags,
-    author: { name: author, id: author.toLowerCase().replace(/\s+/g, "-") },
-    images: [getRandomItem(images)],
-    createdAt: new Date().toISOString(),
-    aiScore: Math.floor(90 + Math.random() * 10),
-    rating: parseFloat((4 + Math.random()).toFixed(1)),
-    reviewCount: Math.floor(50 + Math.random() * 150),
-  };
-}
-
-// Filter options specific to services
-const SERVICE_FILTERS = [
-  { label: 'Development', value: 'development' },
-  { label: 'Management', value: 'management' },
-  { label: 'Security', value: 'security' },
-  { label: 'Analytics', value: 'analytics' },
-  { label: 'Consulting', value: 'consulting' },
-  { label: 'Strategy', value: 'strategy' },
-];
-
-export default function ServicesPage() {
-  const [listings, setListings] = useState<ProductListing[]>(SERVICE_LISTINGS);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setListings(prev => [...prev, generateRandomService(prev.length + 1)]);
-    }, 120000);
-
-    return () => clearInterval(interval);
-  }, []);
 
   return (
-    <>
-      <div className="bg-zion-blue-dark py-4 px-4 md:px-8 mb-6 border-b border-zion-blue-light">
-        <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-          <h2 className="text-white text-lg font-medium">Featured Services</h2>
-          <div className="flex flex-wrap gap-2">
-            <Link to="/it-onsite-services">
-              <Button variant="outline" className="border-zion-purple text-zion-cyan hover:bg-zion-purple/10">
-                <Globe className="h-4 w-4 mr-2" />
-                Global IT Onsite Services
-              </Button>
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white">
+      {/* Hero Section */}
+      <section className="relative py-20 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-purple-900/20 via-blue-900/20 to-cyan-900/20"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(120,119,198,0.1),transparent_50%)]"></div>
+        <div className="relative z-10 container mx-auto px-4 text-center">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 text-gradient">
+            Our Services
+          </h1>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+            Pioneering the future of technology with revolutionary AI autonomous systems, 
+            quantum computing, and autonomous solutions that transform businesses worldwide.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link 
+              to="/contact" 
+              className="btn-primary text-lg px-8 py-4 flex items-center space-x-2"
+            >
+              <span>Get Started</span>
+              <ArrowRight className="w-5 h-5" />
             </Link>
-            <Link to="/request-quote">
-              <Button className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white">
-                Request a Quote
-              </Button>
+            <Link 
+              to="/contact" 
+              className="btn-secondary text-lg px-8 py-4"
+            >
+              Contact Sales
             </Link>
           </div>
         </div>
-      </div>
-      <DynamicListingPage 
-        title="IT & AI Services"
-        description="Find expert technology service providers for your business needs, from AI development to infrastructure management."
-        categorySlug="services"
-        listings={listings}
-        categoryFilters={SERVICE_FILTERS}
-        initialPrice={{ min: 3000, max: 10000 }}
-      />
-      <TrustedBySection />
-    </>
+      </section>
+
+      {/* Featured Services */}
+      <section className="py-20 bg-gray-800/50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient">
+              Featured Services
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Discover our most innovative and transformative solutions
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {featuredServices.map((service, index) => (
+              <div key={index} className="group bg-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300 hover:transform hover:scale-105">
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="text-xl font-semibold text-white group-hover:text-cyan-400 transition-colors">
+                    {service.title}
+                  </h3>
+                  <div className={`w-12 h-12 bg-gradient-to-r ${service.color} rounded-lg flex items-center justify-center`}>
+                    <service.icon className="w-6 h-6 text-white" />
+                  </div>
+                </div>
+                <p className="text-gray-300 mb-4 line-clamp-3">{service.description}</p>
+                <div className="flex items-center justify-between">
+                  <span className="text-cyan-400 font-semibold">{service.price}</span>
+                  <Link 
+                    to={service.href} 
+                    className="text-cyan-400 hover:text-cyan-300 transition-colors flex items-center space-x-1"
+                  >
+                    <span>Learn More</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Service Categories */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient">
+              Service Categories
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Explore our comprehensive range of technology solutions
+            </p>
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+            {serviceCategories.map((category, index) => (
+              <div key={index} className="group bg-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300 hover:transform hover:scale-105">
+                <div className="flex items-center space-x-3 mb-4">
+                  <div className={`w-12 h-12 rounded-xl bg-gradient-to-r ${category.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                    <category.icon className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white group-hover:text-purple-400 transition-colors duration-300">
+                      {category.title}
+                    </h3>
+                    <p className="text-sm text-gray-400">{category.description}</p>
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  {category.services.map((service, serviceIndex) => (
+                    <Link 
+                      key={serviceIndex}
+                      to={service.href} 
+                      className="flex items-center space-x-2 text-sm text-gray-300 hover:text-purple-400 transition-colors duration-300 group"
+                    >
+                      <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      <span>{service.name}</span>
+                    </Link>
+                  ))}
+                </div>
+                <div className="mt-4 pt-4 border-t border-gray-700/50">
+                  <Link 
+                    to={`/services/${category.title.toLowerCase().replace(/\s+/g, '-').replace(/&/g, '-')}`}
+                    className="inline-flex items-center space-x-2 text-purple-400 hover:text-purple-300 transition-colors duration-300 text-sm font-medium"
+                  >
+                    <span>View All {category.title}</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-gray-800/50">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient">
+            Ready to Transform Your Business?
+          </h2>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+            Let's discuss how our innovative solutions can drive your success and position you at the forefront of technological advancement.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link 
+              to="/contact" 
+              className="btn-primary text-lg px-8 py-4"
+            >
+              Get in Touch
+            </Link>
+            <Link 
+              to="/get-started" 
+              className="btn-secondary text-lg px-8 py-4"
+            >
+              Get Started
+            </Link>
+          </div>
+        </div>
+      </section>
+    </div>
   );
-}
+};
+
+export default ServicesPage;
