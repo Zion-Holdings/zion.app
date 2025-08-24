@@ -1,8 +1,7 @@
-export default function AdminAutomationStatus() {
+export default function AutomationStatus() {
   return (
-    <div className="space-y-2">
+    <div>
       <h1 className="text-2xl font-semibold">Automation Status</h1>
-      <p>System nominal.</p>
     </div>
   );
 }

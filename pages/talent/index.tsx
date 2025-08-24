@@ -1,8 +1,7 @@
-export default function Talent() {
+export default function TalentIndex() {
   return (
-    <div className="space-y-2">
+    <div>
       <h1 className="text-2xl font-semibold">Talent</h1>
-      <p>Find AI talent.</p>
     </div>
   );
 }

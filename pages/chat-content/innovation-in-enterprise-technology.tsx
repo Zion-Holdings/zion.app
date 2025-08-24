@@ -1,1 +1,1 @@
-export default function Page() { return <div>innovation-in-enterprise-technology</div>; }
+export default function Page() { return <div>Innovation in Enterprise Technology</div>; }
