@@ -37,22 +37,22 @@ export function Footer() {
             <div className="space-y-3 mb-6">
               <div className="flex items-center gap-3 text-zion-slate-light">
                 <Mail className="w-4 h-4 text-zion-cyan" />
-                <span>hello@ziontechgroup.com</span>
+                <span>kleber@ziontechgroup.com</span>
               </div>
               <div className="flex items-center gap-3 text-zion-slate-light">
                 <Phone className="w-4 h-4 text-zion-cyan" />
-                <span>+1 (555) 123-4567</span>
+                <span>+1 302 464 0950</span>
               </div>
               <div className="flex items-center gap-3 text-zion-slate-light">
                 <MapPin className="w-4 h-4 text-zion-cyan" />
-                <span>Global - Available 24/7</span>
+                <span>364 E Main St STE 1008, Middletown DE 19709</span>
               </div>
             </div>
 
             {/* Social Links */}
             <div className="flex space-x-4">
               <a
-                href="https://twitter.com/lovable_dev"
+                href="https://twitter.com/ziontechgroup"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-zion-slate-light hover:text-zion-cyan transition-colors p-2 hover:bg-zion-purple/10 rounded-md"
@@ -62,7 +62,7 @@ export function Footer() {
                 <Twitter className="h-5 w-5" />
               </a>
               <a
-                href="https://www.linkedin.com/company/zion-marketplace"
+                href="https://www.linkedin.com/company/zion-tech-group"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-zion-slate-light hover:text-zion-cyan transition-colors p-2 hover:bg-zion-purple/10 rounded-md"
@@ -72,7 +72,7 @@ export function Footer() {
                 <Linkedin className="h-5 w-5" />
               </a>
               <a
-                href="https://www.facebook.com/zionmarketplace"
+                href="https://www.facebook.com/ziontechgroup"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-zion-slate-light hover:text-zion-cyan transition-colors p-2 hover:bg-zion-purple/10 rounded-md"
@@ -82,7 +82,7 @@ export function Footer() {
                 <Facebook className="h-5 w-5" />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://instagram.com/ziontechgroup"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-zion-slate-light hover:text-zion-cyan transition-colors p-2 hover:bg-zion-purple/10 rounded-md"
@@ -92,7 +92,7 @@ export function Footer() {
                 <Instagram className="h-5 w-5" />
               </a>
               <a
-                href="https://github.com"
+                href="https://github.com/ziontechgroup"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-zion-slate-light hover:text-zion-cyan transition-colors p-2 hover:bg-zion-purple/10 rounded-md"
@@ -104,17 +104,17 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Marketplace */}
+          {/* Services */}
           <div>
-            <h3 className="text-white font-semibold mb-4 text-lg">Marketplace</h3>
+            <h3 className="text-white font-semibold mb-4 text-lg">Services</h3>
             <ul className="space-y-3">
-              <li><Link to="/marketplace" className="text-zion-slate-light hover:text-zion-cyan transition-colors hover:translate-x-1 inline-block">Products</Link></li>
-              <li><Link to="/services" className="text-zion-slate-light hover:text-zion-cyan transition-colors hover:translate-x-1 inline-block">Services</Link></li>
-              <li><Link to="/talent" className="text-zion-slate-light hover:text-zion-cyan transition-colors hover:translate-x-1 inline-block">Talent</Link></li>
-              <li><Link to="/equipment" className="text-zion-slate-light hover:text-zion-cyan transition-colors hover:translate-x-1 inline-block">Equipment</Link></li>
-              <li><Link to="/categories" className="text-zion-slate-light hover:text-zion-cyan transition-colors hover:translate-x-1 inline-block">Categories</Link></li>
-              <li><Link to="/green-it" className="text-zion-slate-light hover:text-zion-cyan transition-colors hover:translate-x-1 inline-block">Green IT</Link></li>
-              <li><Link to="/ai-services" className="text-zion-slate-light hover:text-zion-cyan transition-colors hover:translate-x-1 inline-block">AI Services</Link></li>
+              <li><Link to="/services" className="text-zion-slate-light hover:text-zion-cyan transition-colors hover:translate-x-1 inline-block">AI & Machine Learning</Link></li>
+              <li><Link to="/services" className="text-zion-slate-light hover:text-zion-cyan transition-colors hover:translate-x-1 inline-block">Cybersecurity</Link></li>
+              <li><Link to="/services" className="text-zion-slate-light hover:text-zion-cyan transition-colors hover:translate-x-1 inline-block">Cloud Computing</Link></li>
+              <li><Link to="/services" className="text-zion-slate-light hover:text-zion-cyan transition-colors hover:translate-x-1 inline-block">Web Development</Link></li>
+              <li><Link to="/services" className="text-zion-slate-light hover:text-zion-cyan transition-colors hover:translate-x-1 inline-block">Mobile Development</Link></li>
+              <li><Link to="/services" className="text-zion-slate-light hover:text-zion-cyan transition-colors hover:translate-x-1 inline-block">Data Analytics</Link></li>
+              <li><Link to="/services" className="text-zion-slate-light hover:text-zion-cyan transition-colors hover:translate-x-1 inline-block">DevOps & Automation</Link></li>
             </ul>
           </div>
 
@@ -123,23 +123,22 @@ export function Footer() {
             <h3 className="text-white font-semibold mb-4 text-lg">Company</h3>
             <ul className="space-y-3">
               <li><Link to="/about" className="text-zion-slate-light hover:text-zion-cyan transition-colors hover:translate-x-1 inline-block">About Us</Link></li>
-              <li><Link to="/blog" className="text-zion-slate-light hover:text-zion-cyan transition-colors hover:translate-x-1 inline-block">Blog</Link></li>
-              <li><Link to="/partners" className="text-zion-slate-light hover:text-zion-cyan transition-colors hover:translate-x-1 inline-block">Partners</Link></li>
-              <li><Link to="/careers" className="text-zion-slate-light hover:text-zion-cyan transition-colors hover:translate-x-1 inline-block">Careers</Link></li>
+              <li><Link to="/about" className="text-zion-slate-light hover:text-zion-cyan transition-colors hover:translate-x-1 inline-block">Leadership Team</Link></li>
+              <li><Link to="/about" className="text-zion-slate-light hover:text-zion-cyan transition-colors hover:translate-x-1 inline-block">Our Mission</Link></li>
+              <li><Link to="/about" className="text-zion-slate-light hover:text-zion-cyan transition-colors hover:translate-x-1 inline-block">Careers</Link></li>
               <li><Link to="/contact" className="text-zion-slate-light hover:text-zion-cyan transition-colors hover:translate-x-1 inline-block">Contact</Link></li>
-              <li><Link to="/sitemap" className="text-zion-slate-light hover:text-zion-cyan transition-colors hover:translate-x-1 inline-block">Sitemap</Link></li>
-              <li><Link to="/press" className="text-zion-slate-light hover:text-zion-cyan transition-colors hover:translate-x-1 inline-block">Press Kit</Link></li>
+              <li><Link to="/about" className="text-zion-slate-light hover:text-zion-cyan transition-colors hover:translate-x-1 inline-block">Press Kit</Link></li>
             </ul>
           </div>
 
-          {/* Support & Newsletter */}
+          {/* Support & Resources */}
           <div>
-            <h3 className="text-white font-semibold mb-4 text-lg">Support & Updates</h3>
+            <h3 className="text-white font-semibold mb-4 text-lg">Support & Resources</h3>
             <ul className="space-y-3 mb-6">
-              <li><Link to="/help" className="text-zion-slate-light hover:text-zion-cyan transition-colors hover:translate-x-1 inline-block">Help Center</Link></li>
-              <li><Link to="/support" className="text-zion-slate-light hover:text-zion-cyan transition-colors hover:translate-x-1 inline-block">Support</Link></li>
-              <li><Link to="/status" className="text-zion-slate-light hover:text-zion-cyan transition-colors hover:translate-x-1 inline-block">System Status</Link></li>
-              <li><Link to="/api-docs" className="text-zion-slate-light hover:text-zion-cyan transition-colors hover:translate-x-1 inline-block">API Docs</Link></li>
+              <li><Link to="/contact" className="text-zion-slate-light hover:text-zion-cyan transition-colors hover:translate-x-1 inline-block">Help Center</Link></li>
+              <li><Link to="/contact" className="text-zion-slate-light hover:text-zion-cyan transition-colors hover:translate-x-1 inline-block">Technical Support</Link></li>
+              <li><Link to="/contact" className="text-zion-slate-light hover:text-zion-cyan transition-colors hover:translate-x-1 inline-block">System Status</Link></li>
+              <li><Link to="/services" className="text-zion-slate-light hover:text-zion-cyan transition-colors hover:translate-x-1 inline-block">API Documentation</Link></li>
             </ul>
             
             <div className="mb-4">
