@@ -4,8 +4,9 @@ import { ProductListing } from "@/types/listings";
 import { TrustedBySection } from "@/components/TrustedBySection";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Globe } from "lucide-react";
+import { Globe, ExternalLink, Star, Clock, Shield, Zap, Database, Code, Smartphone, Blockchain, Cpu, BarChart3 } from "lucide-react";
 import { useEffect, useState } from "react";
+import { EXPANDED_SERVICES } from "@/data/expandedServices";
 
 // Sample service listings
 const SERVICE_LISTINGS: ProductListing[] = [
