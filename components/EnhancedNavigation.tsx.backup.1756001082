@@ -21,12 +21,21 @@ const EnhancedNavigation: React.FC = () => {
   }, []);
 
   const services = [
+<<<<<<< HEAD
+    { name: 'All Services', href: '/comprehensive-2025-services-showcase', icon: Globe, description: 'Complete collection of innovative services' },
+    { name: 'AI Business Intelligence', href: '/ai-business-intelligence', icon: Brain, description: 'AI-powered analytics and insights' },
+    { name: 'Quantum Cybersecurity', href: '/quantum-cybersecurity', icon: Shield, description: 'Quantum-resistant security solutions' },
+    { name: 'Edge Computing', href: '/edge-computing-orchestration', icon: Cpu, description: 'Edge orchestration and IoT management' },
+    { name: 'Space Technology', href: '/space-technology', icon: Rocket, description: 'Space exploration and satellite tech' },
+    { name: 'Pricing', href: '/pricing-2025', icon: Award, description: 'Transparent pricing for all services' }
+=======
     { name: 'All Solutions', href: '/comprehensive-2025-services-showcase', icon: Globe, description: 'Complete collection of innovative solutions' },
     { name: 'AI Business Intelligence', href: 'https://ziontechgroup.com/ai-business-intelligence', icon: Brain, description: 'AI-powered analytics and insights' },
     { name: 'Quantum Cybersecurity', href: 'https://ziontechgroup.com/quantum-cybersecurity', icon: Shield, description: 'Quantum-resistant security solutions' },
     { name: 'Edge Computing', href: 'https://ziontechgroup.com/edge-computing-orchestration', icon: Cpu, description: 'Edge orchestration and IoT management' },
     { name: 'Space Technology', href: 'https://ziontechgroup.com/space-technology', icon: Rocket, description: 'Space exploration and satellite tech' },
     { name: 'Pricing', href: '/pricing-2025', icon: Award, description: 'Transparent pricing for all solutions' }
+>>>>>>> origin/cursor/improve-content-organization-and-searchability-fa56
   ];
 
   const company = [
@@ -78,6 +87,28 @@ const EnhancedNavigation: React.FC = () => {
                 }`} />
               </button>
               
+<<<<<<< HEAD
+              {activeDropdown === 'services' && (
+                <div className="absolute top-full left-0 mt-2 w-80 bg-slate-800/95 backdrop-blur-xl rounded-2xl border border-white/10 shadow-2xl overflow-hidden">
+                  <div className="p-4">
+                    <h3 className="text-sm font-semibold text-white/60 mb-3 uppercase tracking-wider">
+                      Our Services
+                    </h3>
+                    <div className="grid grid-cols-1 gap-2">
+                      {services.map((service) => (
+                        <Link
+                          key={service.name}
+                          href={service.href}
+                          onClick={closeAllDropdowns}
+                          className="flex items-start space-x-3 p-3 rounded-xl hover:bg-white/5 transition-colors duration-200 group"
+                        >
+                          <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-colors">
+                            <service.icon className="w-5 h-5 text-white" />
+                          </div>
+                          <div className="flex-1">
+                            <div className="font-medium text-white group-hover:text-blue-300 transition-colors">
+                              {service.name}
+=======
               <AnimatePresence>
                 {activeDropdown === 'services' && (
                   <motion.div
@@ -101,6 +132,7 @@ const EnhancedNavigation: React.FC = () => {
                           >
                             <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500/20 to-cyan-500/20 p-2 flex items-center justify-center">
                               <service.icon className="w-4 h-4 text-cyan-400" />
+>>>>>>> origin/cursor/improve-content-organization-and-searchability-fa56
                             </div>
                             <div className="text-sm text-white/60">{service.description}</div>
                           </div>

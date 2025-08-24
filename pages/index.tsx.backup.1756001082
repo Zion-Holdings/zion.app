@@ -558,9 +558,14 @@ import React from 'react';
 import Head from 'next/head';
 import { motion } from 'framer-motion';
 import { 
+<<<<<<< HEAD
+  ArrowRight, Brain, Shield, Rocket, Cpu, Database, Atom, Users, 
+  CheckCircle, Network
+=======
   ArrowRight, Brain, Shield, Rocket, Cpu, Database, Atom, Target, Star, 
   Sparkles, Zap, Users, Award, Clock, CheckCircle, Globe, Code, Server,
   ChevronRight, ExternalLink, TrendingUp, BarChart3, Cloud, Network, Calendar
+>>>>>>> origin/cursor/improve-content-organization-and-searchability-fa56
 } from 'lucide-react';
 
 export default function HomePage() {
@@ -953,6 +958,10 @@ export default function HomePage() {
                 </div>
               ))}
             </div>
+<<<<<<< HEAD
+          </div>
+        </section>
+=======
           </motion.div>
         </div>
       </section>
@@ -1108,6 +1117,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+>>>>>>> origin/cursor/improve-content-organization-and-searchability-fa56
 
         {/* Micro SAAS Services */}
         <section id="services" className="py-20 bg-white/5">

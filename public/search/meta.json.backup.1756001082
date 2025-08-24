@@ -605,6 +605,14 @@
     "h1": "Resources"
   },
   {
+<<<<<<< HEAD
+    "route": "/revolutionary-2025-services-showcase",
+    "title": "Revolutionary 2025 Services Showcase | Zion Tech Group",
+    "h1": "Revolutionary 2025 Services"
+  },
+  {
+=======
+>>>>>>> origin/cursor/improve-content-organization-and-searchability-fa56
     "route": "/revolutionary-2028-pricing",
     "title": "2028 Revolutionary Pricing - Zion Tech Group",
     "h1": ""
@@ -897,7 +905,11 @@
   {
     "route": "/reports",
     "title": "",
+<<<<<<< HEAD
+    "h1": "Reports"
+=======
     "h1": "Autonomous Content Hub"
+>>>>>>> origin/cursor/improve-content-organization-and-searchability-fa56
   },
   {
     "route": "/reports/links",
