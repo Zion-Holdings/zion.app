@@ -1,0 +1,13 @@
+[2025-08-24T03:12:51.575Z] 🔍 Starting React component validation...
+[2025-08-24T03:12:51.609Z] 📁 Found 10373 page files to validate
+[2025-08-24T03:14:35.026Z] 🔍 Starting React component validation...
+[2025-08-24T03:14:35.059Z] 📁 Found 10373 page files to validate
+[2025-08-24T03:14:35.301Z] 📊 Validation complete:
+[2025-08-24T03:14:35.301Z]    Total files: 10373
+[2025-08-24T03:14:35.301Z]    Critical issues: 9192
+[2025-08-24T03:14:35.301Z]    Warnings: 57
+[2025-08-24T03:14:35.301Z]    Healthy: 1124
+[2025-08-24T03:14:35.302Z]    Overall score: 82/100
+[2025-08-24T03:14:35.302Z]    Report saved to: /workspace/public/reports/react-validation/latest.json
+[2025-08-24T03:14:35.302Z]    HTML report: /workspace/public/reports/react-validation/index.html
+[2025-08-24T03:14:35.302Z] ❌ Critical issues found! Build may fail.
