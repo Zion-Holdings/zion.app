@@ -1,5 +1,4 @@
 const nextConfig = {
-  assetPrefix,
   poweredByHeader: false,
   trailingSlash: false,
   reactStrictMode: true,
@@ -52,7 +51,7 @@ const nextConfig = {
     // Memory and performance optimizations for 176+ pages
     largePageDataBytes: 128 * 1000, // Reduced to 128KB for better performance
     workerThreads: false, // Disable worker threads to reduce memory usage
-    cpus: Math.min(2, os.cpus().length), // Adaptive CPU limit
+    cpus: Math.min(2, require('os').cpus().length), // Adaptive CPU limit
     // Bundle analysis optimizations moved to root level
     // Disable profiling for faster builds
     swcTraceProfiling: false,
@@ -129,22 +128,6 @@ const nextConfig = {
         return entries;
       };
 
-      // DISABLED: FINAL NUCLEAR OPTION BannerPlugin causing module resolution issues
-      // The BannerPlugin was injecting absolute paths '/opt/build/repo/src/utils/tslib-polyfill.js'
-      // into third-party node_modules like @walletconnect, @peculiar, etc.
-      // This caused webpack module resolution failures in the Netlify build environment
-      //
-      // Document-level polyfills in _document.tsx will handle runtime errors instead
-
-      // DISABLED: All webpack-level polyfill injection causing module resolution issues
-      // The following approaches were causing third-party node_modules to import absolute paths:
-      // - resolve.alias for tslib
-      // - ProvidePlugin for TypeScript helpers  
-      // - NormalModuleReplacementPlugin for tslib replacement
-      // - BannerPlugin injection into chunks
-      //
-      // Solution: Rely only on document-level and runtime polyfills without webpack interference
-
       // SIMPLIFIED DefinePlugin 
       config.plugins.push(
         new webpack.DefinePlugin({
@@ -157,8 +140,6 @@ const nextConfig = {
           }),
         })
       );
-
-
     }
     
     // Development optimizations to prevent memory leaks with 176+ pages
@@ -177,7 +158,7 @@ const nextConfig = {
       // Alias react-router-dom to a lightweight stub to avoid build errors
       config.resolve.alias = {
         ...config.resolve.alias,
-        'react-router-dom': path.resolve(__dirname, 'src/stubs/react-router-dom.ts'),
+        'react-router-dom': require('path').resolve(__dirname, 'src/stubs/react-router-dom.ts'),
       };
 
       if (!isServer) {
@@ -187,18 +168,6 @@ const nextConfig = {
           level: 'error',
         };
       }
-    }
-    
-    // For Netlify deployment, exclude problematic files temporarily
-    if (process.env.SKIP_TYPE_CHECK === 'true') {
-      config.externals = config.externals || [];
-      config.externals.push({
-        './src/context/FavoritesContext.tsx': 'empty',
-        './src/context/LanguageContext.tsx': 'empty', 
-        './src/context/RequestQuoteWizard.tsx': 'empty',
-        './src/context/WhitelabelContext.tsx': 'empty',
-        './src/hooks/useApiKeys.ts': 'empty',
-      });
     }
 
     // Smart Sentry detection: Disable automatically if would cause build issues
@@ -215,11 +184,11 @@ const nextConfig = {
       // Use webpack aliases to completely replace all Sentry imports with mocks
       config.resolve.alias = {
         ...config.resolve.alias,
-        '@sentry/nextjs': path.resolve(__dirname, 'src/utils/sentry-mock.ts'),
-        '@sentry/node': path.resolve(__dirname, 'src/utils/sentry-mock.ts'),
-        '@sentry/tracing': path.resolve(__dirname, 'src/utils/sentry-mock.ts'),
-        '@sentry/react': path.resolve(__dirname, 'src/utils/sentry-mock.ts'),
-        '@sentry/browser': path.resolve(__dirname, 'src/utils/sentry-mock.ts'),
+        '@sentry/nextjs': require('path').resolve(__dirname, 'src/utils/sentry-mock.ts'),
+        '@sentry/node': require('path').resolve(__dirname, 'src/utils/sentry-mock.ts'),
+        '@sentry/tracing': require('path').resolve(__dirname, 'src/utils/sentry-mock.ts'),
+        '@sentry/react': require('path').resolve(__dirname, 'src/utils/sentry-mock.ts'),
+        '@sentry/browser': require('path').resolve(__dirname, 'src/utils/sentry-mock.ts'),
       };
     }
 
@@ -230,7 +199,7 @@ const nextConfig = {
       // Use webpack alias to replace dd-trace with mock implementation
       config.resolve.alias = {
         ...config.resolve.alias,
-        'dd-trace': path.resolve(__dirname, 'src/utils/dd-trace-mock.ts'),
+        'dd-trace': require('path').resolve(__dirname, 'src/utils/dd-trace-mock.ts'),
       };
     }
 
@@ -569,7 +538,7 @@ const nextConfig = {
       
       // Set safe cache options
       config.cache.allowCollectingMemory = false;
-      config.cache.managedPaths = [path.resolve(__dirname, 'node_modules')];
+      config.cache.managedPaths = [require('path').resolve(__dirname, 'node_modules')];
     }
 
     // Define feature flags for tree shaking
@@ -626,8 +595,8 @@ const nextConfig = {
     if (process.env.NETLIFY === 'true' || process.env.CI === 'true') {
       config.resolve.alias = {
         ...config.resolve.alias,
-        'react-day-picker': path.resolve(__dirname, 'src/stubs/calendar-stub.ts'),
-        'react-markdown': path.resolve(__dirname, 'src/stubs/markdown-stub.ts'),
+        'react-day-picker': require('path').resolve(__dirname, 'src/stubs/calendar-stub.ts'),
+        'react-markdown': require('path').resolve(__dirname, 'src/stubs/markdown-stub.ts'),
       };
       console.log('🚑 Emergency stubs enabled for Netlify build');
     }
@@ -705,7 +674,190 @@ const nextConfig = {
     if (!dev) {
       config.resolve.alias = {
         ...config.resolve.alias,
-        'react-router-dom': path.resolve(__dirname, 'src/stubs/react-router-dom.ts'),
+        'react-router-dom': require('path').resolve(__dirname, 'src/stubs/react-router-dom.ts'),
+      };
+
+      // Note: Compression is handled by Netlify and other deployment platforms
+      // Removed compression-webpack-plugin to avoid dependency conflicts
+    }
+
+    // PERFORMANCE: Add bundle optimization
+    if (!dev) {
+      config.optimization = {
+        ...config.optimization,
+        moduleIds: 'deterministic',
+        chunkIds: 'deterministic',
+        splitChunks: {
+          chunks: 'all',
+          cacheGroups: {
+            vendor: {
+              test: /[\\/]node_modules[\\/]/,
+              name: 'vendors',
+              chunks: 'all',
+              priority: 10,
+            },
+            common: {
+              name: 'common',
+              minChunks: 2,
+              chunks: 'all',
+              priority: 5,
+              reuseExistingChunk: true,
+            },
+          },
+        },
+      };
+    }
+
+    // CRITICAL FIX: Remove cacheUnaffected in ALL cases to prevent webpack conflicts
+    // The cacheUnaffected option conflicts with usedExports optimization
+    if (config.cache && config.cache.cacheUnaffected !== undefined) {
+      delete config.cache.cacheUnaffected;
+    }
+    
+    // Also ensure that cache.type is properly configured when filesystem caching is used
+    if (config.cache && config.cache.type === 'filesystem') {
+      // Remove any potentially conflicting cache options
+      delete config.cache.cacheUnaffected;
+      
+      // Set safe cache options
+      config.cache.allowCollectingMemory = false;
+      config.cache.managedPaths = [require('path').resolve(__dirname, 'node_modules')];
+    }
+
+    // Define feature flags for tree shaking
+    config.plugins.push(
+      new webpack.DefinePlugin({
+        __SENTRY_DEBUG__: false,
+        __SENTRY_TRACING__: true,
+      })
+    );
+
+    // Note: Sentry replacement is handled via resolve.alias above for CI builds
+
+    // Handle date-fns ESM import issues
+    config.plugins.push(
+      new webpack.ProvidePlugin({
+        'date-fns': 'date-fns',
+      })
+    );
+
+    // Force certain packages to use ESM - Enhanced for Next.js 15
+    config.module.rules.push({
+      test: /\.m?js$/,
+      type: 'javascript/auto',
+      resolve: {
+        fullySpecified: false,
+      },
+    });
+
+    // COMPREHENSIVE ESM FIX for Next.js 15 + React 19
+    // Handle formik and lodash ESM issues with multiple strategies
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      'react': require.resolve('react'),
+      'react-dom': require.resolve('react-dom'),
+    };
+
+    // Override module resolution for problematic packages
+    config.resolve.extensionAlias = {
+      '.js': ['.js', '.ts', '.jsx', '.tsx', '.mjs'],
+      '.mjs': ['.mjs', '.mts', '.js'],
+      '.cjs': ['.cjs', '.cts', '.js'],
+    };
+
+    // Add specific handling for ESM modules that use dynamic imports
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      // Handle problematic ESM packages
+      'micromark/lib/parse.js': 'micromark/lib/parse.js',
+      'micromark/lib/postprocess.js': 'micromark/lib/postprocess.js',
+      'micromark/lib/preprocess.js': 'micromark/lib/preprocess.js',
+    };
+
+    // Emergency fallback for Netlify builds - use stubs if ESM issues persist
+    if (process.env.NETLIFY === 'true' || process.env.CI === 'true') {
+      config.resolve.alias = {
+        ...config.resolve.alias,
+        'react-day-picker': require('path').resolve(__dirname, 'src/stubs/calendar-stub.ts'),
+        'react-markdown': require('path').resolve(__dirname, 'src/stubs/markdown-stub.ts'),
+      };
+      console.log('🚑 Emergency stubs enabled for Netlify build');
+    }
+
+    // Add webpack rules to force ESM handling
+    config.module.rules.push({
+      test: /node_modules\/(formik|date-fns|lodash|react-day-picker|micromark|mdast-util-|decode-named-character-reference|character-entities|devlop)/,
+      type: 'javascript/auto',
+      resolve: {
+        fullySpecified: false,
+      },
+    });
+
+    // Additional rule to handle lodash ESM imports specifically in formik
+    config.module.rules.push({
+      test: /\.js$/,
+      include: /node_modules\/formik/,
+      use: {
+        loader: 'string-replace-loader',
+        options: {
+          multiple: [
+            { search: /require\('lodash\//g, replace: "require('lodash-es/" },
+            { search: /require\("lodash\//g, replace: 'require("lodash-es/' },
+          ]
+        }
+      }
+    });
+
+    // Additional ESM handling for Next.js 15 compatibility
+    if (!isServer) {
+      // Ensure ESM modules are properly resolved
+      config.resolve.mainFields = ['module', 'main'];
+      config.resolve.conditionNames = ['import', 'require', 'default'];
+    }
+
+    // Add polyfills for Node.js APIs
+    config.resolve.fallback = {
+      ...config.resolve.fallback,
+      fs: false,
+      net: false,
+      tls: false,
+      crypto: false,
+      async_hooks: false,
+      diagnostics_channel: false,
+      worker_threads: false,
+      module: false,
+      child_process: false,
+      http: false,
+      https: false,
+      os: false,
+      path: false,
+      stream: false,
+      util: false,
+      zlib: false,
+      url: false,
+      // Handle native modules
+      'dd-trace': false,
+      // Handle node: imports
+      'node:http': false,
+      'node:https': false,
+      'node:fs': false,
+      'node:path': false,
+      'node:stream': false,
+      'node:util': false,
+      'node:crypto': false,
+      'node:os': false,
+      'node:url': false,
+      'node:worker_threads': false,
+      'node:async_hooks': false,
+      'node:child_process': false,
+      'node:diagnostics_channel': false,
+    };
+
+    // Optimize bundle size
+    if (!dev) {
+      config.resolve.alias = {
+        ...config.resolve.alias,
+        'react-router-dom': require('path').resolve(__dirname, 'src/stubs/react-router-dom.ts'),
       };
 
       // Note: Compression is handled by Netlify and other deployment platforms
@@ -743,4 +895,4 @@ const nextConfig = {
   },
 };
 
-module.exports = withSentryConfig(baseConfig);
+module.exports = nextConfig;

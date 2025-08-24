@@ -336,7 +336,7 @@ export default function HomePage() {
               Ready to Get Started?
             </h2>
             <p className="text-xl text-white/70 max-w-3xl mx-auto">
-              Let&apos;s discuss your project and explore how our cutting-edge technology solutions can transform your business
+              Let's discuss your project and explore how our cutting-edge technology solutions can transform your business
             </p>
           </motion.div>
 
