@@ -4,7 +4,7 @@ import { ArrowRight, CheckCircle, Star, Users, Code, Cloud, Brain, Shield, Zap, 
 import { useState, useEffect } from 'react';
 import EnhancedLayout from '../components/layout/EnhancedLayout';
 import EnhancedHero from '../components/EnhancedHero';
-import AdvancedServicesShowcase from '../components/AdvancedServicesShowcase';
+import EnhancedServicesShowcase from '../components/EnhancedServicesShowcase';
 import AdvancedTestimonials from '../components/AdvancedTestimonials';
 import AdvancedContactForm from '../components/AdvancedContactForm';
 import AdvancedStats from '../components/AdvancedStats';
@@ -178,8 +178,8 @@ const Home: NextPage = () => {
           </div>
         </section>
 
-        {/* Advanced Services Showcase */}
-        <AdvancedServicesShowcase />
+        {/* Enhanced Services Showcase */}
+        <EnhancedServicesShowcase />
 
         {/* Advanced Stats Section */}
         <AdvancedStats />
