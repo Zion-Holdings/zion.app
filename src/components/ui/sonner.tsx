@@ -1,5 +1,5 @@
 import React from 'react';
 
-export const Toaster: React.FC = () => {
-  return null; // Simple placeholder for now
+export const Toaster: React.FC<{ position?: string }> = () => {
+  return null; // Simplified version
 };

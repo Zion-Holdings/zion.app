@@ -1,17 +1,7 @@
 
 import React from 'react';
-import { CategoriesSection } from "@/components/CategoriesSection";
-import { BenefitsSection } from "@/components/BenefitsSection";
-import { HowItWorksSection } from "@/components/HowItWorksSection";
-import { NewsletterSection } from "@/components/NewsletterSection";
-import { FeaturedListingsSection } from "@/components/FeaturedListingsSection";
 import { SEO } from "@/components/SEO";
-import { HeroSection } from "@/components/HeroSection";
-import { QuickAccess } from "@/components/home/QuickAccess";
 import { FeatureCTAs } from "@/components/home/FeatureCTAs";
-import { FeatureHighlights } from "@/components/home/FeatureHighlights";
-import { ITServiceRequestHero } from "@/components/home/ITServiceRequestHero";
-import { ServicesShowcase } from "@/components/home/ServicesShowcase";
 
 export default function Home() {
   return (
@@ -20,25 +10,35 @@ export default function Home() {
         title="Zion - The Tech & AI Marketplace" 
         description="Discover top AI and tech talent, services, and equipment in one place."
         keywords="AI, technology, marketplace, services, talent"
-        canonical="https://app.ziontechgroup.com/"
+        canonical="https://ziontechgroup.com/"
       />
 
-      <ITServiceRequestHero />
+      <div className="py-20 bg-gradient-to-r from-zion-purple-dark via-zion-purple to-zion-cyan">
+        <div className="container mx-auto px-4 text-center">
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+            Zion Tech Group
+          </h1>
+          <p className="text-xl md:text-2xl text-zion-cyan-light mb-8 max-w-3xl mx-auto">
+            The world's first comprehensive marketplace dedicated to high-tech and artificial intelligence.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <a 
+              href="/micro-saas-services"
+              className="bg-zion-cyan hover:bg-zion-cyan-light text-zion-slate-dark font-semibold px-8 py-3 rounded-lg transition-colors"
+            >
+              Explore Micro SAAS Services
+            </a>
+            <a 
+              href="mailto:kleber@ziontechgroup.com"
+              className="border-zion-cyan text-zion-cyan hover:bg-zion-cyan/10 font-semibold px-8 py-3 rounded-lg transition-colors"
+            >
+              Contact Us
+            </a>
+          </div>
+        </div>
+      </div>
 
-      <HeroSection />
-      
-      <QuickAccess />
-      
       <FeatureCTAs />
-      
-      <FeatureHighlights />
-      
-      <CategoriesSection />
-      <ServicesShowcase />
-      <BenefitsSection />
-      <HowItWorksSection />
-      <FeaturedListingsSection />
-      <NewsletterSection />
     </div>
   );
 }

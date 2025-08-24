@@ -1,17 +1,6 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-import { CategoriesSection } from "@/components/CategoriesSection";
-import { BenefitsSection } from "@/components/BenefitsSection";
-import { HowItWorksSection } from "@/components/HowItWorksSection";
-import { NewsletterSection } from "@/components/NewsletterSection";
-import { FeaturedListingsSection } from "@/components/FeaturedListingsSection";
 import { SEO } from "@/components/SEO";
-import { HeroSection } from "@/components/HeroSection";
-import { QuickAccess } from "@/components/home/QuickAccess";
 import { FeatureCTAs } from "@/components/home/FeatureCTAs";
-import { FeatureHighlights } from "@/components/home/FeatureHighlights";
-import { ITServiceRequestHero } from "@/components/home/ITServiceRequestHero";
-import { ComprehensiveServicesShowcase } from "@/components/home/ComprehensiveServicesShowcase";
-import { BottomNavigation } from "@/components/MobileNavigation";
 export default function Home() {
-    return (_jsxs("div", { className: "min-h-screen bg-background", children: [_jsx(SEO, { title: "Zion - The Tech & AI Marketplace", description: "Discover top AI and tech talent, services, and equipment in one place.", keywords: "AI, technology, marketplace, services, talent", canonical: "https://ziontechgroup.com/" }), _jsx(ITServiceRequestHero, {}), _jsx(HeroSection, {}), _jsx(QuickAccess, {}), _jsx(FeatureCTAs, {}), _jsx(FeatureHighlights, {}), _jsx(ComprehensiveServicesShowcase, {}), _jsx(CategoriesSection, {}), _jsx(BenefitsSection, {}), _jsx(HowItWorksSection, {}), _jsx(FeaturedListingsSection, {}), _jsx(NewsletterSection, {}), _jsx(BottomNavigation, {})] }));
+    return (_jsxs("div", { className: "min-h-screen bg-background", children: [_jsx(SEO, { title: "Zion - The Tech & AI Marketplace", description: "Discover top AI and tech talent, services, and equipment in one place.", keywords: "AI, technology, marketplace, services, talent", canonical: "https://ziontechgroup.com/" }), _jsx("div", { className: "py-20 bg-gradient-to-r from-zion-purple-dark via-zion-purple to-zion-cyan", children: _jsxs("div", { className: "container mx-auto px-4 text-center", children: [_jsx("h1", { className: "text-5xl md:text-6xl font-bold text-white mb-6", children: "Zion Tech Group" }), _jsx("p", { className: "text-xl md:text-2xl text-zion-cyan-light mb-8 max-w-3xl mx-auto", children: "The world's first comprehensive marketplace dedicated to high-tech and artificial intelligence." }), _jsxs("div", { className: "flex flex-wrap justify-center gap-4", children: [_jsx("a", { href: "/micro-saas-services", className: "bg-zion-cyan hover:bg-zion-cyan-light text-zion-slate-dark font-semibold px-8 py-3 rounded-lg transition-colors", children: "Explore Micro SAAS Services" }), _jsx("a", { href: "mailto:kleber@ziontechgroup.com", className: "border-zion-cyan text-zion-cyan hover:bg-zion-cyan/10 font-semibold px-8 py-3 rounded-lg transition-colors", children: "Contact Us" })] })] }) }), _jsx(FeatureCTAs, {})] }));
 }
