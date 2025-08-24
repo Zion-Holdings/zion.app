@@ -25,6 +25,7 @@ import AdvancedTeamScheduling from '../components/AdvancedTeamScheduling';
 import AdvancedPerformanceDashboard from '../components/AdvancedPerformanceDashboard';
 import AdvancedWorkflowAutomation from '../components/AdvancedWorkflowAutomation';
 import AdvancedAnalyticsDashboard from '../components/AdvancedAnalyticsDashboard';
+import AdvancedProjectHub from '../components/AdvancedProjectHub';
 
 const Home: NextPage = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -318,6 +319,9 @@ const Home: NextPage = () => {
 
         {/* Advanced Analytics Dashboard Section */}
         <AdvancedAnalyticsDashboard />
+
+        {/* Advanced Project Hub Section */}
+        <AdvancedProjectHub />
 
         {/* Advanced Features Showcase */}
         <AdvancedFeaturesShowcase />
