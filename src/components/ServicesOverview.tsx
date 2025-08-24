@@ -1,427 +1,211 @@
 import React from 'react';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { 
   Zap, 
   Shield, 
-  Cloud, 
-  Database, 
-  Code, 
-  ShoppingCart, 
-  BarChart3, 
-  Link as LinkIcon,
-  Network,
-  Monitor,
-  Smartphone,
-  CheckCircle,
-  Star,
-  Clock,
-  Users,
-  Globe
+  Globe, 
+  TrendingUp, 
+  Users, 
+  Building, 
+  Smartphone, 
+  ShoppingCart,
+  Heart,
+  GraduationCap,
+  Truck,
+  ArrowRight,
+  Star
 } from "lucide-react";
+import { EXPANDED_SERVICES } from "@/data/expandedServices";
 
-// Service categories with detailed information
-const serviceCategories = [
-  {
-    title: "AI Services",
-    description: "Cutting-edge artificial intelligence solutions that transform business operations",
-    icon: <Zap className="w-8 h-8 text-zion-cyan" />,
-    services: [
-      {
-        name: "AI Chatbot Builder Pro",
-        price: "$299",
-        features: ["No-code platform", "Multi-language support", "Analytics dashboard", "Platform integration"],
-        benefits: ["24/7 customer support", "Reduced response time", "Scalable automation", "Cost-effective solution"]
-      },
-      {
-        name: "AI Content Generator Suite",
-        price: "$199",
-        features: ["SEO optimization", "Tone adjustment", "Plagiarism detection", "100+ content pieces/month"],
-        benefits: ["Faster content creation", "Improved SEO rankings", "Consistent brand voice", "Time savings"]
-      },
-      {
-        name: "AI Image Generator Pro",
-        price: "$399",
-        features: ["Custom style training", "4K resolution", "Commercial licensing", "Design tool integration"],
-        benefits: ["Unique visual content", "Brand consistency", "Cost-effective design", "Rapid prototyping"]
-      }
-    ],
-    marketPrice: "$150-500",
-    deliveryTime: "Immediate",
-    link: "/micro-saas-services"
-  },
-  {
-    title: "Business Solutions",
-    description: "Data-driven insights and analytics to drive business growth and decision-making",
-    icon: <BarChart3 className="w-8 h-8 text-zion-purple" />,
-    services: [
-      {
-        name: "Business Intelligence Dashboard",
-        price: "$599",
-        features: ["Real-time analytics", "50+ data sources", "Custom dashboards", "Automated reporting"],
-        benefits: ["Data-driven decisions", "Performance insights", "Operational efficiency", "Competitive advantage"]
-      },
-      {
-        name: "Predictive Analytics Engine",
-        price: "$799",
-        features: ["Sales forecasting", "Customer behavior analysis", "Risk assessment", "ML models"],
-        benefits: ["Future planning", "Customer insights", "Risk mitigation", "Revenue optimization"]
-      }
-    ],
-    marketPrice: "$500-1500",
-    deliveryTime: "1-3 weeks",
-    link: "/micro-saas-services"
-  },
-  {
-    title: "Cybersecurity",
-    description: "Comprehensive security solutions to protect your digital assets and ensure compliance",
-    icon: <Shield className="w-8 h-8 text-zion-red" />,
-    services: [
-      {
-        name: "24/7 Cybersecurity Monitoring",
-        price: "$899",
-        features: ["Threat detection", "SIEM integration", "Compliance reporting", "24/7 SOC support"],
-        benefits: ["Continuous protection", "Compliance assurance", "Incident response", "Peace of mind"]
-      },
-      {
-        name: "Penetration Testing Service",
-        price: "$2,499",
-        features: ["Web app testing", "Network security", "Mobile app testing", "Compliance documentation"],
-        benefits: ["Vulnerability identification", "Security validation", "Compliance readiness", "Risk assessment"]
-      }
-    ],
-    marketPrice: "$800-3000",
-    deliveryTime: "Immediate - 2 weeks",
-    link: "/micro-saas-services"
-  },
-  {
-    title: "Cloud Services",
-    description: "Scalable cloud solutions for modern business infrastructure and digital transformation",
-    icon: <Cloud className="w-8 h-8 text-zion-blue" />,
-    services: [
-      {
-        name: "Cloud Migration Expert",
-        price: "$3,999",
-        features: ["AWS/Azure/GCP", "Architecture design", "Data migration", "99.9% uptime guarantee"],
-        benefits: ["Reduced costs", "Improved scalability", "Enhanced security", "Better performance"]
-      },
-      {
-        name: "DevOps Automation Platform",
-        price: "$699",
-        features: ["CI/CD pipelines", "Kubernetes support", "Infrastructure as code", "Monitoring & alerting"],
-        benefits: ["Faster deployments", "Reduced errors", "Team productivity", "Cost optimization"]
-      }
-    ],
-    marketPrice: "$700-5000",
-    deliveryTime: "1-4 weeks",
-    link: "/micro-saas-services"
-  },
-  {
-    title: "Data Services",
-    description: "Enterprise-grade data solutions for analytics, warehousing, and business intelligence",
-    icon: <Database className="w-8 h-8 text-zion-green" />,
-    services: [
-      {
-        name: "Data Warehouse Solution",
-        price: "$1,299",
-        features: ["ETL pipelines", "Data modeling", "BI integration", "Data governance"],
-        benefits: ["Centralized data", "Better insights", "Improved reporting", "Data quality"]
-      },
-      {
-        name: "Database Performance Optimization",
-        price: "$899",
-        features: ["Query optimization", "Indexing strategies", "Performance monitoring", "Capacity planning"],
-        benefits: ["Faster queries", "Better performance", "Reduced costs", "Improved user experience"]
-      }
-    ],
-    marketPrice: "$900-2000",
-    deliveryTime: "1-3 weeks",
-    link: "/micro-saas-services"
-  },
-  {
-    title: "Development",
-    description: "Custom software development solutions for web, mobile, and enterprise applications",
-    icon: <Code className="w-8 h-8 text-zion-orange" />,
-    services: [
-      {
-        name: "Progressive Web App Development",
-        price: "$2,999",
-        features: ["Offline functionality", "Push notifications", "App-like experience", "SEO optimization"],
-        benefits: ["Better user engagement", "Improved performance", "Cross-platform compatibility", "Enhanced SEO"]
-      },
-      {
-        name: "Cross-Platform Mobile App",
-        price: "$4,999",
-        features: ["React Native/Flutter", "UI/UX design", "Backend integration", "App store deployment"],
-        benefits: ["Cost-effective development", "Faster time to market", "Native performance", "Easy maintenance"]
-      },
-      {
-        name: "Custom API Development",
-        price: "$1,999",
-        features: ["REST/GraphQL APIs", "Documentation", "Testing", "Developer portal"],
-        benefits: ["System integration", "Scalable architecture", "Developer experience", "API monetization"]
-      }
-    ],
-    marketPrice: "$2000-8000",
-    deliveryTime: "3-8 weeks",
-    link: "/micro-saas-services"
-  },
-  {
-    title: "E-commerce",
-    description: "Complete e-commerce solutions for online businesses and digital marketplaces",
-    icon: <ShoppingCart className="w-8 h-8 text-zion-pink" />,
-    services: [
-      {
-        name: "E-commerce Platform Development",
-        price: "$5,999",
-        features: ["Payment processing", "Inventory management", "Order fulfillment", "CRM integration"],
-        benefits: ["Increased sales", "Better customer experience", "Operational efficiency", "Scalable growth"]
-      }
-    ],
-    marketPrice: "$5000-15000",
-    deliveryTime: "8-10 weeks",
-    link: "/micro-saas-services"
-  },
-  {
-    title: "Marketing",
-    description: "AI-powered marketing automation and analytics solutions for business growth",
-    icon: <BarChart3 className="w-8 h-8 text-zion-yellow" />,
-    services: [
-      {
-        name: "Marketing Automation Platform",
-        price: "$799",
-        features: ["Email marketing", "Lead scoring", "Campaign management", "AI personalization"],
-        benefits: ["Increased conversions", "Better lead quality", "Time savings", "ROI improvement"]
-      }
-    ],
-    marketPrice: "$500-1500",
-    deliveryTime: "2-3 weeks",
-    link: "/micro-saas-services"
-  },
-  {
-    title: "Integration",
-    description: "Seamless third-party integrations and API synchronization services",
-    icon: <LinkIcon className="w-8 h-8 text-zion-indigo" />,
-    services: [
-      {
-        name: "Third-Party Integration Service",
-        price: "$1,499",
-        features: ["Payment gateways", "CRM systems", "Marketing tools", "Custom webhooks"],
-        benefits: ["System connectivity", "Data consistency", "Workflow automation", "Reduced manual work"]
-      }
-    ],
-    marketPrice: "$1000-3000",
-    deliveryTime: "2-3 weeks",
-    link: "/micro-saas-services"
-  },
-  {
-    title: "Blockchain",
-    description: "Next-generation blockchain and Web3 development solutions",
-    icon: <Network className="w-8 h-8 text-zion-teal" />,
-    services: [
-      {
-        name: "Smart Contract Development",
-        price: "$3,999",
-        features: ["Ethereum/Polygon/Solana", "Security auditing", "DeFi protocols", "NFT contracts"],
-        benefits: ["Decentralized solutions", "Transparent transactions", "Automated execution", "Innovation leadership"]
-      },
-      {
-        name: "Web3 DApp Development",
-        price: "$5,999",
-        features: ["Wallet integration", "Blockchain interaction", "Cross-chain compatibility", "User-friendly interfaces"],
-        benefits: ["Future-proof technology", "User ownership", "Global accessibility", "Reduced intermediaries"]
-      }
-    ],
-    marketPrice: "$4000-10000",
-    deliveryTime: "4-8 weeks",
-    link: "/micro-saas-services"
-  },
-  {
-    title: "IoT",
-    description: "Internet of Things platform development and hardware prototyping services",
-    icon: <Monitor className="w-8 h-8 text-zion-lime" />,
-    services: [
-      {
-        name: "IoT Platform Development",
-        price: "$4,999",
-        features: ["Device management", "Real-time monitoring", "Edge computing", "Cloud integration"],
-        benefits: ["Connected devices", "Data insights", "Operational efficiency", "Innovation opportunities"]
-      }
-    ],
-    marketPrice: "$4000-12000",
-    deliveryTime: "8-10 weeks",
-    link: "/micro-saas-services"
-  },
-  {
-    title: "Hardware",
-    description: "Rapid prototyping and hardware development services for IoT and embedded systems",
-    icon: <Smartphone className="w-8 h-8 text-zion-gray" />,
-    services: [
-      {
-        name: "Hardware Prototyping Service",
-        price: "$2,999",
-        features: ["3D printing", "PCB design", "Component sourcing", "Design validation"],
-        benefits: ["Faster development", "Cost reduction", "Design validation", "Market testing"]
-      }
-    ],
-    marketPrice: "$2000-8000",
-    deliveryTime: "4-6 weeks",
-    link: "/micro-saas-services"
-  }
-];
+// Featured services to showcase on home page
+const FEATURED_SERVICES = EXPANDED_SERVICES.filter(service => service.featured).slice(0, 6);
 
-// Why choose Zion Tech Group
-const whyChooseUs = [
-  {
-    title: "Expert Team",
-    description: "Certified professionals with 10+ years of experience",
-    icon: <Users className="w-6 h-6 text-zion-cyan" />
-  },
-  {
-    title: "Global Reach",
-    description: "Serving clients worldwide with 24/7 support",
-    icon: <Globe className="w-6 h-6 text-zion-purple" />
-  },
-  {
-    title: "Fast Delivery",
-    description: "Quick turnaround times without compromising quality",
-    icon: <Clock className="w-6 h-6 text-zion-green" />
-  },
-  {
-    title: "Proven Results",
-    description: "Track record of successful project deliveries",
-    icon: <Star className="w-6 h-6 text-zion-yellow" />
-  }
-];
+const getCategoryIcon = (category: string) => {
+  const categoryIcons: { [key: string]: React.ReactNode } = {
+    'AI Automation': <Zap className="h-5 w-5" />,
+    'Customer Intelligence': <Users className="h-5 w-5" />,
+    'Cybersecurity': <Shield className="h-5 w-5" />,
+    'Cloud Management': <Globe className="h-5 w-5" />,
+    'Data Analytics': <TrendingUp className="h-5 w-5" />,
+    'Digital Transformation': <Building className="h-5 w-5" />,
+    'Mobile Development': <Smartphone className="h-5 w-5" />,
+    'E-commerce': <ShoppingCart className="h-5 w-5" />,
+    'Healthcare Technology': <Heart className="h-5 w-5" />,
+    'Education Technology': <GraduationCap className="h-5 w-5" />,
+    'Supply Chain': <Truck className="h-5 w-5" />
+  };
+  return categoryIcons[category] || <Zap className="h-5 w-5" />;
+};
+
+const getPriceRange = (price: number) => {
+  if (price <= 4999) return 'starter';
+  if (price <= 9999) return 'professional';
+  if (price <= 25000) return 'enterprise';
+  return 'custom';
+};
 
 export function ServicesOverview() {
   return (
-    <div className="py-20 bg-zion-blue-dark">
+    <section className="py-20 bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-purple-dark">
       <div className="container mx-auto px-4">
-        {/* Header */}
+        {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Comprehensive Technology Services
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            Comprehensive IT & AI Solutions
           </h2>
-          <p className="text-zion-slate-light text-lg max-w-3xl mx-auto">
-            Discover our complete range of professional services designed to accelerate your business growth and digital transformation
+          <p className="text-xl text-zion-cyan-light max-w-3xl mx-auto mb-8">
+            From AI automation to cybersecurity, we provide cutting-edge technology solutions 
+            that drive business growth and digital transformation.
           </p>
+          <div className="flex flex-wrap justify-center gap-4 mb-8">
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center">
+              <div className="text-2xl font-bold text-zion-cyan">25+</div>
+              <div className="text-sm text-zion-cyan-light">Services Available</div>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center">
+              <div className="text-2xl font-bold text-zion-purple">Global</div>
+              <div className="text-sm text-zion-cyan-light">Coverage</div>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center">
+              <div className="text-2xl font-bold text-zion-cyan">24/7</div>
+              <div className="text-sm text-zion-cyan-light">Support</div>
+            </div>
+          </div>
         </div>
 
-        {/* Service Categories Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 mb-16">
-          {serviceCategories.map((category, index) => (
-            <div key={index} className="bg-zion-blue rounded-lg p-6 border border-zion-blue-light hover:border-zion-cyan/50 transition-all duration-300">
-              <div className="flex items-center mb-4">
-                <div className="mr-4">
-                  {category.icon}
-                </div>
-                <div>
-                  <h3 className="text-white text-xl font-bold">{category.title}</h3>
-                  <p className="text-zion-slate-light text-sm">{category.description}</p>
-                </div>
-              </div>
-              
-              <div className="space-y-4 mb-6">
-                {category.services.map((service, serviceIndex) => (
-                  <div key={serviceIndex} className="bg-zion-blue-dark rounded p-4">
-                    <div className="flex justify-between items-start mb-3">
-                      <h4 className="text-white font-semibold">{service.name}</h4>
-                      <span className="text-zion-cyan font-bold">{service.price}</span>
+        {/* Featured Services Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          {FEATURED_SERVICES.map((service) => (
+            <Card key={service.id} className="bg-white/5 backdrop-blur-sm border-white/20 text-white hover:bg-white/10 transition-all duration-300 hover:scale-105">
+              <CardHeader>
+                <div className="flex items-start justify-between mb-3">
+                  <div className="flex items-center gap-2">
+                    <div className="w-10 h-10 bg-zion-purple/20 rounded-lg flex items-center justify-center">
+                      {getCategoryIcon(service.category)}
                     </div>
-                    
-                    <div className="mb-3">
-                      <h5 className="text-zion-slate-light text-sm font-medium mb-2">Key Features:</h5>
-                      <ul className="space-y-1">
-                        {service.features.map((feature, featureIndex) => (
-                          <li key={featureIndex} className="flex items-center text-zion-slate-light text-sm">
-                            <CheckCircle className="w-4 h-4 text-zion-cyan mr-2 flex-shrink-0" />
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    
-                    <div>
-                      <h5 className="text-zion-slate-light text-sm font-medium mb-2">Benefits:</h5>
-                      <ul className="space-y-1">
-                        {service.benefits.map((benefit, benefitIndex) => (
-                          <li key={benefitIndex} className="flex items-center text-zion-slate-light text-sm">
-                            <Star className="w-4 h-4 text-zion-purple mr-2 flex-shrink-0" />
-                            {benefit}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                    <Badge variant="outline" className="border-zion-cyan text-zion-cyan">
+                      {getPriceRange(service.price || 0)}
+                    </Badge>
                   </div>
-                ))}
-              </div>
-              
-              <div className="flex items-center justify-between mb-4 text-sm">
-                <div className="text-zion-slate-light">
-                  <span className="font-medium">Market Price:</span> {category.marketPrice}
                 </div>
-                <div className="text-zion-slate-light">
-                  <span className="font-medium">Delivery:</span> {category.deliveryTime}
-                </div>
-              </div>
+                <CardTitle className="text-lg text-white line-clamp-2">{service.title}</CardTitle>
+                <CardDescription className="text-zion-cyan-light line-clamp-3">
+                  {service.description}
+                </CardDescription>
+              </CardHeader>
               
-              <Link to={category.link}>
-                <Button className="w-full bg-zion-cyan hover:bg-zion-cyan-dark text-white">
-                  View {category.title}
-                </Button>
-              </Link>
-            </div>
+              <CardContent>
+                <div className="space-y-4">
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-2">
+                    {service.tags.slice(0, 2).map((tag, index) => (
+                      <Badge key={index} variant="secondary" className="bg-white/10 text-zion-cyan-light border-white/20 text-xs">
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
+
+                  {/* Service Details */}
+                  <div className="flex items-center justify-between text-sm">
+                    <div className="flex items-center gap-1 text-zion-cyan-light">
+                      <Star className="h-3 w-3" />
+                      <span>{service.rating}</span>
+                      <span className="text-xs">({service.reviewCount})</span>
+                    </div>
+                    <span className="font-semibold text-zion-cyan">
+                      ${service.price?.toLocaleString()}
+                    </span>
+                  </div>
+
+                  {/* Action Button */}
+                  <Button 
+                    className="w-full bg-zion-purple hover:bg-zion-purple-dark text-white"
+                    onClick={() => window.open(`mailto:kleber@ziontechgroup.com?subject=Inquiry about ${service.title}`, '_blank')}
+                  >
+                    Get Quote
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
           ))}
         </div>
 
-        {/* Why Choose Us */}
-        <div className="bg-zion-blue rounded-lg p-8 mb-16">
-          <div className="text-center mb-12">
-            <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
-              Why Choose Zion Tech Group?
-            </h3>
-            <p className="text-zion-slate-light text-lg max-w-2xl mx-auto">
-              We combine technical expertise with business acumen to deliver solutions that drive real results
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {whyChooseUs.map((item, index) => (
-              <div key={index} className="text-center">
-                <div className="flex justify-center mb-4">
-                  {item.icon}
+        {/* Service Categories Overview */}
+        <div className="mb-12">
+          <h3 className="text-2xl font-bold text-white text-center mb-8">Service Categories</h3>
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
+            {[
+              { name: 'AI & ML', icon: <Zap className="h-6 w-6" />, count: 4 },
+              { name: 'Cybersecurity', icon: <Shield className="h-6 w-6" />, count: 2 },
+              { name: 'Cloud & DevOps', icon: <Globe className="h-6 w-6" />, count: 2 },
+              { name: 'Data Analytics', icon: <TrendingUp className="h-6 w-6" />, count: 3 },
+              { name: 'Digital Transformation', icon: <Building className="h-6 w-6" />, count: 2 },
+              { name: 'Mobile & Web', icon: <Smartphone className="h-6 w-6" />, count: 2 },
+              { name: 'E-commerce', icon: <ShoppingCart className="h-6 w-6" />, count: 1 },
+              { name: 'Healthcare', icon: <Heart className="h-6 w-6" />, count: 1 },
+              { name: 'FinTech', icon: <TrendingUp className="h-6 w-6" />, count: 1 },
+              { name: 'EdTech', icon: <GraduationCap className="h-6 w-6" />, count: 1 }
+            ].map((category, index) => (
+              <div key={index} className="bg-white/5 backdrop-blur-sm rounded-lg p-4 text-center text-white hover:bg-white/10 transition-colors">
+                <div className="w-12 h-12 bg-zion-purple/20 rounded-lg flex items-center justify-center mx-auto mb-3">
+                  <span className="text-zion-cyan">{category.icon}</span>
                 </div>
-                <h4 className="text-white text-lg font-semibold mb-2">{item.title}</h4>
-                <p className="text-zion-slate-light">{item.description}</p>
+                <div className="text-sm font-medium">{category.name}</div>
+                <div className="text-xs text-zion-cyan-light">{category.count} services</div>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Call to Action */}
+        {/* CTA Section */}
         <div className="text-center">
-          <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">
-            Ready to Get Started?
-          </h3>
-          <p className="text-zion-slate-light text-lg mb-8 max-w-2xl mx-auto">
-            Contact us today for a free consultation and discover how our services can transform your business
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link to="/micro-saas-services">
-              <Button size="lg" className="bg-zion-cyan hover:bg-zion-cyan-dark text-white px-8 py-4 text-lg">
-                <Zap className="w-5 h-5 mr-2" />
-                Explore All Services
+          <div className="bg-gradient-to-r from-zion-purple to-zion-blue rounded-xl p-8 mb-8">
+            <h3 className="text-2xl font-bold text-white mb-4">
+              Ready to Explore Our Full Service Portfolio?
+            </h3>
+            <p className="text-zion-cyan-light mb-6">
+              Discover 25+ innovative solutions designed to transform your business
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/expanded-services">
+                <Button size="lg" className="bg-white text-zion-purple hover:bg-zion-cyan-light">
+                  View All Services
+                  <ArrowRight className="h-5 w-5 ml-2" />
+                </Button>
+              </Link>
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="border-white text-white hover:bg-white/10"
+                onClick={() => window.open('mailto:kleber@ziontechgroup.com?subject=Service Consultation', '_blank')}
+              >
+                Schedule Consultation
               </Button>
-            </Link>
-            <Link to="/contact">
-              <Button size="lg" variant="outline" className="border-zion-cyan text-zion-cyan hover:bg-zion-cyan/10 px-8 py-4 text-lg">
-                Contact Us
-              </Button>
-            </Link>
+            </div>
+          </div>
+          
+          {/* Contact Information */}
+          <div className="text-zion-cyan-light">
+            <p className="mb-2">
+              <strong>Contact us:</strong> +1 302 464 0950 | kleber@ziontechgroup.com
+            </p>
+            <p className="text-sm">
+              364 E Main St STE 1008, Middletown DE 19709 | 
+              <a 
+                href="https://ziontechgroup.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-zion-cyan hover:underline ml-1"
+              >
+                ziontechgroup.com
+              </a>
+            </p>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
