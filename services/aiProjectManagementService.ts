@@ -224,9 +224,21 @@ class AIProjectManagementService {
     const projectIndex = this.projects.findIndex(p => p.id === projectId);
     if (projectIndex === -1) return null;
 
+    const existingProject = this.projects[projectIndex];
+    if (!existingProject) return null;
+
     this.projects[projectIndex] = {
-      ...this.projects[projectIndex],
+      ...existingProject,
       ...updates,
+      id: existingProject.id, // Preserve required fields
+      name: updates.name || existingProject.name,
+      description: updates.description || existingProject.description,
+      status: updates.status || existingProject.status,
+      priority: updates.priority || existingProject.priority,
+      startDate: existingProject.startDate,
+      endDate: existingProject.endDate,
+      budget: updates.budget || existingProject.budget,
+      createdAt: existingProject.createdAt,
       updatedAt: new Date()
     };
 

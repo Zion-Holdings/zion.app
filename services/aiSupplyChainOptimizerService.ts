@@ -294,7 +294,9 @@ class AISupplyChainOptimizerService {
     
     // Generate 12 periods of forecast
     for (let i = 1; i <= 12; i++) {
-      const lastDate = sortedData[sortedData.length - 1].date;
+      const lastDataPoint = sortedData[sortedData.length - 1];
+      if (!lastDataPoint) continue;
+      const lastDate = lastDataPoint.date;
       const forecastDate = new Date(lastDate);
       
       if (forecastPeriod === 'monthly') {
@@ -307,8 +309,10 @@ class AISupplyChainOptimizerService {
 
       const trend = this.calculateTrend(sortedData);
       const seasonality = this.calculateSeasonality(sortedData, i);
+      const currentDataPoint = sortedData[sortedData.length - 1];
+      if (!currentDataPoint) continue;
       const predictedDemand = Math.max(0, 
-        sortedData[sortedData.length - 1].demand + trend + seasonality + (Math.random() - 0.5) * 10
+        currentDataPoint.demand + trend + seasonality + (Math.random() - 0.5) * 10
       );
 
       forecastData.push({

@@ -414,7 +414,7 @@ class AIHealthcareAnalyticsService {
       const weight = normalizedWeights[i];
       if (weight !== undefined) {
         random -= weight;
-        if (random <= 0) return diagnoses[i] || diagnoses[0];
+        if (random <= 0) return diagnoses[i]! || diagnoses[0]!;
       }
     }
     
@@ -453,7 +453,7 @@ class AIHealthcareAnalyticsService {
   private calculatePatientHistoryScore(patient: PatientData, diagnosis: string): number {
     // Check if patient has history of similar conditions
     const relevantHistory = patient.medicalHistory.filter(record => 
-      record.diagnosis.toLowerCase().includes(diagnosis.toLowerCase().split(' ')[0])
+      record.diagnosis.toLowerCase().includes(diagnosis.toLowerCase().split(' ')[0] || '')
     );
     
     return Math.min(1, relevantHistory.length * 0.3);

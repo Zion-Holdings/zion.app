@@ -428,8 +428,9 @@ class AISalesService {
     
     const totalDays = stageLeads.reduce((sum, lead) => {
       const lastInteraction = lead.interactions.length > 0 
-        ? lead.interactions[lead.interactions.length - 1].date 
+        ? lead.interactions[lead.interactions.length - 1]?.date 
         : lead.lastContact;
+      if (!lastInteraction) return sum;
       const daysInStage = (new Date().getTime() - lastInteraction.getTime()) / (1000 * 60 * 60 * 24);
       return sum + daysInStage;
     }, 0);
