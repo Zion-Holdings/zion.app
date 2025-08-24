@@ -1,7 +1,7 @@
 
 {
   "general": {
-    "app_name": "Zion Tech Group - AI & Tech Marketplace",
+    "app_name": "Zion AI Marketplace",
     "loading": "Loading...",
     "search": "Search",
     "select_language": "Select language",
@@ -32,7 +32,7 @@
   },
   "auth": {
     "login": "Login",
-    "signup": "Get Started Free",
+    "signup": "Sign Up",
     "logout": "Logout",
     "email": "Email",
     "password": "Password",
@@ -43,14 +43,14 @@
   },
   "home": {
     "hero_title": "The Future of Tech & AI Marketplace",
-    "hero_subtitle": "Connect with 10,000+ AI experts, access cutting-edge tech services, and accelerate your digital transformation with the world's premier AI & technology marketplace.",
-    "browse_marketplace": "Explore Marketplace",
+    "hero_subtitle": "The world's first free marketplace dedicated to high-tech and artificial intelligence",
+    "browse_marketplace": "Browse Marketplace",
     "create_profile": "Create Profile",
     "explore_tools": "Explore Our Tools",
     "tools_description": "Everything you need to connect with the AI and tech ecosystem",
-    "seo_title": "Zion Tech Group - Premier AI & Technology Marketplace",
-    "seo_description": "Connect with 10,000+ AI experts, access cutting-edge tech services, and accelerate your digital transformation. The world's premier AI & technology marketplace.",
-    "seo_keywords": "AI marketplace, tech services, artificial intelligence, IT services, AI developers, technology marketplace, AI solutions, Zion Tech Group, tech talent, AI experts",
+    "seo_title": "The Future of Tech & AI Marketplace",
+    "seo_description": "The world's first free marketplace dedicated to high-tech and artificial intelligence. Publish, connect, and thrive — all in one place.",
+    "seo_keywords": "AI marketplace, tech services, artificial intelligence, IT services, AI developers, technology marketplace, AI solutions",
     "tool_ai_matcher": "AI Matcher",
     "tool_ai_matcher_desc": "Let our AI find the perfect match for your project needs",
     "tool_talent": "Talent Directory",
@@ -118,7 +118,6 @@
     "manager_description": "Manage translations for the Zion AI Marketplace",
     "search_placeholder": "Search translations...",
     "key": "Translation Key",
-<<<<<<< HEAD:dist/locales/en-US/common.json
     "translations": "Translations",
     "actions": "Actions",
     "no_results": "No translation keys found matching your search",
@@ -131,8 +130,5 @@
   "error_boundary": {
     "message": "Something went wrong.",
     "retry": "Retry"
-=======
-    "translations": "Translations"
->>>>>>> cursor/analyze-improve-and-deploy-ziontechgroup-app-7eea:src/i18n/locales/en/translation.json
   }
 }

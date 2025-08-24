@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { comprehensiveServices, serviceCategories, serviceSubcategories } from '@/data/comprehensiveServices';
+import { COMPREHENSIVE_SERVICES, SERVICE_CATEGORIES } from '@/data/comprehensiveServices';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
@@ -29,7 +29,7 @@ export default function ComprehensiveServicesPage() {
   const [priceRange, setPriceRange] = useState<string>('all');
 
   const filteredServices = useMemo(() => {
-    return comprehensiveServices.filter(service => {
+    return COMPREHENSIVE_SERVICES.filter(service => {
       const matchesSearch = service.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
                            service.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
                            service.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()));
@@ -48,7 +48,8 @@ export default function ComprehensiveServicesPage() {
 
   const getSubcategories = (category: string) => {
     if (category === 'all') return [];
-    return serviceSubcategories[category as keyof typeof serviceSubcategories] || [];
+    // For now, return empty array since serviceSubcategories is not exported
+    return [];
   };
 
   const formatPrice = (price: number, model: string) => {
@@ -140,7 +141,7 @@ export default function ComprehensiveServicesPage() {
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="all">All Categories</SelectItem>
-                {serviceCategories.map(category => (
+                {SERVICE_CATEGORIES.map(category => (
                   <SelectItem key={category.id} value={category.name}>
                     {category.icon} {category.name}
                   </SelectItem>

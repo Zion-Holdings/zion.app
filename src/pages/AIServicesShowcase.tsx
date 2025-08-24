@@ -1,5 +1,5 @@
 import React from 'react';
-import { comprehensiveServices } from '@/data/comprehensiveServices';
+import { COMPREHENSIVE_SERVICES } from '@/data/comprehensiveServices';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -23,7 +23,7 @@ import {
 import Target from 'lucide-react/dist/esm/icons/target';
 import { Link } from 'react-router-dom';
 
-const aiServices = comprehensiveServices.filter(service => service.category === 'AI Services');
+const aiServices = COMPREHENSIVE_SERVICES.filter(service => service.category === 'AI Services');
 
 export default function AIServicesShowcase() {
   return (
