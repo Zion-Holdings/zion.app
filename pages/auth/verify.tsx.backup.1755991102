@@ -1,5 +1,0 @@
-<<<<<<< HEAD
-export default function Verify() { return null }
-=======
-export default function Verify() { return <div className="p-6">Verify Account</div>; }
->>>>>>> origin/cursor/build-developer-api-and-webhook-integration-62ab

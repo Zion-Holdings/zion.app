@@ -1,9 +1,0 @@
-<<<<<<< HEAD
-# Force exact versions for React packages to prevent conflicts
-legacy-peer-deps=true
-
-# Use npm's legacy peer dependency resolution
-legacy-peer-deps=true
-=======
-legacy-peer-deps=true
->>>>>>> origin/5yaxyc-codex/implement-wishlist-functionality

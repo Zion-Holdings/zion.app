@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Settings, Shield, Cookie, Info } from 'lucide-react';
+import { X, Settings, Shield, Eye, Info } from 'lucide-react';
 
 interface CookiePreferences {
   necessary: boolean;
@@ -45,6 +45,7 @@ const CookieConsentBanner: React.FC<CookieConsentBannerProps> = ({
       } catch (error) {
         console.warn('Failed to load cookie preferences:', error);
       }
+      return () => {}; // Return cleanup function
     }
 
     timeoutRef.current = setTimeout(() => {
@@ -109,7 +110,7 @@ const CookieConsentBanner: React.FC<CookieConsentBannerProps> = ({
       disableMarketing();
     }
     
-    if (prefs.functional) {
+    if (prefs.preferences) {
       enableFunctional();
     } else {
       disableFunctional();
@@ -194,11 +195,11 @@ const CookieConsentBanner: React.FC<CookieConsentBannerProps> = ({
       key: 'marketing' as keyof CookiePreferences,
       title: 'Marketing Cookies',
       description: 'Used to track visitors across websites to display relevant and engaging advertisements.',
-      icon: Cookie,
+      icon: Eye,
       required: false
     },
     {
-      key: 'functional' as keyof CookiePreferences,
+      key: 'preferences' as keyof CookiePreferences,
       title: 'Functional Cookies',
       description: 'Enable enhanced functionality and personalization, such as live chat support and language preferences.',
       icon: Settings,
@@ -227,7 +228,7 @@ const CookieConsentBanner: React.FC<CookieConsentBannerProps> = ({
                 <div className="flex-1">
                   <div className="flex items-start gap-3">
                     <div className="flex-shrink-0 mt-1">
-                      <Cookie className="w-6 h-6 text-cyan-600 dark:text-cyan-400" />
+                      <Eye className="w-6 h-6 text-cyan-600 dark:text-cyan-400" />
                     </div>
                     <div>
                       <h2 id="cookie-banner-title" className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
@@ -368,10 +369,11 @@ const CookieConsentBanner: React.FC<CookieConsentBannerProps> = ({
                                 checked={preferences[cookieType.key]}
                                 onChange={(e) => {
                                   if (!cookieType.required) {
-                                    setPreferences(prev => ({
-                                      ...prev,
-                                      [cookieType.key]: e.target.checked
-                                    }));
+                                                                      const newPrefs = {
+                                    ...preferences,
+                                    [cookieType.key]: e.target.checked
+                                  };
+                                  setPreferences(newPrefs);
                                   }
                                 }}
                                 disabled={cookieType.required}

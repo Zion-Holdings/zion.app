@@ -23,7 +23,7 @@ const AnimatedBackground: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const particlesRef = useRef<Particle[]>([]);
   const orbsRef = useRef<Orb[]>([]);
-  const animationRef = useRef<number>();
+  const animationRef = useRef<number | undefined>(undefined);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -94,9 +94,9 @@ const AnimatedBackground: React.FC = () => {
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
              // Update and draw orbs
-       orbsRef.current.forEach((orb) => {
-        orb.pulse += 0.02;
-        const pulseOpacity = orb.opacity + Math.sin(orb.pulse) * 0.02;
+             orbsRef.current?.forEach((orb) => {
+               orb.pulse += 0.02;
+               const pulseOpacity = orb.opacity + Math.sin(orb.pulse) * 0.02;
         
         ctx.beginPath();
         ctx.arc(orb.x, orb.y, orb.size, 0, Math.PI * 2);
@@ -111,7 +111,7 @@ const AnimatedBackground: React.FC = () => {
       });
 
       // Update and draw particles
-      particlesRef.current.forEach((particle) => {
+      particlesRef.current?.forEach((particle) => {
         particle.x += particle.vx;
         particle.y += particle.vy;
 
@@ -128,7 +128,7 @@ const AnimatedBackground: React.FC = () => {
         ctx.fill();
 
         // Draw connections between nearby particles
-        particlesRef.current.forEach((otherParticle) => {
+        particlesRef.current?.forEach((otherParticle) => {
           const dx = particle.x - otherParticle.x;
           const dy = particle.y - otherParticle.y;
           const distance = Math.sqrt(dx * dx + dy * dy);

@@ -1,6 +1,0 @@
-<<<<<<< HEAD
-// __mocks__/fileMock.js;
-default test-file-stub';
-=======
-module.exports = '';
->>>>>>> origin/cursor/automate-continuous-development-processes-4d04

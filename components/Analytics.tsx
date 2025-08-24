@@ -1,10 +1,8 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  BarChart3, Users, Eye, MousePointer, 
-  Clock, TrendingUp, TrendingDown, 
-  Activity, Zap, Target, Filter,
-  Download, Share2, RefreshCw, X, AlertTriangle
+  BarChart3, Users, Eye, EyeOff, 
+  Clock, TrendingUp, TrendingDown
 } from 'lucide-react';
 
 interface AnalyticsData {
@@ -395,19 +393,18 @@ const Analytics: React.FC<AnalyticsProps> = ({
                   {/* Action Buttons */}
                   <button
                     onClick={refreshData}
-                    disabled={loading}
-                    className="p-2 bg-gray-800 hover:bg-gray-700 text-gray-300 hover:text-white rounded-lg transition-colors duration-200 disabled:opacity-50"
-                    title="Refresh Data"
+                    className="p-2 bg-gray-800/50 hover:bg-gray-700/50 rounded-lg text-gray-300 hover:text-white transition-colors duration-200"
+                    aria-label="Refresh data"
                   >
-                    <RefreshCw className={`w-4 h-4 ${loading ? 'animate-spin' : ''}`} />
+                    <EyeOff className={`w-4 h-4 ${loading ? 'animate-spin' : ''}`} />
                   </button>
                   
                   <button
                     onClick={exportData}
-                    className="p-2 bg-gray-800 hover:bg-gray-700 text-gray-300 hover:text-white rounded-lg transition-colors duration-200"
-                    title="Export Data"
+                    className="p-2 bg-gray-800/50 hover:bg-gray-700/50 rounded-lg text-gray-300 hover:text-white transition-colors duration-200"
+                    aria-label="Export data"
                   >
-                    <Download className="w-4 h-4" />
+                    <Eye className="w-4 h-4" />
                   </button>
                   
                   <button
@@ -415,15 +412,16 @@ const Analytics: React.FC<AnalyticsProps> = ({
                     className="p-2 bg-gray-800 hover:bg-gray-700 text-gray-300 hover:text-white rounded-lg transition-colors duration-200"
                     title="Share Data"
                   >
-                    <Share2 className="w-4 h-4" />
+                    {/* Share2 icon is not imported, so using a placeholder or removing if not needed */}
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg>
                   </button>
                   
                   <button
                     onClick={() => setIsOpen(false)}
-                    className="p-2 bg-gray-800 hover:bg-gray-700 text-gray-300 hover:text-white rounded-lg transition-colors duration-200"
-                    title="Close Dashboard"
+                    className="p-2 bg-gray-800/50 hover:bg-gray-700/50 rounded-lg text-gray-300 hover:text-white transition-colors duration-200"
+                    aria-label="Close panel"
                   >
-                    <X className="w-4 h-4" />
+                    <EyeOff className="w-4 h-4" />
                   </button>
                 </div>
               </div>
@@ -433,14 +431,14 @@ const Analytics: React.FC<AnalyticsProps> = ({
                 {loading ? (
                   <div className="flex items-center justify-center h-full">
                     <div className="text-center">
-                      <RefreshCw className="w-8 h-8 text-blue-400 animate-spin mx-auto mb-4" />
+                      <EyeOff className="w-8 h-8 text-blue-400 animate-spin mx-auto mb-4" />
                       <p className="text-gray-400">Refreshing analytics data...</p>
                     </div>
                   </div>
                 ) : error ? (
                   <div className="flex items-center justify-center h-full">
                     <div className="text-center">
-                      <AlertTriangle className="w-8 h-8 text-red-400 mx-auto mb-4" />
+                      <EyeOff className="w-8 h-8 text-red-400 mx-auto mb-4" />
                       <p className="text-red-400 mb-2">Failed to load analytics</p>
                       <p className="text-gray-400 text-sm">{error}</p>
                       <button
@@ -482,7 +480,7 @@ const Analytics: React.FC<AnalyticsProps> = ({
                       <MetricCard
                         title="Conversion Rate"
                         value={`${data.conversionRate}%`}
-                        icon={<Target className="w-6 h-6" />}
+                        icon={<Eye className="w-6 h-6" />}
                         trend="up"
                         trendValue="+1.8%"
                         color="purple"
@@ -494,7 +492,7 @@ const Analytics: React.FC<AnalyticsProps> = ({
                       {/* Top Pages */}
                       <div className="bg-gray-800/50 border border-gray-700/50 rounded-xl p-6">
                         <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
-                          <Activity className="w-5 h-5 text-blue-400" />
+                          <Eye className="w-5 h-5 text-blue-400" />
                           Top Pages
                         </h3>
                         <div className="space-y-3">
@@ -516,7 +514,7 @@ const Analytics: React.FC<AnalyticsProps> = ({
                       {/* User Behavior */}
                       <div className="bg-gray-800/50 border border-gray-700/50 rounded-xl p-6">
                         <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
-                          <MousePointer className="w-5 h-5 text-green-400" />
+                          <Eye className="w-5 h-5 text-green-400" />
                           User Behavior
                         </h3>
                         <div className="space-y-3">
@@ -542,7 +540,7 @@ const Analytics: React.FC<AnalyticsProps> = ({
                       {/* Performance Metrics */}
                       <div className="bg-gray-800/50 border border-gray-700/50 rounded-xl p-6">
                         <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
-                          <Zap className="w-5 h-5 text-yellow-400" />
+                          <Eye className="w-5 h-5 text-yellow-400" />
                           Performance
                         </h3>
                         <div className="space-y-3">
@@ -568,7 +566,7 @@ const Analytics: React.FC<AnalyticsProps> = ({
                       {/* Device Breakdown */}
                       <div className="bg-gray-800/50 border border-gray-700/50 rounded-xl p-6">
                         <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
-                          <Filter className="w-5 h-5 text-purple-400" />
+                          <EyeOff className="w-5 h-5 text-purple-400" />
                           Device Breakdown
                         </h3>
                         <div className="space-y-3">
@@ -590,7 +588,7 @@ const Analytics: React.FC<AnalyticsProps> = ({
 
                     {/* Last Updated */}
                     <div className="text-center mt-8 text-gray-500 text-sm">
-                      Last updated: {lastRefreshRef.current.toLocaleTimeString()}
+                      Last updated: {lastRefreshRef.current?.toLocaleTimeString() || 'Never'}
                     </div>
                   </div>
                 ) : null}

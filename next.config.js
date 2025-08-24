@@ -22,4 +22,4 @@ const nextConfig = {
 	}
 };
 
-module.exports = withSentryConfig(baseConfig);
+module.exports = nextConfig;

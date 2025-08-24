@@ -65,18 +65,21 @@ const ContactForm: React.FC<ContactFormProps> = ({ isReducedMotion = false }) =>
 
   const handleInputChange = useCallback((e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    const newFormData = { ...formData, [name]: value };
+    setFormData(newFormData);
     
     // Clear error when user starts typing
     if (errors[name as keyof ContactFormData]) {
-      setErrors(prev => ({ ...prev, [name]: '' }));
+      const newErrors = { ...errors, [name]: '' };
+      setErrors(newErrors);
     }
-  }, [errors]);
+  }, [formData, errors]);
 
   const handleBlur = useCallback((name: keyof ContactFormData) => {
     const error = validateField(name, formData[name]);
-    setErrors(prev => ({ ...prev, [name]: error }));
-  }, [validateField, formData]);
+    const newErrors = { ...errors, [name]: error };
+    setErrors(newErrors);
+  }, [validateField, formData, errors]);
 
   const validateForm = useCallback((): boolean => {
     const newErrors: Partial<ContactFormData> = {};
@@ -91,32 +94,6 @@ const ContactForm: React.FC<ContactFormProps> = ({ isReducedMotion = false }) =>
       }
     });
 
-  const handleInputChange = (name: string, value: string) => {
-    setFormData(prev => ({ ...prev, [name]: value }));
-    
-    // Clear error when user starts typing
-    if (errors[name]) {
-      setErrors(prev => ({ ...prev, [name]: '' }));
-    }
-  };
-
-  const handleBlur = (name: string) => {
-    const error = validateField(name, formData[name]);
-    if (error) {
-      setErrors(prev => ({ ...prev, [name]: error }));
-    }
-  };
-
-  const validateForm = (): boolean => {
-    const newErrors: FormErrors = {};
-    
-    Object.keys(formData).forEach(key => {
-      const error = validateField(key, formData[key as keyof FormData]);
-      if (error) {
-        newErrors[key] = error;
-      }
-    });
-    
     setErrors(newErrors);
     return isValid;
   }, [formData, validateField]);

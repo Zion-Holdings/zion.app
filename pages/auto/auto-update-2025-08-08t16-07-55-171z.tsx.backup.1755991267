@@ -1,5 +1,0 @@
-<<<<<<< HEAD
-export default function Page(){return <div className="py-8 text-slate-300">auto update 2025 08 08t16 07 55 171z</div>}
-=======
-export default function AutoPage() { return <div className="py-10">Auto Update</div>; }
->>>>>>> origin/cursor/build-zion-ai-talent-profile-system-f64e

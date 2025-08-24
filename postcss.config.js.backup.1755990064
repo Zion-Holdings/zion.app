@@ -1,9 +1,0 @@
-<<<<<<< HEAD
-module.exports = {
-=======
-default {
->>>>>>> origin/automation-error-fixes
-  plugins: {
-    @tailwindcss/postcss': {},    autoprefixer: {}
-  }
-}; 
