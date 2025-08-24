@@ -99,22 +99,36 @@ export function FeatureCTAs() {
       link: "/zion-hire-ai",
       badge: "Premium",
       details: "Automate screening, improve candidate matching, and enhance the hiring experience with our AI recruiting solution."
+    },
+    {
+      title: "Micro SAAS Services",
+      description: "Comprehensive suite of micro SAAS solutions including AI tools, IT services, and business automation.",
+      icon: <Zap className="h-10 w-10 p-2 rounded-md bg-emerald-100 text-emerald-700" />,
+      link: "/micro-saas-services",
+      badge: "New",
+      details: "Transform your business with our cutting-edge micro SAAS solutions. From AI-powered tools to enterprise-grade services."
     }
   ];
 
   return (
-    <section className="py-16 bg-gradient-to-b from-background to-background/90">
-      <div className="container mx-auto px-4">
+    <section className="py-16 relative overflow-hidden">
+      {/* Futuristic Background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-zion-blue-dark/20 via-zion-slate/10 to-zion-purple-dark/20"></div>
+      <div className="absolute inset-0 cyber-grid opacity-5"></div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="mb-12 text-center">
-          <h2 className="text-3xl font-bold tracking-tight mb-3">Discover Zion's Powerful Features</h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-3 bg-gradient-to-r from-zion-cyan via-white to-zion-purple-light bg-clip-text text-transparent">
+            Discover Zion's Powerful Features
+          </h2>
+          <p className="text-xl text-zion-cyan max-w-4xl mx-auto">
             Explore our comprehensive suite of tools designed to transform how you connect, collaborate, and create in the tech ecosystem.
           </p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature, index) => (
-            <Card key={index} className="overflow-hidden transition-all duration-300 hover:shadow-lg hover:border-primary/50">
+            <Card key={index} className="overflow-hidden transition-all duration-300 hover:shadow-lg hover:border-primary/50 bg-white/10 backdrop-blur-md border-white/20 hover:bg-white/20 hover:scale-105 group">
               <CardHeader className="pb-2">
                 <div className="flex justify-between items-start">
                   {feature.icon}
