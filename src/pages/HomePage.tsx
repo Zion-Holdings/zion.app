@@ -3,6 +3,7 @@ import { ArrowRight, CheckCircle, Star, Cloud, Brain, Shield, Zap, Rocket, Trend
 import FuturisticAnimatedBackground from '../components/ui/FuturisticAnimatedBackground';
 import FuturisticNeonButton from '../components/ui/FuturisticNeonButton';
 import { ENHANCED_SERVICES_DATA, MARKET_ANALYSIS } from '../data/enhancedServicesData';
+import { EnhancedComprehensiveServicesShowcase } from '../components/EnhancedComprehensiveServicesShowcase';
 
 export default function HomePage() {
   const heroStats = [
@@ -314,6 +315,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Enhanced Services Showcase */}
+      <EnhancedComprehensiveServicesShowcase />
 
       {/* Technologies Section */}
       <section className="py-20 px-6">
