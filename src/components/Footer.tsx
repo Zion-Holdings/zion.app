@@ -8,9 +8,9 @@ export function Footer() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
-            <div className="mb-4">
-              <span className="text-2xl font-bold bg-gradient-to-r from-zion-cyan via-zion-purple-light to-zion-purple bg-clip-text text-transparent">ZION</span>
-            </div>
+                    <div className="mb-4">
+          <span className="text-2xl font-bold bg-gradient-to-r from-zion-cyan via-zion-purple-light to-zion-purple bg-clip-text text-transparent neon-pulse">ZION</span>
+        </div>
             <p className="text-zion-slate-light mb-4 max-w-xs">
               The world's first free marketplace dedicated to high-tech and artificial intelligence.
             </p>
@@ -19,7 +19,7 @@ export function Footer() {
                 href="https://twitter.com/lovable_dev"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-zion-slate-light hover:text-zion-cyan transition-colors"
+                className="text-zion-slate-light hover:text-zion-cyan transition-all duration-300 hover:scale-110 hover-glow"
                 aria-label="Twitter"
                 title="Twitter"
               >
@@ -29,7 +29,7 @@ export function Footer() {
                 href="https://www.linkedin.com/company/zion-marketplace"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-zion-slate-light hover:text-zion-cyan transition-colors"
+                className="text-zion-slate-light hover:text-zion-cyan transition-all duration-300 hover:scale-110 hover-glow"
                 aria-label="LinkedIn"
                 title="LinkedIn"
               >
@@ -39,7 +39,7 @@ export function Footer() {
                 href="https://www.facebook.com/zionmarketplace"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-zion-slate-light hover:text-zion-cyan transition-colors"
+                className="text-zion-slate-light hover:text-zion-cyan transition-all duration-300 hover:scale-110 hover-glow"
                 aria-label="Facebook"
                 title="Facebook"
               >
@@ -49,7 +49,7 @@ export function Footer() {
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-zion-slate-light hover:text-zion-cyan transition-colors"
+                className="text-zion-slate-light hover:text-zion-cyan transition-all duration-300 hover:scale-110 hover-glow"
                 aria-label="Instagram"
                 title="Instagram"
               >
@@ -59,7 +59,7 @@ export function Footer() {
                 href="https://github.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-zion-slate-light hover:text-zion-cyan transition-colors"
+                className="text-zion-slate-light hover:text-zion-cyan transition-all duration-300 hover:scale-110 hover-glow"
                 aria-label="GitHub"
                 title="GitHub"
               >
@@ -71,24 +71,27 @@ export function Footer() {
           <div>
             <h3 className="text-white font-semibold mb-4 text-lg">Marketplace</h3>
             <ul className="space-y-2">
-              <li><Link to="/marketplace" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Products</Link></li>
-              <li><Link to="/services" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Services</Link></li>
-              <li><Link to="/talent" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Talent</Link></li>
-              <li><Link to="/equipment" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Equipment</Link></li>
-              <li><Link to="/categories" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Categories</Link></li>
-              <li><Link to="/green-it" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Green IT</Link></li>
+              <li><Link to="/marketplace" className="text-zion-slate-light hover:text-zion-cyan transition-all duration-300 hover:scale-105 hover-glow">Products</Link></li>
+              <li><Link to="/services" className="text-zion-slate-light hover:text-zion-cyan transition-all duration-300 hover:scale-105 hover-glow">General Services</Link></li>
+              <li><Link to="/ai-services" className="text-zion-slate-light hover:text-zion-cyan transition-all duration-300 hover:scale-105 hover-glow">AI Services</Link></li>
+              <li><Link to="/it-services" className="text-zion-slate-light hover:text-zion-cyan transition-all duration-300 hover:scale-105 hover-glow">IT Services</Link></li>
+              <li><Link to="/micro-saas-services" className="text-zion-slate-light hover:text-zion-cyan transition-all duration-300 hover:scale-105 hover-glow">Micro SAAS</Link></li>
+              <li><Link to="/talent" className="text-zion-slate-light hover:text-zion-cyan transition-all duration-300 hover:scale-105 hover-glow">Talent</Link></li>
+              <li><Link to="/equipment" className="text-zion-slate-light hover:text-zion-cyan transition-all duration-300 hover:scale-105 hover-glow">Equipment</Link></li>
+              <li><Link to="/categories" className="text-zion-slate-light hover:text-zion-cyan transition-all duration-300 hover:scale-105 hover-glow">Categories</Link></li>
+              <li><Link to="/green-it" className="text-zion-slate-light hover:text-zion-cyan transition-all duration-300 hover:scale-105 hover-glow">Green IT</Link></li>
             </ul>
           </div>
 
           <div>
             <h3 className="text-white font-semibold mb-4 text-lg">Company</h3>
             <ul className="space-y-2">
-              <li><Link to="/about" className="text-zion-slate-light hover:text-zion-cyan transition-colors">About Us</Link></li>
-              <li><Link to="/blog" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Blog</Link></li>
-              <li><Link to="/partners" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Partners</Link></li>
-              <li><Link to="/careers" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Careers</Link></li>
-              <li><Link to="/contact" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Contact</Link></li>
-              <li><Link to="/sitemap" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Sitemap</Link></li>
+              <li><Link to="/about" className="text-zion-slate-light hover:text-zion-cyan transition-all duration-300 hover:scale-105 hover-glow">About Us</Link></li>
+              <li><Link to="/blog" className="text-zion-slate-light hover:text-zion-cyan transition-all duration-300 hover:scale-105 hover-glow">Blog</Link></li>
+              <li><Link to="/partners" className="text-zion-slate-light hover:text-zion-cyan transition-all duration-300 hover:scale-105 hover-glow">Partners</Link></li>
+              <li><Link to="/careers" className="text-zion-slate-light hover:text-zion-cyan transition-all duration-300 hover:scale-105 hover-glow">Careers</Link></li>
+              <li><Link to="/contact" className="text-zion-slate-light hover:text-zion-cyan transition-all duration-300 hover:scale-105 hover-glow">Contact</Link></li>
+              <li><Link to="/sitemap" className="text-zion-slate-light hover:text-zion-cyan transition-all duration-300 hover:scale-105 hover-glow">Sitemap</Link></li>
             </ul>
           </div>
 
@@ -107,8 +110,8 @@ export function Footer() {
               &copy; {new Date().getFullYear()} Zion Tech Group. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <Link to="/privacy" className="text-zion-slate-light hover:text-zion-cyan text-sm transition-colors">Privacy Policy</Link>
-              <Link to="/terms" className="text-zion-slate-light hover:text-zion-cyan text-sm transition-colors">Terms of Service</Link>
+              <Link to="/privacy" className="text-zion-slate-light hover:text-zion-cyan text-sm transition-all duration-300 hover:scale-105 hover-glow">Privacy Policy</Link>
+              <Link to="/terms" className="text-zion-slate-light hover:text-zion-cyan text-sm transition-all duration-300 hover:scale-105 hover-glow">Terms of Service</Link>
             </div>
           </div>
         </div>

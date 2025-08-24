@@ -16,7 +16,8 @@ import {
   BookOpen,
   Code,
   Building,
-  Clock
+  Clock,
+  Server
 } from "lucide-react";
 
 export function FeatureCTAs() {
@@ -37,12 +38,28 @@ export function FeatureCTAs() {
       details: "Every talent in our directory undergoes a rigorous verification process to ensure quality, authenticity, and reliability."
     },
     {
-      title: "Services Marketplace",
-      description: "Discover professional tech and AI services for your business needs, from development to consulting.",
+      title: "AI Services",
+      description: "Transform your business with cutting-edge AI solutions including chatbots, content generation, and predictive analytics.",
       icon: <Zap className="h-10 w-10 p-2 rounded-md bg-cyan-100 text-cyan-700" />,
-      link: "/services",
+      link: "/ai-services",
       badge: "New",
-      details: "From on-demand IT support to specialized AI development, our marketplace offers verified services with transparent pricing and reviews."
+      details: "From AI chatbots to predictive analytics, our AI services help you automate processes and gain competitive advantages."
+    },
+    {
+      title: "IT Services",
+      description: "Comprehensive IT solutions including cloud migration, cybersecurity, and infrastructure management.",
+      icon: <Server className="h-10 w-10 p-2 rounded-md bg-blue-100 text-blue-700" />,
+      link: "/it-services",
+      badge: "Essential",
+      details: "Modernize your IT infrastructure with our expert services including cloud migration, security, and managed IT solutions."
+    },
+    {
+      title: "Micro SAAS Services",
+      description: "Affordable software solutions for modern businesses including CRM, project management, and analytics.",
+      icon: <Building className="h-10 w-10 p-2 rounded-md bg-green-100 text-green-700" />,
+      link: "/micro-saas-services",
+      badge: "Affordable",
+      details: "Powerful, affordable software solutions designed for modern businesses. Start with free trials and scale as you grow."
     },
     {
       title: "Equipment Catalog",
@@ -116,7 +133,7 @@ export function FeatureCTAs() {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature, index) => (
-            <Card key={index} className="overflow-hidden transition-all duration-300 hover:shadow-lg hover:border-primary/50">
+            <Card key={index} className="overflow-hidden transition-all duration-300 hover:shadow-lg hover:border-primary/50 hover:scale-105 group">
               <CardHeader className="pb-2">
                 <div className="flex justify-between items-start">
                   {feature.icon}
@@ -133,10 +150,10 @@ export function FeatureCTAs() {
                 <p className="text-sm text-muted-foreground">{feature.details}</p>
               </CardContent>
               <CardFooter>
-                <Button asChild className="w-full gap-1">
+                <Button asChild className="w-full gap-1 hover-neon transition-all duration-300">
                   <Link to={feature.link}>
                     <span>Explore {feature.title}</span>
-                    <ArrowRight className="h-4 w-4" />
+                    <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
                   </Link>
                 </Button>
               </CardFooter>
