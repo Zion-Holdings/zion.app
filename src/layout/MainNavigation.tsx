@@ -2,7 +2,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { useAuth } from "@/hooks/useAuth";
-import { MessageSquare, ChevronDown, Sparkles, Zap, Users, Settings, Building, Code, Globe } from "lucide-react";
+import { MessageSquare, ChevronDown, Brain, Shield, Cloud, Zap } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useState, useRef, useEffect } from "react";
 
@@ -27,6 +27,7 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
         setActiveDropdown(null);
       }
     };
+
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
@@ -35,79 +36,91 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
     {
       key: 'home',
       href: '/',
-      name: 'Home',
-      matches: (path: string) => path === '/',
-      icon: <Sparkles className="h-4 w-4" />
+      matches: (path: string) => path === '/'
     },
     {
       key: 'marketplace',
       href: '/marketplace',
-      name: 'Marketplace',
-      matches: (path: string) => path.startsWith('/marketplace'),
-      icon: <Zap className="h-4 w-4" />,
-      dropdown: [
-        { name: 'Products', href: '/marketplace', description: 'Browse tech products' },
-        { name: 'Services', href: '/services', description: 'IT & AI services' },
-        { name: 'Equipment', href: '/equipment', description: 'Hardware & tools' },
-        { name: 'Categories', href: '/categories', description: 'Browse by category' }
-      ]
+      matches: (path: string) => path.startsWith('/marketplace')
     },
     {
-      key: 'services',
-      href: '/services',
-      name: 'Services',
-      matches: (path: string) => path.startsWith('/services'),
-      icon: <Settings className="h-4 w-4" />,
-      dropdown: [
-        { name: 'All Services', href: '/services', description: 'Browse all services' },
-        { name: 'Services Showcase', href: '/services-showcase', description: 'Complete service catalog' },
-        { name: 'AI Development', href: '/ai-content-generator', description: 'AI-powered solutions' },
-        { name: 'Cybersecurity', href: '/cybersecurity-assessment', description: 'Security services' },
-        { name: 'Cloud Migration', href: '/cloud-migration', description: 'Cloud solutions' },
-        { name: 'Data Analytics', href: '/data-analytics', description: 'Business intelligence' },
-        { name: 'API Development', href: '/api-development', description: 'Integration services' },
-        { name: 'Network Infrastructure', href: '/network-infrastructure', description: 'Infrastructure solutions' }
-      ]
+      key: 'categories',
+      href: '/categories',
+      matches: (path: string) => path.startsWith('/categories')
     },
     {
       key: 'talent',
       href: '/talent',
-      name: 'Talent',
-      matches: (path: string) => path.startsWith('/talent') && !path.includes('/talent-dashboard'),
-      icon: <Users className="h-4 w-4" />,
-      dropdown: [
-        { name: 'Browse Talent', href: '/talent', description: 'Find experts' },
-        { name: 'Post Jobs', href: '/post-job', description: 'Hire professionals' },
-        { name: 'AI Matching', href: '/match', description: 'Smart matching' }
-      ]
+      matches: (path: string) => path.startsWith('/talent') && !path.includes('/talent-dashboard')
     },
     {
-      key: 'enterprise',
-      href: '/enterprise',
-      name: 'Enterprise',
-      matches: (path: string) => path.startsWith('/enterprise'),
-      icon: <Building className="h-4 w-4" />,
-      dropdown: [
-        { name: 'Solutions', href: '/enterprise', description: 'Enterprise features' },
-        { name: 'White Label', href: '/enterprise/white-label', description: 'Custom branding' },
-        { name: 'API Access', href: '/developers', description: 'Developer tools' }
-      ]
+      key: 'equipment',
+      href: '/equipment',
+      matches: (path: string) => path.startsWith('/equipment')
     },
     {
       key: 'community',
       href: '/community',
-      name: 'Community',
-      matches: (path: string) => path.startsWith('/community') || path.startsWith('/forum'),
-      icon: <Globe className="h-4 w-4" />,
-      dropdown: [
-        { name: 'Forums', href: '/community', description: 'Join discussions' },
-        { name: 'Events', href: '/community/events', description: 'Tech events' },
-        { name: 'Blog', href: '/blog', description: 'Latest insights' }
+      matches: (path: string) => path.startsWith('/community') || path.startsWith('/forum')
+    }
+  ];
+
+  const serviceDropdowns = [
+    {
+      key: 'ai-services',
+      label: 'AI Services',
+      icon: <Brain className="h-4 w-4" />,
+      items: [
+        { name: 'AI Content Generator', href: '/ai-content-generator' },
+        { name: 'AI Talent Matching', href: '/match' },
+        { name: 'AI Model Training', href: '/ai-training' },
+        { name: 'AI Chatbot Builder', href: '/chatbot-builder' },
+        { name: 'AI-Powered Testing', href: '/ai-testing' },
+        { name: 'AI Legal Assistant', href: '/legal-ai' },
+        { name: 'AI Translation', href: '/ai-translation' },
+        { name: 'AI Financial Advisor', href: '/financial-ai' },
+        { name: 'AI Design Assistant', href: '/design-ai' }
+      ]
+    },
+    {
+      key: 'security',
+      label: 'Security',
+      icon: <Shield className="h-4 w-4" />,
+      items: [
+        { name: 'Cybersecurity Suite', href: '/cybersecurity-suite' },
+        { name: 'Data Privacy Compliance', href: '/privacy-compliance' },
+        { name: 'Security Audits', href: '/security-audits' },
+        { name: 'Penetration Testing', href: '/penetration-testing' },
+        { name: 'Compliance Reporting', href: '/compliance' }
+      ]
+    },
+    {
+      key: 'cloud-devops',
+      label: 'Cloud & DevOps',
+      icon: <Cloud className="h-4 w-4" />,
+      items: [
+        { name: 'Cloud Cost Optimizer', href: '/cloud-optimizer' },
+        { name: 'DevOps Automation', href: '/devops-platform' },
+        { name: 'API Gateway', href: '/api-gateway' },
+        { name: 'Infrastructure as Code', href: '/infrastructure' },
+        { name: 'Container Management', href: '/containers' }
+      ]
+    },
+    {
+      key: 'business-solutions',
+      label: 'Business',
+      icon: <Zap className="h-4 w-4" />,
+      items: [
+        { name: 'Data Analytics Platform', href: '/analytics-platform' },
+        { name: 'Customer Success Platform', href: '/customer-success' },
+        { name: 'AI-Powered HR Suite', href: '/hr-suite' },
+        { name: 'Project Management', href: '/dashboard/projects' },
+        { name: 'Enterprise Solutions', href: '/enterprise' }
       ]
     }
   ];
 
-  let links = baseLinks;
+  let links = baseLinks.map(link => ({ ...link, name: t(`nav.${link.key}`) }));
   
   // Add authenticated-only links
   if (isAuthenticated) {
@@ -115,9 +128,7 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
       key: 'dashboard',
       name: t('nav.dashboard'),
       href: '/dashboard',
-      matches: (path: string) => path === '/dashboard' || path === '/client-dashboard' || path === '/talent-dashboard',
-      icon: <Code className="h-4 w-4" />,
-      dropdown: undefined
+      matches: (path: string) => path === '/dashboard' || path === '/client-dashboard' || path === '/talent-dashboard'
     });
   }
   
@@ -127,93 +138,72 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
       key: 'analytics',
       name: t('nav.analytics'),
       href: '/analytics',
-      matches: (path: string) => path.startsWith('/analytics'),
-      icon: <Settings className="h-4 w-4" />,
-      dropdown: undefined
+      matches: (path: string) => path.startsWith('/analytics')
     });
   }
 
   const toggleDropdown = (key: string) => {
     setActiveDropdown(activeDropdown === key ? null : key);
   };
+
+  const isDropdownActive = (key: string) => activeDropdown === key;
   
   return (
     <nav className={cn("navbar ml-6 hidden lg:flex", className)} ref={dropdownRef}>
       <ul className="flex items-center gap-1">
         {links.map((link) => (
-          <li key={link.name} className="relative">
-            {link.dropdown ? (
-              <div className="relative">
-                <button
-                  onClick={() => toggleDropdown(link.key)}
-                  className={cn(
-                    "inline-flex h-10 items-center justify-center rounded-lg px-4 text-sm font-medium transition-all duration-200 group",
-                    link.matches(location.pathname)
-                      ? "bg-zion-purple/20 text-zion-cyan border border-zion-purple/30"
-                      : "text-white hover:bg-zion-purple/10 hover:text-zion-cyan hover:border hover:border-zion-purple/20"
-                  )}
-                >
-                  <span className="flex items-center gap-2">
-                    {link.icon}
-                    {link.name}
-                    <ChevronDown className={cn(
-                      "h-4 w-4 transition-transform duration-200",
-                      activeDropdown === link.key ? "rotate-180" : ""
-                    )} />
-                  </span>
-                </button>
+          <li key={link.name}>
+            <Link
+              to={link.href}
+              className={cn(
+                "inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-colors",
+                link.matches(location.pathname)
+                  ? "bg-zion-purple/20 text-zion-cyan"
+                  : "text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
+              )}
+            >
+              {link.name}
+            </Link>
+          </li>
+        ))}
 
-                {/* Dropdown Menu */}
-                {activeDropdown === link.key && (
-                  <div className="absolute top-full left-0 mt-2 w-80 bg-zion-blue-dark/95 backdrop-blur-xl border border-zion-purple/30 rounded-xl shadow-2xl shadow-zion-purple/20 z-50 overflow-hidden">
-                    {/* Dropdown Header */}
-                    <div className="p-4 bg-gradient-to-r from-zion-purple/10 to-zion-cyan/10 border-b border-zion-purple/20">
-                      <h3 className="text-zion-cyan font-semibold text-lg">{link.name}</h3>
-                      <p className="text-zion-slate-light text-sm">Explore our {link.name.toLowerCase()} offerings</p>
-                    </div>
-                    
-                    {/* Dropdown Items */}
-                    <div className="p-2">
-                      {link.dropdown.map((item, index) => (
-                        <Link
-                          key={index}
-                          to={item.href}
-                          onClick={() => setActiveDropdown(null)}
-                          className="flex items-start gap-3 p-3 rounded-lg hover:bg-zion-purple/10 hover:border-zion-purple/20 border border-transparent transition-all duration-200 group"
-                        >
-                          <div className="w-2 h-2 bg-zion-cyan rounded-full mt-2 group-hover:scale-150 transition-transform"></div>
-                          <div className="flex-1">
-                            <div className="text-white font-medium group-hover:text-zion-cyan transition-colors">
-                              {item.name}
-                            </div>
-                            <div className="text-zion-slate-light text-sm">
-                              {item.description}
-                            </div>
-                          </div>
-                          <div className="opacity-0 group-hover:opacity-100 transition-opacity">
-                            <ChevronDown className="h-4 w-4 text-zion-cyan rotate-[-90deg]" />
-                          </div>
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-                )}
+        {/* Service Dropdowns */}
+        {serviceDropdowns.map((dropdown) => (
+          <li key={dropdown.key} className="relative">
+            <button
+              onClick={() => toggleDropdown(dropdown.key)}
+              className={cn(
+                "inline-flex h-9 items-center gap-2 rounded-md px-4 text-sm font-medium transition-colors",
+                isDropdownActive(dropdown.key)
+                  ? "bg-zion-purple/20 text-zion-cyan"
+                  : "text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
+              )}
+            >
+              {dropdown.icon}
+              {dropdown.label}
+              <ChevronDown className={cn(
+                "h-3 w-3 transition-transform duration-200",
+                isDropdownActive(dropdown.key) ? "rotate-180" : ""
+              )} />
+            </button>
+
+            {/* Dropdown Menu */}
+            {isDropdownActive(dropdown.key) && (
+              <div className="absolute top-full left-0 mt-1 w-64 bg-zion-slate border border-zion-purple/30 rounded-lg shadow-2xl shadow-zion-purple/20 backdrop-blur-xl z-50">
+                <div className="p-2">
+                  {dropdown.items.map((item, index) => (
+                    <Link
+                      key={index}
+                      to={item.href}
+                      onClick={() => setActiveDropdown(null)}
+                      className="flex items-center gap-3 px-3 py-2 text-sm text-zion-slate-light hover:text-zion-cyan hover:bg-zion-purple/10 rounded-md transition-colors"
+                    >
+                      {dropdown.icon}
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
               </div>
-            ) : (
-              <Link
-                to={link.href}
-                className={cn(
-                  "inline-flex h-10 items-center justify-center rounded-lg px-4 text-sm font-medium transition-all duration-200 border border-transparent",
-                  link.matches(location.pathname)
-                    ? "bg-zion-purple/20 text-zion-cyan border-zion-purple/30"
-                    : "text-white hover:bg-zion-purple/10 hover:text-zion-cyan hover:border-zion-purple/20"
-                )}
-              >
-                <span className="flex items-center gap-2">
-                  {link.icon}
-                  {link.name}
-                </span>
-              </Link>
             )}
           </li>
         ))}
@@ -224,16 +214,16 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
             <Link
               to="/messages"
               className={cn(
-                "inline-flex h-10 items-center justify-center rounded-lg px-4 text-sm font-medium transition-all duration-200 relative border border-transparent hover:border-zion-purple/20",
+                "inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-colors relative",
                 location.pathname === "/messages" || location.pathname === "/inbox"
-                  ? "bg-zion-purple/20 text-zion-cyan border-zion-purple/30"
+                  ? "bg-zion-purple/20 text-zion-cyan"
                   : "text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
               )}
             >
-              <MessageSquare className="w-4 h-4 mr-2" />
+              <MessageSquare className="w-4 h-4 mr-1" />
               {t('nav.messages')}
               {unreadCount > 0 && (
-                <span className="absolute -top-1 -right-1 bg-gradient-to-r from-zion-purple to-zion-cyan text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-bold shadow-lg">
+                <span className="absolute -top-1 -right-1 bg-zion-purple text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
                   {unreadCount}
                 </span>
               )}
