@@ -119,7 +119,7 @@ export function HeroSection() {
           <Button
             className="group bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-lg py-6 px-8 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
             size="lg"
-            asChild
+
           >
             <Link
               to="/signup"
