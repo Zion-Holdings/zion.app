@@ -79,7 +79,7 @@ export const advancedEnergySustainabilitySolutions2025: AdvancedEnergySustainabi
     competitors: ['GE Digital, Siemens, ABB, Schneider Electric, Honeywell'],
     marketSize: '$55B smart grid market',
     growthRate: '32% annual growth',
-    variant: 'energy-sustainability',
+    variant: 'ai-sustainability-enterprise',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -283,7 +283,7 @@ export const advancedEnergySustainabilitySolutions2025: AdvancedEnergySustainabi
     competitors: ['Sustainalytics, MSCI, ISS ESG, Bloomberg, Refinitiv'],
     marketSize: '$18B ESG reporting market',
     growthRate: '35% annual growth',
-    variant: 'ai-services',
+    variant: 'ai-sustainability-enterprise',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',

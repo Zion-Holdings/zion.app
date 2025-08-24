@@ -23,6 +23,10 @@ const EnhancedNavigation: React.FC = () => {
   const services = [
     { name: 'All Services', href: '/comprehensive-2025-services-showcase', icon: Globe, description: 'Complete collection of innovative services' },
     { name: 'AI Business Intelligence', href: 'https://ziontechgroup.com/ai-business-intelligence', icon: Brain, description: 'AI-powered analytics and insights' },
+    { name: 'AI Content Intelligence', href: 'https://ziontechgroup.com/ai-content-intelligence', icon: Brain, description: 'AI-powered content creation and optimization' },
+    { name: 'AI Supply Chain Optimization', href: 'https://ziontechgroup.com/ai-supply-chain', icon: Cpu, description: 'Intelligent supply chain management' },
+    { name: 'AI Customer Success Automation', href: 'https://ziontechgroup.com/ai-customer-success', icon: Users, description: 'Customer success automation and retention' },
+    { name: 'Quantum Financial Modeling', href: 'https://ziontechgroup.com/quantum-financial-modeling', icon: Atom, description: 'Quantum-powered financial analysis' },
     { name: 'Quantum Cybersecurity', href: 'https://ziontechgroup.com/quantum-cybersecurity', icon: Shield, description: 'Quantum-resistant security solutions' },
     { name: 'Edge Computing', href: 'https://ziontechgroup.com/edge-computing-orchestration', icon: Cpu, description: 'Edge orchestration and IoT management' },
     { name: 'Space Technology', href: 'https://ziontechgroup.com/space-technology', icon: Rocket, description: 'Space exploration and satellite tech' },

@@ -79,7 +79,7 @@ export const advancedFintechSolutions2025: AdvancedFintechSolution2025[] = [
     competitors: ['FICO, Experian, TransUnion, Equifax, Upstart'],
     marketSize: '$35B credit scoring market',
     growthRate: '25% annual growth',
-    variant: 'ai-services',
+    variant: 'fintech',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -232,7 +232,7 @@ export const advancedFintechSolutions2025: AdvancedFintechSolution2025[] = [
     competitors: ['Lemonade, Root Insurance, Tractable, Shift Technology, Cape Analytics'],
     marketSize: '$20B insurtech market',
     growthRate: '30% annual growth',
-    variant: 'ai-services',
+    variant: 'fintech',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',

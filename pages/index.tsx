@@ -86,40 +86,40 @@ export default function HomePage() {
       features: ["Quantum-resistant encryption", "AI threat detection", "Zero-trust architecture"]
     },
     {
-      title: "AI Customer Experience",
-      description: "Deliver personalized customer experiences at scale with AI",
+      title: "AI Content Intelligence",
+      description: "Revolutionary content creation and optimization powered by AI",
+      icon: Code,
+      color: "from-blue-500 to-indigo-500",
+      link: "https://ziontechgroup.com/ai-content-intelligence",
+      price: "$799/month",
+      features: ["AI content generation", "Multi-channel optimization", "SEO analysis"]
+    },
+    {
+      title: "Quantum Financial Modeling",
+      description: "Quantum-powered financial analysis and risk assessment",
+      icon: TrendingUp,
+      color: "from-green-500 to-emerald-500",
+      link: "https://ziontechgroup.com/quantum-financial-modeling",
+      price: "$3,299/month",
+      features: ["Quantum Monte Carlo", "Portfolio optimization", "Risk assessment"]
+    },
+    {
+      title: "AI Supply Chain Optimization",
+      description: "Intelligent supply chain management with predictive analytics",
+      icon: Network,
+      color: "from-orange-500 to-red-500",
+      link: "https://ziontechgroup.com/ai-supply-chain",
+      price: "$1,899/month",
+      features: ["Demand forecasting", "Inventory optimization", "Route optimization"]
+    },
+    {
+      title: "AI Customer Success Automation",
+      description: "Intelligent customer success automation and retention optimization",
       icon: Users,
       color: "from-green-500 to-teal-500",
-      link: "https://ziontechgroup.com/ai-customer-experience",
-      price: "$399/month",
-      features: ["Customer journey mapping", "AI personalization", "Sentiment analysis"]
-    },
-    {
-      title: "Edge Computing Orchestration",
-      description: "Deploy and manage applications at the edge with intelligent orchestration",
-      icon: Network,
-      color: "from-purple-500 to-pink-500",
-      link: "https://ziontechgroup.com/edge-computing-orchestration",
-      price: "$349/month",
-      features: ["Edge node management", "IoT device management", "Real-time monitoring"]
-    },
-    {
-      title: "Space Technology Innovation",
-      description: "Accelerate space exploration with cutting-edge technology solutions",
-      icon: Rocket,
-      color: "from-violet-500 to-purple-500",
-      link: "https://ziontechgroup.com/space-technology",
-      price: "$2,499/month",
-      features: ["Satellite management", "AI mission planning", "Quantum communication"]
-    },
-    {
-      title: "Neural Interface Development",
-      description: "Build the future of human-computer interaction with neural interfaces",
-      icon: Brain,
-      color: "from-pink-500 to-rose-500",
-      link: "https://ziontechgroup.com/neural-interface",
+      link: "https://ziontechgroup.com/ai-customer-success",
       price: "$899/month",
-      features: ["BCI development tools", "Neural signal processing", "AI pattern recognition"]
+      features: ["Churn prediction", "Success automation", "Retention optimization"]
     }
   ];
 
