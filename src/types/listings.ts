@@ -1,12 +1,23 @@
 export interface ProductListing {
   id: string;
-  title: string;
+  name: string;
   description: string;
-  price: string;
   category: string;
-  images: string[];
+  price: number;
   rating: number;
-  reviewCount: number;
-  aiScore: number;
-  link: string;
+  image: string;
+  features: string[];
+  addons: string[];
+  featured?: boolean;
+  location?: string;
+  availability?: string;
+  created_at?: string;
+  tags?: string[];
+  author?: string;
+  images?: string[];
+  review_count?: number;
+  ai_score?: number;
+  currency?: string;
+  monthly?: boolean;
+  billing_frequency?: string;
 }
