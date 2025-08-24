@@ -142,6 +142,46 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
     count: 0
   },
   {
+    id: 'space-tech',
+    name: 'Space Technology',
+    description: 'Satellite solutions, space data, and aerospace technology',
+    icon: '🚀',
+    color: 'from-blue-600 to-indigo-700',
+    count: 0
+  },
+  {
+    id: 'biotech-ai',
+    name: 'Biotech AI',
+    description: 'AI-powered biotechnology and medical research solutions',
+    icon: '🧬',
+    color: 'from-purple-600 to-pink-700',
+    count: 0
+  },
+  {
+    id: 'autonomous-tech',
+    name: 'Autonomous Technology',
+    description: 'Self-driving vehicles, drones, and autonomous systems',
+    icon: '🚗',
+    color: 'from-orange-600 to-red-700',
+    count: 0
+  },
+  {
+    id: 'metaverse',
+    name: 'Metaverse & VR',
+    description: 'Virtual worlds, augmented reality, and immersive experiences',
+    icon: '🌍',
+    color: 'from-cyan-600 to-blue-700',
+    count: 0
+  },
+  {
+    id: 'quantum',
+    name: 'Quantum Technology',
+    description: 'Quantum computing, cryptography, and quantum internet',
+    icon: '⚛️',
+    color: 'from-violet-600 to-purple-700',
+    count: 0
+  },
+  {
     id: 'blockchain-services',
     name: 'Blockchain & Web3',
     description: 'Blockchain, smart contracts, DeFi, and Web3 solutions',
@@ -3228,48 +3268,267 @@ export const MICRO_SERVICES: MicroService[] = [
   },
   {
     id: 'ai-cybersecurity-zero-trust',
-    title: 'AI-Powered Zero Trust Cybersecurity',
-    description: 'Next-generation cybersecurity platform implementing zero trust architecture with AI-driven threat detection and response.',
+    title: 'AI-Powered Zero Trust Cybersecurity Platform',
+    description: 'Next-generation cybersecurity platform using AI and machine learning to implement zero-trust security architecture with real-time threat detection and automated response.',
     category: 'cybersecurity',
-    subcategory: 'Zero Trust Security',
-    price: 45000,
-    currency: 'USD',
-    pricingModel: 'monthly',
+    price: '$45,000/month',
+    duration: '6-12 months',
+    tags: ['AI', 'Cybersecurity', 'Zero Trust', 'Machine Learning', 'Threat Detection'],
     features: [
-      'Zero trust architecture',
-      'AI threat detection',
-      'Identity verification',
-      'Continuous monitoring',
-      'Automated response',
-      'Compliance reporting',
-      'Multi-cloud support'
+      'AI-powered threat detection and analysis',
+      'Zero-trust network access control',
+      'Behavioral analytics and anomaly detection',
+      'Automated incident response and remediation',
+      'Real-time security monitoring and alerts',
+      'Advanced threat intelligence integration',
+      'Compliance reporting and audit trails',
+      'Multi-cloud security management'
     ],
     benefits: [
-      'Eliminate security breaches',
-      'Reduce security overhead',
-      'Compliance with regulations',
-      'Real-time threat response',
-      'Scalable security solution'
+      'Proactive threat prevention and detection',
+      'Reduced security incidents and breaches',
+      'Automated security operations and response',
+      'Comprehensive compliance and governance',
+      'Scalable security architecture',
+      'Cost-effective security operations'
     ],
-    marketPrice: '$35,000 - $80,000/month',
-    deliveryTime: '12-16 weeks',
-    tags: ['Zero Trust', 'AI Security', 'Cybersecurity', 'Identity Management', 'Compliance'],
-    author: {
-      name: 'Zion Zero Trust Security',
-      id: 'zion-zero-trust-security',
-      verified: true
-    },
-    images: ['https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format'],
-    rating: 4.9,
-    reviewCount: 67,
-    aiScore: 97,
-    featured: true,
-    popular: true,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    technology: ['AI/ML', 'Zero Trust Architecture', 'Behavioral Analytics', 'Threat Intelligence', 'Automation'],
+    targetAudience: ['Enterprise', 'Financial Services', 'Healthcare', 'Government', 'Technology Companies'],
+    image: '/images/services/ai-cybersecurity.jpg',
+    link: 'https://ziontechgroup.com/services/ai-cybersecurity-zero-trust',
+    contactInfo: '+1 302 464 0950',
+    email: 'kleber@ziontechgroup.com'
+  },
+  {
+    id: 'quantum-computing-service',
+    title: 'Quantum Computing as a Service Platform',
+    description: 'Enterprise-grade quantum computing platform providing access to quantum processors, algorithms, and development tools for solving complex computational problems.',
+    category: 'quantum',
+    price: '$150,000/month',
+    duration: '12-18 months',
+    tags: ['Quantum Computing', 'Cloud Platform', 'Algorithm Development', 'Research', 'Enterprise'],
+    features: [
+      'Access to multiple quantum processors',
+      'Quantum algorithm development toolkit',
+      'Hybrid classical-quantum workflows',
+      'Quantum error correction and optimization',
+      'Industry-specific quantum solutions',
+      'Real-time quantum circuit simulation',
+      'Advanced quantum programming interfaces',
+      'Performance monitoring and analytics'
+    ],
+    benefits: [
+      'Solve previously intractable problems',
+      'Accelerate research and development',
+      'Competitive advantage in innovation',
+      'Access to cutting-edge quantum technology',
+      'Scalable quantum computing resources',
+      'Expert quantum computing support'
+    ],
+    technology: ['Quantum Processors', 'Quantum Algorithms', 'Error Correction', 'Hybrid Computing', 'Quantum Software'],
+    targetAudience: ['Research Institutions', 'Pharmaceutical Companies', 'Financial Services', 'Technology Companies', 'Government Labs'],
+    image: '/images/services/quantum-computing.jpg',
+    link: 'https://ziontechgroup.com/services/quantum-computing-service',
+    contactInfo: '+1 302 464 0950',
+    email: 'kleber@ziontechgroup.com'
+  },
+  {
+    id: 'ai-digital-twin-platform',
+    title: 'AI-Powered Digital Twin Platform',
+    description: 'Advanced digital twin platform using AI and IoT to create real-time virtual representations of physical assets, processes, and systems for predictive maintenance and optimization.',
+    category: 'ai',
+    price: '$85,000/month',
+    duration: '8-14 months',
+    tags: ['Digital Twin', 'AI', 'IoT', 'Predictive Analytics', 'Asset Management'],
+    features: [
+      'Real-time asset monitoring and simulation',
+      'AI-powered predictive maintenance',
+      '3D visualization and modeling',
+      'Performance optimization algorithms',
+      'Historical data analysis and insights',
+      'Integration with existing IoT systems',
+      'Customizable dashboards and reports',
+      'Multi-asset management capabilities'
+    ],
+    benefits: [
+      'Reduced maintenance costs and downtime',
+      'Improved asset performance and efficiency',
+      'Data-driven decision making',
+      'Predictive maintenance scheduling',
+      'Enhanced operational visibility',
+      'Optimized resource allocation'
+    ],
+    technology: ['AI/ML', 'IoT Sensors', '3D Modeling', 'Predictive Analytics', 'Real-time Processing'],
+    targetAudience: ['Manufacturing', 'Energy', 'Transportation', 'Healthcare', 'Smart Cities'],
+    image: '/images/services/digital-twin.jpg',
+    link: 'https://ziontechgroup.com/services/ai-digital-twin-platform',
+    contactInfo: '+1 302 464 0950',
+    email: 'kleber@ziontechgroup.com'
+  },
+  {
+    id: 'neural-interface-platform',
+    title: 'Advanced Neural Interface Platform',
+    description: 'Cutting-edge brain-computer interface platform enabling direct communication between the human brain and computers for medical applications, research, and assistive technology.',
+    category: 'biotech-ai',
+    price: '$250,000/month',
+    duration: '18-24 months',
+    tags: ['Neural Interface', 'Brain-Computer Interface', 'Medical Technology', 'AI', 'Neuroscience'],
+    features: [
+      'High-resolution brain signal processing',
+      'AI-powered signal interpretation',
+      'Real-time neural data analysis',
+      'Customizable interface protocols',
+      'Medical device integration',
+      'Research data collection and analysis',
+      'Safety monitoring and alerts',
+      'Multi-modal neural interfaces'
+    ],
+    benefits: [
+      'Revolutionary medical treatment options',
+      'Enhanced assistive technology',
+      'Advanced neuroscience research capabilities',
+      'Improved quality of life for patients',
+      'Breakthrough in human-computer interaction',
+      'Competitive advantage in medical technology'
+    ],
+    technology: ['Neural Sensors', 'Signal Processing', 'AI/ML', 'Medical Devices', 'Real-time Systems'],
+    targetAudience: ['Medical Device Companies', 'Research Institutions', 'Hospitals', 'Pharmaceutical Companies', 'Assistive Technology'],
+    image: '/images/services/neural-interface.jpg',
+    link: 'https://ziontechgroup.com/services/neural-interface-platform',
+    contactInfo: '+1 302 464 0950',
+    email: 'kleber@ziontechgroup.com'
+  },
+  {
+    id: 'hyperloop-transportation-platform',
+    title: 'Hyperloop Transportation Platform',
+    description: 'Next-generation transportation platform integrating hyperloop technology with AI-powered logistics, passenger management, and infrastructure monitoring for ultra-fast intercity travel.',
+    category: 'autonomous-tech',
+    price: '$500,000/month',
+    duration: '24-36 months',
+    tags: ['Hyperloop', 'Transportation', 'AI', 'Infrastructure', 'Logistics'],
+    features: [
+      'AI-powered passenger flow optimization',
+      'Real-time infrastructure monitoring',
+      'Advanced safety and security systems',
+      'Intelligent scheduling and routing',
+      'Environmental impact monitoring',
+      'Multi-modal transportation integration',
+      'Predictive maintenance systems',
+      'Energy efficiency optimization'
+    ],
+    benefits: [
+      'Revolutionary transportation speed and efficiency',
+      'Reduced travel time and costs',
+      'Sustainable transportation solution',
+      'Enhanced passenger experience',
+      'Economic development opportunities',
+      'Infrastructure modernization'
+    ],
+    technology: ['Hyperloop Technology', 'AI/ML', 'IoT Sensors', 'Advanced Materials', 'Energy Systems'],
+    targetAudience: ['Transportation Companies', 'Government Agencies', 'Infrastructure Developers', 'Logistics Companies', 'Urban Planners'],
+    image: '/images/services/hyperloop.jpg',
+    link: 'https://ziontechgroup.com/services/hyperloop-transportation-platform',
+    contactInfo: '+1 302 464 0950',
+    email: 'kleber@ziontechgroup.com'
+  },
+  {
+    id: 'ai-climate-prediction-platform',
+    title: 'AI-Powered Climate Prediction Platform',
+    description: 'Advanced climate modeling and prediction platform using AI and machine learning to forecast weather patterns, climate changes, and environmental impacts with unprecedented accuracy.',
+    category: 'green-tech',
+    price: '$75,000/month',
+    duration: '10-16 months',
+    tags: ['Climate Prediction', 'AI', 'Environmental Science', 'Weather Forecasting', 'Sustainability'],
+    features: [
+      'High-accuracy weather forecasting',
+      'Climate change impact modeling',
+      'Environmental risk assessment',
+      'Real-time data processing and analysis',
+      'Customizable prediction models',
+      'Integration with satellite data',
+      'Advanced visualization tools',
+      'API for third-party applications'
+    ],
+    benefits: [
+      'Improved disaster preparedness and response',
+      'Better agricultural planning and optimization',
+      'Enhanced renewable energy planning',
+      'Climate change mitigation strategies',
+      'Economic impact assessment',
+      'Policy and planning support'
+    ],
+    technology: ['AI/ML', 'Climate Modeling', 'Satellite Data', 'Big Data Processing', 'Predictive Analytics'],
+    targetAudience: ['Government Agencies', 'Agricultural Companies', 'Energy Companies', 'Insurance Companies', 'Research Institutions'],
+    image: '/images/services/climate-prediction.jpg',
+    link: 'https://ziontechgroup.com/services/ai-climate-prediction-platform',
+    contactInfo: '+1 302 464 0950',
+    email: 'kleber@ziontechgroup.com'
+  },
+  {
+    id: 'holographic-display-platform',
+    title: 'Advanced Holographic Display Platform',
+    description: 'Next-generation holographic display technology platform enabling immersive 3D visualizations, virtual meetings, and interactive experiences for enterprise and consumer applications.',
+    category: 'metaverse',
+    price: '$120,000/month',
+    duration: '12-18 months',
+    tags: ['Holographic Display', '3D Visualization', 'Virtual Reality', 'Interactive Technology', 'Immersive Experience'],
+    features: [
+      'High-resolution 3D holographic displays',
+      'Real-time holographic rendering',
+      'Interactive gesture and voice control',
+      'Multi-user collaborative environments',
+      'Integration with existing systems',
+      'Customizable content creation tools',
+      'Advanced projection technology',
+      'Mobile and wearable compatibility'
+    ],
+    benefits: [
+      'Immersive and engaging user experiences',
+      'Enhanced remote collaboration capabilities',
+      'Revolutionary presentation and communication',
+      'Competitive advantage in visualization',
+      'Improved training and education',
+      'Next-generation entertainment experiences'
+    ],
+    technology: ['Holographic Technology', '3D Rendering', 'Computer Vision', 'AI/ML', 'Advanced Optics'],
+    targetAudience: ['Entertainment Companies', 'Educational Institutions', 'Healthcare', 'Architecture', 'Corporate Training'],
+    image: '/images/services/holographic-display.jpg',
+    link: 'https://ziontechgroup.com/services/holographic-display-platform',
+    contactInfo: '+1 302 464 0950',
+    email: 'kleber@ziontechgroup.com'
+  },
+  {
+    id: 'quantum-internet-security',
+    title: 'Quantum Internet Security Platform',
+    description: 'Revolutionary quantum internet security platform using quantum cryptography and entanglement to provide unbreakable encryption and secure communication networks.',
+    category: 'quantum',
+    price: '$200,000/month',
+    duration: '18-24 months',
+    tags: ['Quantum Internet', 'Quantum Cryptography', 'Network Security', 'Quantum Entanglement', 'Secure Communication'],
+    features: [
+      'Quantum key distribution (QKD)',
+      'Quantum entanglement-based security',
+      'Unbreakable encryption protocols',
+      'Real-time quantum network monitoring',
+      'Integration with existing networks',
+      'Quantum-resistant algorithms',
+      'Advanced threat detection',
+      'Compliance and audit capabilities'
+    ],
+    benefits: [
+      'Unbreakable encryption and security',
+      'Future-proof security infrastructure',
+      'Enhanced data protection and privacy',
+      'Competitive advantage in security',
+      'Compliance with security standards',
+      'Protection against quantum threats'
+    ],
+    technology: ['Quantum Cryptography', 'Quantum Entanglement', 'QKD', 'Quantum Networks', 'Advanced Encryption'],
+    targetAudience: ['Government Agencies', 'Financial Services', 'Healthcare', 'Defense', 'Technology Companies'],
+    image: '/images/services/quantum-internet.jpg',
+    link: 'https://ziontechgroup.com/services/quantum-internet-security',
+    contactInfo: '+1 302 464 0950',
+    email: 'kleber@ziontechgroup.com'
   }
 ];
 

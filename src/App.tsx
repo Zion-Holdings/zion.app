@@ -27,6 +27,7 @@ const PricingPage = React.lazy(() => import('./pages/PricingPage'));
 // Additional service pages that exist
 const AdvancedTechServices = React.lazy(() => import('./pages/AdvancedTechServices'));
 const InnovativeServicesShowcase = React.lazy(() => import('./pages/InnovativeServicesShowcase'));
+const ServiceComparison = React.lazy(() => import('./pages/ServiceComparison'));
 const NotFound = React.lazy(() => import('./pages/NotFound'));
 
 const baseRoutes = [
@@ -47,6 +48,7 @@ const baseRoutes = [
   // Additional service routes that exist
   { path: '/advanced-tech-services', element: <AdvancedTechServices /> },
   { path: '/innovative-services', element: <InnovativeServicesShowcase /> },
+  { path: '/service-comparison', element: <ServiceComparison /> },
   // Catch-all route
   { path: '*', element: <NotFound /> },
 ];
