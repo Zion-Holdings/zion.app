@@ -9,6 +9,8 @@ import AdvancedTestimonials from '../components/AdvancedTestimonials';
 import AdvancedContactForm from '../components/AdvancedContactForm';
 import AdvancedStats from '../components/AdvancedStats';
 import AdvancedFeaturesShowcase from '../components/AdvancedFeaturesShowcase';
+import AdvancedPricing from '../components/AdvancedPricing';
+import AdvancedTeamShowcase from '../components/AdvancedTeamShowcase';
 
 const Home: NextPage = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -264,8 +266,14 @@ const Home: NextPage = () => {
         {/* Advanced Testimonials Section */}
         <AdvancedTestimonials />
 
+        {/* Advanced Team Showcase */}
+        <AdvancedTeamShowcase />
+
         {/* Advanced Features Showcase */}
         <AdvancedFeaturesShowcase />
+
+        {/* Advanced Pricing Section */}
+        <AdvancedPricing />
 
         {/* CTA Section */}
         <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600">
