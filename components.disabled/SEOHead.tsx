@@ -32,7 +32,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
   const twitterHandle = '@ziontechgroup';
   
   // Structured data for better SEO
-  const structuredData = {
+  const structuredData: any = {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": siteName,

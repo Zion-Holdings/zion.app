@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { BlogPost } from '@/utils/types/blog';
+import { BlogPost } from '../../utils/types/blog';
 
 export default function BlogCard({ post }: { post: BlogPost }) {
   return (

@@ -1,19 +1,19 @@
 import Link from 'next/link';
 import React from 'react';
-import type { TalentProfile } from '../data/talent';
+import type { TalentProfile } from '../utils/types/talent';
 
 export type EnhancedTalentCardProps = {
   profile: TalentProfile;
 };
 
-function AvailabilityBadge({ status }: { status?: 'available' | 'booked' | 'part-time' }) {
+function AvailabilityBadge({ status }: { status?: 'Open' | 'Part-time' | 'Booked' }) {
   const map: Record<string, string> = {
-    available: 'bg-emerald-500/15 text-emerald-300 ring-1 ring-emerald-500/30',
-    booked: 'bg-rose-500/15 text-rose-300 ring-1 ring-rose-500/30',
-    'part-time': 'bg-amber-500/15 text-amber-300 ring-1 ring-amber-500/30',
+    'Open': 'bg-emerald-500/15 text-emerald-300 ring-1 ring-emerald-500/30',
+    'Booked': 'bg-rose-500/15 text-rose-300 ring-1 ring-rose-500/30',
+    'Part-time': 'bg-amber-500/15 text-amber-300 ring-1 ring-amber-500/30',
   };
   const cls = status ? map[status] : 'bg-slate-500/15 text-slate-300 ring-1 ring-slate-500/30';
-  const label = status ? (status === 'part-time' ? 'Part-time' : status.charAt(0).toUpperCase() + status.slice(1)) : 'Unknown';
+  const label = status || 'Unknown';
   return (
     <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium ${cls}`}>{label}</span>
   );
@@ -36,9 +36,9 @@ export default function EnhancedTalentCard({ profile }: EnhancedTalentCardProps)
               <h3 className="truncate font-semibold text-base text-white">{profile.name}</h3>
               <p className="truncate text-sm text-slate-300">{profile.title}</p>
             </div>
-            <AvailabilityBadge status={profile.status} />
+            <AvailabilityBadge status={profile.availability} />
           </div>
-          <p className="mt-2 text-sm text-slate-300" style={{ display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' as any, overflow: 'hidden' }}>{profile.bio}</p>
+          <p className="mt-2 text-sm text-slate-300" style={{ display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' as any, overflow: 'hidden' }}>{profile.bio || profile.summary}</p>
           <div className="mt-3 flex flex-wrap gap-2">
             {displayedSkills.map((skill) => (
               <span key={skill} className="inline-flex items-center rounded-full bg-white/10 px-2 py-1 text-xs text-slate-200 ring-1 ring-white/15">
@@ -47,7 +47,7 @@ export default function EnhancedTalentCard({ profile }: EnhancedTalentCardProps)
             ))}
           </div>
           <div className="mt-4 flex items-center justify-between">
-            <div className="text-sm text-slate-300">${profile.hourlyRateUsd} / hr • {profile.experienceYears}+ yrs</div>
+            <div className="text-sm text-slate-300">${profile.hourlyRateUsd || 0} / hr</div>
             <Link href={`/talent/${profile.slug}`}>
               <a className="inline-flex items-center rounded-lg bg-gradient-to-r from-cyan-500 to-violet-600 px-3 py-1.5 text-sm font-medium text-white shadow hover:shadow-cyan-500/30 focus:outline-none focus:ring-2 focus:ring-cyan-400">
                 View Profile

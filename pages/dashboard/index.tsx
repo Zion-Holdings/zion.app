@@ -1,38 +1,9 @@
-import type { NextPage } from 'next';
+import React from 'react';
 import Head from 'next/head';
-import EmptyState from '../../components/ui/EmptyState';
-
-const Dashboard: NextPage = () => {
   return (
-    <div className="space-y-6 pb-16">
-      <Head>
-        <title>Dashboard - Zion</title>
-      </Head>
-
-      <h1 className="text-2xl font-semibold">Dashboard</h1>
-
-      <section>
-        <h2 className="text-lg font-semibold mb-2">My Jobs</h2>
-        <EmptyState
-          title="No jobs yet"
-          description="Post your first job to get quotes from top talent."
-          icon={<span>🧰</span>}
-          primaryAction={{ label: 'Post a job', href: '/jobs/post' }}
-          secondaryAction={{ label: 'Explore talent', href: '/talent' }}
-        />
-      </section>
-
-      <section>
-        <h2 className="text-lg font-semibold mb-2">Messages</h2>
-        <EmptyState
-          title="No messages yet"
-          description="When conversations start, they’ll show up here."
-          icon={<span>💬</span>}
-          primaryAction={{ label: 'Browse services', href: '/services' }}
-        />
-      </section>
-    </div>
+    <>
+      <Head><title>dashboard/index - Zion App</title><meta name="description" content="dashboard/index page" /></Head><div className="container mx-auto px-4 py-8"><h1 className="text-3xl font-bold mb-6">dashboard/index</h1><p className="text-lg mb-4">This page is under construction.</p><div className="mt-4"><a href="/" className="text-blue-600 hover:underline">;
+            ← Back to Home</a></div></div></>;
   );
-};
 
-export default Dashboard;
+export default Index;
