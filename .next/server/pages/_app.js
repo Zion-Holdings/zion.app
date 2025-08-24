@@ -1,1 +1,32 @@
-(()=>{var e={};e.id=888,e.ids=[888],e.modules={1637:(e,r,t)=>{"use strict";Object.defineProperty(r,"__esModule",{value:!0}),r.default=void 0,t(6764);var u=t(997);r.default=function({Component:e,pageProps:r}){return(0,u.jsx)(e,{...r})}},6764:()=>{},997:e=>{"use strict";e.exports=require("react/jsx-runtime")}};var r=require("../webpack-runtime.js");r.C(e);var t=r(r.s=1637);module.exports=t})();
+"use strict";
+(() => {
+var exports = {};
+exports.id = 890636;
+exports.ids = [890636];
+exports.modules = {
+
+/***/ 608732:
+/***/ ((module) => {
+
+module.exports = require("react/jsx-runtime");
+
+/***/ }),
+
+/***/ 882015:
+/***/ ((module) => {
+
+module.exports = require("react");
+
+/***/ })
+
+};
+;
+
+// load runtime
+var __webpack_require__ = require("../webpack-runtime.js");
+__webpack_require__.C(exports);
+var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
+var __webpack_exports__ = __webpack_require__.X(0, [618096,472076], () => (__webpack_exec__(805164)));
+module.exports = __webpack_exports__;
+
+})();

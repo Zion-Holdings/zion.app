@@ -129,16 +129,7 @@ const PerformanceMonitor: React.FC<PerformanceMonitorProps> = ({
     }
   }, [autoRefresh, showUI, refreshInterval, refreshMetrics]);
 
-  const getPerformanceScore = (): number => {
-    let score = 100;
-    
-    if (metrics.loadTime > 3000) score -= 20;
-    if (metrics.firstContentfulPaint > 2000) score -= 15;
-    if (metrics.largestContentfulPaint > 4000) score -= 15;
-    if (metrics.timeToInteractive > 5000) score -= 20;
-    
-    return Math.max(0, score);
-  };
+
 
   const getScoreColor = (score: number): string => {
     if (score >= 90) return 'text-green-400';
@@ -150,11 +141,6 @@ const PerformanceMonitor: React.FC<PerformanceMonitorProps> = ({
     if (score >= 90) return <CheckCircle className="w-5 h-5 text-green-400" />;
     if (score >= 70) return <AlertTriangle className="w-5 h-5 text-yellow-400" />;
     return <AlertTriangle className="w-5 h-5 text-red-400" />;
-  };
-
-  const formatTime = (ms: number): string => {
-    if (ms < 1000) return `${Math.round(ms)}ms`;
-    return `${(ms / 1000).toFixed(2)}s`;
   };
 
   // Format time values
@@ -284,7 +270,6 @@ const PerformanceMonitor: React.FC<PerformanceMonitorProps> = ({
               <div className="text-xs text-gray-400 text-center">
                 Last updated: {lastUpdate.toLocaleTimeString()}
               </div>
-              <span className="text-sm font-mono text-white">{metrics.fid}ms</span>
             </div>
 
             {/* Key Metrics */}
@@ -302,10 +287,6 @@ const PerformanceMonitor: React.FC<PerformanceMonitorProps> = ({
                     {formatTime(metrics.firstContentfulPaint)}
                   </div>
                 </div>
-              </div>
-              
-              <div className="text-xs text-gray-400 text-center">
-                Last updated: {lastUpdate.toLocaleTimeString()}
               </div>
             </div>
 

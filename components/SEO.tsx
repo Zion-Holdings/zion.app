@@ -53,14 +53,6 @@ const SEO: React.FC<SEOProps> = ({
       {nofollow && <meta name="robots" content="nofollow" />}
       {!noindex && !nofollow && <meta name="robots" content="index, follow" />}
       
-      // Analyze description
-      const description = newMetaTags.description || '';
-      const descLength = description.length;
-      const descOptimal = descLength >= 120 && descLength <= 160;
-      const descHasKeywords = newKeywords.some(keyword => 
-        description.toLowerCase().includes(keyword)
-      );
-      
       {/* Open Graph Meta Tags */}
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
