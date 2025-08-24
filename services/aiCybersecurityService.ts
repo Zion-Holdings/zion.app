@@ -167,7 +167,7 @@ class AICybersecurityService {
 
   private classifyThreatType(log: any): SecurityThreat['type'] {
     const types: SecurityThreat['type'][] = ['malware', 'phishing', 'ddos', 'insider', 'zero-day', 'ransomware'];
-    return types[Math.floor(Math.random() * types.length)];
+    return types[Math.floor(Math.random() * types.length)]!;
   }
 
   private calculateSeverity(threatScore: number): SecurityThreat['severity'] {
@@ -204,7 +204,7 @@ class AICybersecurityService {
 
   private assessImpact(threat: SecurityThreat): SecurityIncident['impact'] {
     const impacts: SecurityIncident['impact'][] = ['minimal', 'moderate', 'significant', 'severe'];
-    return impacts[Math.floor(Math.random() * impacts.length)];
+    return impacts[Math.floor(Math.random() * impacts.length)]!;
   }
 
   private estimateResolutionTime(threat: SecurityThreat): number {

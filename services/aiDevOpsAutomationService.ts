@@ -118,7 +118,7 @@ class AIDevOpsAutomationService {
         stage.status = 'failed';
         stage.endTime = new Date();
         stage.duration = (stage.endTime.getTime() - stage.startTime.getTime()) / 1000;
-        stage.logs.push(`Error: ${error.message}`);
+        stage.logs.push(`Error: ${error instanceof Error ? error.message : String(error)}`);
         allStagesSuccessful = false;
         break;
       }

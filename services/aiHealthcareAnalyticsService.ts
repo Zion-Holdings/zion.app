@@ -248,8 +248,10 @@ class AIHealthcareAnalyticsService {
     // Check vital signs for anomalies
     if (patient.vitalSigns.length > 0) {
       const latestVitals = patient.vitalSigns[patient.vitalSigns.length - 1];
-      const vitalSignsAlerts = await this.analyzeVitalSigns(patientId, latestVitals);
-      alerts.push(...vitalSignsAlerts);
+      if (latestVitals) {
+        const vitalSignsAlerts = await this.analyzeVitalSigns(patientId, latestVitals);
+        alerts.push(...vitalSignsAlerts);
+      }
     }
 
     // Check medication interactions
@@ -403,13 +405,20 @@ class AIHealthcareAnalyticsService {
     const totalWeight = weights.reduce((sum, weight) => sum + weight, 0);
     const normalizedWeights = weights.map(weight => weight / totalWeight);
     
-    let random = Math.random();
-    for (let i = 0; i < normalizedWeights.length; i++) {
-      random -= normalizedWeights[i];
-      if (random <= 0) return diagnoses[i];
+    if (normalizedWeights.length === 0 || diagnoses.length === 0) {
+      return 'Unknown diagnosis';
     }
     
-    return diagnoses[0];
+    let random = Math.random();
+    for (let i = 0; i < normalizedWeights.length; i++) {
+      const weight = normalizedWeights[i];
+      if (weight !== undefined) {
+        random -= weight;
+        if (random <= 0) return diagnoses[i] || diagnoses[0];
+      }
+    }
+    
+    return diagnoses[0] || 'Unknown diagnosis';
   }
 
   private async calculateDiagnosticConfidence(symptoms: string[], diagnosis: string, patient: PatientData): Promise<number> {

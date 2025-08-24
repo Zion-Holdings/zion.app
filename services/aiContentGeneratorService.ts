@@ -107,7 +107,7 @@ class AIContentGeneratorService {
 
   private async generateContentFromPrompt(prompt: string, category: string): Promise<string> {
     // Simulate AI generation with realistic content based on category
-    const contentMap = {
+    const contentMap: Record<string, string> = {
       blog: `Based on the prompt: "${prompt}", here's a compelling blog post introduction that will engage your readers and keep them wanting more. This introduction sets the stage for what's to come while providing immediate value.`,
       social: `Here's an engaging social media post that will resonate with your audience: "${prompt}". This content is designed to spark conversations and encourage engagement.`,
       email: `Subject: ${prompt}\n\nDear valued reader,\n\nHere's your personalized newsletter content that addresses your interests and needs. We've crafted this specifically for you.`
@@ -158,7 +158,7 @@ class AIContentGeneratorService {
   }
 
   private generateCallToAction(category: string): string {
-    const ctaMap = {
+    const ctaMap: Record<string, string> = {
       blog: 'Read more to discover the full story.',
       social: 'Share your thoughts in the comments below!',
       email: 'Click here to learn more.',

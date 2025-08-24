@@ -134,7 +134,17 @@ class AICustomerSupportService {
   private agents: SupportAgent[] = [];
   private chatbotSessions: ChatbotSession[] = [];
   private knowledgeBase: KnowledgeBaseArticle[] = [];
-  private analytics: SupportAnalytics;
+  private analytics: SupportAnalytics = {
+    totalTickets: 0,
+    openTickets: 0,
+    resolvedTickets: 0,
+    averageResolutionTime: 0,
+    averageFirstResponseTime: 0,
+    customerSatisfaction: 0,
+    chatbotResolutionRate: 0,
+    topCategories: [],
+    agentPerformance: []
+  };
 
   constructor() {
     this.initializeSampleData();

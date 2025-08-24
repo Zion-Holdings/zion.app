@@ -159,7 +159,7 @@ class AICodeReviewService {
         severity: 'critical',
         file: 'system',
         line: 0,
-        message: `Code review failed: ${error.message}`,
+        message: `Code review failed: ${error instanceof Error ? error.message : String(error)}`,
         suggestion: 'Please check the repository configuration and try again',
         rule: 'system_error'
       });

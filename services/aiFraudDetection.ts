@@ -242,9 +242,22 @@ class AIFraudDetectionService {
       throw new Error('Fraud rule not found');
     }
     
+    const existingRule = this.fraudRules[ruleIndex];
+    if (!existingRule) {
+      throw new Error('Fraud rule not found');
+    }
+    
     this.fraudRules[ruleIndex] = {
-      ...this.fraudRules[ruleIndex],
+      ...existingRule,
       ...updates,
+      id: existingRule.id, // Preserve required fields
+      name: updates.name || existingRule.name,
+      description: updates.description || existingRule.description,
+      conditions: updates.conditions || existingRule.conditions,
+      action: updates.action || existingRule.action,
+      priority: updates.priority || existingRule.priority,
+      enabled: updates.enabled !== undefined ? updates.enabled : existingRule.enabled,
+      createdAt: existingRule.createdAt,
       updatedAt: new Date()
     };
     
@@ -290,7 +303,7 @@ class AIFraudDetectionService {
         critical: Math.floor(totalTransactions * 0.02)
       },
       timeSeriesData: Array.from({ length: 30 }, (_, i) => ({
-        date: new Date(Date.now() - (29 - i) * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
+        date: new Date(Date.now() - (29 - i) * 24 * 60 * 60 * 1000).toISOString().split('T')[0]!,
         transactions: Math.floor(Math.random() * 5000) + 2000,
         fraudRate: Math.random() * 3 + 1 // 1-4%
       }))

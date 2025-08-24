@@ -289,7 +289,7 @@ class AICybersecurityThreatIntelligenceService {
         results.push({
           action: action.type,
           success: false,
-          details: error.message
+          details: error instanceof Error ? error.message : String(error)
         });
       }
     }
@@ -449,7 +449,7 @@ class AICybersecurityThreatIntelligenceService {
     
     for (let i = 0; i < numVulns; i++) {
       const vulnType = vulnTypes[Math.floor(Math.random() * vulnTypes.length)];
-      const severity = Math.random() > 0.7 ? 'critical' : Math.random() > 0.5 ? 'high' : Math.random() > 0.3 ? 'medium' : 'low';
+      const severity: 'low' | 'medium' | 'high' | 'critical' = Math.random() > 0.7 ? 'critical' : Math.random() > 0.5 ? 'high' : Math.random() > 0.3 ? 'medium' : 'low';
       
       vulnerabilities.push({
         assetType: assetType as any,
@@ -461,7 +461,7 @@ class AICybersecurityThreatIntelligenceService {
         affectedVersions: [`${Math.floor(Math.random() * 10)}.${Math.floor(Math.random() * 10)}.${Math.floor(Math.random() * 10)}`],
         remediation: {
           description: `Update ${vulnType} component to latest version`,
-          difficulty: Math.random() > 0.7 ? 'hard' : Math.random() > 0.4 ? 'medium' : 'easy',
+          difficulty: (Math.random() > 0.7 ? 'hard' : Math.random() > 0.4 ? 'medium' : 'easy') as 'easy' | 'medium' | 'hard',
           estimatedTime: Math.floor(Math.random() * 8) + 1,
           cost: Math.floor(Math.random() * 5000) + 100,
           priority: severity
@@ -497,7 +497,7 @@ class AICybersecurityThreatIntelligenceService {
   }
 
   private assignResponseTeam(severity: string): string[] {
-    const teams = {
+    const teams: Record<string, string[]> = {
       critical: ['CISO', 'Security Engineers', 'Incident Response', 'Legal', 'Communications'],
       high: ['Security Engineers', 'Incident Response', 'System Administrators'],
       medium: ['Security Engineers', 'System Administrators'],
@@ -557,9 +557,9 @@ class AICybersecurityThreatIntelligenceService {
     const motivations = ['Financial Gain', 'Espionage', 'Destruction', 'Political', 'Unknown'];
     
     return {
-      threatActor: actors[Math.floor(Math.random() * actors.length)],
-      country: countries[Math.floor(Math.random() * countries.length)],
-      motivation: motivations[Math.floor(Math.random() * motivations.length)],
+      threatActor: actors[Math.floor(Math.random() * actors.length)]!,
+      country: countries[Math.floor(Math.random() * countries.length)]!,
+      motivation: motivations[Math.floor(Math.random() * motivations.length)]!,
       capabilities: ['Advanced Persistent Threat', 'Social Engineering', 'Zero-day Exploits']
     };
   }
@@ -607,8 +607,8 @@ class AICybersecurityThreatIntelligenceService {
   }
 
   private generateThreatSummary(threats: SecurityThreat[]): any {
-    const byType = {};
-    const bySeverity = {};
+    const byType: Record<string, number> = {};
+    const bySeverity: Record<string, number> = {};
     
     threats.forEach(threat => {
       byType[threat.type] = (byType[threat.type] || 0) + 1;
@@ -624,7 +624,7 @@ class AICybersecurityThreatIntelligenceService {
   }
 
   private generateVulnerabilitySummary(vulnerabilities: VulnerabilityAssessment[]): any {
-    const bySeverity = {};
+    const bySeverity: Record<string, number> = {};
     let totalRemediationCost = 0;
     let totalAge = 0;
     
@@ -643,7 +643,7 @@ class AICybersecurityThreatIntelligenceService {
   }
 
   private generateIncidentSummary(incidents: SecurityIncident[]): any {
-    const byType = {};
+    const byType: Record<string, number> = {};
     let totalResolutionTime = 0;
     let resolvedCount = 0;
     

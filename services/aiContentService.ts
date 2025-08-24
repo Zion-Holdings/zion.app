@@ -110,7 +110,7 @@ class AIContentService {
   }
 
   private generateMockContent(request: ContentRequest): string {
-    const templates = {
+    const templates: Record<string, string> = {
       blog: `# ${request.topic}
 
 Welcome to our comprehensive guide on ${request.topic}. Whether you're a beginner or an expert, this article will provide valuable insights and practical tips.
@@ -166,10 +166,44 @@ Don't wait to revolutionize your business. Start your free trial now and see the
 
 🎯 Ready to transform your business? Click the link in our bio to learn more!
 
-#${request.keywords.join(' #')} #Innovation #BusinessGrowth`
+#${request.keywords.join(' #')} #Innovation #BusinessGrowth`,
+
+      email: `Subject: ${request.topic}
+
+Dear ${request.targetAudience},
+
+We're excited to share our latest insights on ${request.topic} with you. This comprehensive guide covers everything you need to know to get started.
+
+Key highlights:
+• Understanding the fundamentals
+• Best practices and strategies
+• Real-world applications
+• Getting started today
+
+Click here to learn more about ${request.topic} and how it can transform your business.
+
+Best regards,
+The Team`,
+
+      landing: `# ${request.topic}
+
+Transform your business with our innovative ${request.topic} solution. Designed specifically for ${request.targetAudience}, this powerful tool delivers exceptional results.
+
+## Why Choose Us?
+
+- **Proven Results**: Thousands of satisfied customers
+- **Advanced Technology**: Cutting-edge innovation
+- **24/7 Support**: Always here when you need us
+- **Flexible Pricing**: Plans that grow with your business
+
+## Get Started Today
+
+Don't wait to revolutionize your business. Start your free trial now and see the difference our ${request.topic} solution can make.
+
+[Get Started Now] [Learn More]`
     };
 
-    return templates[request.contentType] || templates.blog;
+    return templates[request.contentType] || templates.blog!;
   }
 
   private calculateSEOScore(keywords: string[], content: string): number {
