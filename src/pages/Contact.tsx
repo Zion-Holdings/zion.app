@@ -98,6 +98,7 @@ export default function Contact() {
   ];
 
   return (
+<<<<<<< HEAD
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-16">
         <h1 className="text-4xl font-bold text-zion-blue mb-8">Contact Us</h1>
@@ -107,6 +108,25 @@ export default function Contact() {
         
         <div className="max-w-2xl">
           <form onSubmit={handleSubmit} className="space-y-6">
+=======
+    <>
+      <SEO
+        title="Contact Zion - Get in Touch"
+        description="Have questions or want to learn more? Contact the Zion team about our AI and tech marketplace platform."
+        keywords="contact Zion, AI marketplace support, tech platform contact"
+        canonical="https://ziontechgroup.com/contact"
+      />
+      <main className="min-h-screen bg-zion-blue pt-24 pb-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <GradientHeading>Contact Us</GradientHeading>
+            <p className="mt-4 text-zion-slate-light text-xl max-w-3xl mx-auto">
+              Have questions or want to learn more? We'd love to hear from you.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-24">
+>>>>>>> cursor/website-audit-and-enhancement-d85a
             <div>
               <label className="block text-zion-slate mb-2">Name</label>
               <input 

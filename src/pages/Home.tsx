@@ -2,6 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Brain, Shield, BarChart3, Bot, Globe, Sparkles, Star, TrendingUp, Building, Settings, Code } from 'lucide-react';
+import { SEO } from "@/components/SEO";
 
 export default function Home() {
   const features = [
@@ -63,46 +64,13 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
-      <div className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white py-24 lg:py-32 overflow-hidden">
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <div className="inline-flex items-center gap-2 bg-blue-600/20 border border-blue-400/30 rounded-full px-4 py-2 mb-8">
-            <Sparkles className="h-4 w-4 text-blue-400" />
-            <span className="text-blue-400 text-sm font-medium">Innovation at Your Fingertips</span>
-          </div>
-          
-          <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-8 leading-tight">
-            Transform Your Business with
-            <span className="block bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent">
-              AI-Powered Solutions
-            </span>
-          </h1>
-          
-          <p className="text-lg md:text-xl lg:text-2xl text-gray-300 max-w-4xl mx-auto mb-10 leading-relaxed">
-            Discover our comprehensive suite of AI services, IT solutions, and micro SAAS platforms 
-            designed to accelerate your business growth and digital transformation.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Link
-              to="/all-services"
-              className="group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-xl hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 hover:scale-105 hover:shadow-xl transform"
-            >
-              <Sparkles className="h-5 w-5 group-hover:rotate-12 transition-transform duration-300" />
-              Explore Our Services
-              <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
-            </Link>
-            
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-3 px-8 py-4 border-2 border-white/20 text-white font-semibold rounded-xl hover:bg-white/10 transition-all duration-300"
-            >
-              Get Started Today
-            </Link>
-          </div>
-        </div>
-      </div>
+    <div className="min-h-screen bg-background">
+      <SEO 
+        title="Zion - The Tech & AI Marketplace" 
+        description="Discover top AI and tech talent, services, and equipment in one place."
+        keywords="AI, technology, marketplace, services, talent"
+        canonical="https://ziontechgroup.com/"
+      />
 
       {/* Stats Section */}
       <div className="py-16 bg-white">
