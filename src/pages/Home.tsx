@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { HeroSection } from "../components/HeroSection";
+import HeroSection from "../components/HeroSection";
 import { AdvancedSearch } from "../components/AdvancedSearch";
 import { InteractiveServiceShowcase } from "../components/InteractiveServiceShowcase";
 import { InteractivePortfolio } from "../components/InteractivePortfolio";
@@ -12,6 +12,8 @@ import { ProjectManagementDashboard } from "../components/ProjectManagementDashb
 import { AdvancedNotificationSystem } from "../components/AdvancedNotificationSystem";
 import { AICodeGenerator } from "../components/AICodeGenerator";
 import { AdvancedDataVisualization } from "../components/AdvancedDataVisualization";
+import { AdvancedBusinessIntelligence } from "../components/AdvancedBusinessIntelligence";
+import { AdvancedCollaborationPlatform } from "../components/AdvancedCollaborationPlatform";
 
 export default function Home() {
   return (
@@ -286,6 +288,96 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Enterprise-Grade Collaboration & Intelligence */}
+      <section className="py-16 bg-gradient-to-br from-zion-emerald/5 to-zion-blue/5">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-zion-slate mb-4">
+              Enterprise-Grade Collaboration & Intelligence
+            </h2>
+            <p className="text-lg text-zion-slate-light max-w-3xl mx-auto">
+              Transform your business operations with our advanced collaboration tools and AI-powered business intelligence
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Advanced Business Intelligence */}
+            <div className="bg-white dark:bg-zion-slate p-8 rounded-2xl border border-zion-slate-light hover:shadow-xl transition-all duration-300 group">
+              <div className="w-20 h-20 bg-gradient-to-br from-zion-emerald to-zion-blue rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <span className="text-white text-4xl">🧠</span>
+              </div>
+              <h3 className="text-2xl font-bold text-zion-slate mb-4">Advanced Business Intelligence</h3>
+              <p className="text-zion-slate-light mb-6">
+                AI-powered insights, predictive analytics, and real-time business metrics that drive strategic decision-making.
+              </p>
+              <ul className="space-y-3 text-zion-slate-light mb-6">
+                <li className="flex items-center gap-3">
+                  <span className="w-2 h-2 bg-zion-emerald rounded-full"></span>
+                  Predictive analytics with 90%+ accuracy
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="w-2 h-2 bg-zion-emerald rounded-full"></span>
+                  Real-time KPI monitoring & alerts
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="w-2 h-2 bg-zion-emerald rounded-full"></span>
+                  AI-generated business insights
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="w-2 h-2 bg-zion-emerald rounded-full"></span>
+                  Automated reporting & dashboards
+                </li>
+              </ul>
+              <div className="flex items-center gap-4">
+                <span className="px-4 py-2 bg-zion-emerald/10 text-zion-emerald rounded-full text-sm font-medium">
+                  Enterprise Ready
+                </span>
+                <span className="px-4 py-2 bg-zion-blue/10 text-zion-blue rounded-full text-sm font-medium">
+                  SOC 2 Compliant
+                </span>
+              </div>
+            </div>
+
+            {/* Advanced Collaboration Platform */}
+            <div className="bg-white dark:bg-zion-slate p-8 rounded-2xl border border-zion-slate-light hover:shadow-xl transition-all duration-300 group">
+              <div className="w-20 h-20 bg-gradient-to-br from-zion-blue to-zion-purple rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <span className="text-white text-4xl">🤝</span>
+              </div>
+              <h3 className="text-2xl font-bold text-zion-slate mb-4">Advanced Collaboration Platform</h3>
+              <p className="text-zion-slate-light mb-6">
+                Enterprise-grade video conferencing, document collaboration, and team management tools for seamless remote work.
+              </p>
+              <ul className="space-y-3 text-zion-slate-light mb-6">
+                <li className="flex items-center gap-3">
+                  <span className="w-2 h-2 bg-zion-blue rounded-full"></span>
+                  4K video conferencing with AI noise reduction
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="w-2 h-2 bg-zion-blue rounded-full"></span>
+                  Real-time document collaboration & editing
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="w-2 h-2 bg-zion-blue rounded-full"></span>
+                  Advanced meeting controls & recording
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="w-2 h-2 bg-zion-blue rounded-full"></span>
+                  Enterprise security & compliance features
+                </li>
+              </ul>
+              <div className="flex items-center gap-4">
+                <span className="px-4 py-2 bg-zion-blue/10 text-zion-blue rounded-full text-sm font-medium">
+                  HD Quality
+                </span>
+                <span className="px-4 py-2 bg-zion-purple/10 text-zion-purple rounded-full text-sm font-medium">
+                  End-to-End Encrypted
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Stats Section */}
       <section className="py-16 bg-gradient-to-r from-zion-blue-dark to-zion-slate">
         <div className="container mx-auto px-4">
@@ -362,15 +454,17 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Floating Tools - Complete Futuristic Suite */}
-      <PerformanceMonitor />
-      <AIChatAssistant />
-      <AnalyticsDashboard />
-      <CollaborationPlatform />
-      <ProjectManagementDashboard />
-      <AdvancedNotificationSystem />
-      <AICodeGenerator />
-      <AdvancedDataVisualization />
+                     {/* Floating Tools - Complete Futuristic Suite */}
+               <PerformanceMonitor />
+               <AIChatAssistant />
+               <AnalyticsDashboard />
+               <CollaborationPlatform />
+               <ProjectManagementDashboard />
+               <AdvancedNotificationSystem />
+               <AICodeGenerator />
+               <AdvancedDataVisualization />
+               <AdvancedBusinessIntelligence />
+               <AdvancedCollaborationPlatform />
     </div>
   );
 }
