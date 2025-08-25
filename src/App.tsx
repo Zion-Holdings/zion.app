@@ -8,6 +8,9 @@ import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { Toaster } from "./components/ui/toaster";
 import { Toaster as SonnerToaster } from "./components/ui/sonner";
+import { ErrorBoundary } from "./components/ErrorBoundary";
+import { AccessibilityEnhancer } from "./components/AccessibilityEnhancer";
+import { SkipToMainContent } from "./components/AccessibilityEnhancer";
 import {
   AuthRoutes,
   DashboardRoutes,
@@ -22,6 +25,7 @@ import {
   DeveloperRoutes
 } from './routes';
 
+// Lazy load pages for better performance
 const Home = React.lazy(() => import('./pages/Home'));
 const AIMatcherPage = React.lazy(() => import('./pages/AIMatcher'));
 const TalentDirectory = React.lazy(() => import('./pages/TalentDirectory'));
@@ -71,36 +75,58 @@ const baseRoutes = [
   { path: '/blog/:slug', element: <BlogPost /> },
 ];
 
+// Loading component with better UX
+const LoadingFallback = () => (
+  <div className="min-h-screen bg-zion-blue-dark flex items-center justify-center">
+    <div className="text-center">
+      <div className="w-16 h-16 border-4 border-zion-cyan/30 border-t-zion-cyan rounded-full animate-spin mx-auto mb-4"></div>
+      <p className="text-zion-slate-light text-lg">Loading Zion Tech Group...</p>
+      <div className="mt-2 flex space-x-1 justify-center">
+        <div className="w-2 h-2 bg-zion-cyan rounded-full animate-bounce"></div>
+        <div className="w-2 h-2 bg-zion-cyan rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
+        <div className="w-2 h-2 bg-zion-cyan rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+      </div>
+    </div>
+  </div>
+);
+
 const App = () => {
   return (
-    <WhitelabelProvider>
-      <ThemeProvider defaultTheme="dark">
-        <Header />
-        <main className="min-h-screen">
-          <Suspense fallback={<div className="p-4 text-center">Loading...</div>}>
-            <Routes>
-              {baseRoutes.map(({ path, element }) => (
-                <Route key={path} path={path} element={element} />
-              ))}
-              <Route path="/auth/*" element={<AuthRoutes />} />
-              <Route path="/dashboard/*" element={<DashboardRoutes />} />
-              <Route path="/marketplace/*" element={<MarketplaceRoutes />} />
-              <Route path="/talent/*" element={<TalentRoutes />} />
-              <Route path="/admin/*" element={<AdminRoutes />} />
-              <Route path="/mobile/*" element={<MobileAppRoutes />} />
-              <Route path="/content/*" element={<ContentRoutes />} />
-              <Route path="/enterprise/*" element={<EnterpriseRoutes />} />
-              <Route path="/community/*" element={<CommunityRoutes />} />
-              <Route path="/developers/*" element={<DeveloperRoutes />} />
-              <Route path="*" element={<ErrorRoutes />} />
-            </Routes>
-          </Suspense>
-        </main>
-        <Footer />
-        <Toaster />
-        <SonnerToaster position="top-right" />
-      </ThemeProvider>
-    </WhitelabelProvider>
+    <ErrorBoundary>
+      <WhitelabelProvider>
+        <ThemeProvider defaultTheme="dark">
+          <AccessibilityEnhancer>
+            <div className="min-h-screen bg-zion-blue-dark">
+              <SkipToMainContent />
+              <Header />
+              <main id="main-content" className="pt-20">
+                <Suspense fallback={<LoadingFallback />}>
+                  <Routes>
+                    {baseRoutes.map(({ path, element }) => (
+                      <Route key={path} path={path} element={element} />
+                    ))}
+                    <Route path="/auth/*" element={<AuthRoutes />} />
+                    <Route path="/dashboard/*" element={<DashboardRoutes />} />
+                    <Route path="/marketplace/*" element={<MarketplaceRoutes />} />
+                    <Route path="/talent/*" element={<TalentRoutes />} />
+                    <Route path="/admin/*" element={<AdminRoutes />} />
+                    <Route path="/mobile/*" element={<MobileAppRoutes />} />
+                    <Route path="/content/*" element={<ContentRoutes />} />
+                    <Route path="/enterprise/*" element={<EnterpriseRoutes />} />
+                    <Route path="/community/*" element={<CommunityRoutes />} />
+                    <Route path="/developers/*" element={<DeveloperRoutes />} />
+                    <Route path="*" element={<ErrorRoutes />} />
+                  </Routes>
+                </Suspense>
+              </main>
+              <Footer />
+              <Toaster />
+              <SonnerToaster position="top-right" />
+            </div>
+          </AccessibilityEnhancer>
+        </ThemeProvider>
+      </WhitelabelProvider>
+    </ErrorBoundary>
   );
 };
 
