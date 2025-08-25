@@ -1,73 +1,59 @@
-import React, { useState } from 'react';
-import { cn } from '@/lib/utils';
-import { ChevronDown } from 'lucide-react';
+import React from 'react';
 
 interface AccordionProps {
-  type?: 'single' | 'multiple';
-  collapsible?: boolean;
   children: React.ReactNode;
-  className?: string;
 }
 
 interface AccordionItemProps {
-  value: string;
   children: React.ReactNode;
-  className?: string;
 }
 
 interface AccordionTriggerProps {
   children: React.ReactNode;
   className?: string;
-  onClick?: () => void;
-  isOpen?: boolean;
 }
 
 interface AccordionContentProps {
   children: React.ReactNode;
   className?: string;
-  isOpen?: boolean;
 }
 
-export const Accordion: React.FC<AccordionProps> = ({ type = 'single', collapsible = false, children, className }) => {
+export function Accordion({ children }: AccordionProps) {
   return (
-    <div className={cn("w-full", className)}>
+    <div className="w-full">
       {children}
     </div>
   );
-};
+}
 
-export const AccordionItem: React.FC<AccordionItemProps> = ({ value, children, className }) => {
+export function AccordionItem({ children }: AccordionItemProps) {
+  const [isOpen, setIsOpen] = React.useState(false);
+  
   return (
-    <div className={cn("border-b", className)}>
-      {children}
+    <div className="border border-zion-slate rounded-lg mb-2">
+      {React.Children.map(children, (child) => {
+        if (React.isValidElement(child)) {
+          return React.cloneElement(child, { isOpen, setIsOpen } as { isOpen: boolean; setIsOpen: React.Dispatch<React.SetStateAction<boolean>> });
+        }
+        return child;
+      })}
     </div>
   );
-};
+}
 
-export const AccordionTrigger: React.FC<AccordionTriggerProps> = ({ children, className, onClick, isOpen }) => {
+export function AccordionTrigger({ children, className }: AccordionTriggerProps) {
   return (
-    <button
-      className={cn(
-        "flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline [&[data-state=open]>svg]:rotate-180",
-        className
-      )}
-      onClick={onClick}
-    >
+    <button className={`w-full px-4 py-3 text-left flex items-center justify-between hover:bg-zion-blue-light transition-colors ${className || ''}`}>
       {children}
-      <ChevronDown className={cn("h-4 w-4 shrink-0 transition-transform duration-200", isOpen && "rotate-180")} />
+      <span className="text-zion-cyan">+</span>
     </button>
   );
-};
+}
 
-export const AccordionContent: React.FC<AccordionContentProps> = ({ children, className, isOpen }) => {
+export function AccordionContent({ children, className }: AccordionContentProps) {
   return (
-    <div className={cn(
-      "overflow-hidden text-sm transition-all",
-      isOpen ? "max-h-96 pb-4" : "max-h-0"
-    )}>
-      <div className={cn("pb-4 pt-0", className)}>
-        {children}
-      </div>
+    <div className={`px-4 pb-3 ${className || ''}`}>
+      {children}
     </div>
   );
-};
+}

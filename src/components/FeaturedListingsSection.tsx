@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Star, Eye, Heart, ArrowRight } from 'lucide-react';
+import Image from 'next/image';
 
 const featuredListings = [
   {
@@ -105,9 +106,11 @@ export function FeaturedListingsSection() {
               <div className="group bg-gradient-to-br from-zion-blue-dark/80 to-zion-blue-dark/40 backdrop-blur-sm rounded-xl overflow-hidden border border-zion-blue-light/30 hover:border-zion-cyan/50 transition-all duration-500 hover:transform hover:scale-[1.02] hover:shadow-2xl hover:shadow-zion-cyan/20">
                 {/* Image */}
                 <div className="relative h-48 overflow-hidden">
-                  <img 
+                  <Image 
                     src={listing.image} 
                     alt={listing.title}
+                    layout="fill"
+                    objectFit="cover"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />

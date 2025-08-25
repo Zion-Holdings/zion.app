@@ -1,14 +1,22 @@
 /** @type {import('tailwindcss').Config} */
+<<<<<<< HEAD
 module.exports = {
   darkMode: "class",
   content: [
     './src/**/*.{js,ts,jsx,tsx}',
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
+=======
+export default {
+  content: [
+    './src/**/*.{js,ts,jsx,tsx}',
+    './index.html',
+>>>>>>> a4b0ef56a21d1919a0e2729e4ba64fbc8c4b3f44
   ],
   theme: {
     extend: {
       colors: {
+<<<<<<< HEAD
         // Modern color palette
         primary: {
           50: '#eff6ff',
@@ -213,5 +221,41 @@ module.exports = {
     require('@tailwindcss/typography'),
     require('@tailwindcss/aspect-ratio'),
   ],
+=======
+        'zion-blue': '#172d67',
+        'zion-blue-dark': '#0f1a3d',
+        'zion-cyan': '#22ddd2',
+        'zion-cyan-light': '#4de8e0',
+        'zion-purple': '#8c15e9',
+        'zion-purple-light': '#a855f7',
+        'zion-slate': '#64748b',
+        'zion-slate-light': '#94a3b8',
+      },
+      fontFamily: {
+        'orbitron': ['Orbitron', 'monospace'],
+      },
+      animation: {
+        'float': 'float 6s ease-in-out infinite',
+        'glow': 'glow 2s ease-in-out infinite alternate',
+        'neon-pulse': 'neonPulse 1.5s ease-in-out infinite alternate',
+      },
+      keyframes: {
+        float: {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-20px)' },
+        },
+        glow: {
+          '0%': { boxShadow: '0 0 5px #22ddd2, 0 0 10px #22ddd2, 0 0 15px #22ddd2' },
+          '100%': { boxShadow: '0 0 10px #22ddd2, 0 0 20px #22ddd2, 0 0 30px #22ddd2' }
+        },
+        neonPulse: {
+          '0%': { textShadow: '0 0 5px #22ddd2, 0 0 10px #22ddd2, 0 0 15px #22ddd2' },
+          '100%': { textShadow: '0 0 10px #22ddd2, 0 0 20px #22ddd2, 0 0 30px #22ddd2' }
+        },
+      },
+    },
+  },
+  plugins: [],
+>>>>>>> a4b0ef56a21d1919a0e2729e4ba64fbc8c4b3f44
 }
 

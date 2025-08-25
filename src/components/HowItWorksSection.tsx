@@ -51,27 +51,26 @@ export function HowItWorksSection() {
     hidden: { y: 30, opacity: 0 },
     visible: {
       y: 0,
-      opacity: 1,
+      scale: 1,
       transition: {
+<<<<<<< HEAD
         duration: 0.6
       }
     }
+=======
+        duration: 0.8,
+        ease: "easeOut" as const,
+      },
+    },
+>>>>>>> a4b0ef56a21d1919a0e2729e4ba64fbc8c4b3f44
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-zion-blue via-zion-slate-dark to-zion-blue-dark relative overflow-hidden">
-      {/* Background pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 50% 50%, currentColor 1px, transparent 1px)`,
-          backgroundSize: '40px 40px'
-        }} />
-      </div>
-      
-      <div className="container mx-auto px-4 relative z-10">
+    <section className="py-20 bg-zion-blue-dark">
+      <div className="container mx-auto px-4">
         <motion.div 
           className="text-center mb-16"
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
@@ -79,61 +78,68 @@ export function HowItWorksSection() {
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             How It <span className="bg-gradient-to-r from-zion-cyan to-zion-purple bg-clip-text text-transparent">Works</span>
           </h2>
-          <p className="text-zion-slate-light text-lg max-w-3xl mx-auto">
-            Our streamlined process ensures your project success from concept to completion
+          <p className="text-xl text-zion-slate-light max-w-3xl mx-auto">
+            Get started with Zion Tech Group in just a few simple steps
           </p>
         </motion.div>
-        
+
         <motion.div 
-          className="relative"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 max-w-6xl mx-auto"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
-          {/* Connection line */}
-          <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-zion-cyan via-zion-purple to-zion-blue transform -translate-y-1/2 hidden lg:block" />
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
-            {steps.map((step, index) => (
-              <motion.div key={index} variants={itemVariants} className="relative">
-                <div className="text-center">
-                  {/* Step number */}
-                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-zion-slate-dark border-2 border-zion-blue-light text-white font-bold text-lg mb-4 relative z-10">
-                    {index + 1}
+          {steps.map((step, index) => (
+            <motion.div 
+              key={index} 
+              variants={itemVariants}
+              className="text-center group"
+            >
+              <div className="relative mb-6">
+                <div className={`w-20 h-20 bg-gradient-to-br ${step.color} rounded-full flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300`}>
+                  <div className="text-white">
+                    {step.icon}
                   </div>
-                  
-                  {/* Icon */}
-                  <div className={`inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br ${step.color} mb-6 shadow-lg`}>
-                    <div className="text-white">
-                      {step.icon}
-                    </div>
-                  </div>
-                  
-                  <h3 className="text-xl font-semibold text-white mb-3">
-                    {step.title}
-                  </h3>
-                  <p className="text-zion-slate-light leading-relaxed text-sm">
-                    {step.description}
-                  </p>
                 </div>
-              </motion.div>
-            ))}
-          </div>
+                {index < steps.length - 1 && (
+                  <div className="hidden lg:block absolute top-1/2 -right-4 w-8 h-0.5 bg-gradient-to-r from-zion-cyan to-zion-purple transform -translate-y-1/2"></div>
+                )}
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-zion-cyan transition-colors">
+                {step.title}
+              </h3>
+              <p className="text-zion-slate-light leading-relaxed">
+                {step.description}
+              </p>
+            </motion.div>
+          ))}
         </motion.div>
-        
-        {/* Bottom CTA */}
+
         <motion.div 
           className="text-center mt-16"
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <button className="inline-flex items-center gap-3 bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-            Get Started Today
-            <Rocket className="w-5 h-5" />
-          </button>
+          <p className="text-zion-slate-light text-lg mb-6">
+            Ready to get started? Join thousands of businesses already using Zion Tech Group
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a 
+              href="/signup" 
+              className="inline-flex items-center justify-center px-8 py-3 bg-zion-purple hover:bg-zion-purple-dark text-white font-semibold rounded-lg transition-colors duration-300"
+            >
+              Get Started
+            </a>
+            <a 
+              href="/services" 
+              className="inline-flex items-center justify-center px-8 py-3 border border-zion-cyan text-zion-cyan hover:bg-zion-cyan hover:text-white font-semibold rounded-lg transition-colors duration-300"
+            >
+              Explore Services
+            </a>
+          </div>
         </motion.div>
       </div>
     </section>

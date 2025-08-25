@@ -11,8 +11,16 @@
     ],
     "module": "esnext",
     "skipLibCheck": true,
-    "importHelpers": false,
-    "noEmitHelpers": false,
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "preserve",
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
     "baseUrl": ".",
     "paths": {
       "@/*": [
@@ -43,6 +51,7 @@
         "./src/data/*"
       ]
     },
+<<<<<<< HEAD
     /* Bundler mode */
     "moduleResolution": "bundler",
     "esModuleInterop": true,
@@ -66,6 +75,11 @@
     "noEmit": true,
     "isolatedModules": true,
     "forceConsistentCasingInFileNames": true
+=======
+    "allowJs": true,
+    "incremental": true,
+    "esModuleInterop": true
+>>>>>>> a4b0ef56a21d1919a0e2729e4ba64fbc8c4b3f44
   },
   "include": [
     "src/**/*.ts",
@@ -73,6 +87,7 @@
     "types/**/*.ts",
     "types/**/*.d.ts"
   ],
+<<<<<<< HEAD
   "exclude": [
     "node_modules",
     "zion.app/recovered-content/**",
@@ -95,5 +110,14 @@
     "components/**",
     "pages/**",
     "src/components/disabled/**"
+=======
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ],
+  "exclude": [
+    "node_modules"
+>>>>>>> a4b0ef56a21d1919a0e2729e4ba64fbc8c4b3f44
   ]
 }

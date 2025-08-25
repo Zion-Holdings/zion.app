@@ -16,6 +16,7 @@ import { AdvancedBusinessIntelligence } from "../components/AdvancedBusinessInte
 import { AdvancedCollaborationPlatform } from "../components/AdvancedCollaborationPlatform";
 import { AdvancedSecurityDashboard } from "../components/AdvancedSecurityDashboard";
 import { AdvancedPerformanceMonitor } from "../components/AdvancedPerformanceMonitor";
+import { AdvancedAICodeGenerator } from "../components/AdvancedAICodeGenerator";
 
 export default function Home() {
   return (
@@ -469,6 +470,7 @@ export default function Home() {
                <AdvancedCollaborationPlatform />
                <AdvancedSecurityDashboard />
                <AdvancedPerformanceMonitor />
+               <AdvancedAICodeGenerator />
     </div>
   );
 }
