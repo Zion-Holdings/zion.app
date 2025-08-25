@@ -44,6 +44,27 @@ const ZionHireAI = React.lazy(() => import('./pages/ZionHireAI'));
 const RequestQuotePage = React.lazy(() => import('./pages/RequestQuote'));
 const MicroSaasServices = React.lazy(() => import('./pages/MicroSaasServices'));
 const PricingPage = React.lazy(() => import('./pages/PricingPage'));
+const About = React.lazy(() => import('./pages/About'));
+const Contact = React.lazy(() => import('./pages/Contact'));
+const Services = React.lazy(() => import('./pages/Services'));
+const AIServicesPage = React.lazy(() => import('./pages/AIServicesPage'));
+const EnterpriseSolutionsPage = React.lazy(() => import('./pages/EnterpriseSolutionsPage'));
+const CloudDevOpsSolutions = React.lazy(() => import('./pages/CloudDevOpsSolutions'));
+const DigitalTransformation = React.lazy(() => import('./pages/DigitalTransformation'));
+const EmergingTechServices = React.lazy(() => import('./pages/EmergingTechServices'));
+const AIBusinessSolutions = React.lazy(() => import('./pages/AIBusinessSolutions'));
+const IndustrySolutions = React.lazy(() => import('./pages/IndustrySolutions'));
+const GreenIT = React.lazy(() => import('./pages/GreenIT'));
+const Careers = React.lazy(() => import('./pages/Careers'));
+const FAQ = React.lazy(() => import('./pages/FAQ'));
+const Privacy = React.lazy(() => import('./pages/Privacy'));
+const Terms = React.lazy(() => import('./pages/Terms.tsx'));
+const Sitemap = React.lazy(() => import('./pages/Sitemap.tsx'));
+const HelpCenter = React.lazy(() => import('./pages/HelpCenter'));
+const WhitePapers = React.lazy(() => import('./pages/WhitePapers'));
+const CaseStudies = React.lazy(() => import('./pages/CaseStudies'));
+const Events = React.lazy(() => import('./pages/Events'));
+const Webinars = React.lazy(() => import('./pages/Webinars'));
 
 const baseRoutes = [
   { path: '/', element: <Home /> },
@@ -69,6 +90,26 @@ const baseRoutes = [
   { path: '/request-quote', element: <RequestQuotePage /> },
   { path: '/blog', element: <Blog /> },
   { path: '/blog/:slug', element: <BlogPost /> },
+  { path: '/about', element: <About /> },
+  { path: '/services', element: <Services /> },
+  { path: '/ai-services', element: <AIServicesPage /> },
+  { path: '/enterprise-solutions', element: <EnterpriseSolutionsPage /> },
+  { path: '/cloud-devops-solutions', element: <CloudDevOpsSolutions /> },
+  { path: '/digital-transformation', element: <DigitalTransformation /> },
+  { path: '/emerging-tech-services', element: <EmergingTechServices /> },
+  { path: '/ai-business-solutions', element: <AIBusinessSolutions /> },
+  { path: '/industry-solutions', element: <IndustrySolutions /> },
+  { path: '/green-it', element: <GreenIT /> },
+  { path: '/careers', element: <Careers /> },
+  { path: '/faq', element: <FAQ /> },
+  { path: '/privacy', element: <Privacy /> },
+  { path: '/terms', element: <Terms /> },
+  { path: '/sitemap', element: <Sitemap /> },
+  { path: '/help-center', element: <HelpCenter /> },
+  { path: '/white-papers', element: <WhitePapers /> },
+  { path: '/case-studies', element: <CaseStudies /> },
+  { path: '/events', element: <Events /> },
+  { path: '/webinars', element: <Webinars /> },
 ];
 
 const App = () => {
