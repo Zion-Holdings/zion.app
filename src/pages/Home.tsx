@@ -11,6 +11,8 @@ import { SEO } from "@/components/SEO";
 import { ITServiceRequestHero } from "@/components/home/ITServiceRequestHero";
 import { FeatureHighlights } from "@/components/home/FeatureHighlights";
 import { TestimonialsSection } from "@/components/home/TestimonialsSection";
+import { ContactForm } from "@/components/ContactForm";
+import { PricingSection } from "@/components/PricingSection";
 import { 
   ArrowRight, 
   CheckCircle, 
@@ -228,6 +230,29 @@ export default function Home() {
 
       {/* Testimonials */}
       <TestimonialsSection />
+
+      {/* Pricing Section */}
+      <PricingSection />
+
+      {/* Contact Section */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
+            Ready to Get Started?
+          </h2>
+          <p className="text-xl text-zion-slate-light max-w-3xl mx-auto">
+            Let's discuss your project and explore how our technology solutions can transform your business.
+          </p>
+        </motion.div>
+
+        <ContactForm />
+      </section>
 
       {/* Call to Action */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
