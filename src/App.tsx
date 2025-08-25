@@ -1,162 +1,112 @@
-import React, { Suspense, lazy } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Header } from './components/Header';
-import { Footer } from './components/Footer';
-import { Sidebar } from './components/Sidebar';
-import { AccessibilityControls } from './components/AccessibilityControls';
-import { PerformanceDashboard } from './components/PerformanceDashboard';
-import { AnalyticsDashboard } from './components/AnalyticsDashboard';
-import { AIChatbot } from './components/AIChatbot';
-import { CollaborativeTextEditor } from './components/CollaborativeTextEditor';
-import { AICodeGenerator } from './components/AICodeGenerator';
-import { EnterpriseDashboard } from './components/EnterpriseDashboard';
-import { SecurityComplianceDashboard } from './components/SecurityComplianceDashboard';
-import { MachineLearningDashboard } from './components/MachineLearningDashboard';
-import { FuturisticLoader } from './components/FuturisticLoader';
-import './App.css';
+import React from 'react';
+import { Suspense } from 'react';
+import { Routes, Route } from 'react-router-dom';
 
-// Enhanced lazy loading with preloading hints
-const Home = lazy(() => import('./pages/Home'));
-const Services = lazy(() => import('./pages/Services'));
+import { ThemeProvider } from "./components/ThemeProvider";
+import { WhitelabelProvider } from "./context/WhitelabelContext";
+import { AccessibilityProvider } from "./components/ui/AccessibilityProvider";
+import { SkipToMainContent } from "./components/ui/AccessibilityProvider";
+import { Header } from "./components/Header";
+import { Footer } from "./components/Footer";
+import { Toaster } from "./components/ui/toaster";
+import { Toaster as SonnerToaster } from "./components/ui/sonner";
+import { FullPageLoader } from "./components/ui/LoadingSpinner";
+import {
+  AuthRoutes,
+  DashboardRoutes,
+  MarketplaceRoutes,
+  TalentRoutes,
+  AdminRoutes,
+  MobileAppRoutes,
+  ContentRoutes,
+  ErrorRoutes,
+  EnterpriseRoutes,
+  CommunityRoutes,
+  DeveloperRoutes
+} from './routes';
 
-// Error Boundary Component
-class ErrorBoundary extends React.Component<
-  { children: React.ReactNode },
-  { hasError: boolean; error?: Error }
-> {
-  constructor(props: { children: React.ReactNode }) {
-    super(props);
-    this.state = { hasError: false };
-  }
+const Home = React.lazy(() => import('./pages/Home'));
+const AIMatcherPage = React.lazy(() => import('./pages/AIMatcher'));
+const TalentDirectory = React.lazy(() => import('./pages/TalentDirectory'));
+const TalentsPage = React.lazy(() => import('./pages/TalentsPage'));
+const EquipmentPage = React.lazy(() => import('./pages/EquipmentPage'));
+const EquipmentDetail = React.lazy(() => import('./pages/EquipmentDetail'));
+const Analytics = React.lazy(() => import('./pages/Analytics'));
+const MobileLaunchPage = React.lazy(() => import('./pages/MobileLaunchPage'));
+const CommunityPage = React.lazy(() => import('./pages/CommunityPage'));
+const Categories = React.lazy(() => import('./pages/Categories'));
+const Blog = React.lazy(() => import('./pages/Blog'));
+const BlogPost = React.lazy(() => import('./pages/BlogPost'));
+const PartnersPage = React.lazy(() => import('./pages/Partners'));
+const Login = React.lazy(() => import('./pages/Login'));
+const Signup = React.lazy(() => import('./pages/Signup'));
+const ITOnsiteServicesPage = React.lazy(() => import('./pages/ITOnsiteServicesPage'));
+const OpenAppRedirect = React.lazy(() => import('./pages/OpenAppRedirect'));
+const ContactPage = React.lazy(() => import('./pages/ContactPage'));
+const ZionHireAI = React.lazy(() => import('./pages/ZionHireAI'));
+const RequestQuotePage = React.lazy(() => import('./pages/RequestQuote'));
+const MicroSaasServices = React.lazy(() => import('./pages/MicroSaasServices'));
+const PricingPage = React.lazy(() => import('./pages/PricingPage'));
 
-  static getDerivedStateFromError(error: Error) {
-    return { hasError: true, error };
-  }
-
-  componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
-    console.error('Error caught by boundary:', error, errorInfo);
-  }
-
-  render() {
-    if (this.state.hasError) {
-      return (
-        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-red-50 to-red-100">
-          <div className="cyber-card text-center p-8 border-red-200">
-            <div className="text-6xl mb-4">⚠️</div>
-            <h1 className="text-2xl font-bold text-red-800 mb-4">Something went wrong</h1>
-            <p className="text-red-600 mb-6">We're working to fix this issue. Please try refreshing the page.</p>
-            <button
-              onClick={() => window.location.reload()}
-              className="neon-button px-6 py-3 text-white rounded-lg transition-colors"
-            >
-              Refresh Page
-            </button>
-          </div>
-        </div>
-      );
-    }
-
-    return this.props.children;
-  }
-}
-
-// Enhanced Loading Component with Futuristic Design
-const LoadingSpinner = () => (
-  <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-black via-gray-900 to-blue-900">
-    <div className="text-center">
-      <FuturisticLoader 
-        size="large" 
-        text="Loading Zion Tech Group..." 
-        variant="quantum"
-      />
-      <p className="text-gray-400 text-sm mt-4">Preparing your experience</p>
-    </div>
-  </div>
-);
+const baseRoutes = [
+  { path: '/', element: <Home /> },
+  { path: '/match', element: <AIMatcherPage /> },
+  { path: '/login', element: <Login /> },
+  { path: '/signup', element: <Signup /> },
+  { path: '/talent', element: <TalentDirectory /> },
+  { path: '/talents', element: <TalentsPage /> },
+  { path: '/micro-saas-services', element: <MicroSaasServices /> },
+  { path: '/pricing', element: <PricingPage /> },
+  { path: '/it-onsite-services', element: <ITOnsiteServicesPage /> },
+  { path: '/categories', element: <Categories /> },
+  { path: '/equipment', element: <EquipmentPage /> },
+  { path: '/equipment/:id', element: <EquipmentDetail /> },
+  { path: '/analytics', element: <Analytics /> },
+  { path: '/mobile-launch', element: <MobileLaunchPage /> },
+  { path: '/open-app', element: <OpenAppRedirect /> },
+  { path: '/community', element: <CommunityPage /> },
+  { path: '/contact', element: <ContactPage /> },
+  { path: '/partners', element: <PartnersPage /> },
+  { path: '/zion-hire-ai', element: <ZionHireAI /> },
+  { path: '/hire-ai', element: <ZionHireAI /> },
+  { path: '/request-quote', element: <RequestQuotePage /> },
+  { path: '/blog', element: <Blog /> },
+  { path: '/blog/:slug', element: <BlogPost /> },
+];
 
 const App = () => {
   return (
-    <ErrorBoundary>
-      <Router>
-        <div className="App min-h-screen bg-gradient-to-br from-black via-gray-900 to-blue-900">
+    <AccessibilityProvider>
+      <WhitelabelProvider>
+        <ThemeProvider defaultTheme="dark">
+          <SkipToMainContent />
           <Header />
-          <Sidebar />
-          
-          {/* Main Content with enhanced Suspense */}
-          <main className="ml-64 pt-20 min-h-screen">
-            <Suspense fallback={<LoadingSpinner />}>
+          <main id="main-content" className="min-h-screen" role="main">
+            <Suspense fallback={<FullPageLoader text="Loading page..." />}>
               <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/services" element={<Services />} />
-                <Route path="/comprehensive-services" element={<Services />} />
-                <Route path="/services-comparison" element={<Services />} />
-                <Route path="/it-onsite-services" element={<Services />} />
+                {baseRoutes.map(({ path, element }) => (
+                  <Route key={path} path={path} element={element} />
+                ))}
+                <Route path="/auth/*" element={<AuthRoutes />} />
+                <Route path="/dashboard/*" element={<DashboardRoutes />} />
+                <Route path="/marketplace/*" element={<MarketplaceRoutes />} />
+                <Route path="/talent/*" element={<TalentRoutes />} />
+                <Route path="/admin/*" element={<AdminRoutes />} />
+                <Route path="/mobile/*" element={<MobileAppRoutes />} />
+                <Route path="/content/*" element={<ContentRoutes />} />
+                <Route path="/enterprise/*" element={<EnterpriseRoutes />} />
+                <Route path="/community/*" element={<CommunityRoutes />} />
+                <Route path="/developers/*" element={<DeveloperRoutes />} />
+                <Route path="*" element={<ErrorRoutes />} />
               </Routes>
             </Suspense>
           </main>
-          
           <Footer />
-          
-          {/* Enhanced Accessibility Controls */}
-          <AccessibilityControls position="bottom-right" />
-          
-          {/* AI Chatbot - Always Available */}
-          <AIChatbot />
-          
-          {/* Collaborative Text Editor - Development Mode */}
-          {process.env.NODE_ENV === 'development' && (
-            <div className="fixed bottom-24 left-6 z-40 w-96">
-              <CollaborativeTextEditor
-                roomId="dev-editor"
-                userId="dev-user"
-                userName="Developer"
-                initialContent="Welcome to the collaborative text editor! Start typing to see AI suggestions and real-time collaboration features."
-                enableAI={true}
-                enableCollaboration={true}
-                enableVersioning={true}
-              />
-            </div>
-          )}
-          
-          {/* AI Code Generator - Development Mode */}
-          {process.env.NODE_ENV === 'development' && (
-            <div className="fixed bottom-24 right-6 z-40 w-96">
-              <AICodeGenerator />
-            </div>
-          )}
-          
-          {/* Development Dashboards */}
-          {process.env.NODE_ENV === 'development' && (
-            <>
-              {/* Performance Dashboard */}
-              <div className="fixed top-4 left-4 z-40">
-                <PerformanceDashboard />
-              </div>
-              
-              {/* Analytics Dashboard */}
-              <div className="fixed top-4 right-4 z-40">
-                <AnalyticsDashboard />
-              </div>
-              
-              {/* Enterprise Dashboard */}
-              <div className="fixed top-4 left-1/2 transform -translate-x-1/2 z-40">
-                <EnterpriseDashboard />
-              </div>
-              
-              {/* Security & Compliance Dashboard */}
-              <div className="fixed top-4 right-1/2 transform translate-x-1/2 z-40">
-                <SecurityComplianceDashboard />
-              </div>
-              
-              {/* Machine Learning Dashboard */}
-              <div className="fixed top-4 right-4 z-40">
-                <MachineLearningDashboard />
-              </div>
-            </>
-          )}
-        </div>
-      </Router>
-    </ErrorBoundary>
+          <Toaster />
+          <SonnerToaster position="top-right" />
+        </ThemeProvider>
+      </WhitelabelProvider>
+    </AccessibilityProvider>
   );
 };
 

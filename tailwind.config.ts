@@ -1,7 +1,6 @@
 import type { Config } from 'tailwindcss';
 import defaultTheme from 'tailwindcss/defaultTheme';
 import plugin from 'tailwindcss/plugin';
-import lineClamp from '@tailwindcss/line-clamp';
 
 const config: Config = {
   darkMode: 'class',
@@ -48,11 +47,7 @@ const config: Config = {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
         },
-<<<<<<< HEAD
-        // Custom Zion colors (enhanced palette)
-=======
         // Enhanced Zion colors for futuristic design
->>>>>>> a4b0ef56a21d1919a0e2729e4ba64fbc8c4b3f44
         'zion-blue': {
           DEFAULT: '#0a0f1f',
           light: '#1e263b',
@@ -61,32 +56,6 @@ const config: Config = {
           glow: '#0ea5e9',
         },
         'zion-purple': {
-<<<<<<< HEAD
-          DEFAULT: '#8c15e9',
-          light: '#b971f2',
-          dark: '#530c8b',
-        },
-        'zion-cyan': {
-          DEFAULT: '#22ddd2',
-          light: '#7aeae4',
-          dark: '#14847e',
-        },
-        'zion-slate': {
-          DEFAULT: '#17072b',
-          light: '#451582',
-          dark: '#000000',
-        },
-        'zion-gold': {
-          DEFAULT: '#ffd700',
-          light: '#ffe55c',
-          dark: '#b8860b',
-        },
-        'zion-emerald': {
-          DEFAULT: '#10b981',
-          light: '#34d399',
-          dark: '#059669',
-        }
-=======
           DEFAULT: '#a855f7',
           light: '#d8b4fe',
           dark: '#9333ea',
@@ -115,7 +84,6 @@ const config: Config = {
         'quantum-blue': '#1e40af',
         'quantum-purple': '#7c3aed',
         'quantum-cyan': '#0891b2',
->>>>>>> a4b0ef56a21d1919a0e2729e4ba64fbc8c4b3f44
       },
       borderRadius: {
         lg: 'var(--radius)',
@@ -128,13 +96,9 @@ const config: Config = {
           'var(--font-poppins)',
           'Poppins Fallback',
           ...defaultTheme.fontFamily.sans
-<<<<<<< HEAD
-        ]
-=======
         ],
         futuristic: ['Orbitron', 'monospace'],
         neon: ['Rajdhani', 'sans-serif'],
->>>>>>> a4b0ef56a21d1919a0e2729e4ba64fbc8c4b3f44
       },
       keyframes: {
         'accordion-down': {
@@ -145,38 +109,6 @@ const config: Config = {
           from: { height: 'var(--radix-accordion-content-height)' },
           to: { height: '0' },
         },
-<<<<<<< HEAD
-        'fade-in': {
-          from: { opacity: '0', transform: 'translateY(10px)' },
-          to: { opacity: '1', transform: 'translateY(0)' },
-        },
-        'slide-in': {
-          from: { transform: 'translateX(-100%)' },
-          to: { transform: 'translateX(0)' },
-        },
-        'pulse-glow': {
-          '0%, 100%': { 
-            boxShadow: '0 0 20px rgba(34, 221, 210, 0.5)',
-            transform: 'scale(1)'
-          },
-          '50%': { 
-            boxShadow: '0 0 40px rgba(34, 221, 210, 0.8)',
-            transform: 'scale(1.05)'
-          },
-        },
-        'spin-reverse': {
-          '0%': { transform: 'rotate(0deg)' },
-          '100%': { transform: 'rotate(-360deg)' },
-        },
-        'float': {
-          '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-20px)' },
-        },
-        'glow': {
-          '0%': { boxShadow: '0 0 5px rgba(59, 130, 246, 0.5)' },
-          '100%': { boxShadow: '0 0 20px rgba(59, 130, 246, 0.8), 0 0 30px rgba(59, 130, 246, 0.6)' },
-        }
-=======
         'neon-pulse': {
           '0%, 100%': { 
             textShadow: '0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor',
@@ -208,29 +140,37 @@ const config: Config = {
           '0%': { transform: 'rotate(0deg)' },
           '100%': { transform: 'rotate(360deg)' },
         },
->>>>>>> a4b0ef56a21d1919a0e2729e4ba64fbc8c4b3f44
+        'gradient-x': {
+          '0%, 100%': {
+            'background-size': '200% 200%',
+            'background-position': 'left center'
+          },
+          '50%': {
+            'background-size': '200% 200%',
+            'background-position': 'right center'
+          },
+        },
+        'float': {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-20px)' },
+        },
+        'glow': {
+          '0%, 100%': { boxShadow: '0 0 20px rgba(0, 229, 255, 0.5)' },
+          '50%': { boxShadow: '0 0 40px rgba(0, 229, 255, 0.8)' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
-<<<<<<< HEAD
-        'fade-in': 'fade-in 0.6s ease-out',
-        'slide-in': 'slide-in 0.5s ease-out',
-        'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
-        'spin-reverse': 'spin-reverse 1s linear infinite',
-        'float': 'float 6s ease-in-out infinite',
-        'float-delayed': 'float 6s ease-in-out infinite 2s',
-        'float-slow': 'float 8s ease-in-out infinite 4s',
-        'glow': 'glow 2s ease-in-out infinite alternate',
-        'spin-slow': 'spin 20s linear infinite'
-      }
-=======
         'neon-pulse': 'neon-pulse 2s ease-in-out infinite',
         'quantum-float': 'quantum-float 6s ease-in-out infinite',
         'holographic-shift': 'holographic-shift 3s ease infinite',
         'matrix-rain': 'matrix-rain 20s linear infinite',
         'neon-flicker': 'neon-flicker 0.15s ease-in-out infinite alternate',
         'quantum-spin': 'quantum-spin 20s linear infinite',
+        'gradient-x': 'gradient-x 15s ease infinite',
+        'float': 'float 6s ease-in-out infinite',
+        'glow': 'glow 2s ease-in-out infinite alternate',
       },
       backgroundImage: {
         'quantum-gradient': 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
@@ -247,11 +187,9 @@ const config: Config = {
         'quantum': '0 0 20px rgba(0, 229, 255, 0.5), 0 0 40px rgba(0, 229, 255, 0.3)',
         'holographic': '0 0 30px rgba(168, 85, 247, 0.6), 0 0 60px rgba(168, 85, 247, 0.4)',
       },
->>>>>>> a4b0ef56a21d1919a0e2729e4ba64fbc8c4b3f44
     }
   },
   plugins: [
-    lineClamp,
     plugin(function ({ addUtilities }) {
       const newUtilities = {
         '.rtl': {
@@ -262,19 +200,6 @@ const config: Config = {
           direction: 'ltr',
           textAlign: 'left',
         },
-<<<<<<< HEAD
-        '.text-gradient': {
-          background: 'linear-gradient(135deg, #2e73ea 0%, #8c15e9 50%, #22ddd2 100%)',
-          '-webkit-background-clip': 'text',
-          '-webkit-text-fill-color': 'transparent',
-          'background-clip': 'text',
-        },
-        '.glass-effect': {
-          background: 'rgba(255, 255, 255, 0.1)',
-          'backdrop-filter': 'blur(10px)',
-          border: '1px solid rgba(255, 255, 255, 0.2)',
-        }
-=======
         '.text-neon': {
           textShadow: '0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor',
         },
@@ -291,7 +216,6 @@ const config: Config = {
           background: 'linear-gradient(45deg, #00e5ff, #a855f7) border-box',
           backgroundClip: 'border-box',
         },
->>>>>>> a4b0ef56a21d1919a0e2729e4ba64fbc8c4b3f44
       };
       addUtilities(newUtilities);
     })
