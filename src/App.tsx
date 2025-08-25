@@ -45,6 +45,8 @@ const IndustrySolutions = lazy(() => import('./pages/services/IndustrySolutions'
 const WhitePapers = lazy(() => import('./pages/WhitePapers'));
 const Events = lazy(() => import('./pages/Events'));
 const Webinars = lazy(() => import('./pages/Webinars'));
+const InnovativeServicesShowcase = lazy(() => import('./pages/services/InnovativeServicesShowcase'));
+const ComprehensiveServicesOverview = lazy(() => import('./pages/services/ComprehensiveServicesOverview'));
 
 // Loading Component
 const LoadingSpinner = () => (
@@ -100,6 +102,8 @@ const App = () => {
                     <Route path="/services/it-infrastructure" element={<ITInfrastructure />} />
                     <Route path="/services/micro-saas-solutions" element={<MicroSAASSolutions />} />
                     <Route path="/services/industry-solutions" element={<IndustrySolutions />} />
+                    <Route path="/innovative-services" element={<InnovativeServicesShowcase />} />
+                    <Route path="/comprehensive-services" element={<ComprehensiveServicesOverview />} />
                     
                     {/* New enhanced page routes */}
                     <Route path="/white-papers" element={<WhitePapers />} />
