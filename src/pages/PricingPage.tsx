@@ -69,12 +69,12 @@ export default function PricingPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {MICRO_SAAS_SERVICES.slice(0, 9).map((service) => (
               <div key={service.id} className="bg-gray-50 rounded-lg p-6 hover:shadow-lg transition-shadow">
-                <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
+                <h3 className="text-xl font-semibold mb-3">{service.name}</h3>
                 <p className="text-gray-600 mb-4">{service.description.substring(0, 100)}...</p>
                 <div className="flex justify-between items-center">
                   <span className="text-2xl font-bold text-blue-600">{service.price}</span>
                   <a
-                    href={service.link}
+                    href="https://ziontechgroup.com"
                     className="text-blue-600 hover:text-blue-800 font-semibold"
                   >
                     Learn More →

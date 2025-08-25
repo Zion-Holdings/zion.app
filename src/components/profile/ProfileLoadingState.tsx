@@ -1,7 +1,7 @@
 
-import React from 'react';
+
 import { motion } from 'framer-motion';
-import { Loader2, User, Sparkles } from 'lucide-react';
+import { User, Sparkles } from 'lucide-react';
 
 export function ProfileLoadingState() {
   const containerVariants = {
@@ -21,7 +21,7 @@ export function ProfileLoadingState() {
       opacity: 1,
       transition: {
         duration: 0.5,
-        ease: "easeOut"
+        ease: "easeOut" as const
       }
     }
   };
@@ -33,7 +33,7 @@ export function ProfileLoadingState() {
       transition: {
         duration: 2,
         repeat: Infinity,
-        ease: "easeInOut"
+        ease: "easeInOut" as const
       }
     }
   };
