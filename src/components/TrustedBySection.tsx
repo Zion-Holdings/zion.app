@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 const TRUSTED_COMPANIES = [
   { name: 'TechCorp', logo: '/logos/techcorp.svg' },

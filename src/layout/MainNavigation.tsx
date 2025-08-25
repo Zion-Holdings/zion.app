@@ -1,124 +1,99 @@
 
-import { Link, useLocation } from "react-router-dom";
-import { cn } from "@/lib/utils";
-import { useAuth } from "@/hooks/useAuth";
-import { MessageSquare } from "lucide-react";
-import { useTranslation } from "react-i18next";
+import { Link } from 'react-router-dom';
+import { Bell, User } from 'lucide-react';
 
 interface MainNavigationProps {
-  isAdmin?: boolean;
   unreadCount?: number;
-  className?: string;
 }
 
-export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: MainNavigationProps) {
-  const { user } = useAuth();
-  const isAuthenticated = !!user;
-  const location = useLocation();
-  const { t } = useTranslation();
-
-  const baseLinks = [
-    {
-      key: 'home',
-      href: '/',
-      matches: (path: string) => path === '/'
-    },
-    {
-      key: 'marketplace',
-      href: '/marketplace',
-      matches: (path: string) => path.startsWith('/marketplace')
-    },
-    {
-      key: 'services',
-      href: '/services',
-      matches: (path: string) => path.startsWith('/services') || path.startsWith('/it-onsite-services')
-    },
-    {
-      key: 'talent',
-      href: '/talent',
-      matches: (path: string) => path.startsWith('/talent') && !path.includes('/talent-dashboard')
-    },
-    {
-      key: 'equipment',
-      href: '/equipment',
-      matches: (path:string) => path.startsWith('/equipment')
-    },
-    {
-      key: 'community',
-      href: '/community',
-      matches: (path: string) => path.startsWith('/community') || path.startsWith('/forum')
-    },
-    {
-      key: 'about',
-      href: '/about',
-      matches: (path: string) => path === '/about'
-    }
-  ];
-
-  let links = baseLinks.map(link => ({ ...link, name: t(`nav.${link.key}`) }));
-  
-  // Add authenticated-only links
-  if (isAuthenticated) {
-    links.push({
-      key: 'dashboard',
-      name: t('nav.dashboard'),
-      href: '/dashboard',
-      matches: (path: string) => path === '/dashboard' || path === '/client-dashboard' || path === '/talent-dashboard'
-    });
-  }
-  
-  // Add admin-only links
-  if (isAdmin) {
-    links.push({
-      key: 'analytics',
-      name: t('nav.analytics'),
-      href: '/analytics',
-      matches: (path: string) => path.startsWith('/analytics')
-    });
-  }
-  
+export function MainNavigation({ unreadCount = 0 }: MainNavigationProps) {
   return (
-    <nav className={cn("navbar ml-6 hidden md:flex", className)}>
-      <ul className="flex items-center gap-1">
-        {links.map((link) => (
-          <li key={link.name}>
-            <Link
-              to={link.href}
-              className={cn(
-                "inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-colors",
-                link.matches(location.pathname)
-                  ? "bg-zion-purple/20 text-zion-cyan"
-                  : "text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
-              )}
-            >
-              {link.name}
-            </Link>
-          </li>
-        ))}
-        
-        {/* Messages link with unread counter */}
-        {isAuthenticated && (
-          <li>
-            <Link
-              to="/messages"
-              className={cn(
-                "inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-colors relative",
-                location.pathname === "/messages" || location.pathname === "/inbox"
-                  ? "bg-zion-purple/20 text-zion-cyan"
-                  : "text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
-              )}
-            >
-              <MessageSquare className="w-4 h-4 mr-1" />
-              {t('nav.messages')}
-              {unreadCount > 0 && (
-                <span className="absolute -top-1 -right-1 bg-zion-purple text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
-                  {unreadCount}
-                </span>
-              )}
-            </Link>
-          </li>
-        )}
-      </ul>
+    <nav className="flex items-center space-x-4">
+      {/* Main Navigation Links */}
+      <div className="flex items-center space-x-6">
+        <Link
+          to="/marketplace"
+          className="text-zion-slate-light hover:text-zion-cyan transition-colors px-3 py-2 rounded-lg hover:bg-zion-purple/10"
+        >
+          Marketplace
+        </Link>
+        <Link
+          to="/services"
+          className="text-zion-slate-light hover:text-zion-cyan transition-colors px-3 py-2 rounded-lg hover:bg-zion-purple/10"
+        >
+          Services
+        </Link>
+        <Link
+          to="/talent"
+          className="text-zion-slate-light hover:text-zion-cyan transition-colors px-3 py-2 rounded-lg hover:bg-zion-purple/10"
+        >
+          Talent
+        </Link>
+        <Link
+          to="/equipment"
+          className="text-zion-slate-light hover:text-zion-cyan transition-colors px-3 py-2 rounded-lg hover:bg-zion-purple/10"
+        >
+          Equipment
+        </Link>
+        <Link
+          to="/green-it"
+          className="text-zion-slate-light hover:text-zion-cyan transition-colors px-3 py-2 rounded-lg hover:bg-zion-purple/10"
+        >
+          Green IT
+        </Link>
+      </div>
+
+      {/* User Actions */}
+      <div className="flex items-center space-x-2">
+        {/* Notifications */}
+        <Link
+          to="/notifications"
+          className="relative p-2 text-zion-slate-light hover:text-zion-cyan hover:bg-zion-purple/10 rounded-lg transition-colors"
+        >
+          <Bell className="h-5 w-5" />
+          {unreadCount > 0 && (
+            <span className="absolute -top-1 -right-1 bg-zion-purple text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+              {unreadCount}
+            </span>
+          )}
+        </Link>
+
+        {/* User Menu */}
+        <div className="relative group">
+          <button className="flex items-center space-x-2 p-2 text-zion-slate-light hover:text-zion-cyan hover:bg-zion-purple/10 rounded-lg transition-colors">
+            <User className="h-5 w-5" />
+            <span className="hidden sm:block text-sm font-medium">User</span>
+          </button>
+          
+          {/* Dropdown Menu */}
+          <div className="absolute right-0 top-full mt-2 w-48 bg-zion-blue-dark border border-zion-purple/20 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+            <div className="py-2">
+              <Link
+                to="/dashboard"
+                className="block px-4 py-2 text-sm text-white hover:bg-zion-purple/10 transition-colors"
+              >
+                Dashboard
+              </Link>
+              <Link
+                to="/profile"
+                className="block px-4 py-2 text-sm text-white hover:bg-zion-purple/10 transition-colors"
+              >
+                Profile
+              </Link>
+              <Link
+                to="/settings"
+                className="block px-4 py-2 text-sm text-white hover:bg-zion-purple/10 transition-colors"
+              >
+                Settings
+              </Link>
+              <hr className="border-zion-purple/20 my-2" />
+              <button className="block w-full text-left px-4 py-2 text-sm text-white hover:bg-zion-purple/10 transition-colors">
+                Sign Out
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </nav>
   );
 }

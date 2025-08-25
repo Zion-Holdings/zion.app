@@ -2,7 +2,7 @@ import * as React from "react"
 import { cn } from "@/lib/utils"
 
 interface StepsProps extends React.HTMLAttributes<HTMLDivElement> {
-  children: React.ReactNode
+  children: React.ReactElement<StepProps>[]
   currentStep?: number
 }
 
@@ -18,7 +18,7 @@ const Steps = React.forwardRef<HTMLDivElement, StepsProps>(
       >
         {steps.map((step, index) => {
           if (React.isValidElement(step)) {
-            return React.cloneElement(step, {
+            return React.cloneElement(step as React.ReactElement<StepProps>, {
               key: index,
               isActive: index === currentStep,
               isCompleted: index < currentStep,
@@ -64,7 +64,7 @@ const Step = React.forwardRef<HTMLDivElement, StepProps>(
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
             ) : (
-              <span>{props.children}</span>
+              <span>{React.Children.count(children)}</span>
             )}
           </div>
           {!isLast && (
