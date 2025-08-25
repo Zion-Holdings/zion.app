@@ -12,6 +12,7 @@ import { AICodeGenerator } from './components/AICodeGenerator';
 import { EnterpriseDashboard } from './components/EnterpriseDashboard';
 import { SecurityComplianceDashboard } from './components/SecurityComplianceDashboard';
 import { MachineLearningDashboard } from './components/MachineLearningDashboard';
+import { BlockchainWeb3Dashboard } from './components/BlockchainWeb3Dashboard';
 import './App.css';
 
 // Enhanced lazy loading with preloading hints
@@ -150,6 +151,11 @@ const App = () => {
               {/* Machine Learning Dashboard */}
               <div className="fixed top-4 right-4 z-40">
                 <MachineLearningDashboard />
+              </div>
+              
+              {/* Blockchain & Web3 Dashboard */}
+              <div className="fixed top-4 left-4 z-40">
+                <BlockchainWeb3Dashboard />
               </div>
             </>
           )}
