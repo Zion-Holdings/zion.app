@@ -51,6 +51,8 @@ const EmergingTechServices = React.lazy(() => import('./pages/EmergingTechServic
 const IndustrySolutions = React.lazy(() => import('./pages/IndustrySolutions'));
 const MicroSaasServices = React.lazy(() => import('./pages/MicroSaasServices'));
 const AIBusinessSolutions = React.lazy(() => import('./pages/AIBusinessSolutions'));
+const CloudDevOpsSolutions = React.lazy(() => import('./pages/CloudDevOpsSolutions'));
+const DigitalTransformation = React.lazy(() => import('./pages/DigitalTransformation'));
 
 
 const baseRoutes = [
@@ -83,6 +85,8 @@ const baseRoutes = [
               { path: '/industry-solutions', element: <IndustrySolutions /> },
               { path: '/micro-saas', element: <MicroSaasServices /> },
               { path: '/ai-business-solutions', element: <AIBusinessSolutions /> },
+              { path: '/cloud-devops-solutions', element: <CloudDevOpsSolutions /> },
+              { path: '/digital-transformation', element: <DigitalTransformation /> },
 
   { path: '/blog', element: <Blog /> },
   { path: '/blog/:slug', element: <BlogPost /> },
