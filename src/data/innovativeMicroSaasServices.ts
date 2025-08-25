@@ -6,541 +6,509 @@ export interface InnovativeMicroSaasService {
   subcategory: string;
   price: number;
   currency: string;
-  pricingModel: 'one-time' | 'monthly' | 'yearly' | 'per-user' | 'per-project' | 'usage-based' | 'freemium';
+  pricingModel: string;
   features: string[];
   benefits: string[];
   useCases: string[];
   targetAudience: string[];
   tags: string[];
   estimatedDelivery: string;
-  supportLevel: 'basic' | 'standard' | 'premium' | 'enterprise';
+  supportLevel: string;
   marketPrice: string;
   contactInfo: {
     phone: string;
     email: string;
     website: string;
   };
-  aiScore?: number;
-  rating?: number;
-  reviewCount?: number;
-  featured?: boolean;
-  location?: string;
-  availability?: string;
-  demoUrl?: string;
-  documentationUrl?: string;
-  technology?: string[];
-  integrations?: string[];
-  compliance?: string[];
-  scalability?: string;
-  deployment?: string;
-  roi?: string;
-  timeToValue?: string;
+  technology: string[];
+  integrations: string[];
+  compliance: string[];
+  roi: string;
+  competitors: string[];
+  freeTrial: boolean;
+  freeTrialDays: number;
+  demoUrl: string;
 }
 
 export const INNOVATIVE_MICRO_SAAS_SERVICES: InnovativeMicroSaasService[] = [
-  // Quantum Computing Solutions
+  // Web3 & Blockchain Solutions
   {
-    id: "quantum-optimization-platform",
-    title: "Quantum Optimization Platform",
-    description: "Revolutionary quantum computing platform for solving complex optimization problems in logistics, finance, and research. Leverages quantum algorithms for exponential speed improvements.",
-    category: "Quantum Computing",
-    subcategory: "Optimization",
-    price: 2499,
+    id: "web3-business-automation",
+    title: "Web3 Business Automation Platform",
+    description: "Comprehensive Web3 automation platform for smart contracts, DeFi operations, and blockchain business processes with no-code interface.",
+    category: "Web3 & Blockchain",
+    subcategory: "Business Automation",
+    price: 499,
     currency: "$",
     pricingModel: "monthly",
     features: [
-      "Quantum annealing algorithms",
-      "Hybrid quantum-classical computing",
-      "Real-time optimization dashboard",
-      "API access for developers",
-      "Custom algorithm development",
-      "Performance analytics",
-      "Multi-cloud quantum access",
-      "Enterprise security compliance"
+      "Smart contract automation",
+      "DeFi yield farming automation",
+      "NFT marketplace integration",
+      "Multi-chain support",
+      "No-code workflow builder",
+      "Real-time blockchain monitoring",
+      "Automated compliance checks",
+      "Portfolio tracking dashboard"
     ],
     benefits: [
-      "1000x faster optimization than classical methods",
-      "Reduces operational costs by 40-60%",
-      "Handles problems with millions of variables",
-      "Future-proof quantum-ready architecture",
-      "Scalable to enterprise workloads"
+      "Automate complex blockchain operations",
+      "Reduce manual DeFi management by 80%",
+      "Ensure regulatory compliance automatically",
+      "Optimize yield farming strategies",
+      "Multi-chain portfolio management"
     ],
     useCases: [
-      "Supply chain optimization",
-      "Portfolio optimization",
-      "Route planning and logistics",
-      "Resource allocation",
-      "Machine learning training",
-      "Drug discovery simulations"
+      "DeFi portfolio management",
+      "NFT business operations",
+      "Smart contract deployment",
+      "Cross-chain transactions",
+      "Regulatory compliance automation"
     ],
     targetAudience: [
-      "Financial institutions",
-      "Logistics companies",
-      "Research institutions",
-      "Manufacturing firms",
-      "Healthcare organizations"
+      "DeFi investors",
+      "NFT businesses",
+      "Blockchain startups",
+      "Crypto trading firms",
+      "Web3 developers"
     ],
-    tags: ["quantum", "optimization", "AI", "machine learning", "enterprise"],
-    estimatedDelivery: "4-6 weeks",
+    tags: ["Web3", "Blockchain", "DeFi", "Smart Contracts", "Automation", "NFT"],
+    estimatedDelivery: "3-4 weeks",
     supportLevel: "premium",
-    marketPrice: "$5,000/month",
+    marketPrice: "$499 - $2,000/month",
     contactInfo: {
       phone: "+1 302 464 0950",
       email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com/quantum-optimization"
+      website: "https://ziontechgroup.com"
     },
-    aiScore: 95,
-    rating: 4.9,
-    reviewCount: 127,
-    featured: true,
-    technology: ["Quantum Annealing", "Qiskit", "Python", "AWS Braket"],
-    integrations: ["AWS", "Azure", "Google Cloud", "IBM Quantum"],
-    compliance: ["SOC 2", "ISO 27001", "GDPR", "HIPAA"],
-    scalability: "Unlimited",
-    deployment: "Cloud-native, Hybrid",
-    roi: "300-500% within 12 months",
-    timeToValue: "2-4 weeks"
+    technology: ["Solidity", "React", "Node.js", "Ethereum", "Polygon", "Solana"],
+    integrations: ["MetaMask", "WalletConnect", "OpenSea", "Uniswap", "Chainlink"],
+    compliance: ["AML", "KYC", "GDPR", "Regulatory Reporting"],
+    roi: "400% within 8 months",
+    competitors: ["Chainlink", "The Graph", "Alchemy"],
+    freeTrial: true,
+    freeTrialDays: 14,
+    demoUrl: "https://demo.ziontechgroup.com/web3-automation"
   },
 
-  // AI Cybersecurity
+  // Quantum Computing Services
   {
-    id: "ai-cybersecurity-sentinel",
-    title: "AI Cybersecurity Sentinel",
-    description: "Next-generation AI-powered cybersecurity platform that provides real-time threat detection, automated response, and predictive security analytics using advanced machine learning algorithms.",
-    category: "Cybersecurity",
-    subcategory: "AI-Powered Security",
+    id: "quantum-business-solutions",
+    title: "Quantum Business Solutions Platform",
+    description: "Quantum computing optimization platform for complex business problems including logistics, financial modeling, and drug discovery.",
+    category: "Quantum Computing",
+    subcategory: "Business Optimization",
     price: 899,
     currency: "$",
     pricingModel: "monthly",
     features: [
-      "Real-time threat detection",
-      "AI-powered behavioral analysis",
-      "Automated incident response",
-      "Predictive threat intelligence",
-      "Zero-day vulnerability detection",
-      "Compliance reporting",
-      "24/7 security monitoring",
-      "Custom security policies"
+      "Quantum algorithm optimization",
+      "Hybrid quantum-classical computing",
+      "Financial portfolio optimization",
+      "Supply chain optimization",
+      "Drug discovery algorithms",
+      "Quantum machine learning",
+      "Real-time quantum processing",
+      "API access to quantum computers"
     ],
     benefits: [
-      "99.9% threat detection accuracy",
-      "Reduces false positives by 80%",
-      "Automated response in under 30 seconds",
-      "Predicts threats before they occur",
-      "Compliance automation"
+      "Solve complex optimization problems 1000x faster",
+      "Reduce logistics costs by 30-50%",
+      "Improve financial modeling accuracy",
+      "Accelerate drug discovery process",
+      "Competitive advantage in R&D"
     ],
     useCases: [
-      "Enterprise security operations",
-      "Financial services security",
-      "Healthcare data protection",
-      "Government cybersecurity",
-      "Critical infrastructure protection"
+      "Financial portfolio optimization",
+      "Supply chain logistics",
+      "Pharmaceutical research",
+      "Cryptography and security",
+      "Climate modeling"
+    ],
+    targetAudience: [
+      "Financial institutions",
+      "Pharmaceutical companies",
+      "Logistics companies",
+      "Research institutions",
+      "Government agencies"
+    ],
+    tags: ["Quantum Computing", "Optimization", "Machine Learning", "Financial Modeling", "Drug Discovery"],
+    estimatedDelivery: "4-6 weeks",
+    supportLevel: "enterprise",
+    marketPrice: "$899 - $5,000/month",
+    contactInfo: {
+      phone: "+1 302 464 0950",
+      email: "kleber@ziontechgroup.com",
+      website: "https://ziontechgroup.com"
+    },
+    technology: ["Qiskit", "Cirq", "PennyLane", "Python", "Quantum Hardware APIs"],
+    integrations: ["IBM Quantum", "Google Quantum", "Amazon Braket", "Azure Quantum"],
+    compliance: ["ISO 27001", "SOC 2", "GDPR", "Industry-specific regulations"],
+    roi: "500% within 12 months",
+    competitors: ["IBM Quantum", "Google Quantum", "D-Wave"],
+    freeTrial: true,
+    freeTrialDays: 7,
+    demoUrl: "https://demo.ziontechgroup.com/quantum-solutions"
+  },
+
+  // Edge Computing & IoT Platform
+  {
+    id: "edge-iot-intelligence",
+    title: "Edge IoT Intelligence Platform",
+    description: "Intelligent edge computing platform for IoT devices with real-time processing, AI inference, and predictive maintenance capabilities.",
+    category: "Edge Computing & IoT",
+    subcategory: "Intelligent Automation",
+    price: 349,
+    currency: "$",
+    pricingModel: "monthly",
+    features: [
+      "Edge AI processing",
+      "Real-time IoT monitoring",
+      "Predictive maintenance",
+      "Device fleet management",
+      "Edge-to-cloud synchronization",
+      "Custom ML model deployment",
+      "Energy optimization",
+      "Security monitoring"
+    ],
+    benefits: [
+      "Reduce latency by 90%",
+      "Lower bandwidth costs by 60%",
+      "Improve device reliability by 40%",
+      "Real-time decision making",
+      "Scalable IoT infrastructure"
+    ],
+    useCases: [
+      "Smart manufacturing",
+      "Connected vehicles",
+      "Smart cities",
+      "Energy management",
+      "Healthcare monitoring"
+    ],
+    targetAudience: [
+      "Manufacturing companies",
+      "Automotive industry",
+      "Smart city planners",
+      "Energy companies",
+      "Healthcare providers"
+    ],
+    tags: ["Edge Computing", "IoT", "AI", "Predictive Maintenance", "Real-time Processing"],
+    estimatedDelivery: "3-5 weeks",
+    supportLevel: "premium",
+    marketPrice: "$349 - $1,500/month",
+    contactInfo: {
+      phone: "+1 302 464 0950",
+      email: "kleber@ziontechgroup.com",
+      website: "https://ziontechgroup.com"
+    },
+    technology: ["TensorFlow Lite", "Edge TPU", "Kubernetes", "MQTT", "WebRTC"],
+    integrations: ["AWS IoT", "Azure IoT", "Google Cloud IoT", "Siemens Mindsphere"],
+    compliance: ["ISO 27001", "IEC 62443", "GDPR", "Industry 4.0"],
+    roi: "350% within 6 months",
+    competitors: ["AWS Greengrass", "Azure IoT Edge", "Google Edge TPU"],
+    freeTrial: true,
+    freeTrialDays: 21,
+    demoUrl: "https://demo.ziontechgroup.com/edge-iot"
+  },
+
+  // Metaverse Business Platform
+  {
+    id: "metaverse-business-hub",
+    title: "Metaverse Business Hub",
+    description: "Comprehensive metaverse platform for businesses to create virtual offices, host events, and engage customers in immersive 3D environments.",
+    category: "Metaverse & VR/AR",
+    subcategory: "Business Solutions",
+    price: 599,
+    currency: "$",
+    pricingModel: "monthly",
+    features: [
+      "3D virtual office creation",
+      "Virtual event hosting",
+      "Avatar customization",
+      "Spatial audio integration",
+      "VR/AR device support",
+      "Analytics dashboard",
+      "Multi-user collaboration",
+      "Custom branding options"
+    ],
+    benefits: [
+      "Reduce travel costs by 70%",
+      "Increase global reach and accessibility",
+      "Enhanced customer engagement",
+      "Innovative marketing opportunities",
+      "24/7 virtual presence"
+    ],
+    useCases: [
+      "Virtual conferences",
+      "Remote team collaboration",
+      "Customer product demos",
+      "Virtual showrooms",
+      "Training and education"
+    ],
+    targetAudience: [
+      "Event organizers",
+      "Remote teams",
+      "Marketing agencies",
+      "Educational institutions",
+      "Real estate companies"
+    ],
+    tags: ["Metaverse", "VR", "AR", "Virtual Events", "3D Environments", "Collaboration"],
+    estimatedDelivery: "4-6 weeks",
+    supportLevel: "premium",
+    marketPrice: "$599 - $2,500/month",
+    contactInfo: {
+      phone: "+1 302 464 0950",
+      email: "kleber@ziontechgroup.com",
+      website: "https://ziontechgroup.com"
+    },
+    technology: ["Unity", "Unreal Engine", "WebXR", "Three.js", "WebGL"],
+    integrations: ["Meta Quest", "HTC Vive", "Microsoft HoloLens", "SteamVR"],
+    compliance: ["GDPR", "COPPA", "Accessibility Standards", "Privacy Regulations"],
+    roi: "450% within 10 months",
+    competitors: ["Meta Horizon", "Microsoft Mesh", "Spatial"],
+    freeTrial: true,
+    freeTrialDays: 14,
+    demoUrl: "https://demo.ziontechgroup.com/metaverse-hub"
+  },
+
+  // Green Tech & Sustainability Platform
+  {
+    id: "green-tech-sustainability",
+    title: "Green Tech Sustainability Platform",
+    description: "Comprehensive sustainability platform for businesses to track, optimize, and report on environmental impact with AI-powered insights.",
+    category: "Green Tech & Sustainability",
+    subcategory: "Environmental Management",
+    price: 399,
+    currency: "$",
+    pricingModel: "monthly",
+    features: [
+      "Carbon footprint tracking",
+      "Energy consumption monitoring",
+      "Waste management optimization",
+      "Sustainability reporting",
+      "ESG compliance tracking",
+      "Green supply chain analytics",
+      "Renewable energy integration",
+      "Environmental impact scoring"
+    ],
+    benefits: [
+      "Reduce carbon footprint by 25-40%",
+      "Achieve ESG compliance automatically",
+      "Lower energy costs by 20-30%",
+      "Improve brand reputation",
+      "Meet sustainability goals"
+    ],
+    useCases: [
+      "Corporate sustainability reporting",
+      "ESG compliance",
+      "Energy optimization",
+      "Waste reduction",
+      "Green supply chain management"
+    ],
+    targetAudience: [
+      "Large corporations",
+      "Manufacturing companies",
+      "Retail chains",
+      "Government agencies",
+      "Sustainability consultants"
+    ],
+    tags: ["Sustainability", "ESG", "Carbon Tracking", "Energy Management", "Green Tech"],
+    estimatedDelivery: "3-4 weeks",
+    supportLevel: "premium",
+    marketPrice: "$399 - $1,800/month",
+    contactInfo: {
+      phone: "+1 302 464 0950",
+      email: "kleber@ziontechgroup.com",
+      website: "https://ziontechgroup.com"
+    },
+    technology: ["Python", "IoT Sensors", "Machine Learning", "Blockchain", "Cloud Computing"],
+    integrations: ["SAP", "Oracle", "Salesforce", "Microsoft Dynamics", "Energy APIs"],
+    compliance: ["ISO 14001", "GRI Standards", "SASB", "TCFD", "ESG Frameworks"],
+    roi: "300% within 8 months",
+    competitors: ["Watershed", "Normative", "Persefoni"],
+    freeTrial: true,
+    freeTrialDays: 30,
+    demoUrl: "https://demo.ziontechgroup.com/green-tech"
+  },
+
+  // Cybersecurity Mesh Platform
+  {
+    id: "cybersecurity-mesh-platform",
+    title: "Cybersecurity Mesh Platform",
+    description: "Advanced cybersecurity mesh platform providing zero-trust security, threat intelligence, and automated incident response across all digital assets.",
+    category: "Cybersecurity",
+    subcategory: "Zero Trust Security",
+    price: 699,
+    currency: "$",
+    pricingModel: "monthly",
+    features: [
+      "Zero-trust architecture",
+      "Threat intelligence feeds",
+      "Automated incident response",
+      "Behavioral analytics",
+      "Multi-factor authentication",
+      "Privileged access management",
+      "Security orchestration",
+      "Compliance monitoring"
+    ],
+    benefits: [
+      "Reduce security incidents by 80%",
+      "Automate 90% of security responses",
+      "Achieve zero-trust compliance",
+      "Real-time threat detection",
+      "Comprehensive security coverage"
+    ],
+    useCases: [
+      "Enterprise security",
+      "Cloud security",
+      "DevSecOps",
+      "Compliance management",
+      "Incident response"
     ],
     targetAudience: [
       "Large enterprises",
       "Financial institutions",
       "Healthcare organizations",
       "Government agencies",
-      "Critical infrastructure"
+      "Technology companies"
     ],
-    tags: ["AI", "cybersecurity", "threat detection", "automation", "compliance"],
-    estimatedDelivery: "2-3 weeks",
+    tags: ["Cybersecurity", "Zero Trust", "Threat Intelligence", "Incident Response", "Compliance"],
+    estimatedDelivery: "4-6 weeks",
     supportLevel: "enterprise",
-    marketPrice: "$1,500/month",
+    marketPrice: "$699 - $3,000/month",
     contactInfo: {
       phone: "+1 302 464 0950",
       email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com/ai-cybersecurity"
+      website: "https://ziontechgroup.com"
     },
-    aiScore: 98,
-    rating: 4.8,
-    reviewCount: 89,
-    featured: true,
-    technology: ["TensorFlow", "PyTorch", "Python", "Kubernetes"],
-    integrations: ["SIEM", "EDR", "Firewall", "Identity Management"],
+    technology: ["AI/ML", "Blockchain", "Zero Trust Architecture", "Threat Intelligence APIs"],
+    integrations: ["SIEM Systems", "EDR Solutions", "Identity Providers", "Cloud Platforms"],
     compliance: ["SOC 2", "ISO 27001", "NIST", "GDPR", "HIPAA"],
-    scalability: "Unlimited",
-    deployment: "Cloud, On-premise, Hybrid",
-    roi: "400-600% within 12 months",
-    timeToValue: "1-2 weeks"
+    roi: "400% within 6 months",
+    competitors: ["CrowdStrike", "SentinelOne", "Palo Alto Networks"],
+    freeTrial: true,
+    freeTrialDays: 14,
+    demoUrl: "https://demo.ziontechgroup.com/cybersecurity-mesh"
   },
 
-  // Autonomous DevOps
+  // Digital Twin Platform
   {
-    id: "autonomous-devops-platform",
-    title: "Autonomous DevOps Platform",
-    description: "Self-healing DevOps platform that automatically detects, diagnoses, and resolves infrastructure and deployment issues using AI and machine learning.",
-    category: "DevOps",
-    subcategory: "Automation",
-    price: 1299,
-    currency: "$",
-    pricingModel: "monthly",
-    features: [
-      "Self-healing infrastructure",
-      "Automated deployment pipelines",
-      "Intelligent monitoring and alerting",
-      "Performance optimization",
-      "Cost optimization",
-      "Security scanning",
-      "Compliance automation",
-      "Multi-cloud management"
-    ],
-    benefits: [
-      "Reduces downtime by 99.9%",
-      "Automates 80% of DevOps tasks",
-      "Reduces infrastructure costs by 30%",
-      "Faster deployment cycles",
-      "Improved security posture"
-    ],
-    useCases: [
-      "Continuous deployment",
-      "Infrastructure management",
-      "Performance monitoring",
-      "Cost optimization",
-      "Security compliance"
-    ],
-    targetAudience: [
-      "Technology companies",
-      "E-commerce platforms",
-      "Financial services",
-      "Healthcare organizations",
-      "Government agencies"
-    ],
-    tags: ["DevOps", "automation", "AI", "infrastructure", "monitoring"],
-    estimatedDelivery: "3-4 weeks",
-    supportLevel: "premium",
-    marketPrice: "$2,000/month",
-    contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com/autonomous-devops"
-    },
-    aiScore: 92,
-    rating: 4.7,
-    reviewCount: 156,
-    featured: true,
-    technology: ["Kubernetes", "Docker", "Terraform", "Python", "Go"],
-    integrations: ["AWS", "Azure", "GCP", "GitHub", "GitLab", "Jenkins"],
-    compliance: ["SOC 2", "ISO 27001", "PCI DSS"],
-    scalability: "Unlimited",
-    deployment: "Cloud-native",
-    roi: "250-400% within 12 months",
-    timeToValue: "2-3 weeks"
-  },
-
-  // Blockchain Supply Chain
-  {
-    id: "blockchain-supply-chain-platform",
-    title: "Blockchain Supply Chain Platform",
-    description: "Transparent and immutable supply chain management platform using blockchain technology for end-to-end traceability, compliance, and efficiency.",
-    category: "Blockchain",
-    subcategory: "Supply Chain",
+    id: "digital-twin-platform",
+    title: "Digital Twin Platform",
+    description: "Comprehensive digital twin platform for creating virtual replicas of physical assets, processes, and systems with real-time monitoring and predictive analytics.",
+    category: "Digital Twin & Simulation",
+    subcategory: "Asset Management",
     price: 799,
     currency: "$",
     pricingModel: "monthly",
     features: [
-      "End-to-end traceability",
-      "Smart contract automation",
-      "Real-time tracking",
-      "Compliance reporting",
-      "Supplier verification",
-      "Quality assurance",
-      "Sustainability tracking",
-      "API integration"
+      "3D asset modeling",
+      "Real-time data integration",
+      "Predictive maintenance",
+      "Performance optimization",
+      "Simulation capabilities",
+      "IoT sensor integration",
+      "Historical data analysis",
+      "Collaborative visualization"
     ],
     benefits: [
-      "100% supply chain transparency",
-      "Reduces fraud by 95%",
-      "Improves compliance efficiency",
-      "Real-time visibility",
-      "Automated contract execution"
+      "Reduce maintenance costs by 30-50%",
+      "Improve asset performance by 25%",
+      "Predict failures before they happen",
+      "Optimize operations in real-time",
+      "Reduce downtime by 40%"
     ],
     useCases: [
-      "Food safety tracking",
-      "Pharmaceutical supply chain",
-      "Luxury goods authentication",
-      "Sustainable sourcing",
-      "Regulatory compliance"
+      "Manufacturing optimization",
+      "Infrastructure monitoring",
+      "Energy management",
+      "Healthcare simulation",
+      "Smart city planning"
     ],
     targetAudience: [
       "Manufacturing companies",
-      "Retail chains",
-      "Food producers",
-      "Pharmaceutical companies",
-      "Luxury brands"
+      "Energy utilities",
+      "Infrastructure operators",
+      "Healthcare providers",
+      "Smart city planners"
     ],
-    tags: ["blockchain", "supply chain", "traceability", "compliance", "automation"],
-    estimatedDelivery: "4-5 weeks",
-    supportLevel: "standard",
-    marketPrice: "$1,200/month",
+    tags: ["Digital Twin", "IoT", "Predictive Analytics", "3D Modeling", "Simulation"],
+    estimatedDelivery: "5-7 weeks",
+    supportLevel: "enterprise",
+    marketPrice: "$799 - $4,000/month",
     contactInfo: {
       phone: "+1 302 464 0950",
       email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com/blockchain-supply-chain"
+      website: "https://ziontechgroup.com"
     },
-    aiScore: 88,
-    rating: 4.6,
-    reviewCount: 73,
-    featured: false,
-    technology: ["Ethereum", "Hyperledger", "Solidity", "Node.js"],
-    integrations: ["ERP", "WMS", "CRM", "Accounting Systems"],
-    compliance: ["ISO 22000", "HACCP", "FDA", "EU regulations"],
-    scalability: "Enterprise",
-    deployment: "Cloud, Hybrid",
-    roi: "200-350% within 12 months",
-    timeToValue: "3-4 weeks"
+    technology: ["Unity3D", "Unreal Engine", "IoT Platforms", "Machine Learning", "Cloud Computing"],
+    integrations: ["Siemens Mindsphere", "GE Predix", "PTC ThingWorx", "Azure Digital Twins"],
+    compliance: ["ISO 27001", "Industry-specific standards", "Data privacy regulations"],
+    roi: "450% within 10 months",
+    competitors: ["Siemens", "GE Digital", "PTC", "Microsoft Azure"],
+    freeTrial: true,
+    freeTrialDays: 21,
+    demoUrl: "https://demo.ziontechgroup.com/digital-twin"
   },
 
-  // IoT Edge Computing
+  // AI-Powered Content Creation Platform
   {
-    id: "iot-edge-computing-platform",
-    title: "IoT Edge Computing Platform",
-    description: "Intelligent edge computing platform for IoT devices that processes data locally for real-time decision making, reducing latency and bandwidth costs.",
-    category: "IoT",
-    subcategory: "Edge Computing",
-    price: 599,
+    id: "ai-content-creation-platform",
+    title: "AI Content Creation Platform",
+    description: "Advanced AI platform for automated content creation, including text, images, videos, and audio with brand consistency and SEO optimization.",
+    category: "AI & Content Creation",
+    subcategory: "Multimedia Generation",
+    price: 299,
     currency: "$",
     pricingModel: "monthly",
     features: [
-      "Local data processing",
-      "Real-time analytics",
-      "Edge AI inference",
-      "Device management",
-      "Security protocols",
-      "Scalable architecture",
-      "Cloud synchronization",
-      "Custom algorithms"
+      "AI text generation",
+      "Image and video creation",
+      "Audio synthesis",
+      "Brand voice consistency",
+      "SEO optimization",
+      "Multi-language support",
+      "Content scheduling",
+      "Performance analytics"
     ],
     benefits: [
-      "Reduces latency by 90%",
-      "Lowers bandwidth costs by 70%",
-      "Improves data privacy",
-      "Enables offline operation",
-      "Real-time decision making"
+      "Reduce content creation time by 80%",
+      "Maintain brand consistency",
+      "Scale content production",
+      "Improve SEO performance",
+      "Multi-format content generation"
     ],
     useCases: [
-      "Smart cities",
-      "Industrial IoT",
-      "Autonomous vehicles",
-      "Smart agriculture",
-      "Healthcare monitoring"
-    ],
-    targetAudience: [
-      "Smart city initiatives",
-      "Manufacturing companies",
-      "Automotive industry",
-      "Agricultural companies",
-      "Healthcare providers"
-    ],
-    tags: ["IoT", "edge computing", "AI", "real-time", "automation"],
-    estimatedDelivery: "3-4 weeks",
-    supportLevel: "standard",
-    marketPrice: "$800/month",
-    contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com/iot-edge-computing"
-    },
-    aiScore: 90,
-    rating: 4.7,
-    reviewCount: 94,
-    featured: false,
-    technology: ["TensorFlow Lite", "Docker", "Kubernetes", "Python"],
-    integrations: ["AWS IoT", "Azure IoT", "Google Cloud IoT", "MQTT"],
-    compliance: ["ISO 27001", "GDPR", "Industry-specific standards"],
-    scalability: "Unlimited",
-    deployment: "Edge, Cloud, Hybrid",
-    roi: "180-300% within 12 months",
-    timeToValue: "2-3 weeks"
-  },
-
-  // AI Marketing Automation
-  {
-    id: "ai-marketing-automation-suite",
-    title: "AI Marketing Automation Suite",
-    description: "Intelligent marketing automation platform that uses AI to personalize campaigns, optimize customer journeys, and maximize ROI through predictive analytics.",
-    category: "Marketing",
-    subcategory: "Automation",
-    price: 699,
-    currency: "$",
-    pricingModel: "monthly",
-    features: [
-      "AI-powered personalization",
-      "Predictive customer analytics",
-      "Automated campaign optimization",
-      "Multi-channel marketing",
-      "A/B testing automation",
-      "Customer journey mapping",
-      "ROI optimization",
-      "Real-time reporting"
-    ],
-    benefits: [
-      "Increases conversion rates by 40%",
-      "Reduces marketing costs by 30%",
-      "Improves customer lifetime value",
-      "Automates repetitive tasks",
-      "Data-driven decision making"
-    ],
-    useCases: [
-      "Email marketing campaigns",
-      "Social media advertising",
-      "Content personalization",
-      "Customer segmentation",
-      "Lead nurturing"
+      "Marketing content creation",
+      "Social media management",
+      "Blog and article writing",
+      "Product descriptions",
+      "Multilingual content"
     ],
     targetAudience: [
       "Marketing agencies",
-      "E-commerce companies",
-      "B2B companies",
-      "SaaS companies",
-      "Retail brands"
+      "Content creators",
+      "E-commerce businesses",
+      "Publishers",
+      "Social media managers"
     ],
-    tags: ["AI", "marketing", "automation", "personalization", "analytics"],
+    tags: ["AI", "Content Creation", "Multimedia", "SEO", "Brand Management"],
     estimatedDelivery: "2-3 weeks",
-    supportLevel: "standard",
-    marketPrice: "$1,000/month",
-    contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com/ai-marketing-automation"
-    },
-    aiScore: 93,
-    rating: 4.8,
-    reviewCount: 201,
-    featured: true,
-    technology: ["TensorFlow", "Python", "React", "Node.js"],
-    integrations: ["Salesforce", "HubSpot", "Mailchimp", "Facebook Ads", "Google Ads"],
-    compliance: ["GDPR", "CCPA", "SOC 2"],
-    scalability: "Unlimited",
-    deployment: "Cloud-native",
-    roi: "300-500% within 12 months",
-    timeToValue: "1-2 weeks"
-  },
-
-  // VR Training & Simulation
-  {
-    id: "vr-training-simulation-platform",
-    title: "VR Training & Simulation Platform",
-    description: "Immersive virtual reality platform for employee training, skill development, and simulation-based learning across various industries.",
-    category: "Virtual Reality",
-    subcategory: "Training",
-    price: 1499,
-    currency: "$",
-    pricingModel: "monthly",
-    features: [
-      "Immersive VR experiences",
-      "Custom training scenarios",
-      "Progress tracking",
-      "Multi-user collaboration",
-      "Real-time feedback",
-      "Assessment tools",
-      "Content management",
-      "Analytics dashboard"
-    ],
-    benefits: [
-      "Improves learning retention by 80%",
-      "Reduces training costs by 60%",
-      "Eliminates safety risks",
-      "Scalable training programs",
-      "Measurable learning outcomes"
-    ],
-    useCases: [
-      "Employee onboarding",
-      "Safety training",
-      "Skill development",
-      "Compliance training",
-      "Product demonstrations"
-    ],
-    targetAudience: [
-      "Manufacturing companies",
-      "Healthcare organizations",
-      "Construction companies",
-      "Educational institutions",
-      "Government agencies"
-    ],
-    tags: ["VR", "training", "simulation", "education", "immersive"],
-    estimatedDelivery: "6-8 weeks",
     supportLevel: "premium",
-    marketPrice: "$2,500/month",
+    marketPrice: "$299 - $1,200/month",
     contactInfo: {
       phone: "+1 302 464 0950",
       email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com/vr-training-simulation"
+      website: "https://ziontechgroup.com"
     },
-    aiScore: 87,
-    rating: 4.6,
-    reviewCount: 67,
-    featured: false,
-    technology: ["Unity", "Unreal Engine", "WebXR", "Three.js"],
-    integrations: ["LMS", "HR systems", "Analytics platforms"],
-    compliance: ["ISO 9001", "Industry-specific standards"],
-    scalability: "Enterprise",
-    deployment: "Cloud, On-premise",
-    roi: "200-400% within 12 months",
-    timeToValue: "4-6 weeks"
-  },
-
-  // Autonomous Data Center
-  {
-    id: "autonomous-data-center-management",
-    title: "Autonomous Data Center Management",
-    description: "AI-powered data center management platform that automatically optimizes performance, energy efficiency, and resource allocation for maximum uptime and cost savings.",
-    category: "Infrastructure",
-    subcategory: "Data Center",
-    price: 1999,
-    currency: "$",
-    pricingModel: "monthly",
-    features: [
-      "Autonomous performance optimization",
-      "Energy efficiency management",
-      "Predictive maintenance",
-      "Resource allocation",
-      "Capacity planning",
-      "Security monitoring",
-      "Compliance automation",
-      "Real-time analytics"
-    ],
-    benefits: [
-      "Reduces energy costs by 40%",
-      "Improves uptime to 99.99%",
-      "Automates 90% of operations",
-      "Predicts failures before they occur",
-      "Optimizes resource utilization"
-    ],
-    useCases: [
-      "Enterprise data centers",
-      "Cloud infrastructure",
-      "Colocation facilities",
-      "Edge computing nodes",
-      "Hybrid cloud environments"
-    ],
-    targetAudience: [
-      "Large enterprises",
-      "Cloud providers",
-      "Data center operators",
-      "Financial institutions",
-      "Healthcare organizations"
-    ],
-    tags: ["AI", "data center", "automation", "energy efficiency", "monitoring"],
-    estimatedDelivery: "5-6 weeks",
-    supportLevel: "enterprise",
-    marketPrice: "$3,000/month",
-    contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com/autonomous-data-center"
-    },
-    aiScore: 96,
-    rating: 4.9,
-    reviewCount: 134,
-    featured: true,
-    technology: ["TensorFlow", "Kubernetes", "Python", "Prometheus"],
-    integrations: ["VMware", "OpenStack", "AWS", "Azure", "GCP"],
-    compliance: ["SOC 2", "ISO 27001", "Uptime Institute"],
-    scalability: "Unlimited",
-    deployment: "On-premise, Hybrid",
-    roi: "400-700% within 12 months",
-    timeToValue: "3-4 weeks"
+    technology: ["GPT-4", "DALL-E", "Stable Diffusion", "Natural Language Processing", "Computer Vision"],
+    integrations: ["WordPress", "Shopify", "Social Media APIs", "CMS Platforms"],
+    compliance: ["Copyright compliance", "Content moderation", "Brand safety"],
+    roi: "350% within 6 months",
+    competitors: ["Jasper", "Copy.ai", "Writesonic", "Canva"],
+    freeTrial: true,
+    freeTrialDays: 14,
+    demoUrl: "https://demo.ziontechgroup.com/ai-content"
   }
 ];
 
